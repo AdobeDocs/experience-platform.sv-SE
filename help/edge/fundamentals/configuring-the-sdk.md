@@ -1,0 +1,179 @@
+---
+title: Konfigurera SDK
+seo-title: Konfigurera Adobe Experience Platform Web SDK
+description: Lär dig konfigurera Experience Platform Web SDK
+seo-description: Lär dig konfigurera Experience Platform Web SDK
+translation-type: tm+mt
+source-git-commit: 0cc6e233646134be073d20e2acd1702d345ff35f
+
+---
+
+
+# (Beta) Konfigurera SDK
+
+>[!IMPORTANT]
+>
+>Adobe Experience Platform Web SDK är för närvarande en betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+
+Konfigurationen för SDK görs med `configure` kommandot.
+
+>[!Iviktig]
+>`configure` ska _alltid_ vara det första anropade kommandot.
+
+```javascript
+alloy("configure", {
+  "configId": "ebebf826-a01f-4458-8cec-ef61de241c93",
+  "orgId":"ADB3LETTERSANDNUMBERS@AdobeOrg"
+});
+```
+
+Det finns många alternativ som kan anges under konfigurationen. Alla alternativ finns nedan, grupperade efter kategori.
+
+## Allmänna alternativ
+
+### `configId`
+
+| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| -------- | ------------ | ----------------- |
+| Sträng | Ja | ingen |
+
+Ditt tilldelade konfigurations-ID, som länkar SDK till rätt konton och konfiguration.  När du konfigurerar flera instanser på en sida måste du konfigurera olika inställningar `configId` för varje instans.
+
+### `context`
+
+| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| ---------------- | ------------ | -------------------------------------------------- |
+| Array med strängar | Nej | `["web", "device", "environment", "placeContext"]` |
+
+Anger vilka sammanhangskategorier som ska samlas in automatiskt enligt beskrivningen i [Automatisk information](../reference/automatic-information.md).  Om den här konfigurationen inte anges används alla kategorier som standard.
+
+### `debugEnabled`
+
+| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| -------- | ------------ | ----------------- |
+| Boolean | Nej | `false` |
+
+Anger om felsökning ska vara aktiverat. Om du ställer in den här konfigurationen på `true` aktiveras följande funktioner:
+
+| **Funktion** |  |  |
+| ---------------------- | ------------------ |
+| Synkron validering | Validerar data som samlas in mot schemat och returnerar ett fel i svaret under följande etikett: `collect:error OR success` |
+| Konsolloggning | Gör att felsökningsmeddelanden kan visas i webbläsarens JavaScript-konsol |
+
+### `edgeDomain`
+
+| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| -------- | ------------ | ------------------ |
+| Sträng | Nej | `beta.adobedc.net` |
+
+Domänen som används för att interagera med Adobe Services. Detta används endast om du har en förstahandsdomän (CNAME) som proxies-begäranden till Adobe Edge-infrastrukturen.
+
+### `errorsEnabled`
+
+| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| -------- | ------------ | ----------------- |
+| Boolean | Nej | `true` |
+
+Anger om fel ska ignoreras. Så som beskrivs i [Körningskommandon](executing-commands.md)loggas _fel som inte fångats_ in på utvecklarkonsolen, oavsett om felsökning är aktiverat i Adobe Experience Platform Web SDK eller inte. Genom `errorsEnabled` att ange `false`det avvisas aldrig löften som returneras från Adobe Experience Platform Web SDK, men fel loggas fortfarande till konsolen om loggning är aktiverat i Adobe Experience Platform Web SDK.
+
+### `orgId`
+
+| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| -------- | ------------ | ----------------- |
+| Sträng | Ja | ingen |
+
+Ditt tilldelade Experience Cloud-organisations-ID.  När du konfigurerar flera instanser på en sida måste du konfigurera olika inställningar `orgId` för varje instans.
+
+## Datainsamling
+
+### `clickCollectionEnabled`
+
+| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| -------- | ------------ | ----------------- |
+| Boolean | Nej | `true` |
+
+Anger om data som är associerade med länkklick ska samlas in automatiskt. För klickningar som kvalificerar som länkklick samlas följande [webbinteraktionsdata](https://github.com/adobe/xdm/blob/master/docs/reference/context/webinteraction.schema.md) in:
+
+| **Egenskap** |  |
+| ------------ | ----------------------------------- |
+| Länknamn | Namnet bestäms av länkkontexten |
+| Länk-URL | Normaliserad URL |
+| Länktyp | Ange om du vill hämta, avsluta eller någon annan |
+
+### `onBeforeEventSend`
+
+| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| -------- | ------------ | ----------------- |
+|  -funktion | Nej | () => odefinierad |
+
+Ange detta för att konfigurera ett återanrop som anropas för varje händelse precis innan den skickas.  Ett objekt med fältet `xdm` skickas till återanropet.  Ändra xdm-objektet om du vill ändra vad som skickas.  I återanropet skickas data från händelsekommandot och den automatiskt insamlade informationen till objektet. `xdm`  Mer information om tidpunkten för det här återanropet och ett exempel finns i [Ändra händelser globalt](tracking-events.md#modifying-events-globally).
+
+## Sekretessalternativ
+
+### `defaultConsent`
+
+| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| -------- | ------------ | ----------------- |
+| Objekt | Nej | `{"general": "in"}` |
+
+Anger användarens standardsamtycke. Detta används när det inte finns någon inställning för samtycke som redan har sparats för användaren. Det andra giltiga värdet är `{"general": "pending"}`. När detta är inställt kommer arbetet att ställas i kö tills användaren ger sitt medgivande. När användarens inställningar har angetts fortsätter arbetet eller avbryts baserat på användarens inställningar. Mer information finns i [Supporting Consent](supporting-consent.md) .
+
+## Anpassningsalternativ
+
+### `prehidingStyle`
+
+| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| -------- | ------------ | ----------------- |
+| Sträng | Nej | ingen |
+
+Används för att skapa en CSS-formatdefinition som döljer innehållsområden på webbsidan när anpassat innehåll läses in från servern. Om det här alternativet inte anges försöker SDK inte dölja några innehållsområden när anpassat innehåll läses in, vilket kan leda till&quot;flimmer&quot;.
+
+Om du t.ex. har ett element på webbsidan med ett ID `container` vars standardinnehåll du vill dölja när anpassat innehåll läses in från servern, blir ett exempel på ett fördolt format följande:
+
+```javascript
+  prehidingStyle: "#container { opacity: 0 !important }"
+```
+
+## Målgruppsalternativ
+
+### `cookieDestinationsEnabled`
+
+| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| -------- | ------------ | ----------------- |
+| Boolean | Nej | `true` |
+
+Aktiverar mål för cookies, vilket gör det möjligt att ange cookies baserat på segmentkvalificering.
+
+### `urlDestinationsEnabled`
+
+| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| -------- | ------------ | ----------------- |
+| Boolean | Nej | `true` |
+
+Aktiverar URL-mål, vilket gör det möjligt att bränna URL:er baserat på segmentkvalificering.
+
+## Identitetsalternativ
+
+### `idSyncContainerId`
+
+| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| -------- | ------------ | ----------------- |
+| Nummer | Nej | ingen |
+
+Behållar-ID som anger vilket ID-synk som utlöses. Det här är ett icke-negativt heltal som du kan få från din konsult.
+
+### `idSyncEnabled`
+
+| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| -------- | ------------ | ----------------- |
+| Boolean | Nej | `true` |
+
+Aktiverar synkroniseringsfunktionen för ID, som gör det möjligt att aktivera URL:er för att synkronisera det unika användar-ID:t från Adobe med det unika användar-ID:t för en datakälla från tredje part.
+
+### `thirdPartyCookiesEnabled`
+
+| **Typ** | **Obligatoriskt** | **Standardvärde** |
+| -------- | ------------ | ----------------- |
+| Boolean | Nej | true |
+
+Aktiverar inställning av cookies från tredje part från Adobe. SDK:n kan behålla besökar-ID:t i ett tredjepartssammanhang för att samma besökar-ID ska kunna användas på webbplatsen. Detta är användbart om du har flera webbplatser eller vill dela data med partners. Men ibland är detta inte önskvärt av sekretesskäl.
