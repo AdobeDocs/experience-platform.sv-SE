@@ -19,11 +19,11 @@ Om du vill skicka segmentdata till Adobe Campaign måste du först [ansluta dest
 
 ## Koppla mål {#connect-destination}
 
-1. I **[!UICONTROL Anslutningar > Destinationer]** väljer du Adobe Campaign och sedan **[!UICONTROL Connect-mål]**.
+1. I **[!UICONTROL Connections > Destinations]** väljer du Adobe Campaign och sedan **[!UICONTROL Connect destination]**.
 
    ![Anslut till Adobes kampanj](/help/rtcdp/destinations/assets/connect-adobe-campaign.png)
 
-1. Välj **[!UICONTROL anslutningstyp]** för lagringsplatsen i Anslutningsmålguiden. För Adobe Campaign kan du välja mellan **Amazon S3**, **SFTP med lösenord** och **SFTP med SSH-nyckel**. Fyll i informationen nedan, beroende på vilken typ av anslutning du har, och välj sedan **[!UICONTROL Anslut]**.
+1. Välj lagringsplats **[!UICONTROL Connection type]** i guiden Anslut till mål. För Adobe Campaign kan du välja mellan **Amazon S3**, **SFTP med lösenord** och **SFTP med SSH-nyckel**. Fyll i informationen nedan, beroende på vilken typ av anslutning du har, och välj sedan **[!UICONTROL Connect]**.
 
    ![Konfigurera kampanjguiden](/help/rtcdp/destinations/assets/adobe-campaign-wizard.png)
 
