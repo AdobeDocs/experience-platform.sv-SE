@@ -25,4 +25,4 @@ Tillägg
 
 > [!VIDEO](https://youtu.be/ypS_CKym5NQ)
 
-Välj Redigera > [!UICONTROL Bearbetningsregler] om du vill göra något. Använd [!DNL Microsoft Visual Code].
+Välj Redigera > [!UICONTROL Processing Rules] om du vill göra något. Använd [!DNL Microsoft Visual Code].
