@@ -38,7 +38,7 @@ Vi rekommenderar att ett av attributen är en [unik identifierare](/help/rtcdp/d
 Följ stegen nedan för att redigera befintliga aktiveringsflöden i realtid med CDP:
 
 1. Välj **Destinationer** i det vänstra navigeringsfältet, klicka på fliken **Bläddra** och klicka på målnamnet.
-2. Välj **[!UICONTROL Redigera aktivering]** i den högra listen för att ändra vilka segment som ska skickas till målet.
+2. Välj **[!UICONTROL Edit activation]** i den högra listen för att ändra vilka segment som ska skickas till målet.
 
 ## Verifiera att segmentaktiveringen lyckades {#verify-activation}
 
@@ -66,6 +66,6 @@ Kontrollera respektive annonsmål som du aktiverar dina data till. Om aktivering
 Följ stegen nedan för att inaktivera ett befintligt aktiveringsflöde:
 
 1. Välj **Destinationer** i det vänstra navigeringsfältet, klicka på fliken **Bläddra** och klicka på målnamnet.
-2. Klicka på kontrollen **[!UICONTROL Aktiverad]** till höger för att ändra aktiveringsflödets status.
+2. Klicka på **[!UICONTROL Enabled]** kontrollen till höger för att ändra aktiveringsflödets status.
 3. I fönstret **Uppdatera dataflöde** väljer du **Bekräfta** för att inaktivera aktiveringsflödet.
 
