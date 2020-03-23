@@ -45,7 +45,7 @@ alloy("commandName", options)
   })
 ```
 
-Om det inte är viktigt för dig att veta när kommandot är klart kan du ta bort `then` samtalet.
+Om det inte är viktigt för dig att veta när kommandot är klart, kan du ta bort `then` samtalet.
 
 ```javascript
 alloy("commandName", options)
