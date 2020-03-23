@@ -19,11 +19,11 @@ Om du vill skicka segmentdata till Oracle Responsys måste du först [ansluta m�
 
 ## Koppla mål {#connect-destination}
 
-1. I **[!UICONTROL Anslutningar > Destinationer]** väljer du Oracle Responsys och sedan **[!UICONTROL Connect-mål]**.
+1. I **[!UICONTROL Connections > Destinations]** väljer du Oracle Responsys och sedan **[!UICONTROL Connect destination]**.
 
    ![Anslut till svar](/help/rtcdp/destinations/assets/connect-oracle-responsys.png)
 
-1. Välj **[!UICONTROL anslutningstyp]** för lagringsplatsen i Anslutningsmålguiden. För Oracle Responsys kan du välja mellan **SFTP med lösenord** och **SFTP med SSH-nyckel**. Fyll i informationen nedan, beroende på vilken typ av anslutning du har, och välj **[!UICONTROL Anslut]**.
+1. Välj lagringsplats **[!UICONTROL Connection type]** i guiden Anslut till mål. För Oracle Responsys kan du välja mellan **SFTP med lösenord** och **SFTP med SSH-nyckel**. Fyll i informationen nedan, beroende på din anslutningstyp, och välj **[!UICONTROL Connect]**.
 
    ![Ställ in svarsguiden](/help/rtcdp/destinations/assets/responsys-wizard.png)
 
