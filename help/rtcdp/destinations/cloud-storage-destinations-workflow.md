@@ -15,11 +15,11 @@ source-git-commit: 9221c11a30bda3a155d73afec16be55ef8f5d133
 
 På den här sidan beskrivs hur du kan ansluta till molnlagringsplatser i Adobe Customer Data Platform i realtid.
 
-1. Välj önskat molnlagringsmål i **[!UICONTROL Anslutningar > Destinationer]** och välj sedan **[!UICONTROL Anslut som mål]**.
+1. I **[!UICONTROL Connections > Destinations]** väljer du önskat molnlagringsmål och sedan **[!UICONTROL Connect destination]**.
 
    ![Anslut till molnlagringsmålet](/help/rtcdp/destinations/assets/connect-cloud-destination.png)
 
-2. Om du tidigare har konfigurerat en anslutning till molnlagringsmålet i **autentiseringssteget** väljer du **[!UICONTROL Befintligt konto]** och väljer din befintliga anslutning. Du kan också välja **[!UICONTROL Nytt konto]** för att konfigurera en ny anslutning till molnlagringsmålet. Fyll i autentiseringsuppgifterna för ditt konto och välj **[!UICONTROL Anslut till mål]**.
+2. Om du tidigare har konfigurerat en anslutning till molnlagringsmålet i **autentiseringssteget** markerar du **[!UICONTROL Existing Account]** och väljer den befintliga anslutningen. Du kan också välja **[!UICONTROL New Account]** att konfigurera en ny anslutning till molnlagringsmålet. Fyll i autentiseringsuppgifter för ditt konto och välj **[!UICONTROL Connect to destination]**.
 
    >[!NOTE]
    >
@@ -27,12 +27,12 @@ På den här sidan beskrivs hur du kan ansluta till molnlagringsplatser i Adobe 
 
    ![Anslut till molnlagringsmålet - autentiseringssteg](/help/rtcdp/destinations/assets/cloud-destinations-authentication-step.png)
 
-3. Under **[!UICONTROL Konfigurera]** anger du ett **[!UICONTROL namn]** och en **[!UICONTROL beskrivning]** för aktiveringsflödet.
-   1. För Amazon S3-mål anger du **[!UICONTROL Bucket-namnet]** och **[!UICONTROL Mappsökvägen]** i molnlagringsmålet där filerna ska levereras. Välj **[!UICONTROL Skapa mål]** när du har fyllt i fälten ovan.
-   2. För SFTP-mål infogar du **[!UICONTROL mappsökvägen]**
+3. I **[!UICONTROL Setup]** steget anger du ett **[!UICONTROL Name]** och ett **[!UICONTROL Description]** för aktiveringsflödet.
+   1. För Amazon S3-destinationer anger du **[!UICONTROL Bucket name]** och **[!UICONTROL Folder path]** i molnlagringsdestinationen dit filerna ska levereras. Välj **[!UICONTROL Create Destination]** när du har fyllt i fälten ovan.
+   2. För SFTP-mål infogar du **[!UICONTROL Folder path]**
    ![Anslut till molnlagringsmålet - autentiseringssteg](/help/rtcdp/destinations/assets/cloud-destinations-setup-step.png)
 
-4. Målet har skapats. Du kan välja **[!UICONTROL Spara och avsluta]** om du vill aktivera segment senare eller om du vill fortsätta med arbetsflödet genom att välja **[!UICONTROL Nästa]** och välja segment som ska aktiveras. I båda fallen finns mer information i nästa avsnitt, [Aktivera segment](#activate-segments), för resten av arbetsflödet för att exportera data.
+4. Målet har skapats. Du kan välja **[!UICONTROL Save & Exit]** om du vill aktivera segment senare eller om du vill fortsätta med arbetsflödet och välja vilka segment **[!UICONTROL Next]** som ska aktiveras. I båda fallen finns mer information i nästa avsnitt, [Aktivera segment](#activate-segments), för resten av arbetsflödet för att exportera data.
 
 ## Aktivera segment {#activate-segments}
 
