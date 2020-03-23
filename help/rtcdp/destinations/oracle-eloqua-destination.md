@@ -19,11 +19,11 @@ Om du vill skicka segmentdata till Oracle Eloqua måste du först [ansluta måle
 
 ## Anslut till mål {#connect-destination}
 
-1. I **[!UICONTROL Anslutningar > Destinationer]** väljer du Oracle Eloqua och sedan **[!UICONTROL Anslut som mål]**.
+1. I **[!UICONTROL Connections > Destinations]** väljer du Oracle Eloqua och sedan **[!UICONTROL Connect destination]**.
 
    ![Anslut till Eloqua](/help/rtcdp/destinations/assets/connect-oracle-eloqua.png)
 
-1. Välj **[!UICONTROL anslutningstyp]** för lagringsplatsen i Anslutningsmålguiden. För Oracle Eloqua kan du välja mellan **SFTP med lösenord** och **SFTP med SSH-nyckel**. Fyll i informationen nedan, beroende på vilken typ av anslutning du har, och välj **[!UICONTROL Anslut]**.
+1. Välj lagringsplats **[!UICONTROL Connection type]** i guiden Anslut till mål. För Oracle Eloqua kan du välja mellan **SFTP med lösenord** och **SFTP med SSH-nyckel**. Fyll i informationen nedan, beroende på din anslutningstyp, och välj **[!UICONTROL Connect]**.
 
    ![Konfigurera Eloqua-guiden](/help/rtcdp/destinations/assets/eloqua-wizard.png)
 
