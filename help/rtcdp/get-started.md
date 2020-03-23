@@ -154,7 +154,7 @@ Om du till exempel vill importera Lumas CRM-data filtrerar du katalogen efter *C
 
    <!--    ![image](assets/luma-source-import.png) -->
 
-   Välj till exempel **[!UICONTROL Kontakter]**. En förhandsgranskning av kontaktdata läses in automatiskt så att du kan kontrollera att allt ser ut som förväntat.
+   Välj till exempel **[!UICONTROL Contacts]**. En förhandsgranskning av kontaktdata läses in automatiskt så att du kan kontrollera att allt ser ut som förväntat.
 
    Adobe Experience Platform tar mycket av det manuella arbetet bort genom att automatiskt mappa standardfält till XDM-profilschemat (Experience Data Model).
 
@@ -231,7 +231,7 @@ Eftersom Sarah lade till en gåva i vagnen och övergav den kan Luma rikta in si
 
 När du har lagt till segmentet&quot;Gift Giving Cart Abandoners&quot; kan du se ungefär hur många som ingår i det här segmentet. Ni kan vidta åtgärder för det och göra det tillgängligt för personalisering i alla kanaler.
 
-Klicka på **[!UICONTROL Skicka till mål]**.
+Klicka på **[!UICONTROL Send to destinations]**.
 
 I Adobe Real-time CDP kan Luma agera sömlöst på sina målgruppssegment för personalisering.\
 Här ser vi alla destinationer som Luma kan skicka till, både Adobe-lösningar och andra lösningar:
@@ -255,7 +255,7 @@ Du kan också schemalägga att segmentet ska börja eller sluta vid en viss tidp
 >[!NOTE]
 >Om du klickar i datumfältet kan du välja att schemalägga automatiskt för 90 dagar framåt.
 
-Klicka på **[!UICONTROL Spara]** för att gå till nästa sida.
+Klicka **[!UICONTROL Save]** för att gå till nästa sida.
 
 När en kund i den här målgruppen gör ett köp inaktiveras deras medlemskap i den här målgruppen i realtid. De är inte längre kvalificerade eftersom deras status har ändrats.
 
