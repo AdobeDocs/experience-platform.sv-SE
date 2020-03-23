@@ -21,11 +21,11 @@ Anslut till antingen Amazon S3 eller SFTP i det anslutande målflödet som beskr
 
 ## Steg 1 - Anslut mål {#connect-destination}
 
-1. I **[!UICONTROL Anslutningar > Destinationer]** väljer du det mål för e-postmarknadsföring som du vill ansluta till och väljer sedan **[!UICONTROL Anslut till mål]**.
+1. I **[!UICONTROL Connections > Destinations]** väljer du det mål för e-postmarknadsföring som du vill ansluta till och sedan **[!UICONTROL Connect destination]**.
 
    ![Anslut till mål](/help/rtcdp/destinations/assets/connect-destination.png)
 
-2. Välj **[!UICONTROL anslutningstyp]** för lagringsplatsen i Anslutningsguiden. Du kan välja mellan **Amazon S3**, **SFTP med lösenord** och **SFTP med SSH-nyckel**. Fyll i informationen nedan, beroende på vilken typ av anslutning du har, och välj sedan **[!UICONTROL Anslut]**.
+2. Välj lagringsplats **[!UICONTROL Connection type]** i Anslutningsguiden. Du kan välja mellan **Amazon S3**, **SFTP med lösenord** och **SFTP med SSH-nyckel**. Fyll i informationen nedan, beroende på vilken typ av anslutning du har, och välj sedan **[!UICONTROL Connect]**.
 
 För **S3-anslutningar** måste du ange ditt ID för åtkomstnyckel och hemlig åtkomstnyckel.
 
