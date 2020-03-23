@@ -40,13 +40,13 @@ Ytterligare mätvärden - till exempel för profiler och segment - finns tillgä
 
 ### Datauppsättningar
 
-Räknaren **[!UICONTROL Datauppsättningar]** visar antalet datauppsättningar i systemet och mängden data i plattformen. Den här räknaren uppdateras när en datauppsättning skapas.
+Räknaren visar antalet datauppsättningar i systemet och mängden data i plattformen. **[!UICONTROL Datasets]** Den här räknaren uppdateras när en datauppsättning skapas.
 
 Mer information om datauppsättningar finns i [Importera data till Adobe Experience Platform](https://www.adobe.io/apis/experienceplatform/home/tutorials/alltutorials.html#!api-specification/markdown/narrative/tutorials/data_ingestion_tutorial/data_ingestion_tutorial.md).
 
 ### Profiler
 
-Antalet **[!UICONTROL profiler]** visar det totala antalet personer med profiler i kundprofilen i realtid. Det innehåller inte profilfragment. Det här är er totala adresserbara målgrupp.
+Antalet **[!UICONTROL Profiles]** visar det totala antalet personer med profiler i kundprofilen i realtid. Det innehåller inte profilfragment. Det här är er totala adresserbara målgrupp.
 
 Det här antalet använder den [sammanfogningsprincip](profile/merge-policies.md) som har angetts som standard i konfigurationen av sammanfogningsprincipen i en enhetlig profil.
 
@@ -56,13 +56,13 @@ Mer information om profiler finns i [En enhetlig bild av kunden i CDP](profile/p
 
 ### Segment
 
-**[!UICONTROL Segment]** visar det totala antalet segment som skapats för organisationen. Numret uppdateras när nya segment skapas.
+**[!UICONTROL Segments]** visar det totala antalet segment som skapats för organisationen. Numret uppdateras när nya segment skapas.
 
 Mer information om segment finns i Översikt över [segmenteringstjänsten](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/segmentation/segmentation-overview.md).
 
 ### Mål 
 
-**[!UICONTROL Destinationer]** visar det totala antalet destinationer som skapats för organisationen. Numret uppdateras när nya mål skapas.
+**[!UICONTROL Destinations]** visar det totala antalet destinationer som skapats för organisationen. Numret uppdateras när nya mål skapas.
 
 Mer information om destinationer finns i Översikt över [destinationer](destinations/destinations-overview.md).
 
@@ -102,32 +102,32 @@ The number of failed profile records is updated hourly. -->
 
 ### Senaste datauppsättningar
 
-Kortet **[!UICONTROL Senaste datauppsättningar]** visar de fem senaste datauppsättningarna som skapats inom organisationen. Listan uppdateras när en ny datauppsättning skapas.
+På **[!UICONTROL Recent datasets]** kortet visas de fem senaste datauppsättningarna som skapats inom organisationen. Listan uppdateras när en ny datauppsättning skapas.
 
-Klicka på en datauppsättning om du vill visa information om objektet eller **[!UICONTROL Visa alla]** om du vill visa listan med datauppsättningar. Därifrån kan du klicka på en viss källa för mer information.
+Klicka på en datauppsättning för att visa information om objektet eller **[!UICONTROL View all]** för att visa listan med datauppsättningar. Därifrån kan du klicka på en viss källa för mer information.
 
 Mer information om datauppsättningar finns i [Importera data till Adobe Experience Platform](https://www.adobe.io/apis/experienceplatform/home/tutorials/alltutorials.html#!api-specification/markdown/narrative/tutorials/data_ingestion_tutorial/data_ingestion_tutorial.md).
 
 ### Senaste källor
 
-Kortet **[!UICONTROL Senaste källornas]** mätvärden visar de fem senaste källorna som skapats inom organisationen. Listan uppdateras när en ny källa skapas.
+Mätkortet visar **[!UICONTROL Recent sources]** de fem senaste källorna som skapats inom organisationen. Listan uppdateras när en ny källa skapas.
 
-Klicka på en källa om du vill visa information om det objektet eller **[!UICONTROL Visa alla]** om du vill se en lista med källor. Därifrån kan du klicka på en viss källa för mer information.
+Klicka på en källa för att visa information om objektet eller **[!UICONTROL View all]** för att visa en lista med källor. Därifrån kan du klicka på en viss källa för mer information.
 
 Mer information om källor finns i [Källor - översikt](sources/sources-overview.md).
 
 ### Senaste segment
 
-Kortet **[!UICONTROL Senaste segment]** visar de fem senaste segmenten som skapats inom organisationen. Listan uppdateras när ett nytt segment skapas.
+På **[!UICONTROL Recent segments]** mätkortet visas de fem senaste segmenten som har skapats inom organisationen. Listan uppdateras när ett nytt segment skapas.
 
-Klicka på ett segment om du vill visa information om objektet eller **[!UICONTROL Visa alla]** om du vill visa information om fler segment.
+Klicka på ett segment om du vill visa information om objektet eller **[!UICONTROL View all]** om du vill visa information om fler segment.
 
 Mer information om segment finns i Översikt över [segmenteringstjänsten](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/segmentation/segmentation-overview.md).
 
 ### Senaste destinationer
 
-Kortet **[!UICONTROL Senaste destinationer]** visar de fem senaste destinationerna som skapats inom organisationen. Listan uppdateras när ett nytt mål skapas.
+På **[!UICONTROL Recent destinations]** mätkortet visas de fem senaste destinationerna som skapats inom organisationen. Listan uppdateras när ett nytt mål skapas.
 
-Klicka på ett mål om du vill visa information om det objektet eller **[!UICONTROL Visa alla]** om du vill se information om fler mål.
+Klicka på ett mål om du vill visa information om det objektet eller **[!UICONTROL View all]** om du vill visa information om fler mål.
 
 Mer information om destinationer finns i Översikt över [destinationer](destinations/destinations-overview.md).
