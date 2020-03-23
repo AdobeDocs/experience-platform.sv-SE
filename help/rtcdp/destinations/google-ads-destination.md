@@ -48,7 +48,7 @@ Innan du skapar Google Ads-målet i Adobe Real-time CDP måste du kontakta Googl
 
 ## Skapa mål
 
-1. I **[!UICONTROL Anslutningar > Destinationer]** väljer du Google Ads och sedan **[!UICONTROL Skapa mål]**.
+1. I **[!UICONTROL Connections > Destinations]** väljer du Google Ads och sedan **[!UICONTROL Create destination]**.
    ![Anslut Google Ads-mål](/help/rtcdp/destinations/assets/google-2-destination.png)
 
 2. Fyll i Grundläggande information för målet i guiden Skapa mål.
