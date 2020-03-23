@@ -31,7 +31,7 @@ Den här självstudiekursen innehåller följande steg:
 
 Installera först Adobe Experience Platform Web SDK-tillägget.
 
-1. Öppna fliken **[!UICONTROL Tillägg]** i Launch.
+1. Öppna fliken **[!UICONTROL Extensions]** i Launch.
 
    ![image](assets/launch-overview.png)
 
@@ -48,13 +48,13 @@ Installera först Adobe Experience Platform Web SDK-tillägget.
    * **Konfigurations-ID:** Ange det konfigurations-ID som du fick från din Adobe-representant.
    * **Edge Domain:** Ange den edge-domän du har fått från din Adobe-representant.
 
-1. Klicka på **[!UICONTROL Spara]** och fortsätt till nästa steg.
+1. Klicka **[!UICONTROL Save]** och fortsätt till nästa steg.
 
 ## Skapa en regel som talar om för Launch vilka data som ska skickas
 
 Skapa sedan en regel som meddelar Launch vilka data du vill skicka till Adobe Experience Platform och när du vill skicka dem.
 
-1. Under fliken **[!UICONTROL Regler]** konfigurerar du en händelse som ska utlösas på varje ny sida på webbplatsen när Launch-biblioteket läses in.
+1. Konfigurera under fliken **[!UICONTROL Rules]** en händelse som ska utlösas på varje ny sida på webbplatsen när Launch-biblioteket läses in.
 
    ![image](assets/launch-make-a-rule.png)
 
@@ -66,7 +66,7 @@ Skapa sedan en regel som meddelar Launch vilka data du vill skicka till Adobe Ex
 
    Det dataobjekt som du skickar måste vara en giltig XDM som kan valideras mot schemat som används av datauppsättningen som är ansluten till ditt konfigurations-ID.
 
-1. Klicka på **[!UICONTROL Behåll ändringar]**.
+1. Klicka på **[!UICONTROL Keep Changes]**.
 
 Mer information finns i [Regler](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/rules.html) i Launch-dokumentationen.
 
