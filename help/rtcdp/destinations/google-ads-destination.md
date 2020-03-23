@@ -4,7 +4,7 @@ seo-title: Mål för Google Ads
 description: Google Ads, som tidigare kallades Google AdWords, är en onlinereklam som gör att företag kan betala per klick för annonsering vid textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appar.
 seo-description: Google Ads, som tidigare kallades Google AdWords, är en onlinereklam som gör att företag kan betala per klick för annonsering vid textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appar.
 translation-type: tm+mt
-source-git-commit: d42e4d60d273b08824e177f9aca0f208578ff099
+source-git-commit: 3e510c891c84fb3dc1632bd1182ef1e010ea898f
 
 ---
 
@@ -49,10 +49,10 @@ Innan du skapar Google Ads-målet i Adobe Real-time CDP måste du kontakta Googl
 ## Skapa mål
 
 1. I **[!UICONTROL Anslutningar > Destinationer]** väljer du Google Ads och sedan **[!UICONTROL Skapa mål]**.
-   ![Anslut Google Ads-mål](/help/rtcdp/destinations/assets/google-ads-destination.png)
+   ![Anslut Google Ads-mål](/help/rtcdp/destinations/assets/google-2-destination.png)
 
 2. Fyll i Grundläggande information för målet i guiden Skapa mål.
-   ![Grundläggande information för Google Ads](/help/rtcdp/destinations/assets/google-ads-basic-information.png)
+   ![Grundläggande information för Google Ads](/help/rtcdp/destinations/assets/google-2-basic-information.png)
 * **Namn**: Fyll i det önskade namnet för det här målet.
 * **Beskrivning**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
 * **Kontotyp**: AdWords är det enda tillgängliga alternativet.
