@@ -4,11 +4,61 @@ seo-title: Google Display & Video 360 Destination
 description: Display & Video 360, tidigare DoubleClick Bid Manager, är ett verktyg som används för att utföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display, Video och Mobile.
 seo-description: 'Display & Video 360, tidigare DoubleClick Bid Manager, är ett verktyg som används för att utföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display, Video och Mobile. '
 translation-type: tm+mt
-source-git-commit: c52905d57baaa4554c4cf3b20c8eac1066e06a41
+source-git-commit: 810028edc662a7f52484e37cf0fbdfafe5db650f
 
 ---
 
 
 # Google Display &amp; Video 360 Destination
 
-Dokumentation för Google Ad Manager-destinationen kommer snart att finnas här. Till dess kan du läsa vår allmänna [Google-dokumentation om destinationen](/help/rtcdp/destinations/google-destination.md) .
+## Översikt
+
+Display &amp; Video 360, tidigare DoubleClick Bid Manager, är ett verktyg som används för att genomföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display, Video och Mobile.
+
+## Destinationsspecifikationer
+
+Observera följande information som är specifik för Google Display- och Video 360-destinationer:
+
+* Du kan skicka följande [identiteter](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/identity_namespace_overview/identity_namespace_overview.md) till Google Display &amp; Video 360-destinationer: **Google cookie ID, IDFA, GAID, Roku ID, Microsoft ID, Amazon Fire TV ID**.
+* Aktiverade målgrupper skapas programmatiskt i Google-plattformen.
+* Adobe CDP i realtid innehåller för närvarande inga mätvärden som validerar aktiveringen. Se antalet målgrupper i Google för att validera integrationen och förstå målgruppens målgruppsstorlek.
+
+>[!IMPORTANT]
+>
+>Om du vill skapa ditt första mål med Google Display &amp; Video 360 och inte har aktiverat funktionen [för synkronisering av](https://docs.adobe.com/content/help/en/id-service/using/id-service-api/methods/idsync.html) ID i Experience Cloud ID Service tidigare (med Adobe Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat Google-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Adobe CDP i realtid.
+
+## Förutsättningar
+
+### Vitlista
+
+>[!NOTE]
+>
+>Whitelisting är obligatoriskt innan du konfigurerar ditt första Google Display- och Video 360-mål i Adobe Real-time CDP. Kontrollera att vitlistningsprocessen som beskrivs nedan har slutförts av Google innan du skapar ett mål.
+
+Innan du skapar Google Display &amp; Video 360-destinationen i Adobe Real-time CDP måste du kontakta Google och be om att Adobe vitlistas som dataleverantör och att ditt konto vitlistas. Kontakta Google och lämna följande information:
+
+* **Konto-ID** : detta är Adobes konto-ID med Google. Kontakta Adobes kundtjänst eller din Adobe-representant för att få detta ID.
+* **Kund-ID** : detta är Adobes kundkonto-ID med Google. Kontakta Adobes kundtjänst eller din Adobe-representant för att få detta ID.
+* **Kontotyp**: kan användas **[!DNL Invite advertiser]** för att tillåta att målgrupper delas endast till ett visst varumärke i ditt Display &amp; Video 360-konto eller för **[!DNL Invite partner]** att tillåta att målgrupper delas med alla varumärken i ditt Display &amp; Video 360-konto.
+
+## Skapa mål
+
+1. Välj Google Display &amp; Video 360 i **[!UICONTROL Anslutningar > Destinationer]** och välj **[!UICONTROL Skapa mål]**.
+   ![Connect Google Display &amp; Video 360 destination](/help/rtcdp/destinations/assets/google-dv360-destination.png)
+
+2. Fyll i Grundläggande information för målet i guiden Skapa mål.
+   ![Grundläggande information, Google Display och Video 360](/help/rtcdp/destinations/assets/google-dv360-basic-information.png)
+* **Namn**: Fyll i det önskade namnet för det här målet.
+* **Beskrivning**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
+* **Kontotyp**: Välj ett alternativ, beroende på ditt konto hos Google:
+   * Används `Invite Advertiser` för att tillåta att målgrupper delas endast till ett visst varumärke i ditt Display &amp; Video 360-konto.
+   * Används `Invite Partner` för att tillåta målgrupper att delas med alla varumärken i ditt Display &amp; Video 360-konto.
+* **Konto-ID**: Fyll i ditt **[!DNL Invite partner]** - eller **[!DNL Invite advertiser]** konto-ID med Google. Vanligtvis är detta ett ID med sex eller sju siffror.
+
+>[!NOTE]
+>
+>När du konfigurerar en Google Display &amp; Video 360-destination ska du samarbeta med din kontoansvarige på Google eller Adobe för att ta reda på vilken kontotyp du har.
+
+## Aktivera segment till Google Display och Video 360
+
+Instruktioner om hur du aktiverar segment till Google Display och Video 360 finns i [Aktivera data till mål](/help/rtcdp/destinations/activate-destinations.md).
