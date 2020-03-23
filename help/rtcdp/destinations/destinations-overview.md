@@ -15,11 +15,11 @@ source-git-commit: b4b02913467c43d004574a1aa5cb2f793964ad1e
 
 ## Destinationer och källor
 
-En av de viktigaste funktionerna i CDP i realtid är att inhämta era egna data och aktivera dem för era affärsbehov. Använd **[!UICONTROL Källor]** för att importera data till CDP och **[!UICONTROL destinationer]** i realtid för att exportera data från CDP i realtid.
+En av de viktigaste funktionerna i CDP i realtid är att inhämta era egna data och aktivera dem för era affärsbehov. Använd **[!UICONTROL Sources]** för att importera data till CDP i realtid och **[!UICONTROL Destinations]** för att exportera data från CDP i realtid.
 
 ## Destinationssteg
 
-* Använd **[!UICONTROL Destinationer]** för att [aktivera](/help/rtcdp/destinations/activate-destinations.md) och skicka profiler eller segment till automatiserade marknadsföringsplattformar, digitala annonsplattformar med mera.
+* Använd **[!UICONTROL Destinations]** för att [aktivera](/help/rtcdp/destinations/activate-destinations.md) och skicka profiler eller segment till automatiserade marknadsföringsplattformar, digitala annonsplattformar och mycket annat.
 * Välj från en [självbetjäningskatalog](/help/rtcdp/destinations/destinations-catalog.md) med alla destinationer som är tillgängliga i CDP i realtid.
 * Schemalägg dataexport till dina önskade destinationer vid regelbundna tidpunkter.
 
@@ -53,6 +53,6 @@ Destinationerna i [destinationskatalogen](/help/rtcdp/destinations/destinations-
 
 ## Destinationer och åtkomstkontroller
 
-Funktionen **[!UICONTROL Destinationer]** i CDP i realtid fungerar med åtkomstkontrollsbehörigheter i Adobe Experience Platform. Beroende på din användares behörighetsnivå kan du visa, hantera och aktivera mål. Information om de enskilda behörigheterna finns i [Åtkomstkontroll i Adobe Experience Platform](https://www.adobe.io/apis/experienceplatform/home/permissions-and-sandboxes/permissions-and-sandboxes.html#!api-specification/markdown/narrative/technical_overview/access-control/access-control-overview.md) och rulla nedåt på sidan.
+Funktionerna i CDP i realtid fungerar med åtkomstkontrollsbehörigheterna i Adobe Experience Platform. **[!UICONTROL Destinations]** Beroende på din användares behörighetsnivå kan du visa, hantera och aktivera mål. Information om de enskilda behörigheterna finns i [Åtkomstkontroll i Adobe Experience Platform](https://www.adobe.io/apis/experienceplatform/home/permissions-and-sandboxes/permissions-and-sandboxes.html#!api-specification/markdown/narrative/technical_overview/access-control/access-control-overview.md) och rulla nedåt på sidan.
 
 Mer information om åtkomstkontroller finns i användarhandboken för [åtkomstkontroll](https://www.adobe.io/apis/experienceplatform/home/permissions-and-sandboxes/permissions-and-sandboxes.html#!api-specification/markdown/narrative/technical_overview/access-control/access-control-user-guide.md).
