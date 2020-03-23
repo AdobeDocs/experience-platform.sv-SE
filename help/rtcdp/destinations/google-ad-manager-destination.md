@@ -45,7 +45,7 @@ Innan du skapar Google Ad Manager-målet i Adobe Real-time CDP måste du kontakt
 
 ## Skapa mål
 
-1. Välj Google Ad Manager i **[!UICONTROL Anslutningar > Destinationer]** och välj **[!UICONTROL Skapa mål]**.
+1. I **[!UICONTROL Connections > Destinations]** väljer du Google Ad Manager och sedan **[!UICONTROL Create destination]**.
    ![Anslut Google Ad Manager-mål](/help/rtcdp/destinations/assets/google-1-destination.png)
 
 2. Fyll i Grundläggande information för målet i guiden Skapa mål.
