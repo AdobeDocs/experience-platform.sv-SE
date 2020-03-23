@@ -19,11 +19,11 @@ Om du vill skicka segmentdata till Salesforce Marketing Cloud måste du först [
 
 ## Koppla mål {#connect-destination}
 
-1. I **[!UICONTROL Anslutningar > Destinationer]** väljer du Salesforce Marketing Cloud och sedan **[!UICONTROL Connect-mål]**.
+1. I **[!UICONTROL Connections > Destinations]** väljer du Salesforce Marketing Cloud och sedan **[!UICONTROL Connect destination]**.
 
    ![Anslut till Salesforce](/help/rtcdp/destinations/assets/connect-salesforce.png)
 
-1. Välj **[!UICONTROL anslutningstyp]** för lagringsplatsen i Anslutningsmålguiden. För Salesforce Marketing Cloud kan du välja mellan **SFTP med lösenord** och **SFTP med SSH-nyckel**. Fyll i informationen nedan, beroende på vilken typ av anslutning du har, och välj **[!UICONTROL Anslut]**.
+1. Välj lagringsplats **[!UICONTROL Connection type]** i guiden Anslut till mål. För Salesforce Marketing Cloud kan du välja mellan **SFTP med lösenord** och **SFTP med SSH-nyckel**. Fyll i informationen nedan, beroende på din anslutningstyp, och välj **[!UICONTROL Connect]**.
 
    ![Konfigurera Salesforce-guiden](/help/rtcdp/destinations/assets/salesforce-step1.png)
 
