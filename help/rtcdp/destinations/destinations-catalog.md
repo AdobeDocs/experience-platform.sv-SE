@@ -4,14 +4,16 @@ seo-title: Målkatalog
 description: Destinationskatalogen innehåller en lista över tillgängliga destinationer som är klara att ta emot data. Dessa destinationer omfattar Adobes lösningar, annonsplattformar, CRM-system (customer relationship management), e-postmarknadsföringsplattformar med mera.
 seo-description: Destinationskatalogen innehåller en lista över tillgängliga destinationer som är klara att ta emot data. Dessa destinationer omfattar Adobes lösningar, annonsplattformar, CRM-system (customer relationship management), e-postmarknadsföringsplattformar med mera.
 translation-type: tm+mt
-source-git-commit: b4b02913467c43d004574a1aa5cb2f793964ad1e
+source-git-commit: e66f4df13afb3c9f9ddb440ccb5e479caeef2142
 
 ---
 
 
 # Målkatalog
 
-I **målkatalogen** finns en lista över tillgängliga målplattformar som kan ta emot data. Dessa målplattformar omfattar Adobes lösningar, annonsplattformar, CRM-system (customer relationship management), e-postmarknadsföringsplattformar med mera. Bläddra i katalogen för att fastställa vilka målplattformar som är bäst för era användningsfall för annonsering och personalisering, och konfigurera sedan flöden för att aktivera era segment till destinationer.
+I **målkatalogen** finns en lista över tillgängliga målplattformar som kan ta emot data. Dessa målplattformar omfattar Adobes lösningar, annonsplattformar, CRM-system (customer relationship management), e-postmarknadsföringsplattformar med mera.
+
+Bläddra i katalogen för att fastställa vilka målplattformar som är bäst för era användningsfall för annonsering och personalisering, och konfigurera sedan flöden för att aktivera era segment till destinationer.
 
 ## Målkategorier
 
