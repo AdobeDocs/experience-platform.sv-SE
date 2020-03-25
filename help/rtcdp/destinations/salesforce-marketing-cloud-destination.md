@@ -4,7 +4,7 @@ seo-title: Salesforce Marketing Cloud
 description: Salesforce Marketing Cloud är en digital marknadsföringssvit som tidigare kallades ExactTarget och som gör att ni kan skapa och anpassa resor för besökare och kunder för att personalisera deras upplevelse.
 seo-description: Salesforce Marketing Cloud är en digital marknadsföringssvit som tidigare kallades ExactTarget och som gör att ni kan skapa och anpassa resor för besökare och kunder för att personalisera deras upplevelse.
 translation-type: tm+mt
-source-git-commit: 3b9584cca8943c52bb3d8e4512d327d3dbeb9e04
+source-git-commit: afe8032be1d96a63a3d43c5a552a0d6152e14552
 
 ---
 
@@ -23,23 +23,21 @@ Om du vill skicka segmentdata till Salesforce Marketing Cloud måste du först [
 
    ![Anslut till Salesforce](/help/rtcdp/destinations/assets/connect-salesforce.png)
 
-1. Välj lagringsplats **[!UICONTROL Connection type]** i guiden Anslut till mål. För Salesforce Marketing Cloud kan du välja mellan **SFTP med lösenord** och **SFTP med SSH-nyckel**. Fyll i informationen nedan, beroende på din anslutningstyp, och välj **[!UICONTROL Connect]**.
-
-   ![Konfigurera Salesforce-guiden](/help/rtcdp/destinations/assets/salesforce-step1.png)
+1. Om du tidigare har konfigurerat en anslutning till molnlagringsmålet i **autentiseringssteget** markerar du **[!UICONTROL Existing Account]** och väljer den befintliga anslutningen. Du kan också välja **[!UICONTROL New Account]** att konfigurera en ny anslutning. Fyll i autentiseringsuppgifter för ditt konto och välj **[!UICONTROL Connect to destination]**. För Salesforce Marketing Cloud kan du välja mellan **SFTP med lösenord** och **SFTP med SSH-nyckel**. Fyll i informationen nedan, beroende på din anslutningstyp, och välj **[!UICONTROL Connect to destination]**.
 
    För **SFTP med lösenordsanslutningar** måste du ange domän, port, användarnamn och lösenord.
 För **SFTP med SSH-nyckelanslutningar** måste du ange domän, port, användarnamn och SSH-nyckel.
 
-   ![Fyll i Salesforce-information](/help/rtcdp/destinations/assets/salesforce-wizard.png)
+   ![Fyll i Salesforce-information](/help/rtcdp/destinations/assets/salesforce-authenticate.png)
 
-1. I **Grundläggande information**, fyll i relevant information för destinationen enligt nedan:
+1. I **konfigurationssteget** fyller du i relevant information för destinationen enligt nedan:
    * **Namn**: Välj ett relevant namn för destinationen.
    * **Beskrivning**: Ange en beskrivning för destinationen.
    * **Mappsökväg**: Ange sökvägen till lagringsplatsen där CDP i realtid ska placera dina exportdata som CSV-filer eller tabbavgränsade filer.
    * **Filformat**: **CSV** eller **TAB_DELIMITED**. Välj vilket filformat du vill exportera till lagringsplatsen.
    ![Grundläggande information för Salesforce](/help/rtcdp/destinations/assets/salesforce-basic-information.png)
 
-1. Klicka på **Skapa** när du har fyllt i fälten i **Grundläggande information**. Målet är nu anslutet och du kan [aktivera segment](/help/rtcdp/destinations/activate-destinations.md) till målet.
+1. Klicka på **Skapa mål** när du har fyllt i fälten i **Grundläggande information**. Målet är nu anslutet och du kan [aktivera segment](/help/rtcdp/destinations/activate-destinations.md) till målet.
 
 ## Målattribut {#destination-attributes}
 
