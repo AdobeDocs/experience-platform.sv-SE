@@ -4,7 +4,7 @@ seo-title: Oracle Responsys-mål
 description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som erbjuds av Oracle för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
 seo-description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som erbjuds av Oracle för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
 translation-type: tm+mt
-source-git-commit: 3b9584cca8943c52bb3d8e4512d327d3dbeb9e04
+source-git-commit: fe56fe71c36e06f2eeed45436cb36b5a371d0484
 
 ---
 
@@ -15,7 +15,7 @@ source-git-commit: 3b9584cca8943c52bb3d8e4512d327d3dbeb9e04
 
 [Responsys](https://www.oracle.com/marketingcloud/products/cross-channel-orchestration/) är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som erbjuds av Oracle för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
 
-Om du vill skicka segmentdata till Oracle Responsys måste du först [ansluta målet](#connect-destination) i Adobes kunddataplattform för realtid och sedan [konfigurera en dataimport](#import-data-into-responsys) från din lagringsplats till Oracle Responsys.
+Om du vill skicka segmentdata till Oracle Responsys måste du först [ansluta till målet](#connect-destination) i Adobes kunddataplattform i realtid och sedan [konfigurera en dataimport](#import-data-into-responsys) från din lagringsplats till Oracle Responsys.
 
 ## Koppla mål {#connect-destination}
 
@@ -23,23 +23,21 @@ Om du vill skicka segmentdata till Oracle Responsys måste du först [ansluta m�
 
    ![Anslut till svar](/help/rtcdp/destinations/assets/connect-oracle-responsys.png)
 
-1. Välj lagringsplats **[!UICONTROL Connection type]** i guiden Anslut till mål. För Oracle Responsys kan du välja mellan **SFTP med lösenord** och **SFTP med SSH-nyckel**. Fyll i informationen nedan, beroende på din anslutningstyp, och välj **[!UICONTROL Connect]**.
-
-   ![Ställ in svarsguiden](/help/rtcdp/destinations/assets/responsys-wizard.png)
+1. Om du tidigare har konfigurerat en anslutning till molnlagringsmålet i **autentiseringssteget** markerar du **[!UICONTROL Existing Account]** och väljer den befintliga anslutningen. Du kan också välja **[!UICONTROL New Account]** att konfigurera en ny anslutning. Fyll i autentiseringsuppgifter för ditt konto och välj **[!UICONTROL Connect to destination]**. För Oracle Responsys kan du välja mellan **SFTP med lösenord** och **SFTP med SSH-nyckel**. Fyll i informationen nedan, beroende på din anslutningstyp, och välj **[!UICONTROL Connect to destination]**.
 
    För **SFTP med lösenordsanslutningar** måste du ange domän, port, användarnamn och lösenord.
 För **SFTP med SSH-nyckelanslutningar** måste du ange domän, port, användarnamn och SSH-nyckel.
 
-   ![Fyll i svarsinformation](/help/rtcdp/destinations/assets/responsys-step2.png)
+   ![Fyll i svarsinformation](/help/rtcdp/destinations/assets/responsys-authentication.png)
 
-1. I **Grundläggande information**, fyll i relevant information för destinationen enligt nedan:
+1. I **konfigurationssteget** fyller du i relevant information för destinationen enligt nedan:
    * **Namn**: Välj ett relevant namn för destinationen.
    * **Beskrivning**: Ange en beskrivning för destinationen.
    * **Mappsökväg**: Ange sökvägen till lagringsplatsen där CDP i realtid ska placera dina exportdata som CSV-filer eller tabbavgränsade filer.
    * **Filformat**: **CSV** eller **TAB_DELIMITED**. Välj vilket filformat du vill exportera till lagringsplatsen.
    ![Grundläggande information om svar](/help/rtcdp/destinations/assets/responsys-basic-information.png)
 
-1. Klicka på **Skapa** när du har fyllt i fälten i **Grundläggande information**. Målet är nu anslutet och du kan [aktivera segment](/help/rtcdp/destinations/activate-destinations.md) till målet.
+1. Klicka på **Skapa mål** när du har fyllt i fälten ovan. Målet är nu anslutet och du kan [aktivera segment](/help/rtcdp/destinations/activate-destinations.md) till målet.
 
 ## Målattribut {#destination-attributes}
 
