@@ -4,7 +4,7 @@ seo-title: Arbetsflöde för molnlagringsmål
 description: Instruktioner för att ansluta till lagringsplatser i molnet
 seo-description: Instruktioner för att ansluta till lagringsplatser i molnet
 translation-type: tm+mt
-source-git-commit: c4f1c0a6ef4d16e5fe763826016d56506fdca5dc
+source-git-commit: 60b10aa823af55d6f38651308dc93eeb57a7fee6
 
 ---
 
@@ -32,9 +32,7 @@ För Amazon S3-destinationer anger du **[!UICONTROL Bucket name]** och **[!UICON
 
    ![Anslut till molnlagringsmålet för Amazon S3 - autentiseringssteg](/help/rtcdp/destinations/assets/cloud-destinations-setup-step.png)
 
-
-
-   <br>För SFTP-mål infogar du **[!UICONTROL Folder path]**
+   För SFTP-mål anger du **[!UICONTROL Folder path]** var filerna ska levereras.
 
    ![Anslut till molnlagringsmålet för SFTP - autentiseringssteg](/help/rtcdp/destinations/assets/sftp-destinations-setup-step.png)
 
