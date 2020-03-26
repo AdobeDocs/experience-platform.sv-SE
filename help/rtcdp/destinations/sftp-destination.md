@@ -4,7 +4,7 @@ seo-title: SFTP-mål
 description: Skapa en utgående liveanslutning till din SFTP-server för att regelbundet exportera avgränsade datafiler från Experience Platform.
 seo-description: Skapa en utgående liveanslutning till din SFTP-server för att regelbundet exportera avgränsade datafiler från Experience Platform.
 translation-type: tm+mt
-source-git-commit: f3c6c27b7ad07ada0df18aabe0e8503253b38342
+source-git-commit: c3fe5753fb23f99076f9c85b4e07af2d25a121a9
 
 ---
 
@@ -23,7 +23,6 @@ Mer information om hur du ansluter till molnlagringsmål, inklusive SFTP, finns 
 
 För SFTP-mål anger du följande information i arbetsflödet för att skapa mål i **autentiseringssteget** :
 
-* **Värd**
-* **Användarnamn**
-* **Lösenord**
-
+* **Värd**: adressen till SFTP-lagringsplatsen
+* **Användarnamn**: användarnamnet för att logga in på din SFTP-lagringsplats
+* **Lösenord**: lösenordet för att logga in på din SFTP-lagringsplats
