@@ -4,7 +4,7 @@ seo-title: Destinationsöversikt
 description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från kunddataplattformen i realtid. Ni kan använda Destinationer i Adobes kunddataplattform i realtid för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad annonsering och många andra användningsfall.
 seo-description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från kunddataplattformen i realtid. Ni kan använda Destinationer i Adobes kunddataplattform i realtid för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad annonsering och många andra användningsfall.
 translation-type: tm+mt
-source-git-commit: e66f4df13afb3c9f9ddb440ccb5e479caeef2142
+source-git-commit: 336aa90cf1e059a92a36dd0ef3222ef6a6f5123b
 
 ---
 
@@ -13,16 +13,16 @@ source-git-commit: e66f4df13afb3c9f9ddb440ccb5e479caeef2142
 
 ![Översiktsbanderoll för destinationer](/help/rtcdp/destinations/assets/destinations-overview-banner.png)
 
-**Destinationer** är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från kunddataplattformen i realtid. Ni kan använda **Destinationer** för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+**Destinationer** är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från kunddataplattformen i realtid. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 
 ## Destinationer och källor
 
-En av de viktigaste funktionerna i CDP i realtid är att inhämta era egna data och aktivera dem för era affärsbehov. Använd **[!UICONTROL Sources]** för att importera data till CDP i realtid och **[!UICONTROL Destinations]** för att exportera data från CDP i realtid.
+En av de viktigaste funktionerna i CDP i realtid är att inhämta era egna data och aktivera dem för era affärsbehov. Använd källor för att importera data till CDP i realtid och destinationer för att exportera data från CDP i realtid.
 
 ## Destinationssteg
 
-* Använd **[!UICONTROL Destinations]** för att [aktivera](/help/rtcdp/destinations/activate-destinations.md) och skicka profiler eller segment till automatiserade marknadsföringsplattformar, digitala annonsplattformar och mycket annat.
 * Välj från en [självbetjäningskatalog](/help/rtcdp/destinations/destinations-catalog.md) med alla destinationer som är tillgängliga i CDP i realtid.
+* Använd **[!UICONTROL Destinations]** för att [aktivera](/help/rtcdp/destinations/activate-destinations.md) och skicka profiler eller segment till automatiserade marknadsföringsplattformar, digitala annonsplattformar och mycket annat.
 * Schemalägg dataexport till dina önskade destinationer vid regelbundna tidpunkter.
 
 ## Kontroller
@@ -55,6 +55,6 @@ Destinationerna i [destinationskatalogen](/help/rtcdp/destinations/destinations-
 
 ## Destinationer och åtkomstkontroller
 
-Funktionerna i CDP i realtid fungerar med åtkomstkontrollsbehörigheterna i Adobe Experience Platform. **[!UICONTROL Destinations]** Beroende på din användares behörighetsnivå kan du visa, hantera och aktivera mål. Information om de enskilda behörigheterna finns i [Åtkomstkontroll i Adobe Experience Platform](https://www.adobe.io/apis/experienceplatform/home/permissions-and-sandboxes/permissions-and-sandboxes.html#!api-specification/markdown/narrative/technical_overview/access-control/access-control-overview.md) och rulla nedåt på sidan.
+Målfunktionerna i CDP i realtid fungerar med åtkomstkontrollsbehörigheterna för Adobe Experience Platform. Beroende på din användares behörighetsnivå kan du visa, hantera och aktivera mål. Information om de enskilda behörigheterna finns i [Åtkomstkontroll i Adobe Experience Platform](https://www.adobe.io/apis/experienceplatform/home/permissions-and-sandboxes/permissions-and-sandboxes.html#!api-specification/markdown/narrative/technical_overview/access-control/access-control-overview.md) och rulla nedåt på sidan.
 
 Mer information om åtkomstkontroller finns i användarhandboken för [åtkomstkontroll](https://www.adobe.io/apis/experienceplatform/home/permissions-and-sandboxes/permissions-and-sandboxes.html#!api-specification/markdown/narrative/technical_overview/access-control/access-control-user-guide.md).
