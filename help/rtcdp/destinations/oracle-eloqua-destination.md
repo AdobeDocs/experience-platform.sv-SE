@@ -4,7 +4,7 @@ seo-title: Oracle Eloqua-mål
 description: Oracle Eloqua är en SaaS-plattform (Software as a service) för automatiserad marknadsföring som erbjuds av Oracle och som hjälper B2B-marknadsförare och organisationer att hantera marknadsföringskampanjer och generera säljleads.
 seo-description: Oracle Eloqua är en SaaS-plattform (Software as a service) för automatiserad marknadsföring som erbjuds av Oracle och som hjälper B2B-marknadsförare och organisationer att hantera marknadsföringskampanjer och generera säljleads.
 translation-type: tm+mt
-source-git-commit: c3fe5753fb23f99076f9c85b4e07af2d25a121a9
+source-git-commit: 336aa90cf1e059a92a36dd0ef3222ef6a6f5123b
 
 ---
 
@@ -23,21 +23,21 @@ Om du vill skicka segmentdata till Oracle Eloqua måste du först [ansluta måle
 
    ![Anslut till Eloqua](/help/rtcdp/destinations/assets/connect-oracle-eloqua.png)
 
-2. Om du tidigare har konfigurerat en anslutning till molnlagringsmålet i **autentiseringssteget** väljer du **[!UICONTROL Existing Account]** och väljer en av dina befintliga anslutningar. Du kan också välja **[!UICONTROL New Account]** att konfigurera en ny anslutning. Fyll i autentiseringsuppgifter för ditt konto och välj **[!UICONTROL Connect to destination]**. För Oracle Eloqua kan du välja mellan **SFTP med lösenord** och **SFTP med SSH-nyckel**. Fyll i informationen nedan, beroende på din anslutningstyp, och välj **[!UICONTROL Connect to destination]**.
+2. Om du tidigare har konfigurerat en anslutning till molnlagringsmålet markerar du **[!UICONTROL Authentication]** och väljer en av dina befintliga anslutningar i **[!UICONTROL Existing Account]** steget. Du kan också välja **[!UICONTROL New Account]** att konfigurera en ny anslutning. Fyll i autentiseringsuppgifter för ditt konto och välj **[!UICONTROL Connect to destination]**. För Oracle Eloqua kan du välja mellan **[!UICONTROL SFTP with Password]** och **[!UICONTROL SFTP with SSH Key]**. Fyll i informationen nedan, beroende på din anslutningstyp, och välj **[!UICONTROL Connect to destination]**.
 
-   För **SFTP med lösenordsanslutningar** måste du ange domän, port, användarnamn och lösenord.
-För **SFTP med SSH-nyckelanslutningar** måste du ange domän, port, användarnamn och SSH-nyckel.
+   För **[!UICONTROL SFTP with Password]** anslutningar måste du ange domän, port, användarnamn och lösenord.
+För **[!UICONTROL SFTP with SSH Key]** anslutningar måste du ange domän, port, användarnamn och SSH-nyckel.
 
    ![Konfigurera Eloqua-guiden](/help/rtcdp/destinations/assets/eloqua-authentication.png)
 
-3. I **konfigurationssteget** fyller du i relevant information för destinationen enligt nedan:
-   * **Namn**: Välj ett relevant namn för destinationen.
-   * **Beskrivning**: Ange en beskrivning för destinationen.
-   * **Mappsökväg**: Ange sökvägen till lagringsplatsen där CDP i realtid ska placera dina exportdata som CSV-filer eller tabbavgränsade filer.
-   * **Filformat**: **CSV** eller **TAB_DELIMITED**. Välj vilket filformat du vill exportera till lagringsplatsen.
+3. I **[!UICONTROL Setup]** steget fyller du i relevant information för destinationen enligt nedan:
+   * **[!UICONTROL Name]**: Välj ett relevant namn för destinationen.
+   * **[!UICONTROL Description]**: Ange en beskrivning för destinationen.
+   * **[!UICONTROL Folder Path]**: Ange sökvägen till lagringsplatsen där CDP i realtid ska placera dina exportdata som CSV-filer eller tabbavgränsade filer.
+   * **[!UICONTROL File Format]**: **CSV** eller **TAB_DELIMITED**. Välj vilket filformat du vill exportera till lagringsplatsen.
    ![Eloqua grundläggande information](/help/rtcdp/destinations/assets/eloqua-basic-information.png)
 
-4. Klicka på **Skapa mål** när du har fyllt i fälten ovan. Målet har skapats och du kan [aktivera segment](/help/rtcdp/destinations/activate-destinations.md) till målet.
+4. Klicka **[!UICONTROL Create destination]** när du har fyllt i fälten ovan. Målet har skapats och du kan [aktivera segment](/help/rtcdp/destinations/activate-destinations.md) till målet.
 
 ## Målattribut
 
