@@ -4,7 +4,7 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobes kunddataplattform i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobes kunddataplattform i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: 73925aa59f9981d8945fb0be6c4924e1831cf902
+source-git-commit: 336aa90cf1e059a92a36dd0ef3222ef6a6f5123b
 
 ---
 
@@ -19,17 +19,17 @@ Om du vill aktivera data till mål måste du ha [anslutit ett mål](/help/rtcdp/
 
 ## Aktivera data {#activate-data}
 
-1. I **Destinationer > Bläddra** väljer du det mål där du vill aktivera dina segment.
+1. I **[!UICONTROL Destinations > Browse]** väljer du det mål där du vill aktivera segmenten.
 2. Klicka på målets namn. Då kommer du till aktiveringsflödet.
-   ![activate-flow](/help/rtcdp/destinations/assets/activate-flow.png)Observera att om det redan finns ett aktiveringsflöde för ett mål kan du se de segment som för närvarande skickas till målet. Välj **Redigera aktivering** till höger och följ stegen nedan för att ändra aktiveringsinformationen.
-3. Välj **Aktivera**.
-4. Välj vilka segment som ska skickas till målet på sidan **Markera segment** i guiden **Aktivera mål** .
+   ![activate-flow](/help/rtcdp/destinations/assets/activate-flow.png)Observera att om det redan finns ett aktiveringsflöde för ett mål kan du se de segment som för närvarande skickas till målet. Välj **[!UICONTROL Edit activation]** i den högra listen och följ stegen nedan för att ändra aktiveringsinformationen.
+3. Välj **[!UICONTROL Activate]**;
+4. Välj vilka segment som ska skickas till målet på **[!UICONTROL Activate destination]** **[!UICONTROL Select Segments]** sidan i arbetsflödet.
    ![segment-till-mål](/help/rtcdp/destinations/assets/select-segments.png)
-5. *Villkorligt*. Det här steget gäller endast för segment som är mappade till e-postmarknadsföringsmål. <br> På sidan **Målattribut** väljer du **Lägg till nytt fält** och väljer de attribut som du vill skicka till målet.
+5. *Villkorligt*. Det här steget gäller endast för segment som är mappade till e-postmarknadsföringsmål. <br> På **[!UICONTROL Destination Attributes]** sidan markerar du **[!UICONTROL Add new field]** och väljer de attribut som du vill skicka till målet.
 Vi rekommenderar att ett av attributen är en [unik identifierare](/help/rtcdp/destinations/email-marketing-destinations.md#identity) från ditt unionsschema. Mer information om obligatoriska attribut finns i Identitet i artikeln [E-postmarknadsföringsmål](/help/rtcdp/destinations/email-marketing-destinations.md#identity) .
    ![mål-attribut](/help/rtcdp/destinations/assets/destination-attributes.png)
-6. På sidan **Schemalägg** kan du se startdatumet för att skicka data till målet samt hur ofta data skickas till målet.
-7. På sidan **Granska** ser du en sammanfattning av ditt val. Välj **Avbryt** om du vill dela upp flödet, **Bakåt** om du vill ändra inställningarna eller **Slutför** om du vill bekräfta urvalet och börja skicka data till målet.
+6. På **[!UICONTROL Schedule]** sidan kan du se startdatumet för att skicka data till målet samt hur ofta data skickas till målet.
+7. På **[!UICONTROL Review]** sidan visas en sammanfattning av markeringen. Välj **[!UICONTROL Cancel]** om du vill dela upp flödet, **[!UICONTROL Back]** om du vill ändra inställningarna eller **[!UICONTROL Finish]** om du vill bekräfta urvalet och börja skicka data till målet.
 
 ![bekräfta-val](/help/rtcdp/destinations/assets/confirm-selection.png)
 
@@ -37,7 +37,7 @@ Vi rekommenderar att ett av attributen är en [unik identifierare](/help/rtcdp/d
 
 Följ stegen nedan för att redigera befintliga aktiveringsflöden i realtid med CDP:
 
-1. Välj **Destinationer** i det vänstra navigeringsfältet, klicka på fliken **Bläddra** och klicka på målnamnet.
+1. Markera **[!UICONTROL Destinations]** i det vänstra navigeringsfältet, klicka på **[!UICONTROL Browse]** fliken och klicka på målnamnet.
 2. Välj **[!UICONTROL Edit activation]** i den högra listen för att ändra vilka segment som ska skickas till målet.
 
 ## Verifiera att segmentaktiveringen lyckades {#verify-activation}
@@ -65,7 +65,7 @@ Kontrollera respektive annonsmål som du aktiverar dina data till. Om aktivering
 
 Följ stegen nedan för att inaktivera ett befintligt aktiveringsflöde:
 
-1. Välj **Destinationer** i det vänstra navigeringsfältet, klicka på fliken **Bläddra** och klicka på målnamnet.
+1. Markera **[!UICONTROL Destinations]** i det vänstra navigeringsfältet, klicka på **[!UICONTROL Browse]** fliken och klicka på målnamnet.
 2. Klicka på **[!UICONTROL Enabled]** kontrollen till höger för att ändra aktiveringsflödets status.
 3. I fönstret **Uppdatera dataflöde** väljer du **Bekräfta** för att inaktivera aktiveringsflödet.
 
