@@ -4,7 +4,7 @@ seo-title: Mål för Google Ad Manager
 description: 'Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar. '
 seo-description: 'Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar. '
 translation-type: tm+mt
-source-git-commit: 3e510c891c84fb3dc1632bd1182ef1e010ea898f
+source-git-commit: 336aa90cf1e059a92a36dd0ef3222ef6a6f5123b
 
 ---
 
@@ -48,14 +48,14 @@ Innan du skapar Google Ad Manager-målet i Adobe Real-time CDP måste du kontakt
 1. I **[!UICONTROL Connections > Destinations]** väljer du Google Ad Manager och sedan **[!UICONTROL Create destination]**.
    ![Anslut Google Ad Manager-mål](/help/rtcdp/destinations/assets/google-1-destination.png)
 
-2. Fyll i Grundläggande information för målet i guiden Skapa mål.
+2. I arbetsflödet Skapa mål fyller du i [!UICONTROL Basic Information] för målet.
    ![Grundläggande information Google Ad Manager](/help/rtcdp/destinations/assets/google-1-basic-information.png)
-* **Namn**: Fyll i det önskade namnet för det här målet.
-* **Beskrivning**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
-* **Kontotyp**: Välj ett alternativ, beroende på ditt konto hos Google:
+* **[!UICONTROL Name]**: Fyll i det önskade namnet för det här målet.
+* **[!UICONTROL Description]**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
+* **[!UICONTROL Account Type]**: Välj ett alternativ, beroende på ditt konto hos Google:
    * Använd `DFP by Google` för DoubleClick för utgivare
    * Använd `AdX buyer` för Google AdX
-* **Konto-ID**: Fyll i ditt konto-ID med Google. Detta kan vara ditt nätverks-ID eller ditt Audience Link-ID. Vanligtvis är detta ett åttasiffrigt ID.
+* **[!UICONTROL Account ID]**: Fyll i ditt konto-ID med Google. Detta kan vara ditt nätverks-ID eller ditt Audience Link-ID. Vanligtvis är detta ett åttasiffrigt ID.
 
 >[!NOTE]
 >
