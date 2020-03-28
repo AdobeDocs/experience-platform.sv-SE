@@ -4,7 +4,7 @@ seo-title: Google Display & Video 360 Destination
 description: Display & Video 360, tidigare DoubleClick Bid Manager, är ett verktyg som används för att utföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display, Video och Mobile.
 seo-description: 'Display & Video 360, tidigare DoubleClick Bid Manager, är ett verktyg som används för att utföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display, Video och Mobile. '
 translation-type: tm+mt
-source-git-commit: 810028edc662a7f52484e37cf0fbdfafe5db650f
+source-git-commit: 336aa90cf1e059a92a36dd0ef3222ef6a6f5123b
 
 ---
 
@@ -46,14 +46,14 @@ Innan du skapar Google Display &amp; Video 360-destinationen i Adobe Real-time C
 1. I **[!UICONTROL Connections > Destinations]** väljer du Google Display &amp; Video 360 och sedan **[!UICONTROL Create destination]**.
    ![Connect Google Display &amp; Video 360 destination](/help/rtcdp/destinations/assets/google-dv360-destination.png)
 
-2. Fyll i Grundläggande information för målet i guiden Skapa mål.
+2. I arbetsflödet Skapa mål fyller du i [!UICONTROL Basic Information] för målet.
    ![Grundläggande information, Google Display och Video 360](/help/rtcdp/destinations/assets/google-dv360-basic-information.png)
-* **Namn**: Fyll i det önskade namnet för det här målet.
-* **Beskrivning**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
-* **Kontotyp**: Välj ett alternativ, beroende på ditt konto hos Google:
+* **[!UICONTROL Name]**: Fyll i det önskade namnet för det här målet.
+* **[!UICONTROL Description]**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
+* **[!UICONTROL Account Type]**: Välj ett alternativ, beroende på ditt konto hos Google:
    * Används `Invite Advertiser` för att tillåta att målgrupper delas endast till ett visst varumärke i ditt Display &amp; Video 360-konto.
    * Används `Invite Partner` för att tillåta målgrupper att delas med alla varumärken i ditt Display &amp; Video 360-konto.
-* **Konto-ID**: Fyll i ditt **[!DNL Invite partner]** - eller **[!DNL Invite advertiser]** konto-ID med Google. Vanligtvis är detta ett ID med sex eller sju siffror.
+* **[!UICONTROL Account ID]**: Fyll i ditt **[!DNL Invite partner]** - eller **[!DNL Invite advertiser]** konto-ID med Google. Vanligtvis är detta ett ID med sex eller sju siffror.
 
 >[!NOTE]
 >
