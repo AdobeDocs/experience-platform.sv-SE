@@ -4,7 +4,7 @@ seo-title: Mål för Google Ads
 description: Google Ads, som tidigare kallades Google AdWords, är en onlinereklam som gör att företag kan betala per klick för annonsering vid textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appar.
 seo-description: Google Ads, som tidigare kallades Google AdWords, är en onlinereklam som gör att företag kan betala per klick för annonsering vid textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appar.
 translation-type: tm+mt
-source-git-commit: 3e510c891c84fb3dc1632bd1182ef1e010ea898f
+source-git-commit: 336aa90cf1e059a92a36dd0ef3222ef6a6f5123b
 
 ---
 
@@ -51,12 +51,12 @@ Innan du skapar Google Ads-målet i Adobe Real-time CDP måste du kontakta Googl
 1. I **[!UICONTROL Connections > Destinations]** väljer du Google Ads och sedan **[!UICONTROL Create destination]**.
    ![Anslut Google Ads-mål](/help/rtcdp/destinations/assets/google-2-destination.png)
 
-2. Fyll i Grundläggande information för målet i guiden Skapa mål.
+2. I arbetsflödet Skapa mål fyller du i [!UICONTROL Basic Information] för målet.
    ![Grundläggande information för Google Ads](/help/rtcdp/destinations/assets/google-2-basic-information.png)
-* **Namn**: Fyll i det önskade namnet för det här målet.
-* **Beskrivning**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
-* **Kontotyp**: AdWords är det enda tillgängliga alternativet.
-* **Konto-ID**: Fyll i ditt konto-ID med Google Ads. ID-formatet är vanligtvis 123-456-7890.
+* **[!UICONTROL Name]**: Fyll i det önskade namnet för det här målet.
+* **[!UICONTROL Description]**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
+* **[!UICONTROL Account Type]**: AdWords är det enda tillgängliga alternativet.
+* **[!UICONTROL Account ID]**: Fyll i ditt konto-ID med Google Ads. ID-formatet är vanligtvis 123-456-7890.
 
 ## Aktivera segment för Google Ads
 
