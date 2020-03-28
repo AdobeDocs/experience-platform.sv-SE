@@ -4,7 +4,7 @@ seo-title: Arbetsflöde för molnlagringsmål
 description: Instruktioner för att ansluta till lagringsplatser i molnet
 seo-description: Instruktioner för att ansluta till lagringsplatser i molnet
 translation-type: tm+mt
-source-git-commit: c3fe5753fb23f99076f9c85b4e07af2d25a121a9
+source-git-commit: 336aa90cf1e059a92a36dd0ef3222ef6a6f5123b
 
 ---
 
@@ -19,7 +19,7 @@ På den här sidan beskrivs hur du kan ansluta till molnlagringsplatser i Adobe 
 
    ![Anslut till molnlagringsmålet](/help/rtcdp/destinations/assets/connect-cloud-destination.png)
 
-2. Om du tidigare har konfigurerat en anslutning till molnlagringsmålet i **autentiseringssteget** markerar du **[!UICONTROL Existing Account]** och väljer den befintliga anslutningen. Du kan också välja **[!UICONTROL New Account]** att konfigurera en ny anslutning till molnlagringsmålet. Fyll i autentiseringsuppgifter för ditt konto och välj **[!UICONTROL Connect to destination]**. Se [Amazon S3-mål](/help/rtcdp/destinations/amazon-s3-destination.md) och [SFTP-mål](/help/rtcdp/destinations/sftp-destination.md) för mer information om inloggningsuppgifter i steget **Autentisering** .
+2. Om du tidigare har konfigurerat en anslutning till molnlagringsmålet markerar du den befintliga anslutningen i **[!UICONTROL Authentication]** steget **[!UICONTROL Existing Account]** . Du kan också välja **[!UICONTROL New Account]** att konfigurera en ny anslutning till molnlagringsmålet. Fyll i autentiseringsuppgifter för ditt konto och välj **[!UICONTROL Connect to destination]**. Se [Amazon S3-mål](/help/rtcdp/destinations/amazon-s3-destination.md) och [SFTP-mål](/help/rtcdp/destinations/sftp-destination.md) för mer information om inloggningsuppgifter i steget **Autentisering** .
 
    >[!NOTE]
    >
