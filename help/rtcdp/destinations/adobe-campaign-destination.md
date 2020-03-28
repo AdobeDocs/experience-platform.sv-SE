@@ -4,7 +4,7 @@ seo-title: Adobe Campaign
 description: Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera och leverera kampanjer i alla kanaler, både online och offline.
 seo-description: Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera och leverera kampanjer i alla kanaler, både online och offline.
 translation-type: tm+mt
-source-git-commit: 3b9584cca8943c52bb3d8e4512d327d3dbeb9e04
+source-git-commit: 336aa90cf1e059a92a36dd0ef3222ef6a6f5123b
 
 ---
 
@@ -23,25 +23,25 @@ Om du vill skicka segmentdata till Adobe Campaign måste du först [ansluta dest
 
    ![Anslut till Adobes kampanj](/help/rtcdp/destinations/assets/connect-adobe-campaign.png)
 
-1. Välj lagringsplats **[!UICONTROL Connection type]** i guiden Anslut till mål. För Adobe Campaign kan du välja mellan **Amazon S3**, **SFTP med lösenord** och **SFTP med SSH-nyckel**. Fyll i informationen nedan, beroende på vilken typ av anslutning du har, och välj sedan **[!UICONTROL Connect]**.
+1. I arbetsflödet för anslutningsmål väljer du **[!UICONTROL Connection type]** lagringsplats. För Adobe Campaign kan du välja mellan **[!UICONTROL Amazon S3]**, **[!UICONTROL SFTP with Password]** och **[!UICONTROL SFTP with SSH Key]**. Fyll i informationen nedan, beroende på vilken typ av anslutning du har, och välj sedan **[!UICONTROL Connect]**.
 
    ![Konfigurera kampanjguiden](/help/rtcdp/destinations/assets/adobe-campaign-wizard.png)
 
-   För **S3** -anslutningar måste du ange ditt nyckel-ID och hemlig åtkomstnyckel.
-För **SFTP med lösenordsanslutningar** måste du ange domän, port, användarnamn och lösenord.
-För **SFTP med SSH-nyckelanslutningar** måste du ange domän, port, användarnamn och SSH-nyckel.
+   För **[!UICONTROL Amazon S3]** anslutningar måste du ange ditt ID för åtkomstnyckel och hemlig åtkomstnyckel.
+För **[!UICONTROL SFTP with Password]** anslutningar måste du ange domän, port, användarnamn och lösenord.
+För **[!UICONTROL SFTP with SSH Key]** anslutningar måste du ange domän, port, användarnamn och SSH-nyckel.
 
    ![Fyll i Campaign-information](/help/rtcdp/destinations/assets/adobe-campaign-step2.png)
 
-1. I **Grundläggande information**, fyll i relevant information för destinationen enligt nedan:
-   * **Namn**: Välj ett relevant namn för destinationen.
-   * **Beskrivning**: Ange en beskrivning för destinationen.
-   * **Buckennamn**: *För S3-anslutningar*. Ange platsen för S3-bucket där CDP i realtid ska placera dina exportdata som CSV- eller tabbavgränsade filer.
-   * **Mappsökväg**: Ange sökvägen till lagringsplatsen där CDP i realtid ska placera dina exportdata som CSV-filer eller tabbavgränsade filer.
-   * **Filformat**: **CSV** eller **TAB_DELIMITED**. Välj vilket filformat du vill exportera till lagringsplatsen.
+1. Fyll i **[!UICONTROL Basic Information]** den relevanta informationen för destinationen enligt nedan:
+   * **[!UICONTROL Name]**: Välj ett relevant namn för destinationen.
+   * **[!UICONTROL Description]**: Ange en beskrivning för destinationen.
+   * **[!UICONTROL Bucket Name]**: *För S3-anslutningar*. Ange platsen för S3-bucket där CDP i realtid ska placera dina exportdata som CSV- eller tabbavgränsade filer.
+   * **[!UICONTROL Folder Path]**: Ange sökvägen till lagringsplatsen där CDP i realtid ska placera dina exportdata som CSV-filer eller tabbavgränsade filer.
+   * **[!UICONTROL File Format]**: **CSV** eller **TAB_DELIMITED**. Välj vilket filformat du vill exportera till lagringsplatsen.
    ![Grundläggande information om kampanj](/help/rtcdp/destinations/assets/adobe-campaign-basic-information.png)
 
-1. Klicka på **Skapa** när du har fyllt i fälten i **Grundläggande information**. Målet är nu anslutet och du kan [aktivera segment](/help/rtcdp/destinations/activate-destinations.md) till målet.
+1. Klicka **[!UICONTROL Create]** när du har fyllt i fälten ovan. Målet är nu anslutet och du kan [aktivera segment](/help/rtcdp/destinations/activate-destinations.md) till målet.
 
 ## Målattribut {#destination-attributes}
 
