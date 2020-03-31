@@ -4,7 +4,7 @@ seo-title: Datastyrning i kunddataplattformen i realtid
 description: 'Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. '
 seo-description: 'Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. '
 translation-type: tm+mt
-source-git-commit: f5fbb1434b7154dcdbef12de7882ecd3d2f18d52
+source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
 
 ---
 
@@ -17,11 +17,11 @@ Med Adobe Experience Platform Data Governance kan ni hantera kunddata och säker
 
 CDP i realtid är byggt på Adobe Experience Platform och därför ingår de flesta datastyrningsfunktionerna i dokumentationen för Experience Platform. Detta dokument är avsett att komplettera [datastyrningsöversikten](https://www.adobe.io/apis/experienceplatform/home/dule/duleservices.html#!api-specification/markdown/narrative/technical_overview/data_governance/dule_overview.md) för Experience Platform och sammanfattar de styrningsfunktioner som finns i CDP i realtid. Följande ämnen behandlas:
 
-* [Använd användningsetiketter på dina data](#apply-usage-labels-to-your-data)
-* [Hantera dataanvändningsprinciper](#manage-data-usage-policies)
-* [Klara regelefterlevnaden](#enforce-data-usage-compliance)
+* [Använd användningsetiketter på dina data](#labels)
+* [Hantera dataanvändningsprinciper](#policies)
+* [Klara regelefterlevnaden](#enforcement)
 
-## Använd användningsetiketter på dina data
+## Använd användningsetiketter på dina data {#labels}
 
 Med datastyrning kan du använda användningsetiketter på dina data, antingen på datamängdsnivå eller datamängdsfältnivå. Med etiketter för dataanvändning kan du kategorisera data enligt de användarprofiler som gäller för dessa data.
 
@@ -34,7 +34,7 @@ Du kan ange begränsningar för dataanvändning för ett mål genom att definier
 Marknadsföringsanvändningsfall kan definieras under _konfigurationsfasen_ för arbetsflödet _Redigera mål_ . Mer information finns i måldokumentationen.
 
 
-## Hantera dataanvändningsprinciper
+## Hantera dataanvändningsprinciper {#policies}
 
 För att dataanvändningsetiketter effektivt ska kunna stödja regelefterlevnad måste dataanvändningsprinciper definieras och aktiveras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom CDP i realtid. Mer information finns i avsnittet Dataanvändningsprinciper i Experience Platform [Data Governance-översikten](https://www.adobe.io/apis/experienceplatform/home/dule/duleservices.html#!api-specification/markdown/narrative/technical_overview/data_governance/dule_overview.md) .
 
@@ -56,7 +56,7 @@ När ett segment aktiveras för första gången kontrollerar DULE Policy Service
 * De dataanvändningsetiketter som används för fält och datauppsättningar i segmentet som ska aktiveras.
 * Destinationens marknadsföringssyfte.
 
-### Policyfelsmeddelanden
+### Policyfelsmeddelanden {#enforcement}
 
 Om en principöverträdelse inträffar från försök att aktivera ett segment (eller [göra ändringar i ett redan aktiverat segment](#policy-enforcement-for-activated-segments)) förhindras åtgärden och en pover visas som anger att en eller flera profiler har överträtts. Välj en principöverträdelse i poverarens vänstra kolumn för att visa information om den överträdelsen.
 
