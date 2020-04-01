@@ -1,0 +1,132 @@
+---
+keywords: Experience Platform;home;popular topics
+solution: Experience Platform
+title: Användarhandbok för Integritetstjänst
+topic: UI guide
+translation-type: tm+mt
+source-git-commit: 4b7cbfcbcbaa602d92f3dfe814b1269f770e3fe7
+
+---
+
+
+# Användarhandbok för Integritetstjänst
+
+Det här dokumentet innehåller steg för hur du skapar och hanterar sekretessförfrågningar med hjälp av användargränssnittet för sekretesstjänsten.
+
+## Bläddra i kontrollpanelen för sekretesstjänsten
+
+Kontrollpanelen för användargränssnittet för sekretesstjänsten innehåller två widgetar som gör att du kan visa statusen för dina sekretessjobb: **Statusrapport** och **jobbförfrågningar**. Kontrollpanelen visar även den aktuella valda regeln för de visade jobben.
+
+![Kontrollpanel för användargränssnitt](../images/user-guide/dashboard.png)
+
+### Regeltyp
+
+Integritetstjänsten stöder jobbförfrågningar för två regeltyper:
+
+* Den allmänna dataskyddsförordningen (GDPR)
+* California Consumer Privacy Act (CCPA).
+
+Jobb för varje regel spåras separat. Om du vill växla mellan olika regeltyper klickar du på listrutan **Regeltyp** och väljer önskad regel i listan.
+
+![Regeltyp, listruta](../images/user-guide/regulation.png)
+
+När du ändrar regeltypen uppdateras instrumentpanelen så att alla åtgärder, filter, widgetar och dialogrutor för att skapa jobb som gäller för den valda förordningen visas.
+
+![Uppdaterad instrumentpanel](../images/user-guide/dashboard-update.png)
+
+### Statusrapport
+
+I diagrammet till vänster i widgeten Statusrapport spåras skickade jobb mot jobb som kan ha rapporterats tillbaka med fel. I diagrammet till höger spåras jobb som närmar sig slutet av det 30 dagar långa kompatibilitetsfönstret.
+
+Klicka på en av de två växlingsknapparna ovanför diagrammet för att visa eller dölja deras respektive mätvärden.
+
+![](../images/user-guide/hide-errors.png)
+
+Du kan visa det exakta antalet jobb som är kopplade till en datapunkt i diagrammen genom att hålla muspekaren över datapunkten i fråga.
+
+![Datapunkter för muspekaren](../images/user-guide/mouse-over.png)
+
+Om du vill visa mer information om en viss datapunkt klickar du på datapunkten i fråga för att visa de associerade jobben i widgeten Jobbförfrågningar. Observera filtret som används precis ovanför jobblistan.
+
+![Använt filter från widget](../images/user-guide/apply-filter.png)
+
+>[!NOTE] När ett filter har tillämpats på widgeten Jobbförfrågningar kan du ta bort filtret genom att klicka på **X** i filterpillet. Jobbförfrågningar återgår sedan till standardspårningslistan.
+
+### Jobbförfrågningar
+
+Widgeten Jobbförfrågningar visar alla tillgängliga jobbförfrågningar i din organisation, inklusive information som typ av förfrågan, aktuell status, förfallodatum och e-postadress till begärande.
+
+>[!NOTE] Data för tidigare skapade jobb är bara tillgängliga i 30 dagar efter slutförandedatumet.
+
+Du kan filtrera listan genom att skriva nyckelord i sökfältet under rubriken Jobbförfrågningar. Listan filtreras automatiskt medan du skriver och visar begäranden som innehåller värden som matchar söktermerna. Du kan också använda listrutan **Begärd vid** för att välja ett tidsintervall för de listade jobben.
+
+![Sökalternativ för jobbförfrågan](../images/user-guide/job-search.png)
+
+Om du vill visa information om en viss jobbförfrågan klickar du på begärans jobb-ID i listan för att öppna sidan *Jobbinformation* .
+
+![Information om användargränssnittsjobb för GDPR](../images/user-guide/job-details.png)
+
+Den här dialogrutan innehåller statusinformation om varje Experience Cloud-lösning och dess aktuella status i relation till det övergripande jobbet. Eftersom alla sekretessjobb är asynkrona visar sidan det senaste datumet och den senaste tiden (GMT) för varje lösning, eftersom vissa kräver mer tid än andra för att behandla begäran.
+
+Om en lösning har tillhandahållit ytterligare data kan den visas i den här dialogrutan. Du kan visa dessa data genom att klicka på enskilda produktrader.
+
+Om du vill hämta alla jobbdata som en CSV-fil klickar du på **Exportera till CSV** högst upp till höger i dialogrutan.
+
+## Skapa en ny begäran om sekretessjobb
+
+Sekretessgränssnittet i tjänsten tillhandahåller två metoder för att skapa nya jobbförfrågningar:
+
+* Använda Request Builder
+* Överföra en JSON-fil
+
+Steg för att använda dessa metoder finns i följande avsnitt.
+
+### Använda Request Builder
+
+Med hjälp av Request Builder kan du manuellt skapa en ny begäran om sekretessjobb i användargränssnittet. Request Builder är bäst att använda för enklare och mindre uppsättningar av begäranden eftersom Request Builder begränsar antalet begäranden som bara har ID-typ per användare. För mer komplicerade begäranden kan det vara bättre att [överföra en JSON-fil](#upload-a-json-file) i stället.
+
+Om du vill börja använda Request Builder klickar du på **Create Request** (Skapa begäran) under widgeten Status Report (Statusrapport) till höger på skärmen.
+
+![Klicka på Skapa förfrågan](../images/user-guide/create-request.png)
+
+Dialogrutan *Skapa begäran* öppnas och visar tillgängliga alternativ för att skicka en begäran om sekretessjobb för den valda regeltypen.
+
+![](../images/user-guide/request-builder.png)
+
+Välj **jobbtyp** för begäran (&quot;Ta bort&quot; eller&quot;Åtkomst&quot;) och en eller flera tillgängliga **produkter** i listan. Under **Kund-ID** väljer du en ID-typ i listrutan (e-post, ECID eller AID). Skriv ID-värdena i textrutan till höger och tryck på **\&lt;enter>** för varje ID för att lägga till det i listan.
+
+![](../images/user-guide/request-builder-fillout.png)
+
+De ID:n som ingår i den här listan får en kopia av alla e-postmeddelanden från sekretesstjänsten som skickas när ett jobb har slutförts, avslutas med fel eller timeout. När du är klar klickar du på **Skapa**.
+
+![](../images/user-guide/request-builder-create.png)
+
+Dialogrutan försvinner och det nya jobbet (eller de nya jobben) visas i widgeten Jobbförfrågningar tillsammans med deras aktuella bearbetningsstatus.
+
+### Överföra en JSON-fil
+
+När du skapar mer komplicerade begäranden, t.ex. sådana som använder flera ID-typer för varje registrerade som behandlas, kan du skapa en begäran genom att överföra en JSON-fil.
+
+Klicka på pilen bredvid **Skapa begäran**, under widgeten Statusrapport till höger på skärmen. Välj **Överför JSON** i listan med alternativ som visas.
+
+![Alternativ för att skapa förfrågningar](../images/user-guide/create-options.png)
+
+Dialogrutan *Överför JSON* visas. Där finns ett fönster där du kan dra och släppa JSON-filen till.
+
+![](../images/user-guide/upload-json.png)
+
+Om du inte har någon JSON-fil att överföra klickar du på **Hämta Adobe-GDPR-Request.json** för att hämta en mall som du kan fylla i enligt de värden du har samlat in från de registrerade.
+
+
+![](../images/user-guide/privacy-template.png)
+
+
+Leta reda på JSON-filen på datorn och dra den till dialogfönstret. Om överföringen lyckas visas filnamnet i dialogrutan. Du kan fortsätta lägga till fler JSON-filer om det behövs genom att dra och släppa dem i dialogrutan.
+
+När du är klar klickar du på **Skapa**. Dialogrutan försvinner och det nya jobbet (eller de nya jobben) visas i widgeten _Jobbförfrågningar_ tillsammans med deras aktuella bearbetningsstatus.
+
+### Nästa steg
+
+Genom att läsa det här dokumentet har du lärt dig hur du använder användargränssnittet för sekretesstjänsten för att skapa ett sekretessjobb, visa information om ett jobb och övervaka dess bearbetningsstatus, och ladda ned resultaten när det är klart.
+
+Anvisningar om hur du utför dessa åtgärder programmatiskt med hjälp av sekretesstjänstens API finns i [utvecklarhandboken](../api/getting-started.md).
