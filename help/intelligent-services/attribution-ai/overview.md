@@ -1,0 +1,60 @@
+---
+keywords: Experience Platform;attribution ai;overview;popular topics
+solution: Experience Platform
+title: Översikt över AI-attribut
+topic: Attribution AI
+translation-type: tm+mt
+source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+
+---
+
+
+# Översikt över AI-attribut
+
+Attribution AI, som en del av Intelligent Services är en flerkanalig algoritmisk attribueringstjänst som beräknar påverkan och inkrementell påverkan av kundinteraktioner mot angivna resultat. Med Attribution AI kan marknadsförarna mäta och optimera marknadsförings- och annonskostnader genom att förstå effekten av varje enskild kundinteraktion under varje fas av kundresan.
+
+## Förstå attribut-AI
+
+Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor. Exempel på kontaktytor är visningar av webbannonser, e-postmeddelanden, e-postöppningar och betalda sökningar.
+
+AI-utdata för attribuering kan delas upp i olika dimensioner och kan användas i olika faser av kundresan. Detta uppnås utan att man behöver översätta affärsbehoven till maskininlärningsproblem, plockalgoritmer, utbildning eller driftsättningsmodeller.
+
+Attribution AI data kan komma från Adobe (t.ex. Analytics) eller andra datakällor än Adobe.
+
+Attribution AI har stöd för två kategorier med poäng, algoritmiska och regelbaserade. Algoritmiska poäng inkluderar inkrementella och påverkade poäng. Regelbaserade resultat inkluderar First Touch, Last Touch, Linear, U-shaped och Time-Decay.
+
+## AI-algoritmiska poäng för attribuering
+
+Attribution AI stöder två kategorier av attribueringspoäng, algoritmiska och regelbaserade poäng.
+
+Attribution AI ger två olika typer av algoritmiska poäng, inkrementellt och påverkat. En påverkad poäng är den del av konverteringen som varje marknadsföringskontaktyta ansvarar för. En inkrementell poäng är mängden marginell påverkan som direkt orsakas av kontaktytan för marknadsföring. Den största skillnaden mellan det stegvisa poängvärdet och det poängvärde som påverkas är att det stegvisa poängvärdet tar baslinjeeffekten i beaktande. Man utgår inte från att en konvertering enbart orsakas av de föregående kontaktytorna.
+
+Se tabellen nedan för mer information om var och en av dessa attribueringspoäng:
+
+| Attributionspoäng | Beskrivning |
+| ----- | ----------- |
+| Första beröring | Regelbaserat attribueringspoäng som tilldelar alla krediter till den första kontaktytan på en konverteringsbana. |
+| Sista beröring | Regelbaserat attribueringspoäng som tilldelar all kredit till den kontaktyta som ligger närmast konverteringen. |
+| Linjär | Regelbaserat attribueringspoäng som tilldelar varje kontaktyta samma poäng på en konverteringsbana. |
+| U-formad | Regelbaserat attribueringspoäng som tilldelar 40 % av krediten till den första kontaktytan och 40 % av krediten till den sista kontaktytan, där de andra kontaktytorna delar upp de återstående 20 % jämnt. |
+| Tidsminskning | Regelbaserat attribueringspoäng där kontaktytor som ligger närmare konverteringen får mer kredit än kontaktytor som ligger längre bort från konverteringen. |
+| Influerad (algoritmisk) | Påverkade poäng är den del av konverteringen som varje kontaktyta för marknadsföring ansvarar för. |
+| Inkrementell (algoritmisk) | Inkrementell poäng är mängden marginell påverkan som direkt orsakas av en kontaktyta för marknadsföring. |
+
+## Exempel på användningsområden
+
+Attribution AI kan användas för att hjälpa till med följande exempel på användningsområden:
+
+- **Verkställande rapportering**: Låt cheferna förstå den verkliga inkrementella effekten av marknadsföring, både som helhet och efter kanal, region, SKU osv.
+- **Budgettilldelning**: Informera om budgetallokeringsbeslut i alla marknadsföringskanaler.
+- **Kampanjoptimering**: I varje kanal kan du förstå vilka kampanjer, kreatörer och nyckelord som fungerar bättre för vilka SKU:er eller geos. På så sätt kan ni titta på varje kanal så att marknadsföringsteamet kan optimera taktikerna.
+- **Fullständig attribuering**: Förstå hur marknadsföringen påverkar hela kundresan. Exempel: kostnadsfri kontoregistrering till betalkonvertering och vidare.
+- **Partnerutvärderingar**: Utvärdera effektiviteten hos myndigheter och partners utifrån attribueringsresultaten.
+
+### Ytterligare funktioner
+
+Attribution AI erbjuder även integrering med andra Adobe-lösningar som Adobe Analytics. På så sätt kan ni använda dessa lösningar för att använda den anpassningsbara algoritmiska modellen för att utvärdera mediaprestanda och ge analytiska insikter.
+
+## Nästa steg
+
+Du kan börja med att följa guiden [Komma igång](./getting-started.md) . I den här guiden får du hjälp med att konfigurera alla nödvändiga förbegäranden för Attribution AI. Om du redan har dina autentiseringsuppgifter och data klara kan du gå till användarhandboken för [Attribution AI](./user-guide.md). I den här guiden får du hjälp med att skapa en instans och skicka in den för utbildning och poängsättning.
