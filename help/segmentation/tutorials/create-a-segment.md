@@ -181,7 +181,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar information om det nya förhandsgranskningsjobbet, inklusive dess ID och det aktuella bearbetningstillståndet.
+Ett godkänt svar returnerar information om det nya förhandsgranskningsjobbet, inklusive dess ID och det aktuella bearbetningstillståndet.
 
 ```json
 {
