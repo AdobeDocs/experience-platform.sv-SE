@@ -399,7 +399,7 @@ def split(self, configProperties={}, dataframe=None):
 Funktionen utförs `evaluate()` efter att modellen har tränats och returnerar ett mått som anger hur framgångsrik modellen är. Funktionen använder `evaluate()` testdatauppsättningsrubrikerna och den utbildade modellen för att förutsäga en uppsättning funktioner. Dessa förväntade värden jämförs sedan med de faktiska funktionerna i testdatauppsättningen. Vanliga bedömningsalgoritmer är:
 - [Genomsnittligt absolut procentfel (MAPE)](https://en.wikipedia.org/wiki/Mean_absolute_percentage_error)
 - [Medel absolut fel (MAE)](https://en.wikipedia.org/wiki/Mean_absolute_error)
-- [RMSE (Root-Mean-square error)](https://en.wikipedia.org/wiki/Root-mean-square_deviation)
+- [RMSE (Root-ean-square error)](https://en.wikipedia.org/wiki/Root-mean-square_deviation)
 
 
 Funktionen `evaluate()` i exemplet med försäljning inom detaljhandeln visas nedan:
