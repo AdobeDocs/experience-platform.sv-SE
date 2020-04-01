@@ -4,14 +4,14 @@ solution: Experience Platform
 title: Skapa ett segment
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 902ba5efbb5f18a2de826fffd023195d804309cc
+source-git-commit: 7f61cee8fb5160d0f393f8392b4ce2462d602981
 
 ---
 
 
 # Skapa ett segment
 
-Det här dokumentet innehåller en självstudiekurs för att utveckla, testa, förhandsgranska och spara en segmentdefinition med [kundprofils-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)i realtid.
+Det här dokumentet innehåller en självstudiekurs för att utveckla, testa, förhandsgranska och spara en segmentdefinition med hjälp av [Segmenterings-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml).
 
 Mer information om hur du skapar segment med användargränssnittet finns i guiden [](../ui/overview.md)Skapa segment.
 
@@ -181,7 +181,7 @@ curl -X POST \
 
 **Svar**
 
-Ett godkänt svar returnerar information om det nya förhandsgranskningsjobbet, inklusive dess ID och det aktuella bearbetningstillståndet.
+Ett lyckat svar returnerar information om det nya förhandsgranskningsjobbet, inklusive dess ID och det aktuella bearbetningstillståndet.
 
 ```json
 {
