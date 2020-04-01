@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Unions
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: fabaabc3cc5b82cba084bddd081f5bba670b89f0
+source-git-commit: 7f61cee8fb5160d0f393f8392b4ce2462d602981
 
 ---
 
@@ -31,7 +31,7 @@ Arrayen `timeSeriesEvents` är en lista med händelser i tidsserier som relatera
 
 ### Segmentmedlemskapskarta
 
-Kartan innehåller resultaten av `segmentMembership` segmentutvärderingar. När segmentjobben körs med [Real-time Customer Profile API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)uppdateras kartan. `segmentMembership` lagrar också alla förutvärderade målgruppssegment som är inkapslade i Platform, vilket möjliggör integrering med andra lösningar som Adobe Audience Manager.
+Kartan innehåller resultaten av `segmentMembership` segmentutvärderingar. När segmentjobben körs med [segmenterings-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml)uppdateras kartan. `segmentMembership` lagrar också alla förutvärderade målgruppssegment som är inkapslade i Platform, vilket möjliggör integrering med andra lösningar som Adobe Audience Manager.
 
 Mer information finns i självstudiekursen om hur du [skapar segment med API:er](../../segmentation/tutorials/create-a-segment.md) .
 
