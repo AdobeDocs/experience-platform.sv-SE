@@ -5,7 +5,7 @@ description: I den här självstudiekursen finns anvisningar om hur du använder
 seo-description: I den här självstudiekursen finns anvisningar om hur du använder AI för kunder (alfa)
 index: false
 translation-type: tm+mt
-source-git-commit: 1118983ce8f5704ef3a347c8c316a9cc5cc62815
+source-git-commit: e0d11adb7f0ece9344efb118b4199ecb1fc37bb3
 
 ---
 
@@ -88,7 +88,7 @@ Uteslut händelser efter behov och klicka sedan på **Slutför** för att skapa 
 
 Om instansen skapas utan fel kommer en förutsägelsekörning att omedelbart aktiveras och efterföljande körs enligt ditt definierade schema.
 
->   **Obs!** Beroende på storleken på indata kan det ta upp till 24 timmar att slutföra förutsägelser.
+>[!NOTE] Beroende på storleken på indata kan det ta upp till 24 timmar att slutföra förutsägelser.
 
 Genom att följa det här avsnittet har du konfigurerat en instans av Kundens AI och en förutsägelsekörning utfördes. När körningen är klar kommer poängsatta insikter automatiskt att utrusta profiler med förutbestämda poäng. Vänta 24 timmar innan du fortsätter till nästa avsnitt i den här självstudiekursen.
 
