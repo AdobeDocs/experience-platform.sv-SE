@@ -1,0 +1,322 @@
+---
+keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API
+solution: Adobe Experience Platform
+title: Utvecklarhandbok för kundprofil-API i realtid
+topic: guide
+translation-type: tm+mt
+source-git-commit: d0ccaa5511375253a2eca8f1235c2f953b734709
+
+---
+
+
+# Profilsystemjobb (Delete-begäranden)
+
+Med Adobe Experience Platform kan ni importera data från flera olika källor och bygga robusta profiler för enskilda kunder. Data som hämtas till Platform lagras i Data Lake samt i datalagret för kundprofiler i realtid. Ibland kan det vara nödvändigt att ta bort en datauppsättning eller en batch från profilarkivet för att ta bort data som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder Real-time Customer Profile API för att skapa ett profilsystemjobb, även kallat&quot;delete request&quot;, som också kan ändras, övervakas eller tas bort vid behov.
+
+>[!NOTE]
+>Om du försöker ta bort datauppsättningar eller grupper från datasjön kan du få instruktioner i översikten [över](../../catalog/home.md) katalogtjänsten.
+
+## Komma igång
+
+API-slutpunkterna som används i den här guiden ingår i kundprofils-API:t i realtid. Innan du fortsätter bör du läsa utvecklarhandboken för [kundprofiler i realtid](getting-started.md). Avsnittet [](getting-started.md#getting-started) Komma igång i guiden för profilutvecklare innehåller länkar till relaterade ämnen, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa API:er för Experience Platform.
+
+## Visa borttagningsbegäranden
+
+En borttagningsbegäran är en långvarig, asynkron process, vilket innebär att din organisation kan köra flera borttagningsbegäranden samtidigt. Om du vill visa alla borttagningsbegäranden som din organisation för närvarande kör kan du utföra en GET-begäran till `/system/jobs` slutpunkten.
+
+Du kan också använda valfria frågeparametrar för att filtrera listan med borttagningsbegäranden som returneras i svaret. Om du vill använda flera parametrar avgränsar du dem med ett et-tecken (&amp;).
+
+**API-format**
+
+```http
+GET /system/jobs
+GET /system/jobs?{QUERY_PARAMETERS}
+```
+
+| Parameter | Beskrivning |
+|---|---|
+| `start` | Förskjut den returnerade resultatsidan enligt skapandetiden för begäran. Exempel: `start=4` |
+| `limit` | Begränsa antalet returnerade resultat. Exempel: `limit=10` |
+| `page` | Returnera en specifik resultatsida enligt skapandetiden för begäran. Exempel: `page=2` |
+| `sort` | Sortera resultaten efter ett specifikt fält i stigande (`asc`) eller fallande (`desc`) ordning. Sorteringsparametern fungerar inte när flera resultatsidor returneras. Exempel: `sort=batchId:asc` |
+
+**Begäran**
+
+```shell
+curl -X POST \
+  https://platform.adobe.io/data/core/ups/system/jobs \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+```
+
+**Svar**
+
+Svaret innehåller en &quot;children&quot;-array med ett objekt för varje borttagningsbegäran som innehåller information om den begäran.
+
+```json
+{
+  "_page": {
+    "count": 100,
+    "next": "K1JJRDpFaWc5QUwyZFgtMEpBQUFBQUFBQUFBPT0jUlQ6MSNUUkM6MiNGUEM6QWdFQUFBQVFBQWZBQUg0Ly9yL25PcmpmZndEZUR3QT0="
+  },
+  "children": [
+    {
+      "id": "9c2018e2-cd04-46a4-b38e-89ef7b1fcdf4",
+      "imsOrgId": "{IMS_ORG}",
+      "batchId": "8d075b5a178e48389126b9289dcfd0ac",
+      "jobType": "DELETE",
+      "status": "COMPLETED",
+      "metrics": "{\"recordsProcessed\":5,\"timeTakenInSec\":1}",
+      "createEpoch": 1559026134,
+      "updateEpoch": 1559026137
+    },
+    {
+      "id": "3f225e7e-ac8c-4904-b1d5-0ce79e03c2ec",
+      "imsOrgId": "{IMS_ORG}",
+      "dataSetId": "5c802d3cd83fc114b741c4b5",
+      "jobType": "DELETE",
+      "status": "PROCESSING",
+      "metrics": "{\"recordsProcessed\":0,\"timeTakenInSec\":15}",
+      "createEpoch": 1559025404,
+      "updateEpoch": 1559025406
+    }
+  ]
+}
+```
+
+| Egenskap | Beskrivning |
+|---|---|
+| _page.count | Totalt antal begäranden. Svaret har trunkerats för utrymme. |
+| _page.next | Om det finns ytterligare en resultatsida kan du visa nästa resultatsida genom att ersätta ID-värdet i en [sökbegäran](#view-a-specific-delete-request) med nästa angivna värde. |
+| jobType | Den typ av jobb som skapas. I det här fallet returneras alltid &quot;DELETE&quot;. |
+| status | Status för borttagningsbegäran. Möjliga värden är &quot;NEW&quot;, &quot;PROCESSING&quot;, &quot;COMPLETED&quot;, &quot;ERROR&quot;. |
+| mått | Ett objekt som innehåller antalet poster som har bearbetats (&quot;recordsProcsed&quot;) och tiden i sekunder som begäran har bearbetats, eller hur lång tid det tog att slutföra begäran (&quot;timeTakenInSec&quot;). |
+
+## Skapa en borttagningsbegäran {#create-a-delete-request}
+
+Initiering av en ny borttagningsbegäran görs via en POST-begäran till `/systems/jobs` slutpunkten, där ID:t för den datauppsättning eller batch som ska tas bort anges i förfrågningens innehåll.
+
+### Ta bort en datauppsättning
+
+För att en datauppsättning ska kunna tas bort måste datauppsättnings-ID:t inkluderas i POST-begärans innehåll. Den här åtgärden tar bort ALLA data för en viss datauppsättning. Med Experience Platform kan ni ta bort datauppsättningar baserade på både schema för post- och tidsserier.
+
+>[!CAUTION]
+> När du försöker ta bort en profilaktiverad datauppsättning med Experience Platform-gränssnittet inaktiveras datauppsättningen för inmatning, men den tas inte bort förrän en borttagningsbegäran skapas med API:t. Mer information finns i [bilagan](#appendix) till det här dokumentet.
+
+**API-format**
+
+```http
+POST /system/jobs
+```
+
+**Begäran**
+
+```shell
+curl -X POST \
+  https://platform.adobe.io/data/core/ups/system/jobs \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '{
+        "dataSetId": "5c802d3cd83fc114b741c4b5"
+      }'
+```
+
+| Egenskap | Beskrivning |
+|---|---|
+| dataSetId | **(Obligatoriskt)** ID:t för den datauppsättning som du vill ta bort. |
+
+**Svar**
+
+Ett lyckat svar returnerar information om den nyligen skapade borttagningsbegäran, inklusive ett unikt, systemgenererat, skrivskyddat ID för begäran. Detta kan användas för att slå upp begäran och kontrollera dess status. Begäran `status` när den skapas är `"NEW"` tills bearbetningen börjar. Svaret `dataSetId` i bör matcha det `dataSetId` som skickats i begäran.
+
+```json
+{
+    "id": "3f225e7e-ac8c-4904-b1d5-0ce79e03c2ec",
+    "imsOrgId": "{IMS_ORG}",
+    "dataSetId": "5c802d3cd83fc114b741c4b5",
+    "jobType": "DELETE",
+    "status": "NEW",
+    "createEpoch": 1559025404,
+    "updateEpoch": 1559025406
+}
+```
+
+| Egenskap | Beskrivning |
+|---|---|
+| id | Det unika, systemgenererade skrivskyddade ID:t för borttagningsbegäran. |
+| dataSetId | Datamängdens ID, enligt POST-begäran. |
+
+### Ta bort en grupp
+
+Om du vill ta bort en batch måste batch-ID:t inkluderas i BOKFÖR-begäran. Observera att du inte kan ta bort grupper för datauppsättningar baserat på postscheman. Endast grupper för datauppsättningar som baseras på tidsseriescheman kan tas bort.
+
+>[!NOTE]
+> Orsaken till att du inte kan ta bort batchar för datauppsättningar baserade på postscheman är att datauppsättningsbatchar skriver över tidigare poster och därför inte kan ångras eller tas bort. Det enda sättet att ta bort effekten av felaktiga batchar för datauppsättningar som baseras på postscheman är att importera gruppen med rätt data för att skriva över felaktiga poster.
+
+Mer information om hur post- och tidsserier fungerar finns i [avsnittet om XDM-databeteenden](../../xdm/home.md#data-behaviors) i översikten över XDM-systemet.
+
+**API-format**
+
+```http
+POST /system/jobs
+```
+
+**Begäran**
+
+```shell
+curl -X POST \
+  https://platform.adobe.io/data/core/ups/system/jobs \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '{
+       "batchId": "8d075b5a178e48389126b9289dcfd0ac"
+      }'
+```
+
+| Egenskap | Beskrivning |
+|---|---|
+| batchId | **(Obligatoriskt)** ID:t för gruppen som du vill ta bort. |
+
+**Svar**
+
+Ett lyckat svar returnerar information om den nyligen skapade borttagningsbegäran, inklusive ett unikt, systemgenererat, skrivskyddat ID för begäran. Detta kan användas för att slå upp begäran och kontrollera dess status. Status för begäran när den skapas är&quot;NYTT&quot; tills bearbetningen börjar. BatchId i svaret ska matcha det batchId som skickades i begäran.
+
+```json
+{
+    "id": "9c2018e2-cd04-46a4-b38e-89ef7b1fcdf4",
+    "imsOrgId": "{IMS_ORG}",
+    "batchId": "8d075b5a178e48389126b9289dcfd0ac",
+    "jobType": "DELETE",
+    "status": "NEW",
+    "createEpoch": 1559026131,
+    "updateEpoch": 1559026132
+}
+```
+
+| Egenskap | Beskrivning |
+|---|---|
+| id | Det unika, systemgenererade skrivskyddade ID:t för borttagningsbegäran. |
+| batchId | Batchens ID, enligt POST-begäran. |
+
+Om du försöker initiera en borttagningsbegäran för en postdatauppsättningsbatch kommer du att få ett 400-nivåfel, som följande:
+
+```json
+{
+    "requestId": "bc4eb29f-63a8-4653-9133-71238884bb81",
+    "errors": {
+        "400": [
+            {
+                "code": "500",
+                "message": "Batch can only be specified for EE type 'a294e36d382649dab2cc6ad64a41b674'"
+            }
+        ]
+    }
+}
+```
+
+## Visa en specifik borttagningsbegäran {#view-a-specific-delete-request}
+
+Om du vill visa en specifik borttagningsbegäran, inklusive information om dess status, kan du utföra en sökningsbegäran (GET) till `/system/jobs` slutpunkten och inkludera ID:t för borttagningsbegäran i sökvägen.
+
+**API-format**
+
+```http
+GET /system/jobs/{DELETE_REQUEST_ID}
+```
+
+| Parameter | Beskrivning |
+|---|---|
+| {DELETE_REQUEST_ID} | **(Obligatoriskt)** ID:t för borttagningsbegäran som du vill visa. |
+
+**Begäran**
+
+```shell
+curl -X POST \
+  https://platform.adobe.io/data/core/ups/system/jobs/9c2018e2-cd04-46a4-b38e-89ef7b1fcdf4 \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+```
+
+**Svar**
+
+Svaret innehåller information om borttagningsbegäran, inklusive dess uppdaterade status. ID:t för borttagningsbegäran i svaret ska matcha ID:t som skickades i begärandesökvägen.
+
+```json
+{
+    "id": "9c2018e2-cd04-46a4-b38e-89ef7b1fcdf4",
+    "imsOrgId": "{IMS_ORG}",
+    "batchId": "8d075b5a178e48389126b9289dcfd0ac",
+    "jobType": "DELETE",
+    "status": "COMPLETED",
+    "metrics": "{\"recordsProcessed\":5,\"timeTakenInSec\":1}",
+    "createEpoch": 1559026134,
+    "updateEpoch": 1559026137
+}
+```
+
+| Egenskaper | Beskrivning |
+|---|---|
+| jobType | Den typ av jobb som skapas returnerar alltid &quot;DELETE&quot;. |
+| status | Status för borttagningsbegäran. Möjliga värden: &quot;NEW&quot;, &quot;PROCESSING&quot;, &quot;COMPLETED&quot;, &quot;ERROR&quot;. |
+| mått | En array som innehåller antalet poster som har bearbetats (&quot;recordsProcsed&quot;) och tiden i sekunder som begäran har bearbetats, eller hur lång tid det tog att slutföra begäran (&quot;timeTakenInSec&quot;). |
+
+När status för borttagningsbegäran är&quot;SLUTFÖRD&quot; kan du bekräfta att data har tagits bort genom att försöka komma åt borttagna data med hjälp av API:t för dataåtkomst. Instruktioner om hur du använder API:t för dataåtkomst för att komma åt datauppsättningar och grupper finns i [dataåtkomstdokumentationen](../../data-access/home.md).
+
+## Ta bort en borttagningsbegäran
+
+Med Experience Platform kan ni ta bort en tidigare begäran, vilket kan vara användbart av flera olika anledningar, bland annat om borttagningsjobbet inte slutfördes eller fastnade i bearbetningsfasen. Om du vill ta bort en borttagningsbegäran kan du utföra en DELETE-begäran till `/system/jobs` slutpunkten och inkludera ID:t för den borttagningsbegäran som du vill ta bort till sökvägen för begäran.
+
+**API-format**
+
+```http
+DELETE /system/jobs/{DELETE_REQUEST_ID}
+```
+
+| Parameter | Beskrivning |
+|---|---|
+| {DELETE_REQUEST_ID} | ID:t för den borttagningsbegäran som du vill ta bort. |
+
+**Begäran**
+
+```shell
+curl -X POST \
+  https://platform.adobe.io/data/core/ups/system/jobs/9c2018e2-cd04-46a4-b38e-89ef7b1fcdf4 \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+```
+
+**Svar**
+
+En slutförd borttagningsbegäran returnerar HTTP-status 200 (OK) och en tom svarstext. Du kan bekräfta att begäran togs bort genom att utföra en GET-begäran för att visa borttagningsbegäran med dess ID. Detta bör returnera HTTP-status 404 (Hittades inte), vilket anger att borttagningsbegäran togs bort.
+
+## Nästa steg
+
+Nu när du vet vilka steg det handlar om att ta bort datauppsättningar och grupper från profilarkivet i Experience Platform kan du ta bort data som har lagts till felaktigt eller som din organisation inte längre behöver. Observera att det inte går att ångra en borttagningsbegäran. Du bör därför bara ta bort data som du är säker på att du inte behöver nu och inte behöver i framtiden.
+
+## Bilaga {#appendix}
+
+Följande information kompletterar åtgärden att ta bort en datauppsättning från profilarkivet.
+
+### Ta bort en datauppsättning med Experience Platform-gränssnittet
+
+När du använder användargränssnittet i Experience Platform för att ta bort en datauppsättning som har aktiverats för profilen öppnas en dialogruta med frågan&quot;Är du säker på att du vill ta bort den här datauppsättningen från Experience Data Lake? Använd API:t &quot;profilsystemjobb&quot; för att ta bort den här datauppsättningen från profiltjänsten.&quot;
+
+Om du klickar på **Ta bort** i användargränssnittet inaktiveras datauppsättningen för förtäring, men datauppsättningen tas INTE bort automatiskt i serverdelen. För att datauppsättningen ska kunna tas bort permanent måste en borttagningsbegäran skapas manuellt med hjälp av stegen i den här guiden när du [skapar en borttagningsbegäran](#create-a-delete-request).
+
+Följande bild visar en varning när du försöker ta bort en profilaktiverad datauppsättning med användargränssnittet.
+
+![](../images/delete-profile-dataset.png)
+
+Om du vill ha mer information om hur du arbetar med datauppsättningar börjar du med att läsa [datauppsättningsöversikten](../../catalog/datasets/overview.md).
