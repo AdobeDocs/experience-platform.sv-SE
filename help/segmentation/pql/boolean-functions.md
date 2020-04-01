@@ -1,0 +1,97 @@
+---
+keywords: Experience Platform;home;popular topics
+solution: Experience Platform
+title: Booleska funktioner
+topic: developer guide
+translation-type: tm+mt
+source-git-commit: 902ba5efbb5f18a2de826fffd023195d804309cc
+
+---
+
+
+# Booleska funktioner
+
+Booleska funktioner används för att utföra boolesk logik för olika element i PQL (Profile Query Language).  Mer information om andra PQL-funktioner finns i översikten [för](./overview.md)profilfrågespråk.
+
+## Och
+
+Funktionen `and` används för att skapa en logisk koppling.
+
+**Format**
+
+```sql
+{QUERY} and {QUERY}
+```
+
+**Exempel**
+
+Följande PQL-fråga returnerar alla personer med hemland som Kanada och födelseåret 1985.
+
+```sql
+homeAddress.countryISO = "CA" and person.birthYear = 1985
+```
+
+## eller
+
+Funktionen `or` används för att skapa en logisk förskjutning.
+
+**Format**
+
+```sql
+{QUERY} or {QUERY}
+```
+
+**Exempel**
+
+Följande PQL-fråga returnerar alla personer med hemlandet som Kanada eller födelseåret 1985.
+
+```sql
+homeAddress.countryISO = "CA" or person.birthYear = 1985
+```
+
+## Inte
+
+Funktionen `not` (eller `!`) används för att skapa en logisk negation.
+
+**Format**
+
+```sql
+not ({QUERY})
+!({QUERY})
+```
+
+**Exempel**
+
+Följande PQL-fråga returnerar alla personer som inte har sitt hemland som Kanada.
+
+```sql
+not (homeAddress.countryISO = "CA")
+```
+
+## If
+
+Funktionen används `if` för att matcha ett uttryck beroende på om ett angivet villkor är sant.
+
+**Format**
+
+```sql
+if ({TEST_EXPRESSION}, {TRUE_EXPRESSION}, {FALSE_EXPRESSION})
+```
+
+| Argument | Beskrivning |
+| --------- | ----------- |
+| `{TEST_EXPRESSION}` | Det booleska uttryck som testas. |
+| `{TRUE_EXPRESSION}` | Uttrycket vars värde ska användas om `{TEST_EXPRESSION}` är true. |
+| `{FALSE_EXPRESSION}` | Uttrycket vars värde ska användas om `{TEST_EXPRESSION}` är false. |
+
+**Exempel**
+
+Följande PQL-fråga ställer in värdet som `1` om hemlandet är Kanada och `2` om hemlandet inte är Kanada.
+
+```sql
+if (homeAddress.countryISO = "CA", 1, 2)
+```
+
+## Nästa steg
+
+Nu när du har lärt dig om booleska funktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i översikten [över](./overview.md)profilfrågespråk.
