@@ -4,7 +4,7 @@ solution: Experience Platform
 title: säkerställa att målgruppssegmentens dataanvändning följs
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 76032cca825eb75f7a8056cbbbc230343bed27a0
+source-git-commit: 7f61cee8fb5160d0f393f8392b4ce2462d602981
 
 ---
 
@@ -52,7 +52,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 Det här arbetsflödet börjar med att man får åtkomst till ett känt målgruppssegment. Segment som har aktiverats för användning i kundprofilen i realtid innehåller ett ID för sammanfogningsprincip i segmentdefinitionen. Den här sammanfogningsprincipen innehåller information om vilka datauppsättningar som ska inkluderas i segmentet, som i sin tur innehåller tillämpliga dataanvändningsetiketter.
 
-Med [Real-time Customer Profile API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)kan du söka efter en segmentdefinition med hjälp av dess ID för att hitta den associerade sammanfogningsprincipen.
+Med hjälp av [Segmenterings-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml)kan du söka efter en segmentdefinition med hjälp av dess ID för att hitta den associerade sammanfogningsprincipen.
 
 **API-format**
 
