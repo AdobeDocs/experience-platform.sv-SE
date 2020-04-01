@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Utvecklarhandbok för Sensei Machine Learning API
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 9e12c8087524f692a123b3389df4fdc324c4238d
+source-git-commit: b0b44f4aaf365f58086cfa17d27fbba6ed2a2a97
 
 ---
 
@@ -37,10 +37,10 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 När du har samlat in de inloggningsuppgifter som krävs kan du fortsätta till följande avsnitt i den här utvecklarhandboken för exempel-API-anrop till följande slutpunktsgrupper:
 
-* [Motorer](engines.md)
-* [Experimentera](experiments.md)
-* [Insikter](insights.md)
-* [MLInstances (recept)](mlinstances.md)
-* [MLServices](mlservices.md)
-* [Modeller](models.md)
-* [Bilaga](appendix.md)
+* [Motorer](./engines.md)
+* [Experimentera](./experiments.md)
+* [Insikter](./insights.md)
+* [MLInstances (recept)](./mlinstances.md)
+* [MLServices](./mlservices.md)
+* [Modeller](./models.md)
+* [Bilaga](./appendix.md)
