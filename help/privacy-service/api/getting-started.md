@@ -40,10 +40,6 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 * Innehållstyp: application/json
 
-## Exempel på API-anrop
-
-Nu när du förstår vilka rubriker du ska använda kan du börja ringa anrop till API:t för sekretesstjänsten. Dokumentet om [sekretessjobb](privacy-jobs.md) går igenom de olika API-anrop du kan göra med API:t för sekretesstjänsten. Varje exempelanrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
-
 ## Nästa steg
 
-Nu när du har lärt dig hur du ringer samtal med API:t för sekretesstjänsten kan du skapa egna icke-interaktiva frågor. Anvisningar om hur du utför samma åtgärder i sekretesstjänstens gränssnitt finns i [användargränssnittsöversikten](../ui/overview.md).
+Nu när du förstår vilka rubriker du ska använda kan du börja ringa anrop till API:t för sekretesstjänsten. Dokumentet om [sekretessjobb](privacy-jobs.md) går igenom de olika API-anrop du kan göra med API:t för sekretesstjänsten. Varje exempelanrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
