@@ -23,12 +23,12 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
    - x-gw-ims-org-id: `{IMS_ORG}`
    - Klienthemlighet: `{CLIENT_SECRET}`
    - Klientcertifikat: `{PRIVATE_KEY}`
-- Exempeldata och källfiler för [Retail Sales Recipe](../pre-built-recipes/retail-sales.md). Ladda ned de resurser som krävs för den här och andra självstudiekurser för datavetenskap från <a href="https://github.com/adobe/experience-platform-dsw-reference/" target="_blank">Adobes offentliga Git-databas</a>.
-- <a href="https://www.python.org/downloads/" target="_blank">Python >= 2.7</a> och följande Python-förpackningar:
-   - <a href="https://pypi.org/project/pip/" target="_blank">pip</a>
-   - <a href="https://pyyaml.org/" target="_blank">PyYAML</a>
-   - <a href="https://pypi.org/project/dictor/" target="_blank">diktor</a>
-   - <a href="https://pypi.org/project/jwt/" target="_blank">JWT</a>
+- Exempeldata och källfiler för [Retail Sales Recipe](../pre-built-recipes/retail-sales.md). Ladda ned de resurser som krävs för den här och andra självstudiekurser för datavetenskap från [Adobes offentliga Git-databas](https://github.com/adobe/experience-platform-dsw-reference/).
+- [Python >= 2.7](https://www.python.org/downloads/) och följande Python-förpackningar:
+   - [pip](https://pypi.org/project/pip/)
+   - [PyYAML](https://pyyaml.org/)
+   - [diktor](https://pypi.org/project/dictor/)
+   - [JWT](https://pypi.org/project/jwt/)
 - En arbetsförståelse för följande koncept som används i den här självstudiekursen:
    - [Experience Data Model (XDM)](../../xdm/home.md)
    - [Grunderna för schemakomposition](../../xdm/schema/field-dictionary.md)
