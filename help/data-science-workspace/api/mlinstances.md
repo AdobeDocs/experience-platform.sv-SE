@@ -4,7 +4,7 @@ solution: Experience Platform
 title: MLInstances
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 71e257c85790a96b5017dea314b757ec4ee07bed
+source-git-commit: 01cfbc86516a05df36714b8c91666983f7a1b0e8
 
 ---
 
@@ -17,7 +17,7 @@ En MLInstance är en kombination av en befintlig [motor](./engines.md) med en l�
 
 Du kan skapa en MLInstance genom att utföra en POST-begäran och samtidigt tillhandahålla en nyttolast för begäran som består av ett giltigt motor-ID (`{ENGINE_ID}`) och en lämplig uppsättning standardkonfigurationer.
 
-Om motor-ID:t refererar till en PySpark- eller Spark-motor kan du konfigurera mängden beräkningsresurser, till exempel antalet kärnor eller mängden minne. Om du refererar till en Python Engine kan du välja mellan att använda en CPU eller GPU för utbildning och poängsättning. Mer information finns i avsnitten om [PySpark- och Spark-resurskonfigurationer](appendix.md#resource-config) och [Python CPU- och GPU-konfigurationer](appendix.md#cpu-gpu-config) .
+Om motor-ID:t refererar till en PySpark- eller Spark-motor kan du konfigurera mängden beräkningsresurser, till exempel antalet kärnor eller mängden minne. Om du refererar till en Python Engine kan du välja mellan att använda en CPU eller GPU för utbildning och poängsättning. Mer information finns i avsnitten om [PySpark- och Spark-resurskonfigurationer](./appendix.md#resource-config) och [Python CPU- och GPU-konfigurationer](./appendix.md#cpu-gpu-config) .
 
 **API-format**
 
@@ -127,7 +127,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den nyl
 
 ## Hämta en lista med MLInstances
 
-Du kan hämta en lista med MLInstances genom att utföra en enda GET-begäran. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](appendix.md#query)av resurser i bilagan.
+Du kan hämta en lista med MLInstances genom att utföra en enda GET-begäran. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](./appendix.md#query)av resurser i bilagan.
 
 **API-format**
 
@@ -139,7 +139,7 @@ GET /mlInstances?{QUERY_PARAMETER_1}={VALUE_1}&{QUERY_PARAMETER_2}={VALUE_2}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{QUERY_PARAMETER}` | En av de [tillgängliga frågeparametrarna](appendix.md#query) som används för att filtrera resultaten. |
+| `{QUERY_PARAMETER}` | En av de [tillgängliga frågeparametrarna](./appendix.md#query) som används för att filtrera resultaten. |
 | `{VALUE}` | Värdet för föregående frågeparameter. |
 
 **Begäran**
