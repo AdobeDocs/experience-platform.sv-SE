@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Vanliga frågor om Adobe Experience Platform och felsökningsguide
 topic: getting started
 translation-type: tm+mt
-source-git-commit: 260eddee41d337f25b90ab365a76ab2ffd3dedef
+source-git-commit: 7f61cee8fb5160d0f393f8392b4ce2462d602981
 
 ---
 
@@ -247,3 +247,4 @@ Nedan följer en lista över felsökningsguider och API-referensdokumentation f�
 | Frågetjänst | [API för frågetjänst](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/qs-api.yaml) | [Felsökningsguide för frågetjänst](../query-service/troubleshooting-guide.md) |
 | Kundprofil i realtid | [Kundprofil-API i realtid](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml) |  |
 | Sandlådor | [Sandbox-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sandbox-api.yaml) | [Felsökningsguide för sandlådor](../sandboxes/troubleshooting-guide.md) |
+| Segmentering | [Segmenterings-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml) |
