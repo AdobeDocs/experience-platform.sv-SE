@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Experimentera
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 71e257c85790a96b5017dea314b757ec4ee07bed
+source-git-commit: 01cfbc86516a05df36714b8c91666983f7a1b0e8
 
 ---
 
@@ -128,7 +128,7 @@ Ett lyckat svar returnerar en nyttolast som innehåller information om den nylig
 
 ## Hämta en lista med experter
 
-Du kan hämta en lista med experter som tillhör en viss MLInstance genom att utföra en GET-begäran och ange ett giltigt MLInstance-ID som en frågeparameter. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](appendix.md#query)av resurser i bilagan.
+Du kan hämta en lista med experter som tillhör en viss MLInstance genom att utföra en GET-begäran och ange ett giltigt MLInstance-ID som en frågeparameter. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](./appendix.md#query)av resurser i bilagan.
 
 
 **API-format**
@@ -238,7 +238,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den beg
 
 ## Hämta en lista med Experimentkörningar
 
-Du kan hämta en lista över utbildnings- eller poängsättningskörningar som tillhör en viss Experiment genom att utföra en GET-förfrågan och ange ett giltigt test-ID. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En fullständig lista över tillgängliga frågeparametrar finns i avsnittet i bilagan om [frågeparametrar för hämtning](appendix.md#query)av resurser.
+Du kan hämta en lista över utbildnings- eller poängsättningskörningar som tillhör en viss Experiment genom att utföra en GET-förfrågan och ange ett giltigt test-ID. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En fullständig lista över tillgängliga frågeparametrar finns i avsnittet i bilagan om [frågeparametrar för hämtning](./appendix.md#query)av resurser.
 
 >[!NOTE] När du kombinerar flera frågeparametrar måste de avgränsas med et-tecken (&amp;).
 
@@ -253,7 +253,7 @@ GET /experiments/{EXPERIMENT_ID}/runs?{QUERY_PARAMETER_1}={VALUE_1}&{QUERY_PARAM
 | Parameter | Beskrivning |
 | --- | --- |
 | `{EXPERIMENT_ID}` | Ett giltigt test-ID. |
-| `{QUERY_PARAMETER}` | En av de [tillgängliga frågeparametrarna](appendix.md#query) som används för att filtrera resultaten. |
+| `{QUERY_PARAMETER}` | En av de [tillgängliga frågeparametrarna](./appendix.md#query) som används för att filtrera resultaten. |
 | `{VALUE}` | Värdet för föregående frågeparameter. |
 
 **Begäran**
