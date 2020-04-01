@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Berika kundprofilen i realtid med maskininlärningsinsikter
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 34fff508f49327ce314a517d77efabb286ef055c
+source-git-commit: b0b44f4aaf365f58086cfa17d27fbba6ed2a2a97
 
 ---
 
@@ -23,7 +23,7 @@ I det här dokumentet finns en stegvis självstudiekurs för att berika kundprof
 
 Den här självstudiekursen kräver en fungerande förståelse för de olika aspekter av Adobe Experience Platform som används för att importera profildata och skapa segment. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-* [Kundprofil](../../rtcdp/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [Kundprofil](../../rtcdp/overview.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [Identitetstjänst](../../identity-service/home.md): Möjliggör kundprofil i realtid genom att överbrygga identiteter från olika datakällor som hämtas in till Platform.
 * [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
 
