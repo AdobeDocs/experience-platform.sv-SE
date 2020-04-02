@@ -4,7 +4,7 @@ seo-title: Adobe Experience Platform Identity Service
 description: description
 seo-description: seo-beskrivning
 translation-type: tm+mt
-source-git-commit: 5cba5a1e8139dd85f23250d42a1cd8d2318eb916
+source-git-commit: 50e6b39c1eb0bda4f3b30991515fb1c13fa9ff87
 
 ---
 
@@ -17,7 +17,7 @@ I stället för att nu ha fem separata kunder som interagerar med ert varumärke
 
 ## Identitetsnamnutrymmen
 
-Identitetsnamnutrymmen är en komponent i identitetstjänsten och fungerar som indikatorer som ger ytterligare kontext till kundidentiteter. Ett exempel på ett vanligt ID-namnutrymme är&quot;E-post&quot;, där användningen av samma e-postadress på flera webbplatser gör att du kan sammanfoga flera olika identiteter, var och en med ett unikt kund-ID, som i själva verket tillhör samma kund. Med Experience Platform kan ni använda ID-namnutrymmen för att söka efter enskilda profiler i användargränssnittet. Mer information om visningsprofiler finns i [profilvisningsöversikten](/help/rtcdp/profile/profile-viewer.md). Mer information om namnutrymmen för identiteter finns i [översikten över namnutrymmen i Adobe I/O](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/identity_namespace_overview/identity_namespace_overview.md).
+Identitetsnamnutrymmen är en komponent i identitetstjänsten och fungerar som indikatorer som ger ytterligare kontext till kundidentiteter. Ett exempel på ett vanligt ID-namnutrymme är&quot;E-post&quot;, där användningen av samma e-postadress på flera webbplatser gör att du kan sammanfoga flera olika identiteter, var och en med ett unikt kund-ID, som i själva verket tillhör samma kund. Med Experience Platform kan ni använda ID-namnutrymmen för att söka efter enskilda profiler i användargränssnittet. Mer information om visningsprofiler finns i [profilvisningsöversikten](/help/rtcdp/profile/profile-viewer.md). Mer information om namnutrymmen för identiteter finns i översikten över [namnutrymmen](../../identity-service/namespaces.md).
 
 ## Identitetsdiagram
 
@@ -27,4 +27,4 @@ Identitetstjänsten hanterar ett identitetsdiagram som bara är synligt för din
 
 ## Nästa steg
 
-Identiteter, och relationerna mellan dem, definieras och upprätthålls av identitetstjänsten och utnyttjas av kundprofilen i realtid för att skapa en fullständig bild av varje enskild kund och deras interaktioner. Mer information finns i [identitetstjänstens dokumentation om Adobe I/O](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/identity_services_architectural_overview/identity_services_architectural_overview.md).
+Identiteter, och relationerna mellan dem, definieras och upprätthålls av identitetstjänsten och utnyttjas av kundprofilen i realtid för att skapa en fullständig bild av varje enskild kund och deras interaktioner. Mer information finns i [identitetstjänstens dokumentation](../../identity-service/home.md).
