@@ -4,7 +4,7 @@ seo-title: Datastyrning i kunddataplattformen i realtid
 description: 'Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. '
 seo-description: 'Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. '
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: e21cf6794e6c9ee522482cd9ccb95d66b06d330a
 
 ---
 
@@ -15,7 +15,7 @@ Kunddataplattformen (CDP) i realtid samlar data från flera företagssystem, vil
 
 Med Adobe Experience Platform Data Governance kan ni hantera kunddata och säkerställa efterlevnad av regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en viktig roll inom CDP i realtid, så att ni kan definiera användarprofiler, kategorisera data baserat på dessa policyer och kontrollera om policyer har överträtts när ni utför vissa marknadsföringsåtgärder.
 
-CDP i realtid är byggt på Adobe Experience Platform och därför ingår de flesta datastyrningsfunktionerna i dokumentationen för Experience Platform. Detta dokument är avsett att komplettera [datastyrningsöversikten](https://www.adobe.io/apis/experienceplatform/home/dule/duleservices.html#!api-specification/markdown/narrative/technical_overview/data_governance/dule_overview.md) för Experience Platform och sammanfattar de styrningsfunktioner som finns i CDP i realtid. Följande ämnen behandlas:
+CDP i realtid är byggt på Adobe Experience Platform och därför ingår de flesta datastyrningsfunktionerna i dokumentationen för Experience Platform. Detta dokument är avsett att komplettera [datastyrningsöversikten](../../data-governance/home.md) för Experience Platform och sammanfattar de styrningsfunktioner som finns i CDP i realtid. Följande ämnen behandlas:
 
 * [Använd användningsetiketter på dina data](#labels)
 * [Hantera dataanvändningsprinciper](#policies)
@@ -25,7 +25,7 @@ CDP i realtid är byggt på Adobe Experience Platform och därför ingår de fle
 
 Med datastyrning kan du använda användningsetiketter på dina data, antingen på datamängdsnivå eller datamängdsfältnivå. Med etiketter för dataanvändning kan du kategorisera data enligt de användarprofiler som gäller för dessa data.
 
-Mer information om hur du arbetar med dataanvändningsetiketter finns i användarhandboken [för](https://www.adobe.io/apis/experienceplatform/home/dule/duleservices.html#!api-specification/markdown/narrative/tutorials/dule/dule_working_with_labels.md) dataanvändningsetiketter för Adobe Experience Platform.
+Mer information om hur du arbetar med dataanvändningsetiketter finns i användarhandboken [för](../../data-governance/labels/overview.md) dataanvändningsetiketter för Adobe Experience Platform.
 
 ## Ange begränsningar för destinationer
 
@@ -36,9 +36,9 @@ Marknadsföringsanvändningsfall kan definieras under _konfigurationsfasen_ för
 
 ## Hantera dataanvändningsprinciper {#policies}
 
-För att dataanvändningsetiketter effektivt ska kunna stödja regelefterlevnad måste dataanvändningsprinciper definieras och aktiveras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom CDP i realtid. Mer information finns i avsnittet Dataanvändningsprinciper i Experience Platform [Data Governance-översikten](https://www.adobe.io/apis/experienceplatform/home/dule/duleservices.html#!api-specification/markdown/narrative/technical_overview/data_governance/dule_overview.md) .
+För att dataanvändningsetiketter effektivt ska kunna stödja regelefterlevnad måste dataanvändningsprinciper definieras och aktiveras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom CDP i realtid. Mer information finns i avsnittet Dataanvändningsprinciper i Experience Platform [Data Governance-översikten](../../data-governance/home.md) .
 
-Adobe Experience Platform har flera **huvudprinciper** för vanliga kundupplevelsefall. Dessa profiler kan visas genom att en begäran görs till API:t för [DULE Policy Service](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml), vilket visas i avsnittet&quot;List all policies&quot; i utvecklarhandboken [för](https://www.adobe.io/apis/experienceplatform/home/dule/duleservices.html#!api-specification/markdown/narrative/technical_overview/data_governance/dule_policy_service_developer_guide.md)Policy Service. Du kan också skapa egna **anpassade profiler** för att modellera anpassade användningsbegränsningar, vilket visas i avsnittet&quot;Skapa en princip&quot; i utvecklarhandboken.
+Adobe Experience Platform har flera **huvudprinciper** för vanliga kundupplevelsefall. Dessa profiler kan visas genom att en begäran görs till API:t för [DULE Policy Service](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml), vilket visas i avsnittet&quot;List all policies&quot; i utvecklarhandboken [för](../../data-governance/policies/overview.md)Policy Service. Du kan också skapa egna **anpassade profiler** för att modellera anpassade användningsbegränsningar, vilket visas i avsnittet&quot;Skapa en princip&quot; i utvecklarhandboken.
 
 ## (Beta) Tillämpa regelefterlevnad för dataanvändning {#enforce-data-usage-compliance}
 
@@ -70,7 +70,7 @@ Klicka på **Datalinje** för att spåra mål, segment, sammanfogningsprinciper 
 
 När en överträdelse har utlösts inaktiveras knappen **Spara** för aktiveringen tills rätt komponenter har uppdaterats enligt dataanvändningsprinciperna.
 
-### Tillämpning av policyer för aktiverade segment
+### Tillämpning av policyer för aktiverade segment {#policy-enforcement-for-activated-segments}
 
 Regelefterlevnad gäller fortfarande för segment efter att de har aktiverats och begränsar eventuella ändringar av ett segment eller dess mål som skulle leda till en policyöverträdelse. På grund av de många komponenter som används för att aktivera segment till mål kan någon av följande åtgärder utlösa en överträdelse:
 
@@ -83,4 +83,4 @@ Om någon av ovanstående åtgärder utlöser en överträdelse förhindras åtg
 
 ## Nästa steg
 
-Nu när ni har introducerats till de viktigaste funktionerna för datastyrning i CDP i realtid och hur Experience Platform gör det möjligt för dem kan ni fortsätta med [dokumentationen för datastyrning på Adobe Experience Platform](https://www.adobe.io/apis/experienceplatform/home/dule/duleservices.html). Dokumentationen innehåller översikter över viktiga datastyrningsbegrepp samt stegvisa arbetsflöden för hantering av etiketter och policyer för dataanvändning.
+Nu när ni har introducerats till de viktigaste funktionerna för datastyrning i CDP i realtid och hur Experience Platform gör det möjligt för dem kan ni fortsätta med [dokumentationen för datastyrning på Adobe Experience Platform](../../data-governance/home.md). Dokumentationen innehåller översikter över viktiga datastyrningsbegrepp samt stegvisa arbetsflöden för hantering av etiketter och policyer för dataanvändning.
