@@ -4,7 +4,7 @@ seo-title: Destinationer för e-postmarknadsföring
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 seo-description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 translation-type: tm+mt
-source-git-commit: 463212a8fabb9dd5962b4d3f523a6f2d88bb1d9d
+source-git-commit: 50e6b39c1eb0bda4f3b30991515fb1c13fa9ff87
 
 ---
 
@@ -39,9 +39,9 @@ I det här steget väljer du vilka fält som ska exporteras till e-postmarknadsf
 
 ![Målattribut](/help/rtcdp/destinations/assets/destination-attributes.png)
 
-### Identitet {#identity}
+### Identity {#identity}
 
-Vi rekommenderar att du väljer en unik identifierare från ditt [unionsschema](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/unified_profile_architectural_overview/unified_profile_architectural_overview.md). Det här är fältet som dina användares identiteter är avskärmade från. Oftast är det här fältet e-postadressen, men det kan också vara ett lojalitetsprogram-ID eller ett telefonnummer. I tabellen nedan finns de vanligaste unika identifierarna och deras XDM-fält i ett enhetligt schema.
+Vi rekommenderar att du väljer en unik identifierare från ditt [unionsschema](../../profile/home.md#profile-fragments-and-union-schemas). Det här är fältet som dina användares identiteter är avskärmade från. Oftast är det här fältet e-postadressen, men det kan också vara ett lojalitetsprogram-ID eller ett telefonnummer. I tabellen nedan finns de vanligaste unika identifierarna och deras XDM-fält i ett enhetligt schema.
 
 | Unik identifierare | XDM-fält i Unified Schema |
 ---------|----------
