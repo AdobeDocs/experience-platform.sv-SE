@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa ett segment
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 7f61cee8fb5160d0f393f8392b4ce2462d602981
+source-git-commit: a6a1ecd9ce49c0a55e14b0d5479ca7315e332904
 
 ---
 
@@ -53,7 +53,7 @@ Det första steget i segmenteringen är att definiera ett segment, som represent
 
 Du kan skapa en ny segmentdefinition genom att göra en POST-begäran till `/segment/definitions` slutpunkten i kundprofils-API:t i realtid. Följande exempel visar hur du formaterar en definitionsbegäran, inklusive vilken information som krävs för att ett segment ska kunna definieras korrekt.
 
-Segmentdefinitioner kan utvärderas på två sätt - gruppsegmentering och direktuppspelningssegmentering. Gruppsegmentering utvärderar segment baserat på ett förinställt schema eller när utvärderingen aktiveras manuellt, medan direktuppspelningssegmentering utvärderar segment så snart data hämtas från Platform. I den här självstudiekursen används **gruppsegmentering**. Mer information om direktuppspelningssegmentering finns i [översikten över direktuppspelningssegmentering](../ui/streaming-segmentation.md).
+Segmentdefinitioner kan utvärderas på två sätt - gruppsegmentering och direktuppspelningssegmentering. Gruppsegmentering utvärderar segment baserat på ett förinställt schema eller när utvärderingen aktiveras manuellt, medan direktuppspelningssegmentering utvärderar segment så snart data hämtas från Platform. I den här självstudiekursen används **gruppsegmentering**. Mer information om direktuppspelningssegmentering finns i [översikten över direktuppspelningssegmentering](../api/streaming-segmentation.md).
 
 **API-format**
 
@@ -181,7 +181,7 @@ curl -X POST \
 
 **Svar**
 
-Ett godkänt svar returnerar information om det nya förhandsgranskningsjobbet, inklusive dess ID och det aktuella bearbetningstillståndet.
+Ett lyckat svar returnerar information om det nya förhandsgranskningsjobbet, inklusive dess ID och det aktuella bearbetningstillståndet.
 
 ```json
 {
