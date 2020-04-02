@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa en datauppsättning med API:er
 topic: datasets
 translation-type: tm+mt
-source-git-commit: 6d24637dc6cc282f98288b6416e4a3b7cebe42ea
+source-git-commit: a6a1ecd9ce49c0a55e14b0d5479ca7315e332904
 
 ---
 
@@ -454,7 +454,7 @@ Med batch-ID kan du använda API:t för dataåtkomst för att läsa tillbaka och
 
 Du kan också använda API:t för dataåtkomst för att returnera namn, storlek i byte och en länk för att hämta filen eller mappen.
 
-Detaljerade steg för hur du arbetar med API:t för dataåtkomst finns i [utvecklarhandboken](../../data-access/api.md)för dataåtkomst.
+Detaljerade steg för hur du arbetar med API:t för dataåtkomst finns i [utvecklarhandboken](../../data-access/home.md)för dataåtkomst.
 
 ## Uppdatera datauppsättningsschemat
 
