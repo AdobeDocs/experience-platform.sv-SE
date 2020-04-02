@@ -4,7 +4,7 @@ seo-title: Hemsida och instrumentpaneler för kunddataplattformen i realtid
 description: Kontrollpaneler, startsidan och förstagångsupplevelsen av Adobe Experience Platform
 seo-description: Kontrollpaneler, startsidan och förstagångsupplevelsen av Adobe Experience Platform
 translation-type: tm+mt
-source-git-commit: 6c8d0757d7e7568b1976823d9c52221374e67cbb
+source-git-commit: 69692f100389abb3fdb251b9b9258421254a2494
 
 ---
 
@@ -42,7 +42,7 @@ Ytterligare mätvärden - till exempel för profiler och segment - finns tillgä
 
 Räknaren visar antalet datauppsättningar i systemet och mängden data i plattformen. **[!UICONTROL Datasets]** Den här räknaren uppdateras när en datauppsättning skapas.
 
-Mer information om datauppsättningar finns i [Importera data till Adobe Experience Platform](https://www.adobe.io/apis/experienceplatform/home/tutorials/alltutorials.html#!api-specification/markdown/narrative/tutorials/data_ingestion_tutorial/data_ingestion_tutorial.md).
+Mer information om datauppsättningar finns i översikten över [datauppsättningar](../catalog/datasets/overview.md).
 
 ### Profiler
 
@@ -58,7 +58,7 @@ Mer information om profiler finns i [En enhetlig bild av kunden i CDP](profile/p
 
 **[!UICONTROL Segments]** visar det totala antalet segment som skapats för organisationen. Numret uppdateras när nya segment skapas.
 
-Mer information om segment finns i Översikt över [segmenteringstjänsten](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/segmentation/segmentation-overview.md).
+Mer information om segment finns i Översikt över [segmenteringstjänsten](segmentation/segmentation-overview.md).
 
 ### Mål 
 
@@ -106,7 +106,7 @@ På **[!UICONTROL Recent datasets]** kortet visas de fem senaste datauppsättnin
 
 Klicka på en datauppsättning för att visa information om objektet eller **[!UICONTROL View all]** för att visa listan med datauppsättningar. Därifrån kan du klicka på en viss källa för mer information.
 
-Mer information om datauppsättningar finns i [Importera data till Adobe Experience Platform](https://www.adobe.io/apis/experienceplatform/home/tutorials/alltutorials.html#!api-specification/markdown/narrative/tutorials/data_ingestion_tutorial/data_ingestion_tutorial.md).
+Mer information om datauppsättningar finns i översikten över [datauppsättningar](../catalog/datasets/overview.md).
 
 ### Senaste källor
 
@@ -122,7 +122,7 @@ På **[!UICONTROL Recent segments]** mätkortet visas de fem senaste segmenten s
 
 Klicka på ett segment om du vill visa information om objektet eller **[!UICONTROL View all]** om du vill visa information om fler segment.
 
-Mer information om segment finns i Översikt över [segmenteringstjänsten](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/segmentation/segmentation-overview.md).
+Mer information om segment finns i Översikt över [segmenteringstjänsten](segmentation/segmentation-overview.md).
 
 ### Senaste destinationer
 
