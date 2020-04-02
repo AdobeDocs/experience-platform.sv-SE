@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över arbetsytan Datavetenskap
 topic: overview
 translation-type: tm+mt
-source-git-commit: 3190f2f01ae13d25cc3a3a540b83cc1fc0819f0a
+source-git-commit: 9f3fc3ec3ce560534b057185e3fef2cc2bc1234d
 
 ---
 
@@ -152,7 +152,7 @@ Förutsättningar och insikter ger den information ni behöver för att leverera
 
 Allt börjar med ett affärsproblem. Ett onlinesamtal behöver till exempel en kontext som hjälper dem att få en negativ kunduppfattning att bli positiv.
 
-Det finns mycket data om kunden. De har besökt webbplatsen, lagt artiklar i varukorgen och till och med lagt beställningar. De kan ha fått e-post, använda kuponger eller kontaktat callcentret tidigare. Mottagaren måste sedan använda tillgängliga data om kunden och deras aktiviteter för att avgöra om det är troligt att kunden kommer att uppskatta och använda ett erbjudande.
+Det finns mycket data om kunden. De har bläddrat på webbplatsen, lagt artiklar i varukorgen och till och med lagt beställningar. De kan ha fått e-post, använda kuponger eller kontaktat callcentret tidigare. Mottagaren måste sedan använda tillgängliga data om kunden och deras aktiviteter för att avgöra om det är troligt att kunden kommer att uppskatta och använda ett erbjudande.
 
 ![](./images/home/example_problem.png)
 
@@ -213,5 +213,5 @@ Om du vill ha mer information, t.ex. ett komplett arbetsflöde, kan du börja me
 
 Följande video har utformats för att ge stöd för din förståelse av arbetsytan Data Science.
 
->[!VIDEO](https://images-tv.adobe.com/mpcv3/2fbf62c1-44ed-4162-8eed-f47ab8599701_1578435939.1920x1080at3000_h264.mp4)
+>[!VIDEO](https://video.tv.adobe.com/v/30567?quality=12&amp;enable10seconds=on&amp;speedcontrol=on)
 
