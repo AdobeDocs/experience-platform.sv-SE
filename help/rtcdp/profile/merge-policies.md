@@ -4,7 +4,7 @@ seo-title: Arbeta med sammanslagningsprinciper i kunddataplattformen i realtid
 description: Arbeta med sammanslagningsprinciper i kunddataplattformen i realtid
 seo-description: Arbeta med sammanslagningsprinciper i kunddataplattformen i realtid
 translation-type: tm+mt
-source-git-commit: f23a025336875adec1f4182fee451741833a1b63
+source-git-commit: 50e6b39c1eb0bda4f3b30991515fb1c13fa9ff87
 
 ---
 
@@ -15,5 +15,5 @@ Med kunddataplattformen i realtid som bygger på Adobe Experience Platform kan n
 
 I användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen. Du kan också ange inställningar för datakällor och avgöra vilka data som har prioritet om en konflikt uppstår vid sammanslagningen.
 
-Du hittar steg-för-steg-instruktioner för hur du arbetar med sammanfogningspolicyer med användargränssnittet i Adobe Experience Platform genom att följa självstudiekursen [för sammanfogningspolicyer i Adobe I/O](https://www.adobe.io/apis/experienceplatform/home/tutorials/alltutorials.html#!api-specification/markdown/narrative/tutorials/merge_policies/create-merge-policies.md).
+Du kan hitta steg-för-steg-instruktioner för hur du arbetar med sammanfogningsprinciper med användargränssnittet i Adobe Experience Platform genom att följa användarhandboken för [sammanfogningsprinciper](../../profile/ui/merge-policies.md).
 
