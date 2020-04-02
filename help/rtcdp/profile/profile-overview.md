@@ -4,7 +4,7 @@ seo-title: Kundprofil i realtid i kunddataplattformen i realtid
 description: En översikt över hur ni kan utveckla samordnade, enhetliga och relevanta kundupplevelser i realtid med kundprofiler.
 seo-description: Kunddataplattform, profil, data, upplevelser, kanaler i realtid
 translation-type: tm+mt
-source-git-commit: 5cba5a1e8139dd85f23250d42a1cd8d2318eb916
+source-git-commit: 50e6b39c1eb0bda4f3b30991515fb1c13fa9ff87
 
 ---
 
@@ -31,4 +31,4 @@ Med Platform kan ni enkelt visa kundprofiler och söka efter specifika profiler 
 
 ## Nästa steg
 
-När du har läst den här översikten bör du nu förstå hur CDP i realtid använder kundprofilen i realtid för att driva kanalövergripande personalisering i stor skala. Genom att sammanfoga identiteter från olika källor kan ni få en fullständig bild av varje enskild kund, så att ni kan ta era marknadsföringskampanjer till en helt ny nivå. Mer detaljerad information, inklusive bästa praxis och självstudiekurser för att arbeta med kundprofildata i realtid i användargränssnittet och via API:er finns i dokumentationen för kundprofilen i [realtid på Adobe I/O](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/unified_profile_architectural_overview/unified_profile_architectural_overview.md).
+När du har läst den här översikten bör du nu förstå hur CDP i realtid använder kundprofilen i realtid för att driva kanalövergripande personalisering i stor skala. Genom att sammanfoga identiteter från olika källor kan ni få en fullständig bild av varje enskild kund, så att ni kan ta era marknadsföringskampanjer till en helt ny nivå. Mer detaljerad information, inklusive bästa praxis och självstudiekurser för att arbeta med kundprofildata i realtid i användargränssnittet och via API:er finns i dokumentationen [för](../../profile/home.md)kundprofilen i realtid.
