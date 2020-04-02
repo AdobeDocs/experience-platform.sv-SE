@@ -4,7 +4,7 @@ seo-title: Sidan Destinationsinformation
 description: 'På informationssidan för ett enskilt mål finns en översikt över målinformationen, t.ex. målnamn, ID, segment som är mappade till målet samt kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet. '
 seo-description: 'På informationssidan för ett enskilt mål finns en översikt över målinformationen, t.ex. målnamn, ID, segment som är mappade till målet samt kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet. '
 translation-type: tm+mt
-source-git-commit: b784b67092ea8d30ad00cda9a40779b3890862fd
+source-git-commit: e21cf6794e6c9ee522482cd9ccb95d66b06d330a
 
 ---
 
@@ -51,7 +51,7 @@ Rätt spår innehåller information om destinationen. Se tabellen nedan för mer
 | Kategori | Anger typen av mål. Mer information finns i [Målkatalog](/help/rtcdp/destinations/destinations-catalog.md) . |
 | Anslutningstyp | Anger i vilket format era målgrupper skickas till målet. Kan vara **cookie** eller **profilbaserad**. |
 | Frekvens | Anger hur ofta målgrupperna skickas till målet. Kan vara **Streaming** eller **Batch**. |
-| Identitet | Representerar det identitetsnamnutrymme som accepteras av målet. Identitetsfältet kan till exempel vara GAID, IDFA, email. Mer information om alla godkända identitetsnamnutrymmen finns i Standardnamnutrymmen i [översikten](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/identity_namespace_overview/identity_namespace_overview.md)över identitetsnamnen. |
+| Identitet | Representerar det identitetsnamnutrymme som accepteras av målet. Identitetsfältet kan till exempel vara GAID, IDFA, email. Mer information om alla godkända identitetsnamnutrymmen finns i Standardnamnutrymmen i [översikten](../../identity-service/namespaces.md)över identitetsnamnen. |
 | Skapad av | Anger den användare som skapade det här målflödet. |
 | Skapad | Anger UTC-datum och UTC-tid när målflödet skapades. |
 
