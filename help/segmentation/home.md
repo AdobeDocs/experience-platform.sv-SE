@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform Segmentation Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: a6a1ecd9ce49c0a55e14b0d5479ca7315e332904
 
 ---
 
@@ -47,7 +47,7 @@ Mer information om hur du skapar segmentdefinitioner med API finns i självstudi
 
 Direktuppspelningssegmentering är en kontinuerlig process för val av data som uppdaterar era segment som svar på användaraktivitet. När ett segment har byggts och sparats tillämpas segmentdefinitionen på inkommande data i kundprofilen i realtid. Tillägg och borttagningar av segment behandlas regelbundet, vilket säkerställer att målgruppen förblir relevant.
 
-Mer information om direktuppspelningssegmentering finns i [dokumentationen](./ui/streaming-segmentation.md)för direktuppspelningssegmentering.
+Mer information om direktuppspelningssegmentering finns i [dokumentationen](./api/streaming-segmentation.md)för direktuppspelningssegmentering.
 
 ### Gruppsegmentering
 
