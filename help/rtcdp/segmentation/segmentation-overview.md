@@ -4,7 +4,7 @@ seo-title: Segmenteringstjänst i Adobes kunddataplattform i realtid
 description: En översikt som beskriver segmenteringstjänsten.
 seo-description: En översikt som beskriver segmenteringstjänster och segment på Adobes kunddataplattform i realtid.
 translation-type: tm+mt
-source-git-commit: bcb4279d04e39905fa64b817fdadd8a875e27697
+source-git-commit: 50e6b39c1eb0bda4f3b30991515fb1c13fa9ff87
 
 ---
 
@@ -25,4 +25,4 @@ Med Platform kan ni enkelt skapa och komma åt segment, samt använda olika bygg
 
 ## Nästa steg
 
-Efter att ha läst den här översikten bör du nu förstå hur CDP i realtid använder segmenteringstjänsten för att förbättra anpassningen och personaliseringen av marknadsföringskampanjer. Mer information om segmenteringstjänsten finns i [segmenteringsdokumentationen för Adobe I/O](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/segmentation/segmentation-overview.md).
+Efter att ha läst den här översikten bör du nu förstå hur CDP i realtid använder segmenteringstjänsten för att förbättra anpassningen och personaliseringen av marknadsföringskampanjer. Mer information om segmenteringstjänsten finns i [segmenteringsdokumentationen](../../segmentation/home.md).
