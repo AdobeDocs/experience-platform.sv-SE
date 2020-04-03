@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Jobb
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: 8102610e2733a75f22cf62d70c0408e3832d0803
 
 ---
 
@@ -105,7 +105,7 @@ curl -X POST \
 | `expandIDs` | En valfri egenskap som, när den anges till `true`, representerar en optimering för bearbetning av ID:n i programmen (stöds för närvarande bara av Analytics). Om det utelämnas blir det här värdet som standard `false`. |
 | `priority` | En valfri egenskap som används av Adobe Analytics och som anger prioriteten för bearbetning av begäranden. Godkända värden är `normal` och `low`. Om `priority` utelämnas används standardbeteendet `normal`. |
 | `analyticsDeleteMethod` | En valfri egenskap som anger hur Adobe Analytics ska hantera personuppgifter. Två möjliga värden accepteras för det här attributet: <ul><li>`anonymize`: Alla data som refereras av den angivna samlingen med användar-ID görs anonyma. Om `analyticsDeleteMethod` utelämnas är detta standardbeteendet.</li><li>`purge`: Alla data tas bort helt.</li></ul> |
-| `regulation` **(Obligatoriskt)** | Regeln för begäran (måste vara antingen&quot;gdpr&quot; eller&quot;ccpa&quot;). |
+| `regulation` **(Obligatoriskt)** | Förordningen om begäran. Måste vara något av följande tre värden: <ul><li>gdpr</li><li>ccpa</li><li>pdpa_tha</li></ul> |
 
 **Svar**
 
@@ -399,7 +399,7 @@ GET ?regulation={REGULATION}&page={PAGE}&size={SIZE}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{REGULATION}` | Regeltypen som ska sökas efter. Godkända värden är `gdpr` och `ccpa`. |
+| `{REGULATION}` | Regeltypen som ska sökas efter. Godkända värden är `gdpr`, `ccpa`och `pdpa_tha`. |
 | `{PAGE}` | Sidan med data som ska visas med nollbaserad numrering. Standardvärdet är `0`. |
 | `{SIZE}` | Antalet resultat som ska visas på varje sida. Standardvärdet är `1` och maxvärdet är `100`. Om det maximala värdet överskrids returneras ett 400-kodfel. |
 
