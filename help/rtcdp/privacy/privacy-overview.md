@@ -4,7 +4,7 @@ seo-title: Sekretess i kunddataprofil i realtid
 description: Med kunddataprofilen i realtid kan ni effektivisera processen att se till att era dataåtgärder följer sekretessreglerna.
 seo-description: Med kunddataprofilen i realtid kan ni effektivisera processen att se till att era dataåtgärder följer sekretessreglerna.
 translation-type: tm+mt
-source-git-commit: 5d3bedd97208d9eed3977a35e16a10f4864aedd9
+source-git-commit: 50e6b39c1eb0bda4f3b30991515fb1c13fa9ff87
 
 ---
 
@@ -17,12 +17,12 @@ Huvuddelen av CDP-funktionerna i realtid drivs av Adobe Experience Platform. Det
 
 ## Integritetstjänst
 
-Med Adobe Experience Platform Privacy Service kan ni effektivisera processen för att se till att era dataåtgärder är kompatibla med sekretessbestämmelser som Allmänna dataskyddsförordningen (GDPR) och California Consumer Privacy Act (CCPA). Eftersom CDP i realtid utnyttjar Experience Platform-funktioner för datainsamling och lagring bör förfrågningar om åtkomst och borttagning för GDPR och CCPA hanteras inom plattformen. En mer detaljerad introduktion till tjänsten finns i översikten över [](https://www.adobe.io/apis/experiencecloud/gdpr/docs/alldocs.html#!api-specification/markdown/narrative/technical_overview/privacy_service_overview/privacy_service_overview.md) sekretesstjänsten.
+Med Adobe Experience Platform Privacy Service kan ni effektivisera processen för att se till att era dataåtgärder är kompatibla med sekretessbestämmelser som Allmänna dataskyddsförordningen (GDPR) och California Consumer Privacy Act (CCPA). Eftersom CDP i realtid utnyttjar Experience Platform-funktioner för datainsamling och lagring bör förfrågningar om åtkomst och borttagning för GDPR och CCPA hanteras inom plattformen. En mer detaljerad introduktion till tjänsten finns i översikten över [](../../privacy-service/home.md) sekretesstjänsten.
 
 Det finns två metoder för att skicka in enskilda förfrågningar från registrerade personer om GDPR och CCPA för att få tillgång till och ta bort kunddata:
 
-* Använd användargränssnittet [för](https://gdprui.cloud.adobe.io/) sekretesstjänsten för att skapa och övervaka begäranden om åtkomst och borttagning på en visuell arbetsyta. I självstudiekursen [för](https://www.adobe.io/apis/experiencecloud/gdpr/docs/alldocs.html#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) sekretesstjänsten finns stegvisa instruktioner.
-* Använd API:t [för](https://www.adobe.io/apis/experiencecloud/gdpr/api-reference.html) sekretesstjänsten för att hantera åtkomst- och borttagningsbegäranden med RESTful API-anrop. I självstudiekursen [för API:t för](https://www.adobe.io/apis/experiencecloud/gdpr/docs/alldocs.html#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_api_tutorial.md) sekretesstjänster finns stegvisa instruktioner.
+* Använd användargränssnittet [för](https://gdprui.cloud.adobe.io/) sekretesstjänsten för att skapa och övervaka begäranden om åtkomst och borttagning på en visuell arbetsyta. I självstudiekursen [för](../../privacy-service/ui/overview.md) sekretesstjänsten finns stegvisa instruktioner.
+* Använd API:t [för](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/privacy-service.yaml) sekretesstjänsten för att hantera åtkomst- och borttagningsbegäranden med RESTful API-anrop. I självstudiekursen [för API:t för](../../privacy-service/api/getting-started.md) sekretesstjänster finns stegvisa instruktioner.
 
 <!-- (Capability will not be available for November GA) 
 ## Opt-out capabilities
@@ -35,4 +35,4 @@ Real-time CDP provides two types of consumer opt-out capabilities:
 
 ## Nästa steg
 
-Det här dokumentet innehåller en kort introduktion till sekretessfunktionerna i CDP i realtid. Mer detaljerad information om bästa praxis och steg för att skicka in begäran om åtkomst/borttagning finns i dokumentationen [till](https://www.adobe.io/apis/experiencecloud/gdpr/docs.html)Integritetstjänst.
+Det här dokumentet innehåller en kort introduktion till sekretessfunktionerna i CDP i realtid. Mer detaljerad information om bästa praxis och steg för att skicka in begäran om åtkomst/borttagning finns i dokumentationen [till](../../privacy-service/home.md)Integritetstjänst.
