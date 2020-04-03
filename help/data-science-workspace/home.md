@@ -126,7 +126,7 @@ I följande tabell visas effekterna av att ha den här behörigheten aktiverad e
 
 | Behörighet | Aktiverad | Handikappade |
 |---|---|---|
-| Hantera arbetsytan Datavetenskap | Ger tillgång till alla tjänster i arbetsytan Datavetenskap. | API- och gränssnittsåtkomst till alla tjänster i Data Science Workspace är inaktiverat. Även om det är inaktiverat går det inte att dirigera till *modellerna* för datavetenskapen och *tjänstsidorna* . |
+| Hantera arbetsytan Datavetenskap | Ger tillgång till alla tjänster i arbetsytan Datavetenskap. | API- och gränssnittsåtkomst till alla tjänster i Data Science Workspace är inaktiverat. Även om det är inaktiverat går det inte att dirigera till *sidorna för Data Science Workspace-modeller* och *tjänster* . |
 
 ### Säkerhet och sinnesfrid
 
