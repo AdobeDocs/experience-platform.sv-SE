@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användarhandbok för Integritetstjänst
 topic: UI guide
 translation-type: tm+mt
-source-git-commit: 4b7cbfcbcbaa602d92f3dfe814b1269f770e3fe7
+source-git-commit: 8a488944d530a4850f8946ed30af769ecb6e954f
 
 ---
 
@@ -74,16 +74,18 @@ Om du vill hämta alla jobbdata som en CSV-fil klickar du på **Exportera till C
 
 ## Skapa en ny begäran om sekretessjobb
 
+>[!NOTE] För att kunna skapa en begäran om ett sekretessjobb måste du ange identitetsinformation för de specifika kunder vars data ska nås eller tas bort. Granska dokumentet om [identitetsdata för att se om det finns några sekretessförfrågningar](../identity-data.md) innan du fortsätter med det här avsnittet.
+
 Sekretessgränssnittet i tjänsten tillhandahåller två metoder för att skapa nya jobbförfrågningar:
 
-* Använda Request Builder
-* Överföra en JSON-fil
+* [Använda Request Builder](#request-builder)
+* [Överföra en JSON-fil](#json)
 
 Steg för att använda dessa metoder finns i följande avsnitt.
 
-### Använda Request Builder
+### Använda Request Builder {#request-builder}
 
-Med hjälp av Request Builder kan du manuellt skapa en ny begäran om sekretessjobb i användargränssnittet. Request Builder är bäst att använda för enklare och mindre uppsättningar av begäranden eftersom Request Builder begränsar antalet begäranden som bara har ID-typ per användare. För mer komplicerade begäranden kan det vara bättre att [överföra en JSON-fil](#upload-a-json-file) i stället.
+Med hjälp av Request Builder kan du manuellt skapa en ny begäran om sekretessjobb i användargränssnittet. Request Builder är bäst att använda för enklare och mindre uppsättningar av begäranden eftersom Request Builder begränsar antalet begäranden som bara har ID-typ per användare. För mer komplicerade begäranden kan det vara bättre att [överföra en JSON-fil](#json) i stället.
 
 Om du vill börja använda Request Builder klickar du på **Create Request** (Skapa begäran) under widgeten Status Report (Statusrapport) till höger på skärmen.
 
@@ -91,19 +93,31 @@ Om du vill börja använda Request Builder klickar du på **Create Request** (Sk
 
 Dialogrutan *Skapa begäran* öppnas och visar tillgängliga alternativ för att skicka en begäran om sekretessjobb för den valda regeltypen.
 
-![](../images/user-guide/request-builder.png)
+<img src="../images/user-guide/request-builder.png" width="500" /><br/>
 
-Välj **jobbtyp** för begäran (&quot;Ta bort&quot; eller&quot;Åtkomst&quot;) och en eller flera tillgängliga **produkter** i listan. Under **Kund-ID** väljer du en ID-typ i listrutan (e-post, ECID eller AID). Skriv ID-värdena i textrutan till höger och tryck på **\&lt;enter>** för varje ID för att lägga till det i listan.
+Välj **jobbtyp** för begäran (&quot;Ta bort&quot; eller&quot;Åtkomst&quot;) och en eller flera tillgängliga **produkter** i listan.
 
-![](../images/user-guide/request-builder-fillout.png)
+<img src="../images/user-guide/type-and-products.png" width="500" /><br/>
 
-De ID:n som ingår i den här listan får en kopia av alla e-postmeddelanden från sekretesstjänsten som skickas när ett jobb har slutförts, avslutas med fel eller timeout. När du är klar klickar du på **Skapa**.
+Under *Namespace-typ* väljer du lämplig namnområdestyp för de kund-ID:n som skickas till Privacy Service.
 
-![](../images/user-guide/request-builder-create.png)
+<img src="../images/user-guide/namespace-type.png" width="500" /><br/>
+
+När du använder _standardtypen_ av namnutrymme väljer du ett namnutrymme på den nedrullningsbara menyn (e-post, ECID eller AAID), skriver sedan ID-värdena i textrutan till höger och trycker på **\&lt;enter>** för varje ID för att lägga till det i listan.
+
+<img src="../images/user-guide/standard-namespace.png" width="500" /><br/>
+
+När du använder den _anpassade_ namnområdestypen måste du skriva in namnutrymmet manuellt innan du anger ID-värdena nedan.
+
+<img src="../images/user-guide/custom-namespace.png" width="500" /><br/>
+
+När du är klar klickar du på **Skapa**.
+
+<img src="../images/user-guide/request-builder-create.png" width="500" /><br/>
 
 Dialogrutan försvinner och det nya jobbet (eller de nya jobben) visas i widgeten Jobbförfrågningar tillsammans med deras aktuella bearbetningsstatus.
 
-### Överföra en JSON-fil
+### Överföra en JSON-fil {#json}
 
 När du skapar mer komplicerade begäranden, t.ex. sådana som använder flera ID-typer för varje registrerade som behandlas, kan du skapa en begäran genom att överföra en JSON-fil.
 
@@ -113,12 +127,12 @@ Klicka på pilen bredvid **Skapa begäran**, under widgeten Statusrapport till h
 
 Dialogrutan *Överför JSON* visas. Där finns ett fönster där du kan dra och släppa JSON-filen till.
 
-![](../images/user-guide/upload-json.png)
+<img src="../images/user-guide/upload-json.png" width="500" /><br/>
 
 Om du inte har någon JSON-fil att överföra klickar du på **Hämta Adobe-GDPR-Request.json** för att hämta en mall som du kan fylla i enligt de värden du har samlat in från de registrerade.
 
 
-![](../images/user-guide/privacy-template.png)
+<img src="../images/user-guide/privacy-template.png" width="500" /><br/>
 
 
 Leta reda på JSON-filen på datorn och dra den till dialogfönstret. Om överföringen lyckas visas filnamnet i dialogrutan. Du kan fortsätta lägga till fler JSON-filer om det behövs genom att dra och släppa dem i dialogrutan.
