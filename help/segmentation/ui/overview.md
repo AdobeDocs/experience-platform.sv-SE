@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användargränssnittsguide för segmentbyggare
 topic: ui guide
 translation-type: tm+mt
-source-git-commit: 902ba5efbb5f18a2de826fffd023195d804309cc
+source-git-commit: 91792f81a50d5752e46236d61b6ad645e3fda86c
 
 ---
 
@@ -173,6 +173,14 @@ Du kan aktivera segmentdefinitioner för direktuppspelning med gränssnittet ell
 ![](../images/segment-builder/enable-streaming-segmentation.png)
 
 När direktuppspelningssegmenteringen har aktiverats måste en baslinje upprättas (detta är den första körningen efter vilken segmentet alltid är uppdaterat). Systemet hanterar baselering automatiskt, men detta är bara möjligt om schemalagd segmentering har aktiverats. Mer information om hur du aktiverar schemalagd segmentering finns [i föregående avsnitt i den här användarhandboken](#enable-scheduled-segmentation).
+
+## Felaktiga policyöverträdelser
+
+>[!NOTE] Principöverträdelser av typen DULE gäller bara om du skapar ett segment som har tilldelats ett mål.
+
+När du är klar med segmentet analyseras segmentet av Data Governance för att säkerställa att det inte förekommer några policyöverträdelser inom segmentet. Mer information om DULE och policyöverträdelser finns i [översikten](../../data-governance/labels/overview.md)för dataanvändningsetiketten.
+
+![](../images/segment-builder/segment-dule-policy-violations.png)
 
 ## Nästa steg
 
