@@ -47,7 +47,7 @@ Adobe Experience Platform Segmentation Service producerar de målgrupper som beh
 
 ### Profilfragment och unionsvyer {#profile-fragments-and-union-schemas}
 
-En av de viktigaste funktionerna i kundprofilen i realtid är möjligheten att sammanställa flerkanalsdata. När kundprofilen i realtid används för att få åtkomst till en enhet kan den ge dig en sammanslagen vy över alla profilfragment för den entiteten över datauppsättningar, så kallade unionsvyn. Kundprofildata i realtid sammanfogas mellan olika källor när en enhet eller profil nås via dess ID eller exporteras som ett segment. Om du vill veta mer om hur du får tillgång till profiler och unionsvyer kan du besöka delguiden för utveckling av kundprofil-API i realtid på [entiteter, som också kallas profilåtkomst](api/entities.md).
+En av de viktigaste funktionerna i kundprofilen i realtid är möjligheten att sammanställa flerkanalsdata. När kundprofilen i realtid används för att få åtkomst till en enhet kan den ge dig en sammanslagen vy över alla profilfragment för den entiteten över datauppsättningar, så kallade unionsvyn. Kundprofildata i realtid sammanfogas mellan olika källor när en enhet eller profil nås via dess ID eller exporteras som ett segment. Om du vill veta mer om hur du får tillgång till profiler och unionsvyer kan du besöka underhandboken för utveckling av kundprofil-API i realtid på [entiteter, som också kallas profilåtkomst](api/entities.md).
 
 ### Sammanfoga profiler
 
