@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa ett recept med Jupyter-anteckningsböcker
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 3190f2f01ae13d25cc3a3a540b83cc1fc0819f0a
+source-git-commit: 9f3fc3ec3ce560534b057185e3fef2cc2bc1234d
 
 ---
 
@@ -399,7 +399,7 @@ def split(self, configProperties={}, dataframe=None):
 Funktionen utförs `evaluate()` efter att modellen har tränats och returnerar ett mått som anger hur framgångsrik modellen är. Funktionen använder `evaluate()` testdatauppsättningsrubrikerna och den utbildade modellen för att förutsäga en uppsättning funktioner. Dessa förväntade värden jämförs sedan med de faktiska funktionerna i testdatauppsättningen. Vanliga bedömningsalgoritmer är:
 - [Genomsnittligt absolut procentfel (MAPE)](https://en.wikipedia.org/wiki/Mean_absolute_percentage_error)
 - [Medel absolut fel (MAE)](https://en.wikipedia.org/wiki/Mean_absolute_error)
-- [RMSE (Root-ean-square error)](https://en.wikipedia.org/wiki/Root-mean-square_deviation)
+- [RMSE (Root-Mean-square error)](https://en.wikipedia.org/wiki/Root-mean-square_deviation)
 
 
 Funktionen `evaluate()` i exemplet med försäljning inom detaljhandeln visas nedan:
@@ -495,6 +495,6 @@ Om du vill fortsätta lära dig hur du arbetar med resurser på arbetsytan Data 
 
 Följande video har utformats för att ge stöd för din förståelse för att bygga och driftsätta modeller.
 
->[!VIDEO](https://images-tv.adobe.com/mpcv3/65884d30-94fe-47ef-8d4e-efafe5303260_1578451719.1920x1080at3000_h264.mp4)
+>[!VIDEO](https://video.tv.adobe.com/v/30575?quality=12&enable10seconds=on&speedcontrol=on)
 
 
