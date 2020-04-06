@@ -1,9 +1,9 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Adobe Experience Platform Source Connectors Help
+user-guide-title: Adobe Experience Platform Source Connectors - hjälp
 translation-type: tm+mt
-source-git-commit: e9b3ca0fa76456e2e6757bcc37cd813f3e64fbf7
+source-git-commit: 10893353215296546fffde109b6f87d90c4c1a55
 
 ---
 
@@ -11,10 +11,10 @@ source-git-commit: e9b3ca0fa76456e2e6757bcc37cd813f3e64fbf7
 # Källkopplingar {#source-connectors}
 
 - [Översikt över källkopplingar](home.md)
-- Användargränssnitt för källanslutningar {#ui}
-   - Adobe-program {#adobe-applications}
-      - [Dataanslutning för Analytics](ui/adobe-applications/analytics.md)
-      - [Mappningsfält för analyser](ui/adobe-applications/analytics-mapping.md)
-      - [Audience Manager-koppling](ui/adobe-applications/audience-manager.md)
-      - [Mappningsfält för Audience Manager](ui/adobe-applications/audience-manager-mapping.md)
-      - [Målmappningsfält](ui/adobe-applications/target-mapping.md)
+- Adobe Application Connectors {#adobe-applications}
+   - [Adobe Analytics Connector](ui/adobe-applications/analytics.md)
+   - [Adobe Audience Manager-koppling](ui/adobe-applications/audience-manager.md)
+   - Mappa Adobe-programanslutningsfält till XDM-scheman
+      - [Adobe Analytics](ui/adobe-applications/analytics-mapping.md)
+      - [Adobe Audience Manager](ui/adobe-applications/audience-manager-mapping.md)
+      - [Adobe Target](ui/adobe-applications/target-mapping.md)
