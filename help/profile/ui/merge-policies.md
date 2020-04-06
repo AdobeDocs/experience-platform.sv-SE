@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: Användarhandbok för sammanslagningsprinciper
 topic: guide
 translation-type: tm+mt
-source-git-commit: 83c7ff45af7266904121b7ff6edcb0f9b0559fee
+source-git-commit: 3669d740b22b650d4079d83026f122ffee42b9a0
 
 ---
 
@@ -55,7 +55,7 @@ Skärmen **Skapa sammanfogningsprincip** visas, så att du kan ange viktig infor
 * **Koppla** attribut: Ett profilfragment är profilinformationen för endast en identitet från listan över identiteter som finns för en enskild kund. När typen av identitetsdiagram som används resulterar i mer än en identitet, finns det en risk för att egenskapsvärden för profiler som står i konflikt med varandra, och prioritet måste anges. Om du använder *attributsammanfogning* kan du ange vilka datamängdsprofilvärden som ska prioriteras om en sammanfogningskonflikt inträffar. Det finns två möjliga värden:
    * **Ordna tidsstämplar**: Om det uppstår en konflikt ska du prioritera profilen som uppdaterades senast.
    * **Datauppsättningsprioritet** : Prioritera profilfragment baserat på den datauppsättning som de kommer från. När du väljer det här alternativet måste du välja relaterade datauppsättningar och deras prioritetsordning. Mer information finns i informationen om [datauppsättningsprioritet](#dataset-precedence) nedan.
-* **Standardprincip** för sammanslagning: En växlingsknapp som gör att du kan välja om sammanfogningsprincipen ska vara standard för din organisation eller inte. Om väljaren är aktiverad och den nya profilen sparas, uppdateras din tidigare standardprofil automatiskt till att inte längre vara standard.
+* **Standardprincip** för sammanslagning: En växlingsknapp som gör att du kan välja om sammanfogningsprincipen ska vara standard för din organisation eller inte. Om väljaren är aktiverad och den nya profilen sparas, uppdateras din tidigare standardprincip automatiskt till att inte längre vara standard.
 
 ### Datauppsättningsprioritet {#dataset-precedence}
 
@@ -86,6 +86,15 @@ När du har gjort de ändringar du vill klickar du på **Spara** för att återg
 
 ![](../images/merge-policies/edited.png)
 
+## Policyöverträdelser för datastyrning
+
+När du skapar eller uppdaterar en sammanfogningsprincip görs en kontroll för att avgöra om sammanfogningsprincipen bryter mot någon av de dataanvändningsprinciper som din organisation har definierat. Dataanvändningspolicyer är en del av Adobe Experience Platform Data Governance och är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på specifika plattformsdata. Om en sammanfogningsprincip till exempel användes för att skapa ett segment som aktiverats för ett tredjepartsmål, och din organisation har en dataanvändningsprincip som förhindrar export av specifika data till tredje part, får du ett meddelande om att en datastyrningsprincip överträds när du försöker spara sammanfogningsprincipen.
+
+Det här meddelandet innehåller en lista över dataanvändningsprinciper som har överträtts och gör att du kan visa information om överträdelsen genom att välja en princip i listan. När du har valt en obehörig princip innehåller fliken *Datalinje* en beskrivning av *orsaken till överträdelse* och de aktiveringar *som* påverkas, där var och en ger mer information om hur dataanvändningsprincipen har överträtts.
+
+Om du vill veta mer om hur datastyrning utförs inom Adobe Experience Platform börjar du med att läsa översikten över [](../../data-governance/home.md)datastyrning.
+
+![](../images/merge-policies/policy-violation.png)
 
 ## Nästa steg
 
