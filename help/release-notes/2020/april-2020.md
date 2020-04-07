@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: March 4, 2020
 author: ens71067
 translation-type: tm+mt
-source-git-commit: c3166bea873572fe6ee2e63dfd13bc64d81e252b
+source-git-commit: b3ee2839412c9949d67c2ae976e3df32fea7731e
 
 ---
 
@@ -31,6 +31,26 @@ Kända fel
 * Ingen
 
 Mer information om sekretesstjänsten finns i översikten över [sekretesstjänsten](../../privacy-service/home.md).
+
+## Källor
+
+Adobe Experience Platform kan importera data från externa källor samtidigt som ni kan strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, programvara från tredje part och ditt CRM-system.
+
+Experience Platform har ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+
+### Nya funktioner
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| API- och gränssnittsstöd för databaser | Nya källanslutningar för Apache Spark (på HDInsights), Azure Synapse Analytics, Azure Table Storage, Hive (på HDInsights) och Phoenix. |
+| API- och gränssnittsstöd för betalningsbaserade program | Nya källanslutningar för PayPal. |
+| API- och gränssnittsstöd för protokollbaserade program | Nya källkopplingar för allmänna OData. |
+
+### Kända fel
+
+* Ingen
+
+Mer information om källor finns i [Källöversikt](../../source-connectors/home.md).
 
 <!-- ## Access control
 
