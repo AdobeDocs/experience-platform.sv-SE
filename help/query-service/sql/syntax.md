@@ -4,7 +4,7 @@ solution: Experience Platform
 title: SQL-syntax
 topic: syntax
 translation-type: tm+mt
-source-git-commit: 45da024d45b5eebdfc393ee14890e24aed6021ce
+source-git-commit: f5bc9beb59e83b0411d98d901d5055122a124d07
 
 ---
 
@@ -150,7 +150,7 @@ INSERT INTO Customers SELECT SupplierName, City, Country FROM OnlineCustomers;
 Observera att för en given INSERT INTO-fråga:
 
 1. Programsatsen `SELECT` FÅR INTE omslutas av parenteser ().
-2. Schemat för resultatet av `SELECT` programsatsen måste överensstämma med schemat i tabellen som definierats i `INSERT INTO` programsatsen.
+2. Schemat för resultatet av `SELECT` programsatsen måste överensstämma med schemat i tabellen som definierats i `INSERT INTO` programsatsen .
 
 ### DROP TABLE
 
@@ -317,7 +317,7 @@ where option can be one of:
 - `FORMAT`: Ange utdataformatet, som kan vara TEXT, XML, JSON eller YAML. Utdata som inte är text innehåller samma information som textutdataformatet, men är enklare att tolka i program. Parametern är som standard `TEXT`.
 - `statement`: Alla `SELECT`, `INSERT`, `UPDATE`, `DELETE`, `VALUES`, `EXECUTE`, `DECLARE`, `CREATE TABLE AS`eller `CREATE MATERIALIZED VIEW AS` -programsatser vars körningsplan du vill se.
 
-> [!IMPORTANT] Kom ihåg att programsatsen faktiskt körs när alternativet `ANALYZE` används. Även om utdata som `EXPLAIN` returneras `SELECT` ignoreras, inträffar andra biverkningar av satsen som vanligt.
+>[!IMPORTANT] Kom ihåg att programsatsen faktiskt körs när alternativet `ANALYZE` används. Även om utdata som `EXPLAIN` returneras `SELECT` ignoreras, inträffar andra biverkningar av satsen som vanligt.
 
 #### Exempel
 
