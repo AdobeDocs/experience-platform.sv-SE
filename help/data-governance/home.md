@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform - datastyrning
 topic: overview
 translation-type: tm+mt
-source-git-commit: 4a60956ade2d742ac83e138a2921a6a4893e06ef
+source-git-commit: 42efd7295dd8002869694a146ea166ad21bd14bb
 
 ---
 
@@ -74,15 +74,11 @@ För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste
 
 Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en datauppsättning till en tredjepartstjänst. Om det finns en policy som säger att vissa typer av data, t.ex. PII (Personally Identiitable Information), inte kan exporteras och att ID-etiketten (Identity data) har tillämpats på datauppsättningen, får du ett svar från principtjänsten som säger att en dataanvändningspolicy har överträtts.
 
-### Skapa och arbeta med dataanvändningspolicyer
+När dataanvändningsetiketter har tillämpats kan datahanterare skapa principer med DULE Policy Service API eller Experience Platform-gränssnittet.
 
-När dataanvändningsetiketter har tillämpats kan datafördelningar skapa principer med DULE Policy Service API.
+Mer information om hur du utför nyckelåtgärder som tillhandahålls av API:t för DULE Policy Service finns i utvecklarhandboken för [Policy Service](api/getting-started.md). Stegvisa instruktioner om hur du arbetar med DULE-profiler finns i självstudiekursen om hur du [skapar och utvärderar DULE-profiler med API:t](policies/create.md).
 
-Som ett datasegment kan du använda API:t för principtjänst för att hantera och utvärdera principer som relaterar till marknadsföringsåtgärder som vidtas på data som innehåller DULE-etiketter. Med API:t kan du skapa och uppdatera principer, fastställa en profils status och arbeta med marknadsföringsåtgärder för att utvärdera om en viss åtgärd bryter mot en dataanvändningspolicy.
-
-I Policy Service API kallas alla policyer och marknadsföringsåtgärder antingen `core` eller `custom` resurser. `core` resurser definieras och underhålls av Adobe, medan `custom` resurser skapas och underhålls av enskilda kunder. Resurserna är därför unika och synliga endast för den organisation som skapade dem. `custom`
-
-Mer information om hur du utför nyckelåtgärder som tillhandahålls av API:t för DULE Policy Service finns i utvecklarhandboken för [Policy Service](api/getting-started.md). Stegvisa instruktioner om hur du arbetar med DULE-profiler finns i självstudiekursen om hur du [skapar och utvärderar DULE-profiler](policies/create.md).
+Information om hur du hanterar principer i användargränssnittet för Experience Platform finns i användarhandboken för [policyer](policies/user-guide.md).
 
 ## Framtida releaser
 
