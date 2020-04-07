@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Anslut med PSQL
 topic: connect
 translation-type: tm+mt
-source-git-commit: 8310204071375a55329f661c9ac678f96979a594
+source-git-commit: f5bc9beb59e83b0411d98d901d5055122a124d07
 
 ---
 
@@ -65,7 +65,7 @@ Klicka på **Kopiera** för &quot;PSQL-kommando&quot;.
 
 ![Bild](../images/clients/psql/connect-bi.png)
 
-> [!IMPORTANT]: Om du är på en dator använder du en textredigerare för att ta bort radbrytningarna i kommandosträngen och kopierar sedan strängen.
+>[!IMPORTANT]: Om du är på en dator använder du en textredigerare för att ta bort radbrytningarna i kommandosträngen och kopierar sedan strängen.
 
 Klistra in kommandosträngen i ett terminal- eller kommandofönster och tryck på Retur.
 
