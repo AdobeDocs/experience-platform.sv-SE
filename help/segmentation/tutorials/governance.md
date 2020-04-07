@@ -4,7 +4,7 @@ solution: Experience Platform
 title: säkerställa att målgruppssegmentens dataanvändning följs
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 7f61cee8fb5160d0f393f8392b4ce2462d602981
+source-git-commit: f5bc9beb59e83b0411d98d901d5055122a124d07
 
 ---
 
@@ -42,7 +42,7 @@ Alla resurser i Experience Platform är isolerade till specifika virtuella sandl
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
-> [!NOTE] Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>[!NOTE] Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -253,7 +253,7 @@ Ett lyckat svar returnerar en lista över dataanvändningsetiketter som är asso
 
 ## Filtrera datafält
 
-> [!NOTE] Det här steget är valfritt. Om du inte vill justera de data som ingår i ditt segment baserat på dina resultat i det föregående steget av att [söka efter dataanvändningsetiketter](#lookup-data-usage-labels-for-the-source-datasets), kan du gå vidare till det sista steget i att [utvärdera data för policyöverträdelser](#evaluate-data-for-policy-violations).
+>[!NOTE] Det här steget är valfritt. Om du inte vill justera de data som ingår i ditt segment baserat på dina resultat i det föregående steget av att [söka efter dataanvändningsetiketter](#lookup-data-usage-labels-for-the-source-datasets), kan du gå vidare till det sista steget i att [utvärdera data för policyöverträdelser](#evaluate-data-for-policy-violations).
 
 Om du vill justera data som ingår i målgruppssegmentet kan du göra det på något av följande två sätt:
 
