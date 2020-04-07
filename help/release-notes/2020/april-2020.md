@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation om Experience Platform 8 april 2020
 doc-type: release notes
-last-update: March 4, 2020
+last-update: April 7, 2020
 author: ens71067
 translation-type: tm+mt
-source-git-commit: 1e2299980572116d589e7164dd20e171433a284a
+source-git-commit: 7335a258a53d2685933b401dc4cd00bb60aa6c07
 
 ---
 
