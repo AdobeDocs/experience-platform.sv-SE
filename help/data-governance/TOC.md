@@ -1,9 +1,9 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Adobe Experience Platform Data Governance Help
+user-guide-title: Hjälp om datastyrning i Adobe Experience Platform
 translation-type: tm+mt
-source-git-commit: 2997243622a7483ae23e21487128cea6badecb80
+source-git-commit: 608f3f61764e6b578107f4ea7991bca12621330a
 
 ---
 
@@ -17,6 +17,7 @@ source-git-commit: 2997243622a7483ae23e21487128cea6badecb80
    * [Etiketter för dataanvändning som stöds](labels/reference.md)
 * Dataanvändningspolicyer {#policies}
    * [Översikt över policyer för dataanvändning](policies/overview.md)
+   * [Användarhandbok för dataanvändningsprinciper](policies/user-guide.md)
    * [Skapa en dataanvändningsprincip med hjälp av API:t för principtjänsten](policies/create.md)
 * Politiska åtgärder {#enforcement}
    * [Översikt över policytillämpning](enforcement/overview.md)
