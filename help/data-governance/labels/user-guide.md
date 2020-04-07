@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användarhandbok för etiketter för dataanvändning
 topic: labels
 translation-type: tm+mt
-source-git-commit: 4a60956ade2d742ac83e138a2921a6a4893e06ef
+source-git-commit: a19a9a31743002eb5fd3a5ecb6668b4c760faa9a
 
 ---
 
@@ -65,7 +65,7 @@ Arbetsytan _Datastyrning_ visas igen och visar de etiketter som du har använt p
 
 Observera att ett&quot;x&quot; visas bredvid etiketterna på datauppsättningsnivå, vilket gör att du kan ta bort etiketterna. De ärvda etiketterna bredvid varje fält har inte något &quot;x&quot; bredvid sig och visas&quot;nedtonade&quot; utan möjlighet att ta bort eller redigera. Detta beror på att **ärvda fält är skrivskyddade**, vilket innebär att de inte kan tas bort på fältnivån.
 
-Alternativet **Visa ärvda etiketter** är aktiverat som standard, vilket gör att du kan se alla etiketter som ärvs ned från datauppsättningen till dess fält. Om du växlar av inaktiveringen döljs alla ärvda etiketter i datauppsättningen.
+Växeln **Visa ärvda etiketter** är aktiverad som standard, vilket gör att du kan se alla etiketter som ärvs ned från datauppsättningen till dess fält. Om du växlar av inaktiveringen döljs alla ärvda etiketter i datauppsättningen.
 
 ![Dölj ärvda etiketter](../images/labels/hide_inherited_labels.png)
 
@@ -98,6 +98,8 @@ Det är viktigt att komma ihåg att arv endast flyttas från den översta nivån
 ## Nästa steg
 
 Nu när du har lagt till etiketter för dataanvändning på data- och fältnivå kan du börja importera data till Experience Platform. Om du vill veta mer kan du börja med att läsa [dokumentationen](../../ingestion/home.md)för dataöverföring.
+
+Nu kan du även definiera dataanvändningsprinciper baserat på de etiketter du har använt. Mer information finns i översikten över [dataanvändningsprinciper](../policies/overview.md).
 
 ## Ytterligare resurser
 
