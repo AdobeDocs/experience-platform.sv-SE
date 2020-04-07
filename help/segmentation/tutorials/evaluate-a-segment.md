@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Utvärdera ett segment
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: a6a1ecd9ce49c0a55e14b0d5479ca7315e332904
+source-git-commit: f5bc9beb59e83b0411d98d901d5055122a124d07
 
 ---
 
@@ -24,7 +24,7 @@ Den här självstudiekursen kräver en fungerande förståelse för de olika Ado
 
 ### Obligatoriska rubriker
 
-I den här självstudiekursen måste du också ha slutfört [autentiseringssjälvstudiekursen](../../tutorials/authentication.md) för att kunna anropa plattforms-API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+Den här självstudien kräver också att du har slutfört [autentiseringssjälvstudiekursen](../../tutorials/authentication.md) för att kunna ringa anrop till plattforms-API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
@@ -34,7 +34,7 @@ Alla resurser i Experience Platform är isolerade till specifika virtuella sandl
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
-> [!NOTE] Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>[!NOTE] Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla POST-, PUT- och PATCH-begäranden kräver ytterligare en rubrik:
 
@@ -52,7 +52,7 @@ Om du ännu inte har slutfört [Skapa ett segment med hjälp av självstudiekurs
 
 Med hjälp av schemalagd utvärdering kan din IMS-organisation skapa ett återkommande schema som automatiskt kör exportjobb.
 
-> [!NOTE] Schemalagd utvärdering kan aktiveras för sandlådor med högst fem (5) sammanslagningsprinciper för den enskilda XDM-profilen. Om din organisation har fler än fem sammanfogningsprinciper för den enskilda XDM-profilen i en enda sandlådemiljö, kommer du inte att kunna använda schemalagd utvärdering.
+>[!NOTE] Schemalagd utvärdering kan aktiveras för sandlådor med högst fem (5) sammanslagningsprinciper för den enskilda XDM-profilen. Om din organisation har fler än fem sammanfogningsprinciper för den enskilda XDM-profilen i en enda sandlådemiljö, kommer du inte att kunna använda schemalagd utvärdering.
 
 ### Skapa ett schema
 
