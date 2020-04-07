@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: March 4, 2020
 author: ens71067
 translation-type: tm+mt
-source-git-commit: 3f3704cc1e11a4d11278a34800c8bfdc24a80753
+source-git-commit: 1e2299980572116d589e7164dd20e171433a284a
 
 ---
 
@@ -13,6 +13,26 @@ source-git-commit: 3f3704cc1e11a4d11278a34800c8bfdc24a80753
 # Versionsinformation om Adobe Experience Platform
 
 ## Releasedatum: 8 april 2020
+
+## Datastyrning
+
+Adobe Experience Platform Data Governance är en serie strategier och tekniker som används för att hantera kunddata och säkerställa efterlevnad av regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en viktig roll inom Experience Platform på olika nivåer, bland annat i fråga om katalogisering, datalinje, märkning av dataanvändning, dataåtkomstprinciper och åtkomstkontroll av data för marknadsföringsåtgärder.
+
+För att komma igång med datastyrning krävs en grundlig förståelse för de regler, avtalsförpliktelser och företagspolicyer som gäller för era kunddata. Därifrån kan data klassificeras med hjälp av lämpliga etiketter för dataanvändning, och användningen av dessa kan styras med hjälp av definitionen av policyer för dataanvändning.
+
+DULE-ramverket förenklar och effektiviserar processen att kategorisera data och skapa dataanvändningsprinciper via Experience Platform-gränssnittet och DULE Policy Service API.
+
+### Nya funktioner
+
+| Funktion | Beskrivning |
+| -----------| ---------- |
+| Hantera dataanvändningsprinciper i användargränssnittet | Dataanvändningsprinciper kan nu hanteras i arbetsytan _Principer_ i användargränssnittet för Experience Platform. Mer information finns i användarhandboken [för](../../data-governance/policies/user-guide.md) profilen. |
+
+**Kända fel**
+
+* Ingen.
+
+Mer information finns i översikten över [datastyrning](../../data-governance/home.md).
 
 ## Intelligenta tjänster
 
@@ -68,31 +88,3 @@ Experience Platform har ett RESTful API och ett interaktivt användargränssnitt
 * Ingen
 
 Mer information om källor finns i [Källöversikt](../../source-connectors/home.md).
-
-<!-- ## Access control
-
-Experience Platform leverages [Adobe Admin Console](https://adminconsole.adobe.com) product profiles to link users with permissions and sandboxes. Permissions control access to a variety of Platform capabilities, including data modeling, profile management, and sandbox administration.
-
-### Key features
-
-|Feature | Description|
-|--- | ---|
-|Permissions | In the Admin Console, the _Permissions_ tab within a Platform product profile allows you customize which Platform capabilities are available for the users attached to that profile. Available permission categories include: Data Modeling, Data Management, Profile Management, Identities, Data Monitoring, Sandbox Administration, Destinations, Sources.|
-|Access to sandboxes | The _Permissions_ tab within a Platform product profile can grant users access to specific sandboxes. See the section on [sandboxes](#sandboxes) below for more information.|
-
-For more information, please see the [access control overview](../../access-control/home.md).
-
-## Sandboxes
-
-Experience Platform is built to enrich digital experience applications on a global scale. Companies often run multiple digital experience applications in parallel and need to cater for the development, testing, and deployment of these applications while ensuring operational compliance. In order to address this need, Experience Platform provides sandboxes which partition a single Platform instance into separate virtual environments to help develop and evolve digital experience applications.
-
-### Key features
-
-|Feature | Description|
-|--- | ---|
-|Production sandbox | Experience Platform provides a single production sandbox, which cannot be deleted or reset.|
-|Non-production sandboxes | Multiple non-production sandboxes can be created for a single Platform instance, allowing you to test features, run experiments, and make custom configurations without impacting your production sandbox.|
-|Sandbox switcher | In the Experience Platform user interface, the sandbox switcher in the top-left corner of the screen allows you to switch between available sandboxes through a dropdown menu.|
-|`x-sandbox-name` header | All calls to Experience Platform APIs must now include the new `x-sandbox-name` header, whose value references the `name` attribute of the sandbox the operation will take place in.|
-
-For more information, please see the [sandboxes overview](../../sandboxes/home.md). -->
