@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa en dataanvändningsprincip
 topic: policies
 translation-type: tm+mt
-source-git-commit: 04b2e07ba39df9f530c9c93c4bf1af9e2cf30169
+source-git-commit: da4fe8be360d5530d96078e4ef024bccf7f080f5
 
 ---
 
@@ -409,6 +409,8 @@ Ett lyckat svar returnerar HTTP-status 200 (OK) och information om den uppdatera
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en DULE-princip för en marknadsföringsåtgärd. Nu kan du fortsätta med självstudiekursen om hur du [verkställer DULE-principer](../enforcement/api-enforcement.md) för att lära dig hur du söker efter policyöverträdelser och hanterar dem i ditt upplevelseprogram.
+Genom att följa den här självstudiekursen har du skapat en dataanvändningspolicy för en marknadsföringsåtgärd. Nu kan du fortsätta med självstudiekursen om hur du [verkställer dataanvändningspolicyer](../enforcement/api-enforcement.md) för att lära dig hur du söker efter regelöverträdelser och hanterar dem i ditt upplevelseprogram.
 
-Mer information om de olika tillgängliga åtgärderna i API:t för principtjänsten finns i Utvecklarhandbok [för](../api/getting-started.md)principtjänsten. Mer information om hur du tillämpar DULE-regler för kundprofildata i realtid finns i självstudiekursen om hur du [tillämpar dataanvändning för målgruppssegment](../../segmentation/tutorials/governance.md).
+Mer information om de olika tillgängliga åtgärderna i API:t för principtjänsten finns i Utvecklarhandbok [för](../api/getting-started.md)principtjänsten. Mer information om hur du tillämpar principer för kundprofildata i realtid finns i självstudiekursen om hur du [framtvingar dataanvändning för målgruppssegment](../../segmentation/tutorials/governance.md).
+
+Mer information om hur du hanterar användarprofiler i användargränssnittet för Experience Platform finns i användarhandboken för [principen](user-guide.md).
