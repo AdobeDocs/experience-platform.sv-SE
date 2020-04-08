@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Exportera data med API:er
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 7f61cee8fb5160d0f393f8392b4ce2462d602981
+source-git-commit: 409d98818888f2758258441ea2d993ced48caf9a
 
 ---
 
@@ -26,7 +26,7 @@ Den här självstudiekursen kräver en fungerande förståelse för de olika Ado
 
 ### Obligatoriska rubriker
 
-Den här självstudien kräver också att du har slutfört [autentiseringssjälvstudiekursen](../../tutorials/authentication.md) för att kunna ringa anrop till plattforms-API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+I den här självstudiekursen måste du också ha slutfört [autentiseringssjälvstudiekursen](../../tutorials/authentication.md) för att kunna anropa plattforms-API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
@@ -87,8 +87,7 @@ curl -X POST \
           "persisted": true,
           "containerFormat": "parquet",
           "format": "parquet"
-        },
-        "aspect": "production"
+        }
       }'
 ```
 
