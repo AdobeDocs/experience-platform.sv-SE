@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Frågor och svar om sekretessservice
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: 7e2e36e13cffdb625b7960ff060f8158773c0fe3
+source-git-commit: 64cb2de507921fcb4aaade67132024a3fc0d3dee
 
 ---
 
@@ -14,6 +14,52 @@ source-git-commit: 7e2e36e13cffdb625b7960ff060f8158773c0fe3
 Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform Privacy Service.
 
 Integritetstjänsten tillhandahåller ett RESTful API och användargränssnitt som hjälper företag att hantera förfrågningar om kunddata. Med Integritetstjänsten kan ni skicka in förfrågningar om åtkomst till och radering av privata eller personliga kunddata, vilket underlättar automatiserad efterlevnad av organisatoriska och juridiska sekretessbestämmelser.
+
+## Vad är skillnaden mellan en användare och ett användar-ID när sekretessförfrågningar görs i API:t? {#user-ids}
+
+För att kunna göra ett nytt sekretessjobb i API:t måste JSON-nyttolasten för begäran innehålla en `users` array som listar specifik information för varje användare som sekretessbegäran gäller för. Varje objekt i arrayen är ett objekt som representerar en viss användare, som identifieras av dess `users` `key` värde.
+
+Varje användarobjekt (eller `key`) innehåller i sin tur en egen `userIDs` array. Den här arrayen visar specifika ID-värden **för en viss användare**.
+
+Titta på följande `users` exempelarray:
+
+```json
+"users": [
+  {
+    "key": "DavidSmith",
+    "action": ["access"],
+    "userIDs": [
+      {
+        "namespace": "email",
+        "value": "dsmith@acme.com",
+        "type": "standard"
+      }
+    ]
+  },
+  {
+    "key": "user12345",
+    "action": ["access", "delete"],
+    "userIDs": [
+      {
+        "namespace": "email",
+        "value": "ajones@acme.com",
+        "type": "standard"
+      },
+      {
+        "namespace": "ECID",
+        "type": "standard",
+        "value":  "443636576799758681021090721276",
+        "isDeletedClientSide": false
+      }
+    ]
+  }
+]
+```
+
+Arrayen innehåller två objekt, som representerar enskilda användare som identifieras av deras `key` värden (&quot;DavidSmith&quot; och&quot;user12345&quot;). &quot;DavidSmith&quot; har bara ett angivet ID (deras e-postadress), medan &quot;user12345&quot; har två (deras e-postadress och ECID).
+
+Mer information om att tillhandahålla information om användaridentitet finns i guiden om [identitetsdata för sekretessförfrågningar](identity-data.md).
+
 
 ## Kan jag använda integritetstjänsten för att rensa upp data som av misstag skickats till plattformen?
 
