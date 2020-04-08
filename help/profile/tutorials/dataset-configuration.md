@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: Konfigurera en datauppsättning för profil- och identitetstjänsten med API:er
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 5aad9fa71051a58fe1c4678553f47077d81d23fc
+source-git-commit: 409d98818888f2758258441ea2d993ced48caf9a
 
 ---
 
@@ -169,7 +169,6 @@ curl -X GET \
         "createdUser": "{CREATED_BY}",
         "updatedUser": "{CREATED_BY}",
         "viewId": "5b020a27e7040801dedbf46f",
-        "aspect": "production",
         "status": "enabled",
         "fileDescription": {
             "persisted": true,
@@ -246,7 +245,7 @@ Både kundprofil och identitetstjänst i realtid använder XDM-data när de häm
 
 ## Bekräfta datainmatning med kundprofil i realtid {#confirm-data-ingest-by-real-time-customer-profile}
 
-När du överför data till en ny datauppsättning för första gången, eller som en del av en process som inbegriper en ny ETL eller datakälla, bör du noggrant kontrollera data för att se till att de har överförts som förväntat. Med hjälp av API:t för kundprofilåtkomst i realtid kan du hämta batchdata när de läses in till en datauppsättning. Om du inte kan hämta någon av de enheter du förväntar dig, kanske din datauppsättning inte är aktiverad för kundprofil i realtid. När du har bekräftat att datauppsättningen har aktiverats kontrollerar du att källdataformatet och identifierarna stöder dina förväntningar. Detaljerade instruktioner om hur du använder kundprofils-API:t i realtid för att få åtkomst till profildata finns i [underhandboken om entiteter, som också kallas &quot;API:t för profilåtkomst&quot;](../api/entities.md).
+När du överför data till en ny datauppsättning för första gången, eller som en del av en process som inbegriper en ny ETL eller datakälla, bör du noggrant kontrollera data för att se till att de har överförts som förväntat. Med hjälp av API:t för kundprofilåtkomst i realtid kan du hämta batchdata när de läses in till en datauppsättning. Om du inte kan hämta någon av de enheter du förväntar dig, kanske din datauppsättning inte är aktiverad för kundprofil i realtid. När du har bekräftat att datauppsättningen har aktiverats kontrollerar du att källdataformatet och identifierarna stöder dina förväntningar. Detaljerade instruktioner om hur du använder kundprofils-API:t i realtid för att få åtkomst till profildata finns i [underhandboken om entiteter, som även kallas &quot;API:t för profilåtkomst&quot;](../api/entities.md).
 
 ## Bekräfta datainhämtning via identitetstjänsten {#confirm-data-ingest-by-identity-service}
 
