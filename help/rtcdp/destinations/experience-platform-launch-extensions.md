@@ -4,7 +4,7 @@ seo-title: Experience Platform Launch Extensions
 description: Launch är nästa generation av tagghanteringsfunktioner från Adobe. Launch ger kunderna ett enkelt sätt att driftsätta och hantera alla analyser, marknadsförings- och annonstaggar som behövs för att driva relevanta kundupplevelser.
 seo-description: Launch är nästa generation av tagghanteringsfunktioner från Adobe. Launch ger kunderna ett enkelt sätt att driftsätta och hantera alla analyser, marknadsförings- och annonstaggar som behövs för att driva relevanta kundupplevelser.
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: 2a082dc46b50eba1a38eb9d6946e17f851b2fd3f
 
 ---
 
@@ -16,6 +16,12 @@ Experience Platform Launch är nästa generation av tagghanteringsfunktioner fr�
 En introduktion till funktionerna för Experience Platform Launch finns i resurserna nedan:
 * Experience Platform Launch- [dokumentation](https://docs.adobe.com/content/help/en/launch/using/overview.html)
 * Experience Platform Launch, [snabbstartsvideor](https://docs.adobe.com/content/help/en/launch/using/intro/get-started/videos.html). Börja med [introduktionen till Experience Platform Launch](https://www.youtube.com/embed/rwqqkG1SERU) and [Publishing process overview](https://helpx.adobe.com/analytics/how-to/adobe-launch-publishing-process.html)och gå sedan vidare till nästa koncept.
+
+## Hitta Launch-tilläggen i Adobe Real-time CDP-gränssnittet
+
+Du hittar Launch-tilläggen i Adobe Real-time CDP-gränssnittet genom att bläddra till **[!UICONTROL Destinations > Catalog]** och välja **[!UICONTROL Extensions]** i **[!UICONTROL Types]** filtret.
+
+![Filtret Tillägg i gränssnittet](/help/rtcdp/destinations/assets/extensions-filter.png)
 
 ## Så här fungerar Launch-tillägg
 
