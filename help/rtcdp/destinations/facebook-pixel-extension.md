@@ -4,7 +4,7 @@ seo-title: Pixeltillägg för Facebook
 description: Facebook Pixel-tillägget är ett annonsmål i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: null
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: ff91395844c239415123a33d65fa0deb2221ae25
 
 ---
 
@@ -18,6 +18,8 @@ Pixeln på Facebook är ett analysverktyg som gör att ni kan mäta hur effektiv
 Facebook Pixel är ett annonstillägg i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktioner finns på [Facebook Pixel-webbplatsen](https://developers.facebook.com/docs/facebook-pixel/).
 
 Det här målet är ett Experience Platform Launch-tillägg. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
+
+![Pixeltillägg för Facebook](assets/facebook-pixel-extension.png)
 
 ## Förutsättningar {#prerequisites}
 
