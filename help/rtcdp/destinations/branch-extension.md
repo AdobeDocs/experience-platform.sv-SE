@@ -4,7 +4,7 @@ seo-title: Filialtillägg
 description: Filialtillägget är ett reklammål i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: Filialtillägget är ett reklammål i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: 2a94444b35cac0c002d729798d96fd54aaafbacd
 
 ---
 
@@ -18,6 +18,8 @@ Branch tillhandahåller kraftfulla länkar och lösningar som hjälper er att v�
 Filialen är ett reklamtillägg i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på sidan [](https://branch.io/features/) Funktioner på webbplatsen för grenen.
 
 Det här målet är ett Experience Platform Launch-tillägg. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
+
+![Filialtillägg](assets/branch-extension.png)
 
 ## Förutsättningar {#prerequisites}
 
