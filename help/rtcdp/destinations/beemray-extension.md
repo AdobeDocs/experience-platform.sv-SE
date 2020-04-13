@@ -4,7 +4,7 @@ seo-title: Beemray-tillägg
 description: Beemray-tillägget är ett personaliseringsmål i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: Beemray-tillägget är ett personaliseringsmål i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: 2a94444b35cac0c002d729798d96fd54aaafbacd
 
 ---
 
@@ -18,6 +18,8 @@ Beemray hjälper dig att snabba upp din produkt i situationssammanhang. Gör det
 Beemray är ett personaliseringstillägg i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101063.beemray-human-context.html).
 
 Det här målet är ett Experience Platform Launch-tillägg. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
+
+![Beemray-tillägg](assets/beemray-extension.png)
 
 ## Förutsättningar {#prerequisites}
 
