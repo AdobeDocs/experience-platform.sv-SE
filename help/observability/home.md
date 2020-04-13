@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Insikter om Adobe Experience Platform-observationer
 topic: overview
 translation-type: tm+mt
-source-git-commit: 947955403a270914437d9172bca458f9c49ccd8f
+source-git-commit: d349ffab7c0de72d38b5195585c14a4a8f80e37c
 
 ---
 
@@ -13,7 +13,7 @@ source-git-commit: 947955403a270914437d9172bca458f9c49ccd8f
 
 Insikter om observerbarhet är ett RESTful API som gör att ni kan visa viktiga mätvärden för observerbarhet i Adobe Experience Platform. Dessa mätvärden ger insikter i statistik om plattformsanvändning, hälsokontroller för plattformstjänster, historiska trender och resultatindikatorer för olika plattformsfunktioner.
 
-I det här dokumentet visas ett exempel på hur du anropar API:t för observabilitet Insights och en lista över exponerade mått som är kompatibla med tjänsten. En fullständig lista över observationsslutpunkter finns i API-referensen [för](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/observability-insights.yaml)observabilitetsinsikter.
+I det här dokumentet visas ett exempel på hur du anropar API:t för Insights. En fullständig lista över observationsslutpunkter finns i API-referensen [för](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/observability-insights.yaml)observabilitetsinsikter.
 
 ## Komma igång
 
@@ -23,11 +23,9 @@ För att kunna ringa anrop till plattforms-API:er måste du först slutföra [au
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver ett huvud som anger namnet på sandlådan som åtgärden ska utföras i. Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../sandboxes/home.md).
 
 * x-sandbox-name: `{SANDBOX_NAME}`
-
->[!NOTE] Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../sandboxes/home.md).
 
 ## Hämta mätvärden för observerbarhet
 
@@ -48,7 +46,7 @@ GET /metrics?metric={METRIC}&metric={METRIC_2}&id={ID}&dateRange={DATE_RANGE}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{METRIC}` | Det mätvärde som du vill visa. När du kombinerar flera mätvärden i ett enda anrop måste du använda ett et-tecken (`&`) för att separera enskilda mätvärden. Exempel, `metric={METRIC_1}&metric={METRIC_2}`. |
-| `{ID}` | Identifieraren för en viss plattformsresurs vars mätvärden du vill visa. Detta ID kan vara valfritt, obligatoriskt eller inte tillämpligt beroende på vilka mätvärden som används. En lista över tillgängliga mätvärden samt ID:n som stöds (både obligatoriska och valfria) för varje mätvärde finns i referensdokumentet för [tillgängliga mätvärden](metrics.md) nedan. |
+| `{ID}` | Identifieraren för en viss plattformsresurs vars mätvärden du vill visa. Detta ID kan vara valfritt, obligatoriskt eller inte tillämpligt beroende på vilka mätvärden som används. En lista över tillgängliga mätvärden, samt vilka ID:n som stöds (både obligatoriska och valfria) för varje mätvärde finns i referensdokumentet om [tillgängliga mätvärden](metrics.md). |
 | `{DATE_RANGE}` | Datumintervallet för de mätvärden som du vill visa, i ISO 8601-format (till exempel `2018-10-01T07:00:00.000Z/2018-10-09T07:00:00.000Z`). |
 
 **Begäran**
@@ -64,7 +62,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar en lista med objekt, där var och en innehåller en tidsstämpel inom det angivna `dateRange` och motsvarande värden för de mått som anges i sökvägen för begäran. Om en plattformsresurs är inkluderad `id` i sökvägen för begäran kommer resultatet endast att gälla för den aktuella resursen. Om `id` utelämnas gäller resultatet alla tillämpliga resurser i IMS-organisationen.
+Ett lyckat svar returnerar en lista med objekt, där var och en innehåller en tidsstämpel inom det angivna `dateRange` och motsvarande värden för de mått som anges i sökvägen för begäran. Om en plattformsresurs är inkluderad `id` i sökvägen för begäran kommer resultatet endast att gälla för den aktuella resursen. Om `id` utelämnas gäller resultatet alla tillämpliga resurser i IMS-organisationen.
 
 ```json
 {
