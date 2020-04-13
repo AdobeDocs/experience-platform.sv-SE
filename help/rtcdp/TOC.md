@@ -3,7 +3,7 @@ product: adobe experience platform
 audience: user
 user-guide-title: Hjälp om kunddataplattform i realtid
 translation-type: tm+mt
-source-git-commit: 51963edad2f903a4a91e1b7c5114bf81323346bc
+source-git-commit: ee2a490ebc802684a0761dc6589d6b30defc0398
 
 ---
 
@@ -133,7 +133,6 @@ source-git-commit: 51963edad2f903a4a91e1b7c5114bf81323346bc
    * [Segmentbyggarguide](segmentation/segment-builder-guide.md)
 * Källor {#sources}
    * [Översikt över källor](sources/sources-overview.md)
-   * [Källor - självstudiekurser](sources/sources-tutorials.md)
    * [Implementera webbplatstaggar med Adobe Launch](sources/launch.md)
-* [Versionsinformation](https://www.adobe.io/apis/experienceplatform/home/services/release-notes.html#!end-user/markdown/release-notes/release-notes.md)
-* [Ordlista](https://www.adobe.io/apis/experienceplatform/home/services/acp-glossary.html)
+* [Versionsinformation](https://www.adobe.com/go/platform-release-notes-en)
+* [Ordlista](https://www.adobe.com/go/platform-glossary-en)
