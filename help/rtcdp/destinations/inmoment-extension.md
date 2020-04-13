@@ -4,7 +4,7 @@ seo-title: InMoment-tillägg
 description: Tillägget InMoment är en undersökningsdestination i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: null
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: ff91395844c239415123a33d65fa0deb2221ae25
 
 ---
 
@@ -18,6 +18,8 @@ Med InMoment Launch Integration kan du snabbt och enkelt aktivera online-feedbac
 InMoment är ett enkättillägg i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100847.html).
 
 Det här målet är ett Experience Platform Launch-tillägg. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
+
+![Inkommande tillägg](/help/rtcdp/destinations/assets/inmoment-extension.png)
 
 ## Förutsättningar {#prerequisites}
 
