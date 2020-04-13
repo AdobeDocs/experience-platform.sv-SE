@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: April 7, 2020
 author: ens71067
 translation-type: tm+mt
-source-git-commit: 7335a258a53d2685933b401dc4cd00bb60aa6c07
+source-git-commit: 61b2df88bfe8cadd975eaa0b98872710aa3832d3
 
 ---
 
@@ -33,6 +33,22 @@ DULE-ramverket förenklar och effektiviserar processen att kategorisera data och
 * Ingen.
 
 Mer information finns i översikten över [datastyrning](../../data-governance/home.md).
+
+
+## Mål 
+
+I [Adobes kunddataplattform](../../rtcdp/overview.md)i realtid är destinationer färdigbyggda integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
+
+### Nya destinationer
+
+Adobe CDP stöder nu dataaktivering i realtid i över femtio Experience Cloud Launch-tillägg, vilket möjliggör analyser, personalisering och andra användningsfall. Mer information finns nedan:
+
+| Dokumentation | Beskrivning |
+|--- | ---|
+| [Måltyper och -kategorier](/help/rtcdp/destinations/destination-types.md) | I den här artikeln förklaras skillnaden mellan anslutningar och tillägg i Adobe-gränssnittet för CDP i realtid och en rekommendation om när var och en av dessa destinationer ska användas. |
+| [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md) | På den här sidan förklaras vad Launch-tillägg är, används exempel på dem och länkar till dokumentation för varje Launch-tillägg i Adobe Real-time CDP. |
+
+Mer information finns i Översikt över [destinationer](/help/rtcdp/destinations/destinations-overview.md).
 
 ## Intelligenta tjänster
 
