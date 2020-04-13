@@ -4,7 +4,7 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobes kunddataplattform i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobes kunddataplattform i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: 336aa90cf1e059a92a36dd0ef3222ef6a6f5123b
+source-git-commit: 2eddd5bb7b62dcc414ad906647b05ce10c766ac6
 
 ---
 
@@ -28,7 +28,14 @@ Om du vill aktivera data till mål måste du ha [anslutit ett mål](/help/rtcdp/
 5. *Villkorligt*. Det här steget gäller endast för segment som är mappade till e-postmarknadsföringsmål. <br> På **[!UICONTROL Destination Attributes]** sidan markerar du **[!UICONTROL Add new field]** och väljer de attribut som du vill skicka till målet.
 Vi rekommenderar att ett av attributen är en [unik identifierare](/help/rtcdp/destinations/email-marketing-destinations.md#identity) från ditt unionsschema. Mer information om obligatoriska attribut finns i Identitet i artikeln [E-postmarknadsföringsmål](/help/rtcdp/destinations/email-marketing-destinations.md#identity) .
    ![mål-attribut](/help/rtcdp/destinations/assets/destination-attributes.png)
-6. På **[!UICONTROL Schedule]** sidan kan du se startdatumet för att skicka data till målet samt hur ofta data skickas till målet.
+6. På **[!UICONTROL Segment schedule]** sidan kan du se startdatumet för att skicka data till målet samt hur ofta data skickas till målet.
+
+   >[!IMPORTANT]
+   >
+   >För sociala mål måste du välja målgruppens ursprung i det här steget. Du kan bara fortsätta till nästa steg efter att du har valt något av alternativen i bilden nedan.
+
+   ![välj datakälla](/help/rtcdp/destinations/assets/choose-data-origin.png)
+
 7. På **[!UICONTROL Review]** sidan visas en sammanfattning av markeringen. Välj **[!UICONTROL Cancel]** om du vill dela upp flödet, **[!UICONTROL Back]** om du vill ändra inställningarna eller **[!UICONTROL Finish]** om du vill bekräfta urvalet och börja skicka data till målet.
 
 ![bekräfta-val](/help/rtcdp/destinations/assets/confirm-selection.png)
@@ -60,6 +67,10 @@ De här filerna finns på lagringsplatsen och du har fått en bekräftelse på a
 ### Annonsmål
 
 Kontrollera respektive annonsmål som du aktiverar dina data till. Om aktiveringen lyckades, fylls målgrupperna i er annonsplattform.
+
+### Målgrupper i sociala nätverk
+
+För Facebook innebär en lyckad aktivering att en anpassad Facebook-målgrupp skapas programmatiskt i [Facebook Ads Manager](https://www.facebook.com/adsmanager/manage/). Segmentmedlemskap i målgruppen skulle läggas till och tas bort eftersom användarna är kvalificerade eller diskvalificerade för de aktiverade segmenten.
 
 ## Inaktivera aktivering {#disable-activation}
 
