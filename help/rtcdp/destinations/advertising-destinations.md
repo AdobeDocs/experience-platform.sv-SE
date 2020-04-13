@@ -4,7 +4,7 @@ seo-title: Annonsmål
 description: Koppla samman er kunddataplattform i realtid med en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 seo-description: Koppla samman er kunddataplattform i realtid med en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 translation-type: tm+mt
-source-git-commit: 2eddd5bb7b62dcc414ad906647b05ce10c766ac6
+source-git-commit: 4b021ce8fd81708fac5de7508cd19d99295634d9
 
 ---
 
@@ -18,8 +18,8 @@ När ni ansluter till en annonsdestination skickas era målgrupper som ID:n till
 För närvarande stöder CDP i realtid de reklamdestinationer som anges nedan. Information om hur du ansluter till dessa mål finns i de enskilda länkarna:
 
 * [Adobe Advertising Cloud (tillägget Experience Platform Launch)](/help/rtcdp/destinations/adobe-advertising-cloud-extension.md)
-* [Awin Adveritising Conversion Tag (tillägget Experience Platform Launch)](/help/rtcdp/destinations/awin-conversiontag-extension.md)
-* [Awin Adveritising Mastertag (tillägget Experience Platform Launch)](/help/rtcdp/destinations/awin-mastertag-extension.md)
+* [Awin Advertising Conversion Tag (tillägget Experience Platform Launch)](/help/rtcdp/destinations/awin-conversiontag-extension.md)
+* [Awin Advertising Mastertag (tillägget Experience Platform Launch)](/help/rtcdp/destinations/awin-mastertag-extension.md)
 * [Beemray (tillägget Experience Platform Launch)](beemray-extension.md)
 * [Bing Ads Universal Event Tracking (tillägget Experience Platform Launch)](/help/rtcdp/destinations/bing-ads-extension.md)
 * [Gren (Experience Platform Launch-tillägg)](/help/rtcdp/destinations/branch-extension.md)
