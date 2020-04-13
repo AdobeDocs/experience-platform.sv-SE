@@ -3,7 +3,7 @@ product: adobe experience platform
 audience: user
 user-guide-title: Hjälp om kunddataplattform i realtid
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: 4b021ce8fd81708fac5de7508cd19d99295634d9
 
 ---
 
@@ -30,11 +30,11 @@ source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
       * Adobes destinationer{#adobe-destinations}
          * [Översikt över Adobes destinationer](destinations/adobe-destinations.md)
          * [Adobe Campaign](destinations/adobe-campaign-destination.md)
-      * Annonsmål{#advertiser-destinations}
+      * Annonsmål{#advertising-destinations}
          * [Översikt över reklamdestinationer](destinations/advertising-destinations.md)
          * [Adobe Advertising Cloud (tillägget Experience Platform Launch)](/help/rtcdp/destinations/adobe-advertising-cloud-extension.md)
-         * [Awin Adveritising Conversion Tag (tillägget Experience Platform Launch)](/help/rtcdp/destinations/awin-conversiontag-extension.md)
-         * [Awin Adveritising Mastertag (tillägget Experience Platform Launch)](/help/rtcdp/destinations/awin-mastertag-extension.md)
+         * [Awin Advertising Conversion Tag (tillägget Experience Platform Launch)](/help/rtcdp/destinations/awin-conversiontag-extension.md)
+         * [Awin Advertising Mastertag (tillägget Experience Platform Launch)](/help/rtcdp/destinations/awin-mastertag-extension.md)
          * [Beemray (tillägget Experience Platform Launch)](/help/rtcdp/destinations/beemray-extension.md)
          * [Gren (Experience Platform Launch-tillägg)](/help/rtcdp/destinations/branch-extension.md)
          * [DoubleClick Floodlight (tillägget Experience Platform Launch)](/help/rtcdp/destinations/doubleclick-floodlight-extension.md)
