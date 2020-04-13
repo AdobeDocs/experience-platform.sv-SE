@@ -4,7 +4,7 @@ seo-title: Demandbase-tillägg
 description: Demandbase-tillägget är ett analysmål i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: Demandbase-tillägget är ett analysmål i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: ff91395844c239415123a33d65fa0deb2221ae25
 
 ---
 
@@ -19,6 +19,7 @@ Demandbase är ett analystillägg i Adobes kunddataplattform i realtid. Mer info
 
 Det här målet är ett Experience Platform Launch-tillägg. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
 
+![Demandbase-tillägg](assets/demandbase-extension.png)
 
 ## Förutsättningar {#prerequisites}
 
