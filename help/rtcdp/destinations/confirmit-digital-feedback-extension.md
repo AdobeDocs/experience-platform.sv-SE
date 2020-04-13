@@ -4,7 +4,7 @@ seo-title: Bekräfta tillägg för digital feedback
 description: Tillägget Confirmit Digital Feedback är en röst för kundens mål i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: null
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: ff91395844c239415123a33d65fa0deb2221ae25
 
 ---
 
@@ -25,6 +25,9 @@ Med en lösning för att bekräfta digital feedback kan ni omvandla er webbplats
 Bekräfta digital feedback är en röst för kundens tillägg i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.103247.confirmit-digital-feedback-for-adobe-launch.html).
 
 Det här målet är ett Experience Platform Launch-tillägg. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
+
+
+![Bekräfta tillägg för digital feedback](assets/confirmit-digital-feedback-extension.png)
 
 ## Förutsättningar {#prerequisites}
 
