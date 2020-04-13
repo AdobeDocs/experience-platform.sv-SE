@@ -4,7 +4,7 @@ seo-title: Tjänsttillägg för Experience Cloud ID
 description: Tillägget Experience Cloud ID Service är ett personaliseringsmål i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: Tillägget Experience Cloud ID Service är ett personaliseringsmål i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: 4b021ce8fd81708fac5de7508cd19d99295634d9
 
 ---
 
@@ -18,6 +18,8 @@ Det här tillägget implementerar Experience Cloud ID-tjänsten, som identifiera
 Experience Cloud ID Service är ett personaliseringstillägg i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktioner finns på [Experience Cloud ID-tjänstens tilläggssida](https://docs.adobe.com/content/help/en/launch/using/extensions-ref/adobe-extension/id-service-extension/overview.html) i dokumentationen för Experience Platform Launch.
 
 Det här målet är ett Experience Platform Launch-tillägg. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
+
+![Adobe ECID-tillägg](/help/rtcdp/destinations/assets/adobe-ecid-extension.png)
 
 
 ## Förutsättningar {#prerequisites}
