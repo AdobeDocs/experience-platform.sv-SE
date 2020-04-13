@@ -4,12 +4,12 @@ seo-title: Adobe Target v2-tillägg
 description: Tillägget Adobe Target v2 är ett personaliseringsmål i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: null
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: 51963edad2f903a4a91e1b7c5114bf81323346bc
 
 ---
 
 
-# Adobe Target v2-tillägg (#adobe-target-v2-extension)
+# Adobe Target v2-tillägg {#adobe-target-v2-extension}
 
 ## Översikt {#overview}
 
