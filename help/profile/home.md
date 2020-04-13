@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: Översikt över kundprofiler i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: 50e6b39c1eb0bda4f3b30991515fb1c13fa9ff87
+source-git-commit: d349ffab7c0de72d38b5195585c14a4a8f80e37c
 
 ---
 
@@ -15,9 +15,7 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 
 ## Förstå kundprofil i realtid
 
-Kundprofil i realtid är ett generiskt uppslagsarkiv som sammanfogar data från olika företagsdatatillgångar och sedan ger tillgång till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförare skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler, vilket sammanfattas i videon nedan:
-
->[!VIDEO](https://video.tv.adobe.com/v/27251?quality=12&enable10seconds=on&speedcontrol=on)
+Kundprofil i realtid är ett generiskt uppslagsarkiv som sammanfogar data från olika företagsdatatillgångar och sedan ger tillgång till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 
 ### Profildatalager
 
@@ -45,13 +43,20 @@ Alla företag vill kommunicera med sina kunder på ett sätt som känns personli
 
 Adobe Experience Platform Segmentation Service producerar de målgrupper som behövs för att ge era enskilda kunder bättre upplevelser. När ett målgruppssegment skapas läggs ID:t för det segmentet till i listan över segmentmedlemskap för alla kvalificerande profiler. Segmentregler byggs och tillämpas på kundprofildata i realtid med RESTful API:er och användargränssnittet i Segment Builder. Om du vill veta mer om segmentering börjar du med att läsa översikten över [segmenteringstjänsten](../segmentation/home.md).
 
-### Profilfragment och unionsvyer {#profile-fragments-and-union-schemas}
+### Profilfragment och föreningsscheman {#profile-fragments-and-union-schemas}
 
-En av de viktigaste funktionerna i kundprofilen i realtid är möjligheten att sammanställa flerkanalsdata. När kundprofilen i realtid används för att få åtkomst till en enhet kan den ge dig en sammanslagen vy över alla profilfragment för den entiteten över datauppsättningar, så kallade unionsvyn. Kundprofildata i realtid sammanfogas mellan olika källor när en enhet eller profil nås via dess ID eller exporteras som ett segment. Om du vill veta mer om hur du får tillgång till profiler och unionsvyer kan du besöka underhandboken för utveckling av kundprofil-API i realtid på [entiteter, som också kallas profilåtkomst](api/entities.md).
+En av de viktigaste funktionerna i kundprofilen i realtid är möjligheten att sammanställa flerkanalsdata. När kundprofilen i realtid används för att få åtkomst till en enhet kan den ge dig en sammanslagen vy över alla profilfragment för den entiteten i alla datauppsättningar, som kallas unionsvy och görs möjlig genom ett så kallat unionsschema. Kundprofildata i realtid sammanfogas mellan olika källor när en enhet eller profil nås via dess ID eller exporteras som ett segment. Om du vill veta mer om hur du får tillgång till profiler och unionsvyer kan du besöka underhandboken för utveckling av kundprofil-API i realtid på [entiteter, som också kallas profilåtkomst](api/entities.md).
 
 ### Sammanfoga profiler
 
 När ni sammanfogar data från flera olika källor och kombinerar dem för att få en fullständig bild av var och en av era enskilda kunder, är sammanslagningsprinciper de regler som Platform använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa den enhetliga vyn. Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen. Mer information om hur du arbetar med sammanfogningsprinciper med API:er finns i delhandboken [för](api/merge-policies.md) sammanfogningsprinciper för kundprofil i realtid eller användarhandboken för [sammanfogningsprinciper](ui/merge-policies.md) för hur du arbetar med sammanfogningsprinciper med hjälp av användargränssnittet för plattformen.
+
+## (Alfa) Konfigurera beräknade attribut
+
+>[!IMPORTANT]
+>Den beräknade attributfunktionaliteten som beskrivs i det här dokumentet är alfavärden. Dokumentationen och funktionaliteten kan komma att ändras.
+
+Med beräknade attribut kan du automatiskt beräkna fältvärden baserat på andra värden, beräkningar och uttryck. Beräknade attribut fungerar på profilnivån, vilket innebär att du kan samla värden för alla poster och händelser. Varje beräknat attribut innehåller ett uttryck, eller &quot;rule&quot;, som utvärderar inkommande data och lagrar resultatvärdet i ett profilattribut eller i en händelse. Med hjälp av dessa beräkningar kan du enkelt besvara frågor som rör inköpstid, tid mellan köp eller antal programöppningar, utan att behöva utföra komplexa beräkningar manuellt varje gång informationen behövs. Mer information om beräknade attribut och steg-för-steg-anvisningar om hur du arbetar med dem finns i [underhandledningen till kundprofils-API:t i realtid om beräknade attribut](api/computed-attributes.md). Den här guiden hjälper dig att bättre förstå vilken roll beräknade attribut spelar i Adobe Experience Platform, och den innehåller exempel på API-anrop för att utföra grundläggande CRUD-åtgärder med hjälp av kundprofils-API:t i realtid.
 
 ## Realtidskomponenter
 
@@ -63,9 +68,18 @@ Realtidsinmatning är möjlig genom en process som kallas direktuppspelning. Nä
 
 ### Kantprojektioner
 
-För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Med Adobe Experience Platform får ni tillgång till data i realtid genom att använda kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Adobe-program som Adobe Target och Adobe Campaign använder kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten.
+För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Med Adobe Experience Platform får ni tillgång till data i realtid genom att använda kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Adobe-program som Adobe Target och Adobe Campaign använder kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten. Om du vill veta mer och börja arbeta med kanter och projektioner kan du läsa underhandboken [Edge Projection för kundprofil i realtid](api/edge-projections.md).
 
-Om du vill veta mer och börja arbeta med kanter och projektioner kan du läsa underhandboken [Edge Projection för kundprofil i realtid](api/edge-projections.md).
+## Lägg till data i kundprofilen i realtid
+
+Plattformen kan konfigureras för att skicka data från poster och tidsserier till profilen, med stöd för direktuppspelning i realtid och batchinmatning. Mer information finns i självstudiekursen om hur du [lägger till data i kundprofilen](tutorials/add-profile-data.md)i realtid.
+
+>[!Note]
+>Data som samlas in via Adobe-lösningar, inklusive Analytics Cloud, Marketing Cloud och Advertising Cloud, flödar till Experience Platform och är inkapslade i profilen.
+
+### Inmatningsstatistik för profilströmning
+
+Med Insikter om observerbarhet kan ni visa viktiga mätvärden i Adobe Experience Platform. Förutom statistik om plattformsanvändning och prestandaindikatorer för olika plattformsfunktioner finns det specifika profilrelaterade mätvärden som gör att du kan få insikt i hur många begäranden som kommer in, hur många som kommer in, hur många som kommer in, hur många som kommer in i bilden och hur många som kommer in i posten. Om du vill veta mer kan du börja med att läsa översikten [över](../observability/home.md)observabilitetsinsikter och en fullständig lista över profilmått finns i dokumentationen om [tillgängliga mätvärden](../observability/metrics.md).
 
 ## Datastyrning och integritet
 
@@ -82,26 +96,8 @@ Datastyrning hanteras vid flera tillfällen. Det handlar om att bestämma vilka 
 
 Med Experience Platform kan era kunder skicka avanmälningsförfrågningar relaterade till användningen och lagringen av sina data i kundprofilen i realtid. Mer information om hur avanmälningsbegäranden hanteras finns i dokumentationen om [hur avanmälningsbegäranden](../segmentation/honoring-opt-outs.md)respekteras.
 
-## Lägg till data i kundprofilen i realtid
+## Nästa steg och ytterligare resurser
 
-Plattformen kan konfigureras för att skicka data från poster och tidsserier till profilen, med stöd för direktuppspelning i realtid och batchinmatning. Mer information finns i självstudiekursen om hur du [lägger till data i kundprofilen](tutorials/add-profile-data.md)i realtid.
+Om du vill veta mer om kundprofilen i realtid kan du fortsätta att läsa dokumentationen som finns i den här guiden och komplettera din inlärning genom att titta på videon nedan eller utforska andra videokurser [om](https://docs.adobe.com/content/help/en/platform-learn/tutorials/overview.html)Experience Platform.
 
->[!Note]
->Data som samlas in via Adobe-lösningar, inklusive Analytics Cloud, Marketing Cloud och Advertising Cloud, flödar till Experience Platform och är inkapslade i profilen.
-
-## Skapa målgruppssegment
-
-Hörnstenen i er marknadsföringskampanj är er målgrupp. Kundprofilen i realtid innehåller verktyg för att segmentera kundbasen i målgrupper, som består av medlemmar som uppfyller de exakta kriterier som du behöver. Med segmentering kan ni isolera målgruppsmedlemmar med hjälp av kriterier som:
-
-* Kunder för vilka en vecka har gått sedan du senast gjorde ett köp.
-* Kunder vars inköp är större än 10 000 USD.
-* Kunder som har sett ett visst antal unika marknadsföringskampanjer från en fördefinierad lista som anges av deras Campaign-ID och utforskat dem inom 30 minuter.
-
-Se [segmenteringsöversikten](../segmentation/home.md)för att komma igång med segmentering.
-
-## (Alfa) Konfigurera beräknade attribut
-
->[!IMPORTANT]
->Den beräknade attributfunktionaliteten som beskrivs i det här dokumentet är alfavärden. Dokumentationen och funktionaliteten kan komma att ändras.
-
-Med beräknade attribut kan du automatiskt beräkna fältvärden baserat på andra värden, beräkningar och uttryck. Beräknade attribut fungerar på profilnivån, vilket innebär att du kan samla värden för alla poster och händelser. Varje beräknat attribut innehåller ett uttryck, eller &quot;rule&quot;, som utvärderar inkommande data och lagrar resultatvärdet i ett profilattribut eller i en händelse. Med hjälp av dessa beräkningar kan du enkelt besvara frågor som rör inköpstid, tid mellan köp eller antal programöppningar, utan att behöva utföra komplexa beräkningar manuellt varje gång informationen behövs. Mer information om beräknade attribut och steg-för-steg-anvisningar om hur du arbetar med dem finns i [underhandledningen till kundprofils-API:t i realtid om beräknade attribut](api/computed-attributes.md). Den här guiden hjälper dig att bättre förstå vilken roll beräknade attribut spelar i Adobe Experience Platform, och den innehåller exempel på API-anrop för att utföra grundläggande CRUD-åtgärder med hjälp av kundprofils-API:t i realtid.
+>[!VIDEO](https://video.tv.adobe.com/v/27251?quality=12)
