@@ -3,7 +3,7 @@ product: adobe experience platform
 audience: user
 user-guide-title: Hjälp om kunddataplattform i realtid
 translation-type: tm+mt
-source-git-commit: 4b021ce8fd81708fac5de7508cd19d99295634d9
+source-git-commit: ff91395844c239415123a33d65fa0deb2221ae25
 
 ---
 
@@ -99,12 +99,12 @@ source-git-commit: 4b021ce8fd81708fac5de7508cd19d99295634d9
          * [Gainsight (tillägg för Experience Platform Launch)](/help/rtcdp/destinations/gainsight-extension.md)
          * [Kickfire (Experience Platform Launch extension)](/help/rtcdp/destinations/kickfire-extension.md)
          * [Marketo Web Personalization (tillägget Experience Platform Launch)](destinations/marketo-web-personalization-extension.md)
-      * Målgrupper i sociala nätverk{#social-network-destinations}
+      * Målgrupper i sociala nätverk{#social-destinations}
          * [Översikt över mål för sociala nätverk](/help/rtcdp/destinations/social-network-destinations.md)
          * [Autentiseringsflöde för mål för sociala nätverk](/help/rtcdp/destinations/social-network-destinations-workflow.md)
          * [Adobe Livefyre (tillägget Experience Platform Launch)](/help/rtcdp/destinations/adobe-livefyre-extension.md)
          * [Facebook-mål](/help/rtcdp/destinations/facebook-destination.md)
-      * Undersökningsmål {#surveys}
+      * Undersökningsmål {#survey-destinations}
          * [Översikt över undersökningsmål](/help/rtcdp/destinations/survey-destinations.md)
          * [Foresee (Experience Platform Launch-tillägg)](/help/rtcdp/destinations/foresee-extension.md)
          * [InMoment (tillägget Experience Platform Launch)](/help/rtcdp/destinations/inmoment-extension.md)
