@@ -4,7 +4,7 @@ seo-title: D&B Visitor Intelligence-tillägg
 description: Tillägget D&B Visitor Intelligence är en personaliseringsdestination i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: Tillägget D&B Visitor Intelligence är en personaliseringsdestination i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: ff91395844c239415123a33d65fa0deb2221ae25
 
 ---
 
@@ -18,6 +18,8 @@ Analysera okända besökare och konvertera dem till leads.
 D&amp;B Visitor Intelligence är ett personaliseringstillägg i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på [D&amp;B-webbplatsen](https://www.dnb.com/).
 
 Det här målet är ett Experience Platform Launch-tillägg. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
+
+![D&amp;B Visitor Intelligence-tillägg](assets/dnb-extension.png)
 
 ## Förutsättningar {#prerequisites}
 
