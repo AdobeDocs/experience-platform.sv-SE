@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Tillgängliga mått
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 6a988c990d3d4df706a44cdbc82f77bef20c2ea1
+source-git-commit: ff299a69a81f00cad3e90a83f7411e4b15d4f850
 
 ---
 
@@ -18,7 +18,7 @@ I följande tabeller visas alla mätvärden som visas av observabilitetsinsikter
 I följande tabell visas mätvärden för datainmatning i Adobe Experience Platform. Mätvärden i **fet stil** är mätvärden för direktuppspelad konsumtion.
 
 | Insikter - mått | Beskrivning | ID-frågeparameter |
-| ---- | ---- | ---- | ---- |
+| ---- | ---- | ---- |
 | timeseries.ingestion.dataset.new.count | Totalt antal datauppsättningar som skapats. | Ej tillämpligt |
 | timeseries.ingestion.dataset.size | Kumulativ storlek för alla data som har importerats för en datauppsättning eller för alla datauppsättningar. | Datauppsättnings-ID (valfritt) |
 | timeseries.ingestion.dataset.dailysize | Storlek på data som hämtas dagligen för en datauppsättning eller för alla datauppsättningar. | Datauppsättnings-ID (valfritt) |
@@ -46,7 +46,7 @@ I följande tabell visas mätvärden för datainmatning i Adobe Experience Platf
 I följande tabell visas mätvärden för Adobe Experience Platform Identity Service.
 
 | Insikter - mått | Beskrivning | ID-frågeparameter |
-| ---- | ---- | ---- | ---- |
+| ---- | ---- | ---- |
 | timeseries.identity.dataset.recordsuccess.count | Antal poster som skrivits till datakällan av identitetstjänsten, för en datauppsättning eller alla datauppsättningar. | Datauppsättnings-ID (valfritt) |
 | timeseries.identity.dataset.recordfailed.count | Antal poster som misslyckades av identitetstjänsten, för en datauppsättning eller för alla datauppsättningar. | Datauppsättnings-ID (valfritt) |
 | timeseries.identity.dataset.namespacecode.recordsuccess.count | Antal identitetsposter som har importerats för ett namnområde. | Namnområdes-ID (**obligatoriskt**) |
@@ -62,7 +62,7 @@ I följande tabell visas mätvärden för Adobe Experience Platform Identity Ser
 I följande tabell visas mätvärden för Adobe Experience Platform Privacy Service.
 
 | Insikter - mått | Beskrivning | ID-frågeparameter |
-| ---- | ---- | ---- | ---- |
+| ---- | ---- | ---- |
 | timeseries.gdpr.jobs.totaljobs.count | Totalt antal jobb skapade från GDPR. | ENV (**obligatoriskt**) |
 | timeseries.gdpr.jobs.completedjobs.count | Totalt antal slutförda jobb från GDPR. | ENV (**obligatoriskt**) |
 | timeseries.gdpr.jobs.errorjobs.count | Totalt antal feljobb från GDPR. | ENV (**obligatoriskt**) |
@@ -72,7 +72,7 @@ I följande tabell visas mätvärden för Adobe Experience Platform Privacy Serv
 I följande tabell visas mätvärden för Adobe Experience Platform Query Service.
 
 | Insikter - mått | Beskrivning | ID-frågeparameter |
-| ---- | ---- | ---- | ---- |
+| ---- | ---- | ---- |
 | timeseries.queryservice.query.scheduleonce.count | Totalt antal icke återkommande schemalagda frågor. | Ej tillämpligt |
 | timeseries.queryservice.query.scheduledrecurring.count | Totalt antal återkommande schemalagda frågor. | Ej tillämpligt |
 | timeseries.queryservice.query.batchquery.count | Totalt antal utförda gruppfrågor. | Ej tillämpligt |
@@ -85,7 +85,7 @@ I följande tabell visas mätvärden för Adobe Experience Platform Query Servic
 I följande tabell visas mätvärden för kundprofil i realtid.
 
 | Insikter - mått | Beskrivning | ID-frågeparameter |
-| ---- | ---- | ---- | ---- |
+| ---- | ---- | ---- |
 | timeseries.profiles.dataset.recordread.count | Antal poster som har lästs från datasjön efter profil, för en datamängd eller för alla datamängder. | Datauppsättnings-ID (valfritt) |
 | timeseries.profiles.dataset.recordsuccess.count | Antal poster skrivna till datakällan per profil, för en datauppsättning eller för alla datauppsättningar. | Datauppsättnings-ID (valfritt) |
 | timeseries.profiles.dataset.recordfailed.count | Antal poster som misslyckades av profilen, för en datamängd eller för alla datamängder. | Datauppsättnings-ID (valfritt) |
