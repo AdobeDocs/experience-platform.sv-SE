@@ -4,7 +4,7 @@ seo-title: Annonsmål
 description: Koppla samman er kunddataplattform i realtid med en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 seo-description: Koppla samman er kunddataplattform i realtid med en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 translation-type: tm+mt
-source-git-commit: 4b021ce8fd81708fac5de7508cd19d99295634d9
+source-git-commit: e3b7dd4788042deaeba68bfdbe08e8448b46c270
 
 ---
 
@@ -17,21 +17,21 @@ När ni ansluter till en annonsdestination skickas era målgrupper som ID:n till
 
 För närvarande stöder CDP i realtid de reklamdestinationer som anges nedan. Information om hur du ansluter till dessa mål finns i de enskilda länkarna:
 
-* [Adobe Advertising Cloud (tillägget Experience Platform Launch)](/help/rtcdp/destinations/adobe-advertising-cloud-extension.md)
-* [Awin Advertising Conversion Tag (tillägget Experience Platform Launch)](/help/rtcdp/destinations/awin-conversiontag-extension.md)
-* [Awin Advertising Mastertag (tillägget Experience Platform Launch)](/help/rtcdp/destinations/awin-mastertag-extension.md)
-* [Beemray (tillägget Experience Platform Launch)](beemray-extension.md)
-* [Bing Ads Universal Event Tracking (tillägget Experience Platform Launch)](/help/rtcdp/destinations/bing-ads-extension.md)
-* [Gren (Experience Platform Launch-tillägg)](/help/rtcdp/destinations/branch-extension.md)
-* [DoubleClick Floodlight (tillägget Experience Platform Launch)](/help/rtcdp/destinations/doubleclick-floodlight-extension.md)
-* [Facebook Pixel (tillägget Experience Platform Launch)](/help/rtcdp/destinations/facebook-pixel-extension.md)
-* [Flashtalk OneTag (tillägget Experience Platform Launch)](/help/rtcdp/destinations/flashtalking-extension.md)
+* [Adobe Advertising Cloud-tillägg](/help/rtcdp/destinations/adobe-advertising-cloud-extension.md)
+* [Tillägget Awin Advertising Conversion Tag](/help/rtcdp/destinations/awin-conversiontag-extension.md)
+* [Awin Advertising Mastertag-tillägg](/help/rtcdp/destinations/awin-mastertag-extension.md)
+* [Beemray-tillägg](beemray-extension.md)
+* [Bing Ads Universal Event Tracking-tillägg](/help/rtcdp/destinations/bing-ads-extension.md)
+* [Filialtillägg](/help/rtcdp/destinations/branch-extension.md)
+* [Dubbelklicka på FlowLight-tillägg](/help/rtcdp/destinations/doubleclick-floodlight-extension.md)
+* [Pixeltillägg för Facebook](/help/rtcdp/destinations/facebook-pixel-extension.md)
+* [Flashtalk OneTag-tillägg](/help/rtcdp/destinations/flashtalking-extension.md)
 * [Google Display &amp; Video 360](/help/rtcdp/destinations/google-dv360-destination.md)
 * [Google Ads](/help/rtcdp/destinations/google-ads-destination.md)
-* [Google Ads (tillägget Experience Platform Launch)](/help/rtcdp/destinations/google-ads-extension.md)
+* [Google Ads-tillägg](/help/rtcdp/destinations/google-ads-extension.md)
 * [Google Ad Manager](/help/rtcdp/destinations/google-ad-manager-destination.md)
-* [Google gtag (Experience Platform Launch-tillägg)](/help/rtcdp/destinations/gtag-advertising-extension.md)
-* [LinkedIn Insight-tagg (tillägget Experience Platform Launch)](linkedin-extension.md)
-* [Pinterest Conversion Tracking (tillägget Experience Platform Launch)](pinterest-extension.md)
-* [Twitter Universal-webbplatstagg (Experience Platform Launch-tillägg)](twitter-uwt-extension.md)
+* [Google-taggtillägg](/help/rtcdp/destinations/gtag-advertising-extension.md)
+* [Tillägget LinkedIn Insight-tagg](linkedin-extension.md)
+* [Tillägg för Pinterest Conversion Tracking](pinterest-extension.md)
+* [Twitter Universal Website Tag-tillägg](twitter-uwt-extension.md)
 
