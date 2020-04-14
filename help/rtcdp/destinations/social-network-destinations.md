@@ -4,7 +4,7 @@ seo-title: Destinationer för sociala nätverk
 description: Med sociala nätverksdestinationer kan ni aktivera profiler för era kampanjer för målgruppsanpassning, personalisering och undertryckning baserat på hashad-e-post.
 seo-description: Med sociala nätverksdestinationer kan ni aktivera profiler för era kampanjer för målgruppsanpassning, personalisering och undertryckning baserat på hashad-e-post.
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: e3b7dd4788042deaeba68bfdbe08e8448b46c270
 
 ---
 
@@ -15,5 +15,5 @@ Med sociala nätverksdestinationer kan ni aktivera profiler för era kampanjer f
 
 Adobe Customer Data Platform i realtid stöder för närvarande följande mål för sociala nätverk:
 
-* [Adobe Livefyre (tillägget Experience Platform Launch)](/help/rtcdp/destinations/adobe-livefyre-extension.md)
+* [Adobe Livefyre-tillägg](/help/rtcdp/destinations/adobe-livefyre-extension.md)
 * [Facebook](/help/rtcdp/destinations/facebook-destination.md)
