@@ -4,7 +4,7 @@ seo-title: Bing Ads UET-tillägg (Universal Event Tracking)
 description: Tillägget Bing Ads Universal Event Tracking (UET) är en annonsdestination i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: null
 translation-type: tm+mt
-source-git-commit: 2a94444b35cac0c002d729798d96fd54aaafbacd
+source-git-commit: 98c3356db178507e0a8d94b47030e9490e721e46
 
 ---
 
@@ -19,7 +19,7 @@ Bing Ads Universal Event Tracking (UET) är ett reklamtillägg i Adobes kunddata
 
 Det här målet är ett Experience Platform Launch-tillägg. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
 
-![Bing Ads-tillägg](assets/bing-ads-extension.png)
+![Bing Ads-tillägg](assets/bing-extension.png)
 
 
 ## Förutsättningar {#prerequisites}
