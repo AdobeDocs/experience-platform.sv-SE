@@ -4,7 +4,7 @@ seo-title: Destinationstyper och -kategorier
 description: 'I Adobes kunddataplattform i realtid samlar mål för profiler och segmentexport in händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Starta tillägg för att vidarebefordra råa händelsedata till flera olika typer av destinationer. '
 seo-description: I Adobes kunddataplattform i realtid samlar mål för profiler och segmentexport in händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Starta tillägg för att vidarebefordra råa händelsedata till flera olika typer av destinationer.
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: bc3f57d636c363c94555b2a779f5bb98a9eca13f
 
 ---
 
@@ -23,7 +23,7 @@ I Adobes kunddataplattform i realtid skiljer vi mellan två måltyper - anslutni
 
 ### Anslutningar
 
-**Målen för export** av profiler och **segmentexport** i Adobes kunddataplattform i realtid samlar in händelsedata, kombinerar dem med andra datakällor för att skapa kundprofilen [i](https://docs.adobe.com/content/help/en/experience-platform/profile/home.html)realtid, tillämpa segmentering samt exportera segment och kvalificerade profiler till destinationer.
+**Målen för export** av profiler och **segmentexport** i Adobes kunddataplattform i realtid samlar in händelsedata, kombinerar dem med andra datakällor för att skapa kundprofilen [i](/help/profile/home.md)realtid, tillämpa segmentering samt exportera segment och kvalificerade profiler till destinationer.
 
 <br> 
 
@@ -68,7 +68,7 @@ Tillägg är användbara när händelsedata används för att utlösa en åtgär
 
 ## Målkategorier
 
-Destinationer och tillägg i [destinationskatalogen](https://platform.adobe.com/destination/catalog) grupperas efter destinationskategori (**Advertising**, **Cloud storage**, **Survey platforms**, **Email marketing** osv.), beroende på vilket marknadsföringsexempel de hjälper dig med. Mer information om var och en av kategorierna, samt vilka mål som ingår i varje kategori, finns i dokumentationen till [målkatalogen](/help/rtcdp/destinations/destinations-catalog.md).
+Anslutningarna och tilläggen i [destinationskatalogen](https://platform.adobe.com/destination/catalog) grupperas efter destinationskategori (**Advertising**, **Cloud storage**, **Survey platforms**, **Email marketing** osv.), beroende på vilket marknadsföringsexempel de hjälper dig med. Mer information om var och en av kategorierna, samt vilka mål som ingår i varje kategori, finns i dokumentationen till [målkatalogen](/help/rtcdp/destinations/destinations-catalog.md).
 
-![Målkategorier](/help/rtcdp/destinations/assets/destination-categories.png)
+![Målkategorier](/help/rtcdp/destinations/assets/destination-categories-menu.png)
 
