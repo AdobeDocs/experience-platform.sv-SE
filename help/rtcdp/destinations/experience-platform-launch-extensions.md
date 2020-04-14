@@ -4,7 +4,7 @@ seo-title: Experience Platform Launch Extensions
 description: Launch är nästa generation av tagghanteringsfunktioner från Adobe. Launch ger kunderna ett enkelt sätt att driftsätta och hantera alla analyser, marknadsförings- och annonstaggar som behövs för att driva relevanta kundupplevelser.
 seo-description: Launch är nästa generation av tagghanteringsfunktioner från Adobe. Launch ger kunderna ett enkelt sätt att driftsätta och hantera alla analyser, marknadsförings- och annonstaggar som behövs för att driva relevanta kundupplevelser.
 translation-type: tm+mt
-source-git-commit: 2a082dc46b50eba1a38eb9d6946e17f851b2fd3f
+source-git-commit: 98c3356db178507e0a8d94b47030e9490e721e46
 
 ---
 
@@ -17,13 +17,13 @@ En introduktion till funktionerna för Experience Platform Launch finns i resurs
 * Experience Platform Launch- [dokumentation](https://docs.adobe.com/content/help/en/launch/using/overview.html)
 * Experience Platform Launch, [snabbstartsvideor](https://docs.adobe.com/content/help/en/launch/using/intro/get-started/videos.html). Börja med [introduktionen till Experience Platform Launch](https://www.youtube.com/embed/rwqqkG1SERU) and [Publishing process overview](https://helpx.adobe.com/analytics/how-to/adobe-launch-publishing-process.html)och gå sedan vidare till nästa koncept.
 
-## Hitta Launch-tilläggen i Adobe Real-time CDP-gränssnittet
+## Hitta Launch-tilläggen i Adobe Real-time CDP-gränssnittet {#how-to-find-extensions-in-interface}
 
 Du hittar Launch-tilläggen i Adobe Real-time CDP-gränssnittet genom att bläddra till **[!UICONTROL Destinations > Catalog]** och välja **[!UICONTROL Extensions]** i **[!UICONTROL Types]** filtret.
 
 ![Filtret Tillägg i gränssnittet](/help/rtcdp/destinations/assets/extensions-filter.png)
 
-## Så här fungerar Launch-tillägg
+## Så här fungerar Launch-tillägg {#how-extensions-work}
 
 Starta tillägg för att vidarebefordra råa händelsedata till flera olika typer av destinationer. Tänk på tillägg som en **typ av mål för vidarebefordran** av händelser. Detta är en enklare typ av integrering med målplattformar, som bara vidarebefordrar råhändelsedata. Exempel på sådana är tillägget [](/help/rtcdp/destinations/gainsight-extension.md) Gainsight-anpassning eller [bekräftelsen från kundens tillägg](/help/rtcdp/destinations/confirmit-digital-feedback-extension.md).
 
@@ -31,7 +31,7 @@ Starta tillägg för att vidarebefordra råa händelsedata till flera olika type
 
 ![Experience Platform Launch-tillägg jämfört med andra mål](/help/rtcdp/destinations/assets/launch-and-other-destinations.png)
 
-## Fördelar med att använda Launch-tillägg
+## Fördelar med att använda Launch-tillägg {#extensions-benefits}
 
 Experience Platform Launch är kostnadsfritt för befintliga Experience Cloud-kunder. Launch förenklar taggdistribution på din webbplats med lättanvända tillägg som du kan installera, konfigurera, uppdatera och ta bort. Launch är lite utrymmeskrävande på webbplatsen och gör att du kan behålla sidinläsningen snabbt.
 
@@ -41,7 +41,7 @@ Experience Platform Launch är kostnadsfritt för befintliga Experience Cloud-ku
 
 Du kan skapa *regler* som bestämmer när händelsedata ska vidarebefordras till tillägg. Denna kraftfulla funktion gör att du bara kan vidarebefordra händelsedata i vissa situationer, i motsats till att skicka händelsedata för varje interaktion. Mer information finns i reglerna i [startdokumentationen](https://docs.adobe.com/help/en/launch/using/reference/manage-resources/rules.html).
 
-## Exempel på användningsexempel för Launch-tillägg
+## Exempel på användningsexempel för Launch-tillägg {#extensions-use-cases}
 
 Med Launch Extensions kan du tillgodose olika kundbehov. Exempel på användning av Launch-tillägg är:
 
@@ -50,7 +50,7 @@ Med Launch Extensions kan du tillgodose olika kundbehov. Exempel på användning
 * Du kan aktivera en chatbox-app på klientsidan vid rätt tidpunkt baserat på hur användarna interagerar med sidorna, enligt reglerna som du angav i Launch.
 
 
-## Tilläggskategorier
+## Tilläggskategorier {#extension-categories}
 
 Launch-tillägg kan delas in i följande kategorier i Adobe Real-time CDP:
 
