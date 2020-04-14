@@ -4,12 +4,12 @@ seo-title: Google Ads-tillägg
 description: Tillägget Google Ads är en annonsdestination i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: Tillägget Google Ads är en annonsdestination i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: ff91395844c239415123a33d65fa0deb2221ae25
+source-git-commit: 98c3356db178507e0a8d94b47030e9490e721e46
 
 ---
 
 
-# Mål för Google Ads
+# Google Ads-tillägg
 
 ## Översikt {#overview}
 
@@ -19,7 +19,7 @@ Google Ads är ett reklamtillägg i Adobes kunddataplattform i realtid. Mer info
 
 Det här målet är ett Experience Platform Launch-tillägg. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
 
-![Google Ads-tillägg](/help/rtcdp/destinations/assets/google-ads-extension.png)
+![Google Ads-tillägg](/help/rtcdp/destinations/assets/google-extension-2.png)
 
 ## Förutsättningar {#prerequisites}
 
