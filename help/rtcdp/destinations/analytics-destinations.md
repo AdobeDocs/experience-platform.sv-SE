@@ -4,7 +4,7 @@ seo-title: Destinationer för analyser
 description: Analysdestinationer spårar hur besökare interagerar med innehåll på er webbplats och samlar in data för att förstå hur er målgrupp beter sig. Dessa plattformar ger unika insikter om engagemang och konvertering av era mest värdefulla besökare.
 seo-description: Analysdestinationer spårar hur besökare interagerar med innehåll på er webbplats och samlar in data för att förstå hur er målgrupp beter sig. Dessa plattformar ger unika insikter om engagemang och konvertering av era mest värdefulla besökare.
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: e3b7dd4788042deaeba68bfdbe08e8448b46c270
 
 ---
 
@@ -15,22 +15,22 @@ Analysdestinationer spårar hur besökare interagerar med innehåll på er webbp
 
 För närvarande stöder Adobes kunddataplattform i realtid de analysmål som anges nedan. Information om hur du ansluter till dessa mål finns i de enskilda länkarna:
 
-* [Anpassa webbplatsspårning (tillägget Experience Platform Launch)](/help/rtcdp/destinations/adform-extension.md)
-* [Adobe Analytics (Experience Platform Launch-tillägg)](/help/rtcdp/destinations/adobe-analytics-extension.md)
-* [Adobe Media Analytics för ljud och video (tillägget Experience Platform Launch)](/help/rtcdp/destinations/adobe-video-analytics-extension.md)
-* [Clicktale (tillägget Experience Platform Launch)](/help/rtcdp/destinations/clicktale-extension.md)
-* [Contentsquare (Experience Platform Launch-tillägg)](/help/rtcdp/destinations/contentsquare-extension.md)
-* [Decibel (tillägget Experience Platform Launch)](/help/rtcdp/destinations/decibel-extension.md)
-* [Demandbase (Experience Platform Launch-tillägg)](/help/rtcdp/destinations/demandbase-extension.md)
-* [Dialogtech (Experience Platform Launch-tillägg)](/help/rtcdp/destinations/dialogtech-extension.md)
-* [Google Global Site Tag Analytics (tillägget Experience Platform Launch)](/help/rtcdp/destinations/gtag-analytics-extension.md)
-* [Google Universal Analytics (tillägget Experience Platform Launch)](/help/rtcdp/destinations/google-universal-analytics-extension.md)
-* [JW Player Analytics (Beta) (tillägget Experience Platform Launch)](/help/rtcdp/destinations/jw-player-analytics-extension.md)
-* [Nielsen BSDK (Experience Platform Launch extension)](nielsen-bsdk-extension.md)
-* [Nielsen IMA Handler (Experience Platform Launch Extension)](nielsen-ima-extension.md)
-* [Nielsen VideoJS Player Handler (tillägg för Experience Platform Launch)](nielsen-videojs-extension.md)
-* [Analysera.ly Analytics (Experience Platform Launch-tillägg)](parsely-extension.md)
-* [Quantum Metric (Experience Platform Launch-tillägg)](quantum-metric-extension.md)
-* [SessionCam (Experience Platform Launch-tillägg)](sessioncam-extension.md)
-* [TMMData (tillägget Experience Platform Launch)](tmmdata-extension.md)
-* [Yext Conversion Tracking (Experience Platform Launch extension)](yext-extension.md)
+* [Anpassa tillägg för webbplatsspårning](/help/rtcdp/destinations/adform-extension.md)
+* [Adobe Analytics-tillägg](/help/rtcdp/destinations/adobe-analytics-extension.md)
+* [Adobe Media Analytics för ljud- och videotillägg](/help/rtcdp/destinations/adobe-video-analytics-extension.md)
+* [Klickbart tillägg](/help/rtcdp/destinations/clicktale-extension.md)
+* [Innehållsfyrkantigt tillägg](/help/rtcdp/destinations/contentsquare-extension.md)
+* [Decibel-tillägg](/help/rtcdp/destinations/decibel-extension.md)
+* [Demandbase-tillägg](/help/rtcdp/destinations/demandbase-extension.md)
+* [Dialogtech-tillägg](/help/rtcdp/destinations/dialogtech-extension.md)
+* [Analystillägg för Google Global Site Tag](/help/rtcdp/destinations/gtag-analytics-extension.md)
+* [Google Universal Analytics-tillägg](/help/rtcdp/destinations/google-universal-analytics-extension.md)
+* [JW Player Analytics-tillägg (beta)](/help/rtcdp/destinations/jw-player-analytics-extension.md)
+* [Nielsen BSDK-tillägg](nielsen-bsdk-extension.md)
+* [Nielsen IMA Handler Extension](nielsen-ima-extension.md)
+* [Nielsen VideoJS Player Handler Extension](nielsen-videojs-extension.md)
+* [Analysera.ly Analytics-tillägg](parsely-extension.md)
+* [Quantum Metric-tillägg](quantum-metric-extension.md)
+* [SessionCam-tillägg](sessioncam-extension.md)
+* [TMMData-tillägg](tmmdata-extension.md)
+* [Yext Conversion Tracking-tillägg](yext-extension.md)
