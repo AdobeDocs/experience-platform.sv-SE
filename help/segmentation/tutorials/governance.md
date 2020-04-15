@@ -4,7 +4,7 @@ solution: Experience Platform
 title: säkerställa att målgruppssegmentens dataanvändning följs
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: f5bc9beb59e83b0411d98d901d5055122a124d07
+source-git-commit: 97ba7aeb8a67735bd65af372fbcba5e71aee6aae
 
 ---
 
@@ -22,7 +22,9 @@ Den här självstudien kräver en fungerande förståelse av följande komponent
 - [Segmentering](../home.md): Hur kundprofilen i realtid delar upp en stor grupp individer som finns i profilbutiken i mindre grupper som har liknande egenskaper och som reagerar på liknande sätt som marknadsföringsstrategier.
 - [Datastyrning](../../data-governance/home.md): Datastyrning tillhandahåller infrastruktur för märkning och verkställighet av dataanvändning (DULE) med hjälp av följande komponenter:
    - [Dataanvändningsetiketter](../../data-governance/labels/user-guide.md): Etiketter som används för att beskriva datauppsättningar och fält utifrån känslighetsnivån som deras respektive data ska hanteras med.
-   - [Dataanvändningsprinciper](../../data-governance/api/getting-started.md): Konfigurationer som anger vilka marknadsföringsåtgärder som tillåts för data som kategoriseras av särskilda dataanvändningsetiketter.
+   - [Dataanvändningsprinciper](../../data-governance/policies/overview.md): Konfigurationer som anger vilka marknadsföringsåtgärder som tillåts för data som kategoriseras av särskilda dataanvändningsetiketter.
+   - [Politiska åtgärder](../../data-governance/enforcement/overview.md): Gör att du kan tillämpa dataanvändningsprinciper och förhindra dataåtgärder som utgör policyöverträdelser.
+- [Sandlådor](../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:erna för plattformen.
 
@@ -48,7 +50,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 - Innehållstyp: application/json
 
-## Söka efter en sammanfogningsprincip för en segmentdefinition
+## Söka efter en sammanfogningsprincip för en segmentdefinition {#merge-policy}
 
 Det här arbetsflödet börjar med att man får åtkomst till ett känt målgruppssegment. Segment som har aktiverats för användning i kundprofilen i realtid innehåller ett ID för sammanfogningsprincip i segmentdefinitionen. Den här sammanfogningsprincipen innehåller information om vilka datauppsättningar som ska inkluderas i segmentet, som i sin tur innehåller tillämpliga dataanvändningsetiketter.
 
@@ -117,9 +119,9 @@ Ett lyckat svar returnerar informationen om segmentdefinitionen.
 | -------- | ----------- |
 | `mergePolicyId` | ID för den sammanfogningsprincip som används för segmentdefinitionen. Detta kommer att användas i nästa steg. |
 
-## Hitta källdatauppsättningarna från sammanfogningsprincipen
+## Hitta källdatauppsättningarna från sammanfogningsprincipen {#datasets}
 
-Sammanslagningsprinciper innehåller information om deras källdatauppsättningar, som i sin tur innehåller DULE-etiketter. Du kan söka efter information om en sammanfogningsprincip genom att ange sammanfogningsprincip-ID i en GET-begäran till profilens API.
+Sammanslagningsprinciper innehåller information om deras källdatauppsättningar, som i sin tur innehåller dataanvändningsetiketter. Du kan söka efter information om en sammanfogningsprincip genom att ange sammanfogningsprincip-ID i en GET-begäran till profilens API.
 
 **API-format**
 
@@ -129,7 +131,7 @@ GET /config/mergePolicies/{MERGE_POLICY_ID}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{MERGE_POLICY_ID}` | ID:t för sammanfogningsprincipen som hämtades i [föregående steg](#lookup-a-merge-policy-for-a-segment-definition). |
+| `{MERGE_POLICY_ID}` | ID:t för sammanfogningsprincipen som hämtades i [föregående steg](#merge-policy). |
 
 **Begäran**
 
@@ -174,92 +176,195 @@ Ett lyckat svar returnerar information om sammanfogningsprincipen.
 | `attributeMerge.type` | Konfigurationstypen för sammanslagningsprincipen med prioritet för data. Om värdet är `dataSetPrecedence`listas de datauppsättningar som är associerade med den här sammanfogningsprincipen under `attributeMerge > data > order`. Om värdet är `timestampOrdered`används alla datauppsättningar som är associerade med schemat som refereras i av sammanfogningsprincipen `schema.name` . |
 | `attributeMerge.data.order` | Om attributet `attributeMerge.type` är `dataSetPrecedence`det är en array som innehåller ID:n för de datauppsättningar som används av den här sammanfogningsprincipen. Dessa ID:n används i nästa steg. |
 
-## Söka efter dataanvändningsetiketter för källdatauppsättningar
+## Utvärdera datauppsättningar för policyöverträdelser
 
-När du har samlat in ID:n för sammanfogningsprincipens källdatauppsättningar kan du använda dessa ID:n för att söka efter de dataanvändningsetiketter som konfigurerats för själva datauppsättningarna och eventuella specifika datafält som finns i dem.
+>[!NOTE]  I det här steget antas att du har minst en aktiv dataanvändningsprincip som förhindrar att specifika marknadsföringsåtgärder utförs på data som innehåller vissa etiketter. Om du inte har någon tillämpbar användarprofil för de datauppsättningar som utvärderas, ska du följa självstudiekursen [för att skapa en](../../data-governance/policies/create.md) princip innan du fortsätter med det här steget.
 
-Följande anrop till [katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) hämtar dataanvändningsetiketter som är associerade med en enskild datauppsättning genom att ange dess ID i sökvägen för begäran:
+När du har fått ID:n för sammanfogningsprincipens källdatauppsättningar kan du använda [DULE Policy Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) för att utvärdera dessa datauppsättningar mot specifika marknadsföringsåtgärder för att kontrollera om det finns överträdelser av dataanvändningspolicyn.
+
+Om du vill utvärdera datauppsättningarna måste du ange namnet på marknadsföringsåtgärden i sökvägen för en POST-begäran, samtidigt som du anger datauppsättnings-ID:n i begärandetexten, vilket visas i exemplet nedan.
 
 **API-format**
 
 ```http
-GET /dataSets/{DATASET_ID}/dule
+POST /marketingActions/core/{MARKETING_ACTION_NAME}/constraints
+POST /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints
 ```
 
-| Egenskap | Beskrivning |
-| -------- | ----------- |
-| `{DATASET_ID}` | ID:t för den datauppsättning vars dataanvändningsetiketter du vill söka efter. |
+| Parameter | Beskrivning |
+| --- | --- |
+| `{MARKETING_ACTION_NAME}` | Namnet på den marknadsföringsåtgärd som är associerad med dataanvändningsprincipen som du utvärderar datauppsättningarna efter. Beroende på om policyn har definierats av Adobe eller din organisation måste du använda `/marketingActions/core` respektive `/marketingActions/custom`. |
 
 **Begäran**
 
+Följande begäran testar marknadsföringsåtgärden mot `exportToThirdParty` datauppsättningar som hämtats i [föregående steg](#datasets). Nyttolasten för begäran är en array som innehåller ID:n för varje datamängd.
+
 ```shell
-curl -X GET \
-  https://platform.adobe.io/data/foundation/catalog/dataSets/5b95b155419ec801e6eee780/dule \
+curl -X POST \
+  https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom/exportToThirdParty/constraints
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}'
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '[
+    {
+      "entityType": "dataSet",
+      "entityId": "5b95b155419ec801e6eee780"
+    },
+    {
+      "entityType": "dataSet",
+      "entityId": "5b7c86968f7b6501e21ba9df"
+    }
+  ]'
 ```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `entityType` | Varje objekt i nyttolastarrayen måste ange vilken typ av enhet som definieras. I det här fallet kommer värdet alltid att vara &quot;dataSet&quot;. |
+| `entityID` | Varje objekt i nyttolastarrayen måste ange ett unikt ID för en datamängd. |
 
 **Svar**
 
-Ett lyckat svar returnerar en lista över dataanvändningsetiketter som är associerade med datauppsättningen som helhet och eventuella särskilda datafält som är associerade med källschemat.
+Ett lyckat svar returnerar URI:n för marknadsföringsåtgärden, dataanvändningsetiketterna som samlades in från de angivna datauppsättningarna och en lista över dataanvändningsprinciper som överträtts som ett resultat av testning av åtgärden mot dessa etiketter. I det här exemplet visas principen&quot;Exportera data till tredje part&quot; i `violatedPolicies` arrayen, vilket anger att marknadsföringsåtgärden utlöste en policyöverträdelse.
 
 ```json
 {
-    "connection": {},
-    "dataset": {
-        "identity": [],
-        "contract": [
-            "C3"
-        ],
-        "sensitive": [],
-        "contracts": [
-            "C3"
-        ],
-        "identifiability": [],
-        "specialTypes": []
+  "timestamp": 1556324277895,
+  "clientId": "{CLIENT_ID}",
+  "userId": "{USER_ID}",
+  "imsOrg": "{IMS_ORG}",
+  "marketingActionRef": "https://platform.adobe.io:443/data/foundation/dulepolicy/marketingActions/custom/exportToThirdParty",
+  "duleLabels": [
+    "C1",
+    "C2",
+    "C4",
+    "C5"
+  ],
+  "discoveredLabels": [
+    {
+      "entityType": "dataSet",
+      "entityId": "5b95b155419ec801e6eee780",
+      "dataSetLabels": {
+        "connection": {
+          "labels": []
+        },
+        "dataSet": {
+          "labels": [
+            "C5"
+          ]
+        },
+        "fields": [
+          {
+            "labels": [
+              "C2",
+            ],
+            "path": "/properties/_customer"
+          },
+          {
+            "labels": [
+              "C5"
+            ],
+            "path": "/properties/geoUnit"
+          },
+          {
+            "labels": [
+              "C1"
+            ],
+            "path": "/properties/identityMap"
+          }
+        ]
+      }
     },
-    "fields": [],
-    "schemaFields": [
-        {
-            "path": "/properties/personalEmail/properties/address",
-            "identity": [
-                "I1"
+    {
+      "entityType": "dataSet",
+      "entityId": "5b7c86968f7b6501e21ba9df",
+      "dataSetLabels": {
+        "connection": {
+          "labels": []
+        },
+        "dataSet": {
+          "labels": [
+            "C5"
+          ]
+        },
+        "fields": [
+          {
+            "labels": [
+              "C5"
             ],
-            "contract": [
-                "C2",
-                "C9"
+            "path": "/properties/createdByBatchID"
+          },
+          {
+            "labels": [
+              "C5"
             ],
-            "sensitive": [],
-            "contracts": [
-                "C2",
-                "C9"
-            ],
-            "identifiability": [
-                "I1"
-            ],
-            "specialTypes": []
+            "path": "/properties/faxPhone"
+          }
+        ]
+      }
+    }
+  ],
+  "violatedPolicies": [
+    {
+      "name": "Export Data to Third Party",
+      "status": "ENABLED",
+      "marketingActionRefs": [
+        "https://platform-stage.adobe.io:443/data/foundation/dulepolicy/marketingActions/custom/exportToThirdParty"
+      ],
+      "description": "Conditions under which data cannot be exported to a third party",
+      "deny": {
+        "operator": "OR",
+        "operands": [
+          {
+            "label": "C1"
+          },
+          {
+            "operator": "AND",
+            "operands": [
+              {
+                "label": "C3"
+              },
+              {
+                "label": "C7"
+              }
+            ]
+          }
+        ]
+      },
+      "imsOrg": "{IMS_ORG}",
+      "created": 1565651746693,
+      "createdClient": "{CREATED_CLIENT}",
+      "createdUser": "{CREATED_USER",
+      "updated": 1565723012139,
+      "updatedClient": "{UPDATED_CLIENT}",
+      "updatedUser": "{UPDATED_USER}",
+      "_links": {
+        "self": {
+          "href": "https://platform-stage.adobe.io/data/foundation/dulepolicy/policies/custom/5d51f322e553c814e67af1a3"
         }
-    ]
+      },
+      "id": "5d51f322e553c814e67af1a3"
+    }
+  ]
 }
 ```
 
 | Egenskap | Beskrivning |
-| -------- | ----------- |
-| `dataset` | Ett objekt som innehåller dataanvändningsetiketterna som används för datauppsättningen som helhet. |
-| `schemaFields` | En array med objekt som representerar specifika schemafält där dataanvändningsetiketter används. |
-| `schemaFields.path` | Sökvägen till schemafältet vars dataanvändningsetiketter visas i samma objekt. |
+| --- | --- |
+| `duleLabels` | En lista över dataanvändningsetiketter som har extraherats från de angivna datauppsättningarna. |
+| `discoveredLabels` | En lista över de datauppsättningar som tillhandahölls i nyttolasten för begäran, med information om de datauppsättningsnivårubriker och fältetiketter som hittades i varje. |
+| `violatedPolicies` | En matris med en lista över dataanvändningsprinciper som har överträtts genom att marknadsföringsåtgärden (anges i `marketingActionRef`) testas mot den angivna `duleLabels`. |
+
+Med hjälp av data som returneras i API-svaret kan du skapa protokoll i ditt upplevelseprogram för att se till att regelöverträdelser verkställs korrekt när de inträffar.
 
 ## Filtrera datafält
 
->[!NOTE] Det här steget är valfritt. Om du inte vill justera de data som ingår i ditt segment baserat på dina resultat i det föregående steget av att [söka efter dataanvändningsetiketter](#lookup-data-usage-labels-for-the-source-datasets), kan du gå vidare till det sista steget i att [utvärdera data för policyöverträdelser](#evaluate-data-for-policy-violations).
-
-Om du vill justera data som ingår i målgruppssegmentet kan du göra det på något av följande två sätt:
+Om ditt målgruppssegment inte klarar utvärderingen kan du justera data som ingår i segmentet på något av de två sätt som beskrivs nedan.
 
 ### Uppdatera segmentdefinitionens sammanfogningsprincip
 
-Om du uppdaterar sammanfogningsprincipen för en segmentdefinition justeras de datauppsättningar och fält som inkluderas när segmentjobbet körs. Mer information finns i avsnittet [Uppdatera en befintlig sammanfogningsprincip](../../profile/api/merge-policies.md) i självstudiekursen för sammanfogningsprinciper.
+Om du uppdaterar sammanfogningsprincipen för en segmentdefinition justeras de datauppsättningar och fält som inkluderas när segmentjobbet körs. Mer information finns i avsnittet [Uppdatera en befintlig sammanfogningsprincip](../../profile/api/merge-policies.md#update) i självstudiekursen för API-sammanfogningsprinciper.
 
 ### Begränsa specifika datafält när segmentet exporteras
 
@@ -267,11 +372,7 @@ När du exporterar ett segment till en datauppsättning med hjälp av kundprofil
 
 Tänk dig ett segment som har datafält med namnen&quot;A&quot;,&quot;B&quot; och&quot;C&quot;. Om du bara vill exportera fält C, innehåller parametern bara fält C. `fields` Om du gör det exkluderas fälten A och B när du exporterar segmentet.
 
-Mer information finns i avsnittet [Exportera ett segment](./evaluate-a-segment.md#export-a-segment) i självstudiekursen för segmentering.
-
-## Utvärdera data för policyöverträdelser
-
-Nu när du har samlat in etiketter för dataanvändning som hör till målgruppssegmentet kan du testa dessa etiketter mot marknadsföringsåtgärder för att utvärdera eventuella överträdelser av dataanvändningspolicyn. Detaljerade steg om hur du utför principutvärderingar med API:t för [DULE Policy Service](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml)finns i dokumentet om [principutvärdering](../../data-governance/enforcement/overview.md).
+Mer information finns i avsnittet [Exportera ett segment](./evaluate-a-segment.md#export) i självstudiekursen för segmentering.
 
 ## Nästa steg
 
