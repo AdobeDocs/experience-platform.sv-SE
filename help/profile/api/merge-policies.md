@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: Utvecklarhandbok för kundprofil-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: 5aad9fa71051a58fe1c4678553f47077d81d23fc
+source-git-commit: 21935bb36d8c2a0ef17e586c0909cf316ef026cf
 
 ---
 
@@ -418,7 +418,7 @@ Ett lyckat svar returnerar information om den nya sammanfogningsprincipen.
 
 I avsnittet [Komponenter för sammanfogningsprinciper](#components-of-merge-policies) i början av det här dokumentet finns mer information om de enskilda elementen som utgör en sammanfogningsprincip.
 
-## Uppdatera en sammanfogningsprincip
+## Uppdatera en sammanfogningsprincip {#update}
 
 Du kan ändra en befintlig kopplingsprofil genom att redigera enskilda attribut (PATCH) eller genom att skriva över hela kopplingsprofilen med nya attribut (PUT). Nedan visas exempel på vart och ett av dem.
 
