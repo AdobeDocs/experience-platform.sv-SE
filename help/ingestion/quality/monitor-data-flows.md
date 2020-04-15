@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Övervaka datainmatning
 topic: overview
 translation-type: tm+mt
-source-git-commit: 8577d9b93098d5d6ec778d549bf5fc1e29c32d86
+source-git-commit: 9cbc22a34613aeb58a2c5090b10978ae4428dbdb
 
 ---
 
@@ -21,15 +21,21 @@ Klicka på [Övervakning](https://platform.adobe.com)på den vänstra navigering
 
 ![](../images/quality/monitor-data-flows/click-streaming-end-to-end.png)
 
-Övervakningssidan för *direktuppspelning från början till slut* visas. Den här arbetsytan innehåller ett diagram som visar hur många meddelanden som direktuppspelas samt en detaljerad lista över inkommande data.
+Övervakningssidan för *direktuppspelning från början till slut* visas. Den här arbetsytan innehåller ett diagram som visar hur många direktuppspelade händelser som tas emot av Platform, ett diagram som visar hur många direktuppspelade händelser som har bearbetats av kundprofilen [i](../../profile/home.md)realtid samt en detaljerad lista över inkommande data.
 
 ![](../images/quality/monitor-data-flows/list-streams.png)
 
-Som standard visas i diagrammet hur mycket intag som har skett under de senaste sju dagarna. Du kan justera datumintervallet så att olika tidsperioder visas genom att klicka på den markerade knappen.
+Som standard visas i det övre diagrammet hur snabbt du har fått i sig något under de senaste sju dagarna. Du kan justera datumintervallet så att olika tidsperioder visas genom att klicka på den markerade knappen.
 
-![](../images/quality/monitor-data-flows/list-streams-focus-on-graph.png)
+![](../images/quality/monitor-data-flows/list-streams-focus-on-top-graph.png)
 
-Under diagrammet finns en lista med alla poster för direktuppspelning som motsvarar det datumintervall som visas ovan. Varje listad batch visar sitt ID, datauppsättningens namn, när den senast uppdaterades, antalet poster i gruppen samt antalet fel (om det finns några). Du kan klicka på en av posterna om du vill ha mer detaljerad information om posten.
+I det nedre diagrammet visas antalet lyckade bearbetade direktuppspelade händelser per profil under de senaste sju dagarna. Du kan justera datumintervallet så att olika tidsperioder visas genom att klicka på den markerade knappen.
+
+> [!NOTE] För att data ska kunna visas i det här diagrammet måste data **uttryckligen** aktiveras för profilen. Läs användarhandboken för [datauppsättningar om du vill lära dig hur du aktiverar direktuppspelningsdata för profil](../../catalog/datasets/user-guide.md#enable-a-dataset-for-real-time-customer-profile).
+
+![](../images/quality/monitor-data-flows/list-streams-focus-on-bottom-graph.png)
+
+Under diagrammen finns en lista med alla poster för direktuppspelning som motsvarar det datumintervall som visas ovan. Varje listad batch visar sitt ID, datauppsättningens namn, när den senast uppdaterades, antalet poster i gruppen samt antalet fel (om det finns några). Du kan klicka på en av posterna om du vill ha mer detaljerad information om posten.
 
 ![](../images/quality/monitor-data-flows/list-streams-focus-on-streams.png)
 
