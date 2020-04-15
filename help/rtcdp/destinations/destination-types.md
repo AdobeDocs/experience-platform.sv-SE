@@ -4,7 +4,7 @@ seo-title: Destinationstyper och -kategorier
 description: 'I Adobes kunddataplattform i realtid samlar mål för profiler och segmentexport in händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Starta tillägg för att vidarebefordra råa händelsedata till flera olika typer av destinationer. '
 seo-description: I Adobes kunddataplattform i realtid samlar mål för profiler och segmentexport in händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Starta tillägg för att vidarebefordra råa händelsedata till flera olika typer av destinationer.
 translation-type: tm+mt
-source-git-commit: bc3f57d636c363c94555b2a779f5bb98a9eca13f
+source-git-commit: 617cf1934402b9001647d7704fb24d6256069ff3
 
 ---
 
@@ -47,10 +47,11 @@ I videon nedan beskrivs de två typerna av destinationer:
 
 Adobe CDP i realtid utnyttjar kraften och flexibiliteten i Experience Platform Launch för att inkludera Launch-tillägg i Adobes CDP-gränssnitt i realtid.
 
+>[!TIP]
+>
+>Detaljerad information om Experience Platform Launch-tillägg, inklusive användningsexempel och hur du hittar dem i gränssnittet, finns i [Launch-tilläggen - översikt](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
+
 Starta tillägg för att vidarebefordra råa händelsedata till flera olika typer av destinationer. Tänk på tillägg som en **typ av mål för vidarebefordran** av händelser. Detta är en enklare typ av integrering med målplattformar, som bara vidarebefordrar råhändelsedata. Exempel på sådana är tillägget [](/help/rtcdp/destinations/gainsight-extension.md) Gainsight-anpassning eller [bekräftelsen från kundens tillägg](/help/rtcdp/destinations/confirmit-digital-feedback-extension.md).
-
-Mer information om Experience Platform Launch-tillägg finns i Översikt över [](/help/rtcdp/destinations/experience-platform-launch-extensions.md)Launch-tillägg.
-
 
 ![Experience Platform Launch-tillägg jämfört med andra mål](/help/rtcdp/destinations/assets/launch-and-other-destinations.png)
 
