@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Utvärdera ett segment
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 8d77fc6c5b2824624ba308269f743a432a5288d2
+source-git-commit: 21935bb36d8c2a0ef17e586c0909cf316ef026cf
 
 ---
 
@@ -24,7 +24,7 @@ Den här självstudiekursen kräver en fungerande förståelse för de olika Ado
 
 ### Obligatoriska rubriker
 
-Den här självstudien kräver också att du har slutfört [autentiseringssjälvstudiekursen](../../tutorials/authentication.md) för att kunna ringa anrop till plattforms-API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+I den här självstudiekursen måste du också ha slutfört [autentiseringssjälvstudiekursen](../../tutorials/authentication.md) för att kunna anropa plattforms-API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
@@ -452,7 +452,7 @@ I följande avsnitt beskrivs dessa alternativ mer ingående.
 
 Om du vet vilken profil du vill använda kan du göra det med kundprofils-API:t i realtid. De fullständiga stegen för att komma åt enskilda profiler finns i [Access-kundprofildata i realtid med hjälp av API](../../profile/api/entities.md) -självstudiekursen för profiler.
 
-## Exportera ett segment
+## Exportera ett segment {#export}
 
 När ett segmenteringsjobb har slutförts (värdet för `status` attributet är &quot;SUCCEEDED&quot;) kan du exportera målgruppen till en datauppsättning där den kan nås och hanteras.
 
