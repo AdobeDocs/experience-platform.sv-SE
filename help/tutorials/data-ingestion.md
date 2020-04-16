@@ -4,18 +4,18 @@ solution: Experience Platform
 title: Självstudiekurser om dataöverföring
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 2020f4b88f81f2d4fe3cfbd91cd18119ae580f4f
+source-git-commit: e4da80338dbfbad70dfb3cf7df9fe589e949e788
 
 ---
 
 
 # Importera data till Experience Platform
 
-Adobe Experience Platform samlar data från flera olika källor för att hjälpa marknadsförarna att bättre förstå kundernas beteende. Adobe Experience Platforms datainmatning representerar de olika metoder som Platform använder för att hämta data från dessa källor samt hur dessa data lagras i Data Lake för användning av plattformstjänster längre fram i kedjan. Inmatning av data inkluderar batchinmatning, direktuppspelning och förtäring med hjälp av källanslutningar. Om du vill veta mer kan du läsa översikten över [](../ingestion/home.md) datainmatning eller gå direkt till [källdokumentationen](../source-connectors/home.md).
+Adobe Experience Platform samlar data från flera olika källor för att hjälpa marknadsförarna att bättre förstå kundernas beteende. Adobe Experience Platforms datainmatning representerar de olika metoder som Platform använder för att hämta data från dessa källor samt hur dessa data lagras i Data Lake för användning av plattformstjänster längre fram i kedjan. Inmatning av data inkluderar batchinmatning, direktuppspelning och förtäring med hjälp av källanslutningar. Om du vill ha mer information läser du översikten över [](../ingestion/home.md) dataöverföring eller går direkt till [källdokumentationen](../sources/home.md).
 
 ## Skapa en källanslutning i gränssnittet och API:t
 
-Med källkopplingar kan du importera data från flera källor, där de sedan kan märkas, struktureras och förbättras med hjälp av plattformstjänster. Om du vill börja skapa en koppling med hjälp av användargränssnittet går du till [Skapa en källkoppling i översikten](https://www.adobe.io/apis/experienceplatform/home/tutorials/sources-ui-tutorials.html#!api-specification/markdown/narrative/tutorials/sources_tutorial/ui/sources-ui-tutorial.md)för användargränssnittet. Om du vill skapa källanslutningar med API:t går du till [Skapa en källanslutning med API-översikten](https://www.adobe.io/apis/experienceplatform/home/tutorials/sources-api-tutorials.html#!api-specification/markdown/narrative/tutorials/sources_tutorial/api/sources-api-tutorial.md)för Flow Service.
+Med källkopplingar kan du importera data från flera källor, där de sedan kan märkas, struktureras och förbättras med hjälp av plattformstjänster. Information om hur du börjar skapa en källkoppling finns i [Källöversikt](../sources/home.md).
 
 ## Importera batchdata
 
