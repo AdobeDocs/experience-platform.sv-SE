@@ -4,7 +4,7 @@ seo-title: Destinationer för datahanteringsplattform (DMP)
 description: Med datahanteringsplattformar (DMP) kan annonsörer, utgivare och byråer skapa unika målgruppsprofiler, identifiera sina mest värdefulla segment och använda dem i alla digitala kanaler. På så sätt kan ni skapa en äkta 360-vy av en konsumentprofil, bygga och aktivera meningsfulla målgrupper.
 seo-description: Med datahanteringsplattformar (DMP) kan annonsörer, utgivare och byråer skapa unika målgruppsprofiler, identifiera sina mest värdefulla segment och använda dem i alla digitala kanaler. På så sätt kan ni skapa en äkta 360-vy av en konsumentprofil, bygga och aktivera meningsfulla målgrupper.
 translation-type: tm+mt
-source-git-commit: e3b7dd4788042deaeba68bfdbe08e8448b46c270
+source-git-commit: e4da80338dbfbad70dfb3cf7df9fe589e949e788
 
 ---
 
