@@ -4,7 +4,7 @@ seo-title: Destinationer för undersökning
 description: Plattformarna identifierar enkäthändelser, samlar in feedback från kunderna i realtid via dataelement och delar data med Adobe CDP i realtid.
 seo-description: Plattformarna identifierar enkäthändelser, samlar in feedback från kunderna i realtid via dataelement och delar data med Adobe CDP i realtid.
 translation-type: tm+mt
-source-git-commit: e3b7dd4788042deaeba68bfdbe08e8448b46c270
+source-git-commit: e4da80338dbfbad70dfb3cf7df9fe589e949e788
 
 ---
 
