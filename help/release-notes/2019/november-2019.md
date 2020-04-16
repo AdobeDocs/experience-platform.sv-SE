@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: November 18, 2019
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 9bfb2ca8726421363c8446ecf581ed58d427eabf
+source-git-commit: 2f0f155beacbc6a4ba2892ae211a9c0305e969ac
 
 ---
 
@@ -98,7 +98,7 @@ Experience Platform har ett RESTful API och ett interaktivt användargränssnitt
 
 * Källanslutningar för molnbaserade lagringsenheter stöder inte inmatning av komprimerade filer.
 
-Mer information om källor finns i [Källor - översikt](../../source-connectors/home.md).
+Mer information om källor finns i [Källor - översikt](../../sources/home.md).
 
 ## Datavetenskapens arbetsyta
 
