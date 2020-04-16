@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: December 12, 2019
 author: ens71067
 translation-type: tm+mt
-source-git-commit: 28a8fc496c85b334e89d0f0a130d3cc5c8956399
+source-git-commit: 2f0f155beacbc6a4ba2892ae211a9c0305e969ac
 
 ---
 
@@ -66,7 +66,7 @@ Experience Platform har ett RESTful API och ett interaktivt användargränssnitt
 
 * Ingen.
 
-Mer information om källor finns i [Källöversikt](../../source-connectors/home.md).
+Mer information om källor finns i [Källöversikt](../../sources/home.md).
 
 ## Experience Data Model (XDM) System
 
