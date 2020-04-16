@@ -4,14 +4,14 @@ solution: Experience Platform
 title: Exempelfrågor
 topic: queries
 translation-type: tm+mt
-source-git-commit: 45da024d45b5eebdfc393ee14890e24aed6021ce
+source-git-commit: 2f0f155beacbc6a4ba2892ae211a9c0305e969ac
 
 ---
 
 
 # Exempelfrågor om Adobe Analytics-data
 
-Data från utvalda rapportsviter från Adobe Analytics omvandlas till XDM ExperienceEvents och hämtas in i Adobe Experience Platform som datauppsättningar för er. I det här dokumentet beskrivs ett antal användningsfall där Adobe Experience Platform Query Service använder dessa data, och de inkluderade exempelfrågorna bör fungera med era Adobe Analytics-datauppsättningar. Mer information om mappning till XDM ExperienceEvents finns i dokumentationen [för mappning av](../../source-connectors/ui/adobe-applications/analytics-mapping.md) analysfält.
+Data från utvalda rapportsviter från Adobe Analytics omvandlas till XDM ExperienceEvents och hämtas in i Adobe Experience Platform som datauppsättningar för er. I det här dokumentet beskrivs ett antal användningsfall där Adobe Experience Platform Query Service använder dessa data, och de inkluderade exempelfrågorna bör fungera med era Adobe Analytics-datauppsättningar. Mer information om mappning till XDM ExperienceEvents finns i dokumentationen [för mappning av](../../sources/connectors/adobe-applications/analytics-mapping.md) analysfält.
 
 ## Komma igång
 
