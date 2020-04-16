@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform Source Connectors - översikt
 topic: overview
 translation-type: tm+mt
-source-git-commit: 92ba230d71e419e33567833ad562e6ffef996d0a
+source-git-commit: e81f138f933d4bb2c36260480e360dfacd412da0
 
 ---
 
@@ -26,9 +26,10 @@ Källor i Experience Platform är grupperade i följande kategorier:
 Med Experience Platform kan data hämtas från andra Adobe-program, inklusive Adobe Analytics, Adobe Audience Manager och Experience Platform Launch. Mer information finns i följande relaterade dokument:
 
 - [Adobe Audience Manager connector overview](connectors/adobe-applications/audience-manager.md)
-- [Skapa en Adobe Audience Manager-källkoppling i användargränssnittet](https://www.adobe.io/apis/experienceplatform/home/tutorials/sources-ui-tutorials.html#!api-specification/markdown/narrative/tutorials/sources_tutorial/ui/adobe-applications/aam-ui-tutorial.md)
+- [Skapa en Adobe Audience Manager-källkoppling i användargränssnittet](./tutorials/ui/create/adobe-applications/audience-manager.md)
 - [Översikt över Adobe Analytics-dataanslutning](connectors/adobe-applications/analytics.md)
-- [Skapa en källanslutning för Adobe Analytics i användargränssnittet](https://www.adobe.io/apis/experienceplatform/home/tutorials/sources-ui-tutorials.html#!api-specification/markdown/narrative/tutorials/sources_tutorial/ui/adobe-applications/adobe-analytics-ui-tutorial.md)
+- [Skapa en källanslutning för Adobe Analytics i användargränssnittet](./tutorials/ui/create/adobe-applications/analytics.md)
+- [Skapa en källkoppling för kundattribut i användargränssnittet](./tutorials/ui/create/adobe-applications/customer-attributes.md)
 
 ### Reklam
 
