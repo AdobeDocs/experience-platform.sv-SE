@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över datainmatning i Adobe Experience Platform
 topic: overview
 translation-type: tm+mt
-source-git-commit: 4817162fe2b7cbf4ae4c1ed325db2af31da5b5d3
+source-git-commit: 2f0f155beacbc6a4ba2892ae211a9c0305e969ac
 
 ---
 
@@ -35,7 +35,7 @@ Med Experience Platform kan ni skapa källanslutningar till olika dataleverantö
 
 Källanslutningar kan konfigureras för att samla in data från andra Adobe-program (till exempel Adobe Analytics och Adobe Audience Manager), molnlagringskällor från tredje part (till exempel Azure Blob, Amazon S3, FTP-servrar och SFTP-servrar) och CRM-system från tredje part (till exempel Microsoft Dynamics och Salesforce).
 
-Mer information finns i [Källöversikt](../source-connectors/home.md) .
+Mer information finns i [Källöversikt](../sources/home.md) .
 
 ## Nästa steg
 
