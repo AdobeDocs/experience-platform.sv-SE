@@ -4,7 +4,7 @@ solution: Experience Platform
 title: XDM-scheman och -beskrivningar
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: ee08f43400fa72abce95ed52aff879f954f4b4d6
+source-git-commit: 2f0f155beacbc6a4ba2892ae211a9c0305e969ac
 
 ---
 
@@ -23,7 +23,7 @@ Möjligheten att förstå relationerna mellan era kunder och deras interaktioner
 
 ## Skapa ett ad hoc-schema
 
-Under särskilda omständigheter kan det vara nödvändigt att skapa ett XDM-schema (Experience Data Model) med fält som bara namnges av en enda datauppsättning. Detta kallas för ett ad hoc-schema. Ad-hoc-scheman används i olika arbetsflöden för [dataöverföring](../ingestion/home.md) för Experience Platform, inklusive inhämtning av CSV-filer och skapande av vissa typer av [källanslutningar](../source-connectors/home.md). Ett ad hoc-schema skapas med API:t för schemaregister och är avsett att användas tillsammans med andra självstudiekurser för Experience Platform som kräver att ett ad hoc-schema skapas som en del av arbetsflödet. Om du vill börja skapa ett ad hoc-schema ska du titta i självstudiekursen för att [skapa ett ad hoc-schema med API](../xdm/tutorials/ad-hoc.md).
+Under särskilda omständigheter kan det vara nödvändigt att skapa ett XDM-schema (Experience Data Model) med fält som bara namnges av en enda datauppsättning. Detta kallas för ett ad hoc-schema. Ad-hoc-scheman används i olika arbetsflöden för [dataöverföring](../ingestion/home.md) för Experience Platform, inklusive inhämtning av CSV-filer och skapande av vissa typer av [källanslutningar](../sources/home.md). Ett ad hoc-schema skapas med API:t för schemaregister och är avsett att användas tillsammans med andra självstudiekurser för Experience Platform som kräver att ett ad hoc-schema skapas som en del av arbetsflödet. Om du vill börja skapa ett ad hoc-schema ska du titta i självstudiekursen för att [skapa ett ad hoc-schema med API](../xdm/tutorials/ad-hoc.md).
 
 ## Nästa steg
 
