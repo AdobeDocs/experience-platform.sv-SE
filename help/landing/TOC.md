@@ -1,9 +1,9 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Adobe Experience Platform Help
+user-guide-title: Adobe Experience Platform - hjälp
 translation-type: tm+mt
-source-git-commit: 2020f4b88f81f2d4fe3cfbd91cd18119ae580f4f
+source-git-commit: e4da80338dbfbad70dfb3cf7df9fe589e949e788
 
 ---
 
@@ -36,7 +36,7 @@ source-git-commit: 2020f4b88f81f2d4fe3cfbd91cd18119ae580f4f
    * [Kunddataplattform i realtid](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/overview.html)
    * [Sandlådor](https://docs.adobe.com/content/help/en/experience-platform/sandbox/home.html)
    * [Segmentering](https://docs.adobe.com/content/help/en/experience-platform/segmentation/home.html)
-   * [Källor (kopplingar)](https://docs.adobe.com/content/help/en/experience-platform/source-connectors/home.html)
+   * [Källor (kopplingar)](https://docs.adobe.com/content/help/en/experience-platform/sources/home.html)
    * [XDM (Experience Data Model)](https://docs.adobe.com/content/help/en/experience-platform/xdm/home.html)
 * [Självstudiekurser om Experience Platform](https://docs.adobe.com/content/help/en/experience-platform/tutorials/home.html)
 * [Versionsinformation](https://docs.adobe.com/content/help/en/experience-platform/release-notes/latest.html)
