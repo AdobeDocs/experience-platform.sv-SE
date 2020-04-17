@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Godkända ID-namnutrymmen och -kvalificerare
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: d0fcae6b1b75584a2c26d6eee5b47e0d60a142ba
+source-git-commit: a1161630c8edae107b784f32ee20af225f9f8c46
 
 ---
 
@@ -13,7 +13,7 @@ source-git-commit: d0fcae6b1b75584a2c26d6eee5b47e0d60a142ba
 
 ## Standardnamnutrymmen för identiteter
 
-Alla identiteter som skickas till Integritetstjänsten måste anges under ett specifikt namnområde. Identitetsnamnutrymmen är en komponent i [Adobe Experience Platform Identity Service](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/identity_services_architectural_overview/identity_services_architectural_overview.md) som anger det sammanhang som en identitet relateras till.
+Alla identiteter som skickas till Integritetstjänsten måste anges under ett specifikt namnområde. Identitetsnamnutrymmen är en komponent i [Adobe Experience Platform Identity Service](../../identity-service/home.md) som anger det sammanhang som en identitet relateras till.
 
 I följande tabell visas flera vanliga, fördefinierade identitetstyper som finns tillgängliga via Experience Platform, tillsammans med tillhörande `namespace` värden:
 
@@ -31,7 +31,7 @@ I följande tabell visas flera vanliga, fördefinierade identitetstyper som finn
 
 >[!NOTE] Varje identitetstyp har också ett `namespaceId` heltalsvärde som kan användas i stället för `namespace` strängen när identitetsegenskapen ställs in på `type` namespaceId. Mer information finns i avsnittet om [namnutrymmeskvalificerare](#namespace-qualifiers) .
 
-Du kan hämta en lista med identitetsnamnutrymmen som används av din organisation genom att göra en GET-begäran till `idnamespace/identities` slutpunkten i Identitetstjänstens API. Mer information finns i utvecklarhandboken [för](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/identity_services_architectural_overview/identity_services_api.md) identitetstjänsten.
+Du kan hämta en lista med identitetsnamnutrymmen som används av din organisation genom att göra en GET-begäran till `idnamespace/identities` slutpunkten i Identitetstjänstens API. Mer information finns i utvecklarhandboken [för](../../identity-service/api/getting-started.md) identitetstjänsten.
 
 ## Namnutrymmeskvalificerare
 
