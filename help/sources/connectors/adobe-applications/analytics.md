@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Dataanslutning för Analytics
 topic: overview
 translation-type: tm+mt
-source-git-commit: 9f0200af0310eafbcc1851b089cfc254cb34af8f
+source-git-commit: a1161630c8edae107b784f32ee20af225f9f8c46
 
 ---
 
@@ -37,7 +37,7 @@ Mer information om XDM finns i [XDM-systemöversikten](../../../xdm/home.md).
 
 ## Hur mappas fält från Adobe Analytics till XDM?
 
-När en källanslutning upprättas för att överföra Analytics-data till Experience Platform med hjälp av användargränssnittet för plattformen, mappas datafälten automatiskt och hämtas till kundprofilen i realtid på några minuter. Instruktioner om hur du skapar en källanslutning med Adobe Analytics med hjälp av plattformsgränssnittet finns i självstudiekursen för [Analytics-dataanslutning](https://www.adobe.io/apis/experienceplatform/home/tutorials/sources-ui-tutorials.html#!api-specification/markdown/narrative/tutorials/sources_tutorial/ui/adobe-applications/adobe-analytics-ui-tutorial.md).
+När en källanslutning upprättas för att överföra Analytics-data till Experience Platform med hjälp av användargränssnittet för plattformen, mappas datafälten automatiskt och hämtas till kundprofilen i realtid på några minuter. Instruktioner om hur du skapar en källanslutning med Adobe Analytics med hjälp av plattformsgränssnittet finns i självstudiekursen för [Analytics-dataanslutning](../../tutorials/ui/create/adobe-applications/analytics.md).
 
 Mer information om fältmappning mellan Analytics och Experience Platform finns i [Adobe Analytics-guiden för fältmappning](./analytics-mapping.md) .
 
