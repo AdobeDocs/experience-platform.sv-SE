@@ -4,7 +4,7 @@ seo-title: Destinationsöversikt
 description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från kunddataplattformen i realtid. Ni kan använda Destinationer i Adobes kunddataplattform i realtid för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad annonsering och många andra användningsfall.
 seo-description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från kunddataplattformen i realtid. Ni kan använda Destinationer i Adobes kunddataplattform i realtid för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad annonsering och många andra användningsfall.
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: a1161630c8edae107b784f32ee20af225f9f8c46
 
 ---
 
@@ -33,7 +33,7 @@ Med kontrollerna på arbetsytan [](/help/rtcdp/destinations/destinations-workspa
 * Skapa, redigera, aktivera och inaktivera dataflöden till destinationerna i katalogen,
 * Skapa ett konto på en lagringsplats eller länka CDP i realtid till kontot på målplattformen.
 * Välj vilka segment som ska aktiveras för destinationer.
-* Välj vilka XDM-fält ( [Experience Data Model)](https://www.adobe.io/apis/experienceplatform/home/xdm/xdmservices.html#!api-specification/markdown/narrative/technical_overview/schema_registry/xdm_system/xdm_system_in_experience_platform.md) som ska exporteras när segment aktiveras till e-postmarknadsföringsmål.
+* Välj vilka XDM-fält ( [Experience Data Model)](../../xdm/home.md) som ska exporteras när segment aktiveras till e-postmarknadsföringsmål.
 
 ## Måltyper och -kategorier
 
@@ -41,6 +41,6 @@ Mer information finns i Översikt över [måltyper och kategorier](/help/rtcdp/d
 
 ## Destinationer och åtkomstkontroller
 
-Målfunktionerna i CDP i realtid fungerar med åtkomstkontrollsbehörigheterna för Adobe Experience Platform. Beroende på din användares behörighetsnivå kan du visa, hantera och aktivera mål. Information om de enskilda behörigheterna finns i [Åtkomstkontroll i Adobe Experience Platform](https://www.adobe.io/apis/experienceplatform/home/permissions-and-sandboxes/permissions-and-sandboxes.html#!api-specification/markdown/narrative/technical_overview/access-control/access-control-overview.md) och rulla nedåt på sidan.
+Målfunktionerna i CDP i realtid fungerar med åtkomstkontrollsbehörigheterna för Adobe Experience Platform. Beroende på din användares behörighetsnivå kan du visa, hantera och aktivera mål. Information om de enskilda behörigheterna finns i [Åtkomstkontroll i Adobe Experience Platform](../../access-control/home.md) och rulla nedåt på sidan.
 
-Mer information om åtkomstkontroller finns i användarhandboken för [åtkomstkontroll](https://www.adobe.io/apis/experienceplatform/home/permissions-and-sandboxes/permissions-and-sandboxes.html#!api-specification/markdown/narrative/technical_overview/access-control/access-control-user-guide.md).
+Mer information om åtkomstkontroller finns i användarhandboken för [åtkomstkontroll](../../access-control/ui/overview.md).
