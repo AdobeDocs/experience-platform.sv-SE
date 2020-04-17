@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Audience Manager-koppling
 topic: overview
 translation-type: tm+mt
-source-git-commit: 9f0200af0310eafbcc1851b089cfc254cb34af8f
+source-git-commit: a1161630c8edae107b784f32ee20af225f9f8c46
 
 ---
 
@@ -19,7 +19,7 @@ Adobe Audience Manager-datakopplingen strömmar data från första part som saml
 
 Audience Manager-kopplingen mappar dessa datakategorier till XDM-schemat (Experience Data Model) och skickar dem till Platform. Realtidsdata och onboarddata skickas som XDM ExperienceEvent-data, medan profildata skickas som enskilda XDM-profiler.
 
-Instruktioner om hur du skapar en anslutning med Adobe Audience Manager med hjälp av plattformsgränssnittet finns i självstudiekursen [för Audience Manager-koppling](https://www.adobe.io/apis/experienceplatform/home/tutorials/sources-ui-tutorials.html#!api-specification/markdown/narrative/tutorials/sources_tutorial/ui/adobe-applications/aam-ui-tutorial.md).
+Instruktioner om hur du skapar en anslutning med Adobe Audience Manager med hjälp av plattformsgränssnittet finns i självstudiekursen [för Audience Manager-koppling](../../tutorials/ui/create/adobe-applications/audience-manager.md).
 
 ## Vad är Experience Data Model (XDM)?
 
