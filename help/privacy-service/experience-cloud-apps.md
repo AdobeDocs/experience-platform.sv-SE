@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Integritetstjänst och Experience Cloud-program
 topic: overview
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: a1161630c8edae107b784f32ee20af225f9f8c46
 
 ---
 
@@ -30,7 +30,7 @@ Nedan följer en lista över Experience Cloud-program som är integrerade med In
 | Adobe Analytics | ✓ | ✓ | <ul><li>[Åtkomst/borttagning av dokumentation](https://marketing.adobe.com/resources/help/en_US/analytics/gdpr/index.html)</li><li>Analytics hanterar avanmälningsbegäranden med hjälp av [sekretessrapporteringsvariabler](https://docs.adobe.com/content/help/en/analytics/admin/data-governance/consent-variables.html)</li></ul> |
 | Adobe Audience Manager | ✓ | ✓ | <ul><li>[Åtkomst/borttagning av dokumentation](https://marketing.adobe.com/resources/help/en_US/aam/aam-gdpr.html)</li><li>[Dokumentation om avanmälan](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/declared-ids.html)</li></ul> |
 | Adobe Campaign Standard | ✓ | ✓ | <ul><li>[Åtkomst/borttagning av dokumentation](https://docs.campaign.adobe.com/doc/standard/getting_started/en/ACS_GDPR.html)</li><li>[Dokumentation om avanmälan](../segmentation/honoring-opt-outs.md)</li></ul> |
-| Adobe Experience Platform | ✓ | ✓ | <ul><li>[Åtkomst/borttagningsdokumentation för datasjön](../catalog/privacy.md)</li><li>[Åtkomst/radering av dokumentation för kundprofil i realtid](../profile/privacy.md)</li><li>Experience Platform uppfyller kraven på [avanmälan för målgruppssegment](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/segmentation/honoring-opt-outs.md).</li></ul> |
+| Adobe Experience Platform | ✓ | ✓ | <ul><li>[Åtkomst/borttagningsdokumentation för datasjön](../catalog/privacy.md)</li><li>[Åtkomst/radering av dokumentation för kundprofil i realtid](../profile/privacy.md)</li><li>Experience Platform uppfyller kraven på [avanmälan för målgruppssegment](../segmentation/honoring-opt-outs.md).</li></ul> |
 | Adobe Primetime-autentisering | ✓ | Ej tillämpligt | <ul><li>[Åtkomst/borttagning av dokumentation](http://tve.helpdocsonline.com/how-to-make-a-privacy-request)</li><li>Primetime har inte möjlighet att överföra data, och därför är begäran om att avanmäla sig från försäljning inte tillämplig.</li></ul> |
 | Adobe Target | ✓ | Ej tillämpligt | <ul><li>[Åtkomst/borttagning av dokumentation](https://marketing.adobe.com/resources/help/en_US/target/target/privacy-and-general-data-protection-regulation.html)</li><li>Target har inte möjlighet att överföra data, och därför är begäran om avanmälan från försäljning inte tillämplig.</li></ul> |
 
