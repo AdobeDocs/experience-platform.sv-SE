@@ -4,7 +4,7 @@ seo-title: Adobe Experience Platform Web SDK snabbstart med Launch
 description: Snabbstartsguide för användning av Experience Platform Web SDK-tillägget för att samla in data
 seo-description: Snabbstartsguide för användning av Experience Platform Web SDK-tillägget för att samla in data
 translation-type: tm+mt
-source-git-commit: 0cc6e233646134be073d20e2acd1702d345ff35f
+source-git-commit: a1161630c8edae107b784f32ee20af225f9f8c46
 
 ---
 
@@ -25,7 +25,7 @@ För närvarande stöder Adobe Experience Platform Web SDK endast sändning av d
 
 För att kunna skicka data till Adobe Experience Platform måste du skapa ett XDM-schema och en datauppsättning som använder det schemat.
 
-- [Skapa ett schema](https://www.adobe.io/apis/experienceplatform/home/tutorials/alltutorials.html#!api-specification/markdown/narrative/tutorials/schema_editor_tutorial/schema_editor_tutorial.md) med följande blandningar:
+- [Skapa ett schema](../../xdm/tutorials/create-schema-ui.md) med följande blandningar:
    - Implementeringsinformation för ExperienceEvent
    - Information om ExperienceEvent-miljö
    - Webbinformation om ExperienceEvent
