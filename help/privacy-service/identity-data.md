@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Identitetsdata för sekretessförfrågningar
 topic: overview
 translation-type: tm+mt
-source-git-commit: f2fe9c01c8355d0b312a0236f76085d1743aa8cc
+source-git-commit: a1161630c8edae107b784f32ee20af225f9f8c46
 
 ---
 
@@ -23,7 +23,7 @@ När du till exempel hanterar kunddataförfrågningar i Integritetstjänst kan e
 
 Det krävs därför att varje identitet som skickas till integritetstjänsten åtföljs av ett **namnutrymme** som innehåller ett sammanhang där identitetsvärdet kopplas till ursprungssystemet. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;e-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-ID (&quot;AdCloud&quot;) eller ett Adobe Target-ID (&quot;TNTID&quot;).
 
-Adobe Experience Platform Identity Service lagrar globalt definierade och användardefinierade identitetsnamnutrymmen. Mer information om namnutrymmen finns i översikten över [namnutrymmet](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/identity_namespace_overview/identity_namespace_overview.md). En lista över standardnamnutrymmen och namnutrymmeskvalificerare som ofta används i sekretesssystemet finns i [bilagan](api/appendix.md) i utvecklarhandboken.
+Adobe Experience Platform Identity Service lagrar globalt definierade och användardefinierade identitetsnamnutrymmen. Mer information om namnutrymmen finns i översikten över [namnutrymmet](../identity-service/namespaces.md). En lista över standardnamnutrymmen och namnutrymmeskvalificerare som ofta används i sekretesssystemet finns i [bilagan](api/appendix.md) i utvecklarhandboken.
 
 ## ECID och anmälningstjänst
 
