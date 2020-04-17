@@ -4,14 +4,14 @@ solution: Experience Platform
 title: Förbered data för användning i intelligenta tjänster
 topic: Intelligent Services
 translation-type: tm+mt
-source-git-commit: 1d827d1637da05d3d2afc338f48911bb23039949
+source-git-commit: 03135f564bd72fb60e41b02557cb9ca9ec11e6e8
 
 ---
 
 
 # Förbered data för användning i intelligenta tjänster
 
-För att Intelligent Services ska kunna hitta insikter från era marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. Intelligenta tjänster utnyttjar XDM-scheman (Experience Data Model) för att uppnå detta. Alla datauppsättningar som används i Intelligent Services måste överensstämma med XDM-schemat **Consumer Experience Events (CEE)** .
+För att Intelligent Services ska kunna hitta insikter från era marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. Intelligenta tjänster utnyttjar XDM-scheman (Experience Data Model) för att uppnå detta. Alla datauppsättningar som används i Intelligent Services måste överensstämma med **CEE-schemat (Consumer ExperienceEvent)** XDM.
 
 Det här dokumentet innehåller allmän vägledning om hur du mappar data om marknadsföringshändelser från flera kanaler till det här schemat, och ger information om viktiga fält i schemat för att hjälpa dig att avgöra hur data effektivt kan mappas till dess struktur.
 
@@ -52,7 +52,7 @@ Fältet `xdm:channel` representerar den marknadsföringskanal som är relaterad 
 
 ## Mappning och inhämtning av data
 
-När du har fastställt om dina tidsseriedata kan mappas till CEE-schemat kan du påbörja processen med att föra in dina data i Intelligent Services. Kontakta Adobes konsulttjänster för att mappa dina data till schemat och importera dem till tjänsten.
+När du har fastställt om dina data för marknadsföringshändelser kan mappas till CEE-schemat kan du påbörja processen med att föra in dina data i Intelligent Services. Kontakta Adobes konsulttjänster för att mappa dina data till schemat och importera dem till tjänsten.
 
 Om du har en Adobe Experience Platform-prenumeration och vill mappa och importera data själv följer du stegen som beskrivs i avsnittet nedan.
 
