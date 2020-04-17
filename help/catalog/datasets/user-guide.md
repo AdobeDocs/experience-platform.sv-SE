@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användarhandbok för datauppsättningar
 topic: datasets
 translation-type: tm+mt
-source-git-commit: 5aad9fa71051a58fe1c4678553f47077d81d23fc
+source-git-commit: 7d3f64db787aebe46179c0e08ad01878b0ad2877
 
 ---
 
@@ -50,7 +50,7 @@ Experience Platform erbjuder mer robusta metoder för att få tillgång till era
 * [Översikt över frågetjänsten](../../query-service/home.md)
 * [Användarhandbok för JupyterLab](../../data-science-workspace/jupyterlab/overview.md)
 
-## Skapa en datauppsättning
+## Skapa en datauppsättning {#create}
 
 Om du vill skapa en ny datauppsättning börjar du med att klicka på **Skapa datauppsättning** på kontrollpanelen *Datauppsättningar* .
 
