@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Bilaga
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 0081cbd414e983d767b4a6f3aceed85d72a34816
+source-git-commit: 2940f69d193ff8a4ec6ad4a58813b5426201ef45
 
 ---
 
@@ -67,7 +67,7 @@ Följande är ett exempel på konfiguration som anger hur du använder en CPU f�
 
 ## Resurskonfigurationer för PySpark och Spark {#resource-config}
 
-PySpark och Spark Engines kan ändra beräkningsresurser för utbildning och poängsättning. Dessa resurser beskrivs i följande tabell:
+Spark Engines kan modifiera beräkningsresurser för utbildning och poängsättning. Dessa resurser beskrivs i följande tabell:
 
 | Resurs | Beskrivning | Typ |
 | -------- | ----------- | ---- |
