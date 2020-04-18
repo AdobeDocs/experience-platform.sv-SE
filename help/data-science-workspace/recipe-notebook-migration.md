@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Migreringsguider för mottagare och anteckningsböcker
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 105317c0b9a7cf74d55e3436a49e1dc6eeb31b32
+source-git-commit: bb6fe494933606d428d7bdf20ee38b7ac51c23ea
 
 ---
 
@@ -427,11 +427,11 @@ Med PySpark 3 (Spark 2.4) `sc = spark.sparkContext` definieras inläsningen.
 
 ![Belastning 1](./images/migration/pyspark-migration/2.4-load.png)
 
-**Inläsning av Experience Could Platform data in PySpark 2.3 - deprecated**
+**Inläsning av Experience Cloud-plattformsdata i PySpark 2.3 - borttagen**
 
 ![Belastning 2](./images/migration/pyspark-migration/2.3-load-alt.png)
 
-**Inläsning av Experience Could Platform data in PySpark 2.4**
+**Läsa in Experience Cloud Platform-data i PySpark 2.4**
 
 Med PySpark 3 (Spark 2.4) behöver du inte längre definiera `org_id` och `dataset_id` inte längre. Dessutom `df = spark.read.format` har ersatts med en egen magi [`%dataset`](#magic) som underlättar läsning och skrivning av datauppsättningar.
 
