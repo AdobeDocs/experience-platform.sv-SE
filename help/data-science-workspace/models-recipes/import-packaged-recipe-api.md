@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Importera ett paketerat recept (API)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 92dad525123d321e987de527ae6c7aab40b22bc4
+source-git-commit: ebf7c883ce89fdf8b0d468ab21d1c3a1ba8aca06
 
 ---
 
@@ -30,8 +30,8 @@ En motor innehåller maskininlärningsalgoritmer och logik för att lösa specif
 
 Den här självstudien kräver en paketerad mottagarfil i form av antingen en binär artefakt eller en Docker-URL. Följ [paketera källfiler i en Recept](./package-source-files-recipe.md) -självstudiekurs för att skapa en paketerad Recipe-fil eller skapa en egen.
 
-- Binär artefakt: Den binära artefakten (t.ex. JAR, EGG) som används för att skapa en motor.
-- `{DOCKER_URL}` : En URL-adress till en Docker-bild av en intelligent tjänst.
+- Binär artefakt (borttagen): Den binära artefakten (t.ex. JAR, EGG) som används för att skapa en motor.
+- `{DOCKER_URL}`: En URL-adress till en Docker-bild av en intelligent tjänst.
 
 I den här självstudiekursen måste du ha slutfört [autentiseringen till Adobe Experience Platform-självstudiekursen](../../tutorials/authentication.md) för att kunna ringa anrop till plattforms-API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
 
@@ -42,22 +42,185 @@ I den här självstudiekursen måste du ha slutfört [autentiseringen till Adobe
 ## Skapa en motor
 
 Beroende på vilken typ av paketerad mottagarfil som ska inkluderas som en del av API-begäran skapas en motor på ett av två sätt:
-- [Skapa en motor med en binär artefakt](#create-an-engine-with-a-binary-artifact)
+
 - [Skapa en motor med en Docker URL](#create-an-engine-with-a-docker-url)
+- [Skapa en motor med en binär artefakt (utgått)](#create-an-engine-with-a-binary-artifact-deprecated)
 
-### Skapa en motor med en binär artefakt
+### Skapa en motor med en Docker URL
 
-Om du vill skapa en motor med hjälp av en lokal paketerad `.jar` eller `.egg` binär artefakt måste du ange den absoluta sökvägen till den binära artefaktfilen i det lokala filsystemet. Du kan navigera till katalogen som innehåller den binära artefakten i en Terminal-miljö och köra Unix-kommandot för den absoluta sökvägen. `pwd`
+Om du vill skapa en motor med en paketerad mottagarfil som lagras i en Docker-behållare måste du ange Docker-URL:en till den paketerade mottagarfilen.
 
-Följande anrop skapar en motor med en binär artefakt:
+>[!CAUTION]
+> Om du använder Python eller R ska du använda begäran nedan. Om du använder PySpark eller Scala använder du exemplet med PySpark/Scala-begäran som finns under Python/R-exemplet.
 
-#### API-format
+**API-format**
 
 ```http
 POST /engines
 ```
 
-#### Begäran
+**Begär Python/R**
+
+```shell
+curl -X POST \
+    https://platform.adobe.io/data/sensei/engines \
+    -H 'Authorization: {ACCESS_TOKEN}' \
+    -H 'X-API-KEY: {API_KEY}' \
+    -H 'content-type: multipart/form-data' \
+    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H `x-sandbox-name: {SANDBOX_NAME}` \
+    -F 'engine={
+        "name": "Retail Sales Engine Python",
+        "description": "A description for Retail Sales Engine, this Engines execution type is Python",
+        "type": "Python"
+        "artifacts": {
+            "default": {
+                "image": {
+                    "location": "{DOCKER_URL}",
+                    "name": "retail_sales_python",
+                    "executionType": "Python"
+                }
+            }
+        }
+    }' 
+```
+
+| Egenskap | Beskrivning |
+| -------  | ----------- |
+| `engine.name` | Det önskade namnet på motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i gränssnittet Data Science Workspace som mottagarens namn. |
+| `engine.description` | En valfri beskrivning av motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i användargränssnittet för datavetenskapen som mottagarens beskrivning. Ta inte bort den här egenskapen, låt det här värdet vara en tom sträng om du väljer att inte ange en beskrivning. |
+| `engine.type` | Motorns körningstyp. Detta värde motsvarar det språk som Docker-bilden har utvecklats på. När en Docker URL anges för att skapa en motor `type` är antingen `Python`, `R`, `PySpark`, `Spark` (Scala) eller `Tensorflow`. |
+| `artifacts.default.image.location` | Din `{DOCKER_URL}` far hit. En komplett Docker-URL har följande struktur: `your_docker_host.azurecr.io/docker_image_file:version` |
+| `artifacts.default.image.name` | Ytterligare ett namn för Docker-bildfilen. Ta inte bort den här egenskapen, låt det här värdet vara en tom sträng om du inte anger ett extra namn på Docker-bildfilen. |
+| `artifacts.default.image.executionType` | Den här motorns körningstyp. Detta värde motsvarar det språk som Docker-bilden har utvecklats på. När en Docker URL anges för att skapa en motor `executionType` är antingen `Python`, `R`, `PySpark`, `Spark` (Scala) eller `Tensorflow`. |
+
+**Begär PySpark**
+
+```shell
+curl -X POST \
+  https://platform.adobe.io/data/sensei/engines \
+    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+    -H 'x-api-key: {API_KEY}' \
+    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-sandbox-name: {SANDBOX_NAME}' \
+    -H 'content-type: multipart/form-data' \
+    -F 'engine={
+    "name": "PySpark retail sales recipe",
+    "description": "A description for this Engine",
+    "type": "PySpark",
+    "mlLibrary":"databricks-spark",
+    "artifacts": {
+        "default": {
+            "image": {
+                "name": "modelspark",
+                "executionType": "PySpark",
+                "packagingType": "docker",
+                "location": "v1d2cs4mimnlttw.azurecr.io/sarunbatchtest:0.0.1"
+            }
+        }
+    }
+}'
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `name` | Det önskade namnet på motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i gränssnittet som mottagarens namn. |
+| `description` | En valfri beskrivning av motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i gränssnittet som mottagarens beskrivning. Den här egenskapen är obligatorisk. Om du inte vill ange en beskrivning anger du värdet som en tom sträng. |
+| `type` | Motorns körningstyp. Detta värde motsvarar det språk som Docker-bilden bygger på &quot;PySpark&quot;. |
+| `mlLibrary` | Ett fält som krävs när du skapar motorer för PySpark- och Scala-recept. |
+| `artifacts.default.image.location` | Platsen för dockningsbilden som är länkad till av en Docker-URL. |
+| `artifacts.default.image.executionType` | Motorns körningstyp. Detta värde motsvarar det språk som Docker-bilden bygger på &quot;Spark&quot;. |
+
+**Request Scala**
+
+```shell
+curl -X POST \
+  https://platform.adobe.io/data/sensei/engines \
+    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+    -H 'x-api-key: {API_KEY}' \
+    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-sandbox-name: {SANDBOX_NAME}' \
+    -H 'content-type: multipart/form-data' \
+    -F 'engine={
+    "name": "Spark retail sales recipe",
+    "description": "A description for this Engine",
+    "type": "Spark",
+    "mlLibrary":"databricks-spark",
+    "artifacts": {
+        "default": {
+            "image": {
+                "name": "modelspark",
+                "executionType": "Spark",
+                "packagingType": "docker",
+                "location": "v1d2cs4mimnlttw.azurecr.io/sarunbatchtest:0.0.1"
+            }
+        }
+    }
+}'
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `name` | Det önskade namnet på motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i gränssnittet som mottagarens namn. |
+| `description` | En valfri beskrivning av motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i gränssnittet som mottagarens beskrivning. Den här egenskapen är obligatorisk. Om du inte vill ange en beskrivning anger du värdet som en tom sträng. |
+| `type` | Motorns körningstyp. Detta värde motsvarar det språk som Docker-bilden bygger på &quot;Spark&quot;. |
+| `mlLibrary` | Ett fält som krävs när du skapar motorer för PySpark- och Scala-recept. |
+| `artifacts.default.image.location` | Platsen för dockningsbilden som är länkad till av en Docker-URL. |
+| `artifacts.default.image.executionType` | Motorns körningstyp. Detta värde motsvarar det språk som Docker-bilden bygger på &quot;Spark&quot;. |
+
+**Svar**
+
+Ett godkänt svar returnerar en nyttolast som innehåller information om den nya motorn, inklusive dess unika identifierare (`id`). Följande exempelsvar är för en Python Engine. Tangenterna `executionType` och `type` tangenterna ändras baserat på angiven POST.
+
+```json
+{
+    "id": "{ENGINE_ID}",
+    "name": "A name for this Engine",
+    "description": "A description for this Engine",
+    "type": "Python",
+    "algorithm": "Classification",
+    "created": "2019-01-01T00:00:00.000Z",
+    "createdBy": {
+        "userId": "Jane_Doe@AdobeID"
+    },
+    "updated": "2019-01-01T00:00:00.000Z",
+    "artifacts": {
+        "default": {
+            "image": {
+                "location": "{DOCKER_URL}",
+                "name": "An additional name for the Docker image",
+                "executionType": "Python",
+                "packagingType": "docker"
+            }
+        }
+    }
+}
+```
+
+Ett godkänt svar visar en JSON-nyttolast med information om den nya motorn. Nyckeln representerar den unika motoridentifieraren och krävs i nästa självstudie för att skapa en MLInstance. `id` Se till att motorns identifierare sparas innan du fortsätter till nästa steg.
+
+## Nästa steg
+
+Du har skapat en motor med API:t och en unik motoridentifierare har hämtats som en del av svarstexten. Du kan använda den här motoridentifieraren i nästa självstudiekurs när du lär dig hur du [skapar, utbildar och utvärderar en modell med API](./train-evaluate-model-api.md).
+
+### Skapa en motor med en binär artefakt (utgått)
+
+<!-- Will need to remove binary artifact documentation once the old flags are turned off -->
+
+>[!CAUTION]
+> Binära artefakter används i gamla PySpark- och Spark-recept. Data Science Workspace har nu stöd för Docker URL:er för alla recept. Med den här uppdateringen görs nu alla motorer med en Docker-URL. Se [Docker URL-avsnittet](#create-an-engine-with-a-docker-url) i det här dokumentet. Binära artefakter är inställda på att tas bort i en senare version.
+
+Om du vill skapa en motor med hjälp av en lokal paketerad `.jar` eller `.egg` binär artefakt måste du ange den absoluta sökvägen till den binära artefaktfilen i det lokala filsystemet. Du kan navigera till katalogen som innehåller den binära artefakten i en Terminal-miljö och köra Unix-kommandot för den absoluta sökvägen. `pwd`
+
+Följande anrop skapar en motor med en binär artefakt:
+
+**API-format**
+
+```http
+POST /engines
+```
+
+**Begäran**
 
 ```shell
 curl -X POST \
@@ -74,17 +237,14 @@ curl -X POST \
     -F 'defaultArtifact=@path/to/binary/artifact/file/pysparkretailapp-0.1.0-py3.7.egg'
 ```
 
-- `engine > name` : Det önskade namnet på motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i gränssnittet Data Science Workspace som mottagarens namn.
-- `engine > description` : En valfri beskrivning av motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i användargränssnittet för datavetenskapen som mottagarens beskrivning. Ta inte bort den här egenskapen, låt det här värdet vara en tom sträng om du väljer att inte ange en beskrivning.
-- `engine > type`: Motorns körningstyp. Detta värde motsvarar det språk som den binära artefakten har utvecklats på.
+| Egenskap | Beskrivning |
+| -------  | ----------- |
+| `engine.name` | Det önskade namnet på motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i gränssnittet Data Science Workspace som mottagarens namn. |
+| `engine.description` | En valfri beskrivning av motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i användargränssnittet för datavetenskapen som mottagarens beskrivning. Ta inte bort den här egenskapen, låt det här värdet vara en tom sträng om du väljer att inte ange en beskrivning. |
+| `engine.type` | Motorns körningstyp. Detta värde motsvarar det språk som den binära artefakten har utvecklats på. När du överför en binär artefakt för att skapa en motor `type` är antingen `Spark` eller `PySpark`. |
+| `defaultArtifact` | Den absoluta sökvägen till den binära artefaktfilen som används för att skapa motorn. Se till att inkludera `@` före filsökvägen. |
 
-   >[!NOTE] När du överför en binär artefakt för att skapa en motor `type` är antingen `Spark` eller `PySpark`.
-
-- `defaultArtifact` : Den absoluta sökvägen till den binära artefaktfilen som används för att skapa motorn.
-
-   >[!NOTE] Se till att inkludera `@` före filsökvägen.
-
-#### Svar
+**Svar**
 
 ```JSON
 {
@@ -111,89 +271,3 @@ curl -X POST \
 ```
 
 Ett godkänt svar visar en JSON-nyttolast med information om den nya motorn. Nyckeln representerar den unika motoridentifieraren och krävs i nästa självstudie för att skapa en MLInstance. `id` Se till att Engine-identifieraren sparas innan du fortsätter till [nästa steg](#next-steps).
-
-### Skapa en motor med en Docker URL
-
-Om du vill skapa en motor med en paketerad mottagarfil som lagras i en Docker-behållare måste du ange Docker-URL:en till den paketerade mottagarfilen.
-
-Följande anrop skapar en motor med en Docker URL:
-
-#### API-format
-
-```http
-POST /engines
-```
-
-#### Begäran
-
-```shell
-curl -X POST \
-    https://platform.adobe.io/data/sensei/engines \
-    -H 'Authorization: {ACCESS_TOKEN}' \
-    -H 'X-API-KEY: {API_KEY}' \
-    -H 'content-type: multipart/form-data' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
-    -F 'engine={
-        "name": "Retail Sales Engine Python",
-        "description": "A description for Retail Sales Engine, this Engines execution type is Python",
-        "type": "Python"
-        "artifacts": {
-            "default": {
-                "image": {
-                    "location": "{DOCKER_URL}",
-                    "name": "retail_sales_python",
-                    "executionType": "Python"
-                }
-            }
-        }
-    }' 
-```
-
-- `engine > name` : Det önskade namnet på motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i gränssnittet Data Science Workspace som mottagarens namn.
-- `engine > description` : En valfri beskrivning av motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i användargränssnittet för datavetenskapen som mottagarens beskrivning. Ta inte bort den här egenskapen, låt det här värdet vara en tom sträng om du väljer att inte ange en beskrivning.
-- `engine > type`: Motorns körningstyp. Detta värde motsvarar det språk som Docker-bilden har utvecklats på.
-
-   >[!NOTE] När en Docker-URL anges för att skapa en motor, `type` är antingen `Python`, `R`eller `Tensorflow`.
-
-- `artifacts > default > image > location` : Din `{DOCKER_URL}` far hit. En komplett Docker-URL har följande struktur:
-
-   ```
-   your_docker_host.azurecr.io/docker_image_file:version
-   ```
-
-- `artifacts > default > image > name` : Ytterligare ett namn för Docker-bildfilen. Ta inte bort den här egenskapen, låt det här värdet vara en tom sträng om du inte anger ett extra namn på Docker-bildfilen.
-- `artifacts > default > image > executionType` : Den här motorns körningstyp. Detta värde motsvarar det språk som Docker-bilden har utvecklats på.
-
-   >[!NOTE] När en Docker-URL anges för att skapa en motor, `executionType` är antingen `Python`, `R`eller `Tensorflow`.
-
-#### Svar
-
-```JSON
-{
-    "id": "00000000-1111-2222-3333-abcdefghijkl",
-    "name": "Retail Sales Engine Python",
-    "description": "A description for Retail Sales Engine, this Engines execution type is Python",
-    "type": "Python",
-    "created": "2019-01-01T00:00:00.000Z",
-    "createdBy": {
-        "userId": "your_user_id@AdobeID"
-    },
-    "updated": "2019-01-01T00:00:00.000Z",
-    "artifacts": {
-        "default": {
-            "image": {
-                "location": "{DOCKER_URL}",
-                "name": "retail_sales_python",
-                "executionType": "Python",
-                "packagingType": "docker"
-            }
-        }
-    }
-}
-```
-
-Ett godkänt svar visar en JSON-nyttolast med information om den nya motorn. Nyckeln representerar den unika motoridentifieraren och krävs i nästa självstudie för att skapa en MLInstance. `id` Se till att motorns identifierare sparas innan du fortsätter till nästa steg.
-
-## Nästa steg
-
-Du har skapat en motor med API:t och en unik motoridentifierare har hämtats som en del av svarstexten. Du kan använda den här motoridentifieraren i nästa självstudiekurs när du lär dig hur du [skapar, utbildar och utvärderar en modell med API](./train-evaluate-model-api.md).
