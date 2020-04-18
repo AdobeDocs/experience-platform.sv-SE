@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa ett recept med Jupyter-anteckningsböcker
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 9f3fc3ec3ce560534b057185e3fef2cc2bc1234d
+source-git-commit: 10f157e0c9f8ab6e487b7dc83416b9e3b2f324c4
 
 ---
 
@@ -38,9 +38,10 @@ Du kan skapa ett helt nytt recept på arbetsytan Data Science. Börja med att na
 
 Med Recipe Builder-anteckningsboken kan du köra utbildning och poängsättning inuti anteckningsboken. Detta ger er flexibilitet att ändra deras `train()` och `score()` metoder mellan att köra experiment med kurser och poängdata. När du är nöjd med resultatet av kursen och poängsättningen kan du skapa ett recept som ska användas i Data Science Workspace med hjälp av den bärbara datorn för att hämta funktionalitet som är inbyggd i Recipe Builder-anteckningsboken.
 
->[!NOTE] Anteckningsboken Recipe Builder har stöd för att arbeta med alla filformat, men för närvarande har funktionen Create Recipe bara stöd för Python.
+>[!NOTE]
+>Anteckningsboken Recipe Builder har stöd för att arbeta med alla filformat, men för närvarande har funktionen Create Recipe bara stöd för Python.
 
-![](../images/jupyterlab/create-recipe/notebook_launcher.png)
+![](../images/jupyterlab/create-recipe/recipe-builder.png)
 
 När du klickar på anteckningsboken i Recipe Builder i startprogrammet öppnas anteckningsboken på fliken. Mallen som används i anteckningsboken är Python Retail Sales Forecasting Recipe, som också finns i [denna offentliga databas](https://github.com/adobe/experience-platform-dsw-reference/tree/master/recipes/python/retail/)
 
@@ -50,7 +51,6 @@ Du kommer att märka att det finns ytterligare tre åtgärder i verktygsfältet:
 
 ## Redigera filer
 
-<!-- Databricks update to recipe needed -->
 Om du vill redigera receptfilerna går du till den cell i Jupyter som motsvarar filsökvägen. Om du till exempel vill göra ändringar i `evaluator.py`söker du efter `%%writefile demo-recipe/evaluator.py`.
 
 Börja göra nödvändiga ändringar i cellen och kör cellen när du är klar. Med `%%writefile filename.py` kommandot skriver du innehållet i cellen till `filename.py`cellen. Du måste köra cellen manuellt för varje fil med ändringar.
@@ -69,9 +69,6 @@ Nu när du vet grunderna för JupyterLab-miljön kan du börja titta på de file
 - [Utvärderarfil](#evaluator-file)
 - [Data Saver-fil](#data-saver-file)
 
-
-
-
 ### Kravfil
 
 Kravfilen används för att deklarera ytterligare bibliotek som du vill använda i receptet. Du kan ange versionsnumret om det finns ett beroende. Om du vill söka efter fler bibliotek går du till https://anaconda.org. Listan med de huvudbibliotek som redan används är:
@@ -84,9 +81,8 @@ numpy
 data_access_sdk_python
 ```
 
->[!NOTE] Bibliotek eller specifika versioner som du lägger till kan vara inkompatibla med ovanstående bibliotek.
-
-
+>[!NOTE]
+>Bibliotek eller specifika versioner som du lägger till kan vara inkompatibla med ovanstående bibliotek.
 
 ### Konfigurationsfiler
 
@@ -101,9 +97,9 @@ Användarna måste fylla i följande variabler innan de kör utbildning och poä
 
 Om du vill hitta data- och schema-ID:n går du till fliken Data i anteckningsböcker i det vänstra navigeringsfältet (under mappikonen).
 
-![](../images/jupyterlab/create-recipe/data_tab.png)
+![](../images/jupyterlab/create-recipe/datasets.png)
 
-Samma information finns på [Adobe Experience Platform](https://platform.adobe.com/) på flikarna **[Schema](https://platform.adobe.com/schema)**och**[ Datauppsättningar](https://platform.adobe.com/dataset/overview)** .
+Samma information finns på [Adobe Experience Platform](https://platform.adobe.com/) på flikarna **[Schema](https://platform.adobe.com/schema)**och**[Datauppsättningar](https://platform.adobe.com/dataset/overview)** .
 
 Som standard ställs följande konfigurationsparametrar in åt dig när du använder data:
 
@@ -111,8 +107,6 @@ Som standard ställs följande konfigurationsparametrar in åt dig när du anvä
 - `ML_FRAMEWORK_IMS_TOKEN`
 - `ML_FRAMEWORK_IMS_ML_TOKEN`
 - `ML_FRAMEWORK_IMS_TENANT_ID`
-
-
 
 ## Utbilda datainläsare
 
@@ -129,7 +123,8 @@ I det här steget används [pandabilden](https://pandas.pydata.org/pandas-docs/s
 - [Plattforms-SDK](#platform-sdk)
 - [Externa källor](#external-sources)
 
->[!NOTE] I Recipe Builder-anteckningsboken läses data in via `platform_sdk` datainläsaren.
+>[!NOTE]
+>I Recipe Builder-anteckningsboken läses data in via `platform_sdk` datainläsaren.
 
 ### Plattforms-SDK
 
@@ -155,11 +150,10 @@ df = pd.read_json(data)
 
 Nu finns dina data i dataframe-objektet och kan analyseras och ändras i [nästa avsnitt](#data-preparation-and-feature-engineering).
 
-
-
 ### Från SDK för dataåtkomst (borttagen)
 
->[!CAUTION]  Vi `data_access_sdk_python` rekommenderar inte längre att du läser [Konvertera dataåtkomstkod till plattforms-SDK](../authoring/platform-sdk.md) för att få en guide om hur du använder `platform_sdk` datainläsaren.
+>[!CAUTION]
+> `data_access_sdk_python` rekommenderas inte längre, se [Konvertera dataåtkomstkod till plattforms-SDK](../authoring/platform-sdk.md) för en guide om hur du använder `platform_sdk` datainläsaren.
 
 Användare kan läsa in data med hjälp av SDK för dataåtkomst. Biblioteket kan importeras högst upp på sidan genom att inkludera raden:
 
@@ -176,7 +170,8 @@ df = prodreader.load(data_set_id=configProperties['trainingDataSetId'],
                      ims_org=configProperties['ML_FRAMEWORK_IMS_TENANT_ID'])
 ```
 
->[!NOTE] Som vi nämnt i avsnittet [](#configuration-files)Konfigurationsfil ställs följande konfigurationsparametrar in åt dig när du använder data från Experience Platform:
+>[!NOTE]
+>Som vi nämnt i avsnittet [](#configuration-files)Konfigurationsfil ställs följande konfigurationsparametrar in åt dig när du använder data från Experience Platform:
 > - `ML_FRAMEWORK_IMS_USER_CLIENT_ID`
 > - `ML_FRAMEWORK_IMS_TOKEN`
 > - `ML_FRAMEWORK_IMS_ML_TOKEN`
@@ -297,17 +292,16 @@ df.dropna(0, inplace=True)
 
 Funktionen i din inläsare för betygsdata ska vara fullständig med betygsdatamängden som utdata. `load()`
 
-
-
 ### Pipeline-fil
 
-Filen innehåller `pipeline.py` logik för utbildning och poängsättning. Vi går igenom båda delarna.
+Filen innehåller `pipeline.py` logik för utbildning och poängsättning.
 
 ### Utbildning
 
 Syftet med kursen är att skapa en modell med hjälp av funktioner och etiketter i utbildningsdatauppsättningen.
 
->[!NOTE]  _Funktioner_ avser den indatavariabel som används av maskininlärningsmodellen för att förutsäga _etiketterna_.
+>[!NOTE]\
+>_Funktionerna_ avser den indatavariabel som används av maskininlärningsmodellen för att förutsäga _etiketterna_.
 
 Funktionen ska omfatta `train()` utbildningsmodellen och returnera den utbildade modellen. Exempel på olika modeller finns i dokumentationen till användarhandboken [med](https://scikit-learn.org/stable/user_guide.html)vetenskaplig information.
 
@@ -346,8 +340,6 @@ def train(configProperties, data):
 ```
 
 Observera att beroende på vilket program du använder så har du argument i `GradientBoostingRegressor()` funktionen. `xTrainingDataset` ska innehålla de funktioner som används för utbildning och `yTrainingDataset` ska innehålla etiketter.
-
-
 
 ### Poäng
 
@@ -399,7 +391,7 @@ def split(self, configProperties={}, dataframe=None):
 Funktionen utförs `evaluate()` efter att modellen har tränats och returnerar ett mått som anger hur framgångsrik modellen är. Funktionen använder `evaluate()` testdatauppsättningsrubrikerna och den utbildade modellen för att förutsäga en uppsättning funktioner. Dessa förväntade värden jämförs sedan med de faktiska funktionerna i testdatauppsättningen. Vanliga bedömningsalgoritmer är:
 - [Genomsnittligt absolut procentfel (MAPE)](https://en.wikipedia.org/wiki/Mean_absolute_percentage_error)
 - [Medel absolut fel (MAE)](https://en.wikipedia.org/wiki/Mean_absolute_error)
-- [RMSE (Root-Mean-square error)](https://en.wikipedia.org/wiki/Root-mean-square_deviation)
+- [RMSE (Root-ean-square error)](https://en.wikipedia.org/wiki/Root-mean-square_deviation)
 
 
 Funktionen `evaluate()` i exemplet med försäljning inom detaljhandeln visas nedan:
@@ -456,7 +448,6 @@ def save(configProperties, prediction):
     print(prediction)
 ```
 
-
 ## Utbildning och poängsättning
 
 När du har gjort ändringar i din bärbara dator och vill utbilda ditt recept kan du klicka på de tillhörande knapparna högst upp i fältet för att skapa en utbildning i cellen. När du klickar på knappen visas en logg med kommandon och utdata från utbildningsskriptet i anteckningsboken (under `evaluator.py` cellen). Conda installerar först alla beroenden, sedan initieras kursen.
@@ -467,7 +458,11 @@ Om du vill se dolda utdata lägger du till dem i slutet `debug` av utdatacellen 
 
 ## Skapa recept
 
-När du är klar med redigeringen av recept och nöjd med utbildnings-/poängsättningsresultatet kan du skapa ett recept från anteckningsboken genom att trycka på **Skapa recept**. När du har tryckt på knappen uppmanas du att ange ett receptnamn. Det här namnet representerar det aktuella receptet som skapats på plattformen.
+När du är klar med redigeringen av recept och nöjd med utbildnings-/poängsättningsresultatet kan du skapa ett recept från anteckningsboken genom att trycka på **Skapa recept** i den övre högra navigeringen.
+
+![](../images/jupyterlab/create-recipe/create-recipe.png)
+
+När du har tryckt på knappen uppmanas du att ange ett receptnamn. Det här namnet representerar det faktiska receptet som skapats på plattformen.
 
 ![](../images/jupyterlab/create-recipe/enter_recipe_name.png)
 
