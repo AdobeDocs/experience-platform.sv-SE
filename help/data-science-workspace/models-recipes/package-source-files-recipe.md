@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Paketera källfiler i ett recept
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 91c7b7e285a4745da20ea146f2334510ca11b994
+source-git-commit: 4001e4fd6a2e04a04e7ea594175d9e3e5c8a00d6
 
 ---
 
@@ -27,47 +27,51 @@ Koncept att förstå:
 
 ## Recipe creation
 
-Recipe-skapandet börjar med att paketera källfiler för att skapa en arkivfil. Källfiler definierar den maskininlärningslogik och de algoritmer som används för att lösa ett specifikt problem och skrivs antingen i Python, R, PySpark eller Scala Spark. Beroende på vilket språk källfilerna skrivs i blir de inbyggda arkivfilerna antingen en Docker-bild eller en binär fil. När den packade arkivfilen har skapats importeras den till arbetsytan Data Science för att skapa ett recept [i användargränssnittet](./import-packaged-recipe-ui.md) eller [med API:t](./import-packaged-recipe-api.md).
+Recipe-skapandet börjar med att paketera källfiler för att skapa en arkivfil. Källfiler definierar den maskininlärningslogik och de algoritmer som används för att lösa ett specifikt problem och skrivs antingen i Python, R, PySpark eller Scala. De inbyggda arkivfilerna har formen av en Docker-bild. När den packade arkivfilen har skapats importeras den till arbetsytan Data Science för att skapa ett recept [i användargränssnittet](./import-packaged-recipe-ui.md) eller [med API:t](./import-packaged-recipe-api.md).
 
 ### Skapa modeller med Docker
 
 Med en Docker-bild kan utvecklare paketera ett program med alla delar som behövs, till exempel bibliotek och andra beroenden, och skicka ut det som ett paket.
 
-Den inbyggda Docker-avbildningen skickas till Azure Container Registry med hjälp av de autentiseringsuppgifter som anges när du skapar recept.
+Den inbyggda Docker-avbildningen överförs till Azure Container Registry med hjälp av autentiseringsuppgifter som du får när du skapar recept.
 
->[!NOTE] Endast källfiler skrivna i **Python**, **R** och **Tensorflow** kräver autentiseringsuppgifter för Azure Container Registry.
+Logga in på <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a>för att få dina autentiseringsuppgifter för Azure Container Registry. Navigera till **Arbetsflöden** i den vänstra navigeringskolumnen. Välj **Importera mottagare** följt av **Starta**. Se skärmbilden nedan.
 
-Logga in på <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a>för att få dina autentiseringsuppgifter för Azure Container Registry. Navigera till **Arbetsflöden** i den vänstra navigeringskolumnen. Välj **Importera mottagare från källfil** och **starta** en ny importprocedur. Se skärmbilden nedan.
+![](../images/models-recipes/package-source-files/import.png)
 
-![](../images/models-recipes/package-source-files/workflow_ss.png)
+Sidan *Konfigurera* öppnas. Ange ett lämpligt **mottagarnamn**, t.ex.&quot;Detaljhandelsrecept&quot;, och ange eventuellt en beskrivning- eller dokumentations-URL. Klicka på **Nästa** när du är klar.
 
-Ange ett lämpligt **mottagarnamn**, t.ex.&quot;Detaljhandelsrecept&quot;, och ange eventuellt en beskrivning- eller dokumentations-URL. Klicka på **Nästa** när du är klar.
+![](../images/models-recipes/package-source-files/configure.png)
 
-![](../images/models-recipes/package-source-files/recipe_info.png)
+Välj lämplig *körningsmiljö* och välj sedan en **klassificering** för *Typ*. Dina autentiseringsuppgifter för Azure Container-registret genereras när de är klara.
 
-Välj lämplig **körningsmiljö** och välj sedan **Klassificering** som **typ**. Dina autentiseringsuppgifter för Azure-behållarregistret kommer att genereras.
+>[!NOTE]
+>*Typ *är den typ av maskininlärningsproblem som receptet är utformat för och används efter utbildning för att skräddarsy eller utvärdera kursen.
 
-![](../images/models-recipes/package-source-files/recipe_workflow_recipe_source.png)
+>[!TIP]
+>- För Python-recept väljer du **Python** -miljön.
+>- För R-recept väljer du **R** -miljön.
+>- För PySpark-recept väljer du **PySpark** -miljön. En artefakttyp fylls i automatiskt.
+>- För Scala-recept väljer du **Spark** -miljön. En artefakttyp fylls i automatiskt.
 
-Observera värdena för **Docker Host**, **UserName** och **Password**. Dessa kommer att användas senare för att bygga och trycka din Docker-image.
 
-När den har skickats kan du och andra användare komma åt bilden via URL-adressen. I fältet **Källfil** förväntas den här URL:en som indata.
+![](../images/models-recipes/package-source-files/docker-creds.png)
 
-### Bbinärbaserad modellredigering
+Observera värdena för *Docker Host*, *UserName* och *Password*. Dessa används för att skapa och överföra din Docker-image i de arbetsflöden som beskrivs nedan.
 
-För källfiler skrivna i Scala eller PySpark skapas en binär fil. Att skapa den binära filen är lika enkelt som att köra det angivna byggskriptet.
->[!NOTE] Endast källfiler skrivna i ScalaSpark eller PySpark genererar en binär fil när du kör byggskriptet.
+>[!NOTE]
+>Källwebbadressen anges när du har slutfört stegen som beskrivs nedan. Konfigurationsfilen förklaras i efterföljande självstudiekurser i [nästa steg](#next-steps).
 
 ### Paketera källfilerna
 
-Börja med att hämta exempelkodbasen som finns i referensdatabasen för <a href="https://github.com/adobe/experience-platform-dsw-reference" target="_blank">Experience Platform Data Science Workspace</a> . Beroende på vilket programmeringsspråk som exempelkällfilerna är skrivna i skiljer sig själva skapandet av respektive arkivfil åt i proceduren.
+Börja med att hämta exempelkodbasen som finns i <a href="https://github.com/adobe/experience-platform-dsw-reference" target="_blank">Experience Platform Data Science Workspace Reference</a> .
 
-- [Skapa Python Docker-bild](#build-python-docker-image)
-- [Bygg R Docker-bild](#build-r-docker-image)
-- [Skapa PySpark-binärfiler](#build-pyspark-binaries)
-- [Bygg Scala-binärfiler](#build-scala-binaries)
+- [Skapa Python Docker-bild](#python-docker)
+- [Bygg R Docker-bild](#r-docker)
+- [Skapa PySpark Docker-bild](#pyspark-docker)
+- [Bygg Scala (Spark) Docker-bild](#scala-docker)
 
-#### Skapa Python Docker-bild
+### Skapa Python Docker-bild {#python-docker}
 
 Om du inte har gjort det klonar du github-databasen på din lokala dator med följande kommando:
 
@@ -75,7 +79,7 @@ Om du inte har gjort det klonar du github-databasen på din lokala dator med fö
 git clone https://github.com/adobe/experience-platform-dsw-reference.git
 ```
 
-Navigera till katalogen `experience-platform-dsw-reference/recipes/python/retail`. Här hittar du skripten `login.sh` och `build.sh` vilka du använder för att logga in på Docker och för att skapa en python Docker-bild. Om du har dina [Docker-uppgifter](#docker-based-model-authoring) klara anger du följande kommandon i ordning:
+Navigera till katalogen `experience-platform-dsw-reference/recipes/python/retail`. Här hittar du skripten `login.sh` och `build.sh` användes för att logga in på Docker och för att skapa en python Docker-bild. Om du har dina [Docker-uppgifter](#docker-based-model-authoring) klara anger du följande kommandon i ordning:
 
 ```BASH
 # for logging in to Docker
@@ -96,7 +100,7 @@ När byggskriptet är klart får du en URL för Docker-källfilen i konsolutdata
 
 Kopiera den här URL:en och gå vidare till [nästa steg](#next-steps).
 
-#### Bygg R Docker-bild
+### Bygg R Docker-bild {#r-docker}
 
 Om du inte har gjort det klonar du github-databasen på din lokala dator med följande kommando:
 
@@ -104,7 +108,7 @@ Om du inte har gjort det klonar du github-databasen på din lokala dator med fö
 git clone https://github.com/adobe/experience-platform-dsw-reference.git
 ```
 
-Navigera till katalogen `experience-platform-dsw-reference/recipes/R/Retail - GradientBoosting` i din klonade databas. Här hittar du filerna `login.sh` och `build.sh` vilka du använder för att logga in på Docker och för att skapa R Docker-bilden. Om du har dina [Docker-uppgifter](#docker-based-model-authoring) klara anger du följande kommandon i ordning:
+Navigera till katalogen `experience-platform-dsw-reference/recipes/R/Retail - GradientBoosting` i din klonade databas. Här hittar du filerna `login.sh` och `build.sh` vilka du använder för att logga in på Docker och skapa R Docker-bilden. Om du har dina [Docker-uppgifter](#docker-based-model-authoring) klara anger du följande kommandon i ordning:
 
 ```BASH
 # for logging in to Docker
@@ -125,7 +129,77 @@ När byggskriptet är klart får du en URL för Docker-källfilen i konsolutdata
 
 Kopiera den här URL:en och gå vidare till [nästa steg](#next-steps).
 
-#### Skapa PySpark-binärfiler
+### Skapa PySpark Docker-bild {#pyspark-docker}
+
+Börja med att klona github-databasen på din lokala dator med följande kommando:
+
+```shell
+git clone https://github.com/adobe/experience-platform-dsw-reference.git
+```
+
+Navigera till katalogen `experience-platform-dsw-reference/recipes/pyspark/retail`. Skripten `login.sh` och `build.sh` skripten finns här och används för att logga in på Docker och för att skapa Docker-bilden. Om du har dina [Docker-uppgifter](#docker-based-model-authoring) klara anger du följande kommandon i ordning:
+
+```BASH
+# for logging in to Docker
+./login.sh
+ 
+# for building Docker image
+./build.sh
+```
+
+Observera att när du kör inloggningsskriptet måste du ange Docker-värden, användarnamn och lösenord. När du bygger måste du ange Docker-värden och en versionstagg för bygget.
+
+När byggskriptet är klart får du en URL för Docker-källfilen i konsolutdata. I det här exemplet ser det ut ungefär så här:
+
+```BASH
+# URL format: 
+{DOCKER_HOST}/ml-retailsales-pyspark:{VERSION_TAG}
+```
+
+Kopiera den här URL:en och gå vidare till [nästa steg](#next-steps).
+
+### Bygg Scala Docker-bild {#scala-docker}
+
+Börja med att klona github-databasen på din lokala dator med följande kommando i terminalen:
+
+```shell
+git clone https://github.com/adobe/experience-platform-dsw-reference.git
+```
+
+Navigera sedan till katalogen `experience-platform-dsw-reference/recipes/scala/retail` där du hittar skripten `login.sh` och `build.sh`. Dessa skript används för att logga in på Docker och skapa Docker-bilden. Om du har dina [Docker-uppgifter](#docker-based-model-authoring) klara anger du följande kommandon som du vill avsluta i ordning:
+
+```BASH
+# for logging in to Docker
+./login.sh
+ 
+# for building Docker image
+./build.sh
+```
+
+När du kör inloggningsskriptet måste du ange Docker-värden, användarnamn och lösenord. När du bygger måste du ange Docker-värden och en versionstagg för bygget.
+
+När byggskriptet är klart får du en URL för Docker-källfilen i konsolutdata. I det här exemplet ser det ut ungefär så här:
+
+```BASH
+# URL format: 
+{DOCKER_HOST}/ml-retailsales-spark:{VERSION_TAG}
+```
+
+Kopiera den här URL:en och gå vidare till [nästa steg](#next-steps).
+
+## Nästa steg {#next-steps}
+
+Den här självstudien gick över till att paketera källfiler i en Recept, vilket är det nödvändiga steget för att importera en Recept till Data Science Workspace. Du bör nu ha en Docker-avbildning i Azure Container Registry tillsammans med motsvarande bild-URL. Nu kan du börja med självstudiekursen om hur du **importerar en paketerad recept till arbetsytan** Data Science. Välj en av självstudielänkarna nedan för att komma igång.
+
+- [Importera en paketerad mottagare i användargränssnittet](./import-packaged-recipe-ui.md)
+- [Importera en paketerad mottagare med API:t](./import-packaged-recipe-api.md)
+
+## Bygger binärfiler (borttagna)
+
+>[!CAUTION]
+> Binärfiler stöds inte i nya PySpark- och Scala-recept och är inställda på att tas bort i en framtida version. Följ [Docker-arbetsflödena](#docker-based-model-authoring) när du arbetar med PySpark och Scala. Följande arbetsflöden gäller endast för Spark 2.3-recept.
+
+### Bygg PySpark-binärfiler (borttagna)
 
 Om du inte har gjort det klonar du github-databasen på din lokala dator med följande kommando:
 
@@ -144,7 +218,7 @@ Filen `.egg` genereras i `dist` mappen.
 
 Du kan nu gå vidare till [nästa steg](#next-steps).
 
-#### Bygg Scala-binärfiler
+#### Bygg Scala-binärfiler (inaktuella)
 
 Om du inte redan har gjort det kör du följande kommando för att klona Github-databasen till ditt lokala system:
 
@@ -162,10 +236,3 @@ cd recipes/scala/
 Den skapade artefakten med beroenden finns i `.jar` `/target` katalogen.
 
 Du kan nu gå vidare till [nästa steg](#next-steps).
-
-## Nästa steg
-
-Den här självstudien gick över till att paketera källfiler i en Recept, vilket är det nödvändiga steget för att importera en Recept till Data Science Workspace. Du bör nu ha en Docker-bild i Azure Container Registry tillsammans med motsvarande bild-URL eller en binär fil som lagras lokalt i ditt filsystem. Nu kan du börja med självstudiekursen om hur du **importerar en paketerad recept till arbetsytan** Data Science. Välj en av självstudielänkarna nedan för att komma igång.
-
-- [Importera en paketerad mottagare i användargränssnittet](./import-packaged-recipe-ui.md)
-- [Importera en paketerad mottagare med API:t](./import-packaged-recipe-api.md)
