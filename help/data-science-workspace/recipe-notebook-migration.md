@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Migreringsguider för mottagare och anteckningsböcker
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: bb6fe494933606d428d7bdf20ee38b7ac51c23ea
+source-git-commit: 61cf05b989bfbae4e26978fa915347f350d7364c
 
 ---
 
@@ -39,7 +39,7 @@ De senaste ändringarna av Data Science Workspace kräver att befintliga Spark- 
 
 ## Guide för Spark-migrering {#spark-migration-guide}
 
-Mottagartefakten som genereras av byggstegen är nu en Docker-bild som innehåller den binära .jar-filen. Dessutom har syntaxen som används för att läsa och skriva datauppsättningar med Platform SDK ändrats och kräver att du ändrar din receptkod.
+Mottagartefakten som genereras av byggstegen är nu en Docker-bild som innehåller den binära .jar-filen. Dessutom har syntaxen som används för att läsa och skriva datauppsättningar med Platform SDK ändrats och kräver att du ändrar receptkoden.
 
 Följande video är utformad för att ytterligare underlätta förståelsen av de ändringar som krävs för Spark-recept:
 
@@ -291,6 +291,10 @@ De senaste ändringarna av JupyterLab-anteckningsböcker kräver att du uppdater
 
 - [Migreringsguide för PySpark 2.3 till 2.4](#pyspark-notebook-migration)
 - [Flyttningsguide för Spark 2.3 till Spark 2.4 (Scala)](#spark-notebook-migration)
+
+Följande video är utformad för att ytterligare underlätta förståelsen av de ändringar som krävs för bärbara JupyterLab-datorer:
+
+>[!VIDEO](https://video.tv.adobe.com/v/33444?quality=12&learn=on)
 
 ## Guide för migrering av bärbara datorer från PySpark 2.3 till 2.4 {#pyspark-notebook-migration}
 
