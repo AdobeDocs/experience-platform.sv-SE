@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Utvecklarhandbok för batchintag av Adobe Experience Platform
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 79466c78fd78c0f99f198b11a9117c946736f47a
+source-git-commit: 6c17351b04fedefd4b57b9530f1d957da8183a68
 
 ---
 
@@ -54,7 +54,7 @@ Begäranden som innehåller en nyttolast (POST, PUT, PATCH) kan kräva ytterliga
 
 När du importerar data är det viktigt att förstå hur XDM-scheman (Experience Data Model) fungerar. Mer information om hur XDM-fälttyper mappas till olika format finns i utvecklarhandboken för [schemaregister](../../xdm/api/getting-started.md).
 
-Det finns viss flexibilitet vid inmatning av data - om en typ inte matchar vad som finns i målschemat konverteras data till den angivna måltypen.  Om den inte kan det misslyckas batchen med ett `TypeCompatibilityException`.
+Det finns viss flexibilitet vid inmatning av data - om en typ inte matchar vad som finns i målschemat konverteras data till den angivna måltypen. Om den inte kan det misslyckas batchen med ett `TypeCompatibilityException`.
 
 Varken JSON eller CSV har till exempel typen datum eller tid. Därför uttrycks dessa värden med [ISO 8061-formaterade strängar](https://www.iso.org/iso-8601-date-and-time-format.html) (&quot;2018-07-10T15:05:59.000-08:00&quot;) eller Unix Time i millisekunder (153126395) 9000) och konverteras vid intag till mål-XDM-typen.
 
@@ -382,7 +382,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 ```
 
 | Parameter | Beskrivning |
-| --------- | -----------  |
+| --------- | ----------- |
 | `{DATASET_ID}` | ID för referensdatauppsättningen. |
 
 **Svar**
@@ -790,7 +790,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 200 OK
 ```
 
-## Ta bort en grupp
+## Ta bort en grupp {#delete-a-batch}
 
 En batch kan tas bort genom att utföra följande POST-begäran med frågeparametern till ID:t för den grupp som du vill ta bort. `action=REVERT` Satsen är markerad som&quot;inaktiv&quot;, vilket gör att den kan användas för skräpinsamling. Batchen samlas in asynkront, och då markeras den som&quot;borttagen&quot;.
 
