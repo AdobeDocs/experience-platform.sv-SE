@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över etiketter för dataanvändning
 topic: labels
 translation-type: tm+mt
-source-git-commit: 4d817a439cbc277c3df03e08554d5003b9f68a76
+source-git-commit: 4411018aa1d531b53bbe2431df71829fa07fee75
 
 ---
 
@@ -25,4 +25,4 @@ Mer information om tillgängliga etiketter för dataanvändning i Experience Pla
 
 ## Nästa steg
 
-Nu när du har fått nya etiketter för dataanvändning kan du fortsätta läsa [användarhandboken](user-guide.md) och lära dig hur du hanterar etiketter i Experience Platform-gränssnittet.
+Nu när du har fått nya etiketter för dataanvändning kan du fortsätta läsa [användarhandboken](user-guide.md) och lära dig hur du hanterar etiketter i Experience Platform-gränssnittet. Anvisningar om hur du hanterar etiketter med API:er finns i lämpliga avsnitt i utvecklarhandboken [för](../../catalog/api/labels.md)katalogtjänsten.
