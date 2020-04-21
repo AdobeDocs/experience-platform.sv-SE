@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Ta bort ett objekt
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 85b497d87fcfb54f390302036ce24c98c6dba6ff
+source-git-commit: 6c17351b04fedefd4b57b9530f1d957da8183a68
 
 ---
 
@@ -21,9 +21,11 @@ Du kan ta bort ett Catalog-objekt genom att ange dess ID i sökvägen för en DE
 DELETE /{OBJECT_TYPE}/{OBJECT_ID}
 ```
 
+>[!IMPORTANT] Slutpunkten har tagits bort `DELETE /batches/{ID}` . Om du vill ta bort en grupp bör du använda API:t för [gruppinmatning](../../ingestion/batch-ingestion/api-overview.md#delete-a-batch).
+
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Den typ av katalogobjekt som ska tas bort. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Den typ av katalogobjekt som ska tas bort. Giltiga objekt är: <ul><li>`accounts`</li><li>`connections`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{OBJECT_ID}` | Identifieraren för det specifika objekt som du vill uppdatera. |
 
 **Begäran**
