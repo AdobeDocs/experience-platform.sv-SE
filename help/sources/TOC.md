@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Source Connectors - hjälp
 translation-type: tm+mt
-source-git-commit: 85af933c14b3768790100a649de05a5e6bdb8560
+source-git-commit: 2fb034dced679d48c90c41ab3254a30fc14b43e0
 
 ---
 
@@ -16,6 +16,10 @@ source-git-commit: 85af933c14b3768790100a649de05a5e6bdb8560
       - [Dataanslutning för Analytics](connectors/adobe-applications/analytics.md)
       - [Audience Manager-koppling](connectors/adobe-applications/audience-manager.md)
       - [Koppling för kundattribut](connectors/adobe-applications/customer-attributes.md)
+      - Mappa Adobe-programfält {#mapping}
+         - [Mappningsfält för analyser](connectors/adobe-applications/mapping/analytics.md)
+         - [Mappningsfält för Audience Manager](connectors/adobe-applications/mapping/audience-manager.md)
+         - [Målmappningsfält](connectors/adobe-applications/mapping/target.md)
    - Reklam {#advertising}
       - [Google Ads-koppling](connectors/advertising/ads.md)
    - molnlagring {#cloud-storage}
