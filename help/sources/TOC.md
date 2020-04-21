@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Source Connectors - hjälp
 translation-type: tm+mt
-source-git-commit: 5b036baba864b2b0f0c98d017d40f4d3c60ab80e
+source-git-commit: fcab7fbb955e85006eeebe5fb45b2a62188adaa7
 
 ---
 
@@ -17,7 +17,7 @@ source-git-commit: 5b036baba864b2b0f0c98d017d40f4d3c60ab80e
       - [Audience Manager-koppling](connectors/adobe-applications/audience-manager.md)
       - [Koppling för kundattribut](connectors/adobe-applications/customer-attributes.md)
    - Reklam {#advertising}
-      - [Google AdWords-koppling](connectors/advertising/ads.md)
+      - [Google Ads-koppling](connectors/advertising/ads.md)
    - molnlagring {#cloud-storage}
       - [Azure Data Lake Storage Gen2-anslutning](connectors/cloud-storage/adls-gen2.md)
       - [Azure Blob och Amazon S3-kontakt](connectors/cloud-storage/blob-s3.md)
@@ -58,7 +58,6 @@ source-git-commit: 5b036baba864b2b0f0c98d017d40f4d3c60ab80e
          - [Google Cloud Storage Connector](tutorials/api/create/cloud-storage/google.md)
          - [SFTP-anslutning](tutorials/api/create/cloud-storage/sftp.md)
       - CRM {#crm}
-         - [Google AdWords-koppling](tutorials/api/create/crm/adwords.md)
          - [HubSpot-anslutning](tutorials/api/create/crm/hubspot.md)
          - [Microsoft Dynamics-anslutning](tutorials/api/create/crm/ms-dynamics.md)
          - [Salesforce-koppling](tutorials/api/create/crm/salesforce.md)
