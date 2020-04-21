@@ -1,9 +1,9 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Catalog and Datasets Help
+user-guide-title: Hjälp för kataloger och datauppsättningar
 translation-type: tm+mt
-source-git-commit: ee500b03bc0984fa24666867867d19a5d7446ced
+source-git-commit: 30ea8b4eeeb5f11bfca65f2931902aae63e8f08e
 
 ---
 
@@ -22,6 +22,7 @@ source-git-commit: ee500b03bc0984fa24666867867d19a5d7446ced
    * [Ta bort ett objekt](api/delete-object.md)
    * [Skapa en datauppsättning](api/create-dataset.md)
    * [Skapa en batch](api/create-batch.md)
+   * [Dataanvändningsetiketter](api/labels.md)
    * [Bilaga](api/appendix.md)
 * Datauppsättningar {#datasets}
    * [Översikt över datauppsättningar](datasets/overview.md)
