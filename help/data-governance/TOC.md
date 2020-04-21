@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: Hjälp om datastyrning i Adobe Experience Platform
 translation-type: tm+mt
-source-git-commit: 608f3f61764e6b578107f4ea7991bca12621330a
+source-git-commit: 30ea8b4eeeb5f11bfca65f2931902aae63e8f08e
 
 ---
 
@@ -13,7 +13,8 @@ source-git-commit: 608f3f61764e6b578107f4ea7991bca12621330a
 * [Datastyrning - översikt](home.md)
 * Dataanvändningsetiketter {#labels}
    * [Översikt över etiketter för dataanvändning](labels/overview.md)
-   * [Användarhandbok för etiketter för dataanvändning](labels/user-guide.md)
+   * [Hantera etiketter för dataanvändning i användargränssnittet](labels/user-guide.md)
+   * [Hantera dataanvändningsetiketter i API](labels/api.md)
    * [Etiketter för dataanvändning som stöds](labels/reference.md)
 * Dataanvändningspolicyer {#policies}
    * [Översikt över policyer för dataanvändning](policies/overview.md)
