@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Audience Manager-koppling
 topic: overview
 translation-type: tm+mt
-source-git-commit: a1161630c8edae107b784f32ee20af225f9f8c46
+source-git-commit: 75c446aed75100bd2b5b4a3d365c090cb01dcc69
 
 ---
 
@@ -43,7 +43,7 @@ Nedan visas exempel på Audience Manager-strukturen som är mappad till XDM Expe
 
 ## Hur mappas fält från Adobe Audience Manager till XDM?
 
-Mer information finns i dokumentationen för mappningsfält [för][audience-manager-mapping-fields] Audience Manager.
+Mer information finns i dokumentationen för mappningsfält [för](./mapping/audience-manager.md) Audience Manager.
 
 ## Datahantering på plattformen
 
