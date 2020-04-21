@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Source Connectors - hjälp
 translation-type: tm+mt
-source-git-commit: fcab7fbb955e85006eeebe5fb45b2a62188adaa7
+source-git-commit: 85af933c14b3768790100a649de05a5e6bdb8560
 
 ---
 
@@ -105,8 +105,8 @@ source-git-commit: fcab7fbb955e85006eeebe5fb45b2a62188adaa7
 - Självstudiekurser för användargränssnitt {#ui-tutorials}
    - Skapa en källkoppling {#create}
       - Adobe-program {#adobe-applications}
-         - [Adobe Audience Manager-koppling](tutorials/ui/create/adobe-applications/analytics.md)
-         - [Adobe Analytics Connector](tutorials/ui/create/adobe-applications/audience-manager.md)
+         - [Adobe Analytics Connector](tutorials/ui/create/adobe-applications/analytics.md)
+         - [Adobe Audience Manager-koppling](tutorials/ui/create/adobe-applications/audience-manager.md)
          - [Koppling för kundattribut](tutorials/ui/create/adobe-applications/customer-attributes.md)
       - Reklam {#create}
          - [Google Ads-koppling](tutorials/ui/create/advertising/ads.md)
