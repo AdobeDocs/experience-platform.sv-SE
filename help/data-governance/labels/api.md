@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 'Hantera dataanvändningsetiketter med API:er '
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: cac6ab568f030cf86ee68a1df9e45a3ac9d421cb
+source-git-commit: d685f1851badf54ce1d1ac3cbacd69d62894c33f
 
 ---
 
@@ -143,8 +143,6 @@ Ett lyckat svar returnerar etiketterna som har lagts till i datauppsättningen.
 
 Du kan ta bort etiketter som används i en datauppsättning genom att göra en DELETE-begäran.
 
->[!NOTE] Du bör bara använda den här åtgärden när du förbereder den överordnade datauppsättningen för borttagning.
-
 **API-format**
 
 ```http
@@ -168,7 +166,7 @@ curl -X DELETE \
 
 **Svar**
 
-Ett lyckat svar på HTTP-status 200 (OK) indikerade att etiketterna har tagits bort. Du kan [slå upp befintliga etiketter](#lookup) för datauppsättningen i ett separat anrop för att bekräfta detta.
+Ett lyckat svar på HTTP-status 200 (OK), som anger att etiketterna har tagits bort. Du kan [slå upp befintliga etiketter](#lookup) för datauppsättningen i ett separat anrop för att bekräfta detta.
 
 ## Nästa steg
 
