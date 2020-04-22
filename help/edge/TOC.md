@@ -1,9 +1,9 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Adobe Experience Platform Edge Network Help
+user-guide-title: Hjälp om Adobe Experience Platform Edge Network
 translation-type: tm+mt
-source-git-commit: 0cc6e233646134be073d20e2acd1702d345ff35f
+source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
 
 ---
 
@@ -11,7 +11,7 @@ source-git-commit: 0cc6e233646134be073d20e2acd1702d345ff35f
 # Adobe Experience Platform Edge Network {#edge}
 
 * [Edge Network - översikt](home.md)
-* Komma igång {#get-started}
+* Getting started {#get-started}
    * [Snabbstart med Launch](getting-started/quick-start-with-launch.md)
    * [Distribuera alla produkter](getting-started/deploying-all-products.md)
 * Grundläggande {#fundamentals}
@@ -34,3 +34,4 @@ source-git-commit: 0cc6e233646134be073d20e2acd1702d345ff35f
 * Referens {#ref}
    * [Automatiskt insamlad information](reference/automatic-information.md)
    * [Hämtar biblioteksinformation](reference/retrieving-library-information.md)
+* [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
