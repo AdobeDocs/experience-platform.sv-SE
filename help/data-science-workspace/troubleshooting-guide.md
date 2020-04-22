@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Felsökningsguide för Data Science Workspace
 topic: Troubleshooting
 translation-type: tm+mt
-source-git-commit: 1f756e7bc71c9ff227757aee64af29e0772c24af
+source-git-commit: ef7c37438990d3bc42024e7fb106d781a5ebbd12
 
 ---
 
@@ -15,9 +15,9 @@ Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Pla
 
 ## JupyterLab-miljön läses inte in i Google Chrome
 
-Med den senaste uppdateringen av webbläsaren Google Chrome till version 80.x blockeras alla cookies från tredje part som standard. Den nya profilen kan förhindra att JupyterLab läses in i Adobe Experience Platform.
+>[!IMPORTANT] Problemet har åtgärdats men kan fortfarande finnas i webbläsaren Google Chrome 80.x. Kontrollera att webbläsaren Chrome är uppdaterad.
 
->[!NOTE] Detta är ett tillfälligt problem. Beroendet av cookies från tredje part är inställt på att tas bort i en framtida version.
+Med webbläsaren Google Chrome version 80.x blockeras alla cookies från tredje part som standard. Den här profilen kan förhindra att JupyterLab läses in i Adobe Experience Platform.
 
 Så här åtgärdar du problemet:
 
@@ -45,7 +45,19 @@ Efter steg 2 uppmanas du att starta om webbläsaren. När du har startat om bör
 
 ## Varför kan jag inte komma åt JupyterLab i Safari?
 
-Safari inaktiverar cookies från tredje part som standard. Eftersom instansen av den virtuella Jupyter-datorn finns på en annan domän än den överordnade bildrutan, kräver Adobe Experience Platform för närvarande att cookies från tredje part aktiveras. Aktivera cookies från tredje part eller byt till en annan webbläsare, till exempel Google Chrome.
+Safari inaktiverar cookies från tredje part som standard i Safari &lt; 12. Eftersom instansen av den virtuella Jupyter-datorn finns på en annan domän än den överordnade bildrutan, kräver Adobe Experience Platform för närvarande att cookies från tredje part aktiveras. Aktivera cookies från tredje part eller byt till en annan webbläsare, till exempel Google Chrome.
+
+För Safari 12 måste du växla din användaragent till Chrome eller Firefox. Om du vill byta användaragent startar du med *Safari* -menyn och väljer **Inställningar**. Inställningsfönstret visas.
+
+![Safari-inställningar](./images/faq/preferences.png)
+
+Välj **Avancerat** i inställningsfönstret i Safari. Markera sedan *Visa menyn Framkalla i menyraden* . Du kan stänga inställningsfönstret när det här steget är klart.
+
+![Safari avancerat](./images/faq/advanced.png)
+
+Välj sedan **Framkalla** i det övre navigeringsfältet. I listrutan *Framkalla* för du muspekaren över *användaragenten*. Du kan välja den **Chrome** - eller **Firefox** -användaragentsträng som du vill använda.
+
+![Menyn Framkalla](./images/faq/user-agent.png)
 
 ## Varför visas ett 403-förbjudet meddelande när jag försöker överföra eller ta bort en fil i JupyterLab?
 
