@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa en källanslutning för Adobe Analytics i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: f09ff4d1b159a6989868c5cfc35b361cfb640a99
+source-git-commit: ac1e5dbe435d9e85e8ce3ad90c60dd31ba9248ff
 
 ---
 
@@ -23,7 +23,7 @@ På aktivitetsskärmen *Källa* visas alla tidigare upprättade anslutningar til
 
 >[!NOTE] Flera in-bound-anslutningar till en källa kan göras för att hämta olika data.
 
-![](../../../..//images/tutorials/create/analytics/AA-source_activity.png)
+![](/help/sources/images/tutorials/create/analytics/AA-source_activity.png)
 
 I listan med tillgängliga rapportsviter väljer du den som du vill hämta till plattformen och klickar på **Nästa**.
 
