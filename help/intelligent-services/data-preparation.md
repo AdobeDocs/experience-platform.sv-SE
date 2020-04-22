@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Förbered data för användning i intelligenta tjänster
 topic: Intelligent Services
 translation-type: tm+mt
-source-git-commit: 03135f564bd72fb60e41b02557cb9ca9ec11e6e8
+source-git-commit: 702ac3860e06951574fe48f7d8771a11f68bedc4
 
 ---
 
@@ -23,32 +23,150 @@ Precis som alla XDM-scheman är CEE-blandningen utökningsbar. Med andra ord kan
 
 Ett fullständigt exempel på blandningen finns i den [offentliga XDM-databasen](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-consumer.schema.md)och bör användas som referens för de nyckelfält som beskrivs i avsnittet nedan.
 
-### Nyckelfält
+## Nyckelfält
 
-Tabellen nedan visar de viktigaste fälten i CEE-mixen, som bör användas för att Intelligent Services ska kunna generera användbara insikter, inklusive beskrivningar och länkar till referensdokumentation för ytterligare exempel.
+Avsnitten nedan beskriver de viktigaste fälten i CEE-mixen, som bör användas för att Intelligent Services ska kunna generera användbara insikter, inklusive beskrivningar och länkar till referensdokumentation för ytterligare exempel.
 
-| XDM-fält | Beskrivning | Referens |
-| --- | --- | --- |
-| `xdm:channel` | Marknadsföringskanalen för ExperienceEvent. Fältet innehåller information om kanaltyp, medietyp och platstyp. **Detta fält _måste_anges för att Attribution AI ska fungera med dina data**. Se [tabellen nedan](#example-channels) för några exempelmappningar. | [Experience channel schema](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/channels/channel.schema.md) |
-| `xdm:productListItems` | En array med artiklar som representerar produkter som valts ut av en kund, inklusive produkt-SKU, namn, pris och kvantitet. | [Schema för handelsinformation](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-commerce.schema.md) |
-| `xdm:commerce` | Innehåller handelsspecifik information om ExperienceEvent, inklusive inköpsordernummer och betalningsinformation. | [Schema för handelsinformation](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-commerce.schema.md) |
-| `xdm:web` | Representerar webbinformation som relaterar till ExperienceEvent, t.ex. interaktionen, sidinformation och referenten. | [Schema för webbinformation om ExperienceEvent](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-web.schema.md) |
+### xdm:kanal
 
-### Exempelkanaler {#example-channels}
+Detta fält representerar den marknadsföringskanal som är relaterad till ExperienceEvent. Fältet innehåller information om kanaltyp, medietyp och platstyp. **Detta fält _måste_anges för att Attribution AI ska fungera med dina data**.
 
-Fältet `xdm:channel` representerar den marknadsföringskanal som är relaterad till ExperienceEvent. I följande tabell visas några exempel på marknadsföringskanaler som har mappats till XDM:
+**Exempelschema**
 
-| Kanal | `channel.mediaType` | `channel._type` | `channel.mediaAction` |
+```json
+{
+  "@id": "https://ns.adobe.com/xdm/channels/facebook-feed",
+  "@type": "https://ns.adobe.com/xdm/channel-types/social",
+  "xdm:mediaType": "earned",
+  "xdm:mediaAction": "clicks"
+}
+```
+
+Fullständig information om de olika delfälten för `xdm:channel`finns i [Experience channel schema](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/channels/channel.schema.md) spec. Exempel på mappningar finns i [tabellen nedan](#example-channels).
+
+#### Exempel på kanalmappningar {#example-channels}
+
+I följande tabell visas några exempel på marknadsföringskanaler som har mappats till `xdm:channel` schemat:
+
+| Kanal | `@type` | `mediaType` | `mediaAction` |
 | --- | --- | --- | --- |
-| Betalsökning | BETALT | SÖK | KLICKA |
-| Social - marknadsföring | EARNED | SOCIALT | KLICKA |
-| Visa | BETALT | VISA | KLICKA |
-| E-post | BETALT | E-POST | KLICKA |
-| Intern referens | ÄGDA | DIRECT | KLICKA |
-| VisaVia | BETALT | VISA | IMPRESSION |
-| Omdirigering av QR-kod | ÄGDA | DIRECT | KLICKA |
-| SMS-textmeddelande | ÄGDA | SMS | KLICKA |
-| Mobil | ÄGDA | MOBILE | KLICKA |
+| Betalsökning | https:/<span>/ns.adobe.com/xdm/channel-types/search | betald | klickningar |
+| Social - marknadsföring | https:/<span>/ns.adobe.com/xdm/channel-types/social | upparbetade | klickningar |
+| Visa | https:/<span>/ns.adobe.com/xdm/channel-types/display | betald | klickningar |
+| E-post | https:/<span>/ns.adobe.com/xdm/channel-types/email | betald | klickningar |
+| Intern referens | https:/<span>/ns.adobe.com/xdm/channel-types/direct | ägt | klickningar |
+| VisaVia | https:/<span>/ns.adobe.com/xdm/channel-types/display | betald | visningar |
+| Omdirigering av QR-kod | https:/<span>/ns.adobe.com/xdm/channel-types/direct | ägt | klickningar |
+| Mobil | https:/<span>/ns.adobe.com/xdm/channel-types/mobile | ägt | klickningar |
+
+### xdm:productListItems
+
+Det här fältet är en array med artiklar som representerar produkter som valts ut av en kund, inklusive produkt-SKU, namn, pris och kvantitet.
+
+**Exempelschema**
+
+```json
+[
+  {
+    "xdm:SKU": "1002352692",
+    "xdm:lineItemId": "12345678",
+    "xdm:name": "24-Watt 8-Light Chrome Integrated LED Bath Light",
+    "xdm:currencyCode": "USD",
+    "xdm:quantity": 1,
+    "xdm:priceTotal": 159
+  },
+  {
+    "xdm:SKU": "3398033623",
+    "xdm:lineItemId": "48693817",
+    "xdm:name": "16ft RGB LED Strips",
+    "xdm:currencyCode": "USD",
+    "xdm:quantity": 1,
+    "xdm:priceTotal": 80
+  }
+]
+```
+
+Fullständig information om de olika delfälten för `xdm:productListItems`finns i schemats [specifikationer för](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-commerce.schema.md) handelsinformation.
+
+### xdm:commerce
+
+Det här fältet innehåller handelsspecifik information om ExperienceEvent, inklusive inköpsordernummer och betalningsinformation.
+
+**Exempelschema**
+
+```json
+{
+    "xdm:order": {
+      "xdm:purchaseID": "a8g784hjq1mnp3",
+      "xdm:purchaseOrderNumber": "123456",
+      "xdm:payments": [
+        {
+          "xdm:transactionID": "transactid-a111",
+          "xdm:paymentAmount": 59,
+          "xdm:paymentType": "credit_card",
+          "xdm:currencyCode": "USD"
+        },
+        {
+          "xdm:transactionId": "transactid-a222",
+          "xdm:paymentAmount": 100,
+          "xdm:paymentType": "gift_card",
+          "xdm:currencyCode": "USD"
+        }
+      ],
+      "xdm:currencyCode": "USD",
+      "xdm:priceTotal": 159
+    },
+    "xdm:purchases": {
+      "xdm:value": 1
+    }
+  }
+```
+
+Fullständig information om de olika delfälten för `xdm:commerce`finns i schemats [specifikationer för](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-commerce.schema.md) handelsinformation.
+
+### xdm:webb
+
+Det här fältet representerar webbinformation som relaterar till ExperienceEvent, t.ex. interaktionen, sidinformation och referenten.
+
+**Exempelschema**
+
+```json
+{
+  "xdm:webPageDetails": {
+    "xdm:siteSection": "Shopping Cart",
+    "xdm:server": "example.com",
+    "xdm:name": "Purchase Confirmation",
+    "xdm:URL": "https://www.example.com/orderConf",
+    "xdm:errorPage": false,
+    "xdm:homePage": false,
+    "xdm:pageViews": {
+      "xdm:value": 1
+    }
+  },
+  "xdm:webReferrer": {
+    "xdm:URL": "https://www.example.com/checkout",
+    "xdm:referrerType": "internal"
+  }
+}
+```
+
+Fullständig information om de olika delfälten för `xdm:productListItems`finns i [ExperienceEvent-webbinformationsschemats](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-web.schema.md) specifikation.
+
+### xdm:marknadsföring
+
+Detta fält innehåller information om marknadsföringsaktiviteter som är aktiva med kontaktytan.
+
+**Exempelschema**
+
+```json
+{
+  "xdm:trackingCode": "marketingcampaign111",
+  "xdm:campaignGroup": "50%_DISCOUNT",
+  "xdm:campaignName": "50%_DISCOUNT_USA"
+}
+```
+
+Fullständig information om samtliga obligatoriska underfält för `xdm:productListItems`finns i [produktresumén](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/marketing.schema.md) .
 
 ## Mappning och inhämtning av data
 
