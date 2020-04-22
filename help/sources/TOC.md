@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Source Connectors - hjälp
 translation-type: tm+mt
-source-git-commit: 2fb034dced679d48c90c41ab3254a30fc14b43e0
+source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
 
 ---
 
@@ -153,3 +153,4 @@ source-git-commit: 2fb034dced679d48c90c41ab3254a30fc14b43e0
       - [Konfigurera ett dataflöde för en protokollanslutning](tutorials/ui/dataflow/protocols.md)
    - [Aktivera inkommande data för att fylla i kundprofiler](tutorials/ui/profile.md)
    - [Övervaka konton och datauppsättningsflöden](tutorials/ui/monitor.md)
+- [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
