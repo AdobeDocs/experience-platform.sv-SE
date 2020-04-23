@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: February 14, 2019
 author: ens71067
 translation-type: tm+mt
-source-git-commit: 2f0f155beacbc6a4ba2892ae211a9c0305e969ac
+source-git-commit: 5199a344a66381ef9d7eea1ea8314e5de7152e3b
 
 ---
 
@@ -14,13 +14,17 @@ source-git-commit: 2f0f155beacbc6a4ba2892ae211a9c0305e969ac
 
 ## Releasedatum: 12 februari 2020
 
-## Källor
+Uppdateringar av befintliga funktioner i Adobe Experience Platform:
+
+* [Källor](#sources)
+
+## Källor {#sources}
 
 Adobe Experience Platform kan importera data från externa källor samtidigt som ni kan strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, programvara från tredje part och ditt CRM-system.
 
 Experience Platform har ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
 
-### Nya funktioner
+**Nya funktioner**
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
@@ -30,7 +34,7 @@ Experience Platform har ett RESTful API och ett interaktivt användargränssnitt
 | API-stöd för molnlagringssystem | Nya källanslutningar för Azure Data Lake Service Gen 2 API och Google Cloud Storage API. |
 | Användargränssnittsstöd för molnlagringssystem | Ny källanslutning för Google Cloud-lagring i användargränssnittet. |
 
-### Kända fel
+**Kända fel**
 
 * Ingen
 
