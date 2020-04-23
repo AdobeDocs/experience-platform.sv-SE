@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: September 13, 2019
 author: ens28527
 translation-type: tm+mt
-source-git-commit: 28a8fc496c85b334e89d0f0a130d3cc5c8956399
+source-git-commit: 26568ebbbe48b5a82e4f6b5cf035c354c11e8ed1
 
 ---
 
@@ -14,7 +14,13 @@ source-git-commit: 28a8fc496c85b334e89d0f0a130d3cc5c8956399
 
 ## Releasedatum: 10 september 2019
 
-## Dataintag
+Uppdateringar av befintliga funktioner i Adobe Experience Platform:
+
+* [Dataintag](#ingestion)
+* [Datavetenskapens arbetsyta](#dsw)
+* [Frågetjänst](#query)
+
+## Dataintag {#ingestion}
 
 Adobe Experience Platform har en omfattande uppsättning funktioner för att importera alla typer av data och latens. Adobe Experience Platform Data Ingtake erbjuder flera alternativ för inmatning av data, bland annat API:er för batch, API:er för direktuppspelning, inbyggda Adobe-anslutningar, dataintegreringspartners eller användargränssnittet för Adobe Experience Platform.
 
@@ -26,7 +32,7 @@ Adobe Experience Platform har en omfattande uppsättning funktioner för att imp
 
 Mer information finns i dokumentationen för [datainmatning](../../ingestion/home.md).
 
-## Datavetenskapens arbetsyta
+## Datavetenskapens arbetsyta {#dsw}
 
 Adobe Experience Platform Data Science Workspace är en helt hanterad tjänst inom Experience Platform som gör det möjligt för datavetare att sömlöst generera insikter från data och innehåll i Adobes lösningar och tredjepartssystem genom att bygga och driftsätta Machine Learning-modeller. Data Science Workspace är nära integrerat med Platform och är en drivkraft för datavetenskapens hela livscykel, inklusive utforskning och förberedelse av XDM-data, följt av utveckling och driftsättning av modeller för att automatiskt berika kundprofilen i realtid med maskininlärningsinsikter.
 
@@ -46,7 +52,7 @@ Adobe Experience Platform Data Science Workspace är en helt hanterad tjänst in
 
 Mer information finns på [Data Science Workspace Overview](../../data-science-workspace/home.md).
 
-## Frågetjänst
+## Frågetjänst {#query}
 
 Med frågetjänsten kan du använda standard-SQL för att fråga efter data i Adobe Experience Platform som stöd för en rad olika användningsfall för analys och datahantering. Det är ett serverlöst verktyg som gör att du kan koppla ihop datauppsättningar från datasjön och samla in frågeresultaten som en ny datauppsättning som kan användas i rapporter, Data Science Workspace eller för att lägga in dem i kundprofilen i realtid.
 
