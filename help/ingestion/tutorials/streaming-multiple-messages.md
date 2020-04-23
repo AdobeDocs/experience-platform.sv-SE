@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Direktuppspelning av flera meddelanden i en enda HTTP-begäran
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 79466c78fd78c0f99f198b11a9117c946736f47a
+source-git-commit: cd251c0816a7e653596b6c3faaceb0cebad367ea
 
 ---
 
@@ -47,7 +47,7 @@ I stället för att använda en befintlig datauppsättning kan du skapa en ny da
 **API-format**
 
 ```http
-POST /collection/{CONNECTION_ID}
+POST /collection/batch/{CONNECTION_ID}
 ```
 
 | Egenskap | Beskrivning |
@@ -57,7 +57,7 @@ POST /collection/{CONNECTION_ID}
 **Begäran**
 
 ```shell
-curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID} \
+curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
   -H 'Content-Type: application/json' \
   -d '{
   "messages": [
@@ -229,7 +229,7 @@ Nyttolasten för begäran är en array med JSON-objekt som representerar händel
 **API-format**
 
 ```http
-POST /collection/{CONNECTION_ID}
+POST /collection/batch/{CONNECTION_ID}
 ```
 
 | Egenskap | Beskrivning |
@@ -239,7 +239,7 @@ POST /collection/{CONNECTION_ID}
 **Begäran**
 
 ```shell
-curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID} \
+curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
   -H 'Content-Type: application/json' \
   -d '{
   "messages": [
