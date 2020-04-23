@@ -6,7 +6,7 @@ last-update: April 13, 2020
 author: ens71067
 keywords: release notes;
 translation-type: tm+mt
-source-git-commit: e4da80338dbfbad70dfb3cf7df9fe589e949e788
+source-git-commit: 8cc3b63fc91877ca1337f65e8f5c0e949b7ef01f
 
 ---
 
@@ -15,65 +15,17 @@ source-git-commit: e4da80338dbfbad70dfb3cf7df9fe589e949e788
 
 ## Releasedatum: 8 april 2020
 
-## Experience Data Model (XDM) System
+Nya funktioner i Adobe Experience Platform:
+* [Intelligenta tjänster](#intelligent)
 
-Standardisering och interoperabilitet är viktiga begrepp bakom Experience Platform. Experience Data Model (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
+Uppdateringar av befintliga funktioner:
+* [Experience Data Model (XDM)](#xdm)
+* [Datastyrning](#governance)
+* [Mål](#destinations)
+* [Integritetstjänst](#privacy)
+* [Källor](#sources)
 
-XDM är en öppet dokumenterad specifikation som utformats för att förbättra möjligheterna med digitala upplevelser. Det innehåller gemensamma strukturer och definitioner för alla program som ska kommunicera med tjänster på Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation som levererar insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
-
-### Nya funktioner
-
-| Funktion | Beskrivning |
-| --- | --- |
-| Automatisk alternativ visningsinformation | Schemaregistret tillämpar automatiskt de anpassade titel- och beskrivningsvärden som konfigurerats i `alternateDisplayInfo` beskrivningen. |
-| Begränsningar för skalbara fält | Schemaregistret tillåter inte mer än 6 000 skalära fält i ett enda schema. |
-| Prestandaöversyn | Schemaregistret har omarbetats för att fungera bättre och uppfylla kraven i Experience Platform. |
-
-**Felkorrigeringar**
-
-* Uppdaterad XDM till XED konverterad för att stödja ett renare XED-format för kapslade URI-fält i standard-XDM.
-
-**Kända fel**
-
-* Känd
-
-## Datastyrning
-
-Adobe Experience Platform Data Governance är en serie strategier och tekniker som används för att hantera kunddata och säkerställa efterlevnad av regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en viktig roll inom Experience Platform på olika nivåer, bland annat i fråga om katalogisering, datalinje, märkning av dataanvändning, dataåtkomstprinciper och åtkomstkontroll av data för marknadsföringsåtgärder.
-
-För att komma igång med datastyrning krävs en grundlig förståelse för de regler, avtalsförpliktelser och företagspolicyer som gäller för era kunddata. Därifrån kan data klassificeras med hjälp av lämpliga etiketter för dataanvändning, och användningen av dessa kan styras med hjälp av definitionen av policyer för dataanvändning.
-
-DULE-ramverket förenklar och effektiviserar processen att kategorisera data och skapa dataanvändningsprinciper via Experience Platform-gränssnittet och DULE Policy Service API.
-
-### Nya funktioner
-
-| Funktion | Beskrivning |
-| -----------| ---------- |
-| Hantera dataanvändningsprinciper i användargränssnittet | Dataanvändningsprinciper kan nu hanteras i arbetsytan _Principer_ i användargränssnittet för Experience Platform. Mer information finns i användarhandboken [för](../../data-governance/policies/user-guide.md) profilen. |
-
-**Kända fel**
-
-* Ingen.
-
-Mer information finns i översikten över [datastyrning](../../data-governance/home.md).
-
-
-## Mål 
-
-I [Adobes kunddataplattform](../../rtcdp/overview.md)i realtid är destinationer färdigbyggda integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
-
-### Nya destinationer
-
-Adobe CDP stöder nu dataaktivering i realtid i över femtio Experience Cloud Launch-tillägg, vilket möjliggör analyser, personalisering och andra användningsfall. Mer information finns nedan:
-
-| Dokumentation | Beskrivning |
-|--- | ---|
-| [Måltyper och -kategorier](/help/rtcdp/destinations/destination-types.md) | I den här artikeln förklaras skillnaden mellan anslutningar och tillägg i Adobe-gränssnittet för CDP i realtid och en rekommendation om när var och en av dessa destinationer ska användas. |
-| [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md) | På den här sidan förklaras vad Launch-tillägg är, används exempel på dem och länkar till dokumentation för varje Launch-tillägg i Adobe Real-time CDP. |
-
-Mer information finns i Översikt över [destinationer](/help/rtcdp/destinations/destinations-overview.md).
-
-## Intelligenta tjänster
+## Intelligenta tjänster {#intelligent}
 
 Intelligenta tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskaplig expertis. Dessutom kan marknadsförare aktivera prognoser i Adobe Experience Cloud, Adobe Experience Platform och tredjepartsprogram.
 
@@ -90,7 +42,65 @@ Intelligenta tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlig
 
 Mer information om intelligenta tjänster och vad de har att erbjuda finns i [Intelligent Services - översikt](../../intelligent-services/home.md).
 
-## Integritetstjänst
+## Experience Data Model (XDM) System {#xdm}
+
+Standardisering och interoperabilitet är viktiga begrepp bakom Experience Platform. Experience Data Model (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
+
+XDM är en öppet dokumenterad specifikation som utformats för att förbättra möjligheterna med digitala upplevelser. Det innehåller gemensamma strukturer och definitioner för alla program som ska kommunicera med tjänster på Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation som levererar insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Automatisk alternativ visningsinformation | Schemaregistret tillämpar automatiskt de anpassade titel- och beskrivningsvärden som konfigurerats i `alternateDisplayInfo` beskrivningen. |
+| Begränsningar för skalbara fält | Schemaregistret tillåter inte mer än 6 000 skalära fält i ett enda schema. |
+| Prestandaöversyn | Schemaregistret har omarbetats för att fungera bättre och uppfylla kraven i Experience Platform. |
+
+**Felkorrigeringar**
+
+* Uppdaterad XDM till XED konverterad för att stödja ett renare XED-format för kapslade URI-fält i standard-XDM.
+
+**Kända fel**
+
+* Känd
+
+## Datastyrning {#governance}
+
+Adobe Experience Platform Data Governance är en serie strategier och tekniker som används för att hantera kunddata och säkerställa efterlevnad av regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en viktig roll inom Experience Platform på olika nivåer, bland annat i fråga om katalogisering, datalinje, märkning av dataanvändning, dataåtkomstprinciper och åtkomstkontroll av data för marknadsföringsåtgärder.
+
+För att komma igång med datastyrning krävs en grundlig förståelse för de regler, avtalsförpliktelser och företagspolicyer som gäller för era kunddata. Därifrån kan data klassificeras med hjälp av lämpliga etiketter för dataanvändning, och användningen av dessa kan styras med hjälp av definitionen av policyer för dataanvändning.
+
+DULE-ramverket förenklar och effektiviserar processen att kategorisera data och skapa dataanvändningsprinciper via Experience Platform-gränssnittet och DULE Policy Service API.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| -----------| ---------- |
+| Hantera dataanvändningsprinciper i användargränssnittet | Dataanvändningsprinciper kan nu hanteras i arbetsytan _Principer_ i användargränssnittet för Experience Platform. Mer information finns i användarhandboken [för](../../data-governance/policies/user-guide.md) profilen. |
+
+**Kända fel**
+
+* Ingen.
+
+Mer information finns i översikten över [datastyrning](../../data-governance/home.md).
+
+
+## Mål {#destinations}
+
+I [Adobes kunddataplattform](../../rtcdp/overview.md)i realtid är destinationer färdigbyggda integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
+
+**Nya destinationer**
+
+Adobe CDP stöder nu dataaktivering i realtid i över femtio Experience Cloud Launch-tillägg, vilket möjliggör analyser, personalisering och andra användningsfall. Mer information finns nedan:
+
+| Dokumentation | Beskrivning |
+|--- | ---|
+| [Måltyper och -kategorier](/help/rtcdp/destinations/destination-types.md) | I den här artikeln förklaras skillnaden mellan anslutningar och tillägg i Adobe-gränssnittet för CDP i realtid och en rekommendation om när var och en av dessa destinationer ska användas. |
+| [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md) | På den här sidan förklaras vad Launch-tillägg är, används exempel på dem och länkar till dokumentation för varje Launch-tillägg i Adobe Real-time CDP. |
+
+Mer information finns i Översikt över [destinationer](/help/rtcdp/destinations/destinations-overview.md).
+
+## Integritetstjänst {#privacy}
 
 Nya juridiska och organisatoriska bestämmelser ger användarna rätt att få tillgång till eller ta bort sina personuppgifter från era datalager på begäran. Integritetstjänsten för Adobe Experience Platform tillhandahåller ett RESTful API och användargränssnitt som hjälper er att hantera dessa dataförfrågningar från era kunder. Med Integritetstjänsten kan ni skicka in förfrågningar om åtkomst till och radering av privata eller personliga kunddata från Adobe Experience Cloud-program, vilket underlättar automatiserad efterlevnad av juridiska och organisatoriska sekretessbestämmelser.
 
@@ -108,13 +118,13 @@ Kända fel
 
 Mer information om sekretesstjänsten finns i översikten över [sekretesstjänsten](../../privacy-service/home.md).
 
-## Källor
+## Källor {#sources}
 
 Adobe Experience Platform kan importera data från externa källor samtidigt som ni kan strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, programvara från tredje part och ditt CRM-system.
 
 Experience Platform har ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
 
-### Nya funktioner
+**Nya funktioner**
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
@@ -122,7 +132,7 @@ Experience Platform har ett RESTful API och ett interaktivt användargränssnitt
 | API- och gränssnittsstöd för betalningsbaserade program | Nya källanslutningar för PayPal. |
 | API- och gränssnittsstöd för protokollbaserade program | Nya källkopplingar för allmänna OData. |
 
-### Kända fel
+**Kända fel**
 
 * Ingen
 
