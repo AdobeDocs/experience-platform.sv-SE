@@ -5,14 +5,14 @@ doc-type: release notes
 last-update: January 15, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 5199a344a66381ef9d7eea1ea8314e5de7152e3b
+source-git-commit: e5fa12b92f7006f2c5c428b25f81dade57733498
 
 ---
 
 
 # Versionsinformation om Adobe Experience Platform
 
-## Releasedatum: 15 januari 2020
+**Releasedatum: 15 januari 2020**
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
