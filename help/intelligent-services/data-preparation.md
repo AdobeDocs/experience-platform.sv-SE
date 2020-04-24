@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Förbered data för användning i intelligenta tjänster
 topic: Intelligent Services
 translation-type: tm+mt
-source-git-commit: 702ac3860e06951574fe48f7d8771a11f68bedc4
+source-git-commit: 1b367eb65d1e592412d601d089725671e42b7bbd
 
 ---
 
@@ -19,6 +19,10 @@ Det här dokumentet innehåller allmän vägledning om hur du mappar data om mar
 
 Consumer ExperienceEvent-schemat beskriver en individs beteende när det gäller digitala marknadsföringshändelser (webb eller mobil) samt online- eller offlinehandel. Det här schemat måste användas för intelligenta tjänster på grund av semantiskt väl definierade fält (kolumner), så att okända namn som annars skulle göra data mindre tydliga undviks.
 
+Intelligent Services använder flera nyckelfält i detta schema för att generera insikter från era marknadsföringshändelsedata, som alla kan hittas på rotnivå och expanderas för att visa de underfält som krävs.
+
+![](./images/data-preparation/schema-expansion.gif)
+
 Precis som alla XDM-scheman är CEE-blandningen utökningsbar. Med andra ord kan ytterligare fält läggas till i CEE-mixen, och olika varianter kan vid behov inkluderas i flera scheman.
 
 Ett fullständigt exempel på blandningen finns i den [offentliga XDM-databasen](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-consumer.schema.md)och bör användas som referens för de nyckelfält som beskrivs i avsnittet nedan.
@@ -30,6 +34,8 @@ Avsnitten nedan beskriver de viktigaste fälten i CEE-mixen, som bör användas 
 ### xdm:kanal
 
 Detta fält representerar den marknadsföringskanal som är relaterad till ExperienceEvent. Fältet innehåller information om kanaltyp, medietyp och platstyp. **Detta fält _måste_anges för att Attribution AI ska fungera med dina data**.
+
+![](./images/data-preparation/channel.png)
 
 **Exempelschema**
 
@@ -63,25 +69,25 @@ I följande tabell visas några exempel på marknadsföringskanaler som har mapp
 
 Det här fältet är en array med artiklar som representerar produkter som valts ut av en kund, inklusive produkt-SKU, namn, pris och kvantitet.
 
+![](./images/data-preparation/productListItems.png)
+
 **Exempelschema**
 
 ```json
 [
   {
     "xdm:SKU": "1002352692",
-    "xdm:lineItemId": "12345678",
     "xdm:name": "24-Watt 8-Light Chrome Integrated LED Bath Light",
     "xdm:currencyCode": "USD",
     "xdm:quantity": 1,
-    "xdm:priceTotal": 159
+    "xdm:priceTotal": 159.45
   },
   {
     "xdm:SKU": "3398033623",
-    "xdm:lineItemId": "48693817",
     "xdm:name": "16ft RGB LED Strips",
     "xdm:currencyCode": "USD",
     "xdm:quantity": 1,
-    "xdm:priceTotal": 80
+    "xdm:priceTotal": 79.99
   }
 ]
 ```
@@ -91,6 +97,8 @@ Fullständig information om de olika delfälten för `xdm:productListItems`finns
 ### xdm:commerce
 
 Det här fältet innehåller handelsspecifik information om ExperienceEvent, inklusive inköpsordernummer och betalningsinformation.
+
+![](./images/data-preparation/commerce.png)
 
 **Exempelschema**
 
@@ -128,6 +136,8 @@ Fullständig information om de olika delfälten för `xdm:commerce`finns i schem
 
 Det här fältet representerar webbinformation som relaterar till ExperienceEvent, t.ex. interaktionen, sidinformation och referenten.
 
+![](./images/data-preparation/web.png)
+
 **Exempelschema**
 
 ```json
@@ -155,6 +165,8 @@ Fullständig information om de olika delfälten för `xdm:productListItems`finns
 ### xdm:marknadsföring
 
 Detta fält innehåller information om marknadsföringsaktiviteter som är aktiva med kontaktytan.
+
+![](./images/data-preparation/marketing.png)
 
 **Exempelschema**
 
