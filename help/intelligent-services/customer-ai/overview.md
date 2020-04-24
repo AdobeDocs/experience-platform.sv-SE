@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över AI för kunder
 topic: Customer AI overview
 translation-type: tm+mt
-source-git-commit: 7987cec12c22e9b48ddc9fdc263d7cd28bd172f2
+source-git-commit: f4deee30f0f03b75dc7ee02152ceb6c519858c7c
 
 ---
 
@@ -42,4 +42,4 @@ Kunds-AI fungerar genom att analysera befintliga data om kundupplevelsehändelse
 
 ## Nästa steg
 
-Du kan börja med att följa guiden [Komma igång](./getting-started.md) . I den här guiden får du hjälp med att konfigurera alla nödvändiga förbegäranden för kundens AI. Om du redan har alla dina autentiseringsuppgifter och data tillgängliga kan du gå till användarhandboken för [AI](./user-guide.md). Den innehåller steg för att använda AI för kunder och visar hur man skapar kundsegment med hjälp av benägenhetspoäng.
+Du kan börja med att följa guiden [Komma igång](./getting-started.md) . I den här guiden får du hjälp med att konfigurera alla nödvändiga förutsättningar för kundens AI. Om du redan har alla dina autentiseringsuppgifter och data klara kan du gå till [konfigurera en kundens AI-instans](./user-guide/configure.md). Här beskrivs hur du använder AI för kunder.
