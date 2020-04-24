@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Plattforms-SDK - guide
 topic: SDK authoring
 translation-type: tm+mt
-source-git-commit: a68aa62c3c3cc3e42083d6b0a1d1003f4137840f
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -17,7 +17,7 @@ I den här självstudiekursen finns information om hur du konverterar `data_acce
 - [Grundläggande läsning av data](#basic-reading-of-data)
 - [Grundläggande skrivande av data](#basic-writing-of-data)
 
-## Bygg autentisering
+## Bygg autentisering {#build-authentication}
 
 Autentisering krävs för att anropa Adobe Experience Platform och består av API-nyckel, IMS-org-ID, en användartoken och en tjänsttoken.
 
@@ -64,7 +64,7 @@ client_context <- psdk$client_context$ClientContext(api_key={API_KEY},
               service_token={SERVICE_TOKEN})
 ```
 
-## Grundläggande läsning av data
+## Grundläggande läsning av data {#basic-reading-of-data}
 
 Med nya Platform SDK är den maximala lässtorleken 32 GB med en maximal lästid på 10 minuter.
 
@@ -99,7 +99,7 @@ df <- dataset_reader$read()
 df
 ```
 
-## Filtrera efter förskjutning och begränsning
+## Filtrera efter förskjutning och begränsning {#filter-by-offset-and-limit}
 
 Eftersom det inte längre finns stöd för att filtrera efter batch-ID måste du använda `offset` och `limit`.
 
@@ -117,7 +117,7 @@ df <- dataset_reader$limit(100L)$offset(1L)$read()
 df
 ```
 
-## Filtrera efter datum
+## Filtrera efter datum {#filter-by-date}
 
 Datumfiltreringens detaljrikedom definieras nu av tidsstämpeln i stället för att anges av dagen.
 
@@ -153,7 +153,7 @@ Den nya plattforms-SDK har stöd för följande åtgärder:
 | Och (`&`) | `And()` |
 | Or (`|`) | `Or()` |
 
-## Filtrera efter markerade kolumner
+## Filtrera efter markerade kolumner {#filter-by-selected-columns}
 
 Om du vill förfina läsningen av data ytterligare kan du även filtrera efter kolumnnamn.
 
@@ -169,7 +169,7 @@ df = dataset_reader.select(['column-a','column-b']).read()
 df <- dataset_reader$select(c('column-a','column-b'))$read() 
 ```
 
-## Få sorterade resultat
+## Få sorterade resultat {#get-sorted-results}
 
 Mottagna resultat kan sorteras efter angivna kolumner i måldatauppsättningen och i deras ordning (asc/desc).
 
@@ -187,7 +187,7 @@ df = dataset_reader.sort([('column-a', 'asc'), ('column-b', 'desc')])
 df <- dataset_reader$sort(c(('column-a', 'asc'), ('column-b', 'desc')))$read()
 ```
 
-## Grundläggande skrivande av data
+## Grundläggande skrivande av data {#basic-writing-of-data}
 
 >[!NOTE] IMS-organisationen anges i `client_context`.
 
