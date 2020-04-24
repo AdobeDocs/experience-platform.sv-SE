@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Migreringsguider för mottagare och anteckningsböcker
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 057001b0b4488f578bdd07387a66c647a91798c8
+source-git-commit: 36305d9098f24b40efd333e7d8a331ebca41ca59
 
 ---
 
@@ -144,12 +144,12 @@ COPY target/ml-retail-sample-spark-*-jar-with-dependencies.jar /application.jar
 
 ### Ändra beroenden (Spark) {#change-dependencies-spark}
 
-Om du använder ett befintligt recept krävs ändringar för beroenden i filen pom.xml. Ändra beroende version av model-authoring-sdk till 1.0.0. Uppdatera sedan Spark-versionen i PDF-filen till 2.4.3 och Scala-versionen till 2.11.12.
+Om du använder ett befintligt recept krävs ändringar för beroenden i filen pom.xml. Ändra beroende version av model-authoring-sdk till 2.0.0. Uppdatera sedan Spark-versionen i PDF-filen till 2.4.3 och Scala-versionen till 2.11.12.
 
 ```json
 <groupId>com.adobe.platform.ml</groupId>
 <artifactId>authoring-sdk_2.11</artifactId>
-<version>1.0.0</version>
+<version>2.0.0</version>
 <classifier>jar-with-dependencies</classifier>
 ```
 
