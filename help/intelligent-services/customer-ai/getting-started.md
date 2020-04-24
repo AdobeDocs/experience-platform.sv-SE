@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Komma igång med kundens AI
 topic: Getting started
 translation-type: tm+mt
-source-git-commit: 0eeb41fa06864cc28b3a76c2a69c76ea5430d45a
+source-git-commit: f7c59ef097c00073fbf9f6522b6e70ed24cc8bf1
 
 ---
 
@@ -22,7 +22,7 @@ Handböckerna för kundens AI kräver en fungerande förståelse för de olika p
 
 ## Hämtar AI-poäng för kunder
 
->[!NOTE] Om du inte behöver ladda ned bakgrundsmusik kan du hoppa över det här steget och gå vidare till användargränssnittshandboken.
+>[!NOTE] Om du inte behöver ladda ned bakgrundsmusik kan du hoppa över det här steget och gå vidare till [konfigurationsguiden](./user-guide/configure.md).
 
 Hämtning av kundens AI-poäng görs via en kombination av API-anrop. För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
 
@@ -42,4 +42,4 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 ## Nästa steg
 
-När du är redo och har alla dina autentiseringsuppgifter och scheman på plats börjar du med att följa användargränssnittshandboken för [kundens AI](./user-guide.md). I den här guiden får du hjälp med att skapa en instans och skicka in den för utbildning och poängsättning.
+När du är klar med stegen som beskrivs i dokumentet ovan kan du gå till [indata- och utdatadokumentationen](./input-output.md) . I det här dokumentet ges en kort översikt över vilka typer av data som används och produceras i kundens AI.
