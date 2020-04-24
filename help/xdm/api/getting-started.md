@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Utvecklarhandbok för API för schematabell
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: eec5b07427aa9daa44d23f09cfaf1b38f8e811f3
+source-git-commit: 387cbdebccb9ae54a2907d1afe220e9711927ca6
 
 ---
 
@@ -52,7 +52,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 * Innehållstyp: application/json
 
-## Lär känna ditt TENANT_ID {#know-your-tenant-id}
+## Lär känna ditt TENANT_ID {#know-your-tenant_id}
 
 I hela den här guiden ser du referenser till en `TENANT_ID`. Detta ID används för att säkerställa att de resurser du skapar namnges korrekt och finns i IMS-organisationen. Om du inte känner till ditt ID kan du få åtkomst till det genom att utföra följande GET-begäran:
 
@@ -224,7 +224,7 @@ I följande exempelfält visas ett korrekt formaterat XDM-fält, med mer informa
    * **Korrekt:** `fieldName`, `field_name2`, `Field-Name`, `field-name_3`
    * **Felaktigt:** `_fieldName`
 * camelCase är att föredra som fältobjektets namn. Exempel: `fieldName`
-* Fältet ska innehålla en `title`titel. Exempel: `Field Name`
+* Fältet ska innehålla en `title`, skriven i versaler. Exempel: `Field Name`
 * Fältet kräver ett `type`.
    * Du kan behöva ange en valfri typ `format`.
    * Där en viss dataformatering krävs kan `examples` läggas till som en array.
