@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa en rörledning för funktioner
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: b9b0578a43182650b3cfbd71f46bcb817b3b0cda
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -14,17 +14,6 @@ source-git-commit: b9b0578a43182650b3cfbd71f46bcb817b3b0cda
 Med Adobe Experience Platform kan ni skapa och skapa anpassade funktionspipeliner för att utföra funktionsteknologi i stor skala via Sensei Machine Learning Framework Runtime (nedan kallad Runtime).
 
 I det här dokumentet beskrivs de olika klasserna som finns i en funktionspipeline och här finns en stegvis självstudiekurs för att skapa en anpassad [funktionspipeline med hjälp av SDK](./sdk.md) för modellredigering i PySpark och Spark.
-
-Självstudiekursen innehåller följande steg:
-- [Implementera dina rörliga funktionsklasser](#implement-your-feature-pipeline-classes)
-   - [Definiera variabler i en konfigurationsfil](#define-variables-in-the-configuration-json-file)
-   - [Förbered indata med DataLoader](#prepare-the-input-data-with-dataloader)
-   - [Transformera en datauppsättning med DataSetTransformer](#transform-a-dataset-with-datasettransformer)
-   - [Ingenjörsdatafunktioner med FeaturePipelineFactory](#engineer-data-features-with-featurepipelinefactory)
-   - [Lagra dina funktionsdata med DataSaver](#store-your-feature-dataset-with-datasaver)
-   - [Ange dina implementerade klassnamn i programfilen](#specify-your-implemented-class-names-in-the-application-file)
-- [Bygg den binära artefakten](#build-the-binary-artifact)
-- [Skapa en rörlig motor med funktioner med API:t](#create-a-feature-pipeline-engine-using-the-api)
 
 ## Funktionsförloppsklasser
 
@@ -44,11 +33,11 @@ I följande flödesschema visas körningsordningen:
 ![](../images/authoring/feature-pipeline/FeaturePipeline_Runtime_flow.png)
 
 
-## Implementera dina rörliga funktionsklasser
+## Implementera dina rörliga funktionsklasser {#implement-your-feature-pipeline-classes}
 
 I följande avsnitt finns detaljerad information och exempel om hur du implementerar de klasser som krävs för en funktionspipeline.
 
-### Definiera variabler i JSON-konfigurationsfilen
+### Definiera variabler i JSON-konfigurationsfilen {#define-variables-in-the-configuration-json-file}
 
 JSON-konfigurationsfilen består av nyckelvärdepar och är avsedd för att du ska kunna ange variabler som ska definieras senare under körning. Dessa nyckelvärdepar kan definiera egenskaper som plats för indatauppsättning, ID för utdatauppsättning, klientorganisations-ID, kolumnrubriker osv.
 
@@ -96,7 +85,7 @@ val input_dataset_id: String = configProperties.get("datasetId")
 ```
 
 
-### Förbered indata med DataLoader
+### Förbered indata med DataLoader {#prepare-the-input-data-with-dataloader}
 
 DataLoader ansvarar för hämtning och filtrering av indata. Din implementering av DataLoader måste utöka den abstrakta klassen `DataLoader` och åsidosätta den abstrakta metoden `load`.
 
@@ -200,7 +189,7 @@ class MyDataLoader extends DataLoader {
 
 
 
-### Transformera en datauppsättning med DataSetTransformer
+### Transformera en datauppsättning med DataSetTransformer {#transform-a-dataset-with-datasettransformer}
 
 En DataSetTransformer tillhandahåller logiken för att omforma en DataFrame-indata och returnerar en ny härledd DataFrame. Den här klassen kan implementeras för att arbeta i samarbete med en FeaturePipelineFactory, fungera som den enda funktionstekniska komponenten, eller så kan du välja att inte implementera den här klassen.
 
@@ -255,7 +244,7 @@ class MyDatasetTransformer extends DatasetTransformer {
 
 
 
-### Ingenjörsdatafunktioner med FeaturePipelineFactory
+### Ingenjörsdatafunktioner med FeaturePipelineFactory {#engineer-data-features-with-featurepipelinefactory}
 
 Med en FeaturePipelineFactory kan du implementera din funktionstekniska logik genom att definiera och sammanfoga en serie Spark-omvandlare via en Spark Pipeline. Den här klassen kan implementeras för att antingen fungera tillsammans med en DatasetTransformer, fungera som den enda funktionstekniska komponenten eller så kan du välja att inte implementera den här klassen.
 
@@ -334,7 +323,7 @@ class MyFeaturePipelineFactory(uid:String) extends FeaturePipelineFactory(uid) {
 
 
 
-### Lagra dina funktionsdata med DataSaver
+### Lagra dina funktionsdata med DataSaver {#store-your-feature-dataset-with-datasaver}
 
 DataSaver ansvarar för att lagra de resulterande funktionsdatauppsättningarna på en lagringsplats. Din implementering av DataSaver måste utöka den abstrakta klassen `DataSaver` och åsidosätta den abstrakta metoden `save`.
 
@@ -467,7 +456,7 @@ class MyDataSaver extends DataSaver {
 }
 ```
 
-### Ange dina implementerade klassnamn i programfilen
+### Ange dina implementerade klassnamn i programfilen {#specify-your-implemented-class-names-in-the-application-file}
 
 Nu när du har definierat och implementerat klasserna för rörledning för funktioner måste du ange namnen på klasserna i programfilen.
 
@@ -515,7 +504,7 @@ feature.dataSaver=MyDataSaver
 
 
 
-## Bygg den binära artefakten
+## Bygg den binära artefakten {#build-the-binary-artifact}
 
 Nu när du har implementerat dina rörliga funktionsklasser kan du skapa och kompilera den till en binär artefakt som sedan kan användas för att skapa en rörlig funktion via API-anrop.
 
@@ -543,11 +532,11 @@ mvn clean install
 
 Funktionspipelinen kommer att generera en `.jar` artefakt i `/dist` katalogen. Artefakten används för att skapa en funktionspipeline.
 
-## Skapa en rörlig motor med funktioner med API:t
+## Skapa en rörlig motor med funktioner med API:t {#create-a-feature-pipeline-engine-using-the-api}
 
 Nu när du har skapat din funktionspipeline och byggt den binära artefakten kan du [skapa en rörlig funktionsmotor med hjälp av API:t](../api/engines.md#create-a-feature-pipeline-engine-using-binary-artifacts)för Sensei Machine Learning. En rörledningsmotor för funktioner kommer att förse dig med ett motor-ID som en del av svarstexten. Spara värdet innan du fortsätter med nästa steg.
 
-## Nästa steg
+## Nästa steg {#next-steps}
 
 [//]: # (Next steps section should refer to tutorials on how to score data using the Feature Pipeline Engine. Update this document once those tutorials are available)
 
