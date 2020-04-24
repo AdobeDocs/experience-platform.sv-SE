@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Genomgång av datavetenskapens arbetsyta
 topic: Walkthrough
 translation-type: tm+mt
-source-git-commit: 1f756e7bc71c9ff227757aee64af29e0772c24af
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -45,7 +45,7 @@ I vår självstudiekurs kommer vi att använda Python 3 i Jupyter Notebook för 
 
 ![](./images/walkthrough/retail_sales.png)
 
-### Inställningar
+### Inställningar {#setup}
 
 I och med att Butik Sales-anteckningsboken är öppen är det första vi gör att läsa in de bibliotek som krävs för vårt arbetsflöde. I följande lista ges en kort beskrivning av vad de används för:
 - **numpy** - vetenskapligt datorbibliotek som ger stöd för stora flerdimensionella matriser och matriser
@@ -55,7 +55,7 @@ I och med att Butik Sales-anteckningsboken är öppen är det första vi gör at
 - **sklearn** - maskininlärningsbibliotek med klassificering, regression, stöd för vektor- och klusteralgoritmer
 - **varningar** - bibliotek som styr varningsmeddelanden
 
-### Utforska data
+### Utforska data {#exploring-data}
 
 #### Läs in data
 
@@ -129,7 +129,7 @@ Med samma butiksdatauppsättning kan vi generera en korrelationsmatris.
 
 Observera diagonalen för de där bilderna nedåt i mitten. Detta visar att en variabel har en fullständig positiv korrelation när den jämförs med sig själv. Stark positiv korrelation kommer att ha en storlek närmare 1 medan svaga korrelationer kommer närmare 0. Negativ korrelation visas med en negativ koefficient som visar en omvänd trend.
 
-### Funktionsteknik
+### Funktionsteknik {#feature-engineering}
 
 I det här avsnittet kommer vi att göra ändringar i vår detaljhandelsdatamängd. Vi kommer att utföra följande åtgärder:
 
@@ -177,7 +177,7 @@ En sammanfattning av datauppsättningen efter våra ändringar visas nedan:
 
 ![](./images/walkthrough/df_info_new.png)
 
-### Utbildning och kontroll
+### Utbildning och kontroll {#training-and-verification}
 
 Nu är det dags att skapa några modeller av data och välja vilken modell som är bäst för att förutse framtida försäljning. Vi kommer att utvärdera följande fem algoritmer:
 
