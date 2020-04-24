@@ -4,18 +4,16 @@ solution: Experience Platform
 title: Visa resurser
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 4b052cdd3aca9c771855b2dc2a97ca48c7b8ffb0
+source-git-commit: 58549241f05f1bd604f33762f681c60946fa52f5
 
 ---
 
 
 # Visa resurser
 
-Du kan visa en lista över alla resurser (scheman, klasser, mixins och datatyper) i en behållare genom att utföra en GET-begäran.
+Du kan visa en lista över alla resurser i schemaregistret av en viss typ (klasser, mixins, scheman, datatyper eller beskrivningar) i en behållare genom att utföra en GET-begäran.
 
 >[!NOTE] När resurser listas begränsas resultatmängden till 300 objekt. Om du vill returnera resurser som överskrider den här gränsen måste du använda [sidindelningsparametrar](#paging). Vi rekommenderar också att du använder frågeparametrar för att [filtrera resultaten](#filtering) och minska antalet returnerade resurser.
->
-> Om du vill åsidosätta gränsen på 300 objekt helt måste du använda huvudet Godkänn `application/vnd.adobe.xdm-v2+json` för att returnera alla resultat i en enda begäran.
 
 **API-format**
 
@@ -27,7 +25,7 @@ GET /{CONTAINER_ID}/{RESOURCE_TYPE}?{QUERY_PARAMS}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{CONTAINER_ID}` | Behållaren där resurserna finns (&quot;global&quot; eller&quot;tenant&quot;). |
-| `{RESOURCE_TYPE}` | Den typ av resurs som ska hämtas från schemabiblioteket. Giltiga typer är `datatypes`, `mixins`, `schemas`och `classes`. |
+| `{RESOURCE_TYPE}` | Den typ av resurs som ska hämtas från schemabiblioteket. Giltiga typer är `classes`, `mixins`, `schemas`, `datatypes`och `descriptors`. |
 | `{QUERY_PARAMS`} | Valfria frågeparametrar för att filtrera resultat efter. Mer information finns i avsnittet om [frågeparametrar](#query) . |
 
 **Begäran**
@@ -48,7 +46,7 @@ Svarsformatet beror på vilket Acceptera-huvud som skickas i begäran. Följande
 | ------- | ------------ |
 | application/vnd.adobe.xed-id+json | Returnerar en kort sammanfattning av varje resurs. Det här är det rekommenderade huvudet för att lista resurser. (Gräns: 300) |
 | application/vnd.adobe.xed+json | Returnerar det fullständiga JSON-schemat för varje resurs, med ursprungligt `$ref` och `allOf` inkluderat. (Gräns: 300) |
-| application/vnd.adobe.xdm-v2+json | Returnerar det fullständiga JSON-schemat för alla resultat i en enda begäran, vilket åsidosätter gränsen på 300 objekt. |
+| application/vnd.adobe.xdm-v2+json | När du använder `/descriptors` slutpunkten måste du använda denna Accept-rubrik för att kunna använda sidindelningsfunktionerna. |
 
 **Svar**
 
