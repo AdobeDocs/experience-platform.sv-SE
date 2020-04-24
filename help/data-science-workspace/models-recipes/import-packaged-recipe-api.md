@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Importera ett paketerat recept (API)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: ebf7c883ce89fdf8b0d468ab21d1c3a1ba8aca06
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -46,7 +46,7 @@ Beroende på vilken typ av paketerad mottagarfil som ska inkluderas som en del a
 - [Skapa en motor med en Docker URL](#create-an-engine-with-a-docker-url)
 - [Skapa en motor med en binär artefakt (utgått)](#create-an-engine-with-a-binary-artifact-deprecated)
 
-### Skapa en motor med en Docker URL
+### Skapa en motor med en Docker URL {#create-an-engine-with-a-docker-url}
 
 Om du vill skapa en motor med en paketerad mottagarfil som lagras i en Docker-behållare måste du ange Docker-URL:en till den paketerade mottagarfilen.
 
@@ -199,11 +199,11 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den nya
 
 Ett godkänt svar visar en JSON-nyttolast med information om den nya motorn. Nyckeln representerar den unika motoridentifieraren och krävs i nästa självstudie för att skapa en MLInstance. `id` Se till att motorns identifierare sparas innan du fortsätter till nästa steg.
 
-## Nästa steg
+## Nästa steg {#next-steps}
 
 Du har skapat en motor med API:t och en unik motoridentifierare har hämtats som en del av svarstexten. Du kan använda den här motoridentifieraren i nästa självstudiekurs när du lär dig hur du [skapar, utbildar och utvärderar en modell med API](./train-evaluate-model-api.md).
 
-### Skapa en motor med en binär artefakt (utgått)
+### Skapa en motor med en binär artefakt (utgått) {#create-an-engine-with-a-binary-artifact-deprecated}
 
 <!-- Will need to remove binary artifact documentation once the old flags are turned off -->
 
