@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Berika kundprofilen i realtid med maskininlärningsinsikter
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: b0b44f4aaf365f58086cfa17d27fbba6ed2a2a97
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -32,7 +32,7 @@ Förutom de ovannämnda dokumenten rekommenderar vi att du även granskar följa
 * [Grundläggande om schemakomposition](../../xdm/schema/composition.md): Beskriver XDM-scheman, byggstenar, principer och bästa metoder för att skapa scheman som ska användas i Experience Platform.
 * [Schemaredigeraren, genomgång](../../xdm/tutorials/create-schema-ui.md): Innehåller detaljerade anvisningar om hur du skapar scheman med Schemaredigeraren i Experience Platform.
 
-## Skapa ett utdatamaterial och en datauppsättning
+## Skapa ett utdatamaterial och en datauppsättning {#create-an-output-schema-and-dataset}
 
 Det första steget mot att berika kundprofilen i realtid med poängsättningsinsikter är att veta vilket verkligt objekt (som en person) era data definierar. Genom att förstå era data kan ni beskriva och utforma en struktur som betyder för era data, ungefär som att utforma en relationsdatabas.
 
@@ -73,7 +73,7 @@ Dispositionen av ett schema börjar med att tilldela en klass. Klasser definiera
 
 Nu när du har skapat en utdataschemauppsättning kan du fortsätta till nästa avsnitt för att konfigurera och aktivera dem för profilanrikning.
 
-## Konfigurera ett utdataschema och en datauppsättning
+## Konfigurera ett utdataschema och en datauppsättning {#configure-an-output-schema-and-dataset}
 
 Innan du kan aktivera en datauppsättning för profil måste du konfigurera datasetens schema så att det har ett primärt identitetsfält och sedan aktivera schemat för profil. Om du vill skapa och aktivera ett nytt schema kan du gå till självstudiekursen om hur du [skapar ett schema med Schemaredigeraren](../../xdm/tutorials/create-schema-ui.md). Följ annars instruktionerna nedan för att aktivera ett befintligt schema och en befintlig datauppsättning.
 
@@ -97,7 +97,7 @@ Innan du kan aktivera en datauppsättning för profil måste du konfigurera data
 
 När data hämtas in till en profilaktiverad datauppsättning, hämtas samma data även som profilposter. Nu när ditt schema och din datauppsättning har förberetts kan du generera data i datauppsättningen genom att utföra poängkörningar med en lämplig modell, och fortsätta med den här självstudiekursen för att skapa insikter med hjälp av Segment Builder.
 
-## Skapa segment med segmentverktyget
+## Skapa segment med segmentverktyget {#create-segments-using-the-segment-builder}
 
 Nu när du har genererat och inhämtat insikter i din profilaktiverade datauppsättning kan du hantera dessa data genom att identifiera deluppsättningar av relaterade element med hjälp av segmentbyggaren. Följ stegen nedan för att skapa egna segment.
 
@@ -117,6 +117,6 @@ Nu när du har genererat och inhämtat insikter i din profilaktiverade dataupps�
    ![](../images/models-recipes/enrich-rtcdp/save_segment.png)
 
 
-## Nästa steg
+## Nästa steg {#next-steps}
 
 I det här dokumentet gick du igenom de steg som krävs för att aktivera ett schema och en datauppsättning för profil och demonstrerade kortfattat arbetsflödet för att skapa insiktssegment med hjälp av segmentbyggaren. Mer information om segment och segmentbyggaren finns i Översikt över [segmenteringstjänsten](../../segmentation/home.md).
