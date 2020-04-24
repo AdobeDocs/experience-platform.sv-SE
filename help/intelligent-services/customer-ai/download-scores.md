@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Ladda ned bakgrundsmusik i kundens AI
 topic: Downloading scores
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: 387cbdebccb9ae54a2907d1afe220e9711927ca6
 
 ---
 
@@ -34,7 +34,7 @@ En ny dialogruta visas med en länk till dokumentationen för nedladdning av bak
 
 ![Datauppsättnings-ID](./images/download-scores/access-scores.png)
 
-## Hämta ditt batch-ID
+## Hämta ditt batch-ID {#retrieve-your-batch-id}
 
 Om du använder ditt datauppsättnings-ID från föregående steg måste du ringa ett anrop till katalog-API:t för att hämta ett batch-ID. Ytterligare frågeparametrar används för detta API-anrop för att returnera en enda batch i stället för en lista med batchar som tillhör din organisation. Mer information om vilka typer av frågeparametrar som finns tillgängliga finns i guiden om [filtrering av katalogdata med hjälp av frågeparametrar](../../catalog/api/filter-data.md).
 
@@ -98,7 +98,7 @@ Inom poängets batch-ID-objekt finns en `relatedObjects` array. Arrayen innehål
 }
 ```
 
-## Hämta nästa API-anrop med ditt batch-ID
+## Hämta nästa API-anrop med ditt batch-ID {#retrieve-the-next-api-call-with-your-batch-id}
 
 När du har ditt batch-ID kan du göra en ny GET-förfrågan till `/batches`. Begäran returnerar en länk som används som nästa API-begäran.
 
@@ -152,7 +152,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller ett `_links` objekt. I
 }
 ```
 
-## Hämta dina filer
+## Hämta dina filer {#retrieving-your-files}
 
 Använd det `href` värde du fick i föregående steg som ett API-anrop för att skapa en ny GET-begäran för att hämta din filkatalog.
 
