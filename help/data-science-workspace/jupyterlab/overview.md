@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användarhandbok för JupyterLab
 topic: Overview
 translation-type: tm+mt
-source-git-commit: d42a5de7094d305249b05454ce4aba79776a46e1
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -51,16 +51,16 @@ Information om de viktigaste funktionerna i JupyterLab och anvisningar om hur du
 * [Kodceller](#code-cells)
 * [Kernlar](#kernels)
 * [Kernel-sessioner](#kernel-sessions)
-* [Körningsresurs för PySpark/Spark](#pysparkspark-execution-resource)
+* [Körningsresurs för PySpark/Spark](#execution-resource)
 * [Startprogram](#launcher)
 
-### Åtkomst till JupyterLab
+### Åtkomst till JupyterLab {#access-jupyterlab}
 
 I [Adobe Experience Platform](https://platform.adobe.com)väljer du **Anteckningsböcker** i den vänstra navigeringskolumnen. Ge JupyterLab lite tid att initiera helt.
 
 ![](../images/jupyterlab/user-guide/access_jupyterlab.png)
 
-### Gränssnittet JupyterLab
+### Gränssnittet JupyterLab {#jupyterlab-interface}
 
 Gränssnittet JupyterLab består av en menyrad, ett fällbart sidofält och huvudarbetsytan som innehåller flikar med dokument och aktiviteter.
 
@@ -98,7 +98,7 @@ På huvudarbetsytan i JupyterLab kan du ordna dokument och andra aktiviteter i f
 
 ![](../images/jupyterlab/user-guide/main_work_area.gif)
 
-### Kodceller
+### Kodceller {#code-cells}
 
 Kodceller är det primära innehållet i anteckningsböcker. De innehåller källkod på samma språk som anteckningsbokens associerade kärna och utdata som ett resultat av körningen av kodcellen. Ett körningsantal visas till höger om varje kodcell som representerar dess körningsordning.
 
@@ -130,7 +130,7 @@ Vissa funktioner är begränsade till särskilda kärnor enligt tabellen nedan:
 | **Spark - borttagen** | Nej | <ul><li>Sensei ML Framework</li><li>Katalogtjänst</li></ul> |
 | **Scala** | Nej | <ul><li>Sensei ML Framework</li><li>Katalogtjänst</li></ul> |
 
-### Kernel-sessioner
+### Kernel-sessioner {#kernel-sessions}
 
 Varje aktiv anteckningsbok eller aktivitet på JupyterLab använder en kernel-session. Alla aktiva sessioner kan hittas genom att expandera fliken **Löpande terminaler och kerrar** från vänster sidofält. Den bärbara datorns typ och tillstånd för kärnan kan identifieras genom att man observerar den övre högra delen av gränssnittet. I diagrammet nedan är anteckningsbokens tillhörande kärna **Python 3** och det aktuella läget representeras av en grå cirkel till höger. En ihålig cirkel innebär en inaktiv kärna och en fylld cirkel betyder en upptagen kärna.
 
@@ -193,7 +193,7 @@ Alla konfigurerbara egenskaper visas i tabellen nedan:
 | name | Programmets namn | string |
 | conf | Spark-konfigurationsegenskap | Karta över nyckel=val |
 
-### Startprogram
+### Startprogram {#launcher}
 
 [//]: # (Talk about the different Notebooks, introduce that certain starter notebooks are limited to particular kernels)
 
@@ -799,7 +799,7 @@ timedf.show()
 | python | 3.6.7 |
 | mkl-rt | 11.1 |
 
-## Valfria SQL-flaggor för frågetjänsten
+## Valfria SQL-flaggor för frågetjänsten {#optional-sql-flags-for-query-service}
 
 Den här tabellen visar de valfria SQL-flaggor som kan användas för frågetjänsten.
 
