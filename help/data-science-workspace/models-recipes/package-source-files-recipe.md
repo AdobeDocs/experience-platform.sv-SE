@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Paketera källfiler i ett recept
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 4001e4fd6a2e04a04e7ea594175d9e3e5c8a00d6
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -29,7 +29,7 @@ Koncept att förstå:
 
 Recipe-skapandet börjar med att paketera källfiler för att skapa en arkivfil. Källfiler definierar den maskininlärningslogik och de algoritmer som används för att lösa ett specifikt problem och skrivs antingen i Python, R, PySpark eller Scala. De inbyggda arkivfilerna har formen av en Docker-bild. När den packade arkivfilen har skapats importeras den till arbetsytan Data Science för att skapa ett recept [i användargränssnittet](./import-packaged-recipe-ui.md) eller [med API:t](./import-packaged-recipe-api.md).
 
-### Skapa modeller med Docker
+### Skapa modeller med Docker {#docker-based-model-authoring}
 
 Med en Docker-bild kan utvecklare paketera ett program med alla delar som behövs, till exempel bibliotek och andra beroenden, och skicka ut det som ett paket.
 
@@ -64,7 +64,7 @@ Observera värdena för *Docker Host*, *UserName* och *Password*. Dessa används
 
 ### Paketera källfilerna
 
-Börja med att hämta exempelkodbasen som finns i <a href="https://github.com/adobe/experience-platform-dsw-reference" target="_blank">Experience Platform Data Science Workspace Reference</a> .
+Börja med att hämta exempelkodbasen som finns i referensdatabasen för <a href="https://github.com/adobe/experience-platform-dsw-reference" target="_blank">Experience Platform Data Science Workspace</a> .
 
 - [Skapa Python Docker-bild](#python-docker)
 - [Bygg R Docker-bild](#r-docker)
