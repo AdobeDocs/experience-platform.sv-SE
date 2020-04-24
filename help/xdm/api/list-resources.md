@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Visa resurser
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: fe7b6acf86ebf39da728bb091334785a24d86b49
+source-git-commit: 4b052cdd3aca9c771855b2dc2a97ca48c7b8ffb0
 
 ---
 
@@ -12,6 +12,10 @@ source-git-commit: fe7b6acf86ebf39da728bb091334785a24d86b49
 # Visa resurser
 
 Du kan visa en lista över alla resurser (scheman, klasser, mixins och datatyper) i en behållare genom att utföra en GET-begäran.
+
+>[!NOTE] När resurser listas begränsas resultatmängden till 300 objekt. Om du vill returnera resurser som överskrider den här gränsen måste du använda [sidindelningsparametrar](#paging). Vi rekommenderar också att du använder frågeparametrar för att [filtrera resultaten](#filtering) och minska antalet returnerade resurser.
+>
+> Om du vill åsidosätta gränsen på 300 objekt helt måste du använda huvudet Godkänn `application/vnd.adobe.xdm-v2+json` för att returnera alla resultat i en enda begäran.
 
 **API-format**
 
@@ -42,8 +46,9 @@ Svarsformatet beror på vilket Acceptera-huvud som skickas i begäran. Följande
 
 | Acceptera rubrik | Beskrivning |
 | ------- | ------------ |
-| application/vnd.adobe.xed-id+json | Returnerar en kort sammanfattning av varje resurs, vanligtvis det huvud som ska listas |
-| application/vnd.adobe.xed+json | Returnerar ett fullständigt JSON-schema för varje resurs, med ursprungligt `$ref` och `allOf` inkluderat |
+| application/vnd.adobe.xed-id+json | Returnerar en kort sammanfattning av varje resurs. Det här är det rekommenderade huvudet för att lista resurser. (Gräns: 300) |
+| application/vnd.adobe.xed+json | Returnerar det fullständiga JSON-schemat för varje resurs, med ursprungligt `$ref` och `allOf` inkluderat. (Gräns: 300) |
+| application/vnd.adobe.xdm-v2+json | Returnerar det fullständiga JSON-schemat för alla resultat i en enda begäran, vilket åsidosätter gränsen på 300 objekt. |
 
 **Svar**
 
@@ -74,7 +79,7 @@ Schemaregistret har stöd för användning av frågeparametrar för att filtrera
 
 >[!NOTE] När du kombinerar flera frågeparametrar måste de avgränsas med et-tecken (`&`).
 
-### Sidindelning
+### Sidindelning {#paging}
 
 De vanligaste frågeparametrarna för sidindelning är:
 
@@ -84,7 +89,7 @@ De vanligaste frågeparametrarna för sidindelning är:
 | `limit` | Begränsa antalet returnerade resurser. Exempel: kommer `limit=5` att returnera en lista med fem resurser. |
 | `orderby` | Sortera resultaten efter en specifik egenskap. Exempel: `orderby=title` sorterar resultaten efter titel i stigande ordning (A-Z). Om du lägger till en `-` före-rubrik (`orderby=-title`) sorteras objekt efter rubrik i fallande ordning (Z-A). |
 
-### Filtrering
+### Filtrering {#filtering}
 
 Du kan filtrera resultat med hjälp av `property` parametern, som används för att tillämpa en viss operator på en viss JSON-egenskap i de hämtade resurserna. Operatorer som stöds är:
 
