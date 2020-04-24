@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Utvecklarhandbok för SDK
 topic: Overview
 translation-type: tm+mt
-source-git-commit: 897e897c80421c8eddd779222ddfa20298e72298
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -13,18 +13,9 @@ source-git-commit: 897e897c80421c8eddd779222ddfa20298e72298
 
 Med SDK för modellredigering kan du utveckla anpassade maskininlärningsrecept och funktionspipeliner som kan användas i Adobe Experience Platform Data Science Workspace och tillhandahålla implementerbara mallar i PySpark och Spark.
 
-Det här dokumentet innehåller information om de olika klasserna i SDK för modellredigering:
+Det här dokumentet innehåller information om de olika klasser som finns i SDK för modellredigering.
 
-- [DataLoader](#dataloader)
-   - [Läsa in data från en plattformsdatauppsättning](#load-data-from-a-platform-dataset)
-- [DataSaver](#datasaver)
-   - [Spara data i en plattformsdatauppsättning](#save-data-to-a-platform-dataset)
-- [DatasetTransformer](#datasettransformer)
-- [FeaturePipelineFactory](#featurepipelinefactory)
-- [PipelineFactory](#pipelinefactory)
-- [MLEvaluator](#mlevaluator)
-
-## DataLoader
+## DataLoader {#dataloader}
 
 Klassen DataLoader kapslar in allt som rör hämtning, filtrering och returnering av rådata. Exempel på indata är sådana som används för utbildning, poängsättning eller funktionsteknik. Datainläsare utökar den abstrakta klassen `DataLoader` och måste åsidosätta den abstrakta metoden `load`.
 
@@ -83,7 +74,7 @@ I följande tabell beskrivs de abstrakta metoderna för en Spark Data Loader-kla
     </tbody>
 </table>
 
-### Läsa in data från en plattformsdatauppsättning
+### Läsa in data från en plattformsdatauppsättning {#load-data-from-a-platform-dataset}
 
 Följande exempel hämtar plattformsdata efter ID och returnerar en DataFrame, där datauppsättnings-ID (`datasetId`) är en definierad egenskap i konfigurationsfilen.
 
@@ -199,7 +190,7 @@ class MyDataLoader extends DataLoader {
 }
 ```
 
-## DataSaver
+## DataSaver {#datasaver}
 
 Klassen DataSaver kapslar in allt som rör lagring av utdata, inklusive data från poängsättning eller funktionsteknik. Datasparare utökar den abstrakta klassen `DataSaver` och måste åsidosätta den abstrakta metoden `save`.
 
@@ -258,7 +249,7 @@ I följande tabell beskrivs de abstrakta metoderna för en Spark Data Saver-klas
     </tbody>
 </table>
 
-### Spara data i en plattformsdatauppsättning
+### Spara data i en plattformsdatauppsättning {#save-data-to-a-platform-dataset}
 
 För att kunna lagra data på en plattformsdatauppsättning måste egenskaperna antingen anges eller definieras i konfigurationsfilen:
 
@@ -398,7 +389,7 @@ class ScoringDataSaver extends DataSaver {
 }
 ```
 
-## DatasetTransformer
+## DatasetTransformer {#datasettransformer}
 
 Klassen DatasetTransformer ändrar och omformar strukturen i en datauppsättning. Sensei Machine Learning Runtime kräver inte att den här komponenten definieras och implementeras utifrån dina krav.
 
@@ -459,7 +450,7 @@ I följande tabell beskrivs de abstrakta metoderna för en transformerarklass f�
     </tbody>
 </table>
 
-## FeaturePipelineFactory
+## FeaturePipelineFactory {#featurepipelinefactory}
 
 Klassen FeaturePipelineFactory innehåller funktionsextraheringsalgoritmer och definierar faserna i en funktionspipeline från början till slut.
 
@@ -541,7 +532,7 @@ I följande tabell beskrivs klassmetoderna för en Spark FeaturePipelineFactory:
     </tbody>
 </table>
 
-## PipelineFactory
+## PipelineFactory {#pipelinefactory}
 
 Klassen PipelineFactory kapslar metoder och definitioner för modellutbildning och poängsättning, där utbildningslogik och algoritmer definieras i form av en Spark Pipeline.
 
@@ -650,7 +641,7 @@ I följande tabell beskrivs klassmetoderna för en Spark PipelineFactory:
     </tbody>
 </table>
 
-## MLEvaluator
+## MLEvaluator {#mlevaluator}
 
 Klassen MLEvaluator innehåller metoder för att definiera mätvärden för utvärdering och för att fastställa data för utbildning och testning.
 
