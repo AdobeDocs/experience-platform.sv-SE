@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Utbildning och utvärdering av modell (UI)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -79,7 +79,7 @@ Den här självstudiekursen kräver en befintlig recept. Om du inte har någon r
 
 Den här självstudiekursen gick igenom hur du skapar, utbildar och utvärderar en modell i Data Science Workspace. När du har kommit fram till en optimerad modell kan du använda den utbildade modellen för att generera insikter genom att följa [Score a Model i självstudiekursen för användargränssnittet](./score-model-ui.md) .
 
-## Referens
+## Referens {#reference}
 
 ### Detaljhandelsförsäljningens mottagarkonfigurationer
 
