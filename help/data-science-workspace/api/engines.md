@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Motorer
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
+source-git-commit: 45f310eb5747300e13f3c57b3f979c983a03d49d
 
 ---
 
@@ -22,7 +22,7 @@ Docker-registerautentiseringsuppgifterna krävs för att överföra en paketerad
 
 **API-format**
 
-```http
+```https
 GET /engines/dockerRegistry
 ```
 
@@ -57,7 +57,7 @@ Du kan skapa en motor genom att utföra en POST-begäran samtidigt som du anger 
 
 **API-format**
 
-```http
+```https
 POST /engines
 ```
 
@@ -165,13 +165,93 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den nya
 }
 ```
 
+## Skapa en rörlig funktionsmotor med Docker URL:er {#feature-pipeline-docker}
+
+Du kan skapa en rörlig funktionsmotor genom att utföra en POST-begäran samtidigt som du anger dess metadata och en Docker URL som refererar till en Docker-bild.
+
+**API-format**
+
+```https
+POST /engines
+```
+
+**Begäran**
+
+```shell
+curl -X POST \
+ https://platform.adobe.io/data/sensei/engines \
+    -H 'Authorization: Bearer ' \
+    -H 'x-gw-ims-org-id: 20655D0F5B9875B20A495E23@AdobeOrg' \
+    -H 'Content-Type: application/vnd.adobe.platform.sensei+json;profile=engine.v1.json' \
+    -H 'x-api-key: acp_foundation_machineLearning' \
+    -H 'Content-Type: text/plain' \
+    -F '{
+    "type": "PySpark",
+    "algorithm":"fp",
+    "name": "Feature_Pipeline_Engine",
+    "description": "Feature_Pipeline_Engine",
+    "mlLibrary": "databricks-spark",
+    "artifacts": {
+       "default": {
+           "image": {
+                "location": "v7d1cs2mimnlttw.azurecr.io/ml-featurepipeline-pyspark:0.2.1",
+                "name": "datatransformation",
+                "executionType": "PySpark",
+                "packagingType": "docker"
+            },
+           "defaultMLInstanceConfigs": [
+           ]
+       }
+   }
+}'
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `type` | Motorns körningstyp. Detta värde motsvarar det språk som Docker-bilden bygger på. Värdet kan anges till Spark eller PySpark. |
+| `algorithm` | Den algoritm som används, ställ in det här värdet på `fp` (funktionspipeline). |
+| `name` | Namnet på funktionspipeline-motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i gränssnittet som mottagarens namn. |
+| `description` | En valfri beskrivning av motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i gränssnittet som mottagarens beskrivning. Den här egenskapen är obligatorisk. Om du inte vill ange en beskrivning anger du värdet som en tom sträng. |
+| `mlLibrary` | Ett fält som krävs när du skapar motorer för PySpark- och Scala-recept. Det här fältet måste anges till `databricks-spark`. |
+| `artifacts.default.image.location` | Docker-bildens plats. Endast Azure ACR eller Public (unauthenticated) Dockerhub stöds. |
+| `artifacts.default.image.executionType` | Motorns körningstyp. Detta värde motsvarar det språk som Docker-bilden bygger på. Detta kan vara antingen &quot;Spark&quot; eller &quot;PySpark&quot;. |
+| `artifacts.default.image.packagingType` | Motorns paketeringstyp. Värdet ska anges till `docker`. |
+
+**Svar**
+
+Ett godkänt svar returnerar en nyttolast som innehåller information om den nya funktionspipelinmotorn, inklusive dess unika identifierare (`id`). Följande exempelsvar gäller en PySpark-funktionspipelinenmotor.
+
+```json
+{
+    "id": "88236891-4309-4fd9-acd0-3de7827cecd1",
+    "name": "Feature_Pipeline_Engine",
+    "description": "Feature_Pipeline_Engine",
+    "type": "PySpark",
+    "algorithm": "fp",
+    "mlLibrary": "databricks-spark",
+    "created": "2020-04-24T20:46:58.382Z",
+    "updated": "2020-04-24T20:46:58.382Z",
+    "deprecated": false,
+    "artifacts": {
+        "default": {
+            "image": {
+                "location": "v7d1cs3mimnlttw.azurecr.io/ml-featurepipeline-pyspark:0.2.1",
+                "name": "datatransformation",
+                "executionType": "PySpark",
+                "packagingType": "docker"
+            }
+        }
+    }
+}
+```
+
 ## Hämta en lista med motorer
 
 Du kan hämta en lista över motorer genom att utföra en enda GET-begäran. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](./appendix.md#query)av resurser i bilagan.
 
 **API-format**
 
-```http
+```https
 GET /engines
 GET /engines?parameter_1=value_1
 GET /engines?parameter_1=value_1&parameter_2=value_2
@@ -246,7 +326,7 @@ Du kan hämta information om en specifik motor genom att utföra en GET-begäran
 
 **API-format**
 
-```http
+```https
 GET /engines/{ENGINE_ID}
 ```
 
@@ -321,7 +401,7 @@ Följande exempel på API-anrop uppdaterar en motors namn och beskrivning samtid
 
 **API-format**
 
-```http
+```https
 PUT /engines/{ENGINE_ID}
 ```
 
@@ -389,7 +469,7 @@ Du kan ta bort en motor genom att utföra en DELETE-begäran och ange målmotorn
 
 **API-format**
 
-```http
+```https
 DELETE /engines/{ENGINE_ID}
 ```
 
@@ -429,7 +509,7 @@ Du kan skapa en motor med hjälp av lokala `.jar` eller `.egg` binära artefakte
 
 **API-format**
 
-```http
+```https
 POST /engines
 ```
 
@@ -498,7 +578,7 @@ Du kan skapa en rörlig funktionsmotor med hjälp av lokala `.jar` eller `.egg` 
 
 **API-format**
 
-```http
+```https
 POST /engines
 ```
 
