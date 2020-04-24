@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Schemalägg en modell (UI)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 541acd9e1df8a53ae372f71230a705fb6a95d92b
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -24,7 +24,7 @@ För att kunna slutföra den här självstudiekursen måste du ha tillgång till
 
 Den här självstudiekursen kräver en befintlig tjänst. Om du inte har någon tillgänglig tjänst att arbeta med kan du skapa en genom att följa [Publicera din modell som en tjänst i](./publish-model-service-ui.md) självstudiekursen.
 
-## Konfigurera schemalagd poängsättning
+## Konfigurera schemalagd poängsättning {#configure-scheduled-scoring}
 
 Modellpoäng kan konfigureras till en automatiserad process på schemalagd basis. När en tjänst har skapats kan du följa stegen nedan för att konfigurera och tillämpa ett poängschema:
 
@@ -41,7 +41,7 @@ Modellpoäng kan konfigureras till en automatiserad process på schemalagd basis
    ![](../images/models-recipes/schedule/service_with_scoring_schedule.png)
 
 
-## Konfigurera schemalagd utbildning
+## Konfigurera schemalagd utbildning {#configure-scheduled-training}
 
 När schemalagd utbildning konfigureras körs på en tjänst säkerställer du att maskininlärningsmodellen uppdateras till de senaste datamönstren. När en schemalagd utbildningskörning är avslutad används den resulterande utbildade modellen för att driva tjänsten fram till nästa schemalagda utbildningskurs.
 
