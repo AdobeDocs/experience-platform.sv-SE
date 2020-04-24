@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa och publicera genomgång av en maskininlärningsmodell
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: df85ea955b7a308e6be1e2149fcdfb4224facc53
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -47,7 +47,7 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
    * Grupper: Datauppsättningar består av grupper. En batch är en uppsättning data som samlats in under en tidsperiod och som bearbetas tillsammans som en enda enhet.
    * JupyterLab: [JupyterLab](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) är ett webbaserat gränssnitt med öppen källkod för Project Jupyter och är nära integrerat med Experience Platform.
 
-## Förbered data
+## Förbered data {#prepare-your-data}
 
 Om du vill skapa en maskininlärningsmodell som gör personaliserade produktrekommendationer till dina kunder måste du analysera tidigare kundköp på din webbplats. I det här avsnittet beskrivs hur dessa data hämtas till Platform via Adobe Analytics och hur dessa data omvandlas till en funktionsuppsättning som kan användas av maskininlärningsmodellen.
 
@@ -68,7 +68,7 @@ De andra datauppsättningarna har fyllts i i automatiskt med grupper för förha
 | Indatauppsättning för rekommendationer | Rekommendationer, inmatningsschema | Analysdata omvandlas till en utbildningsdatamängd med hjälp av en funktionspipeline. Dessa data används för att utbilda maskininlärningsmodellen för produktrekommendationer. `itemid` och `userid` motsvarar en produkt som kunden köpt. |
 | Rekommendationer, utdatauppsättning | Rekommendationer, utdataschema | Den datauppsättning som bedömningsresultat lagras för innehåller en lista med rekommenderade produkter för varje kund. |
 
-## Skapa din modell
+## Skapa din modell {#author-your-model}
 
 Den andra komponenten i livscykeln för Data Science Workspace är utveckling av recept och modeller. Recept för produktrekommendationer är utformat för att generera produktrekommendationer i stor skala genom att använda tidigare inköpsdata och maskininlärning.
 
@@ -85,7 +85,7 @@ Recept är grunden för en modell eftersom de innehåller maskininlärningsalgor
 
 Du har nu granskat de in- och utdatamodeller som krävs av produktrekommendationsreceptet. Du kan nu fortsätta till nästa avsnitt för att ta reda på hur du skapar, utbildar och utvärderar en produktrekommendationsmodell.
 
-## Utbilda och utvärdera din modell
+## Utbilda och utvärdera din modell {#train-and-evaluate-your-model}
 
 Nu när dina data har förberetts och receptet är klart att användas kan du skapa, utbilda och utvärdera din maskininlärningsmodell.
 
@@ -130,7 +130,7 @@ Varje gång en utbildning har slutförts kan du se de resulterande utvärderings
 3. Du kan se datauppsättningen, schemat och konfigurationsparametrarna som används för varje utbildningskörning på rätt spår.
 4. Gå tillbaka till modellsidan och identifiera den utbildning som fungerar bäst genom att observera deras utvärderingsvärden.
 
-## Använd din modell
+## Använd din modell {#operationalize-your-model}
 
 Det sista steget i arbetsflödet för datavetenskap är att driftsätta din modell för att få poäng och ta del av insikter från ert datalager.
 
