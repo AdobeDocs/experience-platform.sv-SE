@@ -4,7 +4,7 @@ solution: Experience Platform
 title: MLInstances
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 01cfbc86516a05df36714b8c91666983f7a1b0e8
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -13,7 +13,7 @@ source-git-commit: 01cfbc86516a05df36714b8c91666983f7a1b0e8
 
 En MLInstance är en kombination av en befintlig [motor](./engines.md) med en lämplig uppsättning konfigurationer som definierar utbildningsparametrar, poängsättningsparametrar eller maskinvaruresurskonfigurationer.
 
-## Skapa en MLInstance
+## Skapa en MLInstance {#create-an-mlinstance}
 
 Du kan skapa en MLInstance genom att utföra en POST-begäran och samtidigt tillhandahålla en nyttolast för begäran som består av ett giltigt motor-ID (`{ENGINE_ID}`) och en lämplig uppsättning standardkonfigurationer.
 
