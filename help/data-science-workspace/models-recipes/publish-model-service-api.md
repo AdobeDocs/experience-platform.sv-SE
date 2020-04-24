@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Publicera en modell som en tjänst (API)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -123,7 +123,7 @@ Beroende på ditt specifika användningsfall och dina specifika krav är det fle
 
 Observera att en ML-tjänst kan skapas med en ML-instans utan schemaläggning av några utbildnings- eller poängsättningsexperiment. Sådan ML-tjänst skapar vanliga experimentenheter och en enda Experimentrunda för utbildning och poängsättning.
 
-### ML-tjänst med schemalagd utvärdering för bedömning
+### ML-tjänst med schemalagd utvärdering för bedömning {#ml-service-with-scheduled-experiment-for-scoring}
 
 Om du skapar en ML-tjänst genom att publicera en ML-instans med schemalagda utvärderingsprocesser för poängsättning skapas en vanlig experimententitet för utbildning. Den resulterande utbildnings-Experimentkörningen som genereras kommer att användas för alla schemalagda poängsättningsförsök. Kontrollera att du har de `mlInstanceId`, `trainingDataSetId`och `scoringDataSetId` obligatoriska data som behövs för att skapa ML-tjänsten och att de finns och är giltiga värden.
 
@@ -197,7 +197,7 @@ curl -X POST
 
 Från `JSON` svaret, tangenterna `trainingExperimentId` och `scoringExperimentId` antyder att en ny tränings- och poängsättningsexpert skapades för denna ML-tjänst. Objektets närvaro hänvisar till information om schemat för `scoringSchedule` bedömningsförsökskörning. Nyckeln i svaret refererar till den ML-tjänst du just har skapat. `id`
 
-### ML-tjänst med schemalagda experiment för utbildning och poängsättning
+### ML-tjänst med schemalagda experiment för utbildning och poängsättning {#ml-service-with-scheduled-experiments-for-training-and-scoring}
 
 Om du vill publicera en befintlig ML-instans som en ML-tjänst med schemalagda kurser och poängsättningsprovperioder måste du tillhandahålla både utbildnings- och poängscheman. När en ML-tjänst av den här konfigurationen skapas skapas även schemalagda experimentenheter för både utbildning och poängsättning. Observera att kursplaner och poängscheman inte behöver vara desamma. Under ett poängsättningsjobb kommer den senaste utbildningsmodellen som skapats av schemalagda kurser i Experiment Runs att hämtas och användas för den schemalagda poängsättningen.
 
@@ -281,7 +281,7 @@ curl -X POST "https://platform-int.adobe.io/data/sensei/mlServices"
 
 Tillägg av `trainingExperimentId` och `scoringExperimentId` i svarsorganet föreslår att expertenheter skapas för både utbildning och poängsättning. Förekomsten av `trainingSchedule` och `scoringSchedule` antyder att de ovannämnda expertenheterna för utbildning och poängsättning är inplanerade experiment. Nyckeln i svaret refererar till den ML-tjänst du just har skapat. `id`
 
-## Hämtar ML-tjänster
+## Hämtar ML-tjänster {#retrieving-ml-services}
 
 Att hämta en befintlig ML-tjänst är så enkelt som att göra en `GET` begäran till `/mlServices` slutpunkten. Kontrollera att du har ML-tjänstidentifieringen för den specifika ML-tjänst du försöker hämta.
 
