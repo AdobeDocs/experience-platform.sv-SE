@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa ett recept med Jupyter-anteckningsböcker
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 10f157e0c9f8ab6e487b7dc83416b9e3b2f324c4
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -12,18 +12,6 @@ source-git-commit: 10f157e0c9f8ab6e487b7dc83416b9e3b2f324c4
 # Skapa ett recept med Jupyter-anteckningsböcker
 
 Den här självstudiekursen går igenom två huvudavsnitt. Först skapar du en maskininlärningsmodell med hjälp av en mall i JupyterLab Notebook. Därefter ska du använda anteckningsboken för att hämta arbetsflöden i JupyterLab för att skapa ett recept i arbetsytan Data Science.
-- [Kom igång med JupyterLab-miljön för bärbara datorer](#get-started-with-the-jupyterlab-notebook-environment)
-- [Redigera filer](#make-edits-to-recipe-files)
-- [Kom igång med anteckningsboken i Recipe Builder](#get-started-with-the-recipe-builder-notebook)
-   - [Kravfil](#requirements-file)
-   - [Konfigurationsfiler](#configuration-files)
-   - [Utbilda datainläsare](#training-data-loader)
-   - [Inläsare av poängdata](#scoring-data-loader)
-   - [Pipeline-fil](#pipeline-file)
-   - [Utvärderarfil](#evaluator-file)
-   - [Data Saver-fil](#data-saver-file)
-- [Utbildning och poängsättning](#training-and-scoring)
-- [Skapa ett recept](#create-recipe)
 
 ## Nya koncept:
 
@@ -45,7 +33,7 @@ Med Recipe Builder-anteckningsboken kan du köra utbildning och poängsättning 
 
 När du klickar på anteckningsboken i Recipe Builder i startprogrammet öppnas anteckningsboken på fliken. Mallen som används i anteckningsboken är Python Retail Sales Forecasting Recipe, som också finns i [denna offentliga databas](https://github.com/adobe/experience-platform-dsw-reference/tree/master/recipes/python/retail/)
 
-Du kommer att märka att det finns ytterligare tre åtgärder i verktygsfältet: **Train**, **Score** och **Create Recipe**. De här ikonerna visas bara i Recipe Builder-anteckningsboken. Mer information om de här åtgärderna kommer att behandlas [i avsnittet](#training-and-scoring) Utbildning och poängsättning när du har skapat din recept i anteckningsboken.
+Du ser att det finns ytterligare tre åtgärder i verktygsfältet: - **[!UICONTROL Train]**, **[!UICONTROL Score]** och **[!UICONTROL Create Recipe]**. De här ikonerna visas bara i Recipe Builder-anteckningsboken. Mer information om de här åtgärderna kommer att behandlas [i avsnittet](#training-and-scoring) Utbildning och poängsättning när du har skapat din recept i anteckningsboken.
 
 ![](../images/jupyterlab/create-recipe/toolbar_actions.png)
 
@@ -69,7 +57,7 @@ Nu när du vet grunderna för JupyterLab-miljön kan du börja titta på de file
 - [Utvärderarfil](#evaluator-file)
 - [Data Saver-fil](#data-saver-file)
 
-### Kravfil
+### Kravfil {#requirements-file}
 
 Kravfilen används för att deklarera ytterligare bibliotek som du vill använda i receptet. Du kan ange versionsnumret om det finns ett beroende. Om du vill söka efter fler bibliotek går du till https://anaconda.org. Listan med de huvudbibliotek som redan används är:
 
@@ -84,7 +72,7 @@ data_access_sdk_python
 >[!NOTE]
 >Bibliotek eller specifika versioner som du lägger till kan vara inkompatibla med ovanstående bibliotek.
 
-### Konfigurationsfiler
+### Konfigurationsfiler {#configuration-files}
 
 Konfigurationsfilerna, `training.conf` och `scoring.conf`, används för att ange de datauppsättningar som du vill använda för utbildning och bedömning samt för att lägga till hyperparametrar. Det finns olika konfigurationer för utbildning och poängsättning.
 
@@ -108,7 +96,7 @@ Som standard ställs följande konfigurationsparametrar in åt dig när du anvä
 - `ML_FRAMEWORK_IMS_ML_TOKEN`
 - `ML_FRAMEWORK_IMS_TENANT_ID`
 
-## Utbilda datainläsare
+## Utbilda datainläsare {#training-data-loader}
 
 Syftet med inläsaren av utbildningsdata är att instansiera data som används för att skapa maskininlärningsmodellen. Vanligtvis finns det två åtgärder som inläsaren av utbildningsdata utför:
 - Läs in data från plattform
@@ -116,7 +104,7 @@ Syftet med inläsaren av utbildningsdata är att instansiera data som används f
 
 I följande två avsnitt går det längre att läsa in data och förbereda data.
 
-### Läser in data
+### Läser in data {#loading-data}
 
 I det här steget används [pandabilden](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html). Data kan läsas in från filer i Adobe Experience Platform med antingen Platform SDK (`platform_sdk`) eller från externa källor med pandas `read_csv()` eller `read_json()` funktioner.
 
@@ -126,11 +114,11 @@ I det här steget används [pandabilden](https://pandas.pydata.org/pandas-docs/s
 >[!NOTE]
 >I Recipe Builder-anteckningsboken läses data in via `platform_sdk` datainläsaren.
 
-### Plattforms-SDK
+### Plattforms-SDK {#platform-sdk}
 
 En ingående självstudiekurs om hur du använder `platform_sdk` datainläsaren finns i handboken [för](../authoring/platform-sdk.md)plattforms-SDK. Den här självstudiekursen innehåller information om autentisering av bygge, grundläggande läsning av data och grundläggande skrivande av data.
 
-### Externa källor
+### Externa källor {#external-sources}
 
 I det här avsnittet visas hur du importerar en JSON- eller CSV-fil till ett pandaobjekt. Officiell dokumentation från pandabiblioteket finns här:
 - [read_csv](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html)
@@ -180,7 +168,7 @@ df = prodreader.load(data_set_id=configProperties['trainingDataSetId'],
 
 Nu när du har tillgång till dina data kan du börja med dataförberedelser och funktionskonstruktion.
 
-### Datagenerering och -teknik
+### Datagenerering och -teknik {#data-preparation-and-feature-engineering}
 
 När data har lästs in, förbereds de och delas sedan upp i `train` - och `val` datauppsättningar. Exempelkod visas nedan:
 
@@ -222,7 +210,7 @@ Dessa data delas mellan `train` och `val` datauppsättning.
 
 Funktionen ska `load()` slutföras med `train` och `val` datauppsättningen som utdata.
 
-### Inläsare av poängdata
+### Inläsare av poängdata {#scoring-data-loader}
 
 Förfarandet för att läsa in data för poängsättning liknar inläsningen av utbildningsdata i `split()` funktionen. Vi använder SDK:n för dataåtkomst för att läsa in data från de `scoringDataSetId` som finns i vår `recipe.conf` fil.
 
@@ -292,11 +280,11 @@ df.dropna(0, inplace=True)
 
 Funktionen i din inläsare för betygsdata ska vara fullständig med betygsdatamängden som utdata. `load()`
 
-### Pipeline-fil
+### Pipeline-fil {#pipeline-file}
 
 Filen innehåller `pipeline.py` logik för utbildning och poängsättning.
 
-### Utbildning
+### Utbildning {#training}
 
 Syftet med kursen är att skapa en modell med hjälp av funktioner och etiketter i utbildningsdatauppsättningen.
 
@@ -341,7 +329,7 @@ def train(configProperties, data):
 
 Observera att beroende på vilket program du använder så har du argument i `GradientBoostingRegressor()` funktionen. `xTrainingDataset` ska innehålla de funktioner som används för utbildning och `yTrainingDataset` ska innehålla etiketter.
 
-### Poäng
+### Poäng {#scoring}
 
 Funktionen ska innehålla `score()` resultatalgoritmen och returnera ett mått som anger hur framgångsrik modellen är. Funktionen använder `score()` poängsättningsdatauppsättningsrubrikerna och den tränade modellen för att generera en uppsättning förutsedda funktioner. Dessa förväntade värden jämförs sedan med de faktiska funktionerna i poängdatauppsättningen. I det här exemplet använder `score()` funktionen den tränade modellen för att förutsäga funktioner med hjälp av etiketterna från resultatdatauppsättningen. De förväntade funktionerna returneras.
 
@@ -363,11 +351,11 @@ def score(configProperties, data, model):
     return data
 ```
 
-### Utvärderarfil
+### Utvärderarfil {#evaluator-file}
 
 Filen `evaluator.py` innehåller logik för hur du vill utvärdera ditt utbildade recept och hur dina utbildningsdata ska delas upp. I exemplet med detaljhandel inkluderas logiken för att läsa in och förbereda utbildningsdata. Vi går igenom de två avsnitten nedan.
 
-### Dela datauppsättningen
+### Dela datauppsättningen {#split-the-dataset}
 
 Dataledningsfasen för utbildning kräver att datauppsättningen delas för utbildning och testning. Dessa `val` data används implicit för att utvärdera modellen efter att den har tränats. Den här processen är skild från poängsättningen.
 
@@ -386,12 +374,12 @@ def split(self, configProperties={}, dataframe=None):
     return train, val
 ```
 
-### Utvärdera den utbildade modellen
+### Utvärdera den utbildade modellen {#evaluate-the-trained-model}
 
 Funktionen utförs `evaluate()` efter att modellen har tränats och returnerar ett mått som anger hur framgångsrik modellen är. Funktionen använder `evaluate()` testdatauppsättningsrubrikerna och den utbildade modellen för att förutsäga en uppsättning funktioner. Dessa förväntade värden jämförs sedan med de faktiska funktionerna i testdatauppsättningen. Vanliga bedömningsalgoritmer är:
 - [Genomsnittligt absolut procentfel (MAPE)](https://en.wikipedia.org/wiki/Mean_absolute_percentage_error)
 - [Medel absolut fel (MAE)](https://en.wikipedia.org/wiki/Mean_absolute_error)
-- [RMSE (Root-ean-square error)](https://en.wikipedia.org/wiki/Root-mean-square_deviation)
+- [RMSE (Root-Mean-square error)](https://en.wikipedia.org/wiki/Root-mean-square_deviation)
 
 
 Funktionen `evaluate()` i exemplet med försäljning inom detaljhandeln visas nedan:
@@ -415,7 +403,7 @@ def evaluate(self, data=[], model={}, configProperties={}):
 
 Observera att funktionen returnerar ett `metric` objekt som innehåller en array med utvärderingsmått. Dessa mätvärden kommer att användas för att utvärdera hur väl den utbildade modellen fungerar.
 
-### Data Saver-fil
+### Data Saver-fil {#data-saver-file}
 
 Filen `datasaver.py` innehåller `save()` funktionen som sparar din förutsägelse när du testar poängsättningen. Funktionen `save()` tar din förutsägelse och använder Experience Platform Catalog API:er för att skriva data till den `scoringResultsDataSetId` du har angett i `scoring.conf` filen.
 
@@ -448,17 +436,17 @@ def save(configProperties, prediction):
     print(prediction)
 ```
 
-## Utbildning och poängsättning
+## Utbildning och poängsättning {#training-and-scoring}
 
 När du har gjort ändringar i din bärbara dator och vill utbilda ditt recept kan du klicka på de tillhörande knapparna högst upp i fältet för att skapa en utbildning i cellen. När du klickar på knappen visas en logg med kommandon och utdata från utbildningsskriptet i anteckningsboken (under `evaluator.py` cellen). Conda installerar först alla beroenden, sedan initieras kursen.
 
-Observera att du måste genomföra en utbildning minst en gång innan du kan göra en poängsättning. Om du klickar på knappen **Kör poängsättning** får du poäng på den tränade modell som skapades under kursen. Poängskriptet visas under `datasaver.py`.
+Observera att du måste genomföra en utbildning minst en gång innan du kan göra en poängsättning. Om du klickar på **[!UICONTROL Run Scoring]** knappen får du poäng på den tränade modell som skapades under träningen. Poängskriptet visas under `datasaver.py`.
 
 Om du vill se dolda utdata lägger du till dem i slutet `debug` av utdatacellen och kör den igen.
 
-## Skapa recept
+## Skapa recept {#create-recipe}
 
-När du är klar med redigeringen av recept och nöjd med utbildnings-/poängsättningsresultatet kan du skapa ett recept från anteckningsboken genom att trycka på **Skapa recept** i den övre högra navigeringen.
+När du är klar med redigeringen av recept och nöjd med utbildnings-/poängsättningsresultatet kan du skapa ett recept från anteckningsboken genom att trycka **[!UICONTROL Create Recipe]** i den övre högra navigeringen.
 
 ![](../images/jupyterlab/create-recipe/create-recipe.png)
 
@@ -466,7 +454,7 @@ När du har tryckt på knappen uppmanas du att ange ett receptnamn. Det här nam
 
 ![](../images/jupyterlab/create-recipe/enter_recipe_name.png)
 
-När du trycker på **OK** kan du navigera till det nya receptet på [Adobe Experience Platform](https://platform.adobe.com/). Du kan klicka på knappen **Visa recept** för att gå till fliken **Recept** under **ML-modeller**
+När du trycker kan **[!UICONTROL Ok]** du navigera till det nya receptet på [Adobe Experience Platform](https://platform.adobe.com/). Du kan klicka på **[!UICONTROL View Recipes]** knappen för att gå till **[!UICONTROL Recipes]** fliken under **[!UICONTROL ML Models]**
 
 ![](../images/jupyterlab/create-recipe/recipe_creation_started.png)
 
@@ -480,13 +468,13 @@ När processen är klar ser receptet ut ungefär så här:
 > - Skapa inte recept i olika anteckningsböcker samtidigt
 
 
-## Nästa steg
+## Nästa steg {#next-steps}
 
 Genom att slutföra den här självstudiekursen har du lärt dig att skapa en maskininlärningsmodell i anteckningsboken för Recipe Builder. Du har också lärt dig hur du använder anteckningsboken för att hämta arbetsflöden i anteckningsboken för att skapa ett recept i arbetsytan Datavetenskap.
 
 Om du vill fortsätta lära dig hur du arbetar med resurser på arbetsytan Data Science kan du gå till listrutan Data Science Workspace-recept och -modeller.
 
-## Ytterligare resurser
+## Additional resources {#additional-resources}
 
 Följande video har utformats för att ge stöd för din förståelse för att bygga och driftsätta modeller.
 
