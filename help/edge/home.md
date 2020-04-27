@@ -4,7 +4,7 @@ seo-title: Hjälp för Adobe Experience Platform Web SDK
 description: Lär dig vad Adobe Experience Platform Web SDK är och hur det kan användas.
 seo-description: låta Adobe Experience Cloud-kunder interagera med de olika tjänsterna i Experience Cloud
 translation-type: tm+mt
-source-git-commit: 68361835437026c86af2402cc8400a3b3f32cb81
+source-git-commit: 6ad09df6f6867ebe057d0043dea4bc97de2b66b3
 
 ---
 
@@ -28,4 +28,4 @@ Adobe Experience Platform Web SDK ersätter följande SDK:
 
 Detta är inte bara en wrapper runt befintliga bibliotek. Det är en fullständig omskrivning. Syftet är att klara utmaningar med taggar som aktiveras i rätt ordning, inkonsekvens med versionsproblem i biblioteket och bättre beroendehantering. Det är ett nytt sätt att implementera Experience Cloud.
 
-Förutom ett nytt bibliotek finns det en ny slutpunkt som effektiviserar HTTP-begäranden till Adobes lösningar. Tidigare skickade Visitor.js ett blockerande anrop till besökar-ID-tjänsten och AT.js skickade ett anrop till Adobe Target, DIL.js skickade ett anrop till Adobe Audience Manager och slutligen skickade AppMeasurement.js ett anrop till Adobe Analytics. Det nya biblioteket och slutpunkten kan hämta ett ID, hämta en Target-upplevelse, skicka data till Audience Manager och överföra data till Adobe Experience Platform i ett enda anrop.
+Förutom ett nytt bibliotek finns det en ny slutpunkt som effektiviserar HTTP-begäranden till Adobes lösningar. Tidigare skickade Visitor.js ett blockerande anrop till besökar-ID-tjänsten och AT.js skickade ett anrop till Adobe Target, DIL.js skickade ett anrop till Adobe Audience Manager och slutligen skickade AppMeasurement.js ett anrop till Adobe Analytics. Det nya biblioteket och slutpunkten kan hämta ett ID, hämta en Target-upplevelse, skicka data till Audience Manager och skicka data till Adobe Experience Platform i ett enda samtal.
