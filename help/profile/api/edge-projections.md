@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: Utvecklarhandbok för kundprofil-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: 5aad9fa71051a58fe1c4678553f47077d81d23fc
+source-git-commit: bb7aad4de681316cc9f9fd1d9310695bd220adb1
 
 ---
 
@@ -136,7 +136,12 @@ curl -X POST \
       }'
 ```
 
-|Egenskap|Beskrivning||`type` **(obligatoriskt)** |Den typ av mål som ska skapas. Det enda godkända värdet, &quot;EDGE&quot;, skapar ett kantmål.||`dataCenters` **(obligatoriskt)** |En strängmatris som visar kanterna som projektionerna ska dirigeras mot. Kan innehålla ett eller flera av följande värden: &quot;OR1&quot; - USA, västra, &quot;VA5&quot; - USA, östra, &quot;NLD1&quot; - EMEA.||`ttl` **(obligatoriskt)** |Anger förfallodatum för projektion. Godkänt värdeintervall: 600 till 604800. Standardvärde: 3600.||`replicationPolicy` **(obligatoriskt)** |Definierar beteendet för datareplikeringen från navet till kanterna.  Värden som stöds: PROAKTIVT, REAKTIVT. Standardvärde: REAKTIV.|
+| Egenskap | Beskrivning |
+|---|---|
+| `type` **(Obligatoriskt)** | Den typ av mål som ska skapas. Det enda godkända värdet, &quot;EDGE&quot;, skapar ett kantmål. |
+| `dataCenters` **(Obligatoriskt)** | En strängmatris som visar kanterna som projektionerna ska dirigeras mot. Kan innehålla ett eller flera av följande värden: &quot;OR1&quot; - USA, västra, &quot;VA5&quot; - USA, östra, &quot;NLD1&quot; - EMEA. |
+| `ttl` **(Obligatoriskt)** | Anger förfallodatum för projektion. Godkänt värdeintervall: 600 till 604800. Standardvärde: 3600. |
+| `replicationPolicy` **(Obligatoriskt)** | Definierar beteendet för datareplikeringen från navet till kanterna.  Värden som stöds: PROAKTIVT, REAKTIVT. Standardvärde: REAKTIVT. |
 
 **Svar**
 
