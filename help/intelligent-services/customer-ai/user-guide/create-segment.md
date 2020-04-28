@@ -1,8 +1,14 @@
 ---
-source-git-commit: 1cf1e9c814601bdd4c7198463593be78452004dc
+keywords: Experience Platform;insights; customer ai;popular topics
+solution: Experience Platform
+title: Skapa kundsegment med förutbestämda poäng
+topic: Create a segment
 translation-type: tm+mt
+source-git-commit: 66ccea896846c1da4310c1077e2dc7066a258063
 
 ---
+
+
 # Skapa kundsegment med förutbestämda poäng
 
 När en förutsägelsekörning är klar används automatiskt förväntade benägenhetspoäng av profiler. Genom att förbättra profiler med kundens AI-poäng kan man skapa kundsegment för att hitta målgrupper baserat på deras benägenhetspoäng. I det här avsnittet beskrivs hur du skapar segment med hjälp av segmentverktyget. En mer robust självstudiekurs om hur du skapar segment finns i användarhandboken för [Segment Builder](../../../segmentation/tutorials/create-a-segment.md).
