@@ -2,9 +2,9 @@
 title: Hjälp för Adobe Experience Platform Web SDK
 seo-title: Hjälp för Adobe Experience Platform Web SDK
 description: Lär dig vad Adobe Experience Platform Web SDK är och hur det kan användas.
-seo-description: låta Adobe Experience Cloud-kunder interagera med de olika tjänsterna i Experience Cloud
+seo-description: gör det möjligt för kunder med Adobe Experience Cloud att interagera med de olika tjänsterna i Experience Cloud.
 translation-type: tm+mt
-source-git-commit: 6ad09df6f6867ebe057d0043dea4bc97de2b66b3
+source-git-commit: 5027ae2cd083631d7122346796ef93572c129d3f
 
 ---
 
