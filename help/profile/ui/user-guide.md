@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: Användarhandbok för kundprofil i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: b5412b891a9457fa5e801d1f0479fc59fb08bf1b
+source-git-commit: ab289f07475abcbe966c723423825fd392eb3615
 
 ---
 
@@ -73,7 +73,7 @@ Klicka på **Sammanfoga profiler** för att visa en lista över sammanfogningspr
 
 ![](../images/user-guide/profile-merge-policies.png)
 
-Mer information om hur du arbetar med sammanfogningsprinciper i användargränssnittet finns i [Användarhandboken](merge-policies.md)för sammanfogningsprinciper.
+Mer information om hur du arbetar med sammanfogningsprinciper i användargränssnittet finns i [användarhandboken](merge-policies.md)för sammanfogningsprinciper.
 
 ## Unionsschema
 
