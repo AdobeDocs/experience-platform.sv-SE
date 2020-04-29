@@ -4,19 +4,21 @@ solution: Experience Platform
 title: Översikt över partiell gruppinmatning i Adobe Experience Platform
 topic: overview
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: d560e8dd07e9590376728ae6575766cc382325a5
 
 ---
 
 
 
-# Partiellt batchintag
+# Delvis batchintag (beta)
 
 Partiell batchförbrukning är möjligheten att importera data som innehåller fel, upp till en viss tröskel. Med den här funktionen kan användare importera alla korrekta data till Adobe Experience Platform samtidigt som alla felaktiga data grupperas separat, tillsammans med information om varför de är ogiltiga.
 
 Det här dokumentet innehåller en självstudiekurs för hantering av partiell batchimport.
 
-I [bilagan](#partial-batch-ingestion-error-types) till den här självstudien finns dessutom en referens för feltyper av partiell gruppinmatning.
+I [bilagan](#appendix) till den här självstudien finns dessutom en referens för feltyper av partiell gruppinmatning.
+
+>[!IMPORTANT] Den här funktionen finns bara med API:t. Kontakta ditt team för att få tillgång till den här funktionen.
 
 ## Komma igång
 
@@ -47,7 +49,7 @@ Alla resurser i Experience Platform är isolerade till specifika virtuella sandl
 
 ## Aktivera en datauppsättning för partiell batchinmatning i API:t
 
->[!NOTE] I det här avsnittet beskrivs hur du aktiverar en datauppsättning för partiell batchimport med API:t. Instruktioner om hur du använder användargränssnittet finns i [Aktivera en datauppsättning för partiell batchförbrukning i](#enable-a-dataset-for-partial-batch-ingestion-in-the-ui) gränssnittssteget.
+<!-- >[!NOTE] This section describes enabling a dataset for partial batch ingestion using the API. For instructions on using the UI, please read the [enable a dataset for partial batch ingestion in the UI](#enable-a-dataset-for-partial-batch-ingestion-in-the-ui) step. -->
 
 Du kan skapa en ny datauppsättning eller ändra en befintlig datauppsättning med partiellt intag aktiverat.
 
@@ -71,35 +73,35 @@ Om du vill ändra en befintlig datauppsättning följer du stegen i [Utvecklarha
 
 I datauppsättningen måste du lägga till taggen som beskrivs ovan.
 
-## Aktivera en datauppsättning för partiell batchinmatning i användargränssnittet
+<!-- ## Enable a dataset for partial batch ingestion in the UI
 
->[!NOTE] I det här avsnittet beskrivs hur du aktiverar en datauppsättning för partiell batchimport med hjälp av användargränssnittet. Om du redan har aktiverat en datauppsättning för partiell gruppinmatning med API:t kan du hoppa fram till nästa avsnitt.
+>[!NOTE] This section describes enabling a dataset for partial batch ingestion using the UI. If you have already enabled a dataset for partial batch ingestion using the API, you can skip ahead to the next section.
 
-Om du vill aktivera en datauppsättning för partiellt intag via plattformsgränssnittet klickar du på **Datauppsättningar** i den vänstra navigeringen. Du kan antingen [skapa en ny datauppsättning](#create-a-new-dataset-with-partial-batch-ingestion-enabled) eller [ändra en befintlig datauppsättning](#modify-an-existing-dataset-to-enable-partial-batch-ingestion).
+To enable a dataset for partial ingestion through the Platform UI, click **Datasets** in the left navigation. You can either [create a new dataset](#create-a-new-dataset-with-partial-batch-ingestion-enabled) or [modify an existing dataset](#modify-an-existing-dataset-to-enable-partial-batch-ingestion).
 
-### Skapa en ny datauppsättning med partiell batchimport aktiverad
+### Create a new dataset with partial batch ingestion enabled
 
-Om du vill skapa en ny datauppsättning följer du stegen i användarhandboken för [datauppsättningen](../../catalog/datasets/user-guide.md). När du har kommit till *Konfigurera datauppsättning* ska du tänka på fälten *Partiell matning* och *Feldiagnostik* .
+To create a new dataset, follow the steps in the [dataset user guide](../../catalog/datasets/user-guide.md). Once you reach the *Configure dataset* step, take note of the *Partial Ingestion* and *Error Diagnostics* fields.
 
 ![](../images/batch-ingestion/partial-ingestion/configure-dataset-focus.png)
 
-Med *alternativet Partiellt* intag kan du aktivera eller inaktivera användning av partiell gruppinmatning.
+The *Partial ingestion* toggle allows you to enable or disable the use of partial batch ingestion.
 
-Växlingsknappen *Feldiagnostik* visas bara när *alternativet Partiellt* intag är inaktiverat. Med den här funktionen kan Platform generera detaljerade felmeddelanden om dina inkapslade batchar. Om *alternativet Delvis inmatning* är aktiverat aktiveras automatisk feldiagnostik.
+The *Error Diagnostics* toggle only appears when the *Partial Ingestion* toggle is off. This feature allows Platform to generate detailed error messages about your ingested batches. If the *Partial Ingestion* toggle is turned on, enhanced error diagnostics are automatically enforced.
 
 ![](../images/batch-ingestion/partial-ingestion/configure-dataset-partial-ingestion-focus.png)
 
-Med *feltröskeln* kan du ange procentandelen godtagbara fel innan hela gruppen misslyckas. Som standard är värdet 5 %.
+The *Error threshold* allows you to set the percentage of acceptable errors before the entire batch will fail. By default, this value is set to 5%.
 
-### Ändra en befintlig datauppsättning för att aktivera partiell batchinmatning
+### Modify an existing dataset to enable partial batch ingestion
 
-Om du vill ändra en befintlig datauppsättning markerar du den datauppsättning som du vill ändra. Sidlisten till höger innehåller information om datauppsättningen.
+To modify an existing dataset, select the dataset you want to modify. The sidebar on the right populates with information about the dataset. 
 
 ![](../images/batch-ingestion/partial-ingestion/modify-dataset-focus.png)
 
-Med *alternativet Partiellt* intag kan du aktivera eller inaktivera användning av partiell gruppinmatning.
+The *Partial ingestion* toggle allows you to enable or disable the use of partial batch ingestion.
 
-Med *feltröskeln* kan du ange procentandelen godtagbara fel innan hela gruppen misslyckas. Som standard är värdet 5 %.
+The *Error threshold* allows you to set the percentage of acceptable errors before the entire batch will fail. By default, this value is set to 5%. -->
 
 ## Hämta fel för partiell gruppinmatning
 
@@ -176,7 +178,7 @@ Om batchen har ett fel och feldiagnostik är aktiverat, kommer statusen att vara
 
 I den här självstudiekursen beskrivs hur du skapar eller ändrar en datauppsättning för att aktivera partiell gruppinmatning. Mer information om batchintag finns i Utvecklarhandbok för [batchintag](./api-overview.md).
 
-## Feltyper för partiell batchöverföring
+## Feltyper för partiell batchöverföring {#appendix}
 
 Delvis batchinmatning har fyra olika feltyper vid inmatning av data.
 
