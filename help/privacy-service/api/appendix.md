@@ -4,14 +4,14 @@ solution: Experience Platform
 title: Godkända ID-namnutrymmen och -kvalificerare
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: a1161630c8edae107b784f32ee20af225f9f8c46
+source-git-commit: cc296670db91640e75fd7a47b874a46eaf57ecde
 
 ---
 
 
 # Bilaga
 
-## Standardnamnutrymmen för identiteter
+## Standardnamnutrymmen för identiteter {#standard-namespaces}
 
 Alla identiteter som skickas till Integritetstjänsten måste anges under ett specifikt namnområde. Identitetsnamnutrymmen är en komponent i [Adobe Experience Platform Identity Service](../../identity-service/home.md) som anger det sammanhang som en identitet relateras till.
 
