@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Utforska en databas eller ett NoSQL-system med API:t för Flow Service
+title: Utforska en databas med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 4c34ecdaeb4a0df1faf2dd54e8a264b9126f20b4
+source-git-commit: c4162d88a688ce2028de08b63e7b7eab954a0e29
 
 ---
 
 
-# Utforska en databas eller ett NoSQL-system med API:t för Flow Service
+# Utforska en databas med API:t för Flow Service
 
 Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudien används API:t för Flow Service för att utforska databaser eller NoSQL-system.
+I den här självstudien används API:t för Flow Service för att utforska innehållet och filstrukturen i en tredjepartsdatabas.
 
 ## Komma igång
 
@@ -22,23 +22,11 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [Källor](../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som ni kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
 * [Sandlådor](../../../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ansluta till en databas eller ett NoSQL-system med API:t för Flow Service.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till en tredjepartsdatabas med API:t för Flow Service.
 
-### Hämta en basanslutning
+### Samla in nödvändiga inloggningsuppgifter
 
-För att kunna utforska din databas eller ett NoSQL-system som använder plattforms-API:er måste du ha ett giltigt basanslutnings-ID. Om du inte redan har en basanslutning för den databas eller det NoSQL-system du vill arbeta med kan du skapa en genom följande självstudier:
-
-* [Amazon Redshift](../create/databases/redshift.md)
-* [Apache Spark på Azure HDInsights ](../create/databases/spark.md)
-* [Azure Synapse Analytics](../create/databases/synapse-analytics.md)
-* [Azure Table Storage](../create/databases/ats.md)
-* [Google BigQuery](../create/databases/bigquery.md)
-* [Hive](../create/databases/hive.md)
-* [MariaDB](../create/databases/mariadb.md)
-* [MySQL](../create/databases/mysql.md)
-* [Phoenix](../create/databases/phoenix.md)
-* [PostgreSQL](../create/databases/postgres.md)
-* [SQL Server](../create/databases/sql-server.md)
+Den här självstudien kräver att du har en giltig anslutning till den tredjepartsdatabas som du vill importera data från. En giltig anslutning innefattar databasens anslutningsspecifikations-ID och anslutnings-ID. Mer information om hur du skapar en databasanslutning och hämtar dessa värden finns i [källanslutningsöversikten](./../../../home.md#database).
 
 ### Läser exempel-API-anrop
 
@@ -62,7 +50,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Utforska era datatabeller
 
-Genom att använda basanslutningen för databasen eller NoSQL-systemet kan du utforska dina datatabeller genom att utföra GET-begäranden. Använd följande anrop för att hitta sökvägen till tabellen som du vill inspektera eller importera till Platform.
+Med hjälp av anslutnings-ID:t för din databas kan du utforska dina datatabeller genom att utföra GET-begäranden. Använd följande anrop för att hitta sökvägen till tabellen som du vill inspektera eller importera till Platform.
 
 **API-format**
 
@@ -72,13 +60,13 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=root
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{BASE_CONNECTION_ID}` | ID för en databas eller NoSQL-basanslutning. |
+| `{BASE_CONNECTION_ID}` | ID:t för en databasanslutning. |
 
 **Begäran**
 
 ```shell
 curl -X GET \
-    'http://platform.adobe.io/data/foundation/flowservice/connections/54c22133-3a01-4d3b-8221-333a01bd3b03/explore?objectType=root' \
+    'https://platform.adobe.io/data/foundation/flowservice/connections/54c22133-3a01-4d3b-8221-333a01bd3b03/explore?objectType=root' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -87,7 +75,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en array med tabeller från din databas eller NoSQL-system. Leta reda på tabellen som du vill hämta till Platform och notera dess `path` egenskap, eftersom du måste ange den i nästa steg för att inspektera dess struktur.
+Ett lyckat svar returnerar en array med tabeller från databasen. Leta reda på tabellen som du vill hämta till Platform och notera dess `path` egenskap, eftersom du måste ange den i nästa steg för att inspektera dess struktur.
 
 ```json
 [
@@ -110,7 +98,7 @@ Ett lyckat svar returnerar en array med tabeller från din databas eller NoSQL-s
 
 ## Inspektera tabellstrukturen
 
-Om du vill inspektera strukturen för en tabell från databasen eller NoSQL-systemet utför du en GET-begäran och anger sökvägen till en tabell som en frågeparameter.
+Om du vill inspektera strukturen för en tabell från databasen, ska du utföra en GET-begäran samtidigt som du anger sökvägen till en tabell som en frågeparameter.
 
 **API-format**
 
@@ -120,14 +108,14 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=table&object={TABLE_PAT
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{BASE_CONNECTION_ID}` | ID för en databas eller NoSQL-basanslutning. |
+| `{BASE_CONNECTION_ID}` | ID:t för en databasanslutning. |
 | `{TABLE_PATH}` | Sökvägen till en tabell. |
 
 **Begäran**
 
 ```shell
 curl -X GET \
-    'http://platform.adobe.io/data/foundation/flowservice/connections/54c22133-3a01-4d3b-8221-333a01bd3b03/explore?objectType=table&object=test1.Mytable' \
+    'https://platform.adobe.io/data/foundation/flowservice/connections/54c22133-3a01-4d3b-8221-333a01bd3b03/explore?objectType=table&object=test1.Mytable' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -164,4 +152,4 @@ Ett lyckat svar returnerar strukturen för den angivna tabellen. Information om 
 
 ## Nästa steg
 
-I den här självstudiekursen har du undersökt din databas eller NoSQL-systemet, hittat sökvägen till tabellen som du vill importera till Platform och fått information om dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in data från din databas eller ett NoSQL-system och överföra dem till plattformen](../collect/database-nosql.md).
+Genom att följa den här självstudiekursen har du utforskat databasen, hittat sökvägen till tabellen som du vill importera till Platform och fått information om dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in data från din databas och överföra dem till Platform](../collect/database-nosql.md).
