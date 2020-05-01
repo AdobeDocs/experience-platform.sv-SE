@@ -4,7 +4,7 @@ seo-title: Spåra Adobe Experience Platform Web SDK-händelser
 description: Lär dig spåra Experience Platform Web SDK-händelser
 seo-description: Lär dig spåra Experience Platform Web SDK-händelser
 translation-type: tm+mt
-source-git-commit: a1161630c8edae107b784f32ee20af225f9f8c46
+source-git-commit: 3c6f9663ef5b83ceeb93539171017e2b282a613f
 
 ---
 
@@ -42,6 +42,9 @@ alloy("event", {
   }
 });
 ```
+
+>[!Note]
+>Det finns en gräns på 32 kB för de data som kan skickas i varje händelse i XDM-fältet.
 
 ### Skicka data som inte är XDM
 
