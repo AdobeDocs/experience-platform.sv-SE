@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform Source Connectors - översikt
 topic: overview
 translation-type: tm+mt
-source-git-commit: e81f138f933d4bb2c36260480e360dfacd412da0
+source-git-commit: 8ee88b27c79610827ff2627999e303b5fc43e1c6
 
 ---
 
@@ -67,12 +67,15 @@ Experience Platform har stöd för inmatning av data från en tredjepartsdatabas
 - [Amazon Redshift-kontakt](connectors/databases/redshift.md)
 - [Apache Hive på Azure HDInsights-kontakten](connectors/databases/hive.md)
 - [Apache Spark på Azure HDInsights-kontakten](connectors/databases/spark.md)
+- [Azure Data Explorer-koppling](connectors/databases/data-explorer.md)
 - [Azure Synapse Analytics-koppling](connectors/databases/synapse-analytics.md)
 - [Azure Table Storage-koppling](connectors/databases/ats.md)
 - [Google BigQuery-koppling](connectors/databases/bigquery.md)
+- [IBM DB2-anslutning](connectors/databases/ibm-db2.md)
 - [MariaDB-koppling](connectors/databases/mariadb.md)
 - [Microsoft SQL Server-anslutning](connectors/databases/sql-server.md)
 - [MySQL-koppling](connectors/databases/mysql.md)
+- [Oracle-koppling](connectors/databases/oracle.md)
 - [Phoenix-kontakt](connectors/databases/phoenix.md)
 - [PostgreSQL-koppling](connectors/databases/postgres.md)
 
