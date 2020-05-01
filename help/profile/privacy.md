@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Behandling av sekretessförfrågningar i kundprofil i realtid
 topic: overview
 translation-type: tm+mt
-source-git-commit: 5f0e0deb4a2fae636ac4d2313a6541c25309c294
+source-git-commit: cc296670db91640e75fd7a47b874a46eaf57ecde
 
 ---
 
@@ -33,7 +33,7 @@ Mer information om identitetsnamnutrymmen i Experience Platform finns i [översi
 
 ## Skicka begäranden {#submit}
 
->[!NOTE] I det här avsnittet beskrivs hur du formaterar sekretessförfrågningar för Data Lake. Vi rekommenderar att du läser igenom [sekretesstjänstens API](../privacy-service/api/getting-started.md) eller [sekretesstjänstens](../privacy-service/ui/overview.md) användargränssnittsdokumentation för att få information om hur du skickar ett sekretessjobb, inklusive hur du formaterar inskickade användaridentitetsdata i begärande nyttolaster.
+>[!NOTE] I det här avsnittet beskrivs hur du skapar sekretessförfrågningar för profildatalagret. Vi rekommenderar att du läser igenom [sekretesstjänstens API](../privacy-service/api/getting-started.md) eller [sekretesstjänstens](../privacy-service/ui/overview.md) användargränssnittsdokumentation för att få information om hur du skickar ett sekretessjobb, inklusive hur du formaterar inskickade användaridentitetsdata i begärande nyttolaster.
 
 I följande avsnitt beskrivs hur du gör sekretessförfrågningar för kundprofil i realtid och datasjön med hjälp av sekretesstjänstens API eller gränssnitt.
 
