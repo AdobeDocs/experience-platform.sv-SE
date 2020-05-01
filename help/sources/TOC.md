@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Source Connectors - hjälp
 translation-type: tm+mt
-source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
+source-git-commit: 30f36d18f0e670ede02041db04f1cc8be55d11a3
 
 ---
 
@@ -37,12 +37,15 @@ source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
       - [Amazon Redshift-kontakt](connectors/databases/redshift.md)
       - [Apache Hive på Azure HDInsights-kontakten](connectors/databases/hive.md)
       - [Apache Spark på Azure HDInsights-kontakten](connectors/databases/spark.md)
+      - [Azure Data Explorer-koppling](connectors/databases/data-explorer.md)
       - [Azure Synapse Analytics-koppling](connectors/databases/synapse-analytics.md)
       - [Azure Table Storage-koppling](connectors/databases/ats.md)
       - [Google BigQuery-koppling](connectors/databases/bigquery.md)
+      - [IBM DB2-anslutning](connectors/databases/ibm-db2.md)
       - [MariaDB-koppling](connectors/databases/mariadb.md)
       - [Microsoft SQL Server-anslutning](connectors/databases/sql-server.md)
       - [MySQL-koppling](connectors/databases/mysql.md)
+      - [Oracle-koppling](connectors/databases/oracle.md)
       - [Phoenix-kontakt](connectors/databases/phoenix.md)
       - [PostgreSQL-koppling](connectors/databases/postgres.md)
    - Automatisering av marknadsföring {#marketing-automation}
@@ -70,13 +73,16 @@ source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
          - [ServiceNow-koppling](tutorials/api/create/customer-success/servicenow.md)
       - Databaser {#databases}
          - [Amazon Redshift-kontakt](tutorials/api/create/databases/redshift.md)
+         - [Apache Hive på Azure HDInsights-kontakten](tutorials/api/create/databases/hive.md)
          - [Apache Spark på Azure HDInsights-kontakten](tutorials/api/create/databases/spark.md)
+         - [Azure Data Explorer-koppling](tutorials/api/create/databases/data-explorer.md)
          - [Azure Synapse Analytics-koppling](tutorials/api/create/databases/synapse-analytics.md)
          - [Azure Table Storage-koppling](tutorials/api/create/databases/ats.md)
          - [Google BigQuery-koppling](tutorials/api/create/databases/bigquery.md)
-         - [Hive-koppling](tutorials/api/create/databases/hive.md)
+         - [IBM DB2-anslutning](tutorials/api/create/databases/ibm-db2.md)
          - [MariaDB-koppling](tutorials/api/create/databases/mariadb.md)
          - [MySQL-koppling](tutorials/api/create/databases/mysql.md)
+         - [Oracle-koppling](tutorials/api/create/databases/oracle.md)
          - [Phoenix-kontakt](tutorials/api/create/databases/phoenix.md)
          - [PostgreSQL-koppling](tutorials/api/create/databases/postgres.md)
          - [SQL Server-koppling](tutorials/api/create/databases/sql-server.md)
@@ -126,16 +132,16 @@ source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
          - [ServiceNow-koppling](tutorials/ui/create/customer-success/servicenow.md)
       - Databaser {#databases}
          - [Amazon Redshift-kontakt](tutorials/ui/create/databases/redshift.md)
+         - [Apache Hive på Azure HDInsights-kontakten](tutorials/ui/create/databases/hive.md)
+         - [Apache Spark på Azure HDInsights-kontakten](tutorials/ui/create/databases/spark.md)
          - [Azure Synapse Analytics-koppling](tutorials/ui/create/databases/synapse-analytics.md)
          - [Azure Table Storage-koppling](tutorials/ui/create/databases/ats.md)
          - [Google Big Query-koppling](tutorials/ui/create/databases/bigquery.md)
-         - [Hive-koppling](tutorials/ui/create/databases/hive.md)
          - [MariaDB-koppling](tutorials/ui/create/databases/mariadb.md)
          - [Microsoft SQL Server-anslutning](tutorials/ui/create/databases/sql-server.md)
          - [MySQL-koppling](tutorials/ui/create/databases/mysql.md)
          - [Phoenix-kontakt](tutorials/ui/create/databases/phoenix.md)
          - [PostgreSQL-koppling](tutorials/ui/create/databases/postgres.md)
-         - [Spark-koppling](tutorials/ui/create/databases/spark.md)
       - Automatisering av marknadsföring {#marketing-automation}
          - [HubSpot-anslutning](tutorials/ui/create/marketing-automation/hubspot.md)
       - Betalningar {#payments}
