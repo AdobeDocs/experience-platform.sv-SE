@@ -1,23 +1,23 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Samla in data från en extern databas eller ett NoSQL-system via källanslutningar och API:er
+title: Samla in data från en tredjepartsdatabas via källanslutningar och API:er
 topic: overview
 translation-type: tm+mt
-source-git-commit: 00764a59629eb8a5a06ac28ad446084b0bdb2293
+source-git-commit: c4162d88a688ce2028de08b63e7b7eab954a0e29
 
 ---
 
 
-# Samla in data från en extern databas eller ett NoSQL-system via källanslutningar och API:er
+# Samla in data från en tredjepartsdatabas via källanslutningar och API:er
 
 Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-Den här självstudiekursen beskriver stegen för att hämta data från en databas eller ett NoSQL-system och hämta dem till plattformen via källanslutningar och API:er.
+Den här självstudiekursen beskriver stegen för att hämta data från en tredjepartsdatabas och hämta dem till plattformen via källanslutningar och API:er.
 
 ## Komma igång
 
-Den här självstudien kräver att du har tillgång till en tredjepartsdatabas eller ett NoSQL-system via en giltig basanslutning och information om filen som du vill hämta till plattformen, inklusive filens sökväg och struktur. Om du inte har den här informationen kan du gå till självstudiekursen om hur du [utforskar en databas eller ett NoSQL-system med API:t](../explore/database-nosql.md) för Flow Service innan du försöker med den här självstudiekursen.
+Den här självstudien kräver att du har en giltig anslutning till en tredjepartsdatabas, samt information om filen som du vill hämta till plattformen (inklusive filens sökväg och struktur). Om du inte har den här informationen kan du gå till självstudiekursen om hur du [utforskar en databas med API:t](../explore/database-nosql.md) för Flow Service innan du försöker med den här självstudiekursen.
 
 Den här självstudien kräver också att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
@@ -101,7 +101,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `baseConnectionId` | ID för en basanslutning för en databas eller ett NoSQL-system. |
+| `baseConnectionId` | ID:t för en databasanslutning. |
 | `data.schema.id` | The `$id` of the ad hoc XDM schema. |
 | `params.path` | Källfilens sökväg. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID för en databas eller ett NoSQL-system. |
@@ -463,7 +463,7 @@ Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusi
 }
 ```
 
-## Söka efter dataflödesspecifikationer {#specs}
+## Hämta dataflödesspecifikationer {#specs}
 
 Ett dataflöde ansvarar för att samla in data från källor och föra in dem i plattformen. För att kunna skapa ett dataflöde måste du först få dataflödesspecifikationerna genom att utföra en GET-begäran till API:t för Flow Service. Dataflödesspecifikationer används för att samla in data från en extern databas eller ett NoSQL-system.
 
@@ -648,16 +648,6 @@ curl -X POST \
         ],
         "transformations": [
             {
-                "name": "Copy",
-                "params": {
-                    "deltaColumn": {
-                        "name": "updatedAt",
-                        "dateFormat": "YYYY-MM-DD",
-                        "timezone": "UTC"
-                    }
-                }
-            },
-            {
                 "name": "Mapping",
                 "params": {
                     "mappingId": "ab91c736-1f3d-4b09-8424-311d3d3e3cea",
@@ -675,10 +665,10 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `flowSpec.id` | Det ID för dataflödesspecifikation som är kopplat till din databas eller NoSQL-system. |
-| `sourceConnectionIds` | Det källanslutnings-ID som är kopplat till databasen eller NoSQL-systemet. |
-| `targetConnectionIds` | Det målanslutnings-ID som är kopplat till databasen eller NoSQL-systemet. |
-| `transformations.params.mappingId` | Det mappnings-ID som är associerat med din databas eller NoSQL-systemet. |
+| `flowSpec.id` | Det ID för dataflödesspecifikation som är kopplat till databasen. |
+| `sourceConnectionIds` | Det källanslutnings-ID som är kopplat till databasen. |
+| `targetConnectionIds` | Det målanslutnings-ID som är kopplat till databasen. |
+| `transformations.params.mappingId` | Det mappnings-ID som är kopplat till databasen. |
 
 **Svar**
 
@@ -692,7 +682,30 @@ Ett godkänt svar returnerar ID:t (`id`) för det nya dataflödet.
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in data från en databas eller ett NoSQL-system på schemalagd basis. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan, t.ex. kundprofil i realtid och datavetenskapen. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in data från en tredjepartsdatabas på schemalagd basis. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan, t.ex. kundprofil i realtid och datavetenskapen. Mer information finns i följande dokument:
 
 * [Översikt över kundprofiler i realtid](../../../../profile/home.md)
 * [Översikt över arbetsytan Datavetenskap](../../../../data-science-workspace/home.md)
+
+## Bilaga
+
+I följande avsnitt visas de olika anslutningarna till molnlagringskällan och deras anslutningsspecifikationer.
+
+### Anslutningsspecifikation
+
+| Anslutningsnamn | Anslutningsspecifikation-ID |
+| -------------- | --------------- |
+| Amazon Redshift | `3416976c-a9ca-4bba-901a-1f08f66978ff` |
+| Apache Hive på Azure HDInsights | `aac9bbd4-6c01-46ce-b47e-51c6f0f6db3f` |
+| Apache Spark på Azure HDInsights | `6a8d82bc-1caf-45d1-908d-cadabc9d63a6` |
+| Azure Data Explorer | `0479cc14-7651-4354-b233-7480606c2ac3` |
+| Azure Synapse Analytics | `a49bcc7d-8038-43af-b1e4-5a7a089a7d79` |
+| Azure Table Storage | `ecde33f2-c56f-46cc-bdea-ad151c16cd69` |
+| Google BigQuery | `3c9b37f8-13a6-43d8-bad3-b863b941fedd` |
+| IBM DB2 | `09182899-b429-40c9-a15a-bf3ddbc8ced7` |
+| MariaDB | `000eb99-cd47-43f3-827c-43caf170f015` |
+| Microsoft SQL Server | `1f372ff9-38a4-4492-96f5-b9a4e4bd00ec` |
+| MySQL | `26d738e0-8963-47ea-aadf-c60de735468a` |
+| Oracle | `d6b52d86-f0f8-475f-89d4-ce54c8527328` |
+| Phoenix | `102706fb-a5cd-42ee-afe0-bc42f017ff43` |
+| PostgreSQL | `74a1c565-4e59-48d7-9d67-7c03b8a13137` |
