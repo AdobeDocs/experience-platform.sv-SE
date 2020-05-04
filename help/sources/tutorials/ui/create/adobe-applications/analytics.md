@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa en källanslutning för Adobe Analytics i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: ac1e5dbe435d9e85e8ce3ad90c60dd31ba9248ff
+source-git-commit: d2f8e11591b30a0bfd345e56a33a8bb62501358c
 
 ---
 
@@ -13,37 +13,88 @@ source-git-commit: ac1e5dbe435d9e85e8ce3ad90c60dd31ba9248ff
 
 I den här självstudiekursen beskrivs hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 
+## Komma igång
+
+Den här självstudien kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+
+* [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
+* [Kundprofil](../../../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+
 ## Skapa en källanslutning med Adobe Analytics
 
-Logga in på <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a> och välj sedan **Källor** i det vänstra navigeringsfältet för att komma åt källarbetsytan. På *katalogskärmen* visas tillgängliga källor för att skapa bundna anslutningar med, och varje källa visar antalet befintliga anslutningar som är kopplade till dem. Välj alternativet för **Adobe Analytics** och klicka sedan på **Visa källa** för att se alla etablerade bundna anslutningar till den.
+Logga in på <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a> och välj sedan **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt källarbetsytan. På *katalogskärmen* visas tillgängliga källor för att skapa inkommande anslutningar, och varje källa visar antalet befintliga konton och datauppsättningsflöden som är kopplade till dem.
 
-![](../../../../images/tutorials/create/analytics/AA-sources_catalog.png)
+Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-På aktivitetsskärmen *Källa* visas alla tidigare upprättade anslutningar till Adobe Analytics. Du kan skapa en ny anslutning genom att klicka på **Välj data**.
+Under kategorin *Adobe-program* väljer du **[!UICONTROL Adobe Analytics]** att visa ett informationsfält till höger på skärmen. Informationsfältet innehåller en kort beskrivning av den valda källan samt alternativ för att ansluta till källan eller visa dess dokumentation. Om du vill visa befintliga konton väljer du **[!UICONTROL Accounts]**.
+
+![](../../../../images/tutorials/create/analytics/catalog.png)
+
+### Markera data
+
+Steget *Adobe Analytics* visas. Tidigare etablerade datauppsättningsflöden för Analytics visas på den här skärmen. Du kan skapa ett nytt datauppsättningsflöde genom att klicka **[!UICONTROL Select data]**.
 
 >[!NOTE] Flera in-bound-anslutningar till en källa kan göras för att hämta olika data.
 
-![](/help/sources/images/tutorials/create/analytics/AA-source_activity.png)
+![](../../../../images/tutorials/create/analytics/dataset-flows.png)
 
-I listan med tillgängliga rapportsviter väljer du den som du vill hämta till plattformen och klickar på **Nästa**.
+<!---Analytics report suites can be configured for one sandbox at a time. To import the same report suite into a different sandbox, the dataset flow will have to be deleted and instantiated again via configuration for a different sandbox.--->
 
->[!NOTE] Endast en rapportsvit kan väljas per Analytics-källanslutning. Dessutom kan bara en rapportserie finnas i en sandlåda.
+I listan med tillgängliga rapportsviter väljer du den du vill hämta till Platform och klickar på **[!UICONTROL Next]**.
 
-![](../../../../images/tutorials/create/analytics/AA-select_data.png)
+![](../../../../images/tutorials/create/analytics/select-data.png)
 
-Steget *Granska* visas, så att du kan granska din nya ingående Analytics-anslutning innan den skapas. Detaljerna om anslutningen är grupperade efter kategorier, inklusive:
+### Namnge datauppsättningsflödet
 
-* *Källinformation*: Visar typen av källanslutning och den valda rapportsviten.
-* *Målinformation*: När du skapar andra källanslutningar visar den här behållaren vilka data som källdata hämtas till, inklusive det schema som datauppsättningen följer. Analysdata mappas automatiskt och hämtas in i kundprofiler i realtid.
+Flödesdetaljsteget för *datauppsättningen* visas, där du måste ange ett namn och en valfri beskrivning för datauppsättningsflödet. Välj **[UICONTROL. Nästa]** när du är klar.
 
-![](../../../../images/tutorials/create/analytics/AA-review.png)
+![](../../../../images/tutorials/create/analytics/dataset-flow-detail.png)
+
+### Granska datauppsättningsflödet
+
+Steget *Granska* visas så att du kan granska det nya inbundna datauppsättningsflödet i Analytics innan det skapas. Detaljerna om anslutningen är grupperade efter kategorier, inklusive:
+
+* *Anslutning*: Visar typen av källanslutning och den valda rapportsviten.
+* *Tilldela datauppsättnings- och kartfält*: När du skapar andra källanslutningar visar den här behållaren vilka data som källdata hämtas till, inklusive det schema som datauppsättningen följer. Utdatarammet och datamängden konfigureras automatiskt för Analytics-datauppsättningsflöden.
+
+![](../../../../images/tutorials/create/analytics/review.png)
+
+### Övervaka datauppsättningsflödet
+
+När datauppsättningsflödet har skapats kan du övervaka de data som hämtas genom den. På *katalogskärmen* väljer du *Datauppsättningsflöden* för att visa en lista över etablerade flöden som är kopplade till ditt Analytics-konto.
+
+![](../../../../images/tutorials/create/analytics/catalog-dataset-flows.png)
+
+Skärmen *Datauppsättningsflöden* visas. På den här sidan finns ett par datauppsättningsflöden, inklusive information om namn, källdata, skapandetid och status.
+
+Kopplingen instansierar två datauppsättningsflöden. Det ena flödet representerar data för bakåtfyllnad och det andra för livedata. Backfill-data är inte konfigurerade för profil, men skickas till datasjön för analytiska och datavetenskapliga användningsfall.
+
+Mer information om backfill, livedata och deras respektive latenser finns i [Analytics Data Connector-översikten](../../../../connectors/adobe-applications/analytics.md).
+
+Välj det datauppsättningsflöde du vill visa i listan.
+
+![](../../../../images/tutorials/create/analytics/backfill.png)
+
+Sidan *Datauppsättningsaktivitet* visas. På den här sidan visas hur många meddelanden som används i form av ett diagram. Välj *Datastyrning* i det övre huvudet för att komma åt etikettfälten.
+
+![](../../../../images/tutorials/create/analytics/batches.png)
+
+Du kan visa ett datauppsättningsflödes ärvda etiketter från skärmen *Datastyrning* . Om du vill visa specifika etiketter väljer du redigeringsknappen högst upp till höger.
+
+![](../../../../images/tutorials/create/analytics/data-gov.png)
+
+Panelen *Redigera styrningsetiketter* visas. På den här skärmen kan du komma åt och redigera ett datauppsättningsflödes kontrakt, identitet och känsliga etiketter.
+
+Mer information om etikettering av data som kommer från Analytics finns i etikettguiden för [dataanvändning](../../../../../data-governance/labels/user-guide.md).
+
+![](../../../../images/tutorials/create/analytics/labels.png)
 
 ## Nästa steg
 
-När anslutningen har skapats skapas ett målschema och en datauppsättning automatiskt som innehåller inkommande data. Dessutom sker datainfyllning och inmatning av historiska data i upp till 13 månader. När det första intaget är klart, ska analysdata användas av plattformstjänster längre fram i kedjan, som kundprofil i realtid och segmenteringstjänst. Mer information finns i följande dokument:
+När anslutningen har skapats skapas automatiskt ett målschema och ett datauppsättningsflöde som innehåller inkommande data. Dessutom sker datainfyllning och inmatning av historiska data i upp till 13 månader. När det första intaget är klart, ska analysdata användas av plattformstjänster längre fram i kedjan, som kundprofil i realtid och segmenteringstjänst. Mer information finns i följande dokument:
 
 * [Översikt över kundprofiler i realtid](../../../../../profile/home.md)
 * [Översikt över segmenteringstjänsten](../../../../../segmentation/home.md)
 * [Översikt över arbetsytan Datavetenskap](../../../../../data-science-workspace/home.md)
 * [Översikt över frågetjänsten](../../../../../query-service/home.md)
-
