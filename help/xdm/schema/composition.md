@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Grunderna för schemakomposition
 topic: overview
 translation-type: tm+mt
-source-git-commit: d0ccaa5511375253a2eca8f1235c2f953b734709
+source-git-commit: 14cd3d17c7d9ba602d02925abddec9e0b246a8c8
 
 ---
 
@@ -60,7 +60,7 @@ Scheman används för att importera data till Experience Platform. Dessa data ka
 
 Nyckelfält kan markeras som Identitet om du vill ha hjälp med den här processen. När data matas in infogas uppgifterna i dessa fält i &quot;Identitetsdiagram&quot; för den personen. Diagramdata kan sedan nås av kundprofilen [i](../../profile/home.md) realtid och andra Experience Platform-tjänster för att ge en sammanslagen bild av varje enskild kund.
 
-Fält som vanligen markeras som&quot;Identitet&quot; är: e-postadress, telefonnummer, [Experience Cloud ID (ECID)](https://marketing.adobe.com/resources/help/en_US/mcvid/), CRM ID eller andra unika ID-fält. Du bör också ta hänsyn till unika identifierare som är specifika för din organisation, eftersom de även kan vara bra&quot;identitetsfält&quot;.
+Fält som vanligen markeras som&quot;Identitet&quot; är: e-postadress, telefonnummer, [Experience Cloud ID (ECID)](https://docs.adobe.com/content/help/en/id-service/using/home.html), CRM ID eller andra unika ID-fält. Du bör också ta hänsyn till unika identifierare som är specifika för din organisation, eftersom de även kan vara bra&quot;identitetsfält&quot;.
 
 Det är viktigt att tänka på kundens identiteter under schemaplaneringsfasen för att säkerställa att data samlas ihop för att skapa en så robust profil som möjligt. Se översikten över [](../../identity-service/home.md) identitetstjänsten för att få veta mer om hur identitetsinformation kan hjälpa er att leverera digitala upplevelser till era kunder.
 
@@ -112,7 +112,7 @@ Blandningar definierar vilka klasser de är kompatibla med utifrån beteendet ho
 
 Mixer har samma omfång och definition som klasser: det finns branschblandningar, leverantörsmixiner och kundmixar som definieras av enskilda organisationer som använder Platform. Experience Platform innehåller många branschstandardblandningar och gör det även möjligt för leverantörer att definiera mixiner för sina användare, och för enskilda användare att definiera mixiner för sina egna specifika koncept.
 
-Om du till exempel vill hämta information som Förnamn och Hemadress för ditt schema&quot;Förmånsmedlemmar&quot;, kan du använda standardblandningar som definierar de vanliga begreppen. Begrepp som är specifika för mindre vanliga användningsområden (t.ex.&quot;Loyalty Program Level&quot;) har ofta ingen fördefinierad blandning. I så fall måste du definiera en egen blandning för att kunna hämta in den här informationen.
+Om du till exempel vill ta med information som Förnamn och Hemadress för ditt schema&quot;Förmånsmedlemmar&quot;, kan du använda standardblandningar som definierar de vanliga begreppen. Begrepp som är specifika för mindre vanliga användningsområden (t.ex.&quot;Loyalty Program Level&quot;) har ofta ingen fördefinierad blandning. I så fall måste du definiera en egen blandning för att kunna hämta in den här informationen.
 
 Kom ihåg att scheman består av &quot;noll eller flera&quot;-blandningar, vilket innebär att du kan skapa ett giltigt schema utan att använda några mixiner alls.
 
