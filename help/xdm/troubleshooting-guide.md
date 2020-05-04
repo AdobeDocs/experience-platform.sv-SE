@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Felsökningsguide för Experience Data Model (XDM)
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: f7c87cc86bfc5017ec5c712d05e39be5c14a7147
+source-git-commit: 14cd3d17c7d9ba602d02925abddec9e0b246a8c8
 
 ---
 
@@ -49,7 +49,7 @@ Mer information om fälttyper finns i avsnittet [Definiera XDM-fälttyper](api/a
 
 ### Hur definierar jag identiteter för mitt schema?
 
-I Experience Platform används identiteter för att identifiera ett ämne (vanligtvis en enskild person) oavsett vilka datakällor som tolkas. De definieras i scheman genom att nyckelfält markeras som&quot;Identitet&quot;. Vanliga fält för identitet är e-postadress, telefonnummer, [Experience Cloud ID (ECID)](https://marketing.adobe.com/resources/help/en_US/mcvid/), CRM ID och andra unika ID-fält.
+I Experience Platform används identiteter för att identifiera ett ämne (vanligtvis en enskild person) oavsett vilka datakällor som tolkas. De definieras i scheman genom att nyckelfält markeras som&quot;Identitet&quot;. Vanliga fält för identitet är e-postadress, telefonnummer, [Experience Cloud ID (ECID)](https://docs.adobe.com/content/help/en/id-service/using/home.html), CRM ID och andra unika ID-fält.
 
 Fält kan markeras som identiteter med antingen API:t eller användargränssnittet.
 
