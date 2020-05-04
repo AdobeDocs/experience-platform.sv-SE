@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa ett schema med API:t för schemaregister
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: 5aad9fa71051a58fe1c4678553f47077d81d23fc
+source-git-commit: 14cd3d17c7d9ba602d02925abddec9e0b246a8c8
 
 ---
 
@@ -951,7 +951,7 @@ När du utför en GET-begäran om att söka efter schemat visas nu referensen ti
 
 Scheman används för att importera data till Experience Platform. Dessa data används slutligen för flera tjänster för att skapa en enda, enhetlig vy av en individ. Nyckelfält kan markeras som&quot;Identitet&quot; som hjälp med den här processen, och när data hämtas infogas data i dessa fält i&quot;Identitetsdiagram&quot; för den aktuella personen. Diagramdata kan sedan nås av kundprofilen [i](../../profile/home.md) realtid och andra Experience Platform-tjänster för att ge en sammansatt bild av varje enskild kund.
 
-Fält som vanligen markeras som&quot;Identitet&quot; är: e-postadress, telefonnummer, [Experience Cloud ID (ECID)](https://marketing.adobe.com/resources/help/en_US/mcvid/), CRM ID eller andra unika ID-fält.
+Fält som vanligen markeras som&quot;Identitet&quot; är: e-postadress, telefonnummer, [Experience Cloud ID (ECID)](https://docs.adobe.com/content/help/en/id-service/using/home.html), CRM ID eller andra unika ID-fält.
 
 Överväg alla unika identifierare som är specifika för din organisation, eftersom de också kan vara bra identifieringsfält.
 
