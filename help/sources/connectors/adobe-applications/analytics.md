@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Dataanslutning för Analytics
 topic: overview
 translation-type: tm+mt
-source-git-commit: 75c446aed75100bd2b5b4a3d365c090cb01dcc69
+source-git-commit: 14cd3d17c7d9ba602d02925abddec9e0b246a8c8
 
 ---
 
@@ -23,9 +23,7 @@ Adobe Analytics är en kraftfull motor som hjälper er att lära er mer om era k
 
 På en hög nivå samlar Adobe Analytics in data från olika digitala kanaler och från flera datacenter runt om i världen. När data har samlats in tillämpas VISTA-regler (Visitor Identification, Segmentation and Transformation Architecture) och bearbetningsregler för att forma inkommande data. När rådata har genomgått den här enkla bearbetningen anses de sedan vara klara att användas av kundprofilen i realtid. I en process som är parallell med ovanstående är samma bearbetade data mikrobatchade och insamlade i plattformsdatauppsättningar för konsumtion av Data Science Workspace, Query Service och andra dataidentifieringsprogram.
 
-Mer information om VISTA och bearbetningsregler finns i följande dokument:
-* [Översikt över VISTA-regler](https://marketing.adobe.com/resources/help/en_US/reference/VISTA.html)
-* [Översikt över bearbetningsregler](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/processing-rules/processing-rules.html)
+Mer information om bearbetningsregler finns i Översikt över [](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/processing-rules/processing-rules.html) Bearbetningsregler.
 
 ## Experience Data Model (XDM)
 
