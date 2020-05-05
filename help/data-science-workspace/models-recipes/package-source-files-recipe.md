@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Paketera källfiler i ett recept
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
+source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
 
 ---
 
@@ -35,24 +35,24 @@ Med en Docker-bild kan utvecklare paketera ett program med alla delar som behöv
 
 Den inbyggda Docker-avbildningen överförs till Azure Container Registry med hjälp av autentiseringsuppgifter som du får när du skapar recept.
 
-Logga in på <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a>för att få dina autentiseringsuppgifter för Azure Container Registry. Navigera till **Arbetsflöden** i den vänstra navigeringskolumnen. Välj **Importera mottagare** följt av **Starta**. Se skärmbilden nedan.
+Logga in på <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a>för att få dina autentiseringsuppgifter för Azure Container Registry. Navigera till den vänstra navigeringskolumnen **[!UICONTROL Workflows]**. Markera **[!UICONTROL Import Recipe]** följt av markera **[!UICONTROL Launch]**. Se skärmbilden nedan.
 
 ![](../images/models-recipes/package-source-files/import.png)
 
-Sidan *Konfigurera* öppnas. Ange ett lämpligt **mottagarnamn**, t.ex.&quot;Detaljhandelsrecept&quot;, och ange eventuellt en beskrivning- eller dokumentations-URL. Klicka på **Nästa** när du är klar.
+Sidan *Konfigurera* öppnas. Ange ett lämpligt *mottagarnamn*, t.ex.&quot;Detaljhandelsrecept&quot;, och ange eventuellt en beskrivning- eller dokumentations-URL. När du är klar klickar du på **[!UICONTROL Next]**.
 
 ![](../images/models-recipes/package-source-files/configure.png)
 
-Välj lämplig *körningsmiljö* och välj sedan en **klassificering** för *Typ*. Dina autentiseringsuppgifter för Azure Container-registret genereras när de är klara.
+Välj lämplig *körningsmiljö* och välj sedan en **[!UICONTROL Classification]** som *typ*. Dina autentiseringsuppgifter för Azure Container-registret genereras när de är klara.
 
 >[!NOTE]
 >*Typ *är den typ av maskininlärningsproblem som receptet är utformat för och används efter utbildning för att skräddarsy eller utvärdera kursen.
 
 >[!TIP]
->- För Python-recept väljer du **Python** -miljön.
->- För R-recept väljer du **R** -miljön.
->- För PySpark-recept väljer du **PySpark** -miljön. En artefakttyp fylls i automatiskt.
->- För Scala-recept väljer du **Spark** -miljön. En artefakttyp fylls i automatiskt.
+>- För Python-recept väljer du **[!UICONTROL Python]** runtime-modulen.
+>- För R-recept väljer du **[!UICONTROL R]** runtime-modulen.
+>- För PySpark-recept väljer du **[!UICONTROL PySpark]** körningsversionen. En artefakttyp fylls i automatiskt.
+>- För Scala-recept väljer du **[!UICONTROL Spark]** runtime-modulen. En artefakttyp fylls i automatiskt.
 
 
 ![](../images/models-recipes/package-source-files/docker-creds.png)
@@ -189,7 +189,7 @@ Kopiera den här URL:en och gå vidare till [nästa steg](#next-steps).
 
 ## Nästa steg {#next-steps}
 
-Den här självstudien gick över till att paketera källfiler i en Recept, vilket är det nödvändiga steget för att importera en Recept till Data Science Workspace. Du bör nu ha en Docker-avbildning i Azure Container Registry tillsammans med motsvarande bild-URL. Nu kan du börja med självstudiekursen om hur du **importerar en paketerad recept till arbetsytan** Data Science. Välj en av självstudielänkarna nedan för att komma igång.
+Den här självstudien gick över till att paketera källfiler i en Recept, vilket är det nödvändiga steget för att importera en Recept till Data Science Workspace. Du bör nu ha en Docker-avbildning i Azure Container Registry tillsammans med motsvarande bild-URL. Nu kan du börja med självstudiekursen om hur du importerar ett paketerat recept till arbetsytan Data Science. Välj en av självstudielänkarna nedan för att komma igång:
 
 - [Importera en paketerad mottagare i användargränssnittet](./import-packaged-recipe-ui.md)
 - [Importera en paketerad mottagare med API:t](./import-packaged-recipe-api.md)
