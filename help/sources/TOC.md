@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Source Connectors - hjälp
 translation-type: tm+mt
-source-git-commit: 30f36d18f0e670ede02041db04f1cc8be55d11a3
+source-git-commit: 2d22f48cc8f461774a77c3351332f21849d56545
 
 ---
 
@@ -35,6 +35,7 @@ source-git-commit: 30f36d18f0e670ede02041db04f1cc8be55d11a3
       - [ServiceNow-koppling](connectors/customer-success/servicenow.md)
    - Databaser {#databases}
       - [Amazon Redshift-kontakt](connectors/databases/redshift.md)
+      - [Apache Cassandra-anslutning](connectors/databases/cassandra.md)
       - [Apache Hive på Azure HDInsights-kontakten](connectors/databases/hive.md)
       - [Apache Spark på Azure HDInsights-kontakten](connectors/databases/spark.md)
       - [Azure Data Explorer-koppling](connectors/databases/data-explorer.md)
@@ -73,6 +74,7 @@ source-git-commit: 30f36d18f0e670ede02041db04f1cc8be55d11a3
          - [ServiceNow-koppling](tutorials/api/create/customer-success/servicenow.md)
       - Databaser {#databases}
          - [Amazon Redshift-kontakt](tutorials/api/create/databases/redshift.md)
+         - [Apache Cassandra-anslutning](tutorials/api/create/databases/cassandra.md)
          - [Apache Hive på Azure HDInsights-kontakten](tutorials/api/create/databases/hive.md)
          - [Apache Spark på Azure HDInsights-kontakten](tutorials/api/create/databases/spark.md)
          - [Azure Data Explorer-koppling](tutorials/api/create/databases/data-explorer.md)
