@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över AI för kunder
 topic: Customer AI overview
 translation-type: tm+mt
-source-git-commit: f4deee30f0f03b75dc7ee02152ceb6c519858c7c
+source-git-commit: ec0de4c8775367be9e6016529471254ad9f8f453
 
 ---
 
@@ -35,6 +35,10 @@ Kunden är inte byggd för att:
 - Kundens AI är inte ett verktyg för produktrekommendationer. Om du har tusentals SKU:er ska du inte använda kundens AI som proxyserver för en riktig produktrekommendationslösning som Adobe Target.
 - Kundens AI kan inte förutsäga i vilket skede av köpresan kunden befinner sig, t.ex. om de befinner sig i&quot;medvetande&quot;,&quot;bedömning&quot;,&quot;inköp&quot; eller&quot;kundlojalitet&quot;.
 - Använd inte kundens AI för att avgöra vilka kunder som sannolikt kommer att köpa en produktlansering i framtiden. Detta kräver att vissa framgångshändelser ska finnas i det förflutna så att kundens AI kan utbilda maskininlärningsalgoritmen på dina data.
+
+Följande video är utformad för att ge stöd för din förståelse av kundens AI.
+
+>[!VIDEO](https://video.tv.adobe.com/v/32664?learn=on&quality=12)
 
 ## Hur fungerar det?
 
