@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Berika kundprofilen i realtid med maskininlärningsinsikter
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
+source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
 
 ---
 
@@ -38,37 +38,37 @@ Det första steget mot att berika kundprofilen i realtid med poängsättningsins
 
 Dispositionen av ett schema börjar med att tilldela en klass. Klasser definierar de beteendeaspekter av data som schemat ska innehålla (post- eller tidsserie). Det här avsnittet innehåller grundläggande instruktioner om hur du skapar ett schema med schemaverktyget. En mer ingående självstudiekurs finns i självstudiekursen om hur du [skapar ett schema med Schemaredigeraren](../../xdm/tutorials/create-schema-ui.md).
 
-1. På Adobe Experience Platform klickar du på fliken **Schema** för att öppna schemaläsaren. Klicka på **Skapa schema** för att komma åt *Schemaredigeraren*, där du interaktivt kan skapa och skapa scheman.
+1. På Adobe Experience Platform klickar du på **[!UICONTROL Schema]** fliken för att öppna schemaläsaren. Klicka **[!UICONTROL Create Schema]** för att öppna *Schemaredigeraren*där du interaktivt kan skapa scheman.
    ![](../images/models-recipes/enrich-rtcdp/schema_browser.png)
 
-2. I fönstret *Disposition* klickar du på **Tilldela** för att bläddra bland de tillgängliga klasserna.
-   * Om du vill tilldela en befintlig klass klickar du på och markerar den önskade klassen och klickar sedan på **Tilldela klass**.
+2. I fönstret *Disposition* klickar du **[!UICONTROL Assign]** för att bläddra bland de tillgängliga klasserna.
+   * Om du vill tilldela en befintlig klass klickar du på och markerar den önskade klassen och klickar sedan på **[!UICONTROL Assign Class]**.
       ![](../images/models-recipes/enrich-rtcdp/existing_class.png)
 
-   * Om du vill skapa en anpassad klass klickar du på **Skapa ny klass** i mitten av webbläsarfönstret. Ange ett klassnamn, en beskrivning och välj klassens beteende. Klicka på **Tilldela klass** när du är klar.
+   * Om du vill skapa en anpassad klass klickar du på **[!UICONTROL Create New Class]** i mitten av webbläsarfönstret. Ange ett klassnamn, en beskrivning och välj klassens beteende. Klicka **[!UICONTROL Assign Class]** när du är klar.
       ![](../images/models-recipes/enrich-rtcdp/create_new_class.png)
    Nu bör schemats struktur innehålla några klassfält och du är redo att tilldela mixins. En blandning är en grupp med ett eller flera fält som beskriver ett visst koncept.
 
-3. Klicka på *Lägg till* i underavsnittet **Blandningar** i fönstret *Disposition* .
-   * Om du vill tilldela en befintlig blandning klickar du på och markerar den önskade blandningen och klickar sedan på **Lägg till blandning**. Till skillnad från klasser kan flera blandningar tilldelas till ett enda schema så länge det är lämpligt.
+3. I *dispositionsfönstret* klickar du **[!UICONTROL Add]** i underavsnittet *Blandningar* .
+   * Om du vill tilldela en befintlig blandning klickar du på och markerar den önskade blandningen och klickar sedan på **[!UICONTROL Add Mixin]**. Till skillnad från klasser kan flera blandningar tilldelas till ett enda schema så länge det är lämpligt.
       ![](../images/models-recipes/enrich-rtcdp/existing_mixin.png)
 
-   * Om du vill skapa en ny mixin klickar du på **Skapa ny mixning** i mitten av webbläsarfönstret. Ange ett namn och en beskrivning för blandningen och klicka sedan på **Tilldela mixning** när du är klar.
+   * Om du vill skapa en ny mixin klickar du på den **[!UICONTROL Create New Mixin]** som finns i mitten av webbläsarfönstret. Ange ett namn och en beskrivning för mixinen och klicka sedan **[!UICONTROL Assign Mixin]** när du är klar.
       ![](../images/models-recipes/enrich-rtcdp/create_new_mixin.png)
 
-   * Om du vill lägga till blandningsfält klickar du på namnet på blandningen i *kompositionsfönstret* . Du kan sedan lägga till blandade fält genom att klicka på **Lägg till fält** i *strukturfönstret* . Se till att du anger blandningsegenskaper i enlighet med detta.
+   * Om du vill lägga till blandningsfält klickar du på namnet på blandningen i *kompositionsfönstret* . Du kan sedan lägga till blandade fält genom att klicka **[!UICONTROL Add Field]** i *strukturfönstret* . Se till att du anger blandningsegenskaper i enlighet med detta.
       ![](../images/models-recipes/enrich-rtcdp/mixin_properties.png)
 
-4. När du är klar med att skapa schemat klickar du på fältet på den översta nivån i schemat i fönstret *Struktur* för att visa schemats egenskaper i det högra egenskapsfönstret. Ange ett namn och en beskrivning och klicka på **Spara** för att skapa schemat.
+4. När du är klar med att skapa schemat klickar du på fältet på den översta nivån i schemat i fönstret *Struktur* för att visa schemats egenskaper i det högra egenskapsfönstret. Ange ett namn och en beskrivning och klicka på **[!UICONTROL Save]** för att skapa schemat.
    ![](../images/models-recipes/enrich-rtcdp/save_schema.png)
 
-5. Skapa en utdatamängd med ditt nyligen skapade schema genom att klicka på **Datauppsättningar** i den vänstra navigeringskolumnen och sedan klicka på **Skapa datauppsättning**. På nästa skärm väljer du **Skapa datauppsättning från schema**.
+5. Skapa en utdatamängd med ditt nya schema genom att klicka **[!UICONTROL Datasets]** från den vänstra navigeringskolumnen och sedan klicka på **[!UICONTROL Create dataset]**. På nästa skärm väljer du **[!UICONTROL Create dataset from schema]**.
    ![](../images/models-recipes/enrich-rtcdp/dataset_overview.png)
 
-6. Använd schemaläsaren för att söka efter och markera det nya schemat och klicka sedan på **Nästa**.
+6. Använd schemaläsaren för att söka efter och markera det nya schemat och klicka sedan på **[!UICONTROL Next]**.
    ![](../images/models-recipes/enrich-rtcdp/choose_schema.png)
 
-7. Ange ett namn och en valfri beskrivning och klicka sedan på **Slutför** för att skapa datauppsättningen.
+7. Ange ett namn och en valfri beskrivning och klicka sedan på **[!UICONTROL Finish]** för att skapa datauppsättningen.
    ![](../images/models-recipes/enrich-rtcdp/configure_dataset.png)
 
 Nu när du har skapat en utdataschemauppsättning kan du fortsätta till nästa avsnitt för att konfigurera och aktivera dem för profilanrikning.
@@ -83,16 +83,16 @@ Innan du kan aktivera en datauppsättning för profil måste du konfigurera data
 2. Expandera schemastrukturen och hitta ett lämpligt fält som ska anges som primär identifierare. Klicka på det önskade fältet för att visa dess egenskaper.
    ![](../images/models-recipes/enrich-rtcdp/schema_structure.png)
 
-3. Ange fältet som primär identitet genom att aktivera fältegenskapen **Identitet** , **Primär identitet** och sedan välja ett lämpligt **identitetsnamnområde**. Klicka på **Använd** när du har gjort ändringarna.
+3. Ange fältet som primär identitet genom att aktivera fältets **[!UICONTROL Identity]** egenskap, **[!UICONTROL Primary Identity]** egenskap och sedan välja en lämplig **[!UICONTROL Identity Namespace]** egenskap. Klicka **[!UICONTROL Apply]** när du har gjort ändringarna.
    ![](../images/models-recipes/enrich-rtcdp/set_identity.png)
 
-4. Klicka på det översta nivåobjektet i schemastrukturen för att visa schemaegenskaperna och aktivera schemat för profilen genom att växla **profilväxeln** . Klicka på **Spara** för att slutföra ändringarna. Den datauppsättning som skapades med det här schemat kan nu aktiveras för profilen.
+4. Klicka på det översta nivåobjektet i schemastrukturen för att visa schemaegenskaperna och aktivera schemat för profilen genom att växla **[!UICONTROL Profile]** . Klicka **[!UICONTROL Save]** för att slutföra dina ändringar. Datauppsättningen som skapades med det här schemat kan nu aktiveras för profilen.
    ![](../images/models-recipes/enrich-rtcdp/enable_schema.png)
 
 5. Använd datauppsättningens webbläsare för att hitta den datauppsättning som du vill aktivera profilen för och klicka på dess namn för att komma åt informationen.
    ![](../images/models-recipes/enrich-rtcdp/datasets.png)
 
-6. Aktivera datauppsättningen för profilen genom att växla **profilväxeln** i rätt informationskolumn.
+6. Aktivera datauppsättningen för profilen genom att växla den växel som finns i den **[!UICONTROL Profile]** högra informationskolumnen.
    ![](../images/models-recipes/enrich-rtcdp/enable_dataset.png)
 
 När data hämtas in till en profilaktiverad datauppsättning, hämtas samma data även som profilposter. Nu när ditt schema och din datauppsättning har förberetts kan du generera data i datauppsättningen genom att utföra poängkörningar med en lämplig modell, och fortsätta med den här självstudiekursen för att skapa insikter med hjälp av Segment Builder.
@@ -101,7 +101,7 @@ När data hämtas in till en profilaktiverad datauppsättning, hämtas samma dat
 
 Nu när du har genererat och inhämtat insikter i din profilaktiverade datauppsättning kan du hantera dessa data genom att identifiera deluppsättningar av relaterade element med hjälp av segmentbyggaren. Följ stegen nedan för att skapa egna segment.
 
-1. På Adobe Experience Platform klickar du på fliken **Segment** följt av **Skapa segment** för att komma åt segmentbyggaren.
+1. På Adobe Experience Platform klickar du på **[!UICONTROL Segments]** fliken följt av **[!UICONTROL Create Segment]** för att få åtkomst till Segment Builder.
    ![](../images/models-recipes/enrich-rtcdp/segments_overview.png)
 
 2. I segmentbyggaren ger den vänstra listen tillgång till de centrala byggstenarna i segment: attribut, händelser och befintliga segment. Varje byggsten visas på sin egen flik. Välj den klass som det profilaktiverade schemat omfattar och bläddra sedan efter byggstenarna för ditt segment.
@@ -113,7 +113,7 @@ Nu när du har genererat och inhämtat insikter i din profilaktiverade dataupps�
 4. När du skapar ett segment kan du förhandsgranska det uppskattade segmentresultatet genom att observera panelen *Segmentegenskaper* .
    ![](../images/models-recipes/enrich-rtcdp/preview_segment.gif)
 
-5. Välj en lämplig **sammanfogningsprofil**, ange ett namn och en valfri beskrivning och klicka sedan på **Spara** för att slutföra det nya segmentet.
+5. Välj ett lämpligt **[!UICONTROL Merge Policy]** segment, ange ett namn och en valfri beskrivning och klicka sedan på **[!UICONTROL Save]** för att slutföra det nya segmentet.
    ![](../images/models-recipes/enrich-rtcdp/save_segment.png)
 
 
