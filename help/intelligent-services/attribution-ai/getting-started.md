@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Komma igång med Attribution AI
 topic: Getting started
 translation-type: tm+mt
-source-git-commit: 14d47f99f1edd7734245b25b7c39f3a71e7aac50
+source-git-commit: 6161f5a9ca0df341272a96a8a19ce6c34f6d5d3e
 
 ---
 
@@ -25,18 +25,26 @@ Attribution AI kräver att datauppsättningar följer CEE-schemat (Consumer Expe
 
 - **Pekpunkt:** Alla digitala händelser eller digitala interaktioner som kunderna gör på vägen mot ett mål. Exemplen omfattar tidigare köprelaterade marknadsföringssatsningar, visningar av webbannonsering och betalda sökklick.
 
-## Få åtkomst till och fråga efter bakgrundsmusik
+## Hämtar AI-poäng för attribuering
 
->[!NOTE] Om du inte behöver fråga eller komma åt bakgrundsmusik kan du hoppa över det här steget och fortsätta till [användargränssnittshandboken](./user-guide.md).
+>[!NOTE] Om du inte behöver ladda ned bakgrundsmusik kan du hoppa över det här steget och gå vidare till [nästa steg](#next-steps).
 
-Åtkomst till och frågor om poäng för Attribution AI görs via Snowflake. För närvarande måste du skicka e-post till Adobes support på attributionai-support@adobe.com för att kunna konfigurera och ta emot inloggningsuppgifterna till ditt läsarkonto för Snowflake eller för att massexportera rådata.
+Hämtning av AI-poäng för attribuering görs via en kombination av API-anrop. För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
 
-När Adobes support har bearbetat din begäran får du en URL för läsarkontot till Snowflake och motsvarande uppgifter nedan:
+- Behörighet: Bearer `{ACCESS_TOKEN}`
+- x-api-key: `{API_KEY}`
+- x-gw-ims-org-id: `{IMS_ORG}`
 
-- Snöflinga URL
-- Användarnamn
-- Lösenord
+Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
-## Nästa steg
+- x-sandbox-name: `{SANDBOX_NAME}`
+
+>[!NOTE] Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+
+### Läser exempel-API-anrop
+
+Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md) i felsökningsguiden för Experience Platform.
+
+## Nästa steg {#next-steps}
 
 När du är klar och har alla dina autentiseringsuppgifter och scheman på plats börjar du med att följa guiden [för användargränssnittet för](./user-guide.md)Attribution AI. I den här guiden får du hjälp med att skapa en instans och skicka in den för utbildning och poängsättning.
