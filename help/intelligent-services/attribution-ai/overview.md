@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över AI-attribut
 topic: Attribution AI
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: ec0de4c8775367be9e6016529471254ad9f8f453
 
 ---
 
@@ -23,11 +23,15 @@ Attribution AI data kan komma från Adobe (t.ex. Analytics) eller andra datakäl
 
 Attribution AI har stöd för två kategorier med poäng, algoritmiska och regelbaserade. Algoritmiska poäng inkluderar inkrementella och påverkade poäng. Regelbaserade resultat inkluderar First Touch, Last Touch, Linear, U-shaped och Time-Decay.
 
+Följande video har utformats för att ge stöd för din förståelse av Attribution AI.
+
+>[!VIDEO](https://video.tv.adobe.com/v/32667?learn=on&quality=12)
+
 ## AI-algoritmiska poäng för attribuering
 
 Attribution AI stöder två kategorier av attribueringspoäng, algoritmiska och regelbaserade poäng.
 
-Attribution AI ger två olika typer av algoritmiska poäng, inkrementellt och påverkat. En påverkad poäng är den del av konverteringen som varje marknadsföringskontaktyta ansvarar för. En inkrementell poäng är mängden marginell påverkan som direkt orsakas av kontaktytan för marknadsföring. Den största skillnaden mellan det stegvisa poängvärdet och det poängvärde som påverkas är att det stegvisa poängvärdet tar baslinjeeffekten i beaktande. Man utgår inte från att en konvertering enbart orsakas av de föregående kontaktytorna.
+Attribution AI ger två olika typer av algoritmiska poäng, inkrementellt och påverkat. En påverkad poäng är den del av konverteringen som varje kontaktyta för marknadsföring ansvarar för. En inkrementell poäng är mängden marginell påverkan som direkt orsakas av kontaktytan för marknadsföring. Den största skillnaden mellan det stegvisa poängvärdet och det poängvärde som påverkas är att det stegvisa poängvärdet tar baslinjeeffekten i beaktande. Man utgår inte från att en konvertering enbart orsakas av de föregående kontaktytorna.
 
 Se tabellen nedan för mer information om var och en av dessa attribueringspoäng:
 
