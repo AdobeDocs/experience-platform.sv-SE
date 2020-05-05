@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Identifiera insikter med kundens AI
 topic: Discovering insights
 translation-type: tm+mt
-source-git-commit: f7c59ef097c00073fbf9f6522b6e70ed24cc8bf1
+source-git-commit: ec0de4c8775367be9e6016529471254ad9f8f453
 
 ---
 
@@ -13,7 +13,7 @@ source-git-commit: f7c59ef097c00073fbf9f6522b6e70ed24cc8bf1
 
 Customer AI, som en del av Intelligent Services ger marknadsförarna möjlighet att utnyttja Adobe Sensei för att förutse vad era kunder kommer att göra härnäst. Kundens AI används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, utbildning eller driftsättning.
 
-Det här dokumentet är en guide för interaktion med Service Instance Insights i användargränssnittet för AI för Intelligent Services.
+Det här dokumentet fungerar som en guide för interaktion med Service Instance Insights i användargränssnittet för AI för Intelligent Services.
 
 ## Komma igång
 
@@ -122,3 +122,9 @@ Om du vill visa det nya segmentet i plattformsgränssnittet klickar du **[!UICON
 ## Nästa steg
 
 I det här dokumentet beskrevs de insikter som en kundens AI-tjänstinstans har gett. Du kan nu fortsätta med självstudiekursen om [nedladdning av poäng i Customer AI](./download-scores.md) eller gå till de andra [Adobe Intelligent Services](../../home.md) -guiderna som erbjuds.
+
+## Ytterligare resurser
+
+I följande videofilm visas hur du använder AI från kunder för att se resultatet av modellerna och de inflytelserika faktorerna.
+
+>[!VIDEO](https://video.tv.adobe.com/v/32666?learn=on&quality=12)
