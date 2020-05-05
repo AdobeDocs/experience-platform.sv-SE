@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Intelligent Services - översikt
 topic: Intelligent Services overview
 translation-type: tm+mt
-source-git-commit: 7987cec12c22e9b48ddc9fdc263d7cd28bd172f2
+source-git-commit: c9d1fca0b14607f83657d5d8a751c2d0cc46bea0
 
 ---
 
@@ -12,6 +12,10 @@ source-git-commit: 7987cec12c22e9b48ddc9fdc263d7cd28bd172f2
 # Intelligent Services - översikt
 
 Intelligenta tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskaplig expertis. Dessutom kan marknadsförare aktivera prognoser i Adobe Experience Cloud, Adobe Experience Platform och tredjepartsprogram.
+
+Följande video är utformad för att ge stöd för din förståelse av intelligenta tjänster. I den här videon förklaras ett arbetsflöde på hög nivå med exempel på hur man använder affärssystem, och dessutom beskrivs funktionerna i både Attribution AI och Customer AI.
+
+>[!VIDEO](https://video.tv.adobe.com/v/32654?learn=on&quality=12)
 
 ## Fördelar med intelligenta tjänster
 
