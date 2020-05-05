@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform Source Connectors - översikt
 topic: overview
 translation-type: tm+mt
-source-git-commit: 8ee88b27c79610827ff2627999e303b5fc43e1c6
+source-git-commit: b58b933fce9d1abe658a908ec07f390e4991c5c6
 
 ---
 
@@ -65,6 +65,7 @@ Experience Platform har stöd för inmatning av data från en tredjepartsapp fö
 Experience Platform har stöd för inmatning av data från en tredjepartsdatabas. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [Amazon Redshift-kontakt](connectors/databases/redshift.md)
+- [Apache Cassandra-anslutning](connectors/databases/cassandra.md)
 - [Apache Hive på Azure HDInsights-kontakten](connectors/databases/hive.md)
 - [Apache Spark på Azure HDInsights-kontakten](connectors/databases/spark.md)
 - [Azure Data Explorer-koppling](connectors/databases/data-explorer.md)
