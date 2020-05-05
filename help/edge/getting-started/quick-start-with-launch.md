@@ -4,7 +4,7 @@ seo-title: Adobe Experience Platform Web SDK snabbstart med Launch
 description: Snabbstartsguide för användning av Experience Platform Web SDK-tillägget för att samla in data
 seo-description: Snabbstartsguide för användning av Experience Platform Web SDK-tillägget för att samla in data
 translation-type: tm+mt
-source-git-commit: a1161630c8edae107b784f32ee20af225f9f8c46
+source-git-commit: e23b0ce9c20d5d2d770d1c1261fe08de5743325a
 
 ---
 
@@ -32,14 +32,11 @@ För att kunna skicka data till Adobe Experience Platform måste du skapa ett XD
 - Lägg till Adobe Experience Platform Web SDK-mixin i det schema du skapade
 - [Skapa en datauppsättning](https://platform.adobe.com/dataset/overview) med ditt schema där du vill att data ska sparas
 
-## Begär ett konfigurations-ID
+## Skapa ett konfigurations-ID
 
-Du måste ha ett konfigurations-ID för att kunna använda SDK. Konfigurations-ID:t ser till att dina data dirigeras till rätt plats. Du kan få ett konfigurations-ID från din konsult eller via Client Care. De behöver följande information:
+Du kan skapa ett konfigurations-ID med [Edge-konfigurationsverktyget](../fundamentals/edge-configuration.md) vid start.
 
-- **Organisations-ID:** Du hittar detta på instruktionerna [här](https://docs.adobe.com/content/help/en/core-services/interface/manage-users-and-products/organizations.html)
-- **Datauppsättnings-ID:** Detta är tillgängligt i datauppsättningsgränssnittet när du klickar på en datauppsättning
-- **Schema-ID:** Det här är tillgängligt i URL:en för schemaskapandeskärmen
-- **Eget namn:** Det här är det egna namnet som kommer att användas i framtida användargränssnitt för den här konfigurationen
+>Obs! Din organisation måste vitlistas för funktionen. Kontakta din CSM för att komma med i listan för eventuell vitlistning.
 
 ## Installera SDK i Launch
 
