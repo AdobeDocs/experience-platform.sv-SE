@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa och publicera genomgång av en maskininlärningsmodell
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
+source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
 
 ---
 
@@ -53,9 +53,9 @@ Om du vill skapa en maskininlärningsmodell som gör personaliserade produktreko
 
 ### Utforska data och förstå scheman
 
-1. Logga in på [Adobe Experience Platform](https://platform.adobe.com/) och klicka på **Datauppsättningar** för att visa alla befintliga datauppsättningar och välja den datauppsättning som du vill utforska. I det här fallet är Analytics-datauppsättningen **Golden Data Set postValues**.
+1. Logga in på [Adobe Experience Platform](https://platform.adobe.com/) och klicka **[!UICONTROL Datasets]** för att lista alla befintliga datauppsättningar och välja den datauppsättning som du vill utforska. I det här fallet är Analytics-datauppsättningen **Golden Data Set postValues**.
    ![](../images/models-recipes/model-walkthrough/datasets_110.png)
-2. Välj **Förhandsgranska datauppsättning** i den övre högra delen för att undersöka exempelposter och klicka sedan på **Stäng**.
+2. Välj **[!UICONTROL Preview Dataset]** nära det övre högra hörnet för att undersöka exempelposter och klicka sedan på **[!UICONTROL Close]**.
    ![](../images/models-recipes/model-walkthrough/golden_data_set_110.png)
 3. Välj länken under Schema i den högra listen för att visa schemat för datauppsättningen och gå sedan tillbaka till sidan med datauppsättningsinformation.&quot;
    ![](../images/models-recipes/model-walkthrough/golden_schema_110.png)
@@ -76,11 +76,11 @@ Recept är grunden för en modell eftersom de innehåller maskininlärningsalgor
 
 ### Läs mer i produktrekommendationsrecept
 
-1. Navigera till **Modeller** i den vänstra navigeringskolumnen i Adobe Experience Platform och klicka sedan på **Recept** överst för att visa en lista över tillgängliga Recept för din organisation.
+1. I Adobe Experience Platform navigerar du till **[!UICONTROL Models]** den vänstra navigeringskolumnen och klickar sedan **[!UICONTROL Recipes]** längst upp för att visa en lista över tillgängliga recept för din organisation.
    ![](../images/models-recipes/model-walkthrough/browse_recipes.png)
-2. Leta upp och öppna den angivna **rekommendationsreceptet** genom att klicka på dess namn.
+2. Leta reda på och öppna den angivna filen **[!UICONTROL Recommendations Recipe]** genom att klicka på dess namn.
    ![](../images/models-recipes/model-walkthrough/recommendations_recipe_110.png)
-3. I den högra listen klickar du på **Recommendations Input Schema** för att visa schemat som används för receptet. Schemafälten **itemId** och **userId** motsvarar en produkt som kunden köpt (**interactionType**) vid en viss tidpunkt (**tidsstämpel**). Följ samma steg för att granska fälten för **Recommendations Output Schema**.
+3. Klicka på den högra listen för **[!UICONTROL Recommendations Input Schema]** att se vilket schema som används för receptet. Schemafälten **[!UICONTROL itemId]** och **[!UICONTROL userId]** motsvarande en produkt som kunden köpt (**[!UICONTROL interactionType]**) vid en viss tidpunkt (**[!UICONTROL timestamp]**). Följ samma steg för att granska fälten för **[!UICONTROL Recommendations Output Schema]**.
    ![](../images/models-recipes/model-walkthrough/preview_schemas.png)
 
 Du har nu granskat de in- och utdatamodeller som krävs av produktrekommendationsreceptet. Du kan nu fortsätta till nästa avsnitt för att ta reda på hur du skapar, utbildar och utvärderar en produktrekommendationsmodell.
@@ -93,13 +93,13 @@ Nu när dina data har förberetts och receptet är klart att användas kan du sk
 
 En modell är en instans av en Recept som gör att du kan utbilda och poängsätta med data i stor skala.
 
-1. Navigera till **Modeller** från den vänstra navigeringskolumnen i Adobe Experience Platform och klicka sedan på **Recept** överst på sidan för att visa en lista över alla tillgängliga Recept för din organisation.
+1. I Adobe Experience Platform navigerar du till **[!UICONTROL Models]** den vänstra navigeringskolumnen och klickar sedan på **[!UICONTROL Recipes]** överst på sidan för att visa en lista över alla tillgängliga recept för din organisation.
    ![](../images/models-recipes/model-walkthrough/browse_recipes.png)
-2. Leta upp och öppna den angivna **rekommendationsreceptet** genom att klicka på dess namn och ange mottagarens översiktssida. Klicka på **Skapa en modell** antingen från mitten (om det inte finns några befintliga modeller) eller från det övre högra hörnet på sidan Översikt över mottagare.
+2. Leta reda på och öppna den angivna filen **[!UICONTROL Recommendations Recipe]** genom att klicka på dess namn och ange mottagarens översiktssida. Klicka på **[!UICONTROL Create a Model]** antingen i mitten (om det inte finns några modeller) eller i det övre högra hörnet på sidan Receptöversikt.
    ![](../images/models-recipes/model-walkthrough/recommendations_recipe_110.png)
-3. En lista över tillgängliga indatauppsättningar för utbildning visas. Välj **Rekommendationer indatauppsättning** och klicka på **Nästa**.
+3. En lista över tillgängliga indatauppsättningar för utbildning visas, välj **[!UICONTROL Recommendations Input Dataset]** och klicka **[!UICONTROL Next]**.
    ![](../images/models-recipes/model-walkthrough/select_dataset.png)
-4. Ange ett namn för modellen, till exempel&quot;Produktrekommendationsmodell&quot;. Tillgängliga konfigurationer för modellen visas med inställningar för modellens standardutbildnings- och bedömningsbeteenden. Inga ändringar behövs eftersom dessa konfigurationer är specifika för din organisation. Granska konfigurationerna och klicka på **Slutför**.
+4. Ange ett namn för modellen, till exempel&quot;Produktrekommendationsmodell&quot;. Tillgängliga konfigurationer för modellen visas med inställningar för modellens standardutbildnings- och bedömningsbeteenden. Inga ändringar behövs eftersom dessa konfigurationer är specifika för din organisation. Granska konfigurationerna och klicka på **[!UICONTROL Finish]**.
    ![](../images/models-recipes/model-walkthrough/configure_model.png)
 5. Modellen har nu skapats och sidan *Översikt* över modellen visas i en nyligen genererad utbildning. En utbildningskörning genereras som standard när en modell skapas.
    ![](../images/models-recipes/model-walkthrough/model_post_creation.png)
@@ -108,13 +108,13 @@ Du kan välja att vänta tills kursen är klar eller fortsätta att skapa en ny 
 
 ### Utbilda modellen med anpassade hyperparametrar
 
-1. På sidan *Modellöversikt* klickar du på **Utbildning** uppe till höger för att skapa en ny utbildning. Välj samma indatauppsättning som du använde när du skapade modellen och klicka på **Nästa**.
+1. På sidan *Modellöversikt* klickar du **[!UICONTROL Train]** i det övre högra hörnet för att skapa en ny utbildning. Välj samma indatauppsättning som du använde när du skapade modellen och klicka på **[!UICONTROL Next]**.
    ![](../images/models-recipes/model-walkthrough/training_select_dataset.png)
-2. Sidan *Konfiguration* visas. Här kan du konfigurera utbildningskörningens värde **num_recommendations** , som också kallas hyperparameter. En utbildad och optimerad modell använder de bästa hyperparametrarna baserat på resultatet av kursen.
+2. Sidan *Konfiguration* visas. Här kan du konfigurera kursens **[!UICONTROL num_recommendations]** värde, även kallat en hyperparameter. En utbildad och optimerad modell använder de bästa hyperparametrarna baserat på resultatet av kursen.
 
    Det går inte att lära sig hyperparametrar, och de måste därför tilldelas innan utbildning kan genomföras. Justering av hyperparametrar kan ändra noggrannheten för utbildningsmodellen. Eftersom det är en iterativ process att optimera en modell kan det krävas flera kurser innan en tillfredsställande utvärdering kan göras.
 
-   >[!TIP] Ange **num_recommendations** till 10.
+   >[!TIP] Ange **[!UICONTROL num_recommendations]** till 10.
 
    ![](../images/models-recipes/model-walkthrough/configure_hyperparameter.png)
 3. Ytterligare en datapunkt visas i modellutvärderingsschemat när den nya kursen är klar, vilket kan ta upp till flera minuter.
@@ -137,12 +137,12 @@ Det sista steget i arbetsflödet för datavetenskap är att driftsätta din mode
 ### Score and generate insights
 
 1. Klicka på namnet på den mest effektiva kursen på sidan *för produktrekommendationsmodellöversikt* , med de högsta värdena för återkallande och precision.
-2. Klicka på **bakgrundsmusik högst upp till höger på informationssidan för utbildningskörningen**.
-3. Välj **Recommendations Input Dataset** som betygsindatauppsättning, som är samma datauppsättning som du använde när du skapade modellen och körde kursen. Klicka sedan på **Nästa**.
+2. Klicka på uppe till höger på informationssidan för utbildningskörningen **[!UICONTROL Score]**.
+3. Välj **[!UICONTROL Recommendations Input Dataset]** som betygsindatauppsättning, som är samma datauppsättning som du använde när du skapade modellen och körde dess utbildning. Klicka sedan på **[!UICONTROL Next]**.
    ![](../images/models-recipes/model-walkthrough/scoring_input.png)
-4. Välj **Recommendations Output Dataset** som resultatdatauppsättning. Bedömningsresultaten kommer att lagras i den här datauppsättningen som en batch.
+4. Välj **[!UICONTROL Recommendations Output Dataset]** som resultatdatauppsättning. Bedömningsresultaten kommer att lagras i den här datauppsättningen som en batch.
    ![](../images/models-recipes/model-walkthrough/scoring_output.png)
-5. Granska poängkonfigurationerna. Dessa parametrar innehåller de in- och utdatamängder som valdes tidigare tillsammans med lämpliga scheman. Klicka på **Slutför** för att påbörja poängkörningen. Körningen kan ta flera minuter.
+5. Granska poängkonfigurationerna. Dessa parametrar innehåller de in- och utdatamängder som valdes tidigare tillsammans med lämpliga scheman. Klicka **[!UICONTROL Finish]** för att börja poängsättningen. Körningen kan ta flera minuter.
    ![](../images/models-recipes/model-walkthrough/scoring_configure.png)
 
 
@@ -150,10 +150,12 @@ Det sista steget i arbetsflödet för datavetenskap är att driftsätta din mode
 
 När poängsättningen är klar kan du förhandsgranska resultatet och se de insikter som genereras.
 
-1. På sidan för resultaträkning klickar du på den färdiga poängsättningen och sedan på **Förhandsgranska resultatdatauppsättning** till höger.
+1. Klicka på den färdiga poängkörningen på sidan för resultaträkning och klicka sedan på **[!UICONTROL Preview Scoring Results Dataset]** den högra listen.
    ![](../images/models-recipes/model-walkthrough/score_complete.png)
-2. I förhandsgranskningstabellen innehåller varje rad produktrekommendationer för en viss kund, märkta som **rekommendationer** respektive **userId** . Eftersom hyperparametern **num_recommendations** har angetts till 10 i exempelskärmbilderna kan varje rad med rekommendationer innehålla upp till 10 produkdentiteter avgränsade med ett nummertecken (#).
+2. I förhandsgranskningstabellen innehåller varje rad produktrekommendationer för en viss kund, märkta som **[!UICONTROL recommendations]** respektive **[!UICONTROL userId]** . Eftersom **[!UICONTROL num_recommendations]** hyperparametern var inställd på 10 i exempelskärmbilderna kan varje rad med rekommendationer innehålla upp till 10 produktidentiteter avgränsade med ett nummertecken (#).
    ![](../images/models-recipes/model-walkthrough/preview_score_results.png)
+
+## Nästa steg {#next-steps}
 
 Klart! Du har skapat produktrekommendationer!
 
