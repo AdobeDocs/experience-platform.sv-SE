@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Frågetjänst i anteckningsbok för Jupyter
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: d0596dc3c744e192c4d2ad04d6365846a0115371
+source-git-commit: 1447196da7dbf59c1f498de40f12ed74c328c0e6
 
 ---
 
@@ -13,16 +13,7 @@ source-git-commit: d0596dc3c744e192c4d2ad04d6365846a0115371
 
 Med Adobe Experience Platform kan ni använda SQL (Structured Query Language) i arbetsytan Data Science genom att integrera Query Service i JupyterLab som standardfunktion.
 
-I den här självstudiekursen visas följande exempel på SQL-frågor för vanliga användningsområden för att utforska, omvandla och analysera Adobe Analytics-data:
-
-- [Åtkomst till JupyterLab och Query Service](#access-jupyterlab-and-query-service)
-- [Fråga dina data](#query-your-data)
-   - [Antal besökare per timme](#hourly-visitor-count)
-   - [Antal aktiviteter per timme](#hourly-activity-count)
-   - [Antal händelser per besökarsession](#number-of-events-per-visitor-session)
-   - [Populära sidor för en viss dag](#popular-pages-for-a-given-day)
-   - [Aktiva användare för en viss dag](#active-users-for-a-given-day)
-   - [Aktiva städer efter användaraktivitet](#active-cities-by-user-activity)
+I den här självstudiekursen visas exempel på SQL-frågor för vanliga användningsområden för att utforska, omvandla och analysera Adobe Analytics-data.
 
 ## Komma igång
 
@@ -38,25 +29,25 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
    - [SQL-syntax för frågetjänst](../../query-service/sql/overview.md)
    - Adobe Analytics
 
-## Åtkomst till JupyterLab och Query Service
+## Åtkomst till JupyterLab och Query Service {#access-jupyterlab-and-query-service}
 
-1. Navigera till [Modeller](https://platform.adobe.com)från den vänstra navigeringskolumnen i **Experience Platform** . Klicka på **Anteckningsböcker** i det övre huvudet för att öppna JupyterLab. Tillåt ett ögonblick för JupyterLab att läsas in.
+1. I [Experience Platform](https://platform.adobe.com)navigerar du till **[!UICONTROL Notebooks]** den vänstra navigeringskolumnen. Tillåt ett ögonblick för JupyterLab att läsas in.
 
-   ![](../images/jupyterlab/query/notebook_ui.png)
+   ![](../images/jupyterlab/query/jupyterlab_launcher.png)
 
-   > [!NOTE] Om en ny startflik inte visas automatiskt öppnar du en ny startflik genom att klicka på **Arkiv > Ny startare**.
+   > [!NOTE] Om en ny startflik inte visas automatiskt öppnar du en ny startflik genom att klicka på **[!UICONTROL File]** och sedan välja **[!UICONTROL New Launcher]**.
 
-2. På fliken Launcher klickar du på ikonen **Tom** i en Python 3-miljö för att öppna en tom anteckningsbok.
+2. På fliken Launcher klickar du på **[!UICONTROL Blank]** ikonen i en Python 3-miljö för att öppna en tom anteckningsbok.
 
    ![](../images/jupyterlab/query/blank_notebook.png)
 
    > [!NOTE] Python 3 är för närvarande den enda miljö som stöds för frågetjänsten i bärbara datorer.
 
-3. Klicka på ikonen **Data** till vänster i vallisten och dubbelklicka på katalogen **Datasets** för att visa alla datauppsättningar.
+3. Klicka på **[!UICONTROL Data]** ikonen till vänster i markeringslisten och dubbelklicka på **[!UICONTROL Datasets]** katalogen för att visa alla datauppsättningar.
 
    ![](../images/jupyterlab/query/dataset.png)
 
-4. Hitta en Adobe Analytics-datauppsättning att utforska och högerklicka på listan, klicka på **Fråga data i anteckningsbok** för att generera SQL-frågor i den tomma anteckningsboken.
+4. Hitta en Adobe Analytics-datauppsättning att utforska och högerklicka på listan, klicka på **[!UICONTROL Query Data in Notebook]** för att generera SQL-frågor i den tomma anteckningsboken.
 
 5. Klicka på den första genererade cellen som innehåller funktionen `qs_connect()` och kör den genom att klicka på uppspelningsknappen. Den här funktionen skapar en anslutning mellan din anteckningsboksinstans och frågetjänsten.
 
@@ -93,17 +84,17 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
    - `target_day` : Den specifika dag som måldata kommer från.
    >[!NOTE] Du kan ändra dessa värden när som helst. När du gör det måste du se till att variablecellen körs för de ändringar som ska tillämpas.
 
-## Fråga dina data
+## Fråga dina data {#query-your-data}
 
-Ange följande SQL-frågor i enskilda anteckningsboksceller. Kör en fråga genom att klicka på cellen och sedan på **uppspelningsknappen** . Slutförda frågeresultat eller felloggar visas under den körda cellen.
+Ange följande SQL-frågor i enskilda anteckningsboksceller. Kör en fråga genom att klicka på cellen och sedan klicka på **[!UICONTROL play]** knappen. Slutförda frågeresultat eller felloggar visas under den körda cellen.
 
-När en anteckningsbok är inaktiv under en längre tid kan anslutningen mellan anteckningsboken och frågetjänsten brytas. I så fall startar du om JupyterLab genom att klicka på **strömknappen** i det övre högra hörnet.
+När en anteckningsbok är inaktiv under en längre tid kan anslutningen mellan anteckningsboken och frågetjänsten brytas. I så fall startar du om JupyterLab genom att klicka på **[!UICONTROL Power]** knappen i det övre högra hörnet.
 
 ![](../images/jupyterlab/query/restart_button.png)
 
-Anteckningsbokens kärna återställs, men cellerna finns kvar. Kör **alla** celler igen för att fortsätta där du slutade.
+Anteckningsbokens kärna återställs, men cellerna finns kvar. Kör cellerna igen **[!UICONTROL all]** för att fortsätta där du slutade.
 
-### Antal besökare per timme
+### Antal besökare per timme {#hourly-visitor-count}
 
 Följande fråga returnerar antalet besökare per timme för ett angivet datum:
 
@@ -144,7 +135,7 @@ fig = go.Figure(data = [trace], layout = layout)
 iplot(fig)
 ```
 
-### Antal aktiviteter per timme
+### Antal aktiviteter per timme {#hourly-activity-count}
 
 Följande fråga returnerar antalet timåtgärder för ett angivet datum:
 
@@ -195,7 +186,7 @@ Om du kör den ändrade frågan lagras resultatet i `hourly_actions_date_range` 
 hourly_actions_date_rage.head()
 ```
 
-### Antal händelser per besökarsession
+### Antal händelser per besökarsession {#number-of-events-per-visitor-session}
 
 Följande fråga returnerar antalet händelser per besökarsession för ett angivet datum:
 
@@ -230,7 +221,7 @@ fig = go.Figure(data = data, layout = layout)
 iplot(fig)
 ```
 
-### Populära sidor för en viss dag
+### Populära sidor för en viss dag {#popular-pages-for-a-given-day}
 
 Följande fråga returnerar de tio vanligaste sidorna för ett angivet datum:
 
@@ -249,7 +240,7 @@ ORDER  BY page_views DESC
 LIMIT  10;
 ```
 
-### Aktiva användare för en viss dag
+### Aktiva användare för en viss dag {#active-users-for-a-given-day}
 
 Följande fråga returnerar de tio mest aktiva användarna för ett angivet datum:
 
@@ -268,7 +259,7 @@ ORDER  BY Count DESC
 LIMIT  10;
 ```
 
-### Aktiva städer efter användaraktivitet
+### Aktiva städer efter användaraktivitet {#active-cities-by-user-activity}
 
 Följande fråga returnerar de tio städer som genererar de flesta användaraktiviteter för ett angivet datum:
 
