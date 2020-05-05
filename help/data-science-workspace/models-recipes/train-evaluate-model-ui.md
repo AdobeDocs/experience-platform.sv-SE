@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Utbildning och utvärdering av modell (UI)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
+source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
 
 ---
 
@@ -23,42 +23,42 @@ Den här självstudiekursen kräver en befintlig recept. Om du inte har någon r
 
 ## Skapa en modell
 
-1. I Adobe Experience Platform klickar du på länken **Modeller** i den vänstra navigeringskolumnen för att visa alla befintliga modeller. Klicka på **Skapa modell** uppe till höger på sidan för att påbörja en modellskapandeprocess.
+1. Klicka på länken i den vänstra navigeringskolumnen i Adobe Experience Platform för att visa en lista över alla befintliga modeller. **[!UICONTROL Models]** Klicka **[!UICONTROL Create Model]** uppe till höger på sidan när du vill skapa en modell.
    ![](../images/models-recipes/train-evaluate-ui/models_browse.png)
 
-2. Bläddra igenom listan med befintliga recept, sök efter och välj den mottagare som ska användas för att skapa modellen och klicka på **Nästa**.
+2. Bläddra igenom listan med befintliga recept, sök efter och välj den mottagare som ska användas för att skapa modellen och klicka på **[!UICONTROL Next]**.
    ![](../images/models-recipes/train-evaluate-ui/select_recipe.png)
 
-3. Välj en lämplig indatauppsättning och klicka på **Nästa**. Detta anger standarddatauppsättningen för inmatningsutbildning för modellen.
+3. Välj en lämplig indatauppsättning och klicka på **[!UICONTROL Next]**. Detta anger standarddatauppsättningen för inmatningsutbildning för modellen.
    ![](../images/models-recipes/train-evaluate-ui/select_dataset.png)
 
-4. Ange ett namn för modellen och granska standardmodellkonfigurationerna. Standardkonfigurationer tillämpades när Recept skapades, granska och ändra konfigurationsvärdena genom att dubbelklicka på värdena. Om du vill skapa en ny uppsättning konfigurationer klickar du på **Överför ny konfiguration** och drar en JSON-fil som innehåller modellkonfigurationer till webbläsarfönstret. Skapa modellen genom att klicka på **Slutför** .
+4. Ange ett namn för modellen och granska standardmodellkonfigurationerna. Standardkonfigurationer tillämpades när Recept skapades, granska och ändra konfigurationsvärdena genom att dubbelklicka på värdena. Om du vill skapa en ny uppsättning konfigurationer klickar du på **[!UICONTROL Upload New Config]** och drar en JSON-fil som innehåller modellkonfigurationer till webbläsarfönstret. Klicka **[!UICONTROL Finish]** för att skapa modellen.
    >[!NOTE]Konfigurationer är unika och specifika för den avsedda mottagaren, vilket innebär att konfigurationer för butiksförsäljningsreceptet inte fungerar för produktrekommendationsreceptet. I [referensavsnittet](#reference) finns en lista över konfigurationer för butiksförsäljning.
 
    ![](../images/models-recipes/train-evaluate-ui/name_and_configure.png)
 
 ## Skapa en utbildningskörning
 
-1. I Adobe Experience Platform klickar du på länken **Modeller** i den vänstra navigeringskolumnen för att visa alla befintliga modeller. Sök och klicka på namnet på den modell som ska tränas.
+1. Klicka på länken i den vänstra navigeringskolumnen i Adobe Experience Platform för att visa en lista över alla befintliga modeller. **[!UICONTROL Models]** Sök och klicka på namnet på den modell som ska tränas.
    ![](../images/models-recipes/train-evaluate-ui/models_browse.png)
 
 2. Alla befintliga kurser med deras aktuella utbildningsstatus listas. För modeller som skapats med användargränssnittet Data Science Workspace skapas och körs en utbildningskörning automatiskt med standardkonfigurationer och datauppsättningen för inmatningsutbildning.
    ![](../images/models-recipes/train-evaluate-ui/model_overview.png)
 
-3. Skapa en ny utbildningskurs genom att klicka på **Utbildning** uppe till höger på sidan Modellöversikt.
+3. Skapa en ny kurs genom att klicka **[!UICONTROL Train]** nära överst till höger på sidan Modellöversikt.
    ![](../images/models-recipes/train-evaluate-ui/training_input.png)
 
-4. Välj indatauppsättning för utbildning för kursen och klicka på **Nästa**.
+4. Välj indatauppsättning för utbildning för utbildningskörningen och klicka på **[!UICONTROL Next]**.
    ![](../images/models-recipes/train-evaluate-ui/training_configuration.png)
 
-5. Standardkonfigurationer som tillhandahålls när modellen skapas visas, ändra och ändra dem därefter genom att dubbelklicka på värdena. Klicka på **Slutför** för att skapa och köra kursen.
+5. Standardkonfigurationer som tillhandahålls när modellen skapas visas, ändra och ändra dem därefter genom att dubbelklicka på värdena. Klicka **[!UICONTROL Finish]** för att skapa och genomföra kursen.
    >[!NOTE]Konfigurationer är unika och specifika för den avsedda mottagaren, vilket innebär att konfigurationer för butiksförsäljningsreceptet inte fungerar för produktrekommendationsreceptet. I [referensavsnittet](#reference) finns en lista över konfigurationer för butiksförsäljning.
 
    ![](../images/models-recipes/train-evaluate-ui/training_configuration.png)
 
 ## Utvärdera modellen
 
-1. I Adobe Experience Platform klickar du på länken **Modeller** i den vänstra navigeringskolumnen för att visa alla befintliga modeller. Sök och klicka på namnet på den modell som ska utvärderas.
+1. Klicka på länken i den vänstra navigeringskolumnen i Adobe Experience Platform för att visa en lista över alla befintliga modeller. **[!UICONTROL Models]** Sök och klicka på namnet på den modell som ska utvärderas.
    ![](../images/models-recipes/train-evaluate-ui/models_browse.png)
 
 2. Alla befintliga kurser med deras aktuella utbildningsstatus listas. Om du har flera färdiga kurser kan du jämföra utvärderingsmätningar för olika utbildningar i modellutvärderingsdiagrammet. Välj ett utvärderingsmått i listrutan ovanför diagrammet.
@@ -70,7 +70,7 @@ Den här självstudiekursen kräver en befintlig recept. Om du inte har någon r
    Precisionsmåttet beskriver procentandelen relevanta instanser jämfört med det totala antalet *hämtade* instanser. Precision kan ses som sannolikheten att ett slumpmässigt valt resultat blir korrekt.
    ![](../images/models-recipes/train-evaluate-ui/multiple_training_runs.png)
 
-   Klicka på en särskild övning för att se mer information om den körningen. Detta kan göras även innan körningen har slutförts. På detaljsidan kan du se andra utvärderingsmått, konfigurationsparametrar och visualiseringar som är specifika för kursen. Du kan även hämta aktivitetsloggar för att se information om körningen. Loggar är särskilt användbara för misslyckade körningar för att se vad som gick fel.
+   Klicka på en särskild övning för att se mer information om den. Detta kan göras även innan körningen har slutförts. På detaljsidan kan du se andra utvärderingsmått, konfigurationsparametrar och visualiseringar som är specifika för kursen. Du kan även hämta aktivitetsloggar för att se information om körningen. Loggar är särskilt användbara för misslyckade körningar för att se vad som gick fel.
    ![](../images/models-recipes/train-evaluate-ui/activity_logs.png)
 
 3. Hyperparametrar kan inte tränas och en modell måste optimeras genom att olika kombinationer av hyperparametrar testas. Upprepa denna modellutbildning och utvärderingsprocess tills du har nått en optimerad modell.
@@ -98,7 +98,7 @@ Ytterligare parametrar bestämmer modellens tekniska egenskaper:
 | `ACP_DSW_INPUT_FEATURES` | Sträng | Lista med kommaavgränsade inmatningsschemaattribut. |
 | `ACP_DSW_TARGET_FEATURES` | Sträng | Lista med kommaseparerade utdataschemaattribut. |
 | `ACP_DSW_FEATURE_UPDATE_SUPPORT` | Boolean | Avgör om in- och utdatafunktionerna kan ändras |
-| `tenantId` | Sträng | Detta ID garanterar att de resurser du skapar namnges korrekt och finns i IMS-organisationen. [Följ stegen här](../../xdm/api/getting-started.md#know-your-tenant-id) för att hitta ditt klient-ID. |
+| `tenantId` | Sträng | Detta ID garanterar att de resurser du skapar namnges korrekt och finns i IMS-organisationen. [Följ stegen här](../../xdm/api/getting-started.md#know-your-tenant_id) för att hitta ditt klient-ID. |
 | `ACP_DSW_TRAINING_XDM_SCHEMA` | Sträng | Det indatarema som används för utbildning av en modell. |
 | `evaluation.labelColumn` | Sträng | Kolumnetikett för utvärderingsvisualiseringar. |
 | `evaluation.metrics` | Sträng | Kommaavgränsad lista med mätvärden som ska användas för att utvärdera en modell. |
