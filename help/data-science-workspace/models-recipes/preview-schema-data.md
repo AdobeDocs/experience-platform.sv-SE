@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Förhandsgranska scheman och datauppsättningar
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 11eb1859f3e4b059765709e750f18b61509a2f93
+source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
 
 ---
 
@@ -13,15 +13,15 @@ source-git-commit: 11eb1859f3e4b059765709e750f18b61509a2f93
 
 När bootstrap-skriptet har slutförts från självstudiekursen [Skapa försäljningsschema och datauppsättning](./create-retails-sales-dataset.md) (butik). Utdatamodeller och datauppsättningar kan visas på Experience Platform. Följ stegen nedan för att visa scheman och datauppsättningar:
 
-1. Klicka på länken **Scheman** i den vänstra navigeringskolumnen och sök efter det inmatningsschema som har skapats av bootstrap-skriptet. Schemats namn motsvarar det som definierades i `config.yaml` föregående steg. Visa schemainformationen och dess komposition genom att klicka på den.
+1. Klicka på den **[!UICONTROL Schemas]** länk som finns i den vänstra navigeringskolumnen och sök efter det inmatningsschema som har skapats av bootstrap-skriptet. Schemats namn motsvarar det som definierades i `config.yaml` föregående steg. Visa schemainformationen och dess komposition genom att klicka på den.
 
    ![](../images/models-recipes/access-data/schema_overview.png)
 
-2. Klicka på länken **Datauppsättningar** i den vänstra navigeringskolumnen och öppna den indatauppsättning som skapades genom att klicka på namnet på listan. Namnet på datauppsättningen motsvarar det som definierades i `config.yaml` föregående steg.
+2. Klicka på **[!UICONTROL Datasets]** länken i den vänstra navigeringskolumnen och öppna den indatauppsättning som skapades genom att klicka på namnet på listan. Namnet på datauppsättningen motsvarar det som definierades i `config.yaml` föregående steg.
 
    ![](../images/models-recipes/access-data/dataset_overview.png)
 
-3. Klicka på **Förhandsgranska datauppsättning** längst upp till höger och förhandsgranska en delmängd av datauppsättningen.
+3. Klicka på **[!UICONTROL Preview Dataset]** en deluppsättning av datauppsättningen längst upp till höger.
 
    ![](../images/models-recipes/access-data/preview_dataset.png)
 
