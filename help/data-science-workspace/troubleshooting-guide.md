@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Felsökningsguide för Data Science Workspace
 topic: Troubleshooting
 translation-type: tm+mt
-source-git-commit: ef7c37438990d3bc42024e7fb106d781a5ebbd12
+source-git-commit: 1447196da7dbf59c1f498de40f12ed74c328c0e6
 
 ---
 
@@ -103,4 +103,4 @@ Du kan konfigurera resurser genom att lägga till följande block i den första 
 }
 ```
 
-Mer information om konfigurationen av Spark-klusterresurser, inklusive en fullständig lista över konfigurerbara egenskaper, finns i användarhandboken för [JupyterLab](./jupyterlab/overview.md#pyspark-spark-execution-resource).
+Mer information om konfigurationen av Spark-klusterresurser, inklusive en fullständig lista över konfigurerbara egenskaper, finns i användarhandboken för [JupyterLab](./jupyterlab/overview.md#kernels).
