@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa ett recept med Jupyter-anteckningsböcker
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
+source-git-commit: 1447196da7dbf59c1f498de40f12ed74c328c0e6
 
 ---
 
@@ -22,7 +22,7 @@ Den här självstudiekursen går igenom två huvudavsnitt. Först skapar du en m
 
 ## Kom igång med JupyterLab-miljön för bärbara datorer
 
-Du kan skapa ett helt nytt recept på arbetsytan Data Science. Börja med att navigera till [Adobe Experience Platform](https://platform.adobe.com) och klicka på fliken **ML-modeller** till vänster för att komma till arbetsytan Data Science. Härifrån klickar du på underfliken **Anteckningsböcker** och på startskärmen i Jupyterlab skapar du en ny anteckningsbok genom att välja mallen Recipe Builder.
+Du kan skapa ett helt nytt recept på arbetsytan Data Science. Börja med att navigera till [Adobe Experience Platform](https://platform.adobe.com) och klicka på **[!UICONTROL Notebooks]** fliken till vänster. Skapa en ny anteckningsbok genom att välja mallen Recipe Builder i JupyterLab Launcher.
 
 Med Recipe Builder-anteckningsboken kan du köra utbildning och poängsättning inuti anteckningsboken. Detta ger er flexibilitet att ändra deras `train()` och `score()` metoder mellan att köra experiment med kurser och poängdata. När du är nöjd med resultatet av kursen och poängsättningen kan du skapa ett recept som ska användas i Data Science Workspace med hjälp av den bärbara datorn för att hämta funktionalitet som är inbyggd i Recipe Builder-anteckningsboken.
 
@@ -379,7 +379,7 @@ def split(self, configProperties={}, dataframe=None):
 Funktionen utförs `evaluate()` efter att modellen har tränats och returnerar ett mått som anger hur framgångsrik modellen är. Funktionen använder `evaluate()` testdatauppsättningsrubrikerna och den utbildade modellen för att förutsäga en uppsättning funktioner. Dessa förväntade värden jämförs sedan med de faktiska funktionerna i testdatauppsättningen. Vanliga bedömningsalgoritmer är:
 - [Genomsnittligt absolut procentfel (MAPE)](https://en.wikipedia.org/wiki/Mean_absolute_percentage_error)
 - [Medel absolut fel (MAE)](https://en.wikipedia.org/wiki/Mean_absolute_error)
-- [RMSE (Root-Mean-square error)](https://en.wikipedia.org/wiki/Root-mean-square_deviation)
+- [RMSE (Root-ean-square error)](https://en.wikipedia.org/wiki/Root-mean-square_deviation)
 
 
 Funktionen `evaluate()` i exemplet med försäljning inom detaljhandeln visas nedan:
@@ -474,7 +474,7 @@ Genom att slutföra den här självstudiekursen har du lärt dig att skapa en ma
 
 Om du vill fortsätta lära dig hur du arbetar med resurser på arbetsytan Data Science kan du gå till listrutan Data Science Workspace-recept och -modeller.
 
-## Additional resources {#additional-resources}
+## Ytterligare resurser {#additional-resources}
 
 Följande video har utformats för att ge stöd för din förståelse för att bygga och driftsätta modeller.
 
