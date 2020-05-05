@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Konfigurera en AI-instans för kund
 topic: Instance creation
 translation-type: tm+mt
-source-git-commit: f7c59ef097c00073fbf9f6522b6e70ed24cc8bf1
+source-git-commit: ec0de4c8775367be9e6016529471254ad9f8f453
 
 ---
 
@@ -49,7 +49,7 @@ Klicka på **[!UICONTROL Enter Field Name]** och välj ett fält i listrutan. Kl
 
 ![](../images/user-guide/goal.png)
 
-### Konfigurera ett schema *(valfritt)*{#configure-a-schedule}
+### Konfigurera ett schema *(valfritt)* {#configure-a-schedule}
 
 Det *avancerade* steget visas. Med det här valfria steget kan du konfigurera ett schema för att automatisera prediktionskörningar, definiera undantag för förutsägelser för att filtrera vissa händelser eller klicka **[!UICONTROL Finish]** om inget behövs.
 
@@ -76,4 +76,10 @@ Genom att följa det här avsnittet har du konfigurerat en instans av Kundens AI
 ## Nästa steg {#next-steps}
 
 Genom att följa den här självstudiekursen har du konfigurerat en instans av kundens AI och genererat benägenhetspoäng. Du kan nu välja att använda segmentbyggaren för att [skapa kundsegment med förutbestämda poäng](./create-segment.md) eller [identifiera insikter med kundens AI](./discover-insights.md).
+
+## Ytterligare resurser
+
+Följande video är utformad för att ge dig en bättre förståelse för hur kundens AI kan konfigureras. Dessutom finns bästa praxis och exempel på användningsfall.
+
+>[!VIDEO](https://video.tv.adobe.com/v/32665?learn=on&quality=12)
 
