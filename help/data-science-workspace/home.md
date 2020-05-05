@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över arbetsytan Datavetenskap
 topic: overview
 translation-type: tm+mt
-source-git-commit: 9f3fc3ec3ce560534b057185e3fef2cc2bc1234d
+source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
 
 ---
 
@@ -172,7 +172,6 @@ Alla data i Adobe Experience Platform följer ett standardiserat XDM-schema, vil
 Om du inte omedelbart hittar de data du behöver, men de finns utanför Adobe Experience Platform, är det en relativt enkel uppgift att importera ytterligare datauppsättningar, som också kommer att omvandlas till det standardiserade XDM-schemat.\
 Du kan använda Jupyter-anteckningsbok för att förenkla förbearbetning av data, och kanske börja med en mall för en anteckningsbok eller en anteckningsbok som du har använt tidigare för att vara benägen att köpa.
 
-<!-- databricks update-->
 ![](./images/home/notebook_templates.png)
 
 ### Skriv receptet
