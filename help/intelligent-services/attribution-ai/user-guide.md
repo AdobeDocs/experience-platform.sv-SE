@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användarhandbok för AI-attribut
 topic: User guide
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: 3e1e7bea7113b5db6b9bd02ce0dbe8cfd486206c
 
 ---
 
@@ -174,3 +174,9 @@ När du har valt utbildningsfönstret klickar du på **Slutför** i det övre h�
 ## Nästa steg
 
 Genom att följa den här självstudiekursen har du skapat en tjänstinstans i Attribution AI. När instansen är klar med poängsättningen (upp till 24 timmar) är du redo att [identifiera AI-insikter](./discover-insights.md)för attribuering. Om du dessutom vill ladda ned dina poängresultat går du till [nedladdningsdokumentationen för](./download-scores.md) bakgrundsmusik.
+
+## Ytterligare resurser
+
+I följande video visas ett arbetsflöde från början till slut för att skapa en ny instans i Attribution AI.
+
+>[!VIDEO](https://video.tv.adobe.com/v/32668?learn=on&quality=12)
