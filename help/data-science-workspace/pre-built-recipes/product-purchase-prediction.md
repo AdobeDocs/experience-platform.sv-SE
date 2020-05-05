@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Produktinköpsrecept
 topic: overview
 translation-type: tm+mt
-source-git-commit: f548fb6431b7bc71c205a2b2b7ca3884e57340b1
+source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
 
 ---
 
@@ -56,6 +56,6 @@ I det här receptet används [XDM-scheman](../../xdm/home.md) för att modellera
 
 ## Algoritm
 
-Först läses utbildningsdatauppsättningen i **ProductPredication** -schemat in. Härifrån utbildas modellen med en [slumpmässig skogsklassificerare](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html). Slumpmässig skogsklassificerare är en typ av ensemberad algoritm som refererar till en algoritm som kombinerar flera algoritmer för att få bättre prediktiva prestanda. Tanken bakom algoritmen är att den slumpmässiga skogsklassificeraren bygger flera beslutsträd och sammanfogar dem för att skapa en mer korrekt och stabil förutsägelse.
+Först läses utbildningsdatauppsättningen i *ProductPredication* -schemat in. Härifrån utbildas modellen med en [slumpmässig skogsklassificerare](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html). Slumpmässig skogsklassificerare är en typ av ensemberad algoritm som refererar till en algoritm som kombinerar flera algoritmer för att få bättre prediktiva prestanda. Tanken bakom algoritmen är att den slumpmässiga skogsklassificeraren bygger flera beslutsträd och sammanfogar dem för att skapa en mer korrekt och stabil förutsägelse.
 
 Denna process börjar med att skapa en uppsättning beslutsträd som slumpvis väljer ut undergrupper av utbildningsdata. Därefter beräknas medelvärdet för resultaten av varje beslutsträd.
