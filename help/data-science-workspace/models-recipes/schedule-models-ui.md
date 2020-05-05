@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Schemalägg en modell (UI)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
+source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
 
 ---
 
@@ -28,13 +28,13 @@ Den här självstudiekursen kräver en befintlig tjänst. Om du inte har någon 
 
 Modellpoäng kan konfigureras till en automatiserad process på schemalagd basis. När en tjänst har skapats kan du följa stegen nedan för att konfigurera och tillämpa ett poängschema:
 
-1. I Adobe Experience Platform klickar du på fliken **Tjänster** i den vänstra navigeringskolumnen för att komma åt *tjänstgalleriet*. Hitta den tjänst du vill schemalägga poängsättningen för och klicka på **Öppna** för att visa sidan *Översikt* .
+1. I Adobe Experience Platform klickar du på fliken **[!UICONTROL Services]** i den vänstra navigeringskolumnen för att komma åt *tjänstgalleriet*. Hitta den tjänst som du vill schemalägga poängsättningen för och klicka på **[!UICONTROL Open]** för att visa *översiktssidan* .
    ![](../images/models-recipes/schedule/click_to_open.png)
 
-2. På sidan Översikt visas tjänstens poänginformation. Klicka på länken **Uppdatera schema** för att konfigurera ett poängschema.
+2. På sidan Översikt visas tjänstens poänginformation. Klicka på **[!UICONTROL Update Schedule]** länken för att konfigurera ett poängschema.
    ![](../images/models-recipes/schedule/service_overview_score.png)
 
-3. Konfigurera frekvens, startdatum, slutdatum, indatamängd och utdatamängd för poängsättningsschemat. När du är nöjd med konfigurationerna klickar du på **Skapa** för att uppdatera tjänstens poängschema.
+3. Konfigurera frekvens, startdatum, slutdatum, indatamängd och utdatamängd för poängsättningsschemat. När du är nöjd med konfigurationerna klickar du på **[!UICONTROL Create]** för att uppdatera tjänstens poängschema.
    ![](../images/models-recipes/schedule/14_configure_scoring_schedule.png)
 
 4. Det uppdaterade poängschemat visas på sidan *Översikt* över tjänsten.
@@ -47,13 +47,13 @@ När schemalagd utbildning konfigureras körs på en tjänst säkerställer du a
 
 När en tjänst har skapats följer du stegen nedan för att konfigurera och tillämpa ett utbildningsschema:
 
-1. I Adobe Experience Platform klickar du på fliken **Tjänster** i den vänstra navigeringskolumnen för att komma åt *tjänstgalleriet*. Hitta den tjänst som du vill schemalägga kurser för och klicka på **Öppna** för att visa sidan *Översikt* .
+1. I Adobe Experience Platform klickar du på fliken **[!UICONTROL Services]** i den vänstra navigeringskolumnen för att komma åt *tjänstgalleriet*. Hitta den tjänst som du vill schemalägga kurser för och klicka på **[!UICONTROL Open]** sidan *Översikt* .
    ![](../images/models-recipes/schedule/click_to_open.png)
 
-2. På sidan Översikt visas tjänstens utbildningsinformation. Klicka på länken **Uppdatera schema** för att konfigurera ett utbildningsschema.
+2. På sidan Översikt visas tjänstens utbildningsinformation. Klicka på **[!UICONTROL Update Schedule]** länken för att konfigurera ett utbildningsschema.
    ![](../images/models-recipes/schedule/service_overview_train.png)
 
-3. Konfigurera frekvens, startdatum, slutdatum och indatamängd som används för utbildningens schema. När du är nöjd med konfigurationerna klickar du på **Skapa** för att uppdatera tjänstens utbildningsschema.
+3. Konfigurera frekvens, startdatum, slutdatum och indatamängd som används för utbildningens schema. När du är nöjd med konfigurationerna klickar du på **[!UICONTROL Create]** för att uppdatera tjänstens utbildningsschema.
    ![](../images/models-recipes/schedule/12_configure_training_schedule.png)
 
 4. Det uppdaterade utbildningsschemat visas på sidan *Översikt* för tjänsten.
