@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Butiksförsäljningsrecept
 topic: overview
 translation-type: tm+mt
-source-git-commit: f548fb6431b7bc71c205a2b2b7ca3884e57340b1
+source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
 
 ---
 
@@ -53,7 +53,7 @@ I det här receptet används [XDM-scheman](../../xdm/schema/field-dictionary.md)
 
 ## Algoritm
 
-Först läses utbildningsdatauppsättningen i **DSWRetailSales** -schemat in. Härifrån tränas modellen med en [övertoningsförstärkningsalgoritm](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html). För övertoningsförbättringar används idén att svaga studerande (en som är minst något bättre än en slumpmässig chans) kan bilda en rad olika studerande som fokuserar på att förbättra den tidigare elevens svagheter. Tillsammans kan de användas för att skapa en kraftfull prediktiv modell.
+Först läses utbildningsdatauppsättningen i *DSWRetailSales* -schemat in. Härifrån tränas modellen med en [övertoningsförstärkningsalgoritm](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html). För övertoningsförbättringar används idén att svaga studerande (en som är minst något bättre än en slumpmässig chans) kan bilda en rad olika studerande som fokuserar på att förbättra den tidigare elevens svagheter. Tillsammans kan de användas för att skapa en kraftfull prediktiv modell.
 
 Processen består av tre delar: en förlustfunktion, en svag kursledare och en additiv modell.
 
