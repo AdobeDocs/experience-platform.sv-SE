@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Identifiera insikter i Attribution AI
 topic: Attribution AI insights
 translation-type: tm+mt
-source-git-commit: 0f6424c5afbf9b23016e1c40d156f6226f853cd6
+source-git-commit: ec0de4c8775367be9e6016529471254ad9f8f453
 
 ---
 
@@ -152,3 +152,9 @@ Kortet *Top campaign* visar en översikt över era kampanjer och hur kampanjen f
 ## Nästa steg
 
 När du är klar med filtreringen av data och kan visa lämplig information kan du välja att få åtkomst till poängen. Om du vill ha en detaljerad guide om hur du får tillgång till dina poäng kan du gå till [åtkomstpoängen i AI](./download-scores.md) -självstudiekursen för attribuering. Dessutom kan du hämta sammanfattningsdata enligt [fler åtgärder](#more-actions). Om du väljer Hämta sammanfattningsdata hämtas sammanfattningsdata som aggregerats efter datum.
+
+## Ytterligare resurser
+
+Följande video är utformad för att hjälpa till att lära sig hur man använder informationssidan för attributanalys för att förstå avkastningen på marknadsföringskanaler och kampanjer.
+
+>[!VIDEO](https://video.tv.adobe.com/v/32669?learn=on&quality=12)
