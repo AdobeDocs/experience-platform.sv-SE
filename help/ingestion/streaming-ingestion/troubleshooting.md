@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Felsökning av direktuppspelning
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: 4817162fe2b7cbf4ae4c1ed325db2af31da5b5d3
+source-git-commit: 0eecd802fc8d0ace3a445f3f188a7f095b97d0c8
+workflow-type: tm+mt
+source-wordcount: '1046'
+ht-degree: 0%
 
 ---
 
@@ -39,7 +42,7 @@ Nyttolaster för begäranden kan bara utvärderas efter att de har skickats till
 
 Om synkron validering inte stöds för den begärda platsen returneras ett 501-felsvar. Mer information om synkron validering finns i [strömningsvalideringsöversikten](../quality/streaming-validation.md) .
 
-### Hur autentiserar jag skickade data?
+### Hur ser jag till att data bara samlas in från betrodda källor?
 
 Experience Platform har stöd för säker datainsamling. När autentiserad datainsamling är aktiverad måste klienterna skicka en JSON Web Token (JWT) och deras IMS Organization ID som begärandehuvuden. Mer information om hur du skickar autentiserade data till Platform finns i guiden om [autentiserad datainsamling](../tutorials/create-authenticated-streaming-connection.md).
 
