@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Skapa en direktuppspelningsanslutning med API:t
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 181719e729748adcde62199c9406a97b7a807182
+source-git-commit: 0eecd802fc8d0ace3a445f3f188a7f095b97d0c8
+workflow-type: tm+mt
+source-wordcount: '659'
+ht-degree: 0%
 
 ---
 
@@ -177,6 +180,6 @@ I det här avsnittet finns ytterligare information om hur du skapar direktuppspe
 
 ### Autentiserade direktuppspelningsanslutningar
 
-Autentiserad datainsamling gör att Adobe Experience Platform-tjänster, som kundprofil och identitet i realtid, kan skilja mellan poster som kommer från betrodda källor och icke-betrodda källor. Klienter som vill skicka personligt identifierbar information (PII) kan göra det genom att skicka IMS Access-token som en del av POST-begäran. Om IMS-token är giltig markeras posterna som insamlade från giltiga källor.
+Autentiserad datainsamling gör det möjligt för Adobe Experience Platform-tjänster, som kundprofil och identitet i realtid, att skilja mellan poster som kommer från betrodda källor och icke betrodda källor. Klienter som vill skicka personligt identifierbar information (PII) kan göra det genom att skicka IMS Access-token som en del av POST-begäran. Om IMS-token är giltig markeras posterna som insamlade från betrodda källor.
 
 Mer information om hur du skapar en autentiserad direktuppspelningsanslutning finns i självstudiekursen [Skapa en autentiserad direktuppspelningsanslutning](create-authenticated-streaming-connection.md).
