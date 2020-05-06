@@ -3,7 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Hjälp om Adobe Experience Platform Edge Network
 translation-type: tm+mt
-source-git-commit: db4bfec04a1116ce2b6a0be7ca0e8cb2f9639ad6
+source-git-commit: 44f8fceda91d4ee1044491d7eec363e501d46e70
+workflow-type: tm+mt
+source-wordcount: '89'
+ht-degree: 2%
 
 ---
 
@@ -27,6 +30,7 @@ source-git-commit: db4bfec04a1116ce2b6a0be7ca0e8cb2f9639ad6
    * [Hantera flimmer](fundamentals/managing-flicker.md)
    * [Godkännande](fundamentals/supporting-consent.md)
    * [Stöd för webbläsare i appen](fundamentals/supporting-in-app-browsers.md)
+   * [Hämtar Experience Cloud-ID](fundamentals/retrieving-experience-cloud-id.md)
 * Vad som ska implementeras {#implement}
    * [Produkter](what-to-implement/commerce.md)
 * Lösningsspecifika överväganden {#solutions}
