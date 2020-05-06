@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Skapa en autentiserad direktuppspelningsanslutning
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 79466c78fd78c0f99f198b11a9117c946736f47a
+source-git-commit: d9ce9506e43c4deed01f18e5913fda5a5c3cee84
+workflow-type: tm+mt
+source-wordcount: '649'
+ht-degree: 0%
 
 ---
 
@@ -194,11 +197,3 @@ Om det inte finns någon `Authorization` rubrik eller om en åtkomsttoken som ä
     }
 }
 ```
-
-### Skicka meddelanden till en oautentiserad direktuppspelningsanslutning med auktorisering
-
-Om en direktuppspelningsanslutning inte har aktiverad autentisering kan klienten fortfarande (valfritt) lägga till sidhuvudet i sin begäran `Authorization` .
-
-Om det inte finns någon `Authorization` rubrik, eller om en åtkomsttoken som är ogiltig/har upphört att gälla skickas, returneras ett otillåtet HTTP 401-svar, kommer data fortfarande att publiceras, men med `authenticatedRequest` fältet inställt på `false`.
-
-Om det finns ett sidhuvud som är giltigt, kommer data att publiceras med `Authorization` fältet inställt på `authenticatedRequest` `true`.
