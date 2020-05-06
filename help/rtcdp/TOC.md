@@ -3,7 +3,10 @@ product: adobe experience platform
 audience: user
 user-guide-title: Hjälp om kunddataplattform i realtid
 translation-type: tm+mt
-source-git-commit: 6f27a5eb12991fce0fbeef2d77622dfcf4a97cae
+source-git-commit: e0807f32ff5f3d16a6805074951e3b09723c5181
+workflow-type: tm+mt
+source-wordcount: '407'
+ht-degree: 1%
 
 ---
 
@@ -25,7 +28,7 @@ source-git-commit: 6f27a5eb12991fce0fbeef2d77622dfcf4a97cae
    * Målgränssnitt {#destinations-interface}
       * [Arbetsytan Destinationer](destinations/destinations-workspace.md)
       * [Sidan med målinformation](destinations/destination-details-page.md)
-   * Målkatalog {#destinations-cat}
+   * Målkatalog  {#destinations-cat}
       * [Översikt över destinationskatalogen](destinations/destinations-catalog.md)
       * Adobes destinationer{#adobe-destinations}
          * [Översikt över Adobes destinationer](destinations/adobe-destinations.md)
@@ -75,7 +78,7 @@ source-git-commit: 6f27a5eb12991fce0fbeef2d77622dfcf4a97cae
          * [Arbetsflöde för att skapa molnlagringsmål](/help/rtcdp/destinations/cloud-storage-destinations-workflow.md)
          * [Amazon S3-mål](destinations/amazon-s3-destination.md)
          * [SFTP-mål](destinations/sftp-destination.md)
-      * Plattformsmål för datahantering {dmp-destination}
+      * Plattformsmål för datahantering {#dmp-destinations}
          * [Översikt över mål för datahanteringsplattformen](destinations/dmp-destinations.md)
          * [Audience Manager DIL-tillägg](/help/rtcdp/destinations/aam-dil-extension.md)
       * E-postmarknadsföringsmål{#email-destinations}
