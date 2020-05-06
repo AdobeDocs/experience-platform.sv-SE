@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Autentisera och få tillgång till Experience Platform API:er
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: fca15ebf87559b08dd09e63b5df5655b57ef5977
+source-git-commit: e1ba476fffc164b78decd7168192714993c791bc
+workflow-type: tm+mt
+source-wordcount: '843'
+ht-degree: 0%
 
 ---
 
@@ -34,12 +37,11 @@ I följande avsnitt går vi igenom stegen för att skapa ett Adobe ID och bli ut
 
 Om du inte har något Adobe-ID kan du skapa ett med följande steg:
 
-1. Gå till [Adobe I/O Console](https://console.adobe.io)
+1. Gå till [Adobe Developer Console](https://console.adobe.io)
 2. Klicka på **Skapa ett nytt konto**
 3. Slutför registreringsprocessen
 
-
-### Bli utvecklare och användare av Experience Platform för en organisation
+## Bli utvecklare och användare av Experience Platform för en organisation
 
 Innan du skapar integreringar på Adobe I/O måste ditt konto ha utvecklarbehörighet för en produkt i en IMS-organisation. Detaljerad information om utvecklarkonton på Admin Console finns i [supportdokumentet](https://helpx.adobe.com/enterprise/using/manage-developers.html) för hantering av utvecklare.
 
@@ -53,7 +55,7 @@ Administratören måste tilldela dig som utvecklare minst en produktprofil för 
 
 ![](images/authentication/add-developer.png)
 
-När du har utsetts till utvecklare får du behörighet att skapa integreringar på [Adobe I/O](https://console.adobe.io/). Dessa integreringar är en pipeline från externa program och tjänster till Adobe API.
+När du har utsetts till utvecklare får du behörighet att skapa integreringar på [Adobe I/O](https://www.adobe.com/go/devs_console_ui). Dessa integreringar är en pipeline från externa program och tjänster till Adobe API.
 
 **Få användaråtkomst**
 
@@ -66,188 +68,54 @@ På samma sätt som när du lägger till en utvecklare måste administratören t
 ![](images/authentication/assign-user-details.png)
 
 
-## Engångsinställning
+## Generera autentiseringsuppgifter för åtkomst i Adobe Developer Console
 
-Följande steg behöver bara utföras en gång:
+Med Adobe Developer Console måste du generera följande tre autentiseringsuppgifter:
 
-* Logga in på Adobe I/O Console
-* Skapa integrering
-* Kopiera ned åtkomstvärden
+* `{IMS_ORG}`
+* `{API_KEY}`
+* `{ACCESS_TOKEN}`
 
-När du har dina integrerings- och åtkomstvärden kan du återanvända dem för autentisering i framtiden. Varje steg beskrivs närmare nedan.
+Ditt `{IMS_ORG}` och `{API_KEY}` behöver bara genereras en gång och kan återanvändas i framtida API-anrop för plattformen. Ditt `{ACCESS_TOKEN}` är dock tillfälligt och måste genereras om var 24:e timme.
 
-### Logga in på Adobe I/O Console
+Stegen beskrivs närmare nedan.
 
-Gå till [Adobe I/O Console](https://console.adobe.io/) och logga in med ditt Adobe ID.
+### Engångskonfiguration
 
-När du är inloggad klickar du på fliken **Integrationer** högst upp på skärmen. En integrering är ett tjänstkonto som skapas för den valda IMS-organisationen. Du får bara ringa anrop till den IMS-organisation som integreringen skapas i.
+Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med ditt Adobe ID. Följ sedan stegen som beskrivs i självstudiekursen om hur du [skapar ett tomt projekt](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) i dokumentationen för Adobe Developer Console.
 
->[!NOTE]
->Om ditt konto är kopplat till flera organisationer kan du enkelt växla mellan dem via den nedrullningsbara menyn längst upp till höger på skärmen.
+När du har skapat ett nytt projekt klickar du **[!UICONTROL Add API]** på skärmen _Projektöversikt_ .
 
-### Skapa integrering
+![](images/authentication/add-api-button.png)
 
-Starta processen genom att klicka på **Ny integrering** på sidan **Integreringar** . Processen innehåller tre steg:
-* Välj typ av integrering
-* Välj vilken Adobe-tjänst du vill integrera med
-* Lägg till integreringsinformation, offentlig nyckel och produktprofil
+Skärmen _Lägg till ett API_ visas. Klicka på produktikonen för Adobe Experience Platform och välj sedan **[!UICONTROL Experience Platform API]** innan du klickar på **[!UICONTROL Next]**.
 
-![](images/authentication/integrations.png)
+![](images/authentication/add-platform-api.png)
 
-#### Välj typ av integrering
+När du har valt Experience Platform som det API som ska läggas till i projektet följer du de steg som beskrivs i självstudiekursen om hur du [lägger till ett API i ett projekt med ett tjänstkonto (JWT)](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/services-add-api-jwt.md) (med början från steget Konfigurera API) för att slutföra processen.
 
-På nästa skärm visas en fråga om du vill få åtkomst till ett API eller få händelser i realtid. Välj **Åtkomst till ett API** och sedan **Fortsätt**.
+När API:t har lagts till i projektet visas följande autentiseringsuppgifter på sidan _Projektöversikt_ som krävs i alla anrop till Experience Platform API:er:
 
-![](images/authentication/create-new-integration.png)
+* `{API_KEY}` (Klient-ID)
+* `{IMS_ORG}` (Organisations-ID)
 
-#### Välj vilken Adobe-tjänst du vill integrera med
+![](./images/authentication/api-key-ims-org.png)
 
-Om ditt konto är kopplat till flera IMS-organisationer kan du växla mellan dem med hjälp av den nedrullningsbara menyn längst upp till höger. Välj **Workshop** och **Experience Platform API** under **Adobe Experience Platform** för att få tillgång till API:erna.
+### Autentisering för varje session
 
-![](images/authentication/integration-select-service.png)
+Den sista obligatoriska autentiseringsuppgifterna som du måste samla in är din `{ACCESS_TOKEN}`. Till skillnad från värdena för `{API_KEY}` och `{IMS_ORG}`måste en ny token genereras var 24:e timme för att du ska kunna fortsätta använda plattforms-API:er.
 
-Klicka på **Fortsätt** för att gå till nästa avsnitt.
+Om du vill skapa en ny `{ACCESS_TOKEN}`variant följer du stegen för att [generera en JWT-token](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/credentials.md) i referenshandboken för Developer Console.
 
-#### Lägg till integreringsinformation, offentlig nyckel och produktprofil
+## Testa autentiseringsuppgifter
 
-På nästa skärm får du en uppmaning om att fylla i din integreringsinformation, ange ditt certifikat för offentlig nyckel och välja en produktprofil.
+När du har samlat in alla tre nödvändiga autentiseringsuppgifter kan du försöka göra följande API-anrop. Detta anrop listar alla XDM-klasser (Experience Data Model) i schematabellens `global` behållare:
 
-![](images/authentication/integration-details.png)
+**API-format**
 
-Ange först din integreringsinformation. Välj sedan en produktprofil. Produktprofiler ger detaljerad åtkomst till en grupp funktioner som tillhör tjänsten som du valde i tidigare steg.
-
-För certifikatavsnittet måste du skapa ett certifikat:
-
-**För MacOS- och Linux-plattformar:**
-
-Öppna kommandoraden och kör följande kommando:
-
-`openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout private.key -out certificate_pub.crt`
-
-
-**För Windows-plattformar:**
-
-1. Hämta en öppen klient för att generera offentliga certifikat (till exempel [OpenSL Windows-klient](https://bintray.com/vszakats/generic/download_file?file_path=openssl-1.1.1-win64-mingw.zip))
-
-1. Extrahera mappen och kopiera den till C:/libs/ plats.
-
-1. Öppna kommandoradsfråga och kör följande kommandon:
-
-   `set OPENSSL_CONF=C:/libs/openssl-1.1.1-win64-mingw/openssl.cnf`
-
-   `cd C:/libs/openssl-1.1.1-win64-mingw/`
-
-   `openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout private.key -out certificate_pub.crt`
-
-Du får ett svar som liknar följande som uppmanar dig att ange viss information om dig själv:
-
+```http
+GET /global/classes
 ```
-Generating a 2048 bit RSA private key
-.................+++
-.......................................+++
-writing new private key to 'private.key'
------
-You are about to be asked to enter information that will be incorporated
-into your certificate request.
-What you are about to enter is what is called a Distinguished Name or a DN.
-There are quite a few fields but you can leave some blank
-For some fields there will be a default value,
-If you enter '.', the field will be left blank.
------
-Country Name (2 letter code) []:
-State or Province Name (full name) []:
-Locality Name (eg, city) []:
-Organization Name (eg, company) []:
-Organizational Unit Name (eg, section) []:
-Common Name (eg, fully qualified host name) []:
-Email Address []:
-```
-
-När informationen har angetts skapas två filer: `certificate_pub.crt` och `private.key`.
-
->[!NOTE]
->`certificate_pub.crt` upphör att gälla om 365 dagar. Du kan göra perioden längre genom att ändra värdet för `days` i `openssl` kommandot ovan, men att rotera inloggningsuppgifter regelbundet är en bra säkerhetsrutin.
-
-Den `private.key` används för att generera vår JWT i det senare avsnittet.
-
-Den `certificate_pub.crt` används för att skapa en API-nyckel. Gå tillbaka till Adobe I/O Console och klicka på **Välj en fil** för att överföra `certificate_pub.crt` filen.
-
-Klicka på **Skapa integrering** för att slutföra processen.
-
-### Kopiera ned åtkomstvärden
-
-När du har skapat integreringen kan du visa information om den. Klicka på **Hämta klienthemlighet** så ser skärmen ut ungefär så här:
-
-![](images/authentication/access-values.png)
-
-Kopiera värdena för `{API KEY}`, `{IMS ORG}` som är organisations-ID, och `{CLIENT SECRET}` som de kommer att användas i nästa steg.
-
-## Autentisering för varje session
-
-Det sista steget är att skapa `{ACCESS_TOKEN}` som ska användas för att autentisera dina API-anrop. Åtkomsttoken måste inkluderas i auktoriseringshuvudet för alla API-anrop du gör till Adobe Experience Platform. Åtkomsttoken upphör att gälla efter 24 timmar. Därefter måste nya token genereras för att du ska kunna fortsätta använda API:erna.
-
-### Skapa JWT
-
-Gå till fliken **JWT** när du är på integreringssidan i Adobe I/O-konsolen:
-
-![](images/authentication/generate-jwt.png)
-
-På sidan uppmanas du att ange den `private.key` du skapade i föregående avsnitt. Öppna kommandoraden om du vill visa innehållet i din `private.key` fil:
-
-```shell
-cat private.key
-```
-
-Resultatet ser ut ungefär så här:
-
-```shell
------BEGIN PRIVATE KEY-----
-MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCYjPj18NrVlmrc
-H+YUTuwWrlHTiPfkBGM0P1HbIOdwrlSTCmPhmaNNG5+mEiULJLWlrhQpx/7uQVNW
-......
-xbWgBWatJ2hUhU5/K2iFlNJBVXyNy7rN0XzOagLRJ1uS2CM6Hn3vBOqLbHRG4Pen
-J1LvEocGunT12UJekLdEaQR4AKodIyjv5opvewrzxUZhVvUIIgeU5vUpg9smCXai
-wPW5MQjmygodzCh7+eGLrg==
------END PRIVATE KEY-----
-```
-
-Kopiera hela utdata och klistra in dem i textfältet och klicka sedan på **Generera JWT**. Kopiera den genererade JWT-filen till nästa steg.
-
-![](images/authentication/generated-jwt.png)
-
-### Generera åtkomsttoken
-
-Du kan generera en åtkomsttoken med ett cURL-kommando. Om du inte har installerat cURL kan du installera det med `npm install curl`. Du kan läsa mer om cURL [här](https://curl.haxx.se/)
-
-När cURL har installerats måste du byta ut fälten i följande kommando mot ditt eget `{API_KEY}`, `{CLIENT_SECRET}`och `{JWT_TOKEN}`:
-
-```SHELL
-curl -X POST "https://ims-na1.adobelogin.com/ims/exchange/jwt/" \
-  -F "client_id={API_KEY}" \
-  -F "client_secret={CLIENT_SECRET}" \
-  -F "jwt_token={JWT_TOKEN}"
-```
-
-Om det lyckas ser resultatet ut ungefär så här:
-
-```JSON
-{
-  "token_type":"bearer",
-  "access_token":"eyJ4NXUiOiJpbXNfbmExLXN0ZzEta2V5LT2VyIiwiYWxnIjoiUlMyNTYifQ.eyJpZCI6IjE1MjAzMDU0ODY5MDhfYzMwM2JkODMtMWE1My00YmRiLThhNjctMWDhhNDJiNTE1X3VlMSIsImNsaWVudF9pZCI6ImYwNjY2Y2M4ZGVhNzQ1MWNiYzQ2ZmI2MTVkMzY1YzU0IiwidXNlcl9pZCI6IjA0ODUzMkMwNUE5ODg2QUQwQTQ5NDEzOUB0ZWNoYWNjdC5hZG9iZS5jb20iLCJzdGF0ZSI6IntcInNlc3Npb25cIjpcImh0dHBzOi8vaW1zLW5hMS1zdGcxLmFkb2JlbG9naW4uY29tL2ltcy9zZXNzaW9uL3YxL05UZzJZemM1TVdFdFlXWTNaUzAwT1RWaUxUZ3lPVFl0WkdWbU5EUTVOelprT0dFeUxTMHdORGcxTXpKRPVGc0TmtGRU1FRTBPVFF4TXpsQWRHVmphR0ZqWTNRdVlXUnZZbVV1WTI5dFwifSIsInR5cGUiOiJhY2Nlc3NfdG9rZW4iLCJhcyI6Imltcy1uYTEtc3RnMSIsImZnIjoiU0hRUlJUQ0ZTWFJJTjdSQjVVQ09NQ0lBWVU9PT09PT0iLCJtb2kiOiJhNTYwOWQ5ZiIsImMiOiJMeksySTBuZ2F2M1BhWWIxV0J3d3FRPT0iLCJleHBpcmVzX2luIjoiODY0MDAwMDAiLCJzY29wZSI6Im9wZW5pZCxzZXNzaW9uLEFkb2JlSUQscmVhZF9vcmdhbml6YXRpb25zLGFkZGl0aW9uYWxfaW5mby5wcm9qZWN0ZWRQcm9kdWN0Q29udGV4dCIsImNyZWF0ZWRfYXQiOiIxNTIwMzA1NDg2OTA4In0.EBgpw0JyKVzbjIBmH6fHDZUvJpvNG8xf8HUHNCK2l-dnVJqXxdi0seOk_kjVodkIa3evC54V560N60vi_mzt7gef-g954VH6l3gFh6XQ7yqRJD2LMW7G1lhQGhga4hrQCnJlfSQoztvIp9hkar9Zcu-MYgyEB5UlwK3KtB3elu7vJGk35F3T9OnqVL4PFj0Ix6zcuN_4gikgQgmtoUjuXULinbtu9Bkmdf7so9FvhapUd5ZTUTTMrAfJ36gEOQPqsuzlu9oUQaYTAn8v4B9TgoS0Paslo6WIksc4f_rSVWsbO6_TSUqIOi0e_RyL6GkMBA1ELA-Dkgbs-jUdkw",
-  "expires_in":86399947
-}
-```
-
-Åtkomsttoken är värdet under `access_token` nyckeln. Åtkomsttoken `expires_in` 86399947 millisekunder (24 timmar). Efteråt måste du generera en ny åtkomsttoken genom att följa stegen ovan.
-
-Nu kan du göra API-förfrågningar i Adobe Experience Platform!
-
-### Testa åtkomstkod
-
-Om du vill testa om din åtkomsttoken är giltig kan du försöka att göra följande API-anrop. Detta anrop listar alla klasser i `global` behållaren:
-
->[!NOTE]
->`{API_KEY}` och `{IMS_ORG}` hänvisa till värdena som du genererade ovan.
 
 **Begäran**
 
@@ -259,8 +127,7 @@ curl -X GET https://platform.adobe.io/data/foundation/schemaregistry/global/clas
   -H 'x-gw-ims-org-id: {IMS_ORG}'
 ```
 
-
-Om ditt svar liknar det som visas nedan `access_token` är ditt giltigt och fungerar. (Det här svaret har trunkerats för utrymme.)
+Om ditt svar liknar det som visas nedan är dina inloggningsuppgifter giltiga och fungerar. (Det här svaret har trunkerats för utrymme.)
 
 **Svar**
 
@@ -286,3 +153,9 @@ Om ditt svar liknar det som visas nedan `access_token` är ditt giltigt och fung
 ## Använd Postman för JWT-autentisering och API-anrop
 
 [Postman](https://www.getpostman.com/) är ett populärt verktyg för att arbeta med RESTful API:er. I det här [mellanbrevet](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) beskrivs hur du kan konfigurera postman så att den automatiskt utför JWT-autentisering och använder den för att använda API:er för Adobe Experience Platform.
+
+## Nästa steg
+
+Genom att läsa det här dokumentet har du samlat in och testat dina autentiseringsuppgifter för plattforms-API:er. Du kan nu följa med i de exempel på API-anrop som finns i [dokumentationen](../landing/documentation/overview.md).
+
+Förutom de autentiseringsvärden du har samlat in i den här självstudiekursen behöver många plattforms-API:er även en giltig `{SANDBOX_NAME}` som rubrik. Mer information finns i översikten över [](../sandboxes/home.md) sandlådor.
