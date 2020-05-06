@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Självstudiekurser om dataöverföring
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: e4da80338dbfbad70dfb3cf7df9fe589e949e788
+source-git-commit: 0eecd802fc8d0ace3a445f3f188a7f095b97d0c8
+workflow-type: tm+mt
+source-wordcount: '516'
+ht-degree: 0%
 
 ---
 
@@ -27,11 +30,11 @@ För att kunna importera CSV-data till Adobe Experience Platform måste data map
 
 ## Skapa en direktuppspelningsanslutning
 
-För att kunna starta direktuppspelning av data på Experience Platform måste du först skapa en direktuppspelad HTTP-anslutning. När du skapar en direktuppspelningsanslutning måste du ange nyckeldetaljer som till exempel källan för direktuppspelningsdata och om du tänker skicka data från en tillförlitlig (autentiserad) eller en otillförlitlig (ej autentiserad) källa eller inte. Detta kan göras med hjälp av användargränssnittet för plattformen eller API:erna för Experience Platform. Om du vill veta mer kan du följa självstudiekurserna för att [skapa en direktuppspelningsanslutning med användargränssnittet](../ingestion/tutorials/create-streaming-connection-ui.md) eller [skapa en direktuppspelningsanslutning med API:er](../ingestion/tutorials/create-streaming-connection.md).
+För att kunna starta direktuppspelning av data på Experience Platform måste du först begära en HTTP-slutpunkt. Du kan konfigurera den här slutpunkten för att framtvinga autentiserat beteende. Detta kan göras med hjälp av användargränssnittet för plattformen eller API:erna för Experience Platform. Om du vill veta mer kan du följa självstudiekurserna för att [skapa en direktuppspelningsanslutning med användargränssnittet](../ingestion/tutorials/create-streaming-connection-ui.md) eller [skapa en direktuppspelningsanslutning med API:er](../ingestion/tutorials/create-streaming-connection.md).
 
 ## Skapa en autentiserad direktuppspelningsanslutning
 
-Autentiserad datainsamling gör att Adobe Experience Platform-tjänster, som kundprofil och identitet i realtid, kan skilja mellan poster som kommer från betrodda källor och icke-betrodda källor. Kom igång genom att följa självstudiekursen för att [skapa en autentiserad direktuppspelningsanslutning](../ingestion/tutorials/create-authenticated-streaming-connection.md).
+Autentiserad datainsamling gör att Adobe Experience Platform-tjänster, som kundprofil och identitet i realtid, kan skilja mellan poster som kommer från betrodda källor och icke betrodda källor. Kom igång genom att följa självstudiekursen för att [skapa en autentiserad direktuppspelningsanslutning](../ingestion/tutorials/create-authenticated-streaming-connection.md).
 
 ## Strömma post- och tidsseriedata
 
