@@ -3,7 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Source Connectors - hjälp
 translation-type: tm+mt
-source-git-commit: 2d22f48cc8f461774a77c3351332f21849d56545
+source-git-commit: de523ebef35564ebc2e5991ee14ae1c7284bf092
+workflow-type: tm+mt
+source-wordcount: '513'
+ht-degree: 0%
 
 ---
 
@@ -35,7 +38,6 @@ source-git-commit: 2d22f48cc8f461774a77c3351332f21849d56545
       - [ServiceNow-koppling](connectors/customer-success/servicenow.md)
    - Databaser {#databases}
       - [Amazon Redshift-kontakt](connectors/databases/redshift.md)
-      - [Apache Cassandra-anslutning](connectors/databases/cassandra.md)
       - [Apache Hive på Azure HDInsights-kontakten](connectors/databases/hive.md)
       - [Apache Spark på Azure HDInsights-kontakten](connectors/databases/spark.md)
       - [Azure Data Explorer-koppling](connectors/databases/data-explorer.md)
@@ -74,7 +76,6 @@ source-git-commit: 2d22f48cc8f461774a77c3351332f21849d56545
          - [ServiceNow-koppling](tutorials/api/create/customer-success/servicenow.md)
       - Databaser {#databases}
          - [Amazon Redshift-kontakt](tutorials/api/create/databases/redshift.md)
-         - [Apache Cassandra-anslutning](tutorials/api/create/databases/cassandra.md)
          - [Apache Hive på Azure HDInsights-kontakten](tutorials/api/create/databases/hive.md)
          - [Apache Spark på Azure HDInsights-kontakten](tutorials/api/create/databases/spark.md)
          - [Azure Data Explorer-koppling](tutorials/api/create/databases/data-explorer.md)
@@ -112,8 +113,8 @@ source-git-commit: 2d22f48cc8f461774a77c3351332f21849d56545
       - [Samla in automatiserade marknadsföringsdata](tutorials/api/collect/marketing-automation.md)
       - [Samla in betalningsdata](tutorials/api/collect/payments.md)
       - [Samla in protokolldata](tutorials/api/collect/protocols.md)
-   - [Hämta parquetdata från ett molnlagringssystem från en annan leverantör](tutorials/api/create-dataset-base-connection.md)
-   - [Skapa en datauppsättningsbasanslutning med API:t för Flow Service](tutorials/api/cloud-storage-parquet.md)
+   - [Hämta parquetdata från ett molnlagringssystem från en annan leverantör](tutorials/api/cloud-storage-parquet.md)
+   - [Skapa en datauppsättningsbasanslutning med API:t för Flow Service](tutorials/api/create-dataset-base-connection.md)
 - Självstudiekurser för användargränssnitt {#ui-tutorials}
    - Skapa en källkoppling {#create}
       - Adobe-program {#adobe-applications}
