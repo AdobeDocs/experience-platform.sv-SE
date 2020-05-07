@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användarhandbok för JupyterLab
 topic: Overview
 translation-type: tm+mt
-source-git-commit: 606ae8784760e54a597b189958889199f85ebd0d
+source-git-commit: 37213f29e8099f8587cde9eb66f9b75de3ad8a3a
 workflow-type: tm+mt
 source-wordcount: '3356'
 ht-degree: 3%
@@ -54,7 +54,7 @@ Information om de viktigaste funktionerna i JupyterLab och anvisningar om hur du
 * [Kodceller](#code-cells)
 * [Kernlar](#kernels)
 * [Kernel-sessioner](#kernel-sessions)
-* [Körningsresurs för PySpark/Spark](#pyspark-spark-execution-resource)
+* [Körningsresurs för PySpark/Spark](#execution-resource)
 * [Startprogram](#launcher)
 
 ### Åtkomst till JupyterLab {#access-jupyterlab}
@@ -143,7 +143,7 @@ Om kärnan är avstängd eller inaktiv under en längre tid, så **Ingen kernel!
 
 ![](../images/jupyterlab/user-guide/switch_kernel.gif)
 
-### Körningsresurs för PySpark/Spark {#pyspark-spark-execution-resource}
+### Körningsresurs för PySpark/Spark {#execution-resource}
 
 >[!IMPORTANT]
 >I och med övergången från Spark 2.3 till Spark 2.4 är både Spark- och PySpark-kernlarna föråldrade.
