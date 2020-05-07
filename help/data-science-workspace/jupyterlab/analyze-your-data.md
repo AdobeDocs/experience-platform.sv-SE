@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Analysera dina data med bärbara datorer
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 606ae8784760e54a597b189958889199f85ebd0d
+source-git-commit: 37213f29e8099f8587cde9eb66f9b75de3ad8a3a
 workflow-type: tm+mt
 source-wordcount: '1746'
 ht-degree: 0%
@@ -54,7 +54,7 @@ Koden för butiksförsäljning är ett fristående exempel som använder samma d
 
 Vi går igenom åtkomsten till data internt från Adobe Experience Platform och externt. Vi kommer att använda biblioteket för att komma åt interna data som datauppsättningar och XDM-scheman. `data_access_sdk_python` För externa data kommer vi att använda pandorna Python-biblioteket.
 
-#### Externa data {#external-data}
+#### Externa data
 
 När butiksförsäljningsjournalen är öppen hittar du rubriken&quot;Läs in data&quot;. I följande Python-kod används pandas `DataFrame` datastruktur och funktionen [read_csv()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html#pandas.read_csv) för att läsa CSV-filen som finns på Github i DataFrame:
 
@@ -72,7 +72,7 @@ Slutligen kan vi ta en titt på hur våra data ser ut. Vi kan använda `df.head(
 
 Nu ska vi gå igenom hur vi får tillgång till Experience Platform-data.
 
-#### Efter datauppsättnings-ID
+##### Efter datauppsättnings-ID
 
 I det här avsnittet använder vi datauppsättningen Detaljhandel, som är samma datauppsättning som används i exempelanteckningsboken för detaljhandelsförsäljning.
 
@@ -148,7 +148,7 @@ Om vi tittar på minimi- och maximivärdena för `store`ser vi att det finns 45 
 
 Det betyder att 22 butiker är av `storeType``A`, 17 är `storeType` `B`och 6 är `storeType` `C`.
 
-### Datavisualisering
+#### Datavisualisering
 
 Nu när vi känner till våra värden för dataramar vill vi komplettera detta med visualiseringar för att göra saker klarare och enklare att identifiera mönster. Diagram är också användbara när du vill förmedla resultat till en viss målgrupp. Vissa Python-bibliotek som är användbara för visualisering är:
 - [Matplotlib](https://matplotlib.org/)
@@ -167,7 +167,7 @@ I det här avsnittet går vi snabbt igenom några fördelar med att använda var
 [ggplot](https://ggplot2.tidyverse.org/) är ett paket som också är byggt ovanpå matplotlib. Den största skillnaden är dock att verktyget är en port för GPlot2 för R. På samma sätt som för sjömän är målet att förbättra för matplotlib. Användare som är bekanta med ggplot2 for R bör överväga det här biblioteket.
 
 
-### Univariata diagram
+##### Univariata diagram
 
 Univariata diagram är diagram av en enskild variabel. Ett vanligt univariat-diagram används för att visualisera dina data är lådan och morrplotten.
 
@@ -177,7 +177,7 @@ Med hjälp av våra butiksdata från tidigare kan vi generera låda och morrfack
 
 En låda och en löpyta används för att visa datafördelningen. De yttre raderna i ritytan visar de övre och nedre kvartilarna, medan rutan sträcker sig över interkvartilsintervallet. Linjen i rutan anger medianen. Alla datapunkter som är mer än 1,5 gånger den övre eller nedre kanten markeras som en cirkel. Dessa punkter betraktas som avvikelser.
 
-### Multivariata diagram
+##### Multivariata diagram
 
 Multivariata diagram används för att se interaktionen mellan variabler. Med visualiseringen kan datavetare se om det finns några samband eller mönster mellan variablerna. Ett vanligt multivariatdiagram är en korrelationsmatris. Med en korrelationsmatris kvantifieras beroenden mellan flera variabler med korrelationskoefficienten.
 
