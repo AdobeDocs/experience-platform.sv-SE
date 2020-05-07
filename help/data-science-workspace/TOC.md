@@ -3,7 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Hjälp om Adobe Experience Platform Data Science Workspace
 translation-type: tm+mt
-source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
+source-git-commit: f38a2ba85248bbd12f5ef2487e8d8e6fe3319b32
+workflow-type: tm+mt
+source-wordcount: '216'
+ht-degree: 0%
 
 ---
 
@@ -26,6 +29,12 @@ source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
    * [MLServices](api/mlservices.md)
    * [Insikter](api/insights.md)
    * [Bilaga](api/appendix.md)
+* Maskinininlärning i realtid (alfa) {#real-time-machine-learning}
+   * [Översikt](real-time-machine-learning/home.md)
+   * [Komma igång](real-time-machine-learning/getting-started.md)
+   * [Utbilda en realtids-ML-modell](real-time-machine-learning/training-ml-model.md)
+   * [Beräkna en realtids-ML-modell](real-time-machine-learning/scoring-ml-model.md)
+   * [Nodreferenshandbok](real-time-machine-learning/node-reference.md)
 * Fördefinierade recept {#pre-built-recipes}
    * [Produktrekommendationsrecept](pre-built-recipes/product-recommendations.md)
    * [Produktinköpsprognos](pre-built-recipes/product-purchase-prediction.md)
