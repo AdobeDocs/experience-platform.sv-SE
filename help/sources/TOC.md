@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Source Connectors - hjälp
 translation-type: tm+mt
-source-git-commit: 0e9b5e56ea40528446b69c1af6f6e0bbf17f8d08
+source-git-commit: 958decd19c0b2063e0e242dcd3ce321c02660707
 workflow-type: tm+mt
-source-wordcount: '516'
+source-wordcount: '518'
 ht-degree: 0%
 
 ---
@@ -144,6 +144,7 @@ ht-degree: 0%
          - [MariaDB-koppling](tutorials/ui/create/databases/mariadb.md)
          - [Microsoft SQL Server-anslutning](tutorials/ui/create/databases/sql-server.md)
          - [MySQL-koppling](tutorials/ui/create/databases/mysql.md)
+         - [Oracle-koppling](tutorials/ui/create/databases/oracle.md)
          - [Phoenix-kontakt](tutorials/ui/create/databases/phoenix.md)
          - [PostgreSQL-koppling](tutorials/ui/create/databases/postgres.md)
       - Automatisering av marknadsföring {#marketing-automation}
