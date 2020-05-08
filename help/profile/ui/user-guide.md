@@ -4,7 +4,10 @@ solution: Adobe Experience Platform
 title: Användarhandbok för kundprofil i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: ab289f07475abcbe966c723423825fd392eb3615
+source-git-commit: 667aadde831a1d010f8cbbbb20bd92f914558bd1
+workflow-type: tm+mt
+source-wordcount: '882'
+ht-degree: 0%
 
 ---
 
@@ -43,7 +46,9 @@ Du kan anpassa de attribut som visas i listan genom att klicka på ikonen för k
 
 Profilantalet visar det totala antalet profiler din organisation har inom Experience Platform, efter att organisationens standardpolicy för sammanfogning har sammanfogats med profilfragment för att utgöra en enda profil för varje enskild kund. Med andra ord kan din organisation ha flera profilfragment kopplade till en enskild kund som interagerar med ert varumärke i olika kanaler, men dessa fragment skulle slås samman (enligt standardprincipen för sammanslagning) och skulle returnera antalet&quot;1&quot;-profil eftersom de alla är kopplade till samma individ.
 
-Profilantalet omfattar även både profiler med attribut (postdata) och profiler (till exempel Adobe Analytics-profiler) som endast innehåller data för tidsserier (händelse). Antalet uppdateras regelbundet för att ge ett aktuellt totalt antal profiler inom plattformen. Varje gång ett antal profiler ökar eller minskar med mer än 5 %, utlöses ett jobb automatiskt för att uppdatera antalet. Om din organisation använder direktuppspelningsinmatning schemaläggs jobb att köras varje timme för att hämta nya inmatade data.
+Profilantalet omfattar även både profiler med attribut (postdata) och profiler som endast innehåller tidsseriedata (händelsedata), t.ex. Adobe Analytics-profiler. Profilantalet uppdateras regelbundet för att ge ett aktuellt totalt antal profiler inom plattformen.
+
+När inmatningen av profiler i profilarkivet ökar eller minskar antalet med mer än 5 %, utlöses ett jobb för att uppdatera antalet. För arbetsflöden med direktuppspelningsdata görs en timkontroll för att avgöra om tröskelvärdet på 5 % har uppnåtts eller ej. Om så är fallet utlöses ett jobb automatiskt för att uppdatera antalet profiler. Om tröskelvärdet på 5 % ökning eller minskning uppnås, körs ett jobb för att uppdatera profilantalet för batchintag inom 15 minuter efter att en batch har importerats till profilarkivet.
 
 ![](../images/user-guide/profile-count.png)
 
