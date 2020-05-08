@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Source Connectors - hjälp
 translation-type: tm+mt
-source-git-commit: 958decd19c0b2063e0e242dcd3ce321c02660707
+source-git-commit: e046054b871026c32858e06c022ea86f53fbafd5
 workflow-type: tm+mt
-source-wordcount: '518'
+source-wordcount: '522'
 ht-degree: 0%
 
 ---
@@ -137,6 +137,7 @@ ht-degree: 0%
          - [Amazon Redshift-kontakt](tutorials/ui/create/databases/redshift.md)
          - [Apache Hive på Azure HDInsights-kontakten](tutorials/ui/create/databases/hive.md)
          - [Apache Spark på Azure HDInsights-kontakten](tutorials/ui/create/databases/spark.md)
+         - [Azure Data Explorer-koppling](tutorials/ui/create/databases/data-explorer.md)
          - [Azure Synapse Analytics-koppling](tutorials/ui/create/databases/synapse-analytics.md)
          - [Azure Table Storage-koppling](tutorials/ui/create/databases/ats.md)
          - [Google Big Query-koppling](tutorials/ui/create/databases/bigquery.md)
