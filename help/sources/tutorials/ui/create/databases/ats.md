@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Skapa en Azure Table Storage-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: f09ff4d1b159a6989868c5cfc35b361cfb640a99
+source-git-commit: 899c4fbe8a1bb3fef24f606e77f13ef5184d1eda
+workflow-type: tm+mt
+source-wordcount: '508'
+ht-degree: 0%
 
 ---
 
