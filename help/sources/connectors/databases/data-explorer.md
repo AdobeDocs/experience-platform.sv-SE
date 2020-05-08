@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Azure Data Explorer-koppling
 topic: overview
 translation-type: tm+mt
-source-git-commit: 1fb07723aedcf6dfd49765c10342b70b0a7d24f3
+source-git-commit: 58cc359527a590fce3825f41682cbb32be88f8d1
 workflow-type: tm+mt
 source-wordcount: '140'
 ht-degree: 0%
@@ -28,5 +28,5 @@ Dokumentationen nedan innehåller information om hur du ansluter Azure Data Expl
 
 ## Anslut Azure Data Explorer till plattformen med användargränssnittet
 
-- [Skapa en Azure Data Explorer-källkoppling i användargränssnittet](../../tutorials/ui/create/databases/ats.md)
+- [Skapa en Azure Data Explorer-källkoppling i användargränssnittet](../../tutorials/ui/create/databases/data-explorer.md)
 - [Konfigurera ett dataflöde för en databasanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
