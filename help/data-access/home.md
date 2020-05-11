@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Dataåtkomstöversikt
 topic: overview
 translation-type: tm+mt
-source-git-commit: 4817162fe2b7cbf4ae4c1ed325db2af31da5b5d3
+source-git-commit: d9aa21a7439a6c40f6f51dfbdf5c7b3690c4593a
+workflow-type: tm+mt
+source-wordcount: '488'
+ht-degree: 2%
 
 ---
 
@@ -237,7 +240,6 @@ Contents of the file
 
 Ytterligare exempel finns i [dataåtkomstsjälvstudiekursen](tutorials/dataset-data.md).
 
-
 ## Prenumerera på dataöverföringshändelser
 
-Plattformen gör specifika värdefulla händelser tillgängliga för prenumeration via [Adobe I/O-konsolen](https://console.adobe.io/). Du kan t.ex. prenumerera på dataöverföringshändelser för att få meddelanden om eventuella förseningar och fel. Mer information om hur du använder Adobe I/O Events finns i [Komma igång-guiden](https://www.adobe.io/apis/experienceplatform/events/docs.html).
+Platform gör specifika värdefulla event tillgängliga för prenumeration via [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). Du kan t.ex. prenumerera på dataöverföringshändelser för att få meddelanden om eventuella förseningar och fel. Mer information finns i självstudiekursen om hur du [prenumererar på meddelanden](../ingestion/quality/subscribe-events.md) om dataöverföring.
