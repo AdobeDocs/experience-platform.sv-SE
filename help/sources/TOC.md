@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Source Connectors - hjälp
 translation-type: tm+mt
-source-git-commit: e046054b871026c32858e06c022ea86f53fbafd5
+source-git-commit: b3512cd4d1e024597a47e1aa52a2e23e5fce5e44
 workflow-type: tm+mt
-source-wordcount: '522'
+source-wordcount: '534'
 ht-degree: 0%
 
 ---
@@ -28,6 +28,7 @@ ht-degree: 0%
    - molnlagring {#cloud-storage}
       - [Azure Data Lake Storage Gen2-anslutning](connectors/cloud-storage/adls-gen2.md)
       - [Azure Blob och Amazon S3-kontakt](connectors/cloud-storage/blob-s3.md)
+      - [Azure File Storage Connector](connectors/cloud-storage/azure-file-storage.md)
       - [FTP- och SFTP-anslutning](connectors/cloud-storage/ftp-sftp.md)
       - [Google Cloud Storage Connector](connectors/cloud-storage/google-cloud-storage.md)
    - CRM {#crm}
@@ -65,6 +66,7 @@ ht-degree: 0%
          - [Amazon S3-kontakt](tutorials/api/create/cloud-storage/s3.md)
          - [Azure Blob-koppling](tutorials/api/create/cloud-storage/blob.md)
          - [Azure Data Lake Storage Gen2-anslutning](tutorials/api/create/cloud-storage/adls-gen2.md)
+         - [Azure File Storage Connector](tutorials/api/create/cloud-storage/azure-file-storage.md)
          - [Google Cloud Storage Connector](tutorials/api/create/cloud-storage/google.md)
          - [SFTP-anslutning](tutorials/api/create/cloud-storage/sftp.md)
       - CRM {#crm}
@@ -126,6 +128,7 @@ ht-degree: 0%
       - molnlagring {#cloud-storage}
          - [Azure Data Lake Storage Gen2-anslutning](tutorials/ui/create/cloud-storage/adls-gen2.md)
          - [Azure Blob och Amazon S3-kontakt](tutorials/ui/create/cloud-storage/blob-s3.md)
+         - [Azure File Storage Connector](tutorials/ui/create/cloud-storage/azure-file-storage.md)
          - [FTP- och SFTP-anslutning](tutorials/ui/create/cloud-storage/ftp-sftp.md)
          - [Google Cloud Storage Connector](tutorials/ui/create/cloud-storage/google-cloud-storage.md)
       - CRM {#crm}
