@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Vanliga frågor om Adobe Experience Platform och felsökningsguide
 topic: getting started
 translation-type: tm+mt
-source-git-commit: 7f61cee8fb5160d0f393f8392b4ce2462d602981
+source-git-commit: d9aa21a7439a6c40f6f51dfbdf5c7b3690c4593a
+workflow-type: tm+mt
+source-wordcount: '2001'
+ht-degree: 0%
 
 ---
 
@@ -85,11 +88,11 @@ Mer information om specifika slutpunkter i plattforms-API:er, inklusive obligato
 
 ## Vad är min IMS-organisation? {#what-is-my-ims-organization}
 
-En IMS-organisation är en Adobe-representation av en kund. Alla licensierade Adobe-lösningar är integrerade med denna kundorganisation. När en IMS-organisation är berättigad till Experience Platform kan den tilldela utvecklare åtkomst. IMS-organisationsnumret (`x-gw-ims-org-id`) representerar organisationen som ett API-anrop ska köras för och därför krävs som huvud i alla API-begäranden. Detta ID finns via [Adobe I/O Console](https://console.adobe.io/): på fliken **Integrationer** navigerar du till avsnittet **Översikt** för en viss integrering för att hitta ID:t under **Klientautentiseringsuppgifter**. En steg-för-steg-genomgång av hur du autentiserar dig på plattformen finns i [självstudiekursen](../tutorials/authentication.md)för autentisering.
+En IMS-organisation är en Adobe-representation av en kund. Alla licensierade Adobe-lösningar är integrerade med denna kundorganisation. När en IMS-organisation är berättigad till Experience Platform kan den tilldela utvecklare åtkomst. IMS-organisationsnumret (`x-gw-ims-org-id`) representerar organisationen som ett API-anrop ska köras för och därför krävs som huvud i alla API-begäranden. Detta ID finns på [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui): på fliken **Integrationer** navigerar du till avsnittet **Översikt** för en viss integrering för att hitta ID:t under **Klientautentiseringsuppgifter**. En steg-för-steg-genomgång av hur du autentiserar dig på plattformen finns i [självstudiekursen](../tutorials/authentication.md)för autentisering.
 
 ## Var hittar jag min API-nyckel? {#where-can-i-find-my-api-key}
 
-En API-nyckel krävs som huvud i alla API-begäranden. Den finns via [Adobe I/O Console](https://console.adobe.io/). På fliken **Integrationer** i konsolen går du till **Översikt** för en viss integrering och du hittar nyckeln under **Klientautentiseringsuppgifter**. En steg-för-steg-genomgång av hur du autentiserar till Platform finns i [självstudiekursen](../tutorials/authentication.md)för autentisering.
+En API-nyckel krävs som huvud i alla API-begäranden. Du hittar den på [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). På fliken **Integrationer** i konsolen går du till **Översikt** för en viss integrering och du hittar nyckeln under **Klientautentiseringsuppgifter**. En steg-för-steg-genomgång av hur du autentiserar till Platform finns i [självstudiekursen](../tutorials/authentication.md)för autentisering.
 
 ## Hur får jag en åtkomsttoken? {#how-do-i-get-an-access-token}
 
