@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform Source Connectors - översikt
 topic: overview
 translation-type: tm+mt
-source-git-commit: eadf285ef5fd373eec54e6680b5f253b0b16dcf9
+source-git-commit: 492adad9b38c8850130931d3d393f28c67057d07
 workflow-type: tm+mt
-source-wordcount: '742'
+source-wordcount: '746'
 ht-degree: 0%
 
 ---
@@ -46,6 +46,7 @@ Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du 
 
 - [Azure Data Lake Storage Gen2-anslutning](connectors/cloud-storage/adls-gen2.md)
 - [Azure Blob och Amazon S3-kontakt](connectors/cloud-storage/blob-s3.md)
+- [Azure File Storage Connector](connectors/cloud-storage/azure-file-storage.md)
 - [FTP- och SFTP-anslutning](connectors/cloud-storage/ftp-sftp.md)
 - [Google Cloud Storage Connector](connectors/cloud-storage/google-cloud-storage.md)
 
