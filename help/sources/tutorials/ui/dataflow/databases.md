@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Konfigurera ett dataflöde för en databasanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: c55e48a90d57e538f3d096b31eae639a1cca882c
+source-git-commit: 415b59fc3fa20c09372549e92571c1b41006e540
+workflow-type: tm+mt
+source-wordcount: '1019'
+ht-degree: 0%
 
 ---
 
@@ -26,14 +29,14 @@ Den här självstudien kräver dessutom att du redan har skapat en databaskoppli
 
 ## Markera data
 
-När du har skapat en databaskoppling visas steget *Välj data* , som ger ett interaktivt gränssnitt där du kan utforska databashierarkin.
+När du har skapat en databaskoppling visas *[!UICONTROL Select data]* steget och du får ett interaktivt gränssnitt där du kan utforska databashierarkin.
 
 - Den vänstra halvan av gränssnittet är en webbläsare som visar kontots lista över databaser.
 - I den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader med data.
 
-Markera den databas som du vill använda och klicka sedan på **Nästa**.
+Markera den databas som du vill använda och klicka sedan på **[!UICONTROL Next]**.
 
-![](../../../images/tutorials/dataflow/databases/select-data-next.png)
+![](../../../images/tutorials/dataflow/databases/add-data.png)
 
 ## Mappa datafält till ett XDM-schema
 
@@ -43,33 +46,35 @@ Välj en datauppsättning för inkommande data som ska importeras till. Du kan a
 
 ### Använd en befintlig datauppsättning
 
-Om du vill importera data till en befintlig datauppsättning väljer du **Använd befintlig datauppsättning** och klickar sedan på ikonen för datauppsättningen.
+Om du vill importera data till en befintlig datauppsättning väljer du **[!UICONTROL Existing dataset]** och klickar sedan på datamängdikonen .
 
-![](../../../images/tutorials/dataflow/databases/use-existing-dataset.png)
+![](../../../images/tutorials/dataflow/databases/existing-dataset.png)
 
-Dialogrutan _Välj datauppsättning_ visas. Hitta den datauppsättning du vill använda, markera den och klicka sedan på **Fortsätt**.
+Dialogrutan *[!UICONTROL Select dataset]* visas. Hitta den datauppsättning du vill använda, markera den och klicka sedan på **[!UICONTROL Continue]**.
 
-![](../../../images/tutorials/dataflow/databases/select-dataset.png)
+![](../../../images/tutorials/dataflow/databases/select-existing-dataset.png)
 
 ### Använd en ny datauppsättning
 
-Om du vill importera data till en ny datauppsättning väljer du **Skapa ny datauppsättning** och anger ett namn och en beskrivning för datauppsättningen i fälten. Klicka sedan på schemaikonen.
+Om du vill importera data till en ny datauppsättning markerar du **[!UICONTROL New dataset]** och anger ett namn och en beskrivning för datauppsättningen i de angivna fälten.
 
-![](../../../images/tutorials/dataflow/databases/use-new-dataset.png)
+Du kan bifoga ett schemafält genom att skriva ett schemanamn i **[!UICONTROL Select schema]** sökfältet. Du kan också välja listruteikonen för att visa en lista över befintliga scheman. Du kan också välja **[!UICONTROL Advanced search]** att visa befintliga scheman, inklusive deras respektive detaljer.
 
-Dialogrutan _Välj schema_ visas. Välj det schema som du vill använda för den nya datauppsättningen och klicka sedan på **Klar**.
+![](../../../images/tutorials/dataflow/databases/new-dataset.png)
 
-![](../../../images/tutorials/dataflow/databases/select-schema.png)
+Dialogrutan *[!UICONTROL Select schema] visas. Välj det schema som du vill använda för den nya datauppsättningen och klicka sedan på **[!UICONTROL Done]**.
+
+![](../../../images/tutorials/dataflow/databases/select-existing-schema.png)
 
 Beroende på dina behov kan du välja att mappa fält direkt eller använda mappningsfunktioner för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om datamappning och mappningsfunktioner finns i självstudiekursen om att [mappa CSV-data till XDM-schemafält](../../../../ingestion/tutorials/map-a-csv-file.md).
 
-När källdata har mappats klickar du på **Nästa**.
+När källdata har mappats klickar du på **[!UICONTROL Next]**.
 
-![](../../../images/tutorials/dataflow/databases/mapping-data.png)
+![](../../../images/tutorials/dataflow/databases/mapping.png)
 
 ## Schemalägg körning av inmatning
 
-Steget *Schemaläggning* visas, så att du kan konfigurera ett schema så att det automatiskt importerar valda källdata med de konfigurerade mappningarna. I följande tabell visas de olika konfigurerbara fälten för schemaläggning:
+Steget visas så att du kan konfigurera ett schema för att automatiskt importera valda källdata med de konfigurerade mappningarna. *[!UICONTROL Scheduling]* I följande tabell visas de olika konfigurerbara fälten för schemaläggning:
 
 | Fält | Beskrivning |
 | --- | --- |
@@ -77,48 +82,35 @@ Steget *Schemaläggning* visas, så att du kan konfigurera ett schema så att de
 | Intervall | Ett heltal som anger intervallet för den valda frekvensen. |
 | Starttid | En UTC-tidsstämpel för vilken det allra första intaget sker. |
 | Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om *Backfill* är aktiverat, kommer alla aktuella filer i den angivna sökvägen att kapslas in under det första schemalagda intaget. Om *Backfill* är inaktiverat kapslas endast de filer som läses in mellan den första importkörningen och *starttiden* . Filer som lästs in före *starttiden* importeras inte. |
+| Delta-kolumn | Ett alternativ med en filtrerad uppsättning källschemafält av typen, datumet eller tiden. Det här fältet används för att skilja mellan nya och befintliga data. Inkrementella data importeras baserat på tidsstämpeln för den markerade kolumnen. |
 
-Dataflöden är utformade för att automatiskt importera data enligt schema. Om du bara vill importera en gång genom det här arbetsflödet kan du göra det genom att konfigurera **Frekvensen** till &quot;Dag&quot; och använda ett mycket stort värde för **Intervall**, till exempel 10000 eller liknande.
+Dataflöden är utformade för att automatiskt importera data enligt schema. Om du bara vill importera en gång genom det här arbetsflödet kan du göra det genom att konfigurera **[!UICONTROL Frequency]** till &quot;Dag&quot; och använda ett mycket stort tal för **[!UICONTROL Interval]** fotot, till exempel 10000 eller liknande.
 
-Ange värden för schemat och klicka på **Nästa**.
+Ange värden för schemat och välj **[!UICONTROL Next]**.
 
-![](../../../images/tutorials/dataflow/databases/scheduling.png)
+![](../../../images/tutorials/dataflow/databases/schedule.png)
 
 ## Namnge dataflödet
 
-Steget *Namnflöde* visas där du måste ange ett namn och en valfri beskrivning av dataflödet. Klicka på Nästa när du är klar.&quot;
+Stegen visas där du måste ange ett namn och en valfri beskrivning för dataflödet. *[!UICONTROL dataflow detail]* Steget visas. Välj **[!UICONTROL Next]** när du är klar.
 
-![](../../../images/tutorials/dataflow/databases/name-flow.png)
+![](../../../images/tutorials/dataflow/databases/dataflow-detail.png)
 
 ## Granska ditt dataflöde
 
-Steget *Granska* visas så att du kan granska det nya dataflödet innan det skapas. Informationen är grupperad i följande kategorier:
+Steget visas så att du kan granska det nya dataflödet innan det skapas. *[!UICONTROL Review]* Informationen är grupperad i följande kategorier:
 
-- *Anslutningsinformation*: Visar källtypen, den relevanta sökvägen för den valda källfilen och mängden kolumner i källfilen.
-- *Mappningsinformation*: Visar vilken datauppsättning källdata hämtas till, inklusive det schema som datauppsättningen följer.
-- *Schemainformation*: Visar den aktiva perioden, frekvensen och intervallet för intag-schemat.
+- *Anslutning*: Visar källtypen, den relevanta sökvägen för den valda källfilen och mängden kolumner i källfilen.
+- *Tilldela datauppsättnings- och kartfält*: Visar vilken datauppsättning källdata hämtas till, inklusive det schema som datauppsättningen följer.
+- *Schemaläggning*: Visar den aktiva perioden, frekvensen och intervallet för intag-schemat.
 
-När du har granskat dataflödet klickar du på **Slutför** och anger en tid innan dataflödet skapas.
+När du har granskat dataflödet kan du klicka **[!UICONTROL Finish]** och vänta tills dataflödet har skapats.
 
 ![](../../../images/tutorials/dataflow/databases/review.png)
 
 ## Övervaka dataflödet
 
-När dataflödet har skapats kan du övervaka de data som hämtas genom det. Följ stegen nedan för att komma åt dataflödets datauppsättningsövervakare.
-
-Klicka på fliken _Bläddra_ på arbetsytan **Källor** för att visa dina basanslutningar. I listan som visas söker du efter anslutningen som innehåller det dataflöde som du vill övervaka genom att klicka på dess namn.
-
-![](../../../images/tutorials/dataflow/databases/browse-base-connectors.png)
-
-Skärmen *Källaktivitet* visas. Klicka på namnet på en datauppsättning vars aktivitet du vill övervaka.
-
-![](../../../images/tutorials/dataflow/databases/select-dataflow-dataset.png)
-
-Aktivitetsskärmen *för* datauppsättning visas. På den här sidan visas hur många meddelanden som används i form av ett diagram.
-
-![](../../../images/tutorials/dataflow/databases/dataset-activity.png)
-
-Mer information om övervakning av datauppsättningar och förtäring finns i självstudiekursen om [övervakning av dataflöden](../../../../ingestion/quality/monitor-data-flows.md)för direktuppspelning.
+När dataflödet har skapats kan du övervaka de data som hämtas genom det. Mer information om hur du övervakar dataflöden finns i självstudiekursen om [konton och dataflöden](../monitor.md).
 
 ## Nästa steg
 
@@ -135,13 +127,13 @@ I följande avsnitt finns ytterligare information om hur du arbetar med källkop
 
 När ett dataflöde skapas blir det omedelbart aktivt och importerar data enligt det schema som det gavs. Du kan när som helst inaktivera ett aktivt dataflöde genom att följa instruktionerna nedan.
 
-Klicka på fliken _Bläddra_ på arbetsytan **Källor** . Klicka sedan på namnet på basanslutningen som är associerad med det dataflöde som du vill inaktivera.
+Markera fliken på *[!UICONTROL Sources]* arbetsytan **[!UICONTROL Dataflowss]** . Välj sedan det dataflöde som du vill inaktivera.
 
-![](../../../images/tutorials/dataflow/databases/browse-base-connectors.png)
+![](../../../images/tutorials/dataflow/databases/list-of-dataflows.png)
 
-Sidan _Källaktivitet_ visas. Markera det aktiva dataflödet i listan för att öppna kolumnen *Egenskaper* till höger på skärmen, som innehåller en **aktiverad** alternativknapp. Klicka på växlingsknappen för att inaktivera dataflödet. Samma växlingsknapp kan användas för att återaktivera ett dataflöde efter att det har inaktiverats.
+Kolumnen *Egenskaper* visas till höger på skärmen, inklusive en **[!UICONTROL Enabled]** växlingsknapp. Markera växlingsknappen för att inaktivera dataflödet. Samma växlingsknapp kan användas för att återaktivera ett dataflöde efter att det har inaktiverats.
 
-![](../../../images/tutorials/dataflow/databases/toggle-enabled.png)
+![](../../../images/tutorials/dataflow/databases/disable.png)
 
 ### Aktivera inkommande data för profilifyllning
 
