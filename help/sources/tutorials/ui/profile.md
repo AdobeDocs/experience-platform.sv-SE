@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Aktivera inkommande källdata för att fylla i kundprofiler
 topic: overview
 translation-type: tm+mt
-source-git-commit: d6d2faf3d5eabcd8e948d3717fd8f8df4b9cb85a
+source-git-commit: 3e43e043df296c29cafb4c6933c8be1105c985ab
+workflow-type: tm+mt
+source-wordcount: '499'
+ht-degree: 0%
 
 ---
 
@@ -34,27 +37,27 @@ För att berika kundprofilerna måste måldatauppsättningens källschema vara k
 
 Klicka på fliken **Bläddra** på arbetsytan Källor för att visa dina basanslutningar. I listan som visas söker du efter anslutningen som innehåller det dataflöde som du vill fylla i profiler med. Klicka på anslutningens namn för att komma åt information om anslutningen.
 
-![](../../images/tutorials/dataflow/cloud-storage/browse.png)
+![](../../images/tutorials/dataflow/cloud-storage/batch/browse.png)
 
 Anslutningens aktivitetsskärm för *Källa* visas med de datauppsättningar som anslutningen hämtar källdata till. Klicka på namnet på datauppsättningen som du vill aktivera för profil.
 
-![](../../images/tutorials/dataflow/cloud-storage/dataset-dataflow.png)
+![](../../images/tutorials/dataflow/cloud-storage/batch/dataset-dataflow.png)
 
 Aktivitetsskärmen *för* datauppsättning visas. Kolumnen *Egenskaper* till höger på skärmen visar information om datauppsättningen och innehåller en **profilväxel** och en länk till det schema som datauppsättningen följer. Klicka på schemats namn för att visa dess komposition.
 
-![](../../images/tutorials/dataflow/cloud-storage/select-dataset-schema.png)
+![](../../images/tutorials/dataflow/cloud-storage/batch/select-dataset-schema.png)
 
 Schemaredigeraren ** visas och visar schemats struktur på arbetsytan i mitten. Markera det fält som ska anges som primär identitet på arbetsytan. Under fliken *Fältegenskaper* som visas markerar du kryssrutan **Identitet** och sedan **Primär identitet**. Välj sedan ett lämpligt **identitetsnamnutrymme** och klicka på **Använd**.
 
-![](../../images/tutorials/dataflow/cloud-storage/set-schema-identity.png)
+![](../../images/tutorials/dataflow/cloud-storage/batch/set-schema-identity.png)
 
 Klicka på det översta nivåobjektet för schemats struktur och kolumnen *Schemaegenskaper* visas. Aktivera schemat för profilen genom att växla **profilväxeln** . Klicka på **Spara** för att slutföra ändringarna.
 
-![](../../images/tutorials/dataflow/cloud-storage/enable-profile.png)
+![](../../images/tutorials/dataflow/cloud-storage/batch/enable-profile.png)
 
 Nu när schemat är aktiverat för profilen går du tillbaka till aktivitetsskärmen för *datauppsättningen* och aktiverar datauppsättningen för profilen genom att klicka på **profilväxlingen** i kolumnen *Egenskaper* .
 
-![](../../images/tutorials/dataflow/cloud-storage/enable-dataset-profile.png)
+![](../../images/tutorials/dataflow/cloud-storage/batch/enable-dataset-profile.png)
 
 När både schemat och datauppsättningen är aktiverade för profilen fylls data som hämtas in i den datauppsättningen nu även i kundprofiler.
 
