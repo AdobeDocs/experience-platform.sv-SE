@@ -4,7 +4,10 @@ seo-title: Använda SDK-kommandon för Adobe Experience Platform
 description: Lär dig hur du kör Experience Platform Web SDK-kommandon
 seo-description: Lär dig hur du kör Experience Platform Web SDK-kommandon
 translation-type: tm+mt
-source-git-commit: 0cc6e233646134be073d20e2acd1702d345ff35f
+source-git-commit: 9bd6feb767e39911097bbe15eb2c370d61d9842a
+workflow-type: tm+mt
+source-wordcount: '445'
+ht-degree: 0%
 
 ---
 
@@ -27,7 +30,7 @@ SDK-koden anger `commandName` vad som ska göras, medan `options` det är parame
 
 ## Ett meddelande om löften
 
-[Utfästelser](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) är grundläggande för hur SDK kommunicerar med koden på din webbsida. Ett löfte är en vanlig programmeringsstruktur som inte är specifik för denna SDK eller ens JavaScript. Ett löfte fungerar som en proxy för ett värde som inte är känt när löftet skapas. När värdet är känt är löftet&quot;löst&quot; med värdet. Hanterarfunktioner kan kopplas till ett löfte, så att du kan meddelas när löftet har lösts eller när ett fel har uppstått under lösningsprocessen. Om du vill veta mer om löften kan du läsa [den här självstudiekursen](https://javascript.info/promise-basics) eller andra resurser på webben.
+[Löften](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) är grundläggande för hur SDK kommunicerar med koden på din webbsida. Ett löfte är en vanlig programmeringsstruktur som inte är specifik för denna SDK eller ens JavaScript. Ett löfte fungerar som en proxy för ett värde som inte är känt när löftet skapas. När värdet är känt är löftet&quot;löst&quot; med värdet. Hanterarfunktioner kan kopplas till ett löfte, så att du kan meddelas när löftet har lösts eller när ett fel har uppstått under lösningsprocessen. Om du vill veta mer om löften kan du läsa [den här självstudiekursen](https://javascript.info/promise-basics) eller andra resurser på webben.
 
 ## Hantera lyckade eller misslyckade
 
@@ -35,7 +38,7 @@ Varje gång ett kommando körs returneras ett löfte. Löftet representerar det 
 
 ```javascript
 alloy("commandName", options)
-  .then(function(value) {
+  .then(function(result) {
     // The command succeeded.
     // "value" is whatever the command returned
   })
@@ -45,7 +48,7 @@ alloy("commandName", options)
   })
 ```
 
-Om det inte är viktigt för dig att veta när kommandot är klart, kan du ta bort `then` samtalet.
+Om det inte är viktigt för dig att veta när kommandot är klart kan du ta bort `then` samtalet.
 
 ```javascript
 alloy("commandName", options)
@@ -59,12 +62,22 @@ På samma sätt kan du ta bort `catch` samtalet om du inte vet när kommandot mi
 
 ```javascript
 alloy("commandName", options)
-  .then(function(value) {
+  .then(function(result) {
     // The command succeeded.
     // "value" will be whatever the command returned
   })
 ```
 
-## Utelämna fel
+### Svarsobjekt
 
-Om löftet avvisas och du inte har lagt till något `catch` samtal,&quot;bubblar upp&quot;-felet och loggas i webbläsarens utvecklarkonsol, oavsett om loggning är aktiverat i Adobe Experience Platform Web SDK. Om detta är något som du vill ta hänsyn till kan du ange att konfigurationsalternativet ska vara `suppressErrors` så som beskrivs i `true` Konfigurera SDK [](configuring-the-sdk.md).
+Alla löften som returneras från kommandon löses med ett `result` objekt. Resultatobjektet kommer att innehålla data beroende på kommandot och användarens samtycke. Biblioteksinformation skickas till exempel som en egenskap för resultatobjektet i följande kommando.
+
+```js
+alloy("getLibraryInfo").then(function(result) {
+  console.log(results.libraryInfo.version);
+});
+```
+
+### Godkännande
+
+Om en användare inte har gett sitt samtycke för ett visst ändamål kommer löftet fortfarande att lösas. Svarsobjektet kommer dock endast att innehålla den information som kan anges i kontexten för det som användaren har godkänt.
