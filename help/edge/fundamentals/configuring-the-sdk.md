@@ -4,7 +4,10 @@ seo-title: Konfigurera Adobe Experience Platform Web SDK
 description: Lär dig konfigurera Experience Platform Web SDK
 seo-description: Lär dig konfigurera Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 0cc6e233646134be073d20e2acd1702d345ff35f
+source-git-commit: 767f0e1bfdfcc898313b546c804ba1287f2aec50
+workflow-type: tm+mt
+source-wordcount: '765'
+ht-degree: 0%
 
 ---
 
@@ -67,14 +70,6 @@ Anger om felsökning ska vara aktiverat. Om du ställer in den här konfiguratio
 | Sträng | Nej | `beta.adobedc.net` |
 
 Domänen som används för att interagera med Adobe Services. Detta används endast om du har en förstahandsdomän (CNAME) som proxies-begäranden till Adobe Edge-infrastrukturen.
-
-### `errorsEnabled`
-
-| **Typ** | **Obligatoriskt** | **Standardvärde** |
-| -------- | ------------ | ----------------- |
-| Boolean | Nej | `true` |
-
-Anger om fel ska ignoreras. Så som beskrivs i [Körningskommandon](executing-commands.md)loggas _fel som inte fångats_ in på utvecklarkonsolen, oavsett om felsökning är aktiverat i Adobe Experience Platform Web SDK eller inte. Genom `errorsEnabled` att ange `false`det avvisas aldrig löften som returneras från Adobe Experience Platform Web SDK, men fel loggas fortfarande till konsolen om loggning är aktiverat i Adobe Experience Platform Web SDK.
 
 ### `orgId`
 
@@ -158,7 +153,7 @@ Aktiverar URL-mål, vilket gör det möjligt att bränna URL:er baserat på segm
 
 | **Typ** | **Obligatoriskt** | **Standardvärde** |
 | -------- | ------------ | ----------------- |
-| Nummer | Nej | ingen |
+| Siffra | Nej | ingen |
 
 Behållar-ID som anger vilket ID-synk som utlöses. Det här är ett icke-negativt heltal som du kan få från din konsult.
 
