@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Source Connectors - hjälp
 translation-type: tm+mt
-source-git-commit: b3512cd4d1e024597a47e1aa52a2e23e5fce5e44
+source-git-commit: 1eb6883ec9b78e5d4398bb762bba05a61c0f8308
 workflow-type: tm+mt
-source-wordcount: '534'
+source-wordcount: '551'
 ht-degree: 0%
 
 ---
@@ -26,8 +26,10 @@ ht-degree: 0%
    - Reklam {#advertising}
       - [Google Ads-koppling](connectors/advertising/ads.md)
    - molnlagring {#cloud-storage}
+      - [Amazon Kinesis-kontakt](connectors/cloud-storage/kinesis.md)
       - [Azure Data Lake Storage Gen2-anslutning](connectors/cloud-storage/adls-gen2.md)
       - [Azure Blob och Amazon S3-kontakt](connectors/cloud-storage/blob-s3.md)
+      - [Azure Event Hubs-koppling](connectors/cloud-storage/eventhub.md)
       - [Azure File Storage Connector](connectors/cloud-storage/azure-file-storage.md)
       - [FTP- och SFTP-anslutning](connectors/cloud-storage/ftp-sftp.md)
       - [Google Cloud Storage Connector](connectors/cloud-storage/google-cloud-storage.md)
@@ -159,7 +161,8 @@ ht-degree: 0%
          - [Allmän OData-koppling](tutorials/ui/create/protocols/odata.md)
    - Konfigurera ett dataflöde {#dataflow}
       - [Konfigurera ett dataflöde för en reklamanslutning](tutorials/ui/dataflow/advertising.md)
-      - [Konfigurera ett dataflöde för en molnlagringskontakt](tutorials/ui/dataflow/cloud-storage.md)
+      - [Konfigurera ett dataflöde för en batchanslutning för molnlagring](tutorials/ui/dataflow/batch/cloud-storage.md)
+      - [Konfigurera ett dataflöde för en direktuppspelad molnlagringskontakt](tutorials/ui/dataflow/streaming/cloud-storage.md)
       - [Konfigurera ett dataflöde för en databasanslutning](tutorials/ui/dataflow/databases.md)
       - [Konfigurera ett dataflöde för en CRM-koppling](tutorials/ui/dataflow/crm.md)
       - [Konfigurera ett dataflöde för en koppling för kundframgångar](tutorials/ui/dataflow/customer-success.md)
