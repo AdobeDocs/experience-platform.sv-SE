@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Samla in molnlagringsdata via källanslutningar och API:er
 topic: overview
 translation-type: tm+mt
-source-git-commit: 4309d668acf43a237648b405973ebd0701b6f977
+source-git-commit: 1eb6883ec9b78e5d4398bb762bba05a61c0f8308
+workflow-type: tm+mt
+source-wordcount: '1489'
+ht-degree: 0%
 
 ---
 
@@ -19,12 +22,12 @@ I den här självstudiekursen måste du ha tillgång till ett molnlagringsutrymm
 
 Den här självstudien kräver också att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
-   * [Grundläggande om schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Utvecklarhandbok](../../../../xdm/api/getting-started.md)för schemaregister: Innehåller viktig information som du behöver känna till för att kunna utföra anrop till API:t för schemaregister. Detta inkluderar ditt `{TENANT_ID}`, konceptet med&quot;behållare&quot; och de rubriker som krävs för att göra förfrågningar (med särskild uppmärksamhet på rubriken Godkänn och dess möjliga värden).
-* [Katalogtjänst](../../../../catalog/home.md): Katalog är ett system för registrering av dataplats och datalänkning inom Experience Platform.
-* [Batchförtäring](../../../../ingestion/batch-ingestion/overview.md): Med API:t för gruppinmatning kan du importera data till Experience Platform som gruppfiler.
-* [Sandlådor](../../../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+- [Experience Data Model (XDM) System](../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
+   - [Grundläggande om schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
+   - [Utvecklarhandbok](../../../../xdm/api/getting-started.md)för schemaregister: Innehåller viktig information som du behöver känna till för att kunna utföra anrop till API:t för schemaregister. Detta inkluderar ditt `{TENANT_ID}`, konceptet med&quot;behållare&quot; och de rubriker som krävs för att göra förfrågningar (med särskild uppmärksamhet på rubriken Godkänn och dess möjliga värden).
+- [Katalogtjänst](../../../../catalog/home.md): Katalog är ett system för registrering av dataplats och datalänkning inom Experience Platform.
+- [Batchförtäring](../../../../ingestion/batch-ingestion/overview.md): Med API:t för gruppinmatning kan du importera data till Experience Platform som gruppfiler.
+- [Sandlådor](../../../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till ett molnlagringsutrymme med API:t för Flow Service.
 
@@ -36,17 +39,17 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
 
-* Behörighet: Bearer `{ACCESS_TOKEN}`
-* x-api-key: `{API_KEY}`
-* x-gw-ims-org-id: `{IMS_ORG}`
+- Behörighet: Bearer `{ACCESS_TOKEN}`
+- x-api-key: `{API_KEY}`
+- x-gw-ims-org-id: `{IMS_ORG}`
 
 Alla resurser i Experience Platform, inklusive de som tillhör Flow Service, isoleras till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
-* x-sandbox-name: `{SANDBOX_NAME}`
+- x-sandbox-name: `{SANDBOX_NAME}`
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
 
-* Innehållstyp: `application/json`
+- Innehållstyp: `application/json`
 
 ## Skapa en ad hoc XDM-klass och ett schema
 
@@ -456,7 +459,7 @@ Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusi
 }
 ```
 
-## Söka efter dataflödesspecifikationer {#specs}
+## Hämta dataflödesspecifikationer {#specs}
 
 Ett dataflöde ansvarar för att samla in data från källor och föra in dem i plattformen. För att kunna skapa ett dataflöde måste du först få de dataflödesspecifikationer som ansvarar för att samla in molnlagringsdata.
 
@@ -575,10 +578,10 @@ Ett lyckat svar returnerar detaljerna om dataflödesspecifikationen som ansvarar
 
 Det sista steget mot att samla in molnlagringsdata är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
 
-* [Källanslutnings-ID](#source)
-* [Målanslutnings-ID](#target)
-* [Mappnings-ID](#mapping)
-* [ID för dataflödesspecifikation](#specs)
+- [Källanslutnings-ID](#source)
+- [Målanslutnings-ID](#target)
+- [Mappnings-ID](#mapping)
+- [ID för dataflödesspecifikation](#specs)
 
 Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en POST-begäran samtidigt som du anger de tidigare nämnda värdena i nyttolasten.
 
@@ -653,5 +656,21 @@ Ett godkänt svar returnerar ID:t (`id`) för det nya dataflödet.
 
 Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in data från din molnlagring på schemalagd basis. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan, t.ex. kundprofil i realtid och datavetenskapen. Mer information finns i följande dokument:
 
-* [Översikt över kundprofiler i realtid](../../../../profile/home.md)
-* [Översikt över arbetsytan Datavetenskap](../../../../data-science-workspace/home.md)
+- [Översikt över kundprofiler i realtid](../../../../profile/home.md)
+- [Översikt över arbetsytan Datavetenskap](../../../../data-science-workspace/home.md)
+
+## Bilaga
+
+I följande avsnitt visas de olika anslutningarna till molnlagringskällan och deras anslutningsspecifikationer.
+
+### Anslutningsspecifikation
+
+| Anslutningsnamn | Anslutningsspecifikation |
+| -------------- | --------------- |
+| Amazon S3 (S3) | `ecadc60c-7455-4d87-84dc-2a0e293d997b` |
+| Amazon Kinesis (Kinesis) | `86043421-563b-46ec-8e6c-e23184711bf6` |
+| Azure-blob (blob) | `4c10e202-c428-4796-9208-5f1f5732b1cf` |
+| Azure Data Lake Storage Gen2 (ADLS Gen2) | `0ed90a81-07f4-4586-8190-b40eccef1c5a` |
+| Azure Event Hubs (EventHub) | `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
+| Google Cloud-lagring | `32e8f412-cdf7-464c-9885-78184cb113fd` |
+| SFTP | `bf367b0d-3d9b-4060-b67b-0d3d9bd06094` |
