@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Skapa en Azure Blob-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 5c9bc1ec9170e4971a7d693038d12315aca616d5
+source-git-commit: 7ffe560f455973da3a37ad102fbb8cc5969d5043
+workflow-type: tm+mt
+source-wordcount: '556'
+ht-degree: 0%
 
 ---
 
@@ -56,73 +59,9 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 * Innehållstyp: `application/json`
 
-## Söka efter anslutningsspecifikationer
+## Skapa en anslutning
 
-Innan du ansluter Plattform till en Blob-lagring måste du verifiera att det finns anslutningsspecifikationer för Blob. Om det inte finns några anslutningsspecifikationer går det inte att ansluta.
-
-Varje tillgänglig källa har en egen unik uppsättning anslutningsspecifikationer för att beskriva kopplingsegenskaper som autentiseringskrav. Du kan söka efter anslutningsspecifikationer för Blob genom att utföra en GET-begäran och använda frågeparametrar.
-
-**API-format**
-
-Om du skickar en GET-begäran utan frågeparametrar returneras anslutningsspecifikationerna för alla tillgängliga källor. Du kan ta med frågan `property=name=="azure-blob"` för att få information om blobben.
-
-```http
-GET /connectionSpecs
-GET /connectionSpecs?property=name=="azure-blob"
-```
-
-**Begäran**
-
-Följande begäran hämtar anslutningsspecifikationerna för Blob.
-
-```shell
-curl -X GET \
-    'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs?property=name=="azure-blob"' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}'
-```
-
-**Svar**
-
-Ett lyckat svar returnerar anslutningsspecifikationerna för blobben, inklusive dess unika identifierare (`id`). Detta ID krävs i nästa steg för att skapa en basanslutning.
-
-```json
-{
-    "items": [
-        {
-            "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
-            "name": "azure-blob",
-            "providerId": "0ed90a81-07f4-4586-8190-b40eccef1c5a",
-            "version": "1.0",
-            "authSpec": [
-                {
-                    "name": "ConnectionString",
-                    "type": "ConnectionString",
-                    "spec": {
-                        "$schema": "http://json-schema.org/draft-07/schema#",
-                        "type": "object",
-                        "properties": {
-                            "connectionString": {
-                                "type": "string",
-                                "format": "password"
-                            }
-                        },
-                        "required": [
-                            "connectionString"
-                        ]
-                    }
-                }
-            ]
-        }
-    ]
-}
-```
-
-## Skapa en basanslutning
-
-En basanslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en basanslutning krävs per Blob-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per Blob-konto eftersom det kan användas för att skapa flera källanslutningar för att hämta olika data.
 
 **API-format**
 
@@ -141,8 +80,8 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "Blob Base Connection",
-        "description": "Base connection for an Azure Blob account",
+        "name": "Blob Connection",
+        "description": "Cnnection for an Azure Blob account",
         "auth": {
             "specName": "ConnectionString",
             "params": {
@@ -159,11 +98,11 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `auth.params.connectionString` | Anslutningssträngen för Blob-lagringen. |
-| `connectionSpec.id` | Anslutningsspecifikationen `id` för Blob-lagringen som hämtades i föregående steg. |
+| `connectionSpec.id` | Anslutningsspecifikation-ID för Blob-lagring: `4c10e202-c428-4796-9208-5f1f5732b1cf` |
 
 **Svar**
 
-Ett godkänt svar returnerar information om den nya basanslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att du ska kunna utforska ditt lagringsutrymme i nästa självstudiekurs.
+Ett godkänt svar returnerar information om den nya anslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att du ska kunna utforska ditt lagringsutrymme i nästa självstudiekurs.
 
 ```json
 {
