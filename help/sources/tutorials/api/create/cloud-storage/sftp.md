@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Skapa en SFTP-anslutning med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: a038abcdc411b638f41b94dea0140518c12f5600
+source-git-commit: 7ffe560f455973da3a37ad102fbb8cc5969d5043
+workflow-type: tm+mt
+source-wordcount: '550'
+ht-degree: 0%
 
 ---
 
@@ -56,84 +59,9 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 * Innehållstyp: `application/json`
 
-## Söka efter anslutningsspecifikationer
+## Skapa en anslutning
 
-För att kunna skapa en SFTP-anslutning måste det finnas en uppsättning SFTP-anslutningsspecifikationer i Flow Service. Det första steget i att ansluta Platform till SFTP är att hämta dessa specifikationer.
-
-**API-format**
-
-Varje tillgänglig källa har en egen unik uppsättning anslutningsspecifikationer för att beskriva kopplingsegenskaper som autentiseringskrav. Du kan söka efter anslutningsspecifikationer för SFTP genom att utföra en GET-begäran och använda frågeparametrar.
-
-Om du skickar en GET-begäran utan frågeparametrar returneras anslutningsspecifikationerna för alla tillgängliga källor. Du kan ta med frågan `property=name=="sftp"` för att få information om SFTP.
-
-```http
-GET /connectionSpecs
-GET /connectionSpecs?property=name=="sftp"
-```
-
-**Begäran**
-
-Följande begäran hämtar anslutningsspecifikationerna för en SFTP-server.
-
-```shell
-curl -X GET \
-    'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs?property=name=="sftp"' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}'
-```
-
-**Svar**
-
-Ett lyckat svar returnerar anslutningsspecifikationen för SFTP-servern, inklusive dess unika identifierare (`id`). Detta ID krävs i nästa steg för att skapa en basanslutning.
-
-```json
-{
-    "items": [
-        {
-            "id": "b7bf2577-4520-42c9-bae9-cad01560f7bc",
-            "name": "sftp",
-            "providerId": "0ed90a81-07f4-4586-8190-b40eccef1c5a",
-            "version": "1.0",
-            "authSpec": [
-                {
-                    "name": "Basic Authentication for sftp",
-                    "spec": {
-                        "$schema": "http://json-schema.org/draft-07/schema#",
-                        "type": "object",
-                        "description": "defines auth params required for connecting to sftp",
-                        "properties": {
-                            "host": {
-                                "type": "string",
-                                "description": "Specify the name or IP address of the SFTP server."
-                            },
-                            "userName": {
-                                "type": "string",
-                                "description": "Specify the user who has access to the SFTP server."
-                            },
-                            "password": {
-                                "type": "string",
-                                "description": "Specify the password for the user (userName).",
-                                "format": "password"
-                            }
-                        },
-                        "required": [
-                            "host",
-                            "userName",
-                            "password"
-                        ]
-                    }
-                }
-            ]
-        }
-    ]
-}
-```
-
-## Skapa en basanslutning
-
-En basanslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en basanslutning krävs per SFTP-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per SFTP-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
 
 **API-format**
 
@@ -171,11 +99,11 @@ curl -X POST \
 | `auth.params.host` | Värdnamnet för SFTP-servern. |
 | `auth.params.username` | Användarnamnet som är associerat med SFTP-servern. |
 | `auth.params.password` | Lösenordet som är kopplat till SFTP-servern. |
-| `connectionSpec.id` | Anslutningsspecifikationen `id` för SFTP-servern som hämtades i föregående steg. |
+| `connectionSpec.id` | ID för anslutningsspecifikationen för STFP-servern: `b7bf2577-4520-42c9-bae9-cad01560f7bc` |
 
 **Svar**
 
-Ett lyckat svar returnerar den unika identifieraren (`id`) för den nya basanslutningen. Detta ID krävs för att utforska din SFTP-server i nästa självstudiekurs.
+Ett lyckat svar returnerar den unika identifieraren (`id`) för den nya anslutningen. Detta ID krävs för att utforska din SFTP-server i nästa självstudiekurs.
 
 ```json
 {
