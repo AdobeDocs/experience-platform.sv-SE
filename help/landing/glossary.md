@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Produktdokumentation för Adobe Experience Platform
 topic: getting started
 translation-type: tm+mt
-source-git-commit: 6ed6f7a6930cc757f4ac80544bf08180c1541f35
+source-git-commit: a5268c2d31d356ce479bdcc143050cd513259235
+workflow-type: tm+mt
+source-wordcount: '6973'
+ht-degree: 0%
 
 ---
 
@@ -19,7 +22,7 @@ source-git-commit: 6ed6f7a6930cc757f4ac80544bf08180c1541f35
 
 **Åtgärd:** I Experience Platform Launch är en åtgärd en specifik typ av regelkomponent som definierar vad som ska hända efter att en händelse inträffar och villkoren utvärderas och skickas.
 
-**Aktivera:** I kunddataplattformen i realtid aktiverar du den åtgärd som en användare vidtar för att mappa ett segment eller profiler till en destination som Oracle Eloqua, Google eller Salesforce Marketing Cloud.
+**Aktivera:** I kunddataplattform i realtid är aktivering den åtgärd som en användare vidtar för att mappa ett segment eller profiler till en destination som Oracle Eloqua, Google eller Salesforce Marketing Cloud.
 
 **Aktivitet:** I beslutstjänsten är en aktivitet en uppsättning erbjudanden som marknadsföraren vill att beslutsmotorn ska välja det bästa erbjudandet från.
 
@@ -48,6 +51,8 @@ source-git-commit: 6ed6f7a6930cc757f4ac80544bf08180c1541f35
 **Artificiell intelligens:** Artificiell intelligens är en teori om och utveckling av datorsystem som kan utföra uppgifter som normalt kräver mänsklig omvärldsbevakning, t.ex. visuell uppfattning, taligenkänning, beslutsfattande och översättning mellan språk.
 
 **Attribut:** Attribut är angivna egenskaper som representerar en profil.
+
+**Koppla attribut:** Attributsammanfogning definierar hur en sammanfogningsprincip prioriterar profilattributvärdet i händelse av datakonflikter.
 
 **Attribution AI:** Attribution AI är en Adobe Sensei-tjänst som levererar algoritmisk flerkanalsattribuering under hela kundlivscykeln.
 
@@ -103,23 +108,23 @@ source-git-commit: 6ed6f7a6930cc757f4ac80544bf08180c1541f35
 
 **Kontraktsdataetiketter C:** Kontraktsetiketter `C` används för att kategorisera data som har avtalsmässiga skyldigheter eller som är relaterade till en kunds policyer för datastyrning.
 
-**C1 Kontraktsetikett:** Etiketten för `C1` avtalsstyrd datastyrning anger att data bara kan exporteras från Adobe Experience Cloud i en aggregerad form utan att inkludera enskilda identifierare eller enhetsidentifierare. Till exempel data som kommer från sociala nätverk.
+**C1 Kontraktsetikett:** `C1` Etiketten för avtalsstyrd datastyrning specificerar att data bara kan exporteras från Adobe Experience Cloud i en aggregerad form utan att inkludera enskilda identifierare eller enhetsidentifierare. Till exempel data som kommer från sociala nätverk.
 
-**C2 Kontraktsetikett:** Etiketten för `C2` avtalsdatastyrning anger data som inte kan exporteras till en tredje part. Vissa dataleverantörer har villkor i sina kontrakt som förbjuder export av data som de ursprungligen samlades in från.  Kontrakt för sociala nätverk begränsar till exempel ofta överföringen av data som du får från dem. C2 är mer restriktiv än C1, som bara kräver aggregation och anonyma uppgifter.
+**C2 Kontraktsetikett:** `C2` Etiketten för styrningsdata för kontrakt anger data som inte kan exporteras till en tredje part. Vissa dataleverantörer har villkor i sina kontrakt som förbjuder export av data som de ursprungligen samlades in från.  Kontrakt för sociala nätverk begränsar till exempel ofta överföringen av data som du får från dem. C2 är mer restriktiv än C1, som bara kräver aggregation och anonyma uppgifter.
 
-**C3-kontraktsetikett:** Etiketten för `C3` avtalsdatastyrning anger data som inte kan kombineras eller på annat sätt användas med direkt identifierbar information. Vissa dataleverantörer har villkor i sina kontrakt som förbjuder kombinationen eller användningen av dessa data med direkt identifierbar information.  Till exempel innehåller kontrakt för data som hämtas från annonsnätverk, annonsservrar och tredjepartsleverantörer av data ofta specifika avtalsförbud för användning av direkt identifierbara data.
+**C3-kontraktsetikett:** `C3` Etiketten för styrning av avtalsdata anger data som inte kan kombineras eller på annat sätt användas med direkt identifierbar information. Vissa dataleverantörer har villkor i sina kontrakt som förbjuder kombinationen eller användningen av dessa data med direkt identifierbar information.  Till exempel innehåller kontrakt för data som hämtas från annonsnätverk, annonsservrar och tredjepartsleverantörer av data ofta specifika avtalsförbud för användning av direkt identifierbara data.
 
-**C4-kontraktsetikett:** Etiketten för `C4` avtalsdatastyrning anger att data inte kan användas för annonser eller innehåll, varken på plats eller på en annan plats. C4 är den mest restriktiva etiketten eftersom den omfattar etiketterna C5, C6 och C7.
+**C4-kontraktsetikett:** `C4` Etiketten för avtalsstyrd datastyrning anger att data inte kan användas för annonser eller innehåll, varken på plats eller på en annan plats. C4 är den mest restriktiva etiketten eftersom den omfattar etiketterna C5, C6 och C7.
 
-**C5-kontraktsetikett:** Etiketten för `C5` avtalsdatastyrning anger att data inte kan användas för intressebaserad, övergripande målinriktning av innehåll eller annonser. Intressebaserad målinriktning, eller personalisering, uppstår om följande tre villkor uppfylls:  De data som samlas in på webbplatsen används för att dra slutsatser om en användares intresse, och används i ett annat sammanhang, t.ex. på en annan webbplats eller i en annan app, och används för att välja vilket innehåll eller vilka annonser som ska hanteras baserat på dessa slutsatser.
+**C5-kontraktsetikett:** `C5` Etiketten för avtalsbaserad datastyrning anger att data inte kan användas för intressebaserad, övergripande målinriktning av innehåll eller annonser. Intressebaserad målinriktning, eller personalisering, uppstår om följande tre villkor uppfylls:  De data som samlas in på webbplatsen används för att dra slutsatser om en användares intresse, och används i ett annat sammanhang, t.ex. på en annan webbplats eller i en annan app, och används för att välja vilket innehåll eller vilka annonser som ska hanteras baserat på dessa slutsatser.
 
-**C6 Kontraktsetikett:** Etiketten för `C6` avtalsdatastyrning anger att data inte kan användas för annonsanpassning på plats. Data kan inte användas för annonsanpassning på plats, inklusive val och leverans av annonser på organisationens webbplatser eller i appar, eller för att mäta leveransen och effektiviteten av sådana annonser.  Detta inkluderar att använda tidigare insamlade data på plats om användarnas intresse för att välja annonser, bearbeta data om vilka annonser som visades, när och var de visades och om användarna vidtagit några åtgärder som rör annonsen, som att klicka på en annons eller göra ett köp.
+**C6 Kontraktsetikett:** `C6` Etiketten för avtalsstyrd datastyrning anger att data inte kan användas för annonsanpassning på plats. Data kan inte användas för annonsanpassning på plats, inklusive val och leverans av annonser på organisationens webbplatser eller i appar, eller för att mäta leveransen och effektiviteten av sådana annonser.  Detta inkluderar att använda tidigare insamlade data på plats om användarnas intresse för att välja annonser, bearbeta data om vilka annonser som visades, när och var de visades och om användarna vidtagit några åtgärder som rör annonsen, som att klicka på en annons eller göra ett köp.
 
-**C7 Kontraktsetikett:** Etiketten för `C7` avtalsdatastyrning anger att data inte kan användas för målinriktning av innehåll på plats.  Data kan inte användas för att målinrikta innehåll på plats, inklusive val och leverans av innehåll på organisationens webbplatser eller appar, eller för att mäta leveransen och effektiviteten av sådant innehåll.  Detta inkluderar tidigare insamlad information om användarnas intresse av att välja innehåll, bearbetning av data om vilket innehåll som visades, hur ofta eller hur länge det visades, när och var det visades, och om användarna vidtagit några åtgärder som rör innehållet, till exempel att klicka på innehållet.
+**C7 Kontraktsetikett:** `C7` Etiketten för avtalsstyrd datastyrning anger att data inte kan användas för målinriktning på plats för innehåll.  Data kan inte användas för att målinrikta innehåll på plats, inklusive val och leverans av innehåll på organisationens webbplatser eller appar, eller för att mäta leveransen och effektiviteten av sådant innehåll.  Detta inkluderar tidigare insamlad information om användarnas intresse av att välja innehåll, bearbetning av data om vilket innehåll som visades, hur ofta eller hur länge det visades, när och var det visades, och om användarna vidtagit några åtgärder som rör innehållet, till exempel att klicka på innehållet.
 
-**C8 Kontraktsetikett:** Etiketten för `C8` avtalsdatastyrning anger att data inte kan användas för mätning av organisationens webbplatser eller appar. Data kan inte användas för att mäta, förstå och rapportera om hur användare använder organisationens webbplatser eller appar. Detta inkluderar inte intressebaserad målinriktning, som är insamling av information om din användning av den här tjänsten för att senare personalisera innehåll och/eller annonsering i andra sammanhang.
+**C8 Kontraktsetikett:** `C8` Etiketten för avtalsstyrd datastyrning anger att data inte kan användas för mätning av organisationens webbplatser eller appar. Data kan inte användas för att mäta, förstå och rapportera om hur användare använder organisationens webbplatser eller appar. Detta inkluderar inte intressebaserad målinriktning, som är insamling av information om din användning av den här tjänsten för att senare personalisera innehåll och/eller annonsering i andra sammanhang.
 
-**C9 Kontraktsetikett:** Etiketten för `C9` avtalsdatastyrning anger att data inte kan användas i arbetsflöden för datavetenskap. Vissa avtal innehåller uttryckliga förbud mot data som används för datavetenskap.  Ibland formuleras dessa i termer som förbjuder användning av data för artificiell intelligens (AI), maskininlärning (ML) eller modellering.
+**C9 Kontraktsetikett:** `C9` Etiketten för styrd data anger att data inte kan användas i arbetsflöden för datavetenskap. Vissa avtal innehåller uttryckliga förbud mot data som används för datavetenskap.  Ibland formuleras dessa i termer som förbjuder användning av data för artificiell intelligens (AI), maskininlärning (ML) eller modellering.
 
 **Skapad datumkolumn:** Att markera en `Created Date` kolumn är ett alternativ när du anger data från tredje part via en anslutning. När strategin för att spara som tillägg har valts och datauppsättningen innehåller ett schema som är relaterat till flera datum, måste användaren välja från det tillgängliga schemat för datum/tid för att ange en `Created Date` nyckelkolumn. `Created Date` är inte tillgängligt när du har valt en sparningsstrategi för överskrivning.
 
@@ -145,14 +150,6 @@ source-git-commit: 6ed6f7a6930cc757f4ac80544bf08180c1541f35
 
 **Dataström:** En dataström är en uppsättning eller en samling meddelanden som delar samma schema och skickas av samma källa.
 
-**Datauppsättning:** En datauppsättning är en lagrings- och hanteringskonstruktion för en datamängd, vanligtvis en tabell, som innehåller schema (kolumner) och fält (rader).
-
-**Datauppsättningsflöde:** I kunddataplattformen i realtid är ett datauppsättningsflöde en visuell representation av källdatauppsättningar som flödar genom kundprofilen i realtid till destinationer.
-
-**Datauppsättnings-ID:** En Adobe-genererad identifierare för en inkapslad datauppsättning.
-
-**Utdata för datauppsättning:** Datauppsättningsutdata tillhandahåller en mekanism för att avgöra vad alternativet *Skapa tabell som markerad* ska användas för en viss körning av frågetjänsten.
-
 **Datastyrning:** Datastyrning omfattar strategier och tekniker som används för att säkerställa att data överensstämmer med regler och organisationsstrategier när det gäller dataanvändning.
 
 **Datastyrningsetiketter:** Datastyrningsetiketter ger användarna möjlighet att klassificera data som avspeglar integritetsrelaterade överväganden och avtalsvillkor så att de följer regler och företagspolicyer. Datastyrningsetiketter som läggs till i en datauppsättning ärvs ned eller används för alla fält i den datauppsättningen.  Datastyrningsetiketter kan också användas direkt i fält.
@@ -170,6 +167,14 @@ source-git-commit: 6ed6f7a6930cc757f4ac80544bf08180c1541f35
 **Datatyp:** Datatypen är ett återanvändbart objekt med egenskaper i en hierarkisk representation.
 
 **Dataanvändningsetiketter:** Etiketter för dataanvändning ger användarna möjlighet att kategorisera data som speglar integritetsrelaterade överväganden och avtalsvillkor så att de uppfyller regler och företagspolicyer.
+
+**Dataflöde:** I kunddataplattformen i realtid är ett dataflöde en virtuell pipeline med data som flödar in i plattformen från en källa och ut till destinationer.
+
+**Datauppsättning:** En datauppsättning är en lagrings- och hanteringskonstruktion för en datamängd, vanligtvis en tabell, som innehåller schema (kolumner) och fält (rader).
+
+**Datauppsättnings-ID:** En Adobe-genererad identifierare för en inkapslad datauppsättning.
+
+**Utdata för datauppsättning:** Datauppsättningsutdata tillhandahåller en mekanism för att avgöra vad alternativet *Skapa tabell som markerad* ska användas för en viss körning av frågetjänsten.
 
 **Beslutshändelse:** En beslutshändelse används för att samla in kommentarer om resultatet och sammanhanget för en beslutsaktivitet. Beslutshändelsen innehåller information om hur beslutet fattades, när det fattades, vilka alternativ som föreslogs (valdes) och vilket kontextuellt tillstånd som antingen påverkade beslutet eller kunde observeras under beslutsprocessen. Beslutshändelsen innehåller också förslags-ID:t, en globalt unik identifierare som kan användas för att korrelera beslutet till andra händelser.
 
@@ -214,6 +219,8 @@ source-git-commit: 6ed6f7a6930cc757f4ac80544bf08180c1541f35
 **Experience Data Model (XDM):** Experience Data Model (XDM) är ett koncept för att använda standardscheman för att sammanställa data för användning med Experience Platform och Adobe Experience Cloud-program. XDM standardiserar hur data struktureras och snabbar upp och förenklar processen att få insikter från enorma mängder data.
 
 **Experience Platform Launch:** Launch är ett tagg- och SDK-hanteringsekosystem som är integrerat med Experience Platform- och Experience Cloud-program. Launch innehåller verktyg för att driftsätta, sammanställa och hantera analyser, marknadsföring och annonser som är nödvändiga för relevanta kundupplevelser på alla kundenheter.
+
+**Experience Platform Launch Extensions:** Med Experience Platform Launch-tillägg kan rådata levereras direkt till kunddataplatsens mål i realtid. Installationen av Launch-tillägg kräver åtkomst till Launch-egenskaperna.
 
 **Experimentera:** Ett experiment är en process för att skapa en utbildad modell genom att utbilda instansen med en exempeldel av liveproduktionsdata.
 
@@ -263,7 +270,7 @@ source-git-commit: 6ed6f7a6930cc757f4ac80544bf08180c1541f35
 
 **Identitet:** Identitet är en identifierare som ett cookie-ID, ett enhets-ID eller ett e-post-ID som unikt representerar en slutkund.
 
-**Identitet&quot;I&quot;-dataetiketter:** Etiketter används `Identity I` för att kategorisera data som kan identifiera eller kontakta en viss person.
+**Identitet&quot;I&quot;-dataetiketter:** `Identity I` används för att kategorisera data som kan identifiera eller kontakta en viss person.
 
 **Identitetsdiagram:** Identitetsdiagram är en karta över relationer mellan sammanfogade och länkade identiteter, som uppdateras nästan i realtid med kundaktivitet.
 
@@ -274,6 +281,8 @@ source-git-commit: 6ed6f7a6930cc757f4ac80544bf08180c1541f35
 **Identitetskorrigering:** Identitetssammanfogning är processen att identifiera databragment och sammanfoga dem för att bilda en fullständig registrering av en profil.
 
 **Identitetssymbol:** Identitetssymbolen är en förkortning av ett identitetsnamnutrymme som kan användas som referens i API:er.
+
+**Identitetsvärde:** Identitetsvärde är data som är associerade med en tilldelad identitet i schemat. När postdata matchas mellan profilfragment måste både identitetsvärdet och namnutrymmet matcha.
 
 **I1-dataetikett:** Dataetiketten används för att klassificera direkt identifierbara data som kan identifiera eller kontakta en viss person i stället för en enhet. `I1`
 
@@ -347,7 +356,7 @@ source-git-commit: 6ed6f7a6930cc757f4ac80544bf08180c1541f35
 
 **Organisation:** En organisation är det namn som används för att identifiera ett företag eller en viss grupp inom ett företag för alla Adobes produkter. Administratören kan konfigurera och hantera åtkomst och behörigheter för funktioner för användare i en organisation.
 
-**Skriv över sparad strategi:** strategi för att `Overwrite` spara är ett alternativ för att hämta tredjepartsdata via en anslutning, där användaren anger om inmatade data ska skrivas över enligt ett angivet schema. Experience Platform kommer att importera den angivna datauppsättningen från tredje parts källa och skriva över datauppsättningen på Experience Platform.
+**Skriv över sparad strategi:** `Overwrite` strategi för att spara är ett alternativ för att hämta tredjepartsdata via en anslutning, där användaren anger om inmatade data ska skrivas över enligt ett angivet schema. Experience Platform kommer att importera den angivna datauppsättningen från tredje parts källa och skriva över datauppsättningen på Experience Platform.
 
 [Till början](#adobe-experience-platform-glossary)
 
@@ -377,6 +386,8 @@ source-git-commit: 6ed6f7a6930cc757f4ac80544bf08180c1541f35
 
 **Profilexport:** Profilexport är en av de två typerna av destinationer i kunddataplattformen i realtid. Profilexport genererar en fil som innehåller profiler och attribut, och använder PII-rådata med e-post och används för att integrera med automatiseringsplattformar för marknadsföring och e-post.
 
+**Profilens FProfile-fragment:** Ett profilfragment är profilinformationen för endast en identitet från listan över identiteter som finns för en viss användare.
+
 **Profil-ID:** Ett profil-ID är en automatiskt genererad identifierare som är associerad med en identitetstyp och representerar en profil.
 
 **Egenskap:** I Experience Platform Launch är en egenskap en behållare för allt som behövs för att distribuera en uppsättning taggar.
@@ -389,7 +400,7 @@ source-git-commit: 6ed6f7a6930cc757f4ac80544bf08180c1541f35
 
 **Frågeredigeraren:** Frågeredigeraren är ett verktyg för att skriva, validera och skicka SQL-satser i frågetjänsten.
 
-**Query Service för Adobe Experience Platform:** Med *Experience Platform Query Service* kan dataanalytiker fråga ExperienceEvents och XDMs för användning i analyser och maskininlärning. Med Query Service kan datavetare och analytiker hämta alla sina datauppsättningar som lagras i Experience Platform - inklusive beteendedata samt POS (point-of-sales), CRM (customer relationship management) med mera - och få svar på specifika frågor om dessa data.
+**Query Service för Adobe Experience Platform:** *Experience Platform Query Service* gör det möjligt för dataanalytiker att fråga ExperienceEvents och XDM för användning i analyser och maskininlärning. Med Query Service kan datavetare och analytiker hämta alla sina datauppsättningar som lagras i Experience Platform - inklusive beteendedata samt POS (point-of-sales), CRM (customer relationship management) med mera - och få svar på specifika frågor om dessa data.
 
 [Till början](#adobe-experience-platform-glossary)
 
@@ -465,9 +476,9 @@ source-git-commit: 6ed6f7a6930cc757f4ac80544bf08180c1541f35
 
 **Tjänster:** Ett kraftfullt ramverk för att driftsätta AI- och ML-tjänster genom att utnyttja Adobe Intelligent Services. Tjänsterna ger personaliserade kundupplevelser i realtid eller driftsätter anpassade intelligenta tjänster.
 
-**Dataetikett S1:** Dataetiketten används för att klassificera data som anger latitud och longitud som kan användas för att fastställa en enhets exakta placering. `S1`
+**Dataetikett S1:** `S1` dataetiketten används för att klassificera data som anger latitud och longitud som kan användas för att bestämma den exakta placeringen av en enhet.
 
-**Dataetikett för S2:** Dataetiketten används för att klassificera data som kan användas för att fastställa ett brett definierat geostängningsområde. `S2`
+**Dataetikett för S2:** `S2` dataetikett används för att klassificera data som kan användas för att fastställa ett brett definierat geostängningsområde.
 
 **Källa:** Källa är en allmän term för alla indataanslutningar i kunddataplattformen i realtid.
 
