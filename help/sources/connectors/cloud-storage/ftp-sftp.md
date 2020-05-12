@@ -4,18 +4,21 @@ solution: Experience Platform
 title: FTP- och SFTP-anslutning
 topic: overview
 translation-type: tm+mt
-source-git-commit: ca3d2e7ac6d32b71e19e150f301f21b2d87c08ad
+source-git-commit: 799445eca080175e2bffc49c6714f0c812b9bbea
+workflow-type: tm+mt
+source-wordcount: '182'
+ht-degree: 0%
 
 ---
 
 
 # FTP- och SFTP-anslutning
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som ni kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Adobe Experience Platform ger inbyggda anslutningsmöjligheter för molnleverantörer som AWS, Google Cloud Platform och Azure. Ni kan överföra data från dessa system till plattformen.
 
-Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM-parquet eller avgränsade. Varje steg i processen integreras i arbetsflödet Källor med användargränssnittet. Stöd för molnlagringsleverantörer inkluderar FTP- och SFTP-servrar.
+Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM-parquet eller avgränsade. Varje steg i processen är integrerat i arbetsflödet för källor. Med Platform kan du hämta data från en FTP- eller SFTP-server via batchar.
 
-Dokumentationen nedan innehåller information om hur du ansluter en FTP- eller SFTP-server till plattformen med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter en FTP- eller STFP-server till plattformen med API:er eller användargränssnittet:
 
 ## Ansluta FTP och SFTP till plattformen med API:er
 
@@ -26,4 +29,4 @@ Dokumentationen nedan innehåller information om hur du ansluter en FTP- eller S
 ## Ansluta FTP eller SFTP till plattformen med användargränssnittet
 
 - [Skapa en FTP- eller SFTP-källanslutning i användargränssnittet](../../tutorials/ui/create/cloud-storage/ftp-sftp.md)
-- [Konfigurera ett dataflöde för en molnlagringskontakt i användargränssnittet](../../tutorials/ui/dataflow/cloud-storage.md)
+- [Konfigurera ett dataflöde för en molnlagringskontakt i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
