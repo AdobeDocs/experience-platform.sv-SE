@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Skapa en FTP- eller SFTP-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: f09ff4d1b159a6989868c5cfc35b361cfb640a99
+source-git-commit: 799445eca080175e2bffc49c6714f0c812b9bbea
+workflow-type: tm+mt
+source-wordcount: '513'
+ht-degree: 0%
 
 ---
 
@@ -22,7 +25,7 @@ Den här självstudien kräver en fungerande förståelse av följande komponent
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [Kundprofil](../../../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Om du redan har en giltig FTP- eller SFTP-anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen om hur du [konfigurerar ett dataflöde](../../dataflow/cloud-storage.md).
+Om du redan har en giltig FTP- eller SFTP-anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen om hur du [konfigurerar ett dataflöde](../../dataflow/batch/cloud-storage.md).
 
 ### Filformat som stöds
 
@@ -54,4 +57,4 @@ När en basanslutning till FTP- eller SFTP-servern har upprättats kan du forts�
 
 ## Nästa steg
 
-I den här självstudiekursen har du upprättat en anslutning till FTP- eller SFTP-servern. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/cloud-storage.md).
+I den här självstudiekursen har du upprättat en anslutning till FTP- eller SFTP-servern. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/batch/cloud-storage.md).
