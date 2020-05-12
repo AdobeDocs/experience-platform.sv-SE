@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Skapa en Google Cloud-lagringskontakt med API:t för flödestjänsten
 topic: overview
 translation-type: tm+mt
-source-git-commit: 96be7084d5d2efb86b7bba27f1a92bd9c0055fba
+source-git-commit: 7ffe560f455973da3a37ad102fbb8cc5969d5043
+workflow-type: tm+mt
+source-wordcount: '556'
+ht-degree: 0%
 
 ---
 
@@ -55,80 +58,9 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 * Innehållstyp: `application/json`
 
-## Söka efter anslutningsspecifikationer
+## Skapa en anslutning
 
-Innan du ansluter plattformen till en Google Cloud-lagring måste du verifiera att det finns anslutningsspecifikationer för Google Cloud-lagring. Om det inte finns några anslutningsspecifikationer går det inte att ansluta.
-
-Varje tillgänglig källa har en egen unik uppsättning anslutningsspecifikationer för att beskriva kopplingsegenskaper som autentiseringskrav. Du kan söka efter anslutningsspecifikationer för Google Cloud-lagring genom att utföra en GET-begäran och använda frågeparametrar.
-
-**API-format**
-
-Om du skickar en GET-begäran utan frågeparametrar returneras anslutningsspecifikationerna för alla tillgängliga källor. Du kan ta med frågan `property=name=="google-cloud"` för att få information om Google Cloud-lagring.
-
-```http
-GET /connectionSpecs
-GET /connectionSpecs?property=name==google-cloud
-```
-
-**Begäran**
-
-Följande begäran hämtar anslutningsspecifikationerna för Google Cloud-lagring.
-
-```shell
-curl -X GET \
-    'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs?property=name=="google-cloud"' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}'
-```
-
-**Svar**
-
-Ett lyckat svar returnerar anslutningsspecifikationerna för Google Cloud-lagring, inklusive dess unika identifierare (`id`). Detta ID krävs i nästa steg för att skapa en basanslutning.
-
-```json
-{
-    "items": [
-        {
-            "id": "32e8f412-cdf7-464c-9885-78184cb113fd",
-            "name": "google-cloud",
-            "providerId": "0ed90a81-07f4-4586-8190-b40eccef1c5a",
-            "version": "1.0",
-            "authSpec": [
-                {
-                    "name": "Basic Authentication for google-cloud",
-                    "type": "Basic Authentication",
-                    "spec": {
-                        "$schema": "http://json-schema.org/draft-07/schema#",
-                        "type": "object",
-                        "description": "defines auth params required for connecting to google-cloud storage connector.",
-                        "properties": {
-                            "accessKeyId": {
-                                "type": "string",
-                                "description": "Access Key Id for the user account"
-                            },
-                            "secretAccessKey": {
-                                "type": "string",
-                                "description": "Secret Access Key for the user account",
-                                "format": "password"
-                            }
-                        },
-                        "required": [
-                            "accessKeyId",
-                            "secretAccessKey"
-                        ]
-                    }
-                }
-            ]
-        }
-    ]
-}
-```
-
-## Skapa en basanslutning
-
-En basanslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en basanslutning krävs per Google Cloud-lagringskonto eftersom det kan användas för att skapa flera källanslutningar för att hämta olika data.
+En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per Google Cloud-lagringskonto eftersom det kan användas för att skapa flera källanslutningar för att hämta olika data.
 
 **API-format**
 
@@ -147,8 +79,8 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "Google Cloud Storage base connection",
-        "description": "Base connector for Google Cloud Storage",
+        "name": "Google Cloud Storage connection",
+        "description": "Connector for Google Cloud Storage",
         "auth": {
             "specName": "Basic Authentication for google-cloud",
             "params": {
@@ -167,11 +99,11 @@ curl -X POST \
 | -------- | ----------- |
 | `auth.params.accessKeyId` | Det ID för åtkomstnyckel som är kopplat till ditt Google Cloud Storage-konto. |
 | `auth.params.secretAccessKey` | Den hemliga åtkomstnyckel som är kopplad till ditt Google Cloud Storage-konto. |
-| `connectionSpec.id` | Anslutningsspecifikationen `id` för ditt Google Cloud-lagringskonto som hämtades i föregående steg. |
+| `connectionSpec.id` | Anslutningsspecifikation-ID för Google Cloud-lagring: `32e8f412-cdf7-464c-9885-78184cb113fd` |
 
 **Svar**
 
-Ett godkänt svar returnerar information om den nya basanslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att du ska kunna utforska dina molnlagringsdata i nästa självstudiekurs.
+Ett godkänt svar returnerar information om den nya anslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att du ska kunna utforska dina molnlagringsdata i nästa självstudiekurs.
 
 ```json
 {
