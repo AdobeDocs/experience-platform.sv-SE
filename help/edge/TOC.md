@@ -3,10 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Hjälp om Adobe Experience Platform Edge Network
 translation-type: tm+mt
-source-git-commit: 44f8fceda91d4ee1044491d7eec363e501d46e70
+source-git-commit: 1d864707226087d63a8f0afd9156efed0e369742
 workflow-type: tm+mt
-source-wordcount: '89'
-ht-degree: 2%
+source-wordcount: '91'
+ht-degree: 4%
 
 ---
 
@@ -30,13 +30,15 @@ ht-degree: 2%
    * [Hantera flimmer](fundamentals/managing-flicker.md)
    * [Godkännande](fundamentals/supporting-consent.md)
    * [Stöd för webbläsare i appen](fundamentals/supporting-in-app-browsers.md)
-   * [Hämtar Experience Cloud-ID](fundamentals/retrieving-experience-cloud-id.md)
+   * [Identitet](fundamentals/identity.md)
 * Vad som ska implementeras {#implement}
    * [Produkter](what-to-implement/commerce.md)
 * Lösningsspecifika överväganden {#solutions}
    * Analytics {#analytics}
       * [Analysöversikt](solution-specific/analytics/analytics-overview.md)
       * [Automatiskt mappade variabler](solution-specific/analytics/automatically-mapped-vars.md)
+   * Audience Manager {#aam}
+      * [Audience Manager - översikt](solution-specific/audience-manager/audience-manager-overview.md)
    * Mål {#target}
       * [Målöversikt](solution-specific/target/target-overview.md)
 * Referens {#ref}
