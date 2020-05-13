@@ -4,7 +4,7 @@ seo-title: Skicka data till Adobe Audience Manager med Adobe Experience Platform
 description: Lär dig hur du skickar data till Adobe Audience Manager med Experience Platform Web SDK
 seo-description: Lär dig hur du skickar data till Adobe Audience Manager med Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: cfb23e7fde246ca224d5e1f2688651aa7d992b2c
+source-git-commit: dfe9ea2889b3ba2e74f8b10296bfb2d123ad9d57
 workflow-type: tm+mt
 source-wordcount: '318'
 ht-degree: 0%
