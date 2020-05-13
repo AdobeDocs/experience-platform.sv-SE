@@ -4,16 +4,19 @@ solution: Experience Platform
 title: Jobb
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 64cb2de507921fcb4aaade67132024a3fc0d3dee
+source-git-commit: a3178ab54a7ab5eacd6c5f605b8bd894779f9e85
+workflow-type: tm+mt
+source-wordcount: '1669'
+ht-degree: 0%
 
 ---
 
 
 # Sekretessjobb
 
-Följande avsnitt går igenom anrop som du kan göra med rotslutpunkten (`/`) i API:t för sekretesstjänsten. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
+Följande avsnitt går igenom anrop som du kan göra med hjälp av `/jobs` slutpunkten i API:t för sekretesstjänsten. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
 
-## Skapa ett sekretessjobb
+## Skapa ett sekretessjobb {#create-job}
 
 Innan du skapar en ny jobbbegäran måste du först samla in identifieringsinformation om de registrerade vars uppgifter du vill få tillgång till, ta bort eller avanmäla dig från försäljning. När du har de data som krävs måste de anges i nyttolasten för en POST-begäran till rotslutpunkten.
 
@@ -33,7 +36,7 @@ I det här avsnittet visas hur du gör en begäran om åtkomst/borttagning av jo
 **API-format**
 
 ```http
-POST /
+POST /jobs
 ```
 
 **Begäran**
@@ -157,7 +160,7 @@ Ett lyckat svar returnerar information om de nya jobben.
 | --- | --- |
 | `jobId` | Ett skrivskyddat, unikt systemgenererat ID för ett jobb. Det här värdet används i nästa steg när du söker efter ett specifikt jobb. |
 
-När du har skickat jobbförfrågan kan du fortsätta till nästa steg för att [kontrollera jobbets status](#check-the-status-of-a-job).
+När du har skickat jobbförfrågan kan du fortsätta till nästa steg för att [kontrollera jobbets status](#check-status).
 
 ### Skapa ett avanmälningsjobb {#opt-out}
 
@@ -166,7 +169,7 @@ I det här avsnittet visas hur du gör en avanmälningsjobbbegäran med API:t.
 **API-format**
 
 ```http
-POST /
+POST /jobs
 ```
 
 **Begäran**
@@ -232,7 +235,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `companyContexts` **(Obligatoriskt)** | En array som innehåller autentiseringsinformation för din organisation. Varje identifierare i listan innehåller följande attribut: <ul><li>`namespace`: Namnutrymmet för en identifierare.</li><li>`value`: Identifierarens värde.</li></ul>Det **krävs** att en av identifierarna använder `imsOrgId` den som `namespace`, med `value` det unika ID:t för IMS-organisationen. <br/><br/>Ytterligare identifierare kan vara produktspecifika företagskvalificerare (till exempel `Campaign`) som identifierar en integrering med ett Adobe-program som tillhör din organisation. Möjliga värden är kontonamn, klientkoder, klient-ID:n eller andra programidentifierare. |
+| `companyContexts` **(Obligatoriskt)** | En array som innehåller autentiseringsinformation för din organisation. Varje identifierare i listan innehåller följande attribut: <ul><li>`namespace`: Namnutrymmet för en identifierare.</li><li>`value`: Identifierarens värde.</li></ul>Det **krävs** att en av identifierarna använder `imsOrgId` den som `namespace`, med `value` det unika ID:t för IMS-organisationen. <br/><br/>Ytterligare identifierare kan vara produktspecifika företagskvalificerare (till exempel `Campaign`) som identifierar en integrering med ett Adobe-program som tillhör din organisation. Möjliga värden är kontonamn, klientkoder, klient-ID eller andra programidentifierare. |
 | `users` **(Obligatoriskt)** | En array som innehåller en samling med minst en användare vars information du vill komma åt eller ta bort. Högst 1 000 användar-ID kan anges i en enda begäran. Varje användarobjekt innehåller följande information: <ul><li>`key`: En identifierare för en användare som används för att kvalificera separata jobb-ID:n i svarsdata. Det är bäst att välja en unik, lätt identifierbar sträng för det här värdet så att det är enkelt att referera till eller söka efter den senare.</li><li>`action`: En array som listar önskade åtgärder som ska utföras på data. För begäran om avanmälan från försäljning får arrayen endast innehålla värdet `opt-out-of-sale`.</li><li>`userIDs`: En samling identiteter för användaren. Antalet identiteter som en enskild användare kan ha är begränsat till nio. Varje identitet består av en `namespace`, en `value`och en namnutrymmeskvalificerare (`type`). Mer information om de här obligatoriska egenskaperna finns i [bilagan](appendix.md) .</li></ul> En mer detaljerad förklaring av `users` och `userIDs`information finns i [felsökningsguiden](../troubleshooting-guide.md#user-ids). |
 | `include` **(Obligatoriskt)** | En uppsättning Adobe-produkter som ska ingå i bearbetningen. Om det här värdet saknas eller är tomt på annat sätt, kommer begäran att avvisas. Inkludera endast produkter som din organisation är integrerad med. Mer information finns i avsnittet om [godkända produktvärden](appendix.md) i bilagan. |
 | `expandIDs` | En valfri egenskap som, när den anges till `true`, representerar en optimering för bearbetning av ID:n i programmen (stöds för närvarande bara av Analytics). Om det utelämnas blir det här värdet som standard `false`. |
@@ -281,7 +284,7 @@ Ett lyckat svar returnerar information om de nya jobben.
 
 När du har skickat jobbförfrågan kan du fortsätta till nästa steg för att kontrollera jobbets status.
 
-## Kontrollera status för ett jobb
+## Kontrollera status för ett jobb {#check-status}
 
 Om du använder ett av de `jobId` värden som returnerades i föregående steg kan du hämta information om jobbet, till exempel dess aktuella bearbetningsstatus.
 
@@ -290,12 +293,12 @@ Om du använder ett av de `jobId` värden som returnerades i föregående steg k
 **API-format**
 
 ```http
-GET /{JOB_ID}
+GET /jobs/{JOB_ID}
 ```
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{JOB_ID}` | ID:t för det jobb som du vill söka upp, returnerat under `jobId` svaret på det [föregående steget](#create-a-job-request). |
+| `{JOB_ID}` | ID:t för det jobb som du vill söka upp, returnerat under `jobId` svaret på det [föregående steget](#create-job). |
 
 **Begäran**
 
@@ -391,10 +394,10 @@ Du kan visa en lista över alla tillgängliga jobbförfrågningar inom organisat
 I det här frågeformatet används en `regulation` frågeparameter på rotslutpunkten (`/`), och därför börjar det med ett frågetecken (`?`) enligt nedan. Svaret sidnumreras så att du kan använda andra frågeparametrar (`page` och `size`) för att filtrera svaret. Du kan separera flera parametrar med et-tecken (`&`).
 
 ```http
-GET ?regulation={REGULATION}
-GET ?regulation={REGULATION}&page={PAGE}
-GET ?regulation={REGULATION}&size={SIZE}
-GET ?regulation={REGULATION}&page={PAGE}&size={SIZE}
+GET /jobs?regulation={REGULATION}
+GET /jobs?regulation={REGULATION}&page={PAGE}
+GET /jobs?regulation={REGULATION}&size={SIZE}
+GET /jobs?regulation={REGULATION}&page={PAGE}&size={SIZE}
 ```
 
 | Parameter | Beskrivning |
