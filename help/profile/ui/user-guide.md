@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Användarhandbok för kundprofil i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: 667aadde831a1d010f8cbbbb20bd92f914558bd1
+source-git-commit: 5718a3930f1e12e62a7bbe60f249c7f6f3434fa7
 workflow-type: tm+mt
-source-wordcount: '882'
+source-wordcount: '880'
 ht-degree: 0%
 
 ---
@@ -26,21 +26,17 @@ Den här användarhandboken kräver förståelse för de olika Experience Platfo
 * [Identitetstjänst](../../identity-service/home.md): Möjliggör kundprofil i realtid genom att överbrygga identiteter från olika datakällor som hämtas in till Platform.
 * [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
 
-## Profilöversikt
+## Översikt
 
-Klicka på [Profiler](http://platform.adobe.com)i den vänstra navigeringen i **Experience Platform-gränssnittet** för att öppna fliken _Översikt_ på arbetsytan _Profiler_ . På den här fliken visas flera widgetar med högnivåinformation om profilarkivet, inklusive den totala adresserbara målgruppen, antalet profilposter som har importerats under den senaste veckan samt statistik över framgångsrika och misslyckade poster under samma tidsperiod.
+Klicka på [Profiler](http://platform.adobe.com)i den vänstra navigeringen i **Experience Platform-gränssnittet** för att öppna fliken _Översikt_ . På den här fliken finns länkar till dokumentation och videoklipp som hjälper dig att förstå och börja arbeta med profiler.
 
-![](../images/user-guide/profile-overview.png)
+![](../images/user-guide/profiles-overview.png)
 
-## Visa profilexempel
+## Bläddra i profil
 
-Klicka på **Bläddra** för att visa en exempellista över tillgängliga profiler. Det här exemplet innehåller upp till 50 profiler från det totala [profilantalet](#profile-count). Exemplen uppdateras av ett automatiskt jobb som hämtar nya profildata när de importeras. Varje listad profil visar sitt ID, förnamn, efternamn och personlig e-post. Om du klickar på ID:t för en listad profil visas information om profilen i [profilvisningsprogrammet](#profile-viewer).
+Klicka på fliken **Bläddra** för att bläddra bland profiler efter identiteter. Den här fliken innehåller även det totala [antalet](#profile-count)profiler.
 
-![](../images/user-guide/profile-samples.png)
-
-Du kan anpassa de attribut som visas i listan genom att klicka på ikonen för kolumnväljaren. Då visas en listruta med gemensamma profilattribut som du kan lägga till eller ta bort.
-
-![](../images/user-guide/column-selector.png)
+![](../images/user-guide/profiles-browse.png)
 
 ### Profilantal {#profile-count}
 
@@ -50,43 +46,53 @@ Profilantalet omfattar även både profiler med attribut (postdata) och profiler
 
 När inmatningen av profiler i profilarkivet ökar eller minskar antalet med mer än 5 %, utlöses ett jobb för att uppdatera antalet. För arbetsflöden med direktuppspelningsdata görs en timkontroll för att avgöra om tröskelvärdet på 5 % har uppnåtts eller ej. Om så är fallet utlöses ett jobb automatiskt för att uppdatera antalet profiler. Om tröskelvärdet på 5 % ökning eller minskning uppnås, körs ett jobb för att uppdatera profilantalet för batchintag inom 15 minuter efter att en batch har importerats till profilarkivet.
 
-![](../images/user-guide/profile-count.png)
+### Namnutrymme för identitet
 
-### Profilsökning
+Namnutrymmesväljaren för **identitet** öppnar en dialogruta där du kan välja det identitetsnamnutrymme som du vill söka efter. Du kan anpassa de attribut som visas i sökningen genom att markera filterikonen och välja vilka attribut du vill lägga till eller ta bort.
 
-Om du känner till en länkad identitet för en viss profil (till exempel dess e-postadress) kan du slå upp den profilen genom att klicka på **Sök efter en profil**. Det här är det mest tillförlitliga sättet att komma åt en viss profil, oavsett om den visas i listan med exempel eller inte.
+![](../images/user-guide/profiles-search-filter.png)
 
-![](../images/user-guide/find-a-profile.png)
+I dialogrutan *Välj identitetsnamnutrymme* väljer du det namnutrymme som du vill söka efter, eller använder **sökfältet** i dialogrutan för att skriva namnet på ett namnutrymme. Du kan markera ett namnutrymme om du vill visa mer information. När du har hittat namnutrymmet kan du markera alternativknappen och sedan trycka på **Välj** för att fortsätta.
 
-I den dialogruta som visas väljer du ett lämpligt ID-namnutrymme i listrutan (&quot;E-post&quot; i det här exemplet) och anger ID-värdet nedan innan du klickar på **OK**. Om det hittas visas information om målprofilen i profilvisningsprogrammet, vilket beskrivs i nästa avsnitt.
+![](../images/user-guide/profiles-select-identity-namespace.png)
 
-![](../images/user-guide/find-a-profile-details.png)
+### Identitetsvärde
 
-### Profilvisningsprogram {#profile-viewer}
+När du har valt ett **identitetsnamnutrymme**&#x200B;återgår du till fliken *Bläddra* där du kan ange ett **identitetsvärde**. Det här värdet är specifikt för en enskild kundprofil och måste vara en giltig post för det angivna namnutrymmet. Om du t.ex. väljer **identitetsnamnutrymmet** &quot;E-post&quot; krävs ett **identitetsvärde** i form av en giltig e-postadress.
 
-När du väljer eller söker efter en viss profil öppnas skärmen _Detalj_ i profilvisningsprogrammet. På den här sidan visas information om den valda profilen, t.ex. profilens grundläggande attribut, länkade identiteter och tillgängliga kontaktkanaler. Profilinformationen som visas har sammanfogats från flera profilfragment till en enda vy över den enskilda kunden.
+![](../images/user-guide/profiles-show-profile.png)
 
-![](../images/user-guide/profile-viewer-detail.png)
+När du har angett ett värde väljer du **Visa profil** och sedan returneras en profil som matchar värdet. Välj **profil-ID** för att visa profilinformationen.
 
-Profilvisningsprogrammet innehåller även flikar som gör att du kan visa händelser och segmentmedlemskap som är kopplade till den här profilen, om det finns några.
+![](../images/user-guide/profiles-display-profile.png)
 
-![](../images/user-guide/profile-viewer-events-seg.png)
+### Profilinformation
+
+När du väljer **profil-ID**&#x200B;öppnas fliken _Detalj_ . På den här sidan visas information om den valda profilen, inklusive grundläggande attribut, länkade identiteter och tillgängliga kontaktkanaler. Profilinformationen som visas har sammanfogats från flera profilfragment till en enda vy över den enskilda kunden.
+
+![](../images/user-guide/profiles-profile-detail.png)
+
+Du kan visa ytterligare information om profilen, inklusive Attribut, Händelser och Segment som profilen är medlem i.
+
+![](../images/user-guide/profiles-attributes-events-segments.png)
 
 ## Sammanfoga profiler
 
 Klicka på **Sammanfoga profiler** för att visa en lista över sammanfogningsprinciper som tillhör din organisation. Varje listad princip visar sitt namn, oavsett om det är standardprincipen för sammanslagning eller inte, och det schema som den gäller för.
 
-![](../images/user-guide/profile-merge-policies.png)
-
 Mer information om hur du arbetar med sammanfogningsprinciper i användargränssnittet finns i [användarhandboken](merge-policies.md)för sammanfogningsprinciper.
+
+![](../images/user-guide/profiles-merge-policies.png)
 
 ## Unionsschema
 
-Klicka på **unionsschema** för att visa föreningsscheman för ditt profildatalager. Ett unionsschema är en kombination av alla XDM-fält (Experience Data Model) under samma klass, vars scheman har aktiverats för användning i kundprofilen i realtid. Klicka på en klass i den vänstra listan för att visa strukturen för dess unionsschema på arbetsytan.
+Klicka på **unionsschema** för att visa föreningsscheman för din profilbutik. Ett unionsschema är en kombination av alla XDM-fält (Experience Data Model) under samma klass, vars scheman har aktiverats för användning i kundprofilen i realtid. Klicka på en klass i den vänstra listan för att visa strukturen för dess unionsschema på arbetsytan.
 
-![](../images/user-guide/profile-union-schema.png)
+Om du till exempel väljer &quot;XDM-profil&quot; visas unionsschemat för klassen XDM Individual Profile.
 
 Mer information om fackliga scheman och deras roll i kundprofilen i realtid finns i avsnittet om fackliga scheman i guiden [för](../../xdm/schema/composition.md) schemakomposition.
+
+![](../images/user-guide/profiles-union-schema.png)
 
 ## Nästa steg
 
