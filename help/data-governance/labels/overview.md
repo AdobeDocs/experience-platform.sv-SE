@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Översikt över etiketter för dataanvändning
 topic: labels
 translation-type: tm+mt
-source-git-commit: 4411018aa1d531b53bbe2431df71829fa07fee75
+source-git-commit: 4b6b9ca5ae7861f8e8b974550be14fbce6efdcf1
+workflow-type: tm+mt
+source-wordcount: '365'
+ht-degree: 0%
 
 ---
 
@@ -22,6 +25,14 @@ Med etiketter för dataanvändning kan du kategorisera datauppsättningar och f�
 Dataanvändningsetiketter som används på datauppsättningsnivå sprids till alla fält i datauppsättningen. Etiketter kan också användas direkt på enskilda fält (kolumnrubriker) i en datauppsättning, utan spridning.
 
 Mer information om tillgängliga etiketter för dataanvändning i Experience Platform och de användarprofiler de representerar finns i guiden om [dataanvändningsetiketter](reference.md)som stöds.
+
+## Etikettarv för målgruppssegment
+
+Alla målgruppssegment som skapas av [Adobe Experience Platform Segmentation Service](../../segmentation/home.md) ärver användningsetiketterna för motsvarande datauppsättningar. Detta gör att applikationer som är byggda ovanpå Experience Platform (som Customer Data Platform i realtid) kan tillhandahålla automatisk policytillämpning för dataanvändning när segment aktiveras för destinationer.
+
+Förutom att ärva etiketter på datauppsättningsnivå ärver segment som standard alla etiketter på fältnivå från de associerade datauppsättningarna. Beroende på hur ditt plattformsbaserade program använder segment kan du eventuellt ange vilka fält som ska användas, vilket förhindrar segmentet från att ärva etiketter från exkluderade fält.
+
+Mer information om hur automatisk exekvering fungerar i CDP i realtid finns i [realtidsöversikten](../../rtcdp/privacy/data-governance-overview.md#enforce-data-usage-compliance)för CDP-datastyrning.
 
 ## Nästa steg
 
