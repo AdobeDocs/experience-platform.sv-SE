@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: Hjälp om Adobe Experience Platform Edge Network
 translation-type: tm+mt
-source-git-commit: 1d864707226087d63a8f0afd9156efed0e369742
+source-git-commit: e00dc3e8dec0117617081ca4fc9ffa752b01b3b7
 workflow-type: tm+mt
 source-wordcount: '91'
 ht-degree: 4%
@@ -27,7 +27,6 @@ ht-degree: 4%
    * [Felsökning](fundamentals/debugging.md)
    * [Interagera med flera egenskaper](fundamentals/interacting-with-multiple-properties.md)
    * [Återge personaliserat innehåll](fundamentals/rendering-personalization-content.md)
-   * [Hantera flimmer](fundamentals/managing-flicker.md)
    * [Godkännande](fundamentals/supporting-consent.md)
    * [Stöd för webbläsare i appen](fundamentals/supporting-in-app-browsers.md)
    * [Identitet](fundamentals/identity.md)
@@ -41,6 +40,7 @@ ht-degree: 4%
       * [Audience Manager - översikt](solution-specific/audience-manager/audience-manager-overview.md)
    * Mål {#target}
       * [Målöversikt](solution-specific/target/target-overview.md)
+      * [Hantering av flimmer](solution-specific/target/flicker-management.md)
 * Referens {#ref}
    * [Automatiskt insamlad information](reference/automatic-information.md)
    * [Hämtar biblioteksinformation](reference/retrieving-library-information.md)
