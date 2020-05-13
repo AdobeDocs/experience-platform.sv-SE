@@ -1,122 +1,63 @@
 ---
 title: Versionsinformation om Adobe Experience Platform
-description: Versionsinformation om Experience Platform 8 april 2020
+description: Versionsinformation om Experience Platform 13 maj 2020
 doc-type: release notes
-last-update: April 13, 2020
-author: ens71067
-keywords: release notes;
+last-update: May 13, 2020
+author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 43db1992ae45e27134bc0c4405963c405275750e
+source-git-commit: 9d4c645e830790a7d5430fe3d514464ca8bef025
+workflow-type: tm+mt
+source-wordcount: '664'
+ht-degree: 1%
 
 ---
 
 
 # Versionsinformation om Adobe Experience Platform
 
-**Releasedatum: 8 april 2020**
+**Releasedatum: 13 maj 2020**
 
-Nya funktioner i Adobe Experience Platform:
-* [Intelligenta tjänster](#intelligent)
+Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
-Uppdateringar av befintliga funktioner:
-* [Experience Data Model (XDM)](#xdm)
-* [Datastyrning](#governance)
-* [Mål](#destinations)
-* [Integritetstjänst](#privacy)
-* [Källor](#sources)
+- [Datavetenskapens arbetsyta](#dsw)
+- [Experience Platform Web SDK och Experience Platform Edge Network](#edge)
+- [Källor](#sources)
 
-## Intelligenta tjänster {#intelligent}
+## Datavetenskapens arbetsyta {#dsw}
 
-Intelligenta tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskaplig expertis. Dessutom kan marknadsförare aktivera prognoser i Adobe Experience Cloud, Adobe Experience Platform och tredjepartsprogram.
-
-**Viktiga funktioner**
-
-| Funktion | Beskrivning |
-|---|---|
-| Kund-AI | Kunds-AI ger marknadsförarna möjlighet att generera kundprognoser på individnivå med förklaringar. Med hjälp av inflytelserika faktorer kan kundens AI tala om för er vad en kund kan tänkas göra och varför. Dessutom kan marknadsförarna dra nytta av kundernas AI-prognoser och insikter för att personalisera kundupplevelser genom att leverera de lämpligaste erbjudandena och budskapen. |
-| Attribution AI | Attribution AI är en flerkanals algoritmisk attribueringstjänst som beräknar påverkan och inkrementell påverkan av kundinteraktioner mot angivna resultat. Med Attribution AI kan marknadsförarna mäta och optimera marknadsförings- och annonskostnader genom att förstå effekten av varje enskild kundinteraktion under varje fas av kundresan. |
-
-**Kända fel**
-
-* Inga kända problem.
-
-Mer information om intelligenta tjänster och vad de har att erbjuda finns i [Intelligent Services - översikt](../../intelligent-services/home.md).
-
-## Experience Data Model (XDM) System {#xdm}
-
-Standardisering och interoperabilitet är viktiga begrepp bakom Experience Platform. Experience Data Model (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
-
-XDM är en öppet dokumenterad specifikation som utformats för att förbättra möjligheterna med digitala upplevelser. Det innehåller gemensamma strukturer och definitioner för alla program som ska kommunicera med tjänster på Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation som levererar insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+Data Science Workspace använder maskininlärning och artificiell intelligens för att ge insikter från era data. Data Science Workspace är integrerat i Adobe Experience Platform och hjälper er att göra prognoser med ert innehåll och era dataresurser över alla Adobes lösningar. Ett sätt som Data Science Workspace gör detta är genom JupyterLab. JupyterLab är ett webbaserat användargränssnitt för <a href="https://jupyter.org/" target="_blank">Project Jupyter</a> och är nära integrerat med Adobe Experience Platform. Den utgör en interaktiv utvecklingsmiljö där datavetare kan arbeta med Jupyters bärbara datorer, kod och data.
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
-| --- | --- |
-| Automatisk alternativ visningsinformation | Schemaregistret tillämpar automatiskt de anpassade titel- och beskrivningsvärden som konfigurerats i `alternateDisplayInfo` beskrivningen. |
-| Begränsningar för skalbara fält | Schemaregistret tillåter inte mer än 6 000 skalära fält i ett enda schema. |
-| Prestandaöversyn | Schemaregistret har omarbetats för att fungera bättre och uppfylla kraven i Experience Platform. |
-
-**Felkorrigeringar**
-
-* Uppdaterad XDM till XED konverterad för att stödja ett renare XED-format för kapslade URI-fält i standard-XDM.
-
-**Kända fel**
-
-* Känd
-
-## Datastyrning {#governance}
-
-Adobe Experience Platform Data Governance är en serie strategier och tekniker som används för att hantera kunddata och säkerställa efterlevnad av regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en viktig roll inom Experience Platform på olika nivåer, bland annat i fråga om katalogisering, datalinje, märkning av dataanvändning, dataåtkomstprinciper och åtkomstkontroll av data för marknadsföringsåtgärder.
-
-För att komma igång med datastyrning krävs en grundlig förståelse för de regler, avtalsförpliktelser och företagspolicyer som gäller för era kunddata. Därifrån kan data klassificeras med hjälp av lämpliga etiketter för dataanvändning, och användningen av dessa kan styras med hjälp av definitionen av policyer för dataanvändning.
-
-DULE-ramverket förenklar och effektiviserar processen att kategorisera data och skapa dataanvändningsprinciper via Experience Platform-gränssnittet och DULE Policy Service API.
-
-**Nya funktioner**
-
-| Funktion | Beskrivning |
-| -----------| ---------- |
-| Hantera dataanvändningsprinciper i användargränssnittet | Dataanvändningsprinciper kan nu hanteras i arbetsytan _Principer_ i användargränssnittet för Experience Platform. Mer information finns i användarhandboken [för](../../data-governance/policies/user-guide.md) profilen. |
-
-**Kända fel**
-
-* Ingen.
-
-Mer information finns i översikten över [datastyrning](../../data-governance/home.md).
-
-
-## Mål {#destinations}
-
-I [Adobes kunddataplattform](../../rtcdp/overview.md)i realtid är destinationer färdigbyggda integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
-
-**Nya destinationer**
-
-Adobe CDP stöder nu dataaktivering i realtid i över femtio Experience Cloud Launch-tillägg, vilket möjliggör analyser, personalisering och andra användningsfall. Mer information finns nedan:
-
-| Dokumentation | Beskrivning |
 |--- | ---|
-| [Måltyper och -kategorier](/help/rtcdp/destinations/destination-types.md) | I den här artikeln förklaras skillnaden mellan anslutningar och tillägg i Adobe-gränssnittet för CDP i realtid och en rekommendation om när var och en av dessa destinationer ska användas. |
-| [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md) | På den här sidan förklaras vad Launch-tillägg är, används exempel på dem och länkar till dokumentation för varje Launch-tillägg i Adobe Real-time CDP. |
+| JupyterLab Launcher | JupyterLab Launcher innehåller nu startsidor för bärbara Spark 2.4-datorer. Startsidor för Spark 2.3-anteckningsboken är nu markerade som inaktuella och inställda på att tas bort i en senare version. |
+| Spark 2.4 | Nya recept från Scala (Spark) och PySpark använder nu Spark 2.4. |
+| Kernlar | Scala (Spark) bärbara datorer har nu skapats via Scala-kernel. PySpark-anteckningsböcker skrivs nu via Python Kernel. Spark- och PySpark-kärnan är föråldrad och inställd på att tas bort i en senare version. |
+| Recept | Nya PySpark- och Spark-recept följer nu Docker-arbetsflödet som liknar Python- och R-recept. |
 
-Mer information finns i Översikt över [destinationer](/help/rtcdp/destinations/destinations-overview.md).
+Mer information om hur du migrerar dina bärbara datorer och recept till Spark 2.4 finns i migreringsguiden för [bärbara datorer](../../data-science-workspace/recipe-notebook-migration.md). Mer allmän information om arbetsytan Datavetenskap finns i [översiktsdokumentationen](../../data-science-workspace/home.md).
 
-## Integritetstjänst {#privacy}
+## Experience Platform Web SDK och Experience Platform Edge Network {#edge}
 
-Nya juridiska och organisatoriska bestämmelser ger användarna rätt att få tillgång till eller ta bort sina personuppgifter från era datalager på begäran. Integritetstjänsten för Adobe Experience Platform tillhandahåller ett RESTful API och användargränssnitt som hjälper er att hantera dessa dataförfrågningar från era kunder. Med Integritetstjänsten kan ni skicka in förfrågningar om åtkomst till och radering av privata eller personliga kunddata från Adobe Experience Cloud-program, vilket underlättar automatiserad efterlevnad av juridiska och organisatoriska sekretessbestämmelser.
+Med Experience Platform Web SDK och Experience Platform Edge Network kan användare skicka data till Adobe Experience Platform och andra Adobe-lösningar i realtid för slutanvändarenheter och webbläsare. Den senaste listan över användningsfall finns i vår [offentliga färdplan](https://github.com/adobe/alloy/projects/5) som uppdateras ofta.
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
-| --- | --- |
-| Stöd för PDPA | Begäran om skydd av personuppgifter kan nu skapas och spåras i Thailand enligt lagen om skydd av personuppgifter (PDPA). När du gör sekretessförfrågningar i API:t accepterar arrayen värdet &quot;pdpa_tha&quot;. `regulation` |
-| Namnområdestyper i användargränssnittet | Du kan nu ange olika namnområdestyper i Request Builder i Sekretessgränssnittet. Mer information finns i [användarhandboken](../../privacy-service/ui/user-guide.md) . |
-| Tidigare borttagning av slutpunkt | Den gamla API-slutpunkten (`data/privacy/gdpr`) har tagits bort. |
+|--- | ---|
+| Stöd för ECID | SDK har stöd för ECID direkt utan ytterligare bibliotek eller information att installera |
+| Konfigurationsgränssnitt | Hantera dina konfigurations-ID-inställningar med det nya Edge-konfigurationsgränssnittet i Launch, måste vitlistas för att komma åt |
+| Adobe Experience Platform Web SDK Mixin | En mixin för användning med Experience Platform web SDK som omfattar alla fält som stöds. |
+| Kontroll av kursens samtycke | Ger företag kontroll över deltagande och avanmälan av Experience Platform Web SDK |
+| Stöd för felsökning på klientsidan i nya Experience Cloud Debugger Extension | Se förfrågningar från Experience Platform web SDK och kantspårningar för att se hur data flödar genom systemet. |
+| Adobe Analytics | Skicka data till rapportsviter från Analytics via edge-konfigurationen. XDM förenklas till kontextdata och har stöd för taggning i flera sviter |
+| Adobe Target | Stöd för Adobe Target. Inklusive VEC, formulärbaserad disposition, A/B, XT, automatiserad personalisering, MVT |
+| Stöd för Adobe Audience Manager | Stöd för Audience Manager ID-synk, URL-mål och cookie-mål |
+| `synceIdnetity` | Bytt namn `setCustomersIds` för att `syncIdentity` göra det tydligare |
+| XDM Object Builder | I starttillägget kan du nu skapa XDM-objekt som dataelement |
 
-Kända fel
-
-* Ingen
-
-Mer information om sekretesstjänsten finns i översikten över [sekretesstjänsten](../../privacy-service/home.md).
+Mer information om Platform Web SDK och Edge Network finns i [dokumentationen](../../edge/home.md).
 
 ## Källor {#sources}
 
@@ -128,12 +69,11 @@ Experience Platform har ett RESTful API och ett interaktivt användargränssnitt
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| API- och gränssnittsstöd för databaser | Nya källanslutningar för Apache Spark (på HDInsights), Azure Synapse Analytics, Azure Table Storage, Hive (på HDInsights) och Phoenix. |
-| API- och gränssnittsstöd för betalningsbaserade program | Nya källanslutningar för PayPal. |
-| API- och gränssnittsstöd för protokollbaserade program | Nya källkopplingar för allmänna OData. |
+| Ytterligare API- och gränssnittsstöd för molnlagringssystem | Nya källanslutningar för Azure File Storage. |
+| Ytterligare API- och gränssnittsstöd för databaser | Nya källanslutningar för Azure Data Explorer, IBM DB2 och Oracle DB. |
 
 **Kända fel**
 
-* Ingen
+- Ingen
 
 Mer information om källor finns i [Källöversikt](../../sources/home.md).
