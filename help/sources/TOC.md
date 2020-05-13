@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Source Connectors - hjälp
 translation-type: tm+mt
-source-git-commit: 1eb6883ec9b78e5d4398bb762bba05a61c0f8308
+source-git-commit: 71080a1741ea0d660f63e2009f045c0e34f6c44b
 workflow-type: tm+mt
-source-wordcount: '551'
+source-wordcount: '563'
 ht-degree: 0%
 
 ---
@@ -65,9 +65,11 @@ ht-degree: 0%
       - Reklam {#advertising}
          - [Google Ads-koppling](tutorials/api/create/advertising/ads.md)
       - molnlagring {#cloud-storage}
+         - [Amazon Kinesis](tutorials/api/create/cloud-storage/kinesis.md)
          - [Amazon S3-kontakt](tutorials/api/create/cloud-storage/s3.md)
          - [Azure Blob-koppling](tutorials/api/create/cloud-storage/blob.md)
          - [Azure Data Lake Storage Gen2-anslutning](tutorials/api/create/cloud-storage/adls-gen2.md)
+         - [Azure Event Hubs-koppling](tutorials/api/create/cloud-storage/eventhub.md)
          - [Azure File Storage Connector](tutorials/api/create/cloud-storage/azure-file-storage.md)
          - [Google Cloud Storage Connector](tutorials/api/create/cloud-storage/google.md)
          - [SFTP-anslutning](tutorials/api/create/cloud-storage/sftp.md)
@@ -128,8 +130,10 @@ ht-degree: 0%
       - Reklam {#create}
          - [Google Ads-koppling](tutorials/ui/create/advertising/ads.md)
       - molnlagring {#cloud-storage}
+         - [Amazon Kinesis](tutorials/ui/create/cloud-storage/kinesis.md)
          - [Azure Data Lake Storage Gen2-anslutning](tutorials/ui/create/cloud-storage/adls-gen2.md)
          - [Azure Blob och Amazon S3-kontakt](tutorials/ui/create/cloud-storage/blob-s3.md)
+         - [Azure Event Hubs-koppling](tutorials/ui/create/cloud-storage/eventhub.md)
          - [Azure File Storage Connector](tutorials/ui/create/cloud-storage/azure-file-storage.md)
          - [FTP- och SFTP-anslutning](tutorials/ui/create/cloud-storage/ftp-sftp.md)
          - [Google Cloud Storage Connector](tutorials/ui/create/cloud-storage/google-cloud-storage.md)
