@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Adobe Experience Platform - översikt
 topic: getting started
 translation-type: tm+mt
-source-git-commit: 51aa09e5eff86c480946bcf706f10864b82841d2
+source-git-commit: 96faba8d608d2fd057d256855b8b82af10558324
+workflow-type: tm+mt
+source-wordcount: '503'
+ht-degree: 0%
 
 ---
 
@@ -21,6 +24,20 @@ Experience Platform bygger på öppna API:er och ger utvecklarna tillgång till 
 ## Experience Platform-dokumentation
 
 Experience Platform-dokumentationen tillhandahålls i flera format för en rad olika funktioner och tjänster. Om du vill veta mer om vilka typer av dokumentation som är tillgängliga, och om du vill läsa korta beskrivningar av var och en av plattformstjänsterna, kan du gå till [Experience Platform-dokumentationsöversikten](documentation/overview.md). Du kan också börja lära dig mer om en viss plattformstjänst direkt genom att välja en guide i den alfabetiska listan i den vänstra navigeringen.
+
+>[!NOTE]
+>
+>Från och med maj 2020 uppdaterar Adobe domänen och huvudfältet så att ni blir enhetliga och får en bättre upplevelse i alla Experience Cloud-program. Här finns en ny hjälpmeny. Den nya hjälpmenyn innehåller följande:
+>
+>* Länkar till aktuella artiklar
+>* Sammanhangsberoende dokumentationsrekommendationer
+>* Möjlighet att ge feedback om dokumentationen och rapportera problem
+>* Förbättrade sökresultat som även innehåller resultat från communityforum och videoinnehåll.
+>
+> 
+Ibland kan du få en enkät om ytterligare feedback.
+>
+>Den här utrullningen är gradvis, så du kanske inte ser ändringarna direkt. Du kan när som helst visa den uppdaterade upplevelsen genom att gå till [https://experience.adobe.com/platform](https://experience.adobe.com/platform).
 
 ## Självstudiekurser om Experience Platform
 
