@@ -3,9 +3,9 @@ product: adobe experience platform
 audience: user
 user-guide-title: Hjälp om kunddataplattform i realtid
 translation-type: tm+mt
-source-git-commit: 72511172c07b79c485660d59595aa6c8fdd6bdaa
+source-git-commit: be885faf8c1408f372d2eb6cd8d6a8fa8fc69e14
 workflow-type: tm+mt
-source-wordcount: '413'
+source-wordcount: '439'
 ht-degree: 1%
 
 ---
@@ -122,9 +122,12 @@ ht-degree: 1%
          * [Anropa taggtillägg](/help/rtcdp/destinations/invoca-extension.md)
          * [Medietillägg](destinations/medallia-extension.md)
          * [Tillägg för URL-inkorg](destinations/talkurl-extension.md)
-   * Självstudiekurser om destinationer {#dest-tutorials}
+   * Självstudiekurser för destinationsanvändargränssnitt {#dest-tutorials}
       * [Ansluta till ett mål](/help/rtcdp/destinations/connect-destination.md)
       * [Aktivera profiler och segment till ett mål](destinations/activate-destinations.md)
+   * Självstudiekurser för mål-API {api-tutorials}
+      * [Anslut till direktuppspelningsmål (AWS Kinesis och Azure Event Hubs) och aktivera data](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md)
+      * [Anslut till e-postmarknadsföringsmål och aktivera data](/help/tutorials/destinations/email-marketing-api.md)
 * Integritet och datahantering {#privacy}
    * [Sekretessöversikt](privacy/privacy-overview.md)
    * [Datastyrning - översikt](privacy/data-governance-overview.md)
