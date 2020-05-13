@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Autentisera och få tillgång till Experience Platform API:er
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: e1ba476fffc164b78decd7168192714993c791bc
+source-git-commit: 8c73363e88aab242ae258037deb80eeec872e519
 workflow-type: tm+mt
 source-wordcount: '843'
 ht-degree: 0%
@@ -127,9 +127,9 @@ curl -X GET https://platform.adobe.io/data/foundation/schemaregistry/global/clas
   -H 'x-gw-ims-org-id: {IMS_ORG}'
 ```
 
-Om ditt svar liknar det som visas nedan är dina inloggningsuppgifter giltiga och fungerar. (Det här svaret har trunkerats för utrymme.)
-
 **Svar**
+
+Om ditt svar liknar det som visas nedan är dina inloggningsuppgifter giltiga och fungerar. (Det här svaret har trunkerats för utrymme.)
 
 ```JSON
 {
