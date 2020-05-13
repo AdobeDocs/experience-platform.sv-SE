@@ -4,15 +4,20 @@ seo-title: Amazon Kinesis-mål
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 seo-description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: a18f89531cf024f61b054b47a660bd26766bebf6
+source-git-commit: 47e03d3f58bd31b1aec45cbf268e3285dd5921ea
 workflow-type: tm+mt
-source-wordcount: '422'
+source-wordcount: '446'
 ht-degree: 0%
 
 ---
 
 
-# Amazon Kinesis-mål
+# (Beta) Amazon Kinesis-mål
+
+
+>[!IMPORTANT]
+>
+>Målet [!DNL Amazon Kinesis] i Adobe Real-time CDP är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
 
 ## Översikt {#overview}
 
@@ -21,7 +26,7 @@ Med Amazons webbtjänste kan du samla in och bearbeta stora dataströmmar i real
 Du kan skapa en utgående anslutning i realtid till ditt [!DNL Amazon Kinesis] lagringsutrymme för att strömma data från Adobe Experience Platform.
 
 * Mer information om [!DNL Amazon Kinesis]finns i [Amazons dokumentation](https://docs.aws.amazon.com/streams/latest/dev/introduction.html).
-* Mer information om hur du ansluter till [!DNL Amazon Kinesis] med API-anrop finns i [självstudiekursen]om mål för direktuppspelning.
+* Mer information om hur du ansluter till [!DNL Amazon Kinesis] med API-anrop finns i [självstudiekursen](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md)om mål för direktuppspelning.
 * Om du vill ansluta till [!DNL Amazon Kinesis] med hjälp av Adobe Real-time CDP-användargränssnittet läser du avsnitten nedan.
 
 ![Amazon Kinesis i användargränssnittet](/help/rtcdp/destinations/assets/aws-kinesis-destination.png)
@@ -97,7 +102,7 @@ Dina exporterade Experience Platform-data får plats [!DNL Amazon Kinesis] i JSO
 
 >[!MORELIKETHIS]
 >
->* Länk till Amazon Kinesis API, genomgång
+>* [Anslut till Amazon Kinesis och aktivera data med API-anrop](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md)
 >* [Azure Event Hubs-mål](/help/rtcdp/destinations/azure-event-hubs-destination.md)
 >* [Måltyper och -kategorier](/help/rtcdp/destinations/destination-types.md)
 
