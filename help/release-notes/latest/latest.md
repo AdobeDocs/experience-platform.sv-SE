@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: May 13, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 47e03d3f58bd31b1aec45cbf268e3285dd5921ea
+source-git-commit: 0eca2f6e50024ec43c025dd75c34ca876d71c3f2
 workflow-type: tm+mt
-source-wordcount: '875'
-ht-degree: 1%
+source-wordcount: '959'
+ht-degree: 2%
 
 ---
 
@@ -20,10 +20,21 @@ ht-degree: 1%
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [Versionsinformation om Adobe Experience Platform](#adobe-experience-platform-release-notes)
+   - [Uppdateringar av användargränssnittet {#ux}](#user-interface-updates-ux)
    - [Datavetenskapens arbetsyta {#dsw}](#data-science-workspace-dsw)
    - [Mål {#destinations}](#destinations-destinations)
    - [Experience Platform Web SDK och Experience Platform Edge Network {#edge}](#experience-platform-web-sdk-and-experience-platform-edge-network-edge)
    - [Källor {#sources}](#sources-sources)
+
+## Uppdateringar av användargränssnittet {#ux}
+
+Adobe Experience Platform släpper uppdateringar i domän- och huvudfältet för att förbättra upplevelsen och göra den enhetlig med andra Experience Cloud-program.
+
+- Enklare att växla mellan olika organisationer eller till ett annat program
+- Förbättrad användarhjälp, inklusive artiklar och sammanhangsberoende dokumentation på Hjälp-menyn
+- Möjlighet att ge feedback om Experience Platform och supportärenden
+
+Utbyggnaden av den nya upplevelsen är gradvis. Du kan visa upplevelsen på [https://experience.adobe.com/platform](https://experience.adobe.com/platform).
 
 ## Datavetenskapens arbetsyta {#dsw}
 
