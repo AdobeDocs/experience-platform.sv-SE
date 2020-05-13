@@ -1,21 +1,22 @@
 ---
 title: Lagringsmål i molnet
 seo-title: Lagringsmål i molnet
-description: Adobe CDP kan i realtid leverera era segment som datafiler till Amazon S3- eller SFTP-molnlagringsplatser. Vi kommer att lägga till fler destinationer för molnlagring i kommande versioner.
-seo-description: Adobe CDP kan i realtid leverera era segment som datafiler till Amazon S3- eller SFTP-molnlagringsplatser. Vi kommer att lägga till fler destinationer för molnlagring i kommande versioner.
+description: Adobe CDP kan i realtid leverera era segment som datafiler till Amazon S3, AWS Kinesis, Azure Event Hubs eller SFTP:s molnlagringsplatser.
+seo-description: Adobe CDP kan i realtid leverera era segment som datafiler till Amazon S3, AWS Kinesis, Azure Event Hubs eller SFTP:s molnlagringsplatser.
 translation-type: tm+mt
-source-git-commit: f3c6c27b7ad07ada0df18aabe0e8503253b38342
+source-git-commit: a18f89531cf024f61b054b47a660bd26766bebf6
+workflow-type: tm+mt
+source-wordcount: '184'
+ht-degree: 0%
 
 ---
 
 
 # Lagringsmål i molnet {#cloud-storage-destinations}
 
-Adobe CDP kan i realtid leverera era segment som datafiler till Amazon S3- eller SFTP-molnlagringsplatser. Detta gör att du kan skicka målgrupper och deras profilattribut till dina interna system via CSV eller tabbavgränsade filer.
+Adobe CDP kan leverera era segment som datafiler till era molnlagringsplatser i realtid. Detta gör att du kan skicka målgrupper och deras profilattribut till dina interna system via CSV eller tabbavgränsade filer för Amazon S3 och SFTP. För AWS Kinesis- och Azure Event Hubs-mål strömmas data ut från Experience Platform i JSON-format.
 
 ![Lagringsmål för Adobe Cloud](/help/rtcdp/destinations/assets/cloud-storage-destinations.png)
-
-Adobe CDP stöder för närvarande två molnlagringsdestinationer i realtid - [Amazon S3](/help/rtcdp/destinations/amazon-s3-destination.md) och [SFTP](/help/rtcdp/destinations/sftp-destination.md). Vi kommer att lägga till fler destinationer för molnlagring i kommande versioner.
 
 Mer information om hur du ansluter till molnlagringsmål finns i [Arbetsflöde för att skapa molnlagringsmål](/help/rtcdp/destinations/cloud-storage-destinations-workflow.md).
 
@@ -23,3 +24,12 @@ Mer information om hur du ansluter till molnlagringsmål finns i [Arbetsflöde f
 
 **Profilbaserad export** - du exporterar information om individerna i målgruppen. Den här informationen behövs för personalisering och kan innehålla attribut, händelser, segmentmedlemskap osv.
 
+## Tillgängliga molnlagringsmål
+
+* [Amazon S3-mål](/help/rtcdp/destinations/amazon-s3-destination.md)
+* [SFTP-mål](/help/rtcdp/destinations/sftp-destination.md)
+
+## Tillgängliga direktuppspelningsmål för molnlagring
+
+* [Amazon Kinesis-mål](/help/rtcdp/destinations/amazon-kinesis-destination.md)
+* [Azure EventHubs-mål](/help/rtcdp/destinations/azure-event-hubs-destination.md)
