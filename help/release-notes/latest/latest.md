@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: May 13, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 9d4c645e830790a7d5430fe3d514464ca8bef025
+source-git-commit: 47e03d3f58bd31b1aec45cbf268e3285dd5921ea
 workflow-type: tm+mt
-source-wordcount: '664'
+source-wordcount: '875'
 ht-degree: 1%
 
 ---
@@ -19,9 +19,11 @@ ht-degree: 1%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
-- [Datavetenskapens arbetsyta](#dsw)
-- [Experience Platform Web SDK och Experience Platform Edge Network](#edge)
-- [Källor](#sources)
+- [Versionsinformation om Adobe Experience Platform](#adobe-experience-platform-release-notes)
+   - [Datavetenskapens arbetsyta {#dsw}](#data-science-workspace-dsw)
+   - [Mål {#destinations}](#destinations-destinations)
+   - [Experience Platform Web SDK och Experience Platform Edge Network {#edge}](#experience-platform-web-sdk-and-experience-platform-edge-network-edge)
+   - [Källor {#sources}](#sources-sources)
 
 ## Datavetenskapens arbetsyta {#dsw}
 
@@ -37,6 +39,26 @@ Data Science Workspace använder maskininlärning och artificiell intelligens f�
 | Recept | Nya PySpark- och Spark-recept följer nu Docker-arbetsflödet som liknar Python- och R-recept. |
 
 Mer information om hur du migrerar dina bärbara datorer och recept till Spark 2.4 finns i migreringsguiden för [bärbara datorer](../../data-science-workspace/recipe-notebook-migration.md). Mer allmän information om arbetsytan Datavetenskap finns i [översiktsdokumentationen](../../data-science-workspace/home.md).
+
+## Mål {#destinations}
+
+I [Adobes kunddataplattform](../../rtcdp/overview.md)i realtid är destinationer färdigbyggda integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
+
+**Nya destinationer**
+
+Adobe CDP har nu stöd för dataaktivering i realtid på direktuppspelade molnlagringsdestinationer, vilket gör att du kan exportera målgruppsdata och händelser till dessa destinationer i JSON-format. Du kan sedan beskriva affärslogiken ovanpå dessa händelser på dina destinationer. Mer information finns nedan:
+
+>[!NOTE]
+>
+>Målen [!DNL Amazon Kinesis] och [!DNL Azure Event Hubs] destinationerna i Adobe Real-time CDP är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
+
+| Dokumentation | Beskrivning |
+|--- | ---|
+| [(Beta) Amazon Kinesis-mål](/help/rtcdp/destinations/amazon-kinesis-destination.md) | I den här artikeln beskrivs hur du skapar en utgående anslutning i realtid till ditt [!DNL Amazon Kinesis] lagringsutrymme för att strömma data från Adobe Experience Platform. |
+| [(Beta) Azure Event Hubs-mål](/help/rtcdp/destinations/azure-event-hubs-destination.md) | I den här artikeln beskrivs hur du skapar en utgående anslutning i realtid till ditt [!DNL Azure Event Hubs] lagringsutrymme för att strömma data från Adobe Experience Platform. |
+| [API-självstudiekurs - Ansluta till direktuppspelade mål och aktivera data](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md) | I den här självstudien visas hur du använder API-anrop för att ansluta till dina Adobe Experience Platform-data, skapa en anslutning till ett direktuppspelat molnlagringsmål (Amazon Kinesis eller Azure Event Hubs), skapa ett dataflöde till det nya mål du skapat och aktivera data till det nya mål du skapat. |
+
+Mer information finns i Översikt över [destinationer](/help/rtcdp/destinations/destinations-overview.md).
 
 ## Experience Platform Web SDK och Experience Platform Edge Network {#edge}
 
