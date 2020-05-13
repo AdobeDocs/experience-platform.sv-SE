@@ -4,7 +4,10 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobes kunddataplattform i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobes kunddataplattform i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: 2eddd5bb7b62dcc414ad906647b05ce10c766ac6
+source-git-commit: 7dafdf0dd1ad3af2defab3bf6b784fd37e777062
+workflow-type: tm+mt
+source-wordcount: '612'
+ht-degree: 0%
 
 ---
 
@@ -25,7 +28,7 @@ Om du vill aktivera data till mål måste du ha [anslutit ett mål](/help/rtcdp/
 3. Välj **[!UICONTROL Activate]**;
 4. Välj vilka segment som ska skickas till målet på **[!UICONTROL Activate destination]** **[!UICONTROL Select Segments]** sidan i arbetsflödet.
    ![segment-till-mål](/help/rtcdp/destinations/assets/select-segments.png)
-5. *Villkorligt*. Det här steget gäller endast för segment som är mappade till e-postmarknadsföringsmål. <br> På **[!UICONTROL Destination Attributes]** sidan markerar du **[!UICONTROL Add new field]** och väljer de attribut som du vill skicka till målet.
+5. *Villkorligt*. Det här steget gäller endast för segment som är mappade till molnlagringsmål och mål för e-postmarknadsföring. <br> På **[!UICONTROL Destination Attributes]** sidan markerar du **[!UICONTROL Add new field]** och väljer de attribut som du vill skicka till målet.
 Vi rekommenderar att ett av attributen är en [unik identifierare](/help/rtcdp/destinations/email-marketing-destinations.md#identity) från ditt unionsschema. Mer information om obligatoriska attribut finns i Identitet i artikeln [E-postmarknadsföringsmål](/help/rtcdp/destinations/email-marketing-destinations.md#identity) .
    ![mål-attribut](/help/rtcdp/destinations/assets/destination-attributes.png)
 6. På **[!UICONTROL Segment schedule]** sidan kan du se startdatumet för att skicka data till målet samt hur ofta data skickas till målet.
