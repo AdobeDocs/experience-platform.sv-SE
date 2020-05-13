@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform - översikt
 topic: getting started
 translation-type: tm+mt
-source-git-commit: 96faba8d608d2fd057d256855b8b82af10558324
+source-git-commit: 7a36a3e3180c4ed4a9db23c0a33f6af3d7a3a5ec
 workflow-type: tm+mt
-source-wordcount: '503'
+source-wordcount: '505'
 ht-degree: 0%
 
 ---
@@ -27,11 +27,11 @@ Experience Platform-dokumentationen tillhandahålls i flera format för en rad o
 
 >[!NOTE]
 >
->Från och med maj 2020 uppdaterar Adobe domänen och huvudfältet så att ni blir enhetliga och får en bättre upplevelse i alla Experience Cloud-program. Här finns en ny hjälpmeny. Den nya hjälpmenyn innehåller följande:
+>Från och med maj 2020 kommer Adobe att lansera uppdateringar av domänen och huvudfältet för att ge en enhetlig och bättre upplevelse i alla Experience Cloud-program. Här finns en ny hjälpmeny. Den nya hjälpmenyn innehåller följande:
 >
 >* Länkar till aktuella artiklar
 >* Sammanhangsberoende dokumentationsrekommendationer
->* Möjlighet att ge feedback om dokumentationen och rapportera problem
+>* Möjlighet att ge feedback om Experience Platform och rapportera problem
 >* Förbättrade sökresultat som även innehåller resultat från communityforum och videoinnehåll.
 >
 > 
