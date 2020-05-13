@@ -3,9 +3,9 @@ product: adobe experience platform
 audience: user
 user-guide-title: Hjälp om kunddataplattform i realtid
 translation-type: tm+mt
-source-git-commit: e0807f32ff5f3d16a6805074951e3b09723c5181
+source-git-commit: 72511172c07b79c485660d59595aa6c8fdd6bdaa
 workflow-type: tm+mt
-source-wordcount: '407'
+source-wordcount: '413'
 ht-degree: 1%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 1%
    * Målgränssnitt {#destinations-interface}
       * [Arbetsytan Destinationer](destinations/destinations-workspace.md)
       * [Sidan med målinformation](destinations/destination-details-page.md)
-   * Målkatalog  {#destinations-cat}
+   * Målkatalog {#destinations-cat}
       * [Översikt över destinationskatalogen](destinations/destinations-catalog.md)
       * Adobes destinationer{#adobe-destinations}
          * [Översikt över Adobes destinationer](destinations/adobe-destinations.md)
@@ -76,7 +76,9 @@ ht-degree: 1%
       * Lagringsmål i molnet{#cloud-storage}
          * [Översikt över destinationer för molnlagring](destinations/cloud-storage-destinations.md)
          * [Arbetsflöde för att skapa molnlagringsmål](/help/rtcdp/destinations/cloud-storage-destinations-workflow.md)
+         * [Amazon Kinesis-mål](/help/rtcdp/destinations/amazon-kinesis-destination.md)
          * [Amazon S3-mål](destinations/amazon-s3-destination.md)
+         * [Azure EventHubs-mål](/help/rtcdp/destinations/azure-event-hubs-destination.md)
          * [SFTP-mål](destinations/sftp-destination.md)
       * Plattformsmål för datahantering {#dmp-destinations}
          * [Översikt över mål för datahanteringsplattformen](destinations/dmp-destinations.md)
