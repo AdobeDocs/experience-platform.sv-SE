@@ -4,7 +4,7 @@ seo-title: Stödprodukter med Adobe Experience Platform Web SDK
 description: Lär dig hur du lägger till data om du har produkter eller en kundvagn med Experience Platform Web SDK
 seo-description: Lär dig hur du lägger till data om du har produkter eller en kundvagn med Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+source-git-commit: 4bff4b20ccc1913151aa1783d5123ffbb141a7d0
 workflow-type: tm+mt
 source-wordcount: '1314'
 ht-degree: 1%
@@ -44,7 +44,7 @@ Nedan visas en lista över `measures` tillgängliga i `commerce` objektet.
 Här är ett exempel på hur du ställer in dessa `Measures` i SDK.
 
 ```javascript
-alloy("event", {
+alloy("sendEvent", {
   "xdm":{
     "commerce":{
       "productViews":{
@@ -72,12 +72,12 @@ Handelsobjektet har också ett särskilt fält för att samla in orderinformatio
 Här är ett exempel på ett vanligt köp i SDK.
 
 ```javascript
-alloy("event",{
+alloy("sendEvent",{
   "xdm":{
     "commerce":{
       "order":{
         "purchaseID":"123456789",
-        "currenceCode":"USD",
+        "currencyCode":"USD",
         "priceTotal":39.98,
         "payments":[
           {
@@ -100,7 +100,7 @@ alloy("event",{
         "SKU":"HT104",
         "name":"The Small Floppy Hat",
         "priceTotal":9.99,
-        "qauntity":1
+        "quantity":1
       }
     ]
   }
@@ -126,7 +126,7 @@ Produktlistan anger vilka produkter som är relaterade till motsvarande åtgärd
 `productView` event
 
 ```javascript
-alloy("event",{
+alloy("sendEvent",{
   "xdm":{
     "commerce":{
       "productViews":{
@@ -150,7 +150,7 @@ alloy("event",{
 `productView` event
 
 ```javascript
-alloy("event",{
+alloy("sendEvent",{
   "xdm":{
     "commerce":{
       "productListAdds":{
@@ -180,7 +180,7 @@ alloy("event",{
 `checkout` event
 
 ```javascript
-alloy("event",{
+alloy("sendEvent",{
   "xdm":{
     "commerce":{
       "checkouts":{
@@ -208,12 +208,12 @@ alloy("event",{
 `purchase` event
 
 ```javascript
-alloy("event",{
+alloy("sendEvent",{
   "xdm":{
     "commerce":{
       "order":{
         "purchaseID":"123456789",
-        "currenceCode":"USD",
+        "currencyCode":"USD",
         "priceTotal":39.98,
         "payments":[
           {
@@ -236,7 +236,7 @@ alloy("event",{
         "SKU":"HT104",
         "name":"The Small Floppy Hat",
         "priceTotal":9.99,
-        "qauntity":1
+        "quantity":1
       }
     ]
   }
