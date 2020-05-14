@@ -4,15 +4,18 @@ solution: Experience Platform
 title: Skapa en Azure File Storage-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: aa1c6cb0f5702cfe444cb2046e4460e404f13e57
+source-git-commit: b8ebe57482fdd10ccd8bdcf1a86009a373ea579e
 workflow-type: tm+mt
-source-wordcount: '487'
+source-wordcount: '501'
 ht-degree: 0%
 
 ---
 
 
 # Skapa en Azure File Storage-källanslutning i användargränssnittet
+
+>[!NOTE]
+>Azure Table Storage är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
 
 Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du autentiserar en Azure File Storage-källanslutning med hjälp av användargränssnittet för plattformen.
 
