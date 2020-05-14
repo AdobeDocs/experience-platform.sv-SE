@@ -4,18 +4,21 @@ solution: Experience Platform
 title: HubSpot-anslutning
 topic: overview
 translation-type: tm+mt
-source-git-commit: 1afa5e6acd5e4fd983505df11f4a76f6835ac30f
+source-git-commit: 45ce6e876a42c5594ae4b7787757e5db7024a22f
+workflow-type: tm+mt
+source-wordcount: '149'
+ht-degree: 0%
 
 ---
 
 
-# HubSpot-anslutning
+# (Beta) HubSpot-anslutning
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som ni kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
 Experience Platform har stöd för inmatning av data från ett system för automatiserad marknadsföring från tredje part. Stöd för leverantörer av automatiserad marknadsföring innefattar HubSpot.
 
-Dokumentationen nedan innehåller information om hur du ansluter HubSpot till plattformen med hjälp av API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter HubSpot till plattformen med API:er eller användargränssnittet:
 
 ## Ansluta HubSpot till plattformen med API:er
 
