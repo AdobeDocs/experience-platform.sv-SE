@@ -4,12 +4,18 @@ solution: Experience Platform
 title: Skapa en Apache Spark på Azure HDInsights-källkoppling i gränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: ae059f93f09dbbae4f1ef46f68901071afba9729
+source-git-commit: 2162c66b1664ecaaf0b609fe3f7ccf58c4a5d31d
+workflow-type: tm+mt
+source-wordcount: '534'
+ht-degree: 0%
 
 ---
 
 
 # Skapa en Apache Spark på Azure HDInsights-källkoppling i gränssnittet
+
+> [!NOTE]
+> Apache Spark på Azure HDInsights-kontakten är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
 
 Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en Apache Spark på Azure HDInsights-källkopplingen med hjälp av användargränssnittet för plattformen.
 
