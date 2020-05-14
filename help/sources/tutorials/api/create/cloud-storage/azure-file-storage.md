@@ -4,15 +4,18 @@ solution: Experience Platform
 title: Skapa en Azure File Storage-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 8beee3f15aa867026b28f9c395553d1c934ef7a3
+source-git-commit: 3a882656f93b86093b356be5dbc12b3e4321cfb8
 workflow-type: tm+mt
-source-wordcount: '621'
+source-wordcount: '636'
 ht-degree: 0%
 
 ---
 
 
 # Skapa en Azure File Storage-koppling med API:t för Flow Service
+
+>[!NOTE]
+>Azure File Storage Connector är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
 
 Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
