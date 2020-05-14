@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en IBM DB2-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: e77dadb4257c16e19113f6224790fbb3b8207a52
+source-git-commit: 2162c66b1664ecaaf0b609fe3f7ccf58c4a5d31d
 workflow-type: tm+mt
-source-wordcount: '503'
+source-wordcount: '518'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,9 @@ ht-degree: 0%
 
 
 # Skapa en IBM DB2-källanslutning i användargränssnittet
+
+> [!NOTE]
+> IBM DB2-kopplingen är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
 
 Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en IBM DB2-källkoppling (nedan kallad DB2) med hjälp av användargränssnittet för plattformen.
 
