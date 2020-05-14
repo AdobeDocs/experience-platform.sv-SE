@@ -4,7 +4,7 @@ seo-title: Spåra Adobe Experience Platform Web SDK-händelser
 description: Lär dig spåra Experience Platform Web SDK-händelser
 seo-description: Lär dig spåra Experience Platform Web SDK-händelser
 translation-type: tm+mt
-source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+source-git-commit: 4bff4b20ccc1913151aa1783d5123ffbb141a7d0
 workflow-type: tm+mt
 source-wordcount: '637'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Spåra händelser
 
-Använd `event` kommandot om du vill skicka händelsedata till Adobe Experience Cloud. Kommandot `event` är det primära sättet att skicka data till Experience Cloud och hämta personaliserat innehåll, identiteter och målgruppsmål.
+Använd `sendEvent` kommandot om du vill skicka händelsedata till Adobe Experience Cloud. Kommandot `sendEvent` är det primära sättet att skicka data till Experience Cloud och hämta personaliserat innehåll, identiteter och målgruppsmål.
 
 Data som skickas till Adobe Experience Cloud delas in i två kategorier:
 
@@ -28,7 +28,7 @@ XDM-data är ett objekt vars innehåll och struktur matchar ett schema som du ha
 Alla XDM-data som du vill ska ingå i analyser, personalisering, målgrupper eller mål ska skickas med `xdm` alternativet.
 
 ```javascript
-alloy("event", {
+alloy("sendEvent", {
   "xdm": {
     "commerce": {
       "order": {
@@ -54,7 +54,7 @@ För närvarande stöds inte sändning av data som inte matchar ett XDM-schema. 
 I en XDM-upplevelsehändelse finns det ett `eventType` fält. Detta innehåller postens primära händelsetyp. Detta kan skickas som en del av `xdm` alternativet.
 
 ```javascript
-alloy("event", {
+alloy("sendEvent", {
   "xdm": {
     "eventType": "commerce.purchases",
     "commerce": {
@@ -74,7 +74,7 @@ Alternativt kan `eventType` händelsen skickas till händelsekommandot med hjäl
 ```javascript
 var myXDMData = { ... };
 
-alloy("event", {
+alloy("sendEvent", {
   "xdm": myXDMData,
   "type": "commerce.purchases"
 });
@@ -85,7 +85,7 @@ alloy("event", {
 Det kan vara svårt att skicka händelsedata precis innan webbsidans användare har navigerat. Om begäran tar för lång tid kan webbläsaren avbryta den. Vissa webbläsare har implementerat ett webbläsar-API som anropas `sendBeacon` för att göra det enklare att samla in data under tiden. När du använder `sendBeacon`webbläsaren görs en webbförfrågan i det globala webbläsarsammanhanget. Det innebär att webbläsaren gör beacon-begäran i bakgrunden och inte håller upp sidnavigeringen. Om du vill ange att Adobe Experience Platform Web SDK ska använda `sendBeacon`lägger du till alternativet `"documentUnloading": true` i händelsekommandot.  Här är ett exempel:
 
 ```javascript
-alloy("event", {
+alloy("sendEvent", {
   "documentUnloading": true,
   "xdm": {
     "commerce": {
@@ -107,7 +107,7 @@ Webbläsare har angett begränsningar för hur mycket data som kan skickas med `
 Om du vill hantera ett svar från en händelse kan du få ett meddelande om att åtgärden lyckades eller misslyckades enligt följande:
 
 ```javascript
-alloy("event", {
+alloy("sendEvent", {
   "renderDecisions": true,
   "xdm": {
     "commerce": {
@@ -148,7 +148,7 @@ alloy("configure", {
 
 `xdm` fält anges i den här ordningen:
 
-1. Värden som skickas som alternativ till händelsekommandot `alloy("event", { xdm: ... });`
+1. Värden som skickas som alternativ till händelsekommandot `alloy("sendEvent", { xdm: ... });`
 2. Automatiskt insamlade värden.  (Se [Automatisk information](../reference/automatic-information.md).)
 3. Ändringarna som har gjorts i `onBeforeEventSend` återanropet.
 
