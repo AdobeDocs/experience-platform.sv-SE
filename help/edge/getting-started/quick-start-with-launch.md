@@ -4,39 +4,34 @@ seo-title: Adobe Experience Platform Web SDK snabbstart med Launch
 description: Snabbstartsguide för användning av Experience Platform Web SDK-tillägget för att samla in data
 seo-description: Snabbstartsguide för användning av Experience Platform Web SDK-tillägget för att samla in data
 translation-type: tm+mt
-source-git-commit: 51acb07efe624c7cf1dfaabc4b03f04c76ac88f8
+source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
 workflow-type: tm+mt
-source-wordcount: '391'
+source-wordcount: '529'
 ht-degree: 0%
 
 ---
 
 
-# (Beta) Krav
+# Välkommen
 
->[!IMPORTANT]
->
->Adobe Experience Platform Web SDK är för närvarande en betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+Den här guiden tar dig igenom de olika sätten att konfigurera Adobe Experience Platform Web SDK i Launch. För att kunna använda den här funktionen måste du vitlistas. Om du vill komma med på väntelistan kontaktar du din CSM.
 
-För närvarande stöder Adobe Experience Platform Web SDK endast sändning av data till Adobe Experience Platform med hjälp av XDM. Du måste uppfylla följande krav.
-
-- Ha en [förstapartsdomän (CNAME)](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-first-party.html) aktiverad. Om du redan har en CNAME for Analytics bör du använda den.
-- Få rätt till Adobe Experience Platform
+- Ha en [förstapartsdomän (CNAME)](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-first-party.html) aktiverad. Om du redan har en CNAME for Analytics bör du använda den. Testning under utveckling fungerar utan CNAME, men du behöver en innan du går till produktion
+- Du har rätt till Adobe Experience Platform Data Platform. Om du inte har köpt någon plattform kommer vi att förse dig med Experience Platform Data Services Foundation för användning med SDK.
 - Använd den senaste versionen av tjänsten för besökar-ID
-
-## Förbered plattformen
-
-För att kunna skicka data till Adobe Experience Platform måste du skapa ett XDM-schema och en datauppsättning som använder det schemat.
-
-- [Skapa ett schema](../../xdm/tutorials/create-schema-ui.md)
-- Lägg till Adobe Experience Platform Web SDK-mixin i det schema du skapade
-- [Skapa en datauppsättning](https://platform.adobe.com/dataset/overview) med ditt schema där du vill att data ska sparas
 
 ## Skapa ett konfigurations-ID
 
-Du kan skapa ett konfigurations-ID med [Edge-konfigurationsverktyget](../fundamentals/edge-configuration.md) vid start.
+Du kan skapa ett konfigurations-ID med [Edge-konfigurationsverktyget](../fundamentals/edge-configuration.md) vid start. På så sätt kan du aktivera Edge Network för att skicka data till de olika lösningarna. Information om hur du hittar de olika alternativen finns på sidan [Edge Configuration Tool](../fundamentals/edge-configuration.md) .
 
 >Obs! Din organisation måste vitlistas för funktionen. Kontakta din CSM för att komma med i listan för eventuell vitlistning.
+
+## Förbered ett schema
+
+Experience Platform Edge Network tar data som XDM. XDM är ett dataformat som gör att du kan definiera scheman. Schemat definierar hur Edge Network förväntar sig att data ska formateras. För att kunna skicka data måste du definiera ditt schema.
+
+- [Skapa ett schema](../../xdm/tutorials/create-schema-ui.md)
+- Lägg till Adobe Experience Platform Web SDK-mixin i det schema du skapade
 
 ## Installera SDK i Launch
 
@@ -44,28 +39,25 @@ Logga in på Starta och installera `AEP Web SDK` tillägget. När du installerar
 
 Mer information om olika konfigurationsalternativ finns i [Konfigurera SDK](../fundamentals/configuring-the-sdk.md).
 
+## Skapa ett dataelement baserat på ditt schema
+
+Vid start skapar du ett dataelement som refererar till schemat genom att ändra tillägget till AEP Web SDK och ange typen till XDM-objekt. Detta läser in ditt schema och gör att du kan mappa dataelement till olika delar av schemat.
+
+![Datumelement i start](../../assets/edge_data_element.png)
+
 ## Skicka en händelse
 
-När tillägget har installerats kan du börja skicka händelser genom att lägga till en&quot;Skicka signal&quot;-åtgärd från AEP Web SDK-tillägget. Vi rekommenderar att du skickar minst en händelse varje gång en sida läses in med alternativet &quot;finns i början av en vy&quot; markerat.
+När tillägget har installerats börjar du skicka händelser genom att lägga till en sendEvent-åtgärd från AEP Web SDK-tillägget i en regel. Var noga med att lägga till det dataelement du nyss skapade i händelsen som XDM-data. Vi rekommenderar att du skickar minst en händelse varje gång en sida läses in.
 
 Mer information om hur du spårar händelser finns i [Spåra händelser](../fundamentals/tracking-events.md).
 
-## Skicka data
+## Nästa steg
 
-Du kan skicka data som matchar det schema du skapade tidigare tillsammans med dina händelser. Om du till exempel äger en e-handelsplats och lägger till handelsmixen i ditt schema, skickar du följande struktur när någon visar en produkt.
+När du har data som flödar kan du göra följande.
 
-```javascript
-{
-  "commerce": {
-    "productListAdds": {
-        "value":1
-    }
-  },
-  "productListItems":{
-      "name":"Floppy Green Hat",
-      "SKU":"HATFLP123",
-      "product":"1234567",
-      "quantity":2
-  }
-}
-```
+- [Skapa ditt schema](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/composition.html)
+- Lär dig [personalisera upplevelsen](../fundamentals/rendering-personalization-content.md)
+- Lär dig hur du skickar data till flera lösningar
+   - [Adobe Analytics](../solution-specific/analytics/analytics-overview.md)
+   - [Adobe Audience Manager](../solution-specific/audience-manager/audience-manager-overview.md)
+   - [Adobe Target](../solution-specific/target/target-overview.md)
