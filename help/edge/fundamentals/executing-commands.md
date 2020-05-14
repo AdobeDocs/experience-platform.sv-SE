@@ -4,19 +4,15 @@ seo-title: Använda SDK-kommandon för Adobe Experience Platform
 description: Lär dig hur du kör Experience Platform Web SDK-kommandon
 seo-description: Lär dig hur du kör Experience Platform Web SDK-kommandon
 translation-type: tm+mt
-source-git-commit: 9bd6feb767e39911097bbe15eb2c370d61d9842a
+source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
 workflow-type: tm+mt
-source-wordcount: '445'
+source-wordcount: '419'
 ht-degree: 0%
 
 ---
 
 
-# (Beta) Kör kommandon
-
->[!IMPORTANT]
->
->Adobe Experience Platform Web SDK är för närvarande en betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+# Utföra kommandon
 
 När baskoden har implementerats på webbsidan kan du börja köra kommandon med SDK:n. Du behöver inte vänta på att den externa filen \(`alloy.js`\) ska läsas in från servern innan du kör kommandon. Om SDK inte har lästs in helt köas och bearbetas kommandona av SDK så snart som möjligt.
 
@@ -30,7 +26,7 @@ SDK-koden anger `commandName` vad som ska göras, medan `options` det är parame
 
 ## Ett meddelande om löften
 
-[Löften](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) är grundläggande för hur SDK kommunicerar med koden på din webbsida. Ett löfte är en vanlig programmeringsstruktur som inte är specifik för denna SDK eller ens JavaScript. Ett löfte fungerar som en proxy för ett värde som inte är känt när löftet skapas. När värdet är känt är löftet&quot;löst&quot; med värdet. Hanterarfunktioner kan kopplas till ett löfte, så att du kan meddelas när löftet har lösts eller när ett fel har uppstått under lösningsprocessen. Om du vill veta mer om löften kan du läsa [den här självstudiekursen](https://javascript.info/promise-basics) eller andra resurser på webben.
+[Utfästelser](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) är grundläggande för hur SDK kommunicerar med koden på din webbsida. Ett löfte är en vanlig programmeringsstruktur som inte är specifik för denna SDK eller ens JavaScript. Ett löfte fungerar som en proxy för ett värde som inte är känt när löftet skapas. När värdet är känt är löftet&quot;löst&quot; med värdet. Hanterarfunktioner kan kopplas till ett löfte, så att du kan meddelas när löftet har lösts eller när ett fel har uppstått under lösningsprocessen. Om du vill veta mer om löften kan du läsa [den här självstudiekursen](https://javascript.info/promise-basics) eller andra resurser på webben.
 
 ## Hantera lyckade eller misslyckade
 
