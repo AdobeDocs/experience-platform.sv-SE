@@ -4,9 +4,9 @@ seo-title: Adobe Experience Platform Web SDK snabbstart med Launch
 description: Snabbstartsguide för användning av Experience Platform Web SDK-tillägget för att samla in data
 seo-description: Snabbstartsguide för användning av Experience Platform Web SDK-tillägget för att samla in data
 translation-type: tm+mt
-source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+source-git-commit: 2ccb2c17590780f7f1bd5e553164209763ab9e24
 workflow-type: tm+mt
-source-wordcount: '529'
+source-wordcount: '539'
 ht-degree: 0%
 
 ---
@@ -17,14 +17,16 @@ ht-degree: 0%
 Den här guiden tar dig igenom de olika sätten att konfigurera Adobe Experience Platform Web SDK i Launch. För att kunna använda den här funktionen måste du vitlistas. Om du vill komma med på väntelistan kontaktar du din CSM.
 
 - Ha en [förstapartsdomän (CNAME)](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-first-party.html) aktiverad. Om du redan har en CNAME for Analytics bör du använda den. Testning under utveckling fungerar utan CNAME, men du behöver en innan du går till produktion
-- Du har rätt till Adobe Experience Platform Data Platform. Om du inte har köpt någon plattform kommer vi att förse dig med Experience Platform Data Services Foundation för användning med SDK.
+- Du har rätt till Adobe Experience Platform Data Platform. Om du inte har köpt Platform tillhandahåller vi dig Experience Platform Data Services Foundation för användning i begränsad omfattning med SDK utan extra kostnad.
 - Använd den senaste versionen av tjänsten för besökar-ID
 
 ## Skapa ett konfigurations-ID
 
 Du kan skapa ett konfigurations-ID med [Edge-konfigurationsverktyget](../fundamentals/edge-configuration.md) vid start. På så sätt kan du aktivera Edge Network för att skicka data till de olika lösningarna. Information om hur du hittar de olika alternativen finns på sidan [Edge Configuration Tool](../fundamentals/edge-configuration.md) .
 
->Obs! Din organisation måste vitlistas för funktionen. Kontakta din CSM för att komma med i listan för eventuell vitlistning.
+>[!NOTE]
+>
+>Din organisation måste vitlistas för funktionen. Kontakta din CSM för att komma med i listan för eventuell vitlistning.
 
 ## Förbered ett schema
 
@@ -56,6 +58,7 @@ Mer information om hur du spårar händelser finns i [Spåra händelser](../fund
 När du har data som flödar kan du göra följande.
 
 - [Skapa ditt schema](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/composition.html)
+- [Läs mer om felsökning](../fundamentals/debugging.md)
 - Lär dig [personalisera upplevelsen](../fundamentals/rendering-personalization-content.md)
 - Lär dig hur du skickar data till flera lösningar
    - [Adobe Analytics](../solution-specific/analytics/analytics-overview.md)
