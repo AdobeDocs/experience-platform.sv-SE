@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Hjälp om Adobe Experience Platform Edge Network
 translation-type: tm+mt
-source-git-commit: e00dc3e8dec0117617081ca4fc9ffa752b01b3b7
+source-git-commit: 4bea14d18ce119bdec0d428f885d240f92244cfc
 workflow-type: tm+mt
-source-wordcount: '91'
+source-wordcount: '85'
 ht-degree: 4%
 
 ---
@@ -16,7 +16,6 @@ ht-degree: 4%
 * [Edge Network - översikt](home.md)
 * Getting started {#get-started}
    * [Snabbstart med Launch](getting-started/quick-start-with-launch.md)
-   * [Distribuera alla produkter](getting-started/deploying-all-products.md)
 * Grundläggande {#fundamentals}
    * [Installera SDK](fundamentals/installing-the-sdk.md)
    * [Utföra kommandon](fundamentals/executing-commands.md)
@@ -28,7 +27,6 @@ ht-degree: 4%
    * [Interagera med flera egenskaper](fundamentals/interacting-with-multiple-properties.md)
    * [Återge personaliserat innehåll](fundamentals/rendering-personalization-content.md)
    * [Godkännande](fundamentals/supporting-consent.md)
-   * [Stöd för webbläsare i appen](fundamentals/supporting-in-app-browsers.md)
    * [Identitet](fundamentals/identity.md)
 * Vad som ska implementeras {#implement}
    * [Produkter](what-to-implement/commerce.md)
