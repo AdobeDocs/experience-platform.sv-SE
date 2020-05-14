@@ -4,12 +4,18 @@ solution: Experience Platform
 title: Skapa en allmän OData-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 8c67ba710b486501374020ab505b04931f327c0f
+source-git-commit: 2162c66b1664ecaaf0b609fe3f7ccf58c4a5d31d
+workflow-type: tm+mt
+source-wordcount: '512'
+ht-degree: 0%
 
 ---
 
 
 # Skapa en allmän OData-källanslutning i användargränssnittet
+
+> [!NOTE]
+> Den allmänna OData-kopplingen är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
 
 Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en allmän källkoppling för Open Data Protocol (nedan kallad OData) med hjälp av användargränssnittet för plattformen.
 
