@@ -4,12 +4,18 @@ solution: Experience Platform
 title: Skapa en Phoenix-anslutning med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: c00edf487404e1d08bc86cb6692325f536964af6
+source-git-commit: 37a5f035023cee1fc2408846fb37d64b9a3fc4b6
+workflow-type: tm+mt
+source-wordcount: '674'
+ht-degree: 0%
 
 ---
 
 
 # Skapa en Phoenix-anslutning med API:t för Flow Service
+
+>[!NOTE]
+>Phoenix-kontakten är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
 
 Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
