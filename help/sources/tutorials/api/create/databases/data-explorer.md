@@ -4,12 +4,18 @@ solution: Experience Platform
 title: Skapa en Azure Data Explorer-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: c4162d88a688ce2028de08b63e7b7eab954a0e29
+source-git-commit: 37a5f035023cee1fc2408846fb37d64b9a3fc4b6
+workflow-type: tm+mt
+source-wordcount: '676'
+ht-degree: 0%
 
 ---
 
 
 # Skapa en Azure Data Explorer-koppling med API:t för Flow Service
+
+>[!NOTE]
+>Azure Data Explorer-kopplingen är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
 
 Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
