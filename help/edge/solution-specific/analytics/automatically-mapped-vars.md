@@ -4,16 +4,15 @@ seo-title: Variabler mappas automatiskt i Analytics med Adobe Experience Platfor
 description: Lär dig vilka variabler som automatiskt mappas i Analytics med Experience Platform Web SDK
 seo-description: Lär dig vilka variabler som automatiskt mappas i Analytics med Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 0cc6e233646134be073d20e2acd1702d345ff35f
+source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+workflow-type: tm+mt
+source-wordcount: '312'
+ht-degree: 0%
 
 ---
 
 
-# (Beta) Variabler mappas automatiskt i analyser
-
->[!IMPORTANT]
->
->Adobe Experience Platform Web SDK är för närvarande en betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+# Variabler mappas automatiskt i Analytics
 
 Nedan finns en lista med variabler som Adobe Experience Platform Edge Network automatiskt mappar till Analytics.
 
