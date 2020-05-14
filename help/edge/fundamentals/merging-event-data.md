@@ -4,7 +4,7 @@ seo-title: Sammanfoga händelsedata för Adobe Experience Platform Web SDK
 description: Lär dig hur du sammanfogar händelsedata för Experience Platform Web SDK
 seo-description: Lär dig hur du sammanfogar händelsedata för Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+source-git-commit: 4bff4b20ccc1913151aa1783d5123ffbb141a7d0
 workflow-type: tm+mt
 source-wordcount: '436'
 ht-degree: 0%
@@ -23,7 +23,7 @@ Ibland är inte alla data tillgängliga när en händelse inträffar. Du kanske 
 I sådana fall kan du sammanfoga data med tidigare händelser genom att skicka `eventMergeId` som ett alternativ till `event` kommandon enligt följande:
 
 ```javascript
-alloy("event", {
+alloy("sendEvent", {
   "xdm": {
     "commerce": {
       "order": {
@@ -39,7 +39,7 @@ alloy("event", {
 
 // Time passes and more data becomes available
 
-alloy("event", {
+alloy("sendEvent", {
   "xdm": {
     "commerce": {
       "order": {
@@ -72,7 +72,7 @@ Precis som med alla kommandon returneras ett löfte eftersom du kan köra komman
 var eventMergeIdPromise = alloy("createEventMergeId");
 
 eventMergeIdPromise.then(function(results) {
-  alloy("event", {
+  alloy("sendEvent", {
     "xdm": {
       "commerce": {
         "order": {
@@ -90,7 +90,7 @@ eventMergeIdPromise.then(function(results) {
 // Time passes and more data becomes available
 
 eventMergeIdPromise.then(function(results) {
-  alloy("event", {
+  alloy("sendEvent", {
     "xdm": {
       "commerce": {
         "order": {
@@ -126,7 +126,7 @@ eventMergeIdPromise.then(function(results) {
 I händelsekommandot läggs `mergeId` det till i `xdm` nyttolasten.  Om du vill kan du skicka filen som en del av xdm-alternativet, så här: `mergeId`
 
 ```javascript
-alloy("event", {
+alloy("sendEvent", {
   "xdm": {
     "commerce": {
       "order": {
