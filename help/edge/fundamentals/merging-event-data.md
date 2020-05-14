@@ -4,19 +4,19 @@ seo-title: Sammanfoga händelsedata för Adobe Experience Platform Web SDK
 description: Lär dig hur du sammanfogar händelsedata för Experience Platform Web SDK
 seo-description: Lär dig hur du sammanfogar händelsedata för Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 767f0e1bfdfcc898313b546c804ba1287f2aec50
+source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
 workflow-type: tm+mt
-source-wordcount: '444'
+source-wordcount: '436'
 ht-degree: 0%
 
 ---
 
 
-# (Beta) Sammanfoga händelsedata
+# Sammanfoga händelsedata
 
 >[!IMPORTANT]
 >
->Adobe Experience Platform Web SDK är för närvarande en betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+>Den här funktionen är fortfarande under utveckling, så alla lösningar kan inte sammanfoga dessa data.
 
 Ibland är inte alla data tillgängliga när en händelse inträffar. Du kanske vill hämta data som du _har_ så att de inte går förlorade om användaren till exempel stänger webbläsaren. Å andra sidan kan du även inkludera data som blir tillgängliga senare.
 
