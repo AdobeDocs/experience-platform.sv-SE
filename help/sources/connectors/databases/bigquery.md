@@ -4,12 +4,15 @@ solution: Experience Platform
 title: Google BigQuery-koppling
 topic: overview
 translation-type: tm+mt
-source-git-commit: 8a8e0f48cb4c5cad44e808a740ad70f2d0ea3332
+source-git-commit: 45ce6e876a42c5594ae4b7787757e5db7024a22f
+workflow-type: tm+mt
+source-wordcount: '168'
+ht-degree: 0%
 
 ---
 
 
-# Google BigQuery-koppling
+# (Beta) Google BigQuery-koppling
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som ni kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
