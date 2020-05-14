@@ -4,16 +4,15 @@ seo-title: Edge-konfiguration för Experience Platform Web SDK
 description: 'Lär dig hur du konfigurerar Experience Platform Edge Network. '
 seo-description: 'Lär dig hur du konfigurerar Experience Platform Edge Network. '
 translation-type: tm+mt
-source-git-commit: efbc080117754cee01f21c9f9ec409204648e757
+source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+workflow-type: tm+mt
+source-wordcount: '834'
+ht-degree: 0%
 
 ---
 
 
-# (Beta) Edge Configuration
-
->[!IMPORTANT]
->
->Adobe Experience Platform Web SDK är för närvarande en betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+# Konfiguration av Edge
 
 Konfigurationen för Adobe Experience Platfrom Web SDK är uppdelad på två platser. Kommandot [](configuring-the-sdk.md) configure i SDK styr saker som måste hanteras på klienten, till exempel `edgeDomain`. Edge-konfigurationen hanterar all annan konfiguration för SDK. När en begäran skickas till Adobe Experience Platform Edge Network används den för att referera till konfigurationen på serversidan `edgeConfigId` . På så sätt kan du uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
 
