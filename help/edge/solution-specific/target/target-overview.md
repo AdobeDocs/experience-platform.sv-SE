@@ -4,7 +4,7 @@ seo-title: Adobe Experience Platform Web SDK och Adobe Target
 description: Lär dig återge personaliserat innehåll med Experience Platform Web SDK med Adobe Target
 seo-description: Lär dig återge personaliserat innehåll med Experience Platform Web SDK med Adobe Target
 translation-type: tm+mt
-source-git-commit: 9d66e926ff86f23b3dea34f37d3bb16ba97eb0ef
+source-git-commit: 4bff4b20ccc1913151aa1783d5123ffbb141a7d0
 workflow-type: tm+mt
 source-wordcount: '651'
 ht-degree: 0%
@@ -42,7 +42,7 @@ AEP Web SDK kan automatiskt återge dina upplevelser som definierats via Adobe T
 
 ```javascript
 alloy
-("event", 
+("sendEvent", 
   { 
   "renderDecisions": true, 
   "xdm": {
@@ -65,7 +65,7 @@ Den formulärbaserade Experience Composer är ett icke-visuellt gränssnitt som 
 
 ```javascript
 alloy
-  ("event", { 
+  ("sendEvent", { 
     decisionScopes: [
       "foo", "bar"], 
       "xdm": {
@@ -91,7 +91,7 @@ alloy
 AEP Web SDK innehåller en funktion där du kan hämta VEC-åtgärder utan att förlita dig på AEP Web SDK för att återge VEC-åtgärder åt dig. Skicka en händelse med `__view__` definierad som en `decisionScopes`.
 
 ```javascript
-alloy("event", {
+alloy("sendEvent", {
   decisionScopes: [“__view__”,"foo", "bar"], 
   "xdm": { 
     "web": { 
