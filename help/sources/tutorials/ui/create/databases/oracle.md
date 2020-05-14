@@ -4,15 +4,18 @@ solution: Experience Platform
 title: Skapa en Oracle DB-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 2e10056a3dcbff1075d786327ea7a7ea2ccc776c
+source-git-commit: 2162c66b1664ecaaf0b609fe3f7ccf58c4a5d31d
 workflow-type: tm+mt
-source-wordcount: '463'
+source-wordcount: '477'
 ht-degree: 0%
 
 ---
 
 
 # Skapa en Oracle-källanslutning i användargränssnittet
+
+> [!NOTE]
+> Oracle-kopplingen är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
 
 Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en Oracle-källanslutning med hjälp av användargränssnittet för plattformen.
 
