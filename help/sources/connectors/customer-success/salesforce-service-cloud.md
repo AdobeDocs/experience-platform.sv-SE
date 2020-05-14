@@ -4,12 +4,15 @@ solution: Experience Platform
 title: Salesforce Service Cloud-anslutning
 topic: overview
 translation-type: tm+mt
-source-git-commit: b5ab1bfc3d2b3ff69579f1745576938258ccbe75
+source-git-commit: 45ce6e876a42c5594ae4b7787757e5db7024a22f
+workflow-type: tm+mt
+source-wordcount: '167'
+ht-degree: 0%
 
 ---
 
 
-# Salesforce Service Cloud-anslutning
+# (Beta) Salesforce Service Cloud-anslutning
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som ni kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
