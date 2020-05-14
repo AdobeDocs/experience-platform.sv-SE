@@ -4,12 +4,18 @@ solution: Experience Platform
 title: Skapa en Oracle-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: e77808990de4ad6e9620a5ce7e7839817c70e336
+source-git-commit: 37a5f035023cee1fc2408846fb37d64b9a3fc4b6
+workflow-type: tm+mt
+source-wordcount: '547'
+ht-degree: 0%
 
 ---
 
 
 # Skapa en Oracle-koppling med API:t för Flow Service
+
+>[!NOTE]
+>Oracle-kopplingen är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
 
 Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
