@@ -4,16 +4,15 @@ seo-title: Information som samlas in automatiskt av Adobe Experience Platform We
 description: Beskrivning av all information som Adobe Experience Cloud SDK samlar in automatiskt
 seo-description: Beskrivning av all information som Adobe Experience Cloud SDK samlar in automatiskt
 translation-type: tm+mt
-source-git-commit: 0cc6e233646134be073d20e2acd1702d345ff35f
+source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+workflow-type: tm+mt
+source-wordcount: '382'
+ht-degree: 3%
 
 ---
 
 
-# (Beta) Information samlas in automatiskt
-
->[!IMPORTANT]
->
->Adobe Experience Platform Web SDK är för närvarande en betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+# Information samlas in automatiskt
 
 Adobe Experience Cloud SDK samlar automatiskt in ett antal informationsdelar utan någon specialkonfiguration. Den här informationen kan dock inaktiveras om det behövs med hjälp av `context` alternativet i `configure` kommandot. [Se Konfigurera SDK](../fundamentals/configuring-the-sdk.md). Nedan finns en lista över dessa informationsdelar. Namnet inom parentes anger den sträng som ska användas när kontexten konfigureras.
 
