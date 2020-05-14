@@ -4,12 +4,18 @@ solution: Experience Platform
 title: Skapa en HubSpot-anslutning med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: c08650ca1655e248f0a0f8a6b371c5fd005aab1c
+source-git-commit: 37a5f035023cee1fc2408846fb37d64b9a3fc4b6
+workflow-type: tm+mt
+source-wordcount: '627'
+ht-degree: 0%
 
 ---
 
 
 # Skapa en HubSpot-anslutning med API:t för Flow Service
+
+>[!NOTE]
+>HubSpot-anslutningen är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
 
 Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
