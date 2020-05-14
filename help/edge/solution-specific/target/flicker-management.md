@@ -1,11 +1,17 @@
 ---
-source-git-commit: e00dc3e8dec0117617081ca4fc9ffa752b01b3b7
-workflow-type: tm+mt
+title: Hantera flimmer för personaliserade upplevelser
+seo-title: Hantera flimmer i Adobe Experience Platform Web SDK
+description: Lär dig hantera flimmer i användarupplevelser
+seo-description: Lär dig hantera flimmer med Experience Platform Web SDK-egenskaper
 translation-type: tm+mt
-source-wordcount: '459'
+source-git-commit: 4bea14d18ce119bdec0d428f885d240f92244cfc
+workflow-type: tm+mt
+source-wordcount: '491'
 ht-degree: 0%
 
 ---
+
+
 # Hantera flimmer
 
 När SDK försöker återge personaliseringsinnehåll måste det se till att det inte blir någon flimmer. Flimmer, som även kallas FOOC (Flash av ursprungligt innehåll), är när ett ursprungligt innehåll visas kort innan alternativet visas under testning/personalisering. SDK försöker tillämpa CSS-format på element på sidan för att säkerställa att dessa element döljs tills personaliseringsinnehållet återges korrekt.
