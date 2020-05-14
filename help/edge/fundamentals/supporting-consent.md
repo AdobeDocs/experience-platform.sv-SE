@@ -4,16 +4,15 @@ seo-title: Stöd för inställningen Adobe Experience Platform Web SDK medgivand
 description: Lär dig hur du kan ge stöd för medgivanden med Experience Platform Web SDK
 seo-description: Lär dig hur du kan ge stöd för medgivanden med Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 0cc6e233646134be073d20e2acd1702d345ff35f
+source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+workflow-type: tm+mt
+source-wordcount: '518'
+ht-degree: 0%
 
 ---
 
 
-# (Beta) Supporting Consent
-
->[!IMPORTANT]
->
->Adobe Experience Platform Web SDK är för närvarande en betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+# Stöd för samtycke
 
 Om du vill respektera användarens sekretess kan du be om användarens samtycke innan du tillåter att SDK använder användarspecifika data för vissa syften. För närvarande tillåter SDK endast användare att välja mellan olika syften, men i framtiden hoppas Adobe kunna ge mer exakt kontroll över specifika syften.
 
