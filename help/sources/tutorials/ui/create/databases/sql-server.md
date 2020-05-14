@@ -4,12 +4,18 @@ solution: Experience Platform
 title: Skapa en Microsoft SQL Server-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: f09ff4d1b159a6989868c5cfc35b361cfb640a99
+source-git-commit: 2162c66b1664ecaaf0b609fe3f7ccf58c4a5d31d
+workflow-type: tm+mt
+source-wordcount: '504'
+ht-degree: 0%
 
 ---
 
 
 # Skapa en Microsoft SQL Server-källanslutning i användargränssnittet
+
+> [!NOTE]
+> Microsoft SQL Server-kopplingen är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
 
 Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en Microsoft SQL Server-källkoppling (nedan kallad SQL Server) med hjälp av användargränssnittet för plattformen.
 
