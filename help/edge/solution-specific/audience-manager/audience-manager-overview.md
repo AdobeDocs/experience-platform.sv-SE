@@ -4,19 +4,15 @@ seo-title: Skicka data till Adobe Audience Manager med Adobe Experience Platform
 description: Lär dig hur du skickar data till Adobe Audience Manager med Experience Platform Web SDK
 seo-description: Lär dig hur du skickar data till Adobe Audience Manager med Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: dfe9ea2889b3ba2e74f8b10296bfb2d123ad9d57
+source-git-commit: 4bea14d18ce119bdec0d428f885d240f92244cfc
 workflow-type: tm+mt
-source-wordcount: '318'
+source-wordcount: '292'
 ht-degree: 0%
 
 ---
 
 
-# (Beta) Audience Manager på Experience Platform Edge Network
-
->[!IMPORTANT]
->
->Adobe Experience Platform Web SDK är för närvarande en betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+# Audience Manager på Experience Platform Edge Network
 
 Adobe Experience Platform Web SDK är integrerat med Adobe Audience Manager och har stöd för att skicka och ta emot data från Audience Manager, Cookie- och URL-destinationer och ID-synkronisering.
 
