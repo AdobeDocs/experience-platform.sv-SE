@@ -4,12 +4,18 @@ solution: Experience Platform
 title: Skapa en Apache Hive på Azure HDInsights-källkopplingen i gränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 9bc9e369c7141ab70d7f7e6deffe9e0ad92ca92e
+source-git-commit: 2162c66b1664ecaaf0b609fe3f7ccf58c4a5d31d
+workflow-type: tm+mt
+source-wordcount: '534'
+ht-degree: 0%
 
 ---
 
 
 # Skapa en Apache Hive på Azure HDInsights-källkopplingen i gränssnittet
+
+> [!NOTE]
+> Apache Hive på Azure HDInsights-kontakten är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
 
 Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en Apache Hive på Azure HDInsights-källkopplingen med hjälp av användargränssnittet för plattformen.
 
