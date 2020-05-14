@@ -4,12 +4,18 @@ solution: Experience Platform
 title: Skapa en ServiceNow-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 90f00d726c94f2f13e7c52991fa59e7e5d3ecd31
+source-git-commit: 37a5f035023cee1fc2408846fb37d64b9a3fc4b6
+workflow-type: tm+mt
+source-wordcount: '697'
+ht-degree: 0%
 
 ---
 
 
 # Skapa en ServiceNow-koppling med API:t för Flow Service
+
+>[!NOTE]
+>ServiceNow-kopplingen är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
 
 Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
