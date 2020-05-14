@@ -4,20 +4,19 @@ seo-title: Stödprodukter med Adobe Experience Platform Web SDK
 description: Lär dig hur du lägger till data om du har produkter eller en kundvagn med Experience Platform Web SDK
 seo-description: Lär dig hur du lägger till data om du har produkter eller en kundvagn med Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 0cc6e233646134be073d20e2acd1702d345ff35f
+source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+workflow-type: tm+mt
+source-wordcount: '1314'
+ht-degree: 1%
 
 ---
 
 
-# (Beta) Produkter
-
->[!IMPORTANT]
->
->Adobe Experience Platform Web SDK är för närvarande en betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+# Produkter
 
 Om du har produkter på din webbplats är det här en standarduppsättning med saker som du kanske vill skicka för att aktivera de flesta funktionerna från Adobe. Även om detta är ett förslag ger det en mycket stark uppsättning data redan från början.
 
-Det här dokumentet använder [ExperienceEvent Commerce Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) -mixen. Blandningen `commerce` delas upp i två delar: objektet `commerce` och `productListItems` arrayen. Med objektet kan du `commerce` ange vilka åtgärder som ska utföras på `productListItems` arrayen.
+Det här dokumentet använder [ExperienceEvent Commerce Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) -blandningen. Blandningen `commerce` delas upp i två delar: objektet `commerce` och `productListItems` arrayen. Med objektet kan du `commerce` ange vilka åtgärder som ska utföras på `productListItems` arrayen.
 
 >[!Tip]
 >Om du känner till Adobe Analytics är The `commerce` mest närbesläktat med `events` variabeln. Den `productListItems` är mer närbesläktad med `products` variabeln.
