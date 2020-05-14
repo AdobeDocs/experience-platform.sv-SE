@@ -4,15 +4,18 @@ solution: Experience Platform
 title: Skapa en Azure Data Explorer-källkoppling i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 1fb07723aedcf6dfd49765c10342b70b0a7d24f3
+source-git-commit: 2162c66b1664ecaaf0b609fe3f7ccf58c4a5d31d
 workflow-type: tm+mt
-source-wordcount: '509'
+source-wordcount: '525'
 ht-degree: 0%
 
 ---
 
 
 # Skapa en Azure Data Explorer-källkoppling i användargränssnittet
+
+> [!NOTE]
+> Azure Data Explorer-kopplingen är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
 
 Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en Azure Data Explorer-källkoppling (nedan kallad Data Explorer) med hjälp av användargränssnittet för plattformen.
 
