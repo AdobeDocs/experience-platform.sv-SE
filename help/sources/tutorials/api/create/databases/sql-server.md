@@ -4,12 +4,18 @@ solution: Experience Platform
 title: Skapa en SQL Server-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 173faf861ca8feb6dd4e2159b0708e41fa0f601f
+source-git-commit: 37a5f035023cee1fc2408846fb37d64b9a3fc4b6
+workflow-type: tm+mt
+source-wordcount: '679'
+ht-degree: 0%
 
 ---
 
 
 # Skapa en Microsoft SQL Server-koppling med API:t för Flow Service
+
+>[!NOTE]
+>Microsoft SQL Server-kopplingen är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
 
 Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
