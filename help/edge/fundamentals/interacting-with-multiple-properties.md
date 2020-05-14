@@ -4,16 +4,15 @@ seo-title: Adobe Experience Platform Web SDK Interagera med flera egenskaper
 description: Lär dig hur du interagerar med flera Experience Platform Web SDK-egenskaper
 seo-description: Lär dig hur du interagerar med flera Experience Platform Web SDK-egenskaper
 translation-type: tm+mt
-source-git-commit: 0cc6e233646134be073d20e2acd1702d345ff35f
+source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+workflow-type: tm+mt
+source-wordcount: '256'
+ht-degree: 0%
 
 ---
 
 
-# (Beta) Samverka med flera egenskaper
-
->[!IMPORTANT]
->
->Adobe Experience Platform Web SDK är för närvarande en betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+# Interagera med flera egenskaper
 
 I vissa fall kanske du vill interagera med två olika egenskaper på samma sida. Bland dessa finns:
 
