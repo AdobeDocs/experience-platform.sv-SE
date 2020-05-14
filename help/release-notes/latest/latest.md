@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: May 13, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 0eca2f6e50024ec43c025dd75c34ca876d71c3f2
+source-git-commit: 53d72e6460c1ab3bc4459d8e108630f652b62dd6
 workflow-type: tm+mt
-source-wordcount: '959'
+source-wordcount: '961'
 ht-degree: 2%
 
 ---
@@ -87,7 +87,7 @@ Med Experience Platform Web SDK och Experience Platform Edge Network kan använd
 | Adobe Analytics | Skicka data till rapportsviter från Analytics via edge-konfigurationen. XDM förenklas till kontextdata och har stöd för taggning i flera sviter |
 | Adobe Target | Stöd för Adobe Target. Inklusive VEC, formulärbaserad disposition, A/B, XT, automatiserad personalisering, MVT |
 | Stöd för Adobe Audience Manager | Stöd för Audience Manager ID-synk, URL-mål och cookie-mål |
-| `synceIdnetity` | Bytt namn `setCustomersIds` för att `syncIdentity` göra det tydligare |
+| Identitetssynkronisering | Bytt namn `setCustomersIds` för att `syncIdentity` göra det tydligare |
 | XDM Object Builder | I starttillägget kan du nu skapa XDM-objekt som dataelement |
 
 Mer information om Platform Web SDK och Edge Network finns i [dokumentationen](../../edge/home.md).
