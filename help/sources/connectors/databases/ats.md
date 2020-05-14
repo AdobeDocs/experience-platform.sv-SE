@@ -4,12 +4,15 @@ solution: Experience Platform
 title: Azure Table Storage-koppling
 topic: overview
 translation-type: tm+mt
-source-git-commit: ae059f93f09dbbae4f1ef46f68901071afba9729
+source-git-commit: 45ce6e876a42c5594ae4b7787757e5db7024a22f
+workflow-type: tm+mt
+source-wordcount: '176'
+ht-degree: 0%
 
 ---
 
 
-# Azure Table Storage-koppling
+# (Beta) Azure Table Storage Connector
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som ni kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
