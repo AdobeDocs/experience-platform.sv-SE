@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: May 13, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 53d72e6460c1ab3bc4459d8e108630f652b62dd6
+source-git-commit: e6731b54840eaf9dd2cdaeff5205e14277e78a3b
 workflow-type: tm+mt
-source-wordcount: '961'
+source-wordcount: '1026'
 ht-degree: 2%
 
 ---
@@ -104,6 +104,7 @@ Experience Platform har ett RESTful API och ett interaktivt användargränssnitt
 | ------- | ----------- |
 | Ytterligare API- och gränssnittsstöd för molnlagringssystem | Nya källanslutningar för Azure File Storage. |
 | Ytterligare API- och gränssnittsstöd för databaser | Nya källanslutningar för Azure Data Explorer, IBM DB2 och Oracle DB. |
+| Adobe Audience Manager till Experience Platform - datadelning | Etableringsprocessen för Audience Manager-kopplingen har uppdaterats. Audience Manager-datauppsättningar för kundprofil i realtid är nu inaktiverade som standard. Du kan välja vilka datauppsättningar som ska befordras till profil manuellt. De nya standardinställningarna är inte retroaktiva och påverkar bara etablering för nya Audience Manager-anslutningar. Mer information finns i användarhandboken för [datauppsättningar](../../catalog/datasets/user-guide.md). |
 
 **Kända fel**
 
