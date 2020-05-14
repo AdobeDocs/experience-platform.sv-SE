@@ -4,15 +4,18 @@ solution: Experience Platform
 title: Skapa en SFTP-anslutning med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 7ffe560f455973da3a37ad102fbb8cc5969d5043
+source-git-commit: 37a5f035023cee1fc2408846fb37d64b9a3fc4b6
 workflow-type: tm+mt
-source-wordcount: '550'
+source-wordcount: '564'
 ht-degree: 0%
 
 ---
 
 
 # Skapa en SFTP-anslutning med API:t för Flow Service
+
+>[!NOTE]
+>SFTP-kopplingen är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
 
 Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
