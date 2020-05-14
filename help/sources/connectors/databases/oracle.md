@@ -4,15 +4,15 @@ solution: Experience Platform
 title: Oracle-koppling
 topic: overview
 translation-type: tm+mt
-source-git-commit: 2e10056a3dcbff1075d786327ea7a7ea2ccc776c
+source-git-commit: 45ce6e876a42c5594ae4b7787757e5db7024a22f
 workflow-type: tm+mt
-source-wordcount: '124'
+source-wordcount: '125'
 ht-degree: 0%
 
 ---
 
 
-# Oracle-koppling
+# (Beta) Oracle-anslutning
 
 Adobe Experience Platform erbjuder inbyggd anslutningsbarhet för databasleverantörer som Microsoft, MySQL och Azure. Ni kan överföra data från dessa system till plattformen.
 
