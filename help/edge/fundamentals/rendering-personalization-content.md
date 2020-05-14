@@ -4,7 +4,7 @@ seo-title: Adobe Experience Platform Web SDK Rendering personaliserat innehåll
 description: Lär dig återge personaliserat innehåll med Experience Platform Web SDK
 seo-description: Lär dig återge personaliserat innehåll med Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 4bea14d18ce119bdec0d428f885d240f92244cfc
+source-git-commit: 4bff4b20ccc1913151aa1783d5123ffbb141a7d0
 workflow-type: tm+mt
 source-wordcount: '236'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Adobe Experience Platform Web SDK stöder frågor om personaliseringslösningarn
 SDK återger automatiskt anpassat innehåll när du skickar en händelse till servern och anger `renderDecisions` den som ett alternativ `true` för händelsen.
 
 ```javascript
-alloy("event", {
+alloy("sendEvent", {
   "renderDecisions": true,
   "xdm": {
     "commerce": {
@@ -43,7 +43,7 @@ alloy("event", {
 Du kan begära att listan med beslut returneras som ett löfte för `event` kommandot med hjälp av `scopes`. Ett omfång är en sträng som låter personaliseringslösningen veta vilket beslut ni vill ha.
 
 ```javascript
-alloy("event",{
+alloy("sendEvent",{
     xdm:{...},
     scopes:['demo-1', 'demo-2']
   }).then(function(result){
