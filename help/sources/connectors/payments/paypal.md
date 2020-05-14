@@ -4,12 +4,15 @@ solution: Experience Platform
 title: PayPal-anslutning
 topic: overview
 translation-type: tm+mt
-source-git-commit: e1c92c010ee718138d4234abcb7b9f2f75187b8c
+source-git-commit: 45ce6e876a42c5594ae4b7787757e5db7024a22f
+workflow-type: tm+mt
+source-wordcount: '147'
+ht-degree: 0%
 
 ---
 
 
-# PayPal-anslutning
+# (Beta) PayPal-anslutning
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som ni kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
