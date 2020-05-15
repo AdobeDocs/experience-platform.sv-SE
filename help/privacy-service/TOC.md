@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Hjälp om Adobes Experience Platform Privacy Service
 translation-type: tm+mt
-source-git-commit: 284768c0f5416972e51d2fa2078ad5267e1b8628
+source-git-commit: 63412f07b2e9237bbceaee8f1febef3ff655c286
 workflow-type: tm+mt
-source-wordcount: '86'
+source-wordcount: '87'
 ht-degree: 2%
 
 ---
@@ -19,6 +19,7 @@ ht-degree: 2%
 * Sekretessservice-API {#api}
    * [Komma igång](api/getting-started.md)
    * [Sekretessjobb](api/privacy-jobs.md)
+   * [Godkännande](api/consent.md)
    * [Bilaga](api/appendix.md)
 * Sekretessgränssnitt {#ui}
    * [Översikt över användargränssnittet för sekretesstjänsten](ui/overview.md)
