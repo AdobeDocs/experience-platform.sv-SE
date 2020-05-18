@@ -4,9 +4,9 @@ seo-title: Facebook-mål
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 seo-description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 translation-type: tm+mt
-source-git-commit: faaa4eda5174bb8d27a76d767891df15df69e30a
+source-git-commit: 522014f8e5f3de0f553a69763d3a37482953b7c4
 workflow-type: tm+mt
-source-wordcount: '658'
+source-wordcount: '665'
 ht-degree: 0%
 
 ---
@@ -17,6 +17,8 @@ ht-degree: 0%
 ## Översikt {#overview}
 
 Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
+
+![Facebook-mål i CDP-gränssnittet i realtid](/help/rtcdp/destinations/assets/facebook-destination.png)
 
 ## Användningsexempel
 
