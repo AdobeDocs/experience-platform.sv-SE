@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: May 13, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: e6731b54840eaf9dd2cdaeff5205e14277e78a3b
+source-git-commit: d41952e5905d4ebc579a29ad3282a8f732b7c331
 workflow-type: tm+mt
-source-wordcount: '1026'
+source-wordcount: '1075'
 ht-degree: 2%
 
 ---
@@ -55,7 +55,15 @@ Mer information om hur du migrerar dina bärbara datorer och recept till Spark 2
 
 I [Adobes kunddataplattform](../../rtcdp/overview.md)i realtid är destinationer färdigbyggda integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
 
-**Nya destinationer**
+**Facebook**
+
+Adobe CDP har nu stöd för dataaktivering på Facebook i realtid, vilket gör att ni kan aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och undertryckning baserat på hash-kodade e-postmeddelanden.
+
+Mer information om de nya funktionerna finns på [Facebooks målsida](/help/rtcdp/destinations/facebook-destination.md) .
+
+<br> 
+
+**Amazon Kinesis och Azure Event Hubs strömmar molnlagringsmål**
 
 Adobe CDP har nu stöd för dataaktivering i realtid på direktuppspelade molnlagringsdestinationer, vilket gör att du kan exportera målgruppsdata och händelser till dessa destinationer i JSON-format. Du kan sedan beskriva affärslogiken ovanpå dessa händelser på dina destinationer. Mer information finns nedan:
 
