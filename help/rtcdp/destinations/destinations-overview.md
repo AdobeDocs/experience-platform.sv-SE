@@ -4,7 +4,10 @@ seo-title: Destinationsöversikt
 description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från kunddataplattformen i realtid. Ni kan använda Destinationer i Adobes kunddataplattform i realtid för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad annonsering och många andra användningsfall.
 seo-description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från kunddataplattformen i realtid. Ni kan använda Destinationer i Adobes kunddataplattform i realtid för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad annonsering och många andra användningsfall.
 translation-type: tm+mt
-source-git-commit: a1161630c8edae107b784f32ee20af225f9f8c46
+source-git-commit: 49479cd1520bd2407ecd5140265661aefe0817a3
+workflow-type: tm+mt
+source-wordcount: '392'
+ht-degree: 0%
 
 ---
 
@@ -44,3 +47,15 @@ Mer information finns i Översikt över [måltyper och kategorier](/help/rtcdp/d
 Målfunktionerna i CDP i realtid fungerar med åtkomstkontrollsbehörigheterna för Adobe Experience Platform. Beroende på din användares behörighetsnivå kan du visa, hantera och aktivera mål. Information om de enskilda behörigheterna finns i [Åtkomstkontroll i Adobe Experience Platform](../../access-control/home.md) och rulla nedåt på sidan.
 
 Mer information om åtkomstkontroller finns i användarhandboken för [åtkomstkontroll](../../access-control/ui/overview.md).
+
+<!--
+
+// Commenting out DULE in Destinations service
+
+## Destinations and Data Usage Labeling and Enforcement (DULE)
+
+Data Usage Labeling and Enforcement (DULE) is the core mechanism of Adobe Experience Platform Data Governance. DULE is currently *not* enforced in Adobe Real-time CDP destinations.
+
+You are responsible for understanding the limitations and obligations of your data and how you use that data in Experience Platform.
+
+-->
