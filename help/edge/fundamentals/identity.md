@@ -4,9 +4,9 @@ seo-title: Adobe Experience Platform Web SDK Hämta Experience Cloud-ID
 description: Lär dig hur du skaffar Adobe Experience Cloud ID.
 seo-description: Lär dig hur du skaffar Adobe Experience Cloud ID.
 translation-type: tm+mt
-source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+source-git-commit: a9dd5fd93397e57d0876bec334d54c517fa86939
 workflow-type: tm+mt
-source-wordcount: '398'
+source-wordcount: '416'
 ht-degree: 0%
 
 ---
@@ -77,6 +77,14 @@ Nyckeln för objektet är [Identity Namespace](../../identity-service/namespaces
 | Sträng | Ja | ingen |
 
 Detta är det ID som du vill synkronisera för det angivna namnutrymmet.
+
+#### `authenticationState`
+
+| **Typ** | **Obligatoriskt** | **Standardvärde** | **Möjliga värden** |
+| -------- | ------------ | ----------------- | ------------------------------------ |
+| Sträng | Ja | tvetydig | tvetydig, autentiserad och utloggad |
+
+Autentiseringstillståndet för ID:t.
 
 #### `primary`
 
