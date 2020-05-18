@@ -4,7 +4,7 @@ seo-title: Skicka data till Adobe Analytics med Adobe Experience Platform Web SD
 description: Lär dig hur du skickar data till Adobe Analytics med Experience Platform Web SDK
 seo-description: Lär dig hur du skickar data till Adobe Analytics med Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+source-git-commit: 890004b54cb4daf08f188147ed5c97d56e4055fb
 workflow-type: tm+mt
 source-wordcount: '206'
 ht-degree: 0%
@@ -38,16 +38,16 @@ Om du hade ett schema som såg ut så här.
     key2:value2
   },
   array:[
-    v1,
-    v2,
-    v3
+    "v0",
+    "v1",
+    "v2"
   ],
   arrayofobjects:[
     {
-      obj1key:objval1
+      obj1key:objval0
     },
     {
-      obj2key:objval2
+      obj2key:objval1
     }
   ]
 }
@@ -59,11 +59,11 @@ Då är de kontextdatanycklar som är tillgängliga för dig.
 a.x.key //value
 a.x.object.key1 //value1
 a.x.object.key2 //value2
-a.x.array[0] //v1
-a.x.array[1] //v2
-a.x.array[3] //v3
-a.x.arrayofobjects[1].obj1key //objval1
-a.x.arrayofobjects[2].obj2key //objval2
+a.x.array.0 //v0
+a.x.array.1 //v1
+a.x.array.2 //v2
+a.x.arrayofobjects.0.obj1key //objval0
+a.x.arrayofobjects.1.obj2key //objval1
 ```
 
 Här är ett exempel på en bearbetningsregel som skulle använda dessa data.
