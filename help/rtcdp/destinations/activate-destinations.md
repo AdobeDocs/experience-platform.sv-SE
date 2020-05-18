@@ -4,9 +4,9 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobes kunddataplattform i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobes kunddataplattform i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: 7dafdf0dd1ad3af2defab3bf6b784fd37e777062
+source-git-commit: faaa4eda5174bb8d27a76d767891df15df69e30a
 workflow-type: tm+mt
-source-wordcount: '612'
+source-wordcount: '745'
 ht-degree: 0%
 
 ---
@@ -28,9 +28,12 @@ Om du vill aktivera data till mål måste du ha [anslutit ett mål](/help/rtcdp/
 3. Välj **[!UICONTROL Activate]**;
 4. Välj vilka segment som ska skickas till målet på **[!UICONTROL Activate destination]** **[!UICONTROL Select Segments]** sidan i arbetsflödet.
    ![segment-till-mål](/help/rtcdp/destinations/assets/select-segments.png)
-5. *Villkorligt*. Det här steget gäller endast för segment som är mappade till molnlagringsmål och mål för e-postmarknadsföring. <br> På **[!UICONTROL Destination Attributes]** sidan markerar du **[!UICONTROL Add new field]** och väljer de attribut som du vill skicka till målet.
+5. *Villkorligt*. Det här steget skiljer sig åt beroende på vilken typ av mål du aktiverar dina segment på. <br> För *e-postmarknadsföringsmål* och *molnlagringsmål* väljer du de attribut du vill skicka till målet på **[!UICONTROL Select Attributes]** **[!UICONTROL Add new field]** sidan.
 Vi rekommenderar att ett av attributen är en [unik identifierare](/help/rtcdp/destinations/email-marketing-destinations.md#identity) från ditt unionsschema. Mer information om obligatoriska attribut finns i Identitet i artikeln [E-postmarknadsföringsmål](/help/rtcdp/destinations/email-marketing-destinations.md#identity) .
-   ![mål-attribut](/help/rtcdp/destinations/assets/destination-attributes.png)
+   ![target-attributes](/help/rtcdp/destinations/assets/select-attributes-step.png)För mål *för* sociala nätverk väljer du i **[!UICONTROL Identity mapping]** steget källattribut att mappa till målidentiteter.
+   ![identitetsmappning innan fält](/help/rtcdp/destinations/assets/facebook-identity-mapping-1.png)fylls i I exemplet nedan har den personliga e-postadressen i identitetsschemat hashas när den hämtas till Experience Platform för att uppfylla Facebooks [e-posthashkrav](/help/rtcdp/destinations/facebook-destination.md#email-hashing-requirements). Tryck **[!UICONTROL Next]** när du har valt mappningen.
+   ![identitetsmappning efter att fält fyllts i](/help/rtcdp/destinations/assets/facebook-identity-mapping-2.png)
+
 6. På **[!UICONTROL Segment schedule]** sidan kan du se startdatumet för att skicka data till målet samt hur ofta data skickas till målet.
 
    >[!IMPORTANT]
@@ -75,6 +78,10 @@ Kontrollera respektive annonsmål som du aktiverar dina data till. Om aktivering
 
 För Facebook innebär en lyckad aktivering att en anpassad Facebook-målgrupp skapas programmatiskt i [Facebook Ads Manager](https://www.facebook.com/adsmanager/manage/). Segmentmedlemskap i målgruppen skulle läggas till och tas bort eftersom användarna är kvalificerade eller diskvalificerade för de aktiverade segmenten.
 
+>[!TIP]
+>
+>Integrationen mellan Adobe Real-time CDP och Facebook har stöd för historiska efterfyllningar av målgrupper. Alla historiska segmentkvalifikationer skickas till Facebook när du aktiverar segmenten till målet.
+
 ## Inaktivera aktivering {#disable-activation}
 
 Följ stegen nedan för att inaktivera ett befintligt aktiveringsflöde:
@@ -83,3 +90,4 @@ Följ stegen nedan för att inaktivera ett befintligt aktiveringsflöde:
 2. Klicka på **[!UICONTROL Enabled]** kontrollen till höger för att ändra aktiveringsflödets status.
 3. I fönstret **Uppdatera dataflöde** väljer du **Bekräfta** för att inaktivera aktiveringsflödet.
 
+I AWS Kinesis skapar du en åtkomstnyckel - ett hemligt åtkomstnyckelpar som ger Adobe CDP-åtkomst i realtid till ditt AWS Kinesis-konto. Läs mer i dokumentationen [till](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)AWS Kinesis.
