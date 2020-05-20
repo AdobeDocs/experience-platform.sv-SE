@@ -1,9 +1,9 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Hjälp om Adobe Experience Platform Edge Network
+user-guide-title: Hjälp om Adobe Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 5998473c665cb80ffddc092847533f51d81cf581
+source-git-commit: 73e0c245191c88025e59cf226ec5b07a55064b97
 workflow-type: tm+mt
 source-wordcount: '89'
 ht-degree: 4%
@@ -11,9 +11,9 @@ ht-degree: 4%
 ---
 
 
-# Adobe Experience Platform Edge Network {#edge}
+# Adobe Experience Platform Web SDK {#edge}
 
-* [Edge Network - översikt](home.md)
+* [Web SDK - översikt](home.md)
 * Getting started {#get-started}
    * [Snabbstart med Launch](getting-started/quick-start-with-launch.md)
    * [Snabbstart utan Launch](getting-started/quick-start-without-launch.md)
@@ -32,7 +32,7 @@ ht-degree: 4%
 * Vad som ska implementeras {#implement}
    * [Produkter](what-to-implement/commerce.md)
 * Lösningsspecifika överväganden {#solutions}
-   * Analytics {#analytics}
+   * Analyser {#analytics}
       * [Analysöversikt](solution-specific/analytics/analytics-overview.md)
       * [Automatiskt mappade variabler](solution-specific/analytics/automatically-mapped-vars.md)
    * Audience Manager {#aam}
