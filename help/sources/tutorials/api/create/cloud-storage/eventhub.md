@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en Azure Event Hubs-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 1eb6883ec9b78e5d4398bb762bba05a61c0f8308
+source-git-commit: fdffdd34d1ccb61d6c82fecc249ddeb501d79d0e
 workflow-type: tm+mt
-source-wordcount: '572'
+source-wordcount: '590'
 ht-degree: 0%
 
 ---
@@ -38,9 +38,10 @@ För att Flow Service ska kunna ansluta till ditt Azure Event Hubs-konto måste 
 | ---------- | ----------- |
 | `sasKeyName` | Auktoriseringsregelns namn, som också kallas SAS-nyckelnamn. |
 | `sasKey` | Den genererade signaturen för delad åtkomst. |
-| `namespace` | Namnutrymmet för den EventHub som du försöker komma åt. |
+| `namespace` | Namnområdet för de händelsehubbar som du försöker komma åt. |
+| `connectionSpec.id` | Anslutningsspecifikation-ID för Azure Event Hubs: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
 
-Mer information om dessa värden finns i [det här EventHub-dokumentet](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
+Mer information om dessa värden finns i [det här händelsehubbsdokumentet](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
 
 ### Läser exempel-API-anrop
 
@@ -86,10 +87,11 @@ curl -X POST \
         "name": "Azure Event Hubs connection",
         "description": "Connector for Azure Event Hubs",
         "auth": {
-            "specName": "Basic Authentication for EventHub",
+            "specName": "Basic Authentication for Event Hubs",
             "params": {
                 "sasKeyName": "sasKeyName",
-                "sasKey": "sasKey"
+                "sasKey": "sasKey",
+                "namespace": "namespace"
             }
         },
         "connectionSpec": {
@@ -103,6 +105,7 @@ curl -X POST \
 | -------- | ----------- |
 | `auth.params.sasKeyName` | Auktoriseringsregelns namn, som också kallas SAS-nyckelnamn. |
 | `auth.params.sasKey` | Den genererade signaturen för delad åtkomst. |
+| `namespace` | Namnområdet för de händelsehubbar som du försöker komma åt. |
 | `connectionSpec.id` | Anslutningsspecifikation-ID för Azure Event Hubs: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
 
 **Svar**
