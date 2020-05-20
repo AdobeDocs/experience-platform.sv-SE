@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Prenumerera på dataöverföringshändelser
 topic: overview
 translation-type: tm+mt
-source-git-commit: 4817162fe2b7cbf4ae4c1ed325db2af31da5b5d3
+source-git-commit: 1498739d753bdb569e0d3e091e4160bdae40a32f
+workflow-type: tm+mt
+source-wordcount: '825'
+ht-degree: 0%
 
 ---
 
@@ -36,42 +39,54 @@ Nedan visas en lista över tillgängliga statusmeddelanden för dataöverföring
 
 Datainmatningsmeddelandets händelseschema är ett XDM-schema (Experience Data Model) som innehåller fält och värden som ger information om statusen för de data som hämtas. Besök den offentliga XDM GitHub-repon för att se det senaste [meddelandeschemat](https://github.com/adobe/xdm/blob/master/schemas/common/notifications/ingestion.schema.json).
 
-## Prenumerera på statusmeddelanden för datainmatning
+## Prenumerera på statusmeddelanden för dataöverföring
 
-Genom [Adobe I/O Events](https://www.adobe.io/apis/experienceplatform/events.html)kan du prenumerera på flera olika typer av meddelanden via webbhooks. Om du vill veta mer om webbhooks och hur du prenumererar på Adobe I/O Events med hjälp av webbhooks kan du läsa [introduktionen till Adobe I/O Events-webbhooks](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/intro/webhook_docs_intro.md) .
+Genom [Adobe I/O Events](https://www.adobe.io/apis/experienceplatform/events.html)kan du prenumerera på flera olika typer av meddelanden via webbhooks. Avsnitten nedan beskriver stegen för att prenumerera på plattformsmeddelanden för dataöverföringshändelser med Adobe Developer Console.
 
-### Skapa en ny integrering med Adobe I/O Console
+### Skapa ett nytt projekt i Adobe Developer Console
 
-Logga in på [Adobe I/O Console](https://console.adobe.io/home) och klicka på fliken *Integreringar* eller klicka på **Skapa integrering** under Snabbstart. När skärmen *Integrering* visas klickar du på **Ny integrering** för att skapa en ny integrering.
+Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med ditt Adobe ID. Följ sedan stegen som beskrivs i självstudiekursen om hur du [skapar ett tomt projekt](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) i dokumentationen för Adobe Developer Console.
 
-![Skapa ny integrering](../images/quality/subscribe-events/create_integration_start.png)
+### Lägg till Experience Platform-händelser i projektet
 
-Skärmen *Skapa ny integrering* visas. Välj **Ta emot händelser** i realtid och klicka sedan på **Fortsätt**.
+När du har skapat ett nytt projekt går du till projektets översiktsskärm. Klicka här **[!UICONTROL Add event]**.
 
-![Ta emot händelser nära realtid](../images/quality/subscribe-events/create_integration_receive_events.png)
+![](../images/quality/subscribe-events/add-event-button.png)
 
-Nästa skärm innehåller alternativ för att skapa integreringar med olika händelser, produkter och tjänster som är tillgängliga för din organisation baserat på dina prenumerationer, berättiganden och behörigheter. För den här integreringen väljer du **plattformsmeddelanden** under Experience Platform och klickar sedan på **Fortsätt**.
+Dialogrutan _[!UICONTROL Add events]_visas. Klicka **[!UICONTROL Experience Platform]**för att filtrera listan med tillgängliga alternativ och klicka sedan **[!UICONTROL Platform notifications]**innan du klickar **[!UICONTROL Next]**.
 
-![Välj händelseprovider](../images/quality/subscribe-events/create_integration_select_provider.png)
+![](../images/quality/subscribe-events/select-platform-events.png)
 
-Formuläret *Integreringsinformation* visas. Du måste ange ett namn och en beskrivning för integreringen samt certifikat för offentlig nyckel.
+På nästa skärm visas en lista med händelsetyper att prenumerera på. Markera **[!UICONTROL Data ingestion notification]** och klicka sedan på **[!UICONTROL Next]**.
 
-Om du inte har något offentligt certifikat kan du generera ett i terminalen med följande kommando:
+![](../images/quality/subscribe-events/choose-event-subscriptions.png)
 
-```shell
-openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout private.key -out certificate_pub
-```
+Nästa skärm uppmanar dig att skapa en JSON Web Token (JWT). Du kan generera ett nyckelpar automatiskt eller överföra en egen offentlig nyckel som genererats i terminalen.
 
-När du har skapat ett certifikat drar och släpper du filen i rutan **Publika nycklar för certifikat** eller klickar på **Välj en fil** för att bläddra i din filkatalog och välja certifikatet direkt.
+I den här självstudiekursen används det första alternativet. Klicka på alternativrutan för **[!UICONTROL Generate a key pair]** och klicka sedan på **[!UICONTROL Generate keypair]** knappen i det nedre högra hörnet.
 
-När du har lagt till ditt certifikat visas alternativet *Händelseregistrering* . Klicka på **Lägg till händelseregistrering**.
+![](../images/quality/subscribe-events/generate-keypair.png)
 
-![integreringsinformation](../images/quality/subscribe-events/create_integration_details.png)
+När nyckelparet genereras hämtas det automatiskt av webbläsaren. Du måste lagra den här filen själv eftersom den inte sparas i Developer Console.
 
-Dialogrutan *Händelseregistreringsinformation* utökas så att ytterligare kontroller visas. Här kan du välja önskad händelsetyp och registrera din webkrok. Ange ett namn för händelseregistreringen, webkroks-URL *(valfritt)* samt en kort beskrivning. Välj slutligen de händelsetyper som du vill prenumerera på (meddelande om dataöverföring) och klicka sedan på **Spara**.
+På nästa skärm kan du granska informationen om det nya nyckelparet. Klicka **[!UICONTROL Next]** för att fortsätta.
 
-![Välj händelser](../images/quality/subscribe-events/create_integration_select_event.png)
+![](../images/quality/subscribe-events/keypair-generated.png)
+
+Ange ett namn och en beskrivning för händelseregistreringen på nästa skärm. Det bästa sättet är att skapa ett unikt, enkelt identifierbart namn som hjälper till att skilja den här evenemangsregistreringen från andra i samma projekt.
+
+![](../images/quality/subscribe-events/registration-details.png)
+
+På samma skärm kan du välja att konfigurera hur händelser ska tas emot. **[!UICONTROL Webhook]** gör att du kan ange en anpassad webbkrosadress för att ta emot händelser, medan du **[!UICONTROL Runtime action]** kan göra samma sak med [Adobe I/O Runtime](https://www.adobe.io/apis/experienceplatform/runtime/docs.html).
+
+I den här självstudien hoppas det här valfria konfigurationssteget över. När du är klar klickar du **[!UICONTROL Save configured events]** för att slutföra registreringen av evenemanget.
+
+![](../images/quality/subscribe-events/receive-events.png)
+
+Informationssidan för den nyligen skapade händelseregistreringen visas, där du kan granska mottagna händelser, utföra felsökningsspårning och redigera konfigurationen.
+
+![](../images/quality/subscribe-events/registration-complete.png)
 
 ## Nästa steg
 
-När du har skapat en I/O-integrering kan du visa alla mottagna meddelanden för den integreringen. Mer information om hur du spårar händelser finns i [hjälpguiden för Adobe I/O Events](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/support/tracing.md) .
+När du har registrerat plattformsmeddelanden i ditt projekt kan du visa mottagna händelser från projektkontrollpanelen. Mer information om hur du spårar händelser finns i [hjälpguiden för Adobe I/O Events](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/support/tracing.md) .
