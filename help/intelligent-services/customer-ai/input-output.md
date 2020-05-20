@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Indata och utdata för AI
 topic: Getting started
 translation-type: tm+mt
-source-git-commit: 66ccea896846c1da4310c1077e2dc7066a258063
+source-git-commit: 5cab341138e809bae79623bb65e499ac6b955f27
+workflow-type: tm+mt
+source-wordcount: '828'
+ht-degree: 0%
 
 ---
 
@@ -16,6 +19,31 @@ Följande dokument visar de olika in- och utdata som används i kundens AI.
 ## AI-indata för kund
 
 Kunds-AI använder data från kundupplevelsehändelser för att beräkna benägenhetspoängen. Mer information om konsumentupplevelsehändelser finns i [Förbered data för användning i dokumentationen](../data-preparation.md)för intelligenta tjänster.
+
+### Historiska data
+
+Kundens AI kräver historiska data för modellutbildning, men mängden data som krävs baseras på två nyckelelement: resultatfönstret och den berättigade populationen.
+
+Som standard söker AI efter en användare att ha haft aktivitet de senaste 120 dagarna om ingen tillämplig populationsdefinition anges under programkonfigurationen. Förutom den minsta mängd data för kundupplevelsehändelser som krävs, behöver kundens AI även ett minsta antal lyckade händelser baserat på en förutsedd måldefinition. För närvarande behöver kundens AI minst 500 lyckade händelser.
+
+I följande exempel används en enkel formel som hjälper dig att fastställa den minsta mängden data som krävs. Om du har mer än minimikraven är det troligt att modellen ger mer korrekta resultat. Om du har mindre än minimiantalet som krävs kommer modellen att misslyckas eftersom det inte finns tillräckligt med data för modellutbildning.
+
+**Formel**:
+
+Minimilängd på data som krävs = stödberättigande population + resultatfönster
+
+>[!NOTE]
+> 30 är det minsta antal dagar som krävs för en stödberättigad population. Om detta inte anges är standardinställningen 120 dagar.
+
+Exempel :
+
+- Ni vill förutsäga om kunden sannolikt kommer att köpa en klocka inom 30 dagar. Du vill även göra poäng för användare som har viss webbaktivitet de senaste 60 dagarna. I det här fallet är den minsta tillåtna längden på de data som krävs = 60 dagar + 30 dagar. Den stödberättigade populationen är 60 dagar och resultatfönstret är 30 dagar, totalt 90 dagar.
+
+- Du vill förutsäga om användaren sannolikt kommer att köpa en klocka inom de kommande 7 dagarna. I det här fallet är den minsta längden på de data som krävs = 120 dagar + 7 dagar. Den giltiga populationen är som standard 120 dagar och resultatfönstret är 7 dagar, totalt 127 dagar.
+
+- Ni vill förutsäga om kunden sannolikt kommer att köpa en klocka inom de kommande 7 dagarna. Du vill även göra poäng för användare som har viss webbaktivitet de senaste 7 dagarna. I det här fallet är den minsta längden på de data som krävs = 30 dagar + 7 dagar. Den stödberättigade populationen kräver minst 30 dagar och resultatfönstret är 7 dagar, totalt 37 dagar.
+
+Förutom de minsta data som krävs fungerar kundens AI också bäst med aktuella data. I det här fallet gör kundens AI en förutsägelse för framtiden baserat på användarens senaste beteendedata. Med andra ord är det troligt att nyare data ger en mer korrekt förutsägelse.
 
 ## Kundens AI-utdata
 
