@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform Source Connectors - översikt
 topic: overview
 translation-type: tm+mt
-source-git-commit: 1eb6883ec9b78e5d4398bb762bba05a61c0f8308
+source-git-commit: 7c94d7a0aace7525e776f13e2975f91cf2b29e23
 workflow-type: tm+mt
-source-wordcount: '753'
+source-wordcount: '758'
 ht-degree: 0%
 
 ---
@@ -77,6 +77,8 @@ Experience Platform har stöd för inmatning av data från en tredjepartsdatabas
 - [Azure Synapse Analytics-koppling](connectors/databases/synapse-analytics.md)
 - [Azure Table Storage-koppling](connectors/databases/ats.md)
 - [Google BigQuery-koppling](connectors/databases/bigquery.md)
+- [GreenPlum-kontakt](connectors/databases/greenplum.md)
+- [HP Vertica-koppling](connectors/databases/hp-vertica.md)
 - [IBM DB2-anslutning](connectors/databases/ibm-db2.md)
 - [MariaDB-koppling](connectors/databases/mariadb.md)
 - [Microsoft SQL Server-anslutning](connectors/databases/sql-server.md)
