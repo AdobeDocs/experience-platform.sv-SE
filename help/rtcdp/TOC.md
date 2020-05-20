@@ -3,10 +3,10 @@ product: adobe experience platform
 audience: user
 user-guide-title: Hjälp om kunddataplattform i realtid
 translation-type: tm+mt
-source-git-commit: be885faf8c1408f372d2eb6cd8d6a8fa8fc69e14
+source-git-commit: 75581529ede3772606bc18fea683da5d396996c5
 workflow-type: tm+mt
-source-wordcount: '439'
-ht-degree: 1%
+source-wordcount: '440'
+ht-degree: 2%
 
 ---
 
@@ -78,7 +78,7 @@ ht-degree: 1%
          * [Arbetsflöde för att skapa molnlagringsmål](/help/rtcdp/destinations/cloud-storage-destinations-workflow.md)
          * [Amazon Kinesis-mål](/help/rtcdp/destinations/amazon-kinesis-destination.md)
          * [Amazon S3-mål](destinations/amazon-s3-destination.md)
-         * [Azure EventHubs-mål](/help/rtcdp/destinations/azure-event-hubs-destination.md)
+         * [Azure Event Hubs-mål](/help/rtcdp/destinations/azure-event-hubs-destination.md)
          * [SFTP-mål](destinations/sftp-destination.md)
       * Plattformsmål för datahantering {#dmp-destinations}
          * [Översikt över mål för datahanteringsplattformen](destinations/dmp-destinations.md)
