@@ -3,7 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform - hjälp
 translation-type: tm+mt
-source-git-commit: e4da80338dbfbad70dfb3cf7df9fe589e949e788
+source-git-commit: 2c95e34b56b322f7cfb098b27210dd5242128803
+workflow-type: tm+mt
+source-wordcount: '296'
+ht-degree: 4%
 
 ---
 
@@ -25,7 +28,6 @@ source-git-commit: e4da80338dbfbad70dfb3cf7df9fe589e949e788
    * [Beslutstjänst](https://docs.adobe.com/content/help/en/experience-platform/decisioning/home.html)
    * [Mål](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/destinations/destinations-overview.html)
    * [ETL (Extrahera, Omforma, Läs in)](https://docs.adobe.com/content/help/en/experience-platform/etl/home.html)
-   * [Experience Platform Web SDK (beta)](https://docs.adobe.com/content/help/en/experience-platform/edge/home.html)
    * [Identitetstjänst](https://docs.adobe.com/content/help/en/experience-platform/identity/home.html)
    * [Intelligenta tjänster](https://docs.adobe.com/content/help/en/experience-platform/intelligent-services/home.html)
    * [Starta](https://docs.adobe.com/content/help/en/launch/using/overview.html)
@@ -37,6 +39,7 @@ source-git-commit: e4da80338dbfbad70dfb3cf7df9fe589e949e788
    * [Sandlådor](https://docs.adobe.com/content/help/en/experience-platform/sandbox/home.html)
    * [Segmentering](https://docs.adobe.com/content/help/en/experience-platform/segmentation/home.html)
    * [Källor (kopplingar)](https://docs.adobe.com/content/help/en/experience-platform/sources/home.html)
+   * [Web SDK](https://docs.adobe.com/content/help/en/experience-platform/edge/home.html)
    * [XDM (Experience Data Model)](https://docs.adobe.com/content/help/en/experience-platform/xdm/home.html)
 * [Självstudiekurser om Experience Platform](https://docs.adobe.com/content/help/en/experience-platform/tutorials/home.html)
 * [Versionsinformation](https://docs.adobe.com/content/help/en/experience-platform/release-notes/latest.html)
