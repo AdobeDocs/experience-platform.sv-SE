@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Prenumerera på sekretesshändelser
 topic: privacy events
 translation-type: tm+mt
-source-git-commit: e4cd042722e13dafc32b059d75fca2dab828df60
+source-git-commit: ab29c7771122267634dea24582b07f605abd7ed8
+workflow-type: tm+mt
+source-wordcount: '830'
+ht-degree: 0%
 
 ---
 
@@ -26,7 +29,7 @@ Det här dokumentet innehåller steg för hur du konfigurerar en integrering fö
 
 ## Komma igång
 
-I den här självstudiekursen används **ngrok**, en programvaruprodukt som exponerar lokala servrar för det offentliga internet via säkra tunnlar. Installera [blocket](https://ngrok.com/download) innan du startar den här självstudiekursen för att följa med och skapa en webkrok till din lokala dator. Den här guiden kräver även att du har en hämtad GIT-databas som innehåller en enkel server skriven i [Node.js](https://nodejs.org/).
+I den här självstudiekursen används **ngrok**, en programvaruprodukt som exponerar lokala servrar för det offentliga internet via säkra tunnlar. Installera [blocket](https://ngrok.com/download) innan du startar den här självstudiekursen för att följa med och skapa en webkrok till din lokala dator. Den här guiden kräver även att du har en hämtad GIT-databas som innehåller en enkel [Node.js](https://nodejs.org/) -server.
 
 ## Skapa en lokal server
 
@@ -57,71 +60,73 @@ Dessa kommandon installerar alla beroenden och initierar servern. Om du lyckas h
 
 ## Skapa en webkrok med ngrok
 
-I samma katalog och i ett nytt kommandoradsfönster skriver du följande kommando:
+Öppna ett nytt kommandoradsfönster och navigera till den katalog där du installerade kommandot tidigare. Här skriver du följande kommando:
 
 ```shell
-ngrok http -bind-tls=true 3000
+./ngrok http -bind-tls=true 3000
 ```
 
 Ett lyckat resultat ser ut ungefär så här:
 
 ![oskärpeutdata](images/privacy-events/ngrok-output.png)
 
-Anteckna `Forwarding` URL (`https://e142b577.ngrok.io`), eftersom den används för att identifiera din webbkrok i nästa steg.
+Anteckna `Forwarding` URL (`https://212d6cd2.ngrok.io`), eftersom den används för att identifiera din webbkrok i nästa steg.
 
-## Skapa en ny integrering med Adobe I/O Console
+## Skapa ett nytt projekt i Adobe Developer Console
 
-Logga in på [Adobe I/O Console](https://console.adobe.io) och klicka på fliken **Integreringar** . Fönstret _Integrationer_ visas. Klicka på **Ny integrering** härifrån.
+Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med ditt Adobe ID. Följ sedan stegen som beskrivs i självstudiekursen om hur du [skapar ett tomt projekt](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) i dokumentationen för Adobe Developer Console.
 
-![Visa integreringar i Adobe I/O Console](images/privacy-events/integrations.png)
+## Lägg till sekretessaktiviteter i projektet
 
-Fönstret *Skapa en ny integration* visas. Välj **Ta emot händelser** i realtid och klicka sedan på **Fortsätt**.
+När du är klar med att skapa ett nytt projekt i konsolen klickar du **[!UICONTROL Add event]** på skärmen _Projektöversikt_ .
 
-![Skapa ny integrering](images/privacy-events/new-integration.png)
+![](./images/privacy-events/add-event-button.png)
 
-Nästa skärm innehåller alternativ för att skapa integreringar med olika händelser, produkter och tjänster som är tillgängliga för din organisation baserat på dina prenumerationer, berättiganden och behörigheter. För den här integreringen väljer du **Sekretessrelaterade händelser** och klickar sedan på **Fortsätt**.
+Dialogrutan _Lägg till händelser_ visas. Välj **[!UICONTROL Experience Cloud]** om du vill filtrera listan över tillgängliga händelsetyper och markera sedan **[!UICONTROL Privacy Service Events]** innan du klickar **[!UICONTROL Next]**.
 
-![Välj Sekretesshändelser](images/privacy-events/privacy-events.png)
+![](./images/privacy-events/add-privacy-events.png)
 
-Formuläret *Integreringsinformation* visas, där du måste ange ett namn och en beskrivning för integreringen samt ett certifikat för offentlig nyckel.
+Dialogrutan _Konfigurera händelseregistrering_ visas. Välj vilka händelser du vill ta emot genom att markera motsvarande kryssrutor. Händelser som du väljer visas under _[!UICONTROL Subscribed Events]_i den vänstra kolumnen. När du är klar klickar du på&#x200B;**[!UICONTROL Next]**.
 
-![Integrationsinformation](images/privacy-events/integration-details.png)
+![](./images/privacy-events/choose-subscriptions.png)
 
-Om du inte har något offentligt certifikat kan du skapa ett med följande terminalkommando:
+På nästa skärm får du en uppmaning om att ange en offentlig nyckel för händelseregistreringen. Du kan generera ett nyckelpar automatiskt eller överföra en egen offentlig nyckel som genererats i terminalen.
 
-```shell
-openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout private.key -out certificate_pub
-```
+I den här självstudiekursen används det första alternativet. Klicka på alternativrutan för **[!UICONTROL Generate a key pair]** och sedan på **[!UICONTROL Generate keypair]** knappen i det nedre högra hörnet.
 
-När du har skapat ett certifikat drar och släpper du filen i rutan **Publika nycklar för certifikat** , eller klickar på **Välj en fil** för att bläddra i filkatalogen och välja certifikatet direkt.
+![](./images/privacy-events/generate-key-value.png)
 
-När du har lagt till ditt certifikat visas alternativet *Händelseregistrering* . Klicka på **Lägg till händelseregistrering**.
+När nyckelparet genereras hämtas det automatiskt av webbläsaren. Du måste lagra den här filen själv eftersom den inte sparas i Developer Console.
 
-![Lägg till händelseregistrering](images/privacy-events/add-event-registration.png)
+På nästa skärm kan du granska informationen om det nya nyckelparet. Klicka **[!UICONTROL Next]** för att fortsätta.
 
-Dialogrutan utökas och visar ytterligare kontroller. Här kan du välja önskad händelsetyp och registrera din webkrok. Ange ett namn för händelseregistreringen, webkroks-URL:en (den `Forwarding` adress som returnerades när du [skapade webkroken](#create-a-webhook-using-ngrok)) samt en kort beskrivning. Slutligen väljer du de händelsetyper som du vill prenumerera på och klickar sedan på **Spara**.
+![](./images/privacy-events/keypair-generated.png)
 
-![Formulär för händelseregistrering](images/privacy-events/event-registration-form.png)
+Ange ett namn och en beskrivning för händelseregistreringen på nästa skärm. Det bästa sättet är att skapa ett unikt, enkelt identifierbart namn som hjälper till att skilja den här evenemangsregistreringen från andra i samma projekt.
 
-När formuläret för händelseregistrering är ifyllt klickar du på **Skapa integrering** så slutförs I/O-integreringen.
+![](./images/privacy-events/event-details.png)
 
-![Skapa integrering](images/privacy-events/create-integration.png)
+Du kan konfigurera hur du tar emot händelser ytterligare på samma skärm. Markera **[!UICONTROL Webhook]** och ange `Forwarding` URL:en för den webbkrok som du skapade tidigare under _[!UICONTROL Webhook URL]_. Välj sedan önskad leveransstil (en eller flera) innan du klickar på&#x200B;**[!UICONTROL Save configured events]**för att slutföra registreringen av evenemanget.
+
+![](./images/privacy-events/webhook-details.png)
+
+Informationssidan för ditt projekt visas igen, med Sekretesshändelser under _[!UICONTROL Events]_den vänstra navigeringen.
 
 ## Visa händelsedata
 
-När du har skapat dina I/O-integrerings- och sekretessjobb har bearbetats kan du visa alla mottagna meddelanden för den integreringen. Gå till **integreringen på fliken Integrationer** i I/O-konsolen och klicka på **Visa**.
+När du har registrerat sekretessaktiviteter i ditt projekt och sekretessjobben har bearbetats kan du visa alla mottagna meddelanden för den registreringen. På fliken **[!UICONTROL Projects]** i Developer Console väljer du ditt projekt i listan för att öppna sidan _Produktöversikt_ . Välj **[!UICONTROL Privacy Events]** från den vänstra navigeringen.
 
-![Visa integrering](images/privacy-events/view-integration.png)
+![](./images/privacy-events/events-left-nav.png)
 
-Informationssidan för integreringen visas. Klicka på **Händelser** för att visa händelseregistreringar för integreringen. Leta reda på registreringen av sekretesshändelser och klicka på **Visa**.
+Fliken _Registreringsinformation_ visas, där du kan visa mer information om registreringen, redigera konfigurationen eller visa de faktiska händelser som tagits emot sedan du aktiverade din webkrok.
 
-![Visa händelseregistrering](images/privacy-events/view-registration.png)
+![](./images/privacy-events/registration-details.png)
 
-Fönstret *Händelseinformation* visas så att du kan visa mer information om registreringen, redigera dess konfiguration eller visa de faktiska händelser som tagits emot sedan du aktiverade din webkrok. Du kan visa händelseinformation och navigera till alternativet **Felsökningsspårning** .
+Klicka på **[!UICONTROL Debug Tracing]** fliken för att visa en lista över mottagna händelser. Klicka på en händelse i listan för att visa information om den.
 
-![Felsökningsspårning](images/privacy-events/debug-tracing.png)
+![](images/privacy-events/debug-tracing.png)
 
-Avsnittet **Nyttolast** innehåller information om den valda händelsen, inklusive dess händelsetyp (`"com.adobe.platform.gdpr.productcomplete"`) som markeras i exemplet ovan.
+Avsnittet innehåller information om den valda händelsen, inklusive dess händelsetyp ( _[!UICONTROL Payload]_`com.adobe.platform.gdpr.productcomplete`) som markeras i exemplet ovan.
 
 ## Nästa steg
 
