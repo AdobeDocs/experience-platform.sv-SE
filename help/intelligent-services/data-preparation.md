@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Förbered data för användning i intelligenta tjänster
 topic: Intelligent Services
 translation-type: tm+mt
-source-git-commit: 1b367eb65d1e592412d601d089725671e42b7bbd
+source-git-commit: 8e24c7c50d700bc3644ce710f77073e537207a6f
+workflow-type: tm+mt
+source-wordcount: '1445'
+ht-degree: 0%
 
 ---
 
@@ -30,6 +33,8 @@ Ett fullständigt exempel på blandningen finns i den [offentliga XDM-databasen]
 ## Nyckelfält
 
 Avsnitten nedan beskriver de viktigaste fälten i CEE-mixen, som bör användas för att Intelligent Services ska kunna generera användbara insikter, inklusive beskrivningar och länkar till referensdokumentation för ytterligare exempel.
+
+>[!IMPORTANT] Fältet ( `xdm:channel` som förklaras i det första avsnittet nedan) **krävs** för att AI för Attribution ska fungera med dina data, medan AI för kund inte har några obligatoriska fält. Alla andra nyckelfält rekommenderas, men är inte obligatoriska.
 
 ### xdm:kanal
 
@@ -182,7 +187,9 @@ Fullständig information om samtliga obligatoriska underfält för `xdm:productL
 
 ## Mappning och inhämtning av data
 
-När du har fastställt om dina data för marknadsföringshändelser kan mappas till CEE-schemat kan du påbörja processen med att föra in dina data i Intelligent Services. Kontakta Adobes konsulttjänster för att mappa dina data till schemat och importera dem till tjänsten.
+När ni väl har fastställt om era data om marknadsföringshändelser kan mappas till CEE-schemat är nästa steg att avgöra vilka data ni ska hämta till Intelligent Services. Alla historiska data som används i Intelligent Services måste ligga inom den kortaste tidsgränsen på fyra månaders data plus det antal dagar som avses som en uppslagsperiod.
+
+När du har bestämt vilket dataintervall du vill skicka kan du kontakta Adobes konsulttjänster för att mappa dina data till schemat och överföra dem till tjänsten.
 
 Om du har en Adobe Experience Platform-prenumeration och vill mappa och importera data själv följer du stegen som beskrivs i avsnittet nedan.
 
@@ -208,9 +215,81 @@ När du har skapat och sparat schemat kan du skapa en ny datauppsättning som ba
 * [Skapa en datauppsättning i användargränssnittet](../catalog/datasets/user-guide.md#create) (Följ arbetsflödet för att använda ett befintligt schema)
 * [Skapa en datauppsättning i API:t](../catalog/datasets/create.md)
 
-#### Mappa och importera data
+#### Lägg till en primär ID-namnområdestagg i datauppsättningen
+
+Om du hämtar in data från Adobe Audience Manager, Adobe Analytics eller någon annan extern källa måste du lägga till en `primaryIdentityNameSpace` -tagg i datauppsättningen. Detta kan du göra genom att göra en PATCH-begäran till katalogtjänstens API.
+
+Om du importerar data från en lokal CSV-fil kan du gå vidare till nästa avsnitt om [mappning och datainhämtning](#ingest).
+
+Innan du följer med exempelanropet till API:t nedan finns viktig information om obligatoriska huvuden i avsnittet [](../catalog/api/getting-started.md) Komma igång i guiden för katalogutvecklare.
+
+**API-format**
+
+```http
+PATCH /dataSets/{DATASET_ID}
+```
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `{DATASET_ID}` | ID:t för datauppsättningen som du skapade tidigare. |
+
+**Begäran**
+
+Beroende på vilken källa du hämtar data från måste du ange lämpliga `primaryIdentityNamespace` - och `sourceConnectorId` taggvärden i nyttolasten för begäran.
+
+Följande begäran lägger till lämpliga taggvärden för Audience Manager:
+
+```shell
+curl -X PATCH \
+  https://platform.adobe.io/data/foundation/catalog/dataSets/5ba9452f7de80400007fc52a \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+        "tags": {
+          "primaryIdentityNameSpace": ["mcid"],
+          "sourceConnectorId": ["audiencemanager"],
+        }
+      }'
+```
+
+Följande begäran lägger till lämpliga taggvärden för Analytics:
+
+```shell
+curl -X PATCH \
+  https://platform.adobe.io/data/foundation/catalog/dataSets/5ba9452f7de80400007fc52a \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+        "tags": {
+          "primaryIdentityNameSpace": ["aaid"],
+          "sourceConnectorId": ["analytics"],
+        }
+      }'
+```
+
+>[!NOTE] Mer information om hur du arbetar med identitetsnamnutrymmen i plattformen finns i översikten över [identitetsnamnutrymmet](../identity-service/namespaces.md).
+
+**Svar**
+
+Ett lyckat svar returnerar en array som innehåller ID:t för den uppdaterade datauppsättningen. Detta ID ska matcha det som skickas i PATCH-begäran.
+
+```json
+[
+    "@/dataSets/5ba9452f7de80400007fc52a"
+]
+```
+
+#### Mappa och importera data {#ingest}
 
 När du har skapat ett CEE-schema och en datauppsättning kan du börja mappa dina datatabeller till schemat och importera dessa data till plattformen. I självstudiekursen om hur du [mappar en CSV-fil till ett XDM-schema](../ingestion/tutorials/map-a-csv-file.md) finns mer information om hur du gör detta i användargränssnittet. När en datauppsättning har fyllts i kan samma datauppsättning användas för att importera ytterligare datafiler.
+
+Om dina data lagras i ett tredjepartsprogram som stöds kan du även välja att skapa en [källanslutning](../sources/home.md) för att importera dina marknadsföringshändelsedata till plattformen i realtid.
 
 ## Nästa steg {#next-steps}
 
