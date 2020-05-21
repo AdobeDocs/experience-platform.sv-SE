@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Audience Manager-koppling
 topic: overview
 translation-type: tm+mt
-source-git-commit: 75c446aed75100bd2b5b4a3d365c090cb01dcc69
+source-git-commit: fb4ffa2c95365905f5417586fa7ecf88523009a0
+workflow-type: tm+mt
+source-wordcount: '742'
+ht-degree: 0%
 
 ---
 
@@ -51,7 +54,7 @@ Mer information finns i dokumentationen för mappningsfält [för](./mapping/aud
 
 Datauppsättningar är en lagrings- och hanteringskonstruktion för en samling data, vanligtvis en tabell, som innehåller schema (kolumner) och fält (rader) och som görs tillgängliga via en dataanslutning. Audience Manager-data består av Realtime-data, inkommande data och profildata. Om du vill hitta dina Audience Manager-datauppsättningar använder du sökfunktionen i gränssnittet med de namnkonventioner som anges för varje datatyp.
 
-Även om användare kan inaktivera datauppsättningar rekommenderar vi inte att du inaktiverar datauppsättningar som ska användas för segmentmedlemskap i profilen.
+Audience Manager-datauppsättningar är inaktiverade som standard för profiler, och användarna kan aktivera eller inaktivera datauppsättningar baserat på användningsfall. Vi rekommenderar inte att du inaktiverar datauppsättningar som ska användas för segmentmedlemskap i profilen.
 
 | Namn på datauppsättning | Beskrivning |
 | ------------ | ----------- |
@@ -66,7 +69,7 @@ Datauppsättningar är en lagrings- och hanteringskonstruktion för en samling d
 
 ### Anslutningar
 
-Adobe Audience Manager skapar en anslutning i katalogen: Audience **Manager Connection**. Katalog är det system som används för att registrera dataplatser och datalänkning inom Adobe Experience Platform. En anslutning är ett katalogobjekt som är en kundspecifik instans av Connectors. Mer information om kataloger, anslutningar och anslutningar finns i översikten [för](../../../catalog/home.md) katalogtjänsten.
+Adobe Audience Manager skapar en anslutning i katalogen: **Audience Manager Connection**. Katalog är det system som används för att registrera dataplatser och datalänkning inom Adobe Experience Platform. En anslutning är ett katalogobjekt som är en kundspecifik instans av Connectors. Mer information om kataloger, anslutningar och anslutningar finns i översikten [för](../../../catalog/home.md) katalogtjänsten.
 
 ## Vilken fördröjning förväntas för Audience Manager-data på plattformen?
 
