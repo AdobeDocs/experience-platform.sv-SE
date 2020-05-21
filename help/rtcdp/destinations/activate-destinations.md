@@ -4,9 +4,9 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobes kunddataplattform i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobes kunddataplattform i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: faaa4eda5174bb8d27a76d767891df15df69e30a
+source-git-commit: 237ca5fc950b46ae4718850ab1360cdf52b8b112
 workflow-type: tm+mt
-source-wordcount: '745'
+source-wordcount: '860'
 ht-degree: 0%
 
 ---
@@ -30,9 +30,26 @@ Om du vill aktivera data till mål måste du ha [anslutit ett mål](/help/rtcdp/
    ![segment-till-mål](/help/rtcdp/destinations/assets/select-segments.png)
 5. *Villkorligt*. Det här steget skiljer sig åt beroende på vilken typ av mål du aktiverar dina segment på. <br> För *e-postmarknadsföringsmål* och *molnlagringsmål* väljer du de attribut du vill skicka till målet på **[!UICONTROL Select Attributes]** **[!UICONTROL Add new field]** sidan.
 Vi rekommenderar att ett av attributen är en [unik identifierare](/help/rtcdp/destinations/email-marketing-destinations.md#identity) från ditt unionsschema. Mer information om obligatoriska attribut finns i Identitet i artikeln [E-postmarknadsföringsmål](/help/rtcdp/destinations/email-marketing-destinations.md#identity) .
-   ![target-attributes](/help/rtcdp/destinations/assets/select-attributes-step.png)För mål *för* sociala nätverk väljer du i **[!UICONTROL Identity mapping]** steget källattribut att mappa till målidentiteter.
-   ![identitetsmappning innan fält](/help/rtcdp/destinations/assets/facebook-identity-mapping-1.png)fylls i I exemplet nedan har den personliga e-postadressen i identitetsschemat hashas när den hämtas till Experience Platform för att uppfylla Facebooks [e-posthashkrav](/help/rtcdp/destinations/facebook-destination.md#email-hashing-requirements). Tryck **[!UICONTROL Next]** när du har valt mappningen.
-   ![identitetsmappning efter att fält fyllts i](/help/rtcdp/destinations/assets/facebook-identity-mapping-2.png)
+   ![mål-attribut](/help/rtcdp/destinations/assets/select-attributes-step.png)
+
+   <br> 
+
+   För *sociala mål* kan du i **[!UICONTROL Identity mapping]** steget välja källattribut att mappa som målidentiteter i målet. Det här steget är antingen valfritt eller obligatoriskt, beroende på vilken primär identitet du använder i schemat. <br> 
+
+   *E-postadress som primär identitet*: Om du använder e-postadress som primär identitet i ditt schema kan du hoppa över steget Identitetsmappning, vilket visas nedan:
+
+   ![E-postadress som identitet](/help/rtcdp/destinations/assets/email-as-identity.gif)
+
+   <br> 
+
+   *Ett annat ID som primär identitet*: Om du använder ett annat ID, till exempel *Rewards ID* eller *Loyalty ID*, som primär identitet i ditt schema, måste du manuellt mappa e-postadressen från ditt identitetsschema som en målidentitet i det sociala målet, vilket visas nedan:
+
+   ![Förmåns-ID som identitet](/help/rtcdp/destinations/assets/rewardsid-as-identity.gif)
+
+
+   Välj `Email_LC_SHA256` som målidentitet om du har hashas i kundens e-postadresser vid dataöverföring till Adobe Experience Platform, enligt Facebooks [e-posthashkrav](/help/rtcdp/destinations/facebook-destination.md#email-hashing-requirements). <br> Välj `Email` som målidentitet om e-postadresserna du använder inte är hashas. Adobe CDP i realtid hash-kodar e-postadresserna så att de uppfyller Facebooks krav.
+
+   ![identitetsmappning efter att fält fyllts i](/help/rtcdp/destinations/assets/identity-mapping.png)
 
 6. På **[!UICONTROL Segment schedule]** sidan kan du se startdatumet för att skicka data till målet samt hur ofta data skickas till målet.
 
