@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Exportera data med API:er
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 409d98818888f2758258441ea2d993ced48caf9a
+source-git-commit: d0b9223aebca0dc510a7457e5a5c65ac4a567933
+workflow-type: tm+mt
+source-wordcount: '1953'
+ht-degree: 0%
 
 ---
 
@@ -26,7 +29,7 @@ Den här självstudiekursen kräver en fungerande förståelse för de olika Ado
 
 ### Obligatoriska rubriker
 
-I den här självstudiekursen måste du också ha slutfört [autentiseringssjälvstudiekursen](../../tutorials/authentication.md) för att kunna anropa plattforms-API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+Den här självstudien kräver också att du har slutfört [autentiseringssjälvstudiekursen](../../tutorials/authentication.md) för att kunna ringa anrop till plattforms-API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
@@ -169,6 +172,9 @@ curl -X POST \
     },
     "schema": {
       "name": "_xdm.context.profile"
+    },
+    "evaluationInfo": {
+        "segmentation": true
     }
   }'
 ```
@@ -180,15 +186,16 @@ curl -X POST \
 | `mergePolicy.id` | ID för sammanfogningsprincipen. |
 | `mergePolicy.version` | Den specifika versionen av sammanfogningsprincipen som ska användas. Om du utelämnar det här värdet används den senaste versionen som standard. |
 | `filter` | *(Valfritt)* Anger ett eller flera av följande filter som ska användas på segmentet före export. |
-| `filter.segments` | *(Valfritt)* Anger vilka segment som ska exporteras. Om du utelämnar det här värdet exporteras alla data från alla profiler. Accepterar en array med segmentobjekt, där vart och ett innehåller följande fält:<ul><li>`segmentId`: **(Obligatoriskt om du använder`segments`)** Segment-ID för profiler som ska exporteras.</li><li>`segmentNs` *(Valfritt)* Segmentnamnutrymme för angiven `segmentID`.</li><li>`status` *(Valfritt)* En array med strängar som tillhandahåller ett statusfilter för `segmentID`. Som standard `status` har det värde `["realized", "existing"]` som representerar alla profiler som faller inom segmentet vid den aktuella tidpunkten. Möjliga värden är: `"realized"`, `"existing"`och `"exited"`.</br></br>Mer information finns i självstudiekursen [Skapa segment](./create-a-segment.md).</li></ul> |
+| `filter.segments` | *(Valfritt)* Anger vilka segment som ska exporteras. Om du utelämnar det här värdet exporteras alla data från alla profiler. Accepterar en array med segmentobjekt, där vart och ett innehåller följande fält:<ul><li>`segmentId`: **(Krävs om du använder`segments`)** Segment-ID för profiler som ska exporteras.</li><li>`segmentNs` *(Valfritt)* Segmentnamnutrymme för angiven `segmentID`.</li><li>`status` *(Valfritt)* En array med strängar som tillhandahåller ett statusfilter för `segmentID`. Som standard `status` har det värde `["realized", "existing"]` som representerar alla profiler som faller inom segmentet vid den aktuella tidpunkten. Möjliga värden är: `"realized"`, `"existing"`och `"exited"`.</br></br>Mer information finns i självstudiekursen [Skapa segment](./create-a-segment.md).</li></ul> |
 | `filter.segmentQualificationTime` | *(Valfritt)* Filtrera baserat på segmentets kvalificeringstid. Starttid och/eller sluttid kan anges. |
 | `filter.segmentQualificationTime.startTime` | *(Valfritt)* Starttid för segmentkvalificering för ett segment-ID för en viss status. Det anges inte, det kommer inte att finnas något filter på starttiden för ett segment-ID-kvalificering. Tidsstämpeln måste anges i [RFC 339](https://tools.ietf.org/html/rfc3339) -format. |
 | `filter.segmentQualificationTime.endTime` | *(Valfritt)* Sluttid för segmentkvalificering för ett segment-ID för en viss status. Det anges inte, det kommer inte att finnas något filter på sluttiden för ett segment-ID-kvalificering. Tidsstämpeln måste anges i [RFC 339](https://tools.ietf.org/html/rfc3339) -format. |
 | `filter.fromIngestTimestamp ` | *(Valfritt)* Begränsar exporterade profiler till att endast omfatta de som har uppdaterats efter den här tidsstämpeln. Tidsstämpeln måste anges i [RFC 339](https://tools.ietf.org/html/rfc3339) -format. <ul><li>`fromIngestTimestamp` för **profiler**, om sådana finns: Inkluderar alla sammanfogade profiler där den sammanfogade, uppdaterade tidsstämpeln är större än den angivna tidsstämpeln. Stöder `greater_than` operand.</li><li>`fromTimestamp` for **events**: Alla händelser som har importerats efter den här tidsstämpeln exporteras, vilket motsvarar det resulterande profilresultatet. Detta är inte själva händelseläget utan själva intagningstiden för händelserna.</li> |
 | `filter.emptyProfiles` | *(Valfritt)* Boolean. Profiler kan innehålla profilposter, ExperienceEvent-poster eller båda. Profiler utan profilposter och bara ExperienceEvent-poster kallas&quot;emptyProfiles&quot;. Om du vill exportera alla profiler i profilarkivet, inklusive &quot;emptyProfiles&quot;, anger du värdet för `emptyProfiles` till `true`. Om `emptyProfiles` är inställt på `false`exporteras bara profiler med profilposter i butiken. Som standard exporteras bara profiler som innehåller profilposter om attributet inte ingår `emptyProfiles` . |
 | `additionalFields.eventList` | *(Valfritt)* Styr tidsseriens händelsefält som exporteras för underordnade eller associerade objekt genom att ange en eller flera av följande inställningar:<ul><li>`eventList.fields`: Styr fälten som ska exporteras.</li><li>`eventList.filter`: Anger villkor som begränsar resultaten från associerade objekt. Förväntar ett minimivärde som krävs för export, vanligtvis ett datum.</li><li>`eventList.filter.fromIngestTimestamp`: Filtrerar händelser för tidsserier till händelser som har importerats efter den angivna tidsstämpeln. Detta är inte själva händelseläget utan själva intagningstiden för händelserna.</li></ul> |
-| `destination` | **(Obligatoriskt)** Målinformation för exporterade data:<ul><li>`destination.datasetId`: **(Obligatoriskt)** ID:t för datauppsättningen där data ska exporteras.</li><li>`destination.segmentPerBatch`: *(Valfritt)* Ett booleskt värde som, om det inte anges, är `false`. Värdet för `false` exporterar alla segment-ID:n till ett enda batch-ID. Värdet för `true` exporterar ett segment-ID till ett batch-ID. Observera att om du anger värdet som ska `true` påverkas batchexportens prestanda.</li></ul> |
+| `destination` | **(Obligatoriskt)** Målinformation för exporterade data:<ul><li>`destination.datasetId`: **(Obligatoriskt)** ID:t för datauppsättningen där data ska exporteras.</li><li>`destination.segmentPerBatch`: *(Valfritt)* Ett booleskt värde som, om det inte anges, är som standard `false`. Värdet för `false` exporterar alla segment-ID:n till ett enda batch-ID. Värdet för `true` exporterar ett segment-ID till ett batch-ID. Observera att om du anger värdet som ska `true` påverkas batchexportens prestanda.</li></ul> |
 | `schema.name` | **(Obligatoriskt)** Namnet på schemat som är associerat med datauppsättningen där data ska exporteras. |
+| `evaluationInfo.segmentation` | *(Valfritt)* Ett booleskt värde som, om det inte anges, är som standard `false`. Värdet är `true` att segmentering måste göras i exportjobbet. |
 
 >[!NOTE] Om du bara vill exportera profildata, och inte inkludera relaterade ExperienceEvent-data, tar du bort objektet&quot;additionalFields&quot; från begäran.
 
