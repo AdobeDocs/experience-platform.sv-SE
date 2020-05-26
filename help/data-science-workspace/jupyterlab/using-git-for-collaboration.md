@@ -1,0 +1,58 @@
+---
+keywords: Experience Platform;JupyterLab;notebooks;Data Science Workspace;popular topics;Git;Github
+solution: Experience Platform
+title: Samarbeta i JupyterLab med Git
+topic: Tutorial
+translation-type: tm+mt
+source-git-commit: 0134c21bc35c0cb1bde7f0201a33517a81addae3
+workflow-type: tm+mt
+source-wordcount: '273'
+ht-degree: 0%
+
+---
+
+
+# Samarbeta i JupyterLab med Git
+
+Git är ett distribuerat versionshanteringssystem för att spåra ändringar i källkoden under programvaruutvecklingen. Git är förinstallerat i JupyterLab-miljön för Data Science Workspace.
+
+## Förutsättningar
+
+>[!NOTE]
+> Den Git-server du tänker använda måste vara tillgänglig via Internet.
+
+JupyterLab-miljön för Data Science Workspace är en värdmiljö som inte används i företagets brandvägg och därför måste den Git-server du ansluter till vara tillgänglig från det offentliga Internet. Detta kan vara en offentlig eller privat databas på [GitHub](https://github.com/) eller en annan instans av en Git-server som du har valt att vara värd för själv.
+
+## Ansluta Git till JupyterLab-miljön för datavetenskapen
+
+Börja med att starta Adobe Experience Platform och navigera till [JupyterLabs-miljön för bärbara](https://platform.adobe.com/notebooks/jupyterLab) datorer.
+
+I JupyterLab väljer du **[!UICONTROL File]** hovra över **[!UICONTROL New]**. Välj i listrutan som visas **[!UICONTROL Terminal]**.
+
+![JupyterLab Nav](../images/jupyterlab/tutorials/open-terminal.png)
+
+Gå sedan till arbetsytan i *Terminal* med följande kommando: `cd my-workspace`.
+
+![arbetsyta för cd](../images/jupyterlab/tutorials/find-workspace.png)
+
+>[!TIP]
+> Om du vill visa en lista med tillgängliga Git-kommandon skickar du kommandot: `git -help` i terminalen.
+
+Sedan klonar du den databas du vill använda med hjälp av `git clone` kommandot. Klona projektet med en `https://` URL i stället för `ssh://`.
+
+**Exempel**:
+
+`git clone https://github.com/adobe/experience-platform-dsw-reference.git`
+
+![klona](../images/jupyterlab/tutorials/git-collaboration.png)
+
+>[!NOTE]
+> För att kunna utföra skrivåtgärder (till exempel`git push` ) måste följande konfigurationskommandon köras för varje ny session. Observera också att eventuella push-kommandon kräver ett användarnamn och lösenord.
+>
+>`git config --global user.email "you@example.com"`
+>
+>`git config --global user.name "Your Name"`
+
+## Nästa steg
+
+När du är klar med kloningen av din databas kan du använda Git på samma sätt som du brukar göra på din lokala dator för att samarbeta med andra på bärbara datorer. Mer information om vad du kan göra i JupyterLab finns i användarhandboken för [JupyterLab](./overview.md).
