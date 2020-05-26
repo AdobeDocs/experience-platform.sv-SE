@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Hjälp om Adobe Experience Platform Data Science Workspace
 translation-type: tm+mt
-source-git-commit: 8f9454730e3bab451ac75070fcd1623698df9196
+source-git-commit: 8a613237d3d835039185954e580d3c86a5e465ae
 workflow-type: tm+mt
-source-wordcount: '210'
+source-wordcount: '215'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,7 @@ ht-degree: 0%
    * [Analysera dina data med bärbara datorer](jupyterlab/analyze-your-data.md)
    * [Frågetjänst i anteckningsbok för Jupyter](jupyterlab/query-service.md)
    * [Skapa ett recept med Jupyter-anteckningsböcker](jupyterlab/create-a-recipe.md)
+   * [Samarbeta i JupyterLab med Git](jupyterlab/using-git-for-collaboration.md)
 * API för Sensei Machine Learning {#api}
    * [Komma igång](api/getting-started.md)
    * [Motorer](api/engines.md)
