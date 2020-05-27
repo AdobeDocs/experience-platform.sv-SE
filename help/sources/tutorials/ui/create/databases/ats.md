@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en Azure Table Storage-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 2162c66b1664ecaaf0b609fe3f7ccf58c4a5d31d
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
-source-wordcount: '524'
+source-wordcount: '539'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ För att få tillgång till ditt ATS-konto på Platform måste du ange följande
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `connectionString` | En anslutningssträng som ska anslutas till din Azure Table Storage-instans. |
+| `connectionString` | En anslutningssträng som ska anslutas till din Azure Table Storage-instans. Anslutningssträngen som ska anslutas till ATS-instansen. Anslutningssträngsmönstret för ATS är `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`. |
 
 Mer information om hur du kommer igång finns i [det här Azure Table Storage-dokumentet](https://docs.microsoft.com/en-us/azure/storage/common/storage-introduction).
 
