@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa en GreenPlum-källkoppling i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: a015d2612bc5a72004e15dc5706c7718617a0af4
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
 source-wordcount: '483'
 ht-degree: 0%
@@ -36,7 +36,7 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `connectionString` | Anslutningssträngen som används för att ansluta till din GreenPlum-instans. Anslutningssträngsmönstret för GreenPlum är `HOST=<server>;PORT=<port>;DB=<database>;UID=<user name>;PWD=<password>` |
+| `connectionString` | Anslutningssträngen som används för att ansluta till din GreenPlum-instans. Anslutningssträngsmönstret för GreenPlum är `Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}` |
 
 Mer information om hur du kommer igång finns i [det här GreenPlum-dokumentet](https://gpdb.docs.pivotal.io/580/security-guide/topics/Authenticate.html#topic_fzv_wb2_jr__config_ssl_client_conn).
 
