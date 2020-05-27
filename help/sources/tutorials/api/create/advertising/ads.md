@@ -1,19 +1,22 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Skapa en Google Ads-koppling med API:t för Flow Service
+title: Skapa en Google AdWords-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 950fa88ed6c9235bff98658763b662113bb76caa
+source-git-commit: 00f785577999d2ec3147a3cc2b8edd1028be2471
+workflow-type: tm+mt
+source-wordcount: '647'
+ht-degree: 0%
 
 ---
 
 
-# Skapa en Google Ads-koppling med API:t för Flow Service
+# Skapa en Google AdWords-koppling med API:t för Flow Service
 
 Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till Google Ads.
+I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till Google AdWords.
 
 ## Komma igång
 
@@ -26,18 +29,18 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att Flow Service ska kunna ansluta till annonser måste du ange värden för följande anslutningsegenskaper:
+För att Flow Service ska kunna ansluta till AdWords måste du ange värden för följande anslutningsegenskaper:
 
 | **Autentiseringsuppgifter** | **Beskrivning** |
 | -------------- | --------------- |
-| Kund-ID | Kundens ID för annonskontot. |
+| Kund-ID | Kund-ID för AdWords-kontot. |
 | Utvecklartoken | Utvecklartoken som är associerad med hanterarkontot. |
-| Uppdatera token | Uppdateringstoken som hämtats från Google för att auktorisera åtkomst till annonser. |
+| Uppdatera token | Uppdateringstoken som hämtats från Google för auktorisering av åtkomst till AdWords. |
 | Klient-ID | Klient-ID för Google-programmet som används för att hämta uppdateringstoken. |
 | Klienthemlighet | Klienthemligheten för Google-programmet som används för att hämta uppdateringstoken. |
-| ID för anslutningsspecifikation | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikations-ID för Google Ads är: `d771e9c1-4f26-40dc-8617-ce58c4b53702` |
+| ID för anslutningsspecifikation | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikations-ID för Google AdWords är: `d771e9c1-4f26-40dc-8617-ce58c4b53702` |
 
-Mer information om dessa värden finns i det här [Google Ads-dokumentet](https://developers.google.com/adwords/api/docs/guides/authentication).
+Mer information om dessa värden finns i det här [Google AdWords-dokumentet](https://developers.google.com/adwords/api/docs/guides/authentication).
 
 ### Läser exempel-API-anrop
 
@@ -61,7 +64,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Skapa en anslutning
 
-En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per Google Ads-konto eftersom det kan användas för att skapa flera källanslutningar för att hämta olika data.
+En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per Google AdWords-konto eftersom det kan användas för att skapa flera källanslutningar för att hämta olika data.
 
 **API-format**
 
@@ -71,7 +74,7 @@ POST /connections
 
 **Begäran**
 
-För att skapa en Google Ads-anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POST-begäran. Anslutningsspecifikations-ID för Google Ads är `221c7626-58f6-4eec-8ee2-042b0226f03b`.
+För att skapa en Google AdWords-anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POST-begäran. Anslutningsspecifikations-ID för Google AdWords är `221c7626-58f6-4eec-8ee2-042b0226f03b`.
 
 ```shell
 curl -X POST \
@@ -82,8 +85,8 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "google-ads connection",
-        "description": "Connection for google-ads",
+        "name": "google-AdWords connection",
+        "description": "Connection for google-AdWords",
         "auth": {
             "specName": "Basic Authentication",
             "params": {
@@ -104,12 +107,12 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `auth.params.clientCustomerID` | Kund-ID för ditt Ads-konto. |
-| `auth.params.developerToken` | Utvecklartoken för ditt Ads-konto. |
-| `auth.params.refreshToken` | Uppdateringstoken för ditt Ads-konto. |
-| `auth.params.clientID` | Klient-ID för ditt Ads-konto. |
-| `auth.params.clientSecret` | Klienthemligheten för ditt Ads-konto. |
-| `connectionSpec.id` | Anslutningsspecifikation-ID för Google Ads: `d771e9c1-4f26-40dc-8617-ce58c4b53702`. |
+| `auth.params.clientCustomerID` | Klientens kund-ID för ditt AdWords-konto. |
+| `auth.params.developerToken` | Utvecklartoken för ditt AdWords-konto. |
+| `auth.params.refreshToken` | Uppdateringstoken för ditt AdWords-konto. |
+| `auth.params.clientID` | Klient-ID för ditt AdWords-konto. |
+| `auth.params.clientSecret` | Klienthemligheten för ditt AdWords-konto. |
+| `connectionSpec.id` | Google AdWords anslutningsspecifikations-ID: `d771e9c1-4f26-40dc-8617-ce58c4b53702`. |
 
 **Svar**
 
@@ -124,4 +127,4 @@ Ett godkänt svar returnerar information om den nya anslutningen, inklusive dess
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en Google Ads-anslutning med API:t för Flow Service och fått anslutningens unika ID-värde. Du kan använda detta ID i nästa självstudiekurs när du lär dig hur du [utforskar annonssystem med API:t](../../explore/advertising.md)för Flow Service.
+I den här självstudiekursen har du skapat en Google AdWords-anslutning med API:t för Flow Service och fått anslutningens unika ID-värde. Du kan använda detta ID i nästa självstudiekurs när du lär dig hur du [utforskar annonssystem med API:t](../../explore/advertising.md)för Flow Service.
