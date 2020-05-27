@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en Azure Blob- eller Amazon S3-källanslutning i gränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 799445eca080175e2bffc49c6714f0c812b9bbea
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
-source-wordcount: '558'
+source-wordcount: '591'
 ht-degree: 0%
 
 ---
@@ -37,9 +37,22 @@ Experience Platform har stöd för följande filformat som kan importeras från 
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till ditt blobblagringsutrymme på plattformen måste du ange en giltig anslutningssträng **för** Azure Storage. Du kan lära dig mer om anslutningssträngar, bland annat hur du hämtar dem via <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string" target="_blank">det här Microsoft Azure-dokumentet</a>.
+För att få åtkomst till ditt blobblagringsutrymme på plattformen måste du ange ett giltigt värde för följande autentiseringsuppgifter:
 
-På samma sätt måste du ange **S3 Access Key** och **S3 Secret Key** för att få åtkomst till din S3-bucket på Platform. Mer information finns i <a href="https://aws.amazon.com/blogs/security/wheres-my-secret-access-key/" target="_blank">det här AWS-dokumentet</a>.
+| Autentiseringsuppgifter | Beskrivning |
+| ---------- | ----------- |
+| `connectionString` | Anslutningssträngen som krävs för att komma åt data i blobblagringen. Blobanslutningssträngsmönstret är: `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`. |
+
+Mer information om hur du kommer igång finns i [det här Azure Blob-dokumentet](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string).
+
+Du måste på samma sätt ange giltiga värden för följande autentiseringsuppgifter för att få åtkomst till din S3-bucket på Platform:
+
+| Autentiseringsuppgifter | Beskrivning |
+| ---------- | ----------- |
+| `s3AccessKey` | Åtkomstnyckel-ID för din S3-lagring. |
+| `s3SecretKey` | Det hemliga nyckel-ID:t för din S3-lagring. |
+
+Mer information om hur du kommer igång finns i [det här AWS-dokumentet](https://aws.amazon.com/blogs/security/wheres-my-secret-access-key/).
 
 ## Anslut ditt Blob- eller S3-konto
 
