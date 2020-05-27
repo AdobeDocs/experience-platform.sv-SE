@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa en HP Vertica-källkoppling i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: a015d2612bc5a72004e15dc5706c7718617a0af4
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
 source-wordcount: '495'
 ht-degree: 0%
@@ -36,7 +36,7 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `connectionString` | Anslutningssträngen som används för att ansluta till HP Vertica-instansen. Anslutningssträngsmönstret för HP Vertica är `Server=<server>;Port=<port>;Database=<database>;UID=<user name>;PWD=<password>` |
+| `connectionString` | Anslutningssträngen som används för att ansluta till HP Vertica-instansen. Anslutningssträngsmönstret för HP Vertica är `Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}` |
 
 Mer information om hur du kommer igång finns i [det här HP Vertica-dokumentet](https://www.vertica.com/docs/9.2.x/HTML/Content/Authoring/ConnectingToVertica/ClientJDBC/CreatingAndConfiguringAConnection.htm).
 
