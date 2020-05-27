@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användarhandbok för Machine Learning-anteckningsbok i realtid
 topic: Training and scoring a ML model
 translation-type: tm+mt
-source-git-commit: dc63ad0c0764355aed267eccd1bcc4965b04dba4
+source-git-commit: 695eba3885dc319a9b7f73eb710b2ada0b17d24d
 workflow-type: tm+mt
-source-wordcount: '1561'
+source-wordcount: '1650'
 ht-degree: 0%
 
 ---
@@ -82,6 +82,8 @@ Börja med att läsa in dina utbildningsdata.
 >[!NOTE]
 >I **realtids-ML** -mallen hämtas CSV-data [för](https://github.com/adobe/experience-platform-dsw-reference/tree/master/datasets/insurance) bilförsäkring från Github.
 
+![Läs in inläsningsdata](../images/rtml/load_training.png)
+
 Om du vill använda en datauppsättning från Adobe Experience Platform avkommenterar du cellen nedan. Därefter måste du ersätta `DATASET_ID` med rätt värde.
 
 ![rtml datamängd](../images/rtml/rtml-dataset.png)
@@ -114,7 +116,7 @@ Med hjälp av *realtids-ML* -mallen måste du analysera, förbearbeta, utbilda o
 XML *-mallarna i* realtid för *dataomvandlingar* måste ändras för att fungera med din egen datauppsättning. Vanligtvis innebär detta att byta namn på kolumner, datasammanslagning och datainsamling/funktionsteknik.
 
 >[!NOTE]
->Följande exempel har konverterats för läsbarhetsändamål med `[ ... ]`. Visa XML-mallen för *realtid* för hela kodcellen.
+>Följande exempel har konverterats för läsbarhetsändamål med `[ ... ]`. Visa och expandera avsnittet om dataomvandlingar i *realtid av ML* -mallar för hela kodcellen.
 
 ```python
 df1.rename(columns = {config_properties['ten_id']+'.identification.ecid' : 'ecid',
@@ -189,7 +191,7 @@ cat_cols = ['age_bucket', 'gender', 'city', 'dayofweek', 'country', 'carbrand', 
 df_final = pd.get_dummies(df_final, columns = cat_cols)
 ```
 
-Kör den angivna cellen för att se ett exempelresultat. Utdatatabellen som returneras från `carinsurancedataset.csv` datauppsättningen returnerar de definierade ändringarna.
+Kör den angivna cellen för att se ett exempelresultat. Utdatatabellen som returneras från datauppsättningen returnerar de ändringar som du har definierat. `carinsurancedataset.csv`
 
 ![Exempel på dataomvandlingar](../images/rtml/table-return.png)
 
@@ -237,18 +239,23 @@ import skl2onnx, subprocess
 model.generate_onnx_resources()
 ```
 
+>[!NOTE]
+>Ändra `model_path` strängvärdet (`model.onnx`) för att ändra namnet på modellen.
+
 ```python
 model_path = "model.onnx"
+```
 
+>[!NOTE]
+>Följande cell är inte redigerbar eller borttagbar och krävs för att Machine Learning-programmet i realtid ska fungera.
+
+```python
 model = ModelUpload(params={'model_path': model_path})
 msg_model = model.process(None, 1)
 model_id = msg_model.model['model_id']
  
 print("Model ID : ", model_id)
 ```
-
->[!NOTE]
->Ändra strängvärdet så att det `model_path` namnger modellen.
 
 ![ONNX-modell](../images/rtml/onnx-model-rail.png)
 
@@ -272,7 +279,7 @@ I det här avsnittet beskrivs hur du skapar en DSL. Du kommer att skapa noderna 
 ### Skapa noder
 
 >[!NOTE]
-> Det är troligt att du har flera noder baserat på vilken typ av data som används. I följande exempel visas bara en enda nod i *realtids-ML* -mallen. Visa XML-mallen för *realtid* för hela kodcellen.
+> Det är troligt att du har flera noder baserat på vilken typ av data som används. I följande exempel visas endast en nod i *realtids-ML* -mallen. Se *avsnittet XML* -mallar för *nodredigering* i realtid för hela kodcellen.
 
 Noden Pandor nedan använder `"import": "map"` för att importera metodnamnet som en sträng i parametrarna, följt av att parametrarna anges som en mappningsfunktion. Exemplet nedan gör detta med `{'arg': {'dataLayerNull': 'notgiven', 'no': 'no', 'yes': 'yes', 'notgiven': 'notgiven'}}`. När kartan är på plats kan du ange `inplace` som `True` eller `False`. Ange `inplace` som `True` eller `False` baserat på om du vill använda omformningen eller inte. Som standard `"inplace": False` skapas en ny kolumn. Stöd för att ange ett nytt kolumnnamn ställs in för att läggas till i en senare version. Den sista raden `cols` kan vara ett kolumnnamn eller en lista med kolumner. Ange kolumnerna som du vill använda omformningen på. I det här exemplet `leasing` anges. Mer information om tillgängliga noder och hur du använder dem finns i [nodreferensguiden](./node-reference.md).
 
@@ -323,7 +330,7 @@ Koppla sedan noderna med kanter. Varje tuppel är en edge-anslutning.
 edges = [(nodes[i], nodes[i+1]) for i in range(len(nodes)-1)]
 ```
 
-Skapa diagrammet när noderna är anslutna.
+Skapa diagrammet när noderna är anslutna. Cellen nedan är obligatorisk och kan inte redigeras eller tas bort.
 
 ```python
 dsl = GraphBuilder.generate_dsl(nodes=nodes, edges=edges)
@@ -413,10 +420,33 @@ Använd följande cell i *realtids-ML* -mallen för att göra poäng mot din Edg
 
 När poängsättningen är klar returneras edge-URL:en, nyttolasten och resultatet från Edge.
 
-## Ta bort en distribuerad app från Edge (valfritt)
+## Visa en lista över dina distribuerade appar från Edge
 
->!![CAUTION]
-Den här cellen används för att ta bort ditt distribuerade Edge-program. Använd inte följande cell om du inte behöver ta bort ett distribuerat Edge-program.
+Om du vill generera en lista över dina distribuerade program på kanten kör du följande kodcell. Den här cellen kan inte redigeras eller tas bort.
+
+```python
+services = edge_utils.list_deployed_services()
+print(services)
+```
+
+Svaret som returneras är en array med dina distribuerade tjänster.
+
+```json
+[
+    {
+        "created": "2020-05-25T19:18:52.731Z",
+        "deprecated": false,
+        "id": "40eq76c0-1c6f-427a-8f8f-54y9cdf041b7",
+        "type": "edge",
+        "updated": "2020-05-25T19:18:52.731Z"
+    }
+]
+```
+
+## Ta bort ett distribuerat program- eller tjänste-ID från Edge (valfritt)
+
+>[!CAUTION]
+>Den här cellen används för att ta bort ditt distribuerade Edge-program. Använd inte följande cell om du inte behöver ta bort ett distribuerat Edge-program.
 
 ```python
 if edge_utils.delete_from_edge(service_id=service_id):
