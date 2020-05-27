@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en Oracle-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 37a5f035023cee1fc2408846fb37d64b9a3fc4b6
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
-source-wordcount: '547'
+source-wordcount: '555'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,7 @@ Följande avsnitt innehåller ytterligare information som du behöver känna til
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `connectionString` | Anslutningssträngen som används för att ansluta till Oracle. Oracles anslutningssträngsmönster är: `Host=<host>;Port=<port>;Sid=<sid>;User Id=<username>;Password=<password>`. |
+| `connectionString` | Anslutningssträngen som används för att ansluta till Oracle. Oracles anslutningssträngsmönster är: `Host={HOST};Port={PORT};Sid={SID};UserId={USERNAME};Password={PASSWORD}`. |
 | `connectionSpec.id` | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikations-ID för Oracle är `d6b52d86-f0f8-475f-89d4-ce54c8527328`. |
 
 Mer information om hur du kommer igång finns i [det här Oracle-dokumentet](https://docs.oracle.com/database/121/ODPNT/featConnecting.htm#ODPNT199).
@@ -85,7 +85,7 @@ curl -X POST \
         "auth": {
             "specName": "ConnectionString",
             "params": {
-                    "connectionString": "{CONNECTION_STRING}"
+                    "connectionString": "Host={HOST};Port={PORT};Sid={SID};UserId={USERNAME};Password={PASSWORD}"
                 }
         },
         "connectionSpec": {
@@ -97,7 +97,7 @@ curl -X POST \
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `auth.params.connectionString` | Anslutningssträngen som är associerad med ditt Oracle-konto. |
+| `auth.params.connectionString` | Anslutningssträngen som används för att ansluta till Oracle-databasen. Oracles anslutningssträngsmönster är: `Host={HOST};Port={PORT};Sid={SID};UserId={USERNAME};Password={PASSWORD}`. |
 | `connectionSpec.id` | ID för Oracles anslutningsspecifikation: `d6b52d86-f0f8-475f-89d4-ce54c8527328`. |
 
 **Svar**
