@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en MariaDB-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 37a5f035023cee1fc2408846fb37d64b9a3fc4b6
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
-source-wordcount: '664'
+source-wordcount: '579'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till Maria DB.
+I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till MariaDB.
 
 ## Komma igång
 
@@ -28,17 +28,18 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som ni kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till Maria DB med API:t för Flow Service.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till MariaDB med API:t för Flow Service.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att Flow Service ska kunna ansluta till Maria DB måste du ange följande anslutningsegenskap:
+För att Flow Service ska kunna ansluta till MariaDB måste du ange följande anslutningsegenskap:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `connectionString` | Anslutningssträngen som är associerad med din Maria DB-autentisering. |
+| `connectionString` | Anslutningssträngen som är associerad med din MariaDB-autentisering. Anslutningssträngsmönstret för MariaDB är: `Server={HOST};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
+| `connectionSpec.id` | Det ID som används för att skapa en anslutning. Det fasta anslutningens spec-ID för MariaDB är `3000eb99-cd47-43f3-827c-43caf170f015`. |
 
-Mer information om hur du kommer igång med Maria DB finns i [det här dokumentet](https://mariadb.com/kb/en/about-mariadb-connector-odbc/) .
+Mer information om hur du hämtar en anslutningssträng finns i [det här MariaDB-dokumentet](https://mariadb.com/kb/en/about-mariadb-connector-odbc/).
 
 ### Läser exempel-API-anrop
 
@@ -60,77 +61,9 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 * Innehållstyp: `application/json`
 
-## Söka efter anslutningsspecifikationer
+## Skapa en anslutning
 
-För att ansluta till Maria DB måste det finnas en uppsättning anslutningsspecifikationer för Maria DB i Flow Service. Det första steget i att ansluta Platform till Maria DB är att hämta dessa specifikationer.
-
-**API-format**
-
-Varje tillgänglig källa har en egen unik uppsättning anslutningsspecifikationer för att beskriva kopplingsegenskaper som autentiseringskrav. Om du skickar en GET-begäran till `/connectionSpecs` slutpunkten returneras anslutningsspecifikationerna för alla tillgängliga källor. Du kan ta med frågan `property=name=="maria-db"` för att få information specifikt för Maria DB.
-
-```http
-GET /connectionSpecs
-GET /connectionSpecs?property=name=="maria-db"
-```
-
-**Begäran**
-
-Följande begäran hämtar anslutningsspecifikationerna för Maria DB.
-
-```shell
-curl -X GET \
-    'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs?property=name=="maria-db"' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}'
-```
-
-**Svar**
-
-Ett lyckat svar returnerar anslutningsspecifikationerna för Maria DB, inklusive den unika identifieraren (`id`). Detta ID krävs i nästa steg för att skapa en basanslutning.
-
-```json
-{
-    "items": [
-        {
-            "id": "3000eb99-cd47-43f3-827c-43caf170f015",
-            "name": "maria-db",
-            "providerId": "0ed90a81-07f4-4586-8190-b40eccef1c5a",
-            "version": "1.0",
-            "authSpec": [
-                {
-                    "name": "Connection String Based Authentication",
-                    "type": "connectionStringAuth",
-                    "spec": {
-                        "$schema": "http://json-schema.org/draft-07/schema#",
-                        "type": "object",
-                        "description": "defines auth params required for connecting to Maria DB",
-                        "properties": {
-                            "connectionString": {
-                                "type": "string",
-                                "description": "connection string to connect to any Maria DB instance.",
-                                "format": "password",
-                                "pattern": "^(Server=)(.*)(;Port=)(.*)(;Database=)(.*)(;UID=)(.*)(;PWD=)(.*)",
-                                "examples": [
-                                    "Server=<host>;Port=<port>;Database=<database>;UID=<user name>;PWD=<password>"
-                                ]
-                            }
-                        },
-                        "required": [
-                            "connectionString"
-                        ]
-                    }
-                }
-            ],
-        }
-    ]
-}
-```
-
-## Skapa en basanslutning
-
-En basanslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en basanslutning krävs per Maria DB-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per MariaDB-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
 
 **API-format**
 
@@ -139,6 +72,8 @@ POST /connections
 ```
 
 **Begäran**
+
+För att skapa en MariaDB-anslutning måste dess unika anslutningsspec-ID anges som en del av POST-begäran. Anslutningsspecifikations-ID för MariaDB är `3000eb99-cd47-43f3-827c-43caf170f015`.
 
 ```shell
 curl -X POST \
@@ -149,12 +84,12 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "base connection for maria-db",
-        "description": "base connection for maria-db",
+        "name": "Test connection for maria-db",
+        "description": "Test connection for maria-db",
         "auth": {
             "specName": "Connection String Based Authentication",
             "params": {
-                "connectionString": "{CONNECTION_STRING}"
+                "connectionString": "Server={HOST};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}"
             }
         },
         "connectionSpec": {
@@ -166,12 +101,12 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `auth.params.connectionString` | Anslutningssträngen som är associerad med din Maria DB-autentisering. |
-| `connectionSpec.id` | Anslutningsspecifikationen (`id`) som samlades in i föregående steg. |
+| `auth.params.connectionString` | Anslutningssträngen som är associerad med din MariaDB-autentisering. Anslutningssträngsmönstret för MariaDB är: `Server={HOST};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
+| `connectionSpec.id` | MariaDB-anslutningsspecifikation-ID: `3000eb99-cd47-43f3-827c-43caf170f015`. |
 
 **Svar**
 
-Ett godkänt svar returnerar information om den nya basanslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att utforska ditt molnlagringsutrymme i nästa steg.
+Ett godkänt svar returnerar information om den nya basanslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att undersöka din databas i nästa steg.
 
 ```json
 {
@@ -182,4 +117,4 @@ Ett godkänt svar returnerar information om den nya basanslutningen, inklusive d
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en Maria DB-basanslutning med API:t för Flow Service och fått anslutningens unika ID-värde. Du kan använda detta grundläggande anslutnings-ID i nästa självstudiekurs när du lär dig hur du [utforskar databaser eller NoSQL-system med API:t](../../explore/database-nosql.md)för Flow Service.
+I den här självstudiekursen har du skapat en MariaDB-anslutning med API:t för Flow Service och fått anslutningens unika ID-värde. Du kan använda detta anslutnings-ID i nästa självstudiekurs när du lär dig hur du [utforskar databaser eller NoSQL-system med API:t](../../explore/database-nosql.md)för Flow Service.
