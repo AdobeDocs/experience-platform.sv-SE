@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en PostgreSQL-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 37a5f035023cee1fc2408846fb37d64b9a3fc4b6
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
-source-wordcount: '656'
+source-wordcount: '583'
 ht-degree: 0%
 
 ---
@@ -36,9 +36,10 @@ För att Flow Service ska kunna ansluta till PSQL måste du ange följande anslu
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `connectionString` | Anslutningssträngen som är associerad med ditt PSQL-konto. |
+| `connectionString` | Anslutningssträngen som är associerad med ditt PSQL-konto. PSQL-anslutningssträngsmönstret är: `Server={SERVER};Database={DATABASE};Port={PORT};UID={USERNAME};Password={PASSWORD}`. |
+| `connectionSpec.id` | Det ID som används för att skapa en anslutning. Det fasta anslutningens spec-ID för PSQL är `74a1c565-4e59-48d7-9d67-7c03b8a13137`. |
 
-Mer information om hur du kommer igång finns i det här [PSQL-dokumentet](https://www.postgresql.org/docs/9.2/app-psql.html).
+Mer information om hur du hämtar en anslutningssträng finns i [det här PSQL-dokumentet](https://www.postgresql.org/docs/9.2/app-psql.html).
 
 ### Läser exempel-API-anrop
 
@@ -60,72 +61,9 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 * Innehållstyp: `application/json`
 
-## Söka efter anslutningsspecifikationer
+## Skapa en anslutning
 
-För att kunna skapa en PSQL-anslutning måste det finnas en uppsättning PSQL-anslutningsspecifikationer i Flow Service. Det första steget i att ansluta Platform till PSQL är att hämta dessa specifikationer.
-
-**API-format**
-
-Varje tillgänglig källa har en egen unik uppsättning anslutningsspecifikationer för att beskriva kopplingsegenskaper som autentiseringskrav. Om du skickar en GET-begäran till `/connectionSpecs` slutpunkten returneras anslutningsspecifikationerna för alla tillgängliga källor. Du kan även ta med frågan `property=name=="postgre-sql"` för att få information om PSQL.
-
-```http
-GET /connectionSpecs
-GET /connectionSpecs?property=name=="postgre-sql"
-```
-
-**Begäran**
-
-Följande begäran hämtar anslutningsspecifikationerna för PSQL.
-
-```shell
-curl -X GET \
-    'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs?property=name=="postgre-sql"' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}'
-```
-
-**Svar**
-
-Ett lyckat svar returnerar anslutningsspecifikationerna för PSQL, inklusive dess unika identifierare (`id`). Detta ID krävs i nästa steg för att skapa en basanslutning.
-
-```json
-{
-    "items": [
-        {
-            "id": "74a1c565-4e59-48d7-9d67-7c03b8a13137",
-            "name": "postgre-sql",
-            "providerId": "0ed90a81-07f4-4586-8190-b40eccef1c5a",
-            "version": "1.0",
-            "authSpec": [
-                {
-                    "name": "Basic Authentication for PostgreSQL",
-                    "spec": {
-                        "$schema": "http://json-schema.org/draft-07/schema#",
-                        "type": "object",
-                        "description": "defines auth params required for connecting to PostgreSQL",
-                        "properties": {
-                            "connectionString": {
-                                "type": "string",
-                                "description": "An ODBC connection string to connect to Azure Database for PostgreSQL.",
-                                "format": "password"
-                            }
-                        },
-                        "required": [
-                            "connectionString"
-                        ]
-                    }
-                }
-            ],
-        }
-    ]
-}
-```
-
-## Skapa en basanslutning
-
-En basanslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Det krävs bara en basanslutning per PSQL-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Det krävs bara en anslutning per PSQL-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
 
 **API-format**
 
@@ -134,6 +72,8 @@ POST /connections
 ```
 
 **Begäran**
+
+För att skapa en PSQL-anslutning måste dess unika anslutningsspec-ID anges som en del av POST-begäran. Anslutningsspecifikations-ID för PSQL är `74a1c565-4e59-48d7-9d67-7c03b8a13137`.
 
 ```shell
 curl -X POST \
@@ -144,12 +84,12 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "Base connection for PostgreSQL",
-        "description": "Base connection for PostgreSQL",
+        "name": "Test connection for PostgreSQL",
+        "description": "Test connection for PostgreSQL",
         "auth": {
             "specName": "Connection String Based Authentication",
             "params": {
-                "connectionString": "{CONNECTION_STRING}"
+                "connectionString": "Server={SERVER};Database={DATABASE};Port={PORT};UID={USERNAME};Password={PASSWORD}"
             }
         },
         "connectionSpec": {
@@ -161,8 +101,8 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | ------------- | --------------- |
-| `auth.params.connectionString` | Anslutningssträngen som är associerad med ditt PSQL-konto. |
-| `connectionSpec.id` | Anslutningsspecifikationen `id` för ditt PSQL-konto som hämtades i föregående steg. |
+| `auth.params.connectionString` | Anslutningssträngen som är associerad med ditt PSQL-konto. PSQL-anslutningssträngsmönstret är: `Server={SERVER};Database={DATABASE};Port={PORT};UID={USERNAME};Password={PASSWORD}`. |
+| `connectionSpec.id` | Anslutningens spec-ID för PSQL är: `74a1c565-4e59-48d7-9d67-7c03b8a13137`. |
 
 **Svar**
 
@@ -177,4 +117,4 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nya basanslu
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en PSQL-basanslutning med API:t för Flow Service och fått anslutningens unika ID-värde. Du kan använda detta grundläggande anslutnings-ID i nästa självstudiekurs när du lär dig hur du [utforskar databaser eller NoSQL-system med API:t](../../explore/database-nosql.md)för Flow Service.
+I den här självstudiekursen har du skapat en PSQL-anslutning med API:t för Flow Service och fått anslutningens unika ID-värde. Du kan använda detta anslutnings-ID i nästa självstudiekurs när du lär dig hur du [utforskar databaser eller NoSQL-system med API:t](../../explore/database-nosql.md)för Flow Service.
