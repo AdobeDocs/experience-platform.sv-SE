@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en MySQL-källkoppling i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 2162c66b1664ecaaf0b609fe3f7ccf58c4a5d31d
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
-source-wordcount: '478'
+source-wordcount: '484'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ För att få tillgång till ditt MySQL-konto på plattformen måste du ange föl
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `connectionString` | Den MySQL-anslutningssträng som är associerad med ditt konto. |
+| `connectionString` | Den MySQL-anslutningssträng som är associerad med ditt konto. Mönstret för MySQL-anslutningssträngen är: `Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
 
 Du kan lära dig mer om anslutningssträngar och hur du hämtar dem genom att läsa [MySQL-dokumentet](https://dev.mysql.com/doc/connector-net/en/connector-net-connections-string.html).
 
