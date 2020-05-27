@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Maskininlärning i realtid - översikt
 topic: Overview
 translation-type: tm+mt
-source-git-commit: 8f9454730e3bab451ac75070fcd1623698df9196
+source-git-commit: 626bb7a0856a663e235ecd2b19954f4617fe9b6f
 workflow-type: tm+mt
 source-wordcount: '513'
 ht-degree: 0%
@@ -61,7 +61,7 @@ Maskininlärning i realtid är för närvarande alfavärdet. Funktionerna som be
 > Alfabegränsningar:
 > - För närvarande stöds endast ONNX-baserade modeller.
 > - Funktioner som används i noder kan inte serialiseras. En lambda-funktion används till exempel i en Pandarod.
-> - 60 sekunder försätts i viloläge efter att Edge-distributionen har slutförts manuellt.
+> - Det finns 20 sekunder sömn efter att Edge-distributionen har slutförts manuellt.
 > - För djupgående inlärning måste data skickas på ett sådant sätt att när de `df.values` anropas returneras en array som är godtagbar för DL-modellen. Detta beror på att ONNX-modellens poängsättningsnod använder `df.values` och skickar utdata för att räkna mot modellen.
 
 
