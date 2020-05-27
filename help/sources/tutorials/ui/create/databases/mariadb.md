@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en MariaDB-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 2162c66b1664ecaaf0b609fe3f7ccf58c4a5d31d
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
-source-wordcount: '483'
+source-wordcount: '489'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ För att få åtkomst till ditt Maria DB-konto på Platform måste du ange följ
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `connectionString` | Anslutningssträngen som är associerad med din MariaDB-autentisering. |
+| `connectionString` | Anslutningssträngen som är associerad med din MariaDB-autentisering. Anslutningssträngsmönstret för MariaDB är: `Server={HOST};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
 
 Mer information om hur du kommer igång med MariaDB finns i [det här dokumentet](https://mariadb.com/kb/en/about-mariadb-connector-odbc/) .
 
