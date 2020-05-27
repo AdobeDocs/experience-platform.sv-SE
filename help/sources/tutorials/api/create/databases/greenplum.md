@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en GreenPlum-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: a015d2612bc5a72004e15dc5706c7718617a0af4
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
-source-wordcount: '559'
+source-wordcount: '566'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,7 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `connectionString` | Anslutningssträngen som används för att ansluta till din GreenPlum-instans. Anslutningssträngsmönstret för GreenPlum är `HOST=<server>;PORT=<port>;DB=<database>;UID=<user name>;PWD=<password>` |
+| `connectionString` | Anslutningssträngen som används för att ansluta till din GreenPlum-instans. Anslutningssträngsmönstret för GreenPlum är `HOST={SERVER};PORT={PORT};DB={DATABASE};UID={USERNAME};PWD={PASSWORD}` |
 | `connectionSpec.id` | Den identifierare som krävs för att skapa en anslutning. Det fasta anslutningens spec-ID för GreenPlum är `37b6bf40-d318-4655-90be-5cd6f65d334b`. |
 
 Mer information om hur du hämtar en anslutningssträng finns i [det här GreenPlum-dokumentet](https://gpdb.docs.pivotal.io/580/security-guide/topics/Authenticate.html#topic_fzv_wb2_jr__config_ssl_client_conn).
@@ -85,7 +85,7 @@ curl -X POST \
         "auth": {
             "specName": "Basic Authentication",
             "params": {
-                    "connectionString": "HOST=<server>;PORT=<port>;DB=<database>;UID=<user name>;PWD=<password>"
+                    "connectionString": "HOST={SERVER};PORT={PORT};DB={DATABASE};UID={USERNAME};PWD={PASSWORD}"
                 }
         },
         "connectionSpec": {
@@ -97,8 +97,8 @@ curl -X POST \
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `auth.params.connectionString` | Anslutningssträngen som är associerad med ditt GreenPlum-konto. |
-| `connectionSpec.id` | ID för DB2-anslutningsspecifikation: `37b6bf40-d318-4655-90be-5cd6f65d334b`. |
+| `auth.params.connectionString` | Anslutningssträngen som används för att ansluta till ett GreenPlum-konto. Anslutningssträngsmönstret är: `HOST={SERVER};PORT={PORT};DB={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
+| `connectionSpec.id` | GreenPlum-anslutningens spec-ID: `37b6bf40-d318-4655-90be-5cd6f65d334b`. |
 
 **Svar**
 
