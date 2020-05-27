@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en Azure Synapse Analytics-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 37a5f035023cee1fc2408846fb37d64b9a3fc4b6
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
-source-wordcount: '590'
+source-wordcount: '603'
 ht-degree: 0%
 
 ---
@@ -36,10 +36,10 @@ För att Flow Service ska kunna ansluta till Synapse måste du ange värden för
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `connectionString` | Anslutningssträngen som används för att ansluta till Azure Synapse Analytics. |
+| `connectionString` | Anslutningssträngen som används för att ansluta till Synapse. Synapse-anslutningssträngens mönster är `Server=tcp:{SERVER_NAME}.database.windows.net,1433;Database={DATABASE};User ID={USERNAME}@{SERVER_NAME};Password={PASSWORD};Trusted_Connection=False;Encrypt=True;Connection Timeout=30`. |
 | `connectionSpec.id` | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikation-ID för Synapse är: `a49bcc7d-8038-43af-b1e4-5a7a089a7d79` |
 
-Mer information om hur du kommer igång finns i [det här synkroniseringsdokumentet](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-aad-authentication-configure?toc=%2Fazure%2Fsynapse-analytics%2Fsql-data-warehouse%2Ftoc.json&amp;bc=%2Fazure%2Fsynapse-analytics%2Fsql-data-warehouse%2Fbreadcrumb%2Ftoc.json&amp;tabs=azure-powershell).
+Mer information om hur du hämtar en anslutningssträng finns i [det här synkroniseringsdokumentet](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-aad-authentication-configure?toc=%2Fazure%2Fsynapse-analytics%2Fsql-data-warehouse%2Ftoc.json&amp;bc=%2Fazure%2Fsynapse-analytics%2Fsql-data-warehouse%2Fbreadcrumb%2Ftoc.json&amp;tabs=azure-powershell).
 
 ### Läser exempel-API-anrop
 
@@ -89,7 +89,7 @@ curl -X POST \
         "auth": {
             "specName": "Connection String Based Authentication",
             "params": {
-                "connectionString": "{CONNECTION_STRING}"
+                "connectionString": "Server=tcp:{SERVER_NAME}.database.windows.net,1433;Database={DATABASE};User ID={USERNAME}@{SERVER_NAME};Password={PASSWORD};Trusted_Connection=False;Encrypt=True;Connection Timeout=30"
             }
         },
         "connectionSpec": {
@@ -101,12 +101,12 @@ curl -X POST \
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `auth.params.connectionString` | Anslutningssträngen som är associerad med ditt Synapse-konto. |
+| `auth.params.connectionString` | Anslutningssträngen som används för att ansluta till Synapse. Synapse-anslutningssträngens mönster är `Server=tcp:{SERVER_NAME}.database.windows.net,1433;Database={DATABASE};User ID={USERNAME}@{SERVER_NAME};Password={PASSWORD};Trusted_Connection=False;Encrypt=True;Connection Timeout=30`. |
 | `connectionSpec.id` | ID för Synapse-anslutningsspecifikation: `a49bcc7d-8038-43af-b1e4-5a7a089a7d79`. |
 
 **Svar**
 
-Ett godkänt svar returnerar information om den nya anslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att utforska dina data i nästa självstudiekurs.
+Ett godkänt svar returnerar information om den nya anslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att utforska din databas i nästa självstudiekurs.
 
 ```json
 {
