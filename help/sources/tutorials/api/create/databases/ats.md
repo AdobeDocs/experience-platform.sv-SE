@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en Azure Table Storage-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 37a5f035023cee1fc2408846fb37d64b9a3fc4b6
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
-source-wordcount: '578'
+source-wordcount: '597'
 ht-degree: 0%
 
 ---
@@ -36,10 +36,10 @@ För att Flow Service ska kunna ansluta till ATS måste du ange värden för fö
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `connectionString` | Anslutningssträngen som ska anslutas till Azure Table Storage-instansen. |
-| `connectionSpec.id` | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikations-ID för ATS är `ecde33f2-c56f-46cc-bdea-ad151c16cd69`. |
+| `connectionString` | Anslutningssträngen som används för att ansluta till en ATS-instans. Anslutningssträngsmönstret för ATS är: `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`. |
+| `connectionSpec.id` | Det ID som används för att skapa en anslutning. Det fasta anslutningens spec-ID för ATS är `ecde33f2-c56f-46cc-bdea-ad151c16cd69`. |
 
-Mer information om hur du kommer igång finns i [det här ATS-dokumentet](https://docs.microsoft.com/en-us/azure/storage/common/storage-introduction).
+Mer information om hur du hämtar en anslutningssträng finns i [det här ATS-dokumentet](https://docs.microsoft.com/en-us/azure/storage/common/storage-introduction).
 
 ### Läser exempel-API-anrop
 
@@ -73,7 +73,7 @@ POST /connections
 
 **Begäran**
 
-För att en ATS-anslutning ska kunna skapas måste dess unika anslutningsspecifikations-ID anges som en del av POST-begäran. Anslutningsspecifikations-ID för ATS är `ecde33f2-c56f-46cc-bdea-ad151c16cd69`.
+För att en ATS-anslutning ska kunna skapas måste dess unika anslutningsspec-ID anges som en del av POST-begäran. Anslutningsspecifikations-ID för ATS är `ecde33f2-c56f-46cc-bdea-ad151c16cd69`.
 
 ```shell
 curl -X POST \
@@ -89,7 +89,7 @@ curl -X POST \
         "auth": {
             "specName": "Connection String Based Authentication",
             "params": {
-                "connectionString": "{CONNECTION_STRING}"
+                "connectionString": "DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}"
             }
         },
         "connectionSpec": {
@@ -101,8 +101,8 @@ curl -X POST \
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `auth.params.connectionString` | Anslutningssträngen som är associerad med ditt ATS-konto. |
-| `connectionSpec.id` | ATS-anslutningsspecifikation-ID: `ecde33f2-c56f-46cc-bdea-ad151c16cd69`. |
+| `auth.params.connectionString` | Anslutningssträngen som används för att ansluta till en ATS-instans. Anslutningssträngsmönstret för ATS är: `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`. |
+| `connectionSpec.id` | ATS-anslutningens spec-ID är: `ecde33f2-c56f-46cc-bdea-ad151c16cd69`. |
 
 **Svar**
 
