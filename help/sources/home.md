@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform Source Connectors - översikt
 topic: overview
 translation-type: tm+mt
-source-git-commit: 7c94d7a0aace7525e776f13e2975f91cf2b29e23
+source-git-commit: 22425c33e39cf788eec6fd0a54f65fb89fdaff4f
 workflow-type: tm+mt
 source-wordcount: '758'
 ht-degree: 0%
@@ -38,7 +38,7 @@ Med Experience Platform kan data hämtas från andra Adobe-program, inklusive Ad
 
 Experience Platform har stöd för inmatning av data från ett annonssystem från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
-- [Google Ads-koppling](connectors/advertising/ads.md)
+- [Google AdWords-koppling](connectors/advertising/ads.md)
 
 ### molnlagring
 
