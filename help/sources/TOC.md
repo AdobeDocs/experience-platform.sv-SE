@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Source Connectors - hjälp
 translation-type: tm+mt
-source-git-commit: f23684ee152836bab85eeb8360436e4059f44417
+source-git-commit: 165d76224f4aeb292e72df1e2574ae1d0821c44c
 workflow-type: tm+mt
 source-wordcount: '578'
 ht-degree: 0%
@@ -24,7 +24,7 @@ ht-degree: 0%
          - [Mappningsfält för Audience Manager](connectors/adobe-applications/mapping/audience-manager.md)
          - [Målmappningsfält](connectors/adobe-applications/mapping/target.md)
    - Reklam {#advertising}
-      - [Google Ads-koppling](connectors/advertising/ads.md)
+      - [Google AdWords-koppling](connectors/advertising/ads.md)
    - molnlagring {#cloud-storage}
       - [Amazon Kinesis-kontakt](connectors/cloud-storage/kinesis.md)
       - [Azure Data Lake Storage Gen2-anslutning](connectors/cloud-storage/adls-gen2.md)
@@ -65,7 +65,7 @@ ht-degree: 0%
 - API-självstudiekurser {#api-tutorials}
    - Skapa en källkoppling {#create}
       - Reklam {#advertising}
-         - [Google Ads-koppling](tutorials/api/create/advertising/ads.md)
+         - [Google AdWords-koppling](tutorials/api/create/advertising/ads.md)
       - molnlagring {#cloud-storage}
          - [Amazon Kinesis](tutorials/api/create/cloud-storage/kinesis.md)
          - [Amazon S3-kontakt](tutorials/api/create/cloud-storage/s3.md)
@@ -132,7 +132,7 @@ ht-degree: 0%
          - [Adobe Audience Manager-koppling](tutorials/ui/create/adobe-applications/audience-manager.md)
          - [Koppling för kundattribut](tutorials/ui/create/adobe-applications/customer-attributes.md)
       - Reklam {#create}
-         - [Google Ads-koppling](tutorials/ui/create/advertising/ads.md)
+         - [Google AdWords-koppling](tutorials/ui/create/advertising/ads.md)
       - molnlagring {#cloud-storage}
          - [Amazon Kinesis](tutorials/ui/create/cloud-storage/kinesis.md)
          - [Azure Data Lake Storage Gen2-anslutning](tutorials/ui/create/cloud-storage/adls-gen2.md)
