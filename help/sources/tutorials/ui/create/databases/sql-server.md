@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en Microsoft SQL Server-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 2162c66b1664ecaaf0b609fe3f7ccf58c4a5d31d
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
-source-wordcount: '504'
+source-wordcount: '511'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ För att kunna ansluta till SQL Server på plattformen måste du ange följande 
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `connectionString` | Anslutningssträngen som är associerad med ditt SQL Server-konto. |
+| `connectionString` | Anslutningssträngen som är associerad med ditt SQL Server-konto. SQL Server-anslutningssträngsmönstret är: `Data Source={SERVER_NAME}\\<{INSTANCE_NAME} if using named instance>;Initial Catalog={DATABASE};Integrated Security=False;User ID={USERNAME};Password={PASSWORD};`. |
 
 Mer information om hur du kommer igång med SQL Server finns i [det här dokumentet](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/authentication-in-sql-server) .
 
