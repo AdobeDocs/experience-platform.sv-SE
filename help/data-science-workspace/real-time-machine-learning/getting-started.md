@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Komma igång med maskininlärning i realtid
 topic: Getting started
 translation-type: tm+mt
-source-git-commit: dc63ad0c0764355aed267eccd1bcc4965b04dba4
+source-git-commit: 626bb7a0856a663e235ecd2b19954f4617fe9b6f
 workflow-type: tm+mt
 source-wordcount: '411'
 ht-degree: 0%
@@ -21,7 +21,7 @@ För att kunna använda maskininlärning i realtid måste ni ha tillgång till e
 
 Handböckerna för maskininlärning i realtid kräver en fungerande förståelse för Python 3, [Jupyters bärbara](../jupyterlab/overview.md)datorer, datavetenskap och maskininlärning.
 
-Nyckeltermer:
+**Nyckeltermer:**
 
 - **DSL:** Domänspecifikt språk.
 - **Kant:** Machine Learning-betygstjänsten i realtid kan köras på Edge-kluster som ligger närmare dina aktiveringar och program.
