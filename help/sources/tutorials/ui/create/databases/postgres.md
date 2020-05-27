@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en PostgreSQL-källkoppling i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 2162c66b1664ecaaf0b609fe3f7ccf58c4a5d31d
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
-source-wordcount: '476'
+source-wordcount: '482'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ För att få tillgång till ditt PSQL-konto på plattformen måste du ange följ
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `connectionString` | Anslutningssträngen som är associerad med ditt PSQL-konto. |
+| `connectionString` | Anslutningssträngen som är associerad med ditt PSQL-konto. PSQL-anslutningssträngsmönstret är: `Server={SERVER};Database={DATABASE};Port={PORT};UID={USERNAME};Password={PASSWORD}`. |
 
 Mer information om hur du kommer igång finns i det här [PSQL-dokumentet](https://www.postgresql.org/docs/9.2/app-psql.html).
 
