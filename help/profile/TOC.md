@@ -3,7 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Hjälp om kundprofil i realtid
 translation-type: tm+mt
-source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
+source-git-commit: 59831f5c2445f65371d1897f66dfc45507a9955c
+workflow-type: tm+mt
+source-wordcount: '78'
+ht-degree: 0%
 
 ---
 
@@ -17,7 +20,6 @@ source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
    * [Kantprojektioner](api/edge-projections.md)
    * [Enheter (profilåtkomst)](api/entities.md)
    * [Sammanfoga profiler](api/merge-policies.md)
-   * [Profilsökning](api/profile-search.md)
    * [Profilsystemjobb (Delete-begäranden)](api/profile-system-jobs.md)
 * Profilgränssnitt {#ui}
    * [Användarhandbok för profil](ui/user-guide.md)
