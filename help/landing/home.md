@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform - översikt
 topic: getting started
 translation-type: tm+mt
-source-git-commit: 7a36a3e3180c4ed4a9db23c0a33f6af3d7a3a5ec
+source-git-commit: efc8598d14bcae9637ce80c25f1285d93aeee742
 workflow-type: tm+mt
-source-wordcount: '505'
+source-wordcount: '526'
 ht-degree: 0%
 
 ---
@@ -15,6 +15,7 @@ ht-degree: 0%
 # Adobe Experience Platform - översikt
 
 >[!NOTE]
+>
 >Dokumentationen om Adobe Experience Platform har nyligen flyttats. Titta närmare på den nya navigeringen och uppdatera eventuella bokmärken.
 
 Adobe Experience Platform är det mest kraftfulla, flexibla och öppna systemet på marknaden för att bygga och hantera kompletta lösningar som driver kundupplevelsen. Med Experience Platform kan organisationer centralisera och standardisera kunddata och innehåll från alla system och tillämpa datavetenskap och maskininlärning för att dramatiskt förbättra utformningen och leveransen av avancerade, personaliserade upplevelser.
@@ -42,6 +43,10 @@ Ibland kan du få en enkät om ytterligare feedback.
 ## Självstudiekurser om Experience Platform
 
 Kom igång snabbt och enkelt med Platform genom att följa med i stegvisa självstudiekurser för allt från att förbereda data för inhämtning till avancerade maskininlärningsalgoritmer. Dessa självstudiekurser har utformats för att komplettera informationen som finns i Experience Platform-dokumentationen, så att du får bästa möjliga resultat om du behåller dokumenten när du slutför självstudiekurserna. Gå till självstudiekurserna [för](../tutorials/home.md) Experience Platform för att komma igång.
+
+## Videosjälvstudiekurser
+
+Titta på [videokurser](https://docs.adobe.com/content/help/en/platform-learn/tutorials/overview.html) för en mängd olika Experience Platform-ämnen.
 
 ## Referensdokument och resurser
 
