@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Utvecklarhandbok för segmenteringstjänst
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 3fbacf57d5f6741726cb54fb55eab05042046f49
+source-git-commit: e25ce403034a94d7024e8c244cb438bd9dfe0c5f
+workflow-type: tm+mt
+source-wordcount: '429'
+ht-degree: 0%
 
 ---
 
@@ -83,6 +86,10 @@ For more information on using this endpoint, please read the [segment definition
 Segmentjobb bearbetar tidigare etablerade segmentdefinitioner för att generera ett målgruppssegment. Du kan använda `/segment/jobs` slutpunkten för att hämta en lista med segmentjobb, skapa ett nytt segmentjobb, hämta information om ett specifikt segmentjobb eller ta bort ett specifikt segmentjobb.
 
 Mer information om hur du använder den här slutpunkten finns i utvecklarhandboken för [segmentjobb](./segment-jobs.md).
+
+## Segmentsökning
+
+Segmentsökning används för att söka efter och indexera konfigurerbara fält som finns i olika datakällor och returnera dem i nära realtid. Information om hur du börjar arbeta med segmentsökning finns i [guiden för sökutvecklare](segment-search.md)
 
 ## Nästa steg
 
