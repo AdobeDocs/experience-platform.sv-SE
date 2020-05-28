@@ -4,7 +4,10 @@ solution: Adobe Experience Platform
 title: Utvecklarhandbok för kundprofil-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: d0ccaa5511375253a2eca8f1235c2f953b734709
+source-git-commit: 8449681a7fd0fc5dccf4837a1e8e512f1e2f2601
+workflow-type: tm+mt
+source-wordcount: '954'
+ht-degree: 0%
 
 ---
 
@@ -75,10 +78,6 @@ När data från flera källor samlas i Experience Platform är sammanslagningspr
 Med hjälp av kundprofils-API:t i realtid kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen. Mer information om hur du arbetar med sammanfogningspolicyer med API:t finns i [underhandboken](merge-policies.md)för sammanfogningspolicyer.
 
 En guide till hur du arbetar med sammanfogningsprinciper med hjälp av användargränssnittet för plattformen finns i [användarhandboken](../ui/merge-policies.md)för sammanfogningsprinciper.
-
-## Profilsökning
-
-Profilsökning används för att söka efter och indexera konfigurerbara fält som finns i olika datakällor och returnera dem i nära realtid. Information om hur du börjar arbeta med profilsökning finns i [sökunderhandboken](profile-search.md)
 
 ## Profilsystemjobb
 
