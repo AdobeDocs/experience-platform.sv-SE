@@ -4,7 +4,10 @@ solution: Adobe Experience Platform
 title: Utvecklarhandbok för kundprofil-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: bb7aad4de681316cc9f9fd1d9310695bd220adb1
+source-git-commit: 9600f315f162b6cd86e2dbe2fffc793cc91c9319
+workflow-type: tm+mt
+source-wordcount: '1940'
+ht-degree: 0%
 
 ---
 
@@ -13,9 +16,12 @@ source-git-commit: bb7aad4de681316cc9f9fd1d9310695bd220adb1
 
 För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Med Adobe Experience Platform får ni tillgång till data i realtid genom att använda kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Adobe-program som Adobe Target och Adobe Campaign använder kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten. Den här guiden innehåller detaljerade anvisningar om hur du använder kundprofils-API i realtid för att arbeta med kantprognoser, inklusive mål och konfigurationer.
 
-## Komma igång
+## Getting started
 
 API-slutpunkterna som används i den här guiden ingår i kundprofils-API:t i realtid. Innan du fortsätter bör du läsa Utvecklarhandbok för kundprofiler i [realtid](getting-started.md). Avsnittet [](getting-started.md#getting-started) Komma igång i guiden för profilutvecklare innehåller länkar till relaterade ämnen, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa API:er för Experience Platform.
+
+>[!NOTE]
+>Begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver en `Content-Type` rubrik. Fler än en `Content-Type` används i det här dokumentet. Var särskilt uppmärksam på rubrikerna i samplingssamtalen för att försäkra dig om att du använder rätt `Content-Type` för varje begäran.
 
 ## Projektionsdestinationer
 
@@ -422,6 +428,9 @@ POST /config/projections?schemaName={SCHEMA_NAME}
 
 **Begäran**
 
+>[!NOTE]
+>POST-begäran om att skapa en konfiguration kräver en specifik `Content-Type` rubrik, vilket visas nedan. Om du använder ett felaktigt `Content-Type` huvud genereras ett HTTP-statusfel 415 (medietypen stöds inte).
+
 ```shell
 curl -X POST \
   https://platform.adobe.io/data/core/ups/config/projections?schemaName=_xdm.context.profile \
@@ -429,7 +438,7 @@ curl -X POST \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: application/vnd.adobe.platform.projectionConfig+json; version=1' \
   -d '{
         "selector": "emails,person(firstName)",
         "name": "my_test_projection",
