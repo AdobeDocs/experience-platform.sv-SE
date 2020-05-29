@@ -4,7 +4,10 @@ solution: Adobe Experience Platform
 title: Utvecklarhandbok för kundprofil-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: 95e002c60389ca7e4c1dcf32bbcf6f552cd55d95
+source-git-commit: 9600f315f162b6cd86e2dbe2fffc793cc91c9319
+workflow-type: tm+mt
+source-wordcount: '1694'
+ht-degree: 0%
 
 ---
 
@@ -13,7 +16,7 @@ source-git-commit: 95e002c60389ca7e4c1dcf32bbcf6f552cd55d95
 
 Med Adobe Experience Platform kan ni få åtkomst till kundprofildata i realtid med RESTful API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas&quot;profiler&quot;, med API:t. Mer information om hur du får åtkomst till profildata med hjälp av plattformsgränssnittet finns i användarhandboken för [profilen](../ui/user-guide.md).
 
-## Komma igång
+## Getting started
 
 API-slutpunkterna som används i den här guiden ingår i kundprofils-API:t i realtid. Innan du fortsätter bör du läsa utvecklarhandboken för [kundprofiler i realtid](getting-started.md).
 
@@ -773,7 +776,7 @@ Om du använder den här nyttolasten i begärandetexten kan du utföra ytterliga
 
 ## Få åtkomst till tidsseriehändelser i flera schemaentiteter
 
-Du kan komma åt flera enheter som är anslutna via en relationsbeskrivare. I följande exempel på API-anrop förutsätts att en relation redan har definierats mellan två scheman. Mer information om relationsbeskrivningar finns i [handboken för programmeringsregistrets API-utvecklare, [../../xdm/api/descriptors.md]] (på engelska).
+Du kan komma åt flera enheter som är anslutna via en relationsbeskrivare. I följande exempel på API-anrop förutsätts att en relation redan har definierats mellan två scheman. Mer information om relationsbeskrivningar finns i [underhandboken](../../xdm/api/descriptors.md)för programmeringsregistrets API-utvecklare.
 
 Du kan inkludera frågeparametrar i sökvägen för begäran för att ange vilka data som ska användas. Du kan inkludera flera parametrar, avgränsade med et-tecken (&amp;). En fullständig lista över giltiga parametrar finns i avsnittet med [frågeparametrar](#query-parameters) i bilagan.
 
