@@ -4,7 +4,10 @@ seo-title: Datastyrning i kunddataplattformen i realtid
 description: 'Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. '
 seo-description: 'Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. '
 translation-type: tm+mt
-source-git-commit: e21cf6794e6c9ee522482cd9ccb95d66b06d330a
+source-git-commit: af7fa6048fa60392a98975fe6fc36e8302355a05
+workflow-type: tm+mt
+source-wordcount: '946'
+ht-degree: 0%
 
 ---
 
@@ -84,3 +87,7 @@ Om någon av ovanstående åtgärder utlöser en överträdelse förhindras åtg
 ## Nästa steg
 
 Nu när ni har introducerats till de viktigaste funktionerna för datastyrning i CDP i realtid och hur Experience Platform gör det möjligt för dem kan ni fortsätta med [dokumentationen för datastyrning på Adobe Experience Platform](../../data-governance/home.md). Dokumentationen innehåller översikter över viktiga datastyrningsbegrepp samt stegvisa arbetsflöden för hantering av etiketter och policyer för dataanvändning.
+
+I följande video visas en översikt över datastyrning i CDP i realtid, inklusive användning av marknadsföringsfall på destinationer och exempelarbetsflöden för olika scenarier:
+
+>[!VIDEO](https://video.tv.adobe.com/v/33631?quality=12&learn=on)
