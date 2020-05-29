@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Användarhandbok för dataanvändningsprinciper
 topic: policies
 translation-type: tm+mt
-source-git-commit: 235a43ad72dee45db1b3d35ae84ce9a1c4d729b8
+source-git-commit: af7fa6048fa60392a98975fe6fc36e8302355a05
+workflow-type: tm+mt
+source-wordcount: '417'
+ht-degree: 0%
 
 ---
 
@@ -67,3 +70,7 @@ Du kan aktivera eller inaktivera anpassade principer för dataanvändning på *[
 ## Nästa steg
 
 I det här dokumentet finns en översikt över hur du hanterar dataanvändningsprinciper i användargränssnittet för Experience Platform. Anvisningar om hur du hanterar principer med DULE Policy API finns i [utvecklarhandboken](../api/getting-started.md). Mer information om hur du tillämpar dataanvändningsprinciper finns i [policyefterlevnadsöversikten](../enforcement/overview.md).
+
+I följande video visas hur du arbetar med användarprofiler i användargränssnittet för Experience Platform:
+
+>[!VIDEO](https://video.tv.adobe.com/v/32977?quality=12&learn=on)
