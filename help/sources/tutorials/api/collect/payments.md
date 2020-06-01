@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Samla in betalningsdata via källanslutningar och API:er
 topic: overview
 translation-type: tm+mt
-source-git-commit: 3d8682eb1a33b7678ed814e5d6d2cb54d233c03e
+source-git-commit: 577027e52041d642e03ca5abf5cb8b05c689b9f2
+workflow-type: tm+mt
+source-wordcount: '1663'
+ht-degree: 0%
 
 ---
 
@@ -17,7 +20,7 @@ Den här självstudiekursen beskriver stegen för att hämta data från ett beta
 
 ## Komma igång
 
-Den här självstudien kräver att du har tillgång till ett betalningssystem via en giltig basanslutning, samt information om filen som du vill hämta till plattformen (inklusive filens sökväg och struktur). Om du inte har den här informationen kan du gå till självstudiekursen om hur du [utforskar ett betalningsprogram med API:t](../explore/payments.md) för Flow Service innan du försöker med den här självstudiekursen.
+I den här självstudiekursen måste du ha tillgång till ett betalningssystem via en giltig anslutning samt information om filen som du vill hämta till plattformen (inklusive filens sökväg och struktur). Om du inte har den här informationen kan du gå till självstudiekursen om hur du [utforskar ett betalningsprogram med API:t](../explore/payments.md) för Flow Service innan du försöker med den här självstudiekursen.
 
 Den här självstudien kräver också att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
@@ -62,6 +65,18 @@ Fortsätt att följa stegen som beskrivs i utvecklarhandboken tills du har skapa
 
 När ett ad hoc-XDM-schema har skapats kan en källanslutning skapas med hjälp av en POST-begäran till API:t för Flow Service. En källanslutning består av ett anslutnings-ID, en källdatafil och en referens till schemat som beskriver källdata.
 
+Om du vill skapa en källanslutning måste du också definiera ett uppräkningsvärde för dataformatattributet.
+
+Använd följande uppräkningsvärden för **filbaserade kopplingar**:
+
+| Data.format | Uppräkningsvärde |
+| ----------- | ---------- |
+| Avgränsade filer | `delimited` |
+| JSON-filer | `json` |
+| Parquet-filer | `parquet` |
+
+För alla **tabellbaserade kopplingar** används fasttextvärdet: `tabular`.
+
 **API-format**
 
 ```https
@@ -83,7 +98,7 @@ curl -X POST \
         "baseConnectionId": "24151d58-ffa7-4960-951d-58ffa7396097",
         "description": "Paypal",
         "data": {
-            "format": "parquet_xdm",
+            "format": "tabular",
             "schema": {
                 "id": "https://ns.adobe.com/{TENANT_ID}/schemas/396f583b57577b2f2fca79c2cb88e9254992f5fa70ce5f1a",
                 "version": "application/vnd.adobe.xed-full-notext+json; version=1"
@@ -101,7 +116,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `baseConnectionId` | Anslutnings-ID för ditt betalningsprogram |
+| `baseConnectionId` | Det unika anslutnings-ID:t för det tredjepartsbetalningsprogram du använder. |
 | `data.schema.id` | The `$id` of the ad hoc XDM schema. |
 | `params.path` | Källfilens sökväg. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID för ditt betalningsprogram. |
@@ -275,17 +290,11 @@ Ett lyckat svar returnerar en array som innehåller ID:t för den nya datauppsä
 ]
 ```
 
-## Skapa en datauppsättningsbasanslutning
-
-För att kunna importera externa data till plattformen måste en Experience Platform-datauppsättningsbaserad anslutning först hämtas.
-
-Om du vill skapa en datauppsättningsbasanslutning följer du de steg som beskrivs i självstudiekursen för [datauppsättningsbasanslutningar](../create-dataset-base-connection.md).
-
-Fortsätt att följa stegen som beskrivs i utvecklarhandboken tills du har skapat en datauppsättningsbasanslutning. Hämta och lagra den unika identifieraren (`$id`) och fortsätt att använda den som anslutnings-ID i nästa steg för att skapa en målanslutning.
-
 ## Skapa en målanslutning
 
-Du har nu med dig de unika identifierarna för en datauppsättningsbasanslutning, ett målschema och en måldatauppsättning. Du kan nu skapa en målanslutning med API:t för Flow Service för att ange den datauppsättning som ska innehålla inkommande källdata.
+En målanslutning representerar anslutningen till målet där inkapslade data kommer in. Om du vill skapa en målanslutning måste du ange det fasta anslutnings-spec-ID som är associerat med datasjön. Detta anslutningsspec-ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
+
+Nu har du de unika identifierarna ett målschema, en måldatamängd och ett anslutningsspec-ID till datasjön. Med dessa identifierare kan du skapa en målanslutning med API:t för Flow Service för att ange den datauppsättning som ska innehålla inkommande källdata.
 
 **API-format**
 
@@ -304,11 +313,9 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "baseConnectionId": "72c47da8-c225-40c0-847d-a8c22550c01b",
         "name": "Target Connection for payments",
         "description": "Target Connection for payments",
         "data": {
-            "format": "parquet_xdm",
             "schema": {
                 "id": "https://ns.adobe.com/{TENANT_ID}/schemas/14d89c5bb88e2ff488f23db896be469e7e30bb166bda8722"
             }
@@ -325,10 +332,9 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `baseConnectionId` | ID:t för datauppsättningsbasanslutningen. |
 | `data.schema.id` | The `$id` of the target XDM schema. |
 | `params.dataSetId` | ID för måldatauppsättningen. |
-| `connectionSpec.id` | Anslutningsspecifikations-ID för ditt betalningsprogram. |
+| `connectionSpec.id` | Det fasta anslutningens spec-ID till datasjön. Detta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
 
 **Svar**
 
@@ -578,6 +584,8 @@ Det sista steget mot att samla in data är att skapa ett dataflöde. Nu bör du 
 
 Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en POST-begäran samtidigt som du anger de tidigare nämnda värdena i nyttolasten.
 
+Om du vill schemalägga ett intag måste du först ange starttidsvärdet till epok time i sekunder. Sedan måste du ange frekvensvärdet till ett av de fem alternativen: `once`, `minute`, `hour`, `day`eller `week`. Intervallvärdet anger perioden mellan två på varandra följande inmatningar och att skapa en engångsinmatning kräver inget intervall. För alla andra frekvenser måste intervallvärdet anges till lika med eller större än `15`.
+
 **API-format**
 
 ```https
@@ -627,11 +635,21 @@ curl -X POST \
         ],
         "scheduleParams": {
             "startTime": "1567411548",
-            "frequency":"minute",
+            "frequency": "minute",
             "interval":"30"
         }
     }'
 ```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `flowSpec.id` | Flödesspec-ID som hämtades i föregående steg. |
+| `sourceConnectionIds` | Källanslutnings-ID som hämtades i ett tidigare steg. |
+| `targetConnectionIds` | Målanslutnings-ID som hämtades i ett tidigare steg. |
+| `transformations.params.mappingId` | Mappnings-ID som hämtades i ett tidigare steg. |
+| `scheduleParams.startTime` | Starttiden för dataflödet i epok-tid i sekunder. |
+| `scheduleParams.frequency` | Följande frekvensvärden kan väljas: `once`, `minute`, `hour`, `day`eller `week`. |
+| `scheduleParams.interval` | Intervallet anger perioden mellan två på varandra följande flödeskörningar. Intervallets värde ska vara ett heltal som inte är noll. Intervall krävs inte när frekvens har angetts som `once` och ska vara större än eller lika med `15` för andra frekvensvärden. |
 
 **Svar**
 
@@ -639,7 +657,8 @@ Ett godkänt svar returnerar ID:t `id` för det nya dataflödet.
 
 ```json
 {
-    "id": "8256cfb4-17e6-432c-a469-6aedafb16cd5"
+    "id": "e0bd8463-0913-4ca1-bd84-6309134ca1f6",
+    "etag": "\"04004fe9-0000-0200-0000-5ebc4c8b0000\""
 }
 ```
 
