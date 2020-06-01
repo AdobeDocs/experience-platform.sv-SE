@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Samla in data från ett lyckat kundsystem via källanslutningar och API:er
 topic: overview
 translation-type: tm+mt
-source-git-commit: c216e321fd913773578107df027d953f10d99a36
+source-git-commit: 6df2ccd06f506ada0be5805143c487edb853396b
+workflow-type: tm+mt
+source-wordcount: '1663'
+ht-degree: 0%
 
 ---
 
@@ -13,11 +16,11 @@ source-git-commit: c216e321fd913773578107df027d953f10d99a36
 
 Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudiekursen beskrivs stegen för hur du hämtar data från ett CS-system (Customer Success) och hur du importerar dessa till plattformen via källanslutningar och API:er.
+Den här självstudiekursen beskriver stegen för att hämta data från ett system för kundframgångar och att hämta dem till plattformen via källanslutningar och API:er.
 
 ## Komma igång
 
-Den här självstudiekursen kräver att du har tillgång till ett tredjeparts CS-system via en giltig basanslutning och information om filen du vill hämta till Platform, inklusive filens sökväg och struktur. Om du inte har den här informationen kan du gå till självstudiekursen om hur du [utforskar en databas eller ett NoSQL-system med API:t](../explore/customer-success.md) för Flow Service innan du försöker med den här självstudiekursen.
+Den här självstudiekursen kräver att du har tillgång till ett system för lyckade kunder från tredje part via en giltig anslutning och information om filen som du vill hämta till Platform, inklusive filens sökväg och struktur. Om du inte har den här informationen kan du gå till självstudiekursen om hur du [utforskar en databas eller ett NoSQL-system med API:t](../explore/customer-success.md) för Flow Service innan du försöker med den här självstudiekursen.
 
 Den här självstudien kräver också att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
@@ -28,7 +31,7 @@ Den här självstudien kräver också att du har en fungerande förståelse för
 * [Batchförtäring](../../../../ingestion/batch-ingestion/overview.md): Med API:t för gruppinmatning kan du importera data till Experience Platform som gruppfiler.
 * [Sandlådor](../../../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till ett CS-system med API:t för Flow Service.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till ett system för kundframgångar med API:t för Flow Service.
 
 ### Läser exempel-API-anrop
 
@@ -56,11 +59,23 @@ För att externa data ska kunna hämtas till plattformen via källanslutningar m
 
 Om du vill skapa en ad hoc-klass och ett ad hoc-schema följer du stegen som beskrivs i [ad hoc-schemautstudiekursen](../../../../xdm/tutorials/ad-hoc.md). När du skapar en ad hoc-klass måste alla fält i källdata beskrivas i begärandetexten.
 
-Fortsätt att följa stegen som beskrivs i utvecklarhandboken tills du har skapat ett ad hoc-schema. Hämta och lagra den unika identifieraren (`$id`) för ad hoc-schemat och fortsätt sedan till nästa steg i kursen.
+Fortsätt att följa stegen som beskrivs i utvecklarhandboken tills du har skapat ett ad hoc-schema. Den unika identifieraren (`$id`) för ad hoc-schemat krävs för att fortsätta till nästa steg i den här självstudiekursen.
 
 ## Skapa en källanslutning {#source}
 
-När ett ad hoc-XDM-schema har skapats kan en källanslutning skapas med hjälp av en POST-begäran till API:t för Flow Service. En källanslutning består av en basanslutning, en källdatafil och en referens till schemat som beskriver källdata.
+När ett ad hoc-XDM-schema har skapats kan en källanslutning skapas med hjälp av en POST-begäran till API:t för Flow Service. En källanslutning består av ett anslutnings-ID, en källdatafil och en referens till schemat som beskriver källdata.
+
+Om du vill skapa en källanslutning måste du också definiera ett uppräkningsvärde för dataformatattributet.
+
+Använd följande uppräkningsvärden för **filbaserade kopplingar**:
+
+| Data.format | Uppräkningsvärde |
+| ----------- | ---------- |
+| Avgränsade filer | `delimited` |
+| JSON-filer | `json` |
+| Parquet-filer | `parquet` |
+
+För alla **tabellbaserade kopplingar** används fasttextvärdet: `tabular`.
 
 **API-format**
 
@@ -79,13 +94,13 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "Source connection for CS",
-        "baseConnectionId": "60a5c8b9-3c30-43ba-a5c8-b93c3093ba66",
-        "description": "Source Connection for CS to ingest Account",
+        "name": "Source connection for Customer Success",
+        "baseConnectionId": "f1da3694-38a9-403d-9a36-9438a9203d42",
+        "description": "Source connection for a Customer Success connector",
         "data": {
-            "format": "parquet_xdm",
+            "format": "tabular",
             "schema": {
-                "id": "https://ns.adobe.com/{TENANT_ID}/classes/51dd6dce662f8aebe4353c74bbb49c77cb3cbcd6c6b29021",
+                "id": "https://ns.adobe.com/adobe_mcdp_connectors_stg/classes/5d032b2230d5495aef49437d04d1c5fac4788b17ae85bf93",
                 "version": "application/vnd.adobe.xed-full-notext+json; version=1"
             }
         },
@@ -93,18 +108,18 @@ curl -X POST \
             "path": "Account"
         },
         "connectionSpec": {
-            "id": "eb13cb25-47ab-407f-ba89-c0125281c563",
+            "id": "cb66ab34-8619-49cb-96d1-39b37ede86ea",
             "version": "1.0"
-    }
-}'
+        }
+    }}'
 ```
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `baseConnectionId` | ID:t för en basanslutning för ett CS-system |
+| `baseConnectionId` | Det unika anslutnings-ID:t för det lyckade system från tredje part som du använder. |
 | `data.schema.id` | The `$id` of the ad hoc XDM schema. |
 | `params.path` | Källfilens sökväg. |
-| `connectionSpec.id` | Anslutningsspecifikations-ID för ett CS-system. |
+| `connectionSpec.id` | Det anslutnings-spec-ID som är kopplat till ditt specifika system för lyckade kunder från tredje part. I [bilagan](#appendix) finns en lista över anslutningsspecifikations-ID:n. |
 
 **Svar**
 
@@ -112,8 +127,8 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 ```json
 {
-    "id": "01b7cbea-cf18-4552-b7cb-eacf18055294",
-    "etag": "\"2103ac94-0000-0200-0000-5e543ad70000\""
+    "id": "17faf955-2cf8-4b15-baf9-552cf88b1540",
+    "etag": "\"2900a761-0000-0200-0000-5ed18cea0000\""
 }
 ```
 
@@ -145,8 +160,8 @@ curl -X POST \
     -H 'Content-Type: application/json' \
     -d '{
         "type": "object",
-        "title": "Target schema for CS",
-        "description": "Target schema for CS",
+        "title": "Target schema for a Customer Success connector",
+        "description": "Target schema for Database",
         "allOf": [
             {
                 "$ref": "https://ns.adobe.com/xdm/context/profile"
@@ -158,6 +173,10 @@ curl -X POST \
                 "$ref": "https://ns.adobe.com/xdm/context/profile-personal-details"
             }
         ],
+        "meta:containerId": "tenant",
+        "meta:resourceType": "schemas",
+        "meta:xdmType": "object",
+        "meta:class": "https://ns.adobe.com/xdm/context/profile"
     }'
 ```
 
@@ -167,13 +186,13 @@ Ett lyckat svar returnerar information om det nyligen skapade schemat inklusive 
 
 ```json
 {
-    "$id": "https://ns.adobe.com/{TENANT_ID}/schemas/deb3e1096c35d8311b5d80868c4bd5b3cdfd4b3150e7345f",
-    "meta:altId": "_{TENANT_ID}.schemas.deb3e1096c35d8311b5d80868c4bd5b3cdfd4b3150e7345f",
+    "$id": "https://ns.adobe.com/{TENANT_ID}/schemas/b750bd161fef405bc324d0c8809b02c494d73e60e7ae9b3e",
+    "meta:altId": "_{TENANT_ID}.schemas.b750bd161fef405bc324d0c8809b02c494d73e60e7ae9b3e",
     "meta:resourceType": "schemas",
     "version": "1.0",
-    "title": "Target schema for CS",
+    "title": "Target schema for a Customer Success connector",
     "type": "object",
-    "description": "Target schema for CS",
+    "description": "Target schema for Database",
     "allOf": [
         {
             "$ref": "https://ns.adobe.com/xdm/context/profile",
@@ -208,13 +227,14 @@ Ett lyckat svar returnerar information om det nyligen skapade schemat inklusive 
     ],
     "meta:xdmType": "object",
     "meta:registryMetadata": {
-        "repo:createdDate": 1582578764554,
-        "repo:lastModifiedDate": 1582578764554,
+        "repo:createdDate": 1590791550228,
+        "repo:lastModifiedDate": 1590791550228,
         "xdm:createdClientId": "{CREATED_CLIENT_ID}",
         "xdm:lastModifiedClientId": "{LAST_MODIFIED_CLIENT_ID}",
         "xdm:createdUserId": "{CREATED_USER_ID}",
         "xdm:lastModifiedUserId": "{LAST_MODIFIED_USER_ID}",
-        "eTag": "213e4bf7cbac74e3a9e6f988da321e2f7353acacd9ea651a5652bd49b28b8d2a"
+        "eTag": "d730441903b95425145d9c742647ab4426d86549159182913e5f99cc904be5b1",
+        "meta:globalLibVersion": "1.10.4.2"
     },
     "meta:class": "https://ns.adobe.com/xdm/context/profile",
     "meta:containerId": "tenant",
@@ -229,7 +249,7 @@ En måldatauppsättning kan skapas genom att en POST-begäran till API:t för [k
 **API-format**
 
 ```http
-POST /dataSets
+POST catalog/dataSets
 ```
 
 **Begäran**
@@ -243,9 +263,9 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "Target Dataset for CS",
+        "name": "Target dataset for a Customer Success connector",
         "schemaRef": {
-            "id": "https://ns.adobe.com/{TENANT_ID}/schemas/deb3e1096c35d8311b5d80868c4bd5b3cdfd4b3150e7345f",
+            "id": "https://ns.adobe.com/{TENANT_ID}/schemas/b750bd161fef405bc324d0c8809b02c494d73e60e7ae9b3e",
             "contentType": "application/vnd.adobe.xed-full-notext+json; version=1"
         }
     }'
@@ -261,21 +281,15 @@ Ett lyckat svar returnerar en array som innehåller ID:t för den nya datauppsä
 
 ```json
 [
-    "@/dataSets/5e543e8a60b15218ad44b95f"
+    "@/dataSets/5ed18e0f4f90b719196f44a9"
 ]
 ```
 
-## Skapa en datauppsättningsbasanslutning
-
-För att kunna importera externa data till plattformen måste en Experience Platform-datauppsättningsbaserad anslutning först hämtas.
-
-Om du vill skapa en datauppsättningsbasanslutning följer du de steg som beskrivs i självstudiekursen för [datauppsättningsbasanslutningar](../create-dataset-base-connection.md).
-
-Fortsätt att följa stegen som beskrivs i utvecklarhandboken tills du har skapat en datauppsättningsbasanslutning. Hämta och lagra den unika identifieraren (`$id`) och fortsätt att använda den som bas-anslutnings-ID i nästa steg för att skapa en målanslutning.
-
 ## Skapa en målanslutning
 
-Du har nu med dig de unika identifierarna för en datauppsättningsbasanslutning, ett målschema och en måldatauppsättning. Du kan nu skapa en målanslutning med API:t för Flow Service för att ange den datauppsättning som ska innehålla inkommande källdata.
+En målanslutning representerar anslutningen till målet där inkapslade data kommer in. Om du vill skapa en målanslutning måste du ange det fasta anslutnings-spec-ID som är associerat med datasjön. Detta anslutningsspec-ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
+
+Nu har du de unika identifierarna ett målschema, en måldatamängd och ett anslutningsspec-ID till datasjön. Med dessa identifierare kan du skapa en målanslutning med API:t för Flow Service för att ange den datauppsättning som ska innehålla inkommande källdata.
 
 **API-format**
 
@@ -314,10 +328,9 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `baseConnectionId` | ID:t för datauppsättningsbasanslutningen. |
 | `data.schema.id` | The `$id` of the target XDM schema. |
 | `params.dataSetId` | ID för måldatauppsättningen. |
-| `connectionSpec.id` | Anslutningsspecifikations-ID:t för kundens framgångssystem. |
+| `connectionSpec.id` | Det fasta anslutningens spec-ID till datasjön. Detta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
 
 **Svar**
 
@@ -325,8 +338,8 @@ Ett lyckat svar returnerar den nya målanslutningens unika identifierare (`id`).
 
 ```json
 {
-    "id": "5ebaf0b3-66dc-46bf-baf0-b366dc76bfd5",
-    "etag": "\"5d02211d-0000-0200-0000-5e543f0f0000\""
+    "id": "1f5af99c-f1ef-4076-9af9-9cf1ef507678",
+    "etag": "\"530013e2-0000-0200-0000-5ebc4c110000\""
 }
 ```
 
@@ -352,12 +365,20 @@ curl -X POST \
     -H 'Content-Type: application/json' \
     -d '{
         "version": 0,
-        "xdmSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/deb3e1096c35d8311b5d80868c4bd5b3cdfd4b3150e7345f",
+        "xdmSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/b750bd161fef405bc324d0c8809b02c494d73e60e7ae9b3e",
         "xdmVersion": "1.0",
         "id": null,
         "mappings": [
             {
-                "destinationXdmPath": "person.name",
+                "destinationXdmPath": "_id",
+                "sourceAttribute": "Id",
+                "identity": false,
+                "identityGroup": null,
+                "namespaceCode": null,
+                "version": 0
+            },
+            {
+                "destinationXdmPath": "person.name.fullName",
                 "sourceAttribute": "Name",
                 "identity": false,
                 "identityGroup": null,
@@ -365,16 +386,8 @@ curl -X POST \
                 "version": 0
             },
             {
-                "destinationXdmPath": "mobilePhone.number",
-                "sourceAttribute": "Phone",
-                "identity": false,
-                "identityGroup": null,
-                "namespaceCode": null,
-                "version": 0
-            },
-            {
-                "destinationXdmPath": "personalEmail.address",
-                "sourceAttribute": "email",
+                "destinationXdmPath": "_repo.createDate",
+                "sourceAttribute": "CreatedDate",
                 "identity": false,
                 "identityGroup": null,
                 "namespaceCode": null,
@@ -394,75 +407,18 @@ Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusi
 
 ```json
 {
-    "id": "ab91c736-1f3d-4b09-8424-311d3d3e3cea",
-    "version": 1,
-    "createdDate": 1568047685000,
-    "modifiedDate": 1568047703000,
-    "inputSchemaRef": {
-        "id": null,
-        "contentType": null
-    },
-    "outputSchemaRef": {
-        "id": "https://ns.adobe.com/{TENANT_ID}/schemas/efea012ad5deefcdf51afd23ceb3583f",
-        "contentType": "1.0"
-    },
-    "mappings": [
-        {
-            "id": "7bbea5c0f0ef498aa20aa2e2e5c22290",
-            "version": 0,
-            "createdDate": 1568047685000,
-            "modifiedDate": 1568047685000,
-            "sourceType": "text/x.schema-path",
-            "source": "Id",
-            "destination": "_id",
-            "identity": false,
-            "primaryIdentity": false,
-            "matchScore": 0.0,
-            "sourceAttribute": "Id",
-            "destinationXdmPath": "_id"
-        },
-        {
-            "id": "def7fd7db2244f618d072e8315f59c05",
-            "version": 0,
-            "createdDate": 1568047685000,
-            "modifiedDate": 1568047685000,
-            "sourceType": "text/x.schema-path",
-            "source": "FirstName",
-            "destination": "person.name.firstName",
-            "identity": false,
-            "primaryIdentity": false,
-            "matchScore": 0.0,
-            "sourceAttribute": "FirstName",
-            "destinationXdmPath": "person.name.firstName"
-        },
-        {
-            "id": "e974986b28c74ed8837570f421d0b2f4",
-            "version": 0,
-            "createdDate": 1568047685000,
-            "modifiedDate": 1568047685000,
-            "sourceType": "text/x.schema-path",
-            "source": "LastName",
-            "destination": "person.name.lastName",
-            "identity": false,
-            "primaryIdentity": false,
-            "matchScore": 0.0,
-            "sourceAttribute": "LastName",
-            "destinationXdmPath": "person.name.lastName"
-        }
-    ],
-    "status": "PUBLISHED",
-    "xdmVersion": "1.0",
-    "schemaRef": {
-        "id": "https://ns.adobe.com/{TENANT_ID}/schemas/2574494fdb01fa14c25b52d717ccb828",
-        "contentType": "1.0"
-    },
-    "xdmSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/2574494fdb01fa14c25b52d717ccb828"
+    "id": "7c3547d3cfc14f568a51c32b4c0ed739",
+    "version": 0,
+    "createdDate": 1590792069173,
+    "modifiedDate": 1590792069173,
+    "createdBy": "28AF22BA5DE6B0B40A494036@AdobeID",
+    "modifiedBy": "28AF22BA5DE6B0B40A494036@AdobeID"
 }
 ```
 
-## Söka efter dataflödesspecifikationer {#specs}
+## Hämta dataflödesspecifikationer {#specs}
 
-Ett dataflöde ansvarar för att samla in data från källor och föra in dem i plattformen. För att kunna skapa ett dataflöde måste du först få dataflödesspecifikationerna genom att utföra en GET-begäran till API:t för Flow Service. Dataflödesspecifikationer används för att samla in data från en extern databas eller ett NoSQL-system.
+Ett dataflöde ansvarar för att samla in data från källor och föra in dem i plattformen. För att kunna skapa ett dataflöde måste du först få dataflödesspecifikationerna genom att utföra en GET-begäran till API:t för Flow Service. Dataflödesspecifikationer används för att samla in data från ett system för lyckade kunder från tredje part.
 
 **API-format**
 
@@ -482,7 +438,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar detaljerna om dataflödesspecifikationen som ansvarar för att överföra data från CS-systemet till Platform. Detta ID krävs i nästa steg för att skapa ett nytt dataflöde.
+Ett lyckat svar returnerar detaljerna om dataflödesspecifikationen som ansvarar för att överföra data från ditt Customer Success System till Platform. Detta ID krävs i nästa steg för att skapa ett nytt dataflöde.
 
 ```json
 {
@@ -613,7 +569,7 @@ Det sista steget mot att samla in data är att skapa ett dataflöde. Nu bör du 
 * [Mappnings-ID](#mapping)
 * [ID för dataflödesspecifikation](#specs)
 
-Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en POST-begäran samtidigt som du anger de tidigare nämnda värdena i nyttolasten.
+Om du vill schemalägga ett intag måste du först ange starttidsvärdet till epok time i sekunder. Sedan måste du ange frekvensvärdet till ett av de fem alternativen: `once`, `minute`, `hour`, `day`eller `week`. Intervallvärdet anger perioden mellan två på varandra följande inmatningar och att skapa en engångsinmatning kräver inget intervall. För alla andra frekvenser måste intervallvärdet anges till lika med eller större än `15`.
 
 **API-format**
 
@@ -631,41 +587,40 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "Dataflow between database or NoSQL Platform",
-        "description": "Inbound data to Platform",
+        "name": "Creating a dataflow for a Customer Success connector",
+        "description": "Creating a dataflow for a Customer Success connector",
         "flowSpec": {
             "id": "14518937-270c-4525-bdec-c2ba7cce3860",
             "version": "1.0"
         },
         "sourceConnectionIds": [
-            "01b7cbea-cf18-4552-b7cb-eacf18055294"
+            "17faf955-2cf8-4b15-baf9-552cf88b1540"
         ],
         "targetConnectionIds": [
-            "5ebaf0b3-66dc-46bf-baf0-b366dc76bfd5"
+            "bc36ecd6-3b04-4067-b6ec-d63b04b0673d"
         ],
         "transformations": [
             {
                 "name": "Copy",
                 "params": {
                     "deltaColumn": {
-                        "name": "updatedAt",
-                        "dateFormat": "YYYY-MM-DD",
-                        "timezone": "UTC"
+                        "name": "date-time"
                     }
                 }
             },
             {
                 "name": "Mapping",
                 "params": {
-                    "mappingId": "ab91c736-1f3d-4b09-8424-311d3d3e3cea",
+                    "mappingId": "7c3547d3cfc14f568a51c32b4c0ed739",
                     "mappingVersion": "0"
                 }
             }
         ],
         "scheduleParams": {
-            "startTime": "1567411548",
-            "frequency":"minute",
-            "interval":"30"
+            "startTime": "1590792316",
+            "frequency": "minute",
+            "interval": "15",
+            "backfill": "true"
         }
     }'
 ```
@@ -676,13 +631,35 @@ Ett godkänt svar returnerar ID:t `id` för det nya dataflödet.
 
 ```json
 {
-    "id": "8256cfb4-17e6-432c-a469-6aedafb16cd5"
+    "id": "e0bd8463-0913-4ca1-bd84-6309134ca1f6",
+    "etag": "\"04004fe9-0000-0200-0000-5ebc4c8b0000\""
 }
 ```
 
+| Egenskap | Beskrivning |
+| --- | --- |
+| `flowSpec.id` | Flödesspec-ID som hämtades i föregående steg. |
+| `sourceConnectionIds` | Källanslutnings-ID som hämtades i ett tidigare steg. |
+| `targetConnectionIds` | Målanslutnings-ID som hämtades i ett tidigare steg. |
+| `transformations.params.mappingId` | Mappnings-ID som hämtades i ett tidigare steg. |
+| `scheduleParams.startTime` | Starttiden för dataflödet i epok-tid i sekunder. |
+| `scheduleParams.frequency` | Följande frekvensvärden kan väljas: `once`, `minute`, `hour`, `day`eller `week`. |
+| `scheduleParams.interval` | Intervallet anger perioden mellan två på varandra följande flödeskörningar. Intervallets värde ska vara ett heltal som inte är noll. Intervall krävs inte när frekvens har angetts som `once` och ska vara större än eller lika med `15` för andra frekvensvärden. |
+
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in data från ett CS-system på schemalagd basis. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan, t.ex. kundprofil i realtid och datavetenskapen. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in data från ett system för kundframgångar på schemalagd basis. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan, t.ex. kundprofil i realtid och datavetenskapen. Mer information finns i följande dokument:
 
 * [Översikt över kundprofiler i realtid](../../../../profile/home.md)
 * [Översikt över arbetsytan Datavetenskap](../../../../data-science-workspace/home.md)
+
+## Bilaga
+
+I följande avsnitt visas de olika anslutningarna till molnlagringskällan och deras anslutningsspecifikationer.
+
+### Anslutningsspecifikation
+
+| Anslutningsnamn | Anslutningsspecifikation |
+| -------------- | --------------- |
+| Salesforce Service Cloud | `cb66ab34-8619-49cb-96d1-39b37ede86ea` |
+| ServiceNow | `eb13cb25-47ab-407f-ba89-c0125281c563` |
