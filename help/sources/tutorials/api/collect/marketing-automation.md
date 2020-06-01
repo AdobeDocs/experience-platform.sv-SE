@@ -4,18 +4,23 @@ solution: Experience Platform
 title: Samla in data för automatiserad marknadsföring via källanslutningar och API:er
 topic: overview
 translation-type: tm+mt
-source-git-commit: 2f7961a4ca0bc0fec2ed1f50f5101e4dd734a282
+source-git-commit: 14d06635b3ed3c38bae3573a275dd37c990c280e
+workflow-type: tm+mt
+source-wordcount: '1623'
+ht-degree: 0%
 
 ---
 
 
 # Samla in data för automatiserad marknadsföring via källanslutningar och API:er
 
+Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+
 Den här självstudiekursen beskriver stegen för att hämta data från ett automatiserat marknadsföringssystem och föra in dem på plattformen via källanslutningar och API:er.
 
 ## Komma igång
 
-I den här självstudiekursen måste du ha information om filen som du vill hämta till Platform, inklusive filens sökväg och struktur. Om du inte har den här informationen kan du gå till självstudiekursen om hur du [utforskar ett program för automatiserad marknadsföring med API:t](../../api/create/marketing-automation/hubspot.md) för Flow Service innan du provar den här självstudiekursen.
+Den här självstudiekursen kräver att du har tillgång till ett marknadsföringssystem från tredje part via en giltig anslutning och information om filen du vill hämta till Platform, inklusive filens sökväg och struktur. Om du inte har den här informationen kan du gå till självstudiekursen om hur du [utforskar ett system för automatiserad marknadsföring från tredje part med API:t](../explore/marketing-automation.md) för Flow Service innan du försöker med den här självstudiekursen.
 
 Den här självstudien kräver också att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
@@ -54,11 +59,23 @@ För att externa data ska kunna hämtas till plattformen via källanslutningar m
 
 Om du vill skapa en ad hoc-klass och ett ad hoc-schema följer du stegen som beskrivs i [ad hoc-schemautstudiekursen](../../../../xdm/tutorials/ad-hoc.md). När du skapar en ad hoc-klass måste alla fält i källdata beskrivas i begärandetexten.
 
-Fortsätt att följa stegen som beskrivs i utvecklarhandboken tills du har skapat ett ad hoc-schema. Hämta och lagra den unika identifieraren (`$id`) för ad hoc-schemat och fortsätt sedan till nästa steg i kursen.
+Fortsätt att följa stegen som beskrivs i utvecklarhandboken tills du har skapat ett ad hoc-schema. Den unika identifieraren (`$id`) för ad hoc-schemat krävs för att fortsätta till nästa steg i den här självstudiekursen.
 
 ## Skapa en källanslutning {#source}
 
-När ett ad hoc-XDM-schema har skapats kan en källanslutning skapas med hjälp av en POST-begäran till API:t för Flow Service. En källanslutning består av en basanslutning, en källdatafil och en referens till schemat som beskriver källdata.
+När ett ad hoc-XDM-schema har skapats kan en källanslutning skapas med hjälp av en POST-begäran till API:t för Flow Service. En källanslutning består av ett anslutnings-ID, en källdatafil och en referens till schemat som beskriver källdata.
+
+Om du vill skapa en källanslutning måste du också definiera ett uppräkningsvärde för dataformatattributet.
+
+Använd följande uppräkningsvärden för **filbaserade kopplingar**:
+
+| Data.format | Uppräkningsvärde |
+| ----------- | ---------- |
+| Avgränsade filer | `delimited` |
+| JSON-filer | `json` |
+| Parquet-filer | `parquet` |
+
+För alla **tabellbaserade kopplingar** används fasttextvärdet: `tabular`.
 
 **API-format**
 
@@ -77,13 +94,13 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "Marketing automation source connection",
-        "baseConnectionId": "2fce94c1-9a93-4971-8e94-c19a93097129",
-        "description": "Marketing automation source connection",
+        "name": "Source connection for marketing automation",
+        "baseConnectionId": "c6d4ee17-6752-4e83-94ee-1767522e83fa",
+        "description": "Source connection for a marketing automationj connector",
         "data": {
-            "format": "parquet_xdm",
+            "format": "tabular",
             "schema": {
-                "id": "https://ns.adobe.com/{TENANT_ID}/schemas/80a6e931bd5e00190b72daafb4e1e4f7913a114808be9ac0",
+                "id": "https://ns.adobe.com/{TENANT_ID}/schemas/5c65688f44feff94fe61cb3ae34de445fc885548b5ba5d57",
                 "version": "application/vnd.adobe.xed-full-notext+json; version=1"
             }
         },
@@ -99,10 +116,10 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `baseConnectionId` | Anslutnings-ID:t för er app för automatiserad marknadsföring |
-| `data.schema.id` | The `$id` of the ad hoc XDM schema. |
-| `params.path` | Källfilens sökväg. |
-| `connectionSpec.id` | Anslutningsspecifikations-ID:t för er app för automatiserad marknadsföring. |
+| `baseConnectionId` | Unikt anslutnings-ID för det marknadsföringssystem från tredje part som du använder. |
+| `data.schema.id` | ID för ad hoc-XDM-schemat. |
+| `params.path` | Sökvägen till källfilen som du försöker komma åt. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID för ert automatiseringssystem för marknadsföring. |
 
 **Svar**
 
@@ -110,8 +127,8 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 ```json
 {
-    "id": "c315c0ae-a339-44c4-95c0-aea33964c420",
-    "etag": "\"67010af9-0000-0200-0000-5e9795c40000\""
+    "id": "f44dbef2-a4f0-4978-8dbe-f2a4f0e978cf",
+    "etag": "\"5f00fba7-0000-0200-0000-5ed560520000\""
 }
 ```
 
@@ -119,7 +136,9 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 I tidigare steg skapades ett ad hoc-XDM-schema för att strukturera källdata. För att källdata ska kunna användas i Platform måste ett målschema också skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en plattformsdatauppsättning där källdata finns.
 
-Ett mål-XDM-schema kan skapas genom att en POST-begäran görs till API:t för [schemaregister](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml). Om du föredrar att använda användargränssnittet i Experience Platform finns det stegvisa instruktioner [i](../../../../xdm/tutorials/create-schema-ui.md) schemaredigeraren för att utföra liknande åtgärder i schemaredigeraren.
+Ett mål-XDM-schema kan skapas genom att en POST-begäran görs till API:t för [schemaregister](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml).
+
+Om du föredrar att använda användargränssnittet i Experience Platform finns det stegvisa instruktioner [i](../../../../xdm/tutorials/create-schema-ui.md) schemaredigeraren för att utföra liknande åtgärder i schemaredigeraren.
 
 **API-format**
 
@@ -152,9 +171,6 @@ curl -X POST \
             },
             {
                 "$ref": "https://ns.adobe.com/xdm/context/profile-personal-details"
-            },
-                    {
-                "$ref": "https://ns.adobe.com/xdm/context/profile-personal-details"
             }
         ],
         "meta:containerId": "tenant",
@@ -170,11 +186,11 @@ Ett lyckat svar returnerar information om det nyligen skapade schemat inklusive 
 
 ```json
 {
-    "$id": "https://ns.adobe.com/{TENANT_ID}/schemas/63f2c82fcdcb606c536a62d7716e34acbf63cd4582a1c16b",
-    "meta:altId": "_{TENANT_ID}.schemas.63f2c82fcdcb606c536a62d7716e34acbf63cd4582a1c16b",
+    "$id": "https://ns.adobe.com/{TENANT_ID/schemas/da411446eec78026c28d9fafd9e406e304b771d55b07b91b",
+    "meta:altId": "_{TENANT_ID.schemas.da411446eec78026c28d9fafd9e406e304b771d55b07b91b",
     "meta:resourceType": "schemas",
     "version": "1.0",
-    "title": "Target schema for marketing automation",
+    "title": "Target schema for a marketing automation connector",
     "type": "object",
     "description": "Target schema for marketing automation",
     "allOf": [
@@ -185,11 +201,6 @@ Ett lyckat svar returnerar information om det nyligen skapade schemat inklusive 
         },
         {
             "$ref": "https://ns.adobe.com/xdm/context/profile-person-details",
-            "type": "object",
-            "meta:xdmType": "object"
-        },
-        {
-            "$ref": "https://ns.adobe.com/xdm/context/profile-personal-details",
             "type": "object",
             "meta:xdmType": "object"
         },
@@ -216,18 +227,18 @@ Ett lyckat svar returnerar information om det nyligen skapade schemat inklusive 
     ],
     "meta:xdmType": "object",
     "meta:registryMetadata": {
-        "repo:createdDate": 1586992941717,
-        "repo:lastModifiedDate": 1586992941717,
+        "repo:createdDate": 1591042937856,
+        "repo:lastModifiedDate": 1591042937856,
         "xdm:createdClientId": "{CREATED_CLIENT_ID}",
-        "xdm:lastModifiedClientId": "{CREATED_CLIENT_ID}",
+        "xdm:lastModifiedClientId": "{LAST_MODIFIED_CLIENT_ID}",
         "xdm:createdUserId": "{CREATED_USER_ID}",
-        "xdm:lastModifiedUserId": "{CREATED_USER_ID}",
-        "eTag": "d11e63a422b84a843cdd58d0ba8a16ce0a2068eda49ab380c1605ddd10efdf23",
-        "meta:globalLibVersion": "1.9.2"
+        "xdm:lastModifiedUserId": "{LAST_MODIFIED_USER_ID}",
+        "eTag": "3f205600107156ffc394bef428e92cbe25b2faa34e15dd916c0d8bb58d9b7dd3",
+        "meta:globalLibVersion": "1.10.4.2"
     },
     "meta:class": "https://ns.adobe.com/xdm/context/profile",
     "meta:containerId": "tenant",
-    "meta:tenantNamespace": "_{TENANT_ID}"
+    "meta:tenantNamespace": "_{TENANT_ID"
 }
 ```
 
@@ -252,9 +263,9 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "Target dataset for marketing automation",
+        "name": "Target dataset for a marketing automation connector",
         "schemaRef": {
-            "id": "https://ns.adobe.com/{TENANT_ID}/schemas/14d89c5bb88e2ff488f23db896be469e7e30bb166bda8722",
+            "id": "https://ns.adobe.com/{TENANT_ID}/schemas/da411446eec78026c28d9fafd9e406e304b771d55b07b91b",
             "contentType": "application/vnd.adobe.xed-full-notext+json; version=1"
         }
     }'
@@ -270,22 +281,15 @@ Ett lyckat svar returnerar en array som innehåller ID:t för den nya datauppsä
 
 ```json
 [
-    "@/dataSets/5e9797ac6d771118ad8356db"
+    "@/dataSets/5ed5639d798a22191b6987b2"
 ]
 ```
 
-## Skapa en datauppsättningsbasanslutning
-
-För att kunna skapa en målanslutning och importera externa data till plattformen måste en datauppsättningsbasanslutning först hämtas.
-
-Om du vill skapa en datauppsättningsbasanslutning följer du de steg som beskrivs i självstudiekursen för [datauppsättningsbasanslutningar](../create-dataset-base-connection.md).
-
-Fortsätt att följa stegen som beskrivs i utvecklarhandboken tills du har skapat en datauppsättningsbasanslutning. Hämta och lagra den unika identifieraren (`$id`) för basanslutningen och fortsätt sedan till nästa steg i den här självstudiekursen.
-
 ## Skapa en målanslutning
 
-Du har nu unika identifierare för en datauppsättningsbasanslutning, ett målschema och en måldatauppsättning. Med dessa identifierare kan du skapa en målanslutning med API:t för Flow Service för att ange den datauppsättning som ska innehålla inkommande källdata.
+En målanslutning representerar anslutningen till målet där inkapslade data kommer in. Om du vill skapa en målanslutning måste du ange det fasta anslutnings-spec-ID som är associerat med datasjön. Detta anslutningsspec-ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
+Nu har du de unika identifierarna ett målschema, en måldatamängd och ett anslutningsspec-ID till datasjön. Med dessa identifierare kan du skapa en målanslutning med API:t för Flow Service för att ange den datauppsättning som ska innehålla inkommande källdata.
 **API-format**
 
 ```https
@@ -303,21 +307,19 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "baseConnectionId": "44b1c1e43-a5ee-4d86-9c1e-43a5eebd8601",
-        "name": "Target Connection for marketing automation",
-        "description": "Target Connection for marketing automation",
+        "name": "Target Connection for a marketing automation connector",
+        "description": "Target Connection for a marketing automation connector",
         "data": {
-            "format": "parquet_xdm",
             "schema": {
-                "id": "https://ns.adobe.com/{TENANT_ID}/schemas/63f2c82fcdcb606c536a62d7716e34acbf63cd4582a1c16b",
+                "id": "https://ns.adobe.com/{TENANT_ID}/schemas/da411446eec78026c28d9fafd9e406e304b771d55b07b91b",
                 "version": "application/vnd.adobe.xed-full+json;version=1.0"
             }
         },
         "params": {
-            "dataSetId": "5e9797ac6d771118ad8356db
+            "dataSetId": "5ed5639d798a22191b6987b2"
         },
             "connectionSpec": {
-            "id": "cc6a4487-9e91-433e-a3a3-9cf6626c1806",
+            "id": "c604ff05-7f1a-43c0-8e18-33bf874cb11c",
             "version": "1.0"
         }
     }'
@@ -325,17 +327,14 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `baseConnectionId` | ID:t för datauppsättningsbasanslutningen. |
 | `data.schema.id` | The `$id` of the target XDM schema. |
 | `params.dataSetId` | ID för måldatauppsättningen. |
-| `connectionSpec.id` | Anslutningsspecifikations-ID för er marknadsföringsautomatisering. |
-
->[!IMPORTANT] När du skapar en målanslutning måste du se till att du använder basanslutningsvärdet för datauppsättningen för basanslutningen `id` i stället för anslutnings-ID:t för källkopplingen från tredje part.
+| `connectionSpec.id` | Det fasta anslutningens spec-ID till datasjön. Detta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
 
 ```json
 {
-    "id": "fd82157f-0eea-4c81-8215-7f0eeaec8139",
-    "etag": "\"5301d5ac-0000-0200-0000-5e97981a0000\""
+    "id": "4b3d05d8-b7aa-40de-bd05-d8b7aa80de65",
+    "etag": "\"dd00a1a2-0000-0200-0000-5ed564850000\""
 }
 ```
 
@@ -361,10 +360,18 @@ curl -X POST \
     -H 'Content-Type: application/json' \
     -d '{
         "version": 0,
-        "xdmSchema": "https://ns.adobe.com/adobe_mcdp_connectors_stg/schemas/63f2c82fcdcb606c536a62d7716e34acbf63cd4582a1c16b",
+        "xdmSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/da411446eec78026c28d9fafd9e406e304b771d55b07b91b",
         "xdmVersion": "1.0",
         "id": null,
         "mappings": [
+            {
+                "destinationXdmPath": "_id",
+                "sourceAttribute": "Vid",
+                "identity": false,
+                "identityGroup": null,
+                "namespaceCode": null,
+                "version": 0
+            },
             {
                 "destinationXdmPath": "person.name.firstName",
                 "sourceAttribute": "Properties_Firstname_Value",
@@ -374,24 +381,8 @@ curl -X POST \
                 "version": 0
             },
             {
-                "destinationXdmPath": "person.name.lastName",
-                "sourceAttribute": "Properties_Lastname_Value",
-                "identity": false,
-                "identityGroup": null,
-                "namespaceCode": null,
-                "version": 0
-            },
-            {
-                "destinationXdmPath": "repositoryCreatedBy",
+                "destinationXdmPath": "_repo.createDate",
                 "sourceAttribute": "Added_At",
-                "identity": false,
-                "identityGroup": null,
-                "namespaceCode": null,
-                "version": 0
-            },
-            {
-                "destinationXdmPath": "_id",
-                "sourceAttribute": "Portal_Id",
                 "identity": false,
                 "identityGroup": null,
                 "namespaceCode": null,
@@ -411,10 +402,10 @@ Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusi
 
 ```json
 {
-    "id": "280a3cc950894945bf815c5fc60f3803",
+    "id": "500a9b747fcf4908a21917d49bd61780",
     "version": 0,
-    "createdDate": 1586993661034,
-    "modifiedDate": 1586993661034,
+    "createdDate": 1591043336298,
+    "modifiedDate": 1591043336298,
     "createdBy": "28AF22BA5DE6B0B40A494036@AdobeID",
     "modifiedBy": "28AF22BA5DE6B0B40A494036@AdobeID"
 }
@@ -575,6 +566,8 @@ Det sista steget mot att samla in data om automatiserad marknadsföring är att 
 
 Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en POST-begäran samtidigt som du anger de tidigare nämnda värdena i nyttolasten.
 
+Om du vill schemalägga ett intag måste du först ange starttidsvärdet till epok time i sekunder. Sedan måste du ange frekvensvärdet till ett av de fem alternativen: `once`, `minute`, `hour`, `day`eller `week`. Intervallvärdet anger perioden mellan två på varandra följande inmatningar och att skapa en engångsinmatning kräver inget intervall. För alla andra frekvenser måste intervallvärdet anges till lika med eller större än `15`.
+
 **API-format**
 
 ```https
@@ -591,41 +584,50 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "Dataflow for marketing automation",
-        "description": "Dataflow for marketing automation",
+        "name": "Dataflow for a marketing automation source",
+        "description": "collecting Hubspot.Contacts",
         "flowSpec": {
             "id": "14518937-270c-4525-bdec-c2ba7cce3860",
             "version": "1.0"
         },
         "sourceConnectionIds": [
-            "c315c0ae-a339-44c4-95c0-aea33964c420"
+            "f44dbef2-a4f0-4978-8dbe-f2a4f0e978cf"
         ],
         "targetConnectionIds": [
-            "fd82157f-0eea-4c81-8215-7f0eeaec8139"
+            "4b3d05d8-b7aa-40de-bd05-d8b7aa80de65"
         ],
         "transformations": [
             {
+                "name": "Copy",
+                "params": {
+                    "deltaColumn": "date-time"
+                }
+            },
+            {
                 "name": "Mapping",
                 "params": {
-                    "mappingId": "280a3cc950894945bf815c5fc60f3803",
+                    "mappingId": "500a9b747fcf4908a21917d49bd61780",
                     "mappingVersion": "0"
                 }
             }
         ],
         "scheduleParams": {
-            "startTime": "<START TIME>",
-            "frequency":"minute",
-            "interval":"30"
+            "startTime": "1591043454",
+            "frequency":"once",
+            "interval":"15"
         }
     }'
 ```
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `flowSpec.id` | ID för dataflödesspecifikation. |
-| `sourceConnectionIds` | Källanslutnings-ID. |
-| `targetConnectionIds` | Målanslutnings-ID. |
-| `transformations.params.mappingId` | Mappnings-ID. |
+| `flowSpec.id` | Flödesspec-ID som hämtades i föregående steg. |
+| `sourceConnectionIds` | Källanslutnings-ID som hämtades i ett tidigare steg. |
+| `targetConnectionIds` | Målanslutnings-ID som hämtades i ett tidigare steg. |
+| `transformations.params.mappingId` | Mappnings-ID som hämtades i ett tidigare steg. |
+| `scheduleParams.startTime` | Starttiden för dataflödet i epok-tid i sekunder. |
+| `scheduleParams.frequency` | Följande frekvensvärden kan väljas: `once`, `minute`, `hour`, `day`eller `week`. |
+| `scheduleParams.interval` | Intervallet anger perioden mellan två på varandra följande flödeskörningar. Intervallets värde ska vara ett heltal som inte är noll. Intervall krävs inte när frekvens har angetts som `once` och ska vara större än eller lika med `15` för andra frekvensvärden. |
 
 **Svar**
 
@@ -633,7 +635,8 @@ Ett godkänt svar returnerar ID:t (`id`) för det nya dataflödet.
 
 ```json
 {
-    "id": "8256cfb4-17e6-432c-a469-6aedafb16cd5"
+    "id": "e0bd8463-0913-4ca1-bd84-6309134ca1f6",
+    "etag": "\"04004fe9-0000-0200-0000-5ebc4c8b0000\""
 }
 ```
 
