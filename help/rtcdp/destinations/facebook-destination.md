@@ -4,7 +4,7 @@ seo-title: Facebook-mål
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 seo-description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 translation-type: tm+mt
-source-git-commit: 522014f8e5f3de0f553a69763d3a37482953b7c4
+source-git-commit: 79aecf4955507622ac7879c148cdcd23e893dd65
 workflow-type: tm+mt
 source-wordcount: '665'
 ht-degree: 0%
@@ -35,8 +35,10 @@ En webbutik vill nå befintliga kunder via sociala plattformar och visa dem pers
 
 
 Ett flygbolag har olika kundnivåer (Bronze, Silver och Gold) och vill kunna erbjuda varje nivå personaliserade erbjudanden via sociala plattformar. Alla kunder använder dock inte flygbolagets mobilapp, och vissa av dem har inte loggat in på företagets webbplats. De enda identifierare företaget har för dessa kunder är medlems-ID och e-postadresser.
-För att rikta in dem på sociala medier kan de lägga in kunddata från sina CRM i Adobe CDP i realtid, med hjälp av hash-kodade e-postadresser som identifierare.
-Sedan kan de kombinera sina offlinedata med sina befintliga onlineaktivitetsdata för att skapa nya målgruppssegment som de kan rikta sig mot via Facebook-målet.
+
+För att rikta in dem på sociala medier kan de lägga in kunddata från sina CRM i Adobe CDP i realtid med e-postadresserna som identifierare.
+
+Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-ID:n och kundnivåer, för att skapa nya målgruppssegment som de kan rikta sig mot via Facebook-destinationen.
 
 ## Destinationsspecifikationer {#destination-specs}
 
