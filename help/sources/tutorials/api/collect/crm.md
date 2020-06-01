@@ -4,18 +4,23 @@ solution: Experience Platform
 title: Samla in CRM-data via källanslutningar och API:er
 topic: overview
 translation-type: tm+mt
-source-git-commit: 88376a67e064208ab62dd339e820adb8e47d3c4e
+source-git-commit: 1fbc348f6355bbecf20616bb72193777b966b878
+workflow-type: tm+mt
+source-wordcount: '1623'
+ht-degree: 0%
 
 ---
 
 
 # Samla in CRM-data via källanslutningar och API:er
 
-Den här självstudiekursen beskriver stegen för att hämta data från ett CRM-system och föra in dem på plattformen via källanslutningar och API:er.
+Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+
+Den här självstudiekursen beskriver stegen för att hämta data från ett CRM-system från tredje part och föra in dem på plattformen via källanslutningar och API:er.
 
 ## Komma igång
 
-Den här självstudien kräver att du har tillgång till ett CRM-system via en giltig basanslutning och information om tabellen som du vill hämta till plattformen, inklusive tabellens sökväg och struktur. Om du inte har den här informationen kan du gå till självstudiekursen om hur du [utforskar CRM-system med API:t](../explore/crm.md) för Flow Service innan du försöker med den här självstudiekursen.
+Den här självstudien kräver att du har tillgång till ett CRM-system från tredje part via en giltig anslutning och information om tabellen som du vill hämta till plattformen, inklusive tabellens sökväg och struktur. Om du inte har den här informationen kan du gå till självstudiekursen om hur du [utforskar CRM-system med API:t](../explore/crm.md) för Flow Service innan du försöker med den här självstudiekursen.
 
 Den här självstudien kräver också att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
@@ -54,11 +59,23 @@ För att externa data ska kunna hämtas till plattformen via källanslutningar m
 
 Om du vill skapa en ad hoc-klass och ett ad hoc-schema följer du stegen som beskrivs i [ad hoc-schemautstudiekursen](../../../../xdm/tutorials/ad-hoc.md). När du skapar en ad hoc-klass måste alla fält i källdata beskrivas i begärandetexten.
 
-Fortsätt att följa stegen som beskrivs i utvecklarhandboken tills du har skapat ett ad hoc-schema. Hämta och lagra den unika identifieraren (`$id`) för ad hoc-schemat och fortsätt sedan till nästa steg i kursen.
+Fortsätt att följa stegen som beskrivs i utvecklarhandboken tills du har skapat ett ad hoc-schema. Den unika identifieraren (`$id`) för ad hoc-schemat krävs för att fortsätta till nästa steg i den här självstudiekursen.
 
 ## Skapa en källanslutning {#source}
 
-När ett ad hoc-XDM-schema har skapats kan en källanslutning skapas med hjälp av en POST-begäran till API:t för Flow Service. En källanslutning består av en basanslutning, en källdatafil och en referens till schemat som beskriver källdata.
+När ett ad hoc-XDM-schema har skapats kan en källanslutning skapas med hjälp av en POST-begäran till API:t för Flow Service. En källanslutning består av ett anslutnings-ID, en källdatafil och en referens till schemat som beskriver källdata.
+
+Om du vill skapa en källanslutning måste du också definiera ett uppräkningsvärde för dataformatattributet.
+
+Använd följande uppräkningsvärden för **filbaserade kopplingar**:
+
+| Data.format | Uppräkningsvärde |
+| ----------- | ---------- |
+| Avgränsade filer | `delimited` |
+| JSON-filer | `json` |
+| Parquet-filer | `parquet` |
+
+För alla **tabellbaserade kopplingar** används fasttextvärdet: `tabular`.
 
 **API-format**
 
@@ -70,7 +87,7 @@ POST /sourceConnections
 
 ```shell
 curl -X POST \
-    'http://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
+    'https://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -81,7 +98,7 @@ curl -X POST \
         "baseConnectionId": "4cb0c374-d3bb-4557-b139-5712880adc55",
         "description": "Source Connection for a CRM system",
         "data": {
-            "format": "parquet_xdm",
+            "format": "tabular",
             "schema": {
                 "id": "https://ns.adobe.com/{TENANT_ID}/schemas/140c03de81b959db95879033945cfd4c",
                 "version": "application/vnd.adobe.xed-full-notext+json; version=1"
@@ -118,17 +135,19 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `baseConnectionId` | ID för en basanslutning för ett CRM-system. |
+| `baseConnectionId` | Det unika anslutnings-ID:t för det CRM-system från tredje part som du använder. |
 | `data.schema.id` | ID för ad hoc-XDM-schemat. |
 | `params.path` | Källfilens sökväg. |
+| `connectionSpec.id` | Det anslutningsspec-ID som är kopplat till ditt specifika CRM-system från tredje part. I [bilagan](#appendix) finns en lista över anslutningsspecifikations-ID:n. |
 
 **Svar**
 
-Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen. Lagra det här värdet som det krävs i senare steg för att skapa en målanslutning.
+Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen. Detta ID krävs i ett senare steg för att skapa ett dataflöde.
 
 ```json
 {
     "id": "9a603322-19d2-4de9-89c6-c98bd54eb184"
+    "etag": "\"4a00038b-0000-0200-0000-5ebc47fd0000\""
 }
 ```
 
@@ -180,7 +199,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar information om det nyligen skapade schemat inklusive dess unika identifierare (`$id`). Lagra det här ID:t så som det behövs i senare steg för att skapa en måldatauppsättning, mappning och ett dataflöde.
+Ett lyckat svar returnerar information om det nyligen skapade schemat inklusive dess unika identifierare (`$id`). Detta ID krävs i senare steg för att skapa en måldatauppsättning, mappning och ett dataflöde.
 
 ```json
 {
@@ -220,7 +239,7 @@ Ett lyckat svar returnerar information om det nyligen skapade schemat inklusive 
 
 ## Skapa en måldatauppsättning
 
-En måldatauppsättning kan skapas genom att en POST-begäran till katalogtjänstens API utförs, med målschemats ID i nyttolasten.
+En måldatauppsättning kan skapas genom att en POST-begäran till API:t för [katalogtjänsten](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)utförs, med ID:t för målschemat i nyttolasten.
 
 **API-format**
 
@@ -253,7 +272,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar en array som innehåller ID:t för den nya datauppsättningen i formatet `"@/datasets/{DATASET_ID}"`. Datauppsättnings-ID är en skrivskyddad, systemgenererad sträng som används för att referera till datauppsättningen i API-anrop. Lagra måldatauppsättnings-ID som det krävs i senare steg för att skapa en målanslutning och ett dataflöde.
+Ett lyckat svar returnerar en array som innehåller ID:t för den nya datauppsättningen i formatet `"@/datasets/{DATASET_ID}"`. Datauppsättnings-ID är en skrivskyddad, systemgenererad sträng som används för att referera till datauppsättningen i API-anrop. Måldatauppsättnings-ID krävs i senare steg för att skapa en målanslutning och ett dataflöde.
 
 ```json
 [
@@ -261,15 +280,9 @@ Ett lyckat svar returnerar en array som innehåller ID:t för den nya datauppsä
 ]
 ```
 
-## Skapa en datauppsättningsbasanslutning
-
-För att kunna skapa en målanslutning och importera externa data till plattformen måste en datauppsättningsbasanslutning först hämtas.
-
-Om du vill skapa en datauppsättningsbasanslutning följer du de steg som beskrivs i självstudiekursen för [datauppsättningsbasanslutningar](../create-dataset-base-connection.md).
-
-Fortsätt att följa stegen som beskrivs i utvecklarhandboken tills du har skapat en datauppsättningsbasanslutning. Hämta och lagra den unika identifieraren (`$id`) för basanslutningen och fortsätt sedan till nästa steg i den här självstudiekursen.
-
 ## Skapa en målanslutning
+
+En målanslutning representerar anslutningen till målet där inkapslade data kommer in. Om du vill skapa en målanslutning måste du ange det fasta anslutnings-spec-ID som är associerat med datasjön. Detta anslutningsspec-ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
 Du har nu unika identifierare för en datauppsättningsbasanslutning, ett målschema och en måldatauppsättning. Med dessa identifierare kan du skapa en målanslutning med API:t för Flow Service för att ange den datauppsättning som ska innehålla inkommande källdata.
 
@@ -283,18 +296,16 @@ POST /targetConnections
 
 ```shell
 curl -X POST \
-    'http://platform.adobe.io/data/foundation/flowservice/targetConnections' \
+    'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "baseConnectionId": "d6c3988d-14ef-4000-8398-8d14ef000021",
-        "name": "Target Connection",
+        "name": "Target Connection for a CRM connector",
         "description": "Target Connection for CRM data",
         "data": {
-            "format": "parquet_xdm",
             "schema": {
                 "id": "https://ns.adobe.com/{TENANT_ID}/schemas/417a33eg81a221bd10495920574gfa2d",
                 "version": "application/vnd.adobe.xed-full+json;version=1.0"
@@ -304,7 +315,7 @@ curl -X POST \
             "dataSetId": "5c8c3c555033b814b69f947f"
         },
         "connectionSpec": {
-            "id": "cfc0fee1-7dc0-40ef-b73e-d8b134c436f5",
+            "id": "c604ff05-7f1a-43c0-8e18-33bf874cb11c",
             "version": "1.0"
         }
     }'
@@ -312,12 +323,9 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `baseConnectionId` | ID:t för datauppsättningsbasanslutningen. |
 | `data.schema.id` | The `$id` of the target XDM schema. |
 | `params.dataSetId` | ID för måldatauppsättningen. |
-| `connectionSpec.id` | Anslutningsspecifikations-ID för CRM. |
-
->[!NOTE] När du skapar en målanslutning måste du se till att du använder basanslutningsvärdet för datauppsättningen för basanslutningen `id` i stället för basanslutningen för källkopplingen från tredje part.
+| `connectionSpec.id` | Det fasta anslutningens spec-ID till datasjön. Detta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
 
 ```json
 {
@@ -386,7 +394,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusive dess unika identifierare (`id`). Lagra det här värdet som det krävs i ett senare steg för att skapa ett dataflöde.
+Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusive dess unika identifierare (`id`). Detta värde krävs i ett senare steg för att skapa ett dataflöde.
 
 ```json
 {
@@ -456,7 +464,7 @@ Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusi
 }
 ```
 
-## Söka efter dataflödesspecifikationer {#specs}
+## Hämta dataflödesspecifikationer {#specs}
 
 Ett dataflöde ansvarar för att samla in data från källor och föra in dem i plattformen. För att kunna skapa ett dataflöde måste du först hämta de dataflödesspecifikationer som ansvarar för att samla in CRM-data.
 
@@ -478,7 +486,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar information om dataflödesspecifikationen som ansvarar för att överföra data från CRM-systemet till plattformen. Lagra värdet för `id` fältet som det är nödvändigt i nästa steg för att skapa ett nytt dataflöde.
+Ett lyckat svar returnerar information om dataflödesspecifikationen som ansvarar för att överföra data från CRM-systemet till plattformen. Detta ID krävs i nästa steg för att skapa ett nytt dataflöde.
 
 ```json
 {
@@ -611,6 +619,8 @@ Det sista steget mot att samla in CRM-data är att skapa ett dataflöde. Nu har 
 
 Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en POST-begäran samtidigt som du anger de tidigare nämnda värdena i nyttolasten.
 
+Om du vill schemalägga ett intag måste du först ange starttidsvärdet till epok time i sekunder. Sedan måste du ange frekvensvärdet till ett av de fem alternativen: `once`, `minute`, `hour`, `day`eller `week`. Intervallvärdet anger perioden mellan två på varandra följande inmatningar och att skapa en engångsinmatning kräver inget intervall. För alla andra frekvenser måste intervallvärdet anges till lika med eller större än `15`.
+
 **API-format**
 
 ```http
@@ -641,12 +651,6 @@ curl -X POST \
         ],
         "transformations": [
             {
-                "name": "Copy",
-                "params": {
-                    "mode": "append"
-                }
-            },
-            {
                 "name": "Mapping",
                 "params": {
                     "mappingId": "ab91c736-1f3d-4b09-8424-311d3d3e3cea"
@@ -663,10 +667,13 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `flowSpec.id` | ID för dataflödesspecifikation |
-| `sourceConnectionIds` | Källanslutnings-ID |
-| `targetConnectionIds` | Målanslutnings-ID |
-| `transformations.params.mappingId` | Mappnings-ID |
+| `flowSpec.id` | Flödesspec-ID som hämtades i föregående steg. |
+| `sourceConnectionIds` | Källanslutnings-ID som hämtades i ett tidigare steg. |
+| `targetConnectionIds` | Målanslutnings-ID som hämtades i ett tidigare steg. |
+| `transformations.params.mappingId` | Mappnings-ID som hämtades i ett tidigare steg. |
+| `scheduleParams.startTime` | Starttiden för dataflödet i epok-tid i sekunder. |
+| `scheduleParams.frequency` | Följande frekvensvärden kan väljas: `once`, `minute`, `hour`, `day`eller `week`. |
+| `scheduleParams.interval` | Intervallet anger perioden mellan två på varandra följande flödeskörningar. Intervallets värde ska vara ett heltal som inte är noll. Intervall krävs inte när frekvens har angetts som `once` och ska vara större än eller lika med `15` för andra frekvensvärden. |
 
 **Svar**
 
@@ -675,6 +682,8 @@ Ett godkänt svar returnerar ID:t (`id`) för det nya dataflödet.
 ```json
 {
     "id": "8256cfb4-17e6-432c-a469-6aedafb16cd5"
+    "etag": "\"04004fe9-0000-0200-0000-5ebc4c8b0000\""
+
 }
 ```
 
@@ -684,3 +693,14 @@ Genom att följa den här självstudiekursen har du skapat en källanslutning f�
 
 * [Översikt över kundprofiler i realtid](../../../../profile/home.md)
 * [Översikt över arbetsytan Datavetenskap](../../../../data-science-workspace/home.md)
+
+## Bilaga
+
+I följande avsnitt visas de olika CRM-källanslutningarna och deras anslutningsspecifikationer.
+
+### Anslutningsspecifikation
+
+| Anslutningsnamn | Anslutningsspecifikation |
+| -------------- | --------------- |
+| Microsoft Dynamics | `38ad80fe-8b06-4938-94f4-d4ee80266b07` |
+| Salesforce | `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5` |
