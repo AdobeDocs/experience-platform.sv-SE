@@ -4,7 +4,10 @@ solution: Adobe Experience Platform
 title: Översikt över kundprofiler i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: d349ffab7c0de72d38b5195585c14a4a8f80e37c
+source-git-commit: 86fe1f407afb24d7222cff51cf9937a42571fd54
+workflow-type: tm+mt
+source-wordcount: '1775'
+ht-degree: 0%
 
 ---
 
@@ -95,6 +98,37 @@ Datastyrning hanteras vid flera tillfällen. Det handlar om att bestämma vilka 
 ### Hantera avanmälan och förfrågningar om datasekretess
 
 Med Experience Platform kan era kunder skicka avanmälningsförfrågningar relaterade till användningen och lagringen av sina data i kundprofilen i realtid. Mer information om hur avanmälningsbegäranden hanteras finns i dokumentationen om [hur avanmälningsbegäranden](../segmentation/honoring-opt-outs.md)respekteras.
+
+## Profilriktlinjer
+
+Experience Platform har en rad riktlinjer att följa för att effektivt använda profilen.
+
+| Avsnitt | Gräns |
+| ------- | -------- |
+| Profilföreningsschema | Högst **20** datauppsättningar kan bidra till profilföreningsschemat. |
+| Relationer för flera enheter | Högst **5** relationer med flera enheter kan skapas. |
+| JSON-djup för association med flera enheter | Högsta JSON-djup är **4**. |
+| Tidsseriedata | Tidsseriedata är **inte** tillåtna i profilen för icke-personentiteter. |
+| Icke-personschemarelationer | Icke-personschemarelationer tillåts **inte** . |
+| Profilfragment | Den rekommenderade maximala storleken för ett profilfragment är **10 kB**.<br><br> Den absoluta största storleken för ett profilfragment är **1 MB**. |
+| Icke-personenhet | Den största totala storleken för en enskild icke-personenhet är **200 MB**. |
+| Datauppsättningar per icke-personenhet | Högst **1** datauppsättning kan associeras med en icke-personentitet. |
+
+<!--
+| Section | Boundary | Enforcement |
+| ------- | -------- | ----------- |
+| Profile union schema | A maximum of **20** datasets can contribute to the Profile union schema. | A message stating you've reached the maximum number of datasets appears. You must either disable or clean up other obsolete datasets in order to create a new dataset. |
+| Multi-entity relationships | A maximum of **5** multi-entity relationship can be created. | A message stating all available mappings have been used appears when the fifth relationship is mapped. An error message letting you know you have exceeded the number of available mappings appears when attempting to map a sixth relationship. | 
+| JSON depth for multi-entity association | The maximum JSON depth is **4**. | When trying to use the relationship selector with a field that is more than four levels deep, an error message appears, stating it is ineligible for multi-entity association. |
+| Time series data | Time-series data is **not** permitted in Profile for non-people entities. | A message stating that this data cannot be enabled for Profile because it is of an unsupported type appears. |
+| Non-people schema relationships | Non-people schema relationships are **not** permitted. | Relationships between two non-people schemas cannot be created. The relationships checkbox will be disabled. |
+| Profile fragment | The recommended maximum size of a profile fragment is **10kB**.<br><br> The absolute maximum size of a profile fragment is **1MB**. | If you upload a fragment that is larger than 10kB, a warning appears, stating that performance may be degraded since the fragment exceeds the recommended maximum working size.<br><br> If you upload a fragment that is larger than 1MB, ingestion will fail, and an alert letting you know that records have failed will be sent. |
+| Non-person entity | The maximum total size for a single non-person entity is **200MB**. | If you load an object as a non-person entity that is larger than 200MB, an alert will appear, stating that the entity has exceeded the maximum allowable size and will not be useable for segmentation. |
+| Datasets per non-person entity | A maximum of **1** dataset can be associated to a non-person entity. | If you try to create a second dataset that is associated to the same non-person entity, an error appears, stating that only one dataset can be active per non-person entity. |
+
+--->
+
+>!![NOTE] En icke-personenhet refererar till en XDM-klass som **inte** ingår i profilen.
 
 ## Nästa steg och ytterligare resurser
 
