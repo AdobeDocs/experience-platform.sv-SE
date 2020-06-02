@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Ansluta till direktuppspelningsmål och aktivera data
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 47e03d3f58bd31b1aec45cbf268e3285dd5921ea
+source-git-commit: 883bea4aba0548e96b891987f17b8535c4d2eba7
 workflow-type: tm+mt
-source-wordcount: '1861'
+source-wordcount: '1847'
 ht-degree: 0%
 
 ---
@@ -310,8 +310,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         "region": "{REGION}"
     },
     "params": { // use these values for Azure Event Hubs connections
-        "eventHubName": "{EVENT_HUB_NAME}",
-        "namespace": "EVENT_HUB_NAMESPACE"
+        "eventHubName": "{EVENT_HUB_NAME}"
     }
 }'
 ```
@@ -321,7 +320,6 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 * `{NAME_OF_DATA_STREAM}`: *För Amazon Kinesis-anslutningar.* Ange namnet på din befintliga dataström i ditt Amazon Kinesis-konto. Adobe CDP i realtid exporterar data till den här strömmen.
 * `{REGION}`: *För Amazon Kinesis-anslutningar.* Den region på ditt Amazon Kinesis-konto där Adobe Real-time CDP direktuppspelar data.
 * `{EVENT_HUB_NAME}`: *För Azure Event Hubs-anslutningar.* Fyll i Azure Event Hub-namnet där Adobe Real-time CDP direktuppspelar dina data. Mer information finns i [Skapa en händelsehubb](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) i Microsoft-dokumentationen.
-* `{EVENT_HUB_NAMESPACE}`: *För Azure Event Hubs-anslutningar.* Fyll i Azure Event Hubs-namnområdet där Adobe Real-time CDP direktuppspelar dina data. Mer information finns i [Skapa ett namnutrymme](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) för händelsehubbar i Microsoft-dokumentationen.
 
 **Svar**
 
@@ -376,7 +374,7 @@ curl -X POST \
     }
 ```
 
-* `{FLOW_SPEC_ID}`: Använd flödet för det direktuppspelningsmål som du vill ansluta till. Om du vill hämta flödesspecifikationen utför du en GET-åtgärd på `flowspecs` slutpunkten. Se Swagger-dokumentation här: https://platform.adobe.io/data/foundation/flowservice/swagger#/Flow%20Specs%20API/getFlowSpecs. I svaret söker du efter `upsTo` och kopierar motsvarande ID för det direktuppspelningsmål som du vill ansluta till.
+* `{FLOW_SPEC_ID}`: Flödesspec-ID:t för profilbaserade mål är `71471eba-b620-49e4-90fd-23f1fa0174d8`. Använd det här värdet i anropet.
 * `{SOURCE_CONNECTION_ID}`: Använd det källanslutnings-ID som du fick i steget [Anslut till din Experience Platform](#connect-to-your-experience-platform-data).
 * `{TARGET_CONNECTION_ID}`: Använd det anslutnings-ID som du fick i steget [Ansluta till direktuppspelningsmål](#connect-to-streaming-destination).
 
@@ -392,7 +390,7 @@ Ett godkänt svar returnerar ID:t (`id`) för det nya dataflödet och ett `etag`
 ```
 
 
-## Aktivera data till ditt nya mål
+## Aktivera data till ditt nya mål {#activate-data}
 
 ![Översikt över destinationssteg steg 5](/help/rtcdp/destinations/assets/step5-create-streaming-destination-api.png)
 
@@ -451,6 +449,18 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
                 "path": "{PROFILE_ATTRIBUTE}"
             }
         }
+    },
+        },
+        {
+        "op": "add",
+        "path": "/transformations/0/params/profileSelectors/selectors/-",
+        "value": {
+            "type": "JSON_PATH",
+            "value": {
+                "operator": "EXISTS",
+                "path": "{PROFILE_ATTRIBUTE}"
+            }
+        }
     }
 ]
 ```
@@ -458,7 +468,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 * `{DATAFLOW_ID}`: Använd det dataflöde du fick i föregående steg.
 * `{ETAG}`: Använd taggen som du fick i föregående steg.
 * `{SEGMENT_ID}`: Ange det segment-ID som du vill exportera till det här målet. Om du vill hämta segment-ID:n för de segment som du vill aktivera går du till https://www.adobe.io/apis/experienceplatform/home/api-reference.html#/, väljer API för **segmenteringstjänst** i den vänstra navigeringsmenyn och letar efter `GET /segment/jobs` åtgärden.
-* `{PROFILE_ATTRIBUTE}`: Exempel, `"person.lastName"`
+* `{PROFILE_ATTRIBUTE}`: till exempel `personalEmail.address` eller `person.lastName`
 
 **Svar**
 
@@ -503,8 +513,23 @@ Det returnerade svaret ska i parametern inkludera de segment och profilattribut 
         "name": "GeneralTransform",
         "params": {
             "profileSelectors": {
-                "selectors": []
-            },
+                        "selectors": [
+                            {
+                                "type": "JSON_PATH",
+                                "value": {
+                                    "path": "personalEmail.address",
+                                    "operator": "EXISTS"
+                                }
+                            },
+                            {
+                                "type": "JSON_PATH",
+                                "value": {
+                                    "path": "person.lastname",
+                                    "operator": "EXISTS"
+                                }
+                            }
+                        ]
+                    },
             "segmentSelectors": {
                 "selectors": [
                     {
@@ -520,6 +545,50 @@ Det returnerade svaret ska i parametern inkludera de segment och profilattribut 
         }
     }
 ],
+```
+
+**Exporterade data**
+
+>[!IMPORTANT]
+>
+> Förutom profilattributen och segmenten i steget [Aktivera data till ditt nya mål](#activate-data), kommer exporterade data i AWS Kinesis och Azure Event Hubs också att innehålla information om identitetskartan. Detta representerar de exporterade profilernas identiteter (till exempel [ECID](https://docs.adobe.com/content/help/en/id-service/using/intro/id-request.html), mobil-ID, Google-ID, e-postadress osv.). Se ett exempel nedan.
+
+```
+{
+  "person": {
+    "email": "yourstruly@adobe.con"
+  },
+  "segmentMembership": {
+    "ups": {
+      "72ddd79b-6b0a-4e97-a8d2-112ccd81bd02": {
+        "lastQualificationTime": "2020-03-03T21:24:39Z",
+        "status": "exited"
+      },
+      "7841ba61-23c1-4bb3-a495-00d695fe1e93": {
+        "lastQualificationTime": "2020-03-04T23:37:33Z",
+        "status": "existing"
+      }
+    }
+  },
+  "identityMap": {
+    "ecid": [
+      {
+        "id": "14575006536349286404619648085736425115"
+      },
+      {
+        "id": "66478888669296734530114754794777368480"
+      }
+    ],
+    "email_lc_sha256": [
+      {
+        "id": "655332b5fa2aea4498bf7a290cff017cb4"
+      },
+      {
+        "id": "66baf76ef9de8b42df8903f00e0e3dc0b7"
+      }
+    ]
+  }
+}
 ```
 
 ## Nästa steg
