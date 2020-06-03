@@ -4,7 +4,10 @@ seo-title: Google Display & Video 360 Destination
 description: Display & Video 360, tidigare DoubleClick Bid Manager, är ett verktyg som används för att utföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display, Video och Mobile.
 seo-description: 'Display & Video 360, tidigare DoubleClick Bid Manager, är ett verktyg som används för att utföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display, Video och Mobile. '
 translation-type: tm+mt
-source-git-commit: 50e6b39c1eb0bda4f3b30991515fb1c13fa9ff87
+source-git-commit: 121ae74e9c352b1f6fc12093d815e711ebd817b8
+workflow-type: tm+mt
+source-wordcount: '562'
+ht-degree: 0%
 
 ---
 
@@ -46,7 +49,7 @@ Innan du skapar Google Display &amp; Video 360-destinationen i Adobe Real-time C
 1. I **[!UICONTROL Connections > Destinations]** väljer du Google Display &amp; Video 360 och sedan **[!UICONTROL Create destination]**.
    ![Connect Google Display &amp; Video 360 destination](/help/rtcdp/destinations/assets/google-dv360-destination.png)
 
-2. I arbetsflödet Skapa mål fyller du i [!UICONTROL Basic Information] för målet.
+2. I arbetsflödet Skapa mål fyller du i [!UICONTROL Basic Information] för målet. <br>
    ![Grundläggande information, Google Display och Video 360](/help/rtcdp/destinations/assets/google-dv360-basic-information.png)
 * **[!UICONTROL Name]**: Fyll i det önskade namnet för det här målet.
 * **[!UICONTROL Description]**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
