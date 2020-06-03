@@ -4,7 +4,10 @@ seo-title: Destinationer för e-postmarknadsföring
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 seo-description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 translation-type: tm+mt
-source-git-commit: 50e6b39c1eb0bda4f3b30991515fb1c13fa9ff87
+source-git-commit: 121ae74e9c352b1f6fc12093d815e711ebd817b8
+workflow-type: tm+mt
+source-wordcount: '491'
+ht-degree: 0%
 
 ---
 
@@ -23,7 +26,7 @@ Anslut till antingen Amazon S3 eller SFTP i det anslutande målflödet som beskr
 
 1. I **[!UICONTROL Connections > Destinations]** väljer du det mål för e-postmarknadsföring som du vill ansluta till och sedan **[!UICONTROL Connect destination]**.
 
-   ![Anslut till mål](/help/rtcdp/destinations/assets/connect-destination.png)
+   ![Anslut till mål](/help/rtcdp/destinations/assets/connect-destination-1.png)
 
 2. Välj lagringsplats **[!UICONTROL Connection type]** i Anslutningsguiden. Du kan välja mellan **Amazon S3**, **SFTP med lösenord** och **SFTP med SSH-nyckel**. Fyll i informationen nedan, beroende på vilken typ av anslutning du har, och välj sedan **[!UICONTROL Connect]**.
 
