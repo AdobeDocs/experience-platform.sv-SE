@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Identifiera insikter i Attribution AI
 topic: Attribution AI insights
 translation-type: tm+mt
-source-git-commit: ec0de4c8775367be9e6016529471254ad9f8f453
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '1164'
+ht-degree: 0%
 
 ---
 
@@ -21,7 +24,7 @@ Om du vill kunna använda insikter för Attribution AI måste du ha en tjänstin
 
 ## Översikt över insikter om tjänstinstans
 
-Klicka på **Tjänster** i den vänstra navigeringen i användargränssnittet för Adobe Experience Platform. Webbläsaren *Services* visas och visar tillgängliga Adobe Intelligent Services. Klicka på **Öppna** i behållaren för Attribution AI.
+Klicka på [!DNL Adobe Experience Platform] Tjänster **i den vänstra navigeringen i** användargränssnittet. Webbläsaren *Services* visas och visar tillgängliga Adobe Intelligent Services. Klicka på **Öppna** i behållaren för Attribution AI.
 
 ![Åtkomst till din instans](./images/insights/open_Attribution_ai.png)
 
