@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Översikt över AI för kunder
 topic: Customer AI overview
 translation-type: tm+mt
-source-git-commit: ec0de4c8775367be9e6016529471254ad9f8f453
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '487'
+ht-degree: 0%
 
 ---
 
@@ -32,7 +35,7 @@ Kunden är inte byggd för att:
 
 - Kundens AI bör inte användas för att förutsäga dynamisk prissättning, eller den prisnivå där kunden ska göra ett köp.
 - Kundens AI kan inte avgöra om det är mer sannolikt att kunden köper en artikel genom att lämna ett erbjudande. Även om ni kanske bestämmer er för att skicka rabatterbjudanden baserat på poängen är det inte nödvändigtvis det bästa sättet att konvertera dessa kunder.
-- Kundens AI är inte ett verktyg för produktrekommendationer. Om du har tusentals SKU:er ska du inte använda kundens AI som proxyserver för en riktig produktrekommendationslösning som Adobe Target.
+- Kundens AI är inte ett verktyg för produktrekommendationer. Om du har tusentals SKU:er ska du inte använda kundens AI som proxyserver för en riktig produktrekommendationslösning som [!DNL Adobe Target].
 - Kundens AI kan inte förutsäga i vilket skede av köpresan kunden befinner sig, t.ex. om de befinner sig i&quot;medvetande&quot;,&quot;bedömning&quot;,&quot;inköp&quot; eller&quot;kundlojalitet&quot;.
 - Använd inte kundens AI för att avgöra vilka kunder som sannolikt kommer att köpa en produktlansering i framtiden. Detta kräver att vissa framgångshändelser ska finnas i det förflutna så att kundens AI kan utbilda maskininlärningsalgoritmen på dina data.
 
