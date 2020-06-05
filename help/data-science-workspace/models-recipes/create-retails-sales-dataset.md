@@ -4,19 +4,22 @@ solution: Experience Platform
 title: Skapa försäljningsschema och datauppsättning för återförsäljning
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 91c7b7e285a4745da20ea146f2334510ca11b994
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '526'
+ht-degree: 0%
 
 ---
 
 
 # Skapa försäljningsschema och datauppsättning för återförsäljning
 
-I den här självstudiekursen får du de krav och resurser som krävs för alla andra självstudiekurser i Adobe Experience Platform Data Science Workspace. När allt är klart är butiksförsäljningsschemat och datauppsättningarna tillgängliga för dig och medlemmar i din IMS-organisation på Experience Platform.
+I den här självstudiekursen får du tillgång till de krav och resurser som krävs för alla andra självstudiekurser på arbetsytan för [!DNL Adobe Experience Platform] datavetenskap. När allt är klart är butiksförsäljningsschemat och datauppsättningarna tillgängliga för dig och medlemmar i din IMS-organisation på Experience Platform.
 
 ## Komma igång
 
 Innan du startar den här självstudiekursen måste du ha följande krav:
-- Tillgång till Adobe Experience Platform. Om du inte har tillgång till en IMS-organisation i Experience Platform, ska du tala med systemadministratören innan du fortsätter.
+- Åtkomst till [!DNL Adobe Experience Platform]. Om du inte har tillgång till en IMS-organisation i Experience Platform, ska du tala med systemadministratören innan du fortsätter.
 - Behörighet att göra Experience Platform API-anrop. Fyll i [Autentisera och få tillgång till API:er](../../tutorials/authentication.md) för Adobe Experience Platform för att få följande värden för att lyckas med den här självstudiekursen:
    - Behörighet: `{ACCESS_TOKEN}`
    - x-api-key: `{API_KEY}`
