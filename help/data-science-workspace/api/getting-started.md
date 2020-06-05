@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Utvecklarhandbok för Sensei Machine Learning API
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: b0b44f4aaf365f58086cfa17d27fbba6ed2a2a97
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '206'
+ht-degree: 0%
 
 ---
 
@@ -17,7 +20,7 @@ Utvecklarhandboken innehåller steg som hjälper dig att börja använda API:t f
 
 ## Komma igång
 
-Du måste ha slutfört självstudiekursen för [autentisering](../../tutorials/authentication.md) för att ha tillgång till följande begäranderubriker för att kunna ringa anrop till API:er för Adobe Experience Platform:
+Du måste ha slutfört självstudiekursen för [autentisering](../../tutorials/authentication.md) för att ha tillgång till följande begäranderubriker för att kunna ringa anrop till [!DNL Adobe Experience Platform] API:er:
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
