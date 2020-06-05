@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Plattforms-SDK - guide
 topic: SDK authoring
 translation-type: tm+mt
-source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '451'
+ht-degree: 0%
 
 ---
 
@@ -19,7 +22,7 @@ I den här självstudiekursen finns information om hur du konverterar `data_acce
 
 ## Bygg autentisering {#build-authentication}
 
-Autentisering krävs för att anropa Adobe Experience Platform och består av API-nyckel, IMS-org-ID, en användartoken och en tjänsttoken.
+Autentisering krävs för att anropa [!DNL Adobe Experience Platform]och består av API-nyckel, IMS-organisation, användartoken och tjänsttoken.
 
 ### Python
 
@@ -150,7 +153,7 @@ Den nya plattforms-SDK har stöd för följande åtgärder:
 | Större än eller lika med (`>=`) | `ge()` |
 | Mindre än (`<`) | `lt()` |
 | Mindre än eller lika med (`<=`) | `le()` |
-| Och (`&`) | `And()` |
+| And (`&`) | `And()` |
 | Or (`|`) | `Or()` |
 
 ## Filtrera efter markerade kolumner {#filter-by-selected-columns}
