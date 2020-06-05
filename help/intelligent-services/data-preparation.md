@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Förbered data för användning i intelligenta tjänster
 topic: Intelligent Services
 translation-type: tm+mt
-source-git-commit: 8e24c7c50d700bc3644ce710f77073e537207a6f
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
 workflow-type: tm+mt
-source-wordcount: '1445'
+source-wordcount: '1437'
 ht-degree: 0%
 
 ---
@@ -191,7 +191,7 @@ När ni väl har fastställt om era data om marknadsföringshändelser kan mappa
 
 När du har bestämt vilket dataintervall du vill skicka kan du kontakta Adobes konsulttjänster för att mappa dina data till schemat och överföra dem till tjänsten.
 
-Om du har en Adobe Experience Platform-prenumeration och vill mappa och importera data själv följer du stegen som beskrivs i avsnittet nedan.
+Om du har en [!DNL Adobe Experience Platform] prenumeration och vill mappa och importera data själv följer du stegen som beskrivs i avsnittet nedan.
 
 ### Använda Adobe Experience Platform
 
@@ -217,7 +217,7 @@ När du har skapat och sparat schemat kan du skapa en ny datauppsättning som ba
 
 #### Lägg till en primär ID-namnområdestagg i datauppsättningen
 
-Om du hämtar in data från Adobe Audience Manager, Adobe Analytics eller någon annan extern källa måste du lägga till en `primaryIdentityNameSpace` -tagg i datauppsättningen. Detta kan du göra genom att göra en PATCH-begäran till katalogtjänstens API.
+Om du hämtar in data från [!DNL Adobe Audience Manager], [!DNL Adobe Analytics]eller någon annan extern källa, måste du lägga till en `primaryIdentityNameSpace` -tagg i datauppsättningen. Detta kan du göra genom att göra en PATCH-begäran till katalogtjänstens API.
 
 Om du importerar data från en lokal CSV-fil kan du gå vidare till nästa avsnitt om [mappning och datainhämtning](#ingest).
 
