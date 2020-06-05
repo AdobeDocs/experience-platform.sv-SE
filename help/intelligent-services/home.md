@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Intelligent Services - översikt
 topic: Intelligent Services overview
 translation-type: tm+mt
-source-git-commit: c9d1fca0b14607f83657d5d8a751c2d0cc46bea0
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '428'
+ht-degree: 0%
 
 ---
 
 
 # Intelligent Services - översikt
 
-Intelligenta tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskaplig expertis. Dessutom kan marknadsförare aktivera prognoser i Adobe Experience Cloud, Adobe Experience Platform och tredjepartsprogram.
+Intelligenta tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskaplig expertis. Dessutom kan marknadsförare aktivera prognoser i [!DNL Adobe Experience Cloud]och [!DNL Adobe Experience Platform]från tredje part.
 
 Följande video är utformad för att ge stöd för din förståelse av intelligenta tjänster. I den här videon förklaras ett arbetsflöde på hög nivå med exempel på hur man använder affärssystem, och dessutom beskrivs funktionerna i både Attribution AI och Customer AI.
 
@@ -19,7 +22,7 @@ Följande video är utformad för att ge stöd för din förståelse av intellig
 
 ## Fördelar med intelligenta tjänster
 
-Intelligenta tjänster, som bygger på Adobe Experience Platform, ger marknadsförare ansvariga för kundupplevelseåtkomst till AI-as-service, vilket gör det enkelt för alla att förutse kundbeteende, mäta effekten av en kampanj eller säkerställa bättre avkastning på varje investering. Nedan anges några av fördelarna med intelligenta tjänster.
+Intelligenta tjänster [!DNL Adobe Experience Platform]ger marknadsförare som ansvarar för kundupplevelseåtkomst till AI-as-service, vilket gör det enkelt för alla att förutse kundbeteende, mäta effekten av en kampanj eller säkerställa bättre avkastning på varje investering. Nedan anges några av fördelarna med intelligenta tjänster.
 
 ### Kostnadseffektiv snabbhet på marknaden
 
@@ -37,7 +40,7 @@ Ge marknadsförarna möjlighet att komma igång med AI/ML direkt och börja för
 
 ### Ingest
 
-Kunddata importeras och omvandlas med Experience Data Model (XDM) på Adobe Experience Platform. Mer information om XDM finns i [XDM-översikten](../xdm/home.md).
+Kunddata importeras och omvandlas med Experience Data Model (XDM) på [!DNL Adobe Experience Platform]. Mer information om XDM finns i [XDM-översikten](../xdm/home.md).
 
 ### Konfigurera
 
@@ -49,7 +52,7 @@ När modellerna har avslutat utbildningen och poängsättningen skrivs poängen 
 
 ### Vidta åtgärder
 
-Slutligen kan ni bestämma vilka åtgärder som ska vidtas med prognoserna, som att konsumera insikter, aktivera program i Adobe Experience Cloud och bygga anpassade kontrollpaneler.
+Slutligen kan ni bestämma vilka åtgärder som ska vidtas med prognoserna, som att konsumera insikter, aktivera program i hela [!DNL Adobe Experience Cloud]organisationen och bygga anpassade kontrollpaneler.
 
 ## Nästa steg
 
