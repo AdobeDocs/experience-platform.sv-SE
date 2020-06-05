@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa en Google Big Query-källkoppling i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 2162c66b1664ecaaf0b609fe3f7ccf58c4a5d31d
+source-git-commit: 75ba0bce7ce070af851bbf7e220dbf08febc4c20
 workflow-type: tm+mt
 source-wordcount: '524'
 ht-degree: 0%
@@ -51,7 +51,7 @@ Logga in på <a href="https://platform.adobe.com" target="_blank">Adobe Experien
 
 Under kategorin *Databaser* väljer du **Google Big Query** för att visa ett informationsfält till höger på skärmen. Informationsfältet innehåller en kort beskrivning av den valda källan samt alternativ för att ansluta till källan eller visa dess dokumentation. Om du vill skapa en ny inkommande basanslutning väljer du **Anslut källa**.
 
-![](../../../../images/tutorials/create/google-big-query/sources-catalog.png)
+![](../../../../images/tutorials/create/google-big-query/catalog.png)
 
 Sidan *Anslut till Google Big Query* visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
@@ -59,13 +59,13 @@ Sidan *Anslut till Google Big Query* visas. På den här sidan kan du antingen a
 
 Om du använder nya autentiseringsuppgifter väljer du **Nytt konto**. På indataformuläret som visas anger du basanslutningen med ett namn, en valfri beskrivning och dina GBQ-autentiseringsuppgifter. När du är klar väljer du **Anslut** och tillåt sedan en tid för att upprätta den nya basanslutningen.
 
-![](../../../../images/tutorials/create/google-big-query/gbq-new-credentials.png)
+![](../../../../images/tutorials/create/google-big-query/new.png)
 
 ### Befintligt konto
 
 Om du vill ansluta ett befintligt konto väljer du det GBQ-konto du vill ansluta till och sedan väljer du **Nästa** för att fortsätta.
 
-![](../../../../images/tutorials/create/google-big-query/gbq-existing-credentials.png)
+![](../../../../images/tutorials/create/google-big-query/existing.png)
 
 ## Nästa steg
 
