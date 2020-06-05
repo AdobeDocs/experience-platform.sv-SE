@@ -4,7 +4,7 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobes kunddataplattform i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobes kunddataplattform i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: 237ca5fc950b46ae4718850ab1360cdf52b8b112
+source-git-commit: 24e4746b28620210c138a1e803b6afadff79ab30
 workflow-type: tm+mt
 source-wordcount: '860'
 ht-degree: 0%
@@ -18,7 +18,7 @@ Aktivera data i Adobes kunddataplattform i realtid genom att mappa segment till 
 
 ## Förutsättningar {#prerequisites}
 
-Om du vill aktivera data till mål måste du ha [anslutit ett mål](/help/rtcdp/destinations/assets/connect-destination.png). Om du inte redan har gjort det går du till [målkatalogen](/help/rtcdp/destinations/destinations-catalog.md), bläddrar bland de mål som stöds och ställer in ett eller flera mål.
+Om du vill aktivera data till mål måste du ha [anslutit ett mål](/help/rtcdp/destinations/assets/connect-destination-1.png). Om du inte redan har gjort det går du till [målkatalogen](/help/rtcdp/destinations/destinations-catalog.md), bläddrar bland de mål som stöds och ställer in ett eller flera mål.
 
 ## Aktivera data {#activate-data}
 
