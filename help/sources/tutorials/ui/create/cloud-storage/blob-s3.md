@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en Azure Blob- eller Amazon S3-källanslutning i gränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
+source-git-commit: 9fd00ec198f61843bb9a395103215e5441b23745
 workflow-type: tm+mt
-source-wordcount: '591'
+source-wordcount: '626'
 ht-degree: 0%
 
 ---
@@ -56,18 +56,30 @@ Mer information om hur du kommer igång finns i [det här AWS-dokumentet](https:
 
 ## Anslut ditt Blob- eller S3-konto
 
-När autentiseringsuppgifterna för molnlagringen är klara kan du följa stegen nedan för att skapa en ny inkommande basanslutning som länkar ditt blob- eller S3-konto till plattformen.
+När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att skapa ett nytt Blob- eller S3-konto för att ansluta till plattformen.
 
-Logga in på <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a> och välj sedan **Källor** i det vänstra navigeringsfältet för att komma åt källarbetsytan. På *katalogskärmen* visas en mängd olika källor som du kan skapa inkommande basanslutningar för, och varje källa visar antalet befintliga basanslutningar som är kopplade till dem.
+Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt *[!UICONTROL Sources]* arbetsytan. På *[!UICONTROL Catalog]* skärmen visas en mängd olika källor som du kan skapa ett inkommande konto för, och varje källa visar antalet befintliga konton och dataflöden som är kopplade till dem.
 
-Under kategorin *Cloud Storage* väljer du antingen **Azure Blob Storage** eller **Amazon S3** för att visa ett informationsfält till höger på skärmen. Informationsfältet innehåller en kort beskrivning av den valda källan samt alternativ för att visa dess dokumentation eller ansluta till källan. Om du vill skapa en ny inkommande basanslutning klickar du på **Anslut källa**.
+Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-![](../../../../images/tutorials/create/s3/s3_sources_catalog.png)
+Under *[!UICONTROL Databases]* kategorin väljer du **[!UICONTROL Azure Blob Storage]** eller **[!UICONTROL Amazon S3]** klickar **på plusikonen (+)** för att skapa en ny Blob- eller S3-koppling.
 
-I indataformuläret anger du basanslutningen med ett namn, en valfri beskrivning och autentiseringsuppgifterna för blob eller S3. Klicka slutligen på **Anslut** och tillåt lite tid för att upprätta den nya basanslutningen.
+![katalog](../../../../images/tutorials/create/blob/catalog.png)
 
-![](../../../../images/tutorials/create/s3/s3_credentials.png)
+Sidan visas *[!UICONTROL Connect to Azure Blob Storage]* . På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
+
+### Nytt konto
+
+Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. På indataformuläret som visas anger du ett namn, en valfri beskrivning och autentiseringsuppgifterna för blobben eller S3. När du är klar väljer du **[!UICONTROL Connect]** och tillåt sedan en tid för det nya kontot att upprätta.
+
+![koppla](../../../../images/tutorials/create/blob/new.png)
+
+### Befintligt konto
+
+Om du vill ansluta ett befintligt konto väljer du det Blob- eller S3-konto som du vill ansluta till och väljer sedan **[!UICONTROL Next]** att fortsätta.
+
+![befintlig](../../../../images/tutorials/create/blob/existing.png)
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en basanslutning till ditt Azure Blob- eller Amazon S3-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/batch/cloud-storage.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt Blob- eller S3-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till plattformen](../../dataflow/batch/cloud-storage.md).
