@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Utvecklarhandbok för SDK
 topic: Overview
 translation-type: tm+mt
-source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '943'
+ht-degree: 0%
 
 ---
 
 
 # Utvecklarhandbok för SDK
 
-Med SDK för modellredigering kan du utveckla anpassade maskininlärningsrecept och funktionspipeliner som kan användas i Adobe Experience Platform Data Science Workspace och tillhandahålla implementerbara mallar i PySpark och Spark.
+Med SDK för modellredigering kan du utveckla anpassade maskininlärningsrecept och funktionspipeliner som kan användas i arbetsytan för [!DNL Adobe Experience Platform] datavetenskap och tillhandahålla implementerbara mallar i PySpark och Spark.
 
 Det här dokumentet innehåller information om de olika klasser som finns i SDK för modellredigering.
 
