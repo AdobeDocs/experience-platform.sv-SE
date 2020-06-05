@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användarhandbok för AI-attribut
 topic: User guide
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: 0ea96de956adb5a6c5286433a547772118c43aee
 workflow-type: tm+mt
 source-wordcount: '1430'
 ht-degree: 0%
@@ -52,7 +52,7 @@ Det finns tre olika typer av indata som används för att definiera händelser:
 - **Fönstret Lookback:** Anger en tidsram som anger hur många dagar före kontaktytorna för konverteringshändelsen som ska inkluderas.
 - **Pekpunkter:** marknadsföringshändelser på mottagarnivå, individ- och cookie-nivå som används för att utvärdera den numeriska eller intäktsbaserade effekten av konverteringar.
 
-### Definiera konverteringshändelser
+### Definiera konverteringshändelser {#define-conversion-events}
 
 Om du vill definiera en konverteringshändelse måste du ge händelsen ett namn och välja händelsetyp genom att klicka på **listrutan Ange fältnamn** .
 
@@ -144,7 +144,7 @@ Klicka på klockikonen om du vill ändra den tidpunkt på dagen som du vill att 
 
 ![klockikon](./images/user-guide/time_of_day.png)
 
-### Regionbaserad modellering (valfritt)
+### Regionbaserad modellering (valfritt) {#region-based-modeling-optional}
 
 Kundernas beteenden kan skilja sig avsevärt mellan olika länder och geografiska regioner. För globala företag kan användning av landsbaserade eller regionbaserade modeller öka attribueringsnoggrannheten. Varje region som läggs till skapar en ny modell med den regionens data.
 
