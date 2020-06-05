@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Användarhandbok för AI-attribut
 topic: User guide
 translation-type: tm+mt
-source-git-commit: 3e1e7bea7113b5db6b9bd02ce0dbe8cfd486206c
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '1430'
+ht-degree: 0%
 
 ---
 
@@ -17,7 +20,7 @@ Det här dokumentet är en guide för interaktion med Attribution AI i användar
 
 ## Skapa en instans
 
-Klicka på **Tjänster** i den vänstra navigeringen i användargränssnittet för Adobe Experience Platform. Webbläsaren *Services* visas och visar tillgängliga Adobes intelligenta tjänster. Klicka på **Öppna** i behållaren för Attribution AI.
+Klicka på [!DNL Adobe Experience Platform] Tjänster **i den vänstra navigeringen i** användargränssnittet. Webbläsaren *Services* visas och visar tillgängliga Adobes intelligenta tjänster. Klicka på **Öppna** i behållaren för Attribution AI.
 
 ![Åtkomst till din instans](./images/user-guide/open_Attribution_ai.png)
 
