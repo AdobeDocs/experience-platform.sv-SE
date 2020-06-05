@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Identifiera insikter i Attribution AI
 topic: Attribution AI insights
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: 0ea96de956adb5a6c5286433a547772118c43aee
 workflow-type: tm+mt
 source-wordcount: '1164'
 ht-degree: 0%
@@ -57,7 +57,7 @@ Dialogrutan Redigera visas. Du kan redigera beskrivningen och bedömningsfrekven
 
 ![redigera poesi](./images/insights/edit-popover.png)
 
-### Fler åtgärder
+### Fler åtgärder {#more-actions}
 
 Knappen *Fler åtgärder* finns i den övre högra navigeringen bredvid *Redigera*. Om du klickar på **Fler åtgärder** öppnas en listruta där du kan välja någon av följande åtgärder:
 
