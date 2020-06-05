@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en FTP- eller SFTP-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 37a5f035023cee1fc2408846fb37d64b9a3fc4b6
+source-git-commit: 46b57900d9323cffeb59a0a6250bf5a9f4ac64ab
 workflow-type: tm+mt
-source-wordcount: '529'
+source-wordcount: '544'
 ht-degree: 0%
 
 ---
@@ -42,22 +42,32 @@ Experience Platform har stöd för följande filformat som kan importeras från 
 
 För att få åtkomst till FTP- eller SFTP-servern på plattformen måste du ange serverns **värdnamn**, ett **användarnamn** och ett **lösenord**.
 
-## Anslut till servern
+## Anslut till FTP- eller SFTP-servern
 
-När serverns autentiseringsuppgifter är klara kan du följa stegen nedan för att skapa en ny inkommande basanslutning som länkar FTP- eller SFTP-servern till plattformen.
+När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att skapa ett nytt FTP- eller SFTP-konto för att ansluta till plattformen.
 
-Logga in på <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a> och välj sedan **Källor** i det vänstra navigeringsfältet för att komma åt källarbetsytan. På *katalogskärmen* visas en mängd olika källor som du kan skapa inkommande basanslutningar för, och varje källa visar antalet befintliga basanslutningar som är kopplade till dem.
+Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt *[!UICONTROL Sources]* arbetsytan. På *[!UICONTROL Catalog]* skärmen visas en mängd olika källor som du kan skapa ett inkommande konto för, och varje källa visar antalet befintliga konton och dataflöden som är kopplade till dem.
 
-Välj antingen *FTP* eller **SFTP** under kategorin **Cloud-lagring** för att visa ett informationsfält till höger på skärmen. Informationsfältet innehåller en kort beskrivning av den valda källan samt alternativ för att visa dess dokumentation eller ansluta till källan. Om du vill skapa en ny inkommande basanslutning klickar du på **Anslut källa**.
+Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-![](../../../../images/tutorials/create/sftp/sftp_sources_catalog.png)
+Under *[!UICONTROL Databases]* kategorin väljer du **[!UICONTROL SFTP]** att klicka **på plusikonen (+)** för att skapa en ny FTP- eller SFTP-koppling.
 
-I indataformuläret anger du basanslutningen med ett namn, en valfri beskrivning och autentiseringsuppgifter för FTP eller SFTP. Klicka slutligen på **Anslut** och tillåt lite tid för att upprätta den nya basanslutningen.
+![katalog](../../../../images/tutorials/create/sftp/catalog.png)
 
-![](../../../../images/tutorials/create/sftp/sftp_credentials.png)
+Sidan visas *[!UICONTROL Connect to SFTP]* . På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
-När en basanslutning till FTP- eller SFTP-servern har upprättats kan du fortsätta till nästa avsnitt och konfigurera ett dataflöde för att hämta data till plattformen.
+### Nytt konto
+
+Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. Ange ett namn, en valfri beskrivning och dina FTP- eller SFTP-autentiseringsuppgifter på det indataformulär som visas. När du är klar väljer du **[!UICONTROL Connect]** och tillåt sedan en tid för det nya kontot att upprätta.
+
+![koppla](../../../../images/tutorials/create/sftp/new.png)
+
+### Befintligt konto
+
+Om du vill ansluta ett befintligt konto markerar du det FTP- eller SFTP-konto som du vill ansluta till och väljer sedan **[!UICONTROL Next]** att fortsätta.
+
+![befintlig](../../../../images/tutorials/create/sftp/existing.png)
 
 ## Nästa steg
 
-I den här självstudiekursen har du upprättat en anslutning till FTP- eller SFTP-servern. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/batch/cloud-storage.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt FTP- eller SFTP-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till plattformen](../../dataflow/batch/cloud-storage.md).
