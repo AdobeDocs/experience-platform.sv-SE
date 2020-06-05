@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Berika kundprofilen i realtid med maskininlärningsinsikter
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '1174'
+ht-degree: 0%
 
 ---
 
 
 # Berika kundprofilen i realtid med maskininlärningsinsikter
 
-Adobe Experience Platform Data Science Workspace innehåller verktyg och resurser för att skapa, utvärdera och använda maskininlärningsmodeller för att generera dataprognoser och insikter. När maskininlärningsinsikter hämtas in i en profilaktiverad datauppsättning, hämtas samma data också in som profilposter, som sedan kan segmenteras i deluppsättningar av relaterade element med hjälp av Experience Platform Segmentation Service.
+[!DNL Adobe Experience Platform] Data Science Workspace innehåller verktyg och resurser för att skapa, utvärdera och använda maskininlärningsmodeller för att generera dataprognoser och insikter. När maskininlärningsinsikter hämtas in i en profilaktiverad datauppsättning, hämtas samma data också in som profilposter, som sedan kan segmenteras i deluppsättningar av relaterade element med hjälp av Experience Platform Segmentation Service.
 
 I det här dokumentet finns en stegvis självstudiekurs för att berika kundprofilen i realtid med maskininlärningsinsikter. Stegen är indelade i följande avsnitt:
 
@@ -21,7 +24,7 @@ I det här dokumentet finns en stegvis självstudiekurs för att berika kundprof
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse för de olika aspekter av Adobe Experience Platform som används för att importera profildata och skapa segment. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
+Den här självstudiekursen kräver en fungerande förståelse av de olika aspekterna av [!DNL Adobe Experience Platform] att importera profildata och skapa segment. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 * [Kundprofil](../../rtcdp/overview.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [Identitetstjänst](../../identity-service/home.md): Möjliggör kundprofil i realtid genom att överbrygga identiteter från olika datakällor som hämtas in till Platform.
