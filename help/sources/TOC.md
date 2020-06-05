@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Source Connectors - hjälp
 translation-type: tm+mt
-source-git-commit: 165d76224f4aeb292e72df1e2574ae1d0821c44c
+source-git-commit: 328b897c54453f23ad7b68fb2a288712cb4fe538
 workflow-type: tm+mt
 source-wordcount: '578'
 ht-degree: 0%
@@ -142,7 +142,8 @@ ht-degree: 0%
          - [FTP- och SFTP-anslutning](tutorials/ui/create/cloud-storage/ftp-sftp.md)
          - [Google Cloud Storage Connector](tutorials/ui/create/cloud-storage/google-cloud-storage.md)
       - CRM {#crm}
-         - [Microsoft Dynamics och Salesforce-anslutning](tutorials/ui/create/crm/dynamics-salesforce.md)
+         - [Microsoft Dynamics-anslutning](tutorials/ui/create/crm/dynamics.md)
+         - [Salesforce-koppling](tutorials/ui/create/crm/salesforce.md)
       - Nöjda kunder {#customer-success}
          - [Salesforce Service Cloud-anslutning](tutorials/ui/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow-koppling](tutorials/ui/create/customer-success/servicenow.md)
