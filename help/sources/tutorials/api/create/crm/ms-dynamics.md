@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Skapa en Microsoft Dynamics-anslutning med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 6c86cec91774f3444dc90042cd7ad5c71429aabd
+source-git-commit: 72c1d53295d5c4204c02959c857edc06f246534c
+workflow-type: tm+mt
+source-wordcount: '729'
+ht-degree: 0%
 
 ---
 
@@ -15,7 +18,7 @@ Flow Service används för att samla in och centralisera kunddata från olika k�
 
 I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta plattformen till ett Microsoft Dynamics-konto (nedan kallat Dynamics) för att samla in CRM-data.
 
-Om du föredrar att använda användargränssnittet i Experience Platform innehåller [Dynamics- eller Salesforce-gränssnittet för källkopplingen](../../../ui/create/crm/dynamics-salesforce.md) stegvisa instruktioner för att utföra liknande åtgärder.
+Om du föredrar att använda användargränssnittet i Experience Platform innehåller [Dynamics-gränssnittet för källanslutning](../../../ui/create/crm/dynamics.md) stegvisa instruktioner för att utföra liknande åtgärder.
 
 ## Komma igång
 
