@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa en ServiceNow-källkoppling i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 2162c66b1664ecaaf0b609fe3f7ccf58c4a5d31d
+source-git-commit: 75ba0bce7ce070af851bbf7e220dbf08febc4c20
 workflow-type: tm+mt
 source-wordcount: '519'
 ht-degree: 0%
@@ -60,13 +60,13 @@ Sidan *Anslut till ServiceNow* visas. På den här sidan kan du antingen använd
 
 Om du använder nya autentiseringsuppgifter väljer du **Nytt konto**. På indataformuläret som visas anger du ett namn, en valfri beskrivning och dina ServiceNow-autentiseringsuppgifter. När du är klar väljer du **Anslut** och tillåt sedan en tid för det nya kontot att upprätta.
 
-![](../../../../images/tutorials/create/servicenow/new-credentials.png)
+![](../../../../images/tutorials/create/servicenow/new.png)
 
 ### Befintligt konto
 
 Om du vill ansluta ett befintligt konto väljer du det ServiceNow-konto som du vill ansluta till och sedan väljer du **Nästa** .
 
-![](../../../../images/tutorials/create/servicenow/existing-credentials.png)
+![](../../../../images/tutorials/create/servicenow/existing.png)
 
 ## Nästa steg
 
