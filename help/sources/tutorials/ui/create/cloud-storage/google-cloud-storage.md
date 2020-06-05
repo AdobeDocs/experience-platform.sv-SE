@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en Google Cloud-källanslutning för lagring i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 799445eca080175e2bffc49c6714f0c812b9bbea
+source-git-commit: 75ba0bce7ce070af851bbf7e220dbf08febc4c20
 workflow-type: tm+mt
-source-wordcount: '539'
+source-wordcount: '537'
 ht-degree: 0%
 
 ---
@@ -41,20 +41,30 @@ För att få tillgång till dina GCS-data på Platform måste du ange ett giltig
 
 ## Anslut ditt GCS-konto
 
-När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att skapa en ny inkommande basanslutning som länkar ditt GCS-konto till plattformen.
+När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att skapa ett nytt GCS-konto för att ansluta till plattformen.
 
-Logga in på <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a> och välj sedan **Källor** i det vänstra navigeringsfältet för att komma åt arbetsytan *Källor* . På *katalogskärmen* visas en mängd olika källor som du kan skapa inkommande basanslutningar för, och varje källa visar antalet befintliga basanslutningar som är kopplade till dem.
+Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt *[!UICONTROL Sources]* arbetsytan. På *[!UICONTROL Catalog]* skärmen visas en mängd olika källor som du kan skapa ett inkommande konto för, och varje källa visar antalet befintliga konton och dataflöden som är kopplade till dem.
 
-Välj *Google Cloud-lagring* under kategorin **Cloud-lagring** för att visa ett informationsfält till höger på skärmen. Informationsfältet innehåller en kort beskrivning av den valda källan samt alternativ för att ansluta till källvyn, dess dokumentation eller för att ansluta till källan. Om du vill skapa en ny inkommande basanslutning klickar du på **Anslut källa**.
+Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-![](../../../../images/tutorials/create/google-cloud-storage/sources-catalog.png)
+Under *[!UICONTROL Databases]* kategorin väljer du **[!UICONTROL Google Cloud Storage]** klicka **på +-ikonen (+)** för att skapa en ny GCS-koppling.
 
-Dialogrutan _Anslut till Google Cloud-lagring_ visas. I indataformuläret anger du basanslutningen med ett namn, en valfri beskrivning och dina GCS-autentiseringsuppgifter. När du är klar klickar du på **Anslut** och tillåt sedan en tid för att upprätta den nya basanslutningen.
+![katalog](../../../../images/tutorials/create/google-cloud-storage/catalog.png)
 
-![](../../../../images/tutorials/create/google-cloud-storage/gcs-credentials.png)
+Sidan visas *[!UICONTROL Connect to Google Cloud Storage]* . På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
-När en basanslutning har upprättats kan du fortsätta till nästa avsnitt och konfigurera ett dataflöde för att hämta data till plattformen.
+### Nytt konto
+
+Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. På indataformuläret som visas anger du ett namn, en valfri beskrivning och dina GCS-autentiseringsuppgifter för anslutningen. När du är klar väljer du **[!UICONTROL Connect]** och tillåt sedan en tid för det nya kontot att upprätta.
+
+![koppla](../../../../images/tutorials/create/google-cloud-storage/connect.png)
+
+### Befintligt konto
+
+Om du vill ansluta ett befintligt konto väljer du det GCS-konto som du vill ansluta till och väljer sedan **[!UICONTROL Next]** att fortsätta.
+
+![befintlig](../../../../images/tutorials/create/google-cloud-storage/existing.png)
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en basanslutning till ditt GCS-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/batch/cloud-storage.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt GCS-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till plattformen](../../dataflow/batch/cloud-storage.md).
