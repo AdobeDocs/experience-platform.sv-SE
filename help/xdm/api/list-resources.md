@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Visa resurser
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 58549241f05f1bd604f33762f681c60946fa52f5
+source-git-commit: b4d8a6f8006d55c7aac19d705c6880fec915c147
+workflow-type: tm+mt
+source-wordcount: '519'
+ht-degree: 1%
 
 ---
 
@@ -83,9 +86,9 @@ De vanligaste frågeparametrarna för sidindelning är:
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `start` | Ange var de listade resultaten ska vara gin. Exempel: `start=2` visar resultat från den tredje returnerade artikeln vidare. |
-| `limit` | Begränsa antalet returnerade resurser. Exempel: kommer `limit=5` att returnera en lista med fem resurser. |
-| `orderby` | Sortera resultaten efter en specifik egenskap. Exempel: `orderby=title` sorterar resultaten efter titel i stigande ordning (A-Z). Om du lägger till en `-` före-rubrik (`orderby=-title`) sorteras objekt efter rubrik i fallande ordning (Z-A). |
+| `start` | Ange var de listade resultaten ska börja. Det här värdet kan hämtas från attributet för ett listsvar och användas för att komma åt nästa resultatsida. `_page.next` Om `_page.next` värdet är null finns ingen ytterligare sida tillgänglig. |
+| `limit` | Begränsa antalet returnerade resurser. Exempel: `limit=5` kommer att returnera en lista med fem resurser. |
+| `orderby` | Sortera resultaten efter en specifik egenskap. Exempel: `orderby=title` sorterar resultaten efter rubrik i stigande ordning (A-Z). Om du lägger till en `-` före-rubrik (`orderby=-title`) sorteras objekt efter rubrik i fallande ordning (Z-A). |
 
 ### Filtrering {#filtering}
 
