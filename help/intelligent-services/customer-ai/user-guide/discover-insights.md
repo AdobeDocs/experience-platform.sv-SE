@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Identifiera insikter med kundens AI
 topic: Discovering insights
 translation-type: tm+mt
-source-git-commit: ec0de4c8775367be9e6016529471254ad9f8f453
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '1032'
+ht-degree: 0%
 
 ---
 
@@ -21,7 +24,7 @@ För att kunna utnyttja insikter om kundens AI måste du ha en tjänstinstans me
 
 ## Översikt över tjänstinstans
 
-Klicka på den vänstra navigeringen i användargränssnittet för Adobe Experience Platform **[!UICONTROL Services]** . Webbläsaren *Services* visas och visar tillgängliga Intelligent Services. Klicka på i behållaren för kundens AI **[!UICONTROL Open]**.
+In the [!DNL Adobe Experience Platform] UI, click **[!UICONTROL Services]** in the left navigation. Webbläsaren *Services* visas och visar tillgängliga Intelligent Services. Klicka på i behållaren för kundens AI **[!UICONTROL Open]**.
 
 ![Åtkomst till din instans](../images/insights/navigate-to-service.png)
 
