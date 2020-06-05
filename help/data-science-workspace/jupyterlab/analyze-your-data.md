@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Analysera dina data med bärbara datorer
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 37213f29e8099f8587cde9eb66f9b75de3ad8a3a
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
 workflow-type: tm+mt
-source-wordcount: '1746'
+source-wordcount: '1729'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ I den här självstudiekursen fokuseras på hur du använder Jupyter-antecknings
 
 Följande koncept har introducerats:
 
-- **JupyterLab:** [JupyterLab](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) är nästa generation av webbaserat gränssnitt för Project Jupyter och är nära integrerat med Adobe Experience Platform.
+- **JupyterLab:** [JupyterLab](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) är nästa generation av webbaserat gränssnitt för Project Jupyter och är nära integrerat i [!DNL Adobe Experience Platform].
 - **Grupper:** Datauppsättningar består av grupper. En batch är en uppsättning data som samlats in under en tidsperiod och som bearbetas tillsammans som en enda enhet. Nya grupper skapas när data läggs till i en datauppsättning.
 - **SDK för dataåtkomst (borttagen):** SDK för dataåtkomst är nu föråldrat. Använd [Platform SDK](../authoring/platform-sdk.md) -guiden.
 
@@ -38,7 +38,7 @@ Som standard fungerar Tensorflow-receptet i ett GPU-kluster och Python körs i e
 
 ### Skapa en ny anteckningsbok
 
-I Adobe Experience Platform-användargränssnittet klickar du på fliken Data Science i den översta menyn för att ta dig till arbetsytan Data Science. Från den här sidan klickar du på fliken JupyterLab som öppnar JupyterLab-startprogrammet. Du bör se en liknande sida.
+Klicka på fliken Datavetenskap i den övre menyn i [!DNL Adobe Experience Platform] användargränssnittet för att ta dig till arbetsytan Datavetenskap. Från den här sidan klickar du på fliken JupyterLab som öppnar JupyterLab-startprogrammet. Du bör se en liknande sida.
 
 ![](../images/jupyterlab/analyze-data/jupyterlab_launcher.png)
 
@@ -52,7 +52,7 @@ Koden för butiksförsäljning är ett fristående exempel som använder samma d
 
 >[!NOTE] Funktionen `data_access_sdk_python` är föråldrad och rekommenderas inte längre. Se självstudiekursen [Konvertera dataåtkomst till SDK till Platform SDK](../authoring/platform-sdk.md) för att konvertera koden. Samma steg nedan gäller fortfarande för den här självstudiekursen.
 
-Vi går igenom åtkomsten till data internt från Adobe Experience Platform och externt. Vi kommer att använda biblioteket för att komma åt interna data som datauppsättningar och XDM-scheman. `data_access_sdk_python` För externa data kommer vi att använda pandorna Python-biblioteket.
+Vi kommer att gå igenom åtkomsten till data internt från [!DNL Adobe Experience Platform] och externt. Vi kommer att använda biblioteket för att komma åt interna data som datauppsättningar och XDM-scheman. `data_access_sdk_python` För externa data kommer vi att använda pandorna Python-biblioteket.
 
 #### Externa data
 
@@ -70,7 +70,7 @@ Slutligen kan vi ta en titt på hur våra data ser ut. Vi kan använda `df.head(
 
 #### Experience Platform-data
 
-Nu ska vi gå igenom hur vi får tillgång till Experience Platform-data.
+Nu går vi igenom åtkomsten till [!DNL Experience Platform] data.
 
 ##### Efter datauppsättnings-ID
 
@@ -96,7 +96,7 @@ df = reader.load(data_set_id="xxxxxxxx", ims_org="xxxxxxxx@AdobeOrg")
 df.head()
 ```
 
-Om du arbetar med andra kärnor än Python, se [den här sidan](https://github.com/adobe/acp-data-services-dsw-reference/wiki/Accessing-Data-on-the-Platform) för att få tillgång till data på Adobe Experience Platform.
+Om du arbetar med andra kärnor än Python, se [den här sidan](https://github.com/adobe/acp-data-services-dsw-reference/wiki/Accessing-Data-on-the-Platform) för att få tillgång till data på [!DNL Adobe Experience Platform].
 
 Om du väljer den körbara cellen och sedan trycker på uppspelningsknappen i verktygsfältet körs den körbara koden. Utdata för `head()` blir en tabell med datamängdens nycklar som kolumner och de första n raderna i datauppsättningen. `head()` använder ett heltalsargument för att ange hur många rader som ska skrivas ut. Som standard är detta 5.
 
@@ -190,7 +190,7 @@ Observera diagonalen för 1 är nedåt i mitten. Detta visar att en variabel har
 
 ## Nästa steg
 
-I den här självstudiekursen gick vi igenom hur du skapar en ny Jupyter-anteckningsbok i arbetsytan Data Science och hur du får tillgång till data externt och från Adobe Experience Platform. Vi gick igenom följande steg:
+Den här självstudiekursen gick igenom hur du skapar en ny Jupyter-anteckningsbok i arbetsytan Data Science och hur du får tillgång till data både externt och från [!DNL Adobe Experience Platform]. Vi gick igenom följande steg:
 - Skapa en ny Jupyter-anteckningsbok
 - Få tillgång till datauppsättningar och scheman
 - Utforska datauppsättningar
