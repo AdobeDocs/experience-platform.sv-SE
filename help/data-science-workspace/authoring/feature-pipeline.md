@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Skapa en rörledning för funktioner
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '971'
+ht-degree: 0%
 
 ---
 
 
 # Skapa en rörledning för funktioner
 
-Med Adobe Experience Platform kan ni skapa och skapa anpassade funktionspipeliner för att utföra funktionsteknologi i stor skala via Sensei Machine Learning Framework Runtime (nedan kallad Runtime).
+[!DNL Adobe Experience Platform] Med kan du skapa och skapa anpassade funktionspipeliner som utför funktionsteknologi i stor skala via Sensei Machine Learning Framework Runtime (nedan kallad Runtime).
 
 I det här dokumentet beskrivs de olika klasserna som finns i en funktionspipeline och här finns en stegvis självstudiekurs för att skapa en anpassad [funktionspipeline med hjälp av SDK](./sdk.md) för modellredigering i PySpark och Spark.
 
