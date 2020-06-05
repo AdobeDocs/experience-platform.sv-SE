@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Skapa en Salesforce-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: cc999ce1ab426f412c0cc2b69173a336a14024f3
+source-git-commit: 72c1d53295d5c4204c02959c857edc06f246534c
+workflow-type: tm+mt
+source-wordcount: '732'
+ht-degree: 0%
 
 ---
 
@@ -15,7 +18,7 @@ Flow Service används för att samla in och centralisera kunddata från olika k�
 
 I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta plattformen till ett Salesforce-konto för att samla in CRM-data.
 
-Om du föredrar att använda användargränssnittet i Experience Platform innehåller [Dynamics- eller Salesforce-gränssnittet för källkopplingen](../../../ui/create/crm/dynamics-salesforce.md) stegvisa instruktioner för att utföra liknande åtgärder.
+Om du föredrar att använda användargränssnittet i Experience Platform finns det instruktioner i [självstudiekursen](../../../ui/create/crm/salesforce.md) för källkopplingen i Salesforce som du kan använda för att utföra liknande åtgärder.
 
 ## Komma igång
 
