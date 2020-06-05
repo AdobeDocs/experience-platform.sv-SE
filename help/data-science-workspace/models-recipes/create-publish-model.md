@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Skapa och publicera genomgång av en maskininlärningsmodell
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '1529'
+ht-degree: 0%
 
 ---
 
@@ -15,7 +18,7 @@ source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
 
 Anta att du äger en webbutik. När era kunder handlar på er webbplats vill ni ge dem skräddarsydda produktrekommendationer för att visa upp en mängd andra produkter som ert företag erbjuder. Under webbplatsens hela existens har ni kontinuerligt samlat in kunddata och vill på något sätt använda dessa data för att generera personaliserade produktrekommendationer.
 
-Med Adobe Experience Platform Data Science Workspace kan du uppnå dina mål med hjälp av den färdiga [produktrekommendationsrecensionen](../pre-built-recipes/product-recommendations.md). Följ den här självstudiekursen för att se hur du kan få tillgång till och förstå dina detaljhandelsdata, skapa och optimera en maskininlärningsmodell och generera insikter i Data Science Workspace.
+[!DNL Adobe Experience Platform] Med Data Science Workspace kan du uppnå ditt mål med hjälp av den färdiga [produktrekommendationsrecept](../pre-built-recipes/product-recommendations.md). Följ den här självstudiekursen för att se hur du kan få tillgång till och förstå dina detaljhandelsdata, skapa och optimera en maskininlärningsmodell och generera insikter i Data Science Workspace.
 
 I den här självstudiekursen visas arbetsflödet för datavetenskapen och följande steg beskrivs för att skapa en maskininlärningsmodell:
 
@@ -28,7 +31,7 @@ I den här självstudiekursen visas arbetsflödet för datavetenskapen och följ
 
 Innan du startar den här självstudiekursen måste du ha följande krav:
 
-* Tillgång till Adobe Experience Platform. Om du inte har tillgång till en IMS-organisation i Experience Platform, ska du tala med systemadministratören innan du fortsätter.
+* Åtkomst till [!DNL Adobe Experience Platform]. Om du inte har tillgång till en IMS-organisation i Experience Platform, ska du tala med systemadministratören innan du fortsätter.
 
 * Aktivera resurser. Kontakta din kontorepresentant om du vill ha tillgång till följande artiklar.
    * Rekommendationer, recept
@@ -49,7 +52,7 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
 
 ## Förbered data {#prepare-your-data}
 
-Om du vill skapa en maskininlärningsmodell som gör personaliserade produktrekommendationer till dina kunder måste du analysera tidigare kundköp på din webbplats. I det här avsnittet beskrivs hur dessa data hämtas till Platform via Adobe Analytics och hur dessa data omvandlas till en funktionsuppsättning som kan användas av maskininlärningsmodellen.
+Om du vill skapa en maskininlärningsmodell som gör personaliserade produktrekommendationer till dina kunder måste du analysera tidigare kundköp på din webbplats. I det här avsnittet beskrivs hur dessa data hämtas till Platform via [!DNL Adobe Analytics]och hur dessa data omvandlas till en funktionsuppsättning som kan användas av maskininlärningsmodellen.
 
 ### Utforska data och förstå scheman
 
@@ -76,7 +79,7 @@ Recept är grunden för en modell eftersom de innehåller maskininlärningsalgor
 
 ### Läs mer i produktrekommendationsrecept
 
-1. I Adobe Experience Platform navigerar du till **[!UICONTROL Models]** den vänstra navigeringskolumnen och klickar sedan **[!UICONTROL Recipes]** längst upp för att visa en lista över tillgängliga recept för din organisation.
+1. I [!DNL Adobe Experience Platform]navigerar du till **[!UICONTROL Models]** från den vänstra navigeringskolumnen och klickar sedan **[!UICONTROL Recipes]** längst upp för att visa en lista över tillgängliga recept för din organisation.
    ![](../images/models-recipes/model-walkthrough/browse_recipes.png)
 2. Leta reda på och öppna den angivna filen **[!UICONTROL Recommendations Recipe]** genom att klicka på dess namn.
    ![](../images/models-recipes/model-walkthrough/recommendations_recipe_110.png)
@@ -93,7 +96,7 @@ Nu när dina data har förberetts och receptet är klart att användas kan du sk
 
 En modell är en instans av en Recept som gör att du kan utbilda och poängsätta med data i stor skala.
 
-1. I Adobe Experience Platform navigerar du till **[!UICONTROL Models]** den vänstra navigeringskolumnen och klickar sedan på **[!UICONTROL Recipes]** överst på sidan för att visa en lista över alla tillgängliga recept för din organisation.
+1. I [!DNL Adobe Experience Platform]navigerar du till **[!UICONTROL Models]** från den vänstra navigeringskolumnen och klickar sedan **[!UICONTROL Recipes]** längst upp på sidan för att visa en lista över alla tillgängliga recept för din organisation.
    ![](../images/models-recipes/model-walkthrough/browse_recipes.png)
 2. Leta reda på och öppna den angivna filen **[!UICONTROL Recommendations Recipe]** genom att klicka på dess namn och ange mottagarens översiktssida. Klicka på **[!UICONTROL Create a Model]** antingen i mitten (om det inte finns några modeller) eller i det övre högra hörnet på sidan Receptöversikt.
    ![](../images/models-recipes/model-walkthrough/recommendations_recipe_110.png)
