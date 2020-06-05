@@ -4,17 +4,20 @@ solution: Experience Platform
 title: Komma igång med Attribution AI
 topic: Getting started
 translation-type: tm+mt
-source-git-commit: 6161f5a9ca0df341272a96a8a19ce6c34f6d5d3e
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '499'
+ht-degree: 0%
 
 ---
 
 
 # Komma igång med Attribution AI
 
-Följande handledningar kräver förståelse av de olika Adobe Experience Platform-tjänsterna som används för att använda Attribution AI. Innan du börjar med självstudiekurserna bör du läsa följande dokument:
+Följande handledningar kräver en förståelse av de olika [!DNL Adobe Experience Platform] tjänster som används för att använda Attribution AI. Innan du börjar med självstudiekurserna bör du läsa följande dokument:
 
-- [Experience Data Model (XDM) - systemöversikt](../../xdm/home.md): XDM är det grundläggande ramverk som gör att Adobe Experience Cloud, som bygger på Experience Platform, kan leverera rätt budskap till rätt person i rätt kanal vid exakt rätt tidpunkt. Metoden som Experience Platform bygger på, XDM System, används för att driva Experience Data Model-scheman för användning av plattformstjänster.
-- [Grundläggande om schemakomposition](../../xdm/schema/composition.md): Det här dokumentet innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
+- [Experience Data Model (XDM) - systemöversikt](../../xdm/home.md): XDM är det grundläggande ramverk som gör det möjligt [!DNL Adobe Experience Cloud]att, med Experience Platform som bas, leverera rätt budskap till rätt person, i rätt kanal, i precis rätt ögonblick. Metoden som Experience Platform bygger på, XDM System, används för att driva Experience Data Model-scheman för användning av plattformstjänster.
+- [Grundläggande om schemakomposition](../../xdm/schema/composition.md): Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i [!DNL Adobe Experience Platform].
 - [Byggscheman](../../xdm/tutorials/create-schema-ui.md): I den här självstudiekursen beskrivs stegen för hur du skapar ett schema med Schemaredigeraren i Experience Platform.
 
 Attribution AI kräver att datauppsättningar följer CEE-schemat (Consumer Experience Events), som är en blandning i [Experience Data Model](../../xdm/home.md) (XDM). Kontakta Adobes support på attributionai-support@adobe.com för att implementera eller göra ändringar i dessa data. Om det finns uppgifter om medieleveranser kan du göra ytterligare analyser, till exempel inkrementella intäkter och avkastning. Om det finns tillgängliga kundprofildata kan du attribuera krediter till kundprofilnivån ytterligare.
