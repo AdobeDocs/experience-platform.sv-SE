@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Salesforce-koppling
 topic: overview
 translation-type: tm+mt
-source-git-commit: f46e95b1e1af3ff5021561eb45f408e45c657834
+source-git-commit: 565c8c4b084343e5488a725a6a93d5d50d59fe66
+workflow-type: tm+mt
+source-wordcount: '143'
+ht-degree: 0%
 
 ---
 
@@ -25,5 +28,5 @@ Dokumentationen nedan innehåller information om hur du ansluter Salesforce till
 
 ## Anslut Salesforce till plattformen med användargränssnittet
 
-- [Skapa en Salesforce-källanslutning i användargränssnittet](../../tutorials/ui/create/crm/dynamics-salesforce.md)
+- [Skapa en Salesforce-källanslutning i användargränssnittet](../../tutorials/ui/create/crm/salesforce.md)
 - [Konfigurera ett dataflöde för en CRM-koppling i användargränssnittet](../../tutorials/ui/dataflow/crm.md)
