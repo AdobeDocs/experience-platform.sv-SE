@@ -4,30 +4,33 @@ solution: Experience Platform
 title: Frågetjänst i anteckningsbok för Jupyter
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 1447196da7dbf59c1f498de40f12ed74c328c0e6
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '785'
+ht-degree: 0%
 
 ---
 
 
 # Frågetjänst i anteckningsbok för Jupyter
 
-Med Adobe Experience Platform kan ni använda SQL (Structured Query Language) i arbetsytan Data Science genom att integrera Query Service i JupyterLab som standardfunktion.
+[!DNL Adobe Experience Platform] I kan du använda SQL (Structured Query Language) i arbetsytan Data Science genom att integrera Query Service i JupyterLab som standardfunktion.
 
-I den här självstudiekursen visas exempel på SQL-frågor för vanliga användningsområden för att utforska, omvandla och analysera Adobe Analytics-data.
+I den här självstudiekursen visas exempel på SQL-frågor för vanliga användningsområden för att utforska, omforma och analysera [!DNL Adobe Analytics] data.
 
 ## Komma igång
 
 Innan du startar den här självstudiekursen måste du ha följande krav:
 
-- Tillgång till Adobe Experience Platform. Om du inte har tillgång till en IMS-organisation i Experience Platform, ska du tala med systemadministratören innan du fortsätter
+- Åtkomst till [!DNL Adobe Experience Platform]. Om du inte har tillgång till en IMS-organisation i Experience Platform, ska du tala med systemadministratören innan du fortsätter
 
-- En Adobe Analytics-datauppsättning
+- En [!DNL Adobe Analytics] datauppsättning
 
 - En fungerande förståelse för följande viktiga begrepp som används i den här självstudiekursen:
    - [Experience Data Model (XDM) och XDM System](../../xdm/home.md)
    - [Frågetjänst](../../query-service/home.md)
    - [SQL-syntax för frågetjänst](../../query-service/sql/overview.md)
-   - Adobe Analytics
+   - [!DNL Adobe Analytics]
 
 ## Åtkomst till JupyterLab och Query Service {#access-jupyterlab-and-query-service}
 
@@ -47,13 +50,13 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
 
    ![](../images/jupyterlab/query/dataset.png)
 
-4. Hitta en Adobe Analytics-datauppsättning att utforska och högerklicka på listan, klicka på **[!UICONTROL Query Data in Notebook]** för att generera SQL-frågor i den tomma anteckningsboken.
+4. Hitta en datauppsättning som du vill utforska och högerklicka på listan, klicka på [!DNL Adobe Analytics] **[!UICONTROL Query Data in Notebook]** för att generera SQL-frågor i den tomma anteckningsboken.
 
 5. Klicka på den första genererade cellen som innehåller funktionen `qs_connect()` och kör den genom att klicka på uppspelningsknappen. Den här funktionen skapar en anslutning mellan din anteckningsboksinstans och frågetjänsten.
 
    ![](../images/jupyterlab/query/execute.png)
 
-6. Kopiera namnet på Adobe Analytics-datauppsättningen från den andra genererade SQL-frågan, det blir värdet efter `FROM`.
+6. Kopiera ned datauppsättningsnamnet från den andra genererade SQL-frågan, det blir värdet efter [!DNL Adobe Analytics] `FROM`.
 
    ![](../images/jupyterlab/query/dataset_name.png)
 
@@ -78,7 +81,7 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
    target_day = "01"
    ```
 
-   - `target_table` : Namn på Adobe Analytics-datauppsättningen.
+   - `target_table` : Namn på din [!DNL Adobe Analytics] datauppsättning.
    - `target_year` : Det specifika år som måldata kommer från.
    - `target_month` : Den månad som målet kommer från.
    - `target_day` : Den specifika dag som måldata kommer från.
