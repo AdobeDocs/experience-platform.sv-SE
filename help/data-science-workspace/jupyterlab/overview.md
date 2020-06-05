@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användarhandbok för JupyterLab
 topic: Overview
 translation-type: tm+mt
-source-git-commit: 37213f29e8099f8587cde9eb66f9b75de3ad8a3a
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
 workflow-type: tm+mt
-source-wordcount: '3356'
+source-wordcount: '3349'
 ht-degree: 3%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 3%
 
 # Användarhandbok för JupyterLab
 
-JupyterLab är ett webbaserat användargränssnitt för <a href="https://jupyter.org/" target="_blank">Project Jupyter</a> och är nära integrerat med Adobe Experience Platform. Den utgör en interaktiv utvecklingsmiljö där datavetare kan arbeta med Jupyters bärbara datorer, kod och data.
+JupyterLab är ett webbaserat användargränssnitt för <a href="https://jupyter.org/" target="_blank">Project Jupyter</a> som är nära integrerat med [!DNL Adobe Experience Platform]. Den utgör en interaktiv utvecklingsmiljö där datavetare kan arbeta med Jupyters bärbara datorer, kod och data.
 
 Det här dokumentet innehåller en översikt över JupyterLab och dess funktioner samt instruktioner om hur du utför vanliga åtgärder.
 
@@ -29,7 +29,7 @@ I följande lista beskrivs några av funktionerna som är unika för JupyterLab 
 | **Kernlar** | Kernels ger möjlighet att köra och granska kod i olika programmeringsspråk för bärbara datorer och andra JupyterLab-gränssnitt. Experience Platform har ytterligare kerrar som stöder utvecklingen i Python, R, PySpark och Spark. Mer information finns i avsnittet [Kernlar](#kernels) . |
 | **Dataåtkomst** | Få tillgång till befintliga datauppsättningar direkt inifrån JupyterLab med fullt stöd för läs- och skrivfunktioner. |
 | **Integrering av plattformstjänster** | Inbyggda integreringar gör att du kan använda andra plattformstjänster direkt från JupyterLab. En fullständig lista över integreringar som stöds finns i avsnittet om [integrering med andra plattformstjänster](#service-integration). |
-| **Autentisering** | Förutom <a href="https://jupyter-notebook.readthedocs.io/en/latest/security.html" target="_blank">JupyterLab:s inbyggda säkerhetsmodell</a>krypteras och autentiseras all interaktion mellan programmet och Experience Platform, inklusive kommunikation från tjänst till tjänst i form av plattformar, via <a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">Adobe Identity Management System (IMS)</a>. |
+| **Autentisering** | Förutom <a href="https://jupyter-notebook.readthedocs.io/en/latest/security.html" target="_blank">JupyterLab:s inbyggda säkerhetsmodell</a>krypteras och autentiseras all interaktion mellan programmet och Experience Platform, inklusive kommunikation från tjänst till tjänst i plattformen, via <a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">[!DNL Adobe Identity Management System] (IMS)</a>. |
 | **Utvecklingsbibliotek** | I Experience Platform tillhandahåller JupyterLab förinstallerade bibliotek för Python, R och PySpark. En fullständig lista över bibliotek som stöds finns i [bilagan](#supported-libraries) . |
 | **Bibliotekshanterare** | När de förinstallerade biblioteken saknas för dina behov kan ytterligare bibliotek installeras för Python och R, och lagras tillfälligt i isolerade behållare för att upprätthålla plattformens integritet och skydda dina data. Mer information finns i avsnittet [Kernlar](#kernels) . |
 
@@ -109,7 +109,7 @@ Kodceller är det primära innehållet i anteckningsböcker. De innehåller käl
 
 Vanliga cellåtgärder beskrivs nedan:
 
-* **Lägg till en cell:** Klicka på plustecknet (**+**) på anteckningsboksmenyn för att lägga till en tom cell. Nya celler placeras under den cell som interagerar med, eller i slutet av anteckningsboken om ingen viss cell är i fokus.
+* **Lägg till en cell:** Klicka på plustecknet (**+**) på anteckningsboksmenyn för att lägga till en tom cell. Nya celler placeras under den cell som för närvarande interagerar med, eller i slutet av anteckningsboken om ingen viss cell är i fokus.
 
 * **Flytta en cell:** Placera markören till höger om cellen som du vill flytta, klicka och dra sedan cellen till en ny plats. Om du flyttar en cell från en anteckningsbok till en annan kopieras cellen tillsammans med dess innehåll.
 
