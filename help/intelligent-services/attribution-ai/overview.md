@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Översikt över AI-attribut
 topic: Attribution AI
 translation-type: tm+mt
-source-git-commit: ec0de4c8775367be9e6016529471254ad9f8f453
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '654'
+ht-degree: 0%
 
 ---
 
@@ -19,7 +22,7 @@ Attribution AI används för att attribuera krediter till kontaktytor som leder 
 
 AI-utdata för attribuering kan delas upp i olika dimensioner och kan användas i olika faser av kundresan. Detta uppnås utan att man behöver översätta affärsbehoven till maskininlärningsproblem, plockalgoritmer, utbildning eller driftsättningsmodeller.
 
-Attribution AI data kan komma från Adobe (t.ex. Analytics) eller andra datakällor än Adobe.
+Attribution AI data can be from Adobe (t.ex. [!DNL Analytics]) eller andra datakällor än Adobe.
 
 Attribution AI har stöd för två kategorier med poäng, algoritmiska och regelbaserade. Algoritmiska poäng inkluderar inkrementella och påverkade poäng. Regelbaserade resultat inkluderar First Touch, Last Touch, Linear, U-shaped och Time-Decay.
 
@@ -31,7 +34,7 @@ Följande video har utformats för att ge stöd för din förståelse av Attribu
 
 Attribution AI stöder två kategorier av attribueringspoäng, algoritmiska och regelbaserade poäng.
 
-Attribution AI ger två olika typer av algoritmiska poäng, inkrementellt och påverkat. En påverkad poäng är den del av konverteringen som varje kontaktyta för marknadsföring ansvarar för. En inkrementell poäng är mängden marginell påverkan som direkt orsakas av kontaktytan för marknadsföring. Den största skillnaden mellan det stegvisa poängvärdet och det poängvärde som påverkas är att det stegvisa poängvärdet tar baslinjeeffekten i beaktande. Man utgår inte från att en konvertering enbart orsakas av de föregående kontaktytorna.
+Attribution AI ger två olika typer av algoritmiska poäng, inkrementellt och påverkat. En påverkad poäng är den del av konverteringen som varje marknadsföringskontaktyta ansvarar för. En inkrementell poäng är mängden marginell påverkan som direkt orsakas av kontaktytan för marknadsföring. Den största skillnaden mellan det stegvisa poängvärdet och det poängvärde som påverkas är att det stegvisa poängvärdet tar baslinjeeffekten i beaktande. Man utgår inte från att en konvertering enbart orsakas av de föregående kontaktytorna.
 
 Se tabellen nedan för mer information om var och en av dessa attribueringspoäng:
 
@@ -57,7 +60,7 @@ Attribution AI kan användas för att hjälpa till med följande exempel på anv
 
 ### Ytterligare funktioner
 
-Attribution AI erbjuder även integrering med andra Adobe-lösningar som Adobe Analytics. På så sätt kan ni använda dessa lösningar för att använda den anpassningsbara algoritmiska modellen för att utvärdera mediaprestanda och ge analytiska insikter.
+Attribution AI erbjuder även integrering med andra Adobe-lösningar som [!DNL Adobe Analytics]. På så sätt kan ni använda dessa lösningar för att använda den anpassningsbara algoritmiska modellen för att utvärdera mediaprestanda och ge analytiska insikter.
 
 ## Nästa steg
 
