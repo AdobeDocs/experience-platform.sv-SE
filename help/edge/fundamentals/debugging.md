@@ -4,7 +4,7 @@ seo-title: Adobe Experience Platform Web SDK-felsökning
 description: Lär dig hur du växlar Experience Platform Web SDK-felsökning
 seo-description: Lär dig hur du växlar Experience Platform Web SDK-felsökning
 translation-type: tm+mt
-source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+source-git-commit: 31a527cb4ad1348262131f827c7e932404542c4b
 workflow-type: tm+mt
 source-wordcount: '323'
 ht-degree: 0%
@@ -19,7 +19,7 @@ När felsökning är aktiverat skickar SDK meddelanden till webbläsarkonsolen s
 Felsökning är inaktiverat som standard, men kan aktiveras på tre olika sätt:
 
 * `configure` kommando
-* `debug` kommando
+* `setDebug` kommando
 * frågesträngsparameter
 
 ## Växla felsökning med kommandot Konfigurera
@@ -42,7 +42,7 @@ alloy("configure", {
 Växla felsökning med ett separat `debug` kommando enligt följande:
 
 ```javascript
-alloy("debug", {
+alloy("setDebug", {
   "enabled": true
 });
 ```
