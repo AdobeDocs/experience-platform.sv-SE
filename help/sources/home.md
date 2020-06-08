@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform Source Connectors - översikt
 topic: overview
 translation-type: tm+mt
-source-git-commit: 22425c33e39cf788eec6fd0a54f65fb89fdaff4f
+source-git-commit: f181d544e93f0924bf4c239fad93d78c974afdc0
 workflow-type: tm+mt
-source-wordcount: '758'
+source-wordcount: '762'
 ht-degree: 0%
 
 ---
@@ -51,6 +51,7 @@ Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du 
 - [Azure File Storage Connector](connectors/cloud-storage/azure-file-storage.md)
 - [FTP- och SFTP-anslutning](connectors/cloud-storage/ftp-sftp.md)
 - [Google Cloud Storage Connector](connectors/cloud-storage/google-cloud-storage.md)
+- [HDFS-kontakt](connectors/cloud-storage/hdfs.md)
 
 ### CRM (Customer Relationship Management)
 
@@ -76,6 +77,7 @@ Experience Platform har stöd för inmatning av data från en tredjepartsdatabas
 - [Azure Data Explorer-koppling](connectors/databases/data-explorer.md)
 - [Azure Synapse Analytics-koppling](connectors/databases/synapse-analytics.md)
 - [Azure Table Storage-koppling](connectors/databases/ats.md)
+- [CouchBase-koppling](connectors/databases/couchbase.md)
 - [Google BigQuery-koppling](connectors/databases/bigquery.md)
 - [GreenPlum-kontakt](connectors/databases/greenplum.md)
 - [HP Vertica-koppling](connectors/databases/hp-vertica.md)
