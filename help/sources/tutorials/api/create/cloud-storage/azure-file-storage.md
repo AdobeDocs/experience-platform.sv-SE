@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en Azure File Storage-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 3a882656f93b86093b356be5dbc12b3e4321cfb8
+source-git-commit: 0ed2ed3b08f262100746f255a78c248a1748eb5e
 workflow-type: tm+mt
-source-wordcount: '636'
+source-wordcount: '622'
 ht-degree: 0%
 
 ---
@@ -75,7 +75,8 @@ POST /connections
 
 **Begäran**
 
-För att skapa en Azure File Storage-anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POST-begäran. Anslutningsspecifikations-ID för Azure File Storage är `be5ec48c-5b78-49d5-b8fa-7c89ec4569b8`.
+Följande begäran skapar en ny Azure File Storage-anslutning som konfigurerats med egenskaperna som anges i nyttolasten:
+
 
 ```shell
 curl -X POST \
