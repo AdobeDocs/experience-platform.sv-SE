@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en Google Cloud-lagringskontakt med API:t för flödestjänsten
 topic: overview
 translation-type: tm+mt
-source-git-commit: 7ffe560f455973da3a37ad102fbb8cc5969d5043
+source-git-commit: 0ed2ed3b08f262100746f255a78c248a1748eb5e
 workflow-type: tm+mt
-source-wordcount: '556'
+source-wordcount: '555'
 ht-degree: 0%
 
 ---
