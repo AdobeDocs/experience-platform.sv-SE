@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Importera ett paketerat recept (UI)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
+source-git-commit: f2a7300d4ad75e3910abbdf2ecc2946a2dfe553c
+workflow-type: tm+mt
+source-wordcount: '1703'
+ht-degree: 0%
 
 ---
 
@@ -27,10 +30,6 @@ Arbetsflödet för att importera ett paketrecept består av följande steg:
 - [Importera Docker-baserat recept - R](#r)
 - [Importera Docker-baserat recept - PySpark](#pyspark)
 - [Importera Docker-baserat recept - Scala](#scala)
-
-Föråldrade arbetsflöden:
-- [Importera binärt recept - PySpark](#pyspark-deprecated)
-- [Importera binärt recept - Scala Spark](#scala-deprecated)
 
 ### Konfigurera ett recept {#configure}
 
@@ -253,46 +252,3 @@ I den här självstudiekursen finns information om hur du konfigurerar och impor
 
 - [Utbildning och utvärdering av en modell i användargränssnittet](./train-evaluate-model-ui.md)
 - [Utbilda och utvärdera en modell med API:t](./train-evaluate-model-api.md)
-
-## Föråldrade arbetsflöden
-
->[!CAUTION]
->Import av binära recept stöds inte längre i PySpark 3 (Spark 2.4) och Scala (Spark 2.4).
-
-### Importera binärt recept - PySpark {#pyspark-deprecated}
-
-I källfilerna för [paketet till en Recept](./package-source-files-recipe.md) -självstudiekurs skapades en **EGG** -binär fil med källfilerna för Retail Sales PySpark.
-
-1. I [Adobe Experience Platform](https://platform.adobe.com/)hittar du den vänstra navigeringspanelen och klickar på **Arbetsflöden**. I arbetsflödesgränssnittet **startar** du en ny **importmottagare från** källfilsprocessen.
-   ![](../images/models-recipes/import-package-ui/workflow_ss.png)
-2. Ange ett lämpligt namn för Retail Sales-receptet. Exempel:&quot;Retail Sales recept PySpark&quot;. Du kan även inkludera en recept-beskrivning och en dokumentations-URL. Klicka på **Nästa** när du är klar.
-   ![](../images/models-recipes/import-package-ui/recipe_info.png)
-3. Importera det PySpark Retail Sales-recept som skapades i [paketkällfilerna till en Recept](./package-source-files-recipe.md) -självstudiekurs genom att dra och släppa, eller använd **filläsaren**. Det paketerade receptet ska finnas i `experience-platform-dsw-reference/recipes/pyspark/dist`.
-Importera på samma sätt den angivna konfigurationsfilen genom att dra och släppa eller använda **filläsaren**. Den angivna konfigurationsfilen finns på `experience-platform-dsw-reference/recipes/pyspark/pipeline.json`. Klicka på **Nästa** när båda filerna har angetts.
-   ![](../images/models-recipes/import-package-ui/recipe_source.png)
-4. Det kan nu uppstå fel. Detta är ett normalt beteende och förväntas. Välj in- och utdatamodeller för butiksförsäljning under avsnittet **Hantera scheman**. De skapades med det tillhandahållna bootstrap-skriptet i [skapa försäljningsschemat för detaljhandel och datauppsättningssjälvstudiekursen](../models-recipes/create-retails-sales-dataset.md) .
-   ![](../images/models-recipes/import-package-ui/recipe_schema.png)
-Klicka på din innehavaridentifiering i schemavisaren under avsnittet **Funktionshantering** för att expandera indatabasschemat för butiksförsäljning. Markera in- och utdatafunktionerna genom att markera den önskade funktionen och markera antingen **Indatafunktion** eller **Målfunktion** i det högra fönstret **Fältegenskaper** . I den här självstudiekursen anger du **veckoförsäljning** som **målfunktion** och allt annat som **indatafunktion**. Klicka på **Nästa** för att granska det nya konfigurerade receptet.
-5. Granska recept, lägg till, ändra eller ta bort konfigurationer efter behov. Klicka på **Slutför** för att skapa receptet.
-   ![](../images/models-recipes/import-package-ui/recipe_review.png)
-
-Gå vidare till [nästa steg](#next-steps) för att ta reda på hur du skapar en modell i arbetsytan för datavetenskap med hjälp av det nya recept som används för detaljhandelsförsäljning.
-
-
-### Importera binärt recept - Scala Spark {#scala-deprecated}
-
-I [Paketkällfilerna i en Recipe](./package-source-files-recipe.md) -självstudiekurs skapades en **JAR** -binär fil med källfilerna för Retail Sales Scala Spark.
-
-1. I [Adobe Experience Platform](https://platform.adobe.com/)hittar du den vänstra navigeringspanelen och klickar på **Arbetsflöden**. I arbetsflödesgränssnittet **startar** du en ny **importmottagare från** källfilsprocessen.
-   ![](../images/models-recipes/import-package-ui/workflow_ss.png)
-2. Ange ett lämpligt namn för Retail Sales-receptet. Exempel:&quot;Retail Sales recept Scala Spark&quot;. Du kan även inkludera en recept-beskrivning och en dokumentations-URL. Klicka på **Nästa** när du är klar.
-   ![](../images/models-recipes/import-package-ui/recipe_info_scala.png)
-3. Importera det Scala Spark Retail Sales-recept som skapades i [paketkällfilerna till en Recept](./package-source-files-recipe.md) -självstudiekurs genom att dra och släppa, eller använd **filläsaren**. Det paketerade receptet **med beroenden** finns i `experience-platform-dsw-reference/recipes/scala/target`. Importera på samma sätt den angivna konfigurationsfilen genom att dra och släppa eller använda **filläsaren**. Den angivna konfigurationsfilen finns på `experience-platform-dsw-reference/recipes/scala/src/main/resources/pipelineservice.json`. Klicka på **Nästa** när båda filerna har angetts.
-   ![](../images/models-recipes/import-package-ui/recipe_source_scala.png)
-4. Det kan nu uppstå fel. Detta är ett normalt beteende och förväntas. Välj in- och utdatamodeller för butiksförsäljning under avsnittet **Hantera scheman**. De skapades med det tillhandahållna bootstrap-skriptet i [skapa försäljningsschemat för detaljhandel och datauppsättningssjälvstudiekursen](../models-recipes/create-retails-sales-dataset.md) .
-   ![](../images/models-recipes/import-package-ui/recipe_schema.png)
-Klicka på din innehavaridentifiering i schemavisaren under avsnittet **Funktionshantering** för att expandera indatabasschemat för butiksförsäljning. Markera in- och utdatafunktionerna genom att markera den önskade funktionen och markera antingen **Indatafunktion** eller **Målfunktion** i det högra fönstret **Fältegenskaper** . I den här självstudiekursen anger du **veckoförsäljning** som **målfunktion** och allt annat som **indatafunktion**. Klicka på **Nästa** för att granska det nya konfigurerade receptet.
-5. Granska recept, lägg till, ändra eller ta bort konfigurationer efter behov. Klicka på **Slutför** för att skapa receptet.
-   ![](../images/models-recipes/import-package-ui/recipe_review.png)
-
-Gå vidare till [nästa steg](#next-steps) för att ta reda på hur du skapar en modell i arbetsytan för datavetenskap med hjälp av det nya recept som används för detaljhandelsförsäljning.
