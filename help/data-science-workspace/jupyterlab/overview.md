@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Användarhandbok för JupyterLab
 topic: Overview
 translation-type: tm+mt
-source-git-commit: f2a7300d4ad75e3910abbdf2ecc2946a2dfe553c
+source-git-commit: 440310339003bf23c9fcfc69a6ec1eacddc9f413
 workflow-type: tm+mt
-source-wordcount: '2773'
-ht-degree: 4%
+source-wordcount: '3672'
+ht-degree: 10%
 
 ---
 
@@ -37,13 +37,14 @@ I följande lista beskrivs några av funktionerna som är unika för JupyterLab 
 
 ## Integrering med andra plattformstjänster {#service-integration}
 
-Standardisering och interoperabilitet är viktiga begrepp bakom Experience Platform. Integreringen av JupyterLab på Platform som en inbäddad IDE gör att den kan interagera med andra plattformstjänster, vilket gör att du kan utnyttja Platform fullt ut. Följande plattformstjänster är tillgängliga i JupyterLab:
+Standardisering och interoperabilitet är viktiga koncept som ligger bakom [!DNL Experience Platform]. Integreringen av JupyterLab på [!DNL Platform] som en inbäddad IDE gör att den kan interagera med andra [!DNL Platform] tjänster, vilket gör att du kan utnyttja hela [!DNL Platform] potentialen. Följande [!DNL Platform] tjänster är tillgängliga i JupyterLab:
 
 * **Katalogtjänst:** Få tillgång till och utforska datauppsättningar med läs- och skrivfunktioner.
 * **Frågetjänst:** Få åtkomst till och utforska datauppsättningar med SQL, vilket ger lägre dataåtkomstkostnader när du hanterar stora mängder data.
 * **Sensei ML Framework:** Modellutveckling med möjlighet att träna och poängsätta data, liksom att skapa recept med ett enda klick.
+* **Experience Data Model (XDM):** Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. [Experience Data Model (XDM)](https://www.adobe.com/go/xdm-home-en), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
 
->[!NOTE] Vissa integreringar av plattformstjänster på JupyterLab är begränsade till specifika kärnor. Mer information finns i avsnittet om [kernlar](#kernels) .
+>[!NOTE] Vissa tjänstintegreringar [!DNL Platform] på JupyterLab är begränsade till specifika kärnor. Mer information finns i avsnittet om [kernlar](#kernels) .
 
 ## Viktiga funktioner och vanliga åtgärder
 
@@ -230,6 +231,82 @@ Om du vill öppna en ny *startprogram* klickar du på **Arkiv > Ny startfunktion
 
 Varje kärna som stöds har inbyggda funktioner som gör att du kan läsa plattformsdata från en datamängd i en anteckningsbok. Stöd för sidnumrering av data är dock begränsat till bärbara datorer från Python och R.
 
+### Datagränser för bärbara datorer
+
+Följande information definierar den maximala mängden data som kan läsas, vilken typ av data som användes och den beräknade tidsramen som läser data. För Python och R användes en bärbar datorserver som konfigurerats med 40 GB RAM-minne för prestandatesterna. För PySpark och Scala användes ett databricks-kluster som konfigurerats med 64 GB RAM, 8 kärnor, 2 DBU med högst 4 arbetare för de riktmärken som beskrivs nedan.
+
+De ExperienceEvent-schemadata som användes varierade i storlek från ett tusen (1 K) rader på upp till en miljard (1B) rader. Observera att för PySpark- och Spark-mätvärdena användes ett datumintervall på 10 dagar för XDM-data.
+
+Ad hoc-schemadata bearbetades i förväg med hjälp av tjänsten Create Table as Select (CTAS). Dessa data varierade också i storlek från ett tusen (1K) rader, upp till en miljard (1B) rader.
+
+#### Datagränser för Python bärbara datorer
+
+**XDM ExperienceEvent-schema:** Du bör kunna läsa högst 2 miljoner rader (~6,1 GB data på disk) med XDM-data på mindre än 22 minuter. Om du lägger till ytterligare rader kan det leda till fel.
+
+| Antal rader | 1K | 10K | 100K | 1M | 2M |
+| ----------------------- | ------ | ------ | ----- | ----- | ----- |
+| Storlek på disk (MB) | 18.73 | 187.5 | 308 | 3000 | 6050 |
+| SDK (i sekunder) | 20.3 | 86.8 | 63 | 659 | 1315 |
+
+**ad hoc-schema:** Du bör kunna läsa upp maximalt 5 miljoner rader (~5,6 GB data på disk) med data som inte är XDM (ad hoc) på mindre än 14 minuter. Om du lägger till ytterligare rader kan det leda till fel.
+
+| Antal rader | 1K | 10K | 100K | 1M | 2M | 3M | 5M |
+| ----------------------- | ------- | ------- | ----- | ----- | ----- | ----- | ------ |
+| Diskstorlek (i MB) | 1.21 | 11.72 | 115 | 1120 | 2250 | 3380 | 5630 |
+| SDK (i sekunder) | 7.27 | 9.04 | 27.3 | 180 | 346 | 487 | 819 |
+
+#### Datagränser för bärbara datorer
+
+**XDM ExperienceEvent-schema:** Du bör kunna läsa upp maximalt 1 miljon rader XDM-data (3 GB data på disk) på mindre än 13 minuter.
+
+| Antal rader | 1K | 10K | 100K | 1M |
+| ----------------------- | ------ | ------ | ----- | ----- |
+| Storlek på disk (MB) | 18.73 | 187.5 | 308 | 3000 |
+| R Kernel (i sekunder) | 14.03 | 69.6 | 86.8 | 775 |
+
+**ad hoc-schema:** Du bör kunna läsa upp maximalt 3 miljoner rader ad hoc-data (293 MB data på disk) på ca 10 minuter.
+
+| Antal rader | 1K | 10K | 100K | 1M | 2M | 3M |
+| ----------------------- | ------- | ------- | ----- | ----- | ----- | ----- |
+| Diskstorlek (i MB) | 0.082 | 0.612 | 9.0 | 91 | 188 | 293 |
+| R SDK (i sek) | 7.7 | 4.58 | 35.9 | 233 | 470.5 | 603 |
+
+#### Datagränser för bärbara datorer med PySpark (Python kernel):
+
+**XDM ExperienceEvent-schema:** I interaktivt läge bör du kunna läsa upp maximalt 5 miljoner rader (~13,42 GB data på disk) med XDM-data på ca 20 minuter. Interaktivt läge stöder endast upp till 5 miljoner rader. Om du vill läsa större datauppsättningar rekommenderar vi att du växlar till gruppläge. I gruppläge bör du kunna läsa upp maximalt 500 miljoner rader (~1,31 TB data på disk) med XDM-data på ca 14 timmar.
+
+| Antal rader | 1K | 10K | 100K | 1M | 2M | 3M | 5M | 10M | 50M | 100M | 500M |
+|-------------------------|--------|--------|-------|-------|-------|-------|---------|---------|----------|--------|--------|
+| Storlek på disk | 2.93MB | 4.38MB | 29.02 | 2.69GB | 5.39GB | 8.09GB | 13.42GB | 26.82GB | 134.24GB | 268.39GB | 1.31TB |
+| SDK (interaktivt läge) | 33s | 32.4s | 55.1s | 253.5s | 489.2s | 729.6s | 1206.8s | - | - | - | - |
+| SDK (gruppläge) | 815.8s | 492.8s | 379.1s | 637.4s | 624.5s | 869.2s | 1104.1s | 1786s | 5387.2s | 10624.6s | 50547s |
+
+**ad hoc-schema:** I interaktivt läge bör du kunna läsa upp maximalt 1 miljard rader (~1,05 TB data på disk) med data som inte är XDM på mindre än 3 minuter. I gruppläge bör du kunna läsa upp maximalt 1 miljard rader (~1,05 TB data på disk) med data som inte är XDM på ca 18 minuter.
+
+| Antal rader | 1K | 10K | 100K | 1M | 2M | 3M | 5M | 10M | 50M | 100M | 500M | 1B |
+|--------------|--------|---------|---------|-------|-------|-------|--------|--------|---------|--------|---------|-------|
+| Storlek på disk | 1.12MB | 11.24MB | 109.48MB | 2.69GB | 2.14GB | 3.21GB | 5.36GB | 10.71GB | 53.58GB | 107.52GB | 535.88GB | 1.05TB |
+| Interaktivt SDK-läge (i sekunder) | 28.2s | 18.6s | 20.8s | 20.9s | 23.8s | 21.7s | 24.7s | 22s | 28.4s | 40s | 97.4s | 154.5s |
+| SDK-batchläge (i sekunder) | 428.8s | 578.8s | 641.4s | 538.5s | 630.9s | 467.3s | 411s | 675s | 702s | 719.2s | 1022.1s | 1122.3s |
+
+#### Datagränser för Spark (Scala kernel) för bärbara datorer:
+
+**XDM ExperienceEvent-schema:** I interaktivt läge bör du kunna läsa upp maximalt 5 miljoner rader (~13,42 GB data på disk) med XDM-data på ca 18 minuter. Interaktivt läge stöder endast upp till 5 miljoner rader. Om du vill läsa större datauppsättningar rekommenderar vi att du växlar till gruppläge. I gruppläge bör du kunna läsa upp maximalt 500 miljoner rader (~1,31 TB data på disk) med XDM-data på ca 14 timmar.
+
+| Antal rader | 1K | 10K | 100K | 1M | 2M | 3M | 5M | 10M | 50M | 100M | 500M |
+|---------------|--------|--------|-------|-------|-------|-------|---------|---------|----------|--------|--------|
+| Storlek på disk | 2.93MB | 4.38MB | 29.02 | 2.69GB | 5.39GB | 8.09GB | 13.42GB | 26.82GB | 134.24GB | 268.39GB | 1.31TB |
+| Interaktivt SDK-läge (i sekunder) | 37.9s | 22.7s | 45.6s | 231.7s | 444.7s | 660.6s | 1100s | - | - | - | - |
+| SDK-batchläge (i sekunder) | 374.4s | 398.5s | 527s | 487.9s | 588.9s | 829s | 939.1s | 1441s | 5473.2s | 10118.8 | 49207.6 |
+
+**ad hoc-schema:** I interaktivt läge bör du kunna läsa upp maximalt 1 miljard rader (~1,05 TB data på disk) med data som inte är XDM på mindre än 3 minuter. I gruppläge bör du kunna läsa upp maximalt 1 miljard rader (~1,05 TB data på disk) med data som inte är XDM på ca 16 minuter.
+
+| Antal rader | 1K | 10K | 100K | 1M | 2M | 3M | 5M | 10M | 50M | 100M | 500M | 1B |
+|--------------|--------|---------|---------|-------|-------|-------|---------|---------|---------|--------|---------|-------|
+| Storlek på disk | 1.12MB | 11.24MB | 109.48MB | 2.69GB | 2.14GB | 3.21GB | 5.36GB | 10.71GB | 53.58GB | 107.52GB | 535.88GB | 1.05TB |
+| Interaktivt SDK-läge (i sekunder) | 35.7s | 31s | 19.5s | 25.3s | 23s | 33.2s | 25.5s | 29.2s | 29.7s | 36.9s | 83.5s | 139s |
+| SDK-batchläge (i sekunder) | 448.8s | 459.7s | 519s | 475.8s | 599.9s | 347.6s | 407.8s | 397s | 518.8s | 487.9s | 760.2s | 975.4s |
+
 ### Läs från en datauppsättning i Python/R
 
 Med Python- och R-anteckningsböcker kan du numrera data när du använder datauppsättningar. Exempelkod för att läsa data med och utan sidnumrering visas nedan.
@@ -296,7 +373,7 @@ df <- dataset_reader$limit(100L)$offset(10L)$read()
 
 * `{DATASET_ID}`: Den unika identiteten för den datauppsättning som ska användas
 
-### Läs från en datauppsättning i PySpark/Scala
+### Läs från en datauppsättning i PySpark/Spark/Scala
 
 När en aktiv PySpark- eller Scala-anteckningsbok är öppen expanderar du fliken **Datautforskaren** från det vänstra sidofältet och dubbelklickar på **Datauppsättningar** för att visa en lista över tillgängliga datauppsättningar. Högerklicka på den datauppsättning som du vill få åtkomst till och klicka på **Utforska data i anteckningsbok**. Följande kodceller genereras:
 
