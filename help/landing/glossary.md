@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Produktdokumentation för Adobe Experience Platform
 topic: getting started
 translation-type: tm+mt
-source-git-commit: a5268c2d31d356ce479bdcc143050cd513259235
+source-git-commit: f2a7300d4ad75e3910abbdf2ecc2946a2dfe553c
 workflow-type: tm+mt
-source-wordcount: '6973'
+source-wordcount: '6961'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 **Åtgärd:** I Experience Platform Launch är en åtgärd en specifik typ av regelkomponent som definierar vad som ska hända efter att en händelse inträffar och villkoren utvärderas och skickas.
 
-**Aktivera:** I kunddataplattform i realtid är aktivering den åtgärd som en användare vidtar för att mappa ett segment eller profiler till en destination som Oracle Eloqua, Google eller Salesforce Marketing Cloud.
+**Aktivera:** I kunddataplattformen i realtid aktiverar du den åtgärd som en användare vidtar för att mappa ett segment eller profiler till en destination som Oracle Eloqua, Google eller Salesforce Marketing Cloud.
 
 **Aktivitet:** I beslutstjänsten är en aktivitet en uppsättning erbjudanden som marknadsföraren vill att beslutsmotorn ska välja det bästa erbjudandet från.
 
@@ -108,7 +108,7 @@ ht-degree: 0%
 
 **Kontraktsdataetiketter C:** Kontraktsetiketter `C` används för att kategorisera data som har avtalsmässiga skyldigheter eller som är relaterade till en kunds policyer för datastyrning.
 
-**C1 Kontraktsetikett:** `C1` Etiketten för avtalsstyrd datastyrning specificerar att data bara kan exporteras från Adobe Experience Cloud i en aggregerad form utan att inkludera enskilda identifierare eller enhetsidentifierare. Till exempel data som kommer från sociala nätverk.
+**C1 Kontraktsetikett:** `C1` Etiketten för avtalsstyrd datastyrning anger att data bara kan exporteras från Adobe Experience Cloud i en aggregerad form utan att inkludera enskilda identifierare eller enhetsidentifierare. Till exempel data som kommer från sociala nätverk.
 
 **C2 Kontraktsetikett:** `C2` Etiketten för styrningsdata för kontrakt anger data som inte kan exporteras till en tredje part. Vissa dataleverantörer har villkor i sina kontrakt som förbjuder export av data som de ursprungligen samlades in från.  Kontrakt för sociala nätverk begränsar till exempel ofta överföringen av data som du får från dem. C2 är mer restriktiv än C1, som bara kräver aggregation och anonyma uppgifter.
 
@@ -222,7 +222,7 @@ ht-degree: 0%
 
 **Experience Platform Launch Extensions:** Med Experience Platform Launch-tillägg kan rådata levereras direkt till kunddataplatsens mål i realtid. Installationen av Launch-tillägg kräver åtkomst till Launch-egenskaperna.
 
-**Experimentera:** Ett experiment är en process för att skapa en utbildad modell genom att utbilda instansen med en exempeldel av liveproduktionsdata.
+**Experimentera:** Ett experiment är en process för att skapa en utbildad modell genom att utbilda instansen med en provdel av liveproduktionsdata.
 
 **Experimentera:** Experimentera är processen att tillämpa en tränad modell på en liten del av liveproduktionsdata för att validera dess prestanda. Detta skiljer sig från en tränad modell som testas mot en testdatamängd för utelämnande. Detta skiljer sig också från begreppet Experiment i vissa XML-ramverk, där det i själva verket handlar om ett exempelmodelleringsprojekt.
 
@@ -426,7 +426,7 @@ ht-degree: 0%
 
 **Regelkomponent:** I Experience Platform Launch är regelkomponenter händelser, villkor och åtgärder som utgör en regel.
 
-**Körtid:** Runtime-modulen anger en körningsmiljö för ett maskininlärningsrecept. Spark- och PySpark-körningar tillåter direkt överföring av en binär receptkällfil (.jar). Körningsmiljöerna Python, R och Tensorflow möjliggör inmatning av en URL till en dockningsbild för en receptkälla.
+**Körtid:** Runtime-modulen anger en körningsmiljö för ett maskininlärningsrecept. Körningsmiljöerna Python, R, Spark, PySpark och Tensorflow möjliggör indata från en URL till en dockningsbild för en receptkälla.
 
 [Till början](#adobe-experience-platform-glossary)
 
