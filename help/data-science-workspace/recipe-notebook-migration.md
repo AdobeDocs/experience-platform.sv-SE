@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Migreringsguider för mottagare och anteckningsböcker
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 36305d9098f24b40efd333e7d8a331ebca41ca59
+source-git-commit: f2a7300d4ad75e3910abbdf2ecc2946a2dfe553c
+workflow-type: tm+mt
+source-wordcount: '3459'
+ht-degree: 0%
 
 ---
 
@@ -12,7 +15,7 @@ source-git-commit: 36305d9098f24b40efd333e7d8a331ebca41ca59
 # Migreringsguider för mottagare och anteckningsböcker
 
 >[!NOTE]
->Bärbara datorer och recept som använder Python/R påverkas inte. Migreringen gäller endast befintliga PySpark/Spark-recept och anteckningsböcker.
+>Bärbara datorer och recept som använder Python/R påverkas inte. Migreringen gäller endast PySpark/Spark (2.3)-recept och bärbara datorer.
 
 Följande guider beskriver stegen och informationen som krävs för att migrera befintliga recept och anteckningsböcker.
 
@@ -445,7 +448,7 @@ Med PySpark 3 (Spark 2.4) `sc = spark.sparkContext` definieras inläsningen.
 
 ![Belastning 2](./images/migration/pyspark-migration/2.3-load-alt.png)
 
-**Läsa in Experience Cloud Platform-data i PySpark 2.4**
+**Läsa in Experience Cloud-plattformsdata i PySpark 2.4**
 
 Med PySpark 3 (Spark 2.4) behöver du inte längre definiera `org_id` och `dataset_id` inte längre. Dessutom `df = spark.read.format` har ersatts med en egen magi [`%dataset`](#magic) som underlättar läsning och skrivning av datauppsättningar.
 
