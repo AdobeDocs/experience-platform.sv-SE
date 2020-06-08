@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Användarhandbok för JupyterLab
 topic: Overview
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: f2a7300d4ad75e3910abbdf2ecc2946a2dfe553c
 workflow-type: tm+mt
-source-wordcount: '3349'
-ht-degree: 3%
+source-wordcount: '2773'
+ht-degree: 4%
 
 ---
 
@@ -109,7 +109,7 @@ Kodceller är det primära innehållet i anteckningsböcker. De innehåller käl
 
 Vanliga cellåtgärder beskrivs nedan:
 
-* **Lägg till en cell:** Klicka på plustecknet (**+**) på anteckningsboksmenyn för att lägga till en tom cell. Nya celler placeras under den cell som för närvarande interagerar med, eller i slutet av anteckningsboken om ingen viss cell är i fokus.
+* **Lägg till en cell:** Klicka på plustecknet (**+**) på anteckningsboksmenyn för att lägga till en tom cell. Nya celler placeras under den cell som interagerar med, eller i slutet av anteckningsboken om ingen viss cell är i fokus.
 
 * **Flytta en cell:** Placera markören till höger om cellen som du vill flytta, klicka och dra sedan cellen till en ny plats. Om du flyttar en cell från en anteckningsbok till en annan kopieras cellen tillsammans med dess innehåll.
 
@@ -119,9 +119,7 @@ Vanliga cellåtgärder beskrivs nedan:
 
 ### Kernlar {#kernels}
 
-Anteckningsbokskärnor är språkspecifika datormotorer för bearbetning av bärbara datorer. Förutom Python har JupyterLab ytterligare språkstöd i R, PySpark och Spark. När du öppnar ett anteckningsboksdokument startas den tillhörande kärnan. När en anteckningsbokscell körs utför kärnan beräkningen och ger resultat som kan ta mycket processorkraft och minnesresurser i anspråk. Observera att allokerat minne inte frigörs förrän kärnan stängs av.
-
->[!IMPORTANT] JupyterLab Launcher har uppdaterats från Spark 2.3 till Spark 2.4. Spark- och PySpark-skärmar stöds inte längre i bärbara Spark 2.4-datorer.
+Anteckningsbokskärnor är språkspecifika datormotorer för bearbetning av bärbara datorer. Förutom Python har JupyterLab ytterligare språkstöd för R, PySpark och Spark (Scala). När du öppnar ett anteckningsboksdokument startas den tillhörande kärnan. När en anteckningsbokscell körs utför kärnan beräkningen och ger resultat som kan ta mycket processorkraft och minnesresurser i anspråk. Observera att allokerat minne inte frigörs förrän kärnan stängs av.
 
 Vissa funktioner är begränsade till särskilda kärnor enligt tabellen nedan:
 
@@ -129,8 +127,6 @@ Vissa funktioner är begränsade till särskilda kärnor enligt tabellen nedan:
 | :----: | :--------------------------: | :-------------------- |
 | **Python** | Ja | <ul><li>Sensei ML Framework</li><li>Katalogtjänst</li><li>Frågetjänst</li></ul> |
 | **R** | Ja | <ul><li>Sensei ML Framework</li><li>Katalogtjänst</li></ul> |
-| **PySpark - borttagen** | Nej | <ul><li>Sensei ML Framework</li><li>Katalogtjänst</li></ul> |
-| **Spark - borttagen** | Nej | <ul><li>Sensei ML Framework</li><li>Katalogtjänst</li></ul> |
 | **Scala** | Nej | <ul><li>Sensei ML Framework</li><li>Katalogtjänst</li></ul> |
 
 ### Kernel-sessioner {#kernel-sessions}
@@ -142,59 +138,6 @@ Varje aktiv anteckningsbok eller aktivitet på JupyterLab använder en kernel-se
 Om kärnan är avstängd eller inaktiv under en längre tid, så **Ingen kernel!** med en fylld cirkel visas. Aktivera en kärna genom att klicka på kernelstatusen och välja lämplig kerneltyp enligt nedan:
 
 ![](../images/jupyterlab/user-guide/switch_kernel.gif)
-
-### Körningsresurs för PySpark/Spark {#execution-resource}
-
->[!IMPORTANT]
->I och med övergången från Spark 2.3 till Spark 2.4 är både Spark- och PySpark-kernlarna föråldrade.
->
->Nya bärbara PySpark 3 (Spark 2.4) använder Python3 Kernel. I guiden om hur du konverterar [Pyspark 3 (Spark 2.3) till PySpark 3 (Spark 2.4)](../recipe-notebook-migration.md) finns en djupgående självstudiekurs om hur du uppdaterar dina befintliga bärbara datorer.
->
->Nya Spark-anteckningsböcker bör använda Scala-kernel. I guiden om hur du konverterar [Spark 2.3 till Scala (Spark 2.4)](../recipe-notebook-migration.md) finns en djupgående självstudiekurs om hur du uppdaterar dina befintliga bärbara datorer.
-
-Med PySpark- och Spark-kernel kan du konfigurera Spark-klusterresurser i din PySpark- eller Spark-anteckningsbok med hjälp av konfigurationskommandot (`%%configure`) och tillhandahålla en lista med konfigurationer. Helst definieras dessa konfigurationer innan Spark-programmet initieras. Om du ändrar konfigurationerna medan Spark-programmet är aktivt krävs en extra force-flagga efter kommandot (`%%configure -f`) som startar om programmet för att ändringarna ska tillämpas, vilket visas nedan:
-
->[!CAUTION]
->Med bärbara datorer av typen PySpark 3 (Spark 2.4) och Scala (Spark 2.4) stöds inte längre sparkmagic- `%%` . Följande åtgärder kan inte längre användas:
-* `%%help`
-* `%%info`
-* `%%cleanup`
-* `%%delete`
-* `%%configure`
-* `%%local`
-
-```python
-%%configure -f 
-{
-    "numExecutors": 10,
-    "executorMemory": "8G",
-    "executorCores":4,
-    "driverMemory":"2G",
-    "driverCores":2,
-    "conf": {
-        "spark.cores.max": "40"
-    }
-}
-```
-
-Alla konfigurerbara egenskaper visas i tabellen nedan:
-
-| Egenskap | Beskrivning | Typ |
-| :------- | :---------- | :-----:|
-| sort | Sessionstypen (obligatoriskt) | `session kind`_ |
-| proxyUser | Användaren som personifierar som kör den här sessionen (till exempel bob) | string |
-| jars | Filer som ska placeras på java `classpath` | lista med sökvägar |
-| pyFiles | Filer som ska placeras på `PYTHONPATH` | lista med sökvägar |
-| filer | Filer som ska placeras i körarens arbetskatalog | lista med sökvägar |
-| driverMemory | Minne för drivrutin i megabyte eller gigabyte (t.ex. 1000M, 2G) | string |
-| driverCores | Antal kärnor som används av drivrutinen (endast YARN-läge) | int |
-| exutorMemory | Minne för exekvering i megabyte eller gigabyte (till exempel 1000M, 2G) | string |
-| exutorCores | Antal kärnor som används av köraren | int |
-| numExecutors | Antal körare (endast YARN-läge) | int |
-| arkiv | Arkiv som ska dekomprimeras i körarens arbetskatalog (endast YARN-läge) | lista med sökvägar |
-| kö | YARN-kön som ska skickas till (endast YARN-läge) | string |
-| name | Programmets namn | string |
-| conf | Spark-konfigurationsegenskap | Karta över nyckel=val |
 
 ### Startprogram {#launcher}
 
@@ -252,30 +195,6 @@ Vissa mallar för bärbara datorer är begränsade till vissa kärnor. Malltillg
         <td >no</td>
         <td >no</td>
         <td >no</td>
-    </tr>
-    <tr>
-        <th  ><strong>PySpark 3 (Spark 2.3 - utgått)</strong></th>
-        <td >ja</td>
-        <td >ja</td>
-        <td >no</td>
-        <td >no</td>
-        <td >no</td>
-        <td >no</td>
-        <td >ja</td>
-        <td >ja</td>
-        <td >no</td>
-    </tr>
-    <tr>
-        <th ><strong>Spark (Spark 2.3 - utgått)</strong></th>
-        <td >ja</td>
-        <td >ja</td>
-        <td >no</td>
-        <td >no</td>
-        <td >no</td>
-        <td >no</td>
-        <td >no</td>
-        <td >no</td>
-        <td >ja</td>
     </tr>
       <tr>
         <th  ><strong>PySpark 3 (Spark 2.4)</strong></th>
@@ -377,28 +296,9 @@ df <- dataset_reader$limit(100L)$offset(10L)$read()
 
 * `{DATASET_ID}`: Den unika identiteten för den datauppsättning som ska användas
 
-### Läs från en datauppsättning i PySpark/Spark/Scala
+### Läs från en datauppsättning i PySpark/Scala
 
->[!IMPORTANT]
->I och med övergången från Spark 2.3 till Spark 2.4 är både Spark- och PySpark-kernlarna föråldrade.
->
->Nya bärbara PySpark 3 (Spark 2.4) använder Python3 Kernel. Se guiden för konvertering av [Pyspark 3 (Spark 2.3) till PySpark 3 (Spark 2.4)](../recipe-notebook-migration.md) om du vill konvertera befintlig Spark 2.3-kod. Nya bärbara datorer bör följa [exemplet på PySpark 3 (Spark 2.4)](#pyspark2.4) nedan.
->
->Nya Spark-anteckningsböcker bör använda Scala-kernel. Se guiden för konvertering av [Spark 2.3 till Scala (Spark 2.4)](../recipe-notebook-migration.md) om du vill konvertera befintlig Spark 2.3-kod. Nya bärbara datorer bör följa [Scala-exemplet (Spark 2.4)](#spark2.4) nedan.
-
-Med en aktiv PySpark- eller Spark-anteckningsbok öppen utökar du fliken **Datautforskaren** från vänster sidofält och dubbelklickar på **Datamängder** för att visa en lista över tillgängliga datauppsättningar. Högerklicka på den datauppsättning som du vill få åtkomst till och klicka på **Utforska data i anteckningsbok**. Följande kodceller genereras:
-
-#### PySpark (Spark 2.3 - utgått)
-
-```python
-# PySpark 3 (Spark 2.3 - deprecated)
-
-pd0 = spark.read.format("com.adobe.platform.dataset").\
-    option('orgId', "YOUR_IMS_ORG_ID@AdobeOrg").\
-    load("{DATASET_ID}")
-pd0.describe()
-pd0.show(10, False)
-```
+När en aktiv PySpark- eller Scala-anteckningsbok är öppen expanderar du fliken **Datautforskaren** från det vänstra sidofältet och dubbelklickar på **Datauppsättningar** för att visa en lista över tillgängliga datauppsättningar. Högerklicka på den datauppsättning som du vill få åtkomst till och klicka på **Utforska data i anteckningsbok**. Följande kodceller genereras:
 
 #### PySpark (Spark 2.4) {#pyspark2.4}
 
@@ -410,20 +310,6 @@ I och med introduktionen av Spark 2.4 medföljer [`%dataset`](#magic) anpassad m
 %dataset read --datasetId {DATASET_ID} --dataFrame pd0
 pd0.describe()
 pd0.show(10, False)
-```
-
-#### Spark (Spark 2.3 - utgått)
-
-```scala
-// Spark (Spark 2.3 - deprecated)
-
-import com.adobe.platform.dataset.DataSetOptions
-val dataFrame = spark.read.
-    format("com.adobe.platform.dataset").
-    option(DataSetOptions.orgId, "YOUR_IMS_ORG_ID@AdobeOrg").
-    load("{DATASET_ID}")
-dataFrame.printSchema()
-dataFrame.show()
 ```
 
 #### Scala (Spark 2.4) {#spark2.4}
@@ -560,34 +446,9 @@ df <- dataset_reader$
 
 ### Filtrera ExperienceEvent-data i PySpark/Spark
 
->[!IMPORTANT]
->I och med övergången från Spark 2.3 till Spark 2.4 är både Spark- och PySpark-kernlarna föråldrade.
->
->Nya bärbara PySpark 3 (Spark 2.4) använder Python3 Kernel. Mer information om hur du konverterar befintlig kod finns i guiden Konvertera [Pyspark 3 (Spark 2.3) till PySpark 3 (Spark 2.4)](../recipe-notebook-migration.md) . Om du skapar en ny PySpark-anteckningsbok använder du [exemplet PySpark 3 (spark 2.4)](#pyspark3-spark2.4) för att filtrera ExperienceEvent-data.
->
->Nya Spark-anteckningsböcker bör använda Scala-kernel. Mer information om hur du konverterar befintlig kod finns i guiden Konvertera [Spark 2.3 till Scala (Spark 2.4)](../recipe-notebook-migration.md) . Om du skapar en ny Spark-anteckningsbok använder du [Scala-exemplet (spark 2.4)](#scala-spark) för att filtrera ExperienceEvent-data.
-
-Om du vill komma åt och filtrera en ExperienceEvent-datauppsättning i en PySpark- eller Spark-anteckningsbok måste du ange datamängdens identitet (`{DATASET_ID}`), organisationens IMS-identitet och filterreglerna som definierar ett visst tidsintervall. Ett filtertidsintervall definieras med funktionen `spark.sql()`där funktionsparametern är en SQL-frågesträng.
+Om du vill komma åt och filtrera en ExperienceEvent-datauppsättning i en PySpark- eller Scala-anteckningsbok måste du ange datamängdens identitet (`{DATASET_ID}`), organisationens IMS-identitet och filterreglerna som definierar ett visst tidsintervall. Ett filtertidsintervall definieras med funktionen `spark.sql()`där funktionsparametern är en SQL-frågesträng.
 
 Följande celler filtrerar en ExperienceEvent-datauppsättning till data som finns exklusivt mellan 1 januari 2019 och 31 december 2019.
-
-#### PySpark 3 (Spark 2.3 - utgått)
-
-```python
-# PySpark 3 (Spark 2.3 - deprecated)
-
-pd = spark.read.format("com.adobe.platform.dataset").\
-    option("orgId", "YOUR_IMS_ORG_ID@AdobeOrg").\
-    load("{DATASET_ID}")
-
-pd.createOrReplaceTempView("event")
-timepd = spark.sql("""
-    SELECT *
-    FROM event
-    WHERE timestamp > CAST('2019-01-01 00:00:00.0' AS TIMESTAMP)
-    AND timestamp < CAST('2019-12-31 23:59:59.9' AS TIMESTAMP)
-""")
-```
 
 #### PySpark 3 (Spark 2.4) {#pyspark3-spark2.4}
 
@@ -607,26 +468,6 @@ timepd = spark.sql("""
     AND timestamp < CAST('2019-12-31 23:59:59.9' AS TIMESTAMP)
 """)
 timepd.show()
-```
-
-#### Spark (Spark 2.3 - utgått)
-
-```scala
-// Spark (Spark 2.3 - deprecated)
-
-import com.adobe.platform.dataset.DataSetOptions
-val dataFrame = spark.read.
-    format("com.adobe.platform.dataset").
-    option(DataSetOptions.orgId, "YOUR_IMS_ORG_ID@AdobeOrg").
-    load("{DATASET_ID}")
-
-dataFrame.createOrReplaceTempView("event")
-val timedf = spark.sql("""
-    SELECT * 
-    FROM event 
-    WHERE timestamp > CAST('2019-01-01 00:00:00.0' AS TIMESTAMP)
-    AND timestamp < CAST('2019-12-31 23:59:59.9' AS TIMESTAMP)
-""")
 ```
 
 #### Scala (Spark 2.4) {#scala-spark}
