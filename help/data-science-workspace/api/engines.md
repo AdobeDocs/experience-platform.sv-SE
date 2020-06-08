@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Motorer
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 45f310eb5747300e13f3c57b3f979c983a03d49d
+source-git-commit: f2a7300d4ad75e3910abbdf2ecc2946a2dfe553c
+workflow-type: tm+mt
+source-wordcount: '1114'
+ht-degree: 0%
 
 ---
 
@@ -495,145 +498,5 @@ curl -X DELETE \
     "title": "Success",
     "status": 200,
     "detail": "Engine deletion was successful"
-}
-```
-
-## Föråldrade begäranden
-
->[!IMPORTANT]
->Binära artefakter stöds inte längre och är inställda på att tas bort vid ett senare datum. Nya PySpark- och Scala-recept bör nu följa [dockningsbildernas](#docker-image) exempel för att skapa en motor.
-
-## Skapa en motor med binära artefakter - borttagen
-
-Du kan skapa en motor med hjälp av lokala `.jar` eller `.egg` binära artefakter genom att utföra en POST-begäran samtidigt som du anger dess metadata och artefaktens sökväg i multipart-formulär.
-
-**API-format**
-
-```https
-POST /engines
-```
-
-**Begäran**
-
-```shell
-curl -X POST \
-    https://platform.adobe.io/data/sensei/engines \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}' \
-    -H 'content-type: multipart/form-data' \
-    -F 'engine={
-        "name": "A name for this Engine",
-        "description": "A description for this Engine",
-        "algorithm": "Classification",
-        "type": "PySpark",
-    }' \
-    -F 'defaultArtifact=@path/to/binary/artifact/file.egg'
-```
-
-| Egenskap | Beskrivning |
-| --- | --- |
-| `name` | Det önskade namnet på motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i gränssnittet som mottagarens namn. |
-| `description` | En valfri beskrivning av motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i gränssnittet som mottagarens beskrivning. Den här egenskapen är obligatorisk. Om du inte vill ange en beskrivning anger du värdet som en tom sträng. |
-| `algorithm` | En sträng som anger typen av maskininlärningsalgoritm. Algoritmtyper som stöds är Klassificering, Regression eller Custom. |
-| `type` | Motorns körningstyp. Det här värdet motsvarar det språk som den binära artefakten bygger på och kan vara antingen&quot;PySpark&quot; eller&quot;Spark&quot;. |
-
-
-**Svar**
-
-Ett godkänt svar returnerar en nyttolast som innehåller information om den nya motorn, inklusive dess unika identifierare (`id`).
-
-```json
-{
-    "id": "{ENGINE_ID}",
-    "name": "A name for this Engine",
-    "description": "A description for this Engine",
-    "type": "PySpark",
-    "algorithm": "Classification",
-    "created": "2019-01-01T00:00:00.000Z",
-    "createdBy": {
-        "userId": "Jane_Doe@AdobeID"
-    },
-    "updated": "2019-01-01T00:00:00.000Z",
-    "artifacts": {
-        "default": {
-            "image": {
-                "location": "wasbs://artifact-location.blob.core.windows.net/Engine_ID/default.egg",
-                "name": "file.egg",
-                "executionType": "PySpark",
-                "packagingType": "egg"
-            }
-        }
-    }
-}
-```
-
-## Skapa en rörlig motor för funktioner med binära artefakter - borttagen {#create-a-feature-pipeline-engine-using-binary-artifacts}
-
->[!IMPORTANT]
->Binära artefakter stöds inte längre och är inställda på att tas bort vid ett senare datum.
-
-Du kan skapa en rörlig funktionsmotor med hjälp av lokala `.jar` eller `.egg` binära artefakter genom att utföra en POST-begäran och samtidigt ange dess metadata och artefaktens sökvägar i multipart-formulär. En PySpark- eller Spark-motor kan ange beräkningsresurser, till exempel antalet kärnor eller mängden minne. Mer information finns i bilagan om [resurskonfigurationer](./appendix.md#resource-config) för PySpark och Spark.
-
-**API-format**
-
-```https
-POST /engines
-```
-
-**Begäran**
-
-```shell
-curl -X POST \
-    https://platform.adobe.io/data/sensei/engines \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}' \
-    -H 'content-type: multipart/form-data' \
-    -F 'engine={
-        "name": "Feature Pipeline Engine",
-        "description": "A feature pipeline Engine",
-        "algorithm":"fp",
-        "type": "PySpark"
-    }' \
-    -F 'featurePipelineOverrideArtifact=@path/to/binary/artifact/feature_pipeline.egg' \
-    -F 'defaultArtifact=@path/to/binary/artifact/feature_pipeline.egg'
-```
-
-| Egenskap | Beskrivning |
-| --- | --- |
-| `name` | Det önskade namnet på motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i gränssnittet som mottagarens namn. |
-| `description` | En valfri beskrivning av motorn. Mottagaren som motsvarar den här motorn ärver det här värdet som ska visas i gränssnittet som mottagarens beskrivning. Den här egenskapen är obligatorisk. Om du inte vill ange en beskrivning anger du värdet som en tom sträng. |
-| `algorithm` | En sträng som anger typen av maskininlärningsalgoritm. Ange det här värdet som &quot;fp&quot; för att ange att det här skapandet ska vara en rörlig funktionsmotor. |
-| `type` | Motorns körningstyp. Det här värdet motsvarar det språk som de binära artefakterna bygger på och kan vara antingen&quot;PySpark&quot; eller&quot;Spark&quot;. |
-
-**Svar**
-
-Ett godkänt svar returnerar en nyttolast som innehåller information om den nya motorn, inklusive dess unika identifierare (`id`).
-
-```json
-{
-    "id": "{ENGINE_ID}",
-    "name": "Feature Pipeline Engine",
-    "description": "A feature pipeline Engine",
-    "type": "PySpark",
-    "algorithm": "fp",
-    "created": "2019-01-01T00:00:00.000Z",
-    "createdBy": {
-        "userId": "Jane_Doe@AdobeID"
-    },
-    "updated": "2019-01-01T00:00:00.000Z",
-    "artifacts": {
-        "default": {
-            "image": {
-                "location": "wasbs://artifact-location.blob.core.windows.net/Engine_ID/default.egg",
-                "name": "file.egg",
-                "executionType": "PySpark",
-                "packagingType": "egg"
-            }
-        }
-    }
 }
 ```
