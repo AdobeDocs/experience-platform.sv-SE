@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Paketera källfiler i ett recept
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
+source-git-commit: f2a7300d4ad75e3910abbdf2ecc2946a2dfe553c
+workflow-type: tm+mt
+source-wordcount: '1096'
+ht-degree: 0%
 
 ---
 
@@ -64,7 +67,7 @@ Observera värdena för *Docker Host*, *UserName* och *Password*. Dessa används
 
 ### Paketera källfilerna
 
-Börja med att hämta exempelkodbasen som finns i referensdatabasen för <a href="https://github.com/adobe/experience-platform-dsw-reference" target="_blank">Experience Platform Data Science Workspace</a> .
+Börja med att hämta exempelkodbasen som finns i <a href="https://github.com/adobe/experience-platform-dsw-reference" target="_blank">Experience Platform Data Science Workspace Reference</a> .
 
 - [Skapa Python Docker-bild](#python-docker)
 - [Bygg R Docker-bild](#r-docker)
@@ -193,46 +196,3 @@ Den här självstudien gick över till att paketera källfiler i en Recept, vilk
 
 - [Importera en paketerad mottagare i användargränssnittet](./import-packaged-recipe-ui.md)
 - [Importera en paketerad mottagare med API:t](./import-packaged-recipe-api.md)
-
-## Bygger binärfiler (borttagna)
-
->[!CAUTION]
-> Binärfiler stöds inte i nya PySpark- och Scala-recept och är inställda på att tas bort i en framtida version. Följ [Docker-arbetsflödena](#docker-based-model-authoring) när du arbetar med PySpark och Scala. Följande arbetsflöden gäller endast för Spark 2.3-recept.
-
-### Bygg PySpark-binärfiler (borttagna)
-
-Om du inte har gjort det klonar du github-databasen på din lokala dator med följande kommando:
-
-```BASH
-git clone https://github.com/adobe/experience-platform-dsw-reference.git
-```
-
-Navigera till den klonade databasen på ditt lokala system och kör följande kommandon för att skapa den fil som krävs för att importera ett PySpark-recept: `.egg`
-
-```BASH
-cd recipes/pyspark
-./build.sh
-```
-
-Filen `.egg` genereras i `dist` mappen.
-
-Du kan nu gå vidare till [nästa steg](#next-steps).
-
-#### Bygg Scala-binärfiler (inaktuella)
-
-Om du inte redan har gjort det kör du följande kommando för att klona Github-databasen till ditt lokala system:
-
-```BASH
-git clone https://github.com/adobe/experience-platform-dsw-reference.git
-```
-
-Om du vill skapa den `.jar` artefakt som används för att importera ett Scala-recept går du till din klonade databas och följer stegen nedan:
-
-```BASH
-cd recipes/scala/
-./build.sh
-```
-
-Den skapade artefakten med beroenden finns i `.jar` `/target` katalogen.
-
-Du kan nu gå vidare till [nästa steg](#next-steps).
