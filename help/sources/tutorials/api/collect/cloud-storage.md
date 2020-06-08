@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Samla in molnlagringsdata via källanslutningar och API:er
 topic: overview
 translation-type: tm+mt
-source-git-commit: 4a66be0b49bdcd765fd5dcbd0e646d35df54c7e4
+source-git-commit: 2a8e8f2deffca06782f0ad9b8154ee763c05f06d
 workflow-type: tm+mt
-source-wordcount: '1688'
+source-wordcount: '1689'
 ht-degree: 0%
 
 ---
@@ -668,7 +668,7 @@ Genom att följa den här självstudiekursen har du skapat en källanslutning f�
 - [Översikt över kundprofiler i realtid](../../../../profile/home.md)
 - [Översikt över arbetsytan Datavetenskap](../../../../data-science-workspace/home.md)
 
-## Bilaga
+## Bilaga {#appendix}
 
 I följande avsnitt visas de olika anslutningarna till molnlagringskällan och deras anslutningsspecifikationer.
 
@@ -683,4 +683,5 @@ I följande avsnitt visas de olika anslutningarna till molnlagringskällan och d
 | Azure Event Hubs (Event Hubs) | `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
 | Azure-fillagring | `be5ec48c-5b78-49d5-b8fa-7c89ec4569b8` |
 | Google Cloud-lagring | `32e8f412-cdf7-464c-9885-78184cb113fd` |
+| HDFS | `54e221aa-d342-4707-bcff-7a4bceef0001` |
 | SFTP | `bf367b0d-3d9b-4060-b67b-0d3d9bd06094` |
