@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en Google AdWords-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 00f785577999d2ec3147a3cc2b8edd1028be2471
+source-git-commit: 0ed2ed3b08f262100746f255a78c248a1748eb5e
 workflow-type: tm+mt
-source-wordcount: '647'
+source-wordcount: '632'
 ht-degree: 0%
 
 ---
@@ -74,7 +74,8 @@ POST /connections
 
 **Begäran**
 
-För att skapa en Google AdWords-anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POST-begäran. Anslutningsspecifikations-ID för Google AdWords är `221c7626-58f6-4eec-8ee2-042b0226f03b`.
+I följande begäran skapas en ny AdWords-anslutning, som konfigureras med egenskaperna i nyttolasten:
+
 
 ```shell
 curl -X POST \
