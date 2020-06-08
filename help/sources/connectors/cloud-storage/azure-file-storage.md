@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Azure File Storage Connector
 topic: overview
 translation-type: tm+mt
-source-git-commit: b8ebe57482fdd10ccd8bdcf1a86009a373ea579e
+source-git-commit: 0ed2ed3b08f262100746f255a78c248a1748eb5e
 workflow-type: tm+mt
-source-wordcount: '177'
+source-wordcount: '176'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # (Beta) Azure File Storage Connector
 
-Adobe Experience Platform ger inbyggda anslutningsmöjligheter för molnleverantörer som AWS, Google Cloud Platform och Azure. Ni kan överföra data från dessa system till plattformen.
+Adobe Experience Platform ger inbyggda anslutningsmöjligheter för molnleverantörer som AWS, Google Cloud Platform och Azure, så att ni kan hämta data från dessa system.
 
 Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM-parquet eller avgränsade. Varje steg i processen är integrerat i arbetsflödet för källor. Med plattformen kan du hämta data från Azure File Storage via batchar.
 
