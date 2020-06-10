@@ -4,9 +4,9 @@ seo-title: Mål för Google Ad Manager
 description: 'Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar. '
 seo-description: 'Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar. '
 translation-type: tm+mt
-source-git-commit: 121ae74e9c352b1f6fc12093d815e711ebd817b8
+source-git-commit: dc5ee796ca390d06fc8e08bd6c30e88a0d96dd53
 workflow-type: tm+mt
-source-wordcount: '576'
+source-wordcount: '587'
 ht-degree: 0%
 
 ---
@@ -32,13 +32,13 @@ Observera följande information som är specifik för Google Ad Manager-mål:
 
 ## Förutsättningar
 
-### Vitlista
+### Tillåt lista
 
 >[!NOTE]
 >
->Vitlistning är obligatoriskt innan du konfigurerar ditt första Google Ad Manager-mål i Adobe Real-time CDP. Kontrollera att vitlistningsprocessen som beskrivs nedan har slutförts av Google innan du skapar ett mål.
+>Listan över tillåtna är obligatorisk innan du konfigurerar ditt första Google Ad Manager-mål i Adobe Real-time CDP. Kontrollera att processen Tillåt som beskrivs nedan har slutförts av Google innan du skapar ett mål.
 
-Innan du skapar Google Ad Manager-målet i Adobe Real-time CDP måste du kontakta Google och be om att Adobe vitlistas som dataleverantör och ditt konto vitlistas. Kontakta Google och lämna följande information:
+Innan du skapar Google Ad Manager-målet i Adobe Real-time CDP måste du kontakta Google för att Adobe ska tas med i listan över tillåtna dataleverantörer och ditt konto ska läggas till i listan över tillåtna. Kontakta Google och lämna följande information:
 
 * **Konto-ID** : detta är Adobes konto-ID med Google. Kontakta Adobes kundtjänst eller din Adobe-representant för att få detta ID.
 * **Kund-ID** : detta är Adobes kundkonto-ID med Google. Kontakta Adobes kundtjänst eller din Adobe-representant för att få detta ID.
