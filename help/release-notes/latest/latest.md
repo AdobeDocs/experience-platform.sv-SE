@@ -1,129 +1,42 @@
 ---
 title: Versionsinformation om Adobe Experience Platform
-description: Versionsinformation om Experience Platform 13 maj 2020
+description: Versionsinformation om Experience Platform 10 juni 2020
 doc-type: release notes
-last-update: May 13, 2020
+last-update: June 10, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: db3acec75c24a0cb75d1d88e7aa2171e794abc4f
+source-git-commit: b6cfdf56c20065bdc3e8a9fedf6007ddd74eaeaa
 workflow-type: tm+mt
-source-wordcount: '1299'
-ht-degree: 2%
+source-wordcount: '306'
+ht-degree: 1%
 
 ---
 
 
 # Versionsinformation om Adobe Experience Platform
 
-**Releasedatum: 13 maj 2020**
+**Releasedatum: 10 juni 2020**
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
-- [Uppdateringar av användargränssnittet](#ux)
 - [Datavetenskapens arbetsyta](#dsw)
-- [Mål](#destinations)
-- [Experience Platform Web SDK och Experience Platform Edge Network](#edge)
-- [Kundprofil i realtid](#profile)
 - [Källor](#sources)
-
-## Uppdateringar av användargränssnittet {#ux}
-
-Adobe Experience Platform släpper uppdateringar i domän- och huvudfältet för att förbättra upplevelsen och göra den enhetlig med andra Experience Cloud-program.
-
-- Enklare att växla mellan olika organisationer eller till ett annat program
-- Förbättrad användarhjälp, inklusive artiklar och sammanhangsberoende dokumentation på Hjälp-menyn
-- Möjlighet att ge feedback om Experience Platform och supportärenden
-
-Utbyggnaden av den nya upplevelsen är gradvis. Du kan visa upplevelsen på [https://experience.adobe.com/platform](https://experience.adobe.com/platform).
 
 ## Datavetenskapens arbetsyta {#dsw}
 
-Data Science Workspace använder maskininlärning och artificiell intelligens för att ge insikter från era data. Data Science Workspace är integrerat i Adobe Experience Platform och hjälper er att göra prognoser med ert innehåll och era dataresurser över alla Adobes lösningar. Ett sätt som Data Science Workspace gör detta är genom JupyterLab. JupyterLab är ett webbaserat användargränssnitt för <a href="https://jupyter.org/" target="_blank">Project Jupyter</a> och är nära integrerat med Adobe Experience Platform. Den utgör en interaktiv utvecklingsmiljö där datavetare kan arbeta med Jupyters bärbara datorer, kod och data.
+Data Science Workspace använder maskininlärning och artificiell intelligens för att ge insikter från era data. Data Science Workspace är integrerat i Adobe Experience Platform och hjälper er att göra prognoser med ert innehåll och era dataresurser över alla Adobes lösningar.
 
-**Nya funktioner**
+Data Science Workspace har arbetat på nya sätt för att möjliggöra bättre upplevelser och prognoser med hjälp av maskininlärning i realtid. Maskininlärning i realtid ger möjlighet att skapa, testa och driftsätta anpassade eller importerade förutbildade maskininlärningsmodeller i branschstandard-kompatibla modellformat för bedömning/aktivering i realtid via en API-slutpunkt.
 
-| Funktion | Beskrivning |
-|--- | ---|
-| JupyterLab Launcher | JupyterLab Launcher innehåller nu startsidor för bärbara Spark 2.4-datorer. Startsidor för Spark 2.3-anteckningsboken är nu markerade som inaktuella och inställda på att tas bort i en senare version. |
-| Spark 2.4 | Nya recept från Scala (Spark) och PySpark använder nu Spark 2.4. |
-| Kernlar | Scala (Spark) bärbara datorer har nu skapats via Scala-kernel. PySpark-anteckningsböcker skrivs nu via Python Kernel. Spark- och PySpark-kärnan är föråldrad och inställd på att tas bort i en senare version. |
-| Recept | Nya PySpark- och Spark-recept följer nu Docker-arbetsflödet som liknar Python- och R-recept. |
-
-Mer information om hur du migrerar dina bärbara datorer och recept till Spark 2.4 finns i migreringsguiden för [bärbara datorer](../../data-science-workspace/recipe-notebook-migration.md). Mer allmän information om arbetsytan Datavetenskap finns i [översiktsdokumentationen](../../data-science-workspace/home.md).
-
-## Mål {#destinations}
-
-I [Adobes kunddataplattform](../../rtcdp/overview.md)i realtid är destinationer färdigbyggda integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
-
-**Facebook**
-
-Adobe CDP har nu stöd för dataaktivering på Facebook i realtid, vilket gör att ni kan aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och undertryckning baserat på hash-kodade e-postmeddelanden.
-
-Mer information om de nya funktionerna finns på [Facebooks målsida](/help/rtcdp/destinations/facebook-destination.md) .
-
-<br> 
-
-**Amazon Kinesis och Azure Event Hubs strömmar molnlagringsmål**
-
-Adobe CDP har nu stöd för dataaktivering i realtid på direktuppspelade molnlagringsdestinationer, vilket gör att du kan exportera målgruppsdata och händelser till dessa destinationer i JSON-format. Du kan sedan beskriva affärslogiken ovanpå dessa händelser på dina destinationer. Mer information finns nedan:
-
->[!NOTE]
->
->Målen [!DNL Amazon Kinesis] och [!DNL Azure Event Hubs] destinationerna i Adobe Real-time CDP är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
-
-| Dokumentation | Beskrivning |
-|--- | ---|
-| [(Beta) Amazon Kinesis-mål](/help/rtcdp/destinations/amazon-kinesis-destination.md) | I den här artikeln beskrivs hur du skapar en utgående anslutning i realtid till ditt [!DNL Amazon Kinesis] lagringsutrymme för att strömma data från Adobe Experience Platform. |
-| [(Beta) Azure Event Hubs-mål](/help/rtcdp/destinations/azure-event-hubs-destination.md) | I den här artikeln beskrivs hur du skapar en utgående anslutning i realtid till ditt [!DNL Azure Event Hubs] lagringsutrymme för att strömma data från Adobe Experience Platform. |
-| [API-självstudiekurs - Ansluta till direktuppspelade mål och aktivera data](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md) | I den här självstudien visas hur du använder API-anrop för att ansluta till dina Adobe Experience Platform-data, skapa en anslutning till ett direktuppspelat molnlagringsmål (Amazon Kinesis eller Azure Event Hubs), skapa ett dataflöde till det nya mål du skapat och aktivera data till det nya mål du skapat. |
-
-Mer information finns i Översikt över [destinationer](/help/rtcdp/destinations/destinations-overview.md).
-
-## Experience Platform Web SDK och Experience Platform Edge Network {#edge}
-
-Med Experience Platform Web SDK och Experience Platform Edge Network kan användare skicka data till Adobe Experience Platform och andra Adobe-lösningar i realtid för slutanvändarenheter och webbläsare. Den senaste listan över användningsfall finns i vår [offentliga färdplan](https://github.com/adobe/alloy/projects/5) som uppdateras ofta.
-
-**Nya funktioner**
+Observera att maskininlärning i realtid är alfavärdet och fortfarande utvecklas.
 
 | Funktion | Beskrivning |
 |--- | ---|
-| Stöd för ECID | SDK har stöd för ECID direkt utan ytterligare bibliotek eller information att installera |
-| Konfigurationsgränssnitt | Hantera dina konfigurations-ID-inställningar med det nya Edge-konfigurationsgränssnittet i Launch, måste vitlistas för att komma åt |
-| Adobe Experience Platform Web SDK Mixin | En mixin för användning med Experience Platform web SDK som omfattar alla fält som stöds. |
-| Kontroll av kursens samtycke | Ger företag kontroll över deltagande och avanmälan av Experience Platform Web SDK |
-| Stöd för felsökning på klientsidan i nya Experience Cloud Debugger Extension | Se förfrågningar från Experience Platform web SDK och kantspårningar för att se hur data flödar genom systemet. |
-| Adobe Analytics | Skicka data till rapportsviter från Analytics via edge-konfigurationen. XDM förenklas till kontextdata och har stöd för taggning i flera sviter |
-| Adobe Target | Stöd för Adobe Target. Inklusive VEC, formulärbaserad disposition, A/B, XT, automatiserad personalisering, MVT |
-| Stöd för Adobe Audience Manager | Stöd för Audience Manager ID-synk, URL-mål och cookie-mål |
-| Identitetssynkronisering | Bytt namn `setCustomersIds` för att `syncIdentity` göra det tydligare |
-| XDM Object Builder | I starttillägget kan du nu skapa XDM-objekt som dataelement |
+| JupyterLab Launcher Real-time ML-start | JupyterLab Launcher innehåller nu en startfunktion för en Python-bärbar dator för maskininlärning i realtid (Alpha). |
 
-Mer information om Platform Web SDK och Edge Network finns i [dokumentationen](../../edge/home.md).
+Mer information om Machine Learning-alfa i realtid finns i [Machine Learning-översikten](../../data-science-workspace/real-time-machine-learning/home.md)i realtid.
 
-## Kundprofil i realtid {#profile}
-
-Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder, oavsett var och när de interagerar med ert varumärke. Med kundprofilen i realtid kan ni se en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Med hjälp av en profil kan ni sammanställa olika kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
-
-**Nya funktioner**
-
-| Funktion | Beskrivning |
-| -----------| ---------- |
-| Nya mått för profilexport | Tillagda mätvärden för profilexportjobb som visar totalt antal exporterade profiler och antal profiler i varje namnutrymme. |
-| Nya Insikter-mått för observationer | API:t för observationsinsikter har nu följande mått för direktuppspelning i profilen: Inkommande begärandefrekvens, lyckad överföringshastighet, inspelningsstorlek. |
-| MassGET-slutpunkt | Massor med GET-slutpunkter har lagts till i kundprofils-API i realtid för att möjliggöra hämtning av flera resultat i ett enda API-anrop. Du kan nu gruppvis få upp till 100 ID:n för segmentdefinitioner, segmentjobb och sammanfogningsprinciper. |
-| Bläddra profil efter identitet | I plattformsgränssnittet kan du nu välja ett identitetsnamnutrymme och ange ett identitetsvärde för att kunna bläddra i en profil. |
-
-**Felkorrigeringar**
-
-- Ingen.
-
-**Kända fel**
-
-- Ingen.
-
-Mer information om kundprofil i realtid, inklusive självstudiekurser och bästa metoder för att arbeta med profildata, finns i [Kundprofilöversikt](../../profile/home.md)i realtid.
-
-## Källor {#sources}
+## Sources {#sources}
 
 Adobe Experience Platform kan importera data från externa källor samtidigt som ni kan strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, programvara från tredje part och ditt CRM-system.
 
@@ -133,12 +46,7 @@ Experience Platform har ett RESTful API och ett interaktivt användargränssnitt
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Ytterligare API- och gränssnittsstöd för molnlagringssystem | Nya källanslutningar för Azure File Storage. |
-| Ytterligare API- och gränssnittsstöd för databaser | Nya källanslutningar för Azure Data Explorer, IBM DB2 och Oracle DB. |
-| Adobe Audience Manager till Experience Platform - datadelning | Etableringsprocessen för Audience Manager-kopplingen har uppdaterats. Audience Manager-datauppsättningar för kundprofil i realtid är nu inaktiverade som standard. Du kan välja vilka datauppsättningar som ska befordras till profil manuellt. De nya standardinställningarna är inte retroaktiva och påverkar bara etablering för nya Audience Manager-anslutningar. Mer information finns i användarhandboken för [datauppsättningar](../../catalog/datasets/user-guide.md). |
-
-**Kända fel**
-
-- Ingen.
+| Ytterligare API- och gränssnittsstöd för molnlagringssystem | Ny källanslutning för Apache HDFS |
+| Ytterligare API- och gränssnittsstöd för databaser | Ny källanslutning för Couchbase. |
 
 Mer information om källor finns i [Källöversikt](../../sources/home.md).
