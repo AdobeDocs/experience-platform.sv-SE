@@ -1,25 +1,25 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Skapa en HDFS-kontakt med API:t för Flow Service
+title: Skapa en Apache HDFS-kontakt med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 0ed2ed3b08f262100746f255a78c248a1748eb5e
+source-git-commit: e5789a10c49b2933a0727692dedf2601a214dbc2
 workflow-type: tm+mt
-source-wordcount: '554'
+source-wordcount: '558'
 ht-degree: 0%
 
 ---
 
 
-# Skapa en HDFS-kontakt med API:t för Flow Service
+# Skapa en Apache HDFS-kontakt med API:t för Flow Service
 
 >[!NOTE]
->HDFS-kontakten är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
+>Apache HDFS-kontakten är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
 
 Flow Service används för att samla in och centralisera kunddata från olika källor som ska överföras till Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudiekursen används API:t för Flow Service för att vägleda dig genom stegen för att ansluta ett Hadoop Distributed File System (nedan kallat HDFS) till Experience Platform.
+I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta ett Apache Hadoop Distributed File System (nedan kallat HDFS) till Experience Platform.
 
 ## Komma igång
 
