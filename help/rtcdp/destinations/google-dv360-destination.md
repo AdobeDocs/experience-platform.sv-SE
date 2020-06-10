@@ -4,9 +4,9 @@ seo-title: Google Display & Video 360 Destination
 description: Display & Video 360, tidigare DoubleClick Bid Manager, är ett verktyg som används för att utföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display, Video och Mobile.
 seo-description: 'Display & Video 360, tidigare DoubleClick Bid Manager, är ett verktyg som används för att utföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display, Video och Mobile. '
 translation-type: tm+mt
-source-git-commit: 121ae74e9c352b1f6fc12093d815e711ebd817b8
+source-git-commit: dc5ee796ca390d06fc8e08bd6c30e88a0d96dd53
 workflow-type: tm+mt
-source-wordcount: '562'
+source-wordcount: '574'
 ht-degree: 0%
 
 ---
@@ -32,13 +32,13 @@ Observera följande information som är specifik för Google Display- och Video 
 
 ## Förutsättningar
 
-### Vitlista
+### Tillåt lista
 
 >[!NOTE]
 >
->Whitelisting är obligatoriskt innan du konfigurerar ditt första Google Display- och Video 360-mål i Adobe Real-time CDP. Kontrollera att vitlistningsprocessen som beskrivs nedan har slutförts av Google innan du skapar ett mål.
+>Listan över tillåtna är obligatorisk innan du konfigurerar ditt första Google Display &amp; Video 360-mål i Adobe Real-time CDP. Kontrollera att processen Tillåt som beskrivs nedan har slutförts av Google innan du skapar ett mål.
 
-Innan du skapar Google Display &amp; Video 360-destinationen i Adobe Real-time CDP måste du kontakta Google och be om att Adobe vitlistas som dataleverantör och att ditt konto vitlistas. Kontakta Google och lämna följande information:
+Innan du skapar Google Display &amp; Video 360-destinationen i Adobe Real-time CDP måste du kontakta Google och be om att Adobe finns med i listan över tillåtna dataleverantörer och att ditt konto läggs till i listan över tillåtna. Kontakta Google och lämna följande information:
 
 * **Konto-ID** : detta är Adobes konto-ID med Google. Kontakta Adobes kundtjänst eller din Adobe-representant för att få detta ID.
 * **Kund-ID** : detta är Adobes kundkonto-ID med Google. Kontakta Adobes kundtjänst eller din Adobe-representant för att få detta ID.
