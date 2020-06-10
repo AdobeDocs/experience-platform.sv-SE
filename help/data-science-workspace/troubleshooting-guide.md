@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Felsökningsguide för Data Science Workspace
 topic: Troubleshooting
 translation-type: tm+mt
-source-git-commit: 1447196da7dbf59c1f498de40f12ed74c328c0e6
+source-git-commit: e77b76bdcfa5137d9bd77400b15f2fe8db3b7c0b
+workflow-type: tm+mt
+source-wordcount: '704'
+ht-degree: 0%
 
 ---
 
@@ -35,7 +38,7 @@ Slutligen växlar du Blockera cookies från tredje part till AV.
 
 ![avancerat krom](./images/faq/toggle-off.png)
 
->[!NOTE] Du kan även inaktivera cookies och vitlistor från tredje part [*.]ds.adobe.net
+>[!NOTE] Du kan även inaktivera cookies från tredje part och lägga till [*.]ds.adobe.net till listan allow.
 
 Gå till&quot;chrome://flags/&quot; i adressfältet. Sök efter och inaktivera flaggan *&quot;SameSite som standard-cookies&quot;* med hjälp av listrutan till höger.
 
@@ -61,7 +64,7 @@ Välj sedan **Framkalla** i det övre navigeringsfältet. I listrutan *Framkalla
 
 ## Varför visas ett 403-förbjudet meddelande när jag försöker överföra eller ta bort en fil i JupyterLab?
 
-Om din webbläsare är aktiverad med annonseringsblockerande program som Ghostery eller AdBlock Plus måste domänen &quot;\*.adobe.net&quot; vitlistas i varje reklamblockeringsprogram för att JupyterLab ska fungera normalt. Detta beror på att virtuella JupyterLab-datorer körs på en annan domän än Experience Platform-domänen.
+Om din webbläsare är aktiverad med annonseringsblockerande program som Ghostery eller AdBlock Plus, måste domänen &quot;\*.adobe.net&quot; tillåtas i alla annonseringsblockerande program för att JupyterLab ska fungera normalt. Detta beror på att virtuella JupyterLab-datorer körs på en annan domän än Experience Platform-domänen.
 
 ## Varför ser vissa delar av min bärbara Jupyter-dator skeva ut eller återges inte som kod?
 
