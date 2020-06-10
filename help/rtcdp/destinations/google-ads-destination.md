@@ -4,9 +4,9 @@ seo-title: Mål för Google Ads
 description: Google Ads, som tidigare kallades Google AdWords, är en onlinereklam som gör att företag kan betala per klick för annonsering vid textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appar.
 seo-description: Google Ads, som tidigare kallades Google AdWords, är en onlinereklam som gör att företag kan betala per klick för annonsering vid textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appar.
 translation-type: tm+mt
-source-git-commit: 121ae74e9c352b1f6fc12093d815e711ebd817b8
+source-git-commit: dc5ee796ca390d06fc8e08bd6c30e88a0d96dd53
 workflow-type: tm+mt
-source-wordcount: '520'
+source-wordcount: '532'
 ht-degree: 0%
 
 ---
@@ -34,15 +34,15 @@ Observera följande information som är specifik för Google Ads-destinationer:
 
 ### Befintligt Google Ads-konto
 
-Google har pausat alla nya Google Ads-integreringar med tredjepartsleverantörer. Du måste ha en befintlig integrering med Google Ads för att kunna utföra vitlistningsstegen i nästa avsnitt och skapa ett Google Ads-mål i Adobe Real-time CDP.
+Google har pausat alla nya Google Ads-integreringar med tredjepartsleverantörer. Du måste ha en befintlig integrering med Google Ads för att kunna utföra stegen i listan över tillåtna i nästa avsnitt och skapa en Google Ads-destination i Adobe Real-time CDP.
 
-### Vitlista
+### Tillåt lista
 
 >[!NOTE]
 >
->Vitlistning är obligatoriskt innan du konfigurerar ditt första Google Ads-mål i Adobe Real-time CDP. Kontrollera att vitlistningsprocessen som beskrivs nedan har slutförts av Google innan du skapar ett mål.
+>Listan över tillåtna är obligatorisk innan du konfigurerar ditt första Google Ads-mål i Adobe Real-time CDP. Kontrollera att processen Tillåt som beskrivs nedan har slutförts av Google innan du skapar ett mål.
 
-Innan du skapar Google Ads-målet i Adobe Real-time CDP måste du kontakta Google och be om att Adobe ska vitlistas som dataleverantör och ditt konto ska vitlistas. Kontakta Google och lämna följande information:
+Innan du skapar Google Ads-målet i Adobe Real-time CDP måste du kontakta Google för att Adobe ska tas med i listan över tillåtna dataleverantörer och ditt konto ska läggas till i listan över tillåtna. Kontakta Google och lämna följande information:
 
 * **Konto-ID** : detta är Adobes konto-ID med Google. Kontakta Adobes kundtjänst eller din Adobe-representant för att få detta ID.
 * **Kund-ID** : detta är Adobes kundkonto-ID med Google. Kontakta Adobes kundtjänst eller din Adobe-representant för att få detta ID.
