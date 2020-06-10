@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: June 10, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: b6cfdf56c20065bdc3e8a9fedf6007ddd74eaeaa
+source-git-commit: 35af498a41d779cc155cff7f030cccb57f68b8fa
 workflow-type: tm+mt
-source-wordcount: '306'
-ht-degree: 1%
+source-wordcount: '429'
+ht-degree: 2%
 
 ---
 
@@ -20,6 +20,7 @@ ht-degree: 1%
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [Datavetenskapens arbetsyta](#dsw)
+- [Segmentering](#segmentation)
 - [Källor](#sources)
 
 ## Datavetenskapens arbetsyta {#dsw}
@@ -35,6 +36,20 @@ Observera att maskininlärning i realtid är alfavärdet och fortfarande utveckl
 | JupyterLab Launcher Real-time ML-start | JupyterLab Launcher innehåller nu en startfunktion för en Python-bärbar dator för maskininlärning i realtid (Alpha). |
 
 Mer information om Machine Learning-alfa i realtid finns i [Machine Learning-översikten](../../data-science-workspace/real-time-machine-learning/home.md)i realtid.
+
+## Segmentering {#segmentation}
+
+Adobe Experience Platform Segmentation Service tillhandahåller ett användargränssnitt och RESTful API som gör att ni kan skapa segment och generera målgrupper utifrån era kundprofildata i realtid. Dessa segment är centralt konfigurerade och underhållna på Platform, vilket gör dem tillgängliga för alla Adobe-program.
+
+Segmenteringstjänsten definierar en viss delmängd av profiler genom att beskriva de kriterier som särskiljer en marknadsföringsbar grupp av personer inom kundbasen. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Datumfält | En&quot;brytdatum&quot;-funktion för datumfunktioner har lagts till så att användare kan utvärdera datum utan år. |
+
+Mer information om segmentering finns i Översikt över [segmentering](../../segmentation/home.md)
 
 ## Sources {#sources}
 
