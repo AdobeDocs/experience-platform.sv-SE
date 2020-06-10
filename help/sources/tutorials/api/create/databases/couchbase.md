@@ -1,10 +1,10 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Skapa en CouchBase-koppling med API:t för Flow Service
+title: Skapa en Couchbase-anslutning med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 566db28997dce2c7e1181d140f12adc4250f5e0d
+source-git-commit: e5789a10c49b2933a0727692dedf2601a214dbc2
 workflow-type: tm+mt
 source-wordcount: '551'
 ht-degree: 0%
@@ -12,14 +12,14 @@ ht-degree: 0%
 ---
 
 
-# Skapa en CouchBase-koppling med API:t för Flow Service
+# Skapa en Couchbase-anslutning med API:t för Flow Service
 
 >[!NOTE]
->CouchBase-kopplingen är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
+>Couchbase-kopplingen är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
 
 Flow Service används för att samla in och centralisera kunddata från olika källor som ska överföras till Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta CouchBase till Experience Platform.
+I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Couchbase till Experience Platform.
 
 ## Komma igång
 
@@ -28,14 +28,14 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som ni kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till CouchBase med API:t för Flow Service.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till Couchbase med API:t för Flow Service.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `connectionString` | Anslutningssträngen som används för att ansluta till din CouchBase-instans. Anslutningssträngsmönstret för CouchBase är `Server={SERVER}; Port={PORT};AuthMech=1;CredString=[{\"user\": \"{USER}\", \"pass\":\"{PASS}\"}];`. Mer information om hur du hämtar en anslutningssträng finns i [det här CouchBase-dokumentet](https://docs.couchbase.com/c-sdk/2.10/client-settings.html#configuring-overview). |
-| `connectionSpec.id` | Den identifierare som krävs för att skapa en anslutning. Det fasta anslutningens spec-ID för CouchBase är `1fe283f6-9bec-11ea-bb37-0242ac130002`. |
+| `connectionString` | Anslutningssträngen som används för att ansluta till din Couchbase-instans. Anslutningssträngsmönstret för Couchbase är `Server={SERVER}; Port={PORT};AuthMech=1;CredString=[{\"user\": \"{USER}\", \"pass\":\"{PASS}\"}];`. Mer information om hur du hämtar en anslutningssträng finns i [det här dokumentet](https://docs.Couchbase.com/c-sdk/2.10/client-settings.html#configuring-overview). |
+| `connectionSpec.id` | Den identifierare som krävs för att skapa en anslutning. Det fasta anslutningens spec-ID för Couchbase är `1fe283f6-9bec-11ea-bb37-0242ac130002`. |
 
 ### Läser exempel-API-anrop
 
@@ -59,7 +59,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Skapa en anslutning
 
-En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en koppling krävs per CouchBase-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en koppling krävs per Couchbase-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
 
 **API-format**
 
@@ -69,7 +69,7 @@ POST /connections
 
 **Begäran**
 
-Följande begäran skapar en ny CouchBase-anslutning som konfigurerats med egenskaperna i nyttolasten:
+Följande begäran skapar en ny Couchbase-anslutning som konfigurerats med egenskaperna i nyttolasten:.
 
 ```shell
 curl -X POST \
@@ -80,8 +80,8 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "CouchBase test connection",
-        "description": "A test connection for a CouchBase source",
+        "name": "Couchbase test connection",
+        "description": "A test connection for a Couchbase source",
         "auth": {
             "specName": "Connection String Based Authentication",
             "params": {
@@ -97,8 +97,8 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `auth.params.connectionString` | Anslutningssträngen som används för att ansluta till ett CouchBase-konto. Anslutningssträngsmönstret är: `Server={SERVER}; Port={PORT};AuthMech=1;CredString=[{\"user\": \"{USER}\", \"pass\":\"{PASS}\"}];`. |
-| `connectionSpec.id` | CouchBase-anslutningens spec-ID: `1fe283f6-9bec-11ea-bb37-0242ac130002`. |
+| `auth.params.connectionString` | Anslutningssträngen som används för att ansluta till ett Couchbase-konto. Anslutningssträngsmönstret är: `Server={SERVER}; Port={PORT};AuthMech=1;CredString=[{\"user\": \"{USER}\", \"pass\":\"{PASS}\"}];`. |
+| `connectionSpec.id` | Kuchbase-anslutningens spec-ID: `1fe283f6-9bec-11ea-bb37-0242ac130002`. |
 
 **Svar**
 
@@ -113,4 +113,4 @@ Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inkl
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en CouchBase-anslutning med API:t för Flow Service och fått anslutningens unika ID-värde. Du kan använda det här ID:t i nästa självstudiekurs när du lär dig hur du [utforskar databaser med API:t](../../explore/database-nosql.md)för Flow Service.
+I den här självstudiekursen har du skapat en Couchbase-anslutning med API:t för Flow Service och fått anslutningens unika ID-värde. Du kan använda det här ID:t i nästa självstudiekurs när du lär dig hur du [utforskar databaser med API:t](../../explore/database-nosql.md)för Flow Service.
