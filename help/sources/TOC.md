@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Source Connectors - hjälp
 translation-type: tm+mt
-source-git-commit: bfbaaf0367b601c4ad521f42cd5ff6bdd25a8274
+source-git-commit: 03fd716d6f743d839bc24ff99660efdf47b187a0
 workflow-type: tm+mt
-source-wordcount: '586'
+source-wordcount: '594'
 ht-degree: 0%
 
 ---
@@ -27,13 +27,13 @@ ht-degree: 0%
       - [Google AdWords-koppling](connectors/advertising/ads.md)
    - molnlagring {#cloud-storage}
       - [Amazon Kinesis-kontakt](connectors/cloud-storage/kinesis.md)
+      - [Apache HDFS-kontakt](connectors/cloud-storage/hdfs.md)
       - [Azure Data Lake Storage Gen2-anslutning](connectors/cloud-storage/adls-gen2.md)
       - [Azure Blob och Amazon S3-kontakt](connectors/cloud-storage/blob-s3.md)
       - [Azure Event Hubs-koppling](connectors/cloud-storage/eventhub.md)
       - [Azure File Storage Connector](connectors/cloud-storage/azure-file-storage.md)
       - [FTP- och SFTP-anslutning](connectors/cloud-storage/ftp-sftp.md)
       - [Google Cloud Storage Connector](connectors/cloud-storage/google-cloud-storage.md)
-      - [HDFS-kontakt](connectors/cloud-storage/hdfs.md)
    - CRM {#crm}
       - [Microsoft Dynamics-anslutning](connectors/crm/ms-dynamics.md)
       - [Salesforce-koppling](connectors/crm/salesforce.md)
@@ -47,7 +47,7 @@ ht-degree: 0%
       - [Azure Data Explorer-koppling](connectors/databases/data-explorer.md)
       - [Azure Synapse Analytics-koppling](connectors/databases/synapse-analytics.md)
       - [Azure Table Storage-koppling](connectors/databases/ats.md)
-      - [CouchBase-koppling](connectors/databases/couchbase.md)
+      - [Koppling till kuchbase](connectors/databases/couchbase.md)
       - [Google BigQuery-koppling](connectors/databases/bigquery.md)
       - [GreenPlum-kontakt](connectors/databases/greenplum.md)
       - [HP Vertica-koppling](connectors/databases/hp-vertica.md)
@@ -71,12 +71,12 @@ ht-degree: 0%
       - molnlagring {#cloud-storage}
          - [Amazon Kinesis](tutorials/api/create/cloud-storage/kinesis.md)
          - [Amazon S3-kontakt](tutorials/api/create/cloud-storage/s3.md)
+         - [Apache HDFS-kontakt](tutorials/api/create/cloud-storage/hdfs.md)
          - [Azure Blob-koppling](tutorials/api/create/cloud-storage/blob.md)
          - [Azure Data Lake Storage Gen2-anslutning](tutorials/api/create/cloud-storage/adls-gen2.md)
          - [Azure Event Hubs-koppling](tutorials/api/create/cloud-storage/eventhub.md)
          - [Azure File Storage Connector](tutorials/api/create/cloud-storage/azure-file-storage.md)
          - [Google Cloud Storage Connector](tutorials/api/create/cloud-storage/google.md)
-         - [HDFS-kontakt](tutorials/api/create/cloud-storage/hdfs.md)
          - [SFTP-anslutning](tutorials/api/create/cloud-storage/sftp.md)
       - CRM {#crm}
          - [HubSpot-anslutning](tutorials/api/create/crm/hubspot.md)
@@ -92,7 +92,7 @@ ht-degree: 0%
          - [Azure Data Explorer-koppling](tutorials/api/create/databases/data-explorer.md)
          - [Azure Synapse Analytics-koppling](tutorials/api/create/databases/synapse-analytics.md)
          - [Azure Table Storage-koppling](tutorials/api/create/databases/ats.md)
-         - [CouchBase-koppling](tutorials/api/create/databases/couchbase.md)
+         - [Koppling till kuchbase](tutorials/api/create/databases/couchbase.md)
          - [Google BigQuery-koppling](tutorials/api/create/databases/bigquery.md)
          - [GreenPlum-kontakt](tutorials/api/create/databases/greenplum.md)
          - [HP Vertica-koppling](tutorials/api/create/databases/hp-vertica.md)
@@ -138,7 +138,8 @@ ht-degree: 0%
       - Reklam {#create}
          - [Google AdWords-koppling](tutorials/ui/create/advertising/ads.md)
       - molnlagring {#cloud-storage}
-         - [Amazon Kinesis](tutorials/ui/create/cloud-storage/kinesis.md)
+         - [Amazon Kinesis-kontakt](tutorials/ui/create/cloud-storage/kinesis.md)
+         - [Apache HDFS-kontakt](tutorials/ui/create/cloud-storage/hdfs.md)
          - [Azure Data Lake Storage Gen2-anslutning](tutorials/ui/create/cloud-storage/adls-gen2.md)
          - [Azure Blob och Amazon S3-kontakt](tutorials/ui/create/cloud-storage/blob-s3.md)
          - [Azure Event Hubs-koppling](tutorials/ui/create/cloud-storage/eventhub.md)
@@ -158,6 +159,7 @@ ht-degree: 0%
          - [Azure Data Explorer-koppling](tutorials/ui/create/databases/data-explorer.md)
          - [Azure Synapse Analytics-koppling](tutorials/ui/create/databases/synapse-analytics.md)
          - [Azure Table Storage-koppling](tutorials/ui/create/databases/ats.md)
+         - [Koppling till kuchbase](tutorials/ui/create/databases/couchbase.md)
          - [Google Big Query-koppling](tutorials/ui/create/databases/bigquery.md)
          - [GreenPlum-kontakt](tutorials/ui/create/databases/greenplum.md)
          - [HP Vertica-koppling](tutorials/ui/create/databases/hp-vertica.md)
