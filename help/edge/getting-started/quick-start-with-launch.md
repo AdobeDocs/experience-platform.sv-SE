@@ -4,9 +4,9 @@ seo-title: Adobe Experience Platform Web SDK snabbstart med Launch
 description: Snabbstartsguide för användning av Experience Platform Web SDK-tillägget för att samla in data
 seo-description: Snabbstartsguide för användning av Experience Platform Web SDK-tillägget för att samla in data
 translation-type: tm+mt
-source-git-commit: 2ccb2c17590780f7f1bd5e553164209763ab9e24
+source-git-commit: dc5ee796ca390d06fc8e08bd6c30e88a0d96dd53
 workflow-type: tm+mt
-source-wordcount: '539'
+source-wordcount: '548'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Välkommen
 
-Den här guiden tar dig igenom de olika sätten att konfigurera Adobe Experience Platform Web SDK i Launch. För att kunna använda den här funktionen måste du vitlistas. Om du vill komma med på väntelistan kontaktar du din CSM.
+Den här guiden tar dig igenom de olika stegen för hur du konfigurerar Adobe Experience Platform Web SDK i Launch. För att kunna använda den här funktionen måste du ha behörighet och vara med i listan över tillåtna. Om du vill komma med på väntelistan kontaktar du din CSM.
 
 - Ha en [förstapartsdomän (CNAME)](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-first-party.html) aktiverad. Om du redan har en CNAME for Analytics bör du använda den. Testning under utveckling fungerar utan CNAME, men du behöver en innan du går till produktion
 - Du har rätt till Adobe Experience Platform Data Platform. Om du inte har köpt Platform tillhandahåller vi dig Experience Platform Data Services Foundation för användning i begränsad omfattning med SDK utan extra kostnad.
@@ -26,7 +26,7 @@ Du kan skapa ett konfigurations-ID med [Edge-konfigurationsverktyget](../fundame
 
 >[!NOTE]
 >
->Din organisation måste vitlistas för funktionen. Kontakta din CSM för att komma med i listan för eventuell vitlistning.
+>Din organisation måste finnas i listan över tillåtna för funktionen. Kontakta din CSM för att få plats i listan över tillåtna användare.
 
 ## Förbered ett schema
 
