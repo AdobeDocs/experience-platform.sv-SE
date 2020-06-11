@@ -4,10 +4,10 @@ seo-title: Konfigurera Adobe Experience Platform Web SDK
 description: Lär dig konfigurera Experience Platform Web SDK
 seo-description: Lär dig konfigurera Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+source-git-commit: 7d4f364ebb9df1ce58481a35007ea75f86ab7825
 workflow-type: tm+mt
 source-wordcount: '739'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
 
@@ -21,7 +21,7 @@ Konfigurationen för SDK görs med `configure` kommandot.
 
 ```javascript
 alloy("configure", {
-  "configId": "ebebf826-a01f-4458-8cec-ef61de241c93",
+  "edgeConfigId": "ebebf826-a01f-4458-8cec-ef61de241c93",
   "orgId":"ADB3LETTERSANDNUMBERS@AdobeOrg"
 });
 ```
@@ -30,13 +30,13 @@ Det finns många alternativ som kan anges under konfigurationen. Alla alternativ
 
 ## Allmänna alternativ
 
-### `configId`
+### `edgeConfigId`
 
 | **Typ** | **Obligatoriskt** | **Standardvärde** |
 | -------- | ------------ | ----------------- |
 | Sträng | Ja | ingen |
 
-Ditt tilldelade konfigurations-ID, som länkar SDK till rätt konton och konfiguration.  När du konfigurerar flera instanser på en sida måste du konfigurera olika inställningar `configId` för varje instans.
+Ditt tilldelade konfigurations-ID, som länkar SDK till rätt konton och konfiguration.  När du konfigurerar flera instanser på en sida måste du konfigurera olika inställningar `edgeConfigId` för varje instans.
 
 ### `context`
 
