@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Katalogtjänst - översikt
 topic: overview
 translation-type: tm+mt
-source-git-commit: eec5b07427aa9daa44d23f09cfaf1b38f8e811f3
+source-git-commit: 1fce86193bc1660d0f16408ed1b9217368549f6c
+workflow-type: tm+mt
+source-wordcount: '804'
+ht-degree: 0%
 
 ---
 
@@ -55,7 +58,7 @@ I följande tabell visas de olika objekttyper som stöds av Katalog:
 | Grupp | `/batches` | Batchar är dataenheter som består av en eller flera filer som ska importeras som en enda enhet. Ett batchobjekt i katalogen visar batchens användningsmått (till exempel antalet poster som bearbetas eller storleken på disken) och kan även innehålla länkar till datauppsättningar, vyer och andra resurser som påverkats av batchåtgärden. |
 | Anslutning | `/connections` | En anslutning är en enda instans av en källanslutning som är unik för din organisation och konfigurerad med lämpliga autentiseringsuppgifter för anslutningstypen. |
 | Koppling | `/connectors` | Kopplingar definierar hur källanslutningar ska användas för att samla in data från andra Adobe-program (till exempel Adobe Analytics och Adobe Audience Manager), molnlagringskällor från tredje part (till exempel Azure Blob, Amazon S3, FTP-servrar och SFTP-servrar) och CRM-system från tredje part (till exempel Microsoft Dynamics och Salesforce). |
-| Datauppsättning | `/dataSets` | En datauppsättning är en lagrings- och hanteringskonstruktion som används för datainsamling (vanligtvis en tabell) som innehåller ett schema (kolumner) och fält (rader). |
+| Datauppsättning | `/dataSets` | En datauppsättning är en lagrings- och hanteringskonstruktion som används för datainsamling (vanligtvis en tabell) som innehåller ett schema (kolumner) och fält (rader). Mer information finns i översikten över [datauppsättningar](./datasets/overview.md) . |
 | Datauppsättningsfil | `/datasetFiles` | Datauppsättningsfiler representerar datablock som har sparats på plattformen. Som poster för litterala filer är det här du kan hitta filens storlek, antalet poster som den innehåller och en referens till den grupp som importerade filen. |
 
 ## Nästa steg
