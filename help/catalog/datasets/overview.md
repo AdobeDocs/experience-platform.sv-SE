@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Översikt över datauppsättningar
 topic: datasets
 translation-type: tm+mt
-source-git-commit: 06733eb374d1b9409102a7cf13d61ed266cedaad
+source-git-commit: dcdd94a3a13a13b4104e57b74ecf613bc316b0af
+workflow-type: tm+mt
+source-wordcount: '776'
+ht-degree: 0%
 
 ---
 
@@ -41,7 +44,10 @@ Med Adobe Experience Platform Data Governance kan ni hantera kunddata för att s
 
 Dataanvändningsetiketter kan användas på hela datauppsättningar eller enskilda datauppsättningsfält. Etiketter som läggs till på datauppsättningsnivå ärvs av alla fält i den datauppsättningen.
 
-Mer information om tjänsten finns i [datastyrningsöversikten](../../data-governance/home.md) . Anvisningar om hur du arbetar med användningsetiketter i användargränssnittet för Experience Platform finns i användarhandboken för [dataanvändningsetiketter](../../data-governance/labels/user-guide.md).
+Mer information om tjänsten finns i översikten över [](../../data-governance/home.md) datastyrning. Anvisningar om hur du arbetar med användningsetiketter i [!DNL Platform]finns i följande handböcker:
+
+* [Hantera etiketter i användargränssnittet](../../data-governance/labels/user-guide.md)
+* [Hantera etiketter i API](../../data-governance/labels/api.md)
 
 ## Datauppsättningar i plattformstjänster längre fram i kedjan
 
