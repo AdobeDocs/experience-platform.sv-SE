@@ -4,7 +4,7 @@ seo-title: 'Adobe Experience Platform Web SDK - snabbstart '
 description: Snabbstartsguide för användning av Experience Platform Web SDK för att samla in data
 seo-description: Snabbstartsguide för användning av Experience Platform Web SDK för att samla in data
 translation-type: tm+mt
-source-git-commit: 2d58f7f95c6ad125e66856350aee2f29a0499061
+source-git-commit: f401780aa6b11f230506bfca1a747839fc6ae389
 workflow-type: tm+mt
 source-wordcount: '515'
 ht-degree: 0%
@@ -57,7 +57,7 @@ Ange sedan din konfiguration för SDK. Detta görs med `configure` kommandot . D
 
 ```javascript
 alloy("configure", {
-  "configId": "ebebf826-a01f-4458-8cec-ef61de241c93:dev",
+  "edgeConfigId": "ebebf826-a01f-4458-8cec-ef61de241c93:dev",
   "orgId":"ADB3LETTERSANDNUMBERS@AdobeOrg"
 });
 ```
