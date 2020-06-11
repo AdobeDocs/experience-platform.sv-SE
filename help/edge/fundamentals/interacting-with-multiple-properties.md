@@ -4,7 +4,7 @@ seo-title: Adobe Experience Platform Web SDK Interagera med flera egenskaper
 description: Lär dig hur du interagerar med flera Experience Platform Web SDK-egenskaper
 seo-description: Lär dig hur du interagerar med flera Experience Platform Web SDK-egenskaper
 translation-type: tm+mt
-source-git-commit: 4bff4b20ccc1913151aa1783d5123ffbb141a7d0
+source-git-commit: 7d4f364ebb9df1ce58481a35007ea75f86ab7825
 workflow-type: tm+mt
 source-wordcount: '256'
 ht-degree: 0%
@@ -40,7 +40,7 @@ I följande exempel kan du köra kommandon med var och en av instanserna:
 
 ```javascript
 mycustomname1("configure", {
-  "configId": "ebebf826-a01f-4458-8cec-ef61de241c93",
+  "edgeConfigId": "ebebf826-a01f-4458-8cec-ef61de241c93",
   "orgId": "ADB3LETTERSANDNUMBERS@AdobeOrg"
 });
 
@@ -51,7 +51,7 @@ mycustomname1("sendEvent", {
 });
 
 mycustomname2("configure", {
-  "configId": "f46e981f-fd03-4bdd-a9d9-73ce4447f870",
+  "edgeConfigId": "f46e981f-fd03-4bdd-a9d9-73ce4447f870",
   "orgId": "ADB3NUMBERSANDLETTERS2@AdobeOrg"
 });
 
@@ -66,4 +66,4 @@ Var noga med att köra `configure` kommandot för varje instans innan du kör an
 
 ## Begränsningar
 
-För att undvika konflikter med cookies kan bara en instans av Adobe Experience Platform Web SDK på en sida ha en viss `configId`.  På samma sätt kan bara en instans av Adobe Experience Platform Web SDK ha en viss `orgId`.
+För att undvika konflikter med cookies kan bara en instans av Adobe Experience Platform Web SDK på en sida ha en viss `edgeConfigId`.  På samma sätt kan bara en instans av Adobe Experience Platform Web SDK ha en viss `orgId`.
