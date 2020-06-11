@@ -4,9 +4,9 @@ seo-title: Adobe Experience Platform Web SDK snabbstart med Launch
 description: Snabbstartsguide för användning av Experience Platform Web SDK-tillägget för att samla in data
 seo-description: Snabbstartsguide för användning av Experience Platform Web SDK-tillägget för att samla in data
 translation-type: tm+mt
-source-git-commit: dc5ee796ca390d06fc8e08bd6c30e88a0d96dd53
+source-git-commit: 62b18ed8f70ad87b04f60ade5730ff30d8985415
 workflow-type: tm+mt
-source-wordcount: '548'
+source-wordcount: '511'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,6 @@ ht-degree: 0%
 Den här guiden tar dig igenom de olika stegen för hur du konfigurerar Adobe Experience Platform Web SDK i Launch. För att kunna använda den här funktionen måste du ha behörighet och vara med i listan över tillåtna. Om du vill komma med på väntelistan kontaktar du din CSM.
 
 - Ha en [förstapartsdomän (CNAME)](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-first-party.html) aktiverad. Om du redan har en CNAME for Analytics bör du använda den. Testning under utveckling fungerar utan CNAME, men du behöver en innan du går till produktion
-- Du har rätt till Adobe Experience Platform Data Platform. Om du inte har köpt Platform tillhandahåller vi dig Experience Platform Data Services Foundation för användning i begränsad omfattning med SDK utan extra kostnad.
 - Använd den senaste versionen av tjänsten för besökar-ID
 
 ## Skapa ett konfigurations-ID
