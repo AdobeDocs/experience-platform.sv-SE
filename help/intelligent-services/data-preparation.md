@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Förbered data för användning i intelligenta tjänster
 topic: Intelligent Services
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: 9a2e6f7db441b804f17ec91d06d359439c3d5da5
 workflow-type: tm+mt
-source-wordcount: '1437'
+source-wordcount: '1595'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,26 @@ För att Intelligent Services ska kunna hitta insikter från era marknadsföring
 
 Det här dokumentet innehåller allmän vägledning om hur du mappar data om marknadsföringshändelser från flera kanaler till det här schemat, och ger information om viktiga fält i schemat för att hjälpa dig att avgöra hur data effektivt kan mappas till dess struktur.
 
-## CEE-schemat
+## Sammanfattning av arbetsflöde
+
+Förberedelseprocessen varierar beroende på om dina data lagras i Adobe Experience Platform eller externt. I det här avsnittet sammanfattas de steg som du behöver utföra med tanke på båda scenarierna.
+
+### Förberedelse av externa data
+
+Om dina data lagras utanför [!DNL Experience Platform]följer du stegen nedan:
+
+1. Kontakta Adobe Consulting Services för att begära åtkomstautentiseringsuppgifter för en dedikerad Azure Blob Storage-behållare.
+1. Ladda upp dina data till blobbehållaren med dina inloggningsuppgifter.
+1. Samarbeta med Adobe Consulting Services för att mappa data till [Consumer ExperienceEvent-schemat](#cee-schema) och lägga in dem i Intelligent Services.
+
+### [!DNL Experience Platform] dataförberedelse
+
+Om dina data redan är lagrade i [!DNL Platform]följer du stegen nedan:
+
+1. Granska strukturen för [Consumer ExperienceEvent-schemat](#cee-schema) och se om dina data kan mappas till dess fält.
+1. Kontakta Adobe Consulting Services för att mappa dina data till schemat och importera dem till Intelligent Services, eller [följ stegen i den här guiden](#mapping) om du vill mappa data själv.
+
+## CEE-schemat {#cee-schema}
 
 Consumer ExperienceEvent-schemat beskriver en individs beteende när det gäller digitala marknadsföringshändelser (webb eller mobil) samt online- eller offlinehandel. Det här schemat måste användas för intelligenta tjänster på grund av semantiskt väl definierade fält (kolumner), så att okända namn som annars skulle göra data mindre tydliga undviks.
 
@@ -185,7 +204,7 @@ Detta fält innehåller information om marknadsföringsaktiviteter som är aktiv
 
 Fullständig information om samtliga obligatoriska underfält för `xdm:productListItems`finns i [produktresumén](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/marketing.schema.md) .
 
-## Mappning och inhämtning av data
+## Mappning och inhämtning av data (#mapping)
 
 När ni väl har fastställt om era data om marknadsföringshändelser kan mappas till CEE-schemat är nästa steg att avgöra vilka data ni ska hämta till Intelligent Services. Alla historiska data som används i Intelligent Services måste ligga inom den kortaste tidsgränsen på fyra månaders data plus det antal dagar som avses som en uppslagsperiod.
 
