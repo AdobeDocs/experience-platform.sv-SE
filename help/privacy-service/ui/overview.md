@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Översikt över användargränssnittet för sekretesstjänsten
 topic: UI guide
 translation-type: tm+mt
-source-git-commit: d0fcae6b1b75584a2c26d6eee5b47e0d60a142ba
+source-git-commit: 8704d762ea71b44133cd6d394587342198c54b99
+workflow-type: tm+mt
+source-wordcount: '174'
+ht-degree: 0%
 
 ---
 
@@ -17,15 +20,17 @@ Adobe Experience Platform Privacy Service tillhandahåller ett RESTful API och a
 
 Du måste ha ett Adobe-id för att kunna autentisera dig för användargränssnittet för sekretesstjänsten. Dessutom måste du ha behörighet som systemadministratör i den organisation som ditt Adobe ID är kopplat till.
 
-Gå till inloggningssidan för Adobe Experience Cloud på https://experience.adobe.com. Klicka på **Logga in med ett Adobe ID** och ange dina inloggningsuppgifter för Adobe ID när du uppmanas till det. När du är inloggad klickar du på **Administration**.
+Gå till inloggningssidan för Adobe Experience Cloud på https://experience.adobe.com. Klicka **[!UICONTROL Sign In with an Adobe ID]** och ange inloggningsuppgifterna för ditt Adobe-ID när du uppmanas till det.
 
-![Fliken Administration](../images/ui-overview/admin-tab.png)
+När du är inloggad klickar du på **[!UICONTROL Privacy UI]**.
 
->[!NOTE] Fliken Administration visas bara om du har systemadministratörsbehörighet inom din organisation.
+![](../images/ui-overview/quick-access.png)
 
-Slutligen väljer du **Starta sekretessgränssnittet** på nästa skärm för att öppna sekretessgränssnittet.
+### Logga in från Experience Platform
 
-![Administrationssida](../images/ui-overview/admin-page.png)
+Om du har tillgång till användargränssnittet för Adobe Experience Platform kan du även få tillgång till användargränssnittet för sekretesstjänsten via fliken **[!UICONTROL Requests]** i den vänstra navigeringen.
+
+![](../images/ui-overview/platform.png)
 
 ## Nästa steg
 
