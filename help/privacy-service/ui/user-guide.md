@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Användarhandbok för Integritetstjänst
 topic: UI guide
 translation-type: tm+mt
-source-git-commit: 8a488944d530a4850f8946ed30af769ecb6e954f
+source-git-commit: 9fc95dd9194dca0fada603643c3de949764b2f17
+workflow-type: tm+mt
+source-wordcount: '1088'
+ht-degree: 0%
 
 ---
 
@@ -21,10 +24,11 @@ Kontrollpanelen för användargränssnittet för sekretesstjänsten innehåller 
 
 ### Regeltyp
 
-Integritetstjänsten stöder jobbförfrågningar för två regeltyper:
+Integritetstjänsten stöder jobbförfrågningar för tre regeltyper:
 
-* Den allmänna dataskyddsförordningen (GDPR)
-* California Consumer Privacy Act (CCPA).
+* Europeiska unionens allmänna dataskyddsförordning (GDPR)
+* The California Consumer Privacy Act (CCPA)
+* Thailand&#39;s Personal Data Protection Act (PDPA_THA)
 
 Jobb för varje regel spåras separat. Om du vill växla mellan olika regeltyper klickar du på listrutan **Regeltyp** och väljer önskad regel i listan.
 
