@@ -4,16 +4,19 @@ solution: Experience Platform
 title: Frågor och svar om sekretessservice
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: 64cb2de507921fcb4aaade67132024a3fc0d3dee
+source-git-commit: 5921f89ce551a4bdec4c5038d579cebd0451f5f2
+workflow-type: tm+mt
+source-wordcount: '899'
+ht-degree: 0%
 
 ---
 
 
-# Frågor och svar om sekretessservice
+# Felsökningsguide för Integritetstjänst
 
-Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform Privacy Service.
+Adobe Experience Platform Integritetstjänst ger ett RESTful API och användargränssnitt som hjälper företag att hantera förfrågningar om kunddata. Med Integritetstjänsten kan ni skicka in förfrågningar om åtkomst till och radering av privata eller personliga kunddata, vilket underlättar automatiserad efterlevnad av organisatoriska och juridiska sekretessbestämmelser.
 
-Integritetstjänsten tillhandahåller ett RESTful API och användargränssnitt som hjälper företag att hantera förfrågningar om kunddata. Med Integritetstjänsten kan ni skicka in förfrågningar om åtkomst till och radering av privata eller personliga kunddata, vilket underlättar automatiserad efterlevnad av organisatoriska och juridiska sekretessbestämmelser.
+Det här dokumentet innehåller svar på vanliga frågor om sekretesstjänsten samt information om vanliga fel i API:t.
 
 ## Vad är skillnaden mellan en användare och ett användar-ID när sekretessförfrågningar görs i API:t? {#user-ids}
 
@@ -92,3 +95,18 @@ Mer information finns i avsnittet om hur du [söker efter ett jobb med hjälp av
 ### Använda gränssnittet
 
 På kontrollpanelen för sekretesstjänster hittar du det jobb som du vill hämta från **widgeten** Jobbförfrågningar. Klicka på ID:t för jobbet för att öppna sidan _Jobbinformation_ . Hämta ZIP-filen genom att klicka på **Hämta** i det övre högra hörnet. Mer information finns i användarhandboken [för](ui/user-guide.md) Integritetstjänst.
+
+## Vanliga felmeddelanden
+
+I följande tabell beskrivs några vanliga fel i Integritetstjänst, med beskrivningar som hjälper till att lösa deras respektive problem.
+
+| Felmeddelande | Beskrivning |
+| --- | --- |
+| Det gick inte att hitta användar-ID:n. | Vissa användar-ID:n som angavs i begäran kunde inte hittas och hoppades över. Kontrollera att du använder rätt namnutrymme(n) och ID-värden i nyttolasten för begäran. Mer information finns i dokumentet om [att tillhandahålla identitetsdata](./identity-data.md) . |
+| Ogiltigt namnutrymme | Ett angivet ID-namnområde för ett användar-ID var ogiltigt. En lista över godkända namnutrymmen finns i avsnittet om [standardnamnutrymmen](./api/appendix.md#standard-namespaces) i utvecklarhandboken för Integritetstjänst. Om du använder ett anpassat namnutrymme måste du se till att du anger ID:ts egenskap som `type` &quot;anpassad&quot;. |
+| Delvis slutförd | Jobbet slutfördes, men vissa data var inte tillämpliga för den angivna begäran och hoppades över. |
+| Data har inte det format som krävs. | Ett eller flera av datavärdena för det angivna programmet var felaktigt formaterade. Mer information finns i jobbinformationen. |
+| IMS-organisationen har inte etablerats. | Det här meddelandet visas när din IMS-organisation inte har etablerats för sekretesstjänsten. Kontakta administratören om du vill ha mer information. |
+| Åtkomst och behörigheter krävs. | Åtkomst och behörigheter krävs för att kunna använda sekretesstjänsten. Kontakta administratören för att få åtkomst. |
+| Ett problem uppstod vid överföring och arkivering av åtkomstdata. | När det här felet inträffar överför du åtkomstdata igen och försöker igen. |
+| Arbetsbelastningen har överskridits för den aktuella dokumenthastighetsgränsen. | Minska överföringshastigheten och försök igen när felet inträffar. |
