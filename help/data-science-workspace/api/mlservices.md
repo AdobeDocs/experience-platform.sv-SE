@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Tjänster
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
+source-git-commit: 33f8c424c208bb61319b49e7ecb30e3144ef108a
+workflow-type: tm+mt
+source-wordcount: '811'
+ht-degree: 0%
 
 ---
 
@@ -13,7 +16,7 @@ source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 En MLService är en publicerad tränad modell som ger din organisation möjlighet att komma åt och återanvända tidigare utvecklade modeller. En viktig egenskap hos MLServices är möjligheten att automatisera kurser och poängsättning på schemalagd basis. Schemalagda kurser kan bidra till att bibehålla en modells effektivitet och exakthet, medan schemalagda kurser kan säkerställa att nya insikter genereras på ett konsekvent sätt.
 
-Automatiserade utbildnings- och poängscheman definieras med en starttidsstämpel, en sluttidsstämpel och en frekvens som representeras som ett <a href="https://en.wikipedia.org/wiki/Cron" target="_blank">cron-uttryck</a>. Du kan definiera scheman när du [skapar en MLService](#create-an-mlservice) eller tillämpar dem genom att [uppdatera en befintlig MLService](#update-an-mlservice).
+Automatiserade utbildnings- och poängscheman definieras med en starttidsstämpel, en sluttidsstämpel och en frekvens som representeras som ett [cron-uttryck](https://en.wikipedia.org/wiki/Cron). Du kan definiera scheman när du [skapar en MLService](#create-an-mlservice) eller tillämpar dem genom att [uppdatera en befintlig MLService](#update-an-mlservice).
 
 ## Skapa en MLService {#create-an-mlservice}
 
@@ -38,10 +41,10 @@ curl -X POST \
     -d '{
         "name": "A name for this MLService",
         "description": "A description for this MLService",
-        "mlInstanceId": "{MLINSTANCE_ID}",
-        "trainingDataSetId": "{DATASET_ID}",
-        "trainingExperimentId": "{TRAINING_ID}",
-        "trainingExperimentRunId": "{RUN_ID}",
+        "mlInstanceId": "46986c8f-7739-4376-8509-0178bdf32cda",
+        "trainingDataSetId": "5ee3cd7f2d34011913c56941",
+        "trainingExperimentId": "014d8acf-08fb-421c-8b65-760c8799c627",
+        "trainingExperimentRunId": "33408593-2871-4198-a812-6d1b7d939cda",
         "trainingSchedule": {
             "startTime": "2019-01-01T00:00",
             "endTime": "2019-12-31T00:00",
@@ -78,13 +81,13 @@ Ett lyckat svar returnerar en nyttolast som innehåller information om den nylig
 
 ```json
 {
-    "id": "{MLSERVICE_ID}",
+    "id": "68d936d8-17e6-44ef-a4b6-c7502055638b",
     "name": "A name for this MLService",
     "description": "A description for this MLService",
-    "mlInstanceId": "{MLINSTANCE_ID}",
-    "trainingExperimentId": "{TRAINING_ID}",
-    "trainingDataSetId": "{DATASET_ID}",
-    "scoringExperimentId": "{SCORING_ID}",
+    "mlInstanceId": "46986c8f-7739-4376-8509-0178bdf32cda",
+    "trainingExperimentId": "014d8acf-08fb-421c-8b65-760c8799c627",
+    "trainingDataSetId": "5ee3cd7f2d34011913c56941",
+    "scoringExperimentId": "76c2b1b-fad7-4b31-8c54-19ecc18b1ea0",
     "created": "2019-01-01T00:00:00.000Z",
     "createdBy": {
         "userId": "Jane_Doe@AdobeID"
@@ -126,7 +129,7 @@ Följande begäran innehåller en fråga och hämtar en lista över MLServices s
 
 ```shell
 curl -X GET \
-    'https://platform.adobe.io/data/sensei/mlServices?property=mlInstanceId=={MLINSTANCE_ID}' \
+    'https://platform.adobe.io/data/sensei/mlServices?property=mlInstanceId==46986c8f-7739-4376-8509-0178bdf32cda' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -141,12 +144,12 @@ Ett lyckat svar returnerar en lista över MLServices och deras detaljer inklusiv
 {
     "children": [
         {
-            "id": "{MLSERVICE_ID}",
+            "id": "68d936d8-17e6-44ef-a4b6-c7502055638b",
             "name": "A service created in UI",
-            "mlInstanceId": "{MLINSTANCE_ID}",
-            "trainingExperimentId": "{TRAINING_ID}",
-            "trainingDataSetId": "{DATASET_ID}",
-            "scoringExperimentId": "{SCORING_ID}",
+            "mlInstanceId": "46986c8f-7739-4376-8509-0178bdf32cda",
+            "trainingExperimentId": "014d8acf-08fb-421c-8b65-760c8799c627",
+            "trainingDataSetId": "5ee3cd7f2d34011913c56941",
+            "scoringExperimentId": "76c2b1b-fad7-4b31-8c54-19ecc18b1ea0",
             "created": "2019-01-01T00:00:00.000Z",
             "createdBy": {
                 "displayName": "Jane Doe",
@@ -156,7 +159,7 @@ Ett lyckat svar returnerar en lista över MLServices och deras detaljer inklusiv
         }
     ],
     "_page": {
-        "property": "mlInstanceId=={MLINSTANCE_ID},deleted==false",
+        "property": "mlInstanceId==46986c8f-7739-4376-8509-0178bdf32cda,deleted==false",
         "count": 1
     }
 }
@@ -178,7 +181,7 @@ GET /mlServices/{MLSERVICE_ID}
 
 ```shell
 curl -X GET \
-    https://platform.adobe.io/data/sensei/mlServices/{MLSERVICE_ID} \
+    https://platform.adobe.io/data/sensei/mlServices/68d936d8-17e6-44ef-a4b6-c7502055638b \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -191,13 +194,13 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den beg
 
 ```json
 {
-    "id": "{MLSERVICE_ID}",
+    "id": "68d936d8-17e6-44ef-a4b6-c7502055638b",
     "name": "A name for this MLService",
     "description": "A description for this MLService",
-    "mlInstanceId": "{MLINSTANCE_ID}",
-    "trainingExperimentId": "{TRAINING_ID}",
-    "trainingDataSetId": "{DATASET_ID}",
-    "scoringExperimentId": "{SCORING_ID}",
+    "mlInstanceId": "46986c8f-7739-4376-8509-0178bdf32cda",
+    "trainingExperimentId": "014d8acf-08fb-421c-8b65-760c8799c627",
+    "trainingDataSetId": "5ee3cd7f2d34011913c56941",
+    "scoringExperimentId": "76c2b1b-fad7-4b31-8c54-19ecc18b1ea0",
     "created": "2019-01-01T00:00:00.000Z",
     "createdBy": {
         "userId": "Jane_Doe@AdobeID"
@@ -224,7 +227,7 @@ PUT /mlServices/{MLSERVICE_ID}
 
 ```shell
 curl -X PUT \
-    https://platform.adobe.io/data/sensei/mlServices/{MLSERVICE_ID} \
+    https://platform.adobe.io/data/sensei/mlServices/68d936d8-17e6-44ef-a4b6-c7502055638b \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -233,10 +236,10 @@ curl -X PUT \
     -d '{
         "name": "A name for this MLService",
         "description": "A description for this MLService",
-        "mlInstanceId": "{MLINSTANCE_ID}",
-        "trainingExperimentId": "{TRAINING_ID}",
-        "trainingDataSetId": "{DATASET_ID}",
-        "scoringExperimentId": "{SCORING_ID}",
+        "mlInstanceId": "46986c8f-7739-4376-8509-0178bdf32cda",
+        "trainingExperimentId": "014d8acf-08fb-421c-8b65-760c8799c627",
+        "trainingDataSetId": "5ee3cd7f2d34011913c56941",
+        "scoringExperimentId": "76c2b1b-fad7-4b31-8c54-19ecc18b1ea0",
         "trainingSchedule": {
             "startTime": "2019-01-01T00:00",
             "endTime": "2019-12-31T00:00",
@@ -256,13 +259,13 @@ Ett godkänt svar returnerar en nyttolast som innehåller den uppdaterade inform
 
 ```json
 {
-    "id": "{MLSERVICE_ID}",
+    "id": "68d936d8-17e6-44ef-a4b6-c7502055638b",
     "name": "A name for this MLService",
     "description": "A description for this MLService",
-    "mlInstanceId": "{MLINSTANCE_ID}",
-    "trainingExperimentId": "{TRAINING_ID}",
-    "trainingDataSetId": "{DATASET_ID}",
-    "scoringExperimentId": "{SCORING_ID}",
+    "mlInstanceId": "46986c8f-7739-4376-8509-0178bdf32cda",
+    "trainingExperimentId": "014d8acf-08fb-421c-8b65-760c8799c627",
+    "trainingDataSetId": "5ee3cd7f2d34011913c56941",
+    "scoringExperimentId": "76c2b1b-fad7-4b31-8c54-19ecc18b1ea0",
     "created": "2019-01-01T00:00:00.000Z",
     "createdBy": {
         "userId": "Jane_Doe@AdobeID"
@@ -299,7 +302,7 @@ DELETE /mlServices/{MLSERVICE_ID}
 
 ```shell
 curl -X DELETE \
-    https://platform.adobe.io/data/sensei/mlServices/{MLSERVICE_ID} \
+    https://platform.adobe.io/data/sensei/mlServices/68d936d8-17e6-44ef-a4b6-c7502055638b \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -328,13 +331,13 @@ DELETE /mlServices?mlInstanceId={MLINSTANCE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{MLSERVICE_ID}` | Ett giltigt MLService-ID. |
+| `{MLINSTANCE_ID}` | Ett giltigt MLInstance-ID. |
 
 **Begäran**
 
 ```shell
 curl -X DELETE \
-    https://platform.adobe.io/data/sensei/mlServices?mlInstanceId={MLINSTANCE_ID} \
+    https://platform.adobe.io/data/sensei/mlServices?mlInstanceId=46986c8f-7739-4376-8509-0178bdf32cda \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
