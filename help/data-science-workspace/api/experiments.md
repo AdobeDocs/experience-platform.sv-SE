@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Experimentera
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 01cfbc86516a05df36714b8c91666983f7a1b0e8
+source-git-commit: 63a128202826ec39911e70d34dda9dfb2bc585b2
+workflow-type: tm+mt
+source-wordcount: '744'
+ht-degree: 1%
 
 ---
 
@@ -13,7 +16,7 @@ source-git-commit: 01cfbc86516a05df36714b8c91666983f7a1b0e8
 
 Modellutveckling och utbildning sker på expertnivå, där en expert består av en MLInstance, utbildningar och poängprov.
 
-## Skapa en expert
+## Skapa en expert {#create-an-experiment}
 
 Du kan skapa en expert genom att utföra en POST-begäran och samtidigt ange ett namn och ett giltigt MLInstance-ID i nyttolasten för begäran.
 
@@ -64,7 +67,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den nyl
 }
 ```
 
-## Skapa och genomföra en utbildning eller ett poängprov
+## Skapa och genomföra en utbildning eller ett poängprov {#experiment-training-scoring}
 
 Du kan skapa utbildnings- eller poängkörningar genom att utföra en POST-begäran och ange ett giltigt test-ID och specificera körningsaktiviteten. Bedömningskörningar kan bara skapas om experten har en befintlig och framgångsrik utbildning. En utbildningskurs kommer att initiera modellutbildningsproceduren och om den slutförs utan fel genereras en tränad modell. När du genererar utbildade modeller ersätts alla befintliga modeller, så att en expert bara kan använda en enda tränad modell åt gången.
 
@@ -95,7 +98,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `{TASK}` | Anger körningens aktivitet. Ange det här värdet som antingen `train` för utbildning, `score` för poängsättning eller `fp` för funktionsledning. |
+| `{TASK}` | Anger körningens aktivitet. Ange det här värdet som antingen `train` för utbildning, `score` för poängsättning eller `featurePipeline` för funktionsledning. |
 
 **Svar**
 
@@ -216,7 +219,6 @@ curl -X GET \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
-
 
 **Svar**
 
