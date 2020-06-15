@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Importera ett paketerat recept (API)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: f2a7300d4ad75e3910abbdf2ecc2946a2dfe553c
+source-git-commit: 20e26c874204da75cac7e8d001770702658053f1
 workflow-type: tm+mt
-source-wordcount: '974'
+source-wordcount: '976'
 ht-degree: 0%
 
 ---
@@ -35,24 +35,22 @@ Den här självstudien kräver en paketerad mottagarfil i form av en Docker-URL.
 
 - `{DOCKER_URL}`: En URL-adress till en Docker-bild av en intelligent tjänst.
 
-I den här självstudiekursen måste du ha slutfört [autentiseringen till Adobe Experience Platform-självstudiekursen](../../tutorials/authentication.md) för att kunna ringa anrop till plattforms-API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+I den här självstudiekursen måste du ha slutfört självstudiekursen [för](../../tutorials/authentication.md) Autentisering till Adobe Experience Platform för att kunna ringa anrop till Platform API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 - `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.
-- `{IMS_ORG}`: Dina IMS-organisationsuppgifter finns i din unika integrering med Adobe Experience Platform.
-- `{API_KEY}`: Ditt specifika API-nyckelvärde finns i er unika integrering med Adobe Experience Platform.
+- `{IMS_ORG}`: Dina IMS-organisationsuppgifter hittades i din unika integrering med Adobe Experience Platform.
+- `{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.
 
 ## Skapa en motor
 
-Beroende på vilken typ av paketerad mottagarfil som ska inkluderas som en del av API-begäran skapas en motor på ett av två sätt:
-
-- [Skapa en motor med en Docker URL](#create-an-engine-with-a-docker-url)
+Du kan skapa motorer genom att göra en POST-begäran till slutpunkten /engines. Den skapade motorn konfigureras baserat på den paketerade mottagarfilen som måste inkluderas som en del av API-begäran.
 
 ### Skapa en motor med en Docker URL {#create-an-engine-with-a-docker-url}
 
 Om du vill skapa en motor med en paketerad mottagarfil som lagras i en Docker-behållare måste du ange Docker-URL:en till den paketerade mottagarfilen.
 
 >[!CAUTION]
-> Om du använder Python eller R ska du använda begäran nedan. Om du använder PySpark eller Scala använder du exemplet med PySpark/Scala-begäran som finns under Python/R-exemplet.
+> Om du använder Python eller R ska du använda begäran nedan. Om du använder PySpark eller Scala ska du använda exemplet på PySpark/Scala-begäran som finns under Python/R-exemplet.
 
 **API-format**
 
