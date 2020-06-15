@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Modeller
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 01cfbc86516a05df36714b8c91666983f7a1b0e8
+source-git-commit: 33f8c424c208bb61319b49e7ecb30e3144ef108a
+workflow-type: tm+mt
+source-wordcount: '821'
+ht-degree: 1%
 
 ---
 
@@ -42,10 +45,10 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om modelle
 {
     "children": [
         {
-            "id": "{MODEL_ID}",
+            "id": "15c53796-bd6b-4e09-b51d-7296aa20af71",
             "name": "A name for this Model",
-            "experimentId": "{EXPERIMENT_ID}",
-            "experimentRunId": "{EXPERIMENT_RUN_ID}",
+            "experimentId": "5cb25a2d-2cbd-4c99-a619-8ddae5250a7b",
+            "experimentRunId": "33408593-2871-4198-a812-6d1b7d939cda",
             "description": "A description for this Model",
             "modelArtifactUri": "wasb://test-models@mlpreprodstorage.blob.core.windows.net/model-name",
             "created": "2019-01-01T00:00:00.000Z",
@@ -55,10 +58,10 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om modelle
             "updated": "2019-01-02T00:00:00.000Z"
        },
         {
-            "id": "{MODEL_ID}",
+            "id": "27c53796-bd6b-4u59-b51d-7296aa20er23",
             "name": "Model 2",
-            "experimentId": "{EXPERIMENT_ID}",
-            "experimentRunId": "{EXPERIMENT_RUN_ID}",
+            "experimentId": "3cb25a2d-2cbd-4d34-a619-8ddae5259a5t",
+            "experimentRunId": "33408593-2871-4198-a812-6d1b7d939cda",
             "description": "A description for Model2",
             "modelArtifactUri": "wasb://test-models@mlpreprodstorage.blob.core.windows.net/model-name",
             "created": "2019-01-01T00:00:00.000Z",
@@ -68,10 +71,10 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om modelle
             "updated": "2019-01-02T00:00:00.000Z"
        },
         {
-            "id": "{MODEL_ID}",
+            "id": "15c53796-bd6b-4e09-b51d-7296aa20af71",
             "name": "Model 3",
-            "experimentId": "{EXPERIMENT_ID}",
-            "experimentRunId": "{EXPERIMENT_RUN_ID}",
+            "experimentId": "5cb25a2d-2cbd-4c99-a619-8ddae5250a7b",
+            "experimentRunId": "33408593-2871-4198-a812-6d1b7d939cda",
             "description": "A description for Model3",
             "modelArtifactUri": "wasb://test-models@mlpreprodstorage.blob.core.windows.net/model-name",
             "created": "2019-01-01T00:00:00.000Z",
@@ -117,7 +120,7 @@ Följande begäran innehåller en fråga och hämtar en lista med tränade model
 
 ```shell
 curl -X GET \
-  https://platform.adobe.io/data/sensei/models/?property=experimentRunId=={EXPERIMENT_RUN_ID} \
+  https://platform.adobe.io/data/sensei/models/?property=experimentRunId==33408593-2871-4198-a812-6d1b7d939cda \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -132,10 +135,10 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om din mod
 {
     "children": [
         {
-            "id": "{MODEL_ID}",
+            "id": "15c53796-bd6b-4e09-b51d-7296aa20af71",
             "name": "A name for this Model",
-            "experimentId": "{EXPERIMENT_ID}",
-            "experimentRunId": "{EXPERIMENT_RUN_ID}",
+            "experimentId": "5cb25a2d-2cbd-4c99-a619-8ddae5250a7b",
+            "experimentRunId": "33408593-2871-4198-a812-6d1b7d939cda",
             "description": "A description for this Model",
             "modelArtifactUri": "wasb://test-models@mlpreprodstorage.blob.core.windows.net/model-name",
             "created": "2019-01-01T00:00:00.000Z",
@@ -146,7 +149,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om din mod
        }
     ],
     "_page": {
-        "property": "experimentRunId=={EXPERIMENT_RUN_ID},deleted==false",
+        "property": "experimentRunId==33408593-2871-4198-a812-6d1b7d939cda,deleted==false",
         "count": 1
     }
 }
@@ -158,6 +161,60 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om din mod
 | `modelArtifactUri` | En URI som anger var modellen lagras. URI:n avslutas med modellens `name` värde. |
 | `experimentId` | Ett giltigt test-ID. |
 | `experimentRunId` | Ett giltigt ID för Experiment Run. |
+
+## Registrera en förgenererad modell {#register-a-model}
+
+Du kan registrera en förgenererad modell genom att göra en POST-begäran till `/models` slutpunkten. För att kunna registrera din modell måste `modelArtifact` fil- och `model` egenskapsvärdena inkluderas i begärans innehåll.
+
+**API-format**
+
+```http
+POST /models
+```
+
+**Begäran**
+
+Följande POST innehåller de `modelArtifact` fil- och `model` egenskapsvärden som behövs. Se tabellen nedan för mer information om dessa värden.
+
+```shell
+curl -X POST \
+  https://platform.adobe.io/data/sensei/models \
+    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+    -H 'x-api-key: {API_KEY}' \
+    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-sandbox-name: {SANDBOX_NAME}' \
+    -F 'modelArtifact=@/Users/yourname/Desktop/model.onnx' \
+    -F 'model={
+            "name": "Your Model - 0615-1342-45",
+            "originType": "offline"
+    }'
+```
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `modelArtifact` | Platsen för den fullständiga modellartefakt du vill inkludera. |
+| `model` | Formulärdata för modellobjektet som behöver skapas. |
+
+**Svar**
+
+Ett godkänt svar returnerar en nyttolast som innehåller information om din modell inklusive den unika identifieraren (`id`) för modellerna.
+
+```json
+{
+  "id": "a28f151a-597a-4a7e-87e9-1c1dbc9c2af7",
+  "name": "Your Model - 0615-1342-45",
+  "originType": "offline",
+  "modelArtifactUri": "http://storageblobml.blob.core.windows.net/prod-models/a28f151a-597a-4a7e-87e9-1c1dbc9c2af7",
+  "created": "2020-06-15T20:55:41.520Z",
+  "updated": "2020-06-15T20:55:41.520Z",
+  "deprecated": false
+}
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `id` | Det ID som motsvarar modellen. |
+| `modelArtifactUri` | En URI som anger var modellen lagras. URI:n avslutas med `id` värdet för din modell. |
 
 ## Uppdatera en modell med ID
 
@@ -179,17 +236,17 @@ PUT /models/{MODEL_ID}
 
 ```shell
 curl -X PUT \
-  https://platform.adobe.io/data/sensei/models/{MODEL_ID} \
+  https://platform.adobe.io/data/sensei/models/15c53796-bd6b-4e09-b51d-7296aa20af71 \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'Content-Type: application/vnd.adobe.platform.sensei+json;profile=mlInstance.v1.json' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
     -d '{
-        "id": "{MODEL_ID}",
+        "id": "15c53796-bd6b-4e09-b51d-7296aa20af71",
         "name": "A name for this Model",
-        "experimentId": "{EXPERIMENT_ID}",
-        "experimentRunId": "{EXPERIMENT_RUN_ID}",
+        "experimentId": "5cb25a2d-2cbd-4c99-a619-8ddae5250a7b",
+        "experimentRunId": "33408593-2871-4198-a812-6d1b7d939cda",
         "description": "An updated description for this Model",
         "modelArtifactUri": "wasb://test-models@mlpreprodstorage.blob.core.windows.net/model-name",
         "created": "2019-01-01T00:00:00.000Z",
@@ -206,10 +263,10 @@ Ett godkänt svar returnerar en nyttolast som innehåller den uppdaterade inform
 
 ```json
 {
-        "id": "{MODEL_ID}",
+        "id": "15c53796-bd6b-4e09-b51d-7296aa20af71",
         "name": "A name for this Model",
-        "experimentId": "{EXPERIMENT_ID}",
-        "experimentRunId": "{EXPERIMENT_RUN_ID}",
+        "experimentId": "5cb25a2d-2cbd-4c99-a619-8ddae5250a7b",
+        "experimentRunId": "33408593-2871-4198-a812-6d1b7d939cda",
         "description": "An updated description for this Model",
         "modelArtifactUri": "wasb://test-models@mlpreprodstorage.blob.core.windows.net/model-name",
         "created": "2019-01-01T00:00:00.000Z",
@@ -238,7 +295,7 @@ DELETE /models/{MODEL_ID}
 
 ```shell
 curl -X DELETE \
-  https://platform.adobe.io/data/sensei/models/{MODEL_ID} \
+  https://platform.adobe.io/data/sensei/models/15c53796-bd6b-4e09-b51d-7296aa20af71 \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -256,3 +313,163 @@ Ett godkänt svar returnerar en nyttolast som innehåller 200-status som bekräf
     "detail": "Model deletion was successful"
 }
 ```
+
+## Skapa en ny omkodning för en modell {#create-transcoded-model}
+
+Transcoding är en direkt digital-till-digital-konvertering av en kodning till en annan. Du skapar en ny omkodning för en modell genom att ange `{MODEL_ID}` och en `targetFormat` du vill att den nya utskriften ska vara i.
+
+**API-format**
+
+```http
+POST /models/{MODEL_ID}/transcodings
+```
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `{MODEL_ID}` | Identifieraren för den utbildade eller publicerade modellen. |
+
+**Begäran**
+
+```shell
+curl -X POST \
+  https://platform.adobe.io/data/sensei/models/15c53796-bd6b-4e09-b51d-7296aa20af71/transcodings \
+    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+    -H 'x-api-key: {API_KEY}' \
+    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-sandbox-name: {SANDBOX_NAME}' \
+    -H 'Content-Type: text/plain' \
+    -D '{
+ "id": "491a3be5-1d32-4541-94d5-cd1cd07affb5",
+ "modelId" : "15c53796-bd6b-4e09-b51d-7296aa20af71",
+ "targetFormat": "CoreML",
+ "created": "2019-12-16T19:59:08.360Z",
+ "createdBy": {
+    "userId": "FDD760CD5CD467380A495FE2@AdobeID"
+ },
+ "updated": "2019-12-19T18:37:43.696Z",
+ "deleted": false,
+}'
+```
+
+**Svar**
+
+Ett godkänt svar returnerar en nyttolast som innehåller ett JSON-objekt med informationen om din omkodning. Detta inkluderar den unika identifieraren (`id`) för transkodning som används för att [hämta en specifik trancoded Model](#retrieve-transcoded-model).
+
+```json
+{
+  "id": "491a3be5-1d32-4541-94d5-cd1cd07affb5",
+  "modelId": "15c53796-bd6b-4e09-b51d-7296aa20af71",
+  "targetFormat": "CoreML",
+  "created": "2020-06-12T22:01:55.886Z",
+  "createdBy": {
+    "userId": "FDD760CD5CD467380A495FE2@AdobeID"
+  },
+  "updated": "2020-06-12T22:01:55.886Z",
+  "deleted": false
+}
+```
+
+## Hämta en lista över transkodningar för en modell {#retrieve-transcoded-model-list}
+
+Du kan hämta en lista över transkodningar som har utförts på en modell genom att utföra en GET-begäran med din `{MODEL_ID}`.
+
+**API-format**
+
+```http
+GET /models/{MODEL_ID}/transcodings
+```
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `{MODEL_ID}` | Identifieraren för den utbildade eller publicerade modellen. |
+
+**Begäran**
+
+```shell
+curl -X GET \
+  https://platform.adobe.io/data/sensei/models/15c53796-bd6b-4e09-b51d-7296aa20af71/transcodings \
+    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+    -H 'x-api-key: {API_KEY}' \
+    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
+**Svar**
+
+Ett godkänt svar returnerar en nyttolast som innehåller ett json-objekt med en lista över varje omkodning som har utförts i modellen. Varje omkodad modell får en unik identifierare (`id`).
+
+```json
+{
+    "children": [
+        {
+            "id": "460aa5a1-e972-455d-b8dc-4bc6cd91edb6",
+            "modelId": "15c53796-bd6b-4e09-b51d-7296aa20af71",
+            "created": "2019-12-20T01:07:50.978Z",
+            "createdBy": {
+                "userId": "FDD760CD5CD467380A495FE2@AdobeID"
+            },
+            "updated": "2019-12-20T01:07:50.978Z",
+            "deprecated": false
+        },
+        {
+            "id": "bdb3e4c2-4702-4045-86b4-17ee40df91cc",
+            "modelId": "15c53796-bd6b-4e09-b51d-7296aa20af71",
+            "created": "2019-12-20T17:48:26.473Z",
+            "createdBy": {
+                "userId": "FDD760CD5CD467380A495FE2@AdobeID"
+            },
+            "updated": "2019-12-20T17:48:26.473Z",
+            "deprecated": false
+        }
+    ],
+    "_page": {
+        "property": "modelId==15c53796-bd6b-4e09-b51d-7296aa20af71,deleted==false,deprecated==false",
+        "count": 2
+    }
+}
+```
+
+## Hämta en specifik omkodad modell {#retrieve-transcoded-model}
+
+Du kan hämta en specifik omkodad modell genom att utföra en GET-begäran med din `{MODEL_ID}` och ID:t för en omkodad modell.
+
+**API-format**
+
+```http
+GET /models/{MODEL_ID}/transcodings/{TRANSCODING_ID}
+```
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `{MODEL_ID}` | Unik identifierare för en utbildad eller publicerad modell. |
+| `{TRANSCODING_ID}` | Den unika identifieraren för en omkodad modell. |
+
+**Begäran**
+
+```shell
+curl -X GET \
+  https://platform.adobe.io/data/sensei/models/15c53796-bd6b-4e09-b51d-7296aa20af71/transcodings/460aa5a1-e972-455d-b8dc-4bc6cd91edb6 \
+    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+    -H 'x-api-key: {API_KEY}' \
+    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
+**Svar**
+
+Ett lyckat svar returnerar en nyttolast som innehåller ett JSON-objekt med data från den omkodade modellen.
+
+```json
+{
+    "id": "460aa5a1-e972-455d-b8dc-4bc6cd91edb6",
+    "modelId": "15c53796-bd6b-4e09-b51d-7296aa20af71",
+    "created": "2019-12-20T01:07:50.978Z",
+    "createdBy": {
+        "userId": "FDD760CD5CD467380A495FE2@AdobeID"
+    },
+    "updated": "2019-12-20T01:07:50.978Z",
+    "deprecated": false
+}
+```
+
+
