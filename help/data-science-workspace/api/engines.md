@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Motorer
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: f2a7300d4ad75e3910abbdf2ecc2946a2dfe553c
+source-git-commit: d9f4649f5946fa3eea8d6a2ab65a07568f9c697f
 workflow-type: tm+mt
-source-wordcount: '1114'
+source-wordcount: '1118'
 ht-degree: 0%
 
 ---
@@ -202,7 +202,7 @@ curl -X POST \
                 "executionType": "PySpark",
                 "packagingType": "docker"
             },
-           "defaultMLInstanceConfigs": [
+           "defaultMLInstanceConfigs": [ ...
            ]
        }
    }
@@ -219,6 +219,7 @@ curl -X POST \
 | `artifacts.default.image.location` | Docker-bildens plats. Endast Azure ACR eller Public (unauthenticated) Dockerhub stöds. |
 | `artifacts.default.image.executionType` | Motorns körningstyp. Detta värde motsvarar det språk som Docker-bilden bygger på. Detta kan vara antingen &quot;Spark&quot; eller &quot;PySpark&quot;. |
 | `artifacts.default.image.packagingType` | Motorns paketeringstyp. Värdet ska anges till `docker`. |
+| `artifacts.default.defaultMLInstanceConfigs` | Konfigurationsfilsparametrarna `pipeline.json` . |
 
 **Svar**
 
@@ -242,7 +243,8 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den nya
                 "name": "datatransformation",
                 "executionType": "PySpark",
                 "packagingType": "docker"
-            }
+            },
+        "defaultMLInstanceConfigs": [ ... ]
         }
     }
 }
