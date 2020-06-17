@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Autentisera och få tillgång till Experience Platform API:er
+title: Autentisera och få åtkomst till Experience Platform API:er
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 8c73363e88aab242ae258037deb80eeec872e519
+source-git-commit: 280456e68f54f49ce4a0134e226af89ad1f849a4
 workflow-type: tm+mt
-source-wordcount: '843'
+source-wordcount: '871'
 ht-degree: 0%
 
 ---
@@ -14,40 +14,40 @@ ht-degree: 0%
 
 # Autentisera och få åtkomst till Experience Platform API:er
 
-Det här dokumentet innehåller en stegvis självstudiekurs för att få tillgång till ett Adobe Experience Platform-utvecklarkonto för att ringa anrop till Experience Platform API:er.
+I det här dokumentet finns en stegvis självstudiekurs för att få tillgång till ett utvecklarkonto för Adobe Experience Platform för att ringa anrop till API:er för Experience Platform.
 
 ## Autentisera för att göra API-anrop
 
-För att skydda program och användare måste alla förfrågningar till Adobe I/O-API:er autentiseras och auktoriseras med standarder som OAuth och JSON Web Tokens (JWT). JWT används sedan tillsammans med klientspecifik information för att generera din personliga åtkomsttoken.
+För att skydda program och användare måste alla förfrågningar till Adobe I/O-API:er autentiseras och auktoriseras med standarder som OAuth och JSON Web Tokens (JWT). The JWT is then used along with client-specific information to generate your personal access token.
 
 I den här självstudiekursen beskrivs stegen för autentisering genom att skapa en åtkomsttoken som beskrivs i följande flödesschema:
 ![](images/authentication/authentication-flowchart.png)
 
 ## Förutsättningar
 
-För att kunna anropa Experience Platform API:er krävs följande:
+Du behöver följande för att kunna anropa API:er för Experience Platform:
 
 * En IMS-organisation med tillgång till Adobe Experience Platform
 * Ett registrerat Adobe ID-konto
-* En administratör för Admin Console där du kan lägga till dig som **utvecklare** och som **användare** för en produkt.
+* En Admin Console-administratör som lägger till dig som **utvecklare** och som **användare** för en produkt.
 
 I följande avsnitt går vi igenom stegen för att skapa ett Adobe ID och bli utvecklare och användare för en organisation.
 
-### Skapa ett Adobe-ID
+### Skapa ett Adobe ID
 
-Om du inte har något Adobe-ID kan du skapa ett med följande steg:
+If you do not have an Adobe ID, you can create one using the following steps:
 
-1. Gå till [Adobe Developer Console](https://console.adobe.io)
-2. Klicka på **Skapa ett nytt konto**
+1. Go to [Adobe Developer Console](https://console.adobe.io)
+2. Click **create a new account**
 3. Slutför registreringsprocessen
 
-## Bli utvecklare och användare av Experience Platform för en organisation
+## Bli utvecklare och användare för Experience Platform i en organisation
 
 Innan du skapar integreringar på Adobe I/O måste ditt konto ha utvecklarbehörighet för en produkt i en IMS-organisation. Detaljerad information om utvecklarkonton på Admin Console finns i [supportdokumentet](https://helpx.adobe.com/enterprise/using/manage-developers.html) för hantering av utvecklare.
 
 **Få utvecklaråtkomst**
 
-Kontakta en administratör för Admin Console i din organisation för att lägga till dig som utvecklare för en av organisationens produkter med hjälp av [Admin Console](https://adminconsole.adobe.com/).
+Kontakta en Admin Console-administratör i din organisation om du vill lägga till dig som utvecklare för någon av organisationens produkter med [Admin Console](https://adminconsole.adobe.com/).
 
 ![](images/authentication/assign-developer.png)
 
@@ -59,7 +59,7 @@ När du har utsetts till utvecklare får du behörighet att skapa integreringar 
 
 **Få användaråtkomst**
 
-Administratören för Admin Console måste också lägga till dig i produkten som användare.
+Admin Console-administratören måste också lägga till dig som användare i produkten.
 
 ![](images/authentication/assign-users.png)
 
@@ -67,8 +67,9 @@ På samma sätt som när du lägger till en utvecklare måste administratören t
 
 ![](images/authentication/assign-user-details.png)
 
-
 ## Generera autentiseringsuppgifter för åtkomst i Adobe Developer Console
+
+>[!NOTE] Om du följer det här dokumentet från [Privacy Servicens utvecklarguide](../privacy-service/api/getting-started.md)kan du nu gå tillbaka till den guiden för att generera autentiseringsuppgifter som är unika för Privacy Servicen.
 
 Med Adobe Developer Console måste du generera följande tre autentiseringsuppgifter:
 
@@ -76,25 +77,25 @@ Med Adobe Developer Console måste du generera följande tre autentiseringsuppgi
 * `{API_KEY}`
 * `{ACCESS_TOKEN}`
 
-Ditt `{IMS_ORG}` och `{API_KEY}` behöver bara genereras en gång och kan återanvändas i framtida API-anrop för plattformen. Ditt `{ACCESS_TOKEN}` är dock tillfälligt och måste genereras om var 24:e timme.
+Ditt `{IMS_ORG}` och `{API_KEY}` behöver bara genereras en gång och kan återanvändas i framtida Platform API-anrop. Ditt `{ACCESS_TOKEN}` är dock tillfälligt och måste genereras om var 24:e timme.
 
 Stegen beskrivs närmare nedan.
 
 ### Engångskonfiguration
 
-Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med ditt Adobe ID. Följ sedan stegen som beskrivs i självstudiekursen om hur du [skapar ett tomt projekt](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) i dokumentationen för Adobe Developer Console.
+Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med Adobe ID. Följ sedan stegen som beskrivs i självstudiekursen om hur du [skapar ett tomt projekt](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) i dokumentationen för Adobe Developer Console.
 
 När du har skapat ett nytt projekt klickar du **[!UICONTROL Add API]** på skärmen _Projektöversikt_ .
 
 ![](images/authentication/add-api-button.png)
 
-Skärmen _Lägg till ett API_ visas. Klicka på produktikonen för Adobe Experience Platform och välj sedan **[!UICONTROL Experience Platform API]** innan du klickar på **[!UICONTROL Next]**.
+Skärmen _Lägg till ett API_ visas. Klicka på produktikonen för Adobe Experience Platform och välj sedan **[!UICONTROL Experience Platform API]** innan du klickar **[!UICONTROL Next]**.
 
 ![](images/authentication/add-platform-api.png)
 
-När du har valt Experience Platform som det API som ska läggas till i projektet följer du de steg som beskrivs i självstudiekursen om hur du [lägger till ett API i ett projekt med ett tjänstkonto (JWT)](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/services-add-api-jwt.md) (med början från steget Konfigurera API) för att slutföra processen.
+När du har valt Experience Platform som det API som ska läggas till i projektet följer du stegen som beskrivs i självstudiekursen om hur du [lägger till ett API i ett projekt med ett tjänstkonto (JWT)](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/services-add-api-jwt.md) (med början från steget Konfigurera API) för att slutföra processen.
 
-När API:t har lagts till i projektet visas följande autentiseringsuppgifter på sidan _Projektöversikt_ som krävs i alla anrop till Experience Platform API:er:
+När API:t har lagts till i projektet visar _projektöversiktssidan_ följande autentiseringsuppgifter som krävs i alla anrop till API:er för Experience Platform:
 
 * `{API_KEY}` (Klient-ID)
 * `{IMS_ORG}` (Organisations-ID)
@@ -103,7 +104,7 @@ När API:t har lagts till i projektet visas följande autentiseringsuppgifter p�
 
 ### Autentisering för varje session
 
-Den sista obligatoriska autentiseringsuppgifterna som du måste samla in är din `{ACCESS_TOKEN}`. Till skillnad från värdena för `{API_KEY}` och `{IMS_ORG}`måste en ny token genereras var 24:e timme för att du ska kunna fortsätta använda plattforms-API:er.
+Den sista obligatoriska autentiseringsuppgifterna som du måste samla in är din `{ACCESS_TOKEN}`. Till skillnad från värdena för `{API_KEY}` och `{IMS_ORG}`måste en ny token genereras var 24:e timme för att du ska kunna fortsätta använda Platform API:er.
 
 Om du vill skapa en ny `{ACCESS_TOKEN}`variant följer du stegen för att [generera en JWT-token](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/credentials.md) i referenshandboken för Developer Console.
 
@@ -152,10 +153,10 @@ Om ditt svar liknar det som visas nedan är dina inloggningsuppgifter giltiga oc
 
 ## Använd Postman för JWT-autentisering och API-anrop
 
-[Postman](https://www.getpostman.com/) är ett populärt verktyg för att arbeta med RESTful API:er. I det här [mellanbrevet](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) beskrivs hur du kan konfigurera postman så att den automatiskt utför JWT-autentisering och använder den för att använda API:er för Adobe Experience Platform.
+[Postman](https://www.getpostman.com/) är ett populärt verktyg för att arbeta med RESTful API:er. I det här [mellanbrevet](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) beskrivs hur du kan konfigurera postman så att den automatiskt utför JWT-autentisering och använder den för att använda Adobe Experience Platform API:er.
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du samlat in och testat dina autentiseringsuppgifter för plattforms-API:er. Du kan nu följa med i de exempel på API-anrop som finns i [dokumentationen](../landing/documentation/overview.md).
+Genom att läsa det här dokumentet har du samlat in och testat dina inloggningsuppgifter för Platform API:er. Du kan nu följa med i de exempel på API-anrop som finns i [dokumentationen](../landing/documentation/overview.md).
 
-Förutom de autentiseringsvärden du har samlat in i den här självstudiekursen behöver många plattforms-API:er även en giltig `{SANDBOX_NAME}` som rubrik. Mer information finns i översikten över [](../sandboxes/home.md) sandlådor.
+Förutom de autentiseringsvärden du har samlat in i den här självstudiekursen behöver många Platform API:er också en giltig `{SANDBOX_NAME}` rubrik. Mer information finns i översikten över [](../sandboxes/home.md) sandlådor.
