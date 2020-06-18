@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en källanslutning för Amazon Kinesis i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: dcd6293a71178fee14647f5b2c8b56d03d1ec7df
+source-git-commit: 855f543a1cef394d121502f03471a60b97eae256
 workflow-type: tm+mt
-source-wordcount: '451'
+source-wordcount: '454'
 ht-degree: 0%
 
 ---
@@ -15,15 +15,15 @@ ht-degree: 0%
 # Skapa en källanslutning för Amazon Kinesis i användargränssnittet
 
 >[!NOTE]
-> Amazon Kinesis-kontakten är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
+>Amazon Kinesis-kontakten är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
-Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du autentiserar en källanslutning till en Amazon Kinesis (nedan kallad Kinesis) med hjälp av användargränssnittet för plattformen.
+Källkopplingar i Adobe Experience Platform ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du autentiserar en källanslutning till en Amazon Kinesis (nedan kallad Kinesis) med hjälp av Platform användargränssnitt.
 
 ## Komma igång
 
-Den här självstudien kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
+- [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    - [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    - [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 - [Kundprofil](../../../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
@@ -44,9 +44,9 @@ Mer information om dessa värden finns i [det här Kinesis-dokumentet](https://d
 
 ## Anslut ditt Kinesis-konto
 
-När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att länka ditt Kinesis-konto till plattformen.
+När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att länka ditt Kinesis-konto till Platform.
 
-Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **Källor** i det vänstra navigeringsfältet för att komma åt arbetsytan *Källor* . På fliken *Katalog* visas en rad olika källor som kan anslutas till plattformen. Varje källa visar antalet befintliga konton som är kopplade till dem.
+Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **Källor** i det vänstra navigeringsfältet för att komma åt arbetsytan *Källor* . På fliken *Katalog* visas olika källor som du kan ansluta till Platform för. Varje källa visar antalet befintliga konton som är kopplade till dem.
 
 Under kategorin *Cloud-lagring* väljer du **Amazon Kinesis** och klickar **på plusikonen (+)** för att skapa en ny Kinesis-anslutning.
 
@@ -68,4 +68,4 @@ Om du vill ansluta till ett befintligt konto väljer du det Kinesis-konto som du
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du anslutit till ditt Kinesis-konto till Platform. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till plattformen](../../dataflow/streaming/cloud-storage.md).
+Genom att följa den här självstudiekursen har du anslutit till ditt Kinesis-konto till Platform. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till Platform](../../dataflow/streaming/cloud-storage.md).
