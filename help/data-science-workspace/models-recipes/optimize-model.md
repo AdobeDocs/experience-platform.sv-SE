@@ -4,21 +4,17 @@ solution: Experience Platform
 title: Optimera en modell
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: 7dc5075d3101b4780af92897c0381e73a9c5aef0
+workflow-type: tm+mt
+source-wordcount: '1242'
+ht-degree: 0%
 
 ---
 
 
-# Optimera en modell
+# Optimera en modell med Model Insights-ramverket
 
-
-Den här självstudiekursen kommer att gå igenom:
-
-- Konfigurera mottagarkod
-- Definiera anpassade mått
-- Använda fördefinierade mätvärden och visualiseringskartor
-
-I slutet av den här självstudiekursen bör du kunna konfigurera receptkod, definiera anpassade mått, använda fördefinierade utvärderingsmått och standardvisualiseringsdiagram.
+Model Insights Framework förser datavetenskaparen med verktyg i Data Science Workspace som gör snabba och välgrundade val för optimala maskininlärningsmodeller baserade på experiment. Ramverket kommer att förbättra snabbheten och effektiviteten i maskininlärningsarbetsflödet samt förbättra användarvänligheten för datavetare. Det gör du genom att ange en standardmall för varje maskininlärningsalgoritmtyp som ska vara till hjälp vid modelljustering. Slutresultatet gör att datavetare och datavetare kan fatta bättre modelloptimeringsbeslut för sina slutkunder.
 
 ## Vad är mätvärden?
 
@@ -27,10 +23,6 @@ Efter att ha implementerat och utbildat en modell är nästa steg som en datavet
 - Område under kurva
 - Sammanställningsmatris
 - Klassificeringsrapport
-
-## Vad är Model Insights Framework?
-
-Model Insights Framework förser datavetenskaparen med verktyg i Data Science Workspace som gör snabba och välgrundade val för optimala maskininlärningsmodeller baserade på experiment. Ramverket kommer att förbättra snabbheten och effektiviteten i maskininlärningsarbetsflödet samt förbättra användarvänligheten för datavetare. Det gör du genom att ange en standardmall för varje maskininlärningsalgoritmtyp som ska vara till hjälp vid modelljustering. Slutresultatet gör att datavetare och datavetare kan fatta bättre modelloptimeringsbeslut för sina slutkunder.
 
 ## Konfigurera receptkod
 
@@ -166,7 +158,7 @@ Sensei Model Insights Framework har stöd för en standardmall för varje typ av
 --- | --- | ---
 | Regression | - RMSE<br>- MAPPE<br>- MASE<br>- MAE | Förutsedd kontra faktisk värdesövertäckningskurva |
 | Binär klassificering | - Konfusionsmatris<br>- Precision-revansch<br>- Accuracy<br>- F-score (specifikt F1,F2)<br>- AUC<br>- ROC | ROC-kurva och förvirringsmatris |
-| Klassificering i flera klasser | -Confusion matrix <br>- För varje klass: <br>- precision- återföringsnoggrannhet <br>- F-poäng (specifikt F1, F2) | ROC-kurva och förvirringsmatris |
+| Klassificering i flera klasser | -Confusion matrix <br>- För varje klass: <br>- precision- återtagsnoggrannhet <br>- F-poäng (specifikt F1, F2) | ROC-kurva och förvirringsmatris |
 | Klustring (med jordsanning) | - NMI (normaliserat ömsesidigt informationsresultat), AMI (justerat ömsesidigt informationsresultat)<br>- RI (Rand index), ARI (justerat Rand- index)<br>- homogenitetspoäng, fullständighetsresultat och V- measure<br>- FMI (Fowlkes- Mallows index)<br>- Renhet<br>- Jaccard index | Kluster med kluster och centroider med relativa klusterstorlekar som återspeglar de datapunkter som ingår i klustret |
 | Klustring (ej jordsanning) | - Inertia<br>- Silhouette-koefficient<br>- CHI (Calinski-Harabaz index)<br>- DBI (Davies-Bouldin index)<br>- Dunn index | Kluster med kluster och centroider med relativa klusterstorlekar som återspeglar de datapunkter som ingår i klustret |
 | Rekommendation | - Genomsnittlig genomsnittlig precision (MAP) <br>- normaliserad, diskonterad kumulativ vinst <br>- medelmedelvärde <br>- K för reciproal Rank | TBD |
