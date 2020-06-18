@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en allmän OData-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 2162c66b1664ecaaf0b609fe3f7ccf58c4a5d31d
+source-git-commit: 7328226b8349ffcdddadbd27b74fc54328b78dc5
 workflow-type: tm+mt
-source-wordcount: '512'
+source-wordcount: '515'
 ht-degree: 0%
 
 ---
@@ -15,15 +15,15 @@ ht-degree: 0%
 # Skapa en allmän OData-källanslutning i användargränssnittet
 
 > [!NOTE]
-> Den allmänna OData-kopplingen är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
+> Den allmänna OData-kopplingen är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
-Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en allmän källkoppling för Open Data Protocol (nedan kallad OData) med hjälp av användargränssnittet för plattformen.
+Källkopplingar i Adobe Experience Platform ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en allmän källkoppling för Open Data Protocol (nedan kallad OData) med Platform användargränssnitt.
 
 ## Komma igång
 
-Den här självstudien kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
+* [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [Kundprofil](../../../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
@@ -42,7 +42,7 @@ Mer information om hur du kommer igång finns i [detta OData-dokument](https://w
 
 ## Anslut ditt OData-konto
 
-När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att skapa ett nytt OData-konto för att ansluta till plattformen.
+När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att skapa ett nytt OData-konto för att ansluta till Platform.
 
 Logga in på <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a> och välj sedan **Källor** i det vänstra navigeringsfältet för att komma åt arbetsytan *Källor* . På *katalogskärmen* visas en mängd olika källor som du kan skapa inkommande konto för. Varje källa visar antalet befintliga konton och datauppsättningsflöden som är kopplade till dem.
 
@@ -68,4 +68,4 @@ Om du vill ansluta ett befintligt konto väljer du det OData-konto som du vill a
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt OData-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett datauppsättningsflöde för att hämta protokolldata till plattformen](../../dataflow/protocols.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt OData-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett datauppsättningsflöde för att hämta protokolldata till Platform](../../dataflow/protocols.md).
