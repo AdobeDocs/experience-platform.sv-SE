@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Allmän OData-koppling
 topic: overview
 translation-type: tm+mt
-source-git-commit: 45ce6e876a42c5594ae4b7787757e5db7024a22f
+source-git-commit: 7328226b8349ffcdddadbd27b74fc54328b78dc5
 workflow-type: tm+mt
-source-wordcount: '155'
+source-wordcount: '173'
 ht-degree: 0%
 
 ---
@@ -14,19 +14,22 @@ ht-degree: 0%
 
 # (Beta) Allmän OData-koppling
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som ni kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+>[!NOTE]
+>Den allmänna OData-kopplingen är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../home.md#terms-and-conditions) .
 
-Experience Platform har stöd för inhämtning av data från ett protokollprogram från tredje part. Stöd för protokollproviders inkluderar Generic OData.
+Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-Dokumentationen nedan innehåller information om hur du ansluter generiska OData till plattformen med API:er eller användargränssnittet:
+Experience Platform har stöd för inhämtning av data från ett tredjepartsprotokollprogram. Stöd för protokollproviders inkluderar Generic OData.
 
-## Anslut allmänna OData till plattformen med API:er
+Dokumentationen nedan innehåller information om hur du ansluter generiska OData till Platform med API:er eller användargränssnittet:
+
+## Anslut generiska OData till Platform med API:er
 
 - [Skapa en allmän OData-koppling med API:t för Flow Service](../../tutorials/api/create/protocols/odata.md)
 - [Utforska ett protokollprogram med API:t för Flow Service](../../tutorials/api/explore/protocols.md)
 - [Samla in data från ett protokollprogram med API:t för Flow Service](../../tutorials/api/collect/protocols.md)
 
-## Anslut allmänna OData till plattformen med användargränssnittet
+## Anslut allmänna OData till Platform med användargränssnittet
 
 - [Skapa en allmän OData-källanslutning i användargränssnittet](../../tutorials/ui/create/protocols/odata.md)
 - [Konfigurera ett dataflöde för en protokollanslutning i användargränssnittet](../../tutorials/ui/dataflow/protocols.md)
