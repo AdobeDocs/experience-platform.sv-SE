@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en Apache HDFS-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: adb9c46e7337897e2336971e58ebc90b0e497ea0
+source-git-commit: 855f543a1cef394d121502f03471a60b97eae256
 workflow-type: tm+mt
-source-wordcount: '469'
+source-wordcount: '474'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 # Skapa en Apache HDFS-källanslutning i användargränssnittet
 
 >[!NOTE]
->Apache HDFS är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
+>Apache HDFS-kontakten är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
 Källkopplingar i [!DNL Adobe Experience Platform] ger möjlighet att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du autentiserar en källanslutning för Apache Hadoop Distributed File System (nedan kallad HDFS) med hjälp av [!DNL Platform] användargränssnittet.
 
@@ -66,4 +66,4 @@ Om du vill ansluta ett befintligt konto väljer du det HDFS-konto som du vill an
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt HDFS-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till plattformen](../../dataflow/batch/cloud-storage.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt HDFS-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till Platform](../../dataflow/batch/cloud-storage.md).
