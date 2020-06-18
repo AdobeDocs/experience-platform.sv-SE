@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en Salesforce Service Cloud-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 2162c66b1664ecaaf0b609fe3f7ccf58c4a5d31d
+source-git-commit: cada7c7eff7597015caa7333559bef16a59eab65
 workflow-type: tm+mt
-source-wordcount: '540'
+source-wordcount: '543'
 ht-degree: 0%
 
 ---
@@ -15,15 +15,15 @@ ht-degree: 0%
 # Skapa en Salesforce Service Cloud-källanslutning i användargränssnittet
 
 >[!NOTE]
->Salesforce Service Cloud-kopplingen är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
+>Salesforce Service Cloud-kopplingen är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
-Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en Salesforce Service Cloud-källkoppling (nedan kallad SSC) med hjälp av användargränssnittet för plattformen.
+Källkopplingar i Adobe Experience Platform ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en Salesforce Service Cloud-källanslutning (nedan kallad SSC) med Platform användargränssnitt.
 
 ## Komma igång
 
-Den här självstudien kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
+* [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [Kundprofil](../../../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
@@ -32,7 +32,7 @@ Om du redan har en giltig SSC-anslutning kan du hoppa över resten av det här d
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få tillgång till ditt SSC-konto på plattformen måste du ange följande värden:
+För att få tillgång till ditt SSC-konto på Platform måste du ange följande värden:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -44,7 +44,7 @@ Mer information om hur du kommer igång finns i [det här Salesforce Service Clo
 
 ## Anslut ditt Salesforce Service Cloud-konto
 
-När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att skapa ett nytt SSC-konto för att ansluta till plattformen.
+När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att skapa ett nytt SSC-konto för att ansluta till Platform.
 
 Logga in på <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a> och välj sedan **Källor** i det vänstra navigeringsfältet för att komma åt arbetsytan *Källor* . På *katalogskärmen* visas en mängd olika källor som du kan skapa inkommande konto för, och varje källa visar antalet befintliga konton och datauppsättningsflöden som är kopplade till dem.
 
@@ -70,4 +70,4 @@ Om du vill ansluta ett befintligt konto väljer du det SSC-konto som du vill ans
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt SSC-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från Customer Success till Platform](../../dataflow/customer-success.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt SSC-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta Customer Success-data till Platform](../../dataflow/customer-success.md).
