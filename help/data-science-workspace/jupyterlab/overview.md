@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Användarhandbok för JupyterLab
 topic: Overview
 translation-type: tm+mt
-source-git-commit: 440310339003bf23c9fcfc69a6ec1eacddc9f413
+source-git-commit: 49f0678cf8bf4349d0b63f3525a1f707f725ede9
 workflow-type: tm+mt
-source-wordcount: '3672'
-ht-degree: 10%
+source-wordcount: '3780'
+ht-degree: 9%
 
 ---
 
@@ -18,24 +18,24 @@ JupyterLab är ett webbaserat användargränssnitt för <a href="https://jupyter
 
 Det här dokumentet innehåller en översikt över JupyterLab och dess funktioner samt instruktioner om hur du utför vanliga åtgärder.
 
-## JupyterLab om Experience Platform
+## JupyterLab på Experience Platform
 
-Experience Platforms JupyterLab-integrering åtföljs av arkitektoniska förändringar, designöverväganden, anpassade tillägg till bärbara datorer, förinstallerade bibliotek och ett Adobe-temat gränssnitt.
+Integreringen av Experience Platform JupyterLab åtföljs av arkitektoniska förändringar, designöverväganden, anpassade tillägg till bärbara datorer, förinstallerade bibliotek och ett Adobe-tematiskt gränssnitt.
 
-I följande lista beskrivs några av funktionerna som är unika för JupyterLab på Platform:
+I följande lista beskrivs några av de funktioner som är unika för JupyterLab på Platform:
 
 | Funktion | Beskrivning |
 | --- | --- |
-| **Kernlar** | Kernels ger möjlighet att köra och granska kod i olika programmeringsspråk för bärbara datorer och andra JupyterLab-gränssnitt. Experience Platform har ytterligare kerrar som stöder utvecklingen i Python, R, PySpark och Spark. Mer information finns i avsnittet [Kernlar](#kernels) . |
+| **Kernlar** | Kernels ger möjlighet att köra och granska kod i olika programmeringsspråk för bärbara datorer och andra JupyterLab-gränssnitt. Experience Platform tillhandahåller ytterligare kernel som stöder utvecklingen i Python, R, PySpark och Spark. Mer information finns i avsnittet [Kernlar](#kernels) . |
 | **Dataåtkomst** | Få tillgång till befintliga datauppsättningar direkt inifrån JupyterLab med fullt stöd för läs- och skrivfunktioner. |
-| **Integrering av plattformstjänster** | Inbyggda integreringar gör att du kan använda andra plattformstjänster direkt från JupyterLab. En fullständig lista över integreringar som stöds finns i avsnittet om [integrering med andra plattformstjänster](#service-integration). |
-| **Autentisering** | Förutom <a href="https://jupyter-notebook.readthedocs.io/en/latest/security.html" target="_blank">JupyterLab:s inbyggda säkerhetsmodell</a>krypteras och autentiseras all interaktion mellan programmet och Experience Platform, inklusive kommunikation från tjänst till tjänst i plattformen, via <a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">[!DNL Adobe Identity Management System] (IMS)</a>. |
+| **Integrering med Platform** | Inbyggda integreringar gör att du kan använda andra Platform-tjänster direkt inifrån JupyterLab. En fullständig lista över integreringar som stöds finns i avsnittet om [integrering med andra Platform-tjänster](#service-integration). |
+| **Autentisering** | Förutom <a href="https://jupyter-notebook.readthedocs.io/en/latest/security.html" target="_blank">JupyterLab:s inbyggda säkerhetsmodell</a>krypteras och autentiseras all interaktion mellan programmet och Experience Platform, inklusive Platform kommunikation från tjänst till tjänst, via <a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">[!DNL Adobe Identity Management System] (IMS)</a>. |
 | **Utvecklingsbibliotek** | I Experience Platform tillhandahåller JupyterLab förinstallerade bibliotek för Python, R och PySpark. En fullständig lista över bibliotek som stöds finns i [bilagan](#supported-libraries) . |
-| **Bibliotekshanterare** | När de förinstallerade biblioteken saknas för dina behov kan ytterligare bibliotek installeras för Python och R, och lagras tillfälligt i isolerade behållare för att upprätthålla plattformens integritet och skydda dina data. Mer information finns i avsnittet [Kernlar](#kernels) . |
+| **Bibliotekshanterare** | När de förinstallerade biblioteken saknas för dina behov kan ytterligare bibliotek installeras för Python och R, och lagras tillfälligt i isolerade behållare för att upprätthålla Platform integritet och skydda dina data. Mer information finns i avsnittet [Kernlar](#kernels) . |
 
 >[!NOTE] Ytterligare bibliotek är bara tillgängliga för den session där de installerades. Du måste installera om alla ytterligare bibliotek som du behöver när du startar nya sessioner.
 
-## Integrering med andra plattformstjänster {#service-integration}
+## Integrering med andra Platform-tjänster {#service-integration}
 
 Standardisering och interoperabilitet är viktiga koncept som ligger bakom [!DNL Experience Platform]. Integreringen av JupyterLab på [!DNL Platform] som en inbäddad IDE gör att den kan interagera med andra [!DNL Platform] tjänster, vilket gör att du kan utnyttja hela [!DNL Platform] potentialen. Följande [!DNL Platform] tjänster är tillgängliga i JupyterLab:
 
@@ -124,7 +124,7 @@ Anteckningsbokskärnor är språkspecifika datormotorer för bearbetning av bär
 
 Vissa funktioner är begränsade till särskilda kärnor enligt tabellen nedan:
 
-| Kernel | Installationsstöd för bibliotek | Plattformsintegrering |
+| Kernel | Installationsstöd för bibliotek | Platform integreringar |
 | :----: | :--------------------------: | :-------------------- |
 | **Python** | Ja | <ul><li>Sensei ML Framework</li><li>Katalogtjänst</li><li>Frågetjänst</li></ul> |
 | **R** | Ja | <ul><li>Sensei ML Framework</li><li>Katalogtjänst</li></ul> |
@@ -227,9 +227,18 @@ Om du vill öppna en ny *startprogram* klickar du på **Arkiv > Ny startfunktion
 
 ![](../images/jupyterlab/user-guide/new_launcher.gif)
 
-## Få åtkomst till plattformsdata med bärbara datorer
+### GPU- och minnesserverkonfiguration i Python/R
 
-Varje kärna som stöds har inbyggda funktioner som gör att du kan läsa plattformsdata från en datamängd i en anteckningsbok. Stöd för sidnumrering av data är dock begränsat till bärbara datorer från Python och R.
+I [!DNL JupyterLab] väljer du kugghjulsikonen i det övre högra hörnet för att öppna *serverkonfigurationen* för bärbara datorer. Du kan växla GPU på och tilldela den mängd minne du behöver med hjälp av skjutreglaget. Hur mycket minne du kan allokera beror på hur mycket organisationen har allokerat. Välj **[!UICONTROL Update configs]** att spara.
+
+>[!NOTE]
+>Endast en GPU tilldelas per organisation för bärbara datorer. Om grafikprocessorn används måste du vänta på att den användare som för närvarande har reserverat grafikprocessorn ska frisläppa den. Detta kan du göra genom att logga ut eller lämna GPU:n i viloläge i fyra eller fler timmar.
+
+![](../images/jupyterlab/user-guide/notebook-gpu-config.png)
+
+## Åtkomst till Platform-data via bärbara datorer
+
+Varje kärna som stöds har inbyggda funktioner som gör att du kan läsa Platform-data från en datamängd i en anteckningsbok. Stöd för sidnumrering av data är dock begränsat till bärbara datorer från Python och R.
 
 ### Datagränser för bärbara datorer
 
@@ -439,7 +448,7 @@ Ett anpassat kommando för datavetenskap och arbetsytemagi för att läsa eller 
 
 ### Fråga data med hjälp av frågetjänsten i Python
 
-Med JupyterLab on Platform kan du använda SQL i en Python-anteckningsbok för att få åtkomst till data via <a href="https://www.adobe.com/go/query-service-home-en" target="_blank">Adobe Experience Platform Query Service</a>. Att få åtkomst till data via frågetjänsten kan vara användbart för att hantera stora datamängder på grund av dess överlägsna körtider. Observera att frågedata med hjälp av frågetjänsten har en bearbetningstid på tio minuter.
+Med JupyterLab på Platform kan du använda SQL i en Python-anteckningsbok för att få åtkomst till data via <a href="https://www.adobe.com/go/query-service-home-en" target="_blank">Adobe Experience Platform Query Service</a>. Att få åtkomst till data via frågetjänsten kan vara användbart för att hantera stora datamängder på grund av dess överlägsna körtider. Observera att frågedata med hjälp av frågetjänsten har en bearbetningstid på tio minuter.
 
 Innan du använder frågetjänsten i JupyterLab bör du kontrollera att du har en fungerande förståelse för SQL-syntaxen <a href="https://www.adobe.com/go/query-service-sql-syntax-en" target="_blank">för</a>frågetjänsten.
 
