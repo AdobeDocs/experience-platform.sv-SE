@@ -4,17 +4,17 @@ solution: Experience Platform
 title: Utvecklarhandbok för Sensei Machine Learning API
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: 4f74acdc41d5049c1aa8eb3dfcef4e9d75c785ca
 workflow-type: tm+mt
 source-wordcount: '206'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
 
 # Utvecklarhandbok för Sensei Machine Learning API
 
-API:t Sensei Machine Learning är en mekanism för datavetare som organiserar och hanterar maskininlärningstjänster, från algoritmintroduktion till experimenterande och driftsättning.
+API:t Sensei Machine Learning är en mekanism för datavetare som organiserar och hanterar maskininlärningstjänster, från algoritmintroduktion till experimenterande och till driftsättning.
 
 Utvecklarhandboken innehåller steg som hjälper dig att börja använda API:t för [Sensei Machine Learning](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml)och demonstrerar API-anrop för att utföra CRUD-åtgärder på olika resurser i Data Science Workspace.
 
@@ -26,11 +26,11 @@ Du måste ha slutfört självstudiekursen för [autentisering](../../tutorials/a
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
-Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
