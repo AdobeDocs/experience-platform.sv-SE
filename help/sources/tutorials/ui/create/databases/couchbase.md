@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en Couchbase-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: adb9c46e7337897e2336971e58ebc90b0e497ea0
+source-git-commit: 5ad763d2167c68f3293a2813248efaee22230a52
 workflow-type: tm+mt
-source-wordcount: '462'
+source-wordcount: '465'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 # Skapa en Couchbase-källanslutning i användargränssnittet
 
 > [!NOTE]
-> Couchbase-kopplingen är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
+> Couchbase-kopplingen är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
 Källkopplingar i [!DNL Adobe Experience Platform] ger möjlighet att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en Couchbase-källkoppling med [!DNL Platform] användargränssnittet.
 
@@ -66,4 +66,4 @@ Om du vill ansluta ett befintligt konto väljer du det Couchbase-konto du vill a
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt Couchbase-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/databases.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt Couchbase-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till Platform](../../dataflow/databases.md).
