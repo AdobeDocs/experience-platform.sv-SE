@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Användarhandbok för kundprofil i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: 5718a3930f1e12e62a7bbe60f249c7f6f3434fa7
+source-git-commit: da3793a528fa919633e777423d77e7be9cbc0154
 workflow-type: tm+mt
-source-wordcount: '880'
+source-wordcount: '1206'
 ht-degree: 0%
 
 ---
@@ -16,15 +16,15 @@ ht-degree: 0%
 
 Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata.
 
-Det här dokumentet är en guide för interaktion med kundprofiler i realtid i användargränssnittet för Adobe Experience Platform.
+Det här dokumentet är en guide för interaktion med kundprofilen i realtid i användargränssnittet i Adobe Experience Platform.
 
 ## Komma igång
 
-Den här användarhandboken kräver förståelse för de olika Experience Platform-tjänster som används för att hantera kundprofilen i realtid. Innan du läser den här användarhandboken bör du läsa dokumentationen för följande tjänster:
+Den här användarhandboken kräver förståelse för de olika Experience Platform-tjänster som används för att hantera kundprofiler i realtid. Innan du läser den här användarhandboken bör du läsa dokumentationen för följande tjänster:
 
 * [Kundprofil](../home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Identitetstjänst](../../identity-service/home.md): Möjliggör kundprofil i realtid genom att överbrygga identiteter från olika datakällor som hämtas in till Platform.
-* [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
+* [Identitetstjänst](../../identity-service/home.md): Möjliggör kundprofil i realtid genom att överbrygga identiteter från olika datakällor när de hämtas till Platform.
+* [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att ordna kundupplevelsedata.
 
 ## Översikt
 
@@ -34,17 +34,37 @@ Klicka på [Profiler](http://platform.adobe.com)i den vänstra navigeringen i **
 
 ## Bläddra i profil
 
-Klicka på fliken **Bläddra** för att bläddra bland profiler efter identiteter. Den här fliken innehåller även det totala [antalet](#profile-count)profiler.
+Klicka på fliken **Bläddra** för att bläddra bland profiler efter identitet.
+
+### Profilmått {#profile-metrics}
+
+Till höger på fliken **Bläddra** finns flera viktiga profilmått som är relaterade till dina profildata, inklusive det totala [profilantalet](#profile-count) samt en lista över [profiler per namnutrymme](#profiles-by-namespace).
+
+Dessa profilvärden utvärderas med organisationens standardpolicy för sammanfogning. Mer information om hur du arbetar med sammanfogningsprinciper, inklusive hur du definierar en standardsammanfogningsprincip, finns i användarhandboken för [sammanfogningsprinciper](merge-policies.md).
+
+Förutom dessa mått innehåller avsnittet Profilmått även ett *senast uppdaterat* datum och tid som visar när mätvärdena senast utvärderades.
 
 ![](../images/user-guide/profiles-browse.png)
 
 ### Profilantal {#profile-count}
 
-Profilantalet visar det totala antalet profiler din organisation har inom Experience Platform, efter att organisationens standardpolicy för sammanfogning har sammanfogats med profilfragment för att utgöra en enda profil för varje enskild kund. Med andra ord kan din organisation ha flera profilfragment kopplade till en enskild kund som interagerar med ert varumärke i olika kanaler, men dessa fragment skulle slås samman (enligt standardprincipen för sammanslagning) och skulle returnera antalet&quot;1&quot;-profil eftersom de alla är kopplade till samma individ.
+Profilantalet visar det totala antalet profiler din organisation har i Experience Platform, efter att organisationens standardpolicy för sammanfogning har sammanfogats med profilfragment för att bilda en enda profil för varje enskild kund. Med andra ord kan din organisation ha flera profilfragment kopplade till en enskild kund som interagerar med ert varumärke i olika kanaler, men dessa fragment skulle slås samman (enligt standardprincipen för sammanslagning) och skulle returnera antalet&quot;1&quot;-profil eftersom de alla är kopplade till samma individ.
 
-Profilantalet omfattar även både profiler med attribut (postdata) och profiler som endast innehåller tidsseriedata (händelsedata), t.ex. Adobe Analytics-profiler. Profilantalet uppdateras regelbundet för att ge ett aktuellt totalt antal profiler inom plattformen.
+Profilantalet omfattar även både profiler med attribut (postdata) och profiler som endast innehåller tidsseriedata (händelsedata), t.ex. Adobe Analytics-profiler. Profilantalet uppdateras regelbundet för att ge ett aktuellt totalt antal profiler i Platform.
 
 När inmatningen av profiler i profilarkivet ökar eller minskar antalet med mer än 5 %, utlöses ett jobb för att uppdatera antalet. För arbetsflöden med direktuppspelningsdata görs en timkontroll för att avgöra om tröskelvärdet på 5 % har uppnåtts eller ej. Om så är fallet utlöses ett jobb automatiskt för att uppdatera antalet profiler. Om tröskelvärdet på 5 % ökning eller minskning uppnås, körs ett jobb för att uppdatera profilantalet för batchintag inom 15 minuter efter att en batch har importerats till profilarkivet.
+
+### Profiler efter namnområde {#profiles-by-namespace}
+
+I *Profiler efter namnutrymmesmått* visas totalt antal och uppdelning av namnutrymmen för alla sammanfogade profiler i din profilbutik. Det totala antalet profiler per namnutrymme (med andra ord, om de värden som visas för varje namnutrymme läggs ihop) kommer alltid att vara högre än det för antalet profiler, eftersom en profil kan ha flera namnutrymmen kopplade till sig. Om en kund till exempel interagerar med varumärket i mer än en kanal kommer flera namnutrymmen att kopplas till den enskilda kunden.
+
+På samma sätt som för [profilräknemeterialet](#profile-count) aktiveras ett jobb för att uppdatera namnområdesmåtten när inmatningen av profiler i profilarkivet ökar eller minskar antalet med mer än 5 %. För arbetsflöden med direktuppspelningsdata görs en timkontroll för att avgöra om tröskelvärdet på 5 % har uppnåtts eller ej. Om så är fallet utlöses ett jobb automatiskt för att uppdatera antalet profiler. Om tröskelvärdet på 5 % ökning eller minskning uppnås kommer ett jobb att köras för att uppdatera mätvärdena för batchförbrukning inom 15 minuter efter att en batch har importerats till profilbutiken.
+
+### Kopplingsprincip
+
+Väljaren för **sammanfogningsprincip** väljer automatiskt standardprincip för sammanfogning i organisationen. Om du inte vill använda den sammanfogningsprincipen kan du välja `X` bredvid standardsammanfogningsprincipen för att öppna en dialogruta *Välj sammanfogningsprincip* där du kan välja en annan sammanfogningsprincip. Mer information om sammanfogningsprinciper finns i [användarhandboken](merge-policies.md)för sammanfogningsprinciper.
+
+![](../images/user-guide/profiles-search-merge-policy.png)
 
 ### Namnutrymme för identitet
 
@@ -80,7 +100,7 @@ Du kan visa ytterligare information om profilen, inklusive Attribut, Händelser 
 
 Klicka på **Sammanfoga profiler** för att visa en lista över sammanfogningsprinciper som tillhör din organisation. Varje listad princip visar sitt namn, oavsett om det är standardprincipen för sammanslagning eller inte, och det schema som den gäller för.
 
-Mer information om hur du arbetar med sammanfogningsprinciper i användargränssnittet finns i [användarhandboken](merge-policies.md)för sammanfogningsprinciper.
+Mer information om sammanfogningsprinciper finns i [användarhandboken](merge-policies.md)för sammanfogningsprinciper.
 
 ![](../images/user-guide/profiles-merge-policies.png)
 
@@ -96,4 +116,4 @@ Mer information om fackliga scheman och deras roll i kundprofilen i realtid finn
 
 ## Nästa steg
 
-Genom att läsa den här guiden kan du nu visa och hantera dina profildata med Experience Platform-gränssnittet. Mer information om hur du använder kundprofildata i realtid för att generera målgruppssegment finns i [segmenteringsdokumentationen](../../segmentation/home.md).
+Genom att läsa den här guiden kan du nu visa och hantera dina profildata med hjälp av användargränssnittet i Experience Platform. Mer information om hur du använder kundprofildata i realtid för att generera målgruppssegment finns i [segmenteringsdokumentationen](../../segmentation/home.md).
