@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Amazon Redshift-kontakt
 topic: overview
 translation-type: tm+mt
-source-git-commit: 45ce6e876a42c5594ae4b7787757e5db7024a22f
+source-git-commit: b92f33627636b351dbd7b490e461d4f6b2866310
 workflow-type: tm+mt
-source-wordcount: '168'
+source-wordcount: '186'
 ht-degree: 0%
 
 ---
@@ -14,13 +14,16 @@ ht-degree: 0%
 
 # (Beta) Amazon Redshift-kontakt
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som ni kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+>[!NOTE]
+>Amazon Redshift-kopplingen är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../home.md#terms-and-conditions) .
 
-Experience Platform har stöd för inmatning av data från en tredjepartsdatabas. Plattformen kan ansluta till olika typer av databaser, till exempel relationsdatabaser, NoSQL-databaser eller datalager. Stöd för databasleverantörer är bland annat Amazon Redshift.
+Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-Dokumentationen nedan innehåller information om hur du ansluter Amazon Redshift till plattformen med API:er eller användargränssnittet:
+Experience Platform har stöd för att importera data från en tredjepartsdatabas. Platform kan ansluta till olika typer av databaser, till exempel relational, NoSQL eller data warehouse. Stöd för databasleverantörer är bland annat Amazon Redshift.
 
-## Ansluta Amazon Redshift till plattformen med API:er
+Dokumentationen nedan innehåller information om hur du ansluter Amazon Redshift till Platform med hjälp av API:er eller användargränssnittet:
+
+## Ansluta Amazon Redshift till Platform med API:er
 
 - [Skapa en Amazon Redshift-kontakt med API:t för Flow Service](../../tutorials/api/create/databases/redshift.md)
 - [Utforska ett databassystem med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
