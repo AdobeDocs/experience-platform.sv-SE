@@ -4,27 +4,145 @@ solution: Experience Platform
 title: Självstudiekurser för datavetenskap
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 34fff508f49327ce314a517d77efabb286ef055c
+source-git-commit: 4d7d61660e6691d77701db1c089b84eee7f60974
+workflow-type: tm+mt
+source-wordcount: '1253'
+ht-degree: 0%
 
 ---
 
 
 # Självstudiekurser för datavetenskap
 
-Adobe Experience Platform Data Science Workspace använder maskininlärning och artificiell intelligens för att få insikter från era data. Data Science Workspace är integrerat i Adobe Experience Platform och hjälper er att göra prognoser med ert innehåll och era dataresurser över alla Adobes lösningar. Datavetare på alla kunskapsnivåer har sofistikerade, lättanvända verktyg som stöder snabb utveckling, utbildning och anpassning av maskininlärningsrecepten - alla fördelarna med AI-tekniken, utan komplexiteten. Börja med att läsa översikten över arbetsytan för [datavetenskap](../data-science-workspace/home.md)om du vill veta mer.
+Adobe Experience Platform Data Science Workspace använder maskininlärning och artificiell intelligens för att skapa insikter utifrån era data. Data Science Workspace är integrerat i Adobe Experience Platform och hjälper er att göra prognoser med ert innehåll och era dataresurser över alla Adobe-lösningar. Datavetare på alla kunskapsnivåer har sofistikerade, lättanvända verktyg som stöder snabb utveckling, utbildning och anpassning av maskininlärningsrecepten - alla fördelarna med AI-tekniken, utan komplexiteten.
 
-## Skapa och publicera en maskininlärningsmodell
+Börja med att läsa översikten över arbetsytan för [datavetenskap](../data-science-workspace/home.md)om du vill veta mer.
 
-Skapa maskininlärningsmodeller för att hämta insikter från Experience Platform-data med Data Science Workspace. Börja med att granska det kompletta arbetsflödet för datavetenskapen, inklusive att förbereda data, skapa en modell, utbilda och utvärdera en modell och driftsätta modellen. Kom igång genom att gå till [Skapa och publicera en genomgång av en maskininlärningsmodell](../data-science-workspace/models-recipes/create-publish-model.md).
+## API för Sensei Machine Learning
 
-## Förbättra profiler och segment med maskininlärningsinsikter
+API:t Sensei Machine Learning är en mekanism för datavetare som organiserar och hanterar maskininlärningstjänster, från algoritmintroduktion till experimenterande och till driftsättning.
 
-Data Science Workspace innehåller verktyg och resurser för att skapa, utvärdera och använda maskininlärningsmodeller för att generera dataprognoser och insikter. När maskininlärningsinsikter hämtas in i en kundprofilaktiverad datauppsättning i realtid, hämtas samma data också in som profilposter som sedan kan segmenteras i deluppsättningar av relaterade element med hjälp av ADobe Experience Platform Segmentation Service. Om du vill veta mer kan du följa självstudiekursen [Förfina profil med maskininlärningsinsikter](../data-science-workspace/models-recipes/enrich-profile.md).
+**Följande API-utvecklarhandböcker är tillgängliga:**
+- [Motorer](../data-science-workspace/api/engines.md) - Lär dig hur du hittar i Docker-registret, skapar en motor, skapar en rörlig motor för funktioner, hämtar information för en motor, uppdaterar en motor och tar bort en motor.
+- [MLInstances (recept)](../data-science-workspace/api/mlinstances.md) - Lär dig hur du skapar en MLInstance, hämtar information för en MLInstance, uppdaterar en MLInstance och tar bort en MLInstance.
+- [Experimentera](../data-science-workspace/api/experiments.md) - Lär dig hur du skapar en expert, hämtar information från en expert eller en expert, uppdaterar en expert och tar bort en expert.
+- [Modeller](../data-science-workspace/api/models.md) - Lär dig hur du registrerar din egen modell, hämtar information för en modell, uppdaterar en modell, tar bort en modell, skapar en ny omkodning för en modell och hämtar information om en omkodad modell.
+- [MLServices](../data-science-workspace/api/mlservices.md) - Lär dig hur du skapar en MLService, hämtar information för en MLService, uppdaterar en MLService och tar bort en MLService.
+- [Insikter](../data-science-workspace/api/insights.md) - Lär dig hur du hämtar information för en Insight, lägger till en ny Model Insight och hämtar en lista med standardvärden för algoritmer.
+
+Om du vill veta mer och få de värden som krävs för att utföra CRUD-åtgärder med API:t Sensei Machine Learning går du till [Komma igång-guiden](../data-science-workspace/api/getting-started.md).
+
+## Så här använder du JupyterLab-anteckningsböcker
+
+[!DNL JupyterLab] är ett webbaserat användargränssnitt för [!DNL Project Jupyter] och är nära integrerat med Adobe Experience Platform. Den utgör en interaktiv utvecklingsmiljö där datavetare kan arbeta med Jupyters bärbara datorer, kod och data. Det här dokumentet innehåller en översikt över [!DNL JupyterLab] och dess funktioner samt instruktioner om hur du utför vanliga åtgärder.
+
+**Den här guiden hjälper dig att:**
+- Få åtkomst till och förstå [!DNL JupyterLab] gränssnittet.
+- Förstå kodceller och tillgängliga kärnor i [!DNL JupyterLab].
+- Förstå GPU- och minnesserverkonfigurationen i Python/R.
+- Läs och fråga efter [!DNL Platform] data med hjälp av anteckningsböcker.
+- Förstå datagränserna för bärbara datorer.
+
+Mer information finns i användarhandboken för [JupyterLab](../data-science-workspace/jupyterlab/overview.md).
+
+## Paketera källfiler för framställning av Docker-recept
+
+Med en Docker-bild kan du paketera ett program med alla delar som behövs. Detta inkluderar bibliotek och andra beroenden i ett och samma paket. Den inbyggda Docker-avbildningen överförs till Azure Container Registry med hjälp av autentiseringsuppgifter som du får när du skapar recept.
+
+**Den här självstudiekursen hjälper dig att:**
+- Ladda ned nödvändiga förutsättningar för att skapa recept.
+- Förstå Docker-baserad modellutveckling.
+- Skapa en Docker-bild för Python, R, PySpark eller Scala (Spark).
+- Hämta en URL för Docker-källfilen.
+
+Om du vill veta mer kan du följa [paketets källfiler i en recept-självstudiekurs](../data-science-workspace/models-recipes/package-source-files-recipe.md).
+
+## Importera ett recept
+
+>[!NOTE]
+>Den här självstudiekursen kräver att du har en URL för en Docker-källfil. Besök [paketets källfiler i en recept-självstudiekurs](../data-science-workspace/models-recipes/package-source-files-recipe.md) om du inte har någon URL för Docker-källfilen.
+
+Självstudiekurserna för importrecept ger insikter om hur du konfigurerar och importerar ett paketerat recept. I slutet av den här självstudiekursen kan du skapa, utbilda och utvärdera en modell i Adobe Experience Platform Data Science Workspace.
+
+**Den här självstudiekursen hjälper dig att:**
+- Skapa en uppsättning konfigurationer för ett recept.
+- Importera ett Docker-baserat recept för Python, R, PySpark eller Scala (Spark).
+
+Om du vill ha mer information kan du följa självstudiekursen för att importera ett paketerat [recept](../data-science-workspace/models-recipes/import-packaged-recipe-ui.md) eller [API-självstudiekursen](../data-science-workspace/models-recipes/import-packaged-recipe-api.md).
+
+## Utbildning och utvärdering av modell
+
+I Adobe Experience Platform Data Science Workspace skapas en maskininlärningsmodell genom att en befintlig Recipe som är lämplig för modellens avsikt läggs till. Modellen är sedan utbildad och utvärderad för att optimera dess driftseffektivitet och effektivitet genom att finjustera de tillhörande hyperparametrarna. Recept kan återanvändas, vilket innebär att flera modeller kan skapas och skräddarsys för specifika syften med en enda Recept.
+
+**Den här självstudiekursen hjälper dig att:**
+- Skapa en ny modell.
+- Skapa en utbildningskurs för din modell.
+- Utvärdera din modellutbildning.
+
+Kom igång genom att följa kursen och utvärdera en [modell-API-självstudiekurs](../data-science-workspace/models-recipes/train-evaluate-model-api.md) eller [gränssnittsjälvstudiekursen](../data-science-workspace/models-recipes/train-evaluate-model-ui.md).
+
+## Optimera en modell med Model Insights-ramverket
+
+Model Insights Framework förser datavetenskaparen med verktyg i Adobe Experience Platform Data Science Workspace som gör snabba och välgrundade val för optimala maskininlärningsmodeller baserade på experiment. Ramverket kommer att förbättra snabbheten och effektiviteten i maskininlärningsarbetsflödet samt förbättra användarvänligheten för datavetare. Det gör du genom att ange en standardmall för varje maskininlärningsalgoritmtyp som ska vara till hjälp vid modelljustering. Slutresultatet gör att datavetare och datavetare kan fatta bättre modelloptimeringsbeslut för sina slutkunder.
+
+**Den här självstudiekursen hjälper dig att:**
+- Konfigurera receptkod.
+- Definiera anpassade mätvärden.
+- Använd fördefinierade mätvärden och visualiseringsdiagram.
+
+Kom igång genom att följa självstudiekursen om hur du [optimerar en modell](../data-science-workspace/models-recipes/optimize-model.md).
+
+## Posta en modell
+
+Poängen i Adobe Experience Platform Data Science Workspace kan uppnås genom att man matar in data i en befintlig utbildad modell. Resultat av poängsättningen lagras och kan visas i en angiven utdatamängd som en ny grupp.
+
+**Den här självstudiekursen hjälper dig att:**
+- Skapa en ny poängkörning.
+- Visa dina poängresultat.
+
+Kom igång genom att följa poängen i en [API-självstudiekurs](../data-science-workspace/models-recipes/score-model-api.md) eller i [användargränssnittets självstudiekurs](../data-science-workspace/models-recipes/score-model-ui.md).
 
 ## Publicera en modell som en tjänst
 
-Med Data Science Workspace kan du publicera din utbildade och utvärderade modell som en tjänst, vilket gör att användare i IMS-organisationen kan få sina data poäng utan att behöva skapa egna modeller. Detta kan du göra med användargränssnittet för plattformen eller API:t för inlärning av Sensei Machine. Kom igång genom att följa självstudiekursen [för publicering av en modell som en](../data-science-workspace/models-recipes/publish-model-service-api.md) tjänst-API eller [användargränssnittet](../data-science-workspace/models-recipes/publish-model-service-ui.md).
+Med Adobe Experience Platform Data Science Workspace kan du publicera din modell som en tjänst, så att användare i IMS-organisationen kan få sina data poäng utan att behöva skapa egna modeller. Detta kan du göra med [!DNL Platform] användargränssnittet eller API:t för inlärning av Sensei Machine.
 
-## Schemalägg en modell
+**Den här självstudiekursen hjälper dig att:**
+- Publicera en modell som en tjänst.
+- Posta data med hjälp av en tjänst via [!DNL Platform] Service Gallery.
 
-Med Data Science Workspace kan du konfigurera schemalagda poängsättnings- och utbildningskörningar på en maskininlärningstjänst. Genom att automatisera utbildnings- och poängprocessen kan du behålla och förbättra en tjänsts effektivitet genom att hålla jämna steg med era datamönster. Mer information finns i självstudiekursen för att [schemalägga en modell med användargränssnittet](../data-science-workspace/models-recipes/schedule-models-ui.md).
+Kom igång genom att följa självstudiekursen [för publicering av en modell som en](../data-science-workspace/models-recipes/publish-model-service-api.md) tjänst-API eller [användargränssnittet](../data-science-workspace/models-recipes/publish-model-service-ui.md).
+
+## Boka utbildning och poängsättning för en modell
+
+Med Adobe Experience Platform Data Science Workspace kan du ställa in schemalagda poängsättnings- och utbildningar på en maskininlärningstjänst. Genom att automatisera utbildnings- och poängprocessen kan du behålla och förbättra en tjänsts effektivitet genom att hålla jämna steg med era datamönster.
+
+**Den här självstudiekursen hjälper dig att:**
+- Konfigurera schemalagd poängsättning
+- Konfigurera schemalagd utbildning
+
+Kom igång genom att följa självstudiekursen [för modellgränssnitt](../data-science-workspace/models-recipes/schedule-models-ui.md).
+
+## Skapa en funktionspipeline
+
+>[!NOTE]
+>För närvarande är funktionspipelinjer bara tillgängliga via API.
+
+Med Adobe Experience Platform kan du skapa och skapa anpassade rörledningar för att utföra funktionstekniker i stor skala via Sensei Machine Learning Framework Runtime.
+
+**Den här guiden hjälper dig att:**
+- Implementera rörlighetsklasser för funktioner.
+- Skapa en rörlig funktionsmotor med API:t.
+
+Mer information finns i självstudiekursen om hur du [skapar en introduktion](../data-science-workspace/authoring/feature-pipeline.md).
+
+## Bygg ett Machine Learning-program i realtid (alfa)
+
+En kombination av sömlös beräkning på både hubben och Edge minskar dramatiskt den latens som traditionellt används för att driva hyperpersonaliserade upplevelser som är både relevanta och responsiva. Maskininlärning i realtid ger därmed en otroligt låg latens för synkront beslutsfattande. Exempel är återgivning av anpassat webbsidesinnehåll, visning av ett erbjudande och rabatter som minskar bortfallet samtidigt som konverteringsgraden ökar i en webbutik.
+
+**Den här guiden hjälper dig att:**
+- Förstå maskininlärningsarkitekturen i realtid.
+- Förstå arbetsflödet för maskininlärning i realtid.
+- Förstå de nuvarande funktionerna för maskininlärning i realtid.
+- Ange nästa steg för att skapa en egen maskininlärningsmodell i realtid.
+
+Mer information finns i [Machine Learning-översikten](../data-science-workspace/real-time-machine-learning/home.md)i realtid.
