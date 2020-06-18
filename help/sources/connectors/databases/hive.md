@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Apache Hive på Azure HDInsights-kontakten
 topic: overview
 translation-type: tm+mt
-source-git-commit: 45ce6e876a42c5594ae4b7787757e5db7024a22f
+source-git-commit: b92f33627636b351dbd7b490e461d4f6b2866310
 workflow-type: tm+mt
-source-wordcount: '192'
+source-wordcount: '213'
 ht-degree: 0%
 
 ---
@@ -14,19 +14,22 @@ ht-degree: 0%
 
 # (Beta) Apache Hive på Azure HDInsights-kontakten
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som ni kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+>[!NOTE]
+>Apache Hive på Azure HDInsights-kontakten är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../home.md#terms-and-conditions) .
 
-Experience Platform har stöd för inmatning av data från en tredjepartsdatabas. Plattformen kan ansluta till olika typer av databaser, till exempel relationsdatabaser, NoSQL-databaser eller datalager. Stöd för databasleverantörer är bland annat Apache Hive på Azure HDInsights.
+Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-Dokumentationen nedan innehåller information om hur du ansluter Apache Hive på Azure HDInsights till plattformen med API:er eller användargränssnittet:
+Experience Platform har stöd för att importera data från en tredjepartsdatabas. Platform kan ansluta till olika typer av databaser, till exempel relational, NoSQL eller data warehouse. Stöd för databasleverantörer är bland annat Apache Hive på Azure HDInsights.
 
-## Anslut Apache Hive på Azure HDInsights till plattformen med API:er
+Dokumentationen nedan innehåller information om hur du ansluter Apache Hive på Azure HDInsights till Platform med API:er eller användargränssnittet:
+
+## Anslut Apache Hive på Azure HDInsights till Platform med API:er
 
 - [Skapa en Apache Hive på Azure HDInsights-kontakten med API:t för Flow Service](../../tutorials/api/create/databases/hive.md)
 - [Utforska ett databassystem med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
 - [Samla in data från en databas med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
 
-## Anslut Apache Hive på Azure HDInsights till plattformen med användargränssnittet
+## Anslut Apache Hive på Azure HDInsights till Platform med användargränssnittet
 
 - [Skapa en Apache Hive på Azure HDInsights-källkopplingen i gränssnittet](../../tutorials/ui/create/databases/hive.md)
 - [Konfigurera ett dataflöde för en databasanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
