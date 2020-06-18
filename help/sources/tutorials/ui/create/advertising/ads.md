@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en Google AdWords-källkoppling i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: e7211c9ebfd8fecff3780198d71e18436f3ffab3
+source-git-commit: b9e9207741044f118d53ab8eb3d3d6cd7451132d
 workflow-type: tm+mt
-source-wordcount: '519'
+source-wordcount: '537'
 ht-degree: 0%
 
 ---
@@ -14,13 +14,16 @@ ht-degree: 0%
 
 # Skapa en Google AdWords-källkoppling i användargränssnittet
 
-Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en Google AdWords-källkoppling med hjälp av användargränssnittet för plattformen.
+>[!NOTE]
+>Google AdWords-kopplingen är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
+
+Källkopplingar i Adobe Experience Platform ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en Google AdWords-källkoppling med Platform användargränssnitt.
 
 ## Komma igång
 
-Den här självstudien kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
+* [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [Kundprofil](../../../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
@@ -29,7 +32,7 @@ Om du redan har en Google AdWords-anslutning kan du hoppa över resten av det h�
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få tillgång till din Google AdWords-kontoplattform måste du ange följande värden:
+För att få tillgång till ditt Google AdWords-konto på Platform måste du ange följande värden:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
