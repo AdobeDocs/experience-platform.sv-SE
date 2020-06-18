@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en FTP- eller SFTP-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 46b57900d9323cffeb59a0a6250bf5a9f4ac64ab
+source-git-commit: 855f543a1cef394d121502f03471a60b97eae256
 workflow-type: tm+mt
-source-wordcount: '544'
+source-wordcount: '547'
 ht-degree: 0%
 
 ---
@@ -15,15 +15,15 @@ ht-degree: 0%
 # Skapa en FTP- eller SFTP-källanslutning i användargränssnittet
 
 >[!NOTE]
->FTP- och SFTP-anslutningarna är i betaversion. Funktionerna och dokumentationen kan komma att ändras.
+>FTP- och SFTP-anslutningarna är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
-Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en FTP- eller SFTP-källkoppling med hjälp av användargränssnittet för plattformen.
+Källkopplingar i Adobe Experience Platform ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en FTP- eller SFTP-källanslutning med Platform användargränssnitt.
 
 ## Komma igång
 
-Den här självstudien kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
+* [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [Kundprofil](../../../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
@@ -32,7 +32,7 @@ Om du redan har en giltig FTP- eller SFTP-anslutning kan du hoppa över resten a
 
 ### Filformat som stöds
 
-Experience Platform har stöd för följande filformat som kan importeras från externa källor:
+Experience Platform stöder följande filformat som kan importeras från externa källor:
 
 * Avgränsaravgränsade värden (DSV): Stödet för DSV-formaterade datafiler är för närvarande begränsat till kommaseparerade värden (CSV). Värdet för fältrubriker i DSV-formaterade filer får endast bestå av alfanumeriska tecken och understreck. Stöd för allmän DSV ska ges i framtiden.
 * JavaScript-objektnotation (JSON): JSON-formaterade datafiler måste vara XDM-kompatibla.
@@ -40,11 +40,11 @@ Experience Platform har stöd för följande filformat som kan importeras från 
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till FTP- eller SFTP-servern på plattformen måste du ange serverns **värdnamn**, ett **användarnamn** och ett **lösenord**.
+För att få åtkomst till FTP- eller SFTP-servern på Platform måste du ange serverns **värdnamn**, ett **användarnamn** och ett **lösenord**.
 
 ## Anslut till FTP- eller SFTP-servern
 
-När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att skapa ett nytt FTP- eller SFTP-konto för att ansluta till plattformen.
+När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att skapa ett nytt FTP- eller SFTP-konto för att ansluta till Platform.
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt *[!UICONTROL Sources]* arbetsytan. På *[!UICONTROL Catalog]* skärmen visas en mängd olika källor som du kan skapa ett inkommande konto för, och varje källa visar antalet befintliga konton och dataflöden som är kopplade till dem.
 
@@ -70,4 +70,4 @@ Om du vill ansluta ett befintligt konto markerar du det FTP- eller SFTP-konto so
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt FTP- eller SFTP-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till plattformen](../../dataflow/batch/cloud-storage.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt FTP- eller SFTP-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till Platform](../../dataflow/batch/cloud-storage.md).
