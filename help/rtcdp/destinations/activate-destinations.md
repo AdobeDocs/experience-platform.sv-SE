@@ -1,12 +1,12 @@
 ---
 title: Aktivera profiler och segment till ett mål
 seo-title: Aktivera profiler och segment till ett mål
-description: Aktivera data i Adobes kunddataplattform i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
-seo-description: Aktivera data i Adobes kunddataplattform i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
+description: Aktivera data i Adobe Real-time Customer Data Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
+seo-description: Aktivera data i Adobe Real-time Customer Data Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: 24e4746b28620210c138a1e803b6afadff79ab30
+source-git-commit: b1f8cbe245f73e31a8941fc45cefcee595968a70
 workflow-type: tm+mt
-source-wordcount: '860'
+source-wordcount: '989'
 ht-degree: 0%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 0%
 
 # Aktivera profiler och segment till ett mål
 
-Aktivera data i Adobes kunddataplattform i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
+Aktivera data i Adobe Real-time Customer Data Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 
 ## Förutsättningar {#prerequisites}
 
-Om du vill aktivera data till mål måste du ha [anslutit ett mål](/help/rtcdp/destinations/assets/connect-destination-1.png). Om du inte redan har gjort det går du till [målkatalogen](/help/rtcdp/destinations/destinations-catalog.md), bläddrar bland de mål som stöds och ställer in ett eller flera mål.
+Om du vill aktivera data till mål måste du ha [anslutit ett mål](/help/rtcdp/destinations/connect-destination.md). Om du inte redan har gjort det går du till [målkatalogen](/help/rtcdp/destinations/destinations-catalog.md), bläddrar bland de mål som stöds och ställer in ett eller flera mål.
 
 ## Aktivera data {#activate-data}
 
@@ -27,9 +27,18 @@ Om du vill aktivera data till mål måste du ha [anslutit ett mål](/help/rtcdp/
    ![activate-flow](/help/rtcdp/destinations/assets/activate-flow.png)Observera att om det redan finns ett aktiveringsflöde för ett mål kan du se de segment som för närvarande skickas till målet. Välj **[!UICONTROL Edit activation]** i den högra listen och följ stegen nedan för att ändra aktiveringsinformationen.
 3. Välj **[!UICONTROL Activate]**;
 4. Välj vilka segment som ska skickas till målet på **[!UICONTROL Activate destination]** **[!UICONTROL Select Segments]** sidan i arbetsflödet.
-   ![segment-till-mål](/help/rtcdp/destinations/assets/select-segments.png)
+   ![segment-till-mål](/help/rtcdp/destinations/assets/email-select-segments.png)
 5. *Villkorligt*. Det här steget skiljer sig åt beroende på vilken typ av mål du aktiverar dina segment på. <br> För *e-postmarknadsföringsmål* och *molnlagringsmål* väljer du de attribut du vill skicka till målet på **[!UICONTROL Select Attributes]** **[!UICONTROL Add new field]** sidan.
 Vi rekommenderar att ett av attributen är en [unik identifierare](/help/rtcdp/destinations/email-marketing-destinations.md#identity) från ditt unionsschema. Mer information om obligatoriska attribut finns i Identitet i artikeln [E-postmarknadsföringsmål](/help/rtcdp/destinations/email-marketing-destinations.md#identity) .
+
+   >[!NOTE]
+   > 
+   >Om några dataanvändningsetiketter har tillämpats på vissa fält i en datauppsättning (i stället för på hela datauppsättningen), tillämpas dessa fältetiketter vid aktiveringen på följande villkor:
+   >* Fälten används i segmentdefinitionen.
+   >* Fälten konfigureras som projicerade attribut för målmålet.
+   >
+   > Titta på skärmbilden nedan. Om fältet till exempel `person.name.first.Name` hade vissa dataanvändningsetiketter som står i konflikt med målets användningsfall för marknadsföring, skulle du se en överträdelse av dataanvändningsprincipen i granskningssteget (steg 7). Mer information finns i [Datastyrning i CDP i realtid](/help/rtcdp/privacy/data-governance-overview.md#destinations)
+
    ![mål-attribut](/help/rtcdp/destinations/assets/select-attributes-step.png)
 
    <br> 
@@ -47,7 +56,7 @@ Vi rekommenderar att ett av attributen är en [unik identifierare](/help/rtcdp/d
    ![Förmåns-ID som identitet](/help/rtcdp/destinations/assets/rewardsid-as-identity.gif)
 
 
-   Välj `Email_LC_SHA256` som målidentitet om du har hashas i kundens e-postadresser vid dataöverföring till Adobe Experience Platform, enligt Facebooks [e-posthashkrav](/help/rtcdp/destinations/facebook-destination.md#email-hashing-requirements). <br> Välj `Email` som målidentitet om e-postadresserna du använder inte är hashas. Adobe CDP i realtid hash-kodar e-postadresserna så att de uppfyller Facebooks krav.
+   Välj `Email_LC_SHA256` som målidentitet om du hashas i kundens e-postadresser vid dataöverföring till Adobe Experience Platform, enligt Facebooks [e-posthashkrav](/help/rtcdp/destinations/facebook-destination.md#email-hashing-requirements). <br> Välj `Email` som målidentitet om e-postadresserna du använder inte är hashas. Adobe CDP i realtid hash-kodar e-postadresserna så att de uppfyller Facebooks krav.
 
    ![identitetsmappning efter att fält fyllts i](/help/rtcdp/destinations/assets/identity-mapping.png)
 
@@ -61,7 +70,17 @@ Vi rekommenderar att ett av attributen är en [unik identifierare](/help/rtcdp/d
 
 7. På **[!UICONTROL Review]** sidan visas en sammanfattning av markeringen. Välj **[!UICONTROL Cancel]** om du vill dela upp flödet, **[!UICONTROL Back]** om du vill ändra inställningarna eller **[!UICONTROL Finish]** om du vill bekräfta urvalet och börja skicka data till målet.
 
+   >[!IMPORTANT]
+   >
+   >I det här steget söker CDP i realtid efter brott mot dataanvändningspolicyn. Nedan visas ett exempel där en princip överträds. Du kan inte slutföra arbetsflödet för segmentaktivering förrän du har löst konflikten. Mer information om hur du löser policyöverträdelser finns i [Politiska åtgärder](/help/rtcdp/privacy/data-governance-overview.md#enforcement) i dokumentationsavsnittet för datastyrning.
+
+![bekräfta-val](/help/rtcdp/destinations/assets/data-policy-violation.png)
+
+Om inga principöverträdelser har identifierats markerar du **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
+
 ![bekräfta-val](/help/rtcdp/destinations/assets/confirm-selection.png)
+
+
 
 ## Redigera aktivering {#edit-activation}
 
@@ -106,5 +125,3 @@ Följ stegen nedan för att inaktivera ett befintligt aktiveringsflöde:
 1. Markera **[!UICONTROL Destinations]** i det vänstra navigeringsfältet, klicka på **[!UICONTROL Browse]** fliken och klicka på målnamnet.
 2. Klicka på **[!UICONTROL Enabled]** kontrollen till höger för att ändra aktiveringsflödets status.
 3. I fönstret **Uppdatera dataflöde** väljer du **Bekräfta** för att inaktivera aktiveringsflödet.
-
-I AWS Kinesis skapar du en åtkomstnyckel - ett hemligt åtkomstnyckelpar som ger Adobe CDP-åtkomst i realtid till ditt AWS Kinesis-konto. Läs mer i dokumentationen [till](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)AWS Kinesis.
