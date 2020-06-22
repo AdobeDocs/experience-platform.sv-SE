@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Profiler
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 08d02e7323f75c450e7a250835f26a569685cdd1
+source-git-commit: ba9d4b31cfc3b7924879a91bd125f72159e55fc4
+workflow-type: tm+mt
+source-wordcount: '866'
+ht-degree: 0%
 
 ---
 
 
 # Profiler
 
-Dataanvändningspolicyer är regler som organisationen antar som beskriver den typ av marknadsföringsåtgärder som ni tillåts eller begränsas från att utföra på data inom Experience Platform.
+Dataanvändningspolicyer är regler som din organisation antar som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom Experience Platform.
 
 Slutpunkten används `/policies` för alla API-anrop som rör visning, skapande, uppdatering eller borttagning av dataanvändningsprinciper.
 
@@ -130,7 +133,7 @@ Svaret innehåller ett antal som visar det totala antalet principer i den angivn
 }
 ```
 
-## Sök efter specifik princip
+## Söka efter en princip
 
 Varje princip innehåller ett `id` fält som kan användas för att begära information om en viss princip. Om en `id` princips status är okänd kan den hittas med hjälp av listbegäran (GET) för att lista alla principer i en viss behållare (`core` eller `custom`) enligt föregående steg.
 
@@ -503,7 +506,7 @@ En slutförd uppdateringsbegäran returnerar HTTP-status 200 (OK) och svarstexte
 
 ## Ta bort en profil
 
-Om du behöver ta bort en profil som du har skapat kan du göra det genom att skicka en DELETE-begäran till den som `id` du vill ta bort. Det är bäst att först utföra en sökbegäran (GET) för att visa principen och bekräfta att det är rätt princip som du vill ta bort. **Policyer kan inte återställas när de har tagits bort.**
+Om du behöver ta bort en profil som du har skapat kan du göra det genom att skicka en DELETE-begäran till den `id` profil som du vill ta bort. Det är bäst att först utföra en sökbegäran (GET) för att visa principen och bekräfta att det är rätt princip som du vill ta bort. **Policyer kan inte återställas när de har tagits bort.**
 
 **API-format**
 
