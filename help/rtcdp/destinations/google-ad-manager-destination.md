@@ -4,9 +4,9 @@ seo-title: Mål för Google Ad Manager
 description: 'Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar. '
 seo-description: 'Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar. '
 translation-type: tm+mt
-source-git-commit: dc5ee796ca390d06fc8e08bd6c30e88a0d96dd53
+source-git-commit: 3c598454a868139b7604c5c7ca2b98fa0f1bb961
 workflow-type: tm+mt
-source-wordcount: '587'
+source-wordcount: '653'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Observera följande information som är specifik för Google Ad Manager-mål:
 
 >[!IMPORTANT]
 >
->Om du vill skapa ditt första mål med Google Ad Manager och inte har aktiverat [ID-synkroniseringsfunktionen](https://docs.adobe.com/content/help/en/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID Service tidigare (med Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat Google-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Adobe CDP i realtid.
+>Om du vill skapa ditt första mål med Google Ad Manager och inte har aktiverat [ID-synkroniseringsfunktionen](https://docs.adobe.com/content/help/en/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID Service tidigare (med Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat Google-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Adobe Real-time CDP.
 
 ## Förutsättningar
 
@@ -51,18 +51,19 @@ Innan du skapar Google Ad Manager-målet i Adobe Real-time CDP måste du kontakt
 1. I **[!UICONTROL Connections > Destinations]** väljer du Google Ad Manager och sedan **[!UICONTROL Create destination]**.
    ![Anslut Google Ad Manager-mål](/help/rtcdp/destinations/assets/google-1-destination.png)
 
-2. I arbetsflödet Skapa mål fyller du i [!UICONTROL Basic Information] för målet. <br>
-   ![Grundläggande information Google Ad Manager](/help/rtcdp/destinations/assets/google-1-basic-information.png)
+2. I **konfigurationssteget** för att skapa målarbetsflödet fyller du i [!UICONTROL Basic Information] för målet. <br>
+   ![Grundläggande information Google Ad Manager](/help/rtcdp/destinations/assets/ad-manager-setup-step.png)
 * **[!UICONTROL Name]**: Fyll i det önskade namnet för det här målet.
 * **[!UICONTROL Description]**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
 * **[!UICONTROL Account Type]**: Välj ett alternativ, beroende på ditt konto hos Google:
    * Använd `DFP by Google` för DoubleClick för utgivare
    * Använd `AdX buyer` för Google AdX
 * **[!UICONTROL Account ID]**: Fyll i ditt konto-ID med Google. Detta kan vara ditt nätverks-ID eller ditt Audience Link-ID. Vanligtvis är detta ett åttasiffrigt ID.
+* **[!UICONTROL Marketing use case]**: Fall av marknadsanvändning anger avsikten för vilken data ska exporteras till destinationen. Du kan välja bland Adobes definierade användningsexempel för marknadsföring eller skapa ett eget exempel för marknadsföring. Mer information om användningsfall för marknadsföring finns på sidan [Datastyrning i CDP](/help/rtcdp/privacy/data-governance-overview.md#destinations) i realtid. Information om de enskilda användningsfallen för marknadsföring som definierats av Adobe finns i [översikten över](/help/data-governance/policies/overview.md#core-actions)dataanvändningspolicyn.
 
->[!NOTE]
+> [!NOTE]
 >
->När du konfigurerar en Google Ad Manager-destination ska du samarbeta med din kontohanterare för Google eller Adobe-representant för att ta reda på vilken kontotyp du har.
+> När du konfigurerar en Google Ad Manager-destination ska du samarbeta med din kontohanterare för Google eller Adobe-representant för att ta reda på vilken kontotyp du har.
 
 ## Aktivera segment till Google Ad Manager
 
