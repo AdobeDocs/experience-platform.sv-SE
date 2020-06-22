@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Skapa en dataanvändningsprincip
 topic: policies
 translation-type: tm+mt
-source-git-commit: da4fe8be360d5530d96078e4ef024bccf7f080f5
+source-git-commit: ba9d4b31cfc3b7924879a91bd125f72159e55fc4
+workflow-type: tm+mt
+source-wordcount: '1216'
+ht-degree: 0%
 
 ---
 
 
-# Skapa en dataanvändningsprincip
+# Skapa en dataanvändningsprincip i API:t
 
-DULE (Data Usage Labeling and Enforcement) är huvudmekanismen i Adobe Experience Platform Data Governance. Med API:t för [DULE Policy Service](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) kan du skapa och hantera DULE-principer för att avgöra vilka marknadsföringsåtgärder som kan vidtas mot data som innehåller vissa DULE-etiketter.
+Varumärkning och verkställighet av dataanvändning (DULE) är kärnmekanismen i Adobe Experience Platform datastyrning. Med API:t för [DULE Policy Service](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) kan du skapa och hantera DULE-principer för att avgöra vilka marknadsföringsåtgärder som kan vidtas mot data som innehåller vissa DULE-etiketter.
 
 Det här dokumentet innehåller en stegvis självstudiekurs för att skapa en DULE-princip med hjälp av API:t för principtjänsten. En mer utförlig guide till de olika åtgärder som är tillgängliga i API:t finns i Utvecklarhandbok för [principtjänst](../api/getting-started.md).
 
@@ -19,16 +22,16 @@ Det här dokumentet innehåller en stegvis självstudiekurs för att skapa en DU
 
 Den här självstudiekursen kräver en fungerande förståelse av följande viktiga koncept som används för att skapa och utvärdera DULE-policyer:
 
-* [Datastyrning](../home.md): Det ramverk som Platform använder för att driva igenom efterlevnad av dataanvändning.
+* [Datastyrning](../home.md): Det ramverk som Platform använder för att kontrollera att data används.
 * [Dataanvändningsetiketter](../labels/overview.md): Dataanvändningsetiketter används i XDM-datafält, vilket anger begränsningar för hur data kan nås.
-* [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
-* [Sandlådor](../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att ordna kundupplevelsedata.
+* [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till DULE Policy Service API, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
 
 ## Definiera en marknadsföringsåtgärd {#define-action}
 
-I ramverket för datastyrning är en marknadsföringsåtgärd en åtgärd som en Experience Platform-datakonsument vidtar, och där det finns ett behov av att kontrollera om dataanvändningsprinciper har överträtts.
+I datastyrningsramverket är en marknadsföringsåtgärd en åtgärd som en datakonsument i Experience Platform vidtar, och där det finns ett behov av att kontrollera överträdelser av dataanvändningspolicyer.
 
 Det första steget i att skapa en DULE-policy är att avgöra vilka marknadsföringsåtgärder som policyn kommer att utvärdera. Detta kan du göra med något av följande alternativ:
 
@@ -41,7 +44,7 @@ Du kan söka efter befintliga marknadsföringsåtgärder som ska utvärderas av 
 
 **API-format**
 
-Beroende på om du letar upp en marknadsföringsåtgärd som tillhandahålls av Experience Platform eller en anpassad marknadsföringsåtgärd som skapats av din organisation ska du använda `marketingActions/core` - eller `marketingActions/custom` slutpunkterna.
+Beroende på om du letar upp en marknadsföringsåtgärd från Experience Platform eller en anpassad marknadsföringsåtgärd som har skapats av din organisation ska du använda `marketingActions/core` - eller `marketingActions/custom` slutpunkterna.
 
 ```http
 GET /marketingActions/core
@@ -413,4 +416,4 @@ Genom att följa den här självstudiekursen har du skapat en dataanvändningspo
 
 Mer information om de olika tillgängliga åtgärderna i API:t för principtjänsten finns i Utvecklarhandbok [för](../api/getting-started.md)principtjänsten. Mer information om hur du tillämpar principer för kundprofildata i realtid finns i självstudiekursen om hur du [framtvingar dataanvändning för målgruppssegment](../../segmentation/tutorials/governance.md).
 
-Mer information om hur du hanterar användarprofiler i användargränssnittet för Experience Platform finns i användarhandboken för [principen](user-guide.md).
+Mer information om hur du hanterar användarprofiler i användargränssnittet i Experience Platform finns i [användarhandboken](user-guide.md)för profilen.
