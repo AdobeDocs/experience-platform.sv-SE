@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Användarhandbok för kundprofil i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: da3793a528fa919633e777423d77e7be9cbc0154
+source-git-commit: 4589d0cdca36992feea208850abdda1a9dc246c0
 workflow-type: tm+mt
-source-wordcount: '1206'
+source-wordcount: '1208'
 ht-degree: 0%
 
 ---
@@ -32,23 +32,25 @@ Klicka på [Profiler](http://platform.adobe.com)i den vänstra navigeringen i **
 
 ![](../images/user-guide/profiles-overview.png)
 
-## Bläddra i profil
+## Bläddra
 
-Klicka på fliken **Bläddra** för att bläddra bland profiler efter identitet.
+Välj fliken *Bläddra* för att bläddra bland profiler efter identitet.
+
+![](../images/user-guide/profiles-browse.png)
 
 ### Profilmått {#profile-metrics}
 
-Till höger på fliken **Bläddra** finns flera viktiga profilmått som är relaterade till dina profildata, inklusive det totala [profilantalet](#profile-count) samt en lista över [profiler per namnutrymme](#profiles-by-namespace).
+Till höger på fliken *Bläddra* finns flera viktiga mätvärden som rör dina profildata, bland annat det totala [profilantalet](#profile-count) och en lista över [profiler per namnutrymme](#profiles-by-namespace).
 
 Dessa profilvärden utvärderas med organisationens standardpolicy för sammanfogning. Mer information om hur du arbetar med sammanfogningsprinciper, inklusive hur du definierar en standardsammanfogningsprincip, finns i användarhandboken för [sammanfogningsprinciper](merge-policies.md).
 
 Förutom dessa mått innehåller avsnittet Profilmått även ett *senast uppdaterat* datum och tid som visar när mätvärdena senast utvärderades.
 
-![](../images/user-guide/profiles-browse.png)
+![](../images/user-guide/profiles-profile-metrics.png)
 
 ### Profilantal {#profile-count}
 
-Profilantalet visar det totala antalet profiler din organisation har i Experience Platform, efter att organisationens standardpolicy för sammanfogning har sammanfogats med profilfragment för att bilda en enda profil för varje enskild kund. Med andra ord kan din organisation ha flera profilfragment kopplade till en enskild kund som interagerar med ert varumärke i olika kanaler, men dessa fragment skulle slås samman (enligt standardprincipen för sammanslagning) och skulle returnera antalet&quot;1&quot;-profil eftersom de alla är kopplade till samma individ.
+Profilantalet visar det totala antalet profiler som din organisation har i Experience Platform, efter att organisationens standardpolicy för sammanfogning har sammanfogats med profilfragment för att bilda en enda profil för varje enskild kund. Med andra ord kan din organisation ha flera profilfragment kopplade till en enskild kund som interagerar med ert varumärke i olika kanaler, men dessa fragment skulle slås samman (enligt standardprincipen för sammanslagning) och skulle returnera antalet&quot;1&quot;-profil eftersom de alla är kopplade till samma individ.
 
 Profilantalet omfattar även både profiler med attribut (postdata) och profiler som endast innehåller tidsseriedata (händelsedata), t.ex. Adobe Analytics-profiler. Profilantalet uppdateras regelbundet för att ge ett aktuellt totalt antal profiler i Platform.
 
@@ -92,13 +94,13 @@ När du väljer **profil-ID**&#x200B;öppnas fliken _Detalj_ . På den här sida
 
 ![](../images/user-guide/profiles-profile-detail.png)
 
-Du kan visa ytterligare information om profilen, inklusive Attribut, Händelser och Segment som profilen är medlem i.
+Du kan visa ytterligare information om profilen, inklusive *Attribut*, *Händelser* och *Segment* som profilen är medlem i.
 
 ![](../images/user-guide/profiles-attributes-events-segments.png)
 
 ## Sammanfoga profiler
 
-Klicka på **Sammanfoga profiler** för att visa en lista över sammanfogningsprinciper som tillhör din organisation. Varje listad princip visar sitt namn, oavsett om det är standardprincipen för sammanslagning eller inte, och det schema som den gäller för.
+Välj fliken *Sammanfogningsprinciper* om du vill visa en lista över sammanfogningsprinciper som tillhör din organisation. Varje listad princip visar sitt namn, oavsett om det är standardprincipen för sammanslagning eller inte, och det schema som den gäller för.
 
 Mer information om sammanfogningsprinciper finns i [användarhandboken](merge-policies.md)för sammanfogningsprinciper.
 
@@ -106,7 +108,7 @@ Mer information om sammanfogningsprinciper finns i [användarhandboken](merge-po
 
 ## Unionsschema
 
-Klicka på **unionsschema** för att visa föreningsscheman för din profilbutik. Ett unionsschema är en kombination av alla XDM-fält (Experience Data Model) under samma klass, vars scheman har aktiverats för användning i kundprofilen i realtid. Klicka på en klass i den vänstra listan för att visa strukturen för dess unionsschema på arbetsytan.
+Välj fliken *Unionsschema* för att visa föreningsscheman för din profilbutik. Ett unionsschema är en kombination av alla XDM-fält (Experience Data Model) under samma klass, vars scheman har aktiverats för användning i kundprofilen i realtid. Välj en klass i den vänstra listan för att visa strukturen för dess unionsschema på arbetsytan.
 
 Om du till exempel väljer &quot;XDM-profil&quot; visas unionsschemat för klassen XDM Individual Profile.
 
