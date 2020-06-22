@@ -4,7 +4,7 @@ seo-title: (Beta) Azure Event Hubs-mål
 description: Skapa en utgående anslutning i realtid till din Azure Event Hubs-lagring för att strömma data från Experience Platform.
 seo-description: Skapa en utgående anslutning i realtid till din Azure Event Hubs-lagring för att strömma data från Experience Platform.
 translation-type: tm+mt
-source-git-commit: 883bea4aba0548e96b891987f17b8535c4d2eba7
+source-git-commit: e93bfc028d5e23c3add55677c4003ca549a902c6
 workflow-type: tm+mt
 source-wordcount: '472'
 ht-degree: 0%
@@ -42,20 +42,20 @@ Mer information om hur du ansluter till molnlagringsdestinationer finns [i arbet
 
 Ange följande information i arbetsflödet för att skapa mål för [!DNL Azure Event Hubs] mål:
 
-### I kontosteget {#account-step}
+### I autentiseringssteget {#authentication-step}
 
 * **[!UICONTROL SAS Key Name]** och **[!UICONTROL SAS Key]**: Fyll i SAS-nyckelns namn och nyckel. Läs om hur du autentiserar [!DNL Azure Event Hubs] med SAS-nycklar i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
 * **[!UICONTROL Namespace]**: Fyll i [!DNL Azure Event Hubs] namnutrymmet. Läs mer om [!DNL Azure Event Hubs] namnutrymmen i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace).
 
-![Indata krävs i autentiseringssteget](/help/rtcdp/destinations/assets/event-hubs-account-step.png)
+![Indata krävs i autentiseringssteget](/help/rtcdp/destinations/assets/event-hubs-authentication.png)
 
-### I autentiseringssteget {#authentication-step}
+### I konfigurationssteget {#setup-step}
 
 * **[!UICONTROL Name]**: Ange ett namn för anslutningen till [!DNL Azure Event Hubs].
 * **[!UICONTROL Description]**: Ange en beskrivning av anslutningen.  Exempel: &quot;Premium tier customers&quot;, &quot;Males interest of kitsnapfing&quot;.
 * **[!UICONTROL eventHubName]**: Ange ett namn för strömmen till ditt [!DNL Azure Event Hubs] mål.
 
-![Data som krävs i konfigurationssteget](/help/rtcdp/destinations/assets/event-hubs-authentication-step.png)
+![Data som krävs i konfigurationssteget](/help/rtcdp/destinations/assets/event-hubs-setup-step.png)
 
 ## Aktivera segment {#activate-segments}
 
@@ -64,7 +64,7 @@ Mer information om arbetsflödet för [aktivering finns i Aktivera profiler och 
 
 ## Exporterade data {#exported-data}
 
-Dina exporterade Experience Platform-data får plats [!DNL Azure Event Hubs] i JSON-format. Händelsen nedan innehåller till exempel e-postadressprofilattributet för en målgrupp som har kvalificerat sig för ett visst segment och avslutat ett annat segment. Identiteterna för den här potentiella kunden är ECID och e-post.
+Dina exporterade Experience Platform-data markeras [!DNL Azure Event Hubs] i JSON-format. Händelsen nedan innehåller till exempel e-postadressprofilattributet för en målgrupp som har kvalificerat sig för ett visst segment och avslutat ett annat segment. Identiteterna för den här potentiella kunden är ECID och e-post.
 
 ```
 {
