@@ -4,9 +4,9 @@ seo-title: Mål för Google Ads
 description: Google Ads, som tidigare kallades Google AdWords, är en onlinereklam som gör att företag kan betala per klick för annonsering vid textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appar.
 seo-description: Google Ads, som tidigare kallades Google AdWords, är en onlinereklam som gör att företag kan betala per klick för annonsering vid textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appar.
 translation-type: tm+mt
-source-git-commit: dc5ee796ca390d06fc8e08bd6c30e88a0d96dd53
+source-git-commit: 3c598454a868139b7604c5c7ca2b98fa0f1bb961
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '598'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Observera följande information som är specifik för Google Ads-destinationer:
 
 >[!IMPORTANT]
 >
->Om du vill skapa ditt första mål med Google Ads och inte har aktiverat [ID-synkroniseringsfunktionen](https://docs.adobe.com/content/help/en/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID Service tidigare (med Audience Manager eller andra program) ber du dig kontakta Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat Google-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Adobe CDP i realtid.
+>Om du vill skapa ditt första mål med Google Ads och inte har aktiverat [ID-synkroniseringsfunktionen](https://docs.adobe.com/content/help/en/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID Service tidigare (med Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat Google-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Adobe Real-time CDP.
 
 ## Förutsättningar
 
@@ -54,12 +54,13 @@ Innan du skapar Google Ads-målet i Adobe Real-time CDP måste du kontakta Googl
 1. I **[!UICONTROL Connections > Destinations]** väljer du Google Ads och sedan **[!UICONTROL Create destination]**.
    ![Anslut Google Ads-mål](/help/rtcdp/destinations/assets/google-2-destination.png)
 
-2. I arbetsflödet Skapa mål fyller du i [!UICONTROL Basic Information] för målet. <br>
-   ![Grundläggande information för Google Ads](/help/rtcdp/destinations/assets/google-2-basic-information.png)
+2. I **konfigurationssteget** för att skapa målarbetsflödet fyller du i [!UICONTROL Basic Information] för målet. <br>
+   ![Grundläggande information för Google Ads](/help/rtcdp/destinations/assets/google-ads-setup-step.png)
 * **[!UICONTROL Name]**: Fyll i det önskade namnet för det här målet.
 * **[!UICONTROL Description]**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
 * **[!UICONTROL Account Type]**: AdWords är det enda tillgängliga alternativet.
 * **[!UICONTROL Account ID]**: Fyll i ditt konto-ID med Google Ads. ID-formatet är vanligtvis 123-456-7890.
+* **[!UICONTROL Marketing use case]**: Fall av marknadsanvändning anger avsikten för vilken data ska exporteras till destinationen. Du kan välja bland Adobes definierade användningsexempel för marknadsföring eller skapa ett eget exempel för marknadsföring. Mer information om användningsfall för marknadsföring finns på sidan [Datastyrning i CDP](/help/rtcdp/privacy/data-governance-overview.md#destinations) i realtid. Information om de enskilda användningsfallen för marknadsföring som definierats av Adobe finns i [översikten över](/help/data-governance/policies/overview.md#core-actions)dataanvändningspolicyn.
 
 ## Aktivera segment för Google Ads
 
