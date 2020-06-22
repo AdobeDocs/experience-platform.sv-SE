@@ -4,7 +4,7 @@ seo-title: Amazon Kinesis-mål
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 seo-description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 883bea4aba0548e96b891987f17b8535c4d2eba7
+source-git-commit: e93bfc028d5e23c3add55677c4003ca549a902c6
 workflow-type: tm+mt
 source-wordcount: '458'
 ht-degree: 0%
@@ -44,20 +44,20 @@ Mer information om hur du ansluter till molnlagringsdestinationer finns [i arbet
 
 Ange följande information i arbetsflödet för att skapa mål för [!DNL Amazon Kinesis] mål:
 
-### I kontosteget {#account-step}
+### I autentiseringssteget {#authentication-step}
 
 * **Åtkomstnyckel och hemlig nyckel** för Amazon Web Services: Generera [!DNL Amazon Web Services]i stället en åtkomstnyckel - nyckelpar för hemlig åtkomst som ger Adobe CDP-åtkomst i realtid till ditt [!DNL Amazon Kinesis] konto. Läs mer i [Amazons webbtjänstdokumentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 * **region**: Ange vilken [!DNL Amazon Web Services] region data ska strömmas till.
 
 ![Inmatningsfält i kontosteget](/help/rtcdp/destinations/assets/aws-kinesis-account-step.png)
 
-### I autentiseringssteget {#authentication-step}
+### I konfigurationssteget {#setup-step}
 
 * **Namn**: Ange ett namn för anslutningen till [!DNL Amazon Kinesis]
 * **Beskrivning**: Ange en beskrivning för anslutningen till [!DNL Amazon Kinesis].
-* **ström**: Ange namnet på din befintliga dataström i ditt [!DNL Amazon Kinesis] konto. Adobe CDP i realtid exporterar data till den här strömmen.
+* **ström**: Ange namnet på en befintlig dataström i ditt [!DNL Amazon Kinesis] konto. Adobe CDP i realtid exporterar data till den här strömmen.
 
-![Inmatningsfält i autentiseringssteget](/help/rtcdp/destinations/assets/aws-kinesis-authentication-step.png)
+![Inmatningsfält i autentiseringssteget](/help/rtcdp/destinations/assets/aws-kinesis-setup-step.png)
 
 <!--
 
@@ -73,7 +73,7 @@ Mer information om arbetsflödet för [aktivering finns i Aktivera profiler och 
 
 ## Exporterade data {#exported-data}
 
-Dina exporterade Experience Platform-data får plats [!DNL Amazon Kinesis] i JSON-format. Händelsen nedan innehåller till exempel e-postadressprofilattributet för en målgrupp som har kvalificerat sig för ett visst segment och avslutat ett annat segment. Identiteterna för den här potentiella kunden är ECID och e-post.
+Dina exporterade Experience Platform-data markeras [!DNL Amazon Kinesis] i JSON-format. Händelsen nedan innehåller till exempel e-postadressprofilattributet för en målgrupp som har kvalificerat sig för ett visst segment och avslutat ett annat segment. Identiteterna för den här potentiella kunden är ECID och e-post.
 
 ```
 {
