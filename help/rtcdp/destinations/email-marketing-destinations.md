@@ -4,9 +4,9 @@ seo-title: Destinationer för e-postmarknadsföring
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 seo-description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 translation-type: tm+mt
-source-git-commit: 121ae74e9c352b1f6fc12093d815e711ebd817b8
+source-git-commit: 3c598454a868139b7604c5c7ca2b98fa0f1bb961
 workflow-type: tm+mt
-source-wordcount: '491'
+source-wordcount: '703'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # E-postmarknadsföringsmål {#email-marketing-destinations}
 
-Med ESP (Email Service Providers) kan du hantera dina e-postmarknadsföringsaktiviteter, som att skicka e-postkampanjer med reklam. Adobes kunddataplattform i realtid integreras med ESP:er genom att ni kan aktivera segment för e-postmarknadsföringsmål.
+Med ESP (Email Service Providers) kan du hantera dina e-postmarknadsföringsaktiviteter, som att skicka e-postkampanjer med reklam. Adobes kunddata i realtid Platform integreras med ESP:er genom att ni kan aktivera segment för e-postmarknadsföringsmål.
 
 För att skicka segment till e-postmarknadsföringsmål för era kampanjer måste Adobe CDP i realtid först ansluta till destinationen.
 
@@ -26,17 +26,28 @@ Anslut till antingen Amazon S3 eller SFTP i det anslutande målflödet som beskr
 
 1. I **[!UICONTROL Connections > Destinations]** väljer du det mål för e-postmarknadsföring som du vill ansluta till och sedan **[!UICONTROL Connect destination]**.
 
-   ![Anslut till mål](/help/rtcdp/destinations/assets/connect-destination-1.png)
+   ![Anslut till mål](/help/rtcdp/destinations/assets/connect-email-marketing.png)
 
-2. Välj lagringsplats **[!UICONTROL Connection type]** i Anslutningsguiden. Du kan välja mellan **Amazon S3**, **SFTP med lösenord** och **SFTP med SSH-nyckel**. Fyll i informationen nedan, beroende på vilken typ av anslutning du har, och välj sedan **[!UICONTROL Connect]**.
+2. Om du tidigare har konfigurerat en anslutning till ditt e-postmarknadsföringsmål markerar du den befintliga anslutningen i **[!UICONTROL Authentication]** steget **[!UICONTROL Existing Account]** . Du kan också välja **[!UICONTROL New Account]** att skapa en ny anslutning till ditt mål för e-postmarknadsföring. I väljaren kan du välja mellan **[!UICONTROL Connection type]** Amazon S3 **,** SFTP med lösenord **och** SFTP med SSH-nyckel ****. Fyll i informationen nedan, beroende på vilken typ av anslutning du har, och välj sedan **[!UICONTROL Connect]**.
 
-För **S3-anslutningar** måste du ange ditt ID för åtkomstnyckel och hemlig åtkomstnyckel.
+   För **S3-anslutningar** måste du ange ditt Amazon Access Key ID och Secret Access Key.
 
-För **SFTP med lösenordsanslutningar** måste du ange domän, port, användarnamn och lösenord.
+   För **SFTP med lösenordsanslutningar** måste du ange domän, port, användarnamn och lösenord för SFTP-servern.
 
-För **SFTP med SSH-nyckelanslutningar** måste du ange domän, port, användarnamn och SSH-nyckel.
+   För **SFTP med SSH-nyckelanslutningar** måste du ange domän, port, användarnamn och SSH-nyckel för SFTP-servern.
 
-## Steg 2 - Välj vilka schemafält som ska användas som målattribut i de exporterade filerna {#destination-attributes}
+3. I **[!UICONTROL Setup]** steget anger du ett **[!UICONTROL Name]** och ett **[!UICONTROL Description]** för det nya målet samt **[!UICONTROL File format]** för de exporterade filerna. <br>
+Om du valde Amazon S3 som lagringsalternativ i det föregående steget infogar du **[!UICONTROL Bucket name]** och **[!UICONTROL Folder path]** i molnlagringsmålet där filerna ska levereras. För alternativet SFTP-lagring anger du den plats **[!UICONTROL Folder path]** där filerna ska levereras. <br>
+I det här steget kan du även välja vilket som helst **[!UICONTROL Marketing use case]** som ska gälla för det här målet. Fall av marknadsanvändning anger avsikten för vilken data ska exporteras till destinationen. Du kan välja bland Adobes definierade användningsexempel för marknadsföring eller skapa ett eget exempel för marknadsföring. Mer information om användningsfall för marknadsföring finns på sidan [Datastyrning i CDP](/help/rtcdp/privacy/data-governance-overview.md#destinations) i realtid. Information om de enskilda användningsfallen för marknadsföring som definierats av Adobe finns i [översikten över](/help/data-governance/policies/overview.md#core-actions)dataanvändningspolicyn. <br>
+   ![Steget för e-postkonfiguration](/help/rtcdp/destinations/assets/email-setup-step.png)
+
+## Steg 2 - Välj vilka segmentmedlemmar som ska inkluderas i målexporten {#select-segments}
+
+På **[!UICONTROL Select Segments]** sidan väljer du vilka segment som ska skickas till målet. Mer information om fälten finns i avsnitten nedan.
+
+![Markera segment](/help/rtcdp/destinations/assets/email-select-segments.png)
+
+## Steg 3 - Välj vilka schemafält som ska användas som målattribut i de exporterade filerna {#destination-attributes}
 
 I det här steget väljer du vilka fält som ska exporteras till e-postmarknadsföringsmål.
 
@@ -44,7 +55,7 @@ I det här steget väljer du vilka fält som ska exporteras till e-postmarknadsf
 
 ### Identity {#identity}
 
-Vi rekommenderar att du väljer en unik identifierare från ditt [unionsschema](../../profile/home.md#profile-fragments-and-union-schemas). Det här är fältet som dina användares identiteter är avskärmade från. Oftast är det här fältet e-postadressen, men det kan också vara ett lojalitetsprogram-ID eller ett telefonnummer. I tabellen nedan finns de vanligaste unika identifierarna och deras XDM-fält i ett enhetligt schema.
+Vi rekommenderar att du väljer en unik identifierare från ditt [unionsschema](../../profile/home.md#profile-fragments-and-union-schemas). Det här är fältet som dina användares identiteter är avskärmade från. Oftast är det här fältet e-postadressen, men det kan också vara ett lojalitetsprogram-ID eller ett telefonnummer. I tabellen nedan finns de vanligaste unika identifierarna och deras XDM-fält i unionsschemat.
 
 | Unik identifierare | XDM-fält i Unified Schema |
 ---------|----------
