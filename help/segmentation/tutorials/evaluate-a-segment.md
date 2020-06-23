@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Utvärdera ett segment
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 21935bb36d8c2a0ef17e586c0909cf316ef026cf
+source-git-commit: 822f43b139b68b96b02f9a5fe0549736b2524ab7
+workflow-type: tm+mt
+source-wordcount: '2841'
+ht-degree: 0%
 
 ---
 
@@ -15,26 +18,26 @@ I det här dokumentet finns en självstudiekurs för att utvärdera segment och 
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse för de olika Adobe Experience Platform-tjänsterna som används för att skapa målgruppssegment. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
+Den här självstudiekursen kräver en fungerande förståelse för de olika Adobe Experience Platform-tjänster som används för att skapa målgruppssegment. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 - [Kundprofil](../../profile/home.md)i realtid: Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
-- [Adobe Experience Platform Segmentation Service](../home.md): Gör att ni kan bygga målgruppssegment utifrån kundprofildata i realtid.
-- [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
-- [Sandlådor](../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+- [Segmenteringstjänsten](../home.md)Adobe Experience Platform: Gör att ni kan bygga målgruppssegment utifrån kundprofildata i realtid.
+- [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att ordna kundupplevelsedata.
+- [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ### Obligatoriska rubriker
 
-I den här självstudiekursen måste du också ha slutfört [autentiseringssjälvstudiekursen](../../tutorials/authentication.md) för att kunna anropa plattforms-API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+Den här självstudiekursen kräver även att du har slutfört [autentiseringssjälvstudiekursen](../../tutorials/authentication.md) för att kunna ringa anrop till Platform API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Begäranden till plattforms-API:er kräver ett huvud som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>[!NOTE] Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla POST-, PUT- och PATCH-begäranden kräver ytterligare en rubrik:
 
@@ -48,7 +51,7 @@ När du har utvecklat, testat och sparat din segmentdefinition kan du sedan utv�
 
 Om du ännu inte har slutfört [Skapa ett segment med hjälp av självstudiekursen för kundprofils-API](./create-a-segment.md) i realtid eller skapat en segmentdefinition med hjälp av [Segment Builder](../ui/overview.md)gör du det innan du fortsätter med den här självstudiekursen.
 
-## Schemalagd utvärdering
+## Schemalagd utvärdering {#scheduled-evaulation}
 
 Med hjälp av schemalagd utvärdering kan din IMS-organisation skapa ett återkommande schema som automatiskt kör exportjobb.
 
@@ -472,7 +475,7 @@ En av de viktigaste sakerna att tänka på är det schema som datauppsättningen
 Det finns två sätt att skapa den nödvändiga datauppsättningen:
 
 - **Använda API:er:** De steg som följer i den här självstudien beskriver hur du skapar en datauppsättning som refererar till XDM-schemat för enskilda profiler med hjälp av katalog-API:t.
-- **Använda gränssnittet:** Om du vill använda användargränssnittet i Adobe Experience Platform för att skapa en datauppsättning som refererar till unionsschemat, följer du stegen i [användargränssnittsjälvstudiekursen](../ui/overview.md) och går sedan tillbaka till den här självstudiekursen för att fortsätta [generera målgruppsprofiler](#generate-xdm-profiles-for-audience-members).
+- **Använda gränssnittet:** Om du vill använda användargränssnittet i Adobe Experience Platform för att skapa en datauppsättning som refererar till unionsschemat, följer du stegen i [användargränssnittet](../ui/overview.md) och går sedan tillbaka till den här självstudiekursen för att fortsätta med stegen för att [generera målgruppsprofiler](#generate-xdm-profiles-for-audience-members).
 
 Om du redan har en kompatibel datauppsättning och känner till dess ID kan du fortsätta direkt till steget för att [generera målgruppsprofiler](#generate-xdm-profiles-for-audience-members).
 
@@ -948,7 +951,7 @@ curl -X GET \
 
 ## Nästa steg
 
-När exporten är klar är dina data tillgängliga i Data Lake in Experience Platform. Du kan sedan använda API:t [för](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) dataåtkomst för att komma åt data med hjälp av de `batchId` som är kopplade till exporten. Beroende på segmentets storlek kan data vara i segment och gruppen kan bestå av flera filer.
+När exporten är klar är dina data tillgängliga i Data Lake i Experience Platform. Du kan sedan använda API:t [för](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) dataåtkomst för att komma åt data med hjälp av de `batchId` som är kopplade till exporten. Beroende på segmentets storlek kan data vara i segment och gruppen kan bestå av flera filer.
 
 Följ självstudiekursen ( [Data Access) om du vill ha stegvisa anvisningar om hur du använder API:t för dataåtkomst för att få åtkomst till och hämta gruppfiler](../../data-access/tutorials/dataset-data.md).
 
