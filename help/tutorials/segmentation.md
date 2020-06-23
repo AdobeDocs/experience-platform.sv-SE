@@ -4,18 +4,21 @@ solution: Experience Platform
 title: Självstudiekurser för segmentering
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 6705cb699b0785e317a6e437fc8a01ca77266f84
+source-git-commit: 636fae71f9c826ce9715bd96a974e5f6afbffb42
+workflow-type: tm+mt
+source-wordcount: '576'
+ht-degree: 0%
 
 ---
 
 
 # Självstudiekurser för segmentering
 
-Adobe Experience Platform Segmentation Service tillhandahåller ett användargränssnitt och RESTful API som gör att ni kan skapa segment och generera målgrupper utifrån era kundprofildata i realtid. Dessa segment är centralt konfigurerade och underhållna på Platform och är tillgängliga för alla Adobe-lösningar. Om du vill veta mer om segmentering börjar du med att läsa översikten över [segmenteringstjänsten](../segmentation/home.md).
+Adobe Experience Platform segmenteringstjänst tillhandahåller ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper utifrån kundprofildata i realtid. Dessa segment konfigureras och underhålls centralt på Platform och är tillgängliga via alla Adobes lösningar. Om du vill veta mer om segmentering börjar du med att läsa översikten över [segmenteringstjänsten](../segmentation/home.md).
 
 ## Skapa en segmentdefinition
 
-En segmentdefinition är den regeluppsättning som används för att beskriva nyckelegenskaper eller beteenden hos en målpublik. När reglerna i en segmentdefinition är färdiga används de för att avgöra vilka målgruppsmedlemmar som är kvalificerade för ett segment. Du kan utveckla, testa, förhandsgranska och spara en segmentdefinition med hjälp av användargränssnittet eller API:erna för plattformen. Om du vill skapa en segmentdefinition följer du [självstudiekursen](../segmentation/tutorials/create-a-segment.md) för att skapa ett segment eller användarhandboken för [segmentbyggaren](../segmentation/ui/overview.md).
+En segmentdefinition är den regeluppsättning som används för att beskriva nyckelegenskaper eller beteenden hos en målgrupp. När reglerna i en segmentdefinition är färdiga används de för att avgöra vilka målgruppsmedlemmar som är kvalificerade för ett segment. Du kan utveckla, testa, förhandsgranska och spara en segmentdefinition med Platform användargränssnitt eller API:er. Om du vill skapa en segmentdefinition följer du [självstudiekursen](../segmentation/tutorials/create-a-segment.md) för att skapa ett segment eller användarhandboken för [segmentbyggaren](../segmentation/ui/overview.md).
 
 ## Utvärdera ett segment och få åtkomst till resultat
 
@@ -27,7 +30,7 @@ För att kunna exportera segment som innehåller profildata måste du först [sk
 
 ## Konfigurera sammanslagningsprinciper
 
-Med Adobe Experience Platform kan ni samla data från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanför dessa data är sammanslagningsprinciper de regler som används av Platform för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa den enhetliga vyn. Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen. Om du vill arbeta med kopplingsprofiler i användargränssnittet för plattformen går du till [användarhandboken](../profile/ui/merge-policies.md)för kopplingsprofiler. Om du vill arbeta med sammanfogningsprinciper med hjälp av API:t för kundprofil i realtid läser du i utvecklarhandboken för [sammanfogningsprinciper](../profile/api/merge-policies.md).
+Med Adobe Experience Platform kan ni samla data från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanför dessa data är sammanslagningsprinciper de regler som Platform använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa den enhetliga vyn. Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen. Gå till användarhandboken för [sammanfogningspolicyer om du vill arbeta med sammanfogningspolicyer i Platform-användargränssnittet](../profile/ui/merge-policies.md). Om du vill arbeta med sammanfogningsprinciper med hjälp av API:t för kundprofil i realtid läser du i utvecklarhandboken för [sammanfogningsprinciper](../profile/api/merge-policies.md).
 
 ## Stärk regelefterlevnaden för datasegment
 
@@ -38,7 +41,7 @@ Segment som har aktiverats för användning i kundprofilen i realtid innehåller
 >[!NOTE]
 >Direktuppspelningssegmentering är i betaversion och blir tillgänglig på begäran. Funktionerna och dokumentationen kan komma att ändras.
 
-Direktuppspelningssegmentering (kallas även kontinuerlig frågeutvärdering) är möjligheten att omedelbart utvärdera en kund så snart en händelse kommer in i en viss segmentgrupp. Med den här funktionen kan de flesta segmentregler utvärderas när data överförs till Adobe Experience Platform, vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs. Mer information finns i översikten över [direktuppspelningssegmentering](../segmentation/api/streaming-segmentation.md).
+Direktuppspelningssegmentering är möjligheten att omedelbart utvärdera en kund så snart en händelse kommer in i en viss segmentgrupp. Med den här funktionen kan de flesta segmentregler utvärderas när data skickas till Adobe Experience Platform, vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs. Mer information finns i översikten över [direktuppspelningssegmentering](../segmentation/api/streaming-segmentation.md).
 
 ## Segmentering för flera enheter
 
