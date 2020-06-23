@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Skapa ett segment
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: a6a1ecd9ce49c0a55e14b0d5479ca7315e332904
+source-git-commit: 822f43b139b68b96b02f9a5fe0549736b2524ab7
+workflow-type: tm+mt
+source-wordcount: '1328'
+ht-degree: 0%
 
 ---
 
@@ -17,13 +20,13 @@ Mer information om hur du skapar segment med användargränssnittet finns i guid
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse för de olika Adobe Experience Platform-tjänsterna som används för att skapa målgruppssegment. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
+Den här självstudiekursen kräver en fungerande förståelse för de olika Adobe Experience Platform-tjänster som används för att skapa målgruppssegment. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 - [Kundprofil](../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-- [Adobe Experience Platform Segmentation Service](../home.md): Gör att ni kan bygga målgruppssegment utifrån kundprofildata i realtid.
-- [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
+- [Segmenteringstjänsten](../home.md)Adobe Experience Platform: Gör att ni kan bygga målgruppssegment utifrån kundprofildata i realtid.
+- [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att ordna kundupplevelsedata.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:erna för plattformen.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa Platform API:er.
 
 ### Läser exempel-API-anrop
 
@@ -31,17 +34,17 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>[!NOTE] Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -53,7 +56,7 @@ Det första steget i segmenteringen är att definiera ett segment, som represent
 
 Du kan skapa en ny segmentdefinition genom att göra en POST-begäran till `/segment/definitions` slutpunkten i kundprofils-API:t i realtid. Följande exempel visar hur du formaterar en definitionsbegäran, inklusive vilken information som krävs för att ett segment ska kunna definieras korrekt.
 
-Segmentdefinitioner kan utvärderas på två sätt - gruppsegmentering och direktuppspelningssegmentering. Gruppsegmentering utvärderar segment baserat på ett förinställt schema eller när utvärderingen aktiveras manuellt, medan direktuppspelningssegmentering utvärderar segment så snart data hämtas från Platform. I den här självstudiekursen används **gruppsegmentering**. Mer information om direktuppspelningssegmentering finns i [översikten över direktuppspelningssegmentering](../api/streaming-segmentation.md).
+Segmentdefinitioner kan utvärderas på två sätt - gruppsegmentering och direktuppspelningssegmentering. Gruppsegmentering utvärderar segment baserat på ett förinställt schema eller när utvärderingen aktiveras manuellt, medan direktuppspelningssegmentering utvärderar segment så snart data hämtas in i Platform. I den här självstudiekursen används **gruppsegmentering**. Mer information om direktuppspelningssegmentering finns i [översikten över direktuppspelningssegmentering](../api/streaming-segmentation.md).
 
 **API-format**
 
@@ -119,7 +122,7 @@ Ett godkänt svar returnerar information om den nyligen skapade segmentdefinitio
 }
 ```
 
-## Beräkna och förhandsgranska en målgrupp
+## Beräkna och förhandsgranska en målgrupp {#estimate-and-preview-an-audience}
 
 När ni utvecklar er segmentdefinition kan ni använda skattnings- och förhandsgranskningsverktygen i kundprofilen i realtid för att se information på sammanfattningsnivå för att säkerställa att ni isolerar den förväntade målgruppen. Uppskattningar ger statistisk information om en segmentdefinition, t.ex. förväntad målgruppsstorlek och konfidensintervall. Förhandsvisningar innehåller sidnumrerade listor med kvalificeringsprofiler för en segmentdefinition, så att du kan jämföra resultaten med vad du förväntar dig.
 
@@ -181,7 +184,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar information om det nya förhandsgranskningsjobbet, inklusive dess ID och det aktuella bearbetningstillståndet.
+Ett godkänt svar returnerar information om det nya förhandsgranskningsjobbet, inklusive dess ID och det aktuella bearbetningstillståndet.
 
 ```json
 {
