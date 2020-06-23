@@ -4,16 +4,19 @@ solution: Experience Platform
 title: Skapa e-postmarknadsföringsmål
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 7ee83b5bf14ec802801cfbc17141c02ceeaccd82
+source-git-commit: ed9d6eadeb00db51278ea700f7698a1b5590632f
+workflow-type: tm+mt
+source-wordcount: '1670'
+ht-degree: 0%
 
 ---
 
 
-# Skapa e-postmarknadsföringsmål och aktivera data i Adobes kunddataplattform i realtid
+# Skapa e-postmarknadsföringsmål och aktivera data i Adobes Real-time Customer Data Platform
 
-I den här självstudiekursen visas hur du använder API-anrop för att ansluta till Adobe Experience Platform-data, skapa ett [mål](../../rtcdp/destinations/email-marketing-destinations.md)för e-postmarknadsföring, skapa ett dataflöde för det nya mål du skapat och aktivera data för det nya mål du skapat.
+I den här självstudiekursen visas hur du använder API-anrop för att ansluta till dina Adobe Experience Platform-data, skapa ett [e-postmarknadsföringsmål](../../rtcdp/destinations/email-marketing-destinations.md), skapa ett dataflöde till det nya mål du skapat och aktivera data till det nya mål du skapat.
 
-I den här självstudien används Adobe Campaign-målet i alla exempel, men stegen är identiska för alla e-postmarknadsföringsmål.
+I den här självstudien används målet Adobe Campaign i alla exempel, men stegen är identiska för alla e-postmarknadsföringsmål.
 
 ![Översikt - stegen för att skapa ett mål och aktivera segment](../images/destinations/flow-api-destinations-steps-overview.png)
 
@@ -23,9 +26,9 @@ Om du föredrar att använda användargränssnittet i Adobes CDP-fil i realtid f
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
-* [Katalogtjänst](../../catalog/home.md): Katalog är ett system för registrering av dataplats och datalänkning inom Experience Platform.
-* [Sandlådor](../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
+* [Katalogtjänst](../../catalog/home.md): Katalog är systemet för registrering av dataplatser och -länkar inom Experience Platform.
+* [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data till e-postmarknadsföringsmål i Adobe CDP i realtid.
 
@@ -42,13 +45,13 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska och valfria rubriker
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](../authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Resurser i Experience Platform kan isoleras till specifika virtuella sandlådor. I förfrågningar till plattforms-API:er kan du ange namnet och ID:t för sandlådan som åtgärden ska utföras i. Dessa är valfria parametrar.
+Resurser i Experience Platform kan isoleras till specifika virtuella sandlådor. I förfrågningar till Platform API:er kan du ange namn och ID för sandlådan som åtgärden ska utföras i. Dessa är valfria parametrar.
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
@@ -77,7 +80,7 @@ Before starting this tutorial, familiarize yourself with the following terms whi
 
 ### Dokumentation för Swagger
 
-Du hittar referensdokumentation för alla API-anrop i den här självstudiekursen i Swagger. Se https://platform.adobe.io/data/foundation/flowservice/swagger#/. Vi rekommenderar att du använder den här självstudiekursen och dokumentationssidan för Swagger parallellt.
+Du hittar referensdokumentation för alla API-anrop i den här självstudiekursen i Swagger. Se [Flow Service API-dokumentationen för Adobe.io](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml). Vi rekommenderar att du använder den här självstudiekursen och dokumentationssidan för Swagger parallellt.
 
 ## Hämta listan över tillgängliga mål {#get-the-list-of-available-destinations}
 
@@ -131,17 +134,17 @@ Ett lyckat svar innehåller en lista över tillgängliga destinationer och deras
 }
 ```
 
-## Anslut till era Experience Platform-data {#connect-to-your-experience-platform-data}
+## Ansluta till dina Experience Platform-data {#connect-to-your-experience-platform-data}
 
 ![Översiktssteg för målsteg 2](../images/destinations/flow-api-destinations-step2.png)
 
-Därefter måste ni ansluta till era Experience Platform-data, så att ni kan exportera profildata och aktivera dem på det önskade målet. Detta består av två ämnen som beskrivs nedan.
+Därefter måste du ansluta till dina Experience Platform-data, så att du kan exportera profildata och aktivera dem på det önskade målet. Detta består av två ämnen som beskrivs nedan.
 
-1. Först måste du ringa ett samtal för att auktorisera åtkomst till dina data i Experience Platform genom att konfigurera en basanslutning.
-2. Sedan gör du ett nytt anrop med hjälp av det grundläggande anslutnings-ID:t där du skapar en källanslutning som upprättar anslutningen till dina Experience Platform-data.
+1. Först måste du ringa ett samtal för att ge behörighet till dina data i Experience Platform genom att konfigurera en basanslutning.
+2. Med hjälp av basanslutnings-ID:t gör du sedan ett nytt anrop där du skapar en källanslutning som upprättar anslutningen till dina Experience Platform-data.
 
 
-### Ge åtkomst till dina data via Experience Platform
+### Ge åtkomst till dina data i Experience Platform
 
 **API-format**
 
@@ -205,7 +208,7 @@ Ett lyckat svar innehåller basanslutningsens unika identifierare (`id`). Lagra 
 }
 ```
 
-### Anslut till era Experience Platform-data
+### Ansluta till dina Experience Platform-data
 
 **API-format**
 
@@ -271,7 +274,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Svar**
 
-Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen till tjänsten för enhetlig profil. Detta bekräftar att ni har anslutit till era Experience Platform-data. Lagra det här värdet som det behövs i ett senare steg.
+Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen till tjänsten för enhetlig profil. Detta bekräftar att du har anslutit till dina Experience Platform-data. Lagra det här värdet som det behövs i ett senare steg.
 
 ```json
 {
@@ -462,7 +465,7 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nya målansl
 
 ![Översikt över destinationssteg 4](../images/destinations/flow-api-destinations-step4.png)
 
-Med de ID:n du fick i föregående steg kan du nu skapa ett dataflöde mellan dina Experience Platform-data och det mål där du vill aktivera data. Tänk på det här steget som att skapa en pipeline, genom vilken data sedan flödar, mellan Experience Platform och det önskade målet.
+Med de ID:n du fick i föregående steg kan du nu skapa ett dataflöde mellan dina Experience Platform-data och det mål där du vill aktivera data. Tänk på det här steget som att skapa en pipeline, genom vilken data sedan flödar mellan Experience Platform och det önskade målet.
 
 Om du vill skapa ett dataflöde utför du en POST-begäran enligt nedan och anger värdena som anges nedan i nyttolasten.
 
@@ -514,8 +517,8 @@ curl -X POST \
     }
 ```
 
-* `{FLOW_SPEC_ID}`: Använd flödet för det e-postmarknadsföringsmål som du vill ansluta till. Om du vill hämta flödesspecifikationen utför du en GET-åtgärd på `flowspecs` slutpunkten. Se Swagger-dokumentation här: https://platform.adobe.io/data/foundation/flowservice/swagger#/Flow%20Specs%20API/getFlowSpecs. I svaret söker du efter `upsTo` och kopierar motsvarande ID för e-postmarknadsföringsmålet som du vill ansluta till. För Adobe Campaign kan du till exempel söka efter `upsToCampaign` och kopiera `id` parametern.
-* `{SOURCE_CONNECTION_ID}`: Använd det källanslutnings-ID som du fick i steget [Anslut till din Experience Platform](#connect-to-your-experience-platform-data).
+* `{FLOW_SPEC_ID}`: Använd flödet för det e-postmarknadsföringsmål som du vill ansluta till. Om du vill hämta flödesspecifikationen utför du en GET-åtgärd på `flowspecs` slutpunkten. Se Swagger-dokumentation här: https://platform.adobe.io/data/foundation/flowservice/swagger#/Flow%20Specs%20API/getFlowSpecs. I svaret söker du efter `upsTo` och kopierar motsvarande ID för e-postmarknadsföringsmålet som du vill ansluta till. För Adobe Campaign söker du efter `upsToCampaign` och kopierar `id` parametern.
+* `{SOURCE_CONNECTION_ID}`: Använd det källanslutnings-ID som du fick i steget [Anslut till Experience Platform](#connect-to-your-experience-platform-data).
 * `{TARGET_CONNECTION_ID}`: Använd det målanslutnings-ID som du fick i steget [Ansluta till e-postmarknadsföringsmålet](#connect-to-email-marketing-destination).
 
 **Svar**
