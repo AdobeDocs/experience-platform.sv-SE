@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användargränssnittsguide för segmentbyggare
 topic: ui guide
 translation-type: tm+mt
-source-git-commit: 822f43b139b68b96b02f9a5fe0549736b2524ab7
+source-git-commit: d00973a07c5fb137f756040fb1dc6eac5a1630f5
 workflow-type: tm+mt
 source-wordcount: '2470'
 ht-degree: 0%
@@ -165,7 +165,7 @@ Scheman kan för närvarande bara skapas med API:t. Detaljerade anvisningar om h
 
 ![](../images/segment-builder/scheduled-segmentation.png)
 
-## Direktuppspelningssegmentering
+## Direktuppspelningssegmentering {#streaming-segmentation}
 
 >[!NOTE] För att direktuppspelningssegmentering ska fungera måste kunden aktivera schemalagd segmentering för organisationen. Mer information om hur du aktiverar schemalagd segmentering finns [i föregående avsnitt i den här användarhandboken](#enable-scheduled-segmentation).
 
