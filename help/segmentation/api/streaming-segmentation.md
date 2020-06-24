@@ -4,15 +4,17 @@ solution: Experience Platform
 title: Direktuppspelningssegmentering
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 822f43b139b68b96b02f9a5fe0549736b2524ab7
+source-git-commit: d00973a07c5fb137f756040fb1dc6eac5a1630f5
 workflow-type: tm+mt
-source-wordcount: '1343'
+source-wordcount: '1370'
 ht-degree: 0%
 
 ---
 
 
 # Utvärdera händelser i nära realtid med strömmande segmentering
+
+>[!NOTE] I följande dokument beskrivs hur du använder direktuppspelningssegmentering med API:t. Mer information om hur du använder direktuppspelningssegmentering med användargränssnittet finns i guiden [för](../ui/overview.md#streaming-segmentation)segmentbyggaren.
 
 Med direktuppspelningssegmentering på [!DNL Adobe Experience Platform] kan kunderna segmentera i nära realtid samtidigt som de fokuserar på datarikedom. Med direktuppspelningssegmentering sker nu segmentkvalificering allt eftersom data når [!DNL Platform]och eliminerar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data överförs till [!DNL Platform], vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 
