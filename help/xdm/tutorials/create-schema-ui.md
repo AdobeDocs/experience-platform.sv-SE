@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Skapa ett schema med Schemaredigeraren
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: c07f926a71447e840c692ed15e85c9e02f1106ab
+source-git-commit: b3fa5a17c3a5c2406d368d165da63f2f8c01154d
+workflow-type: tm+mt
+source-wordcount: '3409'
+ht-degree: 0%
 
 ---
 
 
 # Skapa ett schema med Schemaredigeraren
 
-Schemaregistret innehåller ett användargränssnitt och RESTful API som du kan använda för att visa och hantera alla resurser i schemabiblioteket för Adobe Experience Platform. Schemabiblioteket innehåller resurser som gjorts tillgängliga av Adobe, Experience Platform-partners och leverantörer vars program du använder, samt resurser som du definierar och sparar i schemaregistret.
+Schemaregistret innehåller ett användargränssnitt och RESTful API som du kan använda för att visa och hantera alla resurser i schemabiblioteket i Adobe Experience Platform. Schemabiblioteket innehåller resurser som gjorts tillgängliga av Adobe, Experience Platform partners och leverantörer vars program du använder, samt resurser som du definierar och sparar i schemaregistret.
 
 I den här självstudiekursen beskrivs stegen för hur du skapar ett schema med Schemaredigeraren i Experience Platform. Om du föredrar att skapa ett schema med API:t för schemaregister börjar du med att läsa [utvecklarhandboken](../api/getting-started.md) för schemaregistret innan du försöker [skapa ett schema med API](create-schema-api.md).
 
@@ -19,25 +22,25 @@ Den här självstudiekursen innehåller även steg för att [definiera en ny kla
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse för de olika aspekter av Adobe Experience Platform som används i Schemaredigeraren. Innan du börjar med den här självstudiekursen bör du läsa om följande koncept i dokumentationen:
+Den här självstudiekursen kräver en fungerande förståelse för de olika aspekter av Adobe Experience Platform som används i schemaredigeraren. Innan du börjar med den här självstudiekursen bör du läsa om följande koncept i dokumentationen:
 
-* [Experience Data Model (XDM)](../home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
+* [Experience Data Model (XDM)](../home.md): Det standardiserade ramverk som Platform använder för att ordna kundupplevelsedata.
 * [Grundläggande om schemakomposition](../schema/composition.md): En översikt över XDM-scheman och deras byggstenar, inklusive klasser, mixins, datatyper och fält.
 * [Kundprofil](../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Den här självstudiekursen kräver att du har tillgång till Experience Platform. Om du inte har tillgång till en IMS-organisation i Experience Platform, ska du tala med systemadministratören innan du fortsätter.
+Den här självstudiekursen kräver att du har tillgång till Experience Platform. Om du inte har tillgång till en IMS-organisation i Experience Platform, tala med systemadministratören innan du fortsätter.
 
-## Bläddra bland befintliga scheman på arbetsytan Scheman
+## Bläddra bland befintliga scheman på arbetsytan Scheman {#browse}
 
 På arbetsytan Scheman i Experience Platform finns en visualisering av schemabiblioteket som gör att du kan visa och hantera alla scheman som är tillgängliga för dig, samt skapa nya. Arbetsytan innehåller även Schemaredigeraren, arbetsytan som du kommer att komponera ett schema på i hela kursen.
 
-När du har loggat in på Experience Platform klickar du på **Scheman** i den vänstra navigeringen så kommer du till arbetsytan Scheman. Du ser en lista med scheman (en representation av schemabiblioteket) där du kan visa, hantera och anpassa alla scheman som är tillgängliga för dig. Listan innehåller namn, typ, klass och beteende (post- eller tidsserie) som schemat baseras på samt datum och tid då schemat senast ändrades.
+När du har loggat in i Experience Platform klickar du på **Scheman** i den vänstra navigeringen så kommer du till arbetsytan Scheman. Du ser en lista med scheman (en representation av schemabiblioteket) där du kan visa, hantera och anpassa alla scheman som är tillgängliga för dig. Listan innehåller namn, typ, klass och beteende (post- eller tidsserie) som schemat baseras på samt datum och tid då schemat senast ändrades.
 
 Klicka på filterikonen bredvid sökfältet för att använda filterfunktioner för alla resurser i registret, inklusive klasser, mixins och datatyper.
 
 ![Visa schemabiblioteket](../images/tutorials/create-schema/schemas_filter.png)
 
-## Skapa och namnge ett schema
+## Skapa och namnge ett schema {#create}
 
 Om du vill börja komponera ett schema klickar du på **Skapa schema** i det övre högra hörnet på arbetsytan Scheman.
 
@@ -59,7 +62,7 @@ Det finns flera viktiga saker att tänka på när du ska bestämma ett namn för
 
 I den här självstudiekursen skapas ett schema för att importera data som är relaterade till medlemmarna i ett lojalitetsprogram, och schemat kallas därför&quot;lojalitetsmedlemmar&quot;.
 
-## Tilldela en klass
+## Tilldela en klass {#class}
 
 Till vänster om redigeraren finns delen *Disposition* . Den innehåller för närvarande två underavsnitt: *Schema* och *klass*.
 
@@ -79,11 +82,11 @@ Arbetsytan visas igen. Avsnittet *Klass* innehåller nu den klass du har valt (e
 
 ![Tilldelad klass för enskild XDM-profil](../images/tutorials/create-schema/class_assigned_structure.png)
 
-Fälten visas i formatet &quot;fieldName| Datatyp&quot;. Steg för att definiera schemafält i användargränssnittet finns senare i den här självstudiekursen.
+Fälten visas i formatet &quot;fieldName | Datatyp&quot;. Steg för att definiera schemafält i användargränssnittet finns senare i den här självstudiekursen.
 
 >[!NOTE] Du kan [ändra schemaklassen](#change-class) när som helst under den inledande dispositionsprocessen innan schemat har sparats, men detta bör göras med yttersta försiktighet. Blandningar är bara kompatibla med vissa klasser. Om du ändrar klassen återställs arbetsytan och alla fält du har lagt till.
 
-## Lägga till en blandning
+## Lägga till en blandning {#mixin}
 
 Nu när en klass har tilldelats innehåller *dispositionssektionen* ett tredje underavsnitt: *Blandningar*.
 
@@ -103,7 +106,7 @@ Arbetsytan för schemat visas igen. Avsnittet *Mixins* visar nu blandningen &quo
 
 ![](../images/tutorials/create-schema/person_details_structure.png)
 
-Den här blandningen bidrar med flera fält under namnet &quot;person&quot; på den översta nivån med datatypen &quot;person&quot;. Den här gruppen med fält beskriver information om en individ, inklusive namn, födelsedatum och kön.
+Den här blandningen bidrar med flera fält under namnet&quot;person&quot; på den översta nivån med datatypen&quot;person&quot;. Den här gruppen med fält beskriver information om en individ, inklusive namn, födelsedatum och kön.
 
 >[!NOTE] Kom ihåg att fält kan använda skalära typer (till exempel sträng, heltal, matris eller datum) som datatyp, samt alla&quot;datatyper&quot; (en grupp fält som representerar ett gemensamt koncept) i schemaregistret.
 
@@ -111,7 +114,7 @@ Observera att fältet &quot;name&quot; har datatypen &quot;Person Name&quot;, vi
 
 Klicka på olika fält på arbetsytan för att se ytterligare fält som de bidrar till schemastrukturen.
 
-## Lägg till ytterligare en blandning
+## Lägg till ytterligare en blandning {#mixin-2}
 
 Nu kan du upprepa samma steg för att lägga till en annan blandning. När du visar dialogrutan *Lägg till mixning* den här gången kan du lägga märke till att mixinen &quot;Profilpersondetaljer&quot; har blivit nedtonad och att alternativknappen bredvid inte kan markeras. Detta förhindrar att du av misstag duplicerar blandningar som du redan har inkluderat i det aktuella schemat.
 
@@ -125,7 +128,7 @@ Ungefär som i fältet &quot;name&quot; representerar de fält du just lade till
 
 ![](../images/tutorials/create-schema/personal_details_structure.png)
 
-## Definiera en ny blandning
+## Definiera en ny blandning {#define-mixin}
 
 Schemat&quot;Förmånsmedlemmar&quot; är avsett för att samla in data som är relaterade till medlemmarna i ett lojalitetsprogram, så det kräver vissa specifika lojalitetsrelaterade fält. Det finns inga standardblandningar som innehåller de nödvändiga fälten, och du måste därför definiera en ny blandning.
 
@@ -139,7 +142,7 @@ I den här självstudiekursen anger du den nya mixen&quot;Loyalty Details&quot; 
 
 Klicka på **Lägg till mixning** för att återgå till schemaredigeraren. &quot;Lojalitetsinformation&quot; ska nu visas under *Blandningar* till vänster på arbetsytan, men det finns inga fält som är kopplade till den ännu och därför visas inga nya fält under *Struktur*.
 
-## Lägg till fält i mixinen
+## Lägg till fält i mixinen {#mixin-fields}
 
 Nu när du har skapat blandningen &quot;Loyalty Details&quot; är det dags att definiera de fält som blandningen ska bidra till schemat.
 
@@ -178,7 +181,7 @@ Olika begränsningsalternativ är tillgängliga beroende på vilken datatyp som 
 
 ![](../images/tutorials/create-schema/loyaltyId_field.png)
 
-## Lägg till fler fält som ska blandas
+## Lägg till fler fält som ska blandas {#mixin-fields-2}
 
 Nu när du har lagt till fältet&quot;loyaltyId&quot; kan du lägga till ytterligare fält för att hämta lojalitetsrelaterad information som:
 
@@ -191,7 +194,7 @@ När det är klart innehåller Loyalty-objektet fält för: Förmåns-ID, poäng
 
 ![](../images/tutorials/create-schema/loyalty_object_fields.png)
 
-## Lägg till enum-fält som ska blandas
+## Lägg till enum-fält som ska blandas {#enum}
 
 När du definierar fält i Schemaredigeraren finns det ytterligare alternativ som du kan använda för grundläggande fälttyper för att tillhandahålla ytterligare begränsningar för de data som fältet kan innehålla.
 
@@ -212,7 +215,7 @@ Mer information om tillgängliga ytterligare begränsningar:
 * **Uppräkning:** Anger att det här fältet måste innehålla ett av värdena från en numrerad lista med möjliga värden.
 * **Identitet:** Anger att det här fältet är ett identitetsfält. Mer information om identitetsfält finns [senare i den här självstudiekursen](#identity-field).
 
-## Konvertera ett flerfältsobjekt till en datatyp
+## Konvertera ett flerfältsobjekt till en datatyp {#datatype}
 
 När du har lagt till flera lojalitetsspecifika fält innehåller objektet&quot;lojalitet&quot; nu en gemensam datastruktur som kan vara användbar i andra scheman.
 
@@ -230,9 +233,9 @@ I ett framtida schema kan du nu tilldela ett fält **typen** av &quot;Lojalitet&
 
 ## Ange ett schemafält som identitetsfält {#identity-field}
 
-Scheman används för inmatning av data i Experience Platform, och dessa data används i slutändan för att identifiera individer och sammanfoga information från flera källor. Nyckelfält kan markeras som Identity-fält för att underlätta med den här processen.
+Scheman används för inmatning av data i Experience Platform, och dessa data används i slutändan för att identifiera individer och sammanfoga information från olika källor. Nyckelfält kan markeras som Identity-fält för att underlätta med den här processen.
 
-Experience Platform gör det enkelt att ange ett identitetsfält med hjälp av en **identitetskryssruta** i Schemaläggaren.
+Med Experience Platform är det enkelt att ange ett identitetsfält med hjälp av en **identitetskryssruta** i Schemaläggaren.
 
 Det kan till exempel finnas tusentals medlemmar i bonusprogrammet som tillhör samma&quot;nivå&quot;, men varje medlem i bonusprogrammet har ett unikt&quot;lojalitetsId&quot; (som i det här fallet är den enskilda medlemmens e-postadress). Det faktum att &quot;loyaltyId&quot; är en unik identifierare för varje medlem gör det till en bra kandidat för ett identitetsfält, medan &quot;level&quot; inte är det.
 
@@ -260,7 +263,7 @@ More information about relationships and other schema metadata can be found in t
 
 ## Aktivera schemat för användning i kundprofilen i realtid {#profile}
 
-Schemaredigeraren gör det möjligt att aktivera ett schema för användning med kundprofilen [i](../../profile/home.md)realtid. Profilen ger en helhetsbild av varje enskild kund genom att skapa en robust 360-gradersprofil med kundattribut samt en tidsstämplad redovisning av varje interaktion som kunden har haft i alla system som är integrerade med Experience Platform.
+Schemaredigeraren gör det möjligt att aktivera ett schema för användning med kundprofilen [i](../../profile/home.md)realtid. Profilen ger en helhetsbild av varje enskild kund genom att skapa en robust 360-gradersprofil med kundattribut samt en tidsstämplad översikt över varje interaktion som kunden har haft i alla system som är integrerade med Experience Platform.
 
 För att ett schema ska kunna aktiveras för användning med kundprofilen i realtid måste en primär identitet ha definierats. Du får felmeddelandet&quot;Saknad primär identitet&quot; om du försöker aktivera ett schema utan att först definiera en primär identitet.
 
@@ -282,7 +285,7 @@ Klicka på **Profil** så visas ett popup-fönster där du ombeds bekräfta att 
 
 Nu när du är klar med att komponera ett&quot;Loyalty Members&quot;-schema kan du se hela schemat i *strukturdelen* i redigeraren. Klicka på **Spara** så sparas schemat i schemabiblioteket så att det blir tillgängligt för schemaregistret.
 
-Ditt nya schema kan nu användas för att importera data till plattformen. Kom ihåg att när schemat väl har använts för att importera data får endast additiva ändringar göras. Mer information om schemaversion finns i [grunderna för schemakomposition](../schema/composition.md) .
+Ditt nya schema kan nu användas för att importera data till Platform. Kom ihåg att när schemat väl har använts för att importera data får endast additiva ändringar göras. Mer information om schemaversion finns i [grunderna för schemakomposition](../schema/composition.md) .
 
 Schemat &quot;Bonusmedlemmar&quot; är också tillgängligt för att visas och hanteras med API:t för schemaregister. Börja med att läsa utvecklarhandboken [för](../api/getting-started.md)schematabellens API när du vill börja arbeta med API:t.
 
@@ -292,7 +295,7 @@ Följande information finns som komplement till självstudiekursen för Schemare
 
 ### Skapa en ny klass {#create-new-class}
 
-Experience Platform ger flexibilitet att definiera ett schema baserat på en klass som är unik för din organisation.
+Experience Platform erbjuder flexibilitet att definiera ett schema baserat på en klass som är unik för din organisation.
 
 Öppna dialogrutan *Tilldela klass* genom att klicka på **Tilldela** i avsnittet *Klass* i Schemaläggaren. Välj **Skapa ny klass** i dialogrutan.
 
