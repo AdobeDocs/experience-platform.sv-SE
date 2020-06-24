@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa ett schema med API:t för schemaregister
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: 7cf873d19d26df9ebb70d11ee6e6513173ab45bb
+source-git-commit: b3fa5a17c3a5c2406d368d165da63f2f8c01154d
 workflow-type: tm+mt
 source-wordcount: '2418'
 ht-degree: 0%
@@ -14,18 +14,18 @@ ht-degree: 0%
 
 # Skapa ett schema med API:t för schemaregister
 
-Schemaregistret används för att komma åt schemabiblioteket i Adobe Experience Platform. Schemabiblioteket innehåller resurser som gjorts tillgängliga av Adobe, Experience Platform-partners och leverantörer vars program du använder. Registret innehåller ett användargränssnitt och RESTful API från vilket alla tillgängliga biblioteksresurser är tillgängliga.
+Schemaregistret används för att komma åt schemabiblioteket i Adobe Experience Platform. Schemabiblioteket innehåller resurser som gjorts tillgängliga av Adobe, Experience Platform partners och leverantörer vars program du använder. Registret innehåller ett användargränssnitt och RESTful API från vilket alla tillgängliga biblioteksresurser är tillgängliga.
 
-I den här självstudiekursen används API:t för schemaregister för att vägleda dig genom stegen för att skapa ett schema med en standardklass. Om du föredrar att använda användargränssnittet i Experience Platform finns det stegvisa instruktioner i [Schemaredigerarens självstudiekurs](create-schema-ui.md) för att utföra liknande åtgärder i schemaredigeraren.
+I den här självstudiekursen används API:t för schemaregister för att vägleda dig genom stegen för att skapa ett schema med en standardklass. Om du föredrar att använda användargränssnittet i Experience Platform innehåller [schemaredigerarens självstudiekurs](create-schema-ui.md) stegvisa instruktioner för hur du utför liknande åtgärder i schemaredigeraren.
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](../home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
+* [Experience Data Model (XDM) System](../home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grundläggande om schemakomposition](../schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
 * [Kundprofil](../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Sandlådor](../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa API:t för schemaregister. Detta inkluderar ditt `{TENANT_ID}`, konceptet med&quot;behållare&quot; och de rubriker som krävs för att göra förfrågningar (med särskild uppmärksamhet på rubriken Godkänn och dess möjliga värden).
 
@@ -33,7 +33,7 @@ Den här självstudiekursen går igenom stegen för att skapa ett bonusmedlemssc
 
 ## Skapa ett schema med en standardklass
 
-Ett schema kan ses som en plan för de data ni vill importera till Experience Platform. Varje schema består av en klass och noll eller flera mixiner. Du behöver alltså inte lägga till en blandning för att definiera ett schema, men i de flesta fall används minst en blandning.
+Ett schema kan ses som en plan för de data du vill importera till Experience Platform. Varje schema består av en klass och noll eller flera mixiner. Du behöver alltså inte lägga till en blandning för att definiera ett schema, men i de flesta fall används minst en blandning.
 
 ### Tilldela en klass
 
@@ -135,7 +135,7 @@ curl -X GET \
   -H 'Accept: application/vnd.adobe.xed+json; version=1'
 ```
 
-**Svar **
+**Svar**
 
 Svarsformatet beror på vilket Acceptera-huvud som skickas tillsammans med begäran. Experimentera med olika sidhuvuden för att se vilken som passar bäst.
 
@@ -952,9 +952,9 @@ När du utför en GET-begäran om att söka efter schemat visas nu referensen ti
 
 ### Definiera en identitetsbeskrivning
 
-Scheman används för att importera data till Experience Platform. Dessa data används slutligen för flera tjänster för att skapa en enda, enhetlig vy av en individ. Nyckelfält kan markeras som&quot;Identitet&quot; som hjälp med den här processen, och när data hämtas infogas data i dessa fält i&quot;Identitetsdiagram&quot; för den aktuella personen. Diagramdata kan sedan nås av kundprofilen [i](../../profile/home.md) realtid och andra Experience Platform-tjänster för att ge en sammansatt bild av varje enskild kund.
+Scheman används för inmatning av data i Experience Platform. Dessa data används slutligen för flera tjänster för att skapa en enda, enhetlig vy av en individ. Nyckelfält kan markeras som&quot;Identitet&quot; som hjälp med den här processen, och när data hämtas infogas data i dessa fält i&quot;Identitetsdiagram&quot; för den aktuella personen. Diagramdata kan sedan nås av kundprofilen [i](../../profile/home.md) realtid och andra Experience Platform-tjänster för att ge en sammansatt bild av varje enskild kund.
 
-Fält som vanligen markeras som&quot;Identitet&quot; är: e-postadress, telefonnummer, [Experience Cloud ID (ECID)](https://docs.adobe.com/content/help/en/id-service/using/home.html), CRM ID eller andra unika ID-fält.
+Fält som vanligen markeras som&quot;Identitet&quot; är: e-postadress, telefonnummer, [Experience Cloud-ID (ECID)](https://docs.adobe.com/content/help/sv-SE/id-service/using/home.html), CRM-ID eller andra unika ID-fält.
 
 Överväg alla unika identifierare som är specifika för din organisation, eftersom de också kan vara bra identifieringsfält.
 
