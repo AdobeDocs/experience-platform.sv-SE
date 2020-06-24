@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittsguide för segmentbyggare
 topic: ui guide
 translation-type: tm+mt
-source-git-commit: d00973a07c5fb137f756040fb1dc6eac5a1630f5
+source-git-commit: b5a425714b6d69ca241c8ad81eff779b993633a5
 workflow-type: tm+mt
-source-wordcount: '2470'
+source-wordcount: '2583'
 ht-degree: 0%
 
 ---
@@ -103,11 +103,23 @@ Om du vill lägga till en ny regel i segmentdefinitionen drar du en platta från
 
 Du kan dra och släppa en målgrupp från fliken *[!UICONTROL Audience]* till regelbyggararbetsytan för att referera till målgruppsmedlemskap i den nya segmentdefinitionen. På så sätt kan du inkludera eller exkludera målgruppsmedlemskap som ett attribut i den nya segmentregeln.
 
-För [!DNL Platform] målgrupper som skapats med Segment Builder får ni möjligheten att konvertera målgruppen till den uppsättning regler som användes i segmentdefinitionen för den målgruppen. Den här konverteringen skapar en kopia av regellogiken som sedan kan ändras utan att den ursprungliga segmentdefinitionen påverkas.
+För [!DNL Platform] målgrupper som skapats med [!UICONTROL Segment Builder]får ni möjligheten att konvertera målgruppen till den uppsättning regler som användes i segmentdefinitionen för den målgruppen. Den här konverteringen skapar en kopia av regellogiken som sedan kan ändras utan att den ursprungliga segmentdefinitionen påverkas. Kontrollera att du har sparat alla senaste ändringar av segmentdefinitionen innan du konverterar den till regellogik.
 
 >[!NOTE] När du lägger till en målgrupp från en extern källa refereras endast målgruppsmedlemskapet. Du kan inte konvertera målgruppen till regler, och därför kan reglerna som används för att skapa den ursprungliga målgruppen inte ändras i den nya segmentdefinitionen.
 
 ![](../images/segment-builder/add-audience-to-segment.png)
+
+Om det uppstår några konflikter när målgrupper konverteras till regler försöker [!UICONTROL Segment Builder] bevara de befintliga alternativen så gott de kan.
+
+### kodvyn
+
+Du kan också visa en kodbaserad version av en regel som har skapats i [!UICONTROL Segment Builder]. När du har skapat regeln på arbetsytan i regelbyggaren kan du välja **[!UICONTROL Code view]** att visa ditt segment som en PQL.
+
+![](../images/segment-builder/code-view.png)
+
+I kodvyn finns en knapp som du kan använda för att kopiera segmentets värde för API-anrop. Kontrollera att du har sparat dina senaste ändringar i segmentet för att få den senaste versionen av segmentet.
+
+![](../images/segment-builder/copy-code.png)
 
 ## Behållare
 
