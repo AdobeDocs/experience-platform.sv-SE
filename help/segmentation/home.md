@@ -1,19 +1,22 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Adobe Experience Platform Segmentation Service
+title: Segmenteringstjänsten Adobe Experience Platform
 topic: overview
 translation-type: tm+mt
-source-git-commit: a6a1ecd9ce49c0a55e14b0d5479ca7315e332904
+source-git-commit: b0ef50e25c27aba121bb01c602867953eb2a5f7e
+workflow-type: tm+mt
+source-wordcount: '2386'
+ht-degree: 0%
 
 ---
 
 
 # Översikt över segmenteringstjänsten
 
-Adobe Experience Platform Segmentation Service tillhandahåller ett användargränssnitt och RESTful API som gör att ni kan skapa segment och generera målgrupper utifrån era kundprofildata i realtid. Dessa segment är centralt konfigurerade och underhållna på Platform och är tillgängliga för alla Adobe-lösningar.
+Adobe Experience Platform segmenteringstjänst tillhandahåller ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper utifrån kundprofildata i realtid. Dessa segment konfigureras och underhålls centralt på Platform och är tillgängliga via alla Adobes lösningar.
 
-Det här dokumentet ger en översikt över segmenteringstjänsten och dess roll i Adobe Experience Platform.
+Det här dokumentet innehåller en översikt över segmenteringstjänsten och vilken roll den spelar i Adobe Experience Platform.
 
 ## Komma igång med segmenteringstjänsten
 
@@ -27,7 +30,7 @@ Det är viktigt att förstå följande nyckeltermer som används i hela det här
 
 Segmentering är processen att definiera specifika attribut eller beteenden som delas av en deluppsättning profiler från din profilbutik för att skilja en marknadsföringsbar grupp av människor från din kundbas. I en e-postkampanj som heter&quot;Har du glömt att köpa dina smygtittare?&quot; kanske du vill ha en målgrupp med alla användare som sökte efter skor de senaste 30 dagarna, men som inte slutförde ett köp.
 
-När ett segment väl har definierats begreppsmässigt är det byggt i Experience Platform. Vanligtvis är segment byggda av marknadsföraren eller målgruppsspecialisten, även om vissa organisationer föredrar att de skapas av deras marknadsföringsavdelning i samarbete med deras dataanalytiker. När dataanalytikern granskar data som skickas till Platform, komponerar den segmentdefinitionen genom att välja vilka fält och värden som ska användas för att skapa reglerna eller villkoren för segmentet. Detta görs med antingen användargränssnittet eller API:t.
+När ett segment väl har definierats begreppsmässigt byggs det i Experience Platform. Vanligtvis är segment byggda av marknadsföraren eller målgruppsspecialisten, även om vissa organisationer föredrar att de skapas av deras marknadsföringsavdelning i samarbete med deras dataanalytiker. När dataanalytikerna granskar data som skickas till Platform, komponerar de segmentdefinitionen genom att välja vilka fält och värden som ska användas för att skapa segmentets regler eller villkor. Detta görs med antingen användargränssnittet eller API:t.
 
 ## Skapa segment
 
@@ -42,8 +45,6 @@ Mer information om hur du skapar segmentdefinitioner med API finns i självstudi
 ## Utvärdera segment
 
 ### Direktuppspelningssegmentering
-
->[!NOTE] Direktuppspelningssegmentering är en betafunktion som kommer att vara tillgänglig på begäran.
 
 Direktuppspelningssegmentering är en kontinuerlig process för val av data som uppdaterar era segment som svar på användaraktivitet. När ett segment har byggts och sparats tillämpas segmentdefinitionen på inkommande data i kundprofilen i realtid. Tillägg och borttagningar av segment behandlas regelbundet, vilket säkerställer att målgruppen förblir relevant.
 
@@ -74,7 +75,7 @@ När du skapar ett nytt segment måste du ange ett segmentnamn. Segmentnamnet an
 ### Sammanfoga profiler
 
 Sammanslagningsprinciper är regler som används av profilen för att bestämma hur data ska prioriteras och kombineras till en enhetlig vy under vissa villkor.
-Om ingen sammanfogningsprincip definieras används standardprincipen för sammanfogning av plattform. Om du hellre vill använda en sammanfogningspolicy som är specifik för din organisation, kan du skapa en egen och markera den som din organisations standardpolicy.
+Om ingen sammanfogningsprincip har definierats används Platform standardprincip för sammanfogning. Om du hellre vill använda en sammanfogningspolicy som är specifik för din organisation, kan du skapa en egen och markera den som din organisations standardpolicy.
 
 >[!NOTE] Uppskattningen av målgruppsstorlekar baseras på organisationens standardpolicy för profilsammanslagning.
 
@@ -93,7 +94,7 @@ Dessa avancerade funktioner beskrivs närmare i följande avsnitt.
 
 ## Sekventiell segmentering {#sequential}
 
-En vanlig användarresa är sekventiell till sin natur.  Med Adobe Experience Platform kan ni definiera en ordnad serie segment som speglar den här resan och därigenom fånga upp händelsesekvenser när de inträffar. Du kan ordna händelser i önskad ordning med hjälp av tidslinjen för visuella händelser i Segment Builder.
+En vanlig användarresa är sekventiell till sin natur.  Med Adobe Experience Platform kan ni definiera en ordnad serie segment för att återspegla den här resan och därigenom fånga upp händelsesekvenser när de inträffar. Du kan ordna händelser i önskad ordning med hjälp av tidslinjen för visuella händelser i Segment Builder.
 
 Ett exempel på en kundresa som skulle kräva sekventiell segmentering är produktvyn > produkttillägg > utcheckning > Inget inköp.
 
@@ -209,7 +210,7 @@ Med datumdata kan du tilldela tidsbaserade kontexter till dina segmentdefinition
 
 ### Experience Events
 
-Som ett Adobe Experience Platform-schema registrerar XDM ExperienceEvents explicita och implicita kundinteraktioner med plattformsintegrerade program, inklusive en ögonblicksbild av systemet när interaktionen ägde rum. ExperienceEvents är fakta. Därför är de en datakälla som är tillgänglig för dig under segmentdefinitionen.
+Som ett Adobe Experience Platform-schema registrerar XDM ExperienceEvents explicita och implicita kundinteraktioner med Platform-integrerade program, inklusive en ögonblicksbild av systemet när interaktionen ägde rum. ExperienceEvents är fakta. Därför är de en datakälla som är tillgänglig för dig under segmentdefinitionen.
 
 Som framgår av tabellen nedan återges händelsedata med nyckelord som hjälper till att förfina händelsebeteendet och ange händelseattribut.
 
@@ -228,7 +229,7 @@ Befintliga segmentdefinitioner kan också användas som komponenter i en ny segm
 
 Externa målgrupper kan också användas som komponenter i en ny segmentdefinition och lägga till deras attributregler i det nya segmentet.
 
-För närvarande stöds endast Adobe Audience Manager som målgrupp. Ytterligare källor kommer att aktiveras i framtiden.
+För närvarande stöds bara Adobe Audience Manager som målgrupp. Ytterligare källor kommer att aktiveras i framtiden.
 
 ### Andra datatyper
 
@@ -246,7 +247,7 @@ Utöver de som nämns ovan innehåller förteckningen över datatyper som stöds
 - Datum-tid
 - Array
 - Objekt
-- Karta
+- Mappa
 - Händelser
 
 ## Nästa steg
@@ -256,6 +257,6 @@ Segmenteringstjänsten ger ett konsoliderat arbetsflöde för att bygga segment 
 - Segmentering är processen att definiera en deluppsättning av profiler från din profilbutik, vilket gör att du kan karakterisera beteenden eller attribut för en önskad marknadsföringsbar grupp. Segmenteringstjänsten gör processen möjlig.
 - När du planerar ett segment bör du tänka på att det går att referera till ett segment från och kombinera det med andra segment.
 - Ett segment kan byggas utifrån regler baserade på profildata, relaterade tidsseriedata eller både och.
-- Segment kan antingen utvärderas på begäran eller kontinuerligt. När alla profildata utvärderas vid behov skickas de via segmentdefinitionerna samtidigt. Vid kontinuerlig utvärdering strömmar data genom segmentdefinitioner allt eftersom de kommer in på plattformen.
+- Segment kan antingen utvärderas på begäran eller kontinuerligt. När alla profildata utvärderas vid behov skickas de via segmentdefinitionerna samtidigt. Vid kontinuerlig utvärdering strömmar data genom segmentdefinitioner allt eftersom de kommer in i Platform.
 
 Mer information om hur du definierar segment i användargränssnittet finns i guiden [Skapa](./ui/overview.md)segment. Information om hur du skapar segmentdefinitioner med API finns i självstudiekursen om hur du [skapar segment med API](./tutorials/create-a-segment.md).
