@@ -4,9 +4,9 @@ seo-title: Adobe Experience Platform Web SDK installerar SDK
 description: Lär dig hur du installerar Experience Platform Web SDK
 seo-description: Lär dig hur du installerar Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 5998473c665cb80ffddc092847533f51d81cf581
+source-git-commit: e0dee4e39143ae9d7f5e4aaf9c352555f1c7f5d0
 workflow-type: tm+mt
-source-wordcount: '566'
+source-wordcount: '571'
 ht-degree: 0%
 
 ---
@@ -14,13 +14,13 @@ ht-degree: 0%
 
 # Installera SDK
 
-AEP web SDK finns på ett CDN som du kan använda. Du kan referera till den här filen eller ladda ned den och lagra den i din egen infrastruktur. Den finns i minifierad och icke-minifierad version. Den version som inte är miniatyrversion är användbar i felsökningssyfte.
+Adobe Experience Platform Web SDK finns i ett leveransnätverk (CDN) som du kan använda. Du kan referera till den här filen eller ladda ned den och lagra den i din egen infrastruktur. Den finns i minifierad och icke-minifierad version. Den version som inte är miniatyrversion är användbar i felsökningssyfte.
 
 [https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js](https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js)[https://cdn1.adoberesources.net/alloy/1.0.0/alloy.js](https://cdn1.adoberesources.net/alloy/1.0.0/alloy.js)
 
 ## Lägga till koden
 
-Det första steget i implementeringen av Adobe Experience Platform Web SDK är att kopiera och klistra in följande &quot;baskod&quot; så hög som möjligt i HTML-taggen: `<head>`
+Det första steget i implementeringen av Adobe Experience Platform Web SDK är att kopiera och klistra in följande &quot;baskod&quot; så hög som möjligt i HTML-taggen `<head>` :
 
 ```markup
 <script>
