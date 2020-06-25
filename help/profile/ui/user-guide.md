@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: Användarhandbok för kundprofil i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: 4589d0cdca36992feea208850abdda1a9dc246c0
+source-git-commit: 62ed8892b4f359da3f0368013b5bfd0b9380cc22
 workflow-type: tm+mt
 source-wordcount: '1208'
 ht-degree: 0%
@@ -54,7 +54,7 @@ Profilantalet visar det totala antalet profiler som din organisation har i Exper
 
 Profilantalet omfattar även både profiler med attribut (postdata) och profiler som endast innehåller tidsseriedata (händelsedata), t.ex. Adobe Analytics-profiler. Profilantalet uppdateras regelbundet för att ge ett aktuellt totalt antal profiler i Platform.
 
-När inmatningen av profiler i profilarkivet ökar eller minskar antalet med mer än 5 %, utlöses ett jobb för att uppdatera antalet. För arbetsflöden med direktuppspelningsdata görs en timkontroll för att avgöra om tröskelvärdet på 5 % har uppnåtts eller ej. Om så är fallet utlöses ett jobb automatiskt för att uppdatera antalet profiler. Om tröskelvärdet på 5 % ökning eller minskning uppnås, körs ett jobb för att uppdatera profilantalet för batchintag inom 15 minuter efter att en batch har importerats till profilarkivet.
+När intaget av poster i profilarkivet ökar eller minskar antalet med mer än 5 %, utlöses ett jobb för att uppdatera antalet. För arbetsflöden med direktuppspelningsdata görs en timkontroll för att avgöra om tröskelvärdet på 5 % har uppnåtts eller ej. Om så är fallet utlöses ett jobb automatiskt för att uppdatera antalet profiler. Om tröskelvärdet på 5 % ökning eller minskning uppnås, körs ett jobb för att uppdatera profilantalet för batchintag inom 15 minuter efter att en batch har importerats till profilarkivet.
 
 ### Profiler efter namnområde {#profiles-by-namespace}
 
