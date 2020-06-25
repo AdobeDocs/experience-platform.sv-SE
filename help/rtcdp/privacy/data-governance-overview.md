@@ -4,9 +4,9 @@ seo-title: Datastyrning i realtid med kunddata i Platform
 description: 'Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. '
 seo-description: 'Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. '
 translation-type: tm+mt
-source-git-commit: c81723d00f6b0a9338c8dd3be8c79385677b4e93
+source-git-commit: 490154c23b0ae764ac30b7e93d42b33d09b8a5d6
 workflow-type: tm+mt
-source-wordcount: '1083'
+source-wordcount: '1054'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ CDP i realtid är byggt på Adobe Experience Platform och därför beskrivs merp
 
 * [Använd användningsetiketter på dina data](#labels)
 * [Hantera dataanvändningsprinciper](#policies)
-* [Klara regelefterlevnaden](#enforcement)
+* [Klara regelefterlevnaden](#enforce-data-usage-compliance)
 
 ## Använd användningsetiketter på dina data {#labels}
 
@@ -47,10 +47,7 @@ För att dataanvändningsetiketter effektivt ska kunna stödja regelefterlevnad 
 
 Adobe Experience Platform har flera **huvudprinciper** för vanliga kundupplevelsefall. Du kan visa dessa profiler i användargränssnittet genom att gå till **[!UICONTROL Policies]** arbetsytan och välja **[!UICONTROL Browse]** fliken. I användarhandboken för [profiler](../../data-governance/policies/user-guide.md) i dokumentationen för Experience Platform finns mer detaljerad information om hur du arbetar med policyer i användargränssnittet, inklusive hur du skapar egna policyer.
 
-## (Beta) Tillämpa regelefterlevnad för dataanvändning {#enforce-data-usage-compliance}
-
->[!IMPORTANT]
->Den här funktionen är för närvarande i betaversion och är inte tillgänglig för alla användare. Den kan aktiveras på begäran. Dokumentationen och funktionaliteten kan komma att ändras.
+## Klara regelefterlevnaden {#enforce-data-usage-compliance}
 
 När data har märkts och användarprofiler har definierats kan ni se till att dataanvändningen följer reglerna. När målgruppssegment aktiveras till mål i realtid-CDP tillämpar Data Governance automatiskt användningspolicyer om det inträffar några överträdelser.
 
