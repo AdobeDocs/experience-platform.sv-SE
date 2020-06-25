@@ -4,81 +4,120 @@ solution: Experience Platform
 title: Mappa en CSV-fil till ett XDM-schema
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 33282b1c8ab1129344bd4d7054e86fed75e7b899
+source-git-commit: 7876e6d52815968802bd73bb5e340c99ea3387a8
+workflow-type: tm+mt
+source-wordcount: '1292'
+ht-degree: 1%
 
 ---
 
 
 # Mappa en CSV-fil till ett XDM-schema
 
-För att kunna importera CSV-data till Adobe Experience Platform måste data mappas till ett XDM-schema (Experience Data Model). I den här självstudien beskrivs hur du mappar en CSV-fil till ett XDM-schema med användargränssnittet i Experience Platform.
+För att kunna importera CSV-data till [!DNL Adobe Experience Platform]måste data mappas till ett [!DNL Experience Data Model] (XDM) schema. I den här självstudiekursen beskrivs hur du mappar en CSV-fil till ett XDM-schema med hjälp av [!DNL Platform] användargränssnittet.
 
 I bilagan till den här självstudiekursen finns dessutom mer information om hur du använder [mappningsfunktioner](#mapping-functions).
 
 ## Komma igång
 
-Den här självstudien kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Den här självstudien kräver en fungerande förståelse av följande komponenter i [!DNL Platform]:
 
-- [Experience Data Model (XDM-system)](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
-- [Batchförtäring](../batch-ingestion/overview.md): Den metod som används för att importera data från användartillhandahållna datafiler.
+- [!DNL Experience Data Model (XDM System)](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
+- [!DNL Batch ingestion](../batch-ingestion/overview.md): Den metod som används för att [!DNL Platform] importera data från datafiler som användaren anger.
 
 Den här självstudien kräver också att du redan har skapat en datauppsättning att importera dina CSV-data till. Anvisningar om hur du skapar en datauppsättning i användargränssnittet finns i [självstudiekursen](./ingest-batch-data.md)om dataimport.
 
+## Välj ett mål
+
+Logga in på [!DNL Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Workflows]** från det vänstra navigeringsfältet för att komma åt *[!UICONTROL Workflows]* arbetsytan.
+
+På **[!UICONTROL Workflows]** skärmen väljer du **[!UICONTROL Map CSV to XDM schema]** under **[!UICONTROL Data ingestion]** avsnittet och sedan **[!UICONTROL Launch]**.
+
+![](../images/tutorials/map-a-csv-file/workflows.png)
+
+Arbetsflödet *[!UICONTROL Map CSV to XDM schema]* visas med början på *[!UICONTROL Destination]* steget. Välj en datauppsättning för inkommande data som ska importeras till. Du kan antingen använda en befintlig datauppsättning eller skapa en ny.
+
+**Använd en befintlig datauppsättning**
+
+Om du vill importera dina CSV-data till en befintlig datauppsättning väljer du **[!UICONTROL Use existing dataset]**. Du kan antingen hämta en befintlig datauppsättning med sökfunktionen eller genom att bläddra igenom listan med befintliga datauppsättningar i panelen.
+
+![](../images/tutorials/map-a-csv-file/use-existing-dataset.png)
+
+Om du vill importera dina CSV-data till en ny datauppsättning markerar du **[!UICONTROL Create new dataset]** och anger ett namn och en beskrivning för datauppsättningen i fälten som anges. Välj ett schema med antingen sökfunktionen eller genom att bläddra igenom listan med scheman. Välj **[!UICONTROL Next]** att fortsätta.
+
+![](../images/tutorials/map-a-csv-file/create-new-dataset.png)
+
 ## Lägg till data
 
-I Experience Platform-gränssnittet klickar du på **Arbetsflöden** i den vänstra navigeringen och sedan på **Mappa CSV till XDM-schema**. Klicka på **Starta** i den högra listen som visas.
-
-![](../images/tutorials/map-a-csv-file/workflow-tab.png)
-
-Arbetsflödet _Mappa CSV till XDM-schema_ visas med början i steget _Lägg till data_ .
+Steget *[!UICONTROL Add data]* visas. Dra och släpp CSV-filen i det tillgängliga utrymmet, eller välj **[!UICONTROL Choose files]** om du vill ange CSV-filen manuellt.
 
 ![](../images/tutorials/map-a-csv-file/add-data.png)
 
-Dra och släpp CSV-filen i det utrymme som anges eller klicka på **Bläddra** om du vill välja en fil direkt. Ett _exempeldataavsnitt_ visas när filen har överförts och visar de tio första dataraderna. När du har bekräftat att data har överförts som förväntat klickar du på **Nästa**.
+Avsnittet visas när filen har överförts och visar de tio första dataraderna. *[!UICONTROL Sample data]* När du har bekräftat att data har överförts som förväntat väljer du **[!UICONTROL Next]**.
 
-![](../images/tutorials/map-a-csv-file/csv-added.png)
-
-## Välj ett mål
-
-Steget _Mål_ visas. I listan markerar du datauppsättningen som CSV-data ska hämtas till och klickar sedan på **Nästa**.
-
-![](../images/tutorials/map-a-csv-file/select-destination.png)
+![](../images/tutorials/map-a-csv-file/sample-data.png)
 
 ## Mappa CSV-fält till XDM-schemafält
 
-Steget _Mappning_ visas. Kolumnerna i CSV-filen listas under _Källfält_, med motsvarande XDM-schemafält listade under _Målfält_. Omarkerade målfält markeras med röda konturer.
+Steget *[!UICONTROL Mapping]* visas. Kolumnerna i CSV-filen listas under *[!UICONTROL Source Field]*, med motsvarande XDM-schemafält listade under *[!UICONTROL Target Field]*. Omarkerade målfält markeras med röda konturer. Du kan använda filterfältalternativet för att begränsa listan med tillgängliga källfält.
 
-Om du vill mappa en CSV-kolumn till ett XDM-fält klickar du på schemaikonen bredvid kolumnens motsvarande målfält.
+Om du vill mappa en CSV-kolumn till ett XDM-fält väljer du schemaikonen bredvid kolumnens motsvarande målfält.
 
-![](../images/tutorials/map-a-csv-file/target-field-mapping.png)
+![](../images/tutorials/map-a-csv-file/mapping.png)
 
-Fönstret _Välj_ schema visas. Här kan du navigera i XDM-schemats struktur och leta upp det fält som du vill mappa CSV-kolumnen till. Klicka på ett XDM-fält för att markera det och klicka sedan på **Välj**.
+Fönstret *[!UICONTROL Select schema field]* visas. Här kan du navigera i XDM-schemats struktur och leta upp det fält som du vill mappa CSV-kolumnen till. Klicka på ett XDM-fält för att markera det och klicka sedan på **[!UICONTROL Select]**.
 
-![](../images/tutorials/map-a-csv-file/xdm-field-selection.png)
+![](../images/tutorials/map-a-csv-file/select-schema-field.png)
 
-Skärmen _Mappning_ visas igen och det markerade XDM-fältet visas nu under _Målfält_.
+Skärmen visas igen och det markerade XDM-fältet visas nu under *[!UICONTROL Mapping]* *[!UICONTROL Target Field]*.
 
-![](../images/tutorials/map-a-csv-file/xdm-field-mapped.png)
+![](../images/tutorials/map-a-csv-file/field-mapped.png)
 
-Om du inte vill mappa en viss CSV-kolumn kan du ta bort mappningen genom att klicka på **borttagningsikonen** bredvid målfältet. Om du vill lägga till en ny mappning klickar du på **Lägg till ny mappning** längst ned i listan.
+Om du inte vill mappa en viss CSV-kolumn kan du ta bort mappningen genom att klicka på **borttagningsikonen** bredvid målfältet. Du kan också ta bort alla mappningar genom att markera **[!UICONTROL Clear all mappings button]**.
 
-![](../images/tutorials/map-a-csv-file/remove-or-add-mapping.png)
+![](../images/tutorials/map-a-csv-file/remove-mapping.png)
+
+Om du vill lägga till en ny mappning väljer du **[!UICONTROL Add new mapping]** längst upp i *[!UICONTROL Source Field]* listan.
+
+![](../images/tutorials/map-a-csv-file/add-mapping.png)
 
 När du mappar fält kan du även inkludera funktioner för att beräkna värden baserat på indatakällfält. Mer information finns i avsnittet om [mappningsfunktioner](#mapping-functions) i bilagan.
 
-Upprepa stegen ovan om du vill fortsätta mappningen av CSV-kolumner till XDM-fält. När du är klar klickar du på **Nästa**.
+### Lägg till beräknat fält
 
-![](../images/tutorials/map-a-csv-file/mapping-finish.png)
+Beräknade fält tillåter att värden skapas baserat på attributen i indatabladet. Dessa värden kan sedan tilldelas attribut i målschemat och ges ett namn och en beskrivning som gör det enklare att referera till.
 
-## Ingrediera data
+Klicka på **[!UICONTROL Add calculated field]** knappen för att fortsätta.
 
-Steget _Ingest_ visas så att du kan granska informationen om källfilen och måldatauppsättningen. Klicka på **Ingest** för att börja hämta CSV-data. Beroende på CSV-filens storlek kan den här processen ta flera minuter. Skärmen uppdateras när importen är klar, vilket anger att åtgärden lyckades eller misslyckades. Klicka på **Slutför** för att slutföra arbetsflödet.
+![](../images/tutorials/map-a-csv-file/add-calculated-field.png)
 
-![](../images/tutorials/map-a-csv-file/ingest-data.png)
+Panelen **[!UICONTROL Create calculated field]** visas. Den vänstra dialogrutan innehåller de fält, funktioner och operatorer som stöds i beräkningsfält. Välj en av flikarna för att börja lägga till funktioner, fält eller operatorer i uttrycksredigeraren.
+
+![](../images/tutorials/map-a-csv-file/create-calculated-fields.png)
+
+| Tabb | Beskrivning |
+| --------- | ----------- |
+| Fält | Fliken Fält visar de fält och attribut som är tillgängliga i källschemat. |
+| Funktioner | På fliken Funktioner visas de funktioner som är tillgängliga för att omforma data. |
+| Operatorer | På fliken Operatorer visas de operatorer som är tillgängliga för att omforma data. |
+
+Du kan lägga till fält, funktioner och operatorer manuellt med uttrycksredigeraren i mitten. Välj redigeraren för att börja skapa ett uttryck.
+
+![](../images/tutorials/map-a-csv-file/expression-editor.png)
+
+Välj **[!UICONTROL Save]** att fortsätta.
+
+Mappningsskärmen visas igen med det nya källfältet. Tillämpa motsvarande målfält och välj **[!UICONTROL Finish]** för att slutföra mappningen.
+
+![](../images/tutorials/map-a-csv-file/new-field.png)
+
+## Övervaka dataflödet
+
+När CSV-filen har mappats och skapats kan du övervaka de data som hämtas genom den. Mer information om att övervaka dataflöden finns i självstudiekursen om [övervakning av dataflöden](../../ingestion/quality/monitor-data-flows.md)för direktuppspelning.
 
 ## Nästa steg
 
-I den här självstudiekursen har du mappat en platt CSV-fil till ett XDM-schema och infogat den i Platform. Dessa data kan nu användas av plattformstjänster längre fram i kedjan, t.ex. kundprofil i realtid. Mer information finns i [Kundprofilöversikt](../../profile/home.md) i realtid.
+I den här självstudiekursen har du mappat en platt CSV-fil till ett XDM-schema och infogat den [!DNL Platform]. Dessa data kan nu användas av [!DNL Platform] tjänster längre fram i kedjan, till exempel [!DNL Real-time Customer Profile]. Se översikten för [!DNL Real-time Customer Profile](../../profile/home.md) mer information.
 
 ## Bilaga
 
@@ -86,7 +125,7 @@ I följande avsnitt finns ytterligare information om hur du mappar CSV-kolumner 
 
 ### Mappningsfunktioner
 
-Vissa mappningsfunktioner kan användas för att beräkna och beräkna värden baserat på vad som anges i källfält. Om du vill använda en funktion anger du den under _Källfält_ med lämplig syntax och indata.
+Vissa mappningsfunktioner kan användas för att beräkna och beräkna värden baserat på vad som anges i källfält. Om du vill använda en funktion skriver du in den under *[!UICONTROL Source Field]* med lämplig syntax och indata.
 
 Om du till exempel vill sammanfoga CSV-fält för **ort** och **land** och tilldela dem till XDM-fältet för **stad** anger du källfältet som `concat(city, ", ", county)`.
 
@@ -114,12 +153,12 @@ I följande tabell visas alla mappningsfunktioner som stöds, inklusive exempelu
 | sista | Hämtar det senast angivna argumentet. | last(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;) | &quot;3&quot; |
 | uuid /<br>guid | Skapar ett pseudoslumpmässigt ID. | uuid()<br>guid() | {UNIQUE_ID} |
 | nu | Hämtar aktuell tid. | now() | `2019-10-23T10:10:24.556-07:00[America/Los_Angeles]` |
-| tidsstämpel | Hämtar aktuell Unix-tid. | timestamp() | 1571850624571 |
+| tidsstämpel | Hämtar aktuell Unix-tid. | tidsstämpel() | 1571850624571 |
 | format | Formaterar indatadatum enligt ett angivet format. | format({DATE}, &quot;yyy-MM-dd HH:mm:ss&quot;) | &quot;2019-10-23 11:24:35&quot; |
 | dformat | Konverterar en tidsstämpel till en datumsträng enligt ett angivet format. | format(1571829875, &quot;dd-MMM-yyyy hh:mm&quot;) | &quot;23-Oct-2019 11:24&quot; |
 | datum | Konverterar en datumsträng till ett ZonedDateTime-objekt (ISO 8601-format). | date(&quot;23-Oct-2019 11:24&quot;) | &quot;2019-10-23T11:24:00+00:00&quot; |
-| date_part | Hämtar datumets delar. Följande komponentvärden stöds: <br><br>&quot;year&quot;<br>&quot;yyyy&quot;<br>&quot;yy&quot;<br><br>&quot;kvartal&quot;<br>&quot;qq&quot;<br>&quot;q&quot;<br><br>&quot;month&quot;<br>&quot;mm&quot;<br>&quot;m&quot;<br><br>&quot;dagÅÅ&quot;stapel&quot;y&quot;år&quot;dag&quot;Under&quot;dd&quot;dd&quot;Under&quot;vecka&quot;Under&quot;&quot;veckodag&quot;&quot;dagarna&quot;Dw&quot;Alltid&quot;w&quot;&quot;en&quot;timme&quot;Ni&quot;har&quot;Ni&quot;oberoende&quot;Ni&quot;Ni&quot;har&quot;rätt&quot; rätt&quot; Ni&quot;Ni&quot;Ni&quot;Ni&quot;Ni&quot;Ni&quot;Ni&quot;Ni&quot;har rättUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderNi&quot;Ni&quot;Ni&quot;Ni&quot;Ni&quot;Ni&quot;Ni&quot;har&quot;Ni&quot;Ni&quot;Ni&quot;Ni&quot;Ni&quot;Ni&quot;Ni&quot;Ni&quot;Ni&quot;har&quot;Ni&quot;Ni&quot;Ni&quot;Ni&quot;<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>&quot;Ni&quot;Ni&quot;Ni&quot;Ni&quot;Ni&quot;Ni&quot;Ni&quot;Ni&quot;Ni&quot;har&quot;har&quot;Ni&quot;har&quot;Ni&quot;Ni&quot;Ni&quot;Ni&quot;Ni&quot;Ni hh&quot;&quot;hh24&quot;&quot;hh12&quot;&quot;minut&quot;mi&quot;Under&quot;år&quot;andra&quot;&quot;&quot;s&quot;Under&quot;&quot;millisekunddelen&quot;ms&quot; | date_part(date(&quot;2019-10-17 11:55:12&quot;), &quot;MM&quot;) | 10 |
-| set_date_part | Ersätter en komponent vid ett visst datum. Följande komponenter godkänns: <br><br>&quot;year&quot;<br>&quot;yyyy&quot;<br>&quot;yy&quot;<br><br>&quot;month&quot;<br>&quot;mm&quot;<br>&quot;m&quot;<br><br>&quot;day&quot;<br>&quot;dd&quot;<br>&quot;d&quot;<br><br><br><br><br><br><br><br><br><br><br>&quot;hour&quot;hh&quot;&quot;minute&quot;mi&quot;¥&quot;n&quot;Under&quot;Under&quot;Sekunder&quot;&quot;ss&quot;&quot;s&quot;&quot; | set_date_part(&quot;m&quot;, 4, date(&quot;2016-11-09T11:44:44.797&quot;) | &quot;2016-04-09T11:44:44.797&quot; |
+| date_part | Hämtar datumets delar. Följande komponentvärden stöds: <br><br>&quot;year&quot;<br>&quot;yyyy&quot;<br>&quot;yy&quot;<br><br>&quot;kvartal&quot;<br>&quot;qq&quot;<br>&quot;q&quot;<br><br>&quot;month&quot;<br>&quot;mm&quot;<br>&quot;m&quot;<br><br>&quot;day&quot;<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>&quot;dy&quot;år&quot;y&quot;&quot;dag&quot;dd&quot;dd&quot;dd&quot;d&quot;&quot;vecka&quot;Under&quot;&quot;veckodag&quot;&quot;dw&quot;&quot;w&quot;stapel&quot;timme&quot;Du&quot;har&quot;Under&quot;Under&quot;UnderUnderUnderUnderUnderUnderUnderUnder&quot;UnderUnderUnderUnderUnderUnderUnderUnderUnderUnder&quot;UnderUnder&quot;UnderUnderUnderUnderUnderUnderUnder&quot;Under&quot;UnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnder&quot;UnderUnderUnderUnder&quot;Under&quot;Under&quot;Under&quot;UnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnder&quot;Under&quot;Under&quot;h&quot;&quot;hh24&quot;&quot;hh12&quot;&quot;minut&quot;mi&quot;&quot;n&quot;&quot;sekund&quot;&quot;ss&quot;s&quot;&quot;millisekundnamn&quot;ms&quot; | date_part(date(&quot;2019-10-17 11:55:12&quot;), &quot;MM&quot;) | 10 |
+| set_date_part | Ersätter en komponent ett visst datum. Följande komponenter godkänns: <br><br>&quot;year&quot;<br>&quot;yyyy&quot;<br>&quot;yy&quot;<br><br>&quot;month&quot;<br>&quot;mm&quot;<br>&quot;m&quot;<br><br>&quot;day&quot;<br>&quot;dd&quot;<br>&quot;d&quot;<br><br>&quot;hour&quot;<br><br><br><br><br><br><br><br><br>&quot;hh&quot;&quot;minut&quot;mi&quot;Under&quot;&quot;n&quot;&quot;sekund&quot;Under&quot;ss&quot;&quot;s&quot; | set_date_part(&quot;m&quot;, 4, date(&quot;2016-11-09T11:44:44.797&quot;) | &quot;2016-04-09T11:44:44.797&quot; |
 | make_date_time /<br>make_timestamp | Skapar ett datum från delar. | make_date_time(2019, 10, 17, 11, 55, 12, 999, &quot;America/Los_Angeles&quot;) | `2019-10-17T11:55:12.0&#x200B;00000999-07:00[America/Los_Angeles]` |
 | current_timestamp | Returnerar den aktuella tidsstämpeln. | current_timestamp() | 1571850624571 |
 | aktuellt_datum | Returnerar det aktuella datumet utan någon tidskomponent. | current_date() | &quot;18-Nov-2019&quot; |
