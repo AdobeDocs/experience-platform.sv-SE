@@ -1,12 +1,12 @@
 ---
 title: Snabbstart med Launch
 seo-title: Adobe Experience Platform Web SDK snabbstart med Launch
-description: Snabbstartsguide för användning av Experience Platform Web SDK-tillägget för att samla in data
-seo-description: Snabbstartsguide för användning av Experience Platform Web SDK-tillägget för att samla in data
+description: Snabbstartsguide för hur du använder Experience Platform Web SDK-tillägget för att samla in data
+seo-description: Snabbstartsguide för hur du använder Experience Platform Web SDK-tillägget för att samla in data
 translation-type: tm+mt
-source-git-commit: 62b18ed8f70ad87b04f60ade5730ff30d8985415
+source-git-commit: 3f52def8318f57cfc6534e15415d172e768a8614
 workflow-type: tm+mt
-source-wordcount: '511'
+source-wordcount: '531'
 ht-degree: 0%
 
 ---
@@ -14,35 +14,35 @@ ht-degree: 0%
 
 # Välkommen
 
-Den här guiden tar dig igenom de olika stegen för hur du konfigurerar Adobe Experience Platform Web SDK i Launch. För att kunna använda den här funktionen måste du ha behörighet och vara med i listan över tillåtna. Om du vill komma med på väntelistan kontaktar du din CSM.
+Den här guiden tar dig igenom de olika stegen för hur du konfigurerar Adobe Experience Platform Web SDK i Adobe Launch. Du måste ha behörighet och vara i listan över tillåtna för att kunna använda den här funktionen. Om du vill komma med på väntelistan kontaktar du din CSM. Om du vill använda den här funktionen måste du dessutom:
 
-- Ha en [förstapartsdomän (CNAME)](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-first-party.html) aktiverad. Om du redan har en CNAME for Analytics bör du använda den. Testning under utveckling fungerar utan CNAME, men du behöver en innan du går till produktion
+- Ha en [förstapartsdomän (CNAME)](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-first-party.html) aktiverad. Om du redan har en CNAME för Adobe Analytics bör du använda den. Testning under utveckling fungerar utan CNAME, men du behöver en innan du går till produktion
 - Använd den senaste versionen av tjänsten för besökar-ID
 
 ## Skapa ett konfigurations-ID
 
-Du kan skapa ett konfigurations-ID med [Edge-konfigurationsverktyget](../fundamentals/edge-configuration.md) vid start. På så sätt kan du aktivera Edge Network för att skicka data till de olika lösningarna. Information om hur du hittar de olika alternativen finns på sidan [Edge Configuration Tool](../fundamentals/edge-configuration.md) .
+Du kan skapa ett konfigurations-ID med hjälp av [edge-konfigurationsverktyget](../fundamentals/edge-configuration.md) i Adobe Launch. På så sätt kan du aktivera Edge Network för att skicka data till de olika lösningarna. På sidan [Edge Configuration Tool](../fundamentals/edge-configuration.md) finns mer information om hur du hittar de olika alternativen.
 
 >[!NOTE]
 >
->Din organisation måste finnas i listan över tillåtna för funktionen. Kontakta din CSM för att få plats i listan över tillåtna användare.
+>Din organisation måste finnas i listan över tillåtna för funktionen. Kontakta din CSM för att få tillgång till listan över tillåtna användare.
 
 ## Förbered ett schema
 
-Experience Platform Edge Network tar data som XDM. XDM är ett dataformat som gör att du kan definiera scheman. Schemat definierar hur Edge Network förväntar sig att data ska formateras. För att kunna skicka data måste du definiera ditt schema.
+Experience Platform Edge Network tar data som XDM. XDM är ett dataformat som gör att du kan definiera scheman. Schemat definierar hur Edge Network förväntar sig att data ska formateras. För att kunna skicka data måste du definiera ditt schema. Se till att du slutför följande:
 
 - [Skapa ett schema](../../xdm/tutorials/create-schema-ui.md)
 - Lägg till Adobe Experience Platform Web SDK-mixin i det schema du skapade
 
-## Installera SDK i Launch
+## Installera SDK i Adobe Launch
 
-Logga in på Starta och installera `AEP Web SDK` tillägget. När du installerar SDK uppmanas du att konfigurera tillägget. Ange det konfigurations-ID som du begärde ovan. Tillägget fyller automatiskt i ditt organisations-ID.
+Logga in på Adobe Launch och installera `AEP Web SDK` tillägget. När du installerar SDK uppmanas du att konfigurera tillägget. Ange det konfigurations-ID som du begärde ovan. Tillägget fyller automatiskt i ditt organisations-ID.
 
 Mer information om olika konfigurationsalternativ finns i [Konfigurera SDK](../fundamentals/configuring-the-sdk.md).
 
 ## Skapa ett dataelement baserat på ditt schema
 
-Vid start skapar du ett dataelement som refererar till schemat genom att ändra tillägget till AEP Web SDK och ange typen till XDM-objekt. Detta läser in ditt schema och gör att du kan mappa dataelement till olika delar av schemat.
+I Adobe Launch skapar du ett dataelement som refererar till schemat genom att ändra tillägget till AEP Web SDK och ange typen till XDM-objekt. Detta läser in ditt schema och gör att du kan mappa dataelement till olika delar av schemat.
 
 ![Datumelement i start](../../assets/edge_data_element.png)
 
@@ -54,7 +54,7 @@ Mer information om hur du spårar händelser finns i [Spåra händelser](../fund
 
 ## Nästa steg
 
-När du har data som flödar kan du göra följande.
+När du har data som flödar kan du göra följande:
 
 - [Skapa ditt schema](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/composition.html)
 - [Läs mer om felsökning](../fundamentals/debugging.md)
