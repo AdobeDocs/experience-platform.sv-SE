@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Behandling av sekretessförfrågningar i Data Lake
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3584202554baf46aad174d671084751e6557bbc
+source-git-commit: 327be13cbaaa40e4d0409cbb49a051b7067759bf
+workflow-type: tm+mt
+source-wordcount: '1274'
+ht-degree: 0%
 
 ---
 
 
 # Behandling av sekretessförfrågningar i Data Lake
 
-Adobe Experience Platform Integritetstjänst behandlar kundförfrågningar om åtkomst, avanmälan från försäljning eller radering av personuppgifter enligt juridiska och organisatoriska sekretessbestämmelser.
+Adobe Experience Platform Privacy Servicen behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt juridiska och organisatoriska sekretessbestämmelser.
 
 Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kunddata som lagras i Data Lake.
 
@@ -19,18 +22,18 @@ Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretess
 
 Vi rekommenderar att du har en fungerande förståelse för följande Experience Platform-tjänster innan du läser den här handboken:
 
-* [Integritetstjänst](../privacy-service/home.md): Hanterar kundförfrågningar om åtkomst, avanmälan från försäljning eller borttagning av personliga data mellan Adobe Experience Cloud-program.
-* [Katalogtjänst](home.md): Registersystemet för dataplats och datalinje inom Experience Platform. Tillhandahåller ett API som kan användas för att uppdatera datauppsättningsmetadata.
-* [Experience Data Model (XDM) System](../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
+* [Privacy Service](../privacy-service/home.md): Hanterar kundförfrågningar om åtkomst, avanmälan från försäljning eller borttagning av personliga data mellan Adobe Experience Cloud-program.
+* [Katalogtjänst](home.md): Registreringssystemet för dataplatsen och datalinje inom Experience Platform. Tillhandahåller ett API som kan användas för att uppdatera datauppsättningsmetadata.
+* [Experience Data Model (XDM) System](../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
 * [Identitetstjänst](../identity-service/home.md): Lös den grundläggande utmaning som fragmenteringen av kundupplevelsedata innebär genom att överbrygga identiteter mellan olika enheter och system.
 
 ## Identitetsnamnutrymmen {#namespaces}
 
-Adobe Experience Platform Identity Service knyter samman kundidentitetsdata mellan system och enheter. Identitetstjänsten använder **ID-namnutrymmen** för att ge kontext till identitetsvärden genom att koppla dem till deras ursprungssystem. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;e-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-ID (&quot;AdCloud&quot;) eller ett Adobe Target-ID (&quot;TNTID&quot;).
+Adobe Experience Platform Identity Service knyter samman data om kundidentitet mellan system och enheter. Identitetstjänsten använder **ID-namnutrymmen** för att ge kontext till identitetsvärden genom att koppla dem till deras ursprungssystem. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;E-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-id (&quot;AdCloud&quot;) eller ett Adobe Target-ID (&quot;TNTID&quot;).
 
 Identitetstjänsten underhåller ett arkiv med globalt definierade (standard) och användardefinierade (anpassade) identitetsnamnutrymmen. Standardnamnutrymmen är tillgängliga för alla organisationer (till exempel&quot;E-post&quot; och&quot;ECID&quot;), medan din organisation också kan skapa anpassade namnutrymmen som passar organisationens behov.
 
-Mer information om identitetsnamnutrymmen i Experience Platform finns i [översikten över](../identity-service/namespaces.md)identitetsnamnrymden.
+Mer information om namnutrymmen för identiteter i Experience Platform finns i översikten över [namnutrymmet](../identity-service/namespaces.md).
 
 ## Lägga till identitetsdata i datauppsättningar
 
@@ -40,7 +43,9 @@ När du skapar sekretessförfrågningar för Data Lake måste giltiga identitets
 
 I det här avsnittet går vi igenom stegen för att lägga till en identitetsbeskrivare i ett befintligt datamängds XDM-schema. Om du redan har en datauppsättning med en identitetsbeskrivning kan du hoppa till [nästa avsnitt](#nested-maps).
 
->[!IMPORTANT] När du bestämmer vilka schemafält som ska anges som identiteter bör du tänka på [begränsningarna med att använda kapslade mappningsfält](#nested-maps).
+>[!IMPORTANT]
+>
+>När du bestämmer vilka schemafält som ska anges som identiteter bör du tänka på [begränsningarna med att använda kapslade mappningsfält](#nested-maps).
 
 Det finns två metoder för att lägga till en identitetsbeskrivning i ett dataset-schema:
 
@@ -49,7 +54,7 @@ Det finns två metoder för att lägga till en identitetsbeskrivning i ett datas
 
 ### Använda gränssnittet {#identity-ui}
 
-I Experience Platforms användargränssnitt kan du på arbetsytan redigera dina befintliga XDM-scheman _[!UICONTROL Schemas]_. Om du vill lägga till en identitetsbeskrivning till ett schema väljer du schemat i listan och följer stegen för att[ange ett schemafält som ett identitetsfält](../xdm/tutorials/create-schema-ui.md#identity-field)i schemaredigerarens självstudiekurs.
+I användargränssnittet i Experience Platform kan du redigera dina befintliga XDM-scheman på arbetsytan _[!UICONTROL Schemas]_. Om du vill lägga till en identitetsbeskrivning till ett schema väljer du schemat i listan och följer stegen för att[ange ett schemafält som ett identitetsfält](../xdm/tutorials/create-schema-ui.md#identity-field)i schemaredigerarens självstudiekurs.
 
 När du har angett rätt fält i schemat som identitetsfält kan du gå vidare till nästa avsnitt om [att skicka sekretessförfrågningar](#submit).
 
@@ -97,7 +102,7 @@ curl -X POST \
 | `xdm:sourceSchema` | Det unika URI-ID:t för datauppsättningens XDM-schema. |
 | `xdm:sourceVersion` | Den version av XDM-schemat som anges i `xdm:sourceSchema`. |
 | `xdm:sourceProperty` | Sökvägen till schemafältet som beskrivningen tillämpas på. |
-| `xdm:namespace` | Ett av de [standardnamnutrymmen](../privacy-service/api/appendix.md#standard-namespaces) för identiteter som integritetstjänsten känner igen, eller ett anpassat namnområde som definieras av din organisation. |
+| `xdm:namespace` | Ett av de [standardnamnutrymmen](../privacy-service/api/appendix.md#standard-namespaces) för identiteter som Privacy Servicen känner igen, eller ett anpassat namnutrymme som definieras av organisationen. |
 | `xdm:property` | Antingen &quot;xdm:id&quot; eller &quot;xdm:code&quot;, beroende på vilket namnutrymme som används under `xdm:namespace`. |
 | `xdm:isPrimary` | Ett booleskt värde (tillval). När värdet är true anger detta att fältet är en primär identitet. Scheman får endast innehålla en primär identitet. Standardvärdet är false om det inte inkluderas. |
 
@@ -121,9 +126,9 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och information om den nyska
 
 ## Skicka begäranden {#submit}
 
->[!NOTE] I det här avsnittet beskrivs hur du formaterar sekretessförfrågningar för Data Lake. Vi rekommenderar att du läser [sekretesstjänstens](../privacy-service/ui/overview.md) eller [sekretesstjänstens API](../privacy-service/api/getting-started.md) -dokumentation för att få information om hur du skickar ett sekretessjobb, inklusive hur inskickade användaridentitetsdata formateras korrekt i nyttolaster.
+>[!NOTE] I det här avsnittet beskrivs hur du formaterar sekretessförfrågningar för Data Lake. Vi rekommenderar att du läser [Privacy Servicens API](../privacy-service/ui/overview.md) - eller [Privacy Services-API](../privacy-service/api/getting-started.md) -dokumentation för att få information om hur du skickar ett sekretessjobb, inklusive hur inskickade användaridentitetsdata formateras korrekt i nyttolaster.
 
-I följande avsnitt beskrivs hur du gör sekretessförfrågningar för Data Lake med hjälp av sekretesstjänstens gränssnitt eller API.
+I följande avsnitt beskrivs hur du gör sekretessförfrågningar för Data Lake med Privacy Servicens gränssnitt eller API.
 
 ### Använda gränssnittet
 
@@ -180,9 +185,9 @@ curl -X POST \
 
 ## Ta bort bearbetning av begäran
 
-När Experience Platform tar emot en begäran om borttagning från Integritetstjänst skickar Platform en bekräftelse till Integritetstjänst om att begäran har tagits emot och att data som påverkas har markerats för borttagning. Posterna tas sedan bort från datasjön inom sju dagar. Under denna sjudagarsperiod tas data bort på skärmen och är därför inte tillgängliga för någon plattformstjänst.
+När Experience Platform tar emot en raderingsbegäran från Privacy Servicen, skickar Platform en bekräftelse till Privacy Servicen om att begäran har tagits emot och att data som påverkas har markerats för borttagning. Posterna tas sedan bort från datasjön inom sju dagar. Under denna sjudagarsperiod tas data bort på skärmen och är därför inte tillgängliga för någon Platform-tjänst.
 
-I framtida versioner kommer Platform att skicka en bekräftelse till sekretesstjänsten när data har tagits bort fysiskt.
+I framtida versioner skickar Platform en bekräftelse till Privacy Servicen när data har tagits bort fysiskt.
 
 ## Nästa steg
 
