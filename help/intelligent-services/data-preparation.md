@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Förbered data för användning i intelligenta tjänster
 topic: Intelligent Services
 translation-type: tm+mt
-source-git-commit: 9a2e6f7db441b804f17ec91d06d359439c3d5da5
+source-git-commit: 9905f0248fe88bac5194560318cf8eced32ba93c
 workflow-type: tm+mt
-source-wordcount: '1595'
+source-wordcount: '1877'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Det här dokumentet innehåller allmän vägledning om hur du mappar data om mar
 
 ## Sammanfattning av arbetsflöde
 
-Förberedelseprocessen varierar beroende på om dina data lagras i Adobe Experience Platform eller externt. I det här avsnittet sammanfattas de steg som du behöver utföra med tanke på båda scenarierna.
+Beredningsprocessen varierar beroende på om dina data lagras i Adobe Experience Platform eller externt. I det här avsnittet sammanfattas de steg som du behöver utföra med tanke på båda scenarierna.
 
 ### Förberedelse av externa data
 
@@ -28,7 +28,7 @@ Om dina data lagras utanför [!DNL Experience Platform]följer du stegen nedan:
 
 1. Kontakta Adobe Consulting Services för att begära åtkomstautentiseringsuppgifter för en dedikerad Azure Blob Storage-behållare.
 1. Ladda upp dina data till blobbehållaren med dina inloggningsuppgifter.
-1. Samarbeta med Adobe Consulting Services för att mappa data till [Consumer ExperienceEvent-schemat](#cee-schema) och lägga in dem i Intelligent Services.
+1. Arbeta med Adobe Consulting Services för att mappa data till [Consumer ExperienceEvent-schemat](#cee-schema) och lägga in dem i Intelligent Services.
 
 ### [!DNL Experience Platform] dataförberedelse
 
@@ -41,6 +41,8 @@ Om dina data redan är lagrade i [!DNL Platform]följer du stegen nedan:
 
 Consumer ExperienceEvent-schemat beskriver en individs beteende när det gäller digitala marknadsföringshändelser (webb eller mobil) samt online- eller offlinehandel. Det här schemat måste användas för intelligenta tjänster på grund av semantiskt väl definierade fält (kolumner), så att okända namn som annars skulle göra data mindre tydliga undviks.
 
+CEE-schemat, liksom alla XDM ExperienceEvent-scheman, hämtar systemets tidsseriebaserade tillstånd när en händelse (eller uppsättning händelser) inträffade, inklusive tidpunkten och identiteten för det berörda ämnet. Experience Events är faktauppgifter om vad som hände, och de är därför oföränderliga och representerar vad som hände utan aggregering eller tolkning.
+
 Intelligent Services använder flera nyckelfält i detta schema för att generera insikter från era marknadsföringshändelsedata, som alla kan hittas på rotnivå och expanderas för att visa de underfält som krävs.
 
 ![](./images/data-preparation/schema-expansion.gif)
@@ -51,13 +53,38 @@ Ett fullständigt exempel på blandningen finns i den [offentliga XDM-databasen]
 
 ## Nyckelfält
 
-Avsnitten nedan beskriver de viktigaste fälten i CEE-mixen, som bör användas för att Intelligent Services ska kunna generera användbara insikter, inklusive beskrivningar och länkar till referensdokumentation för ytterligare exempel.
+Det finns flera nyckelfält i CEE-mixen som bör användas för att Intelligent Services ska kunna generera användbara insikter. I det här avsnittet beskrivs användningsfallet och förväntade data för dessa fält, och det finns länkar till referensdokumentation för ytterligare exempel.
 
->[!IMPORTANT] Fältet ( `xdm:channel` som förklaras i det första avsnittet nedan) **krävs** för att AI för Attribution ska fungera med dina data, medan AI för kund inte har några obligatoriska fält. Alla andra nyckelfält rekommenderas, men är inte obligatoriska.
+### Obligatoriska fält
 
-### xdm:kanal
+Alla nyckelfält bör användas, men det finns två fält som **krävs** för att de intelligenta tjänsterna ska fungera:
 
-Detta fält representerar den marknadsföringskanal som är relaterad till ExperienceEvent. Fältet innehåller information om kanaltyp, medietyp och platstyp. **Detta fält _måste_anges för att Attribution AI ska fungera med dina data**.
+* [Ett primärt identitetsfält](#identity)
+* [xdm:tidsstämpel](#timestamp)
+* [xdm:channel](#channel) (obligatoriskt endast för attribut AI)
+
+#### Primär identitet {#identity}
+
+Ett av fälten i ditt schema måste anges som ett primärt identitetsfält, som gör att Intelligent Services kan länka varje instans av tidsseriedata till en enskild person.
+
+Du måste fastställa det bästa fältet som ska användas som primär identitet baserat på källan och datatypen. Ett identitetsfält måste innehålla ett **identitetsnamnutrymme** som anger vilken typ av identitetsdata som fältet förväntar som ett värde. Några giltiga namnutrymmesvärden är:
+
+* &quot;email&quot;
+* &quot;phone&quot;
+* &quot;mcid&quot; (för Adobe Audience Manager ID)
+* &quot;aaid&quot; (för Adobe Analytics ID)
+
+Om du är osäker på vilket fält du ska använda som primär identitet kontaktar du Adobes konsulttjänster för att fastställa den bästa lösningen.
+
+#### xdm:tidsstämpel {#timestamp}
+
+Det här fältet representerar det datum/tid då händelsen inträffade. Detta värde måste anges som en sträng enligt ISO 8601-standarden.
+
+#### xdm:kanal {#channel}
+
+>[!NOTE] Detta fält är endast obligatoriskt när Attribution AI används.
+
+Detta fält representerar den marknadsföringskanal som är relaterad till ExperienceEvent. Fältet innehåller information om kanaltyp, medietyp och platstyp.
 
 ![](./images/data-preparation/channel.png)
 
@@ -74,7 +101,7 @@ Detta fält representerar den marknadsföringskanal som är relaterad till Exper
 
 Fullständig information om de olika delfälten för `xdm:channel`finns i [Experience channel schema](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/channels/channel.schema.md) spec. Exempel på mappningar finns i [tabellen nedan](#example-channels).
 
-#### Exempel på kanalmappningar {#example-channels}
+##### Exempel på kanalmappningar {#example-channels}
 
 I följande tabell visas några exempel på marknadsföringskanaler som har mappats till `xdm:channel` schemat:
 
@@ -89,7 +116,11 @@ I följande tabell visas några exempel på marknadsföringskanaler som har mapp
 | Omdirigering av QR-kod | https:/<span>/ns.adobe.com/xdm/channel-types/direct | ägt | klickningar |
 | Mobil | https:/<span>/ns.adobe.com/xdm/channel-types/mobile | ägt | klickningar |
 
-### xdm:productListItems
+### Rekommenderade fält
+
+I det här avsnittet beskrivs resten av nyckelfälten. Dessa fält behövs inte nödvändigtvis för att Intelligent Services ska fungera, men vi rekommenderar att du använder så många som möjligt för att få bättre insikter.
+
+#### xdm:productListItems
 
 Det här fältet är en array med artiklar som representerar produkter som valts ut av en kund, inklusive produkt-SKU, namn, pris och kvantitet.
 
@@ -118,7 +149,7 @@ Det här fältet är en array med artiklar som representerar produkter som valts
 
 Fullständig information om de olika delfälten för `xdm:productListItems`finns i schemats [specifikationer för](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-commerce.schema.md) handelsinformation.
 
-### xdm:commerce
+#### xdm:commerce
 
 Det här fältet innehåller handelsspecifik information om ExperienceEvent, inklusive inköpsordernummer och betalningsinformation.
 
@@ -156,7 +187,7 @@ Det här fältet innehåller handelsspecifik information om ExperienceEvent, ink
 
 Fullständig information om de olika delfälten för `xdm:commerce`finns i schemats [specifikationer för](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-commerce.schema.md) handelsinformation.
 
-### xdm:webb
+#### xdm:webb
 
 Det här fältet representerar webbinformation som relaterar till ExperienceEvent, t.ex. interaktionen, sidinformation och referenten.
 
@@ -186,7 +217,7 @@ Det här fältet representerar webbinformation som relaterar till ExperienceEven
 
 Fullständig information om de olika delfälten för `xdm:productListItems`finns i [ExperienceEvent-webbinformationsschemats](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-web.schema.md) specifikation.
 
-### xdm:marknadsföring
+#### xdm:marknadsföring
 
 Detta fält innehåller information om marknadsföringsaktiviteter som är aktiva med kontaktytan.
 
@@ -216,7 +247,7 @@ Om du har en [!DNL Adobe Experience Platform] prenumeration och vill mappa och i
 
 >[!NOTE] Stegen nedan kräver en prenumeration på Experience Platform. Om du inte har tillgång till Platform går du vidare till [nästa steg](#next-steps) .
 
-I det här avsnittet beskrivs arbetsflödet för mappning och inmatning av data i Experience Platform för användning i Intelligent Services, inklusive länkar till självstudiekurser för detaljerade steg.
+I det här avsnittet beskrivs arbetsflödet för mappning och inmatning av data till Experience Platform för användning i intelligenta tjänster, inklusive länkar till självstudiekurser för detaljerade steg.
 
 #### Skapa ett CEE-schema och en datauppsättning
 
@@ -234,7 +265,13 @@ När du har skapat och sparat schemat kan du skapa en ny datauppsättning som ba
 * [Skapa en datauppsättning i användargränssnittet](../catalog/datasets/user-guide.md#create) (Följ arbetsflödet för att använda ett befintligt schema)
 * [Skapa en datauppsättning i API:t](../catalog/datasets/create.md)
 
+När datauppsättningen har skapats kan du hitta den i Platform-gränssnittet på *[!UICONTROL Datasets]* arbetsytan.
+
+![](images/data-preparation/dataset-location.png)
+
 #### Lägg till en primär ID-namnområdestagg i datauppsättningen
+
+>[!NOTE] Framtida releaser av Intelligent Services kommer att integrera [Adobe Experience Platform Identity Service](../identity-service/home.md) i deras funktioner för kundidentifiering. Stegen nedan kan ändras.
 
 Om du hämtar in data från [!DNL Adobe Audience Manager], [!DNL Adobe Analytics]eller någon annan extern källa, måste du lägga till en `primaryIdentityNameSpace` -tagg i datauppsättningen. Detta kan du göra genom att göra en PATCH-begäran till katalogtjänstens API.
 
@@ -292,7 +329,7 @@ curl -X PATCH \
       }'
 ```
 
->[!NOTE] Mer information om hur du arbetar med identitetsnamnutrymmen i plattformen finns i översikten över [identitetsnamnutrymmet](../identity-service/namespaces.md).
+>[!NOTE] Mer information om hur du arbetar med identitetsnamnutrymmen i Platform finns i översikten över [identitetsnamnutrymmet](../identity-service/namespaces.md).
 
 **Svar**
 
@@ -306,9 +343,9 @@ Ett lyckat svar returnerar en array som innehåller ID:t för den uppdaterade da
 
 #### Mappa och importera data {#ingest}
 
-När du har skapat ett CEE-schema och en datauppsättning kan du börja mappa dina datatabeller till schemat och importera dessa data till plattformen. I självstudiekursen om hur du [mappar en CSV-fil till ett XDM-schema](../ingestion/tutorials/map-a-csv-file.md) finns mer information om hur du gör detta i användargränssnittet. När en datauppsättning har fyllts i kan samma datauppsättning användas för att importera ytterligare datafiler.
+När du har skapat ett CEE-schema och en datauppsättning kan du börja mappa dina datatabeller till schemat och importera dessa data till Platform. I självstudiekursen om hur du [mappar en CSV-fil till ett XDM-schema](../ingestion/tutorials/map-a-csv-file.md) finns mer information om hur du gör detta i användargränssnittet. När en datauppsättning har fyllts i kan samma datauppsättning användas för att importera ytterligare datafiler.
 
-Om dina data lagras i ett tredjepartsprogram som stöds kan du även välja att skapa en [källanslutning](../sources/home.md) för att importera dina marknadsföringshändelsedata till plattformen i realtid.
+Om dina data lagras i ett tredjepartsprogram som stöds kan du även välja att skapa en [källanslutning](../sources/home.md) för att importera dina marknadsföringshändelsedata till Platform i realtid.
 
 ## Nästa steg {#next-steps}
 
