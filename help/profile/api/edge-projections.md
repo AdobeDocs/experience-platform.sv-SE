@@ -4,21 +4,21 @@ solution: Adobe Experience Platform
 title: Utvecklarhandbok för kundprofil-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: 9600f315f162b6cd86e2dbe2fffc793cc91c9319
+source-git-commit: d464a6b4abd843f5f8545bc3aa8000f379a86c6d
 workflow-type: tm+mt
-source-wordcount: '1940'
+source-wordcount: '1919'
 ht-degree: 0%
 
 ---
 
 
-# Kantmål och prognoser
+# Konfiguration och slutpunkter för kantprojektion
 
-För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Med Adobe Experience Platform får ni tillgång till data i realtid genom att använda kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Adobe-program som Adobe Target och Adobe Campaign använder kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten. Den här guiden innehåller detaljerade anvisningar om hur du använder kundprofils-API i realtid för att arbeta med kantprognoser, inklusive mål och konfigurationer.
+För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Adobe Experience Platform ger realtidsåtkomst till data genom att använda kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Adobe-program som Adobe Target och Adobe Campaign använder kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten. Den här guiden innehåller detaljerade anvisningar om hur du använder kundprofils-API i realtid för att arbeta med kantprognoser, inklusive mål och konfigurationer.
 
-## Getting started
+## Komma igång
 
-API-slutpunkterna som används i den här guiden ingår i kundprofils-API:t i realtid. Innan du fortsätter bör du läsa Utvecklarhandbok för kundprofiler i [realtid](getting-started.md). Avsnittet [](getting-started.md#getting-started) Komma igång i guiden för profilutvecklare innehåller länkar till relaterade ämnen, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa API:er för Experience Platform.
+API-slutpunkten som används i den här guiden ingår i [kundprofils-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)i realtid. Innan du fortsätter bör du läsa [Komma igång-guiden](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
 >[!NOTE]
 >Begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver en `Content-Type` rubrik. Fler än en `Content-Type` används i det här dokumentet. Var särskilt uppmärksam på rubrikerna i samplingssamtalen för att försäkra dig om att du använder rätt `Content-Type` för varje begäran.
@@ -349,7 +349,7 @@ GET /config/projections?schemaName={SCHEMA_NAME}&name={PROJECTION_NAME}
 
 **Begäran**
 
-I följande begäran visas alla projektionskonfigurationer som är associerade med Experience Data Model-schemaklassen, XDM Individual Profile. Mer information om XDM och dess roll inom Platform får du genom att läsa [XDM-systemöversikten](../../xdm/home.md).
+I följande begäran visas alla projektionskonfigurationer som är associerade med Experience Data Model-schemaklassen, XDM Individual Profile. Mer information om XDM och dess roll i Platform finns i [översikten](../../xdm/home.md)över XDM-systemet.
 
 ```shell
 curl -X GET \
@@ -639,4 +639,4 @@ Returnerar bara värdena för `type` och `city` fälten för varje element i `ad
 
 ## Nästa steg
 
-Den här guiden har visat vilka steg som krävs för att konfigurera kantprognoser och mål, inklusive hur du formaterar `selector` parametern korrekt. Nu kan du skapa nya kantmål och prognoser som är specifika för organisationens behov. Information om ytterligare åtgärder som är tillgängliga via profil-API finns i Utvecklarhandbok [för kundprofil i](getting-started.md)realtid.
+Den här guiden har visat vilka steg som krävs för att konfigurera prognoser och destinationer, inklusive hur du formaterar `selector` parametern korrekt. Nu kan du skapa nya projektionsmål och konfigurationer som är specifika för organisationens behov.
