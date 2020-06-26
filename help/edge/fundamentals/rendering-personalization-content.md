@@ -1,12 +1,12 @@
 ---
 title: Återge personaliserat innehåll
-seo-title: Adobe Experience Platform Web SDK Rendering personaliserat innehåll
+seo-title: Adobe Experience Platform Web SDK Rendering personalized content
 description: Lär dig återge personaliserat innehåll med Experience Platform Web SDK
 seo-description: Lär dig återge personaliserat innehåll med Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 4bff4b20ccc1913151aa1783d5123ffbb141a7d0
+source-git-commit: 5f263a2593cdb493b5cd48bc0478379faa3e155d
 workflow-type: tm+mt
-source-wordcount: '236'
+source-wordcount: '232'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Översikt över personaliseringsalternativ
 
-Adobe Experience Platform Web SDK stöder frågor om personaliseringslösningarna på Adobe inklusive Adobe Target. Det finns två sätt att personalisera: hämta innehåll som kan återges automatiskt och innehåll som måste återges av utvecklaren. SDK har även funktioner för att [hantera flimmer](../../edge/solution-specific/target/flicker-management.md).
+Adobe Experience Platform Web SDK stöder frågor om personaliseringslösningar från Adobe, inklusive Adobe Target. Det finns två sätt att personalisera: hämta innehåll som kan återges automatiskt och innehåll som måste återges av utvecklaren. SDK har även funktioner för att [hantera flimmer](../../edge/solution-specific/target/flicker-management.md).
 
 ## Återge innehåll automatiskt
 
@@ -36,7 +36,7 @@ alloy("sendEvent", {
 });
 ```
 
-Återgivningen av anpassat innehåll är asynkron, så det bör inte finnas några antaganden runt när ett visst innehåll är en del av sidan.
+Återgivning av anpassat innehåll är asynkront, så det bör inte finnas några antaganden runt när ett visst innehåll är en del av sidan.
 
 ## Återge innehåll manuellt
 
@@ -90,9 +90,10 @@ Detta returnerar en lista med beslut som ett JSON-objekt för varje beslut.
 }
 ```
 
-{info}Om du använder Målomfattningar blir mBoxes på servern, är det bara de som blir alla förfrågningar på en gång i stället för individuellt. Den globala mbox skickas alltid.
-{info}
+>[!TIP]
+>
+> Om du använder Target scopes som mBoxes på servern, är det bara de som blir alla förfrågningar på en gång i stället för var för sig. Den globala mbox skickas alltid.
 
 ### Hämta automatiskt innehåll
 
-Om du vill `result.decisions` att den ska inkludera de automatiskt återgivningsbara besluten kan du ange false `renderDecisions` och inkludera det särskilda omfånget `__view__`
+Om du vill `result.decisions` att de automatiska återgivningsbesluten ska inkluderas kan du ange värdet false `renderDecisions` och inkludera det speciella omfånget `__view__`.
