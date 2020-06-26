@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Utvecklarhandbok för kundprofil-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: 9600f315f162b6cd86e2dbe2fffc793cc91c9319
+source-git-commit: d464a6b4abd843f5f8545bc3aa8000f379a86c6d
 workflow-type: tm+mt
-source-wordcount: '2057'
+source-wordcount: '2052'
 ht-degree: 0%
 
 ---
@@ -14,15 +14,15 @@ ht-degree: 0%
 
 # Sammanfoga profiler
 
-Med Adobe Experience Platform kan ni samla data från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanför dessa data är sammanslagningsprinciper de regler som används av Platform för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa den enhetliga vyn. Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen. I den här handboken visas steg för hur du arbetar med sammanfogningsprinciper med API:t. Om du vill arbeta med sammanfogningsprinciper med hjälp av användargränssnittet läser du i [användarhandboken](../ui/merge-policies.md)för sammanfogningsprinciper.
+Med Adobe Experience Platform kan ni samla data från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanför dessa data är sammanslagningsprinciper de regler som Platform använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa den enhetliga vyn. Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen. I den här handboken visas steg för hur du arbetar med sammanfogningsprinciper med API:t. Om du vill arbeta med sammanfogningsprinciper med hjälp av användargränssnittet läser du i [användarhandboken](../ui/merge-policies.md)för sammanfogningsprinciper.
 
 ## Komma igång
 
-API-slutpunkterna som används i den här guiden ingår i kundprofils-API:t i realtid. Innan du fortsätter bör du läsa utvecklarhandboken för [kundprofiler i realtid](getting-started.md). Avsnittet [](getting-started.md#getting-started) Komma igång i guiden för profilutvecklare innehåller länkar till relaterade ämnen, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa API:er för Experience Platform.
+API-slutpunkten som används i den här guiden ingår i [kundprofils-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)i realtid. Innan du fortsätter bör du läsa [Komma igång-guiden](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
 ## Komponenter i sammanfogningsprinciper {#components-of-merge-policies}
 
-Sammanslagningsprinciper är privata för IMS-organisationen, vilket gör att du kan skapa olika profiler för att sammanfoga scheman på det sätt du behöver. Alla API:er som använder profildata kräver en sammanfogningsprincip, men en standardprincip används om ingen sådan uttryckligen anges. Plattformen innehåller en standardprincip för sammanslagning, eller så kan du skapa en sammanfogningsprincip för ett specifikt schema och markera den som standard för din organisation. Varje organisation kan ha flera sammanfogningsprinciper per per schema, men varje schema kan bara ha en standardsammanfogningsprincip. Alla sammanfogningsprinciper som anges som standard används i de fall där schemanamnet anges och en sammanfogningsprincip krävs, men inte anges. När du anger en sammanfogningsprincip som standard kommer alla befintliga sammanfogningsprinciper som tidigare var inställda som standard automatiskt att uppdateras till att inte längre användas som standard.
+Sammanslagningsprinciper är privata för IMS-organisationen, vilket gör att du kan skapa olika profiler för att sammanfoga scheman på det sätt du behöver. Alla API:er som använder profildata kräver en sammanfogningsprincip, men en standardprincip används om ingen sådan uttryckligen anges. Platform tillhandahåller en standardprincip för sammanslagning, eller så kan du skapa en sammanfogningsprincip för ett specifikt schema och markera det som standard för din organisation. Varje organisation kan ha flera sammanfogningsprinciper per per schema, men varje schema kan bara ha en standardsammanfogningsprincip. Alla sammanfogningsprinciper som anges som standard används i de fall där schemanamnet anges och en sammanfogningsprincip krävs, men inte anges. När du anger en sammanfogningsprincip som standard kommer alla befintliga sammanfogningsprinciper som tidigare var inställda som standard automatiskt att uppdateras till att inte längre användas som standard.
 
 ### Slutför policyobjekt för sammanfogning
 
@@ -59,7 +59,7 @@ Det fullständiga principobjektet för sammanfogning representerar en uppsättni
 | `attributeMerge` | [Kopplingsobjekt för](#attribute-merge) attribut anger på vilket sätt sammanfogningsprincipen prioriterar profilattributsvärden vid datakonflikter. |
 | `schema` | Det [schemaobjekt](#schema) som sammanfogningsprincipen kan användas på. |
 | `default` | Booleskt värde som anger om den här sammanfogningsprincipen är standard för det angivna schemat. |
-| `version` | Plattformsbaserad version av sammanslagningsprincipen. Det här skrivskyddade värdet ökas stegvis när en sammanfogningsprincip uppdateras. |
+| `version` | Platform har en version av kopplingsregeln. Det här skrivskyddade värdet ökas stegvis när en sammanfogningsprincip uppdateras. |
 | `updateEpoch` | Datum för den senaste uppdateringen av sammanfogningsprincipen. |
 
 **Exempel på sammanfogningsprincip**
@@ -693,7 +693,7 @@ Ett lyckat svar returnerar information om den uppdaterade sammanfogningsprincipe
 
 ## Ta bort en sammanfogningsprincip
 
-Du kan ta bort en sammanfogningsprincip genom att göra en DELETE-begäran till `/config/mergePolicies` slutpunkten och inkludera ID:t för den sammanfogningsprincip som du vill ta bort i sökvägen till begäran.
+Du kan ta bort en sammanfogningsprincip genom att göra en DELETE-begäran till `/config/mergePolicies` slutpunkten och inkludera ID:t för den sammanfogningsprincip som du vill ta bort i sökvägen för begäran.
 
 **API-format**
 
@@ -724,7 +724,7 @@ En slutförd borttagningsbegäran returnerar HTTP-status 200 (OK) och en tom sva
 
 ## Nästa steg
 
-Nu när du vet hur man skapar och konfigurerar sammanfogningsprinciper för IMS-organisationen kan du använda dem för att skapa målgruppssegment utifrån kundprofildata i realtid. Läs dokumentationen [till](../../segmentation/home.md) Adobe Experience Platform Segmentation Service om hur du börjar definiera och arbeta med segment.
+Nu när du vet hur man skapar och konfigurerar sammanfogningsprinciper för IMS-organisationen kan du använda dem för att skapa målgruppssegment utifrån kundprofildata i realtid. Se dokumentationen [till](../../segmentation/home.md) Adobe Experience Platform Segmenteringstjänsten för att börja definiera och arbeta med segment.
 
 
 
