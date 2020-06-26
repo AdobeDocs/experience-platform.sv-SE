@@ -4,21 +4,22 @@ seo-title: Adobe Experience Platform Web SDK installerar SDK
 description: Lär dig hur du installerar Experience Platform Web SDK
 seo-description: Lär dig hur du installerar Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: e0dee4e39143ae9d7f5e4aaf9c352555f1c7f5d0
+source-git-commit: 90afc28d41878cbed90fc05176276a30d8aebe09
 workflow-type: tm+mt
-source-wordcount: '571'
+source-wordcount: '580'
 ht-degree: 0%
 
 ---
 
 
-# Installera SDK
+# Installera SDK {#installing-the-sdk}
 
 Adobe Experience Platform Web SDK finns i ett leveransnätverk (CDN) som du kan använda. Du kan referera till den här filen eller ladda ned den och lagra den i din egen infrastruktur. Den finns i minifierad och icke-minifierad version. Den version som inte är miniatyrversion är användbar i felsökningssyfte.
 
-[https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js](https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js)[https://cdn1.adoberesources.net/alloy/1.0.0/alloy.js](https://cdn1.adoberesources.net/alloy/1.0.0/alloy.js)
+* Minimerad version: [https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js](https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js)
+* Ej miniatyrversion: [https://cdn1.adoberesources.net/alloy/1.0.0/alloy.js](https://cdn1.adoberesources.net/alloy/1.0.0/alloy.js)
 
-## Lägga till koden
+## Lägga till koden {#adding-the-code}
 
 Det första steget i implementeringen av Adobe Experience Platform Web SDK är att kopiera och klistra in följande &quot;baskod&quot; så hög som möjligt i HTML-taggen `<head>` :
 
@@ -51,7 +52,7 @@ I det här exemplet byter den globala funktionen namn `mycustomname`i stället f
 
 Utöver att skapa en global funktion läser den här baskoden även in ytterligare kod som finns i en extern fil \(`alloy.js`\) som finns på en server. Som standard läses den här koden in asynkront så att webbsidan kan fungera så bra som möjligt. Detta är den rekommenderade implementeringen.
 
-## Stöd för Internet Explorer
+## Stöd för Internet Explorer {#support-internet-explore}
 
 Denna SDK använder löften, som är ett sätt att förmedla slutförandet av asynkrona uppgifter. Den implementering av [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) som används av SDK stöds internt av alla målwebbläsare utom Internet Explorer. Om du vill använda SDK i Internet Explorer måste du ha `window.Promise` fyllt i [i](https://remysharp.com/2010/10/08/what-is-a-polyfill)texten.
 
@@ -71,9 +72,9 @@ Om du har fastställt att du måste polyfylla `window.Promise`i, inkluderar du f
 
 Detta läser in ett skript som ser till att `window.Promise` det är en giltig Promise-implementering.
 
-## Läsa in JavaScript-filen synkront
+## Läsa in JavaScript-filen synkront {#loading-javascript-synchronously}
 
-Baskoden som du har kopierat och klistrat in i webbplatsens HTML-kod läser som förklarats ovan in en extern fil med ytterligare kod. Den här extra koden innehåller SDK:s kärnfunktioner. Alla kommandon som du försöker köra medan den här filen läses in är köade och bearbetas sedan när filen har lästs in. Det här är den mest prestandametoden vid installation.
+Så som förklaras i avsnittet [Lägga till koden](#adding-the-code)läser den baskod som du har kopierat och klistrat in i webbplatsens HTML-kod in en extern fil med ytterligare kod. Den här extra koden innehåller SDK:s kärnfunktioner. Alla kommandon som du försöker köra medan den här filen läses in är köade och bearbetas sedan när filen har lästs in. Det här är den mest prestandametoden vid installation.
 
 Under vissa omständigheter kanske du vill läsa in filen synkront \(mer information om dessa omständigheter beskrivs senare\). Om du gör det blockeras resten av HTML-dokumentet från att tolkas och återges av webbläsaren tills den externa filen har lästs in och körts. Denna ytterligare fördröjning innan primärt innehåll visas för användarna rekommenderas vanligtvis inte, men den kan vara bra beroende på omständigheterna.
 
