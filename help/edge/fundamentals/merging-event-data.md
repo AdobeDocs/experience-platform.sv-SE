@@ -4,9 +4,9 @@ seo-title: Sammanfoga händelsedata för Adobe Experience Platform Web SDK
 description: Lär dig hur du sammanfogar händelsedata för Experience Platform Web SDK
 seo-description: Lär dig hur du sammanfogar händelsedata för Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 4bff4b20ccc1913151aa1783d5123ffbb141a7d0
+source-git-commit: 5f263a2593cdb493b5cd48bc0478379faa3e155d
 workflow-type: tm+mt
-source-wordcount: '436'
+source-wordcount: '411'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Den här funktionen är fortfarande under utveckling, så alla lösningar kan inte sammanfoga dessa data.
+>Den här funktionen är fortfarande under utveckling. Alla lösningar kan inte sammanfoga händelsedata enligt beskrivningen på den här sidan.
 
 Ibland är inte alla data tillgängliga när en händelse inträffar. Du kanske vill hämta data som du _har_ så att de inte går förlorade om användaren till exempel stänger webbläsaren. Å andra sidan kan du även inkludera data som blir tillgängliga senare.
 
@@ -58,15 +58,15 @@ alloy("sendEvent", {
 });
 ```
 
-Genom att skicka samma ID-värde för händelsesammanfogning till båda händelsekommandona i det här exemplet, utökas data i det andra händelsekommandot till data som tidigare skickats vid det första händelsekommandot. En post för varje händelsekommando skapas i Experience Data-plattformen, men under rapporteringen förenas posterna med hjälp av händelsenammanfognings-ID och visas som en enda händelse.
+Genom att skicka samma `eventMergeID` värde till båda händelsekommandona i det här exemplet utökas data i det andra händelsekommandot till data som tidigare skickats vid det första händelsekommandot. En post för varje händelsekommando skapas i Experience Data Platform, men under rapporteringen förenas posterna med `eventMergeID` och visas som en enda händelse.
 
-Om du skickar data om en viss händelse till tredjepartsleverantörer kan du även inkludera samma ID för händelsesammanfogning med dessa data. Om du senare väljer att importera data från tredje part till Adobe Experience Platform, kommer ID:t för händelsesammanfogning att användas för att sammanfoga alla data som samlats in som ett resultat av den diskreta händelse som inträffade på din webbsida.
+Om du skickar data om en viss händelse till tredjepartsleverantörer kan du även inkludera dessa data `eventMergeID` med dem. Om du senare väljer att importera tredjepartsdata till Adobe Experience Platform används dessa för att sammanfoga alla data som samlats in som ett resultat av den diskreta händelse som inträffade på din webbsida. `eventMergeID`
 
-## Generera ett ID för händelsesammanfogning
+## Generera en `eventMergeID`
 
-ID-värdet för händelsesammanfogning kan vara vilken sträng du vill, men kom ihåg att alla händelser som skickas med samma ID rapporteras som en enda händelse, så var noga med att tillämpa unikhet när händelser inte ska sammanfogas. Om du vill att SDK ska generera ett unikt ID för händelsesammanfogning åt dig (i enlighet med den allmänt använda [UID v4-specifikationen](https://www.ietf.org/rfc/rfc4122.txt)) kan du använda `createEventMergeId` kommandot för att göra det.
+Värdet kan vara vilken sträng du vill, men kom ihåg att alla händelser som skickas med samma ID rapporteras som en enda händelse, så var försiktig med att framtvinga unika händelser när händelser inte ska sammanfogas. `eventMergeID` Om du vill att SDK ska generera ett unikt värde `eventMergeID` åt dig (enligt den vitt spridda [UID v4-specifikationen](https://www.ietf.org/rfc/rfc4122.txt)) kan du använda `createEventMergeId` kommandot för att göra det.
 
-Precis som med alla kommandon returneras ett löfte eftersom du kan köra kommandot innan SDK-filen har lästs in. Löftet löses med ett unikt ID för händelsesammanfogning så snart som möjligt. Du kan vänta på att löftet ska lösas innan du skickar data till servern enligt följande:
+Precis som med alla kommandon returneras ett löfte eftersom du kan köra kommandot innan SDK-filen har lästs in. Löftet löses med ett unikt `eventMergeID` snarast möjligt. Du kan vänta på att löftet ska lösas innan du skickar data till servern enligt följande:
 
 ```javascript
 var eventMergeIdPromise = alloy("createEventMergeId");
@@ -110,7 +110,7 @@ eventMergeIdPromise.then(function(results) {
 });
 ```
 
-Följ samma mönster om du av andra anledningar vill ha åtkomst till händelsesammanfognings-ID (till exempel för att skicka det till en tredjepartsleverantör):
+Följ samma mönster om du vill ha åtkomst till `eventMergeID` av andra anledningar (till exempel för att skicka det till en tredjepartsleverantör):
 
 ```javascript
 var eventMergeIdPromise = alloy("createEventMergeId");
