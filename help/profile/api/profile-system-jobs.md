@@ -4,21 +4,24 @@ solution: Adobe Experience Platform
 title: Utvecklarhandbok för kundprofil-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: d0ccaa5511375253a2eca8f1235c2f953b734709
+source-git-commit: d464a6b4abd843f5f8545bc3aa8000f379a86c6d
+workflow-type: tm+mt
+source-wordcount: '1501'
+ht-degree: 0%
 
 ---
 
 
 # Profilsystemjobb (Delete-begäranden)
 
-Med Adobe Experience Platform kan ni importera data från flera olika källor och bygga robusta profiler för enskilda kunder. Data som hämtas till Platform lagras i Data Lake samt i datalagret för kundprofiler i realtid. Ibland kan det vara nödvändigt att ta bort en datauppsättning eller en batch från profilarkivet för att ta bort data som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder Real-time Customer Profile API för att skapa ett profilsystemjobb, även kallat&quot;delete request&quot;, som också kan ändras, övervakas eller tas bort vid behov.
+Med Adobe Experience Platform kan ni importera data från flera olika källor och skapa stabila profiler för enskilda kunder. Data som hämtas till Platform lagras i Data Lake samt i datalagret för kundprofiler i realtid. Ibland kan det vara nödvändigt att ta bort en datauppsättning eller en batch från profilarkivet för att ta bort data som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder Real-time Customer Profile API för att skapa ett profilsystemjobb, även kallat&quot;delete request&quot;, som också kan ändras, övervakas eller tas bort vid behov.
 
 >[!NOTE]
 >Om du försöker ta bort datauppsättningar eller grupper från datasjön kan du få instruktioner i översikten [över](../../catalog/home.md) katalogtjänsten.
 
 ## Komma igång
 
-API-slutpunkterna som används i den här guiden ingår i kundprofils-API:t i realtid. Innan du fortsätter bör du läsa utvecklarhandboken för [kundprofiler i realtid](getting-started.md). Avsnittet [](getting-started.md#getting-started) Komma igång i guiden för profilutvecklare innehåller länkar till relaterade ämnen, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa API:er för Experience Platform.
+API-slutpunkten som används i den här guiden ingår i [kundprofils-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)i realtid. Innan du fortsätter bör du läsa [Komma igång-guiden](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
 ## Visa borttagningsbegäranden
 
@@ -100,10 +103,10 @@ Initiering av en ny borttagningsbegäran görs via en POST-begäran till `/syste
 
 ### Ta bort en datauppsättning
 
-För att en datauppsättning ska kunna tas bort måste datauppsättnings-ID:t inkluderas i POST-begärans innehåll. Den här åtgärden tar bort ALLA data för en viss datauppsättning. Med Experience Platform kan ni ta bort datauppsättningar baserade på både schema för post- och tidsserier.
+För att en datauppsättning ska kunna tas bort måste datauppsättnings-ID:t inkluderas i POST-begärans innehåll. Den här åtgärden tar bort ALLA data för en viss datauppsättning. Med Experience Platform kan du ta bort datauppsättningar baserat på både schema för post- och tidsserier.
 
 >[!CAUTION]
-> När du försöker ta bort en profilaktiverad datauppsättning med Experience Platform-gränssnittet inaktiveras datauppsättningen för inmatning, men den tas inte bort förrän en borttagningsbegäran skapas med API:t. Mer information finns i [bilagan](#appendix) till det här dokumentet.
+> När du försöker ta bort en profilaktiverad datauppsättning med användargränssnittet i Experience Platform inaktiveras datauppsättningen för förtäring, men den tas inte bort förrän en borttagningsbegäran skapas med API:t. Mer information finns i [bilagan](#appendix) till det här dokumentet.
 
 **API-format**
 
@@ -274,7 +277,7 @@ När status för borttagningsbegäran är&quot;SLUTFÖRD&quot; kan du bekräfta 
 
 ## Ta bort en borttagningsbegäran
 
-Med Experience Platform kan ni ta bort en tidigare begäran, vilket kan vara användbart av flera olika anledningar, bland annat om borttagningsjobbet inte slutfördes eller fastnade i bearbetningsfasen. Om du vill ta bort en borttagningsbegäran kan du utföra en DELETE-begäran till `/system/jobs` slutpunkten och inkludera ID:t för den borttagningsbegäran som du vill ta bort till sökvägen för begäran.
+Med Experience Platform kan du ta bort en tidigare begäran, vilket kan vara användbart av flera anledningar, bland annat om borttagningsjobbet inte slutfördes eller fastnade i bearbetningsfasen. Om du vill ta bort en borttagningsbegäran kan du utföra en DELETE-begäran till `/system/jobs` slutpunkten och inkludera ID:t för den borttagningsbegäran som du vill ta bort till sökvägen för begäran.
 
 **API-format**
 
@@ -303,13 +306,13 @@ En slutförd borttagningsbegäran returnerar HTTP-status 200 (OK) och en tom sva
 
 ## Nästa steg
 
-Nu när du vet vilka steg det handlar om att ta bort datauppsättningar och grupper från profilarkivet i Experience Platform kan du ta bort data som har lagts till felaktigt eller som din organisation inte längre behöver. Observera att det inte går att ångra en borttagningsbegäran. Du bör därför bara ta bort data som du är säker på att du inte behöver nu och inte behöver i framtiden.
+Nu när du vet vilka steg det handlar om att ta bort datauppsättningar och grupper från Profilarkivet i Experience Platform kan du ta bort data som har lagts till felaktigt eller som din organisation inte längre behöver. Observera att det inte går att ångra en borttagningsbegäran. Du bör därför bara ta bort data som du är säker på att du inte behöver nu och inte behöver i framtiden.
 
 ## Bilaga {#appendix}
 
 Följande information kompletterar åtgärden att ta bort en datauppsättning från profilarkivet.
 
-### Ta bort en datauppsättning med Experience Platform-gränssnittet
+### Ta bort en datauppsättning med användargränssnittet i Experience Platform
 
 När du använder användargränssnittet i Experience Platform för att ta bort en datauppsättning som har aktiverats för profilen öppnas en dialogruta med frågan&quot;Är du säker på att du vill ta bort den här datauppsättningen från Experience Data Lake? Använd API:t &quot;profilsystemjobb&quot; för att ta bort den här datauppsättningen från profiltjänsten.&quot;
 
