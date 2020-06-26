@@ -1,36 +1,36 @@
 ---
 title: Konfiguration av Edge
 seo-title: Edge-konfiguration för Experience Platform Web SDK
-description: 'Lär dig hur du konfigurerar Experience Platform Edge Network. '
-seo-description: 'Lär dig hur du konfigurerar Experience Platform Edge Network. '
+description: 'Lär dig hur du konfigurerar Experience Platform Edge-nätverket. '
+seo-description: 'Lär dig hur du konfigurerar Experience Platform Edge-nätverket. '
 translation-type: tm+mt
-source-git-commit: 2d58f7f95c6ad125e66856350aee2f29a0499061
+source-git-commit: 5f263a2593cdb493b5cd48bc0478379faa3e155d
 workflow-type: tm+mt
-source-wordcount: '837'
+source-wordcount: '826'
 ht-degree: 0%
 
 ---
 
 
-# Konfiguration av Edge
+# Konfigurera Edge
 
-Konfigurationen för Adobe Experience Platfrom Web SDK är uppdelad på två platser. Kommandot [](configuring-the-sdk.md) configure i SDK styr saker som måste hanteras på klienten, till exempel `edgeDomain`. Edge-konfigurationen hanterar all annan konfiguration för SDK. När en begäran skickas till Adobe Experience Platform Edge Network används den för att referera till konfigurationen på serversidan `edgeConfigId` . På så sätt kan du uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
+Konfigurationen för Adobe Experience Platform Web SDK är uppdelad på två platser. Kommandot [](configuring-the-sdk.md) configure i SDK styr saker som måste hanteras på klienten, till exempel `edgeDomain`. Edge-konfigurationen hanterar all annan konfiguration för SDK. När en begäran skickas till Adobe Experience Platform Edge-nätverket används den för att referera till konfigurationen på serversidan `edgeConfigId` . På så sätt kan du uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
 
 ## Skapa ett Edge Configuration ID
 
-Konfiguration-ID för Edge kan skapas i Launch med hjälp av edge-konfigurationsverktyget. Med det här verktyget kan du skapa både edge-konfigurationen och miljöer i dessa konfigurationer.
+Konfiguration-ID för Edge kan skapas i Adobe [!DNL Launch] med hjälp av edge-konfigurationsverktyget. Med det här verktyget kan du skapa både edge-konfigurationen och miljöer i dessa konfigurationer.
 
 ![navigering för konturkonfigurationsverktyg](../../assets/edge_configuration_nav.png)
 
 >[!NOTE]
 >
->Kunderna kan använda verktyget för kantkonfiguration i listan Tillåt oavsett om de använder Launch som tagghanterare eller inte. Dessutom kräver användare framkallningsbehörighet i Launch. Mer information finns i artikeln [Användarbehörigheter](https://docs.adobe.com/content/help/en/launch/using/reference/admin/user-permissions.html) i Launch-dokumentationen.
+>Verktyget för kantkonfiguration är tillgängligt för kunder i listan Tillåt oavsett om de använder [!DNL Launch] som tagghanterare eller inte. Dessutom kräver användare framkallningsbehörigheter i [!DNL Launch]. Mer information finns i artikeln [Användarbehörigheter](https://docs.adobe.com/content/help/en/launch/using/reference/admin/user-permissions.html) i [!DNL Launch] dokumentationen.
 
 Du kan skapa en kantkonfiguration genom att klicka på **[UICONTROL New Edge Configuration]** i skärmens övre högra del. När du har angett ett namn och en beskrivning ombeds du ange standardinställningarna för varje miljö.
 
 ### Standardmiljöinställningar
 
-Dessa standardinställningar används för att skapa de tre första miljöerna med identiska inställningar. Dessa tre miljöer är dev, stage och prod. De matchar de tre standardmiljöerna i Launch. När du skapar ett Launch-bibliotek i en utvecklingsmiljö använder biblioteket automatiskt dev-miljön från din konfiguration. Du kan redigera inställningar i enskilda miljöer så mycket du vill.
+Dessa standardinställningar används för att skapa de tre första miljöerna med identiska inställningar. Dessa tre miljöer är *dev*, *stage* och *prod*. De matchar de tre standardmiljöerna i [!DNL Launch]. När du skapar ett [!DNL Launch] bibliotek till en utvecklingsmiljö använder biblioteket automatiskt dev-miljön från din konfiguration. Du kan redigera inställningar i enskilda miljöer så mycket du vill.
 
 Det ID som används i SDK som `edgeConfigId` är ett sammansatt ID som anger konfigurationen och miljön. Om ingen miljö finns används produktionsmiljön.
 
@@ -40,7 +40,7 @@ Nedan finns alla inställningar som är tillgängliga för en miljö. De flesta 
 
 #### [!UICONTROL Identity]
 
-Identitetsavsnittet är det enda avsnitt som alltid är på. Det finns två tillgängliga inställningar: ID-synkronisering aktiverad och ID-synkroniseringsbehållar-ID.
+Identitetsavsnittet är det enda avsnitt som alltid är på. Det finns två tillgängliga inställningar: [!UICONTROL ID Syncs Enabled] och [!UICONTROL ID Sync Container ID].
 
 ![Identitetsavsnittet i konfigurationsgränssnittet](../../assets/edge_configuration_identity.png)
 
@@ -54,9 +54,9 @@ ID-synkroniseringar kan grupperas i behållare så att olika ID-synkroniseringar
 
 #### Adobe Experience Platform
 
-Inställningarna här gör att du kan skicka data till Adobe Experience Platform. Du bör bara aktivera det här avsnittet om du har köpt Adobe Experience Platform.
+Med inställningarna som anges här kan du skicka data till Adobe Experience Platform. Du bör bara aktivera det här avsnittet om du har köpt Adobe Experience Platform.
 
-![Inställningsblock för Adobe Experience Platform](../../assets/edge_configuration_aep.png)
+![Adobe Experience Platform-inställningsblock](../../assets/edge_configuration_aep.png)
 
 ##### [!UICONTROL Sandbox]
 
@@ -74,7 +74,7 @@ Edge-konfigurationer har stöd för att skicka data till datauppsättningar som 
 
 Om du vill konfigurera Adobe Target måste du ange en klientkod. De andra fälten är valfria.
 
-![Inställningsblock för Adobe Target](../../assets/edge_configuration_target.png)
+![Adobe Target-inställningsblock](../../assets/edge_configuration_target.png)
 
 >[!NOTE]
 >
@@ -86,13 +86,13 @@ Unikt ID för ett målkonto. Du hittar detta genom att navigera till [!UICONTROL
 
 ##### [!UICONTROL Property Token]
 
-Med Target kan kunderna styra behörigheter genom att använda egenskaper. Mer information finns i avsnittet [Enterprise Permissions](https://docs.adobe.com/content/help/en/target/using/administer/manage-users/enterprise/properties-overview.html) (Företagsbehörigheter) i måldokumentationen.
+Med Target kan kunderna styra behörigheter genom att använda egenskaper. Mer information finns under [Enterprise Permissions](https://docs.adobe.com/content/help/en/target/using/administer/manage-users/enterprise/properties-overview.html) (Enterprise-behörigheter) i Target-dokumentationen.
 
 Egenskapstoken finns i [!UICONTROL Adobe Target] > [!UICONTROL setup] > [UICONTROL-egenskaper]
 
 ##### [!UICONTROL Target Environment ID]
 
-[Med miljöerna](https://docs.adobe.com/content/help/en/target/using/administer/hosts.html) i Adobe Target kan ni hantera implementeringen i alla utvecklingsfaser. Den här inställningen anger vilken miljö du ska använda för varje miljö.
+[Med miljöer](https://docs.adobe.com/content/help/en/target/using/administer/hosts.html) i Adobe Target kan ni hantera implementeringen i alla utvecklingsfaser. Den här inställningen anger vilken miljö du ska använda för varje miljö.
 
 Adobe rekommenderar att du ställer in detta på olika sätt för var och en av dina `dev`- `stage`och `prod` edge-konfigurationsmiljöer för att göra det enkelt. Om du redan har [!UICONTROL Adobe Target environments] definierat dem kan du använda dem.
 
@@ -104,7 +104,7 @@ Allt som behövs för att skicka data till Adobe Audience Manager är att aktive
 
 ##### [!UICONTROL Cookie Destinations Enabled]
 
-Gör att SDK kan dela segmentinformation via [cookie-mål](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/destinations/custom-destinations/create-cookie-destination.html) från Audience Manager.
+Gör att SDK kan dela segmentinformation via [cookie-destinationer](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/destinations/custom-destinations/create-cookie-destination.html) från Audience Manager.
 
 ##### [!UICONTROL URL Destinations Enabled]
 
@@ -112,9 +112,9 @@ Tillåter SDK att dela segmentinformation via [URL-mål](https://docs.adobe.com/
 
 #### Adobe Analytics
 
-Kontrollerar om data skickas till Adobe Analytics. Ytterligare information finns i [Analytics Overview](../solution-specific/analytics/analytics-overview.md).
+Kontrollerar om data skickas till Adobe Analytics. Mer information finns i [Analytics Overview](../solution-specific/analytics/analytics-overview.md).
 
-![Inställningsblock för Adobe Analytics](../../assets/edge_configuration_aa.png)
+![Adobe Analytics Settings Block](../../assets/edge_configuration_aa.png)
 
 ##### [!UICONTROL Report Suite ID]
 
