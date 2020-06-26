@@ -1,13 +1,13 @@
 ---
 title: Konfigurera SDK
 seo-title: Konfigurera Adobe Experience Platform Web SDK
-description: Lär dig konfigurera Experience Platform Web SDK
-seo-description: Lär dig konfigurera Experience Platform Web SDK
+description: Lär dig hur du konfigurerar Experience Platform Web SDK
+seo-description: Lär dig hur du konfigurerar Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 7d4f364ebb9df1ce58481a35007ea75f86ab7825
+source-git-commit: 5f263a2593cdb493b5cd48bc0478379faa3e155d
 workflow-type: tm+mt
 source-wordcount: '739'
-ht-degree: 2%
+ht-degree: 4%
 
 ---
 
@@ -16,8 +16,9 @@ ht-degree: 2%
 
 Konfigurationen för SDK görs med `configure` kommandot.
 
->[!Iviktig]
->`configure` ska _alltid_ vara det första anropade kommandot.
+>[!IMPORTANT]
+>
+>`configure` ska *alltid* vara det första anropade kommandot.
 
 ```javascript
 alloy("configure", {
@@ -54,7 +55,7 @@ Anger vilka sammanhangskategorier som ska samlas in automatiskt enligt beskrivni
 
 Anger om felsökning ska vara aktiverat. Om du ställer in den här konfigurationen på `true` aktiveras följande funktioner:
 
-| **Funktion** |  |  |
+| **Funktion** | ** -funktion** |
 | ---------------------- | ------------------ |
 | Synkron validering | Validerar data som samlas in mot schemat och returnerar ett fel i svaret under följande etikett: `collect:error OR success` |
 | Konsolloggning | Gör att felsökningsmeddelanden kan visas i webbläsarens JavaScript-konsol |
@@ -65,7 +66,7 @@ Anger om felsökning ska vara aktiverat. Om du ställer in den här konfiguratio
 | -------- | ------------ | ------------------ |
 | Sträng | Nej | `beta.adobedc.net` |
 
-Domänen som används för att interagera med Adobe Services. Detta används endast om du har en förstahandsdomän (CNAME) som proxies-begäranden till Adobe Edge-infrastrukturen.
+Den domän som används för att interagera med Adobes tjänster. Detta används endast om du har en förstahandsdomän (CNAME) som proxies-begäranden till Adobe Edge-infrastrukturen.
 
 ### `orgId`
 
@@ -73,7 +74,7 @@ Domänen som används för att interagera med Adobe Services. Detta används end
 | -------- | ------------ | ----------------- |
 | Sträng | Ja | ingen |
 
-Ditt tilldelade Experience Cloud-organisations-ID.  När du konfigurerar flera instanser på en sida måste du konfigurera olika inställningar `orgId` för varje instans.
+Ditt ID för Experience Cloud-organisation.  När du konfigurerar flera instanser på en sida måste du konfigurera olika inställningar `orgId` för varje instans.
 
 ## Datainsamling
 
@@ -85,7 +86,7 @@ Ditt tilldelade Experience Cloud-organisations-ID.  När du konfigurerar flera i
 
 Anger om data som är associerade med länkklick ska samlas in automatiskt. För klickningar som kvalificerar som länkklick samlas följande [webbinteraktionsdata](https://github.com/adobe/xdm/blob/master/docs/reference/context/webinteraction.schema.md) in:
 
-| **Egenskap** |  |
+| **Egenskap** | **Beskrivning** |
 | ------------ | ----------------------------------- |
 | Länknamn | Namnet bestäms av länkkontexten |
 | Länk-URL | Normaliserad URL |
@@ -97,7 +98,7 @@ Anger om data som är associerade med länkklick ska samlas in automatiskt. För
 | -------- | ------------ | ----------------- |
 |  -funktion | Nej | () => odefinierad |
 
-Ange detta för att konfigurera ett återanrop som anropas för varje händelse precis innan den skickas.  Ett objekt med fältet `xdm` skickas till återanropet.  Ändra xdm-objektet om du vill ändra vad som skickas.  I återanropet skickas data från händelsekommandot och den automatiskt insamlade informationen till objektet. `xdm`  Mer information om tidpunkten för det här återanropet och ett exempel finns i [Ändra händelser globalt](tracking-events.md#modifying-events-globally).
+Ange detta för att konfigurera ett återanrop som anropas för varje händelse precis innan den skickas.  Ett objekt med fältet `xdm` skickas till återanropet.  Ändra objektet `xdm` om du vill ändra vad som skickas.  I återanropet skickas data från händelsekommandot och den automatiskt insamlade informationen till objektet. `xdm`  Mer information om tidpunkten för det här återanropet och ett exempel finns i [Ändra händelser globalt](tracking-events.md#modifying-events-globally).
 
 ## Sekretessalternativ
 
@@ -133,7 +134,7 @@ Om du t.ex. har ett element på webbsidan med ett ID `container` vars standardin
 | -------- | ------------ | ----------------- |
 | Boolean | Nej | `true` |
 
-Aktiverar mål för cookies, vilket gör det möjligt att ange cookies baserat på segmentkvalificering.
+Aktiverar Audience Manager [!UICONTROL cookie destinations]som tillåter inställning av cookies baserat på segmentkvalificering.
 
 ### `urlDestinationsEnabled`
 
@@ -141,7 +142,7 @@ Aktiverar mål för cookies, vilket gör det möjligt att ange cookies baserat p
 | -------- | ------------ | ----------------- |
 | Boolean | Nej | `true` |
 
-Aktiverar URL-mål, vilket gör det möjligt att bränna URL:er baserat på segmentkvalificering.
+Möjliggör Audience Manager [!UICONTROL URL destinations]som tillåter att URL:er aktiveras baserat på segmentkvalificering.
 
 ## Identitetsalternativ
 
@@ -165,6 +166,6 @@ Aktiverar synkroniseringsfunktionen för ID, som gör det möjligt att aktivera 
 
 | **Typ** | **Obligatoriskt** | **Standardvärde** |
 | -------- | ------------ | ----------------- |
-| Boolean | Nej | true |
+| Boolean | Nej | sant |
 
-Aktiverar inställning av cookies från tredje part från Adobe. SDK:n kan behålla besökar-ID:t i ett tredjepartssammanhang för att samma besökar-ID ska kunna användas på webbplatsen. Detta är användbart om du har flera webbplatser eller vill dela data med partners. Men ibland är detta inte önskvärt av sekretesskäl.
+Aktiverar inställning av cookies från tredje part från Adobe. SDK:n kan behålla besökar-ID:t i ett tredjepartssammanhang för att samma besökar-ID ska kunna användas på olika platser. Detta är användbart om du har flera webbplatser eller vill dela data med partners. Men ibland är detta inte önskvärt av sekretesskäl.
