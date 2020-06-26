@@ -1,10 +1,10 @@
 ---
 title: Utföra kommandon
-seo-title: Använda SDK-kommandon för Adobe Experience Platform
+seo-title: Kör Adobe Experience Platform Web SDK-kommandon
 description: Lär dig hur du kör Experience Platform Web SDK-kommandon
 seo-description: Lär dig hur du kör Experience Platform Web SDK-kommandon
 translation-type: tm+mt
-source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+source-git-commit: 5f263a2593cdb493b5cd48bc0478379faa3e155d
 workflow-type: tm+mt
 source-wordcount: '419'
 ht-degree: 0%
