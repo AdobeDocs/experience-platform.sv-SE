@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: Användarhandbok för kundprofil i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: 62ed8892b4f359da3f0368013b5bfd0b9380cc22
+source-git-commit: 59dff7687f8a0c5b5084eb1ce7dd222cc18d8dbf
 workflow-type: tm+mt
 source-wordcount: '1208'
 ht-degree: 0%
@@ -60,7 +60,7 @@ När intaget av poster i profilarkivet ökar eller minskar antalet med mer än 5
 
 I *Profiler efter namnutrymmesmått* visas totalt antal och uppdelning av namnutrymmen för alla sammanfogade profiler i din profilbutik. Det totala antalet profiler per namnutrymme (med andra ord, om de värden som visas för varje namnutrymme läggs ihop) kommer alltid att vara högre än det för antalet profiler, eftersom en profil kan ha flera namnutrymmen kopplade till sig. Om en kund till exempel interagerar med varumärket i mer än en kanal kommer flera namnutrymmen att kopplas till den enskilda kunden.
 
-På samma sätt som för [profilräknemeterialet](#profile-count) aktiveras ett jobb för att uppdatera namnområdesmåtten när inmatningen av profiler i profilarkivet ökar eller minskar antalet med mer än 5 %. För arbetsflöden med direktuppspelningsdata görs en timkontroll för att avgöra om tröskelvärdet på 5 % har uppnåtts eller ej. Om så är fallet utlöses ett jobb automatiskt för att uppdatera antalet profiler. Om tröskelvärdet på 5 % ökning eller minskning uppnås kommer ett jobb att köras för att uppdatera mätvärdena för batchförbrukning inom 15 minuter efter att en batch har importerats till profilbutiken.
+På samma sätt som för [profilräknemeterialet](#profile-count) aktiveras ett jobb för att uppdatera namnområdesmåtten när inmatningen av poster i profilarkivet ökar eller minskar antalet med mer än 5 %. För arbetsflöden med direktuppspelningsdata görs en timkontroll för att avgöra om tröskelvärdet på 5 % har uppnåtts eller ej. Om så är fallet utlöses ett jobb automatiskt för att uppdatera antalet profiler. Om tröskelvärdet på 5 % ökning eller minskning uppnås kommer ett jobb att köras för att uppdatera mätvärdena för batchförbrukning inom 15 minuter efter att en batch har importerats till profilbutiken.
 
 ### Kopplingsprincip
 
