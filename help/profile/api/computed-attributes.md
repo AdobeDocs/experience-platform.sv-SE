@@ -4,12 +4,15 @@ solution: Adobe Experience Platform
 title: Utvecklarhandbok för kundprofil-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: d0ccaa5511375253a2eca8f1235c2f953b734709
+source-git-commit: d464a6b4abd843f5f8545bc3aa8000f379a86c6d
+workflow-type: tm+mt
+source-wordcount: '2431'
+ht-degree: 0%
 
 ---
 
 
-# (Alfa) Beräknade attribut
+# (Alfa) Slutpunkt för beräknade attribut
 
 >[!IMPORTANT]
 >Den beräknade attributfunktionen som beskrivs i det här dokumentet är för närvarande alfavärden och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
@@ -22,9 +25,7 @@ Den här guiden hjälper dig att bättre förstå beräknade attribut i Adobe Ex
 
 ## Komma igång
 
-API-slutpunkterna som används i den här guiden ingår i kundprofils-API:t i realtid. Innan du fortsätter bör du läsa Utvecklarhandbok för kundprofiler i [realtid](getting-started.md).
-
-Avsnittet [](getting-started.md) Komma igång i guiden för profilutvecklare innehåller länkar till relaterade ämnen, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa API:er för Experience Platform.
+API-slutpunkten som används i den här guiden ingår i [kundprofils-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)i realtid. Innan du fortsätter bör du läsa [Komma igång-guiden](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
 ## Förstå beräknade attribut
 
@@ -211,7 +212,7 @@ Ett beräknat attribut som skapats returnerar HTTP-status 200 (OK) och en svarst
 | `definedOn` | En array som visar de föreningsscheman som det beräknade attributet har definierats på. Innehåller ett objekt per union-schema, vilket innebär att det kan finnas flera objekt i arrayen om det beräknade attributet har lagts till i flera scheman baserade på olika klasser. |
 | `active` | Ett booleskt värde som visar om det beräknade attributet är aktivt eller inte. Som standard är värdet `true`. |
 | `type` | Den typ av resurs som skapas, i det här fallet är &quot;ComputedAttribute&quot; standardvärdet. |
-| `createEpoch` och `updateEpoch` | Den tidpunkt då det beräknade attributet skapades och senast uppdaterades. |
+| `createEpoch` och `updateEpoch` | Den tidpunkt då det beräknade attributet skapades och senast uppdaterades. |
 
 
 ## Få åtkomst till beräknade attribut
@@ -479,10 +480,10 @@ En lyckad uppdatering returnerar HTTP-status 204 (inget innehåll) och en tom sv
 
 ## Ta bort ett beräknat attribut
 
-Det går också att ta bort ett beräknat attribut med API:t. Detta gör du genom att göra en DELETE-begäran till `/config/computedAttributes` slutpunkten och inkludera ID:t för det beräknade attributet som du vill ta bort i begärandesökvägen.
+Det går också att ta bort ett beräknat attribut med API:t. Detta gör du genom att göra en DELETE-begäran till `/config/computedAttributes` slutpunkten och inkludera ID:t för det beräknade attributet som du vill ta bort i sökvägen för begäran.
 
 >[!Note]
->Var försiktig när du tar bort ett beräknat attribut eftersom det kan användas i mer än ett schema och DELETE-åtgärden kan inte ångras.
+>Var försiktig när du tar bort ett beräknat attribut eftersom det kan användas i mer än ett schema och åtgärden DELETE inte kan ångras.
 
 **API-format**
 
