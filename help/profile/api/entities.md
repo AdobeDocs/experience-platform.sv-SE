@@ -4,23 +4,21 @@ solution: Adobe Experience Platform
 title: Utvecklarhandbok för kundprofil-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: 9600f315f162b6cd86e2dbe2fffc793cc91c9319
+source-git-commit: d464a6b4abd843f5f8545bc3aa8000f379a86c6d
 workflow-type: tm+mt
-source-wordcount: '1694'
+source-wordcount: '1690'
 ht-degree: 0%
 
 ---
 
 
-# Enheter (profilåtkomst)
+# Entitetens slutpunkt (profilåtkomst)
 
-Med Adobe Experience Platform kan ni få åtkomst till kundprofildata i realtid med RESTful API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas&quot;profiler&quot;, med API:t. Mer information om hur du får åtkomst till profildata med hjälp av plattformsgränssnittet finns i användarhandboken för [profilen](../ui/user-guide.md).
+Med Adobe Experience Platform kan du komma åt kundprofildata i realtid med RESTful API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas&quot;profiler&quot;, med API:t. Mer information om hur du får åtkomst till profiler med hjälp av användargränssnittet i Platform finns i användarhandboken [för](../ui/user-guide.md)profiler.
 
-## Getting started
+## Komma igång
 
-API-slutpunkterna som används i den här guiden ingår i kundprofils-API:t i realtid. Innan du fortsätter bör du läsa utvecklarhandboken för [kundprofiler i realtid](getting-started.md).
-
-Avsnittet [](getting-started.md#getting-started) Komma igång i guiden för profilutvecklare innehåller länkar till relaterade ämnen, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa API:er för Experience Platform.
+API-slutpunkten som används i den här guiden ingår i [kundprofils-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)i realtid. Innan du fortsätter bör du läsa [Komma igång-guiden](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
 ## Åtkomst till profildata via identitet
 
@@ -776,7 +774,7 @@ Om du använder den här nyttolasten i begärandetexten kan du utföra ytterliga
 
 ## Få åtkomst till tidsseriehändelser i flera schemaentiteter
 
-Du kan komma åt flera enheter som är anslutna via en relationsbeskrivare. I följande exempel på API-anrop förutsätts att en relation redan har definierats mellan två scheman. Mer information om relationsbeskrivningar finns i [underhandboken](../../xdm/api/descriptors.md)för programmeringsregistrets API-utvecklare.
+Du kan komma åt flera enheter som är anslutna via en relationsbeskrivare. I följande exempel på API-anrop förutsätts att en relation redan har definierats mellan två scheman. Mer information om relationsbeskrivare finns i [slutpunktshandboken](../../xdm/api/descriptors.md)för programmeringsregistrets API-utvecklare.
 
 Du kan inkludera frågeparametrar i sökvägen för begäran för att ange vilka data som ska användas. Du kan inkludera flera parametrar, avgränsade med et-tecken (&amp;). En fullständig lista över giltiga parametrar finns i avsnittet med [frågeparametrar](#query-parameters) i bilagan.
 
