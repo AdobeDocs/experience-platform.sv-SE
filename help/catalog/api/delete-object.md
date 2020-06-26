@@ -4,16 +4,19 @@ solution: Experience Platform
 title: Ta bort ett objekt
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 6c17351b04fedefd4b57b9530f1d957da8183a68
+source-git-commit: 327be13cbaaa40e4d0409cbb49a051b7067759bf
+workflow-type: tm+mt
+source-wordcount: '178'
+ht-degree: 0%
 
 ---
 
 
 # Ta bort ett objekt
 
-Du kan ta bort ett Catalog-objekt genom att ange dess ID i sökvägen för en DELETE-begäran.
+Du kan ta bort ett Catalog-objekt genom att ange dess ID i sökvägen till en DELETE-begäran.
 
->[!WARNING] Var extra försiktig när du tar bort objekt, eftersom detta inte kan ångras och kan ge upphov till nya ändringar någon annanstans i Experience Platform.
+>[!WARNING] Var extra försiktig när du tar bort objekt, eftersom det inte går att ångra detta och det kan leda till att objekt bryts på andra ställen i Experience Platform.
 
 **API-format**
 
@@ -21,7 +24,9 @@ Du kan ta bort ett Catalog-objekt genom att ange dess ID i sökvägen för en DE
 DELETE /{OBJECT_TYPE}/{OBJECT_ID}
 ```
 
->[!IMPORTANT] Slutpunkten har tagits bort `DELETE /batches/{ID}` . Om du vill ta bort en grupp bör du använda API:t för [gruppinmatning](../../ingestion/batch-ingestion/api-overview.md#delete-a-batch).
+>[!IMPORTANT]
+>
+>Slutpunkten har tagits bort `DELETE /batches/{ID}` . Om du vill ta bort en grupp bör du använda API:t för [gruppinmatning](../../ingestion/batch-ingestion/api-overview.md#delete-a-batch).
 
 | Parameter | Beskrivning |
 | --- | --- |
