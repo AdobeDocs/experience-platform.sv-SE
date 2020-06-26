@@ -1,12 +1,12 @@
 ---
 title: Felsökning
 seo-title: Adobe Experience Platform Web SDK-felsökning
-description: Lär dig hur du växlar Experience Platform Web SDK-felsökning
-seo-description: Lär dig hur du växlar Experience Platform Web SDK-felsökning
+description: Lär dig hur du växlar felsökning för Experience Platform Web SDK
+seo-description: Lär dig hur du växlar felsökning för Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 7d4f364ebb9df1ce58481a35007ea75f86ab7825
+source-git-commit: 5f263a2593cdb493b5cd48bc0478379faa3e155d
 workflow-type: tm+mt
-source-wordcount: '323'
+source-wordcount: '324'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,8 @@ alloy("configure", {
 });
 ```
 
->[!Hint]
+>[!TIP]
+>
 >Detta aktiverar felsökning för alla användare på webbsidan i stället för bara för din webbläsare.
 
 ## Växla felsökning med kommandot Felsökning
