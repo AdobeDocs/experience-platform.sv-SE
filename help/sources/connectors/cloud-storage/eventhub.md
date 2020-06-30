@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Azure Event Hubs-koppling
 topic: overview
 translation-type: tm+mt
-source-git-commit: 855f543a1cef394d121502f03471a60b97eae256
+source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
 workflow-type: tm+mt
-source-wordcount: '196'
+source-wordcount: '174'
 ht-degree: 0%
 
 ---
@@ -17,19 +17,19 @@ ht-degree: 0%
 >[!NOTE]
 >Azure Event Hubs-kopplingen är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../home.md#terms-and-conditions) .
 
-Adobe Experience Platform erbjuder inbyggd anslutning för molnleverantörer som AWS, Google Cloud Platform och Azure. Ni kan överföra data från dessa system till Platform.
+Adobe Experience Platform erbjuder systemspecifika anslutningsmöjligheter för molnleverantörer som AWS [!DNL Google Cloud Platform]och [!DNL Azure]. Ni kan föra in data från dessa system i [!DNL Platform].
 
-Lagringskällor i molnet kan överföra dina egna data till Platform utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM-parquet eller avgränsade. Varje steg i processen är integrerat i arbetsflödet för källor. Med Platform kan du hämta data från Azure Event Hubs i realtid.
+Lagringskällor i molnet kan hämta dina egna data [!DNL Platform] utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM-parquet eller avgränsade. Varje steg i processen är integrerat i arbetsflödet för källor. [!DNL Platform] kan ni hämta in data från [!DNL Azure Event Hubs] i realtid.
 
-Dokumentationen nedan innehåller information om hur du ansluter Azure Event Hubs till Platform med hjälp av API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Azure Event Hubs] till [!DNL Platform] med API:er eller användargränssnittet:
 
-## Anslut Azure Event Hubs till Platform med API:er
+## Anslut [!DNL Azure Event Hubs] till [!DNL Platform] med API:er
 
 - [Skapa en Azure Event Hubs-koppling med API:t för Flow Service](../../tutorials/api/create/cloud-storage/eventhub.md)
 - [Utforska ett molnlagringssystem med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
 - [Samla in molnlagringsdata med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
 
-## Anslut Azure Event Hubs till Platform med användargränssnittet
+## Ansluta [!DNL Azure Event Hubs] till [!DNL Platform] användargränssnittet
 
 - [Skapa en Azure Event Hubs-källkoppling i användargränssnittet](../../tutorials/ui/create/cloud-storage/eventhub.md)
 - [Konfigurera ett dataflöde för en molnlagringskontakt i användargränssnittet](../../tutorials/ui/dataflow/streaming/cloud-storage.md)
