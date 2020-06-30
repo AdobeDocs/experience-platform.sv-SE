@@ -4,39 +4,42 @@ solution: Experience Platform
 title: Hämta parquetdata från ett molnlagringssystem från tredje part med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 0e993e3b0ad4ff58a67e7db742f97c5fb2c3308d
+source-git-commit: fc5cdaa661c47e14ed5412868f3a54fd7bd2b451
+workflow-type: tm+mt
+source-wordcount: '1069'
+ht-degree: 0%
 
 ---
 
 
-# Hämta parquetdata från ett molnlagringssystem från tredje part med API:t för Flow Service
+# Infoga parquet-data från ett molnlagringssystem från tredje part med hjälp av [!DNL Flow Service] API:t
 
-Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att importera tolkningsdata från ett molnlagringssystem från en annan leverantör.
+I den här självstudiekursen används API:t för att vägleda dig genom stegen för att importera tolkningsdata från ett molnlagringssystem från tredje part. [!DNL Flow Service]
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [Källor](../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som ni kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
-- [Sandlådor](../../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+- [Källor](../../home.md): [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster.
+- [Sandlådor](../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna importera parquetdata från ett molnlagringsutrymme från tredje part med API:t för Flow Service.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna importera parquet-data från ett molnlagringsutrymme från tredje part med hjälp av [!DNL Flow Service] API:t.
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform, inklusive de som tillhör Flow Service, isoleras till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
@@ -46,7 +49,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Skapa en anslutning
 
-För att kunna importera parquet-data med hjälp av Platform API:er måste du ha en giltig anslutning för den molnlagringskälla från tredje part som du använder. Om du inte redan har en anslutning till det lagringsutrymme du vill arbeta med kan du skapa en genom följande självstudier:
+För att kunna importera parquet-data med API: [!DNL Platform] er måste du ha en giltig anslutning för den molnlagringskälla från tredje part som du använder. Om du inte redan har en anslutning till det lagringsutrymme du vill arbeta med kan du skapa en genom följande självstudier:
 
 - [Amazon S3](./create/cloud-storage/s3.md)
 - [Azure Blob](./create/cloud-storage/blob.md)
@@ -58,9 +61,9 @@ Hämta och lagra den unika identifieraren (`$id`) för anslutningen och fortsät
 
 ## Skapa ett målschema
 
-För att källdata ska kunna användas i Platform måste ett målschema också skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en plattformsdatauppsättning där källdata finns.
+För att källdata ska kunna användas i [!DNL Platform]måste ett målschema också skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en [!DNL Platform] datauppsättning där källdata finns.
 
-Om du föredrar att använda användargränssnittet i Experience Platform finns det stegvisa instruktioner [i](../../../xdm/tutorials/create-schema-ui.md) schemaredigeraren för att utföra liknande åtgärder i schemaredigeraren.
+Om du föredrar att använda användargränssnittet i [!DNL Experience Platform]innehåller [schemaredigerarsjälvstudiekursen](../../../xdm/tutorials/create-schema-ui.md) stegvisa instruktioner för hur du utför liknande åtgärder i Schemaredigeraren.
 
 **API-format**
 
@@ -70,7 +73,7 @@ POST /schemaregistry/tenant/schemas
 
 **Begäran**
 
-Följande exempelbegäran skapar ett XDM-schema som utökar klassen för enskild XDM-profil.
+Följande exempelbegäran skapar ett XDM-schema som utökar XDM- [!DNL Individual Profile] klassen.
 
 ```shell
 curl -X POST \
@@ -195,7 +198,7 @@ Ett lyckat svar returnerar information om det nyligen skapade schemat inklusive 
 
 ## Skapa en källanslutning {#source}
 
-När ett mål-XDM-schema har skapats kan en källanslutning skapas med hjälp av en POST-begäran till Flow Service API. En källanslutning består av en anslutning för API:t, ett källdataformat och en referens till det mål-XDM-schema som hämtades i föregående steg.
+När ett mål-XDM-schema har skapats kan en källanslutning skapas med hjälp av en POST-begäran till [!DNL Flow Service] API:t. En källanslutning består av en anslutning för API:t, ett källdataformat och en referens till det mål-XDM-schema som hämtades i föregående steg.
 
 **API-format**
 
@@ -254,7 +257,7 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 ## Skapa en datauppsättningsbasanslutning
 
-För att kunna importera externa data till plattformen måste en Experience Platform-datauppsättningsbaserad anslutning först hämtas.
+För att kunna importera externa data till [!DNL Platform]måste en [!DNL Experience Platform] datauppsättningsbasanslutning först hämtas.
 
 Om du vill skapa en datauppsättningsbasanslutning följer du de steg som beskrivs i självstudiekursen för [datauppsättningsbasanslutningar](./create-dataset-base-connection.md).
 
@@ -308,7 +311,7 @@ Ett lyckat svar returnerar en array som innehåller ID:t för den nya datauppsä
 
 ## Skapa en målanslutning {#target}
 
-Du har nu unika identifierare för en datauppsättningsbasanslutning, ett målschema och en måldatauppsättning. Med dessa identifierare kan du skapa en målanslutning med API:t för Flow Service för att ange den datauppsättning som ska innehålla inkommande källdata.
+Du har nu unika identifierare för en datauppsättningsbasanslutning, ett målschema och en måldatauppsättning. Med hjälp av dessa identifierare kan du skapa en målanslutning med hjälp av API:t för att ange den datauppsättning som ska innehålla inkommande källdata. [!DNL Flow Service]
 
 **API-format**
 
@@ -369,7 +372,7 @@ Ett lyckat svar returnerar den nya målanslutningens unika identifierare (`id`).
 Det sista steget mot att importera parquet-data från ett molnlagringsutrymme från tredje part är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
 
 - [Källanslutnings-ID](#source)
-- [Målanslutnings-ID](#target)
+- [Target-anslutnings-ID](#target)
 
 Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en POST-begäran samtidigt som du anger de tidigare nämnda värdena i nyttolasten.
 
@@ -427,7 +430,7 @@ Ett godkänt svar returnerar ID:t (`id`) för det nya dataflödet.
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in parquetdata från ditt molnlagringssystem från tredje part på schemalagd basis. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan, t.ex. kundprofil i realtid och datavetenskapen. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in parquetdata från ditt molnlagringssystem från tredje part på schemalagd basis. Inkommande data kan nu användas av [!DNL Platform] tjänster längre fram i kedjan som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 - [Översikt över kundprofiler i realtid](../../../profile/home.md)
 - [Översikt över arbetsytan Datavetenskap](../../../data-science-workspace/home.md)
