@@ -4,40 +4,40 @@ solution: Experience Platform
 title: Skapa en allmän OData-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 7328226b8349ffcdddadbd27b74fc54328b78dc5
+source-git-commit: fc5cdaa661c47e14ed5412868f3a54fd7bd2b451
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '525'
 ht-degree: 0%
 
 ---
 
 
-# Skapa en allmän OData-koppling med API:t för Flow Service
+# Skapa en [!DNL Generic OData] koppling med [!DNL Flow Service] API:t
 
 >[!NOTE]
->Den allmänna OData-kopplingen är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
+>Kopplingen [!DNL Generic OData] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
-Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta generiska OData till Experience Platform.
+I den här självstudiekursen används API:t för att vägleda dig genom de olika stegen för att ansluta [!DNL Flow Service] till [!DNL Generic OData] [!DNL Experience Platform].
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av Platform tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till OData med API:t för Flow Service.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till OData med [!DNL Flow Service] API.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att Flow Service ska kunna ansluta till OData måste du ange värden för följande anslutningsegenskaper:
+För [!DNL Flow Service] att kunna ansluta till OData måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| url | rot-URL:en för OData-tjänsten. |
-| connectionSpec.id | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikations-ID för OData är: `8e6b41a8-d998-4545-ad7d-c6a9fff406c3` |
+| url | URL-adressen till [!DNL OData] tjänsten. |
+| connectionSpec.id | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikations-ID för [!DNL OData] är: `8e6b41a8-d998-4545-ad7d-c6a9fff406c3` |
 
 Mer information om hur du kommer igång finns i [detta OData-dokument](https://www.odata.org/getting-started/basic-tutorial/).
 
@@ -47,13 +47,13 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform, inklusive de som tillhör Flow Service, isoleras till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
@@ -63,7 +63,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Skapa en anslutning
 
-En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per OData-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per [!DNL OData] konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
 
 **API-format**
 
@@ -73,7 +73,7 @@ POST /connections
 
 **Begäran**
 
-För att skapa en OData-anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POST-begäran. Anslutningsspecifikationens ID för OData är `8e6b41a8-d998-4545-ad7d-c6a9fff406c3`.
+För att kunna skapa en [!DNL OData] anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POST-begäran. Anslutningsspecifikationens ID för [!DNL OData] är `8e6b41a8-d998-4545-ad7d-c6a9fff406c3`.
 
 ```shell
 curl -X POST \
@@ -101,8 +101,8 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `auth.params.url` | Värden för OData-servern. |
-| `connectionSpec.id` | OData-anslutningsspecifikations-ID: `8e6b41a8-d998-4545-ad7d-c6a9fff406c3`. |
+| `auth.params.url` | Värden för [!DNL OData] servern. |
+| `connectionSpec.id` | ID för [!DNL OData] anslutningsspecifikation: `8e6b41a8-d998-4545-ad7d-c6a9fff406c3`. |
 
 **Svar**
 
@@ -117,4 +117,4 @@ Ett godkänt svar returnerar information om den nya anslutningen, inklusive dess
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en OData-anslutning med API:t för Flow Service och fått anslutningens unika ID-värde. Du kan använda detta ID i nästa självstudiekurs när du lär dig hur du [utforskar protokollprogram med API:t](../../explore/protocols.md)för Flow Service.
+Genom att följa den här självstudiekursen har du skapat en [!DNL OData] anslutning med hjälp av [!DNL Flow Service] API:t och fått anslutningens unika ID-värde. Du kan använda detta ID i nästa självstudiekurs när du lär dig hur du [utforskar protokollprogram med API:t](../../explore/protocols.md)för Flow Service.
