@@ -4,20 +4,23 @@ solution: Experience Platform
 title: Posta en modell (UI)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
+source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
+workflow-type: tm+mt
+source-wordcount: '555'
+ht-degree: 0%
 
 ---
 
 
 # Posta en modell (UI)
 
-Du kan göra poängsättningen i Adobe Experience Platform Data Science Workspace genom att mata in indata i en befintlig utbildad modell. Resultat av poängsättningen lagras och kan visas i en angiven utdatamängd som en ny grupp.
+Poängen i Adobe Experience Platform [!DNL Data Science Workspace] kan uppnås genom att man matar in indata i en befintlig utbildad modell. Resultat av poängsättningen lagras och kan visas i en angiven utdatamängd som en ny grupp.
 
-I den här självstudiekursen visas de steg som krävs för att göra en modell i användargränssnittet för arbetsytan för datavetenskap.
+I den här självstudiekursen visas de steg som krävs för att göra en modell i [!DNL Data Science Workspace] användargränssnittet.
 
 ## Komma igång
 
-För att kunna slutföra den här självstudiekursen måste du ha tillgång till Experience Platform. Om du inte har tillgång till en IMS-organisation i Experience Platform, ska du tala med systemadministratören innan du fortsätter.
+Du måste ha tillgång till den här självstudiekursen för att kunna slutföra den [!DNL Experience Platform]. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform]kontaktar du systemadministratören innan du fortsätter.
 
 Den här självstudiekursen kräver en utbildad modell. Om du inte har någon tränad modell följer du [tåget och utvärderar en modell i självstudiekursen för användargränssnittet](./train-evaluate-model-ui.md) innan du fortsätter.
 
@@ -60,4 +63,4 @@ I en bedömningsrunda visas någon av följande fyra statusvärden: Väntande, F
 
 ## Nästa steg
 
-I den här självstudiekursen gick du igenom stegen för att få fram data med hjälp av en tränad modell i Data Science Workspace. Följ självstudiekursen om hur du [publicerar en modell som en tjänst i användargränssnittet](./publish-model-service-ui.md) för att göra det möjligt för användare i organisationen att få poäng på data genom att ge enkel åtkomst till en maskininlärningstjänst.
+I den här självstudiekursen steg för steg visades data med hjälp av en tränad modell i [!DNL Data Science Workspace]. Följ självstudiekursen om hur du [publicerar en modell som en tjänst i användargränssnittet](./publish-model-service-ui.md) för att göra det möjligt för användare i organisationen att få poäng på data genom att ge enkel åtkomst till en maskininlärningstjänst.
