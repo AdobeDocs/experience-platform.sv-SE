@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Visa tillgängliga namnutrymmen
 topic: API guide
 translation-type: tm+mt
-source-git-commit: df85ea955b7a308e6be1e2149fcdfb4224facc53
+source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+workflow-type: tm+mt
+source-wordcount: '64'
+ht-degree: 3%
 
 ---
 
@@ -30,7 +33,7 @@ curl -X GET \
 
 **Svar**
 
-Svaret innehåller en array med objekt, där varje objekt representerar ett tillgängligt namnutrymme. Namnutrymmen med värdet &quot;false&quot; är standardnamnutrymmen, medan de med värdet &quot;true&quot; är namnutrymmen som din organisation har skapat.
+Svaret innehåller en array med objekt, där varje objekt representerar ett tillgängligt namnutrymme. Namnutrymmen med värdet &quot;[!UICONTROL custom]&quot; för &quot;[!UICONTROL false]&quot; är standardnamnutrymmen, medan de med värdet &quot;[!UICONTROL custom]&quot; för &quot;[!UICONTROL true]&quot; är namnutrymmen som din organisation har skapat.
 
 >[!NOTE] Svaret har trunkerats för utrymme.
 
