@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Utvecklarhandbok för SDK
 topic: Overview
 translation-type: tm+mt
-source-git-commit: 564603fdec6050463937c6e162cdff00cda506c4
+source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
 workflow-type: tm+mt
-source-wordcount: '951'
+source-wordcount: '930'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Utvecklarhandbok för SDK
 
-Med hjälp av SDK för modellredigering kan du utveckla anpassade maskininlärningsrecept och funktionsförlopp som kan användas i arbetsytan för [!DNL Adobe Experience Platform] datavetenskap och tillhandahålla implementerbara mallar i PySpark och Spark (Scala).
+Med SDK för modellredigering kan du utveckla anpassade maskininlärningsrecept och funktionsförbereds som kan användas i arbetsytan för [!DNL Adobe Experience Platform] datavetenskap, med implementerbara mallar i [!DNL PySpark] och [!DNL Spark (Scala)].
 
 Det här dokumentet innehåller information om de olika klasser som finns i SDK för modellredigering.
 
@@ -37,7 +37,7 @@ I följande tabell beskrivs de abstrakta metoderna för en PySpark Data Loader-k
         <tr>
             <td>
                 <p><code class=" language-undefined">load(self, configProperties, spark)</code></p>
-                <p>Läsa in och returnera plattformsdata som en Pandas DataFrame</p>
+                <p>Läsa in och returnera Platform-data som en Pandas DataFrame</p>
             </td>
             <td>
                 <ul>
@@ -52,7 +52,7 @@ I följande tabell beskrivs de abstrakta metoderna för en PySpark Data Loader-k
 
 **Spark**
 
-I följande tabell beskrivs de abstrakta metoderna för en Spark Data Loader-klass:
+I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] Data Loader-klass:
 
 <table>
     <thead>
@@ -65,7 +65,7 @@ I följande tabell beskrivs de abstrakta metoderna för en Spark Data Loader-kla
         <tr>
             <td>
                 <p><code class=" language-undefined">load(configProperties, sparkSession)</code></p>
-                <p>Läs in och returnera plattformsdata som en DataFrame</p>
+                <p>Läsa in och returnera Platform-data som en DataFrame</p>
             </td>
             <td>
                 <ul>
@@ -77,9 +77,9 @@ I följande tabell beskrivs de abstrakta metoderna för en Spark Data Loader-kla
     </tbody>
 </table>
 
-### Läsa in data från en plattformsdatauppsättning {#load-data-from-a-platform-dataset}
+### Läsa in data från en [!DNL Platform] datauppsättning {#load-data-from-a-platform-dataset}
 
-Följande exempel hämtar plattformsdata efter ID och returnerar en DataFrame, där datauppsättnings-ID (`datasetId`) är en definierad egenskap i konfigurationsfilen.
+Följande exempel hämtar [!DNL Platform] data efter ID och returnerar en DataFrame, där datauppsättnings-ID (`datasetId`) är en definierad egenskap i konfigurationsfilen.
 
 **PySpark**
 
@@ -198,7 +198,7 @@ Klassen DataSaver kapslar in allt som rör lagring av utdata, inklusive data fr�
 
 **PySpark**
 
-I följande tabell beskrivs de abstrakta metoderna för en PySpark-klass:
+I följande tabell beskrivs de abstrakta metoderna för en [!DNL PySpark] Data Saver-klass:
 
 <table>
     <thead>
@@ -211,7 +211,7 @@ I följande tabell beskrivs de abstrakta metoderna för en PySpark-klass:
         <tr>
             <td>
                 <p><code class=" language-undefined">save(self, configProperties, dataframe)</code></p>
-                <p>Ta emot utdata som en DataFrame och lagra dem i en plattformsdatauppsättning</p>
+                <p>Ta emot utdata som en DataFrame och lagra dem i en Platform-datauppsättning</p>
             </td>
             <td>
                 <ul>
@@ -226,7 +226,7 @@ I följande tabell beskrivs de abstrakta metoderna för en PySpark-klass:
 
 **Spark (Scala)**
 
-I följande tabell beskrivs de abstrakta metoderna för en Spark Data Saver-klass:
+I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] Data Saver-klass:
 
 <table>
     <thead>
@@ -239,7 +239,7 @@ I följande tabell beskrivs de abstrakta metoderna för en Spark Data Saver-klas
         <tr>
             <td>
                 <p><code class=" language-undefined">save(configProperties, dataFrame)</code></p>
-                <p>Ta emot utdata som en DataFrame och lagra dem i en plattformsdatauppsättning</p>
+                <p>Ta emot utdata som en DataFrame och lagra dem i en Platform-datauppsättning</p>
             </td>
             <td>
                 <ul>
@@ -251,14 +251,14 @@ I följande tabell beskrivs de abstrakta metoderna för en Spark Data Saver-klas
     </tbody>
 </table>
 
-### Spara data i en plattformsdatauppsättning {#save-data-to-a-platform-dataset}
+### Spara data i en [!DNL Platform] datauppsättning {#save-data-to-a-platform-dataset}
 
-För att kunna lagra data på en plattformsdatauppsättning måste egenskaperna antingen anges eller definieras i konfigurationsfilen:
+För att kunna lagra data i en [!DNL Platform] datauppsättning måste egenskaperna antingen anges eller definieras i konfigurationsfilen:
 
-- Ett giltigt ID för plattformsdatauppsättning som data ska lagras på
+- Ett giltigt [!DNL Platform] datauppsättnings-ID som data ska lagras på
 - Klient-ID som tillhör din organisation
 
-I följande exempel lagras data (`prediction`) i en plattformsdatauppsättning, där datauppsättnings-ID (`datasetId`) och klient-ID (`tenantId`) definieras i konfigurationsfilen.
+I följande exempel lagras data (`prediction`) i en [!DNL Platform] datauppsättning där datauppsättnings-ID (`datasetId`) och klient-ID (`tenantId`) definieras i konfigurationsfilen.
 
 
 **PySpark**
@@ -394,7 +394,7 @@ class ScoringDataSaver extends DataSaver {
 
 ## DatasetTransformer {#datasettransformer}
 
-Klassen DatasetTransformer ändrar och omformar strukturen i en datauppsättning. Sensei Machine Learning Runtime kräver inte att den här komponenten definieras och implementeras utifrån dina krav.
+Klassen DatasetTransformer ändrar och omformar strukturen i en datauppsättning. Komponenten behöver [!DNL Sensei Machine Learning Runtime] inte definieras och implementeras utifrån dina krav.
 
 När det gäller en funktionspipeline kan datauppsättningsomvandlare användas tillsammans med en rörledningsfabrik för att förbereda data för funktionskonstruktion.
 
@@ -428,7 +428,7 @@ I följande tabell beskrivs klassmetoderna för en PySpark-datamängdstransforme
 
 **Spark (Scala)**
 
-I följande tabell beskrivs de abstrakta metoderna för en transformerarklass för Spark-datamängd:
+I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] datamängdstransformatorklass:
 
 <table>
     <thead>
@@ -499,7 +499,7 @@ I följande tabell beskrivs klassmetoderna för en PySpark FeaturePipelineFactor
 
 **Spark (Scala)**
 
-I följande tabell beskrivs klassmetoderna för en Spark FeaturePipelineFactory:
+I följande tabell beskrivs klassmetoderna för en [!DNL Spark] FeaturePipelineFactory:
 
 <table>
     <thead>
@@ -537,7 +537,7 @@ I följande tabell beskrivs klassmetoderna för en Spark FeaturePipelineFactory:
 
 ## PipelineFactory {#pipelinefactory}
 
-Klassen PipelineFactory kapslar metoder och definitioner för modellutbildning och poängsättning, där utbildningslogik och algoritmer definieras i form av en Spark Pipeline.
+Klassen PipelineFactory kapslar metoder och definitioner för modellutbildning och poängsättning, där utbildningslogik och algoritmer definieras i form av en [!DNL Spark] pipeline.
 
 **PySpark**
 
@@ -608,7 +608,7 @@ I följande tabell beskrivs klassmetoderna för en PySpark PipelineFactory:
 
 **Spark (Scala)**
 
-I följande tabell beskrivs klassmetoderna för en Spark PipelineFactory:
+I följande tabell beskrivs klassmetoderna för en [!DNL Spark] PipelineFactory:
 
 <table>
     <thead>
@@ -692,7 +692,7 @@ I följande tabell beskrivs klassmetoderna för en PySpark MLEvaluator:
 
 **Spark (Scala)**
 
-I följande tabell beskrivs klassmetoderna för en Spark MLEvaluator:
+I följande tabell beskrivs klassmetoderna för en [!DNL Spark] MLEvaluator:
 
 <table>
     <thead>
