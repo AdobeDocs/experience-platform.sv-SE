@@ -4,43 +4,46 @@ solution: Experience Platform
 title: Arbeta med körningsmiljön för beslutstjänsten med API:er
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+workflow-type: tm+mt
+source-wordcount: '1985'
+ht-degree: 0%
 
 ---
 
 
 # Arbeta med körningsmiljön för beslutstjänsten med API:er
 
-Det här dokumentet innehåller en självstudiekurs för hur du arbetar med körtidstjänsterna i Decisioning Service med hjälp av API:er för Adobe Experience Platform.
+I det här dokumentet finns en självstudiekurs om hur du arbetar med runtime-tjänster för att [!DNL Decisioning Service] använda Adobe Experience Platform API:er.
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse för de Experience Platform-tjänster som deltar i beslutsfattandet och avgör vilket nästa bästa erbjudande som ska presenteras under kundupplevelserna. Innan du börjar med den här självstudiekursen bör du läsa i dokumentationen om följande:
+Den här självstudiekursen kräver en fungerande förståelse för de tjänster som är inblandade i att fatta beslut och fastställa nästa bästa erbjudande som ska presenteras under kundupplevelserna. [!DNL Experience Platform] Innan du börjar med den här självstudiekursen bör du läsa i dokumentationen om följande:
 
-- [Beslutstjänst](./../home.md): Innehåller ett ramverk för att lägga till och ta bort erbjudanden och skapa algoritmer för att välja det bästa som ska visas under en kunds upplevelse.
-- [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
-- [Profilfrågespråk (PQL)](../../segmentation/pql/overview.md): PQL används för att definiera regler och filter.
+- [!DNL Decisioning Service](./../home.md): Innehåller ett ramverk för att lägga till och ta bort erbjudanden och skapa algoritmer för att välja det bästa som ska visas under en kunds upplevelse.
+- [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att ordna kundupplevelsedata.
+- [!DNL Profile Query Language (PQL)](../../segmentation/pql/overview.md): PQL används för att definiera regler och filter.
 - [Hantera beslutsobjekt och regler med API:er](./entities.md): Innan du använder körningsmiljön för beslutstjänster måste du konfigurera de relaterade entiteterna.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:erna för plattformen.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API: [!DNL Platform] erna.
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../../tutorials/authentication.md).
+>[!NOTE] Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../tutorials/authentication.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -52,7 +55,7 @@ Krävs också för körningsbegäranden:
 
 >[!NOTE] `UUID` är en sträng i UUID-format som är globalt unik och inte får återanvändas för olika API-anrop
 
-Beslutstjänsten styrs av ett antal affärsobjekt som är relaterade till varandra. Alla affärsobjekt lagras i plattformens affärsobjektarkiv, XDM Core Object Repository. En viktig funktion i den här databasen är att API:erna är ortogonala till typen av affärsobjekt. I stället för att använda API:erna POST, GET, PUT, PATCH eller DELETE som anger resurstypen i dess API-slutpunkt, finns det bara 6 generiska slutpunkter, men de accepterar eller returnerar en parameter som anger typen av objekt när det aktuella sättet behövs. Schemat måste registreras med databasen, men utöver det kan databasen användas för en öppen uppsättning objekttyper.
+[!DNL Decisioning Service] styrs av ett antal affärsobjekt som är relaterade till varandra. Alla affärsobjekt lagras i [!DNL Platform’s] affärsobjektarkivet, XDM Core Object Repository. En viktig funktion i den här databasen är att API:erna är ortogonala till typen av affärsobjekt. I stället för att använda API:t POST, GET, PUT, PATCH eller DELETE som anger resurstypen i dess API-slutpunkt, finns det bara 6 generiska slutpunkter, men de accepterar eller returnerar en parameter som anger objekttypen när den typen av uttryck behövs. Schemat måste registreras med databasen, men utöver det kan databasen användas för en öppen uppsättning objekttyper.
 
 Slutpunktssökvägarna för alla XDM Core Object Repository API:er börjar med `https://platform.adobe.io/data/core/ode/`.
 
@@ -60,7 +63,7 @@ Det första banelementet efter slutpunkten är `containerId`. Den här identifie
 
 ## Sammanställning av beslutsmodeller
 
-Aktiveringen av logiska enheter sker automatiskt och kontinuerligt. Så snart ett nytt alternativ sparas i databasen och markeras som godkänt, kan det ingå i uppsättningen med tillgängliga alternativ. Så snart en beslutsregel har uppdaterats kommer regeluppsättningen att återskapas och förberedas för körning. I det här automatiska aktiveringssteget utvärderas eventuella begränsningar som definieras av affärslogiken som inte är beroende av körningssammanhanget. Resultaten av aktiveringssteget skickas till en cache där de är tillgängliga för körningsmiljön för beslutstjänsten.
+Aktiveringen av logiska enheter sker automatiskt och kontinuerligt. Så snart ett nytt alternativ sparas i databasen och markeras som godkänt, kan det ingå i uppsättningen med tillgängliga alternativ. Så snart en beslutsregel har uppdaterats kommer regeluppsättningen att återskapas och förberedas för körning. I det här automatiska aktiveringssteget utvärderas eventuella begränsningar som definieras av affärslogiken som inte är beroende av körningssammanhanget. Resultatet av aktiveringssteget skickas till en cache där de är tillgängliga för [!DNL Decisioning Service] körningsmiljön.
 
 ### Effekter av placeringar, filter och livscykeltillstånd
 
@@ -168,11 +171,11 @@ Den enda parametern för detta API-anrop är `containerId`. Resultatet av alla u
 
 ## REST API-anrop för att köra beslut
 
-REST API är en av vägarna för program som körs ovanpå Platform för att få nästa bästa upplevelse baserat på de regler, modeller och begränsningar som organisationen har ställt in för sina användare. Program skickar en av profilens identiteter (profil-ID och identitetsnamnutrymme). Beslutstjänsten söker upp profilen och informationen används för att tillämpa affärslogiken. Ytterligare kontextdata kan skickas till begäran och om de anges i affärsreglerna inkluderas de data som behövs för att fatta beslutet.
+REST API är en av vägarna för program som körs ovanpå [!DNL Platform] för att få nästa bästa upplevelse baserat på de regler, modeller och begränsningar som organisationen har ställt in för sina användare. Program skickar en av profilens identiteter (profil-ID och identitetsnamnutrymme) som [!DNL Decisioning Service] söker upp profilen och informationen används för att tillämpa affärslogiken. Ytterligare kontextdata kan skickas till begäran och om de anges i affärsreglerna inkluderas de data som behövs för att fatta beslutet.
 
 Applikationer kan uppnå bättre prestanda genom att begära ett beslut om upp till 30 aktiviteter samtidigt. URI:erna för aktiviteterna skickas i samma begäran. REST API är synkront och returnerar de föreslagna alternativen för alla dessa aktiviteter eller reservalternativet om inget personaliseringsalternativ uppfyller begränsningarna.
 
-Det är möjligt att två olika aktiviteter har samma alternativ som&quot;bäst&quot;. Om du vill undvika att en sammansatt upplevelse upprepas, ska du som standard avgöra vilka åtgärder som ska tillämpas mellan de aktiviteter som refereras i samma begäran. Skiljedomsförfarande innebär att för var och en av verksamheterna övervägs deras främsta alternativ, men inget alternativ kommer att föreslås mer än en gång för dessa verksamheter. Om två aktiviteter har samma topprankade alternativ kommer en av dem att väljas till att använda sitt näst bästa val eller tredje bästa och så vidare. Dessa regler för borttagning av dubbletter försöker undvika att någon av aktiviteterna måste använda sitt reservalternativ.
+Det är möjligt att två olika aktiviteter har samma alternativ som&quot;bäst&quot;. För att undvika att en sammansatt upplevelse upprepas, används som standard [!DNL Decisioning Service] godtyckliga hastigheter mellan de aktiviteter som refereras i samma begäran. Skiljedomsförfarande innebär att för var och en av verksamheterna övervägs deras främsta alternativ, men inget alternativ kommer att föreslås mer än en gång för dessa verksamheter. Om två aktiviteter har samma topprankade alternativ kommer en av dem att väljas till att använda sitt näst bästa val eller tredje bästa och så vidare. Dessa regler för borttagning av dubbletter försöker undvika att någon av aktiviteterna måste använda sitt reservalternativ.
 
 Beslutsbegäran innehåller de argument som ingår i en POST-begäran. Brödtexten är formaterad som JSON- `Content-Type` rubrikvärde `application/vnd.adobe.xdm+json; schema="{REQUEST_SCHEMA_AND_VERSION}"`
 
@@ -217,7 +220,7 @@ curl -X POST {DECISION_SERVICE_ENDPOINT_PATH}/{CONTAINER_ID}/decisions \
 }’
 ```
 
-- **`xdm:dryRun`** - När värdet för den här valfria egenskapen har värdet true kommer beslutsbegäran att följa begränsningen, men inte rita ned räknarna, är det en förväntan att anroparen aldrig tänker presentera förslaget för profilen. Beslutstjänsten kommer inte att registrera förslaget som en officiell XDM-beslutshändelse och den kommer inte att visas i rapporteringsdatauppsättningar. Standardvärdet för denna egenskap är false och när egenskapen utelämnas betraktas inte beslutet som en testkörning och ska därför presenteras för slutanvändaren.
+- **`xdm:dryRun`** - När värdet för den här valfria egenskapen har värdet true kommer beslutsbegäran att följa begränsningen, men inte rita ned räknarna, är det en förväntan att anroparen aldrig tänker presentera förslaget för profilen. Det [!DNL Decisioning Service] registreras inte som en officiell XDM-beslutshändelse och visas inte i rapporteringsdatauppsättningar. Standardvärdet för denna egenskap är false och när egenskapen utelämnas betraktas inte beslutet som en testkörning och ska därför presenteras för slutanvändaren.
 - **`xdm:validateContextData`** - Den här valfria egenskapen aktiverar eller inaktiverar validering av kontextdata. Om valideringen är aktiverad hämtas schemat (baserat på `@type` fältet) från XDM-registret för varje angivet kontextdataobjekt och objektet valideras mot det `xdm:data` .
 
 Begäran enligt det här schemat innehåller en matris med URI:er som refererar till erbjudandeaktiviteter, en profilidentitet och en matris med kontextdataobjekt:
@@ -289,4 +292,4 @@ Observera att PQL-syntaxen inte använder prefix i egenskapsnamn. Som standard r
 Alla poster för profil- och upplevelsehändelseentiteter hanteras redan i profilarkivet. Genom att skicka en eller flera profilidentiteter till begäran identifieras och slås profilen upp från butiken. Data blir sedan automatiskt tillgängliga för beslutsregler och -modeller som utvärderas av beslutsstrategin.
 
 Om du vill hämta profil- och upplevelseposter används standardprincipen för sammanfogning.
-Observera, att när du har överfört profilposter till plattformsdatalagret blir det en viss fördröjning tills profilposterna kan slås upp. Detsamma gäller för inhämtning av profil- och upplevelseposter via API:erna för direktuppspelning, bara efter några sekunder kommer data att vara tillgängliga för utvärdering av beslutsregler som utvärderar profil- och upplevelsehändelsedata.
+Observera, att när du har överfört profilposter till [!DNL Platform] datalagret sker en viss fördröjning tills profilposterna kan slås upp. Detsamma gäller för inhämtning av profil- och upplevelseposter via API:erna för direktuppspelning, bara efter några sekunder kommer data att vara tillgängliga för utvärdering av beslutsregler som utvärderar profil- och upplevelsehändelsedata.
