@@ -4,43 +4,43 @@ solution: Experience Platform
 title: Skapa en Salesforce-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 44c43afc653c147fa12e3e962904bfc79ee0fc64
+source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
 workflow-type: tm+mt
-source-wordcount: '454'
+source-wordcount: '438'
 ht-degree: 0%
 
 ---
 
 
-# Skapa en Salesforce-källanslutning i användargränssnittet
+# Skapa en [!DNL Salesforce] källanslutning i användargränssnittet
 
-Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata i CRM på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en Salesforce-källanslutning med hjälp av användargränssnittet för plattformen.
+Källkopplingar i Adobe Experience Platform ger möjlighet att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Salesforce] källkoppling med [!DNL Platform] användargränssnittet.
 
 ## Komma igång
 
-Den här självstudien kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
+* [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [Kundprofil](../../../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Om du redan har ett giltigt Salesforce-konto kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen om hur du [konfigurerar ett dataflöde](../../dataflow/crm.md).
+Om du redan har ett giltigt [!DNL Salesforce] konto kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen om hur du [konfigurerar ett dataflöde](../../dataflow/crm.md).
 
 ### Samla in nödvändiga inloggningsuppgifter
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `environmentUrl` | URL:en för Salesforce-källinstansen. |
-| `username` | Användarnamnet för Salesforce-användarkontot. |
-| `password` | Lösenordet för Salesforce-användarkontot. |
-| `securityToken` | Säkerhetstoken för Salesforce-användarkontot. |
+| `environmentUrl` | URL:en för [!DNL Salesforce] källinstansen. |
+| `username` | Användarnamnet för [!DNL Salesforce] användarkontot. |
+| `password` | Lösenordet för [!DNL Salesforce] användarkontot. |
+| `securityToken` | Säkerhetstoken för [!DNL Salesforce] användarkontot. |
 
 Mer information om hur du kommer igång finns i [det här Salesforce-dokumentet](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_understanding_authentication.htm).
 
-## Anslut ditt Salesforce-konto
+## Anslut ditt [!DNL Salesforce] konto
 
-När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att skapa ett nytt Salesforce-konto för att ansluta till plattformen.
+När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att skapa ett nytt [!DNL Salesforce] konto att ansluta till [!DNL Platform].
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt *[!UICONTROL Sources]* arbetsytan. På *[!UICONTROL Catalog]* skärmen visas en mängd olika källor som du kan skapa ett inkommande konto för, och varje källa visar antalet befintliga konton och datauppsättningsflöden som är kopplade till dem.
 
@@ -54,16 +54,16 @@ Sidan visas *[!UICONTROL Connect to Salesforce]* . På den här sidan kan du ant
 
 ### Nytt konto
 
-Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. På indataformuläret som visas anger du en anslutning med ett namn, en valfri beskrivning och dina Salesforce-inloggningsuppgifter. När du är klar väljer du **[!UICONTROL Connect]** och tillåt sedan en tid för det nya kontot att upprätta.
+Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. Ange ett namn, en valfri beskrivning och dina [!DNL Salesforce] inloggningsuppgifter på det indataformulär som visas. När du är klar väljer du **[!UICONTROL Connect]** och tillåt sedan en tid för det nya kontot att upprätta.
 
 ![koppla](../../../../images/tutorials/create/salesforce/new.png)
 
 ### Befintligt konto
 
-Om du vill ansluta till ett befintligt konto väljer du det Salesforce-konto som du vill ansluta till och fortsätter sedan **[!UICONTROL Next]** i det övre högra hörnet.
+Om du vill ansluta till ett befintligt konto markerar du det [!DNL Salesforce] konto du vill ansluta till och fortsätter sedan **[!UICONTROL Next]** i det övre högra hörnet.
 
 ![befintlig](../../../../images/tutorials/create/salesforce/existing.png)
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt Salesforce-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/crm.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Salesforce] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till Platform](../../dataflow/crm.md).
