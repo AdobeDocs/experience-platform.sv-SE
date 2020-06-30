@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Azure File Storage Connector
 topic: overview
 translation-type: tm+mt
-source-git-commit: c843ebb72ee3f1e8d2233dd2be4021403417813b
+source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
 workflow-type: tm+mt
-source-wordcount: '195'
+source-wordcount: '174'
 ht-degree: 0%
 
 ---
@@ -17,19 +17,19 @@ ht-degree: 0%
 >[!NOTE]
 >Azure File Storage-kopplingen är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../home.md#terms-and-conditions) .
 
-Adobe Experience Platform erbjuder inbyggd anslutningsbarhet för molnleverantörer som AWS, Google Cloud Platform och Azure, vilket gör att du kan hämta data från dessa system.
+Adobe Experience Platform erbjuder inbyggd anslutningsbarhet för molnleverantörer som AWS [!DNL Google Cloud Platform]och [!DNL Azure]så att ni kan hämta data från dessa system.
 
-Lagringskällor i molnet kan överföra dina egna data till Platform utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM-parquet eller avgränsade. Varje steg i processen är integrerat i arbetsflödet för källor. Med Platform kan du hämta data från Azure File Storage via batchar.
+Lagringskällor i molnet kan hämta dina egna data [!DNL Platform] utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM-parquet eller avgränsade. Varje steg i processen är integrerat i arbetsflödet för källor. [!DNL Platform] gör att du kan hämta in data från [!DNL Azure File Storage] grupper.
 
-Dokumentationen nedan innehåller information om hur du ansluter Azure File Storage till Platform med API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Azure File Storage] till [!DNL Platform] med API:er eller användargränssnittet:
 
-## Anslut Azure File Storage till Platform med API:er
+## Anslut [!DNL Azure File Storage] till [!DNL Platform] med API:er
 
 - [Skapa en Azure File Storage-koppling med API:t för Flow Service](../../tutorials/api/create/cloud-storage/azure-file-storage.md)
 - [Utforska ett molnlagringssystem med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
 - [Samla in molnlagringsdata med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
 
-## Anslut Azure-fillagring till Platform med användargränssnittet
+## Ansluta [!DNL Azure File Storage] till [!DNL Platform] användargränssnittet
 
 - [Skapa en Azure File Storage-källanslutning i användargränssnittet](../../tutorials/ui/create/cloud-storage/azure-file-storage.md)
 - [Konfigurera ett dataflöde för en molnlagringskontakt i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
