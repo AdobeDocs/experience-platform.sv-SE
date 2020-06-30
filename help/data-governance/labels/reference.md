@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Etiketter för dataanvändning som stöds
 topic: labels
 translation-type: tm+mt
-source-git-commit: 2f8da8688897476f89ca1b176e0c988d6e79264b
+source-git-commit: d4964231ee957349f666eaf6b0f5729d19c408de
 workflow-type: tm+mt
-source-wordcount: '1882'
+source-wordcount: '1878'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 Adobe Experience Platform har en infrastruktur för datastyrning med märkning och verkställighet av data (DULE) i centrum.  DULE-funktioner gör det möjligt att använda dataanvändningsetiketter på datauppsättningar och fält för att kategorisera data efter den typ av användarprofiler som gäller för dessa data.
 
-Det här dokumentet innehåller alla dataanvändningsetiketter som för närvarande stöds av Experience Platform. Mer information om datastyrning och DULE finns i [datastyrningsöversikten](../home.md).
+Det här dokumentet innehåller alla dataanvändningsetiketter som för närvarande stöds av [!DNL Experience Platform]. Mer information om [!DNL Data Governance] och DULE finns i [datastyrningsöversikten](../home.md).
 
 ## Kontraktsetiketter
 
