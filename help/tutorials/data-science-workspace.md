@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Självstudiekurser för datavetenskap
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 4d7d61660e6691d77701db1c089b84eee7f60974
+source-git-commit: 1a835c6c20c70bf03d956c601e2704b68d4f90fa
 workflow-type: tm+mt
-source-wordcount: '1253'
+source-wordcount: '1252'
 ht-degree: 0%
 
 ---
@@ -137,7 +137,7 @@ Mer information finns i självstudiekursen om hur du [skapar en introduktion](..
 
 ## Bygg ett Machine Learning-program i realtid (alfa)
 
-En kombination av sömlös beräkning på både hubben och Edge minskar dramatiskt den latens som traditionellt används för att driva hyperpersonaliserade upplevelser som är både relevanta och responsiva. Maskininlärning i realtid ger därmed en otroligt låg latens för synkront beslutsfattande. Exempel är återgivning av anpassat webbsidesinnehåll, visning av ett erbjudande och rabatter som minskar bortfallet samtidigt som konverteringsgraden ökar i en webbutik.
+En kombination av sömlös beräkning på både hubben och den [!DNL Edge] minskar dramatiskt den latens som traditionellt används för att skapa hyper-personaliserade upplevelser som är både relevanta och responsiva. Maskininlärning i realtid ger därmed en otroligt låg latens för synkront beslutsfattande. Exempel är återgivning av anpassat webbsidesinnehåll, visning av ett erbjudande och rabatter som minskar bortfallet samtidigt som konverteringsgraden ökar i en webbutik.
 
 **Den här guiden hjälper dig att:**
 - Förstå maskininlärningsarkitekturen i realtid.
