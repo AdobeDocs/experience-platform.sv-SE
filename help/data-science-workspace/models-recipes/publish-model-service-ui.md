@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Publicera en modell som en tjänst (UI)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 7dc5075d3101b4780af92897c0381e73a9c5aef0
+source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
 workflow-type: tm+mt
-source-wordcount: '405'
+source-wordcount: '401'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ Om du föredrar att publicera en modell med hjälp av API:er för Sensei Machine
 
 ## Poäng med hjälp av en tjänst {#access-a-service}
 
-1. Klicka på fliken i den vänstra navigeringskolumnen i Adobe Experience Platform för att öppna **[!UICONTROL Services]** tjänstgalleriet **. Hitta den tjänst du vill använda och klicka på **[!UICONTROL Score]**.
+1. Klicka på fliken i den vänstra navigeringskolumnen i Adobe Experience Platform för att komma åt den **[!UICONTROL Services]** *[!UICONTROL Service Gallery]*. Hitta den tjänst du vill använda och klicka på **[!UICONTROL Score]**.
    ![](../images/models-recipes/publish-model/click_to_score.png)
 2. Välj en lämplig indatauppsättning för poängkörningen och klicka sedan på **[!UICONTROL Next]**.
    ![](../images/models-recipes/publish-model/6_scoring_input.png)
@@ -52,4 +52,4 @@ Om du föredrar att publicera en modell med hjälp av API:er för Sensei Machine
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du publicerat en modell som en tillgänglig tjänst och gjort en bedömning av data med den nya tjänsten via *tjänstgalleriet*. Fortsätt till nästa självstudiekurs för att lära dig hur du kan [schemalägga automatiska kurser och poängsättning för en tjänst](./schedule-models-ui.md).
+Genom att följa den här självstudiekursen har du publicerat en modell som en tillgänglig tjänst och gjort en bedömning av data med den nya tjänsten via *[!UICONTROL Service Gallery]*. Fortsätt till nästa självstudiekurs för att lära dig hur du kan [schemalägga automatiska kurser och poängsättning för en tjänst](./schedule-models-ui.md).
