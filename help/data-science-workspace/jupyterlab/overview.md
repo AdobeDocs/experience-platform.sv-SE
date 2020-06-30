@@ -4,21 +4,21 @@ solution: Experience Platform
 title: Användarhandbok för JupyterLab
 topic: Overview
 translation-type: tm+mt
-source-git-commit: 49f0678cf8bf4349d0b63f3525a1f707f725ede9
+source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
 workflow-type: tm+mt
-source-wordcount: '3780'
-ht-degree: 9%
+source-wordcount: '3645'
+ht-degree: 10%
 
 ---
 
 
-# Användarhandbok för JupyterLab
+# [!DNL JupyterLab] användarhandbok
 
-JupyterLab är ett webbaserat användargränssnitt för <a href="https://jupyter.org/" target="_blank">Project Jupyter</a> som är nära integrerat med [!DNL Adobe Experience Platform]. Den utgör en interaktiv utvecklingsmiljö där datavetare kan arbeta med Jupyters bärbara datorer, kod och data.
+[!DNL JupyterLab] är ett webbaserat användargränssnitt för <a href="https://jupyter.org/" target="_blank">Project Jupyter</a> som är nära integrerat med [!DNL Adobe Experience Platform]. Den utgör en interaktiv utvecklingsmiljö där datavetare kan arbeta med Jupyters bärbara datorer, kod och data.
 
-Det här dokumentet innehåller en översikt över JupyterLab och dess funktioner samt instruktioner om hur du utför vanliga åtgärder.
+Det här dokumentet innehåller en översikt över [!DNL JupyterLab] och dess funktioner samt instruktioner om hur du utför vanliga åtgärder.
 
-## JupyterLab på Experience Platform
+## [!DNL JupyterLab] på [!DNL Experience Platform]
 
 Integreringen av Experience Platform JupyterLab åtföljs av arkitektoniska förändringar, designöverväganden, anpassade tillägg till bärbara datorer, förinstallerade bibliotek och ett Adobe-tematiskt gränssnitt.
 
@@ -26,29 +26,29 @@ I följande lista beskrivs några av de funktioner som är unika för JupyterLab
 
 | Funktion | Beskrivning |
 | --- | --- |
-| **Kernlar** | Kernels ger möjlighet att köra och granska kod i olika programmeringsspråk för bärbara datorer och andra JupyterLab-gränssnitt. Experience Platform tillhandahåller ytterligare kernel som stöder utvecklingen i Python, R, PySpark och Spark. Mer information finns i avsnittet [Kernlar](#kernels) . |
-| **Dataåtkomst** | Få tillgång till befintliga datauppsättningar direkt inifrån JupyterLab med fullt stöd för läs- och skrivfunktioner. |
-| **Integrering med Platform** | Inbyggda integreringar gör att du kan använda andra Platform-tjänster direkt inifrån JupyterLab. En fullständig lista över integreringar som stöds finns i avsnittet om [integrering med andra Platform-tjänster](#service-integration). |
+| **Kernlar** | Kernels ger möjlighet att köra och granska kod i olika programmeringsspråk för bärbara datorer och andra [!DNL JupyterLab] gränssnitt. [!DNL Experience Platform] innehåller ytterligare kernel som stöder utveckling i [!DNL Python], R, PySpark och [!DNL Spark]. Mer information finns i avsnittet [Kernlar](#kernels) . |
+| **Dataåtkomst** | Få tillgång till befintliga datauppsättningar direkt inifrån [!DNL JupyterLab] med fullt stöd för läs- och skrivfunktioner. |
+| **[!DNL Platform]tjänstintegration ** | Inbyggda integreringar gör att du kan använda andra [!DNL Platform] tjänster direkt inifrån [!DNL JupyterLab]. En fullständig lista över integreringar som stöds finns i avsnittet om [integrering med andra Platform-tjänster](#service-integration). |
 | **Autentisering** | Förutom <a href="https://jupyter-notebook.readthedocs.io/en/latest/security.html" target="_blank">JupyterLab:s inbyggda säkerhetsmodell</a>krypteras och autentiseras all interaktion mellan programmet och Experience Platform, inklusive Platform kommunikation från tjänst till tjänst, via <a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">[!DNL Adobe Identity Management System] (IMS)</a>. |
-| **Utvecklingsbibliotek** | I Experience Platform tillhandahåller JupyterLab förinstallerade bibliotek för Python, R och PySpark. En fullständig lista över bibliotek som stöds finns i [bilagan](#supported-libraries) . |
-| **Bibliotekshanterare** | När de förinstallerade biblioteken saknas för dina behov kan ytterligare bibliotek installeras för Python och R, och lagras tillfälligt i isolerade behållare för att upprätthålla Platform integritet och skydda dina data. Mer information finns i avsnittet [Kernlar](#kernels) . |
+| **Utvecklingsbibliotek** | I [!DNL Experience Platform]finns [!DNL JupyterLab] förinstallerade bibliotek för [!DNL Python], R och PySpark. En fullständig lista över bibliotek som stöds finns i [bilagan](#supported-libraries) . |
+| **Bibliotekshanterare** | När de förinstallerade biblioteken saknas för dina behov kan ytterligare bibliotek installeras för Python och R, och lagras tillfälligt i isolerade behållare för att bibehålla integriteten hos [!DNL Platform] och skydda dina data. Mer information finns i avsnittet [Kernlar](#kernels) . |
 
 >[!NOTE] Ytterligare bibliotek är bara tillgängliga för den session där de installerades. Du måste installera om alla ytterligare bibliotek som du behöver när du startar nya sessioner.
 
-## Integrering med andra Platform-tjänster {#service-integration}
+## Integrering med andra [!DNL Platform] tjänster {#service-integration}
 
-Standardisering och interoperabilitet är viktiga koncept som ligger bakom [!DNL Experience Platform]. Integreringen av JupyterLab på [!DNL Platform] som en inbäddad IDE gör att den kan interagera med andra [!DNL Platform] tjänster, vilket gör att du kan utnyttja hela [!DNL Platform] potentialen. Följande [!DNL Platform] tjänster är tillgängliga i JupyterLab:
+Standardisering och interoperabilitet är viktiga koncept som ligger bakom [!DNL Experience Platform]. Integreringen av [!DNL JupyterLab] on [!DNL Platform] som en inbäddad IDE gör att den kan interagera med andra [!DNL Platform] tjänster, vilket gör att du kan utnyttja [!DNL Platform] den fullt ut. Följande [!DNL Platform] tjänster är tillgängliga i [!DNL JupyterLab]:
 
-* **Katalogtjänst:** Få tillgång till och utforska datauppsättningar med läs- och skrivfunktioner.
-* **Frågetjänst:** Få åtkomst till och utforska datauppsättningar med SQL, vilket ger lägre dataåtkomstkostnader när du hanterar stora mängder data.
-* **Sensei ML Framework:** Modellutveckling med möjlighet att träna och poängsätta data, liksom att skapa recept med ett enda klick.
-* **Experience Data Model (XDM):** Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. [Experience Data Model (XDM)](https://www.adobe.com/go/xdm-home-en), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
+* **[!DNL Catalog Service]:**Få tillgång till och utforska datauppsättningar med läs- och skrivfunktioner.
+* **[!DNL Query Service]:**Få åtkomst till och utforska datauppsättningar med SQL, vilket ger lägre dataåtkomstkostnader när du hanterar stora mängder data.
+* **[!DNL Sensei ML Framework]:**Modellutveckling med möjlighet att träna och poängsätta data, liksom att skapa recept med ett enda klick.
+* **[!DNL Experience Data Model (XDM)]:**Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform.[Experience Data Model (XDM)](https://www.adobe.com/go/xdm-home-en), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
 
->[!NOTE] Vissa tjänstintegreringar [!DNL Platform] på JupyterLab är begränsade till specifika kärnor. Mer information finns i avsnittet om [kernlar](#kernels) .
+>[!NOTE] Vissa [!DNL Platform] tjänstintegreringar på [!DNL JupyterLab] är begränsade till specifika kärnor. Mer information finns i avsnittet om [kernlar](#kernels) .
 
 ## Viktiga funktioner och vanliga åtgärder
 
-Information om de viktigaste funktionerna i JupyterLab och anvisningar om hur du utför vanliga åtgärder finns i avsnitten nedan:
+Information om de viktigaste funktionerna [!DNL JupyterLab] och anvisningar om hur man utför vanliga åtgärder finns i avsnitten nedan:
 
 * [Åtkomst till JupyterLab](#access-jupyterlab)
 * [Gränssnittet JupyterLab](#jupyterlab-interface)
@@ -58,28 +58,28 @@ Information om de viktigaste funktionerna i JupyterLab och anvisningar om hur du
 * [Körningsresurs för PySpark/Spark](#execution-resource)
 * [Startprogram](#launcher)
 
-### Åtkomst till JupyterLab {#access-jupyterlab}
+### Öppna [!DNL JupyterLab] {#access-jupyterlab}
 
-I [Adobe Experience Platform](https://platform.adobe.com)väljer du **Anteckningsböcker** i den vänstra navigeringskolumnen. Ge JupyterLab lite tid att initiera helt.
+I [Adobe Experience Platform](https://platform.adobe.com)väljer du **Anteckningsböcker** i den vänstra navigeringskolumnen. Ge lite tid åt [!DNL JupyterLab] att initiera.
 
 ![](../images/jupyterlab/user-guide/access_jupyterlab.png)
 
-### Gränssnittet JupyterLab {#jupyterlab-interface}
+### [!DNL JupyterLab] gränssnitt {#jupyterlab-interface}
 
-Gränssnittet JupyterLab består av en menyrad, ett fällbart sidofält och huvudarbetsytan som innehåller flikar med dokument och aktiviteter.
+Gränssnittet består [!DNL JupyterLab] av en menyrad, ett fällbart sidofält och huvudarbetsytan som innehåller flikar med dokument och aktiviteter.
 
 **Menyrad**
 
-Menyraden högst upp i gränssnittet har menyer på översta nivån som visar åtgärder som är tillgängliga i JupyterLab med sina kortkommandon:
+Menyraden högst upp i gränssnittet har menyer på översta nivån som visar åtgärder som är tillgängliga i [!DNL JupyterLab] med sina kortkommandon:
 
 * **Fil:** Åtgärder för filer och kataloger
 * **Redigera:** Åtgärder som rör redigering av dokument och andra aktiviteter
-* **Visa:** Åtgärder som ändrar utseendet på JupyterLab
+* **Visa:** Åtgärder som ändrar utseendet på [!DNL JupyterLab]
 * **Kör:** Åtgärder för att köra kod i olika aktiviteter, t.ex. anteckningsböcker och kodkonsoler
 * **Kernel:** Åtgärder för hantering av kärnor
 * **Tabbar:** En lista över öppna dokument och aktiviteter
 * **Inställningar:** Vanliga inställningar och en avancerad inställningsredigerare
-* **Hjälp:** En lista med hjälplänkar för JupyterLab och kernel
+* **Hjälp:** En lista över [!DNL JupyterLab] och kernelhjälplänkar
 
 **Vänster sidofält**
 
@@ -98,7 +98,7 @@ Klicka på en flik för att visa dess funktioner, eller klicka på en utökad fl
 
 **Huvudarbetsyta**
 
-På huvudarbetsytan i JupyterLab kan du ordna dokument och andra aktiviteter i flikpaneler som kan storleksändras eller delas upp. Dra en flik till mitten av en tabbpanel för att migrera fliken. Dela upp en panel genom att dra en flik till vänster, höger, överst eller nederst på panelen:
+På huvudarbetsytan i [!DNL JupyterLab] kan du ordna dokument och andra aktiviteter i flikpaneler som kan storleksändras eller delas upp. Dra en flik till mitten av en tabbpanel för att migrera fliken. Dela upp en panel genom att dra en flik till vänster, höger, överst eller nederst på panelen:
 
 ![](../images/jupyterlab/user-guide/main_work_area.gif)
 
@@ -120,19 +120,19 @@ Vanliga cellåtgärder beskrivs nedan:
 
 ### Kernlar {#kernels}
 
-Anteckningsbokskärnor är språkspecifika datormotorer för bearbetning av bärbara datorer. Förutom Python har JupyterLab ytterligare språkstöd för R, PySpark och Spark (Scala). När du öppnar ett anteckningsboksdokument startas den tillhörande kärnan. När en anteckningsbokscell körs utför kärnan beräkningen och ger resultat som kan ta mycket processorkraft och minnesresurser i anspråk. Observera att allokerat minne inte frigörs förrän kärnan stängs av.
+Anteckningsbokskärnor är språkspecifika datormotorer för bearbetning av bärbara datorer. Dessutom [!DNL Python]har [!DNL JupyterLab] stöd för ytterligare språk i R, PySpark och [!DNL Spark] (Scala). När du öppnar ett anteckningsboksdokument startas den tillhörande kärnan. När en anteckningsbokscell körs utför kärnan beräkningen och ger resultat som kan ta mycket processorkraft och minnesresurser i anspråk. Observera att allokerat minne inte frigörs förrän kärnan stängs av.
 
 Vissa funktioner är begränsade till särskilda kärnor enligt tabellen nedan:
 
-| Kernel | Installationsstöd för bibliotek | Platform integreringar |
+| Kernel | Installationsstöd för bibliotek | [!DNL Platform] integreringar |
 | :----: | :--------------------------: | :-------------------- |
-| **Python** | Ja | <ul><li>Sensei ML Framework</li><li>Katalogtjänst</li><li>Frågetjänst</li></ul> |
-| **R** | Ja | <ul><li>Sensei ML Framework</li><li>Katalogtjänst</li></ul> |
-| **Scala** | Nej | <ul><li>Sensei ML Framework</li><li>Katalogtjänst</li></ul> |
+| **[!DNL Python]** | Ja | <ul><li>[!DNL Sensei ML Framework]</li><li>[!DNL Catalog Service]</li><li>[!DNL Query Service]</li></ul> |
+| **R** | Ja | <ul><li>[!DNL Sensei ML Framework]</li><li>[!DNL Catalog Service]</li></ul> |
+| **Scala** | Nej | <ul><li>[!DNL Sensei ML Framework]</li><li>[!DNL Catalog Service]</li></ul> |
 
 ### Kernel-sessioner {#kernel-sessions}
 
-Varje aktiv anteckningsbok eller aktivitet på JupyterLab använder en kernel-session. Alla aktiva sessioner kan hittas genom att expandera fliken **Löpande terminaler och kerrar** från vänster sidofält. Den bärbara datorns typ och tillstånd för kärnan kan identifieras genom att man observerar den övre högra delen av gränssnittet. I diagrammet nedan är anteckningsbokens tillhörande kärna **Python 3** och det aktuella läget representeras av en grå cirkel till höger. En ihålig cirkel innebär en inaktiv kärna och en fylld cirkel betyder en upptagen kärna.
+Varje aktiv anteckningsbok eller aktivitet på [!DNL JupyterLab] använder en kernel-session. Alla aktiva sessioner kan hittas genom att expandera fliken **Löpande terminaler och kerrar** från vänster sidofält. Den bärbara datorns typ och tillstånd för kärnan kan identifieras genom att man observerar den övre högra delen av gränssnittet. I diagrammet nedan är anteckningsbokens tillhörande kärna **[!DNL Python]3 **och det aktuella läget representeras av en grå cirkel till höger. En ihålig cirkel innebär en inaktiv kärna och en fylld cirkel betyder en upptagen kärna.
 
 ![](../images/jupyterlab/user-guide/kernel_and_state_1.png)
 
@@ -151,8 +151,8 @@ Med den anpassade *startguiden* får du användbara anteckningsboksmallar för d
 | Tom | En tom anteckningsboksfil. |
 | Starter | En förfylld anteckningsbok som visar datautforskandet med exempeldata. |
 | Detaljhandel | En förfylld anteckningsbok med information om <a href="https://adobe.ly/2wOgO3L" target="_blank">butiksförsäljningsmottagare</a> med exempeldata. |
-| Recipe Builder | En anteckningsboksmall för att skapa ett recept i JupyterLab. Den är förfylld med kod och kommentarer som demonstrerar och beskriver processen att skapa recept. I den <a href="https://www.adobe.com/go/data-science-create-recipe-notebook-tutorial-en" target="_blank">bärbara datorn finns självstudiekurser</a> om du vill se en detaljerad genomgång. |
-| Frågetjänst | En förfylld anteckningsbok som visar användningen av frågetjänsten direkt i JupyterLab med medföljande exempelarbetsflöden som analyserar data i stor skala. |
+| Recipe Builder | En anteckningsboksmall för att skapa ett recept i [!DNL JupyterLab]. Den är förfylld med kod och kommentarer som demonstrerar och beskriver processen att skapa recept. I den <a href="https://www.adobe.com/go/data-science-create-recipe-notebook-tutorial-en" target="_blank">bärbara datorn finns självstudiekurser</a> om du vill se en detaljerad genomgång. |
+| [!DNL Query Service] | En förfylld anteckningsbok som visar hur data används [!DNL Query Service] direkt i [!DNL JupyterLab] de medföljande exempelarbetsflödena för att analysera data i stor skala. |
 | XDM-händelser | En förfylld anteckningsbok som visar datautforskande av Experience Event-data efter värde, med fokus på gemensamma funktioner i datastrukturen. |
 | XDM-frågor | En förfylld anteckningsbok som visar exempel på affärsfrågor om Experience Event-data. |
 | Aggregering | En förfylld anteckningsbok som visar exempel på arbetsflöden för att samla stora mängder data i mindre, hanterbara segment. |
@@ -167,14 +167,14 @@ Vissa mallar för bärbara datorer är begränsade till vissa kärnor. Malltillg
         <th><strong>Starter</strong></th>
         <th><strong>Detaljhandel</strong></th>
         <th><strong>Recipe Builder</strong></th>
-        <th><strong>Frågetjänst</strong></th>
+        <th><strong>[!DNL Query Service]</strong></th>
         <th><strong>XDM-händelser</strong></th>
         <th><strong>XDM-frågor</strong></th>
         <th><strong>Aggregering</strong></th>
         <th><strong>Klustring</strong></th>
     </tr>
     <tr>
-        <th><strong>Python</strong></th>
+        <th><strong>[!DNL Python]</strong></th>
         <td >ja</td>
         <td >ja</td>
         <td >ja</td>
@@ -198,7 +198,7 @@ Vissa mallar för bärbara datorer är begränsade till vissa kärnor. Malltillg
         <td >no</td>
     </tr>
       <tr>
-        <th  ><strong>PySpark 3 (Spark 2.4)</strong></th>
+        <th  ><strong>PySpark 3 ([!DNL Spark] 2.4)</strong></th>
         <td >no</td>
         <td >ja</td>
         <td >no</td>
@@ -227,7 +227,7 @@ Om du vill öppna en ny *startprogram* klickar du på **Arkiv > Ny startfunktion
 
 ![](../images/jupyterlab/user-guide/new_launcher.gif)
 
-### GPU- och minnesserverkonfiguration i Python/R
+### GPU- och minnesserverkonfiguration i [!DNL Python]/R
 
 I [!DNL JupyterLab] väljer du kugghjulsikonen i det övre högra hörnet för att öppna *serverkonfigurationen* för bärbara datorer. Du kan växla GPU på och tilldela den mängd minne du behöver med hjälp av skjutreglaget. Hur mycket minne du kan allokera beror på hur mycket organisationen har allokerat. Välj **[!UICONTROL Update configs]** att spara.
 
@@ -236,19 +236,19 @@ I [!DNL JupyterLab] väljer du kugghjulsikonen i det övre högra hörnet för a
 
 ![](../images/jupyterlab/user-guide/notebook-gpu-config.png)
 
-## Åtkomst till Platform-data via bärbara datorer
+## Få åtkomst till [!DNL Platform] data med bärbara datorer
 
-Varje kärna som stöds har inbyggda funktioner som gör att du kan läsa Platform-data från en datamängd i en anteckningsbok. Stöd för sidnumrering av data är dock begränsat till bärbara datorer från Python och R.
+Varje kärna som stöds har inbyggda funktioner som gör att du kan läsa [!DNL Platform] data från en datamängd i en anteckningsbok. Stöd för sidnumrering av data är dock begränsat till bärbara datorer [!DNL Python] och R-datorer.
 
 ### Datagränser för bärbara datorer
 
-Följande information definierar den maximala mängden data som kan läsas, vilken typ av data som användes och den beräknade tidsramen som läser data. För Python och R användes en bärbar datorserver som konfigurerats med 40 GB RAM-minne för prestandatesterna. För PySpark och Scala användes ett databricks-kluster som konfigurerats med 64 GB RAM, 8 kärnor, 2 DBU med högst 4 arbetare för de riktmärken som beskrivs nedan.
+Följande information definierar den maximala mängden data som kan läsas, vilken typ av data som användes och den beräknade tidsramen som läser data. För [!DNL Python] och R användes en bärbar datorserver som konfigurerats med 40 GB RAM för prestandatesterna. För PySpark och Scala användes ett databricks-kluster som konfigurerats med 64 GB RAM, 8 kärnor, 2 DBU med högst 4 arbetare för de riktmärken som beskrivs nedan.
 
-De ExperienceEvent-schemadata som användes varierade i storlek från ett tusen (1 K) rader på upp till en miljard (1B) rader. Observera att för PySpark- och Spark-mätvärdena användes ett datumintervall på 10 dagar för XDM-data.
+De ExperienceEvent-schemadata som användes varierade i storlek från ett tusen (1 K) rader på upp till en miljard (1B) rader. Observera att för PySpark och [!DNL Spark] mätvärden användes ett datumintervall på 10 dagar för XDM-data.
 
-Ad hoc-schemadata bearbetades i förväg med hjälp av tjänsten Create Table as Select (CTAS). Dessa data varierade också i storlek från ett tusen (1K) rader, upp till en miljard (1B) rader.
+Ad hoc-schemadata bearbetades i förväg med [!DNL Query Service] Create Table as Select (CTAS). Dessa data varierade också i storlek från ett tusen (1K) rader, upp till en miljard (1B) rader.
 
-#### Datagränser för Python bärbara datorer
+#### [!DNL Python] begränsningar för bärbara data
 
 **XDM ExperienceEvent-schema:** Du bör kunna läsa högst 2 miljoner rader (~6,1 GB data på disk) med XDM-data på mindre än 22 minuter. Om du lägger till ytterligare rader kan det leda till fel.
 
@@ -280,7 +280,7 @@ Ad hoc-schemadata bearbetades i förväg med hjälp av tjänsten Create Table as
 | Diskstorlek (i MB) | 0.082 | 0.612 | 9.0 | 91 | 188 | 293 |
 | R SDK (i sek) | 7.7 | 4.58 | 35.9 | 233 | 470.5 | 603 |
 
-#### Datagränser för bärbara datorer med PySpark (Python kernel):
+#### Datagränsgränser för PySpark ([!DNL Python] kernel):
 
 **XDM ExperienceEvent-schema:** I interaktivt läge bör du kunna läsa upp maximalt 5 miljoner rader (~13,42 GB data på disk) med XDM-data på ca 20 minuter. Interaktivt läge stöder endast upp till 5 miljoner rader. Om du vill läsa större datauppsättningar rekommenderar vi att du växlar till gruppläge. I gruppläge bör du kunna läsa upp maximalt 500 miljoner rader (~1,31 TB data på disk) med XDM-data på ca 14 timmar.
 
@@ -298,7 +298,7 @@ Ad hoc-schemadata bearbetades i förväg med hjälp av tjänsten Create Table as
 | Interaktivt SDK-läge (i sekunder) | 28.2s | 18.6s | 20.8s | 20.9s | 23.8s | 21.7s | 24.7s | 22s | 28.4s | 40s | 97.4s | 154.5s |
 | SDK-batchläge (i sekunder) | 428.8s | 578.8s | 641.4s | 538.5s | 630.9s | 467.3s | 411s | 675s | 702s | 719.2s | 1022.1s | 1122.3s |
 
-#### Datagränser för Spark (Scala kernel) för bärbara datorer:
+#### [!DNL Spark] Datagränser för bärbara datorer (Scala kernel):
 
 **XDM ExperienceEvent-schema:** I interaktivt läge bör du kunna läsa upp maximalt 5 miljoner rader (~13,42 GB data på disk) med XDM-data på ca 18 minuter. Interaktivt läge stöder endast upp till 5 miljoner rader. Om du vill läsa större datauppsättningar rekommenderar vi att du växlar till gruppläge. I gruppläge bör du kunna läsa upp maximalt 500 miljoner rader (~1,31 TB data på disk) med XDM-data på ca 14 timmar.
 
@@ -316,13 +316,13 @@ Ad hoc-schemadata bearbetades i förväg med hjälp av tjänsten Create Table as
 | Interaktivt SDK-läge (i sekunder) | 35.7s | 31s | 19.5s | 25.3s | 23s | 33.2s | 25.5s | 29.2s | 29.7s | 36.9s | 83.5s | 139s |
 | SDK-batchläge (i sekunder) | 448.8s | 459.7s | 519s | 475.8s | 599.9s | 347.6s | 407.8s | 397s | 518.8s | 487.9s | 760.2s | 975.4s |
 
-### Läs från en datauppsättning i Python/R
+### Läs från en datauppsättning i [!DNL Python]/R
 
-Med Python- och R-anteckningsböcker kan du numrera data när du använder datauppsättningar. Exempelkod för att läsa data med och utan sidnumrering visas nedan.
+[!DNL Python] och R-anteckningsböcker gör att du kan numrera data när du använder datauppsättningar. Exempelkod för att läsa data med och utan sidnumrering visas nedan.
 
 [//]: # (In the following samples, the first step is currently required but once the SDK is complete, users are no longer required to explicitly define client_context)
 
-#### Läs från en datauppsättning i Python/R utan sidnumrering
+#### Läsa från en datauppsättning i/ [!DNL Python]R utan sidnumrering
 
 Om du kör följande kod läses hela datauppsättningen. Om körningen lyckas sparas data som en Pandas-dataram som refereras av variabeln `df`.
 
@@ -352,7 +352,7 @@ df
 
 * `{DATASET_ID}`: Den unika identiteten för den datauppsättning som ska användas
 
-#### Läs från en datauppsättning i Python/R med sidnumrering
+#### Läs från en datauppsättning i [!DNL Python]/R med sidnumrering
 
 Om du kör följande kod läses data från den angivna datauppsättningen. Sidnumrering uppnås genom att data begränsas och förskjuts genom funktionerna `limit()` respektive `offset()` . Begränsande data avser det maximala antalet datapunkter som ska läsas, medan förskjutning avser antalet datapunkter som ska hoppas över före läsning av data. Om läsåtgärden körs utan fel sparas data som en Pandas-dataram som variabeln refererar till `df`.
 
@@ -382,11 +382,11 @@ df <- dataset_reader$limit(100L)$offset(10L)$read()
 
 * `{DATASET_ID}`: Den unika identiteten för den datauppsättning som ska användas
 
-### Läs från en datauppsättning i PySpark/Spark/Scala
+### Läs från en datauppsättning i PySpark/[!DNL Spark]/Scala
 
 När en aktiv PySpark- eller Scala-anteckningsbok är öppen expanderar du fliken **Datautforskaren** från det vänstra sidofältet och dubbelklickar på **Datauppsättningar** för att visa en lista över tillgängliga datauppsättningar. Högerklicka på den datauppsättning som du vill få åtkomst till och klicka på **Utforska data i anteckningsbok**. Följande kodceller genereras:
 
-#### PySpark (Spark 2.4) {#pyspark2.4}
+#### PySpark ([!DNL Spark] 2.4) {#pyspark2.4}
 
 I och med introduktionen av Spark 2.4 medföljer [`%dataset`](#magic) anpassad magi.
 
@@ -398,7 +398,7 @@ pd0.describe()
 pd0.show(10, False)
 ```
 
-#### Scala (Spark 2.4) {#spark2.4}
+#### Scala ([!DNL Spark] 2.4) {#spark2.4}
 
 ```scala
 // Scala (Spark 2.4)
@@ -422,9 +422,9 @@ dataFrame.show()
 >[!TIP]
 >I Scala kan du använda `sys.env()` för att deklarera och returnera ett värde inifrån `option`.
 
-### Använda %dataset-magi i PySpark 3 (Spark 2.4) bärbara datorer {#magic}
+### Använda %dataset-magi i PySpark 3 ([!DNL Spark] 2.4) bärbara datorer {#magic}
 
-I och med introduktionen av Spark 2.4 tillhandahålls `%dataset` anpassad magi för användning i nya bärbara datorer med PySpark 3 (Spark 2.4) (Python 3 kernel).
+I och med introduktionen av [!DNL Spark] 2.4 medföljer `%dataset` anpassad magi för användning i nya bärbara datorer med PySpark 3 ([!DNL Spark] 2.4) ([!DNL Python] 3 kernel).
 
 **Användning**
 
@@ -432,7 +432,7 @@ I och med introduktionen av Spark 2.4 tillhandahålls `%dataset` anpassad magi f
 
 **Beskrivning**
 
-Ett anpassat kommando för datavetenskap och arbetsytemagi för att läsa eller skriva en datauppsättning från en Python-anteckningsbok (Python 3-kärna).
+Ett anpassat [!DNL Data Science Workspace] magiskt kommando för att läsa eller skriva en datauppsättning från en [!DNL Python] bärbar dator ([!DNL Python] 3 kernel).
 
 * **{action}**: Den typ av åtgärd som ska utföras på datauppsättningen. Två åtgärder är tillgängliga,&quot;read&quot; eller&quot;write&quot;.
 * **—datasetId {id}**: Används för att ange ID för datauppsättningen som ska läsas eller skrivas. Detta är ett obligatoriskt argument.
@@ -446,22 +446,22 @@ Ett anpassat kommando för datavetenskap och arbetsytemagi för att läsa eller 
 * **Läs exempel**: `%dataset read --datasetId 5e68141134492718af974841 --dataFrame pd0`
 * **Exempel** på skrivning: `%dataset write --datasetId 5e68141134492718af974842 --dataFrame pd0`
 
-### Fråga data med hjälp av frågetjänsten i Python
+### Fråga data med [!DNL Query Service] hjälp av [!DNL Python]
 
-Med JupyterLab på Platform kan du använda SQL i en Python-anteckningsbok för att få åtkomst till data via <a href="https://www.adobe.com/go/query-service-home-en" target="_blank">Adobe Experience Platform Query Service</a>. Att få åtkomst till data via frågetjänsten kan vara användbart för att hantera stora datamängder på grund av dess överlägsna körtider. Observera att frågedata med hjälp av frågetjänsten har en bearbetningstid på tio minuter.
+[!DNL JupyterLab] på [!DNL Platform] kan du använda SQL i en [!DNL Python] anteckningsbok för att komma åt data via <a href="https://www.adobe.com/go/query-service-home-en" target="_blank">Adobe Experience Platform Query Service</a>. Att komma åt data via [!DNL Query Service] kan vara användbart för att hantera stora datauppsättningar på grund av dess överlägsna körtider. Observera att sökning efter data med [!DNL Query Service] har en tidsgräns på tio minuter.
 
-Innan du använder frågetjänsten i JupyterLab bör du kontrollera att du har en fungerande förståelse för SQL-syntaxen <a href="https://www.adobe.com/go/query-service-sql-syntax-en" target="_blank">för</a>frågetjänsten.
+Innan du använder [!DNL Query Service] i [!DNL JupyterLab]måste du ha en fungerande förståelse för <a href="https://www.adobe.com/go/query-service-sql-syntax-en" target="_blank">[!DNL Query Service] SQL-syntaxen</a>.
 
-Om du frågar data med hjälp av frågetjänsten måste du ange namnet på måldatauppsättningen. Du kan generera de nödvändiga kodcellerna genom att söka efter den önskade datauppsättningen med **Data Explorer**. Högerklicka på datauppsättningslistan och klicka på **Fråga data i anteckningsbok** för att generera följande två kodceller i anteckningsboken:
+Om du frågar efter data med [!DNL Query Service] måste du ange namnet på måldatauppsättningen. Du kan generera de nödvändiga kodcellerna genom att söka efter den önskade datauppsättningen med **Data Explorer**. Högerklicka på datauppsättningslistan och klicka på **Fråga data i anteckningsbok** för att generera följande två kodceller i anteckningsboken:
 
 
-Om du vill använda frågetjänsten i JupyterLab måste du först skapa en anslutning mellan din fungerande Python-anteckningsbok och frågetjänsten. Detta kan du göra genom att köra den första genererade cellen.
+För att kunna använda [!DNL Query Service] i måste [!DNL JupyterLab]du först skapa en anslutning mellan din fungerande [!DNL Python] anteckningsbok och [!DNL Query Service]. Detta kan du göra genom att köra den första genererade cellen.
 
 ```python
 qs_connect()
 ```
 
-I den andra genererade cellen måste den första raden definieras före SQL-frågan. Som standard definierar den genererade cellen en valfri variabel (`df0`) som sparar frågeresultatet som en Pandas-dataram. <br>Argumentet `-c QS_CONNECTION` är obligatoriskt och anger att kerneln ska köra SQL-frågan mot frågetjänsten. En lista med ytterligare argument finns i [bilagan](#optional-sql-flags-for-query-service) .
+I den andra genererade cellen måste den första raden definieras före SQL-frågan. Som standard definierar den genererade cellen en valfri variabel (`df0`) som sparar frågeresultatet som en Pandas-dataram. <br>Argumentet `-c QS_CONNECTION` är obligatoriskt och anger att kernel ska köra SQL-frågan mot [!DNL Query Service]. En lista med ytterligare argument finns i [bilagan](#optional-sql-flags-for-query-service) .
 
 ```python
 %%read_sql df0 -c QS_CONNECTION
@@ -484,9 +484,9 @@ SELECT {table_columns}
 FROM {table_name}
 ```
 
-### Filtrera ExperienceEvent-data i Python/R
+### Filtrera ExperienceEvent-data i [!DNL Python]/R
 
-För att få tillgång till och filtrera en ExperienceEvent-datauppsättning i en Python- eller R-anteckningsbok måste du ange ID:t för datauppsättningen (`{DATASET_ID}`) tillsammans med filterreglerna som definierar ett specifikt tidsintervall med hjälp av logiska operatorer. När ett tidsintervall definieras, ignoreras alla angivna sidnumreringar och hela datauppsättningen beaktas.
+För att få tillgång till och filtrera en ExperienceEvent-datauppsättning i en [!DNL Python] eller R-anteckningsbok måste du ange ID:t för datauppsättningen (`{DATASET_ID}`) tillsammans med filterreglerna som definierar ett specifikt tidsintervall med hjälp av logiska operatorer. När ett tidsintervall definieras, ignoreras alla angivna sidnumreringar och hela datauppsättningen beaktas.
 
 En lista med filtreringsoperatorer beskrivs nedan:
 
@@ -530,13 +530,13 @@ df <- dataset_reader$
 )$read()
 ```
 
-### Filtrera ExperienceEvent-data i PySpark/Spark
+### Filtrera ExperienceEvent-data i PySpark/[!DNL Spark]
 
 Om du vill komma åt och filtrera en ExperienceEvent-datauppsättning i en PySpark- eller Scala-anteckningsbok måste du ange datamängdens identitet (`{DATASET_ID}`), organisationens IMS-identitet och filterreglerna som definierar ett visst tidsintervall. Ett filtertidsintervall definieras med funktionen `spark.sql()`där funktionsparametern är en SQL-frågesträng.
 
 Följande celler filtrerar en ExperienceEvent-datauppsättning till data som finns exklusivt mellan 1 januari 2019 och 31 december 2019.
 
-#### PySpark 3 (Spark 2.4) {#pyspark3-spark2.4}
+#### PySpark 3 ([!DNL Spark] 2.4) {#pyspark3-spark2.4}
 
 ```python
 # PySpark 3 (Spark 2.4)
@@ -556,7 +556,7 @@ timepd = spark.sql("""
 timepd.show()
 ```
 
-#### Scala (Spark 2.4) {#scala-spark}
+#### Scala ([!DNL Spark] 2.4) {#scala-spark}
 
 ```scala
 // Spark (Spark 2.4)
@@ -606,7 +606,7 @@ timedf.show()
 
 ## Bibliotek som stöds {#supported-libraries}
 
-### Python / R
+### [!DNL Python] / R
 
 | Bibliotek | Version |
 | :------ | :------ |
@@ -687,7 +687,7 @@ timedf.show()
 | graphviz | 2.40.1 |
 | python-graphviz | 0.11.1 |
 | azure-storage | 0.36.0 |
-| jupyterlab | 1.0.4 |
+| [!DNL jupyterlab] | 1.0.4 |
 | pandor_ml | 0.6.1 |
 | tensorflow-gpu | 1.14.0 |
 | nodejs | 12.3.0 |
@@ -726,12 +726,12 @@ timedf.show()
 | pipa | 0.8.0 |
 | boto3 | 1.5.18 |
 | azure-storage-blob | 1.4.0 |
-| python | 3.6.7 |
+| [!DNL python] | 3.6.7 |
 | mkl-rt | 11.1 |
 
-## Valfria SQL-flaggor för frågetjänsten {#optional-sql-flags-for-query-service}
+## Valfria SQL-flaggor för [!DNL Query Service] {#optional-sql-flags-for-query-service}
 
-Den här tabellen visar de valfria SQL-flaggor som kan användas för frågetjänsten.
+Den här tabellen visar de valfria SQL-flaggor som kan användas för [!DNL Query Service].
 
 | **Flagga** | **Beskrivning** |
 | --- | --- |
