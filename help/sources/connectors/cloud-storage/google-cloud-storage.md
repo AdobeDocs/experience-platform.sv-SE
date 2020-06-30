@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Google Cloud Storage Connector
 topic: overview
 translation-type: tm+mt
-source-git-commit: 0ed2ed3b08f262100746f255a78c248a1748eb5e
+source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
 workflow-type: tm+mt
-source-wordcount: '363'
+source-wordcount: '324'
 ht-degree: 0%
 
 ---
@@ -14,17 +14,17 @@ ht-degree: 0%
 
 # Google Cloud Storage Connector
 
-Adobe Experience Platform ger inbyggda anslutningsmöjligheter för molnleverantörer som AWS, Google Cloud Platform och Azure, så att ni kan hämta data från dessa system.
+Adobe Experience Platform erbjuder inbyggd anslutningsbarhet för molnleverantörer som AWS [!DNL Google Cloud Platform]och [!DNL Azure]så att ni kan hämta data från dessa system.
 
-Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM-parquet eller avgränsade. Varje steg i processen är integrerat i arbetsflödet för källor. Med Platform kan ni hämta data från Google Cloud-lagring via batchar.
+Lagringskällor i molnet kan hämta dina egna data [!DNL Platform] utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM-parquet eller avgränsade. Varje steg i processen är integrerat i arbetsflödet för källor. [!DNL Platform] gör att du kan hämta in data från [!DNL Google Cloud Storage] grupper.
 
-## Nödvändig konfiguration för att ansluta ditt Google Cloud-lagringskonto
+## Krav för att ansluta ditt [!DNL Google Cloud Storage] konto
 
-För att kunna ansluta till plattformen måste du först aktivera interoperabilitet för ditt Google Cloud-lagringskonto. Öppna Google Cloud Platform och välj **[!UICONTROL Settings]** ett av **[!UICONTROL Storage]** alternativen i navigeringspanelen för att få åtkomst till interoperabilitetsinställningarna.
+För att kunna ansluta till [!DNL Platform]måste du först aktivera interoperabilitet för ditt [!DNL Google Cloud Storage] konto. Om du vill få åtkomst till inställningen för interoperabilitet öppnar du [!DNL Google Cloud Platform] och väljer **[!UICONTROL Settings]** ett av **[!UICONTROL Storage]** alternativen på navigeringspanelen.
 
 ![](../../images/tutorials/create/google-cloud-storage/nav.png)
 
-Sidan visas **[!UICONTROL Settings]** . Här kan du se information om ditt Google-projekt-ID och information om ditt Google Cloud-lagringskonto. Om du vill komma åt inställningarna för interoperabilitet väljer du **[!UICONTROL Interoperability]** i det övre huvudet.
+Sidan visas **[!UICONTROL Settings]** . Härifrån kan du se information om ditt projekt- [!DNL Google] ID och information om ditt [!DNL Google Cloud Storage] konto. Om du vill komma åt inställningarna för interoperabilitet väljer du **[!UICONTROL Interoperability]** i det övre huvudet.
 
 ![](../../images/tutorials/create/google-cloud-storage/project-access.png)
 
@@ -34,13 +34,13 @@ Om du vill generera ett nytt ID för åtkomstnyckel och en hemlig åtkomstnyckel
 
 ![](../../images/tutorials/create/google-cloud-storage/interoperability.png)
 
-Du kan använda ditt nyligen genererade åtkomstnyckel-ID och din hemliga åtkomstnyckel för att ansluta ditt Google Cloud-lagringskonto till plattformen.
+Du kan använda ditt nyligen genererade åtkomstnyckel-ID och den hemliga åtkomstnyckeln för att ansluta ditt [!DNL Google Cloud Storage] konto till [!DNL Platform].
 
-Dokumentationen nedan innehåller information om hur du ansluter Google Cloud-lagring till plattformen med hjälp av API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Google Cloud Storage] till [!DNL Platform] med API:er eller användargränssnittet:
 
-## Anslut Google Cloud-lagring till plattform
+## Anslut [!DNL Google Cloud Storage] till [!DNL Platform]
 
-Dokumentationen nedan innehåller information om hur du ansluter Google Cloud-lagring till plattformen med hjälp av API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Google Cloud Storage] till [!DNL Platform] med API:er eller användargränssnittet:
 
 ### Använda API:er
 
