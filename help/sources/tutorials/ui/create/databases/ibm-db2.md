@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en IBM DB2-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 5ad763d2167c68f3293a2813248efaee22230a52
+source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
 workflow-type: tm+mt
-source-wordcount: '521'
+source-wordcount: '515'
 ht-degree: 0%
 
 ---
@@ -18,13 +18,13 @@ ht-degree: 0%
 > [!NOTE]
 > IBM DB2-kopplingen är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
-Källkopplingar i Adobe Experience Platform ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en IBM DB2-källkoppling (nedan kallad DB2) med Platform användargränssnitt.
+Källkopplingar i Adobe Experience Platform ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en IBM DB2-källkoppling (nedan kallad &quot;DB2&quot;) med [!DNL Platform] användargränssnittet.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
+* [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [Kundprofil](../../../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
@@ -33,7 +33,7 @@ Om du redan har en giltig DB2-anslutning kan du hoppa över resten av det här d
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till DB2 med API:t för Flow Service.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till DB2 med [!DNL Flow Service] API.
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -46,7 +46,7 @@ Mer information om hur du kommer igång finns i [det här DB2-dokumentet](https:
 
 ## Anslut ditt IBM DB2-konto
 
-När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att skapa ett nytt DB2-konto för att ansluta till Platform.
+När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att skapa ett nytt DB2-konto att ansluta till [!DNL Platform].
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt *[!UICONTROL Sources]* arbetsytan. På *[!UICONTROL Catalog]* skärmen visas en mängd olika källor som du kan skapa ett inkommande konto för, och varje källa visar antalet befintliga konton och datauppsättningsflöden som är kopplade till dem.
 
