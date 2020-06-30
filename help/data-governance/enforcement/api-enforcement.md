@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Använd principer för dataanvändning med hjälp av API:t för principtjänsten
 topic: enforcement
 translation-type: tm+mt
-source-git-commit: 3e5245a718295cc5318c277a5cf9ee71da2a911b
+source-git-commit: 1a835c6c20c70bf03d956c601e2704b68d4f90fa
+workflow-type: tm+mt
+source-wordcount: '875'
+ht-degree: 0%
 
 ---
 
@@ -15,18 +18,18 @@ När du har skapat dataanvändningsetiketter för dina data och skapat användar
 
 >[!NOTE] Som standard kan endast profiler vars status är inställd på `ENABLED` delta i utvärderingen. Om du vill tillåta `DRAFT` profiler att delta i utvärderingen måste du ta med frågeparametern `includeDraft=true` i sökvägen till begäran.
 
-Det här dokumentet innehåller steg om hur du använder API:t för principtjänst för att söka efter policyöverträdelser i olika scenarier.
+Det här dokumentet innehåller steg om hur du använder API:t för att söka efter policyöverträdelser i olika scenarier. [!DNL Policy Service]
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande viktiga koncept som används för att genomföra DULE-policyer:
 
-* [Datastyrning](../home.md): Det ramverk som Platform använder för att driva igenom efterlevnad av dataanvändning.
+* [Datastyrning](../home.md): Ramverket som [!DNL Platform] genomdriver efterlevnad av dataanvändning.
    * [Dataanvändningsetiketter](../labels/overview.md): Dataanvändningsetiketter används för datauppsättningar (och/eller enskilda fält inom dessa datauppsättningar), vilket anger begränsningar för hur data kan användas.
    * [Dataanvändningsprinciper](../policies/overview.md): Dataanvändningsprinciper är regler som beskriver vilken typ av marknadsföringsåtgärder som är tillåtna eller begränsade för vissa uppsättningar DULE-etiketter.
-* [Sandlådor](../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till DULE Policy Service API, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
+Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa DULE [!DNL Policy Service] API, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
 
 ## Utvärdera med DULE-etiketter och en marknadsföringsåtgärd
 
@@ -362,4 +365,4 @@ Ett lyckat svar returnerar URL:en för marknadsföringsåtgärden, DULE-etikette
 
 Genom att läsa det här dokumentet har du sökt efter policyöverträdelser när du utför en marknadsföringsåtgärd på en datauppsättning eller en uppsättning DULE-etiketter. Med hjälp av data som returneras i API-svar kan du konfigurera protokoll i ditt upplevelseprogram så att regelöverträdelser verkställs korrekt när de inträffar.
 
-Anvisningar om hur du tillämpar dataanvändningspolicyer för målgruppssegment i kundprofilen i realtid finns i följande [självstudiekurs](../../segmentation/tutorials/governance.md).
+Anvisningar om hur du tillämpar dataanvändningspolicyer för målgruppssegment i [!DNL Real-time Customer Profile]finns i följande [självstudiekurs](../../segmentation/tutorials/governance.md).
