@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Konfigurera ett dataflöde för en databasanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 415b59fc3fa20c09372549e92571c1b41006e540
+source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
 workflow-type: tm+mt
-source-wordcount: '1019'
+source-wordcount: '1012'
 ht-degree: 0%
 
 ---
@@ -14,13 +14,13 @@ ht-degree: 0%
 
 # Konfigurera ett dataflöde för en databasanslutning i användargränssnittet
 
-Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med databasanslutningen.
+Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en Platform-datauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med databasanslutningen.
 
 ## Komma igång
 
-Den här självstudien kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [Experience Data Model (XDM) System](../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
+- [Experience Data Model (XDM) System](../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    - [Grundläggande om schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    - [Schemaredigeraren, genomgång](../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 - [Kundprofil](../../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
@@ -40,7 +40,7 @@ Markera den databas som du vill använda och klicka sedan på **[!UICONTROL Next
 
 ## Mappa datafält till ett XDM-schema
 
-Steget *Mappning* visas med ett interaktivt gränssnitt för att mappa källdata till en plattformsdatauppsättning.
+Steget *Mappning* visas med ett interaktivt gränssnitt för att mappa källdata till en Platform-datauppsättning.
 
 Välj en datauppsättning för inkommande data som ska importeras till. Du kan antingen använda en befintlig datauppsättning eller skapa en ny datauppsättning.
 
@@ -114,7 +114,7 @@ När dataflödet har skapats kan du övervaka de data som hämtas genom det. Mer
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat ett dataflöde som hämtar in data från en extern databas och fått insikter om att övervaka datauppsättningar. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan, t.ex. kundprofil i realtid och datavetenskapen. Mer information finns i följande dokument:
+I den här självstudiekursen har du skapat ett dataflöde som hämtar in data från en extern databas och fått insikter om att övervaka datauppsättningar. Inkommande data kan nu användas av Platform-tjänster längre fram i kedjan, t.ex. kundprofil i realtid och datavetenskapen. Mer information finns i följande dokument:
 
 - [Översikt över kundprofiler i realtid](../../../../profile/home.md)
 - [Översikt över arbetsytan Datavetenskap](../../../../data-science-workspace/home.md)
@@ -131,10 +131,10 @@ Markera fliken på *[!UICONTROL Sources]* arbetsytan **[!UICONTROL Dataflowss]**
 
 ![](../../../images/tutorials/dataflow/databases/list-of-dataflows.png)
 
-Kolumnen *Egenskaper* visas till höger på skärmen, inklusive en **[!UICONTROL Enabled]** växlingsknapp. Markera växlingsknappen för att inaktivera dataflödet. Samma växlingsknapp kan användas för att återaktivera ett dataflöde efter att det har inaktiverats.
+Kolumnen visas till höger på skärmen, inklusive en *[!UICONTROL Properties]* **[!UICONTROL Enabled]** växlingsknapp. Markera växlingsknappen för att inaktivera dataflödet. Samma växlingsknapp kan användas för att återaktivera ett dataflöde efter att det har inaktiverats.
 
 ![](../../../images/tutorials/dataflow/databases/disable.png)
 
-### Aktivera inkommande data för profilifyllning
+### Aktivera inkommande data för [!DNL Profile] populationen
 
-Inkommande data från källkopplingen kan användas för att berika och fylla i kundprofildata i realtid. Mer information om hur du fyller i Real-Customer Profile-data finns i självstudiekursen om [profilpopulationen](../profile.md).
+Inkommande data från källkopplingen kan användas för att berika och fylla i dina [!DNL Real-time Customer Profile] data. Mer information om hur du fyller i dina [!DNL Real-time Customer Profile] data finns i självstudiekursen om [profilpopulationen](../profile.md).
