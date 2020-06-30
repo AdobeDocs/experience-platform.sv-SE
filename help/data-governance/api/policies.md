@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Profiler
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: ba9d4b31cfc3b7924879a91bd125f72159e55fc4
+source-git-commit: d4964231ee957349f666eaf6b0f5729d19c408de
 workflow-type: tm+mt
-source-wordcount: '866'
+source-wordcount: '862'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Profiler
 
-Dataanvändningspolicyer är regler som din organisation antar som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom Experience Platform.
+Dataanvändningspolicyer är regler som organisationen antar som beskriver den typ av marknadsföringsåtgärder som ni tillåts eller begränsas från att utföra på data inom [!DNL Experience Platform].
 
 Slutpunkten används `/policies` för alla API-anrop som rör visning, skapande, uppdatering eller borttagning av dataanvändningsprinciper.
 
@@ -406,7 +406,7 @@ En slutförd uppdateringsbegäran returnerar HTTP-status 200 (OK) och svarstexte
 
 En viss del av en princip kan uppdateras med en PATCH-begäran. Till skillnad från PUT-begäranden som _skriver_ om profilen, begär PATCH bara att den sökväg som anges i begärandetexten ska uppdateras. Detta är särskilt användbart när du vill aktivera eller inaktivera en profil, eftersom du bara behöver skicka den specifika sökvägen som du vill uppdatera (`/status`) och dess värde (`ENABLE` eller `DISABLE`).
 
-API:t för principtjänsten har för närvarande stöd för PATCH-åtgärder av typen&quot;add&quot;,&quot;replace&quot; och&quot;remove&quot; och gör att du kan kombinera flera uppdateringar till ett enda anrop genom att lägga till varje objekt som ett objekt i arrayen, vilket visas i följande exempel.
+API:t har för närvarande stöd för [!DNL Policy Service] &quot;add&quot;,&quot;replace&quot; och&quot;remove&quot; PATCH-åtgärder och gör att du kan kombinera flera uppdateringar till ett enda anrop genom att lägga till varje objekt som ett objekt i arrayen, vilket visas i följande exempel.
 
 **API-format**
 
