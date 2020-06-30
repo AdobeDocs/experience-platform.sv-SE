@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över policyer för dataanvändning
 topic: policies
 translation-type: tm+mt
-source-git-commit: 92092620a7ba9129eef4bde852b1e0afc6612d74
+source-git-commit: d4964231ee957349f666eaf6b0f5729d19c408de
 workflow-type: tm+mt
-source-wordcount: '985'
+source-wordcount: '979'
 ht-degree: 0%
 
 ---
@@ -14,18 +14,18 @@ ht-degree: 0%
 
 # Översikt över policyer för dataanvändning
 
-För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste dataanvändningsprinciper implementeras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom Experience Platform.
+För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste dataanvändningsprinciper implementeras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom [!DNL Experience Platform].
 
 Det här dokumentet innehåller en översikt över dataanvändningsprinciper på hög nivå och länkar till ytterligare dokumentation om hur du arbetar med principer i gränssnittet eller API:t.
 
 ## Marknadsföringsåtgärder {#marketing-actions}
 
-**Marknadsföringsåtgärder**(kallas även **marknadsföringsfall**) inom ramen för datastyrningsramverket är åtgärder som en datakonsument i Experience Platform kan vidta och som din organisation vill begränsa dataanvändningen för. En dataanvändningsprincip definieras därför enligt följande:
+**Marknadsföringsåtgärder**(kallas även **användningsfall** för marknadsföring) inom ramen för datastyrningsramverket är åtgärder som en [!DNL Experience Platform] datakonsument kan vidta och som din organisation vill begränsa dataanvändningen för. En dataanvändningsprincip definieras därför enligt följande:
 
 1. En specifik marknadsföringsåtgärd
 2. Etiketter för dataanvändning som åtgärden är begränsad från att utföras mot
 
-Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en datauppsättning till en tredjepartstjänst. Om det finns en policy som säger att vissa typer av data (t.ex. PII) inte kan exporteras, och du försöker exportera en datauppsättning som innehåller en I-etikett (identitetsdata), får du ett svar från principtjänsten om att en dataanvändningspolicy har överträtts.
+Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en datauppsättning till en tredjepartstjänst. Om det finns en policy som säger att vissa typer av data (t.ex. personligt identifierbar information (PII)) inte kan exporteras, och du försöker exportera en datauppsättning som innehåller en I-etikett (identitetsdata), kommer du att få ett svar från användaren om [!DNL Policy Service] att en dataanvändningspolicy har överträttts.
 
 >[!NOTE] Marknadsföringsåtgärder begränsar inte användningen av data. De måste inkluderas i aktiverade dataanvändningspolicyer för att dessa åtgärder ska kunna utvärderas för policyöverträdelser.
 
