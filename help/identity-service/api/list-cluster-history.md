@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Hämta klusterhistorik för en identitet
 topic: API guide
 translation-type: tm+mt
-source-git-commit: df85ea955b7a308e6be1e2149fcdfb4224facc53
+source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+workflow-type: tm+mt
+source-wordcount: '303'
+ht-degree: 0%
 
 ---
 
 
 # Hämta klusterhistoriken för en identitet
 
-Identiteter kan flytta kluster under olika enhetsgrafkörningar. Identitetstjänsten ger synlighet i klusterassociationerna för en viss identitet över tiden.
+Identiteter kan flytta kluster under olika enhetsgrafkörningar. [!DNL Identity Service] ger synlighet i klusterassociationerna för en viss identitet över tid.
 
 Använd den valfria `graph-type` parametern för att ange vilken utdatatyp som klustret ska hämtas från. Alternativen är:
 
