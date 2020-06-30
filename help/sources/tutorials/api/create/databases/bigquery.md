@@ -4,58 +4,58 @@ solution: Experience Platform
 title: Skapa en Google BigQuery-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: e4ed6ae3ee668cd0db741bd07d2fb7be593db4c9
+source-git-commit: fc5cdaa661c47e14ed5412868f3a54fd7bd2b451
 workflow-type: tm+mt
-source-wordcount: '751'
+source-wordcount: '696'
 ht-degree: 0%
 
 ---
 
 
-# Skapa en Google BigQuery-koppling med API:t för Flow Service
+# Skapa en [!DNL Google BigQuery] koppling med [!DNL Flow Service] API:t
 
 >[!NOTE]
->Google BigQuery-kopplingen är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
+>Kopplingen [!DNL Google BigQuery] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
-Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till Google BigQuery (nedan kallat BigQuery).
+I den här självstudiekursen används API:t för att vägleda dig genom de olika stegen för att ansluta [!DNL Flow Service] till [!DNL Experience Platform] [!DNL Google BigQuery] (nedan kallat BigQuery).
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av Platform tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till BigQuery med API:t för Flow Service.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till BigQuery med hjälp av [!DNL Flow Service] API.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att Flow Service ska kunna ansluta till BigQuery måste du ange följande anslutningsegenskaper:
+För [!DNL Flow Service] att kunna ansluta till BigQuery måste du ange följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `project` | Projekt-ID:t för standardprojektet för BigQuery att fråga mot. |
+| `project` | Projekt-ID:t för det standardprojekt [!DNL BigQuery] som frågan ska skickas till. |
 | `clientID` | ID-värdet som används för att generera uppdateringstoken. |
 | `clientSecret` | Det hemliga värde som används för att generera uppdateringstoken. |
-| `refreshToken` | Uppdateringstoken som hämtats från Google används för att auktorisera åtkomst till BigQuery. |
+| `refreshToken` | Uppdateringstoken som hämtats från [!DNL Google] som används för att auktorisera åtkomst till [!DNL BigQuery]. |
 
 Mer information om dessa värden finns i [det här BigQuery-dokumentet](https://cloud.google.com/storage/docs/json_api/v1/how-tos/authorizing).
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform, inklusive de som tillhör Flow Service, isoleras till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
@@ -65,13 +65,13 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Söka efter anslutningsspecifikationer
 
-För att kunna skapa en BigQuery-anslutning måste det finnas en uppsättning specifikationer för BigQuery-anslutningen i Flow Service. Det första steget för att ansluta Platform till BigQuery är att hämta dessa specifikationer.
+För att kunna skapa en [!DNL BigQuery] anslutning måste det finnas en uppsättning [!DNL BigQuery] anslutningsspecifikationer inom [!DNL Flow Service]. Det första steget i att ansluta [!DNL Platform] till [!DNL BigQuery] är att hämta dessa specifikationer.
 
 **API-format**
 
-Varje tillgänglig källa har en egen unik uppsättning anslutningsspecifikationer för att beskriva kopplingsegenskaper som autentiseringskrav. Du kan söka efter anslutningsspecifikationer för BigQuery genom att utföra en GET-begäran och använda frågeparametrar.
+Varje tillgänglig källa har en egen unik uppsättning anslutningsspecifikationer för att beskriva kopplingsegenskaper som autentiseringskrav. Du kan söka efter anslutningsspecifikationer för [!DNL BigQuery] genom att utföra en GET-begäran och använda frågeparametrar.
 
-Om du skickar en GET-begäran utan frågeparametrar returneras anslutningsspecifikationerna för alla tillgängliga källor. Du kan ta med frågan `property=name=="google-big-query"` för att få information om BigQuery.
+Om du skickar en GET-begäran utan frågeparametrar returneras anslutningsspecifikationerna för alla tillgängliga källor. Du kan ta med frågan `property=name=="google-big-query"` för att få information om [!DNL BigQuery].
 
 ```http
 GET /connectionSpecs
@@ -80,7 +80,7 @@ GET /connectionSpecs?property=name=="google-big-query"
 
 **Begäran**
 
-Följande begäran hämtar anslutningsspecifikationerna för BigQuery.
+Följande begäran hämtar anslutningsspecifikationerna för [!DNL BigQuery].
 
 ```shell
 curl -X GET \
@@ -93,7 +93,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar anslutningsspecifikationerna för BigQuery, inklusive dess unika identifierare (`id`). Detta ID krävs i nästa steg för att skapa en basanslutning.
+Ett lyckat svar returnerar anslutningsspecifikationerna för [!DNL BigQuery], inklusive dess unika identifierare (`id`). Detta ID krävs i nästa steg för att skapa en basanslutning.
 
 ```json
 {
@@ -146,7 +146,7 @@ Ett lyckat svar returnerar anslutningsspecifikationerna för BigQuery, inklusive
 
 ## Skapa en basanslutning
 
-En basanslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en basanslutning krävs per BigQuery-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+En basanslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en basanslutning krävs per [!DNL BigQuery] konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
 
 **API-format**
 
@@ -184,11 +184,11 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `auth.params.project` | Projekt-ID:t för standardprojektet för BigQuery som ska frågas. mot. |
+| `auth.params.project` | Projekt-ID för det standardprojekt [!DNL BigQuery] som ska frågas. mot. |
 | `auth.params.clientId` | ID-värdet som används för att generera uppdateringstoken. |
 | `auth.params.clientSecret` | Klientvärdet som används för att generera uppdateringstoken. |
-| `auth.params.refreshToken` | Uppdateringstoken som hämtats från Google används för att auktorisera åtkomst till BigQuery. |
-| `connectionSpec.id` | Anslutningsspecifikationen `id` för ditt BigQuery-konto som hämtades i föregående steg. |
+| `auth.params.refreshToken` | Uppdateringstoken som hämtats från [!DNL Google] som används för att auktorisera åtkomst till [!DNL BigQuery]. |
+| `connectionSpec.id` | Anslutningsspecifikationen `id` för ditt [!DNL BigQuery] konto som hämtades i föregående steg. |
 
 **Svar**
 
@@ -203,4 +203,4 @@ Ett godkänt svar returnerar information om den nya basanslutningen, inklusive d
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en BigQuery-basanslutning med API:t för Flow Service och fått anslutningens unika ID-värde. Du kan använda detta grundläggande anslutnings-ID i nästa självstudiekurs när du lär dig hur du [utforskar databaser eller NoSQL-system med API:t](../../explore/database-nosql.md)för Flow Service.
+Genom att följa den här självstudiekursen har du skapat en [!DNL BigQuery] basanslutning med hjälp av [!DNL Flow Service] -API:t och har fått anslutningens unika ID-värde. Du kan använda detta grundläggande anslutnings-ID i nästa självstudiekurs när du lär dig hur du [utforskar databaser eller NoSQL-system med API:t](../../explore/database-nosql.md)för Flow Service.
