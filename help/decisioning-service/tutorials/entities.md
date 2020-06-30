@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Hantera beslutstjänstentiteter med API:er
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: df85ea955b7a308e6be1e2149fcdfb4224facc53
+source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+workflow-type: tm+mt
+source-wordcount: '7207'
+ht-degree: 0%
 
 ---
 
 
 # Hantera beslutsobjekt och regler med API:er
 
-I det här dokumentet finns en självstudiekurs för hur du arbetar med affärsenheterna i Decisioning Service med hjälp av API:er för Adobe Experience Platform.
+I det här dokumentet finns en självstudiekurs om hur du arbetar med affärsenheter för att [!DNL Decisioning Service] använda Adobe Experience Platform API:er.
 
 Självstudiekursen består av två delar:
 
@@ -21,31 +24,31 @@ Självstudiekursen består av två delar:
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse av Experience Platform-tjänsterna och API-konventionerna. Plattformsdatabasen är en tjänst som används av flera andra plattformstjänster för att lagra affärsobjekt och olika typer av metadata. Det är ett säkert och flexibelt sätt att hantera och fråga efter dessa objekt för användning av flera runtime-tjänster. Beslutstjänsten är en av dessa. Innan du börjar med den här självstudiekursen bör du läsa i dokumentationen om följande:
+Den här självstudiekursen kräver en fungerande förståelse av [!DNL Experience Platform] tjänsterna och API-konventionerna. Databasen är en tjänst som används av flera andra [!DNL Platform] [!DNL Platform] tjänster för att lagra affärsobjekt och olika typer av metadata. Det är ett säkert och flexibelt sätt att hantera och fråga efter dessa objekt för användning av flera runtime-tjänster. Det [!DNL Decisioning Service] är en sådan. Innan du börjar med den här självstudiekursen bör du läsa i dokumentationen om följande:
 
-- [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
-- [Beslutstjänst](./../home.md): Beskriver de begrepp och komponenter som används för Experience Decision i allmänhet och offertbeslut i synnerhet. Illustrerar de strategier som används för att välja det bästa alternativet att presentera under en kunds upplevelse.
-- [Profilfrågespråk (PQL)](../../segmentation/pql/overview.md): PQL är ett kraftfullt språk för att skriva uttryck över XDM-instanser. PQL används för att definiera beslutsregler.
+- [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att ordna kundupplevelsedata.
+- [!DNL Decisioning Service](./../home.md): Beskriver de begrepp och komponenter som används för Experience Decision i allmänhet och offertbeslut i synnerhet. Illustrerar de strategier som används för att välja det bästa alternativet att presentera under en kunds upplevelse.
+- [!DNL Profile Query Language (PQL)](../../segmentation/pql/overview.md): PQL är ett kraftfullt språk för att skriva uttryck över XDM-instanser. PQL används för att definiera beslutsregler.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:erna för plattformen.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API: [!DNL Platform] erna.
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>[!NOTE] Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -53,7 +56,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Konventioner för databas-API
 
-Beslutstjänsten styrs av ett antal affärsobjekt som är relaterade till varandra. Alla affärsobjekt lagras i plattformens Business Object Repository. En viktig funktion i den här databasen är att API:erna är ortogonala till typen av affärsobjekt. I stället för att använda API:erna POST, GET, PUT, PATCH eller DELETE som anger resurstypen i dess API-slutpunkt, finns det bara 6 generiska slutpunkter, men de accepterar eller returnerar en parameter som anger typen av objekt när det aktuella sättet behövs. Schemat måste registreras med databasen, men utöver det kan databasen användas för en öppen uppsättning objekttyper.
+[!DNL Decisioning Service] styrs av ett antal affärsobjekt som är relaterade till varandra. Alla affärsobjekt lagras i [!DNL Platform’s] Business Object Repository. En viktig funktion i den här databasen är att API:erna är ortogonala till typen av affärsobjekt. I stället för att använda API:t POST, GET, PUT, PATCH eller DELETE som anger resurstypen i dess API-slutpunkt, finns det bara 6 generiska slutpunkter, men de accepterar eller returnerar en parameter som anger objekttypen när den typen av uttryck behövs. Schemat måste registreras med databasen, men utöver det kan databasen användas för en öppen uppsättning objekttyper.
 
 Förutom rubrikerna ovan har API:erna för att skapa, läsa, uppdatera, ta bort och fråga databasobjekt följande konventioner:
 
@@ -66,7 +69,7 @@ API-nyttolastformat förhandlas med en `Accept` eller `Content-Type` en rubrik. 
 | halföljt<br>av en parameter `schema={schemaId}` | Meddelandet innehåller en instans som beskrivs av ett JSON-schema som anges av formatparameterschemat. Instansen kapslas i en JSON-egenskap `_instance`. De andra egenskaperna på den översta nivån i svarsnyttolasten anger databasinformation som är tillgänglig för alla resurser.  Meddelanden som överensstämmer med HAL-formatet har en `_links` egenskap som innehåller referenser i HAL-format. |
 | `patch.hal` | Meddelandet innehåller en JSON PATCH-nyttolast med antagandet att instansen som ska korrigeras är HAL-kompatibel. Det innebär att det inte bara är instansens egna instansegenskaper som kan korrigeras, utan även instansens HAL-länkar. Observera att det finns begränsningar för vilka egenskaper klienten kan uppdatera. |
 | `home.hal` | Meddelandet innehåller en JSON-formaterad representation av en dokumentresurs hemma för databasen. |
-| xdm.kvitto | Meddelandet innehåller ett JSON-formaterat svar för en skapad, uppdaterad (fullständig och korrigerad) eller borttagningsåtgärd. Kvittenser innehåller kontrolldata som anger ändringen av instansen i form av en ETag. |
+| xdm.receipt | Meddelandet innehåller ett JSON-formaterat svar för en skapad, uppdaterad (fullständig och korrigerad) eller borttagningsåtgärd. Kvittenser innehåller kontrolldata som anger ändringen av instansen i form av en ETag. |
 
 Användningen av varje **formatvariant** beror på det specifika API:t:
 
@@ -89,7 +92,7 @@ Listan över tillgängliga behållare hämtas genom att databasens rotslutpunkt 
 
 ## Hantera åtkomst till behållare
 
-En administratör kan gruppera liknande principer, resurser och åtkomstbehörigheter i profiler. Detta minskar hanteringsbördan och stöds av [Adobes Admin Console-gränssnitt](https://adminconsole.adobe.com). Du måste vara produktadministratör för Adobe Experience Platform och erbjudanden i din organisation för att kunna skapa profiler och tilldela användare till dem.
+En administratör kan gruppera liknande principer, resurser och åtkomstbehörigheter i profiler. Detta minskar handläggningsbördan och stöds av [Adobes användargränssnitt](https://adminconsole.adobe.com)i Admin Console. Du måste vara produktadministratör för Adobe Experience Platform i din organisation för att kunna skapa profiler och tilldela användare till dem.
 
 Det räcker med att skapa produktprofiler som matchar vissa behörigheter i ett enda steg och sedan lägga till användare i dessa profiler. Profiler fungerar som grupper som har beviljats behörigheter och alla verkliga användare eller tekniska användare i gruppen ärver dessa behörigheter.
 
@@ -97,9 +100,9 @@ Det räcker med att skapa produktprofiler som matchar vissa behörigheter i ett 
 
 När administratören har beviljat åtkomst till behållare för vanliga användare eller integreringar visas dessa behållare i databasens så kallade&quot;Hem&quot;-lista. Listan kan vara annorlunda för olika användare eller integreringar eftersom den är en delmängd av alla behållare som är tillgängliga för anroparen. Listan med behållare kan filtreras efter deras koppling till produktkontexter. Filterparametern anropas `product` och kan upprepas. Om fler än ett produktkontextfilter anges returneras kombinationen av de behållare som har associationer med någon av de angivna produktkontexterna. Observera att en enstaka behållare kan kopplas till flera produktkontexter.
 
-Kontexten för behållarna för plattformsbeslutstjänsten är för närvarande `dma_offers`.
+Kontexten för [!DNL Platform][!DNL Decisioning Service] behållarna är för närvarande `dma_offers`.
 
->[!NOTE] Kontexten för behållare för plattformsbeslut ändras snart till `acp`. Filtrering är valfritt, men bara filter `dma_offers` kräver redigering vid en framtida release. För att förbereda den här ändringen ska klienterna inte använda några filter eller använda båda produktkontexterna som filter.
+>[!NOTE] Kontexten för [!DNL Platform Decisioning Containers] är snart på väg att ändras till `acp`. Filtrering är valfritt, men bara filter `dma_offers` kräver redigering vid en framtida release. För att förbereda den här ändringen ska klienterna inte använda några filter eller använda båda produktkontexterna som filter.
 
 **Begäran**
 
@@ -348,9 +351,10 @@ Listan med returnerade instanser innehåller de för vilka uttrycket utvärderas
 <br/>
 Egenskapen som ska jämföras med det angivna värdet identifieras som en sökväg. De enskilda bankomponenterna avgränsas med ".", som: `_instance.xdm:prop1.xdm:prop1_1.xdm:prop1_1_1`<br/>
 
-För egenskaper som har strängvärden, numeriska värden eller datum/tid-värden är följande tillåtna operatorer: `==`, `!=`, `<`, `<=`, `>` och `>=`. Dessutom `~` kan en operator användas för egenskaper med ett strängvärde. Operatorn `~` matchar den angivna egenskapen enligt ett reguljärt uttryck. Egenskapens strängvärde måste matcha **hela** uttrycket för entiteterna som ska inkluderas i filtrerade resultat. Om du till exempel söker efter strängen `cars` var som helst inuti egenskapsvärdet måste det reguljära uttrycket vara `.*cars.*`. Utan inledande eller avslutande `.*`skulle bara enheter som har ett egenskapsvärde som börjar eller slutar med `cars`. Jämförelsen av tecken för operatorn är inte skiftlägeskänslig för `~` operatorn. För alla andra operatorer är jämförelsen skiftlägeskänslig.<br/><br/>
+För egenskaper som har strängvärden, numeriska värden eller datum/tid-värden är följande tillåtna operatorer: `==`, `!=`, `<`, `<=`och `>``>=`. Dessutom `~` kan en operator användas för egenskaper med ett strängvärde. Operatorn `~` matchar den angivna egenskapen enligt ett reguljärt uttryck. Egenskapens strängvärde måste matcha **hela** uttrycket för entiteterna som ska inkluderas i filtrerade resultat. Om du till exempel söker efter strängen `cars` var som helst inuti egenskapsvärdet måste det reguljära uttrycket vara `.*cars.*`. Utan inledande eller avslutande `.*`skulle bara enheter som har ett egenskapsvärde som börjar eller slutar med `cars`. Jämförelsen av tecken för operatorn är inte skiftlägeskänslig för `~` operatorn. För alla andra operatorer är jämförelsen skiftlägeskänslig.<br/><br/>
 Det är inte bara egenskaper för instansnyttolast som kan användas i filteruttryck. Omslagsegenskaperna jämförs på samma sätt, t.ex. `property=repo:lastModifiedDate>=2019-02-23T16:30:00.000Z`. <br/>
-<br/>`property` Frågeparametern kan upprepas så att flera filtervillkor används, t.ex. för att returnera alla instanser som senast ändrades efter ett visst datum och före ett visst datum. Värdena i dessa uttryck måste vara URL-kodade. Om inget uttryck anges och egenskapens namn visas bara de objekt som är kvalificerade är de som har en egenskap med det angivna namnet.<br/>
+<br/>
+Frågeparametern kan upprepas så att flera filtervillkor används, t.ex. för att returnera alla instanser som senast ändrades efter ett visst datum och före ett visst datum. `property` Värdena i dessa uttryck måste vara URL-kodade. Om inget uttryck anges och egenskapens namn visas bara de objekt som är kvalificerade är de som har en egenskap med det angivna namnet.<br/>
 <br/>
 
 - **`id`**: Ibland måste en lista filtreras efter instansens URI. Frågeparametern kan användas för att filtrera ut en instans, men för att hämta mer än en instans kan en lista över URI:er ges till begäran. `property` Parametern `id` upprepas och varje förekomst anger ett URI-värde. URI- `id={URI_1}&id={URI_2},…` värdena måste vara URL-kodade.
@@ -453,7 +457,7 @@ Förutom sidindelning och filtreringsparametrarna från list-API:erna tillåter 
 
 Fulltextsökning styrs av följande parametrar:
 
-- **`q`**: Innehåller en blankstegsavgränsad osorterad lista med termer som normaliseras innan de matchas mot strängegenskaper för förekomsterna. Strängegenskaper analyseras efter termer och dessa termer normaliseras också. Sökfrågan försöker matcha en eller flera av de termer som anges i `q` parametern. Tecknen +, -, =, &amp;&amp;,||, >, &lt;,!, (,), {, }, [,]^, &quot;, ~, *, ?, :, / har en speciell innebörd för att bestämma ordgränserna i frågesträngen och bör föregås av ett omvänt snedstreck i en token som ska matcha tecknet. Frågesträngen kan omges av citattecken för exakt strängmatchning och för att undvika specialtecken.
+- **`q`**: Innehåller en blankstegsavgränsad osorterad lista med termer som normaliseras innan de matchas mot strängegenskaper för förekomsterna. Strängegenskaper analyseras efter termer och dessa termer normaliseras också. Sökfrågan försöker matcha en eller flera av de termer som anges i `q` parametern. Tecknen +, -, =, &amp;&amp;, ||, >, &lt;,!, (,), {, }, [,]^, &quot;, ~, *, ?, :, / har en speciell innebörd för att bestämma ordgränserna i frågesträngen och bör föregås av ett omvänt snedstreck i en token som ska matcha tecknet. Frågesträngen kan omges av citattecken för exakt strängmatchning och för att undvika specialtecken.
 - **`field`**: Om söktermerna bara ska matchas mot en delmängd av egenskaperna kan fältparametern ange sökvägen till den egenskapen. Parametern kan upprepas för att ange mer än en egenskap som ska matchas mot.
 - **`qop`**: Innehåller en kontrollparameter som används för att ändra sökningens matchande beteende. När parametern är inställd på och sedan måste alla söktermer matcha och när parametern är frånvarande eller dess värde är inställt på, kan alla termer räkna för en matchning.
 
@@ -831,7 +835,7 @@ Se [Uppdatera och korrigera instanser](#updating-and-patching-instances) för de
 
 Värdet i regelns villkorsegenskap innehåller ett PQL-uttryck. Kontextdata refereras via det speciella sökvägsuttrycket @{schemaID}.
 
-Regler är naturligt anpassade till segment i Experience Platform och ofta återanvänder en regel bara ett segments avsikt genom att testa en profils `segmentMembership` egenskap. Egenskapen innehåller `segmentMembership` resultatet av segmentvillkor som redan har utvärderats. På så sätt kan en organisation definiera sina domänspecifika målgrupper en gång, namnge dem och utvärdera villkoren en gång.
+Regler justeras naturligt mot segment i [!DNL Experience Platform] och ofta återanvänds ett segments avsikt genom att en profils `segmentMembership` egenskap testas. Egenskapen innehåller `segmentMembership` resultatet av segmentvillkor som redan har utvärderats. På så sätt kan en organisation definiera sina domänspecifika målgrupper en gång, namnge dem och utvärdera villkoren en gång.
 
 ## Hantera offertsamlingar
 
