@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Skapa ett anpassat namnutrymme
 topic: API guide
 translation-type: tm+mt
-source-git-commit: df85ea955b7a308e6be1e2149fcdfb4224facc53
+source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+workflow-type: tm+mt
+source-wordcount: '75'
+ht-degree: 2%
 
 ---
 
 
 # Skapa ett anpassat namnutrymme
 
-Med API:t för identitetsnamnområde kan du skapa ett anpassat identitetsnamnutrymme som bara är tillgängligt för din organisation.
+Med API:t kan du skapa ett anpassat ID-namnutrymme som bara är tillgängligt för din organisation. [!DNL Identity Namespace]
 
 Rekommendationer om hur du skapar anpassade namnutrymmen finns [i dokumentationen](../troubleshooting-guide.md)om vanliga frågor om identitetstjänsten.
 
