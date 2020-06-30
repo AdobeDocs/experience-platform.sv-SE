@@ -4,18 +4,21 @@ solution: Experience Platform
 title: Bilaga
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 2940f69d193ff8a4ec6ad4a58813b5426201ef45
+source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+workflow-type: tm+mt
+source-wordcount: '298'
+ht-degree: 1%
 
 ---
 
 
 # Bilaga
 
-I följande avsnitt finns referensinformation för olika funktioner i API:t Sensei Machine Learning.
+I följande avsnitt finns referensinformation för olika funktioner i [!DNL Sensei Machine Learning] API:t.
 
 ## Frågeparametrar för hämtning av resurser {#query}
 
-API:t Sensei Machine Learning har stöd för frågeparametrar med hämtning av resurser. Tillgängliga frågeparametrar och deras användning beskrivs i följande tabell:
+API:t [!DNL Sensei Machine Learning] har stöd för frågeparametrar med hämtning av resurser. Tillgängliga frågeparametrar och deras användning beskrivs i följande tabell:
 
 | Frågeparameter | Beskrivning | Standardvärde |
 | --------------- | ----------- | ------- |
