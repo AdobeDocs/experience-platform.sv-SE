@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en FTP- eller SFTP-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 855f543a1cef394d121502f03471a60b97eae256
+source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
 workflow-type: tm+mt
-source-wordcount: '547'
+source-wordcount: '542'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 >[!NOTE]
 >FTP- och SFTP-anslutningarna är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
-Källkopplingar i Adobe Experience Platform ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en FTP- eller SFTP-källanslutning med Platform användargränssnitt.
+Källkopplingar i Adobe Experience Platform ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en FTP- eller SFTP-källkoppling med [!DNL Platform] användargränssnittet.
 
 ## Komma igång
 
@@ -32,7 +32,7 @@ Om du redan har en giltig FTP- eller SFTP-anslutning kan du hoppa över resten a
 
 ### Filformat som stöds
 
-Experience Platform stöder följande filformat som kan importeras från externa källor:
+[!DNL Experience Platform] har stöd för följande filformat som ska importeras från externa källor:
 
 * Avgränsaravgränsade värden (DSV): Stödet för DSV-formaterade datafiler är för närvarande begränsat till kommaseparerade värden (CSV). Värdet för fältrubriker i DSV-formaterade filer får endast bestå av alfanumeriska tecken och understreck. Stöd för allmän DSV ska ges i framtiden.
 * JavaScript-objektnotation (JSON): JSON-formaterade datafiler måste vara XDM-kompatibla.
@@ -40,11 +40,11 @@ Experience Platform stöder följande filformat som kan importeras från externa
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till FTP- eller SFTP-servern på Platform måste du ange serverns **värdnamn**, ett **användarnamn** och ett **lösenord**.
+För att få åtkomst till FTP- eller SFTP-servern på [!DNL Platform]måste du ange serverns **värdnamn**, ett **användarnamn** och ett **lösenord**.
 
 ## Anslut till FTP- eller SFTP-servern
 
-När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att skapa ett nytt FTP- eller SFTP-konto för att ansluta till Platform.
+När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att skapa ett nytt FTP- eller SFTP-konto att ansluta till [!DNL Platform].
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt *[!UICONTROL Sources]* arbetsytan. På *[!UICONTROL Catalog]* skärmen visas en mängd olika källor som du kan skapa ett inkommande konto för, och varje källa visar antalet befintliga konton och dataflöden som är kopplade till dem.
 
