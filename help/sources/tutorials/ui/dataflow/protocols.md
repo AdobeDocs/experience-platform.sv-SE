@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Konfigurera ett dataflöde för en protokollanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 8a331e6711fab6f1823ff2ad030e5077e24d22d3
+source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+workflow-type: tm+mt
+source-wordcount: '1020'
+ht-degree: 0%
 
 ---
 
@@ -15,9 +18,9 @@ Ett datauppsättningsflöde är en schemalagd aktivitet som hämtar och importer
 
 ## Komma igång
 
-Den här självstudien kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [Experience Data Model (XDM) System](../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
+- [Experience Data Model (XDM) System](../../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
    - [Grundläggande om schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    - [Schemaredigeraren, genomgång](../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 - [Kundprofil](../../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
@@ -26,83 +29,83 @@ Den här självstudien kräver dessutom att du redan har skapat ett protokollkon
 
 ## Markera data
 
-När du har skapat ett protokollkonto visas steget *Välj data* , som ger ett interaktivt gränssnitt där du kan utforska filhierarkin.
+När du har skapat ett protokollkonto visas *[!UICONTROL Select data]* steget och du får ett interaktivt gränssnitt där du kan utforska filhierarkin.
 
 - Den vänstra halvan av gränssnittet är en katalogwebbläsare som visar serverns filer och kataloger.
 - I den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader data från en kompatibel fil.
 
-Markera den katalog som du vill använda och klicka sedan på **Nästa**.
+Markera den katalog som du vill använda och klicka sedan på **[!UICONTROL Next]**.
 
 ![tilläggsdata](../../../images/tutorials/dataflow/protocols/add-data.png)
 
 ## Mappa datafält till ett XDM-schema
 
-Steget *Mappning* visas med ett interaktivt gränssnitt för att mappa källdata till en plattformsdatauppsättning.
+Steget visas med ett interaktivt gränssnitt som du kan använda för att mappa källdata till en *[!UICONTROL Mapping]* [!UICONTROL Platform] datauppsättning.
 
 Välj en datauppsättning för inkommande data som ska importeras till. Du kan antingen använda en befintlig datauppsättning eller skapa en ny datauppsättning.
 
 ### Använd en befintlig datauppsättning
 
-Om du vill importera data till en befintlig datauppsättning väljer du **Använd befintlig datauppsättning** och klickar sedan på ikonen för datauppsättningen.
+Om du vill importera data till en befintlig datauppsättning väljer du **[!UICONTROL Use existing dataset]** och klickar sedan på datamängdikonen .
 
 ![use-existing-dataset](../../../images/tutorials/dataflow/protocols/use-existing-dataset.png)
 
-Dialogrutan *Välj datauppsättning* visas. Hitta den datauppsättning du vill använda, markera den och klicka sedan på **Fortsätt**.
+Dialogrutan *[!UICONTROL Select dataset]* visas. Hitta den datauppsättning du vill använda, markera den och klicka sedan på **[!UICONTROL Continue]**.
 
 ![select-existing-dataset](../../../images/tutorials/dataflow/protocols/select-existing-dataset.png)
 
 ### Använd en ny datauppsättning
 
-Om du vill importera data till en ny datauppsättning väljer du **Skapa ny datauppsättning** och anger ett namn och en beskrivning för datauppsättningen i fälten.
+Om du vill importera data till en ny datauppsättning markerar du **[!UICONTROL Create new dataset]** och anger ett namn och en beskrivning för datauppsättningen i de angivna fälten.
 
-Under den här processen kan du även aktivera *partiellt intag* och *feldiagnostik*. Genom att aktivera *partiellt intag* kan du importera data som innehåller fel, upp till ett visst tröskelvärde som du kan ange. Om du aktiverar feldiagnostik får du information om felaktiga data som batchas separat. Mer information finns i översikten över [partiell gruppöverföring](../../../../ingestion/batch-ingestion/partial.md).
+Under den här processen kan du även aktivera *[!UICONTROL Partial ingestion]* och *[!UICONTROL Error diagnostics]*. Aktivering *[!UICONTROL Partial ingestion]* ger möjlighet att importera data som innehåller fel, upp till ett visst tröskelvärde som du kan ange. Om du aktiverar feldiagnostik får du information om felaktiga data som batchas separat. Mer information finns i översikten över [partiell gruppöverföring](../../../../ingestion/batch-ingestion/partial.md).
 
 När du är klar klickar du på schemaikonen.
 
 ![create-new-dataset](../../../images/tutorials/dataflow/protocols/use-new-dataset.png)
 
-Dialogrutan *Välj schema* visas. Välj det schema som du vill använda för den nya datauppsättningen och klicka sedan på **Klar**.
+Dialogrutan *[!UICONTROL Select schema]* visas. Välj det schema som du vill använda för den nya datauppsättningen och klicka sedan på **[!UICONTROL Done]**.
 
 ![select-schema](../../../images/tutorials/dataflow/protocols/select-existing-schema.png)
 
 Beroende på dina behov kan du välja att mappa fält direkt eller använda mappningsfunktioner för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om datamappning och mappningsfunktioner finns i självstudiekursen om att [mappa CSV-data till XDM-schemafält](../../../../ingestion/tutorials/map-a-csv-file.md).
 
-På *mappningsskärmen* kan du även ange *Delta-kolumnen*. När datauppsättningsflödet skapas kan du ange vilket tidsstämpelfält som helst som bas för att bestämma vilka poster som ska importeras i schemalagda stegvisa inmatningar.
+Du kan också ange inställningar på *[!UICONTROL Mapping]* skärmen *[!UICONTROL Delta column]*. När datauppsättningsflödet skapas kan du ange vilket tidsstämpelfält som helst som bas för att bestämma vilka poster som ska importeras i schemalagda stegvisa inmatningar.
 
-När källdata har mappats klickar du på **Nästa**.
+När källdata har mappats klickar du på **[!UICONTROL Next]**.
 
 ![](../../../images/tutorials/dataflow/protocols/mapping.png)
 
-Steget *Schemaläggning* visas, så att du kan konfigurera ett schema så att det automatiskt importerar valda källdata med de konfigurerade mappningarna. I följande tabell visas de olika konfigurerbara fälten för schemaläggning:
+Steget visas så att du kan konfigurera ett schema för att automatiskt importera valda källdata med de konfigurerade mappningarna. *[!UICONTROL Scheduling]* I följande tabell visas de olika konfigurerbara fälten för schemaläggning:
 
 | Fält | Beskrivning |
 | --- | --- |
 | Frekvens | Valbara frekvenser är Minute, Hour, Day och Week. |
 | Intervall | Ett heltal som anger intervallet för den valda frekvensen. |
 | Starttid | En UTC-tidsstämpel för vilken det allra första intaget sker. |
-| Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om *Backfill* är aktiverat, kommer alla aktuella filer i den angivna sökvägen att kapslas in under det första schemalagda intaget. Om *Backfill* är inaktiverat kapslas endast de filer som läses in mellan den första importkörningen och *starttiden* . Filer som lästs in före *starttiden* importeras inte. |
+| Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om *[!UICONTROL Backfill]* är aktiverat importeras alla aktuella filer i den angivna sökvägen under den första schemalagda importen. Om *[!UICONTROL Backfill]* är inaktiverat importeras endast de filer som är inlästa mellan den första importen och den andra *[!UICONTROL Start time]* . Filer som lästs in tidigare *[!UICONTROL Start time]* kommer inte att importeras. |
 
-Datauppsättningsflöden är utformade för att automatiskt importera data på schemalagd basis. Om du bara vill importera en gång genom det här arbetsflödet kan du göra det genom att konfigurera **Frekvensen** till &quot;Dag&quot; och använda ett mycket stort värde för **Intervall**, till exempel 10000 eller liknande.
+Datauppsättningsflöden är utformade för att automatiskt importera data på schemalagd basis. Om du bara vill importera en gång genom det här arbetsflödet kan du göra det genom att konfigurera **[!UICONTROL Frequency]** till &quot;Dag&quot; och använda ett mycket stort tal för **[!UICONTROL Interval]** fotot, till exempel 10000 eller liknande.
 
-Ange värden för schemat och klicka på **Nästa**.
+Ange värden för schemat och klicka på **[!UICONTROL Next]**.
 
 ![schemaläggning](../../../images/tutorials/dataflow/protocols/scheduling.png)
 
 ## Namnge datauppsättningsflödet
 
-Flödesdetaljsteget för *datauppsättningen* visas, där du måste ange ett namn och en valfri beskrivning för datauppsättningsflödet. Klicka på **Nästa** när du är klar.
+Steget visas där du måste ange ett namn och en valfri beskrivning för datauppsättningsflödet. *[!UICONTROL Dataset flow detail]* Klicka **[!UICONTROL Next]** när du är klar.
 
 ![dataset-flow-details](../../../images/tutorials/dataflow/protocols/dataset-flow-details.png)
 
 ## Granska datauppsättningsflödet
 
-Steget *Granska* visas så att du kan granska det nya dataflödet innan det skapas. Informationen är grupperad i följande kategorier:
+Steget visas så att du kan granska det nya dataflödet innan det skapas. *[!UICONTROL Review]* Informationen är grupperad i följande kategorier:
 
-- *Anslutning*: Visar källtypen, den relevanta sökvägen för den valda källfilen och mängden kolumner i källfilen.
-- *Tilldela datauppsättnings- och kartfält*: Visar vilken datauppsättning källdata hämtas till, inklusive det schema som datauppsättningen följer.
-- *Schemaläggning*: Visar den aktiva perioden, frekvensen och intervallet för intag-schemat.
+- *[!UICONTROL Connection]*: Visar källtypen, den relevanta sökvägen för den valda källfilen och mängden kolumner i källfilen.
+- *[!UICONTROL Assign dataset & map fields]*: Visar vilken datauppsättning källdata hämtas till, inklusive det schema som datauppsättningen följer.
+- *[!UICONTROL Scheduling]*: Visar den aktiva perioden, frekvensen och intervallet för intag-schemat.
 
-När du har granskat dataflödet klickar du på **Slutför** och anger en tid innan dataflödet skapas.
+När du har granskat dataflödet kan du klicka **[!UICONTROL Finish]** och vänta tills dataflödet har skapats.
 
 ![recension](../../../images/tutorials/dataflow/protocols/review.png)
 
@@ -112,7 +115,7 @@ När datauppsättningsflödet har skapats kan du övervaka de data som hämtas g
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat ett datauppsättningsflöde för att hämta in data från ett automatiserat marknadsföringssystem och fått insikter om att övervaka datauppsättningar. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan, t.ex. kundprofil i realtid och datavetenskapen. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat ett datauppsättningsflöde för att hämta in data från ett automatiserat marknadsföringssystem och fått insikter om att övervaka datauppsättningar. Inkommande data kan nu användas av [!DNL Platform] tjänster längre fram i kedjan som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 - [Översikt över kundprofiler i realtid](../../../../profile/home.md)
 - [Översikt över arbetsytan Datavetenskap](../../../../data-science-workspace/home.md)
@@ -125,14 +128,14 @@ I följande avsnitt finns ytterligare information om hur du arbetar med källkop
 
 När ett datauppsättningsflöde skapas blir det omedelbart aktivt och importerar data enligt det schema som det gavs. Du kan när som helst inaktivera ett aktivt datauppsättningsflöde genom att följa instruktionerna nedan.
 
-På skärmen *Datauppsättningsflöden* markerar du namnet på datauppsättningsflödet som du vill inaktivera.
+Markera namnet på datauppsättningsflödet som du vill inaktivera på *[!UICONTROL Dataset Flows]* skärmen.
 
 ![browse-dataset-flow](../../../images/tutorials/dataflow/protocols/view-dataset-flows.png)
 
-Kolumnen *Egenskaper* visas till höger på skärmen. Panelen innehåller en **aktiverad** växlingsknapp. Klicka på växlingsknappen för att inaktivera dataflödet. Samma växlingsknapp kan användas för att återaktivera ett dataflöde efter att det har inaktiverats.
+Kolumnen visas *[!UICONTROL Properties]* till höger på skärmen. Panelen innehåller en **[!UICONTROL Enabled]** växlingsknapp. Klicka på växlingsknappen för att inaktivera dataflödet. Samma växlingsknapp kan användas för att återaktivera ett dataflöde efter att det har inaktiverats.
 
 ![disable](../../../images/tutorials/dataflow/protocols/disable.png)
 
-### Aktivera inkommande data för profilifyllning
+### Aktivera inkommande data för [!DNL Profile] populationen
 
-Inkommande data från källkopplingen kan användas för att berika och fylla i kundprofildata i realtid. Mer information om hur du fyller i Real-Customer Profile-data finns i självstudiekursen om [profilpopulationen](../profile.md).
+Inkommande data från källkopplingen kan användas för att berika och fylla i dina [!DNL Real-time Customer Profile] data. Mer information om hur du fyller i dina [!DNL Real-time Customer Profile] data finns i självstudiekursen om [profilpopulationen](../profile.md).
