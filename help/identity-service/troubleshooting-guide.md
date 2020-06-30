@@ -4,20 +4,23 @@ solution: Experience Platform
 title: Felsökningsguide för Adobe Experience Platform Identity Service
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: df85ea955b7a308e6be1e2149fcdfb4224facc53
+source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+workflow-type: tm+mt
+source-wordcount: '2225'
+ht-degree: 0%
 
 ---
 
 
 # Felsökningsguide för identitetstjänst
 
-Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform Identity Service samt en felsökningsguide för vanliga fel. Mer information och felsökning om plattforms-API:er i allmänhet finns i felsökningsguiden för [Adobe Experience Platform API](../landing/troubleshooting.md).
+Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform [!DNL Identity Service]samt en felsökningsguide för vanliga fel. Mer information och felsökning om API: [!DNL Platform] er i allmänhet finns i felsökningsguiden för [Adobe Experience Platform API](../landing/troubleshooting.md).
 
-Data som identifierar en enskild kund fragmenteras ofta över olika enheter och system som de använder för att interagera med ert varumärke. **Identitetstjänsten** samlar ihop dessa fragmenterade identiteter och underlättar en fullständig förståelse för kundbeteenden så att ni kan leverera slagkraftiga digitala upplevelser i realtid. Mer information finns i Översikt över [identitetstjänsten](./home.md).
+Data som identifierar en enskild kund fragmenteras ofta över olika enheter och system som de använder för att interagera med ert varumärke. [!DNL Identity Service] samlar ihop dessa fragmenterade identiteter och ger en fullständig förståelse för kundbeteenden så att ni kan leverera slagkraftiga digitala upplevelser i realtid. Mer information finns i Översikt över [identitetstjänsten](./home.md).
 
 ## Vanliga frågor
 
-Nedan följer en lista med svar på vanliga frågor om identitetstjänsten.
+Här följer en lista med svar på vanliga frågor om [!DNL Identity Service].
 
 ## Vad är identitetsdata?
 
@@ -29,15 +32,15 @@ Genom att sätta etiketter på vissa datafält som identiteter i data för post-
 
 ## Vad är kända och anonyma identiteter?
 
-En **känd identitet** avser ett identitetsvärde som kan användas fristående eller tillsammans med annan information för att identifiera, kontakta eller hitta en enskild person. Exempel på kända identiteter kan vara e-postadresser, telefonnummer och CRM-ID:n.
+En känd identitet avser ett identitetsvärde som kan användas fristående eller tillsammans med annan information för att identifiera, kontakta eller hitta en enskild person. Exempel på kända identiteter kan vara e-postadresser, telefonnummer och CRM-ID:n.
 
-En **anonym identitet** avser ett identitetsvärde som inte kan användas fristående eller tillsammans med annan information för att identifiera, kontakta eller hitta en enskild person (t.ex. ett cookie-ID).
+En anonym identitet refererar till ett identitetsvärde som inte kan användas fristående eller tillsammans med annan information för att identifiera, kontakta eller hitta en enskild person (till exempel ett cookie-ID).
 
 ## Vad är ett privat identitetsdiagram?
 
 Ett privat identitetsdiagram är en privat karta över relationer mellan sammanfogade och länkade identiteter, som bara är synlig för din organisation.
 
-När fler än en identitet ingår i data som hämtas från en direktuppspelningsslutpunkt eller skickas till en datauppsättning som är aktiverad för identitetstjänsten, länkas dessa identiteter i det privata identitetsdiagrammet. Identitetstjänsten använder det här diagrammet för att skapa identiteter för en viss konsument eller enhet, vilket möjliggör sammanslagning av identiteter och profiler.
+När fler än en identitet ingår i data som har importerats från en direktuppspelningsslutpunkt eller skickats till en datauppsättning som är aktiverad för, länkas dessa identiteter i det privata identitetsdiagrammet. [!DNL Identity Service] [!DNL Identity Service] använder det här diagrammet för att skapa magra identiteter för en viss konsument eller enhet, vilket möjliggör identitetssammanfogning och profilsammanfogning.
 
 ## Hur skapar jag flera identitetsfält i ett XDM-schema?
 
@@ -53,7 +56,7 @@ Fält som ZIP-koder och IP-adresser ska inte märkas som identiteter för enskil
 
 ## Varför länkar inte mina identitetsfält på det sätt jag förväntar mig?
 
-Med hjälp av [`/cluster/members` slutpunkten](./api/list-cluster-identites.md) i identitetstjänstens API kan du visa associerade identiteter för ett eller flera identitetsfält. Om svaret inte returnerar de länkade identiteter som du förväntar dig ska du se till att du anger rätt identitetsinformation i dina XDM-data. Mer information finns i avsnittet om [att tillhandahålla XDM-data till identitetstjänsten](./home.md) i översikten över identitetstjänsten.
+Med hjälp av [`/cluster/members` slutpunkten](./api/list-cluster-identites.md) i API:t för identitetstjänsten kan du visa associerade identiteter för ett eller flera identitetsfält. Om svaret inte returnerar de länkade identiteter som du förväntar dig ska du se till att du anger rätt identitetsinformation i dina XDM-data. Mer information finns i avsnittet om [att tillhandahålla XDM-data till identitetstjänsten](./home.md) i översikten över identitetstjänsten.
 
 ## Vad är ett identitetsnamnutrymme?
 
@@ -69,20 +72,20 @@ Identitetsfält måste kopplas till ett befintligt ID-namnutrymme när de skapas
 
 Stegvisa instruktioner om hur du definierar ett namnutrymme när du skapar en identitetsbeskrivning med API:t finns i avsnittet om [att skapa en beskrivning](../xdm/tutorials/create-schema-ui.md) i utvecklarhandboken för schemaregister. Om du vill markera ett schemafält som en identitet i användargränssnittet följer du stegen i [schemaredigerarens självstudiekurs](../xdm/tutorials/create-schema-api.md).
 
-## Vilka är de vanliga identitetsnamnutrymmena i Experience Platform?
+## Vilka är de vanliga ID-namnutrymmena från Experience Platform?
 
 Följande standardnamnutrymmen kan användas av alla organisationer i Experience Platform:
 
 | Visningsnamn | ID | Code | Beskrivning |
 | ------------ | --- | --- | ----------- |
 | CORE | 0 | CORE | äldre namn: &quot;Adobe AudienceManager&quot; |
-| ECID | 4 | ECID | alias: &quot;Adobe Marketing Cloud ID&quot;,&quot;Adobe Experience Cloud ID&quot;,&quot;Adobe Experience Platform ID&quot; |
+| ECID | 4 | ECID | alias: &quot;Adobe Marketing Cloud ID&quot;, &quot;Adobe Experience Cloud ID&quot;, &quot;Adobe Experience Platform ID&quot; |
 | E-post | 6 | E-post |  |
 | E-post (SHA256, nedsänkt) | 11 | E-post | Standardnamnutrymme för förhashad e-post. Värden som anges i det här namnutrymmet konverteras till gemener innan de hash-kodas med SHA-256. |
 | Telefon | 7 | Telefon |  |
 | Windows AID | 8 | WAID |  |
 | AdCloud | 411 | AdCloud | alias: Ad Cloud |
-| Adobe Target | 9 | TNTID | Mål-ID |
+| Adobe Target | 9 | TNTID | Target ID |
 | Google Ad ID | 20914 | GAID | GAID |
 | Apple IDFA | 20915 | IDFA | ID för annonsörer |
 
@@ -102,9 +105,9 @@ Identiteter refereras i API-anrop antingen av deras sammansatta identitet eller 
 
 Identitetstjänsten skapar en stark, envägs kryptografisk hash av PII-filen innan beständiga värden används. Identitetsdata i namnutrymmena &quot;Telefon&quot; och &quot;E-post&quot; hashas automatiskt med SHA-256, där värdena &quot;E-post&quot; automatiskt konverteras till gemener före hashning.
 
-## Ska jag kryptera alla PII-filer innan jag skickar till plattformen?
+## Ska jag kryptera alla PII-filer innan jag skickar dem till Platform?
 
-Du behöver inte kryptera PII-data manuellt innan du importerar dem till plattformen. Genom att använda dataanvändningsetiketten på alla tillämpliga datafält, konverterar Platform automatiskt dessa fält till hash-kodade ID-värden vid inmatning. `I1`
+Du behöver inte kryptera PII-data manuellt innan du importerar dem till Platform. Genom att använda dataanvändningsetiketten på alla tillämpliga datafält, konverterar Platform automatiskt dessa fält till hash-kodade ID-värden vid inmatning. `I1`
 
 Anvisningar om hur du använder och hanterar dataanvändningsetiketter finns i självstudiekursen om [dataanvändningsetiketter](../data-governance/labels/user-guide.md).
 
@@ -130,11 +133,11 @@ Internal solutions|Preferred|Common
 
 ## Felsökning
 
-Följande avsnitt innehåller felsökningsförslag för specifika felkoder och oväntade beteenden som du kan stöta på när du arbetar med API:t för identitetstjänsten.
+Följande avsnitt innehåller felsökningsförslag för specifika felkoder och oväntade beteenden som du kan stöta på när du arbetar med [!DNL Identity Service] API.
 
-## Felmeddelanden i identitetstjänsten
+## [!DNL Identity Service] felmeddelanden
 
-Nedan följer en lista över felmeddelanden som du kan stöta på när du använder API:t för identitetstjänsten.
+Här följer en lista över felmeddelanden som du kan stöta på när du använder [!DNL Identity Service] API:t.
 
 ### Obligatorisk frågeparameter saknas
 
@@ -166,7 +169,7 @@ Kontrollera att du tar med den angivna parametern i sökvägen för begäran inn
 }
 ```
 
-Identitetstjänsten tömmer data som är äldre än 180 dagar. Det här felmeddelandet visas när du försöker komma åt data som är äldre än det här.
+[!DNL Identity Service] tar bort data som är äldre än 180 dagar. Det här felmeddelandet visas när du försöker komma åt data som är äldre än det här.
 
 ### Det finns en gräns på 1 000 XID i ett enda samtal
 
@@ -203,7 +206,7 @@ Det här felmeddelandet visas när du försöker hämta identitetsinformation f�
 }
 ```
 
-Det här felmeddelandet visas när en `graph-type` frågeparameter tilldelas ett ogiltigt värde i sökvägen till begäran. I avsnittet om [identitetsdiagram](./home.md) i översikten över identitetstjänsten finns information om vilka diagramtyper som stöds.
+Det här felmeddelandet visas när en `graph-type` frågeparameter tilldelas ett ogiltigt värde i sökvägen till begäran. I avsnittet om [identitetsdiagram](./home.md) i [!DNL Identity Service] översikten finns mer information om vilka diagramtyper som stöds.
 
 ### Tjänsttoken har inte ett giltigt omfång
 
@@ -215,7 +218,7 @@ Det här felmeddelandet visas när en `graph-type` frågeparameter tilldelas ett
 }
 ```
 
-Det här felmeddelandet visas när IMS-organisationen inte har tilldelats rätt behörigheter för identitetstjänsten. Kontakta systemadministratören för att lösa problemet.
+Det här felmeddelandet visas när IMS-organisationen inte har tilldelats rätt behörigheter för [!DNL Identity Service]. Kontakta systemadministratören för att lösa problemet.
 
 ### Gatewaytjänstens token är inte giltig
 
@@ -227,7 +230,7 @@ Det här felmeddelandet visas när IMS-organisationen inte har tilldelats rätt 
 }
 ```
 
-Om det här felet inträffar är din åtkomsttoken ogiltig. Åtkomsttoken upphör att gälla var 24:e timme och måste genereras om för att du ska kunna fortsätta använda plattforms-API:er. Se självstudiekursen [för](../tutorials/authentication.md) autentisering för instruktioner om hur du skapar nya åtkomsttoken.
+Om det här felet inträffar är din åtkomsttoken ogiltig. Åtkomsttoken upphör att gälla var 24:e timme och måste genereras om för att du ska kunna fortsätta använda [!DNL Platform] API:er. Se självstudiekursen [för](../tutorials/authentication.md) autentisering för instruktioner om hur du skapar nya åtkomsttoken.
 
 ### Autentiseringstjänsttoken är inte giltig
 
@@ -239,7 +242,7 @@ Om det här felet inträffar är din åtkomsttoken ogiltig. Åtkomsttoken upphö
 }
 ```
 
-Om det här felet inträffar är din åtkomsttoken ogiltig. Åtkomsttoken upphör att gälla var 24:e timme och måste genereras om för att du ska kunna fortsätta använda plattforms-API:er. Se självstudiekursen [för](../tutorials/authentication.md) autentisering för instruktioner om hur du skapar nya åtkomsttoken.
+Om det här felet inträffar är din åtkomsttoken ogiltig. Åtkomsttoken upphör att gälla var 24:e timme och måste genereras om för att du ska kunna fortsätta använda [!DNL Platform] API:er. Se självstudiekursen [för](../tutorials/authentication.md) autentisering för instruktioner om hur du skapar nya åtkomsttoken.
 
 ### Användartoken har inte en giltig produktkontext
 
@@ -251,7 +254,7 @@ Om det här felet inträffar är din åtkomsttoken ogiltig. Åtkomsttoken upphö
 }
 ```
 
-Det här felmeddelandet visas när din åtkomsttoken inte har genererats från en Experience Platform-integrering. Se självstudiekursen [för](../tutorials/authentication.md) autentisering för instruktioner om hur du skapar nya åtkomsttoken för en Experience Platform-integrering.
+Det här felmeddelandet visas när din åtkomsttoken inte har genererats från en [!DNL Experience Platform] integrering. Se självstudiekursen [för](../tutorials/authentication.md) autentisering för instruktioner om hur du skapar nya åtkomsttoken för en [!DNL Experience Platform] integrering.
 
 ### Internt fel vid hämtning av ursprungligt XID från identitets- och namnutrymmeskod
 
@@ -263,9 +266,9 @@ Det här felmeddelandet visas när din åtkomsttoken inte har genererats från e
 }
 ```
 
-När identitetstjänsten består av en identitet tilldelas identitets-ID och tillhörande namnområdes-ID en unik identifierare som kallas XID. Det här meddelandet visas när ett fel inträffar under sökningen efter XID för ett givet ID-värde och namnutrymme.
+När [!DNL Identity Service] en identitet kvarstår tilldelas identitetsens ID och tillhörande namnområdes-ID en unik identifierare som kallas XID. Det här meddelandet visas när ett fel inträffar under sökningen efter XID för ett givet ID-värde och namnutrymme.
 
-### IMS-organisationen har inte etablerats för identitetstjänstens användning
+### IMS-organisationen har inte etablerats för [!DNL Identity Service] användning
 
 ```json
 {
@@ -275,7 +278,7 @@ När identitetstjänsten består av en identitet tilldelas identitets-ID och til
 }
 ```
 
-Det här felmeddelandet visas när IMS-organisationen inte har tilldelats rätt behörigheter för identitetstjänsten. Kontakta systemadministratören för att lösa problemet.
+Det här felmeddelandet visas när IMS-organisationen inte har tilldelats rätt behörigheter för [!DNL Identity Service]. Kontakta systemadministratören för att lösa problemet.
 
 ### Internt serverfel
 
@@ -287,13 +290,13 @@ Det här felmeddelandet visas när IMS-organisationen inte har tilldelats rätt 
 }
 ```
 
-Det här felet visas när ett oväntat undantag inträffar vid körning av ett plattformstjänstanrop. Det bästa sättet är att programmera dina automatiska anrop så att de kan försöka igen några gånger med ett tidsintervall när det här felet tas emot. Kontakta systemadministratören om problemet kvarstår.
+Det här felet visas när ett oväntat undantag inträffar när ett [!DNL Platform] serviceanrop körs. Det bästa sättet är att programmera dina automatiska anrop så att de kan försöka igen några gånger med ett tidsintervall när det här felet tas emot. Kontakta systemadministratören om problemet kvarstår.
 
 ## Felkoder för batchinmatning
 
-Identitetstjänsten samlar in identitetsdata från post- och tidsseriedata som överförs till plattformen med hjälp av gruppinmatning. Eftersom gruppinmatning är en asynkron process måste du visa information för en grupp för att kunna se fel. Fel ackumuleras allt eftersom batchen fortskrider tills batchen är klar.
+[!DNL Identity Service] inhämtar identitetsdata från post- och tidsseriedata som överförs till [!DNL Platform] med hjälp av gruppinmatning. Eftersom gruppinmatning är en asynkron process måste du visa information för en grupp för att kunna se fel. Fel ackumuleras allt eftersom batchen fortskrider tills batchen är klar.
 
-Nedan följer en lista över felmeddelanden relaterade till identitetstjänsten som du kan stöta på när du använder API:t för [datainmatning](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml).
+Nedan följer en lista över felmeddelanden som är relaterade till [!DNL Identity Service] dig när du använder API:t för [datainmatning](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml).
 
 ### Okänt XDM-schema
 
@@ -305,7 +308,7 @@ Nedan följer en lista över felmeddelanden relaterade till identitetstjänsten 
 }
 ```
 
-Identitetstjänsten använder bara identiteter för post- eller tidsseriedata som uppfyller klasserna Profile och ExperienceEvent. Om du försöker att importera data för identitetstjänsten som inte följer någon av klasserna utlöses det här felet.
+[!DNL Identity Service] bara använder identiteter för post- eller tidsseriedata som överensstämmer med [!DNL Profile] eller [!DNL ExperienceEvent] klasserna. Om du försöker att importera data för [!DNL Identity Service] som inte är i någon klass utlöses det här felet.
 
 ### Det fanns 0 giltiga identiteter i de första 100 raderna i den bearbetade gruppen
 
@@ -329,7 +332,7 @@ Det här felet visas när de första 100 raderna i en batch inte visade några i
 }
 ```
 
-Identitetstjänsten länkar bara identiteter när enskilda poster har två eller flera identitetsvärden. Det här felmeddelandet visas en gång för varje inkapslad sats och visar antalet poster där endast en identitet kunde hittas och som inte resulterade i någon ändring av identitetsdiagrammet.
+[!DNL Identity Service] bara länkar identiteter när enskilda poster har två eller flera identitetsvärden. Det här felmeddelandet visas en gång för varje inkapslad sats och visar antalet poster där endast en identitet kunde hittas och som inte resulterade i någon ändring av identitetsdiagrammet.
 
 ### Namnområdeskoden har inte registrerats för denna IMS-organisation
 
@@ -353,7 +356,7 @@ Det här felet visas när en inkapslad post visar en identitet vars associerade 
 }
 ```
 
-Vid inmatning av batchdata visas det här felmeddelandet när IMS-organisationen inte har tilldelats rätt behörigheter för identitetstjänsten. Kontakta systemadministratören för att lösa problemet.
+Vid inhämtning av batchdata visas det här felmeddelandet när IMS-organisationen inte har tilldelats rätt behörighet för [!DNL Identity Service]. Kontakta systemadministratören för att lösa problemet.
 
 ### Internt fel
 
