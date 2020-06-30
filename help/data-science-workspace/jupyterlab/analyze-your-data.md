@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Analysera dina data med bärbara datorer
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
 workflow-type: tm+mt
-source-wordcount: '1729'
+source-wordcount: '1702'
 ht-degree: 0%
 
 ---
@@ -18,31 +18,31 @@ I den här självstudiekursen fokuseras på hur du använder Jupyter-antecknings
 
 Följande koncept har introducerats:
 
-- **JupyterLab:** [JupyterLab](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) är nästa generation av webbaserat gränssnitt för Project Jupyter och är nära integrerat i [!DNL Adobe Experience Platform].
+- **[!DNL JupyterLab]:**[!DNL JupyterLab](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906)är nästa generations webbaserade gränssnitt för Project Jupyter, som är nära integrerat i[!DNL Adobe Experience Platform].
 - **Grupper:** Datauppsättningar består av grupper. En batch är en uppsättning data som samlats in under en tidsperiod och som bearbetas tillsammans som en enda enhet. Nya grupper skapas när data läggs till i en datauppsättning.
-- **SDK för dataåtkomst (borttagen):** SDK för dataåtkomst är nu föråldrat. Använd [Platform SDK](../authoring/platform-sdk.md) -guiden.
+- **SDK för dataåtkomst (borttagen):** SDK för dataåtkomst är nu föråldrat. Använd [!DNL Platform SDK](../authoring/platform-sdk.md) guiden.
 
 ## Utforska anteckningsböcker i Data Science Workspace
 
 I det här avsnittet utforskas data som tidigare har importerats till försäljningsschemat.
 
-Med Data Science Workspace kan man skapa Jupyter-anteckningsböcker via JupyterLab-plattformen där man kan skapa och redigera maskininlärningsarbetsflöden. JupyterLab är ett verktyg för samarbete mellan server och klient som gör att användare kan redigera anteckningsboksdokument via en webbläsare. De här anteckningsböckerna kan innehålla både körbar kod och RTF-element. För våra syften kommer vi att använda Markdown för analysbeskrivning och körbar Python-kod för att utföra datautforskande och -analys.
+Med Data Science Workspace kan man skapa [!DNL Jupyter Notebooks] på den [!DNL JupyterLab] plattform där man kan skapa och redigera maskininlärningsarbetsflöden. [!DNL JupyterLab] är ett verktyg för samarbete mellan server och klient som gör att användare kan redigera anteckningsboksdokument via en webbläsare. De här anteckningsböckerna kan innehålla både körbar kod och RTF-element. För våra syften kommer vi att använda Markdown för analysbeskrivning och körbar [!DNL Python] kod för att utföra datautforskande och -analys.
 
 ### Välj arbetsyta
 
-När JupyterLab startas visas ett webbaserat gränssnitt för Jupyter-anteckningsböcker. Beroende på vilken typ av anteckningsbok vi väljer startas en motsvarande kärna.
+När vi startar [!DNL JupyterLab]visas ett webbaserat gränssnitt för Jupyter-anteckningsböcker. Beroende på vilken typ av anteckningsbok vi väljer startas en motsvarande kärna.
 
-När vi jämför vilken miljö vi ska använda måste vi ta hänsyn till varje tjänsts begränsningar. Om vi till exempel använder [pandabiblioteket](https://pandas.pydata.org/) med Python är RAM-gränsen 2 GB som vanlig användare. Även som kraftfull användare är vi begränsade till 20 GB RAM. Om du hanterar större beräkningar är det klokt att använda Spark som erbjuder 1,5 TB som delas med alla instanser av bärbara datorer.
+När vi jämför vilken miljö vi ska använda måste vi ta hänsyn till varje tjänsts begränsningar. Om vi till exempel använder [pandabiblioteket](https://pandas.pydata.org/) med [!DNL Python]som vanlig användare är RAM-gränsen 2 GB. Även som kraftfull användare är vi begränsade till 20 GB RAM. Om du hanterar större beräkningar är det bra att använda [!DNL Spark] som erbjuder 1,5 TB som delas med alla instanser av bärbara datorer.
 
 Som standard fungerar Tensorflow-receptet i ett GPU-kluster och Python körs i ett CPU-kluster.
 
 ### Skapa en ny anteckningsbok
 
-Klicka på fliken Datavetenskap i den övre menyn i [!DNL Adobe Experience Platform] användargränssnittet för att ta dig till arbetsytan Datavetenskap. Från den här sidan klickar du på fliken JupyterLab som öppnar JupyterLab-startprogrammet. Du bör se en liknande sida.
+Klicka på fliken Datavetenskap i den övre menyn i [!DNL Adobe Experience Platform] användargränssnittet för att ta dig till arbetsytan Datavetenskap. På den här sidan klickar du på den [!DNL JupyterLab] flik som öppnar [!DNL JupyterLab] startprogrammet. Du bör se en liknande sida.
 
 ![](../images/jupyterlab/analyze-data/jupyterlab_launcher.png)
 
-I vår självstudiekurs kommer vi att använda Python 3 i Jupyter Notebook för att visa hur du kommer åt och utforskar data. På startsidan finns exempelanteckningsböcker. Vi kommer att använda recept på detaljhandelsförsäljning för Python 3.
+I vår självstudiekurs kommer vi att använda [!DNL Python] 3 i Jupyter Notebook för att visa hur du kommer åt och utforskar data. På startsidan finns exempelanteckningsböcker. Vi kommer att använda recept för [!DNL Python] 3.
 
 ![](../images/jupyterlab/analyze-data/retail_sales.png)
 
@@ -50,13 +50,13 @@ Koden för butiksförsäljning är ett fristående exempel som använder samma d
 
 ### Åtkomstdata
 
->[!NOTE] Funktionen `data_access_sdk_python` är föråldrad och rekommenderas inte längre. Se självstudiekursen [Konvertera dataåtkomst till SDK till Platform SDK](../authoring/platform-sdk.md) för att konvertera koden. Samma steg nedan gäller fortfarande för den här självstudiekursen.
+>[!NOTE] Funktionen `data_access_sdk_python` är föråldrad och rekommenderas inte längre. Se självstudiekursen om [dataåtkomst för SDK till Platform SDK](../authoring/platform-sdk.md) för att konvertera din kod. Samma steg nedan gäller fortfarande för den här självstudiekursen.
 
-Vi kommer att gå igenom åtkomsten till data internt från [!DNL Adobe Experience Platform] och externt. Vi kommer att använda biblioteket för att komma åt interna data som datauppsättningar och XDM-scheman. `data_access_sdk_python` För externa data kommer vi att använda pandorna Python-biblioteket.
+Vi kommer att gå igenom åtkomsten till data internt från [!DNL Adobe Experience Platform] och externt. Vi kommer att använda biblioteket för att komma åt interna data som datauppsättningar och XDM-scheman. `data_access_sdk_python` För externa data kommer vi att använda [!DNL Python] pandabiblioteket.
 
 #### Externa data
 
-När butiksförsäljningsjournalen är öppen hittar du rubriken&quot;Läs in data&quot;. I följande Python-kod används pandas `DataFrame` datastruktur och funktionen [read_csv()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html#pandas.read_csv) för att läsa CSV-filen som finns på Github i DataFrame:
+När butiksförsäljningsjournalen är öppen hittar du rubriken&quot;Läs in data&quot;. I följande [!DNL Python] kod används pandas `DataFrame` datastruktur och funktionen [read_csv()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html#pandas.read_csv) för att läsa CSV-filen som finns [!DNL Github] i DataFrame:
 
 ![](../images/jupyterlab/analyze-data/read_csv.png)
 
@@ -68,7 +68,7 @@ Slutligen kan vi ta en titt på hur våra data ser ut. Vi kan använda `df.head(
 
 ![](../images/jupyterlab/analyze-data/df_head.png)
 
-#### Experience Platform-data
+#### [!DNL Experience Platform] data
 
 Nu går vi igenom åtkomsten till [!DNL Experience Platform] data.
 
@@ -86,7 +86,7 @@ Eftersom datauppsättningen är densamma vill vi ersätta inläsningsdata från 
 
 Nu kan vi högerklicka på `Retail-Training-<your-alias>` datauppsättningen och välja alternativet Utforska data i anteckningsbok i listrutan. En körbar kodpost visas i anteckningsboken.
 
->[!TIP] gå till [plattforms-SDK](../authoring/platform-sdk.md) guide för att konvertera koden.
+>[!TIP] se guiden för att konvertera koden [!DNL Platform SDK](../authoring/platform-sdk.md) .
 
 ```PYTHON
 from data_access_sdk_python.reader import DataSetReader
@@ -96,7 +96,7 @@ df = reader.load(data_set_id="xxxxxxxx", ims_org="xxxxxxxx@AdobeOrg")
 df.head()
 ```
 
-Om du arbetar med andra kärnor än Python, se [den här sidan](https://github.com/adobe/acp-data-services-dsw-reference/wiki/Accessing-Data-on-the-Platform) för att få tillgång till data på [!DNL Adobe Experience Platform].
+Om du arbetar med andra kärnor än [!DNL Python], se [den här sidan](https://github.com/adobe/acp-data-services-dsw-reference/wiki/Accessing-Data-on-the-Platform) för att få åtkomst till data på [!DNL Adobe Experience Platform].
 
 Om du väljer den körbara cellen och sedan trycker på uppspelningsknappen i verktygsfältet körs den körbara koden. Utdata för `head()` blir en tabell med datamängdens nycklar som kolumner och de första n raderna i datauppsättningen. `head()` använder ett heltalsargument för att ange hur många rader som ska skrivas ut. Som standard är detta 5.
 
@@ -122,7 +122,7 @@ Nu när vi har tillgång till era data kan vi fokusera på själva data genom at
 
 #### Statistisk sammanfattning
 
-Vi kan utnyttja Pythons pandabibliotek för att hämta datatypen för varje attribut. Utdata från följande anrop ger oss information om antalet poster och datatypen för var och en av kolumnerna:
+Vi kan utnyttja [!DNL Python's] pandabiblioteket för att hämta datatypen för varje attribut. Utdata från följande anrop ger oss information om antalet poster och datatypen för var och en av kolumnerna:
 
 ```PYTHON
 df.info()
@@ -150,7 +150,7 @@ Det betyder att 22 butiker är av `storeType``A`, 17 är `storeType` `B`och 6 ä
 
 #### Datavisualisering
 
-Nu när vi känner till våra värden för dataramar vill vi komplettera detta med visualiseringar för att göra saker klarare och enklare att identifiera mönster. Diagram är också användbara när du vill förmedla resultat till en viss målgrupp. Vissa Python-bibliotek som är användbara för visualisering är:
+Nu när vi känner till våra värden för dataramar vill vi komplettera detta med visualiseringar för att göra saker klarare och enklare att identifiera mönster. Diagram är också användbara när du vill förmedla resultat till en viss målgrupp. Vissa [!DNL Python] bibliotek som är användbara för visualisering är:
 - [Matplotlib](https://matplotlib.org/)
 - [pandor](https://pandas.pydata.org/)
 - [seaborn](https://seaborn.pydata.org/)
@@ -158,7 +158,7 @@ Nu när vi känner till våra värden för dataramar vill vi komplettera detta m
 
 I det här avsnittet går vi snabbt igenom några fördelar med att använda varje bibliotek.
 
-[Matplotlib](https://matplotlib.org/) är det äldsta Python-visualiseringspaketet. Deras mål är att göra&quot;enkla saker enkla och hårda saker möjliga&quot;. Detta brukar vara sant eftersom paketet är extremt kraftfullt men också innehåller komplexitet. Det är inte alltid lätt att få en rimlig bild utan att behöva ägna en hel del tid och arbete.
+[Matplotlib](https://matplotlib.org/) är det äldsta [!DNL Python] visualiseringspaketet. Deras mål är att göra&quot;enkla saker enkla och hårda saker möjliga&quot;. Detta brukar vara sant eftersom paketet är extremt kraftfullt men också innehåller komplexitet. Det är inte alltid lätt att få en rimlig bild utan att behöva ägna en hel del tid och arbete.
 
 [Pandor](https://pandas.pydata.org/) används främst för objektet DataFrame, vilket möjliggör datamanipulering med integrerad indexering. Pandor har dock även en inbyggd plottningsfunktion som är baserad på matplotlib.
 
