@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Produktrekommendationsrecept
 topic: overview
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
+workflow-type: tm+mt
+source-wordcount: '421'
+ht-degree: 0%
 
 ---
 
@@ -23,7 +26,7 @@ recept på produktrekommendationer använder maskininlärning för att analysera
 
 ## Hur kommer jag igång?
 
-Du kan komma igång genom att följa självstudiekursen för Adobe Experience Platform Lab (se Lab-länken nedan). I den här självstudiekursen visas hur du skapar recept för produktrekommendationer i en Jupyter-anteckningsbok genom att följa [anteckningsboken för att hämta](../jupyterlab/create-a-recipe.md) arbetsflödet och implementera recept i Experience Platform Data Science Workspace.
+Du kan komma igång genom att följa självstudiekursen för Adobe Experience Platform Lab (se Lab-länken nedan). I den här självstudiekursen visas hur du skapar recept för produktrekommendationer i en Jupyter-anteckningsbok genom att följa [anteckningsboken för att hämta](../jupyterlab/create-a-recipe.md) arbetsflödet och implementera receptet i [!DNL Experience Platform] [!DNL Data Science Workspace].
 
 * [Lab: Förutse framtiden med datavetenskapen](https://expleague.azureedge.net/labs/L777/index.html)
 * [Lab-resurser](https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources)
