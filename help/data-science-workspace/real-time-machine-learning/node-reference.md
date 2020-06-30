@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Referenshandbok för Machine Learning-noder i realtid
 topic: Nodes reference
 translation-type: tm+mt
-source-git-commit: dc63ad0c0764355aed267eccd1bcc4965b04dba4
+source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
 workflow-type: tm+mt
-source-wordcount: '595'
+source-wordcount: '594'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Följande guide visar vilka nodbibliotek som stöds för maskininlärning i real
 
 ## Identifiera noder som ska användas i din ML-pipeline
 
-Kopiera följande kod till en Python-anteckningsbok för att visa alla noder som är tillgängliga för användning.
+Kopiera följande kod till en anteckningsbok för att visa alla noder som är tillgängliga för användning. [!DNL Python]
 
 ```python
 from pprint import pprint
@@ -121,7 +121,7 @@ msg6 = model_train.process(msg5)
 | Värde | Beskrivning |
 | --- | --- |
 | funktioner | Indatafunktioner för modellen (lista med strängar). <br> Till exempel: `browser`, `device`, `login_page`, `product_page`, `search_page` |
-| label | Målkolumnnamn (sträng). |
+| label | Target kolumnnamn (sträng). |
 | läge | Tåg/test (sträng). |
 | model_path | Sökväg till modellen Spara lokalt i ett format som inte är större än ett. |
 | params.model | Absolut importsökväg till modellen (sträng), t.ex.: `sklearn.linear_model.LogisticRegression`. |
