@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användarhandbok för Machine Learning-anteckningsbok i realtid
 topic: Training and scoring a ML model
 translation-type: tm+mt
-source-git-commit: 695eba3885dc319a9b7f73eb710b2ada0b17d24d
+source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
 workflow-type: tm+mt
-source-wordcount: '1650'
+source-wordcount: '1618'
 ht-degree: 0%
 
 ---
@@ -21,11 +21,11 @@ I följande guide beskrivs de steg som krävs för att skapa ett Machine Learnin
 
 ## Skapa en Machine Learning-anteckningsbok i realtid
 
-I användargränssnittet för Adobe Experience Platform väljer du **[!UICONTROL Notebooks]** inom *datavetenskap*. Välj sedan **[!UICONTROL JupyterLab]** och tillåt lite tid för att läsa in miljön.
+I användargränssnittet i Adobe Experience Platform väljer du **[!UICONTROL Notebooks]** i *datavetenskap*. Välj sedan **[!UICONTROL JupyterLab]** och tillåt lite tid för att läsa in miljön.
 
 ![öppna JupyterLab](../images/rtml/open-jupyterlab.png)
 
-JupyterLab-startprogrammet visas. Bläddra ned till Maskinininlärning i *realtid* och välj XML-anteckningsboken i **realtid** . En mall öppnas som innehåller exempel på anteckningsboksceller med en exempeldatauppsättning.
+Startkartan visas [!DNL JupyterLab] . Bläddra ned till Maskinininlärning i *realtid* och välj **[!UICONTROL Real-time ML]** anteckningsbok. En mall öppnas som innehåller exempel på anteckningsboksceller med en exempeldatauppsättning.
 
 ![blank python](../images/rtml/authoring-notebook.png)
 
@@ -70,7 +70,7 @@ pprint(nf.discover_nodes())
 
 ## Utbilda en maskininlärningsmodell i realtid
 
-Med något av följande alternativ skriver du Python-kod för att läsa, förbearbeta och analysera data. Därefter måste du utbilda din egen ML-modell, serialisera den i ONNX-format och sedan överföra den till Machine Learning-modellagringsplatsen i realtid.
+Med något av följande alternativ skriver du [!DNL Python] kod för att läsa, bearbeta och analysera data. Därefter måste du utbilda din egen ML-modell, serialisera den i ONNX-format och sedan överföra den till Machine Learning-modellagringsplatsen i realtid.
 
 - [Utbilda din egen modell i JupyterLab-anteckningsböcker](#training-your-own-model)
 - [Överför din egen förutbildade ONNX-modell till JupyterLab-anteckningsböcker](#pre-trained-model-upload)
@@ -80,15 +80,15 @@ Med något av följande alternativ skriver du Python-kod för att läsa, förbea
 Börja med att läsa in dina utbildningsdata.
 
 >[!NOTE]
->I **realtids-ML** -mallen hämtas CSV-data [för](https://github.com/adobe/experience-platform-dsw-reference/tree/master/datasets/insurance) bilförsäkring från Github.
+>I **realtids-ML** -mallen hämtas data för [bilförsäkrings-CSV](https://github.com/adobe/experience-platform-dsw-reference/tree/master/datasets/insurance) från [!DNL Github].
 
 ![Läs in inläsningsdata](../images/rtml/load_training.png)
 
-Om du vill använda en datauppsättning från Adobe Experience Platform avkommenterar du cellen nedan. Därefter måste du ersätta `DATASET_ID` med rätt värde.
+Om du vill använda en datauppsättning inifrån Adobe Experience Platform avkommenterar du cellen nedan. Därefter måste du ersätta `DATASET_ID` med rätt värde.
 
 ![rtml datamängd](../images/rtml/rtml-dataset.png)
 
-Om du vill få åtkomst till en datauppsättning i JupyterLab-anteckningsboken väljer du fliken **Data** till vänster i JupyterLab. Katalogerna *Dataset* och *Scheman* visas. Markera **[!UICONTROL Datasets]** och högerklicka och välj sedan det **[!UICONTROL Explore Data in Notebook]** alternativ på den nedrullningsbara menyn som finns i den datauppsättning som du vill använda. En körbar kodpost visas längst ned i anteckningsboken. Den här cellen har din `dataset_id`.
+Om du vill få åtkomst till en datauppsättning i din [!DNL JupyterLab] anteckningsbok väljer du fliken **Data** i den vänstra navigeringen i [!DNL JupyterLab]. The *[!UICONTROL Datasets]* and *[!UICONTROL Schemas]* directories appear. Markera **[!UICONTROL Datasets]** och högerklicka och välj sedan det **[!UICONTROL Explore Data in Notebook]** alternativ på den nedrullningsbara menyn som finns i den datauppsättning som du vill använda. En körbar kodpost visas längst ned i anteckningsboken. Den här cellen har din `dataset_id`.
 
 ![datauppsättningsåtkomst](../images/rtml/access-dataset.png)
 
@@ -109,11 +109,11 @@ config_properties = {
 
 ### Förbered din modell
 
-Med hjälp av *realtids-ML* -mallen måste du analysera, förbearbeta, utbilda och utvärdera din ML-modell. Detta görs genom att tillämpa dataomvandlingar och bygga upp en utbildningsväg.
+När du använder *[!UICONTROL Real-time ML]* mallen måste du analysera, förbearbeta, utbilda och utvärdera din ML-modell. Detta görs genom att tillämpa dataomvandlingar och bygga upp en utbildningsväg.
 
 **Dataomvandlingar**
 
-XML *-mallarna i* realtid för *dataomvandlingar* måste ändras för att fungera med din egen datauppsättning. Vanligtvis innebär detta att byta namn på kolumner, datasammanslagning och datainsamling/funktionsteknik.
+Cellen *[!UICONTROL Real-time ML]* Dataomvandlingar ** för mallar måste ändras för att fungera med din egen datauppsättning. Vanligtvis innebär detta att byta namn på kolumner, datasammanslagning och datainsamling/funktionsteknik.
 
 >[!NOTE]
 >Följande exempel har konverterats för läsbarhetsändamål med `[ ... ]`. Visa och expandera avsnittet om dataomvandlingar i *realtid av ML* -mallar för hela kodcellen.
@@ -261,7 +261,7 @@ print("Model ID : ", model_id)
 
 ### Överför din egen förutbildade ONNX-modell {#pre-trained-model-upload}
 
-Använd överföringsknappen som finns i JupyterLab-anteckningsböcker för att överföra den förtränade ONNX-modellen till anteckningsboksmiljön för Data Science Workspace.
+Använd överföringsknappen i [!DNL JupyterLab] bärbara datorer för att överföra den förtränade ONNX-modellen till [!DNL Data Science Workspace] anteckningsboksmiljön.
 
 ![överföringsikon](../images/rtml/upload.png)
 
@@ -279,7 +279,7 @@ I det här avsnittet beskrivs hur du skapar en DSL. Du kommer att skapa noderna 
 ### Skapa noder
 
 >[!NOTE]
-> Det är troligt att du har flera noder baserat på vilken typ av data som används. I följande exempel visas endast en nod i *realtids-ML* -mallen. Se *avsnittet XML* -mallar för *nodredigering* i realtid för hela kodcellen.
+> Det är troligt att du har flera noder baserat på vilken typ av data som används. I följande exempel visas bara en enda nod i *realtids-ML* -mallen. Se *avsnittet XML* -mallar för *nodredigering* i realtid för hela kodcellen.
 
 Noden Pandor nedan använder `"import": "map"` för att importera metodnamnet som en sträng i parametrarna, följt av att parametrarna anges som en mappningsfunktion. Exemplet nedan gör detta med `{'arg': {'dataLayerNull': 'notgiven', 'no': 'no', 'yes': 'yes', 'notgiven': 'notgiven'}}`. När kartan är på plats kan du ange `inplace` som `True` eller `False`. Ange `inplace` som `True` eller `False` baserat på om du vill använda omformningen eller inte. Som standard `"inplace": False` skapas en ny kolumn. Stöd för att ange ett nytt kolumnnamn ställs in för att läggas till i en senare version. Den sista raden `cols` kan vara ett kolumnnamn eller en lista med kolumner. Ange kolumnerna som du vill använda omformningen på. I det här exemplet `leasing` anges. Mer information om tillgängliga noder och hur du använder dem finns i [nodreferensguiden](./node-reference.md).
 
@@ -321,7 +321,7 @@ nodes = [json_df_node,
         onnx_node]
 ```
 
-Koppla sedan noderna med kanter. Varje tuppel är en edge-anslutning.
+Koppla sedan noderna med kanter. Varje tuppel är en [!DNL Edge] anslutning.
 
 >[!TIP]
 > Eftersom noderna är linjärt beroende av varandra (varje nod är beroende av föregående nods utdata) kan du skapa länkar med en enkel Python-listförståelse. Lägg till egna anslutningar om en nod är beroende av flera indata.
@@ -344,12 +344,12 @@ När det är klart returneras ett `edge` objekt som innehåller alla noder och d
 ## Publicera på kant (nav)
 
 >[!NOTE]
->Maskininlärning i realtid distribueras tillfälligt till och hanteras av Adobe Experience Platform Hub. Mer information finns i översiktsavsnittet om maskininlärningsarkitektur i [realtid](./home.md#architecture).
+>Machine Learning i realtid distribueras tillfälligt till och hanteras av Adobe Experience Platform Hub. Mer information finns i översiktsavsnittet om maskininlärningsarkitektur i [realtid](./home.md#architecture).
 
-Nu när du har skapat ett DSL-diagram kan du distribuera diagrammet till Edge.
+Nu när du har skapat ett DSL-diagram kan du distribuera diagrammet till [!DNL Edge].
 
 >[!IMPORTANT]
->Publicera inte ofta på Edge, vilket kan överbelasta Edge-noderna. Du bör inte publicera samma modell flera gånger.
+>Publicera inte [!DNL Edge] ofta. Detta kan innebära att [!DNL Edge] noderna överbelastas. Du bör inte publicera samma modell flera gånger.
 
 ```python
 edge_utils = EdgeUtils()
@@ -365,7 +365,7 @@ Om du inte behöver uppdatera din DSL kan du hoppa över [poängsättningen](#sc
 >[!NOTE]
 >Följande celler krävs bara om du vill uppdatera en befintlig DSL som har publicerats till Edge.
 
-Dina modeller kommer troligen att fortsätta utvecklas. I stället för att skapa en helt ny tjänst går det att uppdatera en befintlig tjänst med den nya modellen. Du kan definiera en nod som du vill uppdatera, tilldela den ett nytt ID och sedan överföra den nya DSL:n till Edge igen.
+Dina modeller kommer troligen att fortsätta utvecklas. I stället för att skapa en helt ny tjänst går det att uppdatera en befintlig tjänst med den nya modellen. Du kan definiera en nod som du vill uppdatera, tilldela den ett nytt ID och sedan överföra den nya DSL-filen till [!DNL Edge]servern igen.
 
 I exemplet nedan uppdateras nod 0 med ett nytt ID.
 
@@ -397,7 +397,7 @@ Du får tillbaka den uppdaterade DSL:en.
 
 ## Poäng {#scoring}
 
-Efter publicering på Edge utförs poängsättningen genom en POST-begäran från en klient. Vanligtvis kan detta göras från ett klientprogram som behöver ML-poäng. Du kan också göra det från Postman. XML *-mallen för* realtid använder EdgeUtils för att demonstrera den här processen.
+Efter publicering till [!DNL Edge]utförs poängsättningen genom en POST-begäran från en klient. Vanligtvis kan detta göras från ett klientprogram som behöver ML-poäng. Du kan också göra det från Postman. I mallen används *[!UICONTROL Real-time ML]* EdgeUtils för att demonstrera den här processen.
 
 >[!NOTE]
 >Det krävs en liten bearbetningstid innan poängsättningen börjar.
@@ -414,15 +414,15 @@ Med samma schema som användes i utbildningen genereras exempelbedömningsdata. 
 
 ### Poäng mot Edge-slutpunkten
 
-Använd följande cell i *realtids-ML* -mallen för att göra poäng mot din Edge-tjänst.
+Använd följande cell i *realtids-ML* -mallen för att göra poäng mot din [!DNL Edge] tjänst.
 
 ![Poäng mot kant](../images/rtml/scoring-edge.png)
 
-När poängsättningen är klar returneras edge-URL:en, nyttolasten och resultatet från Edge.
+När poängsättningen är klar returneras [!DNL Edge] URL:en, nyttolasten och resultatet från [!DNL Edge] resultaträkningen.
 
-## Visa en lista över dina distribuerade appar från Edge
+## Visa dina distribuerade program från [!DNL Edge]
 
-Om du vill generera en lista över dina distribuerade program på kanten kör du följande kodcell. Den här cellen kan inte redigeras eller tas bort.
+Om du vill generera en lista över dina distribuerade program på [!DNL Edge]servern kör du följande kodcell. Den här cellen kan inte redigeras eller tas bort.
 
 ```python
 services = edge_utils.list_deployed_services()
@@ -443,10 +443,10 @@ Svaret som returneras är en array med dina distribuerade tjänster.
 ]
 ```
 
-## Ta bort ett distribuerat program- eller tjänste-ID från Edge (valfritt)
+## Ta bort ett distribuerat program- eller tjänste-ID från [!DNL Edge] (valfritt)
 
 >[!CAUTION]
->Den här cellen används för att ta bort ditt distribuerade Edge-program. Använd inte följande cell om du inte behöver ta bort ett distribuerat Edge-program.
+>Den här cellen används för att ta bort ditt distribuerade Edge-program. Använd inte följande cell om du inte behöver ta bort ett distribuerat [!DNL Edge] program.
 
 ```python
 if edge_utils.delete_from_edge(service_id=service_id):
