@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Samla in data för automatiserad marknadsföring via källanslutningar och API:er
 topic: overview
 translation-type: tm+mt
-source-git-commit: 14d06635b3ed3c38bae3573a275dd37c990c280e
+source-git-commit: 84ea3e45a3db749359f3ce4a0ea25429eee8bb66
 workflow-type: tm+mt
-source-wordcount: '1623'
+source-wordcount: '1576'
 ht-degree: 0%
 
 ---
@@ -14,38 +14,38 @@ ht-degree: 0%
 
 # Samla in data för automatiserad marknadsföring via källanslutningar och API:er
 
-Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-Den här självstudiekursen beskriver stegen för att hämta data från ett automatiserat marknadsföringssystem och föra in dem på plattformen via källanslutningar och API:er.
+Den här självstudiekursen beskriver stegen för att hämta data från ett automatiserat marknadsföringssystem och föra in dem [!DNL Platform] via källkopplingar och API:er.
 
 ## Komma igång
 
-Den här självstudiekursen kräver att du har tillgång till ett marknadsföringssystem från tredje part via en giltig anslutning och information om filen du vill hämta till Platform, inklusive filens sökväg och struktur. Om du inte har den här informationen kan du gå till självstudiekursen om hur du [utforskar ett system för automatiserad marknadsföring från tredje part med API:t](../explore/marketing-automation.md) för Flow Service innan du försöker med den här självstudiekursen.
+Den här självstudiekursen kräver att du har tillgång till ett system för automatisering av marknadsföring från tredje part via en giltig anslutning och information om filen du vill hämta [!DNL Platform]till, inklusive filens sökväg och struktur. Om du inte har den här informationen kan du gå till självstudiekursen om hur du [utforskar ett system för automatiserad marknadsföring från tredje part med API:t](../explore/marketing-automation.md) för Flow Service innan du försöker med den här självstudiekursen.
 
-Den här självstudien kräver också att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
+Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
+* [Experience Data Model (XDM) System](../../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Utvecklarhandbok](../../../../xdm/api/getting-started.md)för schemaregister: Innehåller viktig information som du behöver känna till för att kunna utföra anrop till API:t för schemaregister. Detta inkluderar ditt `{TENANT_ID}`, konceptet med&quot;behållare&quot; och de rubriker som krävs för att göra förfrågningar (med särskild uppmärksamhet på rubriken Godkänn och dess möjliga värden).
-* [Katalogtjänst](../../../../catalog/home.md): Katalog är ett system för registrering av dataplats och datalänkning inom Experience Platform.
-* [Batchförtäring](../../../../ingestion/batch-ingestion/overview.md): Med API:t för gruppinmatning kan du importera data till Experience Platform som gruppfiler.
-* [Sandlådor](../../../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Katalogtjänst](../../../../catalog/home.md): Katalog är systemet för registrering av dataplatser och -rader inom [!DNL Experience Platform].
+* [Batchförtäring](../../../../ingestion/batch-ingestion/overview.md): Med API:t för gruppinmatning kan du importera data till [!DNL Experience Platform] som gruppfiler.
+* [Sandlådor](../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till ett automatiserat marknadsföringssystem med API:t för Flow Service.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till ett automatiserat marknadsföringssystem med hjälp av [!DNL Flow Service] API:t.
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform, inklusive de som tillhör Flow Service, isoleras till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
@@ -55,7 +55,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Skapa en ad hoc XDM-klass och ett schema
 
-För att externa data ska kunna hämtas till plattformen via källanslutningar måste en ad hoc XDM-klass och ett schema skapas för råkälldata.
+För att externa data ska kunna hämtas [!DNL Platform] via källkopplingar måste en ad hoc-XDM-klass och ett schema skapas för råkälldata.
 
 Om du vill skapa en ad hoc-klass och ett ad hoc-schema följer du stegen som beskrivs i [ad hoc-schemautstudiekursen](../../../../xdm/tutorials/ad-hoc.md). När du skapar en ad hoc-klass måste alla fält i källdata beskrivas i begärandetexten.
 
@@ -63,7 +63,7 @@ Fortsätt att följa stegen som beskrivs i utvecklarhandboken tills du har skapa
 
 ## Skapa en källanslutning {#source}
 
-När ett ad hoc-XDM-schema har skapats kan en källanslutning skapas med hjälp av en POST-begäran till API:t för Flow Service. En källanslutning består av ett anslutnings-ID, en källdatafil och en referens till schemat som beskriver källdata.
+När ett ad hoc-XDM-schema har skapats kan en källanslutning skapas med hjälp av en POST-begäran till [!DNL Flow Service] API:t. En källanslutning består av ett anslutnings-ID, en källdatafil och en referens till schemat som beskriver källdata.
 
 Om du vill skapa en källanslutning måste du också definiera ett uppräkningsvärde för dataformatattributet.
 
@@ -134,11 +134,11 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 ## Skapa ett mål-XDM-schema {#target}
 
-I tidigare steg skapades ett ad hoc-XDM-schema för att strukturera källdata. För att källdata ska kunna användas i Platform måste ett målschema också skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en plattformsdatauppsättning där källdata finns.
+I tidigare steg skapades ett ad hoc-XDM-schema för att strukturera källdata. För att källdata ska kunna användas i [!DNL Platform]måste ett målschema också skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en [!DNL Platform] datauppsättning där källdata finns.
 
 Ett mål-XDM-schema kan skapas genom att en POST-begäran görs till API:t för [schemaregister](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml).
 
-Om du föredrar att använda användargränssnittet i Experience Platform finns det stegvisa instruktioner [i](../../../../xdm/tutorials/create-schema-ui.md) schemaredigeraren för att utföra liknande åtgärder i schemaredigeraren.
+Om du föredrar att använda användargränssnittet i [!DNL Experience Platform]innehåller [schemaredigerarsjälvstudiekursen](../../../../xdm/tutorials/create-schema-ui.md) stegvisa instruktioner för hur du utför liknande åtgärder i Schemaredigeraren.
 
 **API-format**
 
@@ -148,7 +148,7 @@ POST /schemaregistry/tenant/schemas
 
 **Begäran**
 
-Följande exempelbegäran skapar ett XDM-schema som utökar klassen för enskild XDM-profil.
+Följande exempelbegäran skapar ett XDM-schema som utökar XDM- [!DNL Individual Profile] klassen.
 
 ```shell
 curl -X POST \
@@ -289,7 +289,7 @@ Ett lyckat svar returnerar en array som innehåller ID:t för den nya datauppsä
 
 En målanslutning representerar anslutningen till målet där inkapslade data kommer in. Om du vill skapa en målanslutning måste du ange det fasta anslutnings-spec-ID som är associerat med datasjön. Detta anslutningsspec-ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
-Nu har du de unika identifierarna ett målschema, en måldatamängd och ett anslutningsspec-ID till datasjön. Med dessa identifierare kan du skapa en målanslutning med API:t för Flow Service för att ange den datauppsättning som ska innehålla inkommande källdata.
+Nu har du de unika identifierarna ett målschema, en måldatamängd och ett anslutningsspec-ID till datasjön. Med hjälp av dessa identifierare kan du skapa en målanslutning med hjälp av API:t för att ange den datauppsättning som ska innehålla inkommande källdata. [!DNL Flow Service] 
 **API-format**
 
 ```https
@@ -340,7 +340,7 @@ curl -X POST \
 
 ## Skapa en mappning {#mapping}
 
-För att källdata ska kunna hämtas till en måldatamängd måste de först mappas till målschemat som måldatamängden följer. Detta uppnås genom att utföra en POST-begäran till konverteringstjänstens API med datamappningar som definieras i nyttolasten för begäran.
+För att källdata ska kunna hämtas till en måldatamängd måste de först mappas till målschemat som måldatamängden följer. Detta uppnås genom att en POST-begäran till API utförs med datamappningar som definieras i nyttolasten för begäran. [!DNL Conversion Service]
 
 **API-format**
 
@@ -413,7 +413,7 @@ Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusi
 
 ## Söka efter dataflödesspecifikationer {#specs}
 
-Ett dataflöde ansvarar för att samla in data från källor och föra in dem i plattformen. För att kunna skapa ett dataflöde måste du först få de dataflödesspecifikationer som ansvarar för att samla in data för automatiserad marknadsföring.
+Ett dataflöde ansvarar för att samla in data från källor och föra in dem i [!DNL Platform]. För att kunna skapa ett dataflöde måste du först få de dataflödesspecifikationer som ansvarar för att samla in data för automatiserad marknadsföring.
 
 **API-format**
 
@@ -433,7 +433,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar detaljerna om dataflödesspecifikationen som ansvarar för att överföra data från ert automatiseringssystem för marknadsföring till plattformen. Lagra värdet för `id` fältet som det är nödvändigt i nästa steg för att skapa ett nytt dataflöde.
+Ett lyckat svar returnerar detaljerna om dataflödesspecifikationen som ansvarar för att överföra data från ert automatiseringssystem för marknadsföring till [!DNL Platform]. Lagra värdet för `id` fältet som det är nödvändigt i nästa steg för att skapa ett nytt dataflöde.
 
 ```json
 {
@@ -560,7 +560,7 @@ Ett lyckat svar returnerar detaljerna om dataflödesspecifikationen som ansvarar
 Det sista steget mot att samla in data om automatiserad marknadsföring är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
 
 * [Källanslutnings-ID](#source)
-* [Målanslutnings-ID](#target)
+* [Target-anslutnings-ID](#target)
 * [Mappnings-ID](#mapping)
 * [ID för dataflödesspecifikation](#specs)
 
@@ -642,7 +642,7 @@ Ett godkänt svar returnerar ID:t (`id`) för det nya dataflödet.
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in data från ett automatiserat marknadsföringssystem på schemalagd basis. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan, t.ex. kundprofil i realtid och datavetenskapen. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in data från ett automatiserat marknadsföringssystem på schemalagd basis. Inkommande data kan nu användas av [!DNL Platform] tjänster längre fram i kedjan som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 * [Översikt över kundprofiler i realtid](../../../../profile/home.md)
 * [Översikt över arbetsytan Datavetenskap](../../../../data-science-workspace/home.md)
