@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Optimera en modell
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 7dc5075d3101b4780af92897c0381e73a9c5aef0
+source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
 workflow-type: tm+mt
-source-wordcount: '1242'
+source-wordcount: '1219'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Optimera en modell med Model Insights-ramverket
 
-Model Insights Framework förser datavetenskaparen med verktyg i Data Science Workspace som gör snabba och välgrundade val för optimala maskininlärningsmodeller baserade på experiment. Ramverket kommer att förbättra snabbheten och effektiviteten i maskininlärningsarbetsflödet samt förbättra användarvänligheten för datavetare. Det gör du genom att ange en standardmall för varje maskininlärningsalgoritmtyp som ska vara till hjälp vid modelljustering. Slutresultatet gör att datavetare och datavetare kan fatta bättre modelloptimeringsbeslut för sina slutkunder.
+Model Insights Framework ger datavetenskaparna verktyg för [!DNL Data Science Workspace] att göra snabba och välgrundade val för optimala maskininlärningsmodeller baserade på experiment. Ramverket kommer att förbättra snabbheten och effektiviteten i maskininlärningsarbetsflödet samt förbättra användarvänligheten för datavetare. Det gör du genom att ange en standardmall för varje maskininlärningsalgoritmtyp som ska vara till hjälp vid modelljustering. Slutresultatet gör att datavetare och datavetare kan fatta bättre modelloptimeringsbeslut för sina slutkunder.
 
 ## Vad är mätvärden?
 
@@ -28,7 +28,7 @@ Efter att ha implementerat och utbildat en modell är nästa steg som en datavet
 
 Model Insights Framework har för närvarande stöd för följande körningsmiljöer:
 - [Scala](#scala)
-- [Python/Tensorflow](#pythontensorflow)
+- [!DNL Python/Tensorflow](#pythontensorflow)
 - [R](#r)
 
 Exempelkod för recept finns i databasen [experience-platform-dsw-reference](https://github.com/adobe/experience-platform-dsw-reference) under `recipes`. Specifika filer från den här databasen kommer att refereras i den här självstudiekursen.
@@ -56,7 +56,7 @@ evaluation.predictionColumn=prediction
 training.evaluate=true
 ```
 
-När en utvärderingsklass har aktiverats beräknas ett antal mätvärden under utbildning som standard. Standardvärden kan deklareras explicit genom att lägga till följande rad i `application.properties`.
+När en utvärderingsklass har aktiverats beräknas ett antal värden som standard under kursen. Standardvärden kan deklareras explicit genom att lägga till följande rad i `application.properties`.
 
 ```scala
 evaluation.metrics.com=com.adobe.platform.ml.impl.Constants.DEFAULT
@@ -95,19 +95,19 @@ När det är definierat i receptet är nästa steg att aktivera det i recepten. 
 evaluation.class=com.adobe.platform.ml.Evaluator
 ```
 
-På arbetsytan Data Science kan användaren se insikterna på fliken&quot;Evaluation Metrics&quot; på experimentsidan.
+På [!DNL Data Science Workspace]sidan kan användaren se insikterna på fliken &quot;Evaluation Metrics&quot; på sidan med experiment.
 
-### Python/Tensorflow {#pythontensorflow}
+### [!DNL Python/Tensorflow] {#pythontensorflow}
 
-För närvarande finns det inga standardmått för utvärdering för Python eller Tensorflow. För att få tillgång till mätvärden för utvärdering för Python eller Tensorflow måste du skapa ett anpassat utvärderingsmått. Detta kan du göra genom att implementera `Evaluator` klassen.
+Från och med nu finns det inga standardmått för utvärdering för [!DNL Python] eller [!DNL Tensorflow]. Därför måste du skapa ett anpassat utvärderingsmått för att få [!DNL Python] eller [!DNL Tensorflow]så att du kan få det. Detta kan du göra genom att implementera `Evaluator` klassen.
 
-#### Anpassade utvärderingsmått för Python
+#### Anpassade utvärderingsvärden för [!DNL Python]
 
 För anpassade utvärderingsvärden finns det två huvudmetoder som måste implementeras för utvärderaren: `split()` och `evaluate()`.
 
-För Python skulle dessa metoder definieras i [evaluate.py](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/python/retail/retail/evaluator.py) för `Evaluator` klassen. Följ länken [valuator.py](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/python/retail/retail/evaluator.py) för ett exempel på `Evaluator`.
+För [!DNL Python]det skulle dessa metoder definieras i [evaluate.py](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/python/retail/retail/evaluator.py) för `Evaluator` klassen. Följ länken [valuator.py](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/python/retail/retail/evaluator.py) för ett exempel på `Evaluator`.
 
-Om du skapar utvärderingsvärden i Python måste användaren implementera `evaluate()` metoderna och `split()` .
+Om du skapar utvärderingsvärden i [!DNL Python] måste användaren implementera `evaluate()` och `split()` -metoderna.
 
 Metoden returnerar det metriska objektet som innehåller en array med metriska objekt med egenskaperna `evaluate()` , `name`och `value``valueType`.
 
@@ -117,7 +117,7 @@ Metoden bör `split()` returnera en utbildnings- och testdatabildruta som sedan 
 
 #### Anpassade utvärderingsmått för tensorflow
 
-För Tensorflow, som Python, måste metoderna `evaluate()` och `split()` i `Evaluator` klassen implementeras. För `evaluate()`detta ska mätvärdena returneras medan tåget och testdata `split()` returneras.
+Metoderna [!DNL Tensorflow]och [!DNL Python]i `evaluate()` klassen måste till exempel implementeras på samma sätt som `split()` `Evaluator` . För `evaluate()`detta ska mätvärdena returneras medan tåget och testdata `split()` returneras.
 
 ```PYTHON
 from ml.runtime.python.Interfaces.AbstractEvaluator import AbstractEvaluator
@@ -152,7 +152,7 @@ Data läses först in till en datauppsättning från en källa som definieras i 
 
 ## Använda fördefinierade mätvärden och visualiseringsdiagram
 
-Sensei Model Insights Framework har stöd för en standardmall för varje typ av maskininlärningsalgoritm. Tabellen nedan visar vanliga maskininlärningsalgoritmklasser på hög nivå och motsvarande utvärderingsmått och visualiseringar.
+De [!DNL Sensei Model Insights Framework] stöder en standardmall för varje typ av maskininlärningsalgoritm. Tabellen nedan visar vanliga maskininlärningsalgoritmklasser på hög nivå och motsvarande utvärderingsmått och visualiseringar.
 
 | ML-algoritmtyp | Mätvärden för utvärdering | Visualiseringar |
 --- | --- | ---
