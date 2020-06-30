@@ -4,18 +4,21 @@ solution: Experience Platform
 title: Domänmodell för Experience Decisioning
 topic: overview
 translation-type: tm+mt
-source-git-commit: 0f13ea667eecf936c69bcd98b0035a4355d73631
+source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+workflow-type: tm+mt
+source-wordcount: '1367'
+ht-degree: 0%
 
 ---
 
 
-# Domänmodell för Experience Decisioning
+# Upplev [!DNL Decisioning] domänmodell
 
-I detta avsnitt förklaras komponenterna i Beslutstjänsten och hur dessa komponenter interagerar är detaljerade. Begreppen och deras relationer utgör *domänen* för beslutsproblemet. Dessa grundläggande komponenter kan användas oavsett hur du använder beslutstjänsten.
+I det här avsnittet förklaras komponenterna i [!DNL Decisioning Service] och hur dessa komponenter interagerar. Begreppen och deras relationer utgör *domänen* för beslutsproblemet. Dessa grundläggande komponenter kan användas oavsett hur du använder dem [!DNL Decisioning Service].
 
 ## Beslutsalternativ
 
-Ett *alternativ* för upplevelsebeslut är en potentiell upplevelse som kan presenteras för en viss kund. Ett alternativ kallas också ett val eller alternativ. När du bestämmer dig för nästa bästa alternativ för en kund tar beslutstjänsten hänsyn till alternativen ***d<sub>1</sub>***till***<sub>dN</sub>*** bland en begränsad uppsättning alternativ **`D`**.
+Ett *alternativ* för upplevelsebeslut är en potentiell upplevelse som kan presenteras för en viss kund. Ett alternativ kallas också ett val eller alternativ. När du bestämmer dig för nästa bästa alternativ för en kund [!DNL Decisioning Service] är alternativ ***d<sub>1</sub>***till***<sub>dN</sub>*** bland en begränsad uppsättning alternativ **`D`**.
 
 Beslut fattas genom att det bästa alternativet identifieras bland ett antal tillgängliga alternativ. Ett tillvägagångssätt är att successivt eliminera *beslutsalternativ* ***<sub>som skiljer</sub>***sig från*** D ***-uppsättningen tills någon av dem är kvar och sedan välja en&quot;vinnare&quot; slumpmässigt från den återstående uppsättningen. Ett annat sätt att fatta beslut är att rangordna de återstående (valbara) beslutsalternativen utifrån det förväntade resultatet.
 
@@ -30,7 +33,7 @@ Det är viktigt att skilja mellan beslutets resultat `d` och resultatet, `o`dvs.
 För att hitta det optimala beslutet tilldelas varje resultat ett ***verktygsvärde*** `U(o) = U(f(d))`.
 I fråga om användning vid beslut om erbjudande skulle den funktionen beräkna kostnaden för att uppfylla erbjudandet och det värde som företaget får när erbjudandet accepteras av kunden. Resultatet skulle användas för att hitta det optimala beslutet (erbjudandet) genom att maximera värdet på nyttan över alla alternativ (erbjudanden).
 
-Det är i allmänhet inte möjligt att med säkerhet förutsäga vilka följder ett visst beslut kommer att få, och därför krävs en sannolik strategi. Det ***allmännyttiga värdet*** blir det `U(o)` förväntade nyttavärdet för ett beslutsalternativ ******`EU(d)`
+Det är i allmänhet inte möjligt att med säkerhet förutsäga vilka följder ett visst beslut kommer att få, och därför krävs en sannolik strategi. Det ***allmännyttiga värdet*** blir `U(o)` det ***förväntade nyttovärdet för ett beslutsalternativ*** `EU(d)`
 
 ## Beslutsförslag
 
@@ -47,9 +50,9 @@ Den allmänna beslutsramen visas i följande diagram.
 
 ## Beslutsverksamhet
 
-*Beslutsaktiviteter* konfigurerar algoritmen och leveransparametrar för en specifik beslutsstrategi. Strategiparametrarna innehåller begränsningar för alternativen och rangordningsfunktionen. Alla beslut fattas inom ramen för en aktivitet. Beslutstjänsten är värd för många aktiviteter och aktiviteter kan återanvändas i alla kanaler. Det bästa alternativet utvärderas alltid baserat på den senaste uppsättningen begränsningar, regler och modeller.
+*Beslutsaktiviteter* konfigurerar algoritmen och leveransparametrar för en specifik beslutsstrategi. Strategiparametrarna innehåller begränsningar för alternativen och rangordningsfunktionen. Alla beslut fattas inom ramen för en aktivitet. [!DNL Decisioning Service] är värd för många aktiviteter, och aktiviteter kan återanvändas i alla kanaler. Det bästa alternativet utvärderas alltid baserat på den senaste uppsättningen begränsningar, regler och modeller.
 
-En beslutsaktivitet definierar den samling av beslutsalternativ som ska övervägas. Den filtrerar bort deluppsättningen av alla alternativ som är av intresse för den här aktiviteten. Detta gör att beslutstjänsten kan hantera ämneskategorier i katalogen med alla alternativ.
+En beslutsaktivitet definierar den samling av beslutsalternativ som ska övervägas. Den filtrerar bort deluppsättningen av alla alternativ som är av intresse för den här aktiviteten. På så sätt kan användaren [!DNL Decisioning service] hantera ämneskategorier i katalogen med alla alternativ.
 
 En beslutsaktivitet anger ett *reservalternativ* om de kombinerade begränsningarna inte uppfyller alla andra alternativ. Det innebär att det alltid finns ett svar på frågan: Vad är för närvarande det bästa alternativet?
 
@@ -63,6 +66,6 @@ Data för beslutskontext kan delas in i användarprofilrelaterade data, affärsd
 
 - *Profilentiteter* används för att representera slutanvändardata, men inte alla profilentiteter representerar en individ. Det kan vara ett hushåll, en samhällsgrupp eller något annat ämne. Experience-händelser är dataposter i tidsserier som är kopplade till en profil. Om det finns någon erfarenhet är dessa data *föremålet* för upplevelsen.
 - Å andra sidan finns det *affärsenheterna*. De kan ses som *objekt* i interaktionen. Dessa enheter hänvisas ofta till i upplevelsehändelser för profilentiteter. Exempel på affärsenheter är webbplatser och sidor, butiker, produktinformation, digitalt innehåll, produktinventeringsdata osv.
-- Den sista datakategorin i beslutskontexten är data som skapades under beslutstjänsten. Varje beslutshändelse tillhör den kategorin, tillsammans med svaren från kunderna utgör förslagsinformationen en intern datauppsättning som kallas *förslagshistorik*.
+- Den sista datakategorin i beslutskontexten är data som skapades under åtgärden av [!DNL Decisioning Service]. Varje beslutshändelse tillhör den kategorin, tillsammans med svaren från kunderna utgör förslagsinformationen en intern datauppsättning som kallas *förslagshistorik*.
 
-Det finns tre vägar som data kan ta för att bli en del av beslutssammanhanget. Data från post- och tidsserier kan överföras via datauppsättningsfiler. Den här sökvägen används främst för gruppsynkronisering med externa system. Data från post- och tidsserier kan också strömmas till plattformen där data indexeras och kopplas till formulärentiteter. Via den tredje sökvägen kan kontextdata skickas som parametrar till beslutsbegäran. Denna form av uppgifter är av tillfällig natur och är endast relevant för det beslut som begärs. Den är inte beständig som en entitet och är inte tillgänglig för andra begäranden.
+Det finns tre vägar som data kan ta för att bli en del av beslutssammanhanget. Data från post- och tidsserier kan överföras via datauppsättningsfiler. Den här sökvägen används främst för gruppsynkronisering med externa system. Data från post- och tidsserier kan också strömmas till [!DNL Platform] den plats där data indexeras och kopplas till formulärentiteter. Via den tredje sökvägen kan kontextdata skickas som parametrar till beslutsbegäran. Denna form av uppgifter är av tillfällig natur och är endast relevant för det beslut som begärs. Den är inte beständig som en entitet och är inte tillgänglig för andra begäranden.
