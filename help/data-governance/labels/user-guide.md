@@ -4,18 +4,21 @@ solution: Experience Platform
 title: Användarhandbok för etiketter för dataanvändning
 topic: labels
 translation-type: tm+mt
-source-git-commit: 475e774d5e7ebac036b42aa94736ba8e22c7185f
+source-git-commit: 1a835c6c20c70bf03d956c601e2704b68d4f90fa
+workflow-type: tm+mt
+source-wordcount: '925'
+ht-degree: 0%
 
 ---
 
 
 # Användarhandbok för etiketter för dataanvändning
 
-Den här användarhandboken innehåller steg för att arbeta med dataanvändningsetiketter (kallas även DULE-etiketter) i användargränssnittet för Experience Platform. Innan du använder guiden bör du läsa översikten över [datastyrning](../home.md) för en mer robust introduktion till DULE-ramverket.
+Den här användarhandboken innehåller steg för att arbeta med dataanvändningsetiketter (kallas även DULE-etiketter) i [!DNL Experience Platform] användargränssnittet. Innan du använder guiden bör du läsa översikten över [datastyrning](../home.md) för en mer robust introduktion till DULE-ramverket.
 
 ## Hantera dataanvändningsetiketter på datauppsättningsnivå
 
-För att kunna hantera dataanvändningsetiketter på datauppsättningsnivå måste du välja en befintlig datauppsättning eller skapa en ny. När du har loggat in på Adobe Experience Platform väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen för att öppna arbetsytan _Datauppsättningar_ . På den här sidan visas alla skapade datauppsättningar som tillhör din organisation, tillsammans med användbar information om varje datauppsättning.
+För att kunna hantera dataanvändningsetiketter på datauppsättningsnivå måste du välja en befintlig datauppsättning eller skapa en ny. När du har loggat in i Adobe Experience Platform väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen för att öppna arbetsytan _Datauppsättningar_ . På den här sidan visas alla skapade datauppsättningar som tillhör din organisation, tillsammans med användbar information om varje datauppsättning.
 
 ![Fliken Datauppsättning i arbetsytan Data](../images/labels/datasets.png)
 
@@ -97,12 +100,12 @@ Det är viktigt att komma ihåg att arv endast flyttas från den översta nivån
 
 ## Nästa steg
 
-Nu när du har lagt till etiketter för dataanvändning på data- och fältnivå kan du börja importera data till Experience Platform. Om du vill veta mer kan du börja med att läsa [dokumentationen](../../ingestion/home.md)för dataöverföring.
+Nu när du har lagt till etiketter för dataanvändning på data- och fältnivå kan du börja importera data till [!DNL Experience Platform]. Om du vill veta mer kan du börja med att läsa [dokumentationen](../../ingestion/home.md)för dataöverföring.
 
 Nu kan du även definiera dataanvändningsprinciper baserat på de etiketter du har använt. Mer information finns i översikten över [dataanvändningsprinciper](../policies/overview.md).
 
 ## Ytterligare resurser
 
-Följande video är avsedd att ge stöd för din förståelse av datastyrning och visar hur du använder etiketter på en datamängd och enskilda fält.
+Följande video är avsedd att ge dig bättre förståelse för [!DNL Data Governance]och ger en översikt över hur du använder etiketter i en datauppsättning och i enskilda fält.
 
 >[!VIDEO](https://video.tv.adobe.com/v/29709?quality=12&enable10seconds=on&speedcontrol=on)
