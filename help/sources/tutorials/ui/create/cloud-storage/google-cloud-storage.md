@@ -4,23 +4,23 @@ solution: Experience Platform
 title: Skapa en Google Cloud-källanslutning för lagring i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 75ba0bce7ce070af851bbf7e220dbf08febc4c20
+source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
 workflow-type: tm+mt
-source-wordcount: '537'
+source-wordcount: '524'
 ht-degree: 0%
 
 ---
 
 
-# Skapa en Google Cloud-källanslutning för lagring i användargränssnittet
+# Skapa en [!DNL Google Cloud Storage] källanslutning i användargränssnittet
 
-Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en källanslutning för Google Cloud Storage (nedan kallad GCS) med hjälp av användargränssnittet för plattformen.
+Källkopplingar i Adobe Experience Platform ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Google Cloud Storage] (nedan kallad GCS) källkoppling med hjälp av [!DNL Platform] användargränssnittet.
 
 ## Komma igång
 
-Den här självstudien kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
+* [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [Kundprofil](../../../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
@@ -29,7 +29,7 @@ Om du redan har en GCS-basanslutning kan du hoppa över resten av det här dokum
 
 ### Filformat som stöds
 
-Experience Platform har stöd för följande filformat som kan importeras från externa lagringsplatser:
+[!DNL Experience Platform] har stöd för följande filformat som ska importeras från externa lagringsplatser:
 
 * Avgränsaravgränsade värden (DSV): Stödet för DSV-formaterade datafiler är för närvarande begränsat till kommaavgränsade värden. Värdet för fältrubriker i DSV-formaterade filer får endast bestå av alfanumeriska tecken och understreck. Stöd för allmänna DSV-filer kommer att ges i framtiden.
 * JavaScript-objektnotation (JSON): JSON-formaterade datafiler måste vara XDM-kompatibla.
@@ -37,11 +37,11 @@ Experience Platform har stöd för följande filformat som kan importeras från 
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få tillgång till dina GCS-data på Platform måste du ange ett giltigt GCS **Access Key ID** och **Secret**. Du kan lära dig mer om hur du får dessa värden genom att läsa autentiseringsguiden <a href="https://cloud.google.com/docs/authentication/production" target="_blank">för</a> server-till-server för Google Cloud.
+För att få tillgång till dina GCS-data på [!DNL Platform]måste du ange ett giltigt GCS **Access Key ID** och **Secret**. Du kan lära dig mer om hur du får dessa värden genom att läsa autentiseringsguiden <a href="https://cloud.google.com/docs/authentication/production" target="_blank">för</a> server-till-server för [!DNL Google Cloud].
 
 ## Anslut ditt GCS-konto
 
-När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att skapa ett nytt GCS-konto för att ansluta till plattformen.
+När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att skapa ett nytt GCS-konto att ansluta till [!DNL Platform].
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt *[!UICONTROL Sources]* arbetsytan. På *[!UICONTROL Catalog]* skärmen visas en mängd olika källor som du kan skapa ett inkommande konto för, och varje källa visar antalet befintliga konton och dataflöden som är kopplade till dem.
 
@@ -67,4 +67,4 @@ Om du vill ansluta ett befintligt konto väljer du det GCS-konto som du vill ans
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt GCS-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till plattformen](../../dataflow/batch/cloud-storage.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt GCS-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till Platform](../../dataflow/batch/cloud-storage.md).
