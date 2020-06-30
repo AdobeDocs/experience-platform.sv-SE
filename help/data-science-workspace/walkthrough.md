@@ -4,19 +4,22 @@ solution: Experience Platform
 title: Genomgång av datavetenskapens arbetsyta
 topic: Walkthrough
 translation-type: tm+mt
-source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
+source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
+workflow-type: tm+mt
+source-wordcount: '1638'
+ht-degree: 0%
 
 ---
 
 
-# Genomgång av datavetenskapens arbetsyta
+# [!DNL Data Science Workspace] genomgång
 
-Det här dokumentet innehåller en genomgång av Adobe Experience Platform Data Science Workspace. Vi går igenom det allmänna arbetsflöde som en datavetare skulle gå igenom för att lösa ett problem med maskininlärning.
+Det här dokumentet innehåller en genomgång för Adobe Experience Platform [!DNL Data Science Workspace]. Vi går igenom det allmänna arbetsflöde som en datavetare skulle gå igenom för att lösa ett problem med maskininlärning.
 
 ## Förutsättningar
 
 - Ett registrerat Adobe ID-konto
-   - Adobe ID-kontot måste ha lagts till i en organisation med tillgång till Adobe Experience Platform och Data Science Workspace
+   - Adobe ID måste ha lagts till i en organisation med tillgång till Adobe Experience Platform och [!DNL Data Science Workspace]
 
 ## Datavetenskaparens motivation
 
@@ -26,22 +29,22 @@ En återförsäljare står inför många utmaningar när det gäller att vara ko
 
 En datavetare kan utnyttja den stora mängd historiska data som en återförsäljare har tillgång till för att förutse framtida trender och optimera prissättningsbesluten. Vi kommer att använda tidigare försäljningsdata för att utbilda vår maskininlärningsmodell och använda modellen för att förutse framtida försäljningstrender. Med detta kan återförsäljaren få insikter som hjälper dem att ändra priserna.
 
-I den här översikten ska vi gå igenom de steg som en datavetare skulle gå igenom för att ta en datauppsättning och skapa en modell för att förutse försäljningen varje vecka. Vi går igenom följande avsnitt i exempelboken Försäljning på Adobe Experience Platform Data Science Workspace:
+I den här översikten ska vi gå igenom de steg som en datavetare skulle gå igenom för att ta en datauppsättning och skapa en modell för att förutse försäljningen varje vecka. Vi går igenom följande avsnitt i den exempel på Adobe Experience Platform som handlar om detaljhandel [!DNL Data Science Workspace]:
 
 - [Inställningar](#setup)
 - [Utforska data](#exploring-data)
 - [Funktionskonstruktion](#feature-engineering)
 - [Utbildning och verifiering](#training-and-verification)
 
-### Bärbara datorer på arbetsytan Datavetenskap
+### Anteckningsböcker i [!DNL Data Science Workspace]
 
-För det första vill vi skapa en JupyterLab-anteckningsbok för att öppna exempelanteckningsboken&quot;Detaljhandel försäljning&quot;. Om vi följer de steg som datavetenskaparen utför i den bärbara datorn kan vi få en förståelse för ett typiskt arbetsflöde.
+För det första vill vi skapa en [!DNL JupyterLab] anteckningsbok för att öppna exempelanteckningsboken&quot;Detaljhandel&quot;. Om vi följer de steg som datavetenskaparen utför i den bärbara datorn kan vi få en förståelse för ett typiskt arbetsflöde.
 
-I Adobe Experience Platform-användargränssnittet klickar du på fliken Data Science i den översta menyn för att ta dig till arbetsytan Data Science. Från den här sidan klickar du på fliken JupyterLab som öppnar JupyterLab-startprogrammet. Du bör se en liknande sida.
+Klicka på fliken Datavetenskap i den övre menyn i användargränssnittet för Adobe Experience Platform för att ta dig till [!DNL Data Science Workspace]. På den här sidan klickar du på den [!DNL JupyterLab] flik som öppnar [!DNL JupyterLab] startprogrammet. Du bör se en liknande sida.
 
 ![](./images/walkthrough/jupyterlab_launcher.png)
 
-I vår självstudiekurs kommer vi att använda Python 3 i Jupyter Notebook för att visa hur du kommer åt och utforskar data. På startsidan finns exempelanteckningsböcker. Vi kommer att använda exemplet&quot;Detaljhandel&quot; för Python 3.
+I vår självstudiekurs kommer vi att använda [!DNL Python] 3 i [!DNL Jupyter Notebook] för att visa hur du får tillgång till och utforskar data. På startsidan finns exempelanteckningsböcker. Vi kommer att använda exemplet&quot;Detaljhandel försäljning&quot; för [!DNL Python] 3.
 
 ![](./images/walkthrough/retail_sales.png)
 
@@ -59,7 +62,7 @@ I och med att Butik Sales-anteckningsboken är öppen är det första vi gör at
 
 #### Läs in data
 
-När biblioteken har lästs in kan vi börja titta på data. I följande Python-kod används pandas `DataFrame` datastruktur och funktionen [read_csv()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html#pandas.read_csv) för att läsa CSV-filen som finns på Github i pandornas DataFrame:
+När biblioteken har lästs in kan vi börja titta på data. I följande [!DNL Python] kod används pandas `DataFrame` datastruktur och funktionen [read_csv()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html#pandas.read_csv) för att läsa CSV-filen som finns [!DNL Github] i pandornas DataFrame:
 
 ![](./images/walkthrough/read_csv.png)
 
@@ -73,7 +76,7 @@ Slutligen kan vi ta en titt på hur våra data ser ut. Vi kan använda `df.head(
 
 #### Statistisk sammanfattning
 
-Vi kan utnyttja Pythons pandabibliotek för att hämta datatypen för varje attribut. Utdata från följande anrop ger oss information om antalet poster och datatypen för var och en av kolumnerna:
+Vi kan utnyttja [!DNL Python's] pandabiblioteket för att hämta datatypen för varje attribut. Utdata från följande anrop ger oss information om antalet poster och datatypen för var och en av kolumnerna:
 
 ```PYTHON
 df.info()
