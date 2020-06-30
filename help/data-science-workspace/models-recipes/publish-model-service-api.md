@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Publicera en modell som en tjänst (API)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 967ca85efba315819c6241d034dc3c25a5b1fc70
+source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
 workflow-type: tm+mt
-source-wordcount: '1487'
+source-wordcount: '1478'
 ht-degree: 0%
 
 ---
@@ -14,15 +14,15 @@ ht-degree: 0%
 
 # Publicera en modell som en tjänst (API)
 
-I den här självstudiekursen beskrivs processen att publicera en modell som en tjänst med API:t [för maskininlärning i Sensei](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml).
+I den här självstudiekursen beskrivs hur du publicerar en modell som en tjänst med hjälp av [!DNL Sensei Machine Learning API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml).
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse av Adobe Experience Platform Data Science Workspace. Innan du börjar med den här självstudiekursen bör du gå igenom översikten [över arbetsytan för](../home.md) datavetenskap för att få en introduktion till tjänsten på hög nivå.
+Den här självstudiekursen kräver en arbetsförståelse för Adobe Experience Platform Data Science Workspace. Innan du börjar med den här självstudiekursen bör du gå igenom översikten [över arbetsytan för](../home.md) datavetenskap för att få en introduktion till tjänsten på hög nivå.
 
 Om du vill följa med i den här självstudiekursen måste du ha en befintlig ML-motor, ML-instans och Experiment. Anvisningar om hur du skapar dessa i API:t finns i självstudiekursen om hur du [importerar ett paketerat recept](./import-packaged-recipe-api.md).
 
-Innan du börjar med den här självstudiekursen bör du gå igenom [avsnittet Komma igång](../api/getting-started.md) i utvecklarhandboken för att få viktig information som du behöver veta för att kunna ringa anrop till API:t Sensei Machine Learning, inklusive de rubriker som krävs som används i den här självstudiekursen:
+Innan du börjar med den här självstudiekursen bör du gå igenom avsnittet [Komma igång](../api/getting-started.md) i utvecklarhandboken för att få viktig information som du behöver veta för att kunna ringa anrop till [!DNL Sensei Machine Learning] API:t, inklusive de rubriker som används i den här självstudiekursen:
 
 - `{ACCESS_TOKEN}`
 - `{IMS_ORG}`
@@ -38,9 +38,9 @@ I följande tabell beskrivs några vanliga termer som används i den här själv
 
 | Term | Definition |
 --- | ---
-| **Machine Learning-instans (ML-instans)** | En instans av en Sensei Engine för en viss klientorganisation, som innehåller specifika data, parametrar och Sensei-kod. |
+| **Machine Learning-instans (ML-instans)** | En instans av en [!DNL Sensei] motor för en viss klientorganisation som innehåller specifika data, parametrar och [!DNL Sensei] kod. |
 | **Experimentera** | En paraplyenhet för utbildning Experiment Runs, Scoring Experiment Runs eller båda. |
-| **Schemalagd experiment** | En term som beskriver automatiseringen av kurser eller poängsättning i Experiment Runs som styrs av ett användardefinierat schema. |
+| **Schemalagd experiment** | En term som beskriver automatiseringen av utbildning eller poängsättning i Experimentprogram, som styrs av ett användardefinierat schema. |
 | **Experimentera** | Ett särskilt fall av utbildning eller poängsättningsexperiment. Multipla Experiment körs från en viss Experiment och kan skilja sig åt i datauppsättningsvärden som används för utbildning eller poängsättning. |
 | **Utbildad modell** | En maskininlärningsmodell som har skapats genom att experimentera och använda konstruktion innan den levereras till en validerad, utvärderad och färdigställd modell. |
 | **Publicerad modell** | En färdig och versionshanterad modell som tagits fram efter utbildning, validering och utvärdering. |
@@ -120,7 +120,7 @@ Ett lyckat svar returnerar information om den nyligen skapade ML-tjänsten, inkl
 
 ## Skapa en ML-tjänst från en befintlig ML-instans
 
-Beroende på ditt specifika användningsfall och dina specifika krav är det flexibelt att skapa en ML-tjänst med en ML-instans när det gäller schemaläggning av kurser och poängsättning i Experiment Runs. Den här självstudiekursen handlar om följande specialfall:
+Beroende på ditt specifika användningsfall och dina specifika krav är det flexibelt att skapa en ML-tjänst med en ML-instans när det gäller schemaläggning av utbildnings- och poängsättningsutvärderingsmiljöer. Den här självstudiekursen handlar om följande specialfall:
 
 - [Du behöver ingen schemalagd utbildning, men du måste göra en schemalagd poängsättning.](#ml-service-with-scheduled-experiment-for-scoring)
 - [Du behöver schemalagda utvärderingsversioner för både utbildning och poängsättning.](#ml-service-with-scheduled-experiments-for-training-and-scoring)
