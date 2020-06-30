@@ -4,34 +4,37 @@ solution: Experience Platform
 title: Skapa en HubSpot-anslutning med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 7aa6f85308bacb275bd6f3234d03530a621c1c02
+source-git-commit: 5839e4695589455bd32b6e3e33a7c377343f920d
+workflow-type: tm+mt
+source-wordcount: '640'
+ht-degree: 0%
 
 ---
 
 
-# Skapa en HubSpot-anslutning med API:t för Flow Service
+# Skapa en [!DNL HubSpot] koppling med [!DNL Flow Service] API:t
 
-Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till HubSpot.
+I den här självstudiekursen används API:t för att vägleda dig genom de olika stegen för att ansluta [!DNL Flow Service] till [!DNL Experience Platform] [!DNL HubSpot].
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som ni kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till HubSpot med API:t för Flow Service.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL HubSpot] med [!DNL Flow Service] API:t.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att Flow Service ska kunna ansluta till HubSpot måste du ange följande anslutningsegenskaper:
+För [!DNL Flow Service] att kunna ansluta till [!DNL HubSpot]måste du ange följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `clientId` | Klient-ID som är associerat med ditt HubSpot-program. |
-| `clientSecret` | Klienthemligheten som är kopplad till ditt HubSpot-program. |
+| `clientId` | Klient-ID som är kopplat till ditt [!DNL HubSpot] program. |
+| `clientSecret` | Klienthemligheten som är kopplad till ditt [!DNL HubSpot] program. |
 | `accessToken` | Åtkomsttoken som fås när din OAuth-integration autentiseras initialt. |
 | `refreshToken` | Den uppdateringstoken som erhölls när OAuth-integreringen autentiserades initialt. |
 
@@ -39,17 +42,17 @@ Mer information om hur du kommer igång finns i det här [HubSpot-dokumentet](ht
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform, inklusive de som tillhör Flow Service, isoleras till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
@@ -59,11 +62,11 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Söka efter anslutningsspecifikationer
 
-För att kunna skapa en HubSpot-anslutning måste det finnas en uppsättning specifikationer för HubSpot-anslutningen i Flow Service. Det första steget i att ansluta Platform till HubSpot är att hämta dessa specifikationer.
+För att kunna skapa en [!DNL HubSpot] anslutning måste det finnas en uppsättning [!DNL HubSpot] anslutningsspecifikationer inom [!DNL Flow Service]. Det första steget i att ansluta [!DNL Platform] till [!DNL HubSpot] är att hämta dessa specifikationer.
 
 **API-format**
 
-Varje tillgänglig källa har en egen unik uppsättning anslutningsspecifikationer för att beskriva kopplingsegenskaper som autentiseringskrav. Om du skickar en GET-begäran till `/connectionSpecs` slutpunkten returneras anslutningsspecifikationerna för alla tillgängliga källor. Du kan även ta med frågan `property=name=="hubspot"` för att få information om HubSpot.
+Varje tillgänglig källa har en egen unik uppsättning anslutningsspecifikationer för att beskriva kopplingsegenskaper som autentiseringskrav. Om du skickar en GET-begäran till `/connectionSpecs` slutpunkten returneras anslutningsspecifikationerna för alla tillgängliga källor. Du kan även ta med frågan `property=name=="hubspot"` för att få information som är specifik för [!DNL HubSpot].
 
 ```http
 GET /connectionSpecs
@@ -72,7 +75,7 @@ GET /connectionSpecs?property=name=="hubspot"
 
 **Begäran**
 
-Följande begäran hämtar anslutningsspecifikationerna för HubSpot.
+Följande begäran hämtar anslutningsspecifikationerna för [!DNL HubSpot].
 
 ```shell
 curl -X GET \
@@ -85,7 +88,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar anslutningsspecifikationen för HubSpot, inklusive dess unika identifierare (`id`). Detta ID krävs i nästa steg för att skapa en anslutning för API:t.
+Ett lyckat svar returnerar anslutningsspecifikationen för [!DNL HubSpot], inklusive dess unika identifierare (`id`). Detta ID krävs i nästa steg för att skapa en anslutning för API:t.
 
 ```json
 {
@@ -139,7 +142,7 @@ Ett lyckat svar returnerar anslutningsspecifikationen för HubSpot, inklusive de
 
 ## Skapa en anslutning för API:t
 
-En anslutning för API anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning för API:t krävs per HubSpot-konto eftersom det kan användas för att skapa flera källanslutningar för att hämta olika data.
+En anslutning för API anger en källa och innehåller dina autentiseringsuppgifter för den källan. Det krävs bara en anslutning för API:t per [!DNL HubSpot] konto eftersom det kan användas för att skapa flera källanslutningar för att hämta olika data.
 
 **API-format**
 
@@ -178,8 +181,8 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `auth.params.clientId` | Klient-ID som är associerat med ditt HubSpot-program. |
-| `auth.params.clientSecret` | Klienthemligheten som är kopplad till ditt HubSpot-program. |
+| `auth.params.clientId` | Klient-ID som är kopplat till ditt [!DNL HubSpot] program. |
+| `auth.params.clientSecret` | Klienthemligheten som är kopplad till ditt [!DNL HubSpot] program. |
 | `auth.params.accessToken` | Åtkomsttoken som fås när din OAuth-integration autentiseras initialt. |
 | `auth.params.refreshToken` | Den uppdateringstoken som erhölls när OAuth-integreringen autentiserades initialt. |
 
@@ -194,4 +197,4 @@ Ett lyckat svar returnerar information om den nyligen skapade anslutningen för 
 }
 ```
 
-I den här självstudiekursen har du skapat en HubSpot-anslutning med API:t för Flow Service och fått anslutningens unika ID-värde. Du kan använda detta anslutnings-ID i nästa självstudiekurs när du lär dig hur du [utforskar CRM-system med API:t](../../explore/crm.md)för Flow Service.
+Genom att följa den här självstudiekursen har du skapat en [!DNL HubSpot] anslutning med hjälp av [!DNL Flow Service] -API:t och har fått anslutningens unika ID-värde. Du kan använda detta anslutnings-ID i nästa självstudiekurs när du lär dig hur du [utforskar CRM-system med API:t](../../explore/crm.md)för Flow Service.
