@@ -4,30 +4,30 @@ solution: Experience Platform
 title: Samarbeta i JupyterLab med Git
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
 workflow-type: tm+mt
-source-wordcount: '270'
-ht-degree: 0%
+source-wordcount: '245'
+ht-degree: 1%
 
 ---
 
 
-# Samarbeta i JupyterLab med Git
+# Samarbeta i [!DNL JupyterLab] med [!DNL Git]
 
-Git är ett distribuerat versionshanteringssystem för att spåra ändringar i källkoden under programvaruutvecklingen. Git är förinstallerat i JupyterLab-miljön för Data Science Workspace.
+[!DNL Git] är ett distribuerat versionshanteringssystem för att spåra ändringar i källkod under programvaruutveckling. Git är förinstallerat i [!DNL Data Science Workspace JupyterLab] miljön.
 
 ## Förutsättningar
 
 >[!NOTE]
 > Den Git-server du tänker använda måste vara tillgänglig via Internet.
 
-JupyterLab-miljön för Data Science Workspace är en värdmiljö som inte används i företagets brandvägg och därför måste den Git-server du ansluter till vara tillgänglig från det offentliga Internet. Detta kan vara en offentlig eller privat databas på [GitHub](https://github.com/) eller en annan instans av en Git-server som du har valt att vara värd för själv.
+Miljön är en [!DNL Data Science Workspace JupyterLab] värdbaserad miljö som inte används i företagets brandvägg, och därför måste den Git-server du ansluter till vara tillgänglig från det offentliga Internet. Detta kan vara en offentlig eller privat databas på [GitHub](https://github.com/) eller en annan instans av en [!DNL Git] server som du har bestämt att vara värd för själv.
 
-## Ansluta Git till JupyterLab-miljön för datavetenskapen
+## Anslut [!DNL Git] till [!DNL Data Science Workspace JupyterLab Notebooks] miljön
 
-Börja med att starta [!DNL Adobe Experience Platform] och navigera till [JupyterLabs-miljön för bärbara](https://platform.adobe.com/notebooks/jupyterLab) datorer.
+Börja med att starta [!DNL Adobe Experience Platform] och navigera till [!DNL JupyterLabs Notebooks](https://platform.adobe.com/notebooks/jupyterLab) miljön.
 
-I JupyterLab väljer du **[!UICONTROL File]** hovra över **[!UICONTROL New]**. Välj i listrutan som visas **[!UICONTROL Terminal]**.
+I [!DNL JupyterLab]väljer du **[!UICONTROL File]** och håller pekaren över **[!UICONTROL New]**. Välj i listrutan som visas **[!UICONTROL Terminal]**.
 
 ![JupyterLab Nav](../images/jupyterlab/tutorials/open-terminal.png)
 
@@ -55,4 +55,4 @@ Sedan klonar du den databas du vill använda med hjälp av `git clone` kommandot
 
 ## Nästa steg
 
-När du är klar med kloningen av din databas kan du använda Git på samma sätt som du brukar göra på din lokala dator för att samarbeta med andra på bärbara datorer. Mer information om vad du kan göra i JupyterLab finns i användarhandboken för [JupyterLab](./overview.md).
+När du är klar med kloningen av din databas kan du använda Git på samma sätt som du brukar göra på din lokala dator för att samarbeta med andra på bärbara datorer. Mer information om vad du kan göra i [!DNL JupyterLab]finns i [!DNL JupyterLab user guide](./overview.md).
