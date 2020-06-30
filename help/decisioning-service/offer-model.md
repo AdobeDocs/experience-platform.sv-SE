@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Domänmodell för beslut om erbjudande
 topic: overview
 translation-type: tm+mt
-source-git-commit: fdaef24a23c1c1da064ca33e8bed522e506fead5
+source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+workflow-type: tm+mt
+source-wordcount: '2614'
+ht-degree: 0%
 
 ---
 
 
 # Översikt över domänmodellen för beslut om erbjudande
 
-Avtalsbeslut är ett användbart fall av beslutstjänst där ni formaliserar och centralt hanterar de regler och prognoser som används för att engagera kunder med erbjudanden. Avtalsbeslut är en typ av _**innehållsbeslut**_. I detta fall kallas _**beslutsalternativen**_ _**erbjudanden**_ och karakteriseras som sådana av innehållet i dem. En introduktion till den objektmodell som används av beslutstjänsten finns i Domänmodell för [beslutstjänst](experience-model.md).
+Att fatta beslut om erbjudanden är ett exempel på hur ni formaliserar och centralt hanterar de regler och prognoser som används för att engagera kunderna med erbjudanden. [!DNL Decisioning Service] Avtalsbeslut är en typ av _**innehållsbeslut**_. I detta fall kallas _**beslutsalternativen**_ _**erbjudanden**_ och karakteriseras som sådana av innehållet i dem. En introduktion till objektmodellen som används av [!DNL Decisioning Service]finns i Domänmodell för [beslutstjänst](experience-model.md).
 
 Målet är att ge slutanvändaren&quot;bästa erbjudandet&quot; i alla kanaler baserat på kriterier för målinriktning, kostnader och frekvensbegränsningar samt föregående interaktioner över alla kanaler inklusive tidigare erbjudanden.
 
@@ -60,7 +63,7 @@ Allmänna erbjudanden, som också kallas personaliserade erbjudanden, är altern
 
 Placeringar definierar innehållsbegränsningar och används med en aktivitet för att ange var nästa bästa upplevelse ska levereras. Detta minskar ytterligare antalet alternativ som kan övervägas och är en annan begränsning som aktiviteten medför. Detta kallas placeringsbegränsning. Endast alternativ som har innehåll som uppfyller en placeringsbegränsning, till exempel erbjudanden, kommer att beaktas. Detta utvärderas i de tidiga faserna av beslutsstrategin. När alternativobjekt ändrar placeringsbegränsningarna för varje aktivitet omprövas och alternativet kan beaktas eller tas bort för en eller flera aktiviteter.
 
-Beslutstjänsten ansvarar inte för att formalisera de komplexa detaljerna för innehållsberoenden. Istället kommer varje kund att identifiera listan över placeringar i alla kanaler och ge dessa placeringar unika identifierare och namn. Genom att referera till en viss placering försäkrar designern att det angivna innehållet passar in på placeringen.
+Det är inte företagets ansvar [!DNL Decisioning Service] att formalisera de komplexa detaljerna i innehållsberoenden. Istället kommer varje kund att identifiera listan över placeringar i alla kanaler och ge dessa placeringar unika identifierare och namn. Genom att referera till en viss placering försäkrar designern att det angivna innehållet passar in på placeringen.
 
 När innehållet har utvecklats kommer erbjudandemarknadsföraren och innehållsdesignern att helt enkelt (måste) komma överens om ett&quot;underförstått kontrakt&quot; som står bakom namnet&quot;Home Page Hero Image&quot; eller&quot;Service Call Opening Script&quot;. Den första kan överenskommas som en bild med bredden 600 px och höjden 350 px och den senare kan begränsa innehållet till text i två språkvarianter som inte är längre än 50 ord i tre eller fyra meningar med semantisk struktur. Placering som inte lagrar hela innebörden av det dolda kontraktet.
 
@@ -74,7 +77,7 @@ En placering begränsar vilken typ av innehållsobjekt som kan läggas till i re
 
 Reserverbjudanden är beslutsalternativ som inte har ytterligare begränsningar förutom placeringsreglerna. Reserverbjudanden har innehållsrepresentationer som är kopplade till placeringar, precis som alla andra erbjudanden.
 
-Reserverbjudanden anges i aktiviteter för att indikera en livskraftig innehållsupplevelse när kombinerade begränsningar diskvalificerar alla begränsade alternativ. Eftersom det inte är beroende av körningssammanhanget eller profilen, kan placeringsbegränsningen kontrolleras i förväg när aktiviteten sätts samman. Med hjälp av reserverbjudanden finns det alltid ett svar på frågan: Vilket är för närvarande det bästa erbjudandet?
+Reserverbjudanden anges i aktiviteter för att indikera en användbar innehållsupplevelse när kombinerade begränsningar diskvalificerar alla begränsade alternativ. Eftersom det inte är beroende av körningssammanhanget eller profilen, kan placeringsbegränsningen kontrolleras i förväg när aktiviteten sätts samman. Med hjälp av reserverbjudanden finns det alltid ett svar på frågan: Vilket är för närvarande det bästa erbjudandet?
 
 ## Villkor
 
@@ -98,7 +101,7 @@ När ett beslut begärs kan kunden begära förslag för flera aktiviteter samti
 
 Dupliceringsbegränsningar skrivs för närvarande inte in i affärsobjektdatabasen. I stället är deduplicering standardstrategi vid körning. En begärandeparameter kan åsidosätta standardbeteendet för att förhindra borttagning av dubbletter.
 
-### Profilbegränsningar - Behörighetsregler
+### [!DNL Profile] begränsningar - regler för behörighet
 
 Till dags dato har de villkor som diskuterats varit tillämpliga oavsett vem som har valt erbjudandet. Experience Decision stöder också ett användningsexempel där personalisering av erbjudanden baseras på kundens rekordhändelser och tidsseriehändelser. Regler utvärderas per profil för att avgöra om ett erbjudande kvalificerar eller måste ignoreras för den användaren. För att göra det kan en berättiganderegel kopplas till varje erbjudande. Förutom profil- och upplevelsehändelser för en slutanvändare beaktas kontextdata i realtid i berättiganderegeln. Dessa data tillhandahålls av leveranstjänsten och kan ha en form av data som inte är relaterade till en profil som lagernivåer, väderförhållanden och flygscheman.
 
