@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa ett recept med Jupyter-anteckningsböcker
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
 workflow-type: tm+mt
-source-wordcount: '2315'
+source-wordcount: '2273'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Skapa ett recept med Jupyter-anteckningsböcker
 
-Den här självstudiekursen går igenom två huvudavsnitt. Först skapar du en maskininlärningsmodell med hjälp av en mall i JupyterLab Notebook. Därefter ska du använda anteckningsboken för att hämta arbetsflöden i JupyterLab för att skapa ett recept i arbetsytan Data Science.
+Den här självstudiekursen går igenom två huvudavsnitt. Först skapar du en maskininlärningsmodell med hjälp av en mall i [!DNL JupyterLab Notebook]. Därefter ska du använda anteckningsboken för att hämta arbetsflödet i [!DNL JupyterLab] för att skapa ett recept i [!DNL Data Science Workspace].
 
 ## Nya koncept:
 
@@ -23,20 +23,20 @@ Den här självstudiekursen går igenom två huvudavsnitt. Först skapar du en m
 - **Utbildning:** Utbildning är processen att lära sig mönster och insikter från märkta data.
 - **Poäng:** Poängberäkning är processen att generera insikter från data med hjälp av en tränad modell.
 
-## Kom igång med JupyterLab-miljön för bärbara datorer
+## Kom igång med [!DNL JupyterLab] anteckningsboksmiljön
 
-Du kan skapa ett helt nytt recept på arbetsytan Data Science. Börja med att navigera till [Adobe Experience Platform](https://platform.adobe.com) och klicka på **[!UICONTROL Notebooks]** fliken till vänster. Skapa en ny anteckningsbok genom att välja mallen Recipe Builder i JupyterLab Launcher.
+Du kan skapa ett helt nytt recept i [!DNL Data Science Workspace]. Börja med att navigera till [Adobe Experience Platform](https://platform.adobe.com) och klicka på **[!UICONTROL Notebooks]** fliken till vänster. Skapa en ny anteckningsbok genom att välja mallen Recipe Builder i [!DNL JupyterLab Launcher].
 
-Med Recipe Builder-anteckningsboken kan du köra utbildning och poängsättning inuti anteckningsboken. Detta ger er flexibilitet att ändra deras `train()` och `score()` metoder mellan att köra experiment med kurser och poängdata. När du är nöjd med resultatet av kursen och poängsättningen kan du skapa ett recept som ska användas i Data Science Workspace med hjälp av den bärbara datorn för att hämta funktionalitet som är inbyggd i Recipe Builder-anteckningsboken.
+Med den [!UICONTROL Recipe Builder] bärbara datorn kan du köra utbildning och poängsättning inuti den bärbara datorn. Detta ger er flexibilitet att ändra deras `train()` och `score()` metoder mellan att köra experiment med kurser och poängdata. När du är nöjd med resultatet av kursen och poängsättningen kan du skapa ett recept som ska användas i [!DNL Data Science Workspace] den bärbara datorn för att hämta funktionalitet som är inbyggd i den bärbara datorn i Recipe Builder.
 
 >[!NOTE]
->Anteckningsboken Recipe Builder har stöd för att arbeta med alla filformat, men för närvarande har funktionen Create Recipe bara stöd för Python.
+>Anteckningsboken Recipe Builder har stöd för att arbeta med alla filformat, men för närvarande har funktionen Skapa recept bara stöd [!DNL Python].
 
 ![](../images/jupyterlab/create-recipe/recipe-builder.png)
 
 När du klickar på anteckningsboken i Recipe Builder i startprogrammet öppnas anteckningsboken på fliken. Mallen som används i anteckningsboken är Python Retail Sales Forecasting Recipe, som också finns i [denna offentliga databas](https://github.com/adobe/experience-platform-dsw-reference/tree/master/recipes/python/retail/)
 
-Du ser att det finns ytterligare tre åtgärder i verktygsfältet: - **[!UICONTROL Train]**, **[!UICONTROL Score]** och **[!UICONTROL Create Recipe]**. De här ikonerna visas bara i Recipe Builder-anteckningsboken. Mer information om de här åtgärderna kommer att behandlas [i avsnittet](#training-and-scoring) Utbildning och poängsättning när du har skapat din recept i anteckningsboken.
+Du ser att det finns ytterligare tre åtgärder i verktygsfältet: - **[!UICONTROL Train]**, **[!UICONTROL Score]** och **[!UICONTROL Create Recipe]**. De här ikonerna visas bara i den [!UICONTROL Recipe Builder] anteckningsboken. Mer information om de här åtgärderna kommer att behandlas [i avsnittet](#training-and-scoring) Utbildning och poängsättning när du har skapat din recept i anteckningsboken.
 
 ![](../images/jupyterlab/create-recipe/toolbar_actions.png)
 
@@ -50,7 +50,7 @@ Börja göra nödvändiga ändringar i cellen och kör cellen när du är klar. 
 
 ## Kom igång med anteckningsboken i Recipe Builder
 
-Nu när du vet grunderna för JupyterLab-miljön kan du börja titta på de filer som utgör ett maskininlärningsmodellrecept. De filer vi ska prata om visas här:
+Nu när du vet grunderna för [!DNL JupyterLab] anteckningsboksmiljön kan du börja titta på de filer som utgör ett maskininlärningsmodellrecept. De filer vi ska prata om visas här:
 
 - [Kravfil](#requirements-file)
 - [Konfigurationsfiler](#configuration-files)
@@ -102,24 +102,24 @@ Som standard ställs följande konfigurationsparametrar in åt dig när du anvä
 ## Utbilda datainläsare {#training-data-loader}
 
 Syftet med inläsaren av utbildningsdata är att instansiera data som används för att skapa maskininlärningsmodellen. Vanligtvis finns det två åtgärder som inläsaren av utbildningsdata utför:
-- Läs in data från plattform
+- Läs in data från [!DNL Platform]
 - Datagenerering och -teknik
 
 I följande två avsnitt går det längre att läsa in data och förbereda data.
 
 ### Läser in data {#loading-data}
 
-I det här steget används [pandabilden](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html). Data kan läsas in från filer i [!DNL Adobe Experience Platform] med antingen Platform SDK (`platform_sdk`) eller från externa källor med pandas `read_csv()` - eller `read_json()` -funktioner.
+I det här steget används [pandabilden](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html). Data kan läsas in från filer i [!DNL Adobe Experience Platform] med [!DNL Platform] SDK (`platform_sdk`) eller från externa källor med pandas `read_csv()` eller `read_json()` funktioner.
 
-- [Plattforms-SDK](#platform-sdk)
+- [!DNL Platform SDK](#platform-sdk)
 - [Externa källor](#external-sources)
 
 >[!NOTE]
 >I Recipe Builder-anteckningsboken läses data in via `platform_sdk` datainläsaren.
 
-### Plattforms-SDK {#platform-sdk}
+### [!DNL Platform] SDK {#platform-sdk}
 
-En ingående självstudiekurs om hur du använder `platform_sdk` datainläsaren finns i handboken [för](../authoring/platform-sdk.md)plattforms-SDK. Den här självstudiekursen innehåller information om autentisering av bygge, grundläggande läsning av data och grundläggande skrivande av data.
+En ingående självstudiekurs om hur du använder `platform_sdk` datainläsaren finns i handboken [för](../authoring/platform-sdk.md)Platform SDK. Den här självstudiekursen innehåller information om autentisering av bygge, grundläggande läsning av data och grundläggande skrivande av data.
 
 ### Externa källor {#external-sources}
 
@@ -144,7 +144,7 @@ Nu finns dina data i dataframe-objektet och kan analyseras och ändras i [nästa
 ### Från SDK för dataåtkomst (borttagen)
 
 >[!CAUTION]
-> `data_access_sdk_python` rekommenderas inte längre, se [Konvertera dataåtkomstkod till plattforms-SDK](../authoring/platform-sdk.md) för en guide om hur du använder `platform_sdk` datainläsaren.
+> `data_access_sdk_python` rekommenderas inte längre, se [Konvertera dataåtkomstkod till Platform SDK](../authoring/platform-sdk.md) för en guide om hur du använder `platform_sdk` datainläsaren.
 
 Användare kan läsa in data med hjälp av SDK för dataåtkomst. Biblioteket kan importeras högst upp på sidan genom att inkludera raden:
 
@@ -162,7 +162,7 @@ df = prodreader.load(data_set_id=configProperties['trainingDataSetId'],
 ```
 
 >[!NOTE]
->Som vi nämnt i avsnittet [](#configuration-files)Konfigurationsfil ställs följande konfigurationsparametrar in åt dig när du använder data från Experience Platform:
+>Som vi nämnt i avsnittet [](#configuration-files)Konfigurationsfil ställs följande konfigurationsparametrar in åt dig när du får åtkomst till data från [!DNL Experience Platform]:
 > - `ML_FRAMEWORK_IMS_USER_CLIENT_ID`
 > - `ML_FRAMEWORK_IMS_TOKEN`
 > - `ML_FRAMEWORK_IMS_ML_TOKEN`
@@ -203,7 +203,7 @@ I det här exemplet görs fem saker med den ursprungliga datauppsättningen:
 - offset `weeklySales` för att få framtida och föregående försäljningsvärde
 - dela data, efter datum, till `train` och `val` datauppsättning
 
-Först skapas `week` och `year` kolumner och den ursprungliga `date` kolumnen konverteras till Python [datetime](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.to_datetime.html). Vecka- och årtalsvärden extraheras från datetime-objektet.
+Först skapas `week` och `year` kolumner och den ursprungliga `date` kolumnen konverteras till [!DNL Python] datetime [](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.to_datetime.html). Vecka- och årtalsvärden extraheras från datetime-objektet.
 
 Därefter `storeType` konverteras de till tre kolumner som representerar de tre olika butikstyperna (`A`, `B`och `C`). Var och en innehåller ett booleskt värde som `storeType` är true. Kolumnen tas bort `storeType` .
 
@@ -408,9 +408,9 @@ Observera att funktionen returnerar ett `metric` objekt som innehåller en array
 
 ### Data Saver-fil {#data-saver-file}
 
-Filen `datasaver.py` innehåller `save()` funktionen som sparar din förutsägelse när du testar poängsättningen. Funktionen `save()` tar din förutsägelse och använder Experience Platform Catalog API:er för att skriva data till den `scoringResultsDataSetId` du har angett i `scoring.conf` filen.
+Filen `datasaver.py` innehåller `save()` funktionen som sparar din förutsägelse när du testar poängsättningen. Funktionen `save()` tar din förutsägelse och använder API: [!DNL Experience Platform Catalog] er, skriver data till den `scoringResultsDataSetId` du har angett i `scoring.conf` filen.
 
-Exemplet som används i exempelreceptet för försäljning inom detaljhandeln visas här. Observera hur biblioteket `DataSetWriter` används för att skriva data till plattformen:
+Exemplet som används i exempelreceptet för försäljning inom detaljhandeln visas här. Observera hur biblioteket `DataSetWriter` används för att skriva data till Platform:
 
 ```PYTHON
 from data_access_sdk_python.writer import DataSetWriter
@@ -453,11 +453,11 @@ När du är klar med redigeringen av recept och nöjd med utbildnings-/poängsä
 
 ![](../images/jupyterlab/create-recipe/create-recipe.png)
 
-När du har tryckt på knappen uppmanas du att ange ett receptnamn. Det här namnet representerar det faktiska receptet som skapats på plattformen.
+När du har tryckt på knappen uppmanas du att ange ett receptnamn. Det här namnet representerar det faktiska receptet som skapades [!DNL Platform].
 
 ![](../images/jupyterlab/create-recipe/enter_recipe_name.png)
 
-När du trycker kan **[!UICONTROL Ok]** du navigera till det nya receptet på [Adobe Experience Platform](https://platform.adobe.com/). Du kan klicka på **[!UICONTROL View Recipes]** knappen för att gå till **[!UICONTROL Recipes]** fliken under **[!UICONTROL ML Models]**
+När du trycker på **[!UICONTROL Ok]** kan du navigera till det nya receptet på [Adobe Experience Platform](https://platform.adobe.com/). Du kan klicka på **[!UICONTROL View Recipes]** knappen för att gå till **[!UICONTROL Recipes]** fliken under **[!UICONTROL ML Models]**
 
 ![](../images/jupyterlab/create-recipe/recipe_creation_started.png)
 
@@ -473,9 +473,9 @@ När processen är klar ser receptet ut ungefär så här:
 
 ## Nästa steg {#next-steps}
 
-Genom att slutföra den här självstudiekursen har du lärt dig att skapa en maskininlärningsmodell i anteckningsboken för Recipe Builder. Du har också lärt dig hur du använder anteckningsboken för att hämta arbetsflöden i anteckningsboken för att skapa ett recept i arbetsytan Datavetenskap.
+Genom att slutföra den här självstudiekursen har du lärt dig att skapa en maskininlärningsmodell i anteckningsboken för Recipe Builder. Du har också lärt dig hur du använder anteckningsboken för att hämta arbetsflöden i anteckningsboken för att skapa ett recept i [!DNL Data Science Workspace].
 
-Om du vill fortsätta lära dig hur du arbetar med resurser på arbetsytan Data Science kan du gå till listrutan Data Science Workspace-recept och -modeller.
+Om du vill fortsätta lära dig hur du arbetar med resurser i [!DNL Data Science Workspace]går du till listrutan [!DNL Data Science Workspace] recept och modeller.
 
 ## Ytterligare resurser {#additional-resources}
 
