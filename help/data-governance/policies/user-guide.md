@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användarhandbok för dataanvändningsprinciper
 topic: policies
 translation-type: tm+mt
-source-git-commit: c4554e3fbc0dd527606b81e2767cb5777b6e81e7
+source-git-commit: d4964231ee957349f666eaf6b0f5729d19c408de
 workflow-type: tm+mt
-source-wordcount: '699'
+source-wordcount: '686'
 ht-degree: 0%
 
 ---
@@ -14,20 +14,20 @@ ht-degree: 0%
 
 # Användarhandbok för dataanvändningsprinciper
 
-Adobe Experience Platform Data Governance tillhandahåller ett användargränssnitt som gör att du kan skapa och hantera dataanvändningsprinciper. Det här dokumentet innehåller en översikt över de åtgärder du kan utföra på arbetsytan _Profiler_ i användargränssnittet i Experience Platform.
+Adobe Experience Platform Data Governance tillhandahåller ett användargränssnitt som gör att du kan skapa och hantera dataanvändningsprinciper. Det här dokumentet innehåller en översikt över de åtgärder du kan utföra på arbetsytan _Profiler_ i [!DNL Experience Platform] användargränssnittet.
 
 >[!IMPORTANT] Alla dataanvändningspolicyer (inklusive kärnpolicyer från Adobe) är inaktiverade som standard. För att en enskild princip ska kunna användas för verkställighet måste du manuellt aktivera den principen. I avsnittet [Aktivera profiler](#enable) finns mer information om hur du gör detta i användargränssnittet.
 
 ## Förutsättningar
 
-Den här handboken kräver en fungerande förståelse av följande Experience Platform-koncept:
+Handboken kräver en fungerande förståelse av följande [!DNL Experience Platform] begrepp:
 
-- [Datastyrning](../home.md)
+- [!DNL Data Governance](../home.md)
 - [Dataanvändningspolicyer](./overview.md)
 
 ## Visa dataanvändningspolicyer {#view-policies}
 
-Öppna arbetsytan genom **[!UICONTROL Policies]** att klicka på i användargränssnittet för *[!UICONTROL Policies]* Experience Platform. På fliken **[!UICONTROL Browse]** kan du se en lista över tillgängliga profiler, inklusive tillhörande etiketter, marknadsföringsåtgärder och status.
+Öppna arbetsytan genom [!DNL Experience Platform] att klicka i **[!UICONTROL Policies]** användargränssnittet. *[!UICONTROL Policies]* . På fliken **[!UICONTROL Browse]** kan du se en lista över tillgängliga profiler, inklusive tillhörande etiketter, marknadsföringsåtgärder och status.
 
 ![](../images/policies/browse-policies.png)
 
@@ -37,7 +37,7 @@ Klicka på en listad profil för att visa dess beskrivning och typ. Om du välje
 
 ## Skapa en anpassad dataanvändningsprincip {#create-policy}
 
-Om du vill skapa en ny anpassad dataanvändningsprincip klickar du **[!UICONTROL Create policy]** i det övre högra hörnet på **[!UICONTROL Browse]** fliken på arbetsytan *Profiler* .
+Om du vill skapa en ny anpassad dataanvändningsprincip klickar du **[!UICONTROL Create policy]** i det övre högra hörnet av **[!UICONTROL Browse]** fliken på *[!UICONTROL Policies]* arbetsytan.
 
 ![](../images/policies/create-policy-button.png)
 
@@ -107,8 +107,8 @@ Om marknadsföringsåtgärden inte används av någon befintlig användarprofil 
 
 ## Nästa steg
 
-I det här dokumentet finns en översikt över hur du hanterar dataanvändningspolicyer i användargränssnittet för Experience Platform. Anvisningar om hur du hanterar principer med DULE Policy API finns i [utvecklarhandboken](../api/getting-started.md). Mer information om hur du tillämpar dataanvändningsprinciper finns i [policyefterlevnadsöversikten](../enforcement/overview.md).
+Det här dokumentet innehåller en översikt över hur du hanterar dataanvändningsprinciper i [!DNL Experience Platform] användargränssnittet. Anvisningar om hur du hanterar principer med DULE Policy API finns i [utvecklarhandboken](../api/getting-started.md). Mer information om hur du tillämpar dataanvändningsprinciper finns i [policyefterlevnadsöversikten](../enforcement/overview.md).
 
-I följande video visas hur du arbetar med användarprofiler i användargränssnittet i Experience Platform:
+I följande video visas hur du arbetar med användarprofiler i [!DNL Experience Platform] användargränssnittet:
 
 >[!VIDEO](https://video.tv.adobe.com/v/32977?quality=12&learn=on)
