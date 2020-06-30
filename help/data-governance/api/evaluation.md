@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Profiler
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 2997243622a7483ae23e21487128cea6badecb80
+source-git-commit: 1a835c6c20c70bf03d956c601e2704b68d4f90fa
+workflow-type: tm+mt
+source-wordcount: '940'
+ht-degree: 0%
 
 ---
 
@@ -490,6 +493,6 @@ I svaret nedan ser du att listan med `duleLabels` `discoveredLabels` är kortare
 }
 ```
 
-## Policyutvärdering för kundprofil i realtid
+## Policyutvärdering för [!DNL Real-time Customer Profile]
 
-API:t för policytjänsten kan också användas för att kontrollera om det finns policyöverträdelser som inbegriper användning av kundprofilsegment i realtid. Mer information finns i självstudiekursen om hur ni [ser till att dataanvändningen efterlevs för målgruppssegment](../../segmentation/tutorials/governance.md) .
+API:t kan också användas för att kontrollera om det finns policyöverträdelser som inbegriper användning av [!DNL Policy Service] [!DNL Real-time Customer Profile] segment. Mer information finns i självstudiekursen om hur ni [ser till att dataanvändningen efterlevs för målgruppssegment](../../segmentation/tutorials/governance.md) .
