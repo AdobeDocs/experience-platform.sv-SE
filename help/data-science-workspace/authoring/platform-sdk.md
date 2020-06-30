@@ -1,18 +1,18 @@
 ---
 keywords: Experience Platform;developer guide;SDK;Data Access SDK;Data Science Workspace;popular topics
 solution: Experience Platform
-title: Plattforms-SDK - guide
+title: Platform SDK - guide
 topic: SDK authoring
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
 workflow-type: tm+mt
-source-wordcount: '451'
-ht-degree: 0%
+source-wordcount: '447'
+ht-degree: 2%
 
 ---
 
 
-# Plattforms-SDK - guide
+# [!DNL Platform] SDK-guide
 
 I den här självstudiekursen finns information om hur du konverterar `data_access_sdk_python` till nya Python `platform_sdk` i både Python och R. I den här självstudiekursen finns information om följande åtgärder:
 
@@ -69,7 +69,7 @@ client_context <- psdk$client_context$ClientContext(api_key={API_KEY},
 
 ## Grundläggande läsning av data {#basic-reading-of-data}
 
-Med nya Platform SDK är den maximala lässtorleken 32 GB med en maximal lästid på 10 minuter.
+Med nya [!DNL Platform] SDK är den maximala lässtorleken 32 GB med en maximal lästid på 10 minuter.
 
 Om lästiden är för lång kan du försöka med att använda något av följande filtreringsalternativ:
 
@@ -144,11 +144,11 @@ df2 <- dataset_reader$where(
 df2
 ```
 
-Den nya plattforms-SDK har stöd för följande åtgärder:
+Den nya [!DNL Platform] SDK:n har stöd för följande åtgärder:
 
 | Åtgärd |  -funktion |
 | --------- | -------- |
-| Lika med (`=`) | `eq()` |
+| Är lika med (`=`) | `eq()` |
 | Större än (`>`) | `gt()` |
 | Större än eller lika med (`>=`) | `ge()` |
 | Mindre än (`<`) | `lt()` |
@@ -217,4 +217,4 @@ write_tracker <- dataset_writer$write({PANDA_DATAFRAME}, file_format='json')
 
 ## Nästa steg
 
-När du har konfigurerat datainläsaren `platform_sdk` förbereds data och delas sedan upp i `train` - och `val` datamängder. Om du vill veta mer om dataförberedelser och funktionskonstruktion kan du gå till avsnittet om [dataförberedelser och funktionskonstruktion](../jupyterlab/create-a-recipe.md#data-preparation-and-feature-engineering) i självstudiekursen för att skapa ett recept med JupyterLab-anteckningsböcker.
+När du har konfigurerat datainläsaren `platform_sdk` förbereds data och delas sedan upp i `train` - och `val` datamängder. Om du vill veta mer om dataförberedelser och funktionskonstruktion kan du gå till avsnittet om [dataförberedelser och funktionskonstruktion](../jupyterlab/create-a-recipe.md#data-preparation-and-feature-engineering) i självstudiekursen för att skapa ett recept med [!DNL JupyterLab] bärbara datorer.
