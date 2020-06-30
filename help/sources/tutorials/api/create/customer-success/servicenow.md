@@ -4,57 +4,57 @@ solution: Experience Platform
 title: Skapa en ServiceNow-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: cada7c7eff7597015caa7333559bef16a59eab65
+source-git-commit: fc5cdaa661c47e14ed5412868f3a54fd7bd2b451
 workflow-type: tm+mt
-source-wordcount: '699'
+source-wordcount: '646'
 ht-degree: 0%
 
 ---
 
 
-# Skapa en ServiceNow-koppling med API:t för Flow Service
+# Skapa en [!DNL ServiceNow] koppling med [!DNL Flow Service] API:t
 
 >[!NOTE]
->ServiceNow-kopplingen är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
+>Kopplingen [!DNL ServiceNow] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
-Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till en ServiceNow-server.
+I den här självstudiekursen används API:t för att vägleda dig genom stegen för att ansluta [!DNL Flow Service] till en [!DNL Experience Platform] [!DNL ServiceNow] server.
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av Platform tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ansluta till en ServiceNow-server med API:t för Flow Service.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till en [!DNL ServiceNow] server med hjälp av [!DNL Flow Service] API.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att Flow Service ska kunna ansluta till ServiceNow måste du ange värden för följande anslutningsegenskaper:
+För [!DNL Flow Service] att kunna ansluta till [!DNL ServiceNow]måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `endpoint` | Slutpunkten för ServiceNow-servern. |
-| `username` | Användarnamnet som används för att ansluta till ServiceNow-servern för autentisering. |
-| `password` | Lösenordet för att ansluta till ServiceNow-servern för autentisering. |
+| `endpoint` | Serverns slutpunkt.. [!DNL ServiceNow] . |
+| `username` | Användarnamnet som används för att ansluta till [!DNL ServiceNow] servern för autentisering. |
+| `password` | Lösenordet för att ansluta till [!DNL ServiceNow] servern för autentisering. |
 
 Mer information om hur du kommer igång finns i [det här ServiceNow-dokumentet](https://developer.servicenow.com/app.do#!/rest_api_doc?v=newyork&amp;id=r_TableAPI-GET).
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform, inklusive de som tillhör Flow Service, isoleras till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
@@ -64,11 +64,11 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Söka efter anslutningsspecifikationer
 
-För att kunna skapa en ServiceNow-anslutning måste det finnas en uppsättning ServiceNow-anslutningsspecifikationer i Flow Service. Det första steget i att ansluta Platform till ServiceNow är att hämta dessa specifikationer.
+För att kunna skapa en [!DNL ServiceNow] anslutning måste det finnas en uppsättning [!DNL ServiceNow] anslutningsspecifikationer inom [!DNL Flow Service]. Det första steget i att ansluta [!DNL Platform] till [!DNL ServiceNow] är att hämta dessa specifikationer.
 
 **API-format**
 
-Varje tillgänglig källa har en egen unik uppsättning anslutningsspecifikationer för att beskriva kopplingsegenskaper som autentiseringskrav. Om du skickar en GET-begäran till `/connectionSpecs` slutpunkten returneras anslutningsspecifikationerna för alla tillgängliga källor. Du kan även ta med frågan `property=name=="service-now"` för att få information om ServiceNow.
+Varje tillgänglig källa har en egen unik uppsättning anslutningsspecifikationer för att beskriva kopplingsegenskaper som autentiseringskrav. Om du skickar en GET-begäran till `/connectionSpecs` slutpunkten returneras anslutningsspecifikationerna för alla tillgängliga källor. Du kan även ta med frågan `property=name=="service-now"` för att få information som är specifik för [!DNL ServiceNow].
 
 ```http
 GET /connectionSpecs
@@ -77,7 +77,7 @@ GET /connectionSpecs?property=name=="service-now"
 
 **Begäran**
 
-Följande begäran hämtar anslutningsspecifikationerna för ServiceNow.
+Följande begäran hämtar anslutningsspecifikationerna för [!DNL ServiceNow].
 
 ```shell
 curl -X GET \
@@ -90,7 +90,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar anslutningsspecifikationerna för ServiceNow, inklusive dess unika identifierare (`id`). Detta ID krävs i nästa steg för att skapa en basanslutning.
+Ett lyckat svar returnerar anslutningsspecifikationerna för [!DNL ServiceNow], inklusive dess unika identifierare (`id`). Detta ID krävs i nästa steg för att skapa en basanslutning.
 
 ```json
 {
@@ -137,7 +137,7 @@ Ett lyckat svar returnerar anslutningsspecifikationerna för ServiceNow, inklusi
 
 ## Skapa en basanslutning
 
-En basanslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en basanslutning krävs per ServiceNow-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+En basanslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en basanslutning krävs per [!DNL ServiceNow] konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
 
 **API-format**
 
@@ -175,10 +175,10 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | ------------- | --------------- |
-| `auth.params.server` | Slutpunkten för ServiceNow-servern. |
-| `auth.params.username` | Användarnamnet som används för att ansluta till ServiceNow-servern för autentisering. |
-| `auth.params.password` | Lösenordet för att ansluta till ServiceNow-servern för autentisering. |
-| `connectionSpec.id` | Anslutningsspecifikations-ID som är associerat med ServiceNow. |
+| `auth.params.server` | Serverns slutpunkt [!DNL ServiceNow] . |
+| `auth.params.username` | Användarnamnet som används för att ansluta till [!DNL ServiceNow] servern för autentisering. |
+| `auth.params.password` | Lösenordet för att ansluta till [!DNL ServiceNow] servern för autentisering. |
+| `connectionSpec.id` | Det ID för anslutningsspecifikation som är associerat med [!DNL ServiceNow]. |
 
 **Svar**
 
@@ -193,4 +193,4 @@ Ett godkänt svar returnerar information om den nya basanslutningen, inklusive d
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en ServiceNow-basanslutning med API:t för Flow Service och fått anslutningens unika ID-värde. Du kan använda detta grundläggande anslutnings-ID i nästa självstudiekurs när du lär dig hur du [utforskar framgångsrika kundsystem med API:t](../../explore/customer-success.md)för Flow Service.
+I den här självstudiekursen har du skapat en [!DNL ServiceNow] basanslutning med hjälp av [!DNL Flow Service] -API:t och har fått anslutningens unika ID-värde. Du kan använda detta grundläggande anslutnings-ID i nästa självstudiekurs när du lär dig hur du [utforskar framgångsrika kundsystem med API:t](../../explore/customer-success.md)för Flow Service.
