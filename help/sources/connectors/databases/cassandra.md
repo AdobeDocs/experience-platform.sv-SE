@@ -4,20 +4,23 @@ solution: Experience Platform
 title: Apache Cassandra-anslutning
 topic: overview
 translation-type: tm+mt
-source-git-commit: 1fd2f526ee3efb4ae9f4d7af851bb5cd5d63cfa9
+source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+workflow-type: tm+mt
+source-wordcount: '122'
+ht-degree: 0%
 
 ---
 
 
-# Apache Cassandra-anslutning
+# [!DNL Apache Cassandra ]koppling
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som ni kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-Experience Platform har stöd för inmatning av data från en tredjepartsdatabas. Plattformen kan ansluta till olika typer av databaser, till exempel relationsdatabaser, NoSQL-databaser eller datalager. Stöd för databasleverantörer inkluderar Apache Cassandra.
+[!DNL Experience Platform] har stöd för inmatning av data från en tredjepartsdatabas. [!DNL Platform] kan ansluta till olika typer av databaser, till exempel relational, NoSQL eller data warehouse. Stöd för databasleverantörer omfattar [!DNL Apache Cassandra].
 
-Dokumentationen nedan innehåller information om hur du ansluter Apache Cassandra till plattformen med API:er:
+Dokumentationen nedan innehåller information om hur du ansluter [!DNL Apache Cassandra] till [!DNL Platform] med API:er:
 
-## Ansluta Apache Cassandra till plattformen med API:er
+## Anslut [!DNL Apache Cassandra] till [!DNL Platform] med API:er
 
 - [Skapa en Apache Cassandra-anslutning med API:t för flödestjänsten](../../tutorials/api/create/databases/cassandra.md)
 - [Utforska ett databassystem med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
