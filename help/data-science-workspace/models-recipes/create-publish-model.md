@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa och publicera genomgång av en maskininlärningsmodell
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
 workflow-type: tm+mt
-source-wordcount: '1529'
+source-wordcount: '1489'
 ht-degree: 0%
 
 ---
@@ -18,9 +18,9 @@ ht-degree: 0%
 
 Anta att du äger en webbutik. När era kunder handlar på er webbplats vill ni ge dem skräddarsydda produktrekommendationer för att visa upp en mängd andra produkter som ert företag erbjuder. Under webbplatsens hela existens har ni kontinuerligt samlat in kunddata och vill på något sätt använda dessa data för att generera personaliserade produktrekommendationer.
 
-[!DNL Adobe Experience Platform] Med Data Science Workspace kan du uppnå ditt mål med hjälp av den färdiga [produktrekommendationsrecept](../pre-built-recipes/product-recommendations.md). Följ den här självstudiekursen för att se hur du kan få tillgång till och förstå dina detaljhandelsdata, skapa och optimera en maskininlärningsmodell och generera insikter i Data Science Workspace.
+[!DNL Adobe Experience Platform] [!DNL Data Science Workspace] ger dig möjlighet att uppnå ditt mål med hjälp av den färdiga [produktrekommendationsbeskrivningen](../pre-built-recipes/product-recommendations.md). Följ den här självstudiekursen för att se hur du kan få tillgång till och förstå dina detaljhandelsdata, skapa och optimera en maskininlärningsmodell och generera insikter i [!DNL Data Science Workspace].
 
-I den här självstudiekursen visas arbetsflödet för datavetenskapen och följande steg beskrivs för att skapa en maskininlärningsmodell:
+I den här självstudiekursen visas arbetsflödet för [!DNL Data Science Workspace]och följande steg beskrivs för att skapa en maskininlärningsmodell:
 
 1. [Förbered data](#prepare-your-data)
 2. [Skapa din modell](#author-your-model)
@@ -31,7 +31,7 @@ I den här självstudiekursen visas arbetsflödet för datavetenskapen och följ
 
 Innan du startar den här självstudiekursen måste du ha följande krav:
 
-* Åtkomst till [!DNL Adobe Experience Platform]. Om du inte har tillgång till en IMS-organisation i Experience Platform, ska du tala med systemadministratören innan du fortsätter.
+* Åtkomst till [!DNL Adobe Experience Platform]. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform]kontaktar du systemadministratören innan du fortsätter.
 
 * Aktivera resurser. Kontakta din kontorepresentant om du vill ha tillgång till följande artiklar.
    * Rekommendationer, recept
@@ -42,21 +42,21 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
    * Golden Data Set postValues
    * Golden Data Set Schema
 
-* Ladda ned de tre Jupyter Notebook-filerna som krävs från <a href="https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources/Notebooks-Thurs" target="_blank">Adobes offentliga Git-databas</a>. Dessa används för att demonstrera JupyterLab-arbetsflödet i Data Science Workspace.
+* Ladda ned de tre [!DNL Jupyter Notebook] filerna som krävs från <a href="https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources/Notebooks-Thurs" target="_blank">Adobes offentliga [!DNL Git] databas</a>. De används för att demonstrera [!DNL JupyterLab] arbetsflödet i [!DNL Data Science Workspace].
 
 * En fungerande förståelse för följande viktiga begrepp som används i den här självstudiekursen:
-   * [Experience Data Model](../../xdm/home.md): Adobes standardiseringsarbete för att definiera standardscheman som Profile och ExperienceEvent för Customer Experience Management.
+   * [!DNL Experience Data Model](../../xdm/home.md): Adobes standardiseringsarbete för att definiera standardscheman som [!DNL Profile] Experience Management och ExperienceEvent.
    * Datauppsättningar: En lagrings- och hanteringskonstruktion för faktiska data. En fysisk instansierad instans av ett [XDM-schema](../../xdm/schema/field-dictionary.md).
    * Grupper: Datauppsättningar består av grupper. En batch är en uppsättning data som samlats in under en tidsperiod och som bearbetas tillsammans som en enda enhet.
-   * JupyterLab: [JupyterLab](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) är ett webbaserat gränssnitt med öppen källkod för Project Jupyter och är nära integrerat med Experience Platform.
+   * [!DNL JupyterLab]: [!DNL JupyterLab](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) är ett webbaserat gränssnitt för Project med öppen källkod [!DNL Jupyter] som är nära integrerat i [!DNL Experience Platform].
 
 ## Förbered data {#prepare-your-data}
 
-Om du vill skapa en maskininlärningsmodell som gör personaliserade produktrekommendationer till dina kunder måste du analysera tidigare kundköp på din webbplats. I det här avsnittet beskrivs hur dessa data hämtas till Platform via [!DNL Adobe Analytics]och hur dessa data omvandlas till en funktionsuppsättning som kan användas av maskininlärningsmodellen.
+Om du vill skapa en maskininlärningsmodell som gör personaliserade produktrekommendationer till dina kunder måste du analysera tidigare kundköp på din webbplats. I det här avsnittet beskrivs hur dessa data hämtas [!DNL Platform] igenom [!DNL Adobe Analytics]och hur dessa data omvandlas till en funktionsuppsättning som kan användas av maskininlärningsmodellen.
 
 ### Utforska data och förstå scheman
 
-1. Logga in på [Adobe Experience Platform](https://platform.adobe.com/) och klicka **[!UICONTROL Datasets]** för att lista alla befintliga datauppsättningar och välja den datauppsättning som du vill utforska. I det här fallet är Analytics-datauppsättningen **Golden Data Set postValues**.
+1. Logga in på [Adobe Experience Platform](https://platform.adobe.com/) och klicka **[!UICONTROL Datasets]** för att visa alla befintliga datauppsättningar och markera den datauppsättning som du vill utforska. I det här fallet, [!DNL Analytics] datauppsättningen **Golden Data Set postValues**.
    ![](../images/models-recipes/model-walkthrough/datasets_110.png)
 2. Välj **[!UICONTROL Preview Dataset]** nära det övre högra hörnet för att undersöka exempelposter och klicka sedan på **[!UICONTROL Close]**.
    ![](../images/models-recipes/model-walkthrough/golden_data_set_110.png)
@@ -67,13 +67,13 @@ De andra datauppsättningarna har fyllts i i automatiskt med grupper för förha
 
 | Namn på datauppsättning | Schema | Beskrivning |
 | ----- | ----- | ----- |
-| Golden Data Set postValues | Schema för Gyllene datauppsättning | Analysera källdata från din webbplats |
-| Indatauppsättning för rekommendationer | Rekommendationer, inmatningsschema | Analysdata omvandlas till en utbildningsdatamängd med hjälp av en funktionspipeline. Dessa data används för att utbilda maskininlärningsmodellen för produktrekommendationer. `itemid` och `userid` motsvarar en produkt som kunden köpt. |
+| Golden Data Set postValues | Schema för Gyllene datauppsättning | [!DNL Analytics] källdata från webbplatsen |
+| Indatauppsättning för rekommendationer | Rekommendationer, inmatningsschema | Data omvandlas till en [!DNL Analytics] utbildningsdatauppsättning med hjälp av en funktionspipeline. Dessa data används för att utbilda maskininlärningsmodellen för produktrekommendationer. `itemid` och `userid` motsvarar en produkt som kunden köpt. |
 | Rekommendationer, utdatauppsättning | Rekommendationer, utdataschema | Den datauppsättning som bedömningsresultat lagras för innehåller en lista med rekommenderade produkter för varje kund. |
 
 ## Skapa din modell {#author-your-model}
 
-Den andra komponenten i livscykeln för Data Science Workspace är utveckling av recept och modeller. Recept för produktrekommendationer är utformat för att generera produktrekommendationer i stor skala genom att använda tidigare inköpsdata och maskininlärning.
+Den andra komponenten i [!DNL Data Science Workspace] livscykeln innefattar utveckling av recept och modeller. Recept för produktrekommendationer är utformat för att generera produktrekommendationer i stor skala genom att använda tidigare inköpsdata och maskininlärning.
 
 Recept är grunden för en modell eftersom de innehåller maskininlärningsalgoritmer och logik som utformats för att lösa specifika problem. Viktigast av allt är att Recipes ger er möjlighet att demokratisera maskininlärningen i hela organisationen så att andra användare kan komma åt en modell för olika användningsområden utan att behöva skriva någon kod.
 
@@ -162,4 +162,4 @@ När poängsättningen är klar kan du förhandsgranska resultatet och se de ins
 
 Klart! Du har skapat produktrekommendationer!
 
-I den här självstudiekursen introducerades arbetsflödet i Data Science Workspace, som visar hur obearbetade data kan göras till användbar information via maskininlärning. Om du vill veta mer om hur du använder arbetsytan Data Science kan du fortsätta med nästa guide om hur du [skapar försäljningsschemat och datauppsättningen](./create-retails-sales-dataset.md)för detaljhandeln.
+I den här självstudiekursen presenterades arbetsflödet för [!DNL Data Science Workspace]att visa hur obearbetade data kan förvandlas till användbar information via maskininlärning. Om du vill veta mer om hur du använder [!DNL Data Science Workspace]produkten kan du fortsätta med nästa guide om [hur du skapar försäljningsschemat och datauppsättningen](./create-retails-sales-dataset.md)för detaljhandeln.
