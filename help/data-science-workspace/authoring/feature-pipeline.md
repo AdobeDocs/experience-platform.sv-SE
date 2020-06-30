@@ -4,9 +4,9 @@ solution: Adobe Experience Platform Data Science Workspace
 title: Skapa en funktionspipeline
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 20e26c874204da75cac7e8d001770702658053f1
+source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
 workflow-type: tm+mt
-source-wordcount: '1380'
+source-wordcount: '1367'
 ht-degree: 0%
 
 ---
@@ -387,7 +387,7 @@ scoring.dataSaver: MyDatasetSaver
 
 ## Skapa en rörlig motor för funktioner med API {#create-feature-pipeline-engine-api}
 
-Nu när du har skapat din funktionspipeline måste du skapa en Docker-bild för att kunna anropa funktionens pipeline-slutpunkter i API:t Sensei Machine Learning. Du behöver en Docker-bild-URL för att kunna anropa funktionens pipeline-slutpunkter.
+Nu när du har skapat din funktionspipeline måste du skapa en Docker-bild för att kunna anropa funktionens pipeline-slutpunkter i [!DNL Sensei Machine Learning] API. Du behöver en Docker-bild-URL för att kunna anropa funktionens pipeline-slutpunkter.
 
 >[!TIP]
 >Om du inte har någon Docker-URL kan du gå till [Paketkällfilerna i en recept](../models-recipes/package-source-files-recipe.md) -självstudiekurs för att stegvis gå igenom hur du skapar en Docker-värd-URL.
@@ -398,7 +398,7 @@ https://www.getpostman.com/collections/c5fc0d1d5805a5ddd41a
 
 ### Skapa en rörlig motor för funktioner {#create-engine-api}
 
-När du har din Docker-bildplats kan du [skapa en rörlig funktionsmotor](../api/engines.md#feature-pipeline-docker) med hjälp av API:t Sensei Machine Learning genom att utföra en POST till `/engines`. En rörledningsmotor för funktioner har skapat en unik identifierare (`id`) för motorn. Spara värdet innan du fortsätter.
+När du har din Docker-bildplats kan du [skapa en rörlig funktionsmotor](../api/engines.md#feature-pipeline-docker) med hjälp av [!DNL Sensei Machine Learning] API:t genom att utföra en POST till `/engines`. En rörledningsmotor för funktioner har skapat en unik identifierare (`id`) för motorn. Spara värdet innan du fortsätter.
 
 ### Skapa en MLInstance {#create-mlinstance}
 
@@ -435,4 +435,4 @@ När poängsättningen är klar bör ditt tillvägagångssätt fungera.
 
 [//]: # (Next steps section should refer to tutorials on how to score data using the feature pipeline Engine. Update this document once those tutorials are available)
 
-Genom att läsa det här dokumentet har du skapat en funktionspipeline med hjälp av Model Authoring SDK, skapat en Docker-bild och använt Docker Image URL för att skapa en funktionspipeline med hjälp av API:t Sensei Machine Learning. Du kan nu fortsätta att omvandla datauppsättningar och extrahera datafunktioner i stor skala med API:t för [Sensei Machine Learning](../api/getting-started.md).
+Genom att läsa det här dokumentet har du skapat en funktionspipeline med hjälp av Model Authoring SDK, skapat en Docker-bild och använt Docker-bildens URL för att skapa en funktionspipeline med hjälp av [!DNL Sensei Machine Learning] API. Nu kan du fortsätta att omforma datauppsättningar och extrahera datafunktioner i stor skala med [!DNL Sensei Machine Learning API](../api/getting-started.md).
