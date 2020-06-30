@@ -4,20 +4,20 @@ solution: Experience Platform
 title: Skapa en Couchbase-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 5ad763d2167c68f3293a2813248efaee22230a52
+source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
 workflow-type: tm+mt
-source-wordcount: '465'
+source-wordcount: '452'
 ht-degree: 0%
 
 ---
 
 
-# Skapa en Couchbase-källanslutning i användargränssnittet
+# Skapa en [!DNL Couchbase] källanslutning i användargränssnittet
 
 > [!NOTE]
-> Couchbase-kopplingen är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
+> Kopplingen [!DNL Couchbase] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
-Källkopplingar i [!DNL Adobe Experience Platform] ger möjlighet att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en Couchbase-källkoppling med [!DNL Platform] användargränssnittet.
+Källkopplingar i [!DNL Adobe Experience Platform] ger möjlighet att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Couchbase] källkoppling med [!DNL Platform] användargränssnittet.
 
 ## Komma igång
 
@@ -28,25 +28,25 @@ Den här självstudien kräver en fungerande förståelse av följande komponent
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [Kundprofil](../../../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Om du redan har en giltig Couchbase-anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen om hur du [konfigurerar ett dataflöde](../../dataflow/databases.md).
+Om du redan har en giltig [!DNL Couchbase] anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen om hur du [konfigurerar ett dataflöde](../../dataflow/databases.md).
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att kunna autentisera din källanslutning till Couchbase måste du ange värden för följande anslutningsegenskap:
+För att kunna autentisera [!DNL Couchbase] källkopplingen måste du ange värden för följande anslutningsegenskap:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `connectionString` | Anslutningssträngen som används för att ansluta till din Couchbase-instans. Anslutningssträngsmönstret för Couchbase är `Server={SERVER}; Port={PORT};AuthMech=1;CredString=[{\"user\": \"{USER}\", \"pass\":\"{PASS}\"}];`. Mer information om hur du hämtar en anslutningssträng finns i dokumentationen om [Couchbase-anslutningen](https://docs.Couchbase.com/c-sdk/2.10/client-settings.html#configuring-overview). |
+| `connectionString` | Anslutningssträngen som används för att ansluta till din [!DNL Couchbase] instans. Anslutningssträngsmönstret för [!DNL Couchbase] är `Server={SERVER}; Port={PORT};AuthMech=1;CredString=[{\"user\": \"{USER}\", \"pass\":\"{PASS}\"}];`. Mer information om hur du hämtar en anslutningssträng finns i dokumentationen om [Couchbase-anslutningen](https://docs.Couchbase.com/c-sdk/2.10/client-settings.html#configuring-overview). |
 
-## Anslut ditt Couchbase-konto
+## Anslut ditt [!DNL Couchbase] konto
 
-När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att skapa ett nytt Couchbase-konto att ansluta till [!DNL Platform].
+När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att skapa ett nytt [!DNL Couchbase] konto att ansluta till [!DNL Platform].
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt *[!UICONTROL Sources]* arbetsytan. På *[!UICONTROL Catalog]* skärmen visas en mängd olika källor som du kan skapa ett inkommande konto för, och varje källa visar antalet befintliga konton och datauppsättningsflöden som är kopplade till dem.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under *[!UICONTROL Databases]* kategorin väljer du **[!UICONTROL Couchbase]** klicka **på +-ikonen (+)** för att skapa en ny Couchbase-koppling.
+Under *[!UICONTROL Databases]* kategorin väljer du **[!UICONTROL Couchbase]** klicka **på +-ikonen (+)** för att skapa en ny [!DNL Couchbase] koppling.
 
 ![katalog](../../../../images/tutorials/create/couchbase/catalog.png)
 
@@ -54,16 +54,16 @@ Sidan visas *[!UICONTROL Connect to Couchbase]* . På den här sidan kan du anti
 
 ### Nytt konto
 
-Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. På indataformuläret som visas anger du en anslutning med ett namn, en valfri beskrivning och dina Couchbase-autentiseringsuppgifter. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan en tid för det nya kontot att upprätta.
+Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. Ange ett namn, en valfri beskrivning och dina [!DNL Couchbase] inloggningsuppgifter på det indataformulär som visas. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan en tid för det nya kontot att upprätta.
 
 ![koppla](../../../../images/tutorials/create/couchbase/new.png)
 
 ### Befintligt konto
 
-Om du vill ansluta ett befintligt konto väljer du det Couchbase-konto du vill ansluta till och fortsätter sedan **[!UICONTROL Next]** i det övre högra hörnet.
+Om du vill ansluta till ett befintligt konto markerar du det [!DNL Couchbase] konto du vill ansluta till och fortsätter sedan **[!UICONTROL Next]** i det övre högra hörnet.
 
 ![befintlig](../../../../images/tutorials/create/couchbase/existing.png)
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt Couchbase-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till Platform](../../dataflow/databases.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Couchbase] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till Platform](../../dataflow/databases.md).
