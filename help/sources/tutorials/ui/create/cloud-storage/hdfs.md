@@ -4,20 +4,20 @@ solution: Experience Platform
 title: Skapa en Apache HDFS-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 855f543a1cef394d121502f03471a60b97eae256
+source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
 workflow-type: tm+mt
-source-wordcount: '474'
+source-wordcount: '467'
 ht-degree: 0%
 
 ---
 
 
-# Skapa en Apache HDFS-källanslutning i användargränssnittet
+# Skapa en [!DNL Apache] HDFS-källanslutning i användargränssnittet
 
 >[!NOTE]
->Apache HDFS-kontakten är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
+>HDFS- [!DNL Apache] kontakten är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
-Källkopplingar i [!DNL Adobe Experience Platform] ger möjlighet att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du autentiserar en källanslutning för Apache Hadoop Distributed File System (nedan kallad HDFS) med hjälp av [!DNL Platform] användargränssnittet.
+Källkopplingar i [!DNL Adobe Experience Platform] ger möjlighet att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du autentiserar en [!DNL Apache Hadoop Distributed File System] (nedan kallad HDFS) källanslutning med hjälp av [!DNL Platform] användargränssnittet.
 
 ## Komma igång
 
