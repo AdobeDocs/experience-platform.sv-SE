@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Frågetjänst i anteckningsbok för Jupyter
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
 workflow-type: tm+mt
-source-wordcount: '785'
+source-wordcount: '750'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Frågetjänst i anteckningsbok för Jupyter
 
-[!DNL Adobe Experience Platform] I kan du använda SQL (Structured Query Language) i arbetsytan Data Science genom att integrera Query Service i JupyterLab som standardfunktion.
+[!DNL Adobe Experience Platform] I kan du använda SQL (Structured Query Language) i [!DNL Data Science Workspace] genom att integrera [!DNL Query Service] i [!DNL JupyterLab] som standardfunktion.
 
 I den här självstudiekursen visas exempel på SQL-frågor för vanliga användningsområden för att utforska, omforma och analysera [!DNL Adobe Analytics] data.
 
@@ -22,19 +22,19 @@ I den här självstudiekursen visas exempel på SQL-frågor för vanliga använd
 
 Innan du startar den här självstudiekursen måste du ha följande krav:
 
-- Åtkomst till [!DNL Adobe Experience Platform]. Om du inte har tillgång till en IMS-organisation i Experience Platform, ska du tala med systemadministratören innan du fortsätter
+- Åtkomst till [!DNL Adobe Experience Platform]. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform]kontaktar du systemadministratören innan du fortsätter
 
 - En [!DNL Adobe Analytics] datauppsättning
 
 - En fungerande förståelse för följande viktiga begrepp som används i den här självstudiekursen:
-   - [Experience Data Model (XDM) och XDM System](../../xdm/home.md)
-   - [Frågetjänst](../../query-service/home.md)
-   - [SQL-syntax för frågetjänst](../../query-service/sql/overview.md)
-   - [!DNL Adobe Analytics]
+   - [!DNL Experience Data Model (XDM) and XDM System](../../xdm/home.md)
+   - [!DNL Query Service](../../query-service/home.md)
+   - [!DNL Query Service SQL Syntax](../../query-service/sql/overview.md)
+   - [Adobe Analytics]
 
-## Åtkomst till JupyterLab och Query Service {#access-jupyterlab-and-query-service}
+## Åtkomst [!DNL JupyterLab] och [!DNL Query Service] {#access-jupyterlab-and-query-service}
 
-1. I [Experience Platform](https://platform.adobe.com)navigerar du till **[!UICONTROL Notebooks]** den vänstra navigeringskolumnen. Tillåt ett ögonblick för JupyterLab att läsas in.
+1. I [!DNL Experience Platform](https://platform.adobe.com)navigerar du till **[!UICONTROL Notebooks]** från den vänstra navigeringskolumnen. Tillåt ett ögonblick för JupyterLab att läsas in.
 
    ![](../images/jupyterlab/query/jupyterlab_launcher.png)
 
@@ -52,7 +52,7 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
 
 4. Hitta en datauppsättning som du vill utforska och högerklicka på listan, klicka på [!DNL Adobe Analytics] **[!UICONTROL Query Data in Notebook]** för att generera SQL-frågor i den tomma anteckningsboken.
 
-5. Klicka på den första genererade cellen som innehåller funktionen `qs_connect()` och kör den genom att klicka på uppspelningsknappen. Den här funktionen skapar en anslutning mellan din anteckningsboksinstans och frågetjänsten.
+5. Klicka på den första genererade cellen som innehåller funktionen `qs_connect()` och kör den genom att klicka på uppspelningsknappen. Den här funktionen skapar en anslutning mellan anteckningsboksinstansen och [!DNL Query Service].
 
    ![](../images/jupyterlab/query/execute.png)
 
@@ -91,7 +91,7 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
 
 Ange följande SQL-frågor i enskilda anteckningsboksceller. Kör en fråga genom att klicka på cellen och sedan klicka på **[!UICONTROL play]** knappen. Slutförda frågeresultat eller felloggar visas under den körda cellen.
 
-När en anteckningsbok är inaktiv under en längre tid kan anslutningen mellan anteckningsboken och frågetjänsten brytas. I så fall startar du om JupyterLab genom att klicka på **[!UICONTROL Power]** knappen i det övre högra hörnet.
+När en anteckningsbok är inaktiv under en längre tid kan anslutningen mellan anteckningsboken brytas och [!DNL Query Service] kan brytas. I så fall startar du om [!DNL JupyterLab] genom att klicka på **[!UICONTROL Power]** knappen i det övre högra hörnet.
 
 ![](../images/jupyterlab/query/restart_button.png)
 
@@ -119,7 +119,7 @@ ORDER  BY Hour;
 
 I ovanstående fråga ställs målet `_acp_year` i `WHERE` -satsen in på att vara värdet för `target_year`. Inkludera variabler i SQL-frågor genom att innesluta dem i klammerparenteser (`{}`).
 
-Den första raden i frågan innehåller den valfria variabeln `hourly_visitor`. Frågeresultat lagras i den här variabeln som en Pandas-dataram. Om du lagrar resultat i en dataram kan du senare visualisera frågeresultaten med ett önskat Python-paket. Kör följande Python-kod i en ny cell för att generera ett stolpdiagram:
+Den första raden i frågan innehåller den valfria variabeln `hourly_visitor`. Frågeresultat lagras i den här variabeln som en Pandas-dataram. Om du lagrar resultat i en dataram kan du senare visualisera frågeresultaten med ett önskat [!DNL Python] paket. Kör följande [!DNL Python] kod i en ny cell för att generera ett stapeldiagram:
 
 ```python
 trace = go.Bar(
@@ -209,7 +209,7 @@ GROUP BY aaid_sess_key
 ORDER BY Count DESC;
 ```
 
-Kör följande Python-kod för att generera ett histogram för antalet händelser per besökssession:
+Kör följande [!DNL Python] kod för att generera ett histogram för antalet händelser per besökssession:
 
 ```python
 data = [go.Histogram(x = events_per_session['Count'])]
@@ -283,4 +283,4 @@ LIMIT  10;
 
 ## Nästa steg <!-- omit in toc -->
 
-I den här självstudien demonstrerades några exempel på hur frågetjänsten kan användas i Jupyter-anteckningsböcker. Följ [självstudiekursen Analysera data med Jupyter Notebooks](./analyze-your-data.md) för att se hur liknande åtgärder utförs med SDK för dataåtkomst.
+I den här självstudiekursen visades några exempel på användning av exempel [!DNL Query Service] i [!DNL Jupyter] bärbara datorer. Följ [självstudiekursen Analysera data med Jupyter Notebooks](./analyze-your-data.md) för att se hur liknande åtgärder utförs med SDK för dataåtkomst.
