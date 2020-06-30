@@ -4,26 +4,26 @@ solution: Experience Platform
 title: Skapa en PostgreSQL-källkoppling i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 5ad763d2167c68f3293a2813248efaee22230a52
+source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
 workflow-type: tm+mt
-source-wordcount: '485'
+source-wordcount: '462'
 ht-degree: 0%
 
 ---
 
 
-# Skapa en PostgreSQL-källkoppling i användargränssnittet
+# Skapa en [!DNL PostgreSQL] källanslutning i användargränssnittet
 
 > [!NOTE]
-> PostgreSQL-kopplingen är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
+> Kopplingen [!DNL PostgreSQL] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
-Källkopplingar i Adobe Experience Platform ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en PostgreSQL-källkoppling (nedan kallad PSQL) med Platform användargränssnitt.
+Källkopplingar i Adobe Experience Platform ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL PostgreSQL] PSQL-källkoppling med [!DNL Platform] användargränssnittet.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
+* [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [Kundprofil](../../../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
@@ -32,7 +32,7 @@ Om du redan har en PSQL-basanslutning kan du hoppa över resten av det här doku
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få tillgång till ditt PSQL-konto på Platform måste du ange följande värde:
+För att få tillgång till ditt PSQL-konto [!DNL Platform]måste du ange följande värde:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -42,25 +42,25 @@ Mer information om hur du kommer igång finns i det här [PSQL-dokumentet](https
 
 ## Anslut ditt PSQL-konto
 
-När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att skapa en ny inkommande basanslutning som länkar ditt PSQL-konto till Platform.
+När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att skapa en ny inkommande basanslutning som du kan koppla ditt PSQL-konto till [!DNL Platform].
 
-Logga in på <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a> och välj sedan **Källor** i det vänstra navigeringsfältet för att komma åt arbetsytan *Källor* . På *katalogskärmen* visas en mängd olika källor som du kan skapa inkommande basanslutningar för, och varje källa visar antalet befintliga basanslutningar som är kopplade till dem.
+Logga in på <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a> och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt *[!UICONTROL Sources]* arbetsytan. På *[!UICONTROL Catalog]* skärmen visas en mängd olika källor som du kan skapa inkommande basanslutningar med, och varje källa visar antalet befintliga basanslutningar som är kopplade till dem.
 
-Under kategorin *Databaser* väljer du **PostgreSQL DB** för att visa ett informationsfält till höger på skärmen. Informationsfältet innehåller en kort beskrivning av den valda källan samt alternativ för att ansluta till källan eller visa dess dokumentation. Välj **Anslut källa** om du vill skapa en ny inkommande basanslutning.
+Under *[!UICONTROL Databases]* kategorin väljer du **[!UICONTROL PostgreSQL DB]** att visa ett informationsfält till höger på skärmen. Informationsfältet innehåller en kort beskrivning av den valda källan samt alternativ för att ansluta till källan eller visa dess dokumentation. Välj **[!UICONTROL Connect source]** om du vill skapa en ny inkommande basanslutning.
 
 ![](../../../../images/tutorials/create/psql/catalog.png)
 
-Sidan *Anslut till PSQL* visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
+Sidan visas *[!UICONTROL Connect to PSQL]* . På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
 ### Nytt konto
 
-Om du använder nya autentiseringsuppgifter väljer du **Nytt konto**. På indataformuläret som visas anger du basanslutningen med ett namn, en valfri beskrivning och dina PSQL-autentiseringsuppgifter. När du är klar väljer du **Anslut** och tillåt sedan en tid för att upprätta den nya basanslutningen.
+Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. På indataformuläret som visas anger du basanslutningen med ett namn, en valfri beskrivning och dina PSQL-autentiseringsuppgifter. När du är klar väljer du **[!UICONTROL Connect]** och tillåt sedan lite tid för att upprätta den nya basanslutningen.
 
 ![](../../../../images/tutorials/create/psql/connect.png)
 
 ### Befintligt konto
 
-Om du vill ansluta ett befintligt konto väljer du det PSQL-konto som du vill ansluta till och sedan väljer du **Nästa** för att fortsätta.
+Om du vill ansluta ett befintligt konto väljer du det PSQL-konto som du vill ansluta till och väljer sedan **[!UICONTROL Next]** att fortsätta.
 
 ![](../../../../images/tutorials/create/psql/existing.png)
 
