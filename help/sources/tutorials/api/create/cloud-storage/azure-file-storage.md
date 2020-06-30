@@ -4,58 +4,58 @@ solution: Experience Platform
 title: Skapa en Azure File Storage-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: c843ebb72ee3f1e8d2233dd2be4021403417813b
+source-git-commit: 11431ffcfc2204931fe3e863bfadc7878a40b49c
 workflow-type: tm+mt
-source-wordcount: '626'
+source-wordcount: '552'
 ht-degree: 0%
 
 ---
 
 
-# Skapa en Azure File Storage-koppling med API:t för Flow Service
+# Skapa en [!DNL Azure File Storage] koppling med [!DNL Flow Service] API:t
 
 >[!NOTE]
->Azure File Storage-kopplingen är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
+>Kopplingen [!DNL Azure File Storage] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
-Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Azure File Storage till Experience Platform.
+I den här självstudiekursen används API:t för att vägleda dig genom de olika stegen för att ansluta [!DNL Flow Service] till [!DNL Azure File Storage] [!DNL Experience Platform].
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av Platform tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md): [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ansluta till Azure File Storage med API:t för Flow Service.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL Azure File Storage] med [!DNL Flow Service] API:t.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att Flow Service ska kunna ansluta till Azure File Storage måste du ange värden för följande anslutningsegenskaper:
+För [!DNL Flow Service] att kunna ansluta till [!DNL Azure File Storage]måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `host` | Slutpunkten för Azure File Storage-instansen som du försöker komma åt. |
-| `userId` | Användaren med tillräcklig åtkomst till Azure File Storage-slutpunkten. |
-| `password` | Lösenordet för din Azure File Storage-instans |
-| ID för anslutningsspecifikation | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspec-ID för Azure File Storage är: `be5ec48c-5b78-49d5-b8fa-7c89ec4569b8` |
+| `host` | Slutpunkten för den [!DNL Azure File Storag]e-instans som du försöker komma åt. |
+| `userId` | Användaren har tillräcklig åtkomst till [!DNL Azure File Storage] slutpunkten. |
+| `password` | Lösenordet för din [!DNL Azure File Storage] instans |
+| ID för anslutningsspecifikation | Den unika identifierare som krävs för att skapa en anslutning. Anslutningens spec ID för [!DNL Azure File Storage] är: `be5ec48c-5b78-49d5-b8fa-7c89ec4569b8` |
 
 Mer information om hur du kommer igång finns i [det här Azure File Storage-dokumentet](https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-windows).
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform, inklusive de som tillhör Flow Service, isoleras till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
@@ -75,7 +75,7 @@ POST /connections
 
 **Begäran**
 
-Följande begäran skapar en ny Azure File Storage-anslutning som konfigurerats med egenskaperna som anges i nyttolasten:
+Följande begäran skapar en ny [!DNL Azure File Storage] anslutning som konfigureras av egenskaperna som anges i nyttolasten:
 
 
 ```shell
@@ -106,10 +106,10 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `auth.params.host` | Slutpunkten för Azure File Storage-instansen som du försöker komma åt. |
-| `auth.params.userId` | Användaren med tillräcklig åtkomst till Azure File Storage-slutpunkten. |
-| `auth.params.password` | Åtkomstnyckeln för Azure File Storage. |
-| `connectionSpec.id` | Anslutningsspecifikation-ID för Azure File Storage: `be5ec48c-5b78-49d5-b8fa-7c89ec4569b8`. |
+| `auth.params.host` | Slutpunkten för den [!DNL Azure File Storage] instans du försöker komma åt. |
+| `auth.params.userId` | Användaren har tillräcklig åtkomst till [!DNL Azure File Storage] slutpunkten. |
+| `auth.params.password` | Åtkomstnyckeln [!DNL Azure File Storage] . |
+| `connectionSpec.id` | ID för [!DNL Azure File Storage] anslutningsspecifikation: `be5ec48c-5b78-49d5-b8fa-7c89ec4569b8`. |
 
 **Svar**
 
@@ -124,4 +124,4 @@ Ett godkänt svar returnerar information om den nya anslutningen, inklusive dess
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en Azure File Storage-anslutning med API:t för Flow Service och fått anslutningens unika ID-värde. Du kan använda det här ID:t i nästa självstudiekurs när du lär dig hur du [utforskar ett molnlagringsutrymme från tredje part med API:t](../../explore/cloud-storage.md)för Flow Service.
+Genom att följa den här självstudiekursen har du skapat en [!DNL Azure File Storage] anslutning med hjälp av [!DNL Flow Service] API:t och fått anslutningens unika ID-värde. Du kan använda det här ID:t i nästa självstudiekurs när du lär dig hur du [utforskar ett molnlagringsutrymme från tredje part med API:t](../../explore/cloud-storage.md)för Flow Service.
