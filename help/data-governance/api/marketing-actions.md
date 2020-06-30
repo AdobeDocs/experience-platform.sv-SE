@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Marknadsföringsåtgärder
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 08d02e7323f75c450e7a250835f26a569685cdd1
+source-git-commit: 1a835c6c20c70bf03d956c601e2704b68d4f90fa
+workflow-type: tm+mt
+source-wordcount: '536'
+ht-degree: 0%
 
 ---
 
 
 # Marknadsföringsåtgärder
 
-En marknadsföringsåtgärd, inom ramen för Adobe Experience Platform Data Governance, är en åtgärd som en Experience Platform-datakonsument vidtar, och där det finns ett behov av att kontrollera överträdelser av dataanvändningspolicyer.
+En marknadsföringsåtgärd, inom ramen för datastyrningen i Adobe Experience Platform, är en åtgärd som en [!DNL Experience Platform] datakonsument vidtar, och där det finns ett behov av att kontrollera om dataanvändningspolicyer har överträtts.
 
 När du arbetar med marknadsföringsåtgärder i API måste du använda `/marketingActions` slutpunkten.
 
@@ -139,7 +142,7 @@ Svarsobjektet innehåller information om marknadsföringsåtgärden, inklusive d
 
 ## Skapa eller uppdatera en marknadsföringsåtgärd
 
-Med Policy Service API kan ni definiera egna marknadsföringsåtgärder samt uppdatera befintliga. Både skapande och uppdatering görs med en PUT-åtgärd till namnet på marknadsföringsåtgärden.
+Med [!DNL Policy Service] API kan ni definiera egna marknadsföringsåtgärder och uppdatera befintliga. Både skapande och uppdatering görs med en PUT-åtgärd till namnet på marknadsföringsåtgärden.
 
 **API-format**
 
@@ -192,7 +195,7 @@ Om det skapas får du en HTTP-status 201 (Skapad) och svarstexten innehåller in
 
 ## Ta bort en marknadsföringsåtgärd
 
-Det går att ta bort marknadsföringsåtgärder genom att skicka en DELETE-begäran till den del `{marketingActionName}` av marknadsföringsåtgärden som du vill ta bort.
+Det går att ta bort marknadsföringsåtgärder genom att skicka en DELETE-begäran till den `{marketingActionName}` del av marknadsföringsåtgärden som du vill ta bort.
 
 >[!NOTE] Du kan inte ta bort marknadsföringsåtgärder som refereras av befintliga profiler. Om du försöker göra det kommer det att resultera i ett 400-fel (felaktig begäran) tillsammans med ett felmeddelande som innehåller `id` (eller flera ID:n) för en princip (eller principer) som innehåller en referens till den marknadsföringsåtgärd som du försöker ta bort.
 
