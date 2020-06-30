@@ -4,33 +4,36 @@ solution: Experience Platform
 title: Övervaka konton och datauppsättningsflöden
 topic: overview
 translation-type: tm+mt
-source-git-commit: fc0a406bdea7b31e046d02427805a9deba557e93
+source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+workflow-type: tm+mt
+source-wordcount: '448'
+ht-degree: 0%
 
 ---
 
 
 # Övervaka konton och datauppsättningsflöden
 
-Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källdata på schemalagd basis. I den här självstudien beskrivs hur du visar befintliga konton och datauppsättningsflöden från arbetsytan *Källor* .
+Källkopplingar i Adobe Experience Platform ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du visar befintliga konton och datauppsättningsflöden från *[!UICONTROL Sources]* arbetsytan.
 
 ## Komma igång
 
-Den här självstudien kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [Experience Data Model (XDM) System](../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
+- [Experience Data Model (XDM) System](../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
    - [Grundläggande om schemakomposition](../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    - [Schemaredigeraren, genomgång](../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 - [Kundprofil](../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 ## Övervaka konton
 
-Logga in på <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a> och välj sedan **Källor** i det vänstra navigeringsfältet för att komma åt arbetsytan *Källor* . På *katalogskärmen* visas en rad olika källor som du kan skapa datauppsättningsflöden för konton med. Varje källa visar antalet befintliga konton och datauppsättningsflöden som är kopplade till dem.
+Logga in på <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a> och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt *[!UICONTROL Sources]* arbetsytan. På *[!UICONTROL Catalog]* skärmen visas en mängd olika källor som du kan skapa datauppsättningsflöden för konton med. Varje källa visar antalet befintliga konton och datauppsättningsflöden som är kopplade till dem.
 
-Välj *Konton* i den övre rubriken om du vill visa befintliga konton.
+Välj *[!UICONTROL Accounts]* i den övre rubriken om du vill visa befintliga konton.
 
 ![katalog](../../images/tutorials/monitor/catalog.png)
 
-Sidorna *Konton* visas. På den här sidan finns en lista med visningsbara konton, inklusive information om källa, användarnamn, antal datauppsättningsflöden och datum när de skapades.
+Sidorna *[!UICONTROL Accounts]* visas. På den här sidan finns en lista med visningsbara konton, inklusive information om källa, användarnamn, antal datauppsättningsflöden och datum när de skapades.
 
 Välj ikonen längst upp till vänster för att starta sorteringsfönstret.
 
@@ -40,17 +43,17 @@ På sorteringspanelen kan du komma åt konton från en viss källa. Välj den k�
 
 ![välj konton](../../images/tutorials/monitor/accounts-sort.png)
 
-På sidan *Konton* kan du visa en lista över befintliga datauppsättningsflöden som är kopplade till det konto du har öppnat. Välj det datauppsättningsflöde som du vill visa.
+På *[!UICONTROL Accounts]* sidan kan du visa en lista över befintliga datauppsättningsflöden som är kopplade till kontot du har öppnat. Välj det datauppsättningsflöde som du vill visa.
 
 ![kontosida](../../images/tutorials/monitor/dataset-flows.png)
 
-Aktivitetsskärmen för *datauppsättningsflödet* visas. På den här sidan visas hur många meddelanden som används i form av ett diagram.
+Skärmen visas *[!UICONTROL Dataset flow activity]* . På den här sidan visas hur många meddelanden som används i form av ett diagram.
 
 ![dataset-flow-activity](../../images/tutorials/monitor/dataset-flows-activity.png)
 
 ## Övervaka datauppsättningsflöden
 
-Datauppsättningsflöden kan nås direkt från *katalogsidan* utan att du behöver visa *konton*. Välj *Datauppsättningsflöden* i den övre rubriken om du vill visa en lista över befintliga datauppsättningsflöden.
+Datauppsättningsflöden kan nås direkt från *[!UICONTROL Catalog]* sidan utan att visas *[!UICONTROL Accounts]*. Välj *[!UICONTROL Dataset flows]* i den översta rubriken om du vill visa en lista över befintliga datauppsättningsflöden.
 
 ![datauppsättningsflöden](../../images/tutorials/monitor/dataset-flows-list.png)
 
@@ -58,7 +61,7 @@ På liknande sätt som konton kan du sortera listan med datauppsättningsflöden
 
 ![select-dataset-flows](../../images/tutorials/monitor/dataset-flows-sort.png)
 
-Aktivitetsskärmen för *datauppsättningsflödet* visas. På den här sidan visas hur många meddelanden som används i form av ett diagram.
+Skärmen visas *[!UICONTROL Dataset flow activity]* . På den här sidan visas hur många meddelanden som används i form av ett diagram.
 
 ![dataset-flow-activity](../../images/tutorials/monitor/dataset-flows-activity.png)
 
@@ -66,7 +69,7 @@ Mer information om övervakning av datauppsättningar och förtäring finns i sj
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du fått åtkomst till befintliga konton och datauppsättningsflöden från arbetsytan *Källor* . Inkommande data kan nu användas av plattformstjänster längre fram i kedjan, t.ex. kundprofil i realtid och datavetenskapen. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du fått åtkomst till befintliga konton och datauppsättningsflöden från *[!UICONTROL Sources]* arbetsytan. Inkommande data kan nu användas av [!DNL Platform] tjänster längre fram i kedjan som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 - [Översikt över kundprofiler i realtid](../../../profile/home.md)
 - [Översikt över arbetsytan Datavetenskap](../../../data-science-workspace/home.md)
