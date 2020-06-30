@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform datastyrning
 topic: overview
 translation-type: tm+mt
-source-git-commit: 42d4fe7eecf1f64fab1c9554cfdc4bfeb42ffdeb
+source-git-commit: d4964231ee957349f666eaf6b0f5729d19c408de
 workflow-type: tm+mt
-source-wordcount: '1462'
+source-wordcount: '1448'
 ht-degree: 0%
 
 ---
@@ -14,9 +14,9 @@ ht-degree: 0%
 
 # Datastyrning - översikt
 
-En av kärnfunktionerna i Adobe Experience Platform är att sammanföra data från olika affärssystem så att marknadsförarna bättre kan identifiera, förstå och engagera sina kunder. Dessa data kan vara föremål för användarbegränsningar som fastställts av din organisation eller av juridiska bestämmelser. Det är därför viktigt att se till att dataåtgärderna i Platform är kompatibla med dataanvändningspolicyer.
+En av kärnfunktionerna i Adobe Experience Platform är att sammanföra data från olika affärssystem så att marknadsförarna bättre kan identifiera, förstå och engagera sina kunder. Dessa data kan vara föremål för användarbegränsningar som fastställts av din organisation eller av juridiska bestämmelser. Det är därför viktigt att se till att dataåtgärderna i [!DNL Platform] är kompatibla med dataanvändningspolicyer.
 
-Med Adobe Experience Platform Data Governance kan ni hantera kunddata och se till att ni följer regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en nyckelroll på olika nivåer inom Experience Platform, bland annat för katalogisering, datalinje, märkning av dataanvändning, dataanvändningspolicyer och kontroll av användningen av data för marknadsföringsåtgärder.
+Med Adobe Experience Platform Data Governance kan ni hantera kunddata och se till att ni följer regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en viktig roll på [!DNL Experience Platform] olika nivåer, bland annat i fråga om katalogisering, datalinje, dataanvändningsetiketter, dataanvändningspolicyer och kontroll av användningen av data för marknadsföringsåtgärder.
 
 ## Datastyrningsroller
 
@@ -44,7 +44,7 @@ Marknadsförarna är slutpunkten för datastyrning. De begär data från den inf
 
 ## DULE-ramverk
 
-Varumärkning och verkställighet av dataanvändning (DULE) är grundramverket för datastyrning i Experience Platform. DULE förenklar och effektiviserar arbetet med att kategorisera data och skapa principer för dataanvändning. När dataetiketter har tillämpats och dataanvändningspolicyer har införts kan marknadsföringsåtgärder utvärderas för att säkerställa korrekt dataanvändning.
+DULE (Data Usage Labeling and Enforcement) är grundramverket för [!DNL Experience Platform] datastyrning. DULE förenklar och effektiviserar arbetet med att kategorisera data och skapa principer för dataanvändning. När dataetiketter har tillämpats och dataanvändningspolicyer har införts kan marknadsföringsåtgärder utvärderas för att säkerställa korrekt dataanvändning.
 
 DULE-ramverket består av tre nyckelelement: Etiketter, profiler och verkställighet.
 
@@ -66,17 +66,17 @@ DULE-ramverket innehåller fördefinierade etiketter för dataanvändning som ka
 
 >[!NOTE] I guiden om [dataanvändningsetiketter](labels/reference.md) som stöds finns en fullständig lista över tillgängliga etiketter samt definitioner för varje etiketttyp.
 
-Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. Bästa praxis uppmuntrar till märkning av data så snart de har importerats till Experience Platform, eller så snart data blir tillgängliga i Platform.
+Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. Bästa praxis uppmuntrar till etikettering av data så snart de har importerats till [!DNL Experience Platform]eller så snart data blir tillgängliga i [!DNL Platform].
 
 Mer information finns i översikten över [dataanvändningsetiketter](./labels/overview.md) .
 
 ## Dataanvändningspolicyer
 
-För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste dataanvändningsprinciper implementeras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom Experience Platform.
+För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste dataanvändningsprinciper implementeras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom [!DNL Experience Platform].
 
 Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en datauppsättning till en tredjepartstjänst. Om det finns en policy som säger att vissa typer av data, t.ex. PII (Personally Identiitable Information), inte kan exporteras och att ID-etiketten (Identity data) har tillämpats på datauppsättningen, får du ett svar från principtjänsten som säger att en dataanvändningspolicy har överträtts.
 
-När dataanvändningsetiketterna har tillämpats kan datahanterarna skapa principer med DULE Policy Service API eller Experience Platform användargränssnitt.
+När dataanvändningsetiketterna har tillämpats kan datahanterarna skapa principer med DULE Policy Service API eller [!DNL Experience Platform] användargränssnittet.
 
 >[!IMPORTANT] Alla dataanvändningspolicyer (inklusive kärnpolicyer från Adobe) är inaktiverade som standard. För att en enskild princip ska kunna användas för verkställighet måste du manuellt aktivera den principen.
 
@@ -117,7 +117,7 @@ I följande tabell visas nyckeltermer för datastyrning och DULE-ramverket.
 | **Geofence** | En geofence är en virtuell geografisk gräns, som definieras av GPS- eller RFID-teknik, som gör att programvara kan utlösa ett svar när en mobil enhet kommer in i eller lämnar ett visst område. |
 | **Identitetsetiketter** | Identitet&quot;I&quot;-etiketter används för att kategorisera data som kan identifiera eller kontakta en viss person. |
 | **Intressebaserad målinriktning** | Intressebaserad målinriktning, som också kallas personalisering, uppstår om följande tre villkor uppfylls: data som samlas in på webbplatsen används för att dra slutsatser om en användares intresse, i ett annat sammanhang, t.ex. på en annan webbplats eller i en app (utanför webbplatsen) och används för att välja vilket innehåll eller vilka annonser som ska hanteras baserat på dessa slutsatser. |
-| **Marknadsföringsåtgärd** | En marknadsföringsåtgärd, inom ramen för datastyrningsramverket, är en åtgärd som en datakonsument i Experience Platform vidtar, där det finns ett behov av att kontrollera överträdelser av dataanvändningspolicyer |
+| **Marknadsföringsåtgärd** | En marknadsföringsåtgärd, inom ramen för datastyrningsramverket, är en åtgärd som en [!DNL Experience Platform] datakonsument vidtar och för vilken det finns ett behov av att kontrollera överträdelser av dataanvändningspolicyer |
 | **Policy** | I ramverket för datastyrning är en regel som beskriver vilken typ av marknadsföringsåtgärder som tillåts eller inte tillåts att vidtas för specifika data. |
 | **Känsliga etiketter** | Känsliga S-etiketter används för att kategorisera data som du, och din organisation, anser vara känsliga. |
 
