@@ -4,29 +4,32 @@ solution: Experience Platform
 title: Utforska ett molnlagringssystem med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 7cd9bec7336d0e1d9f3036cf862633f498002af8
+source-git-commit: fc5cdaa661c47e14ed5412868f3a54fd7bd2b451
+workflow-type: tm+mt
+source-wordcount: '682'
+ht-degree: 0%
 
 ---
 
 
-# Utforska ett molnlagringssystem med API:t för Flow Service
+# Utforska ett molnlagringssystem med hjälp av [!DNL Flow Service] API
 
-Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudien används API:t för Flow Service för att utforska ett molnlagringssystem från en annan leverantör.
+I den här självstudiekursen används API:t för att utforska ett molnlagringssystem från tredje part. [!DNL Flow Service]
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../home.md): Med Experience Platform kan data hämtas från olika källor samtidigt som ni kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
-* [Sandlådor](../../../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../home.md): [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster.
+* [Sandlådor](../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ansluta till ett molnlagringssystem med API:t för Flow Service.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till ett molnlagringssystem med hjälp av [!DNL Flow Service] API:t.
 
 ### Hämta en basanslutning
 
-För att kunna utforska en molnlagring från tredje part med hjälp av plattforms-API:er måste du ha ett giltigt basanslutnings-ID. Om du inte redan har en basanslutning för det lagringsutrymme du vill arbeta med kan du skapa en genom följande självstudier:
+För att kunna utforska molnlagring från tredje part med hjälp av API: [!DNL Platform] er måste du ha ett giltigt ID för basanslutningen. Om du inte redan har en basanslutning för det lagringsutrymme du vill arbeta med kan du skapa en genom följande självstudier:
 
 * [Amazon S3](../create/cloud-storage/s3.md)
 * [Azure Blob](../create/cloud-storage/blob.md)
@@ -36,17 +39,17 @@ För att kunna utforska en molnlagring från tredje part med hjälp av plattform
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform, inklusive de som tillhör Flow Service, isoleras till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
@@ -63,7 +66,7 @@ Med basanslutningen för ditt molnlagringsutrymme kan du utforska filer och kata
 | `objectType` | Den typ av objekt som du vill utforska. Ange det här värdet som antingen: <ul><li>`folder`: Utforska en specifik katalog</li><li>`root`: Utforska rotkatalogen.</li></ul> |
 | `object` | Den här parametern krävs bara när du visar en viss katalog. Dess värde representerar sökvägen till den katalog du vill utforska. |
 
-Använd följande anrop för att hitta sökvägen till filen som du vill hämta till plattformen:
+Använd följande anrop för att hitta sökvägen till filen som du vill hämta till [!DNL Platform]:
 
 **API-format**
 
@@ -165,4 +168,4 @@ Ett lyckat svar returnerar strukturen för den efterfrågade filen inklusive tab
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du utforskat ditt molnlagringssystem, hittat sökvägen till filen som du vill hämta till plattformen och visat dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in data från ditt molnlagringsutrymme och överföra dem till plattformen](../collect/cloud-storage.md).
+Genom att följa den här självstudiekursen har du utforskat ditt molnlagringssystem, hittat sökvägen till filen som du vill hämta till [!DNL Platform]och visat dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in data från ditt molnlagringsutrymme och överföra dem till Platform](../collect/cloud-storage.md).
