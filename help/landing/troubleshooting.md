@@ -4,35 +4,35 @@ solution: Experience Platform
 title: Vanliga frågor om Adobe Experience Platform och felsökningsguide
 topic: getting started
 translation-type: tm+mt
-source-git-commit: d9aa21a7439a6c40f6f51dfbdf5c7b3690c4593a
+source-git-commit: 2e5668a8b1d5fb831188fbd4e453b9f4aa7474df
 workflow-type: tm+mt
-source-wordcount: '2001'
-ht-degree: 0%
+source-wordcount: '1959'
+ht-degree: 1%
 
 ---
 
 
-# Vanliga frågor om plattformen och felsökningsguide
+# [!DNL Platform] Vanliga frågor och felsökningsguide
 
-Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform samt en högnivåguide för felsökning av vanliga fel som kan uppstå i alla Experience Platform API:er. Felsökningsguider för enskilda plattformstjänster finns i [tjänstens felsökningskatalog](#service-troubleshooting-directory) nedan.
+Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform samt en felsökningsguide på hög nivå för vanliga fel som kan uppstå i alla [!DNL Experience Platform] API:er. Felsökningsguider för enskilda [!DNL Platform] tjänster finns i [tjänstens felsökningskatalog](#service-troubleshooting-directory) nedan.
 
 ## Vanliga frågor {#faq}
 
-Nedan följer en lista med svar på vanliga frågor om Adobe Experience Platform.
+Här följer en lista med svar på vanliga frågor om Adobe Experience Platform.
 
-## Vad är Experience Platform API:er? {#what-are-experience-platform-apis}
+## Vad är [!DNL Experience Platform] API:er? {#what-are-experience-platform-apis}
 
-Experience Platform erbjuder flera RESTful-API:er som använder HTTP-begäranden för att komma åt plattformsresurser. Dessa tjänst-API:er visar var och en flera slutpunkter och gör att du kan utföra åtgärder för att lista (GET), söka (GET), redigera (PUT och/eller PATCH) och ta bort (DELETE) resurser. Mer information om specifika slutpunkter och åtgärder som är tillgängliga för respektive tjänst finns i [API-referensdokumentationen](https://www.adobe.io/apis/experienceplatform/home/api-reference.html) för Adobe I/O.
+[!DNL Experience Platform] erbjuder flera RESTful-API:er som använder HTTP-begäranden för att komma åt [!DNL Platform] resurser. Dessa tjänst-API:er visar var och en flera slutpunkter och gör att du kan utföra åtgärder för att lista (GET), söka (GET), redigera (PUT och/eller PATCH) och ta bort (DELETE) resurser. Mer information om specifika slutpunkter och åtgärder som är tillgängliga för respektive tjänst finns i [API-referensdokumentationen](https://www.adobe.io/apis/experienceplatform/home/api-reference.html) för Adobe I/O.
 
 ## Hur formaterar jag en API-begäran? {#how-do-i-format-an-api-request}
 
-Format för förfrågningar varierar beroende på vilken plattform-API som används. Det bästa sättet att lära sig att strukturera API-anrop är att följa med exemplen i dokumentationen för den plattformstjänst du använder.
+Format för förfrågningar varierar beroende på vilket API som [!DNL Platform] används. Det bästa sättet att lära sig att strukturera API-anrop är att följa med exemplen i dokumentationen för den aktuella [!DNL Platform] tjänsten.
 
 ### Läser exempel-API-anrop
 
-I dokumentationen för Experience Platform visas exempel-API-anrop på två olika sätt. Först presenteras anropet i dess **API-format**, en mallrepresentation som endast visar åtgärden (GET, POST, PUT, PATCH, DELETE) och slutpunkten som används (till exempel `/global/classes`). Vissa mallar visar också var det finns variabler för att illustrera hur ett anrop ska formuleras, till exempel `GET /{VARIABLE}/classes/{ANOTHER_VARIABLE}`.
+I dokumentationen för [!DNL Experience Platform] visas exempel-API-anrop på två olika sätt. Först presenteras anropet i dess **API-format**, en mallrepresentation som endast visar operationen (GET, POST, PUT, PATCH, DELETE) och slutpunkten som används (till exempel `/global/classes`). Vissa mallar visar också var det finns variabler för att illustrera hur ett anrop ska formuleras, till exempel `GET /{VARIABLE}/classes/{ANOTHER_VARIABLE}`.
 
-Anropen visas sedan som cURL-kommandon i en **begäran**, som innehåller nödvändiga rubriker och fullständig &quot;bassökväg&quot; som behövs för att interagera med API:t. Basbanan ska vara förpended för alla slutpunkter. Den tidigare nämnda `/global/classes` slutpunkten blir till exempel `https://platform.adobe.io/data/foundation/schemaregistry/global/classes`. Du kommer att se API-formatet/begäranmönstret i hela dokumentationen och förväntas använda den fullständiga sökvägen som visas i exempelbegäran när du anropar egna API:er för plattformen.
+Anropen visas sedan som cURL-kommandon i en **begäran**, som innehåller nödvändiga rubriker och fullständig &quot;bassökväg&quot; som behövs för att interagera med API:t. Basbanan ska vara förpended för alla slutpunkter. Den tidigare nämnda `/global/classes` slutpunkten blir till exempel `https://platform.adobe.io/data/foundation/schemaregistry/global/classes`. Du kommer att se API-formatet/begäranmönstret i hela dokumentationen och förväntas använda den fullständiga sökvägen som visas i exempelbegäran när du anropar Platform API:er.
 
 ### Exempel på API-begäran
 
@@ -84,15 +84,15 @@ Svaret visar vad du förväntar dig efter ett lyckat anrop till API:t, baserat p
 }
 ```
 
-Mer information om specifika slutpunkter i plattforms-API:er, inklusive obligatoriska huvuden och begärandetexter, finns i [API-referensdokumentationen](https://www.adobe.io/apis/experienceplatform/home/api-reference.html).
+Mer information om specifika slutpunkter i Platform API:er, inklusive obligatoriska rubriker och förfrågningsbrödtext, finns i [API-referensdokumentationen](https://www.adobe.io/apis/experienceplatform/home/api-reference.html).
 
 ## Vad är min IMS-organisation? {#what-is-my-ims-organization}
 
-En IMS-organisation är en Adobe-representation av en kund. Alla licensierade Adobe-lösningar är integrerade med denna kundorganisation. När en IMS-organisation är berättigad till Experience Platform kan den tilldela utvecklare åtkomst. IMS-organisationsnumret (`x-gw-ims-org-id`) representerar organisationen som ett API-anrop ska köras för och därför krävs som huvud i alla API-begäranden. Detta ID finns på [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui): på fliken **Integrationer** navigerar du till avsnittet **Översikt** för en viss integrering för att hitta ID:t under **Klientautentiseringsuppgifter**. En steg-för-steg-genomgång av hur du autentiserar dig på plattformen finns i [självstudiekursen](../tutorials/authentication.md)för autentisering.
+En IMS-organisation är en Adobe-representation av en kund. Alla licensierade Adobe-lösningar är integrerade med denna kundorganisation. När en IMS-organisation har rätt till [!DNL Experience Platform]kan den tilldela utvecklare åtkomst. IMS-organisationsnumret (`x-gw-ims-org-id`) representerar organisationen som ett API-anrop ska köras för och därför krävs som huvud i alla API-begäranden. Detta ID finns på [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui): på fliken **Integrationer** navigerar du till avsnittet **Översikt** för en viss integrering för att hitta ID:t under **Klientautentiseringsuppgifter**. En stegvis genomgång av hur du autentiserar dig [!DNL Platform]finns i [självstudiekursen](../tutorials/authentication.md)för autentisering.
 
 ## Var hittar jag min API-nyckel? {#where-can-i-find-my-api-key}
 
-En API-nyckel krävs som huvud i alla API-begäranden. Du hittar den på [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). På fliken **Integrationer** i konsolen går du till **Översikt** för en viss integrering och du hittar nyckeln under **Klientautentiseringsuppgifter**. En steg-för-steg-genomgång av hur du autentiserar till Platform finns i [självstudiekursen](../tutorials/authentication.md)för autentisering.
+En API-nyckel krävs som huvud i alla API-begäranden. Du hittar den på [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). På fliken **Integrationer** i konsolen går du till **Översikt** för en viss integrering och du hittar nyckeln under **Klientautentiseringsuppgifter**. En stegvis genomgång av hur du autentiserar dig [!DNL Platform]finns i [självstudiekursen](../tutorials/authentication.md)för autentisering.
 
 ## Hur får jag en åtkomsttoken? {#how-do-i-get-an-access-token}
 
@@ -100,7 +100,7 @@ En API-nyckel krävs som huvud i alla API-begäranden. Du hittar den på [Adobe 
 
 ## Hur använder jag frågeparametrar? {#how-do-i-user-query-parameters}
 
-Vissa API-slutpunkter för plattformar accepterar frågeparametrar för att hitta specifik information och filtrera resultaten som returneras i svaret. Frågeparametrar läggs till för att begära sökvägar med ett frågetecken (`?`), följt av en eller flera frågeparametrar med formatet `paramName=paramValue`. När du kombinerar flera parametrar i ett enda anrop måste du använda ett et-tecken (`&`) för att separera enskilda parametrar. I följande exempel visas hur en begäran som använder flera frågeparametrar återges i dokumentationen.
+Vissa API- [!DNL Platform] slutpunkter accepterar frågeparametrar för att hitta specifik information och filtrera resultaten som returneras i svaret. Frågeparametrar läggs till för att begära sökvägar med ett frågetecken (`?`), följt av en eller flera frågeparametrar med formatet `paramName=paramValue`. När du kombinerar flera parametrar i ett enda anrop måste du använda ett et-tecken (`&`) för att separera enskilda parametrar. I följande exempel visas hur en begäran som använder flera frågeparametrar återges i dokumentationen.
 
 Exempel på vanliga frågeparametrar är:
 
@@ -114,19 +114,19 @@ Mer information om vilka frågeparametrar som är tillgängliga för en viss tj�
 
 ## Hur anger jag att ett JSON-fält ska uppdateras i en PATCH-begäran? {#how-do-i-indicate-a-json-field-to-update-in-a-patch-request}
 
-Många PATCH-åtgärder i plattforms-API:er använder [JSON-pekarsträngar](https://tools.ietf.org/html/rfc6901) för att ange att JSON-egenskaper ska uppdateras. Dessa inkluderas vanligtvis i begärandenyttolaster i [JSON-korrigeringsformat](https://tools.ietf.org/html/rfc6902) . I [API-handboken](api-fundamentals.md) finns detaljerad information om syntaxen som krävs för dessa tekniker.
+Många PATCH-åtgärder i API: [!DNL Platform] er använder [JSON-pekarsträngar](https://tools.ietf.org/html/rfc6901) för att ange att JSON-egenskaper ska uppdateras. Dessa inkluderas vanligtvis i begärandenyttolaster i [JSON-korrigeringsformat](https://tools.ietf.org/html/rfc6902) . I [API-handboken](api-fundamentals.md) finns detaljerad information om syntaxen som krävs för dessa tekniker.
 
-## Kan jag använda Postman för att ringa till API:er för plattformen? {#how-do-i-use-postman-to-make-calls-to-platform-apis}
+## Kan jag använda Postman för att ringa till API: [!DNL Platform] er? {#how-do-i-use-postman-to-make-calls-to-platform-apis}
 
-[Postman](https://www.getpostman.com/) är ett användbart verktyg för att visualisera anrop till RESTful API:er. I det här [mediapostmeddelandet](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) beskrivs hur du kan konfigurera Postman så att autentisering utförs automatiskt och använda det för att använda Experience Platform API:er.
+[Postman](https://www.getpostman.com/) är ett användbart verktyg för att visualisera anrop till RESTful API:er. I det här [mediapostmeddelandet](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) beskrivs hur du kan konfigurera Postman så att autentisering utförs automatiskt och använda det för att använda [!DNL Experience Platform] API:er.
 
-## Vilka är systemkraven för Platform? {#what-are-the-system-requirements-for-platform}
+## Vilka är systemkraven för [!DNL Platform]? {#what-are-the-system-requirements-for-platform}
 
 Beroende på om du använder gränssnittet eller API:t gäller följande systemkrav:
 
 **För UI-baserade åtgärder:**
-- En modern standardwebbläsare. Även om den senaste versionen av Chrome rekommenderas stöds även aktuella och tidigare större versioner av Firefox, Internet Explorer och Safari.
-   - Varje gång en ny större version släpps får Platform stöd för den senaste versionen samtidigt som stödet för den tredje senaste versionen tas bort.
+- En modern standardwebbläsare. Den senaste versionen av [!DNL Chrome] rekommenderas, men både aktuella och tidigare större versioner av [!DNL Firefox], [!DNL Internet Explorer]och Safari stöds också.
+   - Varje gång en ny större version släpps får [!DNL Platform] stöd för den senaste versionen samtidigt som stödet för den tredje senaste versionen tas bort.
 - Alla webbläsare måste ha cookies och JavaScript aktiverat.
 
 **För API- och utvecklarinteraktioner:**
@@ -134,11 +134,11 @@ Beroende på om du använder gränssnittet eller API:t gäller följande systemk
 
 ## Fel och felsökning {#errors-and-troubleshooting}
 
-Nedan följer en lista över fel som kan uppstå när du använder någon Experience Platform-tjänst. Felsökningsguider för enskilda plattformstjänster finns i [tjänstens felsökningskatalog](#service-troubleshooting-directory) nedan.
+Nedan följer en lista över fel som kan uppstå när du använder någon [!DNL Experience Platform] tjänst. Felsökningsguider för enskilda [!DNL Platform] tjänster finns i [tjänstens felsökningskatalog](#service-troubleshooting-directory) nedan.
 
 ## API-statuskoder {#api-status-codes}
 
-Följande statuskoder kan påträffas på alla Experience Platform-API:er. Det finns en mängd orsaker till detta, och därför är de förklaringar som ges i detta avsnitt av allmän karaktär. Mer information om specifika fel i enskilda plattformstjänster finns i [tjänstens felsökningskatalog](#service-troubleshooting-directory) nedan.
+Följande statuskoder kan påträffas i alla [!DNL Experience Platform] API:er. Det finns en mängd orsaker till detta, och därför är de förklaringar som ges i detta avsnitt av allmän karaktär. Mer information om specifika fel i enskilda [!DNL Platform] tjänster finns i [felsökningskatalogen](#service-troubleshooting-directory) nedan.
 
 | Statuskod | Beskrivning | Möjliga orsaker |
 --- | --- | ---
@@ -146,11 +146,11 @@ Följande statuskoder kan påträffas på alla Experience Platform-API:er. Det f
 | 401 | Autentiseringen misslyckades | Begäran klarade inte en autentiseringskontroll. Åtkomsttoken kanske saknas eller är ogiltig. Mer information finns i avsnittet [OAuth-tokenfel](#oauth-token-is-missing) nedan. |
 | 403 | Förbjuden | Resursen hittades, men du har inte rätt autentiseringsuppgifter för att visa den. |
 | 404 | Hittades inte | Det gick inte att hitta den begärda resursen på servern. Resursen kan ha tagits bort eller så har den begärda sökvägen angetts felaktigt. |
-| 500 | Internt serverfel | Det här är ett serverfel. Om du gör många samtidiga anrop kanske du når API-gränsen och behöver filtrera resultaten. (Mer information finns i underhandboken för katalogtjänstens API-utvecklare om [filtrering av data](../catalog/api/filter-data.md) .) Vänta en stund innan du försöker utföra din begäran igen och kontakta administratören om problemet kvarstår. |
+| 500 | Internt serverfel | Det här är ett serverfel. Om du gör många samtidiga anrop kanske du når API-gränsen och behöver filtrera resultaten. (Läs mer i underhandboken för [!DNL Catalog Service] API-utvecklare om [filtrering av data](../catalog/api/filter-data.md) .) Vänta en stund innan du försöker utföra din begäran igen och kontakta administratören om problemet kvarstår. |
 
 ## Fel i begärandehuvud {#request-header-errors}
 
-Alla API-anrop i Platform kräver specifika begäranderubriker. Om du vill se vilka huvuden som krävs för enskilda tjänster kan du läsa [API-referensdokumentationen](https://www.adobe.io/apis/experienceplatform/home/api-reference.html). Om du vill hitta värden för de obligatoriska autentiseringshuvuden kan du läsa [Autentisering](../tutorials/authentication.md). Om någon av dessa rubriker saknas eller är ogiltig när ett API-anrop görs kan följande fel uppstå.
+Alla API-anrop i [!DNL Platform] kräver specifika begäranderubriker. Om du vill se vilka huvuden som krävs för enskilda tjänster kan du läsa [API-referensdokumentationen](https://www.adobe.io/apis/experienceplatform/home/api-reference.html). Om du vill hitta värden för de obligatoriska autentiseringshuvuden kan du läsa [Autentisering](../tutorials/authentication.md). Om någon av dessa rubriker saknas eller är ogiltig när ett API-anrop görs kan följande fel uppstå.
 
 ### OAuth-token saknas {#oauth-token-is-missing}
 
@@ -217,7 +217,7 @@ Det här felmeddelandet visas när en IMS-organisationshuvud (`x-gw-ims-org-id`)
 }
 ```
 
-Det här felmeddelandet visas när användaren eller Adobe I/O-integreringen (som identifieras av [åtkomsttoken](#how-do-i-get-an-access-token) i `Authorization` huvudet) inte har rätt att anropa Experience Platform API:er för IMS-organisationen som anges i `x-gw-ims-org-id` rubriken. Kontrollera att du har angett rätt ID för IMS-organisationen i sidhuvudet innan du försöker igen. Om du inte känner till ditt organisations-ID kan du hitta det i [Adobe I/O Console](https://console.adobe.io): på fliken **Integrationer** navigerar du till avsnittet **Översikt** för en specifik integrering för att hitta ID:t under **Klientautentiseringsuppgifter**.
+Det här felmeddelandet visas när användaren eller Adobe I/O-integreringen (som identifieras av [åtkomsttoken](#how-do-i-get-an-access-token) i `Authorization` huvudet) inte har rätt att anropa API: [!DNL Experience Platform] er för IMS-organisationen som anges i `x-gw-ims-org-id` rubriken. Kontrollera att du har angett rätt ID för IMS-organisationen i sidhuvudet innan du försöker igen. Om du inte känner till ditt organisations-ID kan du hitta det i [Adobe I/O Console](https://console.adobe.io): på fliken **Integrationer** navigerar du till avsnittet **Översikt** för en specifik integrering för att hitta ID:t under **Klientautentiseringsuppgifter**.
 
 ### Giltig innehållstyp har inte angetts
 
@@ -235,7 +235,7 @@ Det här felmeddelandet visas när en POST-, PUT- eller PATCH-begäran har ett o
 
 ## Felsökningskatalog för tjänst {#service-troubleshooting-directory}
 
-Nedan följer en lista över felsökningsguider och API-referensdokumentation för Experience Platform-API:er. Varje felsökningsguide ger svar på vanliga frågor och lösningar på problem som är specifika för enskilda plattformstjänster. API-referensdokumenten innehåller en omfattande guide till alla tillgängliga slutpunkter för varje tjänst och visar exempel på begärandetexter, svar och felkoder som du kan få.
+Här följer en lista med felsökningsguider och API-referensdokumentation för API: [!DNL Experience Platform] er. Varje felsökningsguide ger svar på vanliga frågor och lösningar på problem som är specifika för enskilda [!DNL Platform] tjänster. API-referensdokumenten innehåller en omfattande guide till alla tillgängliga slutpunkter för varje tjänst och visar exempel på begärandetexter, svar och felkoder som du kan få.
 
 | Tjänst | API-referens | Felsökning |
 --- | --- | ---
