@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Översikt över kundprofiler i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: e34b0b92a8fdf0986b10753d6c983b66dde42503
+source-git-commit: 4d853dfee931789ca1badd410ce0b4b73c8c2803
 workflow-type: tm+mt
-source-wordcount: '1796'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -54,7 +54,7 @@ En av de viktigaste funktionerna i kundprofilen i realtid är möjligheten att s
 
 När ni sammanfogar data från olika källor och kombinerar dem för att få en fullständig bild av var och en av era enskilda kunder, är kopplingsregler de regler som Platform använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa den enhetliga vyn. Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen. Mer information om hur du arbetar med sammanfogningsprinciper med API:t för kundprofil i realtid finns i slutpunktshandboken för [sammanfogningsprinciper](api/merge-policies.md). Information om hur du arbetar med sammanfogningsprinciper med hjälp av användargränssnittet i Experience Platform finns i [användarhandboken](ui/merge-policies.md)för sammanfogningsprinciper.
 
-## (Alfa) Konfigurera beräknade attribut
+### (Alfa) Konfigurera beräknade attribut
 
 >[!IMPORTANT]
 >Den beräknade attributfunktionaliteten som beskrivs i det här dokumentet är alfavärden. Dokumentationen och funktionaliteten kan komma att ändras.
@@ -80,7 +80,7 @@ Platform kan konfigureras för att skicka data från register och tidsserier til
 >[!Note]
 >Data som samlas in via Adobe-lösningar, inklusive Analytics Cloud, Marketing Cloud och Advertising Cloud, flödar in i Experience Platform och är inkapslade i Profil.
 
-### Inmatningsstatistik för profilströmning
+### Profilätvärden
 
 Med observationsinsikter kan ni visa viktiga värden i Adobe Experience Platform. Förutom Platform användningsstatistik och prestandaindikatorer för olika Platform-funktioner finns det specifika profilrelaterade mått som gör att du kan få insikt i hur många begäranden som kommer in, hur många som kommer in, hur många som kommer in, hur många som kommer in i bilden och hur många som kommer in, hur många som kommer in i posten. Om du vill veta mer kan du börja med att läsa översikten [över](../observability/home.md)observabilitetsinsikter och en fullständig lista över profilmått finns i dokumentationen om [tillgängliga mätvärden](../observability/metrics.md).
 
