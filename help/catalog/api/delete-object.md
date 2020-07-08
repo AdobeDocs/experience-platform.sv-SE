@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Ta bort ett objekt
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 327be13cbaaa40e4d0409cbb49a051b7067759bf
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '178'
 ht-degree: 0%
@@ -16,7 +16,9 @@ ht-degree: 0%
 
 Du kan ta bort ett Catalog-objekt genom att ange dess ID i sökvägen till en DELETE-begäran.
 
->[!WARNING] Var extra försiktig när du tar bort objekt, eftersom det inte går att ångra detta och det kan leda till att objekt bryts på andra ställen i Experience Platform.
+>[!WARNING]
+>
+>Var extra försiktig när du tar bort objekt, eftersom det inte går att ångra detta och det kan leda till att objekt bryts på andra ställen i Experience Platform.
 
 **API-format**
 
@@ -56,4 +58,6 @@ Ett lyckat svar returnerar HTTP-status 200 (OK) och en array som innehåller ID:
 ]
 ```
 
->[!NOTE] Om inga katalogobjekt matchar det ID som angavs i din begäran kan du ändå få HTTP-statuskoden 200, men svarsmatrisen är tom.
+>[!NOTE]
+>
+>Om inga katalogobjekt matchar det ID som angavs i din begäran kan du ändå få HTTP-statuskoden 200, men svarsmatrisen är tom.
