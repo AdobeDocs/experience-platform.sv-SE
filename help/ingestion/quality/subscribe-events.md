@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Prenumerera på dataöverföringshändelser
 topic: overview
 translation-type: tm+mt
-source-git-commit: 1498739d753bdb569e0d3e091e4160bdae40a32f
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '825'
 ht-degree: 0%
@@ -14,19 +14,21 @@ ht-degree: 0%
 
 # Meddelanden om dataöverföring
 
-Processen att samla in data i Adobe Experience Platform består av flera steg. När du har identifierat datafiler som behöver importeras till plattformen, börjar inmatningsprocessen och varje steg sker i följd tills data antingen har importerats eller misslyckats. Inmatningsprocessen kan initieras med [Adobe Experience Platforms API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) för datainmatning eller med användargränssnittet för Experience Platform.
+Processen att samla in data i Adobe Experience Platform består av flera steg. När du har identifierat datafiler som behöver importeras till Platform, börjar importen och varje steg sker i följd tills data antingen har importerats eller misslyckats. Injektionsprocessen kan inledas med [Adobe Experience Platform API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) för datainmatning eller med användargränssnittet i Experience Platform.
 
-Data som läses in på Platform måste gå igenom flera steg för att nå sin destination, Data Lake eller i realtidskundprofilens datalager. Varje steg innebär att bearbeta data, validera data och sedan lagra data innan de skickas vidare till nästa steg. Beroende på mängden data som hämtas kan detta bli en tidskrävande process och det finns alltid en risk att processen misslyckas på grund av validerings-, semantik- eller bearbetningsfel. Om ett fel uppstår måste dataproblemen åtgärdas och sedan måste hela importen startas om med de korrigerade datafilerna.
+Data som läses in till Platform måste gå igenom flera steg för att nå sin destination, Data Lake eller i realtidskundprofilens datalager. Varje steg innebär att bearbeta data, validera data och sedan lagra data innan de skickas vidare till nästa steg. Beroende på mängden data som hämtas kan detta bli en tidskrävande process och det finns alltid en risk att processen misslyckas på grund av validerings-, semantik- eller bearbetningsfel. Om ett fel uppstår måste dataproblemen åtgärdas och sedan måste hela importen startas om med de korrigerade datafilerna.
 
-Experience Platform gör det möjligt att prenumerera på en uppsättning händelser som publiceras i varje steg i processen, vilket gör det lättare att övervaka processen och meddela dig om statusen för inkapslade data och eventuella fel.
+För att underlätta övervakningen av intagsprocessen kan Experience Platform prenumerera på en uppsättning händelser som publiceras i varje steg i processen och meddela dig om statusen för inmatade data och eventuella fel.
 
 ## Tillgängliga statusmeddelandehändelser
 
 Nedan visas en lista över tillgängliga statusmeddelanden för dataöverföring som du kan prenumerera på.
 
->[!NOTE] Det finns bara ett händelseämne för alla meddelanden om dataöverföring. Händelsekoden kan användas för att skilja mellan olika statusvärden.
+>[!NOTE]
+>
+>Det finns bara ett händelseämne för alla meddelanden om dataöverföring. Händelsekoden kan användas för att skilja mellan olika statusvärden.
 
-| Plattformstjänst | Status | Händelsebeskrivning | Händelsekod |
+| Platform Service | Status | Händelsebeskrivning | Händelsekod |
 | ---------------- | ------ | ----------------- | ---------- |
 | Datalager | framgång | Inmatning - batchen har slutförts | ing_load_success |
 | Datalager | fel | Inmatning - batchen misslyckades | ing_load_error |
@@ -41,11 +43,11 @@ Datainmatningsmeddelandets händelseschema är ett XDM-schema (Experience Data M
 
 ## Prenumerera på statusmeddelanden för dataöverföring
 
-Genom [Adobe I/O Events](https://www.adobe.io/apis/experienceplatform/events.html)kan du prenumerera på flera olika typer av meddelanden via webbhooks. Avsnitten nedan beskriver stegen för att prenumerera på plattformsmeddelanden för dataöverföringshändelser med Adobe Developer Console.
+Genom [Adobe I/O Events](https://www.adobe.io/apis/experienceplatform/events.html)kan du prenumerera på flera olika typer av meddelanden via webbhooks. I avsnitten nedan beskrivs stegen för att prenumerera på Platform-meddelanden om dataöverföringshändelser med Adobe Developer Console.
 
 ### Skapa ett nytt projekt i Adobe Developer Console
 
-Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med ditt Adobe ID. Följ sedan stegen som beskrivs i självstudiekursen om hur du [skapar ett tomt projekt](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) i dokumentationen för Adobe Developer Console.
+Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med Adobe ID. Följ sedan stegen som beskrivs i självstudiekursen om hur du [skapar ett tomt projekt](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) i dokumentationen för Adobe Developer Console.
 
 ### Lägg till Experience Platform-händelser i projektet
 
@@ -89,4 +91,4 @@ Informationssidan för den nyligen skapade händelseregistreringen visas, där d
 
 ## Nästa steg
 
-När du har registrerat plattformsmeddelanden i ditt projekt kan du visa mottagna händelser från projektkontrollpanelen. Mer information om hur du spårar händelser finns i [hjälpguiden för Adobe I/O Events](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/support/tracing.md) .
+När du har registrerat Platform-meddelanden i ditt projekt kan du visa mottagna händelser från projektkontrollpanelen. Mer information om hur du spårar händelser finns i [hjälpguiden för Adobe I/O Events](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/support/tracing.md) .
