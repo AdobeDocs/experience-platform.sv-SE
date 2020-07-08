@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Array-, list- och set-funktioner
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 92f92f480f29f7d6440f4e90af3225f9a1fcc3d0
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '740'
+ht-degree: 2%
 
 ---
 
@@ -35,7 +38,9 @@ person.birthMonth in [3, 6, 9]
 
 Funktionen används `notIn` för att avgöra om ett objekt inte är medlem i en array eller lista.
 
->[!NOTE] Funktionen `notIn` ser *också* till att inget av värdena är lika med null. Resultatet är därför inte en exakt negation av `in` funktionen.
+>[!NOTE]
+>
+>Funktionen `notIn` ser *också* till att inget av värdena är lika med null. Resultatet är därför inte en exakt negation av `in` funktionen.
 
 **Format**
 
@@ -205,7 +210,7 @@ Följande PQL-fråga definierar alla personer som är 21 eller äldre.
 person.filter(age >= 21)
 ```
 
-## Karta
+## Mappa
 
 Funktionen används `map` för att skapa en ny array genom att tillämpa ett uttryck på varje objekt i en given array.
 
