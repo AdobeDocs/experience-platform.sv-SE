@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa ett schema med API:t för schemaregister
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: b3fa5a17c3a5c2406d368d165da63f2f8c01154d
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '2418'
 ht-degree: 0%
@@ -256,7 +256,9 @@ Svaret visar den nyligen tillagda mixen i `meta:extends` arrayen och innehåller
 
 Nu kan du lägga till ytterligare en standardblandning genom att upprepa stegen med en annan blandning.
 
->[!TIP] Det är värt att granska alla tillgängliga mixar för att bekanta dig med fälten som ingår i varje. Du kan visa (GET) alla blandningar som är tillgängliga för användning med en viss klass genom att utföra en begäran mot varje global- och tenant-behållare, och bara returnera de blandningar där fältet &quot;meta:intendedToExtend&quot; matchar den klass du använder. I det här fallet är det klassen XDM Individual Profile, så den enskilda XDM-profilen `$id` används:
+>[!TIP]
+>
+>Det är värt att granska alla tillgängliga mixar för att bekanta dig med fälten som ingår i varje. Du kan visa (GET) alla blandningar som är tillgängliga för användning med en viss klass genom att utföra en begäran mot varje global- och tenant-behållare, och bara returnera de blandningar där fältet &quot;meta:intendedToExtend&quot; matchar den klass du använder. I det här fallet är det klassen XDM Individual Profile, så den enskilda XDM-profilen `$id` används:
 
 ```http
 GET /global/mixins?property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile
@@ -991,7 +993,9 @@ curl -X POST \
       }'
 ```
 
->[!NOTE] Du kan visa tillgängliga xdm:namespace-värden eller skapa nya med API:t för [identitetstjänsten](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml). Värdet för xdm:property kan vara antingen xdm:code eller xdm:id, beroende på vilket xdm:namespace som används.
+>[!NOTE]
+>
+>Du kan visa tillgängliga xdm:namespace-värden eller skapa nya med API:t för [identitetstjänsten](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml). Värdet för xdm:property kan vara antingen xdm:code eller xdm:id, beroende på vilket xdm:namespace som används.
 
 **Svar**
 
