@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Tjänster
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 33f8c424c208bb61319b49e7ecb30e3144ef108a
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '811'
 ht-degree: 0%
@@ -213,7 +213,9 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den beg
 
 Du kan uppdatera en befintlig MLService genom att skriva över dess egenskaper via en PUT-begäran som inkluderar mål-MLService-ID:t i sökvägen för begäran och som tillhandahåller en JSON-nyttolast som innehåller uppdaterade egenskaper.
 
->[!TIP] För att denna PUT-begäran ska lyckas föreslår vi att du först utför en GET-begäran för att [hämta MLService via ID](#retrieve-a-specific-mlservice). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
+>[!TIP]
+>
+>För att denna PUT-begäran ska lyckas föreslår vi att du först utför en GET-begäran för att [hämta MLService via ID](#retrieve-a-specific-mlservice). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
 
 **API-format**
 
