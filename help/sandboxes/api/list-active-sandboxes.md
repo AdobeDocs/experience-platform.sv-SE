@@ -4,14 +4,19 @@ solution: Experience Platform
 title: Visa aktiva sandlådor för den aktuella användaren
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 982764ae7807e40cbca5ca60c70bf363a271e3c2
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '220'
+ht-degree: 0%
 
 ---
 
 
 # Visa aktiva sandlådor för den aktuella användaren
 
->[!NOTE] Till skillnad från andra slutpunkter som finns i sandlådes-API:t är den här slutpunkten tillgänglig för alla användare, inklusive dem som saknar åtkomstbehörighet för sandlådeadministration.
+>[!NOTE]
+>
+>Till skillnad från andra slutpunkter som finns i sandlådes-API:t är den här slutpunkten tillgänglig för alla användare, inklusive dem som saknar åtkomstbehörighet för sandlådeadministration.
 
 Du kan lista de sandlådor som är aktiva för den aktuella användaren genom att göra en GET-begäran till roten (`/`).
 
