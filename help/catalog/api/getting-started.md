@@ -4,24 +4,27 @@ solution: Experience Platform
 title: Utvecklarhandbok för katalogtjänst
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: eec5b07427aa9daa44d23f09cfaf1b38f8e811f3
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '598'
+ht-degree: 0%
 
 ---
 
 
 # Utvecklarhandbok för katalogtjänst
 
-Katalogtjänsten är registersystemet för dataplatser och datalänkning inom Adobe Experience Platform. Katalogen fungerar som ett metadataarkiv eller en&quot;katalog&quot; där du kan hitta information om dina data i Experience Platform, utan att behöva komma åt själva data. Mer information finns i [Katalogöversikt](../home.md) .
+Katalogtjänsten är ett system för registrering av dataplatser och -länkar inom Adobe Experience Platform. Katalogen fungerar som ett metadataarkiv eller en&quot;katalog&quot; där du kan hitta information om dina data i Experience Platform, utan att behöva komma åt själva data. Mer information finns i [Katalogöversikt](../home.md) .
 
 Den här utvecklarhandboken innehåller steg som hjälper dig att börja använda Catalog API. Handboken innehåller sedan exempel på API-anrop för att utföra nyckelåtgärder med hjälp av Katalog.
 
 ## Förutsättningar
 
-Katalogen spårar metadata för flera olika typer av resurser och åtgärder inom Experience Platform. Den här utvecklarhandboken kräver en fungerande förståelse för de olika Experience Platform-tjänsterna som används för att skapa och hantera dessa resurser:
+Katalogen spårar metadata för flera olika typer av resurser och åtgärder i Experience Platform. Utvecklarhandboken kräver en fungerande förståelse för de olika Experience Platform-tjänster som är kopplade till att skapa och hantera dessa resurser:
 
-* [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
-* [Batchförtäring](../../ingestion/batch-ingestion/overview.md): Hur Experience Platform kan importera och lagra data från datafiler, som CSV och Parquet.
-* [Direktinmatning](../../ingestion/streaming-ingestion/overview.md): Hur Experience Platform samlar in och lagrar data från klient- och serverenheter i realtid.
+* [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att ordna kundupplevelsedata.
+* [Batchförtäring](../../ingestion/batch-ingestion/overview.md): Så här importerar och lagrar Experience Platform data från datafiler, som CSV och Parquet.
+* [Direktinmatning](../../ingestion/streaming-ingestion/overview.md): Så här importerar och lagrar Experience Platform data från klient- och serverenheter i realtid.
 
 I följande avsnitt finns ytterligare information som du behöver känna till eller ha till hands för att kunna ringa anrop till katalogtjänstens API.
 
@@ -31,17 +34,19 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 ## Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>[!NOTE]
+>
+>Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
