@@ -1,18 +1,18 @@
 ---
 keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API
 solution: Adobe Experience Platform
-title: Utvecklarhandbok för kundprofil-API i realtid
+title: Profilsystemjobb - Kundprofils-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: d464a6b4abd843f5f8545bc3aa8000f379a86c6d
+source-git-commit: d1656635b6d082ce99f1df4e175d8dd69a63a43a
 workflow-type: tm+mt
-source-wordcount: '1501'
+source-wordcount: '1503'
 ht-degree: 0%
 
 ---
 
 
-# Profilsystemjobb (Delete-begäranden)
+# Slutpunkt för profilsystemjobb (Delete-begäranden)
 
 Med Adobe Experience Platform kan ni importera data från flera olika källor och skapa stabila profiler för enskilda kunder. Data som hämtas till Platform lagras i Data Lake samt i datalagret för kundprofiler i realtid. Ibland kan det vara nödvändigt att ta bort en datauppsättning eller en batch från profilarkivet för att ta bort data som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder Real-time Customer Profile API för att skapa ett profilsystemjobb, även kallat&quot;delete request&quot;, som också kan ändras, övervakas eller tas bort vid behov.
 
