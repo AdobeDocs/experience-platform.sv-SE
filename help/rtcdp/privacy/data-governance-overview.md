@@ -4,7 +4,7 @@ seo-title: Datastyrning i realtid med kunddata i Platform
 description: 'Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. '
 seo-description: 'Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. '
 translation-type: tm+mt
-source-git-commit: c4e5e8ccac1af976c890adb1c9f0ff7f7b5ed9b4
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1083'
 ht-degree: 0%
@@ -34,7 +34,9 @@ Mer information om hur du arbetar med dataanvändningsetiketter finns i använda
 
 Du kan ange begränsningar för dataanvändning för ett mål genom att definiera användningsfall för marknadsföring (kallas även marknadsföringsåtgärder) för det målet. Ett användningsfall för marknadsföring för en destination anger avsikten med de data som ska exporteras till den destinationen.
 
->[!NOTE] Mer information om marknadsföringsåtgärder och hur de används i dataanvändningspolicyer finns i översikten över [dataanvändningspolicyn](../../data-governance/policies/overview.md) i Experience Platform-dokumentationen.
+>[!NOTE]
+>
+>Mer information om marknadsföringsåtgärder och hur de används i dataanvändningspolicyer finns i översikten över [dataanvändningspolicyn](../../data-governance/policies/overview.md) i Experience Platform-dokumentationen.
 
 Genom att definiera användningsfall för marknadsföring på destinationer kan ni se till att profiler och segment som skickas till dessa destinationer följer dataanvändningsprinciperna. Ni bör därför lägga till lämpliga användningsfall för marknadsföring till era destinationer baserat på organisationens behov av att tillämpa policybegränsningar för aktivering.
 
@@ -63,7 +65,9 @@ När ett segment aktiveras för första gången kontrollerar DULE Policy Service
 * De dataanvändningsetiketter som används för fält och datauppsättningar i segmentet som ska aktiveras.
 * Destinationens marknadsföringssyfte.
 
->[!NOTE] Om det finns dataanvändningsetiketter som bara har tillämpats på vissa fält i en datamängd (i stället för hela datamängden), tillämpas dessa fältetiketter endast under följande förhållanden:
+>[!NOTE]
+>
+>Om det finns dataanvändningsetiketter som bara har tillämpats på vissa fält i en datamängd (i stället för hela datamängden), tillämpas dessa fältetiketter endast under följande förhållanden:
 >* Fälten används i segmentdefinitionen.
 >* Fälten konfigureras som projicerade attribut för målmålet.
 
