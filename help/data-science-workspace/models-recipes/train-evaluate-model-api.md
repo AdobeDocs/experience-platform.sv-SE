@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Utbilda och utvärdera en modell (API)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '1191'
+ht-degree: 0%
 
 ---
 
@@ -23,8 +26,8 @@ Följ den här [självstudiekursen](../../tutorials/authentication.md) för att 
 Från självstudiekursen bör du nu ha följande värden:
 
 - `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.
-- `{IMS_ORG}`: Dina IMS-organisationsuppgifter finns i din unika integrering med Adobe Experience Platform.
-- `{API_KEY}`: Ditt specifika API-nyckelvärde finns i er unika integrering med Adobe Experience Platform.
+- `{IMS_ORG}`: Dina IMS-organisationsuppgifter hittades i din unika integrering med Adobe Experience Platform.
+- `{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.
 
 - Länka till en dockningsbild av en intelligent tjänst
 
@@ -34,7 +37,9 @@ Vi kommer att konsumera API:erna för att skapa en Experimentrunda för utbildni
 
 ![](../images/models-recipes/train-evaluate-api/engine_hierarchy_api.png)
 
->[!NOTE] Termerna&quot;Engine&quot;,&quot;MLInstance&quot;,&quot;MLService&quot;,&quot;Experiment&quot; och&quot;Model&quot; kallas olika termer i användargränssnittet. Om du kommer från gränssnittet mappas skillnaderna i följande tabell.
+>[!NOTE]
+>
+>Termerna&quot;Engine&quot;,&quot;MLInstance&quot;,&quot;MLService&quot;,&quot;Experiment&quot; och&quot;Model&quot; kallas olika termer i användargränssnittet. Om du kommer från gränssnittet mappas skillnaderna i följande tabell.
 > 
 > | Användargränssnittsterm | API-term |
 > --- | ---
@@ -62,8 +67,8 @@ curl -X POST \
 ```
 
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{IMS_ORG}`: Dina IMS-organisationsuppgifter finns i din unika integrering med Adobe Experience Platform.\
-`{API_KEY}`: Ditt specifika API-nyckelvärde finns i er unika integrering med Adobe Experience Platform.\
+`{IMS_ORG}`: Dina IMS-organisationsuppgifter hittades i din unika integrering med Adobe Experience Platform.\
+`{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.\
 `{JSON_PAYLOAD}`: Konfigurationen av vår MLInstance. Exemplet vi använder i vår självstudiekurs visas här:
 
 ```JSON
@@ -117,7 +122,9 @@ curl -X POST \
 }
 ```
 
->[!NOTE] I `{JSON_PAYLOAD}`definierar vi parametrar som används för utbildning och poängsättning i `tasks` arrayen. Detta `{ENGINE_ID}` är ID:t för den motor som du vill använda och `tag` fältet är en valfri parameter som används för att identifiera instansen.
+>[!NOTE]
+>
+>I `{JSON_PAYLOAD}`definierar vi parametrar som används för utbildning och poängsättning i `tasks` arrayen. Detta `{ENGINE_ID}` är ID:t för den motor som du vill använda och `tag` fältet är en valfri parameter som används för att identifiera instansen.
 
 Svaret innehåller den `{INSTANCE_ID}` som representerar den MLInstance som skapas. Flera MLInstances-modeller med olika konfigurationer kan skapas.
 
@@ -171,9 +178,9 @@ curl -X POST \
   -d `{JSON PAYLOAD}`
 ```
 
-`{IMS_ORG}`: Dina IMS-organisationsuppgifter finns i din unika integrering med Adobe Experience Platform.\
+`{IMS_ORG}`: Dina IMS-organisationsuppgifter hittades i din unika integrering med Adobe Experience Platform.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{API_KEY}`: Ditt specifika API-nyckelvärde finns i er unika integrering med Adobe Experience Platform.\
+`{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.\
 `{JSON_PAYLOAD}`: Experimentera med objekt som skapas. Exemplet vi använder i vår självstudiekurs visas här:
 
 ```JSON
@@ -227,9 +234,9 @@ curl -X POST \
   -d '{JSON_PAYLOAD}`
 ```
 
-`{IMS_ORG}`: Dina IMS-organisationsuppgifter finns i din unika integrering med Adobe Experience Platform.\
+`{IMS_ORG}`: Dina IMS-organisationsuppgifter hittades i din unika integrering med Adobe Experience Platform.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{API_KEY}`: Ditt specifika API-nyckelvärde finns i er unika integrering med Adobe Experience Platform.\
+`{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.\
 `{JSON_PAYLOAD}`: Datauppsättning som ska bokföras. Exemplet vi använder i vår självstudiekurs visas här:
 
 ```JSON
@@ -315,9 +322,9 @@ curl -X POST \
 ```
 
 `{EXPERIMENT_ID}`: Det ID som motsvarar den experiment som du vill använda som mål. Det här finns i svaret när du skapar din Experiment.\
-`{IMS_ORG}`: Dina IMS-organisationsuppgifter finns i din unika integrering med Adobe Experience Platform.\
+`{IMS_ORG}`: Dina IMS-organisationsuppgifter hittades i din unika integrering med Adobe Experience Platform.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{API_KEY}`: Ditt specifika API-nyckelvärde finns i er unika integrering med Adobe Experience Platform.\
+`{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.\
 `{JSON_PAYLOAD}`: För att kunna genomföra en utbildning måste du inkludera följande i brödtexten:
 
 ```JSON
@@ -386,8 +393,8 @@ curl -X GET \
 `{EXPERIMENT_ID}`: Det ID som representerar Experimenten.\
 `{EXPERIMENT_RUN_ID}`: Det ID som representerar Experimentkörningen.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{IMS_ORG}`: Dina IMS-organisationsuppgifter finns i din unika integrering med Adobe Experience Platform.\
-`{API_KEY}`: Ditt specifika API-nyckelvärde finns i er unika integrering med Adobe Experience Platform.
+`{IMS_ORG}`: Dina IMS-organisationsuppgifter hittades i din unika integrering med Adobe Experience Platform.\
+`{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.
 
 **Svar**
 
@@ -449,7 +456,7 @@ curl -X GET \
 
 `{EXPERIMENT_RUN_ID}`: Det ID som motsvarar den Experimentkörning som du vill använda som mål. Detta finns i svaret när du skapar en Experiment Run.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{IMS_ORG}`: Dina IMS-organisationsuppgifter finns i din unika integrering med Adobe Experience Platform.
+`{IMS_ORG}`: Dina IMS-organisationsuppgifter hittades i din unika integrering med Adobe Experience Platform.
 
 Svaret representerar den tränade modell som skapades.
 
@@ -496,9 +503,11 @@ curl -X DELETE \
 
 `{EXPERIMENT_ID}`:  ID:t som motsvarar Experiment.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{IMS_ORG}`: Dina IMS-organisationsuppgifter finns i din unika integrering med Adobe Experience Platform.
+`{IMS_ORG}`: Dina IMS-organisationsuppgifter hittades i din unika integrering med Adobe Experience Platform.
 
->[!NOTE] API-anropet inaktiverar skapandet av nya Experiment-körningar. Körningen av Experiment Runs avbryts dock inte.
+>[!NOTE]
+>
+>API-anropet inaktiverar skapandet av nya Experiment-körningar. Körningen av Experiment Runs avbryts dock inte.
 
 Här följer ett svar som meddelar att experten har tagits bort.
 
