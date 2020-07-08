@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Aktivera inkommande källdata för att fylla i kundprofiler
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '457'
 ht-degree: 0%
@@ -61,7 +61,9 @@ Nu när schemat är aktiverat [!DNL Profile]går du tillbaka till *[!UICONTROL D
 
 När både schemat och datauppsättningen är aktiverad för [!DNL Profile]fylls även kundprofiler i med data som hämtas in i den datauppsättningen.
 
->[!NOTE] Befintliga data i en nyligen aktiverad datauppsättning används inte av [!DNL Profile]
+>[!NOTE]
+>
+>Befintliga data i en nyligen aktiverad datauppsättning används inte av [!DNL Profile]
 
 ## Nästa steg
 
