@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Experimentera
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 76f68fea1bea970bab4c25061527b7ebae33faf3
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '744'
 ht-degree: 1%
@@ -20,7 +20,9 @@ Modellutveckling och utbildning sker på expertnivå, där en expert består av 
 
 Du kan skapa en expert genom att utföra en POST-begäran och samtidigt ange ett namn och ett giltigt MLInstance-ID i nyttolasten för begäran.
 
->[!NOTE] Till skillnad från modellutbildning i användargränssnittet skapas och körs inte en kurskörning automatiskt när en expert skapas via ett explicit API-anrop.
+>[!NOTE]
+>
+>Till skillnad från modellutbildning i användargränssnittet skapas och körs inte en kurskörning automatiskt när en expert skapas via ett explicit API-anrop.
 
 **API-format**
 
@@ -242,7 +244,9 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den beg
 
 Du kan hämta en lista över utbildnings- eller poängsättningskörningar som tillhör en viss Experiment genom att utföra en GET-förfrågan och ange ett giltigt test-ID. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En fullständig lista över tillgängliga frågeparametrar finns i avsnittet i bilagan om [frågeparametrar för hämtning](./appendix.md#query)av resurser.
 
->[!NOTE] När du kombinerar flera frågeparametrar måste de avgränsas med et-tecken (&amp;).
+>[!NOTE]
+>
+>När du kombinerar flera frågeparametrar måste de avgränsas med et-tecken (&amp;).
 
 **API-format**
 
@@ -301,7 +305,9 @@ Ett godkänt svar returnerar en nyttolast som innehåller en lista över körnin
 
 Du kan uppdatera en befintlig Experiment genom att skriva över dess egenskaper via en PUT-begäran som inkluderar målExperimentens ID i den begärda sökvägen och som tillhandahåller en JSON-nyttolast som innehåller uppdaterade egenskaper.
 
->[!TIP] För att säkerställa att denna PUT-begäran lyckas föreslår vi att du först utför en GET-begäran för att [hämta Experiment via ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
+>[!TIP]
+>
+>För att säkerställa att denna PUT-begäran lyckas föreslår vi att du först utför en GET-begäran för att [hämta Experiment via ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
 
 I följande exempel på API-anrop uppdateras en Experiments namn samtidigt som dessa egenskaper används från början:
 
