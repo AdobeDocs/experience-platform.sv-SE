@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Ta bort en sandlåda
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 974e93b1c24493734848151b9be00758f6a84578
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '84'
+ht-degree: 1%
 
 ---
 
@@ -13,7 +16,9 @@ source-git-commit: 974e93b1c24493734848151b9be00758f6a84578
 
 Du kan ta bort en sandlåda genom att göra en DELETE-begäran som innehåller sandlådans `name` i begärandesökvägen.
 
->[!NOTE] Om du gör det här API-anropet uppdateras sandlådeegenskapen till&quot;Borttagen&quot; och den inaktiveras. `status` GET-begäranden kan fortfarande hämta sandlådans information efter att den har tagits bort.
+>[!NOTE]
+>
+>Om du gör det här API-anropet uppdateras sandlådeegenskapen till&quot;Borttagen&quot; och den inaktiveras. `status` GET-begäranden kan fortfarande hämta sandlådans information efter att den har tagits bort.
 
 **API-format**
 
