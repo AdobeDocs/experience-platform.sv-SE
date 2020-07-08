@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Komma igång
 topic: API guide
 translation-type: tm+mt
-source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '714'
 ht-degree: 0%
@@ -42,7 +42,9 @@ Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuell
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>[!NOTE]
+>
+>Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -61,7 +63,9 @@ Tabellen nedan visar exempelsökvägar som använder regioner:
 | [!DNL Identity Service] API | https://</span>platform-va7.adobe.</span>io/data/core/identity/{ENDPOINT} | https://</span>platform-nld2.adobe.</span>io/data/core/identity/{ENDPOINT} |
 | [!DNL Identity Namespace] API | https://</span>platform-va7.adobe.</span>io/data/core/idnamespace/{ENDPOINT} | https://</span>platform-nld2.adobe.</span>io/data/core/idnamespace{ENDPOINT} |
 
->[!NOTE] Begäranden som görs utan att ange en region kan leda till att anrop dirigeras till fel region eller orsaka att anrop misslyckas oväntat.
+>[!NOTE]
+>
+>Begäranden som görs utan att ange en region kan leda till att anrop dirigeras till fel region eller orsaka att anrop misslyckas oväntat.
 
 Om du inte kan hitta regionen i din IMS-organisationsprofil kontaktar du systemadministratören för att få hjälp.
 
@@ -77,7 +81,9 @@ För att begränsa nyttolasten i svaren anpassar API:erna sina svar till den typ
 
 Exemplen i det här dokumentet täcker inte hela funktionaliteten i [!DNL Identity Service] API:t. Den fullständiga API:n finns i [Swagger API Reference](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml).
 
->[!NOTE] Alla returnerade identiteter kommer att ha ett ursprungligt XID-format när ett ursprungligt XID används i begäran. Vi rekommenderar att du använder ID-/namnutrymmesformuläret. Mer information finns i avsnittet [Hämta XID för en identitet](./create-custom-namespace.md).
+>[!NOTE]
+>
+>Alla returnerade identiteter kommer att ha ett ursprungligt XID-format när ett ursprungligt XID används i begäran. Vi rekommenderar att du använder ID-/namnutrymmesformuläret. Mer information finns i avsnittet [Hämta XID för en identitet](./create-custom-namespace.md).
 
 ## Nästa steg
 
