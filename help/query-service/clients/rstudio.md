@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Anslut med RStudio
 topic: connect
 translation-type: tm+mt
-source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '222'
+ht-degree: 2%
 
 ---
 
@@ -37,10 +40,12 @@ con <- dbConnect(drv,
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `{DATABASE_NAME}` | Namnet på den databas som ska användas. |
-| `{HOST_NUMBER` och `{PORT_NUMBER}` | Värdslutpunkten och dess port för Query Service. |
-| `{USERNAME}` och `{PASSWORD}` | De inloggningsuppgifter som ska användas. Användarnamnet har formen av `ORG_ID@AdobeOrg`. |
+| `{HOST_NUMBER` och `{PORT_NUMBER}` | Värdslutpunkten och dess port för Query Service. |
+| `{USERNAME}` och `{PASSWORD}` | De inloggningsuppgifter som ska användas. Användarnamnet har formen av `ORG_ID@AdobeOrg`. |
 
->[!NOTE] Mer information om hur du hittar databasnamn, värd, port och inloggningsuppgifter finns på [inloggningssidan på Platform](https://platform.adobe.com/query/configuration). Logga in på Platform, klicka på **Frågor** och klicka sedan på **Autentiseringsuppgifter** för att hitta dina inloggningsuppgifter.
+>[!NOTE]
+>
+>Mer information om hur du hittar databasnamn, värd, port och inloggningsuppgifter finns på [inloggningssidan i Platform](https://platform.adobe.com/query/configuration). Logga in på Platform, klicka på **Frågor** och klicka sedan på **Autentiseringsuppgifter** för att hitta dina inloggningsuppgifter.
 
 ## Nästa steg
 
