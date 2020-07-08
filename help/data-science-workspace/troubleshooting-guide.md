@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Felsökningsguide för Data Science Workspace
 topic: Troubleshooting
 translation-type: tm+mt
-source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '665'
 ht-degree: 0%
@@ -18,7 +18,9 @@ Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Pla
 
 ## [!DNL JupyterLab] miljön läses inte in i [!DNL Google Chrome]
 
->[!IMPORTANT] Problemet har åtgärdats men kan fortfarande finnas i webbläsaren Google Chrome 80.x. Kontrollera att webbläsaren Chrome är uppdaterad.
+>[!IMPORTANT]
+>
+>Problemet har åtgärdats men kan fortfarande finnas i webbläsaren Google Chrome 80.x. Kontrollera att webbläsaren Chrome är uppdaterad.
 
 I webbläsarversionen 80.x blockeras alla cookies från tredje part som standard. [!DNL Google Chrome] Den här principen kan förhindra [!DNL JupyterLab] inläsning i Adobe Experience Platform.
 
@@ -38,7 +40,9 @@ Slutligen växlar du Blockera cookies från tredje part till AV.
 
 ![avancerat krom](./images/faq/toggle-off.png)
 
->[!NOTE] Du kan även inaktivera cookies från tredje part och lägga till [*.]ds.adobe.net till listan allow.
+>[!NOTE]
+>
+>Du kan även inaktivera cookies från tredje part och lägga till [*.]ds.adobe.net till tillåtelselista.
 
 Gå till&quot;chrome://flags/&quot; i adressfältet. Sök efter och inaktivera flaggan *&quot;SameSite som standard-cookies&quot;* med hjälp av listrutan till höger.
 
