@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Hantera användare för en produktprofil
 topic: user guide
 translation-type: tm+mt
-source-git-commit: df85ea955b7a308e6be1e2149fcdfb4224facc53
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '184'
+ht-degree: 1%
 
 ---
 
@@ -19,7 +22,9 @@ Dialogrutan *Lägg till användare* visas. Med hjälp av sökfältet kan du sök
 
 ![add-user-autocomplete](../images/add-user-autocomplete.png)
 
->[!NOTE] Om en användare inte visas i fönstret Komplettera automatiskt anger du den fullständiga e-postadressen i sökfältet. En inbjudan skickas till e-postmeddelandet med instruktioner om hur du konfigurerar ett Adobe ID-konto.
+>[!NOTE]
+>
+>Om en användare inte visas i fönstret Komplettera automatiskt anger du den fullständiga e-postadressen i sökfältet. En inbjudan skickas till e-postmeddelandet med instruktioner om hur du konfigurerar ett Adobe ID.
 
 När du har valt en användare klickar du på **Spara** för att lägga till dem i produktprofilen.
 
@@ -31,4 +36,4 @@ Fliken *Användare* för produktprofilen visas igen, där den tillagda användar
 
 ## Nästa steg
 
-Nu när du har lärt dig hur du styr åtkomsten till plattformsfunktioner via Admin Console kan du läsa avsnittet i bilagan i [åtkomstkontrollsöversikten](../home.md) för att lära dig mer om de enskilda behörigheterna och de plattformsfunktioner som de ger åtkomst till.
+Nu när du har lärt dig hur du styr åtkomsten till Platform-funktioner via Admin Console kan du läsa avsnittet i bilagan i [åtkomstkontrollsöversikten](../home.md) för att lära dig mer om de enskilda behörigheterna och de Platform-funktioner de ger åtkomst till.
