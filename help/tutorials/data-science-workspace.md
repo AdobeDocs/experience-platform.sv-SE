@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Självstudiekurser för datavetenskap
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 1a835c6c20c70bf03d956c601e2704b68d4f90fa
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1252'
 ht-degree: 0%
@@ -60,6 +60,8 @@ Om du vill veta mer kan du följa [paketets källfiler i en recept-självstudiek
 ## Importera ett recept
 
 >[!NOTE]
+>
+>
 >Den här självstudiekursen kräver att du har en URL för en Docker-källfil. Besök [paketets källfiler i en recept-självstudiekurs](../data-science-workspace/models-recipes/package-source-files-recipe.md) om du inte har någon URL för Docker-källfilen.
 
 Självstudiekurserna för importrecept ger insikter om hur du konfigurerar och importerar ett paketerat recept. I slutet av den här självstudiekursen kan du skapa, utbilda och utvärdera en modell i Adobe Experience Platform Data Science Workspace.
