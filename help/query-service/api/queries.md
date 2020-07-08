@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Handbok för frågetjänstutvecklare
 topic: queries
 translation-type: tm+mt
-source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '647'
+ht-degree: 0%
 
 ---
 
@@ -193,7 +196,9 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om din n
 }
 ```
 
->[!NOTE] Du kan använda värdet för `_links.cancel` att [avbryta den skapade frågan](#cancel-a-query).
+>[!NOTE]
+>
+>Du kan använda värdet för `_links.cancel` att [avbryta den skapade frågan](#cancel-a-query).
 
 ### Hämta en fråga via ID
 
@@ -262,7 +267,9 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 }
 ```
 
->[!NOTE] Du kan använda värdet för `_links.cancel` att [avbryta den skapade frågan](#cancel-a-query).
+>[!NOTE]
+>
+>Du kan använda värdet för `_links.cancel` att [avbryta den skapade frågan](#cancel-a-query).
 
 ### Avbryt en fråga
 
