@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Paketera källfiler i ett recept
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
+source-git-commit: 45461e3420f3b7e227f80fe775d80b8442a1069c
 workflow-type: tm+mt
-source-wordcount: '1067'
+source-wordcount: '1087'
 ht-degree: 0%
 
 ---
@@ -169,7 +169,7 @@ Börja med att klona [!DNL GitHub] databasen till ditt lokala system med följan
 git clone https://github.com/adobe/experience-platform-dsw-reference.git
 ```
 
-Navigera sedan till katalogen `experience-platform-dsw-reference/recipes/scala/retail` där du hittar skripten `login.sh` och `build.sh`. Dessa skript används för att logga in på Docker och skapa Docker-bilden. Om du har dina [Docker-uppgifter](#docker-based-model-authoring) klara anger du följande kommandon som du vill avsluta i ordning:
+Navigera sedan till katalogen `experience-platform-dsw-reference/recipes/scala` där du hittar skripten `login.sh` och `build.sh`. Dessa skript används för att logga in på Docker och skapa Docker-bilden. Om du har dina [Docker-uppgifter](#docker-based-model-authoring) klara anger du följande kommandon som du vill avsluta i ordning:
 
 ```BASH
 # for logging in to Docker
@@ -178,6 +178,9 @@ Navigera sedan till katalogen `experience-platform-dsw-reference/recipes/scala/r
 # for building Docker image
 ./build.sh
 ```
+
+>[!TIP]
+>Om du får ett behörighetsfel när du försöker logga in på Docker med hjälp av `login.sh` skriptet kan du försöka med kommandot `bash login.sh`.
 
 När du kör inloggningsskriptet måste du ange Docker-värden, användarnamn och lösenord. När du bygger måste du ange Docker-värden och en versionstagg för bygget.
 
