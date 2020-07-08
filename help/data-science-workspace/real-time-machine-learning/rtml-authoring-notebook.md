@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användarhandbok för Machine Learning-anteckningsbok i realtid
 topic: Training and scoring a ML model
 translation-type: tm+mt
-source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1618'
 ht-degree: 0%
@@ -274,6 +274,8 @@ Därefter ändrar du strängvärdet i XML `model_path` -anteckningsboken i ** re
 I det här avsnittet beskrivs hur du skapar en DSL. Du kommer att skapa noderna som innehåller eventuell förbearbetning av data tillsammans med ONNX-noden. Därefter skapas ett DSL-diagram med noder och kanter. Kanter ansluter noder med tuppelbaserat format (node_1, node_2). Diagrammet bör inte ha några cykler.
 
 >[!IMPORTANT]
+>
+>
 >Det är obligatoriskt att använda ONNX-noden. Utan ONNX-noden kommer programmet att misslyckas.
 
 ### Skapa noder
