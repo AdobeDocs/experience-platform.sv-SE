@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Marknadsföringsåtgärder
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1a835c6c20c70bf03d956c601e2704b68d4f90fa
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '536'
 ht-degree: 0%
@@ -154,7 +154,9 @@ PUT /marketingActions/custom/{marketingActionName}
 
 Observera i följande begäran att nyttolasten `name` i begäran är densamma som `{marketingActionName}` i API-anropet. Till skillnad från `id` en skrivskyddad och systemgenererad policy kräver en marknadsföringsåtgärd att du anger det _tänkta_ namnet på marknadsföringsåtgärden när du skapar den.
 
->[!NOTE] Om du inte anger värdet `{marketingActionName}` i anropet kommer det att resultera i ett 405-fel (metoden tillåts inte) eftersom du inte får utföra en PUT direkt till `/marketingActions/custom` slutpunkten. Om `name` i nyttolasten inte matchar `{marketingActionName}` i sökvägen får du dessutom ett 400-fel (felaktig begäran).
+>[!NOTE]
+>
+>Om du inte anger värdet `{marketingActionName}` i anropet kommer det att resultera i ett 405-fel (metoden tillåts inte) eftersom du inte får utföra en PUT direkt till `/marketingActions/custom` slutpunkten. Om `name` i nyttolasten inte matchar `{marketingActionName}` i sökvägen får du dessutom ett 400-fel (felaktig begäran).
 
 ```SHELL
 curl -X PUT \
@@ -197,7 +199,9 @@ Om det skapas får du en HTTP-status 201 (Skapad) och svarstexten innehåller in
 
 Det går att ta bort marknadsföringsåtgärder genom att skicka en DELETE-begäran till den `{marketingActionName}` del av marknadsföringsåtgärden som du vill ta bort.
 
->[!NOTE] Du kan inte ta bort marknadsföringsåtgärder som refereras av befintliga profiler. Om du försöker göra det kommer det att resultera i ett 400-fel (felaktig begäran) tillsammans med ett felmeddelande som innehåller `id` (eller flera ID:n) för en princip (eller principer) som innehåller en referens till den marknadsföringsåtgärd som du försöker ta bort.
+>[!NOTE]
+>
+>Du kan inte ta bort marknadsföringsåtgärder som refereras av befintliga profiler. Om du försöker göra det kommer det att resultera i ett 400-fel (felaktig begäran) tillsammans med ett felmeddelande som innehåller `id` (eller flera ID:n) för en princip (eller principer) som innehåller en referens till den marknadsföringsåtgärd som du försöker ta bort.
 
 **API-format**
 
