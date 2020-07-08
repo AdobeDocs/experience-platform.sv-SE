@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: Utvecklarhandbok för kundprofil-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: d464a6b4abd843f5f8545bc3aa8000f379a86c6d
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '2431'
 ht-degree: 0%
@@ -483,6 +483,8 @@ En lyckad uppdatering returnerar HTTP-status 204 (inget innehåll) och en tom sv
 Det går också att ta bort ett beräknat attribut med API:t. Detta gör du genom att göra en DELETE-begäran till `/config/computedAttributes` slutpunkten och inkludera ID:t för det beräknade attributet som du vill ta bort i sökvägen för begäran.
 
 >[!Note]
+>
+>
 >Var försiktig när du tar bort ett beräknat attribut eftersom det kan användas i mer än ett schema och åtgärden DELETE inte kan ångras.
 
 **API-format**
