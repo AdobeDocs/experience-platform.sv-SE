@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Konfigurera ett dataflöde för en batchanslutning för molnlagring i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1141'
 ht-degree: 0%
@@ -48,7 +48,9 @@ Om du klickar på en mapp i listan kan du gå igenom mapphierarkin till djupare 
 
 När förhandsvisningsfönstret har fyllts i kan du klicka för **[!UICONTROL Next]** att överföra alla filer i den valda mappen. Om du vill överföra till en viss fil markerar du filen i listan innan du klickar på **[!UICONTROL Next]**.
 
->[!NOTE] Filformat som stöds är CSV, JSON och Parquet. JSON- och Parquet-filer måste vara XDM-kompatibla.
+>[!NOTE]
+>
+>Filformat som stöds är CSV, JSON och Parquet. JSON- och Parquet-filer måste vara XDM-kompatibla.
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-data-next.png)
 
