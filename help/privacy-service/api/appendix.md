@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Godkända ID-namnutrymmen och -kvalificerare
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: cc296670db91640e75fd7a47b874a46eaf57ecde
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '479'
+ht-degree: 6%
 
 ---
 
@@ -13,9 +16,9 @@ source-git-commit: cc296670db91640e75fd7a47b874a46eaf57ecde
 
 ## Standardnamnutrymmen för identiteter {#standard-namespaces}
 
-Alla identiteter som skickas till Integritetstjänsten måste anges under ett specifikt namnområde. Identitetsnamnutrymmen är en komponent i [Adobe Experience Platform Identity Service](../../identity-service/home.md) som anger det sammanhang som en identitet relateras till.
+Alla identiteter som skickas till Privacy Servicen måste anges under ett specifikt ID-namnutrymme. Identitetsnamnutrymmen är en komponent i [Adobe Experience Platform Identity Service](../../identity-service/home.md) som anger det sammanhang som en identitet relateras till.
 
-I följande tabell visas flera vanliga, fördefinierade identitetstyper som finns tillgängliga via Experience Platform, tillsammans med tillhörande `namespace` värden:
+I följande tabell visas flera vanliga, fördefinierade identitetstyper som Experience Platform tillhandahåller tillsammans med tillhörande `namespace` värden:
 
 | Identitetstyp | `namespace` | `namespaceId` |
 | --- | --- | --- |
@@ -29,13 +32,15 @@ I följande tabell visas flera vanliga, fördefinierade identitetstyper som finn
 | Google Ad ID | GAID | 20914 |
 | Windows AID | WAID | 8 |
 
->[!NOTE] Varje identitetstyp har också ett `namespaceId` heltalsvärde som kan användas i stället för `namespace` strängen när identitetsegenskapen ställs in på `type` namespaceId. Mer information finns i avsnittet om [namnutrymmeskvalificerare](#namespace-qualifiers) .
+>[!NOTE]
+>
+>Varje identitetstyp har också ett `namespaceId` heltalsvärde som kan användas i stället för `namespace` strängen när identitetsegenskapen ställs in på `type` namespaceId. Mer information finns i avsnittet om [namnutrymmeskvalificerare](#namespace-qualifiers) .
 
 Du kan hämta en lista med identitetsnamnutrymmen som används av din organisation genom att göra en GET-begäran till `idnamespace/identities` slutpunkten i Identitetstjänstens API. Mer information finns i utvecklarhandboken [för](../../identity-service/api/getting-started.md) identitetstjänsten.
 
 ## Namnutrymmeskvalificerare
 
-När du anger ett `namespace` värde i sekretesstjänstens API måste en **namnutrymmeskvalificerare** inkluderas i en motsvarande `type` parameter. Följande tabell visar de olika godkända namnutrymmeskvalificerarna.
+När du anger ett `namespace` värde i Privacy Service-API:t måste en **namnutrymmeskvalificerare** inkluderas i en motsvarande `type` parameter. Följande tabell visar de olika godkända namnutrymmeskvalificerarna.
 
 | Kvalificerare | Definition |
 | --------- | ---------- |
@@ -53,12 +58,12 @@ I följande tabell visas godkända värden för att ange en Adobe-produkt i attr
 
 | Produkt | Värde som ska användas i `include` attributet |
 --- | ---
-| Adobe Advertizing Cloud | &quot;AdCloud&quot; |
-| Adobe Analytics | &quot;Analytics&quot; |
+| Adobe Advertising Cloud | &quot;AdCloud&quot; |
+| Adobe Analytics | &quot;Analyser&quot; |
 | Adobe Audience Manager | &quot;AudienceManager&quot; |
 | Adobe Campaign | &quot;Campaign&quot; |
 | Adobe Experience Platform | &quot;aepDataLake&quot; |
 | Adobe Primetime-autentisering | &quot;primetimeAuthentication&quot; |
-| Adobe Target | &quot;Target&quot; |
+| Adobe Target | &quot;Målgrupp&quot; |
 | Kundposttjänst | &quot;CRS&quot; |
 | Kundprofil i realtid | &quot;ProfileService&quot; |
