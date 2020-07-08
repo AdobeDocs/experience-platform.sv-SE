@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Segmentjobb
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: b0554d931718bb6a8dd7d4f971daf3652a19a2a8
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '657'
 ht-degree: 0%
@@ -22,7 +22,7 @@ Den här handboken innehåller information som hjälper dig att förstå segment
 
 API-slutpunkterna som används i den här guiden ingår i segmenterings-API:t. Läs utvecklarhandboken för [segmentering innan du fortsätter](./getting-started.md).
 
-Avsnittet [](./getting-started.md#getting-started) Komma igång i utvecklarhandboken för segmentering innehåller länkar till relaterade ämnen, en guide till hur du läser exempelanropen för API i dokumentet och viktig information om vilka huvuden som krävs för att anropa något Experience Platform-API.
+Avsnittet [](./getting-started.md#getting-started) Komma igång i utvecklarhandboken för segment innehåller länkar till relaterade ämnen, en guide till hur du läser exempelanropen för API i dokumentet och viktig information om vilka rubriker som krävs för att anropa ett Experience Platform-API.
 
 ## Hämta en lista med segmentjobb
 
@@ -63,7 +63,9 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
 
 Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentjobb för den angivna IMS-organisationen som JSON. Följande svar returnerar en lista över alla framgångsrika segmentjobb för IMS-organisationen.
 
->[!NOTE] Följande svar har trunkerats för utrymme och visar bara det första returnerade jobbet.
+>[!NOTE]
+>
+>Följande svar har trunkerats för utrymme och visar bara det första returnerade jobbet.
 
 ```json
 {
@@ -361,7 +363,9 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs/bulk-get \
 
 Ett lyckat svar returnerar HTTP-status 207 med de begärda segmentjobben.
 
->[!NOTE] Följande svar har trunkerats för blanksteg och visar bara en del av informationen för varje segmentjobb. Det fullständiga svaret innehåller fullständig information om de begärda segmentjobben.
+>[!NOTE]
+>
+>Följande svar har trunkerats för blanksteg och visar bara en del av informationen för varje segmentjobb. Det fullständiga svaret innehåller fullständig information om de begärda segmentjobben.
 
 ```json
 {
