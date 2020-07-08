@@ -4,20 +4,23 @@ solution: Experience Platform
 title: Övervaka datainmatning
 topic: overview
 translation-type: tm+mt
-source-git-commit: 9cbc22a34613aeb58a2c5090b10978ae4428dbdb
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '530'
+ht-degree: 0%
 
 ---
 
 
 # Övervaka datainmatning
 
-Med datainhämtning kan ni importera data till Adobe Experience Platform. Du kan antingen använda gruppinmatning, vilket gör att du kan infoga data med olika filtyper (t.ex. CSV-filer), eller direktuppspelning, vilket gör att du kan importera data till plattformen med direktuppspelningsslutpunkter i realtid.
+Genom dataöverföring kan ni importera data till Adobe Experience Platform. Du kan antingen använda gruppinmatning, vilket gör att du kan infoga data med olika filtyper (t.ex. CSV-filer), eller direktuppspelning, vilket gör att du kan importera data till Platform med direktuppspelningsslutpunkter i realtid.
 
-I den här användarhandboken beskrivs hur du övervakar data i användargränssnittet i Adobe Experience Platform. Den här guiden kräver att du har ett Adobe-ID och tillgång till Adobe Experience Platform.
+I den här användarhandboken beskrivs hur du övervakar data i användargränssnittet i Adobe Experience Platform. Den här guiden kräver att du har ett Adobe ID och tillgång till Adobe Experience Platform.
 
 ## Övervaka direktuppspelning av data från början till slut
 
-Klicka på [Övervakning](https://platform.adobe.com)på den vänstra navigeringsmenyn i **Experience Platform-gränssnittet** och klicka sedan på **Direktuppspelning från början till slut**.
+I användargränssnittet [för](https://platform.adobe.com)Experience Platform klickar du på **Övervakning** på den vänstra navigeringsmenyn och sedan på **Direktuppspelning från början till slut**.
 
 ![](../images/quality/monitor-data-flows/click-streaming-end-to-end.png)
 
@@ -31,7 +34,9 @@ Som standard visas i det övre diagrammet hur snabbt du har fått i sig något u
 
 I det nedre diagrammet visas antalet lyckade bearbetade direktuppspelade händelser per profil under de senaste sju dagarna. Du kan justera datumintervallet så att olika tidsperioder visas genom att klicka på den markerade knappen.
 
-> [!NOTE] För att data ska kunna visas i det här diagrammet måste data **uttryckligen** aktiveras för profilen. Läs användarhandboken för [datauppsättningar om du vill lära dig hur du aktiverar direktuppspelningsdata för profil](../../catalog/datasets/user-guide.md#enable-a-dataset-for-real-time-customer-profile).
+>[!NOTE]
+>
+>För att data ska kunna visas i det här diagrammet måste data **uttryckligen** aktiveras för profilen. Läs användarhandboken för [datauppsättningar om du vill lära dig hur du aktiverar direktuppspelningsdata för profil](../../catalog/datasets/user-guide.md#enable-a-dataset-for-real-time-customer-profile).
 
 ![](../images/quality/monitor-data-flows/list-streams-focus-on-bottom-graph.png)
 
@@ -55,7 +60,7 @@ Misslyckade poster innehåller dessutom information om de fel som uppstod när g
 
 ## Övervaka dataöverföring från slutpunkt till slutpunkt
 
-Klicka på [Övervakning](https://platform.adobe.com)på den vänstra navigeringsmenyn i **Experience Platform-gränssnittet** .
+Klicka på [Övervakning](https://platform.adobe.com)på den vänstra navigeringsmenyn i användargränssnittet **för** Experience Platform.
 
 ![](../images/quality/monitor-data-flows/click-monitoring.png)
 
