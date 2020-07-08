@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Autentisera och få åtkomst till Experience Platform API:er
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 280456e68f54f49ce4a0134e226af89ad1f849a4
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '871'
 ht-degree: 0%
@@ -18,7 +18,7 @@ I det här dokumentet finns en stegvis självstudiekurs för att få tillgång t
 
 ## Autentisera för att göra API-anrop
 
-För att skydda program och användare måste alla förfrågningar till Adobe I/O-API:er autentiseras och auktoriseras med standarder som OAuth och JSON Web Tokens (JWT). The JWT is then used along with client-specific information to generate your personal access token.
+För att skydda program och användare måste alla förfrågningar till Adobe I/O-API:er autentiseras och auktoriseras med standarder som OAuth och JSON Web Tokens (JWT). JWT används sedan tillsammans med klientspecifik information för att generera din personliga åtkomsttoken.
 
 I den här självstudiekursen beskrivs stegen för autentisering genom att skapa en åtkomsttoken som beskrivs i följande flödesschema:
 ![](images/authentication/authentication-flowchart.png)
@@ -35,10 +35,10 @@ I följande avsnitt går vi igenom stegen för att skapa ett Adobe ID och bli ut
 
 ### Skapa ett Adobe ID
 
-If you do not have an Adobe ID, you can create one using the following steps:
+Om du inte har något Adobe ID kan du skapa ett med följande steg:
 
-1. Go to [Adobe Developer Console](https://console.adobe.io)
-2. Click **create a new account**
+1. Gå till [Adobe Developer Console](https://console.adobe.io)
+2. Klicka på **Skapa ett nytt konto**
 3. Slutför registreringsprocessen
 
 ## Bli utvecklare och användare för Experience Platform i en organisation
@@ -69,7 +69,9 @@ På samma sätt som när du lägger till en utvecklare måste administratören t
 
 ## Generera autentiseringsuppgifter för åtkomst i Adobe Developer Console
 
->[!NOTE] Om du följer det här dokumentet från [Privacy Servicens utvecklarguide](../privacy-service/api/getting-started.md)kan du nu gå tillbaka till den guiden för att generera autentiseringsuppgifter som är unika för Privacy Servicen.
+>[!NOTE]
+>
+>Om du följer det här dokumentet från [Privacy Servicens utvecklarguide](../privacy-service/api/getting-started.md)kan du nu gå tillbaka till den guiden för att generera autentiseringsuppgifter som är unika för Privacy Servicen.
 
 Med Adobe Developer Console måste du generera följande tre autentiseringsuppgifter:
 
