@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Samla in data från en tredjepartsdatabas via källanslutningar och API:er
 topic: overview
 translation-type: tm+mt
-source-git-commit: 84ea3e45a3db749359f3ce4a0ea25429eee8bb66
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1522'
 ht-degree: 0%
@@ -323,7 +323,9 @@ curl -X POST \
 | `params.dataSetId` | ID för måldatauppsättningen. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID för din tredjepartsdatabas. |
 
->[!NOTE] När du skapar en målanslutning måste du se till att du använder basanslutningsvärdet för datauppsättningen för basanslutningen `id` i stället för basanslutningen för källkopplingen från tredje part.
+>[!NOTE]
+>
+>När du skapar en målanslutning måste du se till att du använder basanslutningsvärdet för datauppsättningen för basanslutningen `id` i stället för basanslutningen för källkopplingen från tredje part.
 
 **Svar**
 
