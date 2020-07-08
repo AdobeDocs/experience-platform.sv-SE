@@ -4,20 +4,25 @@ solution: Experience Platform
 title: Målmappningsfält
 topic: overview
 translation-type: tm+mt
-source-git-commit: 53fb7ea201ed9361584d24c8bd2ad10edd9f3975
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '427'
+ht-degree: 0%
 
 ---
 
 
 # Målmappningsfält
 
-Med Adobe Experience Platform kan ni importera Adobe Target-data via Target-källkopplingen. När du använder kopplingen måste alla data från målfält mappas till XDM-fälten ( [Experience Data Model)](../../../../xdm/home.md) som är kopplade till klassen XDM ExperienceEvent.
+Med Adobe Experience Platform kan du importera Adobe Target data via Target källanslutning. När du använder kopplingen måste alla data från Target-fält mappas till XDM-fälten ( [Experience Data Model)](../../../../xdm/home.md) som är kopplade till klassen XDM ExperienceEvent.
 
 I följande tabell visas fälten i ett Experience Event-schema (*XDM ExperienceEvent-fält*) och motsvarande Target-fält som de ska mappas till (*Target Request-fält*). Ytterligare information om vissa mappningar finns också.
 
->[!NOTE] Rulla åt vänster/höger för att visa hela innehållet i tabellen.
+>[!NOTE]
+>
+>Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
-| XDM ExperienceEvent-fält | Fält för målbegäran | Anteckningar |
+| XDM ExperienceEvent-fält | Target Request-fält | Anteckningar |
 | ------------------------- | -------------------- | ----- |
 | **`id`** | En unik begärandeidentifierare |
 | **`dataSource`** |  | Konfigurerad till &quot;1&quot; för alla klienter. |
@@ -46,7 +51,7 @@ I följande tabell visas fälten i ett Experience Event-schema (*XDM ExperienceE
 | `experience.target.mboxName` | `mboxRequest.mboxName` |
 | `experience.target.mboxVersion` | `mboxRequest.mboxVersion` |
 | `experience.target.sessionId` | `mboxRequest.sessionId` |
-| `experience.target.environmentID` | Målets interna mappning för kunddefinierade miljöer (som dev, qa eller prod). |
+| `experience.target.environmentID` | Target interna mappning för kunddefinierade miljöer (som dev, qa eller prod). |
 | `experience.target.supplementalDataID` | Identifierare som används för att sätta ihop Target-händelser med Analytics-händelser |
 | `experience.target.pageDetails.pageId` | `mboxRequest.pageId` |
 | `experience.target.pageDetails.pageScore` | `mboxRequest.mboxPageValue` |
