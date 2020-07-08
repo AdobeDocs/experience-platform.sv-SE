@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Adobe-definierade funktioner
 topic: queries
 translation-type: tm+mt
-source-git-commit: 41fdee979db32b97a5935a02e9ffcde3308b6d54
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '248'
+ht-degree: 1%
 
 ---
 
@@ -13,14 +16,14 @@ source-git-commit: 41fdee979db32b97a5935a02e9ffcde3308b6d54
 
 En av Adobes stora differentierande faktorer är att de förstår upplevelsedata och vad kunderna behöver kunna göra med dessa data. Du kan använda den här förståelsen för att skapa hjälpfunktioner som gör jobbet enklare.
 
-Det här dokumentet innehåller Adobe-definierade funktioner (ADF) som stöder tre viktiga analysaktiviteter:
+Det här dokumentet innehåller Adobes definierade funktioner (ADF) som stöder tre viktiga Analytics-aktiviteter:
 - [Yrkesställning](#sessionization)
-- [Attribut](#attribution)
-- [Pathing](#pathing)
+- [Attribuering](#attribution)
+- [Sökvägsanalys](#pathing)
 
 ## Yrkesställning
 
-Besöksgrupperingarna `SESS_TIMEOUT()` återges i Adobe Analytics. Den utför en liknande tidsbaserad gruppering, men med anpassningsbara parametrar.
+Besöksgrupperingarna `SESS_TIMEOUT()` som finns i Adobe Analytics återges. Den utför en liknande tidsbaserad gruppering, men med anpassningsbara parametrar.
 
 **Syntax:**
 
@@ -82,7 +85,7 @@ LIMIT 31;
 
 ![Bild](../images/queries/adobe-functions/trended-report.png)
 
-## Attribut
+## Attribuering
 
 Attribution är det sätt på vilket ni fördelar mätvärden eller konverteringar som intäkter, order eller registreringar till era marknadsföringssatsningar.
 
@@ -92,7 +95,9 @@ Attribution ADFs found in Query Service allow those allokations to be defined an
 
 I det här exemplet fokuseras på attribuering med sista-beröringen, men Adobe erbjuder även attribuering med första-beröringen.
 
->[!NOTE] Andra alternativ med timeout och händelsebaserad förfallotid är tillgängliga i framtida versioner av Query Service.
+>[!NOTE]
+>
+>Andra alternativ med timeout och händelsebaserad förfallotid är tillgängliga i framtida versioner av Query Service.
 
 **Syntax:**
 
@@ -145,7 +150,7 @@ LIMIT 25;
 
 ![Bild](../images/queries/adobe-functions/last-member-level.png)
 
-## Pathing
+## Sökvägsanalys
 
 Pathing hjälper till att förstå hur kunderna navigerar på er webbplats. Med hjälp av `NEXT()` - och `PREVIOUS()` ADF-filer är detta möjligt.
 
