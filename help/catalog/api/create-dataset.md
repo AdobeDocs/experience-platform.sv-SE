@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Skapa en datauppsättning
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 6d24637dc6cc282f98288b6416e4a3b7cebe42ea
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '203'
+ht-degree: 0%
 
 ---
 
@@ -13,7 +16,9 @@ source-git-commit: 6d24637dc6cc282f98288b6416e4a3b7cebe42ea
 
 Om du vill skapa en datauppsättning med hjälp av katalog-API:t måste du känna till `$id` värdet på XDM-schemat (Experience Data Model) som datauppsättningen ska baseras på. När du har ett schema-ID kan du skapa en datauppsättning genom att göra en POST-begäran till `/datasets` slutpunkten i Catalog API.
 
->[!NOTE] Det här dokumentet innehåller bara information om hur du skapar ett datauppsättningsobjekt i Katalog. Mer information om hur du skapar, fyller i och övervakar en datauppsättning finns i följande [självstudiekurs](../datasets/create.md).
+>[!NOTE]
+>
+>Det här dokumentet innehåller bara information om hur du skapar ett datauppsättningsobjekt i Katalog. Mer information om hur du skapar, fyller i och övervakar en datauppsättning finns i följande [självstudiekurs](../datasets/create.md).
 
 **API-format**
 
@@ -52,7 +57,9 @@ curl -X POST \
 | `name` | Namnet på datauppsättningen som ska skapas. |
 | `schemaRef.id` | URI- `$id` värdet för XDM-schemat som datamängden baseras på. |
 
->[!NOTE] I det här exemplet används [parquet](https://parquet.apache.org/documentation/latest/) -filformatet för dess `containerFormat` egenskap. Ett exempel som använder JSON-filformatet finns i utvecklarhandboken för [batchimport](../../ingestion/batch-ingestion/api-overview.md).
+>[!NOTE]
+>
+>I det här exemplet används [parquet](https://parquet.apache.org/documentation/latest/) -filformatet för dess `containerFormat` egenskap. Ett exempel som använder JSON-filformatet finns i utvecklarhandboken för [batchimport](../../ingestion/batch-ingestion/api-overview.md).
 
 **Svar**
 
