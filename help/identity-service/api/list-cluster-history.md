@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Hämta klusterhistorik för en identitet
 topic: API guide
 translation-type: tm+mt
-source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '303'
 ht-degree: 0%
@@ -68,7 +68,9 @@ curl -X GET \
 
 Använd `POST` metoden som en batchmotsvarighet till den `GET` metod som beskrivs ovan för att returnera klusterhistoriken för flera identiteter.
 
->[!NOTE] Begäran får inte innehålla fler än 1 000 identiteter. Begäranden som överskrider 1 000 identiteter resulterar i 400-statuskod.
+>[!NOTE]
+>
+>Begäran får inte innehålla fler än 1 000 identiteter. Begäranden som överskrider 1 000 identiteter resulterar i 400-statuskod.
 
 **API-format**
 
@@ -210,7 +212,9 @@ curl -X POST \
 }
 ```
 
->[!NOTE] Svaret har alltid en post för varje XID som anges i begäran, oavsett om en begärans XID tillhör samma kluster eller om ett eller flera har ett kluster kopplat över huvud taget.
+>[!NOTE]
+>
+>Svaret har alltid en post för varje XID som anges i begäran, oavsett om en begärans XID tillhör samma kluster eller om ett eller flera har ett kluster kopplat över huvud taget.
 
 ## Nästa steg
 
