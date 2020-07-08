@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Datadeduplicering
 topic: queries
 translation-type: tm+mt
-source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '414'
+ht-degree: 0%
 
 ---
 
@@ -20,13 +23,15 @@ Vissa användningsfall för borttagning av dubbletter är globala inom datuminte
 Det här dokumentet innehåller exempel på delval och fullständig exempelfråga för borttagning av dubbletter av tre vanliga användningsområden:
 - [ExperienceEvents](#experienceevents)
 - [Inköp](#purchases)
-- [Mått](#metrics)
+- [Mätvärden](#metrics)
 
 ### ExperienceEvents {#experienceevents}
 
 Om ExperienceEvents dupliceras vill du troligen ignorera hela raden.
 
->[!CAUTION] Många DataSets i Experience Platform, inklusive de som har producerats av Adobe Analytics Data Connector, har redan borttagning av dubbletter på ExperienceEvent-nivå. Därför är det inte nödvändigt att återanvända den här nivån av borttagning av dubbletter, vilket kommer att göra frågan långsammare. Det är viktigt att förstå källan till dina DataSets och veta om borttagning av dubbletter på ExperienceEvent-nivå redan har tillämpats. För alla datauppsättningar som direktuppspelas (till exempel uppsättningar från Adobe Target) måste du tillämpa borttagning på ExperienceEvent-nivå eftersom dessa datakällor har minst en semantik.
+>[!CAUTION]
+>
+>Många DataSets i Experience Platform, inklusive de som har producerats av Adobe Analytics Data Connector, har redan borttagning av dubbletter på ExperienceEvent-nivå. Därför är det inte nödvändigt att återanvända den här nivån av borttagning av dubbletter, vilket kommer att göra frågan långsammare. Det är viktigt att förstå källan till dina DataSets och veta om borttagning av dubbletter på ExperienceEvent-nivå redan har tillämpats. För alla datauppsättningar som direktuppspelas (till exempel uppspelningar från Adobe Target) måste du använda borttagning på ExperienceEvent-nivå eftersom dessa datakällor har semantik på minst en gång.
 
 **Omfång:** Global
 
@@ -96,7 +101,7 @@ SELECT SUM(commerce.purchases.value) AS num_purchases FROM (
 ) WHERE id_dup_num = 1 AND purchaseID_dup_num = 1
 ```
 
-### Mått {#metrics}
+### Mätvärden {#metrics}
 
 Om du har ett mätvärde som använder det valfria unika ID:t och en dubblett av det ID:t visas, vill du troligtvis ignorera det måttvärdet och behålla resten av ExperienceEvent. I XDM använder nästan alla mätvärden den datatyp som innehåller ett valfritt `Measure` `id` fält som du kan använda för borttagning av dubbletter.
 
