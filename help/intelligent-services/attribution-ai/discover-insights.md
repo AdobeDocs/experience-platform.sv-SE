@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Identifiera insikter i Attribution AI
 topic: Attribution AI insights
 translation-type: tm+mt
-source-git-commit: 0ea96de956adb5a6c5286433a547772118c43aee
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1164'
 ht-degree: 0%
@@ -30,7 +30,9 @@ Klicka på [!DNL Adobe Experience Platform] Tjänster **i den vänstra navigerin
 
 AI-tjänstsidan för attribuering visas. På den här sidan visas tjänstinstanser för Attribution AI och information om dem, inklusive namnet på instansen, konverteringshändelser, hur ofta instansen körs och status för den senaste uppdateringen. Klicka på ett tjänstinstansnamn för att börja.
 
->[!NOTE] Det går endast att välja tjänstinstanser som har slutfört betygskörningar.
+>[!NOTE]
+>
+>Det går endast att välja tjänstinstanser som har slutfört betygskörningar.
 
 ![Skapa instans](./images/insights/select-service-instance.png)
 
@@ -72,7 +74,9 @@ Knappen *Fler åtgärder* finns i den övre högra navigeringen bredvid *Rediger
 
 Tack vare AI-insikter för attribuering kan du filtrera data och automatiskt uppdatera gränssnittets visuella information baserat på de filter du valt.
 
->[!NOTE] Som standard är alla filter inställda på &quot;Alla&quot; förutom filtret *Attribution model* , som är inställt på &quot;Inkrementella och påverkade attributkonverteringar&quot;.
+>[!NOTE]
+>
+>Som standard är alla filter inställda på &quot;Alla&quot; förutom filtret *Attribution model* , som är inställt på &quot;Inkrementella och påverkade attributkonverteringar&quot;.
 
 ### Konverteringshändelse
 
@@ -98,11 +102,15 @@ Med *produktfiltret* kan du välja bland de produkter som ursprungligen var inka
 
 Filtret *Geografi* fyller i landskoder som baseras på regionsbaserade modeller. Beroende på dina data kan det här filtret finnas eller inte finnas.
 
->[!NOTE] Landskoderna är två tecken långa. En fullständig lista finns här: [ISO 3166-1 alpha-2](https://datahub.io/core/country-list).
+>[!NOTE]
+>
+>Landskoderna är två tecken långa. En fullständig lista finns här: [ISO 3166-1 alpha-2](https://datahub.io/core/country-list).
 
 ### Län
 
->[!NOTE] Det här filtret finns bara om du utförde den valfria stegvisa [regionbaserade modelleringen](./user-guide.md#region-based-modeling-optional) i AI-gränssnittshandboken för Attribution när du skapade tjänstinstansen.
+>[!NOTE]
+>
+>Det här filtret finns bara om du utförde den valfria stegvisa [regionbaserade modelleringen](./user-guide.md#region-based-modeling-optional) i AI-gränssnittshandboken för Attribution när du skapade tjänstinstansen.
 
 Med det här filtret kan du markera alla områden som du har konfigurerat när du skapar instansen.
 
