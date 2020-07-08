@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Utvecklarhandbok för DULE Policy Service API
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1a835c6c20c70bf03d956c601e2704b68d4f90fa
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '678'
 ht-degree: 0%
@@ -50,7 +50,9 @@ Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Data
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>[!NOTE]
+>
+>Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
