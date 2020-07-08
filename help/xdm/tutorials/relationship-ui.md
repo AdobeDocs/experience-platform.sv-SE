@@ -4,22 +4,25 @@ solution: Experience Platform
 title: Definiera en relation mellan två scheman med schemaredigeraren
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: f8c34d84e30ae14c3936c2e32ee84a2fcd3abdc3
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '836'
+ht-degree: 0%
 
 ---
 
 
 # Definiera en relation mellan två scheman med Schemaredigeraren
 
-Möjligheten att förstå relationerna mellan era kunder och deras interaktioner med ert varumärke i olika kanaler är en viktig del av Adobe Experience Platform. Genom att definiera dessa relationer i strukturen för era XDM-scheman (Experience Data Model) kan ni få komplexa insikter i era kunddata.
+Möjligheten att förstå relationen mellan era kunder och deras interaktioner med ert varumärke i olika kanaler är en viktig del av Adobe Experience Platform. Genom att definiera dessa relationer i strukturen för era XDM-scheman (Experience Data Model) kan ni få komplexa insikter i era kunddata.
 
-I det här dokumentet finns en självstudiekurs för att definiera en 1:1-relation mellan två scheman som definierats av din organisation med Schemaredigeraren i Experience Platforms användargränssnitt. Anvisningar om hur du definierar schemarelationer med API:t finns i självstudiekursen om hur du [definierar en relation med API:t](relationship-api.md)för schemaregister.
+I det här dokumentet finns en självstudiekurs för att definiera en 1:1-relation mellan två scheman som definierats av din organisation med Schemaredigeraren i användargränssnittet i Experience Platform. Anvisningar om hur du definierar schemarelationer med API:t finns i självstudiekursen om hur du [definierar en relation med API:t](relationship-api.md)för schemaregister.
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse för XDM-systemet och Schemaredigeraren i Experience Platform-gränssnittet. Läs följande dokumentation innan du börjar den här självstudiekursen:
+Den här självstudiekursen kräver en fungerande förståelse för XDM-systemet och Schemaredigeraren i användargränssnittet i Experience Platform. Läs följande dokumentation innan du börjar den här självstudiekursen:
 
-* [XDM System in Experience Platform](../home.md): En översikt över XDM och dess implementering i Experience Platform.
+* [XDM System i Experience Platform](../home.md): En översikt över XDM och dess implementering i Experience Platform.
 * [Grundläggande om schemakomposition](../schema/composition.md): En introduktion av byggstenarna i XDM-scheman.
 * [Skapa ett schema med Schemaredigeraren](create-schema-ui.md): En självstudiekurs som beskriver grunderna i att arbeta med Schemaredigeraren.
 
@@ -45,7 +48,9 @@ Målschemat &quot;Hotels&quot; innehåller fält som beskriver ett hotell, inklu
 
 ## Skapa en relationsblandning
 
->[!NOTE] Det här steget krävs bara om källschemat inte har ett dedikerat strängtypsfält som ska användas som referens till ett annat schema. Om det här fältet redan är definierat i källschemat går du vidare till nästa steg när du [definierar ett relationsfält](#relationship-field).
+>[!NOTE]
+>
+>Det här steget krävs bara om källschemat inte har ett dedikerat strängtypsfält som ska användas som referens till ett annat schema. Om det här fältet redan är definierat i källschemat går du vidare till nästa steg när du [definierar ett relationsfält](#relationship-field).
 
 För att kunna definiera en relation mellan två scheman måste källschemat ha ett dedikerat fält som ska användas som referens till målschemat. Du kan lägga till det här fältet i källschemat genom att skapa en ny blandning.
 
