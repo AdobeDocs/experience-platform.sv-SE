@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Optimera en modell
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1219'
 ht-degree: 0%
@@ -56,13 +56,15 @@ evaluation.predictionColumn=prediction
 training.evaluate=true
 ```
 
-När en utvärderingsklass har aktiverats beräknas ett antal värden som standard under kursen. Standardvärden kan deklareras explicit genom att lägga till följande rad i `application.properties`.
+När en utvärderingsklass har aktiverats beräknas ett antal mätvärden under utbildning som standard. Standardvärden kan deklareras explicit genom att lägga till följande rad i `application.properties`.
 
 ```scala
 evaluation.metrics.com=com.adobe.platform.ml.impl.Constants.DEFAULT
 ```
 
->[!NOTE] Om måttet inte är definierat aktiveras standardmåtten.
+>[!NOTE]
+>
+>Om måttet inte är definierat aktiveras standardmåtten.
 
 Du kan aktivera ett specifikt mått genom att ändra värdet för `evaluation.metrics.com`. I följande exempel är F-poängmåttet aktiverat.
 
@@ -83,7 +85,9 @@ I följande tabell anges standardmåtten för varje klass. En användare kan ock
 
 Den anpassade utvärderaren kan fås genom att utöka gränssnittet för `MLEvaluator.scala` i `Evaluator.scala` filen. I exemplet [Evaluator.scala](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/scala/src/main/scala/com/adobe/platform/ml/Evaluator.scala) definierar vi anpassade `split()` funktioner och `evaluate()` funktioner. Vår `split()` funktion delar upp våra data slumpmässigt med förhållandet 8:2 och vår `evaluate()` funktion definierar och returnerar 3 mätvärden: MAPPA, MAE och RMSE.
 
->[!IMPORTANT] För `MLMetric` klassen ska du inte använda `"measures"` för `valueType` när du skapar en ny `MLMetric` annan. Måttet fylls inte i i den anpassade tabellen för utvärderingsmått.
+>[!IMPORTANT]
+>
+>För `MLMetric` klassen ska du inte använda `"measures"` för `valueType` när du skapar en ny `MLMetric` annan. Måttet fylls inte i i den anpassade tabellen för utvärderingsmått.
 >  
 > Gör så här: `metrics.add(new MLMetric("MAPE", mape, "double"))`\
 > Inte detta: `metrics.add(new MLMetric("MAPE", mape, "measures"))`
