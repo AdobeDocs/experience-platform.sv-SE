@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Modeller
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 33f8c424c208bb61319b49e7ecb30e3144ef108a
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '821'
 ht-degree: 1%
@@ -220,7 +220,9 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om din mod
 
 Du kan uppdatera en befintlig modell genom att skriva över dess egenskaper via en PUT-begäran som inkluderar målmodellens ID i sökvägen för begäran och som tillhandahåller en JSON-nyttolast som innehåller uppdaterade egenskaper.
 
->[!TIP] För att säkerställa att denna PUT-begäran lyckas föreslår vi att du först utför en GET-begäran för att hämta modellen efter ID. Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
+>[!TIP]
+>
+>För att säkerställa att denna PUT-begäran lyckas föreslår vi att du först utför en GET-begäran för att hämta modellen efter ID. Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
 
 **API-format**
 
