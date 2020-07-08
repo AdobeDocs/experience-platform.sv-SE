@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Skapa ett ad hoc-schema
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: 956d1e5b4a994c9ea52d818f3dd6d3ff88cb16b6
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '742'
+ht-degree: 0%
 
 ---
 
@@ -13,13 +16,13 @@ source-git-commit: 956d1e5b4a994c9ea52d818f3dd6d3ff88cb16b6
 
 Under särskilda omständigheter kan det vara nödvändigt att skapa ett XDM-schema (Experience Data Model) med fält som bara namnges av en enda datauppsättning. Detta kallas för ett ad hoc-schema. Ad-hoc-scheman används i olika arbetsflöden för dataöverföring för Experience Platform, inklusive inhämtning av CSV-filer och skapande av vissa typer av källanslutningar.
 
-Det här dokumentet innehåller allmänna steg för att skapa ett ad hoc-schema med API:t för [schemaregister](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml). Den är avsedd att användas tillsammans med andra Experience Platform-självstudiekurser som kräver att ett ad hoc-schema skapas som en del av arbetsflödet. Var och en av dessa dokument innehåller detaljerad information om hur man konfigurerar ett ad hoc-schema för sitt specifika användningsfall.
+Det här dokumentet innehåller allmänna steg för att skapa ett ad hoc-schema med API:t för [schemaregister](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml). Den är avsedd att användas tillsammans med andra självstudiekurser på Experience Platform som kräver att ett ad hoc-schema skapas som en del av arbetsflödet. Var och en av dessa dokument innehåller detaljerad information om hur man konfigurerar ett ad hoc-schema för sitt specifika användningsfall.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse för Experience Data Model (XDM) System. Läs följande XDM-dokumentation innan du startar den här självstudiekursen:
 
-- [XDM - systemöversikt](../home.md): En översikt på hög nivå över XDM och dess implementering i Experience Platform.
+- [XDM - systemöversikt](../home.md): Översikt över XDM och dess implementering i Experience Platform.
 - [Grundläggande om schemakomposition](../schema/composition.md): En översikt över de grundläggande komponenterna i XDM-scheman.
 
 Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa API:t för schemaregister. Detta inkluderar ditt `{TENANT_ID}`, konceptet med&quot;behållare&quot; och de rubriker som krävs för att göra förfrågningar (med särskild uppmärksamhet på rubriken Godkänn och dess möjliga värden).
@@ -36,9 +39,11 @@ POST /tenant/classes
 
 **Begäran**
 
-Följande begäran skapar en ny XDM-klass, konfigurerad med attributen som anges i nyttolasten. Genom att ange en `$ref` egenskap som anges `https://ns.adobe.com/xdm/data/adhoc` i `allOf` arrayen ärver den här klassen `adhoc` beteendet. Begäran definierar också ett `_adhoc` objekt som innehåller anpassade fält för klassen.
+Följande begäran skapar en ny XDM-klass som konfigurerats med attributen som anges i nyttolasten. Genom att ange en `$ref` egenskap som anges `https://ns.adobe.com/xdm/data/adhoc` i `allOf` arrayen ärver den här klassen `adhoc` beteendet. Begäran definierar också ett `_adhoc` objekt som innehåller anpassade fält för klassen.
 
->[!NOTE] De anpassade fälten som definieras under `_adhoc` varierar beroende på hur ad hoc-schemat används. Se det specifika arbetsflödet i rätt självstudiekurs för obligatoriska anpassade fält baserat på användningsfall.
+>[!NOTE]
+>
+>De anpassade fälten som definieras under `_adhoc` varierar beroende på hur ad hoc-schemat används. Se det specifika arbetsflödet i rätt självstudiekurs för obligatoriska anpassade fält baserat på användningsfall.
 
 ```shell
 curl -X POST \
@@ -216,7 +221,9 @@ Ett lyckat svar returnerar information om det nyligen skapade schemat, inklusive
 
 ## Se hela ad hoc-schemat
 
->[!NOTE] Det här steget är valfritt. Om du inte vill inspektera fältstrukturen i ditt ad hoc-schema kan du hoppa till [nästa steg](#next-steps) i slutet av kursen.
+>[!NOTE]
+>
+>Det här steget är valfritt. Om du inte vill inspektera fältstrukturen i ditt ad hoc-schema kan du hoppa till [nästa steg](#next-steps) i slutet av kursen.
 
 När ad hoc-schemat har skapats kan du göra en sökbegäran (GET) för att visa schemat i dess utökade form. Detta görs genom att använda rätt Accept-huvud i GET-begäran, vilket visas nedan.
 
