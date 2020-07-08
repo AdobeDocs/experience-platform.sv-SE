@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Exportera data med API:er
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: d0b9223aebca0dc510a7457e5a5c65ac4a567933
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1953'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -20,26 +20,28 @@ Förutom att skapa ett exportjobb kan du även komma åt profildata med hjälp a
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse för de olika Adobe Experience Platform-tjänsterna som arbetar med profildata. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
+Den här självstudiekursen kräver en fungerande förståelse av de olika Adobe Experience Platform-tjänster som används för att arbeta med profildata. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 - [Kundprofil](../../profile/home.md)i realtid: Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
-- [Adobe Experience Platform Segmentation Service](../home.md): Gör att ni kan bygga målgruppssegment utifrån kundprofildata i realtid.
-- [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
-- [Sandlådor](../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+- [Segmenteringstjänsten](../home.md)Adobe Experience Platform: Gör att ni kan bygga målgruppssegment utifrån kundprofildata i realtid.
+- [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att ordna kundupplevelsedata.
+- [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ### Obligatoriska rubriker
 
-Den här självstudien kräver också att du har slutfört [autentiseringssjälvstudiekursen](../../tutorials/authentication.md) för att kunna ringa anrop till plattforms-API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+Den här självstudiekursen kräver även att du har slutfört [autentiseringssjälvstudiekursen](../../tutorials/authentication.md) för att kunna ringa anrop till Platform API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Begäranden till plattforms-API:er kräver ett huvud som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>[!NOTE]
+>
+>Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla POST-, PUT- och PATCH-begäranden kräver ytterligare en rubrik:
 
@@ -47,7 +49,7 @@ Alla POST-, PUT- och PATCH-begäranden kräver ytterligare en rubrik:
 
 ## Skapa ett exportjobb
 
-För att kunna exportera profildata måste du först skapa en datauppsättning som data ska exporteras till och sedan starta ett nytt exportjobb. Båda dessa steg kan uppnås med Experience Platform API:er, där den första använder Catalog Service API och den senare med hjälp av kundprofils-API:t i realtid. Detaljerade instruktioner för hur du slutför varje steg finns i följande avsnitt.
+För att kunna exportera profildata måste du först skapa en datauppsättning som data ska exporteras till och sedan starta ett nytt exportjobb. Båda dessa steg kan uppnås med Experience Platform API:er, där den första använder Catalog Service API och den senare med hjälp av Real-time Customer Profile API. Detaljerade instruktioner för hur du slutför varje steg finns i följande avsnitt.
 
 - [Skapa en måldatauppsättning](#create-a-target-dataset) - Skapa en datauppsättning för exporterade data.
 - [Initiera ett nytt exportjobb](#initiate-export-job) - Fyll i datauppsättningen med XDM-data för enskild profil.
@@ -197,7 +199,9 @@ curl -X POST \
 | `schema.name` | **(Obligatoriskt)** Namnet på schemat som är associerat med datauppsättningen där data ska exporteras. |
 | `evaluationInfo.segmentation` | *(Valfritt)* Ett booleskt värde som, om det inte anges, är som standard `false`. Värdet är `true` att segmentering måste göras i exportjobbet. |
 
->[!NOTE] Om du bara vill exportera profildata, och inte inkludera relaterade ExperienceEvent-data, tar du bort objektet&quot;additionalFields&quot; från begäran.
+>[!NOTE]
+>
+>Om du bara vill exportera profildata, och inte inkludera relaterade ExperienceEvent-data, tar du bort objektet&quot;additionalFields&quot; från begäran.
 
 **Svar**
 
@@ -529,7 +533,7 @@ curl -X GET \
 
 ## Avbryt ett exportjobb
 
-Med Experience Platform kan ni avbryta ett befintligt exportjobb, vilket kan vara användbart av flera skäl, bland annat om exportjobbet inte slutfördes eller fastnade i bearbetningsfasen. Om du vill avbryta ett exportjobb kan du utföra en DELETE-begäran till `/export/jobs` slutpunkten och inkludera den del `id` av exportjobbet som du vill avbryta till sökvägen för begäran.
+Med Experience Platform kan du avbryta ett befintligt exportjobb, vilket kan vara användbart av flera anledningar, bland annat om exportjobbet inte slutfördes eller fastnade i bearbetningsfasen. Om du vill avbryta ett exportjobb kan du utföra en DELETE-begäran till `/export/jobs` slutpunkten och inkludera den del `id` av exportjobbet som du vill avbryta till begärandesökvägen.
 
 **API-format**
 
@@ -558,7 +562,7 @@ En borttagningsbegäran returnerar HTTP-status 204 (inget innehåll) och en tom 
 
 ## Nästa steg
 
-När exporten är klar är dina data tillgängliga i Data Lake in Experience Platform. Du kan sedan använda API:t [för](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) dataåtkomst för att komma åt data med hjälp av de `batchId` som är kopplade till exporten. Beroende på exportens storlek kan data vara i segment och gruppen kan bestå av flera filer.
+När exporten är klar är dina data tillgängliga i Data Lake i Experience Platform. Du kan sedan använda API:t [för](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) dataåtkomst för att komma åt data med hjälp av de `batchId` som är kopplade till exporten. Beroende på exportens storlek kan data vara i segment och gruppen kan bestå av flera filer.
 
 Följ självstudiekursen ( [Data Access) om du vill ha stegvisa anvisningar om hur du använder API:t för dataåtkomst för att få åtkomst till och hämta gruppfiler](../../data-access/tutorials/dataset-data.md).
 
