@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Använd principer för dataanvändning med hjälp av API:t för principtjänsten
 topic: enforcement
 translation-type: tm+mt
-source-git-commit: 1a835c6c20c70bf03d956c601e2704b68d4f90fa
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '875'
 ht-degree: 0%
@@ -16,7 +16,9 @@ ht-degree: 0%
 
 När du har skapat dataanvändningsetiketter för dina data och skapat användarprofiler för marknadsföringsåtgärder mot dessa etiketter, kan du använda API:t [för](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) DULE Policy Service för att utvärdera om en marknadsföringsåtgärd som har utförts på en datauppsättning eller en godtycklig grupp av etiketter utgör en policyöverträdelse. Du kan sedan konfigurera egna interna protokoll för att hantera policyöverträdelser baserat på API-svaret.
 
->[!NOTE] Som standard kan endast profiler vars status är inställd på `ENABLED` delta i utvärderingen. Om du vill tillåta `DRAFT` profiler att delta i utvärderingen måste du ta med frågeparametern `includeDraft=true` i sökvägen till begäran.
+>[!NOTE]
+>
+>Som standard kan endast profiler vars status är inställd på `ENABLED` delta i utvärderingen. Om du vill tillåta `DRAFT` profiler att delta i utvärderingen måste du ta med frågeparametern `includeDraft=true` i sökvägen till begäran.
 
 Det här dokumentet innehåller steg om hur du använder API:t för att söka efter policyöverträdelser i olika scenarier. [!DNL Policy Service]
 
@@ -51,7 +53,9 @@ GET /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints?duleLabels={LAB
 
 Följande begäran testar marknadsföringsåtgärden mot etiketter `exportToThirdParty` och `C1` `C3`. Eftersom den dataanvändningsprincip som du skapade tidigare i den här självstudiekursen definierar `C1` etiketten som ett av `deny` villkoren i dess policyuttryck, bör marknadsföringsåtgärden utlösa en principöverträdelse.
 
->[!NOTE] Dataanvändningsetiketter är skiftlägeskänsliga. Policyöverträdelser inträffar endast när etiketterna som definieras i deras policyuttryck matchar exakt. I det här exemplet skulle en `C1` etikett utlösa en överträdelse, medan en `c1` etikett inte skulle göra det.
+>[!NOTE]
+>
+>Dataanvändningsetiketter är skiftlägeskänsliga. Policyöverträdelser inträffar endast när etiketterna som definieras i deras policyuttryck matchar exakt. I det här exemplet skulle en `C1` etikett utlösa en överträdelse, medan en `c1` etikett inte skulle göra det.
 
 ```shell
 curl -X GET \
