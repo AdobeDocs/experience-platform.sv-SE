@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Platform SDK - guide
 topic: SDK authoring
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '447'
 ht-degree: 2%
@@ -78,7 +78,9 @@ Om lästiden är för lång kan du försöka med att använda något av följand
 - [Filtrera data efter kolumn](#filter-by-selected-columns)
 - [Få sorterade resultat](#get-sorted-results)
 
->[!NOTE] IMS-organisationen anges i `client_context`.
+>[!NOTE]
+>
+>IMS-organisationen anges i `client_context`.
 
 ### Python
 
@@ -192,7 +194,9 @@ df <- dataset_reader$sort(c(('column-a', 'asc'), ('column-b', 'desc')))$read()
 
 ## Grundläggande skrivande av data {#basic-writing-of-data}
 
->[!NOTE] IMS-organisationen anges i `client_context`.
+>[!NOTE]
+>
+>IMS-organisationen anges i `client_context`.
 
 Om du vill skriva data i Python och R använder du ett av följande exempel:
 
