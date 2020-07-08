@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Mappningsfält för Audience Manager
 topic: overview
 translation-type: tm+mt
-source-git-commit: 53fb7ea201ed9361584d24c8bd2ad10edd9f3975
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '148'
+ht-degree: 0%
 
 ---
 
 
 # Mappningsfält för Audience Manager
 
-Tabellerna nedan innehåller mappningarna mellan fälten i Adobe Audience Manager-data (Realtime-, Onboarding- och Profile-data) och deras motsvarande XDM-fält.
+Tabellerna nedan innehåller mappningarna mellan fälten i Adobe Audience Manager data (Realtime-, On-board- och Profile-data) och deras motsvarande XDM-fält.
 
 Mer information om varje XDM-fält finns i [XDM-fältordlistan](../../../../xdm/schema/field-dictionary.md) .
 
@@ -47,7 +50,9 @@ Typ: ExperienceEvent
 | `b_time` | `ExperienceEvent.timeStamp` |
 | `overwrite` | `overwriteTraits` |
 
->[!NOTE] Inkommande fält är schemalagda att bli inaktuella i en framtida version.
+>[!NOTE]
+>
+>Inkommande fält är schemalagda att bli inaktuella i en framtida version.
 
 ## Profildata
 
