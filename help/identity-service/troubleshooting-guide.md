@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Felsökningsguide för Adobe Experience Platform Identity Service
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '2225'
 ht-degree: 0%
@@ -56,7 +56,7 @@ Fält som ZIP-koder och IP-adresser ska inte märkas som identiteter för enskil
 
 ## Varför länkar inte mina identitetsfält på det sätt jag förväntar mig?
 
-Med hjälp av [`/cluster/members` slutpunkten](./api/list-cluster-identites.md) i API:t för identitetstjänsten kan du visa associerade identiteter för ett eller flera identitetsfält. Om svaret inte returnerar de länkade identiteter som du förväntar dig ska du se till att du anger rätt identitetsinformation i dina XDM-data. Mer information finns i avsnittet om [att tillhandahålla XDM-data till identitetstjänsten](./home.md) i översikten över identitetstjänsten.
+Med hjälp av [`/cluster/members` slutpunkten](./api/list-cluster-identites.md) i identitetstjänstens API kan du visa associerade identiteter för ett eller flera identitetsfält. Om svaret inte returnerar de länkade identiteter som du förväntar dig ska du se till att du anger rätt identitetsinformation i dina XDM-data. Mer information finns i avsnittet om [att tillhandahålla XDM-data till identitetstjänsten](./home.md) i översikten över identitetstjänsten.
 
 ## Vad är ett identitetsnamnutrymme?
 
@@ -120,7 +120,9 @@ Om du skickar hash-kodade PII-värden till identitetstjänsten måste du använd
 
 The following table describes when the recommended approach for including identity data in your XDM would be identity map and when an identity field is the better method.
 
->[!NOTE] An advantage `identityMap` has is the ability to include multiple identity values for a single namespace.
+>[!NOTE]
+>
+>An advantage `identityMap` has is the ability to include multiple identity values for a single namespace.
 
 Write|XDM identity field|`identityMap`
 ---|---|---
