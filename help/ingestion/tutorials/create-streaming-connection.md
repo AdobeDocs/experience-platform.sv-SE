@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa en direktuppspelningsanslutning med API:t
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 0eecd802fc8d0ace3a445f3f188a7f095b97d0c8
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '659'
 ht-degree: 0%
@@ -14,15 +14,15 @@ ht-degree: 0%
 
 # Skapa en direktuppspelningsanslutning med API:t
 
-Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för datainmatningstjänsten för Adobe Experience Platform.
+Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för datainmatningstjänsten i Adobe Experience Platform.
 
 ## Komma igång
 
-Registrering av direktuppspelad anslutning krävs för att starta direktuppspelning av data på Adobe Experience Platform. När du registrerar en direktuppspelningsanslutning måste du ange viss nyckelinformation, som källan för direktuppspelningsdata.
+Registrering av direktuppspelningsanslutning krävs för att starta direktuppspelning av data till Adobe Experience Platform. När du registrerar en direktuppspelningsanslutning måste du ange viss nyckelinformation, som källan för direktuppspelningsdata.
 
 När du har registrerat en direktuppspelningsanslutning får du som DataProducer en unik URL som kan användas för att strömma data till Platform.
 
-Den här självstudiekursen kräver också en fungerande kunskap om olika Adobe Experience Platform-tjänster. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
+Den här självstudiekursen kräver också kunskaper om olika Adobe Experience Platform-tjänster. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 - [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera upplevelsedata.
 - [Kundprofil](../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
@@ -35,17 +35,19 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>[!NOTE]
+>
+>Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -63,7 +65,9 @@ POST /flowservice/connections
 
 **Begäran**
 
->[!NOTE] Värdena för de listade `providerId` och de `connectionSpec` måste **** användas enligt exemplet, eftersom de är vad som anger för API:t att du skapar en direktuppspelningsanslutning för direktuppspelningsinmatning.
+>[!NOTE]
+>
+>Värdena för de listade `providerId` och de `connectionSpec` måste **** användas enligt exemplet, eftersom de är vad som anger för API:t att du skapar en direktuppspelningsanslutning för direktuppspelningsinmatning.
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
@@ -172,7 +176,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den beg
 
 ## Nästa steg
 
-Nu när du har skapat en direktuppspelningsanslutning kan du direktuppspela antingen tidsserier eller spela in data, så att du kan importera data inom plattformen. Om du vill lära dig hur du direktuppspelar data från tidsserier på plattformen går du till självstudiekursen [om](./streaming-time-series-data.md)strömning av data från tidsserier. Om du vill lära dig hur du direktuppspelar postdata på en plattform går du till självstudiekursen [om](./streaming-record-data.md)dataströmmar.
+Nu när du har skapat en direktuppspelningsanslutning kan du direktuppspela antingen tidsserier eller spela in data, så att du kan importera data inom Platform. Om du vill lära dig hur du direktuppspelar data från tidsserier till Platform går du till självstudiekursen [för](./streaming-time-series-data.md)strömning av data från tidsserier. Om du vill lära dig hur du direktuppspelar postdata till Platform går du till självstudiekursen [](./streaming-record-data.md)för direktuppspelningspostdata.
 
 ## Bilaga
 
