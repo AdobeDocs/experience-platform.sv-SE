@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Utvecklarhandbok för segmenteringstjänst
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bbca6d8f4ab7a684e8bfb1d39b538d937a99244f
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '494'
 ht-degree: 0%
@@ -14,16 +14,16 @@ ht-degree: 0%
 
 # Utvecklarhandbok för segmenteringstjänst
 
-Med segmentering kan ni skapa segment och generera målgrupper i Adobe Experience Platform utifrån era kundprofildata i realtid.
+Med segmentering kan ni skapa segment och generera målgrupper i Adobe Experience Platform utifrån kundprofildata i realtid.
 
 ## Komma igång
 
-Den här guiden kräver en fungerande förståelse av de olika Adobe Experience Platform-tjänsterna som är kopplade till användningen av segmentering.
+Den här guiden kräver en fungerande förståelse av de olika Adobe Experience Platform-tjänster som är kopplade till användningen av segmentering.
 
 - [Segmentering](../home.md): Gör att ni kan bygga målgruppssegment utifrån kundprofildata i realtid.
-- [Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
+- [Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
 - [Kundprofil](../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-- [Sandlådor](../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+- [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna använda segmentering med API.
 
@@ -33,7 +33,7 @@ API-dokumentationen för segmenteringstjänsten innehåller exempel på API-anro
 
 ### Obligatoriska rubriker
 
-API-dokumentationen kräver också att du har slutfört [autentiseringssjälvstudiekursen](../../tutorials/authentication.md) för att kunna anropa plattformsslutpunkter. När du slutför självstudiekursen för autentisering visas värdena för var och en av de huvuden som krävs i API-anrop för Experience Platform, vilket visas nedan:
+API-dokumentationen kräver också att du har slutfört [autentiseringssjälvstudiekursen](../../tutorials/authentication.md) för att kunna anropa Platform-slutpunkter. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i Experience Platform API-anrop, vilket visas nedan:
 
 - Behörighet: `Bearer {ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
@@ -43,7 +43,9 @@ Alla resurser i Experience Platform är isolerade till specifika virtuella sandl
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] Mer information om hur du arbetar med sandlådor i Experience Platform finns i översiktsdokumentationen för [sandlådor](../../sandboxes/home.md).
+>[!NOTE]
+>
+>Mer information om hur du arbetar med sandlådor i Experience Platform finns i översiktsdokumentationen för [sandlådor](../../sandboxes/home.md).
 
 <!-- ## Estimates
 
@@ -93,4 +95,4 @@ Segmentsökning används för att söka efter och indexera konfigurerbara fält 
 
 ## Nästa steg
 
-Om du vill börja ringa anrop med segmenterings-API:t väljer du en av delguiderna för att lära dig hur du använder specifika segmenteringsrelaterade slutpunkter. Mer information om hur du arbetar med segment med hjälp av användargränssnittet för plattformen finns i användarhandboken för [segmentering](../ui/overview.md).
+Om du vill börja ringa anrop med segmenterings-API:t väljer du en av delguiderna för att lära dig hur du använder specifika segmenteringsrelaterade slutpunkter. Mer information om hur du arbetar med segment med hjälp av användargränssnittet i Platform finns i användarhandboken för [segmentering](../ui/overview.md).
