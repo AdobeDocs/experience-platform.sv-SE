@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Uppdatera ett objekt
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 4361032b419622d7decc02194d38885b114749e4
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '316'
+ht-degree: 1%
 
 ---
 
@@ -16,7 +19,9 @@ Du kan uppdatera en del av ett Catalog-objekt genom att ta med dess ID i sökvä
 * Använda fält
 * Använda JSON Patch-notation
 
->[!NOTE] PATCH-åtgärder för ett objekt kan inte ändra dess utökningsbara fält, som representerar relaterade objekt.  Ändringar av sammanhörande objekt måste göras direkt.
+>[!NOTE]
+>
+>PATCH-åtgärder för ett objekt kan inte ändra dess utökningsbara fält, som representerar relaterade objekt.  Ändringar av sammanhörande objekt måste göras direkt.
 
 ## Uppdatera med fält
 
