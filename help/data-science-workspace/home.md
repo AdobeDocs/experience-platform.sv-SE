@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över arbetsytan Datavetenskap
 topic: overview
 translation-type: tm+mt
-source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '2563'
 ht-degree: 0%
@@ -123,7 +123,9 @@ Datavetare kan dra nytta av nya tekniker och datauppsättningar så snart de är
 
 Åtkomstkontroll för [!DNL Experience Platform] administreras via [Adobe Admin Console](https://adminconsole.adobe.com). Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor. Mer information finns i [åtkomstkontrollsöversikten](../access-control/home.md) .
 
->[!IMPORTANT] För att kunna använda [!DNL Data Science Workspace]måste [!UICONTROL "Manage Data Science Workspace"] behörigheten vara aktiverad.
+>[!IMPORTANT]
+>
+>För att kunna använda [!DNL Data Science Workspace]måste [!UICONTROL "Manage Data Science Workspace"] behörigheten vara aktiverad.
 
 I följande tabell visas effekterna av att ha den här behörigheten aktiverad eller inaktiverad:
 
