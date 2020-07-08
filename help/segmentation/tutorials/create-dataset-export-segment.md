@@ -4,18 +4,21 @@ solution: Experience Platform
 title: Skapa en datauppsättning för att exportera ett målgruppssegment
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 6d24637dc6cc282f98288b6416e4a3b7cebe42ea
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '766'
+ht-degree: 0%
 
 ---
 
 
 # Skapa en datauppsättning för att exportera ett målgruppssegment
 
-Med Adobe Experience Platform kan ni enkelt segmentera kundprofiler i målgrupper utifrån specifika attribut. När segment har skapats kan ni exportera den målgruppen till en datauppsättning där den kan nås och hanteras. För att exporten ska lyckas måste datauppsättningen konfigureras korrekt.
+Med Adobe Experience Platform kan ni enkelt segmentera kundprofiler i målgrupper baserat på specifika attribut. När segment har skapats kan ni exportera den målgruppen till en datauppsättning där den kan nås och hanteras. För att exporten ska lyckas måste datauppsättningen konfigureras korrekt.
 
-I den här självstudiekursen går du igenom de steg som krävs för att skapa en datauppsättning som kan användas för att exportera ett målgruppssegment med Experience Platform-gränssnittet.
+I den här självstudiekursen går du igenom de steg som krävs för att skapa en datauppsättning som kan användas för att exportera ett målgruppssegment med hjälp av användargränssnittet i Experience Platform.
 
-Den här självstudiekursen är direkt relaterad till de steg som beskrivs i självstudiekursen för [utvärdering och åtkomst av segmentresultat](./evaluate-a-segment.md). I självstudiekursen för utvärdering av segment beskrivs hur du skapar en datauppsättning med hjälp av Catalog-API:t, medan den här självstudiekursen beskriver stegen för att skapa en datauppsättning med Experience Platform-gränssnittet.
+Den här självstudiekursen är direkt relaterad till de steg som beskrivs i självstudiekursen för [utvärdering och åtkomst av segmentresultat](./evaluate-a-segment.md). I självstudiekursen för utvärdering av ett segment beskrivs hur du skapar en datauppsättning med hjälp av Catalog-API:t, medan den här självstudiekursen beskriver stegen för att skapa en datauppsättning med hjälp av användargränssnittet i Experience Platform.
 
 ## Komma igång
 
@@ -28,11 +31,13 @@ Om du vill visa unionsscheman i användargränssnittet klickar du på **Profiler
 
 ## Arbetsytan Datauppsättningar
 
-Med arbetsytan Datauppsättningar i Experience Platform-gränssnittet kan ni visa och hantera alla datauppsättningar som IMS-organisationen har skapat, samt skapa nya.
+Med arbetsytan Datauppsättningar i användargränssnittet i Experience Platform kan du visa och hantera alla datauppsättningar som din IMS-organisation har skapat, samt skapa nya.
 
 Om du vill visa arbetsytan för datauppsättningar klickar du på **Datauppsättningar** i den vänstra navigeringen och sedan på fliken *Bläddra* . Datamängdens arbetsyta innehåller en lista med datauppsättningar, inklusive kolumner med *namn*, *Skapad* (datum och tid), *Källa*, *Schema* och *Senaste batchstatus***, samt datum och tid då datauppsättningen uppdaterades¥Last Updated¥. Beroende på bredden på varje kolumn kan du behöva rulla åt vänster eller höger för att se alla kolumner.
 
->[!NOTE] Klicka på filterikonen bredvid sökfältet för att använda filterfunktioner för att visa endast de datauppsättningar som har aktiverats för kundprofil i realtid.
+>[!NOTE]
+>
+>Klicka på filterikonen bredvid sökfältet för att använda filterfunktioner för att visa endast de datauppsättningar som har aktiverats för kundprofil i realtid.
 
 ![Visa alla datauppsättningar](../images/tutorials/segment-export-dataset/datasets-workspace.png)
 
