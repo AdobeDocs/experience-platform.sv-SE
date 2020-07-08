@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Beskrivningar
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: c3d23ce0081932e61f50d426ac6d98ab7f4dfa3b
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1499'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Beskrivningar
 
-Scheman definierar en statisk vy av datatabeller, men ger inga specifika detaljer om hur data som baseras på dessa scheman (till exempel datauppsättningar) kan relateras till varandra. Med Adobe Experience Platform kan ni beskriva dessa relationer och andra tolka metadata om ett schema med hjälp av beskrivningar.
+Scheman definierar en statisk vy av datatabeller, men ger inga specifika detaljer om hur data som baseras på dessa scheman (till exempel datauppsättningar) kan relateras till varandra. Med Adobe Experience Platform kan du beskriva dessa relationer och andra tolkningsmetadata om ett schema med hjälp av beskrivningar.
 
 Schemabeskrivare är metadata på tenant-nivå, vilket innebär att de är unika för IMS-organisationen och alla beskrivningsåtgärder utförs i klientbehållaren.
 
@@ -22,7 +22,9 @@ Varje schema kan ha en eller flera schemabeskrivningsentiteter tillämpade. Varj
 
 Det här dokumentet innehåller exempel-API-anrop för beskrivningar, samt en fullständig lista över tillgängliga beskrivningar och de fält som krävs för att definiera varje typ.
 
->[!NOTE] Beskrivningar kräver unika accepteringshuvuden som ersätter `xed` med, `xdm`men som i övrigt ser mycket lika ut som Acceptera huvuden som används i andra delar av schemaregistret. Rätt Accept-huvuden har tagits med i samplingsanropen nedan, men var extra försiktig för att se till att rätt huvuden används.
+>[!NOTE]
+>
+>Beskrivningar kräver unika accepteringshuvuden som ersätter `xed` med, `xdm`men som i övrigt ser mycket lika ut som Acceptera huvuden som används i andra delar av schemaregistret. Rätt Accept-huvuden har tagits med i samplingsanropen nedan, men var extra försiktig för att se till att rätt huvuden används.
 
 ## Listbeskrivare
 
@@ -107,7 +109,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar information om beskrivningen, inklusive dess `@type` och `sourceSchema`, samt ytterligare information som varierar beroende på typen av beskrivning. Den returnerade `@id` typen ska matcha den beskrivning `@id` som anges i begäran.
+Ett lyckat svar returnerar information om beskrivningen, inklusive dess `@type` och `sourceSchema`, samt ytterligare information som varierar beroende på typen av beskrivning. Det returnerade `@id` måste matcha den beskrivning `@id` som anges i begäran.
 
 ```JSON
 {
@@ -236,7 +238,7 @@ Om du utför en sökbegäran (GET) för att visa beskrivningen visas att fälten
 
 ## Ta bort beskrivning
 
-Ibland kan du behöva ta bort en beskrivning som du har definierat från schemaregistret. Detta gör du genom att göra en DELETE-begäran som refererar till `@id` beskrivningen som du vill ta bort.
+Ibland kan du behöva ta bort en beskrivning som du har definierat från schemaregistret. Detta gör du genom att göra en DELETE-begäran som refererar till `@id` den beskrivning som du vill ta bort.
 
 **API-format**
 
@@ -332,9 +334,9 @@ Med egna namnbeskrivningar kan användaren ändra värdena `title`, `description
 | `xdm:sourceSchema` | URI:n `$id` för schemat där beskrivningen definieras. |
 | `xdm:sourceVersion` | Huvudversionen av källschemat. |
 | `xdm:sourceProperty` | Sökvägen till den specifika egenskap som ska vara identiteten. Sökvägen ska börja med ett &quot;/&quot; och inte sluta med ett. Ta inte med &quot;egenskaper&quot; i sökvägen (använd t.ex. &quot;/personalEmail/address&quot; istället för &quot;/properties/personalEmail/properties/address&quot;) |
-| `xdm:title` | Den nya rubriken som du vill visa för det här fältet, skriven i versaler. |
+| `xdm:title` | Den nya rubriken som du vill visa för det här fältet, skriven i Inledande versal. |
 | `xdm:description` | En valfri beskrivning kan läggas till tillsammans med titeln. |
-| `meta:enum` | Om fältet som anges av `xdm:sourceProperty` är ett strängfält, `meta:enum` bestämmer listan med föreslagna värden för fältet i Experience Platform-gränssnittet. Det är viktigt att komma ihåg att `meta:enum` inte deklarerar en uppräkning eller tillhandahåller någon datavalidering för XDM-fältet.<br><br>Detta ska endast användas för XDM-fält som definierats av Adobe. Om egenskapen source är ett anpassat fält som definieras av din organisation bör du i stället redigera fältets `meta:enum` egenskap direkt via en [PATCH-begäran](./update-resource.md). |
+| `meta:enum` | Om fältet som anges av `xdm:sourceProperty` är ett strängfält, `meta:enum` bestämmer listan med föreslagna värden för fältet i användargränssnittet i Experience Platform. Det är viktigt att komma ihåg att `meta:enum` inte deklarerar en uppräkning eller tillhandahåller någon datavalidering för XDM-fältet.<br><br>Detta ska endast användas för XDM-fält som definierats av Adobe. Om egenskapen source är ett anpassat fält som definieras av din organisation bör du i stället redigera fältets `meta:enum` egenskap direkt via en [PATCH-begäran](./update-resource.md). |
 
 #### Relationsbeskrivning
 
