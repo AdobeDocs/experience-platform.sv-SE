@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Översikt över partiell gruppinmatning i Adobe Experience Platform
 topic: overview
 translation-type: tm+mt
-source-git-commit: d560e8dd07e9590376728ae6575766cc382325a5
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '795'
+ht-degree: 0%
 
 ---
 
@@ -18,16 +21,18 @@ Det här dokumentet innehåller en självstudiekurs för hantering av partiell b
 
 I [bilagan](#appendix) till den här självstudien finns dessutom en referens för feltyper av partiell gruppinmatning.
 
->[!IMPORTANT] Den här funktionen finns bara med API:t. Kontakta ditt team för att få tillgång till den här funktionen.
+>[!IMPORTANT]
+>
+>Den här funktionen finns bara med API:t. Kontakta ditt team för att få tillgång till den här funktionen.
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande kunskap om de olika Adobe Experience Platform-tjänsterna som är involverade i partiell gruppinmatning. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
+Den här självstudiekursen kräver en fungerande kunskap om de olika Adobe Experience Platform-tjänster som är involverade i partiell batchförbrukning. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-- [Batchförtäring](./overview.md): Den metod som används för att importera och lagra data från datafiler, som CSV och Parquet.
-- [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
+- [Batchförtäring](./overview.md): Metoden som Platform importerar och lagrar data från datafiler, till exempel CSV och Parquet.
+- [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att ordna kundupplevelsedata.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa plattforms-API:er.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa Platform API:er.
 
 ### Läser exempel-API-anrop
 
@@ -35,17 +40,19 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>[!NOTE]
+>
+>Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 ## Aktivera en datauppsättning för partiell batchinmatning i API:t
 
@@ -75,7 +82,9 @@ I datauppsättningen måste du lägga till taggen som beskrivs ovan.
 
 <!-- ## Enable a dataset for partial batch ingestion in the UI
 
->[!NOTE] This section describes enabling a dataset for partial batch ingestion using the UI. If you have already enabled a dataset for partial batch ingestion using the API, you can skip ahead to the next section.
+>[!NOTE]
+>
+>This section describes enabling a dataset for partial batch ingestion using the UI. If you have already enabled a dataset for partial batch ingestion using the API, you can skip ahead to the next section.
 
 To enable a dataset for partial ingestion through the Platform UI, click **Datasets** in the left navigation. You can either [create a new dataset](#create-a-new-dataset-with-partial-batch-ingestion-enabled) or [modify an existing dataset](#modify-an-existing-dataset-to-enable-partial-batch-ingestion).
 
