@@ -1,10 +1,13 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Utvecklarhandbok för batchintag av Adobe Experience Platform
+title: Utvecklarhandbok för Adobe Experience Platform Batch Ingakes
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 6c17351b04fedefd4b57b9530f1d957da8183a68
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '2577'
+ht-degree: 3%
 
 ---
 
@@ -23,9 +26,9 @@ I följande avsnitt finns ytterligare information som du behöver känna till el
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [Batchförtäring](./overview.md): Gör att ni kan importera data till Adobe Experience Platform som gruppfiler.
-- [Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
-- [Sandlådor](../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+- [Batchförtäring](./overview.md): Gör att du kan importera data till Adobe Experience Platform som gruppfiler.
+- [Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
+- [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ### Läser exempel-API-anrop
 
@@ -33,17 +36,19 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>[!NOTE]
+>
+>Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Begäranden som innehåller en nyttolast (POST, PUT, PATCH) kan kräva ytterligare ett `Content-Type` huvud. Godkända värden som är specifika för varje anrop anges i anropsparametrarna. Följande innehållstyper används i den här handboken:
 
@@ -60,7 +65,7 @@ Varken JSON eller CSV har till exempel typen datum eller tid. Därför uttrycks 
 
 Tabellen nedan visar de konverteringar som stöds vid inmatning av data.
 
-| Inkommande (rad) kontra mål (kol) | Sträng | Byte | Kort | Heltal | Lång | Dubbel | Datum | Datum-tid | Objekt | Karta |
+| Inkommande (rad) mot Target (kolumn) | Sträng | Byte | Kort | Heltal | Lång | Dubbel | Datum | Datum-tid | Objekt | Mappa |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | Sträng | X | X | X | X | X | X | X | X |  |  |
 | Byte | X | X | X | X | X | X |  |  |  |  |
@@ -71,9 +76,11 @@ Tabellen nedan visar de konverteringar som stöds vid inmatning av data.
 | Datum |  |  |  |  |  |  | X |  |  |  |
 | Datum-tid |  |  |  |  |  |  |  | X |  |  |
 | Objekt |  |  |  |  |  |  |  |  | X | X |
-| Karta |  |  |  |  |  |  |  |  | X | X |
+| Mappa |  |  |  |  |  |  |  |  | X | X |
 
->[!NOTE] Booleaner och arrayer kan inte konverteras till andra typer.
+>[!NOTE]
+>
+>Booleaner och arrayer kan inte konverteras till andra typer.
 
 ## Begränsningar för intag
 
@@ -85,13 +92,17 @@ Batchdatainmatning har vissa begränsningar:
 
 ## Importera JSON-filer
 
->[!NOTE] Följande steg gäller för små filer (256 MB eller mindre). Om du råkar ut för en timeout för gatewayen eller begär fel i brödstorlek måste du växla till stor filöverföring.
+>[!NOTE]
+>
+>Följande steg gäller för små filer (256 MB eller mindre). Om du råkar ut för en timeout för gatewayen eller begär fel i brödstorlek måste du växla till stor filöverföring.
 
 ### Skapa batch
 
 För det första måste du skapa en batch med JSON som indataformat. När du skapar gruppen måste du ange ett datauppsättnings-ID. Du måste också se till att alla filer som överförs som en del av gruppen följer XDM-schemat som är länkat till den angivna datauppsättningen.
 
->[!NOTE] Exemplen nedan är för enradig JSON. Om du vill importera flerradig JSON måste du ange `isMultiLineJson` flaggan. Mer information finns i felsökningsguiden för [batchimport](./troubleshooting.md).
+>[!NOTE]
+>
+>Exemplen nedan är för enradig JSON. Om du vill importera flerradig JSON måste du ange `isMultiLineJson` flaggan. Mer information finns i felsökningsguiden för [batchimport](./troubleshooting.md).
 
 **API-format**
 
@@ -151,7 +162,9 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 Nu när du har skapat en grupp kan du använda kommandot `batchId` från tidigare för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
 
->[!NOTE] Ett [exempel på en korrekt formaterad JSON-datafil](#data-transformation-for-batch-ingestion)finns i bilagan.
+>[!NOTE]
+>
+>Ett [exempel på en korrekt formaterad JSON-datafil](#data-transformation-for-batch-ingestion)finns i bilagan.
 
 **API-format**
 
@@ -167,7 +180,9 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 
 **Begäran**
 
->[!NOTE] API:t stöder överföring till en del. Kontrollera att innehållstypen är application/octet-stream.
+>[!NOTE]
+>
+>API:t stöder överföring till en del. Kontrollera att innehållstypen är application/octet-stream.
 
 ```shell
 curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}.json \
@@ -221,7 +236,9 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
 
 ## Ingest Parquet-filer
 
->[!NOTE] Följande steg gäller för små filer (256 MB eller mindre). Om du får en timeout för gatewayen eller begär fel i brödtextstorleken måste du växla till stor filöverföring.
+>[!NOTE]
+>
+>Följande steg gäller för små filer (256 MB eller mindre). Om du får en timeout för gatewayen eller begär fel i brödtextstorleken måste du växla till stor filöverföring.
 
 ### Skapa batch
 
@@ -298,7 +315,9 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 
 **Begäran**
 
->[!CAUTION] Detta API har stöd för överföring till en del. Kontrollera att innehållstypen är application/octet-stream.
+>[!CAUTION]
+>
+>Detta API har stöd för överföring till en del. Kontrollera att innehållstypen är application/octet-stream.
 
 ```shell
 curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}.parquet \
@@ -352,7 +371,9 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ## Infoga stora Parquet-filer
 
->[!NOTE] I det här avsnittet beskrivs hur du överför filer som är större än 256 MB. De stora filerna överförs i segment och sammanfogas sedan med en API-signal.
+>[!NOTE]
+>
+>I det här avsnittet beskrivs hur du överför filer som är större än 256 MB. De stora filerna överförs i segment och sammanfogas sedan med en API-signal.
 
 ### Skapa batch
 
@@ -467,7 +488,9 @@ PATCH /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 
 **Begäran**
 
->[!CAUTION] Detta API har stöd för överföring till en del. Kontrollera att innehållstypen är application/octet-stream.
+>[!CAUTION]
+>
+>Detta API har stöd för överföring till en del. Kontrollera att innehållstypen är application/octet-stream.
 
 ```shell
 curl -X PATCH https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}.parquet \
@@ -559,7 +582,9 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 För att kunna importera CSV-filer måste du skapa en klass, ett schema och en datauppsättning som stöder CSV. Detaljerad information om hur du skapar nödvändiga klasser och scheman finns i instruktionerna i självstudiekursen [för att skapa](../../xdm/api/ad-hoc.md)ad hoc-scheman.
 
->[!NOTE] Följande steg gäller för små filer (256 MB eller mindre). Om du får en timeout för gatewayen eller begär fel i brödtextstorleken måste du växla till stor filöverföring.
+>[!NOTE]
+>
+>Följande steg gäller för små filer (256 MB eller mindre). Om du får en timeout för gatewayen eller begär fel i brödtextstorleken måste du växla till stor filöverföring.
 
 ### Skapa datauppsättning
 
@@ -695,7 +720,9 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 Nu när du har skapat en grupp kan du använda kommandot `batchId` från tidigare för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
 
->[!NOTE] Ett [exempel på en korrekt formaterad CSV-datafil](#data-transformation-for-batch-ingestion)finns i bilagan.
+>[!NOTE]
+>
+>Ett [exempel på en korrekt formaterad CSV-datafil](#data-transformation-for-batch-ingestion)finns i bilagan.
 
 **API-format**
 
@@ -711,7 +738,9 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 
 **Begäran**
 
->[!CAUTION] Detta API har stöd för överföring till en del. Kontrollera att innehållstypen är application/octet-stream.
+>[!CAUTION]
+>
+>Detta API har stöd för överföring till en del. Kontrollera att innehållstypen är application/octet-stream.
 
 ```shell
 curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}.csv \
@@ -916,7 +945,9 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 
 **Begäran**
 
->[!CAUTION] Detta API har stöd för överföring till en del. Kontrollera att innehållstypen är application/octet-stream. Använd inte alternativet curl -F eftersom det som standard är en begäran om flera delar som inte är kompatibel med API:t.
+>[!CAUTION]
+>
+>Detta API har stöd för överföring till en del. Kontrollera att innehållstypen är application/octet-stream. Använd inte alternativet curl -F eftersom det som standard är en begäran om flera delar som inte är kompatibel med API:t.
 
 ```shell
 curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}.json \
