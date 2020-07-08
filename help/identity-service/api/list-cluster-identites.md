@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Visa klusteridentiteter
 topic: API guide
 translation-type: tm+mt
-source-git-commit: df85ea955b7a308e6be1e2149fcdfb4224facc53
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '312'
+ht-degree: 0%
 
 ---
 
@@ -67,7 +70,9 @@ curl -X GET \
 
 Använd `POST` som en batchmotsvarighet till den `GET` metod som beskrivs ovan för att returnera identiteterna i kluster med flera identiteter.
 
->[!NOTE] Begäran får inte innehålla fler än 1 000 identiteter. Begäranden som överskrider 1 000 identiteter resulterar i 400-statuskod.
+>[!NOTE]
+>
+>Begäran får inte innehålla fler än 1 000 identiteter. Begäranden som överskrider 1 000 identiteter resulterar i 400-statuskod.
 
 **API-format**
 
@@ -231,7 +236,9 @@ curl -X POST \
 }
 ```
 
->[!NOTE] Svaret har alltid en post för varje XID som anges i begäran, oavsett om en begärans XID tillhör samma kluster eller om ett eller flera har ett kluster kopplat över huvud taget.
+>[!NOTE]
+>
+>Svaret har alltid en post för varje XID som anges i begäran, oavsett om en begärans XID tillhör samma kluster eller om ett eller flera har ett kluster kopplat över huvud taget.
 
 ## Nästa steg
 
