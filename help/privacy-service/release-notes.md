@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Versionsinformation om Privacy Service
 topic: release notes
 translation-type: tm+mt
-source-git-commit: 580cce74ab7da9547417a9e74e88b5ddab52171f
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '546'
 ht-degree: 5%
@@ -16,7 +16,9 @@ ht-degree: 5%
 
 Det här dokumentet innehåller information om nya funktioner för Adobe Experience Platform Privacy Service samt förbättringar och viktiga felkorrigeringar.
 
->[!NOTE] Den senaste versionsinformationen för andra Experience Platform-tjänster finns [här](../release-notes/latest/latest.md).
+>[!NOTE]
+>
+>Den senaste versionsinformationen för andra Experience Platform-tjänster finns [här](../release-notes/latest/latest.md).
 
 ## 8 april 2020
 
