@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användarhandbok för AI-attribut
 topic: User guide
 translation-type: tm+mt
-source-git-commit: 0ea96de956adb5a6c5286433a547772118c43aee
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1430'
 ht-degree: 0%
@@ -60,7 +60,9 @@ Om du vill definiera en konverteringshändelse måste du ge händelsen ett namn 
 
 När en händelse har valts visas en ny listruta till höger om händelsen. Den andra listrutan används för att ge ytterligare kontext till händelsen genom att åtgärder används. Standardåtgärden *finns* för den här konverteringshändelsen.
 
->[!NOTE] En sträng under ditt *konverteringsnamn* uppdateras när du definierar händelsen.
+>[!NOTE]
+>
+>En sträng under ditt *konverteringsnamn* uppdateras när du definierar händelsen.
 
 ![ingen listruta](./images/user-guide/conversion_event_1.png)
 
@@ -98,7 +100,9 @@ För den här kontaktytan väljer du **lika med**.
 
 När du har valt en operator för en kontaktyta blir *Ange fältvärde* tillgängligt. Värdena för listrutan för *Ange fältvärde* fylls i baserat på operatorn och det kontaktpunktsvärde som du valde tidigare. Om ett värde inte fylls i i listrutan kan du skriva värdet i manuellt. Klicka på listrutan och välj **KLICKA**.
 
->[!NOTE] Operatorerna &quot;exists&quot; och &quot;not exists&quot; har inga fältvärden kopplade till sig.
+>[!NOTE]
+>
+>Operatorerna &quot;exists&quot; och &quot;not exists&quot; har inga fältvärden kopplade till sig.
 
 ![listruta med kontaktyta](./images/user-guide/touchpoint_dropdown.png)
 
@@ -112,7 +116,9 @@ Om du klickar på **Lägg till grupp** kan du skapa ytterligare fält som är å
 
 ![översikt över kontaktyta](./images/user-guide/add_group_touchpoint.png)
 
->[!NOTE] Använd strängen under *Touchpoint-namnet* för att få en snabb översikt över din kontaktyta. Observera att strängen matchar namnet på kontaktytan.
+>[!NOTE]
+>
+>Använd strängen under *Touchpoint-namnet* för att få en snabb översikt över din kontaktyta. Observera att strängen matchar namnet på kontaktytan.
 
 ![](./images/user-guide/touchpoint_string.png)
 
@@ -140,7 +146,9 @@ Klicka på listrutan under *Betygsningsfrekvens* för att välja mellan betygsä
 
 Klicka på klockikonen om du vill ändra den tidpunkt på dagen som du vill att poängsättningen ska göras. I den nya övertäckning som visas anger du den tid på dagen som du vill att poängsättningen ska göras. Klicka utanför övertäckningen för att stänga den.
 
->[!NOTE] Det kan ta upp till 24 timmar för varje poängprocess att slutföra.
+>[!NOTE]
+>
+>Det kan ta upp till 24 timmar för varje poängprocess att slutföra.
 
 ![klockikon](./images/user-guide/time_of_day.png)
 
@@ -158,7 +166,9 @@ Välj sedan en operator.
 
 Skriv landskoden i listrutan *Ange fältvärde* .
 
->[!NOTE] Landskoderna är två tecken långa. En fullständig lista finns här: [ISO 3166-1 alpha-2](https://datahub.io/core/country-list).
+>[!NOTE]
+>
+>Landskoderna är två tecken långa. En fullständig lista finns här: [ISO 3166-1 alpha-2](https://datahub.io/core/country-list).
 
 ![region](./images/user-guide/region-based.png)
 
@@ -166,7 +176,9 @@ Skriv landskoden i listrutan *Ange fältvärde* .
 
 För att säkerställa att ni får den mest korrekta modellen är det viktigt att utbilda modellen med historiska data som representerar ert företag. Som standard används två fjärdedelar (6 månader) av data för att utbilda modellen. Välj listrutan för att ändra standardinställningen. Du kan välja att utbilda med en till fyra fjärdedelar av data (3-12 månader).
 
->[!NOTE] Ett kortare utbildningsfönster är mer känsligt för de senaste trenderna, medan ett längre utbildningsfönster skapar en mer robust modell och är mindre känsligt för de senaste trenderna.
+>[!NOTE]
+>
+>Ett kortare utbildningsfönster är mer känsligt för de senaste trenderna, medan ett längre utbildningsfönster skapar en mer robust modell och är mindre känsligt för de senaste trenderna.
 
 ![utbildningsfönster](./images/user-guide/training_window.png)
 
