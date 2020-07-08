@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Arbeta med körningsmiljön för beslutstjänsten med API:er
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1985'
 ht-degree: 0%
@@ -43,7 +43,9 @@ Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuell
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../tutorials/authentication.md).
+>[!NOTE]
+>
+>Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../tutorials/authentication.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -53,7 +55,9 @@ Krävs också för körningsbegäranden:
 
 - x-request-id: `{UUID}`
 
->[!NOTE] `UUID` är en sträng i UUID-format som är globalt unik och inte får återanvändas för olika API-anrop
+>[!NOTE]
+>
+>`UUID` är en sträng i UUID-format som är globalt unik och inte får återanvändas för olika API-anrop
 
 [!DNL Decisioning Service] styrs av ett antal affärsobjekt som är relaterade till varandra. Alla affärsobjekt lagras i [!DNL Platform’s] affärsobjektarkivet, XDM Core Object Repository. En viktig funktion i den här databasen är att API:erna är ortogonala till typen av affärsobjekt. I stället för att använda API:t POST, GET, PUT, PATCH eller DELETE som anger resurstypen i dess API-slutpunkt, finns det bara 6 generiska slutpunkter, men de accepterar eller returnerar en parameter som anger objekttypen när den typen av uttryck behövs. Schemat måste registreras med databasen, men utöver det kan databasen användas för en öppen uppsättning objekttyper.
 
