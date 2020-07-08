@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Söka efter ett objekt
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 4dcd174eda98fee1e8cf668819809bd061c6e8bb
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '134'
+ht-degree: 0%
 
 ---
 
@@ -13,7 +16,9 @@ source-git-commit: 4dcd174eda98fee1e8cf668819809bd061c6e8bb
 
 Om du känner till den unika identifieraren för ett specifikt katalogobjekt kan du utföra en GET-begäran för att visa objektets information.
 
->[!NOTE] När du visar specifika objekt är det fortfarande bra att [filtrera efter egenskaper](filter-data.md) och bara returnera de egenskaper som du är intresserad av.
+>[!NOTE]
+>
+>När du visar specifika objekt är det fortfarande bra att [filtrera efter egenskaper](filter-data.md) och bara returnera de egenskaper som du är intresserad av.
 
 **API-format**
 
@@ -60,4 +65,6 @@ Ett lyckat svar returnerar den angivna datauppsättningen med endast den begärd
 }
 ```
 
->[!NOTE] Egenskaper vars värden är prefix med `@` representerar relaterade objekt. I avsnittet Bilaga om hur du [visar relaterade objekt](appendix.md#view-interrelated-objects) finns anvisningar om hur du visar information om dessa objekt.
+>[!NOTE]
+>
+>Egenskaper vars värden är prefix med `@` representerar relaterade objekt. I avsnittet Bilaga om hur du [visar relaterade objekt](appendix.md#view-interrelated-objects) finns anvisningar om hur du visar information om dessa objekt.
