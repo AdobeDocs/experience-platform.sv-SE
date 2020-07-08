@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Anslut till Aqua Data Studio
 topic: connect
 translation-type: tm+mt
-source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '257'
+ht-degree: 0%
 
 ---
 
@@ -24,7 +27,9 @@ Dialogrutan *Registrera server* visas. Under fliken *Allmänt* väljer du **Post
 - **Värd och port**: Värdslutpunkten och dess port för Query Service.
 - **Databas:** Databasen som ska användas.
 
->[!NOTE] Mer information om hur du hittar inloggningsuppgifter, värd, port och databasnamn finns på [inloggningssidan på Platform](https://platform.adobe.com/query/configuration). Logga in på Platform, klicka på **Frågor** och klicka sedan på **Autentiseringsuppgifter** för att hitta dina inloggningsuppgifter.
+>[!NOTE]
+>
+>Mer information om hur du hittar inloggningsuppgifter, värd, port och databasnamn finns på [inloggningssidan på Platform](https://platform.adobe.com/query/configuration). Logga in på Platform, klicka på **Frågor** och klicka sedan på **Autentiseringsuppgifter** för att hitta dina inloggningsuppgifter.
 
 ![](../images/clients/aqua-data-studio/register-server-general-tab.png)
 
