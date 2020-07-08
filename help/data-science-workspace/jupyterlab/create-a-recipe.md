@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa ett recept med Jupyter-anteckningsböcker
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '2273'
 ht-degree: 0%
@@ -30,6 +30,8 @@ Du kan skapa ett helt nytt recept i [!DNL Data Science Workspace]. Börja med at
 Med den [!UICONTROL Recipe Builder] bärbara datorn kan du köra utbildning och poängsättning inuti den bärbara datorn. Detta ger er flexibilitet att ändra deras `train()` och `score()` metoder mellan att köra experiment med kurser och poängdata. När du är nöjd med resultatet av kursen och poängsättningen kan du skapa ett recept som ska användas i [!DNL Data Science Workspace] den bärbara datorn för att hämta funktionalitet som är inbyggd i den bärbara datorn i Recipe Builder.
 
 >[!NOTE]
+>
+>
 >Anteckningsboken Recipe Builder har stöd för att arbeta med alla filformat, men för närvarande har funktionen Skapa recept bara stöd [!DNL Python].
 
 ![](../images/jupyterlab/create-recipe/recipe-builder.png)
@@ -46,7 +48,9 @@ Om du vill redigera receptfilerna går du till den cell i Jupyter som motsvarar 
 
 Börja göra nödvändiga ändringar i cellen och kör cellen när du är klar. Med `%%writefile filename.py` kommandot skriver du innehållet i cellen till `filename.py`cellen. Du måste köra cellen manuellt för varje fil med ändringar.
 
->[!NOTE] Du bör köra cellerna manuellt när det är tillämpligt.
+>[!NOTE]
+>
+>Du bör köra cellerna manuellt när det är tillämpligt.
 
 ## Kom igång med anteckningsboken i Recipe Builder
 
@@ -73,6 +77,8 @@ data_access_sdk_python
 ```
 
 >[!NOTE]
+>
+>
 >Bibliotek eller specifika versioner som du lägger till kan vara inkompatibla med ovanstående bibliotek.
 
 ### Konfigurationsfiler {#configuration-files}
@@ -115,6 +121,8 @@ I det här steget används [pandabilden](https://pandas.pydata.org/pandas-docs/s
 - [Externa källor](#external-sources)
 
 >[!NOTE]
+>
+>
 >I Recipe Builder-anteckningsboken läses data in via `platform_sdk` datainläsaren.
 
 ### [!DNL Platform] SDK {#platform-sdk}
@@ -144,6 +152,8 @@ Nu finns dina data i dataframe-objektet och kan analyseras och ändras i [nästa
 ### Från SDK för dataåtkomst (borttagen)
 
 >[!CAUTION]
+>
+>
 > `data_access_sdk_python` rekommenderas inte längre, se [Konvertera dataåtkomstkod till Platform SDK](../authoring/platform-sdk.md) för en guide om hur du använder `platform_sdk` datainläsaren.
 
 Användare kan läsa in data med hjälp av SDK för dataåtkomst. Biblioteket kan importeras högst upp på sidan genom att inkludera raden:
@@ -162,6 +172,8 @@ df = prodreader.load(data_set_id=configProperties['trainingDataSetId'],
 ```
 
 >[!NOTE]
+>
+>
 >Som vi nämnt i avsnittet [](#configuration-files)Konfigurationsfil ställs följande konfigurationsparametrar in åt dig när du får åtkomst till data från [!DNL Experience Platform]:
 > - `ML_FRAMEWORK_IMS_USER_CLIENT_ID`
 > - `ML_FRAMEWORK_IMS_TOKEN`
@@ -291,7 +303,9 @@ Filen innehåller `pipeline.py` logik för utbildning och poängsättning.
 
 Syftet med kursen är att skapa en modell med hjälp av funktioner och etiketter i utbildningsdatauppsättningen.
 
->[!NOTE]\
+>[!NOTE]
+>
+> 
 >_Funktionerna_ avser den indatavariabel som används av maskininlärningsmodellen för att förutsäga _etiketterna_.
 
 Funktionen ska omfatta `train()` utbildningsmodellen och returnera den utbildade modellen. Exempel på olika modeller finns i dokumentationen till användarhandboken [med](https://scikit-learn.org/stable/user_guide.html)vetenskaplig information.
