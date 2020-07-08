@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Unions
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 7f61cee8fb5160d0f393f8392b4ce2462d602981
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '806'
+ht-degree: 0%
 
 ---
 
@@ -39,7 +42,9 @@ Mer information finns i självstudiekursen om hur du [skapar segment med API:er]
 
 För att ett schema ska kunna inkluderas i den sammanfogade unionsvyn måste taggen &quot;union&quot; läggas till i schemats `meta:immutableTags` attribut. Detta görs genom en PATCH-begäran om att uppdatera schemat och lägga till `meta:immutableTags` arrayen med värdet &quot;union&quot;.
 
->[!NOTE] Oändringsbara taggar är taggar som ska anges, men aldrig tas bort.
+>[!NOTE]
+>
+>Oändringsbara taggar är taggar som ska anges, men aldrig tas bort.
 
 **API-format**
 
@@ -161,7 +166,9 @@ Ett lyckat svar returnerar HTTP-status 200 (OK) och en `results` array i svarste
 
 Du kan visa en specifik union genom att utföra en GET-begäran som innehåller `$id` och, beroende på Acceptera huvud, en del eller all information om unionen.
 
->[!NOTE] Unionssökningar är tillgängliga med hjälp av `/unions` - och `/schemas` slutpunkterna för att de ska kunna användas i profilexporter till en datauppsättning.
+>[!NOTE]
+>
+>Unionssökningar är tillgängliga med hjälp av `/unions` - och `/schemas` slutpunkterna för att de ska kunna användas i profilexporter till en datauppsättning.
 
 **API-format**
 
