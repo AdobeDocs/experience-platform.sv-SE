@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform Identity Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1530'
 ht-degree: 0%
@@ -94,7 +94,9 @@ Beroende på er strategi för insamling av företagsdata avgör de datafält som
 
 I finns [!DNL Experience Platform] en mängd standardnamnutrymmen, men du kan behöva skapa ytterligare namnutrymmen för att kategorisera dina identiteter korrekt. Mer information finns i avsnittet om att [visa och skapa namnutrymmen för din organisation](./namespaces.md) i översikten över namnutrymmen för identiteter.
 
->[!NOTE] Identitetsnamnutrymmen är en kvalificerare för identiteter. Därför kan ett namnutrymme inte tas bort när det väl har skapats.
+>[!NOTE]
+>
+>Identitetsnamnutrymmen är en kvalificerare för identiteter. Därför kan ett namnutrymme inte tas bort när det väl har skapats.
 
 ### Inkludera identitetsdata i [!DNL Experience Data Model] (XDM)
 
@@ -109,7 +111,9 @@ Alla fält av typen `string` i scheman som implementerar antingen post- eller ti
 I identitetsfält går det också att länka identiteter om de delar gemensamma PII-data.
 Genom att till exempel ange etiketter för telefonnummerfält som identitetsfält, diagram [!DNL Identity Service] automatiskt relationer med andra personer som använder samma telefonnummer.
 
->[!NOTE] Namnutrymmet för resulterande identiteter anges när fältet etiketteras.
+>[!NOTE]
+>
+>Namnutrymmet för resulterande identiteter anges när fältet etiketteras.
 
 ### Konfigurera en datauppsättning för [!DNL Identity Service]
 
