@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Hantera beslutstjänstentiteter med API:er
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '7207'
 ht-degree: 0%
@@ -48,7 +48,9 @@ Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuell
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>[!NOTE]
+>
+>Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -102,7 +104,9 @@ När administratören har beviljat åtkomst till behållare för vanliga använd
 
 Kontexten för [!DNL Platform][!DNL Decisioning Service] behållarna är för närvarande `dma_offers`.
 
->[!NOTE] Kontexten för [!DNL Platform Decisioning Containers] är snart på väg att ändras till `acp`. Filtrering är valfritt, men bara filter `dma_offers` kräver redigering vid en framtida release. För att förbereda den här ändringen ska klienterna inte använda några filter eller använda båda produktkontexterna som filter.
+>[!NOTE]
+>
+>Kontexten för [!DNL Platform Decisioning Containers] är snart på väg att ändras till `acp`. Filtrering är valfritt, men bara filter `dma_offers` kräver redigering vid en framtida release. För att förbereda den här ändringen ska klienterna inte använda några filter eller använda båda produktkontexterna som filter.
 
 **Begäran**
 
@@ -233,7 +237,9 @@ curl -X GET {ENDPOINT_PATH}/{CONTAINER_ID}/instances/{INSTANCE_ID} \
   -H 'x-request-id: {NEW_UUID}'  
 ```
 
->[!NOTE] Även om det `instanceId` anges som en sökvägsparameter bör program, när det är möjligt, inte konstruera själva sökvägen utan i stället följa länkar till förekomster i list- och sökåtgärder. Se avsnitt ‎ 6.4.4 och ‎ 6.4.6 för mer information.
+>[!NOTE]
+>
+>Även om det `instanceId` anges som en sökvägsparameter bör program, när det är möjligt, inte konstruera själva sökvägen utan i stället följa länkar till förekomster i list- och sökåtgärder. Se avsnitt ‎ 6.4.4 och ‎ 6.4.6 för mer information.
 
 **Svar**
 
@@ -326,7 +332,9 @@ Svaret beror på det `{schemaId}` angivna värdet. För&quot;/ns.adobe.com/exper
 }
 ```
 
->[!NOTE] Resultatet innehåller instanser för det angivna schemat eller den första sidan i listan. Observera att instanser kan vara kompatibla med mer än ett schema och därför kan visas i mer än en lista.
+>[!NOTE]
+>
+>Resultatet innehåller instanser för det angivna schemat eller den första sidan i listan. Observera att instanser kan vara kompatibla med mer än ett schema och därför kan visas i mer än en lista.
 
 Sidresurserna är övergående och skrivskyddade; de kan inte uppdateras eller tas bort. Sidindelningsmodellen ger slumpmässig åtkomst till delmängder av stora listor över en längre tidsperiod utan att något klienttillstånd upprätthålls.
 
@@ -570,7 +578,9 @@ När du använder API:erna med innehållstypen `application/vnd.adobe.platform.x
 }
 ```
 
->[!NOTE] Av utrymmesskäl illustreras endast förekomstegenskaperna i alla JSON-kodfragment, och endast när det krävs visas avsnittet kuvertegenskaper och _links.
+>[!NOTE]
+>
+>Av utrymmesskäl illustreras endast förekomstegenskaperna i alla JSON-kodfragment, och endast när det krävs visas avsnittet kuvertegenskaper och _links.
 
 ### Allmänna egenskaper för erbjudanden
 
