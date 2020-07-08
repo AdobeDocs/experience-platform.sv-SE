@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Förbered data för användning i intelligenta tjänster
 topic: Intelligent Services
 translation-type: tm+mt
-source-git-commit: 9905f0248fe88bac5194560318cf8eced32ba93c
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1877'
 ht-degree: 0%
@@ -82,7 +82,9 @@ Det här fältet representerar det datum/tid då händelsen inträffade. Detta v
 
 #### xdm:kanal {#channel}
 
->[!NOTE] Detta fält är endast obligatoriskt när Attribution AI används.
+>[!NOTE]
+>
+>Detta fält är endast obligatoriskt när Attribution AI används.
 
 Detta fält representerar den marknadsföringskanal som är relaterad till ExperienceEvent. Fältet innehåller information om kanaltyp, medietyp och platstyp.
 
@@ -245,7 +247,9 @@ Om du har en [!DNL Adobe Experience Platform] prenumeration och vill mappa och i
 
 ### Använda Adobe Experience Platform
 
->[!NOTE] Stegen nedan kräver en prenumeration på Experience Platform. Om du inte har tillgång till Platform går du vidare till [nästa steg](#next-steps) .
+>[!NOTE]
+>
+>Stegen nedan kräver en prenumeration på Experience Platform. Om du inte har tillgång till Platform går du vidare till [nästa steg](#next-steps) .
 
 I det här avsnittet beskrivs arbetsflödet för mappning och inmatning av data till Experience Platform för användning i intelligenta tjänster, inklusive länkar till självstudiekurser för detaljerade steg.
 
@@ -256,7 +260,9 @@ När du är redo att börja förbereda dina data för konsumtion är det första
 * [Skapa ett schema i användargränssnittet](../xdm/tutorials/create-schema-ui.md)
 * [Skapa ett schema i API:t](../xdm/tutorials/create-schema-api.md)
 
->[!IMPORTANT] Självstudiekurserna ovan följer ett allmänt arbetsflöde för att skapa ett schema. När du väljer en klass för schemat måste du använda **klassen** XDM ExperienceEvent. När den här klassen har valts kan du lägga till CEE-mixinen i schemat.
+>[!IMPORTANT]
+>
+>Självstudiekurserna ovan följer ett allmänt arbetsflöde för att skapa ett schema. När du väljer en klass för schemat måste du använda **klassen** XDM ExperienceEvent. När den här klassen har valts kan du lägga till CEE-mixinen i schemat.
 
 När du har lagt till CEE-mixen i schemat kan du lägga till andra mixiner efter behov för ytterligare fält i dina data.
 
@@ -271,7 +277,9 @@ När datauppsättningen har skapats kan du hitta den i Platform-gränssnittet p�
 
 #### Lägg till en primär ID-namnområdestagg i datauppsättningen
 
->[!NOTE] Framtida releaser av Intelligent Services kommer att integrera [Adobe Experience Platform Identity Service](../identity-service/home.md) i deras funktioner för kundidentifiering. Stegen nedan kan ändras.
+>[!NOTE]
+>
+>Framtida releaser av Intelligent Services kommer att integrera [Adobe Experience Platform Identity Service](../identity-service/home.md) i deras funktioner för kundidentifiering. Stegen nedan kan ändras.
 
 Om du hämtar in data från [!DNL Adobe Audience Manager], [!DNL Adobe Analytics]eller någon annan extern källa, måste du lägga till en `primaryIdentityNameSpace` -tagg i datauppsättningen. Detta kan du göra genom att göra en PATCH-begäran till katalogtjänstens API.
 
@@ -329,7 +337,9 @@ curl -X PATCH \
       }'
 ```
 
->[!NOTE] Mer information om hur du arbetar med identitetsnamnutrymmen i Platform finns i översikten över [identitetsnamnutrymmet](../identity-service/namespaces.md).
+>[!NOTE]
+>
+>Mer information om hur du arbetar med identitetsnamnutrymmen i Platform finns i översikten över [identitetsnamnutrymmet](../identity-service/namespaces.md).
 
 **Svar**
 
