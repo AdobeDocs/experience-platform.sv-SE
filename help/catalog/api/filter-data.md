@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Filtrera katalogdata med frågeparametrar
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '2060'
+ht-degree: 0%
 
 ---
 
@@ -586,7 +589,9 @@ Parameterns värde har stöd för flera olika typer av villkorsuttryck `property
 | > | Returnerar endast objekt vars egenskapsvärden är större än (men inte lika med) ett angivet värde. | `property=version>1.0.0` |
 | >= | Returnerar endast objekt vars egenskapsvärden är större än (eller lika med) ett angivet värde. | `property=version>=1.0.0` |
 
->[!NOTE] Egenskapen `name` stöder användningen av jokertecken `*`antingen som hela söksträngen eller som en del av den. Jokertecken matchar tomma tecken så att söksträngen `te*st` matchar värdet &quot;test&quot;. Asterisker kan fördubblas (`**`). En dubbel asterisk i en söksträng representerar en enkel asterisk som en litteral sträng.
+>[!NOTE]
+>
+>Egenskapen `name` stöder användningen av jokertecken `*`antingen som hela söksträngen eller som en del av den. Jokertecken matchar tomma tecken så att söksträngen `te*st` matchar värdet &quot;test&quot;. Asterisker kan fördubblas (`**`). En dubbel asterisk i en söksträng representerar en enkel asterisk som en litteral sträng.
 
 **Begäran**
 
