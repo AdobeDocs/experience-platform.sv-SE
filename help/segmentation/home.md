@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Segmenteringstjänsten Adobe Experience Platform
 topic: overview
 translation-type: tm+mt
-source-git-commit: b0ef50e25c27aba121bb01c602867953eb2a5f7e
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '2386'
 ht-degree: 0%
@@ -40,7 +40,9 @@ Mer information om hur du skapar och använder segment i segmentbyggaren (gräns
 
 Mer information om hur du skapar segmentdefinitioner med API finns i självstudiekursen om hur du [skapar målgruppssegment med API](./tutorials/create-a-segment.md).
 
->[!NOTE] Om ett schema utökas måste alla framtida överföringar uppdatera nya fält i enlighet med detta. Mer information om hur du anpassar Experience Data Model (XDM) finns i [Schemaredigerarens självstudiekurs](../xdm/tutorials/create-schema-ui.md).
+>[!NOTE]
+>
+>Om ett schema utökas måste alla framtida överföringar uppdatera nya fält i enlighet med detta. Mer information om hur du anpassar Experience Data Model (XDM) finns i [Schemaredigerarens självstudiekurs](../xdm/tutorials/create-schema-ui.md).
 
 ## Utvärdera segment
 
@@ -70,14 +72,18 @@ När du komponerar dina segment (antingen via API eller segmentbyggaren) måste 
 
 När du skapar ett nytt segment måste du ange ett segmentnamn. Segmentnamnet används för att identifiera ett visst segment i den samling som byggs av segmenteringstjänsten. Segmentnamn ska därför vara beskrivande, koncisa och unika.
 
->[!NOTE] När du planerar ett segment måste du komma ihåg att det går att referera till segment från och kombinera dem med andra segment. När du väljer ett namn bör du tänka på att ditt segment kan innehålla återanvändbara delar.
+>[!NOTE]
+>
+>När du planerar ett segment måste du komma ihåg att det går att referera till segment från och kombinera dem med andra segment. När du väljer ett namn bör du tänka på att ditt segment kan innehålla återanvändbara delar.
 
 ### Sammanfoga profiler
 
 Sammanslagningsprinciper är regler som används av profilen för att bestämma hur data ska prioriteras och kombineras till en enhetlig vy under vissa villkor.
 Om ingen sammanfogningsprincip har definierats används Platform standardprincip för sammanfogning. Om du hellre vill använda en sammanfogningspolicy som är specifik för din organisation, kan du skapa en egen och markera den som din organisations standardpolicy.
 
->[!NOTE] Uppskattningen av målgruppsstorlekar baseras på organisationens standardpolicy för profilsammanslagning.
+>[!NOTE]
+>
+>Uppskattningen av målgruppsstorlekar baseras på organisationens standardpolicy för profilsammanslagning.
 
 ### Andra segmentmetadata
 
@@ -138,7 +144,9 @@ Datasektionens resurser omfattar tillgång till webbdata från kundsurfning samt
 
 **Lösningen**
 
->[!NOTE] I det här exemplet antar vi att dataarkitekten redan har upprättat ett ID-namnutrymme.
+>[!NOTE]
+>
+>I det här exemplet antar vi att dataarkitekten redan har upprättat ett ID-namnutrymme.
 
 Med API:t kopplar dataarkitekten nyckeln från ExperienceEvent-schemat till klassen&quot;products&quot;. Om du gör det kan dataarkitekten använda ytterligare fält från klassen&quot;products&quot; som om de vore inbyggda i ExperienceEvent-schemat. Som det sista steget i konfigurationsarbetet måste dataarkitekten föra in lämpliga data i kundprofilen i realtid. Detta görs genom att aktivera datauppsättningen&quot;products&quot; för användning med profilen. När konfigurationen är klar kan antingen dataarkitekten eller marknadsföraren skapa målsegmentet i Segment Builder.
 
