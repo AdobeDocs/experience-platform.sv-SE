@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Definiera en relation mellan två scheman med API:t för schemaregister
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: 7e867ee12578f599c0c596decff126420a9aca01
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '1504'
+ht-degree: 0%
 
 ---
 
@@ -12,7 +15,7 @@ source-git-commit: 7e867ee12578f599c0c596decff126420a9aca01
 # Definiera en relation mellan två scheman med API:t för schemaregister
 
 
-Möjligheten att förstå relationerna mellan era kunder och deras interaktioner med ert varumärke i olika kanaler är en viktig del av Adobe Experience Platform. Genom att definiera dessa relationer i strukturen för era XDM-scheman (Experience Data Model) kan ni få komplexa insikter i era kunddata.
+Möjligheten att förstå relationen mellan era kunder och deras interaktioner med ert varumärke i olika kanaler är en viktig del av Adobe Experience Platform. Genom att definiera dessa relationer i strukturen för era XDM-scheman (Experience Data Model) kan ni få komplexa insikter i era kunddata.
 
 Det här dokumentet innehåller en självstudiekurs för att definiera en 1:1-relation mellan två scheman som definierats av din organisation med API:t för [schemaregister](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml).
 
@@ -20,10 +23,10 @@ Det här dokumentet innehåller en självstudiekurs för att definiera en 1:1-re
 
 Den här självstudien kräver en fungerande förståelse av Experience Data Model (XDM) och XDM System. Läs följande dokumentation innan du börjar den här självstudiekursen:
 
-* [XDM System in Experience Platform](../home.md): En översikt över XDM och dess implementering i Experience Platform.
+* [XDM System i Experience Platform](../home.md): En översikt över XDM och dess implementering i Experience Platform.
    * [Grundläggande om schemakomposition](../schema/composition.md): En introduktion av byggstenarna i XDM-scheman.
 * [Kundprofil](../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Sandlådor](../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa API:t för schemaregister. Detta inkluderar ditt `{TENANT_ID}`, konceptet med&quot;behållare&quot; och de rubriker som krävs för att göra förfrågningar (med särskild uppmärksamhet på rubriken Godkänn och dess möjliga värden).
 
@@ -53,7 +56,9 @@ curl -X GET \
   -H 'Accept: application/vnd.adobe.xed-id+json'
 ```
 
->[!NOTE] Rubriken Acceptera `application/vnd.adobe.xed-id+json` returnerar endast rubriker, ID:n och versioner av de resulterande scheman.
+>[!NOTE]
+>
+>Rubriken Acceptera `application/vnd.adobe.xed-id+json` returnerar endast rubriker, ID:n och versioner av de resulterande scheman.
 
 **Svar**
 
@@ -101,7 +106,9 @@ Registrera `$id` värdena för de två scheman som du vill definiera en relation
 
 I schemaregistret fungerar relationsbeskrivare på liknande sätt som sekundärnycklar i SQL-tabeller: ett fält i källschemat fungerar som en referens till ett fält i ett målschema. När du definierar en relation måste varje schema ha ett dedikerat fält som ska användas som referens till det andra schemat.
 
->[!IMPORTANT] Om scheman ska aktiveras för användning i kundprofilen [i](../../profile/home.md)realtid, måste referensfältet för målschemat vara dess **primära identitet**. Detta förklaras mer ingående senare i den här självstudiekursen.
+>[!IMPORTANT]
+>
+>Om scheman ska aktiveras för användning i kundprofilen [i](../../profile/home.md)realtid, måste referensfältet för målschemat vara dess **primära identitet**. Detta förklaras mer ingående senare i den här självstudiekursen.
 
 Om något av schemana inte har något fält för detta ändamål, kan du behöva skapa en blandning med det nya fältet och lägga till det i schemat. Det nya fältet måste ha `type` värdet &quot;string&quot;.
 
@@ -323,7 +330,9 @@ Ett lyckat svar returnerar detaljerna i det uppdaterade schemat, som nu inkluder
 
 ## Definiera primära identitetsfält för båda scheman
 
->[!NOTE] Det här steget krävs bara för scheman som ska aktiveras för användning i [kundprofilen](../../profile/home.md)i realtid. Om du inte vill att schemat ska ingå i en union, eller om dina scheman redan har primära identiteter definierade, kan du hoppa till nästa steg när du [skapar en referensidentitetsbeskrivning](#create-descriptor) för målschemat.
+>[!NOTE]
+>
+>Det här steget krävs bara för scheman som ska aktiveras för användning i [kundprofilen](../../profile/home.md)i realtid. Om du inte vill att schemat ska ingå i en union, eller om dina scheman redan har primära identiteter definierade, kan du hoppa till nästa steg när du [skapar en referensidentitetsbeskrivning](#create-descriptor) för målschemat.
 
 För att scheman ska kunna aktiveras för användning i kundprofilen i realtid måste de ha en primär identitet definierad. Dessutom måste en relations målschema använda sin primära identitet som referensfält.
 
