@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Hantera behörigheter för en produktprofil
 topic: user guide
 translation-type: tm+mt
-source-git-commit: df85ea955b7a308e6be1e2149fcdfb4224facc53
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '279'
+ht-degree: 0%
 
 ---
 
@@ -29,7 +32,9 @@ Om du vill lägga till en behörighet klickar du på **plusikonen (+)** bredvid 
 
 ![add-permissions](../images/add-permissions.png)
 
->[!NOTE] I listan *Inkluderade behörighetsobjekt* visas endast tillagda behörigheter från den valda kategorin.
+>[!NOTE]
+>
+>I listan *Inkluderade behörighetsobjekt* visas endast tillagda behörigheter från den valda kategorin.
 
 Om du vill ta bort en behörighet klickar du på **X** -ikonen bredvid behörighetens namn eller väljer **Ta bort alla** för att ta bort alla behörigheter i den aktuella kategorin. Borttagna behörigheter visas igen under *Tillgängliga behörighetsobjekt*.
 
