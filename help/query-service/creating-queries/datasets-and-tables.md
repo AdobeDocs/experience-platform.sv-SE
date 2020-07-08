@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Datauppsättningar jämfört med tabeller och scheman
 topic: queries
 translation-type: tm+mt
-source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '183'
+ht-degree: 1%
 
 ---
 
@@ -12,7 +15,9 @@ source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
 # Datauppsättningar jämfört med tabeller och scheman
 
 Granska listan över tillgängliga datauppsättningar i användargränssnittet [för](https://platform.adobe.com/datasets)Adobe Experience Platform och observera datauppsättningsnamnen.
->[!NOTE] Vissa datauppsättningsnamn har blanksteg och kan i annat fall vara SQL-säkra.
+>[!NOTE]
+>
+>Vissa datauppsättningsnamn har blanksteg och kan i annat fall vara SQL-säkra.
 
 ![](../images/queries/datasets-and-tables/dataset-names.png)
 
@@ -25,7 +30,7 @@ Granska dataschemats hierarkiska struktur i användargränssnittet genom att kli
 
 ![](../images/clients/psql/connect-bi.png)
 
-Om du vill visa tillgängliga tabeller på plattformen med SQL kan du antingen använda `\d` eller `SHOW TABLES;`.
+Om du vill visa tillgängliga tabeller i Platform med SQL kan du antingen använda `\d` eller `SHOW TABLES;`.
 
 
 `\d` visar PostgreSQL-standardvyn
@@ -39,7 +44,7 @@ Om du vill visa tillgängliga tabeller på plattformen med SQL kan du antingen a
 (2 rows)
 ```
 
-`SHOW TABLES;` är ett anpassat kommando som ger en mer detaljerad vy och visar tabellen samt namnet på datauppsättningen i plattformens användargränssnitt.
+`SHOW TABLES;` är ett anpassat kommando som ger en mer detaljerad vy och visar tabellen, samt namnet på datauppsättningen som finns i användargränssnittet i Platform.
 
 ```
        name      |        dataSetId         |     dataSet    | description | resolved 
@@ -51,7 +56,9 @@ Om du vill visa tillgängliga tabeller på plattformen med SQL kan du antingen a
 
 Om du vill visa rotschemat för en tabell använder du `\d table_name` kommandot.
 
->[!NOTE] I schemat visas rotfälten, som oftast är komplexa, som refereras till en objekttyp i dataschemats användargränssnitt.
+>[!NOTE]
+>
+>I schemat visas rotfälten, som oftast är komplexa, som refereras till en objekttyp i dataschemats användargränssnitt.
 
 `\d luma_midvalues`
 
