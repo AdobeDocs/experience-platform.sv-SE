@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Uppdatera en sandlåda
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 974e93b1c24493734848151b9be00758f6a84578
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '87'
+ht-degree: 1%
 
 ---
 
@@ -13,7 +16,9 @@ source-git-commit: 974e93b1c24493734848151b9be00758f6a84578
 
 Du kan uppdatera ett eller flera fält i en sandlåda genom att göra en PATCH-begäran som innehåller sandlådans `name` i begärandesökvägen och egenskapen som ska uppdateras i nyttolasten för begäran.
 
->[!NOTE] För närvarande kan bara en sandlådeegenskap `title` uppdateras.
+>[!NOTE]
+>
+>För närvarande kan bara en sandlådeegenskap `title` uppdateras.
 
 **API-format**
 
