@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användarhandbok för dataanvändningsprinciper
 topic: policies
 translation-type: tm+mt
-source-git-commit: d4964231ee957349f666eaf6b0f5729d19c408de
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '686'
 ht-degree: 0%
@@ -16,7 +16,9 @@ ht-degree: 0%
 
 Adobe Experience Platform Data Governance tillhandahåller ett användargränssnitt som gör att du kan skapa och hantera dataanvändningsprinciper. Det här dokumentet innehåller en översikt över de åtgärder du kan utföra på arbetsytan _Profiler_ i [!DNL Experience Platform] användargränssnittet.
 
->[!IMPORTANT] Alla dataanvändningspolicyer (inklusive kärnpolicyer från Adobe) är inaktiverade som standard. För att en enskild princip ska kunna användas för verkställighet måste du manuellt aktivera den principen. I avsnittet [Aktivera profiler](#enable) finns mer information om hur du gör detta i användargränssnittet.
+>[!IMPORTANT]
+>
+>Alla dataanvändningspolicyer (inklusive kärnpolicyer från Adobe) är inaktiverade som standard. För att en enskild princip ska kunna användas för verkställighet måste du manuellt aktivera den principen. I avsnittet [Aktivera profiler](#enable) finns mer information om hur du gör detta i användargränssnittet.
 
 ## Förutsättningar
 
@@ -51,7 +53,9 @@ Välj sedan de dataanvändningsetiketter som profilen ska baseras på. När du v
 
 Steget *[!UICONTROL Select marketing actions]* visas. Välj lämpliga marknadsföringsåtgärder i listan och klicka sedan på **[!UICONTROL Next]** för att fortsätta.
 
->[!NOTE] När man väljer flera marknadsföringsåtgärder tolkas de som en &quot;OR&quot;-regel. Med andra ord gäller policyn om _någon_ av de valda marknadsföringsåtgärderna utförs.
+>[!NOTE]
+>
+>När man väljer flera marknadsföringsåtgärder tolkas de som en &quot;OR&quot;-regel. Med andra ord gäller policyn om _någon_ av de valda marknadsföringsåtgärderna utförs.
 
 ![](../images/policies/add-marketing-actions.png)
 
@@ -93,7 +97,9 @@ Den nyligen skapade åtgärden visas på *[!UICONTROL Marketing actions]* fliken
 
 ## Redigera eller ta bort en marknadsföringsåtgärd {#edit-delete-marketing-action}
 
->[!NOTE] Endast anpassade marknadsföringsåtgärder som definieras av din organisation kan redigeras. Marknadsföringsåtgärder som definierats av Adobe kan inte ändras eller tas bort.
+>[!NOTE]
+>
+>Endast anpassade marknadsföringsåtgärder som definieras av din organisation kan redigeras. Marknadsföringsåtgärder som definierats av Adobe kan inte ändras eller tas bort.
 
 På **[!UICONTROL Policies]** arbetsytan väljer du **[!UICONTROL Marketing actions]** fliken för att visa en lista över tillgängliga marknadsföringsåtgärder som definierats av Adobe och din egen organisation. Välj en anpassad marknadsföringsåtgärd i listan och använd sedan fälten i den högra delen för att redigera information om marknadsföringsåtgärden.
 
@@ -101,7 +107,9 @@ På **[!UICONTROL Policies]** arbetsytan väljer du **[!UICONTROL Marketing acti
 
 Om marknadsföringsåtgärden inte används av någon befintlig användarprofil kan du ta bort den genom att klicka på **[!UICONTROL Delete marketing action]**.
 
->[!NOTE] Om du försöker ta bort en marknadsföringsåtgärd som används av en befintlig princip visas ett felmeddelande som anger att borttagningsförsöket misslyckades.
+>[!NOTE]
+>
+>Om du försöker ta bort en marknadsföringsåtgärd som används av en befintlig princip visas ett felmeddelande som anger att borttagningsförsöket misslyckades.
 
 ![](../images/policies/delete-marketing-action.png)
 
