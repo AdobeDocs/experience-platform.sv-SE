@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Posta en modell (API)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '508'
+ht-degree: 0%
 
 ---
 
@@ -31,9 +34,9 @@ curl -X POST \
   -d '{JSON_PAYLOAD}'
 ```
 
-`{IMS_ORG}`: Dina IMS-organisationsuppgifter finns i din unika integrering med Adobe Experience Platform.\
+`{IMS_ORG}`: Dina IMS-organisationsuppgifter hittades i din unika integrering med Adobe Experience Platform.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{API_KEY}`: Ditt specifika API-nyckelvärde finns i er unika integrering med Adobe Experience Platform.\
+`{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.\
 `{JSON_PAYLOAD}`: Objekt för experimentkörning som ska skickas. Exemplet vi använder i vår självstudiekurs visas här:
 
 ```JSON
@@ -119,9 +122,9 @@ curl -X POST \
   -d '{JSON_PAYLOAD}'
 ```
 
-`{IMS_ORG}`: Dina IMS-organisationsuppgifter finns i din unika integrering med Adobe Experience Platform.\
+`{IMS_ORG}`: Dina IMS-organisationsuppgifter hittades i din unika integrering med Adobe Experience Platform.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{API_KEY}`: Ditt specifika API-nyckelvärde finns i er unika integrering med Adobe Experience Platform.\
+`{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.\
 `{EXPERIMENT_ID}`: Det ID som motsvarar den experiment som du vill använda som mål. Det här finns i svaret när du skapar din Experiment.\
 `{JSON_PAYLOAD}`: Data som ska bokföras. Exemplet vi använder i vår självstudiekurs är här:
 
@@ -184,7 +187,7 @@ curl -X GET \
 
 `{EXPERIMENT_ID}`:  Det ID som motsvarar det Experiment som Kör finns under.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{IMS_ORG}`: Dina IMS-organisationsuppgifter finns i din unika integrering med Adobe Experience Platform.
+`{IMS_ORG}`: Dina IMS-organisationsuppgifter hittades i din unika integrering med Adobe Experience Platform.
 
 Eftersom det finns flera Experiment Runs för en viss Experiment har det returnerade svaret en array med Run ID:n.
 
@@ -225,11 +228,13 @@ curl -X DELETE \
   -H 'x-gw-ims-org-id: {IMS_ORG}'
 ```
 
-`{EXPERIMENT_ID}`:  Det ID som motsvarar Experimenten.\
+`{EXPERIMENT_ID}`:  ID:t som motsvarar Experiment.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{IMS_ORG}`: Dina IMS-organisationsuppgifter finns i din unika integrering med Adobe Experience Platform.
+`{IMS_ORG}`: Dina IMS-organisationsuppgifter hittades i din unika integrering med Adobe Experience Platform.
 
->[!NOTE] API-anropet inaktiverar skapandet av nya Experiment-körningar. Körningen av Experiment Runs avbryts dock inte.
+>[!NOTE]
+>
+>API-anropet inaktiverar skapandet av nya Experiment-körningar. Körningen av Experiment Runs avbryts dock inte.
 
 Här följer ett svar som meddelar att experten har tagits bort.
 
