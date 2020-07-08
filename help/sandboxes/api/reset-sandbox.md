@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Återställ en sandlåda
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 974e93b1c24493734848151b9be00758f6a84578
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '122'
+ht-degree: 1%
 
 ---
 
@@ -59,4 +62,6 @@ Ett lyckat svar returnerar informationen om den uppdaterade sandlådan, vilket v
 }
 ```
 
->[!NOTE] När en sandlåda har återställts tar det ca 15 minuter att etablera den av systemet. När sandlådan har etablerats blir den `state` &quot;aktiv&quot; eller&quot;misslyckades&quot;.
+>[!NOTE]
+>
+>När en sandlåda har återställts tar det ca 15 minuter att etablera den av systemet. När sandlådan har etablerats blir den `state` &quot;aktiv&quot; eller&quot;misslyckades&quot;.
