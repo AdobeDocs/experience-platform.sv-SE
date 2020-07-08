@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Visa resurser
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: b4d8a6f8006d55c7aac19d705c6880fec915c147
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '519'
 ht-degree: 1%
@@ -16,7 +16,9 @@ ht-degree: 1%
 
 Du kan visa en lista över alla resurser i schemaregistret av en viss typ (klasser, mixins, scheman, datatyper eller beskrivningar) i en behållare genom att utföra en GET-begäran.
 
->[!NOTE] När resurser listas begränsas resultatmängden till 300 objekt. Om du vill returnera resurser som överskrider den här gränsen måste du använda [sidindelningsparametrar](#paging). Vi rekommenderar också att du använder frågeparametrar för att [filtrera resultaten](#filtering) och minska antalet returnerade resurser.
+>[!NOTE]
+>
+>När resurser listas begränsas resultatmängden till 300 objekt. Om du vill returnera resurser som överskrider den här gränsen måste du använda [sidindelningsparametrar](#paging). Vi rekommenderar också att du använder frågeparametrar för att [filtrera resultaten](#filtering) och minska antalet returnerade resurser.
 
 **API-format**
 
@@ -78,7 +80,9 @@ I begäran ovan användes rubriken `application/vnd.adobe.xed-id+json` Godkänn.
 
 Schemaregistret har stöd för användning av frågeparametrar för att filtrera resultat och sidor när resurser listas.
 
->[!NOTE] När du kombinerar flera frågeparametrar måste de avgränsas med et-tecken (`&`).
+>[!NOTE]
+>
+>När du kombinerar flera frågeparametrar måste de avgränsas med et-tecken (`&`).
 
 ### Sidindelning {#paging}
 
@@ -105,4 +109,6 @@ Du kan filtrera resultat med hjälp av `property` parametern, som används för 
 | `~` | Filtrerar efter om egenskapen matchar ett angivet reguljärt uttryck. | `property=title~test$` |
 | (Ingen) | Om du bara anger egenskapsnamnet returneras bara poster där egenskapen finns. | `property=title` |
 
->[!TIP] Du kan använda parametern `property` för att filtrera blandningar efter deras kompatibla klass. Returnerar till exempel bara blandningar som är kompatibla med klassen XDM Individual Profile. `property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile`
+>[!TIP]
+>
+>Du kan använda parametern `property` för att filtrera blandningar efter deras kompatibla klass. Returnerar till exempel bara blandningar som är kompatibla med klassen XDM Individual Profile. `property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile`
