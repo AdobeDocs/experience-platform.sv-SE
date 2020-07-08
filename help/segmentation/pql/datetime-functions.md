@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Datum- och tidsfunktioner
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 902ba5efbb5f18a2de826fffd023195d804309cc
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '471'
+ht-degree: 2%
 
 ---
 
@@ -138,13 +141,15 @@ Funktionen kan `occurs` skrivas i något av följande format:
 
 | Argument | Beskrivning |
 | --------- | ----------- |
-| `{COMPARISON}` | En jämförelseoperator. Kan vara någon av följande operatorer: `>`, `>=`, `<`, `<=`, `=`, `!=`.. Mer information om jämförelsefunktionerna finns i [jämförelsefunktionsdokumentet](./comparison-functions.md). |
+| `{COMPARISON}` | En jämförelseoperator. Kan vara någon av följande operatorer: `>`, `>=`, `<`, `<=`, `=`, `!=`. Mer information om jämförelsefunktionerna finns i [jämförelsefunktionsdokumentet](./comparison-functions.md). |
 | `{INTEGER}` | Ett positivt heltal. |
-| `{TIME_UNIT}` | En tidsenhet. Kan vara något av följande ord: `millisecond(s)`, `second(s)`, `minute(s)`, `hour(s)`, `day(s)`, `week(s)`, `month(s)`, `year(s)`, `decade(s)`, `century``centuries``millennium``millennia`,¥,¥. |
-| `{DIRECTION}` | En preposition som beskriver när datumet ska jämföras med. Kan vara något av följande ord: `before`, `after`, `from`.. |
+| `{TIME_UNIT}` | En tidsenhet. Kan vara något av följande ord: `millisecond(s)`, `second(s)`, `minute(s)`, `hour(s)`, `day(s)`, `week(s)`, `month(s)`, `year(s)`, `decade(s)`, `century`, `centuries``millennium``millennia`,¥, . |
+| `{DIRECTION}` | En preposition som beskriver när datumet ska jämföras med. Kan vara något av följande ord: `before`, `after`, `from`. |
 | `{TIME}` | Kan vara en tidsstämpellitteral (`today`, `now`, `yesterday`, `tomorrow`), en relativ tidsenhet (en av `this`, `last`eller `next` följt av en tidsenhet) eller ett tidsstämpelattribut. |
 
->[!NOTE] Användning av ordet `on` är valfritt. Det finns för att förbättra läsbarheten för vissa kombinationer, som `timestamp occurs on date(2019,12,31)`.
+>[!NOTE]
+>
+>Användning av ordet `on` är valfritt. Det finns för att förbättra läsbarheten för vissa kombinationer, som `timestamp occurs on date(2019,12,31)`.
 
 **Exempel**
 
