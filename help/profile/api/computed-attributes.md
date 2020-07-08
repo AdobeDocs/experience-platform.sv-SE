@@ -1,10 +1,10 @@
 ---
 keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API
 solution: Adobe Experience Platform
-title: Utvecklarhandbok för kundprofil-API i realtid
+title: Beräknade attribut - Kundprofils-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d1656635b6d082ce99f1df4e175d8dd69a63a43a
 workflow-type: tm+mt
 source-wordcount: '2431'
 ht-degree: 0%
