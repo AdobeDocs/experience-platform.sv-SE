@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Jobb
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: a3178ab54a7ab5eacd6c5f605b8bd894779f9e85
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1669'
 ht-degree: 0%
@@ -14,20 +14,24 @@ ht-degree: 0%
 
 # Sekretessjobb
 
-Följande avsnitt går igenom anrop som du kan göra med hjälp av `/jobs` slutpunkten i API:t för sekretesstjänsten. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
+Följande avsnitt går igenom anrop som du kan göra med hjälp av `/jobs` slutpunkten i Privacy Service-API:t. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
 
 ## Skapa ett sekretessjobb {#create-job}
 
 Innan du skapar en ny jobbbegäran måste du först samla in identifieringsinformation om de registrerade vars uppgifter du vill få tillgång till, ta bort eller avanmäla dig från försäljning. När du har de data som krävs måste de anges i nyttolasten för en POST-begäran till rotslutpunkten.
 
->[!NOTE] Kompatibla Adobe Experience Cloud-program använder olika värden för att identifiera registrerade personer. Mer information om vilka identifierare som krävs för dina program finns i guiden om [sekretesstjänsten och Experience Cloud-program](../experience-cloud-apps.md) .
+>[!NOTE]
+>
+>Kompatibla Adobe Experience Cloud-program använder olika värden för att identifiera registrerade personer. Mer information om vilka identifierare som krävs för dina program finns i guiden om program [för](../experience-cloud-apps.md) Privacy Service och Experience Cloud.
 
-Integritetstjänstens API har stöd för två typer av jobbförfrågningar för personuppgifter:
+Privacy Services-API:t stöder två typer av jobbförfrågningar för personuppgifter:
 
 * [Åtkomst och/eller borttagning](#access-delete): Få åtkomst till (läsa) eller ta bort personuppgifter.
 * [Avanmäl dig](#opt-out): Märk personuppgifter som att de inte ska säljas.
 
->[!IMPORTANT] Åtkomst- och borttagningsbegäranden kan kombineras som ett enda API-anrop, men avanmälningsbegäranden måste göras separat.
+>[!IMPORTANT]
+>
+>Åtkomst- och borttagningsbegäranden kan kombineras som ett enda API-anrop, men avanmälningsbegäranden måste göras separat.
 
 ### Skapa ett åtkomst-/borttagningsjobb {#access-delete}
 
@@ -105,8 +109,8 @@ curl -X POST \
 | `companyContexts` **(Obligatoriskt)** | En array som innehåller autentiseringsinformation för din organisation. Varje identifierare i listan innehåller följande attribut: <ul><li>`namespace`: Namnutrymmet för en identifierare.</li><li>`value`: Identifierarens värde.</li></ul>Det **krävs** att en av identifierarna använder `imsOrgId` den som `namespace`, med `value` det unika ID:t för IMS-organisationen. <br/><br/>Ytterligare identifierare kan vara produktspecifika företagskvalificerare (till exempel `Campaign`) som identifierar en integrering med ett Adobe-program som tillhör din organisation. Möjliga värden är kontonamn, klientkoder, klient-ID eller andra programidentifierare. |
 | `users` **(Obligatoriskt)** | En array som innehåller en samling med minst en användare vars information du vill komma åt eller ta bort. Högst 1 000 användar-ID kan anges i en enda begäran. Varje användarobjekt innehåller följande information: <ul><li>`key`: En identifierare för en användare som används för att kvalificera separata jobb-ID:n i svarsdata. Det är bäst att välja en unik, lätt identifierbar sträng för det här värdet så att det är enkelt att referera till eller söka efter den senare.</li><li>`action`: En array som visar vilka åtgärder som önskas för användarens data. Beroende på vilka åtgärder du vill utföra måste den här arrayen innehålla `access`, `delete`eller båda.</li><li>`userIDs`: En samling identiteter för användaren. Antalet identiteter som en enskild användare kan ha är begränsat till nio. Varje identitet består av en `namespace`, en `value`och en namnutrymmeskvalificerare (`type`). Mer information om de här obligatoriska egenskaperna finns i [bilagan](appendix.md) .</li></ul> En mer detaljerad förklaring av `users` och `userIDs`information finns i [felsökningsguiden](../troubleshooting-guide.md#user-ids). |
 | `include` **(Obligatoriskt)** | En uppsättning Adobe-produkter som ska ingå i bearbetningen. Om det här värdet saknas eller är tomt på annat sätt, kommer begäran att avvisas. Inkludera endast produkter som din organisation är integrerad med. Mer information finns i avsnittet om [godkända produktvärden](appendix.md) i bilagan. |
-| `expandIDs` | En valfri egenskap som, när den anges till `true`, representerar en optimering för bearbetning av ID:n i programmen (stöds för närvarande bara av Analytics). Om det utelämnas blir det här värdet som standard `false`. |
-| `priority` | En valfri egenskap som används av Adobe Analytics och som anger prioriteten för bearbetning av begäranden. Godkända värden är `normal` och `low`. Om `priority` utelämnas används standardbeteendet `normal`. |
+| `expandIDs` | En valfri egenskap som, när den anges till `true`, representerar en optimering för bearbetning av ID:n i programmen (som för närvarande bara stöds av Analytics). Om det utelämnas blir det här värdet som standard `false`. |
+| `priority` | En valfri egenskap som används av Adobe Analytics och som anger prioriteten för behandling av begäranden. Godkända värden är `normal` och `low`. Om `priority` utelämnas används standardbeteendet `normal`. |
 | `analyticsDeleteMethod` | En valfri egenskap som anger hur Adobe Analytics ska hantera personuppgifter. Två möjliga värden accepteras för det här attributet: <ul><li>`anonymize`: Alla data som refereras av den angivna samlingen med användar-ID görs anonyma. Om `analyticsDeleteMethod` utelämnas är detta standardbeteendet.</li><li>`purge`: Alla data tas bort helt.</li></ul> |
 | `regulation` **(Obligatoriskt)** | Förordningen om begäran. Måste vara något av följande tre värden: <ul><li>gdpr</li><li>ccpa</li><li>pdpa_tha</li></ul> |
 
@@ -235,11 +239,11 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `companyContexts` **(Obligatoriskt)** | En array som innehåller autentiseringsinformation för din organisation. Varje identifierare i listan innehåller följande attribut: <ul><li>`namespace`: Namnutrymmet för en identifierare.</li><li>`value`: Identifierarens värde.</li></ul>Det **krävs** att en av identifierarna använder `imsOrgId` den som `namespace`, med `value` det unika ID:t för IMS-organisationen. <br/><br/>Ytterligare identifierare kan vara produktspecifika företagskvalificerare (till exempel `Campaign`) som identifierar en integrering med ett Adobe-program som tillhör din organisation. Möjliga värden är kontonamn, klientkoder, klient-ID eller andra programidentifierare. |
+| `companyContexts` **(Obligatoriskt)** | En array som innehåller autentiseringsinformation för din organisation. Varje identifierare i listan innehåller följande attribut: <ul><li>`namespace`: Namnutrymmet för en identifierare.</li><li>`value`: Identifierarens värde.</li></ul>Det **krävs** att en av identifierarna använder `imsOrgId` den som `namespace`, med `value` det unika ID:t för IMS-organisationen. <br/><br/>Ytterligare identifierare kan vara produktspecifika företagskvalificerare (till exempel `Campaign`) som identifierar en integrering med ett Adobe-program som tillhör din organisation. Möjliga värden är kontonamn, klientkoder, klient-ID:n eller andra programidentifierare. |
 | `users` **(Obligatoriskt)** | En array som innehåller en samling med minst en användare vars information du vill komma åt eller ta bort. Högst 1 000 användar-ID kan anges i en enda begäran. Varje användarobjekt innehåller följande information: <ul><li>`key`: En identifierare för en användare som används för att kvalificera separata jobb-ID:n i svarsdata. Det är bäst att välja en unik, lätt identifierbar sträng för det här värdet så att det är enkelt att referera till eller söka efter den senare.</li><li>`action`: En array som listar önskade åtgärder som ska utföras på data. För begäran om avanmälan från försäljning får arrayen endast innehålla värdet `opt-out-of-sale`.</li><li>`userIDs`: En samling identiteter för användaren. Antalet identiteter som en enskild användare kan ha är begränsat till nio. Varje identitet består av en `namespace`, en `value`och en namnutrymmeskvalificerare (`type`). Mer information om de här obligatoriska egenskaperna finns i [bilagan](appendix.md) .</li></ul> En mer detaljerad förklaring av `users` och `userIDs`information finns i [felsökningsguiden](../troubleshooting-guide.md#user-ids). |
 | `include` **(Obligatoriskt)** | En uppsättning Adobe-produkter som ska ingå i bearbetningen. Om det här värdet saknas eller är tomt på annat sätt, kommer begäran att avvisas. Inkludera endast produkter som din organisation är integrerad med. Mer information finns i avsnittet om [godkända produktvärden](appendix.md) i bilagan. |
-| `expandIDs` | En valfri egenskap som, när den anges till `true`, representerar en optimering för bearbetning av ID:n i programmen (stöds för närvarande bara av Analytics). Om det utelämnas blir det här värdet som standard `false`. |
-| `priority` | En valfri egenskap som används av Adobe Analytics och som anger prioriteten för bearbetning av begäranden. Godkända värden är `normal` och `low`. Om `priority` utelämnas används standardbeteendet `normal`. |
+| `expandIDs` | En valfri egenskap som, när den anges till `true`, representerar en optimering för bearbetning av ID:n i programmen (som för närvarande bara stöds av Analytics). Om det utelämnas blir det här värdet som standard `false`. |
+| `priority` | En valfri egenskap som används av Adobe Analytics och som anger prioriteten för behandling av begäranden. Godkända värden är `normal` och `low`. Om `priority` utelämnas används standardbeteendet `normal`. |
 | `analyticsDeleteMethod` | En valfri egenskap som anger hur Adobe Analytics ska hantera personuppgifter. Två möjliga värden accepteras för det här attributet: <ul><li>`anonymize`: Alla data som refereras av den angivna samlingen med användar-ID görs anonyma. Om `analyticsDeleteMethod` utelämnas är detta standardbeteendet.</li><li>`purge`: Alla data tas bort helt.</li></ul> |
 | `regulation` **(Obligatoriskt)** | Förordningen om begäran. Måste vara något av följande tre värden: <ul><li>gdpr</li><li>ccpa</li><li>pdpa_tha</li></ul> |
 
@@ -288,7 +292,9 @@ När du har skickat jobbförfrågan kan du fortsätta till nästa steg för att 
 
 Om du använder ett av de `jobId` värden som returnerades i föregående steg kan du hämta information om jobbet, till exempel dess aktuella bearbetningsstatus.
 
->[!IMPORTANT] Data för tidigare skapade jobb är endast tillgängliga för hämtning inom 30 dagar efter jobbets slutförandedatum.
+>[!IMPORTANT]
+>
+>Data för tidigare skapade jobb är endast tillgängliga för hämtning inom 30 dagar efter jobbets slutförandedatum.
 
 **API-format**
 
@@ -383,7 +389,9 @@ I följande tabell visas olika möjliga jobbstatusvärden och deras motsvarande 
 | 3 | Skickat | Jobbet skickas till alla tillämpliga program. |
 | 4 | Fel | Något misslyckades vid bearbetningen av jobbet - mer specifik information kan hämtas genom att information om enskilda jobb hämtas. |
 
->[!NOTE] Ett skickat jobb kan vara i ett bearbetningstillstånd om det har ett beroende underordnat jobb som fortfarande bearbetas.
+>[!NOTE]
+>
+>Ett skickat jobb kan vara i ett bearbetningstillstånd om det har ett beroende underordnat jobb som fortfarande bearbetas.
 
 ## Visa alla jobb
 
@@ -428,4 +436,4 @@ Om du vill hämta nästa resultatuppsättning i ett sidnumrerat svar måste du g
 
 ## Nästa steg
 
-Nu vet du hur du skapar och övervakar sekretessjobb med hjälp av sekretesstjänstens API. Mer information om hur du utför samma uppgifter med användargränssnittet finns i [Integritetstjänstens översikt](../ui/overview.md).
+Nu kan du skapa och övervaka sekretessjobb med Privacy Service-API:t. Mer information om hur du utför samma uppgifter med användargränssnittet finns i [Privacy Servicens användargränssnitt - översikt](../ui/overview.md).
