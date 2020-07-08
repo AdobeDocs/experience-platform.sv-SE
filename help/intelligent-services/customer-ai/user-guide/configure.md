@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Konfigurera en AI-instans för kund
 topic: Instance creation
 translation-type: tm+mt
-source-git-commit: ec0de4c8775367be9e6016529471254ad9f8f453
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '695'
+ht-degree: 0%
 
 ---
 
@@ -17,7 +20,7 @@ Intelligenta tjänster ger kunden artificiell intelligens (AI) som en lättanvä
 
 ## Konfigurera din instans {#set-up-your-instance}
 
-Klicka i det vänstra navigeringsfältet **[!UICONTROL Services]** i plattformsgränssnittet. Webbläsaren visas och **[!UICONTROL Services]** visar alla tillgängliga tjänster. Klicka på i behållaren för kundens AI **[!UICONTROL Open]**.
+Klicka på den vänstra navigeringen i användargränssnittet **[!UICONTROL Services]** för Platform. Webbläsaren visas och **[!UICONTROL Services]** visar alla tillgängliga tjänster. Klicka på i behållaren för kundens AI **[!UICONTROL Open]**.
 
 ![](../images/user-guide/navigate-to-service.png)
 
@@ -69,7 +72,9 @@ Uteslut händelser efter behov och klicka sedan för **[!UICONTROL Finish]** att
 
 Om instansen skapas utan fel utlöses en förutsägelsekörning omedelbart och efterföljande körningar utförs enligt ditt definierade schema.
 
->[!NOTE] Beroende på storleken på indata kan det ta upp till 24 timmar att slutföra förutsägelser.
+>[!NOTE]
+>
+>Beroende på storleken på indata kan det ta upp till 24 timmar att slutföra förutsägelser.
 
 Genom att följa det här avsnittet har du konfigurerat en instans av Kundens AI och en förutsägelsekörning utfördes. När körningen är klar fyller poängsatta insikter automatiskt i profiler med förutbestämda poäng. Vänta i upp till 24 timmar innan du fortsätter till nästa avsnitt i den här självstudiekursen.
 
