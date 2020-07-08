@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa en dataanvändningsprincip
 topic: policies
 translation-type: tm+mt
-source-git-commit: d4964231ee957349f666eaf6b0f5729d19c408de
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1194'
 ht-degree: 0%
@@ -217,7 +217,9 @@ Det här uttrycket kallas ett **principuttryck** och är ett objekt som innehål
 }
 ```
 
->[!NOTE] Endast operatorerna OR och AND stöds.
+>[!NOTE]
+>
+>Endast operatorerna OR och AND stöds.
 
 När du har konfigurerat ditt principuttryck kan du skapa en ny DULE-princip genom att göra en POST-begäran till `/policies/custom` slutpunkten.
 
@@ -322,7 +324,9 @@ Registrera URI-ID:t för den nya DULE-principen så som den används i nästa st
 
 ## Aktivera DULE-principen
 
->[!NOTE] Detta steg är valfritt om du vill lämna din DULE-princip i `DRAFT` status, men tänk på att en policy som standard måste ha sin status inställd på `ENABLED` för att kunna delta i utvärderingen. Se självstudiekursen om hur du [verkställer DULE-regler](../enforcement/api-enforcement.md) för mer information om hur du gör undantag för policyer i `DRAFT` status.
+>[!NOTE]
+>
+>Detta steg är valfritt om du vill lämna din DULE-princip i `DRAFT` status, men tänk på att en policy som standard måste ha sin status inställd på `ENABLED` för att kunna delta i utvärderingen. Se självstudiekursen om hur du [verkställer DULE-regler](../enforcement/api-enforcement.md) för mer information om hur du gör undantag för policyer i `DRAFT` status.
 
 Som standard deltar inte DULE-principer som har egenskapen `status` inställd på att `DRAFT` delta i utvärderingen. Du kan aktivera din princip för utvärdering genom att göra en PATCH-begäran till `/policies/custom/` slutpunkten och ange den unika identifieraren för principen i slutet av sökvägen.
 
