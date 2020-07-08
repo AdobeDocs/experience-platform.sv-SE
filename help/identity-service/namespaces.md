@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform Identity Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '708'
 ht-degree: 0%
@@ -72,7 +72,9 @@ Namnutrymmen som du definierar är privata för din organisation och kräver ett
 
 På samma sätt som för standardnamnutrymmen kan du klicka på ett anpassat namnutrymme på fliken för att visa information om det, men med ett anpassat namnutrymme kan du även redigera dess visningsnamn och beskrivning i informationsområdet. *[!UICONTROL Browse]*
 
->[!NOTE] När ett namnutrymme har skapats kan det inte tas bort och dess&quot;identitetssymbol&quot; (eller&quot;kod&quot; i API) och&quot;typ&quot; kan inte ändras.
+>[!NOTE]
+>
+>När ett namnutrymme har skapats kan det inte tas bort och dess&quot;identitetssymbol&quot; (eller&quot;kod&quot; i API) och&quot;typ&quot; kan inte ändras.
 
 ## Namnutrymmen i identitetsdata
 
