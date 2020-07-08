@@ -4,16 +4,19 @@ solution: Experience Platform
 title: Frågeredigeringsguide för Adobe Experience Platform Query Service
 topic: query editor
 translation-type: tm+mt
-source-git-commit: 45da024d45b5eebdfc393ee14890e24aed6021ce
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '1060'
+ht-degree: 0%
 
 ---
 
 
 # Användarhandbok för Frågeredigeraren
 
-Frågeredigeraren är ett interaktivt verktyg från Adobe Experience Platform Query Service som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i Experience Platforms användargränssnitt. Frågeredigeraren stöder utveckling av frågor för analys och datautforskande och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
+Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 
-Mer information om begrepp och funktioner i tjänsten Query Service finns i Översikt över [][query-service-overview]tjänsten Query. Mer information om hur du navigerar i användargränssnittet för frågetjänsten på plattformen finns i [översikten][query-service-ui]för användargränssnittet för frågetjänsten.
+Mer information om begrepp och funktioner i tjänsten Query Service finns i Översikt över [][query-service-overview]tjänsten Query. Mer information om hur du navigerar i användargränssnittet för frågetjänsten i Platform finns i [Översikt över][query-service-ui]användargränssnittet för frågetjänsten.
 
 ## Komma igång
 
@@ -35,7 +38,7 @@ Med Frågeredigeraren kan du skriva, köra och spara frågor om kundupplevelseda
 
 ### Åtkomst till frågeredigeraren
 
-I Experience Platform-gränssnittet klickar du på **Frågor** i den vänstra navigeringsmenyn för att öppna arbetsytan för frågetjänsten. Klicka sedan på **Skapa fråga** längst upp till höger på skärmen för att börja skriva frågor. Den här länken är tillgänglig från någon av sidorna på arbetsytan för frågetjänsten.
+I användargränssnittet för Experience Platform klickar du på **Frågor** i den vänstra navigeringsmenyn för att öppna arbetsytan för frågetjänsten. Klicka sedan på **Skapa fråga** längst upp till höger på skärmen för att börja skriva frågor. Den här länken är tillgänglig från någon av sidorna på arbetsytan för frågetjänsten.
 
 ![Bild](../images/queries/query-editor-overview/create-query.png)
 
@@ -77,7 +80,7 @@ När du visar en fråga i Frågeredigeraren innehåller panelen *Frågedetaljer*
 
 ![Bild](../images/queries/query-editor-overview/query-details.png)
 
-På den här panelen kan du generera en utdatauppsättning direkt från användargränssnittet, ta bort eller namnge den visade frågan och visa SQL-koden i ett format som är enkelt att kopiera på fliken *SQL-fråga* . På den här panelen visas även användbara metadata som den senaste gången frågan ändrades och vem som ändrade den, om tillämpligt. Klicka på **Utdatauppsättning** om du vill skapa en datauppsättning. Dialogrutan *Utdatauppsättning* visas. Ange ett namn och en beskrivning och klicka sedan på **Kör fråga**. Den nya datauppsättningen visas på fliken *Datauppsättningar* i användargränssnittet för frågetjänsten på plattformen.
+På den här panelen kan du generera en utdatauppsättning direkt från användargränssnittet, ta bort eller namnge den visade frågan och visa SQL-koden i ett format som är enkelt att kopiera på fliken *SQL-fråga* . På den här panelen visas även användbara metadata som den senaste gången frågan ändrades och vem som ändrade den, om tillämpligt. Klicka på **Utdatauppsättning** om du vill skapa en datauppsättning. Dialogrutan *Utdatauppsättning* visas. Ange ett namn och en beskrivning och klicka sedan på **Kör fråga**. Den nya datauppsättningen visas på fliken *Datauppsättningar* i användargränssnittet för frågetjänsten i Platform.
 
 ### Sparar frågor
 
@@ -89,7 +92,9 @@ Alla frågor som körs från Frågeredigeraren hämtas i loggtabellen. Du kan an
 
 Mer information finns i översikten över användargränssnittet för [frågetjänsten][query-service-ui] .
 
->[!NOTE] Frågor som inte körs sparas inte av loggen. För att frågan ska vara tillgänglig i frågetjänsten måste den köras eller sparas i frågeredigeraren.
+>[!NOTE]
+>
+>Frågor som inte körs sparas inte av loggen. För att frågan ska vara tillgänglig i frågetjänsten måste den köras eller sparas i frågeredigeraren.
 
 ## Köra frågor med Frågeredigeraren
 
@@ -101,7 +106,9 @@ Konsolen ger information om status och funktion för frågetjänsten. Konsolen v
 
 ![Bild](../images/queries/query-editor-overview/console.png)
 
->[!NOTE] Konsolen visar bara fel som uppstått när en fråga kördes. Frågevalideringsfel visas inte innan en fråga körs.
+>[!NOTE]
+>
+>Konsolen visar bara fel som uppstått när en fråga kördes. Frågevalideringsfel visas inte innan en fråga körs.
 
 ### Frågeresultat
 
@@ -111,7 +118,7 @@ När en fråga har slutförts visas resultaten på fliken *Resultat* bredvid fli
 
 ## Nästa steg
 
-Nu när du vet vilka funktioner som är tillgängliga i Frågeredigeraren och hur du navigerar i programmet kan du börja skapa egna frågor direkt i Platform. Mer information om hur du kör SQL-frågor mot datauppsättningar i Data Lake finns i guiden om hur du [kör frågor][query-service-running-queries]. Exempel på SQL-frågor som du kan använda för att arbeta med Adobe Analytics- och Adobe Target-data finns i [exempelfrågereferensen][query-service-sample-queries].
+Nu när du vet vilka funktioner som är tillgängliga i Frågeredigeraren och hur du navigerar i programmet kan du börja skapa egna frågor direkt i Platform. Mer information om hur du kör SQL-frågor mot datauppsättningar i Data Lake finns i guiden om hur du [kör frågor][query-service-running-queries]. SQL-frågor som du kan använda som exempel när du arbetar med Adobe Analytics- och Adobe Target-data finns i [exempelfrågereferensen][query-service-sample-queries].
 
 [query-service-overview]: ../home.md
 [query-service-ui]: overview.md
