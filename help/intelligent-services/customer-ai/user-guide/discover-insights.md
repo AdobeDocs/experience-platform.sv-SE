@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Identifiera insikter med kundens AI
 topic: Discovering insights
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1032'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Customer AI, som en del av Intelligent Services ger marknadsförarna möjlighet att utnyttja Adobe Sensei för att förutse vad era kunder kommer att göra härnäst. Kundens AI används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, utbildning eller driftsättning.
 
-Det här dokumentet fungerar som en guide för interaktion med Service Instance Insights i användargränssnittet för AI för Intelligent Services.
+Det här dokumentet är en guide för interaktion med Service Instance Insights i användargränssnittet för AI för Intelligent Services.
 
 ## Komma igång
 
@@ -30,7 +30,9 @@ In the [!DNL Adobe Experience Platform] UI, click **[!UICONTROL Services]** in t
 
 Kundens AI-tjänstsida visas. På den här sidan visas tjänstinstanser för kundens AI och information om dem, inklusive namnet på instansen, typ av benägenhet, hur ofta instansen körs och status för den senaste uppdateringen.
 
->[!NOTE] Det är bara tjänstinstanser som har slutfört poängsättningen som har insikter.
+>[!NOTE]
+>
+>Det är bara tjänstinstanser som har slutfört poängsättningen som har insikter.
 
 ![Skapa instans](../images/insights/dashboard.png)
 
@@ -51,7 +53,9 @@ Om du vill visa information från kontrollpanelen klickar du på en tjänstinsta
 
 ![höger räl](../images/insights/success-run.png)
 
->[!NOTE] Om en poängkörning misslyckas visas ett felmeddelande. Felmeddelandet visas under *Senaste körningsinformation* i den högra listen, som bara är synlig för misslyckade körningar.
+>[!NOTE]
+>
+>Om en poängkörning misslyckas visas ett felmeddelande. Felmeddelandet visas under *Senaste körningsinformation* i den högra listen, som bara är synlig för misslyckade körningar.
 
 ![meddelande om misslyckad körning](../images/insights/failed-run.png)
 
@@ -85,7 +89,9 @@ Knappen finns i den övre högra navigeringen bredvid **[!UICONTROL More actions
 
 Betygsningssammanfattning visar det totala antalet profiler med poäng och kategoriserar dem i grupper som innehåller hög, medelhög och låg benägenhet. Propensitetsbucketerna baseras på poängintervall, låg är mindre än 24, medel är 25 till 74 och hög är över 74. Varje hink har en färg som motsvarar teckenförklaringen.
 
->[!NOTE] Om det är en konverteringsbenägenhetspoäng visas de höga poängen i grönt och de låga poängen i rött. Om du förutser kurvbenägenheten att detta vänds är de höga poängen röda och de låga poängen gröna. Mediefiltret förblir gult oavsett vilken typ av benägenhet du väljer.
+>[!NOTE]
+>
+>Om det är en konverteringsbenägenhetspoäng visas de höga poängen i grönt och de låga poängen i rött. Om du förutser kurvbenägenheten att detta vänds är de höga poängen röda och de låga poängen gröna. Mediefiltret förblir gult oavsett vilken typ av benägenhet du väljer.
 
 ![poängsammanfattning](../images/insights/scoring-summary.png)
 
@@ -118,7 +124,7 @@ Segmentverktyget används för att definiera ett segment. När du väljer **[!UI
 
 ![Segmentfyllning in](../images/insights/segment-saving.png)
 
-Om du vill visa det nya segmentet i plattformsgränssnittet klickar du **[!UICONTROL Segments]** i den vänstra navigeringen. Sidan *Bläddra* visas och alla tillgängliga segment visas.
+Om du vill visa det nya segmentet i användargränssnittet i Platform klickar du **[!UICONTROL Segments]** i den vänstra navigeringen. Sidan *Bläddra* visas och alla tillgängliga segment visas.
 
 ![Alla segment](../images/insights/Segments-dashboard.png)
 
