@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Analysera dina data med bärbara datorer
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1702'
 ht-degree: 0%
@@ -50,7 +50,9 @@ Koden för butiksförsäljning är ett fristående exempel som använder samma d
 
 ### Åtkomstdata
 
->[!NOTE] Funktionen `data_access_sdk_python` är föråldrad och rekommenderas inte längre. Se självstudiekursen om [dataåtkomst för SDK till Platform SDK](../authoring/platform-sdk.md) för att konvertera din kod. Samma steg nedan gäller fortfarande för den här självstudiekursen.
+>[!NOTE]
+>
+>Funktionen `data_access_sdk_python` är föråldrad och rekommenderas inte längre. Se självstudiekursen om [dataåtkomst för SDK till Platform SDK](../authoring/platform-sdk.md) för att konvertera din kod. Samma steg nedan gäller fortfarande för den här självstudiekursen.
 
 Vi kommer att gå igenom åtkomsten till data internt från [!DNL Adobe Experience Platform] och externt. Vi kommer att använda biblioteket för att komma åt interna data som datauppsättningar och XDM-scheman. `data_access_sdk_python` För externa data kommer vi att använda [!DNL Python] pandabiblioteket.
 
@@ -86,7 +88,9 @@ Eftersom datauppsättningen är densamma vill vi ersätta inläsningsdata från 
 
 Nu kan vi högerklicka på `Retail-Training-<your-alias>` datauppsättningen och välja alternativet Utforska data i anteckningsbok i listrutan. En körbar kodpost visas i anteckningsboken.
 
->[!TIP] se guiden för att konvertera koden [!DNL Platform SDK](../authoring/platform-sdk.md) .
+>[!TIP]
+>
+>se guiden för att konvertera koden [!DNL Platform SDK](../authoring/platform-sdk.md) .
 
 ```PYTHON
 from data_access_sdk_python.reader import DataSetReader
