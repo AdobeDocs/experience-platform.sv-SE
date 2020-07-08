@@ -4,32 +4,39 @@ solution: Experience Platform
 title: Översikt över JavaScript-biblioteket för Adobes sekretess
 topic: overview
 translation-type: tm+mt
-source-git-commit: 3b916ac5529db6ca383bf8bad56961bb1b8a0b0c
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '972'
+ht-degree: 3%
 
 ---
 
 
 # Översikt över JavaScript-biblioteket för Adobes sekretess
 
-Som personuppgiftsbiträde behandlar Adobe personuppgifter i enlighet med ditt företags tillstånd och instruktioner. Som personuppgiftsansvarig bestämmer du vilka personuppgifter Adobe behandlar och lagrar å dina vägnar. Beroende på vilken information du väljer att skicka via Adobe Experience Cloud-lösningar kan Adobe lagra privat information som är tillämplig på sekretessbestämmelser som Allmänna dataskyddsförordningen (GDPR) och California Consumer Privacy Act (CCPA). Mer information om hur Experience Cloud-lösningar samlar in privata data finns i dokumentet om [sekretess i Adobe Experience Cloud](https://www.adobe.com/privacy/marketing-cloud.html) .
+Som personuppgiftsbiträde behandlar Adobe personuppgifter i enlighet med ditt företags tillstånd och instruktioner. Som personuppgiftsansvarig bestämmer du vilka personuppgifter Adobe behandlar och lagrar för din räkning. Beroende på vilken information du väljer att skicka via Adobe Experience Cloud-lösningar kan Adobe lagra privat information som är tillämplig på sekretessbestämmelser som Allmänna dataskyddsförordningen (GDPR) och California Consumer Privacy Act (CCPA). Mer information om hur Experience Cloud lösningar samlar in privata data finns i dokumentet om [sekretess i Adobe Experience Cloud](https://www.adobe.com/privacy/marketing-cloud.html) .
 
-Med **Adobe Privacy JavaScript Library** kan personuppgiftsansvariga automatisera hämtningen av alla registrerade identiteter som genererats av Experience Cloud-lösningar för en viss domän. Med hjälp av API:t från [Adobe Experience Platform Privacy Service](home.md)kan dessa identiteter sedan användas för att skapa åtkomst- och borttagningsförfrågningar för privata data som tillhör dessa registrerade.
+Med **Adobe Privacy JavaScript Library** kan personuppgiftsansvariga automatisera hämtningen av alla registrerade identiteter som genererats av Experience Cloud-lösningar för en viss domän. Med hjälp av API:t från [Adobe Experience Platform Privacy Servicen](home.md)kan dessa identiteter sedan användas för att skapa åtkomst- och borttagningsbegäranden för privata data som tillhör de registrerade.
 
->[!NOTE] JS-biblioteket för sekretess behöver normalt bara installeras på sekretessrelaterade sidor och behöver inte installeras på alla sidor på en webbplats eller en domän.
+>[!NOTE]
+>
+>JS-biblioteket för sekretess behöver normalt bara installeras på sekretessrelaterade sidor och behöver inte installeras på alla sidor på en webbplats eller en domän.
 
 ## Funktioner
 
-JS-biblioteket för sekretess innehåller flera funktioner för att hantera identiteter i Integritetstjänst. Dessa funktioner kan bara användas för att hantera identiteter som lagras i webbläsaren för en viss besökare. De kan inte användas för att skicka information direkt till Experience Cloud Central Service.
+JS-biblioteket för sekretess innehåller flera funktioner för att hantera identiteter i Privacy Service. Dessa funktioner kan bara användas för att hantera identiteter som lagras i webbläsaren för en viss besökare. De kan inte användas för att skicka information direkt till Experience Cloud Centraltjänst.
 
 Följande tabell visar de olika funktionerna i biblioteket:
 
 |  -funktion | Beskrivning |
 | --- | --- |
-| `retrieveIdentities` | Returnerar en matris med matchande identiteter (`validIds`) som har hämtats från sekretesstjänsten, samt en matris med identiteter som inte hittades (`failedIds`). |
+| `retrieveIdentities` | Returnerar en array med matchande identiteter (`validIds`) som har hämtats från Privacy Servicen samt en array med identiteter som inte hittades (`failedIds`). |
 | `removeIdentities` | Tar bort varje matchande (giltig) identitet från webbläsaren. Returnerar en array med matchande identiteter (`validIds`), där varje identitet innehåller ett `isDeleteClientSide` booleskt värde som anger om detta ID har tagits bort. |
 | `retrieveThenRemoveIdentities` | Hämtar en array med matchande identiteter (`validIds`) och tar sedan bort dessa identiteter från webbläsaren. Även om den här funktionen liknar `removeIdentities`den är bäst att använda när den Adobe-lösning du använder kräver en åtkomstbegäran innan det går att ta bort den (till exempel när en unik identifierare måste hämtas innan den kan tas bort). |
 
->[!NOTE] `removeIdentities` och ta `retrieveThenRemoveIdentities` bara bort identiteter från webbläsaren för specifika Adobe-lösningar som stöder dem. Adobe Audience Manager tar till exempel inte bort de demdex-ID:n som lagras i cookies från tredje part, medan Adobe Target tar bort alla cookies som lagrar deras ID:n.
+>[!NOTE]
+>
+>`removeIdentities` och ta `retrieveThenRemoveIdentities` bara bort identiteter från webbläsaren för specifika Adobe-lösningar som stöder dem. Adobe Audience Manager tar t.ex. inte bort de demdex-ID:n som lagras i cookies från tredje part, medan Adobe Target tar bort alla cookies som lagrar deras ID:n.
 
 Eftersom alla tre funktionerna representerar asynkrona processer måste alla hämtade identiteter hanteras med återanrop eller löften.
 
@@ -44,7 +51,7 @@ Om du vill börja använda JS-biblioteket för sekretess måste du installera de
 
 ## Instansiera JS-biblioteket för sekretess
 
-Alla program som använder JS-biblioteket för sekretess måste initiera ett nytt `AdobePrivacy` objekt, som måste konfigureras till en viss Adobe-lösning. En instans för Adobe Analytics skulle till exempel se ut ungefär så här:
+Alla program som använder JS-biblioteket för sekretess måste initiera ett nytt `AdobePrivacy` objekt, som måste konfigureras till en viss Adobe-lösning. En instans för Adobe Analytics ser till exempel ut ungefär så här:
 
 ```js
 var adobePrivacy = new AdobePrivacy({
@@ -86,7 +93,7 @@ adobePrivacy.retrieveIdentities().then(handleRetrievedIDs);
 | Variabel | Beskrivning |
 | --- | --- |
 | `validIds` | Ett JSON-objekt som innehåller alla ID:n som har hämtats. |
-| `failedIDs` | Ett JSON-objekt som innehåller alla ID:n som inte hämtades från sekretesstjänsten, eller som inte kunde hittas på annat sätt. |
+| `failedIDs` | Ett JSON-objekt som innehåller alla ID:n som inte hämtades från Privacy Servicen, eller som på annat sätt inte kunde hittas. |
 
 #### Resultat
 
@@ -135,7 +142,7 @@ adobePrivacy.removeIdentities().then(handleRemovedIDs)…
 | Variabel | Beskrivning |
 | --- | --- |
 | `validIds` | Ett JSON-objekt som innehåller alla ID:n som har hämtats. |
-| `failedIDs` | Ett JSON-objekt som innehåller alla ID:n som inte hämtades från sekretesstjänsten, eller som inte kunde hittas på annat sätt. |
+| `failedIDs` | Ett JSON-objekt som innehåller alla ID:n som inte hämtades från Privacy Servicen, eller som på annat sätt inte kunde hittas. |
 
 #### Resultat
 
@@ -164,7 +171,7 @@ Om koden körs utan fel fylls `validIDs` i med en lista över hämtade identitet
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du lagts till i de viktigaste funktionerna i Privacy JS Library. När du har använt biblioteket för att hämta en lista över identiteter kan du använda dessa identiteter för att skapa dataåtkomst och ta bort begäranden till sekretesstjänstens API. Mer information finns i utvecklarhandboken [för](api/getting-started.md) Integritetstjänst.
+Genom att läsa det här dokumentet har du lagts till i de viktigaste funktionerna i Privacy JS Library. När du har använt biblioteket för att hämta en lista över identiteter kan du använda dessa identiteter för att skapa dataåtkomst och ta bort begäranden till Privacy Service-API:t. Mer information finns i [Privacy Servicens utvecklarhandbok](api/getting-started.md) .
 
 ## Bilaga
 
@@ -195,7 +202,7 @@ Nedan följer en lista över godkända konfigurationsparametrar för de Adobe-l�
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `aamUUIDCookieName` | Namnet på cookie-filen från första part som innehåller det unika användar-ID som returnerats från Adobe Audience Manager. |
+| `aamUUIDCookieName` | Namnet på den cookie som innehåller det unika användar-ID som returnerats från Adobe Audience Manager. |
 
 **Adobe ID Service (ECID)**
 
