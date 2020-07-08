@@ -1,17 +1,20 @@
 ---
-title: Versionsinformation om Adobe Experience Platform
-description: Versionsinformation om Experience Platform 11 mars 2020
+title: Versionsinformation för Adobe Experience Platform
+description: Versionsinformation för Experience Platform 11 mars 2020
 doc-type: release notes
 last-update: March 10, 2020
 author: ens71067
 keywords: release notes;
 translation-type: tm+mt
-source-git-commit: e5fa12b92f7006f2c5c428b25f81dade57733498
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '922'
+ht-degree: 3%
 
 ---
 
 
-# Versionsinformation om Adobe Experience Platform
+# Versionsinformation för Adobe Experience Platform
 
 **Releasedatum: 11 mars 2020**
 
@@ -25,17 +28,19 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 ## Datastyrning {#governance}
 
-Med Experience Platform kan företag samla data från flera olika företagssystem för att bättre kunna identifiera, förstå och engagera kunder. Experience Platform innehåller en komplett infrastruktur för datastyrning, inklusive märkning och verkställighet av data (DULE), för att säkerställa att data används på rätt sätt inom plattformen och när de delas mellan system.
+Med Experience Platform kan företag samla data från flera affärssystem för att bättre kunna identifiera, förstå och engagera kunder. Experience Platform har en komplett infrastruktur för datastyrning, inklusive märkning och verkställighet av data (DULE), för att säkerställa att data används på rätt sätt inom Platform och när de delas mellan system.
 
-Adobe Experience Platform Data Governance är en serie strategier och tekniker som används för att hantera kunddata och säkerställa efterlevnad av regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en viktig roll inom Experience Platform på olika nivåer, bland annat i fråga om katalogisering, datalinje, märkning av dataanvändning, dataåtkomstprinciper och åtkomstkontroll av data för marknadsföringsåtgärder.
+Adobe Experience Platform Data Governance är en serie strategier och tekniker som används för att hantera kunddata och säkerställa efterlevnad av regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en nyckelroll på olika nivåer inom Experience Platform, bland annat för katalogisering, datalinje, märkning av dataanvändning, dataåtkomstregler och åtkomstkontroll av data för marknadsföringsåtgärder.
 
 **Nya funktioner**
 
->[!NOTE] Vissa av följande nya funktioner är för närvarande betaversioner och är inte tillgängliga för alla användare. Betafunktionerna kan komma att ändras.
+>[!NOTE]
+>
+>Vissa av följande nya funktioner är för närvarande betaversioner och är inte tillgängliga för alla användare. Betafunktionerna kan komma att ändras.
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Automatiserad tillämpning av dataanvändningsprinciper för kunddataplattformen i realtid | Dataanvändningsprinciper används nu i arbetsflödet för att aktivera data till mål. Datastyrning bäddas också in och tillämpas när du gör ändringar som påverkar befintliga aktiveringar (t.ex. ändringar i datauppsättningsrubriker, sammanfogningsprinciper, segmentdefinitioner). |
+| Automatiserad tillämpning av dataanvändningsprinciper för kunddata i realtid Platform | Dataanvändningsprinciper används nu i arbetsflödet för att aktivera data till mål. Datastyrning bäddas också in och tillämpas när du gör ändringar som påverkar befintliga aktiveringar (t.ex. ändringar i datauppsättningsrubriker, sammanfogningsprinciper, segmentdefinitioner). |
 | Datalinje för verkställighet | När en dataanvändningsprincip överträds i CDP i realtid visar gränssnittet ett meddelande som innehåller information om datalänkning som hjälper användaren att förstå varför policyer överträds och vad de kan göra för att åtgärda överträdelsen. |
 
 
@@ -47,41 +52,41 @@ Mer information om datastyrning finns i översikten över [datastyrning](../../d
 
 ## Dataintag {#ingestion}
 
-Adobe Experience Platform har en omfattande uppsättning funktioner för att importera alla typer av data och latens. Adobe Experience Platform Data Ingtake erbjuder flera alternativ för inmatning av data, bland annat API:er för batch, API:er för direktuppspelning, inbyggda Adobe-anslutningar, dataintegreringspartners eller användargränssnittet för Adobe Experience Platform.
+Adobe Experience Platform har en mängd funktioner för att importera alla typer av data och fördröjningar. Adobe Experience Platform Data Ingtake erbjuder flera alternativ för datainhämtning, inklusive Batch-API:er, direktuppspelnings-API:er, inbyggda Adobe-anslutningar, dataintegrationspartners eller användargränssnittet i Adobe Experience Platform.
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 |------- | -----------|
-| Partiellt batchintag | Partiell batchförbrukning är möjligheten att importera data som innehåller fel, upp till en viss tröskel. Med den här funktionen kan användarna importera alla korrekta data till Adobe Experience Platform samtidigt som alla felaktiga data grupperas separat. Information läggs till i misslyckade batchar för att förklara varför de inte klarade valideringen. Mer information om partiell batchförbrukning finns i dokumentationen för [partiell batchförbrukning](../../ingestion/batch-ingestion/partial.md). |
+| Partiellt batchintag | Partiell batchförbrukning är möjligheten att importera data som innehåller fel, upp till en viss tröskel. Med den här funktionen kan användare importera alla korrekta data till Adobe Experience Platform samtidigt som alla felaktiga data grupperas separat. Information läggs till i misslyckade batchar för att förklara varför de inte klarade valideringen. Mer information om partiell batchförbrukning finns i dokumentationen för [partiell batchförbrukning](../../ingestion/batch-ingestion/partial.md). |
 
 **Kända fel**
 
 * Ingen
 
-Mer information om hur du hämtar data till Platform finns i dokumentationen [för](../../ingestion/home.md)datainmatning.
+Läs mer om hur du importerar data till Platform i dokumentationen för [datainmatning](../../ingestion/home.md).
 
 
 ## Mål {#destinations}
 
-I [Adobes kunddataplattform](../../rtcdp/overview.md)i realtid är destinationer färdigbyggda integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
+I [Adobe Real-time Customer Data Platform](../../rtcdp/overview.md)är destinationer färdiga integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
 
 **Nya destinationer**
 
-Det finns nya destinationer där du kan aktivera Adobe Experience Platform-data. Mer information finns nedan:
+Det finns nya destinationer där du kan aktivera data från Adobe Experience Platform. Mer information finns nedan:
 
-| Mål | Beskrivning |
+| Destination | Beskrivning |
 |--- | ---|
 | Lagringsmål i molnet | Adobe CDP kan nu i realtid leverera era segment som datafiler till Amazon S3- eller SFTP-molnlagringsplatser. Detta gör att du kan skicka målgrupper och deras profilattribut till dina interna system via CSV eller tabbavgränsade filer. |
 | Annonsmål | Googles målkort är nu uppdelat i tre målkort för de tre olika Google-plattformarna som för närvarande stöds i Adobe Real-time CDP: Google Ads, Google Ad Manager, Google Display och Video 360. |
 
 Mer information finns på [destinationsöversikten](../../rtcdp/destinations/destinations-overview.md)
 
-## Identitetstjänst {#identity}
+## Identity Service {#identity}
 
 För att kunna leverera relevanta digitala upplevelser måste ni ha en fullständig förståelse för era kunder. Detta blir svårare när era kunddata fragmenteras över olika system, vilket gör att varje enskild kund ser ut att ha flera&quot;identiteter&quot;.
 
-Adobe Experience Platform Identity Service hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
+Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att överbrygga identiteter mellan olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 
 **Nya funktioner**
 
@@ -95,17 +100,17 @@ Adobe Experience Platform Identity Service hjälper er att få en bättre bild a
 
 Mer information om identitetstjänsten finns i Översikt över [identitetstjänsten](../../identity-service/home.md).
 
-## Källor {#sources}
+## Sources {#sources}
 
-Adobe Experience Platform kan importera data från externa källor samtidigt som ni kan strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
-Experience Platform har ett RESTful API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Inaktuella signaler för Adobe Audience Manager-koppling | Signalnivådata från Audience Manager kommer inte längre att skickas. Observera att segmentmedlemskap för Traits and Segments fortfarande inkluderas. Till följd av den här ändringen kommer inkommande datauppsättningar inte längre att genereras. |
+| Undertryckta signaler för koppling till Adobe Audience Manager | Signalnivådata från Audience Manager kommer inte längre att skickas. Observera att segmentmedlemskap för Traits and Segments fortfarande inkluderas. Till följd av den här ändringen kommer inkommande datauppsättningar inte längre att genereras. |
 | Ändrade namn på datauppsättningar | Datauppsättningar som genereras av Audience Manager-kopplingen har uppdaterade namn och beskrivningar. |
 | Aktivera profilväxling i Audience Manger | Profilväxling kan aktiveras eller inaktiveras för att befordra datauppsättningen till kundprofilen i realtid. Växla aktiveras som standard. |
 | Användargränssnittsstöd för molnlagringssystem | Ny källanslutning för Azure Data Lake Storage Gen2 i gränssnittet. |
