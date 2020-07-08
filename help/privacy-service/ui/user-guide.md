@@ -1,10 +1,10 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Användarhandbok för Integritetstjänst
+title: Användarhandbok för Privacy Service
 topic: UI guide
 translation-type: tm+mt
-source-git-commit: 9fc95dd9194dca0fada603643c3de949764b2f17
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1088'
 ht-degree: 0%
@@ -12,19 +12,19 @@ ht-degree: 0%
 ---
 
 
-# Användarhandbok för Integritetstjänst
+# Användarhandbok för Privacy Service
 
-Det här dokumentet innehåller steg för hur du skapar och hanterar sekretessförfrågningar med hjälp av användargränssnittet för sekretesstjänsten.
+Det här dokumentet innehåller steg för att skapa och hantera sekretessförfrågningar med Privacy Servicens användargränssnitt.
 
-## Bläddra i kontrollpanelen för sekretesstjänsten
+## Bläddra i Privacy Servicens kontrollpanel
 
-Kontrollpanelen för användargränssnittet för sekretesstjänsten innehåller två widgetar som gör att du kan visa statusen för dina sekretessjobb: **Statusrapport** och **jobbförfrågningar**. Kontrollpanelen visar även den aktuella valda regeln för de visade jobben.
+Kontrollpanelen för användargränssnittet för Privacy Service innehåller två widgetar som gör att du kan visa statusen för dina sekretessjobb: **Statusrapport** och **jobbförfrågningar**. Kontrollpanelen visar även den aktuella valda regeln för de visade jobben.
 
 ![Kontrollpanel för användargränssnitt](../images/user-guide/dashboard.png)
 
 ### Regeltyp
 
-Integritetstjänsten stöder jobbförfrågningar för tre regeltyper:
+Privacy Servicen stöder jobbförfrågningar för tre regeltyper:
 
 * Europeiska unionens allmänna dataskyddsförordning (GDPR)
 * The California Consumer Privacy Act (CCPA)
@@ -54,13 +54,17 @@ Om du vill visa mer information om en viss datapunkt klickar du på datapunkten 
 
 ![Använt filter från widget](../images/user-guide/apply-filter.png)
 
->[!NOTE] När ett filter har tillämpats på widgeten Jobbförfrågningar kan du ta bort filtret genom att klicka på **X** i filterpillet. Jobbförfrågningar återgår sedan till standardspårningslistan.
+>[!NOTE]
+>
+>När ett filter har tillämpats på widgeten Jobbförfrågningar kan du ta bort filtret genom att klicka på **X** i filterpillet. Jobbförfrågningar återgår sedan till standardspårningslistan.
 
 ### Jobbförfrågningar
 
 Widgeten Jobbförfrågningar visar alla tillgängliga jobbförfrågningar i din organisation, inklusive information som typ av förfrågan, aktuell status, förfallodatum och e-postadress till begärande.
 
->[!NOTE] Data för tidigare skapade jobb är bara tillgängliga i 30 dagar efter slutförandedatumet.
+>[!NOTE]
+>
+>Data för tidigare skapade jobb är bara tillgängliga i 30 dagar efter slutförandedatumet.
 
 Du kan filtrera listan genom att skriva nyckelord i sökfältet under rubriken Jobbförfrågningar. Listan filtreras automatiskt medan du skriver och visar begäranden som innehåller värden som matchar söktermerna. Du kan också använda listrutan **Begärd vid** för att välja ett tidsintervall för de listade jobben.
 
@@ -78,9 +82,11 @@ Om du vill hämta alla jobbdata som en CSV-fil klickar du på **Exportera till C
 
 ## Skapa en ny begäran om sekretessjobb
 
->[!NOTE] För att kunna skapa en begäran om ett sekretessjobb måste du ange identitetsinformation för de specifika kunder vars data ska nås eller tas bort. Granska dokumentet om [identitetsdata för att se om det finns några sekretessförfrågningar](../identity-data.md) innan du fortsätter med det här avsnittet.
+>[!NOTE]
+>
+>För att kunna skapa en begäran om ett sekretessjobb måste du ange identitetsinformation för de specifika kunder vars data ska nås eller tas bort. Granska dokumentet om [identitetsdata för att se om det finns några sekretessförfrågningar](../identity-data.md) innan du fortsätter med det här avsnittet.
 
-Sekretessgränssnittet i tjänsten tillhandahåller två metoder för att skapa nya jobbförfrågningar:
+Privacy Servicens användargränssnitt innehåller två metoder för att skapa nya jobbbegäranden:
 
 * [Använda Request Builder](#request-builder)
 * [Överföra en JSON-fil](#json)
@@ -103,7 +109,7 @@ Välj **jobbtyp** för begäran (&quot;Ta bort&quot; eller&quot;Åtkomst&quot;) 
 
 <img src="../images/user-guide/type-and-products.png" width="500" /><br/>
 
-Under *Namespace-typ* väljer du lämplig namnområdestyp för de kund-ID:n som skickas till Privacy Service.
+Under *Namespace-typ* väljer du lämplig namnområdestyp för de kund-ID som skickas till Privacy Servicen.
 
 <img src="../images/user-guide/namespace-type.png" width="500" /><br/>
 
@@ -145,6 +151,6 @@ När du är klar klickar du på **Skapa**. Dialogrutan försvinner och det nya j
 
 ### Nästa steg
 
-Genom att läsa det här dokumentet har du lärt dig hur du använder användargränssnittet för sekretesstjänsten för att skapa ett sekretessjobb, visa information om ett jobb och övervaka dess bearbetningsstatus, och ladda ned resultaten när det är klart.
+Genom att läsa det här dokumentet har du lärt dig hur du använder användargränssnittet för Privacy Service för att skapa ett sekretessjobb, visa information om ett jobb och övervaka dess bearbetningsstatus, och ladda ned resultaten när det är klart.
 
-Anvisningar om hur du utför dessa åtgärder programmatiskt med hjälp av sekretesstjänstens API finns i [utvecklarhandboken](../api/getting-started.md).
+Anvisningar om hur du utför dessa åtgärder programmatiskt med Privacy Services-API:t finns i [utvecklarhandboken](../api/getting-started.md).
