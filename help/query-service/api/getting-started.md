@@ -4,22 +4,25 @@ solution: Experience Platform
 title: Handbok för frågetjänstutvecklare
 topic: query templates
 translation-type: tm+mt
-source-git-commit: 91104399e50bce03fed7c9196e6e83fc48a54d1c
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '391'
+ht-degree: 0%
 
 ---
 
 
 # Handbok för frågetjänstutvecklare
 
-Den här utvecklarhandboken innehåller steg för att utföra olika åtgärder i API:t för Adobe Experience Platform Query Service.
+Den här utvecklarhandboken innehåller steg för att utföra olika åtgärder i Adobe Experience Platform Query Service API.
 
 ## Komma igång
 
-Den här guiden kräver en fungerande förståelse av de olika Adobe Experience Platform-tjänsterna som används av Query Service.
+Den här guiden kräver en fungerande förståelse av de olika Adobe Experience Platform-tjänster som används med Query Service.
 
 - [Frågetjänst](../home.md): Ger möjlighet att fråga datauppsättningar och hämta de resulterande frågorna som nya datauppsättningar i Experience Platform.
-- [Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
-- [Sandlådor](../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+- [Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
+- [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna använda frågetjänsten med API:t.
 
@@ -29,7 +32,7 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna anropa Experience Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för plattformen enligt nedan:
+För att kunna ringa anrop till API:er för Experience Platform måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla Platform API-anrop, vilket visas nedan:
 
 - Behörighet: `Bearer {ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
@@ -39,7 +42,9 @@ Alla resurser i Experience Platform är isolerade till specifika virtuella sandl
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] Mer information om hur du arbetar med sandlådor i Experience Platform finns i översiktsdokumentationen för [sandlådor](../../sandboxes/home.md).
+>[!NOTE]
+>
+>Mer information om hur du arbetar med sandlådor i Experience Platform finns i översiktsdokumentationen för [sandlådor](../../sandboxes/home.md).
 
 ## Exempel på API-anrop
 
