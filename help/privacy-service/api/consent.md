@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Godkännande
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: a3178ab54a7ab5eacd6c5f605b8bd894779f9e85
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '226'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Godkännande
 
-Vissa bestämmelser kräver uttryckligt samtycke från kunden innan deras personuppgifter kan samlas in. Med slutpunkten i API:t för integritetstjänsten kan du bearbeta förfrågningar om kundsamtycke och integrera dem i ditt sekretessarbetsflöde. `/consent`
+Vissa bestämmelser kräver uttryckligt samtycke från kunden innan deras personuppgifter kan samlas in. Med slutpunkten i Privacy Services-API:t kan du bearbeta förfrågningar om kundsamtycke och integrera dem i ditt sekretessarbetsflöde. `/consent`
 
 Innan du använder den här guiden bör du läsa avsnittet [Komma igång](./getting-started.md) för information om de autentiseringshuvuden som visas i exemplet på API-anrop nedan.
 
@@ -63,11 +63,13 @@ curl -X POST \
 | --- | --- |
 | `optOutOfSale` | Om värdet är true innebär det att de användare som anges under `entities` vill avanmäla sig från försäljning eller delning av sina personuppgifter. |
 | `entities` | En array med objekt som anger vilka användare som medgivandebegäran gäller för. Varje objekt innehåller en `namespace` och en array med `values` som matchar enskilda användare med det namnutrymmet. |
-| `nameSpace` | Varje objekt i `entities` arrayen måste innehålla ett av de [standardnamnutrymmen](./appendix.md#standard-namespaces) för identiteter som stöds av sekretesstjänstens API. |
+| `nameSpace` | Varje objekt i `entities` arrayen måste innehålla ett av de [standardnamnutrymmen](./appendix.md#standard-namespaces) för identitet som känns igen av Privacy Services-API:t. |
 | `values` | En array med värden för varje användare, som motsvarar den angivna `nameSpace`. |
 
->[!NOTE] Mer information om hur du avgör vilka värden för kundidentitet som ska skickas till Integritetstjänst finns i guiden om [att tillhandahålla identitetsdata](../identity-data.md).
+>[!NOTE]
+>
+>Mer information om hur du avgör vilka värden för kundidentitet som ska skickas till Privacy Servicen finns i guiden om [att tillhandahålla identitetsdata](../identity-data.md).
 
 **Svar**
 
-Ett godkänt svar returnerar HTTP-status 202 (Accepterad) utan nyttolast, vilket anger att begäran accepterades av sekretesstjänsten och håller på att behandlas.
+Ett lyckat svar returnerar HTTP-status 202 (Accepterad) utan nyttolast, vilket anger att begäran accepterades av Privacy Servicen och håller på att bearbetas.
