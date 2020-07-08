@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Söka efter en resurs
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 71c73a3899ccdd1c024a811b36c411915a3b14be
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '176'
+ht-degree: 1%
 
 ---
 
@@ -47,7 +50,9 @@ Begäranden om resurssökning måste `version` inkluderas i huvudet Godkänn. F�
 | `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` och `allOf` löste sig - inga titlar eller beskrivningar. |
 | `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` och `allOf` åtgärdade, beskrivningar inkluderades. |
 
->[!NOTE] Om du bara anger `major` version (1, 2, 3 osv.) returnerar registret automatiskt den senaste `minor` versionen (.1, .2, .3 osv.).
+>[!NOTE]
+>
+>Om du bara anger `major` version (1, 2, 3 osv.) returnerar registret automatiskt den senaste `minor` versionen (.1, .2, .3 osv.).
 
 **Svar**
 
