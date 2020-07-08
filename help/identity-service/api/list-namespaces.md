@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Visa tillgängliga namnutrymmen
 topic: API guide
 translation-type: tm+mt
-source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '64'
 ht-degree: 3%
@@ -35,7 +35,9 @@ curl -X GET \
 
 Svaret innehåller en array med objekt, där varje objekt representerar ett tillgängligt namnutrymme. Namnutrymmen med värdet &quot;[!UICONTROL custom]&quot; för &quot;[!UICONTROL false]&quot; är standardnamnutrymmen, medan de med värdet &quot;[!UICONTROL custom]&quot; för &quot;[!UICONTROL true]&quot; är namnutrymmen som din organisation har skapat.
 
->[!NOTE] Svaret har trunkerats för utrymme.
+>[!NOTE]
+>
+>Svaret har trunkerats för utrymme.
 
 ```json
 [
