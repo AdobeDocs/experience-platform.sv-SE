@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Handbok för frågetjänstutvecklare
 topic: query templates
 translation-type: tm+mt
-source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '643'
+ht-degree: 1%
 
 ---
 
@@ -102,7 +105,9 @@ Ett godkänt svar returnerar HTTP-status 200 med en lista över frågemallar fö
 }
 ```
 
->[!NOTE] Du kan använda värdet för `_links.delete` att [ta bort frågemallen](#delete-a-specified-query-template).
+>[!NOTE]
+>
+>Du kan använda värdet för `_links.delete` att [ta bort frågemallen](#delete-a-specified-query-template).
 
 ### Skapa en frågemall
 
@@ -163,7 +168,9 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om den n
 }
 ```
 
->[!NOTE] Du kan använda värdet för `_links.delete` att [ta bort frågemallen](#delete-a-specified-query-template).
+>[!NOTE]
+>
+>Du kan använda värdet för `_links.delete` att [ta bort frågemallen](#delete-a-specified-query-template).
 
 ### Hämta en angiven frågemall
 
@@ -219,7 +226,9 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den angivna fråge
 }
 ```
 
->[!NOTE] Du kan använda värdet för `_links.delete` att [ta bort frågemallen](#delete-a-specified-query-template).
+>[!NOTE]
+>
+>Du kan använda värdet för `_links.delete` att [ta bort frågemallen](#delete-a-specified-query-template).
 
 ### Uppdatera en angiven frågemall
 
@@ -237,7 +246,9 @@ PUT /query-templates/{TEMPLATE_ID}
 
 **Begäran**
 
->[!NOTE] PUT-begäran kräver att både sql- och namnfältet fylls i, och kommer att **skriva över** det aktuella innehållet i frågemallen.
+>[!NOTE]
+>
+>PUT-begäran kräver att både sql- och namnfältet fylls i, och kommer att **skriva över** det aktuella innehållet i frågemallen.
 
 ```shell
 curl -X PUT https://platform.adobe.io/data/foundation/query/query-templates/0094d000-9062-4e6a-8fdb-05606805f08f
@@ -287,7 +298,9 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med den uppdaterade info
 }
 ```
 
->[!NOTE] Du kan använda värdet för `_links.delete` att [ta bort frågemallen](#delete-a-specified-query-template).
+>[!NOTE]
+>
+>Du kan använda värdet för `_links.delete` att [ta bort frågemallen](#delete-a-specified-query-template).
 
 ### Ta bort en angiven frågemall
 
