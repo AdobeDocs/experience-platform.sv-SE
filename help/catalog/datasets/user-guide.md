@@ -4,29 +4,32 @@ solution: Experience Platform
 title: Användarhandbok för datauppsättningar
 topic: datasets
 translation-type: tm+mt
-source-git-commit: 7d3f64db787aebe46179c0e08ad01878b0ad2877
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '1181'
+ht-degree: 0%
 
 ---
 
 
 # Användarhandbok för datauppsättningar
 
-Den här användarhandboken innehåller anvisningar om hur du utför vanliga åtgärder när du arbetar med datauppsättningar i användargränssnittet för Adobe Experience Platform.
+Den här användarhandboken innehåller anvisningar om hur du utför vanliga åtgärder när du arbetar med datauppsättningar i användargränssnittet i Adobe Experience Platform.
 
 ## Komma igång
 
 Den här användarhandboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 * [Datauppsättningar](overview.md): Konstruktionen för lagring och hantering av databeständighet i Experience Platform.
-* [Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
+* [Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schemaredigerare](../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar egna anpassade XDM-scheman med Schemaredigeraren i användargränssnittet för plattformen.
+   * [Schemaredigerare](../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar egna anpassade XDM-scheman med Schemaredigeraren i Platform användargränssnitt.
 * [Kundprofil](../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [Datastyrning](../../data-governance/home.md): Se till att era kunddata är kompatibla med regler, begränsningar och policyer.
 
 ## Visa datauppsättningar
 
-I Experience Platform-gränssnittet klickar du på **Datauppsättningar** i den vänstra navigeringen för att öppna kontrollpanelen för *datauppsättningar* . Kontrollpanelen visar alla tillgängliga datauppsättningar för din organisation. Information visas för varje datamängd som anges, inklusive namn, schema som datauppsättningen följer och status för den senaste importen.
+I användargränssnittet för Experience Platform klickar du på **Datauppsättningar** i den vänstra navigeringen för att öppna kontrollpanelen för *datauppsättningar* . Kontrollpanelen visar alla tillgängliga datauppsättningar för din organisation. Information visas för varje datamängd som anges, inklusive namn, schema som datauppsättningen följer och status för den senaste importen.
 
 ![](../images/datasets/user-guide/browse_datasets.png)
 
@@ -45,7 +48,7 @@ I förhandsgranskningsfönstret visas den hierarkiska vyn av datasetens schema t
 
 ![](../images/datasets/user-guide/preview_dataset.png)
 
-Experience Platform erbjuder mer robusta metoder för att få tillgång till era data och tillhandahåller tjänster längre fram i kedjan, som Query Service och JupyterLab, för att utforska och analysera data. Mer information finns i följande dokument:
+För mer robusta metoder att komma åt data erbjuder Experience Platform tjänster längre fram i kedjan, som Query Service och JupyterLab, för att utforska och analysera data. Mer information finns i följande dokument:
 
 * [Översikt över frågetjänsten](../../query-service/home.md)
 * [Användarhandbok för JupyterLab](../../data-science-workspace/jupyterlab/overview.md)
@@ -87,7 +90,9 @@ Steget *Konfigurera* visas. Ange ett namn och en valfri beskrivning för dataupp
 
 Steget *Lägg till data* visas. Överför CSV-filen genom att antingen dra och släppa den mitt på skärmen eller klicka på **Bläddra** för att utforska din filkatalog. Filen kan vara upp till tio gigabyte stor. När CSV-filen har överförts klickar du på **Spara** för att skapa datauppsättningen.
 
->[!NOTE] CSV-kolumnnamn måste börja med alfanumeriska tecken och får bara innehålla bokstäver, siffror och understreck.
+>[!NOTE]
+>
+>CSV-kolumnnamn måste börja med alfanumeriska tecken och får bara innehålla bokstäver, siffror och understreck.
 
 ![](../images/datasets/user-guide/add_csv_data.png)
 
@@ -108,13 +113,15 @@ Om en datauppsättning redan innehåller data och sedan aktiveras för profilen,
 
 ## Hantera och tillämpa datastyrning på en datauppsättning
 
-DULE (Data Usage Labeling and Enforcement) är den centrala mekanismen för datastyrning för Experience Platform. DULE-etiketter gör att du kan kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Mer information om etiketter finns i översikten [över](../../data-governance/home.md) datastyrning, eller i användarhandboken [för](../../data-governance/labels/overview.md) dataanvändningsetiketter finns instruktioner om hur du använder etiketter på datauppsättningar.
+Varumärkning och verkställighet av dataanvändning (DULE) är huvudmekanismen för datastyrning för Experience Platform. DULE-etiketter gör att du kan kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Mer information om etiketter finns i översikten [över](../../data-governance/home.md) datastyrning, eller i användarhandboken [för](../../data-governance/labels/overview.md) dataanvändningsetiketter finns instruktioner om hur du använder etiketter på datauppsättningar.
 
 ## Ta bort en datauppsättning
 
 Du kan ta bort en datauppsättning genom att först gå till aktivitetsskärmen för *datauppsättningen* . Klicka sedan på **Ta bort datauppsättning** för att ta bort den.
 
->[!NOTE] Det går inte att ta bort datauppsättningar som har skapats och använts av Adobe-program och -tjänster (som Adobe Analytics, Adobe Audience Manager eller Decisioning Service).
+>[!NOTE]
+>
+>Det går inte att ta bort datauppsättningar som har skapats och använts av Adobe-program och -tjänster (som Adobe Analytics, Adobe Audience Manager eller beslutstjänsten).
 
 ![](../images/datasets/user-guide/delete_dataset.png)
 
@@ -128,7 +135,7 @@ Om en datauppsättning är aktiverad för profil inaktiveras datauppsättningen 
 
 ## Övervaka datainmatning
 
-Klicka på **Övervakning** i det vänstra navigeringsfältet i Experience Platform-gränssnittet. På kontrollpanelen *Övervakning* kan du visa status för inkommande data från antingen batch- eller direktuppspelningsinmatning. Om du vill visa status för enskilda batchar klickar du antingen på *Gruppera från början till slut* eller på *Direktuppspelning från början till slut*. På kontrollpanelerna visas alla grupper- eller direktuppspelningskörningar, inklusive de som har slutförts, misslyckats eller pågår. Varje lista innehåller information om batchen, inklusive batch-ID:t, namnet på måldatauppsättningen och antalet poster som har importerats. Om måldatauppsättningen är aktiverad för Profil visas även antalet inkapslade identitets- och profilposter.
+Klicka på **Övervakning** till vänster i användargränssnittet i Experience Platform. På kontrollpanelen *Övervakning* kan du visa status för inkommande data från antingen batch- eller direktuppspelningsinmatning. Om du vill visa status för enskilda batchar klickar du antingen på *Gruppera från början till slut* eller på *Direktuppspelning från början till slut*. På kontrollpanelerna visas alla grupper- eller direktuppspelningskörningar, inklusive de som har slutförts, misslyckats eller pågår. Varje lista innehåller information om batchen, inklusive batch-ID:t, namnet på måldatauppsättningen och antalet poster som har importerats. Om måldatauppsättningen är aktiverad för Profil visas även antalet inkapslade identitets- och profilposter.
 
 ![](../images/datasets/user-guide/batch_listing.png)
 
@@ -142,7 +149,7 @@ Om du vill ta bort gruppen kan du göra det genom att klicka på **Ta bort grupp
 
 ## Nästa steg
 
-Den här användarhandboken innehåller anvisningar för hur du utför vanliga åtgärder när du arbetar med datauppsättningar i användargränssnittet för Experience Platform. Anvisningar om hur du utför vanliga plattformsarbetsflöden med datauppsättningar finns i följande självstudiekurser:
+I den här användarhandboken finns anvisningar om hur du utför vanliga åtgärder när du arbetar med datauppsättningar i användargränssnittet i Experience Platform. Anvisningar om hur du utför vanliga Platform-arbetsflöden med datauppsättningar finns i följande självstudiekurser:
 
 * [Skapa en datauppsättning med API:er](create.md)
 * [Fråga datauppsättningsdata med API:t för dataåtkomst](../../data-access/home.md)
