@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Uppdatera en resurs
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 0d3bee939226d9ef4ac1672b71e0d240f32c5dcf
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '379'
+ht-degree: 0%
 
 ---
 
@@ -15,7 +18,9 @@ Du kan ändra eller uppdatera resurser i innehavarbehållaren med en PATCH-begä
 
 Mer information om JSON Patch, inklusive tillgängliga åtgärder, finns i den officiella [JSON Patch-dokumentationen](http://jsonpatch.com/).
 
->[!NOTE] Om du vill ersätta en hel resurs med nya värden i stället för att uppdatera enskilda fält läser du dokumentet om hur du [ersätter en resurs med en PUT-åtgärd](replace-resource.md).
+>[!NOTE]
+>
+>Om du vill ersätta en hel resurs med nya värden i stället för att uppdatera enskilda fält läser du dokumentet om hur du [ersätter en resurs med en PUT-åtgärd](replace-resource.md).
 
 ## Lägga till blandningar i ett schema
 
