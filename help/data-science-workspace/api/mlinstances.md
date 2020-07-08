@@ -4,7 +4,7 @@ solution: Experience Platform
 title: MLInstances
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 0197c2f5e304f2fc194289b064cc37c91bb658c8
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '575'
 ht-degree: 1%
@@ -273,7 +273,9 @@ Ett lyckat svar returnerar information om MLInstance.
 
 Du kan uppdatera en befintlig MLInstance genom att skriva över dess egenskaper via en PUT-begäran som inkluderar mål-MLInstance-ID:t i sökvägen för begäran och som tillhandahåller en JSON-nyttolast som innehåller uppdaterade egenskaper.
 
->[!TIP] För att denna PUT-begäran ska lyckas föreslår vi att du först utför en GET-begäran för att [hämta MLInstance via ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
+>[!TIP]
+>
+>För att denna PUT-begäran ska lyckas föreslår vi att du först utför en GET-begäran för att [hämta MLInstance via ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
 
 Följande exempel på API-anrop uppdaterar en MLInstance-instans utbildnings- och poängparametrar samtidigt som dessa egenskaper initialt finns:
 
