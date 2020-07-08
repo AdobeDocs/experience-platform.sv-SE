@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Översikt över kundprofiler i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: 4d853dfee931789ca1badd410ce0b4b73c8c2803
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '1795'
 ht-degree: 0%
 
 ---
@@ -129,6 +129,8 @@ Experience Platform har ett antal riktlinjer att följa för att effektivt anvä
 --->
 
 >[!NOTE]
+>
+>
 >En icke-personenhet refererar till en XDM-klass som **inte** ingår i profilen.
 
 ## Nästa steg och ytterligare resurser
