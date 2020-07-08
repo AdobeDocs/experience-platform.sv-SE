@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Schema Registry developer appendix
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: f7c87cc86bfc5017ec5c712d05e39be5c14a7147
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '1296'
+ht-degree: 2%
 
 ---
 
@@ -17,7 +20,7 @@ Det här dokumentet innehåller ytterligare information om hur du arbetar med AP
 
 Experience Data Model (XDM) är en öppet dokumenterad specifikation som drivs av Adobe för att förbättra interoperabiliteten, uttrycksfullheten och kraften i digitala upplevelser. Adobe underhåller källkoden och de formella XDM-definitionerna i ett [öppen källkodsprojekt på GitHub](https://github.com/adobe/xdm/). Dessa definitioner är skrivna i XDM Standard Notation, med JSON-LD (JavaScript Object Notation for Linked Data) och JSON Schema som grammatik för att definiera XDM-scheman.
 
-När du tittar på formella XDM-definitioner i den offentliga databasen ser du att standard-XDM skiljer sig från vad du ser i Adobe Experience Platform. Det du ser i Experience Platform kallas Kompatibilitetsläge och ger en enkel mappning mellan standard-XDM och det sätt som det används inom plattformen.
+När du tittar på formella XDM-definitioner i den offentliga databasen ser du att standard-XDM skiljer sig från det du ser i Adobe Experience Platform. Det du ser i Experience Platform kallas Kompatibilitetsläge och det ger en enkel mappning mellan standard-XDM och det sätt som det används i Platform.
 
 ### Så här fungerar kompatibilitetsläget
 
@@ -46,19 +49,21 @@ Följande är en jämförelse sida vid sida som visar födelsedagsrelaterade fä
 
 ### Varför krävs kompatibilitetsläge?
 
-Adobe Experience Platform är utformat för att fungera med flera lösningar och tjänster, där var och en har sina egna tekniska utmaningar och begränsningar (till exempel hur vissa tekniker hanterar specialtecken). Kompatibilitetsläge har utvecklats för att övervinna dessa begränsningar.
+Adobe Experience Platform är utformat för att fungera med flera lösningar och tjänster, var och en med sina egna tekniska utmaningar och begränsningar (t.ex. hur vissa tekniker hanterar specialtecken). Kompatibilitetsläge har utvecklats för att övervinna dessa begränsningar.
 
 De flesta Experience Platform-tjänster, inklusive Catalog, Data Lake och kundprofil i realtid, använder kompatibilitetsläget i stället för standard-XDM. API:t för schemaregister använder också kompatibilitetsläge, och exemplen i det här dokumentet visas alla i kompatibilitetsläget.
 
-Det är värt att veta att en mappning görs mellan standard-XDM och hur den används i Experience Platform, men detta bör inte påverka er användning av plattformstjänster.
+Det är värt att veta att det sker en mappning mellan standard-XDM och hur det fungerar i Experience Platform, men detta bör inte påverka din användning av Platform tjänster.
 
 Du har tillgång till projektet med öppen källkod, men när det gäller att interagera med resurser via schemaregistret innehåller API-exemplen i det här dokumentet de bästa metoder du bör känna till och följa.
 
 ## Definiera XDM-fälttyper i API {#field-types}
 
-XDM-scheman definieras med JSON-schemastandarder och grundläggande fälttyper, med ytterligare begränsningar för fältnamn som upprätthålls av Experience Platform. Med XDM kan du definiera ytterligare fälttyper genom att använda format och valfria begränsningar. XDM-fälttyperna visas med fältnivåattributet `meta:xdmType`.
+XDM-scheman definieras med JSON-schemastandarder och grundläggande fälttyper, med ytterligare begränsningar för fältnamn som används av Experience Platform. Med XDM kan du definiera ytterligare fälttyper genom att använda format och valfria begränsningar. XDM-fälttyperna visas med fältnivåattributet `meta:xdmType`.
 
->[!NOTE] `meta:xdmType` är ett systemgenererat värde och du behöver därför inte lägga till den här egenskapen i JSON-filen för fältet. Bästa sättet är att använda JSON-schematyper (till exempel sträng och heltal) med rätt min/max-begränsningar enligt tabellen nedan.
+>[!NOTE]
+>
+>`meta:xdmType` är ett systemgenererat värde och du behöver därför inte lägga till den här egenskapen i JSON-filen för fältet. Bästa sättet är att använda JSON-schematyper (till exempel sträng och heltal) med rätt min/max-begränsningar enligt tabellen nedan.
 
 Följande tabell visar lämplig formatering för att definiera skalära fälttyper och mer specifika fälttyper med hjälp av valfria egenskaper. Mer information om valfria egenskaper och typspecifika nyckelord finns i dokumentationen för [JSON-schemat](https://json-schema.org/understanding-json-schema/reference/type.html).
 
@@ -68,7 +73,7 @@ Börja med att hitta önskad fälttyp och använd exempelkoden som medföljer f�
   <tr>
     <th>Önskad typ<br/>(meta:xdmType)</th>
     <th>JSON<br/>(JSON-schema)</th>
-    <th>Kodexempel</th>
+    <th>Exempel på kod</th>
   </tr>
   <tr>
     <td>string</td>
@@ -249,4 +254,4 @@ Tabellen nedan beskriver mappningen mellan&quot;meta:xdmType&quot; och andra ser
 | boolesk | text:boolesk | BOOLEAN | BooleanType | java.lang.Boolean | Boolean | System.Boolean | Boolean | bool | Heltal | Heltal | bool |
 | datum | text:<br>stringformat:datum<br>(RFC 3339, avsnitt 5.6) | INT32/DATE | DateType | java.util.Date | java.util.Date | System.DateTime | Sträng | datum | Heltal<br>(unix millis) | int64<br>(unix millis) |
 | date-time | text:<br>stringformat:datum-tid<br>(RFC 3339, avsnitt 5.6) | INT64/TIMESTAMP_MILLIS | TimestampType | java.util.Date | java.util.Date | System.DateTime | Sträng | tidsstämpel | Heltal<br>(unix millis) | int64<br>(unix millis) |
-| map | object | MAP-kommenterad grupp<br><br>&lt;<span>key_type</span>> MÅSTE vara STRING<br><br>&lt;<span>value_type</span>> typ av mappningsvärden | MapType<br><br>&quot;keyType&quot; MÅSTE vara StringType<br><br>&quot;valueType&quot; är en typ av mappningsvärden. | java.util.Map | Karta | --- | object | object | map | map&lt;<span>key_type, value_type</span>> |
+| map | object | MAP-kommenterad grupp<br><br>&lt;<span>key_type</span>> MÅSTE vara STRING<br><br>&lt;<span>value_type</span>> typ av mappningsvärden | MapType<br><br>&quot;keyType&quot; MÅSTE vara StringType<br><br>&quot;valueType&quot; är en typ av mappningsvärden. | java.util.Map | Mappa | --- | object | object | map | map&lt;<span>key_type, value_type</span>> |
