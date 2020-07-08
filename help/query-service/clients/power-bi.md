@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Anslut till Power BI
 topic: connect
 translation-type: tm+mt
-source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '366'
+ht-degree: 0%
 
 ---
 
@@ -43,7 +46,9 @@ När du har utfört dessa förberedande steg kan du ansluta Power BI till fråge
 
 - *(Valfritt men rekommenderas när&quot;all&quot; deklareras för databasen)* Ange en SQL-sats.
 
->[!NOTE] Om ingen SQL-sats anges förhandsgranskar Power BI alla tabeller i databasen. För hierarkiska data bör en anpassad SQL-sats användas. Om tabellschemat är platt kommer det att fungera med eller utan en anpassad SQL-sats. Sammansatta typer stöds ännu inte av Power BI - för att hämta primitiva typer från sammansatta typer måste du skriva SQL-satser för att härleda dem.
+>[!NOTE]
+>
+>Om ingen SQL-sats anges förhandsgranskar Power BI alla tabeller i databasen. För hierarkiska data bör en anpassad SQL-sats användas. Om tabellschemat är platt kommer det att fungera med eller utan en anpassad SQL-sats. Sammansatta typer stöds ännu inte av Power BI - för att hämta primitiva typer från sammansatta typer måste du skriva SQL-satser för att härleda dem.
 
 ```sql
 SELECT web.webPageDetails.name AS Page_Name, 
