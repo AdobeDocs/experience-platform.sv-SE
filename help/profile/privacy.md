@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Behandling av sekretessförfrågningar i kundprofil i realtid
 topic: overview
 translation-type: tm+mt
-source-git-commit: cc296670db91640e75fd7a47b874a46eaf57ecde
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '660'
+ht-degree: 0%
 
 ---
 
 
 # Behandling av sekretessförfrågningar i kundprofil i realtid
 
-Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan från försäljning eller radering av personuppgifter enligt sekretessbestämmelser som Allmänna dataskyddsförordningen (GDPR) och California Consumer Privacy Act (CCPA).
+Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan från försäljning eller radering av personuppgifter enligt sekretessbestämmelser såsom Allmänna dataskyddsförordningen (GDPR) och California Consumer Privacy Act (CCPA).
 
 Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kundprofil i realtid.
 
@@ -19,23 +22,25 @@ Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretess
 
 Vi rekommenderar att du har en fungerande förståelse för följande Experience Platform-tjänster innan du läser den här handboken:
 
-* [Integritetstjänst](home.md): Hanterar kundförfrågningar om åtkomst, avanmälan från försäljning eller borttagning av personliga data mellan Adobe Experience Cloud-program.
+* [Privacy Service](home.md): Hanterar kundförfrågningar om åtkomst, avanmälan från försäljning eller borttagning av personliga data mellan Adobe Experience Cloud-program.
 * [Identitetstjänst](../identity-service/home.md): Lös den grundläggande utmaning som fragmenteringen av kundupplevelsedata innebär genom att överbrygga identiteter mellan olika enheter och system.
 * [Kundprofil](../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 ## Identitetsnamnutrymmen {#namespaces}
 
-Adobe Experience Platform Identity Service knyter samman kundidentitetsdata mellan system och enheter. Identitetstjänsten använder **ID-namnutrymmen** för att ge kontext till identitetsvärden genom att koppla dem till deras ursprungssystem. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;e-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-ID (&quot;AdCloud&quot;) eller ett Adobe Target-ID (&quot;TNTID&quot;).
+Adobe Experience Platform Identity Service knyter samman data om kundidentitet mellan system och enheter. Identitetstjänsten använder **ID-namnutrymmen** för att ge kontext till identitetsvärden genom att koppla dem till deras ursprungssystem. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;E-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-id (&quot;AdCloud&quot;) eller ett Adobe Target-ID (&quot;TNTID&quot;).
 
 Identitetstjänsten underhåller ett arkiv med globalt definierade (standard) och användardefinierade (anpassade) identitetsnamnutrymmen. Standardnamnutrymmen är tillgängliga för alla organisationer (till exempel&quot;E-post&quot; och&quot;ECID&quot;), medan din organisation också kan skapa anpassade namnutrymmen som passar organisationens behov.
 
-Mer information om identitetsnamnutrymmen i Experience Platform finns i [översikten över](../identity-service/namespaces.md)identitetsnamnrymden.
+Mer information om namnutrymmen för identiteter i Experience Platform finns i översikten över [namnutrymmet](../identity-service/namespaces.md).
 
 ## Skicka begäranden {#submit}
 
->[!NOTE] I det här avsnittet beskrivs hur du skapar sekretessförfrågningar för profildatalagret. Vi rekommenderar att du läser igenom [sekretesstjänstens API](../privacy-service/api/getting-started.md) eller [sekretesstjänstens](../privacy-service/ui/overview.md) användargränssnittsdokumentation för att få information om hur du skickar ett sekretessjobb, inklusive hur du formaterar inskickade användaridentitetsdata i begärande nyttolaster.
+>[!NOTE]
+>
+>I det här avsnittet beskrivs hur du skapar sekretessförfrågningar för profildatalagret. Vi rekommenderar att du läser [Privacy Service-API](../privacy-service/api/getting-started.md) eller [Privacy Service-gränssnittets](../privacy-service/ui/overview.md) dokumentation för att få information om hur du skickar ett sekretessjobb, inklusive hur inskickade användaridentitetsdata formateras korrekt i nyttolaster.
 
-I följande avsnitt beskrivs hur du gör sekretessförfrågningar för kundprofil i realtid och datasjön med hjälp av sekretesstjänstens API eller gränssnitt.
+I följande avsnitt beskrivs hur du gör sekretessförfrågningar för kundprofil i realtid och datasjön med hjälp av Privacy Service-API:t eller användargränssnittet.
 
 ### Använda API
 
@@ -94,12 +99,12 @@ När du skapar jobbförfrågningar i användargränssnittet måste du välja **A
 
 ## Ta bort bearbetning av begäran
 
-När Experience Platform tar emot en begäran om borttagning från Integritetstjänst skickar Platform en bekräftelse till Integritetstjänst om att begäran har tagits emot och att data som påverkas har markerats för borttagning. Posterna tas sedan bort från Data Lake eller Profile Store inom sju dagar. Under denna sjudagarsperiod tas data bort på skärmen och är därför inte tillgängliga för någon plattformstjänst.
+När Experience Platform tar emot en raderingsbegäran från Privacy Servicen, skickar Platform en bekräftelse till Privacy Servicen om att begäran har tagits emot och att data som påverkas har markerats för borttagning. Posterna tas sedan bort från Data Lake eller Profile Store inom sju dagar. Under denna sjudagarsperiod tas data bort på skärmen och är därför inte tillgängliga för någon Platform-tjänst.
 
-I framtida versioner kommer Platform att skicka en bekräftelse till sekretesstjänsten när data har tagits bort fysiskt.
+I framtida versioner skickar Platform en bekräftelse till Privacy Servicen när data har tagits bort fysiskt.
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du introducerats till de viktiga koncept som används för att behandla sekretessförfrågningar i Experience Platform. Vi rekommenderar att du fortsätter att läsa dokumentationen som finns i den här handboken för att få en djupare förståelse för hur du hanterar identitetsdata och skapar sekretessjobb.
+Genom att läsa det här dokumentet har du lagts till de viktiga koncept som används för att behandla sekretessförfrågningar i Experience Platform. Vi rekommenderar att du fortsätter att läsa dokumentationen som finns i den här handboken för att få en djupare förståelse för hur du hanterar identitetsdata och skapar sekretessjobb.
 
-Information om hur du hanterar sekretessbegäranden för plattformsresurser som inte används av profilen finns i dokumentet om behandling av [sekretessförfrågningar i Data Lake](../catalog/privacy.md).
+Information om hur du hanterar sekretessbegäranden för Platform-resurser som inte används av Profil finns i dokumentet om behandling av [sekretessförfrågningar i Data Lake](../catalog/privacy.md).
