@@ -4,7 +4,7 @@ seo-title: Stödprodukter med Adobe Experience Platform Web SDK
 description: Lär dig hur du lägger till data om du har produkter eller en kundvagn med Experience Platform Web SDK
 seo-description: Lär dig hur du lägger till data om du har produkter eller en kundvagn med Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 4bff4b20ccc1913151aa1783d5123ffbb141a7d0
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1314'
 ht-degree: 1%
@@ -19,13 +19,17 @@ Om du har produkter på din webbplats är det här en standarduppsättning med s
 Det här dokumentet använder [ExperienceEvent Commerce Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) -blandningen. Blandningen `commerce` delas upp i två delar: objektet `commerce` och `productListItems` arrayen. Med objektet kan du `commerce` ange vilka åtgärder som ska utföras på `productListItems` arrayen.
 
 >[!Tip]
->Om du känner till Adobe Analytics är The `commerce` mest närbesläktat med `events` variabeln. Den `productListItems` är mer närbesläktad med `products` variabeln.
+>
+>
+>Om du är bekant med Adobe Analytics är The `commerce` mest närbesläktad med `events` variabeln. Den `productListItems` är mer närbesläktad med `products` variabeln.
 
 ## Åtgärder för produkter
 
 Nedan visas en lista över `measures` tillgängliga i `commerce` objektet.
 
 >[!Tip]
+>
+>
 >Ett mått har två fält: `id` och `value`. För det mesta använder du bara `value` fältet (till exempel `'value':1`). I `id` fältet kan du ange en unik identifierare som du kan använda för att hålla reda på när åtgärden skickades. Se XDM-dokumentationen för [Mät](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/measure.schema.md).
 
 | **Mät** | **Rekommendation** | **Beskrivning** |
