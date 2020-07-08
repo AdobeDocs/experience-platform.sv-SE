@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Åtkomst till poäng i Attribution AI
 topic: Accessing scores
 translation-type: tm+mt
-source-git-commit: 01a500959802aa8c02bdaa8f024a9849ec23be51
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '981'
+ht-degree: 0%
 
 ---
 
@@ -220,7 +223,9 @@ Kopiera `href` värdet för alla filobjekt i `data` arrayen och fortsätt till n
 
 Om du vill hämta fildata gör du en GET-begäran till det `"href"` värde du kopierade i föregående steg när du [hämtade dina filer](#retrieving-your-files).
 
->[!NOTE] Om du gör den här begäran direkt i kommandoraden kanske du uppmanas att lägga till en utdatafil efter rubrikerna i din begäran. Följande exempel på begäran använder `--output {FILENAME.FILETYPE}`.
+>[!NOTE]
+>
+>Om du gör den här begäran direkt i kommandoraden kanske du uppmanas att lägga till en utdatafil efter rubrikerna i din begäran. Följande exempel på begäran använder `--output {FILENAME.FILETYPE}`.
 
 **API-format**
 
@@ -244,7 +249,9 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/01E5QSWC
   -O 'file.parquet'
 ```
 
->[!TIP] Kontrollera att du är i rätt katalog eller mapp som du vill att filen ska sparas i innan du gör GET-begäran.
+>[!TIP]
+>
+>Kontrollera att du är i rätt katalog eller mapp som du vill att filen ska sparas i innan du gör GET-begäran.
 
 **Svar**
 
@@ -258,7 +265,9 @@ I det här dokumentet beskrivs stegen som krävs för att hämta AI-poäng för 
 
 ## Åtkomst till bakgrundsmusik med Snowflake
 
->[!IMPORTANT] Kontakta attributionai-support@adobe.com om du vill ha mer information om hur du får åtkomst till bakgrundsmusik med SnowFlake.
+>[!IMPORTANT]
+>
+>Kontakta attributionai-support@adobe.com om du vill ha mer information om hur du får åtkomst till bakgrundsmusik med SnowFlake.
 
 Du kan komma åt AI-poäng för sammanställd attribuering via Snowflake. För närvarande måste du skicka e-post till Adobes support på attributionai-support@adobe.com för att kunna konfigurera och ta emot inloggningsuppgifterna till ditt läsarkonto för Snowflake.
 
@@ -268,7 +277,9 @@ När Adobes support har bearbetat din begäran får du en URL för läsarkontot 
 - Användarnamn
 - Lösenord
 
->[!NOTE] Läsarkontot används för att fråga data med SQL-klienter, kalkylblad och BI-lösningar som stöder JDBC-anslutning.
+>[!NOTE]
+>
+>Läsarkontot används för att fråga data med SQL-klienter, kalkylblad och BI-lösningar som stöder JDBC-anslutning.
 
 När du har dina inloggningsuppgifter och URL-adresser kan du söka efter modelltabellerna, aggregerade efter kontaktpunktsdatum eller konverteringsdatum.
 
