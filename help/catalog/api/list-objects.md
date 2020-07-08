@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Listobjekt
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 71c73a3899ccdd1c024a811b36c411915a3b14be
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '204'
+ht-degree: 0%
 
 ---
 
@@ -42,7 +45,9 @@ curl -X GET \
 
 Ett lyckat svar returnerar en lista med katalogobjekt i form av nyckelvärdepar, filtrerade efter frågeparametrarna som anges i begäran. För varje nyckelvärdepar representerar nyckeln en unik identifierare för det aktuella katalogobjektet, som sedan kan användas i ett annat anrop för att [visa det specifika objektet](look-up-object.md) för mer information.
 
->[!NOTE] Om ett returnerat objekt inte innehåller en eller flera av de begärda egenskaperna som anges av `properties` frågan returnerar svaret endast de begärda egenskaper som det innehåller, vilket visas i&quot;Sample DataSet 3&quot; och&quot;Sample DataSet 4&quot; nedan.
+>[!NOTE]
+>
+>Om ett returnerat objekt inte innehåller en eller flera av de begärda egenskaperna som anges av `properties` frågan returnerar svaret endast de begärda egenskaper som det innehåller, vilket visas i&quot;Sample DataSet 3&quot; och&quot;Sample DataSet 4&quot; nedan.
 
 ```json
 {
