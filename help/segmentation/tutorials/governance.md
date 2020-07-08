@@ -4,7 +4,10 @@ solution: Experience Platform
 title: säkerställa att målgruppssegmentens dataanvändning följs
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 97ba7aeb8a67735bd65af372fbcba5e71aee6aae
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '1372'
+ht-degree: 0%
 
 ---
 
@@ -15,18 +18,18 @@ Den här självstudiekursen beskriver stegen för att implementera efterlevnad a
 
 ## Komma igång
 
-Den här självstudien kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [Kundprofil](../../profile/home.md)i realtid: Kundprofilen i realtid är ett generiskt uppslagsenhetsarkiv och används för att hantera XDM-data (Experience Data Model) inom plattformen. Profilen sammanfogar data över olika företagsdata och ger åtkomst till dessa data i en enhetlig presentation.
+- [Kundprofil](../../profile/home.md)i realtid: Kundprofilen i realtid är ett generiskt uppslagsarkiv och används för att hantera XDM-data (Experience Data Model) inom Platform. Profilen sammanfogar data över olika företagsdata och ger åtkomst till dessa data i en enhetlig presentation.
    - [Sammanslagningsprinciper](../../profile/api/merge-policies.md): Regler som används av kundprofilen i realtid för att avgöra vilka data som kan sammanfogas i en enhetlig vy under vissa villkor. Sammanslagningsprinciper kan konfigureras för datastyrning.
 - [Segmentering](../home.md): Hur kundprofilen i realtid delar upp en stor grupp individer som finns i profilbutiken i mindre grupper som har liknande egenskaper och som reagerar på liknande sätt som marknadsföringsstrategier.
 - [Datastyrning](../../data-governance/home.md): Datastyrning tillhandahåller infrastruktur för märkning och verkställighet av dataanvändning (DULE) med hjälp av följande komponenter:
    - [Dataanvändningsetiketter](../../data-governance/labels/user-guide.md): Etiketter som används för att beskriva datauppsättningar och fält utifrån känslighetsnivån som deras respektive data ska hanteras med.
    - [Dataanvändningsprinciper](../../data-governance/policies/overview.md): Konfigurationer som anger vilka marknadsföringsåtgärder som tillåts för data som kategoriseras av särskilda dataanvändningsetiketter.
    - [Politiska åtgärder](../../data-governance/enforcement/overview.md): Gör att du kan tillämpa dataanvändningsprinciper och förhindra dataåtgärder som utgör policyöverträdelser.
-- [Sandlådor](../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+- [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:erna för plattformen.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa Platform API:er.
 
 ### Läser exempel-API-anrop
 
@@ -34,17 +37,19 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>[!NOTE]
+>
+>Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -178,7 +183,9 @@ Ett lyckat svar returnerar information om sammanfogningsprincipen.
 
 ## Utvärdera datauppsättningar för policyöverträdelser
 
->[!NOTE]  I det här steget antas att du har minst en aktiv dataanvändningsprincip som förhindrar att specifika marknadsföringsåtgärder utförs på data som innehåller vissa etiketter. Om du inte har någon tillämpbar användarprofil för de datauppsättningar som utvärderas, ska du följa självstudiekursen [för att skapa en](../../data-governance/policies/create.md) princip innan du fortsätter med det här steget.
+>[!NOTE]
+>
+> I det här steget antas att du har minst en aktiv dataanvändningsprincip som förhindrar att specifika marknadsföringsåtgärder utförs på data som innehåller vissa etiketter. Om du inte har någon tillämpbar användarprofil för de datauppsättningar som utvärderas, ska du följa självstudiekursen [för att skapa en](../../data-governance/policies/create.md) princip innan du fortsätter med det här steget.
 
 När du har fått ID:n för sammanfogningsprincipens källdatauppsättningar kan du använda [DULE Policy Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) för att utvärdera dessa datauppsättningar mot specifika marknadsföringsåtgärder för att kontrollera om det finns överträdelser av dataanvändningspolicyn.
 
