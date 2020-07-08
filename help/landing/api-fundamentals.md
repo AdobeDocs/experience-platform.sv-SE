@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Grundläggande om Adobe Experience Platform API
 topic: getting started
 translation-type: tm+mt
-source-git-commit: 2e5668a8b1d5fb831188fbd4e453b9f4aa7474df
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '425'
 ht-degree: 2%
@@ -81,6 +81,8 @@ JSON-pekaren är en standardiserad strängsyntax ([RFC 6901](https://tools.ietf.
 | `"/definitions/loyalty/properties/_{TENANT_ID}/properties/loyaltyLevel/enum/0"` | `"platinum"` |
 
 >[!Note]
+>
+>
 >När du hanterar `xdm:sourceProperty` och `xdm:destinationProperty` attribut för [!DNL Experience Data Model] (XDM)-beskrivningar måste alla `properties` nycklar **uteslutas** från JSON-pekarsträngen. Mer information finns i underhandboken för programmeringsregistrets API-utvecklare om [beskrivningar](../xdm/api/descriptors.md) .
 
 ## JSON Patch
