@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Handbok för frågetjänstutvecklare
 topic: scheduled queries
 translation-type: tm+mt
-source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '947'
+ht-degree: 0%
 
 ---
 
@@ -214,7 +217,9 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om din n
 }
 ```
 
->[!NOTE] Du kan använda värdet för `_links.delete` att [ta bort den schemalagda frågan](#delete-a-specified-scheduled-query)som du har skapat.
+>[!NOTE]
+>
+>Du kan använda värdet för `_links.delete` att [ta bort den schemalagda frågan](#delete-a-specified-scheduled-query)som du har skapat.
 
 ### Begär information om en angiven schemalagd fråga
 
@@ -295,7 +300,9 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den angivna schema
 }
 ```
 
->[!NOTE] Du kan använda värdet för `_links.delete` att [ta bort den schemalagda frågan](#delete-a-specified-scheduled-query)som du har skapat.
+>[!NOTE]
+>
+>Du kan använda värdet för `_links.delete` att [ta bort den schemalagda frågan](#delete-a-specified-scheduled-query)som du har skapat.
 
 ### Uppdatera information om en angiven schemalagd fråga
 
@@ -410,7 +417,9 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med följande meddelande
 
 Du kan ta bort en angiven schemalagd fråga genom att göra en DELETE-begäran till `/schedules` slutpunkten och ange ID:t för den schemalagda frågan som du vill ta bort i sökvägen för begäran.
 
->[!NOTE] Schemat **måste** inaktiveras innan det tas bort.
+>[!NOTE]
+>
+>Schemat **måste** inaktiveras innan det tas bort.
 
 **API-format**
 
