@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Guiden för katalogtjänstutvecklare - tillägg
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 409d98818888f2758258441ea2d993ced48caf9a
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '908'
+ht-degree: 0%
 
 ---
 
@@ -105,7 +108,9 @@ I följande begäran skapas en ny datauppsättning och sedan skapas relaterade v
 
 Om du till exempel vill referera till ett värde som returnerats från en tidigare underbegäran kan du skapa en referens i formatet: `<<{REQUEST_ID}.{ATTRIBUTE_NAME}>>` (där `{REQUEST_ID}` är användarangivet ID för underbegäran, vilket visas nedan). Du kan referera till alla attribut som är tillgängliga i brödtexten för en tidigare underbegärans svarsobjekt med hjälp av dessa mallar.
 
->[!NOTE] När en utförd underbegäran endast returnerar referensen till ett objekt (som är standard för de flesta POST- och PUT-begäranden i Catalog API), får referensen alias för värdet `id` och kan användas som `<<{OBJECT_ID}.id>>`.
+>[!NOTE]
+>
+>När en utförd underbegäran endast returnerar referensen till ett objekt (som är standard för de flesta POST- och PUT-begäranden i Catalog API), får referensen alias för värdet `id` och kan användas som `<<{OBJECT_ID}.id>>`.
 
 ```shell
 curl -X POST \
@@ -141,7 +146,7 @@ curl -X POST \
 | --- | --- |
 | `id` | Användar-ID som är kopplat till svarsobjektet så att du kan matcha begäranden mot svar. Det här värdet lagras inte i katalogen och returneras i svaret i referenssyfte. |
 | `resource` | Resurssökvägen i förhållande till katalog-API:ts rot. Protokollet och domänen ska inte ingå i det här värdet, och det ska föregås av &quot;/&quot;. <br/><br/> När du använder PATCH eller DELETE som underbegäran `method`tar du med objekt-ID:t i resurssökvägen. För att inte blandas ihop med användaren `id`använder resurssökvägen ID:t för själva katalogobjektet (till exempel `resource: "/dataSets/1234567890"`). |
-| `method` | Namnet på metoden (GET, PUT, POST, PATCH eller DELETE) som hör till åtgärden som utförs i begäran. |
+| `method` | Namnet på den metod (GET, PUT, POST, PATCH eller DELETE) som är relaterad till åtgärden som utförs i begäran. |
 | `body` | JSON-dokumentet som normalt skulle överföras som nyttolast i en POST-, PUT- eller PATCH-begäran. Den här egenskapen krävs inte för GET- eller DELETE-begäranden. |
 
 **Svar**
