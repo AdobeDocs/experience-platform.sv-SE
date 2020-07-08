@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Skriver frågor
 topic: queries
 translation-type: tm+mt
-source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '667'
+ht-degree: 0%
 
 ---
 
@@ -31,9 +34,11 @@ Interaktiv frågekörning har följande begränsningar:
 | Maximalt antal rader har returnerats | 50,000 |
 | Maximalt antal samtidiga frågor | 5 |
 
->[!NOTE] Ta med `LIMIT 0` i frågan om du vill åsidosätta den maximala radbegränsningen. Frågetidsgränsen på 10 minuter gäller fortfarande.
+>[!NOTE]
+>
+>Ta med `LIMIT 0` i frågan om du vill åsidosätta den maximala radbegränsningen. Frågetidsgränsen på 10 minuter gäller fortfarande.
 
-Som standard returneras resultatet av interaktiva frågor till klienten och de bevaras **inte** . För att resultaten ska kunna sparas som en datauppsättning i Experience Platform måste syntaxen användas i frågan `CREATE TABLE AS SELECT` .
+Som standard returneras resultatet av interaktiva frågor till klienten och de bevaras **inte** . För att resultaten ska kunna bevaras som en datauppsättning i Experience Platform måste frågan använda `CREATE TABLE AS SELECT` syntaxen.
 
 ### Icke-interaktiv frågekörning
 
@@ -67,7 +72,9 @@ LIMIT 1
 | -------- | ----------- |
 | `{ANALYTICS_TABLE_NAME}` | Namnet på analystabellen. |
 
->[!NOTE] Eftersom varje notationstyp returnerar samma resultat, beror det på vad du föredrar.
+>[!NOTE]
+>
+>Eftersom varje notationstyp returnerar samma resultat, beror det på vad du föredrar.
 
 Båda exempelfrågorna ovan returnerar ett förenklat objekt i stället för ett enda värde:
 
@@ -147,7 +154,9 @@ FROM
 )
 ```
 
->[!NOTE] Dubbla citattecken **kan inte** användas med åtkomst till punktnotationsfält.
+>[!NOTE]
+>
+>Dubbla citattecken **kan inte** användas med åtkomst till punktnotationsfält.
 
 ### Bakåtcitat
 
