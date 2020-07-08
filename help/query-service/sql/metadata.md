@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Metadata-kommandon
 topic: metadata
 translation-type: tm+mt
-source-git-commit: 45da024d45b5eebdfc393ee14890e24aed6021ce
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '299'
+ht-degree: 0%
 
 ---
 
@@ -13,7 +16,9 @@ source-git-commit: 45da024d45b5eebdfc393ee14890e24aed6021ce
 
 För metadata i din datauppsättning stöds följande PSQL-kommandon för frågor:
 
->[!NOTE] Kommandona som listas nedan är skiftlägeskänsliga.
+>[!NOTE]
+>
+>Kommandona som listas nedan är skiftlägeskänsliga.
 
 | Kommando | Beskrivning |
 |------- | ------------|
@@ -38,5 +43,5 @@ För metadata i din datauppsättning stöds följande PSQL-kommandon för frågo
 
 Alla kommandon som börjar med `\d` kan kombineras. Du kan t.ex. skapa en lista `\dtsn` med alla tabeller, sekvenser och scheman. `\d` i sig visar alla synliga tabeller, vyer, materialiserade vyer och sekvenser.
 
-Mer information om de kommandon som listas ovan finns i dokumentationen på [postgresql.org](https://www.postgresql.org/docs/10/app-psql.html). Tänk dock på att Experience Platform inte stöder alla alternativ som visas i PostgreSQL-dokumentationen.
+Mer information om de kommandon som listas ovan finns i dokumentationen på [postgresql.org](https://www.postgresql.org/docs/10/app-psql.html). Observera dock att inte alla alternativ som visas i PostgreSQL-dokumentationen stöds av Experience Platform.
 
