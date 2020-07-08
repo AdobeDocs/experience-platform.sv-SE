@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användargränssnittsguide för segmentbyggare
 topic: ui guide
 translation-type: tm+mt
-source-git-commit: b5a425714b6d69ca241c8ad81eff779b993633a5
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '2583'
 ht-degree: 0%
@@ -31,7 +31,7 @@ Det är också viktigt att känna till två nyckeltermer som används i det här
 
 ## Åtkomst till segmentdefinitioner
 
-Om du vill börja arbeta med segmentdefinitioner i [!DNL Adobe Experience Platform]klickar du **[!UICONTROL Segments]** i den vänstra navigeringen. Om du vill visa alla segmentdefinitioner för din organisation klickar du på *[!UICONTROL Browse]* fliken. I den här vyn visas information om segmentdefinitionen, inklusive utvärderingsmetod, skapad den och senaste ändringsdatum.
+Om du vill börja arbeta med segmentdefinitioner i [!DNL Adobe Experience Platform]klickar du **[!UICONTROL Segments]** i den vänstra navigeringen. Om du vill visa alla segmentdefinitioner för din organisation klickar du på *[!UICONTROL Browse]* fliken. I den här vyn visas information om segmentdefinitionen, inklusive utvärderingsmetod, datum då segmentet skapades och senaste ändringsdatum.
 
 Utvärderingsmetoden kan antingen vara direktuppspelning eller batch. Direktuppspelningssegment utvärderas ständigt när data kommer in i systemet. Gruppsegmenten utvärderas enligt ett angivet schema.
 
@@ -69,13 +69,15 @@ Förutom att du kan bläddra efter [!DNL ExperienceEvent] element kan du även s
 
 Du kan söka efter alla typer av komponenter genom att skriva deras namn i sökfältet, som använder [Lucenes söksyntax](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Sökresultaten fylls i när hela ord anges. Om du till exempel vill skapa en regel som baseras på XDM-fältet `ExperienceEvent.commerce.productViews`börjar du skriva&quot;produktvyer&quot; i sökfältet. När ordet &quot;product&quot; har skrivits in börjar sökresultaten visas. Varje resultat innehåller den objekthierarki som det hör till.
 
->[!NOTE] Det kan ta upp till 24 timmar innan anpassade schemafält som definieras av organisationen visas och blir tillgängliga för användning i byggregler.
+>[!NOTE]
+>
+>Det kan ta upp till 24 timmar innan anpassade schemafält som definieras av organisationen visas och blir tillgängliga för användning i byggregler.
 
 Sedan kan du enkelt dra och släppa [!DNL ExperienceEvents] och [!UICONTROL Event Types] in i segmentdefinitionen.
 
 ![](../images/segment-builder/events-eventTypes.png)
 
-Som standard visas endast ifyllda schemafält från ditt datalager. Detta inkluderar [!UICONTROL Event Types]. Om [!UICONTROL Event Types] listan inte visas, eller om du bara kan välja &quot;[!UICONTROL Any]&quot; som [!UICONTROL Event Type]en, klickar du på kugghjulsikonen bredvid *[!UICONTROL Fields]* och väljer **[!UICONTROL Show full XDM schema]** under *[!UICONTROL Available Fields]*. Klicka på kugghjulsikonen igen för att gå tillbaka till *[!UICONTROL Fields]* fliken och du bör nu kunna visa flera [!UICONTROL Event Types] - och schemafält, oavsett om de innehåller data eller inte.
+Som standard visas endast ifyllda schemafält från ditt datalager. Det inkluderar [!UICONTROL Event Types]. Om [!UICONTROL Event Types] listan inte visas, eller om du bara kan välja &quot;[!UICONTROL Any]&quot; som [!UICONTROL Event Type]en, klickar du på kugghjulsikonen bredvid *[!UICONTROL Fields]* och väljer **[!UICONTROL Show full XDM schema]** under *[!UICONTROL Available Fields]*. Klicka på kugghjulsikonen igen för att gå tillbaka till *[!UICONTROL Fields]* fliken och du bör nu kunna visa flera [!UICONTROL Event Types] - och schemafält, oavsett om de innehåller data eller inte.
 
 ![](../images/segment-builder/show-populated.png)
 
@@ -105,7 +107,9 @@ Du kan dra och släppa en målgrupp från fliken *[!UICONTROL Audience]* till re
 
 För [!DNL Platform] målgrupper som skapats med [!UICONTROL Segment Builder]får ni möjligheten att konvertera målgruppen till den uppsättning regler som användes i segmentdefinitionen för den målgruppen. Den här konverteringen skapar en kopia av regellogiken som sedan kan ändras utan att den ursprungliga segmentdefinitionen påverkas. Kontrollera att du har sparat alla senaste ändringar av segmentdefinitionen innan du konverterar den till regellogik.
 
->[!NOTE] När du lägger till en målgrupp från en extern källa refereras endast målgruppsmedlemskapet. Du kan inte konvertera målgruppen till regler, och därför kan reglerna som används för att skapa den ursprungliga målgruppen inte ändras i den nya segmentdefinitionen.
+>[!NOTE]
+>
+>När du lägger till en målgrupp från en extern källa refereras endast målgruppsmedlemskapet. Du kan inte konvertera målgruppen till regler, och därför kan reglerna som används för att skapa den ursprungliga målgruppen inte ändras i den nya segmentdefinitionen.
 
 ![](../images/segment-builder/add-audience-to-segment.png)
 
@@ -137,7 +141,9 @@ En underordnad behållare kan också extraheras och läggas till i den överordn
 
 När du klickar på **[!UICONTROL Unwrap container]** den underordnade behållaren tas den bort och villkoren visas textbundna.
 
->[!NOTE] När du delar upp behållare ska du se till att logiken fortsätter att uppfylla den önskade segmentdefinitionen.
+>[!NOTE]
+>
+>När du delar upp behållare ska du se till att logiken fortsätter att uppfylla den önskade segmentdefinitionen.
 
 ![](../images/segment-builder/unwrapped-container-inline.png)
 
@@ -161,7 +167,9 @@ När du fortsätter att skapa en segmentdefinition kan du visa en sidnumrerad f�
 
 ![](../images/segment-builder/segment-properties.png)
 
->[!NOTE] Målgruppsuppskattningar genereras med en provstorlek för den aktuella dagens exempeldata. Om det finns mindre än 1 miljon enheter i din profilbutik används hela datauppsättningen. För mellan 1 och 20 miljoner enheter används 1 miljon enheter. och för över 20 miljoner enheter används 5 % av det totala antalet enheter. Mer information om hur du genererar segmentuppskattningar finns i avsnittet [för att generera](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) uppskattningar i självstudiekursen för att skapa segment.
+>[!NOTE]
+>
+>Målgruppsuppskattningar genereras med en provstorlek för den aktuella dagens exempeldata. Om det finns mindre än 1 miljon enheter i din profilbutik används hela datauppsättningen. För mellan 1 och 20 miljoner enheter används 1 miljon enheter. och för över 20 miljoner enheter används 5 % av det totala antalet enheter. Mer information om hur du genererar segmentuppskattningar finns i avsnittet [för att generera](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) uppskattningar i självstudiekursen för att skapa segment.
 
 ## Aktivera schemalagd segmentering {#enable-scheduled-segmentation}
 
@@ -171,7 +179,9 @@ I On-demand-utvärderingen ingår att använda API:t för att utvärdera och byg
 
 Du kan aktivera dina segmentdefinitioner för schemalagd utvärdering med hjälp av gränssnittet eller API:t. Gå tillbaka till fliken *[!UICONTROL Browse]* i användargränssnittet **[!UICONTROL Segments]** och aktivera **[!UICONTROL Evaluate all segments]**. Detta gör att alla segment utvärderas baserat på det schema som angetts av organisationen.
 
->[!NOTE] Schemalagd utvärdering kan aktiveras för sandlådor med högst fem (5) sammanfogningsprinciper för [!DNL XDM Individual Profile]. Om din organisation har fler än fem sammanfogningsprinciper för [!DNL XDM Individual Profile] i en enda sandlådemiljö kan du inte använda schemalagd utvärdering.
+>[!NOTE]
+>
+>Schemalagd utvärdering kan aktiveras för sandlådor med högst fem (5) sammanfogningsprinciper för [!DNL XDM Individual Profile]. Om din organisation har fler än fem sammanfogningsprinciper för [!DNL XDM Individual Profile] i en enda sandlådemiljö kan du inte använda schemalagd utvärdering.
 
 Scheman kan för närvarande bara skapas med API:t. Detaljerade anvisningar om hur du skapar, redigerar och arbetar med scheman med API:t finns i självstudiekursen för utvärdering och åtkomst av segmentresultat, särskilt avsnittet om [schemalagd utvärdering med API](../tutorials/evaluate-a-segment.md#scheduled-evaluation).
 
@@ -179,7 +189,9 @@ Scheman kan för närvarande bara skapas med API:t. Detaljerade anvisningar om h
 
 ## Direktuppspelningssegmentering {#streaming-segmentation}
 
->[!NOTE] För att direktuppspelningssegmentering ska fungera måste kunden aktivera schemalagd segmentering för organisationen. Mer information om hur du aktiverar schemalagd segmentering finns [i föregående avsnitt i den här användarhandboken](#enable-scheduled-segmentation).
+>[!NOTE]
+>
+>För att direktuppspelningssegmentering ska fungera måste kunden aktivera schemalagd segmentering för organisationen. Mer information om hur du aktiverar schemalagd segmentering finns [i föregående avsnitt i den här användarhandboken](#enable-scheduled-segmentation).
 
 En fråga utvärderas automatiskt med direktuppspelningssegmentering om den uppfyller något av följande kriterier:
 
@@ -223,7 +235,9 @@ Du hittar mer information om den senaste utvärderingen av segment genom att kli
 
 ## Felaktiga policyöverträdelser
 
->[!NOTE] Principöverträdelser av typen DULE gäller bara om du skapar ett segment som har tilldelats ett mål.
+>[!NOTE]
+>
+>Principöverträdelser av typen DULE gäller bara om du skapar ett segment som har tilldelats ett mål.
 
 När du är klar med segmentet analyseras segmentet av [!DNL Data Governance] att kontrollera att det inte finns några policyöverträdelser inom segmentet. Mer information om DULE och policyöverträdelser finns i [översikten](../../data-governance/labels/overview.md)för dataanvändningsetiketten.
 
