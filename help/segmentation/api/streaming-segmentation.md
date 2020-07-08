@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Direktuppspelningssegmentering
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: d00973a07c5fb137f756040fb1dc6eac5a1630f5
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1370'
 ht-degree: 0%
@@ -14,7 +14,9 @@ ht-degree: 0%
 
 # Utvärdera händelser i nära realtid med strömmande segmentering
 
->[!NOTE] I följande dokument beskrivs hur du använder direktuppspelningssegmentering med API:t. Mer information om hur du använder direktuppspelningssegmentering med användargränssnittet finns i guiden [för](../ui/overview.md#streaming-segmentation)segmentbyggaren.
+>[!NOTE]
+>
+>I följande dokument beskrivs hur du använder direktuppspelningssegmentering med API:t. Mer information om hur du använder direktuppspelningssegmentering med användargränssnittet finns i guiden [för](../ui/overview.md#streaming-segmentation)segmentbyggaren.
 
 Med direktuppspelningssegmentering på [!DNL Adobe Experience Platform] kan kunderna segmentera i nära realtid samtidigt som de fokuserar på datarikedom. Med direktuppspelningssegmentering sker nu segmentkvalificering allt eftersom data når [!DNL Platform]och eliminerar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data överförs till [!DNL Platform], vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 
@@ -46,7 +48,9 @@ Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuell
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>[!NOTE]
+>
+>Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -56,7 +60,9 @@ Ytterligare rubriker kan behövas för att slutföra specifika begäranden. De r
 
 ### Strömmande segmenteringsaktiverade frågetyper {#streaming-segmentation-query-types}
 
->[!NOTE] Du måste aktivera schemalagd segmentering för organisationen för att direktuppspelningssegmenteringen ska fungera. Information om aktivering av schemalagd segmentering finns i avsnittet [Aktivera schemalagd segmentering](#enable-scheduled-segmentation)
+>[!NOTE]
+>
+>Du måste aktivera schemalagd segmentering för organisationen för att direktuppspelningssegmenteringen ska fungera. Information om aktivering av schemalagd segmentering finns i avsnittet [Aktivera schemalagd segmentering](#enable-scheduled-segmentation)
 
 För att ett segment ska kunna utvärderas med hjälp av direktuppspelningssegmentering måste frågan följa följande riktlinjer.
 
@@ -232,7 +238,9 @@ curl -X POST \
 }'
 ```
 
->[!NOTE] Det här är en standardbegäran om att skapa ett segment. Mer information om hur du skapar en segmentdefinition finns i självstudiekursen om hur du [skapar ett segment](../tutorials/create-a-segment.md).
+>[!NOTE]
+>
+>Det här är en standardbegäran om att skapa ett segment. Mer information om hur du skapar en segmentdefinition finns i självstudiekursen om hur du [skapar ett segment](../tutorials/create-a-segment.md).
 
 **Svar**
 
@@ -280,7 +288,9 @@ Ett lyckat svar returnerar information om den nyligen skapade segmentdefinitione
 
 När utvärdering av direktuppspelning har aktiverats måste en baslinje skapas (efter vilken segmentet alltid är uppdaterat). Schemalagd utvärdering (även kallad schemalagd segmentering) måste först aktiveras för att systemet automatiskt ska kunna utföra baselering. Med schemalagd segmentering kan IMS-organisationen följa ett återkommande schema för att automatiskt köra exportjobb för att utvärdera segment.
 
->[!NOTE] Schemalagd utvärdering kan aktiveras för sandlådor med högst fem (5) sammanslagningsprinciper för den enskilda XDM-profilen. Om din organisation har fler än fem sammanfogningsprinciper för den enskilda XDM-profilen i en enda sandlådemiljö, kommer du inte att kunna använda schemalagd utvärdering.
+>[!NOTE]
+>
+>Schemalagd utvärdering kan aktiveras för sandlådor med högst fem (5) sammanslagningsprinciper för den enskilda XDM-profilen. Om din organisation har fler än fem sammanfogningsprinciper för den enskilda XDM-profilen i en enda sandlådemiljö, kommer du inte att kunna använda schemalagd utvärdering.
 
 ### Skapa ett schema
 
