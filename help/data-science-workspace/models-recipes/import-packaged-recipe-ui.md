@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Importera ett paketerat recept (UI)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1665'
 ht-degree: 0%
@@ -35,7 +35,9 @@ Arbetsflödet för att importera ett paketrecept består av följande steg:
 
 Varje recept-instans i [!DNL Data Science Workspace] åtföljs av en uppsättning konfigurationer som anpassar recept-instansen så att den passar ett visst användningsfall. Konfigurationsfiler definierar standardutbildnings- och bedömningsbeteenden för en modell som skapas med den här recept-instansen.
 
->[!NOTE] Konfigurationsfilerna är recept- och fallspecifika.
+>[!NOTE]
+>
+>Konfigurationsfilerna är recept- och fallspecifika.
 
 Nedan visas ett exempel på en konfigurationsfil som visar standardutbildnings- och bedömningsbeteenden för recept för detaljhandelsförsäljning.
 
