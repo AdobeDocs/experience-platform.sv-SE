@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Översikt över åtkomstkontroll
 topic: overview
 translation-type: tm+mt
-source-git-commit: df85ea955b7a308e6be1e2149fcdfb4224facc53
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '1177'
+ht-degree: 1%
 
 ---
 
@@ -15,26 +18,28 @@ source-git-commit: df85ea955b7a308e6be1e2149fcdfb4224facc53
 
 ## Åtkomststyrningshierarki och arbetsflöde
 
-För att konfigurera åtkomstkontroll för Experience Platform måste du ha administratörsbehörighet för en organisation som har en Experience Platform-produktintegrering. Den minsta rollen som beviljar eller återkallar behörigheter är en **produktprofiladministratör**. Andra administratörsroller som kan hantera behörigheter är **produktadministratörer** (kan hantera alla profiler i en produkt) och **systemadministratörer** (utan begränsningar). Mer information finns i Adobe Help Center-artikeln om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html) .
+Om du vill konfigurera åtkomstkontroll för Experience Platform måste du ha administratörsbehörighet för en organisation som har en produktintegrering med Experience Platform. Den minsta rollen som beviljar eller återkallar behörigheter är en **produktprofiladministratör**. Andra administratörsroller som kan hantera behörigheter är **produktadministratörer** (kan hantera alla profiler i en produkt) och **systemadministratörer** (utan begränsningar). Mer information finns i Adobe Help Center-artikeln om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html) .
 
->[!NOTE] Från och med nu avser alla omnämnanden av&quot;administratör&quot; i det här dokumentet en administratör för en produktprofil eller en senare (enligt ovan).
+>[!NOTE]
+>
+>Från och med nu avser alla omnämnanden av&quot;administratör&quot; i det här dokumentet en administratör för en produktprofil eller en senare (enligt ovan).
 
 Ett arbetsflöde på hög nivå för att hämta och tilldela åtkomstbehörigheter kan sammanfattas på följande sätt:
 
-- När du prenumererat på Adobe Experience Platform skickas ett e-postmeddelande till administratören som anges i registreringsformuläret.
-- Administratören loggar in på [Adobe Admin Console](#adobe-admin-console) och väljer **Adobe Experience Platform** i listan över produkter på översiktssidan.
+- När du prenumererar på Adobe Experience Platform skickas ett e-postmeddelande till administratören som anges i registreringsformuläret.
+- Administratören loggar in på [Adobe Admin Console](#adobe-admin-console) och väljer **Adobe Experience Platform** i produktlistan på översiktssidan.
 - Administratören kan visa [standardproduktprofilerna](#product-profiles) eller skapa nya kundproduktprofiler efter behov.
 - Administratören kan redigera behörigheter och användare för befintliga produktprofiler.
 - När du skapar eller redigerar en produktprofil lägger administratören till användare i profilen på fliken **Användare** och tilldelar behörigheter till dessa användare (till exempel Läs datauppsättningar eller Hantera schema) genom att gå till fliken **Behörigheter** . På samma sätt kan administratören tilldela åtkomst till sandlådor med samma behörighetsflik.
-- När användare loggar in på användargränssnittet i Experience Platform styrs deras åtkomst till plattformsfunktioner av de behörigheter som de har fått från steg 2. Om en användare t.ex. inte har behörigheten Visa datauppsättningar kommer fliken *Datauppsättningar* på sidomenyn inte att vara synlig för användaren.
+- När användare loggar in i användargränssnittet i Experience Platform styrs deras åtkomst till Platform-funktioner av de behörigheter som de har fått från steg 2. Om en användare t.ex. inte har behörigheten Visa datauppsättningar kommer fliken *Datauppsättningar* på sidomenyn inte att vara synlig för användaren.
 
-Mer detaljerad information om hur du hanterar åtkomstkontroll i Experience Platform finns i användarhandboken för [åtkomstkontroll](./ui/overview.md).
+Mer information om hur du hanterar åtkomstkontroll i Experience Platform finns i användarhandboken för [åtkomstkontroll](./ui/overview.md).
 
-Alla anrop till Experience Platform API:er valideras för behörigheter och returnerar fel om rätt behörighet inte hittas i den aktuella användarkontexten. Elementen döljs eller ändras i användargränssnittet beroende på vilka behörigheter den aktuella användaren har.
+Alla anrop till Experience Platform API:er valideras för behörigheter och returnerar fel om lämpliga behörigheter inte hittas i den aktuella användarkontexten. Elementen döljs eller ändras i användargränssnittet beroende på vilka behörigheter den aktuella användaren har.
 
 ## Adobe Admin Console
 
-Adobe Admin Console är en central plats där du kan hantera berättiganden för Adobe-produkter och få tillgång till dem för din organisation. Via konsolen kan du ge grupper av användare åtkomstbehörigheter för olika plattformsfunktioner, som Hantera datauppsättningar, Visa datauppsättningar eller Hantera profiler.
+Adobe Admin Console är en central plats för hantering av berättiganden och åtkomst för Adobe-produkter. Via konsolen kan du ge användargrupper åtkomstbehörigheter för olika Platform-funktioner, t.ex.&quot;Hantera datauppsättningar&quot;,&quot;Visa datauppsättningar&quot; eller&quot;Hantera profiler&quot;.
 
 ### Produktprofiler
 
@@ -42,18 +47,18 @@ I Admin Console tilldelas användare behörigheter genom användning av **produk
 
 ### Standardproduktprofiler
 
-Experience Platform har två förkonfigurerade standardproduktprofiler. Följande tabell visar vad som anges i respektive standardprofil, inklusive vilken sandlåda de beviljar åtkomst till samt de behörigheter de ger inom den sandlådans omfång.
+Experience Platform levereras med två förkonfigurerade standardproduktprofiler. Följande tabell visar vad som anges i respektive standardprofil, inklusive vilken sandlåda de beviljar åtkomst till samt de behörigheter de ger inom den sandlådans omfång.
 
 | Produktprofil | Sandlådeåtkomst | Behörigheter |
 | --- | --- | --- |
-| Standardproduktion - Alla åtkomst | Produktion | Alla behörigheter som gäller Experience Platform, förutom sandlådeadministration. |
+| Standardproduktion - Alla åtkomst | Produktion | Alla behörigheter som gäller för Experience Platform, förutom sandlådeadministration. |
 | Förvald sandlådeadministration | Ej tillämpligt | Ger endast åtkomst till sandlådeadministrationsbehörigheter. |
 
 ## Sandlådor och behörigheter
 
-Experience Platform ger åtkomst till en produktionssandlåda och gör att du kan skapa icke-professionella **sandlådor**. Sandlådor som inte är produktionssandlådor är en form av datavirtualisering som gör att du kan isolera data från andra sandlådor och som vanligtvis används för utvecklingsexperiment, testning och testning. En produktprofils **behörigheter** ger profilens användare tillgång till plattformsfunktioner i sandlådemiljöer som de har beviljats åtkomst till.
+Experience Platform ger åtkomst till en produktionssandlåda och gör att du kan skapa **icke-produktionssandlådor**. Sandlådor som inte är produktionssandlådor är en form av datavirtualisering som gör att du kan isolera data från andra sandlådor och som vanligtvis används för utvecklingsexperiment, testning och testning. En produktprofils **behörigheter** ger profilens användare tillgång till Platform-funktioner i sandlådemiljöer som de har beviljats åtkomst till.
 
-Mer information om sandlådor i Experience Platform finns i [översikten över](../sandboxes/home.md)sandlådor.
+Mer information om sandlådor i Experience Platform finns i översikten över [sandlådor](../sandboxes/home.md).
 
 ### Åtkomst till sandlådor
 
@@ -69,9 +74,9 @@ På fliken **Behörigheter** i en produktprofil visas de sandlådor och behörig
 
 ![](./images/permissions-overview.png)
 
-Behörigheter som ges via Admin Console sorteras efter kategori, med vissa behörigheter som ger åtkomst till flera lågnivåfunktioner.
+Behörigheter som beviljas via Admin Console sorteras efter kategori, med vissa behörigheter som ger åtkomst till flera lågnivåfunktioner.
 
-I följande tabell visas de tillgängliga behörigheterna för Experience Platform i Admin Console, med beskrivningar av de specifika plattformsfunktioner som de beviljar åtkomst till. Detaljerade anvisningar om hur du lägger till behörigheter i en produktprofil finns i användarhandboken för [åtkomstkontroll](./ui/overview.md).
+Följande tabell visar vilka behörigheter som är tillgängliga för Experience Platform i Admin Console, med beskrivningar av de specifika Platform-funktioner som de ger åtkomst till. Detaljerade anvisningar om hur du lägger till behörigheter i en produktprofil finns i användarhandboken för [åtkomstkontroll](./ui/overview.md).
 
 | Kategori | Behörighet | Beskrivning |
 | --- | --- | --- |
@@ -95,8 +100,8 @@ I följande tabell visas de tillgängliga behörigheterna för Experience Platfo
 | Dataintag | Visa källor | Skrivskyddad åtkomst till tillgängliga källor på fliken *Katalog* och autentiserade källor på fliken *Bläddra* . |
 | Datavetenskapens arbetsyta | Hantera arbetsytan Datavetenskap | Åtkomst att läsa, skapa, redigera och ta bort i arbetsytan Data Science. |
 
-_(*) Detta tillstånd kräver att ni reserverar er för kunddataplattformen i realtid. Mer information om CDP i realtid finns i[realtidsöversikten](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/overview.html)._
+_(*) Detta tillstånd kräver att man reserverar sig för Real-time Customer Data Platform. Mer information om CDP i realtid finns i[realtidsöversikten](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/overview.html)._
 
 ## Nästa steg
 
-Genom att läsa den här guiden har ni lagts till i huvudprinciperna för åtkomstkontroll i Experience Platform. Du kan nu fortsätta till användarhandboken [för](./ui/overview.md) åtkomstkontroll och få detaljerade anvisningar om hur du använder Admin Console för att skapa produktprofiler och tilldela behörigheter för plattformen.
+Genom att läsa den här guiden har du lagts till i huvudprinciperna för åtkomstkontroll i Experience Platform. Du kan nu fortsätta till användarhandboken [för](./ui/overview.md) åtkomstkontroll och få detaljerade anvisningar om hur du använder Admin Console för att skapa produktprofiler och tilldela behörigheter för Platform.
