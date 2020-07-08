@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Migreringsguider för mottagare och anteckningsböcker
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '3311'
 ht-degree: 0%
@@ -324,7 +324,9 @@ Följande video är utformad för att ytterligare underlätta förståelsen av d
 
 I och med introduktionen av PySpark 2.4 till [!DNL JupyterLab Notebooks]använder nya [!DNL Python] bärbara datorer med PySpark 2.4 nu [!DNL Python] 3-kärnan i stället för PySpark 3-kärnan. Detta innebär att befintlig kod som körs på PySpark 2.3 inte stöds i PySpark 2.4.
 
->[!IMPORTANT] PySpark 2.3 är föråldrad och inställd på att tas bort i en senare version. Alla befintliga exempel ska ersättas med PySpark 2.4-exempel.
+>[!IMPORTANT]
+>
+>PySpark 2.3 är föråldrad och inställd på att tas bort i en senare version. Alla befintliga exempel ska ersättas med PySpark 2.4-exempel.
 
 Om du vill konvertera dina befintliga bärbara PySpark 3 ([!DNL Spark] 2.3)-datorer till [!DNL Spark] 2.4 följer du de exempel som beskrivs nedan:
 
@@ -458,7 +460,9 @@ Med PySpark 3 ([!DNL Spark] 2.4) behöver du inte längre definiera `org_id` och
 | ------- | ----------- |
 | [%dataset](#magic) | Skräddarsydd magi för dataåtkomst med [!DNL Python] tre kärnor. |
 
->[!TIP] —mode kan anges till `interactive` eller `batch`. Standardvärdet för —mode är `interactive`. Du bör använda `batch` läget när du läser stora mängder data.
+>[!TIP]
+>
+>—mode kan anges till `interactive` eller `batch`. Standardvärdet för —mode är `interactive`. Du bör använda `batch` läget när du läser stora mängder data.
 
 ## Skapa en lokal dataram
 
@@ -511,7 +515,9 @@ sample_df = df.sample(fraction)
    </tr>
 </table>
 
->[!TIP] Du kan också ange ett valfritt dirigeringsexempel, t.ex. ett booleskt värde med Ersättning, ett dubbelt bråk eller ett långt startvärde.
+>[!TIP]
+>
+>Du kan också ange ett valfritt dirigeringsexempel, t.ex. ett booleskt värde med Ersättning, ett dubbelt bråk eller ett långt startvärde.
 
 Följande bilder visar de viktigaste skillnaderna när det gäller att skapa en lokal dataram i PySpark 2.3 och PySpark 2.4. I det här exemplet används de *startanteckningsböcker för aggregering* som finns i [!DNL JupyterLab Launcher].
 
@@ -559,7 +565,9 @@ pd0.show(10, False)
 | pd0 | Namnet på pandas-dataframe-objektet som ska användas eller skapas. |
 | [%dataset](#magic) | Skräddarsydd magi för dataåtkomst med [!DNL Python] tre kärnor. |
 
->[!TIP] —mode kan anges till `interactive` eller `batch`. Standardvärdet för —mode är `interactive`. Du bör använda `batch` läget när du läser stora mängder data.
+>[!TIP]
+>
+>—mode kan anges till `interactive` eller `batch`. Standardvärdet för —mode är `interactive`. Du bör använda `batch` läget när du läser stora mängder data.
 
 I följande bilder markeras de viktigaste skillnaderna när du skriver data tillbaka till [!DNL Platform] i PySpark 2.3 och PySpark 2.4. I det här exemplet används de *startanteckningsböcker för aggregering* som finns i [!DNL JupyterLab Launcher].
 
@@ -577,7 +585,9 @@ Med PySpark 3 ([!DNL Spark] 2.4) tar den `%dataset` anpassade magin bort behovet
 
 I och med introduktionen av [!DNL Spark] 2.4 till [!DNL JupyterLab Notebooks]använder befintliga [!DNL Spark] ([!DNL Spark] 2.3) bärbara datorer nu Scala-kernel i stället för [!DNL Spark] kernel. Detta innebär att befintlig kod som körs [!DNL Spark] ([!DNL Spark] 2.3) inte stöds i Scala ([!DNL Spark] 2.4). Dessutom bör alla nya [!DNL Spark] bärbara datorer använda Scala ([!DNL Spark] 2.4) i [!DNL JupyterLab Launcher].
 
->[!IMPORTANT] [!DNL Spark] ([!DNL Spark] 2.3) är borttagen och inställd på att tas bort i en senare version. Alla befintliga exempel ska ersättas med Scala-exempel ([!DNL Spark] 2.4).
+>[!IMPORTANT]
+>
+>[!DNL Spark] ([!DNL Spark] 2.3) är borttagen och inställd på att tas bort i en senare version. Alla befintliga exempel ska ersättas med Scala-exempel ([!DNL Spark] 2.4).
 
 Om du vill konvertera dina befintliga [!DNL Spark] ([!DNL Spark] 2.3) bärbara datorer till Scala ([!DNL Spark] 2.4) följer du de exempel som beskrivs nedan:
 
@@ -619,7 +629,7 @@ Alla Scala ([!DNL Spark] 2.4) anteckningsböcker kräver att du initierar sessio
   </td>
   <td>
   <pre class="JSON language-JSON hljs">
-importera org.apache.spark.sql.{ SparkSession } val spark = SparkSession.builder() .master("local") .getOrCreate()
+importera org.apache.spark.sql.{ SparkSession } val spark = SparkSession.builder() .överordnad("local") .getOrCreate()
 </pre>
   </td>
   </tr>
@@ -752,11 +762,13 @@ Den [!DNL Spark] ([!DNL Spark] 2.3 - borttagen) bärbara datorn använder [!DNL 
 
 **Scala ([!DNL Spark]2.4)**
 
-Scala ([!DNL Spark] 2.4)-anteckningsboken använder Scala-kernel som kräver fler värden vid konfiguration, vilket markeras i den första kodcellen. Dessutom `var mdata` kräver fler `option` värden att fyllas i. I den här anteckningsboken inkluderas den tidigare nämnda koden för [initiering av SparkSession](#initialize-sparksession-scala) i `var mdata` -kodcellen.
+Scala ([!DNL Spark] 2.4)-anteckningsboken använder Scala-kernel, vilket kräver fler värden vid konfiguration, vilket markeras i den första kodcellen. Dessutom `var mdata` kräver fler `option` värden att fyllas i. I den här anteckningsboken inkluderas den tidigare nämnda koden för [initiering av SparkSession](#initialize-sparksession-scala) i `var mdata` -kodcellen.
 
 ![ladda gnista 2.4](./images/migration/spark-scala/load-2.4.png)
 
->[!TIP] I Scala kan du använda `sys.env()` för att deklarera och returnera ett värde inifrån `option`. Detta eliminerar behovet av att definiera variabler om du vet att de bara kommer att användas en gång. Följande exempel tar `val userToken` i exemplet ovan och deklarerar det textbundet i `option`:
+>[!TIP]
+>
+>I Scala kan du använda `sys.env()` för att deklarera och returnera ett värde inifrån `option`. Detta eliminerar behovet av att definiera variabler om du vet att de bara kommer att användas en gång. Följande exempel tar `val userToken` i exemplet ovan och deklarerar det textbundet i `option`:
 > 
 ```scala
 > .option("user-token", sys.env("PYDASDK_IMS_USER_TOKEN"))
