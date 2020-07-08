@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Anslut med Looker
 topic: connect
 translation-type: tm+mt
-source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '217'
+ht-degree: 0%
 
 ---
 
@@ -31,7 +34,9 @@ Härifrån kan du fylla i informationen för anslutningsinställningarna.
 - **Databas:** Databasen som ska användas.
 - **Användarnamn och lösenord:** De inloggningsuppgifter som ska användas. Användarnamnet kommer att ha formatet `ORG_ID@AdobeOrg`.
 
->[!NOTE] Mer information om hur du hittar värd och port, databasnamn och inloggningsuppgifter finns på [inloggningssidan på Platform](https://platform.adobe.com/query/configuration). Logga in på Platform, klicka på **Frågor** och klicka sedan på **Autentiseringsuppgifter** för att hitta dina inloggningsuppgifter.
+>[!NOTE]
+>
+>Mer information om hur du hittar värd och port, databasnamn och inloggningsuppgifter finns på [inloggningssidan på Platform](https://platform.adobe.com/query/configuration). Logga in på Platform, klicka på **Frågor** och klicka sedan på **Autentiseringsuppgifter** för att hitta dina inloggningsuppgifter.
 
 När du har angett anslutningsinformationen klickar du på **Testa de här inställningarna** för att kontrollera att inloggningsuppgifterna fungerar som de ska. Om de gör det visas ett meddelande om att du kan ansluta nedan. Om anslutningen lyckas klickar du på **Lägg till anslutning** för att skapa anslutningen.
 
