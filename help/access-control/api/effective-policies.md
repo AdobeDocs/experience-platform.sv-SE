@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Visa gällande policyer
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: df85ea955b7a308e6be1e2149fcdfb4224facc53
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '273'
+ht-degree: 1%
 
 ---
 
@@ -37,7 +40,9 @@ curl -X POST \
   ]'
 ```
 
->[!NOTE] En fullständig lista över behörigheter och resurstyper som kan anges i nyttolastarrayen finns i avsnittet i bilagan om [godkända behörigheter och resurstyper](#accepted-permissions-and-resource-types).
+>[!NOTE]
+>
+>En fullständig lista över behörigheter och resurstyper som kan anges i nyttolastarrayen finns i avsnittet i bilagan om [godkända behörigheter och resurstyper](#accepted-permissions-and-resource-types).
 
 **Svar**
 
@@ -60,7 +65,7 @@ Ett godkänt svar returnerar information om behörigheter och resurstyper som an
 
 ## Nästa steg
 
-I det här dokumentet beskrivs hur du anropar åtkomstkontrolls-API:t för att returnera information om aktiva behörigheter och relaterade principer för resurstyper. Mer information om åtkomstkontroll för Experience Platform finns i [åtkomstkontrollsöversikten](../home.md).
+I det här dokumentet beskrivs hur du anropar åtkomstkontrolls-API:t för att returnera information om aktiva behörigheter och relaterade principer för resurstyper. Mer information om åtkomstkontroll för Experience Platform finns i [åtkomstkontrollen](../home.md).
 
 ## Bilaga
 
