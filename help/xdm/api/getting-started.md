@@ -4,16 +4,19 @@ solution: Experience Platform
 title: Utvecklarhandbok för API för schematabell
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 387cbdebccb9ae54a2907d1afe220e9711927ca6
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '1246'
+ht-degree: 0%
 
 ---
 
 
 # Utvecklarhandbok för API för schematabell
 
-Schemaregistret används för att komma åt schemabiblioteket i Adobe Experience Platform, som tillhandahåller ett användargränssnitt och RESTful API från vilket alla tillgängliga biblioteksresurser är tillgängliga.
+Schemaregistret används för att komma åt schemabiblioteket i Adobe Experience Platform, med ett användargränssnitt och RESTful API som alla tillgängliga biblioteksresurser kan nås från.
 
-Med API:t för schemaregister kan du utföra grundläggande CRUD-åtgärder för att visa och hantera alla scheman och relaterade resurser som är tillgängliga för dig inom Adobe Experience Platform. Detta omfattar de som definieras av Adobe, Experience Platform-partners och leverantörer vars program ni använder. Du kan också använda API-anrop för att skapa nya scheman och resurser för din organisation, samt visa och redigera resurser som du redan har definierat.
+Med API:t för schemaregister kan du utföra grundläggande CRUD-åtgärder för att visa och hantera alla scheman och relaterade resurser som är tillgängliga för dig i Adobe Experience Platform. Detta gäller även dem som definieras av Adobe, Experience Platform partners och leverantörer vars program du använder. Du kan också använda API-anrop för att skapa nya scheman och resurser för organisationen, samt visa och redigera resurser som du redan har definierat.
 
 Den här utvecklarhandboken innehåller steg som hjälper dig att börja använda API:t för schemaregister. Guiden innehåller sedan exempel på API-anrop för att utföra nyckelåtgärder med schemaregistret.
 
@@ -21,10 +24,10 @@ Den här utvecklarhandboken innehåller steg som hjälper dig att börja använd
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](../home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
+* [Experience Data Model (XDM) System](../home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grundläggande om schemakomposition](../schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman.
 * [Kundprofil](../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Sandlådor](../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:t för schemaregister.
 
@@ -34,17 +37,19 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 ## Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform, inklusive de som tillhör schemaregistret, är isolerade till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i Experience Platform, inklusive de som tillhör schemaregistret, är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>[!NOTE]
+>
+>Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla GET-begäranden (lookup) till schemaregistret kräver en extra Accept-rubrik, vars värde bestämmer vilket format som informationen returneras av API:t. Mer information finns i avsnittet [Acceptera sidhuvud](#accept) nedan.
 
@@ -154,13 +159,13 @@ Ett svar returnerar information om din organisations användning av schemaregist
 
 * `tenantId`: Värdet `TENANT_ID` för din IMS-organisation.
 
-## Förstå `CONTAINER_ID`{#container}
+## Förstå `CONTAINER_ID` {#container}
 
 Anrop till API:t för schemaregister kräver användning av en `CONTAINER_ID`. Det finns två behållare som API-anrop kan göras mot: den **globala behållaren** och **innehavarbehållaren**.
 
 ### Global behållare
 
-Den globala behållaren innehåller alla standardklasser, mixins, datatyper och scheman som tillhandahålls av Adobe- och Experience Platform-partnern. Du får bara utföra list- och sökbegäranden (GET) mot den globala behållaren.
+Den globala behållaren innehåller alla standardklasser, mixins, datatyper och scheman som tillhandahålls av Adobe och Experience Platform partner. Du får bara utföra list- och sökbegäranden (GET) mot den globala behållaren.
 
 ### Klientbehållaren
 
@@ -198,7 +203,9 @@ I följande tabell visas kompatibla värden för Acceptera sidhuvud, inklusive d
 | `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` attribut och `allOf` lösta. Inga rubriker eller beskrivningar. |
 | `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` attribut och `allOf` lösta. Beskrivningar ingår. |
 
->[!NOTE] Om endast `major` versionen tillhandahålls (t.ex. 1, 2, 3) returnerar registret den senaste `minor` versionen (t.ex. .1, .2, .3) automatiskt.
+>[!NOTE]
+>
+>Om endast `major` versionen tillhandahålls (t.ex. 1, 2, 3) returnerar registret den senaste `minor` versionen (t.ex. .1, .2, .3) automatiskt.
 
 ## Begränsningar för XDM-fält och bästa praxis
 
