@@ -4,18 +4,21 @@ solution: Experience Platform
 title: Direktuppspelande postdata
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 79466c78fd78c0f99f198b11a9117c946736f47a
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '1107'
+ht-degree: 0%
 
 ---
 
 
 # Strömma postdata till Adobe Experience Platform
 
-Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för datainmatningstjänsten för Adobe Experience Platform.
+Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för datainmatningstjänsten i Adobe Experience Platform.
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande kunskap om olika Adobe Experience Platform-tjänster. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
+Den här självstudiekursen kräver kunskaper om olika Adobe Experience Platform-tjänster. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 - [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera upplevelsedata.
 - [Kundprofil](../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
@@ -31,17 +34,19 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>[!NOTE]
+>
+>Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -182,7 +187,9 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/des
 | -------- | ----------- |
 | `{SCHEMA_REF_ID}` | Den `$id` som du tidigare fick när du komponerade schemat. Det borde se ut ungefär så här: `"https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}"` |
 
->[!NOTE] &#x200B; &#x200B;**ID-namnområdeskoder**
+>[!NOTE]
+>
+>&#x200B; &#x200B;**ID-namnområdeskoder**
 >
 > Kontrollera att koderna är giltiga - i exemplet ovan används&quot;email&quot; som är ett vanligt identitetsnamnutrymme. Andra vanliga standardnamnutrymmen för identiteter finns i Vanliga frågor om [identitetstjänsten](../../identity-service/troubleshooting-guide.md#what-are-the-standard-identity-namespaces-provided-by-experience-platform).
 >
@@ -212,7 +219,9 @@ Ett lyckat svar returnerar HTTP-status 201 med information om schemats nya prim�
 
 När du har skapat schemat måste du skapa en datauppsättning för att kunna importera postdata.
 
->[!NOTE] Den här datauppsättningen kommer att aktiveras för kundprofil **och** identitetstjänst **i** realtid.
+>[!NOTE]
+>
+>Den här datauppsättningen kommer att aktiveras för kundprofil **och** identitetstjänst **i** realtid.
 
 **API-format**
 
@@ -255,7 +264,7 @@ Ett lyckat svar returnerar HTTP-status 201 och en matris som innehåller ID:t f�
 
 ## Infoga postdata till direktuppspelningsanslutningen
 
-Med datauppsättningen och direktuppspelningsanslutningen på plats kan du importera XDM-formaterade JSON-poster för att importera postdata till plattformen.
+När datauppsättningen och direktuppspelningsanslutningen är på plats kan du importera XDM-formaterade JSON-poster för att importera postdata till Platform.
 
 **API-format**
 
@@ -270,7 +279,9 @@ POST /collection/{CONNECTION_ID}?synchronousValidation=true
 
 **Begäran**
 
->[!NOTE] Följande API-anrop kräver **inga** autentiseringshuvuden.
+>[!NOTE]
+>
+>Följande API-anrop kräver **inga** autentiseringshuvuden.
 
 ```shell
 curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValidation=true \
@@ -342,7 +353,9 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen ström
 
 Om du vill validera de poster som har importerats tidigare kan du använda API:t [för](../../profile/api/entities.md) profilåtkomst för att hämta postdata.
 
->[!NOTE] Om sammanfogningsprincip-ID:t inte har definierats och schemat.</span>name eller relatedSchema</span>.name is `_xdm.context.profile`, Profile Access hämtar **alla** relaterade identiteter.
+>[!NOTE]
+>
+>Om sammanfogningsprincip-ID:t inte har definierats och schemat.</span>name eller relatedSchema</span>.name is `_xdm.context.profile`, Profile Access hämtar **alla** relaterade identiteter.
 
 **API-format**
 
@@ -421,7 +434,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om de begärda entite
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet förstår du nu hur du kan importera postdata till plattformen med hjälp av direktuppspelningsanslutningar. Du kan försöka göra fler anrop med olika värden och hämta de uppdaterade värdena. Dessutom kan du börja övervaka dina inkapslade data via plattformsgränssnittet. Mer information finns i guiden [för dataöverföring](../quality/monitor-data-flows.md) .
+Genom att läsa det här dokumentet kan du nu förstå hur du kan importera postdata till Platform via direktuppspelningsanslutningar. Du kan försöka göra fler anrop med olika värden och hämta de uppdaterade värdena. Dessutom kan du börja övervaka dina inkapslade data via Platform användargränssnitt. Mer information finns i guiden [för dataöverföring](../quality/monitor-data-flows.md) .
 
 Mer information om direktuppspelningsuppläsning i allmänhet finns i översikten över [direktuppspelningsuppläsning](../streaming-ingestion/overview.md).
 
