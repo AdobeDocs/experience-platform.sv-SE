@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Ersätta ett objekt
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: a753c6460bfe89e2b78fb3e087e9ba7397206dec
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '141'
+ht-degree: 0%
 
 ---
 
@@ -13,7 +16,9 @@ source-git-commit: a753c6460bfe89e2b78fb3e087e9ba7397206dec
 
 Du kan skriva över innehållet i ett Catalog-objekt med en PUT-begäran, där hela resursen ersätts med nyttolasten för begäran.
 
->[!NOTE] Om du bara behöver uppdatera ett fåtal specifika fält i ett Catalog-objekt kan det vara mer effektivt att använda en PATCH-begäran.
+>[!NOTE]
+>
+>Om du bara behöver uppdatera ett fåtal specifika fält i ett Catalog-objekt kan det vara mer effektivt att använda en PATCH-begäran.
 
 **API-format**
 
