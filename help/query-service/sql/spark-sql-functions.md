@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Spark SQL-funktioner
 topic: spark sql functions
 translation-type: tm+mt
-source-git-commit: a23ee02a9e801531a38b5ff70ef07497aa21b174
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '4903'
+ht-degree: 4%
 
 ---
 
@@ -13,9 +16,11 @@ source-git-commit: a23ee02a9e801531a38b5ff70ef07497aa21b174
 
 Spark SQL-hjälparna har inbyggda Spark SQL-funktioner som utökar SQL-funktionerna.
 
-Referens: Dokumentation för [Spark SQL-funktionen](https://spark.apache.org/docs/2.4.0/api/sql/index.html)
+Referens: [Spark SQL-funktionsdokumentation](https://spark.apache.org/docs/2.4.0/api/sql/index.html)
 
->[!NOTE] Alla funktioner i den externa dokumentationen stöds inte.
+>[!NOTE]
+>
+>Alla funktioner i den externa dokumentationen stöds inte.
 
 ## Kategorier
 
@@ -573,7 +578,9 @@ Exempel:
  0.8446490682263027
 ```
 
->[!NOTE] Den här funktionen är i allmänhet icke-deterministisk.
+>[!NOTE]
+>
+>Den här funktionen är i allmänhet icke-deterministisk.
 
 #### slumpmässig
 
@@ -590,7 +597,9 @@ Exempel:
  1.1164209726833079
 ```
 
->[!NOTE] Den här funktionen är i allmänhet icke-deterministisk.
+>[!NOTE]
+>
+>Den här funktionen är i allmänhet icke-deterministisk.
 
 #### utskrift
 
@@ -865,7 +874,7 @@ Exempel:
  2
 ```
 
-#### och
+####  och 
 
 `expr1 and expr2`: Logiskt AND.
 
@@ -1610,7 +1619,7 @@ Sedan: 2.4.0
 
 #### element_at
 
-`element_at(array, index)`: Returnerar elementet i en array vid givet (1-baserat) index. Om `index < 0`används kommer åt element från det sista till det första. Returnerar NULL om indexvärdet överskrider matrislängden.
+`element_at(array, index)`: Returnerar elementet i en array vid givet (1-baserat) index. Om `index < 0`används kommer åt element från det sista till det första. Returnerar NULL om indexvärdet överskrider arrayens längd.
 
 `element_at(map, key)`: Returnerar värdet för den angivna nyckeln eller NULL om nyckeln inte finns på kartan
 
@@ -1735,7 +1744,9 @@ Exempel:
 ```
 
 Sedan: 1.5.0
->[!NOTE] RSS-logik för arrayer är tillgänglig sedan 2.4.0.
+>[!NOTE]
+>
+>RSS-logik för arrayer är tillgänglig sedan 2.4.0.
 
 #### blanda
 
@@ -1751,7 +1762,9 @@ Exempel:
 ```
 
 Sedan: 2.4.0
->[!NOTE] funktionen är icke-deterministisk.
+>[!NOTE]
+>
+>funktionen är icke-deterministisk.
 
 #### segment
 
@@ -2386,7 +2399,9 @@ Exempel:
  46707d92-02f4-4817-8116-a4c3b23e6266
 ```
 
->[!NOTE] Funktionen är icke-deterministisk.
+>[!NOTE]
+>
+>Funktionen är icke-deterministisk.
 
 ### Utvärdering av data
 
@@ -2422,7 +2437,9 @@ Exempel:
  [1,2,3,4,5,6]
 ```
 
->[!NOTE] Det finns `concat` logik för arrayer sedan 2.4.0.
+>[!NOTE]
+>
+>`concat` logik för arrayer finns sedan 2.4.0.
 
 #### concat_ws
 
