@@ -4,24 +4,27 @@ solution: Experience Platform
 title: Skapa en datauppsättning med API:er
 topic: datasets
 translation-type: tm+mt
-source-git-commit: a6a1ecd9ce49c0a55e14b0d5479ca7315e332904
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '1263'
+ht-degree: 0%
 
 ---
 
 
 # Skapa en datauppsättning med API:er
 
-Det här dokumentet innehåller allmänna steg för att skapa en datauppsättning med API:er för Adobe Experience Platform och fylla i datauppsättningen med hjälp av en fil.
+Det här dokumentet innehåller allmänna steg för att skapa en datauppsättning med hjälp av Adobe Experience Platform-API:er och fylla i datauppsättningen med hjälp av en fil.
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Batchförtäring](../../ingestion/batch-ingestion/overview.md): Med Experience Platform kan ni importera data som gruppfiler.
-* [Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att organisera kundupplevelsedata.
-* [Sandlådor](../../sandboxes/home.md): Experience Platform innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Batchförtäring](../../ingestion/batch-ingestion/overview.md): Med Experience Platform kan du importera data som gruppfiler.
+* [Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
+* [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:erna för plattformen.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa Platform API:er.
 
 ### Läser exempel-API-anrop
 
@@ -29,17 +32,19 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>[!NOTE]
+>
+>Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -207,7 +212,9 @@ curl -X POST \
 }'
 ```
 
->[!NOTE] I den här självstudien används [parquet](https://parquet.apache.org/documentation/latest/) -filformatet för alla dess exempel. Ett exempel som använder JSON-filformatet finns i utvecklarhandboken för [batchfrågor](../../ingestion/batch-ingestion/api-overview.md)
+>[!NOTE]
+>
+>I den här självstudien används [parquet](https://parquet.apache.org/documentation/latest/) -filformatet för alla dess exempel. Ett exempel som använder JSON-filformatet finns i utvecklarhandboken för [batchfrågor](../../ingestion/batch-ingestion/api-overview.md)
 
 **Svar**
 
@@ -289,7 +296,9 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och ett svarsobjekt som inne
 
 När du har skapat en ny batch för överföring kan du nu överföra filer till den specifika datauppsättningen. Det är viktigt att komma ihåg att du angav filformatet som parquet när du definierade datauppsättningen. Filerna som du överför måste därför ha det formatet.
 
->[!NOTE] Den största dataöverföringsfilen som stöds är 512 MB. Om datafilen är större än detta måste den delas upp i segment som inte är större än 512 MB för att kunna överföras en åt gången. Du kan överföra varje fil i samma grupp genom att upprepa det här steget för varje fil med samma batch-ID. Det finns ingen gräns för hur många filer du kan överföra som en del av en grupp.
+>[!NOTE]
+>
+>Den största dataöverföringsfilen som stöds är 512 MB. Om datafilen är större än detta måste den delas upp i segment som inte är större än 512 MB för att kunna överföras en åt gången. Du kan överföra varje fil i samma grupp genom att upprepa det här steget för varje fil med samma batch-ID. Det finns ingen gräns för hur många filer du kan överföra som en del av en grupp.
 
 **API-format**
 
@@ -320,7 +329,7 @@ En överförd fil returnerar en tom svarstext och HTTP-status 200 (OK).
 
 ## Slutförande av signalbatch
 
-När du har överfört alla datafiler till gruppen kan du signalera att gruppen är slutförd. Signaleringsslutförande gör att tjänsten skapar katalogposter `DataSetFile` för de överförda filerna och associerar dem med den batch som genererats tidigare. Katalogbatchen har markerats som slutförd, vilket utlöser alla efterföljande flöden som sedan kan användas för tillgängliga data.
+När du har överfört alla datafiler till gruppen kan du signalera att gruppen är slutförd. Signaleringsslutförande gör att tjänsten skapar katalogposter `DataSetFile` för de överförda filerna och associerar dem med den batch som genererats tidigare. Katalogbatchen har markerats som slutförd, vilket utlöser eventuella efterföljande flöden som sedan kan användas för tillgängliga data.
 
 **API-format**
 
@@ -446,7 +455,9 @@ Ett negativt svar returnerar ett objekt med värdet för `"failed"` i `"status"`
 }
 ```
 
->[!NOTE] Ett rekommenderat avsökningsintervall är två minuter.
+>[!NOTE]
+>
+>Ett rekommenderat avsökningsintervall är två minuter.
 
 ## Läs data från datauppsättningen
 
@@ -464,4 +475,4 @@ Mer information om hur du uppdaterar scheman finns i Utvecklarhandbok [för](../
 
 När du har uppdaterat schemat kan du följa stegen i den här självstudiekursen igen för att importera nya data som följer det reviderade schemat.
 
-Det är viktigt att komma ihåg att schemautvecklingen är enbart additiv, vilket innebär att du inte kan införa en brytningsändring i ett schema när det har sparats i registret och använts för datahämtning. Om du vill veta mer om de effektivaste strategierna för att komponera schema för användning med Adobe Experience Platform kan du läsa guiden om [grunderna för schemakomposition](../../xdm/schema/composition.md).
+Det är viktigt att komma ihåg att schemautvecklingen är enbart additiv, vilket innebär att du inte kan införa en brytningsändring i ett schema när det har sparats i registret och använts för datahämtning. Mer information om de bästa sätten att komponera schema för användning med Adobe Experience Platform finns i guiden om [grunderna för schemakomposition](../../xdm/schema/composition.md).
