@@ -1,17 +1,20 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Mappningsfält för analyser
+title: Analytics-mappningsfält
 topic: overview
 translation-type: tm+mt
-source-git-commit: 53fb7ea201ed9361584d24c8bd2ad10edd9f3975
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '3328'
+ht-degree: 0%
 
 ---
 
 
-# Mappningsfält för analyser
+# Analytics-mappningsfält
 
-Med Adobe Experience Platform kan ni importera Adobe Analytics-data via Analytics Data Connector (ADC). Vissa data som hämtas via ADC kan mappas direkt från analysfält till XDM-fält (Experience Data Model), medan andra data kräver omformningar och specifika funktioner för att kunna mappas.
+Med Adobe Experience Platform kan du importera Adobe Analytics-data via Analytics Data Connector (ADC). Vissa data som hämtas via ADC kan mappas direkt från Analytics-fält till XDM-fält (Experience Data Model), medan andra data kräver omformningar och specifika funktioner för att kunna mappas.
 
 ![](../images/analytics-data-experience-platform.png)
 
@@ -19,11 +22,13 @@ Med Adobe Experience Platform kan ni importera Adobe Analytics-data via Analytic
 
 Utvalda fält mappas direkt från Adobe Analytics till Experience Data Model (XDM).
 
-Följande tabell innehåller kolumner som visar namnet på analysfältet (*analysfältet*), motsvarande XDM-fält (*XDM-fält*) och dess typ (*XDM-typ*) samt en beskrivning av fältet (*Beskrivning*).
+Följande tabell innehåller kolumner som visar namnet på Analytics-fältet (*Analytics-fältet*), motsvarande XDM-fält (*XDM-fält*) och dess typ (*XDM-typ*) samt en beskrivning av fältet (*Beskrivning*).
 
->[!NOTE] Rulla åt vänster/höger för att visa hela innehållet i tabellen.
+>[!NOTE]
+>
+>Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
-| Analysfält | XDM-fält | XDM-typ | Beskrivning |
+| Analytics | XDM-fält | XDM-typ | Beskrivning |
 | --------------- | --------- | -------- | ---------- |
 | m_evar1 - m_evar250 | _experience.analytics.customDimensions.eVars.eVar1 - _experience.analytics.customDimensions.eVars.eVar250 | string | En anpassad variabel som kan ligga mellan 1 och 250. Varje organisation kommer att använda dessa anpassade eVars på olika sätt. |
 | m_prop1 - m_prop75 | _experience.analytics.customDimensions.props.prop1 - _experience.analytics.customDimensions.props.prop75 | string | Anpassade trafikvariabler, som kan variera mellan 1 och 75. |
@@ -122,7 +127,7 @@ Följande tabell innehåller kolumner som visar namnet på analysfältet (*analy
 
 Dessa fält har en enda källa, men mappas till **flera** XDM-platser.
 
-| Analysfält | XDM-fält | XDM-typ | Beskrivning |
+| Analytics | XDM-fält | XDM-typ | Beskrivning |
 | --------------- | --------- | -------- | ---------- |
 | s_resolution | device.screenWidth, device.screenHeight | heltal | Numeriskt ID som representerar bildskärmens upplösning. |
 | mobileosversion | environment.operatingSystem, environment.operatingSystemVersion | string | Mobil operativsystemversion. |
@@ -132,11 +137,13 @@ Dessa fält har en enda källa, men mappas till **flera** XDM-platser.
 
 Utvalda fält från ADC måste omformas, vilket kräver logik utöver en direkt kopia från Adobe Analytics för att kunna genereras i XDM.
 
-Följande tabell innehåller kolumner som visar namnet på analysfältet (*analysfältet*), motsvarande XDM-fält (*XDM-fält*) och dess typ (*XDM-typ*) samt en beskrivning av fältet (*Beskrivning*).
+Följande tabell innehåller kolumner som visar namnet på Analytics-fältet (*Analytics-fältet*), motsvarande XDM-fält (*XDM-fält*) och dess typ (*XDM-typ*) samt en beskrivning av fältet (*Beskrivning*).
 
->[!NOTE] Rulla åt vänster/höger för att visa hela innehållet i tabellen.
+>[!NOTE]
+>
+>Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
-| Analysfält | XDM-fält | XDM-typ | Beskrivning |
+| Analytics | XDM-fält | XDM-typ | Beskrivning |
 | --------------- | --------- | -------- | ----------- |
 | m_prop1 - m_prop75 | _experience.analytics.customDimensions.listprops.prop1 - _experience.analytics.customDimensions.listprops.prop75 | Objekt | Anpassade trafikvariabler, från 1 till 75 | {} |
 | m_hier1 - m_hier5 | _experience.analytics.customDimensions.hierarchies.hier1 - _experience.analytics.customDimensions.hierarkies.hier5 | Objekt | Används av hierarkivariabler. Den innehåller en | avgränsad lista med värden. | {values (array), delimiter (string)} |
@@ -174,11 +181,11 @@ Följande tabell innehåller kolumner som visar namnet på analysfältet (*analy
 | hitid_low | _id | string | Används tillsammans med hitid_high för att unikt identifiera en träff. |
 | ip | environment.ipV4 | string | IP-adressen, baserad på HTTP-huvudet i bildbegäran. |
 | j_jscript | environment.browserDetails.javaScriptEnabled | boolesk | Den version av JavaScript som används. |
-| mcvisid_high + mcvisid_low | identityMap | object | Besökar-ID:t för Experience Cloud. |
-| mcvisid_high + mcvisid_low | endUserID:n._experience.mcid.id | string | Besökar-ID:t för Experience Cloud. |
-| mcvisid_high | endUserID:n._experience.mcid.primär | boolesk | Besökar-ID:t för Experience Cloud. |
-| mcvisid_high | endUserID:n._experience.mcid.namespace.code | string | Besökar-ID:t för Experience Cloud. |
-| mcvisid_low | identityMap | object | Besökar-ID:t för Experience Cloud. |
+| mcvisid_high + mcvisid_low | identityMap | object | Experience Cloud Visitor-ID. |
+| mcvisid_high + mcvisid_low | endUserID:n._experience.mcid.id | string | Experience Cloud Visitor-ID. |
+| mcvisid_high | endUserID:n._experience.mcid.primär | boolesk | Experience Cloud Visitor-ID. |
+| mcvisid_high | endUserID:n._experience.mcid.namespace.code | string | Experience Cloud Visitor-ID. |
+| mcvisid_low | identityMap | object | Experience Cloud Visitor-ID. |
 | sdid_high + sdid_low | _experience.target.supplementalDataID | string | Tryck på Stitching ID. Analysfältet sdid_high och sdid_low är det kompletterande data-id som används för att sammanfoga två (eller flera) inkommande träffar. |
 | mobilebeaconproximity | placeContext.POIinteraction.POIDetail.beaconInteractionDetails.proximity | string | Mobiltjänster är nära. |
 | videokort | media.mediaTimed.mediaChapter.chapterAssetReference._xmpDM.duration | heltal | Namnet på videokapitlet. |
@@ -190,11 +197,13 @@ Markera fält (så kallade postvärden) kräver mer avancerade omvandlingar inna
 
 Mer information om hur du utför dessa omvandlingar med hjälp av Query Service finns i dokumentationen för [Adobes definierade funktioner](../../../../query-service/sql/adobe-defined-functions.md) .
 
-Följande tabell innehåller kolumner som visar namnet på analysfältet (*analysfältet*), motsvarande XDM-fält (*XDM-fält*) och dess typ (*XDM-typ*) samt en beskrivning av fältet (*Beskrivning*).
+Följande tabell innehåller kolumner som visar namnet på Analytics-fältet (*Analytics-fältet*), motsvarande XDM-fält (*XDM-fält*) och dess typ (*XDM-typ*) samt en beskrivning av fältet (*Beskrivning*).
 
->[!NOTE] Rulla åt vänster/höger för att visa hela innehållet i tabellen.
+>[!NOTE]
+>
+>Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
-| Analysfält | XDM-fält | XDM-typ | Beskrivning |
+| Analytics | XDM-fält | XDM-typ | Beskrivning |
 | --------------- | --------- | -------- | ---------- |
 | post_evar1 - post_evar250 | _experience.analytics.customDimensions.eVars.eVar1 - _experience.analytics.customDimensions.eVars.eVar250 | string | En anpassad variabel som kan ligga mellan 1 och 250. Varje organisation kommer att använda dessa anpassade eVars på olika sätt. |
 | post_prop1 - post_prop75 | _experience.analytics.customDimensions.props.prop1 - _experience.analytics.customDimensions.props.prop75 | string | Anpassade trafikvariabler, som kan variera mellan 1 och 75. |
