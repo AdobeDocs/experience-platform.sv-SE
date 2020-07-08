@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Ersätta en resurs
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 67826f838951b3202a6a04321c28daa8ee883d20
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '207'
+ht-degree: 0%
 
 ---
 
@@ -15,7 +18,9 @@ Med schemaregistret kan du ersätta en hel resurs genom en PUT-åtgärd. Den hä
 
 Den här metoden är särskilt användbar om du vill uppdatera mycket information i resursen samtidigt.
 
->[!NOTE] Om du bara vill uppdatera en del av en resurs i stället för att ersätta den helt, ska du läsa dokumentet om hur du [uppdaterar en resurs med en PATCH-åtgärd](update-resource.md).
+>[!NOTE]
+>
+>Om du bara vill uppdatera en del av en resurs i stället för att ersätta den helt, ska du läsa dokumentet om hur du [uppdaterar en resurs med en PATCH-åtgärd](update-resource.md).
 
 **API-format**
 
