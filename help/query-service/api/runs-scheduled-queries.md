@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Handbok för frågetjänstutvecklare
 topic: runs for scheduled queries
 translation-type: tm+mt
-source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '659'
+ht-degree: 0%
 
 ---
 
@@ -144,7 +147,9 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över körningar för de
 }
 ```
 
->[!NOTE] Du kan använda värdet för `_links.cancel` att [stoppa en körning för en angiven schemalagd fråga](#immediately-stop-a-run-for-a-specific-scheduled-query).
+>[!NOTE]
+>
+>Du kan använda värdet för `_links.cancel` att [stoppa en körning för en angiven schemalagd fråga](#immediately-stop-a-run-for-a-specific-scheduled-query).
 
 ### Starta omedelbart ut en körning för en specifik schemalagd fråga
 
