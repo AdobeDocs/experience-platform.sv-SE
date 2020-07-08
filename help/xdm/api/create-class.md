@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Skapa en klass
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 60911e32fd9235be2a258e60818011a42cd5ceba
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '485'
+ht-degree: 0%
 
 ---
 
@@ -15,7 +18,9 @@ Den primära byggstenen för ett schema är en klass. Klassen innehåller den mi
 
 Det finns flera standardklasser från Adobe och andra Experience Platform-partners, men du kan också definiera egna klasser och spara dem i schemaregistret. Du kan sedan skapa ett schema som implementerar den klass du skapade och definiera mixiner som är kompatibla med den nyligen definierade klassen.
 
->[!NOTE] När du komponerar ett schema baserat på en klass som du definierar, kan du inte använda standardblandningar. Varje mixin definierar de klasser som de är kompatibla med i deras `meta:intendedToExtend` -attribut. När du börjar definiera blandningar som är kompatibla med den nya klassen (genom att använda den nya klassen `$id` i fältet `meta:intendedToExtend` för blandningen), kan du återanvända dessa blandningar varje gång du definierar ett schema som implementerar den klass du definierade. Mer information finns i avsnitten om [att skapa mixins](create-mixin.md) och [skapa scheman](create-schema.md) .
+>[!NOTE]
+>
+>När du komponerar ett schema baserat på en klass som du definierar, kan du inte använda standardblandningar. Varje mixin definierar de klasser som de är kompatibla med i deras `meta:intendedToExtend` -attribut. När du börjar definiera blandningar som är kompatibla med den nya klassen (genom att använda den nya klassen `$id` i fältet `meta:intendedToExtend` för blandningen), kan du återanvända dessa blandningar varje gång du definierar ett schema som implementerar den klass du definierade. Mer information finns i avsnitten om [att skapa mixins](create-mixin.md) och [skapa scheman](create-schema.md) .
 
 **API-format**
 
