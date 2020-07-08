@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Ladda ned bakgrundsmusik i kundens AI
 topic: Downloading scores
 translation-type: tm+mt
-source-git-commit: 7c892d92a50312fb4b733431737b796651689804
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '931'
+ht-degree: 0%
 
 ---
 
@@ -240,7 +243,9 @@ Kopiera `href` värdet för alla filobjekt i `data` arrayen och fortsätt till n
 
 Om du vill hämta fildata gör du en GET-begäran till det `"href"` värde du kopierade i föregående steg när du [hämtade dina filer](#retrieving-your-files).
 
->[!NOTE] Om du gör den här begäran direkt i kommandoraden kanske du uppmanas att lägga till en utdatafil efter rubrikerna i din begäran. Följande exempel på begäran använder `--output {FILENAME.FILETYPE}`.
+>[!NOTE]
+>
+>Om du gör den här begäran direkt i kommandoraden kanske du uppmanas att lägga till en utdatafil efter rubrikerna i din begäran. Följande exempel på begäran använder `--output {FILENAME.FILETYPE}`.
 
 **API-format**
 
@@ -264,7 +269,9 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/035e2520
   -O 'filename.parquet'
 ```
 
->[!TIP] Kontrollera att du är i rätt katalog eller mapp som du vill att filen ska sparas i innan du gör GET-begäran.
+>[!TIP]
+>
+>Kontrollera att du är i rätt katalog eller mapp som du vill att filen ska sparas i innan du gör GET-begäran.
 
 **Svar**
 
@@ -276,7 +283,9 @@ Svaret hämtar filen som du begärde i din aktuella katalog. I det här exemplet
 
 Ett annat sätt att ladda ned poängdata är att exportera målgruppen till en datauppsättning. När ett segmenteringsjobb har slutförts (värdet för `status` attributet är &quot;SUCCEEDED&quot;) kan du exportera målgruppen till en datauppsättning där den kan nås och hanteras. Mer information om segmentering finns i [segmenteringsöversikten](../../../segmentation/home.md).
 
->[!IMPORTANT] För att den här exportmetoden ska kunna användas måste kundprofilen i realtid aktiveras för datauppsättningen.
+>[!IMPORTANT]
+>
+>För att den här exportmetoden ska kunna användas måste kundprofilen i realtid aktiveras för datauppsättningen.
 
 Avsnittet [Exportera ett segment](../../../segmentation/tutorials/evaluate-a-segment.md) i segmentutvärderingsguiden innehåller de steg som krävs för att exportera en målgruppsdatauppsättning. Stödlinjen innehåller konturer och exempel på följande:
 
