@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Publicera en modell som en tjänst (API)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1478'
 ht-degree: 0%
@@ -40,7 +40,7 @@ I följande tabell beskrivs några vanliga termer som används i den här själv
 --- | ---
 | **Machine Learning-instans (ML-instans)** | En instans av en [!DNL Sensei] motor för en viss klientorganisation som innehåller specifika data, parametrar och [!DNL Sensei] kod. |
 | **Experimentera** | En paraplyenhet för utbildning Experiment Runs, Scoring Experiment Runs eller båda. |
-| **Schemalagd experiment** | En term som beskriver automatiseringen av utbildning eller poängsättning i Experimentprogram, som styrs av ett användardefinierat schema. |
+| **Schemalagd experiment** | En term som beskriver automatiseringen av kurser eller poängsättning i Experiment Runs som styrs av ett användardefinierat schema. |
 | **Experimentera** | Ett särskilt fall av utbildning eller poängsättningsexperiment. Multipla Experiment körs från en viss Experiment och kan skilja sig åt i datauppsättningsvärden som används för utbildning eller poängsättning. |
 | **Utbildad modell** | En maskininlärningsmodell som har skapats genom att experimentera och använda konstruktion innan den levereras till en validerad, utvärderad och färdigställd modell. |
 | **Publicerad modell** | En färdig och versionshanterad modell som tagits fram efter utbildning, validering och utvärdering. |
@@ -338,7 +338,9 @@ Ett godkänt svar returnerar information om ML-tjänsten.
 }
 ```
 
->[!NOTE] Hämtning av olika ML-tjänster kan returnera ett svar med fler eller färre nyckelvärdepar. Ovanstående svar är en representation av en [ML-tjänst med både schemalagda kurser och poängsättningsprovperioder](#ml-service-with-scheduled-experiments-for-training-and-scoring).
+>[!NOTE]
+>
+>Hämtning av olika ML-tjänster kan returnera ett svar med fler eller färre nyckelvärdepar. Ovanstående svar är en representation av en [ML-tjänst med både schemalagda kurser och poängsättningsprovperioder](#ml-service-with-scheduled-experiments-for-training-and-scoring).
 
 
 ## Schemalägg utbildning eller poängsättning
@@ -388,7 +390,9 @@ curl -X PUT 'https://platform.adobe.io/data/sensei/mlServices/{SERVICE_ID}'
       }'
 ```
 
->[!WARNING] Försök inte att ändra `startTime` befintliga schemalagda utbildnings- och poängsättningsjobb. Om mallen `startTime` måste ändras bör du överväga att publicera samma modell och att omplanera kursen och poängsättningen.
+>[!WARNING]
+>
+>Försök inte att ändra `startTime` befintliga schemalagda utbildnings- och poängsättningsjobb. Om mallen `startTime` måste ändras bör du överväga att publicera samma modell och att omplanera kursen och poängsättningen.
 
 **Svar**
 
