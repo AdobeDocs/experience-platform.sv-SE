@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform datastyrning
 topic: overview
 translation-type: tm+mt
-source-git-commit: d4964231ee957349f666eaf6b0f5729d19c408de
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1448'
 ht-degree: 0%
@@ -64,7 +64,9 @@ DULE-ramverket innehåller fördefinierade etiketter för dataanvändning som ka
 * **Identitet&quot;I&quot;-dataetiketter:** Märk och kategorisera data som kan identifiera eller kontakta en viss person.
 * **Känsliga&quot;S&quot;-dataetiketter:** Märk och kategorisera data relaterade till känsliga data, t.ex. geografiska data.
 
->[!NOTE] I guiden om [dataanvändningsetiketter](labels/reference.md) som stöds finns en fullständig lista över tillgängliga etiketter samt definitioner för varje etiketttyp.
+>[!NOTE]
+>
+>I guiden om [dataanvändningsetiketter](labels/reference.md) som stöds finns en fullständig lista över tillgängliga etiketter samt definitioner för varje etiketttyp.
 
 Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. Bästa praxis uppmuntrar till etikettering av data så snart de har importerats till [!DNL Experience Platform]eller så snart data blir tillgängliga i [!DNL Platform].
 
@@ -78,7 +80,9 @@ Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en
 
 När dataanvändningsetiketterna har tillämpats kan datahanterarna skapa principer med DULE Policy Service API eller [!DNL Experience Platform] användargränssnittet.
 
->[!IMPORTANT] Alla dataanvändningspolicyer (inklusive kärnpolicyer från Adobe) är inaktiverade som standard. För att en enskild princip ska kunna användas för verkställighet måste du manuellt aktivera den principen.
+>[!IMPORTANT]
+>
+>Alla dataanvändningspolicyer (inklusive kärnpolicyer från Adobe) är inaktiverade som standard. För att en enskild princip ska kunna användas för verkställighet måste du manuellt aktivera den principen.
 
 Mer information om dataanvändningspolicyer och marknadsföringsåtgärder finns i [policyöversikten](./policies/overview.md).
 
