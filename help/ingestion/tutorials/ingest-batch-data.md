@@ -1,31 +1,36 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Importera data till Adobe Experience Platform
+title: Infoga data i Adobe Experience Platform
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 79466c78fd78c0f99f198b11a9117c946736f47a
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '1291'
+ht-degree: 0%
 
 ---
 
 
-# Importera data till Adobe Experience Platform
+# Infoga data i Adobe Experience Platform
 
-Med Adobe Experience Platform kan ni enkelt importera data till plattformen som gruppfiler. Exempel på data som ska importeras kan vara profildata från en platt fil i ett CRM-system (t.ex. en parquet-fil) eller data som överensstämmer med ett känt XDM-schema (Experience Data Model) i schemaregistret.
+Med Adobe Experience Platform kan du enkelt importera data till Platform som gruppfiler. Exempel på data som ska importeras kan vara profildata från en platt fil i ett CRM-system (t.ex. en parquet-fil) eller data som överensstämmer med ett känt XDM-schema (Experience Data Model) i schemaregistret.
 
 ## Komma igång
 
-För att kunna slutföra den här självstudiekursen måste du ha tillgång till Experience Platform. Om du inte har tillgång till en IMS-organisation i Experience Platform, ska du tala med systemadministratören innan du fortsätter.
+Du måste ha tillgång till Experience Platform för att kunna slutföra den här självstudiekursen. Om du inte har tillgång till en IMS-organisation i Experience Platform, tala med systemadministratören innan du fortsätter.
 
 Om du föredrar att importera data med hjälp av API:er för datainmatning börjar du med att läsa [Utvecklarhandboken](../batch-ingestion/api-overview.md)för gruppinmatning.
 
 ## Arbetsytan Datauppsättningar
 
-Med arbetsytan Datauppsättningar i Experience Platform kan ni visa och hantera alla datauppsättningar som IMS-organisationen har skapat, samt skapa nya.
+På arbetsytan Datauppsättningar i Experience Platform kan du visa och hantera alla datauppsättningar som din IMS-organisation har skapat, samt skapa nya.
 
 Visa arbetsytan Datauppsättningar genom att klicka på **Datauppsättningar** i den vänstra navigeringen. Arbetsytan Datauppsättningar innehåller en lista med datauppsättningar, inklusive kolumner som visar _Namn_, _Skapad_ (datum och tid), _Källa_, _Schema_ och _Senaste gruppstatus___, samt datum och tid då datauppsättningen uppdaterades¥Last Updated¥.
 
->[!NOTE] Klicka på filterikonen bredvid sökfältet för att använda filterfunktioner för att visa endast de datauppsättningar som har aktiverats för profilen.
+>[!NOTE]
+>
+>Klicka på filterikonen bredvid sökfältet för att använda filterfunktioner för att visa endast de datauppsättningar som har aktiverats för profilen.
 
 ![Visa alla datauppsättningar](../images/tutorials/ingest-batch-data/datasets_workspace.png)
 
@@ -73,7 +78,7 @@ På fliken Info finns också en _profilväxel_ som används för att aktivera da
 
 ## Aktivera datauppsättning för kundprofil i realtid
 
-Datauppsättningar används för inmatning av data i Experience Platform, och dessa data används i slutändan för att identifiera individer och sammanfoga information som kommer från flera källor. Den sammanfogade informationen kallas kundprofil i realtid. För att Platform ska veta vilken information som ska inkluderas i realtidsprofilen kan datauppsättningar markeras för inkludering med **profilväxeln** .
+Datauppsättningar används för inmatning av data i Experience Platform, och dessa data används i slutändan för att identifiera individer och sammanfoga information från flera olika källor. Den sammanfogade informationen kallas kundprofil i realtid. För att Platform ska veta vilken information som ska ingå i realtidsprofilen kan datauppsättningar markeras för inkludering med **profilväxeln** .
 
 Den här växlingen är som standard inaktiverad. Om du väljer att växla till Profil kommer alla data som hämtas in till datauppsättningen att användas för att identifiera en individ och sammanfoga deras realtidsprofil.
 
@@ -97,13 +102,15 @@ Data kan läggas till i en datauppsättning på flera olika sätt. Du kan välja
 
 Klicka på fliken **Lägg till data** för att börja lägga till data i datauppsättningen. Nu kan du dra och släppa filer eller bläddra på datorn efter de filer du vill lägga till.
 
->[!NOTE] Plattformen har stöd för två filtyper för dataöverföring, parquet eller JSON. Du kan lägga till upp till fem filer i taget, där den maximala filstorleken för varje fil är 10 GB.
+>[!NOTE]
+>
+>Platform har stöd för två filtyper för dataöverföring, parquet eller JSON. Du kan lägga till upp till fem filer i taget, där den maximala filstorleken för varje fil är 10 GB.
 
 ![Fliken Lägg till data](../images/tutorials/ingest-batch-data/add_data.png)
 
 ## Överföra en fil
 
-När du drar och släpper (eller bläddrar och väljer) en parquet eller JSON-fil som du vill ladda upp, kommer Platform omedelbart att börja bearbeta filen och en dialogruta för **överföring** visas på fliken **Lägg till data** som visar hur överföringen av filen fortskrider.
+När du drar och släpper (eller bläddrar och väljer) en parquet eller JSON-fil som du vill ladda upp, börjar Platform omedelbart att bearbeta filen och en dialogruta för **överföring** visas på fliken **Lägg till data** som visar filöverföringen.
 
 ![Överför dialogruta](../images/tutorials/ingest-batch-data/uploading.png)
 
@@ -135,6 +142,6 @@ Klicka på **Förhandsgranska datauppsättning** för att öppna en dialogruta m
 
 ## Nästa steg
 
-Nu när du har skapat en datauppsättning och kapslat in data i Experience Platform kan du upprepa dessa steg för att skapa en ny datauppsättning eller infoga fler data i den befintliga datauppsättningen.
+Nu när du har skapat en datauppsättning och kapslat in data i Experience Platform kan du upprepa de här stegen för att skapa en ny datauppsättning eller infoga fler data i den befintliga datauppsättningen.
 
 Läs översikten över [batchförbrukning om du vill veta mer om batchförbrukning](../batch-ingestion/overview.md).
