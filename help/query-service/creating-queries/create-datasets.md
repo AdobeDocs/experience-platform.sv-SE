@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Generera datauppsättningar från frågeresultat
 topic: queries
 translation-type: tm+mt
-source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '298'
+ht-degree: 0%
 
 ---
 
@@ -16,7 +19,7 @@ Den verkliga styrkan hos Query Service visas när frågor används för att gene
 Med frågetjänsten kan du skapa datauppsättningar från användargränssnittet. Följ de här stegen:
 
 1. Skriv frågan med en ansluten klient och validera utdata.
-2. Logga in på användargränssnittet för plattformen och gå till Frågor.
+2. Logga in på Platform användargränssnitt och gå till Frågor.
 3. Leta reda på frågan i listan och hovra över raden.
 4. Klicka på **Skapa datauppsättning**. ![Bild](../images/queries/create-datasets/click-create-dataset.png)
 5. Ange ett datauppsättningsnamn som föregås av ditt LDAP-ID (behöver inte vara unikt eller SQL-säkert). systemet genererar ett&quot;tabellnamn&quot; baserat på det namn som anges här).
@@ -25,7 +28,9 @@ Med frågetjänsten kan du skapa datauppsättningar från användargränssnittet
 
 När en datauppsättning har skapats kan den nås på samma sätt som andra datauppsättningar i datasjön och användas för olika användningsområden.
 
->[!NOTE] I en aktiv implementering måste du använda datastyrningsetiketter när datauppsättningen har skapats.
+>[!NOTE]
+>
+>I en aktiv implementering måste du använda datastyrningsetiketter när datauppsättningen har skapats.
 
 ## Generera datauppsättningar med ett fördefinierat Experience Data Model-schema
 
