@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Skapa ETL-integreringar
 topic: overview
 translation-type: tm+mt
-source-git-commit: 4817162fe2b7cbf4ae4c1ed325db2af31da5b5d3
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '4227'
+ht-degree: 0%
 
 ---
 
 
 # Utveckla ETL-integreringar för Adobe Experience Platform
 
-Integreringsguiden för ETL ger en översikt över allmänna steg för att skapa säkra anslutningar med höga prestanda för Experience Platform och hämta in data i Platform.
+Integreringsguiden för ETL innehåller allmänna steg för att skapa säkra anslutningar med höga prestanda för Experience Platform och datainmatning till Platform.
 
 
 - [Katalog](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)
@@ -20,7 +23,7 @@ Integreringsguiden för ETL ger en översikt över allmänna steg för att skapa
 - [API:er för autentisering och auktorisering](../tutorials/authentication.md)
 - [Schemaregister](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)
 
-Den här guiden innehåller även exempel på API-anrop som ska användas när du utformar en ETL-koppling, med länkar till dokumentation som beskriver varje Experience Platform-tjänst och hur dess API används i detalj.
+Den här handboken innehåller även exempel på API-anrop som ska användas när du utformar en ETL-koppling, med länkar till dokumentation som beskriver varje tjänst i Experience Platform och hur API:t används i detalj.
 
 En exempelintegrering finns tillgänglig på GitHub via [ETL Ecosystem Integration Reference Code](https://github.com/adobe/acp-data-services-etl-reference) under Apache License Version 2.0.
 
@@ -34,14 +37,14 @@ Följande arbetsflödesdiagram ger en översikt på hög nivå över integration
 
 Det finns flera Experience Platform-komponenter som ingår i ETL-anslutningsintegreringar. I följande lista beskrivs flera viktiga komponenter och funktioner:
 
-- **Adobe Identity Management System (IMS)** - Tillhandahåller ramverk för autentisering till Adobes tjänster.
+- **Adobe Identity Management System (IMS)** - Tillhandahåller ett ramverk för autentisering till Adobes tjänster.
 - **IMS-organisation** - en företagsenhet som kan äga eller licensiera produkter och tjänster och ge åtkomst till sina medlemmar.
 - **IMS-användare** - medlemmar i en IMS-organisation. Relationen organisation till användare är många för många.
-- **Sandbox** - En virtuell partition är en enda plattformsinstans som hjälper dig att utveckla och utveckla program för digitala upplevelser.
+- **Sandbox** - En virtuell partition är en enda Platform-instans som hjälper dig att utveckla och utveckla program för digitala upplevelser.
 - **Dataidentifiering** - Registrerar metadata för importerade och transformerade data i Experience Platform.
-- **Dataåtkomst** - Ger användarna ett gränssnitt för att komma åt sina data i Experience Platform.
+- **Dataåtkomst** - Ger användare ett gränssnitt för att komma åt data i Experience Platform.
 - **Datainmatning** - Överför data till Experience Platform med API:er för datainmatning.
-- **Schemaregister** - Definierar och lagrar schema som beskriver strukturen för de data som ska användas i Experience Platform.
+- **Schemaregister** - Definierar och lagrar schema som beskriver datastrukturen som ska användas i Experience Platform.
 
 ## Komma igång med Experience Platform API:er
 
@@ -53,17 +56,19 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../sandboxes/home.md).
+>[!NOTE]
+>
+>Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -71,21 +76,23 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Allmänt användarflöde
 
-Till att börja med loggar en ETL-användare in på Experience Platforms användargränssnitt (UI) och skapar datauppsättningar för förtäring med hjälp av en standardanslutning eller push-tjänst-anslutning.
+Till att börja med loggar en ETL-användare in på användargränssnittet i Experience Platform och skapar datauppsättningar för förtäring med hjälp av en standardanslutning eller en push-tjänstanslutning.
 
-I användargränssnittet skapar användaren utdata genom att välja ett dataschema. Vilket schema som väljs beror på vilken typ av data (post- eller tidsserier) som hämtas till plattformen. Genom att klicka på fliken Scheman i användargränssnittet kan användaren visa alla tillgängliga scheman, inklusive den beteendetyp som schemat stöder.
+I användargränssnittet skapar användaren utdata genom att välja ett dataschema. Vilket schema som väljs beror på vilken typ av data (post- eller tidsserie) som importeras till Platform. Genom att klicka på fliken Scheman i användargränssnittet kan användaren visa alla tillgängliga scheman, inklusive den beteendetyp som schemat stöder.
 
-I ETL-verktyget kommer användaren att börja designa sina mappningstransformeringar efter att ha konfigurerat lämplig anslutning (med hjälp av sina autentiseringsuppgifter). ETL-verktyget antas redan ha Experience Platform-anslutningar installerade (processen definieras inte i den här integreringshandboken).
+I ETL-verktyget kommer användaren att börja designa sina mappningstransformeringar efter att ha konfigurerat lämplig anslutning (med hjälp av sina autentiseringsuppgifter). ETL-verktyget antas redan ha Experience Platform-anslutningar installerade (processen definieras inte i den här integreringsguiden).
 
 Mockup för ett ETL-exempelverktyg och arbetsflöde har tillhandahållits i [ETL-arbetsflödet](./workflow.md). ETL-verktygen kan ha olika format, men de flesta visar liknande funktioner.
 
->[!NOTE] ETL-kopplingen måste ange ett tidsstämpelfilter som markerar vilket datum data ska importeras och förskjutas (dvs. fönstret som data ska läsas för). ETL-verktyget bör ha stöd för att ta dessa två parametrar i det här eller ett annat relevant gränssnitt. I Adobe Experience Platform mappas dessa parametrar antingen till tillgängliga datum (om sådana finns) eller till det datum som finns i batchobjektet för datauppsättningen.
+>[!NOTE]
+>
+>ETL-kopplingen måste ange ett tidsstämpelfilter som markerar vilket datum data ska importeras och förskjutas (dvs. fönstret som data ska läsas för). ETL-verktyget bör ha stöd för att ta dessa två parametrar i det här eller ett annat relevant gränssnitt. I Adobe Experience Platform mappas dessa parametrar till antingen tillgängliga datum (om sådana finns) eller inhämtningsdatum i datauppsättningens batchobjekt.
 
 ### Visa lista med datauppsättningar
 
 Med hjälp av datakällan för mappning kan en lista över alla tillgängliga datauppsättningar hämtas med hjälp av [katalog-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml).
 
-Du kan utfärda en enda API-begäran för att visa alla tillgängliga datauppsättningar (t.ex. `GET /dataSets`) med bästa praxis att inkludera frågeparametrar som begränsar svarsstorleken.
+Du kan utfärda en enda API-begäran för att visa alla tillgängliga datauppsättningar (t.ex. `GET /dataSets`), med det bästa sättet att inkludera frågeparametrar som begränsar svarsstorleken.
 
 Om _fullständig_ datauppsättningsinformation begärs kan svarsnyttolasten nå över 3 GB, vilket kan försämra den totala prestandan. Om du använder frågeparametrar för att filtrera endast den information som behövs blir katalogfrågorna därför mer effektiva.
 
@@ -93,7 +100,7 @@ Om _fullständig_ datauppsättningsinformation begärs kan svarsnyttolasten nå 
 
 När du filtrerar svar kan du använda flera filter i ett enda anrop genom att separera parametrar med ett et-tecken (`&`). Vissa frågeparametrar accepterar kommaseparerade värdelistor, t.ex. &quot;properties&quot;-filtret i exempelbegäran nedan.
 
-Katalogsvar mäts automatiskt enligt konfigurerade gränser, men frågeparametern &quot;limit&quot; kan användas för att anpassa begränsningarna och begränsa antalet returnerade objekt. De förkonfigurerade svarsgränserna för katalog är:
+Katalogsvaren mäts automatiskt enligt konfigurerade gränser, men frågeparametern &quot;limit&quot; kan användas för att anpassa begränsningarna och begränsa antalet returnerade objekt. De förkonfigurerade svarsgränserna för katalog är:
 
 - Om ingen gränsparameter anges är det maximala antalet objekt per svarsnyttolast 20.
 - Den globala gränsen för alla andra katalogfrågor är 100 objekt.
@@ -163,7 +170,9 @@ XDM-schemat är det schema som du använder när du behöver visa en lista över
 
 Det första värdet för schemaRef.id i det föregående svarsobjektet (`https://ns.adobe.com/{TENANT_ID}/schemas/274f17bc5807ff307a046bab1489fb18`) är en URI som pekar på ett specifikt XDM-schema i schemaregistret. Schemat kan hämtas genom att en sökbegäran (GET) görs till API:t för schemaregister.
 
->[!NOTE] Egenskapen &quot;schemaRef&quot; ersätter den nu inaktuella egenskapen &quot;schema&quot;. Om &quot;schemaRef&quot; saknas i datauppsättningen eller inte innehåller något värde, måste du kontrollera om det finns en &quot;schema&quot;-egenskap. Detta kan göras genom att ersätta &quot;schemaRef&quot; med &quot;schema&quot; i frågeparametern i det föregående anropet `properties` . Mer information om egenskapen &quot;schema&quot; finns i avsnittet [Schemaegenskap](#dataset-schema-property-deprecated---eol-2019-05-30) för datauppsättningen som följer.
+>[!NOTE]
+>
+>Egenskapen &quot;schemaRef&quot; ersätter den nu inaktuella egenskapen &quot;schema&quot;. Om &quot;schemaRef&quot; saknas i datauppsättningen eller inte innehåller något värde, måste du kontrollera om det finns en &quot;schema&quot;-egenskap. Detta kan göras genom att ersätta &quot;schemaRef&quot; med &quot;schema&quot; i frågeparametern i det föregående anropet `properties` . Mer information om egenskapen &quot;schema&quot; finns i avsnittet [Schemaegenskap](#dataset-schema-property-deprecated---eol-2019-05-30) för datauppsättningen som följer.
 
 **API-format**
 
@@ -196,7 +205,9 @@ Svarsformatet beror på vilken typ av Acceptera-huvud som skickas i begäran. Up
 | `application/vnd.adobe.xed-full-notext+json; version={major version}` | $refs och allOf resolved, inga titlar eller beskrivningar |
 | `application/vnd.adobe.xed-full-desc+json; version={major version}` | $refs och allOf resolved, descriptor included |
 
->[!NOTE] `application/vnd.adobe.xed-id+json` och `application/vnd.adobe.xed-full+json; version={major version}` är de vanligaste rubrikerna. `application/vnd.adobe.xed-id+json` är att föredra om du vill visa resurser i schemaregistret eftersom endast returnerar &quot;title&quot;, &quot;id&quot; och &quot;version&quot;. `application/vnd.adobe.xed-full+json; version={major version}` är att föredra när du vill visa en viss resurs (med dess &quot;id&quot;) eftersom den returnerar alla fält (kapslade under &quot;properties&quot;) samt rubriker och beskrivningar.
+>[!NOTE]
+>
+>`application/vnd.adobe.xed-id+json` och `application/vnd.adobe.xed-full+json; version={major version}` är de vanligaste sidhuvudena. `application/vnd.adobe.xed-id+json` är att föredra om du vill visa resurser i schemaregistret eftersom endast returnerar &quot;title&quot;, &quot;id&quot; och &quot;version&quot;. `application/vnd.adobe.xed-full+json; version={major version}` är att föredra när du vill visa en viss resurs (med dess &quot;id&quot;) eftersom den returnerar alla fält (kapslade under &quot;properties&quot;) samt rubriker och beskrivningar.
 
 **Svar**
 
@@ -236,13 +247,17 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/xdms/context/pers
   -H "x-api-key: {API_KEY}"
 ```
 
->[!NOTE] En valfri frågeparameter, `expansion=xdm`anger att API:t ska expandera och infoga alla refererade scheman. Du kanske vill göra detta när du visar en lista över alla möjliga fält för användaren.
+>[!NOTE]
+>
+>En valfri frågeparameter, `expansion=xdm`anger att API:t ska expandera och infoga alla refererade scheman. Du kanske vill göra detta när du visar en lista över alla möjliga fält för användaren.
 
 **Svar**
 
 På samma sätt som stegen för att [visa dataschemat](#view-dataset-schema)innehåller svaret ett JSON-schema som beskriver strukturen och fältnivåinformationen för data, serialiserat som JSON.
 
->[!NOTE] När schemafältet är tomt eller helt saknas, bör kopplingen läsa fältet &quot;schemaRef&quot; och använda API:t [för](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml) schemaregister enligt föregående steg för att [visa ett datamängdsschema](#view-dataset-schema).
+>[!NOTE]
+>
+>När schemafältet är tomt eller helt saknas, bör kopplingen läsa fältet &quot;schemaRef&quot; och använda API:t [för](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml) schemaregister enligt föregående steg för att [visa ett datamängdsschema](#view-dataset-schema).
 
 ### Egenskapen &quot;observerableSchema&quot;
 
@@ -476,9 +491,9 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets/59c93f3d
 }
 ```
 
-Data skrivs till Experience Platform med hjälp av API:t för [datainmatning](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml).  Att skriva data är en asynkron process. När data skrivs till Adobe Experience Platform skapas en batch som markeras som lyckad först när alla data har skrivits.
+Data skrivs till Experience Platform med hjälp av API:t för [datainmatning](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml).  Att skriva data är en asynkron process. När data skrivs till Adobe Experience Platform skapas en batch och markeras som lyckad först när alla data har skrivits.
 
-Data i Experience Platform bör skrivas i form av parquetfiler.
+Data i Experience Platform ska skrivas i form av parquetfiler.
 
 ## Körningsfas
 
@@ -490,7 +505,7 @@ Exemplet på [ETL-omformningsdokument](./transformations.md) innehåller ett ant
 
 ### Läs data från Experience Platform
 
-Med hjälp av [katalog-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)kan du hämta alla grupper mellan en angiven starttid och sluttid och sortera dem i den ordning som de skapades.
+Med hjälp av [katalog-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)kan du hämta alla grupper mellan en viss starttid och sluttid och sortera dem i den ordning som de skapades.
 
 **Begäran**
 
@@ -559,7 +574,9 @@ Om du använder den referensimplementering som finns på [GitHub](https://github
 
 Validering kan utföras för logiska XDM-typer, med attribut som `minLength` och `maxlength` för strängar `minimum` och `maximum` för heltal med mera. Utvecklarhandboken [för](../xdm/api/getting-started.md) schematabellens API innehåller en tabell som visar XDM-typer och de egenskaper som kan användas för validering.
 
->[!NOTE] Minimi- och maximivärdena för olika `integer` typer är de MIN- och MAX-värden som typen kan hantera, men dessa värden kan begränsas ytterligare till de minimi- och maximivärden du väljer.
+>[!NOTE]
+>
+>Minimi- och maximivärdena för olika `integer` typer är de MIN- och MAX-värden som typen kan hantera, men dessa värden kan begränsas ytterligare till de minimi- och maximivärden du väljer.
 
 ### Skapa en batch
 
@@ -587,7 +604,7 @@ När en ny grupp har skapats kan filer sedan överföras till en viss datauppsä
 
 **Begäran**
 
-Data i Experience Platform bör skrivas i form av parquetfiler.
+Data i Experience Platform ska skrivas i form av parquetfiler.
 
 ```shell
 curl -X PUT "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/dataSets/{DATASET_ID}/files/{FILE_NAME}.parquet" \
@@ -603,7 +620,7 @@ curl -X PUT "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 När alla filer har överförts till gruppen kan gruppen signaleras för slutförande. På så sätt skapas katalogens DataSetFile-poster för de slutförda filerna och kopplas till genereringsgruppen. Katalogbatchen markeras sedan som lyckad, vilket utlöser flödesomgångar för att importera tillgängliga data.
 
-Data kommer först att landas på mellanlagringsplatsen på Adobe Experience Platform och sedan flyttas till den slutliga platsen efter katalogisering och validering. Batchar markeras som lyckade när alla data har flyttats till en permanent plats.
+Data landas först på mellanlagringsplatsen Adobe Experience Platform och flyttas sedan till den slutliga platsen efter katalogisering och validering. Batchar markeras som lyckade när alla data har flyttats till en permanent plats.
 
 **Begäran**
 
@@ -742,9 +759,9 @@ När ögonblicksbildsprofiler används måste ETL-verktyget välja den sista gru
 
 Batchrepriser och dataombearbetning kan behövas om en klient upptäcker att de data som behandlas i ETL inte har utförts som förväntat under de senaste &#39;n&#39; dagarna, eller om själva källdata inte har varit korrekta.
 
-För att göra detta använder klientens dataadministratörer plattformsgränssnittet för att ta bort de batchar som innehåller skadade data. Därefter kommer ETL sannolikt att behöva köras igen, vilket innebär att korrekta data fylls i igen. Om själva källan innehåller skadade data måste datateknikern/administratören korrigera källsatserna och importera data igen (antingen till Adobe Experience Platform eller via ETL-anslutningar).
+För att göra detta använder klientens dataadministratörer Platform-gränssnittet för att ta bort de batchar som innehåller skadade data. Därefter kommer ETL sannolikt att behöva köras igen, vilket innebär att korrekta data fylls i igen. Om själva källan innehåller skadade data måste datateknikern/administratören korrigera källgrupperna och importera data igen (antingen i Adobe Experience Platform eller via ETL-anslutningar).
 
-Beroende på vilken typ av data som genereras blir det datateknikerns val att ta bort en enda batch eller alla batchar från vissa datauppsättningar. Data tas bort/arkiveras enligt riktlinjerna för Experience Platform.
+Beroende på vilken typ av data som genereras blir det datateknikerns val att ta bort en enda batch eller alla batchar från vissa datauppsättningar. Data kommer att tas bort/arkiveras enligt Experience Platform riktlinjer.
 
 Det är sannolikt ett scenario där ETL-funktionen för att rensa data är viktig.
 
@@ -764,7 +781,7 @@ För källbatchar är den beroende av klientinställningar och kundbegränsning.
 
 Uppskov är en process där indata ännu inte är tillräckligt fullständiga för att skickas ut till processer längre fram i kedjan, men kan användas i framtiden. Kunderna bestämmer sin individuella tolerans för datarutor för framtida matchning jämfört med kostnaden för bearbetning för att kunna fatta beslut om att ta bort data och bearbeta dem på nytt i nästa omformningskörning, i hopp om att de kan berikas och sys.k. sys.k. vid någon framtida tidpunkt i kvarhållningsfönstret. Denna cykel pågår tills raden behandlas tillräckligt eller den anses vara för gammal för att fortsätta investera. Varje iteration genererar fördröjda data som är en överordnad mängd av alla fördröjda data i tidigare iterationer.
 
-Adobe Experience Platform identifierar för närvarande inte fördröjda data, så klientimplementeringar måste förlita sig på manuella konfigurationer för ETL och datauppsättning för att skapa en annan datauppsättning i plattformen som speglar källdatauppsättningen som kan användas för att behålla fördröjda data. I det här fallet liknar fördröjda data ögonblicksbildsdata. Vid varje körning av ETL-omvandlingen kommer källdata att förenas med fördröjda data och skickas för behandling.
+Adobe Experience Platform identifierar för närvarande inte fördröjda data, så klientimplementeringar måste förlita sig på manuella konfigurationer för ETL och datauppsättning för att skapa en annan datauppsättning i Platform som speglar källdatauppsättningen som kan användas för att behålla fördröjda data. I det här fallet liknar fördröjda data ögonblicksbildsdata. Vid varje körning av ETL-omvandlingen kommer källdata att förenas med fördröjda data och skickas för behandling.
 
 ## Changelog
 
