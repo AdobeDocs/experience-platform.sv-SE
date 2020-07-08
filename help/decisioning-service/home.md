@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Beslutstjänst
 topic: overview
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1592'
 ht-degree: 0%
@@ -68,7 +68,9 @@ Du kan använda [!DNL Decisioning Service] i ett synkront interaktionsläge för
 
 Användning av [!DNL Decisioning Service] är valfritt och kräver bara några få steg utöver de vanliga stegen som krävs för att skapa [!DNL Profile] enheter och hantera dem.
 
->[!NOTE] För att få ut så mycket som möjligt av [!DNL Real-time Customer Profile]programmet kan du integrera det [!DNL Decisioning Service] direkt med profilarkivet. API-anropen behöver bara ange en av identiteterna för en viss profil.
+>[!NOTE]
+>
+>För att få ut så mycket som möjligt av [!DNL Real-time Customer Profile]programmet kan du integrera det [!DNL Decisioning Service] direkt med profilarkivet. API-anropen behöver bara ange en av identiteterna för en viss profil.
 
 Den typiska stegsekvensen börjar med att bygga ut profiler:
 
