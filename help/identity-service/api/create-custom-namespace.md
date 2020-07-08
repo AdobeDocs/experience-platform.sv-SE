@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa ett anpassat namnutrymme
 topic: API guide
 translation-type: tm+mt
-source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '75'
 ht-degree: 2%
@@ -18,7 +18,9 @@ Med API:t kan du skapa ett anpassat ID-namnutrymme som bara är tillgängligt f�
 
 Rekommendationer om hur du skapar anpassade namnutrymmen finns [i dokumentationen](../troubleshooting-guide.md)om vanliga frågor om identitetstjänsten.
 
->[!NOTE] Namnutrymmen är en kvalificerare för identiteter. När ett namnutrymme har skapats kan det därför inte tas bort.
+>[!NOTE]
+>
+>Namnutrymmen är en kvalificerare för identiteter. När ett namnutrymme har skapats kan det därför inte tas bort.
 
 **API-format**
 
