@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Motorer
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 76f68fea1bea970bab4c25061527b7ebae33faf3
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1118'
 ht-degree: 0%
@@ -44,6 +44,8 @@ curl -X GET https://platform.adobe.io/data/sensei/engines/dockerRegistry \
 Ett godkänt svar returnerar en nyttolast som innehåller information om Docker-registret inklusive Docker-URL (`host`), användarnamn (`username`) och lösenord (`password`).
 
 >[!NOTE]
+>
+>
 >Dockerlösenordet ändras när du `{ACCESS_TOKEN}` uppdaterar.
 
 ```json
@@ -383,7 +385,9 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den ön
 
 Du kan ändra och uppdatera en befintlig motor genom att skriva över dess egenskaper via en PUT-begäran som inkluderar målmotorns ID i den begärda sökvägen och som tillhandahåller en JSON-nyttolast som innehåller uppdaterade egenskaper.
 
->[!NOTE] För att säkerställa att denna PUT-begäran lyckas föreslår vi att du först utför en GET-begäran för att [hämta motorn via ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
+>[!NOTE]
+>
+>För att säkerställa att denna PUT-begäran lyckas föreslår vi att du först utför en GET-begäran för att [hämta motorn via ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
 
 Följande exempel på API-anrop uppdaterar en motors namn och beskrivning samtidigt som dessa egenskaper initialt används:
 
