@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Behandling av sekretessförfrågningar i Data Lake
 topic: overview
 translation-type: tm+mt
-source-git-commit: 327be13cbaaa40e4d0409cbb49a051b7067759bf
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1274'
 ht-degree: 0%
@@ -39,7 +39,9 @@ Mer information om namnutrymmen för identiteter i Experience Platform finns i �
 
 När du skapar sekretessförfrågningar för Data Lake måste giltiga identitetsvärden (och tillhörande namnutrymmen) anges för varje enskild kund för att deras data ska kunna hittas och bearbetas därefter. Därför måste alla datauppsättningar som omfattas av sekretessförfrågningar innehålla en **identitetsbeskrivare** i deras associerade XDM-schema.
 
->[!NOTE] Datauppsättningar som baseras på scheman som inte stöder metadata för identitetsbeskrivare (t.ex. ad hoc-datauppsättningar) kan för närvarande inte behandlas i sekretessförfrågningar.
+>[!NOTE]
+>
+>Datauppsättningar som baseras på scheman som inte stöder metadata för identitetsbeskrivare (t.ex. ad hoc-datauppsättningar) kan för närvarande inte behandlas i sekretessförfrågningar.
 
 I det här avsnittet går vi igenom stegen för att lägga till en identitetsbeskrivare i ett befintligt datamängds XDM-schema. Om du redan har en datauppsättning med en identitetsbeskrivning kan du hoppa till [nästa avsnitt](#nested-maps).
 
@@ -60,7 +62,9 @@ När du har angett rätt fält i schemat som identitetsfält kan du gå vidare t
 
 ### Använda API {#identity-api}
 
->[!NOTE] I det här avsnittet antas du känna till det unika URI-ID-värdet för datauppsättningens XDM-schema. Om du inte känner till det här värdet kan du hämta det med hjälp av katalogtjänstens API. När du har läst avsnittet [Komma igång](./api/getting-started.md) i utvecklarhandboken följer du stegen som beskrivs i för att [lista](./api/list-objects.md) eller [söka efter](./api/look-up-object.md) katalogobjekt för att hitta datauppsättningen. Schema-ID:t finns under `schemaRef.id`
+>[!NOTE]
+>
+>I det här avsnittet antas du känna till det unika URI-ID-värdet för datauppsättningens XDM-schema. Om du inte känner till det här värdet kan du hämta det med hjälp av katalogtjänstens API. När du har läst avsnittet [Komma igång](./api/getting-started.md) i utvecklarhandboken följer du stegen som beskrivs i för att [lista](./api/list-objects.md) eller [söka efter](./api/look-up-object.md) katalogobjekt för att hitta datauppsättningen. Schema-ID:t finns under `schemaRef.id`
 >
 > Det här avsnittet innehåller anrop till API:t för schemaregistret. Viktig information om hur du använder API:t, inklusive hur du känner till ditt innehåll `{TENANT_ID}` och konceptet med behållare, finns i avsnittet [Komma igång](../xdm/api/getting-started.md) i utvecklarhandboken.
 
@@ -126,7 +130,9 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och information om den nyska
 
 ## Skicka begäranden {#submit}
 
->[!NOTE] I det här avsnittet beskrivs hur du formaterar sekretessförfrågningar för Data Lake. Vi rekommenderar att du läser [Privacy Servicens API](../privacy-service/ui/overview.md) - eller [Privacy Services-API](../privacy-service/api/getting-started.md) -dokumentation för att få information om hur du skickar ett sekretessjobb, inklusive hur inskickade användaridentitetsdata formateras korrekt i nyttolaster.
+>[!NOTE]
+>
+>I det här avsnittet beskrivs hur du formaterar sekretessförfrågningar för Data Lake. Vi rekommenderar att du läser [Privacy Servicens API](../privacy-service/ui/overview.md) - eller [Privacy Services-API](../privacy-service/api/getting-started.md) -dokumentation för att få information om hur du skickar ett sekretessjobb, inklusive hur inskickade användaridentitetsdata formateras korrekt i nyttolaster.
 
 I följande avsnitt beskrivs hur du gör sekretessförfrågningar för Data Lake med Privacy Servicens gränssnitt eller API.
 
