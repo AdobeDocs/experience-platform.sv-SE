@@ -4,18 +4,21 @@ solution: Experience Platform
 title: Handbok för sandlådeanvändare
 topic: user guide
 translation-type: tm+mt
-source-git-commit: 6438c1841889ff345e1ebaedabfed0531c1f97f9
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '514'
+ht-degree: 0%
 
 ---
 
 
 # Handbok för sandlådeanvändare
 
-Det här dokumentet innehåller steg om hur du utför olika åtgärder relaterade till sandlådor i användargränssnittet för Adobe Experience Platform.
+Det här dokumentet innehåller steg om hur du utför olika åtgärder som rör sandlådor i användargränssnittet i Adobe Experience Platform.
 
 ## Visa sandlådor
 
-I Experience Platform-gränssnittet klickar du på **Sandlådor** i den vänstra navigeringen för att öppna _kontrollpanelen för sandlådor_ . På kontrollpanelen visas alla tillgängliga sandlådor för din organisation, inklusive sandlådetyp (produktion eller utveckling) och tillstånd (aktiv, skapa, borttagen eller misslyckades).
+I användargränssnittet för Experience Platform klickar du på **Sandlådor** i den vänstra navigeringen för att öppna kontrollpanelen för _sandlådor_ . På kontrollpanelen visas alla tillgängliga sandlådor för din organisation, inklusive sandlådetyp (produktion eller utveckling) och tillstånd (aktiv, skapa, borttagen eller misslyckades).
 
 ![](../images/ui/sandboxes-tab.png)
 
@@ -45,7 +48,9 @@ När du är klar klickar du på **Skapa**.
 
 ![](../images/ui/create-sandbox-dialog.png)
 
->[!NOTE] Eftersom du endast är begränsad till att skapa icke-produktionssandlådtyper, är **typalternativet** låst till &quot;Ej produktion&quot; och kan inte ändras.
+>[!NOTE]
+>
+>Eftersom du endast är begränsad till att skapa icke-produktionssandlådtyper, är **typalternativet** låst till &quot;Ej produktion&quot; och kan inte ändras.
 
 När du har skapat sandlådan uppdaterar du sidan och den nya sandlådan visas på _kontrollpanelen för sandlådor_ med statusen&quot;Skapar&quot;. Nya sandlådor tar ca 15 minuter att etablera av systemet, varefter deras status ändras till&quot;Aktiv&quot;.
 
@@ -53,7 +58,9 @@ När du har skapat sandlådan uppdaterar du sidan och den nya sandlådan visas p
 
 ## Återställ en sandlåda
 
->[!NOTE] Den här funktionen är bara tillgänglig för icke-produktionssandlådor. Det går inte att återställa produktionssandlådor.
+>[!NOTE]
+>
+>Den här funktionen är bara tillgänglig för icke-produktionssandlådor. Det går inte att återställa produktionssandlådor.
 
 Om du återställer en icke-produktionssandlåda tas alla resurser som är associerade med den sandlådan (scheman, datauppsättningar o.s.v.) bort, samtidigt som sandlådans namn och associerade behörigheter behålls. Den här&quot;rena&quot; sandlådan är fortfarande tillgänglig under samma namn för användare som har åtkomst till den.
 
@@ -71,7 +78,9 @@ Ett bekräftelsemeddelande visas och sandlådans tillstånd ändras till &quot;R
 
 ## Ta bort en sandlåda
 
->[!NOTE] Den här funktionen är bara tillgänglig för icke-produktionssandlådor. Det går inte att ta bort produktionssandlådor.
+>[!NOTE]
+>
+>Den här funktionen är bara tillgänglig för icke-produktionssandlådor. Det går inte att ta bort produktionssandlådor.
 
 Om du tar bort en icke-produktionssandlåda permanent tas alla resurser som är associerade med den sandlådan bort, inklusive behörigheter.
 
