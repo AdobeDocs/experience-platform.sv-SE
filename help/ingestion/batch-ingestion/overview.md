@@ -1,10 +1,13 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Översikt över batchintag i Adobe Experience Platform
+title: Översikt över Adobe Experience Platform batchmatning
 topic: overview
 translation-type: tm+mt
-source-git-commit: 79466c78fd78c0f99f198b11a9117c946736f47a
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '1170'
+ht-degree: 1%
 
 ---
 
@@ -48,17 +51,19 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] Mer information om sandlådor i plattformen finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>[!NOTE]
+>
+>Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -123,7 +128,9 @@ När du har skapat en ny batch för överföring kan filer sedan överföras til
 
 Du kan överföra filer med API:t för överföring av **liten fil**. Om filerna är för stora och gatewaygränsen överskrids (t.ex. utökade tidsgränser, begäranden om kroppsstorlek överskrids och andra begränsningar) kan du växla till API:t för **stor filöverföring**. Denna API överför filen i segment och sammanfogar data med API-anropet **Large File Upload Complete** .
 
->[!NOTE] Exemplen nedan använder [filformatet parquet](https://parquet.apache.org/documentation/latest/) . Ett exempel som använder JSON-filformatet finns i utvecklarhandboken för [batchimport](./api-overview.md).
+>[!NOTE]
+>
+>Exemplen nedan använder [filformatet parquet](https://parquet.apache.org/documentation/latest/) . Ett exempel som använder JSON-filformatet finns i utvecklarhandboken för [batchimport](./api-overview.md).
 
 ### Liten filöverföring
 
