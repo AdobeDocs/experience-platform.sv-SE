@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa ett schema med Schemaredigeraren
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: b3fa5a17c3a5c2406d368d165da63f2f8c01154d
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '3409'
 ht-degree: 0%
@@ -84,7 +84,9 @@ Arbetsytan visas igen. Avsnittet *Klass* innehåller nu den klass du har valt (e
 
 Fälten visas i formatet &quot;fieldName | Datatyp&quot;. Steg för att definiera schemafält i användargränssnittet finns senare i den här självstudiekursen.
 
->[!NOTE] Du kan [ändra schemaklassen](#change-class) när som helst under den inledande dispositionsprocessen innan schemat har sparats, men detta bör göras med yttersta försiktighet. Blandningar är bara kompatibla med vissa klasser. Om du ändrar klassen återställs arbetsytan och alla fält du har lagt till.
+>[!NOTE]
+>
+>Du kan [ändra schemaklassen](#change-class) när som helst under den inledande dispositionsprocessen innan schemat har sparats, men detta bör göras med yttersta försiktighet. Blandningar är bara kompatibla med vissa klasser. Om du ändrar klassen återställs arbetsytan och alla fält du har lagt till.
 
 ## Lägga till en blandning {#mixin}
 
@@ -108,7 +110,9 @@ Arbetsytan för schemat visas igen. Avsnittet *Mixins* visar nu blandningen &quo
 
 Den här blandningen bidrar med flera fält under namnet&quot;person&quot; på den översta nivån med datatypen&quot;person&quot;. Den här gruppen med fält beskriver information om en individ, inklusive namn, födelsedatum och kön.
 
->[!NOTE] Kom ihåg att fält kan använda skalära typer (till exempel sträng, heltal, matris eller datum) som datatyp, samt alla&quot;datatyper&quot; (en grupp fält som representerar ett gemensamt koncept) i schemaregistret.
+>[!NOTE]
+>
+>Kom ihåg att fält kan använda skalära typer (till exempel sträng, heltal, matris eller datum) som datatyp, samt alla&quot;datatyper&quot; (en grupp fält som representerar ett gemensamt koncept) i schemaregistret.
 
 Observera att fältet &quot;name&quot; har datatypen &quot;Person Name&quot;, vilket innebär att det beskriver ett vanligt koncept och innehåller namnrelaterade underfält som förnamn, efternamn och fullständigt namn.
 
@@ -247,7 +251,9 @@ Nu kommer alla data som hämtas in i fältet&quot;loyaltyId&quot; att användas 
 
 ![](../images/tutorials/create-schema/loyaltyId_primary_identity.png)
 
->[!NOTE] När ett schemafält har angetts som primär identitet får du ett felmeddelande om du senare försöker ange ett annat fält i schemat som primärt. Varje schema får endast innehålla ett primärt identitetsfält.
+>[!NOTE]
+>
+>När ett schemafält har angetts som primär identitet får du ett felmeddelande om du senare försöker ange ett annat fält i schemat som primärt. Varje schema får endast innehålla ett primärt identitetsfält.
 
 Mer information om hur du arbetar med identiteter finns i dokumentationen för [identitetstjänsten](../../identity-service/home.md) .
 
@@ -279,7 +285,9 @@ Klicka på **Profil** så visas ett popup-fönster där du ombeds bekräfta att 
 
 ![](../images/tutorials/create-schema/enable_unified_profile.png)
 
->[!NOTE] När ett schema har aktiverats för kundprofil i realtid och sparats kan det inte inaktiveras.
+>[!NOTE]
+>
+>När ett schema har aktiverats för kundprofil i realtid och sparats kan det inte inaktiveras.
 
 ## Nästa steg
 
@@ -303,13 +311,17 @@ Du kan sedan ge den nya klassen ett **visningsnamn** (ett kort, beskrivande, uni
 
 ![Ny klassinformation](../images/tutorials/create-schema/create_new_class.png)
 
->[!NOTE] När du skapar ett schema som implementerar en klass som definierats av din organisation, måste du komma ihåg att mixar bara är tillgängliga för användning med kompatibla klasser. Eftersom den klass du definierade är ny finns det inga kompatibla blandningar i listan i dialogrutan *Lägg till mixning* . I stället måste du välja **Skapa ny mixning** och definiera en mixin som ska användas med den klassen. Nästa gång du skapar ett schema som implementerar den nya klassen, kommer den mixin som du definierade att listas och vara tillgänglig för användning.
+>[!NOTE]
+>
+>När du skapar ett schema som implementerar en klass som definierats av din organisation, måste du komma ihåg att mixar bara är tillgängliga för användning med kompatibla klasser. Eftersom den klass du definierade är ny finns det inga kompatibla blandningar i listan i dialogrutan *Lägg till mixning* . I stället måste du välja **Skapa ny mixning** och definiera en mixin som ska användas med den klassen. Nästa gång du skapar ett schema som implementerar den nya klassen, kommer den mixin som du definierade att listas och vara tillgänglig för användning.
 
 ### Ändra klassen för ett schema {#change-class}
 
 Du kan när som helst under den inledande schemakompositionsprocessen, innan schemat sparas, ändra den klass som schemat baseras på.
 
->[!WARNING] Var försiktig innan du byter klass. Blandningar är bara kompatibla med vissa klasser. Om du ändrar klassen återställs arbetsytan och alla fält som du har lagt till tas bort.
+>[!WARNING]
+>
+>Var försiktig innan du byter klass. Blandningar är bara kompatibla med vissa klasser. Om du ändrar klassen återställs arbetsytan och alla fält som du har lagt till tas bort.
 
 Om du vill ändra klassen klickar du på **Tilldela** bredvid *Klass* i *dispositionsdelen* av redigeraren.
 
