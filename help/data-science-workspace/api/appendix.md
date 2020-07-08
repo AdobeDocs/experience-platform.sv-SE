@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Bilaga
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '298'
 ht-degree: 1%
@@ -27,7 +27,9 @@ API:t [!DNL Sensei Machine Learning] har stöd för frågeparametrar med hämtni
 | `orderby` | Anger de egenskaper som ska användas för sortering i prioritetsordning. Inkludera ett streck (**-**) före ett egenskapsnamn om du vill sortera i fallande ordning, annars sorteras resultaten i stigande ordning. | `orderby=created` |
 | `property` | Anger det jämförelseuttryck som ett objekt måste uppfylla för att kunna returneras. | `property=deleted==false` |
 
->[!NOTE] När du kombinerar flera frågeparametrar måste de avgränsas med et-tecken (**&amp;**).
+>[!NOTE]
+>
+>När du kombinerar flera frågeparametrar måste de avgränsas med et-tecken (**&amp;**).
 
 ## Python CPU- och GPU-konfigurationer {#cpu-gpu-config}
 
@@ -66,7 +68,9 @@ Följande är ett exempel på konfiguration som anger hur du använder en CPU f�
 ]
 ```
 
->[!NOTE] Värdena för `cpus` och `gpus` anger inte antalet CPU:er eller grafikprocessorer, utan antalet fysiska datorer. Dessa värden är tillåtna `"1"` och genererar i annat fall ett undantag.
+>[!NOTE]
+>
+>Värdena för `cpus` och `gpus` anger inte antalet CPU:er eller grafikprocessorer, utan antalet fysiska datorer. Dessa värden är tillåtna `"1"` och genererar i annat fall ett undantag.
 
 ## Resurskonfigurationer för PySpark och Spark {#resource-config}
 
