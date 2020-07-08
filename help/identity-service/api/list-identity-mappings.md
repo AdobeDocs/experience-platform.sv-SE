@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Visa identitetsmappningar
 topic: API guide
 translation-type: tm+mt
-source-git-commit: df85ea955b7a308e6be1e2149fcdfb4224facc53
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '248'
+ht-degree: 0%
 
 ---
 
@@ -62,7 +65,9 @@ curl -X GET \
 
 Använd `POST` metoden som en batchmotsvarighet till den `GET` metod som beskrivs ovan för att hämta mappningar för flera identiteter.
 
->[!NOTE] Begäran får inte innehålla fler än 1 000 identiteter. Begäranden som överskrider 1 000 identiteter resulterar i 400-statuskod.
+>[!NOTE]
+>
+>Begäran får inte innehålla fler än 1 000 identiteter. Begäranden som överskrider 1 000 identiteter resulterar i 400-statuskod.
 
 **API-format**
 
