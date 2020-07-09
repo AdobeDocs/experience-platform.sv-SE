@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över partiell gruppinmatning i Adobe Experience Platform
 topic: overview
 translation-type: tm+mt
-source-git-commit: 83bb1ade8dbd9b1a166eb627d5d5d5eda987fa19
+source-git-commit: 0be45675e4a2e3308cb77a8bbe3189f09c2b6fd8
 workflow-type: tm+mt
-source-wordcount: '1189'
+source-wordcount: '1188'
 ht-degree: 0%
 
 ---
@@ -103,7 +103,7 @@ Om du vill använda en befintlig datauppsättning börjar du med att välja en d
 
 ![](../images/batch-ingestion/partial-ingestion/monitor-dataset.png)
 
-Med växlingsknappen [!UICONTROL *[!UICONTROL Partial ingestion]*] kan du aktivera eller inaktivera användning av partiell gruppinmatning.
+Med *[!UICONTROL Partial ingestion]* växlingsknappen kan du aktivera eller inaktivera användning av partiell gruppinmatning.
 
 Växlingsknappen *[!UICONTROL Error diagnostics]* visas bara när *[!UICONTROL Partial ingestion]* växlingsknappen är inaktiverad. Med den här funktionen kan du [!DNL Platform] generera detaljerade felmeddelanden om dina inkapslade batchar. Om *[!UICONTROL Partial ingestion]* växeln är aktiverad aktiveras förbättrad feldiagnostik automatiskt.
 
