@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa ett schema med Schemaredigeraren
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d55dc9776968099901325c58506c5e322449368e
 workflow-type: tm+mt
-source-wordcount: '3409'
+source-wordcount: '3462'
 ht-degree: 0%
 
 ---
@@ -289,13 +289,25 @@ Klicka på **Profil** så visas ett popup-fönster där du ombeds bekräfta att 
 >
 >När ett schema har aktiverats för kundprofil i realtid och sparats kan det inte inaktiveras.
 
-## Nästa steg
+## Nästa steg och ytterligare resurser
 
 Nu när du är klar med att komponera ett&quot;Loyalty Members&quot;-schema kan du se hela schemat i *strukturdelen* i redigeraren. Klicka på **Spara** så sparas schemat i schemabiblioteket så att det blir tillgängligt för schemaregistret.
 
 Ditt nya schema kan nu användas för att importera data till Platform. Kom ihåg att när schemat väl har använts för att importera data får endast additiva ändringar göras. Mer information om schemaversion finns i [grunderna för schemakomposition](../schema/composition.md) .
 
 Schemat &quot;Bonusmedlemmar&quot; är också tillgängligt för att visas och hanteras med API:t för schemaregister. Börja med att läsa utvecklarhandboken [för](../api/getting-started.md)schematabellens API när du vill börja arbeta med API:t.
+
+>[!WARNING]
+>
+>Gränssnittet [!DNL Platform] som visas i följande videofilmer är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
+
+I följande video visas hur du skapar ett enkelt schema i [!DNL Platform] användargränssnittet.
+
+>[!VIDEO](https://video.tv.adobe.com/v/27012?quality=12&learn=on)
+
+Följande video är tänkt att förstärka din förståelse för att arbeta med mixiner och klasser.
+
+>[!VIDEO](https://video.tv.adobe.com/v/27013?quality=12&learn=on)
 
 ## Bilaga
 
