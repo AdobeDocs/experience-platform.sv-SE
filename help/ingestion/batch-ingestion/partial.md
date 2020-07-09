@@ -4,16 +4,16 @@ solution: Experience Platform
 title: Översikt över partiell gruppinmatning i Adobe Experience Platform
 topic: overview
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 83bb1ade8dbd9b1a166eb627d5d5d5eda987fa19
 workflow-type: tm+mt
-source-wordcount: '795'
+source-wordcount: '1189'
 ht-degree: 0%
 
 ---
 
 
 
-# Delvis batchintag (beta)
+# Partiellt batchintag
 
 Partiell batchförbrukning är möjligheten att importera data som innehåller fel, upp till en viss tröskel. Med den här funktionen kan användare importera alla korrekta data till Adobe Experience Platform samtidigt som alla felaktiga data grupperas separat, tillsammans med information om varför de är ogiltiga.
 
@@ -21,102 +21,117 @@ Det här dokumentet innehåller en självstudiekurs för hantering av partiell b
 
 I [bilagan](#appendix) till den här självstudien finns dessutom en referens för feltyper av partiell gruppinmatning.
 
->[!IMPORTANT]
->
->Den här funktionen finns bara med API:t. Kontakta ditt team för att få tillgång till den här funktionen.
-
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande kunskap om de olika Adobe Experience Platform-tjänster som är involverade i partiell batchförbrukning. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-- [Batchförtäring](./overview.md): Metoden som Platform importerar och lagrar data från datafiler, till exempel CSV och Parquet.
+- [Batchförtäring](./overview.md): Den metod som används för att [!DNL Platform] importera och lagra data från datafiler, till exempel CSV och Parquet.
 - [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att ordna kundupplevelsedata.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa Platform API:er.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API: [!DNL Platform] er.
 
 ### Läser exempel-API-anrop
 
-Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
-## Aktivera en datauppsättning för partiell batchinmatning i API:t
+## Aktivera en batch för partiell batchimport i API {#enable-api}
 
-<!-- >[!NOTE] This section describes enabling a dataset for partial batch ingestion using the API. For instructions on using the UI, please read the [enable a dataset for partial batch ingestion in the UI](#enable-a-dataset-for-partial-batch-ingestion-in-the-ui) step. -->
+>[!NOTE]
+>
+>I det här avsnittet beskrivs hur du aktiverar en batch för partiell batchimport med API:t. Instruktioner om hur du använder användargränssnittet finns i [Aktivera en batch för partiell gruppförbrukning i](#enable-ui) användargränssnittssteget.
 
-Du kan skapa en ny datauppsättning eller ändra en befintlig datauppsättning med partiellt intag aktiverat.
+Du kan skapa en ny grupp med partiellt intag aktiverat.
 
-Om du vill skapa en ny datauppsättning följer du stegen i [Skapa en datauppsättning-självstudiekurs](../../catalog/api/create-dataset.md). När du har nått steget *Skapa en datauppsättning* lägger du till följande fält i begärandetexten:
+Om du vill skapa en ny batch följer du stegen i [Utvecklarhandbok](./api-overview.md)för batchimport. När du har nått steget *Skapa grupp* lägger du till följande fält i begärandetexten:
 
 ```json
 {
     ...
-    "tags" : {
-        "partialBatchIngestion":["errorThresholdPercentage:5"]
-    },
+    "enableErrorDiagnostics": true,
+    "partialIngestionPercentage": 5
     ...
 }
 ```
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `errorThresholdPercentage` | Procentandelen godtagbara fel innan hela gruppen misslyckas. |
+| `enableErrorDiagnostics` | En flagga som gör [!DNL Platform] att du kan generera detaljerade felmeddelanden om din batch. |
+| `partialIngestionPercentage` | Procentandelen godtagbara fel innan hela gruppen misslyckas. I det här exemplet kan alltså maximalt 5 % av batchen vara fel, innan den misslyckas. |
 
-Om du vill ändra en befintlig datauppsättning följer du stegen i [Utvecklarhandbok](../../catalog/api/update-object.md)för katalog.
 
-I datauppsättningen måste du lägga till taggen som beskrivs ovan.
-
-<!-- ## Enable a dataset for partial batch ingestion in the UI
+## Aktivera en batch för partiell batchförbrukning i användargränssnittet {#enable-ui}
 
 >[!NOTE]
 >
->This section describes enabling a dataset for partial batch ingestion using the UI. If you have already enabled a dataset for partial batch ingestion using the API, you can skip ahead to the next section.
+>I det här avsnittet beskrivs hur du aktiverar en batch för partiell batchförbrukning med användargränssnittet. Om du redan har aktiverat en batch för partiell gruppinmatning med API:t kan du hoppa fram till nästa avsnitt.
 
-To enable a dataset for partial ingestion through the Platform UI, click **Datasets** in the left navigation. You can either [create a new dataset](#create-a-new-dataset-with-partial-batch-ingestion-enabled) or [modify an existing dataset](#modify-an-existing-dataset-to-enable-partial-batch-ingestion).
+Om du vill aktivera en batch för partiell förtäring via [!DNL Platform] användargränssnittet kan du skapa en ny batch via källanslutningar, skapa en ny batch i en befintlig datauppsättning eller skapa en ny batch via&quot;[!UICONTROL Map CSV to XDM flow]&quot;.
 
-### Create a new dataset with partial batch ingestion enabled
+### Skapa en ny källanslutning {#new-source}
 
-To create a new dataset, follow the steps in the [dataset user guide](../../catalog/datasets/user-guide.md). Once you reach the *Configure dataset* step, take note of the *Partial Ingestion* and *Error Diagnostics* fields.
+Om du vill skapa en ny källanslutning följer du stegen i listan i [Källöversikt](../../sources/home.md). När du har kommit till *[!UICONTROL Dataflow detail]* steget bör du tänka på *[!UICONTROL Partial ingestion]* - och *[!UICONTROL Error diagnostics]* fälten.
 
-![](../images/batch-ingestion/partial-ingestion/configure-dataset-focus.png)
+![](../images/batch-ingestion/partial-ingestion/configure-batch.png)
 
-The *Partial ingestion* toggle allows you to enable or disable the use of partial batch ingestion.
+Med *[!UICONTROL Partial ingestion]* växlingsknappen kan du aktivera eller inaktivera användning av partiell gruppinmatning.
 
-The *Error Diagnostics* toggle only appears when the *Partial Ingestion* toggle is off. This feature allows Platform to generate detailed error messages about your ingested batches. If the *Partial Ingestion* toggle is turned on, enhanced error diagnostics are automatically enforced.
+Växlingsknappen *[!UICONTROL Error diagnostics]* visas bara när *[!UICONTROL Partial ingestion]* växlingsknappen är inaktiverad. Med den här funktionen kan du [!DNL Platform] generera detaljerade felmeddelanden om dina inkapslade batchar. Om *[!UICONTROL Partial ingestion]* växeln är aktiverad aktiveras förbättrad feldiagnostik automatiskt.
 
-![](../images/batch-ingestion/partial-ingestion/configure-dataset-partial-ingestion-focus.png)
+![](../images/batch-ingestion/partial-ingestion/configure-batch-partial-ingestion-focus.png)
 
-The *Error threshold* allows you to set the percentage of acceptable errors before the entire batch will fail. By default, this value is set to 5%.
+Med *[!UICONTROL Error threshold]* den kan du ange procentandelen godtagbara fel innan hela gruppen misslyckas. Som standard är värdet 5 %.
 
-### Modify an existing dataset to enable partial batch ingestion
+### Använd en befintlig datauppsättning {#existing-dataset}
 
-To modify an existing dataset, select the dataset you want to modify. The sidebar on the right populates with information about the dataset. 
+Om du vill använda en befintlig datauppsättning börjar du med att välja en datauppsättning. Sidlisten till höger innehåller information om datauppsättningen.
 
-![](../images/batch-ingestion/partial-ingestion/modify-dataset-focus.png)
+![](../images/batch-ingestion/partial-ingestion/monitor-dataset.png)
 
-The *Partial ingestion* toggle allows you to enable or disable the use of partial batch ingestion.
+Med växlingsknappen [!UICONTROL *[!UICONTROL Partial ingestion]*] kan du aktivera eller inaktivera användning av partiell gruppinmatning.
 
-The *Error threshold* allows you to set the percentage of acceptable errors before the entire batch will fail. By default, this value is set to 5%. -->
+Växlingsknappen *[!UICONTROL Error diagnostics]* visas bara när *[!UICONTROL Partial ingestion]* växlingsknappen är inaktiverad. Med den här funktionen kan du [!DNL Platform] generera detaljerade felmeddelanden om dina inkapslade batchar. Om *[!UICONTROL Partial ingestion]* växeln är aktiverad aktiveras förbättrad feldiagnostik automatiskt.
 
-## Hämta fel för partiell gruppinmatning
+![](../images/batch-ingestion/partial-ingestion/monitor-dataset-partial-ingestion-focus.png)
+
+Med *[!UICONTROL Error threshold]* den kan du ange procentandelen godtagbara fel innan hela gruppen misslyckas. Som standard är värdet 5 %.
+
+Nu kan du överföra data med knappen **Lägg till data** , och den kommer att importeras delvis.
+
+### Använd flödet &quot;[!UICONTROL Map CSV to XDM schema]&quot; {#map-flow}
+
+Om du vill använda &quot;[!UICONTROL Map CSV to XDM schema]&quot;-flödet följer du stegen i [Mappa en CSV-fil i självstudiekursen](../tutorials/map-a-csv-file.md). När du kommer till steget *Lägg till data* ska du tänka på *[!UICONTROL Partial ingestion]* - och *[!UICONTROL Error diagnostics]* fälten.
+
+![](../images/batch-ingestion/partial-ingestion/xdm-csv-workflow.png)
+
+Med *[!UICONTROL Partial ingestion]* växlingsknappen kan du aktivera eller inaktivera användning av partiell gruppinmatning.
+
+Växlingsknappen *[!UICONTROL Error diagnostics]* visas bara när *[!UICONTROL Partial ingestion]* växlingsknappen är inaktiverad. Med den här funktionen kan du [!DNL Platform] generera detaljerade felmeddelanden om dina inkapslade batchar. Om *[!UICONTROL Partial ingestion]* växeln är aktiverad aktiveras förbättrad feldiagnostik automatiskt.
+
+![](../images/batch-ingestion/partial-ingestion/xdm-csv-workflow-partial-ingestion-focus.png)
+
+Med *[!UICONTROL Error threshold]* den kan du ange procentandelen godtagbara fel innan hela gruppen misslyckas. Som standard är värdet 5 %.
+
+## Hämta fel för partiell gruppinmatning {#retrieve-errors}
 
 Om batchar innehåller fel måste du hämta felinformation om dessa fel så att du kan importera data igen.
 
-### Kontrollera status
+### Kontrollera status {#check-status}
 
 Om du vill kontrollera status för den kapslade batchen måste du ange batchens ID i sökvägen till en GET-begäran.
 
@@ -149,6 +164,9 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om batchst
     "af838510-2233-11ea-acf0-f3edfcded2d2": {
         "status": "success",
         "tags": {
+            ...
+            "acp_enableErrorDiagnostics": true,
+            "acp_partialIngestionPercent": 5
             ...
         },
         "relatedObjects": [
@@ -183,7 +201,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om batchst
 
 Om batchen har ett fel och feldiagnostik är aktiverat, kommer statusen att vara &quot;success&quot; med mer information om felet som finns i en hämtningsbar felfil.
 
-## Nästa steg
+## Nästa steg {#next-steps}
 
 I den här självstudiekursen beskrivs hur du skapar eller ändrar en datauppsättning för att aktivera partiell gruppinmatning. Mer information om batchintag finns i Utvecklarhandbok för [batchintag](./api-overview.md).
 
