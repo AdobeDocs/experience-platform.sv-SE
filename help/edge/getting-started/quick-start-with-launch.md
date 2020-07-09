@@ -4,17 +4,17 @@ seo-title: Adobe Experience Platform Web SDK snabbstart med Launch
 description: Snabbstartsguide för hur du använder Experience Platform Web SDK-tillägget för att samla in data
 seo-description: Snabbstartsguide för hur du använder Experience Platform Web SDK-tillägget för att samla in data
 translation-type: tm+mt
-source-git-commit: 3f52def8318f57cfc6534e15415d172e768a8614
+source-git-commit: 9b8bddf39301cdc39bfa5370ef98d99434fc64f8
 workflow-type: tm+mt
-source-wordcount: '531'
-ht-degree: 0%
+source-wordcount: '553'
+ht-degree: 1%
 
 ---
 
 
 # Välkommen
 
-Den här guiden tar dig igenom de olika stegen för hur du konfigurerar Adobe Experience Platform Web SDK i Adobe Launch. Du måste ha behörighet och vara i listan över tillåtna för att kunna använda den här funktionen. Om du vill komma med på väntelistan kontaktar du din CSM. Om du vill använda den här funktionen måste du dessutom:
+Den här guiden tar dig igenom de olika stegen för hur du konfigurerar Adobe Experience Platform Web SDK i Adobe Launch. Du måste ha behörighet och vara på tillåtelselista för att kunna använda den här funktionen. Om du vill komma med på väntelistan kontaktar du din CSM. Om du vill använda den här funktionen måste du dessutom:
 
 - Ha en [förstapartsdomän (CNAME)](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-first-party.html) aktiverad. Om du redan har en CNAME för Adobe Analytics bör du använda den. Testning under utveckling fungerar utan CNAME, men du behöver en innan du går till produktion
 - Använd den senaste versionen av tjänsten för besökar-ID
@@ -25,7 +25,7 @@ Du kan skapa ett konfigurations-ID med hjälp av [edge-konfigurationsverktyget](
 
 >[!NOTE]
 >
->Din organisation måste finnas i listan över tillåtna för funktionen. Kontakta din CSM för att få tillgång till listan över tillåtna användare.
+>Din organisation måste vara på tillåtelselista för att kunna använda funktionen. Kontakta din CSM om du vill lägga till i tillåtelselista.
 
 ## Förbered ett schema
 
@@ -33,6 +33,10 @@ Experience Platform Edge Network tar data som XDM. XDM är ett dataformat som g�
 
 - [Skapa ett schema](../../xdm/tutorials/create-schema-ui.md)
 - Lägg till Adobe Experience Platform Web SDK-mixin i det schema du skapade
+
+Följande video är avsedd att stödja dig när du skapar ett schema, en datauppsättning och en direktuppspelningskälla för dina Web SDK-data.
+
+>[!VIDEO](https://video.tv.adobe.com/v/35395?quality=12&learn=on)
 
 ## Installera SDK i Adobe Launch
 
