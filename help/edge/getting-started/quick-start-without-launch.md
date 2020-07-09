@@ -1,23 +1,23 @@
 ---
 title: Snabbstart med oformaterad javascript
-seo-title: 'Adobe Experience Platform Web SDK - snabbstart '
-description: Snabbstartsguide för användning av Experience Platform Web SDK för att samla in data
-seo-description: Snabbstartsguide för användning av Experience Platform Web SDK för att samla in data
+seo-title: 'Snabbstart för Adobe Experience Platform Web SDK '
+description: Snabbstartsguide för att använda Experience Platform Web SDK för att samla in data
+seo-description: Snabbstartsguide för att använda Experience Platform Web SDK för att samla in data
 translation-type: tm+mt
-source-git-commit: f401780aa6b11f230506bfca1a747839fc6ae389
+source-git-commit: 9b8bddf39301cdc39bfa5370ef98d99434fc64f8
 workflow-type: tm+mt
-source-wordcount: '515'
-ht-degree: 0%
+source-wordcount: '537'
+ht-degree: 1%
 
 ---
 
 
 # Välkommen
 
-Den här guiden leder dig igenom de olika sätten att konfigurera Adobe Experience Platform Web SDK. Om du vill kunna använda den här funktionen måste du finnas med i listan över tillåtna. Om du vill komma med på väntelistan kontaktar du din CSM.
+Den här guiden leder dig igenom de olika sätten att konfigurera Adobe Experience Platform Web SDK. För att kunna använda den här funktionen måste du vara på tillåtelselista. Om du vill komma med på väntelistan kontaktar du din CSM.
 
-- Ha en [förstapartsdomän (CNAME)](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-first-party.html) aktiverad. Om du redan har en CNAME for Analytics bör du använda den. Testning under utveckling fungerar utan CNAME, men du behöver en innan du går till produktion
-- Du har rätt till Adobe Experience Platform Data Platform.  Om du inte har köpt Platform tillhandahåller vi dig Experience Platform Data Services Foundation för användning i begränsad omfattning med SDK utan extra kostnad.
+- Ha en [förstapartsdomän (CNAME)](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-first-party.html) aktiverad. Om du redan har en CNAME för Analytics bör du använda den. Testning under utveckling fungerar utan CNAME, men du behöver en innan du går till produktion
+- Ha rätt till Adobe Experience Platform Data Platform.  Om du inte har köpt Platform kommer vi att förse dig med Experience Platform Data Services Foundation för användning med SDK utan extra kostnad.
 - Använd den senaste versionen av tjänsten för besökar-ID
 
 ## Skapa ett konfigurations-ID
@@ -26,7 +26,7 @@ Du kan skapa ett konfigurations-ID med [Edge-konfigurationsverktyget](../fundame
 
 >[!NOTE]
 >
->Din organisation måste finnas i listan över tillåtna för funktionen. Kontakta din CSM för att få plats i listan över tillåtna användare.
+>Din organisation måste vara på tillåtelselista för att kunna använda funktionen. Kontakta din CSM om du vill ta dig till tillåtelselista.
 
 ## Förbered ett schema
 
@@ -34,6 +34,10 @@ Experience Platform Edge Network tar data som XDM. XDM är ett dataformat som g�
 
 - [Skapa ett schema](../../xdm/tutorials/create-schema-ui.md)
 - Lägg till Adobe Experience Platform Web SDK-mixin i det schema du skapade
+
+Följande video är avsedd att stödja dig när du skapar ett schema, en datauppsättning och en direktuppspelningskälla för dina Web SDK-data.
+
+>[!VIDEO](https://video.tv.adobe.com/v/35395?quality=12&learn=on)
 
 ## Installera SDK
 
