@@ -1,9 +1,9 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Hjälp om Adobes Experience Platform Privacy Service
+user-guide-title: Hjälp om Adobe Experience Platform Privacy Service
 translation-type: tm+mt
-source-git-commit: 63412f07b2e9237bbceaee8f1febef3ff655c286
+source-git-commit: 8c617631f2c1eb58871ed5eb0c9218cd943764cb
 workflow-type: tm+mt
 source-wordcount: '87'
 ht-degree: 2%
@@ -11,20 +11,20 @@ ht-degree: 2%
 ---
 
 
-# Integritetstjänst för Adobe Experience Platform {#privacy}
+# Adobe Experience Platform Privacy Service {#privacy}
 
-* [Översikt över Integritetstjänst](home.md)
-* [Integritetstjänst och Experience Cloud-program](experience-cloud-apps.md)
+* [Översikt över Privacy Servicen](home.md)
+* [Privacy Service och Experience Cloud](experience-cloud-apps.md)
+* [Identitetsdata för sekretessförfrågningar](identity-data.md)
 * [Översikt över JS-bibliotek för sekretess](js-library.md)
-* Sekretessservice-API {#api}
+* Privacy Services-API {#api}
    * [Komma igång](api/getting-started.md)
    * [Sekretessjobb](api/privacy-jobs.md)
    * [Godkännande](api/consent.md)
    * [Bilaga](api/appendix.md)
-* Sekretessgränssnitt {#ui}
-   * [Översikt över användargränssnittet för sekretesstjänsten](ui/overview.md)
-   * [Användarhandbok för Integritetstjänst](ui/user-guide.md)
-* [Identitetsdata för sekretessförfrågningar](identity-data.md)
+* Privacy Servicens användargränssnitt {#ui}
+   * [Översikt över användargränssnittet i Privacy Service](ui/overview.md)
+   * [Användarhandbok för Privacy Service](ui/user-guide.md)
 * [Prenumerera på sekretesshändelser](privacy-events.md)
 * GDPR-guider {#gdpr}
    * [Vanliga frågor om GDPR](gdpr/faq.md)
