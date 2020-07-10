@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Utvecklarhandbok för kundprofil-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: c0b059d6654a98b74be5bc6a55f360c4dc2f216b
 workflow-type: tm+mt
-source-wordcount: '666'
+source-wordcount: '668'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Med beräknade attribut kan du automatiskt beräkna fältvärden baserat på and
 
 Adobe Experience Platform möjliggör personalisering av kundupplevelser i realtid genom att göra data lättillgängliga på strategiskt placerade servrar som kallas&quot;kanter&quot;. Real-time Customer Profile API innehåller slutpunkter för att arbeta med kanter via komponenter som kallas för &quot;projektioner&quot;. Detta inkluderar projektionskonfigurationer för att bestämma vilka data som ska projiceras för varje kant, liksom projektionsdestinationer för att definiera var projektionen ska dirigeras. Detaljerad information om hur du arbetar med kantprojektioner finns i guiden [för](edge-projections.md)projektionskonfigurationer och destinationspunkter.
 
-## Enheter
+## Enheter (profilåtkomst) {#entities}
 
 Via Adobe Experience Platform får du åtkomst till kundprofildata i realtid med RESTful API:er eller användargränssnittet. Om du vill lära dig hur du får åtkomst till enheter, som ofta kallas&quot;profiler&quot;, med API:t, följer du stegen som beskrivs i slutpunktshandboken för [enheter](entities.md). Mer information om hur du får åtkomst till profiler med hjälp av användargränssnittet i Platform finns i användarhandboken för [profilen](../ui/user-guide.md).
 
