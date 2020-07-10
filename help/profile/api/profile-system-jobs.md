@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Profilsystemjobb - Kundprofils-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: d1656635b6d082ce99f1df4e175d8dd69a63a43a
+source-git-commit: c0b059d6654a98b74be5bc6a55f360c4dc2f216b
 workflow-type: tm+mt
-source-wordcount: '1503'
+source-wordcount: '1466'
 ht-degree: 0%
 
 ---
@@ -38,10 +38,10 @@ GET /system/jobs?{QUERY_PARAMETERS}
 
 | Parameter | Beskrivning |
 |---|---|
-| `start` | Förskjut den returnerade resultatsidan enligt skapandetiden för begäran. Exempel: `start=4` |
-| `limit` | Begränsa antalet returnerade resultat. Exempel: `limit=10` |
-| `page` | Returnera en specifik resultatsida enligt skapandetiden för begäran. Exempel: `page=2` |
-| `sort` | Sortera resultaten efter ett specifikt fält i stigande (`asc`) eller fallande (`desc`) ordning. Sorteringsparametern fungerar inte när flera resultatsidor returneras. Exempel: `sort=batchId:asc` |
+| `start` | Förskjut den returnerade resultatsidan enligt skapandetiden för begäran. Exempel: *`start=4`* |
+| `limit` | Begränsa antalet returnerade resultat. Exempel: *`limit=10`* |
+| `page` | Returnera en specifik resultatsida enligt skapandetiden för begäran. Exempel: ***`page=2`*** |
+| `sort` | Sortera resultaten efter ett specifikt fält i stigande (*`asc`*) eller fallande (**`desc`**) ordning. Sorteringsparametern fungerar inte när flera resultatsidor returneras. Exempel: `sort=batchId:asc` |
 
 **Begäran**
 
@@ -91,11 +91,11 @@ Svaret innehåller en &quot;children&quot;-array med ett objekt för varje bortt
 
 | Egenskap | Beskrivning |
 |---|---|
-| _page.count | Totalt antal begäranden. Svaret har trunkerats för utrymme. |
-| _page.next | Om det finns ytterligare en resultatsida kan du visa nästa resultatsida genom att ersätta ID-värdet i en [sökbegäran](#view-a-specific-delete-request) med nästa angivna värde. |
-| jobType | Den typ av jobb som skapas. I det här fallet returneras alltid &quot;DELETE&quot;. |
-| status | Status för borttagningsbegäran. Möjliga värden är &quot;NEW&quot;, &quot;PROCESSING&quot;, &quot;COMPLETED&quot;, &quot;ERROR&quot;. |
-| mått | Ett objekt som innehåller antalet poster som har bearbetats (&quot;recordsProcsed&quot;) och tiden i sekunder som begäran har bearbetats, eller hur lång tid det tog att slutföra begäran (&quot;timeTakenInSec&quot;). |
+| `_page.count` | Totalt antal begäranden. Svaret har trunkerats för utrymme. |
+| `_page.next` | Om det finns ytterligare en resultatsida kan du visa nästa resultatsida genom att ersätta ID-värdet i en [sökbegäran](#view-a-specific-delete-request) med det angivna `"next"` värdet. |
+| `jobType` | Den typ av jobb som skapas. I det här fallet kommer det alltid att returneras `"DELETE"`. |
+| `status` | Status för borttagningsbegäran. Möjliga värden är `"NEW"`, `"PROCESSING"`, `"COMPLETED"`, `"ERROR"`. |
+| `metrics` | Ett objekt som innehåller antalet poster som har bearbetats (`"recordsProcessed"`) och tiden i sekunder som begäran har bearbetats, eller hur lång tid det tog att slutföra begäran (`"timeTakenInSec"`). |
 
 ## Skapa en borttagningsbegäran {#create-a-delete-request}
 
@@ -131,11 +131,11 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 |---|---|
-| dataSetId | **(Obligatoriskt)** ID:t för den datauppsättning som du vill ta bort. |
+| `dataSetId` | **(Obligatoriskt)** ID:t för den datauppsättning som du vill ta bort. |
 
 **Svar**
 
-Ett lyckat svar returnerar information om den nyligen skapade borttagningsbegäran, inklusive ett unikt, systemgenererat, skrivskyddat ID för begäran. Detta kan användas för att slå upp begäran och kontrollera dess status. Begäran `status` när den skapas är `"NEW"` tills bearbetningen börjar. Svaret `dataSetId` i bör matcha det `dataSetId` som skickats i begäran.
+Ett lyckat svar returnerar information om den nyligen skapade borttagningsbegäran, inklusive ett unikt, systemgenererat, skrivskyddat ID för begäran. Detta kan användas för att slå upp begäran och kontrollera dess status. Begäran **`status`** när den skapas är *`"NEW"`* tills bearbetningen börjar. Svaret **`dataSetId`** i bör matcha det ***`dataSetId`*** som skickats i begäran.
 
 ```json
 {
@@ -151,15 +151,15 @@ Ett lyckat svar returnerar information om den nyligen skapade borttagningsbegär
 
 | Egenskap | Beskrivning |
 |---|---|
-| id | Det unika, systemgenererade skrivskyddade ID:t för borttagningsbegäran. |
-| dataSetId | Datamängdens ID, enligt POST-begäran. |
+| `id` | Det unika, systemgenererade skrivskyddade ID:t för borttagningsbegäran. |
+| `dataSetId` | Datamängdens ID, enligt POST-begäran. |
 
 ### Ta bort en grupp
 
 Om du vill ta bort en batch måste batch-ID:t inkluderas i BOKFÖR-begäran. Observera att du inte kan ta bort grupper för datauppsättningar baserat på postscheman. Endast grupper för datauppsättningar som baseras på tidsseriescheman kan tas bort.
 
 >[!NOTE]
-> Orsaken till att du inte kan ta bort batchar för datauppsättningar baserade på postscheman är att datauppsättningsbatchar skriver över tidigare poster och därför inte kan ångras eller tas bort. Det enda sättet att ta bort effekten av felaktiga batchar för datauppsättningar som baseras på postscheman är att importera gruppen med rätt data för att skriva över felaktiga poster.
+> Orsaken till att du inte kan ta bort batchar för datauppsättningar baserade på postscheman är att datauppsättningsbatchar skriver över tidigare poster och därför inte kan ångras eller tas bort. Det enda sättet att ta bort effekten av felaktiga batchar för datauppsättningar som baseras på postscheman är att importera om gruppen med rätt data för att skriva över felaktiga poster.
 
 Mer information om hur post- och tidsserier fungerar finns i [avsnittet om XDM-databeteenden](../../xdm/home.md#data-behaviors) i översikten över XDM-systemet.
 
@@ -186,11 +186,11 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 |---|---|
-| batchId | **(Obligatoriskt)** ID:t för gruppen som du vill ta bort. |
+| `batchId` | **(Obligatoriskt)** ID:t för gruppen som du vill ta bort. |
 
 **Svar**
 
-Ett lyckat svar returnerar information om den nyligen skapade borttagningsbegäran, inklusive ett unikt, systemgenererat, skrivskyddat ID för begäran. Detta kan användas för att slå upp begäran och kontrollera dess status. Status för begäran när den skapas är&quot;NYTT&quot; tills bearbetningen börjar. BatchId i svaret ska matcha det batchId som skickades i begäran.
+Ett lyckat svar returnerar information om den nyligen skapade borttagningsbegäran, inklusive ett unikt, systemgenererat, skrivskyddat ID för begäran. Detta kan användas för att slå upp begäran och kontrollera dess status. Begäran `"status"` när den skapas är `"NEW"` tills bearbetningen börjar. Svaret `"batchId"` i bör matcha det `"batchId"` som skickats i begäran.
 
 ```json
 {
@@ -206,8 +206,8 @@ Ett lyckat svar returnerar information om den nyligen skapade borttagningsbegär
 
 | Egenskap | Beskrivning |
 |---|---|
-| id | Det unika, systemgenererade skrivskyddade ID:t för borttagningsbegäran. |
-| batchId | Batchens ID, enligt POST-begäran. |
+| `id` | Det unika, systemgenererade skrivskyddade ID:t för borttagningsbegäran. |
+| `batchId` | Batchens ID, enligt POST-begäran. |
 
 Om du försöker initiera en borttagningsbegäran för en postdatauppsättningsbatch kommer du att få ett 400-nivåfel, som följande:
 
@@ -237,7 +237,7 @@ GET /system/jobs/{DELETE_REQUEST_ID}
 
 | Parameter | Beskrivning |
 |---|---|
-| {DELETE_REQUEST_ID} | **(Obligatoriskt)** ID:t för borttagningsbegäran som du vill visa. |
+| `{DELETE_REQUEST_ID}` | **(Obligatoriskt)** ID:t för borttagningsbegäran som du vill visa. |
 
 **Begäran**
 
@@ -269,11 +269,11 @@ Svaret innehåller information om borttagningsbegäran, inklusive dess uppdatera
 
 | Egenskaper | Beskrivning |
 |---|---|
-| jobType | Den typ av jobb som skapas returnerar alltid &quot;DELETE&quot;. |
-| status | Status för borttagningsbegäran. Möjliga värden: &quot;NEW&quot;, &quot;PROCESSING&quot;, &quot;COMPLETED&quot;, &quot;ERROR&quot;. |
-| mått | En array som innehåller antalet poster som har bearbetats (&quot;recordsProcsed&quot;) och tiden i sekunder som begäran har bearbetats, eller hur lång tid det tog att slutföra begäran (&quot;timeTakenInSec&quot;). |
+| `jobType` | Den typ av jobb som skapas returneras alltid `"DELETE"`. |
+| `status` | Status för borttagningsbegäran. Möjliga värden: `"NEW"`, `"PROCESSING"`, `"COMPLETED"`, `"ERROR"`. |
+| `metrics` | En array som innehåller antalet poster som har bearbetats (`"recordsProcessed"`) och tiden i sekunder som begäran har bearbetats, eller hur lång tid det tog att slutföra begäran (`"timeTakenInSec"`). |
 
-När status för borttagningsbegäran är&quot;SLUTFÖRD&quot; kan du bekräfta att data har tagits bort genom att försöka komma åt borttagna data med hjälp av API:t för dataåtkomst. Instruktioner om hur du använder API:t för dataåtkomst för att komma åt datauppsättningar och grupper finns i [dataåtkomstdokumentationen](../../data-access/home.md).
+När status för borttagningsbegäran är `"COMPLETED"` du kan bekräfta att data har tagits bort genom att försöka komma åt borttagna data med API:t för dataåtkomst. Instruktioner om hur du använder API:t för dataåtkomst för att komma åt datauppsättningar och grupper finns i [dataåtkomstdokumentationen](../../data-access/home.md).
 
 ## Ta bort en borttagningsbegäran
 
