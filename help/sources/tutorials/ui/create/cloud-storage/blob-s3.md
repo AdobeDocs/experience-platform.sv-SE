@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Skapa en Azure Blob- eller Amazon S3-källanslutning i gränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: 3f1c3c77a0755a3e305da0fb8a234be0f0ee1863
 workflow-type: tm+mt
-source-wordcount: '610'
-ht-degree: 1%
+source-wordcount: '613'
+ht-degree: 0%
 
 ---
 
@@ -80,6 +80,6 @@ Om du vill ansluta ett befintligt konto väljer du det [!DNL Blob] eller S3-kont
 
 ![befintlig](../../../../images/tutorials/create/blob/existing.png)
 
-## Nästa steg
+## Nästa steg och ytterligare resurser
 
 Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Blob] eller ditt S3-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till Platform](../../dataflow/batch/cloud-storage.md).
