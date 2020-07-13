@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Segmentering för flera enheter
 topic: overview
 translation-type: tm+mt
-source-git-commit: 902ba5efbb5f18a2de826fffd023195d804309cc
+source-git-commit: 7110be2654e55ea411580f8c9e2e92bb52badab5
+workflow-type: tm+mt
+source-wordcount: '406'
+ht-degree: 0%
 
 ---
 
@@ -13,15 +16,17 @@ source-git-commit: 902ba5efbb5f18a2de826fffd023195d804309cc
 
 Multientitetssegmentering är möjligheten att utöka profildata med ytterligare data baserat på produkter, butiker eller andra icke-profilklasser. När de är anslutna blir data från ytterligare klasser tillgängliga som om de vore inbyggda i profilschemat.
 
-Mer information om segmentering av flera enheter finns i [segmenteringsöversikten](./home.md).
+Om du vill veta mer om segmentering för flera enheter kan du fortsätta att läsa dokumentationen och komplettera din inlärning genom att titta på videon nedan eller utforska [segmenteringsöversikten](./home.md).]
+
+>[!VIDEO](https://video.tv.adobe.com/v/28947?quality=12&learn=on)
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse för de olika Adobe Experience Platform-tjänsterna som är involverade i användningen av segmentering. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
+Den här självstudiekursen kräver en fungerande förståelse för de olika Adobe Experience Platform-tjänster som används för segmentering. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 - [Kundprofil](../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid, baserad på aggregerade data från flera källor.
-- [Adobe Experience Platform Segmentation Service](./home.md): Gör att ni kan bygga segment utifrån kundprofilen i realtid.
-- [Experience Data Model (XDM)](../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
+- [Segmenteringstjänsten](./home.md)Adobe Experience Platform: Gör att ni kan bygga segment utifrån kundprofilen i realtid.
+- [Experience Data Model (XDM)](../xdm/home.md): Det standardiserade ramverk som Platform använder för att ordna kundupplevelsedata.
 
 ## Definiera XDM-relationer
 
