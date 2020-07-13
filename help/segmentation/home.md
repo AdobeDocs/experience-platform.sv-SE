@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Segmenteringstjänsten Adobe Experience Platform
 topic: overview
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 1c9b50f8f71e917b86c34b061df7e2da6fe475a2
 workflow-type: tm+mt
-source-wordcount: '2386'
+source-wordcount: '2408'
 ht-degree: 0%
 
 ---
@@ -129,6 +129,10 @@ Genom att tilldela en variabel till inköpsattributet förenklar ditt dynamiska 
 Med den avancerade funktionen för segmentering av flera enheter kan du skapa segment med hjälp av flera XDM-klasser och på så sätt lägga till tillägg till personscheman. Det innebär att segmenteringstjänsten kan komma åt ytterligare fält under segmentdefinitionen som om de vore inbyggda i profildatalagret.
 
 Multientitetssegmentering ger den flexibilitet som behövs för att identifiera målgrupper baserat på data som är relevanta för företagets behov. Denna process kan utföras snabbt och enkelt utan att man behöver ha expertis i databasfrågor. På så sätt kan ni lägga till nyckeldata i era segment utan att behöva göra kostsamma ändringar i dataströmmar eller vänta på en datasammanfogning.
+
+Följande video är avsedd att ge stöd för din förståelse av segmentering för flera enheter och ger en översikt över både segmentsegmentering och segmentkontext (segmentnyttolast).
+
+>[!VIDEO](https://video.tv.adobe.com/v/28947?quality=12&learn=on)
 
 ### Användningsfall: Prisdriven kampanj
 
