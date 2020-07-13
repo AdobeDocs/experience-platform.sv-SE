@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en Adobe Analytics-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 3f1c3c77a0755a3e305da0fb8a234be0f0ee1863
 workflow-type: tm+mt
-source-wordcount: '719'
+source-wordcount: '762'
 ht-degree: 0%
 
 ---
@@ -95,7 +95,7 @@ Mer information om hur du etiketterar data som kommer från Analytics finns i et
 
 ![](../../../../images/tutorials/create/analytics/labels.png)
 
-## Nästa steg
+## Nästa steg och ytterligare resurser
 
 När anslutningen har skapats skapas automatiskt ett målschema och ett datauppsättningsflöde som innehåller inkommande data. Dessutom sker datainfyllning och inmatning av historiska data i upp till 13 månader. När det första intaget är slutfört ska Analytics-data användas av Platform-tjänster längre fram i kedjan, t.ex. kundprofil i realtid och segmenteringstjänst. Mer information finns i följande dokument:
 
@@ -103,3 +103,12 @@ När anslutningen har skapats skapas automatiskt ett målschema och ett dataupps
 * [Översikt över segmenteringstjänsten](../../../../../segmentation/home.md)
 * [Översikt över arbetsytan Datavetenskap](../../../../../data-science-workspace/home.md)
 * [Översikt över frågetjänsten](../../../../../query-service/home.md)
+
+Följande video är tänkt att ge stöd för din förståelse av datainhämtning med hjälp av Adobe Analytics Source Connector:
+
+>[!WARNING]
+>
+> Gränssnittet [!DNL Platform] som visas i följande video är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
+
+>[!VIDEO](https://video.tv.adobe.com/v/29687?quality=12&learn=on)
+
