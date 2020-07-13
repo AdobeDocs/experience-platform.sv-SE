@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Jobb
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: df36d88de8ac117206d8d744cfcdd7804fcec61e
 workflow-type: tm+mt
-source-wordcount: '1669'
+source-wordcount: '1807'
 ht-degree: 0%
 
 ---
@@ -14,15 +14,56 @@ ht-degree: 0%
 
 # Sekretessjobb
 
-Följande avsnitt går igenom anrop som du kan göra med hjälp av `/jobs` slutpunkten i Privacy Service-API:t. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
+Det här dokumentet beskriver hur du arbetar med sekretessjobb med API-anrop. Det omfattar särskilt användningen av slutpunkten i Privacy Service-API:t `/job` . Innan du läser den här handboken bör du läsa avsnittet [](./getting-started.md#getting-started) Komma igång för att få viktig information som du behöver känna till för att kunna anropa API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
+
+## Visa alla jobb {#list}
+
+Du kan visa en lista över alla tillgängliga sekretessjobb inom organisationen genom att göra en GET-begäran till `/jobs` slutpunkten.
+
+**API-format**
+
+Det här frågeformatet använder en `regulation` frågeparameter på `/jobs` slutpunkten, och börjar därför med ett frågetecken (`?`) enligt nedan. Svaret sidnumreras så att du kan använda andra frågeparametrar (`page` och `size`) för att filtrera svaret. Du kan separera flera parametrar med et-tecken (`&`).
+
+```http
+GET /jobs?regulation={REGULATION}
+GET /jobs?regulation={REGULATION}&page={PAGE}
+GET /jobs?regulation={REGULATION}&size={SIZE}
+GET /jobs?regulation={REGULATION}&page={PAGE}&size={SIZE}
+```
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `{REGULATION}` | Regeltypen som ska sökas efter. Godkända värden är `gdpr`, `ccpa`och `pdpa_tha`. |
+| `{PAGE}` | Sidan med data som ska visas med nollbaserad numrering. Standardvärdet är `0`. |
+| `{SIZE}` | Antalet resultat som ska visas på varje sida. Standardvärdet är `1` och maxvärdet är `100`. Om det maximala värdet överskrids returneras ett 400-kodfel. |
+
+**Begäran**
+
+Följande begäran hämtar en numrerad lista över alla jobb inom en IMS-organisation, med början från den tredje sidan med sidstorleken 50.
+
+```shell
+curl -X GET \
+  https://platform.adobe.io/data/core/privacy/jobs?regulation=gdpr&page=2&size=50 \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}'
+```
+
+**Svar**
+
+Ett lyckat svar returnerar en lista med jobb, där varje jobb innehåller information om t.ex. dess `jobId`. I det här exemplet innehåller svaret en lista med 50 jobb, med början på den tredje resultatsidan.
+
+### Åtkomst till efterföljande sidor
+
+Om du vill hämta nästa resultatuppsättning i ett sidnumrerat svar måste du göra ett annat API-anrop till samma slutpunkt samtidigt som du ökar `page` frågeparametern med 1.
 
 ## Skapa ett sekretessjobb {#create-job}
 
-Innan du skapar en ny jobbbegäran måste du först samla in identifieringsinformation om de registrerade vars uppgifter du vill få tillgång till, ta bort eller avanmäla dig från försäljning. När du har de data som krävs måste de anges i nyttolasten för en POST-begäran till rotslutpunkten.
+Innan du skapar en ny jobbbegäran måste du först samla in identifieringsinformation om de registrerade vars uppgifter du vill få tillgång till, ta bort eller avanmäla dig från försäljning. När du har de data som krävs måste de anges i nyttolasten för en POST-begäran till `/jobs` slutpunkten.
 
 >[!NOTE]
 >
->Kompatibla Adobe Experience Cloud-program använder olika värden för att identifiera registrerade personer. Mer information om vilka identifierare som krävs för dina program finns i guiden om program [för](../experience-cloud-apps.md) Privacy Service och Experience Cloud.
+>Kompatibla Adobe Experience Cloud-program använder olika värden för att identifiera registrerade personer. Mer information om vilka identifierare som krävs för dina program finns i guiden om program [för](../experience-cloud-apps.md) Privacy Service och Experience Cloud. Mer allmän vägledning om hur du avgör vilka ID:n som ska skickas till Privacy Servicen finns i dokumentet om [identitetsdata i sekretessförfrågningar](../identity-data.md).
 
 Privacy Services-API:t stöder två typer av jobbförfrågningar för personuppgifter:
 
@@ -106,7 +147,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `companyContexts` **(Obligatoriskt)** | En array som innehåller autentiseringsinformation för din organisation. Varje identifierare i listan innehåller följande attribut: <ul><li>`namespace`: Namnutrymmet för en identifierare.</li><li>`value`: Identifierarens värde.</li></ul>Det **krävs** att en av identifierarna använder `imsOrgId` den som `namespace`, med `value` det unika ID:t för IMS-organisationen. <br/><br/>Ytterligare identifierare kan vara produktspecifika företagskvalificerare (till exempel `Campaign`) som identifierar en integrering med ett Adobe-program som tillhör din organisation. Möjliga värden är kontonamn, klientkoder, klient-ID eller andra programidentifierare. |
+| `companyContexts` **(Obligatoriskt)** | En array som innehåller autentiseringsinformation för din organisation. Varje identifierare i listan innehåller följande attribut: <ul><li>`namespace`: Namnutrymmet för en identifierare.</li><li>`value`: Identifierarens värde.</li></ul>Det **krävs** att en av identifierarna använder `imsOrgId` den som `namespace`, med `value` det unika ID:t för IMS-organisationen. <br/><br/>Ytterligare identifierare kan vara produktspecifika företagskvalificerare (till exempel `Campaign`) som identifierar en integrering med ett Adobe-program som tillhör din organisation. Möjliga värden är kontonamn, klientkoder, klient-ID:n eller andra programidentifierare. |
 | `users` **(Obligatoriskt)** | En array som innehåller en samling med minst en användare vars information du vill komma åt eller ta bort. Högst 1 000 användar-ID kan anges i en enda begäran. Varje användarobjekt innehåller följande information: <ul><li>`key`: En identifierare för en användare som används för att kvalificera separata jobb-ID:n i svarsdata. Det är bäst att välja en unik, lätt identifierbar sträng för det här värdet så att det är enkelt att referera till eller söka efter den senare.</li><li>`action`: En array som visar vilka åtgärder som önskas för användarens data. Beroende på vilka åtgärder du vill utföra måste den här arrayen innehålla `access`, `delete`eller båda.</li><li>`userIDs`: En samling identiteter för användaren. Antalet identiteter som en enskild användare kan ha är begränsat till nio. Varje identitet består av en `namespace`, en `value`och en namnutrymmeskvalificerare (`type`). Mer information om de här obligatoriska egenskaperna finns i [bilagan](appendix.md) .</li></ul> En mer detaljerad förklaring av `users` och `userIDs`information finns i [felsökningsguiden](../troubleshooting-guide.md#user-ids). |
 | `include` **(Obligatoriskt)** | En uppsättning Adobe-produkter som ska ingå i bearbetningen. Om det här värdet saknas eller är tomt på annat sätt, kommer begäran att avvisas. Inkludera endast produkter som din organisation är integrerad med. Mer information finns i avsnittet om [godkända produktvärden](appendix.md) i bilagan. |
 | `expandIDs` | En valfri egenskap som, när den anges till `true`, representerar en optimering för bearbetning av ID:n i programmen (som för närvarande bara stöds av Analytics). Om det utelämnas blir det här värdet som standard `false`. |
@@ -290,7 +331,7 @@ När du har skickat jobbförfrågan kan du fortsätta till nästa steg för att 
 
 ## Kontrollera status för ett jobb {#check-status}
 
-Om du använder ett av de `jobId` värden som returnerades i föregående steg kan du hämta information om jobbet, till exempel dess aktuella bearbetningsstatus.
+Du kan hämta information om ett specifikt jobb, till exempel dess aktuella bearbetningsstatus, genom att ta med det jobbet `jobId` i sökvägen för en GET-begäran till `/jobs` slutpunkten.
 
 >[!IMPORTANT]
 >
@@ -304,7 +345,7 @@ GET /jobs/{JOB_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{JOB_ID}` | ID:t för det jobb som du vill söka upp, returnerat under `jobId` svaret på det [föregående steget](#create-job). |
+| `{JOB_ID}` | ID:t för det jobb som du vill söka efter. Detta ID returneras under `jobId` i lyckade API-svar för [att skapa ett jobb](#create-job) och [visa alla jobb](#list). |
 
 **Begäran**
 
@@ -324,12 +365,12 @@ Ett lyckat svar returnerar information om det angivna jobbet.
 
 ```json
 {
-    "jobId": "527ef92d-6cd9-45cc-9bf1-477cfa1e2ca2",
+    "jobId": "6fc09b53-c24f-4a6c-9ca2-c6076b0842b6",
     "requestId": "15700479082313109RX-899",
     "userKey": "David Smith",
     "action": "access",
-    "status": "error",
-    "submittedBy": "02b38adf-6573-401e-b4cc-6b08dbc0e61c@techacct.adobe.com",
+    "status": "complete",
+    "submittedBy": "{ACCOUNT_ID}",
     "createdDate": "10/02/2019 08:25 PM GMT",
     "lastModifiedDate": "10/02/2019 08:25 PM GMT",
     "userIds": [
@@ -354,8 +395,21 @@ Ett lyckat svar returnerar information om det angivna jobbet.
             "retryCount": 0,
             "processedDate": "10/02/2019 08:25 PM GMT",
             "productStatusResponse": {
-                "status": "submitted",
-                "message": "processing"
+                "status": "complete",
+                "message": "Success",
+                "responseMsgCode": "PRVCY-6000-200",
+                "responseMsgDetail": "Finished successfully."
+            }
+        },
+        {
+            "product": "Profile",
+            "retryCount": 0,
+            "processedDate": "10/02/2019 08:25 PM GMT",
+            "productStatusResponse": {
+                "status": "complete",
+                "message": "Success",
+                "responseMsgCode": "PRVCY-6000-200",
+                "responseMsgDetail": "Success dataSetIds = [5dbb87aad37beb18a96feb61], Failed dataSetIds = []"
             }
         },
         {
@@ -363,8 +417,14 @@ Ett lyckat svar returnerar information om det angivna jobbet.
             "retryCount": 0,
             "processedDate": "10/02/2019 08:25 PM GMT",
             "productStatusResponse": {
-                "status": "submitted",
-                "message": "processing"
+                "status": "complete",
+                "message": "Success",
+                "responseMsgCode": "PRVCY-6054-200",
+                "responseMsgDetail": "PARTIALLY COMPLETED- Data not found for some requests, check results for more info.",
+                "results": {
+                  "processed": ["1123A4D5690B32A"],
+                  "ignored": ["dsmith@acme.com"]
+                }
             }
         }
     ],
@@ -375,64 +435,28 @@ Ett lyckat svar returnerar information om det angivna jobbet.
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `productStatusResponse` | Jobbets aktuella status. I tabellen nedan finns information om varje möjlig status. |
+| `productStatusResponse` | Varje objekt i `productResponses` arrayen innehåller information om jobbets aktuella status i förhållande till ett specifikt [!DNL Experience Cloud] program. |
+| `productStatusResponse.status` | Jobbets aktuella statuskategori. I tabellen nedan finns en lista över [tillgängliga statuskategorier](#status-categories) och deras motsvarande betydelse. |
+| `productStatusResponse.message` | Jobbets specifika status, som motsvarar statuskategorin. |
+| `productStatusResponse.responseMsgCode` | En standardkod för produktsvarsmeddelanden som tas emot av Privacy Servicen. Information om meddelandet finns under `responseMsgDetail`. |
+| `productStatusResponse.responseMsgDetail` | En mer detaljerad förklaring av jobbets status. Meddelanden för liknande status kan variera mellan olika produkter. |
+| `productStatusResponse.results` | För vissa statusvärden kan vissa produkter returnera ett `results` objekt som ger ytterligare information som inte täcks av `responseMsgDetail`. |
 | `downloadURL` | Om jobbets status är `complete`ger det här attributet en URL för att hämta jobbresultaten som en ZIP-fil. Den här filen kan laddas ned i 60 dagar efter att jobbet har slutförts. |
 
-### Jobbstatussvar
+### Jobbstatuskategorier {#status-categories}
 
-I följande tabell visas olika möjliga jobbstatusvärden och deras motsvarande betydelse:
+I följande tabell visas olika möjliga jobbstatuskategorier och deras motsvarande betydelse:
 
-| Statuskod | Statusmeddelande | Betydelse |
-| ----------- | -------------- | -------- |
-| 1 | Slutförd | Jobbet är klart och (om det behövs) filer överförs från alla program. |
-| 2 | Bearbetar | Ansökningarna har bekräftat jobbet och bearbetar för närvarande. |
-| 3 | Skickat | Jobbet skickas till alla tillämpliga program. |
-| 4 | Fel | Något misslyckades vid bearbetningen av jobbet - mer specifik information kan hämtas genom att information om enskilda jobb hämtas. |
+| Statuskategori | Betydelse |
+| -------------- | -------- |
+| Slutförd | Jobbet är klart och (om det behövs) filer överförs från alla program. |
+| Bearbetar | Ansökningarna har bekräftat jobbet och bearbetar för närvarande. |
+| Skickat | Jobbet skickas till alla tillämpliga program. |
+| Fel | Något misslyckades vid bearbetningen av jobbet - mer specifik information kan hämtas genom att information om enskilda jobb hämtas. |
 
 >[!NOTE]
 >
 >Ett skickat jobb kan vara i ett bearbetningstillstånd om det har ett beroende underordnat jobb som fortfarande bearbetas.
-
-## Visa alla jobb
-
-Du kan visa en lista över alla tillgängliga jobbförfrågningar inom organisationen genom att göra en GET-förfrågan till rotslutpunkten (`/`).
-
-**API-format**
-
-I det här frågeformatet används en `regulation` frågeparameter på rotslutpunkten (`/`), och därför börjar det med ett frågetecken (`?`) enligt nedan. Svaret sidnumreras så att du kan använda andra frågeparametrar (`page` och `size`) för att filtrera svaret. Du kan separera flera parametrar med et-tecken (`&`).
-
-```http
-GET /jobs?regulation={REGULATION}
-GET /jobs?regulation={REGULATION}&page={PAGE}
-GET /jobs?regulation={REGULATION}&size={SIZE}
-GET /jobs?regulation={REGULATION}&page={PAGE}&size={SIZE}
-```
-
-| Parameter | Beskrivning |
-| --- | --- |
-| `{REGULATION}` | Regeltypen som ska sökas efter. Godkända värden är `gdpr`, `ccpa`och `pdpa_tha`. |
-| `{PAGE}` | Sidan med data som ska visas med nollbaserad numrering. Standardvärdet är `0`. |
-| `{SIZE}` | Antalet resultat som ska visas på varje sida. Standardvärdet är `1` och maxvärdet är `100`. Om det maximala värdet överskrids returneras ett 400-kodfel. |
-
-**Begäran**
-
-Följande begäran hämtar en numrerad lista över alla jobb inom en IMS-organisation, med början från den tredje sidan med sidstorleken 50.
-
-```shell
-curl -X GET \
-  https://platform.adobe.io/data/core/privacy/jobs?regulation=gdpr&page=2&size=50 \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
-```
-
-**Svar**
-
-Ett lyckat svar returnerar en lista med jobb, där varje jobb innehåller information om t.ex. dess `jobId`. I det här exemplet innehåller svaret en lista med 50 jobb, med början på den tredje resultatsidan.
-
-### Åtkomst till efterföljande sidor
-
-Om du vill hämta nästa resultatuppsättning i ett sidnumrerat svar måste du göra ett annat API-anrop till samma slutpunkt samtidigt som du ökar `page` frågeparametern med 1.
 
 ## Nästa steg
 
