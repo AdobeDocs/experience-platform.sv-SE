@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittsguide för segmentbyggare
 topic: ui guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 1c9b50f8f71e917b86c34b061df7e2da6fe475a2
 workflow-type: tm+mt
-source-wordcount: '2583'
+source-wordcount: '2666'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Det är också viktigt att känna till två nyckeltermer som används i det här
 
 ## Åtkomst till segmentdefinitioner
 
-Om du vill börja arbeta med segmentdefinitioner i [!DNL Adobe Experience Platform]klickar du **[!UICONTROL Segments]** i den vänstra navigeringen. Om du vill visa alla segmentdefinitioner för din organisation klickar du på *[!UICONTROL Browse]* fliken. I den här vyn visas information om segmentdefinitionen, inklusive utvärderingsmetod, datum då segmentet skapades och senaste ändringsdatum.
+Om du vill börja arbeta med segmentdefinitioner i [!DNL Adobe Experience Platform]klickar du **[!UICONTROL Segments]** i den vänstra navigeringen. Om du vill visa alla segmentdefinitioner för din organisation klickar du på *[!UICONTROL Browse]* fliken. I den här vyn visas information om segmentdefinitionen, inklusive utvärderingsmetod, skapad den och senaste ändringsdatum.
 
 Utvärderingsmetoden kan antingen vara direktuppspelning eller batch. Direktuppspelningssegment utvärderas ständigt när data kommer in i systemet. Gruppsegmenten utvärderas enligt ett angivet schema.
 
@@ -233,6 +233,12 @@ Du hittar mer information om den senaste utvärderingen av segment genom att kli
 
 ![](../images/segment-builder/info-bubble.png)
 
+### Film om direktuppspelad segmentering
+
+Följande video är avsedd att ge en bättre förståelse för direktuppspelningssegmentering. Här visas ett exempel på en kundupplevelse följt av en snabb genomgång av de viktigaste funktionerna i [!DNL Platform] gränssnittet.
+
+>[!VIDEO](https://video.tv.adobe.com/v/36184?quality=12&learn=on)
+
 ## Felaktiga policyöverträdelser
 
 >[!NOTE]
@@ -243,7 +249,7 @@ När du är klar med segmentet analyseras segmentet av [!DNL Data Governance] at
 
 ![](../images/segment-builder/segment-dule-policy-violations.png)
 
-## Nästa steg
+## Nästa steg och ytterligare resurser {#next-steps}
 
 Segment Builder har ett omfattande arbetsflöde som gör det möjligt att isolera marknadsmässiga målgrupper från [!DNL Real-time Customer Profile] data. När du har läst den här guiden bör du nu kunna:
 
@@ -253,4 +259,16 @@ Segment Builder har ett omfattande arbetsflöde som gör det möjligt att isoler
 - Aktivera alla segmentdefinitioner för schemalagd segmentering.
 - Aktivera angivna segmentdefinitioner för direktuppspelningssegmentering.
 
-Stegvisa instruktioner om hur du arbetar med [!DNL Segmentation Service] att använda [!DNL Segmentation Service] API:t finns i [självstudiekursen om att skapa målgruppssegment med API:er](../tutorials/create-a-segment.md) .
+Om du vill veta mer [!DNL Segmentation Service]kan du fortsätta att läsa dokumentationen och komplettera din inlärning genom att titta på filmerna nedan. Stegvisa instruktioner om hur du arbetar med [!DNL Segmentation Service] att använda [!DNL Segmentation Service] API:t finns i [självstudiekursen om att skapa målgruppssegment med API:er](../tutorials/create-a-segment.md) .
+
+>[!WARNING]
+>
+> Gränssnittet [!DNL Platform] som visas i följande videofilmer är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
+
+**Skapa ett segment:**
+
+>[!VIDEO](https://video.tv.adobe.com/v/27254?quality=12&learn=on)
+
+**Skapa ett dynamiskt segment:**
+
+>[!VIDEO](https://video.tv.adobe.com/v/27428?quality=12&learn=on)
