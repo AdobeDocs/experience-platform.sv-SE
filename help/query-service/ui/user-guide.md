@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Frågeredigeringsguide för Adobe Experience Platform Query Service
 topic: query editor
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: cc101b1a439408861961c6fcd0899ca7c48bfa04
 workflow-type: tm+mt
-source-wordcount: '1060'
+source-wordcount: '1106'
 ht-degree: 0%
 
 ---
@@ -115,6 +115,12 @@ Konsolen ger information om status och funktion för frågetjänsten. Konsolen v
 När en fråga har slutförts visas resultaten på fliken *Resultat* bredvid fliken *Konsol* . I den här vyn visas frågans tabellutdata med upp till 100 rader. I den här vyn kan du verifiera att frågan ger förväntat resultat. Om du vill generera en datauppsättning med frågan tar du bort begränsningar för returnerade rader och kör frågan med `CREATE TABLE tablename AS SELECT` för att generera en datauppsättning med utdata. I självstudiekursen [][query-service-create-datasets] om att generera datauppsättningar finns instruktioner om hur du genererar en datauppsättning från frågeresultat i Frågeredigeraren.
 
 ![Bild](../images/queries/query-editor-overview/query-results.png)
+
+## Köra frågor med självstudievideo om frågetjänsten
+
+I följande video visas hur du kör frågor i gränssnittet Adobe Experience Platform och i en PSQL-klient. Dessutom visas hur du använder enskilda egenskaper i ett XDM-objekt, använder Adobe-definierade funktioner och använder CREATE TABLE AS SELECT (CTAS).
+
+>[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)
 
 ## Nästa steg
 
