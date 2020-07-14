@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Handbok för sandlådeanvändare
 topic: user guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d02f12202e51b00453f719604052a54f6fcfe4ab
 workflow-type: tm+mt
-source-wordcount: '514'
+source-wordcount: '527'
 ht-degree: 0%
 
 ---
@@ -37,6 +37,10 @@ När en sandlåda har valts uppdateras skärmen med den valda sandlådan i sandl
 ![](../images/ui/sandbox-switched.png)
 
 ## Skapa en ny sandlåda
+
+Använd följande video för en snabb översikt över hur du använder [!DNL Sandboxes] i [!DNL Experience Platform].
+
+>[!VIDEO](https://video.tv.adobe.com/v/29838/?quality=12&learn=on)
 
 Om du vill skapa en ny sandlåda i användargränssnittet klickar du på **Sandlådor** i den vänstra navigeringen och sedan på **Skapa sandlåda**.
 
