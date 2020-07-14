@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Konfigurera ett dataflöde för en protokollanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: 168ac3a3ab9f475cb26dc8138cbc90a3e35c836d
 workflow-type: tm+mt
-source-wordcount: '1020'
+source-wordcount: '1018'
 ht-degree: 0%
 
 ---
@@ -85,19 +85,19 @@ Steget visas så att du kan konfigurera ett schema för att automatiskt importer
 | Starttid | En UTC-tidsstämpel för vilken det allra första intaget sker. |
 | Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om *[!UICONTROL Backfill]* är aktiverat importeras alla aktuella filer i den angivna sökvägen under den första schemalagda importen. Om *[!UICONTROL Backfill]* är inaktiverat importeras endast de filer som är inlästa mellan den första importen och den andra *[!UICONTROL Start time]* . Filer som lästs in tidigare *[!UICONTROL Start time]* kommer inte att importeras. |
 
-Datauppsättningsflöden är utformade för att automatiskt importera data på schemalagd basis. Om du bara vill importera en gång genom det här arbetsflödet kan du göra det genom att konfigurera **[!UICONTROL Frequency]** till &quot;Dag&quot; och använda ett mycket stort tal för **[!UICONTROL Interval]** fotot, till exempel 10000 eller liknande.
+Dataflöden är utformade för att automatiskt importera data enligt schema. Om du bara vill importera en gång genom det här arbetsflödet kan du göra det genom att konfigurera **[!UICONTROL Frequency]** till &quot;Dag&quot; och använda ett mycket stort tal för **[!UICONTROL Interval]** fotot, till exempel 10000 eller liknande.
 
 Ange värden för schemat och klicka på **[!UICONTROL Next]**.
 
 ![schemaläggning](../../../images/tutorials/dataflow/protocols/scheduling.png)
 
-## Namnge datauppsättningsflödet
+## Namnge dataflödet
 
 Steget visas där du måste ange ett namn och en valfri beskrivning för datauppsättningsflödet. *[!UICONTROL Dataset flow detail]* Klicka **[!UICONTROL Next]** när du är klar.
 
 ![dataset-flow-details](../../../images/tutorials/dataflow/protocols/dataset-flow-details.png)
 
-## Granska datauppsättningsflödet
+## Granska ditt dataflöde
 
 Steget visas så att du kan granska det nya dataflödet innan det skapas. *[!UICONTROL Review]* Informationen är grupperad i följande kategorier:
 
@@ -109,9 +109,9 @@ När du har granskat dataflödet kan du klicka **[!UICONTROL Finish]** och vänt
 
 ![recension](../../../images/tutorials/dataflow/protocols/review.png)
 
-## Övervaka datauppsättningsflödet
+## Övervaka och ta bort dataflödet
 
-När datauppsättningsflödet har skapats kan du övervaka de data som hämtas genom den. Mer information om hur du övervakar datauppsättningsflöden finns i självstudiekursen om [konton och datauppsättningsflöden](../monitor.md).
+När dataflödet har skapats kan du övervaka de data som hämtas genom det. Mer information om hur du övervakar och tar bort dataflöden finns i självstudiekursen om [övervakning och borttagning av dataflöden](../monitor.md).
 
 ## Nästa steg
 
