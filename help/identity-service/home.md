@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform Identity Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d02f12202e51b00453f719604052a54f6fcfe4ab
 workflow-type: tm+mt
-source-wordcount: '1530'
+source-wordcount: '1672'
 ht-degree: 0%
 
 ---
@@ -61,6 +61,14 @@ Era kunder kan interagera med ert varumärke genom en kombination av online- och
 
 [!DNL Experience Platform] löser detta problem på två sätt: [identitetsnamnutrymmen](#identity-namespaces) och [identitetsdiagram](#identity-graphs).
 
+Följande video är avsedd att ge stöd för din förståelse av identiteter och identitetsdiagram. I följande video visas de tre funktionerna i Identity Collection, Identity Graphs och API:erna. Här beskrivs också hur deterministiska och sannolikhetsalgoritmer används för att konstruera privata identitetsdiagram, och hur privata identitetsdiagram, Adobe Experience Platform Identity Service Co-Op Graph och tredjepartsdiagram fungerar.
+
+>[!IMPORTANT]
+>
+> Sannolikheten för privata diagram är fortfarande under utveckling och kommer att släppas vid ett senare datum.
+
+>[!VIDEO](https://video.tv.adobe.com/v/27841?quality=12&learn=on)
+
 ### Identitetsnamnutrymmen
 
 När kunden interagerar med ert varumärke i flera kanaler, inklusive webben, mobilappar, callcenter eller en butik, kan det vara svårt att förstå och serva dem om ni inte kan observera och spåra deras aktivitet i alla kanaler.
@@ -86,7 +94,7 @@ I det här avsnittet beskrivs hur data som tillhandahålls Adobe Experience Plat
 
 Beroende på er strategi för insamling av företagsdata avgör de datafält som du anger som identiteter vilka data som inkluderas i identitetskartan. För att få ut så mycket som möjligt av Adobe Experience Platform och så omfattande kundidentiteter som möjligt bör ni ladda upp både online- och offlinedata.
 
-- Onlinedata är data som beskriver närvaro och beteende online, till exempel användarnamn och e-postadresser.
+- Onlinedata är data som beskriver närvaro och beteende online, t.ex. användarnamn och e-postadresser.
 
 - Offlinedata avser data som inte är direkt relaterade till onlinenärvaro, t.ex. ID:n från CRM-system. Den här typen av data gör era identiteter mer robusta och stöder datamedlemskap i olika system.
 
@@ -122,6 +130,14 @@ Under direktuppspelningsprocessen hämtar identitetsdata [!DNL Identity Service 
 ### Importera data till [!DNL Identity Service]
 
 [!DNL Identity Service] förbrukar XDM-kompatibla data som skickas till [!DNL Experience Platform] antingen via [batchinmatning](../ingestion/batch-ingestion/overview.md) eller [direktuppspelning](../ingestion/streaming-ingestion/overview.md).
+
+Följande video är avsedd att ge stöd för din förståelse av identitetstjänsten. I den här videon visas hur du anger datafält som identiteter, importerar identitetsdata och sedan kontrollerar att data har tilldelats det privata diagrammet för Adobe Experience Platform Identity Service.
+
+>[!WARNING]
+>
+> Gränssnittet [!DNL Platform] som visas i följande video är inaktuellt. Läs dokumentationen om de senaste skärmbilderna och funktionerna i användargränssnittet.
+
+>[!VIDEO](https://video.tv.adobe.com/v/28167?quality=12&learn=on)
 
 ## Datastyrning
 
