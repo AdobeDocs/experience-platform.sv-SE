@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Konfigurera ett dataflöde för en koppling för lyckade kunder i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: 168ac3a3ab9f475cb26dc8138cbc90a3e35c836d
 workflow-type: tm+mt
-source-wordcount: '1054'
+source-wordcount: '976'
 ht-degree: 0%
 
 ---
@@ -104,23 +104,9 @@ När du har granskat dataflödet kan du klicka **[!UICONTROL Finish]** och vänt
 
 ![recension](../../../images/tutorials/dataflow/customer-success/review.png)
 
-## Övervaka dataflödet
+## Övervaka och ta bort dataflödet
 
-När dataflödet har skapats kan du övervaka de data som hämtas genom det. Följ stegen nedan för att komma åt dataflödets datauppsättningsövervakare.
-
-Välj den Customer Success Source som du vill visa under *[!UICONTROL Sources]* *[!UICONTROL Customer Success]* kategorin på arbetsytan. Välj *[!UICONTROL Connect Source]* att starta autentiseringsgränssnittet. Om du vill visa ett befintligt dataflöde markerar du *[!UICONTROL Existing account]* och väljer det konto du vill få åtkomst till.
-
-![monitor](../../../images/tutorials/dataflow/customer-success/monitor.png)
-
-Skärmen visas *[!UICONTROL Source activity]* . Klicka på namnet på en datauppsättning vars aktivitet du vill övervaka.
-
-![select-dataflow-dataset](../../../images/tutorials/dataflow/customer-success/select-dataflow-dataset.png)
-
-Skärmen visas *[!UICONTROL Dataset activity]* . På den här sidan visas hur många meddelanden som används i form av ett diagram.
-
-![datauppsättningsaktivitet](../../../images/tutorials/dataflow/customer-success/dataset-activity.png)
-
-Mer information om övervakning av datauppsättningar och förtäring finns i självstudiekursen om [övervakning av dataflöden](../../../../ingestion/quality/monitor-data-flows.md)för direktuppspelning.
+När dataflödet har skapats kan du övervaka de data som hämtas genom det. Mer information om hur du övervakar och tar bort dataflöden finns i självstudiekursen om [övervakning och borttagning av dataflöden](../monitor.md).
 
 ## Nästa steg
 
