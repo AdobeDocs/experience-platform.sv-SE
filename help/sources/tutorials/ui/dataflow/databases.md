@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Konfigurera ett dataflöde för en databasanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 168ac3a3ab9f475cb26dc8138cbc90a3e35c836d
+source-git-commit: c3d85485d0c4a910e7ba777858e2f6cf7185ef54
 workflow-type: tm+mt
-source-wordcount: '1017'
+source-wordcount: '1029'
 ht-degree: 0%
 
 ---
@@ -80,7 +80,7 @@ Steget visas så att du kan konfigurera ett schema för att automatiskt importer
 | --- | --- |
 | Frekvens | Valbara frekvenser är Minute, Hour, Day och Week. |
 | Intervall | Ett heltal som anger intervallet för den valda frekvensen. |
-| Starttid | En UTC-tidsstämpel för vilken det allra första intaget sker. |
+| Starttid | En UTC-tidsstämpel för vilken det allra första intaget sker. Starttidsvärdet måste anges i epok-tid i sekunder. |
 | Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om *Backfill* är aktiverat, kommer alla aktuella filer i den angivna sökvägen att kapslas in under det första schemalagda intaget. Om *Backfill* är inaktiverat kapslas endast de filer som läses in mellan den första importkörningen och *starttiden* . Filer som lästs in före *starttiden* importeras inte. |
 | Delta-kolumn | Ett alternativ med en filtrerad uppsättning källschemafält av typen, datumet eller tiden. Det här fältet används för att skilja mellan nya och befintliga data. Inkrementella data importeras baserat på tidsstämpeln för den markerade kolumnen. |
 
