@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Konfigurera ett dataflöde för en annonskontakt i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: 168ac3a3ab9f475cb26dc8138cbc90a3e35c836d
 workflow-type: tm+mt
-source-wordcount: '1018'
+source-wordcount: '1019'
 ht-degree: 0%
 
 ---
@@ -111,9 +111,9 @@ När du har granskat dataflödet kan du klicka **[!UICONTROL Finish]** och vänt
 
 ![recension](../../../images/tutorials/dataflow/advertising/review.png)
 
-## Övervaka datauppsättningsflödet
+## Övervaka och ta bort dataflödet
 
-När datauppsättningsflödet har skapats kan du övervaka de data som hämtas genom den. Mer information om hur du övervakar datauppsättningsflöden finns i självstudiekursen om [konton och datauppsättningsflöden](../monitor.md).
+När dataflödet har skapats kan du övervaka de data som hämtas genom det. Mer information om hur du övervakar och tar bort dataflöden finns i självstudiekursen om [övervakning och borttagning av dataflöden](../monitor.md).
 
 ## Nästa steg
 
