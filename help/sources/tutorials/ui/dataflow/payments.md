@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Konfigurera ett dataflöde för en betalningsanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 168ac3a3ab9f475cb26dc8138cbc90a3e35c836d
+source-git-commit: 0d6f5776fef93b3d96461fc18c8818231e4c2e44
 workflow-type: tm+mt
-source-wordcount: '1019'
+source-wordcount: '1155'
 ht-degree: 0%
 
 ---
@@ -70,7 +70,7 @@ Dialogrutan *[!UICONTROL Select schema]* visas. Välj det schema som du vill anv
 
 Beroende på dina behov kan du välja att mappa fält direkt eller använda mappningsfunktioner för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om datamappning och mappningsfunktioner finns i självstudiekursen om att [mappa CSV-data till XDM-schemafält](../../../../ingestion/tutorials/map-a-csv-file.md).
 
-Du kan också ange inställningar på *[!UICONTROL Mapping]* skärmen *[!UICONTROL Delta column]*. När datauppsättningsflödet skapas kan du ange vilket tidsstämpelfält som helst som bas för att bestämma vilka poster som ska importeras i schemalagda stegvisa inmatningar.
+Du kan också ange inställningar på *[!UICONTROL Mapping]* skärmen *[!UICONTROL Delta column]*. När dataflödet skapas kan du ange vilket tidsstämpelfält som helst som bas för att bestämma vilka poster som ska importeras i schemalagda stegvisa inmatningar.
 
 När källdata har mappats klickar du på **[!UICONTROL Next]**.
 
@@ -82,20 +82,33 @@ Steget visas så att du kan konfigurera ett schema för att automatiskt importer
 
 | Fält | Beskrivning |
 | --- | --- |
-| Frekvens | Valbara frekvenser är Minute, Hour, Day och Week. |
+| Frekvens | Valbara frekvenser är En gång, Minut, Timme, Dag och Vecka. |
 | Intervall | Ett heltal som anger intervallet för den valda frekvensen. |
-| Starttid | En UTC-tidsstämpel för vilken det allra första intaget sker. |
-| Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om *[!UICONTROL Backfill]* är aktiverat importeras alla aktuella filer i den angivna sökvägen under den första schemalagda importen. Om *[!UICONTROL Backfill]* är inaktiverat importeras endast de filer som är inlästa mellan den första importen och den andra *[!UICONTROL Start time]* . Filer som lästs in tidigare *[!UICONTROL Start time]* kommer inte att importeras. |
+| Starttid | En UTC-tidsstämpel som anger när det allra första intaget är inställt |
+| Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om *Backfill* är aktiverat, kommer alla aktuella filer i den angivna sökvägen att kapslas in under det första schemalagda intaget. Om *Backfill* är inaktiverat kapslas endast de filer som läses in mellan den första importkörningen och *starttiden* . Filer som lästs in före *starttiden* importeras inte. |
+| Delta-kolumn | Ett alternativ med en filtrerad uppsättning källschemafält av typen, datumet eller tiden. Det här fältet används för att skilja mellan nya och befintliga data. Inkrementella data importeras baserat på tidsstämpeln för den markerade kolumnen. |
 
-Dataflöden är utformade för att automatiskt importera data enligt schema. Om du bara vill importera en gång genom det här arbetsflödet kan du göra det genom att konfigurera **[!UICONTROL Frequency]** till &quot;Dag&quot; och använda ett mycket stort tal för **[!UICONTROL Interval]** fotot, till exempel 10000 eller liknande.
+Dataflöden är utformade för att automatiskt importera data enligt schema. Börja med att välja intagsfrekvens. Ange sedan intervallet för att ange perioden mellan två flödeskörningar. Intervallets värde måste vara ett heltal som inte är noll och måste vara större än eller lika med 15.
 
-Ange värden för schemat och klicka på **[!UICONTROL Next]**.
+Om du vill ange starttid för intaget justerar du datumet och tiden som visas i rutan för starttid. Du kan också välja kalenderikonen för att redigera starttidsvärdet. Starttiden måste vara större än eller lika med den aktuella UTC-tiden.
 
-![schemaläggning](../../../images/tutorials/dataflow/payments/scheduling.png)
+Välj **[!UICONTROL Load incremental data by]** att tilldela deltakolumnen. I det här fältet görs en skillnad mellan nya och befintliga data.
+
+![](../../../images/tutorials/dataflow/databases/schedule-interval-on.png)
+
+### Konfigurera ett dataflöde för engångsbruk
+
+Om du vill ställa in engångsintag väljer du den nedrullningsbara pilen för frekvens och väljer **[!UICONTROL Once]**.
+
+>[!TIP] **[!UICONTROL Interval]** och **[!UICONTROL Backfill]** inte är synliga vid engångsbruk.
+
+![](../../../images/tutorials/dataflow/databases/schedule-once.png)
+
+När du har angett lämpliga värden för schemat väljer du **[!UICONTROL Next]**.
 
 ## Namnge dataflödet
 
-Steget visas där du måste ange ett namn och en valfri beskrivning för datauppsättningsflödet. *[!UICONTROL Dataset flow detail]* Välj **[!UICONTROL Next]** när du är klar.
+Stegen visas där du måste ange ett namn och en valfri beskrivning för dataflödet. *[!UICONTROL Dataflow detail]* Steget visas. Välj **[!UICONTROL Next]** när du är klar.
 
 ![dataset-flow-details](../../../images/tutorials/dataflow/payments/dataset-flow-details.png)
 
@@ -117,7 +130,7 @@ När dataflödet har skapats kan du övervaka de data som hämtas genom det. Mer
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat ett datauppsättningsflöde för att hämta in data från ett automatiserat marknadsföringssystem och fått insikter om att övervaka datauppsättningar. Inkommande data kan nu användas av [!DNL Platform] tjänster längre fram i kedjan som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat ett dataflöde som hämtar in data från ett automatiserat marknadsföringssystem och fått insikter om att övervaka datauppsättningar. Inkommande data kan nu användas av [!DNL Platform] tjänster längre fram i kedjan som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 - [Översikt över kundprofiler i realtid](../../../../profile/home.md)
 - [Översikt över arbetsytan Datavetenskap](../../../../data-science-workspace/home.md)
@@ -126,11 +139,11 @@ Genom att följa den här självstudiekursen har du skapat ett datauppsättnings
 
 I följande avsnitt finns ytterligare information om hur du arbetar med källkopplingar.
 
-### Inaktivera ett datauppsättningsflöde
+### Inaktivera ett dataflöde
 
-När ett datauppsättningsflöde skapas blir det omedelbart aktivt och importerar data enligt det schema som det gavs. Du kan när som helst inaktivera ett aktivt datauppsättningsflöde genom att följa instruktionerna nedan.
+När ett dataflöde skapas blir det omedelbart aktivt och importerar data enligt det schema som det gavs. Du kan när som helst inaktivera ett aktivt dataflöde genom att följa instruktionerna nedan.
 
-Markera namnet på datauppsättningsflödet som du vill inaktivera på *[!UICONTROL Dataset Flows]* skärmen.
+Markera namnet på det dataflöde som du vill inaktivera på *[!UICONTROL Dataflows]* skärmen.
 
 ![browse-dataset-flow](../../../images/tutorials/dataflow/payments/view-dataset-flows.png)
 
