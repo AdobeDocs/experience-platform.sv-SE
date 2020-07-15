@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Konfigurera ett dataflöde för en koppling för automatiserad marknadsföring i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 168ac3a3ab9f475cb26dc8138cbc90a3e35c836d
+source-git-commit: 3a1ecca49809a6ebbc94bbbef93eef56c8faf118
 workflow-type: tm+mt
-source-wordcount: '982'
+source-wordcount: '1125'
 ht-degree: 0%
 
 ---
@@ -40,7 +40,7 @@ Markera den katalog som du vill använda och klicka sedan på **[!UICONTROL Next
 
 ## Mappa datafält till ett XDM-schema
 
-Steget visas med ett interaktivt gränssnitt som du kan använda för att mappa källdata till en *[!UICONTROL Mapping]* [!DNL Platform] datauppsättning.
+Steget visas och innehåller ett interaktivt gränssnitt för att mappa källdata till en *[!UICONTROL Mapping]* [!DNL Platform] datauppsättning.
 
 Välj en datauppsättning för inkommande data som ska importeras till. Du kan antingen använda en befintlig datauppsättning eller skapa en ny datauppsättning.
 
@@ -80,16 +80,29 @@ Steget visas så att du kan konfigurera ett schema för att automatiskt importer
 
 | Fält | Beskrivning |
 | --- | --- |
-| Frekvens | Valbara frekvenser är Minute, Hour, Day och Week. |
+| Frekvens | Valbara frekvenser är En gång, Minut, Timme, Dag och Vecka. |
 | Intervall | Ett heltal som anger intervallet för den valda frekvensen. |
-| Starttid | En UTC-tidsstämpel för vilken det allra första intaget sker. |
-| Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om *[!UICONTROL Backfill]* är aktiverat importeras alla aktuella filer i den angivna sökvägen under den första schemalagda importen. Om *[!UICONTROL Backfill]* är inaktiverat importeras endast de filer som är inlästa mellan den första importen och den andra *[!UICONTROL Start time]* . Filer som lästs in tidigare *[!UICONTROL Start time]* kommer inte att importeras. |
+| Starttid | En UTC-tidsstämpel som anger när det allra första intaget är inställt |
+| Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om *Backfill* är aktiverat, kommer alla aktuella filer i den angivna sökvägen att kapslas in under det första schemalagda intaget. Om *Backfill* är inaktiverat kapslas endast de filer som läses in mellan den första importkörningen och *starttiden* . Filer som lästs in före *starttiden* importeras inte. |
+| Delta-kolumn | Ett alternativ med en filtrerad uppsättning källschemafält av typen, datumet eller tiden. Det här fältet används för att skilja mellan nya och befintliga data. Inkrementella data importeras baserat på tidsstämpeln för den markerade kolumnen. |
 
-Dataflöden är utformade för att automatiskt importera data enligt schema. Om du bara vill importera en gång genom det här arbetsflödet kan du göra det genom att konfigurera **[!UICONTROL Frequency]** till &quot;Dag&quot; och använda ett mycket stort tal för **[!UICONTROL Interval]** fotot, till exempel 10000 eller liknande.
+Dataflöden är utformade för att automatiskt importera data enligt schema. Börja med att välja intagsfrekvens. Ange sedan intervallet för att ange perioden mellan två flödeskörningar. Intervallets värde måste vara ett heltal som inte är noll och måste vara större än eller lika med 15.
 
-Ange värden för schemat och klicka på **[!UICONTROL Next]**.
+Om du vill ange starttid för intaget justerar du datumet och tiden som visas i rutan för starttid. Du kan också välja kalenderikonen för att redigera starttidsvärdet. Starttiden måste vara större än eller lika med den aktuella UTC-tiden.
 
-![schemaläggning](../../../images/tutorials/dataflow/marketing-automation/scheduling.png)
+Välj **[!UICONTROL Load incremental data by]** att tilldela deltakolumnen. I det här fältet görs en skillnad mellan nya och befintliga data.
+
+![](../../../images/tutorials/dataflow/databases/schedule-interval-on.png)
+
+### Konfigurera ett dataflöde för engångsbruk
+
+Om du vill ställa in engångsintag väljer du den nedrullningsbara pilen för frekvens och väljer **[!UICONTROL Once]**.
+
+>[!TIP] **[!UICONTROL Interval]** och **[!UICONTROL Backfill]** inte är synliga vid engångsbruk.
+
+![](../../../images/tutorials/dataflow/databases/schedule-once.png)
+
+När du har angett lämpliga värden för schemat väljer du **[!UICONTROL Next]**.
 
 ## Granska ditt dataflöde
 
