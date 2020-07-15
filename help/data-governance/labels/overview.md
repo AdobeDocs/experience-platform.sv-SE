@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över etiketter för dataanvändning
 topic: labels
 translation-type: tm+mt
-source-git-commit: d4964231ee957349f666eaf6b0f5729d19c408de
+source-git-commit: f4b3148db3b4a17d071c1c8ad2aff8dd64ddd0b7
 workflow-type: tm+mt
-source-wordcount: '351'
+source-wordcount: '494'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,9 @@ Med etiketter för dataanvändning kan du kategorisera datauppsättningar och f�
 
 Dataanvändningsetiketter som används på datauppsättningsnivå sprids till alla fält i datauppsättningen. Etiketter kan också användas direkt på enskilda fält (kolumnrubriker) i en datauppsättning, utan spridning.
 
-Mer information om tillgängliga dataanvändningsetiketter i [!DNL Experience Platform] och de användningsprinciper de representerar finns i guiden om [dataanvändningsetiketter](reference.md)som stöds.
+[!DNL Platform] innehåller flera färdiga etiketter för&quot;viktig&quot; dataanvändning som täcker ett stort antal vanliga begränsningar för datastyrning. Mer information om dessa etiketter och de användarprofiler de representerar finns i guiden om etiketter för [viktig dataanvändning](reference.md).
+
+Förutom etiketterna från Adobe kan du också definiera egna etiketter. Anvisningar om hur du gör detta i användargränssnittet finns i användarhandboken för [dataanvändningsetiketter](./user-guide.md). Anvisningar om hur du utför detta med API-anrop finns i API-handboken för [dataanvändningsetiketter](./api.md).
 
 ## Etikettarv för målgruppssegment
 
@@ -34,14 +36,13 @@ Förutom att ärva etiketter på datauppsättningsnivå ärver segment som stand
 
 Mer information om hur automatisk exekvering fungerar i CDP i realtid finns i [Adobes realtidsöversikt](../../rtcdp/privacy/data-governance-overview.md#enforce-data-usage-compliance)över CDP Data Governance.
 
-<!-- (Add after DEC mapping reference is added to AAM docs to link out to)
-### Inheritance from Adobe Audience Manager Data Export Controls
+### Arv från dataexportkontroller i Adobe Audience Manager
 
-Experience Platform has the ability to share segments with Adobe Audience Manager. Any Data Export Controls that have been applied to Audience Manager segments are translated to equivalent labels and marketing actions recognized by Experience Platform Data Governance.
+Experience Platform kan dela segment med Adobe Audience Manager. Alla dataexportkontroller som har tillämpats på Audience Manager-segment översätts till likvärdiga etiketter och marknadsföringsåtgärder som har godkänts av Experience Platform Data Governance.
 
-For a reference on how specific Data Export Controls map to data usage labels in Platform, please refer to the [Audience Manager documentation](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/data-export-controls.html).
--->
+En referens om hur specifika dataexportkontroller mappas till dataanvändningsetiketter i Platform finns i dokumentationen [för](https://docs.adobe.com/content/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aam-data-export-control-in-aep)Audience Manager.
+
 
 ## Nästa steg
 
-Nu när du har fått nya etiketter för dataanvändning kan du fortsätta läsa [användarhandboken](user-guide.md) och lära dig hur du hanterar etiketter i [!DNL Experience Platform] användargränssnittet. Anvisningar om hur du hanterar etiketter med API:er finns i lämpliga avsnitt i utvecklarhandboken [för](../../catalog/api/labels.md)katalogtjänsten.
+Nu när du har fått nya etiketter för dataanvändning kan du fortsätta läsa [användarhandboken](user-guide.md) och lära dig hur du hanterar etiketter i [!DNL Experience Platform] användargränssnittet. Anvisningar om hur du hanterar etiketter med API:er finns i API-handboken för [användningsetiketter](./api.md).
