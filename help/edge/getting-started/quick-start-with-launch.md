@@ -4,9 +4,9 @@ seo-title: Adobe Experience Platform Web SDK snabbstart med Launch
 description: Snabbstartsguide för hur du använder Experience Platform Web SDK-tillägget för att samla in data
 seo-description: Snabbstartsguide för hur du använder Experience Platform Web SDK-tillägget för att samla in data
 translation-type: tm+mt
-source-git-commit: 9b8bddf39301cdc39bfa5370ef98d99434fc64f8
+source-git-commit: 9d58693646f472e84f04a64c4ad66f61dc5d3eba
 workflow-type: tm+mt
-source-wordcount: '553'
+source-wordcount: '560'
 ht-degree: 1%
 
 ---
@@ -31,8 +31,9 @@ Du kan skapa ett konfigurations-ID med hjälp av [edge-konfigurationsverktyget](
 
 Experience Platform Edge Network tar data som XDM. XDM är ett dataformat som gör att du kan definiera scheman. Schemat definierar hur Edge Network förväntar sig att data ska formateras. För att kunna skicka data måste du definiera ditt schema. Se till att du slutför följande:
 
-- [Skapa ett schema](../../xdm/tutorials/create-schema-ui.md)
-- Lägg till Adobe Experience Platform Web SDK-mixin i det schema du skapade
+1. [Skapa ett schema](../../xdm/tutorials/create-schema-ui.md)
+2. Lägg till AEP Web SDK ExperienceEvent Mixin i det schema du skapade.
+3. Skapa en datauppsättning från det schema du skapade.
 
 Följande video är avsedd att stödja dig när du skapar ett schema, en datauppsättning och en direktuppspelningskälla för dina Web SDK-data.
 
