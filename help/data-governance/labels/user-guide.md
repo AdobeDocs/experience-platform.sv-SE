@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användarhandbok för etiketter för dataanvändning
 topic: labels
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: b36f67fd7d597d5d6a8cd514d95908ae26189c83
 workflow-type: tm+mt
-source-wordcount: '925'
+source-wordcount: '1048'
 ht-degree: 0%
 
 ---
@@ -99,6 +99,30 @@ Du kan upprepa de här stegen om du vill fortsätta lägga till och redigera eti
 ![Markera flera fält om du vill använda etiketter på fältnivå samtidigt.](../images/labels/fields_select_multiple.png)
 
 Det är viktigt att komma ihåg att arv endast flyttas från den översta nivån nedåt (datamängd → fält), vilket innebär att etiketter som används på fältnivå inte sprids till andra fält eller datamängder.
+
+## Hantera anpassade etiketter
+
+Du kan skapa egna anpassade användningsetiketter på arbetsytan i *[!UICONTROL Policies]* [!DNL Experience Platform] användargränssnittet. Klicka **[!UICONTROL Policies]** i den vänstra navigeringen och klicka sedan för **[!UICONTROL Labels]** att visa en lista med befintliga etiketter. Klicka här **[!UICONTROL Create label]**.
+
+![](../images/labels/create-label-btn.png)
+
+Dialogrutan *[!UICONTROL Create label]* visas. Här anger du följande information för den nya etiketten:
+
+* **[!UICONTROL Identifier]**: En unik identifierare för etiketten. Detta värde används för uppslagsändamål och bör därför vara kort och koncist.
+* **[!UICONTROL Name]**: Ett visningsnamn för etiketten.
+* **[!UICONTROL Description]**: (Valfritt) En beskrivning av etiketten som ger ytterligare kontext.
+
+När du är klar klickar du på **[!UICONTROL Create]**.
+
+![](../images/labels/create-label.png)
+
+Dialogrutan stängs och den nya anpassade etiketten visas i listan under *[!UICONTROL Labels]* fliken.
+
+![](../images/labels/label-created.png)
+
+Etiketten kan nu väljas under *[!UICONTROL Custom Labels]* redigering av användningsetiketter för datauppsättningar och fält, eller när du skapar dataanvändningsprinciper.
+
+<img src="../images/labels/add-custom-label.png" width="600" /><br>
 
 ## Nästa steg
 
