@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform datastyrning
 topic: overview
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 7f6612f7dd649d68aa7ebe5b971b72d7b433b1e3
 workflow-type: tm+mt
-source-wordcount: '1448'
+source-wordcount: '1434'
 ht-degree: 0%
 
 ---
@@ -92,7 +92,6 @@ Datastyrning har för närvarande stöd för DULE-märkning på två nivåer (da
 
 Efterföljande versioner innehåller följande funktioner:
 
-* Etiketter för anpassad dataanvändning: Skapa nya etiketter och definitioner baserat på organisationens behov.
 * Politiska åtgärder: Använd policyramverket för att ge råd om och tillämpa principer för olika dataåtkomstmönster.
 * Granskning: Övervaka dataåtkomstaktiviteter och identifiera och rapportera om efterlevnadsproblem.
 
