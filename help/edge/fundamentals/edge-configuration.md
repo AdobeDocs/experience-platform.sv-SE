@@ -4,9 +4,9 @@ seo-title: Edge-konfiguration för Experience Platform Web SDK
 description: 'Lär dig hur du konfigurerar Experience Platform Edge-nätverket. '
 seo-description: 'Lär dig hur du konfigurerar Experience Platform Edge-nätverket. '
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 013e6abb0922e39bd6b9da6a66bba9a1bcefdd25
 workflow-type: tm+mt
-source-wordcount: '826'
+source-wordcount: '822'
 ht-degree: 1%
 
 ---
@@ -28,7 +28,7 @@ Konfiguration-ID för Edge kan skapas i Adobe [!DNL Launch] med hjälp av edge-k
 >
 >Kunder på tillåtelselista kan använda kantkonfigurationsverktyget oavsett om de använder [!DNL Launch] som tagghanterare eller inte. Dessutom kräver användare framkallningsbehörigheter i [!DNL Launch]. Mer information finns i artikeln [Användarbehörigheter](https://docs.adobe.com/content/help/en/launch/using/reference/admin/user-permissions.html) i [!DNL Launch] dokumentationen.
 
-Du kan skapa en kantkonfiguration genom att klicka på **[UICONTROL New Edge Configuration]** i skärmens övre högra del. När du har angett ett namn och en beskrivning ombeds du ange standardinställningarna för varje miljö.
+Du kan skapa en kantkonfiguration genom att klicka på **[!UICONTROL New Edge Configuration]** i skärmens övre högra hörn. När du har angett ett namn och en beskrivning ombeds du ange standardinställningarna för varje miljö.
 
 ### Standardmiljöinställningar
 
