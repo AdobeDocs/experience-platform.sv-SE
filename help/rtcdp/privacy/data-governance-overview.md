@@ -4,9 +4,9 @@ seo-title: Datastyrning i realtid med kunddata i Platform
 description: 'Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. '
 seo-description: 'Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. '
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 7f6612f7dd649d68aa7ebe5b971b72d7b433b1e3
 workflow-type: tm+mt
-source-wordcount: '1083'
+source-wordcount: '1054'
 ht-degree: 0%
 
 ---
@@ -49,10 +49,7 @@ För att dataanvändningsetiketter effektivt ska kunna stödja regelefterlevnad 
 
 Adobe Experience Platform har flera **huvudprinciper** för vanliga kundupplevelsefall. Du kan visa dessa profiler i användargränssnittet genom att gå till **[!UICONTROL Policies]** arbetsytan och välja **[!UICONTROL Browse]** fliken. I användarhandboken för [profiler](../../data-governance/policies/user-guide.md) i dokumentationen för Experience Platform finns mer detaljerad information om hur du arbetar med policyer i användargränssnittet, inklusive hur du skapar egna policyer.
 
-## (Beta) Tillämpa regelefterlevnad för dataanvändning {#enforce-data-usage-compliance}
-
->[!IMPORTANT]
->Den här funktionen är för närvarande i betaversion och är inte tillgänglig för alla användare. Den kan aktiveras på begäran. Dokumentationen och funktionaliteten kan komma att ändras.
+## Klara regelefterlevnaden {#enforce-data-usage-compliance}
 
 När data har märkts och användarprofiler har definierats kan ni se till att dataanvändningen följer reglerna. När målgruppssegment aktiveras till mål i realtid-CDP tillämpar Data Governance automatiskt användningspolicyer om det inträffar några överträdelser.
 
