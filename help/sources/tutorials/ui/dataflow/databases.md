@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Konfigurera ett dataflöde för en databasanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: c3d85485d0c4a910e7ba777858e2f6cf7185ef54
+source-git-commit: dd0ce5b5c45133b570970b1d1d7e2f484b89c2e9
 workflow-type: tm+mt
-source-wordcount: '1029'
+source-wordcount: '1115'
 ht-degree: 0%
 
 ---
@@ -78,17 +78,29 @@ Steget visas så att du kan konfigurera ett schema för att automatiskt importer
 
 | Fält | Beskrivning |
 | --- | --- |
-| Frekvens | Valbara frekvenser är Minute, Hour, Day och Week. |
+| Frekvens | Valbara frekvenser är En gång, Minut, Timme, Dag och Vecka. |
 | Intervall | Ett heltal som anger intervallet för den valda frekvensen. |
-| Starttid | En UTC-tidsstämpel för vilken det allra första intaget sker. Starttidsvärdet måste anges i epok-tid i sekunder. |
+| Starttid | En UTC-tidsstämpel som anger när det allra första intaget är inställt |
 | Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om *Backfill* är aktiverat, kommer alla aktuella filer i den angivna sökvägen att kapslas in under det första schemalagda intaget. Om *Backfill* är inaktiverat kapslas endast de filer som läses in mellan den första importkörningen och *starttiden* . Filer som lästs in före *starttiden* importeras inte. |
 | Delta-kolumn | Ett alternativ med en filtrerad uppsättning källschemafält av typen, datumet eller tiden. Det här fältet används för att skilja mellan nya och befintliga data. Inkrementella data importeras baserat på tidsstämpeln för den markerade kolumnen. |
 
-Dataflöden är utformade för att automatiskt importera data enligt schema. Om du bara vill importera en gång genom det här arbetsflödet kan du göra det genom att konfigurera **[!UICONTROL Frequency]** till &quot;Dag&quot; och använda ett mycket stort tal för **[!UICONTROL Interval]** fotot, till exempel 10000 eller liknande.
+Dataflöden är utformade för att automatiskt importera data enligt schema. Börja med att välja intagsfrekvens. Ange sedan intervallet för att ange perioden mellan två flödeskörningar. Intervallets värde måste vara ett heltal som inte är noll och måste vara större än eller lika med 15.
 
-Ange värden för schemat och välj **[!UICONTROL Next]**.
+Om du vill ange starttid för intaget justerar du datumet och tiden som visas i rutan för starttid. Du kan också välja kalenderikonen för att redigera starttidsvärdet. Starttiden måste vara större än eller lika med den aktuella UTC-tiden.
 
-![](../../../images/tutorials/dataflow/databases/schedule.png)
+Välj **[!UICONTROL Load incremental data by]** att tilldela deltakolumnen. I det här fältet görs en skillnad mellan nya och befintliga data.
+
+![](../../../images/tutorials/dataflow/databases/schedule-interval-on.png)
+
+### Konfigurera ett dataflöde för engångsbruk
+
+Om du vill ställa in engångsintag väljer du den nedrullningsbara pilen för frekvens och väljer **[!UICONTROL Once]**.
+
+>[!TIP] **[!UICONTROL Interval]** och **[!UICONTROL Backfill]** inte är synliga vid engångsbruk.
+
+![](../../../images/tutorials/dataflow/databases/schedule-once.png)
+
+När du har angett lämpliga värden för schemat väljer du **[!UICONTROL Next]**.
 
 ## Namnge dataflödet
 
