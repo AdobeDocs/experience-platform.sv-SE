@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: July 15, 2020
 author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: 1e420d26f89150999f356f9cf5af94d434076c2b
+source-git-commit: 2bbd62fc53d304ff05250688733f1b18dfd18007
 workflow-type: tm+mt
-source-wordcount: '331'
+source-wordcount: '328'
 ht-degree: 2%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 2%
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 <!-- - [Data Governance](#governance) -->
-- [Kundprofil i realtid](#profile)
+<!-- - [Real-time Customer Profile](#profile) -->
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
 
