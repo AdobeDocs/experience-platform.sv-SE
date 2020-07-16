@@ -1,22 +1,22 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Frågor och svar om sekretessservice
+title: Vanliga frågor om Privacy Service
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: 5921f89ce551a4bdec4c5038d579cebd0451f5f2
+source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
 workflow-type: tm+mt
-source-wordcount: '899'
+source-wordcount: '853'
 ht-degree: 0%
 
 ---
 
 
-# Felsökningsguide för Integritetstjänst
+# [!DNL Privacy Service] felsökningsguide
 
-Adobe Experience Platform Integritetstjänst ger ett RESTful API och användargränssnitt som hjälper företag att hantera förfrågningar om kunddata. Med Integritetstjänsten kan ni skicka in förfrågningar om åtkomst till och radering av privata eller personliga kunddata, vilket underlättar automatiserad efterlevnad av organisatoriska och juridiska sekretessbestämmelser.
+Adobe Experience Platform [!DNL Privacy Service] tillhandahåller ett RESTful API och användargränssnitt som hjälper företag att hantera förfrågningar om kunddata. Med [!DNL Privacy Service]kan ni skicka in förfrågningar om åtkomst till och radering av privata eller personliga kunddata, vilket underlättar automatiserad efterlevnad av organisatoriska och juridiska sekretessbestämmelser.
 
-Det här dokumentet innehåller svar på vanliga frågor om sekretesstjänsten samt information om vanliga fel i API:t.
+Det här dokumentet innehåller svar på vanliga frågor om [!DNL Privacy Service]samt information om vanliga fel i API:t.
 
 ## Vad är skillnaden mellan en användare och ett användar-ID när sekretessförfrågningar görs i API:t? {#user-ids}
 
@@ -64,49 +64,49 @@ Arrayen innehåller två objekt, som representerar enskilda användare som ident
 Mer information om att tillhandahålla information om användaridentitet finns i guiden om [identitetsdata för sekretessförfrågningar](identity-data.md).
 
 
-## Kan jag använda integritetstjänsten för att rensa upp data som av misstag skickats till plattformen?
+## Kan jag använda [!DNL Privacy Service] för att rensa data som av misstag har skickats till [!DNL Platform]?
 
-Adobe stöder inte användning av Integritetstjänst för att radera data som av misstag har skickats till en produkt. Integritetstjänsten är utformad för att hjälpa dig att uppfylla dina skyldigheter när det gäller att få tillgång till eller radera information för registrerade (eller konsumenter). Dessa förfrågningar är tidskänsliga och har slutförts med avseende på tillämplig integritetslagstiftning. Inlämning av förfrågningar som inte är förfrågningar om tillgång till eller radering av registrerade personer/konsumenter påverkar alla kunder inom integritetstjänsten och möjligheten för integritetstjänsten att ge stöd för lämpliga rättsliga tidsramar.
+Adobe stöder inte användning [!DNL Privacy Service] för att radera data som av misstag har skickats till en produkt. [!DNL Privacy Service] är utformat för att hjälpa dig att uppfylla dina skyldigheter för den registrerade (eller konsumenten) att få tillgång till eller ta bort uppgifter. Dessa förfrågningar är tidskänsliga och har slutförts med avseende på tillämplig integritetslagstiftning. Inlämning av förfrågningar som inte är förfrågningar om tillgång eller radering för registrerade/konsumenter påverkar alla [!DNL Privacy Service] kunder och möjligheten [!DNL Privacy Service] att ge stöd för lämpliga rättsliga tidsramar.
 
 Kontakta din kontoansvarige (CDM) för att koordinera och göra en insats för att ta bort eventuella PII- eller dataproblem.
 
 ## Hur får jag information om status för min sekretessförfrågan eller mitt jobb?
 
-Du kan hämta information om ett visst jobb genom att använda sekretesstjänstens API eller användargränssnittet.
+Du kan hämta information om ett visst jobb genom att använda [!DNL Privacy Service] API:t eller användargränssnittet.
 
 ### Använda API
 
-Om du vill hämta statusen för ett visst jobb med hjälp av sekretesstjänstens API, gör du en begäran till rotslutpunkten (`GET /`) med hjälp av jobbets ID i sökvägen för begäran. Mer information finns i avsnittet om [att kontrollera statusen för ett jobb](api/privacy-jobs.md#check-the-status-of-a-job) i utvecklarhandboken för Integritetstjänst.
+Om du vill hämta statusen för ett visst jobb med [!DNL Privacy Service] API:t gör du en begäran till rotslutpunkten (`GET /`) med hjälp av jobbets ID i sökvägen för begäran. Mer information finns i avsnittet om [att kontrollera statusen för ett jobb](api/privacy-jobs.md#check-the-status-of-a-job) i [!DNL Privacy Service] utvecklarhandboken.
 
 ### Använda gränssnittet
 
-Alla aktiva jobbförfrågningar visas i widgeten **Jobbförfrågningar** på kontrollpanelen för sekretesstjänster. Statusen för varje jobbförfrågan visas under **statuskolumnen** . Mer information om hur du visar jobbförfrågningar i användargränssnittet finns i användarhandboken [för](ui/user-guide.md)sekretesstjänsten.
+Alla aktiva jobbbegäranden visas i widgeten på **[!UICONTROL Job Requests]** kontrollpanelen för [!DNL Privacy Service] användargränssnitt. Statusen för varje jobbförfrågan visas under **[!UICONTROL Status]** kolumnen. Mer information om hur du visar jobbförfrågningar i användargränssnittet finns i användarhandboken för [Privacy Service](ui/user-guide.md).
 
 ## Hur hämtar jag resultaten från mina slutförda sekretessjobb?
 
-Sekretesstjänstens API och användargränssnittet innehåller båda metoder för att hämta resultaten av slutförda jobb i ZIP-format.
+API:t [!DNL Privacy Service] och användargränssnittet innehåller båda metoder för att hämta resultaten av slutförda jobb i ZIP-format.
 
 ### Använda API
 
-Gör en begäran till rotslutpunkten (`GET /`) i sekretesstjänstens API, med ID:t för det jobb vars resultat du vill hämta i sökvägen för begäran. Om jobbets status är slutförd inkluderar API:t ett `downloadURL` -attribut i svarstexten. Det här attributet innehåller en URL som du kan klistra in i webbläsarens adressfält för att hämta ZIP-filen.
+Gör en begäran till rotslutpunkten (`GET /`) i [!DNL Privacy Service] API:t med ID:t för jobbet vars resultat du vill hämta i sökvägen för begäran. Om jobbets status är slutförd inkluderar API:t ett `downloadURL` -attribut i svarstexten. Det här attributet innehåller en URL som du kan klistra in i webbläsarens adressfält för att hämta ZIP-filen.
 
-Mer information finns i avsnittet om hur du [söker efter ett jobb med hjälp av dess ID](api/privacy-jobs.md#check-the-status-of-a-job) i utvecklarhandboken för Integritetstjänst.
+Mer information finns i avsnittet om att [söka efter ett jobb med hjälp av dess ID](api/privacy-jobs.md#check-the-status-of-a-job) i [!DNL Privacy Service] utvecklarhandboken.
 
 ### Använda gränssnittet
 
-På kontrollpanelen för sekretesstjänster hittar du det jobb som du vill hämta från **widgeten** Jobbförfrågningar. Klicka på ID:t för jobbet för att öppna sidan _Jobbinformation_ . Hämta ZIP-filen genom att klicka på **Hämta** i det övre högra hörnet. Mer information finns i användarhandboken [för](ui/user-guide.md) Integritetstjänst.
+På [!DNL Privacy Service] UI-kontrollpanelen hittar du det jobb du vill hämta från widgeten **Jobbförfrågningar** . Klicka på ID:t för jobbet för att öppna sidan _Jobbinformation_ . Hämta ZIP-filen genom att klicka på **Hämta** i det övre högra hörnet. Mer information finns i användarhandboken [för](ui/user-guide.md) Privacy Service.
 
 ## Vanliga felmeddelanden
 
-I följande tabell beskrivs några vanliga fel i Integritetstjänst, med beskrivningar som hjälper till att lösa deras respektive problem.
+I följande tabell beskrivs några vanliga fel i [!DNL Privacy Service], med beskrivningar som hjälper dig att lösa respektive problem.
 
 | Felmeddelande | Beskrivning |
 | --- | --- |
 | Det gick inte att hitta användar-ID:n. | Vissa användar-ID:n som angavs i begäran kunde inte hittas och hoppades över. Kontrollera att du använder rätt namnutrymme(n) och ID-värden i nyttolasten för begäran. Mer information finns i dokumentet om [att tillhandahålla identitetsdata](./identity-data.md) . |
-| Ogiltigt namnutrymme | Ett angivet ID-namnområde för ett användar-ID var ogiltigt. En lista över godkända namnutrymmen finns i avsnittet om [standardnamnutrymmen](./api/appendix.md#standard-namespaces) i utvecklarhandboken för Integritetstjänst. Om du använder ett anpassat namnutrymme måste du se till att du anger ID:ts egenskap som `type` &quot;anpassad&quot;. |
+| Ogiltigt namnutrymme | Ett angivet ID-namnområde för ett användar-ID var ogiltigt. En lista över godkända namnutrymmen finns i avsnittet om [standardnamnutrymmen](./api/appendix.md#standard-namespaces) för [!DNL Privacy Service] utvecklarhandboken. Om du använder ett anpassat namnutrymme måste du se till att du anger ID:ts egenskap som `type` &quot;anpassad&quot;. |
 | Delvis slutförd | Jobbet slutfördes, men vissa data var inte tillämpliga för den angivna begäran och hoppades över. |
 | Data har inte det format som krävs. | Ett eller flera av datavärdena för det angivna programmet var felaktigt formaterade. Mer information finns i jobbinformationen. |
-| IMS-organisationen har inte etablerats. | Det här meddelandet visas när din IMS-organisation inte har etablerats för sekretesstjänsten. Kontakta administratören om du vill ha mer information. |
-| Åtkomst och behörigheter krävs. | Åtkomst och behörigheter krävs för att kunna använda sekretesstjänsten. Kontakta administratören för att få åtkomst. |
+| IMS-organisationen har inte etablerats. | Det här meddelandet visas när din IMS-organisation inte har etablerats för [!DNL Privacy Service]. Kontakta administratören om du vill ha mer information. |
+| Åtkomst och behörigheter krävs. | Åtkomst och behörigheter krävs för att kunna använda [!DNL Privacy Service]. Kontakta administratören för att få åtkomst. |
 | Ett problem uppstod vid överföring och arkivering av åtkomstdata. | När det här felet inträffar överför du åtkomstdata igen och försöker igen. |
 | Arbetsbelastningen har överskridits för den aktuella dokumenthastighetsgränsen. | Minska överföringshastigheten och försök igen när felet inträffar. |
