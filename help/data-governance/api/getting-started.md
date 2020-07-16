@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Utvecklarhandbok för DULE Policy Service API
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
 workflow-type: tm+mt
-source-wordcount: '678'
+source-wordcount: '655'
 ht-degree: 0%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 0%
 
 # Utvecklarhandbok för DULE [!DNL Policy Service] API
 
-Varumärkning och verkställighet av dataanvändning (DULE) är kärnmekanismen i Adobe Experience Platform datastyrning. DULE Policy Service tillhandahåller ett RESTful-API som gör att du kan skapa och hantera dataanvändningsprinciper för att avgöra vilka marknadsföringsåtgärder som kan vidtas mot data som har märkts med vissa dataanvändningsetiketter.
+Varumärkning och verkställighet av dataanvändning (DULE) är huvudmekanismen för Adobe Experience Platform [!DNL Data Governance]. DULE [!DNL Policy Service] tillhandahåller ett RESTful-API som gör att du kan skapa och hantera dataanvändningspolicyer för att avgöra vilka marknadsföringsåtgärder som kan vidtas mot data som har etiketterats med vissa dataanvändningsetiketter.
 
-Det här dokumentet innehåller anvisningar för hur du utför nyckelåtgärder som är tillgängliga i principtjänstens API. Om du ännu inte har gjort det börjar du med att läsa igenom [datastyrningsöversikten](../home.md) för att bekanta dig med DULE-ramverket. Stegvisa instruktioner för att skapa och verkställa DULE-regler finns i självstudiekursen om [DULE-principer](../policies/create.md).
+Det här dokumentet innehåller anvisningar för hur du utför de nyckelåtgärder som är tillgängliga i [!DNL Policy Service] API. Om du ännu inte har gjort det börjar du med att läsa igenom [datastyrningsöversikten](../home.md) för att bekanta dig med DULE-ramverket. Stegvisa instruktioner för att skapa och verkställa DULE-regler finns i självstudiekursen om [DULE-principer](../policies/create.md).
 
-Det här dokumentet innehåller en introduktion till de centrala koncept som du behöver känna till innan du försöker anropa API:t för principtjänsten.
+Det här dokumentet innehåller en introduktion till de centrala koncept du behöver känna till innan du försöker anropa [!DNL Policy Service] API:t.
 
 ## Komma igång med DULE [!DNL Policy Service]
 
@@ -28,11 +28,11 @@ Innan du börjar arbeta med [!DNL Policy Service]måste data på [!DNL Experienc
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Datastyrning](../home.md): Ramverket som [!DNL Experience Platform] genomdriver efterlevnad av dataanvändning.
-   * [DULE-etiketter](../labels/overview.md): Dataanvändningsetiketter används i XDM-datafält (Experience Data Model), vilket anger begränsningar för hur data kan nås.
-* [Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
-* [Kundprofil](../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda Platform-instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [!DNL Data Governance](../home.md): Ramverket som [!DNL Experience Platform] genomdriver efterlevnad av dataanvändning.
+   * [DULE-etiketter](../labels/overview.md): Dataanvändningsetiketter används i [!DNL Experience Data Model] datafält (XDM), vilket anger begränsningar för hur data kan nås.
+* [!DNL Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+* [!DNL Real-time Customer Profile](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ## Läser exempel-API-anrop
 
