@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Söka efter en resurs
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
 workflow-type: tm+mt
-source-wordcount: '176'
+source-wordcount: '174'
 ht-degree: 1%
 
 ---
@@ -25,7 +25,7 @@ GET /{CONTAINER_ID}/{RESOURCE_TYPE}/{RESOURCE_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{CONTAINER_ID}` | Behållaren där resurserna finns (&quot;global&quot; eller&quot;tenant&quot;). |
-| `{RESOURCE_TYPE}` | Den typ av resurs som ska hämtas från schemabiblioteket. Giltiga typer är `datatypes`, `mixins`, `schemas`och `classes`. |
+| `{RESOURCE_TYPE}` | Den typ av resurs som ska hämtas från [!DNL Schema Library]. Giltiga typer är `datatypes`, `mixins`, `schemas`och `classes`. |
 | `{RESOURCE_ID}` | Den URL-kodade `$id` URI:n eller `meta:altId` resursen. |
 
 **Begäran**
