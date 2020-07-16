@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användarhandbok för dataanvändningsprinciper
 topic: policies
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
 workflow-type: tm+mt
-source-wordcount: '686'
+source-wordcount: '684'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Användarhandbok för dataanvändningsprinciper
 
-Adobe Experience Platform Data Governance tillhandahåller ett användargränssnitt som gör att du kan skapa och hantera dataanvändningsprinciper. Det här dokumentet innehåller en översikt över de åtgärder du kan utföra på arbetsytan _Profiler_ i [!DNL Experience Platform] användargränssnittet.
+Adobe Experience Platform [!DNL Data Governance] har ett användargränssnitt där du kan skapa och hantera dataanvändningsprinciper. Det här dokumentet innehåller en översikt över de åtgärder du kan utföra på arbetsytan _Profiler_ i [!DNL Experience Platform] användargränssnittet.
 
 >[!IMPORTANT]
 >
