@@ -4,7 +4,10 @@ solution: Experience Platform
 title: GDPR-terminologi
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: 39d5446c04fcceaf9d75db91ecb2c136986de098
+source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
+workflow-type: tm+mt
+source-wordcount: '1066'
+ht-degree: 13%
 
 ---
 
@@ -61,7 +64,7 @@ __Filsystem:__ Alla specifika uppsättningar personuppgifter som är tillgängli
 
 ## G
 
-__GDPR:__ Den allmänna dataskyddsförordningen (GDPR) är en rättslig ram som fastställer riktlinjer för insamling och behandling av personuppgifter inom EU. I den allmänna dataskyddsförordningen fastställs principerna för datahantering och individens rättigheter, samtidigt som böter som kan vara inkomstbaserade åläggs. GDPR omfattar alla företag som hanterar uppgifter om EU-medborgare, så det är en kritisk regel för tjänstemän som ansvarar för företagstillsyn hos banker, försäkringsbolag och andra finansiella företag. GDPR kommer att träda i kraft i hela EU den 25 maj 2018.
+__GDPR:__ ( [!DNL General Data Protection Regulation] GDPR) är en rättslig ram som fastställer riktlinjer för insamling och behandling av personuppgifter inom EU. Dataskyddsförordningen fastställer principerna för datahantering och individens rättigheter, men ålägger även böter som kan vara inkomstbaserade. GDPR omfattar alla företag som hanterar uppgifter om EU-medborgare, så det är en kritisk regel för tjänstemän som ansvarar för företagstillsyn hos banker, försäkringsbolag och andra finansiella företag. GDPR trädde i kraft i hela EU den 25 maj 2018.
 
 __Genetiska data:__ Uppgifter om en persons egenskaper som ärvs eller förvärvas och som ger unik information om den enskilda personens hälsa eller fysiologi.
 
@@ -71,9 +74,9 @@ __Företagsgrupp:__ Ett kontrollerande företag och dess kontrollerade företag.
 
 ## I
 
-__Identitetshanteringstjänster (IMS):__ Adobes implementering av Federated ID och OAuth 2.0 för autentisering av Adobe ID-användare och auktorisering för Adobe-resurser. Du måste integrera IMS med ditt Adobe-program eller -tjänst för att användarna ska kunna logga in och få tillgång till Adobes tjänster. Användare kan logga in direkt med Renga (Adobe Identity Services Provider) eller logga in via en betrodd autentiseringsdomän från tredje part (till exempel Google, Facebook eller ett företags-/organisations-LDAP).
+__Identity Management Services (IMS):__ Adobes implementering av Federated ID och OAuth 2.0 för autentisering av användare av Adobe ID och auktorisering för Adobe-resurser. Du måste integrera IMS med ditt Adobe-program eller -tjänst för att användarna ska kunna logga in och få tillgång till Adobes tjänster. Users can log in directly with Renga (the Adobe identity services provider), or log in through a trusted third party authentication domain (such as [!DNL Google], [!DNL Facebook], or a corporate/organization LDAP).
 
-__IMS-organisations-ID:__ Avser en auktoriseringstoken från Adobe för autentisering från tjänst till tjänst, som inte kräver användarinloggning. Den utfärdas till en IMS-klient och har ingen associerad användare. En IMS-klient behöver en tjänsttoken för att auktorisera begäranden i bakkanalen mellan tjänster. (Termen &quot;systemtoken&quot; används ibland för att beteckna tjänsttoken.)
+__IMS-organisations-ID:__ Avser en auktoriseringstoken från Adobe för autentisering från tjänst till tjänst, som inte kräver användarinloggning. Den utfärdas till en IMS-klient och har ingen associerad användare. En IMS-klient behöver en tjänsttoken för att auktorisera begäranden i bakkanalen mellan tjänster. (Termen ”systemtoken” används ibland för att beteckna tjänsttoken.)
 
 ## J
 
@@ -133,7 +136,7 @@ __Trilogues:__ Informella förhandlingar mellan Europeiska kommissionen, Europap
 
 ## V
 
-## B
+## W
 
 ## X
 
