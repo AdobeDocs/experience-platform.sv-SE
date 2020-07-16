@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Unions
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
 workflow-type: tm+mt
-source-wordcount: '806'
+source-wordcount: '788'
 ht-degree: 0%
 
 ---
@@ -14,13 +14,13 @@ ht-degree: 0%
 
 # Unions
 
-Unioner (eller unionsvyer) är systemgenererade, skrivskyddade scheman som sammanställer fälten för alla scheman som delar samma klass (XDM ExperienceEvent eller XDM Individual Profile) och är aktiverade för kundprofil [i](../../profile/home.md)realtid.
+Unioner (eller unionsvyer) är systemgenererade, skrivskyddade scheman som sammanställer fälten för alla scheman som delar samma klass ([!DNL XDM ExperienceEvent] eller [!DNL XDM Individual Profile]) och är aktiverade för [!DNL Real-time Customer Profile](../../profile/home.md).
 
 Det här dokumentet innehåller viktiga koncept för att arbeta med fackföreningar i API:t för schemaregister, inklusive exempelanrop för olika åtgärder. Mer allmän information om fackföreningar i XDM finns i avsnittet om fackföreningar i [grunderna för schemakomposition](../schema/composition.md#union).
 
 ## Unionens blandningar
 
-Schemaregistret innehåller automatiskt tre blandningar i det kombinerade schemat: `identityMap`, `timeSeriesEvents`och `segmentMembership`.
+I [!DNL Schema Registry] den ingår automatiskt tre mixar i unionsschemat: `identityMap`, `timeSeriesEvents`och `segmentMembership`.
 
 ### Identitetskarta
 
@@ -30,7 +30,7 @@ Mer information finns i dokumentationen [för](../../identity-service/home.md) i
 
 ### Tidsseriehändelser
 
-Arrayen `timeSeriesEvents` är en lista med händelser i tidsserier som relaterar till postscheman som är associerade med unionen. När profildata exporteras till datauppsättningar inkluderas den här arrayen för varje post. Detta är användbart för olika användningsområden, t.ex. maskininlärning där modeller behöver en profils hela beteendehistorik utöver dess postattribut.
+Arrayen `timeSeriesEvents` är en lista med händelser i tidsserier som relaterar till postscheman som är associerade med unionen. När [!DNL Profile] data exporteras till datauppsättningar inkluderas den här arrayen för varje post. Detta är användbart för olika användningsområden, t.ex. maskininlärning där modeller behöver en profils hela beteendehistorik utöver dess postattribut.
 
 ### Segmentmedlemskapskarta
 
@@ -54,7 +54,7 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SCHEMA_ID}` | Den URL-kodade `$id` URI:n eller `meta:altId` det schema som du vill aktivera för användning i profilen. |
+| `{SCHEMA_ID}` | Den URL-kodade `$id` URI:n eller `meta:altId` det schema som du vill aktivera för användning i [!DNL Profile]. |
 
 **Begäran**
 
@@ -117,7 +117,7 @@ Ett lyckat svar returnerar detaljerna för det uppdaterade schemat, som nu inneh
 
 ## Lista föreningar
 
-När du ställer in &quot;union&quot;-taggen i ett schema skapar och underhåller schemaregistret automatiskt en union för den klass som schemat baseras på. Facken `$id` liknar standarden `$id` för en klass, där den enda skillnaden är den som läggs till med två understreck och ordet &quot;union&quot; (`"__union"`).
+När du ställer in &quot;union&quot;-taggen på ett schema skapar och underhåller [!DNL Schema Registry] automatiskt en union för den klass som schemat baseras på. Facken `$id` liknar standarden `$id` för en klass, där den enda skillnaden är den som läggs till med två understreck och ordet &quot;union&quot; (`"__union"`).
 
 Om du vill visa en lista över tillgängliga fackföreningar kan du utföra en GET-begäran till `/unions` slutpunkten.
 
@@ -168,7 +168,7 @@ Du kan visa en specifik union genom att utföra en GET-begäran som innehåller 
 
 >[!NOTE]
 >
->Unionssökningar är tillgängliga med hjälp av `/unions` - och `/schemas` slutpunkterna för att de ska kunna användas i profilexporter till en datauppsättning.
+>Unionssökningar är tillgängliga med hjälp av `/unions` - och `/schemas` slutpunkterna för att de ska kunna användas vid [!DNL Profile] export till en datauppsättning.
 
 **API-format**
 
@@ -265,7 +265,7 @@ GET /tenant/schemas?property=meta:immutableTags==union&property=meta:class=={CLA
 
 **Begäran**
 
-Följande begäran söker upp alla scheman som ingår i XDM Individual Profile class-föreningen.
+Följande begäran söker upp alla scheman som ingår i [!DNL XDM Individual Profile] klassunionen.
 
 ```SHELL
 curl -X GET \
