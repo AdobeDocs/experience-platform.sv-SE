@@ -4,9 +4,9 @@ seo-title: Edge-konfiguration för Experience Platform Web SDK
 description: 'Lär dig hur du konfigurerar Experience Platform Edge-nätverket. '
 seo-description: 'Lär dig hur du konfigurerar Experience Platform Edge-nätverket. '
 translation-type: tm+mt
-source-git-commit: 013e6abb0922e39bd6b9da6a66bba9a1bcefdd25
+source-git-commit: 2d47a00c91000c68c7331f88015264259a4e6323
 workflow-type: tm+mt
-source-wordcount: '822'
+source-wordcount: '820'
 ht-degree: 1%
 
 ---
@@ -92,7 +92,7 @@ Unikt ID för ett målkonto. Du hittar detta genom att navigera till [!UICONTROL
 
 Med Target kan kunderna styra behörigheter genom att använda egenskaper. Mer information finns under [Enterprise Permissions](https://docs.adobe.com/content/help/en/target/using/administer/manage-users/enterprise/properties-overview.html) (Enterprise-behörigheter) i Target-dokumentationen.
 
-Egenskapstoken finns i [!UICONTROL Adobe Target] > [!UICONTROL setup] > [UICONTROL-egenskaper]
+Egenskapstoken finns i [!UICONTROL Adobe Target] > [!UICONTROL setup] > [!UICONTROL Properties]
 
 ##### [!UICONTROL Target Environment ID]
 
