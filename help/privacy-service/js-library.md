@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över JavaScript-biblioteket för Adobes sekretess
 topic: overview
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
 workflow-type: tm+mt
-source-wordcount: '972'
+source-wordcount: '921'
 ht-degree: 3%
 
 ---
@@ -14,23 +14,23 @@ ht-degree: 3%
 
 # Översikt över JavaScript-biblioteket för Adobes sekretess
 
-Som personuppgiftsbiträde behandlar Adobe personuppgifter i enlighet med ditt företags tillstånd och instruktioner. Som personuppgiftsansvarig bestämmer du vilka personuppgifter Adobe behandlar och lagrar för din räkning. Beroende på vilken information du väljer att skicka via Adobe Experience Cloud-lösningar kan Adobe lagra privat information som är tillämplig på sekretessbestämmelser som Allmänna dataskyddsförordningen (GDPR) och California Consumer Privacy Act (CCPA). Mer information om hur Experience Cloud lösningar samlar in privata data finns i dokumentet om [sekretess i Adobe Experience Cloud](https://www.adobe.com/privacy/marketing-cloud.html) .
+Som personuppgiftsbiträde behandlar Adobe personuppgifter i enlighet med ditt företags tillstånd och instruktioner. Som personuppgiftsansvarig bestämmer du vilka personuppgifter Adobe behandlar och lagrar för din räkning. Beroende på vilken information du väljer att skicka via Adobe Experience Cloud-lösningar kan Adobe lagra privat information som gäller sekretessbestämmelser som [!DNL General Data Protection Regulation] (GDPR) och [!DNL California Consumer Privacy Act] (CCPA). Mer information om hur Experience Cloud lösningar samlar in privata data finns i dokumentet om [sekretess i Adobe Experience Cloud](https://www.adobe.com/privacy/marketing-cloud.html) .
 
-Med **Adobe Privacy JavaScript Library** kan personuppgiftsansvariga automatisera hämtningen av alla registrerade identiteter som genererats av Experience Cloud-lösningar för en viss domän. Med hjälp av API:t från [Adobe Experience Platform Privacy Servicen](home.md)kan dessa identiteter sedan användas för att skapa åtkomst- och borttagningsbegäranden för privata data som tillhör de registrerade.
+Med **Adobe Privacy JavaScript Library** kan personuppgiftsansvariga automatisera hämtningen av alla registrerade identiteter som genererats av [!DNL Experience Cloud] lösningar för en viss domän. Med hjälp av API:t från [Adobe Experience Platform Privacy Servicen](home.md)kan dessa identiteter sedan användas för att skapa åtkomst- och borttagningsbegäranden för privata data som tillhör de registrerade.
 
 >[!NOTE]
 >
->JS-biblioteket för sekretess behöver normalt bara installeras på sekretessrelaterade sidor och behöver inte installeras på alla sidor på en webbplats eller en domän.
+>Vanligtvis behöver den bara installeras på sekretessrelaterade sidor och behöver inte installeras på alla sidor på en webbplats eller en domän. [!DNL Privacy JS Library]
 
 ## Funktioner
 
-JS-biblioteket för sekretess innehåller flera funktioner för att hantera identiteter i Privacy Service. Dessa funktioner kan bara användas för att hantera identiteter som lagras i webbläsaren för en viss besökare. De kan inte användas för att skicka information direkt till Experience Cloud Centraltjänst.
+I [!DNL Privacy JS Library] finns flera funktioner för att hantera identiteter i [!DNL Privacy Service]. Dessa funktioner kan bara användas för att hantera identiteter som lagras i webbläsaren för en viss besökare. De kan inte användas för att skicka in information direkt till [!DNL Experience Cloud Central Service] .
 
 Följande tabell visar de olika funktionerna i biblioteket:
 
 |  -funktion | Beskrivning |
 | --- | --- |
-| `retrieveIdentities` | Returnerar en array med matchande identiteter (`validIds`) som har hämtats från Privacy Servicen samt en array med identiteter som inte hittades (`failedIds`). |
+| `retrieveIdentities` | Returnerar en array med matchande identiteter (`validIds`) som hämtades från [!DNL Privacy Service]samt en array med identiteter som inte hittades (`failedIds`). |
 | `removeIdentities` | Tar bort varje matchande (giltig) identitet från webbläsaren. Returnerar en array med matchande identiteter (`validIds`), där varje identitet innehåller ett `isDeleteClientSide` booleskt värde som anger om detta ID har tagits bort. |
 | `retrieveThenRemoveIdentities` | Hämtar en array med matchande identiteter (`validIds`) och tar sedan bort dessa identiteter från webbläsaren. Även om den här funktionen liknar `removeIdentities`den är bäst att använda när den Adobe-lösning du använder kräver en åtkomstbegäran innan det går att ta bort den (till exempel när en unik identifierare måste hämtas innan den kan tas bort). |
 
@@ -43,15 +43,15 @@ Eftersom alla tre funktionerna representerar asynkrona processer måste alla hä
 
 ## Installation
 
-Om du vill börja använda JS-biblioteket för sekretess måste du installera det på datorn på något av följande sätt:
+Om du vill börja använda [!DNL Privacy JS Library]programmet måste du installera det på datorn på något av följande sätt:
 
 * Installera med npm genom att köra följande kommando: `npm install @adobe/adobe-privacy`
 * Använd Adobe Launch Extension under namnet `AdobePrivacy`
 * Hämta från [https://github.com/Adobe-Marketing-Cloud/adobe-privacy](https://github.com/Adobe-Marketing-Cloud/adobe-privacy)
 
-## Instansiera JS-biblioteket för sekretess
+## Instansiera [!DNL Privacy JS Library]
 
-Alla program som använder JS-biblioteket för sekretess måste initiera ett nytt `AdobePrivacy` objekt, som måste konfigureras till en viss Adobe-lösning. En instans för Adobe Analytics ser till exempel ut ungefär så här:
+Alla program som använder [!DNL Privacy JS Library] måste skapa ett nytt `AdobePrivacy` objekt som måste konfigureras till en viss Adobe-lösning. En instans för Adobe Analytics ser till exempel ut ungefär så här:
 
 ```js
 var adobePrivacy = new AdobePrivacy({
@@ -67,11 +67,11 @@ En fullständig lista över parametrar som stöds för olika Adobe-lösningar fi
 
 ## Kodexempel
 
-I följande kodexempel visas hur du använder JS-biblioteket för sekretess för flera vanliga scenarier, förutsatt att du inte använder Launch eller DTM.
+I följande kodexempel visas hur du använder [!DNL Privacy JS Library] för flera vanliga scenarier, förutsatt att du inte använder [!DNL Launch] eller DTM.
 
 ### Hämta identiteter
 
-I det här exemplet visas hur du hämtar en lista med identiteter från Experience Cloud.
+I det här exemplet visas hur du hämtar en lista med identiteter från [!DNL Experience Cloud].
 
 #### JavaScript
 
@@ -93,7 +93,7 @@ adobePrivacy.retrieveIdentities().then(handleRetrievedIDs);
 | Variabel | Beskrivning |
 | --- | --- |
 | `validIds` | Ett JSON-objekt som innehåller alla ID:n som har hämtats. |
-| `failedIDs` | Ett JSON-objekt som innehåller alla ID:n som inte hämtades från Privacy Servicen, eller som på annat sätt inte kunde hittas. |
+| `failedIDs` | Ett JSON-objekt som innehåller alla ID:n som inte hämtades från [!DNL Privacy Service]eller på annat sätt inte kunde hittas. |
 
 #### Resultat
 
@@ -142,7 +142,7 @@ adobePrivacy.removeIdentities().then(handleRemovedIDs)…
 | Variabel | Beskrivning |
 | --- | --- |
 | `validIds` | Ett JSON-objekt som innehåller alla ID:n som har hämtats. |
-| `failedIDs` | Ett JSON-objekt som innehåller alla ID:n som inte hämtades från Privacy Servicen, eller som på annat sätt inte kunde hittas. |
+| `failedIDs` | Ett JSON-objekt som innehåller alla ID:n som inte hämtades från [!DNL Privacy Service]eller på annat sätt inte kunde hittas. |
 
 #### Resultat
 
@@ -171,11 +171,11 @@ Om koden körs utan fel fylls `validIDs` i med en lista över hämtade identitet
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du lagts till i de viktigaste funktionerna i Privacy JS Library. När du har använt biblioteket för att hämta en lista över identiteter kan du använda dessa identiteter för att skapa dataåtkomst och ta bort begäranden till Privacy Service-API:t. Mer information finns i [Privacy Servicens utvecklarhandbok](api/getting-started.md) .
+Genom att läsa det här dokumentet har du lagts till i de centrala funktionerna i [!DNL Privacy JS Library]. När du har använt biblioteket för att hämta en lista över identiteter kan du använda dessa identiteter för att skapa dataåtkomst och ta bort begäranden till [!DNL Privacy Service] API. Mer information finns i [Privacy Servicens utvecklarhandbok](api/getting-started.md) .
 
 ## Bilaga
 
-Det här avsnittet innehåller ytterligare information om hur du använder JS-biblioteket för sekretess.
+Detta avsnitt innehåller ytterligare information om hur du använder [!DNL Privacy JS Library].
 
 ### Adobe Solution configuration parameters
 
