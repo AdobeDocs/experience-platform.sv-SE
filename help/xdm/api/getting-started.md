@@ -4,54 +4,54 @@ solution: Experience Platform
 title: Utvecklarhandbok för API för schematabell
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
 workflow-type: tm+mt
-source-wordcount: '1246'
+source-wordcount: '1195'
 ht-degree: 0%
 
 ---
 
 
-# Utvecklarhandbok för API för schematabell
+# [!DNL Schema Registry] Utvecklarhandbok för API
 
-Schemaregistret används för att komma åt schemabiblioteket i Adobe Experience Platform, med ett användargränssnitt och RESTful API som alla tillgängliga biblioteksresurser kan nås från.
+Den [!DNL Schema Registry] används för att komma åt schemabiblioteket i Adobe Experience Platform, med ett användargränssnitt och RESTful API från vilket alla tillgängliga biblioteksresurser är tillgängliga.
 
-Med API:t för schemaregister kan du utföra grundläggande CRUD-åtgärder för att visa och hantera alla scheman och relaterade resurser som är tillgängliga för dig i Adobe Experience Platform. Detta gäller även dem som definieras av Adobe, Experience Platform partners och leverantörer vars program du använder. Du kan också använda API-anrop för att skapa nya scheman och resurser för organisationen, samt visa och redigera resurser som du redan har definierat.
+Med API:t för schemaregister kan du utföra grundläggande CRUD-åtgärder för att visa och hantera alla scheman och relaterade resurser som är tillgängliga för dig i Adobe Experience Platform. Detta gäller även dem som definieras av Adobe, [!DNL Experience Platform] partners och leverantörer vars program du använder. Du kan också använda API-anrop för att skapa nya scheman och resurser för organisationen, samt visa och redigera resurser som du redan har definierat.
 
-Den här utvecklarhandboken innehåller steg som hjälper dig att börja använda API:t för schemaregister. Guiden innehåller sedan exempel på API-anrop för att utföra nyckelåtgärder med schemaregistret.
+Den här utvecklarhandboken innehåller steg som hjälper dig att börja använda [!DNL Schema Registry] API:t. Handboken innehåller sedan exempel på API-anrop för att utföra nyckelåtgärder med [!DNL Schema Registry].
 
 ## Förutsättningar
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](../home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
+* [!DNL Experience Data Model (XDM) System](../home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grundläggande om schemakomposition](../schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman.
-* [Kundprofil](../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [!DNL Real-time Customer Profile](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:t för schemaregister.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa [!DNL Schema Registry] API:t.
 
 ## Läser exempel-API-anrop
 
-Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
 
 ## Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform, inklusive de som tillhör schemaregistret, är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Schema Registry], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
-Alla GET-begäranden (lookup) till schemaregistret kräver en extra Accept-rubrik, vars värde bestämmer vilket format som informationen returneras av API:t. Mer information finns i avsnittet [Acceptera sidhuvud](#accept) nedan.
+Alla sökförfrågningar (GET) till [!DNL Schema Registry] kräver ytterligare ett Acceptera-huvud, vars värde bestämmer formatet för den information som returneras av API:t. Mer information finns i avsnittet [Acceptera sidhuvud](#accept) nedan.
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -80,7 +80,7 @@ curl -X GET \
 
 **Svar**
 
-Ett svar returnerar information om din organisations användning av schemaregistret. Detta inkluderar ett `tenantId` -attribut, vars värde är ditt `TENANT_ID`.
+Ett svar returnerar information om hur din organisation använder [!DNL Schema Registry]. Detta inkluderar ett `tenantId` -attribut, vars värde är ditt `TENANT_ID`.
 
 ```JSON
 {
@@ -161,17 +161,17 @@ Ett svar returnerar information om din organisations användning av schemaregist
 
 ## Förstå `CONTAINER_ID` {#container}
 
-Anrop till API:t för schemaregister kräver användning av en `CONTAINER_ID`. Det finns två behållare som API-anrop kan göras mot: den **globala behållaren** och **innehavarbehållaren**.
+Anrop till [!DNL Schema Registry] API kräver att du använder en `CONTAINER_ID`. Det finns två behållare som API-anrop kan göras mot: den **globala behållaren** och **innehavarbehållaren**.
 
 ### Global behållare
 
-Den globala behållaren innehåller alla standardklasser, mixins, datatyper och scheman som tillhandahålls av Adobe och Experience Platform partner. Du får bara utföra list- och sökbegäranden (GET) mot den globala behållaren.
+Den globala behållaren innehåller alla standardklasser, mixins, datatyper och scheman som tillhandahålls av Adobe och [!DNL Experience Platform] partner. Du får bara utföra list- och sökbegäranden (GET) mot den globala behållaren.
 
 ### Klientbehållaren
 
 Klientbehållaren ska inte förväxlas med din unika `TENANT_ID`eftersom den innehåller alla klasser, blandningar, datatyper, scheman och beskrivningar som definieras av en IMS-organisation. De är unika för varje organisation, vilket innebär att de inte är synliga eller hanterbara av andra IMS-organisationer. Du kan utföra alla CRUD-åtgärder (GET, POST, PUT, PATCH, DELETE) mot resurser som du skapar i innehavarbehållaren.
 
-När du skapar en klass, mixin, schema eller datatyp i klientbehållaren, sparas den i schemaregistret och tilldelas en `$id` URI som innehåller din `TENANT_ID`. Detta `$id` används i hela API:t för att referera till specifika resurser. Exempel på `$id` värden finns i nästa avsnitt.
+När du skapar en klass, mixin, schema eller datatyp i innehavarbehållaren, sparas den i [!DNL Schema Registry] och tilldelas en `$id` URI som innehåller din `TENANT_ID`. Detta `$id` används i hela API:t för att referera till specifika resurser. Exempel på `$id` värden finns i nästa avsnitt.
 
 ## Schemaidentifiering {#schema-identification}
 
@@ -189,7 +189,7 @@ Anrop till API:t för schemaregister stöder antingen den URL-kodade `$id` URI:n
 
 ## Acceptera rubrik {#accept}
 
-När du utför list- och lookup-åtgärder (GET) i API:t för schemaregister krävs en Accept-rubrik för att fastställa formatet för de data som returneras av API:t. När du söker efter specifika resurser måste ett versionsnummer också inkluderas i rubriken Godkänn.
+Vid GET-åtgärder (list and lookup) i API:t krävs en Accept-rubrik för att fastställa formatet för de data som returneras av API:t. [!DNL Schema Registry] När du söker efter specifika resurser måste ett versionsnummer också inkluderas i rubriken Godkänn.
 
 I följande tabell visas kompatibla värden för Acceptera sidhuvud, inklusive de med versionsnummer, tillsammans med beskrivningar av vad API:t returnerar när de används.
 
@@ -231,7 +231,7 @@ I följande exempelfält visas ett korrekt formaterat XDM-fält, med mer informa
    * **Korrekt:** `fieldName`, `field_name2`, `Field-Name`, `field-name_3`
    * **Felaktigt:** `_fieldName`
 * camelCase är att föredra som fältobjektets namn. Exempel: `fieldName`
-* Fältet ska innehålla en `title`, skriven i versaler. Exempel: `Field Name`
+* Fältet ska innehålla en `title`titel. Exempel: `Field Name`
 * Fältet kräver ett `type`.
    * Du kan behöva ange en valfri typ `format`.
    * Där en viss dataformatering krävs kan `examples` läggas till som en array.
@@ -242,4 +242,4 @@ Mer information om hur du definierar fälttyper i API finns i [bilagan](appendix
 
 ## Nästa steg
 
-Det här dokumentet innehöll den nödvändiga kunskapen för att anropa API:t för schemaregister, inklusive nödvändiga autentiseringsuppgifter. Du kan nu gå vidare till exempelsamtalen i den här utvecklarhandboken och följa med i instruktionerna för dessa. En fullständig stegvis genomgång av hur du skapar ett schema i API:t finns i följande [självstudiekurs](../tutorials/create-schema-api.md).
+Det här dokumentet innehöll den nödvändiga kunskapen som krävs för att anropa [!DNL Schema Registry] API, inklusive nödvändiga autentiseringsuppgifter. Du kan nu gå vidare till exempelsamtalen i den här utvecklarhandboken och följa med i instruktionerna för dessa. En fullständig stegvis genomgång av hur du skapar ett schema i API:t finns i följande [självstudiekurs](../tutorials/create-schema-api.md).
