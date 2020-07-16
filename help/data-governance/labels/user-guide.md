@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användarhandbok för etiketter för dataanvändning
 topic: labels
 translation-type: tm+mt
-source-git-commit: b36f67fd7d597d5d6a8cd514d95908ae26189c83
+source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
 workflow-type: tm+mt
-source-wordcount: '1048'
+source-wordcount: '1045'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ I nästa avsnitt beskrivs hur du skapar en ny datauppsättning som du kan använ
 
 >[!NOTE]
 >
->I det här exemplet skapas en datauppsättning med ett förkonfigurerat XDM-schema (Experience Data Model). Mer information om XDM-scheman finns i [XDM-systemöversikten](../../xdm/home.md) och [grunderna för schemakomposition](../../xdm/schema/composition.md).
+>I det här exemplet skapas en datauppsättning med ett förkonfigurerat [!DNL Experience Data Model] (XDM) schema. Mer information om XDM-scheman finns i [XDM-systemöversikten](../../xdm/home.md) och [grunderna för schemakomposition](../../xdm/schema/composition.md).
 
 Om du vill skapa en ny datauppsättning klickar du **[!UICONTROL Create Dataset]** i det övre högra hörnet av _[!UICONTROL Datasets]_arbetsytan.
 
