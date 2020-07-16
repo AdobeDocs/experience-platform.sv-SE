@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Godkännande
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
 workflow-type: tm+mt
-source-wordcount: '226'
+source-wordcount: '220'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Godkännande
 
-Vissa bestämmelser kräver uttryckligt samtycke från kunden innan deras personuppgifter kan samlas in. Med slutpunkten i Privacy Services-API:t kan du bearbeta förfrågningar om kundsamtycke och integrera dem i ditt sekretessarbetsflöde. `/consent`
+Vissa bestämmelser kräver uttryckligt samtycke från kunden innan deras personuppgifter kan samlas in. Med `/consent` slutpunkten i [!DNL Privacy Service] API kan du bearbeta förfrågningar om kundsamtycke och integrera dem i ditt sekretessarbetsflöde.
 
 Innan du använder den här guiden bör du läsa avsnittet [Komma igång](./getting-started.md) för information om de autentiseringshuvuden som visas i exemplet på API-anrop nedan.
 
@@ -68,8 +68,8 @@ curl -X POST \
 
 >[!NOTE]
 >
->Mer information om hur du avgör vilka värden för kundidentitet som ska skickas till Privacy Servicen finns i guiden om [att tillhandahålla identitetsdata](../identity-data.md).
+>Mer information om hur du avgör vilka värden för kundidentitet som ska skickas till [!DNL Privacy Service]finns i guiden om [att tillhandahålla identitetsdata](../identity-data.md).
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 202 (Accepterad) utan nyttolast, vilket anger att begäran accepterades av Privacy Servicen och håller på att bearbetas.
+Ett lyckat svar returnerar HTTP-status 202 (Accepterad) utan nyttolast, vilket anger att begäran accepterades av [!DNL Privacy Service] och håller på att bearbetas.
