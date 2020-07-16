@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Skapa en blandning
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: b2ceac3de73ac622dc885eb388e46e93551f43a8
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+workflow-type: tm+mt
+source-wordcount: '303'
+ht-degree: 0%
 
 ---
 
@@ -13,7 +16,7 @@ source-git-commit: b2ceac3de73ac622dc885eb388e46e93551f43a8
 
 Blandningar är en uppsättning fält som används för att beskriva ett visst koncept, till exempel&quot;adress&quot; eller&quot;profilinställningar&quot;. Det finns många standardblandningar att tillgå, eller så kan du definiera en egen när du vill hämta in information som är unik för din organisation. Varje mixin innehåller ett `meta:intendedToExtend` fält som listar de klasser som blandningen är kompatibel med.
 
-Det kan vara praktiskt att granska alla tillgängliga mixar för att bekanta dig med fälten i varje. Du kan visa (GET) alla blandningar som är kompatibla med en viss klass genom att utföra en begäran mot var och en av behållarna &quot;global&quot; och &quot;tenant&quot;, och bara returnera de blandningar där fältet &quot;meta:intendedToExtend&quot; matchar klassen som du använder. Exemplen nedan returnerar alla blandningar som kan användas med klassen XDM Individual Profile:
+Det kan vara praktiskt att granska alla tillgängliga mixar för att bekanta dig med fälten i varje. Du kan visa (GET) alla blandningar som är kompatibla med en viss klass genom att utföra en begäran mot var och en av behållarna &quot;global&quot; och &quot;tenant&quot;, och bara returnera de blandningar där fältet &quot;meta:intendedToExtend&quot; matchar klassen som du använder. Exemplen nedan returnerar alla blandningar som kan användas med [!DNL XDM Individual Profile] klassen:
 
 ```http
 GET /global/mixins?property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile
@@ -99,7 +102,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehåller information om den nyligen skapade mixinen, inklusive `$id`, `meta:altId`och `version`. Dessa värden är skrivskyddade och tilldelas av schemaregistret.
+Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehåller information om den nyligen skapade mixinen, inklusive `$id`, `meta:altId`och `version`. Dessa värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
 
 ```JSON
 {
