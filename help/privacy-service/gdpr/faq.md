@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Vanliga frågor om GDPR
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: e176cc69613fad1d4a6b44138a6d88a688438578
+source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
+workflow-type: tm+mt
+source-wordcount: '642'
+ht-degree: 0%
 
 ---
 
 
 # Vanliga frågor om GDPR
 
-Det här dokumentet ger svar på vanliga frågor om den allmänna dataskyddsförordningen (GDPR) och dess implementering i Adobe Experience Cloud.
+Det här dokumentet ger svar på vanliga frågor om [!DNL General Data Protection Regulation] (GDPR) och dess implementering i Adobe Experience Cloud.
 
 Definitioner för de olika GDPR-relaterade termer som används i det här dokumentet finns i [GDPR-terminologartikeln](terminology.md) .
 
@@ -45,7 +48,7 @@ Föräldrar måste ge sitt samtycke för att behandla personuppgifter om barn so
 
 ## Vad är skillnaden mellan en förordning och ett direktiv?
 
-En **förordning** är en bindande lagstiftningsakt och måste tillämpas i sin helhet i hela EU. Ett **direktiv** är en rättsakt som fastställer ett mål som alla EU-länder måste uppnå, men det är de enskilda länderna som bestämmer hur.
+A **regulation** is a binding legislative act and must be applied in its entirety across the EU. Ett **direktiv** är en rättsakt som fastställer ett mål som alla EU-länder måste uppnå, men det är de enskilda länderna som bestämmer hur.
 
 Det är viktigt att notera att den allmänna dataskyddsförordningen är en förordning, i motsats till den tidigare lagstiftningen (dataskyddsdirektivet), som är ett direktiv.
 
