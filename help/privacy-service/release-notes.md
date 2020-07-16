@@ -4,21 +4,21 @@ solution: Experience Platform
 title: Versionsinformation om Privacy Service
 topic: release notes
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 4cfa64e3371496e2408fe8fee64d49883334917c
 workflow-type: tm+mt
-source-wordcount: '546'
+source-wordcount: '511'
 ht-degree: 5%
 
 ---
 
 
-# Versionsinformation om Privacy Service
+# [!DNL Privacy Service] versionsinformation
 
-Det här dokumentet innehåller information om nya funktioner för Adobe Experience Platform Privacy Service samt förbättringar och viktiga felkorrigeringar.
+Det här dokumentet innehåller information om nya funktioner för Adobe Experience Platform [!DNL Privacy Service]samt förbättringar och viktiga felkorrigeringar.
 
 >[!NOTE]
 >
->Den senaste versionsinformationen för andra Experience Platform-tjänster finns [här](../release-notes/latest/latest.md).
+>Den senaste versionsinformationen för andra [!DNL Experience Platform] tjänster finns [här](../release-notes/latest/latest.md).
 
 ## 8 april 2020
 
@@ -26,8 +26,8 @@ Det här dokumentet innehåller information om nya funktioner för Adobe Experie
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Stöd för PDPA | Begäran om skydd av personuppgifter kan nu skapas och spåras i Thailand enligt lagen om skydd av personuppgifter (PDPA). När du gör sekretessförfrågningar i API:t accepterar arrayen värdet &quot;pdpa_tha&quot;. `regulation` |
-| Namnområdestyper i användargränssnittet | Du kan nu ange olika namnområdestyper i Request Builder i Privacy Servicens användargränssnitt. Mer information finns i [användarhandboken](ui/user-guide.md) . |
+| Stöd för PDPA | [!DNL Privacy] förfrågningar kan nu skapas och spåras i Thailand enligt lagen om skydd av personuppgifter (PDPA). När du gör sekretessförfrågningar i API:t accepterar arrayen värdet &quot;pdpa_tha&quot;. `regulation` |
+| Namnområdestyper i användargränssnittet | Du kan nu ange olika namnområdestyper i Request Builder i [!DNL Privacy Service] användargränssnittet. Mer information finns i [användarhandboken](ui/user-guide.md) . |
 | Tidigare borttagning av slutpunkt | Den gamla API-slutpunkten (`data/privacy/gdpr`) har tagits bort. |
 
 ## 14 januari 2020
@@ -36,14 +36,14 @@ Det här dokumentet innehåller information om nya funktioner för Adobe Experie
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Omprofilering av Privacy Service | Den tidigare benämningen&quot;GDPR Service&quot; har ändrats till Privacy Service eftersom tjänsten har utvecklats för att stödja andra bestämmelser utöver GDPR. |
-| Nya API-slutpunkter | Bassökvägen för Privacy Service-API har uppdaterats från `/data/privacy/gdpr` till `/data/core/privacy/jobs` |
-| Ny obligatorisk `regulation` egenskap | När du skapar nya jobb i Privacy Service-API:t måste en egenskap anges i nyttolasten för begäran för att ange vilken regel som jobbet ska spåras under. `regulation` Godkända värden är `gdpr` och `ccpa`. Mer information finns i dokumentet om [sekretessjobb](api/privacy-jobs.md) i Privacy Servicens utvecklarhandbok. |
-| Stöd för Adobe Primetime-autentisering | Privacy Servicen godkänner nu begäranden om åtkomst/borttagning från Adobe Primetime Authentication, med `primetimeAuthentication` som produktvärde. Mer information finns i dokumentationen [för](http://tve.helpdocsonline.com/how-to-make-a-privacy-request) Primetime-autentisering. |
+| [!DNL Privacy Service] omprofilering | Det tidigare namnet&quot;GDPR Service&quot; har ändrats till&quot;Service&quot; [!DNL Privacy Service] eftersom tjänsten har utvecklats för att stödja andra bestämmelser utöver GDPR. |
+| Nya API-slutpunkter | Bassökvägen för [!DNL Privacy Service] API har uppdaterats från `/data/privacy/gdpr` till `/data/core/privacy/jobs` |
+| Ny obligatorisk `regulation` egenskap | När du skapar nya jobb i [!DNL Privacy Service] API måste en `regulation` egenskap anges i nyttolasten för begäran för att ange vilken regel som jobbet ska spåras under. Godkända värden är `gdpr` och `ccpa`. Mer information finns i dokumentet om [sekretessjobb](api/privacy-jobs.md) i [!DNL Privacy Service] utvecklarhandboken. |
+| Stöd för Adobe Primetime-autentisering | [!DNL Privacy Service] godkänner nu begäranden om åtkomst/borttagning från Adobe Primetime Authentication, med `primetimeAuthentication` som produktvärde. Mer information finns i dokumentationen [för](http://tve.helpdocsonline.com/how-to-make-a-privacy-request) Primetime-autentisering. |
 
 ### Förbättringar
 
-* Förbättringar av användargränssnittet för Privacy Service:
+* [!DNL Privacy Service] Förbättringar av användargränssnittet:
    * Separata jobbspårningssidor för GDPR- och CCPA-regler.
    * Ny _regeltypsmeny_ för att växla mellan spårningsdata för GDPR och CCPA.
 
@@ -53,21 +53,21 @@ Det här dokumentet innehåller information om nya funktioner för Adobe Experie
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Kontrollpanel för begärandemått | Den nya mätinstrumentpanelen i Privacy Servicens användargränssnitt ger synlighet för inskickade, felaktiga och slutförda GDPR-begäranden. |
-| Request Builder | För att betjäna organisationer med både tekniska och icke-tekniska användare som skickar GDPR-förfrågningar har funktionen&quot;Skapa begäran&quot; lagts till i användargränssnittet. Funktionen för att skicka JSON-filer är fortfarande tillgänglig i användargränssnittet för de Privacy Service som föredrar att fortsätta använda den. |
-| Meddelanden om GDPR-jobbhändelser | Händelsemeddelanden om GDPR-jobbstatus är viktiga för många arbetsflöden. Meddelanden som tidigare sänts via individuella e-postmeddelanden, men GDPR-händelsemeddelanden är meddelanden som utnyttjar Adobe I/O-händelser, som skickas till en konfigurerad webkrok som underlättar automatisering av jobbförfrågningar. Privacy Servicens gränssnittsanvändare kan prenumerera på Adobe I/O GDPR-event för att få uppdateringar när en produkt eller GDPR-jobbet har slutförts. |
+| Kontrollpanel för begärandemått | Den nya mätinstrumentpanelen i [!DNL Privacy Service] användargränssnittet ger synlighet i inskickade, felaktiga och slutförda GDPR-begäranden. |
+| Request Builder | För att betjäna organisationer med både tekniska och icke-tekniska användare som skickar GDPR-förfrågningar har funktionen&quot;Skapa begäran&quot; lagts till i användargränssnittet. Funktionen för att skicka JSON-filer är fortfarande tillgänglig i [!DNL Privacy Service] användargränssnittet för de organisationer som föredrar att fortsätta använda den. |
+| Meddelanden om GDPR-jobbhändelser | Händelsemeddelanden om GDPR-jobbstatus är viktiga för många arbetsflöden. Meddelanden som tidigare sänts via individuella e-postmeddelanden, men GDPR-händelsemeddelanden är meddelanden som utnyttjar Adobe I/O-händelser, som skickas till en konfigurerad webkrok som underlättar automatisering av jobbförfrågningar. [!DNL Privacy Service] UI-användare kan prenumerera på Adobe I/O GDPR-event för att få uppdateringar när en produkt eller GDPR-jobbet har slutförts. |
 
 ## 18 apr 2019
 
 ### Förbättringar
 
-* Standardintervallet för statustabellen i Privacy Servicens användargränssnitt ändrat till ett 7-dagarsintervall.
+* Standardintervallet för statustabellen i [!DNL Privacy Service] användargränssnittet ändrat till ett 7-dagarsintervall.
 * Bättre intern undantagshantering.
 * Förbättrade prestanda genom att införa cachelagring för vanliga interna anrop med låg dataförändringsfrekvens.
 
 ### Felkorrigeringar
 
-* Lagt till loggningsinformation som saknas för filtrerade frågor för `GET /` slutpunkten i Privacy Service-API:t.
+* Lagt till loggningsinformation som saknas för filtrerade frågor för `GET /` slutpunkten i [!DNL Privacy Service] API.
 
 ## 11 apr 2019
 
@@ -92,4 +92,4 @@ Det här dokumentet innehåller information om nya funktioner för Adobe Experie
 
 ### Felkorrigeringar
 
-* Ett problem där Privacy Servicens användargränssnitt inte kunde läsas in har korrigerats.
+* Ett problem där kunderna inte kunde läsa in [!DNL Privacy Service] gränssnittet har korrigerats.
