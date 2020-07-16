@@ -4,28 +4,28 @@ solution: Experience Platform
 title: Prenumerera på sekretesshändelser
 topic: privacy events
 translation-type: tm+mt
-source-git-commit: ab29c7771122267634dea24582b07f605abd7ed8
+source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
 workflow-type: tm+mt
-source-wordcount: '830'
+source-wordcount: '812'
 ht-degree: 0%
 
 ---
 
 
-# Prenumerera på sekretesshändelser
+# Prenumerera på [!DNL Privacy Events]
 
-Integritetshändelser är meddelanden från Adobe Experience Platform Privacy Service, som utnyttjar Adobe I/O-händelser som skickas till en konfigurerad webkrok för att underlätta effektiv automatisering av jobbförfrågningar. De minskar eller eliminerar behovet av att avfråga API:t för sekretesstjänsten för att kontrollera om ett jobb är färdigt eller om en viss milstolpe i ett arbetsflöde har nåtts.
+[!DNL Privacy Events] är meddelanden från Adobe Experience Platform [!DNL Privacy Service], som utnyttjar Adobe I/O Events som skickas till en konfigurerad webkrok för att underlätta automatisering av jobbförfrågningar. De minskar eller eliminerar behovet av att avfråga [!DNL Privacy Service] API för att kontrollera om ett jobb är färdigt eller om en viss milstolpe i ett arbetsflöde har nåtts.
 
 Det finns för närvarande fyra typer av meddelanden som rör livscykeln för sekretessjobben:
 
 | Typ | Beskrivning |
 --- | ---
-| Jobbet har slutförts | Alla Experience Cloud-lösningar har rapporterat tillbaka och den övergripande eller globala statusen för jobbet har markerats som fullständig. |
+| Jobbet har slutförts | Alla [!DNL Experience Cloud] lösningar har rapporterats tillbaka och jobbens övergripande eller globala status har markerats som slutförd. |
 | Jobbfel | En eller flera lösningar rapporterade ett fel när begäran bearbetades. |
 | Produkten är klar | En av lösningarna som är kopplad till det här jobbet har slutfört sitt arbete. |
 | Produktfel | En av lösningarna rapporterade ett fel när begäran bearbetades. |
 
-Det här dokumentet innehåller steg för hur du konfigurerar en integrering för meddelanden om sekretesstjänster i Adobe I/O. En översikt över sekretesstjänsten och dess funktioner på hög nivå finns i översikten över [sekretesstjänsten](home.md).
+Det här dokumentet innehåller steg för hur du konfigurerar en integration för [!DNL Privacy Service] meddelanden i Adobe I/O. En översikt över [!DNL Privacy Service] och dess funktioner på hög nivå finns i översikten över [Privacy Servicen](home.md).
 
 ## Komma igång
 
@@ -74,7 +74,7 @@ Anteckna `Forwarding` URL (`https://212d6cd2.ngrok.io`), eftersom den används f
 
 ## Skapa ett nytt projekt i Adobe Developer Console
 
-Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med ditt Adobe ID. Följ sedan stegen som beskrivs i självstudiekursen om hur du [skapar ett tomt projekt](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) i dokumentationen för Adobe Developer Console.
+Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med Adobe ID. Följ sedan stegen som beskrivs i självstudiekursen om hur du [skapar ett tomt projekt](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) i dokumentationen för Adobe Developer Console.
 
 ## Lägg till sekretessaktiviteter i projektet
 
@@ -110,11 +110,11 @@ Du kan konfigurera hur du tar emot händelser ytterligare på samma skärm. Mark
 
 ![](./images/privacy-events/webhook-details.png)
 
-Informationssidan för ditt projekt visas igen, med Sekretesshändelser under _[!UICONTROL Events]_den vänstra navigeringen.
+Informationssidan för ditt projekt visas igen och [!DNL Privacy Events] visas under _[!UICONTROL Events]_den vänstra navigeringen.
 
 ## Visa händelsedata
 
-När du har registrerat sekretessaktiviteter i ditt projekt och sekretessjobben har bearbetats kan du visa alla mottagna meddelanden för den registreringen. På fliken **[!UICONTROL Projects]** i Developer Console väljer du ditt projekt i listan för att öppna sidan _Produktöversikt_ . Välj **[!UICONTROL Privacy Events]** från den vänstra navigeringen.
+När du har registrerat dig [!DNL Privacy Events] i ditt projekt och sekretessjobben har bearbetats kan du visa alla mottagna meddelanden för den registreringen. På fliken **[!UICONTROL Projects]** i Developer Console väljer du ditt projekt i listan för att öppna sidan _Produktöversikt_ . Välj **[!UICONTROL Privacy Events]** från den vänstra navigeringen.
 
 ![](./images/privacy-events/events-left-nav.png)
 
