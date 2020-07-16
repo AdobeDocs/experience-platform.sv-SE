@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Ersätta en resurs
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
 workflow-type: tm+mt
-source-wordcount: '207'
+source-wordcount: '203'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Ersätta en resurs
 
-Med schemaregistret kan du ersätta en hel resurs genom en PUT-åtgärd. Den här åtgärden skriver i princip om resursen och därför måste begärandetexten innehålla alla fält som krävs när en ny resurs skapas med hjälp av en POST-begäran.
+Med [!DNL Schema Registry] den kan du ersätta en hel resurs genom en PUT-åtgärd. Den här åtgärden skriver i princip om resursen och därför måste begärandetexten innehålla alla fält som krävs när en ny resurs skapas med hjälp av en POST-begäran.
 
 Den här metoden är särskilt användbar om du vill uppdatera mycket information i resursen samtidigt.
 
@@ -32,7 +32,7 @@ PUT /tenant/{RESOURCE_TYPE}/{RESOURCE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{RESOURCE_TYPE}` | Den typ av resurs som ska uppdateras från schemabiblioteket. Giltiga typer är `datatypes`, `mixins`, `schemas`och `classes`. |
+| `{RESOURCE_TYPE}` | Den typ av resurs som ska uppdateras från [!DNL Schema Library]. Giltiga typer är `datatypes`, `mixins`, `schemas`och `classes`. |
 | `{RESOURCE_ID}` | Den URL-kodade `$id` URI:n eller `meta:altId` resursen. |
 
 **Begäran**
