@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över policyer för dataanvändning
 topic: policies
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
 workflow-type: tm+mt
-source-wordcount: '979'
+source-wordcount: '964'
 ht-degree: 0%
 
 ---
@@ -35,9 +35,9 @@ När dataanvändningen sker i er organisations tjänst bör relevanta marknadsf�
 
 >[!NOTE]
 >
->Om du använder kunddata i realtid Platform kan du skapa användningsfall för marknadsföring på destinationer för att automatisera regelefterlevnaden. Mer information finns i dokumentet om [datastyrning i CDP](../../rtcdp/privacy/data-governance-overview.md) i realtid.
+>Om du använder [!DNL Real-time Customer Data Platform]kan du konfigurera användningsfall för marknadsföring på destinationer för att automatisera regelefterlevnaden. Mer information finns i dokumentet om [datastyrning i CDP](../../rtcdp/privacy/data-governance-overview.md) i realtid.
 
-I bilagan till det här dokumentet finns en lista med [tillgängliga Adobe-definierade marknadsföringsåtgärder](#core-actions). Du kan också definiera egna marknadsföringsåtgärder med DULE Policy Service API eller Experience Platform användargränssnitt. Mer information om hur du arbetar med marknadsföringsåtgärder och -policyer finns i nästa avsnitt.
+I bilagan till det här dokumentet finns en lista med [tillgängliga Adobe-definierade marknadsföringsåtgärder](#core-actions). Du kan också definiera egna anpassade marknadsföringsåtgärder med DULE [!DNL Policy Service] API eller [!DNL Experience Platform ]användargränssnittet. Mer information om hur du arbetar med marknadsföringsåtgärder och -policyer finns i nästa avsnitt.
 
 <!-- (Add after AAM DEC mapping doc is published)
 ### Inheritance from Adobe Audience Manager Data Export Controls
@@ -49,15 +49,15 @@ For a reference on how specific Data Export Controls map to marketing actions in
 
 ## Hantera dataanvändningspolicyer {#manage}
 
-När dataanvändningsetiketter har tillämpats kan datahanterarna använda DULE Policy Service API eller användargränssnittet i Experience Platform för att hantera och utvärdera principer som relaterar till marknadsföringsåtgärder som vidtas på data som innehåller dataanvändningsetiketter. Du kan skapa och uppdatera profiler, fastställa en profils status och arbeta med marknadsföringsåtgärder för att utvärdera om en viss åtgärd bryter mot en dataanvändningspolicy.
+När dataanvändningsetiketterna har tillämpats kan datahanterarna använda DULE [!DNL Policy Service] API eller [!DNL Experience Platform] UI för att hantera och utvärdera principer som relaterar till marknadsföringsåtgärder som vidtas på data som innehåller dataanvändningsetiketter. Du kan skapa och uppdatera profiler, fastställa en profils status och arbeta med marknadsföringsåtgärder för att utvärdera om en viss åtgärd bryter mot en dataanvändningspolicy.
 
 >[!IMPORTANT]
 >
 >Alla dataanvändningspolicyer (inklusive kärnpolicyer från Adobe) är inaktiverade som standard. För att en enskild princip ska kunna användas måste du manuellt aktivera den principen via API:t eller användargränssnittet.
 
-Stegvisa instruktioner om hur du arbetar med marknadsföringsåtgärder och dataanvändningspolicyer i API:t finns i självstudiekursen om hur du [skapar och utvärderar dataanvändningspolicyer](create.md). Mer information om nyckelåtgärder som tillhandahålls av API:t för principtjänsten finns i utvecklarhandboken [för](../api/getting-started.md)principtjänsten.
+Stegvisa instruktioner om hur du arbetar med marknadsföringsåtgärder och dataanvändningspolicyer i API:t finns i självstudiekursen om hur du [skapar och utvärderar dataanvändningspolicyer](create.md). Mer information om nyckelåtgärder som tillhandahålls av [!DNL Policy Service] API:t finns i utvecklarhandboken [för](../api/getting-started.md)principtjänsten.
 
-Mer information om hur du arbetar med marknadsföringsåtgärder och -profiler i Platform användargränssnitt finns i användarhandboken för [dataanvändningspolicyn](./user-guide.md).
+Mer information om hur du arbetar med marknadsföringsåtgärder och -profiler i [!DNL Platform] användargränssnittet finns i användarhandboken för [dataanvändningspolicyn](./user-guide.md).
 
 ## Nästa steg
 
