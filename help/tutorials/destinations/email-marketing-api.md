@@ -4,15 +4,15 @@ solution: Experience Platform
 title: Skapa e-postmarknadsföringsmål
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: ed9d6eadeb00db51278ea700f7698a1b5590632f
+source-git-commit: 5c5f6c4868e195aef76bacc0a1e5df3857647bde
 workflow-type: tm+mt
-source-wordcount: '1670'
+source-wordcount: '1611'
 ht-degree: 0%
 
 ---
 
 
-# Skapa e-postmarknadsföringsmål och aktivera data i Adobes Real-time Customer Data Platform
+# Skapa e-postmarknadsföringsmål och aktivera data i Adobes [!DNL Real-time Customer Data Platform]
 
 I den här självstudiekursen visas hur du använder API-anrop för att ansluta till dina Adobe Experience Platform-data, skapa ett [e-postmarknadsföringsmål](../../rtcdp/destinations/email-marketing-destinations.md), skapa ett dataflöde till det nya mål du skapat och aktivera data till det nya mål du skapat.
 
@@ -26,9 +26,9 @@ Om du föredrar att använda användargränssnittet i Adobes CDP-fil i realtid f
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
-* [Katalogtjänst](../../catalog/home.md): Katalog är systemet för registrering av dataplatser och -länkar inom Experience Platform.
-* [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [!DNL Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+* [!DNL Catalog Service](../../catalog/home.md): [!DNL Catalog] är systemet för registrering av dataplatser och datalinje inom [!DNL Experience Platform].
+* [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data till e-postmarknadsföringsmål i Adobe CDP i realtid.
 
@@ -36,27 +36,27 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 
 Om du vill slutföra stegen i den här självstudiekursen bör du ha följande autentiseringsuppgifter tillgängliga, beroende på vilken typ av mål du ansluter och aktiverar segment till.
 
-* För Amazon S3-anslutningar till e-postmarknadsföringsplattformar: `accessId`, `secretKey`
+* För [!DNL Amazon] S3-anslutningar till e-postmarknadsföringsplattformar: `accessId`, `secretKey`
 * För SFTP-anslutningar till e-postmarknadsföringsplattformar: `domain`, `port`, `username`, `password` eller `ssh key` (beroende på anslutningsmetoden till FTP-platsen)
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
 
 ### Samla in värden för obligatoriska och valfria rubriker
 
-För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Resurser i Experience Platform kan isoleras till specifika virtuella sandlådor. I förfrågningar till Platform API:er kan du ange namn och ID för sandlådan som åtgärden ska utföras i. Dessa är valfria parametrar.
+Resurser i [!DNL Experience Platform] kan isoleras till specifika virtuella sandlådor. I förfrågningar till [!DNL Platform] API:er kan du ange namn och ID för sandlådan som åtgärden ska utföras i. Dessa är valfria parametrar.
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!Note]
->Mer information om sandlådor i Experience Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Experience Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
 
@@ -134,17 +134,17 @@ Ett lyckat svar innehåller en lista över tillgängliga destinationer och deras
 }
 ```
 
-## Ansluta till dina Experience Platform-data {#connect-to-your-experience-platform-data}
+## Anslut till dina [!DNL Experience Platform] data {#connect-to-your-experience-platform-data}
 
 ![Översiktssteg för målsteg 2](../images/destinations/flow-api-destinations-step2.png)
 
-Därefter måste du ansluta till dina Experience Platform-data, så att du kan exportera profildata och aktivera dem på det önskade målet. Detta består av två ämnen som beskrivs nedan.
+Därefter måste du ansluta till dina [!DNL Experience Platform] data, så att du kan exportera profildata och aktivera dem på det önskade målet. Detta består av två ämnen som beskrivs nedan.
 
-1. Först måste du ringa ett samtal för att ge behörighet till dina data i Experience Platform genom att konfigurera en basanslutning.
-2. Med hjälp av basanslutnings-ID:t gör du sedan ett nytt anrop där du skapar en källanslutning som upprättar anslutningen till dina Experience Platform-data.
+1. Först måste du ringa ett samtal för att auktorisera åtkomst till dina data i [!DNL Experience Platform]genom att konfigurera en basanslutning.
+2. Med hjälp av basanslutnings-ID:t gör du sedan ett nytt anrop där du skapar en källanslutning som upprättar anslutningen till dina [!DNL Experience Platform] data.
 
 
-### Ge åtkomst till dina data i Experience Platform
+### Ge åtkomst till dina data i [!DNL Experience Platform]
 
 **API-format**
 
@@ -208,7 +208,7 @@ Ett lyckat svar innehåller basanslutningsens unika identifierare (`id`). Lagra 
 }
 ```
 
-### Ansluta till dina Experience Platform-data
+### Anslut till dina [!DNL Experience Platform] data
 
 **API-format**
 
@@ -270,11 +270,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 * `{BASE_CONNECTION_ID}`: Använd det ID du fick i föregående steg.
-* `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikations-ID för Unified Profile Service - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`.
+* `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikations-ID för [!DNL Unified Profile Service] - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`.
 
 **Svar**
 
-Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen till tjänsten för enhetlig profil. Detta bekräftar att du har anslutit till dina Experience Platform-data. Lagra det här värdet som det behövs i ett senare steg.
+Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen till [!DNL Unified Profile Service]. Detta bekräftar att du har anslutit till dina [!DNL Experience Platform] data. Lagra det här värdet som det behövs i ett senare steg.
 
 ```json
 {
@@ -359,8 +359,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 * `{CONNECTION_SPEC_ID}`: Använd det anslutningsspec-ID som du fick i steget [Hämta listan med tillgängliga mål](#get-the-list-of-available-destinations).
 * `{S3 or SFTP}`: fylla i önskad anslutningstyp för det här målet. Bläddra till önskat mål i [målkatalogen](../../rtcdp/destinations/destinations-catalog.md)för att se om anslutningstyperna S3 och/eller SFTP stöds.
-* `{ACCESS_ID}`: Ditt åtkomst-ID för din lagringsplats för Amazon S3.
-* `{SECRET_KEY}`: Din hemliga nyckel för din lagringsplats för Amazon S3.
+* `{ACCESS_ID}`: Ditt åtkomst-ID för din [!DNL Amazon] S3-lagringsplats.
+* `{SECRET_KEY}`: Din hemliga nyckel för din [!DNL Amazon] S3-lagringsplats.
 
 **Svar**
 
@@ -448,8 +448,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 * `{BASE_CONNECTION_ID}`: Använd det grundläggande anslutnings-ID som du fick i steget ovan.
 * `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikationen som du fick i steget [Hämta listan med tillgängliga mål](#get-the-list-of-available-destinations).
-* `{BUCKETNAME}`: Din Amazon S3-bucket, där CDP i realtid kommer att lagra dataexporten.
-* `{FILEPATH}`: Sökvägen i Amazon S3 bucket-katalogen där CDP i realtid kommer att placera dataexporten.
+* `{BUCKETNAME}`: Din [!DNL Amazon] S3-bucket, där CDP i realtid kommer att lagra dataexporten.
+* `{FILEPATH}`: Sökvägen i [!DNL Amazon] S3-bucket-katalogen där CDP i realtid kommer att placera dataexporten.
 
 **Svar**
 
@@ -465,7 +465,7 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nya målansl
 
 ![Översikt över destinationssteg 4](../images/destinations/flow-api-destinations-step4.png)
 
-Med de ID:n du fick i föregående steg kan du nu skapa ett dataflöde mellan dina Experience Platform-data och det mål där du vill aktivera data. Tänk på det här steget som att skapa en pipeline, genom vilken data sedan flödar mellan Experience Platform och det önskade målet.
+Med de ID:n du fick i föregående steg kan du nu skapa ett dataflöde mellan dina [!DNL Experience Platform] data och målet där du vill aktivera data. Tänk på det här steget som att skapa en pipeline, genom vilken data sedan flödar mellan [!DNL Experience Platform] och önskat mål.
 
 Om du vill skapa ett dataflöde utför du en POST-begäran enligt nedan och anger värdena som anges nedan i nyttolasten.
 
