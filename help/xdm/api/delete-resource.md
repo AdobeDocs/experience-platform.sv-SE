@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Ta bort en resurs
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: d9ab2b1226b051be43f8fc0dd222bc075caed6f0
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+workflow-type: tm+mt
+source-wordcount: '133'
+ht-degree: 0%
 
 ---
 
 
 # Ta bort en resurs
 
-Ibland kan det vara nödvändigt att ta bort (DELETE) en resurs från schemaregistret. Endast resurser som du skapar i innehavarbehållaren kan tas bort. Detta görs genom att utföra en DELETE-begäran med hjälp `$id` av resursen som du vill ta bort.
+Ibland kan det vara nödvändigt att ta bort (DELETE) en resurs från [!DNL Schema Registry]. Endast resurser som du skapar i innehavarbehållaren kan tas bort. Detta görs genom att utföra en DELETE-begäran med hjälp `$id` av resursen som du vill ta bort.
 
 **API-format**
 
@@ -21,12 +24,12 @@ DELETE /tenant/{RESOURCE_TYPE}/{RESOURCE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{RESOURCE_TYPE}` | Den typ av resurs som ska tas bort från schemabiblioteket. Giltiga typer är `datatypes`, `mixins`, `schemas`och `classes`. |
+| `{RESOURCE_TYPE}` | Den typ av resurs som ska tas bort från [!DNL Schema Library]. Giltiga typer är `datatypes`, `mixins`, `schemas`och `classes`. |
 | `{RESOURCE_ID}` | Den URL-kodade `$id` URI:n eller `meta:altId` resursen. |
 
 **Begäran**
 
-BORTTAGNINGSFÖRFRÅGNINGAR KRÄVER INTE Acceptera sidhuvuden.
+DELETE kräver inte att du accepterar sidhuvuden.
 
 ```SHELL
 curl -X DELETE \
@@ -41,4 +44,4 @@ curl -X DELETE \
 
 Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och en tom brödtext.
 
-Du kan bekräfta borttagningen genom att försöka utföra en sökning (GET) till resursen. Du måste inkludera en Accept-rubrik i begäran, men du bör få HTTP-status 404 (Hittades inte) eftersom resursen har tagits bort från schemaregistret.
+Du kan bekräfta borttagningen genom att försöka utföra en sökning (GET) till resursen. Du måste inkludera en Accept-rubrik i begäran, men du bör få HTTP-status 404 (Hittades inte) eftersom resursen har tagits bort från [!DNL Schema Registry].
