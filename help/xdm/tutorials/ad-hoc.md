@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa ett ad hoc-schema
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
 workflow-type: tm+mt
-source-wordcount: '742'
+source-wordcount: '724'
 ht-degree: 0%
 
 ---
@@ -14,18 +14,18 @@ ht-degree: 0%
 
 # Skapa ett ad hoc-schema
 
-Under särskilda omständigheter kan det vara nödvändigt att skapa ett XDM-schema (Experience Data Model) med fält som bara namnges av en enda datauppsättning. Detta kallas för ett ad hoc-schema. Ad-hoc-scheman används i olika arbetsflöden för dataöverföring för Experience Platform, inklusive inhämtning av CSV-filer och skapande av vissa typer av källanslutningar.
+Under särskilda omständigheter kan det vara nödvändigt att skapa ett [!DNL Experience Data Model] (XDM)-schema med fält som namnges endast för användning av en enda datauppsättning. Detta kallas för ett ad hoc-schema. Ad hoc-scheman används i olika arbetsflöden för dataöverföring för [!DNL Experience Platform], bland annat för att hämta CSV-filer och skapa vissa typer av källanslutningar.
 
-Det här dokumentet innehåller allmänna steg för att skapa ett ad hoc-schema med API:t för [schemaregister](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml). Den är avsedd att användas tillsammans med andra självstudiekurser på Experience Platform som kräver att ett ad hoc-schema skapas som en del av arbetsflödet. Var och en av dessa dokument innehåller detaljerad information om hur man konfigurerar ett ad hoc-schema för sitt specifika användningsfall.
+Det här dokumentet innehåller allmänna steg för att skapa ett ad hoc-schema med API:t för [schemaregister](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml). Den är avsedd att användas tillsammans med andra [!DNL Experience Platform] självstudiekurser som kräver att du skapar ett ad hoc-schema som en del av arbetsflödet. Var och en av dessa dokument innehåller detaljerad information om hur man konfigurerar ett ad hoc-schema för sitt specifika användningsfall.
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse för Experience Data Model (XDM) System. Läs följande XDM-dokumentation innan du startar den här självstudiekursen:
+Den här självstudiekursen kräver en fungerande förståelse för [!DNL Experience Data Model] (XDM) System. Läs följande XDM-dokumentation innan du startar den här självstudiekursen:
 
-- [XDM - systemöversikt](../home.md): Översikt över XDM och dess implementering i Experience Platform.
+- [XDM - systemöversikt](../home.md): En översikt över XDM och dess implementering i [!DNL Experience Platform].
 - [Grundläggande om schemakomposition](../schema/composition.md): En översikt över de grundläggande komponenterna i XDM-scheman.
 
-Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa API:t för schemaregister. Detta inkluderar ditt `{TENANT_ID}`, konceptet med&quot;behållare&quot; och de rubriker som krävs för att göra förfrågningar (med särskild uppmärksamhet på rubriken Godkänn och dess möjliga värden).
+Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till [!DNL Schema Registry] API:t. Detta inkluderar ditt `{TENANT_ID}`, konceptet med&quot;behållare&quot; och de rubriker som krävs för att göra förfrågningar (med särskild uppmärksamhet på rubriken Godkänn och dess möjliga värden).
 
 ## Skapa en ad hoc-klass
 
@@ -39,7 +39,7 @@ POST /tenant/classes
 
 **Begäran**
 
-Följande begäran skapar en ny XDM-klass som konfigurerats med attributen som anges i nyttolasten. Genom att ange en `$ref` egenskap som anges `https://ns.adobe.com/xdm/data/adhoc` i `allOf` arrayen ärver den här klassen `adhoc` beteendet. Begäran definierar också ett `_adhoc` objekt som innehåller anpassade fält för klassen.
+Följande begäran skapar en ny XDM-klass, konfigurerad med attributen som anges i nyttolasten. Genom att ange en `$ref` egenskap som anges `https://ns.adobe.com/xdm/data/adhoc` i `allOf` arrayen ärver den här klassen `adhoc` beteendet. Begäran definierar också ett `_adhoc` objekt som innehåller anpassade fält för klassen.
 
 >[!NOTE]
 >
@@ -239,7 +239,7 @@ GET /tenant/schemas/{SCHEMA_ID}
 
 **Begäran**
 
-Följande begäran använder rubriken Godkänn `application/vnd.adobe.xed-full+json; version=1`som returnerar den utökade formen av schemat. Observera, att när en viss resurs hämtas från schemaregistret, måste begärans Accept-huvud innehålla en större version av resursen i fråga.
+Följande begäran använder rubriken Godkänn `application/vnd.adobe.xed-full+json; version=1`som returnerar den utökade formen av schemat. Observera, att när en viss resurs hämtas från [!DNL Schema Registry], måste begärans Accept-huvud innehålla en större version av resursen i fråga.
 
 ```shell
 curl -X GET \
@@ -305,4 +305,4 @@ Ett lyckat svar returnerar information om schemat, inklusive alla fält som är 
 
 Genom att följa den här självstudiekursen har du skapat ett nytt ad hoc-schema. Om du kommer till det här dokumentet som en del av en annan självstudiekurs kan du nu använda `$id` ditt ad hoc-schema för att slutföra arbetsflödet enligt anvisningarna.
 
-Mer information om hur du arbetar med API:t för schemaregister finns i [utvecklarhandboken](../api/getting-started.md).
+Mer information om hur du arbetar med API:t finns i [!DNL Schema Registry] utvecklarhandboken [](../api/getting-started.md).
