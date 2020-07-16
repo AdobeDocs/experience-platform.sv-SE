@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Visa resurser
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
 workflow-type: tm+mt
-source-wordcount: '519'
+source-wordcount: '508'
 ht-degree: 1%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 1%
 
 # Visa resurser
 
-Du kan visa en lista över alla resurser i schemaregistret av en viss typ (klasser, mixins, scheman, datatyper eller beskrivningar) i en behållare genom att utföra en GET-begäran.
+Du kan visa en lista över alla [!DNL Schema Registry] resurser av en viss typ (klasser, mixins, scheman, datatyper eller beskrivningar) i en behållare genom att utföra en GET-begäran.
 
 >[!NOTE]
 >
->När resurser listas begränsas resultatmängden till 300 objekt. Om du vill returnera resurser som överskrider den här gränsen måste du använda [sidindelningsparametrar](#paging). Vi rekommenderar också att du använder frågeparametrar för att [filtrera resultaten](#filtering) och minska antalet returnerade resurser.
+>När resurser listas begränsas resultatet till 300 [!DNL Schema Registry] objekt. Om du vill returnera resurser som överskrider den här gränsen måste du använda [sidindelningsparametrar](#paging). Vi rekommenderar också att du använder frågeparametrar för att [filtrera resultaten](#filtering) och minska antalet returnerade resurser.
 
 **API-format**
 
@@ -30,7 +30,7 @@ GET /{CONTAINER_ID}/{RESOURCE_TYPE}?{QUERY_PARAMS}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{CONTAINER_ID}` | Behållaren där resurserna finns (&quot;global&quot; eller&quot;tenant&quot;). |
-| `{RESOURCE_TYPE}` | Den typ av resurs som ska hämtas från schemabiblioteket. Giltiga typer är `classes`, `mixins`, `schemas`, `datatypes`och `descriptors`. |
+| `{RESOURCE_TYPE}` | Den typ av resurs som ska hämtas från [!DNL Schema Library]. Giltiga typer är `classes`, `mixins`, `schemas`, `datatypes`och `descriptors`. |
 | `{QUERY_PARAMS`} | Valfria frågeparametrar för att filtrera resultat efter. Mer information finns i avsnittet om [frågeparametrar](#query) . |
 
 **Begäran**
@@ -78,7 +78,7 @@ I begäran ovan användes rubriken `application/vnd.adobe.xed-id+json` Godkänn.
 
 ## Använda frågeparametrar {#query}
 
-Schemaregistret har stöd för användning av frågeparametrar för att filtrera resultat och sidor när resurser listas.
+Det finns [!DNL Schema Registry] stöd för användning av frågeparametrar för att filtrera resultat och sidor när resurser listas.
 
 >[!NOTE]
 >
@@ -111,4 +111,4 @@ Du kan filtrera resultat med hjälp av `property` parametern, som används för 
 
 >[!TIP]
 >
->Du kan använda parametern `property` för att filtrera blandningar efter deras kompatibla klass. Returnerar till exempel bara blandningar som är kompatibla med klassen XDM Individual Profile. `property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile`
+>Du kan använda parametern `property` för att filtrera blandningar efter deras kompatibla klass. Returnerar till exempel bara blandningar som är kompatibla med `property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile` [!DNL XDM Individual Profile] klassen.
