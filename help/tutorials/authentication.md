@@ -4,17 +4,17 @@ solution: Experience Platform
 title: Autentisera och få åtkomst till Experience Platform API:er
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 5c5f6c4868e195aef76bacc0a1e5df3857647bde
 workflow-type: tm+mt
-source-wordcount: '871'
+source-wordcount: '840'
 ht-degree: 0%
 
 ---
 
 
-# Autentisera och få åtkomst till Experience Platform API:er
+# Autentisera och få åtkomst till API: [!DNL Experience Platform] er
 
-I det här dokumentet finns en stegvis självstudiekurs för att få tillgång till ett utvecklarkonto för Adobe Experience Platform för att ringa anrop till API:er för Experience Platform.
+I det här dokumentet finns en stegvis självstudiekurs för att få tillgång till ett utvecklarkonto i Adobe Experience Platform för att ringa till [!DNL Experience Platform] API:er.
 
 ## Autentisera för att göra API-anrop
 
@@ -25,7 +25,7 @@ I den här självstudiekursen beskrivs stegen för autentisering genom att skapa
 
 ## Förutsättningar
 
-Du behöver följande för att kunna anropa API:er för Experience Platform:
+För att kunna anropa API: [!DNL Experience Platform] er krävs följande:
 
 * En IMS-organisation med tillgång till Adobe Experience Platform
 * Ett registrerat Adobe ID-konto
@@ -38,16 +38,16 @@ I följande avsnitt går vi igenom stegen för att skapa ett Adobe ID och bli ut
 Om du inte har något Adobe ID kan du skapa ett med följande steg:
 
 1. Gå till [Adobe Developer Console](https://console.adobe.io)
-2. Klicka på **Skapa ett nytt konto**
+2. Klicka på **[!UICONTROL create a new account]**
 3. Slutför registreringsprocessen
 
-## Bli utvecklare och användare för Experience Platform i en organisation
+## Bli utvecklare och användare för [!DNL Experience Platform] en organisation
 
 Innan du skapar integreringar på Adobe I/O måste ditt konto ha utvecklarbehörighet för en produkt i en IMS-organisation. Detaljerad information om utvecklarkonton på Admin Console finns i [supportdokumentet](https://helpx.adobe.com/enterprise/using/manage-developers.html) för hantering av utvecklare.
 
 **Få utvecklaråtkomst**
 
-Kontakta en Admin Console-administratör i din organisation om du vill lägga till dig som utvecklare för någon av organisationens produkter med [Admin Console](https://adminconsole.adobe.com/).
+Kontakta en [!DNL Admin Console] administratör i organisationen om du vill lägga till dig som utvecklare för någon av organisationens produkter med hjälp av [!DNL Admin Console](https://adminconsole.adobe.com/).
 
 ![](images/authentication/assign-developer.png)
 
@@ -59,7 +59,7 @@ När du har utsetts till utvecklare får du behörighet att skapa integreringar 
 
 **Få användaråtkomst**
 
-Admin Console-administratören måste också lägga till dig som användare i produkten.
+Din [!DNL Admin Console] administratör måste också lägga till dig i produkten som användare.
 
 ![](images/authentication/assign-users.png)
 
@@ -71,7 +71,7 @@ På samma sätt som när du lägger till en utvecklare måste administratören t
 
 >[!NOTE]
 >
->Om du följer det här dokumentet från [Privacy Servicens utvecklarguide](../privacy-service/api/getting-started.md)kan du nu gå tillbaka till den guiden för att generera autentiseringsuppgifter som är unika för Privacy Servicen.
+>Om du följer det här dokumentet från [Privacy Servicens utvecklarguide](../privacy-service/api/getting-started.md)kan du nu gå tillbaka till den guiden för att generera autentiseringsuppgifter som är unika för [!DNL Privacy Service].
 
 Med Adobe Developer Console måste du generera följande tre autentiseringsuppgifter:
 
@@ -79,7 +79,7 @@ Med Adobe Developer Console måste du generera följande tre autentiseringsuppgi
 * `{API_KEY}`
 * `{ACCESS_TOKEN}`
 
-Ditt `{IMS_ORG}` och `{API_KEY}` behöver bara genereras en gång och kan återanvändas i framtida Platform API-anrop. Ditt `{ACCESS_TOKEN}` är dock tillfälligt och måste genereras om var 24:e timme.
+Ditt `{IMS_ORG}` och `{API_KEY}` behöver bara genereras en gång och kan återanvändas i framtida [!DNL Platform] API-anrop. Ditt `{ACCESS_TOKEN}` är dock tillfälligt och måste genereras om var 24:e timme.
 
 Stegen beskrivs närmare nedan.
 
@@ -95,9 +95,9 @@ Skärmen _Lägg till ett API_ visas. Klicka på produktikonen för Adobe Experie
 
 ![](images/authentication/add-platform-api.png)
 
-När du har valt Experience Platform som det API som ska läggas till i projektet följer du stegen som beskrivs i självstudiekursen om hur du [lägger till ett API i ett projekt med ett tjänstkonto (JWT)](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/services-add-api-jwt.md) (med början från steget Konfigurera API) för att slutföra processen.
+När du har valt [!DNL Experience Platform] att lägga till API:t i projektet följer du stegen som beskrivs i självstudiekursen om hur du [lägger till ett API i ett projekt med ett tjänstkonto (JWT)](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/services-add-api-jwt.md) (med början från steget Konfigurera API) för att slutföra processen.
 
-När API:t har lagts till i projektet visar _projektöversiktssidan_ följande autentiseringsuppgifter som krävs i alla anrop till API:er för Experience Platform:
+När API:t har lagts till i projektet visas följande autentiseringsuppgifter som krävs i alla anrop till API:er på _projektöversiktssidan_ [!DNL Experience Platform] :
 
 * `{API_KEY}` (Klient-ID)
 * `{IMS_ORG}` (Organisations-ID)
@@ -106,13 +106,13 @@ När API:t har lagts till i projektet visar _projektöversiktssidan_ följande a
 
 ### Autentisering för varje session
 
-Den sista obligatoriska autentiseringsuppgifterna som du måste samla in är din `{ACCESS_TOKEN}`. Till skillnad från värdena för `{API_KEY}` och `{IMS_ORG}`måste en ny token genereras var 24:e timme för att du ska kunna fortsätta använda Platform API:er.
+Den sista obligatoriska autentiseringsuppgifterna som du måste samla in är din `{ACCESS_TOKEN}`. Till skillnad från värdena för `{API_KEY}` och `{IMS_ORG}`måste en ny token genereras var 24:e timme för att kunna fortsätta använda [!DNL Platform] API:er.
 
 Om du vill skapa en ny `{ACCESS_TOKEN}`variant följer du stegen för att [generera en JWT-token](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/credentials.md) i referenshandboken för Developer Console.
 
 ## Testa autentiseringsuppgifter
 
-När du har samlat in alla tre nödvändiga autentiseringsuppgifter kan du försöka göra följande API-anrop. Detta anrop listar alla XDM-klasser (Experience Data Model) i schematabellens `global` behållare:
+När du har samlat in alla tre nödvändiga autentiseringsuppgifter kan du försöka göra följande API-anrop. Detta anrop listar alla [!DNL Experience Data Model] (XDM) klasser i schematabellens `global` behållare:
 
 **API-format**
 
@@ -159,6 +159,6 @@ Om ditt svar liknar det som visas nedan är dina inloggningsuppgifter giltiga oc
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du samlat in och testat dina inloggningsuppgifter för Platform API:er. Du kan nu följa med i de exempel på API-anrop som finns i [dokumentationen](../landing/documentation/overview.md).
+Genom att läsa det här dokumentet har du samlat in och testat dina inloggningsuppgifter för [!DNL Platform] API:er. Du kan nu följa med i de exempel på API-anrop som finns i [dokumentationen](../landing/documentation/overview.md).
 
-Förutom de autentiseringsvärden du har samlat in i den här självstudiekursen behöver många Platform API:er också en giltig `{SANDBOX_NAME}` rubrik. Mer information finns i översikten över [](../sandboxes/home.md) sandlådor.
+Förutom de autentiseringsvärden du har samlat in i den här självstudiekursen behöver många API: [!DNL Platform] er också en giltig `{SANDBOX_NAME}` rubrik. Mer information finns i översikten över [](../sandboxes/home.md) sandlådor.
