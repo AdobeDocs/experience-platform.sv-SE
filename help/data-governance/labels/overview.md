@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över etiketter för dataanvändning
 topic: labels
 translation-type: tm+mt
-source-git-commit: f4b3148db3b4a17d071c1c8ad2aff8dd64ddd0b7
+source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
 workflow-type: tm+mt
-source-wordcount: '494'
+source-wordcount: '485'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Översikt över etiketter för dataanvändning
 
-Varumärkning och verkställighet av dataanvändning (DULE) är kärnmekanismen i Adobe Experience Platform datastyrning. DULE-funktioner gör att du kan använda dataanvändningsetiketter på datauppsättningar och fält, och kategorisera dem efter relaterade principer för dataanvändning.
+Varumärkning och verkställighet av dataanvändning (DULE) är huvudmekanismen för Adobe Experience Platform [!DNL Data Governance]. DULE-funktioner gör att du kan använda dataanvändningsetiketter på datauppsättningar och fält, och kategorisera dem efter relaterade principer för dataanvändning.
 
 Det här dokumentet innehåller en översikt över dataanvändningsetiketter (kallas även DULE-etiketter) i [!DNL Experience Platform]. Innan du läser den här guiden bör du läsa översikten över [datastyrning](../home.md) för att få en mer robust introduktion till DULE-ramverket.
 
@@ -38,9 +38,9 @@ Mer information om hur automatisk exekvering fungerar i CDP i realtid finns i [A
 
 ### Arv från dataexportkontroller i Adobe Audience Manager
 
-Experience Platform kan dela segment med Adobe Audience Manager. Alla dataexportkontroller som har tillämpats på Audience Manager-segment översätts till likvärdiga etiketter och marknadsföringsåtgärder som har godkänts av Experience Platform Data Governance.
+[!DNL Experience Platform] kan dela segment med Adobe Audience Manager. Alla dataexportkontroller som har tillämpats på Audience Manager-segment översätts till motsvarande etiketter och marknadsföringsåtgärder som erkänns av [!DNL Experience Platform][!DNL Data Governance].
 
-En referens om hur specifika dataexportkontroller mappas till dataanvändningsetiketter i Platform finns i dokumentationen [för](https://docs.adobe.com/content/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aam-data-export-control-in-aep)Audience Manager.
+En referens om hur specifika dataexportkontroller mappas till dataanvändningsetiketter i [!DNL Platform]finns i dokumentationen [för](https://docs.adobe.com/content/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aam-data-export-control-in-aep)Audience Manager.
 
 
 ## Nästa steg
