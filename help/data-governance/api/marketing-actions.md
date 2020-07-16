@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Marknadsföringsåtgärder
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
 workflow-type: tm+mt
-source-wordcount: '536'
+source-wordcount: '534'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Marknadsföringsåtgärder
 
-En marknadsföringsåtgärd, inom ramen för datastyrningen i Adobe Experience Platform, är en åtgärd som en [!DNL Experience Platform] datakonsument vidtar, och där det finns ett behov av att kontrollera om dataanvändningspolicyer har överträtts.
+En marknadsföringsåtgärd, inom ramen för Adobe Experience Platform [!DNL Data Governance], är en åtgärd som en [!DNL Experience Platform] datakonsument vidtar och där det finns ett behov av att kontrollera om dataanvändningspolicyer har överträtts.
 
 När du arbetar med marknadsföringsåtgärder i API måste du använda `/marketingActions` slutpunkten.
 
