@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Profiler
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1a835c6c20c70bf03d956c601e2704b68d4f90fa
+source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
 workflow-type: tm+mt
-source-wordcount: '940'
+source-wordcount: '938'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Politisk utvärdering
 
-När marknadsföringsåtgärder har skapats och principer har definierats kan du använda API:t för principtjänsten för att utvärdera om några profiler överträds av vissa åtgärder. De returnerade begränsningarna har formen av en uppsättning principer som skulle överträdas om marknadsföringsåtgärden utförs på de angivna data som innehåller dataanvändningsetiketter.
+När marknadsföringsåtgärder har skapats och principer har definierats, kan du använda API:t för att utvärdera om några profiler överträds av vissa åtgärder. [!DNL Policy Service] De returnerade begränsningarna har formen av en uppsättning principer som skulle överträdas om marknadsföringsåtgärden utförs på de angivna data som innehåller dataanvändningsetiketter.
 
 Som standard deltar **bara profiler vars status är inställd på&quot;ENABLED&quot; i utvärderingen**, men du kan använda frågeparametern `?includeDraft=true` för att inkludera&quot;UTKAST&quot;-principer i utvärderingen.
 
