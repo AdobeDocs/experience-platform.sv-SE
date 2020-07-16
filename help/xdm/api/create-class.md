@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en klass
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
 workflow-type: tm+mt
-source-wordcount: '485'
+source-wordcount: '477'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Den primära byggstenen för ett schema är en klass. Klassen innehåller den minsta uppsättning fält som måste definieras för att kunna hämta huvuddata från ett schema. Om du till exempel utformade ett schema för bilar och lastbilar skulle de troligen använda en klass som heter Vehicle som beskriver de grundläggande gemensamma egenskaperna för alla fordon.
 
-Det finns flera standardklasser från Adobe och andra Experience Platform-partners, men du kan också definiera egna klasser och spara dem i schemaregistret. Du kan sedan skapa ett schema som implementerar den klass du skapade och definiera mixiner som är kompatibla med den nyligen definierade klassen.
+Det finns flera standardklasser från Adobe och andra [!DNL Experience Platform] partners, men du kan också definiera egna klasser och spara dem i [!DNL Schema Registry]. Du kan sedan skapa ett schema som implementerar den klass du skapade och definiera mixiner som är kompatibla med den nyligen definierade klassen.
 
 >[!NOTE]
 >
@@ -83,12 +83,12 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `_{TENANT_ID}` | Namnutrymmet `TENANT_ID` för din organisation. Alla resurser som skapas av organisationen måste innehålla den här egenskapen för att undvika konflikter med andra resurser i schemaregistret. |
+| `_{TENANT_ID}` | Namnutrymmet `TENANT_ID` för din organisation. Alla resurser som skapas av organisationen måste innehålla den här egenskapen för att undvika konflikter med andra resurser i [!DNL Schema Registry]. |
 | `allOf` | En lista med resurser vars egenskaper ska ärvas av den nya klassen. Ett av `$ref` objekten i arrayen definierar klassens beteende. I det här exemplet ärver klassen&quot;record&quot;-beteendet. |
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehåller information om den nyligen skapade klassen, inklusive `$id`, `meta:altId`och `version`. Dessa tre värden är skrivskyddade och tilldelas av schemaregistret.
+Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehåller information om den nyligen skapade klassen, inklusive `$id`, `meta:altId`och `version`. Dessa tre värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
 
 ```JSON
 {
