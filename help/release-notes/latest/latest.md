@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: July 15, 2020
 author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: e864073c27ba20ce32c962c469aed52608f199ac
+source-git-commit: 9fbd30adcb29c8925f02745be924477eb4e3fe2a
 workflow-type: tm+mt
-source-wordcount: '684'
-ht-degree: 2%
+source-wordcount: '679'
+ht-degree: 3%
 
 ---
 
@@ -36,7 +36,7 @@ Adobe Experience Platform Data Governance är en serie strategier och tekniker s
 | Integrering med Adobe Audience Manager | Alla segment som delas med [!DNL Audience Manager] från [!DNL Platform] ärver tillämpade dataanvändningsetiketter som [!DNL Data Export Controls]och vice versa. Se [!DNL Audience Manager] dokumentationen för specifika [mappningar mellan användningsetiketter och dataexportkontroller](https://docs.adobe.com/content/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aam-data-export-control-in-aep). |
 | Anpassade etiketter för dataanvändning | Nu kan du skapa anpassade etiketter för dataanvändning med hjälp av principtjänstens API eller i användargränssnittet. Mer information finns i översikten över [](../../data-governance/labels/overview.md) etiketter. |
 
-Mer information om tjänsten finns i översikten över [](../../data-governance/home.md) datastyrning.
+Mer information om tjänsten finns i [datastyrningsöversikten](../../data-governance/home.md) .
 
 ## [!DNL Real-time Customer Profile] {#profile}
 
@@ -73,7 +73,7 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| API- och gränssnittsstöd för borttagning av dataflöden | Dataflöden som har gjorts med fel eller blivit onödiga kan nu tas bort via API:er eller med användargränssnittet. |
+| Gränssnittsstöd för borttagning av dataflöden | Dataflöden som har gjorts med fel eller blivit onödiga kan nu tas bort via användargränssnittet. |
 | API- och gränssnittsstöd för engångsbruk | Engångsinmatning för dataflöden, där endast startdatumet anges och inget framtida intag är schemalagt, kan nu utföras via API:er eller med användargränssnittet. |
 
 Mer information om källor finns i [Källöversikt](../../sources/home.md).
