@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Vanliga frågor om CCPA
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
 workflow-type: tm+mt
-source-wordcount: '807'
+source-wordcount: '787'
 ht-degree: 0%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 0%
 
 # Vanliga frågor om CCPA
 
-Det här dokumentet innehåller svar på vanliga frågor om California Consumer Protection Act (CCPA) och dess implementering i Adobe Experience Cloud.
+Det här dokumentet innehåller svar på vanliga frågor om [!DNL California Consumer Protection Act] (CCPA) och dess implementering i Adobe Experience Cloud.
 
 ## Vad är CCPA?
 
-California Consumer Privacy Act (CCPA) är Kaliforniens nya integritetslag som ger sina invånare nya rättigheter när det gäller deras personuppgifter och ålägger dataskyddsansvar för vissa enheter som bedriver verksamhet i Kalifornien.
+CCPA ( [!DNL California Consumer Privacy Act] California’s new privacy law) ger sina invånare nya rättigheter när det gäller personuppgifter och ålägger vissa enheter som bedriver verksamhet i Kalifornien dataskydd.
 
 >[!NOTE]
 >
@@ -32,7 +32,7 @@ Personlig information är information&quot;som identifierar, relaterar till, bes
 
 ## Vilka typer av personuppgifter eller identifierare som används i Adobe Experience Cloud omfattas av dessa nya krav?
 
-Följande identifierare används ofta i Experience Cloud och kan omfattas av CCPA-kraven:
+Följande identifierare används ofta i [!DNL Experience Cloud] program och kan vara föremål för CCPA-krav:
 
 - Namn
 - Postadress
@@ -48,9 +48,9 @@ Personlig information kan också omfatta information om internetaktiviteter elle
 - Sökhistorik
 - Information om en kunds interaktion med en webbplats, tillämpning eller annons
 
-Även om CCPA omfattar en mängd personuppgifter innebär Adobes standardavtalsvillkor att känslig personlig information (som SSN, information om körkort, ekonomisk kontoinformation och biometriska data) i allmänhet inte får importeras och användas i Experience Cloud.
+Även om CCPA omfattar en mängd personuppgifter innebär Adobes standardavtalsvillkor att känslig personlig information (som SSN, information om körkort, ekonomisk kontoinformation och biometriska data) i allmänhet inte får importeras och användas i [!DNL Experience Cloud] tillämpningar.
 
-## Hur gäller CCPA:s olika roller och ansvarsområden för Experience Cloud?
+## Hur gäller CCPA:s olika roller och ansvarsområden [!DNL Experience Cloud]?
 
 Enligt CCPA gäller följande roller Adobe och dess kunder:
 
@@ -75,7 +75,7 @@ Adobes tjänster kan användas för att möjliggöra viss datadelning och överf
 
 ## Hur kan jag stödja konsumentsekretesskrav enligt CCPA om jag upprätthåller vissa typer av data som omfattas av kraven?
 
-När du har vidtagit de åtgärder som krävs för att autentisera CA-konsumenter kan du med Adobe Experience Platform Privacy Service skicka förfrågningar om konsumentintegritet till kompatibla Experience Cloud-program. Mer information finns i översikten över [](../home.md) Privacy Servicen. Mer information om hur dina Experience Cloud-program kan uppfylla sekretesskrav finns i handboken om [Privacy Service- och Experience Cloud-program](../experience-cloud-apps.md).
+När du har vidtagit de åtgärder som krävs för att autentisera CA-konsumenter kan du med Adobe Experience Platform [!DNL Privacy Service] skicka förfrågningar om konsumentintegritet till kompatibla [!DNL Experience Cloud] program. Mer information finns i översikten över [](../home.md) Privacy Servicen. Mer information om hur dina [!DNL Experience Cloud] program kan uppfylla sekretesskrav finns i handboken om [Privacy Service och Experience Cloud-program](../experience-cloud-apps.md).
 
 >[!NOTE]
 >
