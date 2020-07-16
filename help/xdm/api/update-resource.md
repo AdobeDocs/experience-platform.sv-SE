@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Uppdatera en resurs
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
 workflow-type: tm+mt
-source-wordcount: '379'
+source-wordcount: '373'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Uppdatera en resurs
 
-Du kan ändra eller uppdatera resurser i innehavarbehållaren med en PATCH-begäran. Schemaregistret stöder alla vanliga JSON-korrigeringsåtgärder, inklusive add, remove och replace.
+Du kan ändra eller uppdatera resurser i innehavarbehållaren med en PATCH-begäran. Den [!DNL Schema Registry] stöder alla vanliga JSON-korrigeringsåtgärder, inklusive add, remove och replace.
 
 Mer information om JSON Patch, inklusive tillgängliga åtgärder, finns i den officiella [JSON Patch-dokumentationen](http://jsonpatch.com/).
 
@@ -34,7 +34,7 @@ PATCH /tenant/{RESOURCE_TYPE}/{RESOURCE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{RESOURCE_TYPE}` | Den typ av resurs som ska uppdateras från schemabiblioteket. Giltiga typer är `datatypes`, `mixins`, `schemas`och `classes`. |
+| `{RESOURCE_TYPE}` | Den typ av resurs som ska uppdateras från [!DNL Schema Library]. Giltiga typer är `datatypes`, `mixins`, `schemas`och `classes`. |
 | `{RESOURCE_ID}` | Den URL-kodade `$id` URI:n eller `meta:altId` resursen. |
 
 **Begäran**
@@ -110,7 +110,7 @@ PATCH /tenant/{RESOURCE_TYPE}/{RESOURCE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{RESOURCE_TYPE}` | Den typ av resurs som ska uppdateras från schemabiblioteket. Giltiga typer är `datatypes`, `mixins`, `schemas`och `classes`. |
+| `{RESOURCE_TYPE}` | Den typ av resurs som ska uppdateras från [!DNL Schema Library]. Giltiga typer är `datatypes`, `mixins`, `schemas`och `classes`. |
 | `{RESOURCE_ID}` | Den URL-kodade `$id` URI:n eller `meta:altId` resursen. |
 
 **Begäran**
