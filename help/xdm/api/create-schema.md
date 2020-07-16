@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Skapa ett schema
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 162316c3b908ffa87d8df4dff72e26ba237993db
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+workflow-type: tm+mt
+source-wordcount: '235'
+ht-degree: 0%
 
 ---
 
 
 # Skapa ett schema
 
-Ett schema kan ses som en plan för de data ni vill importera till Experience Platform. Varje schema består av en klass och noll eller flera mixiner. Du behöver alltså inte lägga till en blandning för att definiera ett schema, men i de flesta fall används minst en blandning.
+Ett schema kan ses som en plan för de data som du vill importera till [!DNL Experience Platform]. Varje schema består av en klass och noll eller flera mixiner. Du behöver alltså inte lägga till en blandning för att definiera ett schema, men i de flesta fall används minst en blandning.
 
 Schemadispositionsprocessen börjar med att tilldela en klass. Klassen definierar viktiga beteendeaspekter för data (post- eller tidsserier) samt de minimifält som krävs för att beskriva de data som ska importeras.
 
@@ -51,7 +54,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehåller information om det nyligen skapade schemat, inklusive `$id`, `meta:altId`och `version`. Dessa värden är skrivskyddade och tilldelas av schemaregistret.
+Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehåller information om det nyligen skapade schemat, inklusive `$id`, `meta:altId`och `version`. Dessa värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
 
 ```JSON
 {
