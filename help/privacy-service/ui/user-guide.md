@@ -4,33 +4,33 @@ solution: Experience Platform
 title: Användarhandbok för Privacy Service
 topic: UI guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
 workflow-type: tm+mt
-source-wordcount: '1088'
+source-wordcount: '1023'
 ht-degree: 0%
 
 ---
 
 
-# Användarhandbok för Privacy Service
+# [!DNL Privacy Service] användarhandbok
 
-Det här dokumentet innehåller steg för att skapa och hantera sekretessförfrågningar med Privacy Servicens användargränssnitt.
+Det här dokumentet innehåller steg för att skapa och hantera sekretessförfrågningar med [!DNL Privacy Service] användargränssnittet.
 
-## Bläddra i Privacy Servicens kontrollpanel
+## Bläddra i [!DNL Privacy Service] UI-kontrollpanelen
 
-Kontrollpanelen för användargränssnittet för Privacy Service innehåller två widgetar som gör att du kan visa statusen för dina sekretessjobb: **Statusrapport** och **jobbförfrågningar**. Kontrollpanelen visar även den aktuella valda regeln för de visade jobben.
+Kontrollpanelen för [!DNL Privacy Service] användargränssnittet innehåller två widgetar som gör att du kan visa statusen för dina sekretessjobb: **[!UICONTROL Status Report]** och **[!UICONTROL Job Requests]**. Kontrollpanelen visar även den aktuella valda regeln för de visade jobben.
 
 ![Kontrollpanel för användargränssnitt](../images/user-guide/dashboard.png)
 
 ### Regeltyp
 
-Privacy Servicen stöder jobbförfrågningar för tre regeltyper:
+[!DNL Privacy Service] stöder jobbförfrågningar för tre regeltyper:
 
-* Europeiska unionens allmänna dataskyddsförordning (GDPR)
-* The California Consumer Privacy Act (CCPA)
-* Thailand&#39;s Personal Data Protection Act (PDPA_THA)
+* Europeiska unionens [!DNL General Data Protection Regulation] (GDPR)
+* The [!DNL California Consumer Privacy Act] (CCPA)
+* Thailand [!DNL Personal Data Protection Act] (PDPA_THA)
 
-Jobb för varje regel spåras separat. Om du vill växla mellan olika regeltyper klickar du på listrutan **Regeltyp** och väljer önskad regel i listan.
+Jobb för varje regel spåras separat. Om du vill växla mellan olika regeltyper klickar du på **[!UICONTROL Regulation Type]** listrutan och väljer önskad regel i listan.
 
 ![Regeltyp, listruta](../images/user-guide/regulation.png)
 
@@ -56,7 +56,7 @@ Om du vill visa mer information om en viss datapunkt klickar du på datapunkten 
 
 >[!NOTE]
 >
->När ett filter har tillämpats på widgeten Jobbförfrågningar kan du ta bort filtret genom att klicka på **X** i filterpillet. Jobbförfrågningar återgår sedan till standardspårningslistan.
+>När ett filter har tillämpats på widgeten Jobbförfrågningar kan du ta bort filtret genom att klicka på **[!UICONTROL X]** filterfliken. Jobbförfrågningar återgår sedan till standardspårningslistan.
 
 ### Jobbförfrågningar
 
@@ -66,19 +66,19 @@ Widgeten Jobbförfrågningar visar alla tillgängliga jobbförfrågningar i din 
 >
 >Data för tidigare skapade jobb är bara tillgängliga i 30 dagar efter slutförandedatumet.
 
-Du kan filtrera listan genom att skriva nyckelord i sökfältet under rubriken Jobbförfrågningar. Listan filtreras automatiskt medan du skriver och visar begäranden som innehåller värden som matchar söktermerna. Du kan också använda listrutan **Begärd vid** för att välja ett tidsintervall för de listade jobben.
+Du kan filtrera listan genom att skriva nyckelord i sökfältet under rubriken Jobbförfrågningar. Listan filtreras automatiskt medan du skriver och visar begäranden som innehåller värden som matchar söktermerna. Du kan också använda **[!UICONTROL Requested on]** listrutan för att välja ett tidsintervall för de listade jobben.
 
 ![Sökalternativ för jobbförfrågan](../images/user-guide/job-search.png)
 
-Om du vill visa information om en viss jobbförfrågan klickar du på begärans jobb-ID i listan för att öppna sidan *Jobbinformation* .
+Om du vill visa information om en viss jobbförfrågan klickar du på begärans jobb-ID i listan för att öppna *[!UICONTROL Job Details]* sidan.
 
 ![Information om användargränssnittsjobb för GDPR](../images/user-guide/job-details.png)
 
-Den här dialogrutan innehåller statusinformation om varje Experience Cloud-lösning och dess aktuella status i relation till det övergripande jobbet. Eftersom alla sekretessjobb är asynkrona visar sidan det senaste datumet och den senaste tiden (GMT) för varje lösning, eftersom vissa kräver mer tid än andra för att behandla begäran.
+Den här dialogrutan innehåller statusinformation om varje [!DNL Experience Cloud] lösning och dess aktuella tillstånd i relation till det övergripande jobbet. Eftersom alla sekretessjobb är asynkrona visar sidan det senaste datumet och den senaste tiden (GMT) för varje lösning, eftersom vissa kräver mer tid än andra för att behandla begäran.
 
 Om en lösning har tillhandahållit ytterligare data kan den visas i den här dialogrutan. Du kan visa dessa data genom att klicka på enskilda produktrader.
 
-Om du vill hämta alla jobbdata som en CSV-fil klickar du på **Exportera till CSV** högst upp till höger i dialogrutan.
+Om du vill hämta alla jobbdata som en CSV-fil klickar du på **[!UICONTROL Export to CSV]** längst upp till höger i dialogrutan.
 
 ## Skapa en ny begäran om sekretessjobb
 
@@ -86,7 +86,7 @@ Om du vill hämta alla jobbdata som en CSV-fil klickar du på **Exportera till C
 >
 >För att kunna skapa en begäran om ett sekretessjobb måste du ange identitetsinformation för de specifika kunder vars data ska nås eller tas bort. Granska dokumentet om [identitetsdata för att se om det finns några sekretessförfrågningar](../identity-data.md) innan du fortsätter med det här avsnittet.
 
-Privacy Servicens användargränssnitt innehåller två metoder för att skapa nya jobbbegäranden:
+I [!DNL Privacy Service] gränssnittet finns två metoder för att skapa nya jobbbegäranden:
 
 * [Använda Request Builder](#request-builder)
 * [Överföra en JSON-fil](#json)
@@ -97,19 +97,19 @@ Steg för att använda dessa metoder finns i följande avsnitt.
 
 Med hjälp av Request Builder kan du manuellt skapa en ny begäran om sekretessjobb i användargränssnittet. Request Builder är bäst att använda för enklare och mindre uppsättningar av begäranden eftersom Request Builder begränsar antalet begäranden som bara har ID-typ per användare. För mer komplicerade begäranden kan det vara bättre att [överföra en JSON-fil](#json) i stället.
 
-Om du vill börja använda Request Builder klickar du på **Create Request** (Skapa begäran) under widgeten Status Report (Statusrapport) till höger på skärmen.
+Om du vill börja använda Request Builder klickar du **[!UICONTROL Create Request]** under widgeten Statusrapport till höger på skärmen.
 
 ![Klicka på Skapa förfrågan](../images/user-guide/create-request.png)
 
-Dialogrutan *Skapa begäran* öppnas och visar tillgängliga alternativ för att skicka en begäran om sekretessjobb för den valda regeltypen.
+Dialogrutan öppnas och visar tillgängliga alternativ för att skicka en begäran om sekretessjobb för den valda regeltypen. *[!UICONTROL Create Request]*
 
 <img src="../images/user-guide/request-builder.png" width="500" /><br/>
 
-Välj **jobbtyp** för begäran (&quot;Ta bort&quot; eller&quot;Åtkomst&quot;) och en eller flera tillgängliga **produkter** i listan.
+Markera **[!UICONTROL Job Type]** begäran (&quot;Ta bort&quot; eller&quot;Åtkomst&quot;) och en eller flera tillgängliga **[!UICONTROL Products]** i listan.
 
 <img src="../images/user-guide/type-and-products.png" width="500" /><br/>
 
-Under *Namespace-typ* väljer du lämplig namnområdestyp för de kund-ID som skickas till Privacy Servicen.
+Under *[!UICONTROL Namespace type]* väljer du lämplig namnområdestyp för de kund-ID som skickas till [!DNL Privacy Service].
 
 <img src="../images/user-guide/namespace-type.png" width="500" /><br/>
 
@@ -121,7 +121,7 @@ När du använder den _anpassade_ namnområdestypen måste du skriva in namnutry
 
 <img src="../images/user-guide/custom-namespace.png" width="500" /><br/>
 
-När du är klar klickar du på **Skapa**.
+När du är klar klickar du på **[!UICONTROL Create]**.
 
 <img src="../images/user-guide/request-builder-create.png" width="500" /><br/>
 
@@ -131,15 +131,15 @@ Dialogrutan försvinner och det nya jobbet (eller de nya jobben) visas i widgete
 
 När du skapar mer komplicerade begäranden, t.ex. sådana som använder flera ID-typer för varje registrerade som behandlas, kan du skapa en begäran genom att överföra en JSON-fil.
 
-Klicka på pilen bredvid **Skapa begäran**, under widgeten Statusrapport till höger på skärmen. Välj **Överför JSON** i listan med alternativ som visas.
+Klicka på pilen bredvid **[!UICONTROL Create Request]**, under widgeten Statusrapport till höger på skärmen. Välj i listan med alternativ som visas **[!UICONTROL Upload JSON]**.
 
 ![Alternativ för att skapa förfrågningar](../images/user-guide/create-options.png)
 
-Dialogrutan *Överför JSON* visas. Där finns ett fönster där du kan dra och släppa JSON-filen till.
+Dialogrutan visas. Där finns ett fönster där du kan dra och släppa JSON-filen i. *[!UICONTROL Upload JSON]*
 
 <img src="../images/user-guide/upload-json.png" width="500" /><br/>
 
-Om du inte har någon JSON-fil att överföra klickar du på **Hämta Adobe-GDPR-Request.json** för att hämta en mall som du kan fylla i enligt de värden du har samlat in från de registrerade.
+Om du inte har någon JSON-fil att överföra klickar du för **[!UICONTROL Download Adobe-GDPR-Request.json]** att hämta en mall som du kan fylla i enligt de värden som du har samlat in från de registrerade.
 
 
 <img src="../images/user-guide/privacy-template.png" width="500" /><br/>
@@ -147,10 +147,10 @@ Om du inte har någon JSON-fil att överföra klickar du på **Hämta Adobe-GDPR
 
 Leta reda på JSON-filen på datorn och dra den till dialogfönstret. Om överföringen lyckas visas filnamnet i dialogrutan. Du kan fortsätta lägga till fler JSON-filer om det behövs genom att dra och släppa dem i dialogrutan.
 
-När du är klar klickar du på **Skapa**. Dialogrutan försvinner och det nya jobbet (eller de nya jobben) visas i widgeten _Jobbförfrågningar_ tillsammans med deras aktuella bearbetningsstatus.
+När du är klar klickar du på **[!UICONTROL Create]**. Dialogrutan försvinner och det nya jobbet (eller de nya jobben) visas i widgeten _Jobbförfrågningar_ tillsammans med deras aktuella bearbetningsstatus.
 
 ### Nästa steg
 
-Genom att läsa det här dokumentet har du lärt dig hur du använder användargränssnittet för Privacy Service för att skapa ett sekretessjobb, visa information om ett jobb och övervaka dess bearbetningsstatus, och ladda ned resultaten när det är klart.
+Genom att läsa det här dokumentet har du lärt dig att använda [!DNL Privacy Service] gränssnittet för att skapa ett sekretessjobb, visa information om ett jobb och övervaka dess bearbetningsstatus samt hämta resultaten när det är klart.
 
-Anvisningar om hur du utför dessa åtgärder programmatiskt med Privacy Services-API:t finns i [utvecklarhandboken](../api/getting-started.md).
+Anvisningar om hur du utför dessa åtgärder programmatiskt med [!DNL Privacy Service] API:t finns i [utvecklarhandboken](../api/getting-started.md).
