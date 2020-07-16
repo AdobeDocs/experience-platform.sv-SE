@@ -4,39 +4,39 @@ solution: Experience Platform
 title: Definiera en relation mellan två scheman med API:t för schemaregister
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
 workflow-type: tm+mt
-source-wordcount: '1504'
+source-wordcount: '1458'
 ht-degree: 0%
 
 ---
 
 
-# Definiera en relation mellan två scheman med API:t för schemaregister
+# Definiera en relation mellan två scheman med hjälp av [!DNL Schema Registry] API:t
 
 
-Möjligheten att förstå relationen mellan era kunder och deras interaktioner med ert varumärke i olika kanaler är en viktig del av Adobe Experience Platform. Genom att definiera dessa relationer i strukturen för era XDM-scheman (Experience Data Model) kan ni få komplexa insikter i era kunddata.
+Möjligheten att förstå relationen mellan era kunder och deras interaktioner med ert varumärke i olika kanaler är en viktig del av Adobe Experience Platform. Genom att definiera dessa relationer inom strukturen för era [!DNL Experience Data Model] (XDM) scheman kan ni få komplexa insikter i era kunddata.
 
-Det här dokumentet innehåller en självstudiekurs för att definiera en 1:1-relation mellan två scheman som definierats av din organisation med API:t för [schemaregister](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml).
+Det här dokumentet innehåller en självstudiekurs för att definiera en 1:1-relation mellan två scheman som definierats av din organisation med hjälp av [!DNL Schema Registry API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml).
 
 ## Komma igång
 
-Den här självstudien kräver en fungerande förståelse av Experience Data Model (XDM) och XDM System. Läs följande dokumentation innan du börjar den här självstudiekursen:
+Den här självstudiekursen kräver en fungerande förståelse av [!DNL Experience Data Model] (XDM) och [!DNL XDM System]. Läs följande dokumentation innan du börjar den här självstudiekursen:
 
 * [XDM System i Experience Platform](../home.md): En översikt över XDM och dess implementering i Experience Platform.
    * [Grundläggande om schemakomposition](../schema/composition.md): En introduktion av byggstenarna i XDM-scheman.
-* [Kundprofil](../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [!DNL Real-time Customer Profile](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa API:t för schemaregister. Detta inkluderar ditt `{TENANT_ID}`, konceptet med&quot;behållare&quot; och de rubriker som krävs för att göra förfrågningar (med särskild uppmärksamhet på rubriken Godkänn och dess möjliga värden).
+Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till [!DNL Schema Registry] API:t. Detta inkluderar ditt `{TENANT_ID}`, konceptet med&quot;behållare&quot; och de rubriker som krävs för att göra förfrågningar (med särskild uppmärksamhet på rubriken Godkänn och dess möjliga värden).
 
 ## Definiera en källa och ett målschema {#define-schemas}
 
 Du förväntas redan ha skapat de två scheman som ska definieras i relationen. Den här självstudien skapar en relation mellan medlemmar i ett företags aktuella lojalitetsprogram (som definieras i ett&quot;Loyalty Members&quot;-schema) och deras favorithotell (som definieras i ett&quot;Hotels&quot;-schema).
 
-Schemarelationer representeras av ett **källschema** med ett fält som refererar till ett annat fält i ett **målschema**. I de följande stegen kommer &quot;Lojalitetsmedlemmar&quot; att vara källschemat, medan &quot;Hotels&quot; fungerar som målschema.
+Schemarelationer representeras av ett fält **[!UICONTROL source schema]** som refererar till ett annat fält i ett **[!UICONTROL destination schema]**. I de följande stegen blir &quot;[!UICONTROL Loyalty Members]&quot; källschemat, medan &quot;[!UICONTROL Hotels]&quot; fungerar som målschema.
 
-Om du vill definiera en relation mellan två scheman måste du först hämta `$id` värdena för båda scheman. Om du känner till visningsnamnen (`title`) för scheman kan du hitta deras `$id` värden genom att göra en GET-begäran till `/tenant/schemas` slutpunkten i API:t för schemaregistret.
+Om du vill definiera en relation mellan två scheman måste du först hämta `$id` värdena för båda scheman. Om du känner till visningsnamnen (`title`) för scheman kan du hitta deras `$id` värden genom att göra en GET-begäran till `/tenant/schemas` slutpunkten i [!DNL Schema Registry] API:t.
 
 **API-format**
 
@@ -104,11 +104,11 @@ Registrera `$id` värdena för de två scheman som du vill definiera en relation
 
 ## Definiera referensfält för båda scheman
 
-I schemaregistret fungerar relationsbeskrivare på liknande sätt som sekundärnycklar i SQL-tabeller: ett fält i källschemat fungerar som en referens till ett fält i ett målschema. När du definierar en relation måste varje schema ha ett dedikerat fält som ska användas som referens till det andra schemat.
+I [!DNL Schema Registry]fungerar relationsbeskrivningarna på liknande sätt som sekundärnycklar i SQL-tabeller: ett fält i källschemat fungerar som en referens till ett fält i ett målschema. När du definierar en relation måste varje schema ha ett dedikerat fält som ska användas som referens till det andra schemat.
 
 >[!IMPORTANT]
 >
->Om scheman ska aktiveras för användning i kundprofilen [i](../../profile/home.md)realtid, måste referensfältet för målschemat vara dess **primära identitet**. Detta förklaras mer ingående senare i den här självstudiekursen.
+>Om scheman ska aktiveras för användning i [!DNL Real-time Customer Profile](../../profile/home.md)måste referensfältet för målschemat vara dess **[!UICONTROL primary identity]**. Detta förklaras mer ingående senare i den här självstudiekursen.
 
 Om något av schemana inte har något fält för detta ändamål, kan du behöva skapa en blandning med det nya fältet och lägga till det i schemat. Det nya fältet måste ha `type` värdet &quot;string&quot;.
 
@@ -332,9 +332,9 @@ Ett lyckat svar returnerar detaljerna i det uppdaterade schemat, som nu inkluder
 
 >[!NOTE]
 >
->Det här steget krävs bara för scheman som ska aktiveras för användning i [kundprofilen](../../profile/home.md)i realtid. Om du inte vill att schemat ska ingå i en union, eller om dina scheman redan har primära identiteter definierade, kan du hoppa till nästa steg när du [skapar en referensidentitetsbeskrivning](#create-descriptor) för målschemat.
+>Det här steget krävs bara för scheman som ska aktiveras för användning i [!DNL Real-time Customer Profile](../../profile/home.md). Om du inte vill att schemat ska ingå i en union, eller om dina scheman redan har primära identiteter definierade, kan du hoppa till nästa steg när du [skapar en referensidentitetsbeskrivning](#create-descriptor) för målschemat.
 
-För att scheman ska kunna aktiveras för användning i kundprofilen i realtid måste de ha en primär identitet definierad. Dessutom måste en relations målschema använda sin primära identitet som referensfält.
+För att scheman ska kunna aktiveras för användning i måste [!DNL Real-time Customer Profile]de ha en primär identitet definierad. Dessutom måste en relations målschema använda sin primära identitet som referensfält.
 
 I den här självstudiekursen har källschemat redan en primär identitet definierad, men målschemat har inte det. Du kan markera ett schemafält som ett primärt identitetsfält genom att skapa en identitetsbeskrivning. Detta görs genom att en POST-begäran görs till `/tenant/descriptors` slutpunkten.
 
@@ -370,7 +370,7 @@ curl -X POST \
 | Parameter | Beskrivning |
 | --- | --- |
 | `@type` | Den typ av beskrivning som ska skapas. Värdet `@type` för identitetsbeskrivningar är `xdm:descriptorIdentity`. |
-| `xdm:sourceSchema` | Värdet `$id` för målschemat, som erhållits i [föregående steg](#define-schemas). |
+| `xdm:sourceSchema` | Värdet `$id` för målschemat, som hämtades i [föregående steg](#define-schemas). |
 | `xdm:sourceVersion` | Versionsnumret för schemat. |
 | `sourceProperty` | Sökvägen till det specifika fält som ska fungera som schemats primära identitet. Den här sökvägen ska börja med ett &quot;/&quot; och inte sluta med ett, men inte med något &quot;properties&quot;-namnutrymme. I begäran ovan används till exempel `/_{TENANT_ID}/hotelId` istället för `/properties/_{TENANT_ID}/properties/hotelId`. |
 | `xdm:namespace` | Identitetsnamnområdet för identitetsfältet. `hotelId` är ett ECID-värde i det här exemplet och därför används namnutrymmet&quot;ECID&quot;. En lista över tillgängliga namnutrymmen finns i översikten [över](../../identity-service/home.md) identitetsnamnutrymmet. |
@@ -513,4 +513,4 @@ Ett lyckat svar returnerar information om den nyligen skapade relationsbeskrivni
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en 1:1-relation mellan två scheman. Mer information om hur du arbetar med beskrivningar med API:t för schemaregister finns i utvecklarhandboken för [schemaregister](../api/getting-started.md). Anvisningar om hur du definierar schemarelationer i användargränssnittet finns i självstudiekursen om hur du [definierar schemarelationer med Schemaredigeraren](relationship-ui.md).
+I den här självstudiekursen har du skapat en 1:1-relation mellan två scheman. Mer information om hur du arbetar med beskrivningar med API:t finns i utvecklarhandboken för [!DNL Schema Registry] schemaregister [](../api/getting-started.md). Anvisningar om hur du definierar schemarelationer i användargränssnittet finns i självstudiekursen om hur du [definierar schemarelationer med Schemaredigeraren](relationship-ui.md).
