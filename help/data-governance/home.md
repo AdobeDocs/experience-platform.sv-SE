@@ -4,19 +4,19 @@ solution: Experience Platform
 title: Adobe Experience Platform datastyrning
 topic: overview
 translation-type: tm+mt
-source-git-commit: 7f6612f7dd649d68aa7ebe5b971b72d7b433b1e3
+source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
 workflow-type: tm+mt
-source-wordcount: '1434'
+source-wordcount: '1406'
 ht-degree: 0%
 
 ---
 
 
-# Datastyrning - översikt
+# [!DNL Data Governance] översikt
 
 En av kärnfunktionerna i Adobe Experience Platform är att sammanföra data från olika affärssystem så att marknadsförarna bättre kan identifiera, förstå och engagera sina kunder. Dessa data kan vara föremål för användarbegränsningar som fastställts av din organisation eller av juridiska bestämmelser. Det är därför viktigt att se till att dataåtgärderna i [!DNL Platform] är kompatibla med dataanvändningspolicyer.
 
-Med Adobe Experience Platform Data Governance kan ni hantera kunddata och se till att ni följer regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en viktig roll på [!DNL Experience Platform] olika nivåer, bland annat i fråga om katalogisering, datalinje, dataanvändningsetiketter, dataanvändningspolicyer och kontroll av användningen av data för marknadsföringsåtgärder.
+Med Adobe Experience Platform [!DNL Data Governance] kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en viktig roll på [!DNL Experience Platform] olika nivåer, bland annat i fråga om katalogisering, datalinje, dataanvändningsetiketter, dataanvändningspolicyer och kontroll av användningen av data för marknadsföringsåtgärder.
 
 ## Datastyrningsroller
 
@@ -44,7 +44,7 @@ Marknadsförarna är slutpunkten för datastyrning. De begär data från den inf
 
 ## DULE-ramverk
 
-DULE (Data Usage Labeling and Enforcement) är grundramverket för [!DNL Experience Platform] datastyrning. DULE förenklar och effektiviserar arbetet med att kategorisera data och skapa principer för dataanvändning. När dataetiketter har tillämpats och dataanvändningspolicyer har införts kan marknadsföringsåtgärder utvärderas för att säkerställa korrekt dataanvändning.
+DULE (Data Usage Labeling and Enforcement) är grundramverket för [!DNL Experience Platform] [!DNL Data Governance]. DULE förenklar och effektiviserar arbetet med att kategorisera data och skapa principer för dataanvändning. När dataetiketter har tillämpats och dataanvändningspolicyer har införts kan marknadsföringsåtgärder utvärderas för att säkerställa korrekt dataanvändning.
 
 DULE-ramverket består av tre nyckelelement: Etiketter, profiler och verkställighet.
 
@@ -54,7 +54,7 @@ DULE-ramverket består av tre nyckelelement: Etiketter, profiler och verkställi
 
 ## Dataanvändningsetiketter
 
-Med datastyrning kan datasegmentering tillämpa användningsetiketter på datauppsättnings- och fältnivå för att kategorisera data efter vilken typ av profiler som används.
+[!DNL Data Governance] gör det möjligt för dataserier att använda användningsetiketter på data- och fältnivå för att kategorisera data efter vilken typ av profiler som används.
 
 DULE-ramverket innehåller fördefinierade etiketter för dataanvändning som kan användas för att kategorisera data på tre sätt:
 
@@ -76,9 +76,9 @@ Mer information finns i översikten över [dataanvändningsetiketter](./labels/o
 
 För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste dataanvändningsprinciper implementeras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom [!DNL Experience Platform].
 
-Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en datauppsättning till en tredjepartstjänst. Om det finns en policy som säger att vissa typer av data, t.ex. PII (Personally Identiitable Information), inte kan exporteras och att ID-etiketten (Identity data) har tillämpats på datauppsättningen, får du ett svar från principtjänsten som säger att en dataanvändningspolicy har överträtts.
+Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en datauppsättning till en tredjepartstjänst. Om det finns en policy som säger att vissa typer av data, t.ex. PII (Personally Identiitable Information), inte kan exporteras och en I-etikett (Identity Data) har tillämpats på datauppsättningen, får du ett svar från [!DNL Policy Service] dig om att en dataanvändningspolicy har överträtts.
 
-När dataanvändningsetiketterna har tillämpats kan datahanterarna skapa principer med DULE Policy Service API eller [!DNL Experience Platform] användargränssnittet.
+När dataanvändningsetiketterna har tillämpats kan datafördelningar skapa principer med DULE [!DNL Policy Service] API eller [!DNL Experience Platform] användargränssnittet.
 
 >[!IMPORTANT]
 >
@@ -88,7 +88,7 @@ Mer information om dataanvändningspolicyer och marknadsföringsåtgärder finns
 
 ## Framtida releaser
 
-Datastyrning har för närvarande stöd för DULE-märkning på två nivåer (datamängd och fält). Datastyrning stöder också skapande och hantering av dataanvändningsprinciper och marknadsföringsåtgärder via DULE Policy Service API.
+[!DNL Data Governance] har för närvarande stöd för DULE-märkning på två nivåer (datamängd och fält). [!DNL Data Governance] har också stöd för att skapa och hantera dataanvändningsprinciper och marknadsföringsåtgärder via DULE- [!DNL Policy Service] API.
 
 Efterföljande versioner innehåller följande funktioner:
 
@@ -97,15 +97,15 @@ Efterföljande versioner innehåller följande funktioner:
 
 ## Nästa steg
 
-Detta dokument gav en introduktion på hög nivå till datastyrning och DULE-ramverket. Du kan nu fortsätta med användarhandboken för [dataanvändningsetiketter](labels/user-guide.md) och börja lägga till användningsetiketter till dina upplevelsedata.
+Det här dokumentet innehåller en introduktion på hög nivå till [!DNL Data Governance] och DULE-ramverket. Du kan nu fortsätta med användarhandboken för [dataanvändningsetiketter](labels/user-guide.md) och börja lägga till användningsetiketter till dina upplevelsedata.
 
 ## Bilaga
 
-Följande avsnitt innehåller ytterligare information om datastyrning.
+I följande avsnitt finns ytterligare information om [!DNL Data Governance].
 
-### Terminologi inom datastyrning
+### [!DNL Data Governance] terminologi
 
-I följande tabell visas nyckeltermer för datastyrning och DULE-ramverket.
+Följande tabell visar nyckeltermer relaterade till [!DNL Data Governance] och DULE-ramverket.
 
 | Term | Definition |
 |---|---|
@@ -126,6 +126,6 @@ I följande tabell visas nyckeltermer för datastyrning och DULE-ramverket.
 
 ## Ytterligare resurser
 
-Följande video är avsedd att ge stöd för din förståelse av datastyrning och beskriver de viktigaste aspekterna i ramverket för märkning och verkställighet av dataanvändning (DULE).
+Följande video är tänkt att ge stöd för din förståelse av [!DNL Data Governance]och beskriver de viktigaste aspekterna i ramverket för märkning och verkställighet av dataanvändning (DULE).
 
 >[!VIDEO](https://video.tv.adobe.com/v/29708?quality=12&enable10seconds=on&speedcontrol=on)
