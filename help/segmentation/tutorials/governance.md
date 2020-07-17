@@ -4,9 +4,9 @@ solution: Experience Platform
 title: säkerställa att målgruppssegmentens dataanvändning följs
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: cb6a2f91eb6c18835bd9542e5b66af4682227491
 workflow-type: tm+mt
-source-wordcount: '1372'
+source-wordcount: '1325'
 ht-degree: 0%
 
 ---
@@ -14,42 +14,42 @@ ht-degree: 0%
 
 # Använd API:er för att säkerställa att data används korrekt för ett målgruppssegment
 
-Den här självstudiekursen beskriver stegen för att implementera efterlevnad av dataanvändning för målgruppssegment för kundprofiler i realtid med API:er.
+Den här självstudiekursen beskriver stegen för att implementera efterlevnad av dataanvändning för målgruppssegment med hjälp av API:er [!DNL Real-time Customer Profile] .
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Den här självstudien kräver en fungerande förståelse av följande komponenter i [!DNL Adobe Experience Platform]:
 
-- [Kundprofil](../../profile/home.md)i realtid: Kundprofilen i realtid är ett generiskt uppslagsarkiv och används för att hantera XDM-data (Experience Data Model) inom Platform. Profilen sammanfogar data över olika företagsdata och ger åtkomst till dessa data i en enhetlig presentation.
-   - [Sammanslagningsprinciper](../../profile/api/merge-policies.md): Regler som används av kundprofilen i realtid för att avgöra vilka data som kan sammanfogas i en enhetlig vy under vissa villkor. Sammanslagningsprinciper kan konfigureras för datastyrning.
-- [Segmentering](../home.md): Hur kundprofilen i realtid delar upp en stor grupp individer som finns i profilbutiken i mindre grupper som har liknande egenskaper och som reagerar på liknande sätt som marknadsföringsstrategier.
-- [Datastyrning](../../data-governance/home.md): Datastyrning tillhandahåller infrastruktur för märkning och verkställighet av dataanvändning (DULE) med hjälp av följande komponenter:
+- [!DNL Real-time Customer Profile](../../profile/home.md): [!DNL Real-time Customer Profile] är ett generiskt uppslagsenhetsarkiv och används för att hantera [!DNL Experience Data Model] (XDM) data i [!DNL Platform]. Profilen sammanfogar data över olika företagsdata och ger åtkomst till dessa data i en enhetlig presentation.
+   - [Sammanslagningsprinciper](../../profile/api/merge-policies.md): Regler som används av [!DNL Real-time Customer Profile] för att avgöra vilka data som kan sammanfogas i en enhetlig vy under vissa villkor. Sammanslagningsprinciper kan konfigureras för datastyrning.
+- [!DNL Segmentation](../home.md): Hur [!DNL Real-time Customer Profile] delar upp en stor grupp individer som finns i profilbutiken i mindre grupper som har liknande egenskaper och som reagerar på liknande sätt som marknadsföringsstrategier.
+- [!DNL Data Governance](../../data-governance/home.md): [!DNL Data Governance] tillhandahåller infrastrukturen för märkning och tillämpning av dataanvändning (DULE) med hjälp av följande komponenter:
    - [Dataanvändningsetiketter](../../data-governance/labels/user-guide.md): Etiketter som används för att beskriva datauppsättningar och fält utifrån känslighetsnivån som deras respektive data ska hanteras med.
    - [Dataanvändningsprinciper](../../data-governance/policies/overview.md): Konfigurationer som anger vilka marknadsföringsåtgärder som tillåts för data som kategoriseras av särskilda dataanvändningsetiketter.
    - [Politiska åtgärder](../../data-governance/enforcement/overview.md): Gör att du kan tillämpa dataanvändningsprinciper och förhindra dataåtgärder som utgör policyöverträdelser.
-- [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+- [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa Platform API:er.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API: [!DNL Platform] erna.
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -57,9 +57,9 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Söka efter en sammanfogningsprincip för en segmentdefinition {#merge-policy}
 
-Det här arbetsflödet börjar med att man får åtkomst till ett känt målgruppssegment. Segment som har aktiverats för användning i kundprofilen i realtid innehåller ett ID för sammanfogningsprincip i segmentdefinitionen. Den här sammanfogningsprincipen innehåller information om vilka datauppsättningar som ska inkluderas i segmentet, som i sin tur innehåller tillämpliga dataanvändningsetiketter.
+Det här arbetsflödet börjar med att man får åtkomst till ett känt målgruppssegment. Segment som är aktiverade för användning i [!DNL Real-time Customer Profile] innehåller ett ID för sammanfogningsprincip i segmentdefinitionen. Den här sammanfogningsprincipen innehåller information om vilka datauppsättningar som ska inkluderas i segmentet, som i sin tur innehåller tillämpliga dataanvändningsetiketter.
 
-Med hjälp av [Segmenterings-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml)kan du söka efter en segmentdefinition med hjälp av dess ID för att hitta den associerade sammanfogningsprincipen.
+Med hjälp av API:t kan du söka efter en segmentdefinition med hjälp av dess ID för att hitta den associerade sammanfogningsprincipen. [!DNL Segmentation]
 
 **API-format**
 
@@ -126,7 +126,7 @@ Ett lyckat svar returnerar informationen om segmentdefinitionen.
 
 ## Hitta källdatauppsättningarna från sammanfogningsprincipen {#datasets}
 
-Sammanslagningsprinciper innehåller information om deras källdatauppsättningar, som i sin tur innehåller dataanvändningsetiketter. Du kan söka efter information om en sammanfogningsprincip genom att ange sammanfogningsprincip-ID i en GET-begäran till profilens API.
+Sammanslagningsprinciper innehåller information om deras källdatauppsättningar, som i sin tur innehåller dataanvändningsetiketter. Du kan söka efter information om en sammanfogningsprincip genom att ange sammanfogningsprincip-ID:t i en GET-begäran till [!DNL Profile] API:t. Mer information om sammanfogningsprinciper finns i slutpunktshandboken för [sammanfogningsprinciper](../../profile/api/merge-policies.md).
 
 **API-format**
 
@@ -375,7 +375,7 @@ Om du uppdaterar sammanfogningsprincipen för en segmentdefinition justeras de d
 
 ### Begränsa specifika datafält när segmentet exporteras
 
-När du exporterar ett segment till en datauppsättning med hjälp av kundprofils-API:t i realtid kan du filtrera de data som ingår i exporten med hjälp av `fields` parametern. Alla datafält som läggs till i den här parametern inkluderas i exporten, medan alla andra datafält exkluderas.
+När du exporterar ett segment till en datauppsättning med [!DNL Segmentation] API kan du filtrera de data som ingår i exporten med hjälp av `fields` parametern. Alla datafält som läggs till i den här parametern inkluderas i exporten, medan alla andra datafält exkluderas.
 
 Tänk dig ett segment som har datafält med namnen&quot;A&quot;,&quot;B&quot; och&quot;C&quot;. Om du bara vill exportera fält C, innehåller parametern bara fält C. `fields` Om du gör det exkluderas fälten A och B när du exporterar segmentet.
 
@@ -383,4 +383,4 @@ Mer information finns i avsnittet [Exportera ett segment](./evaluate-a-segment.m
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du tittat på etiketterna för dataanvändning som är kopplade till ett målgruppssegment och testat dem för policyöverträdelser mot specifika marknadsföringsåtgärder. Mer information om datastyrning i Experience Platform finns i [datastyrningsöversikten](../../data-governance/home.md).
+Genom att följa den här självstudiekursen har du tittat på etiketterna för dataanvändning som är kopplade till ett målgruppssegment och testat dem för policyöverträdelser mot specifika marknadsföringsåtgärder. Mer information om [!DNL Data Governance] i [!DNL Experience Platform]finns i översikten [!DNL Data Governance](../../data-governance/home.md).
