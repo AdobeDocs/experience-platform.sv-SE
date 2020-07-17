@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Beräknade attribut - Kundprofils-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: d1656635b6d082ce99f1df4e175d8dd69a63a43a
+source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
 workflow-type: tm+mt
-source-wordcount: '2431'
+source-wordcount: '2366'
 ht-degree: 0%
 
 ---
@@ -25,13 +25,13 @@ Den här guiden hjälper dig att bättre förstå beräknade attribut i Adobe Ex
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden ingår i [kundprofils-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)i realtid. Innan du fortsätter bör du läsa [Komma igång-guiden](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+API-slutpunkten som används i den här guiden ingår i [kundprofils-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)i realtid. Innan du fortsätter bör du läsa [Komma igång-guiden](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API i det här dokumentet samt viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform] -API.
 
 ## Förstå beräknade attribut
 
-Med Adobe Experience Platform kan ni enkelt importera och sammanfoga data från flera källor för att generera kundprofiler i realtid. Varje profil innehåller viktig information om en individ, t.ex. kontaktinformation, inställningar och inköpshistorik, vilket ger en helhetsbild av kunden.
+Med Adobe Experience Platform kan du enkelt importera och sammanfoga data från flera källor för att generera [!DNL Real-time Customer Profiles]. Varje profil innehåller viktig information om en individ, t.ex. kontaktinformation, inställningar och inköpshistorik, vilket ger en helhetsbild av kunden.
 
-En del av den information som samlas in i profilen är lätt att förstå när datafälten läses direkt (t.ex.&quot;förnamn&quot;) medan andra data kräver att man utför flera beräkningar eller använder andra fält och värden för att kunna generera informationen (t.ex.&quot;köpsumma för livstid&quot;). För att göra dessa data lättare att förstå snabbt kan du med Platform skapa **beräknade attribut** som automatiskt utför dessa referenser och beräkningar och returnerar värdet i rätt fält.
+En del av den information som samlas in i profilen är lätt att förstå när datafälten läses direkt (t.ex.&quot;förnamn&quot;) medan andra data kräver att man utför flera beräkningar eller använder andra fält och värden för att kunna generera informationen (t.ex.&quot;köpsumma för livstid&quot;). Om du vill göra dessa data lättare att förstå snabbt kan du skapa [!DNL Platform] **[!UICONTROL computed attributes]** som automatiskt utför dessa referenser och beräkningar och returnerar värdet i rätt fält.
 
 Beräknade attribut inkluderar att skapa ett uttryck, eller &quot;rule&quot;, som fungerar på inkommande data och lagrar resultatvärdet i ett profilattribut eller en händelse. Uttryck kan definieras på flera olika sätt, så att du kan ange att en regel endast utvärderar inkommande händelser, inkommande händelse- och profildata eller inkommande händelse, profildata och historiska händelser.
 
@@ -39,9 +39,9 @@ Beräknade attribut inkluderar att skapa ett uttryck, eller &quot;rule&quot;, so
 
 Användningsexempel för beräknade attribut kan omfatta allt från enkla beräkningar till mycket komplexa referenser. Här följer några exempel på hur du kan använda beräknade attribut:
 
-1. **Procenttal:** Ett enkelt beräknat attribut kan inkludera att ta två numeriska fält på en post och dela dem för att skapa en procentsats. Du kan t.ex. ta det totala antalet e-postmeddelanden som skickas till en individ och dividera det med antalet e-postmeddelanden personen öppnar. Om du tittar på det resulterande attributfältet visar det snabbt hur många procent av det totala antalet e-postmeddelanden som öppnats av den enskilda personen.
-1. **Användning av program:** Ett annat exempel är möjligheten att samla det antal gånger en användare öppnar ditt program. Genom att spåra det totala antalet öppna applikationer, baserat på enskilda öppna händelser, kan ni leverera specialerbjudanden eller meddelanden till användarna på deras 100:e öppna sida, vilket främjar ett djupare engagemang i ert varumärke.
-1. **Livstidsvärden:** Det kan vara svårt att samla in löpande summor, t.ex. ett livstidsvärde för en kund. Detta kräver att historiksumman uppdateras varje gång en ny köphändelse inträffar. Med ett beräknat attribut kan ni göra detta mycket enklare genom att behålla livstidsvärdet i ett enda fält som uppdateras automatiskt efter varje lyckad köphändelse som gäller kunden.
+1. **[!UICONTROL Percentages]:**Ett enkelt beräknat attribut kan inkludera att ta två numeriska fält på en post och dela dem för att skapa en procentsats. Du kan t.ex. ta det totala antalet e-postmeddelanden som skickas till en individ och dividera det med antalet e-postmeddelanden personen öppnar. Om du tittar på det resulterande attributfältet visar det snabbt hur många procent av det totala antalet e-postmeddelanden som öppnats av den enskilda personen.
+1. **[!UICONTROL Application use]:**Ett annat exempel är möjligheten att samla det antal gånger en användare öppnar ditt program. Genom att spåra det totala antalet öppna applikationer, baserat på enskilda öppna händelser, kan ni leverera specialerbjudanden eller meddelanden till användarna på deras 100:e öppna sida, vilket främjar ett djupare engagemang i ert varumärke.
+1. **[!UICONTROL Lifetime values]:**Det kan vara svårt att samla in löpande summor, t.ex. ett livstidsvärde för en kund. Detta kräver att historiksumman uppdateras varje gång en ny köphändelse inträffar. Med ett beräknat attribut kan ni göra detta mycket enklare genom att behålla livstidsvärdet i ett enda fält som uppdateras automatiskt efter varje lyckad köphändelse som gäller kunden.
 
 ## Konfigurera ett beräknat attribut
 
@@ -50,65 +50,65 @@ För att kunna konfigurera ett beräknat attribut måste du först identifiera f
 >[!NOTE]
 >Beräknade attribut kan inte läggas till i fält i Adobe-definierade blandningar. Fältet måste finnas i `tenant` namnutrymmet, vilket innebär att det måste vara ett fält som du definierar och lägger till i ett schema.
 
-För att kunna definiera ett beräknat attributfält måste schemat aktiveras för profilen och visas som en del av det unionsschema för klassen som schemat baseras på. Mer information om profilaktiverade scheman och fackföreningar finns i avsnittet om att [aktivera ett schema för profiler och visa fackscheman](../../xdm/api/getting-started.md)i guiden för schemautvecklare. Vi rekommenderar även att du läser [avsnittet om fackföreningar](../../xdm/schema/composition.md) i dokumentationen för schemakomposition.
+För att kunna definiera ett beräknat attributfält måste schemat aktiveras för [!DNL Profile] och visas som en del av det unionsschema för klassen som schemat baseras på. Mer information om [!DNL Profile]aktiverade scheman och fackföreningar finns i avsnittet om att [!DNL Schema Registry] aktivera ett schema för profiler och visa fackscheman [](../../xdm/api/getting-started.md)i utvecklarhandboken. Vi rekommenderar även att du läser [avsnittet om fackföreningar](../../xdm/schema/composition.md) i dokumentationen för schemakomposition.
 
-Arbetsflödet i den här självstudien använder ett profilaktiverat schema och följer stegen för att definiera en ny blandning som innehåller det beräknade attributfältet och säkerställa att det är rätt namnutrymme. Om du redan har ett fält i rätt namnutrymme i ett profilaktiverat schema kan du fortsätta direkt till steget för att [skapa ett beräknat attribut](#create-a-computed-attribute).
+Arbetsflödet i den här självstudien använder ett [!DNL Profile]aktiverat schema och följer stegen för att definiera en ny blandning som innehåller det beräknade attributfältet och säkerställa att det är rätt namnutrymme. Om du redan har ett fält i rätt namnutrymme i ett profilaktiverat schema kan du fortsätta direkt till steget för att [skapa ett beräknat attribut](#create-a-computed-attribute).
 
 ### Visa ett schema
 
-Stegen som följer använder användargränssnittet i Adobe Experience Platform för att hitta ett schema, lägga till en blandning och definiera ett fält. Om du föredrar att använda API:t för schemaregister läser du i utvecklarhandboken [för](../../xdm/api/getting-started.md) schemaregister om hur du skapar en blandning, lägger till en blandning i ett schema och aktiverar ett schema för användning med kundprofilen i realtid.
+Stegen som följer använder användargränssnittet i Adobe Experience Platform för att hitta ett schema, lägga till en blandning och definiera ett fält. Om du föredrar att använda [!DNL Schema Registry] API:t läser du i utvecklarhandboken [för](../../xdm/api/getting-started.md) schemaregister om hur du skapar en blandning, lägger till en blandning i ett schema och aktiverar ett schema för användning med [!DNL Real-time Customer Profile].
 
-I användargränssnittet klickar du på **Scheman** i den vänstra listen och använder sökfältet på fliken *Bläddra* för att snabbt hitta det schema du vill uppdatera.
+I användargränssnittet klickar du **[!UICONTROL Schemas]** i den vänstra listen och använder sökfältet på *[!UICONTROL Browse]* fliken för att snabbt hitta det schema som du vill uppdatera.
 
 ![](../images/computed-attributes/Schemas-Browse.png)
 
-När du har hittat schemat klickar du på dess namn för att öppna Schemaredigeraren där du kan redigera schemat.
+När du har hittat schemat klickar du på dess namn för att öppna det [!DNL Schema Editor] där du kan redigera schemat.
 
 ![](../images/computed-attributes/Schema-Editor.png)
 
 ### Skapa en blandning
 
-Om du vill skapa en ny blandning klickar du på **Lägg till** bredvid *Blandningar* i *dispositionsdelen* till vänster i redigeraren. Då öppnas dialogrutan **Lägg till mixin** där du kan se befintliga mixar. Klicka på alternativknappen för **Skapa ny blandning** för att definiera din nya blandning.
+Om du vill skapa en ny blandning klickar du på **[!UICONTROL Add]** bredvid *Blandningar* i *[!UICONTROL Composition]* avsnittet till vänster i redigeraren. Då öppnas en dialogruta där du kan se de befintliga blandningarna. **[!UICONTROL Add mixin]** Klicka på alternativknappen för **[!UICONTROL Create new mixin]** att definiera din nya blandning.
 
-Ge blandningen ett namn och en beskrivning och klicka på **Lägg till blandning** när det är klart.
+Ge blandningen ett namn och en beskrivning och klicka på **[!UICONTROL Add mixin]** när du är klar.
 
 ![](../images/computed-attributes/Add-mixin.png)
 
 ### Lägg till ett beräknat attributfält i schemat
 
-Din nya blandning ska nu visas i avsnittet *Blandningar* under *Disposition*. Klicka på namnet på blandningen och flera **Lägg till-fältknappar** visas i *strukturdelen* i redigeraren.
+Din nya blandning ska nu visas i *[!UICONTROL Mixins]* avsnittet under *[!UICONTROL Composition]*. Klicka på namnet på mixen så visas flera **[!UICONTROL Add field]** knappar i redigerarens *[!UICONTROL Structure]* avsnitt.
 
-Välj **Lägg till fält** bredvid schemats namn om du vill lägga till ett fält på den översta nivån. Du kan också välja att lägga till fältet var som helst i schemat.
+Välj **[!UICONTROL Add field]** bredvid schemats namn för att lägga till ett fält på den översta nivån, eller välj att lägga till fältet var som helst i det schema du föredrar.
 
-När du klickat på **Lägg till fält** öppnas ett nytt objekt med namnet för ditt klient-ID, som visar att fältet finns i rätt namnutrymme. I det objektet visas ett *nytt fält* . Detta gäller fältet där du definierar det beräknade attributet.
+När du klickat på **[!UICONTROL Add field]** ett nytt objekt öppnas ett namn med ditt klientorganisations-ID som visar att fältet finns i rätt namnutrymme. I det objektet *[!UICONTROL New field]* visas en bild. Detta gäller fältet där du definierar det beräknade attributet.
 
 ![](../images/computed-attributes/New-field.png)
 
 ### Konfigurera fältet
 
-Använd avsnittet *Fältegenskaper* till höger om redigeraren för att ange den information som behövs för det nya fältet, inklusive namn, visningsnamn och typ.
+Ange den information som behövs för det nya fältet, inklusive namn, visningsnamn och typ, med hjälp av avsnittet till höger om redigeraren. *[!UICONTROL Field properties]*
 
 >[!NOTE]
 >Fälttypen måste vara av samma typ som det beräknade attributvärdet. Om det beräknade attributvärdet till exempel är en sträng måste fältet som definieras i schemat vara en sträng.
 
-När du är klar klickar du på **Använd** och fältets namn, liksom dess typ, visas under *Struktur* i redigeraren.
+När du är klar klickar du **[!UICONTROL Apply]** och fältets namn och typ visas i redigerarens *[!UICONTROL Structure]* avsnitt.
 
 ![](../images/computed-attributes/Apply.png)
 
-### Aktivera schema för profil
+### Aktivera schema för [!DNL Profile]
 
-Kontrollera att schemat har aktiverats för profilen innan du fortsätter. Klicka på schemanamnet i *strukturdelen* i redigeraren så att fliken *Schemaegenskaper* visas. Om **profilreglaget** är blått har schemat aktiverats för profil.
+Innan du fortsätter kontrollerar du att schemat har aktiverats för [!DNL Profile]. Klicka på schemanamnet i *[!UICONTROL Structure]* delen av redigeraren så att *[!UICONTROL Schema Properties]* fliken visas. Om **[!UICONTROL Profile]** skjutreglaget är blått har schemat aktiverats för [!DNL Profile].
 
 >[!NOTE]
->Det går inte att ångra aktiveringen av ett schema för profilen, så om du klickar på skjutreglaget när det har aktiverats behöver du inte riskera att det inaktiveras.
+>Det [!DNL Profile] går inte att ångra aktiveringen av ett schema, så om du klickar på skjutreglaget när det har aktiverats behöver du inte riskera att det inaktiveras.
 
 ![](../images/computed-attributes/Profile.png)
 
-Du kan nu klicka på **Spara** för att spara det uppdaterade schemat och fortsätta med resten av självstudiekursen med API:t.
+Nu kan du klicka **[!UICONTROL Save]** för att spara det uppdaterade schemat och fortsätta med resten av självstudiekursen med API:t.
 
 ### Skapa ett beräknat attribut {#create-a-computed-attribute}
 
-När ditt beräknade attributfält har identifierats och du har bekräftat att schemat har aktiverats för profilen kan du nu konfigurera ett beräknat attribut.
+När ditt beräknade attributfält har identifierats och du har bekräftat att schemat är aktiverat för [!DNL Profile]kan du nu konfigurera ett beräknat attribut.
 
 Börja med att göra en POST-begäran till `/config/computedAttributes` slutpunkten med en begärandebrödtext som innehåller information om det beräknade attributet som du vill skapa.
 
@@ -151,7 +151,7 @@ curl -X POST \
 | `path` | Sökvägen till fältet som innehåller det beräknade attributet. Sökvägen finns i schemats attribut och ska INTE innehålla fältnamnet i sökvägen. Sökvägen är `properties` tom. När du skriver banan utelämnar du de olika attributnivåerna `properties` . |
 | `{TENANT_ID}` | Om du inte känner till ditt klientorganisations-ID kan du läsa stegen för att hitta ditt klientorganisations-ID i [utvecklarhandboken](../../xdm/api/getting-started.md#know-your-tenant_id)för schemaregister. |
 | `description` | En beskrivning av det beräknade attributet. Detta är särskilt användbart när flera beräknade attribut har definierats, eftersom det kommer att hjälpa andra inom IMS-organisationen att fastställa rätt beräknat attribut att använda. |
-| `expression.value` | Ett giltigt PQL-uttryck (Profile Query Language). Mer information om PQL och länkar till frågor som stöds finns i [PQL-översikten](../../segmentation/pql/overview.md). |
+| `expression.value` | Ett giltigt [!DNL Profile Query Language] PQL-uttryck. Mer information om PQL och länkar till frågor som stöds finns i [PQL-översikten](../../segmentation/pql/overview.md). |
 | `schema.name` | Den klass som schemat som innehåller det beräknade attributfältet baseras på. Exempel: `_xdm.context.experienceevent` för ett schema baserat på klassen XDM ExperienceEvent. |
 
 **Svar**
@@ -472,7 +472,7 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 |---|---|
-| `{NEW_EXPRESSION_VALUE}` | Ett giltigt PQL-uttryck (Profile Query Language). Mer information om PQL och länkar till frågor som stöds finns i [PQL-översikten](../../segmentation/pql/overview.md). |
+| `{NEW_EXPRESSION_VALUE}` | Ett giltigt [!DNL Profile Query Language] PQL-uttryck. Mer information om PQL och länkar till frågor som stöds finns i [PQL-översikten](../../segmentation/pql/overview.md). |
 
 **Svar**
 
