@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Enheter - Kundprofils-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: d1656635b6d082ce99f1df4e175d8dd69a63a43a
+source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
 workflow-type: tm+mt
-source-wordcount: '1689'
+source-wordcount: '1671'
 ht-degree: 0%
 
 ---
@@ -14,15 +14,15 @@ ht-degree: 0%
 
 # Entitetens slutpunkt (profilåtkomst)
 
-Med Adobe Experience Platform kan du komma åt kundprofildata i realtid med RESTful API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas&quot;profiler&quot;, med API:t. Mer information om hur du får åtkomst till profiler med hjälp av användargränssnittet i Platform finns i användarhandboken [för](../ui/user-guide.md)profiler.
+Med Adobe Experience Platform kan du komma åt [!DNL Real-time Customer Profile] data med RESTful API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas&quot;profiler&quot;, med API:t. Mer information om hur du får åtkomst till profiler med [!DNL Platform] användargränssnittet finns i användarhandboken för [profilen](../ui/user-guide.md).
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden ingår i [kundprofils-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)i realtid. Innan du fortsätter bör du läsa [Komma igång-guiden](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+API-slutpunkten som används i den här handboken är en del av [!DNL Real-time Customer Profile API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml). Innan du fortsätter bör du läsa [Komma igång-guiden](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API i det här dokumentet samt viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform] -API.
 
 ## Åtkomst till profildata via identitet
 
-Du kan komma åt en profilentitet genom att göra en GET-begäran till `/access/entities` slutpunkten och ange entitetens identitet som en serie frågeparametrar. Den här identiteten består av ett ID-värde (`entityId`) och identitetsnamnutrymmet (`entityIdNS`).
+Du kan komma åt en [!DNL Profile] enhet genom att göra en GET-begäran till `/access/entities` slutpunkten och ange entitetens identitet som en serie frågeparametrar. Den här identiteten består av ett ID-värde (`entityId`) och identitetsnamnutrymmet (`entityIdNS`).
 
 Frågeparametrar som anges i sökvägen anger vilka data som ska användas. Du kan inkludera flera parametrar, avgränsade med et-tecken (&amp;). En fullständig lista över giltiga parametrar finns i avsnittet med [frågeparametrar](#query-parameters) i bilagan.
 
@@ -502,7 +502,7 @@ POST /access/entities
 
 **Begäran**
 
-Följande begäran hämtar användar-ID:n, lokala tider och landskoder för tidsseriehändelser som är associerade med en lista över profilidentiteter:
+The following request retrieves user IDs, local times, and country codes for time series events associated with a list of profile identities:
 
 ```shell
 curl -X POST \
@@ -543,7 +543,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 |---|---|
-| `schema.name` | **(OBLIGATORISKT)** XDM-schemat för den entitet som ska hämtas |
+| `schema.name` | **(REQUIRED)** The XDM schema of the entity to retrieve |
 | `relatedSchema.name` | Om `schema.name` är `_xdm.context.experienceevent` det här värdet måste ange schemat för den profilentitet som tidsseriehändelser är relaterade till. |
 | `identities` | **(OBLIGATORISKT)** En lista med profiler som associerade tidsseriehändelser ska hämtas från. Varje post i arrayen anges på ett av två sätt: 1) med en fullständigt kvalificerad identitet som består av ID-värde och namnutrymme eller 2) som tillhandahåller ett XID. |
 | `fields` | Isolerar de data som returneras till en angiven uppsättning fält. Använd detta för att filtrera vilka schemafält som ska inkluderas i hämtade data. Exempel: personalEmail,person.namn,person.kön |
@@ -766,7 +766,7 @@ Ett lyckat svar returnerar en numrerad lista över händelser i tidsserier som �
 
 I det här exemplet ger den första listade profilen (&quot;GkouAW-yD9aoRCPhRYROJ-TetAFW&quot;) ett värde för `_links.next.payload`, vilket innebär att det finns ytterligare resultatsidor för den här profilen. I följande avsnitt om [hur du får tillgång till ytterligare resultat](#access-additional-results) finns mer information om hur du får tillgång till dessa ytterligare resultat.
 
-### Få tillgång till ytterligare resultat {#access-additional-results}
+### Access additional results {#access-additional-results}
 
 När tidsseriehändelser hämtas kan det finnas många resultat som returneras, och därför sidnumreras ofta resultaten. Om det finns efterföljande resultatsidor för en viss profil kommer värdet för den profilen att innehålla ett nyttolastobjekt `_links.next.payload` .
 
@@ -774,9 +774,9 @@ Om du använder den här nyttolasten i begärandetexten kan du utföra ytterliga
 
 ## Få åtkomst till tidsseriehändelser i flera schemaentiteter
 
-Du kan komma åt flera enheter som är anslutna via en relationsbeskrivare. I följande exempel på API-anrop förutsätts att en relation redan har definierats mellan två scheman. Mer information om relationsbeskrivare finns i [slutpunktshandboken](../../xdm/api/descriptors.md)för programmeringsregistrets API-utvecklare.
+Du kan komma åt flera enheter som är anslutna via en relationsbeskrivare. The following example API call assumes a relationship has already been defined between two schemas. For more information on relationship descriptors, please read the [!DNL Schema Registry] API developer guide [descriptors endpoint guide](../../xdm/api/descriptors.md).
 
-Du kan inkludera frågeparametrar i sökvägen för begäran för att ange vilka data som ska användas. Du kan inkludera flera parametrar, avgränsade med et-tecken (&amp;). En fullständig lista över giltiga parametrar finns i avsnittet med [frågeparametrar](#query-parameters) i bilagan.
+You can include query parameters in the request path in order to specify which data to access. Du kan inkludera flera parametrar, avgränsade med et-tecken (&amp;). En fullständig lista över giltiga parametrar finns i avsnittet med [frågeparametrar](#query-parameters) i bilagan.
 
 **API-format**
 
@@ -786,7 +786,7 @@ GET /access/entities?{QUERY_PARAMETERS}
 
 **Begäran**
 
-Följande begäran hämtar en entitet som innehåller en tidigare etablerad relationsbeskrivare för att få tillgång till information över olika scheman.
+The following request retrieves an entity containing a previously established relationship descriptor to access information across different schemas.
 
 ```shell
 curl -X GET \
@@ -799,7 +799,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en numrerad lista över händelser i tidsserier som är associerade med de flera entiteterna.
+A successful response returns a paginated list of time series events associated with the multiple entities.
 
 ```json
 {
@@ -884,11 +884,11 @@ Resultaten sidnumreras när tidsseriehändelser hämtas. Om det finns efterfölj
 
 ## Nästa steg
 
-Genom att följa den här guiden har du fått åtkomst till datafält, profiler och tidsseriedata för kundprofiler i realtid. Mer information om hur du får åtkomst till andra dataresurser som lagras i Platform finns i [Dataåtkomstöversikten](../../data-access/home.md).
+Genom att följa den här vägledningen har du fått åtkomst till [!DNL Real-time Customer Profile] datafält, profiler och tidsseriedata. Mer information om hur du får åtkomst till andra dataresurser som lagras i [!DNL Platform]finns i [Dataåtkomstöversikten](../../data-access/home.md).
 
 ## Bilaga {#appendix}
 
-Följande avsnitt innehåller ytterligare information om hur du får åtkomst till profildata med API:t.
+Följande avsnitt innehåller ytterligare information om hur du får åtkomst till [!DNL Profile] data med API:t.
 
 ### Frågeparametrar {#query-parameters}
 
@@ -903,9 +903,9 @@ Följande parametrar används i sökvägen för GET-begäranden till `/access/en
 | `relatedEntityId` | Om `schema.name` är &quot;_xdm.context.experienceevent&quot; måste det här värdet ange den relaterade profilentitetens identitetsnamnutrymme. Detta värde följer samma regler som `entityId`. | `relatedEntityId=69935279872410346619186588147492736556` |
 | `relatedEntityIdNS` | Om `schema.name` är &quot;_xdm.context.experienceevent&quot; måste det här värdet ange identitetsnamnutrymmet för den entitet som anges i `relatedEntityId`. | `relatedEntityIdNS=CRMID` |
 | `fields` | Filtrerar de data som returneras i svaret. Använd detta för att ange vilka schemafältvärden som ska inkluderas i hämtade data. För flera fält avgränsar du värden med kommatecken utan blanksteg mellan | `fields=personalEmail,person.name,person.gender` |
-| `mergePolicyId` | Identifierar den sammanslagningsprincip som ska användas för att styra returnerade data. Om ingen anges i samtalet används organisationens standardvärde för det schemat. Om ingen standardprincip för sammanslagning har konfigurerats är standardinställningen ingen profilsammanslagning och ingen identitetssammanfogning. | `mergePoilcyId=5aa6885fcf70a301dabdfa4a` |
+| `mergePolicyId` | Identifierar den sammanslagningsprincip som ska användas för att styra returnerade data. Om ingen anges i samtalet används organisationens standardvärde för det schemat. If no default Merge Policy has been configured, the default is no profile merge and no identity stitching. | `mergePoilcyId=5aa6885fcf70a301dabdfa4a` |
 | `orderBy` | Sorteringsordningen för hämtade upplevelsehändelser efter tidsstämpel, skriven som `(+/-)timestamp` med standardvärdet `+timestamp`. | `orderby=-timestamp` |
 | `startTime` | Ange starttid för att filtrera tidsserieobjekt (i millisekunder). | `startTime=1539838505` |
-| `endTime` | Ange sluttiden för filtrering av tidsserieobjekt (i millisekunder). | `endTime=1539838510` |
-| `limit` | Numeriskt värde som anger det maximala antalet objekt som ska returneras. Standard: 1000 | `limit=100` |
+| `endTime` | Specify the end time to filter time-series objects (in milliseconds). | `endTime=1539838510` |
+| `limit` | Numeriskt värde som anger det maximala antalet objekt som ska returneras. Default: 1000 | `limit=100` |
 | `withCA` | Funktionsflagga för aktivering av beräknade attribut för sökning. Standard: false | `withCA=true` |
