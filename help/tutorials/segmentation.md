@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Självstudiekurser för segmentering
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 5c5f6c4868e195aef76bacc0a1e5df3857647bde
+source-git-commit: ae244711ed89f4c7d6f87fd38bf7f8324e9b64be
 workflow-type: tm+mt
-source-wordcount: '538'
+source-wordcount: '540'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Adobe Experience Platform [!DNL Segmentation Service] har ett användargränssni
 
 ## Skapa en segmentdefinition
 
-En segmentdefinition är den regeluppsättning som används för att beskriva nyckelegenskaper eller beteenden hos en målgrupp. När reglerna i en segmentdefinition är färdiga används de för att avgöra vilka målgruppsmedlemmar som är kvalificerade för ett segment. Du kan utveckla, testa, förhandsgranska och spara en segmentdefinition med hjälp av [!DNL Platform] användargränssnittet eller API:erna. Om du vill skapa en segmentdefinition följer du [självstudiekursen](../segmentation/tutorials/create-a-segment.md) för att skapa ett segment eller användarhandboken för [segmentbyggaren](../segmentation/ui/overview.md).
+En segmentdefinition är den regeluppsättning som används för att beskriva nyckelegenskaper eller beteenden hos en målpublik. När reglerna i en segmentdefinition är färdiga används de för att avgöra vilka målgruppsmedlemmar som är kvalificerade för ett segment. Du kan utveckla, testa, förhandsgranska och spara en segmentdefinition med hjälp av [!DNL Platform] användargränssnittet eller API:erna. Om du vill skapa en segmentdefinition följer du [självstudiekursen](../segmentation/tutorials/create-a-segment.md) för att skapa ett segment eller användarhandboken för [segmentbyggaren](../segmentation/ui/overview.md).
 
 ## Utvärdera ett segment och få åtkomst till resultat
 
@@ -26,7 +26,7 @@ När du har utvecklat, testat och sparat din segmentdefinition kan du sedan utv�
 
 ## Exportera segmentdata
 
-När du exporterar segment som innehåller [!DNL Profile] data måste du först [skapa en datauppsättning som data exporteras](../segmentation/tutorials/create-dataset-export-segment.md)till och sedan starta ett nytt exportjobb. Steg för att generera ett exportjobb finns i [export-API-självstudiekursen](../segmentation/tutorials/export-data.md).
+När du exporterar segment som innehåller [!DNL Profile] data måste du först [skapa en datauppsättning som data exporteras](../segmentation/tutorials/create-dataset-export-segment.md)till och sedan starta ett nytt exportjobb. Steg för att generera ett exportjobb finns i självstudiekursen om hur du [utvärderar ett segment](../segmentation/tutorials/evaluate-a-segment.md).
 
 ## Konfigurera sammanslagningsprinciper
 
