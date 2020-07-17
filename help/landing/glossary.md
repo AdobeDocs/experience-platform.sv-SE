@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform produktdokumentation
 topic: getting started
 translation-type: tm+mt
-source-git-commit: 2e5668a8b1d5fb831188fbd4e453b9f4aa7474df
+source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
 workflow-type: tm+mt
-source-wordcount: '6594'
+source-wordcount: '6593'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 **Åtkomstkontroll:** {#access-control} Åtkomstkontroll för [!DNL Experience Platform] länkar till användare med åtkomstbehörigheter och sandlådemiljöer via produktprofiler i Adobe Admin Console.
 
-**Åtkomstnyckel-ID:** Åtkomstnyckel-ID är en unik identifierare som är kopplad till en hemlig åtkomstnyckel för Amazon S3. Åtkomstnyckel-ID och hemlig åtkomstnyckel används tillsammans för att signera AWS-begäranden.
+**Åtkomstnyckel-ID:** Åtkomstnyckel-ID är en unik identifierare som är kopplad till en [!DNL Amazon] S3-hemlig åtkomstnyckel. Åtkomstnyckel-ID och hemlig åtkomstnyckel används tillsammans för att signera AWS-begäranden.
 
 **Åtgärd:** I [!DNL Experience Platform Launch]är en åtgärd en specifik typ av regelkomponent som definierar vad som ska hända efter att en händelse inträffar och villkoren utvärderas och skickas.
 
@@ -108,7 +108,7 @@ ht-degree: 0%
 
 **Kontraktsdataetiketter C:** Kontraktsetiketter `C` används för att kategorisera data som har avtalsmässiga skyldigheter eller som är relaterade till en kunds policyer för datastyrning.
 
-**C1 Kontraktsetikett:** `C1` Etiketten för avtalsstyrd datastyrning anger att data bara kan exporteras från Adobe Experience Cloud i en aggregerad form utan att inkludera enskilda identifierare eller enhetsidentifierare. Till exempel data som kommer från sociala nätverk.
+**C1 Kontraktsetikett:** `C1` Etiketten för avtalsstyrd datastyrning specificerar att data bara kan exporteras från Adobe Experience Cloud i en aggregerad form utan att inkludera enskilda identifierare eller enhetsidentifierare. Till exempel data som kommer från sociala nätverk.
 
 **C2 Kontraktsetikett:** `C2` Etiketten för styrningsdata för kontrakt anger data som inte kan exporteras till en tredje part. Vissa dataleverantörer har villkor i sina kontrakt som förbjuder export av data som de ursprungligen samlades in från.  Kontrakt för sociala nätverk begränsar till exempel ofta överföringen av data som du får från dem. C2 är mer restriktiv än C1, som bara kräver aggregation och anonyma uppgifter.
 
