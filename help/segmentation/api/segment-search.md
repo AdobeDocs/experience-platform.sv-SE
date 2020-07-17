@@ -1,30 +1,28 @@
 ---
 keywords: Experience Platform;segmentation;segmentation service;troubleshooting;API;seg;
 solution: Adobe Experience Platform
-title: Utvecklarhandbok för Segmenterings-API
+title: Slutpunktsguide för segmentsökning
 topic: guide
 translation-type: tm+mt
-source-git-commit: f489e9f9dfc9c7e94f76a6825e7ca24c41ee8a66
+source-git-commit: 41a5d816f9dc6e7c26141ff5e9173b1b5631d75e
 workflow-type: tm+mt
-source-wordcount: '1172'
+source-wordcount: '1141'
 ht-degree: 0%
 
 ---
 
 
-# Segmentsökning
+# Slutpunktsguide för segmentsökning
 
-Segmentsökning används för att söka efter och indexera konfigurerbara fält som finns i olika datakällor och returnera dem i nära realtid.
+Segmentsökning används för att söka efter fält som finns i olika datakällor och returnera dem i nära realtid.
 
 Den här handboken innehåller information som hjälper dig att förstå segmentsökning bättre och innehåller exempel på API-anrop för att utföra grundläggande åtgärder med API:t.
 
 ## Komma igång
 
-API-slutpunkterna som används i den här guiden ingår i segmenterings-API:t. Läs utvecklarhandboken för [segmentering innan du fortsätter](getting-started.md).
+Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Platform Segmentation Service] API:t. Innan du fortsätter bör du läsa [Komma igång-guiden](./getting-started.md) för att få viktig information som du behöver veta för att kunna anropa API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
 
-Avsnittet [](getting-started.md) Komma igång i utvecklarhandboken för segmentering innehåller länkar till relaterade ämnen, en guide till hur du läser exempelanropen för API i det här dokumentet samt viktig information om vilka huvuden som krävs för att anropa Experience Platform API.
-
-Förutom de obligatoriska rubrikerna som beskrivs i avsnittet Komma igång, kräver alla begäranden till API:t för segmentsökning följande ytterligare rubrik:
+Förutom de obligatoriska rubrikerna som beskrivs i avsnittet Komma igång, kräver alla begäranden till slutpunkten för segmentsökning följande ytterligare rubrik:
 
 - x-ups-search-version: &quot;1.0&quot;
 
@@ -223,7 +221,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad strukturinformation om
 
 ## Nästa steg
 
-När du har läst den här guiden får du nu en bättre förståelse för hur segmentsökning fungerar. Mer information om segmentering finns i [segmenteringsöversikten](../home.md).
+När du har läst den här guiden får du nu en bättre förståelse för hur segmentsökning fungerar.
 
 ## Bilaga {#appendix}
 
