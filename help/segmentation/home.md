@@ -4,21 +4,21 @@ solution: Experience Platform
 title: Segmenteringstjänsten Adobe Experience Platform
 topic: overview
 translation-type: tm+mt
-source-git-commit: 1c9b50f8f71e917b86c34b061df7e2da6fe475a2
+source-git-commit: f44e42a4faa3b10f147dbaf929048054ce0bec42
 workflow-type: tm+mt
-source-wordcount: '2408'
+source-wordcount: '1986'
 ht-degree: 0%
 
 ---
 
 
-# Översikt över segmenteringstjänsten
+# Översikt över segmenteringstjänsten Adobe Experience Platform
 
-Adobe Experience Platform segmenteringstjänst tillhandahåller ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper utifrån kundprofildata i realtid. Dessa segment konfigureras och underhålls centralt på Platform och är tillgängliga via alla Adobes lösningar.
+Adobe Experience Platform segmenteringstjänst tillhandahåller ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper utifrån dina [!DNL Real-time Customer Profile] data. Dessa segment konfigureras och underhålls centralt på Platform och är tillgängliga via alla Adobes lösningar.
 
-Det här dokumentet innehåller en översikt över segmenteringstjänsten och vilken roll den spelar i Adobe Experience Platform.
+Det här dokumentet innehåller en översikt över [!DNL Segmentation Service] och vilken roll det spelar i Adobe Experience Platform.
 
-## Komma igång med segmenteringstjänsten
+## Getting started with [!DNL Segmentation Service]
 
 Det är viktigt att förstå följande nyckeltermer som används i hela det här dokumentet:
 
@@ -30,25 +30,25 @@ Det är viktigt att förstå följande nyckeltermer som används i hela det här
 
 Segmentering är processen att definiera specifika attribut eller beteenden som delas av en deluppsättning profiler från din profilbutik för att skilja en marknadsföringsbar grupp av människor från din kundbas. I en e-postkampanj som heter&quot;Har du glömt att köpa dina smygtittare?&quot; kanske du vill ha en målgrupp med alla användare som sökte efter skor de senaste 30 dagarna, men som inte slutförde ett köp.
 
-När ett segment väl har definierats begreppsmässigt byggs det i Experience Platform. Vanligtvis är segment byggda av marknadsföraren eller målgruppsspecialisten, även om vissa organisationer föredrar att de skapas av deras marknadsföringsavdelning i samarbete med deras dataanalytiker. När dataanalytikerna granskar data som skickas till Platform, komponerar de segmentdefinitionen genom att välja vilka fält och värden som ska användas för att skapa segmentets regler eller villkor. Detta görs med antingen användargränssnittet eller API:t.
+När ett segment har definierats konceptuellt är det inbyggt [!DNL Experience Platform]. Vanligtvis är segment byggda av marknadsföraren eller målgruppsspecialisten, även om vissa organisationer föredrar att de skapas av deras marknadsföringsavdelning i samarbete med deras dataanalytiker. När dataanalytikern granskar de data som skickas till [!DNL Platform]skapar den segmentdefinitionen genom att välja vilka fält och värden som ska användas för att skapa segmentets regler eller villkor. Detta görs med antingen användargränssnittet eller API:t.
 
 ## Skapa segment
 
-Oavsett om segmenten skapas med API:t eller med segmentbyggaren definieras segmenten slutligen med hjälp av PQL (Profile Query Language). Här beskrivs definitionen av konceptuellt segment i det språk som har byggts för att hämta profiler som uppfyller kriterierna. Mer information finns i [PQL-översikten](./pql/overview.md).
+Oavsett om segmenten skapas med API:t eller med [!DNL Segment Builder]hjälp av, definieras segmenten slutligen med [!DNL Profile Query Language] (PQL). Här beskrivs definitionen av konceptuellt segment i det språk som har byggts för att hämta profiler som uppfyller kriterierna. Mer information finns i [PQL-översikten](./pql/overview.md).
 
-Mer information om hur du skapar och använder segment i segmentbyggaren (gränssnittsimplementeringen av segmenteringstjänsten) finns i guiden [för](./ui/overview.md)segmentbyggaren.
+Mer information om hur du skapar och använder segment i [!DNL Segment Builder] (gränssnittsimplementeringen av [!DNL Segmentation Service]) finns i guiden [för](./ui/overview.md)segmentbyggaren.
 
 Mer information om hur du skapar segmentdefinitioner med API finns i självstudiekursen om hur du [skapar målgruppssegment med API](./tutorials/create-a-segment.md).
 
 >[!NOTE]
 >
->Om ett schema utökas måste alla framtida överföringar uppdatera nya fält i enlighet med detta. Mer information om hur du anpassar Experience Data Model (XDM) finns i [Schemaredigerarens självstudiekurs](../xdm/tutorials/create-schema-ui.md).
+>Om ett schema utökas måste alla framtida överföringar uppdatera nya fält i enlighet med detta. Mer information om hur du anpassar [!DNL Experience Data Model] (XDM) finns i [Schemaredigerarens självstudiekurs](../xdm/tutorials/create-schema-ui.md).
 
 ## Utvärdera segment
 
 ### Direktuppspelningssegmentering
 
-Direktuppspelningssegmentering är en kontinuerlig process för val av data som uppdaterar era segment som svar på användaraktivitet. När ett segment har byggts och sparats tillämpas segmentdefinitionen på inkommande data i kundprofilen i realtid. Tillägg och borttagningar av segment behandlas regelbundet, vilket säkerställer att målgruppen förblir relevant.
+Direktuppspelningssegmentering är en kontinuerlig process för val av data som uppdaterar era segment som svar på användaraktivitet. När ett segment har skapats och sparats tillämpas segmentdefinitionen på inkommande data i [!DNL Real-time Customer Profile]. Tillägg och borttagningar av segment behandlas regelbundet, vilket säkerställer att målgruppen förblir relevant.
 
 Mer information om direktuppspelningssegmentering finns i [dokumentationen](./api/streaming-segmentation.md)för direktuppspelningssegmentering.
 
@@ -66,11 +66,11 @@ Mer information om hur du får åtkomst till ett exporterat segment finns i sjä
 
 Metadata för segment underlättar indexering om något av segmenten ska återanvändas och/eller kombineras.
 
-När du komponerar dina segment (antingen via API eller segmentbyggaren) måste du definiera ett segmentnamn och en sammanfogningsprincip.
+När du komponerar dina segment (antingen via API eller [!DNL Segment Builder]) måste du definiera ett segmentnamn och en sammanfogningsprincip.
 
 ### Segmentnamn
 
-När du skapar ett nytt segment måste du ange ett segmentnamn. Segmentnamnet används för att identifiera ett visst segment i den samling som byggs av segmenteringstjänsten. Segmentnamn ska därför vara beskrivande, koncisa och unika.
+När du skapar ett nytt segment måste du ange ett segmentnamn. Segmentnamnet används för att identifiera ett visst segment i den samling som skapas av [!DNL Segmentation Service]. Segmentnamn ska därför vara beskrivande, koncisa och unika.
 
 >[!NOTE]
 >
@@ -78,8 +78,10 @@ När du skapar ett nytt segment måste du ange ett segmentnamn. Segmentnamnet an
 
 ### Sammanfoga profiler
 
-Sammanslagningsprinciper är regler som används av profilen för att bestämma hur data ska prioriteras och kombineras till en enhetlig vy under vissa villkor.
-Om ingen sammanfogningsprincip har definierats används Platform standardprincip för sammanfogning. Om du hellre vill använda en sammanfogningspolicy som är specifik för din organisation, kan du skapa en egen och markera den som din organisations standardpolicy.
+Sammanslagningspolicyer är regler som används för [!DNL Profile] att bestämma hur data ska prioriteras och kombineras till en enhetlig vy under vissa villkor.
+Om ingen sammanfogningsprincip har definierats används standardprincipen för [!DNL Platform] sammanfogning. Om du hellre vill använda en sammanfogningspolicy som är specifik för din organisation, kan du skapa en egen och markera den som din organisations standardpolicy.
+
+Mer information om sammanfogningsprinciper finns i guiden [för](../profile/api/merge-policies.md)sammanfogningsprinciper.
 
 >[!NOTE]
 >
@@ -87,7 +89,7 @@ Om ingen sammanfogningsprincip har definierats används Platform standardprincip
 
 ### Andra segmentmetadata
 
-Förutom segmentnamn och sammanfogningsprincip erbjuder Segment Builder ytterligare ett metadatafält för&quot;segmentbeskrivning&quot; där du kan sammanfatta syftet med segmentdefinitionen.
+Förutom segmentnamn och sammanfogningsprincip [!DNL Segment Builder] finns det ytterligare ett metadatafält för&quot;segmentbeskrivning&quot; där du kan sammanfatta syftet med segmentdefinitionen.
 
 ## Avancerade segmenteringsfunktioner
 
@@ -100,7 +102,7 @@ Dessa avancerade funktioner beskrivs närmare i följande avsnitt.
 
 ## Sekventiell segmentering {#sequential}
 
-En vanlig användarresa är sekventiell till sin natur.  Med Adobe Experience Platform kan ni definiera en ordnad serie segment för att återspegla den här resan och därigenom fånga upp händelsesekvenser när de inträffar. Du kan ordna händelser i önskad ordning med hjälp av tidslinjen för visuella händelser i Segment Builder.
+En vanlig användarresa är sekventiell till sin natur. Med Adobe Experience Platform kan ni definiera en ordnad serie segment för att återspegla den här resan och därigenom fånga upp händelsesekvenser när de inträffar. Du kan ordna händelser i önskad ordning med hjälp av tidslinjen för visuella händelser i [!DNL Segment Builder].
 
 Ett exempel på en kundresa som skulle kräva sekventiell segmentering är produktvyn > produkttillägg > utcheckning > Inget inköp.
 
@@ -152,7 +154,7 @@ Datasektionens resurser omfattar tillgång till webbdata från kundsurfning samt
 >
 >I det här exemplet antar vi att dataarkitekten redan har upprättat ett ID-namnutrymme.
 
-Med API:t kopplar dataarkitekten nyckeln från ExperienceEvent-schemat till klassen&quot;products&quot;. Om du gör det kan dataarkitekten använda ytterligare fält från klassen&quot;products&quot; som om de vore inbyggda i ExperienceEvent-schemat. Som det sista steget i konfigurationsarbetet måste dataarkitekten föra in lämpliga data i kundprofilen i realtid. Detta görs genom att aktivera datauppsättningen&quot;products&quot; för användning med profilen. När konfigurationen är klar kan antingen dataarkitekten eller marknadsföraren skapa målsegmentet i Segment Builder.
+Med API:t kopplar dataarkitekten nyckeln från ExperienceEvent-schemat till klassen&quot;products&quot;. Om du gör det kan dataarkitekten använda ytterligare fält från klassen&quot;products&quot; som om de vore inbyggda i ExperienceEvent-schemat. Som det sista steget i konfigurationsarbetet måste dataarkitekten överföra rätt data till [!DNL Real-time Customer Profile]. Detta görs genom att aktivera datauppsättningen&quot;products&quot; för användning med [!DNL Profile]. När konfigurationen är klar kan antingen dataarkitekten eller marknadsföraren skapa målsegmentet i [!DNL Segment Builder].
 
 Se översikten över [](../xdm/schema/composition.md#union) schemakomposition för att lära dig hur du definierar relationer mellan XDM-klasser.
 
@@ -194,58 +196,10 @@ Det är ofta komplicerat att skapa och kvalificera segment för e-postkampanjer 
 
 En annan traditionell utmaning för marknadsförare har varit att skapa annonser för att rikta om kunder med övergivna kundvagnsartiklar. Även om segmentdefinitionerna var en utmaning fanns det ingen formell metod för att skilja mellan inköpta produkter och övergivna produkter innan förbättringarna gjordes. Nu kan du rikta in dig på specifika datauppsättningar under segmentdefinitionen.
 
-## Datatyper för segmenteringstjänst
+## [!DNL Segmentation Service] datatyper
 
-Alla XDM-datatyper stöds i segmenteringstjänsten. Reglerna som utgör en segmentdefinition är kontextualiserade med följande datatyper.
+[!DNL Segmentation Service] har stöd för flera olika datatyper, inklusive:
 
-### Strängdata
-
-Segmentdefinitioner använder strängdata för att definiera icke-numeriska begränsningar för segmentgrupper, som&quot;namn på land&quot; eller&quot;lojalitetsprogramnivå&quot;.
-
-Strängdata inkluderas i segmentdefinitioner med hjälp av logiska, inkluderande/exklusiva och jämförelsesatser. När ett strängattribut har lagts till i segmentdefinitionen kan du använda strängrelevanta satser för att utvärdera det mot andra strängfält.
-
-| Utdragstyp | Exempel |
-| -------------- | -------- |
-| Logisk | och, eller inte |
-| Inkluderande/exklusiv | include, must exist, exclude, cannot exist |
-| Jämförelse | är lika med, är inte lika med, innehåller, börjar med |
-
-
-### Datumdata
-
-Med datumdata kan du tilldela tidsbaserade kontexter till dina segmentdefinitioner, antingen genom att använda specifika start-/slutdatum eller genom att använda datumrelevanta satser enligt tabellen nedan. En implementering kan vara att skapa en målgrupp med kunder som har interagerat med ert varumärke *i år* och som också har varit aktiva *under* de senaste dagarna.
-
-| Exempelfält | Datumrelevanta kontoutdrag | Tidslinje |
-| ------------- | ------------------------ | --------- |
-| person.firstPurchase | idag, i går, den här månaden, i år | Relevant för den dag segmentet skapades. |
-| person.lastPurchase | senaste, under, före, efter, inom | Relevant inom en given vecka/månad. |
-
-### Experience Events
-
-Som ett Adobe Experience Platform-schema registrerar XDM ExperienceEvents explicita och implicita kundinteraktioner med Platform-integrerade program, inklusive en ögonblicksbild av systemet när interaktionen ägde rum. ExperienceEvents är fakta. Därför är de en datakälla som är tillgänglig för dig under segmentdefinitionen.
-
-Som framgår av tabellen nedan återges händelsedata med nyckelord som hjälper till att förfina händelsebeteendet och ange händelseattribut.
-
-| Nyckelord | Använd |
-| ------- | --- |
-| Inkludera/exkludera | Beskriver hur händelsen beter sig genom att data inkluderas eller utelämnas. |
-| Alla | Hjälper till att bestämma antalet kvalificerade segment. |
-| Växlingsknappen Använd tidsregel | Innehåller datumdata. |
-| Lika med, är inte lika med, börjar med, startar inte med, slutar med, slutar inte med, innehåller, inte innehåller, finns, finns inte | Innehåller strängdata. |
-
-### Segment
-
-Befintliga segmentdefinitioner kan också användas som komponenter i en ny segmentdefinition, vilket lägger till deras attribut och händelsebaserade regler i det nya segmentet.
-
-### Målgrupper
-
-Externa målgrupper kan också användas som komponenter i en ny segmentdefinition och lägga till deras attributregler i det nya segmentet.
-
-För närvarande stöds bara Adobe Audience Manager som målgrupp. Ytterligare källor kommer att aktiveras i framtiden.
-
-### Andra datatyper
-
-Utöver de som nämns ovan innehåller förteckningen över datatyper som stöds även följande:
 - Sträng
 - Unik resurs-ID
 - Enum
@@ -262,11 +216,13 @@ Utöver de som nämns ovan innehåller förteckningen över datatyper som stöds
 - Mappa
 - Händelser
 
+Mer detaljerad information om dessa datatyper som stöds finns i dokumentet [med](./data-types.md)supportdatatyper.
+
 ## Nästa steg
 
-Segmenteringstjänsten ger ett konsoliderat arbetsflöde för att bygga segment utifrån kundprofildata i realtid. Sammanfattning:
+[!DNL Segmentation Service] ger ett konsoliderat arbetsflöde för att skapa segment utifrån [!DNL Real-time Customer Profile] data. Sammanfattning:
 
-- Segmentering är processen att definiera en deluppsättning av profiler från din profilbutik, vilket gör att du kan karakterisera beteenden eller attribut för en önskad marknadsföringsbar grupp. Segmenteringstjänsten gör processen möjlig.
+- [!DNL Segmentation] är processen att definiera en deluppsättning av profiler från din profilbutik, vilket gör att du kan karakterisera beteenden eller attribut för en önskad marknadsföringsbar grupp. [!DNL Segmentation Service] gör processen möjlig.
 - När du planerar ett segment bör du tänka på att det går att referera till ett segment från och kombinera det med andra segment.
 - Ett segment kan byggas utifrån regler baserade på profildata, relaterade tidsseriedata eller både och.
 - Segment kan antingen utvärderas på begäran eller kontinuerligt. När alla profildata utvärderas vid behov skickas de via segmentdefinitionerna samtidigt. Vid kontinuerlig utvärdering strömmar data genom segmentdefinitioner allt eftersom de kommer in i Platform.
