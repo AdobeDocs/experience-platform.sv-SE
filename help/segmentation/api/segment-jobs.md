@@ -4,50 +4,46 @@ solution: Experience Platform
 title: Segmentjobb
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 2327ce9a87647fb2416093d4a27eb7d4dc4aa4d7
 workflow-type: tm+mt
-source-wordcount: '657'
-ht-degree: 0%
+source-wordcount: '994'
+ht-degree: 1%
 
 ---
 
 
-# Utvecklarguide för segmentjobb
+# Slutpunktsguide för segmentjobb
 
-Ett segmentjobb är en asynkron process som skapar ett nytt målgruppssegment. Det refererar till en segmentdefinition samt eventuella sammanfogningsprinciper som styr hur kundprofilen i realtid sammanfogar överlappande attribut i dina profilfragment. När ett segmentjobb har slutförts kan du samla in olika typer av information om segmentet, t.ex. eventuella fel som kan ha inträffat under bearbetningen och målgruppens slutliga storlek.
+Ett segmentjobb är en asynkron process som skapar ett nytt målgruppssegment. Det refererar till en [segmentdefinition](./segment-definitions.md)samt eventuella [sammanfogningsprinciper](../../profile/api/merge-policies.md) som styr hur [!DNL Real-time Customer Profile] sammanfogar överlappande attribut i profilfragmenten. När ett segmentjobb har slutförts kan du samla in olika typer av information om segmentet, t.ex. eventuella fel som kan ha inträffat under bearbetningen och målgruppens slutliga storlek.
 
 Den här handboken innehåller information som hjälper dig att förstå segmentjobben bättre och innehåller exempel på API-anrop för att utföra grundläggande åtgärder med API:t.
 
 ## Komma igång
 
-API-slutpunkterna som används i den här guiden ingår i segmenterings-API:t. Läs utvecklarhandboken för [segmentering innan du fortsätter](./getting-started.md).
+Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Platform Segmentation Service] API:t. Innan du fortsätter bör du läsa [Komma igång-guiden](./getting-started.md) för att få viktig information som du behöver veta för att kunna anropa API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
 
-Avsnittet [](./getting-started.md#getting-started) Komma igång i utvecklarhandboken för segment innehåller länkar till relaterade ämnen, en guide till hur du läser exempelanropen för API i dokumentet och viktig information om vilka rubriker som krävs för att anropa ett Experience Platform-API.
-
-## Hämta en lista med segmentjobb
+## Hämta en lista med segmentjobb {#retrieve-list}
 
 Du kan hämta en lista över alla segmentjobb för din IMS-organisation genom att göra en GET-begäran till `/segment/jobs` slutpunkten.
 
 **API-format**
+
+Slutpunkten har stöd för flera frågeparametrar som hjälper dig att filtrera dina resultat. `/segment/jobs` Även om dessa parametrar är valfria rekommenderar vi starkt att de används för att minska dyra overheadkostnader. Om du anropar den här slutpunkten utan parametrar hämtas alla exportjobb som är tillgängliga för din organisation. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
 
 ```http
 GET /segment/jobs
 GET /segment/jobs?{QUERY_PARAMETERS}
 ```
 
-- `{QUERY_PARAMETERS}`: (*Valfritt*) Parametrar har lagts till i sökvägen för begäran som konfigurerar resultaten som returneras i svaret. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`). De tillgängliga parametrarna visas nedan.
-
 **Frågeparametrar**
 
-Här följer en lista med tillgängliga frågeparametrar för att lista segmentjobb. Alla dessa parametrar är valfria. Om du anropar den här slutpunkten utan parametrar hämtas alla segmentjobb som är tillgängliga för organisationen.
-
-| Parameter | Beskrivning |
-| --------- | ----------- |
-| `start` | Anger startförskjutningen för de returnerade segmentjobben. |
-| `limit` | Anger antalet segmentjobb som returneras per sida. |
-| `status` | Filtrerar resultaten baserat på status. Värdena som stöds är NEW, QUEUED, PROCESSING, SUCCEED, FAILED, CANCELING, CANCELING |
-| `sort` | Beställer de returnerade segmentjobben. Skrivs i formatet `[attributeName]:[desc|asc]`. |
-| `property` | Filtrerar segmentjobb och hämtar exakta matchningar för det angivna filtret. Den kan skrivas i något av följande format: <ul><li>`[jsonObjectPath]==[value]` - filtrering på objektnyckeln</li><li>`[arrayTypeAttributeName]~[objectKey]==[value]` - filtrering i arrayen</li></ul> |
+| Parameter | Beskrivning | Exempel |
+| --------- | ----------- | ------- |
+| `start` | Anger startförskjutningen för de returnerade segmentjobben. | `start=1` |
+| `limit` | Anger antalet segmentjobb som returneras per sida. | `limit=20` |
+| `status` | Filtrerar resultaten baserat på status. Värdena som stöds är NEW, QUEUED, PROCESSING, SUCCEED, FAILED, CANCELING, CANCELING | `status=NEW` |
+| `sort` | Beställer de returnerade segmentjobben. Skrivs i formatet `[attributeName]:[desc|asc]`. | `sort=creationTime:desc` |
+| `property` | Filtrerar segmentjobb och hämtar exakta matchningar för det angivna filtret. Den kan skrivas i något av följande format: <ul><li>`[jsonObjectPath]==[value]` - filtrering på objektnyckeln</li><li>`[arrayTypeAttributeName]~[objectKey]==[value]` - filtrering i arrayen</li></ul> | `property=segments~segmentId==workInUS` |
 
 **Begäran**
 
@@ -157,9 +153,18 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentjobb för d
 }
 ```
 
-## Skapa ett nytt segmentjobb
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `id` | En systemgenererad skrivskyddad identifierare för segmentjobbet. |
+| `status` | Aktuell status för segmentjobbet. Möjliga värden för status är &quot;NEW&quot;, &quot;PROCESSING&quot;, &quot;CANCELING&quot;, &quot;CANCELLED&quot;, &quot;FAILED&quot; och &quot;SUCCEEDED&quot;. |
+| `segments` | Ett objekt som innehåller information om de segmentdefinitioner som returneras i segmentjobbet. |
+| `segments.segment.id` | ID för segmentdefinitionen. |
+| `segments.segment.expression` | Ett objekt som innehåller information om segmentdefinitionens uttryck, skrivet i PQL. |
+| `metrics` | Ett objekt som innehåller diagnostikinformation om segmentjobbet. |
 
-Du kan skapa ett nytt segmentjobb genom att göra en POST-begäran till `/segment/jobs` slutpunkten.
+## Skapa ett nytt segmentjobb {#create}
+
+Du kan skapa ett nytt segmentjobb genom att göra en POST-begäran till `/segment/jobs` slutpunkten och i brödtexten inkludera ID:t för segmentdefinitionen som du vill skapa en ny målgrupp från.
 
 **API-format**
 
@@ -181,9 +186,12 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
   {
     "segmentId": "4afe34ae-8c98-4513-8a1d-67ccaa54bc05",
   }
-]
- '
+]'
 ```
+
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `segmentId` | ID:t för segmentdefinitionen som du vill skapa ett segmentjobb för. Mer information om segmentdefinitioner finns i [segmentdefinitionsslutpunktshandboken](./segment-definitions.md). |
 
 **Svar**
 
@@ -240,9 +248,17 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
 }
 ```
 
-## Hämta ett specifikt segmentjobb
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `id` | En systemgenererad skrivskyddad identifierare för segmentjobbet som nyligen skapades. |
+| `status` | Aktuell status för segmentjobbet. Eftersom segmentjobbet är nyskapat kommer statusen alltid att vara&quot;NYTT&quot;. |
+| `segments` | Ett objekt som innehåller information om segmentdefinitionerna som segmentjobbet körs för. |
+| `segments.segment.id` | ID:t för segmentdefinitionen som du angav. |
+| `segments.segment.expression` | Ett objekt som innehåller information om segmentdefinitionens uttryck, skrivet i PQL. |
 
-Du kan hämta detaljerad information om ett specifikt segmentjobb genom att göra en GET-begäran till `/segment/jobs` slutpunkten och ange segmentjobbets `id` värde i begärandesökvägen.
+## Hämta ett specifikt segmentjobb {#get}
+
+Du kan hämta detaljerad information om ett specifikt segmentjobb genom att göra en GET-begäran till `/segment/jobs` slutpunkten och ange ID:t för segmentjobbet som du vill hämta i sökvägen för begäran.
 
 **API-format**
 
@@ -328,9 +344,18 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det ang
 }
 ```
 
-## Masshämta segmentjobb
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `id` | En systemgenererad skrivskyddad identifierare för segmentjobbet. |
+| `status` | Aktuell status för segmentjobbet. Möjliga värden för status är &quot;NEW&quot;, &quot;PROCESSING&quot;, &quot;CANCELING&quot;, &quot;CANCELLED&quot;, &quot;FAILED&quot; och &quot;SUCCEEDED&quot;. |
+| `segments` | Ett objekt som innehåller information om de segmentdefinitioner som returneras i segmentjobbet. |
+| `segments.segment.id` | ID för segmentdefinitionen. |
+| `segments.segment.expression` | Ett objekt som innehåller information om segmentdefinitionens uttryck, skrivet i PQL. |
+| `metrics` | Ett objekt som innehåller diagnostikinformation om segmentjobbet. |
 
-Du kan hämta detaljerad information om flera angivna segmentjobb genom att göra en POST-begäran till `/segment/jobs/bulk-get` slutpunkten och ange `id` värdena för segmentjobben i begärandetexten.
+## Masshämta segmentjobb {#bulk-get}
+
+Du kan hämta detaljerad information om flera segmentjobb genom att göra en POST-begäran till `/segment/jobs/bulk-get` slutpunkten och ange `id` värdena för segmentjobben i begärandetexten.
 
 **API-format**
 
@@ -426,9 +451,21 @@ Ett lyckat svar returnerar HTTP-status 207 med de begärda segmentjobben.
 }
 ```
 
-## Avbryt eller ta bort ett specifikt segmentjobb
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `id` | En systemgenererad skrivskyddad identifierare för segmentjobbet. |
+| `status` | Aktuell status för segmentjobbet. Möjliga värden för status är &quot;NEW&quot;, &quot;PROCESSING&quot;, &quot;CANCELING&quot;, &quot;CANCELLED&quot;, &quot;FAILED&quot; och &quot;SUCCEEDED&quot;. |
+| `segments` | Ett objekt som innehåller information om de segmentdefinitioner som returneras i segmentjobbet. |
+| `segments.segment.id` | ID för segmentdefinitionen. |
+| `segments.segment.expression` | Ett objekt som innehåller information om segmentdefinitionens uttryck, skrivet i PQL. |
 
-Du kan begära att få ta bort ett angivet segmentjobb genom att göra en DELETE-begäran till `/segment/jobs` slutpunkten och ange segmentjobbets `id` värde i begärandesökvägen.
+## Avbryt eller ta bort ett specifikt segmentjobb {#delete}
+
+Du kan ta bort ett specifikt segmentjobb genom att göra en DELETE-begäran till `/segment/jobs` slutpunkten och ange ID:t för segmentjobbet som du vill ta bort i begärandesökvägen.
+
+>[!NOTE]
+>
+>API-svaret på borttagningsbegäran är omedelbart. Den faktiska borttagningen av segmentjobbet är dock asynkron. Det finns med andra ord en tidsskillnad mellan när en raderingsbegäran görs för segmentjobbet och när det tillämpas.
 
 **API-format**
 
@@ -463,4 +500,4 @@ Ett lyckat svar returnerar HTTP-status 204 med följande information.
 
 ## Nästa steg
 
-När du har läst den här guiden får du nu en bättre förståelse för hur segmentjobb fungerar. Mer information om segmentering finns i [segmenteringsöversikten](../home.md).
+När du har läst den här guiden får du nu en bättre förståelse för hur segmentjobb fungerar.
