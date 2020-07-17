@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform datastyrning
 topic: overview
 translation-type: tm+mt
-source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
+source-git-commit: 53225525feb1878aae58939338c1a94f98ec1607
 workflow-type: tm+mt
-source-wordcount: '1406'
+source-wordcount: '1342'
 ht-degree: 0%
 
 ---
@@ -85,15 +85,6 @@ När dataanvändningsetiketterna har tillämpats kan datafördelningar skapa pri
 >Alla dataanvändningspolicyer (inklusive kärnpolicyer från Adobe) är inaktiverade som standard. För att en enskild princip ska kunna användas för verkställighet måste du manuellt aktivera den principen.
 
 Mer information om dataanvändningspolicyer och marknadsföringsåtgärder finns i [policyöversikten](./policies/overview.md).
-
-## Framtida releaser
-
-[!DNL Data Governance] har för närvarande stöd för DULE-märkning på två nivåer (datamängd och fält). [!DNL Data Governance] har också stöd för att skapa och hantera dataanvändningsprinciper och marknadsföringsåtgärder via DULE- [!DNL Policy Service] API.
-
-Efterföljande versioner innehåller följande funktioner:
-
-* Politiska åtgärder: Använd policyramverket för att ge råd om och tillämpa principer för olika dataåtkomstmönster.
-* Granskning: Övervaka dataåtkomstaktiviteter och identifiera och rapportera om efterlevnadsproblem.
 
 ## Nästa steg
 
