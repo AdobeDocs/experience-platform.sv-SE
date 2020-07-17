@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Edge Projection - Real-time Customer Profile API
 topic: guide
 translation-type: tm+mt
-source-git-commit: d1656635b6d082ce99f1df4e175d8dd69a63a43a
+source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
 workflow-type: tm+mt
-source-wordcount: '1919'
+source-wordcount: '1900'
 ht-degree: 0%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 0%
 
 # Konfiguration och slutpunkter för kantprojektion
 
-För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Adobe Experience Platform ger realtidsåtkomst till data genom att använda kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Adobe-program som Adobe Target och Adobe Campaign använder kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten. Den här guiden innehåller detaljerade anvisningar om hur du använder kundprofils-API i realtid för att arbeta med kantprognoser, inklusive mål och konfigurationer.
+För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Adobe Experience Platform ger realtidsåtkomst till data genom att använda kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Adobe-program som Adobe Target och Adobe Campaign använder kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten. Den här guiden innehåller detaljerade anvisningar om hur du använder API:t för att arbeta med kantprognoser, inklusive mål och konfigurationer. [!DNL Real-time Customer Profile]
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden ingår i [kundprofils-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)i realtid. Innan du fortsätter bör du läsa [Komma igång-guiden](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+API-slutpunkten som används i den här handboken är en del av [!DNL Real-time Customer Profile API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml). Innan du fortsätter bör du läsa [Komma igång-guiden](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API i det här dokumentet samt viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform] -API.
 
 >[!NOTE]
 >Begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver en `Content-Type` rubrik. Fler än en `Content-Type` används i det här dokumentet. Var särskilt uppmärksam på rubrikerna i samplingssamtalen för att försäkra dig om att du använder rätt `Content-Type` för varje begäran.
@@ -325,7 +325,7 @@ Begäran om borttagning returnerar HTTP-status 204 (inget innehåll) och en tom 
 
 ## Projektionskonfigurationer
 
-Projektionskonfigurationer ger information om vilka data som ska vara tillgängliga på varje kant. I stället för att projicera ett fullständigt XDM-schema (Experience Data Model) till kanten, ger en projektion endast specifika data, eller fält, från schemat. Din organisation kan definiera mer än en projektionskonfiguration för varje XDM-schema.
+Projektionskonfigurationer ger information om vilka data som ska vara tillgängliga på varje kant. I stället för att projicera ett fullständigt [!DNL Experience Data Model] (XDM) schema till kanten, ger en projektion bara specifika data, eller fält, från schemat. Din organisation kan definiera mer än en projektionskonfiguration för varje XDM-schema.
 
 ### Visa alla projektionskonfigurationer
 
@@ -349,7 +349,7 @@ GET /config/projections?schemaName={SCHEMA_NAME}&name={PROJECTION_NAME}
 
 **Begäran**
 
-I följande begäran visas alla projektionskonfigurationer som är associerade med Experience Data Model-schemaklassen, XDM Individual Profile. Mer information om XDM och dess roll i Platform finns i [översikten](../../xdm/home.md)över XDM-systemet.
+I följande begäran visas alla projektionskonfigurationer som är associerade med [!DNL Experience Data Model] schemaklassen [!DNL XDM Individual Profile]. Mer information om XDM och dess roll i [!DNL Platform]finns i [XDM-systemöversikten](../../xdm/home.md).
 
 ```shell
 curl -X GET \
