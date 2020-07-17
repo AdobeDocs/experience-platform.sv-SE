@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Profilsystemjobb - Kundprofils-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: c0b059d6654a98b74be5bc6a55f360c4dc2f216b
+source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
 workflow-type: tm+mt
-source-wordcount: '1466'
+source-wordcount: '1419'
 ht-degree: 0%
 
 ---
@@ -14,14 +14,14 @@ ht-degree: 0%
 
 # Slutpunkt för profilsystemjobb (Delete-begäranden)
 
-Med Adobe Experience Platform kan ni importera data från flera olika källor och skapa stabila profiler för enskilda kunder. Data som hämtas till Platform lagras i Data Lake samt i datalagret för kundprofiler i realtid. Ibland kan det vara nödvändigt att ta bort en datauppsättning eller en batch från profilarkivet för att ta bort data som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder Real-time Customer Profile API för att skapa ett profilsystemjobb, även kallat&quot;delete request&quot;, som också kan ändras, övervakas eller tas bort vid behov.
+Med Adobe Experience Platform kan ni importera data från flera olika källor och skapa stabila profiler för enskilda kunder. Data som hämtas till [!DNL Platform] lagras i [!DNL Data Lake] såväl som i [!DNL Real-time Customer Profile] datalagret. Ibland kan det vara nödvändigt att ta bort en datauppsättning eller en batch från profilarkivet för att ta bort data som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder [!DNL Real-time Customer Profile] API:t för att skapa ett [!DNL Profile] systemjobb, som också kallas &quot;[!DNL delete request]&quot;, som också kan ändras, övervakas eller tas bort vid behov.
 
 >[!NOTE]
->Om du försöker ta bort datauppsättningar eller grupper från datasjön kan du få instruktioner i översikten [över](../../catalog/home.md) katalogtjänsten.
+>Om du försöker ta bort datauppsättningar eller grupper från [!DNL Data Lake]katalogen kan du få instruktioner i [Katalogtjänstöversikten](../../catalog/home.md) .
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden ingår i [kundprofils-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)i realtid. Innan du fortsätter bör du läsa [Komma igång-guiden](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+API-slutpunkten som används i den här handboken är en del av [!DNL Real-time Customer Profile API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml). Innan du fortsätter bör du läsa [Komma igång-guiden](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API i det här dokumentet samt viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform] -API.
 
 ## Visa borttagningsbegäranden
 
@@ -103,10 +103,10 @@ Initiering av en ny borttagningsbegäran görs via en POST-begäran till `/syste
 
 ### Ta bort en datauppsättning
 
-För att en datauppsättning ska kunna tas bort måste datauppsättnings-ID:t inkluderas i POST-begärans innehåll. Den här åtgärden tar bort ALLA data för en viss datauppsättning. Med Experience Platform kan du ta bort datauppsättningar baserat på både schema för post- och tidsserier.
+För att en datauppsättning ska kunna tas bort måste datauppsättnings-ID:t inkluderas i POST-begärans innehåll. Den här åtgärden tar bort ALLA data för en viss datauppsättning. [!DNL Experience Platform] Med kan du ta bort datauppsättningar baserat på både schema för post- och tidsserier.
 
 >[!CAUTION]
-> När du försöker ta bort en profilaktiverad datauppsättning med användargränssnittet i Experience Platform inaktiveras datauppsättningen för förtäring, men den tas inte bort förrän en borttagningsbegäran skapas med API:t. Mer information finns i [bilagan](#appendix) till det här dokumentet.
+> När du försöker ta bort en [!DNL Profile]aktiverad datauppsättning med [!DNL Experience Platform] användargränssnittet inaktiveras datauppsättningen för inmatning, men den tas inte bort förrän en borttagningsbegäran skapas med API:t. Mer information finns i [bilagan](#appendix) till det här dokumentet.
 
 **API-format**
 
@@ -161,7 +161,7 @@ Om du vill ta bort en batch måste batch-ID:t inkluderas i BOKFÖR-begäran. Obs
 >[!NOTE]
 > Orsaken till att du inte kan ta bort batchar för datauppsättningar baserade på postscheman är att datauppsättningsbatchar skriver över tidigare poster och därför inte kan ångras eller tas bort. Det enda sättet att ta bort effekten av felaktiga batchar för datauppsättningar som baseras på postscheman är att importera om gruppen med rätt data för att skriva över felaktiga poster.
 
-Mer information om hur post- och tidsserier fungerar finns i [avsnittet om XDM-databeteenden](../../xdm/home.md#data-behaviors) i översikten över XDM-systemet.
+Mer information om hur post- och tidsserier fungerar finns i [avsnittet om XDM-databeteenden](../../xdm/home.md#data-behaviors) i [!DNL XDM System] översikten.
 
 **API-format**
 
@@ -277,7 +277,7 @@ När status för borttagningsbegäran är `"COMPLETED"` du kan bekräfta att dat
 
 ## Ta bort en borttagningsbegäran
 
-Med Experience Platform kan du ta bort en tidigare begäran, vilket kan vara användbart av flera anledningar, bland annat om borttagningsjobbet inte slutfördes eller fastnade i bearbetningsfasen. Om du vill ta bort en borttagningsbegäran kan du utföra en DELETE-begäran till `/system/jobs` slutpunkten och inkludera ID:t för den borttagningsbegäran som du vill ta bort till sökvägen för begäran.
+[!DNL Experience Platform] I kan du ta bort en tidigare begäran, vilket kan vara användbart av flera anledningar, bland annat om borttagningsjobbet inte slutfördes eller fastnade i bearbetningsfasen. Om du vill ta bort en borttagningsbegäran kan du utföra en DELETE-begäran till `/system/jobs` slutpunkten och inkludera ID:t för den borttagningsbegäran som du vill ta bort till sökvägen för begäran.
 
 **API-format**
 
@@ -306,19 +306,19 @@ En slutförd borttagningsbegäran returnerar HTTP-status 200 (OK) och en tom sva
 
 ## Nästa steg
 
-Nu när du vet vilka steg det handlar om att ta bort datauppsättningar och grupper från Profilarkivet i Experience Platform kan du ta bort data som har lagts till felaktigt eller som din organisation inte längre behöver. Observera att det inte går att ångra en borttagningsbegäran. Du bör därför bara ta bort data som du är säker på att du inte behöver nu och inte behöver i framtiden.
+Nu när du vet vilka steg det handlar om att ta bort datauppsättningar och grupper från [!DNL Profile Store] i [!DNL Experience Platform]kan du ta bort data som har lagts till felaktigt eller som din organisation inte längre behöver. Observera att det inte går att ångra en borttagningsbegäran. Du bör därför bara ta bort data som du är säker på att du inte behöver nu och inte behöver i framtiden.
 
 ## Bilaga {#appendix}
 
-Följande information kompletterar åtgärden att ta bort en datauppsättning från profilarkivet.
+Följande information kompletterar åtgärden att ta bort en datauppsättning från [!DNL Profile Store].
 
-### Ta bort en datauppsättning med användargränssnittet i Experience Platform
+### Ta bort en datauppsättning med [!DNL Experience Platform] användargränssnittet
 
-När du använder användargränssnittet i Experience Platform för att ta bort en datauppsättning som har aktiverats för profilen öppnas en dialogruta med frågan&quot;Är du säker på att du vill ta bort den här datauppsättningen från Experience Data Lake? Använd API:t &quot;profilsystemjobb&quot; för att ta bort den här datauppsättningen från profiltjänsten.&quot;
+När du använder [!DNL Experience Platform] användargränssnittet för att ta bort en datauppsättning som har aktiverats för [!DNL Profile]öppnas en dialogruta med frågan&quot;Är du säker på att du vill ta bort den här datauppsättningen från [!DNL Experience Data Lake]? Använd p[!DNL rofile systems jobs]-API:t för att ta bort den här datauppsättningen från [!DNL Profile Service].&quot;
 
-Om du klickar på **Ta bort** i användargränssnittet inaktiveras datauppsättningen för förtäring, men datauppsättningen tas INTE bort automatiskt i serverdelen. För att datauppsättningen ska kunna tas bort permanent måste en borttagningsbegäran skapas manuellt med hjälp av stegen i den här guiden när du [skapar en borttagningsbegäran](#create-a-delete-request).
+Om du klickar **[!UICONTROL Delete]** i användargränssnittet inaktiveras datauppsättningen för förtäring, men datauppsättningen tas INTE bort automatiskt i serverdelen. För att datauppsättningen ska kunna tas bort permanent måste en borttagningsbegäran skapas manuellt med hjälp av stegen i den här guiden när du [skapar en borttagningsbegäran](#create-a-delete-request).
 
-Följande bild visar en varning när du försöker ta bort en profilaktiverad datauppsättning med användargränssnittet.
+Följande bild visar en varning när en [!DNL Profile]aktiverad datauppsättning tas bort med användargränssnittet.
 
 ![](../images/delete-profile-dataset.png)
 
