@@ -4,52 +4,52 @@ solution: Experience Platform
 title: Behandling av sekretessförfrågningar i kundprofil i realtid
 topic: overview
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
 workflow-type: tm+mt
-source-wordcount: '660'
+source-wordcount: '588'
 ht-degree: 0%
 
 ---
 
 
-# Behandling av sekretessförfrågningar i kundprofil i realtid
+# Behandling av sekretessförfrågningar i [!DNL Real-time Customer Profile]
 
-Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan från försäljning eller radering av personuppgifter enligt sekretessbestämmelser såsom Allmänna dataskyddsförordningen (GDPR) och California Consumer Privacy Act (CCPA).
+Adobe Experience Platform [!DNL Privacy Service] behandlar kundförfrågningar om åtkomst, avanmälan från försäljning eller radering av personuppgifter enligt sekretessbestämmelser såsom den allmänna dataskyddsförordningen (GDPR) och [!DNL California Consumer Privacy Act] (CCPA).
 
-Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kundprofil i realtid.
+Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för [!DNL Real-time Customer Profile].
 
 ## Komma igång
 
-Vi rekommenderar att du har en fungerande förståelse för följande Experience Platform-tjänster innan du läser den här handboken:
+Vi rekommenderar att du har en fungerande förståelse för följande [!DNL Experience Platform] tjänster innan du läser den här handboken:
 
-* [Privacy Service](home.md): Hanterar kundförfrågningar om åtkomst, avanmälan från försäljning eller borttagning av personliga data mellan Adobe Experience Cloud-program.
-* [Identitetstjänst](../identity-service/home.md): Lös den grundläggande utmaning som fragmenteringen av kundupplevelsedata innebär genom att överbrygga identiteter mellan olika enheter och system.
-* [Kundprofil](../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [!DNL Privacy Service](home.md): Hanterar kundförfrågningar om åtkomst, avanmälan från försäljning eller borttagning av personliga data mellan Adobe Experience Cloud-program.
+* [!DNL Identity Service](../identity-service/home.md): Lös den grundläggande utmaning som fragmenteringen av kundupplevelsedata innebär genom att överbrygga identiteter mellan olika enheter och system.
+* [!DNL Real-time Customer Profile](../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 ## Identitetsnamnutrymmen {#namespaces}
 
-Adobe Experience Platform Identity Service knyter samman data om kundidentitet mellan system och enheter. Identitetstjänsten använder **ID-namnutrymmen** för att ge kontext till identitetsvärden genom att koppla dem till deras ursprungssystem. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;E-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-id (&quot;AdCloud&quot;) eller ett Adobe Target-ID (&quot;TNTID&quot;).
+Adobe Experience Platform [!DNL Identity Service] överbryggar kundens identitetsdata mellan system och enheter. [!DNL Identity Service] använder **identitetsnamnutrymmen** för att ge kontext till identitetsvärden genom att koppla dem till deras ursprungssystem. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;E-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-id (&quot;AdCloud&quot;) eller ett Adobe Target-ID (&quot;TNTID&quot;).
 
 Identitetstjänsten underhåller ett arkiv med globalt definierade (standard) och användardefinierade (anpassade) identitetsnamnutrymmen. Standardnamnutrymmen är tillgängliga för alla organisationer (till exempel&quot;E-post&quot; och&quot;ECID&quot;), medan din organisation också kan skapa anpassade namnutrymmen som passar organisationens behov.
 
-Mer information om namnutrymmen för identiteter i Experience Platform finns i översikten över [namnutrymmet](../identity-service/namespaces.md).
+Mer information om namnutrymmen för identiteter i [!DNL Experience Platform]finns i [översikten över](../identity-service/namespaces.md)namnutrymmen för identiteter.
 
 ## Skicka begäranden {#submit}
 
 >[!NOTE]
 >
->I det här avsnittet beskrivs hur du skapar sekretessförfrågningar för profildatalagret. Vi rekommenderar att du läser [Privacy Service-API](../privacy-service/api/getting-started.md) eller [Privacy Service-gränssnittets](../privacy-service/ui/overview.md) dokumentation för att få information om hur du skickar ett sekretessjobb, inklusive hur inskickade användaridentitetsdata formateras korrekt i nyttolaster.
+>I det här avsnittet beskrivs hur du skapar sekretessförfrågningar för [!DNL Profile] datalagret. Vi rekommenderar att du läser [Privacy Service-API](../privacy-service/api/getting-started.md) eller [Privacy Service-gränssnittets](../privacy-service/ui/overview.md) dokumentation för att få information om hur du skickar ett sekretessjobb, inklusive hur inskickade användaridentitetsdata formateras korrekt i nyttolaster.
 
-I följande avsnitt beskrivs hur du gör sekretessförfrågningar för kundprofil i realtid och datasjön med hjälp av Privacy Service-API:t eller användargränssnittet.
+I följande avsnitt beskrivs hur du gör sekretessförfrågningar för [!DNL Real-time Customer Profile] och [!DNL Data Lake] använder [!DNL Privacy Service] API:t eller användargränssnittet.
 
 ### Använda API
 
-När du skapar jobbförfrågningar i API:t måste alla `userIDs` som anges använda ett specifikt `namespace` och `type` beroende på vilket datalager de gäller för. ID:n för profilarkivet måste använda antingen &quot;standard&quot; eller &quot;anpassad&quot; för sitt `type` värde, och ett giltigt [identitetsnamnutrymme](#namespaces) som identifieras av identitetstjänsten för deras `namespace` värde.
+När du skapar jobbförfrågningar i API:t måste alla `userIDs` som anges använda ett specifikt `namespace` och `type` beroende på vilket datalager de gäller för. ID:n för [!DNL Profile] butiken måste använda antingen &quot;standard&quot; eller &quot;anpassad&quot; för sitt `type` värde och ett giltigt [ID-namnutrymme](#namespaces) som känns igen [!DNL Identity Service] för deras `namespace` värde.
 
 
-Dessutom måste arrayen för den begärda nyttolasten innehålla produktvärdena för de olika datalager som begäran görs till. `include` När du gör förfrågningar till Data Lake måste arrayen innehålla värdet &quot;ProfileService&quot;.
+Dessutom måste arrayen för den begärda nyttolasten innehålla produktvärdena för de olika datalager som begäran görs till. `include` När du gör förfrågningar till [!DNL Data Lake]måste arrayen innehålla värdet &quot;ProfileService&quot;.
 
-Följande begäran skapar ett nytt sekretessjobb för båda kundprofilerna i realtid med standardnamnutrymmet&quot;E-post&quot;. Det innehåller också produktvärdet för Profil i `include` arrayen:
+Följande begäran skapar ett nytt sekretessjobb för båda [!DNL Real-time Customer Profile]med standardnamnutrymmet för e-postadress. Den innehåller också produktvärdet för [!DNL Profile] i `include` arrayen:
 
 ```shell
 curl -X POST \
@@ -93,18 +93,18 @@ curl -X POST \
 
 ### Använda gränssnittet
 
-När du skapar jobbförfrågningar i användargränssnittet måste du välja **AEP Data Lake** och/eller **Profile** under _Products_ för att kunna bearbeta jobb för data som lagras i Data Lake respektive Real-time Customer Profile.
+När du skapar jobbbegäranden i användargränssnittet måste du markera **[!UICONTROL AEP Data Lake]** och/eller **[!UICONTROL Profile]** under _[!UICONTROL Products]_för att kunna bearbeta jobb för data som lagras i[!DNL Data Lake]respektive[!DNL Real-time Customer Profile].
 
 <img src="images/privacy/product-value.png" width="450"><br>
 
 ## Ta bort bearbetning av begäran
 
-När Experience Platform tar emot en raderingsbegäran från Privacy Servicen, skickar Platform en bekräftelse till Privacy Servicen om att begäran har tagits emot och att data som påverkas har markerats för borttagning. Posterna tas sedan bort från Data Lake eller Profile Store inom sju dagar. Under denna sjudagarsperiod tas data bort på skärmen och är därför inte tillgängliga för någon Platform-tjänst.
+När [!DNL Experience Platform] tar emot en borttagningsbegäran från [!DNL Privacy Service]skickar [!DNL Platform] en bekräftelse till [!DNL Privacy Service] att begäran har tagits emot och att data som påverkas har markerats för borttagning. Posterna tas sedan bort från [!DNL Data Lake] eller [!DNL Profile] butiken inom sju dagar. Under denna sjudagarsperiod tas data bort på skärmen och är därför inte tillgängliga för någon [!DNL Platform] tjänst.
 
-I framtida versioner skickar Platform en bekräftelse till Privacy Servicen när data har tagits bort fysiskt.
+I framtida versioner [!DNL Platform] skickas en bekräftelse till [!DNL Privacy Service] när data har tagits bort fysiskt.
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du lagts till de viktiga koncept som används för att behandla sekretessförfrågningar i Experience Platform. Vi rekommenderar att du fortsätter att läsa dokumentationen som finns i den här handboken för att få en djupare förståelse för hur du hanterar identitetsdata och skapar sekretessjobb.
+Genom att läsa det här dokumentet har du lagts till i de viktiga begrepp som används för att behandla sekretessförfrågningar i [!DNL Experience Platform]. Vi rekommenderar att du fortsätter att läsa dokumentationen som finns i den här handboken för att få en djupare förståelse för hur du hanterar identitetsdata och skapar sekretessjobb.
 
-Information om hur du hanterar sekretessbegäranden för Platform-resurser som inte används av Profil finns i dokumentet om behandling av [sekretessförfrågningar i Data Lake](../catalog/privacy.md).
+Information om hur du hanterar sekretessbegäranden för [!DNL Platform] resurser som inte används av [!DNL Profile]finns i dokumentet om behandling av [sekretessförfrågningar i Data Lake](../catalog/privacy.md).
