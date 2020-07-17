@@ -1,19 +1,20 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Adobe Experience Platform Segmentation Service - hjälp
+user-guide-title: Hjälp om segmenteringstjänsten Adobe Experience Platform
 translation-type: tm+mt
-source-git-commit: 58781fb5622564b29cf250459a9149cf25672bfa
+source-git-commit: a1f80b86a1e761c15d567821b13c7533b7fcf622
 workflow-type: tm+mt
-source-wordcount: '102'
+source-wordcount: '103'
 ht-degree: 2%
 
 ---
 
 
-# Adobe Experience Platform Segmentation Service - hjälp {#segmentation}
+# Hjälp om segmenteringstjänsten Adobe Experience Platform {#segmentation}
 
 - [Översikt](home.md)
+- [Segmenteringsdatatyper](data-types.md)
 - Segmenterings-API {#api}
    - [Komma igång](api/getting-started.md)
    - [Segmentdefinitioner](api/segment-definitions.md)
@@ -40,8 +41,7 @@ ht-degree: 2%
 - Självstudiekurser {#tutorials}
    - [Skapa ett segment](tutorials/create-a-segment.md)
    - [Utvärdera ett segment](tutorials/evaluate-a-segment.md)
-   - [Exportera data](tutorials/export-data.md)
    - [Skapa en datauppsättning för att exportera data](tutorials/create-dataset-export-segment.md)
    - [Stärk regelefterlevnaden för datasegment](tutorials/governance.md)
 - [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml)
-- [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
+- [Versionsinformation för Platform](https://www.adobe.com/go/platform-release-notes-en)
