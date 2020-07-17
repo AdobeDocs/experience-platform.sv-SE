@@ -4,19 +4,19 @@ solution: Adobe Experience Platform
 title: Konfigurera en datauppsättning för profil- och identitetstjänsten med API:er
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 93aae0e394e1ea9b6089d01c585a94871863818e
+source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
 workflow-type: tm+mt
-source-wordcount: '1121'
+source-wordcount: '1020'
 ht-degree: 0%
 
 ---
 
 
-# Konfigurera en datauppsättning för profil- och identitetstjänsten med API:er
+# Konfigurera en datauppsättning för [!DNL Profile] och [!DNL Identity Service] använda API:er
 
-I den här självstudiekursen beskrivs hur du aktiverar en datauppsättning för användning i kundprofil och identitetstjänst i realtid, enligt följande:
+I den här självstudiekursen beskrivs hur du aktiverar en datauppsättning för användning i [!DNL Real-time Customer Profile] och [!DNL Identity Service]enligt följande:
 
-1. Aktivera en datauppsättning för användning i kundprofilen i realtid med något av följande två alternativ:
+1. Aktivera en datauppsättning för användning i [!DNL Real-time Customer Profile], med ett av två alternativ:
    - [Skapa en ny datauppsättning](#create-a-dataset-enabled-for-profile-and-identity)
    - [Konfigurera en befintlig datauppsättning](#configure-an-existing-dataset)
 1. [Infoga data i datauppsättningen](#ingest-data-into-the-dataset)
@@ -25,22 +25,22 @@ I den här självstudiekursen beskrivs hur du aktiverar en datauppsättning för
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse för de olika Adobe Experience Platform-tjänster som används för att hantera profilaktiverade datauppsättningar. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande Platform-tjänster:
+Den här självstudiekursen kräver en fungerande förståelse för de olika Adobe Experience Platform-tjänster som används för att hantera [!DNL Profile]aktiverade datauppsättningar. Innan du börjar med den här självstudiekursen ska du läsa dokumentationen för dessa relaterade [!DNL Platform] tjänster:
 
-- [Kundprofil](../home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-- [Identitetstjänst](../../identity-service/home.md): Möjliggör kundprofil i realtid genom att överbrygga identiteter från olika datakällor som importeras till Platform.
-- [Katalogtjänst](../../catalog/home.md): Ett RESTful API som gör att du kan skapa datauppsättningar och konfigurera dem för kundprofil och identitetstjänst i realtid.
-- [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att ordna kundupplevelsedata.
+- [!DNL Real-time Customer Profile](../home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+- [!DNL Identity Service](../../identity-service/home.md): Möjliggör [!DNL Real-time Customer Profile] genom att överbrygga identiteter från olika datakällor som inhämtas till [!DNL Platform].
+- [!DNL Catalog Service](../../catalog/home.md): Ett RESTful-API som gör att du kan skapa datauppsättningar och konfigurera dem för [!DNL Real-time Customer Profile] och [!DNL Identity Service].
+- [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa Platform API:er.
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
@@ -50,13 +50,13 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 - Innehållstyp: application/json
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i. Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i. Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
-## Skapa en datauppsättning som är aktiverad för profil och identitet {#create-a-dataset-enabled-for-profile-and-identity}
+## Skapa en datauppsättning som är aktiverad för [!DNL Profile] och [!DNL Identity] {#create-a-dataset-enabled-for-profile-and-identity}
 
-Du kan aktivera en datauppsättning för kundprofil och identitetstjänst i realtid direkt när den skapas eller när som helst efter att datauppsättningen har skapats. Om du vill aktivera en datauppsättning som redan har skapats följer du stegen för [att konfigurera en befintlig datauppsättning](#configure-an-existing-dataset) som hittas senare i det här dokumentet. Om du vill skapa en ny datauppsättning måste du känna till ID:t för ett befintligt XDM-schema som är aktiverat för kundprofil i realtid. Information om hur du söker efter eller skapar ett profilaktiverat schema finns i självstudiekursen om hur du [skapar ett schema med API:t](../../xdm/tutorials/create-schema-api.md)för schemaregister. Följande anrop till katalog-API:t aktiverar en datauppsättning för profil- och identitetstjänsten.
+Du kan aktivera en datauppsättning för [!DNL Real-time Customer Profile] och [!DNL Identity Service] omedelbart när den skapas eller när som helst efter att datauppsättningen har skapats. Om du vill aktivera en datauppsättning som redan har skapats följer du stegen för [att konfigurera en befintlig datauppsättning](#configure-an-existing-dataset) som hittas senare i det här dokumentet. Om du vill skapa en ny datauppsättning måste du känna till ID:t för ett befintligt XDM-schema som är aktiverat för kundprofil i realtid. Information om hur du söker efter eller skapar ett profilaktiverat schema finns i självstudiekursen om hur du [skapar ett schema med API:t](../../xdm/tutorials/create-schema-api.md)för schemaregister. Följande anrop till [!DNL Catalog] API:t aktiverar en datauppsättning för [!DNL Profile] och [!DNL Identity Service].
 
 **API-format**
 
@@ -66,7 +66,7 @@ POST /dataSets
 
 **Begäran**
 
-Genom att inkludera `unifiedProfile` och `unifiedIdentity` under `tags` i begärandetexten aktiveras datauppsättningen omedelbart för profiltjänsten respektive identitetstjänsten. Värdena för dessa taggar måste vara en array som innehåller strängen `"enabled:true"`.
+Genom att inkludera `unifiedProfile` och `unifiedIdentity` under `tags` i begärandetexten aktiveras datauppsättningen omedelbart för [!DNL Profile] respektive [!DNL Identity Service]. Värdena för dessa taggar måste vara en array som innehåller strängen `"enabled:true"`.
 
 ```shell
 curl -X POST \
@@ -96,8 +96,8 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 |---|---|
-| `schemaRef.id` | ID:t för det profilaktiverade schema som datauppsättningen ska baseras på. |
-| `{TENANT_ID}` | Namnområdet i schemaregistret som innehåller resurser som tillhör din IMS-organisation. Mer information finns i avsnittet [TENANT_ID](../../xdm/api/getting-started.md#know-your-tenant-id) i Utvecklarhandbok för schemaregister. |
+| `schemaRef.id` | ID:t för det [!DNL Profile]aktiverade schema som datauppsättningen ska baseras på. |
+| `{TENANT_ID}` | Det namnutrymme i [!DNL Schema Registry] som innehåller resurser som tillhör din IMS-organisation. Mer information finns i avsnittet [TENANT_ID](../../xdm/api/getting-started.md#know-your-tenant-id) i [!DNL Schema Registry] utvecklarhandboken. |
 
 **Svar**
 
@@ -111,11 +111,11 @@ Ett lyckat svar visar en array som innehåller ID:t för den nya datauppsättnin
 
 ## Konfigurera en befintlig datauppsättning {#configure-an-existing-dataset}
 
-Följande steg beskriver hur du aktiverar en tidigare skapad datauppsättning för kundprofil och identitetstjänst i realtid. Om du redan har skapat en profilaktiverad datauppsättning fortsätter du till stegen för [datainhämtning](#ingest-data-into-the-dataset).
+Följande steg beskriver hur du aktiverar en tidigare skapad datauppsättning för [!DNL Real-time Customer Profile] och [!DNL Identity Service]. Om du redan har skapat en profilaktiverad datauppsättning fortsätter du till stegen för [datainhämtning](#ingest-data-into-the-dataset).
 
 ### Kontrollera om datauppsättningen är aktiverad {#check-if-the-dataset-is-enabled}
 
-Med hjälp av Catalog API kan du undersöka en befintlig datauppsättning för att avgöra om den är aktiverad för användning i kundprofil och identitetstjänst i realtid. Följande anrop hämtar information om en datauppsättning per ID.
+Med API:t kan du undersöka en befintlig datauppsättning för att avgöra om den är aktiverad för användning i [!DNL Catalog] och [!DNL Real-time Customer Profile] [!DNL Identity Service]. Följande anrop hämtar information om en datauppsättning per ID.
 
 **API-format**
 
@@ -195,11 +195,11 @@ curl -X GET \
 }
 ```
 
-Under `tags` egenskapen ser du att `unifiedProfile` och `unifiedIdentity` båda finns med värdet `enabled:true`. Därför är kundprofil och identitetstjänst i realtid aktiverad för den här datauppsättningen.
+Under `tags` egenskapen ser du att `unifiedProfile` och `unifiedIdentity` båda finns med värdet `enabled:true`. Därför [!DNL Real-time Customer Profile] och [!DNL Identity Service] aktiveras för den här datauppsättningen.
 
 ### Aktivera datauppsättningen {#enable-the-dataset}
 
-Om den befintliga datauppsättningen inte har aktiverats för profil- eller identitetstjänsten kan du aktivera den genom att göra en PATCH-begäran med datauppsättnings-ID:t.
+Om den befintliga datauppsättningen inte har aktiverats för [!DNL Profile] eller [!DNL Identity Service]så kan du aktivera den genom att göra en PATCH-begäran med datauppsättnings-ID:t.
 
 **API-format**
 
@@ -241,14 +241,14 @@ Begärandetexten innehåller en `tags` egenskap som innehåller två underegensk
 
 ## Infoga data i datauppsättningen {#ingest-data-into-the-dataset}
 
-Både kundprofil och identitetstjänst i realtid använder XDM-data när de hämtas in till en datauppsättning. Instruktioner om hur du överför data till en datauppsättning finns i självstudiekursen om hur du [skapar en datauppsättning med API:er](../../catalog/datasets/create.md). När du planerar vilka data som ska skickas till din profilaktiverade datauppsättning bör du tänka på följande metodtips:
+Både [!DNL Real-time Customer Profile] och [!DNL Identity Service] använder XDM-data när de hämtas in till en datauppsättning. Instruktioner om hur du överför data till en datauppsättning finns i självstudiekursen om hur du [skapar en datauppsättning med API:er](../../catalog/datasets/create.md). När du planerar vilka data som ska skickas till din [!DNL Profile]aktiverade datauppsättning bör du tänka på följande bästa tillvägagångssätt:
 
 - Inkludera alla data som du vill använda som målgruppsvillkor.
-- Ta med så många identifierare du kan identifiera från dina profildata för att maximera identitetsdiagrammet. Detta gör att identitetstjänsten kan sy identiteter över datauppsättningar mer effektivt.
+- Ta med så många identifierare du kan identifiera från dina profildata för att maximera identitetsdiagrammet. Detta gör [!DNL Identity Service] att identiteter kan sammanfogas över datauppsättningar mer effektivt.
 
-## Bekräfta datainmatning med kundprofil i realtid {#confirm-data-ingest-by-real-time-customer-profile}
+## Bekräfta datainhämtning med [!DNL Real-time Customer Profile] {#confirm-data-ingest-by-real-time-customer-profile}
 
-När du överför data till en ny datauppsättning för första gången, eller som en del av en process som inbegriper en ny ETL eller datakälla, bör du noggrant kontrollera data för att se till att de har överförts som förväntat. Med hjälp av API:t för kundprofilåtkomst i realtid kan du hämta batchdata när de läses in till en datauppsättning. Om du inte kan hämta någon av de enheter du förväntar dig, kanske din datauppsättning inte är aktiverad för kundprofil i realtid. När du har bekräftat att datauppsättningen har aktiverats kontrollerar du att källdataformatet och identifierarna stöder dina förväntningar. Detaljerade instruktioner om hur du använder kundprofils-API:t i realtid för att få åtkomst till profildata finns i [enheternas slutpunktshandbok](../api/entities.md), som även kallas &quot;API för profilåtkomst&quot;.
+När du överför data till en ny datauppsättning för första gången, eller som en del av en process som inbegriper en ny ETL eller datakälla, bör du noggrant kontrollera data för att se till att de har överförts som förväntat. Med hjälp av [!DNL Real-time Customer Profile] Access API kan du hämta batchdata när de läses in till en datauppsättning. Om du inte kan hämta någon av de enheter som du förväntar dig, kanske din datauppsättning inte är aktiverad för [!DNL Real-time Customer Profile]. När du har bekräftat att datauppsättningen har aktiverats kontrollerar du att källdataformatet och identifierarna stöder dina förväntningar. Detaljerade instruktioner om hur du använder API:t för att få åtkomst till [!DNL Real-time Customer Profile] data finns i [!DNL Profile] enheternas slutpunktshandbok [, som också kallas&quot;](../api/entities.md)[!DNL Profile Access] API&quot;.
 
 ## Bekräfta datainhämtning via identitetstjänsten {#confirm-data-ingest-by-identity-service}
 
