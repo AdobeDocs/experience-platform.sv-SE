@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Segmentering för flera enheter
 topic: overview
 translation-type: tm+mt
-source-git-commit: 7110be2654e55ea411580f8c9e2e92bb52badab5
+source-git-commit: f44e42a4faa3b10f147dbaf929048054ce0bec42
 workflow-type: tm+mt
-source-wordcount: '406'
+source-wordcount: '396'
 ht-degree: 0%
 
 ---
@@ -34,14 +34,14 @@ Att definiera relationer med strukturen i era XDM-scheman (Experience Data Model
 
 Den här processen kan utföras antingen med API:t för schemaregister eller med Schemaredigeraren. En detaljerad guide om hur du använder API:t för att definiera en relation mellan två scheman finns [i självstudiekursen om hur du definierar en relation mellan två scheman med API](../xdm/tutorials/relationship-api.md). Om du vill ha en detaljerad guide om hur du använder Schemaredigeraren för att definiera en relation mellan två scheman kan du läsa [självstudiekursen om hur du definierar en relation mellan två scheman med Schemaredigeraren](../xdm/tutorials/relationship-ui.md).
 
-## Skapa segment som använder XDM-relationer
+## Så här skapar du segment som använder XDM-relationer
 
-När du har definierat dina XDM-relationer kan du använda API:erna för kundprofiler i realtid för att skapa ett segment.
+När du har definierat dina XDM-relationer kan du använda segmenteringstjänstens API för att skapa ett segment.
 
-Detta kan göras antingen med hjälp av kundprofils-API:t i realtid eller segmentbyggaren. En detaljerad guide om hur du använder API:t för att skapa segment finns [i självstudiekursen om hur du skapar ett segment med hjälp av kundprofils-API](./tutorials/create-a-segment.md)i realtid. En detaljerad guide om hur du använder Segment Builder för att skapa ett segment finns [i användarhandboken](./ui/overview.md)för Segment Builder.
+Detta kan göras antingen med segmenterings-API:t eller segmentbyggargränssnittet. En detaljerad guide om hur du använder API:t för att skapa ett segment finns [i självstudiekursen om hur du skapar ett segment med segmenterings-API](./tutorials/create-a-segment.md). En detaljerad guide om hur du använder Segment Builder för att skapa ett segment finns [i användarhandboken](./ui/overview.md)för Segment Builder.
 
 ## Så här utvärderar och får du tillgång till segment för flera enheter
 
-När du har skapat ett segment kan du utvärdera och komma åt segmentresultaten med hjälp av kundprofils-API:erna i realtid. Utvärderingen av ett segment med flera enheter påminner mycket om utvärderingen av ett reguljärt segment.
+När du har skapat ett segment kan du utvärdera och komma åt segmentresultaten med hjälp av [!DNL Segmentation Service] -API:t. Utvärderingen av ett segment med flera enheter påminner mycket om utvärderingen av ett reguljärt segment.
 
-Den här processen kan bara utföras med kundprofils-API:t i realtid. En detaljerad guide om hur du använder API för att utvärdera och få tillgång till segment finns [i självstudiekursen om att utvärdera och få åtkomst till segment](./tutorials/evaluate-a-segment.md).
+Den här processen kan bara utföras med API:t [!DNL Segmentation Service] . En detaljerad guide om hur du använder API för att utvärdera och få tillgång till segment finns i självstudiekursen om [utvärdering och åtkomst av segment](./tutorials/evaluate-a-segment.md).
