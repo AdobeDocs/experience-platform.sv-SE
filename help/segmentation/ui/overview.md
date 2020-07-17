@@ -4,15 +4,15 @@ solution: Experience Platform
 title: Användargränssnittsguide för segmentbyggare
 topic: ui guide
 translation-type: tm+mt
-source-git-commit: 1c9b50f8f71e917b86c34b061df7e2da6fe475a2
+source-git-commit: f44e42a4faa3b10f147dbaf929048054ce0bec42
 workflow-type: tm+mt
-source-wordcount: '2666'
+source-wordcount: '2665'
 ht-degree: 0%
 
 ---
 
 
-# [!UICONTROL Segment Builder] användarhandbok
+# [!DNL Segment Builder] användarhandbok
 
 [!DNL Adobe Experience Platform Segmentation Service] innehåller ett RESTful-API och användargränssnitt för att skapa segmentdefinitioner utifrån [!DNL Real-time Customer Profile] data.
 
@@ -31,7 +31,7 @@ Det är också viktigt att känna till två nyckeltermer som används i det här
 
 ## Åtkomst till segmentdefinitioner
 
-Om du vill börja arbeta med segmentdefinitioner i [!DNL Adobe Experience Platform]klickar du **[!UICONTROL Segments]** i den vänstra navigeringen. Om du vill visa alla segmentdefinitioner för din organisation klickar du på *[!UICONTROL Browse]* fliken. I den här vyn visas information om segmentdefinitionen, inklusive utvärderingsmetod, skapad den och senaste ändringsdatum.
+Om du vill börja arbeta med segmentdefinitioner i [!DNL Adobe Experience Platform]klickar du **[!UICONTROL Segments]** i den vänstra navigeringen. Om du vill visa alla segmentdefinitioner för din organisation klickar du på *[!UICONTROL Browse]* fliken. I den här vyn visas information om segmentdefinitionen, inklusive utvärderingsmetod, datum då segmentet skapades och senaste ändringsdatum.
 
 Utvärderingsmetoden kan antingen vara direktuppspelning eller batch. Direktuppspelningssegment utvärderas ständigt när data kommer in i systemet. Gruppsegmenten utvärderas enligt ett angivet schema.
 
@@ -41,9 +41,9 @@ Om du klickar **[!UICONTROL Create segment]** i det övre högra hörnet öppnas
 
 ![](../images/segment-builder/segment-browse.png)
 
-## [!UICONTROL Segment Builder] arbetsyta
+## [!DNL Segment Builder] arbetsyta
 
-[!UICONTROL Segment Builder] innehåller en omfattande arbetsyta som gör att du kan interagera med [!DNL Profile] dataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
+[!DNL Segment Builder] innehåller en omfattande arbetsyta som gör att du kan interagera med [!DNL Profile] dataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 
 ![](../images/segment-builder/segment-builder.png)
 
@@ -51,7 +51,7 @@ Om du klickar **[!UICONTROL Create segment]** i det övre högra hörnet öppnas
 
 De grundläggande byggstenarna för segmentdefinitioner är **[!UICONTROL Attributes]** och **[!UICONTROL Events]**. Dessutom **[!UICONTROL Audiences]** kan attributen och händelserna som finns i befintliga komponenter också användas som komponenter för nya definitioner.
 
-Dessa byggstenar visas i avsnittet *Fält* till vänster på [!UICONTROL Segment Builder] arbetsytan. *[!UICONTROL Fields]* innehåller en flik för varje huvudbyggsten: **[!UICONTROL Attributes]**, **[!UICONTROL Events]** och **[!UICONTROL Audiences]**.
+Dessa byggstenar visas i *[!UICONTROL Fields]* avsnittet till vänster på [!DNL Segment Builder] arbetsytan. *[!UICONTROL Fields]* innehåller en flik för varje huvudbyggsten: **[!UICONTROL Attributes]**, **[!UICONTROL Events]** och **[!UICONTROL Audiences]**.
 
 ![](../images/segment-builder/segment-fields.png)
 
@@ -95,7 +95,7 @@ Du kan också söka efter [!UICONTROL Audiences] med sökfältet som använder [
 
 ## Regelbyggarens arbetsyta {#rule-builder-canvas}
 
-En segmentdefinition är en samling regler som används för att beskriva viktiga egenskaper eller beteenden hos en målgrupp. Dessa regler skapas med hjälp av *[!UICONTROL rule builder canvas]*, som finns i mitten av [!UICONTROL Segment Builder].
+En segmentdefinition är en samling regler som används för att beskriva viktiga egenskaper eller beteenden hos en målgrupp. Dessa regler skapas med hjälp av *[!UICONTROL rule builder canvas]*, som finns i mitten av [!DNL Segment Builder].
 
 Om du vill lägga till en ny regel i segmentdefinitionen drar du en platta från *[!UICONTROL Fields]* fliken och släpper den på regelbyggarens arbetsyta. Därefter visas sammanhangsspecifika alternativ beroende på vilken typ av data som läggs till. Tillgängliga datatyper: strängar, datum [!DNL ExperienceEvents], [!UICONTROL Event Types]och [!UICONTROL Audiences].
 
@@ -105,7 +105,7 @@ Om du vill lägga till en ny regel i segmentdefinitionen drar du en platta från
 
 Du kan dra och släppa en målgrupp från fliken *[!UICONTROL Audience]* till regelbyggararbetsytan för att referera till målgruppsmedlemskap i den nya segmentdefinitionen. På så sätt kan du inkludera eller exkludera målgruppsmedlemskap som ett attribut i den nya segmentregeln.
 
-För [!DNL Platform] målgrupper som skapats med [!UICONTROL Segment Builder]får ni möjligheten att konvertera målgruppen till den uppsättning regler som användes i segmentdefinitionen för den målgruppen. Den här konverteringen skapar en kopia av regellogiken som sedan kan ändras utan att den ursprungliga segmentdefinitionen påverkas. Kontrollera att du har sparat alla senaste ändringar av segmentdefinitionen innan du konverterar den till regellogik.
+För [!DNL Platform] målgrupper som skapats med [!DNL Segment Builder]får ni möjligheten att konvertera målgruppen till den uppsättning regler som användes i segmentdefinitionen för den målgruppen. Den här konverteringen skapar en kopia av regellogiken som sedan kan ändras utan att den ursprungliga segmentdefinitionen påverkas. Kontrollera att du har sparat alla senaste ändringar av segmentdefinitionen innan du konverterar den till regellogik.
 
 >[!NOTE]
 >
@@ -113,11 +113,11 @@ För [!DNL Platform] målgrupper som skapats med [!UICONTROL Segment Builder]få
 
 ![](../images/segment-builder/add-audience-to-segment.png)
 
-Om det uppstår några konflikter när målgrupper konverteras till regler försöker [!UICONTROL Segment Builder] bevara de befintliga alternativen så gott de kan.
+Om det uppstår några konflikter när målgrupper konverteras till regler försöker [!DNL Segment Builder] bevara de befintliga alternativen så gott de kan.
 
 ### kodvyn
 
-Du kan också visa en kodbaserad version av en regel som har skapats i [!UICONTROL Segment Builder]. När du har skapat regeln på arbetsytan i regelbyggaren kan du välja **[!UICONTROL Code view]** att visa ditt segment som en PQL.
+Du kan också visa en kodbaserad version av en regel som har skapats i [!DNL Segment Builder]. När du har skapat regeln på arbetsytan i regelbyggaren kan du välja **[!UICONTROL Code view]** att visa ditt segment som en PQL.
 
 ![](../images/segment-builder/code-view.png)
 
