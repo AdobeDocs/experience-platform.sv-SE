@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Sammanslagningsprinciper - Kundprofils-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: d1656635b6d082ce99f1df4e175d8dd69a63a43a
+source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
 workflow-type: tm+mt
-source-wordcount: '2053'
+source-wordcount: '2035'
 ht-degree: 0%
 
 ---
@@ -14,15 +14,15 @@ ht-degree: 0%
 
 # Slutpunkt för sammanslagningsprinciper
 
-Med Adobe Experience Platform kan ni samla data från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanför dessa data är sammanslagningsprinciper de regler som Platform använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa den enhetliga vyn. Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen. I den här handboken visas steg för hur du arbetar med sammanfogningsprinciper med API:t. Om du vill arbeta med sammanfogningsprinciper med hjälp av användargränssnittet läser du i [användarhandboken](../ui/merge-policies.md)för sammanfogningsprinciper.
+Med Adobe Experience Platform kan ni samla data från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanför dessa data är sammanslagningsprinciper de regler som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa den enhetliga vyn. Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen. I den här handboken visas steg för hur du arbetar med sammanfogningsprinciper med API:t. Om du vill arbeta med sammanfogningsprinciper med hjälp av användargränssnittet läser du i [användarhandboken](../ui/merge-policies.md)för sammanfogningsprinciper.
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden ingår i [kundprofils-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)i realtid. Innan du fortsätter bör du läsa [Komma igång-guiden](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+API-slutpunkten som används i den här handboken är en del av [!DNL Real-time Customer Profile API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml). Innan du fortsätter bör du läsa [Komma igång-guiden](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API i det här dokumentet samt viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform] -API.
 
 ## Komponenter i sammanfogningsprinciper {#components-of-merge-policies}
 
-Sammanslagningsprinciper är privata för IMS-organisationen, vilket gör att du kan skapa olika profiler för att sammanfoga scheman på det sätt du behöver. Alla API:er som använder profildata kräver en sammanfogningsprincip, men en standardprincip används om ingen sådan uttryckligen anges. Platform tillhandahåller en standardprincip för sammanslagning, eller så kan du skapa en sammanfogningsprincip för ett specifikt schema och markera det som standard för din organisation. Varje organisation kan ha flera sammanfogningsprinciper per per schema, men varje schema kan bara ha en standardsammanfogningsprincip. Alla sammanfogningsprinciper som anges som standard används i de fall där schemanamnet anges och en sammanfogningsprincip krävs, men inte anges. När du anger en sammanfogningsprincip som standard kommer alla befintliga sammanfogningsprinciper som tidigare var inställda som standard automatiskt att uppdateras till att inte längre användas som standard.
+Sammanslagningsprinciper är privata för IMS-organisationen, vilket gör att du kan skapa olika profiler för att sammanfoga scheman på det sätt du behöver. Alla API-åtkomstdata kräver en sammanfogningsprincip, men ett standardvärde kommer att användas om det inte uttryckligen anges. [!DNL Profile] [!DNL Platform] innehåller en standardprincip för sammanfogning, eller så kan du skapa en sammanfogningsprincip för ett specifikt schema och markera den som standard för din organisation. Varje organisation kan ha flera sammanfogningsprinciper per per schema, men varje schema kan bara ha en standardsammanfogningsprincip. Alla sammanfogningsprinciper som anges som standard används i de fall där schemanamnet anges och en sammanfogningsprincip krävs, men inte anges. När du anger en sammanfogningsprincip som standard kommer alla befintliga sammanfogningsprinciper som tidigare var inställda som standard automatiskt att uppdateras till att inte längre användas som standard.
 
 ### Slutför policyobjekt för sammanfogning
 
@@ -59,7 +59,7 @@ Det fullständiga principobjektet för sammanfogning representerar en uppsättni
 | `attributeMerge` | [Kopplingsobjekt för](#attribute-merge) attribut anger på vilket sätt sammanfogningsprincipen prioriterar profilattributsvärden vid datakonflikter. |
 | `schema` | Det [schemaobjekt](#schema) som sammanfogningsprincipen kan användas på. |
 | `default` | Booleskt värde som anger om den här sammanfogningsprincipen är standard för det angivna schemat. |
-| `version` | Platform har en version av kopplingsregeln. Det här skrivskyddade värdet ökas stegvis när en sammanfogningsprincip uppdateras. |
+| `version` | [!DNL Platform] en sparad version av sammanfogningsprincipen. Det här skrivskyddade värdet ökas stegvis när en sammanfogningsprincip uppdateras. |
 | `updateEpoch` | Datum för den senaste uppdateringen av sammanfogningsprincipen. |
 
 **Exempel på sammanfogningsprincip**
@@ -86,7 +86,7 @@ Det fullständiga principobjektet för sammanfogning representerar en uppsättni
 
 ### Identitetsdiagram {#identity-graph}
 
-[Adobe Experience Platform Identity Service](../../identity-service/home.md) hanterar de identitetsdiagram som används globalt och för varje organisation på Experience Platform. Attributet `identityGraph` för sammanfogningsprincipen definierar hur relaterade identiteter för en användare ska fastställas.
+[Adobe Experience Platform Identity Service](../../identity-service/home.md) hanterar de identitetsdiagram som används globalt och för varje organisation i [!DNL Experience Platform]. Attributet `identityGraph` för sammanfogningsprincipen definierar hur relaterade identiteter för en användare ska fastställas.
 
 **identityGraph-objekt**
 
@@ -173,7 +173,7 @@ Där värdet för `name` är namnet på XDM-klassen som schemat som är associer
 
 ## Åtkomst till sammanfogningsprinciper {#access-merge-policies}
 
-Med hjälp av API:t för kundprofil i realtid kan du utföra en sökbegäran för att visa en specifik sammanfogningsprincip utifrån dess ID, eller få tillgång till alla sammanfogningsprinciper i IMS-organisationen, filtrerade efter specifika villkor. `/config/mergePolicies` Du kan också använda `/config/mergePolicies/bulk-get` slutpunkten för att hämta flera sammanfogningsprinciper efter deras ID:n. Steg för att utföra dessa anrop beskrivs i följande avsnitt.
+Med hjälp av [!DNL Real-time Customer Profile] API:t kan `/config/mergePolicies` slutpunkten utföra en sökbegäran för att visa en specifik sammanfogningsprincip med dess ID, eller få åtkomst till alla sammanfogningsprinciper i IMS-organisationen, filtrerade efter specifika villkor. Du kan också använda `/config/mergePolicies/bulk-get` slutpunkten för att hämta flera sammanfogningsprinciper efter deras ID:n. Steg för att utföra dessa anrop beskrivs i följande avsnitt.
 
 ### Åtkomst till en sammanfogningsprincip via ID
 
@@ -724,7 +724,7 @@ En slutförd borttagningsbegäran returnerar HTTP-status 200 (OK) och en tom sva
 
 ## Nästa steg
 
-Nu när du vet hur man skapar och konfigurerar sammanfogningsprinciper för IMS-organisationen kan du använda dem för att skapa målgruppssegment utifrån kundprofildata i realtid. Se dokumentationen [till](../../segmentation/home.md) Adobe Experience Platform Segmenteringstjänsten för att börja definiera och arbeta med segment.
+Nu när ni vet hur ni skapar och konfigurerar sammanfogningsprinciper för er IMS-organisation kan ni använda dem för att skapa målgruppssegment utifrån era [!DNL Real-time Customer Profile] data. Se dokumentationen [till](../../segmentation/home.md) Adobe Experience Platform Segmenteringstjänsten för att börja definiera och arbeta med segment.
 
 
 
