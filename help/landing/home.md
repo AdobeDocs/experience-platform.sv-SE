@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform - översikt
 topic: getting started
 translation-type: tm+mt
-source-git-commit: b73bd7e163c2861c751b1b505894923f70c99755
+source-git-commit: 6c90e68bde1fb8474ba23127ecf7b6fd617c7765
 workflow-type: tm+mt
-source-wordcount: '753'
+source-wordcount: '745'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Adobe Experience Platform är det mest kraftfulla, flexibla och öppna systemet 
 
 Systemet bygger på öppna API:er och ger utvecklarna tillgång [!DNL Experience Platform] till systemets alla funktioner, vilket gör det enkelt att integrera företagslösningar med välbekanta verktyg. [!DNL Experience Platform] stöder också partners att bygga och integrera sina egna produkter och tekniker efter behov. Denna kraft och flexibilitet gör den [!DNL Experience Platform] unik på marknaden. Det ger partners, kunder och en community med utvecklare en grund att bygga innovationer som driver Experience Business: överträffa kundernas förväntningar genom att leverera en ständigt förbättrad, helpersonaliserad upplevelse som bygger på en helhetsbild av kunden och deras individuella preferenser.
 
-I följande videofilmer visas en hypotetisk upplevelse som skapats med Adobe Experience Platform, som en kund ser ur sitt perspektiv. Se hur [!DNL Experience Platform] skapar en rik, relevant och realtidsupplevelse.
+I följande videofilmer visas hur man [!DNL Experience Platform] skapar omfattande, relevanta upplevelser i realtid, först ur kundperspektiv och sedan ur ett tekniskt perspektiv bakom kulisserna.
 
 **Kundperspektiv:**
 
@@ -73,6 +73,7 @@ Dokumentationen för Adobe Experience Platform finns på flera språk. Om du vil
 >* Sammanhangsberoende dokumentationsrekommendationer
 >* Möjlighet att ge feedback om [!DNL Experience Platform] och rapportera problem
 >* Förbättrade sökresultat som även innehåller resultat från communityforum och videoinnehåll.
+
 >
 > 
 Ibland kan du få en enkät om ytterligare feedback.
@@ -81,7 +82,7 @@ Ibland kan du få en enkät om ytterligare feedback.
 
 ## [!DNL Experience Platform] självstudiekurser
 
-Kom igång [!DNL Platform] snabbt och enkelt genom att följa med i steg-för-steg-självstudiekurser för allt från att förbereda dina data för konsumtion till avancerade maskininlärningsalgoritmer. Dessa självstudiekurser har utformats för att komplettera informationen som finns i [!DNL Experience Platform] dokumentationen, så att du får bästa möjliga resultat om du sparar dokumenten samtidigt som du slutför självstudiekurserna. Gå till [Experience Platform självstudiekurserna](../tutorials/home.md) för att komma igång.
+Kom igång [!DNL Platform] snabbt och enkelt genom att följa med i steg-för-steg-självstudiekurser för allt från att förbereda data för konsumtion till avancerade maskininlärningsalgoritmer. Dessa självstudiekurser har utformats för att komplettera informationen som finns i [!DNL Experience Platform] dokumentationen, så att du får bästa möjliga resultat om du sparar dokumenten samtidigt som du slutför självstudiekurserna. Gå till [Experience Platform självstudiekurserna](../tutorials/home.md) för att komma igång.
 
 ## Videosjälvstudiekurser
 
