@@ -4,9 +4,9 @@ seo-title: Adobe Experience Platform Web SDK Interagera med flera egenskaper
 description: Lär dig hur du interagerar med flera Experience Platform Web SDK-egenskaper
 seo-description: Lär dig hur du interagerar med flera Experience Platform Web SDK-egenskaper
 translation-type: tm+mt
-source-git-commit: 7d4f364ebb9df1ce58481a35007ea75f86ab7825
+source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
 workflow-type: tm+mt
-source-wordcount: '256'
+source-wordcount: '252'
 ht-degree: 0%
 
 ---
@@ -66,4 +66,4 @@ Var noga med att köra `configure` kommandot för varje instans innan du kör an
 
 ## Begränsningar
 
-För att undvika konflikter med cookies kan bara en instans av Adobe Experience Platform Web SDK på en sida ha en viss `edgeConfigId`.  På samma sätt kan bara en instans av Adobe Experience Platform Web SDK ha en viss `orgId`.
+För att undvika konflikter med cookies kan bara en instans av Adobe Experience Platform [!DNL Web SDK] på en sida ha en viss `edgeConfigId`.  På samma sätt kan bara en instans av Adobe Experience Platform [!DNL Web SDK] ha en viss `orgId`.
