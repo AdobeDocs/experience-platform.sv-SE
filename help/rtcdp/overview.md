@@ -1,34 +1,39 @@
 ---
-title: Översikt över kunddataplattformen i realtid
-seo-title: Översikt över kunddataplattformen i realtid
-description: Översikt över kunddataplattformen i realtid
-seo-description: Översikt över kunddataplattformen i realtid
+title: Kunddata i realtid Platform - översikt
+seo-title: Kunddata i realtid Platform - översikt
+description: Översikt över kunddata i realtid Platform
+seo-description: Översikt över kunddata i realtid Platform
 translation-type: tm+mt
-source-git-commit: 08b35c862472308fbec282a7727035fb3924d19b
+source-git-commit: c16232179701aa40ae06da45e0581d70d0437191
+workflow-type: tm+mt
+source-wordcount: '292'
+ht-degree: 0%
 
 ---
 
 
-# Översikt över Adobes kunddataplattform i realtid
+# Adobe Real-time Customer Data Platform - översikt
 
-Adobe Customer Data Platform (CDP i realtid) bygger på Adobe Experience Platform och hjälper företag att sammanföra kända och okända data för att aktivera kundprofiler med intelligent beslutsfattande under hela kundresan. CDP i realtid kombinerar flera datakällor för företag för att skapa enhetliga profiler i realtid som kan användas för att leverera personliga personaliserade kundupplevelser i alla kanaler och enheter.
+Adobe Customer Data Platform (Real-time CDP) bygger på Adobe Experience Platform och hjälper företag att samla in kända och anonyma data från flera olika företagskällor för att skapa kundprofiler som kan användas för att leverera personaliserade kundupplevelser över alla kanaler och enheter i realtid.
 
-Kunddataplattformen i realtid innehåller verktyg för datastyrning, identitetshantering, avancerad segmentering och datavetenskap, så att ni kan skapa profiler och definiera målgrupper samt få omfattande insikter samtidigt som ni kan tillämpa strikta policyer för datastyrning.
+CDP för realtid innehåller verktyg för datastyrning, identitetshantering, avancerad segmentering och datavetenskap, så att ni kan skapa profiler och definiera målgrupper, samt få goda insikter och samtidigt genomföra strikta policyer för datastyrning.
 
-Adobe är kopplat till ett stort antal partners, för att inte tala om integreringar med Adobe Experience Cloud, så att ni kan aktivera dessa målgrupper sömlöst och leverera fantastiska kundupplevelser i alla kanaler, från personalisering på plats eller i appen till e-post, betalda medier, callcenters, anslutna enheter med mera.
+Adobes kunddata i realtid Platform är kopplat till ett stort antal partners, för att inte tala om integreringar med Adobe Experience Cloud, så att ni smidigt kan aktivera dessa målgrupper och leverera enastående kundupplevelser i alla kanaler, från personalisering på plats eller i appen till e-post, betalda medier, callcenters, anslutna enheter med mera.
 
-Med CDP i realtid kan man
+Med kunddata i realtid Platform kan ni
 
-* Få en samlad bild av kunden genom att strömma kunddata från hela företaget.
-* Hantera profiler med tillförlitlig styrning och sekretesskontroller för kända och okända identifierare.
+* Få en samlad bild av kunden genom att kombinera data från hela företaget.
+* Hantera profiler med betrodd styrning och sekretesskontroller för kända och anonyma identifierare.
 * Generera användbara insikter och skala målgrupper med hjälp av AI och maskininlärning från Adobe Sensei som är framtagen för marknadsförare.
 * Leverera personaliserade upplevelser i realtid i alla kanaler och på alla destinationer.
 
 ## Ytterligare information
 
-Följande dokumentationsämnen rekommenderas när du börjar arbeta med Adobes kunddataplattform i realtid:
+Om du vill veta mer om Adobe Experience Platform börjar du med att läsa översikten [över](../landing/home.md)Experience Platform.
 
-* [Så här kommer du igång](get-started.md)
+Följande dokumentation rekommenderas för att hjälpa dig att komma igång med kunddata i realtid Platform:
+
+* [Komma igång med CDP i realtid](get-started.md)
 * [Så här importerar du data](sources/sources-overview.md)
 * [Åtkomst till profiler](profile/profile-overview.md)
 * [Så här skapar du segment](segmentation/segmentation-overview.md)
