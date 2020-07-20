@@ -4,15 +4,15 @@ solution: Experience Platform
 title: Segmentjobb
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 2327ce9a87647fb2416093d4a27eb7d4dc4aa4d7
+source-git-commit: b3e6a6f1671a456b2ffa61139247c5799c495d92
 workflow-type: tm+mt
-source-wordcount: '994'
+source-wordcount: '993'
 ht-degree: 1%
 
 ---
 
 
-# Slutpunktsguide för segmentjobb
+# Slutpunkt för segmentjobb
 
 Ett segmentjobb är en asynkron process som skapar ett nytt målgruppssegment. Det refererar till en [segmentdefinition](./segment-definitions.md)samt eventuella [sammanfogningsprinciper](../../profile/api/merge-policies.md) som styr hur [!DNL Real-time Customer Profile] sammanfogar överlappande attribut i profilfragmenten. När ett segmentjobb har slutförts kan du samla in olika typer av information om segmentet, t.ex. eventuella fel som kan ha inträffat under bearbetningen och målgruppens slutliga storlek.
 
