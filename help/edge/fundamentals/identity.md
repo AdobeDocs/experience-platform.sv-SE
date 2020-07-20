@@ -4,9 +4,9 @@ seo-title: Adobe Experience Platform Web SDK Hämtar Experience Cloud-ID
 description: Lär dig hur du skaffar Adobe Experience Cloud ID.
 seo-description: Lär dig hur du skaffar Adobe Experience Cloud ID.
 translation-type: tm+mt
-source-git-commit: 5f263a2593cdb493b5cd48bc0478379faa3e155d
+source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
 workflow-type: tm+mt
-source-wordcount: '411'
+source-wordcount: '407'
 ht-degree: 2%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 # Identitet - Hämtar Experience Cloud-ID
 
-Adobe Experience Platform Web SDK använder [Adobe Identity Service](../../identity-service/ecid.md). Detta garanterar att varje enhet har en unik identifierare som är beständig på enheten så att aktiviteten mellan sidorna kan knytas ihop.
+Adobe Experience Platform [!DNL Web SDK] använder [Adobe Identity Service](../../identity-service/ecid.md). Detta garanterar att varje enhet har en unik identifierare som är beständig på enheten så att aktiviteten mellan sidorna kan knytas ihop.
 
 ## Identitet för första part
 
@@ -30,7 +30,7 @@ Om du vill använda det här unika ID:t använder du `getIdentity` kommandot. `g
 
 >[!NOTE]
 >
->Den här metoden används vanligtvis med anpassade lösningar som kräver att du läser Experience Cloud-ID:t. Den används inte av en standardimplementering.
+>Den här metoden används vanligtvis med anpassade lösningar som kräver att du läser [!DNL Experience Cloud] ID:t. Den används inte av en standardimplementering.
 
 ```javascript
 alloy("getIdentity")
