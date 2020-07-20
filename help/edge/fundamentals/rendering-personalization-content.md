@@ -4,9 +4,9 @@ seo-title: Adobe Experience Platform Web SDK Rendering personalized content
 description: Lär dig återge personaliserat innehåll med Experience Platform Web SDK
 seo-description: Lär dig återge personaliserat innehåll med Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 5f263a2593cdb493b5cd48bc0478379faa3e155d
+source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
 workflow-type: tm+mt
-source-wordcount: '232'
+source-wordcount: '229'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Översikt över personaliseringsalternativ
 
-Adobe Experience Platform Web SDK stöder frågor om personaliseringslösningar från Adobe, inklusive Adobe Target. Det finns två sätt att personalisera: hämta innehåll som kan återges automatiskt och innehåll som måste återges av utvecklaren. SDK har även funktioner för att [hantera flimmer](../../edge/solution-specific/target/flicker-management.md).
+Adobe Experience Platform [!DNL Web SDK] stöder frågor om personaliseringslösningar från Adobe, inklusive Adobe Target. Det finns två sätt att personalisera: hämta innehåll som kan återges automatiskt och innehåll som måste återges av utvecklaren. SDK har även funktioner för att [hantera flimmer](../../edge/solution-specific/target/flicker-management.md).
 
 ## Återge innehåll automatiskt
 
@@ -92,7 +92,7 @@ Detta returnerar en lista med beslut som ett JSON-objekt för varje beslut.
 
 >[!TIP]
 >
-> Om du använder Target scopes som mBoxes på servern, är det bara de som blir alla förfrågningar på en gång i stället för var för sig. Den globala mbox skickas alltid.
+> Om du använder [!DNL Target] omfattningar blir mBoxes på servern, är det bara de som blir alla förfrågningar på en gång i stället för individuellt. Den globala mbox skickas alltid.
 
 ### Hämta automatiskt innehåll
 
