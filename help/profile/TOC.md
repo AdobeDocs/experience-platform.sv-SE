@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Hjälp om kundprofil i realtid
 translation-type: tm+mt
-source-git-commit: 93aae0e394e1ea9b6089d01c585a94871863818e
+source-git-commit: 635f8cf8173cc7db2032f2181848b0ce1e9095cc
 workflow-type: tm+mt
-source-wordcount: '81'
+source-wordcount: '83'
 ht-degree: 1%
 
 ---
@@ -30,5 +30,6 @@ ht-degree: 1%
    * [Konfigurera datauppsättning för profil och identitet](tutorials/dataset-configuration.md)
    * [Fler självstudiekurser](https://docs.adobe.com/content/help/en/experience-platform/tutorials/home.html)
 * [Behandling av sekretessförfrågningar](privacy.md)
+* [Felsökningsguide](troubleshooting.md)
 * [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)
 * [Versionsinformation för Platform](https://www.adobe.com/go/platform-release-notes-en)
