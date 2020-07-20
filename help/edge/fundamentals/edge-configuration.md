@@ -4,9 +4,9 @@ seo-title: Edge-konfiguration för Experience Platform Web SDK
 description: 'Lär dig hur du konfigurerar Experience Platform Edge-nätverket. '
 seo-description: 'Lär dig hur du konfigurerar Experience Platform Edge-nätverket. '
 translation-type: tm+mt
-source-git-commit: 2d47a00c91000c68c7331f88015264259a4e6323
+source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
 workflow-type: tm+mt
-source-wordcount: '820'
+source-wordcount: '810'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # Konfigurera Edge
 
-Konfigurationen för Adobe Experience Platform Web SDK är uppdelad på två platser. Kommandot [](configuring-the-sdk.md) configure i SDK styr saker som måste hanteras på klienten, till exempel `edgeDomain`. Edge-konfigurationen hanterar all annan konfiguration för SDK. När en begäran skickas till Adobe Experience Platform Edge-nätverket används den för att referera till konfigurationen på serversidan `edgeConfigId` . På så sätt kan du uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
+Konfigurationen för Adobe Experience Platform [!DNL Web SDK] delas mellan två platser. Kommandot [](configuring-the-sdk.md) configure i SDK styr saker som måste hanteras på klienten, till exempel `edgeDomain`. Edge-konfigurationen hanterar all annan konfiguration för SDK. När en begäran skickas till Adobe Experience Platform [!DNL Edge Network]används den för att `edgeConfigId` referera till konfigurationen på serversidan. På så sätt kan du uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
 
 ## Skapa ett Edge Configuration ID
 
@@ -90,7 +90,7 @@ Unikt ID för ett målkonto. Du hittar detta genom att navigera till [!UICONTROL
 
 ##### [!UICONTROL Property Token]
 
-Med Target kan kunderna styra behörigheter genom att använda egenskaper. Mer information finns under [Enterprise Permissions](https://docs.adobe.com/content/help/en/target/using/administer/manage-users/enterprise/properties-overview.html) (Enterprise-behörigheter) i Target-dokumentationen.
+[!DNL Target] låter kunderna styra behörigheter genom att använda egenskaper. Mer information finns under [Enterprise Permissions](https://docs.adobe.com/content/help/en/target/using/administer/manage-users/enterprise/properties-overview.html) (Enterprise-behörigheter) i [!DNL Target] dokumentationen.
 
 Egenskapstoken finns i [!UICONTROL Adobe Target] > [!UICONTROL setup] > [!UICONTROL Properties]
 
@@ -108,11 +108,11 @@ Allt som behövs för att skicka data till Adobe Audience Manager är att aktive
 
 ##### [!UICONTROL Cookie Destinations Enabled]
 
-Gör att SDK kan dela segmentinformation via [cookie-destinationer](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/destinations/custom-destinations/create-cookie-destination.html) från Audience Manager.
+Gör att SDK kan dela segmentinformation via [cookie-mål](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/destinations/custom-destinations/create-cookie-destination.html) från [!DNL Audience Manager].
 
 ##### [!UICONTROL URL Destinations Enabled]
 
-Tillåter SDK att dela segmentinformation via [URL-mål](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/destinations/custom-destinations/create-url-destination.html). Dessa konfigureras i Audience Manager.
+Tillåter SDK att dela segmentinformation via [URL-mål](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/destinations/custom-destinations/create-url-destination.html). Dessa är konfigurerade i [!DNL Audience Manager].
 
 #### Adobe Analytics
 
