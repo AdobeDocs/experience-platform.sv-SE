@@ -4,9 +4,9 @@ seo-title: Mappa variabler manuellt i Analytics med Web SDK
 description: Mappa variabler manuellt till Analytics med bearbetningsregler
 seo-description: mappa variabler manuellt till Analytics med bearbetningsregler med Web SDK
 translation-type: tm+mt
-source-git-commit: 71193ad346c3976f80b14ee0d6e5b12055a17473
+source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
 workflow-type: tm+mt
-source-wordcount: '388'
+source-wordcount: '371'
 ht-degree: 0%
 
 ---
@@ -14,15 +14,15 @@ ht-degree: 0%
 
 # Mappa variabler manuellt i Analytics
 
-Adobe Experience Platform (AEP) Web SDK kan mappa vissa variabler automatiskt, men anpassade variabler måste mappas manuellt.
+Adobe Experience Platform (AEP) [!DNL Web SDK] kan mappa vissa variabler automatiskt, men anpassade variabler måste mappas manuellt.
 
-För XDM-data som inte automatiskt mappas till Analytics kan du använda [kontextdata](https://docs.adobe.com/content/help/en/analytics/implementation/vars/page-vars/contextdata.html) för att matcha ditt [schema](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/composition.html). Sedan kan den mappas till Analytics med [bearbetningsregler](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/processing-rules/processing-rules-configuration/t-processing-rules.html) för att fylla i Analytics-variabler.
+För XDM-data som inte automatiskt mappas till [!DNL Analytics]kan du använda [kontextdata](https://docs.adobe.com/content/help/en/analytics/implementation/vars/page-vars/contextdata.html) för att matcha ditt [schema](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/composition.html). Sedan kan den mappas till [!DNL Analytics] med [bearbetningsregler](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/processing-rules/processing-rules-configuration/t-processing-rules.html) för att fylla i [!DNL Analytics] variabler.
 
-Du kan också använda en standarduppsättning med åtgärder och produktlistor för att skicka eller hämta data med AEP Web SDK. Mer information finns i [Produkter](https://docs.adobe.com/content/help/en/experience-platform/edge/implement/commerce.html).
+Du kan också använda en standarduppsättning med åtgärder och produktlistor för att skicka eller hämta data med AEP [!DNL Web SDK]. Mer information finns i [Produkter](https://docs.adobe.com/content/help/en/experience-platform/edge/implement/commerce.html).
 
 ## Kontextdata
 
-XDM-data som ska användas av Analytics förenklas med punktnotation och görs tillgängliga som `contextData`. I följande lista med värdepar visas ett exempel på `context data`:
+XDM-data som ska användas av [!DNL Analytics]förenklas med punktnotation och blir tillgängliga som `contextData`. I följande lista med värdepar visas ett exempel på `context data`:
 
 ```javascript
 {
@@ -49,7 +49,7 @@ XDM-data som ska användas av Analytics förenklas med punktnotation och görs t
 
 ## Behandlingsregler
 
-Alla data som samlas in av edge-nätverket kan nås via [bearbetningsregler](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/processing-rules/processing-rules-configuration/t-processing-rules.html). I Analytics kan du använda bearbetningsregler för att infoga kontextdata i Analytics-variabler.
+Alla data som samlas in av edge-nätverket kan nås via [bearbetningsregler](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/processing-rules/processing-rules-configuration/t-processing-rules.html). I [!DNL Analytics]kan du använda bearbetningsregler för att infoga kontextdata i [!DNL Analytics] variabler.
 
 I följande regel är Analytics till exempel inställt på att fylla i **interna söktermer (eVar2)** med data som är associerade med **a.x_atag.search.term(Context Data)**.
 
@@ -58,9 +58,9 @@ I följande regel är Analytics till exempel inställt på att fylla i **interna
 
 ## XDM-schema
 
-Experience Platform använder scheman för att beskriva datastrukturen på ett konsekvent och återanvändbart sätt. Genom att definiera data på ett enhetligt sätt i olika system blir det enklare att behålla sin betydelse och därmed få värde av data. Analytics kontextdata fungerar med den struktur som definieras av schemat.
+[!DNL Experience Platform] använder scheman för att beskriva datastrukturen på ett konsekvent och återanvändbart sätt. Genom att definiera data på ett enhetligt sätt i olika system blir det enklare att behålla sin betydelse och därmed få värde av data. [!DNL Analytics] kontextdata fungerar med den struktur som definieras av schemat.
 
-I följande exempel visas hur [`event` kommandot](https://docs.adobe.com/content/help/en/experience-platform/edge/fundamentals/tracking-events.html) kan användas med `xdm` alternativet att skicka och hämta data med AEP Web SDK. I det här exemplet matchar `event` kommandot [ExperienceEvent Commerce Details-schemat](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) så att productListItems `name` och `SKU` värden spåras:
+I följande exempel visas hur [`event` kommandot](https://docs.adobe.com/content/help/en/experience-platform/edge/fundamentals/tracking-events.html) kan användas med `xdm` alternativet att skicka och hämta data med AEP [!DNL Web SDK]. I det här exemplet matchar `event` kommandot [ExperienceEvent Commerce Details-schemat](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) så att productListItems `name` och `SKU` värden spåras:
 
 
 ```
@@ -85,4 +85,4 @@ alloy("event",{
 });
 ```
 
-Mer information om att spåra händelser med AEP Web SDK finns i [Spåra händelser](https://docs.adobe.com/content/help/en/experience-platform/edge/fundamentals/tracking-events.html).
+Mer information om att spåra händelser med AEP [!DNL Web SDK]finns i [Spåra händelser](https://docs.adobe.com/content/help/en/experience-platform/edge/fundamentals/tracking-events.html).
