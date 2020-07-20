@@ -1,27 +1,27 @@
 ---
 product: adobe experience platform
 audience: user
-user-guide-title: Hjälp om kunddataplattform i realtid
+user-guide-title: Hjälp om Platform för kunddata i realtid
 translation-type: tm+mt
-source-git-commit: fc8bdc6a46e0b64f29d89a36b0810f7312200616
+source-git-commit: b0068c0ef0897d5d4ec578f0c97b20aef3b2931c
 workflow-type: tm+mt
-source-wordcount: '439'
+source-wordcount: '440'
 ht-degree: 2%
 
 ---
 
 
-# Hjälp om kunddataplattform i realtid {#rtcdp}
+# Hjälp om Platform för kunddata i realtid {#rtcdp}
 
-* [Produktöversikt](overview.md)
-* Kunddataplattform i realtid {#intro}
+* [CDP-översikt i realtid](overview.md)
+* Getting started {#intro}
    * [Komma igång](get-started.md)
    * [Översikt över mätvärden](home-page-dashboards.md)
 * Administrering {#admin}
    * [Administration - översikt](administration/admin-overview.md)
 * Datauppsättningar {#datasets}
    * [Datauppsättningar](datasets/dataset.md)
-   * [Datakvalitet på plattform](datasets/data-quality.md)
+   * [Datakvalitet på Platform](datasets/data-quality.md)
 * Mål {#destinations}
    * [Översikt över mål](destinations/destinations-overview.md)
    * [Måltyper och -kategorier](/help/rtcdp/destinations/destination-types.md)
@@ -52,8 +52,8 @@ ht-degree: 2%
          * [Tillägget LinkedIn Insight-tagg](/help/rtcdp/destinations/linkedin-extension.md)
          * [Tillägg för Pinterest Conversion Tracking](destinations/pinterest-extension.md)
          * [Twitter Universal Website Tag-tillägg](destinations/twitter-uwt-extension.md)
-      * Analysmål {#analytics-destinations}
-         * [Översikt över Analytics-destinationer](destinations/analytics-destinations.md)
+      * Analytics destinationer {#analytics-destinations}
+         * [Översikt över Analytics destinationer](destinations/analytics-destinations.md)
          * [Anpassa tillägg för webbplatsspårning](/help/rtcdp/destinations/adform-extension.md)
          * [Adobe Analytics-tillägg](/help/rtcdp/destinations/adobe-analytics-extension.md)
          * [Adobe Media Analytics för ljud- och videotillägg](/help/rtcdp/destinations/adobe-video-analytics-extension.md)
@@ -68,7 +68,7 @@ ht-degree: 2%
          * [Nielsen BSDK-tillägg](destinations/nielsen-bsdk-extension.md)
          * [Nielsen IMA Handler Extension](destinations/nielsen-ima-extension.md)
          * [Nielsen VideoJS Player Handler Extension](destinations/nielsen-videojs-extension.md)
-         * [Analysera.ly Analytics-tillägg](destinations/parsely-extension.md)
+         * [Tolka.ly Analytics-tillägg](destinations/parsely-extension.md)
          * [Quantum Metric-tillägg](destinations/quantum-metric-extension.md)
          * [SessionCam-tillägg](destinations/sessioncam-extension.md)
          * [TMMData-tillägg](destinations/tmmdata-extension.md)
@@ -80,8 +80,8 @@ ht-degree: 2%
          * [Amazon S3-mål](destinations/amazon-s3-destination.md)
          * [Azure Event Hubs-mål](/help/rtcdp/destinations/azure-event-hubs-destination.md)
          * [SFTP-mål](destinations/sftp-destination.md)
-      * Plattformsmål för datahantering {#dmp-destinations}
-         * [Översikt över mål för datahanteringsplattformen](destinations/dmp-destinations.md)
+      * Data Management Platform-mål {#dmp-destinations}
+         * [Datahantering - Platform destinationer - översikt](destinations/dmp-destinations.md)
          * [Audience Manager DIL-tillägg](/help/rtcdp/destinations/aam-dil-extension.md)
       * E-postmarknadsföringsmål{#email-destinations}
          * [Översikt över destinationer för e-postmarknadsföring](destinations/email-marketing-destinations.md)
@@ -94,14 +94,14 @@ ht-degree: 2%
          * [PebblePost-tillägg](destinations/pebblepost-extension.md)
          * [Salesforce Marketing Cloud](destinations/salesforce-marketing-cloud-destination.md)
       * Experience Platform Launch-tillägg{#launch-extensions}
-         * [Översikt över tillägg för Experience Platform Launch](/help/rtcdp/destinations/experience-platform-launch-extensions.md)
+         * [Översikt över Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md)
       * Destinationer för personalisering {#personalization-destinations}
          * [Översikt över destinationer för personalisering](/help/rtcdp/destinations/personalization-destinations.md)
-         * [Adobe Target-tillägg](/help/rtcdp/destinations/adobe-target-extension.md)
+         * [Adobe Target](/help/rtcdp/destinations/adobe-target-extension.md)
          * [Adobe Target v2-tillägg](/help/rtcdp/destinations/adobe-target-v2-extension.md)
          * [Beemray-tillägg](/help/rtcdp/destinations/beemray-extension.md)
          * [D&amp;B Visitor Intelligence-tillägg](/help/rtcdp/destinations/dnb-extension.md)
-         * [Tjänsttillägg för Experience Cloud ID](/help/rtcdp/destinations/adobe-ecid-extension.md)
+         * [Experience Cloud ID-tjänsttillägg](/help/rtcdp/destinations/adobe-ecid-extension.md)
          * [Gainsight-tillägg](/help/rtcdp/destinations/gainsight-extension.md)
          * [Kickfire-tillägg](/help/rtcdp/destinations/kickfire-extension.md)
          * [Marketo Web Personalization extension](destinations/marketo-web-personalization-extension.md)
@@ -131,16 +131,16 @@ ht-degree: 2%
 * Integritet och datahantering {#privacy}
    * [Sekretessöversikt](privacy/privacy-overview.md)
    * [Datastyrning - översikt](privacy/data-governance-overview.md)
-* Kundprofil i realtid {#profile}
+* Profiler {#profile}
    * [Profilöversikt](profile/profile-overview.md)
    * [Identiteter och identitetsnamnutrymmen](profile/identities-overview.md)
    * [Sammanfoga profiler](profile/merge-policies.md)
    * [Profilvisningsprogram](profile/profile-viewer.md)
-* Segmentering {#segmentation}
+* Segment {#segmentation}
    * [Översikt över segmentering](segmentation/segmentation-overview.md)
    * [Segmentbyggarguide](segmentation/segment-builder-guide.md)
-* Källor {#sources}
+* Sources {#sources}
    * [Översikt över källor](sources/sources-overview.md)
    * [Implementera webbplatstaggar med Adobe Launch](sources/launch.md)
-* [Versionsinformation](https://www.adobe.com/go/platform-release-notes-en)
-* [Ordlista](https://www.adobe.com/go/platform-glossary-en)
+* [Versionsinformation om Experience Platform](https://www.adobe.com/go/platform-release-notes-en)
+* [Experience Platform - ordlista](https://www.adobe.com/go/platform-glossary-en)
