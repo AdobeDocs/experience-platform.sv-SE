@@ -1,18 +1,18 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Guiden Förhandsvisa och beräkna slutpunkter
+title: Förhandsgranska och beräkna slutpunkter
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 41a5d816f9dc6e7c26141ff5e9173b1b5631d75e
+source-git-commit: b3e6a6f1671a456b2ffa61139247c5799c495d92
 workflow-type: tm+mt
-source-wordcount: '752'
+source-wordcount: '750'
 ht-degree: 1%
 
 ---
 
 
-# Guiden Förhandsvisa och beräkna slutpunkter
+# Förhandsgranska och beräkna slutpunkter
 
 När du utvecklar segmentdefinitionen kan du använda verktygen för uppskattning och förhandsgranskning i [!DNL Adobe Experience Platform] för att se information på sammanfattningsnivå för att se till att du isolerar den förväntade målgruppen. **Förhandsvisningar** innehåller sidnumrerade listor med kvalificeringsprofiler för en segmentdefinition, så att du kan jämföra resultaten med vad du förväntar dig. **Uppskattningar** ger statistisk information om en segmentdefinition, t.ex. förväntad målgruppsstorlek, konfidensintervall och felstandardavvikelse.
 
