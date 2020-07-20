@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: Utvecklarhandbok för Adobe Experience Platform Segmentation Service
 topic: guide
 translation-type: tm+mt
-source-git-commit: 41a5d816f9dc6e7c26141ff5e9173b1b5631d75e
+source-git-commit: aff81a4f3243ef77cbdfc776220a5de46e360084
 workflow-type: tm+mt
 source-wordcount: '469'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 [!DNL Adobe Experience Platform Segmentation Service] gör att ni kan skapa segment och generera målgrupper i [!DNL Adobe Experience Platform] utifrån era [!DNL Real-time Customer Profile] data.
 
-API:t innehåller flera slutpunkter som du kan använda för att programmässigt hantera dina segmenteringsåtgärder i [!DNL Segmentation Service] [!DNL Experience Platform]. I det här översiktsdokumentet finns introduktioner på hög nivå för var och en av dessa slutpunkter samt länkar till tillhörande slutpunktsguider för mer information. Innan du läser de enskilda slutpunktsguiderna bör du läsa [Komma igång-guiden](getting-started.md) för att få viktig information om vilka huvuden som behövs, läsa exempel-API-anrop med mera.
+API:t innehåller flera slutpunkter som du kan använda för att programmässigt hantera dina segmenteringsåtgärder i [!DNL Segmentation Service] [!DNL Experience Platform]. I det här översiktsdokumentet finns introduktioner på hög nivå för var och en av dessa slutpunkter samt länkar till tillhörande slutpunktsguider för mer information. Innan du läser de enskilda slutpunktsguiderna bör du läsa [Komma igång-guiden](./getting-started.md) för att få viktig information om vilka huvuden som behövs, läsa exempel-API-anrop med mera.
 
 Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder, se API-referens för [segmenteringstjänsten](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml).
 
