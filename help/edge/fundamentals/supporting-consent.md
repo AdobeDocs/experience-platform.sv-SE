@@ -1,12 +1,12 @@
 ---
 title: Godkännande
-seo-title: Stöd för inställningen Adobe Experience Platform Web SDK medgivande
-description: Lär dig hur du kan ge stöd för medgivanden med Experience Platform Web SDK
-seo-description: Lär dig hur du kan ge stöd för medgivanden med Experience Platform Web SDK
+seo-title: Stöd för Adobe Experience Platform Web SDK-medgivandeinställning
+description: Lär dig hur du stöder medgivandeinställningar med Experience Platform Web SDK
+seo-description: Lär dig hur du stöder medgivandeinställningar med Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: c86ae6d887f52d8bb4b78dadc06060791c7a02c0
+source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
 workflow-type: tm+mt
-source-wordcount: '518'
+source-wordcount: '516'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ Eftersom användaren valde att avanmäla sig avvisas löften som returnerats fr�
 
 >[!NOTE]
 >
->För närvarande stöder SDK bara `general` syftet. Även om vi planerar att bygga ut en mer robust uppsättning syften eller kategorier som motsvarar Adobes olika funktioner och produkterbjudanden, är den nuvarande implementeringen ett sätt att välja mellan alla eller inget.  Detta gäller endast Adobe Experience Platform Web SDK och INTE andra Adobe JavaScript-bibliotek.
+>För närvarande stöder SDK bara `general` syftet. Även om vi planerar att bygga ut en mer robust uppsättning syften eller kategorier som motsvarar Adobes olika funktioner och produkterbjudanden, är den nuvarande implementeringen ett sätt att välja mellan alla eller inget.  Detta gäller endast Adobe Experience Platform [!DNL Web SDK] och INTE andra Adobe JavaScript-bibliotek.
 
 ## Upprätthållande av medgivandeinställningar
 
