@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Hjälp om segmenteringstjänsten Adobe Experience Platform
 translation-type: tm+mt
-source-git-commit: 82067c3bfa6d80cd5f5dcc6644cdbcacbae85053
+source-git-commit: c5880153f4ba9a6518423985e42fb1b3b71cd862
 workflow-type: tm+mt
-source-wordcount: '111'
+source-wordcount: '112'
 ht-degree: 3%
 
 ---
@@ -20,6 +20,7 @@ ht-degree: 3%
    - [Komma igång](api/getting-started.md)
    - [Exportera jobb](api/export-jobs.md)
    - [Förhandsvisningar och uppskattningar](api/previews-and-estimates.md)
+   - [Scheman](api/schedules.md)
    - [Segmentdefinitioner](api/segment-definitions.md)
    - [Segmentjobb](api/segment-jobs.md)
    - [Segmentsökning](api/segment-search.md)
