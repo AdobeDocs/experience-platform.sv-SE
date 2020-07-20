@@ -4,9 +4,9 @@ seo-title: 'Snabbstart för Adobe Experience Platform Web SDK '
 description: Snabbstartsguide för att använda Experience Platform Web SDK för att samla in data
 seo-description: Snabbstartsguide för att använda Experience Platform Web SDK för att samla in data
 translation-type: tm+mt
-source-git-commit: 9b8bddf39301cdc39bfa5370ef98d99434fc64f8
+source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
 workflow-type: tm+mt
-source-wordcount: '537'
+source-wordcount: '515'
 ht-degree: 1%
 
 ---
@@ -14,15 +14,15 @@ ht-degree: 1%
 
 # Välkommen
 
-Den här guiden leder dig igenom de olika sätten att konfigurera Adobe Experience Platform Web SDK. För att kunna använda den här funktionen måste du vara på tillåtelselista. Om du vill komma med på väntelistan kontaktar du din CSM.
+Den här guiden leder dig igenom de olika sätten att ställa in Adobe Experience Platform [!DNL Web SDK]. För att kunna använda den här funktionen måste du vara på tillåtelselista. Om du vill komma med på väntelistan kontaktar du din CSM.
 
-- Ha en [förstapartsdomän (CNAME)](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-first-party.html) aktiverad. Om du redan har en CNAME för Analytics bör du använda den. Testning under utveckling fungerar utan CNAME, men du behöver en innan du går till produktion
-- Ha rätt till Adobe Experience Platform Data Platform.  Om du inte har köpt Platform kommer vi att förse dig med Experience Platform Data Services Foundation för användning med SDK utan extra kostnad.
+- Ha en [förstapartsdomän (CNAME)](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-first-party.html) aktiverad. Om du redan har en CNAME för [!DNL Analytics]ska du använda den. Testning under utveckling fungerar utan CNAME, men du behöver en innan du går till produktion
+- Var berättigad till Adobe Experience Platform [!DNL Data Platform].  Om du inte har köpt Platform tillhandahåller vi dig [!DNL Experience Platform Data Services Foundation] för användning med SDK utan extra kostnad.
 - Använd den senaste versionen av tjänsten för besökar-ID
 
 ## Skapa ett konfigurations-ID
 
-Du kan skapa ett konfigurations-ID med [Edge-konfigurationsverktyget](../fundamentals/edge-configuration.md) i Adobe Launch, även om du inte använder tagghanteringsfunktionerna. På så sätt kan du aktivera Edge Network för att skicka data till de olika lösningarna. Information om hur du hittar de olika alternativen finns på sidan [Edge Configuration Tool](../fundamentals/edge-configuration.md) .
+Du kan skapa ett konfigurations-ID med [Edge-konfigurationsverktyget](../fundamentals/edge-configuration.md) i Adobe Launch, även om du inte använder tagghanteringsfunktionerna. På så sätt kan du aktivera möjligheten [!DNL Edge Network] att skicka data till olika lösningar. Information om hur du hittar de olika alternativen finns på sidan [Edge Configuration Tool](../fundamentals/edge-configuration.md) .
 
 >[!NOTE]
 >
@@ -30,12 +30,12 @@ Du kan skapa ett konfigurations-ID med [Edge-konfigurationsverktyget](../fundame
 
 ## Förbered ett schema
 
-Experience Platform Edge Network tar data som XDM. XDM är ett dataformat som gör att du kan definiera scheman. Schemat definierar hur Edge Network förväntar sig att data ska formateras. Om du vill skicka data måste du definiera ditt schema.
+Data tas som XDM [!DNL Experience Platform Edge Network] . XDM är ett dataformat som gör att du kan definiera scheman. Schemat definierar hur data [!DNL Edge Network] förväntas formateras. Om du vill skicka data måste du definiera ditt schema.
 
 - [Skapa ett schema](../../xdm/tutorials/create-schema-ui.md)
-- Lägg till Adobe Experience Platform Web SDK-mixin i det schema du skapade
+- Lägg till Adobe Experience Platform- [!DNL Web SDK] mixinen i det schema du skapade
 
-Följande video är avsedd att stödja dig när du skapar ett schema, en datauppsättning och en direktuppspelningskälla för dina Web SDK-data.
+Följande video är avsedd att stödja dig när du skapar ett schema, en datauppsättning och en direktuppspelningskälla för dina [!DNL Web SDK] data.
 
 >[!VIDEO](https://video.tv.adobe.com/v/35395?quality=12&learn=on)
 
