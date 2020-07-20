@@ -352,10 +352,11 @@ Sidindelning styrs av följande parametrar:
 
 ### Filtreringslistor
 
-Det går att filtrera listresultaten och de utförs oberoende av sidindelningsmekanismen. Filtren hoppar över instanser i listordningen eller ber uttryckligen bara om de instanser som uppfyller ett visst villkor ska tas med. En klient kan begära att egenskapsuttryck används som ett filter eller ange en lista med URI:er som ska användas som värden för primärnyckeln för instanserna.
+Det går att filtrera listresultaten och de utförs oberoende av sidindelningsmekanismen. Filtren hoppar över förekomster i listordningen eller ber uttryckligen bara om de förekomster som uppfyller ett visst villkor ska tas med. En klient kan begära att egenskapsuttryck används som ett filter eller ange en lista med URI:er som ska användas som värden för primärnyckeln för instanserna.
 
 - **`property`**: Innehåller en egenskapsnamnsökväg följt av en jämförelseoperator följt av ett värde. <br/>
-Listan med returnerade instanser innehåller de för vilka uttrycket utvärderas till true. Om till exempel instansen har en nyttolastegenskap `status` och de möjliga värdena är `draft`, `approved``archived` och `deleted` sedan `property=_instance.status==approved` returnerar frågeparametern bara instanser för vilka statusen är godkänd. <br/>
+Listan med returnerade instanser innehåller de för vilka uttrycket utvärderas till true. Anta till exempel att instansen har en nyttolast-egenskap 
+`status` och de möjliga värdena är `draft`, `approved`och `archived` sedan `deleted` `property=_instance.status==approved` returnerar frågeparametern bara instanser för vilka statusen har godkänts. <br/>
 <br/>
 Egenskapen som ska jämföras med det angivna värdet identifieras som en sökväg. De enskilda bankomponenterna avgränsas med ".", som: `_instance.xdm:prop1.xdm:prop1_1.xdm:prop1_1_1`<br/>
 
