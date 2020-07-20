@@ -4,9 +4,9 @@ seo-title: Konfigurera Adobe Experience Platform Web SDK
 description: Lär dig hur du konfigurerar Experience Platform Web SDK
 seo-description: Lär dig hur du konfigurerar Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 5f263a2593cdb493b5cd48bc0478379faa3e155d
+source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
 workflow-type: tm+mt
-source-wordcount: '739'
+source-wordcount: '733'
 ht-degree: 4%
 
 ---
@@ -74,7 +74,7 @@ Den domän som används för att interagera med Adobes tjänster. Detta används
 | -------- | ------------ | ----------------- |
 | Sträng | Ja | ingen |
 
-Ditt ID för Experience Cloud-organisation.  När du konfigurerar flera instanser på en sida måste du konfigurera olika inställningar `orgId` för varje instans.
+Ditt tilldelade [!DNL Experience Cloud] organisations-ID.  När du konfigurerar flera instanser på en sida måste du konfigurera olika inställningar `orgId` för varje instans.
 
 ## Datainsamling
 
@@ -134,7 +134,7 @@ Om du t.ex. har ett element på webbsidan med ett ID `container` vars standardin
 | -------- | ------------ | ----------------- |
 | Boolean | Nej | `true` |
 
-Aktiverar Audience Manager [!UICONTROL cookie destinations]som tillåter inställning av cookies baserat på segmentkvalificering.
+Aktiverar [!DNL Audience Manager] , [!UICONTROL cookie destinations]vilket möjliggör inställning av cookies baserat på segmentkvalificering.
 
 ### `urlDestinationsEnabled`
 
@@ -142,7 +142,7 @@ Aktiverar Audience Manager [!UICONTROL cookie destinations]som tillåter instäl
 | -------- | ------------ | ----------------- |
 | Boolean | Nej | `true` |
 
-Möjliggör Audience Manager [!UICONTROL URL destinations]som tillåter att URL:er aktiveras baserat på segmentkvalificering.
+Aktiverar [!DNL Audience Manager] , [!UICONTROL URL destinations]vilket gör det möjligt att bränna URL:er baserat på segmentkvalificering.
 
 ## Identitetsalternativ
 
