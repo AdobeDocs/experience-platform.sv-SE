@@ -4,21 +4,24 @@ solution: Experience Platform
 title: Exempelfrågor
 topic: queries
 translation-type: tm+mt
-source-git-commit: 33282b1c8ab1129344bd4d7054e86fed75e7b899
+source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+workflow-type: tm+mt
+source-wordcount: '227'
+ht-degree: 0%
 
 ---
 
 
-# Exempelfrågor för Adobe Target-data
+# Exempelfrågor för Adobe Target data
 
-Data från Adobe Target omvandlas till Experience Event XDM-schema och hämtas till Experience Platform som datauppsättningar för er. Det finns många användningsfall för Query Service med dessa data, och följande exempelfrågor bör fungera med dina Adobe Target-datauppsättningar.
+Data från Adobe Target omvandlas till Experience Event XDM-schema och hämtas in [!DNL Experience Platform] som datauppsättningar åt dig. Det finns många användningsområden för [!DNL Query Service] dessa data, och följande exempelfrågor bör fungera med dina Adobe Target-datauppsättningar.
 
 >[!NOTE]
 >I följande exempel måste du redigera SQL för att fylla i de förväntade parametrarna för dina frågor baserat på den datauppsättning, de variabler eller den tidsram som du är intresserad av att utvärdera. Ange parametrar var du än ser `{ }` i SQL.
 
-## Namn på standarddatauppsättning för måldatakälla på plattform:
+## Target-datakällans standarddatauppsättningsnamn på [!DNL Platform]:
 
-Adobe Target Experience Events (eget namn) <br>`adobe_target_experience_events` (namn som ska användas i fråga)
+Adobe Target Experience Events (eget namn) <br>`adobe_target_experience_events` (namn som ska användas i frågan)
 
 ## Partiell XDM-fältmappning på hög nivå
 
