@@ -1,20 +1,24 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Slutpunktsguide för exportjobb
+title: Slutpunkt för exportjobb
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 3e39333207ef6c94b6d792be33a4605f185ff5ab
+source-git-commit: b3e6a6f1671a456b2ffa61139247c5799c495d92
 workflow-type: tm+mt
-source-wordcount: '1469'
+source-wordcount: '1497'
 ht-degree: 1%
 
 ---
 
 
-# Slutpunktsguide för exportjobb
+# Slutpunkt för exportjobb
 
 Exportjobb är asynkrona processer som används för att behålla målgruppsmedlemmar i datauppsättningar. Du kan använda slutpunkten i API:t för Adobe Experience Platform-segmentering, som gör att du kan hämta, skapa och avbryta exportjobb med programkod. `/export/jobs`
+
+>[!NOTE]
+>
+>I den här guiden beskrivs hur du använder exportjobb i [!DNL Segmentation API]. Mer information om hur du hanterar exportjobb för [!DNL Real-time Customer Profile] data finns i guiden om [exportjobb i profil-API:t](../../profile/api/export-jobs.md)
 
 ## Komma igång
 
