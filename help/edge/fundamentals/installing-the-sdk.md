@@ -4,9 +4,9 @@ seo-title: Adobe Experience Platform Web SDK installerar SDK
 description: Lär dig hur du installerar Experience Platform Web SDK
 seo-description: Lär dig hur du installerar Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 90afc28d41878cbed90fc05176276a30d8aebe09
+source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
 workflow-type: tm+mt
-source-wordcount: '580'
+source-wordcount: '570'
 ht-degree: 0%
 
 ---
@@ -14,14 +14,14 @@ ht-degree: 0%
 
 # Installera SDK {#installing-the-sdk}
 
-Adobe Experience Platform Web SDK finns i ett leveransnätverk (CDN) som du kan använda. Du kan referera till den här filen eller ladda ned den och lagra den i din egen infrastruktur. Den finns i minifierad och icke-minifierad version. Den version som inte är miniatyrversion är användbar i felsökningssyfte.
+Adobe Experience Platform finns [!DNL Web SDK] i ett leveransnätverk (CDN) som du kan använda. Du kan referera till den här filen eller ladda ned den och lagra den i din egen infrastruktur. Den finns i minifierad och icke-minifierad version. Den version som inte är miniatyrversion är användbar i felsökningssyfte.
 
 * Minimerad version: [https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js](https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js)
 * Ej miniatyrversion: [https://cdn1.adoberesources.net/alloy/1.0.0/alloy.js](https://cdn1.adoberesources.net/alloy/1.0.0/alloy.js)
 
 ## Lägga till koden {#adding-the-code}
 
-Det första steget i implementeringen av Adobe Experience Platform Web SDK är att kopiera och klistra in följande &quot;baskod&quot; så hög som möjligt i HTML-taggen `<head>` :
+Det första steget när du implementerar Adobe Experience Platform [!DNL Web SDK] är att kopiera och klistra in följande &quot;baskod&quot; så hög som möjligt i HTML- `<head>` taggen:
 
 ```markup
 <script>
@@ -54,11 +54,11 @@ Utöver att skapa en global funktion läser den här baskoden även in ytterliga
 
 ## Stöd för Internet Explorer {#support-internet-explore}
 
-Denna SDK använder löften, som är ett sätt att förmedla slutförandet av asynkrona uppgifter. Den implementering av [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) som används av SDK stöds internt av alla målwebbläsare utom Internet Explorer. Om du vill använda SDK i Internet Explorer måste du ha `window.Promise` fyllt i [i](https://remysharp.com/2010/10/08/what-is-a-polyfill)texten.
+Denna SDK använder löften, som är ett sätt att förmedla slutförandet av asynkrona uppgifter. Den implementering av [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) som används av SDK stöds internt av alla målwebbläsare förutom [!DNL Internet Explorer]. Om du vill använda SDK på [!DNL Internet Explorer]måste du ha `window.Promise` polyfylld [](https://remysharp.com/2010/10/08/what-is-a-polyfill).
 
 Så här kontrollerar du om du redan har `window.Promise` polyfyllda:
 
-1. Öppna webbplatsen i Internet Explorer.
+1. Öppna webbplatsen i [!DNL Internet Explorer].
 1. Öppna webbläsarens felsökningskonsol.
 1. Skriv `window.Promise` in i konsolen och tryck sedan på Retur.
 
