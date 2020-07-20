@@ -3,33 +3,34 @@ product: experience-platform
 audience: user
 user-guide-title: Hjälp om kundprofil i realtid
 translation-type: tm+mt
-source-git-commit: 635f8cf8173cc7db2032f2181848b0ce1e9095cc
+source-git-commit: 57ef7df4b9323b58a90660d515ade61a3974779f
 workflow-type: tm+mt
-source-wordcount: '83'
+source-wordcount: '78'
 ht-degree: 1%
 
 ---
 
 
-# Kundprofil i realtid {#profile}
+# [!DNL Real-time Customer Profile] {#profile}
 
-* [Profilöversikt](home.md)
-* Utvecklarhandbok för profil-API {#api}
+* [[!DNL Profile] översikt](home.md)
+* [!DNL Profile] Utvecklarhandbok för API {#api}
    * [Översikt](api/overview.md)
    * [Komma igång](api/getting-started.md)
    * [(Alfa) Beräknade attribut](api/computed-attributes.md)
    * [Kantprojektioner](api/edge-projections.md)
-   * [Enheter (profilåtkomst)](api/entities.md)
+   * [Enheter ([!DNL-profil] åtkomst)](api/entities.md)
+   * [Exportera jobb ([!DNL-profil] export)](api/export-jobs.md)
    * [Sammanfoga profiler](api/merge-policies.md)
-   * [Profilsystemjobb (Delete-begäranden)](api/profile-system-jobs.md)
+   * [[!DNL Profile] systemjobb (Delete-begäranden)](api/profile-system-jobs.md)
 * Användargränssnittsguider {#ui}
-   * [Användarhandbok för profil](ui/user-guide.md)
+   * [[!DNL Profile] användarhandbok](ui/user-guide.md)
    * [Användarhandbok för sammanslagningsprinciper](ui/merge-policies.md)
 * Självstudiekurser {#tutorials}
-   * [Lägg till data i profil](tutorials/add-profile-data.md)
-   * [Konfigurera datauppsättning för profil och identitet](tutorials/dataset-configuration.md)
+   * [Lägg till data i [!DNL Profile]](tutorials/add-profile-data.md)
+   * [Konfigurera datauppsättning för [!DNL Profile] och [!DNL Identity]](tutorials/dataset-configuration.md)
    * [Fler självstudiekurser](https://docs.adobe.com/content/help/en/experience-platform/tutorials/home.html)
 * [Behandling av sekretessförfrågningar](privacy.md)
 * [Felsökningsguide](troubleshooting.md)
 * [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)
-* [Versionsinformation för Platform](https://www.adobe.com/go/platform-release-notes-en)
+* [[!DNL Platform] versionsinformation](https://www.adobe.com/go/platform-release-notes-en)
