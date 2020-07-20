@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Utvecklarhandbok för kundprofil-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
+source-git-commit: 57ef7df4b9323b58a90660d515ade61a3974779f
 workflow-type: tm+mt
-source-wordcount: '624'
+source-wordcount: '690'
 ht-degree: 0%
 
 ---
@@ -20,33 +20,36 @@ API:t innehåller [!DNL Real-time Customer Profile] flera slutpunkter, som beskr
 
 Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder läser du API-referenssaggern för kundprofil i [realtid](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml).
 
-## (Alfa) Beräknade attribut
+## (Alfa) Beräknade attribut {#computed-attributes}
 
 >[!IMPORTANT]
->
 >
 >Funktionen för beräknade attribut är alfavärden och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
 
 Med beräknade attribut kan du automatiskt beräkna fältvärden baserat på andra värden, beräkningar och uttryck. Beräknade attribut fungerar på profilnivån, vilket innebär att du kan samla värden för alla poster och händelser. Varje beräknat attribut innehåller ett uttryck, eller &quot;rule&quot;, som utvärderar inkommande data och lagrar resultatvärdet i ett profilattribut eller i en händelse. Med hjälp av dessa beräkningar kan du enkelt besvara frågor som rör inköpstid, tid mellan köp eller antal programöppningar, utan att behöva utföra komplexa beräkningar manuellt varje gång informationen behövs. Du kan skapa, visa, redigera och ta bort beräknade attribut med hjälp av `config/computedAttributes` slutpunkten. Om du vill lära dig hur du använder den här slutpunkten kan du gå till guiden [för](computed-attributes.md)beräknade attribut.
 
-## Kantprojektioner
+## Kantprojektioner {#edge-projections}
 
 Adobe Experience Platform möjliggör personalisering av kundupplevelser i realtid genom att göra data lättillgängliga på strategiskt placerade servrar som kallas&quot;kanter&quot;. API:t innehåller slutpunkter för att arbeta med kanter via komponenter som kallas för &quot;projektioner&quot;. [!DNL Real-time Customer Profile] Detta inkluderar projektionskonfigurationer för att bestämma vilka data som ska projiceras för varje kant, liksom projektionsdestinationer för att definiera var projektionen ska dirigeras. Detaljerad information om hur du arbetar med kantprojektioner finns i guiden [för](edge-projections.md)projektionskonfigurationer och destinationspunkter.
 
-## Enheter (profilåtkomst) {#entities}
+## Enheter ([!DNL Profile] åtkomst) {#entities}
 
 Via Adobe Experience Platform kan du komma åt [!DNL Real-time Customer Profile] data med RESTful API:er eller användargränssnittet. Om du vill lära dig hur du får åtkomst till enheter, som ofta kallas&quot;profiler&quot;, med API:t, följer du stegen som beskrivs i slutpunktshandboken för [enheter](entities.md). Mer information om hur du får åtkomst till profiler med hjälp av [!DNL Platform] användargränssnittet finns i [användarhandboken](../ui/user-guide.md)för profilen.
 
-## Sammanfoga profiler
+## Exportera jobb ([!DNL Profile] export) {#profile-export}
+
+[!DNL Real-time Customer Profile] data kan exporteras till en datauppsättning för vidare bearbetning, som att exportera målgruppssegment för aktivering eller profilattribut för rapportering. Exportjobb för målgruppssegment är en del av [!DNL Adobe Experience Platform Segmentation Service] API:t. Läs slutpunktsguiden [för](../../profile/api/export-jobs.md) segmenteringsexportjobb om du vill veta mer. Stegvisa instruktioner om hur du skapar och hanterar exportjobb för profilattribut finns i slutpunktshandboken för [exportjobb](export-jobs.md).
+
+## Sammanfoga profiler {#merge-policies}
 
 När data från flera källor samlas i [!DNL Experience Platform]är sammanslagningsprinciper de regler som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa enskilda kundprofiler. Med API:t kan du skapa nya sammanfogningsprinciper, hantera befintliga profiler och ange en standardsammanfogningsprincip för organisationen. [!DNL Real-time Customer Profile] Mer information om hur du arbetar med sammanfogningspolicyer med API finns i slutpunktshandboken för [sammanfogningspolicyer](merge-policies.md).
 
 En guide till hur du arbetar med sammanfogningsprinciper med [!DNL Platform] användargränssnittet finns i användarhandboken för [sammanfogningsprinciper](../ui/merge-policies.md).
 
-## Profilsystemjobb
+## Profilsystemjobb {#profile-system-jobs}
 
 Data som hämtas till [!DNL Platform] lagras i [!DNL Data Lake] såväl som i [!DNL Real-time Customer Profile] datalagret. Ibland kan det vara nödvändigt att ta bort en datauppsättning eller en batch från [!DNL Profile] butiken för att ta bort data som du inte längre behöver eller som har lagts till av misstag. Detta kräver att API:t används för att skapa en [!DNL Profile System Job], så kallad&quot;[!DNL delete request]&quot;, som också kan ändras, övervakas eller tas bort om det behövs. Om du vill lära dig hur du arbetar med borttagningsbegäranden med hjälp av `/system/jobs` slutpunkten i [!DNL Real-time Customer Profile] API:t följer du stegen som beskrivs i slutpunktshandboken för [profilsystemjobb](profile-system-jobs.md).
 
-## Nästa steg
+## Nästa steg {#next-steps}
 
 Om du vill börja ringa anrop med [!DNL Real-time Customer Profile] API:t läser du [Komma igång-guiden](getting-started.md) och väljer sedan en av slutpunktshandböckerna för att lära dig hur du använder specifika [!DNL Profile]relaterade slutpunkter. Mer information om hur du arbetar med [!DNL Profile] data med [!DNL Platform] användargränssnittet finns i användarhandboken för [kundprofiler i realtid](../ui/user-guide.md).
