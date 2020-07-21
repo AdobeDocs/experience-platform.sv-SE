@@ -4,15 +4,15 @@ seo-title: (Beta) Azure Event Hubs-mål
 description: Skapa en utgående anslutning i realtid till din Azure Event Hubs-lagring för att strömma data från Experience Platform.
 seo-description: Skapa en utgående anslutning i realtid till din Azure Event Hubs-lagring för att strömma data från Experience Platform.
 translation-type: tm+mt
-source-git-commit: e93bfc028d5e23c3add55677c4003ca549a902c6
+source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
 workflow-type: tm+mt
-source-wordcount: '472'
+source-wordcount: '458'
 ht-degree: 0%
 
 ---
 
 
-# (Beta) Azure Event Hubs-mål
+# (Beta) [!DNL Azure Event Hubs] -mål
 
 >[!IMPORTANT]
 >
@@ -32,9 +32,9 @@ Du kan skapa en utgående anslutning i realtid till ditt [!DNL Azure Event Hubs]
 
 ## Användningsexempel {#use-cases}
 
-Genom att använda direktuppspelningsmål som Azure Event Hubs kan du enkelt mata in segmenteringshändelser med högt värde och associerade profilattribut i dina valfria system.
+Genom att använda direktuppspelningsmål som [!DNL Azure Event Hubs]kan du enkelt mata in segmenteringshändelser med högt värde och associerade profilattribut i dina valfria system.
 
-En potentiell kund har till exempel laddat ned ett vitt papper som kvalificerar dem till ett segment med&quot;hög benägenhet att konvertera&quot;. Genom att mappa segmentet som den potentiella kunden hamnar i till Azure Event Hubs-målet får du den här händelsen i Azure Event Hubs. Där kan ni använda en&quot;do-it-self&quot;-strategi och beskriva affärslogiken utöver evenemanget, som ni tror fungerar bäst med företagets IT-system.
+En potentiell kund har till exempel laddat ned ett vitt papper som kvalificerar dem till ett segment med&quot;hög benägenhet att konvertera&quot;. Genom att mappa segmentet som den potentiella kunden hamnar i till [!DNL Azure Event Hubs] målet får du den här händelsen i [!DNL Azure Event Hubs]. Där kan ni använda en&quot;do-it-self&quot;-strategi och beskriva affärslogiken utöver evenemanget, som ni tror fungerar bäst med företagets IT-system.
 
 ## Koppla mål {#connect-destination}
 
@@ -64,7 +64,7 @@ Mer information om arbetsflödet för [aktivering finns i Aktivera profiler och 
 
 ## Exporterade data {#exported-data}
 
-Dina exporterade Experience Platform-data markeras [!DNL Azure Event Hubs] i JSON-format. Händelsen nedan innehåller till exempel e-postadressprofilattributet för en målgrupp som har kvalificerat sig för ett visst segment och avslutat ett annat segment. Identiteterna för den här potentiella kunden är ECID och e-post.
+Dina exporterade [!DNL Experience Platform] data markeras [!DNL Azure Event Hubs] i JSON-format. Händelsen nedan innehåller till exempel e-postadressprofilattributet för en målgrupp som har kvalificerat sig för ett visst segment och avslutat ett annat segment. Identiteterna för den här potentiella kunden är ECID och e-post.
 
 ```
 {
