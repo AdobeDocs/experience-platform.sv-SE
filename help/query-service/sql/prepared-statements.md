@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Förberedda programsatser
 topic: prepared statements
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+workflow-type: tm+mt
+source-wordcount: '340'
+ht-degree: 7%
 
 ---
 
 
 # Förberedda programsatser
 
-I SQL används förberedda satser för att mallatisera liknande frågor eller uppdateringar. Adobe Experience Platform Query Service stöder förberedda satser med hjälp av en parametriserad fråga. Detta kan användas för att optimera prestanda eftersom du inte längre behöver tolka en fråga om och om igen.
+I SQL används förberedda satser för att mallatisera liknande frågor eller uppdateringar. Adobe Experience Platform [!DNL Query Service] stöder förberedda satser genom att använda en parametriserad fråga. Detta kan användas för att optimera prestanda eftersom du inte längre behöver tolka en fråga om och om igen.
 
 ## Använda förberedda satser
 
