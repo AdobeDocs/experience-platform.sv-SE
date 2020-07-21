@@ -4,7 +4,10 @@ solution: Experience Platform
 title: ETL-arbetsflöde
 topic: overview
 translation-type: tm+mt
-source-git-commit: 943b45d1c6de5f0e2be761d8246b9de4c4c0b4e7
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+workflow-type: tm+mt
+source-wordcount: '177'
+ht-degree: 0%
 
 ---
 
@@ -19,11 +22,11 @@ I följande diagram visas modeller av vanliga ETL-åtgärder och en allmän anv�
 
 De åtgärder som visas nedan beskrivs i de steg som beskrivs i [ETL Integration Guide](home.md). Vissa steg hänvisar till specifika&quot;figurer&quot;, andra beskriver liknande åtgärder som arbetsflödet som visas här.
 
-### Bild 1 - Konfigurera nya Adobe Experience Platform Connector:
+### Bild 1 - Konfigurera ny Adobe Experience Platform-anslutning:
 
 ![](images/image2.png)
 
-### Bild 2 - Experience Platform Connector Activated:
+### Bild 2 - [!DNL Experience Platform] Kopplingen aktiverad:
 
 ![](images/image3.png)
 
@@ -31,11 +34,11 @@ De åtgärder som visas nedan beskrivs i de steg som beskrivs i [ETL Integration
 
 ![](images/image4.png)
 
-### Bild 4 - Nytt transformeringsgränssnitt, välj Experience Platform Connection:
+### Bild 4 - Nytt omformningsgränssnitt, välja [!DNL Experience Platform] Anslutning:
 
 ![](images/image5.png)
 
-### Bild 5 - Bläddra efter Experience Platform-datauppsättningar:
+### Bild 5 - Bläddra efter [!DNL Experience Platform] källdatauppsättningar:
 
 ![](images/image6.png)
 
@@ -55,7 +58,7 @@ De åtgärder som visas nedan beskrivs i de steg som beskrivs i [ETL Integration
 
 ![](images/image10.png)
 
-### Figur 10 - Definiera måldatauppsättningen för XDM (Experience Data Model):
+### Figur 10 - Definiera [!DNL Experience Data Model] (XDM) måldatauppsättningen:
 
 ![](images/image11.png)
 
