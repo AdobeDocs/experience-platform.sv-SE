@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Azure Data Lake Storage Gen2-anslutning
 topic: overview
 translation-type: tm+mt
-source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+source-git-commit: 4d3899e8a91d15da7e40523a03285f3ccec27191
 workflow-type: tm+mt
-source-wordcount: '157'
+source-wordcount: '202'
 ht-degree: 0%
 
 ---
@@ -18,15 +18,49 @@ Adobe Experience Platform erbjuder inbyggd anslutningsbarhet för molnleverantö
 
 Lagringskällor i molnet kan hämta dina egna data [!DNL Platform] utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM-parquet eller avgränsade. Varje steg i processen är integrerat i arbetsflödet för källor. [!DNL Platform] I kan du hämta data från [!DNL Azure Data Lake Storage Gen2] (ADLS-Gen2) via grupper.
 
+## IP-adress tillåtelselista
+
+Följande IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor.
+
+### USA, östra
+
+- `20.41.2.0/23`
+- `20.41.4.0/26`
+- `20.44.17.80/28`
+- `20.49.102.16/29`
+- `40.70.148.160/28`
+- `52.167.107.224/28`
+
+### Västeuropa
+
+- `13.69.67.192/28`
+- `13.69.107.112/28`
+- `13.69.112.128/28`
+- `40.74.24.192/26`
+- `40.74.26.0/23`
+- `40.113.176.232/29`
+- `52.236.187.112/28`
+
+### Australien, östra
+
+- `13.70.74.144/28`
+- `20.37.193.0/25`
+- `20.37.193.128/26`
+- `20.37.198.224/29`
+- `40.79.163.80/28`
+- `40.79.171.160/28`
+
+## Anslut [!DNL Azure Data Lake Storage Gen2] till [!DNL Platform]
+
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Azure Data Lake Storage Gen2] till [!DNL Platform] med API:er eller användargränssnittet:
 
-## Ansluta ADLS-Gen2 till [!DNL Platform] API:er
+### Använda API:er
 
 - [Skapa en ADLS-Gen2-anslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/adls-gen2.md)
 - [Utforska ett molnlagringssystem med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
 - [Samla in molnlagringsdata med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
 
-## Ansluta ADLS-Gen2 till [!DNL Platform] användargränssnittet
+## Använda gränssnittet
 
 - [Skapa en ADLS-Gen2-källanslutning i användargränssnittet](../../tutorials/ui/create/cloud-storage/adls-gen2.md)
 - [Konfigurera ett dataflöde för en molnlagringskontakt i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
