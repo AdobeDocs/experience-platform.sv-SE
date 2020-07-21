@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittsguide för segmentbyggare
 topic: ui guide
 translation-type: tm+mt
-source-git-commit: f44e42a4faa3b10f147dbaf929048054ce0bec42
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
 workflow-type: tm+mt
-source-wordcount: '2665'
+source-wordcount: '2660'
 ht-degree: 0%
 
 ---
@@ -20,9 +20,9 @@ ht-degree: 0%
 
 Att arbeta med segmentdefinitioner kräver förståelse för de olika [!DNL Experience Platform] tjänster som är förknippade med segmentering. Innan du läser den här användarhandboken bör du läsa dokumentationen för följande tjänster:
 
-- [!DNL Segmentation Service](../home.md): Med hjälp av segmenteringstjänsten kan ni dela in data som lagras i [!DNL Experience Platform] som rör enskilda personer (t.ex. kunder, prospects, användare eller organisationer) i mindre grupper som delar liknande egenskaper och som kommer att svara på marknadsstrategier.
+- [!DNL Segmentation Service](../home.md): [!DNL Segmentation Service] Med kan ni dela upp data som lagras i [!DNL Experience Platform] som rör individer (t.ex. kunder, presumtiva kunder, användare eller organisationer) i mindre grupper som delar liknande egenskaper och svarar på marknadsstrategier.
 - [!DNL Real-time Customer Profile](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-- [!DNL Identity Service](../../identity-service/home.md): Möjliggör [!DNL Real-time Customer Profile] genom att överbrygga identiteter från olika datakällor som importeras till Platform.
+- [!DNL Identity Service](../../identity-service/home.md): Möjliggör [!DNL Real-time Customer Profile] genom att överbrygga identiteter från olika datakällor som inhämtas till [!DNL Platform].
 - [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
 
 Det är också viktigt att känna till två nyckeltermer som används i det här dokumentet och förstå skillnaden mellan dem:
@@ -63,7 +63,7 @@ På fliken **[!UICONTROL Attributes]** kan du bläddra bland [!DNL Profile] attr
 
 ### Händelser
 
-På fliken **[!UICONTROL Events]** kan du skapa en målgrupp baserat på händelser eller åtgärder som har utförts med XDM ExperienceEvent-dataelement. Du hittar även Händelsetyper på fliken **[!UICONTROL Events]** , som är en samling vanliga händelser som gör att du kan skapa segment snabbare.
+På fliken **[!UICONTROL Events]** kan du skapa en målgrupp baserat på händelser eller åtgärder som har utförts med [!DNL XDM ExperienceEvent] dataelement. Du hittar även Händelsetyper på fliken **[!UICONTROL Events]** , som är en samling vanliga händelser som gör att du kan skapa segment snabbare.
 
 Förutom att du kan bläddra efter [!DNL ExperienceEvent] element kan du även söka efter händelsetyper. Händelsetyper använder samma kodningslogik som [!DNL ExperienceEvents], utan att du behöver söka igenom den klass som [!DNL XDM ExperienceEvent] söker efter rätt händelse. Om du till exempel använder sökfältet för att söka efter &quot;kundvagn&quot; returneras händelsetyperna &quot;[!UICONTROL AddCart]&quot; och &quot;[!UICONTROL RemoveCart]&quot;, som är två mycket vanliga kundvagnsåtgärder när du skapar segmentdefinitioner.
 
