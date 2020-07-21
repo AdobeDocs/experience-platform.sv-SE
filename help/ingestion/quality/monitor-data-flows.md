@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Övervaka datainmatning
 topic: overview
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '530'
+source-wordcount: '511'
 ht-degree: 0%
 
 ---
@@ -14,17 +14,17 @@ ht-degree: 0%
 
 # Övervaka datainmatning
 
-Genom dataöverföring kan ni importera data till Adobe Experience Platform. Du kan antingen använda gruppinmatning, vilket gör att du kan infoga data med olika filtyper (t.ex. CSV-filer), eller direktuppspelning, vilket gör att du kan importera data till Platform med direktuppspelningsslutpunkter i realtid.
+Genom dataöverföring kan ni importera data till Adobe Experience Platform. Du kan antingen använda gruppinmatning, vilket gör att du kan infoga data med olika filtyper (t.ex. CSV-filer), eller direktuppspelning, vilket gör att du kan importera data till [!DNL Platform] direktuppspelningsslutpunkter i realtid.
 
 I den här användarhandboken beskrivs hur du övervakar data i användargränssnittet i Adobe Experience Platform. Den här guiden kräver att du har ett Adobe ID och tillgång till Adobe Experience Platform.
 
 ## Övervaka direktuppspelning av data från början till slut
 
-I användargränssnittet [för](https://platform.adobe.com)Experience Platform klickar du på **Övervakning** på den vänstra navigeringsmenyn och sedan på **Direktuppspelning från början till slut**.
+I användargränssnittet [för](https://platform.adobe.com)Experience Platform klickar du **[!UICONTROL Monitoring]** på den vänstra navigeringsmenyn och sedan på **[!UICONTROL Streaming end-to-end]**.
 
 ![](../images/quality/monitor-data-flows/click-streaming-end-to-end.png)
 
-Övervakningssidan för *direktuppspelning från början till slut* visas. Den här arbetsytan innehåller ett diagram som visar hur många direktuppspelade händelser som tas emot av Platform, ett diagram som visar hur många direktuppspelade händelser som har bearbetats av kundprofilen [i](../../profile/home.md)realtid samt en detaljerad lista över inkommande data.
+Övervakningssidan visas *[!UICONTROL Streaming end-to-end]* . Den här arbetsytan innehåller ett diagram som visar hur många direktuppspelade händelser som tas emot av [!DNL Platform]och ett diagram som visar hur många direktuppspelade händelser som bearbetades av [!DNL Real-time Customer Profile](../../profile/home.md)samt en detaljerad lista över inkommande data.
 
 ![](../images/quality/monitor-data-flows/list-streams.png)
 
@@ -32,11 +32,11 @@ Som standard visas i det övre diagrammet hur snabbt du har fått i sig något u
 
 ![](../images/quality/monitor-data-flows/list-streams-focus-on-top-graph.png)
 
-I det nedre diagrammet visas antalet lyckade bearbetade direktuppspelade händelser per profil under de senaste sju dagarna. Du kan justera datumintervallet så att olika tidsperioder visas genom att klicka på den markerade knappen.
+I det nedre diagrammet visas antalet lyckade direktuppspelningshändelser [!DNL Profile] under de senaste sju dagarna. Du kan justera datumintervallet så att olika tidsperioder visas genom att klicka på den markerade knappen.
 
 >[!NOTE]
 >
->För att data ska kunna visas i det här diagrammet måste data **uttryckligen** aktiveras för profilen. Läs användarhandboken för [datauppsättningar om du vill lära dig hur du aktiverar direktuppspelningsdata för profil](../../catalog/datasets/user-guide.md#enable-a-dataset-for-real-time-customer-profile).
+>För att data ska kunna visas i det här diagrammet måste data vara **explicit** aktiverade för [!DNL Profile]. Läs användarhandboken för [!DNL Profile]datauppsättningar om du vill lära dig hur du aktiverar direktuppspelande [data för](../../catalog/datasets/user-guide.md#enable-a-dataset-for-real-time-customer-profile).
 
 ![](../images/quality/monitor-data-flows/list-streams-focus-on-bottom-graph.png)
 
@@ -60,11 +60,11 @@ Misslyckade poster innehåller dessutom information om de fel som uppstod när g
 
 ## Övervaka dataöverföring från slutpunkt till slutpunkt
 
-Klicka på [Övervakning](https://platform.adobe.com)på den vänstra navigeringsmenyn i användargränssnittet **för** Experience Platform.
+Klicka på den vänstra navigeringsmenyn [!DNL Experience Platform UI](https://platform.adobe.com)**[!UICONTROL Monitoring]** i.
 
 ![](../images/quality/monitor-data-flows/click-monitoring.png)
 
-Övervakningssidan för hela **batchen** visas med en lista över tidigare inkapslade batchar. Du kan klicka på valfri grupp om du vill ha mer detaljerad information om den posten.
+Övervakningssidan **[!UICONTROL Batch end-to-end]** visas med en lista över tidigare importerade batchar. Du kan klicka på valfri grupp om du vill ha mer detaljerad information om den posten.
 
 ![](../images/quality/monitor-data-flows/list-batches.png)
 
