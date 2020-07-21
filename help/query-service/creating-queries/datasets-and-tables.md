@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Datauppsättningar jämfört med tabeller och scheman
 topic: queries
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
 workflow-type: tm+mt
-source-wordcount: '183'
+source-wordcount: '181'
 ht-degree: 1%
 
 ---
@@ -30,7 +30,7 @@ Granska dataschemats hierarkiska struktur i användargränssnittet genom att kli
 
 ![](../images/clients/psql/connect-bi.png)
 
-Om du vill visa tillgängliga tabeller i Platform med SQL kan du antingen använda `\d` eller `SHOW TABLES;`.
+Om du vill visa de tillgängliga tabellerna i [!DNL Platform] med SQL kan du antingen använda `\d` eller `SHOW TABLES;`.
 
 
 `\d` visar PostgreSQL-standardvyn
@@ -44,7 +44,7 @@ Om du vill visa tillgängliga tabeller i Platform med SQL kan du antingen använ
 (2 rows)
 ```
 
-`SHOW TABLES;` är ett anpassat kommando som ger en mer detaljerad vy och visar tabellen, samt namnet på datauppsättningen som finns i användargränssnittet i Platform.
+`SHOW TABLES;` är ett anpassat kommando som ger en mer detaljerad vy och visar tabellen samt namnet på datauppsättningen i [!DNL Platform] användargränssnittet.
 
 ```
        name      |        dataSetId         |     dataSet    | description | resolved 
@@ -58,7 +58,7 @@ Om du vill visa rotschemat för en tabell använder du `\d table_name` kommandot
 
 >[!NOTE]
 >
->I schemat visas rotfälten, som oftast är komplexa, som refereras till en objekttyp i dataschemats användargränssnitt.
+>I det angivna schemat visas rotfälten, som i de flesta fall är komplexa, och som refereras till en objekttyp i dataschemats användargränssnitt.
 
 `\d luma_midvalues`
 
