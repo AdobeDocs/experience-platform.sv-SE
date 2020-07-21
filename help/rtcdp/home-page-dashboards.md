@@ -1,21 +1,24 @@
 ---
-title: Hemsida och instrumentpaneler för kunddataplattformen i realtid
-seo-title: Hemsida och instrumentpaneler för kunddataplattformen i realtid
-description: Kontrollpaneler, startsidan och förstagångsupplevelsen av Adobe Experience Platform
-seo-description: Kontrollpaneler, startsidan och förstagångsupplevelsen av Adobe Experience Platform
+title: Platform hemsida och instrumentpaneler för kunddata i realtid
+seo-title: Platform hemsida och instrumentpaneler för kunddata i realtid
+description: Instrumentpaneler, startsidan och förstagångsupplevelsen i Adobe Experience Platform
+seo-description: Instrumentpaneler, startsidan och förstagångsupplevelsen i Adobe Experience Platform
 translation-type: tm+mt
-source-git-commit: 69692f100389abb3fdb251b9b9258421254a2494
+source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+workflow-type: tm+mt
+source-wordcount: '614'
+ht-degree: 0%
 
 ---
 
 
-# Översikt över mått för kunddataplattform i realtid
+# [!DNL Real-time Customer Data Platform] översikt över mätvärden
 
 Hemsidan för Adobe Customer Data Platform (CDP i realtid), som innehåller en mätinstrumentpanel, visas när du loggar in på CDP i realtid.
 
 Hemsidan är bara en av platserna där metriska kort visas. CDP ger dig mätkort i realtid genom hela upplevelsen. Dessa mätvärden ger information om data, profiler och målgrupper i systemet.
 
-![image](assets/home2.jpg)
+![bild](assets/home2.jpg)
 
 Om det inte finns några data i systemet när du loggar in på CDP i realtid visas inte instrumentpanelen på startsidan. I det här fallet innehåller startsidan utbildningsmaterial för en förstagångsupplevelse. När data samlas in - dvs. <!--sources-->datauppsättningar, profiler, segment och mål skapas och dataflöden in i systemet - uppdateras instrumentpanelen automatiskt så att information om dessa data<!-- in metric cards-->visas.
 
@@ -27,26 +30,26 @@ Kontrollpanelen är uppdelad i<!-- two areas.-->:
 
 * **Ledpanelen** visas längst upp på kontrollpanelen. I resultatlistan visas antalet datauppsättningar, profiler, segment och mål i systemet.
 
-   ![image](assets/home-leaderboard2.jpg)
+   ![bild](assets/home-leaderboard2.jpg)
 
 <!-- * **Metric cards** display beneath the leaderboard. Metric cards show additional information, such as percentages or trends. Metric cards appear as data is collected.
     ![image](assets/home-metrics.jpg)
 Some information is shown in different ways on both the leaderboard and metric cards. -->
 * **De senaste objekten** listar de fem senaste datauppsättningarna, källorna, segmenten och destinationerna som lagts till i systemet.
 
-   ![image](assets/home-recent.jpg)
+   ![bild](assets/home-recent.jpg)
 
-Ytterligare mätvärden - till exempel för profiler och segment - finns tillgängliga i andra delar av kunddataplattformen i realtid.
+Ytterligare mätvärden - till exempel för profiler och segment - finns i andra delar av kunddata i realtid på Platform.
 
 ### Datauppsättningar
 
-Räknaren visar antalet datauppsättningar i systemet och mängden data i plattformen. **[!UICONTROL Datasets]** Den här räknaren uppdateras när en datauppsättning skapas.
+Räknaren visar antalet datauppsättningar i systemet och mängden data i **[!UICONTROL Datasets]** [!DNL Platform]. Den här räknaren uppdateras när en datauppsättning skapas.
 
 Mer information om datauppsättningar finns i översikten över [datauppsättningar](../catalog/datasets/overview.md).
 
 ### Profiler
 
-Antalet **[!UICONTROL Profiles]** visar det totala antalet personer med profiler i kundprofilen i realtid. Det innehåller inte profilfragment. Det här är er totala adresserbara målgrupp.
+Antalet **[!UICONTROL Profiles]** visar det totala antalet personer med profiler i [!DNL Real-time Customer Profile]. Det innehåller inte profilfragment. Det här är er totala adresserbara målgrupp.
 
 Det här antalet använder den [sammanfogningsprincip](profile/merge-policies.md) som har angetts som standard i konfigurationen av sammanfogningsprincipen i en enhetlig profil.
 
