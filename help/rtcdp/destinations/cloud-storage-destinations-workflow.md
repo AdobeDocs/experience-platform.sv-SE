@@ -4,9 +4,9 @@ seo-title: Arbetsflöde för molnlagringsmål
 description: Instruktioner för att ansluta till lagringsplatser i molnet
 seo-description: Instruktioner för att ansluta till lagringsplatser i molnet
 translation-type: tm+mt
-source-git-commit: 3c598454a868139b7604c5c7ca2b98fa0f1bb961
+source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
 workflow-type: tm+mt
-source-wordcount: '468'
+source-wordcount: '458'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ På den här sidan beskrivs hur du kan ansluta till molnlagringsplatser i Adobe 
 
    ![Anslut till molnlagringsmålet](/help/rtcdp/destinations/assets/connect-cloud-destination.png)
 
-2. Om du tidigare har konfigurerat en anslutning till molnlagringsmålet markerar du den befintliga anslutningen i **[!UICONTROL Authentication]** steget **[!UICONTROL Existing Account]** . Du kan också välja **[!UICONTROL New Account]** att konfigurera en ny anslutning till molnlagringsmålet. Fyll i autentiseringsuppgifter för ditt konto och välj **[!UICONTROL Connect to destination]**. <br> Se [Amazon S3](/help/rtcdp/destinations/amazon-s3-destination.md) -mål, [Amazon Kinesis](/help/rtcdp/destinations/amazon-kinesis-destination.md) -mål, [Azure Event Hubs](/help/rtcdp/destinations/azure-event-hubs-destination.md) -mål och [SFTP](/help/rtcdp/destinations/sftp-destination.md) -mål för mer information om inloggningsuppgifter i **autentiseringssteget** .
+2. Om du tidigare har konfigurerat en anslutning till molnlagringsmålet markerar du den befintliga anslutningen i **[!UICONTROL Authentication]** steget **[!UICONTROL Existing Account]** . Du kan också välja **[!UICONTROL New Account]** att konfigurera en ny anslutning till molnlagringsmålet. Fyll i autentiseringsuppgifter för ditt konto och välj **[!UICONTROL Connect to destination]**. <br> Se [Amazon S3](/help/rtcdp/destinations/amazon-s3-destination.md) -mål, [!DNL Amazon Kinesis](/help/rtcdp/destinations/amazon-kinesis-destination.md) mål, [!DNL Azure Event Hubs](/help/rtcdp/destinations/azure-event-hubs-destination.md) mål och [SFTP](/help/rtcdp/destinations/sftp-destination.md) -mål för mer information om inloggningsuppgifter i steget **Autentisering** .
 
    >[!NOTE]
    >
@@ -40,11 +40,11 @@ För Amazon S3-destinationer anger du **[!UICONTROL Bucket name]** och **[!UICON
 
    ![Anslut till molnlagringsmålet för SFTP - autentiseringssteg](/help/rtcdp/destinations/assets/sftp-destinations-setup-step.png)
 
-   Ange namnet på din befintliga dataström i ditt [!DNL Amazon Kinesis] konto för Amazon Kinesis-mål. Adobe CDP i realtid exporterar data till den här strömmen. Välj **[!UICONTROL Create Destination]** när du har fyllt i fälten ovan.
+   Ange namnet på din befintliga dataström i ditt [!DNL Amazon Kinesis] konto för [!DNL Amazon Kinesis] destinationer. Adobe CDP i realtid exporterar data till den här strömmen. Välj **[!UICONTROL Create Destination]** när du har fyllt i fälten ovan.
 
    ![Anslut till Kinesis molnlagringsmål - autentiseringssteg](/help/rtcdp/destinations/assets/kinesis-destinations-setup-step.png)
 
-   Ange namnet på din befintliga dataström i ditt [!DNL Amazon Kinesis] konto för Azure Event Hubs-mål. Adobe CDP i realtid exporterar data till den här strömmen. Välj **[!UICONTROL Create Destination]** när du har fyllt i fälten ovan.
+   Ange namnet på din befintliga dataström i ditt [!DNL Azure Event Hubs] konto för [!DNL Amazon Kinesis] destinationer. Adobe CDP i realtid exporterar data till den här strömmen. Välj **[!UICONTROL Create Destination]** när du har fyllt i fälten ovan.
 
    ![Anslut till Kinesis molnlagringsmål - autentiseringssteg](/help/rtcdp/destinations/assets/eventhubs-destinations-setup-step.png)
 
