@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Kartfunktioner
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 92f92f480f29f7d6440f4e90af3225f9a1fcc3d0
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+workflow-type: tm+mt
+source-wordcount: '146'
+ht-degree: 3%
 
 ---
 
 
 # Kartfunktioner
 
-PQL (Profile Query Language) har funktioner som underlättar interaktion med kartor. Mer information om andra PQL-funktioner finns i översikten [för](./overview.md)profilfrågespråk.
+[!DNL Profile Query Language] (PQL) har funktioner som underlättar interaktion med kartor. Mer information om andra PQL-funktioner finns i översikten [för](./overview.md)profilfrågespråk.
 
 ## Hämta
 
