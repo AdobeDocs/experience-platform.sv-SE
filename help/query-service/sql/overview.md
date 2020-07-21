@@ -4,11 +4,14 @@ solution: Experience Platform
 title: SQL-referens
 topic: reference
 translation-type: tm+mt
-source-git-commit: 45da024d45b5eebdfc393ee14890e24aed6021ce
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+workflow-type: tm+mt
+source-wordcount: '42'
+ht-degree: 0%
 
 ---
 
 
 # SQL-referens
 
-Med frågetjänsten kan du använda ANSI SQL av standardtyp för `SELECT` satser och andra begränsade kommandon. Frågetjänsten innehåller inte funktioner för datagruppen eller datamanipuleringsspråket. De data som efterfrågas via tjänsten kommer från Experience Data Lake, som i huvudsak innehåller oföränderliga datamängder.
+[!DNL Query Service] ger möjlighet att använda ANSI SQL-standard för satser och andra begränsade kommandon `SELECT` . [!DNL Query Service] innehåller inte funktioner för datagruppsspråk eller datahanteringsspråk. De data som efterfrågas via tjänsten kommer från [!DNL Experience Data Lake]som i huvudsak innehåller oföränderliga datauppsättningar.
