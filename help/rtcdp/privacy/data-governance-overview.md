@@ -4,21 +4,21 @@ seo-title: Datastyrning i realtid med kunddata i Platform
 description: 'Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. '
 seo-description: 'Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. '
 translation-type: tm+mt
-source-git-commit: 7f6612f7dd649d68aa7ebe5b971b72d7b433b1e3
+source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
 workflow-type: tm+mt
-source-wordcount: '1054'
+source-wordcount: '1016'
 ht-degree: 0%
 
 ---
 
 
-# Datastyrning i realtid CDP
+# [!DNL Data Governance] i realtid CDP
 
-Kunddata i realtid Platform (CDP i realtid) samlar data från olika affärssystem, vilket gör det möjligt för marknadsförarna att bättre identifiera, förstå och engagera sina kunder. Dessa data kan vara föremål för användarbegränsningar som fastställts av din organisation eller av juridiska bestämmelser. Därför är det viktigt att se till att CDP i realtid är kompatibelt med användningsprinciper när data hanteras.
+[!DNL Real-time Customer Data Platform] (CDP i realtid) sammanför data från olika affärssystem så att marknadsförarna bättre kan identifiera, förstå och engagera sina kunder. Dessa data kan vara föremål för användarbegränsningar som fastställts av din organisation eller av juridiska bestämmelser. Därför är det viktigt att se till att CDP i realtid är kompatibelt med användningsprinciper när data hanteras.
 
-Med Adobe Experience Platform Data Governance kan ni hantera kunddata och se till att ni följer regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en viktig roll inom CDP i realtid, så att ni kan definiera användarprofiler, kategorisera data baserat på dessa policyer och kontrollera om policyer har överträtts när ni utför vissa marknadsföringsåtgärder.
+Med Adobe Experience Platform [!DNL Data Governance] kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en viktig roll inom CDP i realtid, så att ni kan definiera användarprofiler, kategorisera data baserat på dessa policyer och kontrollera om policyer har överträtts när ni utför vissa marknadsföringsåtgärder.
 
-CDP i realtid är byggt på Adobe Experience Platform och därför beskrivs merparten av datastyrningsfunktionerna i dokumentationen för Experience Platform. Detta dokument är avsett att komplettera [datastyrningsöversikten](../../data-governance/home.md) för Experience Platform och sammanfattar de styrningsfunktioner som finns i CDP i realtid. Följande ämnen behandlas:
+CDP i realtid är byggt på Adobe Experience Platform och därför beskrivs merparten av möjligheterna i [!DNL Data Governance] [!DNL Experience Platform] dokumentationen. Detta dokument är avsett att komplettera [datastyrningsöversikten](../../data-governance/home.md) för [!DNL Experience Platform]och sammanfattar de styrningsfunktioner som finns i CDP i realtid. Följande ämnen behandlas:
 
 * [Använd användningsetiketter på dina data](#labels)
 * [Hantera dataanvändningsprinciper](#policies)
@@ -26,7 +26,7 @@ CDP i realtid är byggt på Adobe Experience Platform och därför beskrivs merp
 
 ## Använd användningsetiketter på dina data {#labels}
 
-Med datastyrning kan du använda användningsetiketter på dina data, antingen på datamängdsnivå eller datamängdsfältnivå. Med etiketter för dataanvändning kan du kategorisera data enligt de användarprofiler som gäller för dessa data.
+[!DNL Data Governance] gör att du kan använda användningsetiketter på dina data, antingen på datauppsättnings- eller datamängdsfältnivå. Med etiketter för dataanvändning kan du kategorisera data enligt de användarprofiler som gäller för dessa data.
 
 Mer information om hur du arbetar med dataanvändningsetiketter finns i användarhandboken [för](../../data-governance/labels/overview.md) dataanvändningsetiketter för Adobe Experience Platform.
 
@@ -36,7 +36,7 @@ Du kan ange begränsningar för dataanvändning för ett mål genom att definier
 
 >[!NOTE]
 >
->Mer information om marknadsföringsåtgärder och hur de används i dataanvändningspolicyer finns i översikten över [dataanvändningspolicyn](../../data-governance/policies/overview.md) i Experience Platform-dokumentationen.
+>Mer information om marknadsföringsåtgärder och hur de används i dataanvändningspolicyer finns i översikten [över](../../data-governance/policies/overview.md) dataanvändningspolicyer i [!DNL Experience Platform] dokumentationen.
 
 Genom att definiera användningsfall för marknadsföring på destinationer kan ni se till att profiler och segment som skickas till dessa destinationer följer dataanvändningsprinciperna. Ni bör därför lägga till lämpliga användningsfall för marknadsföring till era destinationer baserat på organisationens behov av att tillämpa policybegränsningar för aktivering.
 
@@ -45,19 +45,19 @@ Marknadsföringsfall kan bara väljas när du ställer in ett mål för första 
 
 ## Hantera dataanvändningsprinciper {#policies}
 
-För att dataanvändningsetiketter effektivt ska kunna stödja regelefterlevnad måste dataanvändningsprinciper definieras och aktiveras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom CDP i realtid. Mer information finns i avsnittet&quot;Dataanvändningspolicyer&quot; i Experience Platform [datastyrningsöversikten](../../data-governance/home.md) .
+För att dataanvändningsetiketter effektivt ska kunna stödja regelefterlevnad måste dataanvändningsprinciper definieras och aktiveras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom CDP i realtid. Mer information finns i avsnittet &quot;Dataanvändningsprinciper&quot; i [!DNL Experience Platform] översikten över [](../../data-governance/home.md) datastyrning.
 
-Adobe Experience Platform har flera **huvudprinciper** för vanliga kundupplevelsefall. Du kan visa dessa profiler i användargränssnittet genom att gå till **[!UICONTROL Policies]** arbetsytan och välja **[!UICONTROL Browse]** fliken. I användarhandboken för [profiler](../../data-governance/policies/user-guide.md) i dokumentationen för Experience Platform finns mer detaljerad information om hur du arbetar med policyer i användargränssnittet, inklusive hur du skapar egna policyer.
+Adobe Experience Platform har flera **huvudprinciper** för vanliga kundupplevelsefall. Du kan visa dessa profiler i användargränssnittet genom att gå till **[!UICONTROL Policies]** arbetsytan och välja **[!UICONTROL Browse]** fliken. I användarhandboken för [profiler](../../data-governance/policies/user-guide.md) i [!DNL Experience Platform] -dokumentationen finns mer detaljerad information om hur du arbetar med profiler i användargränssnittet, inklusive hur du skapar egna anpassade profiler.
 
 ## Klara regelefterlevnaden {#enforce-data-usage-compliance}
 
-När data har märkts och användarprofiler har definierats kan ni se till att dataanvändningen följer reglerna. När målgruppssegment aktiveras till mål i realtid-CDP tillämpar Data Governance automatiskt användningspolicyer om det inträffar några överträdelser.
+När data har märkts och användarprofiler har definierats kan ni se till att dataanvändningen följer reglerna. När målgruppssegment aktiveras till mål i realtid-CDP, verkställs användarprofiler automatiskt om något skulle inträffa. [!DNL Data Governance]
 
 I följande diagram visas hur regelefterlevnad integreras i dataflödet för segmentaktivering:
 
 ![](assets/enforcement-flow.png)
 
-När ett segment aktiveras för första gången kontrollerar DULE Policy Service om det finns policyöverträdelser baserade på följande faktorer:
+När ett segment aktiveras första gången kontrollerar DULE [!DNL Policy Service] om det finns policyöverträdelser baserat på följande faktorer:
 
 * De dataanvändningsetiketter som används för fält och datauppsättningar i segmentet som ska aktiveras.
 * Destinationens marknadsföringssyfte.
@@ -75,13 +75,13 @@ Om en principöverträdelse inträffar från försök att aktivera ett segment (
 
 ![](assets/violation-popover.png)
 
-Fliken *Information* om drivrutinen anger vilken åtgärd som utlöste överträdelsen och varför överträdelsen inträffade, och ger förslag på hur problemet kan lösas.
+Leveransfliken anger den åtgärd som utlöste överträdelsen och varför den inträffade, och ger förslag på hur problemet kan lösas. *[!UICONTROL Details]*
 
-Klicka på **Datalinje** för att spåra mål, segment, sammanfogningsprinciper eller datauppsättningar vars dataetiketter utlöste överträdelsen.
+Klicka **[!UICONTROL Data Lineage]** för att spåra mål, segment, sammanfogningsprinciper eller datauppsättningar vars dataetiketter utlöste överträdelsen.
 
 ![](assets/data-lineage.png)
 
-När en överträdelse har utlösts inaktiveras knappen **Spara** för aktiveringen tills rätt komponenter har uppdaterats enligt dataanvändningsprinciperna.
+När en överträdelse har utlösts inaktiveras knappen för aktivering tills rätt komponenter har uppdaterats för att följa dataanvändningsprinciperna. **[!UICONTROL Save]**
 
 ### Tillämpning av policyer för aktiverade segment {#policy-enforcement-for-activated-segments}
 
@@ -96,8 +96,8 @@ Om någon av ovanstående åtgärder utlöser en överträdelse förhindras åtg
 
 ## Nästa steg
 
-Nu när du har introducerats till de viktigaste datastyrningsfunktionerna för CDP i realtid och hur Experience Platform möjliggör dem kan du fortsätta med [dokumentationen för datastyrning på Adobe Experience Platform](../../data-governance/home.md). Dokumentationen innehåller översikter över viktiga datastyrningsbegrepp samt stegvisa arbetsflöden för hantering av etiketter och policyer för dataanvändning.
+Nu när du har introducerats till de viktigaste [!DNL Data Governance] funktionerna i CDP i realtid och hur de [!DNL Experience Platform] aktiveras kan du fortsätta med [dokumentationen för datastyrning på Adobe Experience Platform](../../data-governance/home.md). Dokumentationen innehåller översikter över viktiga [!DNL Data Governance] begrepp samt stegvisa arbetsflöden för att hantera etiketter och policyer för dataanvändning.
 
-I följande video visas en översikt över datastyrning i CDP i realtid, inklusive användning av marknadsföringsfall på destinationer och exempelarbetsflöden för olika scenarier:
+I följande video visas en översikt över CDP [!DNL Data Governance] i realtid, inklusive användningen av marknadsföringsfall på destinationer och exempelarbetsflöden för olika scenarier:
 
 >[!VIDEO](https://video.tv.adobe.com/v/33631?quality=12&learn=on)
