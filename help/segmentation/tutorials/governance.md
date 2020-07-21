@@ -4,9 +4,9 @@ solution: Experience Platform
 title: säkerställa att målgruppssegmentens dataanvändning följs
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: cb6a2f91eb6c18835bd9542e5b66af4682227491
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
 workflow-type: tm+mt
-source-wordcount: '1325'
+source-wordcount: '1323'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Den här självstudiekursen beskriver stegen för att implementera efterlevnad a
 Den här självstudien kräver en fungerande förståelse av följande komponenter i [!DNL Adobe Experience Platform]:
 
 - [!DNL Real-time Customer Profile](../../profile/home.md): [!DNL Real-time Customer Profile] är ett generiskt uppslagsenhetsarkiv och används för att hantera [!DNL Experience Data Model] (XDM) data i [!DNL Platform]. Profilen sammanfogar data över olika företagsdata och ger åtkomst till dessa data i en enhetlig presentation.
-   - [Sammanslagningsprinciper](../../profile/api/merge-policies.md): Regler som används av [!DNL Real-time Customer Profile] för att avgöra vilka data som kan sammanfogas i en enhetlig vy under vissa villkor. Sammanslagningsprinciper kan konfigureras för datastyrning.
+   - [Sammanslagningsprinciper](../../profile/api/merge-policies.md): Regler som används av [!DNL Real-time Customer Profile] för att avgöra vilka data som kan sammanfogas i en enhetlig vy under vissa villkor. Sammanslagningsprinciper kan konfigureras för [!DNL Data Governance] syften.
 - [!DNL Segmentation](../home.md): Hur [!DNL Real-time Customer Profile] delar upp en stor grupp individer som finns i profilbutiken i mindre grupper som har liknande egenskaper och som reagerar på liknande sätt som marknadsföringsstrategier.
 - [!DNL Data Governance](../../data-governance/home.md): [!DNL Data Governance] tillhandahåller infrastrukturen för märkning och tillämpning av dataanvändning (DULE) med hjälp av följande komponenter:
    - [Dataanvändningsetiketter](../../data-governance/labels/user-guide.md): Etiketter som används för att beskriva datauppsättningar och fält utifrån känslighetsnivån som deras respektive data ska hanteras med.
