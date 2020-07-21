@@ -4,15 +4,15 @@ solution: Adobe Experience Platform
 title: Utvecklarhandbok för Adobe Experience Platform Segmentation Service
 topic: guide
 translation-type: tm+mt
-source-git-commit: aff81a4f3243ef77cbdfc776220a5de46e360084
+source-git-commit: 995fadef9abacf22d0561e0590dfbe172adf0a43
 workflow-type: tm+mt
-source-wordcount: '469'
+source-wordcount: '467'
 ht-degree: 0%
 
 ---
 
 
-# Utvecklarhandbok för Adobe Experience Platform Segmentation Service API
+# Utvecklarhandbok för Adobe Experience Platform [!DNL Segmentation Service] API
 
 [!DNL Adobe Experience Platform Segmentation Service] gör att ni kan skapa segment och generera målgrupper i [!DNL Adobe Experience Platform] utifrån era [!DNL Real-time Customer Profile] data.
 
