@@ -4,20 +4,23 @@ seo-title: Demandbase-tillägg
 description: Demandbase-tillägget är ett analysmål i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: Demandbase-tillägget är ett analysmål i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: ff91395844c239415123a33d65fa0deb2221ae25
+source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+workflow-type: tm+mt
+source-wordcount: '551'
+ht-degree: 2%
 
 ---
 
 
-# Demandbase-tillägg {#demandbase-extension}
+# [!DNL Demandbase] extension {#demandbase-extension}
 
 ## Översikt {#overview}
 
-Få insikter om B2B-konton hos Demandbase direkt i Adobe Analytics, där ni kan segmentera trafik och beteende efter bransch, intäkt och målkonton. Denna kontobaserade vy ger unika insikter om engagemang, konvertering och källan för era mest värdefulla besökare.
+Få [!DNL Demandbase] B2B-kontoinsikter direkt i Adobe Analytics där ni kan segmentera trafik och beteende efter bransch, intäkt och målkonton. Denna kontobaserade vy ger unika insikter om engagemang, konvertering och källan för era mest värdefulla besökare.
 
-Demandbase är ett analystillägg i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101605.html).
+[!DNL Demandbase] är ett analystillägg i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101605.html).
 
-Det här målet är ett Experience Platform Launch-tillägg. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
+Det här målet har tillägget Experience Platform Launch. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [](/help/rtcdp/destinations/experience-platform-launch-extensions.md)Experience Platform Launch-tillägg.
 
 ![Demandbase-tillägg](assets/demandbase-extension.png)
 
@@ -25,11 +28,11 @@ Det här målet är ett Experience Platform Launch-tillägg. Mer information om 
 
 Det här tillägget är tillgängligt i målkatalogen för alla kunder som har köpt Adobe CDP i realtid.
 
-Om du vill använda det här tillägget måste du ha tillgång till Experience Platform Launch. Experience Platform Launch erbjuds Adobe Experience Cloud-kunder som en inkluderad, värdeskapande funktion. Kontakta din organisations administratör för att få åtkomst till Launch och be dem att ge dig behörighet att installera tillägg så att du kan installera dem **[!UICONTROL manage_properties]** .
+Om du vill använda det här tillägget måste du ha tillgång till Experience Platform Launch. Experience Platform Launch erbjuds Adobe Experience Cloud-kunder som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till Launch och be dem att ge dig behörighet att installera tillägg så att du kan installera dem **[!UICONTROL manage_properties]** .
 
 ## Installera tillägg {#install-extension}
 
-Så här installerar du Demandbase-tillägget:
+Så här installerar du [!DNL Demandbase] tillägget:
 
 1. Gå till [Adobe Real-time CDP-gränssnittet](http://platform.adobe.com/)**[!UICONTROL Destinations > Catalog]**.
 2. Välj tillägget i katalogen eller använd sökfältet.
