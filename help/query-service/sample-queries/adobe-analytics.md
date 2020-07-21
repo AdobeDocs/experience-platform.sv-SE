@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Exempelfrågor
 topic: queries
 translation-type: tm+mt
-source-git-commit: 75c446aed75100bd2b5b4a3d365c090cb01dcc69
+source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+workflow-type: tm+mt
+source-wordcount: '862'
+ht-degree: 1%
 
 ---
 
 
 # Exempelfrågor om Adobe Analytics-data
 
-Data från utvalda rapportsviter från Adobe Analytics omvandlas till XDM ExperienceEvents och hämtas in i Adobe Experience Platform som datauppsättningar för er. I det här dokumentet beskrivs ett antal användningsfall där Adobe Experience Platform Query Service använder dessa data, och de inkluderade exempelfrågorna bör fungera med era Adobe Analytics-datauppsättningar. Mer information om mappning till XDM ExperienceEvents finns i dokumentationen [för mappning av](../../sources/connectors/adobe-applications/mapping/analytics.md) analysfält.
+Data från utvalda rapportsviter från Adobe Analytics omvandlas till XDM [!DNL ExperienceEvents] och hämtas till Adobe Experience Platform som datauppsättningar åt dig. I det här dokumentet beskrivs ett antal användningsfall där Adobe Experience Platform använder dessa data och där de inkluderade exempelfrågorna ska fungera med dina Adobe Analytics-datauppsättningar. [!DNL Query Service] Mer information om mappning till XDM finns i dokumentationen [för fältmappning i](../../sources/connectors/adobe-applications/mapping/analytics.md) Analytics [!DNL ExperienceEvents].
 
 ## Komma igång
 
@@ -126,9 +129,9 @@ ORDER BY Hour;
 
 ## Marknadsföringsvariabler (produktsyntax)
 
-I Adobe Analytics kan data på produktnivå samlas in via specialkonfigurerade variabler som kallas&quot;Merchandising Variables&quot;. Dessa baseras antingen på en eVar- eller anpassad händelse. Skillnaden mellan dessa variabler och deras standardanvändning är att de representerar ett separat värde för varje produkt som hittas i träffen i stället för bara ett enda värde för träffen. Dessa variabler kallas för produktsyntaxvariabler. Detta gör det möjligt att samla in information som&quot;rabattbelopp&quot; per produkt eller information om produktens&quot;plats på sidan&quot; i kundens sökresultat.
+I Adobe Analytics kan man samla in data på produktnivå med hjälp av särskilt konfigurerade variabler som kallas&quot;Merchandising Variables&quot;. Dessa baseras antingen på en eVar- eller anpassad händelse. Skillnaden mellan dessa variabler och deras standardanvändning är att de representerar ett separat värde för varje produkt som hittas i träffen i stället för bara ett enda värde för träffen. Dessa variabler kallas för produktsyntaxvariabler. Detta gör det möjligt att samla in information som&quot;rabattbelopp&quot; per produkt eller information om produktens&quot;plats på sidan&quot; i kundens sökresultat.
 
-Här är XDM-fälten för att få åtkomst till försäljningsvariablerna i Analytics-datauppsättningen:
+Här är XDM-fälten för att komma åt de variabler som ingår i din [!DNL Analytics] datauppsättning:
 
 ### eVars
 
@@ -162,7 +165,7 @@ WHERE _ACP_YEAR=2019 AND _ACP_MONTH=7 AND _ACP_DAY=23
 LIMIT 10
 ```
 
-Nästa fråga &#39;exploderar&#39; `productListItems` och returnerar varje eVar- och -händelse som handlar per produkt. Fältet `_id` inkluderas för att visa relationen till den ursprungliga träffen. Värdet `_id` är en unik primärnyckel i ExperienceEvent-datamängden.
+Nästa fråga &#39;exploderar&#39; `productListItems` och returnerar varje eVar- och -händelse som handlar per produkt. Fältet `_id` inkluderas för att visa relationen till den ursprungliga träffen. Värdet `_id` är en unik primärnyckel i [!DNL ExperienceEvent] datauppsättningen.
 
 ```sql
 SELECT
@@ -192,7 +195,7 @@ ERROR: ErrorCode: 08P01 sessionId: XXXX queryId: XXXX Unknown error encountered.
 
 ## Marknadsföringsvariabler (konverteringssyntax)
 
-En annan typ av en Merchandising-variabel som finns i Adobe Analytics är Konverteringssyntax. Med produktsyntax samlas värdet in samtidigt som produkten, men detta kräver att data finns på samma sida. Det finns scenarier där data förekommer på en sida före konverteringen eller den händelse av intresse som är relaterad till produkten. Ta till exempel ett exempel till exempel ett exempel på hur rapportmetoden för produktsökning används.
+En annan typ av en Merchandising-variabel som finns i Adobe Analytics är Conversion Syntax. Med produktsyntax samlas värdet in samtidigt som produkten, men detta kräver att data finns på samma sida. Det finns scenarier där data förekommer på en sida före konverteringen eller den händelse av intresse som är relaterad till produkten. Ta till exempel ett exempel till exempel ett exempel på hur rapportmetoden för produktsökning används.
 
 1. En användare utför och söker internt efter &quot;vinterhatt&quot;, vilket anger att Merchandising eVar6 har aktiverat för konverteringssyntaxen till &quot;intern sökning:vinterhatt&quot;
 2. Användaren klickar på&quot;våffelsbeanie&quot; och hamnar på produktinformationssidan.\
@@ -213,7 +216,7 @@ Vid rapporteringen kommer order, intäkter, produktvisningar och kundvagnstillä
 | intern sökning:sommarskjorta | 19.99 | 1 | 1 | 1 |
 | intern sökning:vintertid | 12.99 | 1 | 1 | 1 |
 
-Här är XDM-fälten som skapar konverteringssyntaxen i Analytics-datauppsättningen:
+Här är XDM-fälten som skapar konverteringssyntaxen i din [!DNL Analytics] datauppsättning:
 
 ### eVars
 
