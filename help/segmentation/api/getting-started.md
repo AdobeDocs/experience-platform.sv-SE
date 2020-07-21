@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Utvecklarhandbok för segmenteringstjänst
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: aff81a4f3243ef77cbdfc776220a5de46e360084
+source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
 workflow-type: tm+mt
-source-wordcount: '305'
+source-wordcount: '288'
 ht-degree: 0%
 
 ---
@@ -14,24 +14,24 @@ ht-degree: 0%
 
 # Getting started with [!DNL Segmentation Service] {#getting-started}
 
-Med Adobe Experience Platform segmenteringstjänst kan ni skapa segment och generera målgrupper i Adobe Experience Platform utifrån era [!DNL Real-time Customer Profile] data.
+Med Adobe Experience Platform [!DNL Segmentation Service] kan ni skapa segment och generera målgrupper i Adobe Experience Platform utifrån era [!DNL Real-time Customer Profile] data.
 
-Utvecklarhandboken kräver en fungerande förståelse av de olika Experience Platform-tjänster som används [!DNL Segmentation Service].
+Utvecklarhandboken kräver en fungerande förståelse av de olika [!DNL Experience Platform] tjänster som används [!DNL Segmentation Service].
 
-- [!DNL Segmentation](../home.md): Gör att ni kan bygga målgruppssegment utifrån kundprofildata i realtid.
-- [!DNL Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
+- [!DNL Segmentation](../home.md): Gör att ni kan skapa målgruppssegment utifrån [!DNL Real-time Customer Profile] data.
+- [!DNL Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
 - [!DNL Real-time Customer Profile](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-- [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+- [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna arbeta med [!DNL Segmentation] API:t.
 
 ## Läser exempel-API-anrop
 
-API-dokumentationen innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. [!DNL Segmentation Service] Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+API-dokumentationen innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. [!DNL Segmentation Service] Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
 
 ## Obligatoriska rubriker
 
-API-dokumentationen kräver också att du har slutfört [autentiseringssjälvstudiekursen](../../tutorials/authentication.md) för att kunna anropa Platform-slutpunkter. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i Experience Platform API-anrop, vilket visas nedan:
+API-dokumentationen kräver också att du har slutfört [autentiseringssjälvstudiekursen](../../tutorials/authentication.md) för att kunna anropa [!DNL Platform] slutpunkter. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - Behörighet: `Bearer {ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
