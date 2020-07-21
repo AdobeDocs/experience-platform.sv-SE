@@ -4,15 +4,15 @@ seo-title: Amazon Kinesis-mål
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 seo-description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: e93bfc028d5e23c3add55677c4003ca549a902c6
+source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
 workflow-type: tm+mt
-source-wordcount: '458'
+source-wordcount: '442'
 ht-degree: 0%
 
 ---
 
 
-# (Beta) Amazon Kinesis-mål
+# (Beta) [!DNL Amazon Kinesis] -mål
 
 
 >[!IMPORTANT]
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Med Amazons webbtjänste kan du samla in och bearbeta stora dataströmmar i realtid. [!DNL Kinesis Data Streams]
+Med den här [!DNL Kinesis Data Streams] tjänsten [!DNL Amazon Web Services] kan ni samla in och bearbeta stora dataströmmar i realtid.
 
 Du kan skapa en utgående anslutning i realtid till ditt [!DNL Amazon Kinesis] lagringsutrymme för att strömma data från Adobe Experience Platform.
 
@@ -34,9 +34,9 @@ Du kan skapa en utgående anslutning i realtid till ditt [!DNL Amazon Kinesis] l
 
 ## Användningsexempel {#use-cases}
 
-Genom att använda direktuppspelningsmål som Amazon Kinesis kan du enkelt mata in segmenteringshändelser med högt värde och associerade profilattribut i dina valfria system.
+Genom att använda direktuppspelningsmål som [!DNL Amazon Kinesis]kan du enkelt mata in segmenteringshändelser med högt värde och associerade profilattribut i dina valfria system.
 
-En potentiell kund har till exempel laddat ned ett vitt papper som kvalificerar dem till ett segment med&quot;hög benägenhet att konvertera&quot;. Genom att mappa segmentet som den potentiella kunden hamnar i till Amazon Kinesis-målet får du den här händelsen i Amazon Kinesis. Där kan ni använda en&quot;do-it-self&quot;-strategi och beskriva affärslogiken utöver evenemanget, som ni tror fungerar bäst med företagets IT-system.
+En potentiell kund har till exempel laddat ned ett vitt papper som kvalificerar dem till ett segment med&quot;hög benägenhet att konvertera&quot;. Genom att mappa segmentet som den potentiella kunden hamnar i till [!DNL Amazon Kinesis] målet får du den här händelsen i [!DNL Amazon Kinesis]. Där kan ni använda en&quot;do-it-self&quot;-strategi och beskriva affärslogiken utöver evenemanget, som ni tror fungerar bäst med företagets IT-system.
 
 ## Koppla mål {#connect-destination}
 
@@ -46,7 +46,7 @@ Ange följande information i arbetsflödet för att skapa mål för [!DNL Amazon
 
 ### I autentiseringssteget {#authentication-step}
 
-* **Åtkomstnyckel och hemlig nyckel** för Amazon Web Services: Generera [!DNL Amazon Web Services]i stället en åtkomstnyckel - nyckelpar för hemlig åtkomst som ger Adobe CDP-åtkomst i realtid till ditt [!DNL Amazon Kinesis] konto. Läs mer i [Amazons webbtjänstdokumentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+* **[!DNL Amazon Web Services]åtkomstnyckel och hemlig nyckel **: Generera[!DNL Amazon Web Services]i stället en åtkomstnyckel - nyckelpar för hemlig åtkomst som ger Adobe CDP-åtkomst i realtid till ditt[!DNL Amazon Kinesis]konto. Läs mer i[Amazons webbtjänstdokumentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 * **region**: Ange vilken [!DNL Amazon Web Services] region data ska strömmas till.
 
 ![Inmatningsfält i kontosteget](/help/rtcdp/destinations/assets/aws-kinesis-account-step.png)
@@ -73,7 +73,7 @@ Mer information om arbetsflödet för [aktivering finns i Aktivera profiler och 
 
 ## Exporterade data {#exported-data}
 
-Dina exporterade Experience Platform-data markeras [!DNL Amazon Kinesis] i JSON-format. Händelsen nedan innehåller till exempel e-postadressprofilattributet för en målgrupp som har kvalificerat sig för ett visst segment och avslutat ett annat segment. Identiteterna för den här potentiella kunden är ECID och e-post.
+Dina exporterade [!DNL Experience Platform] data markeras [!DNL Amazon Kinesis] i JSON-format. Händelsen nedan innehåller till exempel e-postadressprofilattributet för en målgrupp som har kvalificerat sig för ett visst segment och avslutat ett annat segment. Identiteterna för den här potentiella kunden är ECID och e-post.
 
 ```
 {
