@@ -1,33 +1,36 @@
 ---
 title: Anropa taggtillägg
 seo-title: Anropa taggtillägg
-description: Tillägget för anropstaggar är en röst för kundens mål i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Tillägget Invoca Tags är en röst för kundens mål i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: null
 translation-type: tm+mt
-source-git-commit: 2eddd5bb7b62dcc414ad906647b05ce10c766ac6
+source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+workflow-type: tm+mt
+source-wordcount: '523'
+ht-degree: 2%
 
 ---
 
 
-# Anropa taggtillägg {#invoca-extension}
+# [!DNL Invoca Tags] extension {#invoca-extension}
 
 ## Översikt {#overview}
 
-Invoca ger samtalsdata och röstinsikter in i den digitala kundresan. Med Invocas plattform för samtalsanalys har marknadsförarna äntligen analyser som mäter samtalsresultaten och kopplar offline-konverteringar tillbaka till digital investering.
+[!DNL Invoca] för in samtalsdata och röstinsikter i den digitala kundresan. Med [!DNL Invoca’s] en plattform för samtalsanalys har marknadsförarna äntligen analyser för att mäta samtalsresultat och koppla offline-konverteringar tillbaka till digitala utgifter.
 
-Invoca Tags är en röst för kundens tillägg i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100067.invoca.html).
+[!DNL Invoca Tags] är en röst för kundens tillägg i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100067.invoca.html).
 
-Det här målet är ett Experience Platform Launch-tillägg. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
+Det här målet har tillägget Experience Platform Launch. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [](/help/rtcdp/destinations/experience-platform-launch-extensions.md)Experience Platform Launch-tillägg.
 
 ## Förutsättningar {#prerequisites}
 
-Det här tillägget är tillgängligt i målkatalogen för alla kunder som har köpt Adobe CDP i realtid.
+Det här tillägget är tillgängligt i [!DNL Destinations] katalogen för alla kunder som har köpt Adobe CDP i realtid.
 
-Om du vill använda det här tillägget måste du ha tillgång till Experience Platform Launch. Experience Platform Launch erbjuds Adobe Experience Cloud-kunder som en inkluderad, värdeskapande funktion. Kontakta din organisations administratör för att få åtkomst till Launch och be dem att ge dig behörighet att installera tillägg så att du kan installera dem **[!UICONTROL manage_properties]** .
+Om du vill använda det här tillägget måste du ha tillgång till Experience Platform Launch. Experience Platform Launch erbjuds Adobe Experience Cloud-kunder som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till Launch och be dem att ge dig behörighet att installera tillägg så att du kan installera dem **[!UICONTROL manage_properties]** .
 
 ## Installera tillägg {#install-extension}
 
-Så här installerar du tillägget Invoca Tags:
+Så här installerar du [!DNL Invoca Tags] tillägget:
 
 1. Gå till [Adobe Real-time CDP-gränssnittet](http://platform.adobe.com/)**[!UICONTROL Destinations > Catalog]**.
 2. Välj tillägget i katalogen eller använd sökfältet.
