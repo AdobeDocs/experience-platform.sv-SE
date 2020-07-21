@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Ersätta ett objekt
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '141'
+source-wordcount: '138'
 ht-degree: 0%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 0%
 
 # Ersätta ett objekt
 
-Du kan skriva över innehållet i ett Catalog-objekt med en PUT-begäran, där hela resursen ersätts med nyttolasten för begäran.
+Du kan skriva över innehållet i ett [!DNL Catalog] objekt med en PUT-begäran, där hela resursen ersätts med den begärda nyttolasten.
 
 >[!NOTE]
 >
->Om du bara behöver uppdatera ett fåtal specifika fält i ett Catalog-objekt kan det vara mer effektivt att använda en PATCH-begäran.
+>Om du bara behöver uppdatera ett fåtal specifika fält i ett [!DNL Catalog] objekt kan det vara mer effektivt att använda en PATCH-begäran.
 
 **API-format**
 
@@ -28,7 +28,7 @@ PUT /{OBJECT_TYPE}/{OBJECT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Den typ av katalogobjekt som ska ersättas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog] objekt som ska ersättas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{OBJECT_ID}` | Identifieraren för det specifika objekt som du vill uppdatera. |
 
 **Begäran**
