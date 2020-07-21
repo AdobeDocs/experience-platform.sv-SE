@@ -1,37 +1,40 @@
 ---
 title: Qualtrics-tillägg för webbplatsfeedback
 seo-title: Qualtrics-tillägg för webbplatsfeedback
-description: Tillägget Qualtrics Website Feedback är ett undersökningsmål i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Qualtrics Website Feedback är ett undersökningsmål i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Tillägget Qualtrics Website Feedback är ett undersökningsmål i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: Tillägget Qualtrics Website Feedback är ett undersökningsmål i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+workflow-type: tm+mt
+source-wordcount: '600'
+ht-degree: 2%
 
 ---
 
 
-# Qualtrics Web site Feedback Extension {#qualtrics-extension}
+# [!DNL Qualtrics Website Feedback] Tillägg {#qualtrics-extension}
 
 ## Översikt {#overview}
 
-Med Qualtrics Website Feedback kan du engagera besökarna på webbplatsen med rätt budskap vid rätt tidpunkt. Vare sig du vill förbättra besökarupplevelsen med hjälp av webbplatsens feedbackenkäter eller öka konverteringsgraden, så har Qualtrics Website Feedback det som behövs.
+[!DNL Qualtrics Website Feedback] gör att ni kan engagera besökarna på webbplatsen med rätt budskap vid rätt tidpunkt. Oavsett om ni vill förbättra besökarupplevelsen med hjälp av webbplatsens feedbackenkäter eller öka konverteringsgraden [!DNL Qualtrics Website Feedback] så har ni det som behövs.
 
 Skapa och distribuera välriktade, varumärkesanpassade webbmeddelanden på några minuter med ett intuitivt musstyrt gränssnitt. De data och insikter ni samlar in från er webbplats möts av kundfeedback i alla kanaler, vilket ger en fullständig bild av kundupplevelsen - allt på en och samma plattform.
 
-Qualtrics Website Feedback är ett undersökningstillägg i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101569.qualtrics-website-feedback.html).
+[!DNL Qualtrics Website Feedback] är ett enkättillägg i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101569.qualtrics-website-feedback.html).
 
-Det här målet är ett Experience Platform Launch-tillägg. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
+Det här målet har tillägget Experience Platform Launch. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [](/help/rtcdp/destinations/experience-platform-launch-extensions.md)Experience Platform Launch-tillägg.
 
 ![Qualtrics Web site Feedback Extension](assets/qualtrics-extension.png)
 
 ## Förutsättningar {#prerequisites}
 
-Det här tillägget är tillgängligt i målkatalogen för alla kunder som har köpt Adobe CDP i realtid.
+Det här tillägget är tillgängligt i [!DNL Destinations] katalogen för alla kunder som har köpt Adobe CDP i realtid.
 
-Om du vill använda det här tillägget måste du ha tillgång till Experience Platform Launch. Experience Platform Launch erbjuds Adobe Experience Cloud-kunder som en inkluderad, värdeskapande funktion. Kontakta din organisations administratör för att få åtkomst till Launch och be dem att ge dig behörighet att installera tillägg så att du kan installera dem **[!UICONTROL manage_properties]** .
+Om du vill använda det här tillägget måste du ha tillgång till Experience Platform Launch. Experience Platform Launch erbjuds Adobe Experience Cloud-kunder som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till Launch och be dem att ge dig behörighet att installera tillägg så att du kan installera dem **[!UICONTROL manage_properties]** .
 
 ## Installera tillägg {#install-extension}
 
-Så här installerar du tillägget Qualtrics Website Feedback:
+Så här installerar du [!DNL Qualtrics Website Feedback] tillägget:
 
 1. Gå till [Adobe Real-time CDP-gränssnittet](http://platform.adobe.com/)**[!UICONTROL Destinations > Catalog]**.
 2. Välj tillägget i katalogen eller använd sökfältet.
