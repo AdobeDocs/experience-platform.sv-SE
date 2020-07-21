@@ -4,17 +4,17 @@ solution: Experience Platform
 title: Dataåtkomstöversikt
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '1367'
+source-wordcount: '1332'
 ht-degree: 0%
 
 ---
 
 
-# Fråga datauppsättningsdata med API för dataåtkomst
+# Fråga datauppsättningsdata med [!DNL Data Access] API
 
-I det här dokumentet finns en stegvis självstudiekurs som beskriver hur du hittar, hämtar och hämtar data som lagras i en datauppsättning med hjälp av API:t för dataåtkomst i Adobe Experience Platform. Du kommer också att få en introduktion till några av de unika funktionerna i API:t för dataåtkomst, till exempel sidindelning och partiella nedladdningar.
+I det här dokumentet finns en stegvis självstudiekurs som beskriver hur du hittar, får tillgång till och hämtar data som lagras i en datauppsättning med hjälp av [!DNL Data Access] API:t i Adobe Experience Platform. Du kommer också att få en introduktion till några av API:ts unika funktioner, till exempel sidindelning och partiella nedladdningar. [!DNL Data Access]
 
 ## Komma igång
 
@@ -24,23 +24,23 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -48,23 +48,23 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Sekvensdiagram
 
-Den här självstudien följer de steg som beskrivs i sekvensdiagrammet nedan och framhäver huvudfunktionerna i API:t för dataåtkomst.</br>
+Den här självstudien följer de steg som beskrivs i sekvensdiagrammet nedan och framhäver kärnfunktionen i [!DNL Data Access] API:t.</br>
 ![](../images/sequence_diagram.png)
 
-Med Catalog API kan du hämta information om grupper och filer. Med API:t för dataåtkomst kan du komma åt och hämta dessa filer via HTTP som antingen fullständiga eller partiella hämtningar, beroende på filens storlek.
+Med [!DNL Catalog] API kan du hämta information om grupper och filer. Med [!DNL Data Access] API kan du komma åt och hämta dessa filer via HTTP som antingen fullständiga eller partiella hämtningar, beroende på filens storlek.
 
 ## Hitta data
 
-Innan du kan börja använda API:t för dataåtkomst måste du identifiera platsen för de data som du vill komma åt. I katalog-API:t finns det två slutpunkter som du kan använda för att bläddra bland en organisations metadata och hämta ID:t för en grupp eller fil som du vill komma åt:
+Innan du kan börja använda API:t måste du identifiera platsen för de data som du vill komma åt. [!DNL Data Access] I [!DNL Catalog] API:t finns det två slutpunkter som du kan använda för att bläddra bland en organisations metadata och hämta ID:t för en grupp eller fil som du vill komma åt:
 
 - `GET /batches`: Returnerar en lista över batchar i din organisation
 - `GET /dataSetFiles`: Returnerar en lista med filer under din organisation
 
-En fullständig lista över slutpunkter i katalog-API:t finns i [API-referensen](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml).
+En fullständig lista över slutpunkter i [!DNL Catalog] API finns i [API-referensen](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml).
 
 ## Hämta en lista över batchar under IMS-organisationen
 
-Med hjälp av katalog-API:t kan du returnera en lista över grupper i din organisation:
+Med hjälp av [!DNL Catalog] API:t kan du returnera en lista över grupper i din organisation:
 
 **API-format**
 
@@ -195,7 +195,7 @@ En fullständig lista över parametrar och filter finns i [Catalog API-referense
 
 ## Hämta en lista med alla filer som tillhör en viss grupp
 
-Nu när du har ID:t för gruppen som du vill komma åt kan du använda API:t för dataåtkomst för att få en lista över filer som tillhör gruppen.
+Nu när du har ID:t för gruppen som du vill komma åt kan du använda API:t för att få en lista över filer som hör till gruppen. [!DNL Data Access]
 
 **API-format**
 
@@ -252,7 +252,7 @@ Svaret innehåller en datamatris som visar alla filer i den angivna gruppen. Fil
 
 ## Åtkomst till en fil med ett fil-ID
 
-När du har ett unikt fil-ID kan du använda API:t för dataåtkomst för att få tillgång till specifik information om filen, inklusive filens namn, storlek i byte och en länk för att hämta den.
+När du har ett unikt fil-ID kan du använda API:t för att få tillgång till specifik information om filen, inklusive filens namn, storlek i byte och en länk för att hämta den. [!DNL Data Access]
 
 **API-format**
 
@@ -385,7 +385,7 @@ Svarshuvuden innehåller metadata för den efterfrågade filen, inklusive:
 
 ## Åtkomst till innehållet i en fil
 
-Du kan även komma åt innehållet i en fil med hjälp av API:t för dataåtkomst.
+Du kan även komma åt innehållet i en fil med hjälp av [!DNL Data Access] API:t.
 
 **API-format**
 
@@ -414,7 +414,7 @@ Ett godkänt svar returnerar filens innehåll.
 
 ## Hämta delar av innehållet i en fil
 
-Med API:t för dataåtkomst kan du hämta filer i segment. Du kan ange en intervallrubrik under en `GET /files/{FILE_ID}` begäran om att hämta ett visst intervall med byte från en fil. Om intervallet inte anges hämtas hela filen som standard av API:t.
+Med API:t [!DNL Data Access] kan du hämta filer i segment. Du kan ange en intervallrubrik under en `GET /files/{FILE_ID}` begäran om att hämta ett visst intervall med byte från en fil. Om intervallet inte anges hämtas hela filen som standard av API:t.
 
 HEAD-exemplet i det [föregående avsnittet](#retrieve-the-metadata-of-a-file) visar storleken på en viss fil i byte.
 
@@ -454,7 +454,7 @@ Svarstexten innehåller de första 100 byten i filen (enligt vad som anges i sid
 
 ## Konfigurera API-svarssidnumrering
 
-Svaren i API:t för dataåtkomst är sidnumrerade. Som standard är det maximala antalet poster per sida 100. Sidindelningsparametrar kan användas för att ändra standardbeteendet.
+Svaren i API:t [!DNL Data Access] numreras. Som standard är det maximala antalet poster per sida 100. Sidindelningsparametrar kan användas för att ändra standardbeteendet.
 
 - `limit`: Du kan ange antalet poster per sida enligt dina krav med hjälp av parametern &quot;limit&quot;.
 - `start`: Förskjutningen kan anges med frågeparametern &quot;start&quot;.
