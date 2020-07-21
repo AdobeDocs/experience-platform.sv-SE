@@ -4,20 +4,23 @@ solution: Experience Platform
 title: Tillgängliga mått
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: ff299a69a81f00cad3e90a83f7411e4b15d4f850
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+workflow-type: tm+mt
+source-wordcount: '878'
+ht-degree: 2%
 
 ---
 
 
 # Lista över tillgängliga mätvärden
 
-I följande tabeller visas alla mätvärden som visas av observabilitetsinsikter, uppdelade efter plattformstjänst. Varje mätvärde innehåller en beskrivning och en godkänd ID-frågeparameter.
+I följande tabeller visas alla mätvärden som exponeras av observabilitetsinsikter, uppdelade efter [!DNL Platform] tjänst. Varje mätvärde innehåller en beskrivning och en godkänd ID-frågeparameter.
 
-## Dataintag
+## [!DNL Data Ingestion]
 
-I följande tabell visas mätvärden för datainmatning i Adobe Experience Platform. Mätvärden i **fet stil** är mätvärden för direktuppspelad konsumtion.
+I följande tabell visas måtten för Adobe Experience Platform [!DNL Data Ingestion]. Mätvärden i **fet stil** är mätvärden för direktuppspelad konsumtion.
 
-| Insikter - mått | Beskrivning | ID-frågeparameter |
+| Insikter - mått  | Beskrivning | ID-frågeparameter |
 | ---- | ---- | ---- |
 | timeseries.ingestion.dataset.new.count | Totalt antal datauppsättningar som skapats. | Ej tillämpligt |
 | timeseries.ingestion.dataset.size | Kumulativ storlek för alla data som har importerats för en datauppsättning eller för alla datauppsättningar. | Datauppsättnings-ID (valfritt) |
@@ -41,14 +44,14 @@ I följande tabell visas mätvärden för datainmatning i Adobe Experience Platf
 | **timeseries.data.collection.inlet.success** | Totalt antal lyckade HTTP-anrop till ett dataintag eller till alla datainmatningar. | Intag-ID (valfritt) |
 | **timeseries.data.collection.inlet.error** | Totalt antal misslyckade HTTP-anrop till en datainmatning eller till alla datainmatningar. | Intag-ID (valfritt) |
 
-## Identitetstjänst
+## [!DNL Identity Service]
 
-I följande tabell visas mätvärden för Adobe Experience Platform Identity Service.
+I följande tabell visas måtten för Adobe Experience Platform [!DNL Identity Service].
 
-| Insikter - mått | Beskrivning | ID-frågeparameter |
+| Insikter - mått  | Beskrivning | ID-frågeparameter |
 | ---- | ---- | ---- |
-| timeseries.identity.dataset.recordsuccess.count | Antal poster som skrivits till datakällan av identitetstjänsten, för en datauppsättning eller alla datauppsättningar. | Datauppsättnings-ID (valfritt) |
-| timeseries.identity.dataset.recordfailed.count | Antal poster som misslyckades av identitetstjänsten, för en datauppsättning eller för alla datauppsättningar. | Datauppsättnings-ID (valfritt) |
+| timeseries.identity.dataset.recordsuccess.count | Antal poster som skrivits till datakällan av [!DNL Identity Service], för en datauppsättning eller alla datauppsättningar. | Datauppsättnings-ID (valfritt) |
+| timeseries.identity.dataset.recordfailed.count | Antal poster som misslyckades av [!DNL Identity Service], för en datamängd eller för alla datamängder. | Datauppsättnings-ID (valfritt) |
 | timeseries.identity.dataset.namespacecode.recordsuccess.count | Antal identitetsposter som har importerats för ett namnområde. | Namnområdes-ID (**obligatoriskt**) |
 | timeseries.identity.dataset.namespacecode.recordfailed.count | Antal Identity-poster som misslyckades av ett namnutrymme. | Namnområdes-ID (**obligatoriskt**) |
 | timeseries.identity.dataset.namespacecode.recordskipped.count | Antal Identitetsposter som hoppats över av ett namnutrymme. | Namnområdes-ID (**obligatoriskt**) |
@@ -57,21 +60,21 @@ I följande tabell visas mätvärden för Adobe Experience Platform Identity Ser
 | timeseries.identity.graph.imsorg.numidgraphs.count | Antal unika diagramsymboler som lagras i identitetsdiagrammet för din IMS-organisation. | Ej tillämpligt |
 | timeseries.identity.graph.imsorg.graphstrength.uniqueidentities.count | Antal unika identiteter som lagras i identitetsdiagrammet för IMS-organisationen för en viss grafikstyrka (&quot;unknown&quot;,&quot;svag&quot; eller&quot;strong&quot;). | Diagramstyrka (**krävs**) |
 
-## Integritetstjänst
+## [!DNL Privacy Service]
 
-I följande tabell visas mätvärden för Adobe Experience Platform Privacy Service.
+I följande tabell visas måtten för Adobe Experience Platform [!DNL Privacy Service].
 
-| Insikter - mått | Beskrivning | ID-frågeparameter |
+| Insikter - mått  | Beskrivning | ID-frågeparameter |
 | ---- | ---- | ---- |
 | timeseries.gdpr.jobs.totaljobs.count | Totalt antal jobb skapade från GDPR. | ENV (**obligatoriskt**) |
 | timeseries.gdpr.jobs.completedjobs.count | Totalt antal slutförda jobb från GDPR. | ENV (**obligatoriskt**) |
 | timeseries.gdpr.jobs.errorjobs.count | Totalt antal feljobb från GDPR. | ENV (**obligatoriskt**) |
 
-## Frågetjänst
+## [!DNL Query Service]
 
-I följande tabell visas mätvärden för Adobe Experience Platform Query Service.
+I följande tabell visas måtten för Adobe Experience Platform [!DNL Query Service].
 
-| Insikter - mått | Beskrivning | ID-frågeparameter |
+| Insikter - mått  | Beskrivning | ID-frågeparameter |
 | ---- | ---- | ---- |
 | timeseries.queryservice.query.scheduleonce.count | Totalt antal icke återkommande schemalagda frågor. | Ej tillämpligt |
 | timeseries.queryservice.query.scheduledrecurring.count | Totalt antal återkommande schemalagda frågor. | Ej tillämpligt |
@@ -80,17 +83,17 @@ I följande tabell visas mätvärden för Adobe Experience Platform Query Servic
 | timeseries.queryservice.query.interactivequery.count | Totalt antal utförda interaktiva frågor. | Ej tillämpligt |
 | timeseries.queryservice.query.batchfrompsqlquery.count | Totalt antal utförda batchfrågor från PSQL. | Ej tillämpligt |
 
-## Kundprofil i realtid
+## [!DNL Real-time Customer Profile]
 
-I följande tabell visas mätvärden för kundprofil i realtid.
+I följande tabell visas måtten för [!DNL Real-time Customer Profile].
 
-| Insikter - mått | Beskrivning | ID-frågeparameter |
+| Insikter - mått  | Beskrivning | ID-frågeparameter |
 | ---- | ---- | ---- |
-| timeseries.profiles.dataset.recordread.count | Antal poster som har lästs från datasjön efter profil, för en datamängd eller för alla datamängder. | Datauppsättnings-ID (valfritt) |
-| timeseries.profiles.dataset.recordsuccess.count | Antal poster skrivna till datakällan per profil, för en datauppsättning eller för alla datauppsättningar. | Datauppsättnings-ID (valfritt) |
-| timeseries.profiles.dataset.recordfailed.count | Antal poster som misslyckades av profilen, för en datamängd eller för alla datamängder. | Datauppsättnings-ID (valfritt) |
-| timeseries.profiles.dataset.batchsuccess.count | Antal profilgrupper som har importerats för en datauppsättning eller för alla datauppsättningar. | Datauppsättnings-ID (valfritt) |
-| timeseries.profiles.dataset.batchfailed.count | Antal misslyckade profilbatchar för en datauppsättning eller för alla datauppsättningar. | Datauppsättnings-ID (valfritt) |
+| timeseries.profiles.dataset.recordread.count | Antal poster som har lästs från [!DNL Data Lake] av, [!DNL Profile]för en datauppsättning eller för alla datauppsättningar. | Datauppsättnings-ID (valfritt) |
+| timeseries.profiles.dataset.recordsuccess.count | Antal poster som skrivits till datakällan av [!DNL Profile], för en datamängd eller för alla datamängder. | Datauppsättnings-ID (valfritt) |
+| timeseries.profiles.dataset.recordfailed.count | Antal poster som misslyckades av [!DNL Profile], för en datamängd eller för alla datamängder. | Datauppsättnings-ID (valfritt) |
+| timeseries.profiles.dataset.batchsuccess.count | Antal [!DNL Profile] batchar som har importerats för en datamängd eller för alla datamängder. | Datauppsättnings-ID (valfritt) |
+| timeseries.profiles.dataset.batchfailed.count | Antal misslyckade [!DNL Profile] batchar för en datamängd eller för alla datamängder. | Datauppsättnings-ID (valfritt) |
 | platform.ups.ingest.streaming.request.m1_rate | Frekvens för inkommande begäran. | IMS-organisation |
 | platform.ups.ingest.streaming.access.put.success.m1_rate | Andelen lyckade intag. | IMS-organisation |
 | platform.ups.ingest.streaming.records.created.m15_rate | Frekvens för nya poster som har importerats för en datauppsättning. | Datauppsättnings-ID |
