@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe-definierade funktioner
 topic: queries
 translation-type: tm+mt
-source-git-commit: cc101b1a439408861961c6fcd0899ca7c48bfa04
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
 workflow-type: tm+mt
-source-wordcount: '292'
+source-wordcount: '287'
 ht-degree: 2%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 En av Adobes stora differentierande faktorer är att de förstår upplevelsedata och vad kunderna behöver kunna göra med dessa data. Du kan använda den här förståelsen för att skapa hjälpfunktioner som gör jobbet enklare.
 
-Det här dokumentet innehåller Adobes definierade funktioner (ADF) som stöder tre viktiga Analytics-aktiviteter:
+Det här dokumentet innehåller Adobe-definierade funktioner (ADF) som stöder tre viktiga [!DNL Analytics] aktiviteter:
 - [Yrkesställning](#sessionization)
 - [Attribuering](#attribution)
 - [Sökvägsanalys](#pathing)
@@ -91,13 +91,13 @@ Attribution är det sätt på vilket ni fördelar mätvärden eller konvertering
 
 I Adobe Analytics konfigureras attribueringsinställningar med variabler som eVars och genereras när data importeras.
 
-Attribution ADFs found in Query Service allow those allokations to be defined and generated at query time.
+Attribution-ADF:er i [!DNL Query Service] tillåter att allokeringarna definieras och genereras vid frågetiden.
 
 I det här exemplet fokuseras på attribuering med sista-beröringen, men Adobe erbjuder även attribuering med första-beröringen.
 
 >[!NOTE]
 >
->Andra alternativ med timeout och händelsebaserad förfallotid är tillgängliga i framtida versioner av Query Service.
+>Andra alternativ med timeout och händelsebaserad förfallotid är tillgängliga i framtida versioner av [!DNL Query Service].
 
 **Syntax:**
 
