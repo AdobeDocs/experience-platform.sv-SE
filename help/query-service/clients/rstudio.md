@@ -4,19 +4,19 @@ solution: Experience Platform
 title: Anslut med RStudio
 topic: connect
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
 workflow-type: tm+mt
-source-wordcount: '222'
+source-wordcount: '207'
 ht-degree: 2%
 
 ---
 
 
-# Anslut med RStudio
+# Anslut med [!DNL RStudio]
 
-Det här dokumentet går igenom stegen för att ansluta R Studio med Adobe Experience Platform Query Service.
+Det här dokumentet går igenom stegen för att ansluta R Studio till Adobe Experience Platform [!DNL Query Service].
 
-När du har installerat RStudio måste du först förbereda R-skriptet för att kunna använda PostgreSQL på *konsolskärmen* som visas.
+Efter installationen [!DNL RStudio]måste du först förbereda R-skriptet på *konsolskärmen* som visas [!DNL PostgreSQL].
 
 ```r
 install.packages("RPostgreSQL")
@@ -25,7 +25,7 @@ require("RPostgreSQL")
 require("rstudioapi")
 ```
 
-När du har förberett R-skriptet för användning av PostgreSQL kan du nu ansluta RStudio till Query Service genom att läsa in PostgreSQL-drivrutinen.
+När du har förberett R-skriptet [!DNL PostgreSQL]kan du ansluta [!DNL RStudio] till [!DNL Query Service] genom att läsa in [!DNL PostgreSQL] drivrutinen.
 
 ```r
 drv <- dbDriver("PostgreSQL")
@@ -45,11 +45,11 @@ con <- dbConnect(drv,
 
 >[!NOTE]
 >
->Mer information om hur du hittar databasnamn, värd, port och inloggningsuppgifter finns på [inloggningssidan i Platform](https://platform.adobe.com/query/configuration). Logga in på Platform, klicka på **Frågor** och klicka sedan på **Autentiseringsuppgifter** för att hitta dina inloggningsuppgifter.
+>Mer information om hur du hittar databasnamn, värd, port och inloggningsuppgifter finns på [inloggningssidan i Platform](https://platform.adobe.com/query/configuration). Logga in på, [!DNL Platform]klicka **[!UICONTROL Queries]** och klicka sedan på **[!UICONTROL Credentials]** för att hitta dina inloggningsuppgifter.
 
 ## Nästa steg
 
-Nu när du har anslutit till frågetjänsten kan du skriva frågor för att köra och redigera SQL-satser. Du kan till exempel använda `dbGetQuery(con, sql)` för att köra frågor, där `sql` är den SQL-fråga som du vill köra.
+Nu när du har anslutit till [!DNL Query Service]kan du skriva frågor för att köra och redigera SQL-satser. Du kan till exempel använda `dbGetQuery(con, sql)` för att köra frågor, där `sql` är den SQL-fråga som du vill köra.
 
 Följande fråga använder en datauppsättning som innehåller [ExperienceEvents](../creating-queries/experience-event-queries.md) och skapar ett histogram med sidvyer för en webbplats utifrån enhetens skärmhöjd.
 
