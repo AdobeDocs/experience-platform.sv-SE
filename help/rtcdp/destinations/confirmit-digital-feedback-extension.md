@@ -1,19 +1,22 @@
 ---
 title: Bekräfta tillägg för digital feedback
 seo-title: Bekräfta tillägg för digital feedback
-description: Tillägget Confirmit Digital Feedback är en röst för kundens mål i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Tillägget Confirmit Digital Feedback är en röst för kunddestinationen i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: null
 translation-type: tm+mt
-source-git-commit: ff91395844c239415123a33d65fa0deb2221ae25
+source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+workflow-type: tm+mt
+source-wordcount: '549'
+ht-degree: 2%
 
 ---
 
 
-# Bekräfta tillägg för digital feedback
+# [!DNL Confirmit Digital Feedback] Tillägg
 
 ## Översikt {#overview}
 
-Med en lösning för att bekräfta digital feedback kan ni omvandla er webbplatstrafik till realtidsinsikter. Med Confirmit kan du visa diskreta och målinriktade enkäter efter dina behov, vilket uppmuntrar besökarna att ge feedback, som:
+[!DNL Confirmit Digital Feedback] kan ni omvandla era webbplatstrafik till realtidsinsikter. Med [!DNL Confirmit]hjälp av diskreta och målinriktade enkäter kan du visa dem efter dina behov, vilket uppmuntrar besökarna att ge feedback, som:
 
 * Synpunkter på webbplatsen
 * Transaktionsnöjdhet
@@ -22,22 +25,22 @@ Med en lösning för att bekräfta digital feedback kan ni omvandla er webbplats
 * Generell kundnöjdhet
 * Och mycket mer
 
-Bekräfta digital feedback är en röst för kundens tillägg i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.103247.confirmit-digital-feedback-for-adobe-launch.html).
+[!DNL Confirmit] Digital feedback är en röst för kundens tillägg i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.103247.confirmit-digital-feedback-for-adobe-launch.html).
 
-Det här målet är ett Experience Platform Launch-tillägg. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
+Det här målet har tillägget Experience Platform Launch. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [](/help/rtcdp/destinations/experience-platform-launch-extensions.md)Experience Platform Launch-tillägg.
 
 
 ![Bekräfta tillägg för digital feedback](assets/confirmit-digital-feedback-extension.png)
 
 ## Förutsättningar {#prerequisites}
 
-Det här tillägget är tillgängligt i målkatalogen för alla kunder som har köpt Adobe CDP i realtid.
+Det här tillägget är tillgängligt i [!DNL Destinations] katalogen för alla kunder som har köpt Adobe CDP i realtid.
 
-Om du vill använda det här tillägget måste du ha tillgång till Experience Platform Launch. Experience Platform Launch erbjuds Adobe Experience Cloud-kunder som en inkluderad, värdeskapande funktion. Kontakta din organisations administratör för att få åtkomst till Launch och be dem att ge dig behörighet att installera tillägg så att du kan installera dem **[!UICONTROL manage_properties]** .
+Om du vill använda det här tillägget måste du ha tillgång till Experience Platform Launch. Experience Platform Launch erbjuds Adobe Experience Cloud-kunder som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till Launch och be dem att ge dig behörighet att installera tillägg så att du kan installera dem **[!UICONTROL manage_properties]** .
 
 ## Installera tillägg {#install-extension}
 
-Så här installerar du tillägget Bekräfta digital feedback:
+Så här installerar du tillägget [!DNL Confirmit] Digital Feedback:
 
 1. Gå till [Adobe Real-time CDP-gränssnittet](http://platform.adobe.com/)**[!UICONTROL Destinations > Catalog]**.
 2. Välj tillägget i katalogen eller använd sökfältet.
