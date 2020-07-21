@@ -4,9 +4,9 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobe Real-time Customer Data Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobe Real-time Customer Data Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: b1f8cbe245f73e31a8941fc45cefcee595968a70
+source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
 workflow-type: tm+mt
-source-wordcount: '989'
+source-wordcount: '983'
 ht-degree: 0%
 
 ---
@@ -36,6 +36,7 @@ Vi rekommenderar att ett av attributen är en [unik identifierare](/help/rtcdp/d
    >Om några dataanvändningsetiketter har tillämpats på vissa fält i en datauppsättning (i stället för på hela datauppsättningen), tillämpas dessa fältetiketter vid aktiveringen på följande villkor:
    >* Fälten används i segmentdefinitionen.
    >* Fälten konfigureras som projicerade attribut för målmålet.
+
    >
    > Titta på skärmbilden nedan. Om fältet till exempel `person.name.first.Name` hade vissa dataanvändningsetiketter som står i konflikt med målets användningsfall för marknadsföring, skulle du se en överträdelse av dataanvändningsprincipen i granskningssteget (steg 7). Mer information finns i [Datastyrning i CDP i realtid](/help/rtcdp/privacy/data-governance-overview.md#destinations)
 
@@ -56,7 +57,7 @@ Vi rekommenderar att ett av attributen är en [unik identifierare](/help/rtcdp/d
    ![Förmåns-ID som identitet](/help/rtcdp/destinations/assets/rewardsid-as-identity.gif)
 
 
-   Välj `Email_LC_SHA256` som målidentitet om du hashas i kundens e-postadresser vid dataöverföring till Adobe Experience Platform, enligt Facebooks [e-posthashkrav](/help/rtcdp/destinations/facebook-destination.md#email-hashing-requirements). <br> Välj `Email` som målidentitet om e-postadresserna du använder inte är hashas. Adobe CDP i realtid hash-kodar e-postadresserna så att de uppfyller Facebooks krav.
+   Välj `Email_LC_SHA256` som målidentitet om du har hashas kundens e-postadresser när data hämtas till Adobe Experience Platform, enligt [!DNL Facebook] e- [posthashkraven](/help/rtcdp/destinations/facebook-destination.md#email-hashing-requirements). <br> Välj `Email` som målidentitet om e-postadresserna du använder inte är hashas. Adobe CDP i realtid hash-kodar e-postadresserna så att de uppfyller [!DNL Facebook] kraven.
 
    ![identitetsmappning efter att fält fyllts i](/help/rtcdp/destinations/assets/identity-mapping.png)
 
@@ -112,11 +113,11 @@ Kontrollera respektive annonsmål som du aktiverar dina data till. Om aktivering
 
 ### Målgrupper i sociala nätverk
 
-För Facebook innebär en lyckad aktivering att en anpassad Facebook-målgrupp skapas programmatiskt i [Facebook Ads Manager](https://www.facebook.com/adsmanager/manage/). Segmentmedlemskap i målgruppen skulle läggas till och tas bort eftersom användarna är kvalificerade eller diskvalificerade för de aktiverade segmenten.
+En lyckad aktivering [!DNL Facebook]innebär att en [!DNL Facebook] anpassad målgrupp skapas programmatiskt i [Facebook Ads Manager](https://www.facebook.com/adsmanager/manage/). Segmentmedlemskap i målgruppen skulle läggas till och tas bort eftersom användarna är kvalificerade eller diskvalificerade för de aktiverade segmenten.
 
 >[!TIP]
 >
->Integrationen mellan Adobe Real-time CDP och Facebook har stöd för historiska efterfyllningar av målgrupper. Alla historiska segmentkvalifikationer skickas till Facebook när du aktiverar segmenten till målet.
+>Integrationen mellan Adobe Real-time CDP och [!DNL Facebook] stöder historiska efterfyllningar av målgrupper. Alla historiska segmentkvalifikationer skickas till [!DNL Facebook] när du aktiverar segmenten till målet.
 
 ## Inaktivera aktivering {#disable-activation}
 
