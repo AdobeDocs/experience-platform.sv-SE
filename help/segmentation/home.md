@@ -4,17 +4,17 @@ solution: Experience Platform
 title: Segmenteringstjänsten Adobe Experience Platform
 topic: overview
 translation-type: tm+mt
-source-git-commit: f44e42a4faa3b10f147dbaf929048054ce0bec42
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
 workflow-type: tm+mt
-source-wordcount: '1986'
+source-wordcount: '1971'
 ht-degree: 0%
 
 ---
 
 
-# Översikt över segmenteringstjänsten Adobe Experience Platform
+# Adobe Experience Platform - [!DNL Segmentation Service] översikt
 
-Adobe Experience Platform segmenteringstjänst tillhandahåller ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper utifrån dina [!DNL Real-time Customer Profile] data. Dessa segment konfigureras och underhålls centralt på Platform och är tillgängliga via alla Adobes lösningar.
+Adobe Experience Platform [!DNL Segmentation Service] har ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper utifrån dina [!DNL Real-time Customer Profile] data. Dessa segment konfigureras och underhålls centralt [!DNL Platform]och är tillgängliga via alla Adobes lösningar.
 
 Det här dokumentet innehåller en översikt över [!DNL Segmentation Service] och vilken roll det spelar i Adobe Experience Platform.
 
@@ -78,7 +78,7 @@ När du skapar ett nytt segment måste du ange ett segmentnamn. Segmentnamnet an
 
 ### Sammanfoga profiler
 
-Sammanslagningspolicyer är regler som används för [!DNL Profile] att bestämma hur data ska prioriteras och kombineras till en enhetlig vy under vissa villkor.
+Sammanslagningsprinciper är regler som används för [!DNL Profile] att bestämma hur data ska prioriteras och kombineras till en enhetlig vy under vissa villkor.
 Om ingen sammanfogningsprincip har definierats används standardprincipen för [!DNL Platform] sammanfogning. Om du hellre vill använda en sammanfogningspolicy som är specifik för din organisation, kan du skapa en egen och markera den som din organisations standardpolicy.
 
 Mer information om sammanfogningsprinciper finns i guiden [för](../profile/api/merge-policies.md)sammanfogningsprinciper.
@@ -128,7 +128,7 @@ Genom att tilldela en variabel till inköpsattributet förenklar ditt dynamiska 
 
 ## Segmentering för flera enheter {#multi-entity}
 
-Med den avancerade funktionen för segmentering av flera enheter kan du skapa segment med hjälp av flera XDM-klasser och på så sätt lägga till tillägg till personscheman. Det innebär att segmenteringstjänsten kan komma åt ytterligare fält under segmentdefinitionen som om de vore inbyggda i profildatalagret.
+Med den avancerade funktionen för segmentering av flera enheter kan du skapa segment med hjälp av flera XDM-klasser och på så sätt lägga till tillägg till personscheman. Det innebär att [!DNL Segmentation Service] kan få åtkomst till ytterligare fält under segmentdefinitionen som om de vore inbyggda i profildatalagret.
 
 Multientitetssegmentering ger den flexibilitet som behövs för att identifiera målgrupper baserat på data som är relevanta för företagets behov. Denna process kan utföras snabbt och enkelt utan att man behöver ha expertis i databasfrågor. På så sätt kan ni lägga till nyckeldata i era segment utan att behöva göra kostsamma ändringar i dataströmmar eller vänta på en datasammanfogning.
 
@@ -140,7 +140,7 @@ Följande video är avsedd att ge stöd för din förståelse av segmentering f�
 
 För att illustrera värdet av den här avancerade segmenteringsfunktionen bör du överväga en dataarkitekt som samarbetar med en marknadsförare.
 
-I det här exemplet sammanfogar dataarkitekten data för en individ (som består av scheman med den individuella XDM-profilen och XDM ExperienceEvent som basklasser) till en annan klass med hjälp av en nyckel. När de är anslutna kan dataarkitekten eller marknadsföraren använda dessa nya fält under segmentdefinitionen som om de vore inbyggda i basklassens schema.
+I det här exemplet förenar dataarkitekten data för en individ (som består av scheman med [!DNL XDM Individual Profile] och [!DNL XDM ExperienceEvent] som basklasser) till en annan klass med hjälp av en nyckel. När de är anslutna kan dataarkitekten eller marknadsföraren använda dessa nya fält under segmentdefinitionen som om de vore inbyggda i basklassens schema.
 
 **Problemet**
 
@@ -154,7 +154,7 @@ Datasektionens resurser omfattar tillgång till webbdata från kundsurfning samt
 >
 >I det här exemplet antar vi att dataarkitekten redan har upprättat ett ID-namnutrymme.
 
-Med API:t kopplar dataarkitekten nyckeln från ExperienceEvent-schemat till klassen&quot;products&quot;. Om du gör det kan dataarkitekten använda ytterligare fält från klassen&quot;products&quot; som om de vore inbyggda i ExperienceEvent-schemat. Som det sista steget i konfigurationsarbetet måste dataarkitekten överföra rätt data till [!DNL Real-time Customer Profile]. Detta görs genom att aktivera datauppsättningen&quot;products&quot; för användning med [!DNL Profile]. När konfigurationen är klar kan antingen dataarkitekten eller marknadsföraren skapa målsegmentet i [!DNL Segment Builder].
+Med API:t kopplar dataarkitekten nyckeln från [!DNL ExperienceEvent] schemat till klassen&quot;products&quot;. På så sätt kan dataarkitekten använda de extra fälten från klassen&quot;products&quot; som om de vore inbyggda i [!DNL ExperienceEvent] schemat. Som det sista steget i konfigurationsarbetet måste dataarkitekten överföra rätt data till [!DNL Real-time Customer Profile]. Detta görs genom att aktivera datauppsättningen&quot;products&quot; för användning med [!DNL Profile]. När konfigurationen är klar kan antingen dataarkitekten eller marknadsföraren skapa målsegmentet i [!DNL Segment Builder].
 
 Se översikten över [](../xdm/schema/composition.md#union) schemakomposition för att lära dig hur du definierar relationer mellan XDM-klasser.
 
@@ -225,6 +225,6 @@ Mer detaljerad information om dessa datatyper som stöds finns i dokumentet [med
 - [!DNL Segmentation] är processen att definiera en deluppsättning av profiler från din profilbutik, vilket gör att du kan karakterisera beteenden eller attribut för en önskad marknadsföringsbar grupp. [!DNL Segmentation Service] gör processen möjlig.
 - När du planerar ett segment bör du tänka på att det går att referera till ett segment från och kombinera det med andra segment.
 - Ett segment kan byggas utifrån regler baserade på profildata, relaterade tidsseriedata eller både och.
-- Segment kan antingen utvärderas på begäran eller kontinuerligt. När alla profildata utvärderas vid behov skickas de via segmentdefinitionerna samtidigt. Vid kontinuerlig utvärdering strömmar data genom segmentdefinitioner allt eftersom de kommer in i Platform.
+- Segment kan antingen utvärderas på begäran eller kontinuerligt. När alla profildata utvärderas vid behov skickas de via segmentdefinitionerna samtidigt. Vid kontinuerlig utvärdering strömmar data genom segmentdefinitioner allt eftersom de anges [!DNL Platform].
 
 Mer information om hur du definierar segment i användargränssnittet finns i guiden [Skapa](./ui/overview.md)segment. Information om hur du skapar segmentdefinitioner med API finns i självstudiekursen om hur du [skapar segment med API](./tutorials/create-a-segment.md).
