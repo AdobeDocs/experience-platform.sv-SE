@@ -4,15 +4,15 @@ solution: Experience Platform
 title: Datatyper för Adobe Experience Platform segmenteringstjänst
 topic: overview
 translation-type: tm+mt
-source-git-commit: cb6a2f91eb6c18835bd9542e5b66af4682227491
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
 workflow-type: tm+mt
-source-wordcount: '411'
+source-wordcount: '406'
 ht-degree: 0%
 
 ---
 
 
-# Datatyper som stöds av segmenteringstjänsten Adobe Experience Platform
+# Datatyper som stöds av Adobe Experience Platform [!DNL Segmentation Service]
 
 Alla XDM-datatyper stöds i [!DNL Segmentation Service]. Reglerna som utgör en segmentdefinition är kontextualiserade med följande datatyper.
 
@@ -39,7 +39,7 @@ Med datumdata kan du tilldela tidsbaserade kontexter till dina segmentdefinition
 
 ## Experience Events
 
-Som ett Adobe Experience Platform-schema registrerar XDM ExperienceEvents explicita och implicita kundinteraktioner med [!DNL Platform]integrerade program, inklusive en ögonblicksbild av systemet när interaktionen ägde rum. ExperienceEvents är fakta. Därför är de en datakälla som är tillgänglig för dig under segmentdefinitionen.
+Som ett Adobe Experience Platform-schema kan du spela in explicita och implicita kundinteraktioner med [!DNL XDM ExperienceEvents] [!DNL Platform]integrerade program, inklusive en ögonblicksbild av systemet när interaktionen ägde rum. [!DNL ExperienceEvents] är fakta. Därför är de en datakälla som är tillgänglig för dig under segmentdefinitionen.
 
 Som framgår av tabellen nedan återges händelsedata med nyckelord som hjälper till att förfina händelsebeteendet och ange händelseattribut.
 
