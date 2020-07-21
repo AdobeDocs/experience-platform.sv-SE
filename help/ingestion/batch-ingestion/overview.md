@@ -4,17 +4,17 @@ solution: Experience Platform
 title: Översikt över Adobe Experience Platform batchmatning
 topic: overview
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '1170'
+source-wordcount: '1144'
 ht-degree: 1%
 
 ---
 
 
-# Översikt över batchintag
+# [!DNL Batch Ingestion] översikt
 
-Med API:t för gruppinmatning kan du importera data till Adobe Experience Platform som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en parquet-fil) eller data som följer ett känt schema i XDM-registret (Experience Data Model).
+Med [!DNL Batch Ingestion] API kan du importera data till Adobe Experience Platform som gruppfiler. Data som ska importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en parquet-fil) eller data som följer ett känt schema i [!DNL Experience Data Model] (XDM)-registret.
 
 API-referensen [för](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) datainmatning innehåller ytterligare information om dessa API-anrop.
 
@@ -24,17 +24,17 @@ I följande diagram visas batchintagsprocessen:
 
 ## Använda API
 
-Med API:t för datainmatning kan du importera data som grupper (en dataenhet som består av en eller flera filer som ska importeras som en enda enhet) till Experience Platform i tre grundläggande steg:
+Med [!DNL Data Ingestion] API kan du importera data som grupper (en dataenhet som består av en eller flera filer som ska importeras som en enda enhet) [!DNL Experience Platform] i tre enkla steg:
 
 1. Skapa en ny batch.
 2. Överför filer till en angiven datauppsättning som matchar datans XDM-schema.
 3. Signalera slutet av gruppen.
 
 
-### Krav för datainmatning
+### [!DNL Data Ingestion] krav
 
-- Data som ska överföras måste vara i något av formaten Parquet eller JSON.
-- En datauppsättning som skapats i [katalogtjänsterna](../../catalog/home.md).
+- Data som ska överföras måste vara antingen i Parquet- eller JSON-format.
+- En datauppsättning som skapats i [!DNL Catalog services](../../catalog/home.md).
 - Innehållet i parquet-filen måste matcha en delmängd av schemat i den datauppsättning som överförs till.
 - Ha din unika åtkomsttoken efter autentisering.
 
@@ -47,23 +47,23 @@ Om du vill överföra en fil som är större än 512 MB måste filen delas upp i
 
 ### Läser exempel-API-anrop
 
-Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -237,7 +237,7 @@ curl -X PATCH "https://platform.adobe.io/data/foundation/import/batches/{BATCH_I
 
 ## Slutförande av signalbatch
 
-När alla filer har överförts till gruppen kan gruppen signaleras för slutförande. På så sätt skapas **Catalog DataSetFile** -posterna för de slutförda filerna och kopplas till den grupp som genereras ovan. Katalogbatchen markeras sedan som lyckad, vilket utlöser flödesomgångar för att importera tillgängliga data.
+När alla filer har överförts till gruppen kan gruppen signaleras för slutförande. På så sätt skapas [!DNL Catalog] DataSetFile **** -posterna för de slutförda filerna och kopplas till den grupp som genereras ovan. Batchen markeras sedan som [!DNL Catalog] lyckad, vilket aktiverar efterföljande flöden för att importera tillgängliga data.
 
 **Begäran**
 
