@@ -4,9 +4,9 @@ seo-title: Lagringsmål i molnet
 description: Adobe CDP kan i realtid leverera era segment som datafiler till Amazon S3, AWS Kinesis, Azure Event Hubs eller SFTP:s molnlagringsplatser.
 seo-description: Adobe CDP kan i realtid leverera era segment som datafiler till Amazon S3, AWS Kinesis, Azure Event Hubs eller SFTP:s molnlagringsplatser.
 translation-type: tm+mt
-source-git-commit: 75581529ede3772606bc18fea683da5d396996c5
+source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
 workflow-type: tm+mt
-source-wordcount: '185'
+source-wordcount: '178'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Lagringsmål i molnet {#cloud-storage-destinations}
 
-Adobe CDP kan leverera era segment som datafiler till era molnlagringsplatser i realtid. Detta gör att du kan skicka målgrupper och deras profilattribut till dina interna system via CSV eller tabbavgränsade filer för Amazon S3 och SFTP. För AWS Kinesis- och Azure Event Hubs-mål strömmas data ut från Experience Platform i JSON-format.
+Adobe CDP kan leverera era segment som datafiler till era molnlagringsplatser i realtid. Detta gör att du kan skicka målgrupper och deras profilattribut till dina interna system via CSV eller tabbavgränsade filer för [!DNL Amazon S3] och SFTP. För [!DNL AWS Kinesis] och [!DNL Azure Event Hubs] för destinationer direktuppspelas data från Experience Platform i JSON-format.
 
 ![Lagringsmål för Adobe Cloud](/help/rtcdp/destinations/assets/cloud-storage-destinations.png)
 
