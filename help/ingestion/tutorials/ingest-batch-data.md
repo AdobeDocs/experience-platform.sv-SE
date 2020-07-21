@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Infoga data i Adobe Experience Platform
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 3f1c3c77a0755a3e305da0fb8a234be0f0ee1863
+source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
 workflow-type: tm+mt
-source-wordcount: '1234'
+source-wordcount: '1184'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Om du föredrar att importera data med hjälp av API:er för datainmatning börj
 
 På arbetsytan Datauppsättningar i [!DNL Experience Platform] kan du visa och hantera alla datauppsättningar som din IMS-organisation har skapat, samt skapa nya.
 
-Visa arbetsytan Datauppsättningar genom att klicka **[!UICONTROL Datasets]** i den vänstra navigeringen. Arbetsytan Datauppsättningar innehåller en lista med datauppsättningar, inklusive kolumner som visar _Namn_, _Skapad_ (datum och tid), _Källa_, _Schema_ och _Senaste gruppstatus___, samt datum och tid då datauppsättningen uppdaterades¥Last Updated¥.
+Visa arbetsytan Datauppsättningar genom att klicka **[!UICONTROL Datasets]** i den vänstra navigeringen. Arbetsytan Datauppsättningar innehåller en lista med datauppsättningar, inklusive kolumner som visar _[!UICONTROL Name]_,_[!UICONTROL Created]_ (datum och tid), _[!UICONTROL Source]_,_[!UICONTROL Schema]_ och _[!UICONTROL Last Batch Status]_, samt datum och tid som datauppsättningen var_[!UICONTROL Last Updated]_.
 
 >[!NOTE]
 >
@@ -70,9 +70,9 @@ När datauppsättningen har ett namn och en beskrivning klickar du på **[!UICON
 
 En tom datauppsättning har nu skapats och du har återgått till fliken **[!UICONTROL Dataset Activity]** i arbetsytan Datauppsättningar. Du bör se namnet på datauppsättningen i det övre vänstra hörnet av arbetsytan, tillsammans med ett meddelande om att&quot;Inga grupper har lagts till&quot;. Detta förväntas eftersom du inte har lagt till några batchar i den här datauppsättningen än.
 
-Till höger på arbetsytan Datauppsättningar visas den **[!UICONTROL Info]** flik som innehåller information om din nya datauppsättning, t.ex. _Datauppsättnings-ID_, _Namn_, _Beskrivning_, _Tabellnamn_, ______ Schema,¥Streaming¥ ochSource¥. Fliken Info innehåller även information om när datauppsättningen _skapades_ och dess _senaste ändrade_ datum.
+Till höger på arbetsytan Datauppsättningar ser du fliken **[!UICONTROL Info]** med information om den nya datauppsättningen, till exempel _[!UICONTROL Dataset ID]_,_[!UICONTROL Name]_, _[!UICONTROL Description]_,_[!UICONTROL Table Name]_, _[!UICONTROL Schema]_,_[!UICONTROL Streaming]_ och _[!UICONTROL Source]_. Fliken Info innehåller även information om när datauppsättningen skapades_[!UICONTROL Created]_ och dess _[!UICONTROL Last Modified]_datum.
 
-På fliken Info finns även en _profilväxel_ som används för att aktivera datauppsättningen för användning med [!DNL Real-time Customer Profile]. Användning av den här växeln, och [!DNL Real-time Customer Profile]den, förklaras mer ingående i det följande avsnittet.
+På fliken Info finns även en _[!UICONTROL Profile]_växlingsknapp som används för att aktivera datauppsättningen för användning med[!DNL Real-time Customer Profile]. Användning av den här växeln, och[!DNL Real-time Customer Profile]den, förklaras mer ingående i det följande avsnittet.
 
 ![Datauppsättningsaktivitet](../images/tutorials/ingest-batch-data/dataset_activity.png)
 
@@ -88,7 +88,7 @@ Om du vill aktivera datauppsättningen för [!DNL Real-time Customer Profile]kli
 
 ![Växla profil](../images/tutorials/ingest-batch-data/enable_dataset_unified_profile.png)
 
-En dialogruta visas där du ombeds bekräfta att du vill aktivera datauppsättningen för kundprofil i realtid.
+En dialogruta visas där du ombeds bekräfta att du vill aktivera datauppsättningen för [!DNL Real-time Customer Profile].
 
 ![Dialogrutan Aktivera profil](../images/tutorials/ingest-batch-data/confirm_dataset_enable.png)
 
@@ -98,7 +98,7 @@ Klicka **[!UICONTROL Enable]** och växlingsknappen blir blå, vilket anger att 
 
 ## Lägg till data i datauppsättning
 
-Data kan läggas till i en datauppsättning på flera olika sätt. Du kan välja att använda API:er för datainmatning eller en ETL-partner som Unifi eller Informatica. För den här självstudiekursen läggs data till i datauppsättningen med hjälp av fliken **[!UICONTROL Add Data]** i användargränssnittet.
+Data kan läggas till i en datauppsättning på flera olika sätt. Du kan välja att använda [!DNL Data Ingestion] API:er eller en ETL-partner som [!DNL Unifi] eller [!DNL Informatica]. För den här självstudiekursen läggs data till i datauppsättningen med hjälp av fliken **[!UICONTROL Add Data]** i användargränssnittet.
 
 Klicka på **[!UICONTROL Add Data]** fliken för att börja lägga till data i datauppsättningen. Nu kan du dra och släppa filer eller bläddra på datorn efter de filer du vill lägga till.
 
@@ -116,19 +116,19 @@ När du drar och släpper (eller bläddrar och väljer) en parquet eller JSON-fi
 
 ## Datauppsättningsmått
 
-När filen har laddats upp visas inte längre &quot;Inga batchar har lagts till&quot; på fliken **[!UICONTROL Dataset Activity]** . I stället visas datamängdsmått på fliken Datauppsättningsaktivitet. Alla mätvärden visar &quot;0&quot; i det här skedet eftersom batchen ännu inte har lästs in.
+När filen har laddats upp visas inte längre &quot;Inga batchar har lagts till&quot; på fliken **[!UICONTROL Dataset Activity]** . Istället visas datamängdsmått på fliken *[!UICONTROL Dataset Activity]* . Alla mätvärden visar &quot;0&quot; i det här skedet eftersom batchen ännu inte har lästs in.
 
-Längst ned på fliken finns en lista med _batch-ID_ för de data som precis har importerats via processen [&quot;Lägg till data i datauppsättning&quot;](#add-data-to-dataset) . Här finns även information som rör batchen, inklusive _inkapslat_ datum, antal _poster som har kapslats_ och aktuell _batchstatus_.
+Längst ned på fliken finns en lista som visar _[!UICONTROL Batch ID]_vilka data som precis har importerats via[processen Lägg till data i datauppsättning](#add-data-to-dataset). Här finns även information om batchen, inklusive_[!UICONTROL Ingested]_ datum, antal _[!UICONTROL Records Ingested]_och aktuell batch_[!UICONTROL Status]_.
 
 ![Datauppsättningsmått](../images/tutorials/ingest-batch-data/batch_loading.png)
 
 ## Batchinformation
 
-Klicka på _batch-ID_ för att visa en **[!UICONTROL Batch Overview]** gruppruta med ytterligare information om gruppen. När batchen har lästs in uppdateras informationen om batchen så att antalet _poster som har kapslats_ och _filstorleken_ visas. Status __ ändras också till Slutfört eller Misslyckat. Om batchen misslyckas innehåller avsnittet _Felkod_ detaljer om eventuella fel under importen.
+Klicka på _[!UICONTROL Batch ID]_för att visa en **[!UICONTROL Batch Overview]**grupp med ytterligare information om gruppen. När batchen har lästs in uppdateras informationen om batchen så att den visar antalet_[!UICONTROL Records Ingested]_ och _[!UICONTROL File Size]_. Värdet ändras också_[!UICONTROL Status]_ till Slutfört eller Misslyckat. Om batchen misslyckas kommer avsnittet att innehålla information om eventuella fel under importen. _[!UICONTROL Error Code]_
 
 Mer information och vanliga frågor om batchförbrukning finns i felsökningsguiden för [batchmatning](../batch-ingestion/troubleshooting.md).
 
-Om du vill gå tillbaka till skärmen **Datauppsättningsaktivitet** klickar du på namnet på datauppsättningen (_bonusinformation_) i den synliga sökvägen.
+Om du vill gå tillbaka till **[!UICONTROL Dataset Activity]** skärmen klickar du på datauppsättningens (_[!UICONTROL Loyalty Details]_) namn i den synliga sökvägen.
 
 ![Gruppöversikt](../images/tutorials/ingest-batch-data/batch_overview.png)
 
