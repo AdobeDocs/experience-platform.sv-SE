@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Booleska funktioner
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 902ba5efbb5f18a2de826fffd023195d804309cc
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+workflow-type: tm+mt
+source-wordcount: '223'
+ht-degree: 3%
 
 ---
 
 
 # Booleska funktioner
 
-Booleska funktioner används för att utföra boolesk logik för olika element i PQL (Profile Query Language).  Mer information om andra PQL-funktioner finns i översikten [för](./overview.md)profilfrågespråk.
+Booleska funktioner används för att utföra boolesk logik för olika element i [!DNL Profile Query Language] (PQL).  Mer information om andra PQL-funktioner finns i översikten [för](./overview.md)profilfrågespråk.
 
 ## Och
 
