@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Förhandsgranska och beräkna slutpunkter
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: b3e6a6f1671a456b2ffa61139247c5799c495d92
+source-git-commit: 995fadef9abacf22d0561e0590dfbe172adf0a43
 workflow-type: tm+mt
-source-wordcount: '750'
+source-wordcount: '742'
 ht-degree: 1%
 
 ---
@@ -71,7 +71,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/preview \
 | -------- | ----------- |
 | `predicateExpression` | PQL-uttrycket som data ska frågas efter. |
 | `predicateType` | Predikattypen för frågeuttrycket under `predicateExpression`. För närvarande är det enda godkända värdet för den här egenskapen `pql/text`. |
-| `predicateModel` | Namnet på XDM-schemat (Experience Data Model) som profildata baseras på. |
+| `predicateModel` | Namnet på [!DNL Experience Data Model] (XDM)-schemat som profildata baseras på. |
 
 **Svar**
 
@@ -167,7 +167,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `results` | En lista över enhets-ID:n, tillsammans med deras relaterade identiteter. Länkarna som anges kan användas för att leta upp de angivna entiteterna med hjälp av API:t för [profilåtkomst](../../profile/api/entities.md). |
+| `results` | En lista över enhets-ID:n, tillsammans med deras relaterade identiteter. De angivna länkarna kan användas för att leta upp de angivna entiteterna med hjälp av [!DNL Profile Access API](../../profile/api/entities.md). |
 
 ## Hämta resultaten från ett specifikt uppskattningsjobb {#get-estimate}
 
@@ -226,4 +226,4 @@ Ett lyckat svar returnerar HTTP-status 200 med information om uppskattningsjobbe
 
 ## Nästa steg
 
-När du har läst den här guiden får du nu en bättre förståelse för hur du arbetar med förhandsgranskningar och uppskattningar. Om du vill veta mer om de andra slutpunkterna för segmenteringstjänstens API kan du läsa översikten [för utvecklarguiden för](./overview.md)segmenteringstjänsten.
+När du har läst den här guiden får du nu en bättre förståelse för hur du arbetar med förhandsgranskningar och uppskattningar. Mer information om de andra [!DNL Segmentation Service] API-slutpunkterna finns i översikten [över utvecklarguiden för](./overview.md)segmenteringstjänsten.
