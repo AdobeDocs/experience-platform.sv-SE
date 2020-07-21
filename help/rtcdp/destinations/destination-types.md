@@ -1,21 +1,24 @@
 ---
 title: Destinationstyper och -kategorier
 seo-title: Destinationstyper och -kategorier
-description: 'I Adobes kunddataplattform i realtid samlar mål för profiler och segmentexport in händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Starta tillägg för att vidarebefordra råa händelsedata till flera olika typer av destinationer. '
-seo-description: I Adobes kunddataplattform i realtid samlar mål för profiler och segmentexport in händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Starta tillägg för att vidarebefordra råa händelsedata till flera olika typer av destinationer.
+description: 'I Adobe Real-time Customer Data Platform samlar mål för profiler och segmentexport in händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Starta tillägg för att vidarebefordra råa händelsedata till flera olika typer av destinationer. '
+seo-description: I Adobe Real-time Customer Data Platform samlar mål för profiler och segmentexport in händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Starta tillägg för att vidarebefordra råa händelsedata till flera olika typer av destinationer.
 translation-type: tm+mt
-source-git-commit: 617cf1934402b9001647d7704fb24d6256069ff3
+source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+workflow-type: tm+mt
+source-wordcount: '576'
+ht-degree: 0%
 
 ---
 
 
 # Måltyper och -kategorier
 
-Läs den här sidan om du vill veta mer om de olika typerna och kategorierna för Adobes kunddataplattformsmål i realtid.
+Läs den här sidan om du vill veta mer om de olika typerna och kategorierna för Platform-destinationer för kunddata i realtid.
 
 ## Måltyper
 
-I Adobes kunddataplattform i realtid skiljer vi mellan två måltyper - anslutningar och tillägg. Det finns två typer av anslutningsmål: Profilexportmål och Segmentexportmål.
+I Adobe Customer Data Platform i realtid skiljer vi mellan två måltyper - anslutningar och tillägg. Det finns två typer av anslutningsmål: Profilexportmål och Segmentexportmål.
 
 ![Typer av destinationer](/help/rtcdp/destinations/assets/types-of-destinations.png)
 
@@ -23,7 +26,7 @@ I Adobes kunddataplattform i realtid skiljer vi mellan två måltyper - anslutni
 
 ### Anslutningar
 
-**Målen för export** av profiler och **segmentexport** i Adobes kunddataplattform i realtid samlar in händelsedata, kombinerar dem med andra datakällor för att skapa kundprofilen [i](/help/profile/home.md)realtid, tillämpa segmentering samt exportera segment och kvalificerade profiler till destinationer.
+**[!UICONTROL Profile Export]** och mål **[!UICONTROL Segment Export]** i Adobe Real-time Customer Data Platform samlar in händelsedata, kombinerar dem med andra datakällor för att skapa kundprofilen [i](/help/profile/home.md)realtid, tillämpa segmentering och exportera segment och kvalificerade profiler till destinationer.
 
 <br> 
 
@@ -33,7 +36,7 @@ Profilexportdestinationer genererar en fil som innehåller profiler och/eller at
 
 #### Segmentexportdestinationer
 
-Destinationer för segmentexport skickar profilerna och de segment de är kvalificerade för till målplattformarna. Dessa mål använder segment-ID eller användar-ID. Annonsmål som [Google Display och Video 360](/help/rtcdp/destinations/google-dv360-destination.md) eller [Google Ads](/help/rtcdp/destinations/google-ads-destination.md) är exempel på dessa typer av destinationer.
+Destinationer för segmentexport skickar profilerna och de segment de är kvalificerade för till målplattformarna. Dessa mål använder segment-ID eller användar-ID. Reklamdestinationer som [!DNL Google Display & Video 360](/help/rtcdp/destinations/google-dv360-destination.md) eller [!DNL Google Ads](/help/rtcdp/destinations/google-ads-destination.md) är exempel på dessa typer av destinationer.
 
 #### Destinationer för profilexport och segmentexport - videoöversikt
 
@@ -49,11 +52,11 @@ Adobe CDP i realtid utnyttjar kraften och flexibiliteten i Experience Platform L
 
 >[!TIP]
 >
->Detaljerad information om Experience Platform Launch-tillägg, inklusive användningsexempel och hur du hittar dem i gränssnittet, finns i [Launch-tilläggen - översikt](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
+>Mer information om tillägg för Experience Platform Launch, inklusive användningsexempel och hur du hittar dem i gränssnittet, finns i [Översikt över](/help/rtcdp/destinations/experience-platform-launch-extensions.md)tillägg för Launch.
 
 Starta tillägg för att vidarebefordra råa händelsedata till flera olika typer av destinationer. Tänk på tillägg som en **typ av mål för vidarebefordran** av händelser. Detta är en enklare typ av integrering med målplattformar, som bara vidarebefordrar råhändelsedata. Exempel på sådana är tillägget [](/help/rtcdp/destinations/gainsight-extension.md) Gainsight-anpassning eller [bekräftelsen från kundens tillägg](/help/rtcdp/destinations/confirmit-digital-feedback-extension.md).
 
-![Experience Platform Launch-tillägg jämfört med andra mål](/help/rtcdp/destinations/assets/launch-and-other-destinations.png)
+![Experience Platform Launch-tillägg jämfört med andra destinationer](/help/rtcdp/destinations/assets/launch-and-other-destinations.png)
 
 <br> 
 
