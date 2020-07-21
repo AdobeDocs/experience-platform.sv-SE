@@ -4,25 +4,25 @@ seo-title: Google Display & Video 360 Destination
 description: Display & Video 360, tidigare DoubleClick Bid Manager, är ett verktyg som används för att utföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display, Video och Mobile.
 seo-description: 'Display & Video 360, tidigare DoubleClick Bid Manager, är ett verktyg som används för att utföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display, Video och Mobile. '
 translation-type: tm+mt
-source-git-commit: 3c598454a868139b7604c5c7ca2b98fa0f1bb961
+source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
 workflow-type: tm+mt
-source-wordcount: '653'
+source-wordcount: '618'
 ht-degree: 0%
 
 ---
 
 
-# Google Display &amp; Video 360 Destination
+# [!DNL Google Display & Video 360] Destination
 
 ## Översikt
 
-Display &amp; Video 360, tidigare DoubleClick Bid Manager, är ett verktyg som används för att genomföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display, Video och Mobile.
+[!DNL Display & Video 360], tidigare kallat [!DNL DoubleClick Bid Manager], är ett verktyg som används för att genomföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display-, Video- och Mobile-material.
 
 ## Destinationsspecifikationer
 
-Observera följande information som är specifik för Google Display- och Video 360-destinationer:
+Observera följande information som är specifik för [!DNL Google Display & Video 360] destinationer:
 
-* Du kan skicka följande [identiteter](../../identity-service/namespaces.md) till Google Display &amp; Video 360-destinationer: **Google cookie ID, IDFA, GAID, Roku ID, Microsoft ID, Amazon Fire TV ID**.
+* Du kan skicka följande [identiteter](../../identity-service/namespaces.md) till [!DNL Google Display & Video 360] mål: **Google cookie ID, IDFA, GAID, Roku ID, Microsoft ID, Amazon Fire TV ID**.
 * Aktiverade målgrupper skapas programmatiskt i Google-plattformen.
 * Adobe CDP i realtid innehåller för närvarande inga mätvärden som validerar aktiveringen. Se antalet målgrupper i Google för att validera integrationen och förstå målgruppens målgruppsstorlek.
 
@@ -32,13 +32,13 @@ Observera följande information som är specifik för Google Display- och Video 
 
 ## Förutsättningar
 
-### Tillåt lista
+### Tillåtelselista
 
 >[!NOTE]
 >
->Listan över tillåtna är obligatorisk innan du konfigurerar ditt första Google Display &amp; Video 360-mål i Adobe Real-time CDP. Kontrollera att processen Tillåt som beskrivs nedan har slutförts av Google innan du skapar ett mål.
+>tillåtelselista är obligatoriskt innan du ställer in ditt första [!DNL Google Display & Video 360] mål i Adobe Real-time CDP. Kontrollera att tillåtelselista-processen som beskrivs nedan har slutförts av Google innan du skapar ett mål.
 
-Innan du skapar Google Display &amp; Video 360-destinationen i Adobe Real-time CDP måste du kontakta Google och be om att Adobe finns med i listan över tillåtna dataleverantörer och att ditt konto läggs till i listan över tillåtna. Kontakta Google och lämna följande information:
+Innan du skapar målet i Adobe Real-time CDP måste du kontakta Google och be om att Adobe finns med i listan över tillåtna dataleverantörer och att ditt konto läggs till i tillåtelselista. [!DNL Google Display & Video 360] Kontakta Google och lämna följande information:
 
 * **Konto-ID** : detta är Adobes konto-ID med Google. Kontakta Adobes kundtjänst eller din Adobe-representant för att få detta ID.
 * **Kund-ID** : detta är Adobes kundkonto-ID med Google. Kontakta Adobes kundtjänst eller din Adobe-representant för att få detta ID.
@@ -46,10 +46,11 @@ Innan du skapar Google Display &amp; Video 360-destinationen i Adobe Real-time C
 
 ## Skapa mål
 
-1. I **[!UICONTROL Connections > Destinations]** väljer du Google Display &amp; Video 360 och sedan **[!UICONTROL Create destination]**.
+1. In **[!UICONTROL Connections > Destinations]**, select [!DNL Google Display & Video 360], and select **[!UICONTROL Create destination]**.
    ![Connect Google Display &amp; Video 360 destination](/help/rtcdp/destinations/assets/google-dv360-destination.png)
 
 2. Under **Konfigurera** i arbetsflödet för att skapa mål fyller du i [!UICONTROL Basic Information] för destinationen samt i de användningsfall för marknadsföring som ska gälla för den här destinationen. <br>
+
    ![Grundläggande information, Google Display och Video 360](/help/rtcdp/destinations/assets/dv360-setup-step.png)
 * **[!UICONTROL Name]**: Fyll i det önskade namnet för det här målet.
 * **[!UICONTROL Description]**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
@@ -61,8 +62,8 @@ Innan du skapar Google Display &amp; Video 360-destinationen i Adobe Real-time C
 
 >[!NOTE]
 >
->När du konfigurerar en Google Display &amp; Video 360-destination ska du samarbeta med din kontoansvarige på Google eller Adobe för att ta reda på vilken kontotyp du har.
+>När du ställer in en [!DNL Google Display & Video 360] destination ska du samarbeta med din [!DNL Google Account Manager] eller Adobes representant för att ta reda på vilken kontotyp du har.
 
-## Aktivera segment till Google Display och Video 360
+## Aktivera segment för att [!DNL Google Display & Video 360]
 
-Instruktioner om hur du aktiverar segment till Google Display och Video 360 finns i [Aktivera data till mål](/help/rtcdp/destinations/activate-destinations.md).
+Instruktioner om hur du aktiverar segment [!DNL Google Display & Video 360]finns i [Aktivera data till mål](/help/rtcdp/destinations/activate-destinations.md).
