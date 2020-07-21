@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Handbok för frågetjänstutvecklare
 topic: queries
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
 workflow-type: tm+mt
-source-wordcount: '647'
+source-wordcount: '645'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 ## Exempel på API-anrop
 
-Följande avsnitt går igenom anrop som du kan göra med hjälp av `/queries` slutpunkten i API:t för frågetjänsten. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
+Följande avsnitt går igenom anrop som du kan göra med `/queries` slutpunkten i [!DNL Query Service] API:t. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
 
 ### Hämta en lista med frågor
 
