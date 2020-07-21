@@ -4,14 +4,17 @@ seo-title: Sidan Destinationsinformation
 description: 'På informationssidan för ett enskilt mål finns en översikt över målinformationen, t.ex. målnamn, ID, segment som är mappade till målet samt kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet. '
 seo-description: 'På informationssidan för ett enskilt mål finns en översikt över målinformationen, t.ex. målnamn, ID, segment som är mappade till målet samt kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet. '
 translation-type: tm+mt
-source-git-commit: e21cf6794e6c9ee522482cd9ccb95d66b06d330a
+source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+workflow-type: tm+mt
+source-wordcount: '499'
+ht-degree: 1%
 
 ---
 
 
 # Sidan med målinformation {#destinations-details-page}
 
-På informationssidan för ett enskilt mål finns en översikt över målinformationen, t.ex. målnamn, ID, segment som är mappade till målet samt kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet. Om du vill visa den här informationen går du till **Destinationer** > **Bläddra** och klickar på namnet på målet som du vill arbeta med.
+På informationssidan för ett enskilt mål finns en översikt över målinformationen, t.ex. målnamn, ID, segment som är mappade till målet samt kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet. Om du vill visa den här informationen går du till **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** och klickar på namnet på målet som du vill arbeta med.
 
 Kärnkomponenterna för en enskild destination är:
 
@@ -46,11 +49,11 @@ Rätt spår innehåller information om destinationen. Se tabellen nedan för mer
 
 | Objekt | Beskrivning |
 ---------|----------|
-| Plattform | Representerar målplattformen som målgrupperna skickas till. Mer information finns i [Målkatalog](/help/rtcdp/destinations/destinations-catalog.md) . |
+| Platform | Representerar målplattformen som målgrupperna skickas till. Mer information finns i [Målkatalog](/help/rtcdp/destinations/destinations-catalog.md) . |
 | Beskrivning | Du kan redigera beskrivningen av målflödet. |
 | Kategori | Anger typen av mål. Mer information finns i [Målkatalog](/help/rtcdp/destinations/destinations-catalog.md) . |
-| Anslutningstyp | Anger i vilket format era målgrupper skickas till målet. Kan vara **cookie** eller **profilbaserad**. |
-| Frekvens | Anger hur ofta målgrupperna skickas till målet. Kan vara **Streaming** eller **Batch**. |
+| Anslutningstyp | Anger i vilket format era målgrupper skickas till målet. Kan vara **[!UICONTROL Cookie]** eller **[!UICONTROL Profile-based]**. |
+| Frekvens | Anger hur ofta målgrupperna skickas till målet. Kan vara **[!UICONTROL Streaming]** eller **[!UICONTROL Batch]**. |
 | Identitet | Representerar det identitetsnamnutrymme som accepteras av målet. Identitetsfältet kan till exempel vara GAID, IDFA, email. Mer information om alla godkända identitetsnamnutrymmen finns i Standardnamnutrymmen i [översikten](../../identity-service/namespaces.md)över identitetsnamnen. |
 | Skapad av | Anger den användare som skapade det här målflödet. |
 | Skapad | Anger UTC-datum och UTC-tid när målflödet skapades. |
