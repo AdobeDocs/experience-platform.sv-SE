@@ -4,21 +4,21 @@ solution: Experience Platform
 title: Guiden för katalogtjänstutvecklare - tillägg
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '908'
+source-wordcount: '893'
 ht-degree: 0%
 
 ---
 
 
-# Guiden för katalogtjänstutvecklare - tillägg
+# [!DNL Catalog Service] utvecklarhandbok bilaga
 
-Det här dokumentet innehåller ytterligare information som kan hjälpa dig att arbeta med katalog-API:t.
+Det här dokumentet innehåller ytterligare information som hjälper dig att arbeta med [!DNL Catalog] API:t.
 
 ## Visa relaterade objekt {#view-interrelated-objects}
 
-Vissa katalogobjekt kan vara sammankopplade med andra katalogobjekt. Alla fält som prefixeras av `@` som svarsnyttolaster betecknar relaterade objekt. Värdena för dessa fält har formen av en URI, som kan användas i en separat GET-begäran för att hämta relaterade objekt som de representerar.
+Vissa [!DNL Catalog] objekt kan vara sammankopplade med andra [!DNL Catalog] objekt. Alla fält som prefixeras av `@` som svarsnyttolaster betecknar relaterade objekt. Värdena för dessa fält har formen av en URI, som kan användas i en separat GET-begäran för att hämta relaterade objekt som de representerar.
 
 Exempeldatauppsättningen som returneras i dokumentet när en specifik datauppsättning [](look-up-object.md) söks igenom innehåller ett `files` fält med följande URI-värde: `"@/dataSets/5ba9452f7de80400007fc52a/views/5ba9452f7de80400007fc52b/files"`. Innehållet i `files` fältet kan visas med denna URI som sökväg för en ny GET-begäran.
 
@@ -92,9 +92,9 @@ Ett godkänt svar returnerar en lista med relaterade objekt. I det här exemplet
 
 ## Göra flera förfrågningar i ett enda samtal
 
-Rotslutpunkten för Catalog API tillåter att flera begäranden kan göras inom ett enda anrop. Nyttolasten för begäran innehåller en array med objekt som representerar vad som normalt skulle vara enskilda begäranden, som sedan utförs i ordning.
+Rotslutpunkten för [!DNL Catalog] API:t tillåter att flera begäranden görs inom ett enda anrop. Nyttolasten för begäran innehåller en array med objekt som representerar vad som normalt skulle vara enskilda begäranden, som sedan utförs i ordning.
 
-Om dessa begäranden är ändringar eller tillägg i katalogen och någon av ändringarna misslyckas, återställs alla ändringar.
+Om dessa begäranden är ändringar eller tillägg [!DNL Catalog] och någon av ändringarna misslyckas, återställs alla ändringar.
 
 **API-format**
 
@@ -144,14 +144,14 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `id` | Användar-ID som är kopplat till svarsobjektet så att du kan matcha begäranden mot svar. Det här värdet lagras inte i katalogen och returneras i svaret i referenssyfte. |
-| `resource` | Resurssökvägen i förhållande till katalog-API:ts rot. Protokollet och domänen ska inte ingå i det här värdet, och det ska föregås av &quot;/&quot;. <br/><br/> När du använder PATCH eller DELETE som underbegäran `method`tar du med objekt-ID:t i resurssökvägen. För att inte blandas ihop med användaren `id`använder resurssökvägen ID:t för själva katalogobjektet (till exempel `resource: "/dataSets/1234567890"`). |
+| `id` | Användar-ID som är kopplat till svarsobjektet så att du kan matcha begäranden mot svar. [!DNL Catalog] lagrar inte det här värdet och returnerar det bara i svaret i referenssyfte. |
+| `resource` | Resurssökvägen relativ till roten för [!DNL Catalog] API:t. Protokollet och domänen ska inte ingå i det här värdet, och det ska föregås av &quot;/&quot;. <br/><br/> När du använder PATCH eller DELETE som underbegäran `method`tar du med objekt-ID:t i resurssökvägen. För att inte blandas ihop med användaren `id`använder resurssökvägen ID:t för själva [!DNL Catalog] objektet (till exempel `resource: "/dataSets/1234567890"`). |
 | `method` | Namnet på den metod (GET, PUT, POST, PATCH eller DELETE) som är relaterad till åtgärden som utförs i begäran. |
 | `body` | JSON-dokumentet som normalt skulle överföras som nyttolast i en POST-, PUT- eller PATCH-begäran. Den här egenskapen krävs inte för GET- eller DELETE-begäranden. |
 
 **Svar**
 
-Ett lyckat svar returnerar en array med objekt som innehåller `id` den som du tilldelade varje begäran, HTTP-statuskoden för den enskilda begäran och svaret `body`. Eftersom de tre exempelbegärandena var alla för att skapa nya objekt är `body` för varje objekt en array som bara innehåller ID:t för det nya objektet, vilket är standard med de mest framgångsrika POST-svaren i Katalog.
+Ett lyckat svar returnerar en array med objekt som innehåller `id` den som du tilldelade varje begäran, HTTP-statuskoden för den enskilda begäran och svaret `body`. Eftersom de tre exempelbegärandena var alla för att skapa nya objekt är `body` för varje objekt en array som bara innehåller ID:t för det nya objektet, vilket är standard med de mest framgångsrika POST-svaren i [!DNL Catalog].
 
 ```json
 [
@@ -176,7 +176,7 @@ Var försiktig när du undersöker svaret på en flerbegäran eftersom du måste
 
 ## Ytterligare begäranderubriker
 
-Katalogen innehåller flera huvudkonventioner som hjälper dig att upprätthålla integriteten för dina data under uppdateringar.
+[!DNL Catalog] innehåller flera huvudkonventioner som hjälper dig att upprätthålla integriteten för dina data under uppdateringar.
 
 ### If-Match
 
@@ -192,6 +192,6 @@ Ibland kanske du vill validera ett objekt utan att spara informationen. Om du an
 
 ## Datakomprimering
 
-Compaction är en Experience Platform-tjänst som sammanfogar data från små filer till större filer utan att ändra några data. Av prestandaskäl kan det ibland vara bra att kombinera en uppsättning små filer till större filer för att ge snabbare åtkomst till data när frågor ställs.
+Komprimering är en [!DNL Experience Platform] tjänst som sammanfogar data från små filer till större filer utan att ändra några data. Av prestandaskäl kan det ibland vara bra att kombinera en uppsättning små filer till större filer för att ge snabbare åtkomst till data när frågor ställs.
 
-När filerna i en inkapslad grupp har komprimerats uppdateras dess associerade katalogobjekt i övervakningssyfte.
+När filerna i en inkapslad grupp har komprimerats uppdateras dess associerade [!DNL Catalog] objekt i övervakningssyfte.
