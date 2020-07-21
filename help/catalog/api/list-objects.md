@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Listobjekt
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '204'
+source-wordcount: '197'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ GET /{OBJECT_TYPE}?{FILTER}={VALUE}&{FILTER_2}={VALUE}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Den typ av katalogobjekt som ska listas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog] objekt som ska listas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{FILTER}` | En frågeparameter som används för att filtrera resultaten som returneras i svaret. Flera parametrar avgränsas med et-tecken (`&`). Mer information finns i guiden om [filtrering av katalogdata](filter-data.md) . |
 
 **Begäran**
@@ -43,11 +43,11 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en lista med katalogobjekt i form av nyckelvärdepar, filtrerade efter frågeparametrarna som anges i begäran. För varje nyckelvärdepar representerar nyckeln en unik identifierare för det aktuella katalogobjektet, som sedan kan användas i ett annat anrop för att [visa det specifika objektet](look-up-object.md) för mer information.
+Ett godkänt svar returnerar en lista med [!DNL Catalog] objekt i form av nyckelvärdepar, filtrerade med frågeparametrarna som anges i begäran. För varje nyckelvärdepar representerar nyckeln en unik identifierare för det aktuella [!DNL Catalog] objektet, som sedan kan användas i ett annat anrop för att [visa det specifika objektet](look-up-object.md) för mer information.
 
 >[!NOTE]
 >
->Om ett returnerat objekt inte innehåller en eller flera av de begärda egenskaperna som anges av `properties` frågan returnerar svaret endast de begärda egenskaper som det innehåller, vilket visas i&quot;Sample DataSet 3&quot; och&quot;Sample DataSet 4&quot; nedan.
+>Om ett returnerat objekt inte innehåller en eller flera av de begärda egenskaperna som anges av `properties` frågan, returnerar svaret endast de begärda egenskaper som det innehåller, vilket visas i ***`Sample Dataset 3`*** och ***`Sample Dataset 4`*** nedan.
 
 ```json
 {
