@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Profilfrågespråk (PQL) - översikt
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 902ba5efbb5f18a2de826fffd023195d804309cc
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+workflow-type: tm+mt
+source-wordcount: '670'
+ht-degree: 1%
 
 ---
 
 
-# Profilfrågespråk (PQL) - översikt
+# [!DNL Profile Query Language] (PQL) - översikt
 
-PQL (Profile Query Language) är ett XDM-kompatibelt frågespråk (Experience Data Model) som har utformats för att stödja definition och körning av segmenteringsfrågor för kundprofildata i realtid.
+[!DNL Profile Query Language] (PQL) är ett [!DNL Experience Data Model] (XDM)-kompatibelt frågespråk som har utformats för att stödja definition och körning av segmenteringsfrågor för [!DNL Real-time Customer Profile] data.
 
 Den här guiden ger en allmän översikt över PQL, som beskriver riktlinjer för formatering och innehåller exempel på PQL-uttryck.
 
@@ -75,7 +78,7 @@ Följande tabell visar de olika kategorierna av PQL-funktioner som stöds, inklu
 | Boolean | Används för att implementera booleskt algebra i PQL. Mer information om dessa funktioner finns i dokumentet [med](./boolean-functions.md)booleska funktioner. |
 | Jämförelse | Används för att jämföra olika PQL-element. Mer information om dessa funktioner finns i [jämförelsefunktionsdokumentet](./comparison-functions.md). |
 | Array, lista och uppsättning | Används för att interagera med arrayer, listor och uppsättningar. Mer information om dessa funktioner finns i [arrayen, listan och funktionsdokumentet](./array-functions.md). |
-| Karta | Används för att interagera med kartor. Mer information om dessa funktioner finns i [kartfunktionsdokumentet](./map-functions.md). |
+| Mappa | Används för att interagera med kartor. Mer information om dessa funktioner finns i [kartfunktionsdokumentet](./map-functions.md). |
 | Sträng | Används för att interagera med strängar. Mer information om dessa funktioner finns i [strängfunktionsdokumentet](./string-functions.md). |
 | Aritmetisk | Används för att utföra grundläggande aritmetik på PQL-element. Mer information om dessa funktioner finns i dokumentet med [aritmetiska funktioner](./arithmetic-functions.md) |
 | Aggregering | Används för att kombinera resultat från en array till ett enda resultat. Mer information om sammanställningsfunktioner finns i dokumentet [med](./aggregation-functions.md)sammanställningsfunktioner. |
@@ -86,4 +89,4 @@ Följande tabell visar de olika kategorierna av PQL-funktioner som stöds, inklu
 
 ## Nästa steg
 
-Nu när du har lärt dig hur du använder profilfrågespråk kan du använda PQL när du skapar och ändrar segment. Mer information om segmentering finns i [segmenteringsöversikten](../home.md).
+Nu när du har lärt dig att använda [!DNL Profile Query Language]kan du använda PQL när du skapar och ändrar segment. Mer information om segmentering finns i [segmenteringsöversikten](../home.md).
