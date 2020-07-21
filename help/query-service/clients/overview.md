@@ -4,21 +4,24 @@ solution: Experience Platform
 title: Anslut klienter till frågetjänsten
 topic: connect
 translation-type: tm+mt
-source-git-commit: c5bb112220b40fa6c2adfa89c80ddb87d382fbda
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+workflow-type: tm+mt
+source-wordcount: '56'
+ht-degree: 0%
 
 ---
 
 
-# Anslut klienter till frågetjänsten
+# Koppla klienter till [!DNL Query Service]
 
-I det här avsnittet beskrivs hur du ansluter till frågetjänsten från en mängd olika klientprogram och hur du verifierar dessa anslutningar. Frågetjänsten använder protokollet Postgres, så instruktionerna i det här avsnittet förklarar hur du använder Postgres-verktyg och -drivrutiner för att ansluta till och skriva frågor.
+I det här avsnittet beskrivs hur du ansluter till [!DNL Query Service] från ett antal datorklientprogram och hur du verifierar dessa anslutningar. [!DNL Query Service] använder [!DNL Postgres] protokollet, så instruktionerna i det här avsnittet förklarar hur du använder [!DNL Postgres] verktyg och drivrutiner för att ansluta och skriva frågor.
 
 Instruktioner finns för följande klienter:
 
-- [Aqua Data Studio](./aqua-data-studio.md)
-- [Looker](./looker.md)
-- [Postico (Mac)](./postico.md)
-- [Power BI (PC)](./power-bi.md)
-- [PSQL](./psql.md)
-- [RStudio](./rstudio.md)
-- [Tableau](./tableau.md)
+- [!DNL Aqua Data Studio](./aqua-data-studio.md)
+- [!DNL Looker](./looker.md)
+- [!DNL Postico (Mac)](./postico.md)
+- [!DNL Power BI (PC)](./power-bi.md)
+- [!DNL PSQL](./psql.md)
+- [!DNL RStudio](./rstudio.md)
+- [!DNL Tableau](./tableau.md)
