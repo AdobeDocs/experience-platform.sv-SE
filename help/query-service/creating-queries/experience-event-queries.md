@@ -4,20 +4,23 @@ solution: Experience Platform
 title: ExperienceEvent-frågor
 topic: queries
 translation-type: tm+mt
-source-git-commit: 45da024d45b5eebdfc393ee14890e24aed6021ce
+source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+workflow-type: tm+mt
+source-wordcount: '275'
+ht-degree: 0%
 
 ---
 
 
-# ExperienceEvent-frågor
+# [!DNL ExperienceEvent] frågor
 
-Förutom vanliga SQL-frågor har Adobe Experience Platform Query Service stöd för att skriva frågor med ExperienceEvents. En ExperienceEvent är en XDM-klass (Experience Data Model) som representerar en oföränderlig, icke-aggregerad ögonblicksbild av systemet när en användare interagerar med en webbplats eller tjänst, och som därför kan användas för tidsdomänanalys. Mer information om XDM och Experience Events finns i XDM-systemöversikten. Genom att kombinera frågetjänsten med ExperienceEvents kan ni effektivt spåra beteendetrender bland era användare. Följande dokument innehåller exempel på frågor som innehåller ExperienceEvents.
+Förutom vanliga SQL-frågor har Adobe Experience Platform [!DNL Query Service] stöd för att skriva frågor med [!DNL ExperienceEvents]. En [!DNL ExperienceEvent] klass är en [!DNL Experience Data Model] (XDM)-klass som representerar en oföränderlig, icke-aggregerad ögonblicksbild av systemet när en användare interagerar med en webbplats eller tjänst och kan därför användas för tidsdomänanalys. Mer information om XDM finns i [!DNL Experience Events] [!DNL XDM System] översikten. Genom att kombinera [!DNL Query Service] med [!DNL ExperienceEvents]kan ni effektivt spåra beteendetrender bland era användare. Följande dokument innehåller exempel på frågor som rör [!DNL ExperienceEvents].
 
 ## Skapa en trendrapport över händelser per dag inom ett visst datumintervall
 
 I följande exempel skapas en trendrapport med händelser över ett angivet datumintervall grupperade efter datum. Det sammanfattar olika analysvärden som A, B och C och sammanfattar sedan antalet gånger som parkas har visats.
 
-Tidsstämpelkolumnen som finns i Experience Event-datamängder är i UTC. I följande exempel används funktionen för `from_utc_timestamp()` att omforma tidsstämpeln från UTC till EDT. Sedan används funktionen för att `date_format()` isolera datumet från resten av tidsstämpeln.
+Tidsstämpelkolumnen i [!DNL Experience Event] datauppsättningarna är i UTC. I följande exempel används funktionen för `from_utc_timestamp()` att omforma tidsstämpeln från UTC till EDT. Sedan används funktionen för att `date_format()` isolera datumet från resten av tidsstämpeln.
 
 ```sql
 SELECT 
