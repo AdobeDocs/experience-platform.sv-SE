@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en datauppsättning med API:er
 topic: datasets
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
 workflow-type: tm+mt
-source-wordcount: '1263'
+source-wordcount: '1234'
 ht-degree: 0%
 
 ---
@@ -20,31 +20,31 @@ Det här dokumentet innehåller allmänna steg för att skapa en datauppsättnin
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Batchförtäring](../../ingestion/batch-ingestion/overview.md): Med Experience Platform kan du importera data som gruppfiler.
-* [Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
-* [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Batchförtäring](../../ingestion/batch-ingestion/overview.md): [!DNL Experience Platform] gör att du kan importera data som gruppfiler.
+* [!DNL Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+* [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa Platform API:er.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API: [!DNL Platform] erna.
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -60,9 +60,9 @@ Med dessa standarddefinitioner kan data tolkas på ett enhetligt sätt, oavsett 
 
 Den här självstudiekursen börjar där API-självstudiekursen [för](../../xdm/tutorials/create-schema-api.md) schematabellen avslutas och använder det schema för lojalitetsmedlemmar som skapades under den självstudiekursen.
 
-Om du inte har slutfört schematekursen kan du börja där och fortsätta med den här självstudiekursen för datauppsättningar först när du har komponerat det nödvändiga schemat.
+Om du inte har slutfört [!DNL Schema Registry] självstudiekursen kan du börja där och fortsätta med den här självstudiekursen bara när du har komponerat det schema som krävs.
 
-Följande anrop kan användas för att visa det bonusmedlemsschema som du skapade i API-självstudiekursen för schemaregistret:
+Följande anrop kan användas för att visa det bonusmedlemsschema som du skapade under [!DNL Schema Registry] API-självstudiekursen:
 
 **API-format**
 
@@ -329,7 +329,7 @@ En överförd fil returnerar en tom svarstext och HTTP-status 200 (OK).
 
 ## Slutförande av signalbatch
 
-När du har överfört alla datafiler till gruppen kan du signalera att gruppen är slutförd. Signaleringsslutförande gör att tjänsten skapar katalogposter `DataSetFile` för de överförda filerna och associerar dem med den batch som genererats tidigare. Katalogbatchen har markerats som slutförd, vilket utlöser eventuella efterföljande flöden som sedan kan användas för tillgängliga data.
+När du har överfört alla datafiler till gruppen kan du signalera att gruppen är slutförd. Signaleringsslutförande gör att tjänsten skapar [!DNL Catalog] poster `DataSetFile` för de överförda filerna och associerar dem med den batch som genererats tidigare. Batchen har markerats som slutförd, vilket utlöser eventuella efterföljande flöden som sedan kan användas för de data som nu är tillgängliga. [!DNL Catalog]
 
 **API-format**
 
