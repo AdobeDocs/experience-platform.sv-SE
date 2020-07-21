@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Kvalitet på dataöverföring
 topic: overview
 translation-type: tm+mt
-source-git-commit: 24df962656706d769a7034020d96a545e8f905ca
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+workflow-type: tm+mt
+source-wordcount: '282'
+ht-degree: 4%
 
 ---
 
 
 # Datakvalitet i Adobe Experience Platform
 
-Adobe Experience Platform ger väldefinierade garantier för fullständighet, exakthet och enhetlighet för alla data som överförs via både batch- och direktuppspelningsinmatning. Följande dokument innehåller en sammanfattning av de kontroller och valideringsbeteenden som stöds för import av grupper och strömning i Experience Platform.
+Adobe Experience Platform ger väldefinierade garantier för fullständighet, exakthet och konsekvens för alla data som överförs via både batch- och direktuppspelningsinmatning. Följande dokument innehåller en sammanfattning av de kontroller och valideringsbeteenden som stöds för import av grupper och direktuppspelning i [!DNL Experience Platform].
 
 ## Kontroller som stöds
 
@@ -26,7 +29,7 @@ Adobe Experience Platform ger väldefinierade garantier för fullständighet, ex
 
 ## Valideringsbeteenden som stöds
 
-Både batch- och direktuppspelningsinmatning förhindrar att felaktiga data flyttas längre ned genom att felaktiga data flyttas för hämtning och analys i Data Lake. Inmatning av data ger följande valideringar för inmatning av grupper och strömning.
+Både batch- och direktuppspelningsinmatning förhindrar att felaktiga data flyttas längre fram genom att felaktiga data flyttas för hämtning och analys i [!DNL Data Lake]. Inmatning av data ger följande valideringar för inmatning av grupper och strömning.
 
 ### Batchförtäring
 
@@ -52,4 +55,4 @@ Följande valideringar görs för direktuppspelning:
 | Datauppsättning | Ser till att datauppsättningen är angiven, aktiverad och inte har tagits bort. |
 | Sidhuvud | Ser till att rubriken är angiven och giltig. |
 
-Mer information om hur Platform övervakar och validerar data finns i dokumentationen [för](./monitor-data-flows.md)övervakning av dataflöden.
+Mer information om hur [!DNL Platform] övervakar och validerar data finns i dokumentationen för [övervakning av dataflöden](./monitor-data-flows.md).
