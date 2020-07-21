@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Visa gällande policyer
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '273'
+source-wordcount: '262'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # Visa gällande policyer
 
-Om du vill visa gällande principer för den aktuella användaren gör du en POST-begäran till `/acl/effective-policies` slutpunkten i API:t för åtkomstkontroll. Behörigheterna och resurstyperna som du vill hämta måste anges i nyttolasten för begäran i form av en array. Detta visas i exemplet på API-anrop nedan.
+Om du vill visa gällande principer för den aktuella användaren gör du en POST-begäran till `/acl/effective-policies` slutpunkten i [!DNL Access Control] API:t. Behörigheterna och resurstyperna som du vill hämta måste anges i nyttolasten för begäran i form av en array. Detta visas i exemplet på API-anrop nedan.
 
 **API-format**
 
@@ -24,7 +24,7 @@ POST /acl/effective-policies
 
 **Begäran**
 
-Följande begäranden hämtar information om behörigheten Hantera datauppsättningar och åtkomst till resurstypen scheman för den aktuella användaren.
+Följande förfrågningar hämtar information om behörigheten &quot;[!UICONTROL Manage Datasets]&quot; och åtkomsten till resurstypen &quot;[!UICONTROL schemas]&quot; för den aktuella användaren.
 
 ```shell
 curl -X POST \
@@ -65,11 +65,11 @@ Ett godkänt svar returnerar information om behörigheter och resurstyper som an
 
 ## Nästa steg
 
-I det här dokumentet beskrivs hur du anropar åtkomstkontrolls-API:t för att returnera information om aktiva behörigheter och relaterade principer för resurstyper. Mer information om åtkomstkontroll för Experience Platform finns i [åtkomstkontrollen](../home.md).
+I det här dokumentet beskrivs hur du anropar API:t för att returnera information om aktiva behörigheter och relaterade principer för resurstyper. [!DNL Access Control] Mer information om åtkomstkontroll för [!DNL Experience Platform]finns i [åtkomstkontrollen - översikt](../home.md).
 
 ## Bilaga
 
-I det här avsnittet finns ytterligare information om hur du använder API:t för åtkomstkontroll.
+I det här avsnittet finns ytterligare information om hur du använder [!DNL Access Control] API.
 
 ### Godkända behörigheter och resurstyper
 
