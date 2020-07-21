@@ -4,27 +4,27 @@ solution: Experience Platform
 title: Skriver frågor
 topic: queries
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
 workflow-type: tm+mt
-source-wordcount: '667'
+source-wordcount: '643'
 ht-degree: 0%
 
 ---
 
 
-# Allmän vägledning för frågekörning i frågetjänsten
+# Allmän vägledning för frågekörning i [!DNL Query Service]
 
-Det här dokumentet innehåller viktig information som du bör känna till när du skriver frågor i Adobe Experience Platform Query Service.
+Det här dokumentet innehåller viktig information som du kan känna till när du skriver frågor i Adobe Experience Platform [!DNL Query Service].
 
-Mer information om SQL-syntaxen som används i frågetjänsten finns i [SQL-syntaxdokumentationen](../sql/syntax.md).
+Mer information om SQL-syntaxen som används i [!DNL Query Service]finns i [SQL-syntaxdokumentationen](../sql/syntax.md).
 
 ## Frågekörningsmodeller
 
-Adobe Experience Platform Query Service har två modeller för frågekörning: interaktiva och icke-interaktiva. Interaktiv körning används för frågeutveckling och rapportgenerering i verktyg för affärsinformation, medan icke-interaktiv används för större jobb och operativa frågor som en del av ett arbetsflöde för databearbetning.
+Adobe Experience Platform [!DNL Query Service] har två modeller för frågekörning: interaktiva och icke-interaktiva. Interaktiv körning används för frågeutveckling och rapportgenerering i verktyg för affärsinformation, medan icke-interaktiv används för större jobb och operativa frågor som en del av ett arbetsflöde för databearbetning.
 
 ### Interaktiv frågekörning
 
-Du kan köra frågor interaktivt genom att skicka dem via gränssnittet för frågetjänsten eller [via en ansluten klient](../clients/overview.md). När frågetjänsten körs via en ansluten klient körs en aktiv session mellan klienten och frågetjänsten tills den skickade frågan returneras eller timeout inträffar.
+Frågor kan utföras interaktivt genom att de skickas via [!DNL Query Service] användargränssnittet eller [via en ansluten klient](../clients/overview.md). När du kör [!DNL Query Service] via en ansluten klient körs en aktiv session mellan klienten och [!DNL Query Service] tills den skickade frågan returneras eller timeout inträffar.
 
 Interaktiv frågekörning har följande begränsningar:
 
@@ -38,11 +38,11 @@ Interaktiv frågekörning har följande begränsningar:
 >
 >Ta med `LIMIT 0` i frågan om du vill åsidosätta den maximala radbegränsningen. Frågetidsgränsen på 10 minuter gäller fortfarande.
 
-Som standard returneras resultatet av interaktiva frågor till klienten och de bevaras **inte** . För att resultaten ska kunna bevaras som en datauppsättning i Experience Platform måste frågan använda `CREATE TABLE AS SELECT` syntaxen.
+Som standard returneras resultatet av interaktiva frågor till klienten och de bevaras **inte** . Om du vill behålla resultaten som en datauppsättning i [!DNL Experience Platform]måste frågan använda `CREATE TABLE AS SELECT` syntaxen.
 
 ### Icke-interaktiv frågekörning
 
-Frågor som skickas via API:t för frågetjänster körs icke-interaktivt. Icke-interaktiv körning innebär att Query Service tar emot API-anropet och kör frågan i den ordning den tas emot. Icke-interaktiva frågor leder alltid till att en ny datauppsättning skapas i Experience Platform för att ta emot resultaten, eller att nya rader infogas i en befintlig datauppsättning.
+Frågor som skickas via [!DNL Query Service] API körs icke-interaktivt. Icke-interaktiv körning innebär att [!DNL Query Service] tar emot API-anropet och kör frågan i den ordning den tas emot. Icke-interaktiva frågor leder alltid till att en ny datauppsättning skapas i [!DNL Experience Platform] för att ta emot resultaten, eller att nya rader infogas i en befintlig datauppsättning.
 
 ## Åtkomst till ett specifikt fält i ett objekt
 
@@ -189,4 +189,4 @@ Bakåtcitattecken behövs **inte** om du använder hakparenteser.
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du fått en del viktiga synpunkter när du skriver frågor med hjälp av frågetjänsten. Mer information om hur du använder SQL-syntaxen för att skriva egna frågor finns i [SQL-syntaxdokumentationen](../sql/syntax.md).
+När du läser det här dokumentet har du fått en del viktiga synpunkter när du skriver frågor med [!DNL Query Service]. Mer information om hur du använder SQL-syntaxen för att skriva egna frågor finns i [SQL-syntaxdokumentationen](../sql/syntax.md).
