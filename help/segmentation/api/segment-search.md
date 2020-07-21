@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Slutpunkt för segmentsökning
 topic: guide
 translation-type: tm+mt
-source-git-commit: b3e6a6f1671a456b2ffa61139247c5799c495d92
+source-git-commit: 995fadef9abacf22d0561e0590dfbe172adf0a43
 workflow-type: tm+mt
-source-wordcount: '1139'
+source-wordcount: '1138'
 ht-degree: 0%
 
 ---
@@ -225,7 +225,7 @@ När du har läst den här guiden får du nu en bättre förståelse för hur se
 
 ## Bilaga {#appendix}
 
-I följande avsnitt finns mer information om hur söktermer fungerar. Sökfrågor skrivs på följande sätt: `s={FieldName}:{SearchExpression}`. Om du till exempel vill söka efter ett segment med namnet AAM eller Platform använder du följande sökfråga: `s=segmentName:AAM%20OR%20Platform`.
+I följande avsnitt finns mer information om hur söktermer fungerar. Sökfrågor skrivs på följande sätt: `s={FieldName}:{SearchExpression}`. Om du till exempel vill söka efter ett segment med namnet AAM eller [!DNL Platform]använder du följande sökfråga: `s=segmentName:AAM%20OR%20Platform`.
 
 > !![NOTE] För bästa praxis bör sökuttrycket vara HTML-kodat, som i exemplet ovan.
 
