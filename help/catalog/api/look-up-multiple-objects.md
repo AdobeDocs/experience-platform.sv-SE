@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Söka efter flera objekt
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '183'
+source-wordcount: '176'
 ht-degree: 0%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 0%
 
 # Söka efter flera objekt
 
-Om du vill visa flera specifika objekt, i stället för att göra en begäran per objekt, finns det en enkel genväg för att begära flera objekt av samma typ i Katalog. Du kan använda en enda GET-begäran för att returnera flera specifika objekt genom att ta med en kommaavgränsad lista med ID:n.
+Om du vill visa flera specifika objekt, i stället för att göra en begäran per objekt, [!DNL Catalog] är det en enkel genväg för att begära flera objekt av samma typ. Du kan använda en enda GET-begäran för att returnera flera specifika objekt genom att ta med en kommaavgränsad lista med ID:n.
 
 >[!NOTE]
 >
->Även när du begär specifika katalogobjekt är det fortfarande bra att använda frågeparametern för att bara returnera de egenskaper som du behöver. `properties`
+>Även när du begär specifika [!DNL Catalog] objekt är det fortfarande bra att `properties` använda frågeparametern för att returnera endast de egenskaper du behöver.
 
 **API-format**
 
@@ -27,7 +27,7 @@ GET /{OBJECT_TYPE}/{ID_1},{ID_2},{ID_3},{ID_4}
 GET /{OBJECT_TYPE}/{ID_1},{ID_2},{ID_3},{ID_4}?properties={PROPERTY_1},{PROPERTY_2},{PROPERTY_3}
 ```
 
-| `{OBJECT_TYPE}` | Typen av katalogobjekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{ID}` | En identifierare för ett av de specifika objekt som du vill hämta. |
 
 **Begäran**
@@ -49,7 +49,7 @@ Ett lyckat svar returnerar en lista med de angivna datauppsättningarna, som bar
 
 >[!NOTE]
 >
->Om ett returnerat objekt inte innehåller en eller flera av de begärda egenskaperna som anges av `properties` frågan returnerar svaret endast de begärda egenskaper som det innehåller, vilket visas i&quot;Sample DataSet 3&quot; och&quot;Sample DataSet 4&quot; nedan.
+>Om ett returnerat objekt inte innehåller en eller flera av de begärda egenskaperna som anges av `properties` frågan, returnerar svaret endast de begärda egenskaper som det innehåller, vilket visas i ***`Sample Dataset 3`*** och ***`Sample Dataset 4`*** nedan.
 
 ```json
 {
