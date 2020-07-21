@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Ansvarsfriskrivningar
 topic: overview
 translation-type: tm+mt
-source-git-commit: f156679601c2ed0bb933a66a56661c29c1b9c778
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
 workflow-type: tm+mt
-source-wordcount: '935'
+source-wordcount: '926'
 ht-degree: 0%
 
 ---
@@ -68,13 +68,13 @@ Blandningen [!DNL Profile Privacy] innehåller följande fält:
 
 Om du vill visa hela strukturen för [!DNL Profile Privacy] mixinen läser du [XDM-databasen](https://github.com/adobe/xdm/blob/master/schemas/context/profile-privacy.schema.json) för GitHub eller förhandsgranskar blandningen med Platform-gränssnittet.
 
-### Information om profilinställningar
+### [!DNL Profile Preferences Details]
 
-I avsnittet Information om profilinställningar finns flera fält som representerar inställningar för kundprofiler (t.ex. e-postformat, önskat språk och tidszon). Ett av fälten i den här mixinen, OptInOut (`optInOut`), tillåter att avanmälningsvärden ställs in för enskilda kanaler.
+I [!DNL Profile Preferences Details] blandningen finns flera fält som representerar inställningar för kundprofiler (t.ex. e-postformat, önskat språk och tidszon). Ett av fälten i den här mixinen, OptInOut (`optInOut`), tillåter att avanmälningsvärden ställs in för enskilda kanaler.
 
 ![](images/opt-outs/profile-preferences-details.png)
 
-Mixen Information om profilinställningar innehåller följande fält för avanmälan:
+Blandningen [!DNL Profile Preferences Details] innehåller följande fält för avanmälan:
 
 - OptInOut (`optInOut`): Ett objekt där varje nyckel representerar en giltig och känd URI för en kommunikationskanal och det aktiva tillståndet för avanmälan för varje kanal. Varje kanal kan ha ett av fyra möjliga värden:
    - Inte tillhandahållen (`not_provided`): Ingen avanmälningsbegäran har angetts för den här kanalen.
