@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform produktdokumentation
 topic: getting started
 translation-type: tm+mt
-source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
+source-git-commit: 1ecff21343c8b39070afdb4f486d0961c024235a
 workflow-type: tm+mt
-source-wordcount: '6593'
+source-wordcount: '6656'
 ht-degree: 0%
 
 ---
@@ -191,6 +191,8 @@ ht-degree: 0%
 **Målkategori:** En destinationskategori är en gruppering av destinationer [!DNL Real-time Customer Data Platform] som har liknande egenskaper.
 
 **Målkatalog:** En målkatalog är en lista över tillgängliga mål i [!DNL Real-time Customer Data Platform].
+
+**Regler för direktsamtal:** i [!DNL Experience Platform Launch]kan du konfigurera en [!UICONTROL direct call] [!UICONTROL rule] som körs när den anropas direkt från sidan. Om sidinläsningen eller åtgärden på webbplatsen är mycket enkel, eller om den är unik och kan utföra en viss uppsättning instruktioner varje gång (anges [!DNL eVar4] till X och utlöses [!DNL event2] varje gång), kan du använda en [!UICONTROL direct call] [!UICONTROL rule]. Se [!DNL Launch] dokumentationen om hur du skapar [!UICONTROL direct call] [!UICONTROL rules].
 
 **Visningsnamn:** Visningsnamnet är ett användarvänligt namn på ett fält som visas i användargränssnittet.
 
