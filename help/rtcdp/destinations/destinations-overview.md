@@ -1,22 +1,22 @@
 ---
-title: Destinationsöversikt
-seo-title: Destinationsöversikt
+title: Översikt över destinationer
+seo-title: Översikt över destinationer
 description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från kunddata i realtid på Platform. Ni kan använda Destinationer i Adobe Real-time Customer Data Platform för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 seo-description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från kunddata i realtid på Platform. Ni kan använda Destinationer i Adobe Real-time Customer Data Platform för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 translation-type: tm+mt
-source-git-commit: a61a2a4d9d51c402bb50153c06a93d255a3613cb
+source-git-commit: 7aa15772003cce1dfc7c3636048bce9a35bf8197
 workflow-type: tm+mt
-source-wordcount: '531'
+source-wordcount: '525'
 ht-degree: 0%
 
 ---
 
 
-# Destinations Overview {#overview}
+# [!DNL Destinations] översikt {#overview}
 
 ![Översiktsbanderoll för destinationer](/help/rtcdp/destinations/assets/destinations-overview-banner.png)
 
-**Destinationer** är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Real-time Customer Data Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+**[!DNL Destinations]** är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från kunddata i realtid på Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 
 ## Destinationer och källor {#destinations-and-sources}
 
@@ -48,14 +48,14 @@ Målfunktionerna i CDP i realtid fungerar med åtkomstkontrollsbehörigheter i A
 
 Mer information om åtkomstkontroller finns i användarhandboken för [åtkomstkontroll](../../access-control/ui/overview.md).
 
-## Begränsningar för datastyrning vid aktivering av data till destinationer {#data-governance}
+## [!DNL Data Governance] begränsningar för att aktivera data till destinationer {#data-governance}
 
 Datastyrning upprätthålls för CDP-destinationer i realtid genom:
 
 * *Marknadsföringsanvändningsfall* som du kan välja i arbetsflödet för att skapa destinationer;
 * *Dataanvändningsprinciper* som begränsar data som innehåller vissa användningsetiketter från att aktiveras till mål med vissa användningsfall för marknadsföring.
 
-Läs Data Governance i CDP-dokumentation i realtid om du vill ha mer information om [användningsfall](/help/rtcdp/privacy/data-governance-overview.md#destinations) för marknadsföring och [lösning av brott mot](/help/rtcdp/privacy/data-governance-overview.md#enforcement)datapolicyn.
+Mer information om [!DNL Data Governance] användningsfall [för marknadsföring och](/help/rtcdp/privacy/data-governance-overview.md#destinations) lösning av datapolicyöverträdelser finns [i dokumentationen om CDP i realtid](/help/rtcdp/privacy/data-governance-overview.md#enforcement).
 
 Mer information om hur du väljer användningsfall för marknadsföring i arbetsflödet för att skapa mål finns på följande sidor för de olika måltyperna i CDP för realtid:
 
