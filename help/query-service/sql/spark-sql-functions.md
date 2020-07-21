@@ -4,17 +4,17 @@ solution: Experience Platform
 title: Spark SQL-funktioner
 topic: spark sql functions
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
 workflow-type: tm+mt
-source-wordcount: '4903'
+source-wordcount: '4900'
 ht-degree: 4%
 
 ---
 
 
-# Spark SQL-funktioner
+# [!DNL Spark] SQL-funktioner
 
-Spark SQL-hjälparna har inbyggda Spark SQL-funktioner som utökar SQL-funktionerna.
+SQL-hjälparna [!DNL Spark] tillhandahåller inbyggda [!DNL Spark] SQL-funktioner som utökar SQL-funktionerna.
 
 Referens: [Spark SQL-funktionsdokumentation](https://spark.apache.org/docs/2.4.0/api/sql/index.html)
 
