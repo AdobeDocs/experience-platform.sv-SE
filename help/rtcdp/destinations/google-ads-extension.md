@@ -1,23 +1,26 @@
 ---
 title: Google Ads-tillägg
 seo-title: Google Ads-tillägg
-description: Tillägget Google Ads är en annonsdestination i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Google Ads är en annonsdestination i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Tillägget Google Ads är ett reklammål i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: Tillägget Google Ads är ett reklammål i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 98c3356db178507e0a8d94b47030e9490e721e46
+source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+workflow-type: tm+mt
+source-wordcount: '547'
+ht-degree: 2%
 
 ---
 
 
-# Google Ads-tillägg
+# [!DNL Google Ads] extension
 
 ## Översikt {#overview}
 
-Det här tillägget spårar konverteringar från användare som klickar på dina Google Ads. Du måste också installera tillägget gtag.js och lägga till det i ditt bibliotek, eftersom Google Ads är beroende av det.
+Det här tillägget spårar konverteringar från användare som klickar på dina [!DNL Google Ads]sidor. Du måste också installera gtag.js-tillägget och lägga till det i biblioteket, beroende på vilket som är [!DNL Google Ads] beroende av det.
 
-Google Ads är ett reklamtillägg i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://www.adobeexchange.com/experiencecloud.details.101383.google-ads.html).
+[!DNL Google Ads] är ett reklamtillägg i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://www.adobeexchange.com/experiencecloud.details.101383.google-ads.html).
 
-Det här målet är ett Experience Platform Launch-tillägg. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
+Det här målet har tillägget Experience Platform Launch. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [](/help/rtcdp/destinations/experience-platform-launch-extensions.md)Experience Platform Launch-tillägg.
 
 ![Google Ads-tillägg](/help/rtcdp/destinations/assets/google-extension-2.png)
 
@@ -25,11 +28,11 @@ Det här målet är ett Experience Platform Launch-tillägg. Mer information om 
 
 Det här tillägget är tillgängligt i målkatalogen för alla kunder som har köpt Adobe CDP i realtid.
 
-Om du vill använda det här tillägget måste du ha tillgång till Experience Platform Launch. Experience Platform Launch erbjuds Adobe Experience Cloud-kunder som en inkluderad, värdeskapande funktion. Kontakta din organisations administratör för att få åtkomst till Launch och be dem att ge dig behörighet att installera tillägg så att du kan installera dem **[!UICONTROL manage_properties]** .
+Om du vill använda det här tillägget måste du ha tillgång till Experience Platform Launch. Experience Platform Launch erbjuds Adobe Experience Cloud-kunder som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till Launch och be dem att ge dig behörighet att installera tillägg så att du kan installera dem **[!UICONTROL manage_properties]** .
 
 ## Installera tillägg {#install-extension}
 
-Så här installerar du Google Ads-tillägget:
+Så här installerar du [!DNL Google Ads] tillägget:
 
 1. Gå till [Adobe Real-time CDP-gränssnittet](http://platform.adobe.com/)**[!UICONTROL Destinations > Catalog]**.
 2. Välj tillägget i katalogen eller använd sökfältet.
