@@ -4,21 +4,21 @@ solution: Experience Platform
 title: Secure Python Data Access SDK
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 49aa2e2664fe658d89b6279d1f869eb30c48ccad
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '483'
+source-wordcount: '478'
 ht-degree: 0%
 
 ---
 
 
-# Secure Python [!DNL Data Access] SDK
+# Säker [!DNL Python][!DNL Data Access] SDK
 
-Secure Python [!DNL Data Access] SDK är ett programutvecklingspaket som gör det möjligt att läsa och skriva data från Adobe Experience Platform.
+Secure [!DNL Python][!DNL Data Access] SDK är ett programutvecklingspaket som gör det möjligt att läsa och skriva data från Adobe Experience Platform.
 
 ## Komma igång
 
-Du måste ha slutfört [autentiseringssjälvstudiekursen](../../tutorials/authentication.md) för att kunna komma åt värdena för att kunna ringa anrop till Secure Python [!DNL Data Access] SDK:
+Du måste ha slutfört självstudiekursen för [autentisering](../../tutorials/authentication.md) för att kunna komma åt värdena för att kunna anropa Secure [!DNL Python][!DNL Data Access] SDK:
 
 - `{ACCESS_TOKEN}`
 - `{API_KEY}`
@@ -63,7 +63,7 @@ Alla paket skickas till `./dist` efter att de har skapats.
 python3 setup.py bdist_wheel --universal
 ```
 
-Läs in hjulet i din Python 3-miljö från projektkatalogen.
+Ladda hjulet från projektkatalogen till din [!DNL Python] 3-miljö.
 
 ```python
 pip3 install ./dist/<name_of_wheel_file>.whl
@@ -148,7 +148,7 @@ df = dataset_reader.where(experience_ds['timestamp'].gt(87879779797).And(experie
 
 ### ORDER BY-instruktion
 
-ORDER BY-satsen tillåter att mottagna resultat sorteras efter en angiven kolumn i en viss ordning (stigande eller fallande). I Python SDK görs detta med hjälp av `sort()` funktionen.
+ORDER BY-satsen tillåter att mottagna resultat sorteras efter en angiven kolumn i en viss ordning (stigande eller fallande). I [!DNL Python] SDK görs detta med hjälp av `sort()` funktionen.
 
 Ett exempel på hur du använder `sort()` funktionen finns nedan:
 
