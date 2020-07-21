@@ -1,35 +1,38 @@
 ---
 title: Filialtillägg
 seo-title: Filialtillägg
-description: Filialtillägget är ett reklammål i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Filialtillägget är ett reklammål i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Filialtillägget är ett reklammål i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: Filialtillägget är ett reklammål i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 2a94444b35cac0c002d729798d96fd54aaafbacd
+source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+workflow-type: tm+mt
+source-wordcount: '510'
+ht-degree: 2%
 
 ---
 
 
-# Filialtillägg {#branch-extension}
+# [!DNL Branch] extension {#branch-extension}
 
 ## Översikt {#overview}
 
 Branch tillhandahåller kraftfulla länkar och lösningar som hjälper er att värva, engagera och mäta på alla enheter, kanaler och plattformar.
 
-Filialen är ett reklamtillägg i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på sidan [](https://branch.io/features/) Funktioner på webbplatsen för grenen.
+Filialen är ett reklamtillägg i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på sidan [](https://branch.io/features/) Funktioner på webbplatsen för grenen.
 
-Det här målet är ett Experience Platform Launch-tillägg. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
+Det här målet har tillägget Experience Platform Launch. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [](/help/rtcdp/destinations/experience-platform-launch-extensions.md)Experience Platform Launch-tillägg.
 
 ![Filialtillägg](assets/branch-extension.png)
 
 ## Förutsättningar {#prerequisites}
 
-Det här tillägget är tillgängligt i målkatalogen för alla kunder som har köpt Adobe CDP i realtid.
+Det här tillägget är tillgängligt i [!DNL Destinations] katalogen för alla kunder som har köpt Adobe CDP i realtid.
 
-Om du vill använda det här tillägget måste du ha tillgång till Experience Platform Launch. Experience Platform Launch erbjuds Adobe Experience Cloud-kunder som en inkluderad, värdeskapande funktion. Kontakta din organisations administratör för att få åtkomst till Launch och be dem att ge dig behörighet att installera tillägg så att du kan installera dem **[!UICONTROL manage_properties]** .
+Om du vill använda det här tillägget måste du ha tillgång till Experience Platform Launch. Experience Platform Launch erbjuds Adobe Experience Cloud-kunder som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till Launch och be dem att ge dig behörighet att installera tillägg så att du kan installera dem **[!UICONTROL manage_properties]** .
 
 ## Installera tillägg {#install-extension}
 
-Så här installerar du grentillägget:
+Så här installerar du [!DNL Branch] tillägget:
 
 1. Gå till [Adobe Real-time CDP-gränssnittet](http://platform.adobe.com/)**[!UICONTROL Destinations > Catalog]**.
 2. Välj tillägget i katalogen eller använd sökfältet.
