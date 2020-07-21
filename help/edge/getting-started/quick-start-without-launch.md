@@ -4,9 +4,9 @@ seo-title: 'Snabbstart för Adobe Experience Platform Web SDK '
 description: Snabbstartsguide för att använda Experience Platform Web SDK för att samla in data
 seo-description: Snabbstartsguide för att använda Experience Platform Web SDK för att samla in data
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: 8574a2d54c00f1bd3c41780fb12ff739a7d98fc3
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '517'
 ht-degree: 1%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 1%
 
 # Välkommen
 
-Den här guiden leder dig igenom de olika sätten att ställa in Adobe Experience Platform [!DNL Web SDK]. För att kunna använda den här funktionen måste du vara på tillåtelselista. Om du vill komma med på väntelistan kontaktar du din CSM.
+Den här guiden leder dig igenom de olika sätten att konfigurera Adobe Experience Platform Web SDK. Om du vill använda den här funktionen måste du vitlistas. Om du vill komma med på väntelistan kontaktar du din CSM.
 
-- Ha en [förstapartsdomän (CNAME)](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-first-party.html) aktiverad. Om du redan har en CNAME för [!DNL Analytics]ska du använda den. Testning under utveckling fungerar utan CNAME, men du behöver en innan du går till produktion
-- Var berättigad till Adobe Experience Platform [!DNL Data Platform].  Om du inte har köpt Platform tillhandahåller vi dig [!DNL Experience Platform Data Services Foundation] för användning med SDK utan extra kostnad.
-- Använd den senaste versionen av tjänsten för besökar-ID
+- Ha en [förstapartsdomän (CNAME)](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-first-party.html) aktiverad. Om du redan har en CNAME för Analytics bör du använda den. Testning under utveckling fungerar utan CNAME, men du behöver en innan du går till produktion.
+- Var berättigad till Adobe Experience Platform.  Om du inte har köpt Platform kommer Adobe att förse dig med Experience Platform Data Services Foundation för användning med SDK utan extra kostnad.
+- Använd den senaste versionen av Visitor ID-tjänsten.
 
 ## Skapa ett konfigurations-ID
 
