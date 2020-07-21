@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Utvecklarhandbok för dataåtkomst
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: f7714b8bebe37b29290794a48314962e42b24058
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '486'
+source-wordcount: '485'
 ht-degree: 2%
 
 ---
@@ -242,4 +242,4 @@ Ytterligare exempel finns i [dataåtkomstsjälvstudiekursen](tutorials/dataset-d
 
 ## Prenumerera på dataöverföringshändelser
 
-Platform erbjuder specifika värdefulla event för prenumeration via [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). Du kan t.ex. prenumerera på dataöverföringshändelser för att få meddelanden om eventuella förseningar och fel. Mer information finns i självstudiekursen om hur du [prenumererar på meddelanden](../ingestion/quality/subscribe-events.md) om dataöverföring.
+[!DNL Platform] gör specifika, värdefulla händelser tillgängliga för prenumeration via [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). Du kan t.ex. prenumerera på dataöverföringshändelser för att få meddelanden om eventuella förseningar och fel. Mer information finns i självstudiekursen om hur du [prenumererar på meddelanden](../ingestion/quality/subscribe-events.md) om dataöverföring.
