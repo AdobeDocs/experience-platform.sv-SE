@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Skapa en datauppsättning
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: a25ca22fb8ec9eb95f74e4fd76a7f18e87343085
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+workflow-type: tm+mt
+source-wordcount: '86'
+ht-degree: 1%
 
 ---
 
 
 # Skapa en batch
 
-För att en datauppsättning ska kunna importera data måste den ha en associerad batch. Med hjälp av `id` värdet för en befintlig datauppsättning kan du skapa en batch genom att göra en POST-begäran till `/batches` slutpunkten i katalog-API:t.
+För att en datauppsättning ska kunna importera data måste den ha en associerad batch. Med hjälp av `id` värdet för en befintlig datauppsättning kan du skapa en batch genom att göra en POST-begäran till `/batches` slutpunkten i [!DNL Catalog] API:t.
 
 **API-format**
 
