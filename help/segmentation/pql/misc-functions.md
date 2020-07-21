@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Diverse funktioner
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: d7ec6240864916d3b54db8bd641f4917a38f9480
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+workflow-type: tm+mt
+source-wordcount: '105'
+ht-degree: 2%
 
 ---
 
 
 # Diverse funktioner
 
-Följande funktion är en annan funktion för PQL (Profile Query Language). Mer information om andra PQL-funktioner finns i översikten [för](./overview.md)profilfrågespråk.
+Följande funktion är en annan funktion för [!DNL Profile Query Language] (PQL). Mer information om andra PQL-funktioner finns i översikten [för](./overview.md)profilfrågespråk.
 
 ## Låt
 
