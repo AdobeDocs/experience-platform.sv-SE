@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en datauppsättning för att exportera ett målgruppssegment
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: cb6a2f91eb6c18835bd9542e5b66af4682227491
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
 workflow-type: tm+mt
-source-wordcount: '692'
+source-wordcount: '674'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Den här självstudiekursen är direkt relaterad till de steg som beskrivs i sj�
 
 ## Komma igång
 
-För att kunna exportera ett segment måste datauppsättningen baseras på XDM Individual Profile Union Schema. Ett unionsschema är ett systemgenererat, skrivskyddat schema som samlar fälten för alla scheman som delar samma klass, i det här fallet klassen XDM Individual Profile. Mer information om unionsvyscheman finns i avsnittet Kundprofil i [realtid i Utvecklarhandbok](../../xdm/schema/composition.md#union)för schemaregister.
+För att kunna exportera ett segment måste datauppsättningen baseras på [!DNL XDM Individual Profile Union Schema]. Ett unionsschema är ett systemgenererat, skrivskyddat schema som samlar fälten för alla scheman som delar samma klass, i det här fallet [!DNL XDM Individual Profile] klassen. Mer information om unionsvyscheman finns i avsnittet Kundprofil i [realtid i Utvecklarhandbok](../../xdm/schema/composition.md#union)för schemaregister.
 
 Om du vill visa unionsscheman i användargränssnittet klickar du **[!UICONTROL Profiles]** i den vänstra navigeringen och sedan på **[!UICONTROL Union schema]** fliken enligt nedan.
 
@@ -53,7 +53,7 @@ På *[!UICONTROL Create Dataset]* skärmen klickar du på **[!UICONTROL Create D
 
 ## Välj XDM-schema för enskild profilunion
 
-Om du vill välja XDM Individual Profile Union Schema för användning i din datamängd, söker du efter &quot;[!UICONTROL XDM Individual Profile]&quot;-schemat med typen &quot;[!UICONTROL Union]&quot; på *[!UICONTROL Select Schema]* skärmen.
+Om du vill välja [!DNL XDM Individual Profile Union Schema] den som ska användas i datauppsättningen söker du efter schemat&quot;[!UICONTROL XDM Individual Profile]&quot; med typen&quot;[!UICONTROL Union]&quot; på *[!UICONTROL Select Schema]* skärmen.
 
 Markerade alternativknappen bredvid **[!UICONTROL XDM Individual Profile]** och klicka sedan **[!UICONTROL Next]** i det övre högra hörnet.
 
@@ -84,6 +84,6 @@ Observera **[!UICONTROL Dataset ID]** detta eftersom det här värdet krävs fö
 
 ## Nästa steg
 
-Nu när du har skapat en datauppsättning baserad på XDM Individual Profile Union Schema kan du använda **[!UICONTROL Dataset ID]** för att fortsätta med [utvärderingen och åtkomsten till segmentresultaten](./evaluate-a-segment.md) .
+Nu när du har skapat en datauppsättning baserat på [!DNL XDM Individual Profile Union Schema]kan du använda **[!UICONTROL Dataset ID]** för att fortsätta [utvärdera och komma åt segmentresultaten](./evaluate-a-segment.md) .
 
 Nu kan du gå tillbaka till självstudiekursen för utvärdering av segmentresultat och hämta från [genereringsprofilerna för målgruppsmedlemmar](./evaluate-a-segment.md#generate-profiles) i steget för att exportera ett segmentarbetsflöde.
