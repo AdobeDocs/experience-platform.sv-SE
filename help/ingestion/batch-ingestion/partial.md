@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över partiell gruppinmatning i Adobe Experience Platform
 topic: overview
 translation-type: tm+mt
-source-git-commit: 0be45675e4a2e3308cb77a8bbe3189f09c2b6fd8
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '1188'
+source-wordcount: '1180'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ I [bilagan](#appendix) till den här självstudien finns dessutom en referens f�
 Den här självstudiekursen kräver en fungerande kunskap om de olika Adobe Experience Platform-tjänster som är involverade i partiell batchförbrukning. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 - [Batchförtäring](./overview.md): Den metod som används för att [!DNL Platform] importera och lagra data från datafiler, till exempel CSV och Parquet.
-- [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att ordna kundupplevelsedata.
+- [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API: [!DNL Platform] er.
 
@@ -42,7 +42,7 @@ För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutfö
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
@@ -115,7 +115,7 @@ Nu kan du överföra data med knappen **Lägg till data** , och den kommer att i
 
 ### Använd flödet &quot;[!UICONTROL Map CSV to XDM schema]&quot; {#map-flow}
 
-Om du vill använda &quot;[!UICONTROL Map CSV to XDM schema]&quot;-flödet följer du stegen i [Mappa en CSV-fil i självstudiekursen](../tutorials/map-a-csv-file.md). När du kommer till steget *Lägg till data* ska du tänka på *[!UICONTROL Partial ingestion]* - och *[!UICONTROL Error diagnostics]* fälten.
+Om du vill använda &quot;[!UICONTROL Map CSV to XDM schema]&quot;-flödet följer du stegen i [Mappa en CSV-fil i självstudiekursen](../tutorials/map-a-csv-file.md). När du har kommit till *[!UICONTROL Add data]* steget bör du tänka på *[!UICONTROL Partial ingestion]* - och *[!UICONTROL Error diagnostics]* fälten.
 
 ![](../images/batch-ingestion/partial-ingestion/xdm-csv-workflow.png)
 
