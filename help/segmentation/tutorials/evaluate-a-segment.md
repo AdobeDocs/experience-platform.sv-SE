@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Utvärdera ett segment
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: c0eacfba2feea66803e63ed55ad9d0a97e9ae47c
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
 workflow-type: tm+mt
-source-wordcount: '1543'
+source-wordcount: '1519'
 ht-degree: 0%
 
 ---
@@ -59,7 +59,7 @@ Med hjälp av schemalagd utvärdering kan din IMS-organisation skapa ett återko
 
 >[!NOTE]
 >
->Schemalagd utvärdering kan aktiveras för sandlådor med högst fem (5) sammanslagningsprinciper för den enskilda XDM-profilen. Om din organisation har fler än fem sammanfogningsprinciper för den enskilda XDM-profilen i en enda sandlådemiljö, kommer du inte att kunna använda schemalagd utvärdering.
+>Schemalagd utvärdering kan aktiveras för sandlådor med högst fem (5) sammanfogningsprinciper för [!DNL XDM Individual Profile]. Om din organisation har fler än fem sammanfogningsprinciper för [!DNL XDM Individual Profile] i en enda sandlådemiljö kan du inte använda schemalagd utvärdering.
 
 ### Skapa ett schema
 
@@ -157,11 +157,11 @@ Följande steg krävs för att exportera målgruppen:
 
 När du exporterar en målgrupp måste du först skapa en måldatauppsättning. Det är viktigt att datauppsättningen är korrekt konfigurerad för att exporten ska lyckas.
 
-En av de viktigaste sakerna att tänka på är det schema som datauppsättningen baseras på (`schemaRef.id` i API-exempelbegäran nedan). För att kunna exportera ett segment måste datauppsättningen baseras på XDM Individual Profile Union Schema (`https://ns.adobe.com/xdm/context/profile__union`). Ett unionsschema är ett systemgenererat, skrivskyddat schema som samlar in fält i scheman som delar samma klass, i det här fallet klassen XDM Individual Profile. Mer information om unionsvyscheman finns i avsnittet Kundprofil i [realtid i Utvecklarhandbok](../../xdm/api/getting-started.md)för schemaregister.
+En av de viktigaste sakerna att tänka på är det schema som datauppsättningen baseras på (`schemaRef.id` i API-exempelbegäran nedan). För att kunna exportera ett segment måste datauppsättningen baseras på [!DNL XDM Individual Profile Union Schema] (`https://ns.adobe.com/xdm/context/profile__union`). Ett unionsschema är ett systemgenererat, skrivskyddat schema som samlar in fält i scheman som delar samma klass, i det här fallet klassen XDM Individual Profile. Mer information om unionsvyscheman finns i avsnittet Kundprofil i [realtid i Utvecklarhandbok](../../xdm/api/getting-started.md)för schemaregister.
 
 Det finns två sätt att skapa den nödvändiga datauppsättningen:
 
-- **Använda API:er:** De steg som följer i den här självstudien beskriver hur du skapar en datauppsättning som refererar till XDM-schemat för enskilda profiler med hjälp av katalog-API:t.
+- **Använda API:er:** De steg som följer i den här självstudiekursen visar hur du skapar en datauppsättning som refererar till [!DNL XDM Individual Profile Union Schema] med hjälp av [!DNL Catalog] API:t.
 - **Använda gränssnittet:** Om du vill använda [!DNL Adobe Experience Platform] användargränssnittet för att skapa en datauppsättning som refererar till unionsschemat, följer du stegen i [användargränssnittet](../ui/overview.md) och går sedan tillbaka till den här självstudiekursen för att fortsätta med stegen för att [generera målgruppsprofiler](#generate-xdm-profiles-for-audience-members).
 
 Om du redan har en kompatibel datauppsättning och känner till dess ID kan du fortsätta direkt till steget för att [generera målgruppsprofiler](#generate-xdm-profiles-for-audience-members).
@@ -228,10 +228,10 @@ Mer detaljerad information om hur du använder den här slutpunkten finns i slut
 
 ## Nästa steg
 
-När exporten är klar är dina data tillgängliga i Data Lake in [!DNL Experience Platform]. Du kan sedan använda API:t [för](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) dataåtkomst för att komma åt data med hjälp av de `batchId` som är kopplade till exporten. Beroende på segmentets storlek kan data vara i segment och gruppen kan bestå av flera filer.
+När exporten är klar är dina data tillgängliga i [!DNL Data Lake] In- [!DNL Experience Platform]. Du kan sedan använda [!DNL Data Access API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) till att få åtkomst till data med hjälp av de `batchId` som är kopplade till exporten. Beroende på segmentets storlek kan data vara i segment och gruppen kan bestå av flera filer.
 
 Följ självstudiekursen ( [!DNL Data Access] Data Access) om du vill ha stegvisa anvisningar om hur du använder API:t för att få åtkomst till och hämta gruppfiler [](../../data-access/tutorials/dataset-data.md).
 
-Du kan också komma åt exporterade segmentdata med [!DNL Adobe Experience Platform Query Service]. Med API:t UI eller RESTful kan du [!DNL Query Service] skriva, validera och köra frågor på data i Data Lake.
+Du kan också komma åt exporterade segmentdata med [!DNL Adobe Experience Platform Query Service]. Med API:t UI eller RESTful kan du [!DNL Query Service] skriva, validera och köra frågor på data i [!DNL Data Lake].
 
 Mer information om hur man hämtar information finns i dokumentationen om [!DNL Query Service](../../query-service/home.md).
