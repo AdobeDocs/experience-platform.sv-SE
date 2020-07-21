@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Apache Spark på Azure HDInsights-kontakten
 topic: overview
 translation-type: tm+mt
-source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+source-git-commit: 3b5e76afea5689dbd59f64f6192e6ef2a6acb7d3
 workflow-type: tm+mt
-source-wordcount: '182'
+source-wordcount: '231'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,38 @@ ht-degree: 0%
 Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
 [!DNL Experience Platform] har stöd för inmatning av data från en tredjepartsdatabas. [!DNL Platform] kan ansluta till olika typer av databaser, till exempel relational, NoSQL eller data warehouse. Stöd för databasleverantörer finns [!DNL Apache Spark] på [!DNL Azure HDInsights].
+
+## IP-adress tillåtelselista
+
+Följande IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor.
+
+### USA, östra
+
+- `20.41.2.0/23`
+- `20.41.4.0/26`
+- `20.44.17.80/28`
+- `20.49.102.16/29`
+- `40.70.148.160/28`
+- `52.167.107.224/28`
+
+### Västeuropa
+
+- `13.69.67.192/28`
+- `13.69.107.112/28`
+- `13.69.112.128/28`
+- `40.74.24.192/26`
+- `40.74.26.0/23`
+- `40.113.176.232/29`
+- `52.236.187.112/28`
+
+### Australien, östra
+
+- `13.70.74.144/28`
+- `20.37.193.0/25`
+- `20.37.193.128/26`
+- `20.37.198.224/29`
+- `40.79.163.80/28`
+- `40.79.171.160/28`
 
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Apache Spark] till [!DNL Azure HDInsights] med API: [!DNL Platform] er eller användargränssnittet:
 
