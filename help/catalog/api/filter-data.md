@@ -4,23 +4,23 @@ solution: Experience Platform
 title: Filtrera katalogdata med frågeparametrar
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '2060'
+source-wordcount: '2033'
 ht-degree: 0%
 
 ---
 
 
-# Filtrera katalogdata med frågeparametrar
+# Filtrera [!DNL Catalog] data med frågeparametrar
 
-Med Catalog Service API kan svarsdata filtreras med hjälp av frågeparametrar. En del av de bästa sätten för Catalog är att använda filter i alla API-anrop, eftersom de minskar belastningen på API:t och bidrar till att förbättra prestanda generellt.
+API:t tillåter att svarsdata filtreras med hjälp av frågeparametrar för begäran. [!DNL Catalog Service] En del av de bästa sätten för [!DNL Catalog] är att använda filter i alla API-anrop, eftersom de minskar belastningen på API:t och bidrar till att förbättra den övergripande prestandan.
 
-I det här dokumentet beskrivs de vanligaste metoderna för filtrering av katalogobjekt i API:t. Vi rekommenderar att du refererar till det här dokumentet när du läser [katalogutvecklarhandboken](getting-started.md) för att få mer information om hur du interagerar med katalog-API:t. Mer allmän information om katalogtjänsten finns i [Katalogöversikt](../home.md).
+Det här dokumentet innehåller de vanligaste metoderna för filtrering av [!DNL Catalog] objekt i API:t. Vi rekommenderar att du refererar till det här dokumentet när du läser [katalogutvecklarhandboken](getting-started.md) för att få mer information om hur du interagerar med [!DNL Catalog] API:t. Mer allmän information om [!DNL Catalog Service]finns i [Katalogöversikt](../home.md).
 
 ## Begränsa returnerade objekt
 
-Frågeparametern `limit` begränsar antalet objekt som returneras i ett svar. Katalogsvaren mäts automatiskt i enlighet med de konfigurerade gränserna:
+Frågeparametern `limit` begränsar antalet objekt som returneras i ett svar. [!DNL Catalog] svaren mäts automatiskt i enlighet med de konfigurerade gränserna:
 
 * Om ingen `limit` parameter anges är det maximala antalet objekt per svarsnyttolast 20.
 * För datauppsättningsfrågor, om `observableSchema` begärs med `properties` frågeparametern, är det maximala antalet returnerade datauppsättningar 20.
@@ -36,7 +36,7 @@ GET /{OBJECT_TYPE}?limit={LIMIT}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Den typ av katalogobjekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{LIMIT}` | Ett heltal som anger antalet objekt som ska returneras, från 1 till 100. |
 
 **Begäran**
@@ -104,9 +104,9 @@ GET /{OBJECT_TYPE}/{OBJECT_ID}?properties={PROPERTY_1},{PROPERTY_2},{PROPERTY_3}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Den typ av katalogobjekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{PROPERTY}` | Namnet på ett attribut som ska inkluderas i svarstexten. |
-| `{OBJECT_ID}` | Den unika identifieraren för ett specifikt katalogobjekt som hämtas. |
+| `{OBJECT_ID}` | Den unika identifieraren för ett specifikt [!DNL Catalog] objekt som hämtas. |
 
 **Begäran**
 
@@ -123,7 +123,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar en lista med katalogobjekt där endast de begärda egenskaperna visas.
+Ett godkänt svar returnerar en lista med [!DNL Catalog] objekt där endast de begärda egenskaperna visas.
 
 ```json
 {
@@ -205,9 +205,9 @@ Det finns några begränsningar att tänka på när du använder taggar:
 * De enda katalogobjekt som för närvarande stöder taggar är datamängder, grupper och anslutningar.
 * Taggnamnen är unika för din IMS-organisation.
 * Adobes processer kan utnyttja taggar för vissa beteenden. Namnen på dessa taggar har prefixet&quot;adobe&quot; som standard. Därför bör du undvika den här regeln när du deklarerar taggnamn.
-* Följande taggnamn är reserverade för användning i hela Experience Platform och kan därför inte deklareras som ett taggnamn för din organisation:
-   * `unifiedProfile`: Det här taggnamnet är reserverat för datauppsättningar som ska importeras av [kundprofilen](../../profile/home.md)i realtid.
-   * `unifiedIdentity`: Det här taggnamnet är reserverat för datauppsättningar som ska importeras av [identitetstjänsten](../../identity-service/home.md).
+* Följande taggnamn är reserverade för användning i hela [!DNL Experience Platform]organisationen och kan därför inte deklareras som ett taggnamn för din organisation:
+   * `unifiedProfile`: Det här taggnamnet är reserverat för datauppsättningar som ska importeras av [!DNL Real-time Customer Profile](../../profile/home.md).
+   * `unifiedIdentity`: Det här taggnamnet är reserverat för datauppsättningar som ska importeras av [!DNL Identity Service](../../identity-service/home.md).
 
 Nedan visas ett exempel på en datauppsättning som innehåller en `tags` egenskap. Taggarna i den egenskapen har formen av nyckelvärdepar, där varje taggvärde visas som en array som innehåller en enda sträng:
 
@@ -261,7 +261,7 @@ GET /{OBJECT_TYPE}?tags={TAG_NAME}:*
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Den typ av katalogobjekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`dataSets`</li></ul> |
+| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`dataSets`</li></ul> |
 | `{TAG_NAME}` | Namnet på taggen som ska filtreras efter. |
 | `{TAG_VALUE}` | Värdet på taggen som ska filtreras efter. Stöder jokertecken (`*`). |
 
@@ -332,7 +332,7 @@ Ett lyckat svar returnerar en lista med datauppsättningar som innehåller `samp
 
 ## Filtrera efter datumintervall
 
-Vissa slutpunkter i katalog-API:t har frågeparametrar som tillåter intervallfrågor, oftast för datum.
+Vissa slutpunkter i API:t har frågeparametrar som tillåter intervallfrågor, oftast för datum. [!DNL Catalog]
 
 **API-format**
 
@@ -359,7 +359,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar innehåller en lista med katalogobjekt som ligger inom det angivna datumintervallet. Om inte en gräns också anges innehåller svaret högst 20 objekt.
+Ett godkänt svar innehåller en lista med [!DNL Catalog] objekt som ligger inom det angivna datumintervallet. Om inte en gräns också anges innehåller svaret högst 20 objekt.
 
 ```json
 {
@@ -394,7 +394,7 @@ Ett godkänt svar innehåller en lista med katalogobjekt som ligger inom det ang
 
 Med `orderBy` frågeparametern kan du sortera (ordna) svarsdata baserat på ett angivet egenskapsvärde. Den här parametern kräver &quot;direction&quot; (`asc` för stigande eller `desc` fallande), följt av kolon (`:`) och sedan en egenskap för att sortera resultaten efter. Om ingen riktning anges kommer standardriktningen att bli stigande.
 
-Flera sorteringsegenskaper kan anges i en kommaseparerad lista. Om den första sorteringsegenskapen skapar flera objekt som innehåller samma värde för den egenskapen, används den andra sorteringsegenskapen för att ytterligare sortera de matchande objekten.
+Flera sorteringsegenskaper kan anges i en kommaavgränsad lista. Om den första sorteringsegenskapen skapar flera objekt som innehåller samma värde för den egenskapen, används den andra sorteringsegenskapen för att ytterligare sortera de matchande objekten.
 
 Ta till exempel följande fråga: `orderBy=name,desc:created`. Resultaten sorteras i stigande ordning baserat på den första sorteringsegenskapen `name`. Om flera poster delar samma `name` egenskap sorteras de matchande posterna sedan efter den andra sorteringsegenskapen `created`. Om ingen returnerad post har samma `name`värde räknas inte `created` egenskapen in i sorteringen.
 
@@ -427,7 +427,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar innehåller en lista med katalogobjekt som är sorterade enligt `orderBy` parametern. Om inte en gräns också anges innehåller svaret högst 20 objekt.
+Ett godkänt svar innehåller en lista med objekt [!DNL Catalog] som är sorterade enligt `orderBy` parametern. Om inte en gräns också anges innehåller svaret högst 20 objekt.
 
 ```json
 {
@@ -472,7 +472,7 @@ Ett godkänt svar innehåller en lista med katalogobjekt som är sorterade enlig
 
 ## Filtrera efter egenskap
 
-Katalogen innehåller två metoder för att filtrera efter egenskap, som beskrivs ytterligare i följande avsnitt:
+[!DNL Catalog] innehåller två metoder för att filtrera efter egenskap, som beskrivs ytterligare i följande avsnitt:
 
 * [Använda enkla filter](#using-simple-filters): Filtrera efter om en viss egenskap matchar ett visst värde.
 * [Använda egenskapsparametern](#using-the-property-parameter): Använd villkorsuttryck för att filtrera baserat på om det finns en egenskap eller om en egenskaps värde matchar, approximerar eller jämför med ett annat angivet värde eller reguljärt uttryck.
@@ -496,7 +496,7 @@ GET /{OBJECT_TYPE}?{PROPERTY_NAME}=!{VALUE_1},{VALUE_2},{VALUE_3}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Den typ av katalogobjekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{PROPERTY_NAME}` | Namnet på den egenskap vars värde du vill filtrera efter. |
 | `{VALUE}` | Ett egenskapsvärde som avgör vilka resultat som ska inkluderas (eller exkluderas, beroende på frågan). |
 
@@ -572,7 +572,7 @@ GET /{OBJECT_TYPE}?property={CONDITION}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Den typ av katalogobjekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{CONDITION}` | Ett villkorsuttryck som anger vilken egenskap som ska efterfrågas och hur dess värde ska utvärderas. Nedan finns exempel. |
 
 Parameterns värde har stöd för flera olika typer av villkorsuttryck `property` . I följande tabell visas den grundläggande syntaxen för uttryck som stöds:
@@ -595,7 +595,7 @@ Parameterns värde har stöd för flera olika typer av villkorsuttryck `property
 
 **Begäran**
 
-Följande begäran returnerar alla datauppsättningar med ett versionsnummer som är större än 1.0.3.
+Följande begäran returnerar alla datauppsättningar med ett versionsnummer större än 1.0.3.
 
 ```shell
 curl -X GET \
