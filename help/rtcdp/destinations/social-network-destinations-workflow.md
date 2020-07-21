@@ -4,9 +4,9 @@ seo-title: Målarbetsflöde för sociala nätverk
 description: Instruktioner för att ansluta till sociala nätverk och konton
 seo-description: Instruktioner för att ansluta till sociala nätverk och konton
 translation-type: tm+mt
-source-git-commit: 3c598454a868139b7604c5c7ca2b98fa0f1bb961
+source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
 workflow-type: tm+mt
-source-wordcount: '444'
+source-wordcount: '435'
 ht-degree: 0%
 
 ---
@@ -16,13 +16,13 @@ ht-degree: 0%
 
 ## Arbetsflöde för att skapa mål för sociala nätverk
 
-I den här självstudiekursen används Facebook som exempel, men arbetsflödet i Adobe Customer Data Platform i realtid är detsamma för alla mål för sociala nätverk när mer har lagts till i produkten.
+I den här självstudiekursen används [!DNL Facebook] som exempel, men arbetsflödet i Adobe Customer Data Platform i realtid är detsamma för alla mål för sociala nätverk när mer har lagts till i produkten.
 
 1. Bläddra **[!UICONTROL Destinations > Catalog]** till **[!UICONTROL Social]** kategorin i. Välj önskat mål för sociala nätverk och välj sedan **[!UICONTROL Connect destination]**.
 
    ![Anslut till mål för sociala nätverk](/help/rtcdp/destinations/assets/facebook-catalog-view.png)
 
-2. Om du tidigare har konfigurerat en anslutning till ditt sociala nätverk i **autentiseringssteget** väljer du **[!UICONTROL Existing Account]** och väljer din befintliga anslutning. Du kan också välja **[!UICONTROL New Account]** att konfigurera en ny anslutning till ditt sociala nätverk. Välj **[!UICONTROL Connect to destination]** så tar det dig till det valda sociala nätverkets mål för att logga in och ansluta Adobe Experience Cloud till ditt sociala nätverks annonskonto.
+2. Om du tidigare har konfigurerat en anslutning till ditt sociala nätverk i **autentiseringssteget** väljer du **[!UICONTROL Existing Account]** och väljer din befintliga anslutning. Du kan också välja **[!UICONTROL New Account]** att konfigurera en ny anslutning till ditt sociala nätverk. Välj **[!UICONTROL Connect to destination]** så tar det dig till vald destination för sociala nätverk för att logga in och ansluta Adobe Experience Cloud till ditt annonskonto för sociala nätverk.
 
    >[!NOTE]
    >
@@ -39,7 +39,7 @@ I den här självstudiekursen används Facebook som exempel, men arbetsflödet i
    >[!IMPORTANT]
    >
    > * Marknadsföringsexemplet *Single Identity Personalization* är valt som standard för mål för sociala nätverk och kan inte tas bort.
-   > * För Facebook-destinationer. **[!UICONTROL Account ID]** är ditt Facebook-konto-ID. Du hittar detta ID i Facebook Ads Manager. Lägg till följande ID `act_` som prefix:
+   > * För [!DNL Facebook] destinationer. **[!UICONTROL Account ID]** är din [!DNL Facebook Ad Account ID]. Du hittar detta ID i [!DNL Facebook Ads Manager]. Lägg till följande ID `act_` som prefix:
 
 
    ![Anslut till mål för sociala nätverk - konfigurationssteg](/help/rtcdp/destinations/assets/social-networks-setup-step.png)
