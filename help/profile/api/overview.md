@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Utvecklarhandbok för kundprofil-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: 57ef7df4b9323b58a90660d515ade61a3974779f
+source-git-commit: d80d49df9c5ac197bdc7f851bbfff18d9b3019d4
 workflow-type: tm+mt
-source-wordcount: '690'
+source-wordcount: '704'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,9 @@ ht-degree: 0%
 
 API:t innehåller [!DNL Real-time Customer Profile] flera slutpunkter, som beskrivs nedan. Besök de enskilda slutpunktshandböckerna för mer information och se [komma igång-guiden](getting-started.md) för viktig information om obligatoriska huvuden, läsning av exempel-API-anrop med mera.
 
-Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder läser du API-referenssaggern för kundprofil i [realtid](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml).
+Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder går du till API-referenssaggen för kundprofiler i [realtid](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml).
+
+En guide till hur du arbetar med [!DNL Real-time Customer Profile] data i [!DNL Experience Platform] användargränssnittet finns i användarhandboken [för](../ui/user-guide.md)profiler.
 
 ## (Alfa) Beräknade attribut {#computed-attributes}
 
@@ -52,4 +54,4 @@ Data som hämtas till [!DNL Platform] lagras i [!DNL Data Lake] såväl som i [!
 
 ## Nästa steg {#next-steps}
 
-Om du vill börja ringa anrop med [!DNL Real-time Customer Profile] API:t läser du [Komma igång-guiden](getting-started.md) och väljer sedan en av slutpunktshandböckerna för att lära dig hur du använder specifika [!DNL Profile]relaterade slutpunkter. Mer information om hur du arbetar med [!DNL Profile] data med [!DNL Platform] användargränssnittet finns i användarhandboken för [kundprofiler i realtid](../ui/user-guide.md).
+Om du vill börja ringa anrop med [!DNL Real-time Customer Profile] API:t läser du [Komma igång-guiden](getting-started.md) och väljer sedan en av slutpunktshandböckerna för att lära dig hur du använder specifika [!DNL Profile]relaterade slutpunkter. Om du vill arbeta med [!DNL Profile] data med [!DNL Experience Platform] användargränssnittet läser du användarhandboken för [kundprofilen i realtid](../ui/user-guide.md).
