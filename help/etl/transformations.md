@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Exempel på ETL-omformningar
 topic: overview
 translation-type: tm+mt
-source-git-commit: 4817162fe2b7cbf4ae4c1ed325db2af31da5b5d3
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+workflow-type: tm+mt
+source-wordcount: '466'
+ht-degree: 0%
 
 ---
 
@@ -17,7 +20,7 @@ I den här artikeln visas följande exempelomformningar som en utvecklare av Ext
 
 ### Exempelfiler
 
-Exempel på CSV- och JSON-filer finns i den offentliga ETL Reference GitHub-repon som hanteras av Adobe:
+Exempel på CSV- och JSON-filer finns i den offentliga ETL Reference- [!DNL GitHub] rapporten från Adobe:
 
 - [CRM_profiles.csv](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.csv)
 - [CRM_profiles.json](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.json)
@@ -46,10 +49,10 @@ Mappningskraven för CRM-data beskrivs i följande tabell och innehåller följa
 
 | CSV-kolumn | XDM-sökväg | Dataformatering |
 | ---------- | -------- | --------------- |
-| RUBRIK | person.name.CourtyTitle | Kopiera som sträng |
+| RUBRIK | person.name.courtesyTitle | Kopiera som sträng |
 | F_NAME | person.name.firstName | Kopiera som sträng |
 | L_NAME | person.name.lastName | Kopiera som sträng |
-| GENDER | person.kön | Transformera kön som motsvarande person.genusuppräkningsvärde |
+| GENDER | person.gender | Transformera kön som motsvarande person.genusuppräkningsvärde |
 | DOB | person.bornDayAndMonth: &quot;MM-DD&quot;<br/>person.födelsedatum: &quot;YYY-MM-DD&quot;<br/>person.födelseår: YYYY | Omvandla födelsedagenDayAndMonth som<br/>stringTransform<br/>födelsedatum somstringTransform födelseår som kort int |
 | E-POST | personalEmail.address | Kopiera som sträng |
 | CRMID | identityMap.CRMID[{&quot;id&quot;:x, primär:false}] | Kopiera som sträng till CRMID-matris i identityMap och ange Primary som false |
@@ -61,7 +64,7 @@ Mappningskraven för CRM-data beskrivs i följande tabell och innehåller följa
 | ORT | homeAddress.city | Kopiera som sträng |
 | LÄGE | homeAddress.stateProvince | Kopiera som sträng |
 | LAND | homeAddress.country | Kopiera som sträng |
-| ZIP | homeAddress.mailCode | Kopiera som sträng |
+| ZIP | homeAddress.postalCode | Kopiera som sträng |
 | LAT | homeAddress.latitude | Konvertera till dubbel |
 | LÅNG | homeAddress.longitude | Konvertera till dubbel |
 
@@ -174,7 +177,7 @@ Hierarkin för en databildruta (till exempel en Parquet-fil) måste matcha hiera
 
 ### Exempeldataram
 
-Strukturen för följande exempeldatabildruta har mappats till ett schema som implementerar klassen XDM Individual Profile och innehåller de vanligaste fälten som är associerade med scheman av den typen.
+Strukturen för följande exempeldatabildruta har mappats till ett schema som implementerar [!DNL XDM Individual Profile] klassen och innehåller de vanligaste fälten som är associerade med scheman av den typen.
 
 ```python
 [
@@ -247,7 +250,7 @@ Strukturen för följande exempeldatabildruta har mappats till ett schema som im
 ]
 ```
 
-När du konstruerar en dataram för användning i Adobe Experience Platform är det viktigt att se till att dess hierarkiska struktur är exakt densamma som i ett befintligt XDM-schema för att fälten ska kunna mappas korrekt.
+När du konstruerar en databildruta för användning i Adobe Experience Platform är det viktigt att se till att dess hierarkiska struktur är exakt densamma som i ett befintligt XDM-schema för att fälten ska kunna mappas korrekt.
 
 ## Identiteter till identitetskarta
 
@@ -280,7 +283,7 @@ När du konstruerar en dataram för användning i Adobe Experience Platform är 
 
 Mappningskraven för arrayen med identiteter beskrivs i följande tabell:
 
-| Identitetsfält | identityMap-fält | Datatyp |
+| Identitetsfält | identityMap-fält | Datatyper |
 | -------------- | ----------------- | --------- |
 | identiteter[0].id | [identityMapEmail][{"id"}] | kopiera som sträng |
 | identiteter[1].id | [identityMapCRMID][{"id"}] | kopiera som sträng |
