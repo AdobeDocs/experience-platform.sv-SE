@@ -4,14 +4,17 @@ solution: Experience Platform
 title: Anslut med PSQL
 topic: connect
 translation-type: tm+mt
-source-git-commit: f5bc9beb59e83b0411d98d901d5055122a124d07
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+workflow-type: tm+mt
+source-wordcount: '164'
+ht-degree: 0%
 
 ---
 
 
 # Anslut med PSQL
 
-PSQL är ett kommandoradsgränssnitt som medföljer när du installerar Postgres på datorn. Du kan installera det genom att följa dessa anvisningar.
+PSQL är ett kommandoradsgränssnitt som medföljer när du installerar [!DNL Postgres] på datorn. Du kan installera det genom att följa dessa anvisningar.
 
 ## Installera Postgres på en Mac
 
@@ -35,15 +38,15 @@ När du har skapat dessa kommandon bör du se följande:
 /usr/local/bin/psql
 ```
 
-## Installera Postgres på en dator
+## Installera [!DNL Postgres] på en dator
 
-Hämta och installera Postgres från den här [platsen](https://www.postgresql.org/download/windows/).
+Hämta och installera [!DNL Postgres] från den här [platsen](https://www.postgresql.org/download/windows/).
 
 Redigera din sökvägsvariabel:
 
 ![Bild](../images/clients/psql/path.png)
 
-Lägg till de två rader som visas och som innehåller&quot;Postgres&quot;.
+Lägg till de två rader som visas och som innehåller &quot;[!DNL Postgres]&quot;.
 
 Spara uppdateringarna, öppna en kommandotolk och skriv:
 
@@ -57,11 +60,11 @@ Du borde se något liknande:
 psql (PostgreSQL) 9.5.14
 ```
 
-## Anslut PSQL och frågetjänst
+## Anslut PSQL och [!DNL Query Service]
 
-Gå tillbaka till användargränssnittet för plattformen på sidan Connect BI Tools.
+Återgå till [!DNL Platform] gränssnittet på *[!UICONTROL Connect BI Tools]* sidan.
 
-Klicka på **Kopiera** för &quot;PSQL-kommando&quot;.
+Klicka **[!UICONTROL copy]** för *[!UICONTROL PSQL Command]*.
 
 ![Bild](../images/clients/psql/connect-bi.png)
 
