@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en direktuppspelningsanslutning med API:t
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '659'
+source-wordcount: '633'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Skapa en direktuppspelningsanslutning med API:t
 
-Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för datainmatningstjänsten i Adobe Experience Platform.
+Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i Adobe Experience Platform Data-API: [!DNL Ingestion Service] erna.
 
 ## Komma igång
 
@@ -24,30 +24,30 @@ När du har registrerat en direktuppspelningsanslutning får du som DataProducer
 
 Den här självstudiekursen kräver också kunskaper om olika Adobe Experience Platform-tjänster. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-- [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera upplevelsedata.
-- [Kundprofil](../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+- [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar upplevelsedata.
+- [!DNL Real-time Customer Profile](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:er för direktuppspelning.
 
 ### Läser exempel-API-anrop
 
-Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -176,7 +176,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den beg
 
 ## Nästa steg
 
-Nu när du har skapat en direktuppspelningsanslutning kan du direktuppspela antingen tidsserier eller spela in data, så att du kan importera data inom Platform. Om du vill lära dig hur du direktuppspelar data från tidsserier till Platform går du till självstudiekursen [för](./streaming-time-series-data.md)strömning av data från tidsserier. Om du vill lära dig hur du direktuppspelar postdata till Platform går du till självstudiekursen [](./streaming-record-data.md)för direktuppspelningspostdata.
+Nu när du har skapat en direktuppspelningsanslutning kan du direktuppspela antingen tidsserier eller spela in data, så att du kan importera data i [!DNL Platform]. Om du vill lära dig hur du direktuppspelar tidsseriedata [!DNL Platform]går du till självstudiekursen [om data för](./streaming-time-series-data.md)direktuppspelningstidsserier. Om du vill lära dig hur du direktuppspelar postdata [!DNL Platform]går du till självstudiekursen [om](./streaming-record-data.md)direktuppspelningspostdata.
 
 ## Bilaga
 
@@ -184,6 +184,6 @@ I det här avsnittet finns ytterligare information om hur du skapar direktuppspe
 
 ### Autentiserade direktuppspelningsanslutningar
 
-Autentiserad datainsamling gör det möjligt för Adobe Experience Platform-tjänster, som kundprofil och identitet i realtid, att skilja mellan poster som kommer från betrodda källor och icke betrodda källor. Klienter som vill skicka personligt identifierbar information (PII) kan göra det genom att skicka IMS Access-token som en del av POST-begäran. Om IMS-token är giltig markeras posterna som insamlade från betrodda källor.
+Autentiserad datainsamling gör det möjligt för Adobe Experience Platform-tjänster, som [!DNL Real-time Customer Profile] och [!DNL Identity], att skilja mellan poster som kommer från betrodda källor och otillförlitliga källor. Klienter som vill skicka personligt identifierbar information (PII) kan göra det genom att skicka IMS Access-token som en del av POST-begäran. Om IMS-token är giltig markeras posterna som insamlade från betrodda källor.
 
 Mer information om hur du skapar en autentiserad direktuppspelningsanslutning finns i självstudiekursen [Skapa en autentiserad direktuppspelningsanslutning](create-authenticated-streaming-connection.md).
