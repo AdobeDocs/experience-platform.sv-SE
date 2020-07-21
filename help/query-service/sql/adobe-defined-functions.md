@@ -4,22 +4,25 @@ solution: Experience Platform
 title: Adobe-definierade funktioner
 topic: functions
 translation-type: tm+mt
-source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+workflow-type: tm+mt
+source-wordcount: '2156'
+ht-degree: 2%
 
 ---
 
 
 # Adobe-definierade funktioner
 
-Adobe-definierade funktioner (ADF) är färdiga funktioner i Query Service som hjälper till att utföra vanliga affärsrelaterade uppgifter på ExperienceEvent-data. Det gäller funktioner för professionalisering och attribuering som de som finns i Adobe Analytics. Läs [Adobe Analytics-dokumentationen](https://docs.adobe.com/content/help/en/analytics/landing/home.html) om du vill ha mer information om Adobe Analytics och begreppen bakom de ADF:er som definieras på den här sidan. Det här dokumentet innehåller information om Adobe-definierade funktioner som finns i Query Service.
+Adobe-definierade funktioner (ADF) är färdiga funktioner i [!DNL Query Service] vilka man utför vanliga affärsrelaterade [!DNL ExperienceEvent] datauppgifter. Bland dessa finns funktioner för professionalisering och Attribution som liknar de som finns i Adobe Analytics. Läs [Adobe Analytics-dokumentationen](https://docs.adobe.com/content/help/sv-SE/analytics/landing/home.html) om du vill ha mer information om Adobe Analytics och begreppen bakom de ADF:er som finns definierade på den här sidan. Det här dokumentet innehåller information om de Adobe-definierade funktionerna som finns i [!DNL Query Service].
 
 ## Fönsterfunktioner
 
-Huvuddelen av affärslogiken kräver att man samlar kontaktytorna för en kund och beställer dem med tiden. Det här stödet tillhandahålls av Spark SQL i form av fönsterfunktioner. Fönsterfunktioner är en del av standard-SQL och stöds av många andra SQL-motorer.
+Huvuddelen av affärslogiken kräver att man samlar kontaktytorna för en kund och beställer dem med tiden. Det här stödet tillhandahålls av [!DNL Spark] SQL i form av fönsterfunktioner. Fönsterfunktioner är en del av standard-SQL och stöds av många andra SQL-motorer.
 
 En fönsterfunktion uppdaterar en aggregering och returnerar ett enda objekt för varje rad i den ordnade delmängden. Den mest grundläggande aggregeringsfunktionen är `SUM()`. `SUM()` tar raderna och ger en summa. Om du i stället använder `SUM()` ett fönster och förvandlar det till en fönsterfunktion, får du en kumulativ summa för varje rad.
 
-Huvuddelen av Spark SQL-hjälpen är fönsterfunktioner som uppdaterar varje rad i fönstret, med radstatus tillagd.
+Huvuddelen av hjälpen i SQL- [!DNL Spark] programmet är fönsterfunktioner som uppdaterar varje rad i fönstret, med radstatus tillagd.
 
 ### Specifikation
 
@@ -27,15 +30,15 @@ Syntax: `OVER ([partition] [order] [frame])`
 
 | Parameter | Beskrivning |
 | --- | --- |
-| [partition] | En undergrupp av raderna som baseras på en kolumn eller ett tillgängligt fält. Exempel: `PARTITION BY endUserIds._experience.mcid.id` |
-| [order] | En kolumn eller ett tillgängligt fält som används för att ordna delmängden eller raderna. Exempel: `ORDER BY timestamp` |
-| [frame] | En undergrupp av raderna i en partition. Exempel: `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` |
+| [partition] | En undergrupp av raderna som baseras på en kolumn eller ett tillgängligt fält. Exempel, `PARTITION BY endUserIds._experience.mcid.id` |
+| [order] | En kolumn eller ett tillgängligt fält som används för att ordna delmängden eller raderna. Exempel, `ORDER BY timestamp` |
+| [frame] | En undergrupp av raderna i en partition. Exempel, `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` |
 
 ## Yrkesställning
 
-När du arbetar med ExperienceEvent-data som kommer från en webbplats, en mobilapp, ett interaktivt röstsvarssystem eller någon annan kundinteraktionskanal hjälper det om händelser kan grupperas runt en relaterad aktivitetsperiod. Vanligtvis har du en specifik avsikt att driva din aktivitet, som att söka efter en produkt, betala en räkning, kontrollera kontosaldot, fylla i ett program och så vidare. Den här grupperingen hjälper till att associera händelserna för att hitta mer kontext om kundupplevelsen.
+När du arbetar med [!DNL ExperienceEvent] data som kommer från en webbplats, en mobilapp, ett interaktivt röstsvarssystem eller någon annan kundinteraktionskanal är det bra om händelser kan grupperas runt en relaterad aktivitetsperiod. Vanligtvis har du en specifik avsikt att driva din aktivitet, som att söka efter en produkt, betala en räkning, kontrollera kontosaldot, fylla i ett program och så vidare. Den här grupperingen hjälper till att associera händelserna för att hitta mer kontext om kundupplevelsen.
 
-Mer information om sessioner i Adobe Analytics finns i dokumentationen om [kontextmedvetna sessioner](https://docs.adobe.com/content/help/en/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html).
+Mer information om sessioner i Adobe Analytics finns i dokumentationen om [sammanhangsberoende sessioner](https://docs.adobe.com/content/help/en/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html).
 
 ### Specifikation
 
@@ -87,17 +90,17 @@ LIMIT 10
 (10 rows)
 ```
 
-## Attribut
+## Attribuering
 
 Att knyta kundåtgärder till framgång är en viktig del av att förstå de faktorer som påverkar kundupplevelsen. Följande ADF:er har stöd för första och sista attributet med olika förfalloinställningar.
 
-Mer information om attribuering i Adobe Analytics finns i [Attribution IQ-översikten](https://docs.adobe.com/content/help/en/analytics/analyze/analysis-workspace/panels/attribution.html) i Analytics Analyze Guide.
+Mer information om attribuering i Adobe Analytics finns i [Attribution IQ overview](https://docs.adobe.com/content/help/en/analytics/analyze/analysis-workspace/panels/attribution.html) i [!DNL Analytics] Analyze Guide.
 
 ### Första beröringsattribuering
 
-Returnerar det första beröringsattribueringsvärdet och detaljer för en enskild kanal i ExperienceEvent-måldatauppsättningen. Frågan returnerar ett `struct` objekt med det första beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
+Returnerar det första beröringsattribueringsvärdet och detaljer för en enskild kanal i måldatauppsättningen [!DNL ExperienceEvent] . Frågan returnerar ett `struct` objekt med det första beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
 
-Den här frågan är användbar om du vill se vilken interaktion som ledde till en serie kundåtgärder. I exemplet nedan tilldelas den initiala spårningskoden (`em:946426`) i ExperienceEvent-data 100 % (`1.0`) ansvar för kundens åtgärder när det var den första interaktionen.
+Den här frågan är användbar om du vill se vilken interaktion som ledde till en serie kundåtgärder. I exemplet nedan tilldelas den inledande spårningskoden (`em:946426`) i [!DNL ExperienceEvent] data 100 % (`1.0`) ansvar för kundens åtgärder när det var den första interaktionen.
 
 ### Specifikation
 
@@ -113,8 +116,8 @@ Syntax: `ATTRIBUTION_FIRST_TOUCH(timestamp, channelName, channelValue) OVER ([pa
 | Returnerade objektparametrar | Beskrivning |
 | ---------------------- | ------------- |
 | `name` | Den `channelName` som anges som en etikett i ADF |
-| `value` | Värdet från `channelValue` det är den första beröringen i ExperienceEvent |
-| `timestamp` | Tidsstämpeln för ExperienceEvent där den första beröringen inträffade |
+| `value` | Värdet från `channelValue` det är den första beröringen i [!DNL ExperienceEvent] |
+| `timestamp` | Tidsstämpeln för den [!DNL ExperienceEvent] plats där den första beröringen inträffade |
 | `fraction` | Tilldelning av den första kontakten uttryckt som fraktionskredit |
 
 #### Exempelfråga
@@ -151,9 +154,9 @@ LIMIT 10
 
 ### Senaste beröringsattribuering
 
-Returnerar det sista beröringsattribueringsvärdet och detaljer för en enskild kanal i ExperienceEvent-måldatauppsättningen. Frågan returnerar ett `struct` objekt med det senaste beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
+Returnerar det sista beröringsattribueringsvärdet och detaljer för en enskild kanal i måldatauppsättningen. [!DNL ExperienceEvent] Frågan returnerar ett `struct` objekt med det senaste beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
 
-Den här frågan är användbar om du vill se den slutliga interaktionen i en serie kundåtgärder. I exemplet nedan är spårningskoden i det returnerade objektet den sista interaktionen i varje ExperienceEvent-post. Varje kod tilldelas 100 % (`1.0`) ansvar för kundens åtgärder när det var den senaste interaktionen.
+Den här frågan är användbar om du vill se den slutliga interaktionen i en serie kundåtgärder. I exemplet nedan är spårningskoden i det returnerade objektet den sista interaktionen i varje [!DNL ExperienceEvent] post. Varje kod tilldelas 100 % (`1.0`) ansvar för kundens åtgärder när det var den senaste interaktionen.
 
 ### Specifikation
 
@@ -169,8 +172,8 @@ Syntax: `ATTRIBUTION_LAST_TOUCH(timestamp, channelName, channelValue) OVER ([par
 | Returnerade objektparametrar | Beskrivning |
 | ---------------------- | ------------- |
 | `name` | Den `channelName` som anges som en etikett i ADF |
-| `value` | Värdet från `channelValue` det är den sista beröringen i ExperienceEvent |
-| `timestamp` | Tidsstämpeln för den ExperienceEvent där `channelValue` funktionen användes |
+| `value` | Värdet från `channelValue` det är den sista beröringen i [!DNL ExperienceEvent] |
+| `timestamp` | Tidsstämpeln för den [!DNL ExperienceEvent] plats där `channelValue` användes |
 | `fraction` | Tilldelning av den senaste beröringen uttryckt som fraktionskredit |
 
 #### Exempelfråga
@@ -206,9 +209,9 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 
 ### Första beröringsattribuering med förfallovillkor
 
-Returnerar det första beröringsattribueringsvärdet och detaljer för en enskild kanal i ExperienceEvent-måldatauppsättningen, som slutar gälla efter eller före ett villkor. Frågan returnerar ett `struct` objekt med det första beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
+Returnerar det första beröringsattribueringsvärdet och information för en enskild kanal i måldatauppsättningen, som [!DNL ExperienceEvent] förfaller efter eller före ett villkor. Frågan returnerar ett `struct` objekt med det första beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen.
 
-Den här frågan är användbar om du vill se vilken interaktion som ledde till en serie kundåtgärder inom en del av ExperienceEvent-datamängden som bestäms av ett villkor i valet. I exemplet nedan registreras ett köp (`commerce.purchases.value IS NOT NULL`) för var och en av de fyra dagar som visas i resultaten (15, 21, 23 och 29 juli) och den inledande spårningskoden för varje dag tilldelas 100 % (`1.0`) ansvar för kundens åtgärder.
+Den här frågan är användbar om du vill se vilken interaktion som ledde till en serie kundåtgärder inom en del av [!DNL ExperienceEvent] datauppsättningen som bestäms av ett villkor i valet. I exemplet nedan registreras ett köp (`commerce.purchases.value IS NOT NULL`) för var och en av de fyra dagar som visas i resultaten (15, 21, 23 och 29 juli) och den inledande spårningskoden för varje dag tilldelas 100 % (`1.0`) ansvar för kundens åtgärder.
 
 #### Specifikation
 
@@ -220,13 +223,13 @@ Syntax: `ATTRIBUTION_FIRST_TOUCH_EXP_IF(timestamp, channelName, channelValue, ex
 | `channelName` | Ett eget namn som ska användas som etikett i det returnerade objektet |
 | `channelValue` | Kolumnen eller fältet som är målkanalen för frågan |
 | `expCondition` | Villkoret som bestämmer kanalens slutpunkt |
-| `expBefore` | Standardvärdet är `false`. Boolesk för att ange om kanalen går ut före eller efter att det angivna villkoret är uppfyllt. Primiärt aktiverat för ett sessionsförfallovillkor (till exempel `sess.depth = 1, true`) för att säkerställa att den första beröringen inte väljs från en tidigare session. |
+| `expBefore` | Defaults to `false`. Boolesk för att ange om kanalen går ut före eller efter att det angivna villkoret är uppfyllt. Primiärt aktiverat för ett sessionsförfallovillkor (till exempel `sess.depth = 1, true`) för att säkerställa att den första beröringen inte väljs från en tidigare session. |
 
 | Returnerade objektparametrar | Beskrivning |
 | ---------------------- | ------------- |
 | `name` | Den `channelName` som anges som en etikett i ADF |
-| `value` | Värdet från `channelValue` det är den första beröringen i ExperienceEvent före `expCondition` |
-| `timestamp` | Tidsstämpeln för ExperienceEvent där den första beröringen inträffade |
+| `value` | Värdet från `channelValue` det som är den första beröringen i [!DNL ExperienceEvent] föregående `expCondition` |
+| `timestamp` | Tidsstämpeln för den [!DNL ExperienceEvent] plats där den första beröringen inträffade |
 | `fraction` | Tilldelning av den första kontakten uttryckt som fraktionskredit |
 
 #### Exempelfråga
@@ -262,7 +265,7 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 
 ### Första beröringsattribuering med tidsgräns för förfallodatum
 
-Returnerar det första beröringsattribueringsvärdet och detaljer för en enskild kanal i ExperienceEvent-måldatauppsättningen för en angiven tidsperiod. Frågan returnerar ett `struct` objekt med det första beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen. Den här frågan är användbar om du vill se vilken interaktion, inom ett valt tidsintervall, som ledde till en kundåtgärd. I exemplet nedan är den första beröringen som returneras för varje kundåtgärd den tidigaste interaktionen inom de föregående sju dagarna (`expTimeout = 86400 * 7`).
+Returnerar det första beröringsattribueringsvärdet och detaljer för en enskild kanal i måldatauppsättningen [!DNL ExperienceEvent] för en angiven tidsperiod. Frågan returnerar ett `struct` objekt med det första beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen. Den här frågan är användbar om du vill se vilken interaktion, inom ett valt tidsintervall, som ledde till en kundåtgärd. I exemplet nedan är den första beröringen som returneras för varje kundåtgärd den tidigaste interaktionen inom de föregående sju dagarna (`expTimeout = 86400 * 7`).
 
 #### Specifikation
 
@@ -279,7 +282,7 @@ Syntax: `ATTRIBUTION_FIRST_TOUCH_EXP_TIMEOUT(timestamp, channelName, channelValu
 | ---------------------- | ------------- |
 | `name` | Den `channelName` som anges som en etikett i ADF |
 | `value` | Värdet från `channelValue` den första beröringen inom det angivna `expTimeout` intervallet |
-| `timestamp` | Tidsstämpeln för ExperienceEvent där den första beröringen inträffade |
+| `timestamp` | Tidsstämpeln för den [!DNL ExperienceEvent] plats där den första beröringen inträffade |
 | `fraction` | Tilldelning av den första kontakten uttryckt som fraktionskredit |
 
 #### Exempelfråga
@@ -315,7 +318,7 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 
 ### Senaste beröringsattribuering med förfallovillkor
 
-Returnerar det sista beröringsattributvärdet och informationen för en enskild kanal i ExperienceEvent-måldatauppsättningen, som slutar gälla efter eller före ett villkor. Frågan returnerar ett `struct` objekt med det senaste beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen. Den här frågan är användbar om du vill se den senaste interaktionen i en serie kundåtgärder i en del av ExperienceEvent-datamängden som bestäms av ett villkor i valet. I exemplet nedan registreras ett köp (`commerce.purchases.value IS NOT NULL`) för var och en av de fyra dagar som visas i resultaten (15, 21, 23 och 29 juli) och den sista spårningskoden varje dag tilldelas 100 % (`1.0`) ansvar för kundens åtgärder.
+Returnerar det sista beröringsattribueringsvärdet och information för en enskild kanal i måldatauppsättningen, [!DNL ExperienceEvent] som förfaller efter eller före ett villkor. Frågan returnerar ett `struct` objekt med det senaste beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen. Den här frågan är användbar om du vill se den senaste interaktionen i en serie kundåtgärder inom en del av [!DNL ExperienceEvent] datauppsättningen som bestäms av ett villkor i valet. I exemplet nedan registreras ett köp (`commerce.purchases.value IS NOT NULL`) för var och en av de fyra dagar som visas i resultaten (15, 21, 23 och 29 juli) och den sista spårningskoden varje dag tilldelas 100 % (`1.0`) ansvar för kundens åtgärder.
 
 #### Specifikation
 
@@ -327,13 +330,13 @@ Syntax: `ATTRIBUTION_LAST_TOUCH_EXP_IF(timestamp, channelName, channelValue, exp
 | `channelName` | Ett eget namn som ska användas som etikett i det returnerade objektet |
 | `channelValue` | Kolumnen eller fältet som är målkanalen för frågan |
 | `expCondition` | Villkoret som bestämmer kanalens slutpunkt |
-| `expBefore` | Standardvärdet är `false`. Boolesk för att ange om kanalen går ut före eller efter att det angivna villkoret är uppfyllt. Aktiveras främst för sessionens förfallovillkor (till exempel `sess.depth = 1, true`) för att säkerställa att den senaste beröringen inte väljs från en tidigare session. |
+| `expBefore` | Defaults to `false`. Boolesk för att ange om kanalen går ut före eller efter att det angivna villkoret är uppfyllt. Aktiveras främst för sessionens förfallovillkor (till exempel `sess.depth = 1, true`) för att säkerställa att den senaste beröringen inte väljs från en tidigare session. |
 
 | Returnerade objektparametrar | Beskrivning |
 | ---------------------- | ------------- |
 | `name` | Den `channelName` som anges som en etikett i ADF |
-| `value` | Värdet från `channelValue` det är den sista beröringen i ExperienceEvent före `expCondition` |
-| `timestamp` | Tidsstämpeln för ExperienceEvent-händelsen där den senaste beröringen inträffade |
+| `value` | Värdet från `channelValue` det som är den sista beröringen i [!DNL ExperienceEvent] början av `expCondition` |
+| `timestamp` | Tidsstämpeln för den [!DNL ExperienceEvent] plats där den senaste beröringen inträffade |
 | `percentage` | Tilldelning av den senaste beröringen uttryckt som fraktionskredit |
 
 #### Exempelfråga
@@ -369,7 +372,7 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 
 ### Senaste beröringsattribuering med tidsgräns för förfallodatum
 
-Returnerar det sista beröringsattribueringsvärdet och detaljer för en enskild kanal i ExperienceEvent-måldatauppsättningen för en angiven tidsperiod. Frågan returnerar ett `struct` objekt med det senaste beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen. Den här frågan är användbar om du vill se den senaste interaktionen inom ett valt tidsintervall. I exemplet nedan är den sista beröringen som returneras för varje kundåtgärd den slutliga interaktionen inom de följande sju dagarna (`expTimeout = 86400 * 7`).
+Returnerar det sista beröringsattribueringsvärdet och detaljer för en enskild kanal i måldatauppsättningen [!DNL ExperienceEvent] för en angiven tidsperiod. Frågan returnerar ett `struct` objekt med det senaste beröringsvärdet, tidsstämpeln och attribueringen för varje rad som returneras för den valda kanalen. Den här frågan är användbar om du vill se den senaste interaktionen inom ett valt tidsintervall. I exemplet nedan är den sista beröringen som returneras för varje kundåtgärd den slutliga interaktionen inom de följande sju dagarna (`expTimeout = 86400 * 7`).
 
 #### Specifikation
 
@@ -386,7 +389,7 @@ Syntax: `ATTRIBUTION_LAST_TOUCH_EXP_TIMEOUT(timestamp, channelName, channelValue
 | ---------------------- | ------------- |
 | `name` | Den `channelName` som anges som en etikett i ADF |
 | `value` | Värdet från `channelValue` det som är den sista beröringen inom det angivna `expTimeout` intervallet |
-| `timestamp` | Tidsstämpeln för ExperienceEvent-händelsen där den senaste beröringen inträffade |
+| `timestamp` | Tidsstämpeln för den [!DNL ExperienceEvent] plats där den senaste beröringen inträffade |
 | `percentage` | Tilldelning av den senaste beröringen uttryckt som fraktionskredit |
 
 #### Exempelfråga
@@ -647,4 +650,4 @@ LIMIT 10
 
 ## Nästa steg
 
-Med funktionerna som beskrivs här kan du skriva frågor för att få tillgång till dina egna ExperienceEvent-datauppsättningar med hjälp av frågetjänsten. Mer information om hur du skapar frågor i Query Service finns i dokumentationen om hur du [skapar frågor](../creating-queries/creating-queries.md).
+Med funktionerna som beskrivs här kan du skriva frågor för att få tillgång till dina egna [!DNL ExperienceEvent] datauppsättningar med [!DNL Query Service]. Mer information om hur du skapar frågor i [!DNL Query Service]finns i dokumentationen om hur du [skapar frågor](../creating-queries/creating-queries.md).
