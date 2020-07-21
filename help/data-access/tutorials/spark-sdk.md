@@ -4,27 +4,27 @@ solution: Experience Platform
 title: SDK för säker Spark-dataåtkomst
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: f7714b8bebe37b29290794a48314962e42b24058
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '523'
+source-wordcount: '516'
 ht-degree: 0%
 
 ---
 
 
-# SDK för säker Spark-dataåtkomst
+# Säker [!DNL Spark Data Access] SDK
 
-Secure Spark [!DNL Data Access] SDK är ett programutvecklingspaket som gör det möjligt att läsa och skriva data från Adobe Experience Platform.
+Secure [!DNL Spark][!DNL Data Access] SDK är ett programutvecklingspaket som gör det möjligt att läsa och skriva data från Adobe Experience Platform.
 
 ## Komma igång
 
-Du måste ha slutfört självstudiekursen för [autentisering](../../tutorials/authentication.md) för att kunna komma åt värdena för att kunna anropa Secure Spark [!DNL Data Access] SDK:
+Du måste ha slutfört självstudiekursen för [autentisering](../../tutorials/authentication.md) för att kunna komma åt värdena för att kunna anropa Secure [!DNL Spark][!DNL Data Access] SDK:
 
 - `{ACCESS_TOKEN}`
 - `{API_KEY}`
 - `{IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Om du använder Spark SDK måste du ange namn och ID för sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Om du använder [!DNL Spark] SDK måste du ange namnet och ID:t för sandlådan som åtgärden ska utföras i:
 
 - `{SANDBOX_NAME}`
 - `{SANDBOX_ID}`
@@ -83,7 +83,7 @@ spark.sql.extensions = com.adobe.platform.query.QSSparkSessionExtensions
 
 SDK:n har stöd för två [!DNL Spark] läslägen: interaktivt och gruppvis.
 
-I det interaktiva läget skapas en Java Database Connectivity-anslutning (JDBC) till [!DNL Query Service] och resultat fås genom en vanlig JDBC `ResultSet` som automatiskt översätts till en `DataFrame`. Det här läget fungerar ungefär som den inbyggda Spark-metoden `spark.read.jdbc()`. Det här läget är endast avsett för små datauppsättningar och kräver endast en användartoken för autentisering.
+I det interaktiva läget skapas en Java Database Connectivity-anslutning (JDBC) till [!DNL Query Service] och resultat fås genom en vanlig JDBC `ResultSet` som automatiskt översätts till en `DataFrame`. Det här läget fungerar ungefär som den inbyggda [!DNL Spark] metoden `spark.read.jdbc()`. Det här läget är endast avsett för små datauppsättningar och kräver endast en användartoken för autentisering.
 
 I gruppläget används [!DNL Query Service]kommandot COPY för att generera resultatuppsättningar för Parquet på en delad plats. Dessa Parquet-filer kan sedan bearbetas ytterligare. Det här läget kräver både en användartoken och en tjänsttoken med `acp.foundation.catalog.credentials` omfånget.
 
