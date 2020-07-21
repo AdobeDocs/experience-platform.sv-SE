@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Definiera en relation mellan två scheman med schemaredigeraren
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: 1445646be8fa3416a34408205eadca0a792290c6
 workflow-type: tm+mt
 source-wordcount: '763'
 ht-degree: 0%
@@ -62,7 +62,7 @@ Dialogrutan [!UICONTROL _Lägg till mixning _]visas. Klicka här **[!UICONTROL C
 
 <img src="../images/tutorials/relationship/loyalty-create-new-mixin.png" width="750"><br>
 
-Arbetsytan visas igen med&quot;[!UICONTROL Loyalty Relationship]&quot; i avsnittet _Blandningar_ . Klicka på blandningsnamnet och klicka sedan på **[!UICONTROL Add Field]** bredvid rotnivåfältet &quot;[!UICONTROL Loyalty Members]&quot;.
+Arbetsytan visas igen med&quot;[!UICONTROL Favorite Hotel]&quot; i avsnittet _Blandningar_ . Klicka på blandningsnamnet och klicka sedan på **[!UICONTROL Add Field]** bredvid rotnivåfältet &quot;[!UICONTROL Loyalty Members]&quot;.
 
 ![](../images/tutorials/relationship/loyalty-add-field.png)
 
@@ -74,7 +74,7 @@ När du är klar klickar du på **[!UICONTROL Apply]**.
 
 ![](../images/tutorials/relationship/relationship-field-apply.png)
 
-Det uppdaterade fältet&quot;[!UICONTROL loyaltyRelationship]&quot; visas på arbetsytan. Klicka **[!UICONTROL Save]** för att slutföra ändringarna av schemat.
+Det uppdaterade fältet&quot;[!UICONTROL favoriteHotel]&quot; visas på arbetsytan. Klicka **[!UICONTROL Save]** för att slutföra ändringarna av schemat.
 
 ![](../images/tutorials/relationship/relationship-field-save.png)
 
