@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Ansluta till direktuppspelningsmål och aktivera data
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: ed9d6eadeb00db51278ea700f7698a1b5590632f
+source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
 workflow-type: tm+mt
-source-wordcount: '1857'
+source-wordcount: '1807'
 ht-degree: 0%
 
 ---
@@ -30,8 +30,8 @@ Om du föredrar att använda användargränssnittet i Adobes CDP-fil i realtid f
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
-* [Katalogtjänst](../../catalog/home.md): Katalog är systemet för registrering av dataplatser och -länkar inom Experience Platform.
+* [!DNL Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
+* [!DNL Catalog Service](../../catalog/home.md): [!DNL Catalog] är registersystemet för dataplats och datalinje inom Experience Platform.
 * [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna aktivera data till direktuppspelningsdestinationer i Adobe Real-time CDP.
@@ -261,12 +261,12 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 * `{CONNECTION_SPEC_ID}`: Använd det anslutningsspec-ID som du fick i steget [Hämta listan med tillgängliga mål](#get-the-list-of-available-destinations).
 * `{AUTHENTICATION_CREDENTIALS}`: Fyll i namnet på strömningsmålet, t.ex.: `Amazon Kinesis authentication credentials` eller `Azure Event Hubs authentication credentials`.
-* `{ACCESS_ID}`: *För Amazon Kinesis-anslutningar.* Ditt åtkomst-ID för din lagringsplats för Amazon Kinesis.
-* `{SECRET_KEY}`: *För Amazon Kinesis-anslutningar.* Din hemliga nyckel för din lagringsplats för Amazon Kinesis.
-* `{REGION}`: *För Amazon Kinesis-anslutningar.* Den region på ditt Amazon Kinesis-konto där Adobe Real-time CDP direktuppspelar data.
-* `{SAS_KEY_NAME}`: *För Azure Event Hubs-anslutningar.* Fyll i ditt SAS-nyckelnamn. Läs om hur du autentiserar [!DNL Azure Event Hubs] med SAS-nycklar i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
-* `{SAS_KEY}`: *För Azure Event Hubs-anslutningar.* Fyll i SAS-nyckeln. Läs om hur du autentiserar [!DNL Azure Event Hubs] med SAS-nycklar i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
-* `{EVENT_HUB_NAMESPACE}`: *För Azure Event Hubs-anslutningar.* Fyll i Azure Event Hubs-namnområdet där Adobe Real-time CDP direktuppspelar dina data. Mer information finns i [Skapa ett namnutrymme](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) för händelsehubbar i Microsoft-dokumentationen.
+* `{ACCESS_ID}`: *För[!DNL Amazon Kinesis]anslutningar.* Ditt åtkomst-ID för din lagringsplats för Amazon Kinesis.
+* `{SECRET_KEY}`: *För[!DNL Amazon Kinesis]anslutningar.* Din hemliga nyckel för din lagringsplats för Amazon Kinesis.
+* `{REGION}`: *För[!DNL Amazon Kinesis]anslutningar.* Regionen på ditt [!DNL Amazon Kinesis] konto där Adobe Real-time CDP strömmar dina data.
+* `{SAS_KEY_NAME}`: *För[!DNL Azure Event Hubs]anslutningar.* Fyll i ditt SAS-nyckelnamn. Läs om hur du autentiserar [!DNL Azure Event Hubs] med SAS-nycklar i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
+* `{SAS_KEY}`: *För[!DNL Azure Event Hubs]anslutningar.* Fyll i SAS-nyckeln. Läs om hur du autentiserar [!DNL Azure Event Hubs] med SAS-nycklar i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
+* `{EVENT_HUB_NAMESPACE}`: *För[!DNL Azure Event Hubs]anslutningar.* Fyll i [!DNL Azure Event Hubs] namnutrymmet där Adobe Real-time CDP strömmar era data. Mer information finns i [Skapa ett namnutrymme](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) för händelsehubbar i [!DNL Microsoft] dokumentationen.
 
 **Svar**
 
@@ -317,9 +317,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 * `{BASE_CONNECTION_ID}`: Använd det grundläggande anslutnings-ID som du fick i steget ovan.
 * `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikationen som du fick i steget [Hämta listan med tillgängliga mål](#get-the-list-of-available-destinations).
-* `{NAME_OF_DATA_STREAM}`: *För Amazon Kinesis-anslutningar.* Ange namnet på din befintliga dataström i ditt Amazon Kinesis-konto. Adobe CDP i realtid exporterar data till den här strömmen.
-* `{REGION}`: *För Amazon Kinesis-anslutningar.* Den region på ditt Amazon Kinesis-konto där Adobe Real-time CDP direktuppspelar data.
-* `{EVENT_HUB_NAME}`: *För Azure Event Hubs-anslutningar.* Fyll i Azure Event Hub-namnet där Adobe Real-time CDP direktuppspelar dina data. Mer information finns i [Skapa en händelsehubb](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) i Microsoft-dokumentationen.
+* `{NAME_OF_DATA_STREAM}`: *För[!DNL Amazon Kinesis]anslutningar.* Ange namnet på din befintliga dataström i ditt [!DNL Amazon Kinesis] konto. Adobe CDP i realtid exporterar data till den här strömmen.
+* `{REGION}`: *För[!DNL Amazon Kinesis]anslutningar.* Den region på ditt Amazon Kinesis-konto där Adobe Real-time CDP direktuppspelar data.
+* `{EVENT_HUB_NAME}`: *För[!DNL Azure Event Hubs]anslutningar.* Fyll i det [!DNL Azure Event Hub] namn där Adobe Real-time CDP kommer att strömma era data. Mer information finns i [Skapa en händelsehubb](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) i [!DNL Microsoft] dokumentationen.
 
 **Svar**
 
@@ -467,7 +467,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 * `{DATAFLOW_ID}`: Använd det dataflöde du fick i föregående steg.
 * `{ETAG}`: Använd taggen som du fick i föregående steg.
-* `{SEGMENT_ID}`: Ange det segment-ID som du vill exportera till det här målet. Om du vill hämta segment-ID:n för de segment som du vill aktivera går du till https://www.adobe.io/apis/experienceplatform/home/api-reference.html#/, väljer API för **segmenteringstjänst** i den vänstra navigeringsmenyn och letar efter `GET /segment/jobs` åtgärden.
+* `{SEGMENT_ID}`: Ange det segment-ID som du vill exportera till det här målet. Om du vill hämta segment-ID:n för de segment som du vill aktivera går du till https://www.adobe.io/apis/experienceplatform/home/api-reference.html#/, väljer **[!UICONTROL Segmentation Service API]** i den vänstra navigeringsmenyn och letar efter `GET /segment/jobs` åtgärden.
 * `{PROFILE_ATTRIBUTE}`: till exempel `personalEmail.address` eller `person.lastName`
 
 **Svar**
@@ -551,7 +551,7 @@ Det returnerade svaret ska i parametern inkludera de segment och profilattribut 
 
 >[!IMPORTANT]
 >
-> Förutom profilattributen och segmenten i steget [Aktivera data till ditt nya mål](#activate-data), kommer exporterade data i AWS Kinesis och Azure Event Hubs också att innehålla information om identitetskartan. Detta representerar de exporterade profilernas identiteter (till exempel [ECID](https://docs.adobe.com/content/help/en/id-service/using/intro/id-request.html), mobil-ID, Google-ID, e-postadress osv.). Se ett exempel nedan.
+> Förutom profilattributen och segmenten i steget [Aktivera data till det nya målet](#activate-data), kommer exporterade data i [!DNL AWS Kinesis] och [!DNL Azure Event Hubs] även att innehålla information om identitetskartan. Detta representerar de exporterade profilernas identiteter (till exempel [ECID](https://docs.adobe.com/content/help/en/id-service/using/intro/id-request.html), mobil-ID, Google-ID, e-postadress osv.). Se ett exempel nedan.
 
 ```
 {
