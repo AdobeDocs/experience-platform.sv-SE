@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Strömmande tidsseriedata
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 6a371aab5435bac97f714e5cf96a93adf4aa0303
+source-git-commit: 80392190c7fcae9b6e73cc1e507559f834853390
 workflow-type: tm+mt
-source-wordcount: '1173'
+source-wordcount: '1130'
 ht-degree: 0%
 
 ---
@@ -14,15 +14,15 @@ ht-degree: 0%
 
 # Strömma tidsseriedata till Adobe Experience Platform
 
-Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för datainmatningstjänsten i Adobe Experience Platform.
+Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform [!DNL Data Ingestion Service] .
 
 ## Komma igång
 
 Den här självstudiekursen kräver kunskaper om olika Adobe Experience Platform-tjänster. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-- [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera upplevelsedata.
-- [Kundprofil](../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-- [Utvecklarhandbok](../../xdm/api/getting-started.md)för schemaregister: En omfattande guide som täcker alla tillgängliga slutpunkter i API:t för schemaregister och hur du anropar dem. Det handlar om att känna till din `{TENANT_ID}`information, som visas i samtal under kursen, och att veta hur man skapar scheman, som används för att skapa en datauppsättning för förtäring.
+- [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar upplevelsedata.
+- [!DNL Real-time Customer Profile](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+- [Utvecklarhandbok](../../xdm/api/getting-started.md)för schemaregister: En omfattande guide som täcker alla tillgängliga slutpunkter i [!DNL Schema Registry] API:t och hur du anropar dem. Det handlar om att känna till din `{TENANT_ID}`information, som visas i samtal under kursen, och att veta hur man skapar scheman, som används för att skapa en datauppsättning för förtäring.
 
 Den här självstudien kräver dessutom att du redan har skapat en direktuppspelningsanslutning. Mer information om hur du skapar en direktuppspelningsanslutning finns i självstudiekursen [Skapa en direktuppspelningsanslutning](./create-streaming-connection.md).
 
@@ -30,23 +30,23 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 
 ### Läser exempel-API-anrop
 
-Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -54,7 +54,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Skapa ett schema baserat på klassen XDM ExperienceEvent
 
-Om du vill skapa en datauppsättning måste du först skapa ett nytt schema som implementerar klassen XDM ExperienceEvent. Mer information om hur du skapar scheman finns i utvecklarhandboken [för](../../xdm/api/getting-started.md)schemaregistrets API.
+Om du vill skapa en datauppsättning måste du först skapa ett nytt schema som implementerar [!DNL XDM ExperienceEvent] klassen. Mer information om hur du skapar scheman finns i utvecklarhandboken [för](../../xdm/api/getting-started.md)schemaregistrets API.
 
 **API-format**
 
@@ -99,7 +99,7 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/sch
 | -------- | ----------- |
 | `title` | Namnet som du vill använda för ditt schema. Namnet måste vara unikt. |
 | `description` | En meningsfull beskrivning av schemat som du skapar. |
-| `meta:immutableTags` | I det här exemplet används `union` -taggen för att lagra dina data i [kundprofilen](../../profile/home.md)i realtid. |
+| `meta:immutableTags` | I det här exemplet används `union` -taggen för att lagra data i [!DNL Real-time Customer Profile](../../profile/home.md). |
 
 **Svar**
 
@@ -187,7 +187,7 @@ Lägg sedan till en [identitetsbeskrivare](../../xdm/api/descriptors.md) i schem
 
 1. E-postadressen till arbetet blir ett obligatoriskt fält. Det innebär att meddelanden som skickas utan det här fältet inte kan valideras och inte kan importeras.
 
-2. Kundprofilen i realtid kommer att använda arbetets e-postadress som en identifierare för att sammanfoga mer information om den personen.
+2. [!DNL Real-time Customer Profile] kommer att använda e-postadressen till arbetet som en identifierare för att sammanfoga mer information om den personen.
 
 ### Begäran
 
@@ -246,7 +246,7 @@ När du har skapat schemat måste du skapa en datauppsättning för att kunna im
 
 >[!NOTE]
 >
->Den här datauppsättningen aktiveras för kundprofil **och** identitet **i** realtid genom att rätt taggar anges.
+>Den här datauppsättningen aktiveras för **[!DNL Real-time Customer Profile]** och **[!DNL Identity]** genom att lämpliga taggar anges.
 
 **API-format**
 
@@ -294,7 +294,7 @@ Ett lyckat svar returnerar HTTP-status 201 och en matris som innehåller ID:t f�
 
 ## Infoga tidsseriedata i direktuppspelningsanslutningen
 
-Med datauppsättningen och direktuppspelningsanslutningen på plats kan du importera XDM-formaterade JSON-poster för att importera tidsseriedata i Platform.
+Med datauppsättningen och direktuppspelningsanslutningen på plats kan du importera XDM-formaterade JSON-poster för att importera tidsseriedata i [!DNL Platform].
 
 **API-format**
 
@@ -379,7 +379,7 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValid
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen strömmade profilen.
+Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen strömmade filen [!DNL Profile].
 
 ```json
 {
@@ -401,11 +401,11 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen ström
 
 ## Hämta data för den nyligen inmatade tidsserien
 
-Om du vill validera de poster som har importerats tidigare kan du använda API:t [för](../../profile/api/entities.md) profilåtkomst för att hämta data från tidsserierna. Detta kan göras med en GET-begäran till `/access/entities` slutpunkten och med valfria frågeparametrar. Flera parametrar kan användas, avgränsade med et-tecken (&amp;).&quot;
+Om du vill validera de poster som har importerats tidigare kan du använda [!DNL Profile Access API](../../profile/api/entities.md) för att hämta tidsseriedata. Detta kan göras med en GET-begäran till `/access/entities` slutpunkten och med valfria frågeparametrar. Flera parametrar kan användas, avgränsade med et-tecken (&amp;).&quot;
 
 >[!NOTE]
 >
->Om sammanfogningsprincip-ID:t inte har definierats och schemat.</span>name eller relatedSchema</span>.name is `_xdm.context.profile`, Profile Access hämtar **alla** relaterade identiteter.
+>Om sammanfogningsprincip-ID:t inte har definierats och schemat.</span>name eller relatedSchema</span>.name is `_xdm.context.profile`, [!DNL Profile Access] hämtar **alla** relaterade identiteter.
 
 **API-format**
 
@@ -503,6 +503,6 @@ Ett lyckat svar returnerar HTTP-status 200 med information om de begärda entite
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet kan du nu förstå hur du kan importera postdata till Platform via direktuppspelningsanslutningar. Du kan försöka göra fler anrop med olika värden och hämta de uppdaterade värdena. Dessutom kan du börja övervaka dina inkapslade data via Platform användargränssnitt. Mer information finns i guiden [för dataöverföring](../quality/monitor-data-flows.md) .
+Genom att läsa det här dokumentet kan du nu förstå hur du importerar postdata till [!DNL Platform] med direktuppspelningsanslutningar. Du kan försöka göra fler anrop med olika värden och hämta de uppdaterade värdena. Dessutom kan du börja övervaka dina inkapslade data via [!DNL Platform] användargränssnittet. Mer information finns i guiden [för dataöverföring](../quality/monitor-data-flows.md) .
 
 Mer information om direktuppspelningsuppläsning i allmänhet finns i översikten över [direktuppspelningsuppläsning](../streaming-ingestion/overview.md).
