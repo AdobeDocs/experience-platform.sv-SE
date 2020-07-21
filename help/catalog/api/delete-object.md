@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Ta bort ett objekt
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '178'
+source-wordcount: '173'
 ht-degree: 0%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 0%
 
 # Ta bort ett objekt
 
-Du kan ta bort ett Catalog-objekt genom att ange dess ID i sökvägen till en DELETE-begäran.
+Du kan ta bort ett [!DNL Catalog] objekt genom att ange dess ID i sökvägen till en DELETE-begäran.
 
 >[!WARNING]
 >
->Var extra försiktig när du tar bort objekt, eftersom det inte går att ångra detta och det kan leda till att objekt bryts på andra ställen i Experience Platform.
+>Var extra försiktig när du tar bort objekt, eftersom det inte går att ångra och kan ge upphov till brytningsändringar någon annanstans i [!DNL Experience Platform].
 
 **API-format**
 
@@ -32,7 +32,7 @@ DELETE /{OBJECT_TYPE}/{OBJECT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Den typ av katalogobjekt som ska tas bort. Giltiga objekt är: <ul><li>`accounts`</li><li>`connections`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog] objekt som ska tas bort. Giltiga objekt är: <ul><li>`accounts`</li><li>`connections`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{OBJECT_ID}` | Identifieraren för det specifika objekt som du vill uppdatera. |
 
 **Begäran**
@@ -60,4 +60,4 @@ Ett lyckat svar returnerar HTTP-status 200 (OK) och en array som innehåller ID:
 
 >[!NOTE]
 >
->Om inga katalogobjekt matchar det ID som angavs i din begäran kan du ändå få HTTP-statuskoden 200, men svarsmatrisen är tom.
+>Om inga [!DNL Catalog] objekt matchar det ID som angavs i din begäran kan du fortfarande få HTTP-statuskoden 200, men svarsmatrisen är tom.
