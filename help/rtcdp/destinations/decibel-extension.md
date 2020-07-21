@@ -1,36 +1,39 @@
 ---
 title: Decibel-tillägg
 seo-title: Decibel-tillägg
-description: Decibel-tillägget är ett analysmål i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Decibel-tillägget är ett analysmål i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Decibel-tillägget är ett analysmål i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: Decibel-tillägget är ett analysmål i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: ff91395844c239415123a33d65fa0deb2221ae25
+source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+workflow-type: tm+mt
+source-wordcount: '533'
+ht-degree: 2%
 
 ---
 
 
-# Decibel-tillägg {#decibel-extension}
+# [!DNL Decibel] extension {#decibel-extension}
 
 ## Översikt {#overview}
 
-Distribuera snabbt och smidigt Decibel på webben. Ytterligare avancerade konfigurationer kan också distribueras med regler med hjälp av åtgärder som är tillgängliga via tillägget.
+Distribuera snabbt och smidigt [!DNL Decibel] på webben. Ytterligare avancerade konfigurationer kan också distribueras med regler med hjälp av åtgärder som är tillgängliga via tillägget.
 
-Decibel är ett analystillägg i Adobes kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100913.html).
+[!DNL Decibel] är ett analystillägg i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100913.html).
 
-Det här målet är ett Experience Platform Launch-tillägg. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
+Det här målet har tillägget Experience Platform Launch. Mer information om hur Launch-tillägg fungerar i Adobe CDP i realtid finns i Översikt över [](/help/rtcdp/destinations/experience-platform-launch-extensions.md)Experience Platform Launch-tillägg.
 
 ![Decibel-tillägg](assets/decibel-extension.png)
 
 
 ## Förutsättningar {#prerequisites}
 
-Det här tillägget är tillgängligt i målkatalogen för alla kunder som har köpt Adobe CDP i realtid.
+Det här tillägget är tillgängligt i [!DNL Destinations] katalogen för alla kunder som har köpt Adobe CDP i realtid.
 
-Om du vill använda det här tillägget måste du ha tillgång till Experience Platform Launch. Experience Platform Launch erbjuds Adobe Experience Cloud-kunder som en inkluderad, värdeskapande funktion. Kontakta din organisations administratör för att få åtkomst till Launch och be dem att ge dig behörighet att installera tillägg så att du kan installera dem **[!UICONTROL manage_properties]** .
+Om du vill använda det här tillägget måste du ha tillgång till Experience Platform Launch. Experience Platform Launch erbjuds Adobe Experience Cloud-kunder som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till Launch och be dem att ge dig behörighet att installera tillägg så att du kan installera dem **[!UICONTROL manage_properties]** .
 
 ## Installera tillägg {#install-extension}
 
-Så här installerar du Decibel-tillägget:
+Så här installerar du [!DNL Decibel] tillägget:
 
 1. Gå till [Adobe Real-time CDP-gränssnittet](http://platform.adobe.com/)**[!UICONTROL Destinations > Catalog]**.
 2. Välj tillägget i katalogen eller använd sökfältet.
