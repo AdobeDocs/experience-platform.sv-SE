@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Direktinmatningsvalidering
 topic: overview
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '842'
+source-wordcount: '815'
 ht-degree: 1%
 
 ---
@@ -20,28 +20,28 @@ Med direktuppspelningsintag kan du överföra data till Adobe Experience Platfor
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
-- [Direktuppspelningsinmatning](../streaming-ingestion/overview.md): En av de metoder som data kan skickas med till Experience Platform.
+- [!DNL Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+- [!DNL Streaming Ingestion](../streaming-ingestion/overview.md): En av metoderna som data kan skickas till [!DNL Experience Platform].
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i Experience Platform, inklusive de som tillhör schemaregistret, är isolerade till specifika virtuella sandlådor. Alla förfrågningar till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Schema Registry], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -49,7 +49,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ### Valideringstäckning
 
-Streaming Validation Service omfattar validering inom följande områden:
+[!DNL Streaming Validation Service] omfattar validering inom följande områden:
 - Intervall
 - Närvaro
 - Enum
@@ -140,7 +140,7 @@ Svaret ovan visar hur många schemaöverträdelser som har påträffats och vilk
 
 ## Asynkron validering
 
-Asynkron validering är en valideringsmetod som inte ger omedelbar feedback. I stället skickas data till en misslyckad batch i Data Lake för att förhindra dataförlust. Data som inte fungerar kan hämtas senare för ytterligare analys och repriser. Denna metod bör användas i produktionen. Om inget annat anges används direktuppspelningsuppläsning i asynkront valideringsläge.
+Asynkron validering är en valideringsmetod som inte ger omedelbar feedback. I stället skickas data till en misslyckad batch [!DNL Data Lake] för att förhindra dataförlust. Data som inte fungerar kan hämtas senare för ytterligare analys och repriser. Denna metod bör användas i produktionen. Om inget annat anges används direktuppspelningsuppläsning i asynkront valideringsläge.
 
 **API-format**
 
