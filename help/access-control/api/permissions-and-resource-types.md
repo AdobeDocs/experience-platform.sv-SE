@@ -4,7 +4,10 @@ solution: Experience Platform
 title: Listnamn på behörigheter och resurstyper
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 7b354a96d70332cf7a7e9eff322cd3d6ee0fc96a
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+workflow-type: tm+mt
+source-wordcount: '123'
+ht-degree: 0%
 
 ---
 
@@ -13,7 +16,7 @@ source-git-commit: 7b354a96d70332cf7a7e9eff322cd3d6ee0fc96a
 
 Du kan lista namnen på alla behörigheter och resurstyper genom att göra en GET-begäran till `/acl/reference` slutpunkten. Dessa namn kan sedan användas i API-anrop för att [visa gällande principer](./effective-policies.md) för den aktuella användaren.
 
-En **behörighet** är en princip som hanteras via Adobe Admin Console och mappar till noll eller flera resurstypsprofiler. En **resurstyp** är en princip som möjliggör läsning, skrivning och/eller borttagning av funktioner för en viss typ av plattformsresurs (till exempel datauppsättningar eller scheman).
+En **behörighet** är en princip som hanteras via Adobe Admin Console och mappar till noll eller flera resurstypsprofiler. En **resurstyp** är en princip som möjliggör funktioner för att läsa, skriva och/eller ta bort en viss typ av [!DNL Platform] resurs (till exempel datauppsättningar eller scheman).
 
 **API-format**
 
