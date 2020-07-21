@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Array-, list- och set-funktioner
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
 workflow-type: tm+mt
-source-wordcount: '740'
+source-wordcount: '737'
 ht-degree: 2%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 # Array-, list- och set-funktioner
 
-PQL (Profile Query Language) har funktioner som underlättar interaktion med arrayer, listor och strängar. Mer information om andra PQL-funktioner finns i översikten [för](./overview.md)profilfrågespråk.
+[!DNL Profile Query Language] (PQL) har funktioner som underlättar interaktion med arrayer, listor och strängar. Mer information om andra PQL-funktioner finns i översikten [för](./overview.md)profilfrågespråk.
 
 ## I
 
