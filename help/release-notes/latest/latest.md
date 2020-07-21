@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: July 15, 2020
 author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: 9fbd30adcb29c8925f02745be924477eb4e3fe2a
+source-git-commit: f881c1365684b1ca9e6bf9a8ce866d234dc54128
 workflow-type: tm+mt
-source-wordcount: '679'
+source-wordcount: '677'
 ht-degree: 3%
 
 ---
@@ -36,7 +36,7 @@ Adobe Experience Platform Data Governance är en serie strategier och tekniker s
 | Integrering med Adobe Audience Manager | Alla segment som delas med [!DNL Audience Manager] från [!DNL Platform] ärver tillämpade dataanvändningsetiketter som [!DNL Data Export Controls]och vice versa. Se [!DNL Audience Manager] dokumentationen för specifika [mappningar mellan användningsetiketter och dataexportkontroller](https://docs.adobe.com/content/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aam-data-export-control-in-aep). |
 | Anpassade etiketter för dataanvändning | Nu kan du skapa anpassade etiketter för dataanvändning med hjälp av principtjänstens API eller i användargränssnittet. Mer information finns i översikten över [](../../data-governance/labels/overview.md) etiketter. |
 
-Mer information om tjänsten finns i [datastyrningsöversikten](../../data-governance/home.md) .
+Mer information om tjänsten finns i översikten över [](../../data-governance/home.md) datastyrning.
 
 ## [!DNL Real-time Customer Profile] {#profile}
 
@@ -67,7 +67,7 @@ Mer information om [!DNL Segmentation Service]segmentering finns i [segmentering
 
 Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, programvara från tredje part och ditt CRM-system.
 
-Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+[!DNL Experience Platform] innehåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
 
 **Nya funktioner**
 
