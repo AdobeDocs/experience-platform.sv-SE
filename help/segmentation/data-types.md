@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Datatyper för Adobe Experience Platform segmenteringstjänst
 topic: overview
 translation-type: tm+mt
-source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+source-git-commit: 96b6f820e5d372446c4927e7719aedadb2b11bc9
 workflow-type: tm+mt
-source-wordcount: '406'
-ht-degree: 0%
+source-wordcount: '456'
+ht-degree: 2%
 
 ---
 
@@ -50,15 +50,15 @@ Som framgår av tabellen nedan återges händelsedata med nyckelord som hjälper
 | Växlingsknappen Använd tidsregel | Innehåller datumdata. |
 | Lika med, är inte lika med, börjar med, startar inte med, slutar med, slutar inte med, innehåller, inte innehåller, finns, finns inte | Innehåller strängdata. |
 
-## Segment
-
-Befintliga segmentdefinitioner kan också användas som komponenter i en ny segmentdefinition, vilket lägger till deras attribut och händelsebaserade regler i det nya segmentet.
-
-## Målgrupper
+### Målgruppsdelning
 
 Externa målgrupper kan också användas som komponenter i en ny segmentdefinition och lägga till deras attributregler i det nya segmentet.
 
-För närvarande stöds bara Adobe Audience Manager som målgrupp. Ytterligare källor kommer att aktiveras i framtiden.
+För närvarande stöds bara Adobe Audience Manager som extern publik, och ytterligare källor aktiveras i framtiden. Mer information om hur du använder Adobe Audience Manager-målgrupper med Platform finns i [publikdelningsguiden i Adobe Audience Manager-dokumentationen](https://docs.adobe.com/content/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html).
+
+### Segmentdelning
+
+Segment som har skapats i Platform kan användas i andra bastjänster [i](https://docs.adobe.com/content/help/sv-SE/core-services/interface/experience-cloud.html)Adobe Experience Cloud. Om du vill aktivera den här funktionen måste du kontakta din lösningsarkitekt eller din konsult.
 
 ## Andra datatyper
 
