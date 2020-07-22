@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa ett schema med API:t för schemaregister
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: b021b6813af18e29f544dc55541f23dd7dd57d47
 workflow-type: tm+mt
 source-wordcount: '2322'
 ht-degree: 0%
@@ -1015,7 +1015,7 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) med en svarstext som innehå
 }
 ```
 
-## Aktivera schema för användning i [!DNL Real-time Customer Profile]
+## Aktivera schema för användning i [!DNL Real-time Customer Profile] {#profile}
 
 Genom att lägga till &quot;union&quot;-taggen i `meta:immutableTags` attributet kan du aktivera schemat för lojalitetsmedlemmar som kan användas av [!DNL Real-time Customer Profile].
 
