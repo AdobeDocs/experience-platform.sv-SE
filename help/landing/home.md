@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Adobe Experience Platform - översikt
 topic: getting started
 translation-type: tm+mt
-source-git-commit: efde1b9bf65bde1a55084774c845b8d5585272d4
+source-git-commit: 444185df28026bf2045afcdadf29f9255885dafb
 workflow-type: tm+mt
-source-wordcount: '842'
-ht-degree: 0%
+source-wordcount: '818'
+ht-degree: 1%
 
 ---
 
@@ -34,34 +34,13 @@ I följande videofilmer visas hur man [!DNL Experience Platform] skapar omfattan
 
 ## Stöd för webbläsare
 
-Adobe Experience Platform webbplats och tillhörande webbplatser, som Adobe Admin Console, är alla utformade för att fungera optimalt i de senaste versionerna av Google Chrome, Safari, Firefox och Microsoft Edge. Du kan ha problem med att använda vissa funktioner i äldre versioner av webbläsare.
+Adobe Experience Platform webbplats och tillhörande webbplatser, som Adobe Admin Console, är alla utformade för att fungera optimalt i de **senaste versionerna** av Google Chrome, Safari, Firefox och Microsoft Edge. Du kan ha problem med att använda vissa funktioner i äldre versioner av webbläsare.
 
-<table>
-<tr>
-  <th>Operativsystem</th>
-  <th>Webbläsare som stöds</th>
-  <th></th>
-  <th></th>
-</tr>
-<tr>
-  <td>Mac OS X</td>
-  <td>Senaste versionen av Google Chrome</td>
-  <td>Senaste versionen av Safari</td>
-  <td>Senaste versionen av Firefox</td>
-</tr>
-<tr>
-  <td>Windows 10</td>
-  <td>Senaste versionen av Google Chrome</td>
-  <td>Senaste versionen av Microsoft Edge</td>
-  <td>Senaste versionen av Firefox</td>
-</tr>
-<tr>
-  <td>Windows 7</td>
-  <td>Senaste versionen av Google Chrome</td>
-  <td> </td>
-  <td>Senaste versionen av Firefox</td>
-</tr>
-</table>
+| Operativsystem | Webbläsare som stöds |  |  |
+|---|---|---|---|
+| Mac OS X | Google Chrome | Safari | Firefox |
+| Windows 10 | Google Chrome | Microsoft Edge | Firefox |
+| Windows 7 | Google Chrome |  | Firefox&lt; |
 
 Stöds inte:
 
