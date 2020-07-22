@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Beskrivningar
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: b021b6813af18e29f544dc55541f23dd7dd57d47
 workflow-type: tm+mt
 source-wordcount: '1475'
 ht-degree: 0%
@@ -109,7 +109,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar information om beskrivningen, inklusive dess `@type` och `sourceSchema`, samt ytterligare information som varierar beroende på typen av beskrivning. Den returnerade `@id` typen ska matcha den beskrivning `@id` som anges i begäran.
+Ett lyckat svar returnerar information om beskrivningen, inklusive dess `@type` och `sourceSchema`, samt ytterligare information som varierar beroende på typen av beskrivning. Det returnerade `@id` måste matcha den beskrivning `@id` som anges i begäran.
 
 ```JSON
 {
@@ -369,7 +369,7 @@ Relationsbeskrivare beskriver en relation mellan två olika scheman, som är akt
 
 #### Referens för identitetsbeskrivning
 
-Referensidentitetsbeskrivningar tillhandahåller en referenskontext till ett schemafält, vilket gör att det kan länkas till det primära identitetsfältet i ett målschema. Fält måste redan ha en identitetsbeskrivning innan en referensbeskrivning kan användas på dem.
+Referensidentitetsbeskrivningar ger en referenskontext till den primära identiteten för ett schemafält, vilket gör att det kan refereras till av fält i andra scheman. Fält måste redan ha en identitetsbeskrivning innan en referensbeskrivning kan användas på dem.
 
 ```json
 {
