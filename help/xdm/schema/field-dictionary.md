@@ -4,7 +4,7 @@ solution: Experience Platform
 title: XDM-fältordlista (Experience Data Model)
 topic: overview
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: 661789fa15ea11b0e42060b1b90d74785c04fa1f
 workflow-type: tm+mt
 source-wordcount: '25163'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Se [grunderna i schemakomposition](composition.md) för mer information om byggs
 
 Tabellen nedan innehåller fältnamnet (alla XDM-fält namnges inte med &quot;xdm&quot;) tillsammans med titel och beskrivning, typ och format där det behövs, samt motsvarande XDM-typ och de resurser (mixins, datatyper och scheman) där fältet kan hittas.
 
-Du kan använda sökfunktionen i [!DNL Schema Editor] för att visa information om de här resurserna, vilket visas i [schemaredigerarens självstudiekurs](../tutorials/create-schema-ui.md).
+Du kan använda sökfunktionen i [!DNL Schema Editor] för att visa information om de här resurserna, vilket visas i [schemaredigerarens självstudiekurs](../tutorials/create-schema-ui.md#browse).
 
 >[!NOTE]
 >
