@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa ett schema med Schemaredigeraren
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: 661789fa15ea11b0e42060b1b90d74785c04fa1f
 workflow-type: tm+mt
 source-wordcount: '3167'
 ht-degree: 0%
@@ -273,7 +273,7 @@ Schemaredigeraren gör det möjligt att aktivera ett schema för användning med
 
 För att ett schema ska kunna aktiveras för användning med [!DNL Real-time Customer Profile]måste en primär identitet ha definierats. Du får felmeddelandet&quot;Saknad primär identitet&quot; om du försöker aktivera ett schema utan att först definiera en primär identitet.
 
-![](../images/tutorials/create-schema/missing_primary_identity.png)
+<img src="../images/tutorials/create-schema/missing_primary_identity.png" width="600" /><br>
 
 Om du vill aktivera schemat &quot;Förmånsmedlemmar&quot; för användning i [!DNL Profile]börjar du med att klicka på &quot;Förmånsmedlemmar&quot; i *strukturdelen* i redigeraren.
 
