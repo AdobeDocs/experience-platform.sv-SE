@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Segmenteringstjänsten Adobe Experience Platform
 topic: overview
 translation-type: tm+mt
-source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+source-git-commit: 96b6f820e5d372446c4927e7719aedadb2b11bc9
 workflow-type: tm+mt
-source-wordcount: '1971'
+source-wordcount: '1974'
 ht-degree: 0%
 
 ---
@@ -215,8 +215,10 @@ En annan traditionell utmaning för marknadsförare har varit att skapa annonser
 - Objekt
 - Mappa
 - Händelser
+- Externa målgrupper
+- Segment
 
-Mer detaljerad information om dessa datatyper som stöds finns i dokumentet [med](./data-types.md)supportdatatyper.
+Mer detaljerad information om dessa datatyper som stöds finns i det [datatypsdokument](./data-types.md)som stöds.
 
 ## Nästa steg
 
