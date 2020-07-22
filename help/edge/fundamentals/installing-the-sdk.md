@@ -4,9 +4,9 @@ seo-title: Adobe Experience Platform Web SDK installerar SDK
 description: Lär dig hur du installerar Experience Platform Web SDK
 seo-description: Lär dig hur du installerar Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: c5afced244c661b0ec0bcf0109191a2dacf886aa
 workflow-type: tm+mt
-source-wordcount: '570'
+source-wordcount: '583'
 ht-degree: 0%
 
 ---
@@ -71,6 +71,10 @@ Om du har fastställt att du måste polyfylla `window.Promise`i, inkluderar du f
 ```
 
 Detta läser in ett skript som ser till att `window.Promise` det är en giltig Promise-implementering.
+
+>[!NOTE]
+>
+>Om du väljer att läsa in en annan Promise-implementering måste den ha stöd `Promise.prototype.finally`.
 
 ## Läsa in JavaScript-filen synkront {#loading-javascript-synchronously}
 
