@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform - översikt
 topic: getting started
 translation-type: tm+mt
-source-git-commit: 444185df28026bf2045afcdadf29f9255885dafb
+source-git-commit: 0c4395556a546915df4718a0e812b38b15e04735
 workflow-type: tm+mt
-source-wordcount: '818'
+source-wordcount: '810'
 ht-degree: 1%
 
 ---
@@ -34,7 +34,7 @@ I följande videofilmer visas hur man [!DNL Experience Platform] skapar omfattan
 
 ## Stöd för webbläsare
 
-Adobe Experience Platform webbplats och tillhörande webbplatser, som Adobe Admin Console, är alla utformade för att fungera optimalt i de **senaste versionerna** av Google Chrome, Safari, Firefox och Microsoft Edge. Du kan ha problem med att använda vissa funktioner i äldre versioner av webbläsare.
+Adobe Experience Platform är utformat för att fungera optimalt i de **senaste versionerna** av Google Chrome, Safari, Firefox och Microsoft Edge. Du kan ha problem med att använda vissa funktioner i äldre versioner av webbläsare.
 
 | Operativsystem | Webbläsare som stöds |  |  |
 |---|---|---|---|
@@ -42,7 +42,7 @@ Adobe Experience Platform webbplats och tillhörande webbplatser, som Adobe Admi
 | Windows 10 | Google Chrome | Microsoft Edge | Firefox |
 | Windows 7 | Google Chrome |  | Firefox&lt; |
 
-Stöds inte:
+Följande webbläsare stöds inte:
 
 * Internet Explorer 10
 * Windows 8
