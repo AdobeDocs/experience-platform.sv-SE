@@ -3,7 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Hjälp om intelligenta tjänster
 translation-type: tm+mt
-source-git-commit: 9bdd2b17953c1c72243ae07be3e40d53ced9360b
+source-git-commit: a0b85809d0703c0366c73ed6d66319af0f62cb27
+workflow-type: tm+mt
+source-wordcount: '64'
+ht-degree: 3%
 
 ---
 
@@ -22,9 +25,9 @@ source-git-commit: 9bdd2b17953c1c72243ae07be3e40d53ced9360b
    * [Översikt](customer-ai/overview.md)
    * [Komma igång med kundens AI](customer-ai/getting-started.md)
    * [Indata och utdata](customer-ai/input-output.md)
-   * Användargränssnittshandbok {#user-guide}
+   * Användargränssnittsguider{#user-guide}
       * [Konfigurera en instans](customer-ai/user-guide/configure.md)
       * [Identifiera insikter](customer-ai/user-guide/discover-insights.md)
       * [Skapa segment med hjälp av AI-poäng för kunder](customer-ai/user-guide/create-segment.md)
       * [Hämtar bakgrundsmusik](customer-ai/user-guide/download-scores.md)
-* [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
+* [Versionsinformation för Platform](https://www.adobe.com/go/platform-release-notes-en)
