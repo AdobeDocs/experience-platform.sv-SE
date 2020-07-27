@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över sandlådor
 topic: overview
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: c52d8cdbc5a4ee6fab8c2b1b284efea5f735d424
 workflow-type: tm+mt
-source-wordcount: '680'
+source-wordcount: '676'
 ht-degree: 0%
 
 ---
@@ -46,11 +46,11 @@ Mer information om hur du hanterar roller och behörigheter för sandlådor finn
 
 ## Sandlådor i användargränssnittet för Experience Platform
 
-I användargränssnittet [för](https://platform.adobe.com)Experience Platform kan användare växla mellan de sandlådor de har tillgång till genom att använda **sandlådeväxlarkontrollen** högst upp till vänster på skärmen.  Användare med administratörsbehörighet för sandlådor har även åtkomst till fliken **Sandlådor** i den vänstra navigeringen, där de kan visa och hantera sandlådor för sin organisation. Mer information om hur du arbetar med sandlådor i användargränssnittet finns i användarhandboken för [sandlådan](ui/overview.md).
+I användargränssnittet [för](https://platform.adobe.com)Experience Platform kan användare växla mellan de sandlådor de har tillgång till genom att använda **sandlådeväxlarkontrollen** högst upp till vänster på skärmen.  Användare med administratörsbehörighet för sandlådan har även tillgång till fliken till vänster, där de kan visa och hantera sandlådor för sin organisation. **[!UICONTROL Sandboxes]** Mer information om hur du arbetar med sandlådor i användargränssnittet finns i användarhandboken för [sandlådan](ui/overview.md).
 
 ## Sandlådor i Experience Platform API:er
 
-När anrop görs till API:er för Experience Platform måste ett sandlådenamn anges under rubriken `x-sandbox-name`. När du till exempel anropar [katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) för att visa alla datauppsättningar i produktionssandlådan, visas sandlådans namn (&quot;prod&quot;) som en rubrik i API-begäran:
+När anrop görs till API:er för Experience Platform måste ett sandlådenamn anges under rubriken `x-sandbox-name`. När du till exempel anropar [!DNL Catalog Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) för att visa alla datauppsättningar i Production sandbox, anges sandlådans namn (&quot;prod&quot;) som en rubrik i API-begäran:
 
 ```shell
 curl -X GET \
