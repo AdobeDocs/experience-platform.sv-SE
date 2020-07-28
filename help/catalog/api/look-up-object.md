@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Söka efter ett objekt
 
-Om du känner till den unika identifieraren för ett specifikt [!DNL Catalog] objekt kan du utföra en GET-begäran för att visa objektets information.
+Om du känner till den unika identifieraren för ett specifikt [!DNL Catalog] objekt kan du utföra en GET-förfrågan för att visa objektets information.
 
 >[!NOTE]
 >
