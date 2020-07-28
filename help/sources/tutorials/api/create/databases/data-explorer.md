@@ -19,7 +19,7 @@ ht-degree: 0%
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudiekursen används API:t för att vägleda dig genom de olika stegen för att ansluta [!DNL Flow Service] (kallas nedan Datautforskaren) till [!DNL Azure Data Explorer] [!DNL Experience Platform].
+I den här självstudiekursen används API:t för att vägleda dig genom de olika stegen för att ansluta [!DNL Flow Service] (nedan kallad Data Explorer) till [!DNL Azure Data Explorer] [!DNL Experience Platform].
 
 ## Komma igång
 
@@ -43,7 +43,7 @@ För [!DNL Flow Service] att kunna ansluta till [!DNL Data Explorer]måste du an
 | `servicePrincipalKey` | Den unika tjänstens huvudnyckel som används för att ansluta till [!DNL Data Explorer] databasen. |
 | `connectionSpec.id` | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikationens ID för [!DNL Data Explorer] är `0479cc14-7651-4354-b233-7480606c2ac3`. |
 
-Mer information om hur du kommer igång finns i [det här Data Explorer-dokumentet](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/management/access-control/how-to-authenticate-with-aad).
+Mer information om hur du kommer igång finns i [det här Datan Explorer](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/management/access-control/how-to-authenticate-with-aad).
 
 ### Läser exempel-API-anrop
 
@@ -77,7 +77,7 @@ POST /connections
 
 **Begäran**
 
-För att kunna skapa en [!DNL Data Explorer] anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POST-begäran. Anslutningsspecifikationens ID för [!DNL Data Explorer] är `0479cc14-7651-4354-b233-7480606c2ac3`.
+För att kunna skapa en [!DNL Data Explorer] anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikationens ID för [!DNL Data Explorer] är `0479cc14-7651-4354-b233-7480606c2ac3`.
 
 ```shell
 curl -X POST \
