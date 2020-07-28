@@ -73,7 +73,7 @@ POST /connections
 
 **Begäran**
 
-För att skapa en PSQL-anslutning måste dess unika anslutningsspec-ID anges som en del av POST-begäran. Anslutningsspecifikations-ID för PSQL är `74a1c565-4e59-48d7-9d67-7c03b8a13137`.
+För att en PSQL-anslutning ska kunna skapas måste dess unika anslutningsspec-ID anges som en del av POSTEN. Anslutningsspecifikations-ID för PSQL är `74a1c565-4e59-48d7-9d67-7c03b8a13137`.
 
 ```shell
 curl -X POST \
