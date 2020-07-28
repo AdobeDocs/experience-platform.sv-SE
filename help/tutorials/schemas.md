@@ -18,7 +18,7 @@ Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience
 
 ## Skapa ett schema med schemaregistret
 
-Schemaregistret innehåller ett användargränssnitt och RESTful API som du kan använda för att visa och hantera alla resurser i schemabiblioteket i Adobe Experience Platform. Schemabiblioteket innehåller resurser som gjorts tillgängliga av Adobe, [!DNL Experience Platform] partners och leverantörer vars program du använder, samt resurser som du definierar och sparar i schemaregistret. Om du vill lära dig hur du skapar scheman för din organisation kan du följa självstudiekurserna för att [skapa ett schema med API:t](../xdm/tutorials/create-schema-api.md) för schemaregister eller [skapa ett schema med användargränssnittet](../xdm/tutorials/create-schema-ui.md)för Schemaredigeraren.
+Schemaregistret innehåller ett användargränssnitt och RESTful API som du kan använda för att visa och hantera alla resurser i schemabiblioteket i Adobe Experience Platform. Schemabiblioteket innehåller resurser som du har fått av Adobe, [!DNL Experience Platform] partners och leverantörer vars program du använder, samt resurser som du definierar och sparar i schemaregistret. Om du vill lära dig hur du skapar scheman för din organisation kan du följa självstudiekurserna för att [skapa ett schema med API:t](../xdm/tutorials/create-schema-api.md) för schemaregister eller [skapa ett schema med användargränssnittet](../xdm/tutorials/create-schema-ui.md)för Schemaredigeraren.
 
 ## Definiera en relation mellan två scheman
 
