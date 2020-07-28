@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Ersätta ett objekt
 
-Du kan skriva över innehållet i ett [!DNL Catalog] objekt med en PUT-begäran, där hela resursen ersätts med den begärda nyttolasten.
+Du kan skriva över innehållet i ett [!DNL Catalog] objekt med hjälp av en PUT-begäran, där hela resursen ersätts med den begärda nyttolasten.
 
 >[!NOTE]
 >
@@ -58,7 +58,7 @@ curl -X PUT \
 
 **Svar**
 
-Ett lyckat svar returnerar en array som innehåller ID:t för det överskrivna objektet. Detta ID ska matcha det som skickas i PUT-begäran. När du utför en GET-begäran för det här objektet visas nu att dess information har ersatts med den som fanns i nyttolasten för den föregående PUT-begäran.
+Ett lyckat svar returnerar en array som innehåller ID:t för det överskrivna objektet. Detta ID ska matcha det som skickades i PUT-begäran. När en GET-förfrågan utförs för det här objektet visas nu att dess information har ersatts med den som fanns i nyttolasten för den tidigare PUT-begäran.
 
 ```json
 [
