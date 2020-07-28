@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Skapa en sandlåda
 
-Du kan skapa en ny sandlåda genom att göra en POST-begäran till `/sandboxes` slutpunkten.
+Du kan skapa en ny sandlåda genom att göra en POST-förfrågan till `/sandboxes` slutpunkten.
 
 **API-format**
 
