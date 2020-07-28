@@ -56,7 +56,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 Det första steget i segmenteringen är att definiera ett segment, som representeras i en konstruktion som kallas **segmentdefinition**. En segmentdefinition är ett objekt som kapslar in en fråga skriven i [!DNL Profile Query Language] (PQL). Det här objektet kallas även för ett **PQL-predikat**. PQL predikerar regler för segmentet baserat på villkor som relaterar till data från post- eller tidsserier som du skickar till [!DNL Real-time Customer Profile]. Mer information om hur du skriver PQL-frågor finns i [PQL-guiden](../pql/overview.md) .
 
-Du kan skapa en ny segmentdefinition genom att göra en POST-begäran till `/segment/definitions` slutpunkten i [!DNL Segmentation] API:t. Följande exempel visar hur du formaterar en definitionsbegäran, inklusive vilken information som krävs för att ett segment ska kunna definieras korrekt.
+Du kan skapa en ny segmentdefinition genom att göra en POST-förfrågan till slutpunkten i `/segment/definitions` [!DNL Segmentation] API:t. Följande exempel visar hur du formaterar en definitionsbegäran, inklusive vilken information som krävs för att ett segment ska kunna definieras korrekt.
 
 En detaljerad förklaring om hur du definierar ett segment finns i utvecklarhandboken för [segmentdefinitioner](../api/segment-definitions.md#create).
 
@@ -87,7 +87,7 @@ Uppskattningar körs i allmänhet över 10-15 sekunder, med början med en grov 
 
 ### Skapa ett förhandsgranskningsjobb
 
-Du kan skapa ett nytt förhandsgranskningsjobb genom att göra en POST-begäran till `/preview` slutpunkten.
+Du kan skapa ett nytt förhandsgranskningsjobb genom att göra en POST-förfrågan till `/preview` slutpunkten.
 
 Detaljerade instruktioner om hur du skapar ett förhandsgranskningsjobb finns i guiden [för](../api/previews-and-estimates.md#create-preview)förhandsvisningar och uppskattningar av slutpunkter.
 
