@@ -4,6 +4,9 @@ audience: user
 user-guide-title: Åtkomstkontroll i hjälpen för Adobe Experience Platform
 translation-type: tm+mt
 source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
+workflow-type: tm+mt
+source-wordcount: '82'
+ht-degree: 1%
 
 ---
 
@@ -24,4 +27,4 @@ source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
    * [Visa gällande policyer](api/effective-policies.md)
 * [Felsökningsguide](troubleshooting-guide.md)
 * [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/access-control.yaml)
-* [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
+* [Versionsinformation för Platform](https://www.adobe.com/go/platform-release-notes-en)
