@@ -18,7 +18,7 @@ Med åtkomstkontrollen i Adobe Experience Platform kan du hantera roller och beh
 
 Följande uppgifter ingår:
 
-- [Få tillgång till Admin Console](./browse.md)
+- [Gå till Admin Console](./browse.md)
 - [Skapa en ny produktprofil](./create-profile.md)
 - [Hantera behörigheter för en produktprofil](./permissions.md)
 - [Hantera information och ytterligare tjänster för en produktprofil](./details-and-services.md)
