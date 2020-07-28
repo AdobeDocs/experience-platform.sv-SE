@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Översikt över Adobe Experience Platform Streaming Ingtion
+title: Översikt över Adobe Experience Platform Streaming Inghit
 topic: overview
 translation-type: tm+mt
 source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
