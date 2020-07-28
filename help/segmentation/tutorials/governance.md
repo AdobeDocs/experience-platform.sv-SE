@@ -126,7 +126,7 @@ Ett lyckat svar returnerar informationen om segmentdefinitionen.
 
 ## Hitta källdatauppsättningarna från sammanfogningsprincipen {#datasets}
 
-Sammanslagningsprinciper innehåller information om deras källdatauppsättningar, som i sin tur innehåller dataanvändningsetiketter. Du kan söka efter information om en sammanfogningsprincip genom att ange sammanfogningsprincip-ID:t i en GET-begäran till [!DNL Profile] API:t. Mer information om sammanfogningsprinciper finns i slutpunktshandboken för [sammanfogningsprinciper](../../profile/api/merge-policies.md).
+Sammanslagningsprinciper innehåller information om deras källdatauppsättningar, som i sin tur innehåller dataanvändningsetiketter. Du kan söka efter information om en sammanfogningsprincip genom att ange sammanfogningsprincip-ID i en GET-begäran till [!DNL Profile] API:t. Mer information om sammanfogningsprinciper finns i slutpunktshandboken för [sammanfogningsprinciper](../../profile/api/merge-policies.md).
 
 **API-format**
 
@@ -189,7 +189,7 @@ Ett lyckat svar returnerar information om sammanfogningsprincipen.
 
 När du har fått ID:n för sammanfogningsprincipens källdatauppsättningar kan du använda [DULE Policy Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) för att utvärdera dessa datauppsättningar mot specifika marknadsföringsåtgärder för att kontrollera om det finns överträdelser av dataanvändningspolicyn.
 
-Om du vill utvärdera datauppsättningarna måste du ange namnet på marknadsföringsåtgärden i sökvägen för en POST-begäran, samtidigt som du anger datauppsättnings-ID:n i begärandetexten, vilket visas i exemplet nedan.
+Om du vill utvärdera datauppsättningarna måste du ange namnet på marknadsföringsåtgärden i sökvägen till en begäran om POST, samtidigt som du anger datauppsättnings-ID:n i begärandetexten, vilket visas i exemplet nedan.
 
 **API-format**
 
