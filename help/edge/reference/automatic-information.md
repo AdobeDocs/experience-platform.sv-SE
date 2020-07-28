@@ -1,22 +1,22 @@
 ---
 title: Information samlas in automatiskt
 seo-title: Information som samlas in automatiskt av Adobe Experience Platform Web SDK
-description: Beskrivning av all information som Adobe Experience Cloud SDK samlar in automatiskt
-seo-description: Beskrivning av all information som Adobe Experience Cloud SDK samlar in automatiskt
+description: Beskrivning av all information som Adobe Experience Cloud SDK automatiskt samlar in
+seo-description: Beskrivning av all information som Adobe Experience Cloud SDK automatiskt samlar in
 translation-type: tm+mt
 source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
 workflow-type: tm+mt
 source-wordcount: '382'
-ht-degree: 3%
+ht-degree: 6%
 
 ---
 
 
 # Information samlas in automatiskt
 
-Adobe Experience Cloud SDK samlar automatiskt in ett antal informationsdelar utan någon specialkonfiguration. Den här informationen kan dock inaktiveras om det behövs med hjälp av `context` alternativet i `configure` kommandot. [Se Konfigurera SDK](../fundamentals/configuring-the-sdk.md). Nedan finns en lista över dessa informationsdelar. Namnet inom parentes anger den sträng som ska användas när kontexten konfigureras.
+Adobe Experience Cloud SDK samlar automatiskt in ett antal informationsdelar utan specialkonfigurationer. Den här informationen kan dock inaktiveras om det behövs med hjälp av `context` alternativet i `configure` kommandot. [Se Konfigurera SDK](../fundamentals/configuring-the-sdk.md). Nedan finns en lista över dessa informationsdelar. Namnet inom parentes anger den sträng som ska användas när kontexten konfigureras.
 
-## Enhet (`device`)
+## Device (`device`)
 
 Information om enheten. Detta inkluderar inte data som kan slås upp på serversidan från användaragentsträngen.
 
