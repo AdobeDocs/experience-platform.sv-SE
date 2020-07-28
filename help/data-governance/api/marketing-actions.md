@@ -20,7 +20,7 @@ När du arbetar med marknadsföringsåtgärder i API måste du använda `/market
 
 ## Lista alla marknadsföringsåtgärder
 
-Om du vill visa en lista över alla marknadsföringsåtgärder kan en GET-begäran göras till `/marketingActions/core` eller `/marketingActions/custom` som returnerar alla policyer för den angivna behållaren.
+Om du vill visa en lista över alla marknadsföringsåtgärder kan du göra en GET-förfrågan till `/marketingActions/core` eller `/marketingActions/custom` returnera alla policyer för den angivna behållaren.
 
 **API-format**
 
@@ -97,7 +97,7 @@ Responsobjektet ger det totala antalet marknadsföringsåtgärder i behållaren 
 
 ## Slå upp en specifik marknadsföringsåtgärd
 
-Du kan också utföra en sökbegäran (GET) för att visa information om en viss marknadsföringsåtgärd. Detta görs med hjälp `name` av marknadsföringsåtgärderna. Om namnet är okänt kan det hittas med den listförfrågan (GET) som visas tidigare.
+Du kan också utföra en sökbegäran (GET) för att visa information om en viss marknadsföringsåtgärd. Detta görs med hjälp `name` av marknadsföringsåtgärderna. Om namnet är okänt kan det hittas med den listbegäran (GET) som visas ovan.
 
 **API-format**
 
@@ -142,7 +142,7 @@ Svarsobjektet innehåller information om marknadsföringsåtgärden, inklusive d
 
 ## Skapa eller uppdatera en marknadsföringsåtgärd
 
-Med [!DNL Policy Service] API kan ni definiera egna marknadsföringsåtgärder och uppdatera befintliga. Både skapande och uppdatering görs med en PUT-åtgärd till namnet på marknadsföringsåtgärden.
+Med [!DNL Policy Service] API kan ni definiera egna marknadsföringsåtgärder och uppdatera befintliga. Både skapande och uppdatering görs med en PUT-åtgärd till marknadsföringsåtgärdens namn.
 
 **API-format**
 
@@ -156,7 +156,7 @@ Observera i följande begäran att nyttolasten `name` i begäran är densamma so
 
 >[!NOTE]
 >
->Om du inte anger värdet `{marketingActionName}` i anropet kommer det att resultera i ett 405-fel (metoden tillåts inte) eftersom du inte får utföra en PUT direkt till `/marketingActions/custom` slutpunkten. Om `name` i nyttolasten inte matchar `{marketingActionName}` i sökvägen får du dessutom ett 400-fel (felaktig begäran).
+>Om du inte anger värdet `{marketingActionName}` i anropet kommer det att resultera i ett 405-fel (metoden tillåts inte) eftersom du inte får utföra en PUT till `/marketingActions/custom` slutpunkten direkt. Om `name` i nyttolasten inte matchar `{marketingActionName}` i sökvägen får du dessutom ett 400-fel (felaktig begäran).
 
 ```SHELL
 curl -X PUT \
@@ -224,4 +224,4 @@ curl -X DELETE \
 
 Om marknadsföringsåtgärden har tagits bort utan fel kommer svarstexten att vara tom med HTTP-status 200 (OK).
 
-Du kan bekräfta borttagningen genom att försöka söka (GET) efter marknadsföringsåtgärden. Du bör få HTTP-status 404 (Hittades inte) tillsammans med felmeddelandet &quot;Hittades inte&quot; eftersom marknadsföringsåtgärden har tagits bort.
+Du kan bekräfta borttagningen genom att försöka söka efter (GET) marknadsföringsåtgärden. Du bör få HTTP-status 404 (Hittades inte) tillsammans med felmeddelandet &quot;Hittades inte&quot; eftersom marknadsföringsåtgärden har tagits bort.
