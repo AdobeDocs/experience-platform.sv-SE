@@ -24,10 +24,10 @@ Mer information om hur du ansluter till molnlagringsdestinationer finns [i arbet
 
 Ange följande information i arbetsflödet för att skapa mål för [!DNL Amazon S3] mål:
 
-* **[!DNL Amazon S3]åtkomstnyckel och[!DNL Amazon S3]hemlig nyckel **: Generera[!DNL Amazon S3]i stället en åtkomstnyckel - nyckelpar för hemlig åtkomst som ger Adobe CDP-åtkomst i realtid till ditt[!DNL Amazon S3]konto.
+* **[!DNL Amazon S3]åtkomstnyckel och[!DNL Amazon S3]hemlig nyckel **: Generera[!DNL Amazon S3]en åtkomstnyckel - nyckelpar för hemlig åtkomst som ger CDP-åtkomst i realtid i Adobe till ditt[!DNL Amazon S3]konto.
 
 
 
 >[!IMPORTANT]
 >
->Adobe CDP i realtid behöver `write` behörigheter för det bucket-objekt där exportfilerna ska levereras.
+>CDP i realtid i Adobe behöver `write` behörigheter för det bucket-objekt där exportfilerna ska levereras.
