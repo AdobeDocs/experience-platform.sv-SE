@@ -43,7 +43,7 @@ Datainmatningsmeddelandets händelseschema är ett [!DNL Experience Data Model] 
 
 ## Prenumerera på statusmeddelanden för dataöverföring
 
-Genom [Adobe I/O Events](https://www.adobe.io/apis/experienceplatform/events.html)kan du prenumerera på flera olika typer av meddelanden via webbhooks. Avsnitten nedan beskriver stegen för att prenumerera på [!DNL Platform] meddelanden om dataöverföringshändelser med Adobe Developer Console.
+Via [Adobe I/O Events](https://www.adobe.io/apis/experienceplatform/events.html)kan du prenumerera på flera olika typer av meddelanden via webbhooks. I avsnitten nedan beskrivs stegen för att prenumerera på [!DNL Platform] meddelanden om dataöverföringshändelser med hjälp av Adobe Developer Console.
 
 ### Skapa ett nytt projekt i Adobe Developer Console
 
@@ -79,7 +79,7 @@ Ange ett namn och en beskrivning för händelseregistreringen på nästa skärm.
 
 ![](../images/quality/subscribe-events/registration-details.png)
 
-På samma skärm kan du välja att konfigurera hur händelser ska tas emot. **[!UICONTROL Webhook]** gör att du kan ange en anpassad webbkrosadress för att ta emot händelser, medan du **[!UICONTROL Runtime action]** kan göra samma sak med [Adobe I/O Runtime](https://www.adobe.io/apis/experienceplatform/runtime/docs.html).
+På samma skärm kan du välja att konfigurera hur händelser ska tas emot. **[!UICONTROL Webhook]** gör att du kan ange en anpassad webbadress för att ta emot händelser, medan du **[!UICONTROL Runtime action]** kan göra samma sak med [Adobe I/O Runtime](https://www.adobe.io/apis/experienceplatform/runtime/docs.html).
 
 I den här självstudien hoppas det här valfria konfigurationssteget över. När du är klar klickar du **[!UICONTROL Save configured events]** för att slutföra registreringen av evenemanget.
 
@@ -91,4 +91,4 @@ Informationssidan för den nyligen skapade händelseregistreringen visas, där d
 
 ## Nästa steg
 
-När du har registrerat [!DNL Platform] meddelanden till projektet kan du visa mottagna händelser från projektkontrollpanelen. Mer information om hur du spårar händelser finns i [hjälpguiden för Adobe I/O Events](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/support/tracing.md) .
+När du har registrerat [!DNL Platform] meddelanden till projektet kan du visa mottagna händelser från projektkontrollpanelen. Mer information om hur du spårar händelser finns i guiden [Adobe I/O-händelser](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/support/tracing.md) .
