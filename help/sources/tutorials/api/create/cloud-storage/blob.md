@@ -18,7 +18,7 @@ ht-degree: 0%
 
 I den här självstudiekursen används API:t för att vägleda dig genom de olika stegen för att ansluta [!DNL Flow Service] till ett [!DNL Experience Platform] [!DNL Azure Blob] lagringsutrymme (nedan kallat&quot;blob&quot;).
 
-Om du föredrar att använda användargränssnittet i [!DNL Experience Platform]innehåller självstudiekursen för [Azure Blob eller Amazon S3-källanslutningen](../../../ui/create/cloud-storage/blob-s3.md) stegvisa instruktioner för att utföra liknande åtgärder.
+Om du föredrar att använda användargränssnittet i [!DNL Experience Platform]innehåller självstudiekursen [för](../../../ui/create/cloud-storage/blob-s3.md) Azure Blob eller Amazon S3-källkopplingen stegvisa instruktioner för att utföra liknande åtgärder.
 
 ## Komma igång
 
@@ -72,7 +72,7 @@ POST /connections
 
 **Begäran**
 
-För att skapa en blobanslutning måste dess unika anslutningsspecifikations-ID anges som en del av POST-begäran. Anslutningsspecifikations-ID för Blob är `4c10e202-c428-4796-9208-5f1f5732b1cf`.
+För att skapa en blobanslutning måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikations-ID för Blob är `4c10e202-c428-4796-9208-5f1f5732b1cf`.
 
 ```shell
 curl -X POST \
