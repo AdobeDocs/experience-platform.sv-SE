@@ -20,7 +20,7 @@ Den här användarhandboken innehåller anvisningar om hur du utför vanliga åt
 
 Den här användarhandboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Datauppsättningar](overview.md): Konstruktionen för lagring och hantering av databeständighet i [!DNL Experience Platform].
+* [Datauppsättningar](overview.md): Konstruktionen för lagring och hantering för databeständighet i [!DNL Experience Platform].
 * [!DNL Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigerare](../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar egna anpassade XDM-scheman med hjälp av [!DNL Schema Editor] i [!DNL Platform] användargränssnittet.
@@ -121,7 +121,7 @@ Du kan ta bort en datauppsättning genom att först gå till dess *[!UICONTROL D
 
 >[!NOTE]
 >
->Det går inte att ta bort datauppsättningar som skapats och använts av Adobe-program och -tjänster (som Adobe Analytics, Adobe Audience Manager eller [!DNL Decisioning Service]).
+>Det går inte att ta bort datauppsättningar som skapats och använts av program och tjänster från Adobe (t.ex. Adobe Analytics, Adobe Audience Manager eller [!DNL Decisioning Service]).
 
 ![](../images/datasets/user-guide/delete_dataset.png)
 
