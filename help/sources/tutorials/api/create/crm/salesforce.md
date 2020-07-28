@@ -66,7 +66,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 Innan du ansluter [!DNL Platform] till ett [!DNL Salesforce] konto måste du verifiera att det finns anslutningsspecifikationer för [!DNL Salesforce]. Om det inte finns några anslutningsspecifikationer går det inte att ansluta.
 
-Varje tillgänglig källa har en egen unik uppsättning anslutningsspecifikationer för att beskriva kopplingsegenskaper som autentiseringskrav. Du kan söka efter anslutningsspecifikationer för [!DNL Salesforce] genom att utföra en GET-begäran och använda frågeparametrar.
+Varje tillgänglig källa har en egen unik uppsättning anslutningsspecifikationer för att beskriva kopplingsegenskaper som autentiseringskrav. Du kan söka efter anslutningsspecifikationer för [!DNL Salesforce] genom att utföra en GET-förfrågan och använda frågeparametrar.
 
 **API-format**
 
@@ -147,7 +147,7 @@ Ett lyckat svar returnerar anslutningsspecifikationerna för [!DNL Salesforce], 
 
 En basanslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en basanslutning krävs per [!DNL Salesforce] konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
 
-Utför följande POST-begäran för att skapa en basanslutning.
+Utför följande POST-förfrågan för att skapa en basanslutning.
 
 **API-format**
 
