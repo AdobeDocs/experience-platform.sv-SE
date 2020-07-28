@@ -94,12 +94,12 @@ I [Adobe Real-time Customer Data Platform](../../rtcdp/overview.md)är destinati
 
 **Nya destinationer**
 
-Adobe CDP har nu stöd för dataaktivering i realtid i över femtio [!DNL Experience Cloud Launch] tillägg, vilket möjliggör analyser, personalisering och andra användningsfall. Mer information finns nedan:
+Adobe CDP i realtid har nu stöd för dataaktivering i över femtio [!DNL Experience Cloud Launch] tillägg, vilket möjliggör analyser, personalisering och andra användningsfall. Mer information finns nedan:
 
 | Dokumentation | Beskrivning |
 |--- | ---|
-| [Måltyper och -kategorier](/help/rtcdp/destinations/destination-types.md) | I den här artikeln förklaras skillnaden mellan anslutningar och tillägg i Adobe-gränssnittet för CDP i realtid och en rekommendation om när var och en av dessa destinationer ska användas. |
-| [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md) | På den här sidan förklaras vilka [!DNL Launch] tillägg som är tillgängliga, en lista över användningsfall för dem samt länkar till dokumentation för varje [!DNL Launch] tillägg i Adobe Real-time CDP. |
+| [Måltyper och -kategorier](/help/rtcdp/destinations/destination-types.md) | I den här artikeln förklaras skillnaden mellan anslutningar och tillägg i CDP-gränssnittet i realtid för Adobe och en rekommendation om när var och en av dessa destinationer ska användas. |
+| [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md) | På den här sidan förklaras vilka [!DNL Launch] tillägg som är, en lista över användningsfall för dem och länkar till dokumentation för varje [!DNL Launch] tillägg i Adobe Real-time CDP. |
 
 Mer information finns i Översikt över [destinationer](/help/rtcdp/destinations/destinations-overview.md).
 
@@ -123,7 +123,7 @@ Mer information [!DNL Privacy Service]finns i [Privacy Servicen](../../privacy-s
 
 ## Sources {#sources}
 
-Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, programvara från tredje part och ditt CRM-system.
+Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
 [!DNL Experience Platform] innehåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
 
