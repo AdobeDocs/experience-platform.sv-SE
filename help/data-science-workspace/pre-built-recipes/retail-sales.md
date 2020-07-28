@@ -5,6 +5,9 @@ title: Butiksförsäljningsrecept
 topic: overview
 translation-type: tm+mt
 source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
+workflow-type: tm+mt
+source-wordcount: '523'
+ht-degree: 1%
 
 ---
 
@@ -30,7 +33,7 @@ I recept på försäljningsprognos används maskininlärning för att förutse f
 
 Du kan komma igång genom att följa den här [självstudiekursen](../jupyterlab/create-a-recipe.md).
 
-I den här självstudiekursen går vi vidare med att skapa säljrecept för detaljhandeln i en Jupyter-anteckningsbok och använda anteckningsboken för att hämta arbetsflöden för att skapa recept i Adobe Experience Platform.
+I den här självstudiekursen går vi vidare med att skapa säljrecept för detaljhandeln i en Jupyter-anteckningsbok och använda anteckningsboken för att hämta arbetsflödet för att skapa recept i Adobe Experience Platform.
 
 ## Datamodell
 
