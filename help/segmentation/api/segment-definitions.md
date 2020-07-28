@@ -24,7 +24,7 @@ Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Pla
 
 ## Hämta en lista med segmentdefinitioner {#list}
 
-Du kan hämta en lista över alla segmentdefinitioner för din IMS-organisation genom att göra en GET-begäran till `/segment/definitions` slutpunkten.
+Du kan hämta en lista över alla segmentdefinitioner för din IMS-organisation genom att göra en GET-förfrågan till `/segment/definitions` slutpunkten.
 
 **API-format**
 
@@ -153,7 +153,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentdefinitione
 
 ## Skapa en ny segmentdefinition {#create}
 
-Du kan skapa en ny segmentdefinition genom att göra en POST-begäran till `/segment/definitions` slutpunkten.
+Du kan skapa en ny segmentdefinition genom att göra en POST-förfrågan till `/segment/definitions` slutpunkten.
 
 **API-format**
 
@@ -250,7 +250,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den segmentdefinit
 
 ## Hämta en specifik segmentdefinition {#get}
 
-Du kan hämta detaljerad information om en viss segmentdefinition genom att göra en GET-begäran till `/segment/definitions` slutpunkten och ange ID:t för segmentdefinitionen som du vill hämta i sökvägen till begäran.
+Du kan hämta detaljerad information om en viss segmentdefinition genom att göra en GET-förfrågan till slutpunkten och ange ID:t för den segmentdefinition som du vill hämta i sökvägen för begäran. `/segment/definitions`
 
 **API-format**
 
@@ -332,7 +332,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 
 ## Hämta segmentdefinitioner gruppvis {#bulk-get}
 
-Du kan hämta detaljerad information om flera angivna segmentdefinitioner genom att göra en POST-begäran till `/segment/definitions/bulk-get` slutpunkten och ange `id` värdena för segmentdefinitionerna i begärandetexten.
+Du kan hämta detaljerad information om flera angivna segmentdefinitioner genom att göra en POST-förfrågan till `/segment/definitions/bulk-get` slutpunkten och ange `id` värdena för segmentdefinitionerna i begärandetexten.
 
 **API-format**
 
