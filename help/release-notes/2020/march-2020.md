@@ -52,7 +52,7 @@ Mer information om [!DNL Data Governance]finns i översikten över [datastyrning
 
 ## Dataintag {#ingestion}
 
-Adobe Experience Platform har en mängd funktioner för att importera alla typer av data och fördröjningar. Adobe Experience Platform [!DNL Data Ingestion] erbjuder flera alternativ för datainhämtning, inklusive API:er för gruppbearbetning, API:er för direktuppspelning, inbyggda Adobe-anslutningar, dataintegrationspartners eller användargränssnittet för Adobe Experience Platform.
+Adobe Experience Platform har en mängd funktioner för att importera alla typer av data och fördröjningar. Adobe Experience Platform [!DNL Data Ingestion] erbjuder flera alternativ för inmatning av data, bland annat API:er för gruppbearbetning, API:er för direktuppspelning, Adobe-kopplingar, dataintegrationspartners och användargränssnittet för Adobe Experience Platform.
 
 **Nya funktioner**
 
@@ -77,8 +77,8 @@ Det finns nya destinationer där du kan aktivera data från Adobe Experience Pla
 
 | Destination | Beskrivning |
 |--- | ---|
-| Lagringsmål i molnet | Adobe CDP kan nu i realtid leverera era segment som datafiler till era [!DNL Amazon S3] - eller SFTP-molnlagringsplatser. Detta gör att du kan skicka målgrupper och deras profilattribut till dina interna system via CSV eller tabbavgränsade filer. |
-| Annonsmål | Målkortet delas nu upp i tre destinationskort för de tre olika [!DNL Google] [!DNL Google] plattformar som för närvarande stöds i Adobe Real-time CDP: [!DNL Google Ads], [!DNL Google Ad Manager], [!DNL Google] Display &amp; Video 360. |
+| Lagringsmål i molnet | Adobe CDP i realtid kan nu leverera dina segment som datafiler till dina [!DNL Amazon S3] eller SFTP:s molnlagringsplatser. Detta gör att du kan skicka målgrupper och deras profilattribut till dina interna system via CSV eller tabbavgränsade filer. |
+| Annonsmål | Målkortet delas nu upp i tre destinationskort för de tre olika [!DNL Google] [!DNL Google] plattformar som för närvarande stöds i CDP i realtid i Adobe: [!DNL Google Ads], [!DNL Google Ad Manager], [!DNL Google] Display &amp; Video 360. |
 
 Mer information finns på [destinationsöversikten](../../rtcdp/destinations/destinations-overview.md)
 
@@ -102,7 +102,7 @@ Mer information om [!DNL Identity Service]finns i [Översikt över](../../identi
 
 ## Sources {#sources}
 
-Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
 [!DNL Experience Platform] innehåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
 
