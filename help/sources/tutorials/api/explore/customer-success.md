@@ -56,7 +56,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Utforska era datatabeller
 
-Med basanslutningen för ditt CS-system kan du utforska datatabeller genom att utföra GET-begäranden. Använd följande anrop för att hitta sökvägen till tabellen som du vill inspektera eller importera till [!DNL Platform].
+Med basanslutningen för ditt CS-system kan du utforska datatabeller genom att utföra GET-förfrågningar. Använd följande anrop för att hitta sökvägen till tabellen som du vill inspektera eller importera till [!DNL Platform].
 
 **API-format**
 
@@ -116,9 +116,9 @@ Ett lyckat svar returnerar en array med tabeller från CS-systemet. Leta reda p�
 ]
 ```
 
-## Inspektera tabellstrukturen
+## Inspect tabellstrukturen
 
-Om du vill inspektera strukturen för en tabell från ditt CS-system utför du en GET-begäran och anger sökvägen till en tabell som en frågeparameter.
+Om du vill inspektera tabellstrukturen i ditt CS-system utför du en GET-förfrågan och anger tabellens sökväg som en frågeparameter.
 
 **API-format**
 
