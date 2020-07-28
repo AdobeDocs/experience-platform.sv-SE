@@ -1,8 +1,8 @@
 ---
 title: Lagringsmål i molnet
 seo-title: Lagringsmål i molnet
-description: Adobe CDP kan i realtid leverera era segment som datafiler till Amazon S3, AWS Kinesis, Azure Event Hubs eller SFTP:s molnlagringsplatser.
-seo-description: Adobe CDP kan i realtid leverera era segment som datafiler till Amazon S3, AWS Kinesis, Azure Event Hubs eller SFTP:s molnlagringsplatser.
+description: CDP i realtid i Adobe kan leverera dina segment som datafiler till Amazon S3, AWS Kinesis, Azure Event Hubs eller SFTP:s molnlagringsplatser.
+seo-description: CDP i realtid i Adobe kan leverera dina segment som datafiler till Amazon S3, AWS Kinesis, Azure Event Hubs eller SFTP:s molnlagringsplatser.
 translation-type: tm+mt
 source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
 workflow-type: tm+mt
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Lagringsmål i molnet {#cloud-storage-destinations}
 
-Adobe CDP kan leverera era segment som datafiler till era molnlagringsplatser i realtid. Detta gör att du kan skicka målgrupper och deras profilattribut till dina interna system via CSV eller tabbavgränsade filer för [!DNL Amazon S3] och SFTP. För [!DNL AWS Kinesis] och [!DNL Azure Event Hubs] för destinationer direktuppspelas data från Experience Platform i JSON-format.
+Adobe CDP i realtid kan leverera era segment som datafiler till era molnlagringsplatser. Detta gör att du kan skicka målgrupper och deras profilattribut till dina interna system via CSV eller tabbavgränsade filer för [!DNL Amazon S3] och SFTP. För [!DNL AWS Kinesis] och [!DNL Azure Event Hubs] för destinationer direktuppspelas data från Experience Platform i JSON-format.
 
 ![Lagringsmål för Adobe Cloud](/help/rtcdp/destinations/assets/cloud-storage-destinations.png)
 
@@ -31,5 +31,5 @@ Mer information om hur du ansluter till molnlagringsmål finns i [Arbetsflöde f
 
 ## Tillgängliga direktuppspelningsmål för molnlagring
 
-* [Amazon Kinesis-mål](/help/rtcdp/destinations/amazon-kinesis-destination.md)
+* [Amazon Kinesis](/help/rtcdp/destinations/amazon-kinesis-destination.md)
 * [Azure Event Hubs-mål](/help/rtcdp/destinations/azure-event-hubs-destination.md)
