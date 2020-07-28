@@ -63,7 +63,7 @@ Fortsätt att följa stegen som beskrivs i utvecklarhandboken tills du har skapa
 
 ## Skapa en källanslutning {#source}
 
-När ett ad hoc-XDM-schema har skapats kan en källanslutning skapas med hjälp av en POST-begäran till [!DNL Flow Service] API:t. En källanslutning består av ett anslutnings-ID, en källdatafil och en referens till schemat som beskriver källdata.
+När ett ad hoc-XDM-schema har skapats kan en källanslutning skapas med hjälp av en POST till [!DNL Flow Service] API:t. En källanslutning består av ett anslutnings-ID, en källdatafil och en referens till schemat som beskriver källdata.
 
 Om du vill skapa en källanslutning måste du också definiera ett uppräkningsvärde för dataformatattributet.
 
@@ -136,7 +136,7 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 I tidigare steg skapades ett ad hoc-XDM-schema för att strukturera källdata. För att källdata ska kunna användas i [!DNL Platform]måste ett målschema också skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en [!DNL Platform] datauppsättning där källdata finns. Detta mål-XDM-schema utökar även [!DNL XDM Individual Profile] klassen.
 
-Ett mål-XDM-schema kan skapas genom att en POST-begäran görs till API:t för [schemaregister](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml). Om du föredrar att använda användargränssnittet i [!DNL Experience Platform]innehåller [schemaredigerarsjälvstudiekursen](../../../../xdm/tutorials/create-schema-ui.md) stegvisa instruktioner för hur du utför liknande åtgärder i Schemaredigeraren.
+Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till API:t för [schemaregister](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml). Om du föredrar att använda användargränssnittet i [!DNL Experience Platform]innehåller [schemaredigerarsjälvstudiekursen](../../../../xdm/tutorials/create-schema-ui.md) stegvisa instruktioner för hur du utför liknande åtgärder i Schemaredigeraren.
 
 **API-format**
 
@@ -242,7 +242,7 @@ Ett lyckat svar returnerar information om det nyligen skapade schemat inklusive 
 
 ## Skapa en måldatauppsättning
 
-En måldatauppsättning kan skapas genom att en POST-begäran till API:t för [katalogtjänsten](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)utförs, med ID:t för målschemat i nyttolasten.
+En måldatauppsättning kan skapas genom att en POST till API:t [för](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)katalogtjänsten utförs, med ID:t för målschemat i nyttolasten.
 
 **API-format**
 
@@ -341,7 +341,7 @@ Ett lyckat svar returnerar den nya målanslutningens unika identifierare (`id`).
 
 ## Skapa en mappning {#mapping}
 
-För att källdata ska kunna hämtas till en måldatamängd måste de först mappas till målschemat som måldatamängden följer. Detta uppnås genom att utföra en POST-begäran till API:t med datamappningar som definieras i nyttolasten för begäran. [!DNL Conversion Service]
+För att källdata ska kunna hämtas till en måldatamängd måste de först mappas till målschemat som måldatamängden följer. Detta uppnås genom att utföra en begäran om POST till API:t med datamappningar som definieras i den begärda nyttolasten. [!DNL Conversion Service]
 
 **API-format**
 
@@ -414,7 +414,7 @@ Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusi
 
 ## Hämta dataflödesspecifikationer {#specs}
 
-Ett dataflöde ansvarar för att samla in data från källor och föra in dem i [!DNL Platform]. För att kunna skapa ett dataflöde måste du först få dataflödesspecifikationerna genom att utföra en GET-begäran till [!DNL Flow Service](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) API:t. Dataflödesspecifikationer används för att samla in data från en extern databas eller ett NoSQL-system.
+Ett dataflöde ansvarar för att samla in data från källor och föra in dem i [!DNL Platform]. För att kunna skapa ett dataflöde måste du först hämta dataflödesspecifikationerna genom att utföra en GET-begäran till [!DNL Flow Service](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) API:t. Dataflödesspecifikationer används för att samla in data från en extern databas eller ett NoSQL-system.
 
 **API-format**
 
@@ -565,7 +565,7 @@ Det sista steget mot att samla in data är att skapa ett dataflöde. Nu bör du 
 * [Mappnings-ID](#mapping)
 * [ID för dataflödesspecifikation](#specs)
 
-Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en POST-begäran samtidigt som du anger de tidigare nämnda värdena i nyttolasten.
+Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en begäran om POST samtidigt som du anger de tidigare angivna värdena i nyttolasten.
 
 Om du vill schemalägga ett intag måste du först ange starttidsvärdet till epok time i sekunder. Sedan måste du ange frekvensvärdet till ett av de fem alternativen: `once`, `minute`, `hour`, `day`eller `week`. Intervallvärdet anger perioden mellan två på varandra följande inmatningar och att skapa en engångsinmatning kräver inget intervall. För alla andra frekvenser måste intervallvärdet anges till lika med eller större än `15`.
 
