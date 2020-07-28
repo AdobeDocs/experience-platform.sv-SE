@@ -41,7 +41,7 @@ Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuell
 >
 >Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
-Alla POST-, PUT- och PATCH-begäranden kräver ytterligare en rubrik:
+Alla förfrågningar från POST, PUT och PATCH kräver ytterligare en rubrik:
 
 - Innehållstyp: application/json
 
@@ -63,7 +63,7 @@ Med hjälp av schemalagd utvärdering kan din IMS-organisation skapa ett återko
 
 ### Skapa ett schema
 
-Genom att göra en POST-begäran till `/config/schedules` slutpunkten kan du skapa ett schema och inkludera den specifika tid då schemat ska utlösas.
+Genom att göra en begäran om POST till `/config/schedules` slutpunkten kan du skapa ett schema och inkludera den tidpunkt då schemat ska utlösas.
 
 Mer detaljerad information om hur du använder den här slutpunkten finns i [slutpunktshandboken för scheman](../api/schedules.md#create)
 
@@ -87,14 +87,14 @@ Med On-demand-utvärdering kan ni skapa ett segmentjobb för att generera ett m�
 
 Ett segmentjobb är en asynkron process som skapar ett nytt målgruppssegment. Det refererar till en segmentdefinition samt eventuella sammanfogningsprinciper som styr hur [!DNL Real-time Customer Profile] sammanfogar överlappande attribut i profilfragmenten. När ett segmentjobb har slutförts kan du samla in olika typer av information om segmentet, t.ex. eventuella fel som kan ha inträffat under bearbetningen och målgruppens slutliga storlek.
 
-Du kan skapa ett nytt segmentjobb genom att göra en POST-begäran till `/segment/jobs` slutpunkten i [!DNL Real-time Customer Profile] API:t.
+Du kan skapa ett nytt segmentjobb genom att göra en POST-förfrågan till slutpunkten i `/segment/jobs` [!DNL Real-time Customer Profile] API:t.
 
 Mer detaljerad information om hur du använder den här slutpunkten finns i slutpunktshandboken för [segmentjobb](../api/segment-jobs.md#create)
 
 
 ### Sök efter jobbstatus för segment
 
-Du kan använda `id` för ett specifikt segmentjobb för att utföra en sökbegäran (GET) för att visa jobbets aktuella status.
+Du kan använda `id` för ett specifikt segmentjobb för att utföra en uppslagsbegäran (GET) för att visa jobbets aktuella status.
 
 Mer detaljerad information om hur du använder den här slutpunkten finns i slutpunktshandboken för [segmentjobb](../api/segment-jobs.md#get)
 
@@ -216,13 +216,13 @@ Ett lyckat svar returnerar en array som innehåller det skrivskyddade, systemgen
 
 ### Generera profiler för målgruppsmedlemmar {#generate-profiles}
 
-När du har en unionskonstanterad datauppsättning kan du skapa ett exportjobb som behåller målgruppsmedlemmarna i datauppsättningen genom att göra en POST-begäran till `/export/jobs` slutpunkten i [!DNL Real-time Customer Profile] API:t och ange datauppsättnings-ID:t och segmentinformationen för de segment som du vill exportera.
+När du har en enhetlig datauppsättning som är beständig kan du skapa ett exportjobb som behåller målgruppsmedlemmarna i datauppsättningen genom att göra en POST till `/export/jobs` slutpunkten i [!DNL Real-time Customer Profile] API:t och ange datauppsättnings-ID:t och segmentinformationen för de segment som du vill exportera.
 
 Mer detaljerad information om hur du använder den här slutpunkten finns i slutpunktshandboken för [exportjobb](../api/export-jobs.md#create)
 
 ### Övervaka exportförlopp
 
-Som exportjobbsprocesser kan du övervaka dess status genom att göra en GET-begäran till `/export/jobs` slutpunkten och inkludera `id` exportjobbets status i sökvägen. Exportjobbet slutförs när `status` fältet returnerar värdet &quot;SUCCEEDED&quot;.
+Som exportjobbsprocesser kan du övervaka dess status genom att göra en GET-förfrågan till `/export/jobs` slutpunkten och inkludera exportjobbets status `id` i sökvägen. Exportjobbet slutförs när `status` fältet returnerar värdet &quot;SUCCEEDED&quot;.
 
 Mer detaljerad information om hur du använder den här slutpunkten finns i slutpunktshandboken för [exportjobb](../api/export-jobs.md#get)
 
