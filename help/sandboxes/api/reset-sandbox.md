@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # Återställ en sandlåda
 
-Utvecklingssandlådor har en &quot;fabriksåterställningsfunktion&quot; som tar bort alla icke-standardresurser från en sandlåda. Du kan återställa en sandlåda genom att göra en PUT-begäran som innehåller sandlådans `name` i begärandesökvägen.
+Utvecklingssandlådor har en &quot;fabriksåterställningsfunktion&quot; som tar bort alla icke-standardresurser från en sandlåda. Du kan återställa en sandlåda genom att göra en PUT-begäran som innehåller sandlådans `name` i sökvägen för begäran.
 
 **API-format**
 
