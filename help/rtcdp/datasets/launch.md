@@ -14,7 +14,7 @@ ht-degree: 3%
 
 # Självstudiekurs: Implementera webbplatstaggar med Adobe Launch
 
-I den här självstudiekursen beskrivs hur du implementerar webbplatstaggar för att skicka data till Adobe Experience Platform med hjälp av Adobe Launch.
+I den här självstudiekursen beskrivs hur du implementerar webbplatstaggar för att skicka data till Adobe Experience Platform med Adobe Launch.
 
 ## Förutsättningar
 
@@ -49,7 +49,7 @@ Installera först tillägget Adobe Experience Platform [!DNL Web SDK] .
    De enda inställningar du behöver just nu är:
 
    * **Konfigurations-ID:** Ange det konfigurations-ID som du fick från din Adobe-representant.
-   * **Edge Domain:** Ange den edge-domän du har fått från din Adobe-representant.
+   * **Edge Domain:** Ange den kantdomän du fick från din Adobe-representant.
 
 1. Klicka **[!UICONTROL Save]** och fortsätt till nästa steg.
 
