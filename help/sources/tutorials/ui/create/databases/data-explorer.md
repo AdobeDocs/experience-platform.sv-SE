@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Skapa en Azure Data Explorer-källkoppling i användargränssnittet
+title: Skapa en Azure Data Explorer-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
 source-git-commit: 4f7d7e2bf255afe1588dbe7cfb2ec055f2dcbf75
@@ -39,10 +39,10 @@ För att få åtkomst till ditt [!DNL Data Explorer] konto [!DNL Platform]måste
 | `endpoint` | Serverns slutpunkt.. [!DNL Data Explorer] . |
 | `database` | Namnet på [!DNL Data Explorer] databasen. |
 | `tenant` | Det unika klient-ID som används för att ansluta till [!DNL Data Explorer] databasen. |
-| `servicePrincipalId` | Det unika tjänstens huvud-ID som används för att ansluta till Data Explorer-databasen. |
-| `servicePrincipalKey` | Den unika huvudnyckel för tjänsten som används för att ansluta till Data Explorer-databasen. |
+| `servicePrincipalId` | Det unika tjänstens huvudnamn-ID som används för att ansluta till Datans Explorer databas. |
+| `servicePrincipalKey` | Den unika tjänstens huvudnyckel som används för att ansluta till Datans Explorer databas. |
 
-Mer information om hur du kommer igång finns i [det här Data Explorer-dokumentet](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/management/access-control/how-to-authenticate-with-aad).
+Mer information om hur du kommer igång finns i [det här Datan Explorer](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/management/access-control/how-to-authenticate-with-aad).
 
 ## Anslut ditt [!DNL Azure Data Explorer] konto
 
@@ -52,7 +52,7 @@ Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj s
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under *[!UICONTROL Databases]* kategorin väljer du **[!UICONTROL Azure Data Explorer]** och klickar **på plusikonen (+)** för att skapa en ny Data Explorer-koppling.
+Under *[!UICONTROL Databases]* kategorin väljer du **[!UICONTROL Azure Data Explorer]** och klickar **på plusikonen (+)** för att skapa en ny koppling för Datan Explorer.
 
 ![katalog](../../../../images/tutorials/create/data-explorer/catalog.png)
 
