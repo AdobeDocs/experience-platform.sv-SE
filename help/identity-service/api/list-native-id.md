@@ -18,7 +18,7 @@ Identitetsdata anges vanligtvis som ett ID-strängvärde och identitetsnamnområ
 
 >[!NOTE]
 >
->Formatet är huvudsakligen avsett för intern Adobe-användning. Inbyggt XID som ett enskilt värde är mer utrymmeseffektivt och används internt inom [!DNL Platform] lösningar för lagring och serialisering. Det är dock inte läsbart för människor, det är ogenomskinligt och kräver ett separat anrop för att få det att användas.
+>Formatet är huvudsakligen avsett för intern Adobe. Inbyggt XID som ett enskilt värde är mer utrymmeseffektivt och används internt inom [!DNL Platform] lösningar för lagring och serialisering. Det är dock inte läsbart för människor, det är ogenomskinligt och kräver ett separat anrop för att få det att användas.
 
 Hämta XID för ett givet ID-värde och namnutrymme med den tjänst som beskrivs i det här avsnittet.
 
