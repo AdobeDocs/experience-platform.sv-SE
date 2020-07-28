@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # [!DNL Real-time Customer Data Platform] översikt över mätvärden
 
-Hemsidan för Adobe Customer Data Platform (CDP i realtid), som innehåller en mätinstrumentpanel, visas när du loggar in på CDP i realtid.
+Hemsidan Adobe Real-time Customer Data Platform (Real-time CDP), som innehåller en mätinstrumentpanel, visas när du loggar in på CDP i realtid.
 
 Hemsidan är bara en av platserna där metriska kort visas. CDP ger dig mätkort i realtid genom hela upplevelsen. Dessa mätvärden ger information om data, profiler och målgrupper i systemet.
 
