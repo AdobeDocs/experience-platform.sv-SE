@@ -132,7 +132,7 @@ Ett lyckat svar returnerar URL:en för marknadsföringsåtgärden, de DULE-etike
 
 ## Utvärdera med datauppsättningar
 
-Du kan utvärdera en DULE-princip genom att testa en marknadsföringsåtgärd mot en eller flera datauppsättningar från vilka DULE-etiketter kan samlas in. Detta görs genom att göra en POST-begäran till `/marketingActions/core/{MARKETING_ACTION_NAME}/constraints` och tillhandahålla datauppsättnings-ID:n i begärandetexten, vilket visas i exemplet nedan.
+Du kan utvärdera en DULE-princip genom att testa en marknadsföringsåtgärd mot en eller flera datauppsättningar från vilka DULE-etiketter kan samlas in. Detta görs genom att en POST begär `/marketingActions/core/{MARKETING_ACTION_NAME}/constraints` och tillhandahåller datauppsättnings-ID i begärandetexten, vilket visas i exemplet nedan.
 
 **API-format**
 
