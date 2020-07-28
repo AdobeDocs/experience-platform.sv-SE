@@ -22,7 +22,7 @@ Här följer en lista med svar på vanliga frågor om Adobe Experience Platform.
 
 ## Vad är [!DNL Experience Platform] API:er? {#what-are-experience-platform-apis}
 
-[!DNL Experience Platform] erbjuder flera RESTful-API:er som använder HTTP-begäranden för att komma åt [!DNL Platform] resurser. Dessa tjänst-API:er visar var och en flera slutpunkter och gör att du kan utföra åtgärder för att lista (GET), söka (GET), redigera (PUT och/eller PATCH) och ta bort (DELETE) resurser. Mer information om specifika slutpunkter och åtgärder som är tillgängliga för respektive tjänst finns i [API-referensdokumentationen](https://www.adobe.io/apis/experienceplatform/home/api-reference.html) för Adobe I/O.
+[!DNL Experience Platform] erbjuder flera RESTful-API:er som använder HTTP-begäranden för att komma åt [!DNL Platform] resurser. Dessa tjänst-API:er visar flera slutpunkter och gör att du kan utföra åtgärder för att lista (GET), söka (GET), redigera (PUT och/eller PATCH) och ta bort (DELETE) resurser. Mer information om specifika slutpunkter och åtgärder som är tillgängliga för respektive tjänst finns i [API-referensdokumentationen](https://www.adobe.io/apis/experienceplatform/home/api-reference.html) för Adobe I/O.
 
 ## Hur formaterar jag en API-begäran? {#how-do-i-format-an-api-request}
 
@@ -30,7 +30,7 @@ Format för förfrågningar varierar beroende på vilket API som [!DNL Platform]
 
 ### Läser exempel-API-anrop
 
-I dokumentationen för [!DNL Experience Platform] visas exempel-API-anrop på två olika sätt. Först presenteras anropet i dess **API-format**, en mallrepresentation som endast visar operationen (GET, POST, PUT, PATCH, DELETE) och slutpunkten som används (till exempel `/global/classes`). Vissa mallar visar också var det finns variabler för att illustrera hur ett anrop ska formuleras, till exempel `GET /{VARIABLE}/classes/{ANOTHER_VARIABLE}`.
+I dokumentationen för [!DNL Experience Platform] visas exempel-API-anrop på två olika sätt. Först presenteras anropet i dess **API-format**, en mallrepresentation som endast visar operationen (GET, POST, PUT, PATCH, DELETE) och den slutpunkt som används (till exempel `/global/classes`). Vissa mallar visar också var det finns variabler för att illustrera hur ett anrop ska formuleras, till exempel `GET /{VARIABLE}/classes/{ANOTHER_VARIABLE}`.
 
 Anropen visas sedan som cURL-kommandon i en **begäran**, som innehåller nödvändiga rubriker och fullständig &quot;bassökväg&quot; som behövs för att interagera med API:t. Basbanan ska vara förpended för alla slutpunkter. Den tidigare nämnda `/global/classes` slutpunkten blir till exempel `https://platform.adobe.io/data/foundation/schemaregistry/global/classes`. Du kommer att se API-formatet/begäranmönstret i hela dokumentationen och förväntas använda den fullständiga sökvägen som visas i exempelbegäran när du anropar Platform API:er.
 
@@ -88,11 +88,11 @@ Mer information om specifika slutpunkter i Platform API:er, inklusive obligatori
 
 ## Vad är min IMS-organisation? {#what-is-my-ims-organization}
 
-En IMS-organisation är en Adobe-representation av en kund. Alla licensierade Adobe-lösningar är integrerade med denna kundorganisation. När en IMS-organisation har rätt till [!DNL Experience Platform]kan den tilldela utvecklare åtkomst. IMS-organisationsnumret (`x-gw-ims-org-id`) representerar organisationen som ett API-anrop ska köras för och därför krävs som huvud i alla API-begäranden. Detta ID finns på [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui): på fliken **Integrationer** navigerar du till avsnittet **Översikt** för en viss integrering för att hitta ID:t under **Klientautentiseringsuppgifter**. En stegvis genomgång av hur du autentiserar dig [!DNL Platform]finns i [självstudiekursen](../tutorials/authentication.md)för autentisering.
+En IMS-organisation är en Adobe-representation av en kund. Alla licensierade Adobe-lösningar är integrerade med den här kundorganisationen. När en IMS-organisation har rätt till [!DNL Experience Platform]kan den tilldela utvecklare åtkomst. IMS-organisationsnumret (`x-gw-ims-org-id`) representerar organisationen som ett API-anrop ska köras för och därför krävs som huvud i alla API-begäranden. Detta ID finns på [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui): på fliken **Integrationer** navigerar du till avsnittet **Översikt** för en viss integrering för att hitta ID:t under **Klientautentiseringsuppgifter**. En stegvis genomgång av hur du autentiserar dig [!DNL Platform]finns i [självstudiekursen](../tutorials/authentication.md)för autentisering.
 
 ## Var hittar jag min API-nyckel? {#where-can-i-find-my-api-key}
 
-En API-nyckel krävs som huvud i alla API-begäranden. Du hittar den på [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). På fliken **Integrationer** i konsolen går du till **Översikt** för en viss integrering och du hittar nyckeln under **Klientautentiseringsuppgifter**. En stegvis genomgång av hur du autentiserar dig [!DNL Platform]finns i [självstudiekursen](../tutorials/authentication.md)för autentisering.
+En API-nyckel krävs som huvud i alla API-begäranden. Den finns på [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). På fliken **Integrationer** i konsolen går du till **Översikt** för en viss integrering och du hittar nyckeln under **Klientautentiseringsuppgifter**. En stegvis genomgång av hur du autentiserar dig [!DNL Platform]finns i [självstudiekursen](../tutorials/authentication.md)för autentisering.
 
 ## Hur får jag en åtkomsttoken? {#how-do-i-get-an-access-token}
 
@@ -172,7 +172,7 @@ Det här felmeddelandet visas när ett `Authorization` huvud saknas i en API-beg
 }
 ```
 
-Det här felmeddelandet visas när den angivna åtkomsttoken i huvudet inte är giltig `Authorization` . Kontrollera att token har angetts korrekt eller [generera en ny token](../tutorials/authentication.md) i Adobe I/O Console.
+Det här felmeddelandet visas när den angivna åtkomsttoken i huvudet inte är giltig `Authorization` . Kontrollera att token har angetts korrekt eller [generera en ny token](../tutorials/authentication.md) i Adobe I/O-konsolen.
 
 ### API-nyckel krävs
 
@@ -194,7 +194,7 @@ Det här felmeddelandet visas när en API-nyckelrubrik (`x-api-key`) saknas i en
 }
 ```
 
-Det här felmeddelandet visas när värdet för det angivna API-nyckelhuvudet (`x-api-key`) är ogiltigt. Kontrollera att du har angett nyckeln korrekt innan du försöker igen. Om du inte känner till din API-nyckel kan du hitta den i [Adobe I/O Console](https://console.adobe.io): på fliken **Integrationer** navigerar du till avsnittet **Översikt** för en viss integrering för att hitta API-nyckeln under **Klientautentiseringsuppgifter**.
+Det här felmeddelandet visas när värdet för det angivna API-nyckelhuvudet (`x-api-key`) är ogiltigt. Kontrollera att du har angett nyckeln korrekt innan du försöker igen. Om du inte känner till API-nyckeln kan du hitta den i [Adobe I/O-konsolen](https://console.adobe.io): på fliken **Integrationer** navigerar du till avsnittet **Översikt** för en viss integrering för att hitta API-nyckeln under **Klientautentiseringsuppgifter**.
 
 
 ### Rubrik saknas
@@ -217,7 +217,7 @@ Det här felmeddelandet visas när en IMS-organisationshuvud (`x-gw-ims-org-id`)
 }
 ```
 
-Det här felmeddelandet visas när användaren eller Adobe I/O-integreringen (som identifieras av [åtkomsttoken](#how-do-i-get-an-access-token) i `Authorization` huvudet) inte har rätt att anropa API: [!DNL Experience Platform] er för IMS-organisationen som anges i `x-gw-ims-org-id` rubriken. Kontrollera att du har angett rätt ID för IMS-organisationen i sidhuvudet innan du försöker igen. Om du inte känner till ditt organisations-ID kan du hitta det i [Adobe I/O Console](https://console.adobe.io): på fliken **Integrationer** navigerar du till avsnittet **Översikt** för en specifik integrering för att hitta ID:t under **Klientautentiseringsuppgifter**.
+Det här felmeddelandet visas när användaren eller Adobe I/O-integreringen (identifieras av [åtkomsttoken](#how-do-i-get-an-access-token) i `Authorization` huvudet) inte har rätt att göra anrop till API: [!DNL Experience Platform] er för IMS-organisationen som finns i `x-gw-ims-org-id` rubriken. Kontrollera att du har angett rätt ID för IMS-organisationen i sidhuvudet innan du försöker igen. Om du inte känner till ditt organisations-ID kan du hitta det i [Adobe I/O-konsolen](https://console.adobe.io): på fliken **Integrationer** navigerar du till avsnittet **Översikt** för en specifik integrering för att hitta ID:t under **Klientautentiseringsuppgifter**.
 
 ### Giltig innehållstyp har inte angetts
 
@@ -230,7 +230,7 @@ Det här felmeddelandet visas när användaren eller Adobe I/O-integreringen (so
 }
 ```
 
-Det här felmeddelandet visas när en POST-, PUT- eller PATCH-begäran har ett ogiltigt eller saknar `Content-Type` huvud. Kontrollera att rubriken är inkluderad i begäran och att dess värde är `application/json`.
+Det här felmeddelandet visas när en POST-, PUT eller PATCH-begäran har ett ogiltigt eller saknat `Content-Type` huvud. Kontrollera att rubriken är inkluderad i begäran och att dess värde är `application/json`.
 
 
 ## Felsökningskatalog för tjänst {#service-troubleshooting-directory}
