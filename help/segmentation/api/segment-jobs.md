@@ -164,7 +164,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentjobb för d
 
 ## Skapa ett nytt segmentjobb {#create}
 
-Du kan skapa ett nytt segmentjobb genom att göra en POST-begäran till `/segment/jobs` slutpunkten och i brödtexten inkludera ID:t för segmentdefinitionen som du vill skapa en ny målgrupp från.
+Du kan skapa ett nytt segmentjobb genom att göra en POST-förfrågan till slutpunkten och i brödtexten inkludera ID:t för segmentdefinitionen som du vill skapa en ny målgrupp från. `/segment/jobs`
 
 **API-format**
 
@@ -258,7 +258,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
 
 ## Hämta ett specifikt segmentjobb {#get}
 
-Du kan hämta detaljerad information om ett specifikt segmentjobb genom att göra en GET-begäran till `/segment/jobs` slutpunkten och ange ID:t för segmentjobbet som du vill hämta i sökvägen för begäran.
+Du kan hämta detaljerad information om ett specifikt segmentjobb genom att göra en GET-förfrågan till slutpunkten och ange ID:t för segmentjobbet som du vill hämta i sökvägen för begäran. `/segment/jobs`
 
 **API-format**
 
@@ -355,7 +355,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det ang
 
 ## Masshämta segmentjobb {#bulk-get}
 
-Du kan hämta detaljerad information om flera segmentjobb genom att göra en POST-begäran till `/segment/jobs/bulk-get` slutpunkten och ange `id` värdena för segmentjobben i begärandetexten.
+Du kan hämta detaljerad information om flera segmentjobb genom att göra en POST-förfrågan till `/segment/jobs/bulk-get` slutpunkten och ange `id` värdena för segmentjobben i begärandetexten.
 
 **API-format**
 
