@@ -73,7 +73,7 @@ POST /connections
 
 **Begäran**
 
-För att kunna skapa en MySQL-anslutning måste dess unika anslutningsspec-ID anges som en del av POST-begäran. Anslutningsspecifikations-ID för MySQL är `26d738e0-8963-47ea-aadf-c60de735468a`.
+För att kunna skapa en MySQL-anslutning måste dess unika anslutningsspec-ID anges som en del av POSTEN. Anslutningsspecifikations-ID för MySQL är `26d738e0-8963-47ea-aadf-c60de735468a`.
 
 ```shell
 curl -X POST \
