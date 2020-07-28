@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;user guide;attribution ai;popular topics
 solution: Experience Platform
-title: Användarhandbok för AI-attribut
+title: Användarhandbok för Attribution AI
 topic: User guide
 translation-type: tm+mt
 source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
@@ -12,23 +12,23 @@ ht-degree: 0%
 ---
 
 
-# Användarhandbok för AI-attribut
+# Användarhandbok för Attribution AI
 
-Attribution AI, som en del av Intelligent Services är en flerkanalig algoritmisk attribueringstjänst som beräknar påverkan och inkrementell påverkan av kundinteraktioner mot angivna resultat. Med Attribution AI kan marknadsförarna mäta och optimera marknadsförings- och annonskostnader genom att förstå effekten av varje enskild kundinteraktion under varje fas av kundresan.
+Attribution AI, som en del av Intelligent Services är en flerkanalig algoritmisk attribueringstjänst som beräknar påverkan och inkrementell påverkan av kundinteraktioner i förhållande till angivna resultat. Med Attribution AI kan marknadsförarna mäta och optimera marknadsförings- och annonsutgifterna genom att förstå effekten av varje enskild kundinteraktion i varje fas av kundresan.
 
-Det här dokumentet är en guide för interaktion med Attribution AI i användargränssnittet för Intelligent Services.
+Det här dokumentet är en guide för interaktion med Attribution AI i användargränssnittet för intelligenta tjänster.
 
 ## Skapa en instans
 
-Klicka på [!DNL Adobe Experience Platform] Tjänster **i den vänstra navigeringen i** användargränssnittet. Webbläsaren *Services* visas och visar tillgängliga Adobes intelligenta tjänster. Klicka på **Öppna** i behållaren för Attribution AI.
+Klicka på [!DNL Adobe Experience Platform] Tjänster **i den vänstra navigeringen i** användargränssnittet. Webbläsaren *Services* visas och visar tillgängliga smarta Adobe-tjänster. Klicka på **Öppna** i behållaren för Attribution AI.
 
 ![Åtkomst till din instans](./images/user-guide/open_Attribution_ai.png)
 
-AI-tjänstsidan för attribuering visas. På den här sidan visas tjänstinstanser för Attribution AI och information om dem, inklusive namnet på instansen, konverteringshändelser, hur ofta instansen körs och status för den senaste uppdateringen. Klicka på **Skapa instans** för att börja.
+Attribution AI tjänstsida visas. På den här sidan visas tjänstinstanser av Attribution AI och information om dem, inklusive namnet på instansen, konverteringshändelser, hur ofta instansen körs och status för den senaste uppdateringen. Klicka på **Skapa instans** för att börja.
 
 ![Skapa instans](./images/user-guide/landing_page.png)
 
-Därefter visas inställningssidan för Attribution AI, där du kan ange grundläggande information och en datauppsättning för instansen.
+Därefter visas konfigurationssidan för Attribution AI, där du kan ange grundläggande information och en datauppsättning för instansen.
 
 ![konfigurationssida](./images/user-guide/setup_attribution.png)
 
@@ -40,7 +40,7 @@ Ange ett namn och en valfri beskrivning av tjänstinstansen under *Grundläggand
 
 ### Välj en datauppsättning
 
-När du har fyllt i den grundläggande informationen klickar du på listrutan **Välj datauppsättning** för att välja datauppsättningen. Datauppsättningen används för att träna modellen och poängsätta efterföljande data som den skapar. När du väljer en datauppsättning i listruteväljaren visas bara de som är kompatibla med attribut-AI och som följer XDM-schemat (Experience Data Model). När du har valt en datauppsättning klickar du på **Nästa** i det övre högra hörnet för att fortsätta till sidan för att definiera händelser.
+När du har fyllt i den grundläggande informationen klickar du på listrutan **Välj datauppsättning** för att välja datauppsättningen. Datauppsättningen används för att träna modellen och poängsätta efterföljande data som den skapar. När du väljer en datauppsättning i listruteväljaren visas endast de som är kompatibla med Attribution AI och som följer XDM-schemat (Experience Data Model). När du har valt en datauppsättning klickar du på **Nästa** i det övre högra hörnet för att fortsätta till sidan för att definiera händelser.
 
 ![konfigurationssida](./images/user-guide/initial_creation_attribution.png)
 
@@ -188,10 +188,10 @@ När du har valt utbildningsfönstret klickar du på **Slutför** i det övre h�
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en tjänstinstans i Attribution AI. När instansen är klar med poängsättningen (upp till 24 timmar) är du redo att [identifiera AI-insikter](./discover-insights.md)för attribuering. Om du dessutom vill ladda ned dina poängresultat går du till [nedladdningsdokumentationen för](./download-scores.md) bakgrundsmusik.
+Genom att följa den här självstudiekursen har du skapat en tjänstinstans i Attribution AI. När instansen är klar med poängsättningen (upp till 24 timmar) är du redo att [identifiera Attribution AI insikter](./discover-insights.md). Om du dessutom vill ladda ned dina poängresultat går du till [nedladdningsdokumentationen för](./download-scores.md) bakgrundsmusik.
 
 ## Ytterligare resurser
 
-I följande video visas ett arbetsflöde från början till slut för att skapa en ny instans i Attribution AI.
+I följande video visas ett arbetsflöde från början till slut som du kan använda för att skapa en ny instans i Attribution AI.
 
 >[!VIDEO](https://video.tv.adobe.com/v/32668?learn=on&quality=12)
