@@ -117,7 +117,7 @@ En lyckad aktivering [!DNL Facebook]innebär att en [!DNL Facebook] anpassad må
 
 >[!TIP]
 >
->Integrationen mellan Adobe Real-time CDP och [!DNL Facebook] stöder historiska efterfyllningar av målgrupper. Alla historiska segmentkvalifikationer skickas till [!DNL Facebook] när du aktiverar segmenten till målet.
+>Integrationen mellan CDP i realtid i Adobe och [!DNL Facebook] stöder historiska efterfyllningar. Alla historiska segmentkvalifikationer skickas till [!DNL Facebook] när du aktiverar segmenten till målet.
 
 ## Inaktivera aktivering {#disable-activation}
 
