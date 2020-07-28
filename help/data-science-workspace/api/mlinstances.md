@@ -18,7 +18,7 @@ En MLInstance är en kombination av en befintlig [motor](./engines.md) med en l�
 
 ## Skapa en MLInstance {#create-an-mlinstance}
 
-Du kan skapa en MLInstance genom att utföra en POST-begäran och samtidigt tillhandahålla en nyttolast för begäran som består av ett giltigt motor-ID (`{ENGINE_ID}`) och en lämplig uppsättning standardkonfigurationer.
+Du kan skapa en MLInstance genom att utföra en begäran om POST samtidigt som du anger en nyttolast som består av ett giltigt motor-ID (`{ENGINE_ID}`) och en lämplig uppsättning standardkonfigurationer.
 
 Om motor-ID:t refererar till en PySpark- eller Spark-motor kan du konfigurera mängden beräkningsresurser, till exempel antalet kärnor eller mängden minne. Om du refererar till en Python Engine kan du välja mellan att använda en CPU eller GPU för utbildning och poängsättning. Mer information finns i avsnitten om [PySpark- och Spark-resurskonfigurationer](./appendix.md#resource-config) och [Python CPU- och GPU-konfigurationer](./appendix.md#cpu-gpu-config) .
 
@@ -130,7 +130,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den nyl
 
 ## Hämta en lista med MLInstances
 
-Du kan hämta en lista med MLInstances genom att utföra en enda GET-begäran. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](./appendix.md#query)av resurser i bilagan.
+Du kan hämta en lista med MLInstances genom att utföra en enda begäran om GET. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](./appendix.md#query)av resurser i bilagan.
 
 **API-format**
 
@@ -271,7 +271,7 @@ Ett lyckat svar returnerar information om MLInstance.
 
 ## Uppdatera en MLInstance
 
-Du kan uppdatera en befintlig MLInstance genom att skriva över dess egenskaper via en PUT-begäran som inkluderar mål-MLInstance-ID:t i sökvägen för begäran och som tillhandahåller en JSON-nyttolast som innehåller uppdaterade egenskaper.
+Du kan uppdatera en befintlig MLInstance genom att skriva över dess egenskaper via en PUT-begäran som innehåller mål-MLInstance-ID:t i sökvägen för begäran och som tillhandahåller en JSON-nyttolast som innehåller uppdaterade egenskaper.
 
 >[!TIP]
 >
