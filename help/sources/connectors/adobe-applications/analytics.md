@@ -24,7 +24,7 @@ Adobe Analytics är en kraftfull motor som hjälper er att lära er mer om era k
 
 ![](./images/analytics-data-experience-platform.png)
 
-På en hög nivå samlar Adobe Analytics in data från olika digitala kanaler och datacenter världen över. När data har samlats in tillämpas VISTA-regler (Visitor Identification, Segmentation and Transformation Architecture) och bearbetningsregler för att forma inkommande data. När rådata har genomgått den här enkla bearbetningen anses de sedan vara klara att användas av kundprofilen i realtid. I en process som är parallell med ovanstående är samma bearbetade data mikrobatchade och insamlade i Platform datamängder för konsumtion av Data Science Workspace, Query Service och andra dataidentifieringsprogram.
+På en hög nivå samlar Adobe Analytics in data från olika digitala kanaler och från flera datacenter världen över. När data har samlats in tillämpas VISTA-regler (Visitor Identification, Segmentation and Transformation Architecture) och bearbetningsregler för att forma inkommande data. När rådata har genomgått den här enkla bearbetningen anses de sedan vara klara att användas av kundprofilen i realtid. I en process som är parallell med ovanstående är samma bearbetade data mikrobatchade och insamlade i Platform datamängder för konsumtion av Data Science Workspace, Query Service och andra dataidentifieringsprogram.
 
 Mer information om bearbetningsregler finns i Översikt över [](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/processing-rules/processing-rules.html) Bearbetningsregler.
 
@@ -38,9 +38,9 @@ Mer information om XDM finns i [XDM-systemöversikten](../../../xdm/home.md).
 
 ## Hur mappas fält från Adobe Analytics till XDM?
 
-När en källanslutning upprättas för att överföra Analytics-data till Experience Platform med Platform användargränssnitt mappas datafälten automatiskt och hämtas in i kundprofilen i realtid inom några minuter. Instruktioner om hur du skapar en källanslutning med Adobe Analytics med Platform-gränssnittet finns i [Analytics självstudiekurs](../../tutorials/ui/create/adobe-applications/analytics.md)för dataanslutning.
+När en källanslutning upprättas för att överföra Analytics-data till Experience Platform med Platform användargränssnitt mappas datafälten automatiskt och hämtas in i kundprofilen i realtid inom några minuter. Instruktioner om hur du skapar en källanslutning med Adobe Analytics med Platform-gränssnittet finns i självstudiekursen [för](../../tutorials/ui/create/adobe-applications/analytics.md)Analytics dataanslutning.
 
-Mer information om fältmappning mellan Analytics och Experience Platform finns i [Adobe Analytics](./mapping/analytics.md) guide.
+Mer information om fältmappning mellan Analytics och Experience Platform finns i [Adobe Analytics guide för fältmappning](./mapping/analytics.md) .
 
 ## Vilken fördröjning förväntas för Analytics Data på Platform?
 
