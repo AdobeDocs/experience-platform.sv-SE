@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Ersätta en resurs
 
-Med [!DNL Schema Registry] den kan du ersätta en hel resurs genom en PUT-åtgärd. Den här åtgärden skriver i princip om resursen och därför måste begärandetexten innehålla alla fält som krävs när en ny resurs skapas med hjälp av en POST-begäran.
+Med [!DNL Schema Registry] den kan du ersätta en hel resurs med en PUT-åtgärd. Den här åtgärden skriver i princip om resursen, och därför måste begärandetexten innehålla alla fält som krävs när en ny resurs skapas med en begäran om POST.
 
 Den här metoden är särskilt användbar om du vill uppdatera mycket information i resursen samtidigt.
 
@@ -37,7 +37,7 @@ PUT /tenant/{RESOURCE_TYPE}/{RESOURCE_ID}
 
 **Begäran**
 
-Denna exempelbegäran ersätter datatypen Property Construction som skapades i ett tidigare exempel. Begärandetexten liknar POST-begäran som används för att skapa datatypen, förutom att den nu innehåller en uppdaterad uppsättning fält med nya värden som ersätter det som tidigare definierats.
+Denna exempelbegäran ersätter datatypen Property Construction som skapades i ett tidigare exempel. Begärandetexten ser ut ungefär som den POST som användes för att skapa datatypen, förutom att den nu innehåller en uppdaterad uppsättning fält med nya värden som ersätter det som tidigare definierats.
 
 ```SHELL
 curl -X PUT \
