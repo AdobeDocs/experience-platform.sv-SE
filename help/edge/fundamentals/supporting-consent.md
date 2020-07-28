@@ -14,11 +14,11 @@ ht-degree: 0%
 
 # Stöd för samtycke
 
-Om du vill respektera användarens sekretess kan du be om användarens samtycke innan du tillåter att SDK använder användarspecifika data för vissa syften. För närvarande tillåter SDK endast användare att välja mellan olika syften, men i framtiden hoppas Adobe kunna ge mer exakt kontroll över specifika syften.
+Om du vill respektera användarens sekretess kan du be om användarens samtycke innan du tillåter att SDK använder användarspecifika data för vissa syften. För närvarande tillåter SDK endast användare att välja mellan att inte göra det, men i framtiden hoppas Adobe kunna ge mer exakt kontroll över specifika syften.
 
 Om användaren väljer alla syften får SDK utföra följande uppgifter:
 
-* Skicka data till och från Adobes servrar.
+* Skicka data till och från Adobe-servrar.
 * Läs och skriv cookies eller webblagringsobjekt (förutom för att behålla användarens inställningar för deltagande).
 
 Om användaren väljer bort alla syften utför SDK inte någon av dessa åtgärder.
@@ -79,7 +79,7 @@ Eftersom användaren valde att avanmäla sig avvisas löften som returnerats fr�
 
 >[!NOTE]
 >
->För närvarande stöder SDK bara `general` syftet. Även om vi planerar att bygga ut en mer robust uppsättning syften eller kategorier som motsvarar Adobes olika funktioner och produkterbjudanden, är den nuvarande implementeringen ett sätt att välja mellan alla eller inget.  Detta gäller endast Adobe Experience Platform [!DNL Web SDK] och INTE andra Adobe JavaScript-bibliotek.
+>För närvarande stöder SDK bara `general` syftet. Även om vi planerar att bygga ut en mer robust uppsättning syften eller kategorier som kommer att motsvara de olika möjligheterna och produkterbjudandena för Adobe, är den nuvarande implementeringen en metod som helt eller inte alls kan användas.  Detta gäller endast JavaScript-biblioteken Adobe Experience Platform [!DNL Web SDK] och INTE andra Adobe.
 
 ## Upprätthållande av medgivandeinställningar
 
