@@ -1,6 +1,6 @@
 ---
-title: Amazon Kinesis-mål
-seo-title: Amazon Kinesis-mål
+title: Amazon Kinesis
+seo-title: Amazon Kinesis
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 seo-description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 translation-type: tm+mt
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Målet [!DNL Amazon Kinesis] i Adobe Real-time CDP är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
+>Målet [!DNL Amazon Kinesis] i CDP i realtid i Adobe är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
 
 ## Översikt {#overview}
 
@@ -25,9 +25,9 @@ Med den här [!DNL Kinesis Data Streams] tjänsten [!DNL Amazon Web Services] ka
 
 Du kan skapa en utgående anslutning i realtid till ditt [!DNL Amazon Kinesis] lagringsutrymme för att strömma data från Adobe Experience Platform.
 
-* Mer information om [!DNL Amazon Kinesis]finns i [Amazons dokumentation](https://docs.aws.amazon.com/streams/latest/dev/introduction.html).
+* Mer information om [!DNL Amazon Kinesis]detta finns i dokumentationen [till](https://docs.aws.amazon.com/streams/latest/dev/introduction.html)Amazon.
 * Mer information om hur du ansluter till [!DNL Amazon Kinesis] med API-anrop finns i [självstudiekursen](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md)om mål för direktuppspelning.
-* Om du vill ansluta till [!DNL Amazon Kinesis] med hjälp av Adobe Real-time CDP-användargränssnittet läser du avsnitten nedan.
+* Mer information om hur du ansluter till [!DNL Amazon Kinesis] med CDP-användargränssnittet i realtid i Adobe finns i avsnitten nedan.
 
 ![Amazon Kinesis i användargränssnittet](/help/rtcdp/destinations/assets/aws-kinesis-destination.png)
 
@@ -46,7 +46,7 @@ Ange följande information i arbetsflödet för att skapa mål för [!DNL Amazon
 
 ### I autentiseringssteget {#authentication-step}
 
-* **[!DNL Amazon Web Services]åtkomstnyckel och hemlig nyckel **: Generera[!DNL Amazon Web Services]i stället en åtkomstnyckel - nyckelpar för hemlig åtkomst som ger Adobe CDP-åtkomst i realtid till ditt[!DNL Amazon Kinesis]konto. Läs mer i[Amazons webbtjänstdokumentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+* **[!DNL Amazon Web Services]åtkomstnyckel och hemlig nyckel **: Generera[!DNL Amazon Web Services]en åtkomstnyckel - nyckelpar för hemlig åtkomst som ger CDP-åtkomst i realtid i Adobe till ditt[!DNL Amazon Kinesis]konto. Läs mer i[Amazon Web Services-dokumentationen](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 * **region**: Ange vilken [!DNL Amazon Web Services] region data ska strömmas till.
 
 ![Inmatningsfält i kontosteget](/help/rtcdp/destinations/assets/aws-kinesis-account-step.png)
