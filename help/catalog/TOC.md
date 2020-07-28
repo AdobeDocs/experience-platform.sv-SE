@@ -4,6 +4,9 @@ audience: user
 user-guide-title: Hjälp för kataloger och datauppsättningar
 translation-type: tm+mt
 source-git-commit: e135bc33e6c3daa411e85cb37e407322fd0bca5b
+workflow-type: tm+mt
+source-wordcount: '93'
+ht-degree: 0%
 
 ---
 
@@ -31,4 +34,4 @@ source-git-commit: e135bc33e6c3daa411e85cb37e407322fd0bca5b
 * [Behandling av sekretessförfrågningar i Data Lake](privacy.md)
 * [Dataskydd i Experience Platform](data-protection.md)
 * [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)
-* [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
+* [Versionsinformation för Platform](https://www.adobe.com/go/platform-release-notes-en)
