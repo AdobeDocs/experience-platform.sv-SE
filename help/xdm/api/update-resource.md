@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Uppdatera en resurs
 
-Du kan ändra eller uppdatera resurser i innehavarbehållaren med en PATCH-begäran. Den [!DNL Schema Registry] stöder alla vanliga JSON-korrigeringsåtgärder, inklusive add, remove och replace.
+Du kan ändra eller uppdatera resurser i innehavarbehållaren med hjälp av en PATCH-begäran. Den [!DNL Schema Registry] stöder alla vanliga JSON-korrigeringsåtgärder, inklusive add, remove och replace.
 
 Mer information om JSON Patch, inklusive tillgängliga åtgärder, finns i den officiella [JSON Patch-dokumentationen](http://jsonpatch.com/).
 
@@ -39,7 +39,7 @@ PATCH /tenant/{RESOURCE_TYPE}/{RESOURCE_ID}
 
 **Begäran**
 
-Med en PATCH-åtgärd kan du uppdatera ett schema så att det innehåller fält som har definierats i en tidigare skapad blandning. För att göra detta måste du utföra en PATCH-begäran till schemat med hjälp av dess `meta:altId` eller den URL-kodade `$id` URI:n.
+Med en PATCH-åtgärd kan du uppdatera ett schema så att det innehåller fält som har definierats i en tidigare skapad blandning. För att kunna göra detta måste du utföra en PATCH-begäran till schemat med hjälp av dess `meta:altId` eller den URL-kodade `$id` URI:n.
 
 Begärandetexten innehåller den åtgärd (`op`) som du vill utföra, var (`path`) du vill utföra åtgärden och vilken information (`value`) som du vill inkludera i åtgärden. I det här exemplet läggs blandningens `$id` värde till i både `meta:extends` - och `allOf` -fälten för målschemat.
 
