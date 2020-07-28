@@ -152,4 +152,4 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehå
 }
 ```
 
-En GET-begäran om att lista alla klasser i innehavarbehållaren skulle nu inkludera egenskapsklassen. Du kan också utföra en sökbegäran (GET) med den URL-kodade `$id` URI:n för att visa den nya klassen direkt. Se till att du tar med `version` i huvudet Godkänn när du utför en uppslagsbegäran.
+Om en GET-begäran om att lista alla klasser i innehavarbehållaren utförs, kommer egenskapsklassen att ingå. Du kan också utföra en sökning (GET)-begäran med den URL-kodade `$id` URI:n för att visa den nya klassen direkt. Se till att du tar med `version` i huvudet Godkänn när du utför en uppslagsbegäran.
