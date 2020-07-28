@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Skapa ett schema med [!DNL Schema Registry] API
 
-Den [!DNL Schema Registry] används för att komma åt [!DNL Schema Library] insidan av Adobe Experience Platform. Här [!DNL Schema Library] finns resurser från Adobe, [!DNL Experience Platform] partners och leverantörer vars program du använder. Registret innehåller ett användargränssnitt och RESTful API från vilket alla tillgängliga biblioteksresurser är tillgängliga.
+Den [!DNL Schema Registry] används för att komma åt [!DNL Schema Library] insidan av Adobe Experience Platform. Den [!DNL Schema Library] innehåller resurser som du har fått av Adobe, [!DNL Experience Platform] partners och leverantörer vars program du använder. Registret innehåller ett användargränssnitt och RESTful API från vilket alla tillgängliga biblioteksresurser är tillgängliga.
 
 I den här självstudiekursen används API:t för att vägleda dig genom stegen för att skapa ett schema med en standardklass. [!DNL Schema Registry] Om du föredrar att använda användargränssnittet i [!DNL Experience Platform]innehåller [schemaredigerarens självstudiekurs](create-schema-ui.md) stegvisa instruktioner för hur du utför liknande åtgärder i schemaredigeraren.
 
@@ -115,7 +115,7 @@ En slutförd begäran returnerar HTTP-svarsstatus 201 (Skapad) med en svarstext 
 
 ### Söka efter ett schema
 
-Om du vill visa det nyligen skapade schemat utför du en sökbegäran (GET) med hjälp av schemats `meta:altId` - eller URL-kodade `$id` URI.
+Om du vill visa det nya schemat utför du en sökbegäran (GET) med schemats `meta:altId` - eller URL-kodade `$id` URI.
 
 **API-format**
 
@@ -191,7 +191,7 @@ PATCH /tenant/schemas/{schema meta:altId or url encoded $id URI}
 
 **Begäran**
 
-Denna begäran uppdaterar (PATCH) schemat för lojalitetsmedlemmar så att fälten i mixen &quot;profile-person-details&quot; inkluderas.
+Denna begäran uppdaterar (PATCH) schemat för lojalitetsmedlemmar så att fälten i blandningen &quot;profile-person-details&quot; inkluderas.
 
 Genom att lägga till blandningen &quot;profile-person-details&quot; hämtar schemat för lojalitetsmedlemmar nu information om medlemmar i bonusprogrammet, till exempel förnamn, efternamn och födelsedag.
 
@@ -258,7 +258,7 @@ Nu kan du lägga till ytterligare en standardblandning genom att upprepa stegen 
 
 >[!TIP]
 >
->Det är värt att granska alla tillgängliga mixar för att bekanta dig med fälten som ingår i varje. Du kan visa (GET) alla blandningar som är tillgängliga för användning med en viss klass genom att utföra en begäran mot varje global- och tenant-behållare, och bara returnera de blandningar där fältet &quot;meta:intendedToExtend&quot; matchar den klass du använder. I det här fallet är det [!DNL XDM Individual Profile] klassen, så [!DNL XDM Individual Profile] används `$id` :
+>Det är värt att granska alla tillgängliga mixar för att bekanta dig med fälten som ingår i varje. Du kan visa (GET) alla mixar som är tillgängliga för användning med en viss klass genom att utföra en begäran mot var och en av behållarna &quot;global&quot; och &quot;tenant&quot;, och bara returnera de mixar där fältet &quot;meta:intendedToExtend&quot; matchar klassen som du använder. I det här fallet är det [!DNL XDM Individual Profile] klassen, så [!DNL XDM Individual Profile] används `$id` :
 
 ```http
 GET /global/mixins?property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile
@@ -344,7 +344,7 @@ Lojalitetsmedlemmens schema behöver hämta information som är unik för bonusp
 
 Kontot [!DNL Schema Registry] för detta genom att du kan definiera dina egna mixar i innehavarbehållaren. Dessa mixar är unika för din organisation och kan inte visas eller redigeras av någon utanför din IMS-organisation.
 
-För att kunna skapa (POST) en ny blandning måste din begäran innehålla ett `meta:intendedToExtend` fält som innehåller `$id` för basklassen (basklasserna) som blandningen är kompatibel med, tillsammans med de egenskaper som blandningen kommer att innehålla.
+För att skapa (POST) en ny blandning måste din begäran innehålla ett `meta:intendedToExtend` fält som innehåller `$id` för basklassen (basklasserna) som blandningen är kompatibel med, tillsammans med de egenskaper som blandningen kommer att innehålla.
 
 Alla anpassade egenskaper måste kapslas under din `TENANT_ID` sida för att undvika kollisioner med andra blandningar eller fält.
 
@@ -506,7 +506,7 @@ PATCH /tenant/schemas/{schema meta:altId or url encoded $id URI}
 
 **Begäran**
 
-Denna begäran uppdaterar (PATCH) schemat för lojalitetsmedlemmar så att det inkluderar fälten i den nya mixen&quot;Information om lojalitetsmedlem&quot;.
+Denna begäran uppdaterar (PATCH) schemat för lojalitetsmedlemmar så att fälten i den nya mixen&quot;Information om lojalitetsmedlem&quot; inkluderas.
 
 ```SHELL
 curl -X PATCH \
@@ -575,7 +575,7 @@ Du kan se att mixinen har lagts till eftersom svaret nu visar den nyligen tillag
 
 ### Visa aktuellt schema
 
-Du kan nu utföra en GET-begäran för att visa det aktuella schemat och se hur de tillagda mixarna har bidragit till schemats övergripande struktur.
+Nu kan du utföra en GET-begäran för att visa det aktuella schemat och se hur de tillagda mixarna har bidragit till schemats övergripande struktur.
 
 **API-format**
 
@@ -816,7 +816,7 @@ En slutförd begäran returnerar HTTP-svarsstatus 201 (Skapad) med en svarstext 
 }
 ```
 
-Du kan utföra en sökbegäran (GET) med den URL-kodade `$id` URI:n för att visa den nya datatypen direkt. Se till att du tar med `version` texten i huvudet Godkänn för en uppslagsbegäran.
+Du kan utföra en sökning (GET)-begäran med den URL-kodade `$id` URI:n för att visa den nya datatypen direkt. Se till att du tar med `version` texten i huvudet Godkänn för en uppslagsbegäran.
 
 ### Använd datatyp i schema
 
@@ -1103,7 +1103,7 @@ Svaret visar att åtgärden utfördes korrekt och schemat innehåller nu ett att
 
 ### Visa scheman i en union
 
-Du har nu lagt till ditt schema i [!DNL XDM Individual Profile] unionen. Om du vill se en lista över alla scheman som ingår i samma union kan du utföra en GET-begäran med frågeparametrar för att filtrera svaret.
+Du har nu lagt till ditt schema i [!DNL XDM Individual Profile] unionen. Om du vill se en lista över alla scheman som ingår i samma union kan du utföra en GET-förfrågan med hjälp av frågeparametrar för att filtrera svaret.
 
 Med parametern `property` query (fråga) kan du ange att endast scheman som innehåller ett `meta:immutableTags` fält som har `meta:class` samma värde som `$id` för [!DNL XDM Individual Profile] klassen returneras.
 
