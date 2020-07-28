@@ -472,7 +472,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ### Överför stora filsegment
 
-Nu när filen har skapats kan alla efterföljande segment överföras genom upprepade PATCH-förfrågningar, en för varje avsnitt i filen.
+Nu när filen har skapats kan alla efterföljande segment överföras genom upprepade förfrågningar från PATCH, en för varje del av filen.
 
 **API-format**
 
@@ -821,7 +821,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ## Ta bort en grupp {#delete-a-batch}
 
-En batch kan tas bort genom att utföra följande POST-begäran med frågeparametern till ID:t för den grupp som du vill ta bort. `action=REVERT` Satsen är markerad som&quot;inaktiv&quot;, vilket gör att den kan användas för skräpinsamling. Batchen samlas in asynkront, och då markeras den som&quot;borttagen&quot;.
+En batch kan tas bort genom att utföra följande begäran med frågeparametern till ID:t för den POST som du vill ta bort. `action=REVERT` Satsen är markerad som&quot;inaktiv&quot;, vilket gör att den kan användas för skräpinsamling. Batchen samlas in asynkront, och då markeras den som&quot;borttagen&quot;.
 
 **API-format**
 
