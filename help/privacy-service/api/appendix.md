@@ -36,7 +36,7 @@ I följande tabell visas flera vanliga, fördefinierade identitetstyper som är 
 >
 >Varje identitetstyp har också ett `namespaceId` heltalsvärde som kan användas i stället för `namespace` strängen när identitetsegenskapen ställs in på `type` namespaceId. Mer information finns i avsnittet om [namnutrymmeskvalificerare](#namespace-qualifiers) .
 
-Du kan hämta en lista med identitetsnamnutrymmen som används av organisationen genom att göra en GET-begäran till `idnamespace/identities` slutpunkten i [!DNL Identity Service] API:t. Mer information finns i utvecklarhandboken [för](../../identity-service/api/getting-started.md) identitetstjänsten.
+Du kan hämta en lista med identitetsnamnutrymmen som används av din organisation genom att göra en GET-begäran till `idnamespace/identities` slutpunkten i [!DNL Identity Service] API:t. Mer information finns i utvecklarhandboken [för](../../identity-service/api/getting-started.md) identitetstjänsten.
 
 ## Namnutrymmeskvalificerare
 
@@ -54,12 +54,12 @@ När du anger ett `namespace` värde i [!DNL Privacy Service] API:t måste en **
 
 ## Godkända produktvärden
 
-I följande tabell visas godkända värden för att ange en Adobe-produkt i attributet för en förfrågan om att skapa jobb. `include`
+I följande tabell visas de värden som accepteras för att ange en Adobe-produkt i attributet `include` för en jobbskapandebegäran.
 
 | Produkt | Värde som ska användas i `include` attributet |
 --- | ---
 | Adobe Advertising Cloud | &quot;AdCloud&quot; |
-| Adobe Analytics | &quot;Analyser&quot; |
+| Adobe Analytics | &quot;Analytics&quot; |
 | Adobe Audience Manager | &quot;AudienceManager&quot; |
 | Adobe Campaign | &quot;Campaign&quot; |
 | Adobe Experience Platform | &quot;aepDataLake&quot; |
