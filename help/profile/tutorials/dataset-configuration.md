@@ -231,7 +231,7 @@ curl -X PATCH \
 
 Begärandetexten innehåller en `tags` egenskap som innehåller två underegenskaper: `"unifiedProfile"` och `"unifiedIdentity"`. Värdena för dessa underegenskaper är arrayer som innehåller strängen `"enabled:true"`.
 
-**Svar** En lyckad PATCH-begäran returnerar HTTP-status 200 (OK) och en array som innehåller ID:t för den uppdaterade datauppsättningen. Detta ID ska matcha det som skickas i PATCH-begäran. Taggarna `"unifiedProfile"` och `"unifiedIdentity"` har nu lagts till och datauppsättningen är aktiverad för användning av tjänsterna Profil och Identitet.
+**Svar** En lyckad PATCH-begäran returnerar HTTP-status 200 (OK) och en array som innehåller ID:t för den uppdaterade datauppsättningen. Detta ID ska matcha det som skickades i PATCH-begäran. Taggarna `"unifiedProfile"` och `"unifiedIdentity"` har nu lagts till och datauppsättningen är aktiverad för användning av tjänsterna Profil och Identitet.
 
 ```json
 [
