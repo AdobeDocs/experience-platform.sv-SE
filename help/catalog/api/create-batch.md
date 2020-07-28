@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # Skapa en batch
 
-För att en datauppsättning ska kunna importera data måste den ha en associerad batch. Med hjälp av `id` värdet för en befintlig datauppsättning kan du skapa en batch genom att göra en POST-begäran till `/batches` slutpunkten i [!DNL Catalog] API:t.
+För att en datauppsättning ska kunna importera data måste den ha en associerad batch. Med hjälp av `id` värdet för en befintlig datauppsättning kan du skapa en batch genom att göra en begäran om POST till `/batches` slutpunkten i [!DNL Catalog] API:t.
 
 **API-format**
 
