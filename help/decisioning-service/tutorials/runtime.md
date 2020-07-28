@@ -59,7 +59,7 @@ Krävs också för körningsbegäranden:
 >
 >`UUID` är en sträng i UUID-format som är globalt unik och inte får återanvändas för olika API-anrop
 
-[!DNL Decisioning Service] styrs av ett antal affärsobjekt som är relaterade till varandra. Alla affärsobjekt lagras i [!DNL Platform’s] affärsobjektarkivet, XDM Core Object Repository. En viktig funktion i den här databasen är att API:erna är ortogonala till typen av affärsobjekt. I stället för att använda API:t POST, GET, PUT, PATCH eller DELETE som anger resurstypen i dess API-slutpunkt, finns det bara 6 generiska slutpunkter, men de accepterar eller returnerar en parameter som anger objekttypen när den typen av uttryck behövs. Schemat måste registreras med databasen, men utöver det kan databasen användas för en öppen uppsättning objekttyper.
+[!DNL Decisioning Service] styrs av ett antal affärsobjekt som är relaterade till varandra. Alla affärsobjekt lagras i [!DNL Platform’s] affärsobjektarkivet, XDM Core Object Repository. En viktig funktion i den här databasen är att API:erna är ortogonala till typen av affärsobjekt. I stället för att använda API:t POST, GET, PUT, PATCH eller DELETE som anger resurstypen i dess API-slutpunkt, finns det bara 6 generiska slutpunkter, men de accepterar eller returnerar en parameter som anger objekttypen när det behöver det. Schemat måste registreras med databasen, men utöver det kan databasen användas för en öppen uppsättning objekttyper.
 
 Slutpunktssökvägarna för alla XDM Core Object Repository API:er börjar med `https://platform.adobe.io/data/core/ode/`.
 
@@ -181,7 +181,7 @@ Applikationer kan uppnå bättre prestanda genom att begära ett beslut om upp t
 
 Det är möjligt att två olika aktiviteter har samma alternativ som&quot;bäst&quot;. För att undvika att en sammansatt upplevelse upprepas, används som standard [!DNL Decisioning Service] godtyckliga hastigheter mellan de aktiviteter som refereras i samma begäran. Skiljedomsförfarande innebär att för var och en av verksamheterna övervägs deras främsta alternativ, men inget alternativ kommer att föreslås mer än en gång för dessa verksamheter. Om två aktiviteter har samma topprankade alternativ kommer en av dem att väljas till att använda sitt näst bästa val eller tredje bästa och så vidare. Dessa regler för borttagning av dubbletter försöker undvika att någon av aktiviteterna måste använda sitt reservalternativ.
 
-Beslutsbegäran innehåller de argument som ingår i en POST-begäran. Brödtexten är formaterad som JSON- `Content-Type` rubrikvärde `application/vnd.adobe.xdm+json; schema="{REQUEST_SCHEMA_AND_VERSION}"`
+Beslutsbegäran innehåller de argument som ingår i en begäran om POST. Brödtexten är formaterad som JSON- `Content-Type` rubrikvärde `application/vnd.adobe.xdm+json; schema="{REQUEST_SCHEMA_AND_VERSION}"`
 
 Det begärda schemat och den version som stöds för tillfället är `https://ns.adobe.com/experience/offer-management/decision-request;version=0.9`. I framtiden kommer ytterligare efterfråganscheman eller versioner att tillhandahållas.
 
