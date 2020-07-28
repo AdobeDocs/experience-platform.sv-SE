@@ -18,7 +18,7 @@ Adobe Experience Platform [!DNL Web SDK] kan skicka data till Adobe Analytics. D
 
 ## Inställningar
 
-Adobe Analytics hämtar automatiskt in de data du skickar om du har en rapportsvit mappad i användargränssnittet för kundkonfiguration. Här kan du mappa en eller flera rapporter till en viss konfiguration. När en rapportsvit har mappats börjar data automatiskt flöda.
+Adobe Analytics hämtar automatiskt de data som du skickar om du har en rapportsvit mappad i användargränssnittet för kundkonfiguration. Här kan du mappa en eller flera rapporter till en viss konfiguration. När en rapportsvit har mappats börjar data automatiskt flöda.
 
 ## Automatiskt mappade data
 
