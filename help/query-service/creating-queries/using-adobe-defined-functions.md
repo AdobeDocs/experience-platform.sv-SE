@@ -14,16 +14,16 @@ ht-degree: 2%
 
 # Använda Adobe-definierade funktioner
 
-En av Adobes stora differentierande faktorer är att de förstår upplevelsedata och vad kunderna behöver kunna göra med dessa data. Du kan använda den här förståelsen för att skapa hjälpfunktioner som gör jobbet enklare.
+En av Adobe stora differentiatorer är att de förstår upplevelsedata och vad kunderna behöver kunna göra med dessa data. Du kan använda den här förståelsen för att skapa hjälpfunktioner som gör jobbet enklare.
 
-Det här dokumentet innehåller Adobe-definierade funktioner (ADF) som stöder tre viktiga [!DNL Analytics] aktiviteter:
+Detta dokument omfattar funktioner som definieras av Adobe (ADF) som stöder tre viktiga [!DNL Analytics] aktiviteter:
 - [Yrkesställning](#sessionization)
 - [Attribuering](#attribution)
 - [Sökvägsanalys](#pathing)
 
 ## Yrkesställning
 
-Besöksgrupperingarna `SESS_TIMEOUT()` som finns i Adobe Analytics återges. Den utför en liknande tidsbaserad gruppering, men med anpassningsbara parametrar.
+Besöksgrupperingarna som `SESS_TIMEOUT()` hittats hos Adobe Analytics återges. Den utför en liknande tidsbaserad gruppering, men med anpassningsbara parametrar.
 
 **Syntax:**
 
@@ -93,7 +93,7 @@ I Adobe Analytics konfigureras attribueringsinställningar med variabler som eVa
 
 Attribution-ADF:er i [!DNL Query Service] tillåter att allokeringarna definieras och genereras vid frågetiden.
 
-I det här exemplet fokuseras på attribuering med sista-beröringen, men Adobe erbjuder även attribuering med första-beröringen.
+I det här exemplet fokuseras på attribuering med sista-beröringen, men Adobe erbjuder även förstapassning.
 
 >[!NOTE]
 >
@@ -126,7 +126,7 @@ LIMIT 50;
 
 ![Bild](../images/queries/adobe-functions/row-level-attribution.png)
 
-### Skapa en fördelning av order efter nivå för senaste medlem (eVar10)
+### Skapa en fördelning av order efter senaste medlemsnivå (eVar10)
 
 ```sql
 SELECT
