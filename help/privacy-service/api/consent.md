@@ -20,7 +20,7 @@ Innan du använder den här guiden bör du läsa avsnittet [Komma igång](./gett
 
 ## Bearbeta en begäran om kundgodkännande
 
-Godkännandebegäranden bearbetas genom att en POST-begäran görs till `/consent` slutpunkten.
+Godkännandebegäranden bearbetas genom att en POST skickas till `/consent` slutpunkten.
 
 **API-format**
 
