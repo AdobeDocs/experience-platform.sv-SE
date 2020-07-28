@@ -61,7 +61,7 @@ Alla nyckelfält bör användas, men det finns två fält som **krävs** för at
 
 * [Ett primärt identitetsfält](#identity)
 * [xdm:tidsstämpel](#timestamp)
-* [xdm:channel](#channel) (obligatoriskt endast för attribut AI)
+* [xdm:channel](#channel) (obligatoriskt endast för Attribution AI)
 
 #### Primär identitet {#identity}
 
@@ -74,7 +74,7 @@ Du måste fastställa det bästa fältet som ska användas som primär identitet
 * &quot;mcid&quot; (för Adobe Audience Manager ID)
 * &quot;aaid&quot; (för Adobe Analytics ID)
 
-Om du är osäker på vilket fält du ska använda som primär identitet kontaktar du Adobes konsulttjänster för att fastställa den bästa lösningen.
+Om du är osäker på vilket fält du ska använda som primär identitet kontaktar du Adobe Consulting Services för att fastställa den bästa lösningen.
 
 #### xdm:tidsstämpel {#timestamp}
 
@@ -84,7 +84,7 @@ Det här fältet representerar det datum/tid då händelsen inträffade. Detta v
 
 >[!NOTE]
 >
->Detta fält är endast obligatoriskt när Attribution AI används.
+>Detta fält är endast obligatoriskt när du använder Attribution AI.
 
 Detta fält representerar den marknadsföringskanal som är relaterad till ExperienceEvent. Fältet innehåller information om kanaltyp, medietyp och platstyp.
 
@@ -241,7 +241,7 @@ Fullständig information om samtliga obligatoriska underfält för `xdm:productL
 
 När ni väl har fastställt om era data om marknadsföringshändelser kan mappas till CEE-schemat är nästa steg att avgöra vilka data ni ska hämta till Intelligent Services. Alla historiska data som används i Intelligent Services måste ligga inom den kortaste tidsgränsen på fyra månaders data plus det antal dagar som avses som en uppslagsperiod.
 
-När du har bestämt vilket dataintervall du vill skicka kan du kontakta Adobes konsulttjänster för att mappa dina data till schemat och överföra dem till tjänsten.
+När du har bestämt vilket dataintervall du vill skicka kan du kontakta Adobe Consulting Services för att mappa dina data till schemat och överföra dem till tjänsten.
 
 Om du har en [!DNL Adobe Experience Platform] prenumeration och vill mappa och importera data själv följer du stegen som beskrivs i avsnittet nedan.
 
@@ -343,7 +343,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett lyckat svar returnerar en array som innehåller ID:t för den uppdaterade datauppsättningen. Detta ID ska matcha det som skickas i PATCH-begäran.
+Ett lyckat svar returnerar en array som innehåller ID:t för den uppdaterade datauppsättningen. Detta ID ska matcha det som skickades i PATCH-begäran.
 
 ```json
 [
@@ -359,9 +359,9 @@ Om dina data lagras i ett tredjepartsprogram som stöds kan du även välja att 
 
 ## Nästa steg {#next-steps}
 
-Det här dokumentet innehåller allmän vägledning om hur du förbereder data för användning i Intelligent Services. Kontakta Adobe Consulting Support om du behöver ytterligare rådgivning baserat på ditt användningsfall.
+Det här dokumentet innehåller allmän vägledning om hur du förbereder data för användning i Intelligent Services. Om du behöver ytterligare konsultation baserat på ditt användningsfall, kontakta Adobe konsultsupport.
 
 När ni har fyllt i en datauppsättning med era kundupplevelsedata kan ni använda intelligenta tjänster för att generera insikter. Se följande dokument för att komma igång:
 
-* [Översikt över AI-attribut](./attribution-ai/overview.md)
+* [Översikt över Attribution AI](./attribution-ai/overview.md)
 * [Översikt över AI för kunder](./customer-ai/overview.md)
