@@ -55,7 +55,7 @@ Det här dokumentet innehåller information om nya funktioner för Adobe Experie
 | --- | --- |
 | Kontrollpanel för begärandemått | Den nya mätinstrumentpanelen i [!DNL Privacy Service] användargränssnittet ger synlighet i inskickade, felaktiga och slutförda GDPR-begäranden. |
 | Request Builder | För att betjäna organisationer med både tekniska och icke-tekniska användare som skickar GDPR-förfrågningar har funktionen&quot;Skapa begäran&quot; lagts till i användargränssnittet. Funktionen för att skicka JSON-filer är fortfarande tillgänglig i [!DNL Privacy Service] användargränssnittet för de organisationer som föredrar att fortsätta använda den. |
-| Meddelanden om GDPR-jobbhändelser | Händelsemeddelanden om GDPR-jobbstatus är viktiga för många arbetsflöden. Meddelanden som tidigare sänts via individuella e-postmeddelanden, men GDPR-händelsemeddelanden är meddelanden som utnyttjar Adobe I/O-händelser, som skickas till en konfigurerad webkrok som underlättar automatisering av jobbförfrågningar. [!DNL Privacy Service] UI-användare kan prenumerera på Adobe I/O GDPR-event för att få uppdateringar när en produkt eller GDPR-jobbet har slutförts. |
+| Meddelanden om GDPR-jobbhändelser | Händelsemeddelanden om GDPR-jobbstatus är viktiga för många arbetsflöden. Meddelanden som tidigare sänts med hjälp av enskilda e-postmeddelanden är GDPR-händelsemeddelanden som utnyttjar Adobe I/O-händelser, som skickas till en konfigurerad webkrok som underlättar automatisering av jobbförfrågningar. [!DNL Privacy Service] UI-användare kan prenumerera på Adobe I/O GDPR-händelser för att få uppdateringar när en produkt eller GDPR-jobbet har slutförts. |
 
 ## 18 apr 2019
 
@@ -80,14 +80,14 @@ Det här dokumentet innehåller information om nya funktioner för Adobe Experie
 
 ### Förbättringar
 
-* Uppdaterade alla GET-API-anrop (lookup) till standardvärdet för ett 30-dagars uppslagsintervall
+* Uppdaterade alla API-anrop för sökning (GET) till standardvärdet för ett 30-dagars uppslagsintervall
 * Begränsad API-användning med ett maximalt uppslagsintervall på 45 dagar
 
 ## 14 februari 2019
 
 ### Förbättringar
 
-* Tvinga fältet i varje `include` POST-överföring.
+* Tvinga fram `include` fältet i varje POST som skickas.
 * Tvinga `include` fältet när JSON överförs.
 
 ### Felkorrigeringar
