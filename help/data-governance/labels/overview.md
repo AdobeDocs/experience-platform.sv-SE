@@ -34,7 +34,7 @@ Alla målgruppssegment som skapas av [Adobe Experience Platform Segmentation Ser
 
 Förutom att ärva etiketter på datauppsättningsnivå ärver segment som standard alla etiketter på fältnivå från de associerade datauppsättningarna. Beroende på hur ditt [!DNL Platform]baserade program använder segment kan du eventuellt ange vilka fält som ska användas, vilket förhindrar segmentet från att ärva etiketter från exkluderade fält.
 
-Mer information om hur automatisk exekvering fungerar i CDP i realtid finns i [Adobes realtidsöversikt](../../rtcdp/privacy/data-governance-overview.md#enforce-data-usage-compliance)över CDP Data Governance.
+Mer information om hur automatisk exekvering fungerar i CDP i realtid finns i CDP-översikten [för datastyrning i](../../rtcdp/privacy/data-governance-overview.md#enforce-data-usage-compliance)Adobe i realtid.
 
 ### Arv från dataexportkontroller i Adobe Audience Manager
 
