@@ -36,7 +36,7 @@ Den här självstudiekursen kräver en befintlig recept. Om du inte har någon r
    ![](../images/models-recipes/train-evaluate-ui/select_dataset.png)
 
 4. Ange ett namn för modellen och granska standardmodellkonfigurationerna. Standardkonfigurationer tillämpades när Recept skapades, granska och ändra konfigurationsvärdena genom att dubbelklicka på värdena. Om du vill skapa en ny uppsättning konfigurationer klickar du på **[!UICONTROL Upload New Config]** och drar en JSON-fil som innehåller modellkonfigurationer till webbläsarfönstret. Klicka **[!UICONTROL Finish]** för att skapa modellen.
-   >[!NOTE]Konfigurationer är unika och specifika för den avsedda mottagaren, vilket innebär att konfigurationer för butiksförsäljningsreceptet inte fungerar för produktrekommendationsreceptet. I [referensavsnittet](#reference) finns en lista över konfigurationer för butiksförsäljning.
+   >[!NOTE]Konfigurationer är unika och specifika för den avsedda mottagaren, vilket innebär att konfigurationer för butiksförsäljningsreceptet inte fungerar för produktmottagaren för Recommendations. I [referensavsnittet](#reference) finns en lista över konfigurationer för butiksförsäljning.
 
    ![](../images/models-recipes/train-evaluate-ui/name_and_configure.png)
 
@@ -55,7 +55,7 @@ Den här självstudiekursen kräver en befintlig recept. Om du inte har någon r
    ![](../images/models-recipes/train-evaluate-ui/training_configuration.png)
 
 5. Standardkonfigurationer som tillhandahålls när modellen skapas visas, ändra och ändra dem därefter genom att dubbelklicka på värdena. Klicka **[!UICONTROL Finish]** för att skapa och genomföra kursen.
-   >[!NOTE]Konfigurationer är unika och specifika för den avsedda mottagaren, vilket innebär att konfigurationer för butiksförsäljningsreceptet inte fungerar för produktrekommendationsreceptet. I [referensavsnittet](#reference) finns en lista över konfigurationer för butiksförsäljning.
+   >[!NOTE]Konfigurationer är unika och specifika för den avsedda mottagaren, vilket innebär att konfigurationer för butiksförsäljningsreceptet inte fungerar för produktmottagaren för Recommendations. I [referensavsnittet](#reference) finns en lista över konfigurationer för butiksförsäljning.
 
    ![](../images/models-recipes/train-evaluate-ui/training_configuration.png)
 
