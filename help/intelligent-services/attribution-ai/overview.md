@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;attribution ai;overview;popular topics
 solution: Experience Platform
-title: Översikt över AI-attribut
+title: Översikt över Attribution AI
 topic: Attribution AI
 translation-type: tm+mt
 source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
@@ -12,17 +12,17 @@ ht-degree: 0%
 ---
 
 
-# Översikt över AI-attribut
+# Översikt över Attribution AI
 
-Attribution AI, som en del av Intelligent Services är en flerkanalig algoritmisk attribueringstjänst som beräknar påverkan och inkrementell påverkan av kundinteraktioner mot angivna resultat. Med Attribution AI kan marknadsförarna mäta och optimera marknadsförings- och annonskostnader genom att förstå effekten av varje enskild kundinteraktion under varje fas av kundresan.
+Attribution AI, som en del av Intelligent Services är en flerkanalig algoritmisk attribueringstjänst som beräknar påverkan och inkrementell påverkan av kundinteraktioner i förhållande till angivna resultat. Med Attribution AI kan marknadsförarna mäta och optimera marknadsförings- och annonsutgifterna genom att förstå effekten av varje enskild kundinteraktion i varje fas av kundresan.
 
-## Förstå attribut-AI
+## Förstå Attribution AI
 
 Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor. Exempel på kontaktytor är visningar av webbannonser, e-postmeddelanden, e-postöppningar och betalda sökningar.
 
-AI-utdata för attribuering kan delas upp i olika dimensioner och kan användas i olika faser av kundresan. Detta uppnås utan att man behöver översätta affärsbehoven till maskininlärningsproblem, plockalgoritmer, utbildning eller driftsättningsmodeller.
+Utdata från Attribution AI kan delas upp i olika dimensioner och kan användas i olika faser av kundresan. Detta uppnås utan att man behöver översätta affärsbehoven till maskininlärningsproblem, plockalgoritmer, utbildning eller driftsättningsmodeller.
 
-Attribution AI data can be from Adobe (t.ex. [!DNL Analytics]) eller andra datakällor än Adobe.
+Data från Attribution AI kan komma från Adobe (t.ex. [!DNL Analytics]) eller andra datakällor än Adobe.
 
 Attribution AI har stöd för två kategorier med poäng, algoritmiska och regelbaserade. Algoritmiska poäng inkluderar inkrementella och påverkade poäng. Regelbaserade resultat inkluderar First Touch, Last Touch, Linear, U-shaped och Time-Decay.
 
@@ -30,9 +30,9 @@ Följande video har utformats för att ge stöd för din förståelse av Attribu
 
 >[!VIDEO](https://video.tv.adobe.com/v/32667?learn=on&quality=12)
 
-## AI-algoritmiska poäng för attribuering
+## Attribution AI algoritmisk poäng
 
-Attribution AI stöder två kategorier av attribueringspoäng, algoritmiska och regelbaserade poäng.
+Attribution AI har stöd för två kategorier av attribueringspoäng, algoritmiska och regelbaserade poäng.
 
 Attribution AI ger två olika typer av algoritmiska poäng, inkrementellt och påverkat. En påverkad poäng är den del av konverteringen som varje marknadsföringskontaktyta ansvarar för. En inkrementell poäng är mängden marginell påverkan som direkt orsakas av kontaktytan för marknadsföring. Den största skillnaden mellan det stegvisa poängvärdet och det poängvärde som påverkas är att det stegvisa poängvärdet tar baslinjeeffekten i beaktande. Man utgår inte från att en konvertering enbart orsakas av de föregående kontaktytorna.
 
@@ -50,7 +50,7 @@ Se tabellen nedan för mer information om var och en av dessa attribueringspoän
 
 ## Exempel på användningsområden
 
-Attribution AI kan användas för att hjälpa till med följande exempel på användningsområden:
+Attribution AI kan användas som hjälp i följande exempel:
 
 - **Verkställande rapportering**: Låt cheferna förstå den verkliga inkrementella effekten av marknadsföring, både som helhet och efter kanal, region, SKU osv.
 - **Budgettilldelning**: Informera om budgetallokeringsbeslut i alla marknadsföringskanaler.
@@ -64,4 +64,4 @@ Attribution AI erbjuder även integrering med andra Adobe-lösningar som [!DNL A
 
 ## Nästa steg
 
-Du kan börja med att följa guiden [Komma igång](./getting-started.md) . I den här guiden får du hjälp med att konfigurera alla nödvändiga förbegäranden för Attribution AI. Om du redan har dina autentiseringsuppgifter och data klara kan du gå till användarhandboken för [Attribution AI](./user-guide.md). I den här guiden får du hjälp med att skapa en instans och skicka in den för utbildning och poängsättning.
+Du kan börja med att följa guiden [Komma igång](./getting-started.md) . I den här guiden får du hjälp med att konfigurera alla nödvändiga förbegäranden för Attribution AI. Om du redan har dina uppgifter tillgängliga går du till [Attribution AI användarhandbok](./user-guide.md). I den här guiden får du hjälp med att skapa en instans och skicka in den för utbildning och poängsättning.
