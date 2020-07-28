@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Azure Data Explorer-koppling
+title: Azure Data Explorer Connector
 topic: overview
 translation-type: tm+mt
 source-git-commit: 3b5e76afea5689dbd59f64f6192e6ef2a6acb7d3
@@ -63,5 +63,5 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Azure Dat
 
 ## Ansluta [!DNL Azure Data Explorer] till [!DNL Platform] användargränssnittet
 
-- [Skapa en Azure Data Explorer-källkoppling i användargränssnittet](../../tutorials/ui/create/databases/data-explorer.md)
+- [Skapa en Azure Data Explorer-källanslutning i användargränssnittet](../../tutorials/ui/create/databases/data-explorer.md)
 - [Konfigurera ett dataflöde för en databasanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
