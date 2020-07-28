@@ -40,7 +40,7 @@ Exempelstorleken för genomsökningen beror på det totala antalet enheter i din
 
 ## Skapa en ny förhandsgranskning {#create-preview}
 
-Du kan skapa en ny förhandsgranskning genom att göra en POST-begäran till `/preview` slutpunkten.
+Du kan skapa en ny förhandsgranskning genom att göra en POST-förfrågan till `/preview` slutpunkten.
 
 >[!NOTE] Ett uppskattningsjobb skapas automatiskt när ett förhandsgranskningsjobb skapas. Dessa två jobb delar samma ID.
 
@@ -94,7 +94,7 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) med information om den nya f
 
 ## Hämta resultatet från en viss förhandsgranskning {#get-preview}
 
-Du kan hämta detaljerad information om en viss förhandsgranskning genom att göra en GET-begäran till `/preview` slutpunkten och ange ID:t för förhandsgranskning i sökvägen till begäran.
+Du kan hämta detaljerad information om en viss förhandsgranskning genom att göra en GET-förfrågan till slutpunkten och ange ID:t för förhandsgranskning i sökvägen för begäran. `/preview`
 
 **API-format**
 
@@ -167,11 +167,11 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `results` | En lista över enhets-ID:n, tillsammans med deras relaterade identiteter. De angivna länkarna kan användas för att leta upp de angivna entiteterna med hjälp av [!DNL Profile Access API](../../profile/api/entities.md). |
+| `results` | En lista över enhets-ID:n, tillsammans med deras relaterade identiteter. De angivna länkarna kan användas för att söka efter de angivna entiteterna med hjälp av [!DNL Profile Access API](../../profile/api/entities.md). |
 
 ## Hämta resultaten från ett specifikt uppskattningsjobb {#get-estimate}
 
-När du har skapat ett förhandsgranskningsjobb kan du använda det `previewId` i sökvägen för en GET-begäran till `/estimate` slutpunkten för att visa statistisk information om segmentdefinitionen, inklusive förväntad målgruppsstorlek, konfidensintervall och felstandardavvikelse.
+När du har skapat ett förhandsgranskningsjobb kan du använda det `previewId` i sökvägen till en GET-förfrågan till `/estimate` slutpunkten för att visa statistisk information om segmentdefinitionen, inklusive förväntad målgruppsstorlek, konfidensintervall och felstandardavvikelse.
 
 **API-format**
 
