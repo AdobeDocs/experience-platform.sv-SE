@@ -26,7 +26,7 @@ ht-degree: 1%
 * Användargränssnittsguider {#ui}
    * [[!DNL Profile] användarhandbok](ui/user-guide.md)
    * [Användarhandbok för sammanslagningsprinciper](ui/merge-policies.md)
-* Självstudiekurser {#tutorials}
+* Tutorials {#tutorials}
    * [Lägg till data i [!DNL Profile]](tutorials/add-profile-data.md)
    * [Konfigurera datauppsättning för [!DNL Profile] och [!DNL Identity]](tutorials/dataset-configuration.md)
    * [Fler självstudiekurser](https://docs.adobe.com/content/help/en/experience-platform/tutorials/home.html)
