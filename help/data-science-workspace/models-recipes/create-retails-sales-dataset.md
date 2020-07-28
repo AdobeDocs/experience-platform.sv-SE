@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa försäljningsschema och datauppsättning för återförsäljning
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
+source-git-commit: 4f7d7e2bf255afe1588dbe7cfb2ec055f2dcbf75
 workflow-type: tm+mt
 source-wordcount: '497'
 ht-degree: 0%
@@ -98,7 +98,7 @@ Butiksförsäljningsschemat och datauppsättningarna skapas automatiskt med det 
    python bootstrap.py
    ```
 
-   > [!NOTE] Skriptet kan ta flera minuter att slutföra.
+   >[!NOTE] Skriptet kan ta flera minuter att slutföra.
 
 ## Nästa steg
 
