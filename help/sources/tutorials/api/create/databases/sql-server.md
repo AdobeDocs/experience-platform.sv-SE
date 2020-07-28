@@ -73,7 +73,7 @@ POST /connections
 
 **Begäran**
 
-För att skapa en SQL Server-anslutning måste dess unika anslutningsspec-ID anges som en del av POST-begäran. Anslutningens spec-ID för SQL Server är `1f372ff9-38a4-4492-96f5-b9a4e4bd00ec`.
+För att skapa en SQL Server-anslutning måste dess unika anslutningsspec-ID anges som en del av POSTEN. Anslutningens spec-ID för SQL Server är `1f372ff9-38a4-4492-96f5-b9a4e4bd00ec`.
 
 ```shell
 curl -X POST \
