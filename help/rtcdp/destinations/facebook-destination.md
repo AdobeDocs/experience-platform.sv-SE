@@ -22,7 +22,7 @@ Aktivera profiler för era [!DNL Facebook] kampanjer för målgruppsanpassning, 
 
 ## Användningsexempel
 
-För att du bättre ska förstå hur och när du ska använda [!DNL Facebook] destinationen finns det två exempel på användningsområden som Platform-kunder i realtid kan lösa med hjälp av den här funktionen.
+För att ni bättre ska förstå hur och när ni ska använda [!DNL Facebook] destinationen finns det två exempel på användning som Adobe Real-time Customer Data Platform-kunder kan lösa genom att använda den här funktionen.
 
 
 ### Användningsfall 1
@@ -36,9 +36,9 @@ En webbutik vill nå befintliga kunder via sociala plattformar och visa dem pers
 
 Ett flygbolag har olika kundnivåer (Bronze, Silver och Gold) och vill kunna erbjuda varje nivå personaliserade erbjudanden via sociala plattformar. Alla kunder använder dock inte flygbolagets mobilapp, och vissa av dem har inte loggat in på företagets webbplats. De enda identifierare företaget har för dessa kunder är medlems-ID och e-postadresser.
 
-För att rikta in dem på sociala medier kan de lägga in kunddata från sina CRM i Adobe CDP i realtid med e-postadresserna som identifierare.
+För att rikta in sig på dem i olika sociala medier kan de lägga in kunddata från sina CRM i CDP i realtid i Adobe, med e-postadresserna som identifierare.
 
-Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-ID:n och kundnivåer, för att skapa nya målgruppssegment som de kan rikta sig till via [!DNL Facebook] målet.
+Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-ID:n och kundnivåer, för att skapa nya målgruppssegment som de kan rikta sig mot via [!DNL Facebook] målet.
 
 ## Destinationsspecifikationer {#destination-specs}
 
@@ -80,7 +80,7 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 
 >[!IMPORTANT]
 >
->Om du väljer att inte hash-koda e-postadresser gör Adobe CDP det åt dig när du aktiverar segment till [!DNL Facebook]. I [aktiveringsarbetsflödet](/help/rtcdp/destinations/activate-destinations.md#activate-data) (se steg 5) väljer du det `Email` alternativ som visas nedan för *obearbetade e-postadresser* och `Email_LC_SHA256` för *hashade e-postadresser*.
+>Om du väljer att inte hash-koda e-postadresser gör Adobe Real-time CDP det åt dig när du aktiverar segment till [!DNL Facebook]. I [aktiveringsarbetsflödet](/help/rtcdp/destinations/activate-destinations.md#activate-data) (se steg 5) väljer du det `Email` alternativ som visas nedan för *obearbetade e-postadresser* och `Email_LC_SHA256` för *hashade e-postadresser*.
 
 
 ![Hindrar vid aktivering](/help/rtcdp/destinations/assets/identity-mapping.png)
