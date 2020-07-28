@@ -108,7 +108,7 @@ Följande är svaret efter att den schemalagda experten har skapats.
 
 ### Skapa en provkörning för poängsättning
 
-Med den tränade modellen kan vi nu skapa en Experiment Run för poängsättning. Värdet på `modelId` parametern är den `id` parameter som returneras i GET-modellbegäran ovan.
+Med den tränade modellen kan vi nu skapa en Experiment Run för poängsättning. Värdet på `modelId` parametern är den `id` parameter som returneras i GET Model-begäran ovan.
 
 **Begäran**
 
