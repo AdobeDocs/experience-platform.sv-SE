@@ -72,7 +72,7 @@ POST /connections
 
 **Begäran**
 
-För att kunna skapa en DB2-anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POST-begäran. Anslutningsspecifikations-ID för DB2 är `09182899-b429-40c9-a15a-bf3ddbc8ced7`.
+För att kunna skapa en DB2-anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikations-ID för DB2 är `09182899-b429-40c9-a15a-bf3ddbc8ced7`.
 
 ```shell
 curl -X POST \
