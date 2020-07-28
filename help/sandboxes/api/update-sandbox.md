@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # Uppdatera en sandlåda
 
-Du kan uppdatera ett eller flera fält i en sandlåda genom att göra en PATCH-begäran som innehåller sandlådans `name` i begärandesökvägen och egenskapen som ska uppdateras i nyttolasten för begäran.
+Du kan uppdatera ett eller flera fält i en sandlåda genom att göra en PATCH-begäran som innehåller sandlådans sökväg och den egenskap som ska uppdateras i nyttolasten för begäran. `name`
 
 >[!NOTE]
 >
