@@ -18,7 +18,7 @@ Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Pla
 
 Data som identifierar en enskild kund fragmenteras ofta över olika enheter och system som de använder för att interagera med ert varumärke. [!DNL Identity Service] samlar ihop dessa fragmenterade identiteter och ger en fullständig förståelse för kundbeteenden så att ni kan leverera slagkraftiga digitala upplevelser i realtid. Mer information finns i Översikt över [identitetstjänsten](./home.md).
 
-## Vanliga frågor
+## Vanliga frågor och svar 
 
 Här följer en lista med svar på vanliga frågor om [!DNL Identity Service].
 
@@ -56,7 +56,7 @@ Fält som ZIP-koder och IP-adresser ska inte märkas som identiteter för enskil
 
 ## Varför länkar inte mina identitetsfält på det sätt jag förväntar mig?
 
-Med hjälp av [`/cluster/members` slutpunkten](./api/list-cluster-identites.md) i identitetstjänstens API kan du visa associerade identiteter för ett eller flera identitetsfält. Om svaret inte returnerar de länkade identiteter som du förväntar dig ska du se till att du anger rätt identitetsinformation i dina XDM-data. Mer information finns i avsnittet om [att tillhandahålla XDM-data till identitetstjänsten](./home.md) i översikten över identitetstjänsten.
+Med hjälp av [`/cluster/members` slutpunkten](./api/list-cluster-identites.md) i API:t för identitetstjänsten kan du visa associerade identiteter för ett eller flera identitetsfält. Om svaret inte returnerar de länkade identiteter som du förväntar dig ska du se till att du anger rätt identitetsinformation i dina XDM-data. Mer information finns i avsnittet om [att tillhandahålla XDM-data till identitetstjänsten](./home.md) i översikten över identitetstjänsten.
 
 ## Vad är ett identitetsnamnutrymme?
 
@@ -91,11 +91,11 @@ Följande standardnamnutrymmen kan användas av alla organisationer i Experience
 
 ## Var hittar jag en lista över de identitetsnamnutrymmen som är tillgängliga för min organisation?
 
-Med API:t för [identitetstjänst](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml)kan du visa alla tillgängliga identitetsnamnutrymmen för din organisation genom att göra en GET-begäran till `/idnamespace/identities` slutpunkten. Mer information finns i avsnittet om att [lista tillgängliga namnutrymmen](./api/list-namespaces.md) i API-översikten för identitetstjänsten.
+Med API:t för [identitetstjänst](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml)kan du visa alla tillgängliga identitetsnamnutrymmen för din organisation genom att göra en GET-förfrågan till `/idnamespace/identities` slutpunkten. Mer information finns i avsnittet om att [lista tillgängliga namnutrymmen](./api/list-namespaces.md) i API-översikten för identitetstjänsten.
 
 ## Hur skapar jag ett anpassat namnutrymme för min organisation?
 
-Med API:t för [identitetstjänsten](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml)kan du skapa ett anpassat identitetsnamnutrymme för din organisation genom att göra en POST-begäran till `/idnamespace/identities` slutpunkten. Mer information finns i avsnittet om [att skapa ett anpassat namnutrymme](./api/create-custom-namespace.md) i API-översikten för identitetstjänsten.
+Med API:t för [identitetstjänsten](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml)kan du skapa ett anpassat identitetsnamnutrymme för din organisation genom att göra en POST till `/idnamespace/identities` slutpunkten. Mer information finns i avsnittet om [att skapa ett anpassat namnutrymme](./api/create-custom-namespace.md) i API-översikten för identitetstjänsten.
 
 ## Vad är sammansatta identiteter och XID:n?
 
