@@ -12,19 +12,19 @@ ht-degree: 0%
 ---
 
 
-# Ansluta till direktuppspelningsmål och aktivera data i Adobes Real-time Customer Data Platform med API:er
+# Ansluta till direktuppspelningsmål och aktivera data i Adobe kunddata i realtid med Platform API:er
 
 >[!NOTE]
 >
->Målen [!DNL Amazon Kinesis] och [!DNL Azure Event Hubs] destinationerna i Adobe Real-time CDP är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
+>Destinationen [!DNL Amazon Kinesis] och [!DNL Azure Event Hubs] destinationerna i CDP i realtid i Adobe är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
 
-I den här självstudien visas hur du använder API-anrop för att ansluta till dina Adobe Experience Platform-data, skapa en anslutning till ett direktuppspelat molnlagringsmål ([Amazon Kinesis](/help/rtcdp/destinations/amazon-kinesis-destination.md) eller [Azure Event Hubs](/help/rtcdp/destinations/azure-event-hubs-destination.md)), skapa ett dataflöde till ditt nya skapade mål och aktivera data till ditt nya skapade mål.
+I den här självstudiekursen visas hur du använder API-anrop för att ansluta till dina Adobe Experience Platform-data, skapa en anslutning till ett direktuppspelat molnlagringsmål ([Amazon Kinesis](/help/rtcdp/destinations/amazon-kinesis-destination.md) eller [Azure Event Hubs](/help/rtcdp/destinations/azure-event-hubs-destination.md)), skapa ett dataflöde till ditt nya skapade mål och aktivera data till ditt nya skapade mål.
 
 I den här självstudien används målet i alla exempel, men stegen är identiska för [!DNL Amazon Kinesis] [!DNL Azure Event Hubs].
 
 ![Översikt - stegen för att skapa ett direktuppspelningsmål och aktivera segment](/help/rtcdp/destinations/assets/flow-prelim.png)
 
-Om du föredrar att använda användargränssnittet i Adobes CDP-fil i realtid för att ansluta till ett mål och aktivera data finns mer information i [Koppla ett mål](../../rtcdp/destinations/connect-destination.md) och [Aktivera profiler och segment till en målsjälvstudiekurs](../../rtcdp/destinations/activate-destinations.md) .
+Om du föredrar att använda användargränssnittet i Adobe CDP i realtid för att ansluta till ett mål och aktivera data, se [Koppla ett mål](../../rtcdp/destinations/connect-destination.md) och [Aktivera profiler och segment till en målsjälvstudiekurs](../../rtcdp/destinations/activate-destinations.md) .
 
 ## Kom igång
 
@@ -34,7 +34,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [!DNL Catalog Service](../../catalog/home.md): [!DNL Catalog] är registersystemet för dataplats och datalinje inom Experience Platform.
 * [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna aktivera data till direktuppspelningsdestinationer i Adobe Real-time CDP.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data till direktuppspelningsdestinationer i CDP i realtid i Adobe.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
@@ -68,7 +68,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ### Dokumentation för Swagger {#swagger-docs}
 
-Du hittar referensdokumentation för alla API-anrop i den här självstudiekursen i Swagger. Se [Flow Service API-dokumentationen för Adobe.io](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml). Vi rekommenderar att du använder den här självstudiekursen och dokumentationssidan för Swagger parallellt.
+Du hittar referensdokumentation för alla API-anrop i den här självstudiekursen i Swagger. Se [Flow Service API-dokumentationen på Adobe.io](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml). Vi rekommenderar att du använder den här självstudiekursen och dokumentationssidan för Swagger parallellt.
 
 ## Hämta listan över tillgängliga mål för direktuppspelning {#get-the-list-of-available-streaming-destinations}
 
@@ -263,10 +263,10 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 * `{AUTHENTICATION_CREDENTIALS}`: Fyll i namnet på strömningsmålet, t.ex.: `Amazon Kinesis authentication credentials` eller `Azure Event Hubs authentication credentials`.
 * `{ACCESS_ID}`: *För[!DNL Amazon Kinesis]anslutningar.* Ditt åtkomst-ID för din lagringsplats för Amazon Kinesis.
 * `{SECRET_KEY}`: *För[!DNL Amazon Kinesis]anslutningar.* Din hemliga nyckel för din lagringsplats för Amazon Kinesis.
-* `{REGION}`: *För[!DNL Amazon Kinesis]anslutningar.* Regionen på ditt [!DNL Amazon Kinesis] konto där Adobe Real-time CDP strömmar dina data.
+* `{REGION}`: *För[!DNL Amazon Kinesis]anslutningar.* Den region på ditt [!DNL Amazon Kinesis] konto där Adobe Real-time CDP strömmar dina data.
 * `{SAS_KEY_NAME}`: *För[!DNL Azure Event Hubs]anslutningar.* Fyll i ditt SAS-nyckelnamn. Läs om hur du autentiserar [!DNL Azure Event Hubs] med SAS-nycklar i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
 * `{SAS_KEY}`: *För[!DNL Azure Event Hubs]anslutningar.* Fyll i SAS-nyckeln. Läs om hur du autentiserar [!DNL Azure Event Hubs] med SAS-nycklar i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
-* `{EVENT_HUB_NAMESPACE}`: *För[!DNL Azure Event Hubs]anslutningar.* Fyll i [!DNL Azure Event Hubs] namnutrymmet där Adobe Real-time CDP strömmar era data. Mer information finns i [Skapa ett namnutrymme](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) för händelsehubbar i [!DNL Microsoft] dokumentationen.
+* `{EVENT_HUB_NAMESPACE}`: *För[!DNL Azure Event Hubs]anslutningar.* Fyll i [!DNL Azure Event Hubs] namnutrymmet där Adobe Real-time CDP strömmar dina data. Mer information finns i [Skapa ett namnutrymme](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) för händelsehubbar i [!DNL Microsoft] dokumentationen.
 
 **Svar**
 
@@ -318,8 +318,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 * `{BASE_CONNECTION_ID}`: Använd det grundläggande anslutnings-ID som du fick i steget ovan.
 * `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikationen som du fick i steget [Hämta listan med tillgängliga mål](#get-the-list-of-available-destinations).
 * `{NAME_OF_DATA_STREAM}`: *För[!DNL Amazon Kinesis]anslutningar.* Ange namnet på din befintliga dataström i ditt [!DNL Amazon Kinesis] konto. Adobe CDP i realtid exporterar data till den här strömmen.
-* `{REGION}`: *För[!DNL Amazon Kinesis]anslutningar.* Den region på ditt Amazon Kinesis-konto där Adobe Real-time CDP direktuppspelar data.
-* `{EVENT_HUB_NAME}`: *För[!DNL Azure Event Hubs]anslutningar.* Fyll i det [!DNL Azure Event Hub] namn där Adobe Real-time CDP kommer att strömma era data. Mer information finns i [Skapa en händelsehubb](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) i [!DNL Microsoft] dokumentationen.
+* `{REGION}`: *För[!DNL Amazon Kinesis]anslutningar.* Den region på ditt Amazon Kinesis-konto där Adobe Real-time CDP strömmar dina data.
+* `{EVENT_HUB_NAME}`: *För[!DNL Azure Event Hubs]anslutningar.* Fyll i det [!DNL Azure Event Hub] namn där Adobe Real-time CDP strömmar era data. Mer information finns i [Skapa en händelsehubb](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) i [!DNL Microsoft] dokumentationen.
 
 **Svar**
 
@@ -337,9 +337,9 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 Med de ID:n du fick i föregående steg kan du nu skapa ett dataflöde mellan dina Experience Platform-data och det mål där du vill aktivera data. Tänk på det här steget som att skapa en pipeline, genom vilken data sedan flödar mellan Experience Platform och det önskade målet.
 
-Om du vill skapa ett dataflöde utför du en POST-begäran enligt nedan och anger värdena som anges nedan i nyttolasten.
+Om du vill skapa ett dataflöde ska du utföra en begäran om POST enligt nedan, med de värden som anges nedan i nyttolasten.
 
-Utför följande POST-begäran för att skapa ett dataflöde.
+Utför följande begäran om POST för att skapa ett dataflöde.
 
 **API-format**
 
@@ -480,7 +480,7 @@ Håll utkik efter 202 OK-svar. Ingen svarstext returneras. Om du vill verifiera 
 
 Som ett sista steg i självstudiekursen bör du validera att segmenten och profilattributen verkligen har mappats korrekt till dataflödet.
 
-Utför följande GET-begäran för att validera detta:
+Gör följande GET-förfrågan för att validera detta:
 
 **API-format**
 
