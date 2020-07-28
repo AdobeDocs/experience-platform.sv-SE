@@ -18,7 +18,7 @@ ht-degree: 0%
 
 Anta att du äger en webbutik. När era kunder handlar på er webbplats vill ni ge dem skräddarsydda produktrekommendationer för att visa upp en mängd andra produkter som ert företag erbjuder. Under webbplatsens hela existens har ni kontinuerligt samlat in kunddata och vill på något sätt använda dessa data för att generera personaliserade produktrekommendationer.
 
-[!DNL Adobe Experience Platform] [!DNL Data Science Workspace] ger dig möjlighet att uppnå ditt mål med hjälp av den färdiga [produktrekommendationsbeskrivningen](../pre-built-recipes/product-recommendations.md). Följ den här självstudiekursen för att se hur du kan få tillgång till och förstå dina detaljhandelsdata, skapa och optimera en maskininlärningsmodell och generera insikter i [!DNL Data Science Workspace].
+[!DNL Adobe Experience Platform] [!DNL Data Science Workspace] ger möjlighet att uppnå dina mål med den färdiga [produkten Recommendations Recipe](../pre-built-recipes/product-recommendations.md). Följ den här självstudiekursen för att se hur du kan få tillgång till och förstå dina detaljhandelsdata, skapa och optimera en maskininlärningsmodell och generera insikter i [!DNL Data Science Workspace].
 
 I den här självstudiekursen visas arbetsflödet för [!DNL Data Science Workspace]och följande steg beskrivs för att skapa en maskininlärningsmodell:
 
@@ -34,18 +34,18 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
 * Åtkomst till [!DNL Adobe Experience Platform]. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform]kontaktar du systemadministratören innan du fortsätter.
 
 * Aktivera resurser. Kontakta din kontorepresentant om du vill ha tillgång till följande artiklar.
-   * Rekommendationer, recept
-   * Indatauppsättning för rekommendationer
-   * Rekommendationer, inmatningsschema
-   * Rekommendationer, utdatauppsättning
-   * Rekommendationer, utdataschema
+   * Recommendations Recipe
+   * Recommendations Input Dataset
+   * Recommendations Input Schema
+   * Recommendations Output Dataset
+   * Recommendations Output Schema
    * Golden Data Set postValues
    * Golden Data Set Schema
 
-* Ladda ned de tre [!DNL Jupyter Notebook] filerna som krävs från <a href="https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources/Notebooks-Thurs" target="_blank">Adobes offentliga [!DNL Git] databas</a>. De används för att demonstrera [!DNL JupyterLab] arbetsflödet i [!DNL Data Science Workspace].
+* Ladda ned de tre nödvändiga [!DNL Jupyter Notebook] filerna från <a href="https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources/Notebooks-Thurs" target="_blank">Adobe offentliga [!DNL Git] databas</a>. De används för att demonstrera [!DNL JupyterLab] arbetsflödet i [!DNL Data Science Workspace].
 
 * En fungerande förståelse för följande viktiga begrepp som används i den här självstudiekursen:
-   * [!DNL Experience Data Model](../../xdm/home.md): Adobes standardiseringsarbete för att definiera standardscheman som [!DNL Profile] Experience Management och ExperienceEvent.
+   * [!DNL Experience Data Model](../../xdm/home.md): Den standardiseringsinsats som Adobe ledde till för att definiera standardscheman som [!DNL Profile] och ExperienceEvent för Customer Experience Management.
    * Datauppsättningar: En lagrings- och hanteringskonstruktion för faktiska data. En fysisk instansierad instans av ett [XDM-schema](../../xdm/schema/field-dictionary.md).
    * Grupper: Datauppsättningar består av grupper. En batch är en uppsättning data som samlats in under en tidsperiod och som bearbetas tillsammans som en enda enhet.
    * [!DNL JupyterLab]: [!DNL JupyterLab](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) är ett webbaserat gränssnitt för Project med öppen källkod [!DNL Jupyter] som är nära integrerat i [!DNL Experience Platform].
@@ -68,16 +68,16 @@ De andra datauppsättningarna har fyllts i i automatiskt med grupper för förha
 | Namn på datauppsättning | Schema | Beskrivning |
 | ----- | ----- | ----- |
 | Golden Data Set postValues | Schema för Gyllene datauppsättning | [!DNL Analytics] källdata från webbplatsen |
-| Indatauppsättning för rekommendationer | Rekommendationer, inmatningsschema | Data omvandlas till en [!DNL Analytics] utbildningsdatauppsättning med hjälp av en funktionspipeline. Dessa data används för att utbilda maskininlärningsmodellen för produktrekommendationer. `itemid` och `userid` motsvarar en produkt som kunden köpt. |
-| Rekommendationer, utdatauppsättning | Rekommendationer, utdataschema | Den datauppsättning som bedömningsresultat lagras för innehåller en lista med rekommenderade produkter för varje kund. |
+| Recommendations Input Dataset | Recommendations Input Schema | Data omvandlas till en [!DNL Analytics] utbildningsdatauppsättning med hjälp av en funktionspipeline. Dessa data används för att utbilda Recommendations produktmaskininlärningsmodell. `itemid` och `userid` motsvarar en produkt som kunden köpt. |
+| Recommendations Output Dataset | Recommendations Output Schema | Den datauppsättning som bedömningsresultat lagras för innehåller en lista med rekommenderade produkter för varje kund. |
 
 ## Skapa din modell {#author-your-model}
 
-Den andra komponenten i [!DNL Data Science Workspace] livscykeln innefattar utveckling av recept och modeller. Recept för produktrekommendationer är utformat för att generera produktrekommendationer i stor skala genom att använda tidigare inköpsdata och maskininlärning.
+Den andra komponenten i [!DNL Data Science Workspace] livscykeln innefattar utveckling av recept och modeller. Produktens Recommendations Recept är utformat för att generera produktrekommendationer i stor skala genom att använda tidigare inköpsdata och maskininlärning.
 
 Recept är grunden för en modell eftersom de innehåller maskininlärningsalgoritmer och logik som utformats för att lösa specifika problem. Viktigast av allt är att Recipes ger er möjlighet att demokratisera maskininlärningen i hela organisationen så att andra användare kan komma åt en modell för olika användningsområden utan att behöva skriva någon kod.
 
-### Läs mer i produktrekommendationsrecept
+### Utforska Recommendations Recept
 
 1. I [!DNL Adobe Experience Platform]navigerar du till **[!UICONTROL Models]** från den vänstra navigeringskolumnen och klickar sedan **[!UICONTROL Recipes]** längst upp för att visa en lista över tillgängliga recept för din organisation.
    ![](../images/models-recipes/model-walkthrough/browse_recipes.png)
@@ -86,7 +86,7 @@ Recept är grunden för en modell eftersom de innehåller maskininlärningsalgor
 3. Klicka på den högra listen för **[!UICONTROL Recommendations Input Schema]** att se vilket schema som används för receptet. Schemafälten **[!UICONTROL itemId]** och **[!UICONTROL userId]** motsvarande en produkt som kunden köpt (**[!UICONTROL interactionType]**) vid en viss tidpunkt (**[!UICONTROL timestamp]**). Följ samma steg för att granska fälten för **[!UICONTROL Recommendations Output Schema]**.
    ![](../images/models-recipes/model-walkthrough/preview_schemas.png)
 
-Du har nu granskat de in- och utdatamodeller som krävs av produktrekommendationsreceptet. Du kan nu fortsätta till nästa avsnitt för att ta reda på hur du skapar, utbildar och utvärderar en produktrekommendationsmodell.
+Du har nu granskat de in- och utdatamodeller som krävs av Product Recommendations Recipe. Du kan nu fortsätta till nästa avsnitt för att ta reda på hur du skapar, utbildar och utvärderar en Recommendations-produktmodell.
 
 ## Utbilda och utvärdera din modell {#train-and-evaluate-your-model}
 
@@ -102,7 +102,7 @@ En modell är en instans av en Recept som gör att du kan utbilda och poängsät
    ![](../images/models-recipes/model-walkthrough/recommendations_recipe_110.png)
 3. En lista över tillgängliga indatauppsättningar för utbildning visas, välj **[!UICONTROL Recommendations Input Dataset]** och klicka **[!UICONTROL Next]**.
    ![](../images/models-recipes/model-walkthrough/select_dataset.png)
-4. Ange ett namn för modellen, till exempel&quot;Produktrekommendationsmodell&quot;. Tillgängliga konfigurationer för modellen visas med inställningar för modellens standardutbildnings- och bedömningsbeteenden. Inga ändringar behövs eftersom dessa konfigurationer är specifika för din organisation. Granska konfigurationerna och klicka på **[!UICONTROL Finish]**.
+4. Ange ett namn för modellen, till exempel&quot;Product Recommendations Model&quot;. Tillgängliga konfigurationer för modellen visas med inställningar för modellens standardutbildnings- och bedömningsbeteenden. Inga ändringar behövs eftersom dessa konfigurationer är specifika för din organisation. Granska konfigurationerna och klicka på **[!UICONTROL Finish]**.
    ![](../images/models-recipes/model-walkthrough/configure_model.png)
 5. Modellen har nu skapats och sidan *Översikt* över modellen visas i en nyligen genererad utbildning. En utbildningskörning genereras som standard när en modell skapas.
    ![](../images/models-recipes/model-walkthrough/model_post_creation.png)
