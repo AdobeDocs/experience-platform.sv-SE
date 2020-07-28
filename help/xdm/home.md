@@ -18,7 +18,7 @@ Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience
 
 XDM är en öppet dokumenterad specifikation som utformats för att förbättra möjligheterna med digitala upplevelser. Den innehåller gemensamma strukturer och definitioner för alla program som används för att kommunicera med [!DNL Platform] tjänster. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation som kan ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och uttrycka kundattribut i personaliseringssyfte.
 
-XDM är det grundläggande ramverk som gör att Adobe Experience Cloud, som drivs av [!DNL Experience Platform], kan leverera rätt budskap till rätt person i rätt kanal vid exakt rätt tidpunkt. Metoden som [!DNL Experience Platform] byggs på, **XDM System**, används för att göra [!DNL Experience Data Model] scheman tillgängliga för [!DNL Platform] tjänster.
+XDM är det grundläggande ramverk som gör det möjligt för Adobe Experience Cloud, som drivs av [!DNL Experience Platform], att leverera rätt budskap till rätt person, i rätt kanal, i precis rätt ögonblick. Metoden som [!DNL Experience Platform] byggs på, **XDM System**, används för att göra [!DNL Experience Data Model] scheman tillgängliga för [!DNL Platform] tjänster.
 
 Det här dokumentet innehåller en översikt över XDM-systemets roll i [!DNL Experience Platform].
 
@@ -97,7 +97,7 @@ Kundprofilen i realtid utgör en centraliserad konsumentprofil för riktad och p
 
 När [!DNL XDM Individual Profile] och [!DNL XDM ExperienceEvent] data hämtas och hanteras av [!DNL Catalog], utlöses [!DNL Real-time Customer Profile] inmatningen av data som har aktiverats för användning. Ju fler interaktioner och detaljer som är inkapslade, desto stabilare blir de enskilda profilerna.
 
-[!DNL XDM Individual Profile] data hjälper till att underbygga och underlätta åtgärder över alla kanaler eller Adobe-lösningar, och när de kombineras med en lång historik med beteendedata och interaktionsdata används dessa data som underlag för maskininlärning. API:t kan också användas för att utöka funktionaliteten hos tredjepartslösningar, CRM-system och företagslösningar. [!DNL Real-time Customer Profile]
+[!DNL XDM Individual Profile] data hjälper till att informera och underlätta åtgärder över alla kanaler och Adobe-lösningar, och när de kombineras med en lång historik med beteendedata och interaktionsdata används dessa data som stöd för maskininlärning. API:t kan också användas för att utöka funktionaliteten hos tredjepartslösningar, CRM-system och företagslösningar. [!DNL Real-time Customer Profile]
 
 Mer information finns i [Kundprofilöversikt](../profile/home.md) i realtid.
 
@@ -105,7 +105,7 @@ Mer information finns i [Kundprofilöversikt](../profile/home.md) i realtid.
 
 Adobe Experience Platform [!DNL Data Science Workspace] använder maskininlärning och artificiell intelligens för att få insikter från data som lagras i [!DNL Experience Platform]. [!DNL Data Science Workspace] gör det möjligt för datavetare att bygga recept som bygger på XDM Individual [!DNL Profile] [!DNL XDM ExperienceEvent] och data om kunder och deras aktiviteter, vilket underlättar prognoser som köpbenägenhet och rekommenderade erbjudanden som individen sannolikt kommer att uppskatta och använda.
 
-Med [!DNL Data Science Workspace]kan datavetare enkelt skapa API:er för intelligenta tjänster som bygger på maskininlärning. Dessa tjänster fungerar tillsammans med andra Adobe-lösningar, inklusive Adobe Target och Adobe Analytics Cloud, och hjälper er att automatisera personaliserade, målinriktade digitala upplevelser.
+Med [!DNL Data Science Workspace]kan datavetare enkelt skapa API:er för intelligenta tjänster som bygger på maskininlärning. Dessa tjänster fungerar tillsammans med andra Adobe-lösningar, bland annat Adobe Target och Adobe Analytics Cloud, för att hjälpa er att automatisera personaliserade, målinriktade digitala upplevelser.
 
 Mer information om hur du använder [!DNL Experience Platform] data för att få bättre insikter finns i översikten över arbetsytan för [datavetenskap](../data-science-workspace/home.md).
 
