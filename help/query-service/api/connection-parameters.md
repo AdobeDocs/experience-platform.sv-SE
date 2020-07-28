@@ -20,7 +20,7 @@ Nu när du förstår vilka rubriker som ska användas kan du börja ringa anrop 
 
 ### Begär anslutningsparametrar för den interaktiva tjänsten
 
-Du kan hämta anslutningsparametrar för användning av den [interaktiva tjänsten](../creating-queries/writing-queries.md) genom att göra en GET-begäran till `/connection_parameters` slutpunkten. Mer information om klienter som använder anslutningsparametrar för att ansluta via den interaktiva tjänsten finns i dokumentationen om [Query Service-klienter](../clients/overview.md).
+Du kan hämta anslutningsparametrar för användning av den [interaktiva tjänsten](../creating-queries/writing-queries.md) genom att göra en GET-förfrågan till `/connection_parameters` slutpunkten. Mer information om klienter som använder anslutningsparametrar för att ansluta via den interaktiva tjänsten finns i dokumentationen om [Query Service-klienter](../clients/overview.md).
 
 **API-format**
 
