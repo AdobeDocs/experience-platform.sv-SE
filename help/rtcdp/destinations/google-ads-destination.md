@@ -24,7 +24,7 @@ Observera följande information som är specifik för [!DNL Google Ads] destinat
 
 * Du kan skicka följande [identiteter](../../identity-service/namespaces.md) till [!DNL Google Ads] mål: **Google cookie ID, IDFA, GAID, Roku ID, Microsoft ID, Amazon Fire TV ID**.
 * Aktiverade målgrupper skapas programmatiskt på [!DNL Google] plattformen.
-* Adobe CDP i realtid innehåller för närvarande inga mätvärden som validerar aktiveringen. Se antalet målgrupper i Google för att validera integrationen och förstå målgruppens målgruppsstorlek.
+* CDP i realtid i Adobe innehåller för närvarande inga mätvärden som validerar den lyckade aktiveringen. Se antalet målgrupper i Google för att validera integrationen och förstå målgruppens målgruppsstorlek.
 
 >[!IMPORTANT]
 >
@@ -34,7 +34,7 @@ Observera följande information som är specifik för [!DNL Google Ads] destinat
 
 ### Befintligt [!DNL Google Ads] konto
 
-[!DNL Google] har pausat alla nya [!DNL Google Ads] integreringar med tredjepartsleverantörer. Du måste ha en befintlig integrering med [!DNL Google Ads] för att kunna utföra tillåtelselista-stegen i nästa avsnitt och skapa ett [!DNL Google Ads] mål i Adobe Real-time CDP.
+[!DNL Google] har pausat alla nya [!DNL Google Ads] integreringar med tredjepartsleverantörer. Du måste ha en befintlig integrering med [!DNL Google Ads] för att kunna utföra stegen i tillåtelselista i nästa avsnitt och skapa ett [!DNL Google Ads] mål i Adobe Real-time CDP.
 
 ### Tillåtelselista
 
@@ -42,10 +42,10 @@ Observera följande information som är specifik för [!DNL Google Ads] destinat
 >
 >tillåtelselista är obligatoriskt innan du ställer in ditt första [!DNL Google Ads] mål i Adobe Real-time CDP. Kontrollera att tillåtelselista-processen som beskrivs nedan har slutförts [!DNL Google] innan du skapar ett mål.
 
-Innan du skapar [!DNL Google Ads] destinationen i Adobe Real-time CDP måste du kontakta Adobe [!DNL Google] för att få vara med på listan över tillåtna dataleverantörer och för att ditt konto ska kunna läggas till i tillåtelselista. Kontakta [!DNL Google] och lämna följande information:
+Innan du skapar [!DNL Google Ads] målet i realtid-CDP i Adobe måste du kontakta Adobe [!DNL Google] för att få vara med i listan över tillåtna dataleverantörer och för att ditt konto ska läggas till i tillåtelselista. Kontakta [!DNL Google] och lämna följande information:
 
-* **Konto-ID** : detta är Adobes konto-ID med [!DNL Google]. Kontakta Adobes kundtjänst eller din Adobe-representant för att få detta ID.
-* **Kund-ID** : detta är Adobes kundkonto-ID med [!DNL Google]. Kontakta Adobes kundtjänst eller din Adobe-representant för att få detta ID.
+* **Konto-ID** : det här är Adobe konto ID med [!DNL Google]. Kontakta Adobe kundtjänst eller Adobe för att få detta ID.
+* **Kund-ID** : det här är Adobe kundkonto-ID med [!DNL Google]. Kontakta Adobe kundtjänst eller Adobe för att få detta ID.
 * Kontotyp: **AdWords**
 * **Google AdWords ID** : Detta är ditt ID med [!DNL Google]. ID-formatet är vanligtvis 123-456-7890.
 
@@ -61,7 +61,7 @@ Innan du skapar [!DNL Google Ads] destinationen i Adobe Real-time CDP måste du 
 * **[!UICONTROL Description]**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
 * **[!UICONTROL Account Type]**: AdWords är det enda tillgängliga alternativet.
 * **[!UICONTROL Account ID]**: Fyll i ditt konto-ID med [!DNL Google Ads]. ID-formatet är vanligtvis 123-456-7890.
-* **[!UICONTROL Marketing use case]**: Fall av marknadsanvändning anger avsikten för vilken data ska exporteras till destinationen. Du kan välja bland Adobes definierade användningsexempel för marknadsföring eller skapa ett eget exempel för marknadsföring. Mer information om användningsfall för marknadsföring finns på sidan [Datastyrning i CDP](/help/rtcdp/privacy/data-governance-overview.md#destinations) i realtid. Information om de enskilda användningsfallen för marknadsföring som definierats av Adobe finns i [översikten över](/help/data-governance/policies/overview.md#core-actions)dataanvändningspolicyn.
+* **[!UICONTROL Marketing use case]**: Fall av marknadsanvändning anger avsikten för vilken data ska exporteras till destinationen. Du kan välja bland Adobe-definierade användningsfall för marknadsföring eller skapa ett eget marknadsföringsexempel. Mer information om användningsfall för marknadsföring finns på sidan [Datastyrning i CDP](/help/rtcdp/privacy/data-governance-overview.md#destinations) i realtid. Mer information om de enskilda Adobe-definierade användningsfallen för marknadsföring finns i översikten över [dataanvändningspolicyn](/help/data-governance/policies/overview.md#core-actions).
 
 ## Aktivera segment för att [!DNL Google Ads]
 
