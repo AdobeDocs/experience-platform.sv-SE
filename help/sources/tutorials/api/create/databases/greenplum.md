@@ -69,7 +69,7 @@ POST /connections
 
 **Begäran**
 
-För att kunna skapa en [!DNL GreenPlum] anslutning måste dess unika anslutningsspec-ID anges som en del av POST-begäran. Anslutningens spec-ID för [!DNL GreenPlum] är `37b6bf40-d318-4655-90be-5cd6f65d334b`.
+För att kunna skapa en [!DNL GreenPlum] anslutning måste dess unika anslutningsspec-ID anges som en del av POSTEN. Anslutningens spec-ID för [!DNL GreenPlum] är `37b6bf40-d318-4655-90be-5cd6f65d334b`.
 
 ```shell
 curl -X POST \
