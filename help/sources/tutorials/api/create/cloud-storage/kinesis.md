@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Skapa en Amazon Kinesis-kontakt med API:t för Flow Service
+title: Skapa en Amazon Kinesis-anslutning med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
 source-git-commit: 11431ffcfc2204931fe3e863bfadc7878a40b49c
