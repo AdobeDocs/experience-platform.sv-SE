@@ -14,11 +14,11 @@ ht-degree: 0%
 
 # Måltyper och -kategorier
 
-Läs den här sidan om du vill veta mer om de olika typerna och kategorierna för Platform-destinationer för kunddata i realtid.
+Läs den här sidan om du vill veta mer om de olika typerna och kategorierna av kunddata för Platform-destinationer i realtid för Adobe.
 
 ## Måltyper
 
-I Adobe Customer Data Platform i realtid skiljer vi mellan två måltyper - anslutningar och tillägg. Det finns två typer av anslutningsmål: Profilexportmål och Segmentexportmål.
+I Adobe Real-time Customer Data Platform skiljer vi mellan två måltyper - anslutningar och tillägg. Det finns två typer av anslutningsmål: Profilexportmål och Segmentexportmål.
 
 ![Typer av destinationer](/help/rtcdp/destinations/assets/types-of-destinations.png)
 
@@ -26,13 +26,13 @@ I Adobe Customer Data Platform i realtid skiljer vi mellan två måltyper - ansl
 
 ### Anslutningar
 
-**[!UICONTROL Profile Export]** och mål **[!UICONTROL Segment Export]** i Adobe Real-time Customer Data Platform samlar in händelsedata, kombinerar dem med andra datakällor för att skapa kundprofilen [i](/help/profile/home.md)realtid, tillämpa segmentering och exportera segment och kvalificerade profiler till destinationer.
+**[!UICONTROL Profile Export]** och mål **[!UICONTROL Segment Export]** i kunddata för Adobe i realtid Platform samlar in händelsedata, kombinerar dem med andra datakällor för att skapa kundprofilen [i](/help/profile/home.md)realtid, tillämpa segmentering och exportera segment och kvalificerade profiler till destinationer.
 
 <br> 
 
 #### Profilexportdestinationer
 
-Profilexportdestinationer genererar en fil som innehåller profiler och/eller attribut. Dessa mål använder rådata, ofta med e-postadress som primärnyckel. Molnlagringsmålet [för](/help/rtcdp/destinations/amazon-s3-destination.md) Amazon S3 är ett exempel på destinationen där du kan sätta in filer som innehåller profilexporter.
+Profilexportdestinationer genererar en fil som innehåller profiler och/eller attribut. Dessa mål använder rådata, ofta med e-postadress som primärnyckel. Molnlagringsmålet [för](/help/rtcdp/destinations/amazon-s3-destination.md) Amazon S3 är ett exempel på destinationen där du kan placera filer som innehåller profilexporter.
 
 #### Segmentexportdestinationer
 
@@ -48,7 +48,7 @@ I videon nedan beskrivs de två typerna av destinationer:
 
 ### Tillägg
 
-Adobe CDP i realtid utnyttjar kraften och flexibiliteten i Experience Platform Launch för att inkludera Launch-tillägg i Adobes CDP-gränssnitt i realtid.
+Adobe CDP i realtid utnyttjar Experience Platform Launch kraft och flexibilitet för att inkludera Launch-tillägg i CDP-gränssnittet i realtid i Adobe.
 
 >[!TIP]
 >
