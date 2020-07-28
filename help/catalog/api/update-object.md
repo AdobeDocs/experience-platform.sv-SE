@@ -58,7 +58,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett lyckat svar returnerar en array som innehåller ID:t för den uppdaterade datauppsättningen. Detta ID ska matcha det som skickas i PATCH-begäran. När du utför en GET-begäran för den här datauppsättningen visas nu att bara `name` och `description` har uppdaterats medan alla andra värden förblir oförändrade.
+Ett lyckat svar returnerar en array som innehåller ID:t för den uppdaterade datauppsättningen. Detta ID ska matcha det som skickades i PATCH-begäran. När en GET-begäran utförs för den här datauppsättningen visas nu att bara `name` och `description` har uppdaterats medan alla andra värden förblir oförändrade.
 
 ```json
 [
@@ -107,7 +107,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett lyckat svar returnerar en array som innehåller ID:t för det uppdaterade objektet. Detta ID ska matcha det som skickas i PATCH-begäran. När du utför en GET-begäran för det här objektet visas nu att bara `name` och `description` har uppdaterats medan alla andra värden förblir oförändrade.
+Ett lyckat svar returnerar en array som innehåller ID:t för det uppdaterade objektet. Detta ID ska matcha det som skickades i PATCH-begäran. När en GET-begäran utförs för det här objektet visas nu att endast `name` och `description` har uppdaterats medan alla andra värden förblir oförändrade.
 
 ```json
 [
