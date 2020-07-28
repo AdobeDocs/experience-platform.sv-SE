@@ -168,7 +168,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller ett `_links` objekt. I
 
 ## Hämta dina filer {#retrieving-your-files}
 
-Använd det `href` värde du fick i föregående steg som ett API-anrop för att skapa en ny GET-begäran för att hämta din filkatalog.
+Använd det `href` värde du fick i föregående steg som ett API-anrop för att göra en ny GET-förfrågan om att hämta din filkatalog.
 
 **API-format**
 
@@ -234,14 +234,14 @@ Svaret innehåller en datamatris som kan ha en enda post eller en lista med file
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `_links.self.href` | URL:en för GET-begäran som används för att hämta en fil i din katalog. |
+| `_links.self.href` | Den URL för GET-begäran som används för att hämta en fil i din katalog. |
 
 
 Kopiera `href` värdet för alla filobjekt i `data` arrayen och fortsätt till nästa steg.
 
 ## Hämta fildata
 
-Om du vill hämta fildata gör du en GET-begäran till det `"href"` värde du kopierade i föregående steg när du [hämtade dina filer](#retrieving-your-files).
+Om du vill hämta fildata skickar du en GET till det `"href"` värde du kopierade i föregående steg när du [hämtade filerna](#retrieving-your-files).
 
 >[!NOTE]
 >
@@ -271,7 +271,7 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/035e2520
 
 >[!TIP]
 >
->Kontrollera att du är i rätt katalog eller mapp som du vill att filen ska sparas i innan du gör GET-begäran.
+>Se till att du är i rätt katalog eller mapp som du vill att filen ska sparas i innan du skickar GETEN.
 
 **Svar**
 
