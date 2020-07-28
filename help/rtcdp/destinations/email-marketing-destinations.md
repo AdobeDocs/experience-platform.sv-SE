@@ -14,9 +14,9 @@ ht-degree: 0%
 
 # E-postmarknadsföringsmål {#email-marketing-destinations}
 
-Med ESP (Email Service Providers) kan du hantera dina e-postmarknadsföringsaktiviteter, som att skicka e-postkampanjer med reklam. Adobes kunddata i realtid Platform integreras med ESP:er genom att ni kan aktivera segment för e-postmarknadsföringsmål.
+Med ESP (Email Service Providers) kan du hantera dina e-postmarknadsföringsaktiviteter, som att skicka e-postkampanjer med reklam. Adobe kunddata i realtid Platform kan integreras med ESP:er genom att ni kan aktivera segment för e-postmarknadsföringsmål.
 
-För att skicka segment till e-postmarknadsföringsmål för era kampanjer måste Adobe CDP i realtid först ansluta till destinationen.
+För att skicka segment till e-postmarknadsföringsmål för era kampanjer måste CDP i realtid i Adobe först ansluta till destinationen.
 
 Att ansluta till e-postmarknadsföringsmål är en process i tre steg. Varje steg beskrivs längre ned på den här sidan.
 
@@ -37,8 +37,8 @@ Anslut till antingen Amazon S3 eller SFTP i det anslutande målflödet som beskr
    För **SFTP med SSH-nyckelanslutningar** måste du ange domän, port, användarnamn och SSH-nyckel för SFTP-servern.
 
 3. I **[!UICONTROL Setup]** steget anger du ett **[!UICONTROL Name]** och ett **[!UICONTROL Description]** för det nya målet samt **[!UICONTROL File format]** för de exporterade filerna. <br>
-Om du valde Amazon S3 som lagringsalternativ i det föregående steget infogar du **[!UICONTROL Bucket name]** och **[!UICONTROL Folder path]** i molnlagringsmålet där filerna ska levereras. För alternativet SFTP-lagring anger du den plats **[!UICONTROL Folder path]** där filerna ska levereras. <br>
-I det här steget kan du även välja vilket som helst **[!UICONTROL Marketing use case]** som ska gälla för det här målet. Fall av marknadsanvändning anger avsikten för vilken data ska exporteras till destinationen. Du kan välja bland Adobes definierade användningsexempel för marknadsföring eller skapa ett eget exempel för marknadsföring. Mer information om användningsfall för marknadsföring finns på sidan [Datastyrning i CDP](/help/rtcdp/privacy/data-governance-overview.md#destinations) i realtid. Information om de enskilda användningsfallen för marknadsföring som definierats av Adobe finns i [översikten över](/help/data-governance/policies/overview.md#core-actions)dataanvändningspolicyn. <br>
+Om du valde Amazon S3 som lagringsalternativ i föregående steg, sätter du in **[!UICONTROL Bucket name]** och **[!UICONTROL Folder path]** i molnlagringsmålet där filerna ska levereras. För alternativet SFTP-lagring anger du den plats **[!UICONTROL Folder path]** där filerna ska levereras. <br>
+I det här steget kan du även välja vilket som helst **[!UICONTROL Marketing use case]** som ska gälla för det här målet. Fall av marknadsanvändning anger avsikten för vilken data ska exporteras till destinationen. Du kan välja bland Adobe-definierade användningsfall för marknadsföring eller skapa ett eget marknadsföringsexempel. Mer information om användningsfall för marknadsföring finns på sidan [Datastyrning i CDP](/help/rtcdp/privacy/data-governance-overview.md#destinations) i realtid. Mer information om de enskilda Adobe-definierade användningsfallen för marknadsföring finns i översikten över [dataanvändningspolicyn](/help/data-governance/policies/overview.md#core-actions). <br>
    ![Steget för e-postkonfiguration](/help/rtcdp/destinations/assets/email-setup-step.png)
 
 ## Steg 2 - Välj vilka segmentmedlemmar som ska inkluderas i målexporten {#select-segments}
