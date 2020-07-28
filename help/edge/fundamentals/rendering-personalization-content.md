@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Översikt över personaliseringsalternativ
 
-Adobe Experience Platform [!DNL Web SDK] stöder frågor om personaliseringslösningar från Adobe, inklusive Adobe Target. Det finns två sätt att personalisera: hämta innehåll som kan återges automatiskt och innehåll som måste återges av utvecklaren. SDK har även funktioner för att [hantera flimmer](../../edge/solution-specific/target/flicker-management.md).
+Adobe Experience Platform [!DNL Web SDK] stöder frågor om personaliseringslösningarna på Adobe, inklusive Adobe Target. Det finns två sätt att personalisera: hämta innehåll som kan återges automatiskt och innehåll som måste återges av utvecklaren. SDK har även funktioner för att [hantera flimmer](../../edge/solution-specific/target/flicker-management.md).
 
 ## Återge innehåll automatiskt
 
