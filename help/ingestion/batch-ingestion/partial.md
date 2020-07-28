@@ -133,7 +133,7 @@ Om batchar innehåller fel måste du hämta felinformation om dessa fel så att 
 
 ### Kontrollera status {#check-status}
 
-Om du vill kontrollera status för den kapslade batchen måste du ange batchens ID i sökvägen till en GET-begäran.
+Om du vill kontrollera status för den inkapslade batchen måste du ange batchens ID i sökvägen till en GET-förfrågan.
 
 **API-format**
 
