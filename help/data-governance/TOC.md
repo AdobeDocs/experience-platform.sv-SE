@@ -4,11 +4,14 @@ audience: user
 user-guide-title: Hjälp om datastyrning i Adobe Experience Platform
 translation-type: tm+mt
 source-git-commit: e135bc33e6c3daa411e85cb37e407322fd0bca5b
+workflow-type: tm+mt
+source-wordcount: '103'
+ht-degree: 0%
 
 ---
 
 
-# Adobe Experience Platform - datastyrning {#data-governance}
+# Adobe Experience Platform datastyrning {#data-governance}
 
 * [Datastyrning - översikt](home.md)
 * Dataanvändningsetiketter {#labels}
@@ -29,4 +32,4 @@ source-git-commit: e135bc33e6c3daa411e85cb37e407322fd0bca5b
    * [Marknadsföringsåtgärder](api/marketing-actions.md)
    * [Utvärdering](api/evaluation.md)
 * [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml)
-* [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
+* [Versionsinformation för Platform](https://www.adobe.com/go/platform-release-notes-en)
