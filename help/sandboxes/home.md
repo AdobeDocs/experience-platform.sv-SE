@@ -71,4 +71,4 @@ Med sandbox-API kan du hantera sandlådor med hjälp av RESTful API-åtgärder. 
 
 Genom att läsa det här dokumentet har du lagts till de viktigaste begreppen om sandlådor i Experience Platform. Detaljerade anvisningar om hur du hanterar sandlådor finns i [användarhandboken](ui/overview.md) för användargränssnittet eller [utvecklarhandboken](./api/getting-started.md) för API:t.
 
-Sandlådor fungerar som ett värdefullt verktyg för att isolera Platform-miljöer för utvecklingsteamet, men du kan också hantera mer detaljerad åtkomstkontroll med hjälp av Adobe Admin Console. Mer information finns i [åtkomstkontrollsöversikten](../access-control/home.md) .
+Sandlådor fungerar som ett värdefullt verktyg för att isolera Platform-miljöer för utvecklingsteamet, men du kan också hantera mer detaljerad åtkomstkontroll med Adobe Admin Console. Mer information finns i [åtkomstkontrollsöversikten](../access-control/home.md) .
