@@ -73,7 +73,7 @@ POST /connections
 
 **Begäran**
 
-För att kunna skapa en [!DNL Synapse] anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POST-begäran. Anslutningsspecifikationens ID för [!DNL Synapse] är `a49bcc7d-8038-43af-b1e4-5a7a089a7d79`.
+För att kunna skapa en [!DNL Synapse] anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikationens ID för [!DNL Synapse] är `a49bcc7d-8038-43af-b1e4-5a7a089a7d79`.
 
 ```shell
 curl -X POST \
