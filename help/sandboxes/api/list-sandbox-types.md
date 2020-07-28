@@ -5,13 +5,16 @@ title: Visa sandlådetyper som stöds
 topic: developer guide
 translation-type: tm+mt
 source-git-commit: b4741cdfd065bbaed7f2feeafe8619191e4b8f6c
+workflow-type: tm+mt
+source-wordcount: '47'
+ht-degree: 0%
 
 ---
 
 
 # Visa sandlådetyper som stöds
 
-Du kan hämta en lista över sandlådetyper som stöds för din organisation genom att göra en GET-begäran till `/sandboxTypes` slutpunkten.
+Du kan hämta en lista över sandlådetyper som stöds för din organisation genom att göra en GET-förfrågan till `/sandboxTypes` slutpunkten.
 
 **API-format**
 
