@@ -18,7 +18,7 @@ Insikter innehåller mätvärden som används för att ge datavetare möjlighet 
 
 ## Hämta en lista med insikter
 
-Du kan hämta en lista med insikter genom att utföra en GET-begäran till insikter-slutpunkten.  Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](./appendix.md#query)av resurser i bilagan.
+Du kan hämta en lista med insikter genom att utföra en enda GET-förfrågan till insikter-slutpunkten.  Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](./appendix.md#query)av resurser i bilagan.
 
 **API-format**
 
@@ -108,7 +108,7 @@ Ett lyckat svar returnerar en nyttolast som innehåller en lista med insikter oc
 
 ## Hämta en specifik insight
 
-Om du vill söka efter en viss insikt kan du göra en GET-begäran och ange en giltig `{INSIGHT_ID}` i sökvägen för begäran. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](./appendix.md#query)av resurser i bilagan.
+Om du vill söka efter en viss insikt kan du begära en GET och ange en giltig `{INSIGHT_ID}` i sökvägen till begäran. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](./appendix.md#query)av resurser i bilagan.
 
 **API-format**
 
@@ -171,7 +171,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller den unika identifierar
 
 ## Lägg till en ny modellinsikt
 
-Du kan skapa en ny modellinsikt genom att utföra en POST-begäran och en nyttolast som ger kontext, händelser och mått för den nya modellinsikten. Det kontextfält som används för att skapa en ny modellinsikt behöver inte ha befintliga tjänster kopplade till sig, men du kan välja att skapa den nya modellinsikten med befintliga tjänster genom att tillhandahålla ett eller flera motsvarande ID:
+Du kan skapa en ny modellinsikt genom att utföra en modellförfrågan och en nyttolast som ger kontext, händelser och mätvärden för den nya modellinsikten. Det kontextfält som används för att skapa en ny modellinsikt behöver inte ha befintliga tjänster kopplade till sig, men du kan välja att skapa den nya modellinsikten med befintliga tjänster genom att tillhandahålla ett eller flera motsvarande ID:
 
 ```json
 "context": {
@@ -260,11 +260,11 @@ Ett lyckat svar returnerar en nyttolast som har en `{INSIGHT_ID}` och alla param
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `insightId` | Det unika ID som skapas för den här informationen när en POST-begäran görs. |
+| `insightId` | Det unika ID som skapas för den här informationen när en begäran om POST har gjorts. |
 
 ## Hämta en lista med standardvärden för algoritmer
 
-Du kan hämta en lista över alla algoritmernas och standardmåtten genom att utföra en GET-begäran till metrisk slutpunkt. Om du vill fråga efter ett visst mått skapar du en GET-begäran och anger en giltig `{ALGORITHM}` i sökvägen till begäran.
+Du kan hämta en lista över alla algoritmernas och standardmåtten genom att utföra en enda GET-begäran till metrisk slutpunkt. Om du vill fråga efter ett visst mått gör du en GET-förfrågan och anger en giltig sökväg `{ALGORITHM}` i begäran.
 
 **API-format**
 
