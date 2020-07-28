@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Det här dokumentet innehåller svar på vanliga frågor om åtkomstkontroll i Adobe Experience Platform. För frågor och felsökning som rör andra [!DNL Platform] tjänster, se felsökningsguiden för [Experience Platform](../landing/troubleshooting.md).
 
-[!DNL Experience Platform] använder produktprofiler i [Adobe Admin Console](http://adminconsole.adobe.com) för att tillhandahålla rollbaserad **åtkomstkontroll** som länkar användare med behörigheter och sandlådor.  Mer information finns i [åtkomstkontrollsöversikten](home.md) .
+[!DNL Experience Platform] utnyttjar produktprofiler i [Adobe Admin Console](http://adminconsole.adobe.com) för att tillhandahålla rollbaserad **åtkomstkontroll** som länkar användare med behörigheter och sandlådor.  Mer information finns i [åtkomstkontrollsöversikten](home.md) .
 
 ## Var hittar jag mina nuvarande åtkomstbehörigheter?
 
