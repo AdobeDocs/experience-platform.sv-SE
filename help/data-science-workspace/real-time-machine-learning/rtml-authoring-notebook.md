@@ -17,7 +17,7 @@ ht-degree: 0%
 >[!IMPORTANT]
 >Maskininlärning i realtid är inte tillgängligt för alla användare ännu. Den här funktionen är alfabet och testas fortfarande. Dokumentet kan komma att ändras.
 
-I följande guide beskrivs de steg som krävs för att skapa ett Machine Learning-program i realtid. Med hjälp av den av Adobe tillhandahållna mallen för bärbara datorer från Python beskriver den här guiden hur du utbilda en modell, skapar en DSL, publicerar DSL på Edge och betygsätter begäran. **[!UICONTROL Real-time ML]** När du implementerar din maskininlärningsmodell i realtid förväntas du ändra mallen så att den passar datauppsättningens behov.
+I följande guide beskrivs de steg som krävs för att skapa ett Machine Learning-program i realtid. Med den Adobe-medföljande mallen för bärbara datorer från Python täcker den här guiden in utbildning av en modell, skapa en DSL, publicera DSL på Edge och betygsätta begäran. **[!UICONTROL Real-time ML]** När du implementerar din maskininlärningsmodell i realtid förväntas du ändra mallen så att den passar datauppsättningens behov.
 
 ## Skapa en Machine Learning-anteckningsbok i realtid
 
@@ -346,7 +346,7 @@ När det är klart returneras ett `edge` objekt som innehåller alla noder och d
 ## Publicera på kant (nav)
 
 >[!NOTE]
->Machine Learning i realtid distribueras tillfälligt till och hanteras av Adobe Experience Platform Hub. Mer information finns i översiktsavsnittet om maskininlärningsarkitektur i [realtid](./home.md#architecture).
+>Maskininlärning i realtid distribueras tillfälligt till och hanteras av Adobe Experience Platform Hub. Mer information finns i översiktsavsnittet om maskininlärningsarkitektur i [realtid](./home.md#architecture).
 
 Nu när du har skapat ett DSL-diagram kan du distribuera diagrammet till [!DNL Edge].
 
@@ -399,7 +399,7 @@ Du får tillbaka den uppdaterade DSL:en.
 
 ## Poäng {#scoring}
 
-Efter publicering till [!DNL Edge]utförs poängsättningen genom en POST-begäran från en klient. Vanligtvis kan detta göras från ett klientprogram som behöver ML-poäng. Du kan också göra det från Postman. I mallen används *[!UICONTROL Real-time ML]* EdgeUtils för att demonstrera den här processen.
+Efter publicering till [!DNL Edge]utförs poängsättningen av en POST från en klient. Vanligtvis kan detta göras från ett klientprogram som behöver ML-poäng. Du kan också göra det från Postman. I mallen används *[!UICONTROL Real-time ML]* EdgeUtils för att demonstrera den här processen.
 
 >[!NOTE]
 >Det krävs en liten bearbetningstid innan poängsättningen börjar.
