@@ -1,7 +1,7 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Adobe Experience Platform Source Connectors - hjälp
+user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 translation-type: tm+mt
 source-git-commit: 03fd716d6f743d839bc24ff99660efdf47b187a0
 workflow-type: tm+mt
@@ -16,20 +16,20 @@ ht-degree: 0%
 - [Översikt över källkopplingar](home.md)
 - Tillgängliga källanslutningar {#connectors}
    - Adobe-program {#adobe-applications}
-      - [Dataanslutning för Analytics](connectors/adobe-applications/analytics.md)
-      - [Audience Manager-koppling](connectors/adobe-applications/audience-manager.md)
+      - [Analytics dataanslutning](connectors/adobe-applications/analytics.md)
+      - [Audience Manager-kontakt](connectors/adobe-applications/audience-manager.md)
       - [Koppling för kundattribut](connectors/adobe-applications/customer-attributes.md)
-      - Mappa Adobe-programfält {#mapping}
-         - [Mappningsfält för analyser](connectors/adobe-applications/mapping/analytics.md)
+      - Mappa programfält i Adobe {#mapping}
+         - [Analytics-mappningsfält](connectors/adobe-applications/mapping/analytics.md)
          - [Mappningsfält för Audience Manager](connectors/adobe-applications/mapping/audience-manager.md)
          - [Målmappningsfält](connectors/adobe-applications/mapping/target.md)
-   - Reklam {#advertising}
+   - Advertising {#advertising}
       - [Google AdWords-koppling](connectors/advertising/ads.md)
    - molnlagring {#cloud-storage}
-      - [Amazon Kinesis-kontakt](connectors/cloud-storage/kinesis.md)
+      - [Amazon Kinesis Connector](connectors/cloud-storage/kinesis.md)
       - [Apache HDFS-kontakt](connectors/cloud-storage/hdfs.md)
       - [Azure Data Lake Storage Gen2-anslutning](connectors/cloud-storage/adls-gen2.md)
-      - [Azure Blob och Amazon S3-kontakt](connectors/cloud-storage/blob-s3.md)
+      - [Azure Blob och Amazon S3-anslutning](connectors/cloud-storage/blob-s3.md)
       - [Azure Event Hubs-koppling](connectors/cloud-storage/eventhub.md)
       - [Azure File Storage Connector](connectors/cloud-storage/azure-file-storage.md)
       - [FTP- och SFTP-anslutning](connectors/cloud-storage/ftp-sftp.md)
@@ -41,11 +41,11 @@ ht-degree: 0%
       - [Salesforce Service Cloud-anslutning](connectors/customer-success/salesforce-service-cloud.md)
       - [ServiceNow-koppling](connectors/customer-success/servicenow.md)
    - Databaser {#databases}
-      - [Amazon Redshift-kontakt](connectors/databases/redshift.md)
+      - [Amazon Redshift-anslutning](connectors/databases/redshift.md)
       - [Apache Hive på Azure HDInsights-kontakten](connectors/databases/hive.md)
       - [Apache Spark på Azure HDInsights-kontakten](connectors/databases/spark.md)
-      - [Azure Data Explorer-koppling](connectors/databases/data-explorer.md)
-      - [Azure Synapse Analytics-koppling](connectors/databases/synapse-analytics.md)
+      - [Azure Data Explorer Connector](connectors/databases/data-explorer.md)
+      - [Azure Synapse Analytics Connector](connectors/databases/synapse-analytics.md)
       - [Azure Table Storage-koppling](connectors/databases/ats.md)
       - [Koppling till kuchbase](connectors/databases/couchbase.md)
       - [Google BigQuery-koppling](connectors/databases/bigquery.md)
@@ -66,11 +66,11 @@ ht-degree: 0%
       - [Allmän OData-koppling](connectors/protocols/odata.md)
 - API-självstudiekurser {#api-tutorials}
    - Skapa en källkoppling {#create}
-      - Reklam {#advertising}
+      - Advertising {#advertising}
          - [Google AdWords-koppling](tutorials/api/create/advertising/ads.md)
       - molnlagring {#cloud-storage}
          - [Amazon Kinesis](tutorials/api/create/cloud-storage/kinesis.md)
-         - [Amazon S3-kontakt](tutorials/api/create/cloud-storage/s3.md)
+         - [Amazon S3-anslutning](tutorials/api/create/cloud-storage/s3.md)
          - [Apache HDFS-kontakt](tutorials/api/create/cloud-storage/hdfs.md)
          - [Azure Blob-koppling](tutorials/api/create/cloud-storage/blob.md)
          - [Azure Data Lake Storage Gen2-anslutning](tutorials/api/create/cloud-storage/adls-gen2.md)
@@ -86,11 +86,11 @@ ht-degree: 0%
          - [Salesforce Service Cloud-anslutning](tutorials/api/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow-koppling](tutorials/api/create/customer-success/servicenow.md)
       - Databaser {#databases}
-         - [Amazon Redshift-kontakt](tutorials/api/create/databases/redshift.md)
+         - [Amazon Redshift-anslutning](tutorials/api/create/databases/redshift.md)
          - [Apache Hive på Azure HDInsights-kontakten](tutorials/api/create/databases/hive.md)
          - [Apache Spark på Azure HDInsights-kontakten](tutorials/api/create/databases/spark.md)
-         - [Azure Data Explorer-koppling](tutorials/api/create/databases/data-explorer.md)
-         - [Azure Synapse Analytics-koppling](tutorials/api/create/databases/synapse-analytics.md)
+         - [Azure Data Explorer Connector](tutorials/api/create/databases/data-explorer.md)
+         - [Azure Synapse Analytics Connector](tutorials/api/create/databases/synapse-analytics.md)
          - [Azure Table Storage-koppling](tutorials/api/create/databases/ats.md)
          - [Koppling till kuchbase](tutorials/api/create/databases/couchbase.md)
          - [Google BigQuery-koppling](tutorials/api/create/databases/bigquery.md)
@@ -133,15 +133,15 @@ ht-degree: 0%
    - Skapa en källkoppling {#create}
       - Adobe-program {#adobe-applications}
          - [Adobe Analytics Connector](tutorials/ui/create/adobe-applications/analytics.md)
-         - [Adobe Audience Manager-koppling](tutorials/ui/create/adobe-applications/audience-manager.md)
+         - [Adobe Audience Manager-kontakt](tutorials/ui/create/adobe-applications/audience-manager.md)
          - [Koppling för kundattribut](tutorials/ui/create/adobe-applications/customer-attributes.md)
-      - Reklam {#create}
+      - Advertising {#create}
          - [Google AdWords-koppling](tutorials/ui/create/advertising/ads.md)
       - molnlagring {#cloud-storage}
-         - [Amazon Kinesis-kontakt](tutorials/ui/create/cloud-storage/kinesis.md)
+         - [Amazon Kinesis Connector](tutorials/ui/create/cloud-storage/kinesis.md)
          - [Apache HDFS-kontakt](tutorials/ui/create/cloud-storage/hdfs.md)
          - [Azure Data Lake Storage Gen2-anslutning](tutorials/ui/create/cloud-storage/adls-gen2.md)
-         - [Azure Blob och Amazon S3-kontakt](tutorials/ui/create/cloud-storage/blob-s3.md)
+         - [Azure Blob och Amazon S3-anslutning](tutorials/ui/create/cloud-storage/blob-s3.md)
          - [Azure Event Hubs-koppling](tutorials/ui/create/cloud-storage/eventhub.md)
          - [Azure File Storage Connector](tutorials/ui/create/cloud-storage/azure-file-storage.md)
          - [FTP- och SFTP-anslutning](tutorials/ui/create/cloud-storage/ftp-sftp.md)
@@ -153,11 +153,11 @@ ht-degree: 0%
          - [Salesforce Service Cloud-anslutning](tutorials/ui/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow-koppling](tutorials/ui/create/customer-success/servicenow.md)
       - Databaser {#databases}
-         - [Amazon Redshift-kontakt](tutorials/ui/create/databases/redshift.md)
+         - [Amazon Redshift-anslutning](tutorials/ui/create/databases/redshift.md)
          - [Apache Hive på Azure HDInsights-kontakten](tutorials/ui/create/databases/hive.md)
          - [Apache Spark på Azure HDInsights-kontakten](tutorials/ui/create/databases/spark.md)
-         - [Azure Data Explorer-koppling](tutorials/ui/create/databases/data-explorer.md)
-         - [Azure Synapse Analytics-koppling](tutorials/ui/create/databases/synapse-analytics.md)
+         - [Azure Data Explorer Connector](tutorials/ui/create/databases/data-explorer.md)
+         - [Azure Synapse Analytics Connector](tutorials/ui/create/databases/synapse-analytics.md)
          - [Azure Table Storage-koppling](tutorials/ui/create/databases/ats.md)
          - [Koppling till kuchbase](tutorials/ui/create/databases/couchbase.md)
          - [Google Big Query-koppling](tutorials/ui/create/databases/bigquery.md)
@@ -188,4 +188,4 @@ ht-degree: 0%
       - [Konfigurera ett dataflöde för en protokollanslutning](tutorials/ui/dataflow/protocols.md)
    - [Aktivera inkommande data för att fylla i kundprofiler](tutorials/ui/profile.md)
    - [Övervaka konton och datauppsättningsflöden](tutorials/ui/monitor.md)
-- [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
+- [Versionsinformation för Platform](https://www.adobe.com/go/platform-release-notes-en)
