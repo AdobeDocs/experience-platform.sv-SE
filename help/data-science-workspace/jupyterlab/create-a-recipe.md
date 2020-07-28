@@ -18,7 +18,7 @@ Den här självstudiekursen går igenom två huvudavsnitt. Först skapar du en m
 
 ## Nya koncept:
 
-- **Recept:** Ett recept är Adobes term för en modellspecifikation och är en behållare på den översta nivån som representerar maskininlärning, AI-algoritm eller en kombination av algoritmer, bearbetningslogik och konfiguration som krävs för att skapa och köra en tränad modell och därmed bidra till att lösa specifika affärsproblem.
+- **Recept:** Ett recept är en AdobeTerm för en modellspecifikation och är en toppnivåbehållare som representerar en specifik maskininlärning, AI-algoritm eller en kombination av algoritmer, bearbetningslogik och konfiguration som krävs för att skapa och köra en tränad modell och därmed bidra till att lösa specifika affärsproblem.
 - **Modell:** En modell är en instans av ett maskininlärningsrecept som är utbildat med historiska data och konfigurationer för att lösa ett affärsärende.
 - **Utbildning:** Utbildning är processen att lära sig mönster och insikter från märkta data.
 - **Poäng:** Poängberäkning är processen att generera insikter från data med hjälp av en tränad modell.
