@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;insights;attribution ai;popular topics
 solution: Experience Platform
-title: Identifiera insikter i Attribution AI
+title: Upptäck insikter inom Attribution AI
 topic: Attribution AI insights
 translation-type: tm+mt
 source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
@@ -12,15 +12,15 @@ ht-degree: 0%
 ---
 
 
-# Identifiera insikter i Attribution AI
+# Upptäck insikter inom Attribution AI
 
-AI-instanser för attribuering ger insikter som kan användas för att fatta och mäta marknadsföringsbeslut som rör marknadsföringens resultat och avkastningen på investeringen. Genom att välja en tjänstinstans får ni visualiseringar och filter som hjälper er att förstå effekten av varje kundinteraktion i varje fas av kundresan.
+Attribution AI Service-instanser ger insikter som kan användas för att fatta och mäta marknadsföringsbeslut som rör marknadsföringens resultat och avkastningen på investeringen. Genom att välja en tjänstinstans får ni visualiseringar och filter som hjälper er att förstå effekten av varje kundinteraktion i varje fas av kundresan.
 
-Det här dokumentet är en guide för interaktion med Service Instance-insikter i Adobe Intelligent Services-gränssnittet.
+Det här dokumentet är en guide för interaktion med Service Instance-insikter i användargränssnittet för Adobe Intelligent Services.
 
 ## Komma igång
 
-Om du vill kunna använda insikter för Attribution AI måste du ha en tjänstinstans med statusen lyckad körning tillgänglig. Om du vill skapa en ny tjänstinstans går du till guiden [för användargränssnittet för](./user-guide.md)Attribution AI. Om du nyligen har skapat en tjänstinstans och den fortfarande håller på att träna och betygsätta, kan du vänta i 24 timmar tills den är klar.
+För att kunna utnyttja insikter om Attribution AI måste du ha en tjänstinstans med statusen lyckad körning tillgänglig. Om du vill skapa en ny tjänstinstans går du till [Attribution AI användargränssnittshandbok](./user-guide.md). Om du nyligen har skapat en tjänstinstans och den fortfarande håller på att träna och betygsätta, kan du vänta i 24 timmar tills den är klar.
 
 ## Översikt över insikter om tjänstinstans
 
@@ -28,7 +28,7 @@ Klicka på [!DNL Adobe Experience Platform] Tjänster **i den vänstra navigerin
 
 ![Åtkomst till din instans](./images/insights/open_Attribution_ai.png)
 
-AI-tjänstsidan för attribuering visas. På den här sidan visas tjänstinstanser för Attribution AI och information om dem, inklusive namnet på instansen, konverteringshändelser, hur ofta instansen körs och status för den senaste uppdateringen. Klicka på ett tjänstinstansnamn för att börja.
+Attribution AI tjänstsida visas. På den här sidan visas tjänstinstanser av Attribution AI och information om dem, inklusive namnet på instansen, konverteringshändelser, hur ofta instansen körs och status för den senaste uppdateringen. Klicka på ett tjänstinstansnamn för att börja.
 
 >[!NOTE]
 >
@@ -65,14 +65,14 @@ Knappen *Fler åtgärder* finns i den övre högra navigeringen bredvid *Rediger
 
 - **Ta bort**: Tar bort instansen.
 - **Hämta sammanfattningsdata**: Hämtar en CSV-fil som innehåller sammanfattningsdata.
-- **Åtkomstpoäng**: Om du klickar på *Åtkomstpoäng* omdirigeras du till [åtkomstpoängen för AI-självstudiekursen](./download-scores.md)Attribution.
+- **Åtkomstpoäng**: Om du klickar på *Åtkomstpoäng* omdirigeras du till [åtkomstpoängen för självstudiekursen](./download-scores.md).
 - **Visa körningshistorik**: En pover som innehåller en lista över alla poäng som är associerade med tjänstinstansen visas.
 
 ![fler åtgärder](./images/insights/more-actions.png)
 
 ## Filtrera data
 
-Tack vare AI-insikter för attribuering kan du filtrera data och automatiskt uppdatera gränssnittets visuella information baserat på de filter du valt.
+Med hjälp av Attribution AI kan du filtrera data och automatiskt uppdatera gränssnittets visuella information baserat på dina valda filter.
 
 >[!NOTE]
 >
@@ -110,7 +110,7 @@ Filtret *Geografi* fyller i landskoder som baseras på regionsbaserade modeller.
 
 >[!NOTE]
 >
->Det här filtret finns bara om du utförde den valfria stegvisa [regionbaserade modelleringen](./user-guide.md#region-based-modeling-optional) i AI-gränssnittshandboken för Attribution när du skapade tjänstinstansen.
+>Det här filtret finns bara om du utförde den valfria [regionbaserade modelleringen](./user-guide.md#region-based-modeling-optional) i användargränssnittsguiden för Attribution AI när du skapade tjänstinstansen.
 
 Med det här filtret kan du markera alla områden som du har konfigurerat när du skapar instansen.
 
@@ -162,10 +162,10 @@ Kortet *Top campaign* visar en översikt över era kampanjer och hur kampanjen f
 
 ## Nästa steg
 
-När du är klar med filtreringen av data och kan visa lämplig information kan du välja att få åtkomst till poängen. Om du vill ha en detaljerad guide om hur du får tillgång till dina poäng kan du gå till [åtkomstpoängen i AI](./download-scores.md) -självstudiekursen för attribuering. Dessutom kan du hämta sammanfattningsdata enligt [fler åtgärder](#more-actions). Om du väljer Hämta sammanfattningsdata hämtas sammanfattningsdata som aggregerats efter datum.
+När du är klar med filtreringen av data och kan visa lämplig information kan du välja att få åtkomst till poängen. Om du vill ha en detaljerad guide om hur du får tillgång till dina poäng kan du gå till [självstudiekursen i Attribution AI](./download-scores.md) . Dessutom kan du hämta sammanfattningsdata enligt [fler åtgärder](#more-actions). Om du väljer Hämta sammanfattningsdata hämtas sammanfattningsdata som aggregerats efter datum.
 
 ## Ytterligare resurser
 
-Följande video är utformad för att hjälpa till att lära sig hur man använder informationssidan för attributanalys för att förstå avkastningen på marknadsföringskanaler och kampanjer.
+Följande videofilm är utformad för att hjälpa dig att lära dig hur ni kan använda sidan med insikter om Attribution AI för att förstå avkastningen på marknadsföringskanaler och kampanjer.
 
 >[!VIDEO](https://video.tv.adobe.com/v/32669?learn=on&quality=12)
