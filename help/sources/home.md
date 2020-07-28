@@ -26,11 +26,11 @@ Källor i [!DNL Experience Platform] är grupperade i följande kategorier:
 
 ### Adobe-program
 
-[!DNL Experience Platform] tillåter att data hämtas från andra Adobe-program, inklusive Adobe Analytics, Adobe Audience Manager och [!DNL Experience Platform Launch]. Mer information finns i följande relaterade dokument:
+[!DNL Experience Platform] gör det möjligt att importera data från andra Adobe-program, inklusive Adobe Analytics, Adobe Audience Manager och [!DNL Experience Platform Launch]. Mer information finns i följande relaterade dokument:
 
 - [Adobe Audience Manager-anslutning - översikt](connectors/adobe-applications/audience-manager.md)
 - [Skapa en Adobe Audience Manager-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/audience-manager.md)
-- [Översikt över Adobe Analytics dataanslutning](connectors/adobe-applications/analytics.md)
+- [Adobe Analytics dataanslutning - översikt](connectors/adobe-applications/analytics.md)
 - [Skapa en Adobe Analytics-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/analytics.md)
 - [Skapa en källkoppling för kundattribut i användargränssnittet](./tutorials/ui/create/adobe-applications/customer-attributes.md)
 
@@ -109,7 +109,7 @@ CRM-system tillhandahåller data som kan hjälpa till att bygga upp kundrelation
 
 ## Åtkomstkontroll för källor vid datainhämtning
 
-Behörigheter för källor vid dataöverföring kan hanteras i Adobe Admin Console. Du kan få åtkomst till behörigheter via fliken *[!UICONTROL Permissions]* i en viss produktprofil. Från **[!UICONTROL Edit Permissions]** panelen kan du komma åt de behörigheter som gäller för källor via *[!UICONTROL data ingestion]* menyalternativet. Behörigheten **[!UICONTROL View Sources]** ger skrivskyddad åtkomst till tillgängliga källor på *[!UICONTROL Catalog]* fliken och till autentiserade källor på *[!UICONTROL Browse]* **[!UICONTROL Manage Sources]** fliken, medan behörigheten ger fullständig åtkomst för att läsa, skapa, redigera och inaktivera källor.
+Behörigheter för källor vid dataöverföring kan hanteras inom Adobe Admin Console. Du kan få åtkomst till behörigheter via fliken *[!UICONTROL Permissions]* i en viss produktprofil. Från **[!UICONTROL Edit Permissions]** panelen kan du komma åt de behörigheter som gäller för källor via *[!UICONTROL data ingestion]* menyalternativet. Behörigheten **[!UICONTROL View Sources]** ger skrivskyddad åtkomst till tillgängliga källor på *[!UICONTROL Catalog]* fliken och till autentiserade källor på *[!UICONTROL Browse]* **[!UICONTROL Manage Sources]** fliken, medan behörigheten ger fullständig åtkomst för att läsa, skapa, redigera och inaktivera källor.
 
 Följande tabell visar hur användargränssnittet beter sig baserat på olika kombinationer av dessa behörigheter:
 
@@ -125,8 +125,8 @@ Mer information om de behörigheter som ges via Admin Console, inklusive dessa f
 
 Genom att använda någon av källorna som är märkta som beta (&quot;Beta&quot;) bekräftar du härmed att betaversionen tillhandahålls ***&quot;som den är&quot; utan någon garanti av något slag***.
 
-Adobe har ingen skyldighet att upprätthålla, korrigera, uppdatera, ändra, modifiera eller på annat sätt ge support för betaversionen. Du rekommenderas att vara försiktig och inte på något sätt förlita dig på att betaversionen och/eller det medföljande materialet fungerar som de ska. Beta betraktas som Konfidentiell information om Adobe.
+Adobe har ingen skyldighet att upprätthålla, korrigera, uppdatera, ändra, ändra eller på annat sätt stödja betaversionen. Du rekommenderas att vara försiktig och inte på något sätt förlita dig på att betaversionen och/eller det medföljande materialet fungerar som de ska. Beta betraktas som konfidentiell information om Adobe.
 
-All &quot;Feedback&quot; (information om betaversionen, inklusive men inte begränsad till problem eller defekter som du råkat ut för när du använt betaversionen, förslag, förbättringar och rekommendationer) som du fått från dig till Adobe, tilldelas härmed Adobe med alla rättigheter, titlar och intressen i och för sådan feedback.
+All &quot;Feedback&quot; (information om betaversionen, inklusive men inte begränsad till problem eller defekter som du stöter på när du använder betaversionen, förslag, förbättringar och rekommendationer) som du ger dig till Adobe tilldelas Adobe, inklusive alla rättigheter, titlar och intressen i och för sådan feedback.
 
 Skicka Öppna feedback eller skapa en supportanmälan för att dela dina förslag eller rapportera ett fel, sök efter en funktionsförbättring.
