@@ -89,4 +89,4 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehå
 }
 ```
 
-Om du utför en GET-begäran om att lista alla scheman i innehavarbehållaren skulle det nu inkludera egenskapsinformationsschemat, eller så kan du utföra en GET-begäran med den URL-kodade `$id` URI:n för att visa det nya schemat direkt. Kom ihåg att inkludera `version` i huvudet Godkänn för alla uppslagsbegäranden.
+Om du utför en GET-begäran om att lista alla scheman i innehavarbehållaren skulle det nu inkludera egenskapsinformationsschemat, eller så kan du utföra en sökning (GET)-begäran med den URL-kodade `$id` URI:n för att visa det nya schemat direkt. Kom ihåg att inkludera `version` i huvudet Godkänn för alla uppslagsbegäranden.
