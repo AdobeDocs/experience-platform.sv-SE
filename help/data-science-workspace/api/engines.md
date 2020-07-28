@@ -21,7 +21,7 @@ Motorer är grunden för maskininlärningsmodeller i arbetsytan för datavetensk
 >[!TIP]
 >Om du inte har någon Docker-URL kan du gå till [Paketkällfilerna i en recept](../models-recipes/package-source-files-recipe.md) -självstudiekurs för att stegvis gå igenom hur du skapar en Docker-värd-URL.
 
-Docker-registerautentiseringsuppgifterna krävs för att överföra en paketerad mottagarfil, inklusive Docker-värdens URL, användarnamn och lösenord. Du kan söka efter den här informationen genom att utföra följande GET-begäran:
+Docker-registerautentiseringsuppgifterna krävs för att överföra en paketerad mottagarfil, inklusive Docker-värdens URL, användarnamn och lösenord. Du kan söka efter den här informationen genom att utföra följande GET-förfrågan:
 
 **API-format**
 
@@ -58,7 +58,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om Docker-
 
 ## Skapa en motor med hjälp av Docker URL:er {#docker-image}
 
-Du kan skapa en motor genom att utföra en POST-begäran samtidigt som du anger dess metadata och en Docker-URL som refererar till en Docker-bild i multipart-formulär.
+Du kan skapa en motor genom att utföra en begäran om POST samtidigt som du anger dess metadata och en Docker-URL som refererar till en Docker-bild i multipart-formulär.
 
 **API-format**
 
@@ -172,7 +172,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den nya
 
 ## Skapa en rörlig funktionsmotor med Docker URL:er {#feature-pipeline-docker}
 
-Du kan skapa en rörlig funktionsmotor genom att utföra en POST-begäran samtidigt som du anger dess metadata och en Docker URL som refererar till en Docker-bild.
+Du kan skapa en rörlig funktionsmotor genom att utföra en begäran om POST samtidigt som du anger dess metadata och en Docker-URL som refererar till en Docker-bild.
 
 **API-format**
 
@@ -254,7 +254,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den nya
 
 ## Hämta en lista med motorer
 
-Du kan hämta en lista över motorer genom att utföra en enda GET-begäran. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](./appendix.md#query)av resurser i bilagan.
+Du kan hämta en lista över motorer genom att utföra en enda begäran om GET. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](./appendix.md#query)av resurser i bilagan.
 
 **API-format**
 
@@ -329,7 +329,7 @@ Ett godkänt svar returnerar en lista över motorer och deras information.
 
 ### Hämta en specifik motor {#retrieve-specific}
 
-Du kan hämta information om en specifik motor genom att utföra en GET-begäran som innehåller ID:t för den önskade motorn i sökvägen för begäran.
+Du kan hämta information om en viss motor genom att utföra en GET-begäran som innehåller ID:t för den önskade motorn i sökvägen för begäran.
 
 **API-format**
 
@@ -383,11 +383,11 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den ön
 
 ## Uppdatera en motor
 
-Du kan ändra och uppdatera en befintlig motor genom att skriva över dess egenskaper via en PUT-begäran som inkluderar målmotorns ID i den begärda sökvägen och som tillhandahåller en JSON-nyttolast som innehåller uppdaterade egenskaper.
+Du kan ändra och uppdatera en befintlig motor genom att skriva över dess egenskaper via en PUT-begäran som inkluderar målmotorns ID i sökvägen för begäran och som tillhandahåller en JSON-nyttolast som innehåller uppdaterade egenskaper.
 
 >[!NOTE]
 >
->För att säkerställa att denna PUT-begäran lyckas föreslår vi att du först utför en GET-begäran för att [hämta motorn via ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
+>För att denna PUT-förfrågan ska lyckas föreslår vi att du först utför en GET-förfrågan för att [hämta motorn via ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
 
 Följande exempel på API-anrop uppdaterar en motors namn och beskrivning samtidigt som dessa egenskaper initialt används:
 
