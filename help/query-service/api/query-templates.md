@@ -20,7 +20,7 @@ Nu när du förstår vilka rubriker som ska användas kan du börja ringa anrop 
 
 ### Hämta en lista med frågemallar
 
-Du kan hämta en lista med alla frågemallar för din IMS-organisation genom att göra en GET-begäran till `/query-templates` slutpunkten.
+Du kan hämta en lista med alla frågemallar för din IMS-organisation genom att göra en GET-förfrågan till `/query-templates` slutpunkten.
 
 **API-format**
 
@@ -111,7 +111,7 @@ Ett godkänt svar returnerar HTTP-status 200 med en lista över frågemallar fö
 
 ### Skapa en frågemall
 
-Du kan skapa en frågemall genom att göra en POST-begäran till `/query-templates` slutpunkten.
+Du kan skapa en frågemall genom att göra en POST-förfrågan till `/query-templates` slutpunkten.
 
 **API-format**
 
@@ -174,7 +174,7 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om den n
 
 ### Hämta en angiven frågemall
 
-Du kan hämta en specifik frågemall genom att göra en GET-begäran till `/query-templates/{TEMPLATE_ID}` slutpunkten och ange frågemallens ID i sökvägen till begäran.
+Du kan hämta en viss frågemall genom att göra en GET-begäran till `/query-templates/{TEMPLATE_ID}` slutpunkten och ange frågemallens ID i sökvägen till begäran.
 
 **API-format**
 
@@ -248,7 +248,7 @@ PUT /query-templates/{TEMPLATE_ID}
 
 >[!NOTE]
 >
->PUT-begäran kräver att både sql- och namnfältet fylls i, och kommer att **skriva över** det aktuella innehållet i frågemallen.
+>Begäran från PUT kräver att både sql- och namnfältet fylls i, och kommer att **skriva över** det aktuella innehållet i frågemallen.
 
 ```shell
 curl -X PUT https://platform.adobe.io/data/foundation/query/query-templates/0094d000-9062-4e6a-8fdb-05606805f08f
