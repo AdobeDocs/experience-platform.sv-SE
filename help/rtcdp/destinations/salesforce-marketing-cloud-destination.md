@@ -1,8 +1,8 @@
 ---
 title: Salesforce Marketing Cloud
 seo-title: Salesforce Marketing Cloud
-description: Salesforce Marketing Cloud är en digital marknadsföringssvit som tidigare kallades ExactTarget och som gör att ni kan skapa och anpassa resor för besökare och kunder för att personalisera deras upplevelse.
-seo-description: Salesforce Marketing Cloud är en digital marknadsföringssvit som tidigare kallades ExactTarget och som gör att ni kan skapa och anpassa resor för besökare och kunder för att personalisera deras upplevelse.
+description: Salesforce Marketing Cloud är en digital marknadsföringssvit som tidigare kallades ExactTarget som gör att ni kan skapa och anpassa resor för besökare och kunder för att personalisera deras upplevelse.
+seo-description: Salesforce Marketing Cloud är en digital marknadsföringssvit som tidigare kallades ExactTarget som gör att ni kan skapa och anpassa resor för besökare och kunder för att personalisera deras upplevelse.
 translation-type: tm+mt
 source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
 workflow-type: tm+mt
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 [!DNL Salesforce Marketing Cloud](https://www.salesforce.com/products/marketing-cloud/email-marketing/) är en digital marknadsföringssvit som tidigare kallades ExactTarget som gör att ni kan skapa och anpassa resor för besökare och kunder för att personalisera deras upplevelse.
 
-Om du vill skicka segmentdata till [!DNL Salesforce Marketing Cloud]måste du först [ansluta målet](#connect-destination) i Adobe Real-time CDP och sedan [konfigurera en dataimport](#import-data-into-salesforce) från lagringsplatsen till [!DNL Salesforce Marketing Cloud].
+Om du vill skicka segmentdata till [!DNL Salesforce Marketing Cloud]måste du först [ansluta målet](#connect-destination) i Adobe CDP i realtid och sedan [konfigurera en dataimport](#import-data-into-salesforce) från lagringsplatsen till [!DNL Salesforce Marketing Cloud].
 
 ## Koppla mål {#connect-destination}
 
@@ -49,4 +49,4 @@ När du [aktiverar segment](/help/rtcdp/destinations/activate-destinations.md) t
 
 ## Konfigurera dataimport i [!DNL Salesforce Marketing Cloud] {#import-data-into-salesforce}
 
-När du har anslutit CDP i realtid till din Amazon S3- eller SFTP-lagring måste du konfigurera dataimporten från din lagringsplats till [!DNL Salesforce Marketing Cloud]. Mer information om hur du gör detta finns i [Importera prenumeranter till Marketing Cloud från en fil](https://help.salesforce.com/articleView?id=mc_es_import_subscribers_from_file.htm&amp;type=5) i [!DNL Salesforce Help Center].
+När du har anslutit CDP i realtid till din Amazon S3- eller SFTP-lagring måste du konfigurera dataimporten från lagringsplatsen till [!DNL Salesforce Marketing Cloud]. Mer information om hur du gör detta finns i [Importera prenumeranter till Marketing Cloud från en fil](https://help.salesforce.com/articleView?id=mc_es_import_subscribers_from_file.htm&amp;type=5) i [!DNL Salesforce Help Center].
