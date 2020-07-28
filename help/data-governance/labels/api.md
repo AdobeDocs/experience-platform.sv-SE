@@ -28,7 +28,7 @@ För att kunna anropa de [!DNL Dataset Service] slutpunkter som beskrivs i det h
 
 ## Visa alla etiketter {#list-labels}
 
-Med API:t [!DNL Policy Service] kan du lista alla `core` - eller `custom` etiketter genom att göra en GET-begäran till `/labels/core` eller `/labels/custom`.
+Med hjälp av [!DNL Policy Service] API:t kan du lista alla `core` - eller `custom` etiketter genom att göra en GET-förfrågan till `/labels/core` eller `/labels/custom`.
 
 **API-format**
 
@@ -298,7 +298,7 @@ PUT /datasets/{DATASET_ID}/labels
 
 **Begäran**
 
-Följande POST-begäran lägger till en serie etiketter i datauppsättningen samt ett specifikt fält i den datauppsättningen. Fälten i nyttolasten är desamma som skulle behövas för en PUT-begäran.
+Följande begäran om POST lägger till en serie etiketter i datauppsättningen samt ett specifikt fält i datauppsättningen. Fälten i nyttolasten är desamma som skulle behövas för en PUT-begäran.
 
 ```shell
 curl -X POST \
