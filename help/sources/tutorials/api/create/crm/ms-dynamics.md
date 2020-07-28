@@ -65,7 +65,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 Innan du ansluter [!DNL Platform] till ett [!DNL Dynamics] konto måste du verifiera att det finns anslutningsspecifikationer för [!DNL Dynamics]. Om det inte finns några anslutningsspecifikationer går det inte att ansluta.
 
-Varje tillgänglig källa har en egen unik uppsättning anslutningsspecifikationer för att beskriva kopplingsegenskaper som autentiseringskrav. Du kan söka efter anslutningsspecifikationer för [!DNL Dynamics] genom att utföra en GET-begäran och använda frågeparametrar.
+Varje tillgänglig källa har en egen unik uppsättning anslutningsspecifikationer för att beskriva kopplingsegenskaper som autentiseringskrav. Du kan söka efter anslutningsspecifikationer för [!DNL Dynamics] genom att utföra en GET-förfrågan och använda frågeparametrar.
 
 **API-format**
 
@@ -144,7 +144,7 @@ Ett lyckat svar returnerar anslutningsspecifikationerna för [!DNL Dynamics], in
 
 En basanslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en basanslutning krävs per [!DNL Dynamics] konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
 
-Utför följande POST-begäran för att skapa en basanslutning.
+Utför följande POST-förfrågan för att skapa en basanslutning.
 
 **API-format**
 
@@ -183,7 +183,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `auth.params.serviceUri` | Den tjänst-URI som är associerad med din [!DNL Dynamics] instans. |
-| `auth.params.username` | Användarnamnet som är associerat med ditt [!DNL Dynamics] konto. |
+| `auth.params.username` | Det användarnamn som är kopplat till ditt [!DNL Dynamics] konto. |
 | `auth.params.password` | Lösenordet som är kopplat till ditt [!DNL Dynamics] konto. |
 | `connectionSpec.id` | Anslutningsspecifikationen `id` för ditt [!DNL Dynamics] konto som hämtades i föregående steg. |
 
