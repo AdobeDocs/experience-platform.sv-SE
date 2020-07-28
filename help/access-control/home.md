@@ -18,7 +18,7 @@ ht-degree: 1%
 
 ## Åtkomststyrningshierarki och arbetsflöde
 
-Om du vill konfigurera åtkomstkontroll för [!DNL Experience Platform]måste du ha administratörsbehörighet för en organisation som har en [!DNL Experience Platform] produktintegrering. Minimirollen som beviljar eller återkallar behörigheter är en **[!UICONTROL product profile administrator]**. Andra administratörsroller som kan hantera behörigheter är **[!UICONTROL product administrators]** (kan hantera alla profiler i en produkt) och **[!UICONTROL system administrators]** (inga begränsningar). Mer information finns i Adobe Help Center-artikeln om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html) .
+Om du vill konfigurera åtkomstkontroll för [!DNL Experience Platform]måste du ha administratörsbehörighet för en organisation som har en [!DNL Experience Platform] produktintegrering. Minimirollen som beviljar eller återkallar behörigheter är en **[!UICONTROL product profile administrator]**. Andra administratörsroller som kan hantera behörigheter är **[!UICONTROL product administrators]** (kan hantera alla profiler i en produkt) och **[!UICONTROL system administrators]** (inga begränsningar). Mer information finns i Adobe Help Center artikel om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html) .
 
 >[!NOTE]
 >
@@ -39,7 +39,7 @@ Alla anrop till [!DNL Experience Platform] API:er valideras för behörigheter o
 
 ## Adobe Admin Console
 
-Adobe Admin Console är en central plats för hantering av berättiganden och åtkomst för Adobe-produkter. Via konsolen kan du ge grupper av användare åtkomstbehörigheter för olika [!DNL Platform] funktioner, till exempel&quot;[!UICONTROL Manage Datasets]&quot;,&quot;[!UICONTROL View Datasets]&quot; eller&quot;[!UICONTROL Manage Profiles]&quot;.
+Adobe Admin Console är en central plats för hantering av Adobe produktberättiganden och åtkomst för din organisation. Via konsolen kan du ge grupper av användare åtkomstbehörigheter för olika [!DNL Platform] funktioner, till exempel&quot;[!UICONTROL Manage Datasets]&quot;,&quot;[!UICONTROL View Datasets]&quot; eller&quot;[!UICONTROL Manage Profiles]&quot;.
 
 ### Produktprofiler
 
