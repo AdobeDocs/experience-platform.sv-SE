@@ -14,11 +14,11 @@ ht-degree: 3%
 
 # Bläddra i arbetsytan för åtkomstkontroll
 
-Om du vill konfigurera åtkomstkontroll för [!DNL Experience Platform] via Adobe Admin Console måste du vara administratör för en IMS-organisation som har en prenumeration på [!DNL Experience Platform]. Även om Adobe stöder flexibla administratörshierarkier för IMS-organisationer måste du ha **[!UICONTROL system administrator]**, **[!UICONTROL product administrator]** eller **[!UICONTROL product profile administrator]** behörighet för att konfigurera åtkomstkontroll. Mer information finns i Adobe Help Center-artikeln om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html) .
+Om du vill konfigurera åtkomstkontroll för [!DNL Experience Platform] via Adobe Admin Console måste du vara administratör för en IMS-organisation som har en prenumeration på [!DNL Experience Platform]. Adobe stöder flexibla administratörshierarkier för IMS-organisationer, men du måste ha **[!UICONTROL system administrator]** behörighet **[!UICONTROL product administrator]** eller **[!UICONTROL product profile administrator]** behörighet att konfigurera åtkomstkontroll. Mer information finns i Adobe Help Center artikel om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html) .
 
 Om du inte har administratörsbehörighet kontaktar du systemadministratören för att få åtkomst.
 
-När du har administratörsbehörighet går du till [Adobe Admin Console](https://adminconsole.adobe.com) och loggar in med dina Adobe-uppgifter. När du är inloggad visas sidan för den IMS-organisation som du har administratörsbehörighet för. *[!UICONTROL Overview]* På den här sidan visas de produkter som din IMS-organisation prenumererar på, tillsammans med andra kontroller för att lägga till användare och administratörer i IMS-organisationen som helhet. Klicka **[!UICONTROL Adobe Experience Platform]** för att öppna arbetsytan för åtkomstkontroll för din [!DNL Platform] integrering.
+När du har administratörsbehörighet går du till [Adobe Admin Console](https://adminconsole.adobe.com) och loggar in med inloggningsuppgifterna för Adobe. När du är inloggad visas sidan för den IMS-organisation som du har administratörsbehörighet för. *[!UICONTROL Overview]* På den här sidan visas de produkter som din IMS-organisation prenumererar på, tillsammans med andra kontroller för att lägga till användare och administratörer i IMS-organisationen som helhet. Klicka **[!UICONTROL Adobe Experience Platform]** för att öppna arbetsytan för åtkomstkontroll för din [!DNL Platform] integrering.
 
 ![overview-page](../images/overview-page.png)
 
