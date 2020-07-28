@@ -40,7 +40,7 @@ Det första steget i att skapa en DULE-policy är att avgöra vilka marknadsför
 
 ### Slå upp en befintlig marknadsföringsåtgärd {#look-up}
 
-Du kan söka efter befintliga marknadsföringsåtgärder som ska utvärderas av din DULE-princip genom att göra en GET-begäran till en av `/marketingActions` slutpunkterna.
+Du kan slå upp befintliga marknadsföringsåtgärder som ska utvärderas av din DULE-policy genom att göra en GET-förfrågan till någon av `/marketingActions` slutpunkterna.
 
 **API-format**
 
@@ -221,7 +221,7 @@ Det här uttrycket kallas ett **principuttryck** och är ett objekt som innehål
 >
 >Endast operatorerna OR och AND stöds.
 
-När du har konfigurerat ditt principuttryck kan du skapa en ny DULE-princip genom att göra en POST-begäran till `/policies/custom` slutpunkten.
+När du har konfigurerat ditt principuttryck kan du skapa en ny DULE-princip genom att göra en POST-förfrågan till `/policies/custom` slutpunkten.
 
 **API-format**
 
