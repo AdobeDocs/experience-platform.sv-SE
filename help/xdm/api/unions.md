@@ -119,7 +119,7 @@ Ett lyckat svar returnerar detaljerna för det uppdaterade schemat, som nu inneh
 
 När du ställer in &quot;union&quot;-taggen på ett schema skapar och underhåller [!DNL Schema Registry] automatiskt en union för den klass som schemat baseras på. Facken `$id` liknar standarden `$id` för en klass, där den enda skillnaden är den som läggs till med två understreck och ordet &quot;union&quot; (`"__union"`).
 
-Om du vill visa en lista över tillgängliga fackföreningar kan du utföra en GET-begäran till `/unions` slutpunkten.
+Om du vill visa en lista över tillgängliga fackföreningar kan du utföra en GET-förfrågan till `/unions` slutpunkten.
 
 **API-format**
 
@@ -164,7 +164,7 @@ Ett lyckat svar returnerar HTTP-status 200 (OK) och en `results` array i svarste
 
 ## Söka efter en specifik union
 
-Du kan visa en specifik union genom att utföra en GET-begäran som innehåller `$id` och, beroende på Acceptera huvud, en del eller all information om unionen.
+Du kan visa en specifik union genom att utföra en GET-förfrågan som innehåller fackets `$id` huvud och, beroende på vad som gäller för Acceptera, vissa eller alla detaljer om unionen.
 
 >[!NOTE]
 >
@@ -249,7 +249,7 @@ Svarsformatet beror på vilket Acceptera-huvud som skickas i begäran. Experimen
 
 ## Visa scheman i en union
 
-För att se vilka scheman som ingår i en specifik union kan du utföra en GET-begäran med hjälp av frågeparametrar för att filtrera scheman i innehavarbehållaren.
+För att se vilka scheman som ingår i en viss union kan du utföra en GET-förfrågan med hjälp av frågeparametrar för att filtrera scheman i innehavarbehållaren.
 
 Med hjälp av frågeparametern kan du konfigurera svaret så att det bara returnerar scheman som innehåller ett `property` fält och en `meta:immutableTags` `meta:class` som är lika med den klass vars union du använder.
 
