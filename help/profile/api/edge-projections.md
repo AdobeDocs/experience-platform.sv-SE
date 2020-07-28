@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Konfiguration och slutpunkter för kantprojektion
 
-För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Adobe Experience Platform ger realtidsåtkomst till data genom att använda kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Adobe-program som Adobe Target och Adobe Campaign använder kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten. Den här guiden innehåller detaljerade anvisningar om hur du använder API:t för att arbeta med kantprognoser, inklusive mål och konfigurationer. [!DNL Real-time Customer Profile]
+För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Adobe Experience Platform ger realtidsåtkomst till data genom att använda kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Till exempel använder Adobe-program som Adobe Target och Adobe Campaign kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten. Den här guiden innehåller detaljerade anvisningar om hur du använder API:t för att arbeta med kantprognoser, inklusive mål och konfigurationer. [!DNL Real-time Customer Profile]
 
 ## Komma igång
 
@@ -29,7 +29,7 @@ En projektion kan dirigeras till en eller flera kanter genom att ange var data s
 
 ### Visa alla mål
 
-Du kan lista de kantmål som redan har skapats för din organisation genom att göra en GET-begäran till `/config/destinations` slutpunkten.
+Du kan lista de kantmål som redan har skapats för din organisation genom att göra en GET-förfrågan till `/config/destinations` slutpunkten.
 
 **API-format**
 
@@ -102,14 +102,14 @@ Svaret innehåller en `projectionDestinations` array med information om varje m�
 
 | Egenskap | Beskrivning |
 |---|---|
-| `_links.self.href` | På den översta nivån matchar sökvägen som användes för att göra GET-begäran. Inom varje enskilt målobjekt kan den här sökvägen användas i en GET-begäran för att söka efter information om ett specifikt mål direkt. |
+| `_links.self.href` | På den översta nivån matchar den sökväg som användes för att göra en GET-förfrågan. I varje enskilt målobjekt kan den här sökvägen användas i en GET-begäran för att söka efter information om ett specifikt mål direkt. |
 | `id` | I varje målobjekt `"id"` visas det skrivskyddade, systemgenererade unika ID:t för målet. Detta ID används vid referens till ett specifikt mål och när projektionskonfigurationer skapas. |
 
 Mer information om attributen för ett enskilt mål finns i följande avsnitt om [att skapa ett mål](#create-a-destination) .
 
 ### Skapa ett mål {#create-a-destination}
 
-Om målet som du vill använda inte redan finns, kan du skapa ett nytt projektionsmål genom att göra en POST-begäran till `/config/destinations` slutpunkten.
+Om målet som du vill använda inte redan finns, kan du skapa ett nytt projektionsmål genom att göra en POST-förfrågan till `/config/destinations` slutpunkten.
 
 **API-format**
 
@@ -122,7 +122,7 @@ POST /config/destinations
 Följande begäran skapar ett nytt kantmål.
 
 >[!NOTE]
->POST-begäran om att skapa ett mål kräver en specifik `Content-Type` rubrik, vilket visas nedan. Om du använder ett felaktigt `Content-Type` huvud genereras ett HTTP-statusfel 415 (medietypen stöds inte).
+>POSTENS begäran om att skapa ett mål kräver ett specifikt `Content-Type` huvud, vilket visas nedan. Om du använder ett felaktigt `Content-Type` huvud genereras ett HTTP-statusfel 415 (medietypen stöds inte).
 
 ```shell
 curl -X POST \
@@ -177,7 +177,7 @@ Ett lyckat svar returnerar information om det nya kantmålet, inklusive det skri
 
 ### Visa ett mål
 
-Om du känner till det unika ID:t för ett projektionsmål kan du utföra en uppslagsbegäran för att visa information om det. Detta gör du genom att göra en GET-begäran till `/config/destinations` slutpunkten och inkludera ID:t för destinationen i sökvägen för begäran.
+Om du känner till det unika ID:t för ett projektionsmål kan du utföra en uppslagsbegäran för att visa information om det. Detta gör du genom att göra en GET-begäran till `/config/destinations` slutpunkten och inkludera ID:t för destinationen i begärandesökvägen.
 
 **API-format**
 
@@ -224,7 +224,7 @@ Svarsobjektet visar information om projektionsmålet. Attributet `id` ska matcha
 
 ### Uppdatera ett mål
 
-En befintlig destination kan uppdateras genom att en PUT-begäran görs till `/config/destinations` slutpunkten och med ID:t för destinationen som ska uppdateras i begärandesökvägen. Den här åtgärden _skriver_ om målet, och därför måste samma attribut anges i texten i begäran som när ett nytt mål skapas.
+En befintlig destination kan uppdateras genom att en PUT-begäran görs till `/config/destinations` slutpunkten och med ID:t för den destination som ska uppdateras i den begärda sökvägen. Den här åtgärden _skriver_ om målet, och därför måste samma attribut anges i texten i begäran som när ett nytt mål skapas.
 
 >[!CAUTION]
 >API-svaret på uppdateringsbegäran är omedelbart, men ändringarna av projektionerna tillämpas asynkront. Det finns alltså en tidsskillnad mellan när uppdateringen av måldefinitionen görs och när den tillämpas.
@@ -244,7 +244,7 @@ PUT /config/destinations/{DESTINATION_ID}
 Följande begäran uppdaterar det befintliga målet så att det inkluderar en andra plats (`dataCenters`).
 
 >[!IMPORTANT]
->PUT-begäran kräver ett specifikt `Content-Type` huvud, vilket visas nedan. Om du använder ett felaktigt `Content-Type` huvud genereras ett HTTP-statusfel 415 (medietypen stöds inte).
+>Begäran från PUT kräver ett specifikt `Content-Type` huvud, vilket visas nedan. Om du använder ett felaktigt `Content-Type` huvud genereras ett HTTP-statusfel 415 (medietypen stöds inte).
 
 ```shell
 curl -X PUT \
@@ -329,7 +329,7 @@ Projektionskonfigurationer ger information om vilka data som ska vara tillgängl
 
 ### Visa alla projektionskonfigurationer
 
-Du kan lista alla projektionskonfigurationer som har skapats för din organisation genom att göra en GET-begäran till `/config/projections` slutpunkten. Du kan också lägga till valfria parametrar i sökvägen för begäran för att komma åt projektionskonfigurationer för ett visst schema eller söka efter en enskild projektion efter dess namn.
+Du kan lista alla projektionskonfigurationer som har skapats för din organisation genom att göra en GET-förfrågan till `/config/projections` slutpunkten. Du kan också lägga till valfria parametrar i sökvägen för begäran för att komma åt projektionskonfigurationer för ett visst schema eller söka efter en enskild projektion efter dess namn.
 
 **API-format**
 
@@ -429,7 +429,7 @@ POST /config/projections?schemaName={SCHEMA_NAME}
 **Begäran**
 
 >[!NOTE]
->POST-begäran om att skapa en konfiguration kräver en specifik `Content-Type` rubrik, vilket visas nedan. Om du använder ett felaktigt `Content-Type` huvud genereras ett HTTP-statusfel 415 (medietypen stöds inte).
+>POSTENS begäran om att skapa en konfiguration kräver ett specifikt `Content-Type` huvud, vilket visas nedan. Om du använder ett felaktigt `Content-Type` huvud genereras ett HTTP-statusfel 415 (medietypen stöds inte).
 
 ```shell
 curl -X POST \
