@@ -5,19 +5,22 @@ title: Utvecklarhandbok för sandbox-API
 topic: developer guide
 translation-type: tm+mt
 source-git-commit: b4741cdfd065bbaed7f2feeafe8619191e4b8f6c
+workflow-type: tm+mt
+source-wordcount: '337'
+ht-degree: 0%
 
 ---
 
 
 # Utvecklarhandbok för sandbox-API
 
-Sandlådor i Adobe Experience Platform erbjuder isolerade utvecklingsmiljöer där du kan testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka produktionsmiljön.
+Sandlådor i Adobe Experience Platform har isolerade utvecklingsmiljöer där du kan testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka produktionsmiljön.
 
 Den här utvecklarhandboken innehåller steg som hjälper dig att använda sandbox-API:t för att hantera sandlådor i Experience Platform, och innehåller exempel på API-anrop för att utföra olika åtgärder.
 
 ## Komma igång med sandbox-API
 
-För att kunna hantera sandlådor för din IMS-organisation måste du ha administratörsbehörighet för sandlådan. Användare utan åtkomstbehörighet kan bara använda slutpunkten för att [visa aktiva sandlådor för den aktuella användaren](./list-active-sandboxes.md). Mer information om hur du tilldelar sandlådebehörigheter för Experience Platform finns i [åtkomstkontrollsöversikten](../../access-control/home.md) .
+För att kunna hantera sandlådor för din IMS-organisation måste du ha administratörsbehörighet för sandlådan. Användare utan åtkomstbehörighet kan bara använda slutpunkten för att [visa aktiva sandlådor för den aktuella användaren](./list-active-sandboxes.md). Mer information om hur du tilldelar sandlådebehörigheter till Experience Platform finns i översikten över [](../../access-control/home.md) åtkomstkontrollen.
 
 ### Läser exempel-API-anrop
 
@@ -25,7 +28,7 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 ### Samla in värden för obligatoriska rubriker
 
-Den här guiden kräver att du har slutfört [autentiseringssjälvstudiekursen](../../tutorials/authentication.md) för att kunna ringa anrop till plattforms-API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, enligt nedan:
+Den här guiden kräver att du har slutfört [autentiseringssjälvstudiekursen](../../tutorials/authentication.md) för att kunna anropa Platform API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
