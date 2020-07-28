@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Med sociala nätverksdestinationer kan ni aktivera profiler för era kampanjer för målgruppsanpassning, personalisering och undertryckning baserat på hashad-e-post.
 
-Adobe Real-time Customer Data Platform stöder för närvarande följande mål för sociala nätverk:
+Adobe kunddata i realtid Platform stöder för närvarande följande mål för sociala nätverk:
 
 * [Adobe Livefyre-tillägg](/help/rtcdp/destinations/adobe-livefyre-extension.md)
 * [!DNL Facebook](/help/rtcdp/destinations/facebook-destination.md)
