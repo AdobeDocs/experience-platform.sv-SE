@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Intelligenta tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskaplig expertis. Dessutom kan marknadsförare aktivera prognoser i [!DNL Adobe Experience Cloud]och [!DNL Adobe Experience Platform]från tredje part.
 
-Följande video är utformad för att ge stöd för din förståelse av intelligenta tjänster. I den här videon förklaras ett arbetsflöde på hög nivå med exempel på hur man använder affärssystem, och dessutom beskrivs funktionerna i både Attribution AI och Customer AI.
+Följande video är utformad för att ge stöd för din förståelse av intelligenta tjänster. I den här videon förklaras ett arbetsflöde på hög nivå med exempel på hur man använder affärssystem, och dessutom beskrivs funktionerna i både Attribution AI- och kunds-AI.
 
 >[!VIDEO](https://video.tv.adobe.com/v/32654?learn=on&quality=12)
 
@@ -48,7 +48,7 @@ Marknadsföringsanalytikern konfigurerar önskade prognoser genom att specificer
 
 ### Förutspå
 
-När modellerna har avslutat utbildningen och poängsättningen skrivs poängen tillbaka till Platform.
+Efter att modellerna har avslutat kursen och poängsättningen skrivs poängen tillbaka till Platform.
 
 ### Vidta åtgärder
 
@@ -56,4 +56,4 @@ Slutligen kan ni bestämma vilka åtgärder som ska vidtas med prognoserna, som 
 
 ## Nästa steg
 
-För närvarande erbjuder Intelligent Services attribuerings-AI och kundens AI. Med AI för attribuering kan marknadsförarna på ett intelligent sätt öka marknadsföringens effektivitet i alla kanaler och kampanjer. Mer information om Attribution AI finns i Översikt över [](./attribution-ai/overview.md)Attribution AI. Med kundens AI kan marknadsförarna personalisera kundupplevelserna överhuvudtaget. Mer information om kundens AI finns i Översikt över [kundens AI](./customer-ai/overview.md).
+För närvarande erbjuder Intelligent Services Attribution AI och AI. Med Attribution AI kan marknadsförarna på ett intelligent sätt effektivisera marknadsföringen i olika kanaler och kampanjer. Mer information om Attribution AI finns i [Attribution AI - översikt](./attribution-ai/overview.md). Med kundens AI kan marknadsförarna personalisera kundupplevelserna överhuvudtaget. Mer information om kundens AI finns i Översikt över [kundens AI](./customer-ai/overview.md).
