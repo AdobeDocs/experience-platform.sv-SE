@@ -20,7 +20,7 @@ I den här artikeln visas följande exempelomformningar som en utvecklare av Ext
 
 ### Exempelfiler
 
-Exempel på CSV- och JSON-filer finns i den offentliga ETL Reference- [!DNL GitHub] rapporten från Adobe:
+Exempelfiler för CSV och JSON finns i den offentliga ETL-referensrapporten [!DNL GitHub] som hanteras av Adobe:
 
 - [CRM_profiles.csv](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.csv)
 - [CRM_profiles.json](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.json)
