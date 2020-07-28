@@ -30,11 +30,11 @@ Uppdateringar av befintliga funktioner:
 
 ## [!DNL Real-time Customer Data Platform] {#rtcdp}
 
-Adobe Customer Data Platform (Real-time CDP) bygger på Adobe Experience Platform och hjälper företag att sammanföra kända och okända data för att aktivera kundprofiler med intelligent beslutsfattande under hela kundresan. CDP i realtid kombinerar flera datakällor för företag för att skapa enhetliga profiler i realtid som kan användas för att leverera personliga personaliserade kundupplevelser i alla kanaler och enheter.
+Adobe Real-time Customer Data Platform (CDP) bygger på Adobe Experience Platform och hjälper företag att samla in kända och okända data för att aktivera kundprofiler med intelligent beslutsfattande under hela kundresan. CDP i realtid kombinerar flera datakällor för företag för att skapa enhetliga profiler i realtid som kan användas för att leverera personliga personaliserade kundupplevelser i alla kanaler och enheter.
 
 [!DNL Real-time Customer Data Platform] innehåller verktyg för datastyrning, identitetshantering, avancerad segmentering och datavetenskap, så att ni kan skapa profiler och definiera målgrupper samt få djupgående insikter samtidigt som ni kan tillämpa strikta policyer för datastyrning.
 
-Adobe är kopplat till ett stort antal partners, för att inte tala om integreringar med Adobe Experience Cloud, så att ni kan aktivera dessa målgrupper sömlöst och leverera fantastiska kundupplevelser i alla kanaler, från personalisering på plats eller i appen till e-post, betalda medier, callcenters, anslutna enheter med mera.
+Adobe ansluter till ett stort antal partners, för att inte tala om integreringar med Adobe Experience Cloud, så att ni smidigt kan aktivera dessa målgrupper och leverera fantastiska kundupplevelser i alla kanaler, från personalisering på plats eller i appen till e-post, betalda medier, callcenters, anslutna enheter med mera.
 
 Med CDP i realtid kan man
 
@@ -43,19 +43,19 @@ Med CDP i realtid kan man
 * Generera användbara insikter och skala målgrupper med hjälp av AI och maskininlärning från Adobe Sensei som är framtagen för marknadsförare.
 * Leverera personaliserade upplevelser i realtid i alla kanaler och på alla destinationer.
 
-Mer information finns i dokumentationen [till](../../rtcdp/overview.md)Adobe Real-time Customer Data Platform.
+Mer information finns i Platform-dokumentationen [för kunddata i](../../rtcdp/overview.md)Adobe i realtid.
 
 **Viktiga funktioner**
 
 | Funktion | Beskrivning |
 |---|---|
-| Mål  | Färdiga integrationer med målplattformar som stöds av Adobes program [!DNL Real-time Customer Data Platform] som smidigt aktiverar data till dessa partners. Mer information finns i [Destinationer](#destinations) nedan. |
-| Kontrollpanel för måttuppgifter på startsida | På startsidan för Adobe Customer Data Platform (CDP i realtid) finns en mätinstrumentpanel med information om profiler och segment. Hemsidan innehåller även länkar till utbildningsmaterial. Se avsnittet om kunddata i [realtid Platform-statistik](#real-time-customer-data-platform-metrics) nedan. |
-| Källor | Du kan importera data från en mängd olika källor, till exempel Adobe Solutions, molnbaserad lagring, tredjepartsprogramvara och ditt CRM. Läs mer i avsnittet [Källor](#sources) nedan. |
+| Mål  | Färdiga integreringar med målplattformar som stöds av Adobe och [!DNL Real-time Customer Data Platform] som aktiverar data till dessa partners på ett smidigt sätt. Mer information finns i [Destinationer](#destinations) nedan. |
+| Kontrollpanel för måttuppgifter på startsida | På Adobe Real-time Customer Data Platform (Real-time CDP) hemsida finns en mätinstrumentpanel som visar information om profiler och segment. Hemsidan innehåller även länkar till utbildningsmaterial. Se avsnittet om kunddata i [realtid Platform-statistik](#real-time-customer-data-platform-metrics) nedan. |
+| Källor | Du kan importera data från en mängd olika källor som Adobe Solutions, molnbaserad lagring, tredjepartsprogramvara och CRM. Läs mer i avsnittet [Källor](#sources) nedan. |
 
 **[!DNL Real-time Customer Data Platform]mått **
 
-Hemsidan för Adobe Customer Data Platform (CDP i realtid), som innehåller en mätinstrumentpanel, visas när du loggar in på CDP i realtid.
+Hemsidan Adobe Real-time Customer Data Platform (Real-time CDP), som innehåller en mätinstrumentpanel, visas när du loggar in på CDP i realtid.
 
 Hemsidan är bara en av platserna där metriska kort visas. CDP ger dig mätkort i realtid genom hela upplevelsen. Dessa mätvärden ger information om data, profiler och målgrupper i systemet.
 
@@ -65,11 +65,11 @@ Mer information finns i [realtidsöversikten över kunddata i Platform](../../rt
 
 ## [!DNL Destinations] {#destinations}
 
-[!DNL Destinations] är färdiga integrationer med målplattformar som stöds av Adobes kunddata i realtid Platform som aktiverar data till dessa partners på ett smidigt sätt. Mer information finns i artikeln Översikt över [](../../rtcdp/destinations/destinations-overview.md) destinationer.
+[!DNL Destinations] är färdiga integreringar med målplattformar som stöds av Adobe Customer Data Platform i realtid och som aktiverar data till dessa partners på ett smidigt sätt. Mer information finns i artikeln Översikt över [](../../rtcdp/destinations/destinations-overview.md) destinationer.
 
 **Tillgängliga destinationer**
 
-I november-versionen stöder Adobes kunddata i realtid Platform följande destinationer:
+I november-versionen stöder Adobe kunddata i realtid Platform följande destinationer:
 
 * Advertising: [!DNL Google]
 * E-postmarknadsföring: Adobe Campaign, [!DNL Salesforce Marketing Cloud], [!DNL Responsys], [!DNL Oracle Eloqua
@@ -105,7 +105,7 @@ Mer information om källor finns i [Källor - översikt](../../sources/home.md).
 
 ## [!DNL Data Science Workspace] {#dsw}
 
-Med Adobe Experience Platform [!DNL Data Science Workspace] kan datavetare smidigt generera insikter från data och innehåll i olika Adobe-program och tredjepartssystem genom att skapa och driftsätta Machine Learning-modeller. [!DNL Data Science Workspace] är nära integrerat med [!DNL Platform] och driver hela livscykeln för datavetenskap, inklusive utforskning och förberedelse av XDM-data, följt av utveckling och driftsättning av modeller som automatiskt berikar [!DNL Real-time Customer Profile] med maskininlärningsinsikter.
+Adobe Experience Platform [!DNL Data Science Workspace] gör det möjligt för datavetare att sömlöst generera insikter från data och innehåll i olika Adobe-program och tredjepartssystem genom att bygga och driftsätta Machine Learning-modeller. [!DNL Data Science Workspace] är nära integrerat med [!DNL Platform] och driver hela livscykeln för datavetenskap, inklusive utforskning och förberedelse av XDM-data, följt av utveckling och driftsättning av modeller som automatiskt berikar [!DNL Real-time Customer Profile] med maskininlärningsinsikter.
 
 **Nya funktioner**
 
@@ -127,7 +127,7 @@ XDM är en öppet dokumenterad specifikation som utformats för att förbättra 
 | Funktion | Beskrivning |
 | ---------- | ------------ |
 | Meddelandeschema | Nytt schema som representerar meddelandedata som skickas under dataöverföringsprocessen. |
-| Adobe AdCloud DSP-scheman | Fem nya scheman har lagts till för att representera metadata för Adobe Advertising Cloud DSP (Demand-Side Platform): Placement, Campaign, Package, Advertiser, Account. |
+| Adobe AdCloud-DSP | Fem nya scheman har lagts till för att representera metadata för Adobe Advertising Cloud DSP (Demand-Side Platform) (DSP): Placement, Campaign, Package, Advertiser, Account. |
 | Blandning av implementeringsinformation för ExperienceEvent | Ny ExperienceEvent-blandning som lägger till ett standardfält för att lagra information om programmet som används för att samla in händelsen. |
 | [!DNL Profile Privacy] blanda | Ny profilblandning som lägger till fält som accepterar allmänna avanmälnings- och avanmälningssignaler för försäljning/delning för [!DNL Real-time Customer Profile]. |
 | Formatbegränsningar för `xdm:alternateDisplayInfo` | Fälten Rubrik och Beskrivning för `xdm:alternateDisplayInfo` måste båda vara strängar för att validera. |
@@ -163,7 +163,7 @@ Mer information om [!DNL Real-time Customer Profile]bland annat självstudiekurs
 
 ## [!DNL Segmentation Service] {#segmentation}
 
-Adobe Experience Platform [!DNL Segmentation Service] har ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper utifrån dina [!DNL Real-time Customer Profile] data. Dessa segment konfigureras och underhålls centralt [!DNL Platform]så att de är tillgängliga för alla Adobe-program.
+Adobe Experience Platform [!DNL Segmentation Service] har ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper utifrån dina [!DNL Real-time Customer Profile] data. Dessa segment konfigureras och underhålls centralt [!DNL Platform]så att de är lättillgängliga i alla Adobe-program.
 
 [!DNL Segmentation Service] definierar en viss underuppsättning profiler genom att beskriva kriterierna som särskiljer en säljbar grupp av personer inom kundbasen. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
 
@@ -174,7 +174,7 @@ Adobe Experience Platform [!DNL Segmentation Service] har ett användargränssni
 | Segment som byggstenar | När du skapar segment med hjälp av segmentbyggargränssnittet kan användare nu använda tidigare definierade segment som byggstenar för ytterligare segment. <ul><li>Se aktuellt medlemskap: uppdateringar när folk flyttar in och ut från målgrupper.</li><li>Kopieringslogik: använder den valda segmentdefinitionen och duplicerar den i det nya segmentet.</li></ul> |
 | Visa segmentmedlemskap efter ID-namnområde | Segmentmedlemskap kan nu visas med ID-namnutrymme (e-post, ECID och totalt antal). |
 | Stöd för RBAC | Segment Builder har nu stöd för grundläggande rollbaserade åtkomstkontroller och behörigheter. |
-| Förbättrat stöd för extern målgruppsdelning mellan [!DNL Platform] och Adobe-lösningar | Användare kan nu hämta externa (icke-[!DNL Experience Platform]) målgruppsmetadata i scenarier där antalet målgrupper är stort eller inte är känt på förhand. Den här versionen innehåller åtkomst till [!DNL Audience Manager] metadata för kunder som har etablerat lösningskonnektorn. Dessa målgruppsmetadata kan användas i Segment Builder för att skapa nya [!DNL Experience Platform] segment. <br/><br/> Dessutom kommer segment som skapats i [!DNL Experience Platform] nu att kunna användas i integrerade Adobe-lösningar, inklusive [!DNL Audience Manager], [!DNL Target]och [!DNL Ad Cloud]. |
+| Förbättrat stöd för extern målgruppsdelning mellan [!DNL Platform] och Adobe | Användare kan nu hämta externa (icke-[!DNL Experience Platform]) målgruppsmetadata i scenarier där antalet målgrupper är stort eller inte är känt på förhand. Den här versionen innehåller åtkomst till [!DNL Audience Manager] metadata för kunder som har etablerat lösningskonnektorn. Dessa målgruppsmetadata kan användas i Segment Builder för att skapa nya [!DNL Experience Platform] segment. <br/><br/> Dessutom kommer segment som skapats i [!DNL Experience Platform] nu att vara tillgängliga för användning i integrerade Adobe-lösningar, inklusive [!DNL Audience Manager], [!DNL Target]och [!DNL Ad Cloud]. |
 
 **Felkorrigeringar**
 
