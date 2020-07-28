@@ -31,7 +31,7 @@ Om ExperienceEvents dupliceras vill du troligen ignorera hela raden.
 
 >[!CAUTION]
 >
->Många DataSets i [!DNL Experience Platform], inklusive de som har producerats av Adobe Analytics Data Connector, har redan borttagning av dubbletter på ExperienceEvent-nivå. Därför är det inte nödvändigt att återanvända den här nivån av borttagning av dubbletter, vilket kommer att göra frågan långsammare. Det är viktigt att förstå källan till dina DataSets och veta om borttagning av dubbletter på ExperienceEvent-nivå redan har tillämpats. För alla datauppsättningar som direktuppspelas (till exempel uppspelningar från Adobe Target) måste du använda borttagning på ExperienceEvent-nivå eftersom dessa datakällor har semantik på minst en gång.
+>Många DataSets i [!DNL Experience Platform], inklusive de som har skapats av Adobe Analytics Data Connector, har redan borttagning av dubbletter på ExperienceEvent-nivå. Därför är det inte nödvändigt att återanvända den här nivån av borttagning av dubbletter, vilket kommer att göra frågan långsammare. Det är viktigt att förstå källan till dina DataSets och veta om borttagning av dubbletter på ExperienceEvent-nivå redan har tillämpats. För alla datauppsättningar som direktuppspelas (till exempel uppspelningar från Adobe Target) måste du använda borttagning på ExperienceEvent-nivå eftersom dessa datakällor har semantik på minst en gång.
 
 **Omfång:** Global
 
