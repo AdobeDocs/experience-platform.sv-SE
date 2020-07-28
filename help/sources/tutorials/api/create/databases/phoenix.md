@@ -78,7 +78,7 @@ POST /connections
 
 **Begäran**
 
-För att kunna skapa en [!DNL Phoenix] anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POST-begäran. Anslutningsspecifikationens ID för [!DNL Phoenix] är `102706fb-a5cd-42ee-afe0-bc42f017ff43`.
+För att kunna skapa en [!DNL Phoenix] anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikationens ID för [!DNL Phoenix] är `102706fb-a5cd-42ee-afe0-bc42f017ff43`.
 
 ```shell
 curl -X POST \
