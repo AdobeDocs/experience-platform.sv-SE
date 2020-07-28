@@ -20,7 +20,7 @@ Automatiserade utbildnings- och poängscheman definieras med en starttidsstämpe
 
 ## Skapa en MLService {#create-an-mlservice}
 
-Du kan skapa en MLService genom att utföra en POST-begäran och en nyttolast som ger ett namn för tjänsten och ett giltigt MLInstance-ID. Den MLInstance som används för att skapa en MLService behövs inte för att ha befintliga utbildningsexperter, men du kan välja att skapa MLService med en befintlig utbildad modell genom att ange motsvarande Experiment ID och ID för utbildningskörning.
+Du kan skapa en MLService genom att utföra en begäran om POST och en nyttolast som anger ett namn för tjänsten och ett giltigt MLInstance-ID. Den MLInstance som används för att skapa en MLService behövs inte för att ha befintliga utbildningsexperter, men du kan välja att skapa MLService med en befintlig utbildad modell genom att ange motsvarande Experiment ID och ID för utbildningskörning.
 
 **API-format**
 
@@ -108,7 +108,7 @@ Ett lyckat svar returnerar en nyttolast som innehåller information om den nylig
 
 ## Hämta en lista med MLServices {#retrieve-a-list-of-mlservices}
 
-Du kan hämta en lista över MLServices genom att utföra en enda GET-begäran. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](./appendix.md#query)av resurser i bilagan.
+Du kan hämta en lista över MLServices genom att utföra en enda begäran om GET. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](./appendix.md#query)av resurser i bilagan.
 
 **API-format**
 
@@ -167,7 +167,7 @@ Ett lyckat svar returnerar en lista över MLServices och deras detaljer inklusiv
 
 ## Hämta en specifik MLService {#retrieve-a-specific-mlservice}
 
-Du kan hämta information om en specifik expert genom att utföra en GET-begäran som innehåller det önskade MLService-ID:t i sökvägen för begäran.
+Du kan hämta information om en specifik Experiment genom att utföra en GET-begäran som innehåller det önskade MLService-ID:t i sökvägen för begäran.
 
 **API-format**
 
@@ -211,7 +211,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den beg
 
 ## Uppdatera en MLService {#update-an-mlservice}
 
-Du kan uppdatera en befintlig MLService genom att skriva över dess egenskaper via en PUT-begäran som inkluderar mål-MLService-ID:t i sökvägen för begäran och som tillhandahåller en JSON-nyttolast som innehåller uppdaterade egenskaper.
+Du kan uppdatera en befintlig MLService genom att skriva över dess egenskaper via en PUT-begäran som innehåller mål-MLService-ID:t i sökvägen för begäran och som tillhandahåller en JSON-nyttolast som innehåller uppdaterade egenskaper.
 
 >[!TIP]
 >
