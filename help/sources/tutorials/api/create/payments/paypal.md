@@ -75,7 +75,7 @@ POST /connections
 
 **Begäran**
 
-För att kunna skapa en [!DNL PayPal] anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POST-begäran. Anslutningsspecifikationens ID för [!DNL PayPal] är `221c7626-58f6-4eec-8ee2-042b0226f03b`.
+För att kunna skapa en [!DNL PayPal] anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikationens ID för [!DNL PayPal] är `221c7626-58f6-4eec-8ee2-042b0226f03b`.
 
 ```shell
 curl -X POST \
