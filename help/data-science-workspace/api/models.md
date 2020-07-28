@@ -18,7 +18,7 @@ En modell är en instans av ett maskininlärningsrecept som är utbildat med his
 
 ## Hämta en lista med modeller
 
-Du kan hämta en lista med modellinformation som tillhör alla modeller genom att utföra en GET-begäran till /models. Som standard sorteras den här listan från den äldsta modellen och resultatet begränsas till 25. Du kan välja att filtrera resultaten genom att ange vissa frågeparametrar. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](./appendix.md#query)av resurser i bilagan.
+Du kan hämta en lista med modellinformation som tillhör alla modeller genom att utföra en enda GET-begäran till /models. Som standard sorteras den här listan från den äldsta modellen och resultatet begränsas till 25. Du kan välja att filtrera resultaten genom att ange vissa frågeparametrar. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](./appendix.md#query)av resurser i bilagan.
 
 **API-format**
 
@@ -100,7 +100,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om modelle
 
 ## Hämta en specifik modell
 
-Du kan hämta en lista med modellinformation som tillhör en viss modell genom att utföra en GET-begäran och ange ett giltigt modell-ID i sökvägen för begäran. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](./appendix.md#query)av resurser i bilagan.
+Du kan hämta en lista med modellinformation som tillhör en viss modell genom att utföra en enda GET-begäran och ange ett giltigt modell-ID i sökvägen för begäran. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](./appendix.md#query)av resurser i bilagan.
 
 **API-format**
 
@@ -164,7 +164,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om din mod
 
 ## Registrera en förgenererad modell {#register-a-model}
 
-Du kan registrera en förgenererad modell genom att göra en POST-begäran till `/models` slutpunkten. För att kunna registrera din modell måste `modelArtifact` fil- och `model` egenskapsvärdena inkluderas i begärans innehåll.
+Du kan registrera en förgenererad modell genom att göra en POST-förfrågan till `/models` slutpunkten. För att kunna registrera din modell måste `modelArtifact` fil- och `model` egenskapsvärdena inkluderas i begärans innehåll.
 
 **API-format**
 
@@ -222,7 +222,7 @@ Du kan uppdatera en befintlig modell genom att skriva över dess egenskaper via 
 
 >[!TIP]
 >
->För att säkerställa att denna PUT-begäran lyckas föreslår vi att du först utför en GET-begäran för att hämta modellen efter ID. Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
+>För att PUT ska lyckas rekommenderar vi att du först utför en GET-förfrågan om att hämta modellen efter ID. Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
 
 **API-format**
 
@@ -373,7 +373,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller ett JSON-objekt med in
 
 ## Hämta en lista över transkodningar för en modell {#retrieve-transcoded-model-list}
 
-Du kan hämta en lista över transkodningar som har utförts på en modell genom att utföra en GET-begäran med din `{MODEL_ID}`.
+Du kan hämta en lista över transkodningar som har utförts på en modell genom att utföra en GET-förfrågan med din `{MODEL_ID}`.
 
 **API-format**
 
@@ -433,7 +433,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller ett json-objekt med en
 
 ## Hämta en specifik omkodad modell {#retrieve-transcoded-model}
 
-Du kan hämta en specifik omkodad modell genom att utföra en GET-begäran med din `{MODEL_ID}` och ID:t för en omkodad modell.
+Du kan hämta en viss omkodad modell genom att utföra en GET-förfrågan med din `{MODEL_ID}` och ID:t för en omkodad modell.
 
 **API-format**
 
