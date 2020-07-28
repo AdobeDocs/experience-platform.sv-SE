@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Målet [!DNL Azure Event Hubs] i Adobe Real-time CDP är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
+>Målet [!DNL Azure Event Hubs] i CDP i realtid i Adobe är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
 
 ## Översikt {#overview}
 
@@ -26,7 +26,7 @@ Du kan skapa en utgående anslutning i realtid till ditt [!DNL Azure Event Hubs]
 
 * Mer information om [!DNL Azure Event Hubs]finns i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about).
 * Mer information om hur du ansluter till [!DNL Azure Event Hubs] med API-anrop finns i [självstudiekursen](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md)om mål för direktuppspelning.
-* Om du vill ansluta till [!DNL Azure Event Hubs] med hjälp av Adobe Real-time CDP-användargränssnittet läser du avsnitten nedan.
+* Mer information om hur du ansluter till [!DNL Azure Event Hubs] med CDP-användargränssnittet i realtid i Adobe finns i avsnitten nedan.
 
 ![AWS Kinesis i användargränssnittet](/help/rtcdp/destinations/assets/azure-event-hubs-destination.png)
 
