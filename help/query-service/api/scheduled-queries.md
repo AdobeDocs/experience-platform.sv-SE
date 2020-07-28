@@ -20,7 +20,7 @@ Nu när du förstår vilka rubriker som ska användas kan du börja ringa anrop 
 
 ### Hämta en lista med schemalagda frågor
 
-Du kan hämta en lista över alla schemalagda frågor för din IMS-organisation genom att göra en GET-begäran till `/schedules` slutpunkten.
+Du kan hämta en lista över alla schemalagda frågor för din IMS-organisation genom att göra en GET-förfrågan till `/schedules` slutpunkten.
 
 **API-format**
 
@@ -124,7 +124,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över schemalagda frågo
 
 ### Skapa en ny schemalagd fråga
 
-Du kan skapa en ny schemalagd fråga genom att göra en POST-begäran till `/schedules` slutpunkten.
+Du kan skapa en ny schemalagd fråga genom att göra en POST-förfrågan till `/schedules` slutpunkten.
 
 **API-format**
 
@@ -223,7 +223,7 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om din n
 
 ### Begär information om en angiven schemalagd fråga
 
-Du kan hämta information för en specifik schemalagd fråga genom att göra en GET-begäran till `/schedules` slutpunkten och ange dess ID i sökvägen för begäran.
+Du kan hämta information för en viss schemalagd fråga genom att göra en GET-förfrågan till `/schedules` slutpunkten och ange dess ID i sökvägen för begäran.
 
 **API-format**
 
@@ -308,7 +308,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den angivna schema
 
 Du kan uppdatera informationen för en angiven schemalagd fråga genom att göra en PATCH-begäran till `/schedules` slutpunkten och ange dess ID i sökvägen för begäran.
 
-PATCH-begäran stöder två olika sökvägar: `/state` och `/schedule/schedule`.
+Begäran från PATCH stöder två olika sökvägar: `/state` och `/schedule/schedule`.
 
 ### Uppdatera status för schemalagd fråga
 
