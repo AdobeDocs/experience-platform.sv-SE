@@ -31,7 +31,7 @@ Dessa beslut kan sammanfattas i följande frågor:
 1. **Har jag märkt mina data korrekt?**
    * Data måste vara korrekt märkta för att tjänsten ska kunna avgöra vilka fält som ska användas eller tas bort under sekretessjobb. Mer information finns i avsnittet om [etikettdata](#label) .
 1. **Vet jag vilka ID:n jag ska skicka till[!DNL Privacy Service]?**
-   * När du skickar sekretessförfrågningar måste du ange individuella kund-ID:n som är specifika för vissa Adobe-program. Mer information finns i avsnitten om [att tillhandahålla identitetsdata](#identity) och [göra sekretessförfrågningar](#requests) .
+   * När sekretessförfrågningar skickas måste enskilda kund-ID:n som är specifika för vissa Adobe-program tillhandahållas. Mer information finns i avsnitten om [att tillhandahålla identitetsdata](#identity) och [göra sekretessförfrågningar](#requests) .
 1. **Hur spårar jag mina sekretessjobb?**
    * När du har gjort sekretessförfrågningar finns det flera alternativ för att spåra deras status och resultat. Mer information finns i avsnittet [Övervaka sekretessjobb](#monitor) .
 
@@ -55,7 +55,7 @@ Förutom lagar och andra författningar bör alla branschstandarder som är till
 
 ### Etikettdata för sekretessförfrågningar {#label}
 
-Beroende på vilka program du använder måste du märka de specifika datafält som ska vara tillgängliga eller tas bort som svar på sekretessförfrågningar. [!DNL Experience Cloud] Processen för att märka data varierar mellan olika program. Om du vill lära dig att märka data för alla Adobe-program som stöds läser du dokumentet om [Experience Cloud-program](./experience-cloud-apps.md).
+Beroende på vilka program du använder måste du märka de specifika datafält som ska vara tillgängliga eller tas bort som svar på sekretessförfrågningar. [!DNL Experience Cloud] Processen för att märka data varierar mellan olika program. Om du vill lära dig hur du etiketterar data för alla Adobe-program som stöds läser du dokumentet om [Experience Cloud-program](./experience-cloud-apps.md).
 
 ### Bestäm vilka typer av identitetsdata som ska skickas till [!DNL Privacy Service] {#identity}
 
@@ -63,7 +63,7 @@ För [!DNL Privacy Service] att kunna behandla en sekretessförfrågan från en 
 
 Beroende på vilka program ditt CRM-system använder varierar typen och antalet identitetsvärden som du måste ange för varje kund. [!DNL Experience Cloud] Vissa program använder sina egna interna ID-värden (t.ex. Adobe Target ID), medan andra lösningar använder globala ID:n från Adobe [!DNL Experience Cloud Identity Service] (ECID) som spårar kundaktivitet i alla [!DNL Experience Cloud] program. Dessutom kan allmän personlig information som en e-postadress eller ett telefonnummer också fungera som giltiga identitetsdata.
 
-Dokumentet om [identitetsdata för sekretessförfrågningar](./identity-data.md) innehåller mer detaljerad information om vilka typer av identitetsinformation som accepteras för [!DNL Privacy Service]. Dokumentet innehåller också riktlinjer för hur man kan utnyttja Adobes tekniker för att effektivt hämta lämplig identitetsinformation från kunderna när de interagerar med webbplatsen och skicka dessa data till API- [!DNL Privacy Service] förfrågningar.
+Dokumentet om [identitetsdata för sekretessförfrågningar](./identity-data.md) innehåller mer detaljerad information om vilka typer av identitetsinformation som accepteras för [!DNL Privacy Service]. Dokumentet innehåller också riktlinjer för hur man kan utnyttja Adobe-tekniker för att effektivt hämta lämplig identitetsinformation från era kunder när de interagerar med er webbplats och skicka dessa data till [!DNL Privacy Service] API-förfrågningar.
 
 ### Börja göra sekretessförfrågningar {#requests}
 
@@ -95,7 +95,7 @@ När du har gjort sekretessjobb har du flera alternativ för att övervaka statu
 | --- | --- |
 | [!DNL Privacy Service] UI | Användargränssnittet [!DNL Privacy Service] innehåller en kontrollpanel som gör att du kan visa en visuell representation av statusen för alla aktiva begäranden. Mer information finns i användarhandboken [för](ui/overview.md) Privacy Service. |
 | [!DNL Privacy Service] API | Du kan övervaka sekretessjobbens status programmatiskt med hjälp av sökslutpunkterna från [!DNL Privacy Service] API:t. Mer information om hur du använder API finns i [utvecklarhandboken](./api/getting-started.md) för Privacy Service. |
-| [!DNL Privacy Events] | [!DNL Privacy Events] utnyttja Adobe I/O Events som skickas till en konfigurerad webkrok för att underlätta automatisering av jobbförfrågningar. De minskar eller eliminerar behovet av att avfråga [!DNL Privacy Service] API för att kontrollera om ett jobb är färdigt eller om en viss milstolpe i ett arbetsflöde har nåtts. Mer information finns i självstudiekursen om hur du [prenumererar på sekretesshändelser](./privacy-events.md) . |
+| [!DNL Privacy Events] | [!DNL Privacy Events] utnyttja Adobe I/O-händelser som skickas till en konfigurerad webkrok för att underlätta en effektiv automatisering av jobbförfrågningar. De minskar eller eliminerar behovet av att avfråga [!DNL Privacy Service] API för att kontrollera om ett jobb är färdigt eller om en viss milstolpe i ett arbetsflöde har nåtts. Mer information finns i självstudiekursen om hur du [prenumererar på sekretesshändelser](./privacy-events.md) . |
 
 ## Nästa steg
 
