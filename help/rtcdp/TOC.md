@@ -30,8 +30,8 @@ ht-degree: 2%
       * [Sidan med målinformation](destinations/destination-details-page.md)
    * Målkatalog {#destinations-cat}
       * [Översikt över destinationskatalogen](destinations/destinations-catalog.md)
-      * Adobes destinationer{#adobe-destinations}
-         * [Översikt över Adobes destinationer](destinations/adobe-destinations.md)
+      * Adobe destinationer{#adobe-destinations}
+         * [Översikt över destinationer i Adobe](destinations/adobe-destinations.md)
          * [Adobe Campaign](destinations/adobe-campaign-destination.md)
       * Annonsmål{#advertising-destinations}
          * [Översikt över reklamdestinationer](destinations/advertising-destinations.md)
@@ -56,7 +56,7 @@ ht-degree: 2%
          * [Översikt över Analytics destinationer](destinations/analytics-destinations.md)
          * [Anpassa tillägg för webbplatsspårning](/help/rtcdp/destinations/adform-extension.md)
          * [Adobe Analytics-tillägg](/help/rtcdp/destinations/adobe-analytics-extension.md)
-         * [Adobe Media Analytics för ljud- och videotillägg](/help/rtcdp/destinations/adobe-video-analytics-extension.md)
+         * [Adobe Media Analytics for Audio and Video extension](/help/rtcdp/destinations/adobe-video-analytics-extension.md)
          * [Klickbart tillägg](/help/rtcdp/destinations/clicktale-extension.md)
          * [Innehållsfyrkantigt tillägg](/help/rtcdp/destinations/contentsquare-extension.md)
          * [Decibel-tillägg](/help/rtcdp/destinations/decibel-extension.md)
@@ -76,13 +76,13 @@ ht-degree: 2%
       * Lagringsmål i molnet{#cloud-storage}
          * [Översikt över destinationer för molnlagring](destinations/cloud-storage-destinations.md)
          * [Arbetsflöde för att skapa molnlagringsmål](/help/rtcdp/destinations/cloud-storage-destinations-workflow.md)
-         * [Amazon Kinesis-mål](/help/rtcdp/destinations/amazon-kinesis-destination.md)
+         * [Amazon Kinesis](/help/rtcdp/destinations/amazon-kinesis-destination.md)
          * [Amazon S3-mål](destinations/amazon-s3-destination.md)
          * [Azure Event Hubs-mål](/help/rtcdp/destinations/azure-event-hubs-destination.md)
          * [SFTP-mål](destinations/sftp-destination.md)
       * Data Management Platform-mål {#dmp-destinations}
          * [Datahantering - Platform destinationer - översikt](destinations/dmp-destinations.md)
-         * [Audience Manager DIL-tillägg](/help/rtcdp/destinations/aam-dil-extension.md)
+         * [Audience Manager DIL utökningen](/help/rtcdp/destinations/aam-dil-extension.md)
       * E-postmarknadsföringsmål{#email-destinations}
          * [Översikt över destinationer för e-postmarknadsföring](destinations/email-marketing-destinations.md)
          * [Adobe Campaign](destinations/adobe-campaign-destination.md)
