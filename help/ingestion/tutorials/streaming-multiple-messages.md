@@ -29,7 +29,7 @@ I den här självstudiekursen måste du också ha slutfört [autentiseringen til
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 
-Alla POST-begäranden kräver ytterligare en rubrik:
+Alla begäranden om POSTER kräver ytterligare en rubrik:
 
 - Innehållstyp: application/json
 
