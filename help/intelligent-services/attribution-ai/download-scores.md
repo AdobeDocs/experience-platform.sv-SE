@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;attribution ai;access scores;popular topics
 solution: Experience Platform
-title: Åtkomst till poäng i Attribution AI
+title: Åtkomst till bakgrundsmusik i Attribution AI
 topic: Accessing scores
 translation-type: tm+mt
 source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
@@ -12,19 +12,19 @@ ht-degree: 0%
 ---
 
 
-# Hämtar poäng i Attribution AI
+# Hämtar bakgrundsmusik i Attribution AI
 
-Det här dokumentet är en guide för nedladdning av poäng för Attribution AI.
+Det här dokumentet är en guide för nedladdning av bakgrundsmusik för Attribution AI.
 
 ## Komma igång
 
-Attribution AI gör att du kan hämta bakgrundsmusik i parquet-filformatet. Den här självstudien kräver att du har läst och slutfört nedladdningen av AI-poängen för Attribution i [guiden Komma igång](./getting-started.md) .
+Med Attribution AI kan du hämta bakgrundsmusik i parquet-filformatet. Den här självstudien kräver att du har läst och slutfört nedladdningen av bakgrundsmusik i guiden [Komma igång](./getting-started.md) .
 
-För att få åtkomst till bakgrundsmusik för Attribution AI måste du dessutom ha en tjänstinstans med statusen lyckad körning tillgänglig. Om du vill skapa en ny tjänstinstans går du till användarhandboken för [Attribution AI](./user-guide.md). Om du nyligen har skapat en tjänstinstans och den fortfarande håller på att träna och betygsätta, kan du vänta i 24 timmar tills den är klar.
+För att få åtkomst till bakgrundsmusik för Attribution AI måste du dessutom ha en tjänstinstans med statusen lyckad körning tillgänglig. Om du vill skapa en ny tjänstinstans går du till [Attribution AI användarhandbok](./user-guide.md). Om du nyligen har skapat en tjänstinstans och den fortfarande håller på att träna och betygsätta, kan du vänta i 24 timmar tills den är klar.
 
 ## Hitta ditt datauppsättnings-ID {#dataset-id}
 
-Klicka på listrutan *Fler åtgärder* i den övre högra navigeringen i tjänstinstansen för AI-insikter om attribuering och välj sedan **[!UICONTROL Access scores]**.
+Klicka på listrutan *Fler åtgärder* i den övre högra navigeringen i tjänstinstansen och välj sedan Attribution AI **[!UICONTROL Access scores]**.
 
 ![fler åtgärder](./images/download-scores/more-actions.png)
 
@@ -166,7 +166,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller ett `_links` objekt. I
 
 ## Hämta dina filer {#retrieving-your-files}
 
-Använd det `href` värde du fick i föregående steg som ett API-anrop för att skapa en ny GET-begäran för att hämta din filkatalog.
+Använd det `href` värde du fick i föregående steg som ett API-anrop för att göra en ny GET-förfrågan om att hämta din filkatalog.
 
 **API-format**
 
@@ -214,14 +214,14 @@ Svaret innehåller en datamatris som kan ha en enda post eller en lista med file
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `_links.self.href` | URL:en för GET-begäran som används för att hämta en fil i din katalog. |
+| `_links.self.href` | Den URL för GET-begäran som används för att hämta en fil i din katalog. |
 
 
 Kopiera `href` värdet för alla filobjekt i `data` arrayen och fortsätt till nästa steg.
 
 ## Hämta fildata
 
-Om du vill hämta fildata gör du en GET-begäran till det `"href"` värde du kopierade i föregående steg när du [hämtade dina filer](#retrieving-your-files).
+Om du vill hämta fildata skickar du en GET till det `"href"` värde du kopierade i föregående steg när du [hämtade filerna](#retrieving-your-files).
 
 >[!NOTE]
 >
@@ -251,7 +251,7 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/01E5QSWC
 
 >[!TIP]
 >
->Kontrollera att du är i rätt katalog eller mapp som du vill att filen ska sparas i innan du gör GET-begäran.
+>Se till att du är i rätt katalog eller mapp som du vill att filen ska sparas i innan du skickar GETEN.
 
 **Svar**
 
@@ -261,19 +261,19 @@ Svaret hämtar filen som du begärde i din aktuella katalog. I det här exemplet
 
 ## Nästa steg
 
-I det här dokumentet beskrivs stegen som krävs för att hämta AI-poäng för attribuering. Nu kan du fortsätta att söka bland de andra [intelligenta tjänsterna](../home.md) och guiderna som erbjuds.
+I det här dokumentet beskrivs stegen som krävs för att hämta bakgrundsmusik för Attribution AI. Nu kan du fortsätta att söka bland de andra [intelligenta tjänsterna](../home.md) och guiderna som erbjuds.
 
 ## Åtkomst till bakgrundsmusik med Snowflake
 
 >[!IMPORTANT]
 >
->Kontakta attributionai-support@adobe.com om du vill ha mer information om hur du får åtkomst till bakgrundsmusik med SnowFlake.
+>Kontakta attributionai-support@adobe.com om du vill ha mer information om hur du får åtkomst till bakgrundsmusik med Snowflake.
 
-Du kan komma åt AI-poäng för sammanställd attribuering via Snowflake. För närvarande måste du skicka e-post till Adobes support på attributionai-support@adobe.com för att kunna konfigurera och ta emot inloggningsuppgifterna till ditt läsarkonto för Snowflake.
+Du kan komma åt aggregerade Attribution AI via Snowflake. För närvarande måste du skicka e-post till supporten för Adobe på attributionai-support@adobe.com för att kunna konfigurera och ta emot inloggningsuppgifterna till ditt läsarkonto för Snowflake.
 
-När Adobes support har bearbetat din begäran får du en URL för läsarkontot till Snowflake och motsvarande uppgifter nedan:
+När supporten för Adobe har bearbetat din begäran, får du en URL för läsarkontot till Snowflake och motsvarande uppgifter nedan:
 
-- Snöflinga URL
+- Snowflake URL
 - Användarnamn
 - Lösenord
 
@@ -283,7 +283,7 @@ När Adobes support har bearbetat din begäran får du en URL för läsarkontot 
 
 När du har dina inloggningsuppgifter och URL-adresser kan du söka efter modelltabellerna, aggregerade efter kontaktpunktsdatum eller konverteringsdatum.
 
-### Hitta ditt schema i snöflake
+### Hitta ditt schema i Snowflake
 
 Logga in på Snowflake med de angivna inloggningsuppgifterna. Klicka på fliken **Kalkylblad** i den övre vänstra navigeringen och navigera sedan till din databaskatalog i den vänstra panelen.
 
@@ -293,11 +293,11 @@ Klicka sedan på **Välj schema** i skärmens övre högra hörn. Bekräfta att 
 
 ![hitta ett schema](./images/download-scores/edited_snowflake_2.png)
 
-## Ansluta PowerBI till snöflake (valfritt)
+## Ansluta PowerBI till Snowflake (valfritt)
 
-Dina Snowflake-autentiseringsuppgifter kan användas för att skapa en anslutning mellan PowerBI Desktop- och Snowflake-databaser.
+Dina inloggningsuppgifter för Snowflake kan användas för att skapa en anslutning mellan PowerBI Desktop och Snowflake-databaser.
 
-Skriv först in webbadressen för snöflake i rutan *Server* . Skriv sedan in &quot;XSMALL&quot; under *Lagerställe*. Ange sedan ditt användarnamn och lösenord.
+Skriv först Snowflake-URL:en i rutan *Server* . Skriv sedan in &quot;XSMALL&quot; under *Lagerställe*. Ange sedan ditt användarnamn och lösenord.
 
 ![exempel på POWERBI](./images/download-scores/powerbi-snowflake.png)
 
