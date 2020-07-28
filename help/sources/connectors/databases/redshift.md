@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Amazon Redshift-kontakt
+title: Amazon Redshift-anslutning
 topic: overview
 translation-type: tm+mt
 source-git-commit: 3b5e76afea5689dbd59f64f6192e6ef2a6acb7d3
@@ -57,11 +57,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Amazon Re
 
 ## Anslut [!DNL Amazon Redshift] till [!DNL Platform] med API:er
 
-- [Skapa en Amazon Redshift-kontakt med API:t för Flow Service](../../tutorials/api/create/databases/redshift.md)
+- [Skapa en Amazon Redshift-koppling med API:t för Flow Service](../../tutorials/api/create/databases/redshift.md)
 - [Utforska ett databassystem med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
 - [Samla in data från en databas med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
 
 ## Ansluta [!DNL Amazon Redshift] till [!DNL Platform] användargränssnittet
 
-- [Skapa en källanslutning till Amazon Redshift i användargränssnittet](../../tutorials/ui/create/databases/redshift.md)
+- [Skapa en Amazon Redshift-källanslutning i användargränssnittet](../../tutorials/ui/create/databases/redshift.md)
 - [Konfigurera ett dataflöde för en databasanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
