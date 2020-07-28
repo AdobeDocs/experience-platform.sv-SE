@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Frågetjänst i anteckningsbok för Jupyter
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: 4f7d7e2bf255afe1588dbe7cfb2ec055f2dcbf75
 workflow-type: tm+mt
 source-wordcount: '750'
 ht-degree: 0%
@@ -38,13 +38,13 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
 
    ![](../images/jupyterlab/query/jupyterlab_launcher.png)
 
-   > [!NOTE] Om en ny startflik inte visas automatiskt öppnar du en ny startflik genom att klicka på **[!UICONTROL File]** och sedan välja **[!UICONTROL New Launcher]**.
+   >[!NOTE] Om en ny startflik inte visas automatiskt öppnar du en ny startflik genom att klicka på **[!UICONTROL File]** och sedan välja **[!UICONTROL New Launcher]**.
 
 2. På fliken Launcher klickar du på **[!UICONTROL Blank]** ikonen i en Python 3-miljö för att öppna en tom anteckningsbok.
 
    ![](../images/jupyterlab/query/blank_notebook.png)
 
-   > [!NOTE] Python 3 är för närvarande den enda miljö som stöds för frågetjänsten i bärbara datorer.
+   >[!NOTE] Python 3 är för närvarande den enda miljö som stöds för frågetjänsten i bärbara datorer.
 
 3. Klicka på **[!UICONTROL Data]** ikonen till vänster i markeringslisten och dubbelklicka på **[!UICONTROL Datasets]** katalogen för att visa alla datauppsättningar.
 
@@ -85,6 +85,7 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
    - `target_year` : Det specifika år som måldata kommer från.
    - `target_month` : Den månad som målet kommer från.
    - `target_day` : Den specifika dag som måldata kommer från.
+
    >[!NOTE] Du kan ändra dessa värden när som helst. När du gör det måste du se till att variablecellen körs för de ändringar som ska tillämpas.
 
 ## Fråga dina data {#query-your-data}
