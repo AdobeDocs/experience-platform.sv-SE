@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Skapa ett schema med [!DNL Schema Editor]
 
-Det [!DNL Schema Registry] innehåller ett användargränssnitt och RESTful API som du kan använda för att visa och hantera alla resurser i Adobe Experience Platform [!DNL Schema Library]. Här [!DNL Schema Library] finns resurser som Adobe, partners och leverantörer i Experience Platform har gett dig tillgång till, samt resurser som du definierar och sparar i [!DNL Schema Registry].
+Det [!DNL Schema Registry] innehåller ett användargränssnitt och RESTful API som du kan använda för att visa och hantera alla resurser i Adobe Experience Platform [!DNL Schema Library]. Här [!DNL Schema Library] finns resurser som Adobe, Experience Platform partners och leverantörer har gett dig tillgång till, samt resurser som du kan definiera och spara i [!DNL Schema Registry].
 
 I den här självstudiekursen beskrivs stegen för hur du skapar ett schema med Schemaredigeraren i [!DNL Experience Platform]. Om du föredrar att skapa ett schema med API:t för schemaregister börjar du med att läsa [utvecklarhandboken](../api/getting-started.md) för schemaregistret innan du försöker [skapa ett schema med API](create-schema-api.md).
 
