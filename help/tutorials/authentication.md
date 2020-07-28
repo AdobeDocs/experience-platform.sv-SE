@@ -18,7 +18,7 @@ I det här dokumentet finns en stegvis självstudiekurs för att få tillgång t
 
 ## Autentisera för att göra API-anrop
 
-För att skydda program och användare måste alla förfrågningar till Adobe I/O-API:er autentiseras och auktoriseras med standarder som OAuth och JSON Web Tokens (JWT). JWT används sedan tillsammans med klientspecifik information för att generera din personliga åtkomsttoken.
+För att skydda program och användare måste alla förfrågningar till API:er för Adobe I/O autentiseras och auktoriseras med standarder som OAuth och JSON Web Tokens (JWT). JWT används sedan tillsammans med klientspecifik information för att generera din personliga åtkomsttoken.
 
 I den här självstudiekursen beskrivs stegen för autentisering genom att skapa en åtkomsttoken som beskrivs i följande flödesschema:
 ![](images/authentication/authentication-flowchart.png)
@@ -55,7 +55,7 @@ Administratören måste tilldela dig som utvecklare minst en produktprofil för 
 
 ![](images/authentication/add-developer.png)
 
-När du har utsetts till utvecklare får du behörighet att skapa integreringar på [Adobe I/O](https://www.adobe.com/go/devs_console_ui). Dessa integreringar är en pipeline från externa program och tjänster till Adobe API.
+När du har tilldelats behörighet som utvecklare får du behörighet att skapa integreringar på [Adobe I/O](https://www.adobe.com/go/devs_console_ui). Dessa integreringar är en pipeline från externa program och tjänster till Adobe API.
 
 **Få användaråtkomst**
 
