@@ -29,7 +29,7 @@ Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhand
 
 ## Skapa en ad hoc-klass
 
-Databeteendet för ett XDM-schema bestäms av dess underliggande klass. Det första steget i att skapa ett ad hoc-schema är att skapa en klass baserat på `adhoc` beteendet. Detta görs genom att en POST-begäran görs till `/tenant/classes` slutpunkten.
+Databeteendet för ett XDM-schema bestäms av dess underliggande klass. Det första steget i att skapa ett ad hoc-schema är att skapa en klass baserat på `adhoc` beteendet. Detta görs genom att en POST skickas till `/tenant/classes` slutpunkten.
 
 **API-format**
 
@@ -39,7 +39,7 @@ POST /tenant/classes
 
 **Begäran**
 
-Följande begäran skapar en ny XDM-klass, konfigurerad med attributen som anges i nyttolasten. Genom att ange en `$ref` egenskap som anges `https://ns.adobe.com/xdm/data/adhoc` i `allOf` arrayen ärver den här klassen `adhoc` beteendet. Begäran definierar också ett `_adhoc` objekt som innehåller anpassade fält för klassen.
+Följande begäran skapar en ny XDM-klass som konfigurerats med attributen som anges i nyttolasten. Genom att ange en `$ref` egenskap som anges `https://ns.adobe.com/xdm/data/adhoc` i `allOf` arrayen ärver den här klassen `adhoc` beteendet. Begäran definierar också ett `_adhoc` objekt som innehåller anpassade fält för klassen.
 
 >[!NOTE]
 >
@@ -148,7 +148,7 @@ Ett lyckat svar returnerar informationen om den nya klassen och ersätter `prope
 
 ## Skapa ett ad hoc-schema
 
-När du har skapat en ad hoc-klass kan du skapa ett nytt schema som implementerar den klassen genom att göra en POST-begäran till `/tenant/schemas` slutpunkten.
+När du har skapat en ad hoc-klass kan du skapa ett nytt schema som implementerar den klassen genom att göra en POST-förfrågan till `/tenant/schemas` slutpunkten.
 
 **API-format**
 
@@ -225,7 +225,7 @@ Ett lyckat svar returnerar information om det nyligen skapade schemat, inklusive
 >
 >Det här steget är valfritt. Om du inte vill inspektera fältstrukturen i ditt ad hoc-schema kan du hoppa till [nästa steg](#next-steps) i slutet av kursen.
 
-När ad hoc-schemat har skapats kan du göra en sökbegäran (GET) för att visa schemat i dess utökade form. Detta görs genom att använda rätt Accept-huvud i GET-begäran, vilket visas nedan.
+När ad hoc-schemat har skapats kan du göra en sökning (GET)-begäran för att visa schemat i dess utökade form. Detta görs genom att använda rätt Accept-huvud i GET-begäran, vilket visas nedan.
 
 **API-format**
 
