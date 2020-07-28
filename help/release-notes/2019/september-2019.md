@@ -25,7 +25,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 ## [!DNL Data Ingestion] {#ingestion}
 
-Adobe Experience Platform har en mängd funktioner för att importera alla typer av data och fördröjningar. Adobe Experience Platform [!DNL Data Ingestion] erbjuder flera alternativ för datainhämtning, inklusive API:er för gruppbearbetning, API:er för direktuppspelning, inbyggda Adobe-anslutningar, dataintegrationspartners eller användargränssnittet för Adobe Experience Platform.
+Adobe Experience Platform har en mängd funktioner för att importera alla typer av data och fördröjningar. Adobe Experience Platform [!DNL Data Ingestion] erbjuder flera alternativ för inmatning av data, bland annat API:er för gruppbearbetning, API:er för direktuppspelning, Adobe-kopplingar, dataintegrationspartners och användargränssnittet för Adobe Experience Platform.
 
 **Nya funktioner**
 
@@ -37,7 +37,7 @@ Mer information finns i dokumentationen för [datainmatning](../../ingestion/hom
 
 ## [!DNL Data Science Workspace] {#dsw}
 
-Adobe Experience Platform [!DNL Data Science Workspace] är en helt hanterad tjänst inom [!DNL Experience Platform] vilken datavetare smidigt kan generera insikter från data och innehåll i olika Adobe-lösningar och tredjepartssystem genom att skapa och driftsätta Machine Learning-modeller. [!DNL Data Science Workspace] är nära integrerat med [!DNL Platform] och driver hela livscykeln för datavetenskap, inklusive utforskning och förberedelse av XDM-data, följt av utveckling och driftsättning av modeller som automatiskt berikar [!DNL Real-time Customer Profile] med maskininlärningsinsikter.
+Adobe Experience Platform [!DNL Data Science Workspace] är en helt hanterad tjänst inom [!DNL Experience Platform] vilken datavetare smidigt kan generera insikter från data och innehåll i olika Adobe-lösningar och tredjepartssystem genom att bygga och driftsätta Machine Learning-modeller. [!DNL Data Science Workspace] är nära integrerat med [!DNL Platform] och driver hela livscykeln för datavetenskap, inklusive utforskning och förberedelse av XDM-data, följt av utveckling och driftsättning av modeller som automatiskt berikar [!DNL Real-time Customer Profile] med maskininlärningsinsikter.
 
 **Nya funktioner**
 
