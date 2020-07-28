@@ -18,7 +18,7 @@ Modellutveckling och utbildning sker på expertnivå, där en expert består av 
 
 ## Skapa en expert {#create-an-experiment}
 
-Du kan skapa en expert genom att utföra en POST-begäran och samtidigt ange ett namn och ett giltigt MLInstance-ID i nyttolasten för begäran.
+Du kan skapa en Experiment genom att utföra en POST-förfrågan och samtidigt ange ett namn och ett giltigt MLInstance-ID i nyttolasten för begäran.
 
 >[!NOTE]
 >
@@ -71,7 +71,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den nyl
 
 ## Skapa och genomföra en utbildning eller ett poängprov {#experiment-training-scoring}
 
-Du kan skapa utbildnings- eller poängkörningar genom att utföra en POST-begäran och ange ett giltigt test-ID och specificera körningsaktiviteten. Bedömningskörningar kan bara skapas om experten har en befintlig och framgångsrik utbildning. En utbildningskurs kommer att initiera modellutbildningsproceduren och om den slutförs utan fel genereras en tränad modell. När du genererar utbildade modeller ersätts alla befintliga modeller, så att en expert bara kan använda en enda tränad modell åt gången.
+Du kan skapa utbildnings- eller poängkörningar genom att utföra en POST och ange ett giltigt test-ID och specificera körningsaktiviteten. Bedömningskörningar kan bara skapas om experten har en befintlig och framgångsrik utbildning. En utbildningskurs kommer att initiera modellutbildningsproceduren och om den slutförs utan fel genereras en tränad modell. När du genererar utbildade modeller ersätts alla befintliga modeller, så att en expert bara kan använda en enda tränad modell åt gången.
 
 **API-format**
 
@@ -133,7 +133,7 @@ Ett lyckat svar returnerar en nyttolast som innehåller information om den nylig
 
 ## Hämta en lista med experter
 
-Du kan hämta en lista med experter som tillhör en viss MLInstance genom att utföra en GET-begäran och ange ett giltigt MLInstance-ID som en frågeparameter. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](./appendix.md#query)av resurser i bilagan.
+Du kan hämta en lista över experter som tillhör en viss MLInstance genom att utföra en enda GET-begäran och ange ett giltigt MLInstance-ID som en frågeparameter. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](./appendix.md#query)av resurser i bilagan.
 
 
 **API-format**
@@ -199,7 +199,7 @@ Ett lyckat svar returnerar en lista med experter som delar samma MLInstance-ID (
 
 ## Hämta en specifik expert {#retrieve-specific}
 
-Du kan hämta information om en specifik expert genom att utföra en GET-begäran som innehåller det önskade Experimentets ID i sökvägen för begäran.
+Du kan hämta information om en specifik Experiment genom att utföra en GET-förfrågan som innehåller det önskade Experiment-ID:t i sökvägen för begäran.
 
 **API-format**
 
@@ -242,7 +242,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den beg
 
 ## Hämta en lista med Experimentkörningar
 
-Du kan hämta en lista över utbildnings- eller poängsättningskörningar som tillhör en viss Experiment genom att utföra en GET-förfrågan och ange ett giltigt test-ID. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En fullständig lista över tillgängliga frågeparametrar finns i avsnittet i bilagan om [frågeparametrar för hämtning](./appendix.md#query)av resurser.
+Du kan hämta en lista över utbildnings- eller poängsättningskörningar som tillhör en viss Experiment genom att utföra en enda GET-förfrågan och ange ett giltigt test-ID. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En fullständig lista över tillgängliga frågeparametrar finns i avsnittet i bilagan om [frågeparametrar för hämtning](./appendix.md#query)av resurser.
 
 >[!NOTE]
 >
@@ -303,11 +303,11 @@ Ett godkänt svar returnerar en nyttolast som innehåller en lista över körnin
 
 ## Uppdatera en expert
 
-Du kan uppdatera en befintlig Experiment genom att skriva över dess egenskaper via en PUT-begäran som inkluderar målExperimentens ID i den begärda sökvägen och som tillhandahåller en JSON-nyttolast som innehåller uppdaterade egenskaper.
+Du kan uppdatera en befintlig Experiment genom att skriva över dess egenskaper via en PUT-begäran som innehåller målExperimentens ID i sökvägen för begäran och som tillhandahåller en JSON-nyttolast som innehåller uppdaterade egenskaper.
 
 >[!TIP]
 >
->För att säkerställa att denna PUT-begäran lyckas föreslår vi att du först utför en GET-begäran för att [hämta Experiment via ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
+>För att PUT ska lyckas rekommenderar vi att du först utför en GET-förfrågan för att [hämta Experimentet via ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
 
 I följande exempel på API-anrop uppdateras en Experiments namn samtidigt som dessa egenskaper används från början:
 
