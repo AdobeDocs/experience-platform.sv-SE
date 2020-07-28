@@ -24,7 +24,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 * [Kundprofil](../../../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-## Skapa en källanslutning till Adobe Analytics
+## Skapa en källanslutning med Adobe Analytics
 
 Logga in på <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a> och välj sedan **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt källarbetsytan. På *katalogskärmen* visas tillgängliga källor för att skapa inkommande anslutningar, och varje källa visar antalet befintliga konton och datauppsättningsflöden som är kopplade till dem.
 
@@ -104,7 +104,7 @@ När anslutningen har skapats skapas automatiskt ett målschema och ett dataupps
 * [Översikt över arbetsytan Datavetenskap](../../../../../data-science-workspace/home.md)
 * [Översikt över frågetjänsten](../../../../../query-service/home.md)
 
-Följande video är tänkt att ge stöd för din förståelse av datainhämtning med hjälp av Adobe Analytics Source Connector:
+Följande video är tänkt att ge stöd för din förståelse av hur data importeras med Adobe Analytics Source Connector:
 
 >[!WARNING]
 >
