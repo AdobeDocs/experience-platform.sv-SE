@@ -65,7 +65,7 @@ Standardspråket för användargränssnittet avgörs av den region som anges i a
 
 >[!NOTE]
 >
-> Om du väljer en region bestäms språket och innehållet på Adobe.com.
+> Om du väljer ett område avgörs språket och innehållet på Adobe.com.
 
 1. Klicka på det aktuella språket i sidfoten i [!DNL Experience Platform] gränssnittet.
 2. Klicka på **[!UICONTROL Change Region]** i profilinställningarna.
@@ -83,7 +83,7 @@ Dokumentationen för Adobe Experience Platform finns på flera språk. Om du vil
 
 >[!NOTE]
 >
->Från och med maj 2020 kommer Adobe att lansera uppdateringar av domänen och huvudfältet för att ge en enhetlig och bättre upplevelse i alla Experience Cloud-program. Här finns en ny hjälpmeny. Den nya hjälpmenyn innehåller följande:
+>Från och med maj 2020 kommer Adobe att lansera uppdateringar av domänen och huvudfältet för att göra upplevelsen enhetlig och bättre i alla Experience Cloud-program. Här finns en ny hjälpmeny. Den nya hjälpmenyn innehåller följande:
 >
 >* Länkar till aktuella artiklar
 >* Sammanhangsberoende dokumentationsrekommendationer
@@ -126,7 +126,7 @@ Titta på följande video om du vill få en snabb genomgång av [!DNL Experience
 
 >[!VIDEO](https://video.tv.adobe.com/v/32554?quality=12&learn=on)
 
-En av de stora fördelarna med Adobe Experience Platform är möjligheten att integrera med andra befintliga Adobe-tjänster. I följande video visas hur [!DNL Experience Platform] tjänster kan integreras med [!DNL Experience Cloud] program och funktioner som Adobe Analytics, Adobe Target, Adobe Campaign, Adobe Experience Manager, [!DNL Customer Attributes][!DNL Audience Library]och [!DNL Experience Platform Launch].
+En av de största fördelarna med Adobe Experience Platform är dess förmåga att integrera med andra befintliga Adobe-tjänster. I följande video visas hur [!DNL Experience Platform] tjänster kan integreras med [!DNL Experience Cloud] program och funktioner som Adobe Analytics, Adobe Target, Adobe Campaign, Adobe Experience Manager, [!DNL Customer Attributes][!DNL Audience Library]och [!DNL Experience Platform Launch].
 
 >[!VIDEO](https://video.tv.adobe.com/v/32553?quality=12&learn=on)
 
