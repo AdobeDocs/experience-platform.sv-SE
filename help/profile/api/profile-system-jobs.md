@@ -99,11 +99,11 @@ Svaret innehåller en &quot;children&quot;-array med ett objekt för varje bortt
 
 ## Skapa en borttagningsbegäran {#create-a-delete-request}
 
-Initiering av en ny borttagningsbegäran görs via en POST-begäran till `/systems/jobs` slutpunkten, där ID:t för den datauppsättning eller batch som ska tas bort anges i förfrågningens innehåll.
+Initieringen av en ny borttagningsbegäran görs via en begäran om POST till `/systems/jobs` slutpunkten, där ID:t för den datauppsättning eller batch som ska tas bort anges i den aktuella begäran.
 
 ### Ta bort en datauppsättning
 
-För att en datauppsättning ska kunna tas bort måste datauppsättnings-ID:t inkluderas i POST-begärans innehåll. Den här åtgärden tar bort ALLA data för en viss datauppsättning. [!DNL Experience Platform] Med kan du ta bort datauppsättningar baserat på både schema för post- och tidsserier.
+Om du vill ta bort en datauppsättning måste datauppsättnings-ID:t inkluderas i POSTENS innehåll. Den här åtgärden tar bort ALLA data för en viss datauppsättning. [!DNL Experience Platform] Med kan du ta bort datauppsättningar baserat på både schema för post- och tidsserier.
 
 >[!CAUTION]
 > När du försöker ta bort en [!DNL Profile]aktiverad datauppsättning med [!DNL Experience Platform] användargränssnittet inaktiveras datauppsättningen för inmatning, men den tas inte bort förrän en borttagningsbegäran skapas med API:t. Mer information finns i [bilagan](#appendix) till det här dokumentet.
@@ -152,11 +152,11 @@ Ett lyckat svar returnerar information om den nyligen skapade borttagningsbegär
 | Egenskap | Beskrivning |
 |---|---|
 | `id` | Det unika, systemgenererade skrivskyddade ID:t för borttagningsbegäran. |
-| `dataSetId` | Datamängdens ID, enligt POST-begäran. |
+| `dataSetId` | Datauppsättningens ID, enligt POSTENS begäran. |
 
 ### Ta bort en grupp
 
-Om du vill ta bort en batch måste batch-ID:t inkluderas i BOKFÖR-begäran. Observera att du inte kan ta bort grupper för datauppsättningar baserat på postscheman. Endast grupper för datauppsättningar som baseras på tidsseriescheman kan tas bort.
+Om du vill ta bort en batch måste batch-ID:t inkluderas i POSTENS innehåll. Observera att du inte kan ta bort grupper för datauppsättningar baserat på postscheman. Endast grupper för datauppsättningar som baseras på tidsseriescheman kan tas bort.
 
 >[!NOTE]
 > Orsaken till att du inte kan ta bort batchar för datauppsättningar baserade på postscheman är att datauppsättningsbatchar skriver över tidigare poster och därför inte kan ångras eller tas bort. Det enda sättet att ta bort effekten av felaktiga batchar för datauppsättningar som baseras på postscheman är att importera om gruppen med rätt data för att skriva över felaktiga poster.
@@ -207,7 +207,7 @@ Ett lyckat svar returnerar information om den nyligen skapade borttagningsbegär
 | Egenskap | Beskrivning |
 |---|---|
 | `id` | Det unika, systemgenererade skrivskyddade ID:t för borttagningsbegäran. |
-| `batchId` | Batchens ID, enligt POST-begäran. |
+| `batchId` | Batchens ID, som anges i begäran om POST. |
 
 Om du försöker initiera en borttagningsbegäran för en postdatauppsättningsbatch kommer du att få ett 400-nivåfel, som följande:
 
@@ -227,7 +227,7 @@ Om du försöker initiera en borttagningsbegäran för en postdatauppsättningsb
 
 ## Visa en specifik borttagningsbegäran {#view-a-specific-delete-request}
 
-Om du vill visa en specifik borttagningsbegäran, inklusive information om dess status, kan du utföra en sökningsbegäran (GET) till `/system/jobs` slutpunkten och inkludera ID:t för borttagningsbegäran i sökvägen.
+Om du vill visa en viss borttagningsbegäran, inklusive information om dess status, kan du utföra en uppslagsbegäran (GET) till `/system/jobs` slutpunkten och inkludera ID:t för borttagningsbegäran i sökvägen.
 
 **API-format**
 
@@ -302,7 +302,7 @@ curl -X POST \
 
 **Svar**
 
-En slutförd borttagningsbegäran returnerar HTTP-status 200 (OK) och en tom svarstext. Du kan bekräfta att begäran togs bort genom att utföra en GET-begäran för att visa borttagningsbegäran med dess ID. Detta bör returnera HTTP-status 404 (Hittades inte), vilket anger att borttagningsbegäran togs bort.
+En slutförd borttagningsbegäran returnerar HTTP-status 200 (OK) och en tom svarstext. Du kan bekräfta att begäran har tagits bort genom att utföra en GET-begäran för att visa borttagningsbegäran med dess ID. Detta bör returnera HTTP-status 404 (Hittades inte), vilket anger att borttagningsbegäran togs bort.
 
 ## Nästa steg
 
