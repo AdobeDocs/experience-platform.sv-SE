@@ -5,13 +5,16 @@ description: I Adobe Real-time Customer Data Platform väljer du Destinationer i
 seo-description: I Adobe Real-time Customer Data Platform väljer du Destinationer i det vänstra navigeringsfältet för att komma åt målarbetsytan.
 translation-type: tm+mt
 source-git-commit: 336aa90cf1e059a92a36dd0ef3222ef6a6f5123b
+workflow-type: tm+mt
+source-wordcount: '562'
+ht-degree: 1%
 
 ---
 
 
 # Arbetsytan Destinationer {#destinations-workspace}
 
-I Adobe Real-time Customer Data Platform väljer du **[!UICONTROL Destinations]** från det vänstra navigeringsfältet för att komma åt [!UICONTROL Destinations] arbetsytan.
+I Adobe Real-time Customer Data Platform väljer du **[!UICONTROL Destinations]** i det vänstra navigeringsfältet för att komma åt [!UICONTROL Destinations] arbetsytan.
 
 Arbetsytan består [!UICONTROL Destinations] av fyra avsnitt, **[!UICONTROL Catalog]**, **[!UICONTROL Browse]**, **[!UICONTROL Accounts]** och **[!UICONTROL System View]**, som beskrivs i avsnitten nedan.
 
@@ -19,7 +22,7 @@ Arbetsytan består [!UICONTROL Destinations] av fyra avsnitt, **[!UICONTROL Cata
 
 ## [!UICONTROL Catalog] {#catalog}
 
-På fliken **[!UICONTROL Catalog]** visas en lista med alla destinationer som Adobe erbjuder och som du kan skicka data till.
+På fliken **[!UICONTROL Catalog]** visas en lista över alla mål som erbjuds av Adobe som du kan skicka data till.
 
 Använd sökfunktionen på sidan för att hitta ett specifikt mål eller filtrera mål med hjälp av **[!UICONTROL Categories]** kontrollen.
 
@@ -60,7 +63,7 @@ På fliken **[!UICONTROL Accounts]** kan du lära dig mer om anslutningar som du
 | Element | Beskrivning |
 ---------|----------
 | [!UICONTROL Platform] | Det mål som du har konfigurerat anslutningen för. |
-| [!UICONTROL Connection Type] | Representerar anslutningstypen för din lagringsbucket eller destination. <ul><li>För e-postmarknadsföringsmål: Kan vara S3 eller FTP.</li><li>För reklamdestinationer i realtid: Server-till-server</li><li>För Amazon S3 cloud storage-mål: Åtkomstnyckel </li><li>För SFTP-molnlagringsmål: Grundläggande autentisering för SFTP</li></ul> |
+| [!UICONTROL Connection Type] | Representerar anslutningstypen för din lagringsbucket eller destination. <ul><li>För e-postmarknadsföringsmål: Kan vara S3 eller FTP.</li><li>För reklamdestinationer i realtid: Server-till-server</li><li>För molnlagringsmål för Amazon S3: Åtkomstnyckel </li><li>För SFTP-molnlagringsmål: Grundläggande autentisering för SFTP</li></ul> |
 | [!UICONTROL Username] | Användarnamnet som du valde i [målguiden](/help/rtcdp/destinations/email-marketing-destinations.md#connect-destination)för anslutning. |
 | [!UICONTROL Data Flows] | Representerar antalet unika lyckade målflöden som är kopplade till grundläggande information som skapats för ett mål. |
 | [!UICONTROL Authorized] | Det datum då anslutningen till det här målet auktoriserades. |
@@ -68,7 +71,7 @@ På fliken **[!UICONTROL Accounts]** kan du lära dig mer om anslutningar som du
 
 ## [!UICONTROL System View] {#system-view}
 
-På **[!UICONTROL System View]** fliken visas en grafisk representation av de aktiveringsflöden som du har konfigurerat i kunddataplattformen i realtid.
+På **[!UICONTROL System View]** fliken visas en grafisk representation av de aktiveringsflöden som du har konfigurerat i Real-time Customer Data Platform.
 
 ![Data-flows1](/help/rtcdp/destinations/assets/data-flows1.png)
 
