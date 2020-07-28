@@ -73,7 +73,7 @@ POST /connections
 
 **Begäran**
 
-För att en ATS-anslutning ska kunna skapas måste dess unika anslutningsspec-ID anges som en del av POST-begäran. Anslutningsspecifikations-ID för ATS är `ecde33f2-c56f-46cc-bdea-ad151c16cd69`.
+För att en ATS-anslutning ska kunna skapas måste dess unika anslutningsspec-ID anges som en del av begäran om POST. Anslutningsspecifikations-ID för ATS är `ecde33f2-c56f-46cc-bdea-ad151c16cd69`.
 
 ```shell
 curl -X POST \
