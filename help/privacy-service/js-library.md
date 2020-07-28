@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Översikt över JavaScript-biblioteket för Adobes sekretess
+title: Översikt över JavaScript-biblioteket Adobe Privacy
 topic: overview
 translation-type: tm+mt
 source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
@@ -12,9 +12,9 @@ ht-degree: 3%
 ---
 
 
-# Översikt över JavaScript-biblioteket för Adobes sekretess
+# Översikt över JavaScript-biblioteket Adobe Privacy
 
-Som personuppgiftsbiträde behandlar Adobe personuppgifter i enlighet med ditt företags tillstånd och instruktioner. Som personuppgiftsansvarig bestämmer du vilka personuppgifter Adobe behandlar och lagrar för din räkning. Beroende på vilken information du väljer att skicka via Adobe Experience Cloud-lösningar kan Adobe lagra privat information som gäller sekretessbestämmelser som [!DNL General Data Protection Regulation] (GDPR) och [!DNL California Consumer Privacy Act] (CCPA). Mer information om hur Experience Cloud lösningar samlar in privata data finns i dokumentet om [sekretess i Adobe Experience Cloud](https://www.adobe.com/privacy/marketing-cloud.html) .
+Som personuppgiftsbiträde behandlar Adobe personuppgifter i enlighet med ditt företags tillstånd och instruktioner. Som personuppgiftsansvarig bestämmer du vilka personuppgifter Adobe behandlar och lagrar för din räkning. Beroende på vilken information du väljer att skicka via Adobe Experience Cloud lösningar kan Adobe lagra privat information som är tillämplig på sekretessbestämmelser som [!DNL General Data Protection Regulation] (GDPR) och [!DNL California Consumer Privacy Act] (CCPA). Mer information om hur Experience Cloud lösningar samlar in privata data finns i dokumentet om [sekretess i Adobe Experience Cloud](https://www.adobe.com/privacy/marketing-cloud.html) .
 
 Med **Adobe Privacy JavaScript Library** kan personuppgiftsansvariga automatisera hämtningen av alla registrerade identiteter som genererats av [!DNL Experience Cloud] lösningar för en viss domän. Med hjälp av API:t från [Adobe Experience Platform Privacy Servicen](home.md)kan dessa identiteter sedan användas för att skapa åtkomst- och borttagningsbegäranden för privata data som tillhör de registrerade.
 
@@ -32,7 +32,7 @@ Följande tabell visar de olika funktionerna i biblioteket:
 | --- | --- |
 | `retrieveIdentities` | Returnerar en array med matchande identiteter (`validIds`) som hämtades från [!DNL Privacy Service]samt en array med identiteter som inte hittades (`failedIds`). |
 | `removeIdentities` | Tar bort varje matchande (giltig) identitet från webbläsaren. Returnerar en array med matchande identiteter (`validIds`), där varje identitet innehåller ett `isDeleteClientSide` booleskt värde som anger om detta ID har tagits bort. |
-| `retrieveThenRemoveIdentities` | Hämtar en array med matchande identiteter (`validIds`) och tar sedan bort dessa identiteter från webbläsaren. Även om den här funktionen liknar `removeIdentities`den är bäst att använda när den Adobe-lösning du använder kräver en åtkomstbegäran innan det går att ta bort den (till exempel när en unik identifierare måste hämtas innan den kan tas bort). |
+| `retrieveThenRemoveIdentities` | Hämtar en array med matchande identiteter (`validIds`) och tar sedan bort dessa identiteter från webbläsaren. Även om den här funktionen liknar `removeIdentities`den är bäst att använda när Adobe-lösningen som du använder kräver en åtkomstbegäran innan det går att ta bort den (till exempel när en unik identifierare måste hämtas innan den kan tas bort). |
 
 >[!NOTE]
 >
@@ -51,7 +51,7 @@ Om du vill börja använda [!DNL Privacy JS Library]programmet måste du install
 
 ## Instansiera [!DNL Privacy JS Library]
 
-Alla program som använder [!DNL Privacy JS Library] måste skapa ett nytt `AdobePrivacy` objekt som måste konfigureras till en viss Adobe-lösning. En instans för Adobe Analytics ser till exempel ut ungefär så här:
+Alla program som använder [!DNL Privacy JS Library] måste skapa ett nytt `AdobePrivacy` objekt som måste konfigureras till en viss Adobe-lösning. En instans för Adobe Analytics skulle till exempel se ut ungefär så här:
 
 ```js
 var adobePrivacy = new AdobePrivacy({
@@ -63,7 +63,7 @@ var adobePrivacy = new AdobePrivacy({
 });
 ```
 
-En fullständig lista över parametrar som stöds för olika Adobe-lösningar finns i bilagan om [Adobe-lösningens konfigurationsparametrar](#adobe-solution-configuration-parameters)som stöds.
+En fullständig lista över parametrar som stöds för olika Adobe-lösningar finns i bilagan om konfigurationsparametrar [för](#adobe-solution-configuration-parameters)Adobe-lösningar som stöds.
 
 ## Kodexempel
 
@@ -177,16 +177,16 @@ Genom att läsa det här dokumentet har du lagts till i de centrala funktionerna
 
 Detta avsnitt innehåller ytterligare information om hur du använder [!DNL Privacy JS Library].
 
-### Adobe Solution configuration parameters
+### Konfigurationsparametrar för Adobe-lösningar
 
-Nedan följer en lista över godkända konfigurationsparametrar för de Adobe-lösningar som stöds, som används när ett AdobePrivacy-objekt [](#instantiate-the-privacy-js-library)instansieras.
+Nedan följer en lista över godkända konfigurationsparametrar för Adobe-lösningar som stöds, som används vid [instansiering av ett AdobePrivacy-objekt](#instantiate-the-privacy-js-library).
 
 **Adobe Analytics**
 
 | Parameter | Beskrivning |
 | --- | --- |
 | `cookieDomainPeriods` | Antalet perioder i en domän för cookie-spårning (standard är 2). |
-| `dataCenter` | Datacenter för datainsamling från Adobe. Detta bör bara inkluderas om det anges i JavaScript-webbfyren. Möjliga värden är: <ul><li>&quot;d1&quot;: San Jose datacenter.</li><li>&quot;d2&quot;: Dallas datacenter.</li></ul> |
+| `dataCenter` | Datacenter för datainsamling i Adobe. Detta bör bara inkluderas om det anges i JavaScript-webbfyren. Möjliga värden är: <ul><li>&quot;d1&quot;: San Jose datacenter.</li><li>&quot;d2&quot;: Dallas datacenter.</li></ul> |
 | `reportSuite` | Rapportera Suite-ID enligt inställningarna i JavaScript-webbfyren (till exempel &quot;s_code.js&quot; eller &quot;dtm&quot;). |
 | `trackingServer` | Domän för datainsamling (inte SSL). Detta bör bara inkluderas om det anges i JavaScript-webbfyren. |
 | `trackingServerSecure` | Domän för datainsamling (SSL). Detta bör bara inkluderas om det anges i JavaScript-webbfyren. |
