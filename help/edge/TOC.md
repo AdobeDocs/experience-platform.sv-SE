@@ -32,7 +32,7 @@ ht-degree: 10%
 * Vad som ska implementeras {#implement}
    * [Produkter](what-to-implement/commerce.md)
 * Lösningsspecifika överväganden {#solutions}
-   * Analyser {#analytics}
+   * Analytics {#analytics}
       * [Analytics - översikt](solution-specific/analytics/analytics-overview.md)
       * [Mappa variabler manuellt i Analytics](solution-specific/analytics/manually-mapping-variables.md)
       * [Automatiskt mappade variabler](solution-specific/analytics/automatically-mapped-vars.md)
