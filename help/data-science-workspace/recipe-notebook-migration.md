@@ -54,7 +54,7 @@ Innan du skapar Docker-bilden ska du läsa exemplen för att läsa och skriva da
 
 #### Läs en datauppsättning
 
-I det här avsnittet beskrivs de ändringar som behövs för att läsa en datauppsättning och det exempel på [helper.scala](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/scala/src/main/scala/com/adobe/platform/ml/helper/Helper.scala) som tillhandahålls av Adobe används.
+I det här avsnittet beskrivs de ändringar som behövs för att läsa en datauppsättning och i exemplet [helper.scala](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/scala/src/main/scala/com/adobe/platform/ml/helper/Helper.scala) , som tillhandahålls av Adobe, används.
 
 **Gammalt sätt att läsa en datauppsättning**
 
@@ -190,7 +190,7 @@ Innan du skapar Docker-bilden ska du läsa exemplen för att läsa och skriva da
 
 #### Läs en datauppsättning
 
-I det här avsnittet beskrivs de ändringar som behövs för att läsa en datauppsättning med hjälp av exemplet [helper.py](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/pyspark/pysparkretailapp/helper.py) från Adobe.
+I det här avsnittet beskrivs de ändringar som behövs för att läsa en datauppsättning med hjälp av [help.py](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/pyspark/pysparkretailapp/helper.py) -exemplet som tillhandahålls av Adobe.
 
 **Gammalt sätt att läsa en datauppsättning**
 
@@ -225,7 +225,7 @@ pd = sparkSession.read.format("com.adobe.platform.query")
 
 #### Skriv till en datauppsättning
 
-I det här avsnittet beskrivs de ändringar som behövs för att skriva en datauppsättning med hjälp av exemplet [data_saver.py](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/pyspark/pysparkretailapp/data_saver.py) , som tillhandahålls av Adobe.
+I det här avsnittet beskrivs de ändringar som behövs för att skriva en datauppsättning med hjälp av [exemplet data_saver.py](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/pyspark/pysparkretailapp/data_saver.py) , som tillhandahålls av Adobe.
 
 **Gammalt sätt att skriva en datauppsättning**
 
@@ -334,7 +334,7 @@ Om du vill konvertera dina befintliga bärbara PySpark 3 ([!DNL Spark] 2.3)-dato
 
 PySpark 3 ([!DNL Spark] 2.4) bärbara datorer använder Python 3 Kernel i stället för den borttagna PySpark-kernel som används i PySpark 3 (Spark 2.3 - utgått) bärbara datorer.
 
-Om du vill bekräfta eller ändra kärnan i [!DNL JupyterLab] användargränssnittet markerar du kernelknappen som finns i det övre högra navigeringsfältet i anteckningsboken. Om du använder en av de fördefinierade bärbara startdatorerna är kärnan förvald. I exemplet nedan används startprogrammet för den bärbara datorn PySpark 3 ([!DNL Spark] 2.4) *Aggregation* .
+Om du vill bekräfta eller ändra kerneln i [!DNL JupyterLab] användargränssnittet markerar du kernelknappen som finns i det övre högra navigeringsfältet i anteckningsboken. Om du använder en av de fördefinierade bärbara startdatorerna är kärnan förvald. I exemplet nedan används startprogrammet för den bärbara datorn PySpark 3 ([!DNL Spark] 2.4) *Aggregation* .
 
 ![check kernel](./images/migration/pyspark-migration/check-kernel.png)
 
@@ -762,7 +762,7 @@ Den [!DNL Spark] ([!DNL Spark] 2.3 - borttagen) bärbara datorn använder [!DNL 
 
 **Scala ([!DNL Spark]2.4)**
 
-Scala ([!DNL Spark] 2.4)-anteckningsboken använder Scala-kernel, vilket kräver fler värden vid konfiguration, vilket markeras i den första kodcellen. Dessutom `var mdata` kräver fler `option` värden att fyllas i. I den här anteckningsboken inkluderas den tidigare nämnda koden för [initiering av SparkSession](#initialize-sparksession-scala) i `var mdata` -kodcellen.
+Scala ([!DNL Spark] 2.4)-anteckningsboken använder Scala-kernel som kräver fler värden vid konfiguration, vilket markeras i den första kodcellen. Dessutom `var mdata` kräver fler `option` värden att fyllas i. I den här anteckningsboken inkluderas den tidigare nämnda koden för [initiering av SparkSession](#initialize-sparksession-scala) i `var mdata` -kodcellen.
 
 ![ladda gnista 2.4](./images/migration/spark-scala/load-2.4.png)
 
