@@ -20,13 +20,13 @@ Det här dokumentet innehåller en översikt över [!DNL JupyterLab] och dess fu
 
 ## [!DNL JupyterLab] på [!DNL Experience Platform]
 
-Integreringen av Experience Platform JupyterLab åtföljs av arkitektoniska förändringar, designöverväganden, anpassade tillägg till bärbara datorer, förinstallerade bibliotek och ett Adobe-tematiskt gränssnitt.
+Integreringen av Experience Platform JupyterLab åtföljs av arkitektoniska förändringar, designöverväganden, anpassade utbyggnadsmoduler för bärbara datorer, förinstallerade bibliotek och ett gränssnitt med Adobe-teman.
 
 I följande lista beskrivs några av de funktioner som är unika för JupyterLab på Platform:
 
 | Funktion | Beskrivning |
 | --- | --- |
-| **Kernlar** | Kernels ger möjlighet att köra och granska kod i olika programmeringsspråk för bärbara datorer och andra [!DNL JupyterLab] gränssnitt. [!DNL Experience Platform] innehåller ytterligare kernel som stöder utveckling i [!DNL Python], R, PySpark och [!DNL Spark]. Mer information finns i avsnittet [Kernlar](#kernels) . |
+| **Kernlar** | Kernels ger möjlighet att köra och granska kod i olika programmeringsspråk för bärbara datorer och andra [!DNL JupyterLab] gränssnitt. [!DNL Experience Platform] har ytterligare kernel som stöder utveckling i [!DNL Python], R, PySpark och [!DNL Spark]. Mer information finns i avsnittet [Kernlar](#kernels) . |
 | **Dataåtkomst** | Få tillgång till befintliga datauppsättningar direkt inifrån [!DNL JupyterLab] med fullt stöd för läs- och skrivfunktioner. |
 | **[!DNL Platform]tjänstintegration ** | Inbyggda integreringar gör att du kan använda andra [!DNL Platform] tjänster direkt inifrån [!DNL JupyterLab]. En fullständig lista över integreringar som stöds finns i avsnittet om [integrering med andra Platform-tjänster](#service-integration). |
 | **Autentisering** | Förutom <a href="https://jupyter-notebook.readthedocs.io/en/latest/security.html" target="_blank">JupyterLab:s inbyggda säkerhetsmodell</a>krypteras och autentiseras all interaktion mellan programmet och Experience Platform, inklusive Platform kommunikation från tjänst till tjänst, via <a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">[!DNL Adobe Identity Management System] (IMS)</a>. |
@@ -388,7 +388,7 @@ df <- dataset_reader$limit(100L)$offset(10L)$read()
 
 ### Läs från en datauppsättning i PySpark/[!DNL Spark]/Scala
 
-När en aktiv PySpark- eller Scala-anteckningsbok är öppen expanderar du fliken **Datautforskaren** från det vänstra sidofältet och dubbelklickar på **Datauppsättningar** för att visa en lista över tillgängliga datauppsättningar. Högerklicka på den datauppsättning som du vill få åtkomst till och klicka på **Utforska data i anteckningsbok**. Följande kodceller genereras:
+Med en aktiv PySpark- eller Scala-anteckningsbok öppen utökar du fliken **Data Explorer** från det vänstra sidofältet och dubbelklickar på **Datauppsättningar** för att visa en lista över tillgängliga datauppsättningar. Högerklicka på den datauppsättning som du vill få åtkomst till och klicka på **Utforska data i anteckningsbok**. Följande kodceller genereras:
 
 #### PySpark ([!DNL Spark] 2.4) {#pyspark2.4}
 
