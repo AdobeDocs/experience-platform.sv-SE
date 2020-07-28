@@ -37,7 +37,7 @@ Följande arbetsflödesdiagram ger en översikt på hög nivå över integration
 
 Det finns flera Experience Platform-komponenter som ingår i ETL-anslutningsintegreringar. I följande lista beskrivs flera viktiga komponenter och funktioner:
 
-- **Adobe Identity Management System (IMS)** - Tillhandahåller ett ramverk för autentisering till Adobes tjänster.
+- **Adobe Identity Management System (IMS)** - Tillhandahåller ett ramverk för autentisering till Adobe-tjänster.
 - **IMS-organisation** - en företagsenhet som kan äga eller licensiera produkter och tjänster och ge åtkomst till sina medlemmar.
 - **IMS-användare** - medlemmar i en IMS-organisation. Relationen organisation till användare är många för många.
 - **[!DNL Sandbox]** - En virtuell partition i en enda [!DNL Platform] instans för att utveckla och utveckla program för digitala upplevelser.
@@ -168,7 +168,7 @@ Egenskapen schemaRef för en datamängd innehåller en URI som refererar till de
 
 XDM-schemat är det schema som du använder när du behöver visa en lista över alla tillgängliga fält som kan skrivas till användaren.
 
-Det första värdet för schemaRef.id i det föregående svarsobjektet (`https://ns.adobe.com/{TENANT_ID}/schemas/274f17bc5807ff307a046bab1489fb18`) är en URI som pekar på ett specifikt XDM-schema i [!DNL Schema Registry]. Schemat kan hämtas genom att en sökbegäran (GET) görs till [!DNL Schema Registry] API:t.
+Det första värdet för schemaRef.id i det föregående svarsobjektet (`https://ns.adobe.com/{TENANT_ID}/schemas/274f17bc5807ff307a046bab1489fb18`) är en URI som pekar på ett specifikt XDM-schema i [!DNL Schema Registry]. Schemat kan hämtas genom att en sökning (GET) görs till [!DNL Schema Registry] API:t.
 
 >[!NOTE]
 >
@@ -198,7 +198,7 @@ Svarsformatet beror på vilken typ av Acceptera-huvud som skickas i begäran. Up
 
 | Acceptera | Beskrivning |
 | ------ | ----------- |
-| `application/vnd.adobe.xed-id+json` | Begäranden, titlar, id:n och versioner för List (GET) |
+| `application/vnd.adobe.xed-id+json` | Lista (GET) över förfrågningar, titlar, id:n och versioner |
 | `application/vnd.adobe.xed-full+json; version={major version}` | $refs och allOf resolved, har titlar och beskrivningar |
 | `application/vnd.adobe.xed+json; version={major version}` | Raw med $ref och allOf, har rubriker och beskrivningar |
 | `application/vnd.adobe.xed-notext+json; version={major version}` | Raw med $ref och allOf, inga titlar eller beskrivningar |
@@ -392,7 +392,7 @@ Svaret inkluderar datauppsättningens fil-ID som den översta egenskapen, med fi
 
 ### Hämta filinformation
 
-De datauppsättningsfils-ID som returnerades i det föregående svaret kan användas i en GET-begäran för att hämta ytterligare filinformation via [!DNL Data Access] API:t.
+De datauppsättningsfil-ID som returnerades i det föregående svaret kan användas i en GET-begäran för att hämta ytterligare filinformation via [!DNL Data Access] API:t.
 
 I [dataåtkomstöversikten](../data-access/home.md) finns information om hur du använder [!DNL Data Access] -API:t.
 
@@ -552,7 +552,7 @@ Svaret kan peka på en enskild fil eller en katalog. Mer information finns i [da
 
 ### Åtkomst till filinnehåll
 
-Du [!DNL Data Access API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) kan använda den för att komma åt innehållet i en viss fil. För att hämta innehållet görs en GET-begäran med det värde som returnerades för `_links.self.href` vid åtkomst av en fil med fil-ID:t.
+Du [!DNL Data Access API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) kan använda den för att komma åt innehållet i en viss fil. För att hämta innehållet görs en GET-förfrågan med det värde som returnerades för `_links.self.href` när en fil som använder fil-ID användes.
 
 **Begäran**
 
@@ -674,7 +674,7 @@ Nya aktiviteter kan schemaläggas om det tidigare värdet för batchstatus är S
 
 ### Hämta senaste batchstatus med ID
 
-Du kan hämta en enskild batchstatus genom att [!DNL Catalog Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) skicka en GET-begäran med hjälp av `{BATCH_ID}`. Det `{BATCH_ID}` använda skulle vara samma som det ID som returnerades när gruppen skapades.
+Du kan hämta en enskild batchstatus genom att [!DNL Catalog Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) skicka en GET-förfrågan med hjälp av `{BATCH_ID}`. Det `{BATCH_ID}` använda skulle vara samma som det ID som returnerades när gruppen skapades.
 
 **Begäran**
 
