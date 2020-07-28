@@ -43,7 +43,7 @@ I den här självstudiekursen måste du ha slutfört [autentiseringen](../../tut
 
 ## Skapa en motor
 
-Du kan skapa motorer genom att göra en POST-begäran till slutpunkten /engines. Den skapade motorn konfigureras baserat på den paketerade mottagarfilen som måste inkluderas som en del av API-begäran.
+Du kan skapa motorer genom att göra en POST-förfrågan till slutpunkten /engines. Den skapade motorn konfigureras baserat på den paketerade mottagarfilen som måste inkluderas som en del av API-begäran.
 
 ### Skapa en motor med en Docker URL {#create-an-engine-with-a-docker-url}
 
@@ -169,7 +169,7 @@ curl -X POST \
 
 **Svar**
 
-Ett godkänt svar returnerar en nyttolast som innehåller information om den nya motorn, inklusive dess unika identifierare (`id`). Följande exempelsvar gäller en [!DNL Python] motor. Tangenterna `executionType` och `type` tangenterna ändras baserat på angiven POST.
+Ett godkänt svar returnerar en nyttolast som innehåller information om den nya motorn, inklusive dess unika identifierare (`id`). Följande exempelsvar gäller en [!DNL Python] motor. Tangenterna `executionType` och `type` tangenterna ändras baserat på den angivna POSTEN.
 
 ```json
 {
