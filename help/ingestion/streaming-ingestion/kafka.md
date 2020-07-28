@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Strömkopplingen för Adobe Experience Platform baseras på [!DNL Apache Kafka Connect]. Det här biblioteket kan användas för att direktuppspela JSON-händelser från [!DNL Kafka] ämnen i ditt datacenter direkt till [!DNL Experience Platform] i realtid.
 
-Strömkopplingen är en enkelriktad koppling som levererar data från [!DNL Kafka] ämnen till en registrerad slutpunkt på [!DNL Experience Platform]. Om du vill använda den här kopplingen måste du hämta biblioteket, lägga till det i din befintliga [!DNL Kafka] distribution och konfigurera [!DNL Kafka] avsnitten till Adobe Streaming HTTP URL. Ytterligare kod krävs **inte** . Kopplingen har stöd för följande funktioner:
+Strömkopplingen är en enkelriktad koppling som levererar data från [!DNL Kafka] ämnen till en registrerad slutpunkt på [!DNL Experience Platform]. Om du vill använda den här kopplingen måste du hämta biblioteket, lägga till det i din befintliga [!DNL Kafka] distribution och konfigurera [!DNL Kafka] avsnitten till HTTP-URL:en för direktuppspelning i Adobe. Ytterligare kod krävs **inte** . Kopplingen har stöd för följande funktioner:
 
 - Autentiserad datainsamling
 - Gruppera meddelanden för att minska nätverksanrop och öka genomströmningen
