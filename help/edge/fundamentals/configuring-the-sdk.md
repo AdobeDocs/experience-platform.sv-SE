@@ -66,7 +66,7 @@ Anger om felsökning ska vara aktiverat. Om du ställer in den här konfiguratio
 | -------- | ------------ | ------------------ |
 | Sträng | Nej | `beta.adobedc.net` |
 
-Den domän som används för att interagera med Adobes tjänster. Detta används endast om du har en förstahandsdomän (CNAME) som proxies-begäranden till Adobe Edge-infrastrukturen.
+Domänen som används för att interagera med Adobe-tjänster. Detta används endast om du har en förstahandsdomän (CNAME) som proxies begär till infrastrukturen i Adobe edge.
 
 ### `orgId`
 
@@ -160,7 +160,7 @@ Behållar-ID som anger vilket ID-synk som utlöses. Det här är ett icke-negati
 | -------- | ------------ | ----------------- |
 | Boolean | Nej | `true` |
 
-Aktiverar synkroniseringsfunktionen för ID, som gör det möjligt att aktivera URL:er för att synkronisera det unika användar-ID:t från Adobe med det unika användar-ID:t för en datakälla från tredje part.
+Aktiverar synkroniseringsfunktionen för ID, som gör det möjligt att aktivera URL:er för att synkronisera det unika användar-ID:t för Adobe med det unika användar-ID:t för en datakälla från tredje part.
 
 ### `thirdPartyCookiesEnabled`
 
@@ -168,4 +168,4 @@ Aktiverar synkroniseringsfunktionen för ID, som gör det möjligt att aktivera 
 | -------- | ------------ | ----------------- |
 | Boolean | Nej | sant |
 
-Aktiverar inställning av cookies från tredje part från Adobe. SDK:n kan behålla besökar-ID:t i ett tredjepartssammanhang för att samma besökar-ID ska kunna användas på olika platser. Detta är användbart om du har flera webbplatser eller vill dela data med partners. Men ibland är detta inte önskvärt av sekretesskäl.
+Aktiverar inställningen av cookies från tredje part från Adobe. SDK:n kan behålla besökar-ID:t i ett tredjepartssammanhang för att samma besökar-ID ska kunna användas på olika platser. Detta är användbart om du har flera webbplatser eller vill dela data med partners. Men ibland är detta inte önskvärt av sekretesskäl.
