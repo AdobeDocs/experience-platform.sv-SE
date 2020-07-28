@@ -32,15 +32,15 @@ ht-degree: 0%
 
 **Adobe Connectors:** Adobe Connectors är förkonfigurerade anslutningar som skapats av Adobe för att data ska kunna flöda in och ut [!DNL Experience Platform]. Kopplingar inkluderar [!DNL Microsoft Dynamics], [!DNL Salesforce], [!DNL Amazon S3]och [!DNL Azure Blob].
 
-**Adobes intelligenta tjänster:** Adobe Sensei är den intelligensstruktur som ligger till grund [!DNL Experience Platform]för verksamheten. Det innehåller också en uppsättning AI-tjänster som ger varumärken möjlighet att förbättra sin förmåga att leverera personaliserade kundupplevelser i realtid.
+**Adobe Intelligent Services:** Adobe Sensei är den intelligensmiljö som ligger till grund för [!DNL Experience Platform]detta. Det innehåller också en uppsättning AI-tjänster som ger varumärken möjlighet att förbättra sin förmåga att leverera personaliserade kundupplevelser i realtid.
 
 **Adobe I/O:** Adobe I/O är en del av [!DNL Experience Platform] och ger tillgång till allt utvecklare behöver för att integrera, utöka och anpassa Adobe Experience Platform, inklusive API:er, händelser, utvecklarkonsolen och praktiska verktyg.
 
-**Adobe Sensei:** Adobe Sensei är den intelligensstruktur som ligger till grund [!DNL Experience Platform]för verksamheten. Det innehåller också en uppsättning AI-tjänster som ger varumärken möjlighet att förbättra sin förmåga att leverera personaliserade kundupplevelser i realtid.
+**Adobe Sensei:** Adobe Sensei är den intelligensmiljö som ligger till grund för [!DNL Experience Platform]detta. Det innehåller också en uppsättning AI-tjänster som ger varumärken möjlighet att förbättra sin förmåga att leverera personaliserade kundupplevelser i realtid.
 
 **Amazon S3-bucket:** [!DNL Amazon S3] bucket är de grundläggande behållarna för data som lagras i [!DNL Amazon] ekosystemet. Bucket innehåller objekt. Varje objekt lagras och hämtas med en unik utvecklartilldelad nyckel.
 
-**Amazon S3-kontakt:** [!DNL Amazon] S3-kontakten gör det möjligt för kunder av [!DNL Experience Platform] att på ett säkert sätt ansluta till och få tillgång till sina [!DNL Amazon] S3-data.
+**Amazon S3-anslutning:** [!DNL Amazon] S3-kontakten gör det möjligt för kunder av [!DNL Experience Platform] att på ett säkert sätt ansluta till och få tillgång till sina [!DNL Amazon] S3-data.
 
 **Lägg till Spara strategi:** Den `Append` sparade strategin är ett alternativ som används när du anger data från tredje part som ska importeras via en anslutning och lägger till nya data eller rader i slutet av datauppsättningen. De tidigare infogade raderna förblir orörda och endast rader som skapats sedan den senaste schemalagda körningen importeras till [!DNL Experience Platform]. Alla rader som har ändrats i källsystemet ändras inte [!DNL Experience Platform].
 
@@ -54,7 +54,7 @@ ht-degree: 0%
 
 **Koppla attribut:** Attributsammanfogning definierar hur en sammanfogningsprincip prioriterar profilattributvärdet i händelse av datakonflikter.
 
-**Attribution AI:** [!DNL Attribution AI] är en Adobe Sensei-tjänst som levererar algoritmiska flerkanalsattribueringsfunktioner under hela kundlivscykeln.
+**Attribution AI:** [!DNL Attribution AI] är en Adobe Sensei-tjänst som tillhandahåller algoritmiska flerkanalsattribueringsfunktioner under hela kundlivscykeln.
 
 **Målgrupp**: En målgrupp är den resulterande uppsättningen profiler som uppfyller villkoren i en segmentdefinition.
 
@@ -70,7 +70,7 @@ ht-degree: 0%
 
 **Grupp:** Batch är en uppsättning data som samlats in under en tidsperiod och som bearbetas tillsammans som en enda enhet.
 
-**Batch-ID:** Batch-ID är en Adobe-genererad identifierare för en grupp med data.
+**Batch-ID:** Batch-ID är en Adobe-genererad identifierare för en datagrupp.
 
 **Batchintag:** Genom att lägga in data i grupp kan användarna importera petabyte data och göra dem tillgängliga i affärssystemen. Med de senaste teknologierna kan användare nu importera alla schema-XDM och icke-XDM till [!DNL Experience Platform].
 
@@ -108,7 +108,7 @@ ht-degree: 0%
 
 **Kontraktsdataetiketter C:** Kontraktsetiketter `C` används för att kategorisera data som har avtalsmässiga skyldigheter eller som är relaterade till en kunds policyer för datastyrning.
 
-**C1 Kontraktsetikett:** `C1` Etiketten för avtalsstyrd datastyrning specificerar att data bara kan exporteras från Adobe Experience Cloud i en aggregerad form utan att inkludera enskilda identifierare eller enhetsidentifierare. Till exempel data som kommer från sociala nätverk.
+**C1 Kontraktsetikett:** `C1` Etiketten för styrningsdata för kontrakt anger att data endast kan exporteras från Adobe Experience Cloud i en aggregerad form utan att det inkluderar enskilda identifierare eller enhetsidentifierare. Till exempel data som kommer från sociala nätverk.
 
 **C2 Kontraktsetikett:** `C2` Etiketten för styrningsdata för kontrakt anger data som inte kan exporteras till en tredje part. Vissa dataleverantörer har villkor i sina kontrakt som förbjuder export av data som de ursprungligen samlades in från.  Kontrakt för sociala nätverk begränsar till exempel ofta överföringen av data som du får från dem. C2 är mer restriktiv än C1, som bara kräver aggregation och anonyma uppgifter.
 
@@ -134,7 +134,7 @@ ht-degree: 0%
 
 **Namnområde för anpassad identitet:** Anpassade identitetsnamnutrymmen är kundskapade identifierare som används för att representera identiteter för en viss organisation eller ett visst affärsfall.
 
-**Kund-AI:** Kundens AI är en Adobe Sensei-tjänst som berikar kundprofiler med AI-baserade egenskaper och möjliggör kundsegmentering och målgruppsinriktning.
+**Kund-AI:** Kundens AI är en Adobe Sensei-tjänst som berikar kundprofiler med AI-baserade egenskaper och ger bättre kundsegmentering och målgruppsinriktning.
 
 [Till början](#adobe-experience-platform-glossary)
 
@@ -158,7 +158,7 @@ ht-degree: 0%
 
 **Datauppsättningsetiketter:** Dataanvändningsetiketter kan läggas till i datauppsättningar. Alla fält i den datauppsättningen ärver datauppsättningens etiketter.
 
-**Data Science Workspace:** [!DNL Data Science Workspace] inom [!DNL Experience Platform] vilken kunderna kan skapa maskininlärningsmodeller med hjälp av data från olika program [!DNL Experience Platform] och Adobe-program för att generera intelligenta insikter och prognoser för att skapa roliga digitala upplevelser för slutanvändarna.
+**Data Science Workspace:** [!DNL Data Science Workspace] inom [!DNL Experience Platform] vilken kunderna kan skapa maskininlärningsmodeller med hjälp av data mellan [!DNL Experience Platform] - och Adobe-applikationer för att generera intelligenta insikter och prognoser för att skapa roliga digitala upplevelser för slutanvändarna.
 
 **Datakälla:** En datakälla är en användardefinierad utgångspunkt för data. Exempel på en datakälla är en mobilapp, en profil och/eller upplevelsehändelser, webbplatsprofilhändelser eller en CRM.
 
@@ -356,7 +356,7 @@ ht-degree: 0%
 
 **Erbjudandebibliotek:** I [!DNL Decisioning Service]biblioteket är erbjudandebiblioteket ett centralt bibliotek som används för att hantera personaliserade erbjudanden och reserverbjudanden, beslutsregler och aktiviteter.
 
-**Organisation:** En organisation är det namn som används för att identifiera ett företag eller en viss grupp inom ett företag för alla Adobes produkter. Administratören kan konfigurera och hantera åtkomst och behörigheter för funktioner för användare i en organisation.
+**Organisation:** En organisation är det namn som används för att identifiera ett företag eller en specifik grupp inom ett företag mellan olika Adobe-produkter. Administratören kan konfigurera och hantera åtkomst och behörigheter för funktioner för användare i en organisation.
 
 **Skriv över sparad strategi:** `Overwrite` strategi för att spara är ett alternativ för att hämta tredjepartsdata via en anslutning, där användaren anger om inmatade data ska skrivas över enligt ett angivet schema. [!DNL Experience Platform] kommer att importera den angivna datauppsättningen från tredje parts källa och skriva över datauppsättningen på [!DNL Experience Platform].
 
@@ -408,11 +408,11 @@ ht-degree: 0%
 
 ## R
 
-**Kunddata i realtid Platform:** Adobes [!DNL Real-time Customer Data Platform] sammanför kända och okända kunddata för att skapa tillförlitliga kundprofiler med förenklad integrering, intelligent segmentering och realtidsaktivering under hela den digitala kundresan.
+**Kunddata i realtid Platform:** Adobe sammanför kända och okända kunddata för att skapa tillförlitliga kundprofiler med förenklad integrering, intelligent segmentering och realtidsaktivering under hela den digitala kundresan. [!DNL Real-time Customer Data Platform]
 
 **Kundprofil i realtid:** [!DNL Real-time Customer Profile] är en centraliserad profil för riktad och personaliserad upplevelsehantering.
 
-**Mottagare:** Ett recept är Adobes term för en modellspecifikation och är en behållare på den översta nivån som representerar maskininlärning, AI-algoritm eller en kombination av algoritmer, bearbetningslogik och konfiguration som krävs för att skapa och köra en tränad modell och därmed bidra till att lösa specifika affärsproblem.
+**Mottagare:** Ett recept är en AdobeTerm för en modellspecifikation och är en toppnivåbehållare som representerar en specifik maskininlärning, AI-algoritm eller en kombination av algoritmer, bearbetningslogik och konfiguration som krävs för att skapa och köra en tränad modell och därmed bidra till att lösa specifika affärsproblem.
 
 **Post:** En post är data som kvarstår som rader i en datauppsättning.
 
@@ -442,7 +442,7 @@ ht-degree: 0%
 
 **Sandlådeväxlare:** Med sandlådeväxlarkontrollen i [!DNL Experience Platform] kan användare navigera mellan sandlådor som de har tillgång till. Om du byter en sandlåda ändras allt innehåll och funktionsåtkomst kan ändras baserat på behörigheter.
 
-**Schema:** Schedule är en användardefinierad specifikation av frekvens eller avbruten datainmatning från en datakälla från tredje part till Adobe [!DNL Experience Platform].
+**Schema:** Schema är en användardefinierad specifikation av frekvens eller avbruten datainmatning från en datakälla från tredje part till Adobe [!DNL Experience Platform].
 
 **Poäng:** Poängberäkning är processen att generera insikter från data med hjälp av en tränad modell.
 
@@ -472,7 +472,7 @@ ht-degree: 0%
 
 **Segmentering:** Segmentering är processen att dela upp en stor grupp kunder, potentiella kunder eller konsumenter i mindre grupper som har liknande attribut och som kommer att svara på marknadsstrategier.
 
-**Sensei ML Framework:** Sensei ML Framework är ett enhetligt ramverk för maskininlärning i hela Adobe som utnyttjar data på [!DNL Experience Platform] för att möjliggöra för datavetare att utveckla maskininlärningsdrivna intelligenta tjänster på ett snabbare, skalbart och återanvändbart sätt.
+**Sensei ML Framework:** Sensei ML Framework är ett enhetligt ramverk för maskininlärning i hela Adobe som utnyttjar data på [!DNL Experience Platform] för att möjliggöra för datavetare att utveckla maskininlärningsdrivna underrättelsetjänster på ett snabbare, skalbart och återanvändbart sätt.
 
 **Känsliga dataetiketter:** Känsliga&quot;S&quot;-etiketter används för att kategorisera data som anses vara känsliga, till exempel olika typer av beteendedata eller geografiska data som du vill ska markeras som känsliga.
 
@@ -492,7 +492,7 @@ ht-degree: 0%
 
 **Källkatalog:** En källkatalog är en lista med tillgängliga källor i [!DNL Real-time Customer Data Platform].
 
-**Namnområde för standardidentitet:** Standardnamnutrymmen för identiteter är Adobe-fördefinierade identifierare, inklusive Adobe och branschstandardlösningar som används för att identifiera användare.
+**Namnområde för standardidentitet:** Standardnamnutrymmen för identiteter är fördefinierade identifierare i Adobe, inklusive Adobe och branschstandardlösningar som används för att identifiera användare.
 
 **Standardschema:** Standardscheman består av klasser och blandningar och är avsedda för återanvändning.
 
