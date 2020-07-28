@@ -76,7 +76,7 @@ POST /connections
 
 **Begäran**
 
-För att kunna skapa en [!DNL HubSpot] anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POST-begäran. Anslutningsspecifikationens ID för [!DNL HubSpot] är `cc6a4487-9e91-433e-a3a3-9cf6626c1806`.
+För att kunna skapa en [!DNL HubSpot] anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikationens ID för [!DNL HubSpot] är `cc6a4487-9e91-433e-a3a3-9cf6626c1806`.
 
 ```shell
 curl -X POST \
