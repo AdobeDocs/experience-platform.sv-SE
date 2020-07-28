@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Den [!DNL Schema Registry] används för att komma åt schemabiblioteket i Adobe Experience Platform, med ett användargränssnitt och RESTful API från vilket alla tillgängliga biblioteksresurser är tillgängliga.
 
-Med API:t för schemaregister kan du utföra grundläggande CRUD-åtgärder för att visa och hantera alla scheman och relaterade resurser som är tillgängliga för dig i Adobe Experience Platform. Detta gäller även dem som definieras av Adobe, [!DNL Experience Platform] partners och leverantörer vars program du använder. Du kan också använda API-anrop för att skapa nya scheman och resurser för organisationen, samt visa och redigera resurser som du redan har definierat.
+Med API:t för schemaregister kan du utföra grundläggande CRUD-åtgärder för att visa och hantera alla scheman och relaterade resurser som är tillgängliga för dig i Adobe Experience Platform. Detta gäller även de som definieras av Adobe, [!DNL Experience Platform] partners och leverantörer vars program du använder. Du kan också använda API-anrop för att skapa nya scheman och resurser för organisationen, samt visa och redigera resurser som du redan har definierat.
 
 Den här utvecklarhandboken innehåller steg som hjälper dig att börja använda [!DNL Schema Registry] API:t. Handboken innehåller sedan exempel på API-anrop för att utföra nyckelåtgärder med [!DNL Schema Registry].
 
@@ -51,7 +51,7 @@ Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Sche
 >
 >Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
-Alla sökförfrågningar (GET) till [!DNL Schema Registry] kräver ytterligare ett Acceptera-huvud, vars värde bestämmer formatet för den information som returneras av API:t. Mer information finns i avsnittet [Acceptera sidhuvud](#accept) nedan.
+Alla sökbegäranden (GET) till [!DNL Schema Registry] kräver ytterligare ett Acceptera-huvud, vars värde bestämmer vilket informationsformat som returneras av API:t. Mer information finns i avsnittet [Acceptera sidhuvud](#accept) nedan.
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -59,7 +59,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Lär känna ditt TENANT_ID {#know-your-tenant_id}
 
-I hela den här guiden ser du referenser till en `TENANT_ID`. Detta ID används för att säkerställa att de resurser du skapar namnges korrekt och finns i IMS-organisationen. Om du inte känner till ditt ID kan du få åtkomst till det genom att utföra följande GET-begäran:
+I hela den här guiden ser du referenser till en `TENANT_ID`. Detta ID används för att säkerställa att de resurser du skapar namnges korrekt och finns i IMS-organisationen. Om du inte känner till ditt ID kan du få åtkomst till det genom att utföra följande GET-förfrågan:
 
 **API-format**
 
@@ -165,7 +165,7 @@ Anrop till [!DNL Schema Registry] API kräver att du använder en `CONTAINER_ID`
 
 ### Global behållare
 
-Den globala behållaren innehåller alla standardklasser, mixins, datatyper och scheman som tillhandahålls av Adobe och [!DNL Experience Platform] partner. Du får bara utföra list- och sökbegäranden (GET) mot den globala behållaren.
+Den globala behållaren innehåller alla standardklasser, mixins, datatyper och scheman som tillhandahålls av Adobe och [!DNL Experience Platform] partner. Du får bara utföra list- och uppslagsbegäranden (GET) mot den globala behållaren.
 
 ### Klientbehållaren
 
@@ -189,7 +189,7 @@ Anrop till API:t för schemaregister stöder antingen den URL-kodade `$id` URI:n
 
 ## Acceptera rubrik {#accept}
 
-Vid GET-åtgärder (list and lookup) i API:t krävs en Accept-rubrik för att fastställa formatet för de data som returneras av API:t. [!DNL Schema Registry] När du söker efter specifika resurser måste ett versionsnummer också inkluderas i rubriken Godkänn.
+När du utför list- och lookup-åtgärder (GET) i API:t krävs en Accept-rubrik för att fastställa formatet för de data som returneras av API:t. [!DNL Schema Registry] När du söker efter specifika resurser måste ett versionsnummer också inkluderas i rubriken Godkänn.
 
 I följande tabell visas kompatibla värden för Acceptera sidhuvud, inklusive de med versionsnummer, tillsammans med beskrivningar av vad API:t returnerar när de används.
 
@@ -231,7 +231,7 @@ I följande exempelfält visas ett korrekt formaterat XDM-fält, med mer informa
    * **Korrekt:** `fieldName`, `field_name2`, `Field-Name`, `field-name_3`
    * **Felaktigt:** `_fieldName`
 * camelCase är att föredra som fältobjektets namn. Exempel: `fieldName`
-* Fältet ska innehålla en `title`titel. Exempel: `Field Name`
+* Fältet ska innehålla en `title`, skriven i versaler. Exempel: `Field Name`
 * Fältet kräver ett `type`.
    * Du kan behöva ange en valfri typ `format`.
    * Där en viss dataformatering krävs kan `examples` läggas till som en array.
