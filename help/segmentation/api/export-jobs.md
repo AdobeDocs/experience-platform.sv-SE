@@ -26,7 +26,7 @@ Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Pla
 
 ## Hämta en lista med exportjobb {#retrieve-list}
 
-Du kan hämta en lista över alla exportjobb för IMS-organisationen genom att göra en GET-begäran till `/export/jobs` slutpunkten.
+Du kan hämta en lista över alla exportjobb för din IMS-organisation genom att göra en GET-förfrågan till `/export/jobs` slutpunkten.
 
 **API-format**
 
@@ -210,7 +210,7 @@ Följande svar returnerar HTTP-status 200 med en lista över slutförda exportjo
 
 ## Skapa ett nytt exportjobb {#create}
 
-Du kan skapa ett nytt exportjobb genom att göra en POST-begäran till `/export/jobs` slutpunkten.
+Du kan skapa ett nytt exportjobb genom att göra en POST-förfrågan till `/export/jobs` slutpunkten.
 
 **API-format**
 
@@ -379,7 +379,7 @@ Om du `destination.segmentPerBatch` hade angett `true`det här objektet skulle `
 
 ## Hämta ett specifikt exportjobb {#get}
 
-Du kan hämta detaljerad information om ett specifikt exportjobb genom att göra en GET-begäran till `/export/jobs` slutpunkten och ange ID:t för det exportjobb som du vill hämta i sökvägen för begäran.
+Du kan hämta detaljerad information om ett specifikt exportjobb genom att göra en GET-förfrågan till slutpunkten och ange ID:t för det exportjobb som du vill hämta i sökvägen för begäran. `/export/jobs`
 
 **API-format**
 
