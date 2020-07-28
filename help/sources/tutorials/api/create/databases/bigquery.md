@@ -69,7 +69,7 @@ För att kunna skapa en [!DNL BigQuery] anslutning måste det finnas en uppsätt
 
 **API-format**
 
-Varje tillgänglig källa har en egen unik uppsättning anslutningsspecifikationer för att beskriva kopplingsegenskaper som autentiseringskrav. Du kan söka efter anslutningsspecifikationer för [!DNL BigQuery] genom att utföra en GET-begäran och använda frågeparametrar.
+Varje tillgänglig källa har en egen unik uppsättning anslutningsspecifikationer för att beskriva kopplingsegenskaper som autentiseringskrav. Du kan söka efter anslutningsspecifikationer för [!DNL BigQuery] genom att utföra en GET-förfrågan och använda frågeparametrar.
 
 Om du skickar en GET-begäran utan frågeparametrar returneras anslutningsspecifikationerna för alla tillgängliga källor. Du kan ta med frågan `property=name=="google-big-query"` för att få information om [!DNL BigQuery].
 
