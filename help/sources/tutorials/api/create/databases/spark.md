@@ -75,7 +75,7 @@ POST /connections
 
 **Begäran**
 
-För att kunna skapa en [!DNL Spark] anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POST-begäran. Anslutningsspecifikationens ID för [!DNL Spark] är `6a8d82bc-1caf-45d1-908d-cadabc9d63a6`.
+För att kunna skapa en [!DNL Spark] anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikationens ID för [!DNL Spark] är `6a8d82bc-1caf-45d1-908d-cadabc9d63a6`.
 
 ```shell
 curl -X POST \
