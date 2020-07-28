@@ -22,7 +22,7 @@ Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Pla
 
 ## Hämta en lista med scheman {#retrieve-list}
 
-Du kan hämta en lista över alla scheman för din IMS-organisation genom att göra en GET-begäran till `/config/schedules` slutpunkten.
+Du kan hämta en lista över alla scheman för din IMS-organisation genom att göra en GET-förfrågan till `/config/schedules` slutpunkten.
 
 **API-format**
 
@@ -103,7 +103,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över scheman för den a
 
 ## Skapa ett nytt schema {#create}
 
-Du kan skapa ett nytt schema genom att göra en POST-begäran till `/config/schedules` slutpunkten.
+Du kan skapa ett nytt schema genom att göra en POST till `/config/schedules` slutpunkten.
 
 **API-format**
 
@@ -173,7 +173,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
 
 ## Hämta ett specifikt schema {#get}
 
-Du kan hämta detaljerad information om ett specifikt schema genom att göra en GET-begäran till `/config/schedules` slutpunkten och ange ID:t för det schema som du vill hämta i sökvägen till begäran.
+Du kan hämta detaljerad information om ett specifikt schema genom att göra en GET-förfrågan till slutpunkten och ange ID:t för det schema som du vill hämta i sökvägen till begäran. `/config/schedules`
 
 **API-format**
 
@@ -234,7 +234,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det ang
 
 ## Uppdatera information för ett specifikt schema {#update}
 
-Du kan uppdatera ett specifikt schema genom att göra en PATCH-begäran till `/config/schedules` slutpunkten och ange ID:t för det schema som du försöker uppdatera i sökvägen till begäran.
+Du kan uppdatera ett specifikt schema genom att göra en PATCH-begäran till slutpunkten och ange ID:t för det schema som du försöker uppdatera i sökvägen till begäran. `/config/schedules`
 
 Med PATCH-begäran kan du uppdatera antingen [tillståndet](#update-state) eller [cron-schemat](#update-schedule) för ett enskilt schema.
 
