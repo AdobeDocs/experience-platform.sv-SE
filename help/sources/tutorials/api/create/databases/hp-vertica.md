@@ -73,7 +73,7 @@ POST /connections
 
 **Begäran**
 
-För att skapa en HP- [!DNL Vertica] anslutning måste dess unika anslutningsspec-ID anges som en del av POST-begäran. Anslutningens spec-ID för HP [!DNL Vertica] är `a8b6a1a4-5735-42b4-952c-85dce0ac38b5`.
+För att skapa en HP- [!DNL Vertica] anslutning måste dess unika anslutningsspec-ID anges som en del av POSTEN. Anslutningens spec-ID för HP [!DNL Vertica] är `a8b6a1a4-5735-42b4-952c-85dce0ac38b5`.
 
 ```shell
 curl -X POST \
