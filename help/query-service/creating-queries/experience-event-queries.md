@@ -185,5 +185,5 @@ ORDER BY pageViews DESC;
 
 ## Nästa steg
 
-Mer information om exempelfrågor med hjälp av Adobes definierade funktioner (ADF) finns i handboken Adobe Defined Functions. Allmänna riktlinjer för frågekörning finns i [guiden för frågekörning i frågetjänsten](./writing-queries.md).
+Mer information om exempelfrågor med hjälp av Adobe-definierade funktioner (ADF) finns i guiden Funktioner som definieras i Adobe. Allmänna riktlinjer för frågekörning finns i [guiden för frågekörning i frågetjänsten](./writing-queries.md).
 
