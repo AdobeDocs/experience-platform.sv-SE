@@ -52,7 +52,7 @@ Följande identitetstyper är tillgängliga i [!DNL Platform]:
 
 I Adobe Experience Platform finns flera identitetsnamnutrymmen som är tillgängliga för alla organisationer. Dessa kallas standardnamnutrymmen och visas med [!DNL Identity Service] API:t eller via [!DNL Platform] gränssnittet.
 
-Om du vill visa standardnamnutrymmen i användargränssnittet klickar du **[!UICONTROL Identities]** i den vänstra listen och sedan på *[!UICONTROL Browse]* fliken. Alla identitetsnamnutrymmen som är tillgängliga för din organisation visas, men de med&quot;[!UICONTROL Standard]&quot; som&quot;[!UICONTROL Owner]&quot; är standardnamnutrymmen från Adobe.
+Om du vill visa standardnamnutrymmen i användargränssnittet klickar du **[!UICONTROL Identities]** i den vänstra listen och sedan på *[!UICONTROL Browse]* fliken. Alla identitetsnamnutrymmen som är tillgängliga för din organisation visas, men de med&quot;[!UICONTROL Standard]&quot; som&quot;[!UICONTROL Owner]&quot; är standardnamnutrymmena från Adobe.
 
 Du kan sedan klicka på ett av namnutrymmena för att visa information.
 
