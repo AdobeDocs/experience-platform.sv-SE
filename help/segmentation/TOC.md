@@ -42,7 +42,7 @@ ht-degree: 3%
    - [Filterfunktioner](pql/filter-functions.md)
    - [Logiska kvantifierare](pql/logical-quantifiers.md)
    - [Diverse funktioner](pql/misc-functions.md)
-- Självstudiekurser {#tutorials}
+- Tutorials {#tutorials}
    - [Skapa ett segment](tutorials/create-a-segment.md)
    - [Utvärdera ett segment](tutorials/evaluate-a-segment.md)
    - [Skapa en datauppsättning för att exportera data](tutorials/create-dataset-export-segment.md)
