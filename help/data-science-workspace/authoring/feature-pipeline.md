@@ -39,7 +39,7 @@ Följande krävs för att köra ett recept i en organisation:
 - Ett transformerat schema och en tom datauppsättning som baseras på det schemat.
 - Ett utdataschema och en tom datauppsättning som baseras på det schemat.
 
-Alla ovanstående datauppsättningar måste överföras till [!DNL Platform] användargränssnittet. Använd det Adobe-medföljande [bootstrap-skriptet](https://github.com/adobe/experience-platform-dsw-reference/tree/master/bootstrap)för att konfigurera detta.
+Alla ovanstående datauppsättningar måste överföras till [!DNL Platform] användargränssnittet. Om du vill konfigurera detta använder du det Adobe-tillhandahållna [bootstrap-skriptet](https://github.com/adobe/experience-platform-dsw-reference/tree/master/bootstrap).
 
 ## Aktuella pipeline-klasser
 
@@ -398,36 +398,36 @@ https://www.getpostman.com/collections/c5fc0d1d5805a5ddd41a
 
 ### Skapa en rörlig motor för funktioner {#create-engine-api}
 
-När du har din Docker-bildplats kan du [skapa en rörlig funktionsmotor](../api/engines.md#feature-pipeline-docker) med hjälp av [!DNL Sensei Machine Learning] API:t genom att utföra en POST till `/engines`. En rörledningsmotor för funktioner har skapat en unik identifierare (`id`) för motorn. Spara värdet innan du fortsätter.
+När du har en Docker-bildplats kan du [skapa en rörlig funktionsmotor](../api/engines.md#feature-pipeline-docker) med API:t genom att utföra en POST till [!DNL Sensei Machine Learning] `/engines`. En rörledningsmotor för funktioner har skapat en unik identifierare (`id`) för motorn. Spara värdet innan du fortsätter.
 
 ### Skapa en MLInstance {#create-mlinstance}
 
-Med hjälp av den nya instansen `engineID`måste du [skapa en MLIstance](../api/mlinstances.md#create-an-mlinstance) genom att göra en POST-begäran till `/mlInstance` slutpunkten. Ett godkänt svar returnerar en nyttolast som innehåller information om den nyligen skapade MLInstance-instansen, inklusive dess unika identifierare (`id`) som används i nästa API-anrop.
+Med hjälp av den nya instansen `engineID`måste du [skapa en MLIstance](../api/mlinstances.md#create-an-mlinstance) genom att göra en POST-förfrågan till `/mlInstance` slutpunkten. Ett godkänt svar returnerar en nyttolast som innehåller information om den nyligen skapade MLInstance-instansen, inklusive dess unika identifierare (`id`) som används i nästa API-anrop.
 
 ### Skapa en expert {#create-experiment}
 
-Sedan måste du [skapa en expert](../api/experiments.md#create-an-experiment). Om du vill skapa en expert måste du ha en unik identifierare (`id`) för din MLIstance och göra en POST-begäran till `/experiment` slutpunkten. Ett lyckat svar returnerar en nyttolast som innehåller information om den nyligen skapade experten, inklusive dess unika identifierare (`id`) som används i nästa API-anrop.
+Sedan måste du [skapa en expert](../api/experiments.md#create-an-experiment). Om du vill skapa en expert måste du ha din unika identifierare (`id`) för MLIstance och göra en POST-förfrågan till `/experiment` slutpunkten. Ett lyckat svar returnerar en nyttolast som innehåller information om den nyligen skapade experten, inklusive dess unika identifierare (`id`) som används i nästa API-anrop.
 
 ### Ange pipeline-uppgiften för funktionen för experimentell körning {#specify-feature-pipeline-task}
 
-När du har skapat en Experiment måste du ändra Experimentens läge till `featurePipeline`. Om du vill ändra läget gör du en extra POST [`experiments/{EXPERIMENT_ID}/runs`](../api/experiments.md#experiment-training-scoring) till med `EXPERIMENT_ID` och i brödtexten som du skickar `{ "mode":"featurePipeline"}` för att ange en testkörning av funktionsflödet.
+När du har skapat en Experiment måste du ändra Experimentens läge till `featurePipeline`. Om du vill ändra läget gör du ytterligare en POST [`experiments/{EXPERIMENT_ID}/runs`](../api/experiments.md#experiment-training-scoring) till med `EXPERIMENT_ID` och i brödtexten som skickas `{ "mode":"featurePipeline"}` för att ange en testkörning av funktionsflödet.
 
-När du är klar skickar du en GET-begäran om `/experiments/{EXPERIMENT_ID}` att [hämta experimentstatusen](../api/experiments.md#retrieve-specific) och väntar på att Experimentstatusen ska uppdateras.
+När du är klar skickar du en GET-begäran om `/experiments/{EXPERIMENT_ID}` att [hämta experimentstatusen](../api/experiments.md#retrieve-specific) och väntar på att Experimentstatus ska uppdateras.
 
 ### Ange utbildningsuppgift för körning av experiment {#training}
 
-Därefter måste du [specificera uppgiften](../api/experiments.md#experiment-training-scoring)för utbildningskörningen. Gör en POST till `experiments/{EXPERIMENT_ID}/runs` och ange i brödtexten läget till `train` och skicka en array med uppgifter som innehåller dina utbildningsparametrar. Ett godkänt svar returnerar en nyttolast som innehåller information om den begärda experten.
+Därefter måste du [specificera uppgiften](../api/experiments.md#experiment-training-scoring)för utbildningskörningen. Gör en POST till `experiments/{EXPERIMENT_ID}/runs` och i brödtexten och ställ in läget på `train` och skicka en mängd uppgifter som innehåller dina utbildningsparametrar. Ett godkänt svar returnerar en nyttolast som innehåller information om den begärda experten.
 
-När du är klar skickar du en GET-begäran om `/experiments/{EXPERIMENT_ID}` att [hämta experimentstatusen](../api/experiments.md#retrieve-specific) och väntar på att Experimentstatusen ska uppdateras.
+När du är klar skickar du en GET-begäran om `/experiments/{EXPERIMENT_ID}` att [hämta experimentstatusen](../api/experiments.md#retrieve-specific) och väntar på att Experimentstatus ska uppdateras.
 
 ### Ange poänguppgiften för testkörningen {#scoring}
 
 >[!NOTE]
 > För att slutföra det här steget måste du ha minst en lyckad utbildning kopplad till din Experiment.
 
-Efter en lyckad utbildning måste du [ange poängkörningsuppgift](../api/experiments.md#experiment-training-scoring). Gör en POST till `experiments/{EXPERIMENT_ID}/runs` och i brödtexten ställ in attributet `mode` till &quot;score&quot;. Detta startar din resultatutvärderingsexpertsession.
+Efter en lyckad utbildning måste du [ange poängkörningsuppgift](../api/experiments.md#experiment-training-scoring). Gör en POST till `experiments/{EXPERIMENT_ID}/runs` och i brödtexten och ange `mode` attributet till &quot;score&quot;. Detta startar din resultatutvärderingsexpertsession.
 
-När du är klar skickar du en GET-begäran om `/experiments/{EXPERIMENT_ID}` att [hämta experimentstatusen](../api/experiments.md#retrieve-specific) och väntar på att Experimentstatusen ska uppdateras.
+När du är klar skickar du en GET-begäran om `/experiments/{EXPERIMENT_ID}` att [hämta experimentstatusen](../api/experiments.md#retrieve-specific) och väntar på att Experimentstatus ska uppdateras.
 
 När poängsättningen är klar bör ditt tillvägagångssätt fungera.
 
