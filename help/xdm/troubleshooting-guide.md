@@ -18,7 +18,7 @@ Det här dokumentet innehåller svar på vanliga frågor om [!DNL Experience Dat
 
 **[!DNL Experience Data Model](XDM)**är en öppen källkodsspecifikation som definierar standardiserade scheman för kundupplevelsehantering. Metoden som[!DNL Experience Platform]byggs på,**XDM System **, används för att göra[!DNL Experience Data Model]scheman tillgängliga för[!DNL Platform]tjänster. Det **[!DNL Schema Registry]**innehåller ett användargränssnitt och ett RESTful-API för åtkomst till **[!DNL Schema Library]**dem[!DNL Experience Platform]. Mer information finns i[XDM-dokumentationen](home.md).
 
-## Vanliga frågor
+## Vanliga frågor och svar 
 
 Nedan följer en lista med svar på vanliga frågor om XDM-system och användning av [!DNL Schema Registry] API:t.
 
@@ -80,7 +80,7 @@ Scheman kan användas i [!DNL Real-time Customer Profile](../profile/home.md) ge
 
 #### Aktivera ett befintligt schema för [!DNL Profile] användning av API
 
-Gör en PATCH-begäran om att uppdatera schemat och lägga till `meta:immutableTags` attributet som en array som innehåller värdet &quot;union&quot;. Om uppdateringen lyckas visas det uppdaterade schemat som nu innehåller unionstaggen.
+Gör en PATCH-begäran om att uppdatera schemat och lägga till attributet som en array som innehåller värdet &quot;union&quot;. `meta:immutableTags` Om uppdateringen lyckas visas det uppdaterade schemat som nu innehåller unionstaggen.
 
 Mer information om hur du använder API:t för att aktivera ett schema för användning i [!DNL Real-time Customer Profile]finns i dokumentet om [fackföreningar](./api/unions.md) i [!DNL Schema Registry] utvecklarhandboken.
 
@@ -278,4 +278,4 @@ En lista över vilka sidhuvuden som stöds finns i avsnittet [Acceptera sidhuvud
 }
 ```
 
-Om du försöker ta med en version i huvudet Accept när du listar resurser (GET) visas det här felet. Versioner krävs bara när en sökbegäran görs på en enskild resurs. Ta bort versionen från sidhuvudet Godkänn för att åtgärda felet.
+Om du försöker ta med en version i rubriken Acceptera när du listar (GET) resurser visas det här felet. Versioner krävs bara när en sökbegäran görs på en enskild resurs. Ta bort versionen från sidhuvudet Godkänn för att åtgärda felet.
