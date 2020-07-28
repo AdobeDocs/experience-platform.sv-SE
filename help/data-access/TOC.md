@@ -15,7 +15,7 @@ ht-degree: 0%
 
 - [Dataåtkomstöversikt](home.md)
 - [API för dataåtkomst](api.md)
-- Självstudiekurser {#tutorials}
+- Tutorials {#tutorials}
    - [Åtkomst till datauppsättningsdata](tutorials/dataset-data.md)
    - [Python SDK](tutorials/python-sdk.md)
    - [Spark SDK](tutorials/spark-sdk.md)
