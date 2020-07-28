@@ -30,7 +30,7 @@ Med Adobe Experience Platform kan ni samla data från flera olika källor och ko
 
 ## Konfigurera kantprognoser
 
-För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Adobe [!DNL Experience Platform] ger realtidsåtkomst till data genom användning av kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten. Mer information och information om hur du börjar arbeta med kanter finns i [!DNL Real-time Customer Profile] API:ts [underhandbok om kantprojektioner](../profile/api/edge-projections.md).
+För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Adobe [!DNL Experience Platform] ger realtidsåtkomst till data genom att använda kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten. Mer information och information om hur du börjar arbeta med kanter finns i [!DNL Real-time Customer Profile] API:ts [underhandbok om kantprojektioner](../profile/api/edge-projections.md).
 
 ## Nästa steg
 
