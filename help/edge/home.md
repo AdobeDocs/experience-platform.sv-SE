@@ -4,9 +4,9 @@ seo-title: Hjälp om Adobe Experience Platform Web SDK
 description: Lär dig vad Adobe Experience Platform Web SDK är och hur det kan användas.
 seo-description: låta Adobe Experience Cloud kunder interagera med de olika tjänsterna i Experience Cloud.
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: fc8b26e237821d5fa2d72fb38189894ed0b05271
 workflow-type: tm+mt
-source-wordcount: '429'
+source-wordcount: '702'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,32 @@ ht-degree: 0%
 
 # Vad är Adobe Experience Platform Web SDK?
 
-Adobe Experience Platform Web SDK är ett JavaScript-bibliotek på klientsidan som gör att Adobe Experience Cloud kunder kan interagera med de olika tjänsterna i [!DNL Experience Cloud] Adobe [!DNL Experience Platform Edge Network].
+Adobe Experience Platform Web SDK är ett JavaScript-bibliotek på klientsidan som gör att Adobe Experience Cloud kunder kan interagera med de olika tjänsterna i [!DNL Experience Cloud] Adobe [!DNL Experience Platform Edge Network]. Förutom JavaScript-biblioteket finns det ett [Launch-tillägg](https://docs.adobe.com/content/help/en/launch/using/extensions-ref/adobe-extension/aep-extension/overview.html) som kan hjälpa dig med dina Web SDK-konfigurationer.
+
+## Experience Edge
+
+[!DNL Adobe Experience Platform Web SDK] är en del av den samling som utgör Experience Edge. Experience Edge består av tre tekniker:
+
+* **[!DNL Adobe Experience Platform Web SDK]:**JavaScript SDK och[!DNL Launch]tillägg som dramatiskt förenklar driftsättningen av[!DNL Adobe]tekniker
+* **Adobe Experience Platform Mobile SDK:** Ett tillägg till v5 Mobile SDK så att kunderna kan använda den nya distributionsmetoden
+* **[!DNL Adobe Experience Platform Edge Network]:**Ett globalt distribuerat servernätverk som möjliggör en ny metod för att distribuera[!DNL Adobe]produkter
+
+Det [!DNL Adobe Experience Edge] är ett nytt ramverk för datainsamling med låg fördröjning, anslutningsbar datoranvändning och snabb dataaktivering i alla adresserbara kanaler.
+
+[!DNL Adobe Experience Edge] tillhandahåller en enda konsoliderad SDK för alla kanaler (JavaScript, Mobile, Server-side), som skickar data till en gemensam Adobe-domän (`adobedc.net`) och tar emot en enda nyttolast för data- och upplevelseleverans.
+
+På serversidan gör en enhetlig edge-gateway och ett gemensamt ramverk för plattformstjänster det enkelt att plugin och driftsätta nya funktioner i den här realtidsmiljön.  Arkitekturen:
+
+* Minskar kundens tid till värde
+* Ändrar behovet av punktintegreringar
+* Förbättrar prestanda jämfört med gamla bibliotek
+* Minskar kostnaderna
+* Ökar innovationshastigheten
+* Skapar hållbara konkurrensfördelar för Adobe-kunder
+
+Med ett enda konsoliderat edge-system kan kunderna hantera sina annonserings-, marknadsförings- eller personaliseringskampanjer i alla kanaler som en integrerad upplevelse.  Det gör det möjligt [!DNL Adobe] att leverera tjänster med lägre total ägandekostnad för kunderna.  Det bidrar också till att öka produktutvecklingshastigheten genom att göra realtidskanten pluggbar så att [!DNL Adobe] och kunderna snabbare kan lägga till nya funktioner och kunddefinierad logik i realtidssystemet.
+
+## Videoöversikt
 
 I följande video visas en översikt över Adobe Experience Platform [!DNL Web SDK] och [!DNL Edge Network].
 
@@ -37,14 +62,13 @@ I följande video visas Adobe Experience Platform [!DNL Web SDK] och [!DNL Edge 
 
 >[!VIDEO](https://video.tv.adobe.com/v/34148?quality=12&learn=on)
 
-
 ## Komma igång
 
 Vi rekommenderar att du [tittar i vår guide](getting-started/quick-start-with-launch.md) om hur du kommer igång med Adobe Launch.
 
 Produkten utvecklas ständigt och växer för att klara fler och fler användningsfall. Ta en titt på vår [fallpanel](https://github.com/adobe/alloy/projects/5)för att hålla dig à jour med det senaste. Vi håller detta uppdaterat med de användningsfall som vi för närvarande stöder och de som vi arbetar med för att du ska kunna fatta bästa möjliga beslut.
 
-* __Använd ärenden som ännu inte stöds__ - Det här är exempel som finns på vår färdplan och som kan stödjas i framtiden.
-* __Pågående__ användningsfall - Det här är de användningsfall som teamet arbetar med att slutföra för publicering.
-* __Användningsexempel__ som stöds - Det här är de användningsområden som stöds och fungerar idag.
-* __Användningsfall som vi inte stöder__ - Det här är användningsfall som vi har beslutat att inte stödja.
+* **Användningsfall som ännu inte stöds:** Det här är användningsfall som ligger på vår färdplan och som ska stödjas i framtiden.
+* **Pågående användningsfall:** Det här är de användningsområden som teamet arbetar med att slutföra för lansering.
+* **Användningsexempel:** Det här är de användningsområden som stöds och som fungerar idag.
+* **Användningsfall som vi inte stöder:** Vi har fattat ett beslut om att inte ge stöd.
