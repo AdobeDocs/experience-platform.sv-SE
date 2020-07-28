@@ -113,9 +113,9 @@ Ett framgångsrikt svar är en rad tabeller från ert annonssystem. Leta reda p�
 ]
 ```
 
-## Inspektera tabellstrukturen
+## Inspect tabellstrukturen
 
-Om du vill inspektera strukturen för en tabell från ditt annonssystem utför du en GET-begäran och anger sökvägen till en tabell som en frågeparameter.
+Om du vill inspektera tabellstrukturen från ditt annonssystem utför du en GET-förfrågan och anger tabellens sökväg som en frågeparameter.
 
 **API-format**
 
