@@ -118,13 +118,13 @@ När en fråga är klar visas resultatet på *[!UICONTROL Results]* fliken bredv
 
 ## Köra frågor med [!DNL Query Service] självstudievideo
 
-I följande video visas hur du kör frågor i gränssnittet Adobe Experience Platform och i en PSQL-klient. Dessutom visas hur du använder enskilda egenskaper i ett XDM-objekt, använder Adobe-definierade funktioner och använder CREATE TABLE AS SELECT (CTAS).
+I följande video visas hur du kör frågor i gränssnittet Adobe Experience Platform och i en PSQL-klient. Dessutom visas om du använder enskilda egenskaper i ett XDM-objekt, använder funktioner som definieras av Adobe och använder CREATE TABLE AS SELECT (CTAS).
 
 >[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)
 
 ## Nästa steg
 
-Nu när du vet vilka funktioner som är tillgängliga i [!DNL Query Editor] och hur du navigerar i programmet kan du börja skapa egna frågor direkt i [!DNL Platform]. Mer information om hur du kör SQL-frågor mot datauppsättningar i [!DNL Data Lake]finns i guiden om [att köra frågor][query-service-running-queries]. SQL-frågor som du kan använda som exempel när du arbetar med Adobe Analytics- och Adobe Target-data finns i [exempelfrågereferensen][query-service-sample-queries].
+Nu när du vet vilka funktioner som är tillgängliga i [!DNL Query Editor] och hur du navigerar i programmet kan du börja skapa egna frågor direkt i [!DNL Platform]. Mer information om hur du kör SQL-frågor mot datauppsättningar i [!DNL Data Lake]finns i guiden om [att köra frågor][query-service-running-queries]. Exempel på SQL-frågor som du kan använda för att arbeta med Adobe Analytics- och Adobe Target-data finns i [exempelfrågereferensen][query-service-sample-queries].
 
 [query-service-overview]: ../home.md
 [query-service-ui]: overview.md
