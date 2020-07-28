@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Identifiera insikter med kundens AI
 
-Customer AI, som en del av Intelligent Services ger marknadsförarna möjlighet att utnyttja Adobe Sensei för att förutse vad era kunder kommer att göra härnäst. Kundens AI används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, utbildning eller driftsättning.
+Kundens AI, som en del av de intelligenta tjänsterna, ger marknadsförarna möjlighet att utnyttja Adobe Sensei för att förutse vad kunderna kommer att göra härnäst. Kundens AI används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, utbildning eller driftsättning.
 
 Det här dokumentet är en guide för interaktion med Service Instance Insights i användargränssnittet för AI för Intelligent Services.
 
