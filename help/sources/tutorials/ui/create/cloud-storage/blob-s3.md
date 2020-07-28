@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Skapa en Azure Blob- eller Amazon S3-källanslutning i gränssnittet
+title: Skapa en Azure Blob- eller Amazon S3-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
 source-git-commit: 3f1c3c77a0755a3e305da0fb8a234be0f0ee1863
