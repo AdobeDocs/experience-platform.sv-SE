@@ -54,7 +54,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Bästa tillvägagångssätt för [!DNL Catalog] API-anrop
 
-När du utför GET-begäranden till [!DNL Catalog] API är det bäst att ta med frågeparametrar i dina begäranden för att bara returnera de objekt och egenskaper som du behöver. Ofiltrerade begäranden kan göra att svarsnyttolasterna når över 3 GB, vilket kan göra den totala prestandan långsammare.
+När du gör GET-begäranden till API:t är det bäst att ta med frågeparametrar i dina begäranden för att bara returnera de objekt och egenskaper som du behöver. [!DNL Catalog] Ofiltrerade begäranden kan göra att svarsnyttolasterna når över 3 GB, vilket kan göra den totala prestandan långsammare.
 
 Du kan visa specifika objekt genom att ta med deras ID i den begärda sökvägen eller använda frågeparametrar som `properties` och `limit` för att filtrera svar. Filter kan skickas som rubriker och som frågeparametrar, där de skickas som frågeparametrar har prioritet. Mer information finns i dokumentet om [filtrering av katalogdata](filter-data.md) .
 
