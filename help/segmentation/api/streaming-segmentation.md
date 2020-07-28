@@ -79,8 +79,8 @@ I följande avsnitt visas exempel på segmentdefinitioner som **inte** kommer at
 | Frågetyp | Detaljer |
 | ---------- | ------- | 
 | Inkommande träff inom ett relativt tidsfönster | Om segmentdefinitionen refererar till en inkommande händelse **som inte** är under den **senaste sju-dagarsperioden**. Till exempel under de **senaste två veckorna**. |
-| Inkommande träde som refererar till en profil i ett relativt fönster | Följande alternativ har **inte** stöd för direktuppspelningssegmentering:<ul><li>En inkommande händelse **som inte** är under den **senaste sjudagarsperioden**.</li><li>En segmentdefinition som innehåller Adobe Audience Manager-segment (AAM) eller -egenskaper.</li></ul> |
-| Flera händelser som refererar till en profil | Följande alternativ har **inte** stöd för direktuppspelningssegmentering:<ul><li>En händelse som **inte** inträffar **de senaste 24 timmarna**.</li><li>En segmentdefinition som innehåller Adobe Audience Manager-segment (AAM) eller -egenskaper.</li></ul> |
+| Inkommande träde som refererar till en profil i ett relativt fönster | Följande alternativ har **inte** stöd för direktuppspelningssegmentering:<ul><li>En inkommande händelse **som inte** är under den **senaste sjudagarsperioden**.</li><li>En segmentdefinition som innehåller Adobe Audience Manager (AAM) segment eller egenskaper.</li></ul> |
+| Flera händelser som refererar till en profil | Följande alternativ har **inte** stöd för direktuppspelningssegmentering:<ul><li>En händelse som **inte** inträffar **de senaste 24 timmarna**.</li><li>En segmentdefinition som innehåller Adobe Audience Manager (AAM) segment eller egenskaper.</li></ul> |
 | Flerenhetsfrågor | Flerenhetsfrågor stöds **inte** av direktuppspelningssegmentering som helhet. |
 
 Dessutom gäller vissa riktlinjer för direktuppspelningssegmentering:
@@ -92,7 +92,7 @@ Dessutom gäller vissa riktlinjer för direktuppspelningssegmentering:
 
 ## Hämta alla segment som är aktiverade för direktuppspelningssegmentering
 
-Du kan hämta en lista över alla segment som är aktiverade för direktuppspelningssegmentering inom IMS-organisationen genom att göra en GET-begäran till `/segment/definitions` slutpunkten.
+Du kan hämta en lista över alla segment som är aktiverade för direktuppspelningssegmentering inom IMS-organisationen genom att göra en GET-förfrågan till `/segment/definitions` slutpunkten.
 
 **API-format**
 
@@ -294,7 +294,7 @@ När utvärdering av direktuppspelning har aktiverats måste en baslinje skapas 
 
 ### Skapa ett schema
 
-Genom att göra en POST-begäran till `/config/schedules` slutpunkten kan du skapa ett schema och inkludera den specifika tid då schemat ska utlösas.
+Genom att göra en begäran om POST till `/config/schedules` slutpunkten kan du skapa ett schema och inkludera den tidpunkt då schemat ska utlösas.
 
 **API-format**
 
