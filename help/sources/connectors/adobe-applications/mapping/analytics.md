@@ -20,7 +20,7 @@ Med Adobe Experience Platform kan du importera Adobe Analytics-data via Analytic
 
 ## Direktmappningsfält
 
-Utvalda fält mappas direkt från Adobe Analytics till Experience Data Model (XDM).
+Markerade fält mappas direkt från Adobe Analytics till Experience Data Model (XDM).
 
 Följande tabell innehåller kolumner som visar namnet på Analytics-fältet (*Analytics-fältet*), motsvarande XDM-fält (*XDM-fält*) och dess typ (*XDM-typ*) samt en beskrivning av fältet (*Beskrivning*).
 
@@ -135,7 +135,7 @@ Dessa fält har en enda källa, men mappas till **flera** XDM-platser.
 
 ## Genererade mappningsfält
 
-Utvalda fält från ADC måste omformas, vilket kräver logik utöver en direkt kopia från Adobe Analytics för att kunna genereras i XDM.
+Vissa fält från ADC måste omformas, vilket kräver logik utöver en direkt kopia från Adobe Analytics för att kunna genereras i XDM.
 
 Följande tabell innehåller kolumner som visar namnet på Analytics-fältet (*Analytics-fältet*), motsvarande XDM-fält (*XDM-fält*) och dess typ (*XDM-typ*) samt en beskrivning av fältet (*Beskrivning*).
 
@@ -195,7 +195,7 @@ Följande tabell innehåller kolumner som visar namnet på Analytics-fältet (*A
 
 Markera fält (så kallade postvärden) kräver mer avancerade omvandlingar innan de kan mappas från Adobe Analytics-fält till Experience Data Model (XDM). För dessa avancerade omvandlingar används Adobe Experience Platfrom Query Service och fördefinierade funktioner (som kallas Adobe-definierade funktioner) för sessioner, attribuering och borttagning av dubbletter.
 
-Mer information om hur du utför dessa omvandlingar med hjälp av Query Service finns i dokumentationen för [Adobes definierade funktioner](../../../../query-service/sql/adobe-defined-functions.md) .
+Mer information om hur du utför den här omvandlingen med hjälp av frågetjänsten finns i dokumentationen för [Adobe-definierade funktioner](../../../../query-service/sql/adobe-defined-functions.md) .
 
 Följande tabell innehåller kolumner som visar namnet på Analytics-fältet (*Analytics-fältet*), motsvarande XDM-fält (*XDM-fält*) och dess typ (*XDM-typ*) samt en beskrivning av fältet (*Beskrivning*).
 
