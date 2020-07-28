@@ -18,7 +18,7 @@ Adobe Experience Platform [!DNL Data Governance] har ett användargränssnitt d�
 
 >[!IMPORTANT]
 >
->Alla dataanvändningspolicyer (inklusive kärnpolicyer från Adobe) är inaktiverade som standard. För att en enskild princip ska kunna användas för verkställighet måste du manuellt aktivera den principen. I avsnittet [Aktivera profiler](#enable) finns mer information om hur du gör detta i användargränssnittet.
+>Alla dataanvändningsprinciper (inklusive huvudprinciper som tillhandahålls av Adobe) inaktiveras som standard. För att en enskild princip ska kunna användas för verkställighet måste du manuellt aktivera den principen. I avsnittet [Aktivera profiler](#enable) finns mer information om hur du gör detta i användargränssnittet.
 
 ## Förutsättningar
 
@@ -69,7 +69,7 @@ Fliken visas igen, där den nya principen visas med statusen Utkast. *[!UICONTRO
 
 ## Aktivera eller inaktivera en dataanvändningsprincip {#enable}
 
-Alla dataanvändningspolicyer (inklusive kärnpolicyer från Adobe) är inaktiverade som standard. För att en enskild princip ska kunna användas måste du manuellt aktivera den principen via API:t eller användargränssnittet.
+Alla dataanvändningsprinciper (inklusive huvudprinciper som tillhandahålls av Adobe) inaktiveras som standard. För att en enskild princip ska kunna användas måste du manuellt aktivera den principen via API:t eller användargränssnittet.
 
 Du kan aktivera eller inaktivera profiler på *[!UICONTROL Browse]* fliken på *[!UICONTROL Policies]* arbetsytan. Välj en anpassad profil i listan för att visa informationen till höger. Under *[!UICONTROL Status]* markerar du knappen för att aktivera eller inaktivera profilen.
 
@@ -99,7 +99,7 @@ Den nyligen skapade åtgärden visas på *[!UICONTROL Marketing actions]* fliken
 
 >[!NOTE]
 >
->Endast anpassade marknadsföringsåtgärder som definieras av din organisation kan redigeras. Marknadsföringsåtgärder som definierats av Adobe kan inte ändras eller tas bort.
+>Endast anpassade marknadsföringsåtgärder som definieras av din organisation kan redigeras. Marknadsföringsåtgärder som definieras av Adobe kan inte ändras eller tas bort.
 
 På **[!UICONTROL Policies]** arbetsytan väljer du **[!UICONTROL Marketing actions]** fliken för att visa en lista över tillgängliga marknadsföringsåtgärder som definierats av Adobe och din egen organisation. Välj en anpassad marknadsföringsåtgärd i listan och använd sedan fälten i den högra delen för att redigera information om marknadsföringsåtgärden.
 
