@@ -116,4 +116,4 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehå
 }
 ```
 
-Om du utför en GET-begäran om att lista alla datatyper i innehavarbehållaren skulle datatypen Property Construction ingå. Du kan också utföra en sökbegäran (GET) med den URL-kodade `$id` URI:n för att visa den nya datatypen direkt. Se till att du tar med `version` texten i huvudet Godkänn för en uppslagsbegäran.
+Om en GET-begäran om att lista alla datatyper i klientbehållaren utförs, kommer datatypen för egenskapskonstruktion att ingå. Du kan också utföra en sökning (GET)-begäran med den URL-kodade `$id` URI:n för att visa den nya datatypen direkt. Se till att du tar med `version` texten i huvudet Godkänn för en uppslagsbegäran.
