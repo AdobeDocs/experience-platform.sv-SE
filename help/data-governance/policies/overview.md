@@ -53,7 +53,7 @@ När dataanvändningsetiketterna har tillämpats kan datahanterarna använda DUL
 
 >[!IMPORTANT]
 >
->Alla dataanvändningspolicyer (inklusive kärnpolicyer från Adobe) är inaktiverade som standard. För att en enskild princip ska kunna användas måste du manuellt aktivera den principen via API:t eller användargränssnittet.
+>Alla dataanvändningsprinciper (inklusive huvudprinciper som tillhandahålls av Adobe) inaktiveras som standard. För att en enskild princip ska kunna användas måste du manuellt aktivera den principen via API:t eller användargränssnittet.
 
 Stegvisa instruktioner om hur du arbetar med marknadsföringsåtgärder och dataanvändningspolicyer i API:t finns i självstudiekursen om hur du [skapar och utvärderar dataanvändningspolicyer](create.md). Mer information om nyckelåtgärder som tillhandahålls av [!DNL Policy Service] API:t finns i utvecklarhandboken [för](../api/getting-started.md)principtjänsten.
 
@@ -77,7 +77,7 @@ Tabellen nedan beskriver de viktigaste marknadsföringsåtgärderna som tillhand
 
 | Marknadsföringsåtgärd | Beskrivning |
 | --- | --- |
-| Analyser | En åtgärd som använder data för analysändamål, som att mäta, analysera och rapportera om kundens användning av organisationens webbplatser eller appar. |
+| Analytics | En åtgärd som använder data för analysändamål, som att mäta, analysera och rapportera om kundens användning av organisationens webbplatser eller appar. |
 | Kombinera med PII | En åtgärd som kombinerar all personligt identifierbar information med anonyma data. Kontrakt för data som hämtas från annonsnätverk, annonsservrar och tredjepartsleverantörer av data innehåller ofta särskilda avtalsförbud för användning av sådana data med direkt identifierbara data. |
 | Målgruppsövergripande | En åtgärd som använder data för annonsanpassning mellan webbplatser. En kombination av data från flera platser, inklusive en kombination av data på plats och data utanför platsen eller en kombination av data från flera källor utanför platsen, kallas data mellan olika platser. Data från olika webbplatser samlas in och behandlas vanligtvis för att man ska kunna dra slutsatser om användarnas intressen. |
 | Datavetenskap | En åtgärd som använder data för arbetsflöden inom datavetenskap. Vissa avtal innehåller uttryckliga förbud mot dataanvändning för datavetenskap. Ibland formuleras dessa i termer som förbjuder användning av data för artificiell intelligens (AI), maskininlärning (ML) eller modellering. |
