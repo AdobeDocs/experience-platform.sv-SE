@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Infoga data i [!DNL Experience Platform]
 
-Adobe Experience Platform sammanför data från olika källor för att hjälpa marknadsförarna att bättre förstå kundernas beteende. Adobe [!DNL Experience Platform Data Ingestion] representerar de olika metoder som används för att [!DNL Platform] importera data från dessa källor, samt hur dessa data lagras i Data Lake för användning i senare led [!DNL Platform services]. [!DNL Data Ingestion] omfattar batchförbrukning, direktuppspelning och förtäring med hjälp av källanslutningar. Om du vill ha mer information läser du översikten över [](../ingestion/home.md) dataöverföring eller går direkt till [källdokumentationen](../sources/home.md).
+Adobe Experience Platform sammanför data från olika källor för att hjälpa marknadsförarna att bättre förstå kundernas beteende. Adobe [!DNL Experience Platform Data Ingestion] representerar de olika metoder som används för att [!DNL Platform] importera data från dessa källor, samt hur dessa data bevaras i datasjön för användning i senare led [!DNL Platform services]. [!DNL Data Ingestion] omfattar batchförbrukning, direktuppspelning och förtäring med hjälp av källanslutningar. Om du vill ha mer information läser du översikten över [](../ingestion/home.md) dataöverföring eller går direkt till [källdokumentationen](../sources/home.md).
 
 ## Skapa en källanslutning i gränssnittet och API:t
 
