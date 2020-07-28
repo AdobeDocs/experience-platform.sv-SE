@@ -4,11 +4,14 @@ audience: user
 user-guide-title: Hjälp om datainmatning i Adobe Experience Platform
 translation-type: tm+mt
 source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
+workflow-type: tm+mt
+source-wordcount: '108'
+ht-degree: 4%
 
 ---
 
 
-# Adobe Experience Platform - datainmatning {#ingestion}
+# Adobe Experience Platform datainmatning {#ingestion}
 
 - [Översikt över datainmatning](home.md)
 - Direktinmatning {#streaming}
@@ -20,7 +23,7 @@ source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
    - [API för gruppinmatning](batch-ingestion/api-overview.md)
    - [Partiellt batchintag](batch-ingestion/partial.md)
    - [Felsökning](batch-ingestion/troubleshooting.md)
-- Självstudiekurser {#tutorials}
+- Tutorials {#tutorials}
    - [Mappa en CSV-fil till XDM](tutorials/map-a-csv-file.md)
    - [Infoga batchdata med användargränssnittet](tutorials/ingest-batch-data.md)
    - [Skapa en autentiserad direktuppspelningsanslutning](tutorials/create-authenticated-streaming-connection.md)
@@ -37,4 +40,4 @@ source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
    - [Prenumerera på dataöverföringshändelser](quality/subscribe-events.md)
 - [Källkopplingar](source-connectors.md)
 - [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml)
-- [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
+- [Versionsinformation för Platform](https://www.adobe.com/go/platform-release-notes-en)
