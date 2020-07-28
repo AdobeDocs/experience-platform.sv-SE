@@ -20,7 +20,7 @@ Följande avsnitt går igenom anrop som du kan göra med `/queries` slutpunkten 
 
 ### Hämta en lista med frågor
 
-Du kan hämta en lista med alla frågor för din IMS-organisation genom att göra en GET-begäran till `/queries` slutpunkten.
+Du kan hämta en lista med alla frågor för din IMS-organisation genom att göra en GET-förfrågan till `/queries` slutpunkten.
 
 **API-format**
 
@@ -119,7 +119,7 @@ Ett godkänt svar returnerar HTTP-status 200 med en lista över frågor för den
 
 ### Skapa en fråga
 
-Du kan skapa en ny fråga genom att göra en POST-begäran till `/queries` slutpunkten.
+Du kan skapa en ny fråga genom att göra en POST-förfrågan till `/queries` slutpunkten.
 
 **API-format**
 
@@ -202,7 +202,7 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om din n
 
 ### Hämta en fråga via ID
 
-Du kan hämta detaljerad information om en viss fråga genom att göra en GET-begäran till `/queries` slutpunkten och ange frågans `id` värde i sökvägen till begäran.
+Du kan hämta detaljerad information om en viss fråga genom att göra en GET-förfrågan till `/queries` slutpunkten och ange frågans `id` värde i sökvägen till begäran.
 
 **API-format**
 
@@ -273,7 +273,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 
 ### Avbryt en fråga
 
-Du kan begära att få ta bort en viss fråga genom att göra en PATCH-begäran till `/queries` slutpunkten och ange frågans `id` värde i sökvägen för begäran.
+Du kan begära att få ta bort en viss fråga genom att göra en PATCH-begäran till `/queries` slutpunkten och ange frågans `id` värde i sökvägen till begäran.
 
 **API-format**
 
