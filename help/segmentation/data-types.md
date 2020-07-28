@@ -58,7 +58,7 @@ För närvarande stöds bara Adobe Audience Manager som extern publik, och ytter
 
 ### Segmentdelning
 
-Segment som har skapats i Platform kan användas i andra bastjänster [i](https://docs.adobe.com/content/help/sv-SE/core-services/interface/experience-cloud.html)Adobe Experience Cloud. Om du vill aktivera den här funktionen måste du kontakta din lösningsarkitekt eller din konsult.
+Segment som har skapats i Platform kan användas i andra [Adobe Experience Cloud bastjänster](https://docs.adobe.com/content/help/sv-SE/core-services/interface/experience-cloud.html). Om du vill aktivera den här funktionen måste du kontakta din lösningsarkitekt eller din konsult.
 
 ## Andra datatyper
 
