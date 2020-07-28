@@ -18,7 +18,7 @@ I den här självstudiekursen finns anvisningar om hur du kan paketera de angivn
 
 Koncept att förstå:
 
-- **Recept**: Ett recept är Adobes term för en modellspecifikation och är en behållare på den översta nivån som representerar maskininlärning, artificiell intelligensalgoritm eller en kombination av algoritmer, bearbetningslogik och konfiguration som krävs för att skapa och köra en tränad modell och därmed bidra till att lösa specifika affärsproblem.
+- **Recept**: Ett recept är en Adobe term för en modellspecifikation och är en behållare på den översta nivån som representerar en specifik maskininlärningsalgoritm, artificiell intelligens eller en kombination av algoritmer, bearbetningslogik och konfiguration som krävs för att skapa och köra en tränad modell och därmed bidra till att lösa specifika affärsproblem.
 - **Källfiler**: Enskilda filer i projektet som innehåller logiken för ett recept.
 
 ## Förutsättningar
