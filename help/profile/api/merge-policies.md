@@ -227,7 +227,7 @@ I avsnittet [Komponenter för sammanfogningsprinciper](#components-of-merge-poli
 
 ### Hämta flera sammanfogningsprinciper efter deras ID:n
 
-Du kan hämta flera sammanfogningsprinciper genom att göra en POST-begäran till `/config/mergePolicies/bulk-get` slutpunkten och inkludera ID:n för de sammanfogningsprinciper som du vill hämta i begärandetexten.
+Du kan hämta flera sammanfogningsprinciper genom att göra en POST till `/config/mergePolicies/bulk-get` slutpunkten och inkludera ID:n för de sammanfogningsprinciper som du vill hämta i begärandetexten.
 
 **API-format**
 
@@ -261,7 +261,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 207 (Multi-Status) och information om de sammanfogningsprinciper vars ID:n angavs i POST-begäran.
+Ett lyckat svar returnerar HTTP-status 2007 (Multi-Status) och information om de sammanfogningsprinciper vars ID:n angavs i begäran om POST.
 
 ```json
 { 
@@ -435,7 +435,7 @@ Ett lyckat svar returnerar en numrerad lista med sammanfogningsprinciper som upp
 
 ## Skapa en kopplingsprofil
 
-Du kan skapa en ny sammanfogningsprincip för din organisation genom att göra en POST-begäran till `/config/mergePolicies` slutpunkten.
+Du kan skapa en ny sammanfogningsprincip för din organisation genom att göra en POST-förfrågan till `/config/mergePolicies` slutpunkten.
 
 **API-format**
 
@@ -600,7 +600,7 @@ Ett lyckat svar returnerar information om den nyligen uppdaterade sammanfognings
 
 ### Skriv över en sammanfogningsprincip
 
-Ett annat sätt att ändra en sammanfogningsprincip är att använda en PUT-begäran, som skriver över hela sammanfogningsprincipen.
+Ett annat sätt att ändra en kopplingsprofil är att använda en PUT-begäran, som skriver över hela kopplingsprofilen.
 
 **API-format**
 
@@ -720,7 +720,7 @@ curl -X DELETE \
 
 **Svar**
 
-En slutförd borttagningsbegäran returnerar HTTP-status 200 (OK) och en tom svarstext. För att bekräfta att borttagningen lyckades kan du utföra en GET-begäran för att visa sammanfogningsprincipen efter dess ID. Om sammanfogningsprincipen togs bort får du ett HTTP-statusfel 404 (Hittades inte).
+En slutförd borttagningsbegäran returnerar HTTP-status 200 (OK) och en tom svarstext. Du kan bekräfta att borttagningen lyckades genom att utföra en GET-förfrågan och visa sammanfogningsprincipen efter dess ID. Om sammanfogningsprincipen togs bort får du ett HTTP-statusfel 404 (Hittades inte).
 
 ## Nästa steg
 
