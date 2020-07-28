@@ -265,7 +265,7 @@ Fortsätt att följa stegen som beskrivs i utvecklarhandboken tills du har skapa
 
 ## Skapa en måldatauppsättning
 
-En måldatauppsättning kan skapas genom att en POST-begäran till API:t för [katalogtjänsten](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)utförs, med ID:t för målschemat i nyttolasten.
+En måldatauppsättning kan skapas genom att en POST till API:t [för](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)katalogtjänsten utförs, med ID:t för målschemat i nyttolasten.
 
 **API-format**
 
@@ -374,7 +374,7 @@ Det sista steget mot att importera parquet-data från ett molnlagringsutrymme fr
 - [Källanslutnings-ID](#source)
 - [Target-anslutnings-ID](#target)
 
-Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en POST-begäran samtidigt som du anger de tidigare nämnda värdena i nyttolasten.
+Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en begäran om POST samtidigt som du anger de tidigare angivna värdena i nyttolasten.
 
 **API-format**
 
