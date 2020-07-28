@@ -204,7 +204,7 @@ Det finns några begränsningar att tänka på när du använder taggar:
 
 * De enda katalogobjekt som för närvarande stöder taggar är datamängder, grupper och anslutningar.
 * Taggnamnen är unika för din IMS-organisation.
-* Adobes processer kan utnyttja taggar för vissa beteenden. Namnen på dessa taggar har prefixet&quot;adobe&quot; som standard. Därför bör du undvika den här regeln när du deklarerar taggnamn.
+* Adobe kan använda taggar för vissa beteenden. Namnen på dessa taggar har prefixet&quot;adobe&quot; som standard. Därför bör du undvika den här regeln när du deklarerar taggnamn.
 * Följande taggnamn är reserverade för användning i hela [!DNL Experience Platform]organisationen och kan därför inte deklareras som ett taggnamn för din organisation:
    * `unifiedProfile`: Det här taggnamnet är reserverat för datauppsättningar som ska importeras av [!DNL Real-time Customer Profile](../../profile/home.md).
    * `unifiedIdentity`: Det här taggnamnet är reserverat för datauppsättningar som ska importeras av [!DNL Identity Service](../../identity-service/home.md).
@@ -394,7 +394,7 @@ Ett godkänt svar innehåller en lista med [!DNL Catalog] objekt som ligger inom
 
 Med `orderBy` frågeparametern kan du sortera (ordna) svarsdata baserat på ett angivet egenskapsvärde. Den här parametern kräver &quot;direction&quot; (`asc` för stigande eller `desc` fallande), följt av kolon (`:`) och sedan en egenskap för att sortera resultaten efter. Om ingen riktning anges kommer standardriktningen att bli stigande.
 
-Flera sorteringsegenskaper kan anges i en kommaavgränsad lista. Om den första sorteringsegenskapen skapar flera objekt som innehåller samma värde för den egenskapen, används den andra sorteringsegenskapen för att ytterligare sortera de matchande objekten.
+Flera sorteringsegenskaper kan anges i en kommaseparerad lista. Om den första sorteringsegenskapen skapar flera objekt som innehåller samma värde för den egenskapen, används den andra sorteringsegenskapen för att ytterligare sortera de matchande objekten.
 
 Ta till exempel följande fråga: `orderBy=name,desc:created`. Resultaten sorteras i stigande ordning baserat på den första sorteringsegenskapen `name`. Om flera poster delar samma `name` egenskap sorteras de matchande posterna sedan efter den andra sorteringsegenskapen `created`. Om ingen returnerad post har samma `name`värde räknas inte `created` egenskapen in i sorteringen.
 
@@ -595,7 +595,7 @@ Parameterns värde har stöd för flera olika typer av villkorsuttryck `property
 
 **Begäran**
 
-Följande begäran returnerar alla datauppsättningar med ett versionsnummer större än 1.0.3.
+Följande begäran returnerar alla datauppsättningar med ett versionsnummer som är större än 1.0.3.
 
 ```shell
 curl -X GET \
