@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Skapa en källanslutning till Amazon Redshift i användargränssnittet
+title: Skapa en Amazon Redshift-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
 source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
