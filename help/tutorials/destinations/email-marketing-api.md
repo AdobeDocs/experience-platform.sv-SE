@@ -12,7 +12,7 @@ ht-degree: 0%
 ---
 
 
-# Skapa e-postmarknadsföringsmål och aktivera data i Adobes [!DNL Real-time Customer Data Platform]
+# Skapa e-postmarknadsföringsmål och aktivera data i Adobe [!DNL Real-time Customer Data Platform]
 
 I den här självstudiekursen visas hur du använder API-anrop för att ansluta till dina Adobe Experience Platform-data, skapa ett [e-postmarknadsföringsmål](../../rtcdp/destinations/email-marketing-destinations.md), skapa ett dataflöde till det nya mål du skapat och aktivera data till det nya mål du skapat.
 
@@ -20,7 +20,7 @@ I den här självstudien används målet Adobe Campaign i alla exempel, men steg
 
 ![Översikt - stegen för att skapa ett mål och aktivera segment](../images/destinations/flow-api-destinations-steps-overview.png)
 
-Om du föredrar att använda användargränssnittet i Adobes CDP-fil i realtid för att ansluta ett mål och aktivera data, se [Koppla ett mål](../../rtcdp/destinations/connect-destination.md) och [Aktivera profiler och segment till en målsjälvstudiekurs](../../rtcdp/destinations/activate-destinations.md) .
+Om du föredrar att använda användargränssnittet i Adobe CDP i realtid för att ansluta ett mål och aktivera data, se [Koppla ett mål](../../rtcdp/destinations/connect-destination.md) och [Aktivera profiler och segment till en målsjälvstudiekurs](../../rtcdp/destinations/activate-destinations.md) .
 
 ## Kom igång
 
@@ -30,7 +30,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [!DNL Catalog Service](../../catalog/home.md): [!DNL Catalog] är systemet för registrering av dataplatser och datalinje inom [!DNL Experience Platform].
 * [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data till e-postmarknadsföringsmål i Adobe CDP i realtid.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data till e-postmarknadsföringsmål i CDP i realtid i Adobe.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
@@ -80,7 +80,7 @@ Before starting this tutorial, familiarize yourself with the following terms whi
 
 ### Dokumentation för Swagger
 
-Du hittar referensdokumentation för alla API-anrop i den här självstudiekursen i Swagger. Se [Flow Service API-dokumentationen för Adobe.io](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml). Vi rekommenderar att du använder den här självstudiekursen och dokumentationssidan för Swagger parallellt.
+Du hittar referensdokumentation för alla API-anrop i den här självstudiekursen i Swagger. Se [Flow Service API-dokumentationen på Adobe.io](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml). Vi rekommenderar att du använder den här självstudiekursen och dokumentationssidan för Swagger parallellt.
 
 ## Hämta listan över tillgängliga mål {#get-the-list-of-available-destinations}
 
@@ -467,9 +467,9 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nya målansl
 
 Med de ID:n du fick i föregående steg kan du nu skapa ett dataflöde mellan dina [!DNL Experience Platform] data och målet där du vill aktivera data. Tänk på det här steget som att skapa en pipeline, genom vilken data sedan flödar mellan [!DNL Experience Platform] och önskat mål.
 
-Om du vill skapa ett dataflöde utför du en POST-begäran enligt nedan och anger värdena som anges nedan i nyttolasten.
+Om du vill skapa ett dataflöde ska du utföra en begäran om POST enligt nedan, med de värden som anges nedan i nyttolasten.
 
-Utför följande POST-begäran för att skapa ett dataflöde.
+Utför följande begäran om POST för att skapa ett dataflöde.
 
 **API-format**
 
@@ -611,7 +611,7 @@ Håll utkik efter 202 OK-svar. Ingen svarstext returneras. Om du vill verifiera 
 
 Som ett sista steg i självstudiekursen bör du validera att segmenten och profilattributen verkligen har mappats korrekt till dataflödet.
 
-Utför följande GET-begäran för att validera detta:
+Gör följande GET-förfrågan för att validera detta:
 
 **API-format**
 
