@@ -28,7 +28,7 @@ Det här dokumentet innehåller exempel-API-anrop för beskrivningar, samt en fu
 
 ## Listbeskrivare
 
-En GET-begäran kan användas för att returnera en lista över alla beskrivningar som har definierats av din organisation.
+En enda GET-förfrågan kan användas för att returnera en lista över alla beskrivningar som har definierats av din organisation.
 
 **API-format**
 
@@ -109,7 +109,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar information om beskrivningen, inklusive dess `@type` och `sourceSchema`, samt ytterligare information som varierar beroende på typen av beskrivning. Det returnerade `@id` måste matcha den beskrivning `@id` som anges i begäran.
+Ett lyckat svar returnerar information om beskrivningen, inklusive dess `@type` och `sourceSchema`, samt ytterligare information som varierar beroende på typen av beskrivning. Den returnerade `@id` typen ska matcha den beskrivning `@id` som anges i begäran.
 
 ```JSON
 {
@@ -133,7 +133,7 @@ Ett lyckat svar returnerar information om beskrivningen, inklusive dess `@type` 
 
 ## Skapa beskrivning
 
-Med [!DNL Schema Registry] den kan du definiera flera olika beskrivningstyper. Varje beskrivningstyp kräver att dess egna specifika fält skickas i POST-begäran. En fullständig lista med beskrivningar, och de fält som behövs för att definiera dem, finns i avsnittet om tillägg om [att definiera beskrivningar](#defining-descriptors).
+Med [!DNL Schema Registry] den kan du definiera flera olika beskrivningstyper. Varje beskrivningstyp kräver att dess egna specifika fält skickas i POSTEN. En fullständig lista med beskrivningar, och de fält som behövs för att definiera dem, finns i avsnittet om tillägg om [att definiera beskrivningar](#defining-descriptors).
 
 **API-format**
 
@@ -199,7 +199,7 @@ PUT /tenant/descriptors/{DESCRIPTOR_ID}
 
 **Begäran**
 
-Denna begäran _skriver_ om beskrivningen, så begärandetexten måste innehålla alla fält som krävs för att definiera en beskrivning av den typen. Med andra ord är nyttolasten som ska uppdateras (PUT) en beskrivning samma som nyttolasten som skapar (POST) en beskrivning av samma typ.
+Denna begäran _skriver_ om beskrivningen, så begärandetexten måste innehålla alla fält som krävs för att definiera en beskrivning av den typen. Med andra ord är nyttolasten som ska uppdatera (PUT) en beskrivning densamma som nyttolasten för att skapa (POST) en beskrivning av samma typ.
 
 I det här exemplet uppdateras identitetsbeskrivningen så att den refererar till en annan `xdm:sourceProperty` (&quot;mobiltelefon&quot;) och ändrar `xdm:namespace` den till &quot;Telefon&quot;.
 
@@ -234,7 +234,7 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och `@id` den uppdaterade be
 }
 ```
 
-Om du utför en sökbegäran (GET) för att visa beskrivningen visas att fälten nu har uppdaterats för att återspegla de ändringar som skickats i PUT-begäran.
+Om du utför en sökning (GET) för att visa beskrivningen visas att fälten nu har uppdaterats för att återspegla de ändringar som skickats i PUT-begäran.
 
 ## Ta bort beskrivning
 
@@ -336,7 +336,7 @@ Med egna namnbeskrivningar kan användaren ändra värdena `title`, `description
 | `xdm:sourceProperty` | Sökvägen till den specifika egenskap som ska vara identiteten. Sökvägen ska börja med ett &quot;/&quot; och inte sluta med ett. Ta inte med &quot;egenskaper&quot; i sökvägen (använd t.ex. &quot;/personalEmail/address&quot; istället för &quot;/properties/personalEmail/properties/address&quot;) |
 | `xdm:title` | Den nya rubriken som du vill visa för det här fältet, skriven i Inledande versal. |
 | `xdm:description` | En valfri beskrivning kan läggas till tillsammans med titeln. |
-| `meta:enum` | Om fältet som anges av `xdm:sourceProperty` är ett strängfält, `meta:enum` bestämmer listan med föreslagna värden för fältet i [!DNL Experience Platform] användargränssnittet. Det är viktigt att komma ihåg att `meta:enum` inte deklarerar en uppräkning eller tillhandahåller någon datavalidering för XDM-fältet.<br><br>Detta ska endast användas för XDM-fält som definierats av Adobe. Om egenskapen source är ett anpassat fält som definieras av din organisation bör du i stället redigera fältets `meta:enum` egenskap direkt via en [PATCH-begäran](./update-resource.md). |
+| `meta:enum` | Om fältet som anges av `xdm:sourceProperty` är ett strängfält, `meta:enum` bestämmer listan med föreslagna värden för fältet i [!DNL Experience Platform] användargränssnittet. Det är viktigt att komma ihåg att `meta:enum` inte deklarerar en uppräkning eller tillhandahåller någon datavalidering för XDM-fältet.<br><br>Detta ska endast användas för XDM-fält som definieras av Adobe. Om egenskapen source är ett anpassat fält som definieras av din organisation bör du i stället redigera fältets `meta:enum` egenskap direkt via en [PATCH-begäran](./update-resource.md). |
 
 #### Relationsbeskrivning
 
