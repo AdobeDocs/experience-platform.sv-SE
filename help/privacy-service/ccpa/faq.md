@@ -48,30 +48,30 @@ Personlig information kan också omfatta information om internetaktiviteter elle
 - Sökhistorik
 - Information om en kunds interaktion med en webbplats, tillämpning eller annons
 
-Även om CCPA omfattar en mängd personuppgifter innebär Adobes standardavtalsvillkor att känslig personlig information (som SSN, information om körkort, ekonomisk kontoinformation och biometriska data) i allmänhet inte får importeras och användas i [!DNL Experience Cloud] tillämpningar.
+Även om CCPA omfattar en stor mängd personuppgifter innebär Adobe:s standardavtalsvillkor att känslig personlig information (som SSN, körkortsinformation, ekonomisk kontoinformation och biometriska data) i allmänhet inte får importeras och användas i [!DNL Experience Cloud] ansökningar.
 
 ## Hur gäller CCPA:s olika roller och ansvarsområden [!DNL Experience Cloud]?
 
 Enligt CCPA gäller följande roller Adobe och dess kunder:
 
-- Adobes kunder (den part som begär in och använder personuppgifter från personer bosatta i Kalifornien) betraktas som ett **företag**.
-- Adobe, som i sin roll att tillhandahålla tjänsten, betraktas som en **tjänsteleverantör**.
+- Kunder i Adobe (den part som begär att få samla in och använda personuppgifter från personer bosatta i Kalifornien) betraktas som ett **företag**.
+- Adobe, i sin roll att tillhandahålla tjänsten, skulle betraktas som en **tjänsteleverantör**.
 
-Med tanke på denna relation och Adobes avtalsspråk skulle utlämnande av information till Adobe sannolikt inte betraktas som en&quot;försäljning&quot; som företagen måste meddela och erbjuda en avanmälan för.
+Med tanke på detta förhållande och Adobe avtalsspråk skulle utlämnande av information till Adobe sannolikt inte betraktas som en&quot;försäljning&quot; som företagen måste meddela och erbjuda en avanmälan för.
 
-Adobes tjänster kan dock användas för att möjliggöra viss datadelning och överföring till tredje part. Dessa överföringar från tredje part kan betraktas som&quot;försäljning&quot; och kräver enligt lag offentliggörande och avanmälan.  Kunderna bör samarbeta med sin juridiska rådgivare för att utvärdera specifika användningsfall för att bedöma tillämpliga krav.
+Adobe tjänster kan dock användas för att möjliggöra viss datadelning och överföring till tredje part. Dessa överföringar från tredje part kan betraktas som&quot;försäljning&quot; och kräver enligt lag offentliggörande och avanmälan.  Kunderna bör samarbeta med sin juridiska rådgivare för att utvärdera specifika användningsfall för att bedöma tillämpliga krav.
 
 ## Hur många dagar måste ett företag svara på en konsumentförfrågan om att få tillgång till eller ta bort personlig information?
 
 Förutsatt att företaget har samlat in personuppgifter och kan autentisera eller verifiera identiteten hos en viss kund i Kalifornien, tillåter CCPA att konsumentförfrågningar kan uppfyllas inom 45 dagar (med några undantag).
 
-## Vilken är Adobes roll under CCPA?
+## Vad är Adobe under CCPA?
 
 Som tjänsteleverantör samlar Adobe in och behandlar personuppgifter för företagets räkning och är enligt avtal bundet att använda dessa uppgifter endast för de särskilda ändamål som anges i avtalet.
 
-Med tanke på detta förhållande och Adobes avtalsspråk omfattas information till Adobe av lagens bestämmelser för tjänsteleverantörer och anses sannolikt inte vara en&quot;försäljning&quot; som företag måste meddela och erbjuda en avanmälan för.
+Med tanke på detta förhållande och Adobe avtalsspråk omfattas information till Adobe av lagens bestämmelser om tjänsteleverantörer, och skulle sannolikt inte betraktas som en&quot;försäljning&quot; som företagen skulle behöva meddela och erbjuda en avanmälan för.
 
-Adobes tjänster kan användas för att möjliggöra viss datadelning och överföring till tredje part. Dessa överföringar från tredje part kan betraktas som&quot;försäljning&quot; och kräver enligt lag offentliggörande och avanmälan.  Kunderna bör samarbeta med sin juridiska rådgivare för att utvärdera specifika användningsfall för att bedöma tillämpliga krav.
+Adobe kan användas för att möjliggöra viss datadelning och överföring till tredje part. Dessa överföringar från tredje part kan betraktas som&quot;försäljning&quot; och kräver enligt lag offentliggörande och avanmälan.  Kunderna bör samarbeta med sin juridiska rådgivare för att utvärdera specifika användningsfall för att bedöma tillämpliga krav.
 
 ## Hur kan jag stödja konsumentsekretesskrav enligt CCPA om jag upprätthåller vissa typer av data som omfattas av kraven?
 
@@ -83,6 +83,6 @@ När du har vidtagit de åtgärder som krävs för att autentisera CA-konsumente
 
 ## Erbjuder Adobe andra verktyg som kan vara till hjälp för att tillgodose CCPA-kraven?
 
-Adobe Experience Cloud-programmen har funktioner för datahantering och styrning som kan vara till hjälp för företagens sekretessbehov. Bland dessa verktyg finns etikettering av dataanvändning, rollbaserade åtkomstkontroller, IP-förfalskning och hash-funktioner.
+Adobe Experience Cloud-programmen har funktioner för datahantering och styrning som kan vara till hjälp för företagens integritetsbehov. Bland dessa verktyg finns etikettering av dataanvändning, rollbaserade åtkomstkontroller, IP-förfalskning och hash-funktioner.
 
 Adobe har fått olika certifieringar av sin sekretess- och säkerhetspraxis, till exempel en ISO 27001-certifiering och en TrustArc GDPR-validering.
