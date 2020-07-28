@@ -22,7 +22,7 @@ API-slutpunkten som används i den här handboken är en del av [!DNL Real-time 
 
 ## Åtkomst till profildata via identitet
 
-Du kan komma åt en [!DNL Profile] enhet genom att göra en GET-begäran till `/access/entities` slutpunkten och ange entitetens identitet som en serie frågeparametrar. Den här identiteten består av ett ID-värde (`entityId`) och identitetsnamnutrymmet (`entityIdNS`).
+Du kan komma åt en [!DNL Profile] enhet genom att göra en GET-förfrågan till `/access/entities` slutpunkten och ange entitetens identitet som en serie frågeparametrar. Den här identiteten består av ett ID-värde (`entityId`) och identitetsnamnutrymmet (`entityIdNS`).
 
 Frågeparametrar som anges i sökvägen anger vilka data som ska användas. Du kan inkludera flera parametrar, avgränsade med et-tecken (&amp;). En fullständig lista över giltiga parametrar finns i avsnittet med [frågeparametrar](#query-parameters) i bilagan.
 
@@ -119,7 +119,7 @@ curl -X GET \
 
 ## Åtkomst till profildata via lista över identiteter
 
-Du kan komma åt flera profilentiteter genom att göra en POST-begäran till `/access/entities` slutpunkten och ange identiteterna i nyttolasten. Dessa identiteter består av ett ID-värde (`entityId`) och ett identitetsnamnutrymme (`entityIdNS`).
+Du kan få åtkomst till flera profilentiteter via deras identiteter genom att göra en POST-förfrågan till `/access/entities` slutpunkten och ange identiteterna i nyttolasten. Dessa identiteter består av ett ID-värde (`entityId`) och ett identitetsnamnutrymme (`entityIdNS`).
 
 **API-format**
 
@@ -332,7 +332,7 @@ curl -X POST \
 
 ## Åtkomst till tidsseriehändelser för en profil per identitet
 
-Du kan komma åt tidsseriehändelser via identiteten för deras associerade profilentitet genom att göra en GET-begäran till `/access/entities` slutpunkten. Den här identiteten består av ett ID-värde (`entityId`) och ett identitetsnamnutrymme (`entityIdNS`).
+Du kan komma åt tidsseriehändelser via identiteten för deras associerade profilentitet genom att göra en GET-förfrågan till `/access/entities` slutpunkten. Den här identiteten består av ett ID-värde (`entityId`) och ett identitetsnamnutrymme (`entityIdNS`).
 
 Frågeparametrar som anges i sökvägen anger vilka data som ska användas. Du kan inkludera flera parametrar, avgränsade med et-tecken (&amp;). En fullständig lista över giltiga parametrar finns i avsnittet med [frågeparametrar](#query-parameters) i bilagan.
 
@@ -411,7 +411,7 @@ Ett lyckat svar returnerar en numrerad lista över händelser i tidsserier och a
 
 ### Åtkomst till en efterföljande resultatsida
 
-Resultaten sidnumreras när tidsseriehändelser hämtas. Om det finns efterföljande resultatsidor kommer egenskapen att innehålla ett ID: `_page.next` . Dessutom innehåller egenskapen en URI för begäran om att hämta nästa sida `_links.next.href` . Om du vill hämta resultaten gör du en annan GET-begäran till `/access/entities` slutpunkten, men du måste vara säker på att ersätta `/entities` med värdet för den angivna URI:n.
+Resultaten sidnumreras när tidsseriehändelser hämtas. Om det finns efterföljande resultatsidor kommer egenskapen att innehålla ett ID: `_page.next` . Dessutom innehåller egenskapen en URI för begäran om att hämta nästa sida `_links.next.href` . Om du vill hämta resultatet gör du en ny GET-begäran till `/access/entities` slutpunkten, men du måste vara säker på att ersätta `/entities` med värdet för den angivna URI:n.
 
 >[!NOTE]
 >Se till att du inte råkar upprepa `/entities/` i sökvägen för begäran. Den ska bara visas en gång. `/access/entities?start=...`
@@ -492,7 +492,7 @@ Ett godkänt svar returnerar nästa resultatsida. Det här svaret har inga efter
 
 ## Få åtkomst till tidsseriehändelser för flera profiler per identitet
 
-Du kan komma åt tidsseriehändelser från flera associerade profiler genom att göra en POST-begäran till `/access/entities` slutpunkten och ange profilidentiteterna i nyttolasten. Dessa identiteter består av ett ID-värde (`entityId`) och ett identitetsnamnutrymme (`entityIdNS`).
+Du kan komma åt tidsseriehändelser från flera associerade profiler genom att göra en POST-förfrågan till `/access/entities` slutpunkten och ange profilidentiteterna i nyttolasten. Dessa identiteter består av ett ID-värde (`entityId`) och ett identitetsnamnutrymme (`entityIdNS`).
 
 **API-format**
 
@@ -502,7 +502,7 @@ POST /access/entities
 
 **Begäran**
 
-The following request retrieves user IDs, local times, and country codes for time series events associated with a list of profile identities:
+Följande begäran hämtar användar-ID:n, lokala tider och landskoder för tidsseriehändelser som är associerade med en lista över profilidentiteter:
 
 ```shell
 curl -X POST \
@@ -543,7 +543,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 |---|---|
-| `schema.name` | **(REQUIRED)** The XDM schema of the entity to retrieve |
+| `schema.name` | **(OBLIGATORISKT)** XDM-schemat för den entitet som ska hämtas |
 | `relatedSchema.name` | Om `schema.name` är `_xdm.context.experienceevent` det här värdet måste ange schemat för den profilentitet som tidsseriehändelser är relaterade till. |
 | `identities` | **(OBLIGATORISKT)** En lista med profiler som associerade tidsseriehändelser ska hämtas från. Varje post i arrayen anges på ett av två sätt: 1) med en fullständigt kvalificerad identitet som består av ID-värde och namnutrymme eller 2) som tillhandahåller ett XID. |
 | `fields` | Isolerar de data som returneras till en angiven uppsättning fält. Använd detta för att filtrera vilka schemafält som ska inkluderas i hämtade data. Exempel: personalEmail,person.namn,person.kön |
@@ -766,17 +766,17 @@ Ett lyckat svar returnerar en numrerad lista över händelser i tidsserier som �
 
 I det här exemplet ger den första listade profilen (&quot;GkouAW-yD9aoRCPhRYROJ-TetAFW&quot;) ett värde för `_links.next.payload`, vilket innebär att det finns ytterligare resultatsidor för den här profilen. I följande avsnitt om [hur du får tillgång till ytterligare resultat](#access-additional-results) finns mer information om hur du får tillgång till dessa ytterligare resultat.
 
-### Access additional results {#access-additional-results}
+### Få tillgång till ytterligare resultat {#access-additional-results}
 
 När tidsseriehändelser hämtas kan det finnas många resultat som returneras, och därför sidnumreras ofta resultaten. Om det finns efterföljande resultatsidor för en viss profil kommer värdet för den profilen att innehålla ett nyttolastobjekt `_links.next.payload` .
 
-Om du använder den här nyttolasten i begärandetexten kan du utföra ytterligare en POST-begäran till slutpunkten för att hämta efterföljande sida med tidsseriedata för den profilen. `access/entities`
+Om du använder den här nyttolasten i begärandetexten kan du utföra en extra begäran om POST till slutpunkten för att hämta efterföljande data för tidsserierna för den . `access/entities`
 
 ## Få åtkomst till tidsseriehändelser i flera schemaentiteter
 
-Du kan komma åt flera enheter som är anslutna via en relationsbeskrivare. The following example API call assumes a relationship has already been defined between two schemas. For more information on relationship descriptors, please read the [!DNL Schema Registry] API developer guide [descriptors endpoint guide](../../xdm/api/descriptors.md).
+Du kan komma åt flera enheter som är anslutna via en relationsbeskrivare. I följande exempel på API-anrop förutsätts att en relation redan har definierats mellan två scheman. Mer information om relationsbeskrivare finns i API- [!DNL Schema Registry] utvecklarhandboken för [slutpunktsbeskrivningar](../../xdm/api/descriptors.md).
 
-You can include query parameters in the request path in order to specify which data to access. Du kan inkludera flera parametrar, avgränsade med et-tecken (&amp;). En fullständig lista över giltiga parametrar finns i avsnittet med [frågeparametrar](#query-parameters) i bilagan.
+Du kan inkludera frågeparametrar i sökvägen för begäran för att ange vilka data som ska användas. Du kan inkludera flera parametrar, avgränsade med et-tecken (&amp;). En fullständig lista över giltiga parametrar finns i avsnittet med [frågeparametrar](#query-parameters) i bilagan.
 
 **API-format**
 
@@ -786,7 +786,7 @@ GET /access/entities?{QUERY_PARAMETERS}
 
 **Begäran**
 
-The following request retrieves an entity containing a previously established relationship descriptor to access information across different schemas.
+Följande begäran hämtar en entitet som innehåller en tidigare etablerad relationsbeskrivare för att få tillgång till information över olika scheman.
 
 ```shell
 curl -X GET \
@@ -799,7 +799,7 @@ curl -X GET \
 
 **Svar**
 
-A successful response returns a paginated list of time series events associated with the multiple entities.
+Ett lyckat svar returnerar en numrerad lista över händelser i tidsserier som är associerade med de flera entiteterna.
 
 ```json
 {
@@ -903,9 +903,9 @@ Följande parametrar används i sökvägen för GET-begäranden till `/access/en
 | `relatedEntityId` | Om `schema.name` är &quot;_xdm.context.experienceevent&quot; måste det här värdet ange den relaterade profilentitetens identitetsnamnutrymme. Detta värde följer samma regler som `entityId`. | `relatedEntityId=69935279872410346619186588147492736556` |
 | `relatedEntityIdNS` | Om `schema.name` är &quot;_xdm.context.experienceevent&quot; måste det här värdet ange identitetsnamnutrymmet för den entitet som anges i `relatedEntityId`. | `relatedEntityIdNS=CRMID` |
 | `fields` | Filtrerar de data som returneras i svaret. Använd detta för att ange vilka schemafältvärden som ska inkluderas i hämtade data. För flera fält avgränsar du värden med kommatecken utan blanksteg mellan | `fields=personalEmail,person.name,person.gender` |
-| `mergePolicyId` | Identifierar den sammanslagningsprincip som ska användas för att styra returnerade data. Om ingen anges i samtalet används organisationens standardvärde för det schemat. If no default Merge Policy has been configured, the default is no profile merge and no identity stitching. | `mergePoilcyId=5aa6885fcf70a301dabdfa4a` |
+| `mergePolicyId` | Identifierar den sammanslagningsprincip som ska användas för att styra returnerade data. Om ingen anges i samtalet används organisationens standardvärde för det schemat. Om ingen standardprincip för sammanslagning har konfigurerats är standardinställningen ingen profilsammanslagning och ingen identitetssammanfogning. | `mergePoilcyId=5aa6885fcf70a301dabdfa4a` |
 | `orderBy` | Sorteringsordningen för hämtade upplevelsehändelser efter tidsstämpel, skriven som `(+/-)timestamp` med standardvärdet `+timestamp`. | `orderby=-timestamp` |
 | `startTime` | Ange starttid för att filtrera tidsserieobjekt (i millisekunder). | `startTime=1539838505` |
-| `endTime` | Specify the end time to filter time-series objects (in milliseconds). | `endTime=1539838510` |
-| `limit` | Numeriskt värde som anger det maximala antalet objekt som ska returneras. Default: 1000 | `limit=100` |
+| `endTime` | Ange sluttiden för filtrering av tidsserieobjekt (i millisekunder). | `endTime=1539838510` |
+| `limit` | Numeriskt värde som anger det maximala antalet objekt som ska returneras. Standard: 1000 | `limit=100` |
 | `withCA` | Funktionsflagga för aktivering av beräknade attribut för sökning. Standard: false | `withCA=true` |
