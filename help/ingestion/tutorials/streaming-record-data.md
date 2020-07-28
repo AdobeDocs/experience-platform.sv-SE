@@ -370,7 +370,7 @@ GET /access/entities?schema.name=_xdm.context.profile&entityId=janedoe@example.c
 
 **Begäran**
 
-Du kan granska tidigare inmatade postdata med följande GET-begäran.
+Du kan granska tidigare inmatade postdata med följande GET-förfrågan.
 
 ```shell
 curl -X GET 'https://platform.adobe.io/data/core/ups/access/entities?schema.name=_xdm.context.profile&entityId=janedoe@example.com&entityIdNS=email'\
