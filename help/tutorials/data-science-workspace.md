@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # [!DNL Data Science Workspace] självstudiekurser
 
-Adobe Experience Platform [!DNL Data Science Workspace] använder maskininlärning och artificiell intelligens för att skapa insikter utifrån era data. Integrerat i Adobe Experience Platform hjälper er att [!DNL Data Science Workspace] göra prognoser med hjälp av ert innehåll och era dataresurser i alla Adobes lösningar. Datavetare på alla kunskapsnivåer har sofistikerade, lättanvända verktyg som stöder snabb utveckling, utbildning och anpassning av maskininlärningsrecepten - alla fördelarna med AI-tekniken, utan komplexiteten.
+Adobe Experience Platform [!DNL Data Science Workspace] använder maskininlärning och artificiell intelligens för att skapa insikter utifrån era data. Integrerat i Adobe Experience Platform hjälper er att [!DNL Data Science Workspace] göra prognoser med hjälp av ert innehåll och era dataresurser över alla Adobe-lösningar. Datavetare på alla kunskapsnivåer har sofistikerade, lättanvända verktyg som stöder snabb utveckling, utbildning och anpassning av maskininlärningsrecepten - alla fördelarna med AI-tekniken, utan komplexiteten.
 
 Börja med att läsa översikten över arbetsytan för [datavetenskap](../data-science-workspace/home.md)om du vill veta mer.
 
