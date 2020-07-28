@@ -56,7 +56,7 @@ evaluation.predictionColumn=prediction
 training.evaluate=true
 ```
 
-När en utvärderingsklass har aktiverats beräknas ett antal mätvärden under utbildning som standard. Standardvärden kan deklareras explicit genom att lägga till följande rad i `application.properties`.
+När en utvärderingsklass har aktiverats beräknas ett antal värden som standard under kursen. Standardvärden kan deklareras explicit genom att lägga till följande rad i `application.properties`.
 
 ```scala
 evaluation.metrics.com=com.adobe.platform.ml.impl.Constants.DEFAULT
