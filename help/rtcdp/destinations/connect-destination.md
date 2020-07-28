@@ -1,7 +1,7 @@
 ---
 title: Anslut till ett mål i Adobe Real-time Customer Data Platform
 seo-title: Anslut till ett mål i Adobe Real-time Customer Data Platform
-description: I den här självstudiekursen listas stegen för att ansluta ett mål i Adobe Real-time Customer Data Platform
+description: I den här självstudiekursen listas stegen för att ansluta en destination i Adobe Real-time Customer Data Platform
 translation-type: tm+mt
 source-git-commit: b070a8a6eee1c1b95b20468c7067181ec62bdbd0
 workflow-type: tm+mt
