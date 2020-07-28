@@ -5,13 +5,16 @@ title: Visa alla sandlådor
 topic: developer guide
 translation-type: tm+mt
 source-git-commit: b4741cdfd065bbaed7f2feeafe8619191e4b8f6c
+workflow-type: tm+mt
+source-wordcount: '185'
+ht-degree: 0%
 
 ---
 
 
 # Visa alla sandlådor
 
-Om du vill visa alla sandlådor som tillhör din IMS-organisation (aktiv eller annan), ska du göra en GET-begäran till `/sandboxes` slutpunkten.
+Om du vill visa en lista över alla sandlådor som tillhör din IMS-organisation (aktiv eller annan), gör du en GET-begäran till `/sandboxes` slutpunkten.
 
 **API-format**
 
