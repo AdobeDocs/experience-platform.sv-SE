@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # Visa resurser
 
-Du kan visa en lista över alla [!DNL Schema Registry] resurser av en viss typ (klasser, mixins, scheman, datatyper eller beskrivningar) i en behållare genom att utföra en GET-begäran.
+Du kan visa en lista över alla [!DNL Schema Registry] resurser av en viss typ (klasser, mixins, scheman, datatyper eller beskrivningar) i en behållare genom att utföra en enda GET-begäran.
 
 >[!NOTE]
 >
