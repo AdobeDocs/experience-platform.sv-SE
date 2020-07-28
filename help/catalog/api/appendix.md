@@ -110,7 +110,7 @@ Om du till exempel vill referera till ett värde som returnerats från en tidiga
 
 >[!NOTE]
 >
->När en utförd underbegäran endast returnerar referensen till ett objekt (som är standard för de flesta POST- och PUT-begäranden i Catalog API), får referensen alias för värdet `id` och kan användas som `<<{OBJECT_ID}.id>>`.
+>När en utförd underbegäran endast returnerar referensen till ett objekt (som är standard för de flesta POST- och PUT-begäranden i Catalog-API:t), får referensen alias för värdet `id` och kan användas som `<<{OBJECT_ID}.id>>`.
 
 ```shell
 curl -X POST \
@@ -151,7 +151,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar en array med objekt som innehåller `id` den som du tilldelade varje begäran, HTTP-statuskoden för den enskilda begäran och svaret `body`. Eftersom de tre exempelbegärandena var alla för att skapa nya objekt är `body` för varje objekt en array som bara innehåller ID:t för det nya objektet, vilket är standard med de mest framgångsrika POST-svaren i [!DNL Catalog].
+Ett lyckat svar returnerar en array med objekt som innehåller `id` den som du tilldelade varje begäran, HTTP-statuskoden för den enskilda begäran och svaret `body`. Eftersom de tre exempelbegärandena var alla för att skapa nya objekt är `body` för varje objekt en array som bara innehåller ID:t för det nya objektet, vilket är standard med de mest framgångsrika POSTERNA i [!DNL Catalog].
 
 ```json
 [
@@ -172,7 +172,7 @@ Ett lyckat svar returnerar en array med objekt som innehåller `id` den som du t
 ]
 ```
 
-Var försiktig när du undersöker svaret på en flerbegäran eftersom du måste verifiera koden för varje enskild underbegäran och inte bara förlita dig på HTTP-statuskoden för den överordnade POST-begäran.  Det är möjligt att en enda underbegäran returnerar 404 (till exempel en GET-begäran för en ogiltig resurs) medan den övergripande begäran returnerar 200.
+Var försiktig när du inspekterar svar på en flerbegäran eftersom du måste verifiera koden för varje enskild underbegäran och inte bara förlita dig på HTTP-statuskoden för den överordnade POSTEN.  Det är möjligt att en enda underbegäran returnerar 404 (t.ex. en GET-begäran för en ogiltig resurs) medan den totala begäran returnerar 200.
 
 ## Ytterligare begäranderubriker
 
@@ -182,13 +182,13 @@ Var försiktig när du undersöker svaret på en flerbegäran eftersom du måste
 
 Det är en god vana att använda objektversionshantering för att förhindra den typ av datafel som uppstår när ett objekt sparas av flera användare nästan samtidigt.
 
-När du uppdaterar ett objekt bör du först göra ett API-anrop för att visa (GET) objektet som ska uppdateras. Finns i svaret (och alla anrop där svaret innehåller ett enda objekt) är en rubrik som innehåller objektets version `E-Tag` . Om du lägger till objektversionen som ett begärandehuvud med namnet `If-Match` i uppdateringsanropet (PUT eller PATCH) kommer uppdateringen bara att lyckas om versionen fortfarande är densamma, vilket förhindrar att data kolliderar.
+När du uppdaterar ett objekt bör du först göra ett API-anrop för att visa (GET) det objekt som ska uppdateras. Finns i svaret (och alla anrop där svaret innehåller ett enda objekt) är en rubrik som innehåller objektets version `E-Tag` . Om du lägger till objektversionen som ett begärandehuvud med namnet `If-Match` i uppdateringsanropet (PUT eller PATCH) kommer uppdateringen bara att lyckas om versionen fortfarande är densamma, vilket förhindrar datakonflikter.
 
 Om versionerna inte matchar (objektet ändrades av en annan process sedan du hämtade det) får du HTTP-status 412 (Förhandsvillkor misslyckades) som anger att åtkomst till målresursen har nekats.
 
 ### Pragma
 
-Ibland kanske du vill validera ett objekt utan att spara informationen. Om du använder huvudet med värdet `Pragma` `validate-only` kan du skicka POST- eller PUT-begäranden endast i valideringssyfte, vilket förhindrar att ändringar i data bevaras.
+Ibland kanske du vill validera ett objekt utan att spara informationen. Om du använder huvudet med värdet `Pragma` `validate-only` 1 kan du skicka POST- eller PUT-begäranden endast i valideringssyfte, vilket förhindrar att ändringar i data bevaras.
 
 ## Datakomprimering
 
