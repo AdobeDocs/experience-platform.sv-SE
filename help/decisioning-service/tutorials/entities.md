@@ -58,7 +58,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Konventioner för databas-API
 
-[!DNL Decisioning Service] styrs av ett antal affärsobjekt som är relaterade till varandra. Alla affärsobjekt lagras i [!DNL Platform’s] Business Object Repository. En viktig funktion i den här databasen är att API:erna är ortogonala till typen av affärsobjekt. I stället för att använda API:t POST, GET, PUT, PATCH eller DELETE som anger resurstypen i dess API-slutpunkt, finns det bara 6 generiska slutpunkter, men de accepterar eller returnerar en parameter som anger objekttypen när den typen av uttryck behövs. Schemat måste registreras med databasen, men utöver det kan databasen användas för en öppen uppsättning objekttyper.
+[!DNL Decisioning Service] styrs av ett antal affärsobjekt som är relaterade till varandra. Alla affärsobjekt lagras i [!DNL Platform’s] Business Object Repository. En viktig funktion i den här databasen är att API:erna är ortogonala till typen av affärsobjekt. I stället för att använda API:t POST, GET, PUT, PATCH eller DELETE som anger resurstypen i dess API-slutpunkt, finns det bara 6 generiska slutpunkter, men de accepterar eller returnerar en parameter som anger objekttypen när det behöver det. Schemat måste registreras med databasen, men utöver det kan databasen användas för en öppen uppsättning objekttyper.
 
 Förutom rubrikerna ovan har API:erna för att skapa, läsa, uppdatera, ta bort och fråga databasobjekt följande konventioner:
 
@@ -94,7 +94,7 @@ Listan över tillgängliga behållare hämtas genom att databasens rotslutpunkt 
 
 ## Hantera åtkomst till behållare
 
-En administratör kan gruppera liknande principer, resurser och åtkomstbehörigheter i profiler. Detta minskar handläggningsbördan och stöds av [Adobes användargränssnitt](https://adminconsole.adobe.com)i Admin Console. Du måste vara produktadministratör för Adobe Experience Platform i din organisation för att kunna skapa profiler och tilldela användare till dem.
+En administratör kan gruppera liknande principer, resurser och åtkomstbehörigheter i profiler. Detta minskar den administrativa bördan och stöds av användargränssnittet [för](https://adminconsole.adobe.com)Adobe i Admin Console. Du måste vara produktadministratör för Adobe Experience Platform i din organisation för att kunna skapa profiler och tilldela användare till dem.
 
 Det räcker med att skapa produktprofiler som matchar vissa behörigheter i ett enda steg och sedan lägga till användare i dessa profiler. Profiler fungerar som grupper som har beviljats behörigheter och alla verkliga användare eller tekniska användare i gruppen ärver dessa behörigheter.
 
@@ -218,7 +218,7 @@ Observera att dessa URI:er inte är URL:er och inte tillhandahåller ett sätt a
 
 REST-svaret kommer att ha ett Location-huvud som innehåller en URL-komponent som kan användas för att hämta instansen som precis skapades. Den här komponenten är en relativ URI-referens och måste tillämpas på databasens bas-URI. Bas-URI returneras i `Content-Base` rubriken.
 
-Egenskapen anger `repo:etag` instansens revision. Det här värdet kan användas i uppdateringsåtgärder för att framtvinga konsekvens. HTTP-huvudet `If-Match` kan användas för att lägga till ett villkor i ett PUT- eller PATCH-API-anrop som säkerställer att det inte finns några andra ändringar i instansen som skulle kunna skrivas över av misstag. Värdet `repo:etag` returneras med varje anrop om att skapa, läsa, uppdatera, ta bort och fråga. Värdet används som värde i ` If-Match` huvudet, enligt [RFC7232, avsnitt 3.1](https://tools.ietf.org/html/rfc7232#section-3.1).
+Egenskapen anger `repo:etag` instansens revision. Det här värdet kan användas i uppdateringsåtgärder för att framtvinga konsekvens. HTTP-huvudet `If-Match` kan användas för att lägga till ett villkor i ett API-anrop för PUT eller PATCH som säkerställer att det inte fanns några andra ändringar i instansen som skulle kunna skrivas över av misstag. Värdet `repo:etag` returneras med varje anrop om att skapa, läsa, uppdatera, ta bort och fråga. Värdet används som värde i ` If-Match` huvudet, enligt [RFC7232, avsnitt 3.1](https://tools.ietf.org/html/rfc7232#section-3.1).
 
 De återstående egenskaperna anger vilket konto och vilken API-nyckel som användes för att skapa och senast ändra instansen. Eftersom instansen skapades av det här anropet är de respektive värdena för begäran.
 
@@ -513,7 +513,7 @@ curl -X PATCH {ENDPOINT_PATH}/{CONTAINER_ID}/instances/{INSTANCE_ID} \
 ]'
 ```
 
-PATCH-begäran tillämpar instruktionerna och validerar sedan den resulterande entiteten mot schemat och samma entitets- och referensintegritetsregler som PUT-begäran.
+PATCH-begäran tillämpar instruktionerna och validerar sedan den resulterande entiteten mot schemat och samma entitet och referensintegritetsregler som PUT-begäran.
 
 **Styra redigeringar av egenskapsvärden**
 
@@ -612,7 +612,7 @@ Det finns ett enkelt flöde för övergång mellan lägen som alla alternativ f�
 
 - **`xdm:status`** - Den här egenskapen används för instansens livscykelhantering. Värdet representerar ett arbetsflödestillstånd som används för att indikera om erbjudandet fortfarande är under uppbyggnad (värde = utkast), kan vanligtvis övervägas av körningsmiljön (värde = godkänt) eller om det inte längre ska användas (värde = arkiverat).
 
-En enkel PATCH-åtgärd på instansen används vanligtvis för att ändra en `xdm:status` egenskap:
+En enkel PATCH-åtgärd i instansen används vanligtvis för att ändra en `xdm:status` egenskap:
 
 ```json
 [
@@ -686,7 +686,7 @@ Ytterligare egenskaper kan användas av klienter för att ange och utvärdera ko
 - I varje objekt i `xdm:components` arrayen lägger klienten för användargränssnittet för erbjudandebiblioteket till följande egenskaper. Dessa egenskaper bör inte tas bort eller ändras utan att förstå hur gränssnittet påverkas:
    - **`offerui:previewThumbnail`** - Det här är en valfri egenskap som gränssnittet för erbjudandebiblioteket använder för att visa en återgivning av resursen. Den här återgivningen är inte densamma som själva resursen. Innehållet kan till exempel vara HTML och återgivningen är en bitmappsbild som bara visar en uppskattning av den. Den här (lägre kvalitet) återgivningen visas i erbjudandets representationsblock.
 
-Ett exempel på PATCH-åtgärd för en erbjudandeinstans visar hur du hanterar representationerna:
+Ett exempel på PATCH-åtgärd för en offertinstans visar hur du hanterar representationerna:
 
 ```json
 [
@@ -709,7 +709,7 @@ Ett exempel på PATCH-åtgärd för en erbjudandeinstans visar hur du hanterar r
 
 Se [Uppdatera och korrigera instanser](#updating-and-patching-instances) för den fullständiga cURL-syntaxen. Parametern måste vara `schemaId` eller `https://ns.adobe.com/experience/offer-management/personalized-offer` `https://ns.adobe.com/experience/offer-management/fallback-offer` om erbjudandet är ett reserverbjudande.
 
-PATCH-åtgärden kan misslyckas om det inte finns någon egenskap `xdm:representations` ännu. I så fall kan åtgärden lägg till ovan föregås av en annan tilläggsåtgärd som skapar `xdm:representations` arrayen eller så anger åtgärden lägg till arrayen direkt.
+Åtgärden PATCH kan misslyckas om det inte finns någon egenskap `xdm:representations` ännu. I så fall kan åtgärden lägg till ovan föregås av en annan tilläggsåtgärd som skapar `xdm:representations` arrayen eller så anger åtgärden lägg till arrayen direkt.
 Scheman och egenskaperna som beskrivs används för alla erbjudandetyper, personaliseringserbjudanden och reserverbjudanden. Följande två avsnitt om begränsningar och beslutsregler beskriver olika aspekter av personaliseringserbjudanden.
 
 ## Ange begränsningar för erbjudanden
@@ -746,7 +746,7 @@ En begränsning är en komponent i ett beslutsalternativ som definierar parametr
 - **`xdm:globalCap`** - Ett globalt tak är en begränsning av hur många gånger ett erbjudande kan föreslås totalt.
 - **`xdm:profileCap`** - Ett profillistecken är en begränsning av hur många gånger ett erbjudande kan föreslås till en viss profil.
 
-Du kan ange eller ändra begränsningen för ett personaliseringserbjudande med följande PATCH-anrop:
+Du kan ställa in eller ändra begränsningen för ett personaliseringserbjudande med följande PATCH-anrop:
 
 ```json
 [
@@ -787,7 +787,7 @@ Du kan även lägga till och ta bort en regel med en PATCH-åtgärd:
 
 Se [Uppdatera och korrigera instanser](#updating-and-patching-instances) för den fullständiga cURL-syntaxen. Parametern `schemaId` måste vara `https://ns.adobe.com/experience/offer-management/personalized-offer`. Reserverbjudanden har inga begränsningar.
 
-Observera att berättiganderegeln är inbäddad i `xdm:selectionConstraint` egenskapen tillsammans med kalenderbegränsningarna. PATCH-åtgärder ska inte försöka ta bort hela `SelectionConstraint` egenskapen.
+Observera att berättiganderegeln är inbäddad i `xdm:selectionConstraint` egenskapen tillsammans med kalenderbegränsningarna. PATCH-åtgärder bör inte försöka ta bort hela `SelectionConstraint` egenskapen.
 
 ## Ange prioriteten för ett erbjudande
 
