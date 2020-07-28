@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Amazon Kinesis-kontakt
+title: Amazon Kinesis Connector
 topic: overview
 translation-type: tm+mt
 source-git-commit: 340f5d0611e9e9eb4676018ee10c8a8aa08dbb2d
@@ -57,11 +57,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Amazon Ki
 
 ## Anslut [!DNL Amazon Kinesis] till [!DNL Platform] med API:er
 
-- [Skapa en Amazon Kinesis-kontakt med API:t för Flow Service](../../tutorials/api/create/cloud-storage/kinesis.md)
+- [Skapa en Amazon Kinesis-anslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/kinesis.md)
 - [Utforska ett molnlagringssystem med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
 - [Samla in molnlagringsdata med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
 
 ## Ansluta [!DNL Amazon Kinesis] till [!DNL Platform] användargränssnittet
 
-- [Skapa en källanslutning till Amazon Kinesis i användargränssnittet](../../tutorials/ui/create/cloud-storage/kinesis.md)
+- [Skapa en Amazon Kinesis-källanslutning i användargränssnittet](../../tutorials/ui/create/cloud-storage/kinesis.md)
 - [Konfigurera ett dataflöde för en molnlagringskontakt i användargränssnittet](../../tutorials/ui/dataflow/streaming/cloud-storage.md)
