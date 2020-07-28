@@ -18,7 +18,7 @@ Adobe Experience Platform [!DNL Web SDK] använder [Adobe Identity Service](../.
 
 ## Identitet för första part
 
-Identiteten [!DNL Identity Service] lagras i en cookie i en förstapartsdomän. Försökte [!DNL Identity Service] ange cookien med hjälp av en HTTP-rubrik på domänen. Om detta misslyckas återgår [!DNL Identity Service] programmet till att ställa in cookies via Javascript. Adobe rekommenderar att du konfigurerar en CNAME så att dina cookies inte begränsas av ITP-begränsningar på klientsidan.
+Identiteten [!DNL Identity Service] lagras i en cookie i en förstapartsdomän. Försökte [!DNL Identity Service] ange cookien med hjälp av en HTTP-rubrik på domänen. Om detta misslyckas återgår [!DNL Identity Service] programmet till att ställa in cookies via Javascript. Adobe rekommenderar att du konfigurerar en CNAME för att säkerställa att dina cookies inte begränsas av ITP-begränsningar på klientsidan.
 
 ## Tredjepartsidentitet
 
