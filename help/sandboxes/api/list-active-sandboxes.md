@@ -18,7 +18,7 @@ ht-degree: 0%
 >
 >Till skillnad från andra slutpunkter som finns i sandlådes-API:t är den här slutpunkten tillgänglig för alla användare, inklusive dem som saknar åtkomstbehörighet för sandlådeadministration.
 
-Du kan lista de sandlådor som är aktiva för den aktuella användaren genom att göra en GET-begäran till roten (`/`).
+Du kan visa de sandlådor som är aktiva för den aktuella användaren genom att göra en GET-begäran till roten (`/`).
 
 **API-format**
 
