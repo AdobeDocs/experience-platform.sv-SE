@@ -88,7 +88,7 @@ En fullständig lista över förinstallerade [!DNL Python] bibliotek finns i [bi
 
 ## Kan jag installera egna PySpark-bibliotek?
 
-Tyvärr kan du inte installera fler bibliotek för PySpark-kärnan. Du kan dock kontakta Adobes kundtjänstrepresentant för att få anpassade PySpark-bibliotek installerade åt dig.
+Tyvärr kan du inte installera fler bibliotek för PySpark-kärnan. Du kan dock kontakta kundtjänstrepresentanten på Adobe om du vill ha anpassade PySpark-bibliotek installerade.
 
 En lista med förinstallerade PySpark-bibliotek finns i [bilagan till användarhandboken](./jupyterlab/overview.md#supported-libraries)för JupyterLab.
 
