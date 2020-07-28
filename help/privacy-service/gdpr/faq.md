@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Vanliga frågor om GDPR
 
-Det här dokumentet ger svar på vanliga frågor om [!DNL General Data Protection Regulation] (GDPR) och dess implementering i Adobe Experience Cloud.
+I det här dokumentet finns svar på vanliga frågor om [!DNL General Data Protection Regulation] (GDPR) och dess implementering i Adobe Experience Cloud.
 
 Definitioner för de olika GDPR-relaterade termer som används i det här dokumentet finns i [GDPR-terminologartikeln](terminology.md) .
 
