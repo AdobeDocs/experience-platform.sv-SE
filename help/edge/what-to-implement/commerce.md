@@ -14,14 +14,14 @@ ht-degree: 1%
 
 # Produkter
 
-Om du har produkter på din webbplats är det här en standarduppsättning med saker som du kanske vill skicka för att aktivera de flesta funktionerna från Adobe. Även om detta är ett förslag ger det en mycket stark uppsättning data redan från början.
+Om du har produkter på din webbplats är detta en standarduppsättning med saker som du kanske vill skicka för att få ut så mycket som möjligt av Adobe. Även om detta är ett förslag ger det en mycket stark uppsättning data redan från början.
 
-Det här dokumentet använder [ExperienceEvent Commerce Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) -blandningen. Blandningen `commerce` delas upp i två delar: objektet `commerce` och `productListItems` arrayen. Med objektet kan du `commerce` ange vilka åtgärder som ska utföras på `productListItems` arrayen.
+Det här dokumentet använder [ExperienceEvent Commerce Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) -mixen. Blandningen `commerce` delas upp i två delar: objektet `commerce` och `productListItems` arrayen. Med objektet kan du `commerce` ange vilka åtgärder som ska utföras på `productListItems` arrayen.
 
 >[!Tip]
 >
 >
->Om du är bekant med Adobe Analytics är The `commerce` mest närbesläktad med `events` variabeln. Den `productListItems` är mer närbesläktad med `products` variabeln.
+>Om du känner till Adobe Analytics är The `commerce` mest närbesläktad med `events` variabeln. Den `productListItems` är mer närbesläktad med `products` variabeln.
 
 ## Åtgärder för produkter
 
