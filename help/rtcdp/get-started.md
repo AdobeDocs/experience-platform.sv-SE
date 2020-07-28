@@ -1,8 +1,8 @@
 ---
-title: Komma igång med Adobe Real-time Customer Data Platform
-seo-title: Komma igång med Adobe Real-time Customer Data Platform
-description: Exempelscenario för Adobe Real-time Customer Data Platform
-seo-description: Exempelscenario för Adobe Real-time Customer Data Platform
+title: Komma igång med Adobe kunddata i realtid Platform
+seo-title: Komma igång med Adobe kunddata i realtid Platform
+description: Exempelscenario för Adobe kunddata i realtid Platform
+seo-description: Exempelscenario för Adobe kunddata i realtid Platform
 translation-type: tm+mt
 source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
 workflow-type: tm+mt
@@ -12,11 +12,11 @@ ht-degree: 0%
 ---
 
 
-# Komma igång med Adobe Real-time Customer Data Platform
+# Komma igång med Adobe kunddata i realtid Platform
 
-Denna guide leder dig genom en exempelimplementering av Adobe Customer Data Platform (Real-time CDP). Du kan använda det som exempel när du konfigurerar en egen implementering. Även om den här guiden innehåller specifika exempel länkas den till ytterligare information som du kan använda när du skapar din konfiguration.
+Den här guiden leder dig genom en exempelimplementering av Adobe Customer Data Platform (Real-time CDP) i realtid. Du kan använda det som exempel när du konfigurerar en egen implementering. Även om den här guiden innehåller specifika exempel länkas den till ytterligare information som du kan använda när du skapar din konfiguration.
 
-I det här exemplet visas styrkan hos Adobe Real-time Customer Data Platform, som drivs av Adobe Experience Platform, för att:
+I det här exemplet visas hur kraftfull Adobe Real-time Customer Data Platform, som drivs av Adobe Experience Platform, är för att:
 
 * Hämta in data från flera källor
 * Sammanfoga dem i en enda [!DNL real-time customer profile]
@@ -110,7 +110,7 @@ Hon klickar på hemsidan för att bläddra bland fler.
 
 Sarah får en personaliserad hemsida som levereras dynamiskt baserat på hennes erfarenheter [!DNL Real-time Customer Profile] i Adobe Experience Platform.
 
-Hon ser relevant innehåll, tack vare Adobe Sensei-driven personalisering i Adobe Target, som tar hänsyn till hennes tidigare inköp och hennes tillhörighet till löpande kläder och utrustning. Luma skräddarsyr även männens kataloginnehåll mot löpverk för män baserat på hennes senaste surfning.
+Hon ser relevant innehåll, tack vare Adobe Sensei-driven personalisering i Adobe Target, som tar hänsyn till hennes tidigare inköp och tillhörighet till löpande kläder och utrustning. Luma skräddarsyr även männens kataloginnehåll mot löpverk för män baserat på hennes senaste surfning.
 
 Längre ned på sidan visas Sarah med aktuella produkter och ett nytt rekommendationsfack som bygger på hennes senast visade artiklar.
 
@@ -120,7 +120,7 @@ Det personliga innehållet hjälper Sarah att snabbt hitta relevanta objekt. Det
 
 Sarah blir distraherad och lämnar sajten. Luma kan använda sina data i Adobe Experience Platform för att ta med henne till sajten.
 
-Adobe Customer Data Platform i realtid med Adobe Experience Platform som bas är framtaget för kundupplevelsehantering. Med programmet kan man
+Adobe kunddata Platform i realtid, som drivs av Adobe Experience Platform, är framtagen för kundupplevelsehantering. Med programmet kan man
 
 * Förenkla integrering och aktivering av data
 * Styr känd och okänd dataanvändning
@@ -135,9 +135,9 @@ Teamet på Luma har alla sina beteendedata och kunddata på ett och samma ställ
 De kan importera data från alla följande källor:
 
 * Data om befintliga Adobe Experience Cloud-lösningar
-* Källor som inte kommer från Adobe, t.ex. Lumas lojalitetsprogram, callcenter och systemdata
+* Andra källor än Adobe, t.ex. Lumas lojalitetsprogram, callcenter och systemdata för försäljningsställen
 * Direktuppspelningsdata i realtid från Luma-datakällor
-* Realtidsdata från Adobes lösningar (inga nya taggar krävs)
+* Realtidsdata från Adobe-lösningar (inga nya taggar krävs)
 
 Alla dessa data från olika källor sammanfogas i en enda enhetlig kundprofil.
 
@@ -236,8 +236,8 @@ När du har lagt till segmentet&quot;Gift Giving Cart Abandoners&quot; kan du se
 
 Klicka på **[!UICONTROL Send to destinations]**.
 
-I Adobe Real-time CDP kan Luma agera sömlöst på sina målgruppssegment för personalisering.\
-Här ser vi alla destinationer som Luma kan skicka till, både Adobe-lösningar och andra lösningar:
+På Adobe CDP i realtid kan Luma agera sömlöst på sina målgruppssegment för personalisering.\
+Här ser vi alla destinationer som Luma kan skicka till både Adobe och andra lösningar än Adobe:
 
 ![bild](assets/luma-dest.png)
 
