@@ -2,7 +2,7 @@
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
 title: Privacy Service developer guide
-description: Använd RESTful API för att hantera persondata för dina registrerade i alla Adobe Experience Cloud-program
+description: Använd RESTful API för att hantera personuppgifter för dina registrerade i olika Adobe Experience Cloud-program
 topic: developer guide
 translation-type: tm+mt
 source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
@@ -23,7 +23,7 @@ I den här handboken beskrivs hur du använder [!DNL Privacy Service] API:t. Mer
 
 Handboken kräver en fungerande förståelse av följande [!DNL Experience Platform] funktioner:
 
-* [!DNL Privacy Service](../home.md): Tillhandahåller ett RESTful-API och användargränssnitt som gör att du kan hantera förfrågningar från registrerade (kunder) i alla Adobe Experience Cloud-program.
+* [!DNL Privacy Service](../home.md): Tillhandahåller ett RESTful-API och användargränssnitt som gör att du kan hantera förfrågningar från registrerade (kunder) i olika Adobe Experience Cloud-program.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa Privacy Service-API:t.
 
@@ -43,7 +43,7 @@ Detta innebär att du måste skaffa utvecklarbehörigheter för [!DNL Experience
 
 ### Få utvecklare åtkomst till [!DNL Experience Platform]
 
-Följ de inledande stegen i självstudiekursen för autentisering av [!DNL Platform]Experience Platform för att få utvecklaråtkomst till [](../../tutorials/authentication.md). När du kommit till steget&quot;Generera autentiseringsuppgifter för åtkomst i Adobe Developer Console&quot; går du tillbaka till den här självstudiekursen för att generera de autentiseringsuppgifter som är specifika för [!DNL Privacy Service].
+Följ de inledande stegen i självstudiekursen för autentisering av [!DNL Platform]Experience Platform för att få utvecklaråtkomst till [](../../tutorials/authentication.md). När du kommit till steget&quot;Generera autentiseringsuppgifter för åtkomst i Adobe Developer Console&quot; går du tillbaka till den här självstudiekursen för att generera autentiseringsuppgifter för [!DNL Privacy Service].
 
 ### Generera autentiseringsuppgifter för åtkomst
 
