@@ -186,4 +186,4 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehå
 }
 ```
 
-Om du utför en GET-begäran om att lista alla blandningar i klientbehållaren skulle det nu inkludera mixen Vehicle Details (fordonsinformation), eller så kan du utföra en sökbegäran (GET) med den URL-kodade `$id` URI:n för att visa den nya mixen direkt. Kom ihåg att inkludera `version` i huvudet Godkänn för alla uppslagsbegäranden.
+Om du utför en GET-begäran om att lista alla blandningar i klientbehållaren skulle det nu inkludera blandningen Vehicle Details (fordonsinformation), eller så kan du utföra en sökning (GET)-begäran med den URL-kodade `$id` URI:n för att visa den nya mixinen direkt. Kom ihåg att inkludera `version` i huvudet Godkänn för alla uppslagsbegäranden.
