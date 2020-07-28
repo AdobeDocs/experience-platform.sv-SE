@@ -469,7 +469,7 @@ Detaljerade steg för hur du arbetar med API:t för dataåtkomst finns i [utveck
 
 ## Uppdatera datauppsättningsschemat
 
-Du kan lägga till fält och lägga in ytterligare data i datauppsättningar som du har skapat. För att göra detta måste du först uppdatera schemat genom att lägga till ytterligare egenskaper som definierar nya data. Detta kan göras med PATCH- och/eller PUT-åtgärder för att uppdatera det befintliga schemat.
+Du kan lägga till fält och lägga in ytterligare data i datauppsättningar som du har skapat. För att göra detta måste du först uppdatera schemat genom att lägga till ytterligare egenskaper som definierar nya data. Detta kan göras med åtgärderna PATCH och/eller PUT för att uppdatera det befintliga schemat.
 
 Mer information om hur du uppdaterar scheman finns i Utvecklarhandbok [för](../../xdm/api/getting-started.md)schemaregister-API.
 
