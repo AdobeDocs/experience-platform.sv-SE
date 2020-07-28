@@ -54,7 +54,7 @@ Nya juridiska och organisatoriska bestämmelser ger användarna rätt att få ti
 | [!DNL Privacy Service] omprofilering | Det tidigare namnet&quot;GDPR Service&quot; har ändrats till&quot;Service&quot; [!DNL Privacy Service] eftersom tjänsten har utvecklats för att stödja andra bestämmelser utöver GDPR. |
 | Nya API-slutpunkter | Bassökvägen för [!DNL Privacy Service] API har uppdaterats från `/data/privacy/gdpr` till `/data/core/privacy/jobs`. |
 | Ny obligatorisk `regulation` egenskap | När du skapar nya jobb i [!DNL Privacy Service] API måste en `regulation` egenskap anges i nyttolasten för begäran för att ange vilken regel som jobbet ska spåras under. Godkända värden är `gdpr` och `ccpa`. |
-| Stöd för [!DNL Adobe Primetime Authentication] | [!DNL Privacy Service] godkänner nu förfrågningar om åtkomst/borttagning från Adobe [!DNL Primetime Authentication], `primetimeAuthentication` som produktvärde. |
+| Stöd för [!DNL Adobe Primetime Authentication] | [!DNL Privacy Service] nu tar emot begäranden om åtkomst/borttagning från Adobe [!DNL Primetime Authentication]med `primetimeAuthentication` som produktvärde. |
 | Förbättringar av användargränssnittet för Privacy Service | Separata jobbspårningssidor för GDPR- och CCPA-regler. Ny _regeltypsmeny_ för att växla mellan spårningsdata för GDPR och CCPA. |
 
 **Kända fel**
@@ -65,7 +65,7 @@ Mer information [!DNL Privacy Service]finns i [Privacy Servicen](../../privacy-s
 
 ## Sources {#sources}
 
-Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, programvara från tredje part och ditt CRM-system.
+Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
 [!DNL Experience Platform] innehåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
 
@@ -92,7 +92,7 @@ Mer information om källor finns i [Källor - översikt](../../sources/home.md)
 
 ## Mål {#destinations}
 
-I [Adobe Real-time CDP](../../rtcdp/overview.md)är destinationer färdiga integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
+I [Adobe CDP](../../rtcdp/overview.md)i realtid är destinationer färdiga integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
 
 **Nya funktioner**
 
