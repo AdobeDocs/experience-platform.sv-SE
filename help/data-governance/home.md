@@ -82,7 +82,7 @@ När dataanvändningsetiketterna har tillämpats kan datafördelningar skapa pri
 
 >[!IMPORTANT]
 >
->Alla dataanvändningspolicyer (inklusive kärnpolicyer från Adobe) är inaktiverade som standard. För att en enskild princip ska kunna användas för verkställighet måste du manuellt aktivera den principen.
+>Alla dataanvändningsprinciper (inklusive huvudprinciper som tillhandahålls av Adobe) inaktiveras som standard. För att en enskild princip ska kunna användas för verkställighet måste du manuellt aktivera den principen.
 
 Mer information om dataanvändningspolicyer och marknadsföringsåtgärder finns i [policyöversikten](./policies/overview.md).
 
