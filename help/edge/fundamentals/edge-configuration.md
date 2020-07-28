@@ -18,7 +18,7 @@ Konfigurationen för Adobe Experience Platform [!DNL Web SDK] delas mellan två 
 
 ## Skapa ett Edge Configuration ID
 
-Konfiguration-ID för Edge kan skapas i Adobe [!DNL Launch] med hjälp av edge-konfigurationsverktyget. Med det här verktyget kan du skapa både edge-konfigurationen och miljöer i dessa konfigurationer.
+Konfiguration-ID:n för Edge kan skapas i Adobe [!DNL Launch] med hjälp av edge-konfigurationsverktyget. Med det här verktyget kan du skapa både edge-konfigurationen och miljöer i dessa konfigurationer.
 
 ![navigering för konturkonfigurationsverktyg](../../assets/edge_configuration_nav.png)
 
@@ -98,13 +98,13 @@ Egenskapstoken finns i [!UICONTROL Adobe Target] > [!UICONTROL setup] > [!UICONT
 
 [Med miljöer](https://docs.adobe.com/content/help/en/target/using/administer/hosts.html) i Adobe Target kan ni hantera implementeringen i alla utvecklingsfaser. Den här inställningen anger vilken miljö du ska använda för varje miljö.
 
-Adobe rekommenderar att du ställer in detta på olika sätt för var och en av dina `dev`- `stage`och `prod` edge-konfigurationsmiljöer för att göra det enkelt. Om du redan har [!UICONTROL Adobe Target environments] definierat dem kan du använda dem.
+Adobe rekommenderar att du ställer in detta på olika sätt för var och en av dina `dev`- `stage`och `prod` edge-konfigurationsmiljöer för att göra saker och ting enkla. Om du redan har [!UICONTROL Adobe Target environments] definierat dem kan du använda dem.
 
 #### Adobe Audience Manager
 
 Allt som behövs för att skicka data till Adobe Audience Manager är att aktivera det här avsnittet. De andra inställningarna är valfria men rekommenderas.
 
-![Inställningsblocket Adobe Audience Manage](../../assets/edge_configuration_aam.png)
+![Inställningsblock för hantering av målgruppshantering i Adobe](../../assets/edge_configuration_aam.png)
 
 ##### [!UICONTROL Cookie Destinations Enabled]
 
