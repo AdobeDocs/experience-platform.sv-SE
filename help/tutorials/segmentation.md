@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Självstudiekurser för segmentering
 
-Adobe Experience Platform [!DNL Segmentation Service] har ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper utifrån dina [!DNL Real-time Customer Profile] data. Dessa segment konfigureras och underhålls centralt [!DNL Platform]och är tillgängliga via alla Adobes lösningar. Om du vill veta mer om segmentering börjar du med att läsa översikten över [segmenteringstjänsten](../segmentation/home.md).
+Adobe Experience Platform [!DNL Segmentation Service] har ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper utifrån dina [!DNL Real-time Customer Profile] data. Dessa segment är centralt konfigurerade och underhållna [!DNL Platform]och är lätt tillgängliga för alla Adobe-lösningar. Om du vill veta mer om segmentering börjar du med att läsa översikten över [segmenteringstjänsten](../segmentation/home.md).
 
 ## Skapa en segmentdefinition
 
