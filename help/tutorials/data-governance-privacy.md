@@ -12,7 +12,7 @@ ht-degree: 0%
 ---
 
 
-# [!DNL Data Governance] och [!DNL Privacy] självstudiekurser
+# [!DNL Data Governance] och [!DNL Privacy] Tutorials
 
 [!DNL Data Usage Labeling and Enforcement] (DULE) är kärnmekanismen i Adobe Experience Platform [!DNL Data Governanc]e. DULE-funktioner gör att du kan använda dataanvändningsetiketter på datauppsättningar och fält, och kategorisera dem efter relaterade principer för dataanvändning. Innan du börjar med etiketter kan du läsa översikten [över](../data-governance/home.md) datastyrning för en mer robust introduktion till DULE-ramverket i [!DNL Platform].
 
@@ -28,7 +28,7 @@ Med DULE [!DNL Policy Service] API kan du skapa och hantera DULE-principer för 
 
 ## Använd principer för dataanvändning
 
-När du har skapat DULE-etiketter (Data Usage Labeling and Enforcement) för dina data och skapat DULE-profiler för marknadsföringsåtgärder mot dessa etiketter, kan du använda DULE [!DNL Policy Service] API för att utvärdera om en marknadsföringsåtgärd som utförts på en datauppsättning, eller en godtycklig grupp med DULE-etiketter, utgör en policyöverträdelse. Du kan sedan konfigurera egna interna protokoll för att hantera policyöverträdelser baserat på API-svaret. Kom igång genom att gå till [översikt](../data-governance/enforcement/overview.md)över policyefterlevnaden.
+När du har skapat DULE-etiketter (Data Usage Labeling and Enforcement) för dina data och skapat DULE-profiler för marknadsföringsåtgärder mot dessa etiketter, kan du använda DULE [!DNL Policy Service] API för att utvärdera om en marknadsföringsåtgärd som utförts på en datauppsättning, eller en godtycklig grupp med DULE-etiketter, utgör en policyöverträdelse. Du kan sedan konfigurera egna interna protokoll för att hantera policyöverträdelser baserat på API-svaret. Kom igång genom att gå till översikten över [policyefterlevnaden](../data-governance/enforcement/overview.md).
 
 ## Använd regelefterlevnad för ett målgruppssegment
 
