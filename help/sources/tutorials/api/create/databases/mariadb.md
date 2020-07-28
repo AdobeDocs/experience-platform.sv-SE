@@ -73,7 +73,7 @@ POST /connections
 
 **Begäran**
 
-För att kunna skapa en [!DNL MariaDB] anslutning måste dess unika anslutningsspec-ID anges som en del av POST-begäran. Anslutningens spec-ID för [!DNL MariaDB] är `3000eb99-cd47-43f3-827c-43caf170f015`.
+För att kunna skapa en [!DNL MariaDB] anslutning måste dess unika anslutningsspec-ID anges som en del av POSTEN. Anslutningens spec-ID för [!DNL MariaDB] är `3000eb99-cd47-43f3-827c-43caf170f015`.
 
 ```shell
 curl -X POST \
