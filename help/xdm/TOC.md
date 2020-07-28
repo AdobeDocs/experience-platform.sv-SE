@@ -4,6 +4,9 @@ audience: user
 user-guide-title: Experience Data Model (XDM) - systemhjälp
 translation-type: tm+mt
 source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
+workflow-type: tm+mt
+source-wordcount: '109'
+ht-degree: 0%
 
 ---
 
@@ -29,7 +32,7 @@ source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
    * [Beskrivningar](api/descriptors.md)
    * [Ad hoc-scheman](api/ad-hoc.md)
    * [Bilaga](api/appendix.md)
-* Självstudiekurser {#tutorials}
+* Tutorials {#tutorials}
    * [Skapa ett schema (API)](tutorials/create-schema-api.md)
    * [Skapa ett schema (UI)](tutorials/create-schema-ui.md)
    * [Definiera en relation mellan två scheman (API)](tutorials/relationship-api.md)
@@ -37,4 +40,4 @@ source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
    * [Skapa ett ad hoc-schema (API)](tutorials/ad-hoc.md)
 * [Felsökningsguide](troubleshooting-guide.md)
 * [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)
-* [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
+* [Versionsinformation för Platform](https://www.adobe.com/go/platform-release-notes-en)
