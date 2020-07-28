@@ -5,6 +5,9 @@ description: Launch är nästa generation av tagghanteringsfunktioner från Adob
 seo-description: Launch är nästa generation av tagghanteringsfunktioner från Adobe. Launch ger kunderna ett enkelt sätt att driftsätta och hantera alla analyser, marknadsförings- och annonstaggar som behövs för att driva relevanta kundupplevelser.
 translation-type: tm+mt
 source-git-commit: 98c3356db178507e0a8d94b47030e9490e721e46
+workflow-type: tm+mt
+source-wordcount: '618'
+ht-degree: 3%
 
 ---
 
@@ -13,13 +16,13 @@ source-git-commit: 98c3356db178507e0a8d94b47030e9490e721e46
 
 Experience Platform Launch är nästa generation av tagghanteringsfunktioner från Adobe. Launch ger kunderna ett enkelt sätt att driftsätta och hantera alla analyser, marknadsförings- och annonstaggar som behövs för att driva relevanta kundupplevelser. Launch erbjuds Adobe Experience Cloud-kunder som en inkluderad funktion som ger mervärde.
 
-En introduktion till funktionerna för Experience Platform Launch finns i resurserna nedan:
-* Experience Platform Launch- [dokumentation](https://docs.adobe.com/content/help/en/launch/using/overview.html)
-* Experience Platform Launch, [snabbstartsvideor](https://docs.adobe.com/content/help/en/launch/using/intro/get-started/videos.html). Börja med [introduktionen till Experience Platform Launch](https://www.youtube.com/embed/rwqqkG1SERU) and [Publishing process overview](https://helpx.adobe.com/analytics/how-to/adobe-launch-publishing-process.html)och gå sedan vidare till nästa koncept.
+En introduktion till funktionerna i Experience Platform Launch finns i resurserna nedan:
+* Experience Platform Launch [dokumentation](https://docs.adobe.com/content/help/en/launch/using/overview.html)
+* Experience Platform Launch [snabbstartvideor](https://docs.adobe.com/content/help/en/launch/using/intro/get-started/videos.html). Börja med [Introduktion till Översikt över](https://www.youtube.com/embed/rwqqkG1SERU) Experience Platform Launch [- och](https://helpx.adobe.com/analytics/how-to/adobe-launch-publishing-process.html)publiceringsprocessen och gå sedan vidare till nästa koncept.
 
-## Hitta Launch-tilläggen i Adobe Real-time CDP-gränssnittet {#how-to-find-extensions-in-interface}
+## Hitta Launch-tilläggen i realtidsgränssnittet för CDP i Adobe {#how-to-find-extensions-in-interface}
 
-Du hittar Launch-tilläggen i Adobe Real-time CDP-gränssnittet genom att bläddra till **[!UICONTROL Destinations > Catalog]** och välja **[!UICONTROL Extensions]** i **[!UICONTROL Types]** filtret.
+Om du vill hitta Launch-tilläggen i CDP-gränssnittet i realtid i Adobe bläddrar du till **[!UICONTROL Destinations > Catalog]** och väljer **[!UICONTROL Extensions]** i **[!UICONTROL Types]** -filtret.
 
 ![Filtret Tillägg i gränssnittet](/help/rtcdp/destinations/assets/extensions-filter.png)
 
@@ -27,9 +30,9 @@ Du hittar Launch-tilläggen i Adobe Real-time CDP-gränssnittet genom att blädd
 
 Starta tillägg för att vidarebefordra råa händelsedata till flera olika typer av destinationer. Tänk på tillägg som en **typ av mål för vidarebefordran** av händelser. Detta är en enklare typ av integrering med målplattformar, som bara vidarebefordrar råhändelsedata. Exempel på sådana är tillägget [](/help/rtcdp/destinations/gainsight-extension.md) Gainsight-anpassning eller [bekräftelsen från kundens tillägg](/help/rtcdp/destinations/confirmit-digital-feedback-extension.md).
 
-**Målen för profil-/segmentexport** i Adobes kunddataplattform i realtid samlar in händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Exempel på sådana är [Amazon S3 cloud storage destination](/help/rtcdp/destinations/amazon-s3-destination.md) eller [Google Display &amp; Video 360 advertising destination](/help/rtcdp/destinations/google-dv360-destination.md).
+**Målen för profil-/segmentexport** i kunddata i Adobe i realtid hämtar Platform in händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Exempel på sådana är [Amazon S3-molnlagringsdestinationen](/help/rtcdp/destinations/amazon-s3-destination.md) eller [Google Display &amp; Video 360-reklamdestinationen](/help/rtcdp/destinations/google-dv360-destination.md).
 
-![Experience Platform Launch-tillägg jämfört med andra mål](/help/rtcdp/destinations/assets/launch-and-other-destinations.png)
+![Experience Platform Launch-tillägg jämfört med andra destinationer](/help/rtcdp/destinations/assets/launch-and-other-destinations.png)
 
 ## Fördelar med att använda Launch-tillägg {#extensions-benefits}
 
@@ -52,11 +55,11 @@ Med Launch Extensions kan du tillgodose olika kundbehov. Exempel på användning
 
 ## Tilläggskategorier {#extension-categories}
 
-Launch-tillägg kan delas in i följande kategorier i Adobe Real-time CDP:
+Launch-tillägg kan delas in i följande kategorier i CDP i realtid i Adobe:
 
 * [Reklam](/help/rtcdp/destinations/advertising-destinations.md)
-* [Analyser](/help/rtcdp/destinations/analytics-destinations.md)
-* [Datahanteringsplattform](/help/rtcdp/destinations/dmp-destinations.md)
+* [Analytics](/help/rtcdp/destinations/analytics-destinations.md)
+* [Datahantering Platform](/help/rtcdp/destinations/dmp-destinations.md)
 * [E-postmarknadsföringsmål](/help/rtcdp/destinations/email-marketing-destinations.md)
 * [Personanpassning](/help/rtcdp/destinations/personalization-destinations.md)
 * [Undersökningar](/help/rtcdp/destinations/survey-destinations.md)
