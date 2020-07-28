@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Skapa en autentiserad direktuppspelningsanslutning
 
-Autentiserad datainsamling gör det möjligt för Adobe Experience Platform-tjänster, som [!DNL Real-time Customer Profile] och [!DNL Identity], att skilja mellan poster som kommer från betrodda källor och källor som inte är betrodda. Klienter som vill skicka personligt identifierbar information (PII) kan göra det genom att skicka åtkomsttoken som en del av POST-begäran.
+Autentiserad datainsamling gör det möjligt för Adobe Experience Platform-tjänster, som [!DNL Real-time Customer Profile] och [!DNL Identity], att skilja mellan poster som kommer från betrodda källor och källor som inte är betrodda. Klienter som vill skicka personligt identifierbar information (PII) kan göra det genom att skicka åtkomsttoken som en del av POSTEN.
 
 ## Komma igång
 
