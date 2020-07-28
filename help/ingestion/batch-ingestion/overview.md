@@ -200,7 +200,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
 
 ### Stor filöverföring - överför efterföljande delar
 
-När filen har skapats kan alla efterföljande segment överföras genom upprepade PATCH-begäranden, en för varje avsnitt i filen.
+När filen har skapats kan alla efterföljande segment överföras genom upprepade PATCH-begäranden, en för varje del av filen.
 
 ```http
 PATCH /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
