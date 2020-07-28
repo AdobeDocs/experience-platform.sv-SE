@@ -69,7 +69,7 @@ POST /connections
 
 **Begäran**
 
-För att kunna skapa en [!DNL Oracle] anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POST-begäran. Anslutningsspecifikationens ID för [!DNL Oracle] är `d6b52d86-f0f8-475f-89d4-ce54c8527328`.
+För att skapa en [!DNL Oracle] anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikationens ID för [!DNL Oracle] är `d6b52d86-f0f8-475f-89d4-ce54c8527328`.
 
 ```shell
 curl -X POST \
