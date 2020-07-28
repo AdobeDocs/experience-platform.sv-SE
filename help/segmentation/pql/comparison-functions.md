@@ -5,6 +5,9 @@ title: Jämförelsefunktioner
 topic: developer guide
 translation-type: tm+mt
 source-git-commit: 92f92f480f29f7d6440f4e90af3225f9a1fcc3d0
+workflow-type: tm+mt
+source-wordcount: '295'
+ht-degree: 3%
 
 ---
 
@@ -13,7 +16,7 @@ source-git-commit: 92f92f480f29f7d6440f4e90af3225f9a1fcc3d0
 
 Jämförelsefunktioner används för att jämföra olika uttryck och värden, returnera `true` eller `false` därefter. Mer information om andra PQL-funktioner finns i översikten [för](./overview.md)profilfrågespråk.
 
-## Lika med
+## Är lika med
 
 Funktionen `=` (lika med) kontrollerar om ett värde eller uttryck är lika med ett annat värde eller uttryck.
 
