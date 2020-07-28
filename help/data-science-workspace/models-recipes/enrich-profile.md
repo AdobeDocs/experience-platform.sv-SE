@@ -50,6 +50,7 @@ Dispositionen av ett schema börjar med att tilldela en klass. Klasser definiera
 
    * Om du vill skapa en anpassad klass klickar du på **[!UICONTROL Create New Class]** i mitten av webbläsarfönstret. Ange ett klassnamn, en beskrivning och välj klassens beteende. Klicka **[!UICONTROL Assign Class]** när du är klar.
       ![](../images/models-recipes/enrich-rtcdp/create_new_class.png)
+
    Nu bör schemats struktur innehålla några klassfält och du är redo att tilldela mixins. En blandning är en grupp med ett eller flera fält som beskriver ett visst koncept.
 
 3. I *dispositionsfönstret* klickar du **[!UICONTROL Add]** i underavsnittet *Blandningar* .
