@@ -4,6 +4,9 @@ audience: user
 user-guide-title: Hjälp för Adobe Experience Platform Query Service
 translation-type: tm+mt
 source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
+workflow-type: tm+mt
+source-wordcount: '134'
+ht-degree: 2%
 
 ---
 
@@ -23,7 +26,7 @@ source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
    - [Översikt över användargränssnittet](ui/overview.md)
    - [Användarhandbok för Frågeredigeraren](ui/user-guide.md)
 - Skapa frågor {#creating-queries}
-   - [Adobe-definierade funktioner](creating-queries/using-adobe-defined-functions.md)
+   - [Funktioner som definieras av Adobe](creating-queries/using-adobe-defined-functions.md)
    - [Skapa frågor - översikt](creating-queries/creating-queries.md)
    - [Datauppsättningar jämfört med tabeller och scheman](creating-queries/datasets-and-tables.md)
    - [Allmän vägledning för frågekörning](creating-queries/writing-queries.md)
@@ -53,4 +56,4 @@ source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
    - [Tableau](clients/tableau.md)
 - [Felsökningsguide](troubleshooting-guide.md)
 - [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/qs-api.yaml)
-- [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
+- [Versionsinformation för Platform](https://www.adobe.com/go/platform-release-notes-en)
