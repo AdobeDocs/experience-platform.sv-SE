@@ -59,7 +59,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Utforska din molnlagring
 
-Med basanslutningen för ditt molnlagringsutrymme kan du utforska filer och kataloger genom att utföra GET-begäranden. När du utför GET-begäranden för att utforska ditt molnlagringsutrymme måste du inkludera de frågeparametrar som anges i tabellen nedan:
+Genom att använda basanslutningen för ditt molnlagringsutrymme kan du utforska filer och kataloger genom att utföra GETTER. När du gör GET-förfrågningar för att utforska ditt molnlagringsutrymme måste du inkludera frågeparametrarna som listas i tabellen nedan:
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
@@ -110,9 +110,9 @@ Ett lyckat svar returnerar en array med filer och mappar som finns i den efterfr
 ]
 ```
 
-## Inspektera filens struktur
+## Inspect en fils struktur
 
-Om du vill inspektera datafilens struktur från ditt molnlagringsutrymme utför du en GET-begäran och anger filens sökväg som en frågeparameter.
+Om du vill inspektera datafilens struktur från ditt molnlagringsutrymme utför du en GET-förfrågan och anger filens sökväg som en frågeparameter.
 
 **API-format**
 
