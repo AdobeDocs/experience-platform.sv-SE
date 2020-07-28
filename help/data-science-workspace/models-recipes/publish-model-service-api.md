@@ -28,7 +28,7 @@ Innan du börjar med den här självstudiekursen bör du gå igenom avsnittet [K
 - `{IMS_ORG}`
 - `{API_KEY}`
 
-Alla POST-, PUT- och PATCH-begäranden kräver ytterligare en rubrik:
+Alla förfrågningar från POST, PUT och PATCH kräver ytterligare en rubrik:
 
 - Innehållstyp: application/json
 
@@ -40,7 +40,7 @@ I följande tabell beskrivs några vanliga termer som används i den här själv
 --- | ---
 | **Machine Learning-instans (ML-instans)** | En instans av en [!DNL Sensei] motor för en viss klientorganisation som innehåller specifika data, parametrar och [!DNL Sensei] kod. |
 | **Experimentera** | En paraplyenhet för utbildning Experiment Runs, Scoring Experiment Runs eller båda. |
-| **Schemalagd experiment** | En term som beskriver automatiseringen av kurser eller poängsättning i Experiment Runs som styrs av ett användardefinierat schema. |
+| **Schemalagd experiment** | En term som beskriver automatiseringen av utbildning eller poängsättning i Experimentprogram, som styrs av ett användardefinierat schema. |
 | **Experimentera** | Ett särskilt fall av utbildning eller poängsättningsexperiment. Multipla Experiment körs från en viss Experiment och kan skilja sig åt i datauppsättningsvärden som används för utbildning eller poängsättning. |
 | **Utbildad modell** | En maskininlärningsmodell som har skapats genom att experimentera och använda konstruktion innan den levereras till en validerad, utvärderad och färdigställd modell. |
 | **Publicerad modell** | En färdig och versionshanterad modell som tagits fram efter utbildning, validering och utvärdering. |
@@ -48,7 +48,7 @@ I följande tabell beskrivs några vanliga termer som används i den här själv
 
 ## Skapa en ML-tjänst med en befintlig övningsexperimentell körning och schemalagd poängsättning
 
-När du publicerar en utbildningsexperimentell körning som en ML-tjänst kan du schemalägga betygsättning genom att ange information för bedömningsförsöket Kör nyttolasten för en POST-begäran. Detta resulterar i att en schemalagd experimententitet för poängsättning skapas.
+När du publicerar en utbildningsexperimentell körning som en ML-tjänst kan du schemalägga betygsättning genom att ange information för bedömningsförsöket Kör nyttolasten för en POST. Detta resulterar i att en schemalagd experimententitet för poängsättning skapas.
 
 **API-format**
 
