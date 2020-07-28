@@ -120,7 +120,7 @@ I den här självstudiekursen innehåller målschemat&quot;[!DNL Hotels]&quot; e
 
 ### Skapa en ny blandning
 
-Om du vill lägga till ett nytt fält i ett schema måste det först definieras i en mixin. Du kan skapa en ny blandning genom att göra en POST-begäran till `/tenant/mixins` slutpunkten.
+Om du vill lägga till ett nytt fält i ett schema måste det först definieras i en mixin. Du kan skapa en ny blandning genom att göra en POST-förfrågan till `/tenant/mixins` slutpunkten.
 
 **API-format**
 
@@ -267,7 +267,7 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `op` | PATCH-åtgärden som ska utföras. Den här begäran använder `add` åtgärden. |
+| `op` | Den PATCH-åtgärd som ska utföras. Den här begäran använder `add` åtgärden. |
 | `path` | Sökvägen till schemafältet där den nya resursen ska läggas till. När du lägger till blandningar i scheman måste värdet vara /allOf/-. |
 | `value.$ref` | The `$id` of the mixin to be added. |
 
@@ -336,7 +336,7 @@ Ett lyckat svar returnerar detaljerna i det uppdaterade schemat, som nu inkluder
 
 Schemafält måste ha en referensidentitetsbeskrivare om de används som referens från andra scheman i en relation. Eftersom `favoriteHotel` fältet i &quot;[!DNL Loyalty Members]&quot; refererar till `email` fältet i &quot;[!DNL Hotels]&quot;, måste du `email` ange en referensidentitetsbeskrivning.
 
-Skapa en referensbeskrivning för målschemat genom att göra en POST-begäran till `/tenant/descriptors` slutpunkten.
+Skapa en referensbeskrivning för målschemat genom att göra en POST-förfrågan till `/tenant/descriptors` slutpunkten.
 
 **API-format**
 
@@ -391,7 +391,7 @@ Ett lyckat svar returnerar information om den nya referensbeskrivningen för må
 
 ## Skapa en relationsbeskrivning {#create-descriptor}
 
-Relationsbeskrivare skapar en 1:1-relation mellan ett källschema och ett målschema. När du har definierat en referensbeskrivning för målschemat kan du skapa en ny relationsbeskrivning genom att göra en POST-begäran till `/tenant/descriptors` slutpunkten.
+Relationsbeskrivare skapar en 1:1-relation mellan ett källschema och ett målschema. När du har definierat en referensbeskrivning för målschemat kan du skapa en ny relationsbeskrivning genom att göra en POST-förfrågan till `/tenant/descriptors` slutpunkten.
 
 **API-format**
 
