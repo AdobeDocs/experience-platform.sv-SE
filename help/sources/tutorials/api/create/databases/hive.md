@@ -75,7 +75,7 @@ POST /connections
 
 **Begäran**
 
-För att kunna skapa en [!DNL Hive] anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POST-begäran. Anslutningsspecifikationens ID för [!DNL Hive] är `aac9bbd4-6c01-46ce-b47e-51c6f0f6db3f`.
+För att kunna skapa en [!DNL Hive] anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikationens ID för [!DNL Hive] är `aac9bbd4-6c01-46ce-b47e-51c6f0f6db3f`.
 
 ```shell
 curl -X POST \
