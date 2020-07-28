@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Skapa en Amazon Redshift-kontakt med API:t för Flow Service
+title: Skapa en Amazon Redshift-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
 source-git-commit: fc5cdaa661c47e14ed5412868f3a54fd7bd2b451
@@ -69,7 +69,7 @@ För att kunna skapa en [!DNL Redshift] anslutning måste det finnas en uppsätt
 
 **API-format**
 
-Varje tillgänglig källa har en egen unik uppsättning anslutningsspecifikationer för att beskriva kopplingsegenskaper som autentiseringskrav. Du kan söka efter anslutningsspecifikationer för [!DNL Redshift] genom att utföra en GET-begäran och använda frågeparametrar.
+Varje tillgänglig källa har en egen unik uppsättning anslutningsspecifikationer för att beskriva kopplingsegenskaper som autentiseringskrav. Du kan söka efter anslutningsspecifikationer för [!DNL Redshift] genom att utföra en GET-förfrågan och använda frågeparametrar.
 
 Om du skickar en GET-begäran utan frågeparametrar returneras anslutningsspecifikationerna för alla tillgängliga källor. Du kan ta med frågan `property=name=="amazon-redshift"` för att få information om [!DNL Redshift].
 
@@ -188,7 +188,7 @@ curl -X POST \
 | `auth.params.server` | Din [!DNL Redshift] server. |
 | `auth.params.database` | Databasen som är kopplad till ditt [!DNL Redshift] konto. |
 | `auth.params.password` | Lösenordet som är kopplat till ditt [!DNL Redshift] konto. |
-| `auth.params.username` | Användarnamnet som är associerat med ditt [!DNL Redshift] konto. |
+| `auth.params.username` | Det användarnamn som är kopplat till ditt [!DNL Redshift] konto. |
 | `connectionSpec.id` | Anslutningsspecifikationen `id` för ditt [!DNL Redshift] konto som hämtades i föregående steg. |
 
 **Svar**
