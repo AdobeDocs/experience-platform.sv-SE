@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # Visa gällande policyer
 
-Om du vill visa gällande principer för den aktuella användaren gör du en POST-begäran till `/acl/effective-policies` slutpunkten i [!DNL Access Control] API:t. Behörigheterna och resurstyperna som du vill hämta måste anges i nyttolasten för begäran i form av en array. Detta visas i exemplet på API-anrop nedan.
+Om du vill visa gällande principer för den aktuella användaren gör du en POST-förfrågan till `/acl/effective-policies` slutpunkten i [!DNL Access Control] API:t. Behörigheterna och resurstyperna som du vill hämta måste anges i nyttolasten för begäran i form av en array. Detta visas i exemplet på API-anrop nedan.
 
 **API-format**
 
@@ -73,7 +73,7 @@ I det här avsnittet finns ytterligare information om hur du använder [!DNL Acc
 
 ### Godkända behörigheter och resurstyper
 
-Nedan följer en lista över behörigheter och resurstyper som du kan inkludera i nyttolasten för en POST-begäran till `/acl/active-permissions` slutpunkten.
+Nedan följer en lista över behörigheter och resurstyper som du kan inkludera i nyttolasten för en POST som skickas till `/acl/active-permissions` slutpunkten.
 
 **Behörigheter**
 
