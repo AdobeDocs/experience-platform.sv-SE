@@ -1,10 +1,13 @@
 ---
 title: SFTP-mål
 seo-title: SFTP-mål
-description: Skapa en utgående liveanslutning till din SFTP-server för att regelbundet exportera avgränsade datafiler från Experience Platform.
-seo-description: Skapa en utgående liveanslutning till din SFTP-server för att regelbundet exportera avgränsade datafiler från Experience Platform.
+description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Experience Platform.
+seo-description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Experience Platform.
 translation-type: tm+mt
 source-git-commit: c3fe5753fb23f99076f9c85b4e07af2d25a121a9
+workflow-type: tm+mt
+source-wordcount: '132'
+ht-degree: 0%
 
 ---
 
@@ -13,7 +16,7 @@ source-git-commit: c3fe5753fb23f99076f9c85b4e07af2d25a121a9
 
 ## Översikt
 
-Skapa en utgående liveanslutning till din SFTP-server för att regelbundet exportera avgränsade datafiler från Experience Platform.
+Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Experience Platform.
 
 Så här exporterar du data:
 
