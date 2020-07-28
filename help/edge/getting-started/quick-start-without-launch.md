@@ -22,7 +22,7 @@ Den här guiden leder dig igenom de olika sätten att konfigurera Adobe Experien
 
 ## Skapa ett konfigurations-ID
 
-Du kan skapa ett konfigurations-ID med [Edge-konfigurationsverktyget](../fundamentals/edge-configuration.md) i Adobe Launch, även om du inte använder tagghanteringsfunktionerna. På så sätt kan du aktivera möjligheten [!DNL Edge Network] att skicka data till olika lösningar. Information om hur du hittar de olika alternativen finns på sidan [Edge Configuration Tool](../fundamentals/edge-configuration.md) .
+Du kan skapa ett konfigurations-ID med [edge-konfigurationsverktyget](../fundamentals/edge-configuration.md) i Adobe Launch, även om du inte använder tagghanteringsfunktionerna. På så sätt kan du aktivera möjligheten [!DNL Edge Network] att skicka data till olika lösningar. Information om hur du hittar de olika alternativen finns på sidan [Edge Configuration Tool](../fundamentals/edge-configuration.md) .
 
 >[!NOTE]
 >
