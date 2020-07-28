@@ -66,7 +66,7 @@ Mer information om att tillhandahålla information om användaridentitet finns i
 
 ## Kan jag använda [!DNL Privacy Service] för att rensa data som av misstag har skickats till [!DNL Platform]?
 
-Adobe stöder inte användning [!DNL Privacy Service] för att radera data som av misstag har skickats till en produkt. [!DNL Privacy Service] är utformat för att hjälpa dig att uppfylla dina skyldigheter för den registrerade (eller konsumenten) att få tillgång till eller ta bort uppgifter. Dessa förfrågningar är tidskänsliga och har slutförts med avseende på tillämplig integritetslagstiftning. Inlämning av förfrågningar som inte är förfrågningar om tillgång eller radering för registrerade/konsumenter påverkar alla [!DNL Privacy Service] kunder och möjligheten [!DNL Privacy Service] att ge stöd för lämpliga rättsliga tidsramar.
+Adobe stöder inte användning [!DNL Privacy Service] för att radera data som av misstag skickats till en produkt. [!DNL Privacy Service] är utformat för att hjälpa dig att uppfylla dina skyldigheter för den registrerade (eller konsumenten) att få tillgång till eller ta bort uppgifter. Dessa förfrågningar är tidskänsliga och har slutförts med avseende på tillämplig integritetslagstiftning. Inlämning av förfrågningar som inte är förfrågningar om tillgång eller radering för registrerade/konsumenter påverkar alla [!DNL Privacy Service] kunder och möjligheten [!DNL Privacy Service] att ge stöd för lämpliga rättsliga tidsramar.
 
 Kontakta din kontoansvarige (CDM) för att koordinera och göra en insats för att ta bort eventuella PII- eller dataproblem.
 
