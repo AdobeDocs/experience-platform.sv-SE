@@ -73,7 +73,7 @@ POST /connections
 
 **Begäran**
 
-För att kunna skapa en [!DNL OData] anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POST-begäran. Anslutningsspecifikationens ID för [!DNL OData] är `8e6b41a8-d998-4545-ad7d-c6a9fff406c3`.
+För att kunna skapa en [!DNL OData] anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikationens ID för [!DNL OData] är `8e6b41a8-d998-4545-ad7d-c6a9fff406c3`.
 
 ```shell
 curl -X POST \
