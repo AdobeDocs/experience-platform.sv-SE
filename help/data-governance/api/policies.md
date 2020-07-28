@@ -20,7 +20,7 @@ Slutpunkten används `/policies` för alla API-anrop som rör visning, skapande,
 
 ## Visa alla principer
 
-Om du vill visa en lista med principer kan en GET-begäran göras till `/policies/core` eller `/policies/custom` som returnerar alla principer för den angivna behållaren.
+Om du vill visa en lista med principer kan du göra en GET-förfrågan till `/policies/core` eller `/policies/custom` som returnerar alla profiler för den angivna behållaren.
 
 **API-format**
 
@@ -135,7 +135,7 @@ Svaret innehåller ett antal som visar det totala antalet principer i den angivn
 
 ## Söka efter en princip
 
-Varje princip innehåller ett `id` fält som kan användas för att begära information om en viss princip. Om en `id` princips status är okänd kan den hittas med hjälp av listbegäran (GET) för att lista alla principer i en viss behållare (`core` eller `custom`) enligt föregående steg.
+Varje princip innehåller ett `id` fält som kan användas för att begära information om en viss princip. Om en `id` princips status är okänd kan den hittas med listbegäran (GET) för att lista alla principer i en viss behållare (`core` eller `custom`), vilket visades i föregående steg.
 
 **API-format**
 
@@ -312,7 +312,7 @@ Om det skapas får du en HTTP-status 201 (Skapad) och svarstexten innehåller in
 
 ## Uppdatera en profil
 
-Du kanske måste uppdatera en dataanvändningsprincip när den har skapats. Detta görs genom en PUT-begäran till principen `id` med en nyttolast som innehåller den uppdaterade formen av policyn i sin helhet. Med andra ord skriver PUT-begäran i stort sett om _policyn_ , och därför måste texten innehålla all nödvändig information som visas i exemplet nedan.
+Du kanske måste uppdatera en dataanvändningsprincip när den har skapats. Detta görs genom en PUT-begäran till policyn `id` med en nyttolast som innehåller den uppdaterade formen av policyn i sin helhet. Med andra ord är begäran från PUT i stort sett en _omskrivning_ av policyn, och därför måste den innehålla all nödvändig information som visas i exemplet nedan.
 
 **API-format**
 
@@ -404,9 +404,9 @@ En slutförd uppdateringsbegäran returnerar HTTP-status 200 (OK) och svarstexte
 
 ## Uppdatera en del av en princip
 
-En viss del av en princip kan uppdateras med en PATCH-begäran. Till skillnad från PUT-begäranden som _skriver_ om profilen, begär PATCH bara att den sökväg som anges i begärandetexten ska uppdateras. Detta är särskilt användbart när du vill aktivera eller inaktivera en profil, eftersom du bara behöver skicka den specifika sökvägen som du vill uppdatera (`/status`) och dess värde (`ENABLE` eller `DISABLE`).
+En viss del av en policy kan uppdateras på PATCH-begäran. Till skillnad från PUT som _skriver_ om principen begär PATCH endast att den sökväg som angetts i begärandetexten ska uppdateras. Detta är särskilt användbart när du vill aktivera eller inaktivera en profil, eftersom du bara behöver skicka den specifika sökvägen som du vill uppdatera (`/status`) och dess värde (`ENABLE` eller `DISABLE`).
 
-API:t har för närvarande stöd för [!DNL Policy Service] &quot;add&quot;,&quot;replace&quot; och&quot;remove&quot; PATCH-åtgärder och gör att du kan kombinera flera uppdateringar till ett enda anrop genom att lägga till varje objekt som ett objekt i arrayen, vilket visas i följande exempel.
+API:t har för närvarande stöd för åtgärderna&quot;add&quot;,&quot;replace&quot; och&quot;remove&quot; PATCH och gör att du kan kombinera flera uppdateringar till ett enda anrop genom att lägga till var och en som ett objekt i arrayen, vilket visas i följande exempel. [!DNL Policy Service]
 
 **API-format**
 
@@ -506,7 +506,7 @@ En slutförd uppdateringsbegäran returnerar HTTP-status 200 (OK) och svarstexte
 
 ## Ta bort en profil
 
-Om du behöver ta bort en profil som du har skapat kan du göra det genom att skicka en DELETE-begäran till den `id` profil som du vill ta bort. Det är bäst att först utföra en sökbegäran (GET) för att visa principen och bekräfta att det är rätt princip som du vill ta bort. **Policyer kan inte återställas när de har tagits bort.**
+Om du behöver ta bort en profil som du har skapat kan du göra det genom att skicka en DELETE-begäran till den `id` profil som du vill ta bort. Det är bäst att först utföra en sökning (GET)-begäran för att visa principen och bekräfta att det är rätt princip som du vill ta bort. **Policyer kan inte återställas när de har tagits bort.**
 
 **API-format**
 
