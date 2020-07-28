@@ -77,7 +77,7 @@ En placering begränsar vilken typ av innehållsobjekt som kan läggas till i re
 
 Reserverbjudanden är beslutsalternativ som inte har ytterligare begränsningar förutom placeringsreglerna. Reserverbjudanden har innehållsrepresentationer som är kopplade till placeringar, precis som alla andra erbjudanden.
 
-Reserverbjudanden anges i aktiviteter för att indikera en användbar innehållsupplevelse när kombinerade begränsningar diskvalificerar alla begränsade alternativ. Eftersom det inte är beroende av körningssammanhanget eller profilen, kan placeringsbegränsningen kontrolleras i förväg när aktiviteten sätts samman. Med hjälp av reserverbjudanden finns det alltid ett svar på frågan: Vilket är för närvarande det bästa erbjudandet?
+Reserverbjudanden anges i aktiviteter för att indikera en livskraftig innehållsupplevelse när kombinerade begränsningar diskvalificerar alla begränsade alternativ. Eftersom det inte är beroende av körningssammanhanget eller profilen, kan placeringsbegränsningen kontrolleras i förväg när aktiviteten sätts samman. Med hjälp av reserverbjudanden finns det alltid ett svar på frågan: Vilket är för närvarande det bästa erbjudandet?
 
 ## Villkor
 
