@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Skapa en datauppsättning
 
-Om du vill skapa en datauppsättning med [!DNL Catalog] API måste du känna till `$id` värdet för det [!DNL Experience Data Model] (XDM)-schema som datauppsättningen ska baseras på. När du har ett schema-ID kan du skapa en datauppsättning genom att göra en POST-begäran till `/datasets` slutpunkten i [!DNL Catalog] API:t.
+Om du vill skapa en datauppsättning med [!DNL Catalog] API måste du känna till `$id` värdet för det [!DNL Experience Data Model] (XDM)-schema som datauppsättningen ska baseras på. När du har ett schema-ID kan du skapa en datauppsättning genom att göra en POST-förfrågan till `/datasets` slutpunkten i [!DNL Catalog] API:t.
 
 >[!NOTE]
 >
