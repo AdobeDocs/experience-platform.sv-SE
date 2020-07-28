@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # [!DNL Segmentation Service] in [!DNL Real-time Customer Data Platform]
 
-[!DNL Real-time Customer Data Platform] (CDP i realtid) gör att ni kan hämta data från flera olika källor för att skapa en samordnad och enhetlig upplevelse för era kunder. Leverera relevanta personaliserade marknadsföringskampanjer med hjälp av Adobe Experience Platform, [!DNL Segmentation Service]en del.
+[!DNL Real-time Customer Data Platform] (CDP i realtid) gör att ni kan hämta data från flera källor för att skapa en samordnad och enhetlig upplevelse för era kunder. Leverera relevanta personaliserade marknadsföringskampanjer med hjälp av Adobe Experience Platform, [!DNL Segmentation Service]en del.
 
 CDP i realtid är byggt på Adobe Experience Platform och utnyttjar många av de [!DNL Experience Platform] tjänster och funktioner som finns. Med [!DNL Segmentation Service]hjälp av kan ni tillhandahålla skräddarsydd marknadsföring genom att dela upp kunderna i mindre grupper med liknande egenskaper.
 
