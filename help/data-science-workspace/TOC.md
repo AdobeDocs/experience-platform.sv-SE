@@ -42,7 +42,7 @@ ht-degree: 0%
 * Modellredigering {#authoring}
    * [SDK för modellredigering](authoring/sdk.md)
    * [Skapa en rörledning för funktioner](authoring/feature-pipeline.md)
-   * [Plattforms-SDK-guide (Python)](authoring/platform-sdk.md)
+   * [Platform SDK Guide (Python)](authoring/platform-sdk.md)
 * Självstudiekurser för modell och recept {#models-recipes}
    * [Skapa och publicera genomgång av en maskininlärningsmodell](models-recipes/create-publish-model.md)
    * [Skapa schema och datauppsättning för butiksförsäljning](models-recipes/create-retails-sales-dataset.md)
@@ -62,4 +62,4 @@ ht-degree: 0%
 * [Migreringsguider för mottagare och anteckningsböcker](recipe-notebook-migration.md)
 * [Felsökningsguide](troubleshooting-guide.md)
 * [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml)
-* [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
+* [Versionsinformation för Platform](https://www.adobe.com/go/platform-release-notes-en)
