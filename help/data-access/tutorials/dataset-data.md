@@ -416,7 +416,7 @@ Ett godkänt svar returnerar filens innehåll.
 
 Med API:t [!DNL Data Access] kan du hämta filer i segment. Du kan ange en intervallrubrik under en `GET /files/{FILE_ID}` begäran om att hämta ett visst intervall med byte från en fil. Om intervallet inte anges hämtas hela filen som standard av API:t.
 
-HEAD-exemplet i det [föregående avsnittet](#retrieve-the-metadata-of-a-file) visar storleken på en viss fil i byte.
+Exemplet HEAD i det [föregående avsnittet](#retrieve-the-metadata-of-a-file) visar storleken på en viss fil i byte.
 
 **API-format**
 
