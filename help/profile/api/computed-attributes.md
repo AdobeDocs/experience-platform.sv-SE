@@ -110,7 +110,7 @@ Nu kan du klicka **[!UICONTROL Save]** för att spara det uppdaterade schemat oc
 
 När ditt beräknade attributfält har identifierats och du har bekräftat att schemat är aktiverat för [!DNL Profile]kan du nu konfigurera ett beräknat attribut.
 
-Börja med att göra en POST-begäran till `/config/computedAttributes` slutpunkten med en begärandebrödtext som innehåller information om det beräknade attributet som du vill skapa.
+Börja med att göra en begäran om POST till `/config/computedAttributes` slutpunkten med en begärandetext som innehåller information om det beräknade attribut som du vill skapa.
 
 **API-format**
 
@@ -223,7 +223,7 @@ Steg för att både visa alla beräknade attribut och visa ett specifikt beräkn
 
 ### Visa beräknade attribut {#list-computed-attributes}
 
-IMS-organisationen kan skapa flera beräknade attribut, och om du utför en GET-begäran till `/config/computedAttributes` slutpunkten kan du visa alla befintliga beräknade attribut för din organisation.
+IMS-organisationen kan skapa flera beräknade attribut, och om du gör en GET-förfrågan till `/config/computedAttributes` slutpunkten kan du visa alla befintliga beräknade attribut för din organisation.
 
 **API-format**
 
@@ -357,7 +357,7 @@ Svaret innehåller också en `children` array som består av ett eller flera obj
 | `_page.pageSize` | Antalet beräknade attribut som returneras på den här resultatsidan. Om `pageSize` är lika med `totalCount`betyder det att det bara finns en resultatsida och att alla beräknade attribut har returnerats. Om de inte är lika finns det ytterligare resultatsidor som du kan komma åt. Mer information finns `_links.next` i. |
 | `children` | En array som består av ett eller flera objekt, där vart och ett innehåller detaljerna för ett enskilt beräknat attribut. Om inga beräknade attribut har definierats är `children` arrayen tom. |
 | `id` | Ett unikt, skrivskyddat, systemgenererat värde som automatiskt tilldelas ett beräknat attribut när det skapas. Mer information om komponenterna i ett beräknat attributobjekt finns i avsnittet om att [skapa ett beräknat attribut](#create-a-computed-attribute) tidigare i den här självstudiekursen. |
-| `_links.next` | Om en enda sida med beräknade attribut returneras `_links.next` är ett tomt objekt, vilket visas i exempelsvaret ovan. Om din organisation har många beräknade attribut returneras de på flera sidor som du kan komma åt genom att göra en GET-begäran till `_links.next` värdet. |
+| `_links.next` | Om en enda sida med beräknade attribut returneras `_links.next` är ett tomt objekt, vilket visas i exempelsvaret ovan. Om din organisation har många beräknade attribut returneras de på flera sidor som du kan få åtkomst till genom att göra en GET-förfrågan till `_links.next` värdet. |
 
 ### Visa ett beräknat attribut {#view-a-computed-attribute}
 
@@ -432,7 +432,7 @@ curl -X GET \
 
 ## Uppdatera ett beräknat attribut
 
-Om du upptäcker att du behöver uppdatera ett befintligt beräknat attribut kan du göra det genom att göra en PATCH-begäran till `/config/computedAttributes` slutpunkten och inkludera ID:t för det beräknade attributet som du vill uppdatera i sökvägen till begäran.
+Om du upptäcker att du behöver uppdatera ett befintligt beräknat attribut kan du göra det genom att göra en PATCH-begäran till `/config/computedAttributes` slutpunkten och inkludera ID:t för det beräknade attribut som du vill uppdatera i sökvägen till begäran.
 
 **API-format**
 
@@ -476,7 +476,7 @@ curl -X PATCH \
 
 **Svar**
 
-En lyckad uppdatering returnerar HTTP-status 204 (inget innehåll) och en tom svarstext. Om du vill bekräfta att uppdateringen lyckades kan du utföra en GET-begäran för att visa det beräknade attributet med dess ID.
+En lyckad uppdatering returnerar HTTP-status 204 (inget innehåll) och en tom svarstext. Om du vill bekräfta att uppdateringen lyckades kan du utföra en GET-förfrågan för att visa det beräknade attributet med dess ID.
 
 ## Ta bort ett beräknat attribut
 
