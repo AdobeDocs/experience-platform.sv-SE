@@ -20,7 +20,7 @@ Nu när du förstår vilka rubriker som ska användas kan du börja ringa anrop 
 
 ### Hämta en lista över alla körningar för en angiven schemalagd fråga
 
-Du kan hämta en lista över alla körningar för en viss schemalagd fråga, oavsett om de körs eller redan har slutförts. Detta görs genom att en GET-begäran görs till `/schedules/{SCHEDULE_ID}/runs` slutpunkten, där `{SCHEDULE_ID}` är `id` värdet för den schemalagda frågan vars körningar du vill hämta.
+Du kan hämta en lista över alla körningar för en viss schemalagd fråga, oavsett om de körs eller redan har slutförts. Detta gör du genom att göra en GET-begäran till `/schedules/{SCHEDULE_ID}/runs` slutpunkten, där `{SCHEDULE_ID}` är `id` värdet för den schemalagda frågan vars körningar du vill hämta.
 
 **API-format**
 
@@ -153,7 +153,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över körningar för de
 
 ### Starta omedelbart ut en körning för en specifik schemalagd fråga
 
-Du kan omedelbart utlösa en körning för en angiven schemalagd fråga genom att göra en POST-begäran till `/schedules/{SCHEDULE_ID}/runs` slutpunkten, där `{SCHEDULE_ID}` är `id` värdet för den schemalagda frågan vars körning du vill utlösa.
+Du kan omedelbart utlösa en körning för en angiven schemalagd fråga genom att göra en POST-förfrågan till `/schedules/{SCHEDULE_ID}/runs` slutpunkten, där `{SCHEDULE_ID}` är `id` värdet för den schemalagda frågan vars körning du vill utlösa.
 
 **API-format**
 
@@ -184,7 +184,7 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med följande meddelande
 
 ### Hämta information om en körning för en specifik schemalagd fråga
 
-Du kan hämta information om en körning för en specifik schemalagd fråga genom att göra en GET-begäran till `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}` slutpunkten och ange både ID:t för den schemalagda frågan och körningen i sökvägen för begäran.
+Du kan hämta information om en körning för en specifik schemalagd fråga genom att göra en GET-förfrågan till `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}` slutpunkten och ange både ID:t för den schemalagda frågan och körningen i sökvägen för begäran.
 
 **API-format**
 
@@ -245,7 +245,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den angivna körni
 
 ### Stoppa omedelbart en körning för en specifik schemalagd fråga
 
-Du kan omedelbart stoppa en körning för en specifik schemalagd fråga genom att göra en PATCH-begäran till `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}` slutpunkten och ange både ID:t för den schemalagda frågan och körningen i sökvägen för begäran.
+Du kan omedelbart stoppa en körning för en viss schemalagd fråga genom att göra en PATCH-begäran till `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}` slutpunkten och ange både ID:t för den schemalagda frågan och körningen i sökvägen för begäran.
 
 **API-format**
 
