@@ -61,7 +61,7 @@ alloy
 
 ## Använda den formulärbaserade dispositionen
 
-Den formulärbaserade Experience Composer är ett icke-visuellt gränssnitt som är användbart för att konfigurera A/B-tester, [!DNL Experience Targeting]automatiserad personalisering och rekommendationer med olika svarstyper som JSON, HTML, Image, etc. Beroende på vilken svarstyp eller vilket beslut som Adobe Target har returnerat kan din affärslogik användas. Om du vill hämta beslut för dina formulärbaserade dispositionsaktiviteter skickar du en händelse med alla&quot;beslutScopes&quot; som du vill ta emot ett beslut för.
+Den formulärbaserade Experience Composer är ett icke-visuellt gränssnitt som är användbart för att konfigurera A/B-tester, [!DNL Experience Targeting]Automated Personalization- och Recommendations-aktiviteter med olika svarstyper som JSON, HTML, Image osv. Beroende på vilken svarstyp eller vilket beslut som Adobe Target har returnerat kan din affärslogik användas. Om du vill hämta beslut för dina formulärbaserade dispositionsaktiviteter skickar du en händelse med alla&quot;beslutScopes&quot; som du vill ta emot ett beslut för.
 
 ```javascript
 alloy
