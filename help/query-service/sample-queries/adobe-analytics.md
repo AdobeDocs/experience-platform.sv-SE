@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # Exempelfrågor om Adobe Analytics-data
 
-Data från utvalda rapportsviter från Adobe Analytics omvandlas till XDM [!DNL ExperienceEvents] och hämtas till Adobe Experience Platform som datauppsättningar åt dig. I det här dokumentet beskrivs ett antal användningsfall där Adobe Experience Platform använder dessa data och där de inkluderade exempelfrågorna ska fungera med dina Adobe Analytics-datauppsättningar. [!DNL Query Service] Mer information om mappning till XDM finns i dokumentationen [för fältmappning i](../../sources/connectors/adobe-applications/mapping/analytics.md) Analytics [!DNL ExperienceEvents].
+Data från utvalda Adobe Analytics-rapportsviter omvandlas till XDM [!DNL ExperienceEvents] och hämtas till Adobe Experience Platform som datauppsättningar åt dig. I det här dokumentet beskrivs ett antal användningsfall där Adobe Experience Platform använder dessa data och där de inkluderade exempelfrågorna ska fungera med dina Adobe Analytics-datauppsättningar. [!DNL Query Service] Mer information om mappning till XDM finns i dokumentationen [för fältmappning i](../../sources/connectors/adobe-applications/mapping/analytics.md) Analytics [!DNL ExperienceEvents].
 
 ## Komma igång
 
@@ -129,7 +129,7 @@ ORDER BY Hour;
 
 ## Marknadsföringsvariabler (produktsyntax)
 
-I Adobe Analytics kan man samla in data på produktnivå med hjälp av särskilt konfigurerade variabler som kallas&quot;Merchandising Variables&quot;. Dessa baseras antingen på en eVar- eller anpassad händelse. Skillnaden mellan dessa variabler och deras standardanvändning är att de representerar ett separat värde för varje produkt som hittas i träffen i stället för bara ett enda värde för träffen. Dessa variabler kallas för produktsyntaxvariabler. Detta gör det möjligt att samla in information som&quot;rabattbelopp&quot; per produkt eller information om produktens&quot;plats på sidan&quot; i kundens sökresultat.
+I Adobe Analytics kan man samla in data på produktnivå med hjälp av särskilt konfigurerade variabler som kallas&quot;Merchandising Variables&quot;. Dessa baseras antingen på en eVar eller en anpassad händelse. Skillnaden mellan dessa variabler och deras standardanvändning är att de representerar ett separat värde för varje produkt som hittas i träffen i stället för bara ett enda värde för träffen. Dessa variabler kallas för produktsyntaxvariabler. Detta gör det möjligt att samla in information som&quot;rabattbelopp&quot; per produkt eller information om produktens&quot;plats på sidan&quot; i kundens sökresultat.
 
 Här är XDM-fälten för att komma åt de variabler som ingår i din [!DNL Analytics] datauppsättning:
 
@@ -139,7 +139,7 @@ Här är XDM-fälten för att komma åt de variabler som ingår i din [!DNL Anal
 productListItems[#]._experience.analytics.customDimensions.evars.evar#
 ```
 
-Där `[#]` är ett arrayindex och `evar#` är den specifika eVar-variabeln.
+Där `[#]` är ett arrayindex och `evar#` är den specifika eVar.
 
 ### Anpassade händelser
 
@@ -151,7 +151,7 @@ Där `[#]` är ett arrayindex och `event#` är den specifika anpassade händelse
 
 ### Exempelfrågor
 
-Här är ett exempel på en fråga som returnerar en eVar och händelse för den första produkten som hittas i `productListItems`.
+Här följer ett exempel på en fråga som returnerar en eVar och händelse för den första produkten som hittas i `productListItems`.
 
 ```sql
 SELECT
@@ -165,7 +165,7 @@ WHERE _ACP_YEAR=2019 AND _ACP_MONTH=7 AND _ACP_DAY=23
 LIMIT 10
 ```
 
-Nästa fråga &#39;exploderar&#39; `productListItems` och returnerar varje eVar- och -händelse som handlar per produkt. Fältet `_id` inkluderas för att visa relationen till den ursprungliga träffen. Värdet `_id` är en unik primärnyckel i [!DNL ExperienceEvent] datauppsättningen.
+Nästa fråga &#39;exploderar&#39; `productListItems` och returnerar varje eVar och händelse per produkt. Fältet `_id` inkluderas för att visa relationen till den ursprungliga träffen. Värdet `_id` är en unik primärnyckel i [!DNL ExperienceEvent] datauppsättningen.
 
 ```sql
 SELECT
@@ -197,19 +197,19 @@ ERROR: ErrorCode: 08P01 sessionId: XXXX queryId: XXXX Unknown error encountered.
 
 En annan typ av en Merchandising-variabel som finns i Adobe Analytics är Conversion Syntax. Med produktsyntax samlas värdet in samtidigt som produkten, men detta kräver att data finns på samma sida. Det finns scenarier där data förekommer på en sida före konverteringen eller den händelse av intresse som är relaterad till produkten. Ta till exempel ett exempel till exempel ett exempel på hur rapportmetoden för produktsökning används.
 
-1. En användare utför och söker internt efter &quot;vinterhatt&quot;, vilket anger att Merchandising eVar6 har aktiverat för konverteringssyntaxen till &quot;intern sökning:vinterhatt&quot;
+1. En användare utför och söker internt efter &quot;vinterhatt&quot;, vilket ställer in funktionen för konverteringssyntax på Merchandising eVar6 till &quot;intern sökning:vinterhatt&quot;
 2. Användaren klickar på&quot;våffelsbeanie&quot; och hamnar på produktinformationssidan.\
    a. Landing here utlöser en `Product View` händelse för &quot;waffle beanie&quot; för 12,99 dollar.\
-   b. Eftersom produkten `Product View` är konfigurerad som en bindningshändelse är den nu bunden till eVar6-värdet för&quot;intern sökning:vinterhatt&quot;. När&quot;våffelbeanie&quot;-produkten samlas in kopplas den till&quot;intern sökning:vinterhatt&quot; tills antingen (1) förfalloinställningen nås eller (2) ett nytt eVar6-värde anges och bindningshändelsen inträffar med produkten igen.
+   b. Eftersom `Product View` är konfigurerad som en bindningshändelse är produkten &quot;waffle beanie&quot; nu bunden till eVar 6-värdet för &quot;intern sökning:vinterhatt&quot;. När&quot;våffelbeanie&quot;-produkten samlas in kopplas den till&quot;intern sökning:vinterhatt&quot; tills antingen (1) förfalloinställningen nås eller (2) ett nytt eVar6-värde anges och bindningshändelsen inträffar med produkten igen.
 3. Användaren lägger till produkten i kundvagnen och startar `Cart Add` händelsen.
-4. Användaren gör en annan intern sökning efter&quot;sommarskjorta&quot; som ställer in funktionen för konverteringssyntax för Merchandising eVar6 till&quot;intern sökning:sommarskjorta&quot;
+4. Användaren gör en annan intern sökning efter&quot;sommarskjorta&quot; som ställer in konverteringssyntaxen till&quot;intern sökning:sommarskjorta&quot; i Merchandising eVar6
 5. Användaren klickar på&quot;en sportig t-shirt&quot; och hamnar på produktinformationssidan.\
    a. Landing here utlöser ett `Product View` event för &quot;sportskjorta&quot; för 19,99 dollar.\
-   b. Evenemanget är fortfarande vår bindningshändelse, så nu är produkten &quot;sporty t-shirts&quot; bunden till eVar6-värdet för &quot;intern sökning:sommarskjorta&quot; och den tidigare produkten &quot;waffle beanie&quot; är fortfarande bunden till eVar6-värdet &quot;intern sökning:waffle beanie&quot;. `Product View`
+   b. Evenemanget är fortfarande vår bindande händelse, så nu är produkten &quot;sportlig t-shirts&quot; bunden till eVar 6-värdet av &quot;intern sökning:sommarskjorta&quot; och den tidigare produkten &quot;våffelbeanie&quot; är fortfarande bunden till eVar 6-värdet &quot;intern sökning:våffelbeanie&quot;. `Product View`
 6. Användaren lägger till produkten i kundvagnen och startar `Cart Add` händelsen.
 7. Användaren checkar ut med båda produkterna.
 
-Vid rapporteringen kommer order, intäkter, produktvisningar och kundvagnstillägg att kunna rapporteras mot eVar6 och anpassas till den bundna produktens aktivitet.
+Vid rapportering kommer order, intäkter, produktvisningar och kundvagnstillägg att rapporteras mot eVar 6 och anpassas till den bundna produktens aktivitet.
 
 | eVar6 (produktsökningsmetod) | omsättning | order | produktvyer | kundvagn lägger till |
 |---|---|---|---|---|
@@ -224,7 +224,7 @@ Här är XDM-fälten som skapar konverteringssyntaxen i din [!DNL Analytics] dat
 _experience.analytics.customDimensions.evars.evar#
 ```
 
-Var `evar#` är den specifika eVar-variabeln.
+Var `evar#` är den specifika eVar.
 
 ### Produkt
 
