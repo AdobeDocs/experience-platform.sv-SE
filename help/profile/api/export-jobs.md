@@ -92,7 +92,7 @@ Ett lyckat svar returnerar en array som innehåller det skrivskyddade, systemgen
 
 ### Initiera exportjobb {#initiate}
 
-När du har en unionskonstanterad datauppsättning kan du skapa ett exportjobb som behåller profildata till datauppsättningen genom att göra en POST-begäran till `/export/jobs` slutpunkten i kundprofils-API:t i realtid och tillhandahålla information om de data som du vill exportera i huvuddelen av begäran.
+När du har en enhetlig datauppsättning som är beständig kan du skapa ett exportjobb som bevarar profildata till datauppsättningen genom att göra en POST till slutpunkten i `/export/jobs` kundprofils-API:t i realtid och tillhandahålla information om de data som du vill exportera i huvuddelen av begäran.
 
 **API-format**
 
@@ -331,7 +331,7 @@ Svaret innehåller ett `records` objekt som innehåller de exportjobb som har sk
 
 ## Övervaka exportförlopp
 
-Om du vill visa information om ett specifikt exportjobb, eller övervaka statusen när det bearbetas, kan du göra en GET-begäran till `/export/jobs` slutpunkten och inkludera `id` exportjobbets status i sökvägen. Exportjobbet slutförs när `status` fältet returnerar värdet &quot;SUCCEEDED&quot;.
+Om du vill visa information om ett specifikt exportjobb, eller övervaka dess status när det bearbetas, kan du göra en GET-förfrågan till `/export/jobs` slutpunkten och inkludera `id` exportjobbets status i sökvägen. Exportjobbet slutförs när `status` fältet returnerar värdet &quot;SUCCEEDED&quot;.
 
 **API-format**
 
