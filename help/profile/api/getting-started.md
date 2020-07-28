@@ -44,7 +44,7 @@ Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuell
 
 Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
-Alla begäranden med en nyttolast i begärandetexten (som POST-, PUT- och PATCH-anrop) måste innehålla en `Content-Type` rubrik. Godkända värden som är specifika för varje anrop finns i anropsparametrarna.
+Alla begäranden med en nyttolast i begärandetexten (till exempel anrop till POST, PUT och PATCH) måste innehålla en `Content-Type` rubrik. Godkända värden som är specifika för varje anrop finns i anropsparametrarna.
 
 ## Nästa steg
 
