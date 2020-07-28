@@ -5,6 +5,9 @@ title: Söka efter en sandlåda
 topic: developer guide
 translation-type: tm+mt
 source-git-commit: ef423a8c1b412315d03cddf7d8c351a232eb509b
+workflow-type: tm+mt
+source-wordcount: '204'
+ht-degree: 0%
 
 ---
 
