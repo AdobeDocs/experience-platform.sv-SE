@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Politisk utvärdering
 
-När marknadsföringsåtgärder har skapats och principer har definierats, kan du använda API:t för att utvärdera om några profiler överträds av vissa åtgärder. [!DNL Policy Service] De returnerade begränsningarna har formen av en uppsättning principer som skulle överträdas om marknadsföringsåtgärden utförs på de angivna data som innehåller dataanvändningsetiketter.
+När marknadsföringsåtgärder har skapats och policyer har definierats kan du använda API:t för att utvärdera om några policyer överträds av vissa åtgärder. [!DNL Policy Service] De returnerade begränsningarna har formen av en uppsättning principer som skulle överträdas om marknadsföringsåtgärden utförs på de angivna data som innehåller dataanvändningsetiketter.
 
 Som standard deltar **bara profiler vars status är inställd på&quot;ENABLED&quot; i utvärderingen**, men du kan använda frågeparametern `?includeDraft=true` för att inkludera&quot;UTKAST&quot;-principer i utvärderingen.
 
@@ -112,7 +112,7 @@ Svarsobjektet innehåller en `duleLabels` array som ska matcha de etiketter som 
 
 ## Utvärdera policyer med datauppsättningar och en marknadsföringsåtgärd
 
-Du kan också utvärdera policyöverträdelser genom att ange ID:t för en eller flera datauppsättningar från vilka dataanvändningsetiketter kan samlas in. Detta görs genom att utföra en POST-begäran till antingen kärnan eller den anpassade `/constraints` slutpunkten för en marknadsföringsåtgärd och ange datauppsättnings-ID:n i begärandetexten, vilket visas nedan.
+Du kan också utvärdera policyöverträdelser genom att ange ID:t för en eller flera datauppsättningar från vilka dataanvändningsetiketter kan samlas in. Detta görs genom att utföra en begäran om POST till antingen kärnan eller den anpassade `/constraints` slutpunkten för en marknadsföringsåtgärd och ange datauppsättnings-ID:n i begärandetexten, vilket visas nedan.
 
 **API-format**
 
@@ -328,7 +328,7 @@ Om den angivna marknadsföringsåtgärden bryter mot en princip som innehåller 
 
 ## Utvärdera policyer med hjälp av datauppsättningar, fält och en marknadsföringsåtgärd
 
-Förutom att ange ett eller flera datauppsättnings-ID:n kan en delmängd av fält från varje datauppsättning också anges, vilket anger att endast dataanvändningsetiketterna för dessa fält ska utvärderas. På samma sätt som POST-begäran som endast innehåller datauppsättningar lägger den här begäran till specifika fält för varje datauppsättning i begärandetexten.
+Förutom att ange ett eller flera datauppsättnings-ID:n kan en delmängd av fält från varje datauppsättning också anges, vilket anger att endast dataanvändningsetiketterna för dessa fält ska utvärderas. På samma sätt som begäran om POST som endast innehåller datauppsättningar lägger den här begäran till specifika fält för varje datauppsättning i begärandetexten.
 
 När du utvärderar principer med hjälp av datauppsättningsfält bör du tänka på följande:
 
