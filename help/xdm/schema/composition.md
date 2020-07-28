@@ -107,7 +107,7 @@ Det finns standardklasser som ingår i alla integreringar av [!DNL Experience Pl
 
 Det finns också klasser som används för att beskriva mer specifika användningsfall för enskilda organisationer inom [!DNL Platform]klassen&quot;Kund&quot;. Kundklasser definieras av en organisation när det inte finns några bransch- eller leverantörsklasser tillgängliga som beskriver ett unikt användningsfall.
 
-Ett schema som till exempel representerar medlemmar i ett Loyalty-program beskriver postdata om en individ och kan därför baseras på [!DNL XDM Individual Profile] klassen, en branschstandardklass som definierats av Adobe.
+Ett schema som till exempel representerar medlemmar i ett Loyalty-program beskriver postdata om en individ och kan därför baseras på [!DNL XDM Individual Profile] klassen, en branschstandardklass som definieras av Adobe.
 
 ### Mixa {#mixin}
 
@@ -200,7 +200,7 @@ Alla datafiler som är inkapslade i [!DNL Experience Platform] måste överensst
 
 Nu när du förstår grunderna i schemakomposition kan du börja skapa scheman med [!DNL Schema Registry].
 
-Den [!DNL Schema Registry] används för att komma åt [!DNL Schema Library] i Adobe Experience Platform och innehåller ett användargränssnitt och RESTful API som alla tillgängliga biblioteksresurser kan nås från. Det [!DNL Schema Library] innehåller branschresurser som definierats av Adobe, leverantörsresurser som definierats av [!DNL Experience Platform] partners samt klasser, mixins, datatyper och scheman som har skapats av medlemmar i organisationen.
+Den [!DNL Schema Registry] används för att komma åt [!DNL Schema Library] i Adobe Experience Platform och innehåller ett användargränssnitt och RESTful API som alla tillgängliga biblioteksresurser kan nås från. Det [!DNL Schema Library] innehåller branschresurser som definieras av Adobe, leverantörsresurser som definieras av [!DNL Experience Platform] partners samt klasser, mixins, datatyper och scheman som har skapats av medlemmar i organisationen.
 
 Om du vill börja skapa schemat med hjälp av användargränssnittet följer du med [schemaredigerarens självstudiekurs](../tutorials/create-schema-ui.md) för att skapa det schema för lojalitetsmedlemmar som omnämns i hela dokumentet.
 
