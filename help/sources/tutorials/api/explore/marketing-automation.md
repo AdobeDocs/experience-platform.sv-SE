@@ -53,7 +53,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Utforska era datatabeller
 
-Med hjälp av basanslutningen för ert automatiseringssystem för marknadsföring kan ni utforska era datatabeller genom att utföra GET-förfrågningar. Använd följande anrop för att hitta sökvägen till tabellen som du vill inspektera eller importera till [!DNL Platform].
+Med hjälp av basanslutningen för ert automatiseringssystem för marknadsföring kan ni utforska era datatabeller genom att utföra GETTER. Använd följande anrop för att hitta sökvägen till tabellen som du vill inspektera eller importera till [!DNL Platform].
 
 **API-format**
 
@@ -113,9 +113,9 @@ Ett framgångsrikt svar är en mängd tabeller från ert marknadsföringssystem.
 ]
 ```
 
-## Inspektera tabellstrukturen
+## Inspect tabellstrukturen
 
-Om du vill inspektera tabellstrukturen från ert automatiseringssystem för marknadsföring, ska du utföra en GET-begäran och ange sökvägen till en tabell som en frågeparameter.
+Om du vill inspektera tabellstrukturen från ditt automatiseringssystem för marknadsföring, ska du utföra en GET-förfrågan och ange sökvägen till en tabell som en frågeparameter.
 
 **API-format**
 
