@@ -36,4 +36,4 @@ Du kan läsa och skriva med datauppsättningar med hjälp av [!DNL Spark] SDK. M
 
 ## Prenumerera på dataöverföringshändelser
 
-[!DNL Platform] gör specifika, värdefulla händelser tillgängliga för prenumeration via [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). Du kan t.ex. prenumerera på dataöverföringshändelser för att få meddelanden om eventuella förseningar och fel. Mer information finns i självstudiekursen om hur du [prenumererar på meddelanden](../ingestion/quality/subscribe-events.md) om dataöverföring.
+[!DNL Platform] gör specifika värdefulla händelser tillgängliga för prenumeration via [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). Du kan t.ex. prenumerera på dataöverföringshändelser för att få meddelanden om eventuella förseningar och fel. Mer information finns i självstudiekursen om hur du [prenumererar på meddelanden](../ingestion/quality/subscribe-events.md) om dataöverföring.
