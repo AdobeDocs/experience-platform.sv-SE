@@ -26,7 +26,7 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
    - x-gw-ims-org-id: `{IMS_ORG}`
    - Klienthemlighet: `{CLIENT_SECRET}`
    - Klientcertifikat: `{PRIVATE_KEY}`
-- Exempeldata och källfiler för [Retail Sales Recipe](../pre-built-recipes/retail-sales.md). Ladda ned material som krävs för detta och andra [!DNL Data Science Workspace] självstudiekurser från [Adobes offentliga Git-databas](https://github.com/adobe/experience-platform-dsw-reference/).
+- Exempeldata och källfiler för [Retail Sales Recipe](../pre-built-recipes/retail-sales.md). Ladda ned resurser som krävs för den här och andra [!DNL Data Science Workspace] självstudiekurser från [Adobe för Git-databasen](https://github.com/adobe/experience-platform-dsw-reference/).
 - [Python >= 2.7](https://www.python.org/downloads/) och följande [!DNL Python] förpackningar:
    - [pip](https://pypi.org/project/pip/)
    - [PyYAML](https://pyyaml.org/)
