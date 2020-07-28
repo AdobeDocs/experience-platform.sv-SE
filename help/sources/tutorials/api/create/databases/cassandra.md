@@ -73,7 +73,7 @@ POST /connections
 
 **Begäran**
 
-För att kunna skapa en [!DNL Cassandra] anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POST-begäran. Anslutningsspecifikationens ID för [!DNL Cassandra] är `a8f4d393-1a6b-43f3-931f-91a16ed857f4`.
+För att kunna skapa en [!DNL Cassandra] anslutning måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikationens ID för [!DNL Cassandra] är `a8f4d393-1a6b-43f3-931f-91a16ed857f4`.
 
 ```shell
 curl -X POST \
