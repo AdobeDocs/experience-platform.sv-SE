@@ -14,7 +14,7 @@ ht-degree: 2%
 
 # Adobe-definierade funktioner
 
-Adobe-definierade funktioner (ADF) är färdiga funktioner i [!DNL Query Service] vilka man utför vanliga affärsrelaterade [!DNL ExperienceEvent] datauppgifter. Bland dessa finns funktioner för professionalisering och Attribution som liknar de som finns i Adobe Analytics. Läs [Adobe Analytics-dokumentationen](https://docs.adobe.com/content/help/sv-SE/analytics/landing/home.html) om du vill ha mer information om Adobe Analytics och begreppen bakom de ADF:er som finns definierade på den här sidan. Det här dokumentet innehåller information om de Adobe-definierade funktionerna som finns i [!DNL Query Service].
+Funktioner som definieras av Adobe är färdiga funktioner i [!DNL Query Service] vilka man utför vanliga affärsrelaterade [!DNL ExperienceEvent] datauppgifter. Bland dessa finns funktioner för professionalisering och attribuering som de som finns i Adobe Analytics. Läs [Adobe Analytics-dokumentationen](https://docs.adobe.com/content/help/sv-SE/analytics/landing/home.html) om du vill ha mer information om Adobe Analytics och begreppen bakom de ADF:er som finns definierade på den här sidan. Det här dokumentet innehåller information om de funktioner för Adobe som är tillgängliga i [!DNL Query Service].
 
 ## Fönsterfunktioner
 
