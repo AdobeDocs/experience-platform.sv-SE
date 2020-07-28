@@ -36,7 +36,7 @@ Mer information finns i översikten [över](./streaming-ingestion/overview.md) d
 
 [!DNL Experience Platform] gör att du kan konfigurera källanslutningar till olika dataleverantörer. Dessa anslutningar gör att du kan autentisera mot externa datakällor, ange tider för matningsåtgärder och hantera matningsflöde.
 
-Källanslutningar kan konfigureras för att samla in data från andra Adobe-program (som Adobe Analytics och Adobe Audience Manager), molnlagringskällor från tredje part (som [!DNL Azure Blob]S3, FTP-servrar och SFTP-servrar) och CRM-system från tredje part (som [!DNL Amazon] och [!DNL Microsoft Dynamics] [!DNL Salesforce]).
+Källanslutningar kan konfigureras för att samla in data från andra Adobe-program (t.ex. Adobe Analytics och Adobe Audience Manager), molnlagringskällor från tredje part (t.ex. [!DNL Azure Blob], S3, FTP-servrar och SFTP-servrar) och CRM-system från tredje part (t.ex. [!DNL Amazon] och [!DNL Microsoft Dynamics] [!DNL Salesforce]).
 
 Mer information finns i [Källöversikt](../sources/home.md) .
 
