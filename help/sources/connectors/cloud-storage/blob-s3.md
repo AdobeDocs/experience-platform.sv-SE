@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Azure Blob och Amazon S3-kontakt
+title: Azure Blob och Amazon S3-anslutning
 topic: overview
 translation-type: tm+mt
 source-git-commit: 340f5d0611e9e9eb4676018ee10c8a8aa08dbb2d
@@ -12,7 +12,7 @@ ht-degree: 0%
 ---
 
 
-# Azure Blob och Amazon S3-kontakt
+# Azure Blob och Amazon S3-anslutning
 
 Adobe Experience Platform erbjuder systemspecifika anslutningsmöjligheter för molnleverantörer som AWS [!DNL Google Cloud Platform]och [!DNL Azure]. Ni kan föra in data från dessa system i [!DNL Platform].
 
@@ -61,5 +61,5 @@ Dokumentationen nedan innehåller information om hur du ansluter Azure Blob och 
 
 ## Ansluta [!DNL Blob] och S3 till [!DNL Platform] användargränssnittet
 
-- [Skapa en Azure Blob- eller Amazon S3-källanslutning i gränssnittet](../../tutorials/ui/create/cloud-storage/blob-s3.md)
+- [Skapa en Azure Blob- eller Amazon S3-källanslutning i användargränssnittet](../../tutorials/ui/create/cloud-storage/blob-s3.md)
 - [Konfigurera ett dataflöde för en molnlagringskontakt i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
