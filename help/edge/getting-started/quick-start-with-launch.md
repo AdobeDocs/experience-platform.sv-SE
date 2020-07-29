@@ -4,7 +4,7 @@ seo-title: Adobe Experience Platform Web SDK snabbstart med Launch
 description: Snabbstartsguide för hur du använder Experience Platform Web SDK-tillägget för att samla in data
 seo-description: Snabbstartsguide för hur du använder Experience Platform Web SDK-tillägget för att samla in data
 translation-type: tm+mt
-source-git-commit: d958e323df2535c168edd3a35b878fcc4bb73370
+source-git-commit: bc18ca26da37ecfca2ade9403be22d7de222facb
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 1%
@@ -29,6 +29,9 @@ Experience Platform Edge Network tar data som XDM. XDM är ett dataformat som g�
 3. Skapa en datauppsättning från det schema du skapade.
 
 Följande video är avsedd att stödja dig när du skapar ett schema, en datauppsättning och en direktuppspelningskälla för dina [!DNL Web SDK] data.
+
+
+>[!VIDEO](https://video.tv.adobe.com/v/35395?quality=12&learn=on)
 
 Logga in på Starta och installera `AEP Web SDK` tillägget. När du installerar SDK uppmanas du att konfigurera tillägget. Ange det konfigurations-ID som du begärde ovan. Tillägget fyller automatiskt i ditt organisations-ID.
 
