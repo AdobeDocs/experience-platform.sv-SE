@@ -4,7 +4,7 @@ seo-title: 'Snabbstart för Adobe Experience Platform Web SDK '
 description: Snabbstartsguide för att använda Experience Platform Web SDK för att samla in data
 seo-description: Snabbstartsguide för att använda Experience Platform Web SDK för att samla in data
 translation-type: tm+mt
-source-git-commit: 8574a2d54c00f1bd3c41780fb12ff739a7d98fc3
+source-git-commit: d958e323df2535c168edd3a35b878fcc4bb73370
 workflow-type: tm+mt
 source-wordcount: '517'
 ht-degree: 1%
@@ -20,14 +20,6 @@ Den här guiden leder dig igenom de olika sätten att konfigurera Adobe Experien
 - Var berättigad till Adobe Experience Platform.  Om du inte har köpt Platform kommer Adobe att förse dig med Experience Platform Data Services Foundation för användning med SDK utan extra kostnad.
 - Använd den senaste versionen av Visitor ID-tjänsten.
 
-## Skapa ett konfigurations-ID
-
-Du kan skapa ett konfigurations-ID med [edge-konfigurationsverktyget](../fundamentals/edge-configuration.md) i Adobe Launch, även om du inte använder tagghanteringsfunktionerna. På så sätt kan du aktivera möjligheten [!DNL Edge Network] att skicka data till olika lösningar. Information om hur du hittar de olika alternativen finns på sidan [Edge Configuration Tool](../fundamentals/edge-configuration.md) .
-
->[!NOTE]
->
->Din organisation måste vara på tillåtelselista för att kunna använda funktionen. Kontakta din CSM om du vill ta dig till tillåtelselista.
-
 ## Förbered ett schema
 
 Data tas som XDM [!DNL Experience Platform Edge Network] . XDM är ett dataformat som gör att du kan definiera scheman. Schemat definierar hur data [!DNL Edge Network] förväntas formateras. Om du vill skicka data måste du definiera ditt schema.
@@ -38,6 +30,14 @@ Data tas som XDM [!DNL Experience Platform Edge Network] . XDM är ett dataforma
 Följande video är avsedd att stödja dig när du skapar ett schema, en datauppsättning och en direktuppspelningskälla för dina [!DNL Web SDK] data.
 
 >[!VIDEO](https://video.tv.adobe.com/v/35395?quality=12&learn=on)
+
+## Skapa ett konfigurations-ID
+
+Du kan skapa ett konfigurations-ID med [edge-konfigurationsverktyget](../fundamentals/edge-configuration.md) i Adobe Launch, även om du inte använder tagghanteringsfunktionerna. På så sätt kan du aktivera möjligheten [!DNL Edge Network] att skicka data till olika lösningar. Information om hur du hittar de olika alternativen finns på sidan [Edge Configuration Tool](../fundamentals/edge-configuration.md) .
+
+>[!NOTE]
+>
+>Din organisation måste vara på tillåtelselista för att kunna använda funktionen. Kontakta din CSM om du vill ta dig till tillåtelselista.
 
 ## Installera SDK
 
