@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Spark SQL-funktioner
 topic: spark sql functions
 translation-type: tm+mt
-source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+source-git-commit: a98e31f57c6ff4fc49d8d8f64441a6e1e18d89da
 workflow-type: tm+mt
 source-wordcount: '4900'
 ht-degree: 4%
@@ -1619,7 +1619,7 @@ Sedan: 2.4.0
 
 #### element_at
 
-`element_at(array, index)`: Returnerar elementet i en array vid givet (1-baserat) index. Om `index < 0`används kommer åt element från det sista till det första. Returnerar NULL om indexvärdet överskrider arrayens längd.
+`element_at(array, index)`: Returnerar elementet i en array vid givet (1-baserat) index. Om `index < 0`används kommer åt element från det sista till det första. Returnerar NULL om indexvärdet överskrider matrislängden.
 
 `element_at(map, key)`: Returnerar värdet för den angivna nyckeln eller NULL om nyckeln inte finns på kartan
 
