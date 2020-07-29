@@ -4,7 +4,7 @@ seo-title: Adobe Experience Platform Web SDK snabbstart med Launch
 description: Snabbstartsguide för hur du använder Experience Platform Web SDK-tillägget för att samla in data
 seo-description: Snabbstartsguide för hur du använder Experience Platform Web SDK-tillägget för att samla in data
 translation-type: tm+mt
-source-git-commit: 8574a2d54c00f1bd3c41780fb12ff739a7d98fc3
+source-git-commit: d958e323df2535c168edd3a35b878fcc4bb73370
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 1%
@@ -20,14 +20,6 @@ Den här guiden leder dig igenom de olika sätten att konfigurera Adobe Experien
 - Var berättigad till Adobe Experience Platform. Om du inte har köpt Platform kommer Adobe att förse dig med Experience Platform Data Services Foundation för användning med SDK utan extra kostnad.
 - Använd den senaste versionen av Visitor ID-tjänsten.
 
-## Skapa ett konfigurations-ID
-
-Du kan skapa ett konfigurations-ID med [Edge-konfigurationsverktyget](../fundamentals/edge-configuration.md) i Launch. På så sätt kan du aktivera Edge Network för att skicka data till de olika lösningarna. Information om hur du hittar de olika alternativen finns på sidan [Edge Configuration Tool](../fundamentals/edge-configuration.md) .
-
->[!NOTE]
->
->Din organisation måste vitlistas för den här funktionen. Kontakta din CSM för att komma med i listan för eventuell vitlistning.
-
 ## Förbered ett schema
 
 Experience Platform Edge Network tar data som XDM. XDM är ett dataformat som gör att du kan definiera scheman. Schemat definierar hur Edge Network förväntar sig att data ska formateras. Om du vill skicka data måste du definiera ditt schema.
@@ -42,6 +34,14 @@ Logga in på Starta och installera `AEP Web SDK` tillägget. När du installerar
 
 
 Mer information om olika konfigurationsalternativ finns i [Konfigurera SDK](../fundamentals/configuring-the-sdk.md).
+
+## Skapa ett konfigurations-ID
+
+Du kan skapa ett konfigurations-ID med [Edge-konfigurationsverktyget](../fundamentals/edge-configuration.md) i Launch. På så sätt kan du aktivera Edge Network för att skicka data till de olika lösningarna. Information om hur du hittar de olika alternativen finns på sidan [Edge Configuration Tool](../fundamentals/edge-configuration.md) .
+
+>[!NOTE]
+>
+>Din organisation måste vitlistas för den här funktionen. Kontakta din CSM för att komma med i listan för eventuell vitlistning.
 
 ## Skapa ett dataelement baserat på ditt schema
 
