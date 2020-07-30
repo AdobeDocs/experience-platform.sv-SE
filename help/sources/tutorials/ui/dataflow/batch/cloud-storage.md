@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Konfigurera ett dataflöde för en batchanslutning för molnlagring i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 168ac3a3ab9f475cb26dc8138cbc90a3e35c836d
+source-git-commit: f532bd6393bfad84fa09c2fc753d1d5c5b39d013
 workflow-type: tm+mt
-source-wordcount: '1183'
+source-wordcount: '1421'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Konfigurera ett dataflöde för en batchanslutning för molnlagring i användargränssnittet
 
-Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en [!DNL Platform] datauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med molnlagringsbasen.
+Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en [!DNL Platform] datauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt molnlagringskonto.
 
 ## Komma igång
 
@@ -25,7 +25,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [Kundprofil](../../../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Den här självstudiekursen kräver dessutom att du redan har skapat en molnlagringskontakt. En lista med självstudiekurser för att skapa olika molnlagringskopplingar i gränssnittet finns i [källanslutningsöversikten](../../../../home.md).
+Den här självstudiekursen kräver dessutom att du har ett etablerat molnlagringskonto. En lista med självstudiekurser för att skapa olika molnlagringskonton i gränssnittet finns i [källanslutningsöversikten](../../../../home.md).
 
 ### Filformat som stöds
 
@@ -37,22 +37,28 @@ Den här självstudiekursen kräver dessutom att du redan har skapat en molnlagr
 
 ## Markera data
 
-När du har skapat din molnlagringskontakt visas det här *[!UICONTROL Select data]* steget som ett interaktivt gränssnitt där du kan utforska din molnlagringshierarki.
+När du har skapat ditt molnlagringskonto visas *[!UICONTROL Select data]* steget och du får ett interaktivt gränssnitt där du kan utforska din molnlagringshierarki.
 
 * Den vänstra halvan av gränssnittet är en katalogwebbläsare som visar serverns filer och kataloger.
 * I den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader data från en kompatibel fil.
 
-Om du klickar på en mapp i listan kan du gå igenom mapphierarkin till djupare mappar. När du har markerat en kompatibel fil eller mapp visas listrutan där du kan välja ett format för att visa data i förhandsvisningsfönstret. **[!UICONTROL Select data format]**
+Om du väljer en mapp i listan kan du gå igenom mapphierarkin till djupare mappar. När du har markerat en kompatibel fil eller mapp visas listrutan där du kan välja ett format för att visa data i förhandsvisningsfönstret. **[!UICONTROL Select data format]**
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-data.png)
 
-När förhandsvisningsfönstret har fyllts i kan du klicka för **[!UICONTROL Next]** att överföra alla filer i den valda mappen. Om du vill överföra till en viss fil markerar du filen i listan innan du klickar på **[!UICONTROL Next]**.
+När förhandsvisningsfönstret har fyllts i kan du välja **[!UICONTROL Next]** att överföra alla filer i den valda mappen. Om du vill överföra till en viss fil markerar du filen i listan innan du väljer **[!UICONTROL Next]**.
 
->[!NOTE]
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-data-preview.png)
+
+### Ingest Parquet- eller JSON-filer
+
+Filformat som stöds för ett molnlagringskonto inkluderar även JSON och Parquet. JSON- och Parquet-filer måste vara XDM-kompatibla. Om du vill importera JSON- eller Parquet-filer väljer du lämpligt filformat i katalogwebbläsaren och tillämpar kompatibelt dataformat från det högra gränssnittet. Välj **[!UICONTROL Next]** att fortsätta.
+
+>[!IMPORTANT]
 >
->Filformat som stöds är CSV, JSON och Parquet. JSON- och Parquet-filer måste vara XDM-kompatibla.
+>Till skillnad från avgränsade filtyper är JSON- och Parquet-formaterade filer inte tillgängliga för förhandsgranskning.
 
-![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-data-next.png)
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-data-parquet.png)
 
 ## Mappa datafält till ett XDM-schema
 
@@ -62,27 +68,27 @@ Välj en datauppsättning för inkommande data som ska importeras till. Du kan a
 
 **Använd en befintlig datauppsättning**
 
-Om du vill importera data till en befintlig datauppsättning väljer du **[!UICONTROL Use existing dataset]** och klickar sedan på datamängdikonen .
+Om du vill importera data till en befintlig datauppsättning väljer du **[!UICONTROL Existing dataset]** och sedan datamängdikonen.
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/use-existing-data.png)
 
-Dialogrutan _Välj datauppsättning_ visas. Hitta den datauppsättning du vill använda, markera den och klicka sedan på **[!UICONTROL Continue]**.
+Dialogrutan *[!UICONTROL Select dataset]* visas. Hitta den datauppsättning du vill använda, markera den och klicka sedan på **[!UICONTROL Continue]**.
 
-![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-existing-data.png)
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-existing-dataset.png)
 
 **Använd en ny datauppsättning**
 
-Om du vill importera data till en ny datauppsättning markerar du **[!UICONTROL Create new dataset]** och anger ett namn och en beskrivning för datauppsättningen i de angivna fälten. Klicka sedan på schemaikonen.
+Om du vill importera data till en ny datauppsättning markerar du **[!UICONTROL New dataset]** och anger ett namn och en beskrivning för datauppsättningen i de angivna fälten. Om du vill lägga till ett schema kan du ange ett befintligt schemanamn i *[!UICONTROL Select schema]* dialogrutan. Du kan också välja **[!UICONTROL Schema advanced search]** att söka efter ett lämpligt schema.
 
-![](../../../../images/tutorials/dataflow/cloud-storage/batch/use-new-schema.png)
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/use-new-dataset.png)
 
-Dialogrutan _Välj schema_ visas. Välj det schema som du vill använda för den nya datauppsättningen och klicka sedan på **[!UICONTROL Done]**.
+Dialogrutan *[!UICONTROL Select schema]* visas. Välj det schema som du vill tillämpa på den nya datauppsättningen och välj sedan **[!UICONTROL Done]**.
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-schema.png)
 
 Beroende på dina behov kan du välja att mappa fält direkt eller använda mappningsfunktioner för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om datamappning och mappningsfunktioner finns i självstudiekursen om att [mappa CSV-data till XDM-schemafält](../../../../../ingestion/tutorials/map-a-csv-file.md).
 
-När källdata har mappats klickar du på **[!UICONTROL Next]**.
+När källdata har mappats väljer du **[!UICONTROL Next]**.
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/mapping.png)
 
@@ -92,32 +98,46 @@ Steget visas så att du kan konfigurera ett schema för att automatiskt importer
 
 | Fält | Beskrivning |
 | --- | --- |
-| Frekvens | Valbara frekvenser är Minute, Hour, Day och Week. |
+| Frekvens | Valbara frekvenser inkluderar `Once`, `Minute`, `Hour`, `Day`och `Week`. |
 | Intervall | Ett heltal som anger intervallet för den valda frekvensen. |
-| Starttid | En UTC-tidsstämpel för vilken det allra första intaget sker. |
-| Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om *[!UICONTROL Backfill]* är aktiverat importeras alla aktuella filer i den angivna sökvägen under den första schemalagda importen. Om *[!UICONTROL Backfill]* är inaktiverat importeras endast de filer som är inlästa mellan den första importen och den andra *[!UICONTROL Start time]* . Filer som lästs in tidigare *[!UICONTROL Start time]* kommer inte att importeras. |
+| Starttid | En UTC-tidsstämpel som anger när det allra första intaget är inställt. |
+| Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om *[!UICONTROL Backfill]* är aktiverat importeras alla aktuella filer i den angivna sökvägen under den första schemalagda importen. Om *Backfill* är inaktiverad, kommer endast de filer som läses in mellan den första uppsättningen av inmatning och den *[!UICONTROL Start time]* att importeras. Filer som lästs in tidigare *[!UICONTROL Start time]* kommer inte att importeras. |
 
-Dataflöden är utformade för att automatiskt importera data enligt schema. Om du bara vill importera en gång genom det här arbetsflödet kan du göra det genom att konfigurera **[!UICONTROL Frequency]** till &quot;Dag&quot; och använda ett mycket stort tal för **[!UICONTROL Interval]** fotot, till exempel 10000 eller liknande.
+Dataflöden är utformade för att automatiskt importera data enligt schema. Börja med att välja intagsfrekvens. Ange sedan intervallet för att ange perioden mellan två flödeskörningar. Intervallets värde måste vara ett heltal som inte är noll och måste vara större än eller lika med 15.
 
-Ange värden för schemat och klicka på **Nästa**.
+Om du vill ange starttid för intaget justerar du datumet och tiden som visas i rutan för starttid. Du kan också välja kalenderikonen för att redigera starttidsvärdet. Starttiden måste vara större än eller lika med den aktuella tiden i UTC.
 
-![](../../../../images/tutorials/dataflow/cloud-storage/batch/scheduling.png)
+Ange värden för schemat och välj **[!UICONTROL Next]**.
 
-## Namnge dataflödet
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/scheduling-interval-on.png)
 
-Stegen visas så att du kan ange ett namn och en kort beskrivning av det nya dataflödet. *[!UICONTROL Name flow]*
+### Konfigurera ett dataflöde för engångsbruk
 
-Ange värden för dataflödet och klicka **[!UICONTROL Next]**.
+Om du vill ställa in engångsintag väljer du den nedrullningsbara pilen för frekvens och väljer **[!UICONTROL Once]**. Du kan fortsätta att redigera ett dataflöde för att få en engångsfrekvens så länge som starttiden är kvar i framtiden. När starttiden har passerat kan engångsfrekvensvärdet inte längre redigeras.
 
-![](../../../../images/tutorials/dataflow/cloud-storage/batch/name-your-dataflow.png)
+>[!TIP] **[!UICONTROL Interval]** och **[!UICONTROL Backfill]** inte är synliga vid engångsbruk.
 
-### Granska ditt dataflöde
+När du har angett lämpliga värden för schemat väljer du **[!UICONTROL Next]**.
+
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/scheduling-once.png)
+
+## Ange information om dataflöde
+
+Stegen visas så att du kan ange ett namn och en kort beskrivning av det nya dataflödet. *[!UICONTROL Dataflow detail]*
+
+Under den här processen kan du även aktivera *[!UICONTROL Partial ingestion]* och *[!UICONTROL Error diagnostics]*. Aktivering *[!UICONTROL Partial ingestion]* ger möjlighet att importera data som innehåller fel, upp till ett visst tröskelvärde som du kan ange. Aktivering *[!UICONTROL Error diagnostics]* ger information om felaktiga data som grupperas separat. Mer information finns i översikten över [partiell gruppöverföring](../../../../../ingestion/batch-ingestion/partial.md).
+
+Ange värden för dataflödet och välj **[!UICONTROL Next]**.
+
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/dataflow-detail.png)
+
+## Granska ditt dataflöde
 
 Steget visas så att du kan granska det nya dataflödet innan det skapas. *[!UICONTROL Review]* Informationen är grupperad i följande kategorier:
 
-* *[!UICONTROL Source details]*: Visar källtypen, den relevanta sökvägen för den valda källfilen och mängden kolumner i källfilen.
-* *[!UICONTROL Target details]*: Visar vilken datauppsättning källdata hämtas till, inklusive det schema som datauppsättningen följer.
-* *[!UICONTROL Schedule details]*: Visar den aktiva perioden, frekvensen och intervallet för intag-schemat.
+* *[!UICONTROL Connection]*: Visar källtypen, den relevanta sökvägen för den valda källfilen och mängden kolumner i källfilen.
+* *[!UICONTROL Assign dataset & map fields]*: Visar vilken datauppsättning källdata hämtas till, inklusive det schema som datauppsättningen följer.
+* *[!UICONTROL Scheduling]*: Visar den aktiva perioden, frekvensen och intervallet för intag-schemat.
 
 När du har granskat dataflödet kan du klicka **[!UICONTROL Finish]** och vänta tills dataflödet har skapats.
 
