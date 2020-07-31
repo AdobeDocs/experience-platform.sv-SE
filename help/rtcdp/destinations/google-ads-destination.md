@@ -4,9 +4,9 @@ seo-title: Mål för Google Ads
 description: Google Ads, som tidigare kallades Google AdWords, är en onlinereklam som gör att företag kan betala per klick för annonsering vid textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appar.
 seo-description: Google Ads, som tidigare kallades Google AdWords, är en onlinereklam som gör att företag kan betala per klick för annonsering vid textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appar.
 translation-type: tm+mt
-source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+source-git-commit: 7f3df12da5e93c3d0cc53eed1aa603ddbafdb0b2
 workflow-type: tm+mt
-source-wordcount: '557'
+source-wordcount: '583'
 ht-degree: 0%
 
 ---
@@ -67,3 +67,6 @@ Innan du skapar [!DNL Google Ads] målet i realtid-CDP i Adobe måste du kontakt
 
 Instruktioner om hur du aktiverar segment [!DNL Google Ads]finns i [Aktivera data till mål](/help/rtcdp/destinations/activate-destinations.md).
 
+## Exporterade data
+
+Kontrollera ditt [!DNL Google Ads] konto om du vill verifiera om data har exporterats till [!DNL Google Ads] målet. Om aktiveringen lyckades fylls målgrupperna i ditt konto.
