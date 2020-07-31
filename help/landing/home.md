@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Adobe Experience Platform - översikt
 topic: getting started
 translation-type: tm+mt
-source-git-commit: c79d9690f5d1f6c199d0c0a74238225c5b6fd2c2
+source-git-commit: 99bee24a8b1a0a212424ca63464f7733adba2ba2
 workflow-type: tm+mt
 source-wordcount: '813'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -36,11 +36,11 @@ I följande videofilmer visas hur man [!DNL Experience Platform] skapar omfattan
 
 Adobe Experience Platform är utformat för att fungera optimalt i de **senaste versionerna** av Google Chrome, Safari, Firefox och Microsoft Edge. Du kan ha problem med att använda vissa funktioner i äldre versioner av webbläsare.
 
-| Operativsystem | Webbläsare som stöds |  |  |
-|---|---|---|---|
-| Mac OS X | Google Chrome | Safari | Firefox |
-| Windows 10 | Google Chrome | Microsoft Edge | Firefox |
-| Windows 7 | Google Chrome |  | Firefox |
+| Operativsystem | Webbläsare som stöds |
+|---|---|
+| **Mac OS X** | Google Chrome, Safari, Firefox |
+| **Windows 10** | Google Chrome, Microsoft Edge, Firefox |
+| **Windows 7** | Google Chrome, Firefox |
 
 Följande operativsystem och webbläsare stöds inte:
 
