@@ -4,9 +4,9 @@ seo-title: Facebook-mål
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 seo-description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 translation-type: tm+mt
-source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+source-git-commit: 7f3df12da5e93c3d0cc53eed1aa603ddbafdb0b2
 workflow-type: tm+mt
-source-wordcount: '652'
+source-wordcount: '722'
 ht-degree: 2%
 
 ---
@@ -93,3 +93,11 @@ Mer information om hur du ansluter till [!DNL Facebook] målet finns i autentise
 ## Aktivera segment för att [!DNL Facebook] {#activate-segments}
 
 Instruktioner om hur du aktiverar segment [!DNL Facebook]finns i [Aktivera data till mål](/help/rtcdp/destinations/activate-destinations.md).
+
+## Exporterade data {#exported-data}
+
+En lyckad aktivering [!DNL Facebook]innebär att en [!DNL Facebook] anpassad målgrupp skapas programmatiskt i [[!DNL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/). Segmentmedlemskap i målgruppen skulle läggas till och tas bort eftersom användarna är kvalificerade eller diskvalificerade för de aktiverade segmenten.
+
+>[!TIP]
+>
+>Integrationen mellan CDP i realtid i Adobe och [!DNL Facebook] stöder historiska efterfyllningar. Alla historiska segmentkvalifikationer skickas till [!DNL Facebook] när du aktiverar segmenten till målet.
