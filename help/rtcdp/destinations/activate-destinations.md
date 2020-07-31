@@ -4,9 +4,9 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobe Real-time Customer Data Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobe Real-time Customer Data Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 098dd31be4d6ee6971cd87bcbfe0f686e34918e1
 workflow-type: tm+mt
-source-wordcount: '983'
+source-wordcount: '1006'
 ht-degree: 0%
 
 ---
@@ -92,20 +92,20 @@ Följ stegen nedan för att redigera befintliga aktiveringsflöden i realtid med
 
 ## Verifiera att segmentaktiveringen lyckades {#verify-activation}
 
-### Destinationer för e-postmarknadsföring och molnlagring
+### Destinationer för e-postmarknadsföring och molnlagring {#esp-and-cloud-storage}
 
 För e-postmarknadsföringsmål och molnlagringsmål skapar Adobe Real-time CDP en tabbavgränsad `.txt` eller `.csv` fil på den lagringsplats som du angav. Förvänta dig att en ny fil ska skapas på din lagringsplats varje dag. Filformatet är:
-`<destination name>id<destination id><timestamp-yyyymmddhhmmss>`
+`<destinationName>_segment<segmentID>_<timestamp-yyyymmddhhmmss>.csv`
 
 De filer du får tre dagar i följd kan se ut så här:
 
 ```
-Salesforce_id3544_20191120110000.csv
-Salesforce_id3544_20191121123000.csv
-Salesforce_id3544_20191122124530.csv
+Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_20200408061804.csv
+Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_20200409052200.csv
+Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_20200410061130.csv
 ```
 
-De här filerna finns på lagringsplatsen och du har fått en bekräftelse på att aktiveringen har slutförts.
+De här filerna finns på lagringsplatsen och du har fått en bekräftelse på att aktiveringen har slutförts. Om du vill veta hur de exporterade filerna är strukturerade kan du [hämta en CSV-exempelfil](/help/rtcdp/destinations/assets/sample_export_file_segment12341e18-abcd-49c2-836d-123c88e76c39_20200408061804.csv). Den här exempelfilen innehåller profilattributen `person.firstname`, `person.lastname`, `person.gender`, `person.birthyear`och `personalEmail.address`.
 
 ### Annonsmål
 
