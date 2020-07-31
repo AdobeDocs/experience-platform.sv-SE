@@ -4,9 +4,9 @@ seo-title: Mål för Google Ad Manager
 description: 'Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar. '
 seo-description: 'Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar. '
 translation-type: tm+mt
-source-git-commit: 4f7d7e2bf255afe1588dbe7cfb2ec055f2dcbf75
+source-git-commit: f23d7dae7883cc14dc8b54d8b1ba2d94f0786cbc
 workflow-type: tm+mt
-source-wordcount: '595'
+source-wordcount: '621'
 ht-degree: 0%
 
 ---
@@ -69,3 +69,7 @@ Innan du skapar [!DNL Google Ad Manager] målet i realtid-CDP i Adobe måste du 
 ## Aktivera segment för att [!DNL Google Ad Manager]
 
 Instruktioner om hur du aktiverar segment [!DNL Google Ad Manager]finns i [Aktivera data till mål](/help/rtcdp/destinations/activate-destinations.md).
+
+## Exporterade data
+
+Kontrollera ditt [!DNL Google Ad Manager] konto om du vill verifiera om data har exporterats till [!DNL Google Ad Manager] målet. Om aktiveringen lyckades fylls målgrupperna i ditt konto.
