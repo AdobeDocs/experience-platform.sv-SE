@@ -4,7 +4,7 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobe Real-time Customer Data Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobe Real-time Customer Data Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: 08b6fd2d43e8ca9d0208ac1bfadc2db15e3f2e90
+source-git-commit: be4cf64c89a189a09a4a7774c8fadc76c6ee8458
 workflow-type: tm+mt
 source-wordcount: '1006'
 ht-degree: 0%
@@ -22,7 +22,7 @@ Om du vill aktivera data till mål måste du ha [anslutit ett mål](/help/rtcdp/
 
 ## Aktivera data {#activate-data}
 
-1. I **[!UICONTROL Destinations > Browse]** väljer du det mål där du vill aktivera segmenten.
+1. I **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** väljer du det mål där du vill aktivera segmenten.
 2. Klicka på målets namn. Då kommer du till aktiveringsflödet.
    ![activate-flow](/help/rtcdp/destinations/assets/activate-flow.png)Observera att om det redan finns ett aktiveringsflöde för ett mål kan du se de segment som för närvarande skickas till målet. Välj **[!UICONTROL Edit activation]** i den högra listen och följ stegen nedan för att ändra aktiveringsinformationen.
 3. Välj **[!UICONTROL Activate]**;
