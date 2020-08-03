@@ -4,7 +4,7 @@ seo-title: Salesforce Marketing Cloud
 description: Salesforce Marketing Cloud är en digital marknadsföringssvit som tidigare kallades ExactTarget som gör att ni kan skapa och anpassa resor för besökare och kunder för att personalisera deras upplevelse.
 seo-description: Salesforce Marketing Cloud är en digital marknadsföringssvit som tidigare kallades ExactTarget som gör att ni kan skapa och anpassa resor för besökare och kunder för att personalisera deras upplevelse.
 translation-type: tm+mt
-source-git-commit: 098dd31be4d6ee6971cd87bcbfe0f686e34918e1
+source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
 workflow-type: tm+mt
 source-wordcount: '462'
 ht-degree: 0%
@@ -22,7 +22,7 @@ Om du vill skicka segmentdata till [!DNL Salesforce Marketing Cloud]måste du f�
 
 ## Koppla mål {#connect-destination}
 
-1. I **[!UICONTROL Connections > Destinations]** markerar du [!DNL Salesforce Marketing Cloud]och väljer sedan **[!UICONTROL Connect destination]**.
+1. I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** markerar du [!DNL Salesforce Marketing Cloud]och sedan **[!UICONTROL Connect destination]**.
 
    ![Anslut till Salesforce](/help/rtcdp/destinations/assets/connect-salesforce.png)
 
