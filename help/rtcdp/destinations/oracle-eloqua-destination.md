@@ -4,7 +4,7 @@ seo-title: Oracle Eloqua-mål
 description: Oracle Eloqua är en SaaS-plattform (Software as a service) för automatiserad marknadsföring som erbjuds av Oracle och som hjälper B2B-marknadsförare och organisationer att hantera marknadsföringskampanjer och generera säljleads.
 seo-description: Oracle Eloqua är en SaaS-plattform (Software as a service) för automatiserad marknadsföring som erbjuds av Oracle och som hjälper B2B-marknadsförare och organisationer att hantera marknadsföringskampanjer och generera säljleads.
 translation-type: tm+mt
-source-git-commit: 098dd31be4d6ee6971cd87bcbfe0f686e34918e1
+source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
 workflow-type: tm+mt
 source-wordcount: '479'
 ht-degree: 0%
@@ -22,7 +22,7 @@ Om du vill skicka segmentdata till [!DNL Oracle Eloqua]måste du först [ansluta
 
 ## Anslut till mål {#connect-destination}
 
-1. I **[!UICONTROL Connections > Destinations]** markerar du [!DNL Oracle Eloqua]och väljer sedan **[!UICONTROL Connect destination]**.
+1. I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** markerar du [!DNL Oracle Eloqua]och sedan **[!UICONTROL Connect destination]**.
 
    ![Anslut till Eloqua](/help/rtcdp/destinations/assets/connect-oracle-eloqua.png)
 
