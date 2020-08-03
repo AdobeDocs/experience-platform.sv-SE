@@ -4,7 +4,7 @@ seo-title: Arbetsflöde för molnlagringsmål
 description: Instruktioner för att ansluta till lagringsplatser i molnet
 seo-description: Instruktioner för att ansluta till lagringsplatser i molnet
 translation-type: tm+mt
-source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
 workflow-type: tm+mt
 source-wordcount: '458'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 På den här sidan beskrivs hur du kan ansluta till molnlagringsplatser i Adobe Real-time Customer Data Platform.
 
-1. I **[!UICONTROL Connections > Destinations]** väljer du önskat molnlagringsmål och sedan **[!UICONTROL Connect destination]**.
+1. I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** väljer du önskat molnlagringsmål och väljer sedan **[!UICONTROL Connect destination]**.
 
    ![Anslut till molnlagringsmålet](/help/rtcdp/destinations/assets/connect-cloud-destination.png)
 
