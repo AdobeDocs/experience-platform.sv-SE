@@ -4,7 +4,7 @@ seo-title: Adobe Campaign
 description: Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera och leverera kampanjer i alla kanaler, både online och offline.
 seo-description: Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera och leverera kampanjer i alla kanaler, både online och offline.
 translation-type: tm+mt
-source-git-commit: 098dd31be4d6ee6971cd87bcbfe0f686e34918e1
+source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
 workflow-type: tm+mt
 source-wordcount: '481'
 ht-degree: 0%
@@ -22,7 +22,7 @@ Om du vill skicka segmentdata till Adobe Campaign måste du först [ansluta mål
 
 ## Koppla mål {#connect-destination}
 
-1. I **[!UICONTROL Connections > Destinations]** väljer du Adobe Campaign och sedan **[!UICONTROL Connect destination]**.
+1. I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** väljer du Adobe Campaign och sedan **[!UICONTROL Connect destination]**.
 
    ![Anslut till Adobes kampanj](/help/rtcdp/destinations/assets/connect-adobe-campaign.png)
 
