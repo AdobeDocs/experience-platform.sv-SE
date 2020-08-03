@@ -4,7 +4,7 @@ seo-title: Destinationer för e-postmarknadsföring
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 seo-description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 translation-type: tm+mt
-source-git-commit: 3c598454a868139b7604c5c7ca2b98fa0f1bb961
+source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
 workflow-type: tm+mt
 source-wordcount: '703'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Anslut till antingen Amazon S3 eller SFTP i det anslutande målflödet som beskr
 
 ## Steg 1 - Anslut mål {#connect-destination}
 
-1. I **[!UICONTROL Connections > Destinations]** väljer du det mål för e-postmarknadsföring som du vill ansluta till och sedan **[!UICONTROL Connect destination]**.
+1. I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** väljer du det mål för e-postmarknadsföring som du vill ansluta till och sedan **[!UICONTROL Connect destination]**.
 
    ![Anslut till mål](/help/rtcdp/destinations/assets/connect-email-marketing.png)
 
