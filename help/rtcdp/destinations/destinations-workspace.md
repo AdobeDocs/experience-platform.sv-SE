@@ -4,7 +4,7 @@ seo-title: Arbetsytan Destinationer
 description: I Adobe Real-time Customer Data Platform väljer du Destinationer i det vänstra navigeringsfältet för att komma åt målarbetsytan.
 seo-description: I Adobe Real-time Customer Data Platform väljer du Destinationer i det vänstra navigeringsfältet för att komma åt målarbetsytan.
 translation-type: tm+mt
-source-git-commit: 336aa90cf1e059a92a36dd0ef3222ef6a6f5123b
+source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
 workflow-type: tm+mt
 source-wordcount: '562'
 ht-degree: 1%
@@ -34,7 +34,7 @@ Mer information om målkategorier och information om varje mål finns i [Målkat
 
 ## [!UICONTROL Browse] {#browse}
 
-På fliken **[!UICONTROL Browse]** visas de mål som du har upprättat en anslutning till. Destinationer med **[!UICONTROL enabled]** växlingsknappen aktiverad anger målet som aktivt och vice versa. Du kan också visa de mål där data flödar genom att markera **[!UICONTROL Segments > Browse]** och markera ett segment som ska inspekteras. Se tabellen nedan för all information som finns för varje mål på fliken Bläddra:
+På fliken **[!UICONTROL Browse]** visas de mål som du har upprättat en anslutning till. Destinationer med **[!UICONTROL enabled]** växlingsknappen aktiverad anger målet som aktivt och vice versa. Du kan också visa de mål där data flödar genom att välja **[!UICONTROL Segments]** > **[!UICONTROL Browse]** och markera ett segment som ska inspekteras. Se tabellen nedan för all information som finns för varje mål på fliken Bläddra:
 
 ![Fliken Bläddra](/help/rtcdp/destinations/assets/browse-tab.png)
 
