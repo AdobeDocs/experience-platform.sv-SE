@@ -4,7 +4,7 @@ seo-title: Oracle Responsys-mål
 description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som erbjuds av Oracle för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
 seo-description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som erbjuds av Oracle för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
 translation-type: tm+mt
-source-git-commit: 098dd31be4d6ee6971cd87bcbfe0f686e34918e1
+source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
 workflow-type: tm+mt
 source-wordcount: '449'
 ht-degree: 0%
@@ -22,7 +22,7 @@ Om du vill skicka segmentdata till [!DNL Oracle Responsys]måste du först [ansl
 
 ## Koppla mål {#connect-destination}
 
-1. I **[!UICONTROL Connections > Destinations]** markerar du [!DNL Oracle Responsys]och väljer sedan **[!UICONTROL Connect destination]**.
+1. I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** markerar du [!DNL Oracle Responsys]och sedan **[!UICONTROL Connect destination]**.
 
    ![Anslut till svar](/help/rtcdp/destinations/assets/connect-oracle-responsys.png)
 
