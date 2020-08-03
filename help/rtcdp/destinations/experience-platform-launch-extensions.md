@@ -4,7 +4,7 @@ seo-title: Experience Platform Launch Extensions
 description: Launch är nästa generation av tagghanteringsfunktioner från Adobe. Launch ger kunderna ett enkelt sätt att driftsätta och hantera alla analyser, marknadsförings- och annonstaggar som behövs för att driva relevanta kundupplevelser.
 seo-description: Launch är nästa generation av tagghanteringsfunktioner från Adobe. Launch ger kunderna ett enkelt sätt att driftsätta och hantera alla analyser, marknadsförings- och annonstaggar som behövs för att driva relevanta kundupplevelser.
 translation-type: tm+mt
-source-git-commit: 98c3356db178507e0a8d94b47030e9490e721e46
+source-git-commit: be4cf64c89a189a09a4a7774c8fadc76c6ee8458
 workflow-type: tm+mt
 source-wordcount: '618'
 ht-degree: 3%
@@ -22,7 +22,7 @@ En introduktion till funktionerna i Experience Platform Launch finns i resursern
 
 ## Hitta Launch-tilläggen i realtidsgränssnittet för CDP i Adobe {#how-to-find-extensions-in-interface}
 
-Om du vill hitta Launch-tilläggen i CDP-gränssnittet i realtid i Adobe bläddrar du till **[!UICONTROL Destinations > Catalog]** och väljer **[!UICONTROL Extensions]** i **[!UICONTROL Types]** -filtret.
+Om du vill hitta Launch-tilläggen i CDP-gränssnittet i realtid i Adobe går du till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** och väljer **[!UICONTROL Extensions]** i **[!UICONTROL Types]** -filtret.
 
 ![Filtret Tillägg i gränssnittet](/help/rtcdp/destinations/assets/extensions-filter.png)
 
@@ -58,7 +58,7 @@ Med Launch Extensions kan du tillgodose olika kundbehov. Exempel på användning
 Launch-tillägg kan delas in i följande kategorier i CDP i realtid i Adobe:
 
 * [Reklam](/help/rtcdp/destinations/advertising-destinations.md)
-* [Analytics](/help/rtcdp/destinations/analytics-destinations.md)
+* [Analytics](/help/rtcdp/destinations/analytics-destinations.md) 
 * [Datahantering Platform](/help/rtcdp/destinations/dmp-destinations.md)
 * [E-postmarknadsföringsmål](/help/rtcdp/destinations/email-marketing-destinations.md)
 * [Personanpassning](/help/rtcdp/destinations/personalization-destinations.md)
