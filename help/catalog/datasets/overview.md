@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över datauppsättningar
 topic: datasets
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 1bf6b0948c47c7941fb8f9cf2edfac4d665b8189
 workflow-type: tm+mt
-source-wordcount: '711'
+source-wordcount: '712'
 ht-degree: 0%
 
 ---
@@ -47,7 +47,7 @@ Dataanvändningsetiketter kan användas på hela datauppsättningar eller enskil
 Mer information om tjänsten finns i översikten över [](../../data-governance/home.md) datastyrning. Anvisningar om hur du arbetar med användningsetiketter i [!DNL Platform]finns i följande handböcker:
 
 * [Hantera etiketter i användargränssnittet](../../data-governance/labels/user-guide.md)
-* [Hantera etiketter i API](../../data-governance/labels/api.md)
+* [Hantera datauppsättningsrubriker i API](../../data-governance/labels/dataset-api.md)
 
 ## Datauppsättningar i underordnade [!DNL Platform] tjänster
 
