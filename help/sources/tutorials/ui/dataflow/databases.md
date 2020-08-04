@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Konfigurera ett dataflöde för en databasanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: dd0ce5b5c45133b570970b1d1d7e2f484b89c2e9
+source-git-commit: 91714bea4e165d64bcc33e32e73d1d32a505ba00
 workflow-type: tm+mt
-source-wordcount: '1115'
+source-wordcount: '1167'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Konfigurera ett dataflöde för en databasanslutning i användargränssnittet
 
-Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en Platform-datauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med databasanslutningen.
+Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en Platform-datauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt databaskonto.
 
 ## Komma igång
 
@@ -25,11 +25,11 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
    - [Schemaredigeraren, genomgång](../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 - [Kundprofil](../../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Den här självstudien kräver dessutom att du redan har skapat en databaskoppling. En lista med självstudiekurser för att skapa olika databasanslutningar i användargränssnittet finns i [källanslutningsöversikten](../../../home.md).
+Den här självstudien kräver dessutom att du redan har skapat ett databaskonto. En lista med självstudiekurser för att skapa olika databasanslutningar i användargränssnittet finns i [källanslutningsöversikten](../../../home.md).
 
 ## Markera data
 
-När du har skapat en databaskoppling visas *[!UICONTROL Select data]* steget och du får ett interaktivt gränssnitt där du kan utforska databashierarkin.
+När du har skapat ditt databaskonto visas *[!UICONTROL Select data]* steget och du får ett interaktivt gränssnitt där du kan utforska databashierarkin.
 
 - Den vänstra halvan av gränssnittet är en webbläsare som visar kontots lista över databaser.
 - I den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader med data.
@@ -58,11 +58,11 @@ Dialogrutan *[!UICONTROL Select dataset]* visas. Hitta den datauppsättning du v
 
 Om du vill importera data till en ny datauppsättning markerar du **[!UICONTROL New dataset]** och anger ett namn och en beskrivning för datauppsättningen i de angivna fälten.
 
-Du kan bifoga ett schemafält genom att skriva ett schemanamn i **[!UICONTROL Select schema]** sökfältet. Du kan också välja listruteikonen för att visa en lista över befintliga scheman. Du kan också välja **[!UICONTROL Advanced search]** att visa befintliga scheman, inklusive deras respektive detaljer.
+Du kan bifoga ett schemafält genom att ange ett schemanamn i **[!UICONTROL Select schema]** sökfältet. Du kan också välja listruteikonen för att visa en lista över befintliga scheman. Du kan också välja **[!UICONTROL Advanced search]** att få åtkomst till skärmen med befintliga scheman, inklusive deras respektive detaljer.
 
-![](../../../images/tutorials/dataflow/databases/new-dataset.png)
+![create-new-dataset](../../../images/tutorials/dataflow/all-tabular/new-target-dataset.png)
 
-Dialogrutan *[!UICONTROL Select schema] visas. Välj det schema som du vill använda för den nya datauppsättningen och klicka sedan på **[!UICONTROL Done]**.
+Dialogrutan *[!UICONTROL Select schema]* visas. Välj det schema som du vill använda för den nya datauppsättningen och klicka sedan på **[!UICONTROL Done]**.
 
 ![](../../../images/tutorials/dataflow/databases/select-existing-schema.png)
 
@@ -70,7 +70,7 @@ Beroende på dina behov kan du välja att mappa fält direkt eller använda mapp
 
 När källdata har mappats klickar du på **[!UICONTROL Next]**.
 
-![](../../../images/tutorials/dataflow/databases/mapping.png)
+![](../../../images/tutorials/dataflow/all-tabular/mapping-updated.png)
 
 ## Schemalägg körning av inmatning
 
@@ -78,10 +78,10 @@ Steget visas så att du kan konfigurera ett schema för att automatiskt importer
 
 | Fält | Beskrivning |
 | --- | --- |
-| Frekvens | Valbara frekvenser är En gång, Minut, Timme, Dag och Vecka. |
+| Frekvens | Valbara frekvenser inkluderar `Once`, `Minute`, `Hour`, `Day`och `Week`. |
 | Intervall | Ett heltal som anger intervallet för den valda frekvensen. |
-| Starttid | En UTC-tidsstämpel som anger när det allra första intaget är inställt |
-| Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om *Backfill* är aktiverat, kommer alla aktuella filer i den angivna sökvägen att kapslas in under det första schemalagda intaget. Om *Backfill* är inaktiverat kapslas endast de filer som läses in mellan den första importkörningen och *starttiden* . Filer som lästs in före *starttiden* importeras inte. |
+| Starttid | En UTC-tidsstämpel som anger när det allra första intaget är inställt. |
+| Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om *[!UICONTROL Backfill]* är aktiverat importeras alla aktuella filer i den angivna sökvägen under den första schemalagda importen. Om *Backfill* är inaktiverad, kommer endast de filer som läses in mellan den första uppsättningen av inmatning och den *[!UICONTROL Start time]* att importeras. Filer som lästs in tidigare *[!UICONTROL Start time]* kommer inte att importeras. |
 | Delta-kolumn | Ett alternativ med en filtrerad uppsättning källschemafält av typen, datumet eller tiden. Det här fältet används för att skilja mellan nya och befintliga data. Inkrementella data importeras baserat på tidsstämpeln för den markerade kolumnen. |
 
 Dataflöden är utformade för att automatiskt importera data enligt schema. Börja med att välja intagsfrekvens. Ange sedan intervallet för att ange perioden mellan två flödeskörningar. Intervallets värde måste vara ett heltal som inte är noll och måste vara större än eller lika med 15.
@@ -98,13 +98,18 @@ Om du vill ställa in engångsintag väljer du den nedrullningsbara pilen för f
 
 >[!TIP] **[!UICONTROL Interval]** och **[!UICONTROL Backfill]** inte är synliga vid engångsbruk.
 
-![](../../../images/tutorials/dataflow/databases/schedule-once.png)
-
 När du har angett lämpliga värden för schemat väljer du **[!UICONTROL Next]**.
 
-## Namnge dataflödet
+![](../../../images/tutorials/dataflow/databases/schedule-once.png)
 
-Stegen visas där du måste ange ett namn och en valfri beskrivning för dataflödet. *[!UICONTROL dataflow detail]* Steget visas. Välj **[!UICONTROL Next]** när du är klar.
+## Ange information om dataflöde
+
+Stegen visas så att du kan ange ett namn och en kort beskrivning av det nya dataflödet. *[!UICONTROL Dataflow detail]*
+
+Under den här processen kan du även aktivera *[!UICONTROL Partial ingestion]* och *[!UICONTROL Error diagnostics]*. Aktivering *[!UICONTROL Partial ingestion]* ger möjlighet att importera data som innehåller fel upp till ett visst tröskelvärde. När *[!UICONTROL Partial ingestion]* det är aktiverat drar du i *[!UICONTROL Error threshold %]* reglaget för att justera batchens feltröskel. Du kan också justera tröskelvärdet manuellt genom att markera inmatningsrutan. Mer information finns i översikten över [partiell gruppöverföring](../../../../ingestion/batch-ingestion/partial.md).
+Ange värden för dataflödet och välj **[!UICONTROL Next]**.
+
+Ange värden för dataflödet och välj **[!UICONTROL Next]**.
 
 ![](../../../images/tutorials/dataflow/databases/dataflow-detail.png)
 
@@ -112,9 +117,9 @@ Stegen visas där du måste ange ett namn och en valfri beskrivning för datafl�
 
 Steget visas så att du kan granska det nya dataflödet innan det skapas. *[!UICONTROL Review]* Informationen är grupperad i följande kategorier:
 
-- *Anslutning*: Visar källtypen, den relevanta sökvägen för den valda källfilen och mängden kolumner i källfilen.
-- *Tilldela datauppsättnings- och kartfält*: Visar vilken datauppsättning källdata hämtas till, inklusive det schema som datauppsättningen följer.
-- *Schemaläggning*: Visar den aktiva perioden, frekvensen och intervallet för intag-schemat.
+- *[!UICONTROL Connection]*: Visar källtypen, den relevanta sökvägen för den valda källfilen och mängden kolumner i källfilen.
+- *[!UICONTROL Assign dataset & map fields]*: Visar vilken datauppsättning källdata hämtas till, inklusive det schema som datauppsättningen följer.
+- *[!UICONTROL Scheduling]*: Visar den aktiva perioden, frekvensen och intervallet för intag-schemat.
 
 När du har granskat dataflödet kan du klicka **[!UICONTROL Finish]** och vänta tills dataflödet har skapats.
 
