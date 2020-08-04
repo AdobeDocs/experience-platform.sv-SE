@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över etiketter för dataanvändning
 topic: labels
 translation-type: tm+mt
-source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
+source-git-commit: 5e65c843c3c612b657ebe915c53f14f0b8d7f541
 workflow-type: tm+mt
-source-wordcount: '485'
+source-wordcount: '577'
 ht-degree: 0%
 
 ---
@@ -14,9 +14,9 @@ ht-degree: 0%
 
 # Översikt över etiketter för dataanvändning
 
-Varumärkning och verkställighet av dataanvändning (DULE) är huvudmekanismen för Adobe Experience Platform [!DNL Data Governance]. DULE-funktioner gör att du kan använda dataanvändningsetiketter på datauppsättningar och fält, och kategorisera dem efter relaterade principer för dataanvändning.
+Med Adobe Experience Platform [!DNL Data Governance] kan du använda dataanvändningsetiketter på datauppsättningar och fält och kategorisera dem efter relaterade dataanvändningsprinciper.
 
-Det här dokumentet innehåller en översikt över dataanvändningsetiketter (kallas även DULE-etiketter) i [!DNL Experience Platform]. Innan du läser den här guiden bör du läsa översikten över [datastyrning](../home.md) för att få en mer robust introduktion till DULE-ramverket.
+Det här dokumentet innehåller en översikt över dataanvändningsetiketter i [!DNL Experience Platform]. Innan du läser den här guiden bör du läsa översikten över [](../home.md) datastyrning för att få en mer robust introduktion till ramverket för datastyrning.
 
 ## Förstå etiketter för dataanvändning
 
@@ -26,7 +26,7 @@ Dataanvändningsetiketter som används på datauppsättningsnivå sprids till al
 
 [!DNL Platform] innehåller flera färdiga etiketter för&quot;viktig&quot; dataanvändning som täcker ett stort antal vanliga begränsningar för datastyrning. Mer information om dessa etiketter och de användarprofiler de representerar finns i guiden om etiketter för [viktig dataanvändning](reference.md).
 
-Förutom etiketterna från Adobe kan du också definiera egna etiketter. Anvisningar om hur du gör detta i användargränssnittet finns i användarhandboken för [dataanvändningsetiketter](./user-guide.md). Anvisningar om hur du utför detta med API-anrop finns i API-handboken för [dataanvändningsetiketter](./api.md).
+Förutom etiketterna från Adobe kan du även definiera egna etiketter för din organisation. Mer information finns i avsnittet [Hantera etiketter](#manage-labels) .
 
 ## Etikettarv för målgruppssegment
 
@@ -34,7 +34,7 @@ Alla målgruppssegment som skapas av [Adobe Experience Platform Segmentation Ser
 
 Förutom att ärva etiketter på datauppsättningsnivå ärver segment som standard alla etiketter på fältnivå från de associerade datauppsättningarna. Beroende på hur ditt [!DNL Platform]baserade program använder segment kan du eventuellt ange vilka fält som ska användas, vilket förhindrar segmentet från att ärva etiketter från exkluderade fält.
 
-Mer information om hur automatisk exekvering fungerar i CDP i realtid finns i CDP-översikten [för datastyrning i](../../rtcdp/privacy/data-governance-overview.md#enforce-data-usage-compliance)Adobe i realtid.
+Mer information om hur automatisk exekvering fungerar i CDP i realtid finns i översikten om [datastyrning i CDP](../../rtcdp/privacy/data-governance-overview.md#enforce-data-usage-compliance)i realtid.
 
 ### Arv från dataexportkontroller i Adobe Audience Manager
 
@@ -42,7 +42,20 @@ Mer information om hur automatisk exekvering fungerar i CDP i realtid finns i CD
 
 En referens om hur specifika dataexportkontroller mappas till dataanvändningsetiketter i [!DNL Platform]finns i dokumentationen [för](https://docs.adobe.com/content/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aam-data-export-control-in-aep)Audience Manager.
 
+## Hantera dataanvändningsetiketter i [!DNL Experience Platform] {#manage-labels}
+
+Du kan hantera dataanvändningsetiketter med hjälp av [!DNL Experience Platform] API:er eller användargränssnittet. Mer information om respektive avsnitt finns i underavsnitten nedan.
+
+### Använda gränssnittet
+
+På arbetsytan i **[!UICONTROL Policies]** [!DNL Experience Platform] användargränssnittet kan du visa och hantera egna etiketter och etiketter för din organisation. På arbetsytan kan du **[!DNL Datasets]** använda etiketter på datauppsättningar och fält. Mer information finns i användarhandboken för [etiketter](user-guide.md).
+
+### Använda API:er
+
+Med `/labels` slutpunkten i API:t för [principtjänsten](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) kan du programmässigt hantera dataanvändningsetiketter, inklusive skapa anpassade etiketter. Mer information finns i [etikettens slutpunktshandbok](../api/labels.md) .
+
+API:t för [datauppsättningstjänsten](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dataset-service.yaml) används för att hantera etiketter för datauppsättningar och fält. Mer information finns i guiden om [hantering av datauppsättningsrubriker](./dataset-api.md) .
 
 ## Nästa steg
 
-Nu när du har fått nya etiketter för dataanvändning kan du fortsätta läsa [användarhandboken](user-guide.md) och lära dig hur du hanterar etiketter i [!DNL Experience Platform] användargränssnittet. Anvisningar om hur du hanterar etiketter med API:er finns i API-handboken för [användningsetiketter](./api.md).
+Detta dokument innehåller en introduktion till dataanvändningsetiketter och deras roll inom ramverket för datastyrning. Mer information om hur du hanterar etiketter i finns i dokumentationen som är länkad till i den här handboken [!DNL Experience Platform].
