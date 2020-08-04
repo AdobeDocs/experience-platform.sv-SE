@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Konfigurera ett dataflöde för en betalningsanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 0d6f5776fef93b3d96461fc18c8818231e4c2e44
+source-git-commit: 91714bea4e165d64bcc33e32e73d1d32a505ba00
 workflow-type: tm+mt
-source-wordcount: '1155'
+source-wordcount: '1165'
 ht-degree: 0%
 
 ---
@@ -58,11 +58,9 @@ Dialogrutan *[!UICONTROL Select dataset]* visas. Hitta den datauppsättning du v
 
 Om du vill importera data till en ny datauppsättning markerar du **[!UICONTROL Create new dataset]** och anger ett namn och en beskrivning för datauppsättningen i de angivna fälten.
 
-Under den här processen kan du även aktivera *[!UICONTROL Partial ingestion]* och *[!UICONTROL Error diagnostics]*. Aktivering *[!UICONTROL Partial ingestion]* ger möjlighet att importera data som innehåller fel, upp till ett visst tröskelvärde som du kan ange. Om du aktiverar feldiagnostik får du information om felaktiga data som batchas separat. Mer information finns i översikten över [partiell gruppöverföring](../../../../ingestion/batch-ingestion/partial.md).
+Du kan bifoga ett schemafält genom att ange ett schemanamn i **[!UICONTROL Select schema]** sökfältet. Du kan också välja listruteikonen för att visa en lista över befintliga scheman. Du kan också välja **[!UICONTROL Advanced search]** att få åtkomst till skärmen med befintliga scheman, inklusive deras respektive detaljer.
 
-När du är klar klickar du på schemaikonen.
-
-![create-new-dataset](../../../images/tutorials/dataflow/payments/new-dataset.png)
+![create-new-dataset](../../../images/tutorials/dataflow/all-tabular/new-target-dataset.png)
 
 Dialogrutan *[!UICONTROL Select schema]* visas. Välj det schema som du vill använda för den nya datauppsättningen och klicka sedan på **[!UICONTROL Done]**.
 
@@ -70,11 +68,9 @@ Dialogrutan *[!UICONTROL Select schema]* visas. Välj det schema som du vill anv
 
 Beroende på dina behov kan du välja att mappa fält direkt eller använda mappningsfunktioner för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om datamappning och mappningsfunktioner finns i självstudiekursen om att [mappa CSV-data till XDM-schemafält](../../../../ingestion/tutorials/map-a-csv-file.md).
 
-Du kan också ange inställningar på *[!UICONTROL Mapping]* skärmen *[!UICONTROL Delta column]*. När dataflödet skapas kan du ange vilket tidsstämpelfält som helst som bas för att bestämma vilka poster som ska importeras i schemalagda stegvisa inmatningar.
-
 När källdata har mappats klickar du på **[!UICONTROL Next]**.
 
-![](../../../images/tutorials/dataflow/payments/mapping.png)
+![](../../../images/tutorials/dataflow/all-tabular/mapping-updated.png)
 
 ## Schemalägg körning av inmatning
 
@@ -82,10 +78,10 @@ Steget visas så att du kan konfigurera ett schema för att automatiskt importer
 
 | Fält | Beskrivning |
 | --- | --- |
-| Frekvens | Valbara frekvenser är En gång, Minut, Timme, Dag och Vecka. |
+| Frekvens | Valbara frekvenser inkluderar `Once`, `Minute`, `Hour`, `Day`och `Week`. |
 | Intervall | Ett heltal som anger intervallet för den valda frekvensen. |
-| Starttid | En UTC-tidsstämpel som anger när det allra första intaget är inställt |
-| Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om *Backfill* är aktiverat, kommer alla aktuella filer i den angivna sökvägen att kapslas in under det första schemalagda intaget. Om *Backfill* är inaktiverat kapslas endast de filer som läses in mellan den första importkörningen och *starttiden* . Filer som lästs in före *starttiden* importeras inte. |
+| Starttid | En UTC-tidsstämpel som anger när det allra första intaget är inställt. |
+| Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om *[!UICONTROL Backfill]* är aktiverat importeras alla aktuella filer i den angivna sökvägen under den första schemalagda importen. Om *Backfill* är inaktiverad, kommer endast de filer som läses in mellan den första uppsättningen av inmatning och den *[!UICONTROL Start time]* att importeras. Filer som lästs in tidigare *[!UICONTROL Start time]* kommer inte att importeras. |
 | Delta-kolumn | Ett alternativ med en filtrerad uppsättning källschemafält av typen, datumet eller tiden. Det här fältet används för att skilja mellan nya och befintliga data. Inkrementella data importeras baserat på tidsstämpeln för den markerade kolumnen. |
 
 Dataflöden är utformade för att automatiskt importera data enligt schema. Börja med att välja intagsfrekvens. Ange sedan intervallet för att ange perioden mellan två flödeskörningar. Intervallets värde måste vara ett heltal som inte är noll och måste vara större än eller lika med 15.
@@ -102,15 +98,19 @@ Om du vill ställa in engångsintag väljer du den nedrullningsbara pilen för f
 
 >[!TIP] **[!UICONTROL Interval]** och **[!UICONTROL Backfill]** inte är synliga vid engångsbruk.
 
-![](../../../images/tutorials/dataflow/databases/schedule-once.png)
-
 När du har angett lämpliga värden för schemat väljer du **[!UICONTROL Next]**.
 
-## Namnge dataflödet
+![](../../../images/tutorials/dataflow/databases/schedule-once.png)
 
-Stegen visas där du måste ange ett namn och en valfri beskrivning för dataflödet. *[!UICONTROL Dataflow detail]* Steget visas. Välj **[!UICONTROL Next]** när du är klar.
+## Ange information om dataflöde
 
-![dataset-flow-details](../../../images/tutorials/dataflow/payments/dataset-flow-details.png)
+Stegen visas så att du kan ange ett namn och en kort beskrivning av det nya dataflödet. *[!UICONTROL Dataflow detail]*
+
+Under den här processen kan du även aktivera *[!UICONTROL Partial ingestion]* och *[!UICONTROL Error diagnostics]*. Aktivering *[!UICONTROL Partial ingestion]* ger möjlighet att importera data som innehåller fel upp till ett visst tröskelvärde. När *[!UICONTROL Partial ingestion]* det är aktiverat drar du i *[!UICONTROL Error threshold %]* reglaget för att justera batchens feltröskel. Du kan också justera tröskelvärdet manuellt genom att markera inmatningsrutan. Mer information finns i översikten över [partiell gruppöverföring](../../../../ingestion/batch-ingestion/partial.md).
+
+Ange värden för dataflödet och välj **[!UICONTROL Next]**.
+
+![dataflödesinformation](../../../images/tutorials/dataflow/all-tabular/dataflow-detail.png)
 
 ## Granska ditt dataflöde
 
