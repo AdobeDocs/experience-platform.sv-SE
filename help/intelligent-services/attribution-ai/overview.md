@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över Attribution AI
 topic: Attribution AI
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: 7fc121d310509739c7ee81f7d6657ea8f3963b69
 workflow-type: tm+mt
-source-wordcount: '654'
+source-wordcount: '407'
 ht-degree: 0%
 
 ---
@@ -29,24 +29,6 @@ Attribution AI har stöd för två kategorier med poäng, algoritmiska och regel
 Följande video har utformats för att ge stöd för din förståelse av Attribution AI.
 
 >[!VIDEO](https://video.tv.adobe.com/v/32667?learn=on&quality=12)
-
-## Attribution AI algoritmisk poäng
-
-Attribution AI har stöd för två kategorier av attribueringspoäng, algoritmiska och regelbaserade poäng.
-
-Attribution AI ger två olika typer av algoritmiska poäng, inkrementellt och påverkat. En påverkad poäng är den del av konverteringen som varje marknadsföringskontaktyta ansvarar för. En inkrementell poäng är mängden marginell påverkan som direkt orsakas av kontaktytan för marknadsföring. Den största skillnaden mellan det stegvisa poängvärdet och det poängvärde som påverkas är att det stegvisa poängvärdet tar baslinjeeffekten i beaktande. Man utgår inte från att en konvertering enbart orsakas av de föregående kontaktytorna.
-
-Se tabellen nedan för mer information om var och en av dessa attribueringspoäng:
-
-| Attributionspoäng | Beskrivning |
-| ----- | ----------- |
-| Första beröring | Regelbaserat attribueringspoäng som tilldelar alla krediter till den första kontaktytan på en konverteringsbana. |
-| Sista beröring | Regelbaserat attribueringspoäng som tilldelar all kredit till den kontaktyta som ligger närmast konverteringen. |
-| Linjär | Regelbaserat attribueringspoäng som tilldelar varje kontaktyta samma poäng på en konverteringsbana. |
-| U-formad | Regelbaserat attribueringspoäng som tilldelar 40 % av krediten till den första kontaktytan och 40 % av krediten till den sista kontaktytan, där de andra kontaktytorna delar upp de återstående 20 % jämnt. |
-| Tidsminskning | Regelbaserat attribueringspoäng där kontaktytor som ligger närmare konverteringen får mer kredit än kontaktytor som ligger längre bort från konverteringen. |
-| Influerad (algoritmisk) | Påverkade poäng är den del av konverteringen som varje kontaktyta för marknadsföring ansvarar för. |
-| Inkrementell (algoritmisk) | Inkrementell poäng är mängden marginell påverkan som direkt orsakas av en kontaktyta för marknadsföring. |
 
 ## Exempel på användningsområden
 
