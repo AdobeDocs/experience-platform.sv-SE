@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användarhandbok för Attribution AI
 topic: User guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 15f9f90e5a1439e071eeb46ad655eee10954c2ac
 workflow-type: tm+mt
-source-wordcount: '1430'
+source-wordcount: '1432'
 ht-degree: 0%
 
 ---
@@ -82,7 +82,7 @@ Om du behöver mer än en konvertering klickar du på **Lägg till konvertering*
 
 ![konvertera](./images/user-guide/add_conversion.png)
 
-### Definiera uppslagsfönster
+### Definiera uppslagsfönster {#lookback-window}
 
 När du har definierat konverteringen måste du bekräfta uppslagsfönstret. Ange med piltangenterna eller genom att klicka på standardvärdet (56) hur många dagar före konverteringshändelsen som du vill ta med kontaktytor från. Pekpunkter definieras i nästa steg.
 
@@ -172,9 +172,9 @@ Skriv landskoden i listrutan *Ange fältvärde* .
 
 ![region](./images/user-guide/region-based.png)
 
-### Utbildningsfönster
+### Utbildningsfönster {#training-window}
 
-För att säkerställa att ni får den mest korrekta modellen är det viktigt att utbilda modellen med historiska data som representerar ert företag. Som standard används två fjärdedelar (6 månader) av data för att utbilda modellen. Välj listrutan för att ändra standardinställningen. Du kan välja att utbilda med en till fyra fjärdedelar av data (3-12 månader).
+För att säkerställa att ni får den mest korrekta modellen är det viktigt att utbilda modellen med historiska data som representerar ert företag. Som standard används två fjärdedelar (6 månader) av konverteringshändelsedata för modellen. Välj listrutan för att ändra standardinställningen. Du kan välja att utbilda med en till fyra fjärdedelar av data (3-12 månader).
 
 >[!NOTE]
 >
