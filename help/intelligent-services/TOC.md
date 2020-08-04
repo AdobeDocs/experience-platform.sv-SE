@@ -3,10 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Hjälp om intelligenta tjänster
 translation-type: tm+mt
-source-git-commit: a0b85809d0703c0366c73ed6d66319af0f62cb27
+source-git-commit: 24449d0138ab449dbc01aecbbe9f70e05c781c89
 workflow-type: tm+mt
-source-wordcount: '64'
-ht-degree: 3%
+source-wordcount: '67'
+ht-degree: 2%
 
 ---
 
@@ -18,6 +18,7 @@ ht-degree: 3%
 * Attribution AI {#attribution-ai}
    * [Översikt](attribution-ai/overview.md)
    * [Komma igång med Attribution AI](attribution-ai/getting-started.md)
+   * [Indata och utdata](attribution-ai/input-output.md)
    * [Användargränssnittshandbok](attribution-ai/user-guide.md)
    * [Identifiera insikter](attribution-ai/discover-insights.md)
    * [Åtkomst till bakgrundsmusik](attribution-ai/download-scores.md)
