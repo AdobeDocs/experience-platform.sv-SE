@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Konfigurera ett dataflöde för en CRM-koppling i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 737f3b0fe9bbc04029fc1002613d4efc0bb3f5bd
+source-git-commit: 91714bea4e165d64bcc33e32e73d1d32a505ba00
 workflow-type: tm+mt
-source-wordcount: '1137'
+source-wordcount: '1220'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Konfigurera ett dataflöde för en CRM-koppling i användargränssnittet
 
-Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en [!DNL Platform] datauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med CRM-anslutningen.
+Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en [!DNL Platform] datauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt CRM-konto.
 
 ## Komma igång
 
@@ -25,11 +25,11 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
    * [Schemaredigeraren, genomgång](../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [Kundprofil](../../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Den här självstudien kräver dessutom att du redan har skapat en CRM-koppling. En lista med självstudiekurser för att skapa olika CRM-anslutningar i användargränssnittet finns i [källanslutningsöversikten](../../../home.md).
+Den här självstudiekursen kräver dessutom att du redan har skapat ett CRM-konto. En lista med självstudiekurser för att skapa olika CRM-anslutningar i användargränssnittet finns i [källanslutningsöversikten](../../../home.md).
 
 ## Markera data
 
-När du har skapat CRM-anslutningen visas steget *Välj data* , som ger ett interaktivt gränssnitt där du kan utforska filhierarkin.
+När du har skapat ditt CRM-konto visas steget *Välj data* , som ger ett interaktivt gränssnitt där du kan utforska din filhierarki.
 
 * Den vänstra halvan av gränssnittet är en katalogwebbläsare som visar serverns filer och kataloger.
 * I den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader data från en kompatibel fil.
@@ -40,7 +40,7 @@ Markera den katalog som du vill använda och klicka sedan på **[!UICONTROL Next
 
 ## Mappa datafält till ett XDM-schema
 
-Steget *Mappning* visas med ett interaktivt gränssnitt för att mappa källdata till en [!DNL Platform] datauppsättning.
+Steget visas med ett interaktivt gränssnitt som du kan använda för att mappa källdata till en *[!UICONTROL Mapping]* [!DNL Platform] datauppsättning.
 
 Välj en datauppsättning för inkommande data som ska importeras till. Du kan antingen använda en befintlig datauppsättning eller skapa en ny datauppsättning.
 
@@ -50,17 +50,19 @@ Om du vill importera data till en befintlig datauppsättning väljer du **[!UICO
 
 ![use-existing-dataset](../../../images/tutorials/dataflow/crm/use-existing-dataset.png)
 
-Dialogrutan _Välj datauppsättning_ visas. Hitta den datauppsättning du vill använda, markera den och klicka sedan på **[!UICONTROL Continue]**.
+Dialogrutan *[!UICONTROL Select dataset]* visas. Hitta den datauppsättning du vill använda, markera den och klicka sedan på **[!UICONTROL Continue]**.
 
 ![select-existing-dataset](../../../images/tutorials/dataflow/crm/select-existing-dataset.png)
 
 ### Använd en ny datauppsättning
 
-Om du vill importera data till en ny datauppsättning markerar du **[!UICONTROL Create new dataset]** och anger ett namn och en beskrivning för datauppsättningen i de angivna fälten. Klicka sedan på schemaikonen.
+Om du vill importera data till en ny datauppsättning markerar du **[!UICONTROL Create new dataset]** och anger ett namn och en beskrivning för datauppsättningen i de angivna fälten.
 
-![use-new-dataset](../../../images/tutorials/dataflow/crm/use-new-dataset.png)
+Du kan bifoga ett schemafält genom att ange ett schemanamn i **[!UICONTROL Select schema]** sökfältet. Du kan också välja listruteikonen för att visa en lista över befintliga scheman. Du kan också välja **[!UICONTROL Advanced search]** att få åtkomst till skärmen med befintliga scheman, inklusive deras respektive detaljer.
 
-Dialogrutan _Välj schema_ visas. Välj det schema som du vill använda för den nya datauppsättningen och klicka sedan på **[!UICONTROL Done]**.
+![create-new-dataset](../../../images/tutorials/dataflow/all-tabular/new-target-dataset.png)
+
+Dialogrutan *[!UICONTROL Select schema]* visas. Välj det schema som du vill använda för den nya datauppsättningen och klicka sedan på **[!UICONTROL Done]**.
 
 ![select-schema](../../../images/tutorials/dataflow/crm/select-schema.png)
 
@@ -68,16 +70,18 @@ Beroende på dina behov kan du välja att mappa fält direkt eller använda mapp
 
 När källdata har mappats klickar du på **[!UICONTROL Next]**.
 
+![](../../../images/tutorials/dataflow/all-tabular/mapping-updated.png)
+
 ## Schemalägg körning av inmatning
 
 Steget visas så att du kan konfigurera ett schema för att automatiskt importera valda källdata med de konfigurerade mappningarna. *[!UICONTROL Scheduling]* I följande tabell visas de olika konfigurerbara fälten för schemaläggning:
 
 | Fält | Beskrivning |
 | --- | --- |
-| Frekvens | Valbara frekvenser är En gång, Minut, Timme, Dag och Vecka. |
+| Frekvens | Valbara frekvenser inkluderar `Once`, `Minute`, `Hour`, `Day`och `Week`. |
 | Intervall | Ett heltal som anger intervallet för den valda frekvensen. |
-| Starttid | En UTC-tidsstämpel som anger när det allra första intaget är inställt |
-| Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om *Backfill* är aktiverat, kommer alla aktuella filer i den angivna sökvägen att kapslas in under det första schemalagda intaget. Om *Backfill* är inaktiverat kapslas endast de filer som läses in mellan den första importkörningen och *starttiden* . Filer som lästs in före *starttiden* importeras inte. |
+| Starttid | En UTC-tidsstämpel som anger när det allra första intaget är inställt. |
+| Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om *[!UICONTROL Backfill]* är aktiverat importeras alla aktuella filer i den angivna sökvägen under den första schemalagda importen. Om *Backfill* är inaktiverad, kommer endast de filer som läses in mellan den första uppsättningen av inmatning och den *[!UICONTROL Start time]* att importeras. Filer som lästs in tidigare *[!UICONTROL Start time]* kommer inte att importeras. |
 | Delta-kolumn | Ett alternativ med en filtrerad uppsättning källschemafält av typen, datumet eller tiden. Det här fältet används för att skilja mellan nya och befintliga data. Inkrementella data importeras baserat på tidsstämpeln för den markerade kolumnen. |
 
 Dataflöden är utformade för att automatiskt importera data enligt schema. Börja med att välja intagsfrekvens. Ange sedan intervallet för att ange perioden mellan två flödeskörningar. Intervallets värde måste vara ett heltal som inte är noll och måste vara större än eller lika med 15.
@@ -94,15 +98,19 @@ Om du vill ställa in engångsintag väljer du den nedrullningsbara pilen för f
 
 >[!TIP] **[!UICONTROL Interval]** och **[!UICONTROL Backfill]** inte är synliga vid engångsbruk.
 
-![schedule-once](../../../images/tutorials/dataflow/databases/schedule-once.png)
-
 När du har angett lämpliga värden för schemat väljer du **[!UICONTROL Next]**.
 
-## Namnge dataflödet
+![schedule-once](../../../images/tutorials/dataflow/databases/schedule-once.png)
 
-Steget *Namnflöde* visas där du måste ange ett namn och en valfri beskrivning av dataflödet. Klicka **[!UICONTROL Next]** när du är klar.
+## Ange information om dataflöde
 
-![name-dataflow](../../../images/tutorials/dataflow/crm/name-dataflow.png)
+Stegen visas så att du kan ange ett namn och en kort beskrivning av det nya dataflödet. *[!UICONTROL Dataflow detail]*
+
+Under den här processen kan du även aktivera *[!UICONTROL Partial ingestion]* och *[!UICONTROL Error diagnostics]*. Aktivering *[!UICONTROL Partial ingestion]* ger möjlighet att importera data som innehåller fel upp till ett visst tröskelvärde. När *[!UICONTROL Partial ingestion]* det är aktiverat drar du i *[!UICONTROL Error threshold %]* reglaget för att justera batchens feltröskel. Du kan också justera tröskelvärdet manuellt genom att markera inmatningsrutan. Mer information finns i översikten över [partiell gruppöverföring](../../../../ingestion/batch-ingestion/partial.md).
+
+Ange värden för dataflödet och välj **[!UICONTROL Next]**.
+
+![dataflödesinformation](../../../images/tutorials/dataflow/all-tabular/dataflow-detail.png)
 
 ## Granska ditt dataflöde
 
