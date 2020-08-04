@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Åtkomst till bakgrundsmusik i Attribution AI
 topic: Accessing scores
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 24449d0138ab449dbc01aecbbe9f70e05c781c89
 workflow-type: tm+mt
-source-wordcount: '981'
+source-wordcount: '1026'
 ht-degree: 0%
 
 ---
@@ -259,9 +259,11 @@ Svaret hämtar filen som du begärde i din aktuella katalog. I det här exemplet
 
 ![Terminal](./images/download-scores/terminal-output.png)
 
+Poängen som hämtas kommer att vara i parquet-format och måste ha en [!DNL Spark]skal- eller parquet-läsare för att visa poängen. För visning av råpoäng kan du använda [parquet-verktyg](https://github.com/apache/parquet-mr/tree/master/parquet-tools). Parquet-verktygen kan analysera data med [!DNL Spark].
+
 ## Nästa steg
 
-I det här dokumentet beskrivs stegen som krävs för att hämta bakgrundsmusik för Attribution AI. Nu kan du fortsätta att söka bland de andra [intelligenta tjänsterna](../home.md) och guiderna som erbjuds.
+I det här dokumentet beskrivs stegen som krävs för att hämta bakgrundsmusik för Attribution AI. Mer information om bakgrundsmusik finns i dokumentationen för [attributets AI-indata och -utdata](./input-output.md) .
 
 ## Åtkomst till bakgrundsmusik med Snowflake
 
