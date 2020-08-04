@@ -3,22 +3,22 @@ product: experience-platform
 audience: user
 user-guide-title: Hjälp om datastyrning i Adobe Experience Platform
 translation-type: tm+mt
-source-git-commit: e135bc33e6c3daa411e85cb37e407322fd0bca5b
+source-git-commit: 876ac35f6366411adda821805bf628470839f80e
 workflow-type: tm+mt
-source-wordcount: '103'
-ht-degree: 0%
+source-wordcount: '106'
+ht-degree: 2%
 
 ---
 
 
-# Adobe Experience Platform datastyrning {#data-governance}
+# Adobe Experience Platform Data Governance {#data-governance}
 
 * [Datastyrning - översikt](home.md)
 * Dataanvändningsetiketter {#labels}
    * [Översikt över etiketter för dataanvändning](labels/overview.md)
+   * [Etiketter för grundläggande dataanvändning](labels/reference.md)
    * [Hantera etiketter för dataanvändning i användargränssnittet](labels/user-guide.md)
-   * [Hantera dataanvändningsetiketter i API](labels/api.md)
-   * [Etiketter för dataanvändning som stöds](labels/reference.md)
+   * [Hantera etiketter för datauppsättningar och fält med API:er](labels/dataset-api.md)
 * Dataanvändningspolicyer {#policies}
    * [Översikt över policyer för dataanvändning](policies/overview.md)
    * [Användarhandbok för dataanvändningsprinciper](policies/user-guide.md)
@@ -26,8 +26,9 @@ ht-degree: 0%
 * Politiska åtgärder {#enforcement}
    * [Översikt över policytillämpning](enforcement/overview.md)
    * [Använd principer för dataanvändning med hjälp av API:t för principtjänsten](enforcement/api-enforcement.md)
-* API för DULE-principtjänst {#api}
+* Utvecklarhandbok för Policy Service API {#api}
    * [Komma igång](api/getting-started.md)
+   * [Etiketter](api/labels.md)
    * [Profiler](api/policies.md)
    * [Marknadsföringsåtgärder](api/marketing-actions.md)
    * [Utvärdering](api/evaluation.md)
