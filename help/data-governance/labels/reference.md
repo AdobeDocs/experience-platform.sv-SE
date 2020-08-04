@@ -1,22 +1,22 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Etiketter för dataanvändning som stöds
+title: Etiketter för grundläggande dataanvändning
 topic: labels
 translation-type: tm+mt
-source-git-commit: d4964231ee957349f666eaf6b0f5729d19c408de
+source-git-commit: 876ac35f6366411adda821805bf628470839f80e
 workflow-type: tm+mt
-source-wordcount: '1878'
+source-wordcount: '1869'
 ht-degree: 1%
 
 ---
 
 
-# Etiketter för dataanvändning som stöds
+# Etiketter för grundläggande dataanvändning
 
-Adobe Experience Platform har en infrastruktur för datastyrning med märkning och verkställighet av data (DULE) i centrum.  DULE-funktioner gör det möjligt att använda dataanvändningsetiketter på datauppsättningar och fält för att kategorisera data efter den typ av användarprofiler som gäller för dessa data.
+Med etiketter för dataanvändning kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Adobe Experience Platform Data Governance har flera färdiga etiketter för dataanvändning som du kan använda för att kategorisera dina data.
 
-Det här dokumentet innehåller alla dataanvändningsetiketter som för närvarande stöds av [!DNL Experience Platform]. Mer information om [!DNL Data Governance] och DULE finns i [datastyrningsöversikten](../home.md).
+I det här dokumentet finns en beskrivning av de etiketter för användning av kärndata som för närvarande finns i [!DNL Experience Platform]. Mer information om [!DNL Data Governance] datastyrning finns i översikten över [](../home.md)datastyrning.
 
 ## Kontraktsetiketter
 
@@ -83,7 +83,7 @@ C4 är den mest restriktiva etiketten - den omfattar etiketterna [C5](#c5), [C6]
 
 Intressebaserad målinriktning, eller personalisering, uppstår om följande tre villkor uppfylls: De data som samlas in på webbplatsen (1) används för att dra slutsatser om en användares intressen, (2) används i ett annat sammanhang, t.ex. på en annan webbplats eller i en app (utanför webbplatsen) OCH (3) används för att välja vilket innehåll eller vilka annonser som ska hanteras baserat på dessa slutsatser.
 
-En kombination av data från flera platser, inklusive en kombination av data på plats och data utanför platsen eller en kombination av data från flera källor utanför platsen, kallas data mellan olika platser. Olika webbplatser representerar olika kontexter så att användningen av data mellan webbplatser i olika sammanhang skiljer sig från originalet. Data från olika webbplatser samlas vanligtvis in och behandlas för att man ska kunna dra slutsatser om användarnas intressen. Därför kan användningen av data för olika webbplatser för att rikta annonser eller innehåll normalt betraktas som intressebaserad målinriktning, oavsett om annonsen eller innehållet visas på plats eller utanför webbplatsen. Om data på plats till exempel användes i kombination med externa data för att välja vilken annons som ska visas för en användare på en organisations egen webbplats, skulle den användningen kvalificera sig som intressebaserad målinriktning. Ett annat exempel är att återmarknadsföring av annonser till användare utanför webbplatsen sannolikt också skulle kvalificera som intressebaserad målinriktning.
+En kombination av data från flera platser, inklusive en kombination av data på plats och data utanför platsen eller en kombination av data från flera källor utanför platsen, kallas data mellan olika platser. Olika webbplatser representerar olika kontexter så att användningen av data mellan webbplatser i olika sammanhang skiljer sig från originalet. Data från olika webbplatser samlas vanligtvis in och behandlas för att man ska kunna dra slutsatser om användarnas intressen. Därför kan användningen av data för olika webbplatser för att rikta annonser eller innehåll normalt betraktas som intressebaserad målinriktning, oavsett om annonsen eller innehållet visas på plats eller utanför webbplatsen. Om data på plats till exempel användes i kombination med externa data för att välja vilken annons som ska visas för en användare på en organisations egen webbplats, skulle den användningen kvalificera sig som intressebaserad målinriktning. Ett annat exempel är att återmarknadsföring av annonser till användare utanför webbplatsen sannolikt även skulle kvalificera som intressebaserad målinriktning.
 
 Användning av data utanför webbplatsen som enda målgruppsanpassning skulle troligtvis också kvalificera som intressebaserad målgruppsanpassning, eftersom data utanför webbplatsen vanligtvis samlas in och behandlas för att skapa slutsatser om användarnas intressen.
 
