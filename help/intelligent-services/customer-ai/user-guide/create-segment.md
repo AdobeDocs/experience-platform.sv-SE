@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa kundsegment med förutbestämda poäng
 topic: Create a segment
 translation-type: tm+mt
-source-git-commit: fba6ae701a38737812dccbf4f63e5a07f935ad8b
+source-git-commit: e351a2d489730c1f1bd5f87be8d85612090bc009
 workflow-type: tm+mt
 source-wordcount: '262'
 ht-degree: 0%
@@ -14,13 +14,13 @@ ht-degree: 0%
 
 # Skapa kundsegment med förutbestämda poäng
 
-När en förutsägelsekörning är klar används automatiskt förväntade benägenhetspoäng av profiler. Genom att förbättra profiler med kundens AI-poäng kan man skapa kundsegment för att hitta målgrupper baserat på deras benägenhetspoäng. I det här avsnittet beskrivs hur du skapar segment med hjälp av segmentverktyget. En mer robust självstudiekurs om hur du skapar segment finns i användarhandboken för [Segment Builder](../../../segmentation/ui/overview.md).
+När en förutsägelsekörning är klar används automatiskt förväntade benägenhetspoäng av profiler. Genom att förbättra profiler med kundens AI-poäng kan man skapa kundsegment för att hitta målgrupper baserat på deras benägenhetspoäng. I det här avsnittet beskrivs hur du skapar segment med hjälp av segmentverktyget. En mer robust självstudiekurs om hur du skapar segment finns i användarhandboken för [Segment Builder](../../../segmentation/ui/segment-builder.md).
 
 >[!IMPORTANT]
 >
 >Om du vill använda den här metoden måste kundprofilen i realtid aktiveras för datauppsättningen.
 
-I Platform-gränssnittet klickar du **[!UICONTROL Segments]** i den vänstra navigeringen och sedan på **[!UICONTROL Create segment]**.
+Klicka i det vänstra navigeringsfältet i Plattformsgränssnittet **[!UICONTROL Segments]** och klicka sedan på **[!UICONTROL Create segment]**.
 
 ![](../images/user-guide/segments.png)
 
