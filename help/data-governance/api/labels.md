@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Slutpunkt för etiketter
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: ec743484028e537fa28706b0c8ec3a1f1f1d2ba3
+source-git-commit: 80526bc0fea9e1854174a2edf9389ff0c4e98f71
 workflow-type: tm+mt
 source-wordcount: '489'
 ht-degree: 1%
@@ -22,7 +22,7 @@ Med etiketter för dataanvändning kan du kategorisera data enligt de användarp
 
 ## Komma igång
 
-API-slutpunkten som används i den här handboken är en del av [!DNL Real-time Customer Profile API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml). Innan du fortsätter bör du läsa [Komma igång-guiden](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API i det här dokumentet samt viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform] -API.
+API-slutpunkten som används i den här handboken är en del av [!DNL Policy Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml). Innan du fortsätter bör du läsa [Komma igång-guiden](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API i det här dokumentet samt viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform] -API.
 
 ## Hämta en lista med etiketter {#list}
 
