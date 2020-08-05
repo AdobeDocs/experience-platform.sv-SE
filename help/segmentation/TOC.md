@@ -1,17 +1,17 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Hjälp om segmenteringstjänsten Adobe Experience Platform
+user-guide-title: Hjälp om Adobe Experience Platform segmenteringstjänst
 translation-type: tm+mt
-source-git-commit: c5880153f4ba9a6518423985e42fb1b3b71cd862
+source-git-commit: e351a2d489730c1f1bd5f87be8d85612090bc009
 workflow-type: tm+mt
-source-wordcount: '112'
-ht-degree: 3%
+source-wordcount: '116'
+ht-degree: 6%
 
 ---
 
 
-# Hjälp om segmenteringstjänsten Adobe Experience Platform {#segmentation}
+# Hjälp om Adobe Experience Platform segmenteringstjänst {#segmentation}
 
 - [Översikt](home.md)
 - [Segmenteringsdatatyper](data-types.md)
@@ -27,6 +27,8 @@ ht-degree: 3%
    - [Direktuppspelningssegmentering](api/streaming-segmentation.md)
 - Segmenteringsgränssnitt {#ui}
    - [Översikt](ui/overview.md)
+   - [Segment Builder](ui/segment-builder.md)
+   - [Direktuppspelningssegmentering](ui/streaming-segmentation.md)
 - [Ansvarsfriskrivningar](honoring-opt-outs.md)
 - [Segmentering för flera enheter](multi-entity-segmentation.md)
 - Profilfrågespråk {#pql}
@@ -48,4 +50,4 @@ ht-degree: 3%
    - [Skapa en datauppsättning för att exportera data](tutorials/create-dataset-export-segment.md)
    - [Stärk regelefterlevnaden för datasegment](tutorials/governance.md)
 - [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml)
-- [Versionsinformation för Platform](https://www.adobe.com/go/platform-release-notes-en)
+- [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
