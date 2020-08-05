@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: Användarhandbok för kundprofil i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
+source-git-commit: 5c2429f10dfed8cc927914572c690a0536ddae99
 workflow-type: tm+mt
 source-wordcount: '1107'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 [!DNL Real-time Customer Profile] skapar en helhetsbild av var och en av era enskilda kunder och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata.
 
-Det här dokumentet fungerar som en guide för interaktion med [!DNL Real-time Customer Profile] i användargränssnittet i Adobe Experience Platform.
+Det här dokumentet fungerar som en guide för interaktion med [!DNL Real-time Customer Profile] i Adobe Experience Platform användargränssnitt.
 
 ## Komma igång
 
@@ -52,7 +52,7 @@ Förutom dessa mått innehåller avsnittet Profilmått även ett *senast uppdate
 
 Profilantalet visar det totala antalet profiler som din organisation har i [!DNL Experience Platform], efter att din organisations standardpolicy för sammanfogning har sammanfogat profilfragment till en enda profil för varje enskild kund. Med andra ord kan din organisation ha flera profilfragment kopplade till en enskild kund som interagerar med ert varumärke i olika kanaler, men dessa fragment skulle slås samman (enligt standardprincipen för sammanslagning) och skulle returnera antalet&quot;1&quot;-profil eftersom de alla är kopplade till samma individ.
 
-Profilantalet omfattar även både profiler med attribut (postdata) och profiler som endast innehåller tidsseriedata (händelsedata), t.ex. Adobe Analytics-profiler. Profilantalet uppdateras regelbundet för att ge ett aktuellt totalt antal profiler i Platform.
+Profilantalet omfattar även både profiler med attribut (postdata) och profiler som endast innehåller tidsseriedata (händelsedata), t.ex. Adobe Analytics-profiler. Profilantalet uppdateras regelbundet för att ge ett aktuellt totalt antal profiler inom plattformen.
 
 När inmatningen av poster i [!DNL Profile Store] ökar eller minskar antalet med mer än 5 %, utlöses ett jobb för att uppdatera antalet. För arbetsflöden med direktuppspelningsdata görs en timkontroll för att avgöra om tröskelvärdet på 5 % har uppnåtts eller ej. Om så är fallet utlöses ett jobb automatiskt för att uppdatera antalet profiler. Om tröskelvärdet på 5 % ökning eller minskning uppnås, körs ett jobb för att uppdatera profilantalet för batchintag inom 15 minuter efter att en batch har importerats till profilarkivet.
 
@@ -88,7 +88,7 @@ När ett värde har angetts, väljer du **[!UICONTROL Show profile]** och return
 
 ![](../images/user-guide/profiles-display-profile.png)
 
-### Profilinformation
+### Profilinformation {#profile-detail}
 
 När du väljer **[!UICONTROL Profile ID]**&#x200B;öppnas _[!UICONTROL Detail]_fliken. På den här sidan visas information om den valda profilen, inklusive grundläggande attribut, länkade identiteter och tillgängliga kontaktkanaler. Profilinformationen som visas har sammanfogats från flera profilfragment till en enda vy över den enskilda kunden.
 
