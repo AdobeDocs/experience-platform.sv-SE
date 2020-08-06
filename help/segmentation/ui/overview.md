@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användarhandbok för segmenteringstjänsten
 topic: ui guide
 translation-type: tm+mt
-source-git-commit: ab43c677ab45c7aa047a50049c0dd8613b003403
+source-git-commit: e7266fba14b2dffe46ce77428ad6fe0dd92abdf5
 workflow-type: tm+mt
-source-wordcount: '1322'
+source-wordcount: '1333'
 ht-degree: 0%
 
 ---
@@ -47,7 +47,7 @@ Utvärderingsmetoden kan antingen vara direktuppspelning eller batch. Direktupps
 
 ![](../images/ui/overview/segment-browse-segments.png)
 
-Överst på sidan finns alternativ till **[!UICONTROL Add all segments to schedule]** och **[!UICONTROL Create segment]**.
+Överst på sidan finns alternativ för att lägga till alla segment i ett schema och för att skapa ett nytt segment.
 
 Växling **[!UICONTROL Add all segments to schedule]** aktiverar schemalagd segmentering. Mer information om schemalagd segmentering finns i avsnittet om [schemalagd segmentering i den här användarhandboken](#scheduled-segmentation).
 
@@ -73,7 +73,7 @@ Sidan med segmentinformation visas. Överst finns en sammanfattning av segmentde
 
 ### Segmentsammanfattning
 
-Avsnittet innehåller information om attributens ID, namn, beskrivning och detaljer *[!UICONTROL Segment summary]* .
+Avsnittet innehåller information om attributens ID, namn, beskrivning och detaljer **[!UICONTROL Segment summary]** .
 
 Dessutom kan du redigera segmentet. Om du väljer **[!UICONTROL Edit segment]** det här alternativet kommer du till [!DNL Segment Builder]. Mer information om hur du använder [!DNL Segment Builder] arbetsytan finns i [[!DNL Segment Builder] användarhandboken](./segment-builder.md).
 
