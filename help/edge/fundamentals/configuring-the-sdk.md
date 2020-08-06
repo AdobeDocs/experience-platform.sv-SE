@@ -4,9 +4,9 @@ seo-title: Konfigurera Adobe Experience Platform Web SDK
 description: Lär dig hur du konfigurerar Experience Platform Web SDK
 seo-description: Lär dig hur du konfigurerar Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: abd72993577f298141ed0d25b6c4abc42050b68e
 workflow-type: tm+mt
-source-wordcount: '733'
+source-wordcount: '745'
 ht-degree: 4%
 
 ---
@@ -146,21 +146,13 @@ Aktiverar [!DNL Audience Manager] , [!UICONTROL URL destinations]vilket gör det
 
 ## Identitetsalternativ
 
-### `idSyncContainerId`
+### `idMigrationEnabled`
 
 | **Typ** | **Obligatoriskt** | **Standardvärde** |
 | -------- | ------------ | ----------------- |
-| Siffra | Nej | ingen |
+| Boolean | Nej | sant |
 
-Behållar-ID som anger vilket ID-synk som utlöses. Det här är ett icke-negativt heltal som du kan få från din konsult.
-
-### `idSyncEnabled`
-
-| **Typ** | **Obligatoriskt** | **Standardvärde** |
-| -------- | ------------ | ----------------- |
-| Boolean | Nej | `true` |
-
-Aktiverar synkroniseringsfunktionen för ID, som gör det möjligt att aktivera URL:er för att synkronisera det unika användar-ID:t för Adobe med det unika användar-ID:t för en datakälla från tredje part.
+Om true läser SDK in gamla AMCV-cookies. Detta underlättar vid övergång till AEP Web SDK medan vissa delar av webbplatsen fortfarande använder Visitor.js. Om dessutom Visitor-API är definierat på sidan kommer SDK att efterfråga besökar-API:t för ECID. På så sätt kan du dubbeltagga sidor med AEP Web SDK och fortfarande ha samma ECID.
 
 ### `thirdPartyCookiesEnabled`
 
