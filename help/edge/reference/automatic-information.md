@@ -4,10 +4,10 @@ seo-title: Information som samlas in automatiskt av Adobe Experience Platform We
 description: Beskrivning av all information som Adobe Experience Cloud SDK automatiskt samlar in
 seo-description: Beskrivning av all information som Adobe Experience Cloud SDK automatiskt samlar in
 translation-type: tm+mt
-source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+source-git-commit: ccd47e024f3ea53507454b7785528c031746d681
 workflow-type: tm+mt
-source-wordcount: '382'
-ht-degree: 6%
+source-wordcount: '387'
+ht-degree: 7%
 
 ---
 
@@ -91,6 +91,13 @@ SDK-identifierare (Software Development Kit).  I det här fältet används en UR
 | **Sökväg i nyttolast:** | **Exempel:** |
 | -------------------------------------------- | ------------ |
 | `events[].xdm.implementationDetails.version` | `0.11.0` |
+
+### Miljö
+
+| **Sökväg i nyttolast:** | **Exempel:** |
+| ------------------------------------------------ | ------------ |
+| `events[].xdm.implementationDetails.environment` | `browser` |
+
 
 ## Montera kontext (`placeContext`)
 
