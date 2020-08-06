@@ -4,9 +4,9 @@ seo-title: Spåra Adobe Experience Platform Web SDK-händelser
 description: Lär dig spåra Experience Platform Web SDK-händelser
 seo-description: Lär dig spåra Experience Platform Web SDK-händelser
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: 8ac603f749928440438f2e0d1f3f1f1cc95b2916
 workflow-type: tm+mt
-source-wordcount: '632'
+source-wordcount: '688'
 ht-degree: 0%
 
 ---
@@ -80,9 +80,27 @@ alloy("sendEvent", {
 });
 ```
 
+### Åsidosätta datauppsättnings-ID
+
+I vissa fall kanske du vill skicka en händelse till en annan datauppsättning än den som konfigurerats i konfigurationsgränssnittet. Därför måste du ange alternativet `datasetId` för `sendEvent` kommandot:
+
+```javascript
+var myXDMData = { ... };
+
+alloy("sendEvent", {
+  "xdm": myXDMData,
+  "type": "commerce.checkout",
+  "datasetId": "YOUR_DATASET_ID"
+});
+```
+
+### Lägga till identitetsinformation
+
+Du kan även lägga till anpassad identitetsinformation till händelsen. Se [Hämta Experience Cloud-ID](./identity.md)
+
 ## Använda API:t sendBeacon
 
-Det kan vara svårt att skicka händelsedata precis innan webbsidans användare har navigerat. Om begäran tar för lång tid kan webbläsaren avbryta den. Vissa webbläsare har implementerat ett webbläsar-API som anropas `sendBeacon` för att göra det enklare att samla in data under tiden. När du använder `sendBeacon`webbläsaren görs en webbförfrågan i det globala webbläsarsammanhanget. Det innebär att webbläsaren gör beacon-begäran i bakgrunden och inte håller upp sidnavigeringen. Om du vill ange att Adobe Experience Platform ska [!DNL Web SDK] använda `sendBeacon`lägger du till alternativet `"documentUnloading": true` i händelsekommandot.  Här är ett exempel:
+Det kan vara svårt att skicka händelsedata precis innan webbsidans användare har navigerat. Om begäran tar för lång tid kan webbläsaren avbryta den. Vissa webbläsare har implementerat ett webbläsar-API som anropas `sendBeacon` för att göra det enklare att samla in data under tiden. När du använder `sendBeacon`webbläsaren görs en webbförfrågan i det globala webbläsarsammanhanget. Det innebär att webbläsaren gör beacon-begäran i bakgrunden och inte håller upp sidnavigeringen. Om du vill ange att Adobe Experience Platform [!DNL Web SDK] ska använda `sendBeacon`lägger du till alternativet `"documentUnloading": true` i händelsekommandot.  Här är ett exempel:
 
 ```javascript
 alloy("sendEvent", {
@@ -100,7 +118,7 @@ alloy("sendEvent", {
 });
 ```
 
-Webbläsare har angett begränsningar för hur mycket data som kan skickas med `sendBeacon` samtidigt. I många webbläsare är gränsen 64 kB. Om webbläsaren avvisar händelsen eftersom nyttolasten är för stor återgår Adobe Experience Platform till att använda den normala transportmetoden (till exempel hämta). [!DNL Web SDK]
+Webbläsare har angett begränsningar för hur mycket data som kan skickas med `sendBeacon` samtidigt. I många webbläsare är gränsen 64 kB. Om webbläsaren avvisar händelsen eftersom nyttolasten är för stor återgår Adobe Experience Platform [!DNL Web SDK] till att använda sin normala transportmetod (till exempel hämta).
 
 ## Hantera svar från händelser
 
