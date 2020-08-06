@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över partiell gruppinmatning i Adobe Experience Platform
 topic: overview
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: df6a6e20733953a0983bbfdf66ca2abc6f03e977
 workflow-type: tm+mt
-source-wordcount: '1180'
+source-wordcount: '1361'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ I [bilagan](#appendix) till den här självstudien finns dessutom en referens f�
 Den här självstudiekursen kräver en fungerande kunskap om de olika Adobe Experience Platform-tjänster som är involverade i partiell batchförbrukning. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 - [Batchförtäring](./overview.md): Den metod som används för att [!DNL Platform] importera och lagra data från datafiler, till exempel CSV och Parquet.
-- [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
+- [[!DNL Experience Data Model] (XDM)](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API: [!DNL Platform] er.
 
@@ -58,14 +58,12 @@ Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuell
 
 Du kan skapa en ny grupp med partiellt intag aktiverat.
 
-Om du vill skapa en ny batch följer du stegen i [Utvecklarhandbok](./api-overview.md)för batchimport. När du har nått steget *Skapa grupp* lägger du till följande fält i begärandetexten:
+Om du vill skapa en ny batch följer du stegen i [Utvecklarhandbok](./api-overview.md)för batchimport. När du har nått **[!UICONTROL Create batch]** steget lägger du till följande fält i begärandetexten:
 
 ```json
 {
-    ...
     "enableErrorDiagnostics": true,
     "partialIngestionPercentage": 5
-    ...
 }
 ```
 
@@ -85,17 +83,17 @@ Om du vill aktivera en batch för partiell förtäring via [!DNL Platform] anvä
 
 ### Skapa en ny källanslutning {#new-source}
 
-Om du vill skapa en ny källanslutning följer du stegen i listan i [Källöversikt](../../sources/home.md). När du har kommit till *[!UICONTROL Dataflow detail]* steget bör du tänka på *[!UICONTROL Partial ingestion]* - och *[!UICONTROL Error diagnostics]* fälten.
+Om du vill skapa en ny källanslutning följer du stegen i listan i [Källöversikt](../../sources/home.md). När du har kommit till **[!UICONTROL Dataflow detail]** steget bör du tänka på **[!UICONTROL Partial ingestion]** - och **[!UICONTROL Error diagnostics]** fälten.
 
 ![](../images/batch-ingestion/partial-ingestion/configure-batch.png)
 
-Med *[!UICONTROL Partial ingestion]* växlingsknappen kan du aktivera eller inaktivera användning av partiell gruppinmatning.
+Med **[!UICONTROL Partial ingestion]** växlingsknappen kan du aktivera eller inaktivera användning av partiell gruppinmatning.
 
-Växlingsknappen *[!UICONTROL Error diagnostics]* visas bara när *[!UICONTROL Partial ingestion]* växlingsknappen är inaktiverad. Med den här funktionen kan du [!DNL Platform] generera detaljerade felmeddelanden om dina inkapslade batchar. Om *[!UICONTROL Partial ingestion]* växeln är aktiverad aktiveras förbättrad feldiagnostik automatiskt.
+Växlingsknappen **[!UICONTROL Error diagnostics]** visas bara när **[!UICONTROL Partial ingestion]** växlingsknappen är inaktiverad. Med den här funktionen kan du [!DNL Platform] generera detaljerade felmeddelanden om dina inkapslade batchar. Om *[!UICONTROL Partial ingestion]* växeln är aktiverad aktiveras förbättrad feldiagnostik automatiskt.
 
 ![](../images/batch-ingestion/partial-ingestion/configure-batch-partial-ingestion-focus.png)
 
-Med *[!UICONTROL Error threshold]* den kan du ange procentandelen godtagbara fel innan hela gruppen misslyckas. Som standard är värdet 5 %.
+Med **[!UICONTROL Error threshold]** den kan du ange procentandelen godtagbara fel innan hela gruppen misslyckas. Som standard är värdet 5 %.
 
 ### Använd en befintlig datauppsättning {#existing-dataset}
 
@@ -103,29 +101,103 @@ Om du vill använda en befintlig datauppsättning börjar du med att välja en d
 
 ![](../images/batch-ingestion/partial-ingestion/monitor-dataset.png)
 
-Med *[!UICONTROL Partial ingestion]* växlingsknappen kan du aktivera eller inaktivera användning av partiell gruppinmatning.
+Med **[!UICONTROL Partial ingestion]** växlingsknappen kan du aktivera eller inaktivera användning av partiell gruppinmatning.
 
-Växlingsknappen *[!UICONTROL Error diagnostics]* visas bara när *[!UICONTROL Partial ingestion]* växlingsknappen är inaktiverad. Med den här funktionen kan du [!DNL Platform] generera detaljerade felmeddelanden om dina inkapslade batchar. Om *[!UICONTROL Partial ingestion]* växeln är aktiverad aktiveras förbättrad feldiagnostik automatiskt.
+Växlingsknappen **[!UICONTROL Error diagnostics]** visas bara när **[!UICONTROL Partial ingestion]** växlingsknappen är inaktiverad. Med den här funktionen kan du [!DNL Platform] generera detaljerade felmeddelanden om dina inkapslade batchar. Om **[!UICONTROL Partial ingestion]** växeln är aktiverad aktiveras förbättrad feldiagnostik automatiskt.
 
 ![](../images/batch-ingestion/partial-ingestion/monitor-dataset-partial-ingestion-focus.png)
 
-Med *[!UICONTROL Error threshold]* den kan du ange procentandelen godtagbara fel innan hela gruppen misslyckas. Som standard är värdet 5 %.
+Med **[!UICONTROL Error threshold]** den kan du ange procentandelen godtagbara fel innan hela gruppen misslyckas. Som standard är värdet 5 %.
 
 Nu kan du överföra data med knappen **Lägg till data** , och den kommer att importeras delvis.
 
 ### Använd flödet &quot;[!UICONTROL Map CSV to XDM schema]&quot; {#map-flow}
 
-Om du vill använda &quot;[!UICONTROL Map CSV to XDM schema]&quot;-flödet följer du stegen i [Mappa en CSV-fil i självstudiekursen](../tutorials/map-a-csv-file.md). När du har kommit till *[!UICONTROL Add data]* steget bör du tänka på *[!UICONTROL Partial ingestion]* - och *[!UICONTROL Error diagnostics]* fälten.
+Om du vill använda &quot;[!UICONTROL Map CSV to XDM schema]&quot;-flödet följer du stegen i [Mappa en CSV-fil i självstudiekursen](../tutorials/map-a-csv-file.md). När du har kommit till **[!UICONTROL Add data]** steget bör du tänka på **[!UICONTROL Partial ingestion]** - och **[!UICONTROL Error diagnostics]** fälten.
 
 ![](../images/batch-ingestion/partial-ingestion/xdm-csv-workflow.png)
 
-Med *[!UICONTROL Partial ingestion]* växlingsknappen kan du aktivera eller inaktivera användning av partiell gruppinmatning.
+Med **[!UICONTROL Partial ingestion]** växlingsknappen kan du aktivera eller inaktivera användning av partiell gruppinmatning.
 
-Växlingsknappen *[!UICONTROL Error diagnostics]* visas bara när *[!UICONTROL Partial ingestion]* växlingsknappen är inaktiverad. Med den här funktionen kan du [!DNL Platform] generera detaljerade felmeddelanden om dina inkapslade batchar. Om *[!UICONTROL Partial ingestion]* växeln är aktiverad aktiveras förbättrad feldiagnostik automatiskt.
+Växlingsknappen **[!UICONTROL Error diagnostics]** visas bara när **[!UICONTROL Partial ingestion]** växlingsknappen är inaktiverad. Med den här funktionen kan du [!DNL Platform] generera detaljerade felmeddelanden om dina inkapslade batchar. Om **[!UICONTROL Partial ingestion]** växeln är aktiverad aktiveras förbättrad feldiagnostik automatiskt.
 
 ![](../images/batch-ingestion/partial-ingestion/xdm-csv-workflow-partial-ingestion-focus.png)
 
-Med *[!UICONTROL Error threshold]* den kan du ange procentandelen godtagbara fel innan hela gruppen misslyckas. Som standard är värdet 5 %.
+Med **[!UICONTROL Error threshold]** den kan du ange procentandelen godtagbara fel innan hela gruppen misslyckas. Som standard är värdet 5 %.
+
+## Hämtar metadata på filnivå {#download-metadata}
+
+Med Adobe Experience Platform kan användarna hämta indatafilernas metadata. Metadata bevaras inom [!DNL Platform] upp till 30 dagar.
+
+### Visa indatafiler {#list-files}
+
+Med följande begäran kan du visa en lista över alla filer som ingår i en slutförd grupp.
+
+**Begäran**
+
+```shell
+curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/meta?path=input_files \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 200 med JSON-objekt som innehåller sökvägsobjekt som anger var metadata sparades.
+
+```json
+{
+    "_page": {
+        "count": 1,
+        "limit": 100
+    },
+    "data": [
+        {
+            "_links": {
+                "self": {
+                    "href": "https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/meta?path=input_files/fileMetaData1.json"
+                }
+            },
+            "length": "1337",
+            "name": "fileMetaData1.json"
+        },
+                {
+            "_links": {
+                "self": {
+                    "href": "https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/meta?path=input_files/fileMetaData2.json"
+                }
+            },
+            "length": "1042",
+            "name": "fileMetaData2.json"
+        }
+    ]
+}
+```
+
+### Hämta metadata för indatafil {#retrieve-metadata}
+
+När du har hämtat en lista över alla olika indatafiler kan du hämta metadata för den enskilda filen med följande slutpunkt.
+
+**Begäran**
+
+```shell
+curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/meta?path=input_files/fileMetaData1.json \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 200 med JSON-objekt som innehåller sökvägsobjekt som anger var metadata sparades.
+
+```json
+{"path": "F1.json"}
+{"path": "etc/F2.json"}
+```
 
 ## Hämta fel för partiell gruppinmatning {#retrieve-errors}
 
@@ -155,7 +227,7 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/{BATCH_ID}
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-**Svar**
+**Svara utan fel**
 
 Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om batchstatusen.
 
@@ -164,10 +236,8 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om batchst
     "af838510-2233-11ea-acf0-f3edfcded2d2": {
         "status": "success",
         "tags": {
-            ...
             "acp_enableErrorDiagnostics": true,
             "acp_partialIngestionPercent": 5
-            ...
         },
         "relatedObjects": [
             {
@@ -186,7 +256,8 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om batchst
             "inputByteSize": 568,
             "inputFileCount": 4,
             "inputRecordCount": 519,
-            "outputRecordCount": 497
+            "outputRecordCount": 497,
+            "failedRecordCount": 0
         },
         "completed": 1576741722026,
         "created": 1576741597205,
@@ -199,7 +270,86 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om batchst
 }
 ```
 
-Om batchen har ett fel och feldiagnostik är aktiverat, kommer statusen att vara &quot;success&quot; med mer information om felet som finns i en hämtningsbar felfil.
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `metrics.failedRecordCount` | Antalet rader som inte kunde bearbetas på grund av parsning, konvertering eller validering. Det här värdet kan härledas genom att subtrahera `inputRecordCount` från `outputRecordCount`. Det här värdet genereras för alla batchar, oavsett om `errorDiagnostics` är aktiverat. |
+
+**Svara med fel**
+
+Om batchen har ett eller flera fel och feldiagnostik är aktiverat får du mer information `success` om felen både i svaret och i en hämtningsbar felfil.
+
+```json
+{
+    "01E8043CY305K2MTV5ANH9G1GC": {
+        "status": "success",
+        "tags": {
+            "acp_enableErrorDiagnostics": true,
+            "acp_partialIngestionPercent": 5
+        },
+        "relatedObjects": [
+            {
+                "type": "dataSet",
+                "id": "5deac2648a19d218a888d2b1"
+            }
+        ],
+        "id": "01E8043CY305K2MTV5ANH9G1GC",
+        "externalId": "01E8043CY305K2MTV5ANH9G1GC",
+        "inputFormat": {
+            "format": "parquet"
+        },
+        "imsOrg": "{IMS_ORG}",
+        "started": 1576741718543,
+        "metrics": {
+            "inputByteSize": 568,
+            "inputFileCount": 4,
+            "inputRecordCount": 519,
+            "outputRecordCount": 514,
+            "failedRecordCount": 5
+        },
+        "completed": 1576741722026,
+        "created": 1576741597205,
+        "createdClient": "{API_KEY}",
+        "createdUser": "{USER_ID}",
+        "updatedUser": "{USER_ID}",
+        "updated": 1576741722644,
+        "version": "1.0.5",
+        "errors": [
+           {
+             "code": "INGEST-1212-400",
+             "description": "Encountered 5 errors in the data. Successfully ingested 514 rows. Please review the associated diagnostic files for more details."
+           },
+           {
+             "code": "INGEST-1401-400",
+             "description": "The row has corrupted data and cannot be read or parsed. Fix the corrupted data and try again.",
+             "recordCount": 2
+           },
+           {
+             "code": "INGEST-1555-400",
+             "description": "A required field is either missing or has a value of null. Add the required field to the input row and try again.",
+             "recordCount": 3
+           }
+        ]
+    }
+}
+```
+
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `metrics.failedRecordCount` | Antalet rader som inte kunde bearbetas på grund av parsning, konvertering eller validering. Det här värdet kan härledas genom att subtrahera `inputRecordCount` från `outputRecordCount`. Det här värdet genereras för alla batchar, oavsett om `errorDiagnostics` är aktiverat. |
+| `errors.recordCount` | Antalet rader som misslyckades för den angivna felkoden. Det här värdet genereras **bara** om `errorDiagnostics` är aktiverat. |
+
+>[!NOTE]
+>
+>Om ingen feldiagnostik är tillgänglig visas följande felmeddelande i stället:
+> 
+```json
+> {
+>         "errors": [{
+>                 "code": "INGEST-1211-400",
+>                 "description": "Encountered errors while parsing, converting or otherwise validating the data. Please resend the data with error diagnostics enabled to collect additional information on failure types"
+>         }]
+> }
+> ```
 
 ## Nästa steg {#next-steps}
 
@@ -207,12 +357,11 @@ I den här självstudiekursen beskrivs hur du skapar eller ändrar en datauppsä
 
 ## Feltyper för partiell batchöverföring {#appendix}
 
-Delvis batchinmatning har fyra olika feltyper vid inmatning av data.
+Partiell batchinmatning har tre olika feltyper vid inmatning av data.
 
 - [Oläsbara filer](#unreadable)
 - [Ogiltiga scheman eller rubriker](#schemas-headers)
 - [Otolkningsbara rader](#unparsable)
-- [Ogiltig XDM-konvertering](#conversion)
 
 ### Oläsbara filer {#unreadable}
 
@@ -229,7 +378,7 @@ Om det finns rader som inte kan parsas i den inkapslade gruppen kommer batchfele
 **API-format**
 
 ```http
-GET /export/batches/{BATCH_ID}/failed?path=parse_errors
+GET /export/batches/{BATCH_ID}/meta?path=row_errors
 ```
 
 | Parameter | Beskrivning |
@@ -239,7 +388,7 @@ GET /export/batches/{BATCH_ID}/failed?path=parse_errors
 **Begäran**
 
 ```shell
-curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/failed?path=parse_errors \
+curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/meta?path=row_errors \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -252,68 +401,11 @@ Ett lyckat svar returnerar HTTP-status 200 med information om rader som inte kan
 
 ```json
 {
-    "_corrupt_record":"{missingQuotes:"v1"}",
+    "_corrupt_record": "{missingQuotes:"v1"}",
     "_errors": [{
-         "code":"1401",
-         "message":"Row is corrupted and cannot be read, please fix and resend."
+         "code": "1401",
+         "message": "Row is corrupted and cannot be read, please fix and resend."
     }],
     "_filename": "a1.json"
-}
-```
-
-### Ogiltig XDM-konvertering {#conversion}
-
-Om den inmatade gruppen innehåller ogiltiga XDM-konverteringar lagras batchfelen i en fil som du kan komma åt med följande slutpunkt.
-
-**API-format**
-
-```http
-GET /export/batches/{BATCH_ID}/failed?path=conversion_errors
-```
-
-| Parameter | Beskrivning |
-| --------- | ----------- |
-| `{BATCH_ID}` | Värdet `id` för gruppen som du hämtar felinformation från. |
-
-**Begäran**
-
-```shell
-curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/failed?path=conversion_errors \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}'
-```
-
-**Svar**
-
-Ett lyckat svar returnerar HTTP-status 200 med information om felen vid XDM-konvertering.
-
-```json
-{
-    "col1":"v1",
-    "col2":"v2",
-    "col3":[{
-        "g1":"h1"
-    }],
-    "_errors":[{
-        "column":"col3",
-        "code":"123",
-        "message":"Cannot convert array element from Object to String"
-    }],
-    "_filename":"a1.json"
-},
-{
-    "col1":"v1",
-    "col2":"v2",
-    "col3":[{
-        "g1":"h1"
-    }],
-    "_errors":[{
-        "column":"col1",
-        "code":"100",
-        "message":"Cannot convert string to float"
-    }],
-    "_filename":"a2.json"
 }
 ```
