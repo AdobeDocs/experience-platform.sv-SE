@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Förhandsgranska och beräkna slutpunkter
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 995fadef9abacf22d0561e0590dfbe172adf0a43
+source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
 workflow-type: tm+mt
 source-wordcount: '742'
 ht-degree: 1%
@@ -36,13 +36,17 @@ Exempelstorleken för genomsökningen beror på det totala antalet enheter i din
 | 1 till 20 miljoner | 1 miljon |
 | Över 20 miljoner | 5 % av det totala |
 
->[!NOTE] Uppskattningar tar i allmänhet 10 till 15 sekunder att köra, med början med en grov uppskattning och förfining allt eftersom fler poster läses.
+>[!NOTE]
+>
+>Uppskattningar tar i allmänhet 10 till 15 sekunder att köra, med början med en grov uppskattning och förfining allt eftersom fler poster läses.
 
 ## Skapa en ny förhandsgranskning {#create-preview}
 
 Du kan skapa en ny förhandsgranskning genom att göra en POST-förfrågan till `/preview` slutpunkten.
 
->[!NOTE] Ett uppskattningsjobb skapas automatiskt när ett förhandsgranskningsjobb skapas. Dessa två jobb delar samma ID.
+>[!NOTE]
+>
+>Ett uppskattningsjobb skapas automatiskt när ett förhandsgranskningsjobb skapas. Dessa två jobb delar samma ID.
 
 **API-format**
 
@@ -167,7 +171,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `results` | En lista över enhets-ID:n, tillsammans med deras relaterade identiteter. De angivna länkarna kan användas för att söka efter de angivna entiteterna med hjälp av [!DNL Profile Access API](../../profile/api/entities.md). |
+| `results` | En lista över enhets-ID:n, tillsammans med deras relaterade identiteter. De angivna länkarna kan användas för att leta upp de angivna entiteterna med hjälp av [!DNL Profile Access API](../../profile/api/entities.md). |
 
 ## Hämta resultaten från ett specifikt uppskattningsjobb {#get-estimate}
 
