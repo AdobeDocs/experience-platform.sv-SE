@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa e-postmarknadsföringsmål
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 5c5f6c4868e195aef76bacc0a1e5df3857647bde
+source-git-commit: accc94ae8f19ca3a1575b4408f85155a17741335
 workflow-type: tm+mt
-source-wordcount: '1611'
+source-wordcount: '1610'
 ht-degree: 0%
 
 ---
@@ -14,9 +14,9 @@ ht-degree: 0%
 
 # Skapa e-postmarknadsföringsmål och aktivera data i Adobe [!DNL Real-time Customer Data Platform]
 
-I den här självstudiekursen visas hur du använder API-anrop för att ansluta till dina Adobe Experience Platform-data, skapa ett [e-postmarknadsföringsmål](../../rtcdp/destinations/email-marketing-destinations.md), skapa ett dataflöde till det nya mål du skapat och aktivera data till det nya mål du skapat.
+I den här självstudiekursen visas hur du använder API-anrop för att ansluta till dina Adobe Experience Platform-data, skapa ett [e-postmarknadsföringsmål](../../rtcdp/destinations/email-marketing-destinations.md), skapa ett dataflöde till det nya målet som du skapat och aktivera data till det nya målet som du skapat.
 
-I den här självstudien används målet Adobe Campaign i alla exempel, men stegen är identiska för alla e-postmarknadsföringsmål.
+I den här självstudien används Adobe Campaign-destinationen i alla exempel, men stegen är identiska för alla e-postmarknadsföringsmål.
 
 ![Översikt - stegen för att skapa ett mål och aktivera segment](../images/destinations/flow-api-destinations-steps-overview.png)
 
@@ -55,7 +55,8 @@ Resurser i [!DNL Experience Platform] kan isoleras till specifika virtuella sand
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
->[!Note]
+>[!NOTE]
+>
 >Mer information om sandlådor i [!DNL Experience Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
@@ -517,7 +518,7 @@ curl -X POST \
     }
 ```
 
-* `{FLOW_SPEC_ID}`: Använd flödet för det e-postmarknadsföringsmål som du vill ansluta till. Om du vill hämta flödesspecifikationen utför du en GET-åtgärd på `flowspecs` slutpunkten. Se Swagger-dokumentation här: https://platform.adobe.io/data/foundation/flowservice/swagger#/Flow%20Specs%20API/getFlowSpecs. I svaret söker du efter `upsTo` och kopierar motsvarande ID för e-postmarknadsföringsmålet som du vill ansluta till. För Adobe Campaign söker du efter `upsToCampaign` och kopierar `id` parametern.
+* `{FLOW_SPEC_ID}`: Använd flödet för det e-postmarknadsföringsmål som du vill ansluta till. Om du vill hämta flödesspecifikationen utför du en GET-åtgärd på `flowspecs` slutpunkten. Se Swagger-dokumentation här: https://platform.adobe.io/data/foundation/flowservice/swagger#/Flow%20Specs%20API/getFlowSpecs. I svaret söker du efter `upsTo` och kopierar motsvarande ID för e-postmarknadsföringsmålet som du vill ansluta till. För Adobe Campaign söker du till exempel efter `upsToCampaign` och kopierar `id` parametern.
 * `{SOURCE_CONNECTION_ID}`: Använd det källanslutnings-ID som du fick i steget [Anslut till Experience Platform](#connect-to-your-experience-platform-data).
 * `{TARGET_CONNECTION_ID}`: Använd det målanslutnings-ID som du fick i steget [Ansluta till e-postmarknadsföringsmålet](#connect-to-email-marketing-destination).
 
