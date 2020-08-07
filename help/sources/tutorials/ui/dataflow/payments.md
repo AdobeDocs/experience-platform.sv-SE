@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Konfigurera ett dataflöde för en betalningsanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 91714bea4e165d64bcc33e32e73d1d32a505ba00
+source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
 workflow-type: tm+mt
 source-wordcount: '1165'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Konfigurera ett dataflöde för en betalningsanslutning i användargränssnittet
 
-Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en datauppsättning från Adobe Experience Platform. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt betalkonto.
+Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en Adobe Experience Platform-datauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt betalkonto.
 
 ## Komma igång
 
@@ -40,7 +40,7 @@ Markera den katalog som du vill använda och välj sedan **[!UICONTROL Next]**.
 
 ## Mappa datafält till ett XDM-schema
 
-Steget visas med ett interaktivt gränssnitt som du kan använda för att mappa källdata till en *[!UICONTROL Mapping]* [!DNL Platform] datauppsättning.
+Steget visas och innehåller ett interaktivt gränssnitt för att mappa källdata till en *[!UICONTROL Mapping]* [!DNL Platform] datauppsättning.
 
 Välj en datauppsättning för inkommande data som ska importeras till. Du kan antingen använda en befintlig datauppsättning eller skapa en ny datauppsättning.
 
@@ -96,7 +96,9 @@ Välj **[!UICONTROL Load incremental data by]** att tilldela deltakolumnen. I de
 
 Om du vill ställa in engångsintag väljer du den nedrullningsbara pilen för frekvens och väljer **[!UICONTROL Once]**.
 
->[!TIP] **[!UICONTROL Interval]** och **[!UICONTROL Backfill]** inte är synliga vid engångsbruk.
+>[!TIP]
+>
+>**[!UICONTROL Interval]** och **[!UICONTROL Backfill]** inte är synliga vid engångsbruk.
 
 När du har angett lämpliga värden för schemat väljer du **[!UICONTROL Next]**.
 
