@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa och publicera genomgång av en maskininlärningsmodell
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
 workflow-type: tm+mt
 source-wordcount: '1489'
 ht-degree: 0%
@@ -56,7 +56,7 @@ Om du vill skapa en maskininlärningsmodell som gör personaliserade produktreko
 
 ### Utforska data och förstå scheman
 
-1. Logga in på [Adobe Experience Platform](https://platform.adobe.com/) och klicka **[!UICONTROL Datasets]** för att visa alla befintliga datauppsättningar och markera den datauppsättning som du vill utforska. I det här fallet, [!DNL Analytics] datauppsättningen **Golden Data Set postValues**.
+1. Logga in på [Adobe Experience Platform](https://platform.adobe.com/) och klicka **[!UICONTROL Datasets]** för att visa alla befintliga datauppsättningar och välj den datauppsättning som du vill utforska. I det här fallet, [!DNL Analytics] datauppsättningen **Golden Data Set postValues**.
    ![](../images/models-recipes/model-walkthrough/datasets_110.png)
 2. Välj **[!UICONTROL Preview Dataset]** nära det övre högra hörnet för att undersöka exempelposter och klicka sedan på **[!UICONTROL Close]**.
    ![](../images/models-recipes/model-walkthrough/golden_data_set_110.png)
@@ -117,7 +117,9 @@ Du kan välja att vänta tills kursen är klar eller fortsätta att skapa en ny 
 
    Det går inte att lära sig hyperparametrar, och de måste därför tilldelas innan utbildning kan genomföras. Justering av hyperparametrar kan ändra noggrannheten för utbildningsmodellen. Eftersom det är en iterativ process att optimera en modell kan det krävas flera kurser innan en tillfredsställande utvärdering kan göras.
 
-   >[!TIP] Ange **[!UICONTROL num_recommendations]** till 10.
+   >[!TIP]
+   >
+   >Ange **[!UICONTROL num_recommendations]** till 10.
 
    ![](../images/models-recipes/model-walkthrough/configure_hyperparameter.png)
 3. Ytterligare en datapunkt visas i modellutvärderingsschemat när den nya kursen är klar, vilket kan ta upp till flera minuter.
@@ -141,7 +143,7 @@ Det sista steget i arbetsflödet för datavetenskap är att driftsätta din mode
 
 1. Klicka på namnet på den mest effektiva kursen på sidan *för produktrekommendationsmodellöversikt* , med de högsta värdena för återkallande och precision.
 2. Klicka på uppe till höger på informationssidan för utbildningskörningen **[!UICONTROL Score]**.
-3. Välj **[!UICONTROL Recommendations Input Dataset]** som betygsindatauppsättning, som är samma datauppsättning som du använde när du skapade modellen och körde dess utbildning. Klicka sedan på **[!UICONTROL Next]**.
+3. Välj **[!UICONTROL Recommendations Input Dataset]** som betygsindatauppsättning, som är samma datauppsättning som du använde när du skapade modellen och körde dess utbildning. Then, click **[!UICONTROL Next]**.
    ![](../images/models-recipes/model-walkthrough/scoring_input.png)
 4. Välj **[!UICONTROL Recommendations Output Dataset]** som resultatdatauppsättning. Bedömningsresultaten kommer att lagras i den här datauppsättningen som en batch.
    ![](../images/models-recipes/model-walkthrough/scoring_output.png)
