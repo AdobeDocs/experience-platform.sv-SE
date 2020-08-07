@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Anslut med PSQL
 topic: connect
 translation-type: tm+mt
-source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+source-git-commit: 1214728063c5835510fda1a16bf1fdcca4abee48
 workflow-type: tm+mt
 source-wordcount: '164'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -68,7 +68,9 @@ Klicka **[!UICONTROL copy]** för *[!UICONTROL PSQL Command]*.
 
 ![Bild](../images/clients/psql/connect-bi.png)
 
->[!IMPORTANT]: Om du är på en dator använder du en textredigerare för att ta bort radbrytningarna i kommandosträngen och kopierar sedan strängen.
+>[!IMPORTANT]
+>
+>Om du är på en dator använder du en textredigerare för att ta bort radbrytningarna i kommandosträngen och kopierar sedan strängen.
 
 Klistra in kommandosträngen i ett terminal- eller kommandofönster och tryck på Retur.
 
