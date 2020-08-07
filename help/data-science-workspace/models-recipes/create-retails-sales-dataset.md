@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa försäljningsschema och datauppsättning för återförsäljning
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 4f7d7e2bf255afe1588dbe7cfb2ec055f2dcbf75
+source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
 workflow-type: tm+mt
 source-wordcount: '497'
 ht-degree: 0%
@@ -20,7 +20,7 @@ I den här självstudiekursen får du de krav och resurser som krävs för alla 
 
 Innan du startar den här självstudiekursen måste du ha följande krav:
 - Åtkomst till [!DNL Adobe Experience Platform]. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform]kontaktar du systemadministratören innan du fortsätter.
-- Behörighet att göra [!DNL Experience Platform] API-anrop. Slutför självstudiekursen [Autentisera och få tillgång till API:er](../../tutorials/authentication.md) för Adobe Experience Platform för att få följande värden för att slutföra den här självstudiekursen:
+- Behörighet att göra [!DNL Experience Platform] API-anrop. Fyll i självstudiekursen [Autentisera och få tillgång till Adobe Experience Platform API](../../tutorials/authentication.md) :er för att få följande värden för att lyckas med den här självstudiekursen:
    - Behörighet: `{ACCESS_TOKEN}`
    - x-api-key: `{API_KEY}`
    - x-gw-ims-org-id: `{IMS_ORG}`
@@ -98,7 +98,9 @@ Butiksförsäljningsschemat och datauppsättningarna skapas automatiskt med det 
    python bootstrap.py
    ```
 
-   >[!NOTE] Skriptet kan ta flera minuter att slutföra.
+   >[!NOTE]
+   >
+   >Skriptet kan ta flera minuter att slutföra.
 
 ## Nästa steg
 
