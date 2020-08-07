@@ -4,15 +4,15 @@ solution: Experience Platform
 title: Ansluta till direktuppspelningsmål och aktivera data
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+source-git-commit: dce9a7040ad25d5bb08de95fce7655f1fec7c226
 workflow-type: tm+mt
-source-wordcount: '1807'
+source-wordcount: '1806'
 ht-degree: 0%
 
 ---
 
 
-# Ansluta till direktuppspelningsmål och aktivera data i Adobe kunddata i realtid med Platform API:er
+# Ansluta till direktuppspelningsmål och aktivera data i Adobe Real-time Customer Data Platform med API:er
 
 >[!NOTE]
 >
@@ -32,7 +32,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 
 * [!DNL Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
 * [!DNL Catalog Service](../../catalog/home.md): [!DNL Catalog] är registersystemet för dataplats och datalinje inom Experience Platform.
-* [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda Platform-instans till separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data till direktuppspelningsdestinationer i CDP i realtid i Adobe.
 
@@ -49,17 +49,18 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska och valfria rubriker {#gather-values}
 
-För att kunna ringa anrop till Platform API:er måste du först slutföra [autentiseringssjälvstudiekursen](/help/tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna ringa anrop till plattforms-API:er måste du först slutföra [autentiseringssjälvstudiekursen](/help/tutorials/authentication.md). När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Resurser i Experience Platform kan isoleras till specifika virtuella sandlådor. I förfrågningar till Platform API:er kan du ange namn och ID för sandlådan som åtgärden ska utföras i. Dessa är valfria parametrar.
+Resurser i Experience Platform kan isoleras till specifika virtuella sandlådor. I förfrågningar till plattforms-API:er kan du ange namnet och ID:t för sandlådan som åtgärden ska utföras i. Dessa är valfria parametrar.
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
->[!Note]
+>[!NOTE]
+>
 >Mer information om sandlådor i Experience Platform finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
