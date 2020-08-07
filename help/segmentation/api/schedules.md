@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Scheman
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: b3e6a6f1671a456b2ffa61139247c5799c495d92
+source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
 workflow-type: tm+mt
 source-wordcount: '1171'
 ht-degree: 1%
@@ -55,7 +55,9 @@ curl -X GET https://platform.adobe.io/data/core/ups/config/schedules?limit=10 \
 
 Ett lyckat svar returnerar HTTP-status 200 med en lista över scheman för den angivna IMS-organisationen som JSON.
 
->[!NOTE] Följande svar har trunkerats för utrymme och visar endast det första schemat som returnerats.
+>[!NOTE]
+>
+>Följande svar har trunkerats för utrymme och visar endast det första schemat som returnerats.
 
 ```json
 {
