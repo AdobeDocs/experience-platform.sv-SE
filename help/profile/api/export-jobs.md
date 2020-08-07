@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: Exportjobb - Kundprofil-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: 2c0466bf0534d09e3cad54caef213def122d948b
+source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
 workflow-type: tm+mt
 source-wordcount: '1494'
 ht-degree: 0%
@@ -20,7 +20,7 @@ Det här dokumentet innehåller stegvisa instruktioner för att skapa och hanter
 
 >[!NOTE]
 >
->I den här guiden beskrivs hur du använder exportjobb i [!DNL Profile API]. Mer information om hur du hanterar exportjobb för segmenteringstjänsten Adobe Experience Platform finns i guiden om [exportjobb i segmenterings-API](../../profile/api/export-jobs.md).
+>I den här guiden beskrivs hur du använder exportjobb i [!DNL Profile API]. Mer information om hur du hanterar exportjobb för Adobe Experience Platform segmenteringstjänst finns i guiden om [exportjobb i segmenterings-API](../../profile/api/export-jobs.md).
 
 Förutom att skapa ett exportjobb kan du även komma åt [!DNL Profile] data via `/entities` slutpunkten, som också kallas&quot;[!DNL Profile Access]&quot;. Mer information finns i [enheternas slutpunktshandbok](./entities.md) . Anvisningar om hur du får åtkomst till [!DNL Profile] data med användargränssnittet finns i [användarhandboken](../ui/user-guide.md).
 
@@ -146,7 +146,9 @@ curl -X POST \
 | `destination` | **(Obligatoriskt)** Målinformation för exporterade data:<ul><li>`destination.datasetId`: **(Obligatoriskt)** ID:t för datauppsättningen där data ska exporteras.</li><li>`destination.segmentPerBatch`: *(Valfritt)* Ett booleskt värde som, om det inte anges, är som standard `false`. Värdet för `false` exporterar alla segment-ID:n till ett enda batch-ID. Värdet för `true` exporterar ett segment-ID till ett batch-ID. Observera att om du anger värdet som ska `true` påverkas batchexportens prestanda.</li></ul> |
 | `schema.name` | **(Obligatoriskt)** Namnet på schemat som är associerat med datauppsättningen där data ska exporteras. |
 
->[!NOTE] Om du bara vill exportera profildata och inte inkludera relaterade tidsseriedata tar du bort objektet&quot;additionalFields&quot; från begäran.
+>[!NOTE]
+>
+>Om du bara vill exportera profildata och inte inkludera relaterade tidsseriedata tar du bort objektet&quot;additionalFields&quot; från begäran.
 
 **Svar**
 
