@@ -1,26 +1,26 @@
 ---
-keywords: Experience Platform;home;intelligent services;popular topics
+keywords: Experience Platform;home;Intelligent Services;popular topics
 solution: Experience Platform
 title: Förbered data för användning i intelligenta tjänster
 topic: Intelligent Services
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 88e4a183422dd1bc625fd842e24c2604fb249c91
 workflow-type: tm+mt
-source-wordcount: '1877'
+source-wordcount: '1923'
 ht-degree: 0%
 
 ---
 
 
-# Förbered data för användning i intelligenta tjänster
+# Förbered data för användning i [!DNL Intelligent Services]
 
-För att Intelligent Services ska kunna hitta insikter från era marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. Intelligenta tjänster utnyttjar XDM-scheman (Experience Data Model) för att uppnå detta. Alla datauppsättningar som används i Intelligent Services måste överensstämma med **CEE-schemat (Consumer ExperienceEvent)** XDM.
+För [!DNL Intelligent Services] att ni ska kunna hitta insikter från era marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. [!DNL Intelligent Services] utnyttja [!DNL Experience Data Model] XDM-scheman för att uppnå detta. Alla datauppsättningar som används i måste överensstämma med [!DNL Intelligent Services] CEE-schemat (Consumer Experience ExperienceEvent) **** .
 
 Det här dokumentet innehåller allmän vägledning om hur du mappar data om marknadsföringshändelser från flera kanaler till det här schemat, och ger information om viktiga fält i schemat för att hjälpa dig att avgöra hur data effektivt kan mappas till dess struktur.
 
 ## Sammanfattning av arbetsflöde
 
-Beredningsprocessen varierar beroende på om dina data lagras i Adobe Experience Platform eller externt. I det här avsnittet sammanfattas de steg som du behöver utföra med tanke på båda scenarierna.
+Förberedelseprocessen varierar beroende på om dina data lagras i Adobe Experience Platform eller externt. I det här avsnittet sammanfattas de steg som du behöver utföra med tanke på båda scenarierna.
 
 ### Förberedelse av externa data
 
@@ -28,36 +28,36 @@ Om dina data lagras utanför [!DNL Experience Platform]följer du stegen nedan:
 
 1. Kontakta Adobe Consulting Services för att begära åtkomstautentiseringsuppgifter för en dedikerad Azure Blob Storage-behållare.
 1. Ladda upp dina data till blobbehållaren med dina inloggningsuppgifter.
-1. Arbeta med Adobe Consulting Services för att mappa data till [Consumer ExperienceEvent-schemat](#cee-schema) och lägga in dem i Intelligent Services.
+1. Arbeta med Adobe Consulting Services för att mappa data till [Consumer ExperienceEvent-schemat](#cee-schema) och lägga in dem [!DNL Intelligent Services].
 
 ### [!DNL Experience Platform] dataförberedelse
 
 Om dina data redan är lagrade i [!DNL Platform]följer du stegen nedan:
 
 1. Granska strukturen för [Consumer ExperienceEvent-schemat](#cee-schema) och se om dina data kan mappas till dess fält.
-1. Kontakta Adobe Consulting Services för att mappa dina data till schemat och importera dem till Intelligent Services, eller [följ stegen i den här guiden](#mapping) om du vill mappa data själv.
+1. Kontakta Adobe Consulting Services för att mappa dina data till schemat och importera dem [!DNL Intelligent Services]eller [följ stegen i den här guiden](#mapping) om du vill mappa data själv.
 
 ## CEE-schemat {#cee-schema}
 
-Consumer ExperienceEvent-schemat beskriver en individs beteende när det gäller digitala marknadsföringshändelser (webb eller mobil) samt online- eller offlinehandel. Det här schemat måste användas för intelligenta tjänster på grund av semantiskt väl definierade fält (kolumner), så att okända namn som annars skulle göra data mindre tydliga undviks.
+Consumer ExperienceEvent-schemat beskriver en individs beteende när det gäller digitala marknadsföringshändelser (webb eller mobil) samt online- eller offlinehandel. Det här schemat måste användas [!DNL Intelligent Services] på grund av semantiskt väldefinierade fält (kolumner), så att okända namn som annars skulle göra data mindre tydliga undviks.
 
 CEE-schemat, liksom alla XDM ExperienceEvent-scheman, hämtar systemets tidsseriebaserade tillstånd när en händelse (eller uppsättning händelser) inträffade, inklusive tidpunkten och identiteten för det berörda ämnet. Experience Events är faktauppgifter om vad som hände, och de är därför oföränderliga och representerar vad som hände utan aggregering eller tolkning.
 
-Intelligent Services använder flera nyckelfält i detta schema för att generera insikter från era marknadsföringshändelsedata, som alla kan hittas på rotnivå och expanderas för att visa de underfält som krävs.
+[!DNL Intelligent Services] använda flera nyckelfält i det här schemat för att generera insikter från era marknadsföringshändelsedata, som alla kan hittas på rotnivå och expanderas för att visa de underfält som krävs.
 
 ![](./images/data-preparation/schema-expansion.gif)
 
 Precis som alla XDM-scheman är CEE-blandningen utökningsbar. Med andra ord kan ytterligare fält läggas till i CEE-mixen, och olika varianter kan vid behov inkluderas i flera scheman.
 
-Ett fullständigt exempel på blandningen finns i den [offentliga XDM-databasen](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-consumer.schema.md)och bör användas som referens för de nyckelfält som beskrivs i avsnittet nedan.
+Ett fullständigt exempel på blandningen finns i den [offentliga XDM-databasen](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-consumer.schema.md). Dessutom kan du visa och kopiera följande [JSON-fil](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json) för att få ett exempel på hur data kan struktureras så att de överensstämmer med CEE-schemat. Läs båda dessa exempel när du lär dig mer om de nyckelfält som beskrivs i avsnittet nedan för att avgöra hur du kan mappa dina egna data till schemat.
 
 ## Nyckelfält
 
-Det finns flera nyckelfält i CEE-mixen som bör användas för att Intelligent Services ska kunna generera användbara insikter. I det här avsnittet beskrivs användningsfallet och förväntade data för dessa fält, och det finns länkar till referensdokumentation för ytterligare exempel.
+Det finns flera nyckelfält i CEE-mixen som bör användas för [!DNL Intelligent Services] att generera användbara insikter. I det här avsnittet beskrivs användningsfallet och förväntade data för dessa fält, och det finns länkar till referensdokumentation för ytterligare exempel.
 
 ### Obligatoriska fält
 
-Alla nyckelfält bör användas, men det finns två fält som **krävs** för att de intelligenta tjänsterna ska fungera:
+Alla nyckelfält bör användas, men det finns två fält som **krävs** för [!DNL Intelligent Services] att fungera:
 
 * [Ett primärt identitetsfält](#identity)
 * [xdm:tidsstämpel](#timestamp)
@@ -65,7 +65,7 @@ Alla nyckelfält bör användas, men det finns två fält som **krävs** för at
 
 #### Primär identitet {#identity}
 
-Ett av fälten i ditt schema måste anges som ett primärt identitetsfält, som gör att Intelligent Services kan länka varje instans av tidsseriedata till en enskild person.
+Ett av fälten i schemat måste anges som ett primärt identitetsfält, som gör det möjligt [!DNL Intelligent Services] att länka varje instans av tidsseriedata till en enskild person.
 
 Du måste fastställa det bästa fältet som ska användas som primär identitet baserat på källan och datatypen. Ett identitetsfält måste innehålla ett **identitetsnamnutrymme** som anger vilken typ av identitetsdata som fältet förväntar som ett värde. Några giltiga namnutrymmesvärden är:
 
@@ -120,7 +120,7 @@ I följande tabell visas några exempel på marknadsföringskanaler som har mapp
 
 ### Rekommenderade fält
 
-I det här avsnittet beskrivs resten av nyckelfälten. Dessa fält behövs inte nödvändigtvis för att Intelligent Services ska fungera, men vi rekommenderar att du använder så många som möjligt för att få bättre insikter.
+I det här avsnittet beskrivs resten av nyckelfälten. Även om dessa fält inte nödvändigtvis behövs för [!DNL Intelligent Services] att fungera rekommenderar vi att du använder så många som möjligt för att få bättre insikter.
 
 #### xdm:productListItems
 
@@ -239,7 +239,7 @@ Fullständig information om samtliga obligatoriska underfält för `xdm:productL
 
 ## Mappning och inhämtning av data (#mapping)
 
-När ni väl har fastställt om era data om marknadsföringshändelser kan mappas till CEE-schemat är nästa steg att avgöra vilka data ni ska hämta till Intelligent Services. Alla historiska data som används i Intelligent Services måste ligga inom den kortaste tidsgränsen på fyra månaders data plus det antal dagar som avses som en uppslagsperiod.
+När du har fastställt om dina data för marknadsföringshändelser kan mappas till CEE-schemat är nästa steg att avgöra vilka data du ska hämta till [!DNL Intelligent Services]. Alla historiska data som används i [!DNL Intelligent Services] måste ligga inom den kortaste tidsgränsen på fyra månaders data plus det antal dagar som är avsett som en uppslagsperiod.
 
 När du har bestämt vilket dataintervall du vill skicka kan du kontakta Adobe Consulting Services för att mappa dina data till schemat och överföra dem till tjänsten.
 
@@ -251,7 +251,7 @@ Om du har en [!DNL Adobe Experience Platform] prenumeration och vill mappa och i
 >
 >Stegen nedan kräver en prenumeration på Experience Platform. Om du inte har tillgång till Platform går du vidare till [nästa steg](#next-steps) .
 
-I det här avsnittet beskrivs arbetsflödet för mappning och inmatning av data till Experience Platform för användning i intelligenta tjänster, inklusive länkar till självstudiekurser för detaljerade steg.
+I det här avsnittet beskrivs arbetsflödet för mappning och inmatning av data till Experience Platform för användning i [!DNL Intelligent Services], inklusive länkar till självstudiekurser för detaljerade steg.
 
 #### Skapa ett CEE-schema och en datauppsättning
 
@@ -271,7 +271,7 @@ När du har skapat och sparat schemat kan du skapa en ny datauppsättning som ba
 * [Skapa en datauppsättning i användargränssnittet](../catalog/datasets/user-guide.md#create) (Följ arbetsflödet för att använda ett befintligt schema)
 * [Skapa en datauppsättning i API:t](../catalog/datasets/create.md)
 
-När datauppsättningen har skapats kan du hitta den i Platform-gränssnittet på *[!UICONTROL Datasets]* arbetsytan.
+När datauppsättningen har skapats kan du hitta den i plattformsgränssnittet på *[!UICONTROL Datasets]* arbetsytan.
 
 ![](images/data-preparation/dataset-location.png)
 
@@ -279,7 +279,7 @@ När datauppsättningen har skapats kan du hitta den i Platform-gränssnittet p�
 
 >[!NOTE]
 >
->Framtida releaser av Intelligent Services kommer att integrera [Adobe Experience Platform Identity Service](../identity-service/home.md) i deras funktioner för kundidentifiering. Stegen nedan kan ändras.
+>Framtida releaser av [!DNL Intelligent Services] kommer att integrera [Adobe Experience Platform Identity Service](../identity-service/home.md) i sina funktioner för kundidentifiering. Stegen nedan kan ändras.
 
 Om du hämtar in data från [!DNL Adobe Audience Manager], [!DNL Adobe Analytics]eller någon annan extern källa, måste du lägga till en `primaryIdentityNameSpace` -tagg i datauppsättningen. Detta kan du göra genom att göra en PATCH-begäran till katalogtjänstens API.
 
@@ -339,7 +339,7 @@ curl -X PATCH \
 
 >[!NOTE]
 >
->Mer information om hur du arbetar med identitetsnamnutrymmen i Platform finns i översikten över [identitetsnamnutrymmet](../identity-service/namespaces.md).
+>Mer information om hur du arbetar med identitetsnamnutrymmen i plattformen finns i översikten över [identitetsnamnutrymmet](../identity-service/namespaces.md).
 
 **Svar**
 
@@ -353,15 +353,17 @@ Ett lyckat svar returnerar en array som innehåller ID:t för den uppdaterade da
 
 #### Mappa och importera data {#ingest}
 
-När du har skapat ett CEE-schema och en datauppsättning kan du börja mappa dina datatabeller till schemat och importera dessa data till Platform. I självstudiekursen om hur du [mappar en CSV-fil till ett XDM-schema](../ingestion/tutorials/map-a-csv-file.md) finns mer information om hur du gör detta i användargränssnittet. När en datauppsättning har fyllts i kan samma datauppsättning användas för att importera ytterligare datafiler.
+När du har skapat ett CEE-schema och en datauppsättning kan du börja mappa dina datatabeller till schemat och importera dessa data till plattformen. I självstudiekursen om hur du [mappar en CSV-fil till ett XDM-schema](../ingestion/tutorials/map-a-csv-file.md) finns mer information om hur du gör detta i användargränssnittet. Du kan använda följande [exempel på JSON-fil](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json) för att testa hur du tar bort innehåll innan du använder egna data.
 
-Om dina data lagras i ett tredjepartsprogram som stöds kan du även välja att skapa en [källanslutning](../sources/home.md) för att importera dina marknadsföringshändelsedata till Platform i realtid.
+När en datauppsättning har fyllts i kan samma datauppsättning användas för att importera ytterligare datafiler.
+
+Om dina data lagras i ett tredjepartsprogram som stöds kan du även välja att skapa en [källanslutning](../sources/home.md) för att importera dina marknadsföringshändelsedata till [!DNL Platform] i realtid.
 
 ## Nästa steg {#next-steps}
 
-Det här dokumentet innehåller allmän vägledning om hur du förbereder data för användning i Intelligent Services. Om du behöver ytterligare konsultation baserat på ditt användningsfall, kontakta Adobe konsultsupport.
+Detta dokument innehåller allmän vägledning om hur du förbereder dina data för användning i [!DNL Intelligent Services]. Om du behöver ytterligare konsultation baserat på ditt användningsfall, kontakta Adobe konsultsupport.
 
-När ni har fyllt i en datauppsättning med era kundupplevelsedata kan ni använda intelligenta tjänster för att generera insikter. Se följande dokument för att komma igång:
+När ni har fyllt i en datauppsättning med era kundupplevelsedata kan ni använda [!DNL Intelligent Services] för att generera insikter. Se följande dokument för att komma igång:
 
 * [Översikt över Attribution AI](./attribution-ai/overview.md)
 * [Översikt över AI för kunder](./customer-ai/overview.md)
