@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Definiera en relation mellan två scheman med API:t för schemaregister
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: 849142e44c56f2958e794ca6aefaccd5670c28ba
+source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
 workflow-type: tm+mt
 source-wordcount: '1274'
 ht-degree: 0%
@@ -38,7 +38,9 @@ Du förväntas redan ha skapat de två scheman som ska definieras i relationen. 
 
 Schemarelationer representeras av ett **källschema** med ett fält som refererar till ett annat fält i ett **målschema**. I de följande stegen blir &quot;[!DNL Loyalty Members]&quot; källschemat, medan &quot;[!DNL Hotels]&quot; fungerar som målschema.
 
->[!IMPORTANT] För att upprätta en relation måste båda scheman ha definierade primära identiteter och aktiveras för [!DNL Real-time Customer Profile]. Se avsnittet om [aktivering av ett schema för användning i profil](./create-schema-api.md#profile) i självstudiekursen för att skapa schema om du behöver hjälp med att konfigurera scheman därefter.
+>[!IMPORTANT]
+>
+>För att upprätta en relation måste båda scheman ha definierade primära identiteter och aktiveras för [!DNL Real-time Customer Profile]. Se avsnittet om [aktivering av ett schema för användning i profil](./create-schema-api.md#profile) i självstudiekursen för att skapa schema om du behöver hjälp med att konfigurera scheman därefter.
 
 Om du vill definiera en relation mellan två scheman måste du först hämta `$id` värdena för båda scheman. Om du känner till visningsnamnen (`title`) för scheman kan du hitta deras `$id` värden genom att göra en GET-begäran till `/tenant/schemas` slutpunkten i [!DNL Schema Registry] API:t.
 
@@ -108,7 +110,7 @@ Registrera `$id` värdena för de två scheman som du vill definiera en relation
 
 ## Definiera ett referensfält för källschemat
 
-I [!DNL Schema Registry]fungerar relationsbeskrivningarna på liknande sätt som sekundärnycklar i relationsdatabastabeller: ett fält i källschemat fungerar som en referens till det **primära identitetsfältet** i ett målschema. Om källschemat inte har något fält för detta ändamål, kan du behöva skapa en blandning med det nya fältet och lägga till det i schemat. Det nya fältet måste ha `type` värdet &quot;[!DNL string]&quot;.
+I [!DNL Schema Registry]fungerar relationsbeskrivningarna på liknande sätt som sekundärnycklar i relationsdatabastabeller: ett fält i källschemat fungerar som en referens till det **primära identitetsfältet** i ett målschema. Om källschemat inte har något fält för det här ändamålet kan du behöva skapa en blandning med det nya fältet och lägga till det i schemat. Det nya fältet måste ha `type` värdet &quot;[!DNL string]&quot;.
 
 >[!IMPORTANT]
 >
@@ -116,7 +118,9 @@ I [!DNL Schema Registry]fungerar relationsbeskrivningarna på liknande sätt som
 
 I den här självstudiekursen innehåller målschemat&quot;[!DNL Hotels]&quot; ett `email` fält som fungerar som schemats primära identitet och fungerar därför även som referensfält. Källschemat &quot;[!DNL Loyalty Members]&quot; har emellertid inget dedikerat fält som ska användas som referens och måste ges en ny blandning som lägger till ett nytt fält i schemat: `favoriteHotel`.
 
->[!NOTE] Om källschemat redan har ett dedikerat fält som du tänker använda som referensfält kan du hoppa till steget när du [skapar en referensbeskrivning](#reference-identity).
+>[!NOTE]
+>
+>Om källschemat redan har ett dedikerat fält som du tänker använda som referensfält kan du hoppa till steget när du [skapar en referensbeskrivning](#reference-identity).
 
 ### Skapa en ny blandning
 
