@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Utbildning och utvärdering av modell (UI)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
+source-git-commit: 1214728063c5835510fda1a16bf1fdcca4abee48
 workflow-type: tm+mt
 source-wordcount: '961'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
@@ -26,7 +26,7 @@ Den här självstudiekursen kräver en befintlig recept. Om du inte har någon r
 
 ## Skapa en modell
 
-1. Klicka på länken i den vänstra navigeringskolumnen i Adobe Experience Platform om du vill visa alla befintliga modeller. **[!UICONTROL Models]** Klicka **[!UICONTROL Create Model]** uppe till höger på sidan när du vill skapa en modell.
+1. I Adobe Experience Platform klickar du på den **[!UICONTROL Models]** länk som finns i den vänstra navigeringskolumnen för att visa alla befintliga modeller. Klicka **[!UICONTROL Create Model]** uppe till höger på sidan när du vill skapa en modell.
    ![](../images/models-recipes/train-evaluate-ui/models_browse.png)
 
 2. Bläddra igenom listan med befintliga recept, sök efter och välj den mottagare som ska användas för att skapa modellen och klicka på **[!UICONTROL Next]**.
@@ -36,13 +36,16 @@ Den här självstudiekursen kräver en befintlig recept. Om du inte har någon r
    ![](../images/models-recipes/train-evaluate-ui/select_dataset.png)
 
 4. Ange ett namn för modellen och granska standardmodellkonfigurationerna. Standardkonfigurationer tillämpades när Recept skapades, granska och ändra konfigurationsvärdena genom att dubbelklicka på värdena. Om du vill skapa en ny uppsättning konfigurationer klickar du på **[!UICONTROL Upload New Config]** och drar en JSON-fil som innehåller modellkonfigurationer till webbläsarfönstret. Klicka **[!UICONTROL Finish]** för att skapa modellen.
-   >[!NOTE]Konfigurationer är unika och specifika för den avsedda mottagaren, vilket innebär att konfigurationer för butiksförsäljningsreceptet inte fungerar för produktmottagaren för Recommendations. I [referensavsnittet](#reference) finns en lista över konfigurationer för butiksförsäljning.
+
+   >[!NOTE]
+   >
+   >Konfigurationer är unika och specifika för den avsedda mottagaren, vilket innebär att konfigurationer för butiksförsäljningsreceptet inte fungerar för produktmottagaren för Recommendations. I [referensavsnittet](#reference) finns en lista över konfigurationer för butiksförsäljning.
 
    ![](../images/models-recipes/train-evaluate-ui/name_and_configure.png)
 
 ## Skapa en utbildningskörning
 
-1. Klicka på länken i den vänstra navigeringskolumnen i Adobe Experience Platform om du vill visa alla befintliga modeller. **[!UICONTROL Models]** Sök och klicka på namnet på den modell som ska tränas.
+1. I Adobe Experience Platform klickar du på den **[!UICONTROL Models]** länk som finns i den vänstra navigeringskolumnen för att visa alla befintliga modeller. Sök och klicka på namnet på den modell som ska tränas.
    ![](../images/models-recipes/train-evaluate-ui/models_browse.png)
 
 2. Alla befintliga kurser med deras aktuella utbildningsstatus listas. För modeller som skapats med [!DNL Data Science Workspace] användargränssnittet genereras och körs en utbildningskörning automatiskt med standardkonfigurationer och datauppsättningen för inmatningsutbildning.
@@ -55,13 +58,16 @@ Den här självstudiekursen kräver en befintlig recept. Om du inte har någon r
    ![](../images/models-recipes/train-evaluate-ui/training_configuration.png)
 
 5. Standardkonfigurationer som tillhandahålls när modellen skapas visas, ändra och ändra dem därefter genom att dubbelklicka på värdena. Klicka **[!UICONTROL Finish]** för att skapa och genomföra kursen.
-   >[!NOTE]Konfigurationer är unika och specifika för den avsedda mottagaren, vilket innebär att konfigurationer för butiksförsäljningsreceptet inte fungerar för produktmottagaren för Recommendations. I [referensavsnittet](#reference) finns en lista över konfigurationer för butiksförsäljning.
+
+   >[!NOTE]
+   >
+   >Konfigurationer är unika och specifika för den avsedda mottagaren, vilket innebär att konfigurationer för butiksförsäljningsreceptet inte fungerar för produktmottagaren för Recommendations. I [referensavsnittet](#reference) finns en lista över konfigurationer för butiksförsäljning.
 
    ![](../images/models-recipes/train-evaluate-ui/training_configuration.png)
 
 ## Utvärdera modellen
 
-1. Klicka på länken i den vänstra navigeringskolumnen i Adobe Experience Platform om du vill visa alla befintliga modeller. **[!UICONTROL Models]** Sök och klicka på namnet på den modell som ska utvärderas.
+1. I Adobe Experience Platform klickar du på den **[!UICONTROL Models]** länk som finns i den vänstra navigeringskolumnen för att visa alla befintliga modeller. Sök och klicka på namnet på den modell som ska utvärderas.
    ![](../images/models-recipes/train-evaluate-ui/models_browse.png)
 
 2. Alla befintliga kurser med deras aktuella utbildningsstatus listas. Om du har flera färdiga kurser kan du jämföra utvärderingsmätningar för olika utbildningar i modellutvärderingsdiagrammet. Välj ett utvärderingsmått i listrutan ovanför diagrammet.
@@ -73,7 +79,7 @@ Den här självstudiekursen kräver en befintlig recept. Om du inte har någon r
    Precisionsmåttet beskriver procentandelen relevanta instanser jämfört med det totala antalet *hämtade* instanser. Precision kan ses som sannolikheten att ett slumpmässigt valt resultat blir korrekt.
    ![](../images/models-recipes/train-evaluate-ui/multiple_training_runs.png)
 
-   Klicka på en särskild övning för att se mer information om den körningen. Detta kan göras även innan körningen har slutförts. På detaljsidan kan du se andra utvärderingsmått, konfigurationsparametrar och visualiseringar som är specifika för kursen. Du kan även hämta aktivitetsloggar för att se information om körningen. Loggar är särskilt användbara för misslyckade körningar för att se vad som gick fel.
+   Klicka på en särskild övning för att se mer information om den. Detta kan göras även innan körningen har slutförts. På detaljsidan kan du se andra utvärderingsmått, konfigurationsparametrar och visualiseringar som är specifika för kursen. Du kan även hämta aktivitetsloggar för att se information om körningen. Loggar är särskilt användbara för misslyckade körningar för att se vad som gick fel.
    ![](../images/models-recipes/train-evaluate-ui/activity_logs.png)
 
 3. Hyperparametrar kan inte tränas och en modell måste optimeras genom att olika kombinationer av hyperparametrar testas. Upprepa denna modellutbildning och utvärderingsprocess tills du har nått en optimerad modell.
