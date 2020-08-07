@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Konfigurera ett dataflöde för en koppling för lyckade kunder i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 91714bea4e165d64bcc33e32e73d1d32a505ba00
+source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
 workflow-type: tm+mt
 source-wordcount: '1184'
 ht-degree: 0%
@@ -96,7 +96,9 @@ Välj **[!UICONTROL Load incremental data by]** att tilldela deltakolumnen. I de
 
 Om du vill ställa in engångsintag väljer du den nedrullningsbara pilen för frekvens och väljer **[!UICONTROL Once]**.
 
->[!TIP] **[!UICONTROL Interval]** och **[!UICONTROL Backfill]** inte är synliga vid engångsbruk.
+>[!TIP]
+>
+>**[!UICONTROL Interval]** och **[!UICONTROL Backfill]** inte är synliga vid engångsbruk.
 
 När du har angett lämpliga värden för schemat väljer du **[!UICONTROL Next]**.
 
