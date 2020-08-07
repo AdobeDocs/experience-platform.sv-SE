@@ -5,7 +5,7 @@ title: Indata och utdata från Attribution AI
 topic: Input and Output data for Attribution AI
 description: Följande dokument visar de olika indata och utdata som används i Attribution AI.
 translation-type: tm+mt
-source-git-commit: 5126ef74330d9cee7234ccd1ee7260b09db9e78c
+source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
 workflow-type: tm+mt
 source-wordcount: '2166'
 ht-degree: 0%
@@ -147,7 +147,7 @@ I följande tabell visas schemafälten i utdata för råpoängsexempel:
 
 ### Visa sökvägar för Raw-poäng (UI) {#raw-score-path}
 
-Du kan visa sökvägen till dina bakgrundsmusik i användargränssnittet. Börja med att välja **[!UICONTROL Schemas]** i Platform användargränssnitt och sök sedan efter och välj ditt AI-poängschema för attribuering från *[!UICONTROL Browse]* fliken.
+Du kan visa sökvägen till dina bakgrundsmusik i användargränssnittet. Börja med att välja **[!UICONTROL Schemas]** i plattformsgränssnittet och sök sedan efter och välj ditt AI-poängschema för attribuering från *[!UICONTROL Browse]* fliken.
 
 ![Välj schema](./images/input-output/schemas_browse.png)
 
@@ -158,13 +158,13 @@ Därefter väljer du ett fält i *[!UICONTROL Structure]* fönstret för använd
 
 ### Sammanlagda attribueringspoäng {#aggregated-attribution-scores}
 
-Samlade poäng kan hämtas i CSV-format från Platform-gränssnittet om datumintervallet är mindre än 30 dagar.
+Samlade poäng kan hämtas i CSV-format från plattformsgränssnittet om datumintervallet är mindre än 30 dagar.
 
 Attribution AI har stöd för två kategorier av attribueringspoäng, algoritmiska och regelbaserade poäng.
 
 Attribution AI ger två olika typer av algoritmiska poäng, inkrementellt och påverkat. En påverkad poäng är den del av konverteringen som varje kontaktyta för marknadsföring ansvarar för. En inkrementell poäng är mängden marginell påverkan som direkt orsakas av kontaktytan för marknadsföring. Den största skillnaden mellan det stegvisa poängvärdet och det poängvärde som påverkas är att det stegvisa poängvärdet tar baslinjeeffekten i beaktande. Man utgår inte från att en konvertering enbart orsakas av de föregående kontaktytorna.
 
-Här följer ett kort exempel på en Attribution AI-schemautdata från användargränssnittet i Adobe Experience Platform:
+Här följer ett kort exempel på en Attribution AI-schemautdata från Adobe Experience Platform-gränssnittet:
 
 ![](./images/input-output/schema_screenshot.png)
 
@@ -196,7 +196,7 @@ Tabellen nedan mappar attribueringspoängen till de obearbetade poängen. Om du 
 
 ### Sammanlagda bakgrundsmusik {#aggregated-scores}
 
-Samlade poäng kan hämtas i CSV-format från Platform-gränssnittet om datumintervallet är mindre än 30 dagar. Se tabellen nedan för mer information om var och en av dessa aggregerade kolumner.
+Samlade poäng kan hämtas i CSV-format från plattformsgränssnittet om datumintervallet är mindre än 30 dagar. Se tabellen nedan för mer information om var och en av dessa aggregerade kolumner.
 
 | Kolumnnamn | Begränsning | Nullable | Beskrivning |
 | --- | --- | --- | --- |
