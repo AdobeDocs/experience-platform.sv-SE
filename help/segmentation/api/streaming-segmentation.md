@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Direktuppspelningssegmentering
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: e351a2d489730c1f1bd5f87be8d85612090bc009
+source-git-commit: 2adadad855edd01436a6961cc9be3e58e6483732
 workflow-type: tm+mt
-source-wordcount: '1365'
+source-wordcount: '1377'
 ht-degree: 0%
 
 ---
@@ -70,6 +70,7 @@ För att ett segment ska kunna utvärderas med hjälp av direktuppspelningssegme
 | ---------- | ------- |
 | Inkommande träff | En segmentdefinition som refererar till en enda inkommande händelse utan tidsbegränsning. |
 | Inkommande träff inom ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse **inom de senaste sju dagarna**. |
+| Endast profil | En segmentdefinition som bara refererar till ett profilattribut. |
 | Inkommande träde som refererar till en profil | En segmentdefinition som refererar till en enda inkommande händelse, utan tidsbegränsning, och ett eller flera profilattribut. |
 | Inkommande träde som refererar till en profil inom ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse och ett eller flera profilattribut **under de senaste sju dagarna**. |
 | Flera händelser som refererar till en profil | Alla segmentdefinitioner som refererar till flera händelser **under de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. |
