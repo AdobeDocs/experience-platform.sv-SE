@@ -4,17 +4,17 @@ solution: Experience Platform
 title: Skapa en Azure Data Lake Storage Gen2-källanslutning i gränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
 workflow-type: tm+mt
-source-wordcount: '470'
-ht-degree: 0%
+source-wordcount: '472'
+ht-degree: 1%
 
 ---
 
 
 # Skapa en [!DNL Azure Data Lake Storage Gen2] källanslutning i användargränssnittet
 
-Källkopplingar i Adobe Experience Platform ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du autentiserar en [!DNL Azure Data Lake Storage Gen2] (nedan kallad ADLS Gen2) källkoppling med [!DNL Platform] användargränssnittet.
+Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du autentiserar en [!DNL Azure Data Lake Storage Gen2] (nedan kallad ADLS Gen2) källkoppling med [!DNL Platform] användargränssnittet.
 
 ## Komma igång
 
@@ -44,9 +44,9 @@ Mer information om dessa värden finns i [det här ADLS Gen2-dokumentet](https:/
 
 När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att skapa en ny inkommande basanslutning som länkar ditt ADLS Gen2-konto till [!DNL Platform].
 
-Logga in på <a href="https://platform.adobe.com" target="_blank">Adobe [!DNL Experience Platform]</a> och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt *[!UICONTROL Sources]* arbetsytan. På fliken *[!UICONTROL Catalog]* visas en mängd olika källor som kan användas för att skapa inkommande basanslutningar. Varje källa visar antalet befintliga basanslutningar som är kopplade till dem.
+Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt *[!UICONTROL Sources]* arbetsytan. På fliken *[!UICONTROL Catalog]* visas en mängd olika källor som kan användas för att skapa inkommande basanslutningar. Varje källa visar antalet befintliga basanslutningar som är kopplade till dem.
 
-Under *[!UICONTROL Cloud Storage]* kategorin väljer du **[!UICONTROL Azure Data Lake Gen2]** att visa ett informationsfält till höger på skärmen. Informationsfältet innehåller en kort beskrivning av den valda källan samt alternativ för att ansluta till källvyn och dess dokumentation. Om du vill skapa en ny inkommande basanslutning klickar du på **[!UICONTROL Connect source]**.
+Under *[!UICONTROL Cloud Storage]* kategorin väljer du **[!UICONTROL Azure Data Lake Gen2]** att visa ett informationsfält till höger på skärmen. Informationsfältet innehåller en kort beskrivning av den valda källan samt alternativ för att ansluta till källvyn och dess dokumentation. Om du vill skapa en ny inkommande basanslutning klickar du på **[!UICONTROL Add data]**.
 
 ![](../../../../images/tutorials/create/adls-gen2/catalog.png)
 
@@ -66,4 +66,4 @@ Om du vill ansluta ett befintligt konto väljer du det ADLS Gen2-konto som du vi
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en basanslutning till ditt ADLS Gen2-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till Platform](../../dataflow/batch/cloud-storage.md).
+Genom att följa den här självstudiekursen har du upprättat en basanslutning till ditt ADLS Gen2-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till plattformen](../../dataflow/batch/cloud-storage.md).
