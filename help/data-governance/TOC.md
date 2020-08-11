@@ -1,12 +1,12 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Hjälp om datastyrning i Adobe Experience Platform
+user-guide-title: Adobe Experience Platform Data Governance - hjälp
 translation-type: tm+mt
-source-git-commit: 876ac35f6366411adda821805bf628470839f80e
+source-git-commit: de79706be6303f82c6d0e68cdf2c9d389f23d9a8
 workflow-type: tm+mt
-source-wordcount: '106'
-ht-degree: 2%
+source-wordcount: '107'
+ht-degree: 3%
 
 ---
 
@@ -27,10 +27,11 @@ ht-degree: 2%
    * [Översikt över policytillämpning](enforcement/overview.md)
    * [Använd principer för dataanvändning med hjälp av API:t för principtjänsten](enforcement/api-enforcement.md)
 * Utvecklarhandbok för Policy Service API {#api}
+   * [Översikt](api/overview.md)
    * [Komma igång](api/getting-started.md)
    * [Etiketter](api/labels.md)
    * [Profiler](api/policies.md)
    * [Marknadsföringsåtgärder](api/marketing-actions.md)
    * [Utvärdering](api/evaluation.md)
 * [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml)
-* [Versionsinformation för Platform](https://www.adobe.com/go/platform-release-notes-en)
+* [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
