@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Skapa en Azure File Storage-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
 workflow-type: tm+mt
-source-wordcount: '469'
-ht-degree: 0%
+source-wordcount: '467'
+ht-degree: 1%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 0%
 >[!NOTE]
 >Kopplingen [!DNL Azure File Storage] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
-Källkopplingar i Adobe Experience Platform ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du autentiserar en [!DNL Azure File Storage] källanslutning med [!DNL Platform] användargränssnittet.
+Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du autentiserar en [!DNL Azure File Storage] källanslutning med [!DNL Platform] användargränssnittet.
 
 ## Komma igång
 
@@ -50,7 +50,7 @@ Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj s
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under *[!UICONTROL Databases]* kategorin väljer du **[!UICONTROL Azure File Storage]** klicka **på +-ikonen (+)** för att skapa en ny Azure File Storage-koppling.
+Under *[!UICONTROL Databases]* kategorin väljer du **[!UICONTROL Azure File Storage]** följt av **[!UICONTROL Add data]** för att skapa en ny Azure File Storage-koppling.
 
 ![katalog](../../../../images/tutorials/create/azure-file-storage/catalog.png)
 
@@ -70,4 +70,4 @@ Om du vill ansluta ett befintligt konto markerar du det [!DNL Azure File Storage
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Azure File Storage] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till Platform](../../dataflow/batch/cloud-storage.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Azure File Storage] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till plattformen](../../dataflow/batch/cloud-storage.md).
