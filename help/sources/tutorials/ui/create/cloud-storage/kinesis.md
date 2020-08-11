@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Skapa en Amazon Kinesis-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
 workflow-type: tm+mt
-source-wordcount: '418'
-ht-degree: 0%
+source-wordcount: '415'
+ht-degree: 1%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 0%
 >[!NOTE]
 >Kopplingen [!DNL Amazon Kinesis] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
-Källkopplingar i Adobe Experience Platform ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du autentiserar en [!DNL Amazon Kinesis] källkoppling (nedan kallad [!DNL "Kinesis"]) med hjälp av [!DNL Platform] användargränssnittet.
+Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du autentiserar en [!DNL Amazon Kinesis] källkoppling (nedan kallad [!DNL "Kinesis"]) med hjälp av [!DNL Platform] användargränssnittet.
 
 ## Komma igång
 
@@ -48,7 +48,7 @@ När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för 
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan *Källor* . På fliken *Katalog* visas olika källor som du kan ansluta till [!DNL Platform]. Varje källa visar antalet befintliga konton som är kopplade till dem.
 
-Under *[!UICONTROL Cloud Storage]* kategorin väljer du **[!UICONTROL Amazon Kinesis]** och klickar **på plusikonen (+)** för att skapa en ny [!DNL Kinesis] koppling.
+Under *[!UICONTROL Cloud Storage]* kategorin väljer du **[!UICONTROL Amazon Kinesis]** följt av **[!UICONTROL Add data]** för att skapa en ny [!DNL Kinesis] koppling.
 
 ![](../../../../images/tutorials/create/kinesis/catalog.png)
 
@@ -68,4 +68,4 @@ Om du vill ansluta ett befintligt konto markerar du det [!DNL Kinesis] konto du 
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du anslutit till ditt [!DNL Kinesis] konto till [!DNL Platform]. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till Platform](../../dataflow/streaming/cloud-storage.md).
+Genom att följa den här självstudiekursen har du anslutit till ditt [!DNL Kinesis] konto till [!DNL Platform]. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till plattformen](../../dataflow/streaming/cloud-storage.md).
