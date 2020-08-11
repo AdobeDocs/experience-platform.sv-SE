@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Konfigurera ett dataflöde för en databasanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
+source-git-commit: d80622aaa8408d640a1a80b6a37f4083344e7fa1
 workflow-type: tm+mt
-source-wordcount: '1167'
+source-wordcount: '1214'
 ht-degree: 0%
 
 ---
@@ -127,9 +127,13 @@ När du har granskat dataflödet kan du klicka **[!UICONTROL Finish]** och vänt
 
 ![](../../../images/tutorials/dataflow/databases/review.png)
 
-## Övervaka och ta bort dataflödet
+## Övervaka dataflödet
 
-När dataflödet har skapats kan du övervaka de data som hämtas genom det. Mer information om hur du övervakar och tar bort dataflöden finns i självstudiekursen om [övervakning och borttagning av dataflöden](../monitor.md).
+När dataflödet har skapats kan du övervaka de data som importeras genom det för att se information om hur mycket data som har intagits, hur bra de är och vilka fel som har uppstått. Mer information om hur du övervakar dataflöde finns i självstudiekursen om [övervakning av konton och dataflöden i användargränssnittet](../monitor.md).
+
+## Ta bort ditt dataflöde
+
+Du kan ta bort dataflöden som inte längre är nödvändiga eller som har skapats felaktigt med den *[!UICONTROL Delete]* funktion som finns på *[!UICONTROL Dataflows]* arbetsytan. Mer information om hur du tar bort dataflöden finns i självstudiekursen om hur du [tar bort dataflöden i användargränssnittet](../delete.md).
 
 ## Nästa steg
 
