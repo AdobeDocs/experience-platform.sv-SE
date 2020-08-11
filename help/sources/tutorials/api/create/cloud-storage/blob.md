@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Skapa en Azure Blob-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 11431ffcfc2204931fe3e863bfadc7878a40b49c
+source-git-commit: 8e39cc206efa3fc314ae689845c88f0923ac1743
 workflow-type: tm+mt
-source-wordcount: '585'
-ht-degree: 0%
+source-wordcount: '582'
+ht-degree: 1%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 I den här självstudiekursen används API:t för att vägleda dig genom de olika stegen för att ansluta [!DNL Flow Service] till ett [!DNL Experience Platform] [!DNL Azure Blob] lagringsutrymme (nedan kallat&quot;blob&quot;).
 
-Om du föredrar att använda användargränssnittet i [!DNL Experience Platform]innehåller självstudiekursen [för](../../../ui/create/cloud-storage/blob-s3.md) Azure Blob eller Amazon S3-källkopplingen stegvisa instruktioner för att utföra liknande åtgärder.
+Om du föredrar att använda användargränssnittet i [!DNL Experience Platform]innehåller [självstudiekursen](../../../ui/create/cloud-storage/blob.md) Azure Blob source connector UI steg-för-steg-instruktioner för att utföra liknande åtgärder.
 
 ## Komma igång
 
