@@ -4,9 +4,9 @@ seo-title: Arbetsytan Destinationer
 description: I Adobe Real-time Customer Data Platform väljer du Destinationer i det vänstra navigeringsfältet för att komma åt målarbetsytan.
 seo-description: I Adobe Real-time Customer Data Platform väljer du Destinationer i det vänstra navigeringsfältet för att komma åt målarbetsytan.
 translation-type: tm+mt
-source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
+source-git-commit: f3e489416a9bc80cfb0502d3973a86748123a687
 workflow-type: tm+mt
-source-wordcount: '562'
+source-wordcount: '746'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # Arbetsytan Destinationer {#destinations-workspace}
 
-I Adobe Real-time Customer Data Platform väljer du **[!UICONTROL Destinations]** i det vänstra navigeringsfältet för att komma åt [!UICONTROL Destinations] arbetsytan.
+I Adobe Customer Data Platform för realtid väljer du **[!UICONTROL Destinations]** i det vänstra navigeringsfältet för att komma åt [!UICONTROL Destinations] arbetsytan.
 
 Arbetsytan består [!UICONTROL Destinations] av fyra avsnitt, **[!UICONTROL Catalog]**, **[!UICONTROL Browse]**, **[!UICONTROL Accounts]** och **[!UICONTROL System View]**, som beskrivs i avsnitten nedan.
 
@@ -22,15 +22,34 @@ Arbetsytan består [!UICONTROL Destinations] av fyra avsnitt, **[!UICONTROL Cata
 
 ## [!UICONTROL Catalog] {#catalog}
 
-På fliken **[!UICONTROL Catalog]** visas en lista över alla mål som erbjuds av Adobe som du kan skicka data till.
+På fliken **[!UICONTROL Catalog]** visas en lista med alla mål som är tillgängliga i CDP i realtid i Adobe som du kan skicka data till.
 
-Använd sökfunktionen på sidan för att hitta ett specifikt mål eller filtrera mål med hjälp av **[!UICONTROL Categories]** kontrollen.
+Användargränssnittet för CDP i realtid i Adobe innehåller ett antal sök- och filteralternativ på katalogsidan för mål:
 
-Välj ett mål i katalogen för att öppna den högra listen. Här kan du konfigurera en anslutning till målet (**[!UICONTROL Connect destination]**), visa befintliga målanslutningar (**[!UICONTROL Browse destinations]**) eller lära dig mer detaljerad information om varje mål genom att visa dokumentationen (**[!UICONTROL View documentation]**).
+* Använd sökfunktionen på sidan för att hitta ett specifikt mål.
+* Filtrera mål med hjälp av **[!UICONTROL Categories]** kontrollen.
+* Växla mellan **[!UICONTROL All destinations]** och **[!UICONTROL My destinations]**. När **[!UICONTROL All destinations]** är markerat visas alla tillgängliga CDP-mål i realtid i Adobe. När **[!UICONTROL My destinations]** är markerat kan du bara se de mål som du har upprättat en anslutning till.
+* Välj för att visa **[!UICONTROL Connections]** och/eller **[!UICONTROL Extensions]**. Mer information om skillnaden mellan de två kategorierna finns i [Måltyper och kategorier](/help/rtcdp/destinations/destination-types.md).
 
-![Alternativ för målkatalog](/help/rtcdp/destinations/assets/destination-ui-catalog-options.png)
+![målgruppsfiltrering och sökdemo](/help/rtcdp/destinations/assets/destinations-search-and-filter.gif)
 
-Mer information om målkategorier och information om varje mål finns i [Målkatalog](/help/rtcdp/destinations/destinations-catalog.md).
+Målkorten innehåller antingen en **[!UICONTROL Configure]** eller en **[!UICONTROL Activate]** kontroll och en sekundär kontroll som visar fler alternativ. Dessa beskrivs nedan:
+
+| Kontroll | Beskrivning |
+---------|----------
+| [!UICONTROL Configure] | Gör att du kan skapa en anslutning till målet. |
+| [!UICONTROL Activate] | När du har upprättat en anslutning till målet kan du aktivera segment. |
+| [!UICONTROL View account] | Visa konton som du har anslutit för ett mål. |
+| [!UICONTROL View dataflows] | Visa dataaktiveringsflöden som finns för ett mål |
+| [!UICONTROL View documentation] | Öppnar en länk till dokumentationssidan för det specifika målet, för mer information och för att hjälpa dig att konfigurera det. |
+
+![Kontroll av destinationskortet](/help/rtcdp/destinations/assets/destination-card-options.png)
+
+Välj ett målkort i katalogen för att öppna den högra listen.  Här visas en beskrivning av målet. Högerspåret har samma kontroller som beskrivs i tabellen ovan, samt en beskrivning av destinationen och en indikation på destinationskategori och typ.
+
+![Alternativ för målkatalog](/help/rtcdp/destinations/assets/destination-right-rail.png)
+
+Mer information om målkategorier och information om varje mål finns i [Målkatalog](/help/rtcdp/destinations/destinations-catalog.md) och [Måltyper och -kategorier](/help/rtcdp/destinations/destination-types.md).
 
 ## [!UICONTROL Browse] {#browse}
 
@@ -71,7 +90,7 @@ På fliken **[!UICONTROL Accounts]** kan du lära dig mer om anslutningar som du
 
 ## [!UICONTROL System View] {#system-view}
 
-På **[!UICONTROL System View]** fliken visas en grafisk representation av de aktiveringsflöden som du har konfigurerat i Real-time Customer Data Platform.
+På **[!UICONTROL System View]** fliken visas en grafisk representation av de aktiveringsflöden som du har konfigurerat i kunddataplattformen i realtid.
 
 ![Data-flows1](/help/rtcdp/destinations/assets/data-flows1.png)
 
