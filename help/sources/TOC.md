@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 translation-type: tm+mt
-source-git-commit: 03fd716d6f743d839bc24ff99660efdf47b187a0
+source-git-commit: 23653949cd16e9d4ee8c3f345cbee74f147263cd
 workflow-type: tm+mt
-source-wordcount: '594'
+source-wordcount: '595'
 ht-degree: 0%
 
 ---
@@ -16,11 +16,11 @@ ht-degree: 0%
 - [Översikt över källkopplingar](home.md)
 - Tillgängliga källanslutningar {#connectors}
    - Adobe-program {#adobe-applications}
-      - [Analytics dataanslutning](connectors/adobe-applications/analytics.md)
+      - [Dataanslutning för Analytics](connectors/adobe-applications/analytics.md)
       - [Audience Manager-kontakt](connectors/adobe-applications/audience-manager.md)
       - [Koppling för kundattribut](connectors/adobe-applications/customer-attributes.md)
       - Mappa programfält i Adobe {#mapping}
-         - [Analytics-mappningsfält](connectors/adobe-applications/mapping/analytics.md)
+         - [Mappningsfält för analyser](connectors/adobe-applications/mapping/analytics.md)
          - [Mappningsfält för Audience Manager](connectors/adobe-applications/mapping/audience-manager.md)
          - [Målmappningsfält](connectors/adobe-applications/mapping/target.md)
    - Advertising {#advertising}
@@ -45,7 +45,7 @@ ht-degree: 0%
       - [Apache Hive på Azure HDInsights-kontakten](connectors/databases/hive.md)
       - [Apache Spark på Azure HDInsights-kontakten](connectors/databases/spark.md)
       - [Azure Data Explorer Connector](connectors/databases/data-explorer.md)
-      - [Azure Synapse Analytics Connector](connectors/databases/synapse-analytics.md)
+      - [Azure Synapse Analytics-koppling](connectors/databases/synapse-analytics.md)
       - [Azure Table Storage-koppling](connectors/databases/ats.md)
       - [Koppling till kuchbase](connectors/databases/couchbase.md)
       - [Google BigQuery-koppling](connectors/databases/bigquery.md)
@@ -90,7 +90,7 @@ ht-degree: 0%
          - [Apache Hive på Azure HDInsights-kontakten](tutorials/api/create/databases/hive.md)
          - [Apache Spark på Azure HDInsights-kontakten](tutorials/api/create/databases/spark.md)
          - [Azure Data Explorer Connector](tutorials/api/create/databases/data-explorer.md)
-         - [Azure Synapse Analytics Connector](tutorials/api/create/databases/synapse-analytics.md)
+         - [Azure Synapse Analytics-koppling](tutorials/api/create/databases/synapse-analytics.md)
          - [Azure Table Storage-koppling](tutorials/api/create/databases/ats.md)
          - [Koppling till kuchbase](tutorials/api/create/databases/couchbase.md)
          - [Google BigQuery-koppling](tutorials/api/create/databases/bigquery.md)
@@ -133,7 +133,7 @@ ht-degree: 0%
    - Skapa en källkoppling {#create}
       - Adobe-program {#adobe-applications}
          - [Adobe Analytics Connector](tutorials/ui/create/adobe-applications/analytics.md)
-         - [Adobe Audience Manager-kontakt](tutorials/ui/create/adobe-applications/audience-manager.md)
+         - [Adobe Audience Manager Connector](tutorials/ui/create/adobe-applications/audience-manager.md)
          - [Koppling för kundattribut](tutorials/ui/create/adobe-applications/customer-attributes.md)
       - Advertising {#create}
          - [Google AdWords-koppling](tutorials/ui/create/advertising/ads.md)
@@ -157,7 +157,7 @@ ht-degree: 0%
          - [Apache Hive på Azure HDInsights-kontakten](tutorials/ui/create/databases/hive.md)
          - [Apache Spark på Azure HDInsights-kontakten](tutorials/ui/create/databases/spark.md)
          - [Azure Data Explorer Connector](tutorials/ui/create/databases/data-explorer.md)
-         - [Azure Synapse Analytics Connector](tutorials/ui/create/databases/synapse-analytics.md)
+         - [Azure Synapse Analytics-koppling](tutorials/ui/create/databases/synapse-analytics.md)
          - [Azure Table Storage-koppling](tutorials/ui/create/databases/ats.md)
          - [Koppling till kuchbase](tutorials/ui/create/databases/couchbase.md)
          - [Google Big Query-koppling](tutorials/ui/create/databases/bigquery.md)
@@ -187,5 +187,6 @@ ht-degree: 0%
       - [Konfigurera ett dataflöde för en betalningsanslutning](tutorials/ui/dataflow/payments.md)
       - [Konfigurera ett dataflöde för en protokollanslutning](tutorials/ui/dataflow/protocols.md)
    - [Aktivera inkommande data för att fylla i kundprofiler](tutorials/ui/profile.md)
-   - [Övervaka konton och datauppsättningsflöden](tutorials/ui/monitor.md)
-- [Versionsinformation för Platform](https://www.adobe.com/go/platform-release-notes-en)
+   - [Övervaka konton och dataflöden](tutorials/ui/monitor.md)
+   - [Ta bort dataflöden](tutorials/ui/delete.md)
+- [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
