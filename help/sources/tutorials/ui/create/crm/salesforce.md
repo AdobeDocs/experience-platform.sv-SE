@@ -4,17 +4,17 @@ solution: Experience Platform
 title: Skapa en Salesforce-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
 workflow-type: tm+mt
-source-wordcount: '438'
-ht-degree: 0%
+source-wordcount: '436'
+ht-degree: 1%
 
 ---
 
 
 # Skapa en [!DNL Salesforce] källanslutning i användargränssnittet
 
-Källkopplingar i Adobe Experience Platform ger möjlighet att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Salesforce] källkoppling med [!DNL Platform] användargränssnittet.
+Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata i CRM på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Salesforce] källkoppling med [!DNL Platform] användargränssnittet.
 
 ## Komma igång
 
@@ -46,7 +46,7 @@ Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj s
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under *[!UICONTROL Databases]* kategorin väljer du **[!UICONTROL Salesforce]** klicka **på +-ikonen (+)** för att skapa en ny Salesforce-koppling.
+Under *[!UICONTROL Databases]* kategorin väljer du **[!UICONTROL Salesforce]** följt av **[!UICONTROL Add data]** för att skapa en ny Salesforce-koppling.
 
 ![katalog](../../../../images/tutorials/create/salesforce/catalog.png)
 
@@ -66,4 +66,4 @@ Om du vill ansluta till ett befintligt konto markerar du det [!DNL Salesforce] k
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Salesforce] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till Platform](../../dataflow/crm.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Salesforce] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/crm.md).
