@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa en Salesforce Service Cloud-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
 workflow-type: tm+mt
 source-wordcount: '507'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 >[!NOTE]
 >Kopplingen [!DNL Salesforce Service Cloud] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
-Källkopplingar i Adobe Experience Platform ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Salesforce Service Cloud] (nedan kallad SSC) källkoppling med hjälp av [!DNL Platform] användargränssnittet.
+Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Salesforce Service Cloud] (nedan kallad SSC) källkoppling med hjälp av [!DNL Platform] användargränssnittet.
 
 ## Komma igång
 
@@ -46,11 +46,11 @@ Mer information om hur du kommer igång finns i [det här Salesforce Service Clo
 
 När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att skapa ett nytt SSC-konto att ansluta till [!DNL Platform].
 
-Logga in på <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a> och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt *[!UICONTROL Sources]* arbetsytan. På *[!UICONTROL Catalog]* skärmen visas en mängd olika källor som du kan skapa inkommande konto för, och varje källa visar antalet befintliga konton och datauppsättningsflöden som är kopplade till dem.
+Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt *[!UICONTROL Sources]* arbetsytan. På *[!UICONTROL Catalog]* skärmen visas en mängd olika källor som du kan skapa inkommande konto för, och varje källa visar antalet befintliga konton och datauppsättningsflöden som är kopplade till dem.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under *[!UICONTROL Customer Success]* kategorin väljer du **[!UICONTROL Salesforce Service Cloud]** att visa ett informationsfält till höger på skärmen. Informationsfältet innehåller en kort beskrivning av den valda källan samt alternativ för att ansluta till källan eller visa dess dokumentation. Om du vill skapa en ny inkommande anslutning väljer du **[!UICONTROL Connect source]**.
+Under *[!UICONTROL Customer Success]* kategorin väljer du **[!UICONTROL Salesforce Service Cloud]** att visa ett informationsfält till höger på skärmen. Informationsfältet innehåller en kort beskrivning av den valda källan samt alternativ för att ansluta till källan eller visa dess dokumentation. Om du vill skapa en ny inkommande anslutning väljer du **[!UICONTROL Add data]**.
 
 ![katalog](../../../../images/tutorials/create/ssc/catalog.png)
 
@@ -70,4 +70,4 @@ Om du vill ansluta ett befintligt konto väljer du det SSC-konto som du vill ans
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt SSC-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta Customer Success-data till Platform](../../dataflow/customer-success.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt SSC-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från Customer Success till Platform](../../dataflow/customer-success.md).
