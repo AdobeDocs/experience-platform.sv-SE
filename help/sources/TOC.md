@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 translation-type: tm+mt
-source-git-commit: 23653949cd16e9d4ee8c3f345cbee74f147263cd
+source-git-commit: b019b6b8b69e0bfac6fc8840da350d92733dc97c
 workflow-type: tm+mt
-source-wordcount: '595'
+source-wordcount: '606'
 ht-degree: 0%
 
 ---
@@ -27,13 +27,15 @@ ht-degree: 0%
       - [Google AdWords-koppling](connectors/advertising/ads.md)
    - molnlagring {#cloud-storage}
       - [Amazon Kinesis Connector](connectors/cloud-storage/kinesis.md)
+      - [Amazon S3-anslutning](connectors/cloud-storage/s3.md)
       - [Apache HDFS-kontakt](connectors/cloud-storage/hdfs.md)
       - [Azure Data Lake Storage Gen2-anslutning](connectors/cloud-storage/adls-gen2.md)
-      - [Azure Blob och Amazon S3-anslutning](connectors/cloud-storage/blob-s3.md)
+      - [Azure Blob-koppling](connectors/cloud-storage/blob.md)
       - [Azure Event Hubs-koppling](connectors/cloud-storage/eventhub.md)
       - [Azure File Storage Connector](connectors/cloud-storage/azure-file-storage.md)
       - [FTP- och SFTP-anslutning](connectors/cloud-storage/ftp-sftp.md)
       - [Google Cloud Storage Connector](connectors/cloud-storage/google-cloud-storage.md)
+      - [Amazon S3 och Azure Blob Connector](connectors/cloud-storage/blob-s3.md)
    - CRM {#crm}
       - [Microsoft Dynamics-anslutning](connectors/crm/ms-dynamics.md)
       - [Salesforce-koppling](connectors/crm/salesforce.md)
@@ -139,13 +141,15 @@ ht-degree: 0%
          - [Google AdWords-koppling](tutorials/ui/create/advertising/ads.md)
       - molnlagring {#cloud-storage}
          - [Amazon Kinesis Connector](tutorials/ui/create/cloud-storage/kinesis.md)
+         - [Amazon S3-anslutning](tutorials/ui/create/cloud-storage/s3.md)
          - [Apache HDFS-kontakt](tutorials/ui/create/cloud-storage/hdfs.md)
          - [Azure Data Lake Storage Gen2-anslutning](tutorials/ui/create/cloud-storage/adls-gen2.md)
-         - [Azure Blob och Amazon S3-anslutning](tutorials/ui/create/cloud-storage/blob-s3.md)
+         - [Azure Blob-koppling](tutorials/ui/create/cloud-storage/blob.md)
          - [Azure Event Hubs-koppling](tutorials/ui/create/cloud-storage/eventhub.md)
          - [Azure File Storage Connector](tutorials/ui/create/cloud-storage/azure-file-storage.md)
          - [FTP- och SFTP-anslutning](tutorials/ui/create/cloud-storage/ftp-sftp.md)
          - [Google Cloud Storage Connector](tutorials/ui/create/cloud-storage/google-cloud-storage.md)
+         - [Amazon S3 och Blob-anslutning](tutorials/ui/create/cloud-storage/blob-s3.md)
       - CRM {#crm}
          - [Microsoft Dynamics-anslutning](tutorials/ui/create/crm/dynamics.md)
          - [Salesforce-koppling](tutorials/ui/create/crm/salesforce.md)
