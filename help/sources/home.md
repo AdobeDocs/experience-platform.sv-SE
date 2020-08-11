@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform Source Connectors - översikt
 topic: overview
 translation-type: tm+mt
-source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+source-git-commit: 8e39cc206efa3fc314ae689845c88f0923ac1743
 workflow-type: tm+mt
-source-wordcount: '770'
+source-wordcount: '771'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Översikt över källkopplingar
 
-Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
 [!DNL Experience Platform] innehåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar till olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera dina tredjepartssystem, ange tider för att få tillgång till dem och hantera dataöverföringshastigheten.
 
@@ -26,9 +26,9 @@ Källor i [!DNL Experience Platform] är grupperade i följande kategorier:
 
 ### Adobe-program
 
-[!DNL Experience Platform] gör det möjligt att importera data från andra Adobe-program, inklusive Adobe Analytics, Adobe Audience Manager och [!DNL Experience Platform Launch]. Mer information finns i följande relaterade dokument:
+[!DNL Experience Platform] tillåter att data hämtas från andra Adobe-program, inklusive Adobe Analytics, Adobe Audience Manager och [!DNL Experience Platform Launch]. Mer information finns i följande relaterade dokument:
 
-- [Adobe Audience Manager-anslutning - översikt](connectors/adobe-applications/audience-manager.md)
+- [Adobe Audience Manager Connector - översikt](connectors/adobe-applications/audience-manager.md)
 - [Skapa en Adobe Audience Manager-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/audience-manager.md)
 - [Adobe Analytics dataanslutning - översikt](connectors/adobe-applications/analytics.md)
 - [Skapa en Adobe Analytics-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/analytics.md)
@@ -45,8 +45,9 @@ Källor i [!DNL Experience Platform] är grupperade i följande kategorier:
 Lagringskällor i molnet kan hämta dina egna data [!DNL Platform] utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM-parquet eller avgränsade. Varje steg i processen integreras i arbetsflödet Källor med användargränssnittet. Mer information finns i följande relaterade dokument:
 
 - [!DNL Azure Data Lake Storage Gen2](connectors/cloud-storage/adls-gen2.md) koppling
-- [!DNL Azure Blob and Amazon S3](connectors/cloud-storage/blob-s3.md) koppling
+- [!DNL Azure Blob](connectors/cloud-storage/blob.md) koppling
 - [!DNL Amazon Kinesis](connectors/cloud-storage/kinesis.md) koppling
+- [!DNL Amazon S3](connectors/cloud-storage/s3.md) koppling
 - [!DNL Apache HDFS](connectors/cloud-storage/hdfs.md) koppling
 - [!DNL Azure Event Hubs](connectors/cloud-storage/eventhub.md) koppling
 - [!DNL Azure File Storage](connectors/cloud-storage/azure-file-storage.md) koppling
