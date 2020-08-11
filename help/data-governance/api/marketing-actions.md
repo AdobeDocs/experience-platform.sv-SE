@@ -4,23 +4,27 @@ solution: Experience Platform
 title: Marknadsföringsåtgärder
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
+source-git-commit: cb3a17aa08c67c66101cbf3842bf306ebcca0305
 workflow-type: tm+mt
-source-wordcount: '534'
-ht-degree: 0%
+source-wordcount: '681'
+ht-degree: 1%
 
 ---
 
 
-# Marknadsföringsåtgärder
+# Slutpunkt för marknadsföringsåtgärder
 
-En marknadsföringsåtgärd, inom ramen för Adobe Experience Platform [!DNL Data Governance], är en åtgärd som en [!DNL Experience Platform] datakonsument vidtar och där det finns ett behov av att kontrollera om dataanvändningspolicyer har överträtts.
+En marknadsföringsåtgärd, inom ramen för Adobe Experience Platform, [!DNL Data Governance]är en åtgärd som en [!DNL Experience Platform] datakonsument vidtar och där det finns ett behov av att kontrollera överträdelser av dataanvändningspolicyer.
 
-När du arbetar med marknadsföringsåtgärder i API måste du använda `/marketingActions` slutpunkten.
+Du kan hantera marknadsföringsåtgärder för organisationen med hjälp av `/marketingActions` slutpunkten i principtjänstens API.
 
-## Lista alla marknadsföringsåtgärder
+## Komma igång
 
-Om du vill visa en lista över alla marknadsföringsåtgärder kan du göra en GET-förfrågan till `/marketingActions/core` eller `/marketingActions/custom` returnera alla policyer för den angivna behållaren.
+API-slutpunkterna som används i den här handboken är en del av [[!DNL Policy Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml). Innan du fortsätter bör du läsa [Komma igång-guiden](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API i det här dokumentet samt viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform] -API.
+
+## Hämta en lista med marknadsföringsåtgärder {#list}
+
+Du kan hämta en lista över viktiga eller anpassade marknadsföringsåtgärder genom att göra en GET-förfrågan till `/marketingActions/core` respektive `/marketingActions/custom`.
 
 **API-format**
 
@@ -31,9 +35,9 @@ GET /marketingActions/custom
 
 **Begäran**
 
-Följande begäran returnerar en lista över alla anpassade marknadsföringsåtgärder som definierats av IMS-organisationen.
+Följande begäran hämtar en lista över anpassade marknadsföringsåtgärder som hanteras av din organisation.
 
-```SHELL
+```sh
 curl -X GET \
   https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -44,12 +48,11 @@ curl -X GET \
 
 **Svar**
 
-Responsobjektet ger det totala antalet marknadsföringsåtgärder i behållaren (`count`) och `children` arrayen innehåller information om varje marknadsföringsåtgärd, inklusive `name` och en `href` för marknadsföringsåtgärden. Den här sökvägen (`_links.self.href`) används för att slutföra `marketingActionsRefs` arrayen när en [dataanvändningsprincip](policies.md#create-policy)skapas.
+Ett lyckat svar returnerar information för varje hämtad marknadsföringsåtgärd, inklusive dess `name` och `href`. Värdet `href` används för att identifiera marknadsföringsåtgärden när en [dataanvändningspolicy](policies.md#create-policy)skapas.
 
-```JSON
+```json
 {
     "_page": {
-        "start": "sampleMarketingAction",
         "count": 2
     },
     "_links": {
@@ -95,20 +98,33 @@ Responsobjektet ger det totala antalet marknadsföringsåtgärder i behållaren 
 }
 ```
 
-## Slå upp en specifik marknadsföringsåtgärd
+| Egenskap | Beskrivning |
+| --- | --- |
+| `_page.count` | Det totala antalet returnerade marknadsföringsåtgärder. |
+| `children` | En array med objekt som innehåller information om hämtade marknadsföringsåtgärder. |
+| `name` | Namnet på marknadsföringsåtgärden, som fungerar som sin unika identifierare när den [söker efter en viss marknadsföringsåtgärd](#lookup). |
+| `_links.self.href` | En URI-referens för marknadsföringsåtgärden, som kan användas för att slutföra `marketingActionsRefs` arrayen när en [dataanvändningsprincip](policies.md#create-policy)skapas. |
 
-Du kan också utföra en sökbegäran (GET) för att visa information om en viss marknadsföringsåtgärd. Detta görs med hjälp `name` av marknadsföringsåtgärderna. Om namnet är okänt kan det hittas med den listbegäran (GET) som visas ovan.
+## Slå upp en specifik marknadsföringsåtgärd {#lookup}
+
+Du letar upp detaljerna om en viss marknadsföringsåtgärd genom att ta med marknadsföringsåtgärdens `name` egendom i vägen för en GET-förfrågan.
 
 **API-format**
 
 ```http
-GET /marketingActions/core/{marketingActionName}
-GET /marketingActions/custom/{marketingActionName}
+GET /marketingActions/core/{MARKETING_ACTION_NAME}
+GET /marketingActions/custom/{MARKETING_ACTION_NAME}
 ```
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `{MARKETING_ACTION_NAME}` | Egenskapen `name` för den marknadsföringsåtgärd som du vill söka efter. |
 
 **Begäran**
 
-```SHELL
+Följande begäran hämtar en anpassad marknadsföringsåtgärd med namnet `combineData`.
+
+```sh
 curl -X GET \
   https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom/combineData \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -119,7 +135,7 @@ curl -X GET \
 
 **Svar**
 
-Svarsobjektet innehåller information om marknadsföringsåtgärden, inklusive den sökväg (`_links.self.href`) som behövs för att referera till marknadsföringsåtgärden när en dataanvändningspolicy definieras (`marketingActionsRefs`).
+Svarsobjektet innehåller information om marknadsföringsåtgärden, inklusive den sökväg (`_links.self.href`) som behövs för att referera till marknadsföringsåtgärden när [en dataanvändningspolicy](policies.md#create-policy) (`marketingActionsRefs`) definieras.
 
 ```JSON
 {
@@ -140,41 +156,46 @@ Svarsobjektet innehåller information om marknadsföringsåtgärden, inklusive d
 }
 ```
 
-## Skapa eller uppdatera en marknadsföringsåtgärd
+## Skapa eller uppdatera en anpassad marknadsföringsåtgärd {#create-update}
 
-Med [!DNL Policy Service] API kan ni definiera egna marknadsföringsåtgärder och uppdatera befintliga. Både skapande och uppdatering görs med en PUT-åtgärd till marknadsföringsåtgärdens namn.
+Du kan skapa en ny anpassad marknadsföringsåtgärd, eller uppdatera en befintlig, genom att ta med marknadsföringsåtgärdens befintliga eller avsedda namn i sökvägen till en PUT-förfrågan.
 
 **API-format**
 
 ```http
-PUT /marketingActions/custom/{marketingActionName}
+PUT /marketingActions/custom/{MARKETING_ACTION_NAME}
 ```
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `{MARKETING_ACTION_NAME}` | Namnet på den marknadsföringsåtgärd som ska skapas eller uppdateras. Om det redan finns en marknadsföringsåtgärd med det angivna namnet i systemet uppdateras den marknadsföringsåtgärden. Om det inte finns någon sådan, skapas en ny marknadsföringsåtgärd för det angivna namnet. |
 
 **Begäran**
 
-Observera i följande begäran att nyttolasten `name` i begäran är densamma som `{marketingActionName}` i API-anropet. Till skillnad från `id` en skrivskyddad och systemgenererad policy kräver en marknadsföringsåtgärd att du anger det _tänkta_ namnet på marknadsföringsåtgärden när du skapar den.
+Följande begäran skapar en ny marknadsföringsåtgärd med namnet `crossSiteTargeting`, förutsatt att det inte finns någon marknadsföringsåtgärd med samma namn i systemet än. Om det finns en marknadsföringsåtgärd uppdateras den här anropet i stället marknadsföringsåtgärden baserat på egenskaperna som anges i nyttolasten. `crossSiteTargeting`
 
->[!NOTE]
->
->Om du inte anger värdet `{marketingActionName}` i anropet kommer det att resultera i ett 405-fel (metoden tillåts inte) eftersom du inte får utföra en PUT till `/marketingActions/custom` slutpunkten direkt. Om `name` i nyttolasten inte matchar `{marketingActionName}` i sökvägen får du dessutom ett 400-fel (felaktig begäran).
-
-```SHELL
+```sh
 curl -X PUT \
   https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom/crossSiteTargeting \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
   -d '{
         "name": "crossSiteTargeting",
         "description": "Perform targeting on information obtained across multiple web sites."
       }'
 ```
 
+| Egenskap | Beskrivning |
+| --- | --- |
+| `name` | Namnet på den marknadsföringsåtgärd som ska skapas eller uppdateras. <br><br>**VIKTIGT **: Den här egenskapen måste matcha`{MARKETING_ACTION_NAME}`sökvägen, annars inträffar ett HTTP 400-fel (Ogiltig begäran). När en marknadsföringsåtgärd väl har skapats kan dess`name`egenskap alltså inte ändras. |
+| `description` | En valfri beskrivning som ger ytterligare sammanhang för marknadsföringsåtgärden. |
+
 **Svar**
 
-Om det skapas får du en HTTP-status 201 (Skapad) och svarstexten innehåller information om den nyligen skapade marknadsföringsåtgärden. Svaret `name` i bör matcha det som skickades i begäran.
+Ett lyckat svar returnerar detaljerna om marknadsföringsåtgärden. Om en befintlig marknadsföringsåtgärd uppdaterades returnerar svaret HTTP-status 200 (OK). Om en ny marknadsföringsåtgärd skapades returnerar svaret HTTP-status 201 (Skapad).
 
 ```JSON
 {
@@ -195,23 +216,27 @@ Om det skapas får du en HTTP-status 201 (Skapad) och svarstexten innehåller in
 }
 ```
 
-## Ta bort en marknadsföringsåtgärd
+## Ta bort en anpassad marknadsföringsåtgärd {#delete}
 
-Det går att ta bort marknadsföringsåtgärder genom att skicka en DELETE-begäran till den `{marketingActionName}` del av marknadsföringsåtgärden som du vill ta bort.
+Du kan ta bort en anpassad marknadsföringsåtgärd genom att ta med dess namn i sökvägen för en DELETE-begäran.
 
 >[!NOTE]
 >
->Du kan inte ta bort marknadsföringsåtgärder som refereras av befintliga profiler. Om du försöker göra det kommer det att resultera i ett 400-fel (felaktig begäran) tillsammans med ett felmeddelande som innehåller `id` (eller flera ID:n) för en princip (eller principer) som innehåller en referens till den marknadsföringsåtgärd som du försöker ta bort.
+>Marknadsföringsåtgärder som refereras av befintliga principer kan inte tas bort. Om du försöker ta bort en av dessa marknadsföringsåtgärder genereras ett HTTP 400-fel (felaktig begäran) tillsammans med ett meddelande som innehåller ID:n för alla profiler som refererar till marknadsföringsåtgärden.
 
 **API-format**
 
 ```http
-DELETE /marketingActions/custom/{marketingActionName}
+DELETE /marketingActions/custom/{MARKETING_ACTION_NAME}
 ```
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `{MARKETING_ACTION_NAME}` | Namnet på den marknadsföringsåtgärd som du vill ta bort. |
 
 **Begäran**
 
-```SHELL
+```sh
 curl -X DELETE \
   https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom/crossSiteTargeting \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -222,6 +247,6 @@ curl -X DELETE \
 
 **Svar**
 
-Om marknadsföringsåtgärden har tagits bort utan fel kommer svarstexten att vara tom med HTTP-status 200 (OK).
+Ett lyckat svar returnerar HTTP-status 200 (OK) med en tom svarstext.
 
-Du kan bekräfta borttagningen genom att försöka söka efter (GET) marknadsföringsåtgärden. Du bör få HTTP-status 404 (Hittades inte) tillsammans med felmeddelandet &quot;Hittades inte&quot; eftersom marknadsföringsåtgärden har tagits bort.
+Du kan bekräfta borttagningen genom att försöka [söka efter marknadsföringsåtgärden](#look-up). Du bör få ett HTTP 404-fel (Hittades inte) om marknadsföringsåtgärden har tagits bort från systemet.
