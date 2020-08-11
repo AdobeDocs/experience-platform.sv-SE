@@ -1,27 +1,27 @@
 ---
 product: adobe experience platform
 audience: user
-user-guide-title: Hjälp om Platform för kunddata i realtid
+user-guide-title: Hjälp om kunddataplattform i realtid
 translation-type: tm+mt
-source-git-commit: b0068c0ef0897d5d4ec578f0c97b20aef3b2931c
+source-git-commit: 836feb48c62e0e0ed11248846d63021125796b76
 workflow-type: tm+mt
-source-wordcount: '440'
-ht-degree: 2%
+source-wordcount: '443'
+ht-degree: 4%
 
 ---
 
 
-# Hjälp om Platform för kunddata i realtid {#rtcdp}
+# Hjälp om kunddataplattform i realtid {#rtcdp}
 
 * [CDP-översikt i realtid](overview.md)
-* Getting started {#intro}
+* Komma igång {#intro}
    * [Komma igång](get-started.md)
    * [Översikt över mätvärden](home-page-dashboards.md)
 * Administrering {#admin}
    * [Administration - översikt](administration/admin-overview.md)
 * Datauppsättningar {#datasets}
    * [Datauppsättningar](datasets/dataset.md)
-   * [Datakvalitet på Platform](datasets/data-quality.md)
+   * [Datakvalitet på plattform](datasets/data-quality.md)
 * Mål {#destinations}
    * [Översikt över mål](destinations/destinations-overview.md)
    * [Måltyper och -kategorier](/help/rtcdp/destinations/destination-types.md)
@@ -47,16 +47,17 @@ ht-degree: 2%
          * [Google Ads](/help/rtcdp/destinations/google-ads-destination.md)
          * [Google Ads-tillägg](/help/rtcdp/destinations/google-ads-extension.md)
          * [Google Ad Manager](/help/rtcdp/destinations/google-ad-manager-destination.md)
+         * [Google Customer Match](/help/rtcdp/destinations/google-customer-match-destination.md)
          * [Google Display &amp; Video 360](/help/rtcdp/destinations/google-dv360-destination.md)
          * [Google-taggtillägg](/help/rtcdp/destinations/gtag-advertising-extension.md)
          * [Tillägget LinkedIn Insight-tagg](/help/rtcdp/destinations/linkedin-extension.md)
          * [Tillägg för Pinterest Conversion Tracking](destinations/pinterest-extension.md)
          * [Twitter Universal Website Tag-tillägg](destinations/twitter-uwt-extension.md)
-      * Analytics destinationer {#analytics-destinations}
-         * [Översikt över Analytics destinationer](destinations/analytics-destinations.md)
+      * Analysmål {#analytics-destinations}
+         * [Översikt över Analytics-destinationer](destinations/analytics-destinations.md)
          * [Anpassa tillägg för webbplatsspårning](/help/rtcdp/destinations/adform-extension.md)
          * [Adobe Analytics-tillägg](/help/rtcdp/destinations/adobe-analytics-extension.md)
-         * [Adobe Media Analytics for Audio and Video extension](/help/rtcdp/destinations/adobe-video-analytics-extension.md)
+         * [Adobe Media Analytics för ljud- och videotillägg](/help/rtcdp/destinations/adobe-video-analytics-extension.md)
          * [Klickbart tillägg](/help/rtcdp/destinations/clicktale-extension.md)
          * [Innehållsfyrkantigt tillägg](/help/rtcdp/destinations/contentsquare-extension.md)
          * [Decibel-tillägg](/help/rtcdp/destinations/decibel-extension.md)
@@ -68,7 +69,7 @@ ht-degree: 2%
          * [Nielsen BSDK-tillägg](destinations/nielsen-bsdk-extension.md)
          * [Nielsen IMA Handler Extension](destinations/nielsen-ima-extension.md)
          * [Nielsen VideoJS Player Handler Extension](destinations/nielsen-videojs-extension.md)
-         * [Tolka.ly Analytics-tillägg](destinations/parsely-extension.md)
+         * [Analysera.ly Analytics-tillägg](destinations/parsely-extension.md)
          * [Quantum Metric-tillägg](destinations/quantum-metric-extension.md)
          * [SessionCam-tillägg](destinations/sessioncam-extension.md)
          * [TMMData-tillägg](destinations/tmmdata-extension.md)
@@ -80,8 +81,8 @@ ht-degree: 2%
          * [Amazon S3-mål](destinations/amazon-s3-destination.md)
          * [Azure Event Hubs-mål](/help/rtcdp/destinations/azure-event-hubs-destination.md)
          * [SFTP-mål](destinations/sftp-destination.md)
-      * Data Management Platform-mål {#dmp-destinations}
-         * [Datahantering - Platform destinationer - översikt](destinations/dmp-destinations.md)
+      * Plattformsmål för datahantering {#dmp-destinations}
+         * [Översikt över mål för datahanteringsplattformen](destinations/dmp-destinations.md)
          * [Audience Manager DIL utökningen](/help/rtcdp/destinations/aam-dil-extension.md)
       * E-postmarknadsföringsmål{#email-destinations}
          * [Översikt över destinationer för e-postmarknadsföring](destinations/email-marketing-destinations.md)
@@ -97,7 +98,7 @@ ht-degree: 2%
          * [Översikt över Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md)
       * Destinationer för personalisering {#personalization-destinations}
          * [Översikt över destinationer för personalisering](/help/rtcdp/destinations/personalization-destinations.md)
-         * [Adobe Target](/help/rtcdp/destinations/adobe-target-extension.md)
+         * [Adobe Target-tillägg](/help/rtcdp/destinations/adobe-target-extension.md)
          * [Adobe Target v2-tillägg](/help/rtcdp/destinations/adobe-target-v2-extension.md)
          * [Beemray-tillägg](/help/rtcdp/destinations/beemray-extension.md)
          * [D&amp;B Visitor Intelligence-tillägg](/help/rtcdp/destinations/dnb-extension.md)
