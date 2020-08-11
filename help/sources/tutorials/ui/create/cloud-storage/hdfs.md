@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Skapa en Apache HDFS-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
 workflow-type: tm+mt
-source-wordcount: '467'
-ht-degree: 0%
+source-wordcount: '465'
+ht-degree: 1%
 
 ---
 
@@ -46,7 +46,7 @@ Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj s
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under *[!UICONTROL Cloud storage]* kategorin väljer du **[!UICONTROL Apache HDFS]** klicka **på plusikonen (+)** för att skapa en ny HDFS-anslutning.
+Under *[!UICONTROL Cloud storage]* kategorin väljer du **[!UICONTROL Apache HDFS]** följt av **[!UICONTROL Add data]** för att skapa en ny HDFS-anslutning.
 
 ![katalog](../../../../images/tutorials/create/hdfs/catalog.png)
 
@@ -66,4 +66,4 @@ Om du vill ansluta ett befintligt konto väljer du det HDFS-konto som du vill an
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt HDFS-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till Platform](../../dataflow/batch/cloud-storage.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt HDFS-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till plattformen](../../dataflow/batch/cloud-storage.md).
