@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Skapa en Azure Data Explorer-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 4f7d7e2bf255afe1588dbe7cfb2ec055f2dcbf75
+source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
 workflow-type: tm+mt
-source-wordcount: '491'
-ht-degree: 0%
+source-wordcount: '488'
+ht-degree: 1%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 0%
 >[!NOTE]
 > Kopplingen [!DNL Azure Data Explorer] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
-Källkopplingar i Adobe Experience Platform ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Azure Data Explorer] källkoppling (nedan kallad[!DNL Data Explorer]) med hjälp av [!DNL Platform] användargränssnittet.
+Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Azure Data Explorer] källkoppling (nedan kallad[!DNL Data Explorer]) med hjälp av [!DNL Platform] användargränssnittet.
 
 ## Komma igång
 
@@ -52,7 +52,7 @@ Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj s
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under *[!UICONTROL Databases]* kategorin väljer du **[!UICONTROL Azure Data Explorer]** och klickar **på plusikonen (+)** för att skapa en ny koppling för Datan Explorer.
+Under *[!UICONTROL Databases]* kategorin väljer du **[!UICONTROL Azure Data Explorer]** följt av **[!UICONTROL Add data]** för att skapa en ny koppling för Datan Explorer.
 
 ![katalog](../../../../images/tutorials/create/data-explorer/catalog.png)
 
@@ -72,4 +72,4 @@ Om du vill ansluta ett befintligt konto markerar du det [!DNL Data Explorer] kon
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Data Explorer] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till Platform](../../dataflow/databases.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Data Explorer] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/databases.md).
