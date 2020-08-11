@@ -4,17 +4,17 @@ solution: Experience Platform
 title: Skapa en Microsoft Dynamics-källkoppling i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
 workflow-type: tm+mt
-source-wordcount: '433'
-ht-degree: 0%
+source-wordcount: '431'
+ht-degree: 1%
 
 ---
 
 
 # Skapa en [!DNL Microsoft Dynamics] källanslutning i användargränssnittet
 
-Källkopplingar i Adobe Experience Platform ger möjlighet att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Microsoft Dynamics] källkoppling (nedan kallad[!DNL Dynamics]) med hjälp av [!DNL Platform] användargränssnittet.
+Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata i CRM på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Microsoft Dynamics] källkoppling (nedan kallad[!DNL Dynamics]) med hjälp av [!DNL Platform] användargränssnittet.
 
 ## Komma igång
 
@@ -45,7 +45,7 @@ Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj s
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under *[!UICONTROL Databases]* kategorin väljer du **[!UICONTROL Dynamics]** klicka **på +-ikonen (+)** för att skapa en ny [!DNL Dynamics] koppling.
+Under *[!UICONTROL Databases]* kategorin väljer du **[!UICONTROL Dynamics]** följt av **[!UICONTROL Add data]** för att skapa en ny [!DNL Dynamics] koppling.
 
 ![katalog](../../../../images/tutorials/create/ms-dynamics/catalog.png)
 
@@ -65,4 +65,4 @@ Om du vill ansluta till ett befintligt konto markerar du det [!DNL Dynamics] kon
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Dynamics] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till Platform](../../dataflow/crm.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Dynamics] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/crm.md).
