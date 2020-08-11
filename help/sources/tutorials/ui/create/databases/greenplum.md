@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Skapa en GreenPlum-källkoppling i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 4f7d7e2bf255afe1588dbe7cfb2ec055f2dcbf75
+source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
 workflow-type: tm+mt
-source-wordcount: '467'
-ht-degree: 0%
+source-wordcount: '465'
+ht-degree: 1%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 0%
 >[!NOTE]
 > Kopplingen [!DNL GreenPlum] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
-Källkopplingar i Adobe Experience Platform ger möjlighet att importera externt källdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL GreenPlum] källkoppling med [!DNL Platform] användargränssnittet.
+Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL GreenPlum] källkoppling med [!DNL Platform] användargränssnittet.
 
 ## Komma igång
 
@@ -48,7 +48,7 @@ Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj s
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under *[!UICONTROL Databases]* kategorin väljer du **[!UICONTROL GreenPlum]** klicka **på +-ikonen (+)** för att skapa en ny [!DNL GreenPlum] koppling.
+Under *[!UICONTROL Databases]* kategorin väljer du **[!UICONTROL GreenPlum]** följt av **[!UICONTROL Add data]** för att skapa en ny [!DNL GreenPlum] koppling.
 
 ![katalog](../../../../images/tutorials/create/greenplum/catalog.png)
 
@@ -68,4 +68,4 @@ Om du vill ansluta till ett befintligt konto markerar du det [!DNL GreenPlum] ko
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL GreenPlum] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till Platform](../../dataflow/databases.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL GreenPlum] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/databases.md).
