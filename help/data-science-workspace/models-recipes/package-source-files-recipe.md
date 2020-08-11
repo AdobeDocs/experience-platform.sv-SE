@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Paketera källfiler i ett recept
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 45461e3420f3b7e227f80fe775d80b8442a1069c
+source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
 workflow-type: tm+mt
 source-wordcount: '1087'
 ht-degree: 0%
@@ -38,7 +38,7 @@ Med en Docker-bild kan utvecklare paketera ett program med alla delar som behöv
 
 Den inbyggda Docker-avbildningen överförs till Azure Container Registry med hjälp av autentiseringsuppgifter som du får när du skapar recept.
 
-Logga in på <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a>för att få dina autentiseringsuppgifter för Azure Container Registry. Navigera till den vänstra navigeringskolumnen **[!UICONTROL Workflows]**. Markera **[!UICONTROL Import Recipe]** följt av markera **[!UICONTROL Launch]**. Se skärmbilden nedan.
+Logga in på [Adobe Experience Platform](https://platform.adobe.com)för att få dina autentiseringsuppgifter för Azure Container Registry. Navigera till den vänstra navigeringskolumnen **[!UICONTROL Workflows]**. Markera **[!UICONTROL Import Recipe]** följt av markera **[!UICONTROL Launch]**. Se skärmbilden nedan.
 
 ![](../images/models-recipes/package-source-files/import.png)
 
