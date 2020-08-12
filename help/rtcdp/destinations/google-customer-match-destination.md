@@ -4,9 +4,9 @@ seo-title: Google Customer Match Destination
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egenskaper, som Search, Shopping, Gmail och YouTube.
 seo-description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egenskaper, som Search, Shopping, Gmail och YouTube.
 translation-type: tm+mt
-source-git-commit: 31eb03c6625f820c9729caf5181c56e748e853a5
+source-git-commit: 6a57c0da3425b7b83050f1b734d4abe8a290c8bc
 workflow-type: tm+mt
-source-wordcount: '1423'
+source-wordcount: '1455'
 ht-degree: 0%
 
 ---
@@ -118,7 +118,9 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att följa
 
    >[!IMPORTANT]
    >
-   > För [!DNL Google Customer Match] destinationer. **[!UICONTROL Account ID]** är ditt kund-ID hos Google. Formatet på ID:t är xxx-xxx-xxxx.
+   > * Argumentet för användning vid marknadsföring är valt som standard för **[!UICONTROL Combine with PII]** [!DNL Google Customer Match] destinationen och kan inte tas bort.
+   > * För [!DNL Google Customer Match] destinationer. **[!UICONTROL Account ID]** är ditt kund-ID hos Google. Formatet på ID:t är xxx-xxx-xxxx.
+
 
    ![Koppla ihop Google-kunder - autentiseringssteg](/help/rtcdp/destinations/assets/google-customer-match-authentication-step.png)
 
@@ -170,3 +172,7 @@ Insert in Step 6 when mobile device ID activation is available
 ## Verifiera att segmentaktiveringen lyckades {#verify-activation}
 
 När aktiveringsflödet är klart växlar du till ditt **[!UICONTROL Google Ads]** konto. De aktiverade segmenten visas nu som kundlistor på ditt Google-konto. Observera att beroende på segmentstorleken kommer vissa målgrupper inte att fyllas i om det inte finns fler än 100 aktiva användare att betjäna.
+
+## Ytterligare resurser {#additional-resources}
+
+* [Integrera Google Customer Match - videosjälvstudiekurs](https://docs.adobe.com/content/help/en/platform-learn/tutorials/rtcdp/integrate-with-google-customer-match.html)
