@@ -5,47 +5,48 @@ doc-type: release notes
 last-update: August 10, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: f881c1365684b1ca9e6bf9a8ce866d234dc54128
+source-git-commit: 89531ad458bd41720090ef2c429376af4460d7c0
 workflow-type: tm+mt
-source-wordcount: '289'
-ht-degree: 4%
+source-wordcount: '297'
+ht-degree: 2%
 
 ---
 
 
 # Versionsinformation för Adobe Experience Platform
 
-**Releasedatum: 10 juni 2020**
+**Releasedatum: 12 augusti 2020**
 
-Nya funktioner i Adobe Experience Platform:
+Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
-- [!DNL Access control](#access-control)
-- [!DNL Sandboxes](#sandboxes)
+- [[!DNL Data Science Workspace]](#dsw)
+- [[!DNL-källor]](#sources)
 
-## [!DNL Access control] {#access-control}
+## [!DNL Data Science Workspace] {#dsw}
 
-[!DNL Experience Platform] använder [Adobe Admin Console](https://adminconsole.adobe.com) produktprofiler för att länka användare med behörigheter och sandlådor. Behörigheter styr åtkomsten till en mängd olika Platform-funktioner, inklusive datamodellering, profilhantering och sandlådeadministration.
+[!DNL Data Science Workspace] använder maskininlärning och artificiell intelligens för att få insikter från era data. Integrerat i Adobe Experience Platform och [!DNL Data Science Workspace] gör det enklare att förutse hur ni använder ert innehåll och era datatillgångar i olika Adobe-lösningar.
 
-**Viktiga funktioner**
-
-| Funktion | Beskrivning |
-|--- | ---|
-| Behörigheter | På fliken [!DNL Admin Console]i en [!DNL Platform] produktprofil kan du anpassa vilka [!DNL Platform] funktioner som är tillgängliga för användarna som är kopplade till profilen. Tillgängliga behörighetskategorier är: [!UICONTROL Data Modeling], [!UICONTROL Data Management], [!UICONTROL Profile Management], [!UICONTROL Identities], [!UICONTROL Data Monitoring], [!UICONTROL Sandbox Administration], [!UICONTROL Destinations], [!UICONTROL Sources]. |
-| Åtkomst till sandlådor | Fliken [!UICONTROL _Behörigheter _]i en[!DNL Platform]produktprofil kan ge användare åtkomst till specifika sandlådor. Mer information finns i avsnittet om[sandlådor](#sandboxes)nedan. |
-
-Mer information finns i översikten över [åtkomstkontrollen](../../access-control/home.md).
-
-## [!DNL Sandboxes] {#sandboxes}
-
-[!DNL Experience Platform] är byggt för att berika applikationer för digitala upplevelser på global nivå. Företagen kör ofta flera program för digitala upplevelser parallellt och måste ta hänsyn till utveckling, testning och driftsättning av dessa applikationer samtidigt som man ser till att de uppfyller gällande krav. För att tillgodose detta behov tillhandahåller sandlådor [!DNL Experience Platform] som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
-
-**Viktiga funktioner**
+**Nya funktioner**
 
 | Funktion | Beskrivning |
-|--- | ---|
-| Produktionssandlåda | [!DNL Experience Platform] innehåller en enda produktionssandlåda som inte kan tas bort eller återställas. |
-| Sandlådor utan produktion | Du kan skapa flera icke-produktionssandlådor för en enda [!DNL Platform] instans, så att du kan testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka din produktionssandlåda. |
-| Sandlådeväxlare | I [!DNL Experience Platform] användargränssnittet gör sandlådeväxlaren i skärmens övre vänstra hörn att du kan växla mellan tillgängliga sandlådor via en nedrullningsbar meny. |
-| `x-sandbox-name` header | Alla anrop till [!DNL Experience Platform] API:er måste nu inkludera det nya `x-sandbox-name` `name` huvudet, vars värde refererar till attributet för den sandlåda som åtgärden ska utföras i. |
+| ------- | ----------- |
+| Förbättringar av virtuella maskiner i [!DNL JupyterLab] | Förbättrade stabiliteten hos långvariga virtuella [!DNL JupyterLab notebook] datorer. |
 
-Mer information finns i Översikt över [sandlådor](../../sandboxes/home.md).
+Mer information om [!DNL JupyterLab]finns i [[!DNL JupyterLab] användarhandboken](../../data-science-workspace/jupyterlab/overview.md).
+
+## Sources {#sources}
+
+Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+
+[!DNL Experience Platform] innehåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Övervakning av flödeskörning | Användarna kan övervaka alla flödeskörningar och se en detaljerad vy över varje körning, inklusive slutförandestatus, körvaraktighet, lista över filer som bearbetas, fel och mätvärden. Mer information finns i dokumentet [för övervakning av dataflöden](../../sources/tutorials/ui/monitor.md) . |
+| Kontouppdatering | Användarna kan uppdatera inloggningsuppgifter, namn och beskrivning för alla befintliga konton för att ge mer meningsfull information och åtgärda eventuella fel som kan ha uppstått. |
+| Flödeskörningsmeddelanden | Användare kan prenumerera på händelser och registrera webhooks för att få meddelanden i realtid om status, mått och fel för flödeskörningar. |
+| Förbättringar av gränssnittskatalogen | Uppdateringar av källkatalogskärmen för enklare åtkomst till primära åtgärder för markerade objekt. |
+
+Mer information om källor finns i [Källöversikt](../../sources/home.md).
