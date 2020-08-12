@@ -5,9 +5,9 @@ title: Indata och utdata från Attribution AI
 topic: Input and Output data for Attribution AI
 description: Följande dokument visar de olika indata och utdata som används i Attribution AI.
 translation-type: tm+mt
-source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
+source-git-commit: 2b51569a4c3dd9863edb6831bd182a7fa9d1d891
 workflow-type: tm+mt
-source-wordcount: '2166'
+source-wordcount: '2067'
 ht-degree: 0%
 
 ---
@@ -81,18 +81,6 @@ Attribution AI ger följande utdata:
 
 - [Rågranulat](#raw-granular-scores)
 - [Sammanlagda bakgrundsmusik](#aggregated-attribution-scores)
-
-I exemplen nedan användes ett exempel på CSV-utdata som illustration. Här är några av exempelfilens egenskaper.
-
-- Filen hade inga tokeniserade händelser.
-- Filen hade inga konverteringshändelser (den innehöll inte poängrader med 0 som marginalpoäng).
-- Dataegenskaper:
-   - Totalt 368 exempelrader.
-   - Minst 8 konverteringar med tre olika kanaler var.
-   - 151 konverteringar av konverteringstyp `“Digital_Product_Purchase”`.
-   - 10 olika kontaktytor, EMAIL, SOCIAL_LINKEDIN, ADS_GOOGLE, SOCIAL_OTHER, ADS_OTHER, SOCIAL_TWITTER , LANDINGPAGE, SOCIAL_FB, ADS_BING, PRINT.
-   - Konverteringar och kontaktytor sträcker sig över 8 respektive 9 månader.
-   - Raderna ordnas efter `id`, `conversion_timestamp` och `touchpoint_timestamp`.
 
 **Exempel på utdataschema:**
 
