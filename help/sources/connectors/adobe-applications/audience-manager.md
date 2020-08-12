@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Audience Manager-kontakt
 topic: overview
 translation-type: tm+mt
-source-git-commit: fb4ffa2c95365905f5417586fa7ecf88523009a0
+source-git-commit: a1b09f3e88e489f1b0ec0c1fcb72a2a5a4356d87
 workflow-type: tm+mt
-source-wordcount: '742'
+source-wordcount: '643'
 ht-degree: 0%
 
 ---
@@ -14,15 +14,14 @@ ht-degree: 0%
 
 # Audience Manager-kontakt
 
-Dataanslutningen för Adobe Audience Manager strömmar data från första part som samlats in i Adobe Audience Manager till Adobe Experience Platform. Kopplingen Audience Manager importerar tre datakategorier till Platform:
+Adobe Audience Manager dataanslutning strömmar data från första part som samlats in i Adobe Audience Manager till Adobe Experience Platform. Kopplingen Audience Manager importerar tre kategorier data till plattformen:
 
-- **Realtidsdata:** Data som samlats in i realtid på Audience Manager datainsamlingsserver. Dessa data används i Audience Manager för att fylla i regelbaserade egenskaper och kommer att visas i Platform på kortast möjliga latenstid.
-- **Inbyggda (inkommande) data:** Detta är de filer som har överförts av en användare till en Amazon S3-plats som är värd för Audience Manager. Audience Manager använder dessa data för att fylla i anpassade egenskaper med den inkommande filmetoden och har viss fördröjning.
+- **Realtidsdata:** Data som samlats in i realtid på Audience Manager datainsamlingsserver. Dessa data används i Audience Manager för att fylla i regelbaserade egenskaper och kommer att visas i plattformen på kortast möjliga latenstid.
 - **Profildata:** Audience Manager använder realtids- och onboarddata för att ta fram kundprofiler. De här profilerna används för att fylla i identitetsdiagram och egenskaper för segmentimplementeringar.
 
-Kopplingen Audience Manager mappar dessa datakategorier till XDM-schemat (Experience Data Model) och skickar dem till Platform. Realtidsdata och onboarddata skickas som XDM ExperienceEvent-data, medan profildata skickas som enskilda XDM-profiler.
+Kopplingen Audience Manager mappar dessa datakategorier till XDM-schemat (Experience Data Model) och skickar dem till Platform. Realtidsdata skickas som XDM ExperienceEvent-data, medan profildata skickas som enskilda XDM-profiler.
 
-Instruktioner om hur du skapar en anslutning med Adobe Audience Manager med Platform-gränssnittet finns i självstudiekursen [för](../../tutorials/ui/create/adobe-applications/audience-manager.md)Audience Manager-anslutningen.
+Instruktioner om hur du skapar en anslutning med Adobe Audience Manager med hjälp av användargränssnittet för plattformen finns i självstudiekursen [för](../../tutorials/ui/create/adobe-applications/audience-manager.md)Audience Manager-anslutningen.
 
 ## Vad är Experience Data Model (XDM)?
 
@@ -48,7 +47,7 @@ Nedan visas exempel på Audience Manager-strukturen som är mappad till XDM Expe
 
 Mer information finns i dokumentationen för mappningsfält [för](./mapping/audience-manager.md) Audience Manager.
 
-## Datahantering för Platform
+## Datahantering på plattformen
 
 ### Datauppsättningar
 
@@ -64,17 +63,15 @@ Audience Manager-datauppsättningar är inaktiverade som standard för Profil oc
 | Audience Manager-profildata | Används för diagnostik av anslutning till Audience Manager. |
 | Audience Manager-autentiserade profiler | Den här datauppsättningen innehåller Audience Manager-autentiserade profiler. |
 | Metadata för autentiserade profiler i Audience Manager | Används för diagnostik av Audience Manager Connector. |
-| Audience Manager inkommande {Datasource ID} **(inaktuellt)** | Den här datauppsättningen representerar onboardade poster i Audience Manager via metoden för inkommande filer. Detta dataflöde är föråldrat och kommer att tas bort i en senare version. |
-| Metadata för inkommande Audience Manager **(inaktuellt)** | Används för diagnostik av anslutning till Audience Manager. Detta dataflöde är föråldrat och kommer att tas bort i en senare version. |
 
 ### Anslutningar
 
-Adobe Audience Manager skapar en anslutning i katalogen: **Audience Manager Connection**. Katalog är det system med poster som används för dataplatser och -rader inom Adobe Experience Platform. En anslutning är ett katalogobjekt som är en kundspecifik instans av Connectors. Mer information om kataloger, anslutningar och anslutningar finns i översikten [för](../../../catalog/home.md) katalogtjänsten.
+Adobe Audience Manager skapar en anslutning i katalogen: **Audience Manager Connection**. Katalog är det system som används för att lagra och lagra data inom Adobe Experience Platform. En anslutning är ett katalogobjekt som är en kundspecifik instans av Connectors. Mer information om kataloger, anslutningar och anslutningar finns i översikten [för](../../../catalog/home.md) katalogtjänsten.
 
-## Vilken fördröjning förväntas för Audience Manager Data på Platform?
+## Vilken fördröjning förväntas för Audience Manager Data on Platform?
 
 | Audience Manager data | Latens | Anteckningar |
 | --- | --- | --- |
-| Realtidsdata | &lt; 35 minuter. | Tiden från att hämtas vid Realtime-noden till att visas på Platform Data Lake. |
-| Inkommande data | &lt; 13 timmar | Tiden från att bli fångad i S3-bucklor till att visas i Platform Data Lake. |
-| Profildata | &lt; 2 dagar | Tiden från att hämtas från Realtime/Inbound-data till att läggas till i en användarprofil och slutligen visas i Platform Data Lake. |
+| Realtidsdata | &lt; 35 minuter. | Tid från att hämtas vid Realtime-noden till att visas på en plattformsdatasjön. |
+| Inkommande data | &lt; 13 timmar | Tiden från att bli fångad i S3-bucket till att visas på Platform Data Lake. |
+| Profildata | &lt; 2 dagar | Tiden från att hämtas från Realtime/Inbound-data till att läggas till i en användarprofil och slutligen visas på Platform Data Lake. |
