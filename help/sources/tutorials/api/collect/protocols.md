@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Samla in protokolldata via källanslutningar och API:er
 topic: overview
 translation-type: tm+mt
-source-git-commit: d5a21462b9f0362414dfe4f73a6c4e4a2c92af61
+source-git-commit: 773823333fe0553515ebf169b4fd956b8737a9c3
 workflow-type: tm+mt
-source-wordcount: '1605'
+source-wordcount: '1660'
 ht-degree: 0%
 
 ---
@@ -130,7 +130,7 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 }
 ```
 
-## Skapa ett mål-XDM-schema {#target}
+## Skapa ett mål-XDM-schema {#target-schema}
 
 I tidigare steg skapades ett ad hoc-XDM-schema för att strukturera källdata. För att källdata ska kunna användas i [!DNL Platform]måste ett målschema också skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en [!DNL Platform] datauppsättning där källdata finns. Detta mål-XDM-schema utökar även XDM- [!DNL Individual Profile] klassen.
 
@@ -287,7 +287,7 @@ Ett lyckat svar returnerar en array som innehåller ID:t för den nya datauppsä
 ]
 ```
 
-## Skapa en målanslutning
+## Skapa en målanslutning {#target-connection}
 
 En målanslutning representerar anslutningen till målet där inkapslade data kommer in. Om du vill skapa en målanslutning måste du ange det fasta anslutnings-spec-ID som är associerat med datasjön. Detta anslutningsspec-ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
@@ -575,7 +575,7 @@ Ett lyckat svar returnerar detaljerna om dataflödesspecifikationen som ansvarar
 Det sista steget mot att samla in data är att skapa ett dataflöde. Nu bör du ha förberett följande obligatoriska värden:
 
 * [Källanslutnings-ID](#source)
-* [Target-anslutnings-ID](#target)
+* [Målanslutnings-ID](#target)
 * [Mappnings-ID](#mapping)
 * [ID för dataflödesspecifikation](#specs)
 
@@ -641,13 +641,14 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `flowSpec.id` | Det ID för dataflödesspecifikation som är kopplat till tredje parts protokollkälla. |
-| `sourceConnectionIds` | Det källanslutnings-ID som är kopplat till tredje parts protokollkälla. |
-| `targetConnectionIds` | Det målanslutnings-ID som är associerat med tredje parts protokollkälla. |
+| `flowSpec.id` | Det [flödesspec-ID](#specs) som hämtades i föregående steg. |
+| `sourceConnectionIds` | Det [källanslutnings-ID](#source) som hämtades i ett tidigare steg. |
+| `targetConnectionIds` | Det [målanslutnings-ID](#target-connection) som hämtades i ett tidigare steg. |
+| `transformations.params.mappingId` | Det [mappnings-ID](#mapping) som hämtades i ett tidigare steg. |
 | `transformations.params.deltaColum` | Den angivna kolumnen används för att skilja mellan nya och befintliga data. Inkrementella data importeras baserat på tidsstämpeln för den markerade kolumnen. |
-| `transformations.params.mappingId` | Det mappnings-ID som är associerat med tredje parts protokollkälla. |
-| `scheduleParams.startTime` | Starttiden för dataflödet i epok-tid i sekunder. |
-| `scheduleParams.frequency` | Följande frekvensvärden kan väljas: `once`, `minute`, `hour`, `day`eller `week`. |
+| `transformations.params.mappingId` | Det mappnings-ID som är kopplat till databasen. |
+| `scheduleParams.startTime` | Starttiden för dataflödet i epok-tid. |
+| `scheduleParams.frequency` | Frekvensen med vilken dataflödet samlar in data. Godtagbara värden är: `once`, `minute`, `hour`, `day`eller `week`. |
 | `scheduleParams.interval` | Intervallet anger perioden mellan två på varandra följande flödeskörningar. Intervallets värde ska vara ett heltal som inte är noll. Intervall krävs inte när frekvens har angetts som `once` och ska vara större än eller lika med `15` för andra frekvensvärden. |
 
 **Svar**
@@ -660,6 +661,11 @@ Ett godkänt svar returnerar ID:t `id` för det nya dataflödet.
     "etag": "\"04004fe9-0000-0200-0000-5ebc4c8b0000\""
 }
 ```
+
+## Övervaka dataflödet
+
+När dataflödet har skapats kan du övervaka de data som importeras genom det för att se information om flödeskörningar, slutförandestatus och fel. Mer information om hur du övervakar dataflöden finns i självstudiekursen om [övervakning av dataflöden i API:t ](../monitor.md)
+
 
 ## Nästa steg
 
