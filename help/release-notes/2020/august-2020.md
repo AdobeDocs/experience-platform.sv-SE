@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: August 10, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 89531ad458bd41720090ef2c429376af4460d7c0
+source-git-commit: dba7ae62b51b5cc4556f7f12d43b84e90f6c29dc
 workflow-type: tm+mt
-source-wordcount: '297'
-ht-degree: 2%
+source-wordcount: '480'
+ht-degree: 3%
 
 ---
 
@@ -20,6 +20,7 @@ ht-degree: 2%
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [[!DNL Data Science Workspace]](#dsw)
+- [!DNL Destinations](#destinations)
 - [[!DNL-källor]](#sources)
 
 ## [!DNL Data Science Workspace] {#dsw}
@@ -33,6 +34,25 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 | Förbättringar av virtuella maskiner i [!DNL JupyterLab] | Förbättrade stabiliteten hos långvariga virtuella [!DNL JupyterLab notebook] datorer. |
 
 Mer information om [!DNL JupyterLab]finns i [[!DNL JupyterLab] användarhandboken](../../data-science-workspace/jupyterlab/overview.md).
+
+## Mål {#destinations}
+
+I [Adobe kunddataplattform](../../rtcdp/overview.md)i realtid är destinationer färdigbyggda integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
+
+**Nya destinationer**
+
+Det finns nya destinationer där du kan aktivera dina Adobe Experience Platform-data. Mer information finns nedan:
+
+| Destination | Beskrivning |
+|--- | ---|
+| [!DNL Google Customer Match] | Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egendomar, som: [!DNL Search], [!DNL Shopping], Gmail och YouTube. På [!DNL Google Customer Match] sidan [](/help/rtcdp/destinations/google-customer-match-destination.md) i målkatalogen finns mer information om destinationen och hur du konfigurerar den i Adobe Real-time CDP. |
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+|------- | -----------|
+| Anpassad filnamnsredigerare | Uppdatera till arbetsflödet för dataaktivering för e-postmarknadsföringsmål och molnlagringsmål där du kan redigera namnet på de exporterade filerna. Mer information finns i [ konfigurationssteget](/help/rtcdp/destinations/activate-destinations.md#configure) i aktiveringsarbetsflödet. |
+| Rekommenderade attribut | Uppdatera till arbetsflödet för dataaktivering för e-postmarknadsföringsmål och molnlagringsmål som visar rekommenderade attribut som du kan lägga till i de exporterade filerna. Mer information finns i steget [](/help/rtcdp/destinations/activate-destinations.md#select-attributes) Välj attribut i aktiveringsarbetsflödet. |
 
 ## Sources {#sources}
 
