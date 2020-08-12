@@ -1,12 +1,12 @@
 ---
 title: Annonsmål
 seo-title: Annonsmål
-description: Koppla era kunddata i realtid till en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
-seo-description: Koppla era kunddata i realtid till en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
+description: Koppla samman er kunddataplattform i realtid med en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
+seo-description: Koppla samman er kunddataplattform i realtid med en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 875430cdbd80025fc3f0de2664f9b55db0debe53
 workflow-type: tm+mt
-source-wordcount: '180'
+source-wordcount: '183'
 ht-degree: 0%
 
 ---
@@ -33,6 +33,7 @@ För närvarande stöder CDP i realtid de reklamdestinationer som anges nedan. I
 * [Google Ads](/help/rtcdp/destinations/google-ads-destination.md)
 * [Google Ads-tillägg](/help/rtcdp/destinations/google-ads-extension.md)
 * [Google Ad Manager](/help/rtcdp/destinations/google-ad-manager-destination.md)
+* [Google Customer Match](/help/rtcdp/destinations/google-customer-match-destination.md)
 * [Google-taggtillägg](/help/rtcdp/destinations/gtag-advertising-extension.md)
 * [Tillägget LinkedIn Insight-tagg](linkedin-extension.md)
 * [Tillägg för Pinterest Conversion Tracking](pinterest-extension.md)
