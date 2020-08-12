@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Definiera en relation mellan två scheman med schemaredigeraren
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: 6d291ac9a8c194dd63e411e4d064492c38412749
+source-git-commit: d847329f675c7ac34a4feabb9e57a9e97f7e3ed1
 workflow-type: tm+mt
-source-wordcount: '861'
+source-wordcount: '862'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,7 @@ Källschemat&quot;[!UICONTROL Loyalty Members]&quot; baseras på XDM- [!DNL Indi
 
 ### Hotellschema
 
-Målschemat&quot;[!UICONTROL Hotels]&quot; baseras på en anpassad&quot;[!UICONTROL Hotels]&quot; klass och innehåller fält som beskriver ett hotell. Fältet&quot;[!UICONTROL email]&quot; fungerar som primär identitet för schemat under namnutrymmet&quot;[!UICONTROL Email]&quot;. Som &quot;[!UICONTROL Loyalty Members]&quot; har schemat också aktiverats för [!DNL Real-time Customer Profile].
+Målschemat&quot;[!UICONTROL Hotels]&quot; baseras på en anpassad&quot;[!UICONTROL Hotels]&quot; klass och innehåller fält som beskriver ett hotell. Fältet&quot;[!DNL hotelId]&quot; fungerar som primär identitet för schemat under ett anpassat&quot;[!DNL hotelId]&quot; namnutrymme. Som &quot;[!UICONTROL Loyalty Members]&quot; har schemat också aktiverats för [!DNL Real-time Customer Profile].
 
 ![](../images/tutorials/relationship/hotels.png)
 
@@ -76,7 +76,7 @@ Ett nytt fält visas på arbetsytan under namnutrymmet &quot;\_tenantId&quot;. U
 
 ![](../images/tutorials/relationship/relationship-field-details.png)
 
-När du är klar klickar du på **[!UICONTROL Apply]**.
+Klicka på **[!UICONTROL Apply]** när du är klar.
 
 ![](../images/tutorials/relationship/relationship-field-apply.png)
 
