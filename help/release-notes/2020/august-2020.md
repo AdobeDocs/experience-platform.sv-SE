@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: August 10, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: dba7ae62b51b5cc4556f7f12d43b84e90f6c29dc
+source-git-commit: 1d9c8cbf273e9aef13e34df91a98b6c08180c8ff
 workflow-type: tm+mt
 source-wordcount: '480'
 ht-degree: 3%
@@ -45,7 +45,7 @@ Det finns nya destinationer där du kan aktivera dina Adobe Experience Platform-
 
 | Destination | Beskrivning |
 |--- | ---|
-| [!DNL Google Customer Match] | Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egendomar, som: [!DNL Search], [!DNL Shopping], Gmail och YouTube. På [!DNL Google Customer Match] sidan [](/help/rtcdp/destinations/google-customer-match-destination.md) i målkatalogen finns mer information om destinationen och hur du konfigurerar den i Adobe Real-time CDP. |
+| [!DNL Google Customer Match] | Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egendomar, som: [!DNL Search], [!DNL Shopping], Gmail och YouTube. <br><br> På [!DNL Google Customer Match] sidan [](/help/rtcdp/destinations/google-customer-match-destination.md) i målkatalogen finns mer information om destinationen och hur du konfigurerar den i Adobe Real-time CDP. |
 
 **Nya funktioner**
 
