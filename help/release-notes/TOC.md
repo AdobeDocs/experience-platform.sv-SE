@@ -3,17 +3,18 @@ product: experience-platform
 audience: user
 user-guide-title: Versionsinformation för Adobe Experience Platform
 translation-type: tm+mt
-source-git-commit: c59acbe9acce65ab81a53cfe8f8f3373cf9ae388
+source-git-commit: 3a650d8a6553cd313f49423a2280a89e5b5785fc
 workflow-type: tm+mt
-source-wordcount: '24'
-ht-degree: 54%
+source-wordcount: '25'
+ht-degree: 56%
 
 ---
 
 
 # Adobe Experience Platform release notes {#release-notes}
 
-* [Juli 2020](latest/latest.md)
+* [Augusti 2020](latest/latest.md)
+* [Juli 2020](2020/july-2020.md)
 * [Juni 2020](2020/june-2020.md)
 * [Maj 2020](2020/may-2020.md)
 * [April 2020](2020/april-2020.md)
@@ -27,6 +28,3 @@ ht-degree: 54%
    * [Juli 2019](2019/july-2019.md)
    * [Juni 2019](2019/june-2019.md)
    * [Maj 2019](2019/may-2019.md)
-
-
-
