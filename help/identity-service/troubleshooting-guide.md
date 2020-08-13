@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Felsökningsguide för Adobe Experience Platform Identity Service
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 5d7e6387382e20b3e7f07070006b6d9d59ac47eb
 workflow-type: tm+mt
 source-wordcount: '2225'
 ht-degree: 0%
@@ -72,7 +72,7 @@ Identitetsfält måste kopplas till ett befintligt ID-namnutrymme när de skapas
 
 Stegvisa instruktioner om hur du definierar ett namnutrymme när du skapar en identitetsbeskrivning med API:t finns i avsnittet om [att skapa en beskrivning](../xdm/tutorials/create-schema-ui.md) i utvecklarhandboken för schemaregister. Om du vill markera ett schemafält som en identitet i användargränssnittet följer du stegen i [schemaredigerarens självstudiekurs](../xdm/tutorials/create-schema-api.md).
 
-## Vilka är de vanliga ID-namnutrymmena från Experience Platform?
+## Vilka är de vanliga ID-namnutrymmena från Experience Platform? {#standard-namespaces}
 
 Följande standardnamnutrymmen kan användas av alla organisationer i Experience Platform:
 
@@ -85,7 +85,7 @@ Följande standardnamnutrymmen kan användas av alla organisationer i Experience
 | Telefon | 7 | Telefon |  |
 | Windows AID | 8 | WAID |  |
 | AdCloud | 411 | AdCloud | alias: Ad Cloud |
-| Adobe Target | 9 | TNTID | Target ID |
+| Adobe Target | 9 | TNTID | Mål-ID |
 | Google Ad ID | 20914 | GAID | GAID |
 | Apple IDFA | 20915 | IDFA | ID för annonsörer |
 
@@ -105,9 +105,9 @@ Identiteter refereras i API-anrop antingen av deras sammansatta identitet eller 
 
 Identitetstjänsten skapar en stark, envägs kryptografisk hash av PII-filen innan beständiga värden används. Identitetsdata i namnutrymmena &quot;Telefon&quot; och &quot;E-post&quot; hashas automatiskt med SHA-256, där värdena &quot;E-post&quot; automatiskt konverteras till gemener före hashning.
 
-## Ska jag kryptera alla PII-filer innan jag skickar dem till Platform?
+## Ska jag kryptera alla PII-filer innan jag skickar till plattformen?
 
-Du behöver inte kryptera PII-data manuellt innan du importerar dem till Platform. Genom att använda dataanvändningsetiketten på alla tillämpliga datafält, konverterar Platform automatiskt dessa fält till hash-kodade ID-värden vid inmatning. `I1`
+Du behöver inte kryptera PII-data manuellt innan du importerar dem till plattformen. Genom att använda dataanvändningsetiketten på alla tillämpliga datafält, konverterar Platform automatiskt dessa fält till hash-kodade ID-värden vid inmatning. `I1`
 
 Anvisningar om hur du använder och hanterar dataanvändningsetiketter finns i självstudiekursen om [dataanvändningsetiketter](../data-governance/labels/user-guide.md).
 
