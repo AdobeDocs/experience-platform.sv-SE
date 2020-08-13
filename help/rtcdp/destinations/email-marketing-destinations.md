@@ -4,9 +4,9 @@ seo-title: Destinationer för e-postmarknadsföring
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 seo-description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 translation-type: tm+mt
-source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
+source-git-commit: 6850a1ee5a578a3dccce9f9decd8f6a368705f4a
 workflow-type: tm+mt
-source-wordcount: '703'
+source-wordcount: '772'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # E-postmarknadsföringsmål {#email-marketing-destinations}
 
-Med ESP (Email Service Providers) kan du hantera dina e-postmarknadsföringsaktiviteter, som att skicka e-postkampanjer med reklam. Adobe kunddata i realtid Platform kan integreras med ESP:er genom att ni kan aktivera segment för e-postmarknadsföringsmål.
+Med ESP (Email Service Providers) kan du hantera dina e-postmarknadsföringsaktiviteter, som att skicka e-postkampanjer med reklam. Adobe kunddataplattform i realtid integreras med ESP:er genom att ni kan aktivera segment för e-postmarknadsföringsmål.
 
 För att skicka segment till e-postmarknadsföringsmål för era kampanjer måste CDP i realtid i Adobe först ansluta till destinationen.
 
@@ -47,15 +47,21 @@ På **[!UICONTROL Select Segments]** sidan väljer du vilka segment som ska skic
 
 ![Markera segment](/help/rtcdp/destinations/assets/email-select-segments.png)
 
-## Steg 3 - Välj vilka schemafält som ska användas som målattribut i de exporterade filerna {#destination-attributes}
+## Steg 3 - Konfigurera filnamn
+
+Mer information om redigeringsalternativen för filnamn finns i [konfigurationssteget](/help/rtcdp/destinations/activate-destinations.md#configure) i självstudiekursen om aktiveringsmål.
+
+## Steg 4 - Välj attribut - Välj vilka schemafält som ska användas som målattribut i de exporterade filerna {#destination-attributes}
 
 I det här steget väljer du vilka fält som ska exporteras till e-postmarknadsföringsmål.
 
-![Målattribut](/help/rtcdp/destinations/assets/destination-attributes.png)
+![Målattribut](/help/rtcdp/destinations/assets/recommended-attributes.png)
+
+Mer information om det här steget finns i [steget Välj attribut](/help/rtcdp/destinations/activate-destinations.md#select-attributes) i självstudiekursen Aktivera mål.
 
 ### Identity {#identity}
 
-Vi rekommenderar att du väljer en unik identifierare från ditt [unionsschema](../../profile/home.md#profile-fragments-and-union-schemas). Det här är fältet som dina användares identiteter är avskärmade från. Oftast är det här fältet e-postadressen, men det kan också vara ett lojalitetsprogram-ID eller ett telefonnummer. I tabellen nedan finns de vanligaste unika identifierarna och deras XDM-fält i unionsschemat.
+Vi rekommenderar att du väljer en unik identifierare från ditt [unionsschema](../../profile/home.md#profile-fragments-and-union-schemas). Det här är fältet som dina användares identiteter är avskärmade från. Oftast är det här fältet e-postadressen, men det kan också vara ett lojalitetsprogram-ID eller ett telefonnummer. I tabellen nedan finns de vanligaste unika identifierarna och deras XDM-fält i schemat.
 
 | Unik identifierare | XDM-fält i Unified Schema |
 ---------|----------
@@ -76,8 +82,9 @@ Välj vilka andra fält du vill exportera till e-postmålet i fältet Schema. N�
 | Adresstillstånd | `homeAddress.stateProvince` |
 | Adress Postnummer | `homeAddress.postalCode` |
 | Födelsedag | `person.birthDayAndMonth` |
+| Segmentmedlemskap | `segmentMembership.status` |
 
-## Steg 3 - Importera data från lagringsplatsen till målet
+## Steg 5 - Importera data från lagringsplatsen till målet
 
 Läs de enskilda artiklarna om destinationsorten för e-postmarknadsföring om du vill lära dig hur du importerar data från din lagringsplats till destinationer:
 
@@ -89,3 +96,8 @@ Läs de enskilda artiklarna om destinationsorten för e-postmarknadsföring om d
 ## Aktivera segment för e-postmarknadsföringsmål
 
 Instruktioner om hur du aktiverar segment för e-postmarknadsföringsmål finns i [Aktivera data till mål](/help/rtcdp/destinations/activate-destinations.md).
+
+## Ytterligare resurser
+
+* [Aktivera data till mål](/help/rtcdp/destinations/activate-destinations.md)
+* [Skapa e-postmarknadsföringsmål och aktivera data med API:t för Flow Service](https://docs.adobe.com/content/help/en/experience-platform/tutorials/destinations/email-marketing-api.html)
