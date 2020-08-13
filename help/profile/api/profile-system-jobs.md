@@ -4,17 +4,17 @@ solution: Adobe Experience Platform
 title: Profilsystemjobb - Kundprofils-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
+source-git-commit: 73f2c05a0e63f376f7a2f5644133e773980d0b26
 workflow-type: tm+mt
 source-wordcount: '1419'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
 
 # Slutpunkt för profilsystemjobb (Delete-begäranden)
 
-Med Adobe Experience Platform kan ni importera data från flera olika källor och skapa stabila profiler för enskilda kunder. Data som hämtas till [!DNL Platform] lagras i [!DNL Data Lake] såväl som i [!DNL Real-time Customer Profile] datalagret. Ibland kan det vara nödvändigt att ta bort en datauppsättning eller en batch från profilarkivet för att ta bort data som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder [!DNL Real-time Customer Profile] API:t för att skapa ett [!DNL Profile] systemjobb, som också kallas &quot;[!DNL delete request]&quot;, som också kan ändras, övervakas eller tas bort vid behov.
+Med Adobe Experience Platform kan ni importera data från flera olika källor och skapa robusta profiler för enskilda kunder. Data som hämtas till [!DNL Platform] lagras i [!DNL Data Lake] såväl som i [!DNL Real-time Customer Profile] datalagret. Ibland kan det vara nödvändigt att ta bort en datauppsättning eller en batch från profilarkivet för att ta bort data som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder [!DNL Real-time Customer Profile] API:t för att skapa ett [!DNL Profile] systemjobb, som också kallas &quot;[!DNL delete request]&quot;, som också kan ändras, övervakas eller tas bort vid behov.
 
 >[!NOTE]
 >Om du försöker ta bort datauppsättningar eller grupper från [!DNL Data Lake]katalogen kan du få instruktioner i [Katalogtjänstöversikten](../../catalog/home.md) .
@@ -46,7 +46,7 @@ GET /system/jobs?{QUERY_PARAMETERS}
 **Begäran**
 
 ```shell
-curl -X POST \
+curl -X GET \
   https://platform.adobe.io/data/core/ups/system/jobs \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
