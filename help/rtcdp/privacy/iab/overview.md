@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Stöd för IAB TCF 2.0 i kunddataplattformen i realtid
 topic: privacy events
 translation-type: tm+mt
-source-git-commit: 67c598000cec36a170e7324877d4d9f2db9453a4
+source-git-commit: 350526e172b4ec3cf3b8cbe4d96f7b771aa1d669
 workflow-type: tm+mt
 source-wordcount: '2362'
 ht-degree: 1%
@@ -150,7 +150,7 @@ Kommandot förväntar `setConsent` sig två argument: (1) en sträng som anger k
 ```js
 alloy("setConsent", {
   consent: [{
-    standard: "IAB",
+    standard: "IAB TCF",
     version: "2.0",
     value: "CLcVDxRMWfGmWAVAHCENAXCkAKDAADnAABRgA5mdfCKZuYJez-NQm0TBMYA4oCAAGQYIAAAAAAEAIAEgAA.argAC0gAAAAAAAAAAAA",
     gdprApplies: "true"
@@ -165,7 +165,7 @@ alloy("setConsent", {
 | `value` | Den bas-64-kodade medgivandesträngen som genererats av CMP. |
 | `gdprApplies` | Ett booleskt värde som anger om GDPR gäller för den inloggade kunden. För att TCF 2.0 ska kunna användas för den här kunden måste värdet anges till &quot;true&quot;. |
 
-Kommandot ska användas som en del av en CMP-krok som upptäcker ändringar i medgivandeinställningarna. `setConsent` Följande JavaScript innehåller ett exempel på hur kommandot `setConsent` kan användas för OneTrust&#39;s `OnConsentChanged` krok:
+Kommandot ska användas som en del av en CMP-krok som upptäcker ändringar i medgivandeinställningarna. `setConsent` I följande JavaScript finns ett exempel på hur kommandot `setConsent` kan användas för OneTrust&#39;s `OnConsentChanged` krok:
 
 ```js
 OneTrust.OnConsentChanged(function () {
@@ -245,7 +245,7 @@ TCF 2.0 kräver också att datakällan måste kontrollera målets leverantörsbe
 
 ## Test your implementation {#test-implementation}
 
-När du har konfigurerat implementeringen av TCF 2.0 och exporterat segment till destinationer, kommer data som inte uppfyller kraven för samtycke inte att exporteras. För att kunna se om rätt kundprofiler filtrerades under exporten måste du dock manuellt kontrollera datalagret på dina destinationer för att se om medgivandet tillämpades korrekt.
+När du har konfigurerat implementeringen av TCF 2.0 och exporterat segment till destinationer, kommer data som inte uppfyller kraven för samtycke inte att exporteras. För att kunna se om rätt kundprofiler filtrerades under exporten måste du dock manuellt kontrollera datalagret på dina destinationer för att se om samtycke har använts på rätt sätt.
 
 Observera att om flera ID:n utgör ett kluster och TCF 2.0 gäller, kommer hela klustret att uteslutas om inte ens ett ID innehåller rätt syften och leverantörsbehörighet.
 
