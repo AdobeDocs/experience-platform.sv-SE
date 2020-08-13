@@ -4,7 +4,7 @@ seo-title: Konfigurera Adobe Experience Platform Web SDK
 description: Lär dig hur du konfigurerar Experience Platform Web SDK
 seo-description: Lär dig hur du konfigurerar Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: abd72993577f298141ed0d25b6c4abc42050b68e
+source-git-commit: b7b206573a130af70a82c73a3f9b0a0eb28a513a
 workflow-type: tm+mt
 source-wordcount: '745'
 ht-degree: 4%
@@ -78,7 +78,7 @@ Ditt tilldelade [!DNL Experience Cloud] organisations-ID.  När du konfigurerar 
 
 ## Datainsamling
 
-### `clickCollectionEnabled`
+### `clickCollectionEnabled` {#clickCollectionEnabled}
 
 | **Typ** | **Obligatoriskt** | **Standardvärde** |
 | -------- | ------------ | ----------------- |
