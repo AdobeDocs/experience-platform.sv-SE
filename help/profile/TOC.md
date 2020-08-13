@@ -3,10 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Hjälp om kundprofil i realtid
 translation-type: tm+mt
-source-git-commit: d80d49df9c5ac197bdc7f851bbfff18d9b3019d4
+source-git-commit: 84789a8e6e8c1f0fc91d0b54ba29d449963c3117
 workflow-type: tm+mt
-source-wordcount: '78'
-ht-degree: 1%
+source-wordcount: '84'
+ht-degree: 4%
 
 ---
 
@@ -22,11 +22,12 @@ ht-degree: 1%
    * [Enheter ([!DNL-profil] åtkomst)](api/entities.md)
    * [Exportera jobb ([!DNL-profil] export)](api/export-jobs.md)
    * [Sammanfoga profiler](api/merge-policies.md)
+   * [Förhandsgranska exempelstatus ([!DNL-profil] förhandsgranskning)](api/preview-sample-status.md)
    * [[!DNL Profile] systemjobb (Delete-begäranden)](api/profile-system-jobs.md)
 * Användargränssnittsguider {#ui}
    * [[!DNL Profile] användarhandbok](ui/user-guide.md)
    * [Användarhandbok för sammanslagningsprinciper](ui/merge-policies.md)
-* Tutorials {#tutorials}
+* Självstudiekurser {#tutorials}
    * [Lägg till data i [!DNL Profile]](tutorials/add-profile-data.md)
    * [Konfigurera datauppsättning för [!DNL Profile] och [!DNL Identity]](tutorials/dataset-configuration.md)
    * [Fler självstudiekurser](https://docs.adobe.com/content/help/en/experience-platform/tutorials/home.html)
