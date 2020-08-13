@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Utvecklarhandbok för kundprofil-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: d80d49df9c5ac197bdc7f851bbfff18d9b3019d4
+source-git-commit: 84789a8e6e8c1f0fc91d0b54ba29d449963c3117
 workflow-type: tm+mt
-source-wordcount: '704'
+source-wordcount: '796'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # [!DNL Real-time Customer Profile] Utvecklarhandbok för API
 
-[!DNL Real-time Customer Profile] ger er en helhetsbild av var och en av era enskilda kunder i Adobe Experience Platform. [!DNL Profile] kan ni sammanställa olika kunddata från olika kanaler, t.ex. online, offline, CRM och data från tredje part, i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
+[!DNL Real-time Customer Profile] ger er en helhetsbild av var och en av era enskilda kunder inom Adobe Experience Platform. [!DNL Profile] kan ni sammanställa olika kunddata från olika kanaler, t.ex. online, offline, CRM och data från tredje part, i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
 
 API:t innehåller [!DNL Real-time Customer Profile] flera slutpunkter, som beskrivs nedan. Besök de enskilda slutpunktshandböckerna för mer information och se [komma igång-guiden](getting-started.md) för viktig information om obligatoriska huvuden, läsning av exempel-API-anrop med mera.
 
@@ -46,7 +46,11 @@ Via Adobe Experience Platform kan du komma åt [!DNL Real-time Customer Profile]
 
 När data från flera källor samlas i [!DNL Experience Platform]är sammanslagningsprinciper de regler som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa enskilda kundprofiler. Med API:t kan du skapa nya sammanfogningsprinciper, hantera befintliga profiler och ange en standardsammanfogningsprincip för organisationen. [!DNL Real-time Customer Profile] Mer information om hur du arbetar med sammanfogningspolicyer med API finns i slutpunktshandboken för [sammanfogningspolicyer](merge-policies.md).
 
-En guide till hur du arbetar med sammanfogningsprinciper med [!DNL Platform] användargränssnittet finns i användarhandboken för [sammanfogningsprinciper](../ui/merge-policies.md).
+En guide till hur du arbetar med sammanfogningsprinciper med hjälp av [!DNL Platform] användargränssnittet finns i användarhandboken för [sammanfogningsprinciper](../ui/merge-policies.md).
+
+## Förhandsgranska exempelstatus ([!DNL Profile] förhandsgranskning) {#profile-preview}
+
+När data som är aktiverade för profilen hämtas till Experience Platform lagras de i datalagret Profil. När antalet poster i profilarkivet ökar eller minskar körs ett exempeljobb som innehåller information om hur många profilfragment och sammanfogade profiler som finns i datalagret. Med hjälp av profil-API:t kan du förhandsgranska det senaste framgångsrika exemplet samt lista profildistributionen per datauppsättning och per identitetsnamnområde. Information om hur du kommer igång med `/profilepreviewstatus` slutpunkten finns i guiden [för](preview-sample-status.md)förhandsvisningsexempelstatus.
 
 ## Profilsystemjobb {#profile-system-jobs}
 
