@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform produktdokumentation
 topic: getting started
 translation-type: tm+mt
-source-git-commit: b67513a83a46861872e92d9db57232554e7d831b
+source-git-commit: c91bcdff5b57ef69f79e211fbeb912e3d7fcdb39
 workflow-type: tm+mt
-source-wordcount: '7228'
+source-wordcount: '7236'
 ht-degree: 0%
 
 ---
@@ -210,7 +210,7 @@ ht-degree: 0%
 
 **Delta Save Strategy:** `Delta save strategy` är ett alternativ för att hämta tredjepartsdata via en anslutning. Med det här alternativet kan användaren ange att nya eller ändrade rader med källdata ska importeras till [!DNL Experience Platform]. Nya rader läggs till i slutet av datauppsättningen och ändrade rader uppdateras i datauppsättningen [!DNL Experience Platform].
 
-**Mål:** I [!DNL Real-time Customer Data Platform] ett mål är en allmän term för alla system, till exempel ett Adobe-program, en annonsserver eller ett annonsnätverk där en målgrupp aktiveras och levereras.
+**Mål:** I [!DNL Real-time Customer Data Platform] en destination är en allmän term för alla slutpunkter, som Adobe, annonsplattform, molnlagringstjänst eller marknadsföringstjänst, där en målgrupp aktiveras och levereras.
 
 **Målkategori:** En destinationskategori är en gruppering av destinationer [!DNL Real-time Customer Data Platform] som har liknande egenskaper.
 
@@ -326,9 +326,9 @@ ht-degree: 0%
 
 ## J
 
-**[!DNL JupyterLab]:**Ett webbaserat gränssnitt med öppen källkod för Project[!DNL Jupyter]och är nära integrerat i[!DNL Experience Platform].
+**[!DNL JupyterLab]:** Ett webbaserat gränssnitt med öppen källkod för Project [!DNL Jupyter] och är nära integrerat i [!DNL Experience Platform].
 
-**[!DNL Jupyter Notebook]:**Ett webbprogram med öppen källkod som gör det möjligt att skapa och dela dokument som innehåller live-kod, ekvationer, visualiseringar och berättande text.
+**[!DNL Jupyter Notebook]:** Ett webbprogram med öppen källkod som gör det möjligt att skapa och dela dokument som innehåller live-kod, ekvationer, visualiseringar och berättande text.
 
 ## K
 
@@ -366,7 +366,7 @@ ht-degree: 0%
 
 **Icke-produktionssandlåda:** Sandlådor som inte är produktionssandlådor är en form av datvirtualisering som gör att du kan isolera data från andra sandlådor och som vanligtvis används för utvecklingsexperiment, testning och testning. Sandlådor som inte är produktionssandlådor kan återställas och tas bort.
 
-**[!DNL Notebooks]:**[!DNL Notebooks]skapas med *[!DNL Jupyter Notebook]*och innehåller analysbeskrivning, resultat och kan köras för att utföra dataanalys.
+**[!DNL Notebooks]:** [!DNL Notebooks] skapas med *[!DNL Jupyter Notebook]* och innehåller analysbeskrivning, resultat och kan köras för att utföra dataanalys.
 
 [Till början](#adobe-experience-platform-glossary)
 
@@ -418,7 +418,7 @@ ht-degree: 0%
 
 **Profilexport:** [!DNL Profile] export är en av de två typerna av destinationer i [!DNL Real-time Customer Data Platform]. [!DNL Profile] vid export genereras en fil som innehåller profiler och attribut, och obearbetade PII-data används med e-post och används för integrering med automatiseringsplattformar för marknadsföring och e-post.
 
-**Profilens FProfile-fragment:** Ett profilfragment är profilinformationen för endast en identitet från listan över identiteter som finns för en viss användare.
+**Profilfragment:** Ett profilfragment är profilinformationen för endast en identitet från listan över identiteter som finns för en viss användare.
 
 **Profil-ID:** Ett profil-ID är en automatiskt genererad identifierare som är associerad med en identitetstyp och representerar en profil.
 
@@ -490,7 +490,7 @@ ht-degree: 0%
 
 **Utvärderingsmetod för segment:** Utvärdering enligt segmentschema möjliggör ett återkommande schema för körning av ett exportjobb vid en viss tidpunkt, medan utvärdering på begäran innebär att ett segmentjobb skapas för att skapa målgruppen omedelbart.
 
-**Segmentexport:** Segmentexport är en av de två typerna av destinationer och skickar de profiler som är kvalificerade och har mappats till destinationen. Använder segment- och användar-ID:n och pseudonyma data och integreras vanligtvis med sociala nätverk och andra målplattformar för digitala medier.
+**Segmentexport:** Segmentexport är en av de två typerna av destinationer i [!DNL Real-time Customer Data Platform]. Vid segmentexport kan du skicka de profiler som är kvalificerade och har mappats till målet. Använder segment- och användar-ID:n och pseudonyma data och integreras vanligtvis med sociala nätverk och andra målplattformar för digitala medier.
 
 **Segment-ID:** Segment-ID är en automatiskt genererad identifierare som är associerad med ett segment.
 
