@@ -3,9 +3,9 @@ product: adobe experience platform
 audience: user
 user-guide-title: Hjälp om kunddataplattform i realtid
 translation-type: tm+mt
-source-git-commit: 836feb48c62e0e0ed11248846d63021125796b76
+source-git-commit: 759c96d091194d1d7d670d947169eceac7910730
 workflow-type: tm+mt
-source-wordcount: '443'
+source-wordcount: '460'
 ht-degree: 4%
 
 ---
@@ -132,6 +132,9 @@ ht-degree: 4%
 * Integritet och datahantering {#privacy}
    * [Sekretessöversikt](privacy/privacy-overview.md)
    * [Datastyrning - översikt](privacy/data-governance-overview.md)
+   * Stöd för IAB TCF 2.0 {#iab}
+      * [Stöd för IAB TCF 2.0 i CDP i realtid](./privacy/iab/overview.md)
+      * [Skapa datauppsättningar för att hämta IAB TCF 2.0-medgivandedata](./privacy/iab/dataset-preparation.md)
 * Profiler {#profile}
    * [Profilöversikt](profile/profile-overview.md)
    * [Identiteter och identitetsnamnutrymmen](profile/identities-overview.md)
