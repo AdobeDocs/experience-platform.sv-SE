@@ -5,7 +5,7 @@ solution: Experience Platform
 title: Övervaka konton och dataflöden
 topic: overview
 translation-type: tm+mt
-source-git-commit: 8bdd0493444c2c3b0f56db1166a6fa5d616e41be
+source-git-commit: dcdb1eb1f89b7393b83941a18abb2be2afa3576f
 workflow-type: tm+mt
 source-wordcount: '827'
 ht-degree: 0%
@@ -100,7 +100,9 @@ Panelen *[!UICONTROL Error diagnostics preview]* visas. På den här skärmen vi
 
 I det här avsnittet finns även en förhandsgranskning av kolumnen som innehåller felet.
 
-> [!IMPORTANT] För att kunna aktivera måste *[!UICONTROL Error diagnostics preview]* du aktivera *[!UICONTROL Partial ingestion]* och *[!UICONTROL Error diagnostics]* när du konfigurerar ett dataflöde. Om du gör det kan systemet skanna alla poster som hämtas under flödeskörningen.
+>[!IMPORTANT]
+>
+>För att kunna aktivera måste *[!UICONTROL Error diagnostics preview]* du aktivera *[!UICONTROL Partial ingestion]* och *[!UICONTROL Error diagnostics]* när du konfigurerar ett dataflöde. Om du gör det kan systemet skanna alla poster som hämtas under flödeskörningen.
 
 ![Preview-error-diagnostics](../../images/tutorials/monitor/preview-error-diagnostics.png)
 
