@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: August 10, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 1d9c8cbf273e9aef13e34df91a98b6c08180c8ff
+source-git-commit: 8b540a108336ae4475f072b71a34e37cac064826
 workflow-type: tm+mt
-source-wordcount: '480'
+source-wordcount: '452'
 ht-degree: 3%
 
 ---
@@ -65,7 +65,6 @@ Adobe Experience Platform kan importera data från externa källor och samtidigt
 | Funktion | Beskrivning |
 | ------- | ----------- |
 | Övervakning av flödeskörning | Användarna kan övervaka alla flödeskörningar och se en detaljerad vy över varje körning, inklusive slutförandestatus, körvaraktighet, lista över filer som bearbetas, fel och mätvärden. Mer information finns i dokumentet [för övervakning av dataflöden](../../sources/tutorials/ui/monitor.md) . |
-| Kontouppdatering | Användarna kan uppdatera inloggningsuppgifter, namn och beskrivning för alla befintliga konton för att ge mer meningsfull information och åtgärda eventuella fel som kan ha uppstått. |
 | Flödeskörningsmeddelanden | Användare kan prenumerera på händelser och registrera webhooks för att få meddelanden i realtid om status, mått och fel för flödeskörningar. |
 | Förbättringar av gränssnittskatalogen | Uppdateringar av källkatalogskärmen för enklare åtkomst till primära åtgärder för markerade objekt. |
 
