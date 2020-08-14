@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Stöd för IAB TCF 2.0 i kunddataplattformen i realtid
 topic: privacy events
 translation-type: tm+mt
-source-git-commit: 350526e172b4ec3cf3b8cbe4d96f7b771aa1d669
+source-git-commit: 28106d5db179e71f47b7e071b359ffe4934a3bbe
 workflow-type: tm+mt
-source-wordcount: '2362'
+source-wordcount: '2377'
 ht-degree: 1%
 
 ---
@@ -42,6 +42,7 @@ Handboken kräver även en fungerande förståelse av följande Adobe Experience
 * [Adobe Experience Platform Identity Service](../../../identity-service/home.md): Lös den grundläggande utmaning som fragmenteringen av kundupplevelsedata innebär genom att överbrygga identiteter mellan olika enheter och system.
 * [Kundprofil](../../../profile/home.md)i realtid: Utnyttja [!DNL Identity Service] för att skapa detaljerade kundprofiler utifrån era datauppsättningar i realtid. [!DNL Real-time Customer Profile] hämtar data från Data Lake och behåller kundprofiler i sitt eget separata datalager.
 * [Adobe Experience Platform Web SDK](../../../edge/home.md): Ett JavaScript-bibliotek på klientsidan som gör att du kan integrera olika [!DNL Platform] tjänster i kundens webbplats.
+   * [SDK-medgivandekommandon](../../../edge/fundamentals/supporting-consent.md): En översikt över de medgivande-relaterade SDK-kommandona som visas i den här handboken.
 * [Adobe Experience Platform segmenteringstjänst](../../../segmentation/home.md): Gör att ni kan dela in [!DNL Real-time Customer Profile] data i grupper av individer som delar liknande egenskaper och kommer att svara på liknande sätt som marknadsföringsstrategier.
 
 Utöver de tjänster som anges ovan bör du även känna till [!DNL Platform] destinationer [och deras användning i](../../destinations/destinations-overview.md) [!DNL Real-time CDP].
@@ -165,7 +166,7 @@ alloy("setConsent", {
 | `value` | Den bas-64-kodade medgivandesträngen som genererats av CMP. |
 | `gdprApplies` | Ett booleskt värde som anger om GDPR gäller för den inloggade kunden. För att TCF 2.0 ska kunna användas för den här kunden måste värdet anges till &quot;true&quot;. |
 
-Kommandot ska användas som en del av en CMP-krok som upptäcker ändringar i medgivandeinställningarna. `setConsent` I följande JavaScript finns ett exempel på hur kommandot `setConsent` kan användas för OneTrust&#39;s `OnConsentChanged` krok:
+Kommandot ska användas som en del av en CMP-krok som upptäcker ändringar i medgivandeinställningarna. `setConsent` Följande JavaScript innehåller ett exempel på hur kommandot `setConsent` kan användas för OneTrust&#39;s `OnConsentChanged` krok:
 
 ```js
 OneTrust.OnConsentChanged(function () {
