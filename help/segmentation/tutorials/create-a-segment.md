@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;segment;Segment;create segment
 solution: Experience Platform
 title: Skapa ett segment
 topic: tutorial
+description: Det här dokumentet innehåller en självstudiekurs för att utveckla, testa, förhandsgranska och spara en segmentdefinition med Adobe Experience Platform Segmentation Service API.
 translation-type: tm+mt
-source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
 workflow-type: tm+mt
-source-wordcount: '879'
+source-wordcount: '901'
 ht-degree: 0%
 
 ---
