@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;segment;Segment;segment builder;Segment builder
 solution: Experience Platform
 title: Användarhandbok för Segmentering Service Segment Builder
 topic: ui guide
+description: 'I Segment Builder finns en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper. '
 translation-type: tm+mt
-source-git-commit: ab43c677ab45c7aa047a50049c0dd8613b003403
+source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
 workflow-type: tm+mt
-source-wordcount: '1626'
+source-wordcount: '1660'
 ht-degree: 0%
 
 ---
@@ -52,7 +53,7 @@ Som standard visas endast ifyllda schemafält från ditt datalager. Det inkluder
 
 ![](../images/ui/segment-builder/show-populated.png)
 
-### Målgrupper
+### Publiker
 
 På **[!UICONTROL Audiences]** fliken visas alla målgrupper som importerats från externa källor, t.ex. Adobe Audience Manager, samt målgrupper som skapats i [!DNL Experience Platform].
 
@@ -152,7 +153,7 @@ Segment Builder har ett omfattande arbetsflöde som gör det möjligt att isoler
 - Aktivera alla segmentdefinitioner för schemalagd segmentering.
 - Aktivera angivna segmentdefinitioner för direktuppspelningssegmentering.
 
-Om du vill veta mer [!DNL Segmentation Service]kan du fortsätta att läsa dokumentationen och komplettera din inlärning genom att titta på filmerna nedan. Mer information om andra delar av [!DNL Segmentation Service] användargränssnittet finns i [[!DNL Segmentation Service] användarhandboken](./overview.md)
+Om du vill veta mer [!DNL Segmentation Service]kan du fortsätta att läsa dokumentationen och komplettera din inlärning genom att titta på filmerna nedan. Om du vill veta mer om de andra delarna av [!DNL Segmentation Service] användargränssnittet kan du läsa [[!DNL Segmentation Service] användarhandboken](./overview.md)
 
 >[!WARNING]
 >
