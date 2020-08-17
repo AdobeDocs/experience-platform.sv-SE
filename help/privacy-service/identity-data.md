@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;ECID;ecid
 solution: Experience Platform
 title: Identitetsdata för sekretessförfrågningar
 topic: overview
+description: Det här dokumentet innehåller allmän vägledning om hur du konfigurerar dataåtgärder och använder Adobe-tekniker för att effektivt hämta lämplig identitetsinformation för kundsekretessförfrågningar.
 translation-type: tm+mt
-source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
+source-git-commit: 4c3a947051c11860ab4f0f53b48d8f4bda8dc195
 workflow-type: tm+mt
-source-wordcount: '616'
+source-wordcount: '643'
 ht-degree: 1%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 1%
 
 # Identitetsdata för sekretessförfrågningar
 
-För att Adobe Experience Platform ska kunna bearbeta kundförfrågningar om sina privata data (inklusive begäran om åtkomst, radering eller avanmälan) måste de förses med unika identifierare som länkar en viss kund till deras lagrade privata data i era Adobe Experience Cloud-aktiverade program. [!DNL Privacy Service] [!DNL Privacy Service] använder sedan dessa identifierare för att samla in alla data som lagras under kundens identitet inom [!DNL Experience Cloud]och bearbeta dem efter kundens begäran.
+För att Adobe Experience Platform [!DNL Privacy Service] ska kunna behandla kundförfrågningar om sina privata data (inklusive begäran om åtkomst, radering eller avanmälan) måste de förses med unika identifierare som länkar en viss kund till deras lagrade privata data i Adobe Experience Cloud-aktiverade program. [!DNL Privacy Service] använder sedan dessa identifierare för att samla in alla data som lagras under kundens identitet inom [!DNL Experience Cloud]och bearbeta dem efter kundens begäran.
 
 Det här dokumentet innehåller allmän vägledning om hur du konfigurerar dataåtgärder och använder Adobe-tekniker för att effektivt hämta lämplig identitetsinformation för kundsekretessförfrågningar.
 
@@ -24,9 +25,9 @@ När en kund kan interagera med ert varumärke via flera olika kanaler kan det v
 
 När du till exempel hanterar kunddatabegäranden i kan en identitet representera ett cookie-värde som angetts under en Adobe-kontrollerad domän, ett cookie-värde under en tredjepartsdomän och som delas med Adobe, eller en anpassad identifierare som du uttryckligen definierar inom IMS-organisationen. [!DNL Privacy Service]
 
-Det krävs därför att varje identitet som skickas till [!DNL Privacy Service] åtföljs av ett **namnutrymme** som innehåller ett sammanhang där identitetsvärdet kopplas till ursprungssystemet. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;E-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-id (&quot;AdCloud&quot;) eller ett Adobe Target-ID (&quot;TNTID&quot;).
+Det krävs därför att varje identitet som skickas till [!DNL Privacy Service] åtföljs av ett **namnutrymme** som innehåller ett sammanhang där identitetsvärdet kopplas till ursprungssystemet. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;E-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-id (&quot;AdCloud&quot;) eller ett Adobe Target-id (&quot;TNTID&quot;).
 
-Adobe Experience Platform Identity Service lagrar globalt definierade och användardefinierade identitetsnamnutrymmen. Mer information om namnutrymmen finns i översikten över [namnutrymmet](../identity-service/namespaces.md). En lista med standardnamnutrymmen och namnutrymmeskvalificerare som ofta används i [!DNL Privacy Service]finns i [bilagan](api/appendix.md) i utvecklarhandboken.
+Adobe Experience Platform identitetstjänst lagrar globalt definierade och användardefinierade identitetsnamnutrymmen. Mer information om namnutrymmen finns i översikten över [namnutrymmet](../identity-service/namespaces.md). En lista med standardnamnutrymmen och namnutrymmeskvalificerare som ofta används i [!DNL Privacy Service]finns i [bilagan](api/appendix.md) i utvecklarhandboken.
 
 ## ECID och anmälningstjänst
 
