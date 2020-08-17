@@ -1,10 +1,11 @@
 ---
+keywords: Launch;launch
 title: Självstudiekurs Implementera webbplatstaggar med Adobe Launch
 seo-title: Implementera webbplatstaggar med Adobe Launch
-description: Använd Adobe Launch för att implementera webbplatstaggar i Adobe Experience Platform
-seo-description: Använd Adobe Launch för att implementera webbplatstaggar i Adobe Experience Platform
+description: Använda Adobe Launch för att implementera webbplatstaggar i Adobe Experience Platform
+seo-description: Använda Adobe Launch för att implementera webbplatstaggar i Adobe Experience Platform
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
 workflow-type: tm+mt
 source-wordcount: '476'
 ht-degree: 3%
@@ -20,25 +21,25 @@ I den här självstudiekursen beskrivs hur du implementerar webbplatstaggar för
 
 * Det nödvändiga schemat och den nödvändiga datauppsättningen skapas i [!DNL Platform].
 * Den nödvändiga konfigurationen har distribuerats i Experience Edge och har det matchande konfigurations-ID:t och Edge-domänen.
-* Företagets CMS har redan konfigurerats för att leverera ett JavaScript-objekt på varje sida med de data du behöver skicka till Platform.
+* Företagets CMS har redan konfigurerats för att leverera ett JavaScript-objekt på varje sida med de data du behöver skicka till plattformen.
 
 ## Steg
 
 Den här självstudiekursen innehåller följande steg:
 
-1. Installera tillägget Adobe Experience Platform [!DNL Web SDK] .
+1. Installera Adobe Experience Platform- [!DNL Web SDK] tillägget.
 1. Skapa en regel som anger [!DNL Launch] vilka data som ska skickas.
 1. Paketera tillägget och regeln i ett bibliotek.
 
-## Installera tillägget Adobe Experience Platform [!DNL Web SDK]
+## Installera Adobe Experience Platform- [!DNL Web SDK] tillägget
 
-Installera först tillägget Adobe Experience Platform [!DNL Web SDK] .
+Installera först Adobe Experience Platform- [!DNL Web SDK] tillägget.
 
 1. Öppna [!DNL Launch]fliken **[!UICONTROL Extensions]** i.
 
    ![bild](assets/launch-overview.png)
 
-1. Välj Adobe Experience Platform Web SDK-tillägget från starttilläggskatalogen. Konfigurationsskärmen öppnas.
+1. Välj Adobe Experience Platform Web SDK-tillägget i starttilläggskatalogen. Konfigurationsskärmen öppnas.
 
    ![bild](assets/launch-extension-install.png)
 
