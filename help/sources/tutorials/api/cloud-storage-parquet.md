@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;data source connection
 solution: Experience Platform
 title: Hämta parquetdata från ett molnlagringssystem från tredje part med API:t för Flow Service
 topic: overview
+description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att importera tolkningsdata från ett molnlagringssystem från en annan leverantör.
 translation-type: tm+mt
-source-git-commit: fc5cdaa661c47e14ed5412868f3a54fd7bd2b451
+source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
 workflow-type: tm+mt
-source-wordcount: '1069'
-ht-degree: 0%
+source-wordcount: '1092'
+ht-degree: 1%
 
 ---
 
@@ -372,7 +373,7 @@ Ett lyckat svar returnerar den nya målanslutningens unika identifierare (`id`).
 Det sista steget mot att importera parquet-data från ett molnlagringsutrymme från tredje part är att skapa ett dataflöde. Nu har du förberett följande obligatoriska värden:
 
 - [Källanslutnings-ID](#source)
-- [Target-anslutnings-ID](#target)
+- [Målanslutnings-ID](#target)
 
 Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en begäran om POST samtidigt som du anger de tidigare angivna värdena i nyttolasten.
 
