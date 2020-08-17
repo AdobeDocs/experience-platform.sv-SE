@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;catalog service;catalog;Catalog service;Catalog
 solution: Experience Platform
 title: Utvecklarhandbok för katalogtjänst
 topic: developer guide
+description: Den här utvecklarhandboken innehåller steg som hjälper dig att börja använda Catalog API. Handboken innehåller sedan exempel på API-anrop för att utföra nyckelåtgärder med hjälp av Katalog.
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: c081a7521be9715ca32d35504922a70767924fd7
 workflow-type: tm+mt
-source-wordcount: '558'
+source-wordcount: '584'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # [!DNL Catalog Service] utvecklarhandbok
 
-[!DNL Catalog Service] är registersystemet för dataplats och datalinje inom Adobe Experience Platform. [!DNL Catalog] fungerar som ett metadataarkiv eller en&quot;katalog&quot; där du kan hitta information om dina data inifrån [!DNL Experience Platform]utan att behöva komma åt själva data. Mer information finns i [Katalogöversikt](../home.md) .
+[!DNL Catalog Service] är registersystemet för dataplatser och datalinje inom Adobe Experience Platform. [!DNL Catalog] fungerar som ett metadataarkiv eller en&quot;katalog&quot; där du kan hitta information om dina data inifrån [!DNL Experience Platform]utan att behöva komma åt själva data. Mer information finns i [Katalogöversikt](../home.md) .
 
 Den här utvecklarhandboken innehåller steg som hjälper dig att börja använda [!DNL Catalog] API:t. Handboken innehåller sedan exempel på API-anrop för att utföra nyckelåtgärder med [!DNL Catalog].
 
