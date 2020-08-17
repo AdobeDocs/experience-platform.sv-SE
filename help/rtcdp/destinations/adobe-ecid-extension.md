@@ -1,10 +1,11 @@
 ---
+Keywords: ECID;ecid
 title: Experience Cloud ID-tjänsttillägg
 seo-title: Experience Cloud ID-tjänsttillägg
 description: Tillägget Experience Cloud ID Service är ett personaliseringsmål i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: Tillägget Experience Cloud ID Service är ett personaliseringsmål i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: be4cf64c89a189a09a4a7774c8fadc76c6ee8458
+source-git-commit: 4c3a947051c11860ab4f0f53b48d8f4bda8dc195
 workflow-type: tm+mt
 source-wordcount: '542'
 ht-degree: 2%
@@ -18,7 +19,7 @@ ht-degree: 2%
 
 Det här tillägget implementerar [!DNL Experience Cloud] ID-tjänsten, som identifierar besökare över alla [!DNL Experience Cloud] lösningar.
 
-[!DNL Experience Cloud] ID-tjänsten är ett personaliseringstillägg i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktioner finns på [Experience Cloud ID-tjänsttilläggets sida](https://docs.adobe.com/content/help/en/launch/using/extensions-ref/adobe-extension/id-service-extension/overview.html) i [!DNL Experience Platform Launch] dokumentationen.
+[!DNL Experience Cloud] ID-tjänsten är ett personaliseringstillägg i kunddataplattformen i Adobe i realtid. Mer information om tilläggsfunktioner finns på [Experience Cloud ID-tjänsttilläggets sida](https://docs.adobe.com/content/help/en/launch/using/extensions-ref/adobe-extension/id-service-extension/overview.html) i [!DNL Experience Platform Launch] dokumentationen.
 
 Det här målet är ett [!DNL Experience Platform Launch] tillägg. Mer information om hur [!DNL Launch] tillägg fungerar i CDP i realtid i Adobe finns i Översikt över [tillägg i](/help/rtcdp/destinations/experience-platform-launch-extensions.md)Experience Platform Launch.
 
