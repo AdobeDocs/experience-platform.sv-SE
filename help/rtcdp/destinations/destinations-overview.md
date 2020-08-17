@@ -1,10 +1,11 @@
 ---
+keywords: RTCDP;rtcdp
 title: Översikt över destinationer
 seo-title: Översikt över destinationer
-description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från kunddata i realtid på Platform. Ni kan använda Destinationer i Adobe Real-time Customer Data Platform för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
-seo-description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från kunddata i realtid på Platform. Ni kan använda Destinationer i Adobe Real-time Customer Data Platform för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från kunddataplattformen i realtid. Ni kan använda Destinationer i kunddataplattformen i realtid i Adobe för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad annonsering och många andra användningsfall.
+seo-description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från kunddataplattformen i realtid. Ni kan använda Destinationer i kunddataplattformen i realtid i Adobe för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad annonsering och många andra användningsfall.
 translation-type: tm+mt
-source-git-commit: 7aa15772003cce1dfc7c3636048bce9a35bf8197
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
 source-wordcount: '525'
 ht-degree: 0%
@@ -16,7 +17,7 @@ ht-degree: 0%
 
 ![Översiktsbanderoll för destinationer](/help/rtcdp/destinations/assets/destinations-overview-banner.png)
 
-**[!DNL Destinations]** är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från kunddata i realtid på Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+**[!DNL Destinations]** är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från kunddataplattformen i realtid. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 
 ## Destinationer och källor {#destinations-and-sources}
 
@@ -44,7 +45,7 @@ Mer information finns i Översikt över [måltyper och kategorier](/help/rtcdp/d
 
 ## Destinationer och åtkomstkontroller {#access-controls}
 
-Målfunktionerna i CDP i realtid fungerar med åtkomstkontrollsbehörigheter i Adobe Experience Platform. Beroende på din användares behörighetsnivå kan du visa, hantera och aktivera mål. Information om de enskilda behörigheterna finns i [Åtkomstkontroll i Adobe Experience Platform](../../access-control/home.md) och rulla nedåt till sidans nederkant.
+Målfunktionerna i CDP i realtid fungerar med Adobe Experience Platform åtkomstkontrollsbehörigheter. Beroende på din användares behörighetsnivå kan du visa, hantera och aktivera mål. Mer information om de enskilda behörigheterna finns i [Åtkomstkontroll i Adobe Experience Platform](../../access-control/home.md) och rulla nedåt på sidan.
 
 Mer information om åtkomstkontroller finns i användarhandboken för [åtkomstkontroll](../../access-control/ui/overview.md).
 
