@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;GDPR;gdpr;ccpa:CCPA
 solution: Experience Platform
 title: Adobe Experience Platform Privacy Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
+source-git-commit: cc81d590f308c7e2677cec000c27e8aca42437f5
 workflow-type: tm+mt
 source-wordcount: '1494'
 ht-degree: 2%
@@ -12,11 +12,11 @@ ht-degree: 2%
 ---
 
 
-# Adobe Experience Platform - [!DNL Privacy Service] översikt
+# Adobe Experience Platform [!DNL Privacy Service] overview
 
 För att kunna leverera bättre kundupplevelser måste ni samla in och lagra kundernas personuppgifter. När du använder dessa data är det viktigt att förstå och respektera dina kunders integritet. Nya juridiska och organisatoriska bestämmelser ger användarna rätt att få tillgång till eller ta bort sina personuppgifter från era datalager på begäran.
 
-Adobe Experience Platform [!DNL Privacy Service] utvecklades som svar på en genomgripande förändring av hur företag måste hantera sina kunders personuppgifter. Det centrala syftet med [!DNL Privacy Service] är att automatisera efterlevnaden av datasekretessregler som, när de överträds, kan leda till allvarliga böter och störa datahanteringen för ert företag.
+Adobe Experience Platform [!DNL Privacy Service] utvecklades som svar på en grundläggande förändring i hur företag måste hantera sina kunders personuppgifter. Det centrala syftet med [!DNL Privacy Service] är att automatisera efterlevnaden av datasekretessregler som, när de överträds, kan leda till allvarliga böter och störa datahanteringen för ert företag.
 
 [!DNL Privacy Service] innehåller ett RESTful-API och användargränssnitt som hjälper dig att hantera kunddataförfrågningar. Med [!DNL Privacy Service]kan ni skicka in förfrågningar om åtkomst till och radering av personuppgifter från Adobe Experience Cloud-program, vilket underlättar automatiserad efterlevnad av juridiska och organisatoriska sekretessbestämmelser.
 
