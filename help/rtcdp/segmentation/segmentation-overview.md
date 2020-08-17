@@ -1,10 +1,11 @@
 ---
+keywords: segmentation; segmentation rtcdp;real time customer data platform segmentation
 title: Översikt över segmenteringstjänsten
-seo-title: Segmenteringstjänst i Adobe Real-time Customer Data Platform
+seo-title: Segmenteringstjänst i Adobe kunddataplattform i realtid
 description: En översikt som beskriver segmenteringstjänsten.
-seo-description: En översikt som beskriver segmenteringstjänster och segment i Adobe Real-time Customer Data Platform.
+seo-description: En översikt som beskriver segmenteringstjänster och segment på kunddataplattformen i realtid i Adobe.
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
 workflow-type: tm+mt
 source-wordcount: '254'
 ht-degree: 1%
@@ -12,11 +13,11 @@ ht-degree: 1%
 ---
 
 
-# [!DNL Segmentation Service] in [!DNL Real-time Customer Data Platform]
+# [!DNL Segmentation Service] i [!DNL Real-time Customer Data Platform]
 
-[!DNL Real-time Customer Data Platform] (CDP i realtid) gör att ni kan hämta data från flera källor för att skapa en samordnad och enhetlig upplevelse för era kunder. Leverera relevanta personaliserade marknadsföringskampanjer med hjälp av Adobe Experience Platform, [!DNL Segmentation Service]en del.
+[!DNL Real-time Customer Data Platform] (CDP i realtid) gör att ni kan hämta data från flera olika källor för att skapa en samordnad och enhetlig upplevelse för era kunder. Leverera relevanta personaliserade marknadsföringskampanjer med Adobe Experience Platform, [!DNL Segmentation Service]som ingår i programmet.
 
-CDP i realtid är byggt på Adobe Experience Platform och utnyttjar många av de [!DNL Experience Platform] tjänster och funktioner som finns. Med [!DNL Segmentation Service]hjälp av kan ni tillhandahålla skräddarsydd marknadsföring genom att dela upp kunderna i mindre grupper med liknande egenskaper.
+CDP är byggt i realtid ovanpå Adobe Experience Platform och utnyttjar många av de [!DNL Experience Platform] tjänster och funktioner som finns. Med [!DNL Segmentation Service]hjälp av kan ni tillhandahålla skräddarsydd marknadsföring genom att dela upp kunderna i mindre grupper med liknande egenskaper.
 
 ## Segmentering
 
