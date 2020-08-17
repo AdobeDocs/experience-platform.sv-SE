@@ -1,24 +1,25 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;query service;Query service;query
 solution: Experience Platform
 title: Handbok för frågetjänstutvecklare
 topic: query templates
+description: Den här utvecklarhandboken innehåller steg för att utföra olika åtgärder i Adobe Experience Platform Query Service API.
 translation-type: tm+mt
-source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
 workflow-type: tm+mt
-source-wordcount: '352'
-ht-degree: 0%
+source-wordcount: '369'
+ht-degree: 1%
 
 ---
 
 
 # [!DNL Query Service] utvecklarhandbok
 
-Den här utvecklarhandboken innehåller steg för att utföra olika åtgärder i API:t för Adobe Experience Platform [!DNL Query Service] .
+Den här utvecklarhandboken innehåller steg för att utföra olika åtgärder i Adobe Experience Platform [!DNL Query Service] API.
 
 ## Komma igång
 
-Den här guiden kräver en fungerande förståelse av de olika Adobe Experience Platform-tjänster som används [!DNL Query Service].
+Den här guiden kräver en fungerande förståelse av de olika Adobe Experience Platform-tjänster som används i [!DNL Query Service].
 
 - [!DNL Query Service](../home.md): Ger möjlighet att fråga datauppsättningar och hämta de resulterande frågorna som nya datauppsättningar i [!DNL Experience Platform].
 - [!DNL Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
