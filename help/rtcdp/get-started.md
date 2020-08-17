@@ -1,10 +1,11 @@
 ---
-title: Komma igång med Adobe kunddata i realtid Platform
-seo-title: Komma igång med Adobe kunddata i realtid Platform
-description: Exempelscenario för Adobe kunddata i realtid Platform
-seo-description: Exempelscenario för Adobe kunddata i realtid Platform
+keywords: RTCDP;rtcdp
+title: Komma igång med Adobe kunddataplattform i realtid
+seo-title: Komma igång med Adobe kunddataplattform i realtid
+description: Exempelscenario för Adobe kunddataplattform i realtid
+seo-description: Exempelscenario för Adobe kunddataplattform i realtid
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
 source-wordcount: '2321'
 ht-degree: 0%
@@ -12,17 +13,17 @@ ht-degree: 0%
 ---
 
 
-# Komma igång med Adobe kunddata i realtid Platform
+# Komma igång med Adobe kunddataplattform i realtid
 
-Den här guiden leder dig genom en exempelimplementering av Adobe Customer Data Platform (Real-time CDP) i realtid. Du kan använda det som exempel när du konfigurerar en egen implementering. Även om den här guiden innehåller specifika exempel länkas den till ytterligare information som du kan använda när du skapar din konfiguration.
+Den här guiden leder dig genom en exempelimplementering av kunddataplattformen Adobe Real-time (CDP). Du kan använda det som exempel när du konfigurerar en egen implementering. Även om den här guiden innehåller specifika exempel länkas den till ytterligare information som du kan använda när du skapar din konfiguration.
 
-I det här exemplet visas hur kraftfull Adobe Real-time Customer Data Platform, som drivs av Adobe Experience Platform, är för att:
+I det här exemplet visas styrkan hos Adobe Real-time Customer Data Platform, som drivs av Adobe Experience Platform, att:
 
 * Hämta in data från flera källor
 * Sammanfoga dem i en enda [!DNL real-time customer profile]
 * Leverera en enhetlig, relevant och personaliserad upplevelse på olika enheter.
 
-## Använd skiftläge
+## Användningsfall
 
 Luma, ett sportklädföretag, försöker alltid förbättra sin kundupplevelse. De har ett nytt initiativ för att öka den presentrelaterade försäljningen. De vill också minska överexponering, till exempel irriterande annonser som följer kunderna runt.
 
@@ -118,9 +119,9 @@ Det personliga innehållet hjälper Sarah att snabbt hitta relevanta objekt. Det
 
 ### Få tillbaka kunden
 
-Sarah blir distraherad och lämnar sajten. Luma kan använda sina data i Adobe Experience Platform för att ta med henne till sajten.
+Sarah blir distraherad och lämnar sajten. Luma kan använda sina data i Adobe Experience Platform för att ta med henne till webbplatsen.
 
-Adobe kunddata Platform i realtid, som drivs av Adobe Experience Platform, är framtagen för kundupplevelsehantering. Med programmet kan man
+Adobe kunddataplattform i realtid, som drivs av Adobe Experience Platform, är framtagen för kundupplevelsehantering. Med programmet kan man
 
 * Förenkla integrering och aktivering av data
 * Styr känd och okänd dataanvändning
@@ -176,7 +177,7 @@ Klart. Du har precis lagt till [!DNL Microsoft CRM] som en datakälla i [!DNL Ex
 
 ### Märk inkapslade data för användningsprinciper
 
-Luma har många interna policyer som begränsar användningen av vissa typer av insamlad information och måste också uppfylla juridiska och sekretessrelaterade problem när det gäller dataanvändning. Med hjälp av Adobe Experience Platform [!DNL Data Governance]kan fördefinierade dataanvändningsetiketter användas på datauppsättningar (och specifika fält i dessa datauppsättningar), vilket gör att Luma kan kategorisera sina data enligt specifika användningsbegränsningar.
+Luma har många interna policyer som begränsar användningen av vissa typer av insamlad information och måste också uppfylla juridiska och sekretessrelaterade problem när det gäller dataanvändning. Med Adobe Experience Platform [!DNL Data Governance]kan fördefinierade dataanvändningsetiketter användas på datauppsättningar (och specifika fält i dessa datauppsättningar), vilket gör att Luma kan kategorisera sina data enligt specifika användningsbegränsningar.
 
 ![](assets/governance-labels.png)
 
@@ -267,7 +268,7 @@ Detta sparar pengar åt Lumas mediegrupp genom att inte använda upp lager för 
 
 ### Tillämpa dataanvändningsprinciper för mål
 
-Adobe Experience Platform omfattar sekretess- och säkerhetskontroller för att avgöra om ett segment är tillgängligt för aktivering till ett visst mål. Aktiveringen är aktiverad eller begränsad baserat på det marknadsföringssyfte eller de marknadsföringssyften som var tilldelat destinationen när den skapades, samt dataanvändningsprinciper som definierats av organisationen.
+Adobe Experience Platform innehåller sekretess- och säkerhetskontroller för att avgöra om ett segment är tillgängligt för aktivering till ett visst mål. Aktiveringen är aktiverad eller begränsad baserat på det marknadsföringssyfte eller de marknadsföringssyften som var tilldelat destinationen när den skapades, samt dataanvändningsprinciper som definierats av organisationen.
 
 Om din aktivitet bryter mot reglerna visas en varning. Den här varningen innehåller information om datalänkning som kan hjälpa dig att identifiera varför policyn överträds och vad du kan göra för att åtgärda överträdelsen.
 
@@ -298,7 +299,7 @@ Tack vare funktioner för att hindra åhörarna kommer Sarah inte att vara inrik
 
 ## Analyserar profilen
 
-Luma-marknadsförarna använder Adobe Experience Platform för att se på presentgiversegmentet på CDP Dashboard i realtid. De ser resultaten av detta initiativ över tiden och ser att det växer. Kunderna svarar på erbjudanden och spenderar mer pengar.
+Luma-marknadsförare använder Adobe Experience Platform för att se på presentgiversegmentet på CDP Dashboard i realtid. De ser resultaten av detta initiativ över tiden och ser att det växer. Kunderna svarar på erbjudanden och spenderar mer pengar.
 
 Dessa insikter gör det möjligt för marknadsförarna att agera på den här signalen, som stärktes av att informationen fanns tillgänglig i CDP och att kunder som Sarah var kopplade till segmentet.
 
