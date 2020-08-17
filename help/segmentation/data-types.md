@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;data type;data types;Data types;Data type
 solution: Experience Platform
-title: Datatyper för Adobe Experience Platform segmenteringstjänst
+title: Datatyper för Adobe Experience Platform Segmenteringstjänst
 topic: overview
+description: Alla XDM-datatyper stöds i segmenteringstjänsten. Reglerna som utgör en segmentdefinition är kontextualiserade med följande datatyper.
 translation-type: tm+mt
-source-git-commit: 96b6f820e5d372446c4927e7719aedadb2b11bc9
+source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
 workflow-type: tm+mt
-source-wordcount: '456'
+source-wordcount: '479'
 ht-degree: 2%
 
 ---
@@ -50,15 +51,15 @@ Som framgår av tabellen nedan återges händelsedata med nyckelord som hjälper
 | Växlingsknappen Använd tidsregel | Innehåller datumdata. |
 | Lika med, är inte lika med, börjar med, startar inte med, slutar med, slutar inte med, innehåller, inte innehåller, finns, finns inte | Innehåller strängdata. |
 
-### Målgruppsdelning
+### Dela publiker
 
 Externa målgrupper kan också användas som komponenter i en ny segmentdefinition och lägga till deras attributregler i det nya segmentet.
 
-För närvarande stöds bara Adobe Audience Manager som extern publik, och ytterligare källor aktiveras i framtiden. Mer information om hur du använder Adobe Audience Manager-målgrupper med Platform finns i [publikdelningsguiden i Adobe Audience Manager-dokumentationen](https://docs.adobe.com/content/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html).
+För närvarande stöds endast Adobe Audience Manager som extern publik, och ytterligare källor aktiveras i framtiden. Mer information om hur du använder Adobe Audience Manager-målgrupper med Platform finns i [publikdelningsguiden i Adobe Audience Manager-dokumentationen](https://docs.adobe.com/content/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html).
 
 ### Segmentdelning
 
-Segment som har skapats i Platform kan användas i andra [Adobe Experience Cloud bastjänster](https://docs.adobe.com/content/help/sv-SE/core-services/interface/experience-cloud.html). Om du vill aktivera den här funktionen måste du kontakta din lösningsarkitekt eller din konsult.
+Segment som skapats i Platform kan användas i andra [Adobe Experience Cloud Core Services](https://docs.adobe.com/content/help/sv-SE/core-services/interface/experience-cloud.html). Om du vill aktivera den här funktionen måste du kontakta din lösningsarkitekt eller din konsult.
 
 ## Andra datatyper
 
