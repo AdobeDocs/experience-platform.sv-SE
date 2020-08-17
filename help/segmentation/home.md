@@ -1,18 +1,19 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;segmentation;Segmentation;segment service;segment;Segment;Segments;segments
 solution: Experience Platform
-title: Segmenteringstjänsten Adobe Experience Platform
+title: Adobe Experience Platform segmenteringstjänst
 topic: overview
+description: Det här dokumentet innehåller en översikt över segmenteringstjänsten och vilken roll den spelar i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 96b6f820e5d372446c4927e7719aedadb2b11bc9
+source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
 workflow-type: tm+mt
-source-wordcount: '1974'
+source-wordcount: '1991'
 ht-degree: 0%
 
 ---
 
 
-# Adobe Experience Platform - [!DNL Segmentation Service] översikt
+# Adobe Experience Platform [!DNL Segmentation Service] overview
 
 Adobe Experience Platform [!DNL Segmentation Service] har ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper utifrån dina [!DNL Real-time Customer Profile] data. Dessa segment är centralt konfigurerade och underhållna [!DNL Platform]och är lätt tillgängliga för alla Adobe-lösningar.
 
@@ -102,7 +103,7 @@ Dessa avancerade funktioner beskrivs närmare i följande avsnitt.
 
 ## Sekventiell segmentering {#sequential}
 
-En vanlig användarresa är sekventiell till sin natur. Med Adobe Experience Platform kan ni definiera en ordnad serie segment för att återspegla den här resan och därigenom fånga upp händelsesekvenser när de inträffar. Du kan ordna händelser i önskad ordning med hjälp av tidslinjen för visuella händelser i [!DNL Segment Builder].
+En vanlig användarresa är sekventiell till sin natur. Med Adobe Experience Platform kan ni definiera en ordnad serie segment för att återspegla resan och därigenom fånga upp händelsesekvenser när de inträffar. Du kan ordna händelser i önskad ordning med hjälp av tidslinjen för visuella händelser i [!DNL Segment Builder].
 
 Ett exempel på en kundresa som skulle kräva sekventiell segmentering är produktvyn > produkttillägg > utcheckning > Inget inköp.
 
@@ -177,7 +178,7 @@ While this solution does not change the binary nature of segment membership, it 
 
 Adding this specific data to the segment itself allows execution engines to personalize the experience for the customers in their target audience. -->
 
-### Användningsexempel
+### Användningsfall
 
 För att illustrera värdet av den här avancerade segmenteringsfunktionen bör du överväga tre standardanvändningsfall som illustrerar de utmaningar som fanns i marknadsföringsapplikationer innan segmentnyttolastförbättringen:
 - E-postpersonalisering
