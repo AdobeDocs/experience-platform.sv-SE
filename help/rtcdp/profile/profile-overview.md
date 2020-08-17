@@ -1,10 +1,11 @@
 ---
+keywords: rtcdp profile;real-time customer profile
 title: Översikt över kundprofiler i realtid
-seo-title: Kundprofil i realtid i kunddata i realtid Platform
-description: Översikt över hur kunddata i realtid med Platform kan skapa samordnade, enhetliga och relevanta upplevelser för era kunder med hjälp av kundprofiler i realtid.
-seo-description: Kunddata i realtid Platform, profil, data, upplevelser, kanaler
+seo-title: Kundprofil i realtid i kunddataplattformen i realtid
+description: En översikt över hur ni kan utveckla samordnade, enhetliga och relevanta kundupplevelser i realtid med kundprofiler.
+seo-description: Kunddataplattform, profil, data, upplevelser, kanaler i realtid
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
 workflow-type: tm+mt
 source-wordcount: '394'
 ht-degree: 0%
@@ -18,7 +19,7 @@ ht-degree: 0%
 
 ## Profiler i [!DNL Real-time Customer Data Platform]
 
-[!DNL Real-time Customer Data Platform] gör att ni kan skapa samordnade och enhetliga upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Att leverera dessa personaliserade upplevelser så att de känns relevanta och aktuella är ingen liten grej, men det kan uppnås genom att använda [!DNL Real-time Customer Profile]en del av Adobe Experience Platform. CDP byggs upp i realtid utöver [!DNL Experience Platform] och utnyttjar många av [!DNL Experience Platform] tjänsterna och funktionerna, bland annat skapandet av profiler. Dessa samlade vyer över en enskild kund sammanför data från olika marknadsföringskanaler och de olika system som organisationen för närvarande använder för att lagra kunddata.
+[!DNL Real-time Customer Data Platform] gör att ni kan skapa samordnade och enhetliga upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Att leverera dessa personaliserade upplevelser så att de känns relevanta och aktuella är inte så lätt, men det kan man göra genom att använda [!DNL Real-time Customer Profile]en del av Adobe Experience Platform. CDP byggs upp i realtid utöver [!DNL Experience Platform] och utnyttjar många av [!DNL Experience Platform] tjänsterna och funktionerna, bland annat skapandet av profiler. Dessa samlade vyer över en enskild kund sammanför data från olika marknadsföringskanaler och de olika system som organisationen för närvarande använder för att lagra kunddata.
 
 ## Identiteter och identitetsnamnutrymmen
 
