@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;data ingestion;ingested data;streaming
 solution: Experience Platform
-title: Översikt över Adobe Experience Platform Streaming Inghit
+title: Adobe Experience Platform Streaming Inghit - översikt
 topic: overview
+description: Direktuppspelning för Adobe Experience Platform ger användare en metod för att skicka data från klient- och serverenheter till Experience Platform i realtid.
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '249'
+source-wordcount: '272'
 ht-degree: 0%
 
 ---
@@ -14,11 +15,11 @@ ht-degree: 0%
 
 # Översikt över direktuppspelning
 
-Direktuppspelning för Adobe Experience Platform ger användare en metod för att skicka data från klient- och serverenheter till [!DNL Experience Platform] i realtid.
+Direktuppspelning för Adobe Experience Platform ger användarna en metod för att skicka data från klient- och serverenheter till [!DNL Experience Platform] i realtid.
 
 ## Vad kan du göra med direktuppspelning?
 
-Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser genom att generera en [!DNL Real-time Customer Profile] för varje enskild kund. Direktuppspelning spelar en viktig roll när det gäller att skapa dessa profiler genom att ni kan leverera [!DNL Profile] data till [!DNL Data Lake] servern med så lite fördröjning som möjligt.
+Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser genom att skapa en [!DNL Real-time Customer Profile] för varje enskild kund. Direktuppspelning spelar en viktig roll när det gäller att skapa dessa profiler genom att ni kan leverera [!DNL Profile] data till [!DNL Data Lake] servern med så lite fördröjning som möjligt.
 
 Följande video är utformad för att hjälpa dig förstå hur man får in strömmande material och beskriver koncepten ovan.
 
@@ -43,6 +44,6 @@ Mer information om hur du aktiverar en datauppsättning för [!DNL Profile] och 
 | Kundprofil i realtid | &lt; 1 minut |
 | Data Lake | &lt; 60 minuter |
 
-## Adobe Experience Platform
+## Adobe Experience Platform-tillägg
 
-Du kan använda tillägget Adobe Experience Platform för att skapa en ny direktuppspelningsanslutning. Tillägget innehåller åtgärder för att skicka beacons som är formaterade i [!DNL Experience Platform] (XDM) för realtidsintag till [!DNL Experience Data Model] [!DNL Experience Platform]. Mer information finns i dokumentationen för [Experience Platform Extension](https://docs.adobe.com/content/help/en/launch/using/extensions-ref/adobe-extension/adobe-experience-platform-extension.html) .
+Du kan använda Adobe Experience Platform-tillägget för att skapa en ny direktuppspelningsanslutning. Tillägget innehåller åtgärder för att skicka beacons som är formaterade i [!DNL Experience Platform] (XDM) för realtidsintag till [!DNL Experience Data Model] [!DNL Experience Platform]. Mer information finns i dokumentationen för [Experience Platform Extension](https://docs.adobe.com/content/help/en/launch/using/extensions-ref/adobe-extension/adobe-experience-platform-extension.html) .
