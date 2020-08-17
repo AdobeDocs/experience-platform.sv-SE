@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;streaming
 solution: Experience Platform
 title: Felsökning av direktuppspelning
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
 source-wordcount: '987'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Felsökningsguide för direktuppspelning
 
-I det här dokumentet finns svar på vanliga frågor om direktuppspelning på Adobe Experience Platform. Om du har frågor och felsökning som rör andra [!DNL Platform] tjänster, inklusive de som hittas i alla [!DNL Platform] API:er, kan du läsa felsökningsguiden [för](../../landing/troubleshooting.md)Experience Platform.
+Det här dokumentet innehåller svar på vanliga frågor om direktuppspelning på Adobe Experience Platform. Om du har frågor och felsökning som rör andra [!DNL Platform] tjänster, inklusive de som hittas i alla [!DNL Platform] API:er, kan du läsa felsökningsguiden [för](../../landing/troubleshooting.md)Experience Platform.
 
 Adobe Experience Platform [!DNL Data Ingestion] tillhandahåller RESTful-API:er som du kan använda för att importera data till [!DNL Experience Platform]. Inkapslade data används för att uppdatera enskilda kundprofiler i nära realtid, så att ni kan leverera personaliserade, relevanta upplevelser över flera kanaler. Läs översikten över [](../home.md) datainmatning om du vill ha mer information om tjänsten och de olika användningsmetoderna. Anvisningar om hur du använder API:er för direktuppspelning av inmatning finns i översikten över [direktuppspelning](../streaming-ingestion/overview.md).
 
