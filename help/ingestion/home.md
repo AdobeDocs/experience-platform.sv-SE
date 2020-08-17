@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;data ingestion;data location;Data Location;Data management;data management;Lineage;lineage;batch;Batch;ingested data
 solution: Experience Platform
-title: Översikt över datainmatning i Adobe Experience Platform
+title: Översikt över Adobe Experience Platform datainmatning
 topic: overview
+description: I det här dokumentet introduceras de tre viktigaste sätten att överföra data till plattformen, med länkar till deras respektive översiktsdokumentation för mer detaljerad information.
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '417'
+source-wordcount: '442'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # Översikt över datainmatning
 
-Adobe Experience Platform sammanför data från olika källor för att hjälpa marknadsförarna att bättre förstå kundernas beteende. Adobe Experience Platform Data Ingestion representerar de olika metoder som [!DNL Platform] inhämtar data från dessa källor, samt hur data bevaras i datasjön för användning av [!DNL Platform] tjänster längre fram i kedjan.
+Adobe Experience Platform sammanför data från olika källor för att hjälpa marknadsförarna att bättre förstå kundernas beteende. Adobe Experience Platform datainmatning representerar de olika metoder som används för att [!DNL Platform] importera data från dessa källor, samt hur data lagras i datasjön för användning av underordnade [!DNL Platform] tjänster.
 
 I det här dokumentet introduceras de tre huvudsakliga sätten som data hämtas till, med länkar till respektive översiktsdokumentation för mer detaljerad information. [!DNL Platform]
 
@@ -42,7 +43,7 @@ Mer information finns i [Källöversikt](../sources/home.md) .
 
 ## Nästa steg och ytterligare resurser
 
-Detta dokument innehåller en kort introduktion till de olika aspekterna av [!DNL Data Ingestion] i [!DNL Experience Platform]. Fortsätt att läsa översiktsdokumentationen för varje metod för att bekanta dig med deras olika funktioner, användningsfall och bästa metoder. Du kan även understödja din inlärning genom att titta på översiktsvideon nedan. Mer information om hur du [!DNL Experience Platform] spårar metadata för inkapslade poster finns i [Katalogtjänstöversikt](../catalog/home.md).
+Detta dokument innehåller en kort introduktion till de olika aspekterna av [!DNL Data Ingestion] i [!DNL Experience Platform]. Fortsätt att läsa översiktsdokumentationen för varje metod för att bekanta dig med deras olika funktioner, användningsfall och bästa metoder. Du kan även komplettera din inlärning genom att titta på videon med en översikt över importen nedan. Mer information om hur du [!DNL Experience Platform] spårar metadata för inkapslade poster finns i [Katalogtjänstöversikt](../catalog/home.md).
 
 >[!WARNING]
 >
