@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;data type;data types;Data types;Data type;datatype;Datatype
 solution: Experience Platform
 title: Skapa en datatyp
 topic: developer guide
+description: 'När det finns gemensamma datastrukturer som din organisation vill använda på flera sätt kanske du vill definiera en datatyp. Datatyper möjliggör konsekvent användning av flerfältsstrukturer, med större flexibilitet än blandningar, eftersom de kan inkluderas var som helst i ett schema genom att lägga till dem som"typ" för ett fält. '
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: cc81d590f308c7e2677cec000c27e8aca42437f5
 workflow-type: tm+mt
-source-wordcount: '200'
+source-wordcount: '256'
 ht-degree: 0%
 
 ---
