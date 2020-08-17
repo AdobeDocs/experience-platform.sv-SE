@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;catalog service;catalog;Catalog service;data location;Data Location;Data management;data management;Lineage;lineage;Catalog;enable dataset
 solution: Experience Platform
 title: Katalogtjänst - översikt
 topic: overview
+description: Katalogtjänsten är arkivsystemet för dataplatser och -länkar inom Adobe Experience Platform. Alla data som importeras till Experience Platform lagras i Data Lake som filer och kataloger, men i Catalog finns metadata och beskrivning för dessa filer och kataloger för sökning och övervakning.
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '731'
+source-wordcount: '782'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # [!DNL Catalog Service] översikt
 
-[!DNL Catalog Service] är registersystemet för dataplats och datalinje inom Adobe Experience Platform. Alla data som är inkapslade i [!DNL Experience Platform] lagras i [!DNL Data Lake] som filer och kataloger, men [!DNL Catalog] innehåller metadata och beskrivning för dessa filer och kataloger för sökning och övervakning.
+[!DNL Catalog Service] är registersystemet för dataplatser och datalinje inom Adobe Experience Platform. Alla data som är inkapslade i [!DNL Experience Platform] lagras i [!DNL Data Lake] som filer och kataloger, men [!DNL Catalog] innehåller metadata och beskrivning för dessa filer och kataloger för sökning och övervakning.
 
 Kort och gott: fungerar som ett metadataarkiv eller&quot; [!DNL Catalog] &quot; där du kan hitta information om dina data[!UICONTROL catalog][!DNL Experience Platform]. Du kan använda [!DNL Catalog] för att svara på följande frågor:
 
