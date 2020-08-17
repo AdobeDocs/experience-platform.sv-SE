@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;decision events;decision event;Decision events
 solution: Experience Platform
 title: Arbeta med körningsmiljön för beslutstjänsten med API:er
 topic: tutorial
+description: 'I det här dokumentet finns en självstudiekurs om hur du arbetar med körtidstjänsterna i beslutstjänsten med Adobe Experience Platform API:er. '
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '1985'
+source-wordcount: '2004'
 ht-degree: 0%
 
 ---
@@ -14,14 +15,14 @@ ht-degree: 0%
 
 # Arbeta med körningsmiljön för beslutstjänsten med API:er
 
-I det här dokumentet finns en självstudiekurs om hur du arbetar med runtime-tjänster för att [!DNL Decisioning Service] använda Adobe Experience Platform API:er.
+Det här dokumentet innehåller en självstudiekurs om hur du arbetar med runtime-tjänster för att [!DNL Decisioning Service] använda Adobe Experience Platform API:er.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse för de tjänster som är inblandade i att fatta beslut och fastställa nästa bästa erbjudande som ska presenteras under kundupplevelserna. [!DNL Experience Platform] Innan du börjar med den här självstudiekursen bör du läsa i dokumentationen om följande:
 
 - [!DNL Decisioning Service](./../home.md): Innehåller ett ramverk för att lägga till och ta bort erbjudanden och skapa algoritmer för att välja det bästa som ska visas under en kunds upplevelse.
-- [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att ordna kundupplevelsedata.
+- [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
 - [!DNL Profile Query Language (PQL)](../../segmentation/pql/overview.md): PQL används för att definiera regler och filter.
 - [Hantera beslutsobjekt och regler med API:er](./entities.md): Innan du använder körningsmiljön för beslutstjänster måste du konfigurera de relaterade entiteterna.
 
