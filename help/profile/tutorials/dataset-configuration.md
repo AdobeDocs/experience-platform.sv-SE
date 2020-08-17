@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API
+keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API;enable dataset
 solution: Adobe Experience Platform
 title: Konfigurera en datauppsättning för profil- och identitetstjänsten med API:er
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
 source-wordcount: '1020'
 ht-degree: 0%
@@ -32,7 +32,7 @@ Den här självstudiekursen kräver en fungerande förståelse för de olika Ado
 - [!DNL Catalog Service](../../catalog/home.md): Ett RESTful-API som gör att du kan skapa datauppsättningar och konfigurera dem för [!DNL Real-time Customer Profile] och [!DNL Identity Service].
 - [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa Platform API:er.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:erna för plattformen.
 
 ### Läser exempel-API-anrop
 
