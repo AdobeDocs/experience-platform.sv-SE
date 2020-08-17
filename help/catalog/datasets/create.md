@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;dataset;Dataset;create a dataset;create dataset
 solution: Experience Platform
 title: Skapa en datauppsättning med API:er
 topic: datasets
+description: Det här dokumentet innehåller allmänna steg för att skapa en datauppsättning med Adobe Experience Platform API:er och fylla i datauppsättningen med hjälp av en fil.
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
 workflow-type: tm+mt
-source-wordcount: '1234'
+source-wordcount: '1251'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # Skapa en datauppsättning med API:er
 
-Det här dokumentet innehåller allmänna steg för att skapa en datauppsättning med hjälp av Adobe Experience Platform-API:er och fylla i datauppsättningen med hjälp av en fil.
+Det här dokumentet innehåller allmänna steg för att skapa en datauppsättning med Adobe Experience Platform API:er och fylla i datauppsättningen med hjälp av en fil.
 
 ## Komma igång
 
@@ -34,9 +35,9 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
-* Behörighet: Bearer `{ACCESS_TOKEN}`
-* x-api-key: `{API_KEY}`
-* x-gw-ims-org-id: `{IMS_ORG}`
+* `Authorization: Bearer {ACCESS_TOKEN}`
+* `x-api-key: {API_KEY}`
+* `x-gw-ims-org-id: {IMS_ORG}`
 
 Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
@@ -475,4 +476,4 @@ Mer information om hur du uppdaterar scheman finns i Utvecklarhandbok [för](../
 
 När du har uppdaterat schemat kan du följa stegen i den här självstudiekursen igen för att importera nya data som följer det reviderade schemat.
 
-Det är viktigt att komma ihåg att schemautvecklingen är enbart additiv, vilket innebär att du inte kan införa en brytningsändring i ett schema när det har sparats i registret och använts för datahämtning. Mer information om de bästa sätten att komponera schema för användning med Adobe Experience Platform finns i guiden om [grunderna för schemakomposition](../../xdm/schema/composition.md).
+Det är viktigt att komma ihåg att schemautvecklingen är enbart additiv, vilket innebär att du inte kan införa en brytningsändring i ett schema när det har sparats i registret och använts för datahämtning. Om du vill veta mer om de bästa sätten att komponera schema för användning med Adobe Experience Platform kan du läsa guiden om [grunderna i schemakomposition](../../xdm/schema/composition.md).
