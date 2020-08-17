@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;XDM;XDM system;XDM individual profile;XDM ExperienceEvent;XDM Experience Event;experienceEvent;experience event;Mixins;mixins;mixin;Mixin;Experience event;XDM Experience Event;XDM ExperienceEvent;experienceEvent;experienceevent;XDM Experienceevenet
 solution: Experience Platform
 title: Experience Data Model (XDM) System
 topic: overview
+description: 'Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. Experience Data Model (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering. '
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '1606'
+source-wordcount: '1638'
 ht-degree: 0%
 
 ---
@@ -77,7 +78,7 @@ Experience Events kan vara antingen explicita eller implicita. Explicit händels
 
 För att börja inhämta data till [!DNL Experience Platform]skapas en datauppsättning med [!DNL Catalog Service]. Datauppsättningen refererar till ett XDM-schema som beskriver strukturen för de data som ska importeras. Om en datamängd skapas utan ett schema, [!DNL Experience Platform] kommer att härleda ett &quot;observerat schema&quot; genom att undersöka typen och innehållet i inkapslade datafält. Datauppsättningar spåras sedan i [!DNL Catalog] och lagras i [!DNL Data Lake] tillsammans med scheman och observerade scheman som de baseras på.
 
-Mer information om [!DNL Catalog]finns i [Katalogtjänst - översikt](../catalog/home.md). Mer information om datainmatning i Adobe Experience Platform finns i översikten över [datainmatning](../ingestion/home.md).
+Mer information om [!DNL Catalog]finns i [Katalogtjänst - översikt](../catalog/home.md). Mer information om Adobe Experience Platform datainmatning finns i översikten över [datainmatning](../ingestion/home.md).
 
 ### [!DNL Query Service]
 
@@ -105,7 +106,7 @@ Mer information finns i [Kundprofilöversikt](../profile/home.md) i realtid.
 
 Adobe Experience Platform [!DNL Data Science Workspace] använder maskininlärning och artificiell intelligens för att få insikter från data som lagras i [!DNL Experience Platform]. [!DNL Data Science Workspace] gör det möjligt för datavetare att bygga recept som bygger på XDM Individual [!DNL Profile] [!DNL XDM ExperienceEvent] och data om kunder och deras aktiviteter, vilket underlättar prognoser som köpbenägenhet och rekommenderade erbjudanden som individen sannolikt kommer att uppskatta och använda.
 
-Med [!DNL Data Science Workspace]kan datavetare enkelt skapa API:er för intelligenta tjänster som bygger på maskininlärning. Dessa tjänster fungerar tillsammans med andra Adobe-lösningar, bland annat Adobe Target och Adobe Analytics Cloud, för att hjälpa er att automatisera personaliserade, målinriktade digitala upplevelser.
+Med [!DNL Data Science Workspace]kan datavetare enkelt skapa API:er för intelligenta tjänster som bygger på maskininlärning. Dessa tjänster fungerar tillsammans med andra Adobe-lösningar, inklusive Adobe Target och Adobe Analytics Cloud, och hjälper er att automatisera personaliserade, målinriktade digitala upplevelser.
 
 Mer information om hur du använder [!DNL Experience Platform] data för att få bättre insikter finns i översikten över arbetsytan för [datavetenskap](../data-science-workspace/home.md).
 
