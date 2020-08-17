@@ -1,18 +1,19 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;date range
 solution: Experience Platform
 title: Insikter om Adobe Experience Platform-observationer
 topic: overview
+description: Insikter om observerbarhet är ett RESTful-API som gör att du kan visa viktiga mätvärden för observerbarhet i Adobe Experience Platform. Dessa mätvärden ger insikter i statistik om plattformsanvändning, hälsokontroller för plattformstjänster, historiska trender och resultatindikatorer för olika plattformsfunktioner.
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: cc81d590f308c7e2677cec000c27e8aca42437f5
 workflow-type: tm+mt
-source-wordcount: '396'
+source-wordcount: '435'
 ht-degree: 1%
 
 ---
 
 
-# Översikt över Adobe Experience Platform Insights
+# Adobe Experience Platform Insights Insights - översikt
 
 Insikter om observerbarhet är ett RESTful-API som gör att du kan visa viktiga mätvärden för observerbarhet i Adobe Experience Platform. Dessa mätvärden ger insikter om [!DNL Platform] användningsstatistik, hälsokontroller av [!DNL Platform] tjänster, historiska trender och resultatindikatorer för olika [!DNL Platform] funktioner.
 
