@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Grundläggande om Adobe Experience Platform API
 topic: getting started
 translation-type: tm+mt
-source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
+source-git-commit: fa439ebb9d02d4a08c8ed92b18f2db819d089174
 workflow-type: tm+mt
-source-wordcount: '423'
+source-wordcount: '422'
 ht-degree: 2%
 
 ---
@@ -80,8 +80,7 @@ JSON-pekaren är en standardiserad strängsyntax ([RFC 6901](https://tools.ietf.
 | `"/definitions/loyalty/properties/_{TENANT_ID}/properties/loyaltyLevel/enum"` | `["platinum", "gold", "silver", "bronze"]` |
 | `"/definitions/loyalty/properties/_{TENANT_ID}/properties/loyaltyLevel/enum/0"` | `"platinum"` |
 
->[!Note]
->
+>[!NOTE]
 >
 >När du hanterar `xdm:sourceProperty` och `xdm:destinationProperty` attribut för [!DNL Experience Data Model] (XDM)-beskrivningar måste alla `properties` nycklar **uteslutas** från JSON-pekarsträngen. Mer information finns i underhandboken om [!DNL Schema Registry] API-utvecklare om [beskrivningar](../xdm/api/descriptors.md) .
 
@@ -115,4 +114,4 @@ JSON-schema är ett format som används för att beskriva och validera JSON-data
 
 ## Nästa steg
 
-I det här dokumentet introducerades en del av de tekniker och syntaxer som används för att hantera JSON-baserade resurser för [!DNL Experience Platform]. Mer information om hur du arbetar med API: [!DNL Platform] er, inklusive bästa praxis och svar på vanliga frågor, finns i [Platform felsökningsguide](troubleshooting.md).
+I det här dokumentet introducerades en del av de tekniker och syntaxer som används för att hantera JSON-baserade resurser för [!DNL Experience Platform]. Mer information om hur du arbetar med API: [!DNL Platform] er, inklusive bästa praxis och svar på vanliga frågor, finns i felsökningsguiden för [plattformen](troubleshooting.md).
