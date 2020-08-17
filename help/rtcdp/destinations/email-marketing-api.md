@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa e-postmarknadsföringsmål
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: d833257b4dffbf2a02ab4a3fc7a6a9e7347e7df5
+source-git-commit: fa439ebb9d02d4a08c8ed92b18f2db819d089174
 workflow-type: tm+mt
-source-wordcount: '1611'
+source-wordcount: '1610'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,8 @@ Resurser i [!DNL Experience Platform] kan isoleras till specifika virtuella sand
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
->[!Note]
+>[!NOTE]
+>
 >Mer information om sandlådor i [!DNL Experience Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
