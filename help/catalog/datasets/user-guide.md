@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;enable dataset;Dataset;dataset
 solution: Experience Platform
 title: Användarhandbok för datauppsättningar
 topic: datasets
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
 source-wordcount: '1075'
 ht-degree: 0%
@@ -14,11 +14,11 @@ ht-degree: 0%
 
 # Användarhandbok för datauppsättningar
 
-Den här användarhandboken innehåller anvisningar om hur du utför vanliga åtgärder när du arbetar med datauppsättningar i användargränssnittet i Adobe Experience Platform.
+Den här användarhandboken innehåller anvisningar om hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 
 ## Komma igång
 
-Den här användarhandboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+Användarhandboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 * [Datauppsättningar](overview.md): Konstruktionen för lagring och hantering för databeständighet i [!DNL Experience Platform].
 * [!DNL Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
