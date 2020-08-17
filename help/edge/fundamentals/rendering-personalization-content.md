@@ -1,12 +1,12 @@
 ---
 title: Återge personaliserat innehåll
-seo-title: Adobe Experience Platform Web SDK Rendering personalized content
+seo-title: Adobe Experience Platform Web SDK Rendering personaliserat innehåll
 description: Lär dig återge personaliserat innehåll med Experience Platform Web SDK
 seo-description: Lär dig återge personaliserat innehåll med Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: c342e8d7698c1d213658f3f1dae751edbde04b83
 workflow-type: tm+mt
-source-wordcount: '229'
+source-wordcount: '237'
 ht-degree: 0%
 
 ---
@@ -40,15 +40,15 @@ alloy("sendEvent", {
 
 ## Återge innehåll manuellt
 
-Du kan begära att listan med beslut returneras som ett löfte för `event` kommandot med hjälp av `scopes`. Ett omfång är en sträng som låter personaliseringslösningen veta vilket beslut ni vill ha.
+Du kan begära att listan med beslut returneras som ett löfte för `sendEvent` kommandot genom att ange `decisionScopes` alternativet. Ett omfång är en sträng som låter personaliseringslösningen veta vilket beslut ni vill ha.
 
 ```javascript
 alloy("sendEvent",{
     xdm:{...},
-    scopes:['demo-1', 'demo-2']
+    decisionScopes:['demo-1', 'demo-2']
   }).then(function(result){
     if (result.decisions){
-      //do something with the decisions
+      // Do something with the decisions.
     }
   })
 ```
@@ -92,8 +92,8 @@ Detta returnerar en lista med beslut som ett JSON-objekt för varje beslut.
 
 >[!TIP]
 >
-> Om du använder [!DNL Target] omfattningar blir mBoxes på servern, är det bara de som blir alla förfrågningar på en gång i stället för individuellt. Den globala mbox skickas alltid.
+> Om du använder [!DNL Target]det blir omfattningar mBox på servern, men bara de begärs samtidigt i stället för individuellt. Den globala mbox skickas alltid.
 
 ### Hämta automatiskt innehåll
 
-Om du vill `result.decisions` att de automatiska återgivningsbesluten ska inkluderas kan du ange värdet false `renderDecisions` och inkludera det speciella omfånget `__view__`.
+Om du vill `result.decisions` att inställningarna ska inkludera de automatiskt återgivningsbara besluten och INTE ha återge dem automatiskt, kan du ange `renderDecisions` till `false`och inkludera det speciella omfånget `__view__`.
