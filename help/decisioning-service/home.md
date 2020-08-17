@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;offer management;Offer Management;Journey;customer journey;journey;decision events;decision event;Decision events
 solution: Experience Platform
 title: Beslutstjänst
 topic: overview
+description: Beslutstjänsten ger möjlighet att skapa personaliserade, optimerade och samordnade upplevelser i program som körs på Adobe Experience Platform. Med hjälp av beslutstjänsten kan du fastställa det bästa alternativet bland en uppsättning tillgängliga alternativ. Dessa alternativ, som också kallas alternativ, kan vara erbjudanden, produktrekommendationer, innehållskomponenter för en webbupplevelse, konversationsskript och åtgärder som ska vidtas.
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '1592'
+source-wordcount: '1648'
 ht-degree: 0%
 
 ---
