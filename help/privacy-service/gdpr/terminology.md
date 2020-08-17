@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;GDPR;gdpr
 solution: Experience Platform
 title: GDPR-terminologi
 topic: troubleshooting
+description: Nedan följer en lista över definitioner av nyckeltermer som rör den allmänna dataskyddsförordningen (GDPR).
 translation-type: tm+mt
-source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
+source-git-commit: c081a7521be9715ca32d35504922a70767924fd7
 workflow-type: tm+mt
-source-wordcount: '1066'
+source-wordcount: '1084'
 ht-degree: 13%
 
 ---
@@ -74,7 +75,7 @@ __Företagsgrupp:__ Ett kontrollerande företag och dess kontrollerade företag.
 
 ## I
 
-__Identity Management Services (IMS):__ Adobe implementeringen av Federated ID och OAuth 2.0 för autentisering av användare av Adobe ID och auktorisering för Adobe-resurser. Du måste integrera IMS med ditt Adobe-program eller -tjänst för att användarna ska kunna logga in och få tillgång till Adobes tjänster. Users can log in directly with Renga (the Adobe identity services provider), or log in through a trusted third party authentication domain (such as [!DNL Google], [!DNL Facebook], or a corporate/organization LDAP).
+__Identity Management Services (IMS):__ Adobe implementeringen av Federated ID och OAuth 2.0 för autentisering av Adobe ID-användare och auktorisering för Adobe-resurser. Du måste integrera IMS med ditt Adobe-program eller -tjänst för att användarna ska kunna logga in och få tillgång till Adobes tjänster. Users can log in directly with Renga (the Adobe identity services provider), or log in through a trusted third party authentication domain (such as [!DNL Google], [!DNL Facebook], or a corporate/organization LDAP).
 
 __IMS-organisations-ID:__ Avser en Adobe-auktoriseringstoken för autentisering av tjänst-till-tjänst, som inte kräver användarinloggning. Den utfärdas till en IMS-klient och har ingen associerad användare. En IMS-klient behöver en tjänsttoken för att auktorisera begäranden i bakkanalen mellan tjänster. (Termen ”systemtoken” används ibland för att beteckna tjänsttoken.)
 
