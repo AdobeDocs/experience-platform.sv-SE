@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;segmentation;Segmentation;segment service;segments;Segments
 solution: Experience Platform
 title: Segmentering för flera enheter
 topic: overview
+description: Multientitetssegmentering är möjligheten att utöka profildata med ytterligare data baserat på produkter, butiker eller andra icke-profilklasser. När de är anslutna blir data från ytterligare klasser tillgängliga som om de vore inbyggda i profilschemat.
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
 workflow-type: tm+mt
-source-wordcount: '372'
+source-wordcount: '409'
 ht-degree: 0%
 
 ---
@@ -22,10 +23,10 @@ Om du vill veta mer om segmentering för flera enheter kan du fortsätta att lä
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse för de olika Adobe Experience Platform-tjänster som används för segmentering. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
+Den här självstudiekursen kräver en fungerande förståelse för de olika Adobe Experience Platform-tjänster som använder segmentering. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 - [!DNL Real-time Customer Profile](../profile/home.md): Ger en enhetlig konsumentprofil i realtid, baserad på aggregerade data från flera källor.
-- [Segmenteringstjänsten](./home.md)Adobe Experience Platform: Gör att ni kan bygga segment utifrån kundprofilen i realtid.
+- [Adobe Experience Platform segmenteringstjänst](./home.md): Gör att ni kan bygga segment utifrån kundprofilen i realtid.
 - [!DNL Experience Data Model (XDM)](../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
 
 ## Definiera XDM-relationer
