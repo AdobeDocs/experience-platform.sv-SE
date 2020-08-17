@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;namespace;Namespace;Namespaces;namespaces;identity namespace;Identity namespace;identity;Identity;Identity service;identity service
 solution: Experience Platform
 title: Adobe Experience Platform Identity Service
 topic: overview
+description: 'Identitetsnamnutrymmen är en komponent i identitetstjänsten som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet"name<span>@email.com" som e-postadress eller"443522" som ett numeriskt CRM-ID. '
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '708'
-ht-degree: 0%
+source-wordcount: '748'
+ht-degree: 1%
 
 ---
 
@@ -18,7 +19,7 @@ Identitetsnamnutrymmen är en komponent i [!DNL Identity Service](./home.md) som
 
 ## Komma igång
 
-Att arbeta med namnutrymmen för identiteter kräver förståelse för de olika Adobe Experience Platform-tjänsterna som är inblandade. Innan du börjar arbeta med namnutrymmen bör du läsa dokumentationen för följande tjänster:
+Att arbeta med identitetsnamnutrymmen kräver förståelse för de olika Adobe Experience Platform-tjänsterna. Innan du börjar arbeta med namnutrymmen bör du läsa dokumentationen för följande tjänster:
 
 - [!DNL Real-time Customer Profile](../profile/home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
 - [!DNL Identity Service](./home.md): Få en bättre bild av enskilda kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system.
@@ -28,7 +29,7 @@ Att arbeta med namnutrymmen för identiteter kräver förståelse för de olika 
 
 En fullständigt kvalificerad identitet innehåller ett ID-värde och ett namnutrymme. När postdata matchas mellan profilfragment, som när profildata sammanfogas, måste både identitetsvärdet och namnutrymmet matcha. [!DNL Real-time Customer Profile]
 
-Två profilfragment kan t.ex. innehålla olika primära ID:n, men de har samma värde för namnutrymmet&quot;E-post&quot;. Därför kan Platform se att dessa fragment faktiskt är samma individ och sammanför data i identitetsdiagrammet för den enskilda personen.
+Två profilfragment kan till exempel innehålla olika primära ID:n, men de delar samma värde för namnutrymmet&quot;E-post&quot;. Därför kan Platform se att dessa fragment faktiskt är samma individ och sammanför data i identitetsdiagrammet för den enskilda personen.
 
 ![](images/identity-service-stitching.png)
 
