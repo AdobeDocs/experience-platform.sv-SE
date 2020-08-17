@@ -1,20 +1,21 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Query editor;query editor
 solution: Experience Platform
-title: Frågeredigeringsguide för Adobe Experience Platform Query Service
+title: Användarhandbok för Frågeredigeraren
 topic: query editor
+description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 3376d6cace9ab196f457e2bf7b84cde06693103c
 workflow-type: tm+mt
-source-wordcount: '1001'
-ht-degree: 0%
+source-wordcount: '1060'
+ht-degree: 1%
 
 ---
 
 
 # [!DNL Query Editor] användarhandbok
 
-[!DNL Query Editor] är ett interaktivt verktyg från Adobe Experience Platform [!DNL Query Service], som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i [!DNL Experience Platform] användargränssnittet. [!DNL Query Editor] har stöd för utveckling av frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i [!DNL Experience Platform].
+[!DNL Query Editor] är ett interaktivt verktyg från Adobe Experience Platform [!DNL Query Service]som gör att du kan skriva, validera och köra frågor om kundupplevelsedata i [!DNL Experience Platform] användargränssnittet. [!DNL Query Editor] har stöd för utveckling av frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i [!DNL Experience Platform].
 
 Mer information om begrepp och funktioner i [!DNL Query Service]finns i [frågetjänstens översikt][query-service-overview]. Mer information om hur du navigerar i användargränssnittet för frågetjänsten [!DNL Platform]finns i [Översikt över][query-service-ui]användargränssnittet för frågetjänsten.
 
@@ -36,7 +37,7 @@ Frågor som körs från [!DNL Query Editor] kör interaktivt. Det innebär att o
 
 Med [!DNL Query Editor]kan du skriva, köra och spara frågor om kundupplevelsedata. Alla frågor som körs i [!DNL Query Editor], eller sparas, är tillgängliga för alla användare i organisationen som har tillgång till [!DNL Query Service].
 
-### Åtkomst [!DNL Query Editor]
+### Komma åt [!DNL Query Editor]
 
 I [!DNL Experience Platform] användargränssnittet klickar du **[!UICONTROL Queries]** på den vänstra navigeringsmenyn för att öppna [!DNL Query Service] arbetsytan. Klicka sedan på **[!UICONTROL Create Query]** längst upp till höger på skärmen för att börja skriva frågor. Den här länken är tillgänglig från alla sidor på [!DNL Query Service] arbetsytan.
 
@@ -118,7 +119,7 @@ När en fråga är klar visas resultatet på *[!UICONTROL Results]* fliken bredv
 
 ## Köra frågor med [!DNL Query Service] självstudievideo
 
-I följande video visas hur du kör frågor i gränssnittet Adobe Experience Platform och i en PSQL-klient. Dessutom visas om du använder enskilda egenskaper i ett XDM-objekt, använder funktioner som definieras av Adobe och använder CREATE TABLE AS SELECT (CTAS).
+I följande video visas hur du kör frågor i Adobe Experience Platform-gränssnittet och i en PSQL-klient. Dessutom visas om du använder enskilda egenskaper i ett XDM-objekt, använder funktioner som definieras av Adobe och använder CREATE TABLE AS SELECT (CTAS).
 
 >[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)
 
