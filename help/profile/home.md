@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Översikt över kundprofiler i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
+source-git-commit: fa439ebb9d02d4a08c8ed92b18f2db819d089174
 workflow-type: tm+mt
-source-wordcount: '1666'
+source-wordcount: '1665'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,7 @@ Relationen mellan [!DNL Real-time Customer Profile] och andra tjänster inom [!D
 
 ### Profiler och registrera data
 
-En profil är en representation av ett ämne, en organisation eller en individ, som också kallas registerdata. Profilen för en produkt kan t.ex. innehålla en SKU och en beskrivning, medan profilen för en person innehåller information som förnamn, efternamn och e-postadress. Med [!DNL Experience Platform]kan du anpassa profiler så att de använder datatyper som är relevanta för ditt företag. Standardklassen [!DNL Experience Data Model] (XDM) [!DNL Individual Profile] är den klass som oftast används för att skapa ett schema när kundpostdata beskrivs, och som tillhandahåller data som är integrerade i många interaktioner mellan Platform tjänster. Mer information om hur du arbetar med scheman i [!DNL Experience Platform]finns i [XDM-systemöversikten](../xdm/home.md).
+En profil är en representation av ett ämne, en organisation eller en individ, som också kallas registerdata. Profilen för en produkt kan t.ex. innehålla en SKU och en beskrivning, medan profilen för en person innehåller information som förnamn, efternamn och e-postadress. Med [!DNL Experience Platform]kan du anpassa profiler så att de använder datatyper som är relevanta för ditt företag. Standardklassen [!DNL Experience Data Model] (XDM) [!DNL Individual Profile] är den klass som oftast används för att skapa ett schema när kundpostdata beskrivs, och som tillhandahåller data som är integrerade i många interaktioner mellan plattformstjänster. Mer information om hur du arbetar med scheman i [!DNL Experience Platform]finns i [XDM-systemöversikten](../xdm/home.md).
 
 ### Tidsseriehändelser
 
@@ -71,18 +71,19 @@ Realtidsinmatning är möjlig genom en process som kallas direktuppspelning. Nä
 
 ### Konfiguration och mål för Edge-projektion
 
-För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Adobe Experience Platform ger realtidsåtkomst till data genom att använda kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Till exempel använder Adobe-program som Adobe Target och Adobe Campaign kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten. Om du vill veta mer och börja arbeta med projektioner med hjälp av [!DNL Real-time Customer Profile] API:t kan du läsa guiden [för](api/edge-projections.md)kantprojektionsslutpunkter.
+För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Adobe Experience Platform ger realtidsåtkomst till data genom att använda kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Adobe-program som Adobe Target och Adobe Campaign använder kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten. Om du vill veta mer och börja arbeta med projektioner med hjälp av [!DNL Real-time Customer Profile] API:t kan du läsa guiden [för](api/edge-projections.md)kantprojektionsslutpunkter.
 
 ## Lägg till data i [!DNL Real-time Customer Profile]
 
 [!DNL Platform] kan konfigureras för att skicka data från poster och tidsserier till [!DNL Profile]med stöd för direktuppspelning i realtid och batchförbrukning. Mer information finns i självstudiekursen om hur du [lägger till data i kundprofilen](tutorials/add-profile-data.md)i realtid.
 
->[!Note]
+>[!NOTE]
+>
 >Data som samlas in via Adobe-lösningar, inklusive [!DNL Analytics Cloud], [!DNL Marketing Cloud]och [!DNL Advertising Cloud]flödar in [!DNL Experience Platform] och hämtas in i [!DNL Profile].
 
 ### [!DNL Profile] mätvärden för förtäring
 
-Med observationsinsikter kan ni visa viktiga värden i Adobe Experience Platform. Förutom [!DNL Platform] användningsstatistik och resultatindikatorer för olika [!DNL Platform] funktioner finns det specifika [!DNL Profile]mätvärden som gör att ni kan få insikt i hur många begäranden som kommer in, hur många som kommer in, hur många som kommer in, hur många som kommer in, hur många som kommer in i bilden och hur många som kommer in. Om du vill veta mer kan du börja med att läsa översikten [över](../observability/home.md)observabilitetsinsikter och en fullständig lista över [!DNL Profile] mätvärden finns i dokumentationen om [tillgängliga mätvärden](../observability/metrics.md).
+Med Insikter om observerbarhet kan ni visa nyckeltal i Adobe Experience Platform. Förutom [!DNL Platform] användningsstatistik och resultatindikatorer för olika [!DNL Platform] funktioner finns det specifika [!DNL Profile]mätvärden som gör att ni kan få insikt i hur många begäranden som kommer in, hur många som kommer in, hur många som kommer in, hur många som kommer in, hur många som kommer in i bilden och hur många som kommer in. Om du vill veta mer kan du börja med att läsa översikten [över](../observability/home.md)observabilitetsinsikter och en fullständig lista över [!DNL Profile] mätvärden finns i dokumentationen om [tillgängliga mätvärden](../observability/metrics.md).
 
 ## [!DNL Data governance] och [!DNL Privacy]
 
