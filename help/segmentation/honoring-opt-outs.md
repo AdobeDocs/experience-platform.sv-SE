@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;opt-out
 solution: Experience Platform
 title: Ansvarsfriskrivningar
 topic: overview
+description: 'Experience Platform tillåter dina kunder att skicka avanmälningsbegäranden om användning och lagring av sina data i kundprofilen i realtid]. Dessa avanmälningsförfrågningar ingår i California Consumer Privacy Act (CCPA), som ger personer bosatta i Kalifornien rätt att få tillgång till och radera sina personuppgifter och att få veta om deras personuppgifter säljs eller offentliggörs (och till vem). '
 translation-type: tm+mt
-source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
 workflow-type: tm+mt
-source-wordcount: '926'
+source-wordcount: '987'
 ht-degree: 0%
 
 ---
@@ -24,7 +25,7 @@ För att kunna uppfylla avanmälningsbegäranden krävs en förståelse för de 
 
 - [!DNL Real-time Customer Profile](../profile/home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
 - [!DNL Adobe Experience Platform Segmentation Service](./home.md): Gör att ni kan skapa målgruppssegment utifrån [!DNL Real-time Customer Profile] data.
-- [!DNL Experience Data Model (XDM)](../xdm/home.md): Det standardiserade ramverk som Platform använder för att ordna kundupplevelsedata.
+- [!DNL Experience Data Model (XDM)](../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
 - [!DNL Adobe Experience Platform Privacy Service](../privacy-service/home.md): Hjälper organisationer att automatisera efterlevnaden av datasekretesregler som omfattar kunddata inom [!DNL Platform].
 
 ## Avanmäl mixar
@@ -36,7 +37,7 @@ För att CCPA-avanmälningsbegäranden ska uppfyllas måste ett av scheman som �
 
 Stegvisa instruktioner om hur du lägger till en blandning i ett schema finns i avsnittet&quot;Lägg till en blandning&quot; i följande XDM-dokumentation:
 - [API-självstudiekurs](../xdm/api/getting-started.md)för schemaregister.: Skapa ett schema med API:t för schemaregistret.
-- [Schemaredigeraren, genomgång](../xdm/tutorials/create-schema-ui.md): Skapa ett schema med Platform användargränssnitt.
+- [Schemaredigeraren, genomgång](../xdm/tutorials/create-schema-ui.md): Skapa ett schema med användargränssnittet för plattformen.
 
 Här är en exempelbild som visar de avanmälningsblandningar som lagts till i ett schema i användargränssnittet:
 
@@ -66,7 +67,7 @@ Blandningen [!DNL Profile Privacy] innehåller följande fält:
    - Opt-In (`in`): Kunden har anmält sig.
 - Tidsstämpel för avanmälan (`timestamp`): Tidsstämpel för mottagen avanmälningssignal.
 
-Om du vill visa hela strukturen för [!DNL Profile Privacy] mixinen läser du [XDM-databasen](https://github.com/adobe/xdm/blob/master/schemas/context/profile-privacy.schema.json) för GitHub eller förhandsgranskar blandningen med Platform-gränssnittet.
+Om du vill visa hela strukturen för [!DNL Profile Privacy] mixinen läser du [XDM-databasen](https://github.com/adobe/xdm/blob/master/schemas/context/profile-privacy.schema.json) för GitHub eller förhandsgranskar mixinen med hjälp av plattformsgränssnittet.
 
 ### [!DNL Profile Preferences Details]
 
