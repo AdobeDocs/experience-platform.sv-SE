@@ -4,7 +4,7 @@ seo-title: Länkspårning till Adobe Analytics med Adobe Experience Platform Web
 description: Lär dig hur du skickar länkdata till Adobe Analytics med Experience Platform Web SDK
 seo-description: Lär dig hur du skickar länkdata till Adobe Analytics med Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: ab73e4d793cf39c29ddca385487bf027002db883
+source-git-commit: b50082405cd0392ff827a83ad82091fbcd370b21
 workflow-type: tm+mt
 source-wordcount: '236'
 ht-degree: 0%
@@ -33,7 +33,7 @@ alloy("sendEvent", {
 });
 ```
 
-I Analytics registreras en sidvy tekniskt sett, även om variabeln inte är inställd, men det är bäst att ställa in variabeln när du vill registrera en sidvy som explicit i dina data och som i framtiden ska bevisa implementeringen.
+Även om analysfunktionen tekniskt sett registrerar en sidvy även om variabeln inte är inställd, är det bäst att ställa in den här variabeln när du vill registrera en sidvy som explicit i dina data och att framtidskorrektur för implementeringen.
 
 ## Spårningslänkar
 
