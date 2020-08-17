@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;decision events;decision event;Decision events
 solution: Experience Platform
 title: Domänmodell för Experience Decisioning
 topic: overview
+description: I detta avsnitt förklaras komponenterna i Beslutstjänsten och hur dessa komponenter interagerar är detaljerade. Begreppen och deras relationer utgör *Domänen* för beslutsproblemet. Dessa grundläggande komponenter kan användas oavsett hur du använder beslutstjänsten].
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '1367'
+source-wordcount: '1412'
 ht-degree: 0%
 
 ---
@@ -18,9 +19,9 @@ I det här avsnittet förklaras komponenterna i [!DNL Decisioning Service] och h
 
 ## Beslutsalternativ
 
-Ett *alternativ* för upplevelsebeslut är en potentiell upplevelse som kan presenteras för en viss kund. Ett alternativ kallas också ett val eller alternativ. När du bestämmer dig för nästa bästa alternativ för en kund [!DNL Decisioning Service] är alternativ ***d<sub>1</sub>***till***<sub>dN</sub>*** bland en begränsad uppsättning alternativ **`D`**.
+Ett *alternativ* för upplevelsebeslut är en potentiell upplevelse som kan presenteras för en viss kund. Ett alternativ kallas också ett val eller alternativ. När du bestämmer dig för nästa bästa alternativ för en kund [!DNL Decisioning Service] är alternativ ***d<sub>1</sub>*** till ***<sub>dN</sub>*** bland en begränsad uppsättning alternativ **`D`**.
 
-Beslut fattas genom att det bästa alternativet identifieras bland ett antal tillgängliga alternativ. Ett tillvägagångssätt är att successivt eliminera *beslutsalternativ* ***<sub>som skiljer</sub>***sig från*** D ***-uppsättningen tills någon av dem är kvar och sedan välja en&quot;vinnare&quot; slumpmässigt från den återstående uppsättningen. Ett annat sätt att fatta beslut är att rangordna de återstående (valbara) beslutsalternativen utifrån det förväntade resultatet.
+Beslut fattas genom att det bästa alternativet identifieras bland ett antal tillgängliga alternativ. Ett tillvägagångssätt är att successivt eliminera *beslutsalternativ* ***<sub>som skiljer</sub>*** sig från ***D*** -uppsättningen tills någon av dem är kvar och sedan välja en&quot;vinnare&quot; slumpmässigt från den återstående uppsättningen. Ett annat sätt att fatta beslut är att rangordna de återstående (valbara) beslutsalternativen utifrån det förväntade resultatet.
 
 ### Finite set of Decision Options
 
