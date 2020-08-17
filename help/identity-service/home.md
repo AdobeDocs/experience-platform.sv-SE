@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;identity;Identity;XDM graphs;identity service;Identity service
 solution: Experience Platform
 title: Adobe Experience Platform Identity Service
 topic: overview
+description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 translation-type: tm+mt
-source-git-commit: d02f12202e51b00453f719604052a54f6fcfe4ab
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '1672'
+source-wordcount: '1707'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # [!DNL Identity Service] översikt
 
-För att kunna leverera relevanta digitala upplevelser måste ni ha en fullständig förståelse för era kunder. Detta blir svårare när era kunddata fragmenteras över olika system, vilket gör att varje enskild kund ser ut att ha flera&quot;identiteter&quot;. Adobe Experience Platform hjälper er att få en bättre bild av era kunder och deras beteende genom att överbrygga identiteterna mellan olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid. [!DNL Identity Service]
+För att kunna leverera relevanta digitala upplevelser måste ni ha en fullständig förståelse för era kunder. Detta blir svårare när era kunddata fragmenteras över olika system, vilket gör att varje enskild kund ser ut att ha flera&quot;identiteter&quot;. Adobe Experience Platform [!DNL Identity Service] hjälper er att få en bättre bild av era kunder och deras beteende genom att överbrygga identiteter mellan olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 
 ## Förstå [!DNL Identity Service]
 
@@ -42,7 +43,7 @@ PII, som e-postadress och telefonnummer, används för att identifiera en kund d
 
 Som framgår av bilden nedan är både kända och anonyma identiteter viktiga komponenter i [identitetsdiagram](#identity-graphs), som beskrivs senare i det här dokumentet.
 
-![Smältning av identiteter på Platform](./images/identity-service-stitching.png)
+![Identitetssammanfogning på plattform](./images/identity-service-stitching.png)
 
 Exempel på [!DNL Identity Service] implementeringar är:
 
@@ -61,7 +62,7 @@ Era kunder kan interagera med ert varumärke genom en kombination av online- och
 
 [!DNL Experience Platform] löser detta problem på två sätt: [identitetsnamnutrymmen](#identity-namespaces) och [identitetsdiagram](#identity-graphs).
 
-Följande video är avsedd att ge stöd för din förståelse av identiteter och identitetsdiagram. I följande video visas de tre funktionerna i Identity Collection, Identity Graphs och API:erna. Här beskrivs också hur deterministiska och sannolikhetsalgoritmer används för att konstruera privata identitetsdiagram, och hur privata identitetsdiagram, Adobe Experience Platform Identity Service Co-Op Graph och tredjepartsdiagram fungerar.
+Följande video är avsedd att ge stöd för din förståelse av identiteter och identitetsdiagram. I följande video visas de tre funktionerna i Identity Collection, Identity Graphs och API:erna. Här beskrivs också hur deterministiska och sannolikhetsalgoritmer används för att konstruera privata identitetsdiagram och beskriver rollen för privata identitetsdiagram, Adobe Experience Platform Identity Service Co-Op Graph och tredjepartsdiagram.
 
 >[!IMPORTANT]
 >
@@ -88,13 +89,13 @@ Som ett exempel på möjliga typer av faktorer som du bör tänka på när du an
 
 ## Identitetsdata skickas till [!DNL Identity Service]
 
-I det här avsnittet beskrivs hur data som tillhandahålls Adobe Experience Platform behandlas innan de används för [!DNL Identity Service] att skapa ett identitetsdiagram för varje kund.
+I det här avsnittet beskrivs hur data som skickas till Adobe Experience Platform behandlas innan de används för [!DNL Identity Service] att skapa ett identitetsdiagram för varje kund.
 
 ### Bestäm dig för identitetsfält
 
-Beroende på er strategi för insamling av företagsdata avgör de datafält som du anger som identiteter vilka data som inkluderas i identitetskartan. För att få ut så mycket som möjligt av Adobe Experience Platform och så omfattande kundidentiteter som möjligt bör ni ladda upp både online- och offlinedata.
+Beroende på er strategi för insamling av företagsdata avgör de datafält som du anger som identiteter vilka data som inkluderas i identitetskartan. För att få ut så mycket som möjligt av Adobe Experience Platform och de mest omfattande kundidentiteterna bör du ladda upp både online- och offlinedata.
 
-- Onlinedata är data som beskriver närvaro och beteende online, t.ex. användarnamn och e-postadresser.
+- Onlinedata är data som beskriver närvaro och beteende online, till exempel användarnamn och e-postadresser.
 
 - Offlinedata avser data som inte är direkt relaterade till onlinenärvaro, t.ex. ID:n från CRM-system. Den här typen av data gör era identiteter mer robusta och stöder datamedlemskap i olika system.
 
@@ -131,7 +132,7 @@ Under direktuppspelningsprocessen hämtar identitetsdata [!DNL Identity Service 
 
 [!DNL Identity Service] förbrukar XDM-kompatibla data som skickas till [!DNL Experience Platform] antingen via [batchinmatning](../ingestion/batch-ingestion/overview.md) eller [direktuppspelning](../ingestion/streaming-ingestion/overview.md).
 
-Följande video är avsedd att ge stöd för din förståelse av identitetstjänsten. I den här videon visas hur du anger datafält som identiteter, importerar identitetsdata och sedan kontrollerar att data har tilldelats det privata diagrammet för Adobe Experience Platform Identity Service.
+Följande video är avsedd att ge stöd för din förståelse av identitetstjänsten. I den här videon visas hur du kan märka datafält som identiteter, importera identitetsdata och sedan verifiera att data har skickats till Adobe Experience Platform Identity Service Private Graph.
 
 >[!WARNING]
 >
@@ -141,7 +142,7 @@ Följande video är avsedd att ge stöd för din förståelse av identitetstjän
 
 ## Datastyrning
 
-Adobe Experience Platform byggdes med sekretess i åtanke och innehåller ett ramverk för datastyrning som skyddar kundernas PII-data. Identitetsdata under namnutrymmet&quot;e-post&quot; eller&quot;telefon&quot; krypteras som standard, men för att säkerställa att känsliga data krypteras innan de bevaras kan dataanvändningsetiketter tillämpas på data när de importeras eller när de kommer in [!DNL Platform]. Mer information finns i översikten över [datastyrning](../data-governance/home.md).
+Adobe Experience Platform har byggts med sekretess i åtanke och innehåller ett ramverk för datastyrning som skyddar kundernas PII-data. Identitetsdata under namnutrymmet&quot;e-post&quot; eller&quot;telefon&quot; krypteras som standard, men för att säkerställa att känsliga data krypteras innan de bevaras kan dataanvändningsetiketter tillämpas på data när de importeras eller när de kommer in [!DNL Platform]. Mer information finns i översikten över [datastyrning](../data-governance/home.md).
 
 ## Nästa steg
 
