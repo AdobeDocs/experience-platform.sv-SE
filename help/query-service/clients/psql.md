@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;PSQL;psql
 solution: Experience Platform
 title: Anslut med PSQL
 topic: connect
+description: 'PSQL är ett kommandoradsgränssnitt som medföljer när du installerar Postgres på datorn. Du kan installera det genom att följa dessa anvisningar. '
 translation-type: tm+mt
-source-git-commit: 1214728063c5835510fda1a16bf1fdcca4abee48
+source-git-commit: c081a7521be9715ca32d35504922a70767924fd7
 workflow-type: tm+mt
-source-wordcount: '164'
+source-wordcount: '186'
 ht-degree: 1%
 
 ---
