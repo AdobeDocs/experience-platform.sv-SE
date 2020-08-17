@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;data ingestion;batch;Batch;enable dataset
 solution: Experience Platform
-title: Översikt över Adobe Experience Platform batchmatning
+title: Översikt över Adobe Experience Platform batchintag
 topic: overview
+description: Med API:t för gruppinmatning kan du importera data till Adobe Experience Platform som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en parquet-fil) eller data som följer ett känt schema i XDM-registret (Experience Data Model).
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '1144'
+source-wordcount: '1196'
 ht-degree: 1%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 1%
 
 # [!DNL Batch Ingestion] översikt
 
-Med [!DNL Batch Ingestion] API kan du importera data till Adobe Experience Platform som gruppfiler. Data som ska importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en parquet-fil) eller data som följer ett känt schema i [!DNL Experience Data Model] (XDM)-registret.
+Med API:t kan du [!DNL Batch Ingestion] importera data till Adobe Experience Platform som gruppfiler. Data som ska importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en parquet-fil) eller data som följer ett känt schema i [!DNL Experience Data Model] (XDM)-registret.
 
 API-referensen [för](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) datainmatning innehåller ytterligare information om dessa API-anrop.
 
