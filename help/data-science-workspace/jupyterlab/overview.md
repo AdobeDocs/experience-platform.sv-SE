@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;JupyterLab;notebooks;Data Science Workspace;popular topics
+keywords: Experience Platform;JupyterLab;notebooks;Data Science Workspace;popular topics;jupyterlab
 solution: Experience Platform
 title: Användarhandbok för JupyterLab
 topic: Overview
+description: JupyterLab är ett webbaserat användargränssnitt för Project Jupyter och är nära integrerat med Adobe Experience Platform. Den utgör en interaktiv utvecklingsmiljö där datavetare kan arbeta med Jupyters bärbara datorer, kod och data.
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
 workflow-type: tm+mt
-source-wordcount: '3645'
+source-wordcount: '3682'
 ht-degree: 10%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 10%
 
 # [!DNL JupyterLab] användarhandbok
 
-[!DNL JupyterLab] är ett webbaserat användargränssnitt för <a href="https://jupyter.org/" target="_blank">Project Jupyter</a> som är nära integrerat med [!DNL Adobe Experience Platform]. Den utgör en interaktiv utvecklingsmiljö där datavetare kan arbeta med Jupyters bärbara datorer, kod och data.
+[!DNL JupyterLab] är ett webbaserat användargränssnitt för [Project Jupyter](https://jupyter.org/) som är nära integrerat med Adobe Experience Platform. Den utgör en interaktiv utvecklingsmiljö där datavetare kan arbeta med Jupyters bärbara datorer, kod och data.
 
 Det här dokumentet innehåller en översikt över [!DNL JupyterLab] och dess funktioner samt instruktioner om hur du utför vanliga åtgärder.
 
@@ -22,14 +23,14 @@ Det här dokumentet innehåller en översikt över [!DNL JupyterLab] och dess fu
 
 Integreringen av Experience Platform JupyterLab åtföljs av arkitektoniska förändringar, designöverväganden, anpassade utbyggnadsmoduler för bärbara datorer, förinstallerade bibliotek och ett gränssnitt med Adobe-teman.
 
-I följande lista beskrivs några av de funktioner som är unika för JupyterLab på Platform:
+I följande lista beskrivs några av funktionerna som är unika för JupyterLab på Platform:
 
 | Funktion | Beskrivning |
 | --- | --- |
-| **Kernlar** | Kernels ger möjlighet att köra och granska kod i olika programmeringsspråk för bärbara datorer och andra [!DNL JupyterLab] gränssnitt. [!DNL Experience Platform] har ytterligare kernel som stöder utveckling i [!DNL Python], R, PySpark och [!DNL Spark]. Mer information finns i avsnittet [Kernlar](#kernels) . |
+| **Kernlar** | Kernels ger möjlighet att köra och granska kod i olika programmeringsspråk för bärbara datorer och andra [!DNL JupyterLab] gränssnitt. [!DNL Experience Platform] innehåller ytterligare kernel som stöder utveckling i [!DNL Python], R, PySpark och [!DNL Spark]. Mer information finns i avsnittet [Kernlar](#kernels) . |
 | **Dataåtkomst** | Få tillgång till befintliga datauppsättningar direkt inifrån [!DNL JupyterLab] med fullt stöd för läs- och skrivfunktioner. |
-| **[!DNL Platform]tjänstintegration ** | Inbyggda integreringar gör att du kan använda andra [!DNL Platform] tjänster direkt inifrån [!DNL JupyterLab]. En fullständig lista över integreringar som stöds finns i avsnittet om [integrering med andra Platform-tjänster](#service-integration). |
-| **Autentisering** | Förutom <a href="https://jupyter-notebook.readthedocs.io/en/latest/security.html" target="_blank">JupyterLab:s inbyggda säkerhetsmodell</a>krypteras och autentiseras all interaktion mellan programmet och Experience Platform, inklusive Platform kommunikation från tjänst till tjänst, via <a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">[!DNL Adobe Identity Management System] (IMS)</a>. |
+| **[!DNL Platform]tjänstintegration** | Inbyggda integreringar gör att du kan använda andra [!DNL Platform] tjänster direkt inifrån [!DNL JupyterLab]. En fullständig lista över integreringar som stöds finns i avsnittet om [integrering med andra plattformstjänster](#service-integration). |
+| **Autentisering** | Förutom <a href="https://jupyter-notebook.readthedocs.io/en/latest/security.html" target="_blank">JupyterLab:s inbyggda säkerhetsmodell</a>krypteras och autentiseras all interaktion mellan programmet och Experience Platform, inklusive kommunikation från tjänst till tjänst på plattformen, via <a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">[!DNL Adobe Identity Management System] (IMS)</a>. |
 | **Utvecklingsbibliotek** | I [!DNL Experience Platform]finns [!DNL JupyterLab] förinstallerade bibliotek för [!DNL Python], R och PySpark. En fullständig lista över bibliotek som stöds finns i [bilagan](#supported-libraries) . |
 | **Bibliotekshanterare** | När de förinstallerade biblioteken saknas för dina behov kan ytterligare bibliotek installeras för Python och R, och lagras tillfälligt i isolerade behållare för att bibehålla integriteten hos [!DNL Platform] och skydda dina data. Mer information finns i avsnittet [Kernlar](#kernels) . |
 
@@ -41,10 +42,10 @@ I följande lista beskrivs några av de funktioner som är unika för JupyterLab
 
 Standardisering och interoperabilitet är viktiga koncept som ligger bakom [!DNL Experience Platform]. Integreringen av [!DNL JupyterLab] on [!DNL Platform] som en inbäddad IDE gör att den kan interagera med andra [!DNL Platform] tjänster, vilket gör att du kan utnyttja [!DNL Platform] den fullt ut. Följande [!DNL Platform] tjänster är tillgängliga i [!DNL JupyterLab]:
 
-* **[!DNL Catalog Service]:**Få tillgång till och utforska datauppsättningar med läs- och skrivfunktioner.
-* **[!DNL Query Service]:**Få åtkomst till och utforska datauppsättningar med SQL, vilket ger lägre dataåtkomstkostnader när du hanterar stora mängder data.
-* **[!DNL Sensei ML Framework]:**Modellutveckling med möjlighet att träna och poängsätta data, liksom att skapa recept med ett enda klick.
-* **[!DNL Experience Data Model (XDM)]:**Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform.[Experience Data Model (XDM)](https://www.adobe.com/go/xdm-home-en), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
+* **[!DNL Catalog Service]:** Få tillgång till och utforska datauppsättningar med läs- och skrivfunktioner.
+* **[!DNL Query Service]:** Få åtkomst till och utforska datauppsättningar med SQL, vilket ger lägre dataåtkomstkostnader när du hanterar stora mängder data.
+* **[!DNL Sensei ML Framework]:** Modellutveckling med möjlighet att träna och poängsätta data, liksom att skapa recept med ett enda klick.
+* **[!DNL Experience Data Model (XDM)]:** Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. [Experience Data Model (XDM)](https://www.adobe.com/go/xdm-home-en), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
 
 >[!NOTE]
 >
@@ -136,7 +137,7 @@ Vissa funktioner är begränsade till särskilda kärnor enligt tabellen nedan:
 
 ### Kernel-sessioner {#kernel-sessions}
 
-Varje aktiv anteckningsbok eller aktivitet på [!DNL JupyterLab] använder en kernel-session. Alla aktiva sessioner kan hittas genom att expandera fliken **Löpande terminaler och kerrar** från vänster sidofält. Den bärbara datorns typ och tillstånd för kärnan kan identifieras genom att man observerar den övre högra delen av gränssnittet. I diagrammet nedan är anteckningsbokens tillhörande kärna **[!DNL Python]3 **och det aktuella läget representeras av en grå cirkel till höger. En ihålig cirkel innebär en inaktiv kärna och en fylld cirkel betyder en upptagen kärna.
+Varje aktiv anteckningsbok eller aktivitet på [!DNL JupyterLab] använder en kernel-session. Alla aktiva sessioner kan hittas genom att expandera fliken **Löpande terminaler och kerrar** från vänster sidofält. Den bärbara datorns typ och tillstånd för kärnan kan identifieras genom att man observerar den övre högra delen av gränssnittet. I diagrammet nedan är anteckningsbokens tillhörande kärna **[!DNL Python]3** och det aktuella läget representeras av en grå cirkel till höger. En ihålig cirkel innebär en inaktiv kärna och en fylld cirkel betyder en upptagen kärna.
 
 ![](../images/jupyterlab/user-guide/kernel_and_state_1.png)
 
@@ -159,7 +160,7 @@ Med den anpassade *startguiden* får du användbara anteckningsboksmallar för d
 | [!DNL Query Service] | En förfylld anteckningsbok som visar hur data används [!DNL Query Service] direkt i [!DNL JupyterLab] de medföljande exempelarbetsflödena för att analysera data i stor skala. |
 | XDM-händelser | En förfylld anteckningsbok som visar datautforskande av Experience Event-data efter värde, med fokus på gemensamma funktioner i datastrukturen. |
 | XDM-frågor | En förfylld anteckningsbok som visar exempel på affärsfrågor om Experience Event-data. |
-| Aggregering | En förfylld anteckningsbok som visar exempel på arbetsflöden för att samla stora mängder data i mindre, hanterbara segment. |
+| Aggregera | En förfylld anteckningsbok som visar exempel på arbetsflöden för att samla stora mängder data i mindre, hanterbara segment. |
 | Klustring | En förfylld anteckningsbok som demonstrerar maskininlärningsmodelleringsprocessen från början till slut med hjälp av klusteralgoritmer. |
 
 Vissa mallar för bärbara datorer är begränsade till vissa kärnor. Malltillgängligheten för varje kärna mappas i följande tabell:
@@ -174,7 +175,7 @@ Vissa mallar för bärbara datorer är begränsade till vissa kärnor. Malltillg
         <th><strong>[!DNL Query Service]</strong></th>
         <th><strong>XDM-händelser</strong></th>
         <th><strong>XDM-frågor</strong></th>
-        <th><strong>Aggregering</strong></th>
+        <th><strong>Aggregera</strong></th>
         <th><strong>Klustring</strong></th>
     </tr>
     <tr>
@@ -494,11 +495,11 @@ För att få tillgång till och filtrera en ExperienceEvent-datauppsättning i e
 
 En lista med filtreringsoperatorer beskrivs nedan:
 
-* `eq()`: Lika med
-* `gt()`: Större än
-* `ge()`: Större än eller lika med
-* `lt()`: Mindre än
-* `le()`: Mindre än eller lika med
+* `eq()`: Equal to
+* `gt()`: Greater than
+* `ge()`: Greater than or equal to
+* `lt()`: Less than
+* `le()`: Less than or equal to
 * `And()`: Logiskt AND-operator
 * `Or()`: Logiskt OR-operator
 
