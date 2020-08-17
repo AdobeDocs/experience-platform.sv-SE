@@ -1,20 +1,21 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;query service;Query service;query
 solution: Experience Platform
 title: Användargränssnittshandbok för Adobe Experience Platform Query Service
 topic: guide
+description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation.
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
 workflow-type: tm+mt
-source-wordcount: '561'
-ht-degree: 0%
+source-wordcount: '594'
+ht-degree: 1%
 
 ---
 
 
 # [!DNL Query Service] guide
 
-Adobe Experience Platform [!DNL Query Service] har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och komma åt frågor som sparats av användare i IMS-organisationen. Om du vill komma åt användargränssnittet i [Adobe Experience Platform][platform-ui]väljer du **[!UICONTROL Queries]** i den vänstra navigeringen.
+Adobe Experience Platform [!DNL Query Service] har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som körts tidigare och komma åt frågor som sparats av användare i din IMS-organisation. Om du vill komma åt användargränssnittet i [Adobe Experience Platform][platform-ui]väljer du **[!UICONTROL Queries]** i den vänstra navigeringen.
 
 ## [!DNL Query Editor]
 
