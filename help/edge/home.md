@@ -1,10 +1,11 @@
 ---
-title: Hjälp om Adobe Experience Platform Web SDK
-seo-title: Hjälp om Adobe Experience Platform Web SDK
+keywords: web sdk;SDK;web SDK;Launch;launch
+title: Adobe Experience Platform Web SDK - hjälp
+seo-title: Adobe Experience Platform Web SDK - hjälp
 description: Lär dig vad Adobe Experience Platform Web SDK är och hur det kan användas.
 seo-description: låta Adobe Experience Cloud kunder interagera med de olika tjänsterna i Experience Cloud.
 translation-type: tm+mt
-source-git-commit: fc8b26e237821d5fa2d72fb38189894ed0b05271
+source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
 workflow-type: tm+mt
 source-wordcount: '702'
 ht-degree: 0%
@@ -20,9 +21,9 @@ Adobe Experience Platform Web SDK är ett JavaScript-bibliotek på klientsidan s
 
 [!DNL Adobe Experience Platform Web SDK] är en del av den samling som utgör Experience Edge. Experience Edge består av tre tekniker:
 
-* **[!DNL Adobe Experience Platform Web SDK]:**JavaScript SDK och[!DNL Launch]tillägg som dramatiskt förenklar driftsättningen av[!DNL Adobe]tekniker
+* **[!DNL Adobe Experience Platform Web SDK]:** JavaScript SDK och [!DNL Launch] tillägg som dramatiskt förenklar driftsättningen av [!DNL Adobe] tekniker
 * **Adobe Experience Platform Mobile SDK:** Ett tillägg till v5 Mobile SDK så att kunderna kan använda den nya distributionsmetoden
-* **[!DNL Adobe Experience Platform Edge Network]:**Ett globalt distribuerat servernätverk som möjliggör en ny metod för att distribuera[!DNL Adobe]produkter
+* **[!DNL Adobe Experience Platform Edge Network]:** Ett globalt distribuerat servernätverk som möjliggör en ny metod för att distribuera [!DNL Adobe] produkter
 
 Det [!DNL Adobe Experience Edge] är ett nytt ramverk för datainsamling med låg fördröjning, anslutningsbar datoranvändning och snabb dataaktivering i alla adresserbara kanaler.
 
@@ -41,7 +42,7 @@ Med ett enda konsoliderat edge-system kan kunderna hantera sina annonserings-, m
 
 ## Videoöversikt
 
-I följande video visas en översikt över Adobe Experience Platform [!DNL Web SDK] och [!DNL Edge Network].
+I följande videofilm visas en översikt över Adobe Experience Platform [!DNL Web SDK] och [!DNL Edge Network].
 
 >[!VIDEO](https://video.tv.adobe.com/v/34141?quality=12&learn=on)
 
