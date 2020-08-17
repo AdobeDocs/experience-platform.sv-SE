@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Beräknade attribut - Kundprofils-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
+source-git-commit: fa439ebb9d02d4a08c8ed92b18f2db819d089174
 workflow-type: tm+mt
-source-wordcount: '2366'
+source-wordcount: '2365'
 ht-degree: 0%
 
 ---
@@ -35,13 +35,13 @@ En del av den information som samlas in i profilen är lätt att förstå när d
 
 Beräknade attribut inkluderar att skapa ett uttryck, eller &quot;rule&quot;, som fungerar på inkommande data och lagrar resultatvärdet i ett profilattribut eller en händelse. Uttryck kan definieras på flera olika sätt, så att du kan ange att en regel endast utvärderar inkommande händelser, inkommande händelse- och profildata eller inkommande händelse, profildata och historiska händelser.
 
-### Användningsexempel
+### Användningsfall
 
 Användningsexempel för beräknade attribut kan omfatta allt från enkla beräkningar till mycket komplexa referenser. Här följer några exempel på hur du kan använda beräknade attribut:
 
-1. **[!UICONTROL Percentages]:**Ett enkelt beräknat attribut kan inkludera att ta två numeriska fält på en post och dela dem för att skapa en procentsats. Du kan t.ex. ta det totala antalet e-postmeddelanden som skickas till en individ och dividera det med antalet e-postmeddelanden personen öppnar. Om du tittar på det resulterande attributfältet visar det snabbt hur många procent av det totala antalet e-postmeddelanden som öppnats av den enskilda personen.
-1. **[!UICONTROL Application use]:**Ett annat exempel är möjligheten att samla det antal gånger en användare öppnar ditt program. Genom att spåra det totala antalet öppna applikationer, baserat på enskilda öppna händelser, kan ni leverera specialerbjudanden eller meddelanden till användarna på deras 100:e öppna sida, vilket främjar ett djupare engagemang i ert varumärke.
-1. **[!UICONTROL Lifetime values]:**Det kan vara svårt att samla in löpande summor, t.ex. ett livstidsvärde för en kund. Detta kräver att historiksumman uppdateras varje gång en ny köphändelse inträffar. Med ett beräknat attribut kan ni göra detta mycket enklare genom att behålla livstidsvärdet i ett enda fält som uppdateras automatiskt efter varje lyckad köphändelse som gäller kunden.
+1. **[!UICONTROL Percentages]:** Ett enkelt beräknat attribut kan inkludera att ta två numeriska fält på en post och dela dem för att skapa en procentsats. Du kan t.ex. ta det totala antalet e-postmeddelanden som skickas till en individ och dividera det med antalet e-postmeddelanden personen öppnar. Om du tittar på det resulterande attributfältet visar det snabbt hur många procent av det totala antalet e-postmeddelanden som öppnats av den enskilda personen.
+1. **[!UICONTROL Application use]:** Ett annat exempel är möjligheten att samla det antal gånger en användare öppnar ditt program. Genom att spåra det totala antalet öppna applikationer, baserat på enskilda öppna händelser, kan ni leverera specialerbjudanden eller meddelanden till användarna på deras 100:e öppna sida, vilket främjar ett djupare engagemang i ert varumärke.
+1. **[!UICONTROL Lifetime values]:** Det kan vara svårt att samla in löpande summor, t.ex. ett livstidsvärde för en kund. Detta kräver att historiksumman uppdateras varje gång en ny köphändelse inträffar. Med ett beräknat attribut kan ni göra detta mycket enklare genom att behålla livstidsvärdet i ett enda fält som uppdateras automatiskt efter varje lyckad köphändelse som gäller kunden.
 
 ## Konfigurera ett beräknat attribut
 
@@ -56,7 +56,7 @@ Arbetsflödet i den här självstudien använder ett [!DNL Profile]aktiverat sch
 
 ### Visa ett schema
 
-Stegen som följer använder användargränssnittet i Adobe Experience Platform för att hitta ett schema, lägga till en blandning och definiera ett fält. Om du föredrar att använda [!DNL Schema Registry] API:t läser du i utvecklarhandboken [för](../../xdm/api/getting-started.md) schemaregister om hur du skapar en blandning, lägger till en blandning i ett schema och aktiverar ett schema för användning med [!DNL Real-time Customer Profile].
+Stegen som följer använder Adobe Experience Platform användargränssnitt för att hitta ett schema, lägga till en blandning och definiera ett fält. Om du föredrar att använda [!DNL Schema Registry] API:t läser du i utvecklarhandboken [för](../../xdm/api/getting-started.md) schemaregister om hur du skapar en blandning, lägger till en blandning i ett schema och aktiverar ett schema för användning med [!DNL Real-time Customer Profile].
 
 I användargränssnittet klickar du **[!UICONTROL Schemas]** i den vänstra listen och använder sökfältet på *[!UICONTROL Browse]* fliken för att snabbt hitta det schema som du vill uppdatera.
 
@@ -482,8 +482,7 @@ En lyckad uppdatering returnerar HTTP-status 204 (inget innehåll) och en tom sv
 
 Det går också att ta bort ett beräknat attribut med API:t. Detta gör du genom att göra en DELETE-begäran till `/config/computedAttributes` slutpunkten och inkludera ID:t för det beräknade attributet som du vill ta bort i sökvägen för begäran.
 
->[!Note]
->
+>[!NOTE]
 >
 >Var försiktig när du tar bort ett beräknat attribut eftersom det kan användas i mer än ett schema och åtgärden DELETE inte kan ångras.
 
