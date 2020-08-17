@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;schema;Schema;create schema;enum;XDM individual profile;primary identity;primary idenity;enum datatype;schema design
 solution: Experience Platform
 title: Skapa ett schema med Schemaredigeraren
 topic: tutorials
+description: I den här självstudiekursen beskrivs stegen för hur du skapar ett schema med Schemaredigeraren i Experience Platform.
 translation-type: tm+mt
-source-git-commit: 661789fa15ea11b0e42060b1b90d74785c04fa1f
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '3167'
+source-wordcount: '3183'
 ht-degree: 0%
 
 ---
@@ -24,7 +25,7 @@ Den här självstudiekursen innehåller även steg för att [definiera en ny kla
 
 Den här självstudiekursen kräver en fungerande förståelse för de olika aspekter av Adobe Experience Platform som används i schemaredigeraren. Innan du börjar med den här självstudiekursen bör du läsa om följande koncept i dokumentationen:
 
-* [!DNL Experience Data Model (XDM)](../home.md): Det standardiserade ramverk som Platform använder för att ordna kundupplevelsedata.
+* [!DNL Experience Data Model (XDM)](../home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
 * [Grundläggande om schemakomposition](../schema/composition.md): En översikt över XDM-scheman och deras byggstenar, inklusive klasser, mixins, datatyper och fält.
 * [!DNL Real-time Customer Profile](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
@@ -162,7 +163,7 @@ I den namngivna noden finns ett &quot;[!UICONTROL New Field]&quot;. Detta är b�
 
 ![](../images/tutorials/create-schema/new_field_loyalty.png)
 
-Börja med att skapa ett &quot; *[!UICONTROL Field Properties]* &quot;-fält med typen &quot;[!UICONTROL loyalty]&quot; som ska användas för dina lojalitetsrelaterade fält[!UICONTROL Object]till höger om redigeraren. När du är klar klickar du på **[!UICONTROL Apply]**.
+Börja med att skapa ett &quot; *[!UICONTROL Field Properties]* &quot;-fält med typen &quot;[!UICONTROL loyalty]&quot; som ska användas för dina lojalitetsrelaterade fält[!UICONTROL Object]till höger om redigeraren. Klicka på **[!UICONTROL Apply]** när du är klar.
 
 ![](../images/tutorials/create-schema/loyalty_object.png)
 
@@ -172,10 +173,10 @@ Börja med att skapa ett &quot; *[!UICONTROL Field Properties]* &quot;-fält med
 
 Varje fält kräver följande information:
 
-* **[!UICONTROL Field Name]:**Fältets namn, skrivet i kameraläge. Exempel: loyaltyLevel
-* **[!UICONTROL Display Name]:**Fältets namn, skrivet i versaler. Exempel: Lojalitetsnivå
-* **[!UICONTROL Type]:**Fältets datatyp. Detta inkluderar grundläggande skalära typer och alla datatyper som definieras i[!DNL Schema Registry]. Exempel: sträng, heltal, boolesk, person, adress, telefonnummer osv.
-* **[!UICONTROL Description]:**En valfri beskrivning av fältet ska inkluderas, skriven i inledande mening. (Högst 200 tecken)
+* **[!UICONTROL Field Name]:** Fältets namn, skrivet i kameraläge. Exempel: loyaltyLevel
+* **[!UICONTROL Display Name]:** Fältets namn, skrivet i versaler. Exempel: Lojalitetsnivå
+* **[!UICONTROL Type]:** Fältets datatyp. Detta inkluderar grundläggande skalära typer och alla datatyper som definieras i [!DNL Schema Registry]. Exempel: sträng, heltal, boolesk, person, adress, telefonnummer osv.
+* **[!UICONTROL Description]:** En valfri beskrivning av fältet ska inkluderas, skriven i inledande mening. (Högst 200 tecken)
 
 Det första fältet för Loyalty-objektet blir en sträng med namnet &quot;[!UICONTROL loyaltyId]&quot;. När du ställer in det nya fältets typ till &quot;[!UICONTROL String]&quot; fylls *[!UICONTROL Field Properties]* fönstret i med flera alternativ för att tillämpa begränsningar, inklusive **[!UICONTROL Default Value]**, **[!UICONTROL Format]** och **[!UICONTROL Maximum Length]**.
 
@@ -214,10 +215,10 @@ När du har slutfört alla fältegenskaper klickar du på **[!UICONTROL Apply]**
 
 Mer information om tillgängliga ytterligare begränsningar:
 
-* **[!UICONTROL Required]:**Anger att fältet är obligatoriskt för datainmatning. Alla data som överförs till en datauppsättning som baseras på det här schemat och som inte innehåller det här fältet kommer att misslyckas vid inmatning.
-* **[!UICONTROL Array]:**Anger att fältet innehåller en array med värden, var och en med den angivna datatypen. Om du t.ex. markerar datatypen String och kryssrutan Array betyder det att fältet kommer att innehålla en array med strängar.
-* **[!UICONTROL Enum]:**Anger att det här fältet måste innehålla ett av värdena från en numrerad lista med möjliga värden.
-* **[!UICONTROL Identity]:**Anger att det här fältet är ett identitetsfält. Mer information om identitetsfält finns[senare i den här självstudiekursen](#identity-field).
+* **[!UICONTROL Required]:** Anger att fältet är obligatoriskt för datainmatning. Alla data som överförs till en datauppsättning som baseras på det här schemat och som inte innehåller det här fältet kommer att misslyckas vid inmatning.
+* **[!UICONTROL Array]:** Anger att fältet innehåller en array med värden, var och en med den angivna datatypen. Om du t.ex. markerar datatypen String och kryssrutan Array betyder det att fältet kommer att innehålla en array med strängar.
+* **[!UICONTROL Enum]:** Anger att det här fältet måste innehålla ett av värdena från en numrerad lista med möjliga värden.
+* **[!UICONTROL Identity]:** Anger att det här fältet är ett identitetsfält. Mer information om identitetsfält finns [senare i den här självstudiekursen](#identity-field).
 
 ## Konvertera ett flerfältsobjekt till en datatyp {#datatype}
 
@@ -317,7 +318,7 @@ Följande information finns som komplement till självstudiekursen för Schemare
 
 [!DNL Experience Platform] ger flexibilitet att definiera ett schema baserat på en klass som är unik för din organisation.
 
-Öppna *[!UICONTROL Assign Class]* dialogrutan genom att klicka **[!UICONTROL Assign]** i *[!UICONTROL Class]* avsnittet Schemaredigeraren. Välj **C[!UICONTROL reate New Class]**i dialogrutan.
+Öppna *[!UICONTROL Assign Class]* dialogrutan genom att klicka **[!UICONTROL Assign]** i *[!UICONTROL Class]* avsnittet Schemaredigeraren. Välj **C[!UICONTROL reate New Class]** i dialogrutan.
 
 Du kan sedan ge den nya klassen ett **[!UICONTROL Display Name]** (kort, beskrivande, unikt och användarvänligt namn för klassen), ett **[!UICONTROL Description]** och ett **[!UICONTROL Behavior]** (&quot;[!UICONTROL Record]&quot; eller&quot;[!UICONTROL Time Series]&quot;) för de data som schemat ska definiera.
 
