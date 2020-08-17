@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Sandbox;sandbox
 solution: Experience Platform
 title: Skapa en sandlåda
 topic: developer guide
+description: Du kan skapa en ny sandlåda genom att göra en POST-förfrågan till slutpunkten "/sandbox".
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: c081a7521be9715ca32d35504922a70767924fd7
 workflow-type: tm+mt
-source-wordcount: '136'
+source-wordcount: '151'
 ht-degree: 0%
 
 ---
@@ -44,7 +45,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `name` | Den identifierare som ska användas för att komma åt sandlådan i framtida begäranden. Detta värde måste vara unikt och det bästa sättet är att göra det så beskrivande som möjligt. Får inte innehålla blanksteg eller versala bokstäver. |
-| `title` | Ett läsbart namn som används för visning i Platform användargränssnitt. |
+| `title` | Ett läsbart namn som används för visning i användargränssnittet för plattformen. |
 | `type` | Den typ av sandlåda som ska skapas. För närvarande kan endast sandlådor av typen&quot;utveckling&quot; skapas av en organisation. |
 
 **Svar**
