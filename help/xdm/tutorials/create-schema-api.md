@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;schema;Schema;create schema;schema api;enum;primary identity;primary idenity;enum datatype;schema design
 solution: Experience Platform
 title: Skapa ett schema med API:t för schemaregister
 topic: tutorials
+description: I den här självstudiekursen används API:t för schemaregister för att vägleda dig genom stegen för att skapa ett schema med en standardklass.
 translation-type: tm+mt
-source-git-commit: b021b6813af18e29f544dc55541f23dd7dd57d47
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '2322'
+source-wordcount: '2343'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # Skapa ett schema med [!DNL Schema Registry] API
 
-Den [!DNL Schema Registry] används för att komma åt [!DNL Schema Library] insidan av Adobe Experience Platform. Den [!DNL Schema Library] innehåller resurser som du har fått av Adobe, [!DNL Experience Platform] partners och leverantörer vars program du använder. Registret innehåller ett användargränssnitt och RESTful API från vilket alla tillgängliga biblioteksresurser är tillgängliga.
+Den [!DNL Schema Registry] används för att få åtkomst till [!DNL Schema Library] Adobe Experience Platform. Den [!DNL Schema Library] innehåller resurser som du har fått av Adobe, [!DNL Experience Platform] partners och leverantörer vars program du använder. Registret innehåller ett användargränssnitt och RESTful API från vilket alla tillgängliga biblioteksresurser är tillgängliga.
 
 I den här självstudiekursen används API:t för att vägleda dig genom stegen för att skapa ett schema med en standardklass. [!DNL Schema Registry] Om du föredrar att använda användargränssnittet i [!DNL Experience Platform]innehåller [schemaredigerarens självstudiekurs](create-schema-ui.md) stegvisa instruktioner för hur du utför liknande åtgärder i schemaredigeraren.
 
