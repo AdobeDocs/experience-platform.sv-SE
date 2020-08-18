@@ -4,9 +4,9 @@ seo-title: Målarbetsflöde för sociala nätverk
 description: Instruktioner för att ansluta till sociala nätverk och konton
 seo-description: Instruktioner för att ansluta till sociala nätverk och konton
 translation-type: tm+mt
-source-git-commit: be4cf64c89a189a09a4a7774c8fadc76c6ee8458
+source-git-commit: 9306266edc0a4afdcf378e94b46b239187b18644
 workflow-type: tm+mt
-source-wordcount: '435'
+source-wordcount: '470'
 ht-degree: 0%
 
 ---
@@ -16,11 +16,15 @@ ht-degree: 0%
 
 ## Arbetsflöde för att skapa mål för sociala nätverk
 
-I den här självstudiekursen används [!DNL Facebook] som exempel, men arbetsflödet i Adobe kunddata i realtid i Platform är detsamma för alla mål för sociala nätverk, när fler läggs till i produkten.
+I den här självstudiekursen används [!DNL Facebook] som exempel, men arbetsflödet i kunddataplattformen i Adobe i realtid kommer att vara detsamma för alla mål för sociala nätverk, när fler läggs till i produkten.
 
-1. Bläddra till **[!UICONTROL Destinations]** kategorin i **[!UICONTROL Catalog]**> **[!UICONTROL Social]** . Välj önskat mål för sociala nätverk och välj sedan **[!UICONTROL Connect destination]**.
+1. Bläddra till **[!UICONTROL Destinations]** kategorin i **[!UICONTROL Catalog]**> **[!UICONTROL Social]** . Välj önskat mål för sociala nätverk och välj sedan **[!UICONTROL Configure]**.
 
    ![Anslut till mål för sociala nätverk](/help/rtcdp/destinations/assets/facebook-catalog-view.png)
+
+   >[!NOTE]
+   >
+   >Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]** knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](/help/rtcdp/destinations/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
 
 2. Om du tidigare har konfigurerat en anslutning till ditt sociala nätverk i **autentiseringssteget** väljer du **[!UICONTROL Existing Account]** och väljer din befintliga anslutning. Du kan också välja **[!UICONTROL New Account]** att konfigurera en ny anslutning till ditt sociala nätverk. Välj **[!UICONTROL Connect to destination]** så tar det dig till det valda sociala nätverkets mål för att logga in och ansluta Adobe Experience Cloud till ditt sociala nätverk och annonskonto.
 
