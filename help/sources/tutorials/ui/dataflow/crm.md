@@ -5,9 +5,9 @@ title: Konfigurera ett dataflöde för en CRM-koppling i användargränssnittet
 topic: overview
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt CRM-konto.
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: c15f582eeaa895f03441b2f488686a9a48942f3d
 workflow-type: tm+mt
-source-wordcount: '1298'
+source-wordcount: '1295'
 ht-degree: 0%
 
 ---
@@ -21,10 +21,10 @@ Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](../../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+* [[!DNL Experience Data Model] (XDM) System](../../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigeraren, genomgång](../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
-* [Kundprofil](../../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-time Customer Profile]](../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 Den här självstudiekursen kräver dessutom att du redan har skapat ett CRM-konto. En lista med självstudiekurser för att skapa olika CRM-anslutningar i användargränssnittet finns i [källanslutningsöversikten](../../../home.md).
 
@@ -156,7 +156,7 @@ I följande avsnitt finns ytterligare information om hur du arbetar med källkop
 
 När ett dataflöde skapas blir det omedelbart aktivt och importerar data enligt det schema som det gavs. Du kan när som helst inaktivera ett aktivt dataflöde genom att följa instruktionerna nedan.
 
-Markera namnet på den basanslutning som är kopplad till det dataflöde som du vill inaktivera på *[!UICONTROL authenticaton]* skärmen.
+Markera namnet på anslutningen som är kopplad till det dataflöde som du vill inaktivera på *[!UICONTROL authenticaton]* skärmen.
 
 ![](../../../images/tutorials/dataflow/crm/monitor.png)
 
