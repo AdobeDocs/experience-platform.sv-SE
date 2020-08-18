@@ -5,7 +5,7 @@ seo-title: Arbetsytan Destinationer
 description: I Adobe Real-time Customer Data Platform väljer du Destinationer i det vänstra navigeringsfältet för att komma åt målarbetsytan.
 seo-description: I Adobe Real-time Customer Data Platform väljer du Destinationer i det vänstra navigeringsfältet för att komma åt målarbetsytan.
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: ac9c629e8c83d3e056ba94b30d978edbda274923
 workflow-type: tm+mt
 source-wordcount: '746'
 ht-degree: 1%
@@ -41,7 +41,7 @@ Målkorten innehåller antingen en **[!UICONTROL Configure]** eller en **[!UICON
 | [!UICONTROL Configure] | Gör att du kan skapa en anslutning till målet. |
 | [!UICONTROL Activate] | När du har upprättat en anslutning till målet kan du aktivera segment. |
 | [!UICONTROL View account] | Visa konton som du har anslutit för ett mål. |
-| [!UICONTROL View dataflows] | Visa dataaktiveringsflöden som finns för ett mål |
+| [!UICONTROL View dataflows] | Visa dataaktiveringsflödena som finns för ett mål. |
 | [!UICONTROL View documentation] | Öppnar en länk till dokumentationssidan för det specifika målet, för mer information och för att hjälpa dig att konfigurera det. |
 
 ![Kontroll av destinationskortet](/help/rtcdp/destinations/assets/destination-card-options.png)
