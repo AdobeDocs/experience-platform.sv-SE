@@ -4,66 +4,68 @@ solution: Experience Platform
 title: Skapa en Microsoft SQL Server-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 598b29f681ac930a4e1781f7f298608c8344d807
+source-git-commit: ec2d0a33e0ae92a3153b7bdcad29734e487a0439
 workflow-type: tm+mt
-source-wordcount: '490'
+source-wordcount: '435'
 ht-degree: 1%
 
 ---
 
 
-# Skapa en [!DNL Microsoft] SQL Server-källanslutning i användargränssnittet
+# Skapa en [!DNL Microsoft SQL Server] källanslutning i användargränssnittet
 
 >[!NOTE]
-> SQL Server-kopplingen [!DNL Microsoft] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
+> Kopplingen [!DNL Microsoft SQL Server] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
-Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Microsoft] SQL Server-källkoppling (nedan kallad SQL Server) med hjälp av [!DNL Platform] användargränssnittet.
+Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Microsoft SQL Server] källkoppling (nedan kallad[!DNL SQL Server]) med hjälp av [!DNL Platform] användargränssnittet.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
+* [[!DNL Experience Data Model] (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
-* [Kundprofil](../../../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Om du redan har en SQL Server-basanslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen om hur du [konfigurerar ett dataflöde](../../dataflow/databases.md).
+Om du redan har en giltig [!DNL SQL Server] anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen om hur du [konfigurerar ett dataflöde](../../dataflow/databases.md).
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att kunna ansluta till SQL Server på [!DNL Platform]måste du ange följande anslutningsegenskap:
+För att kunna ansluta till [!DNL SQL Server] på [!DNL Platform]måste du ange följande anslutningsegenskap:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `connectionString` | Anslutningssträngen som är associerad med ditt SQL Server-konto. SQL Server-anslutningssträngsmönstret är: `Data Source={SERVER_NAME}\\<{INSTANCE_NAME} if using named instance>;Initial Catalog={DATABASE};Integrated Security=False;User ID={USERNAME};Password={PASSWORD};`. |
+| `connectionString` | Anslutningssträngen som är associerad med ditt [!DNL SQL Server] konto. Anslutningssträngsmönstret är: [!DNL SQL Server] `Data Source={SERVER_NAME}\\<{INSTANCE_NAME} if using named instance>;Initial Catalog={DATABASE};Integrated Security=False;User ID={USERNAME};Password={PASSWORD};`. |
 
-Mer information om hur du kommer igång med SQL Server finns i [det här dokumentet](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/authentication-in-sql-server) .
+Mer information om hur du kommer igång finns i [ [!DNL SQL Server] det här dokumentet](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/authentication-in-sql-server).
 
-## Anslut ditt SQL Server-konto
+## Anslut ditt [!DNL SQL Server] konto
 
-När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att skapa en ny inkommande basanslutning som du kan länka ditt SQL Server-konto till [!DNL Platform].
+När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL SQL Server] konto till [!DNL Platform].
 
-Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt *[!UICONTROL Sources]* arbetsytan. På *[!UICONTROL Catalog]* skärmen visas en mängd olika källor som du kan skapa inkommande basanslutningar med, och varje källa visar antalet befintliga basanslutningar som är kopplade till dem.
+Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt **[!UICONTROL Sources]** arbetsytan. På **[!UICONTROL Catalog]** skärmen visas en mängd olika källor som du kan skapa ett konto med.
 
-Under *[!UICONTROL Databases]* kategorin väljer du **[!UICONTROL Microsoft SQL Server]** att visa ett informationsfält till höger på skärmen. Informationsfältet innehåller en kort beskrivning av den valda källan samt alternativ för att ansluta till källan eller visa dess dokumentation. Om du vill skapa en ny inkommande basanslutning väljer du **[!UICONTROL Add data]**.
+Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
+
+Välj under **[!UICONTROL Databases]** kategorin **[!UICONTROL Microsoft SQL Server]**. Om det är första gången du använder den här kopplingen väljer du **[!UICONTROL Configure]**. Annars väljer du **[!UICONTROL Add data]** att skapa en ny [!DNL SQL Server] koppling.
 
 ![](../../../../images/tutorials/create/microsoft-sql-server/catalog.png)
 
-Sidan visas *[!UICONTROL Connect to Microsoft SQL Server]* . På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
+Sidan visas **[!UICONTROL Connect to Microsoft SQL Server]** . På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
 ### Nytt konto
 
-Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. På indataformuläret som visas anger du basanslutningen med ett namn, en valfri beskrivning och dina SQL Server-autentiseringsuppgifter. När du är klar väljer du **[!UICONTROL Connect]** och tillåt sedan lite tid för att upprätta den nya basanslutningen.
+Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. Ange ett namn, en valfri beskrivning och dina [!DNL SQL Server] inloggningsuppgifter i det indataformulär som visas. När du är klar väljer du **[!UICONTROL Connect]** och tillåt sedan en tid för att upprätta den nya anslutningen.
 
 ![](../../../../images/tutorials/create/microsoft-sql-server/new.png)
 
 ### Befintligt konto
 
-Om du vill ansluta ett befintligt konto väljer du det SQL Server-konto som du vill ansluta till och väljer sedan **[!UICONTROL Next]** att fortsätta.
+Om du vill ansluta ett befintligt konto markerar du det [!DNL SQL Server] konto du vill ansluta till och väljer sedan **[!UICONTROL Next]** att fortsätta.
 
 ![](../../../../images/tutorials/create/microsoft-sql-server/existing.png)
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en basanslutning till ditt SQL Server-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/databases.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL SQL Server] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Platform]](../../dataflow/databases.md).
