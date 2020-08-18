@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Aktivera inkommande källdata för att fylla i kundprofiler
 topic: overview
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 6bd5dc5a68fb2814ab99d43b34f90aa7e50aa463
 workflow-type: tm+mt
-source-wordcount: '457'
+source-wordcount: '451'
 ht-degree: 0%
 
 ---
@@ -20,10 +20,10 @@ Inkommande data från källkopplingen kan användas för att berika och fylla i 
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [Experience Data Model (XDM) System](../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+- [[!DNL Experience Data Model] (XDM) System](../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
    - [Grundläggande om schemakomposition](../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    - [Schemaredigeraren, genomgång](../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
-- [Kundprofil](../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+- [[!DNL Real-time Customer Profile]](../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 Den här självstudien kräver dessutom att du redan har skapat och konfigurerat en källkoppling.  En lista med självstudiekurser för att skapa olika kopplingar i användargränssnittet finns i [källanslutningsöversikten](../../home.md).
 
@@ -39,23 +39,23 @@ På arbetsytan Källor klickar du på **[!UICONTROL Browse]** fliken för att vi
 
 ![](../../images/tutorials/dataflow/cloud-storage/batch/browse.png)
 
-Anslutningens *[!UICONTROL Source activity]* skärm visas och visar de datauppsättningar som anslutningen hämtar källdata till. Klicka på namnet på datauppsättningen som du vill aktivera för [!DNL Profile].
+Anslutningens **[!UICONTROL Source activity]** skärm visas och visar de datauppsättningar som anslutningen hämtar källdata till. Klicka på namnet på datauppsättningen som du vill aktivera för [!DNL Profile].
 
 ![](../../images/tutorials/dataflow/cloud-storage/batch/dataset-dataflow.png)
 
-Skärmen visas *[!UICONTROL Dataset activity]* . I *[!UICONTROL Properties]* kolumnen till höger på skärmen visas information om datauppsättningen och den innehåller en **[!UICONTROL Profile]** växel och en länk till det schema som datauppsättningen följer. Klicka på schemats namn för att visa dess komposition.
+Skärmen visas **[!UICONTROL Dataset activity]** . I **[!UICONTROL Properties]** kolumnen till höger på skärmen visas information om datauppsättningen och den innehåller en **[!UICONTROL Profile]** växel och en länk till det schema som datauppsättningen följer. Klicka på schemats namn för att visa dess komposition.
 
 ![](../../images/tutorials/dataflow/cloud-storage/batch/select-dataset-schema.png)
 
-Då *[!UICONTROL Schema Editor]* visas schemats struktur på arbetsytan i mitten. Markera det fält som ska anges som primär identitet på arbetsytan. Markera kryssrutan under fliken *[!UICONTROL Field properties]* som visas och markera sedan **[!UICONTROL Identity]** kryssrutan **[!UICONTROL Primary identity]**. Välj sedan ett lämpligt alternativ **[!UICONTROL Identity namespace]** och klicka på **[!UICONTROL Apply]**.
+Då **[!UICONTROL Schema Editor]** visas schemats struktur på arbetsytan i mitten. Markera det fält som ska anges som primär identitet på arbetsytan. Markera kryssrutan under fliken *[!UICONTROL Field properties]* som visas och markera sedan **[!UICONTROL Identity]** kryssrutan **[!UICONTROL Primary identity]**. Välj sedan ett lämpligt alternativ **[!UICONTROL Identity namespace]** och klicka på **[!UICONTROL Apply]**.
 
 ![](../../images/tutorials/dataflow/cloud-storage/batch/set-schema-identity.png)
 
-Klicka på det översta nivåobjektet i schemats struktur så visas *[!UICONTROL Schema properties]* kolumnen. Aktivera schemat för [!DNL Profile] genom att växla **[!UICONTROL Profile]** . Klicka **[!UICONTROL Save]** för att slutföra ändringarna.
+Klicka på det översta nivåobjektet i schemats struktur så visas **[!UICONTROL Schema properties]** kolumnen. Aktivera schemat för [!DNL Profile] genom att växla **[!UICONTROL Profile]** . Klicka **[!UICONTROL Save]** för att slutföra ändringarna.
 
 ![](../../images/tutorials/dataflow/cloud-storage/batch/enable-profile.png)
 
-Nu när schemat är aktiverat [!DNL Profile]går du tillbaka till *[!UICONTROL Dataset activity]* skärmen och aktiverar datauppsättningen [!DNL Profile] genom att klicka på **[!UICONTROL Profile]** växlingsknappen i *egenskapskolumnen* .
+Nu när schemat är aktiverat för [!DNL Profile]går du tillbaka till **[!UICONTROL Dataset activity]** skärmen och aktiverar datauppsättningen [!DNL Profile] genom att klicka på **[!UICONTROL Profile]** växlingsknappen i **[!UICONTROL Properties]** kolumnen.
 
 ![](../../images/tutorials/dataflow/cloud-storage/batch/enable-dataset-profile.png)
 
@@ -63,8 +63,8 @@ När både schemat och datauppsättningen är aktiverad för [!DNL Profile]fylls
 
 >[!NOTE]
 >
->Befintliga data i en nyligen aktiverad datauppsättning används inte av [!DNL Profile]
+>Befintliga data i en nyligen aktiverad datauppsättning används inte av [!DNL Profile].
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du aktiverat inkommande data för [!DNL Profile] populationen. Mer information finns i [Kundprofilöversikt](../../../profile/home.md)i realtid.
+Genom att följa den här självstudiekursen har du aktiverat inkommande data för [!DNL Profile] populationen. Mer information finns i [[!DNL Real-time Customer Profile] översikten](../../../profile/home.md).
