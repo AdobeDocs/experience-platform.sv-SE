@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en Adobe Analytics-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
+source-git-commit: 0479f5097b530dd97e28474d8e5eb832e5e44e5a
 workflow-type: tm+mt
-source-wordcount: '762'
+source-wordcount: '744'
 ht-degree: 0%
 
 ---
@@ -30,13 +30,13 @@ Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj s
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under kategorin *Adobe-program* väljer du **[!UICONTROL Adobe Analytics]** att visa ett informationsfält till höger på skärmen. Informationsfältet innehåller en kort beskrivning av den valda källan samt alternativ för att ansluta till källan eller visa dess dokumentation. Om du vill visa befintliga konton väljer du **[!UICONTROL Accounts]**.
+Under **[!UICONTROL Adobe applications]** kategorin väljer du **[!UICONTROL Adobe Analytics]** att visa ett informationsfält till höger på skärmen. Informationsfältet innehåller en kort beskrivning av den valda källan samt alternativ för att ansluta till källan eller visa dess dokumentation. Om du vill visa befintliga konton väljer du **[!UICONTROL Accounts]**.
 
 ![](../../../../images/tutorials/create/analytics/catalog.png)
 
 ### Markera data
 
-Steget *Adobe Analytics* visas. Tidigare etablerade datauppsättningsflöden för Analytics visas på den här skärmen. Du kan skapa ett nytt datauppsättningsflöde genom att klicka **[!UICONTROL Select data]**.
+Steget **[!UICONTROL Adobe Analytics]** visas. Tidigare etablerade datauppsättningsflöden för Analytics visas på den här skärmen. Du kan skapa ett nytt datauppsättningsflöde genom att klicka **[!UICONTROL Select data]**.
 
 >[!NOTE]
 >
@@ -52,22 +52,22 @@ I listan med tillgängliga rapportsviter väljer du den du vill hämta till Plat
 
 ### Namnge datauppsättningsflödet
 
-Flödesdetaljsteget för *datauppsättningen* visas, där du måste ange ett namn och en valfri beskrivning för datauppsättningsflödet. Välj **[UICONTROL. Nästa]** när du är klar.
+Steget visas där du måste ange ett namn och en valfri beskrivning för datauppsättningsflödet. **[!UICONTROL Dataset flow detail]** Välj **[!UICONTROL Next]** när du är klar.
 
 ![](../../../../images/tutorials/create/analytics/dataset-flow-detail.png)
 
 ### Granska datauppsättningsflödet
 
-Steget *Granska* visas så att du kan granska det nya inbundna datauppsättningsflödet i Analytics innan det skapas. Detaljerna om anslutningen är grupperade efter kategorier, inklusive:
+Steget visas så att du kan granska det nya inbundna datauppsättningsflödet i Analytics innan det skapas. **[!UICONTROL Review]** Detaljerna om anslutningen är grupperade efter kategorier, inklusive:
 
-* *Anslutning*: Visar typen av källanslutning och den valda rapportsviten.
-* *Tilldela datauppsättnings- och kartfält*: När du skapar andra källanslutningar visar den här behållaren vilka data som källdata hämtas till, inklusive det schema som datauppsättningen följer. Utdatarammet och datamängden konfigureras automatiskt för Analytics-datauppsättningsflöden.
+* **[!UICONTROL Connection]**: Visar typen av källanslutning och den valda rapportsviten.
+* **[!UICONTROL Assign dataset & map fields]**: När du skapar andra källanslutningar visar den här behållaren vilka data som källdata hämtas till, inklusive det schema som datauppsättningen följer. Utdatarammet och datamängden konfigureras automatiskt för Analytics-datauppsättningsflöden.
 
 ![](../../../../images/tutorials/create/analytics/review.png)
 
 ### Övervaka datauppsättningsflödet
 
-När datauppsättningsflödet har skapats kan du övervaka de data som hämtas genom den. På *katalogskärmen* väljer du *Datauppsättningsflöden* för att visa en lista över etablerade flöden som är kopplade till ditt Analytics-konto.
+När datauppsättningsflödet har skapats kan du övervaka de data som hämtas genom den. På **[!UICONTROL Catalog]** skärmen väljer du **[!UICONTROL Dataset flows]** att visa en lista över etablerade flöden som är kopplade till ditt Analytics-konto.
 
 ![](../../../../images/tutorials/create/analytics/catalog-dataset-flows.png)
 
