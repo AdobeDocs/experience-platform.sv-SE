@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Spark SQL-funktioner
 topic: spark sql functions
 translation-type: tm+mt
-source-git-commit: a98e31f57c6ff4fc49d8d8f64441a6e1e18d89da
+source-git-commit: a10508770a862621403bad94c14db4529051020c
 workflow-type: tm+mt
-source-wordcount: '4900'
-ht-degree: 4%
+source-wordcount: '4996'
+ht-degree: 5%
 
 ---
 
@@ -24,17 +24,18 @@ Referens: [Spark SQL-funktionsdokumentation](https://spark.apache.org/docs/2.4.0
 
 ## Kategorier
 
-- [Matematik- och statistikoperatorer och -funktioner](#math-and-statistical-operators-and-functions)
+- [Matematik- och statistikoperatorer och -funktioner](#math)
 - [Logiska operatorer](#logical-operators)
-- [Datum-/tidsfunktioner](#date/time-functions)
+- [Datum-/tidsfunktioner](#datetime-functions)
 - [Sammanställningsfunktioner](#aggregate-functions)
 - [Arrayer](#arrays)
-- [Datatypsdatatypsbytefunktioner](#datatype-casting-functions)
-- [Konverterings- och formateringsfunktioner](#conversion-and-formatting-functions)
+- [Datatypsdatatypsbytefunktioner](#datatype-casting)
+- [Konverterings- och formateringsfunktioner](#conversion)
 - [Utvärdering av data](#data-evaluation)
 - [Aktuell information](#current-information)
+- [Funktioner för högre ordning](#higher-order)
 
-### Matematik- och statistikoperatorer och -funktioner
+### Matematik- och statistikoperatorer och -funktioner {#math}
 
 #### Modulo
 
@@ -171,7 +172,7 @@ Exempel:
  0.0
 ```
 
-#### avg
+#### medel
 
 `avg(expr)`: Returnerar medelvärdet som beräknas från värden i en grupp.
 
@@ -744,13 +745,13 @@ Exempel:
 
 `variance(expr)`: Returnerar samplingsvariansen som beräknas från värden i en grupp.
 
-### Logiska operatorer
+### Logiska operatorer {#logical-operators}
 
 #### Logiskt inte
 
 `! expr`: Logiskt inte.
 
-#### Mindre än
+#### Less than
 
 `expr1 < expr2`: Returnerar true om `expr1` är mindre än `expr2`.
 
@@ -773,7 +774,7 @@ Exempel:
  NULL
 ```
 
-#### Mindre än eller lika med
+#### Less than or equal to
 
 `expr1 <= expr2`: Returnerar true om `expr1` är mindre än eller lika med `expr2`.
 
@@ -796,7 +797,7 @@ Exempel:
  NULL
 ```
 
-#### Lika med
+#### Equal to
 
 `expr1 = expr2`: Returnerar true om `expr1` är lika med `expr2`eller false i annat fall.
 
@@ -817,7 +818,7 @@ Exempel:
  NULL
 ```
 
-#### Större än
+#### Greater than
 
 `expr1 > expr2`: Returnerar true om `expr1` är större än `expr2`.
 
@@ -840,7 +841,7 @@ Exempel:
  NULL
 ```
 
-#### Större än eller lika med
+#### Greater than or equal to
 
 `expr1 >= expr2`: Returnerar true om `expr1` är större än eller lika med `expr2`.
 
@@ -924,7 +925,7 @@ Exempel:
  ["2"]
 ```
 
-#### in
+#### i
 
 `expr1 in(expr2, expr3, ...)`: Returnerar true om `expr` är lika med valfritt valN.
 
@@ -1007,7 +1008,7 @@ Exempel:
  true
 ```
 
-### Datum-/tidsfunktioner
+### Datum-/tidsfunktioner {#datetime-functions}
 
 #### add_month
 
@@ -1425,13 +1426,13 @@ Exempel:
 
 Sedan: 1.5.0
 
-### Sammanställningsfunktioner
+### Sammanställningsfunktioner {#aggregate-functions}
 
 #### ca_count_distinkt
 
 `approx_count_distinct(expr[, relativeSD])`: Returnerar den beräknade kardinaliteten av HyperLogLog++. `relativeSD` definierar det maximalt tillåtna beräkningsfelet.
 
-### Arrayer
+### Arrayer {#arrays}
 
 #### array
 
@@ -1809,7 +1810,7 @@ Exempel:
 
 Sedan: 2.4.0
 
-### Datatypsdatatypsbytefunktioner
+### Datatypsdatatypsbytefunktioner {#datatype-casting}
 
 #### bigint
 
@@ -1894,7 +1895,7 @@ Exempel:
 
 `tinyint(expr)`: Ändrar värdet `expr` till måldatatypen `tinyint`.
 
-### Konverterings- och formateringsfunktioner
+### Konverterings- och formateringsfunktioner {#conversion}
 
 #### ascii
 
@@ -2403,7 +2404,7 @@ Exempel:
 >
 >Funktionen är icke-deterministisk.
 
-### Utvärdering av data
+### Utvärdering av data {#data-evaluation}
 
 #### coalesce
 
@@ -2996,7 +2997,7 @@ Exempel:
  cc
 ```
 
-### Aktuell information
+### Aktuell information {#current-information}
 
 #### current_database
 
@@ -3026,3 +3027,65 @@ Sedan: 1.5.0
 `now()`: Returnerar den aktuella tidsstämpeln i början av frågeutvärderingen.
 
 Sedan: 1.5.0
+
+### Funktioner för högre ordning {#higher-order}
+
+#### omforma
+
+`transform(array, lambdaExpression): array`
+
+Omforma element i en array med funktionen.
+
+Om det finns två argument för lambda-funktionen betyder det andra argumentet elementets index.
+
+Exempel:
+
+```
+> SELECT transform(array(1, 2, 3), x -> x + 1);
+  [2,3,4]
+> SELECT transform(array(1, 2, 3), (x, i) -> x + i);
+  [1,3,5]
+```
+
+
+#### exists
+
+`exists(array, lambdaExpression returning Boolean): Boolean`
+
+Testa om ett predikat innehåller ett eller flera element i arrayen.
+
+Exempel:
+
+```
+> SELECT exists(array(1, 2, 3), x -> x % 2 == 0);
+  true
+```
+
+#### filter
+
+`filter(array, lambdaExpression returning Boolean): array`
+
+Filtrera indatarrayen med det angivna predikatet.
+
+Exempel:
+
+```
+> SELECT filter(array(1, 2, 3), x -> x % 2 == 1);
+ [1,3]
+```
+
+
+#### sammanställd
+
+`aggregate(array, <initial accumulator value>, lambdaExpression to accumulate the value): array`
+
+Använd en binär operator på ett initialt läge och alla element i arrayen, och reducerar detta till ett enda läge. Det slutliga läget konverteras till det slutliga resultatet genom att en avslutningsfunktion används.
+
+Exempel:
+
+```
+> SELECT aggregate(array(1, 2, 3), 0, (acc, x) -> acc + x);
+  6
+> SELECT aggregate(array(1, 2, 3), 0, (acc, x) -> acc + x, acc -> acc * 10);
+  60
+```
