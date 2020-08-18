@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över partiell gruppinmatning i Adobe Experience Platform
 topic: overview
 translation-type: tm+mt
-source-git-commit: df6a6e20733953a0983bbfdf66ca2abc6f03e977
+source-git-commit: ac75b1858b6a731915bbc698107f0be6043267d8
 workflow-type: tm+mt
-source-wordcount: '1361'
+source-wordcount: '1387'
 ht-degree: 0%
 
 ---
@@ -373,7 +373,7 @@ Om den inmatade gruppen har ett ogiltigt schema eller ogiltiga rubriker, bifogas
 
 ### Otolkningsbara rader {#unparsable}
 
-Om det finns rader som inte kan parsas i den inkapslade gruppen kommer batchfelen att lagras i en fil som du kan komma åt med hjälp av slutpunkten som beskrivs nedan.
+Om den grupp som du har infogat har rader som inte kan tolkas kan du använda följande slutpunkt för att visa en lista med filer som innehåller fel.
 
 **API-format**
 
@@ -397,15 +397,48 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 200 med information om rader som inte kan tolkas.
+Ett lyckat svar returnerar HTTP-status 200 med en lista över de filer som innehåller fel.
 
 ```json
 {
-    "_corrupt_record": "{missingQuotes:"v1"}",
+    "data": [
+        {
+            "name": "conversion_errors_0.json",
+            "length": "1162",
+            "_links": {
+                "self": {
+                    "href": "https://platform.adobe.io:443/data/foundation/export/batches/01EFZ7W203PEKSAMVJC3X99VHQ/meta?path=row_errors%2Fconversion_errors_0.json"
+                }
+            }
+        },
+        {
+            "name": "parsing_errors_0.json",
+            "length": "153",
+            "_links": {
+                "self": {
+                    "href": "https://platform.adobe.io:443/data/foundation/export/batches/01EFZ7W203PEKSAMVJC3X99VHQ/meta?path=row_errors%2Fparsing_errors_0.json"
+                }
+            }
+        }
+    ],
+    "_page": {
+        "limit": 100,
+        "count": 2
+    }
+}
+```
+
+Sedan kan du hämta detaljerad information om felen med hjälp av [metadatahämtningsslutpunkten](#retrieve-metadata).
+
+Ett exempelsvar på hämtning av felfilen visas nedan:
+
+```json
+{
+    "_corrupt_record": "{missingQuotes: "v1"}",
     "_errors": [{
-         "code": "1401",
-         "message": "Row is corrupted and cannot be read, please fix and resend."
+        "code": "1401",
+        "message": "Row is corrupted and cannot be read, please fix and resend."
     }],
-    "_filename": "a1.json"
+    "_filename": "parsing_errors_0.json"
 }
 ```
