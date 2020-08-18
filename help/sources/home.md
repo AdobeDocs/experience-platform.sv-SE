@@ -5,9 +5,9 @@ title: Adobe Experience Platform Source Connectors - översikt
 topic: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 translation-type: tm+mt
-source-git-commit: c15f582eeaa895f03441b2f488686a9a48942f3d
+source-git-commit: 88f999691cde2fbebdf23f940f6d48acdfb188e3
 workflow-type: tm+mt
-source-wordcount: '816'
+source-wordcount: '833'
 ht-degree: 0%
 
 ---
@@ -31,6 +31,8 @@ Källor i [!DNL Experience Platform] är grupperade i följande kategorier:
 
 - [Adobe Audience Manager Connector - översikt](connectors/adobe-applications/audience-manager.md)
 - [Skapa en Adobe Audience Manager-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/audience-manager.md)
+- [Adobe Analytics Classifications Data Connector - översikt](connectors/adobe-applications/classifications.md)
+- [Skapa en Adobe Analytics Classifications-datakällanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/classifications.md)
 - [Adobe Analytics dataanslutning - översikt](connectors/adobe-applications/analytics.md)
 - [Skapa en Adobe Analytics-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/analytics.md)
 - [Skapa en källkoppling för kundattribut i användargränssnittet](./tutorials/ui/create/adobe-applications/customer-attributes.md)
