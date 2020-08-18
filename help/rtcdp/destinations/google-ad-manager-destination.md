@@ -4,9 +4,9 @@ seo-title: Mål för Google Ad Manager
 description: 'Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar. '
 seo-description: 'Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar. '
 translation-type: tm+mt
-source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
+source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
 workflow-type: tm+mt
-source-wordcount: '621'
+source-wordcount: '656'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ Observera följande information som är specifik för [!DNL Google Ad Manager] d
 
 >[!NOTE]
 >
->tillåtelselista är obligatoriskt innan du ställer in ditt första [!DNL Google Ad Manager] mål i Adobe Real-time CDP. Kontrollera att tillåtelselista-processen som beskrivs nedan har slutförts [!DNL Google] innan du skapar ett mål.
+>Tillåtelselista är obligatoriskt innan du ställer in ditt första [!DNL Google Ad Manager] mål i Adobe Real-time CDP. Kontrollera att tillåtelselista-processen som beskrivs nedan har slutförts [!DNL Google] innan du skapar ett mål.
 
 Innan du skapar [!DNL Google Ad Manager] målet i realtid-CDP i Adobe måste du kontakta Adobe [!DNL Google] för att få vara med i listan över tillåtna dataleverantörer och för att ditt konto ska läggas till i tillåtelselista. Kontakta [!DNL Google] och lämna följande information:
 
@@ -46,10 +46,14 @@ Innan du skapar [!DNL Google Ad Manager] målet i realtid-CDP i Adobe måste du 
 * **Målgruppslänks-ID** : det här är ditt konto med [!DNL Google Ad Manager]
 * Din kontotyp. **DFP av Google** eller **AdX-köpare**.
 
-## Skapa mål
+## Konfigurera mål
 
-1. In **[!UICONTROL Connections]** > **[!UICONTROL Destinations]**, select [!DNL Google Ad Manager], and select **[!UICONTROL Create destination]**.
+1. In **[!UICONTROL Connections]** > **[!UICONTROL Destinations]**, select [!DNL Google Ad Manager], and select **[!UICONTROL Configure]**.
    ![Anslut Google Ad Manager-mål](/help/rtcdp/destinations/assets/google-1-destination.png)
+
+   >[!NOTE]
+   >
+   >Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]** knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](/help/rtcdp/destinations/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
 
 2. I **konfigurationssteget** för att skapa målarbetsflödet fyller du i [!UICONTROL Basic Information] för målet. <br>
 
