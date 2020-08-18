@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 translation-type: tm+mt
-source-git-commit: c15f582eeaa895f03441b2f488686a9a48942f3d
+source-git-commit: 88f999691cde2fbebdf23f940f6d48acdfb188e3
 workflow-type: tm+mt
-source-wordcount: '610'
+source-wordcount: '619'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,8 @@ ht-degree: 0%
 - [Översikt över källkopplingar](home.md)
 - Tillgängliga källanslutningar {#connectors}
    - Adobe-program {#adobe-applications}
-      - [Dataanslutning för Analytics](connectors/adobe-applications/analytics.md)
+      - [Dataanslutning för analysklassificeringar](connectors/adobe-applications/classifications.md)
+      - [Analytics-dataanslutning](connectors/adobe-applications/analytics.md)
       - [Audience Manager-kontakt](connectors/adobe-applications/audience-manager.md)
       - [Koppling för kundattribut](connectors/adobe-applications/customer-attributes.md)
       - Mappa programfält i Adobe {#mapping}
@@ -133,6 +134,7 @@ ht-degree: 0%
 - Självstudiekurser för användargränssnitt {#ui-tutorials}
    - Skapa en källkoppling {#create}
       - Adobe-program {#adobe-applications}
+         - [Adobe Analytics Classifications Data Connector](tutorials/ui/create/adobe-applications/classifications.md)
          - [Adobe Analytics Connector](tutorials/ui/create/adobe-applications/analytics.md)
          - [Adobe Audience Manager Connector](tutorials/ui/create/adobe-applications/audience-manager.md)
          - [Koppling för kundattribut](tutorials/ui/create/adobe-applications/customer-attributes.md)
