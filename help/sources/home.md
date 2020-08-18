@@ -5,9 +5,9 @@ title: Adobe Experience Platform Source Connectors - översikt
 topic: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 translation-type: tm+mt
-source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
+source-git-commit: c15f582eeaa895f03441b2f488686a9a48942f3d
 workflow-type: tm+mt
-source-wordcount: '817'
+source-wordcount: '816'
 ht-degree: 0%
 
 ---
@@ -84,7 +84,6 @@ CRM-system tillhandahåller data som kan hjälpa till att bygga upp kundrelation
 - [!DNL GreenPlum](connectors/databases/greenplum.md) koppling
 - [!DNL HP Vertica](connectors/databases/hp-vertica.md) koppling
 - [!DNL IBM DB2](connectors/databases/ibm-db2.md) koppling
-- [!DNL MariaDB](connectors/databases/mariadb.md) koppling
 - [!DNL Microsoft SQL Server](connectors/databases/sql-server.md) koppling
 - [!DNL MySQL](connectors/databases/mysql.md) koppling
 - [!DNL Oracle](connectors/databases/oracle.md) koppling
