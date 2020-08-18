@@ -4,9 +4,9 @@ solution: Experience Platform
 title: SQL-syntax
 topic: syntax
 translation-type: tm+mt
-source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+source-git-commit: a10508770a862621403bad94c14db4529051020c
 workflow-type: tm+mt
-source-wordcount: '1940'
+source-wordcount: '1973'
 ht-degree: 0%
 
 ---
@@ -462,3 +462,22 @@ where transaction_mode is one of:
     ISOLATION LEVEL { SERIALIZABLE | REPEATABLE READ | READ COMMITTED | READ UNCOMMITTED }
     READ WRITE | READ ONLY
 ```
+
+### COPY
+
+Med det här kommandot dumpas utdata från en SELECT-fråga till en angiven plats. Användaren måste ha åtkomst till den här platsen för att det här kommandot ska lyckas.
+
+```
+COPY  query
+    TO '%scratch_space%/folder_location'
+    [  WITH FORMAT 'format_name']
+
+where 'format_name' is be one of:
+    'parquet', 'csv', 'json'
+
+'parquet' is the default format.
+```
+
+>[!NOTE]
+>
+>Den fullständiga utdatasökvägen `adl://<ADLS_URI>/users/<USER_ID>/acp_foundation_queryService/folder_location/<QUERY_ID>`
