@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en PayPal-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 598b29f681ac930a4e1781f7f298608c8344d807
+source-git-commit: dd036cf4df5d772206d2b73292c60f2d866ba0de
 workflow-type: tm+mt
-source-wordcount: '460'
+source-wordcount: '434'
 ht-degree: 1%
 
 ---
@@ -23,12 +23,12 @@ Källkopplingar i Adobe Experience Platform gör det möjligt att importera exte
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+* [[!DNL Experience Data Model] (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
-* [Kundprofil](../../../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Om du redan har en [!DNL PayPal] basanslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen om [att konfigurera ett dataflöde](../../dataflow/payments.md)
+Om du redan har en giltig [!DNL PayPal] anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen om [att konfigurera ett dataflöde](../../dataflow/payments.md)
 
 ### Samla in nödvändiga inloggningsuppgifter
 
@@ -40,23 +40,25 @@ För att få åtkomst till ditt [!DNL PayPal] konto [!DNL Platform]måste du ang
 | `clientID` | Klient-ID som är kopplat till ditt [!DNL PayPal] program. |
 | `clientSecret` | Klienthemligheten som är kopplad till ditt [!DNL PayPal] program. |
 
-Mer information om hur du kommer igång finns i det här [PayPal-dokumentet](https://developer.paypal.com/docs/api/overview/#get-credentials)
+Mer information om hur du kommer igång finns i det här [[!DNL PayPal] dokumentet](https://developer.paypal.com/docs/api/overview/#get-credentials)
 
 ## Anslut ditt [!DNL PayPal] konto
 
-När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att skapa en ny inkommande basanslutning som du kan länka ditt [!DNL PayPal] konto till [!DNL Platform].
+När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL PayPal] konto till [!DNL Platform].
 
-Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt *[!UICONTROL Sources]* arbetsytan. På *[!UICONTROL Catalog]* skärmen visas en mängd olika källor som du kan skapa inkommande basanslutningar med, och varje källa visar antalet befintliga basanslutningar som är kopplade till dem.
+Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt **[!UICONTROL Sources]** arbetsytan. På **[!UICONTROL Catalog]** skärmen visas en mängd olika källor som du kan skapa ett konto med.
 
-Under *[!UICONTROL CRM]* kategorin väljer du **[!UICONTROL PayPal]** att visa ett informationsfält till höger på skärmen. Informationsfältet innehåller en kort beskrivning av den valda källan samt alternativ för att ansluta till källan eller visa dess dokumentation. Om du vill skapa en ny inkommande basanslutning väljer du **[!UICONTROL Add data]**.
+Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
+
+Välj under **[!UICONTROL Payments]** kategorin **[!UICONTROL PayPal]**. Om det är första gången du använder den här kopplingen väljer du **[!UICONTROL Configure]**. Annars väljer du **[!UICONTROL Add data]** att skapa en ny [!DNL PayPal] koppling.
 
 ![katalog](../../../../images/tutorials/create/paypal/catalog.png)
 
-Sidan visas *[!UICONTROL Connect to PayPal]* . På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
+Sidan visas **[!UICONTROL Connect to PayPal]** . På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
 ### Nytt konto
 
-Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. På det indataformulär som visas anger du ett namn, en valfri beskrivning och dina [!DNL PayPal] inloggningsuppgifter för basanslutningen. När du är klar väljer du **[!UICONTROL Connect]** och tillåt sedan lite tid för att upprätta den nya basanslutningen.
+Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. Ange ett namn, en valfri beskrivning och dina [!DNL PayPal] inloggningsuppgifter i det indataformulär som visas. När du är klar väljer du **[!UICONTROL Connect]** och tillåt sedan en tid för att upprätta den nya anslutningen.
 
 ![koppla](../../../../images/tutorials/create/paypal/connect.png)
 
@@ -68,4 +70,4 @@ Om du vill ansluta ett befintligt konto markerar du det [!DNL PayPal] konto du v
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en basanslutning till ditt [!DNL PayPal] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta CRM-data till plattformen](../../dataflow/payments.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL PayPal] konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta betalningsdata till [!DNL Platform]](../../dataflow/payments.md).
