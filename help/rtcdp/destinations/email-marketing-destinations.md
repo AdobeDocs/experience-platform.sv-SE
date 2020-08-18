@@ -4,7 +4,7 @@ seo-title: Destinationer för e-postmarknadsföring
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 seo-description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 translation-type: tm+mt
-source-git-commit: 6850a1ee5a578a3dccce9f9decd8f6a368705f4a
+source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
 workflow-type: tm+mt
 source-wordcount: '772'
 ht-degree: 0%
@@ -22,9 +22,9 @@ Att ansluta till e-postmarknadsföringsmål är en process i tre steg. Varje ste
 
 Anslut till antingen Amazon S3 eller SFTP i det anslutande målflödet som beskrivs i avsnittet nedan. CDP exporterar dina segment som `.csv` eller `.txt` filer i realtid och levererar dem till den plats du önskar. Schemalägg dataimporten på er e-postmarknadsföringsplattform från den lagringsplats som är aktiverad i CDP i realtid. Processen för att importera data varierar för varje partner. Mer information finns i de enskilda destinationsartiklarna.
 
-## Steg 1 - Anslut mål {#connect-destination}
+## Steg 1 - Konfigurera mål {#connect-destination}
 
-1. I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** väljer du det mål för e-postmarknadsföring som du vill ansluta till och sedan **[!UICONTROL Connect destination]**.
+1. I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** väljer du det mål för e-postmarknadsföring som du vill ansluta till och sedan **[!UICONTROL Configure]**.
 
    ![Anslut till mål](/help/rtcdp/destinations/assets/connect-email-marketing.png)
 
