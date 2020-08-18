@@ -1,10 +1,10 @@
 ---
 title: Bing Ads UET-tillägg (Universal Event Tracking)
 seo-title: Bing Ads UET-tillägg (Universal Event Tracking)
-description: Tillägget Bing Ads Universal Event Tracking (UET) är ett reklammål i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Tillägget Bing Ads Universal Event Tracking (UET) är en annonsdestination i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: null
 translation-type: tm+mt
-source-git-commit: be4cf64c89a189a09a4a7774c8fadc76c6ee8458
+source-git-commit: 33eba9e3f2e993c6958480b091ff004dc057f438
 workflow-type: tm+mt
 source-wordcount: '535'
 ht-degree: 2%
@@ -18,11 +18,11 @@ ht-degree: 2%
 
 [!DNL Bing Ads Universal Event Tracking] (UET) för [!DNL Experience Platform Launch] är ett användbart sätt att spåra vad som händer efter att någon har klickat på din sökannons. Genom att använda en enda UET-tagg för att spela in vad kunderna gör på er webbplats kan ni utnyttja dessa data så att ni kan spåra konverteringar eller målgrupper med hjälp av återmarknadsföringslistor.
 
-[!DNL Bing Ads Universal Event Tracking] (UET) är ett reklamtillägg i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100154.html).
+[!DNL Bing Ads Universal Event Tracking] (UET) är ett annonstillägg i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100154.html).
 
 Det här målet är ett [!DNL Experience Platform Launch] tillägg. Mer information om hur [!DNL Launch] tillägg fungerar i CDP i realtid i Adobe finns i Översikt över [tillägg i](/help/rtcdp/destinations/experience-platform-launch-extensions.md)Experience Platform Launch.
 
-![Bing Ads-tillägg](assets/bing-extension.png)
+![Bing Ads-tillägg](assets/bing-ads-extension.png)
 
 
 ## Förutsättningar {#prerequisites}
@@ -37,7 +37,7 @@ Så här installerar du [!DNL Bing Ads Universal Event Tracking] (UET)-tillägge
 
 1. I CDP-gränssnittet [för](http://platform.adobe.com/)Adobe i realtid går du till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**.
 2. Välj tillägget i katalogen eller använd sökfältet.
-3. Klicka på målet för att markera det och välj sedan **[!UICONTROL Install Extension]** i den högra listen. Om **[!UICONTROL Install Extension]** kontrollen är nedtonad saknar du **[!UICONTROL manage_properties]** behörigheten. Se [Förutsättningar](#prerequisites).
+3. Klicka på målet för att markera det och välj sedan **[!UICONTROL Configure]** i den högra listen. Om **[!UICONTROL Configure]** kontrollen är nedtonad saknar du **[!UICONTROL manage_properties]** behörigheten. Se [Förutsättningar](#prerequisites).
 4. I **[!UICONTROL Select available Launch property]** fönstret väljer du den [!DNL Launch] egenskap i vilken du vill installera tillägget. Du kan också skapa en ny egenskap i [!DNL Launch]. En egenskap är en samling regler, dataelement, konfigurerade tillägg, miljöer och bibliotek. Lär dig mer om egenskaper i avsnittet [](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html#properties-page) Egenskaper i [!DNL Launch] dokumentationen.
 5. Arbetsflödet tar dig [!DNL Launch] till att slutföra installationen.
 
