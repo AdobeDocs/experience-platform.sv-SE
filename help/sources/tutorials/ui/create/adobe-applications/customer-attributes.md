@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en källkoppling för kundattribut i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
+source-git-commit: 999ff0e9525d7d9f67298862c68bb59ddc35e558
 workflow-type: tm+mt
-source-wordcount: '358'
+source-wordcount: '346'
 ht-degree: 3%
 
 ---
@@ -34,7 +34,7 @@ På skärmen *Källaktivitet* visas alla tidigare upprättade anslutningar för 
 
 ![](../../../../images/tutorials/create/customer-attributes/source_activity.png)
 
-I listan över tillgängliga kundattributprofildatauppsättningar väljer du den du vill hämta till Platform och klickar på **Nästa**.
+I listan över tillgängliga kundattributprofildatauppsättningar väljer du den du vill hämta till [!DNL Platform] och klickar på **Nästa**.
 
 >[!NOTE]
 >
@@ -51,7 +51,7 @@ Steget *Granska* visas så att du kan granska den nya inkommande anslutningen in
 
 ## Nästa steg
 
-När anslutningen har skapats skapas ett målschema och en datauppsättning automatiskt som innehåller inkommande data. När det första intaget är klart kan kundattributprofildata användas av plattformstjänster längre fram i kedjan, t.ex. kundprofil i realtid och segmenteringstjänst. Mer information finns i följande dokument:
+När anslutningen har skapats skapas ett målschema och en datauppsättning automatiskt som innehåller inkommande data. När det inledande intaget är klart kan kundattributprofildata användas av tjänster i senare led, som [!DNL Platform] och [!DNL Real-time Customer Profile] [!DNL Segmentation Service]. Mer information finns i följande dokument:
 
-* [Översikt över kundprofiler i realtid](../../../../../profile/home.md)
-* [Översikt över segmenteringstjänsten](../../../../../segmentation/home.md)
+* [[!DNL Real-time Customer Profile] översikt](../../../../../profile/home.md)
+* [[!DNL Segmentation Service] översikt](../../../../../segmentation/home.md)
