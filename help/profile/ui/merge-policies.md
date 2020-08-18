@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Användarhandbok för sammanslagningsprinciper
 topic: guide
 translation-type: tm+mt
-source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
+source-git-commit: fa439ebb9d02d4a08c8ed92b18f2db819d089174
 workflow-type: tm+mt
-source-wordcount: '1039'
+source-wordcount: '1038'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Med Adobe Experience Platform kan ni samla data från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanför dessa data är sammanslagningsprinciper de regler som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa den enhetliga vyn.
 
-Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen. Den här handboken innehåller stegvisa instruktioner för hur du arbetar med sammanfogningsprinciper i användargränssnittet i Adobe Experience Platform.
+Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen. I den här handboken finns stegvisa instruktioner för hur du arbetar med sammanfogningsprinciper i Adobe Experience Platform användargränssnitt.
 
 Om du föredrar att arbeta med sammanfogningsprinciper med hjälp av [!DNL Real-time Customer Profile] API:t följer du instruktionerna i API-självstudiekursen för [sammanfogningsprinciper](../api/merge-policies.md).
 
@@ -80,7 +80,8 @@ Du kan ändra en befintlig kopplingsprofil på *[!UICONTROL Merge policies]* fli
 
 När *[!UICONTROL Edit merge policy]* skärmen visas kan du ändra *[!UICONTROL Name]*, *[!UICONTROL Schema]*, *[!UICONTROL ID stitching]* typ och *[!UICONTROL Attribute merge]* typ samt välja om profilen ska användas *[!UICONTROL Default merge policy]* för din organisation eller inte.
 
->[!Note]
+>[!NOTE]
+>
 >Du kan inte redigera sammanfogningsprincip-ID:t, som visas högst upp på redigeringsskärmen. Detta är ett skrivskyddat, systemgenererat ID som inte kan ändras.
 
 ![](../images/merge-policies/edit-screen.png)
@@ -91,11 +92,11 @@ När du har gjort de nödvändiga ändringarna klickar du för **[!UICONTROL Sav
 
 ## Policyöverträdelser för datastyrning
 
-När du skapar eller uppdaterar en sammanfogningsprincip görs en kontroll för att avgöra om sammanfogningsprincipen bryter mot någon av de dataanvändningsprinciper som din organisation har definierat. Dataanvändningspolicyer är en del av Adobe Experience Platform [!DNL Data Governance] och är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från, för att utföra på specifika [!DNL Platform] data. Om en sammanfogningsprincip till exempel användes för att skapa ett segment som aktiverats för ett tredjepartsmål, och din organisation har en dataanvändningsprincip som förhindrar export av specifika data till tredje part, får du ett meddelande om att en datastyrningsprincip överträds när du försöker spara sammanfogningsprincipen.
+När du skapar eller uppdaterar en sammanfogningsprincip görs en kontroll för att avgöra om sammanfogningsprincipen bryter mot någon av de dataanvändningsprinciper som din organisation har definierat. Dataanvändningspolicyer är en del av Adobe Experience Platform [!DNL Data Governance] och är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från för att utföra på specifika [!DNL Platform] data. Om en sammanfogningsprincip till exempel användes för att skapa ett segment som aktiverats för ett tredjepartsmål, och din organisation har en dataanvändningsprincip som förhindrar export av specifika data till tredje part, får du ett meddelande om att en datastyrningsprincip överträds när du försöker spara sammanfogningsprincipen.
 
 Det här meddelandet innehåller en lista över dataanvändningsprinciper som har överträtts och gör att du kan visa information om överträdelsen genom att välja en princip i listan. När du har valt en obehörig princip innehåller fliken *Datalinje* en beskrivning av *orsaken till överträdelse* och de aktiveringar *som* påverkas, där var och en ger mer information om hur dataanvändningsprincipen har överträtts.
 
-Om du vill veta mer om hur datastyrning utförs i Adobe Experience Platform börjar du med att läsa [datastyrningsöversikten](../../data-governance/home.md).
+Om du vill veta mer om hur datastyrning utförs inom Adobe Experience Platform börjar du med att läsa översikten över [datastyrning](../../data-governance/home.md).
 
 ![](../images/merge-policies/policy-violation.png)
 
