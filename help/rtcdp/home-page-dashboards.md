@@ -1,10 +1,11 @@
 ---
-title: Platform hemsida och instrumentpaneler för kunddata i realtid
-seo-title: Platform hemsida och instrumentpaneler för kunddata i realtid
-description: Instrumentpaneler, startsidan och förstagångsupplevelsen i Adobe Experience Platform
-seo-description: Instrumentpaneler, startsidan och förstagångsupplevelsen i Adobe Experience Platform
+keywords: metrics overview; rtcdp metrics overview
+title: Hemsida och instrumentpaneler för kunddataplattformen i realtid
+seo-title: Hemsida och instrumentpaneler för kunddataplattformen i realtid
+description: Kontrollpaneler, startsidan och förstagångsupplevelsen av Adobe Experience Platform
+seo-description: Kontrollpaneler, startsidan och förstagångsupplevelsen av Adobe Experience Platform
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '614'
 ht-degree: 0%
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # [!DNL Real-time Customer Data Platform] översikt över mätvärden
 
-Hemsidan Adobe Real-time Customer Data Platform (Real-time CDP), som innehåller en mätinstrumentpanel, visas när du loggar in på CDP i realtid.
+Hemsidan Adobe Real-time Customer Data Platform (CDP i realtid), som innehåller en mätinstrumentpanel, visas när du loggar in på CDP i realtid.
 
 Hemsidan är bara en av platserna där metriska kort visas. CDP ger dig mätkort i realtid genom hela upplevelsen. Dessa mätvärden ger information om data, profiler och målgrupper i systemet.
 
@@ -39,7 +40,7 @@ Some information is shown in different ways on both the leaderboard and metric c
 
    ![bild](assets/home-recent.jpg)
 
-Ytterligare mätvärden - till exempel för profiler och segment - finns i andra delar av kunddata i realtid på Platform.
+Ytterligare mätvärden - till exempel för profiler och segment - finns tillgängliga i andra delar av kunddataplattformen i realtid.
 
 ### Datauppsättningar
 
