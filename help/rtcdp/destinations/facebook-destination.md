@@ -1,10 +1,11 @@
 ---
+keywords: facebook extensions;facebook extension;facebook destinations;facebook
 title: Facebook-mål
 seo-title: Facebook-mål
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 seo-description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 translation-type: tm+mt
-source-git-commit: 7f3df12da5e93c3d0cc53eed1aa603ddbafdb0b2
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '722'
 ht-degree: 2%
@@ -22,7 +23,7 @@ Aktivera profiler för era [!DNL Facebook] kampanjer för målgruppsanpassning, 
 
 ## Användningsexempel
 
-För att ni bättre ska förstå hur och när ni ska använda [!DNL Facebook] destinationen finns det två exempel på användning som Adobe Real-time Customer Data Platform-kunder kan lösa genom att använda den här funktionen.
+För att du bättre ska förstå hur och när du ska använda [!DNL Facebook] destinationen finns det två exempel på användning som kunder med kunddataplattform för Adobe i realtid kan lösa genom att använda den här funktionen.
 
 
 ### Användningsfall 1
@@ -38,7 +39,7 @@ Ett flygbolag har olika kundnivåer (Bronze, Silver och Gold) och vill kunna erb
 
 För att rikta in sig på dem i olika sociala medier kan de lägga in kunddata från sina CRM i CDP i realtid i Adobe, med e-postadresserna som identifierare.
 
-Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-ID:n och kundnivåer, för att skapa nya målgruppssegment som de kan rikta sig mot via [!DNL Facebook] målet.
+Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-ID:n och kundnivåer, för att skapa nya målgruppssegment som de kan rikta sig till via [!DNL Facebook] målet.
 
 ## Destinationsspecifikationer {#destination-specs}
 
