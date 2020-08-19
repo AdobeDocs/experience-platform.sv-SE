@@ -1,10 +1,11 @@
 ---
+keywords: activate destination;activate destinations;activate data
 title: Aktivera profiler och segment till ett mål
 seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i kunddataplattformen i Adobe i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i kunddataplattformen i Adobe i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: 5387959496da3b1a6323f173154d769090a1fd40
+source-git-commit: 54df4778a025811504801306120bda78e04281c1
 workflow-type: tm+mt
 source-wordcount: '1492'
 ht-degree: 0%
