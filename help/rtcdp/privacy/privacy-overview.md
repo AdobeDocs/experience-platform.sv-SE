@@ -1,10 +1,11 @@
 ---
+keywords: data governance rtcdp;rtcdp data governance;real time customer data profile data governance;privacy rtcdp;rtcdp privacy
 title: Sekretess i kunddataprofil i realtid
 seo-title: Sekretess i kunddataprofil i realtid
 description: Med kunddataprofilen i realtid kan ni effektivisera processen att se till att era dataåtgärder följer sekretessreglerna.
 seo-description: Med kunddataprofilen i realtid kan ni effektivisera processen att se till att era dataåtgärder följer sekretessreglerna.
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '304'
 ht-degree: 0%
@@ -20,7 +21,7 @@ Huvuddelen av CDP-funktionerna i realtid drivs av Adobe Experience Platform. Det
 
 ## [!DNL Privacy Service]
 
-Med Adobe Experience Platform [!DNL Privacy Service] kan ni effektivisera processen för att se till att era dataåtgärder är kompatibla med sekretessbestämmelser som [!DNL General Data Protection Regulation] (GDPR) och [!DNL California Consumer Privacy Act] (CCPA). Eftersom CDP i realtid utnyttjar [!DNL Experience Platform] funktioner för datainsamling och datalagring bör förfrågningar om åtkomst och radering för GDPR och CCPA hanteras inom [!DNL Platform]. En mer detaljerad introduktion till tjänsten finns i översiktsdokumentet om [Privacy Servicen](../../privacy-service/home.md) .
+Med Adobe Experience Platform [!DNL Privacy Service] kan ni effektivisera processen att se till att era dataåtgärder följer sekretessregler som [!DNL General Data Protection Regulation] (GDPR) och [!DNL California Consumer Privacy Act] (CCPA). Eftersom CDP i realtid utnyttjar [!DNL Experience Platform] funktioner för datainsamling och datalagring bör förfrågningar om åtkomst och radering för GDPR och CCPA hanteras inom [!DNL Platform]. En mer detaljerad introduktion till tjänsten finns i översiktsdokumentet om [Privacy Servicen](../../privacy-service/home.md) .
 
 Det finns två metoder för att skicka in enskilda förfrågningar från registrerade personer om GDPR och CCPA för att få tillgång till och ta bort kunddata:
 
