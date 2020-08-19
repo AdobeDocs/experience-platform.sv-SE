@@ -1,10 +1,10 @@
 ---
 title: Produkter
-seo-title: Stödprodukter med Adobe Experience Platform Web SDK
+seo-title: Supporting products with Adobe Experience Platform Web SDK
 description: Lär dig hur du lägger till data om du har produkter eller en kundvagn med Experience Platform Web SDK
 seo-description: Lär dig hur du lägger till data om du har produkter eller en kundvagn med Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 075d71353877045e12985b3914aaeeb478ed46d6
 workflow-type: tm+mt
 source-wordcount: '1314'
 ht-degree: 1%
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 Om du har produkter på din webbplats är detta en standarduppsättning med saker som du kanske vill skicka för att få ut så mycket som möjligt av Adobe. Även om detta är ett förslag ger det en mycket stark uppsättning data redan från början.
 
-Det här dokumentet använder [ExperienceEvent Commerce Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) -mixen. Blandningen `commerce` delas upp i två delar: objektet `commerce` och `productListItems` arrayen. Med objektet kan du `commerce` ange vilka åtgärder som ska utföras på `productListItems` arrayen.
+Det här dokumentet använder [ExperienceEvent Commerce Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) -blandningen. Blandningen `commerce` delas upp i två delar: objektet `commerce` och `productListItems` arrayen. Med objektet kan du `commerce` ange vilka åtgärder som ska utföras på `productListItems` arrayen.
 
 >[!Tip]
 >
@@ -28,7 +28,6 @@ Det här dokumentet använder [ExperienceEvent Commerce Details](https://github.
 Nedan visas en lista över `measures` tillgängliga i `commerce` objektet.
 
 >[!Tip]
->
 >
 >Ett mått har två fält: `id` och `value`. För det mesta använder du bara `value` fältet (till exempel `'value':1`). I `id` fältet kan du ange en unik identifierare som du kan använda för att hålla reda på när åtgärden skickades. Se XDM-dokumentationen för [Mät](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/measure.schema.md).
 
