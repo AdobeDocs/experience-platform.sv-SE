@@ -4,7 +4,7 @@ seo-title: Edge-konfiguration för Experience Platform Web SDK
 description: 'Lär dig hur du konfigurerar Experience Platform Edge-nätverket. '
 seo-description: 'Lär dig hur du konfigurerar Experience Platform Edge-nätverket. '
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: 075d71353877045e12985b3914aaeeb478ed46d6
 workflow-type: tm+mt
 source-wordcount: '810'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # Konfigurera Edge
 
-Konfigurationen för Adobe Experience Platform [!DNL Web SDK] delas mellan två platser. Kommandot [](configuring-the-sdk.md) configure i SDK styr saker som måste hanteras på klienten, till exempel `edgeDomain`. Edge-konfigurationen hanterar all annan konfiguration för SDK. När en begäran skickas till Adobe Experience Platform [!DNL Edge Network]används den för att `edgeConfigId` referera till konfigurationen på serversidan. På så sätt kan du uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
+Konfigurationen för Adobe Experience Platform [!DNL Web SDK] är uppdelad på två platser. Kommandot [](configuring-the-sdk.md) configure i SDK styr saker som måste hanteras på klienten, till exempel `edgeDomain`. Edge-konfigurationen hanterar all annan konfiguration för SDK. När en begäran skickas till Adobe Experience Platform [!DNL Edge Network]används den `edgeConfigId` för att referera till konfigurationen på serversidan. På så sätt kan du uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
 
 ## Skapa ett Edge Configuration ID
 
@@ -23,8 +23,6 @@ Konfiguration-ID:n för Edge kan skapas i Adobe [!DNL Launch] med hjälp av edge
 ![navigering för konturkonfigurationsverktyg](../../assets/edge_configuration_nav.png)
 
 >[!NOTE]
->
->
 >
 >Kunder på tillåtelselista kan använda kantkonfigurationsverktyget oavsett om de använder [!DNL Launch] som tagghanterare eller inte. Dessutom kräver användare framkallningsbehörigheter i [!DNL Launch]. Mer information finns i artikeln [Användarbehörigheter](https://docs.adobe.com/content/help/en/launch/using/reference/admin/user-permissions.html) i [!DNL Launch] dokumentationen.
 
@@ -58,7 +56,7 @@ ID-synkroniseringar kan grupperas i behållare så att olika ID-synkroniseringar
 
 Med inställningarna som anges här kan du skicka data till Adobe Experience Platform. Du bör bara aktivera det här avsnittet om du har köpt Adobe Experience Platform.
 
-![Adobe Experience Platform-inställningsblock](../../assets/edge_configuration_aep.png)
+![Adobe Experience Platform inställningsblock](../../assets/edge_configuration_aep.png)
 
 ##### [!UICONTROL Sandbox]
 
@@ -76,11 +74,9 @@ Edge-konfigurationer har stöd för att skicka data till datauppsättningar som 
 
 Om du vill konfigurera Adobe Target måste du ange en klientkod. De andra fälten är valfria.
 
-![Adobe Target-inställningsblock](../../assets/edge_configuration_target.png)
+![Adobe Target inställningsblock](../../assets/edge_configuration_target.png)
 
 >[!NOTE]
->
->
 >
 >Organisationen som är associerad med klientkoden måste matcha organisationen där konfigurations-ID skapas.
 
@@ -116,7 +112,7 @@ Tillåter SDK att dela segmentinformation via [URL-mål](https://docs.adobe.com/
 
 #### Adobe Analytics
 
-Kontrollerar om data skickas till Adobe Analytics. Mer information finns i [Analytics Overview](../solution-specific/analytics/analytics-overview.md).
+Kontrollerar om data skickas till Adobe Analytics. Ytterligare information finns i [Analytics Overview](../solution-specific/analytics/analytics-overview.md).
 
 ![Adobe Analytics Settings Block](../../assets/edge_configuration_aa.png)
 
