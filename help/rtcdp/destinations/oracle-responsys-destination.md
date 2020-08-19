@@ -1,10 +1,11 @@
 ---
+keywords: email;Email;e-mail;email destinations;oracle responsys destination
 title: Oracle Responsys-mål
 seo-title: Oracle Responsys-mål
 description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som erbjuds av Oracle för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
 seo-description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som erbjuds av Oracle för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
 translation-type: tm+mt
-source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '449'
 ht-degree: 0%
@@ -18,7 +19,7 @@ ht-degree: 0%
 
 [Responsys](https://www.oracle.com/marketingcloud/products/cross-channel-orchestration/) är ett verktyg för e-postmarknadsföring i storföretag för flerkanalskampanjer som erbjuds av [!DNL Oracle] att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
 
-Om du vill skicka segmentdata till [!DNL Oracle Responsys]måste du först [ansluta till målet](#connect-destination) i Adobe Real-time Customer Data Platform och sedan [konfigurera en dataimport](#import-data-into-responsys) från lagringsplatsen till [!DNL Oracle Responsys].
+Om du vill skicka segmentdata till [!DNL Oracle Responsys]måste du först [ansluta till målet](#connect-destination) i kunddataplattformen för Adobe i realtid och sedan [konfigurera en dataimport](#import-data-into-responsys) från lagringsplatsen till [!DNL Oracle Responsys].
 
 ## Koppla mål {#connect-destination}
 
