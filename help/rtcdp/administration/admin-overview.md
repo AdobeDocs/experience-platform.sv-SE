@@ -1,12 +1,13 @@
 ---
+keywords: rtcdp administration overview;administration overview
 title: Administration - översikt
 seo-title: Översikt över CDP-administration i realtid
-description: description
+description: 'Dokumentet innehåller en översikt över administrationsfunktionerna i kunddataplattformen i realtid med Adobe Experience Platform. '
 seo-description: seo-beskrivning
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
-source-wordcount: '259'
+source-wordcount: '277'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # Översikt över CDP-administration i realtid
 
-I det här dokumentet finns en översikt över administrationsmöjligheterna i [!DNL Real-time Customer Data Platform]Adobe Experience Platform.
+Det här dokumentet innehåller en översikt över administrationsfunktionerna i [!DNL Real-time Customer Data Platform], som drivs av Adobe Experience Platform.
 
 [!DNL Experience Platform] gör att administratörer kan hantera rollbaserad åtkomstkontroll för användare samt hantera virtuella sandlådor för programutveckling.
 
