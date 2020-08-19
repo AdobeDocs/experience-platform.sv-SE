@@ -1,10 +1,11 @@
 ---
+keywords: gtag;google gtag;google extension;google gtag extension;GTAG
 title: Google-taggtillägg
 seo-title: Google-taggtillägg
 description: Google-tillägget gtag är en annonsdestination i kunddataplattformen Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: null
 translation-type: tm+mt
-source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
+source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
 workflow-type: tm+mt
 source-wordcount: '535'
 ht-degree: 2%
