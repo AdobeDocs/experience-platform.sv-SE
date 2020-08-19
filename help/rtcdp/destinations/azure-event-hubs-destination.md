@@ -1,10 +1,11 @@
 ---
+keywords: Azure event hub destination;azure event hub;azure eventhub
 title: (Beta) Azure Event Hubs-mål
 seo-title: (Beta) Azure Event Hubs-mål
 description: Skapa en utgående anslutning i realtid till din Azure Event Hubs-lagring för att strömma data från Experience Platform.
 seo-description: Skapa en utgående anslutning i realtid till din Azure Event Hubs-lagring för att strömma data från Experience Platform.
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '458'
 ht-degree: 0%
@@ -30,7 +31,7 @@ Du kan skapa en utgående anslutning i realtid till ditt [!DNL Azure Event Hubs]
 
 ![AWS Kinesis i användargränssnittet](/help/rtcdp/destinations/assets/azure-event-hubs-destination.png)
 
-## Användningsexempel {#use-cases}
+## Use Cases {#use-cases}
 
 Genom att använda direktuppspelningsmål som [!DNL Azure Event Hubs]kan du enkelt mata in segmenteringshändelser med högt värde och associerade profilattribut i dina valfria system.
 
