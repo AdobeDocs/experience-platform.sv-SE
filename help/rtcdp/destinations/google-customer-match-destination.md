@@ -1,10 +1,11 @@
 ---
+keywords: google customer match;Google customer match;Google Customer Match
 title: Google Customer Match Destination
 seo-title: Google Customer Match Destination
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egenskaper, som Search, Shopping, Gmail och YouTube.
 seo-description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egenskaper, som Search, Shopping, Gmail och YouTube.
 translation-type: tm+mt
-source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
+source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
 workflow-type: tm+mt
 source-wordcount: '1490'
 ht-degree: 0%
@@ -110,7 +111,7 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att följa
 
    >[!NOTE]
    >
-   >CDP i realtid i Adobe stöder validering av autentiseringsuppgifter i autentiseringsprocessen och visar ett felmeddelande om du anger felaktiga autentiseringsuppgifter för ditt [!DNL Google Ad] konto. Detta säkerställer att du inte slutför arbetsflödet med felaktiga inloggningsuppgifter.
+   >Adobe CDP i realtid stöder validering av autentiseringsuppgifter i autentiseringsprocessen och visar ett felmeddelande om du anger felaktiga autentiseringsuppgifter för ditt [!DNL Google Ad] konto. Detta säkerställer att du inte slutför arbetsflödet med felaktiga inloggningsuppgifter.
 
    ![Anslut till Google Customer Match-målet - autentiseringssteg](/help/rtcdp/destinations/assets/google-customer-match-pre-connect-view.png)
 
