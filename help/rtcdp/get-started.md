@@ -1,11 +1,11 @@
 ---
-keywords: RTCDP;rtcdp
+keywords: RTCDP;CDP;Real-time Customer Data Platform;real time customer data platform;real time cdp;cdp;rtcdp
 title: Komma igång med Adobe kunddataplattform i realtid
 seo-title: Komma igång med Adobe kunddataplattform i realtid
 description: Exempelscenario för Adobe kunddataplattform i realtid
 seo-description: Exempelscenario för Adobe kunddataplattform i realtid
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 54df4778a025811504801306120bda78e04281c1
 workflow-type: tm+mt
 source-wordcount: '2321'
 ht-degree: 0%
