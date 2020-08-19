@@ -1,10 +1,11 @@
 ---
+keywords: cloud storage destination;cloud storage
 title: Lagringsmål i molnet
 seo-title: Lagringsmål i molnet
 description: CDP i realtid i Adobe kan leverera dina segment som datafiler till Amazon S3, AWS Kinesis, Azure Event Hubs eller SFTP:s molnlagringsplatser.
 seo-description: CDP i realtid i Adobe kan leverera dina segment som datafiler till Amazon S3, AWS Kinesis, Azure Event Hubs eller SFTP:s molnlagringsplatser.
 translation-type: tm+mt
-source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '178'
 ht-degree: 0%
