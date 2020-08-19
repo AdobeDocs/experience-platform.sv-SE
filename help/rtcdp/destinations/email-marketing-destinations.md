@@ -1,10 +1,11 @@
 ---
+keywords: email;Email;e-mail;email destinations
 title: Destinationer för e-postmarknadsföring
 seo-title: Destinationer för e-postmarknadsföring
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 seo-description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 translation-type: tm+mt
-source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
+source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
 workflow-type: tm+mt
 source-wordcount: '772'
 ht-degree: 0%
