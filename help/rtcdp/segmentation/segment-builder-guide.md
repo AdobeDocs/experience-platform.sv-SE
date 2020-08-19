@@ -1,12 +1,13 @@
 ---
-title: Segment Builder Guide
+keywords: rtcdp segments;segment builder rtcdp;rtcdp segment
+title: Segment Builder guide for Real-time Customer Data Platform
 seo-title: Använda segmenteringstjänstens segmentbyggare i kunddataplattformen i realtid
 description: En guide som beskriver hur du använder Segment Builder.
 seo-description: En användarhandbok som beskriver hur segmenteringstjänstens segmentbyggare används på kunddataplattformen i realtid.
 translation-type: tm+mt
-source-git-commit: e351a2d489730c1f1bd5f87be8d85612090bc009
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
-source-wordcount: '100'
+source-wordcount: '105'
 ht-degree: 0%
 
 ---
