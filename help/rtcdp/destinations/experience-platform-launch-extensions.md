@@ -1,10 +1,11 @@
 ---
+keywords: launch extensions;launch extension;launch destinations
 title: Experience Platform Launch Extensions
 seo-title: Experience Platform Launch Extensions
 description: Launch är nästa generation av tagghanteringsfunktioner från Adobe. Launch ger kunderna ett enkelt sätt att driftsätta och hantera alla analyser, marknadsförings- och annonstaggar som behövs för att driva relevanta kundupplevelser.
 seo-description: Launch är nästa generation av tagghanteringsfunktioner från Adobe. Launch ger kunderna ett enkelt sätt att driftsätta och hantera alla analyser, marknadsförings- och annonstaggar som behövs för att driva relevanta kundupplevelser.
 translation-type: tm+mt
-source-git-commit: be4cf64c89a189a09a4a7774c8fadc76c6ee8458
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '618'
 ht-degree: 3%
@@ -30,7 +31,7 @@ Om du vill hitta Launch-tilläggen i CDP-gränssnittet i realtid i Adobe går du
 
 Starta tillägg för att vidarebefordra råa händelsedata till flera olika typer av destinationer. Tänk på tillägg som en **typ av mål för vidarebefordran** av händelser. Detta är en enklare typ av integrering med målplattformar, som bara vidarebefordrar råhändelsedata. Exempel på sådana är tillägget [](/help/rtcdp/destinations/gainsight-extension.md) Gainsight-anpassning eller [bekräftelsen från kundens tillägg](/help/rtcdp/destinations/confirmit-digital-feedback-extension.md).
 
-**Målen för profil-/segmentexport** i kunddata i Adobe i realtid hämtar Platform in händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Exempel på sådana är [Amazon S3-molnlagringsdestinationen](/help/rtcdp/destinations/amazon-s3-destination.md) eller [Google Display &amp; Video 360-reklamdestinationen](/help/rtcdp/destinations/google-dv360-destination.md).
+**Målen för profil-/segmentexport** i kunddataplattformen i Adobe i realtid hämtar in händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Exempel på sådana är [Amazon S3-molnlagringsdestinationen](/help/rtcdp/destinations/amazon-s3-destination.md) eller [Google Display &amp; Video 360-reklamdestinationen](/help/rtcdp/destinations/google-dv360-destination.md).
 
 ![Experience Platform Launch-tillägg jämfört med andra destinationer](/help/rtcdp/destinations/assets/launch-and-other-destinations.png)
 
@@ -59,7 +60,7 @@ Launch-tillägg kan delas in i följande kategorier i CDP i realtid i Adobe:
 
 * [Reklam](/help/rtcdp/destinations/advertising-destinations.md)
 * [Analytics](/help/rtcdp/destinations/analytics-destinations.md) 
-* [Datahantering Platform](/help/rtcdp/destinations/dmp-destinations.md)
+* [Datahanteringsplattform](/help/rtcdp/destinations/dmp-destinations.md)
 * [E-postmarknadsföringsmål](/help/rtcdp/destinations/email-marketing-destinations.md)
 * [Personanpassning](/help/rtcdp/destinations/personalization-destinations.md)
 * [Undersökningar](/help/rtcdp/destinations/survey-destinations.md)
