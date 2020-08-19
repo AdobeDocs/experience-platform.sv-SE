@@ -1,10 +1,11 @@
 ---
+keywords: livefyre;livefyre extension
 title: Adobe Livefyre-tillägg
 seo-title: Adobe Livefyre-tillägg
 description: Adobe Livefyre är en social destination i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: null
 translation-type: tm+mt
-source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
+source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
 workflow-type: tm+mt
 source-wordcount: '500'
 ht-degree: 2%
