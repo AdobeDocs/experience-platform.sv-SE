@@ -1,10 +1,11 @@
 ---
+keywords: social network;social network destinations;Livefyre;facebook;Facebook
 title: Destinationer för sociala nätverk
 seo-title: Destinationer för sociala nätverk
 description: Med sociala nätverksdestinationer kan ni aktivera profiler för era kampanjer för målgruppsanpassning, personalisering och undertryckning baserat på hashad-e-post.
 seo-description: Med sociala nätverksdestinationer kan ni aktivera profiler för era kampanjer för målgruppsanpassning, personalisering och undertryckning baserat på hashad-e-post.
 translation-type: tm+mt
-source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+source-git-commit: cbd748c1881c61f5e636567d94b68f2cf7302fa5
 workflow-type: tm+mt
 source-wordcount: '87'
 ht-degree: 0%
@@ -16,7 +17,7 @@ ht-degree: 0%
 
 Med sociala nätverksdestinationer kan ni aktivera profiler för era kampanjer för målgruppsanpassning, personalisering och undertryckning baserat på hashad-e-post.
 
-Adobe kunddata i realtid Platform stöder för närvarande följande mål för sociala nätverk:
+Adobe kunddataplattform i realtid stöder för närvarande följande mål för sociala nätverk:
 
 * [Adobe Livefyre-tillägg](/help/rtcdp/destinations/adobe-livefyre-extension.md)
 * [!DNL Facebook](/help/rtcdp/destinations/facebook-destination.md)
