@@ -1,12 +1,13 @@
 ---
-title: Profilvisningsprogram
-seo-title: Visa kundprofildata i realtid på kunddata i realtid Platform
-description: Visa kundprofildata i realtid på kunddata i realtid Platform
-seo-description: Visa kundprofildata i realtid på kunddata i realtid Platform
+keywords: view profiles rtcdp;rtcdp profile view;rtcdp profiles
+title: Visa profiler i CDP i realtid
+seo-title: Visa kundprofildata i realtid på kunddataplattformen i realtid
+description: Visa kundprofildata i realtid på kunddataplattformen i realtid
+seo-description: Visa kundprofildata i realtid på kunddataplattformen i realtid
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
-source-wordcount: '168'
+source-wordcount: '171'
 ht-degree: 0%
 
 ---
@@ -18,4 +19,4 @@ ht-degree: 0%
 
 I användargränssnittet kan du visa dessa skrivskyddade profiler och se viktig information om enskilda kunder, som inställningar, tidigare händelser och interaktioner samt segment som personen tillhör.
 
-Eftersom CDP [!DNL Real-time Customer Data Platform] är byggt på Adobe Experience Platform kan realtidskontrollen utnyttja profilvisningsfunktionerna som ingår i [!DNL Experience Platform]. En detaljerad guide till hur du visar kundprofiler i [!DNL Platform] användargränssnittet finns i användarhandboken för [kundprofiler](../../profile/ui/user-guide.md)i realtid.
+Eftersom CDP [!DNL Real-time Customer Data Platform] är byggt på Adobe Experience Platform kan CDP i realtid utnyttja profilvisningsfunktionerna som ingår i [!DNL Experience Platform]. En detaljerad guide till hur du visar kundprofiler i [!DNL Platform] användargränssnittet finns i användarhandboken för [kundprofiler](../../profile/ui/user-guide.md)i realtid.
