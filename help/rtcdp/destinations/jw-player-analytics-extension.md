@@ -1,10 +1,11 @@
 ---
+keywords: JW player;jw player;JW Player;jw extension;JW extension
 title: JW Player Analytics-tillägg (BETA)
 seo-title: JW Player Analytics-tillägg (BETA)
 description: JW Player Analytics-tillägget (BETA) är ett analysmål i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: JW Player Analytics-tillägget (BETA) är ett analysmål i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 33eba9e3f2e993c6958480b091ff004dc057f438
+source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
 workflow-type: tm+mt
 source-wordcount: '558'
 ht-degree: 2%
