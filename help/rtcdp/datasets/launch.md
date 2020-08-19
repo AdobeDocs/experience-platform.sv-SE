@@ -1,10 +1,11 @@
 ---
+keywords: website tags;web tags;launch tutorial
 title: Självstudiekurs Implementera webbplatstaggar med Adobe Launch
 seo-title: Implementera webbplatstaggar med Adobe Launch
-description: Använd Adobe Launch för att implementera webbplatstaggar i Adobe Experience Platform
-seo-description: Använd Adobe Launch för att implementera webbplatstaggar i Adobe Experience Platform
+description: Använda Adobe Launch för att implementera webbplatstaggar i Adobe Experience Platform
+seo-description: Använda Adobe Launch för att implementera webbplatstaggar i Adobe Experience Platform
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '470'
 ht-degree: 3%
@@ -26,19 +27,19 @@ I den här självstudiekursen beskrivs hur du implementerar webbplatstaggar för
 
 Den här självstudiekursen innehåller följande steg:
 
-1. Installera tillägget Adobe Experience Platform [!DNL Web SDK] .
+1. Installera Adobe Experience Platform- [!DNL Web SDK] tillägget.
 1. Skapa en regel som anger [!DNL Launch] vilka data som ska skickas.
 1. Paketera tillägget och regeln i ett bibliotek.
 
-## Installera tillägget Adobe Experience Platform [!DNL Web SDK]
+## Installera Adobe Experience Platform- [!DNL Web SDK] tillägget
 
-Installera först tillägget Adobe Experience Platform [!DNL Web SDK] .
+Installera först Adobe Experience Platform- [!DNL Web SDK] tillägget.
 
 1. Öppna [!DNL Launch]fliken **[!UICONTROL Extensions]** i.
 
    ![bild](assets/launch-overview.png)
 
-1. Välj tillägget Adobe Experience Platform Web SDK från [!DNL Launch] tillägget [!DNL Catalog]Konfigurationsskärmen öppnas.
+1. Välj Adobe Experience Platform Web SDK-tillägget i [!DNL Launch] tillägget [!DNL Catalog]Konfigurationsskärmen öppnas.
 
    ![bild](assets/launch-extension-install.png)
 
