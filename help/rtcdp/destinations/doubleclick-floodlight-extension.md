@@ -1,10 +1,11 @@
 ---
+keywords: DoubleClick Floodlight;doubleclick floodlight extension;doubleclick;floodlight
 title: Dubbelklicka på FlöLjus-tillägget (beta)
 seo-title: Dubbelklicka på FlöLjus-tillägget (beta)
 description: Tillägget DoubleClick Floodlight (Beta) är en annonsdestination i kunddataplattformen Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: Tillägget DoubleClick Floodlight (Beta) är en annonsdestination i kunddataplattformen Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
+source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
 workflow-type: tm+mt
 source-wordcount: '531'
 ht-degree: 2%
