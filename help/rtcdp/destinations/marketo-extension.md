@@ -1,10 +1,11 @@
 ---
+keywords: Marketo;marketo;Marketo extension;marketo extension
 title: Marketo-tillägg
 seo-title: Marketo-tillägg
 description: Tillägget Marketo är ett e-postmål i Adobe kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: Tillägget Marketo är ett e-postmål i Adobe kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
+source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
 workflow-type: tm+mt
 source-wordcount: '529'
 ht-degree: 2%
