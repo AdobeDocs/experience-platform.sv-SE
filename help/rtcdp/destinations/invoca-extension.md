@@ -1,10 +1,11 @@
 ---
+keywords: Invoca;invoca
 title: Anropa taggtillägg
 seo-title: Anropa taggtillägg
 description: Tillägget för anropstaggar är en röst för kundens mål i kunddataplattformen i Adobe. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: null
 translation-type: tm+mt
-source-git-commit: 33eba9e3f2e993c6958480b091ff004dc057f438
+source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
 workflow-type: tm+mt
 source-wordcount: '525'
 ht-degree: 2%
