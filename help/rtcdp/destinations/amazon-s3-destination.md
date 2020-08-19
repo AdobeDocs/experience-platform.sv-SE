@@ -1,10 +1,11 @@
 ---
+keywords: Amazon S3;S3 destination;s3;amazon s3
 title: Amazon S3-mål
 seo-title: Amazon S3-mål
-description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS) S3-lagring för att regelbundet exportera tabbavgränsade filer eller CSV-datafiler från Adobe Experience Platform till dina egna S3-fack.
-seo-description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS) S3-lagring för att regelbundet exportera tabbavgränsade filer eller CSV-datafiler från Adobe Experience Platform till dina egna S3-fack.
+description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS) S3-lagring för att regelbundet exportera tabbavgränsade filer eller CSV-datafiler från Adobe Experience Platform till dina egna S3-butiker.
+seo-description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS) S3-lagring för att regelbundet exportera tabbavgränsade filer eller CSV-datafiler från Adobe Experience Platform till dina egna S3-butiker.
 translation-type: tm+mt
-source-git-commit: 098dd31be4d6ee6971cd87bcbfe0f686e34918e1
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '202'
 ht-degree: 0%
@@ -16,7 +17,7 @@ ht-degree: 0%
 
 ## Översikt
 
-Skapa en utgående liveanslutning till ditt [!DNL Amazon Web Services] (AWS) S3-lagringsutrymme för att regelbundet exportera tabbavgränsade eller CSV-datafiler från Adobe Experience Platform till dina egna S3-fack.
+Skapa en utgående liveanslutning till ditt [!DNL Amazon Web Services] (AWS) S3-lagringsutrymme för att regelbundet exportera tabbavgränsade eller CSV-datafiler från Adobe Experience Platform till dina egna S3-butiker.
 
 ## Koppla mål {#connect-destination}
 
@@ -24,7 +25,7 @@ Mer information om hur du ansluter till molnlagringsdestinationer finns [i arbet
 
 Ange följande information i arbetsflödet för att skapa mål för [!DNL Amazon S3] mål:
 
-* **[!DNL Amazon S3]åtkomstnyckel och[!DNL Amazon S3]hemlig nyckel **: Generera[!DNL Amazon S3]en åtkomstnyckel - nyckelpar för hemlig åtkomst som ger CDP-åtkomst i realtid i Adobe till ditt[!DNL Amazon S3]konto.
+* **[!DNL Amazon S3]åtkomstnyckel och[!DNL Amazon S3]hemlig nyckel**: Generera [!DNL Amazon S3]en åtkomstnyckel - nyckelpar för hemlig åtkomst som ger CDP-åtkomst i realtid i Adobe till ditt [!DNL Amazon S3] konto.
 
 >[!IMPORTANT]
 >
