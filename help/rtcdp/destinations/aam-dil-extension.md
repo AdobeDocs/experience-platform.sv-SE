@@ -1,10 +1,11 @@
 ---
+keywords: Audience Manager DIL extension;destination audience manager;dil extension
 title: Audience Manager DIL utökningen
 seo-title: Audience Manager DIL utökningen
 description: Tillägget Audience Manager DIL är en DMP-destination i Adobe kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: Tillägget Audience Manager DIL är en DMP-destination i Adobe kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
+source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
 workflow-type: tm+mt
 source-wordcount: '594'
 ht-degree: 5%
