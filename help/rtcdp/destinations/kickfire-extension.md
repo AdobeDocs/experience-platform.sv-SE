@@ -1,10 +1,11 @@
 ---
+keywords: kickfire;Kickfire;kickfire extension;Kickfire Extension
 title: KickFire-tillägg
 seo-title: KickFire-tillägg
 description: KickFire-tillägget är en personaliseringsdestination i kunddataplattformen i Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: KickFire-tillägget är en personaliseringsdestination i kunddataplattformen i Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
+source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
 workflow-type: tm+mt
 source-wordcount: '518'
 ht-degree: 2%
