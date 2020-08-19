@@ -1,10 +1,10 @@
 ---
 title: Mappa variabler manuellt i Analytics
 seo-title: Mappa variabler manuellt i Analytics med Web SDK
-description: Mappa variabler manuellt till Analytics med bearbetningsregler
-seo-description: mappa variabler manuellt till Analytics med bearbetningsregler med Web SDK
+description: Mappa variabler manuellt i Analytics med bearbetningsregler
+seo-description: manuellt mappa variabler till Analytics med bearbetningsregler med Web SDK
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: 075d71353877045e12985b3914aaeeb478ed46d6
 workflow-type: tm+mt
 source-wordcount: '371'
 ht-degree: 0%
@@ -63,7 +63,7 @@ I följande regel är Analytics till exempel inställt på att fylla i **interna
 I följande exempel visas hur [`event` kommandot](https://docs.adobe.com/content/help/en/experience-platform/edge/fundamentals/tracking-events.html) kan användas med `xdm` alternativet att skicka och hämta data med AEP [!DNL Web SDK]. I det här exemplet matchar `event` kommandot [ExperienceEvent Commerce Details-schemat](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) så att productListItems `name` och `SKU` värden spåras:
 
 
-```
+```javascript
 alloy("event",{
   "xdm":{
     "commerce":{
