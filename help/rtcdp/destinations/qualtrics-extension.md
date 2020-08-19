@@ -1,10 +1,11 @@
 ---
+keywords: Qualtrics;qualtrics;Qualtrics Website Feedback;qualtrics website feedback;Qualtricks website feedback
 title: Qualtrics-tillägg för webbplatsfeedback
 seo-title: Qualtrics-tillägg för webbplatsfeedback
 description: Tillägget Qualtrics Website Feedback är ett undersökningsmål i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: Tillägget Qualtrics Website Feedback är ett undersökningsmål i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
+source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
 workflow-type: tm+mt
 source-wordcount: '600'
 ht-degree: 2%
