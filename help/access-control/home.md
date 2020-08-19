@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över åtkomstkontroll
 topic: overview
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: e66fd20eb7a153e556a3716bb255af084e52292e
 workflow-type: tm+mt
-source-wordcount: '1022'
+source-wordcount: '1028'
 ht-degree: 1%
 
 ---
@@ -26,7 +26,7 @@ Om du vill konfigurera åtkomstkontroll för [!DNL Experience Platform]måste du
 
 Ett arbetsflöde på hög nivå för att hämta och tilldela åtkomstbehörigheter kan sammanfattas på följande sätt:
 
-- När du prenumererar på Adobe Experience Platform skickas ett e-postmeddelande till administratören som anges i registreringsformuläret.
+- När du har licensierat Adobe Experience Platform, eller en program-/apptjänst som använder Experience Platform, skickas ett e-postmeddelande till administratören som anges under licensieringen.
 - Administratören loggar in på [Adobe Admin Console](#adobe-admin-console) och väljer **Adobe Experience Platform** i produktlistan på översiktssidan.
 - Administratören kan visa [standardproduktprofilerna](#product-profiles) eller skapa nya kundproduktprofiler efter behov.
 - Administratören kan redigera behörigheter och användare för befintliga produktprofiler.
