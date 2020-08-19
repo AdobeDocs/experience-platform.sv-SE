@@ -1,10 +1,11 @@
 ---
+keywords: rtcdp sources;sources rtcdp;real time customer data platform sources
 title: Översikt över källor
 seo-title: Källor i Adobe Experience Platform
-description: I det här dokumentet finns en översikt över Sources i Real-Time Customer Data Platform
-seo-description: I det här dokumentet finns en översikt över Sources i Real-Time Customer Data Platform
+description: Det här dokumentet innehåller en översikt över källor i kunddataplattformen i realtid
+seo-description: Det här dokumentet innehåller en översikt över källor i kunddataplattformen i realtid
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '99'
 ht-degree: 0%
