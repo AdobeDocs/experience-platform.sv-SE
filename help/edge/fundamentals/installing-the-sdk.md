@@ -4,7 +4,7 @@ seo-title: Adobe Experience Platform Web SDK installerar SDK
 description: Lär dig hur du installerar Experience Platform Web SDK
 seo-description: Lär dig hur du installerar Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 12cbcc26956cba2e14d64734c9210fa79bcc70b9
+source-git-commit: 075d71353877045e12985b3914aaeeb478ed46d6
 workflow-type: tm+mt
 source-wordcount: '623'
 ht-degree: 0%
@@ -54,6 +54,7 @@ Baskoden skapar en global funktion med namnet `alloy`. Använd den här funktion
 I det här exemplet byter den globala funktionen namn `mycustomname`i stället för `alloy`.
 
 >[!IMPORTANT]
+>
 >Undvik potentiella problem genom att använda ett namn som innehåller minst ett tecken som inte är en siffra och som inte står i konflikt med namnet på en egenskap som redan hittats på `window`.
 
 Utöver att skapa en global funktion läser den här baskoden även in ytterligare kod som finns i en extern fil \(`alloy.js`\) som finns på en server. Som standard läses den här koden in asynkront så att webbsidan kan fungera så bra som möjligt. Detta är den rekommenderade implementeringen.
