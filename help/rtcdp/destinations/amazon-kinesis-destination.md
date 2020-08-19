@@ -1,10 +1,11 @@
 ---
+keywords: Amazon Kinesis;kinesis destination;kinesis
 title: Amazon Kinesis
 seo-title: Amazon Kinesis
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 seo-description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '442'
 ht-degree: 0%
@@ -32,7 +33,7 @@ Du kan skapa en utgående anslutning i realtid till ditt [!DNL Amazon Kinesis] l
 ![Amazon Kinesis i användargränssnittet](/help/rtcdp/destinations/assets/aws-kinesis-destination.png)
 
 
-## Användningsexempel {#use-cases}
+## Use Cases {#use-cases}
 
 Genom att använda direktuppspelningsmål som [!DNL Amazon Kinesis]kan du enkelt mata in segmenteringshändelser med högt värde och associerade profilattribut i dina valfria system.
 
@@ -46,7 +47,7 @@ Ange följande information i arbetsflödet för att skapa mål för [!DNL Amazon
 
 ### I autentiseringssteget {#authentication-step}
 
-* **[!DNL Amazon Web Services]åtkomstnyckel och hemlig nyckel **: Generera[!DNL Amazon Web Services]en åtkomstnyckel - nyckelpar för hemlig åtkomst som ger CDP-åtkomst i realtid i Adobe till ditt[!DNL Amazon Kinesis]konto. Läs mer i[Amazon Web Services-dokumentationen](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+* **[!DNL Amazon Web Services]åtkomstnyckel och hemlig nyckel**: Generera [!DNL Amazon Web Services]en åtkomstnyckel - nyckelpar för hemlig åtkomst som ger CDP-åtkomst i realtid i Adobe till ditt [!DNL Amazon Kinesis] konto. Läs mer i [Amazon Web Services-dokumentationen](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 * **region**: Ange vilken [!DNL Amazon Web Services] region data ska strömmas till.
 
 ![Inmatningsfält i kontosteget](/help/rtcdp/destinations/assets/aws-kinesis-account-step.png)
