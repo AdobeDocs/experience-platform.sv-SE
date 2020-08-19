@@ -1,10 +1,11 @@
 ---
+keywords: Google Global Site Tag;gtag;google gtag;google extension;google gtag extension;GTAG
 title: Tillägget Google Global Site Tag
 seo-title: Tillägget Google Global Site Tag
 description: Tillägget Google Global Site Tag är ett analysmål i kunddataplattformen i Adobe. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: Tillägget Google Global Site Tag är ett analysmål i kunddataplattformen i Adobe. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
+source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
 workflow-type: tm+mt
 source-wordcount: '537'
 ht-degree: 2%
