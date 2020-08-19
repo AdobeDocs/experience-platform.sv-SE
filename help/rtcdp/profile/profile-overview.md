@@ -1,11 +1,11 @@
 ---
-keywords: rtcdp profile;real-time customer profile
+keywords: rtcdp profile;profiles rtcdp;rtcdp identities;rtcdp merge policies;real-time customer profile
 title: Översikt över kundprofiler i realtid
 seo-title: Kundprofil i realtid i kunddataplattformen i realtid
 description: En översikt över hur ni kan utveckla samordnade, enhetliga och relevanta kundupplevelser i realtid med kundprofiler.
 seo-description: Kunddataplattform, profil, data, upplevelser, kanaler i realtid
 translation-type: tm+mt
-source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
+source-git-commit: 54df4778a025811504801306120bda78e04281c1
 workflow-type: tm+mt
 source-wordcount: '394'
 ht-degree: 0%
