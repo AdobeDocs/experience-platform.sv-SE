@@ -1,10 +1,11 @@
 ---
+keywords: Analytics extension;analytics extension;destination analytics
 title: Adobe Analytics-tillägg
 seo-title: Adobe Analytics-tillägg
 description: Adobe Analytics-tillägget är ett analysmål i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 seo-description: Adobe Analytics-tillägget är ett analysmål i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
+source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
 workflow-type: tm+mt
 source-wordcount: '528'
 ht-degree: 2%
