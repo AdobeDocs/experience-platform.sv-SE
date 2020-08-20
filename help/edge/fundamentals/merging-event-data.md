@@ -3,8 +3,9 @@ title: Sammanfoga händelsedata
 seo-title: Sammanfoga händelsedata för Adobe Experience Platform Web SDK
 description: Lär dig hur du sammanfogar händelsedata för Experience Platform Web SDK
 seo-description: Lär dig hur du sammanfogar händelsedata för Experience Platform Web SDK
+keywords: merge;event data;eventMergeId;createEventMergeId;sendEvent;mergeId;merge id;eventMergeIdPromise; Merge Id Promise;
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
 workflow-type: tm+mt
 source-wordcount: '408'
 ht-degree: 0%
@@ -60,7 +61,7 @@ alloy("sendEvent", {
 
 Genom att skicka samma `eventMergeID` värde till båda händelsekommandona i det här exemplet utökas data i det andra händelsekommandot till data som tidigare skickats vid det första händelsekommandot. En post för varje händelsekommando skapas i [!DNL Experience Data Platform], men under rapporteringen förenas posterna med `eventMergeID` och visas som en enda händelse.
 
-Om du skickar data om en viss händelse till tredjepartsleverantörer kan du även inkludera dessa data `eventMergeID` med dem. Om du senare väljer att importera tredjepartsdata till Adobe Experience Platform används dessa för att sammanfoga alla data som samlats in som ett resultat av den diskreta händelse som inträffade på din webbsida. `eventMergeID`
+Om du skickar data om en viss händelse till tredjepartsleverantörer kan du även inkludera dessa data `eventMergeID` med dem. Om du senare väljer att importera tredjepartsdata till Adobe Experience Platform används de för att sammanfoga alla data som samlats in som ett resultat av den diskreta händelse som inträffade på din webbsida. `eventMergeID`
 
 ## Generera en `eventMergeID`
 
