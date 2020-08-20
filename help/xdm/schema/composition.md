@@ -5,7 +5,7 @@ title: Grunderna för schemakomposition
 topic: overview
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 04efbf63741ef39bbf0b22795be74087f1f7c595
+source-git-commit: 23a69653ee773562cb0261b8e0bb67411eb4856e
 workflow-type: tm+mt
 source-wordcount: '2787'
 ht-degree: 0%
@@ -68,7 +68,7 @@ Fält som vanligen markeras som&quot;[!UICONTROL Identity]&quot; är: e-postadre
 
 Det är viktigt att tänka på kundens identiteter under schemaplaneringsfasen för att säkerställa att data samlas ihop för att skapa en så robust profil som möjligt. Läs översikten om [Adobe Experience Platform Identity Service](../../identity-service/home.md) om hur identitetsinformation kan hjälpa er att leverera digitala upplevelser till era kunder.
 
-#### xdm:identityMap
+#### xdm:identityMap {#identityMap}
 
 `xdm:identityMap` är ett mappningsfält som beskriver de olika identitetsvärdena för en individ, tillsammans med deras associerade namnutrymmen. Det här fältet kan användas för att ange identitetsinformation för dina scheman, i stället för att definiera identitetsvärden inom strukturen för själva schemat.
 
