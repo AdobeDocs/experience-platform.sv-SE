@@ -3,8 +3,9 @@ title: Interagera med flera egenskaper
 seo-title: Adobe Experience Platform Web SDK Interagera med flera egenskaper
 description: Lär dig hur du interagerar med flera Experience Platform Web SDK-egenskaper
 seo-description: Lär dig hur du interagerar med flera Experience Platform Web SDK-egenskaper
+keywords: multiple properties;configure;sendEvent;edgeConfigId;orgId;
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
 workflow-type: tm+mt
 source-wordcount: '252'
 ht-degree: 0%
