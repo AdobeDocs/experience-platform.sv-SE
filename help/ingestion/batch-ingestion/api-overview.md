@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Utvecklarhandbok för Adobe Experience Platform Batch Ingakes
+title: Utvecklarhandbok för Adobe Experience Platform Batch Ingestion
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: 3eaef72de2999fc088b92562c08a896d1cb08e55
 workflow-type: tm+mt
-source-wordcount: '2552'
+source-wordcount: '2670'
 ht-degree: 3%
 
 ---
@@ -27,8 +27,8 @@ I följande avsnitt finns ytterligare information som du behöver känna till el
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 - [Batchförtäring](./overview.md): Gör att du kan importera data till Adobe Experience Platform som gruppfiler.
-- [!DNL Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
-- [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+- [[!DNL Experience Data Model] (XDM) System](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+- [[!DNL-sandlådor]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ### Läser exempel-API-anrop
 
@@ -38,22 +38,19 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
-- Behörighet: Bearer `{ACCESS_TOKEN}`
-- x-api-key: `{API_KEY}`
-- x-gw-ims-org-id: `{IMS_ORG}`
+- `Authorization: Bearer {ACCESS_TOKEN}`
+- `x-api-key: {API_KEY}`
+- `x-gw-ims-org-id: {IMS_ORG}`
 
 Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
-- x-sandbox-name: `{SANDBOX_NAME}`
+- `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
 >Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
-Begäranden som innehåller en nyttolast (POST, PUT, PATCH) kan kräva ytterligare ett `Content-Type` huvud. Godkända värden som är specifika för varje anrop anges i anropsparametrarna. Följande innehållstyper används i den här handboken:
-
-- Innehållstyp: application/json
-- Innehållstyp: application/octet-stream
+Begäranden som innehåller en nyttolast (POST, PUT, PATCH) kan kräva ytterligare ett `Content-Type` huvud. Godkända värden som är specifika för varje anrop anges i anropsparametrarna.
 
 ## Typer
 
@@ -65,7 +62,7 @@ Varken JSON eller CSV har till exempel typen datum eller tid. Därför uttrycks 
 
 Tabellen nedan visar de konverteringar som stöds vid inmatning av data.
 
-| Inkommande (rad) mot Target (kolumn) | Sträng | Byte | Kort | Heltal | Lång | Dubbel | Datum | Datum-tid | Objekt | Mappa |
+| Inkommande (rad) kontra mål (kol) | Sträng | Byte | Kort | Heltal | Lång | Dubbel | Datum | Datum-tid | Objekt | Mappa |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | Sträng | X | X | X | X | X | X | X | X |  |  |
 | Byte | X | X | X | X | X | X |  |  |  |  |
@@ -176,7 +173,7 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | --------- | ----------- |
 | `{BATCH_ID}` | ID:t för gruppen som du vill överföra till. |
 | `{DATASET_ID}` | ID för batchens referensdatauppsättning. |
-| `{FILE_NAME}` | Namnet på filen som du vill överföra. |
+| `{FILE_NAME}` | Namnet på filen som du vill överföra. Den här filsökvägen är den plats där filen sparas på Adobe. |
 
 **Begäran**
 
@@ -196,7 +193,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | Den fullständiga sökvägen och namnet för filen som du försöker överföra. |
+| `{FILE_PATH_AND_NAME}` | Den fullständiga sökvägen och namnet för filen som du försöker överföra. Den här filsökvägen är den lokala filsökvägen, till exempel `Users/sample-user/Downloads/sample.json`. |
 
 **Svar**
 
@@ -311,7 +308,7 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | --------- | ----------- |
 | `{BATCH_ID}` | ID:t för gruppen som du vill överföra till. |
 | `{DATASET_ID}` | ID för batchens referensdatauppsättning. |
-| `{FILE_NAME}` | Namnet på filen som du vill överföra. |
+| `{FILE_NAME}` | Namnet på filen som du vill överföra. Den här filsökvägen är den plats där filen sparas på Adobe. |
 
 **Begäran**
 
@@ -331,7 +328,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | Den fullständiga sökvägen och namnet för filen som du försöker överföra. |
+| `{FILE_PATH_AND_NAME}` | Den fullständiga sökvägen och namnet för filen som du försöker överföra. Den här filsökvägen är den lokala filsökvägen, till exempel `Users/sample-user/Downloads/sample.json`. |
 
 **Svar**
 
@@ -484,7 +481,7 @@ PATCH /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | --------- | ----------- |
 | `{BATCH_ID}` | ID:t för gruppen som du vill överföra till. |
 | `{DATASET_ID}` | ID för batchens referensdatauppsättning. |
-| `{FILE_NAME}` | Namnet på filen som du vill överföra. |
+| `{FILE_NAME}` | Namnet på filen som du vill överföra. Den här filsökvägen är den plats där filen sparas på Adobe. |
 
 **Begäran**
 
@@ -506,7 +503,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
 | Parameter | Beskrivning |
 | --------- | ----------- |
 | `{CONTENT_RANGE}` | I heltal börjar och slutar det begärda intervallet. |
-| `{FILE_PATH_AND_NAME}` | Den fullständiga sökvägen och namnet för filen som du försöker överföra. |
+| `{FILE_PATH_AND_NAME}` | Den fullständiga sökvägen och namnet för filen som du försöker överföra. Den här filsökvägen är den lokala filsökvägen, till exempel `Users/sample-user/Downloads/sample.json`. |
 
 
 **Svar**
@@ -734,7 +731,7 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | --------- | ----------- |
 | `{BATCH_ID}` | ID:t för gruppen som du vill överföra till. |
 | `{DATASET_ID}` | ID för batchens referensdatauppsättning. |
-| `{FILE_NAME}` | Namnet på filen som du vill överföra. |
+| `{FILE_NAME}` | Namnet på filen som du vill överföra. Den här filsökvägen är den plats där filen sparas på Adobe. |
 
 **Begäran**
 
@@ -754,7 +751,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | Den fullständiga sökvägen och namnet för filen som du försöker överföra. |
+| `{FILE_PATH_AND_NAME}` | Den fullständiga sökvägen och namnet för filen som du försöker överföra. Den här filsökvägen är den lokala filsökvägen, till exempel `Users/sample-user/Downloads/sample.json`. |
 
 
 **Svar**
@@ -941,7 +938,7 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | --------- | ----------- |
 | `{BATCH_ID}` | ID:t för gruppen som du vill överföra till. |
 | `{DATASET_ID}` | ID för batchens referensdatauppsättning. |
-| `{FILE_NAME}` | Namnet på filen som du vill överföra. |
+| `{FILE_NAME}` | Namnet på filen som du vill överföra. Den här filsökvägen är den plats där filen sparas på Adobe. |
 
 **Begäran**
 
@@ -961,7 +958,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | Den fullständiga sökvägen och namnet för filen som du försöker överföra. |
+| `{FILE_PATH_AND_NAME}` | Den fullständiga sökvägen och namnet för filen som du försöker överföra. Den här filsökvägen är den lokala filsökvägen, till exempel `Users/sample-user/Downloads/sample.json`. |
 
 **Svar**
 
