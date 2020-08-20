@@ -1,10 +1,11 @@
 ---
 title: Hämtar biblioteksinformation
-seo-title: Hämtar biblioteksinformation med Adobe Experience Platform Web SDK
+seo-title: Hämta biblioteksinformation med Adobe Experience Platform Web SDK
 description: Lär dig hur du hämtar information om det bibliotek som läses in på webbplatsen
 seo-description: Lär dig hur du hämtar information om biblioteket som har lästs in på webbplatsen av Adobe Experience Cloud SDK samlar in automatiskt
+keywords: library; library information;getLibraryInfo;libraryInfo;
 translation-type: tm+mt
-source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
 workflow-type: tm+mt
 source-wordcount: '104'
 ht-degree: 0%
