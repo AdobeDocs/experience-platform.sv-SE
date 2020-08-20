@@ -3,8 +3,9 @@ title: Snabbstart med Launch
 seo-title: Adobe Experience Platform Web SDK snabbstart med Launch
 description: Snabbstartsguide för hur du använder Experience Platform Web SDK-tillägget för att samla in data
 seo-description: Snabbstartsguide för hur du använder Experience Platform Web SDK-tillägget för att samla in data
+keywords: 1st-party domain;CNAME;schema;create schema;launch;aep web sdk extension;extension;configuration id;configuration tool;data element;create data element;XDM Object;sendEvent;send Event;
 translation-type: tm+mt
-source-git-commit: bc18ca26da37ecfca2ade9403be22d7de222facb
+source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 1%
@@ -16,8 +17,8 @@ ht-degree: 1%
 
 Den här guiden leder dig igenom de olika sätten att konfigurera Adobe Experience Platform Web SDK i Launch. Du måste vitlistas för att kunna använda den här funktionen. Om du vill komma med på väntelistan kontaktar du din CSM.
 
-- Ha en [förstapartsdomän (CNAME)](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-first-party.html) aktiverad. Om du redan har en CNAME för Analytics bör du använda den. Testning under utveckling fungerar utan CNAME, men du behöver en innan du går till produktion.
-- Var berättigad till Adobe Experience Platform. Om du inte har köpt Platform kommer Adobe att förse dig med Experience Platform Data Services Foundation för användning med SDK utan extra kostnad.
+- Ha en [förstapartsdomän (CNAME)](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-first-party.html) aktiverad. Om du redan har en CNAME for Analytics bör du använda den. Testning under utveckling fungerar utan CNAME, men du behöver en innan du går till produktion.
+- Var berättigad till Adobe Experience Platform. Om du inte har köpt Platform kommer Adobe att förse dig med Experience Platform Data Services Foundation för användning i begränsad omfattning med SDK utan extra kostnad.
 - Använd den senaste versionen av Visitor ID-tjänsten.
 
 ## Förbered ett schema
