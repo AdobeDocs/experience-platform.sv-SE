@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Dataåtkomstöversikt
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: cb5df9b44486bda84f08805f1077d6097e3666e2
 workflow-type: tm+mt
 source-wordcount: '1332'
 ht-degree: 0%
@@ -14,13 +14,13 @@ ht-degree: 0%
 
 # Fråga datauppsättningsdata med [!DNL Data Access] API
 
-I det här dokumentet finns en stegvis självstudiekurs som beskriver hur du hittar, får tillgång till och hämtar data som lagras i en datauppsättning med hjälp av [!DNL Data Access] API:t i Adobe Experience Platform. Du kommer också att få en introduktion till några av API:ts unika funktioner, till exempel sidindelning och partiella nedladdningar. [!DNL Data Access]
+Det här dokumentet innehåller en stegvis självstudiekurs som beskriver hur du hittar, hämtar och hämtar data som lagras i en datauppsättning med hjälp av API:t [!DNL Data Access] i Adobe Experience Platform. Du kommer också att få en introduktion till några av API:ts unika funktioner, till exempel sidindelning och partiella nedladdningar. [!DNL Data Access]
 
 ## Komma igång
 
 Den här självstudiekursen visar hur du skapar och fyller i en datauppsättning. Mer information finns i självstudiekursen [Skapa](../../catalog/datasets/create.md) datauppsättning.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa Platform API:er.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:erna för plattformen.
 
 ### Läser exempel-API-anrop
 
@@ -365,7 +365,7 @@ HEAD /files/{FILE_ID}?path={FILE_NAME}
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `{FILE_ID}` | Filens identifierare. |
-| `{FILE_NAME`} | Filnamnet (till exempel profiles.parquet) |
+| `{FILE_NAME}` | Filnamnet (till exempel profiles.parquet) |
 
 **Begäran**
 
@@ -396,7 +396,7 @@ GET /files/{FILE_ID}?path={FILE_NAME}
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `{FILE_ID}` | Filens identifierare. |
-| `{FILE_NAME`} | Filnamnet (till exempel profiles.parquet). |
+| `{FILE_NAME}` | Filnamnet (till exempel profiles.parquet). |
 
 **Begäran**
 
