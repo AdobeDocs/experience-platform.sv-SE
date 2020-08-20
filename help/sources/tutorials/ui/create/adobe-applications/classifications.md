@@ -5,9 +5,9 @@ solution: Experience Platform
 title: Skapa en Adobe Analytics Classifications-dataanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: abb15e3daac4aebd46012822c790b056d0b3d2c1
+source-git-commit: e0d842b3c5d3b628e117c14d47d6c114b36484dd
 workflow-type: tm+mt
-source-wordcount: '574'
+source-wordcount: '587'
 ht-degree: 1%
 
 ---
@@ -21,7 +21,7 @@ I den här självstudiekursen beskrivs hur du skapar en Adobe Analytics Classifi
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [[!DNL Experience Data Model (XDM) System]](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
+* [[!DNL Experience Data Model] (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
 * [[!DNL Real-time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [[!DNL-sandlådor]](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
@@ -57,7 +57,7 @@ När du har granskat dataflödet kan du klicka **[!UICONTROL Finish]** och vänt
 
 ![](../../../../images/tutorials/create/classifications/review.png)
 
-## Övervaka och ta bort klassificeringsdataflödet
+## Övervaka klassificeringens dataflöde
 
 När dataflödet har skapats kan du övervaka de data som hämtas genom det. På **[!UICONTROL Catalog]** skärmen väljer du **[!UICONTROL Dataflows]** för att visa en lista över etablerade flöden som är kopplade till ditt [!DNL Classifications] konto.
 
@@ -69,13 +69,13 @@ Välj den **[!UICONTROL Target dataset]** du vill komma åt.
 
 ![](../../../../images/tutorials/create/classifications/list-of-dataflows.png)
 
-På **[!UICONTROL Dataset activity]** sidan visas information om den valda måldatauppsättningen, inklusive information om dess batchstatus, datauppsättnings-ID och schema. Välj **[!UICONTROL Delete dataset]** att ta bort.
+På **[!UICONTROL Dataset activity]** sidan visas information om den valda måldatauppsättningen, inklusive information om dess batchstatus, datauppsättnings-ID och schema.
 
-![](../../../../images/tutorials/create/classifications/batch-screen.png)
+>[!IMPORTANT]
+>Även om det går att ta bort datauppsättningar för andra källanslutningar stöds det för närvarande inte för datakopplingen för analysklassificeringar. Om du tar bort en datauppsättning av misstag, kontakta Adobe kundtjänst.
 
-En dialogruta visas som bekräftar borttagningen. Välj **[!UICONTROL Delete]** att slutföra.
+![](../../../../images/tutorials/create/classifications/dataset.png)
 
-![](../../../../images/tutorials/create/classifications/delete-confirm.png)
 
 ## Nästa steg
 
