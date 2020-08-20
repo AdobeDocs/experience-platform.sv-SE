@@ -1,10 +1,11 @@
 ---
 title: Snabbstart med oformaterad javascript
-seo-title: 'Snabbstart för Adobe Experience Platform Web SDK '
+seo-title: 'Adobe Experience Platform Web SDK - snabbstart '
 description: Snabbstartsguide för att använda Experience Platform Web SDK för att samla in data
 seo-description: Snabbstartsguide för att använda Experience Platform Web SDK för att samla in data
+keywords: 1st-party domain;CNAME;schema;create schema;configuration id;configuration tool;data element;create data element;XDM Object;sendEvent;send Event;install sdk;install web sdk;configure;configure web sdk;
 translation-type: tm+mt
-source-git-commit: d958e323df2535c168edd3a35b878fcc4bb73370
+source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
 workflow-type: tm+mt
 source-wordcount: '517'
 ht-degree: 1%
@@ -16,8 +17,8 @@ ht-degree: 1%
 
 Den här guiden leder dig igenom de olika sätten att konfigurera Adobe Experience Platform Web SDK. Om du vill använda den här funktionen måste du vitlistas. Om du vill komma med på väntelistan kontaktar du din CSM.
 
-- Ha en [förstapartsdomän (CNAME)](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-first-party.html) aktiverad. Om du redan har en CNAME för Analytics bör du använda den. Testning under utveckling fungerar utan CNAME, men du behöver en innan du går till produktion.
-- Var berättigad till Adobe Experience Platform.  Om du inte har köpt Platform kommer Adobe att förse dig med Experience Platform Data Services Foundation för användning med SDK utan extra kostnad.
+- Ha en [förstapartsdomän (CNAME)](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-first-party.html) aktiverad. Om du redan har en CNAME for Analytics bör du använda den. Testning under utveckling fungerar utan CNAME, men du behöver en innan du går till produktion.
+- Var berättigad till Adobe Experience Platform.  Om du inte har köpt Platform kommer Adobe att förse dig med Experience Platform Data Services Foundation för användning i begränsad omfattning med SDK utan extra kostnad.
 - Använd den senaste versionen av Visitor ID-tjänsten.
 
 ## Förbered ett schema
