@@ -5,7 +5,7 @@ title: Adobe Experience Platform Identity Service
 topic: overview
 description: 'Identitetsnamnutrymmen är en komponent i identitetstjänsten som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet"name<span>@email.com" som e-postadress eller"443522" som ett numeriskt CRM-ID. '
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 235f611115b89a87c924a00409a6acae4f5ac97d
 workflow-type: tm+mt
 source-wordcount: '748'
 ht-degree: 1%
@@ -49,7 +49,7 @@ Följande identitetstyper är tillgängliga i [!DNL Platform]:
 | Icke-människor | Används för att lagra identifierare som behöver namnutrymmen, men som inte är kopplade till ett personkluster. Dessa identifierare filtreras sedan från identitetsdiagrammet. Möjliga användningsexempel är data om produkter, organisationer, butiker osv. (Till exempel en produkt-SKU.) |
 | Telefon | Identiteter av den här typen är PII. Detta är en indikation på [!DNL Identity Service] att hantera värdet känsligt. |
 
-### Standardnamnutrymmen
+### Standardnamnutrymmen {#standard}
 
 I Adobe Experience Platform finns flera identitetsnamnutrymmen som är tillgängliga för alla organisationer. Dessa kallas standardnamnutrymmen och visas med [!DNL Identity Service] API:t eller via [!DNL Platform] gränssnittet.
 
