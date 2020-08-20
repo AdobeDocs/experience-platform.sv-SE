@@ -3,10 +3,11 @@ title: Produkter
 seo-title: Supporting products with Adobe Experience Platform Web SDK
 description: Lär dig hur du lägger till data om du har produkter eller en kundvagn med Experience Platform Web SDK
 seo-description: Lär dig hur du lägger till data om du har produkter eller en kundvagn med Experience Platform Web SDK
+keywords: products;commerce;measures;measure;order;cartAbandons;checkouts;productListAdds;productListOpens;productListRemovals;productListReopens;productListViews;productViews;purchases;saveForLaters;currencyCode;payments;paymentAmount;paymentType;transactionID;priceTotal;purchaseID;purchaseOrderNumber;
 translation-type: tm+mt
-source-git-commit: 075d71353877045e12985b3914aaeeb478ed46d6
+source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
 workflow-type: tm+mt
-source-wordcount: '1314'
+source-wordcount: '1312'
 ht-degree: 1%
 
 ---
@@ -18,8 +19,7 @@ Om du har produkter på din webbplats är detta en standarduppsättning med sake
 
 Det här dokumentet använder [ExperienceEvent Commerce Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) -blandningen. Blandningen `commerce` delas upp i två delar: objektet `commerce` och `productListItems` arrayen. Med objektet kan du `commerce` ange vilka åtgärder som ska utföras på `productListItems` arrayen.
 
->[!Tip]
->
+>[!TIP]
 >
 >Om du känner till Adobe Analytics är The `commerce` mest närbesläktad med `events` variabeln. Den `productListItems` är mer närbesläktad med `products` variabeln.
 
@@ -27,7 +27,7 @@ Det här dokumentet använder [ExperienceEvent Commerce Details](https://github.
 
 Nedan visas en lista över `measures` tillgängliga i `commerce` objektet.
 
->[!Tip]
+>[!TIP]
 >
 >Ett mått har två fält: `id` och `value`. För det mesta använder du bara `value` fältet (till exempel `'value':1`). I `id` fältet kan du ange en unik identifierare som du kan använda för att hålla reda på när åtgärden skickades. Se XDM-dokumentationen för [Mät](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/measure.schema.md).
 
