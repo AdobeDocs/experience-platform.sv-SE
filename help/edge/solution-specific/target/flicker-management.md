@@ -1,10 +1,11 @@
 ---
 title: Hantera flimmer för personaliserade upplevelser
-seo-title: Hanteraren för Adobe Experience Platform Web SDK
+seo-title: Hantera Adobe Experience Platform Web SDK flimmer
 description: Lär dig hantera flimmer i användarupplevelser
 seo-description: Lär dig hur du hanterar flimmer med Experience Platform Web SDK-egenskaper
+keywords: target;flicker;prehidingStyle;asynchronously;asynchronous;
 translation-type: tm+mt
-source-git-commit: 4bea14d18ce119bdec0d428f885d240f92244cfc
+source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
 workflow-type: tm+mt
 source-wordcount: '491'
 ht-degree: 0%
