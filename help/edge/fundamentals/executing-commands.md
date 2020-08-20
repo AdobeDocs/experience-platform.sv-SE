@@ -3,8 +3,9 @@ title: Utföra kommandon
 seo-title: Kör Adobe Experience Platform Web SDK-kommandon
 description: Lär dig hur du kör Experience Platform Web SDK-kommandon
 seo-description: Lär dig hur du kör Experience Platform Web SDK-kommandon
+keywords: Executing commands;commandName;Promises;getLibraryInfo;response objects;consent;
 translation-type: tm+mt
-source-git-commit: bf4194e1449bddd662f2152f84dbbe90060b5d30
+source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
 workflow-type: tm+mt
 source-wordcount: '419'
 ht-degree: 0%
@@ -44,7 +45,7 @@ alloy("commandName", options)
   })
 ```
 
-Om det inte är viktigt för dig att veta när kommandot är klart kan du ta bort `then` samtalet.
+Om det inte är viktigt för dig att veta när kommandot är klart, kan du ta bort `then` samtalet.
 
 ```javascript
 alloy("commandName", options)
