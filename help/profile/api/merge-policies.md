@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Sammanslagningsprinciper - Kundprofils-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
+source-git-commit: 0309a2d6da888a2a88af161977310f213c36a85d
 workflow-type: tm+mt
-source-wordcount: '2035'
+source-wordcount: '2381'
 ht-degree: 0%
 
 ---
@@ -56,7 +56,7 @@ Det fullständiga principobjektet för sammanfogning representerar en uppsättni
 | `name` | Eget namn som sammanfogningsprincipen kan identifieras med i listvyer. |
 | `imsOrgId` | Organisations-ID som den här sammanfogningsprincipen tillhör |
 | `identityGraph` | [Identitetsdiagramobjekt](#identity-graph) som anger identitetsdiagrammet som relaterade identiteter ska hämtas från. Profilfragment som hittas för alla relaterade identiteter sammanfogas. |
-| `attributeMerge` | [Kopplingsobjekt för](#attribute-merge) attribut anger på vilket sätt sammanfogningsprincipen prioriterar profilattributsvärden vid datakonflikter. |
+| `attributeMerge` | [Kopplingsobjekt för attribut](#attribute-merge) anger hur sammanfogningsprincipen prioriterar profilattribut vid datakonflikter. |
 | `schema` | Det [schemaobjekt](#schema) som sammanfogningsprincipen kan användas på. |
 | `default` | Booleskt värde som anger om den här sammanfogningsprincipen är standard för det angivna schemat. |
 | `version` | [!DNL Platform] en sparad version av sammanfogningsprincipen. Det här skrivskyddade värdet ökas stegvis när en sammanfogningsprincip uppdateras. |
@@ -86,7 +86,7 @@ Det fullständiga principobjektet för sammanfogning representerar en uppsättni
 
 ### Identitetsdiagram {#identity-graph}
 
-[Adobe Experience Platform Identity Service](../../identity-service/home.md) hanterar de identitetsdiagram som används globalt och för varje organisation i [!DNL Experience Platform]. Attributet `identityGraph` för sammanfogningsprincipen definierar hur relaterade identiteter för en användare ska fastställas.
+[Adobe Experience Platform identitetstjänst](../../identity-service/home.md) hanterar de identitetsdiagram som används globalt och för varje organisation i [!DNL Experience Platform]. Attributet `identityGraph` för sammanfogningsprincipen definierar hur relaterade identiteter för en användare ska fastställas.
 
 **identityGraph-objekt**
 
@@ -111,7 +111,7 @@ Där `{IDENTITY_GRAPH_TYPE}` är något av följande:
 
 ### Koppla attribut {#attribute-merge}
 
-Ett profilfragment är profilinformationen för endast en identitet från listan över identiteter som finns för en viss användare. När typen av identitetsdiagram som används resulterar i mer än en identitet, finns det en risk för att värden som står i konflikt med varandra för profilegenskaper och prioritet måste anges. Med `attributeMerge`kan du ange vilka datamängdsprofilvärden som ska prioriteras i händelse av en sammanslagningskonflikt.
+Ett profilfragment är profilinformationen för endast en identitet från listan över identiteter som finns för en viss användare. När typen av identitetsdiagram som används resulterar i mer än en identitet, finns det en risk för att profilattribut som står i konflikt med varandra, och prioritet måste anges. Med `attributeMerge`kan du ange vilka profilattribut som ska prioriteras i händelse av en sammanslagningskonflikt mellan datamängder av typen nyckelvärde (postdata).
 
 **attributeMerge, objekt**
 
@@ -123,11 +123,11 @@ Ett profilfragment är profilinformationen för endast en identitet från listan
 
 Där `{ATTRIBUTE_MERGE_TYPE}` är något av följande:
 
-* **&quot;timestampOrdered&quot;**: (standard) Prioritera profilen som uppdaterades senast vid en eventuell konflikt. Attributet är inte obligatoriskt om du använder den här sammanfogningstypen `data` .
-* **&quot;dataSetPriedence&quot;** : Prioritera profilfragment baserat på den datauppsättning som de kommer från. Detta kan användas när information som finns i en datauppsättning är att föredra eller betrodd framför data i en annan datauppsättning. När du använder den här sammanfogningstypen är attributet obligatoriskt, eftersom det visar datauppsättningarna i prioritetsordning. `order`
-   * **&quot;beställ&quot;**: När&quot;dataSetPriedence&quot; används måste en `order` array anges med en lista över datauppsättningar. Datauppsättningar som inte ingår i listan kommer inte att sammanfogas. Datamängder måste med andra ord anges explicit för att sammanfogas till en profil. Arrayen visar `order` datauppsättningens ID i prioritetsordning.
+* **`timestampOrdered`**: (standard) Prioritera profilen som uppdaterades senast vid en eventuell konflikt. Attributet är inte obligatoriskt om du använder den här sammanfogningstypen `data` . `timestampOrdered` stöder också anpassade tidsstämplar som har företräde när profilfragment sammanfogas inom eller mellan datauppsättningar. Mer information finns i avsnittet Bilaga om [hur du använder anpassade tidsstämplar](#custom-timestamps).
+* **`dataSetPrecedence`** : Prioritera profilfragment baserat på den datauppsättning som de kommer från. Detta kan användas när information som finns i en datauppsättning är att föredra eller betrodd framför data i en annan datauppsättning. När du använder den här sammanfogningstypen är attributet obligatoriskt, eftersom det visar datauppsättningarna i prioritetsordning. `order`
+   * **`order`**: När&quot;dataSetPriedence&quot; används måste en `order` array anges med en lista över datauppsättningar. Datauppsättningar som inte ingår i listan kommer inte att sammanfogas. Datamängder måste med andra ord anges explicit för att sammanfogas till en profil. Arrayen visar `order` datauppsättningens ID i prioritetsordning.
 
-**Exempel på attributeMerge-objekt som använder datamängdPrioritet-typ**
+**Exempel på attributeMerge-objekt som använder`dataSetPrecedence`typ**
 
 ```json
     "attributeMerge": {
@@ -141,7 +141,7 @@ Där `{ATTRIBUTE_MERGE_TYPE}` är något av följande:
     }
 ```
 
-**Exempel på attributeMerge-objekt med typen timestampOrdered**
+**Exempel på attributeMerge-objekt som använder`timestampOrdered`typ**
 
 ```json
     "attributeMerge": {
@@ -151,9 +151,9 @@ Där `{ATTRIBUTE_MERGE_TYPE}` är något av följande:
 
 ### Schema {#schema}
 
-Schemaobjektet anger det XDM-schema som den här sammanfogningsprincipen skapas för.
+Schemaobjektet anger XDM-schemat (Experience Data Model) som sammanfogningsprincipen skapas för.
 
-**`schema`object **
+**`schema`object**
 
 ```json
     "schema": {
@@ -170,6 +170,8 @@ Där värdet för `name` är namnet på XDM-klassen som schemat som är associer
         "name": "_xdm.context.profile"
     }
 ```
+
+Om du vill veta mer om XDM och arbeta med scheman i Experience Platform börjar du med att läsa [systemöversikten](../../xdm/home.md)för XDM.
 
 ## Åtkomst till sammanfogningsprinciper {#access-merge-policies}
 
@@ -724,7 +726,42 @@ En slutförd borttagningsbegäran returnerar HTTP-status 200 (OK) och en tom sva
 
 ## Nästa steg
 
-Nu när ni vet hur ni skapar och konfigurerar sammanfogningsprinciper för er IMS-organisation kan ni använda dem för att skapa målgruppssegment utifrån era [!DNL Real-time Customer Profile] data. Se dokumentationen [till](../../segmentation/home.md) Adobe Experience Platform Segmenteringstjänsten för att börja definiera och arbeta med segment.
+Nu när ni vet hur ni skapar och konfigurerar sammanfogningsprinciper för er IMS-organisation kan ni använda dem för att skapa målgruppssegment utifrån era [!DNL Real-time Customer Profile] data. Se dokumentationen [till](../../segmentation/home.md) Adobe Experience Platform Segmentation Service för att börja definiera och arbeta med segment.
+
+## Bilaga
+
+### Använda egna tidsstämplar {#custom-timestamps}
+
+När profilposter hämtas till Experience Platform hämtas en systemtidsstämpel vid tidpunkten för inmatningen och läggs till i posten. När `timestampOrdered` är valt som `attributeMerge` typ för en sammanfogningsprincip sammanfogas profiler baserat på systemets tidsstämpel. Sammanfogningen görs med andra ord baserat på den tidsstämpel som användes när posten hämtades till Platform.
+
+Ibland kan det finnas användningsfall, t.ex. för att fylla i data baklänges eller för att säkerställa rätt ordning på händelser om posterna är inlästa i fel ordning, där det är nödvändigt att ange en anpassad tidsstämpel och att sammanfogningsprincipen följer den anpassade tidsstämpeln i stället för systemtidsstämpeln.
+
+För att du ska kunna använda en anpassad tidsstämpel måste den [externa källsystemets granskningsinformation](#mixin-details) läggas till i profilschemat. När du har lagt till den anpassade tidsstämpeln kan du fylla i den med hjälp av `xdm:lastUpdatedDate` fältet. När en post hämtas in med fältet ifyllt, kommer Experience Platform att använda det fältet för att sammanfoga poster eller profilfragment inom och mellan datauppsättningar. `xdm:lastUpdatedDate` Om `xdm:lastUpdatedDate` inte finns, eller inte är ifylld, fortsätter Platform att använda systemtidsstämpeln.
+
+>[!NOTE]
+>
+>Du måste se till att `xdm:lastUpdatedDate` tidsstämpeln fylls i när du skickar ett PATCH på samma post.
+
+Stegvisa anvisningar om hur du arbetar med scheman med API:t för schemaregister, inklusive hur du lägger till mixiner i scheman, finns i [självstudiekursen för att skapa ett schema med API](../../xdm/tutorials/create-schema-api.md).
+
+Om du vill arbeta med anpassade tidsstämplar med hjälp av användargränssnittet läser du avsnittet om hur du [använder anpassade tidsstämplar](../ui/merge-policies.md#custom-timestamps) i användarhandboken för [sammanfogningsprinciper](../ui/merge-policies.md).
+
+#### Information om delad granskning av externa källsystem {#mixin-details}
+
+I följande exempel visas korrekt ifyllda fält i den externa källsystemets granskningsinformation. Den fullständiga JSON-blandningen kan också visas i XDM-rapporten ( [public Experience Data Model)](https://github.com/adobe/xdm/blob/master/schemas/common/external-source-system-audit-details.schema.json) på GitHub.
+
+```json
+{
+  "xdm:createdBy": "{CREATED_BY}",
+  "xdm:createdDate": "2018-01-02T15:52:25+00:00",
+  "xdm:lastUpdatedBy": "{LAST_UPDATED_BY}",
+  "xdm:lastUpdatedDate": "2018-01-02T15:52:25+00:00",
+  "xdm:lastActivityDate": "2018-01-02T15:52:25+00:00",
+  "xdm:lastReferencedDate": "2018-01-02T15:52:25+00:00",
+  "xdm:lastViewedDate": "2018-01-02T15:52:25+00:00"
+ }
+```
+
 
 
 
