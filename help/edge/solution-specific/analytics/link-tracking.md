@@ -3,8 +3,9 @@ title: Sid- och länkspårning med Adobe Analytics
 seo-title: Länkspårning till Adobe Analytics med Adobe Experience Platform Web SDK
 description: Lär dig hur du skickar länkdata till Adobe Analytics med Experience Platform Web SDK
 seo-description: Lär dig hur du skickar länkdata till Adobe Analytics med Experience Platform Web SDK
+keywords: adobe analytics;analytics;sendEvent;s.t();s.tl();webPageDetails;pageViews;webInteraction;web Interaction;page views;link tracking;links;track links;clickCollection;click collection;
 translation-type: tm+mt
-source-git-commit: b50082405cd0392ff827a83ad82091fbcd370b21
+source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
 workflow-type: tm+mt
 source-wordcount: '236'
 ht-degree: 0%
