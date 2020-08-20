@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: November 18, 2019
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: f881c1365684b1ca9e6bf9a8ce866d234dc54128
+source-git-commit: cb5df9b44486bda84f08805f1077d6097e3666e2
 workflow-type: tm+mt
-source-wordcount: '1884'
+source-wordcount: '1882'
 ht-degree: 1%
 
 ---
@@ -30,7 +30,7 @@ Uppdateringar av befintliga funktioner:
 
 ## [!DNL Real-time Customer Data Platform] {#rtcdp}
 
-Adobe Real-time Customer Data Platform (CDP) bygger på Adobe Experience Platform och hjälper företag att samla in kända och okända data för att aktivera kundprofiler med intelligent beslutsfattande under hela kundresan. CDP i realtid kombinerar flera datakällor för företag för att skapa enhetliga profiler i realtid som kan användas för att leverera personliga personaliserade kundupplevelser i alla kanaler och enheter.
+Adobe kunddataplattform i realtid (CDP) bygger på Adobe Experience Platform och hjälper företag att sammanföra kända och okända data för att aktivera kundprofiler med intelligent beslutsfattande under hela kundresan. CDP i realtid kombinerar flera datakällor för företag för att skapa enhetliga profiler i realtid som kan användas för att leverera personliga personaliserade kundupplevelser i alla kanaler och enheter.
 
 [!DNL Real-time Customer Data Platform] innehåller verktyg för datastyrning, identitetshantering, avancerad segmentering och datavetenskap, så att ni kan skapa profiler och definiera målgrupper samt få djupgående insikter samtidigt som ni kan tillämpa strikta policyer för datastyrning.
 
@@ -43,37 +43,37 @@ Med CDP i realtid kan man
 * Generera användbara insikter och skala målgrupper med hjälp av AI och maskininlärning från Adobe Sensei som är framtagen för marknadsförare.
 * Leverera personaliserade upplevelser i realtid i alla kanaler och på alla destinationer.
 
-Mer information finns i Platform-dokumentationen [för kunddata i](../../rtcdp/overview.md)Adobe i realtid.
+Mer information finns i dokumentationen [för](../../rtcdp/overview.md)Adobe kunddataplattform i realtid.
 
 **Viktiga funktioner**
 
 | Funktion | Beskrivning |
 |---|---|
 | Mål  | Färdiga integreringar med målplattformar som stöds av Adobe och [!DNL Real-time Customer Data Platform] som aktiverar data till dessa partners på ett smidigt sätt. Mer information finns i [Destinationer](#destinations) nedan. |
-| Kontrollpanel för måttuppgifter på startsida | På Adobe Real-time Customer Data Platform (Real-time CDP) hemsida finns en mätinstrumentpanel som visar information om profiler och segment. Hemsidan innehåller även länkar till utbildningsmaterial. Se avsnittet om kunddata i [realtid Platform-statistik](#real-time-customer-data-platform-metrics) nedan. |
+| Kontrollpanel för måttuppgifter på startsida | På Adobe Real-time Customer Data Platform (CDP i realtid) finns en mätinstrumentpanel som visar information om profiler och segment. Hemsidan innehåller även länkar till utbildningsmaterial. Se avsnittet om kunddata för [kundens dataplattmått](#real-time-customer-data-platform-metrics) i realtid nedan. |
 | Källor | Du kan importera data från en mängd olika källor som Adobe Solutions, molnbaserad lagring, tredjepartsprogramvara och CRM. Läs mer i avsnittet [Källor](#sources) nedan. |
 
-**[!DNL Real-time Customer Data Platform]mått **
+**[!DNL Real-time Customer Data Platform]mått**
 
-Hemsidan Adobe Real-time Customer Data Platform (Real-time CDP), som innehåller en mätinstrumentpanel, visas när du loggar in på CDP i realtid.
+Hemsidan Adobe Real-time Customer Data Platform (CDP i realtid), som innehåller en mätinstrumentpanel, visas när du loggar in på CDP i realtid.
 
 Hemsidan är bara en av platserna där metriska kort visas. CDP ger dig mätkort i realtid genom hela upplevelsen. Dessa mätvärden ger information om data, profiler och målgrupper i systemet.
 
 Om det inte finns några data i systemet när du loggar in på CDP i realtid visas inte instrumentpanelen på startsidan. I det här fallet innehåller startsidan utbildningsmaterial för en förstagångsupplevelse. När data samlas in uppdateras instrumentpanelen automatiskt för att visa information om dessa data.
 
-Mer information finns i [realtidsöversikten över kunddata i Platform](../../rtcdp/home-page-dashboards.md)
+Mer information finns i Översikt över kunddata för [kunddataplattformen i realtid](../../rtcdp/home-page-dashboards.md)
 
 ## [!DNL Destinations] {#destinations}
 
-[!DNL Destinations] är färdiga integreringar med målplattformar som stöds av Adobe Customer Data Platform i realtid och som aktiverar data till dessa partners på ett smidigt sätt. Mer information finns i artikeln Översikt över [](../../rtcdp/destinations/destinations-overview.md) destinationer.
+[!DNL Destinations] är färdiga integreringar med målplattformar som stöds av Adobe kunddataplattform i realtid och som aktiverar data till dessa partners på ett smidigt sätt. Mer information finns i artikeln Översikt över [](../../rtcdp/destinations/destinations-overview.md) destinationer.
 
 **Tillgängliga destinationer**
 
-I november-versionen stöder Adobe kunddata i realtid Platform följande destinationer:
+I november-versionen stöder Adobe kunddataplattform i realtid följande destinationer:
 
 * Advertising: [!DNL Google]
-* E-postmarknadsföring: Adobe Campaign, [!DNL Salesforce Marketing Cloud], [!DNL Responsys], [!DNL Oracle Eloqua
-   ]
+* E-postmarknadsföring: Adobe Campaign, [!DNL Salesforce Marketing Cloud], [!DNL Responsys], [!DNL Oracle Eloqua]
+
 Information om var och en av destinationerna finns i [målkatalogen](../../rtcdp/destinations/destinations-catalog.md) .
 
 **Kända begränsningar**
@@ -105,7 +105,7 @@ Mer information om källor finns i [Källor - översikt](../../sources/home.md).
 
 ## [!DNL Data Science Workspace] {#dsw}
 
-Adobe Experience Platform [!DNL Data Science Workspace] gör det möjligt för datavetare att sömlöst generera insikter från data och innehåll i olika Adobe-program och tredjepartssystem genom att bygga och driftsätta Machine Learning-modeller. [!DNL Data Science Workspace] är nära integrerat med [!DNL Platform] och driver hela livscykeln för datavetenskap, inklusive utforskning och förberedelse av XDM-data, följt av utveckling och driftsättning av modeller som automatiskt berikar [!DNL Real-time Customer Profile] med maskininlärningsinsikter.
+Med Adobe Experience Platform [!DNL Data Science Workspace] kan datavetare smidigt generera insikter från data och innehåll i olika Adobe-program och tredjepartssystem genom att skapa och driftsätta Machine Learning-modeller. [!DNL Data Science Workspace] är nära integrerat med [!DNL Platform] och driver hela livscykeln för datavetenskap, inklusive utforskning och förberedelse av XDM-data, följt av utveckling och driftsättning av modeller som automatiskt berikar [!DNL Real-time Customer Profile] med maskininlärningsinsikter.
 
 **Nya funktioner**
 
