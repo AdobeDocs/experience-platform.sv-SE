@@ -3,8 +3,9 @@ title: Skicka data till Adobe Audience Manager
 seo-title: Skicka data till Adobe Audience Manager med Adobe Experience Platform Web SDK
 description: Lär dig hur du skickar data till Adobe Audience Manager med Experience Platform Web SDK
 seo-description: Lär dig hur du skickar data till Adobe Audience Manager med Experience Platform Web SDK
+keywords: audience manager;aam;identities;sync identities;namespace;
 translation-type: tm+mt
-source-git-commit: b87b1f8a979e028c5ebf57cecf0213a075df90a6
+source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
 workflow-type: tm+mt
 source-wordcount: '256'
 ht-degree: 0%
