@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Schema Registry developer appendix
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: cb5df9b44486bda84f08805f1077d6097e3666e2
 workflow-type: tm+mt
 source-wordcount: '1265'
 ht-degree: 2%
@@ -37,7 +37,7 @@ Följande är en jämförelse sida vid sida som visar födelsedagsrelaterade fä
   <td>
   <pre class="JSON language-JSON hljs">
         { "xdm:bornDate": { "title": "Födelsedatum", "typ": "string", "format": "date", }, "xdm:bornDayAndMonth": { "title": "Födelsedatum", "typ": "string", "pattern": "[0-1][0-9]-[0-9][0-9]", }, "xdm:bornYear": { "title": "Födelseår", "typ": "integer", "minimum": 1, "maximum": 32767 }
-      </pre>
+  </pre>
   </td>
   <td>
   <pre class="JSON language-JSON hljs">
@@ -49,7 +49,7 @@ Följande är en jämförelse sida vid sida som visar födelsedagsrelaterade fä
 
 ### Varför krävs kompatibilitetsläge?
 
-Adobe Experience Platform är utformat för att fungera med flera lösningar och tjänster, var och en med sina egna tekniska utmaningar och begränsningar (t.ex. hur vissa tekniker hanterar specialtecken). Kompatibilitetsläge har utvecklats för att övervinna dessa begränsningar.
+Adobe Experience Platform är utformat för att fungera tillsammans med flera lösningar och tjänster, var och en med sina egna tekniska utmaningar och begränsningar (t.ex. hur vissa tekniker hanterar specialtecken). Kompatibilitetsläge har utvecklats för att övervinna dessa begränsningar.
 
 De flesta [!DNL Experience Platform] tjänster, inklusive [!DNL Catalog], [!DNL Data Lake]och [!DNL Real-time Customer Profile] användning [!DNL Compatibility Mode] i stället för standard-XDM. API:t [!DNL Schema Registry] använder också [!DNL Compatibility Mode]och exemplen i det här dokumentet visas alla med [!DNL Compatibility Mode].
 
