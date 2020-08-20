@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Visa resurser
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: cb5df9b44486bda84f08805f1077d6097e3666e2
 workflow-type: tm+mt
 source-wordcount: '508'
 ht-degree: 1%
@@ -31,7 +31,7 @@ GET /{CONTAINER_ID}/{RESOURCE_TYPE}?{QUERY_PARAMS}
 | --- | --- |
 | `{CONTAINER_ID}` | Behållaren där resurserna finns (&quot;global&quot; eller&quot;tenant&quot;). |
 | `{RESOURCE_TYPE}` | Den typ av resurs som ska hämtas från [!DNL Schema Library]. Giltiga typer är `classes`, `mixins`, `schemas`, `datatypes`och `descriptors`. |
-| `{QUERY_PARAMS`} | Valfria frågeparametrar för att filtrera resultat efter. Mer information finns i avsnittet om [frågeparametrar](#query) . |
+| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. Mer information finns i avsnittet om [frågeparametrar](#query) . |
 
 **Begäran**
 
@@ -98,7 +98,7 @@ De vanligaste frågeparametrarna för sidindelning är:
 
 Du kan filtrera resultat med hjälp av `property` parametern, som används för att tillämpa en viss operator på en viss JSON-egenskap i de hämtade resurserna. Operatorer som stöds är:
 
-| Operator | Beskrivning | Exempel |
+| Operatör | Beskrivning | Exempel |
 | --- | --- | --- |
 | `==` | Filtrerar efter om egenskapen är lika med det angivna värdet. | `property=title==test` |
 | `!=` | Filtrerar efter om egenskapen inte är lika med det angivna värdet. | `property=title!=test` |
