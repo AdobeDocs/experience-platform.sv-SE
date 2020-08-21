@@ -5,9 +5,9 @@ title: Färgextrahering
 topic: Developer guide
 description: Färgextraheringstjänsten kan, när den har en bild, beräkna histogrammet för pixelfärger och sortera dem efter dominerande färger i grupper.
 translation-type: tm+mt
-source-git-commit: e69f4e8ddc0fe5f7be2b2b2bd89c09efdfca8e75
+source-git-commit: 4f7b5ca50171f4948726c44dbf31025011adf35f
 workflow-type: tm+mt
-source-wordcount: '665'
+source-wordcount: '689'
 ht-degree: 1%
 
 ---
@@ -31,7 +31,7 @@ Den här metoden använder en djupinlärningsbaserad förgrundsextraherare för 
 
 Följande bild användes i exemplet som visas i det här dokumentet:
 
-![testbild](../images/test_image.jpeg)
+![testbild](../images/QQAsset1.jpg)
 
 **API-format**
 
@@ -47,7 +47,7 @@ Följande begäran extraherar färger från en bild baserat på indataparametrar
 
 >[!CAUTION]
 >
->`analyzer_id` bestämmer vilket som [!DNL Sensei Content Framework] används. Kontrollera att du har rätt `analyzer_id` information innan du gör din förfrågan.
+>`analyzer_id` bestämmer vilket som [!DNL Sensei Content Framework] används. Kontrollera att du har rätt `analyzer_id` information innan du gör din förfrågan. För färgextraheringstjänsten är `analyzer_id` ID: `Feature:image-color-histogram:Service-6fe52999293e483b8e4ae9a95f1b81a7`
 
 ```SHELL
 curl -i -X POST https://sensei.adobe.io/services/v1/predict \
@@ -86,7 +86,7 @@ curl -i -X POST https://sensei.adobe.io/services/v1/predict \
 
 | Egenskap | Beskrivning | Obligatoriskt |
 | --- | --- | --- |
-| `analyzer_id` | Det [!DNL Sensei] tjänst-ID som din begäran distribueras under. Det här ID:t avgör vilken av dem som [!DNL Sensei Content Frameworks] används. | Ja |
+| `analyzer_id` | Det [!DNL Sensei] tjänst-ID som din begäran distribueras under. Det här ID:t avgör vilken av dem som [!DNL Sensei Content Frameworks] används. Kontakta Content and Commerce AI-teamet om du vill skapa ett anpassat ID för anpassade tjänster. | Ja |
 | `application-id` | ID:t för det program du skapade. | Ja |
 | `data` | En array som innehåller JSON-objekt. Varje objekt i arrayen representerar en bild. Alla parametrar som skickas som en del av den här arrayen åsidosätter de globala parametrar som anges utanför `data` arrayen. Alla återstående egenskaper som beskrivs nedan kan åsidosättas inifrån `data`. | Ja |
 | `content-id` | Unikt ID för det dataelement som returneras i svaret. Om detta inte skickas tilldelas ett automatiskt genererat ID. | Nej |
@@ -106,7 +106,7 @@ Ett lyckat svar returnerar detaljerna om de extraherade färgerna. Varje färg r
 - Procentandelen av den här färgen som visas i förhållande till bilden
 - Färgens RGB-värde
 
-I det första exempelobjektet nedan `feature_value` betyder `White,0.82,239,239,239` det att färgen är vit, vit i 82 % av bilden och har ett RGB-värde på 239 239 239.
+I det första exempelobjektet nedan `feature_value` betyder `White,0.59,251,251,243` det att färgen är vit, vit i 59 % av bilden och har ett RGB-värde på 251 251 243.
 
 ```json
 {
@@ -124,15 +124,19 @@ I det första exempelobjektet nedan `feature_value` betyder `White,0.82,239,239,
             "feature_value": [
               {
                 "feature_name": "color_name_and_rgb",
-                "feature_value": "White,0.82,239,239,239"
+                "feature_value": "White,0.59,251,251,243"
               },
               {
-                "feature_value": "Dark_Blue,0.11,41,60,86",
+                "feature_value": "Orange,0.30,248,169,48",
                 "feature_name": "color_name_and_rgb"
               },
               {
                 "feature_name": "color_name_and_rgb",
-                "feature_value": "Royal_Blue,0.08,63,91,123"
+                "feature_value": "Mustard,0.08,251,199,77"
+              },
+              {
+                "feature_name": "color_name_and_rgb",
+                "feature_value": "Gold,0.02,250,191,55"
               }
             ],
             "feature_name": "color"
