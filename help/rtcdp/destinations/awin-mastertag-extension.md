@@ -3,11 +3,11 @@ keywords: Awin Advertiser mastertag extension;mastertag tag;Awin;awin;AWIN
 title: Awin Advertiser Mastertag-tillägg
 seo-title: Awin Advertiser Mastertag-tillägg
 description: Awin Advertiser Mastertag-tillägget är en annonsdestination i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: null
+seo-description: Awin Advertiser Mastertag-tillägget är en annonsdestination i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
+source-git-commit: 164c51e543d5eba11e4756723f3fecd84ec48f59
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '544'
 ht-degree: 2%
 
 ---
