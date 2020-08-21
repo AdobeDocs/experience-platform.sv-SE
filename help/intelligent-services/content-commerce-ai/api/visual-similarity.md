@@ -5,9 +5,9 @@ title: Visuell likhet
 topic: Developer guide
 description: När en bild anges hittas visuellt liknande bilder från en katalog automatiskt av den visuella likhetstjänsten.
 translation-type: tm+mt
-source-git-commit: e69f4e8ddc0fe5f7be2b2b2bd89c09efdfca8e75
+source-git-commit: 4f7b5ca50171f4948726c44dbf31025011adf35f
 workflow-type: tm+mt
-source-wordcount: '451'
+source-wordcount: '497'
 ht-degree: 2%
 
 ---
@@ -23,7 +23,7 @@ När en bild anges hittas visuellt liknande bilder från en katalog automatiskt 
 
 Följande bild användes i exempelbegäran som visas i det här dokumentet:
 
-![testbild](../images/test_image.jpeg)
+![testbild](../images/Query_Image.jpeg)
 
 **API-format**
 
@@ -37,7 +37,7 @@ Följande begäran hämtar visuellt liknande bilder från en katalog baserat på
 
 >[!CAUTION]
 >
->`analyzer_id` bestämmer vilket som [!DNL Sensei Content Framework] används. Kontrollera att du har rätt `analyzer_id` information innan du gör din förfrågan.
+>`analyzer_id` bestämmer vilket som [!DNL Sensei Content Framework] används. Kontrollera att du har rätt `analyzer_id` information innan du gör din förfrågan. Kontakta betateamet för Content and Commerce AI om du vill ha dina svar `analyzer_id` för den här tjänsten.
 
 ```SHELL
 curl -i -X POST https://sensei.adobe.io/services/v1/predict \
@@ -76,7 +76,7 @@ curl -i -X POST https://sensei.adobe.io/services/v1/predict \
 
 | Egenskap | Beskrivning | Obligatoriskt |
 | --- | --- | --- |
-| `analyzer_id` | Det [!DNL Sensei] tjänst-ID som din begäran distribueras under. Det här ID:t avgör vilken av dem som [!DNL Sensei Content Frameworks] används. | Ja |
+| `analyzer_id` | Det [!DNL Sensei] tjänst-ID som din begäran distribueras under. Det här ID:t avgör vilken av dem som [!DNL Sensei Content Frameworks] används. Kontakta Content and Commerce AI-teamet om du vill skapa ett anpassat ID för anpassade tjänster. | Ja |
 | `application-id` | ID:t för det program du skapade. | Ja |
 | `data` | En array som innehåller ett JSON-objekt med varje objekt i arrayen som representerar en bild. Alla parametrar som skickas som en del av den här arrayen åsidosätter de globala parametrar som anges utanför `data` arrayen. Alla återstående egenskaper som beskrivs nedan kan åsidosättas inifrån `data`. | Ja |
 | `content-id` | Unikt ID för det dataelement som returneras i svaret. Om detta inte skickas tilldelas ett automatiskt genererat ID. | Nej |
@@ -91,6 +91,10 @@ curl -i -X POST https://sensei.adobe.io/services/v1/predict \
 **Svar**
 
 Ett lyckat svar returnerar en `response` array som innehåller en `feature_value` och `feature_name` för var och en av de visuellt liknande bilder som finns i katalogen.
+
+Följande visuellt liknande bilder returnerades i det exempelsvar som visas nedan:
+
+![liknande bilder](../images/results.jpg)
 
 ```json
 {
@@ -156,3 +160,4 @@ Ett lyckat svar returnerar en `response` array som innehåller en `feature_value
   "error": []
 }
 ```
+
