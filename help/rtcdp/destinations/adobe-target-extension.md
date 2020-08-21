@@ -3,11 +3,11 @@ keywords: target extension;target
 title: Adobe Target-tillägg
 seo-title: Adobe Target-tillägg
 description: Adobe Target-tillägget är ett personaliseringsmål i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: null
+seo-description: Adobe Target-tillägget är ett personaliseringsmål i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
+source-git-commit: 164c51e543d5eba11e4756723f3fecd84ec48f59
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '543'
 ht-degree: 2%
 
 ---
