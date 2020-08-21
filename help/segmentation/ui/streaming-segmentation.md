@@ -5,9 +5,9 @@ title: Direktuppspelningssegmentering
 topic: ui guide
 description: Med direktuppspelad segmentering på Adobe Experience Platform kan ni segmentera i nära realtid samtidigt som ni fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificering allt eftersom data når plattformen, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data överförs till plattformen, vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 translation-type: tm+mt
-source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
+source-git-commit: d0323fd2e769f97fa738ea55e7aba1d7ae821051
 workflow-type: tm+mt
-source-wordcount: '725'
+source-wordcount: '759'
 ht-degree: 0%
 
 ---
@@ -60,7 +60,9 @@ När du har skapat ett direktuppspelningsaktiverat segment kan du visa informati
 
 ![](../images/ui/streaming-segmentation/monitoring-streaming-segment.png)
 
-Mer information om **[!UICONTROL total qualified audience size]** finns. Om ett jobb har körts inom de senaste 24 timmarna visas **[!UICONTROL Total qualified audience size]** från jobbet, förutom ett linjediagram för målgruppen som lagts till. I annat fall visas **[!UICONTROL Total estimated audience size]** bilden, förutom en trendlinje för visualisering.
+Mer information om **[!UICONTROL total qualified audience size]** finns. Här **[!UICONTROL Total qualified audience size]** visas det totala antalet kvalificerade målgrupper från den senaste körningen av segmentjobbet. Om ett segmentjobb inte slutfördes inom de senaste 24 timmarna hämtas antalet målgrupper från en uppskattning i stället.
+
+Under är ett linjediagram som visar antalet segment som kvalificerats och diskvalificerats under de senaste 24 timmarna. Listrutan kan justeras så att den visar de senaste 24 timmarna, den senaste veckan eller de senaste 30 dagarna.
 
 ![](../images/ui/streaming-segmentation/monitoring-streaming-segment-graph.png)
 
