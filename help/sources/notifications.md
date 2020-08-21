@@ -5,7 +5,7 @@ solution: Experience Platform
 title: Flödeskörningsmeddelanden
 topic: overview
 translation-type: tm+mt
-source-git-commit: a014a5efeebfcce5c36a9ea87f690bdcd605ef61
+source-git-commit: b5b785d8415c15e3acb9e1155811a66c51477717
 workflow-type: tm+mt
 source-wordcount: '859'
 ht-degree: 0%
