@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Samla in betalningsdata via källanslutningar och API:er
 topic: overview
 translation-type: tm+mt
-source-git-commit: 773823333fe0553515ebf169b4fd956b8737a9c3
+source-git-commit: c26b2b4256d8d1d23a285efbacd8b6c9e255cd18
 workflow-type: tm+mt
-source-wordcount: '1696'
+source-wordcount: '1702'
 ht-degree: 0%
 
 ---
@@ -647,7 +647,7 @@ curl -X POST \
 | `sourceConnectionIds` | Det [källanslutnings-ID](#source) som hämtades i ett tidigare steg. |
 | `targetConnectionIds` | Det [målanslutnings-ID](#target-connection) som hämtades i ett tidigare steg. |
 | `transformations.params.mappingId` | Det [mappnings-ID](#mapping) som hämtades i ett tidigare steg. |
-| `transformations.params.deltaColum` | Den angivna kolumnen används för att skilja mellan nya och befintliga data. Inkrementella data importeras baserat på tidsstämpeln för den markerade kolumnen. |
+| `transformations.params.deltaColum` | Den angivna kolumnen används för att skilja mellan nya och befintliga data. Inkrementella data importeras baserat på tidsstämpeln för den markerade kolumnen. Datumformatet som stöds för `deltaColumn` är `yyyy-MM-dd HH:mm:ss`. |
 | `transformations.params.mappingId` | Det mappnings-ID som är kopplat till databasen. |
 | `scheduleParams.startTime` | Starttiden för dataflödet i epok-tid. |
 | `scheduleParams.frequency` | Frekvensen med vilken dataflödet samlar in data. Godtagbara värden är: `once`, `minute`, `hour`, `day`eller `week`. |
