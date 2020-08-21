@@ -5,9 +5,9 @@ title: Färgextrahering
 topic: Developer guide
 description: Tjänsten för extrahering av nyckelord extraherar automatiskt nyckelord eller nyckelfraser som bäst beskriver dokumentets ämne när de anges i ett textdokument. För att extrahera nyckelord används en kombination av algoritmer för namngiven enhetsigenkänning (NER) och extrahering av nyckelord utan övervakning.
 translation-type: tm+mt
-source-git-commit: e69f4e8ddc0fe5f7be2b2b2bd89c09efdfca8e75
+source-git-commit: 4f7b5ca50171f4948726c44dbf31025011adf35f
 workflow-type: tm+mt
-source-wordcount: '718'
+source-wordcount: '742'
 ht-degree: 2%
 
 ---
@@ -84,7 +84,7 @@ Se tabellen under exempelnyttolasten för mer information om de indataparametrar
 
 >[!CAUTION]
 >
->`analyzer_id` bestämmer vilket som [!DNL Sensei Content Framework] används. Kontrollera att du har rätt `analyzer_id` information innan du gör din förfrågan.
+>`analyzer_id` bestämmer vilket som [!DNL Sensei Content Framework] används. Kontrollera att du har rätt `analyzer_id` information innan du gör din förfrågan. För nyckelordsextraheringstjänsten är `analyzer_id` ID: `Feature:cintel-ner:Service-1a35aefb0f0f4dc0a3b5262370ebc709`
 
 ```SHELL
 curl -w'\n' -i -X POST https://sensei.adobe.io/services/v1/predict \
@@ -119,7 +119,7 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v1/predict \
 
 | Egenskap | Beskrivning | Obligatoriskt |
 | --- | --- | --- |
-| `analyzer_id` | Det [!DNL Sensei] tjänst-ID som din begäran distribueras under. Det här ID:t avgör vilken av dem som [!DNL Sensei Content Frameworks] används. | Ja |
+| `analyzer_id` | Det [!DNL Sensei] tjänst-ID som din begäran distribueras under. Det här ID:t avgör vilken av dem som [!DNL Sensei Content Frameworks] används. Kontakta Content and Commerce AI-teamet om du vill skapa ett anpassat ID för anpassade tjänster. | Ja |
 | `application-id` | ID:t för programmet som skapades. | Ja |
 | `data` | En array som innehåller ett JSON-objekt med varje objekt i arrayen som representerar ett dokument. Alla parametrar som skickas som en del av den här arrayen åsidosätter de globala parametrar som anges utanför `data` arrayen. Alla återstående egenskaper som beskrivs nedan kan åsidosättas inifrån `data`. | Ja |
 | `language` | Inmatningstextens språk. Standardvärdet är `en`. | Nej |
