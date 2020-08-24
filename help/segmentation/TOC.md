@@ -3,10 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Hjälp om Adobe Experience Platform segmenteringstjänst
 translation-type: tm+mt
-source-git-commit: e351a2d489730c1f1bd5f87be8d85612090bc009
+source-git-commit: 5a10a31f4be5173af8b459b9ab8a53096348be1d
 workflow-type: tm+mt
-source-wordcount: '116'
-ht-degree: 6%
+source-wordcount: '118'
+ht-degree: 7%
 
 ---
 
@@ -38,13 +38,14 @@ ht-degree: 6%
    - [Array-, list- och set-funktioner](pql/array-functions.md)
    - [Kartfunktioner](pql/map-functions.md)
    - [Strängfunktioner](pql/string-functions.md)
+   - [Objektfunktioner](pql/object-functions.md)
    - [Aritmetiska funktioner](pql/arithmetic-functions.md)
    - [Sammanställningsfunktioner](pql/aggregation-functions.md)
    - [Datum- och tidsfunktioner](pql/datetime-functions.md)
    - [Filterfunktioner](pql/filter-functions.md)
    - [Logiska kvantifierare](pql/logical-quantifiers.md)
    - [Diverse funktioner](pql/misc-functions.md)
-- Tutorials {#tutorials}
+- Självstudiekurser {#tutorials}
    - [Skapa ett segment](tutorials/create-a-segment.md)
    - [Utvärdera ett segment](tutorials/evaluate-a-segment.md)
    - [Skapa en datauppsättning för att exportera data](tutorials/create-dataset-export-segment.md)
