@@ -5,9 +5,9 @@ title: Skapa ett segment
 topic: tutorial
 description: Det här dokumentet innehåller en självstudiekurs för att utveckla, testa, förhandsgranska och spara en segmentdefinition med Adobe Experience Platform Segmentation Service API.
 translation-type: tm+mt
-source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
+source-git-commit: a93b3a1980ca0f1d3a32257a923eb7ffc8896fd5
 workflow-type: tm+mt
-source-wordcount: '901'
+source-wordcount: '894'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # Skapa ett segment
 
-Det här dokumentet innehåller en självstudiekurs för att utveckla, testa, förhandsgranska och spara en segmentdefinition med [DNL Adobe Experience Platform Segmentation Service API](../api/getting-started.md).
+Det här dokumentet innehåller en självstudiekurs för att utveckla, testa, förhandsgranska och spara en segmentdefinition med [!DNL Adobe Experience Platform Segmentation Service API](../api/getting-started.md).
 
 Mer information om hur du skapar segment med användargränssnittet finns i guiden [](../ui/overview.md)Skapa segment.
 
