@@ -5,7 +5,7 @@ title: Ansvarsfriskrivningar
 topic: overview
 description: 'Experience Platform tillåter dina kunder att skicka avanmälningsbegäranden om användning och lagring av sina data i kundprofilen i realtid]. Dessa avanmälningsförfrågningar ingår i California Consumer Privacy Act (CCPA), som ger personer bosatta i Kalifornien rätt att få tillgång till och radera sina personuppgifter och att få veta om deras personuppgifter säljs eller offentliggörs (och till vem). '
 translation-type: tm+mt
-source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
+source-git-commit: 0fc356b67af4d34e35cd9329385ec284d9336953
 workflow-type: tm+mt
 source-wordcount: '987'
 ht-degree: 0%
@@ -45,7 +45,7 @@ Här är en exempelbild som visar de avanmälningsblandningar som lagts till i e
 
 Strukturen för varje blandning, samt en beskrivning av fälten som de bidrar till schemat, beskrivs mer ingående i följande avsnitt.
 
-### [!DNL Profile Privacy]
+### [!DNL Profile Privacy] {#profile-privacy}
 
 Med [!DNL Profile Privacy] mixin kan ni hämta in två typer av CCPA-avanmälningsbegäranden från kunder:
 
@@ -69,7 +69,7 @@ Blandningen [!DNL Profile Privacy] innehåller följande fält:
 
 Om du vill visa hela strukturen för [!DNL Profile Privacy] mixinen läser du [XDM-databasen](https://github.com/adobe/xdm/blob/master/schemas/context/profile-privacy.schema.json) för GitHub eller förhandsgranskar mixinen med hjälp av plattformsgränssnittet.
 
-### [!DNL Profile Preferences Details]
+### [!DNL Profile Preferences Details] {#profile-preferences-details}
 
 I [!DNL Profile Preferences Details] blandningen finns flera fält som representerar inställningar för kundprofiler (t.ex. e-postformat, önskat språk och tidszon). Ett av fälten i den här mixinen, OptInOut (`optInOut`), tillåter att avanmälningsvärden ställs in för enskilda kanaler.
 
