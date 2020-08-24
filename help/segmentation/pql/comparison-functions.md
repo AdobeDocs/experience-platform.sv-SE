@@ -4,17 +4,17 @@ solution: Experience Platform
 title: Jämförelsefunktioner
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 92f92f480f29f7d6440f4e90af3225f9a1fcc3d0
+source-git-commit: 84a5b992639c1cabfdeaec5262964c9873826592
 workflow-type: tm+mt
-source-wordcount: '295'
-ht-degree: 3%
+source-wordcount: '292'
+ht-degree: 7%
 
 ---
 
 
 # Jämförelsefunktioner
 
-Jämförelsefunktioner används för att jämföra olika uttryck och värden, returnera `true` eller `false` därefter. Mer information om andra PQL-funktioner finns i översikten [för](./overview.md)profilfrågespråk.
+Jämförelsefunktioner används för att jämföra olika uttryck och värden, returnera `true` eller `false` därefter. Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikten](./overview.md).
 
 ## Är lika med
 
@@ -52,7 +52,7 @@ Följande PQL-fråga kontrollerar om hemadresslandet inte är i Kanada.
 homeAddress.countryISO != "CA"
 ```
 
-## Större än
+## Greater than
 
 Funktionen `>` (större än) används för att kontrollera om det första värdet är större än det andra värdet.
 
@@ -70,7 +70,7 @@ Följande PQL-fråga definierar personer vars födelsedagar inte infaller i janu
 person.birthMonth > 2
 ```
 
-## Större än eller lika med
+## Greater than or equal to
 
 Funktionen `>=` (större än eller lika med) används för att kontrollera om det första värdet är större än eller lika med det andra värdet.
 
@@ -88,7 +88,7 @@ Följande PQL-fråga definierar personer vars födelsedagar inte infaller i janu
 person.birthMonth >= 3
 ```
 
-## Mindre än
+## Less than
 
 Jämförelsefunktionen `<` (mindre än) används för att kontrollera om det första värdet är mindre än det andra värdet.
 
@@ -106,7 +106,7 @@ Följande PQL-fråga definierar personer vars födelsedag är i januari.
 person.birthMonth < 2
 ```
 
-## Mindre än eller lika med
+## Less than or equal to
 
 Jämförelsefunktionen `<=` (mindre än eller lika med) används för att kontrollera om det första värdet är mindre än eller lika med det andra värdet.
 
