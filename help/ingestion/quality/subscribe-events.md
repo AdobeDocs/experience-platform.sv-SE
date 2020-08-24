@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Prenumerera på dataöverföringshändelser
 topic: overview
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 5a10a31f4be5173af8b459b9ab8a53096348be1d
 workflow-type: tm+mt
-source-wordcount: '806'
+source-wordcount: '805'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Meddelanden om dataöverföring
 
-Processen att samla in data i Adobe Experience Platform består av flera steg. När du har identifierat datafiler som behöver importeras [!DNL Platform]till, påbörjas intagsprocessen och varje steg görs i följd tills data antingen har importerats eller misslyckats. Injektionsprocessen kan initieras med API:t [för](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) datainmatning i Adobe Experience Platform eller med [!DNL Experience Platform] användargränssnittet.
+Processen att samla in data till Adobe Experience Platform består av flera steg. När du har identifierat datafiler som behöver importeras [!DNL Platform]till, påbörjas intagsprocessen och varje steg görs i följd tills data antingen har importerats eller misslyckats. Injektionsprocessen kan initieras med [Adobe Experience Platform API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) för datainmatning eller med [!DNL Experience Platform] användargränssnittet.
 
 Data som läses in till [!DNL Platform] måste gå igenom flera steg för att nå målet, [!DNL Data Lake] eller [!DNL Real-time Customer Profile] datalagret. Varje steg innebär att bearbeta data, validera data och sedan lagra data innan de skickas vidare till nästa steg. Beroende på mängden data som hämtas kan detta bli en tidskrävande process och det finns alltid en risk att processen misslyckas på grund av validerings-, semantik- eller bearbetningsfel. Om ett fel uppstår måste dataproblemen åtgärdas och sedan måste hela importen startas om med de korrigerade datafilerna.
 
@@ -28,7 +28,7 @@ Nedan visas en lista över tillgängliga statusmeddelanden för dataöverföring
 >
 >Det finns bara ett händelseämne för alla meddelanden om dataöverföring. Händelsekoden kan användas för att skilja mellan olika statusvärden.
 
-| Platform Service | Status | Händelsebeskrivning | Händelsekod |
+| Plattformstjänst | Status | Händelsebeskrivning | Händelsekod |
 | ---------------- | ------ | ----------------- | ---------- |
 | Datalager | framgång | Inmatning - batchen har slutförts | ing_load_success |
 | Datalager | fel | Inmatning - batchen misslyckades | ing_load_error |
@@ -39,7 +39,7 @@ Nedan visas en lista över tillgängliga statusmeddelanden för dataöverföring
 
 ## Meddelandenyttolastschema
 
-Datainmatningsmeddelandets händelseschema är ett [!DNL Experience Data Model] (XDM)-schema som innehåller fält och värden som ger information om statusen för de data som hämtas. Besök den offentliga XDM- [!DNL GitHub] rapporten för att se det senaste [meddelandenyttolastschemat](https://github.com/adobe/xdm/blob/master/schemas/common/notifications/ingestion.schema.json).
+Datainmatningsmeddelandets händelseschema är ett [!DNL Experience Data Model] (XDM)-schema som innehåller fält och värden som ger information om statusen för de data som hämtas. Besök den offentliga XDM- [!DNL GitHub] rapporten för att se det senaste [meddelandenyttolastschemat](https://github.com/adobe/xdm/blob/master/schemas/notifications/ingestion.schema.json).
 
 ## Prenumerera på statusmeddelanden för dataöverföring
 
@@ -47,7 +47,7 @@ Via [Adobe I/O Events](https://www.adobe.io/apis/experienceplatform/events.html)
 
 ### Skapa ett nytt projekt i Adobe Developer Console
 
-Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med Adobe ID. Följ sedan stegen som beskrivs i självstudiekursen om hur du [skapar ett tomt projekt](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) i dokumentationen för Adobe Developer Console.
+Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med din Adobe ID. Följ sedan stegen som beskrivs i självstudiekursen om hur du [skapar ett tomt projekt](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) i dokumentationen för Adobe Developer Console.
 
 ### Lägg till [!DNL Experience Platform] händelser i projektet
 
