@@ -5,9 +5,9 @@ solution: Experience Platform
 title: Övervaka konton och dataflöden
 topic: overview
 translation-type: tm+mt
-source-git-commit: c15f582eeaa895f03441b2f488686a9a48942f3d
+source-git-commit: a93b3a1980ca0f1d3a32257a923eb7ffc8896fd5
 workflow-type: tm+mt
-source-wordcount: '825'
+source-wordcount: '821'
 ht-degree: 0%
 
 ---
@@ -106,7 +106,7 @@ I det här avsnittet finns även en förhandsgranskning av kolumnen som innehål
 
 ![Preview-error-diagnostics](../../images/tutorials/monitor/preview-error-diagnostics.png)
 
-När du har förhandsgranskat felen kan du välja **[!UICONTROL Download]** från **[UICONTROL-dataflödet med översiktspanelen]** för att få tillgång till fullständig feldiagnostik och hämta filmanifestet. Mer information finns i dokumenten om [feldiagnostik](../../../ingestion/batch-ingestion/partial.md#retrieve-errors) och [hämtning av metadata](../../../ingestion/batch-ingestion/partial.md#download-metadata) .
+När du har förhandsgranskat felen kan du välja **[!UICONTROL Download]** från **[!UICONTROL dataflow runs overview]** panelen för att få tillgång till fullständig feldiagnostik och hämta filmanifestet. Mer information finns i dokumenten om [feldiagnostik](../../../ingestion/batch-ingestion/partial.md#retrieve-errors) och [hämtning av metadata](../../../ingestion/batch-ingestion/partial.md#download-metadata) .
 
 ![Preview-error-diagnostics](../../images/tutorials/monitor/download.png)
 
