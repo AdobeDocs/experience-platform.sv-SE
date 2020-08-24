@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Sammanslagningsprinciper - Kundprofils-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: 0309a2d6da888a2a88af161977310f213c36a85d
+source-git-commit: 2c83e282a7674ed6f36c8608035ddf19d88f0433
 workflow-type: tm+mt
-source-wordcount: '2381'
+source-wordcount: '2392'
 ht-degree: 0%
 
 ---
@@ -729,6 +729,8 @@ En slutförd borttagningsbegäran returnerar HTTP-status 200 (OK) och en tom sva
 Nu när ni vet hur ni skapar och konfigurerar sammanfogningsprinciper för er IMS-organisation kan ni använda dem för att skapa målgruppssegment utifrån era [!DNL Real-time Customer Profile] data. Se dokumentationen [till](../../segmentation/home.md) Adobe Experience Platform Segmentation Service för att börja definiera och arbeta med segment.
 
 ## Bilaga
+
+I det här avsnittet finns ytterligare information om hur du arbetar med sammanfogningsprinciper.
 
 ### Använda egna tidsstämplar {#custom-timestamps}
 
