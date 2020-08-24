@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Sammanställningsfunktioner
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+source-git-commit: 84a5b992639c1cabfdeaec5262964c9873826592
 workflow-type: tm+mt
-source-wordcount: '208'
+source-wordcount: '205'
 ht-degree: 3%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 3%
 
 # Sammanställningsfunktioner
 
-Sammanställningsfunktioner används för att gruppera flera värden inom [!DNL Profile Query Language] PQL-arrayer för att skapa ett enda sammanfattningsvärde. Mer information om andra PQL-funktioner finns i översikten [för](./overview.md)profilfrågespråk.
+Sammanställningsfunktioner används för att gruppera flera värden inom [!DNL Profile Query Language] PQL-arrayer för att skapa ett enda sammanfattningsvärde. Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikten](./overview.md).
 
 ## Antal
 
