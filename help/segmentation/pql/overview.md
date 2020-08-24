@@ -5,9 +5,9 @@ title: Profilfrågespråk (PQL) - översikt
 topic: developer guide
 description: Den här guiden ger en allmän översikt över PQL, som beskriver riktlinjer för formatering och innehåller exempel på PQL-uttryck.
 translation-type: tm+mt
-source-git-commit: 691af873e0753217b9e7566042c508d9d9b8d8d5
+source-git-commit: 5a10a31f4be5173af8b459b9ab8a53096348be1d
 workflow-type: tm+mt
-source-wordcount: '686'
+source-wordcount: '705'
 ht-degree: 1%
 
 ---
@@ -81,6 +81,7 @@ Följande tabell visar de olika kategorierna av PQL-funktioner som stöds, inklu
 | Array, lista och uppsättning | Används för att interagera med arrayer, listor och uppsättningar. Mer information om dessa funktioner finns i [arrayen, listan och funktionsdokumentet](./array-functions.md). |
 | Mappa | Används för att interagera med kartor. Mer information om dessa funktioner finns i [kartfunktionsdokumentet](./map-functions.md). |
 | Sträng | Används för att interagera med strängar. Mer information om dessa funktioner finns i [strängfunktionsdokumentet](./string-functions.md). |
+| Objekt | Används för att interagera med objekt. Mer information om de här funktionerna finns i [objektfunktionsdokumentet](./object-functions.md). |
 | Aritmetisk | Används för att utföra grundläggande aritmetik på PQL-element. Mer information om dessa funktioner finns i dokumentet med [aritmetiska funktioner](./arithmetic-functions.md) |
 | Aggregera | Används för att kombinera resultat från en array till ett enda resultat. Mer information om sammanställningsfunktioner finns i dokumentet [med](./aggregation-functions.md)sammanställningsfunktioner. |
 | Datum och tid | Används tillsammans med datum-, tids- och datetime-objekt. Mer information om dessa funktioner finns i dokumentet [med](./datetime-functions.md)datum-/tidsfunktioner. |
