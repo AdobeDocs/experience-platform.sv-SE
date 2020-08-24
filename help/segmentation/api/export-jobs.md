@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Slutpunkt för exportjobb
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: b3e6a6f1671a456b2ffa61139247c5799c495d92
+source-git-commit: 6ddb420ad3c4df3096dac456c58afc7a4916ce51
 workflow-type: tm+mt
-source-wordcount: '1497'
+source-wordcount: '1521'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # Slutpunkt för exportjobb
 
-Exportjobb är asynkrona processer som används för att behålla målgruppsmedlemmar i datauppsättningar. Du kan använda slutpunkten i API:t för Adobe Experience Platform-segmentering, som gör att du kan hämta, skapa och avbryta exportjobb med programkod. `/export/jobs`
+Exportjobb är asynkrona processer som används för att behålla målgruppsmedlemmar i datauppsättningar. Du kan använda slutpunkten i Adobe Experience Platform Segmentation API, som gör att du kan hämta, skapa och avbryta exportjobb med programkod. `/export/jobs`
 
 >[!NOTE]
 >
@@ -268,6 +268,9 @@ curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
     },
     "schema":{
         "name": "_xdm.context.profile"
+    },
+    "evaluationInfo": {
+        "segmentation": true
     }
 }'
 ```
@@ -286,6 +289,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
 | `additionalFields.eventList` | Styr tidsseriens händelsefält som exporteras för underordnade eller associerade objekt genom att ange en eller flera av följande inställningar:<ul><li>`fields`: Styr fälten som ska exporteras.</li><li>`filter`: Anger villkor som begränsar resultaten från associerade objekt. Förväntar ett minimivärde som krävs för export, vanligtvis ett datum.</li><li>`filter.fromIngestTimestamp`: Filtrerar tidsseriehändelser till händelser som har importerats efter den angivna tidsstämpeln. Detta är inte själva händelseläget utan själva intagningstiden för händelserna.</li><li>`filter.toIngestTimestamp`: Filtrerar tidsstämpeln till de som har importerats före den angivna tidsstämpeln. Detta är inte själva händelseläget utan själva intagningstiden för händelserna.</li></ul> |
 | `destination` | **(Obligatoriskt)** Information om exporterade data:<ul><li>`datasetId`: **(Obligatoriskt)** ID:t för datauppsättningen där data ska exporteras.</li><li>`segmentPerBatch`: *(Valfritt)* Ett booleskt värde som, om det inte anges, är som standard &quot;false&quot;. Värdet false exporterar alla segment-ID:n till ett enda batch-ID. Värdet true exporterar ett segment-ID till ett batch-ID. Observera att om värdet är &quot;true&quot; kan det påverka batchexportens prestanda.</li></ul> |
 | `schema.name` | **(Obligatoriskt)** Namnet på schemat som är associerat med datauppsättningen där data ska exporteras. |
+| `evaluationInfo.segmentation` | *(Valfritt)* Ett booleskt värde som, om det inte anges, är som standard `false`. Värdet är `true` att segmentering måste göras i exportjobbet. |
 
 **Svar**
 
