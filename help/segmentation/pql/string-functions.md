@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Strängfunktioner
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+source-git-commit: 84a5b992639c1cabfdeaec5262964c9873826592
 workflow-type: tm+mt
-source-wordcount: '757'
+source-wordcount: '754'
 ht-degree: 3%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 3%
 
 # Strängfunktioner
 
-[!DNL Profile Query Language] (PQL) har funktioner som underlättar interaktion med strängar. Mer information om andra PQL-funktioner finns i översikten [för](./overview.md)profilfrågespråk.
+[!DNL Profile Query Language] (PQL) har funktioner som underlättar interaktion med strängar. Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikten](./overview.md).
 
 ## Gilla
 
@@ -241,7 +241,7 @@ Funktionen används `matches` för att avgöra om en sträng matchar ett visst r
 
 **Exempel**
 
-Följande PQL-fråga avgör, utan att vara skiftlägeskänslig, om personens namn börjar med &quot;John&quot;.
+Följande PQL-fråga avgör, utan att vara skiftlägeskänslig, om personens namn börjar med&quot;John&quot;.
 
 ```sql
 person.name.matches("(?i)^John")
