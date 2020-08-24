@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Dataanslutning för Analytics
 topic: overview
 translation-type: tm+mt
-source-git-commit: 662ca170b7416dfb55cfb6b8cbaef640c1f83d31
+source-git-commit: a93b3a1980ca0f1d3a32257a923eb7ffc8896fd5
 workflow-type: tm+mt
 source-wordcount: '471'
 ht-degree: 2%
@@ -51,7 +51,9 @@ Detaljerad information om fältmappningen mellan [!DNL Analytics] och [!DNL Expe
 | Nya data till Data Lake | &lt; 45 minuter |
 | Fyll i data i bakgrunden (13 månaders data eller 10 miljarder händelser, beroende på vilket som är lägst) | &lt; 4 veckor |
 
->[!NOTE] Svarstiden varierar beroende på kundens konfiguration, datavolymer och konsumentprogram. Om till exempel Analytics-implementeringen har konfigurerats med fördröjning `A4T` till pipeline kommer den att öka till 5-10 minuter.
+>[!NOTE]
+>
+>Svarstiden varierar beroende på kundens konfiguration, datavolymer och konsumentprogram. Om till exempel Analytics-implementeringen har konfigurerats med fördröjning `A4T` till pipeline kommer den att öka till 5-10 minuter.
 
 ## Primära identifierare i analysdata
 
