@@ -4,17 +4,17 @@ solution: Experience Platform
 title: Array-, list- och set-funktioner
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+source-git-commit: 0fc356b67af4d34e35cd9329385ec284d9336953
 workflow-type: tm+mt
-source-wordcount: '737'
-ht-degree: 2%
+source-wordcount: '734'
+ht-degree: 3%
 
 ---
 
 
 # Array-, list- och set-funktioner
 
-[!DNL Profile Query Language] (PQL) har funktioner som underlättar interaktion med arrayer, listor och strängar. Mer information om andra PQL-funktioner finns i översikten [för](./overview.md)profilfrågespråk.
+[!DNL Profile Query Language] (PQL) har funktioner som underlättar interaktion med arrayer, listor och strängar. Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikten](./overview.md).
 
 ## I
 
@@ -228,7 +228,7 @@ I följande PQL-fråga skapas en ny array med siffror och värdet för de urspru
 numbers.map(square)
 ```
 
-## Först `n` i matris
+## Först `n` i matris {#first-n}
 
 Funktionen används `topN` för att returnera de första `N` objekten i en array, sorterade i stigande ordning baserat på det givna numeriska uttrycket.
 
@@ -288,7 +288,7 @@ Funktionen används `head` för att returnera det första objektet i arrayen ell
 
 **Exempel**
 
-Följande PQL-fråga returnerar den första av de fem främsta beställningarna med det högsta priset. Mer information om `topN` funktionen finns i den [första `n` i arrayavsnittet](#first-n-in-array) .
+Följande PQL-fråga returnerar den första av de fem främsta beställningarna med det högsta priset. Mer information om `topN` funktionen finns i den [första `n` i arrayavsnittet](#first-n) .
 
 ```sql
 orders.topN(price, 5).head()
