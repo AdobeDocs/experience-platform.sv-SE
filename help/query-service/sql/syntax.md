@@ -4,7 +4,7 @@ solution: Experience Platform
 title: SQL-syntax
 topic: syntax
 translation-type: tm+mt
-source-git-commit: a10508770a862621403bad94c14db4529051020c
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '1973'
 ht-degree: 0%
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 Följande syntax definierar en `SELECT` fråga som stöds av [!DNL Query Service]:
 
-```
+```sql
 [ WITH with_query [, ...] ]
 SELECT [ ALL | DISTINCT [( expression [, ...] ) ] ]
     [ * | expression [ [ AS ] output_name ] [, ...] ]
@@ -37,7 +37,7 @@ SELECT [ ALL | DISTINCT [( expression [, ...] ) ] ]
 
 där `from_item` kan vara något av följande:
 
-```
+```sql
 table_name [ * ] [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
     [ LATERAL ] ( select ) [ AS ] alias [ ( column_alias [, ...] ) ]
     with_query_name [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
@@ -46,7 +46,7 @@ table_name [ * ] [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
 
 och `grouping_element` kan vara något av följande:
 
-```
+```sql
 ( )
     expression
     ( expression [, ...] )
@@ -57,7 +57,7 @@ och `grouping_element` kan vara något av följande:
 
 och `with_query` är:
 
-```
+```sql
  with_query_name [ ( column_name [, ...] ) ] AS ( select | values )
  
 TABLE [ ONLY ] table_name [ * ]
@@ -67,7 +67,7 @@ TABLE [ ONLY ] table_name [ * ]
 
 Nyckelordet ILIKE kan användas i stället för LIKE för att skapa matchningar för WHERE-satsen i SELECT-frågans skiftlägeskänsliga.
 
-```
+```sql
     [ WHERE condition { LIKE | ILIKE | NOT LIKE | NOT ILIKE } pattern ]
 ```
 
@@ -80,7 +80,7 @@ Logiken i LIKE- och ILIKE-klausulerna är följande:
 
 #### Exempel
 
-```
+```sql
 SELECT * FROM Customers
 WHERE CustomerName ILIKE 'a%';
 ```
@@ -91,7 +91,7 @@ Returnerar kunder med namn som börjar på A eller a.
 
 En `SELECT` fråga som använder kopplingar har följande syntax:
 
-```
+```sql
 SELECT statement
 FROM statement
 [JOIN | INNER JOIN | LEFT JOIN | LEFT OUTER JOIN | RIGHT JOIN | RIGHT OUTER JOIN | FULL JOIN | FULL OUTER JOIN]
@@ -103,7 +103,7 @@ ON join condition
 
 Programsatserna `UNION`, `INTERSECT`och `EXCEPT` stöds för att kombinera eller exkludera liknande rader från två eller flera tabeller:
 
-```
+```sql
 SELECT statement 1
 [UNION | UNION ALL | UNION DISTINCT | INTERSECT | EXCEPT | MINUS]
 SELECT statement 2
@@ -113,7 +113,7 @@ SELECT statement 2
 
 Följande syntax definierar en `CREATE TABLE AS SELECT` (CTAS)-fråga som stöds av [!DNL Query Service]:
 
-```
+```sql
 CREATE TABLE table_name [ WITH (schema='target_schema_title') ] AS (select_query)
 ```
 
@@ -124,7 +124,7 @@ och `select_query` är en `SELECT` -programsats vars syntax definieras ovan i de
 
 ### Exempel
 
-```
+```sql
 CREATE TABLE Chairs AS (SELECT color, count(*) AS no_of_chairs FROM Inventory i WHERE i.type=="chair" GROUP BY i.color)
 CREATE TABLE Chairs WITH (schema='target schema title') AS (SELECT color, count(*) AS no_of_chairs FROM Inventory i WHERE i.type=="chair" GROUP BY i.color)
 ```
@@ -138,7 +138,7 @@ Observera att för en viss CTAS-fråga:
 
 Följande syntax definierar en `INSERT INTO` fråga som stöds av [!DNL Query Service]:
 
-```
+```sql
 INSERT INTO table_name select_query
 ```
 
@@ -146,7 +146,7 @@ där `select_query` är en `SELECT` -programsats vars syntax definieras ovan i d
 
 ### Exempel
 
-```
+```sql
 INSERT INTO Customers SELECT SupplierName, City, Country FROM OnlineCustomers;
 ```
 
@@ -159,7 +159,7 @@ Observera att för en given INSERT INTO-fråga:
 
 Släpp en tabell och ta bort katalogen som är associerad med tabellen från filsystemet om det inte är en EXTERN tabell. Om tabellen som ska tas bort inte finns inträffar ett undantag.
 
-```
+```sql
 DROP [TEMP] TABLE [IF EXISTS] [db_name.]table_name
 ```
 
@@ -172,7 +172,7 @@ DROP [TEMP] TABLE [IF EXISTS] [db_name.]table_name
 
 Följande syntax definierar en `CREATE VIEW` fråga som stöds av [!DNL Query Service]:
 
-```
+```sql
 CREATE [ OR REPLACE ] VIEW view_name AS select_query
 ```
 
@@ -180,7 +180,7 @@ Var `view_name` är namnet på den vy som ska skapas och `select_query` är en `
 
 Exempel:
 
-```
+```sql
 CREATE VIEW V1 AS SELECT color, type FROM Inventory
 CREATE OR REPLACE VIEW V1 AS SELECT model, version FROM Inventory
 ```
@@ -189,7 +189,7 @@ CREATE OR REPLACE VIEW V1 AS SELECT model, version FROM Inventory
 
 Följande syntax definierar en `DROP VIEW` fråga som stöds av [!DNL Query Service]:
 
-```
+```sql
 DROP VIEW [IF EXISTS] view_name
 ```
 
@@ -197,7 +197,7 @@ Var `view_name` är namnet på vyn som ska tas bort
 
 Exempel:
 
-```
+```sql
 DROP VIEW v1
 DROP VIEW IF EXISTS v1
 ```
@@ -208,7 +208,7 @@ DROP VIEW IF EXISTS v1
 
 Ange en egenskap, returnera värdet för en befintlig egenskap eller visa alla befintliga egenskaper. Om ett värde anges för en befintlig egenskapsnyckel åsidosätts det gamla värdet.
 
-```
+```sql
 SET property_key [ To | =] property_value
 ```
 
@@ -220,7 +220,7 @@ Om du vill returnera värdet för en inställning använder du `SHOW [setting na
 
 Det här kommandot tolkas och det slutförda kommandot skickas tillbaka till klienten. Detta är samma som `START TRANSACTION` kommandot.
 
-```
+```sql
 BEGIN [ TRANSACTION ]
 ```
 
@@ -232,7 +232,7 @@ BEGIN [ TRANSACTION ]
 
 `CLOSE` frigör resurser som är kopplade till en öppen markör. När markören har stängts tillåts inga efterföljande åtgärder på den. En markör bör stängas när den inte längre behövs.
 
-```
+```sql
 CLOSE { name }
 ```
 
@@ -244,7 +244,7 @@ CLOSE { name }
 
 Ingen åtgärd vidtas i [!DNL Query Service] som svar på implementeringstransaktionssatsen.
 
-```
+```sql
 COMMIT [ WORK | TRANSACTION ]
 ```
 
@@ -257,7 +257,7 @@ COMMIT [ WORK | TRANSACTION ]
 
 Använd `DEALLOCATE` för att frigöra en tidigare förberedd SQL-sats. Om du inte uttryckligen frigör en förberedd sats, frigörs den när sessionen avslutas.
 
-```
+```sql
 DEALLOCATE [ PREPARE ] { name | ALL }
 ```
 
@@ -271,7 +271,7 @@ DEALLOCATE [ PREPARE ] { name | ALL }
 
 `DECLARE` gör att användaren kan skapa markörer, som kan användas för att hämta ett litet antal rader i taget från en större fråga. När markören har skapats hämtas rader från den med `FETCH`.
 
-```
+```sql
 DECLARE name CURSOR [ WITH  HOLD ] FOR query
 ```
 
@@ -287,7 +287,7 @@ DECLARE name CURSOR [ WITH  HOLD ] FOR query
 
 Om programsatsen som `PREPARE` skapade programsatsen angav vissa parametrar måste en kompatibel uppsättning parametrar skickas till `EXECUTE` programsatsen, annars uppstår ett fel. Observera att förberedda satser (till skillnad från funktioner) inte överläses baserat på parametrarnas typ eller antal. Namnet på en förberedd sats måste vara unikt i en databassession.
 
-```
+```sql
 EXECUTE name [ ( parameter [, ...] ) ]
 ```
 
@@ -304,7 +304,7 @@ Den mest kritiska delen av visningen är den uppskattade kostnaden för satskör
 
 Alternativet `ANALYZE` gör att satsen körs, inte bara planerad. Sedan läggs statistik om faktisk körtid till i visningen, inklusive den totala förflutna tid som förbrukats i varje plannod (i millisekunder) och det totala antalet rader som returneras. Detta är användbart för att se om planeringens uppskattningar är i närheten av verkligheten.
 
-```
+```sql
 EXPLAIN [ ( option [, ...] ) ] statement
 EXPLAIN [ ANALYZE ] statement
 
@@ -328,7 +328,7 @@ where option can be one of:
 
 Så här visar du planen för en enkel fråga i en tabell med en enda `integer` kolumn och 10 000 rader:
 
-```
+```sql
 EXPLAIN SELECT * FROM foo;
 
                        QUERY PLAN
@@ -343,7 +343,7 @@ EXPLAIN SELECT * FROM foo;
 
 En markör har en associerad position som används av `FETCH`. Markörpositionen kan vara före den första raden i frågeresultatet, på en viss resultatrad eller efter den sista resultatraden. När du skapar en markör placeras den före den första raden. När du har hämtat några rader placeras markören på den rad som senast hämtades. Om du `FETCH` inte längre kommer till den sista raden, kommer markören att vara kvar efter den sista raden. Om det inte finns någon sådan rad returneras ett tomt resultat och markörerna placeras före den första raden eller efter den sista raden.
 
-```
+```sql
 FETCH num_of_rows [ IN | FROM ] cursor_name
 ```
 
@@ -362,7 +362,7 @@ Förförberedda satser varar bara så länge den aktuella databassessionen varar
 
 Förberedda satser kan ha den största prestandafördelen när en session används för att köra ett stort antal liknande satser. Prestandaskillnaden är särskilt stor om programsatserna är komplexa att planera eller skriva om, till exempel om frågan innehåller en join från många tabeller eller kräver tillämpning av flera regler. Om programsatsen är relativt enkel att planera och skriva om men relativt dyr att utföra, är prestandafördelen med förberedda programsatser mindre märkbar.
 
-```
+```sql
 PREPARE name [ ( data_type [, ...] ) ] AS SELECT
 ```
 
@@ -376,7 +376,7 @@ PREPARE name [ ( data_type [, ...] ) ] AS SELECT
 
 `ROLLBACK` återställer den aktuella transaktionen och gör att alla uppdateringar som gjorts av transaktionen ignoreras.
 
-```
+```sql
 ROLLBACK [ WORK ]
 ```
 
@@ -388,7 +388,7 @@ ROLLBACK [ WORK ]
 
 `SELECT INTO` skapar en ny tabell och fyller den med data som beräknas av en fråga. Data returneras inte till klienten, som de är med en normal `SELECT`. Den nya tabellens kolumner har de namn och datatyper som är associerade med utdatakolumnerna för `SELECT`.
 
-```
+```sql
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     * | expression [ [ AS ] output_name ] [, ...]
@@ -416,7 +416,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 Skapa en ny tabell `films_recent` som endast består av de senaste posterna från tabellen `films`:
 
-```
+```sql
 SELECT * INTO films_recent FROM films WHERE date_prod >= '2002-01-01';
 ```
 
@@ -424,7 +424,7 @@ SELECT * INTO films_recent FROM films WHERE date_prod >= '2002-01-01';
 
 `SHOW` visar den aktuella inställningen för körningsparametrar. Dessa variabler kan ställas in med `SET` programsatsen, genom att redigera konfigurationsfilen postgresql.conf, via `PGOPTIONS` miljövariabeln (när libpq eller ett libpq-baserat program används) eller via kommandoradsflaggor när postgres-servern startas.
 
-```
+```sql
 SHOW name
 ```
 
@@ -442,7 +442,7 @@ SHOW name
 
 Visa parameterns aktuella inställning `DateStyle`
 
-```
+```sql
 SHOW DateStyle;
  DateStyle
 -----------
@@ -454,7 +454,7 @@ SHOW DateStyle;
 
 Det här kommandot tolkas och skickar tillbaka det slutförda kommandot till klienten. Detta är samma som `BEGIN` kommandot.
 
-```
+```sql
 START TRANSACTION [ transaction_mode [, ...] ]
 
 where transaction_mode is one of:
@@ -467,7 +467,7 @@ where transaction_mode is one of:
 
 Med det här kommandot dumpas utdata från en SELECT-fråga till en angiven plats. Användaren måste ha åtkomst till den här platsen för att det här kommandot ska lyckas.
 
-```
+```sql
 COPY  query
     TO '%scratch_space%/folder_location'
     [  WITH FORMAT 'format_name']
