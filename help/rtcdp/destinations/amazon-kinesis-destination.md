@@ -5,7 +5,7 @@ seo-title: Amazon Kinesis
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 seo-description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '442'
 ht-degree: 0%
@@ -76,7 +76,7 @@ Mer information om arbetsflödet för [aktivering finns i Aktivera profiler och 
 
 Dina exporterade [!DNL Experience Platform] data markeras [!DNL Amazon Kinesis] i JSON-format. Händelsen nedan innehåller till exempel e-postadressprofilattributet för en målgrupp som har kvalificerat sig för ett visst segment och avslutat ett annat segment. Identiteterna för den här potentiella kunden är ECID och e-post.
 
-```
+```json
 {
   "person": {
     "email": "yourstruly@adobe.con"
