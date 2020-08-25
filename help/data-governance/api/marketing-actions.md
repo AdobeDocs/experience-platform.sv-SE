@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Marknadsföringsåtgärder
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: cb3a17aa08c67c66101cbf3842bf306ebcca0305
+source-git-commit: 12c53122d84e145a699a2a86631dc37ee0073578
 workflow-type: tm+mt
 source-wordcount: '681'
 ht-degree: 1%
@@ -37,7 +37,7 @@ GET /marketingActions/custom
 
 Följande begäran hämtar en lista över anpassade marknadsföringsåtgärder som hanteras av din organisation.
 
-```sh
+```shell
 curl -X GET \
   https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -124,7 +124,7 @@ GET /marketingActions/custom/{MARKETING_ACTION_NAME}
 
 Följande begäran hämtar en anpassad marknadsföringsåtgärd med namnet `combineData`.
 
-```sh
+```shell
 curl -X GET \
   https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom/combineData \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -174,7 +174,7 @@ PUT /marketingActions/custom/{MARKETING_ACTION_NAME}
 
 Följande begäran skapar en ny marknadsföringsåtgärd med namnet `crossSiteTargeting`, förutsatt att det inte finns någon marknadsföringsåtgärd med samma namn i systemet än. Om det finns en marknadsföringsåtgärd uppdateras den här anropet i stället marknadsföringsåtgärden baserat på egenskaperna som anges i nyttolasten. `crossSiteTargeting`
 
-```sh
+```shell
 curl -X PUT \
   https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom/crossSiteTargeting \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -190,7 +190,7 @@ curl -X PUT \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `name` | Namnet på den marknadsföringsåtgärd som ska skapas eller uppdateras. <br><br>**VIKTIGT **: Den här egenskapen måste matcha`{MARKETING_ACTION_NAME}`sökvägen, annars inträffar ett HTTP 400-fel (Ogiltig begäran). När en marknadsföringsåtgärd väl har skapats kan dess`name`egenskap alltså inte ändras. |
+| `name` | Namnet på den marknadsföringsåtgärd som ska skapas eller uppdateras. <br><br>**VIKTIGT**: Den här egenskapen måste matcha `{MARKETING_ACTION_NAME}` sökvägen, annars inträffar ett HTTP 400-fel (Ogiltig begäran). När en marknadsföringsåtgärd väl har skapats kan dess `name` egenskap alltså inte ändras. |
 | `description` | En valfri beskrivning som ger ytterligare sammanhang för marknadsföringsåtgärden. |
 
 **Svar**
@@ -236,7 +236,7 @@ DELETE /marketingActions/custom/{MARKETING_ACTION_NAME}
 
 **Begäran**
 
-```sh
+```shell
 curl -X DELETE \
   https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom/crossSiteTargeting \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
