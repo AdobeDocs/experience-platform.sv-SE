@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Datauppsättningar jämfört med tabeller och scheman
 topic: queries
 translation-type: tm+mt
-source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '181'
 ht-degree: 1%
@@ -14,10 +14,10 @@ ht-degree: 1%
 
 # Datauppsättningar jämfört med tabeller och scheman
 
-Granska listan över tillgängliga datauppsättningar i användargränssnittet [för](https://platform.adobe.com/datasets)Adobe Experience Platform och observera datauppsättningsnamnen.
+Granska listan över tillgängliga datauppsättningar i [Adobe Experience Platform-gränssnittet](https://platform.adobe.com/datasets)och observera datauppsättningsnamnen.
 >[!NOTE]
 >
->Vissa datauppsättningsnamn har blanksteg och kan i annat fall vara SQL-säkra.
+>Vissa datauppsättningsnamn har blanksteg och kan annars vara SQL-säkra.
 
 ![](../images/queries/datasets-and-tables/dataset-names.png)
 
@@ -35,7 +35,7 @@ Om du vill visa de tillgängliga tabellerna i [!DNL Platform] med SQL kan du ant
 
 `\d` visar PostgreSQL-standardvyn
 
-```
+```sql
              List of relations
  Schema |       Name      | Type  |  Owner   
 --------+-----------------+-------+----------
@@ -46,7 +46,7 @@ Om du vill visa de tillgängliga tabellerna i [!DNL Platform] med SQL kan du ant
 
 `SHOW TABLES;` är ett anpassat kommando som ger en mer detaljerad vy och visar tabellen samt namnet på datauppsättningen i [!DNL Platform] användargränssnittet.
 
-```
+```sql
        name      |        dataSetId         |     dataSet    | description | resolved 
 -----------------+--------------------------+----------------+-------------+----------
  luma_midvalues  | 5bac030c29bb8d12fa992e58 | Luma midValues |             | false
@@ -58,11 +58,11 @@ Om du vill visa rotschemat för en tabell använder du `\d table_name` kommandot
 
 >[!NOTE]
 >
->I det angivna schemat visas rotfälten, som i de flesta fall är komplexa, och som refereras till en objekttyp i dataschemats användargränssnitt.
+>I schemat visas rotfälten, som oftast är komplexa, som refereras till en objekttyp i dataschemats användargränssnitt.
 
 `\d luma_midvalues`
 
-```
+```sql
                          Table "public.luma_midvalues"
       Column       |             Type            | Collation | Nullable | Default 
 -------------------+-----------------------------+-----------+----------+---------
@@ -87,7 +87,7 @@ Om du vill gå längre in i schemat använder du understreck (`_`) för att dekl
 
 `\d luma_midvalues_web`
 
-```
+```sql
                  Composite type "public.luma_midvalues_web"
      Column     |               Type                | Collation | Nullable | Default 
 ----------------+-----------------------------------+-----------+----------+---------
