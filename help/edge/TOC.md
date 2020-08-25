@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Hjälp för Adobe Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 3a0ef81980910cedcec69a2a53bcf270b8d12d00
+source-git-commit: 1fc0fbd2c278c5bec4bce6186ea870c9c1203c79
 workflow-type: tm+mt
-source-wordcount: '101'
+source-wordcount: '104'
 ht-degree: 13%
 
 ---
@@ -32,7 +32,7 @@ ht-degree: 13%
 * Vad som ska implementeras {#implement}
    * [Produkter](what-to-implement/commerce.md)
 * Lösningsspecifika överväganden {#solutions}
-   * Analytics {#analytics}
+   * Analytics{#analytics}   
       * [Analysöversikt](solution-specific/analytics/analytics-overview.md)
       * [Mappa variabler manuellt i Analytics](solution-specific/analytics/manually-mapping-variables.md)
       * [Automatiskt mappade variabler](solution-specific/analytics/automatically-mapped-vars.md)
@@ -47,3 +47,4 @@ ht-degree: 13%
    * [Hämtar biblioteksinformation](reference/retrieving-library-information.md)
 * [Versionsinformation](release-notes.md)
 * [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
+* [Vanliga frågor om Web SDK](getting-started/web-sdk-faq.md)
