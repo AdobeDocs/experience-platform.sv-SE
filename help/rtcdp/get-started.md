@@ -5,7 +5,7 @@ seo-title: Komma igång med Adobe kunddataplattform i realtid
 description: Exempelscenario för Adobe kunddataplattform i realtid
 seo-description: Exempelscenario för Adobe kunddataplattform i realtid
 translation-type: tm+mt
-source-git-commit: 54df4778a025811504801306120bda78e04281c1
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '2321'
 ht-degree: 0%
@@ -105,7 +105,7 @@ Baserat på den anonyma besökarens surfbeteende i Men&#39;s-delen av webbplatse
 
 Sarah hälsas välkommen med ett lojalitetsmeddelande och tackar för att hon blivit Bronze-medlem med mer information om förmåner och hur hon kan förbättra sin status och sina poäng.
 
-Hon klickar på hemsidan för att bläddra bland fler.
+Hon klickar på startsidan för att bläddra bland fler.
 
 ![bild](assets/luma-personal.png)
 
@@ -193,7 +193,7 @@ All profilinformation Luma har om Sarah visar. Detta inkluderar hennes personupp
 
 | Kategori | Beskrivning |
 |---|---|
-| Identiteter | Visar de identiteter som har kopplats ihop i [!DNL Platform] Sarah interaktioner med Luma över kanaler och enheter. Hennes ECID från webbplatsen visas. Hennes identitet innefattar också ECID från hennes mobilapp, hennes e-post-ID, ett CRM-ID från den nyligen tillagda [!DNL Microsoft Dynamics] datauppsättningen och ett lojalitets-ID som skickas till Adobe Experience Platform från Lumas lojalitetssystem. |
+| Identiteter | Visar de identiteter som har kopplats ihop i [!DNL Platform] utifrån Sarah interaktioner med Luma över kanaler och enheter. Hennes ECID från webbplatsen visas. Hennes identitet innefattar också ECID från hennes mobilapp, hennes e-post-ID, ett CRM-ID från den nyligen tillagda [!DNL Microsoft Dynamics] datauppsättningen och ett lojalitets-ID som skickas till Adobe Experience Platform från Lumas lojalitetssystem. |
 | Händelser | Visar alla Sarah interaktionsdata med Luma-varumärket. Detta inkluderar det som hon just tittat på, allt som hon tittat på tidigare, de e-postmeddelanden hon fått, hennes interaktioner med callcenter och vilken kanal och enhet som var och en av interaktionerna ägde rum på. |
 
 CDP-profilen i realtid minskar arbetsflödet för Luma-marknadsföringsteamet från veckor till minuter och frigör möjligheter till personalisering baserat på denna helhetsbild av kunden. Profilen sammanfogar beteendedata från när hon surfar på webbplatsen innan hon loggade in, med sin befintliga kundprofil, vilket skapar en heltäckande bild av Sarah.
@@ -216,7 +216,7 @@ Lumas datavetenskap har tagit fram modeller kring benägenheten att köpa. En mo
 
 Ändra eller skapa ett segment som representerar övergivna varukorgar som verkar vara på väg att köpa en gåva:
 
-```
+```sql
 Profile: Category != Preferred Category 
 AND 
 Product Size != Preferred Size 
