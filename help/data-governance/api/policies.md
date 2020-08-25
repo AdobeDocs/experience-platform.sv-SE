@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Profiler
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 7bc7050d64727f09d3a13d803d532a9a3ba5d1a7
+source-git-commit: 12c53122d84e145a699a2a86631dc37ee0073578
 workflow-type: tm+mt
 source-wordcount: '1756'
 ht-degree: 0%
@@ -35,7 +35,7 @@ GET /policies/custom
 
 Följande begäran hämtar en lista med anpassade principer som definierats av din organisation.
 
-```sh
+```shell
 curl -X GET \
   https://platform.adobe.io/data/foundation/dulepolicy/policies/custom \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -163,7 +163,7 @@ GET /policies/custom/{POLICY_ID}
 
 **Begäran**
 
-```sh
+```shell
 curl -X GET \
   https://platform.adobe.io/data/foundation/dulepolicy/policies/custom/5c6dacdf685a4913dc48937c \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -282,7 +282,7 @@ POST /policies/custom
 
 Följande begäran skapar en ny princip som begränsar marknadsföringsåtgärden `exportToThirdParty` från att utföras på data som innehåller etiketter `C1 OR (C3 AND C7)`.
 
-```sh
+```shell
 curl -X POST \
   https://platform.adobe.io/data/foundation/dulepolicy/policies/custom \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -392,11 +392,11 @@ PUT /policies/custom/{POLICY_ID}
 
 **Begäran**
 
-I det här exemplet har villkoren för att exportera data till en tredje part ändrats, och nu måste du använda den princip som du skapade för att neka den här marknadsföringsåtgärden om det finns `C1 AND C5` dataetiketter.
+I det här exemplet har villkoren för att exportera data till en tredje part ändrats, och nu behöver du den princip du skapade för att neka den här marknadsföringsåtgärden om det finns `C1 AND C5` dataetiketter.
 
 Följande begäran uppdaterar den befintliga principen så att den inkluderar det nya principuttrycket. Observera att eftersom denna begäran i princip skriver om principen måste alla fält inkluderas i nyttolasten, även om vissa av deras värden inte uppdateras.
 
-```sh
+```shell
 curl -X PUT \
   https://platform.adobe.io/data/foundation/dulepolicy/policies/custom/5c6dacdf685a4913dc48937c \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -590,7 +590,7 @@ DELETE /policies/custom/{POLICY_ID}
 
 **Begäran**
 
-```sh
+```shell
 curl -X DELETE \
   https://platform.adobe.io/data/foundation/dulepolicy/policies/custom/5c6ddb56eb60ca13dbf8b9a8 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -617,7 +617,7 @@ GET /enabledCorePolicies
 
 **Begäran**
 
-```sh
+```shell
 curl -X GET \
   https://platform.adobe.io/data/foundation/dulepolicy/enabledCorePolicies \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -675,7 +675,7 @@ PUT /enabledCorePolicies
 
 Följande begäran uppdaterar listan med aktiverade kärnprinciper baserat på ID:n som anges i nyttolasten.
 
-```sh
+```shell
 curl -X GET \
   https://platform.adobe.io/data/foundation/dulepolicy/enabledCorePolicies \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
