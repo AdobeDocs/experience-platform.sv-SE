@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Exempelfrågor
 topic: queries
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '862'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # Exempelfrågor om Adobe Analytics-data
 
-Data från utvalda Adobe Analytics-rapportsviter omvandlas till XDM [!DNL ExperienceEvents] och hämtas till Adobe Experience Platform som datauppsättningar åt dig. I det här dokumentet beskrivs ett antal användningsfall där Adobe Experience Platform använder dessa data och där de inkluderade exempelfrågorna ska fungera med dina Adobe Analytics-datauppsättningar. [!DNL Query Service] Mer information om mappning till XDM finns i dokumentationen [för fältmappning i](../../sources/connectors/adobe-applications/mapping/analytics.md) Analytics [!DNL ExperienceEvents].
+Data från utvalda rapportsviter från Adobe Analytics omvandlas till XDM [!DNL ExperienceEvents] och importeras till Adobe Experience Platform som datauppsättningar åt dig. I det här dokumentet beskrivs ett antal användningsfall där Adobe Experience Platform [!DNL Query Service] använder dessa data, och de inkluderade exempelfrågorna bör fungera med dina Adobe Analytics-datauppsättningar. Mer information om mappning till XDM finns i dokumentationen [för mappning av](../../sources/connectors/adobe-applications/mapping/analytics.md) analysfält [!DNL ExperienceEvents].
 
 ## Komma igång
 
@@ -135,7 +135,7 @@ Här är XDM-fälten för att komma åt de variabler som ingår i din [!DNL Anal
 
 ### eVars
 
-```
+```console
 productListItems[#]._experience.analytics.customDimensions.evars.evar#
 ```
 
@@ -143,7 +143,7 @@ Där `[#]` är ett arrayindex och `evar#` är den specifika eVar.
 
 ### Anpassade händelser
 
-```
+```console
 productListItems[#]._experience.analytics.event1to100.event#.value
 ```
 
@@ -189,13 +189,13 @@ LIMIT 20
 
 Felet &quot;Inget sådant strukturfält&quot; påträffas när du försöker hämta ett fält som inte finns i den aktuella datauppsättningen. Utvärdera orsaken som returnerades i felmeddelandet för att identifiera ett tillgängligt fält och uppdatera sedan frågan och kör den igen.
 
-```
+```console
 ERROR: ErrorCode: 08P01 sessionId: XXXX queryId: XXXX Unknown error encountered. Reason: [No such struct field evar1 in eVar10, eVar13, eVar62, eVar88, eVar2;]
 ```
 
 ## Marknadsföringsvariabler (konverteringssyntax)
 
-En annan typ av en Merchandising-variabel som finns i Adobe Analytics är Conversion Syntax. Med produktsyntax samlas värdet in samtidigt som produkten, men detta kräver att data finns på samma sida. Det finns scenarier där data förekommer på en sida före konverteringen eller den händelse av intresse som är relaterad till produkten. Ta till exempel ett exempel till exempel ett exempel på hur rapportmetoden för produktsökning används.
+En annan typ av en Merchandising-variabel som finns i Adobe Analytics är Conversion Syntax. Med produktsyntax samlas värdet in samtidigt som produkten, men detta kräver att data finns på samma sida. Det finns scenarier där data förekommer på en sida före konverteringen eller en händelse av intresse som är relaterad till produkten. Ta till exempel ett exempel till exempel ett exempel på hur rapportmetoden för produktsökning används.
 
 1. En användare utför och söker internt efter &quot;vinterhatt&quot;, vilket ställer in funktionen för konverteringssyntax på Merchandising eVar6 till &quot;intern sökning:vinterhatt&quot;
 2. Användaren klickar på&quot;våffelsbeanie&quot; och hamnar på produktinformationssidan.\
@@ -220,7 +220,7 @@ Här är XDM-fälten som skapar konverteringssyntaxen i din [!DNL Analytics] dat
 
 ### eVars
 
-```
+```console
 _experience.analytics.customDimensions.evars.evar#
 ```
 
@@ -228,7 +228,7 @@ Var `evar#` är den specifika eVar.
 
 ### Produkt
 
-```
+```console
 productListItems[#].sku
 ```
 
