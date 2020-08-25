@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Hantera beslutstjänstentiteter med API:er
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '7207'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Hantera beslutsobjekt och regler med API:er
 
-I det här dokumentet finns en självstudiekurs om hur du arbetar med affärsenheter för att [!DNL Decisioning Service] använda Adobe Experience Platform API:er.
+I det här dokumentet finns en självstudiekurs om hur du arbetar med affärsenheterna i [!DNL Decisioning Service] Adobe Experience Platform API:er.
 
 Självstudiekursen består av två delar:
 
@@ -26,7 +26,7 @@ Självstudiekursen består av två delar:
 
 Den här självstudiekursen kräver en fungerande förståelse av [!DNL Experience Platform] tjänsterna och API-konventionerna. Databasen är en tjänst som används av flera andra [!DNL Platform] [!DNL Platform] tjänster för att lagra affärsobjekt och olika typer av metadata. Det är ett säkert och flexibelt sätt att hantera och fråga efter dessa objekt för användning av flera runtime-tjänster. Det [!DNL Decisioning Service] är en sådan. Innan du börjar med den här självstudiekursen bör du läsa i dokumentationen om följande:
 
-- [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att ordna kundupplevelsedata.
+- [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
 - [!DNL Decisioning Service](./../home.md): Beskriver de begrepp och komponenter som används för Experience Decision i allmänhet och offertbeslut i synnerhet. Illustrerar de strategier som används för att välja det bästa alternativet att presentera under en kunds upplevelse.
 - [!DNL Profile Query Language (PQL)](../../segmentation/pql/overview.md): PQL är ett kraftfullt språk för att skriva uttryck över XDM-instanser. PQL används för att definiera beslutsregler.
 
@@ -352,7 +352,7 @@ Sidindelning styrs av följande parametrar:
 
 ### Filtreringslistor
 
-Det går att filtrera listresultaten och de utförs oberoende av sidindelningsmekanismen. Filtren hoppar över förekomster i listordningen eller ber uttryckligen bara om de förekomster som uppfyller ett visst villkor ska tas med. En klient kan begära att egenskapsuttryck används som ett filter eller ange en lista med URI:er som ska användas som värden för primärnyckeln för instanserna.
+Det går att filtrera listresultaten och de utförs oberoende av sidindelningsmekanismen. Filtren hoppar över förekomster i listordningen eller ber uttryckligen bara om de förekomster som uppfyller ett visst villkor ska tas med. En klient kan begära att egenskapsuttryck ska användas som ett filter eller ange en lista med URI:er som ska användas som värden för primärnyckeln för instanserna.
 
 - **`property`**: Innehåller en egenskapsnamnsökväg följt av en jämförelseoperator följt av ett värde. <br/>
 Listan med returnerade instanser innehåller de för vilka uttrycket utvärderas till true. Anta till exempel att instansen har en nyttolast-egenskap 
@@ -775,7 +775,7 @@ Referensen till regeln är inbäddad i egenskapen `xdm:selectionConstraint`:
 
 Du kan även lägga till och ta bort en regel med en PATCH-åtgärd:
 
-```
+```json
 [
   {
     "op":   "replace",
@@ -973,7 +973,7 @@ Se [Uppdatera och korrigera instanser](#updating-and-patching-instances) för de
 
 ### Hantera reserverbjudanden
 
-Innan aktivitetsinstanser kan skapas måste det finnas ett reserverbjudande som kvalificerar för aktivitetens placering. Reserverbjudandeinstanserna skapas med schema-ID`https://ns.adobe.com/experience/offer-management/fallback-offer`. Egenskapen `_instance` för create eller update-anropet innehåller samma allmänna egenskaper som ett personaliseringserbjudande har, men kan inte ha några andra begränsningar.
+Innan aktivitetsinstanser kan skapas måste det finnas ett reserverbjudande som kvalificerar för aktivitetens placering. Reserverbjudandeinstanserna skapas med schema-ID`https://ns.adobe.com/experience/offer-management/fallback-offer`. Egenskapen `_instance` för create eller update-anropet innehåller samma allmänna egenskaper som ett personaliseringserbjudande har, men den kan inte ha några andra begränsningar.
 
 ```json
 {
