@@ -5,7 +5,7 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i kunddataplattformen i Adobe i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i kunddataplattformen i Adobe i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: 54df4778a025811504801306120bda78e04281c1
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '1492'
 ht-degree: 0%
@@ -55,7 +55,7 @@ Markera ett eller flera segment som ska aktiveras för målet på **[!UICONTROL 
 
 Gäller för: sociala mål och Google Customer Match-annonsmål
 
-För *sociala mål* kan du i **[!UICONTROL Identity mapping]** steget välja källattribut att mappa som målidentiteter i målet. Det här steget är antingen valfritt eller obligatoriskt, beroende på vilken primär identitet du använder i schemat. <br> 
+För *sociala mål* kan du i **[!UICONTROL Identity mapping]** steget välja källattribut att mappa som målidentiteter i målet. Det här steget är valfritt eller obligatoriskt, beroende på vilken primär identitet du använder i schemat. <br> 
 
 *E-postadress som primär identitet*: Om du använder e-postadress som primär identitet i ditt schema kan du hoppa över steget Identitetsmappning, vilket visas nedan:
 
@@ -201,7 +201,7 @@ Observera att du kan redigera filformatet. Mer information finns i [Konfigurera]
 
 Med standardfilformatet kan de filer du får tre dagar i följd se ut så här:
 
-```
+```console
 Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_20200408061804.csv
 Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_20200409052200.csv
 Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_20200410061130.csv
