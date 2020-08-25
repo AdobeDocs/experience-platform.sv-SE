@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Optimera en modell
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '1219'
 ht-degree: 0%
@@ -95,7 +95,7 @@ Den anpassade utvärderaren kan fås genom att utöka gränssnittet för `MLEval
 
 När det är definierat i receptet är nästa steg att aktivera det i recepten. Detta görs i filen [application.properties](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/scala/src/main/resources/application.properties) i projektets `resources` mapp. Här `evaluation.class` är den klass som `Evaluator` definieras i `Evaluator.scala`
 
-```properties
+```scala
 evaluation.class=com.adobe.platform.ml.Evaluator
 ```
 
@@ -103,7 +103,7 @@ På [!DNL Data Science Workspace]sidan kan användaren se insikterna på fliken 
 
 ### [!DNL Python/Tensorflow] {#pythontensorflow}
 
-Från och med nu finns det inga standardmått för utvärdering för [!DNL Python] eller [!DNL Tensorflow]. Därför måste du skapa ett anpassat utvärderingsmått för att få [!DNL Python] eller [!DNL Tensorflow]så att du kan få det. Detta kan du göra genom att implementera `Evaluator` klassen.
+För närvarande finns det inga standardmått för utvärdering för [!DNL Python] eller [!DNL Tensorflow]. Därför måste du skapa ett anpassat utvärderingsmått för att få [!DNL Python] eller [!DNL Tensorflow]så att du kan få det. Detta kan du göra genom att implementera `Evaluator` klassen.
 
 #### Anpassade utvärderingsvärden för [!DNL Python]
 
@@ -152,7 +152,7 @@ Denna [applicationEvaluator.R](https://github.com/adobe/experience-platform-dsw-
 - Datakivering/funktionsutveckling
 - Hämta sparad modell och utvärdera
 
-Data läses först in till en datauppsättning från en källa som definieras i [retail.config.json](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/R/Retail%20-%20GradientBoosting/retail.config.json). Därifrån rensas och konstrueras data för att passa maskininlärningsmodellen. Slutligen används modellen för att göra en förutsägelse med hjälp av vår datamängd, och med utgångspunkt i de förväntade värdena och de faktiska värdena beräknas mätvärdena. I det här fallet definieras MAPE, MAE och RMSE och returneras i `metrics` objektet.
+Data läses först in till en datauppsättning från en källa som definieras i [retail.config.json](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/R/Retail%20-%20GradientBoosting/retail.config.json). Därifrån rensas och konstrueras data för att passa maskininlärningsmodellen. Slutligen används modellen för att göra en förutsägelse med hjälp av vår datamängd och med utgångspunkt från de förväntade värdena och faktiska värdena beräknas mätvärdena. I det här fallet definieras MAPE, MAE och RMSE och returneras i `metrics` objektet.
 
 ## Använda fördefinierade mätvärden och visualiseringsdiagram
 
