@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Utvecklarhandbok för dataåtkomst
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '485'
 ht-degree: 2%
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 # Utvecklarhandbok för dataåtkomst
 
-API:t för dataåtkomst stöder Adobe Experience Platform genom att ge användarna ett RESTful-gränssnitt som fokuserar på identifierbarhet och tillgänglighet för kapslade datauppsättningar i [!DNL Experience Platform].
+API:t för dataåtkomst stöder Adobe Experience Platform genom att förse användarna med ett RESTful-gränssnitt som fokuserar på identifierbarhet och tillgänglighet för kapslade datauppsättningar i [!DNL Experience Platform].
 
 ![Dataåtkomst i Experience Platform](images/Data_Access_Experience_Platform.png)
 
@@ -232,9 +232,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID}?pat
 
 **Svar**
 
-```
-Contents of the file
-```
+`Contents of the file`
 
 ## Ytterligare kodexempel
 
