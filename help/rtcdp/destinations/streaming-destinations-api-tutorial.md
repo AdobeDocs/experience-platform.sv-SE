@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Ansluta till direktuppspelningsmål och aktivera data
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: dce9a7040ad25d5bb08de95fce7655f1fec7c226
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '1806'
 ht-degree: 0%
@@ -85,7 +85,7 @@ GET /connectionSpecs
 
 **Begäran**
 
-```
+```shell
 curl --location --request GET 'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs' \
 --header 'accept: application/json' \
 --header 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -135,7 +135,7 @@ POST /connections
 
 **Begäran**
 
-```
+```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --header 'x-api-key: {API_KEY}' \
@@ -175,7 +175,7 @@ POST /sourceConnections
 
 **Begäran**
 
-```
+```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --header 'x-api-key: {API_KEY}' \
@@ -230,7 +230,7 @@ POST /connections
 
 **Begäran**
 
-```
+```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --header 'x-api-key: {API_KEY}' \
@@ -289,7 +289,7 @@ POST /targetConnections
 
 **Begäran**
 
-```
+```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --header 'x-api-key: {API_KEY}' \
@@ -407,7 +407,7 @@ PATCH /flows
 
 **Begäran**
 
-```
+```shell
 curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flowservice/flows/{DATAFLOW_ID}' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --header 'x-api-key: {API_KEY}' \
@@ -491,7 +491,7 @@ GET /flows
 
 **Begäran**
 
-```
+```shell
 curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flowservice/flows/{DATAFLOW_ID}' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --header 'x-api-key: {API_KEY}' \
@@ -508,7 +508,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 Det returnerade svaret ska i parametern inkludera de segment och profilattribut som du skickade in i det föregående steget. `transformations` En exempelparameter `transformations` i svaret kan se ut så här:
 
-```
+```json
 "transformations": [
     {
         "name": "GeneralTransform",
@@ -554,7 +554,7 @@ Det returnerade svaret ska i parametern inkludera de segment och profilattribut 
 >
 > Förutom profilattributen och segmenten i steget [Aktivera data till det nya målet](#activate-data), kommer exporterade data i [!DNL AWS Kinesis] och [!DNL Azure Event Hubs] även att innehålla information om identitetskartan. Detta representerar de exporterade profilernas identiteter (till exempel [ECID](https://docs.adobe.com/content/help/en/id-service/using/intro/id-request.html), mobil-ID, Google-ID, e-postadress osv.). Se ett exempel nedan.
 
-```
+```json
 {
   "person": {
     "email": "yourstruly@adobe.con"
