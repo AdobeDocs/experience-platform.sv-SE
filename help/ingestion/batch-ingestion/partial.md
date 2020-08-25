@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över partiell gruppinmatning i Adobe Experience Platform
 topic: overview
 translation-type: tm+mt
-source-git-commit: ac75b1858b6a731915bbc698107f0be6043267d8
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '1387'
 ht-degree: 0%
@@ -341,6 +341,7 @@ Om batchen har ett eller flera fel och feldiagnostik är aktiverat får du mer i
 >[!NOTE]
 >
 >Om ingen feldiagnostik är tillgänglig visas följande felmeddelande i stället:
+>
 > 
 ```json
 > {
