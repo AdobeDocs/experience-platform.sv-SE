@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: Edge Projection - Real-time Customer Profile API
 topic: guide
 translation-type: tm+mt
-source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '1900'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Konfiguration och slutpunkter för kantprojektion
 
-För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Adobe Experience Platform ger realtidsåtkomst till data genom att använda kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Till exempel använder Adobe-program som Adobe Target och Adobe Campaign kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten. Den här guiden innehåller detaljerade anvisningar om hur du använder API:t för att arbeta med kantprognoser, inklusive mål och konfigurationer. [!DNL Real-time Customer Profile]
+För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Adobe Experience Platform ger realtidsåtkomst till data genom att använda kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Adobe-program som Adobe Target och Adobe Campaign använder kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten. Den här guiden innehåller detaljerade anvisningar om hur du använder API:t för att arbeta med kantprognoser, inklusive mål och konfigurationer. [!DNL Real-time Customer Profile]
 
 ## Komma igång
 
@@ -231,7 +231,7 @@ En befintlig destination kan uppdateras genom att en PUT-begäran görs till `/c
 
 **API-format**
 
-```
+```http
 PUT /config/destinations/{DESTINATION_ID}
 ```
 
@@ -299,7 +299,7 @@ Om din organisation inte längre behöver ett projektionsmål kan du ta bort det
 
 **API-format**
 
-```
+```http
 DELETE /config/destinations/{DESTINATION_ID}
 ```
 
@@ -345,7 +345,7 @@ GET /config/projections?schemaName={SCHEMA_NAME}&name={PROJECTION_NAME}
 | `{PROJECTION_NAME}` | Namnet på den projektionskonfiguration som du vill komma åt. |
 
 >[!NOTE]
->`schemaName` krävs när du använder `name` parametern, eftersom ett projektionskonfigurationsnamn bara är unikt i kontexten för en schemaklass.
+>`schemaName` krävs när parametern används, eftersom ett projektionskonfigurationsnamn bara är unikt i kontexten för en schemaklass. `name`
 
 **Begäran**
 
@@ -610,7 +610,7 @@ Returnerar endast stadsfältet för alla element i adressarrayen.
 ```
 
 >[!NOTE]
->När ett kapslat fält returneras, innehåller projektionen de omslutande överordnade objekten. De överordnade fälten innehåller inga andra underordnade fält såvida de inte också markeras uttryckligen.
+>När ett kapslat fält returneras innehåller projektionen de omslutande överordnade objekten. De överordnade fälten innehåller inga andra underordnade fält såvida de inte också markeras uttryckligen.
 
 **adresser(typ, ort)**
 
