@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Profiler
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: cb3a17aa08c67c66101cbf3842bf306ebcca0305
+source-git-commit: 12c53122d84e145a699a2a86631dc37ee0073578
 workflow-type: tm+mt
 source-wordcount: '1472'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Slutpunkter för principutvärdering
 
-När marknadsföringsåtgärder har skapats och principer har definierats, kan du använda API:t för att utvärdera om några profiler överträds av vissa åtgärder. [!DNL Policy Service] De returnerade begränsningarna har formen av en uppsättning principer som skulle överträdas om marknadsföringsåtgärden utförs på de angivna data som innehåller dataanvändningsetiketter.
+När marknadsföringsåtgärder har skapats och policyer har definierats kan du använda API:t för att utvärdera om några policyer överträds av vissa åtgärder. [!DNL Policy Service] De returnerade begränsningarna har formen av en uppsättning principer som skulle överträdas om marknadsföringsåtgärden utförs på de angivna data som innehåller dataanvändningsetiketter.
 
 Som standard är det bara profiler vars status är inställd att `ENABLED` delta i utvärderingen. Du kan dock använda frågeparametern `?includeDraft=true` för att inkludera `DRAFT` principer i utvärderingen.
 
@@ -50,9 +50,9 @@ Exemplet nedan utvärderar en marknadsföringsåtgärd mot etiketterna C1 och C3
 
 >[!IMPORTANT]
 >
->Var medveten om operatorerna `AND` och `OR` operatorerna i dina policyuttryck. I exemplet nedan skulle marknadsföringsåtgärden inte ha brutit mot denna policy om någon av etiketterna (`C1` eller `C3`) hade funnits ensam i begäran. Det krävs båda etiketterna (`C1` och `C3`) för att returnera den felaktiga policyn. Se till att ni utvärderar policyer noggrant och definierar politiska uttryck med lika stor omsorg.
+>Tänk på operatorerna `AND` och `OR` i dina policyuttryck. I exemplet nedan skulle marknadsföringsåtgärden inte ha brutit mot denna policy om någon av etiketterna (`C1` eller `C3`) hade funnits ensam i begäran. Det krävs båda etiketterna (`C1` och `C3`) för att returnera den felaktiga policyn. Se till att ni utvärderar policyer noggrant och definierar politiska uttryck med lika stor omsorg.
 
-```sh
+```shell
 curl -X GET \
   'https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom/sampleMarketingAction/constraints?duleLabels=C1,C3' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -140,7 +140,7 @@ POST /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints
 
 Följande begäran utför marknadsföringsåtgärden mot en uppsättning av tre datauppsättningar för att utvärdera om det finns policyöverträdelser. `crossSiteTargeting`
 
-```sh
+```shell
 curl -X POST \
   https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom/crossSiteTargeting/constraints \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -371,7 +371,7 @@ POST /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints
 
 Följande begäran testar marknadsföringsåtgärden `crossSiteTargeting` på en specifik uppsättning fält som tillhör tre datamängder. Nyttolasten liknar en [utvärderingsbegäran som endast omfattar datauppsättningar](#datasets), där specifika fält för varje datauppsättning läggs till för att samla in etiketter från.
 
-```sh
+```shell
 curl -X POST \
   https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom/crossSiteTargeting/constraints \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -538,9 +538,9 @@ Nyttolasten för en grupputvärderingsbegäran bör vara en array med objekt. en
 
 >[!WARNING]
 >
->Om ett utvärderingsjobb som finns med i listan innehåller både en `entityList` och en `labels` matris uppstår ett fel. Om du vill utvärdera samma marknadsföringsåtgärd baserat på både datauppsättningar och etiketter måste du inkludera separata utvärderingsjobb för den marknadsföringsåtgärden.
+>Om ett utvärderingsjobb som finns med i listan innehåller både en `entityList` och en `labels` matris genereras ett fel. Om du vill utvärdera samma marknadsföringsåtgärd baserat på både datauppsättningar och etiketter måste du inkludera separata utvärderingsjobb för den marknadsföringsåtgärden.
 
-```sh
+```shell
 curl -X POST \
   https://platform.adobe.io/data/foundation/dulepolicy/bulk-eval \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -580,8 +580,8 @@ curl -X POST \
 | --- | --- |
 | `evalRef` | URI:n för marknadsföringsåtgärden som ska testas mot etiketter eller datauppsättningar för policyöverträdelser. |
 | `includeDraft` | Som standard deltar endast aktiverade profiler i utvärderingen. Om `includeDraft` är inställt på `true`, kommer policyer som har `DRAFT` status också att delta. |
-| `labels` | En matris med dataanvändningsetiketter för att testa marknadsföringsåtgärden mot.<br><br>**VIKTIGT **: När du använder den här egenskapen får en`entityList`egenskap INTE inkluderas i samma objekt. Om du vill utvärdera samma marknadsföringsåtgärd med datauppsättningar och/eller fält måste du inkludera ett separat objekt i nyttolasten som innehåller en`entityList`array. |
-| `entityList` | En array med datauppsättningar och (eventuellt) specifika fält i dessa datauppsättningar för att testa marknadsföringsåtgärden mot.<br><br>**VIKTIGT **: När du använder den här egenskapen får en`labels`egenskap INTE inkluderas i samma objekt. Om du vill utvärdera samma marknadsföringsåtgärd med hjälp av specifika dataanvändningsetiketter måste du inkludera ett separat objekt i nyttolasten som innehåller en`labels`array. |
+| `labels` | En matris med dataanvändningsetiketter för att testa marknadsföringsåtgärden mot.<br><br>**VIKTIGT**: När du använder den här egenskapen får en `entityList` egenskap INTE inkluderas i samma objekt. Om du vill utvärdera samma marknadsföringsåtgärd med datauppsättningar och/eller fält måste du inkludera ett separat objekt i nyttolasten som innehåller en `entityList` array. |
+| `entityList` | En array med datauppsättningar och (eventuellt) specifika fält i dessa datauppsättningar för att testa marknadsföringsåtgärden mot.<br><br>**VIKTIGT**: När du använder den här egenskapen får en `labels` egenskap INTE inkluderas i samma objekt. Om du vill utvärdera samma marknadsföringsåtgärd med hjälp av specifika dataanvändningsetiketter måste du inkludera ett separat objekt i nyttolasten som innehåller en `labels` array. |
 | `entityType` | Den typ av enhet som marknadsföringsåtgärden ska testas mot. För närvarande `dataSet` stöds bara. |
 | `entityId` | ID:t för en datauppsättning som marknadsföringsåtgärden ska testas mot. |
 | `entityMeta.fields` | (Valfritt) En lista med specifika fält i datauppsättningen som marknadsföringsåtgärden ska testas mot. |
