@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Identifiera insikter med kundens AI
 topic: Discovering insights
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '1032'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Kundens AI, som en del av de intelligenta tjänsterna, ger marknadsförarna möjlighet att utnyttja Adobe Sensei för att förutse vad kunderna kommer att göra härnäst. Kundens AI används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, utbildning eller driftsättning.
 
-Det här dokumentet är en guide för interaktion med Service Instance Insights i användargränssnittet för AI för Intelligent Services.
+Det här dokumentet fungerar som en guide för interaktion med Service Instance Insights i användargränssnittet för AI för Intelligent Services.
 
 ## Komma igång
 
@@ -49,7 +49,7 @@ Därefter visas informationssidan för den tjänstinstansen, där du får visual
 
 Det finns två sätt att visa tjänstinstansinformation, det första från kontrollpanelen och det andra från tjänstinstansen.
 
-Om du vill visa information från kontrollpanelen klickar du på en tjänstinstansbehållare och undviker den hyperlänk som är kopplad till namnet. Detta öppnar en höger ratt med ytterligare information som beskrivning, poängfrekvens, förutsägelsemål och stödberättigad population. Dessutom kan du välja att redigera och ta bort instansen genom att klicka på **[!UICONTROL Edit]** eller **[!UICONTROL Delete]**.
+Om du vill visa information från kontrollpanelen klickar du på en tjänstinstansbehållare och undviker hyperlänken som är kopplad till namnet. Detta öppnar en höger ratt med ytterligare information som beskrivning, poängfrekvens, förutsägelsemål och stödberättigad population. Dessutom kan du välja att redigera och ta bort instansen genom att klicka på **[!UICONTROL Edit]** eller **[!UICONTROL Delete]**.
 
 ![höger räl](../images/insights/success-run.png)
 
@@ -112,7 +112,8 @@ För varje poänggrupp skapas ett kort som visar de tio viktigaste inflytelserik
 Om du klickar på **[!UICONTROL Create Segment]** knappen i någon av buckarna för Låg, Medel eller Hög benägenhet dirigeras du om till segmentbyggaren.
 
 >[!NOTE]
->Knappen är bara tillgänglig om kundprofilen i realtid är aktiverad för datauppsättningen. **[!UICONTROL Create Segment]** Mer information om hur du aktiverar kundprofilen i realtid finns i [Kundprofilöversikt](../../../rtcdp/overview.md)i realtid.
+>
+>Knappen är bara tillgänglig om kundprofilen i realtid är aktiverad för datauppsättningen. **[!UICONTROL Create Segment]** Mer information om hur du aktiverar kundprofil i realtid finns i [Kundprofilöversikt](../../../rtcdp/overview.md)i realtid.
 
 ![Klicka för att skapa segment](../images/insights/influential-factors-create-segment.png)
 
@@ -124,7 +125,7 @@ Segmentverktyget används för att definiera ett segment. När du väljer **[!UI
 
 ![Segmentfyllning in](../images/insights/segment-saving.png)
 
-Om du vill visa det nya segmentet i användargränssnittet i Platform klickar du **[!UICONTROL Segments]** i den vänstra navigeringen. Sidan *Bläddra* visas och alla tillgängliga segment visas.
+Om du vill visa det nya segmentet i plattformsgränssnittet klickar du **[!UICONTROL Segments]** i den vänstra navigeringen. Sidan *Bläddra* visas och alla tillgängliga segment visas.
 
 ![Alla segment](../images/insights/Segments-dashboard.png)
 
