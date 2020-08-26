@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Direktuppspelande postdata
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 80392190c7fcae9b6e73cc1e507559f834853390
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
-source-wordcount: '1059'
+source-wordcount: '1055'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Strömma postdata till Adobe Experience Platform
 
-Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform [!DNL Data Ingestion Service] .
+Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i Adobe Experience Platform API: [!DNL Data Ingestion Service] er.
 
 ## Komma igång
 
@@ -352,7 +352,7 @@ Om du vill validera de poster du redan har importerat kan du använda kommandot 
 
 >[!NOTE]
 >
->Om sammanfogningsprincip-ID:t inte har definierats och schemat.</span>name eller relatedSchema</span>.name is `_xdm.context.profile`, [!DNL Profile Access] hämtar **alla** relaterade identiteter.
+>Om ID:t för sammanfogningsprincipen inte har definierats och `schema.name` eller `relatedSchema.name` är `_xdm.context.profile`, [!DNL Profile Access] hämtas **alla** relaterade identiteter.
 
 **API-format**
 
