@@ -4,7 +4,7 @@ solution: Experience Platform
 title: ServiceNow-koppling
 topic: overview
 translation-type: tm+mt
-source-git-commit: 25f4589ff1f4fa11f3cd5b96c11731577949b5b0
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '205'
 ht-degree: 0%
@@ -15,9 +15,10 @@ ht-degree: 0%
 # (Beta)- [!DNL ServiceNow] anslutning
 
 >[!NOTE]
+>
 >Kopplingen [!DNL ServiceNow] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../home.md#terms-and-conditions) .
 
-Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
 [!DNL Experience Platform] har stöd för inmatning av data från ett lyckat system från tredje part. Support för leverantörer av nöjda kunder är bland annat [!DNL ServiceNow].
 
