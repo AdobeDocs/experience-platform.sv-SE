@@ -5,7 +5,7 @@ seo-title: Översikt över CDP-administration i realtid
 description: 'Dokumentet innehåller en översikt över administrationsfunktionerna i kunddataplattformen i realtid med Adobe Experience Platform. '
 seo-description: seo-beskrivning
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '277'
 ht-degree: 0%
@@ -28,6 +28,7 @@ Följande avsnitt innehåller introduktioner till de centrala komponenterna i [!
 Mer information om åtkomstkontroll finns i [åtkomstkontrollsöversikten](../../access-control/home.md) i [!DNL Experience Platform] dokumentationen.
 
 >[!IMPORTANT]
+>
 >Om du vill ha en detaljerad guide om hur du ger åtkomst till CDP-funktioner i realtid, inklusive hur du aktiverar synlighet i användargränssnittet, följer du stegen i användarhandboken [för](../../access-control/ui/overview.md)åtkomstkontroll, särskilt de som används för att hantera detaljer och ytterligare tjänster för en produktprofil.
 
 ## Sandlådor
