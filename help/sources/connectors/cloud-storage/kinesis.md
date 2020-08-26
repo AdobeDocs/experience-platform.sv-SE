@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Amazon Kinesis Connector
 topic: overview
 translation-type: tm+mt
-source-git-commit: 340f5d0611e9e9eb4676018ee10c8a8aa08dbb2d
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '214'
 ht-degree: 0%
@@ -15,6 +15,7 @@ ht-degree: 0%
 # (Beta)- [!DNL Amazon Kinesis] anslutning
 
 >[!NOTE]
+>
 >Kopplingen [!DNL Amazon Kinesis] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../home.md#terms-and-conditions) .
 
 Adobe Experience Platform erbjuder systemspecifika anslutningsmöjligheter för molnleverantörer som AWS [!DNL Google Cloud Platform]och [!DNL Azure]. Ni kan föra in data från dessa system i [!DNL Platform].
