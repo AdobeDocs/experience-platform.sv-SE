@@ -4,7 +4,7 @@ solution: Experience Platform
 title: FTP- och SFTP-anslutning
 topic: overview
 translation-type: tm+mt
-source-git-commit: 340f5d0611e9e9eb4676018ee10c8a8aa08dbb2d
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '241'
 ht-degree: 0%
@@ -15,6 +15,7 @@ ht-degree: 0%
 # (Beta) FTP- och SFTP-anslutning
 
 >[!NOTE]
+>
 >FTP- och SFTP-anslutningarna är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../home.md#terms-and-conditions) .
 
 Adobe Experience Platform erbjuder inbyggd anslutningsbarhet för molnleverantörer som AWS [!DNL Google Cloud Platform]och [!DNL Azure]så att ni kan hämta data från dessa system.
