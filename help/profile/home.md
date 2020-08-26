@@ -5,7 +5,7 @@ title: Översikt över kundprofiler i realtid
 topic: guide
 description: Kundprofil i realtid är ett generiskt uppslagsarkiv som sammanfogar data från olika företagsdatatillgångar och sedan ger tillgång till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 translation-type: tm+mt
-source-git-commit: 05032ba72afd5224e33cb4fdc93c97ba6ec6f8e8
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '1718'
 ht-degree: 0%
@@ -58,9 +58,10 @@ När ni sammanfogar data från flera olika källor och kombinerar dem för att f
 ### (Alfa) Konfigurera beräknade attribut
 
 >[!IMPORTANT]
+>
 >Den beräknade attributfunktionaliteten som beskrivs i det här dokumentet är alfavärden. Dokumentationen och funktionaliteten kan komma att ändras.
 
-Med beräknade attribut kan du automatiskt beräkna fältvärden baserat på andra värden, beräkningar och uttryck. Beräknade attribut fungerar på profilnivån, vilket innebär att du kan samla värden för alla poster och händelser. Varje beräknat attribut innehåller ett uttryck, eller &quot;rule&quot;, som utvärderar inkommande data och lagrar resultatvärdet i ett profilattribut eller i en händelse. Med hjälp av dessa beräkningar kan du enkelt besvara frågor som rör inköpstid, tid mellan köp eller antal programöppningar, utan att behöva utföra komplexa beräkningar manuellt varje gång informationen behövs. Mer information om beräknade attribut och steg-för-steg-instruktioner om hur du arbetar med dem med API:t finns i [!DNL Real-time Customer Profile] slutpunktshandboken [](api/computed-attributes.md)för beräknade attribut. Den här guiden hjälper dig att bättre förstå vilken roll beräknade attribut spelar i Adobe Experience Platform, och den innehåller exempel på API-anrop för grundläggande CRUD-åtgärder.
+Med beräknade attribut kan du automatiskt beräkna fältvärden baserat på andra värden, beräkningar och uttryck. Beräknade attribut fungerar på profilnivån, vilket innebär att du kan samla värden över alla poster och händelser. Varje beräknat attribut innehåller ett uttryck, eller &quot;rule&quot;, som utvärderar inkommande data och lagrar resultatvärdet i ett profilattribut eller i en händelse. Med hjälp av dessa beräkningar kan du enkelt besvara frågor som rör inköpstid, tid mellan köp eller antal programöppningar, utan att behöva utföra komplexa beräkningar manuellt varje gång informationen behövs. Mer information om beräknade attribut och steg-för-steg-instruktioner om hur du arbetar med dem med API:t finns i [!DNL Real-time Customer Profile] slutpunktshandboken [](api/computed-attributes.md)för beräknade attribut. Den här guiden hjälper dig att bättre förstå vilken roll beräknade attribut spelar i Adobe Experience Platform, och den innehåller exempel på API-anrop för grundläggande CRUD-åtgärder.
 
 ## Realtidskomponenter
 
@@ -132,7 +133,6 @@ När det gäller åtkomst av data spelar datastyrning en viktig roll på [!DNL E
 
 >[!NOTE]
 >
->
 >En icke-personenhet refererar till alla XDM-klasser som **inte** ingår i [!DNL Profile].
 
 ## Nästa steg och ytterligare resurser
@@ -140,6 +140,7 @@ När det gäller åtkomst av data spelar datastyrning en viktig roll på [!DNL E
 Om du vill veta mer [!DNL Real-time Customer Profile]kan du fortsätta läsa dokumentationen och komplettera din inlärning genom att titta på videon nedan eller utforska andra videokurser [för](https://docs.adobe.com/content/help/en/platform-learn/tutorials/overview.html)Experience Platform.
 
 >[!WARNING]
+>
 >Gränssnittet [!DNL Platform] som visas i följande video är inaktuellt. Läs användarhandboken för [kundprofilen i realtid](ui/user-guide.md) för de senaste skärmbilderna och funktionerna i användargränssnittet.
 
 >[!VIDEO](https://video.tv.adobe.com/v/27251?quality=12)
