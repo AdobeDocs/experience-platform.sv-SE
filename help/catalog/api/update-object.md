@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Uppdatera ett objekt
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '313'
 ht-degree: 1%
@@ -21,7 +21,7 @@ Du kan uppdatera en del av ett [!DNL Catalog] objekt genom att ta med dess ID i 
 
 >[!NOTE]
 >
->PATCH-åtgärder för ett objekt kan inte ändra dess utökningsbara fält, som representerar relaterade objekt.  Ändringar av sammanhörande objekt måste göras direkt.
+>PATCH-åtgärder för ett objekt kan inte ändra dess utökningsbara fält, som representerar relaterade objekt. Ändringar av sammanhörande objekt måste göras direkt.
 
 ## Uppdatera med fält
 
