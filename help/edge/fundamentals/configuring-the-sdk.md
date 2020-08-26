@@ -5,7 +5,7 @@ description: Lär dig hur du konfigurerar Experience Platform Web SDK
 seo-description: Lär dig hur du konfigurerar Experience Platform Web SDK
 keywords: configuring;configuration;SDK;edge;Web SDK;configure;edgeConfigId;context;web;device;environment;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;web sdk settings;prehidingStyle;opacity;cookieDestinationsEnabled;urlDestinationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 translation-type: tm+mt
-source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
+source-git-commit: fe53ecbf6adff4f1e09979cd170a88ac0bd3cb75
 workflow-type: tm+mt
 source-wordcount: '745'
 ht-degree: 4%
@@ -107,9 +107,9 @@ Ange detta för att konfigurera ett återanrop som anropas för varje händelse 
 
 | **Typ** | **Obligatoriskt** | **Standardvärde** |
 | -------- | ------------ | ----------------- |
-| Objekt | Nej | `{"general": "in"}` |
+| Objekt | Nej | `"in"` |
 
-Anger användarens standardsamtycke. Detta används när det inte finns någon inställning för samtycke som redan har sparats för användaren. Det andra giltiga värdet är `{"general": "pending"}`. När detta är inställt kommer arbetet att ställas i kö tills användaren ger sitt medgivande. När användarens inställningar har angetts fortsätter arbetet eller avbryts baserat på användarens inställningar. Mer information finns i [Supporting Consent](supporting-consent.md) .
+Anger användarens standardsamtycke. Detta används när det inte finns någon inställning för samtycke som redan har sparats för användaren. Det andra giltiga värdet är `"pending"`. När detta är inställt kommer arbetet att ställas i kö tills användaren ger sitt medgivande. När användarens inställningar har angetts fortsätter arbetet eller avbryts baserat på användarens inställningar. Mer information finns i [Supporting Consent](supporting-consent.md) .
 
 ## Anpassningsalternativ
 
