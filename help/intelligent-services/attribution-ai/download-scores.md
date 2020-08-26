@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Åtkomst till bakgrundsmusik i Attribution AI
 topic: Accessing scores
 translation-type: tm+mt
-source-git-commit: 24449d0138ab449dbc01aecbbe9f70e05c781c89
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '1026'
 ht-degree: 0%
@@ -61,6 +61,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/batches?&dataSet=
 Ett godkänt svar returnerar en nyttolast som innehåller ett batch-ID-objekt. I det här exemplet är nyckelvärdet för det returnerade objektet batch-ID `01E5QSWCAASFQ054FNBKYV6TIQ`. Kopiera ditt batch-ID till nästa API-anrop.
 
 >[!NOTE]
+>
 > Objektet har formaterats om för läsbarhet i följande svar. `tags`
 
 ```json
@@ -164,7 +165,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller ett `_links` objekt. I
 }
 ```
 
-## Hämta dina filer {#retrieving-your-files}
+## Hämta filer {#retrieving-your-files}
 
 Använd det `href` värde du fick i föregående steg som ett API-anrop för att göra en ny GET-förfrågan om att hämta din filkatalog.
 
