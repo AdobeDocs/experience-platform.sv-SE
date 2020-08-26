@@ -5,7 +5,7 @@ title: Användarhandbok för JupyterLab
 topic: Overview
 description: JupyterLab är ett webbaserat användargränssnitt för Project Jupyter och är nära integrerat med Adobe Experience Platform. Den utgör en interaktiv utvecklingsmiljö där datavetare kan arbeta med Jupyters bärbara datorer, kod och data.
 translation-type: tm+mt
-source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '3682'
 ht-degree: 10%
@@ -237,6 +237,7 @@ Om du vill öppna en ny *startprogram* klickar du på **Arkiv > Ny startfunktion
 I [!DNL JupyterLab] väljer du kugghjulsikonen i det övre högra hörnet för att öppna *serverkonfigurationen* för bärbara datorer. Du kan växla GPU på och tilldela den mängd minne du behöver med hjälp av skjutreglaget. Hur mycket minne du kan allokera beror på hur mycket organisationen har allokerat. Välj **[!UICONTROL Update configs]** att spara.
 
 >[!NOTE]
+>
 >Endast en GPU tilldelas per organisation för bärbara datorer. Om grafikprocessorn används måste du vänta på att den användare som för närvarande har reserverat grafikprocessorn ska frisläppa den. Detta kan du göra genom att logga ut eller lämna GPU:n i viloläge i fyra eller fler timmar.
 
 ![](../images/jupyterlab/user-guide/notebook-gpu-config.png)
@@ -425,6 +426,7 @@ dataFrame.show()
 ```
 
 >[!TIP]
+>
 >I Scala kan du använda `sys.env()` för att deklarera och returnera ett värde inifrån `option`.
 
 ### Använda %dataset-magi i PySpark 3 ([!DNL Spark] 2.4) bärbara datorer {#magic}
@@ -604,9 +606,7 @@ timedf.show()
 
 >[!TIP]
 >
->
 >I Scala kan du använda `sys.env()` för att deklarera och returnera ett värde inifrån `option`. Detta eliminerar behovet av att definiera variabler om du vet att de bara kommer att användas en gång. Följande exempel tar `val userToken` från exemplet ovan och deklarerar det textbundet `option` som ett alternativ:
->
 > 
 ```scala
 > .option("user-token", sys.env("PYDASDK_IMS_USER_TOKEN"))
@@ -728,7 +728,7 @@ timedf.show()
 | scipy | 0.19.1 |
 | klippa | 1.3.3 |
 | statsmodels | 0.8.0 |
-| elastisk | 4.0.30.44 |
+| vetenskapsman | 4.0.30.44 |
 | py-xgboost | 0.60 |
 | opencv | 3.1.0 |
 | pipa | 0.8.0 |
