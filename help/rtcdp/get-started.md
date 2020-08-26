@@ -5,7 +5,7 @@ seo-title: Komma igång med Adobe kunddataplattform i realtid
 description: Exempelscenario för Adobe kunddataplattform i realtid
 seo-description: Exempelscenario för Adobe kunddataplattform i realtid
 translation-type: tm+mt
-source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '2321'
 ht-degree: 0%
@@ -258,6 +258,7 @@ I det här scenariot vill Luma återrikta målgruppen med personalisering över 
 Du kan också schemalägga att segmentet ska börja eller sluta vid en viss tidpunkt. Segmentet kommer att bokföras och uppdateras automatiskt på de konfigurerade plattformarna på de schemalagda datumen.
 
 >[!NOTE]
+>
 >Om du klickar i datumfältet kan du välja att schemalägga automatiskt för 90 dagar framåt.
 
 Klicka **[!UICONTROL Save]** för att gå till nästa sida.
