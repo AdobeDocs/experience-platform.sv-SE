@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa en Phoenix-anslutning med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: fc5cdaa661c47e14ed5412868f3a54fd7bd2b451
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '625'
 ht-degree: 0%
@@ -15,6 +15,7 @@ ht-degree: 0%
 # Skapa en [!DNL Phoenix] koppling med [!DNL Flow Service] API:t
 
 >[!NOTE]
+>
 >Kopplingen [!DNL Phoenix] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
@@ -39,7 +40,7 @@ För [!DNL Flow Service] att kunna ansluta till [!DNL Phoenix]måste du ange vä
 | `host` | IP-adressen eller värdnamnet för [!DNL Phoenix] servern. |
 | `username` | Användarnamnet som du använder för att komma åt [!DNL Phoenix] servern. |
 | `password` | Lösenordet som motsvarar användaren. |
-| `port` | Den TCP-port som [!DNL Phoenix] servern använder för att avlyssna klientanslutningar. Om du ansluter till [!DNL Azure] HDInsights anger du port som 443. |
+| `port` | Den TCP-port som servern använder för att avlyssna klientanslutningar. [!DNL Phoenix] avlyssning. Om du ansluter till [!DNL Azure] HDInsights anger du port som 443. |
 | `httpPath` | Den del av URL som motsvarar [!DNL Phoenix] servern. Ange /hbasephoenix0 om du använder [!DNL Azure] HDInsights-kluster. |
 | `enableSsl` | Ett booleskt värde. Anger om anslutningar till servern krypteras med SSL. |
 | `connectionSpec.id` | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikations-ID för [!DNL Phoenix] är: `102706fb-a5cd-42ee-afe0-bc42f017ff43` |
