@@ -5,7 +5,7 @@ solution: Experience Platform
 title: Skapa en Adobe Analytics Classifications-dataanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: e0d842b3c5d3b628e117c14d47d6c114b36484dd
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '587'
 ht-degree: 1%
@@ -47,7 +47,7 @@ När du har valt dina [!DNL Classifications] datauppsättningar väljer du **[!U
 
 ## Granska dina klassificeringar
 
-Steget visas så att du kan granska de valda **[!UICONTROL Review]** [!DNL Classifications] datauppsättningarna innan de skapas. Informationen är grupperad i följande kategorier:
+Steget visas så att du kan granska de markerade datauppsättningarna innan du skapar dem **[!UICONTROL Review]** [!DNL Classifications] . Informationen är grupperad i följande kategorier:
 
 * **[!UICONTROL Connection]**: Visar källplattformen och anslutningsstatus.
 * **[!UICONTROL Data type]**: Visar antalet markerade [!DNL Classifications].
@@ -72,6 +72,7 @@ Välj den **[!UICONTROL Target dataset]** du vill komma åt.
 På **[!UICONTROL Dataset activity]** sidan visas information om den valda måldatauppsättningen, inklusive information om dess batchstatus, datauppsättnings-ID och schema.
 
 >[!IMPORTANT]
+>
 >Även om det går att ta bort datauppsättningar för andra källanslutningar stöds det för närvarande inte för datakopplingen för analysklassificeringar. Om du tar bort en datauppsättning av misstag, kontakta Adobe kundtjänst.
 
 ![](../../../../images/tutorials/create/classifications/dataset.png)
