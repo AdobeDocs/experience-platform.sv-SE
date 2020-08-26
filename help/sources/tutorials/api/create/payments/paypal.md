@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Skapa en PayPal-koppling med API:t för Flow Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: fc5cdaa661c47e14ed5412868f3a54fd7bd2b451
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '560'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -15,6 +15,7 @@ ht-degree: 0%
 # Skapa en [!DNL PayPal] koppling med [!DNL Flow Service] API:t
 
 >[!NOTE]
+>
 >Kopplingen [!DNL PayPal] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
@@ -26,7 +27,7 @@ I den här självstudiekursen används API:t för att vägleda dig genom stegen 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 * [Källor](../../../../home.md): [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda Platform-instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL PayPal] med [!DNL Flow Service] API:t.
 
