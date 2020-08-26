@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Importera ett paketerat recept (API)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '955'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 I den här självstudien används [!DNL Sensei Machine Learning API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) för att skapa en [motor](../api/engines.md), som också kallas Recept i användargränssnittet.
 
-Innan du börjar är det viktigt att komma ihåg att Adobe Experience Platform använder olika termer för att referera till liknande element i API:t och användargränssnittet [!DNL Data Science Workspace] . API-termerna används genomgående i den här självstudien och i följande tabell beskrivs motsvarande termer:
+Innan du börjar är det viktigt att tänka på att Adobe Experience Platform [!DNL Data Science Workspace] använder olika termer för att referera till liknande element i API:t och användargränssnittet. API-termerna används genomgående i den här självstudien och i följande tabell beskrivs motsvarande termer:
 
 | Användargränssnittsterm | API-term |
 | ---- | ---- |
@@ -38,7 +38,7 @@ Den här självstudien kräver en paketerad mottagarfil i form av en Docker-URL.
 I den här självstudiekursen måste du ha slutfört [autentiseringen](../../tutorials/authentication.md) till Adobe Experience Platform för att kunna anropa API: [!DNL Platform] er. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
 - `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.
-- `{IMS_ORG}`: Dina IMS-organisationsuppgifter hittades i din unika integrering med Adobe Experience Platform.
+- `{IMS_ORG}`: Dina IMS-organisationsuppgifter finns i din unika Adobe Experience Platform-integrering.
 - `{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.
 
 ## Skapa en motor
@@ -50,6 +50,7 @@ Du kan skapa motorer genom att göra en POST-förfrågan till slutpunkten /engin
 Om du vill skapa en motor med en paketerad mottagarfil som lagras i en Docker-behållare måste du ange Docker-URL:en till den paketerade mottagarfilen.
 
 >[!CAUTION]
+>
 > Om du använder [!DNL Python] eller R använder du begäran nedan. Om du använder PySpark eller Scala ska du använda exemplet på PySpark/Scala-begäran som finns under Python/R-exemplet.
 
 **API-format**
