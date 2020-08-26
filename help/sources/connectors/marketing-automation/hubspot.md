@@ -4,7 +4,7 @@ solution: Experience Platform
 title: HubSpot-anslutning
 topic: overview
 translation-type: tm+mt
-source-git-commit: 52a01c5f90a9643691a25e2d0a5f03a7f0334a7d
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '203'
 ht-degree: 0%
@@ -15,9 +15,10 @@ ht-degree: 0%
 # (Beta)- [!DNL HubSpot] anslutning
 
 >[!NOTE]
+>
 >Kopplingen [!DNL HubSpot] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../home.md#terms-and-conditions) .
 
-Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
 [!DNL Experience Platform ]har stöd för inmatning av data från ett automatiseringssystem för marknadsföring från tredje part. Stöd för leverantörer av automatiserad marknadsföring omfattar [!DNL HubSpot].
 
