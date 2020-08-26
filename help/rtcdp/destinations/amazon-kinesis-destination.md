@@ -5,9 +5,9 @@ seo-title: Amazon Kinesis
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 seo-description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
+source-git-commit: 4c45da353b1deeb66b0dedb37450158f4bdc2a7c
 workflow-type: tm+mt
-source-wordcount: '442'
+source-wordcount: '437'
 ht-degree: 0%
 
 ---
@@ -47,7 +47,7 @@ Ange följande information i arbetsflödet för att skapa mål för [!DNL Amazon
 
 ### I autentiseringssteget {#authentication-step}
 
-* **[!DNL Amazon Web Services]åtkomstnyckel och hemlig nyckel**: Generera [!DNL Amazon Web Services]en åtkomstnyckel - nyckelpar för hemlig åtkomst som ger CDP-åtkomst i realtid i Adobe till ditt [!DNL Amazon Kinesis] konto. Läs mer i [Amazon Web Services-dokumentationen](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+* **[!DNL Amazon Web Services]åtkomstnyckel och hemlig nyckel**: Generera [!DNL Amazon Web Services]i stället ett `access key - secret access key` par som ger CDP-åtkomst i realtid i Adobe till ditt [!DNL Amazon Kinesis] konto. Läs mer i [Amazon Web Services-dokumentationen](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 * **region**: Ange vilken [!DNL Amazon Web Services] region data ska strömmas till.
 
 ![Inmatningsfält i kontosteget](/help/rtcdp/destinations/assets/aws-kinesis-account-step.png)
