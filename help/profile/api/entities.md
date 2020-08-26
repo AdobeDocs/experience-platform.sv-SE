@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: Enheter - Kundprofils-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '1671'
 ht-degree: 0%
@@ -115,6 +115,7 @@ curl -X GET \
 ```
 
 >[!NOTE]
+>
 >Om ett relaterat diagram länkar mer än 50 identiteter returnerar den här tjänsten HTTP-status 422 och meddelandet&quot;För många relaterade identiteter&quot;. Om du får det här felet kan du lägga till fler frågeparametrar för att begränsa sökningen.
 
 ## Åtkomst till profildata via lista över identiteter
@@ -188,7 +189,7 @@ curl -X POST \
 | `timeFilter.startTime` | Starttid för tidsintervallfiltret, som ingår. Ska vara i millisekundens granularitet. Om inget anges är standardvärdet början av tillgänglig tid. |
 | `timeFilter.endTime` | Sluttid för tidsintervallfilter, exkluderad. Ska vara i millisekundens granularitet. Om inget anges är standardvärdet slutet av tillgänglig tid. |
 | `limit` | Antal poster som ska returneras. Gäller endast antalet returnerade upplevelsehändelser. Standard: 1000. |
-| `orderby` | Sorteringsordningen för hämtade upplevelsehändelser efter tidsstämpel, skriven som `(+/-)timestamp` med standardvärdet `+timestamp`. |
+| `orderby` | Sorteringsordningen för hämtade upplevelsehändelser efter tidsstämpel, skriven som `(+/-)timestamp` med standardvärdet som `+timestamp`. |
 | `withCA` | Funktionsflagga för aktivering av beräknade attribut för sökning. Standard: false. |
 
 **Svar** Ett lyckat svar returnerar de begärda fälten för entiteter som anges i begärandetexten.
@@ -360,6 +361,7 @@ curl -X GET \
 Ett lyckat svar returnerar en numrerad lista över händelser i tidsserier och associerade fält som har angetts i frågeparametrarna för begäran.
 
 >[!NOTE]
+>
 >I begäran angavs en gräns på ett (`limit=1`), och därför är svaret `count` nedan 1 och endast en enhet returneras.
 
 ```json
@@ -414,6 +416,7 @@ Ett lyckat svar returnerar en numrerad lista över händelser i tidsserier och a
 Resultaten sidnumreras när tidsseriehändelser hämtas. Om det finns efterföljande resultatsidor kommer egenskapen att innehålla ett ID: `_page.next` . Dessutom innehåller egenskapen en URI för begäran om att hämta nästa sida `_links.next.href` . Om du vill hämta resultatet gör du en ny GET-begäran till `/access/entities` slutpunkten, men du måste vara säker på att ersätta `/entities` med värdet för den angivna URI:n.
 
 >[!NOTE]
+>
 >Se till att du inte råkar upprepa `/entities/` i sökvägen för begäran. Den ska bara visas en gång. `/access/entities?start=...`
 
 **API-format**
@@ -548,7 +551,7 @@ curl -X POST \
 | `identities` | **(OBLIGATORISKT)** En lista med profiler som associerade tidsseriehändelser ska hämtas från. Varje post i arrayen anges på ett av två sätt: 1) med en fullständigt kvalificerad identitet som består av ID-värde och namnutrymme eller 2) som tillhandahåller ett XID. |
 | `fields` | Isolerar de data som returneras till en angiven uppsättning fält. Använd detta för att filtrera vilka schemafält som ska inkluderas i hämtade data. Exempel: personalEmail,person.namn,person.kön |
 | `mergePolicyId` | Identifierar den sammanslagningsprincip som ska användas för att styra returnerade data. Om ingen anges i servicesamtalet kommer din organisations standardinställning för det schemat att användas. Om ingen standardprincip för sammanslagning har konfigurerats är standardinställningen ingen profilsammanslagning och ingen identitetssammanfogning. |
-| `orderby` | Sorteringsordningen för hämtade upplevelsehändelser efter tidsstämpel, skriven som `(+/-)timestamp` med standardvärdet `+timestamp`. |
+| `orderby` | Sorteringsordningen för hämtade upplevelsehändelser efter tidsstämpel, skriven som `(+/-)timestamp` med standardvärdet som `+timestamp`. |
 | `timeFilter.startTime` | Ange starttid för att filtrera tidsserieobjekt (i millisekunder). |
 | `timeFilter.endTime` | Ange sluttiden för filtrering av tidsserieobjekt (i millisekunder). |
 | `limit` | Numeriskt värde som anger det maximala antalet objekt som ska returneras. Standard: 1000 |
@@ -904,7 +907,7 @@ Följande parametrar används i sökvägen för GET-begäranden till `/access/en
 | `relatedEntityIdNS` | Om `schema.name` är &quot;_xdm.context.experienceevent&quot; måste det här värdet ange identitetsnamnutrymmet för den entitet som anges i `relatedEntityId`. | `relatedEntityIdNS=CRMID` |
 | `fields` | Filtrerar de data som returneras i svaret. Använd detta för att ange vilka schemafältvärden som ska inkluderas i hämtade data. För flera fält avgränsar du värden med kommatecken utan blanksteg mellan | `fields=personalEmail,person.name,person.gender` |
 | `mergePolicyId` | Identifierar den sammanslagningsprincip som ska användas för att styra returnerade data. Om ingen anges i samtalet används organisationens standardvärde för det schemat. Om ingen standardprincip för sammanslagning har konfigurerats är standardinställningen ingen profilsammanslagning och ingen identitetssammanfogning. | `mergePoilcyId=5aa6885fcf70a301dabdfa4a` |
-| `orderBy` | Sorteringsordningen för hämtade upplevelsehändelser efter tidsstämpel, skriven som `(+/-)timestamp` med standardvärdet `+timestamp`. | `orderby=-timestamp` |
+| `orderBy` | Sorteringsordningen för hämtade upplevelsehändelser efter tidsstämpel, skriven som `(+/-)timestamp` med standardvärdet som `+timestamp`. | `orderby=-timestamp` |
 | `startTime` | Ange starttid för att filtrera tidsserieobjekt (i millisekunder). | `startTime=1539838505` |
 | `endTime` | Ange sluttiden för filtrering av tidsserieobjekt (i millisekunder). | `endTime=1539838510` |
 | `limit` | Numeriskt värde som anger det maximala antalet objekt som ska returneras. Standard: 1000 | `limit=100` |
