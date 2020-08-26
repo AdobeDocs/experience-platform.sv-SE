@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Samarbeta i JupyterLab med Git
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '245'
 ht-degree: 1%
@@ -19,6 +19,7 @@ ht-degree: 1%
 ## Förutsättningar
 
 >[!NOTE]
+>
 > Den Git-server du tänker använda måste vara tillgänglig via Internet.
 
 Miljön är en [!DNL Data Science Workspace JupyterLab] värdbaserad miljö som inte används i företagets brandvägg, och därför måste den Git-server du ansluter till vara tillgänglig från det offentliga Internet. Detta kan vara en offentlig eller privat databas på [GitHub](https://github.com/) eller en annan instans av en [!DNL Git] server som du har bestämt att vara värd för själv.
@@ -36,6 +37,7 @@ Gå sedan till arbetsytan i *Terminal* med följande kommando: `cd my-workspace`
 ![arbetsyta för cd](../images/jupyterlab/tutorials/find-workspace.png)
 
 >[!TIP]
+>
 > Om du vill visa en lista med tillgängliga Git-kommandon skickar du kommandot: `git -help` i terminalen.
 
 Sedan klonar du den databas du vill använda med hjälp av `git clone` kommandot. Klona projektet med en `https://` URL i stället för `ssh://`.
@@ -47,6 +49,7 @@ Sedan klonar du den databas du vill använda med hjälp av `git clone` kommandot
 ![klona](../images/jupyterlab/tutorials/git-collaboration.png)
 
 >[!NOTE]
+>
 > För att kunna utföra skrivåtgärder (till exempel`git push` ) måste följande konfigurationskommandon köras för varje ny session. Observera också att eventuella push-kommandon kräver ett användarnamn och lösenord.
 >
 >`git config --global user.email "you@example.com"`
