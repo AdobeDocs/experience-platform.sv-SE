@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Motorer
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '1118'
 ht-degree: 0%
@@ -44,7 +44,6 @@ curl -X GET https://platform.adobe.io/data/sensei/engines/dockerRegistry \
 Ett godkänt svar returnerar en nyttolast som innehåller information om Docker-registret inklusive Docker-URL (`host`), användarnamn (`username`) och lösenord (`password`).
 
 >[!NOTE]
->
 >
 >Dockerlösenordet ändras när du `{ACCESS_TOKEN}` uppdaterar.
 
