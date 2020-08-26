@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användarhandbok för Machine Learning-anteckningsbok i realtid
 topic: Training and scoring a ML model
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '1618'
 ht-degree: 0%
@@ -15,13 +15,14 @@ ht-degree: 0%
 # Användarhandbok för maskininlärning i realtid (Alpha)
 
 >[!IMPORTANT]
+>
 >Maskininlärning i realtid är inte tillgängligt för alla användare ännu. Den här funktionen är alfabet och testas fortfarande. Dokumentet kan komma att ändras.
 
 I följande guide beskrivs de steg som krävs för att skapa ett Machine Learning-program i realtid. Med den Adobe-medföljande mallen för bärbara datorer från Python täcker den här guiden in utbildning av en modell, skapa en DSL, publicera DSL på Edge och betygsätta begäran. **[!UICONTROL Real-time ML]** När du implementerar din maskininlärningsmodell i realtid förväntas du ändra mallen så att den passar datauppsättningens behov.
 
 ## Skapa en Machine Learning-anteckningsbok i realtid
 
-I användargränssnittet i Adobe Experience Platform väljer du **[!UICONTROL Notebooks]** i *datavetenskap*. Välj sedan **[!UICONTROL JupyterLab]** och tillåt lite tid för att läsa in miljön.
+I Adobe Experience Platform-gränssnittet väljer du **[!UICONTROL Notebooks]** inom *datavetenskap*. Välj sedan **[!UICONTROL JupyterLab]** och tillåt lite tid för att läsa in miljön.
 
 ![öppna JupyterLab](../images/rtml/open-jupyterlab.png)
 
@@ -34,6 +35,7 @@ Startkartan visas [!DNL JupyterLab] . Bläddra ned till Maskinininlärning i *re
 Börja med att importera alla nödvändiga paket för modellen. Kontrollera att alla paket som du planerar att använda för nodredigering importeras.
 
 >[!NOTE]
+>
 >Listan över importer kan variera beroende på vilken modell du vill skapa. Listan kommer att ändras när nya noder läggs till över tid. En fullständig lista över tillgängliga noder finns i referenshandboken [för](./node-reference.md) noder.
 
 ```python
@@ -80,6 +82,7 @@ Med något av följande alternativ skriver du [!DNL Python] kod för att läsa, 
 Börja med att läsa in dina utbildningsdata.
 
 >[!NOTE]
+>
 >I **realtids-ML** -mallen hämtas data för [bilförsäkrings-CSV](https://github.com/adobe/experience-platform-dsw-reference/tree/master/datasets/insurance) från [!DNL Github].
 
 ![Läs in inläsningsdata](../images/rtml/load_training.png)
@@ -116,6 +119,7 @@ När du använder *[!UICONTROL Real-time ML]* mallen måste du analysera, förbe
 Cellen *[!UICONTROL Real-time ML]* Dataomvandlingar ** för mallar måste ändras för att fungera med din egen datauppsättning. Vanligtvis innebär detta att byta namn på kolumner, datasammanslagning och datainsamling/funktionsteknik.
 
 >[!NOTE]
+>
 >Följande exempel har konverterats för läsbarhetsändamål med `[ ... ]`. Visa och expandera avsnittet om dataomvandlingar i *realtid av ML* -mallar för hela kodcellen.
 
 ```python
@@ -240,6 +244,7 @@ model.generate_onnx_resources()
 ```
 
 >[!NOTE]
+>
 >Ändra `model_path` strängvärdet (`model.onnx`) för att ändra namnet på modellen.
 
 ```python
@@ -247,6 +252,7 @@ model_path = "model.onnx"
 ```
 
 >[!NOTE]
+>
 >Följande cell är inte redigerbar eller borttagbar och krävs för att Machine Learning-programmet i realtid ska fungera.
 
 ```python
@@ -275,12 +281,12 @@ I det här avsnittet beskrivs hur du skapar en DSL. Du kommer att skapa noderna 
 
 >[!IMPORTANT]
 >
->
 >Det är obligatoriskt att använda ONNX-noden. Utan ONNX-noden kommer programmet att misslyckas.
 
 ### Skapa noder
 
 >[!NOTE]
+>
 > Det är troligt att du har flera noder baserat på vilken typ av data som används. I följande exempel visas bara en enda nod i *realtids-ML* -mallen. Se *avsnittet XML* -mallar för *nodredigering* i realtid för hela kodcellen.
 
 Noden Pandor nedan använder `"import": "map"` för att importera metodnamnet som en sträng i parametrarna, följt av att parametrarna anges som en mappningsfunktion. Exemplet nedan gör detta med `{'arg': {'dataLayerNull': 'notgiven', 'no': 'no', 'yes': 'yes', 'notgiven': 'notgiven'}}`. När kartan är på plats kan du ange `inplace` som `True` eller `False`. Ange `inplace` som `True` eller `False` baserat på om du vill använda omformningen eller inte. Som standard `"inplace": False` skapas en ny kolumn. Stöd för att ange ett nytt kolumnnamn ställs in för att läggas till i en senare version. Den sista raden `cols` kan vara ett kolumnnamn eller en lista med kolumner. Ange kolumnerna som du vill använda omformningen på. I det här exemplet `leasing` anges. Mer information om tillgängliga noder och hur du använder dem finns i [nodreferensguiden](./node-reference.md).
@@ -326,6 +332,7 @@ nodes = [json_df_node,
 Koppla sedan noderna med kanter. Varje tuppel är en [!DNL Edge] anslutning.
 
 >[!TIP]
+>
 > Eftersom noderna är linjärt beroende av varandra (varje nod är beroende av föregående nods utdata) kan du skapa länkar med en enkel Python-listförståelse. Lägg till egna anslutningar om en nod är beroende av flera indata.
 
 ```python
@@ -346,11 +353,13 @@ När det är klart returneras ett `edge` objekt som innehåller alla noder och d
 ## Publicera på kant (nav)
 
 >[!NOTE]
+>
 >Maskininlärning i realtid distribueras tillfälligt till och hanteras av Adobe Experience Platform Hub. Mer information finns i översiktsavsnittet om maskininlärningsarkitektur i [realtid](./home.md#architecture).
 
 Nu när du har skapat ett DSL-diagram kan du distribuera diagrammet till [!DNL Edge].
 
 >[!IMPORTANT]
+>
 >Publicera inte [!DNL Edge] ofta. Detta kan innebära att [!DNL Edge] noderna överbelastas. Du bör inte publicera samma modell flera gånger.
 
 ```python
@@ -365,6 +374,7 @@ print(f'Service ID: {service_id}')
 Om du inte behöver uppdatera din DSL kan du hoppa över [poängsättningen](#scoring).
 
 >[!NOTE]
+>
 >Följande celler krävs bara om du vill uppdatera en befintlig DSL som har publicerats till Edge.
 
 Dina modeller kommer troligen att fortsätta utvecklas. I stället för att skapa en helt ny tjänst går det att uppdatera en befintlig tjänst med den nya modellen. Du kan definiera en nod som du vill uppdatera, tilldela den ett nytt ID och sedan överföra den nya DSL-filen till [!DNL Edge]servern igen.
@@ -402,6 +412,7 @@ Du får tillbaka den uppdaterade DSL:en.
 Efter publicering till [!DNL Edge]utförs poängsättningen av en POST från en klient. Vanligtvis kan detta göras från ett klientprogram som behöver ML-poäng. Du kan också göra det från Postman. I mallen används *[!UICONTROL Real-time ML]* EdgeUtils för att demonstrera den här processen.
 
 >[!NOTE]
+>
 >Det krävs en liten bearbetningstid innan poängsättningen börjar.
 
 ```python
@@ -448,6 +459,7 @@ Svaret som returneras är en array med dina distribuerade tjänster.
 ## Ta bort ett distribuerat program- eller tjänste-ID från [!DNL Edge] (valfritt)
 
 >[!CAUTION]
+>
 >Den här cellen används för att ta bort ditt distribuerade Edge-program. Använd inte följande cell om du inte behöver ta bort ett distribuerat [!DNL Edge] program.
 
 ```python
