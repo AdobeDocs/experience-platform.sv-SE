@@ -5,7 +5,7 @@ title: Indata och utdata från Attribution AI
 topic: Input and Output data for Attribution AI
 description: Följande dokument visar de olika indata och utdata som används i Attribution AI.
 translation-type: tm+mt
-source-git-commit: 2b51569a4c3dd9863edb6831bd182a7fa9d1d891
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '2067'
 ht-degree: 0%
@@ -69,6 +69,7 @@ Som standard definierar Attribution AI utbildningsfönstret som de senaste 2 kva
 Minsta längd på data som krävs = utbildningsfönster + uppslagsfönster
 
 >[!TIP]
+>
 > Den minsta datalängd som krävs för ett program med standardkonfigurationer är: 2 kvartal (180 dagar) + 56 dagar = 236 dagar.
 
 Exempel :
