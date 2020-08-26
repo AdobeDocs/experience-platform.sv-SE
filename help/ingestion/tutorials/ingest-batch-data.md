@@ -1,18 +1,18 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Infoga data i Adobe Experience Platform
+title: Importera data till Adobe Experience Platform
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
-source-wordcount: '1184'
+source-wordcount: '1185'
 ht-degree: 0%
 
 ---
 
 
-# Infoga data i Adobe Experience Platform
+# Importera data till Adobe Experience Platform
 
 Med Adobe Experience Platform kan du enkelt importera data till [!DNL Platform] som gruppfiler. Exempel på data som ska importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en parquet-fil) eller data som överensstämmer med ett känt [!DNL Experience Data Model] (XDM) schema i schemaregistret.
 
@@ -104,7 +104,7 @@ Klicka på **[!UICONTROL Add Data]** fliken för att börja lägga till data i d
 
 >[!NOTE]
 >
->[!DNL Platform] har stöd för två filtyper för dataöverföring, parquet eller JSON. Du kan lägga till upp till fem filer i taget, där den maximala filstorleken för varje fil är 10 GB.
+>Plattformen har stöd för två filtyper för dataöverföring, parquet eller JSON. Du kan lägga till upp till fem filer i taget, där den maximala filstorleken för varje fil är 10 GB.
 
 ![Fliken Lägg till data](../images/tutorials/ingest-batch-data/add_data.png)
 
