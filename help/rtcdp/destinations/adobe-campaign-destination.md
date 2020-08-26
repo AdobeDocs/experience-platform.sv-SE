@@ -5,9 +5,9 @@ seo-title: Adobe Campaign
 description: Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera och leverera kampanjer i alla kanaler, både online och offline.
 seo-description: Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera och leverera kampanjer i alla kanaler, både online och offline.
 translation-type: tm+mt
-source-git-commit: e5a3539c8be8b7424f4965c7ab43d4260e39b380
+source-git-commit: 4c45da353b1deeb66b0dedb37450158f4bdc2a7c
 workflow-type: tm+mt
-source-wordcount: '544'
+source-wordcount: '545'
 ht-degree: 1%
 
 ---
@@ -54,7 +54,7 @@ Mer information om arbetsflödet för [aktivering finns i Aktivera profiler och 
 
 ## Målattribut {#destination-attributes}
 
-När du [aktiverar segment](/help/rtcdp/destinations/activate-destinations.md) till Adobe Campaign-målet rekommenderar vi att du väljer en unik identifierare från ditt [unionsschema](../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet. Mer information finns i [Välja vilka schemafält som ska användas som målattribut i de exporterade filerna](/help/rtcdp/destinations/email-marketing-destinations.md#destination-attributes) i Destinationer för e-postmarknadsföring.
+När du [aktiverar segment](/help/rtcdp/destinations/activate-destinations.md) till Adobe Campaign-målet rekommenderar vi att du väljer en unik identifierare från ditt [unionsschema](../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet. Mer information finns i [Välja vilka schemafält som ska användas som målattribut i de exporterade filerna](/help/rtcdp/destinations/email-marketing-destinations.md#destination-attributes) i dokumentationen för e-postmarknadsföringsmål.
 
 ## Exporterade data {#exported-data}
 
