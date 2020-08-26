@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: Profilsystemjobb - Kundprofils-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: 73f2c05a0e63f376f7a2f5644133e773980d0b26
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '1419'
 ht-degree: 1%
@@ -17,6 +17,7 @@ ht-degree: 1%
 Med Adobe Experience Platform kan ni importera data från flera olika källor och skapa robusta profiler för enskilda kunder. Data som hämtas till [!DNL Platform] lagras i [!DNL Data Lake] såväl som i [!DNL Real-time Customer Profile] datalagret. Ibland kan det vara nödvändigt att ta bort en datauppsättning eller en batch från profilarkivet för att ta bort data som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder [!DNL Real-time Customer Profile] API:t för att skapa ett [!DNL Profile] systemjobb, som också kallas &quot;[!DNL delete request]&quot;, som också kan ändras, övervakas eller tas bort vid behov.
 
 >[!NOTE]
+>
 >Om du försöker ta bort datauppsättningar eller grupper från [!DNL Data Lake]katalogen kan du få instruktioner i [Katalogtjänstöversikten](../../catalog/home.md) .
 
 ## Komma igång
@@ -106,6 +107,7 @@ Initieringen av en ny borttagningsbegäran görs via en begäran om POST till `/
 Om du vill ta bort en datauppsättning måste datauppsättnings-ID:t inkluderas i POSTENS innehåll. Den här åtgärden tar bort ALLA data för en viss datauppsättning. [!DNL Experience Platform] Med kan du ta bort datauppsättningar baserat på både schema för post- och tidsserier.
 
 >[!CAUTION]
+>
 > När du försöker ta bort en [!DNL Profile]aktiverad datauppsättning med [!DNL Experience Platform] användargränssnittet inaktiveras datauppsättningen för inmatning, men den tas inte bort förrän en borttagningsbegäran skapas med API:t. Mer information finns i [bilagan](#appendix) till det här dokumentet.
 
 **API-format**
@@ -159,6 +161,7 @@ Ett lyckat svar returnerar information om den nyligen skapade borttagningsbegär
 Om du vill ta bort en batch måste batch-ID:t inkluderas i POSTENS innehåll. Observera att du inte kan ta bort grupper för datauppsättningar baserat på postscheman. Endast grupper för datauppsättningar som baseras på tidsseriescheman kan tas bort.
 
 >[!NOTE]
+>
 > Orsaken till att du inte kan ta bort batchar för datauppsättningar baserade på postscheman är att datauppsättningsbatchar skriver över tidigare poster och därför inte kan ångras eller tas bort. Det enda sättet att ta bort effekten av felaktiga batchar för datauppsättningar som baseras på postscheman är att importera om gruppen med rätt data för att skriva över felaktiga poster.
 
 Mer information om hur post- och tidsserier fungerar finns i [avsnittet om XDM-databeteenden](../../xdm/home.md#data-behaviors) i [!DNL XDM System] översikten.
