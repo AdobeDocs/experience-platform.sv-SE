@@ -3,10 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Hjälp för Adobe Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 1fc0fbd2c278c5bec4bce6186ea870c9c1203c79
+source-git-commit: f51513e66945c41d06f12f4ac8f05ddad0d32898
 workflow-type: tm+mt
 source-wordcount: '104'
-ht-degree: 13%
+ht-degree: 16%
 
 ---
 
@@ -47,4 +47,4 @@ ht-degree: 13%
    * [Hämtar biblioteksinformation](reference/retrieving-library-information.md)
 * [Versionsinformation](release-notes.md)
 * [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
-* [Vanliga frågor om Web SDK](getting-started/web-sdk-faq.md)
+* [Vanliga frågor](getting-started/web-sdk-faq.md)
