@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: Edge Projection - Real-time Customer Profile API
 topic: guide
 translation-type: tm+mt
-source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '1900'
 ht-degree: 0%
@@ -21,6 +21,7 @@ För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för 
 API-slutpunkten som används i den här handboken är en del av [!DNL Real-time Customer Profile API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml). Innan du fortsätter bör du läsa [Komma igång-guiden](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API i det här dokumentet samt viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform] -API.
 
 >[!NOTE]
+>
 >Begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver en `Content-Type` rubrik. Fler än en `Content-Type` används i det här dokumentet. Var särskilt uppmärksam på rubrikerna i samplingssamtalen för att försäkra dig om att du använder rätt `Content-Type` för varje begäran.
 
 ## Projektionsdestinationer
@@ -53,6 +54,7 @@ curl -X GET \
 Svaret innehåller en `projectionDestinations` array med information om varje mål som visas som ett enskilt objekt i arrayen. Om inga projektioner har konfigurerats returneras `projectionDestinations` matrisen tom.
 
 >[!NOTE]
+>
 >Svaret har förkortats för space och visar endast två mål.
 
 ```json
@@ -122,6 +124,7 @@ POST /config/destinations
 Följande begäran skapar ett nytt kantmål.
 
 >[!NOTE]
+>
 >POSTENS begäran om att skapa ett mål kräver ett specifikt `Content-Type` huvud, vilket visas nedan. Om du använder ett felaktigt `Content-Type` huvud genereras ett HTTP-statusfel 415 (medietypen stöds inte).
 
 ```shell
@@ -227,6 +230,7 @@ Svarsobjektet visar information om projektionsmålet. Attributet `id` ska matcha
 En befintlig destination kan uppdateras genom att en PUT-begäran görs till `/config/destinations` slutpunkten och med ID:t för den destination som ska uppdateras i den begärda sökvägen. Den här åtgärden _skriver_ om målet, och därför måste samma attribut anges i texten i begäran som när ett nytt mål skapas.
 
 >[!CAUTION]
+>
 >API-svaret på uppdateringsbegäran är omedelbart, men ändringarna av projektionerna tillämpas asynkront. Det finns alltså en tidsskillnad mellan när uppdateringen av måldefinitionen görs och när den tillämpas.
 
 **API-format**
@@ -244,6 +248,7 @@ PUT /config/destinations/{DESTINATION_ID}
 Följande begäran uppdaterar det befintliga målet så att det inkluderar en andra plats (`dataCenters`).
 
 >[!IMPORTANT]
+>
 >Begäran från PUT kräver ett specifikt `Content-Type` huvud, vilket visas nedan. Om du använder ett felaktigt `Content-Type` huvud genereras ett HTTP-statusfel 415 (medietypen stöds inte).
 
 ```shell
@@ -295,6 +300,7 @@ Svaret innehåller den uppdaterade informationen för målet, inklusive dess ID 
 Om din organisation inte längre behöver ett projektionsmål kan du ta bort det genom att göra en DELETE-begäran till `/config/destinations` slutpunkten och inkludera ID:t för målet som du vill ta bort i sökvägen till begäran.
 
 >[!CAUTION]
+>
 >API-svaret på borttagningsbegäran är omedelbart, men de faktiska ändringarna av data i kanterna sker asynkront. Profildata kommer med andra ord att tas bort från alla kanter (de `dataCenters` som anges i projektionsmålet), men processen tar tid att slutföra.
 
 **API-format**
@@ -345,6 +351,7 @@ GET /config/projections?schemaName={SCHEMA_NAME}&name={PROJECTION_NAME}
 | `{PROJECTION_NAME}` | Namnet på den projektionskonfiguration som du vill komma åt. |
 
 >[!NOTE]
+>
 >`schemaName` krävs när parametern används, eftersom ett projektionskonfigurationsnamn bara är unikt i kontexten för en schemaklass. `name`
 
 **Begäran**
@@ -429,6 +436,7 @@ POST /config/projections?schemaName={SCHEMA_NAME}
 **Begäran**
 
 >[!NOTE]
+>
 >POSTENS begäran om att skapa en konfiguration kräver ett specifikt `Content-Type` huvud, vilket visas nedan. Om du använder ett felaktigt `Content-Type` huvud genereras ett HTTP-statusfel 415 (medietypen stöds inte).
 
 ```shell
@@ -506,6 +514,7 @@ En väljare är en kommaavgränsad lista med XDM-fältnamn. I en projektionskonf
    * Ovanstående exempel motsvarar `addresses.type,addresses.city.country`.
 
 >[!NOTE]
+>
 >Både punktnotation och parentetisk notation stöds för att referera till underfält. Det är dock bäst att använda punktnotation eftersom det är mer kortfattat och ger en bättre bild av fälthierarkin.
 
 * Varje fält i en väljare anges i förhållande till svarsroten.
@@ -610,6 +619,7 @@ Returnerar endast stadsfältet för alla element i adressarrayen.
 ```
 
 >[!NOTE]
+>
 >När ett kapslat fält returneras innehåller projektionen de omslutande överordnade objekten. De överordnade fälten innehåller inga andra underordnade fält såvida de inte också markeras uttryckligen.
 
 **adresser(typ, ort)**
