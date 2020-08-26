@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Strömmande tidsseriedata
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 80392190c7fcae9b6e73cc1e507559f834853390
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
-source-wordcount: '1130'
+source-wordcount: '1126'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Strömma tidsseriedata till Adobe Experience Platform
 
-Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform [!DNL Data Ingestion Service] .
+Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i Adobe Experience Platform API: [!DNL Data Ingestion Service] er.
 
 ## Komma igång
 
@@ -294,7 +294,7 @@ Ett lyckat svar returnerar HTTP-status 201 och en matris som innehåller ID:t f�
 
 ## Infoga tidsseriedata i direktuppspelningsanslutningen
 
-Med datauppsättningen och direktuppspelningsanslutningen på plats kan du importera XDM-formaterade JSON-poster för att importera tidsseriedata i [!DNL Platform].
+När datauppsättningen och direktuppspelningsanslutningen är på plats kan du importera XDM-formaterade JSON-poster för att importera tidsseriedata inuti [!DNL Platform].
 
 **API-format**
 
@@ -405,7 +405,7 @@ Om du vill validera de poster som har importerats tidigare kan du använda [!DNL
 
 >[!NOTE]
 >
->Om sammanfogningsprincip-ID:t inte har definierats och schemat.</span>name eller relatedSchema</span>.name is `_xdm.context.profile`, [!DNL Profile Access] hämtar **alla** relaterade identiteter.
+>Om ID:t för sammanfogningsprincipen inte har definierats och `schema.name` eller `relatedSchema.name` är `_xdm.context.profile`, [!DNL Profile Access] hämtas **alla** relaterade identiteter.
 
 **API-format**
 
