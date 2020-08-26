@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Självstudiekurser för datavetenskap
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 5c5f6c4868e195aef76bacc0a1e5df3857647bde
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '1169'
 ht-degree: 0%
@@ -12,9 +12,9 @@ ht-degree: 0%
 ---
 
 
-# [!DNL Data Science Workspace] självstudiekurser
+# Självstudiekurser om [!DNL Data Science Workspace]
 
-Adobe Experience Platform [!DNL Data Science Workspace] använder maskininlärning och artificiell intelligens för att skapa insikter utifrån era data. Integrerat i Adobe Experience Platform hjälper er att [!DNL Data Science Workspace] göra prognoser med hjälp av ert innehåll och era dataresurser över alla Adobe-lösningar. Datavetare på alla kunskapsnivåer har sofistikerade, lättanvända verktyg som stöder snabb utveckling, utbildning och anpassning av maskininlärningsrecepten - alla fördelarna med AI-tekniken, utan komplexiteten.
+Adobe Experience Platform [!DNL Data Science Workspace] använder maskininlärning och artificiell intelligens för att skapa insikter utifrån era data. Integrerat i Adobe Experience Platform och [!DNL Data Science Workspace] gör det enklare att förutse hur ni använder ert innehåll och era datatillgångar i olika Adobe-lösningar. Datavetare på alla kunskapsnivåer har sofistikerade, lättanvända verktyg som stöder snabb utveckling, utbildning och anpassning av maskininlärningsrecepten - alla fördelarna med AI-tekniken, utan komplexiteten.
 
 Börja med att läsa översikten över arbetsytan för [datavetenskap](../data-science-workspace/home.md)om du vill veta mer.
 
@@ -61,7 +61,6 @@ Om du vill veta mer kan du följa [paketets källfiler i en recept-självstudiek
 
 >[!NOTE]
 >
->
 >Den här självstudiekursen kräver att du har en URL för [!DNL Docker] källfilen. Besök [paketets källfiler i en recept-självstudiekurs](../data-science-workspace/models-recipes/package-source-files-recipe.md) om du inte har någon URL för [!DNL Docker] källfilen.
 
 Självstudiekurserna för importrecept ger insikter om hur du konfigurerar och importerar ett paketerat recept. I slutet av den här självstudiekursen kan du skapa, utbilda och utvärdera en modell i Adobe Experience Platform [!DNL Data Science Workspace].
@@ -85,7 +84,7 @@ Kom igång genom att följa kursen och utvärdera en [modell-API-självstudiekur
 
 ## Optimera en modell med Model Insights-ramverket
 
-Model Insights Framework förser datavetenskaparen med verktyg i Adobe Experience Platform [!DNL Data Science Workspace] för att göra snabba och välgrundade val för optimala maskininlärningsmodeller baserade på experiment. Ramverket kommer att förbättra snabbheten och effektiviteten i maskininlärningsarbetsflödet samt förbättra användarvänligheten för datavetare. Det gör du genom att ange en standardmall för varje maskininlärningsalgoritmtyp som ska vara till hjälp vid modelljustering. Slutresultatet gör att datavetare och datavetare kan fatta bättre modelloptimeringsbeslut för sina slutkunder.
+Model Insights Framework ger datavetenskaparna verktyg i Adobe Experience Platform [!DNL Data Science Workspace] för att göra snabba och välgrundade val för optimala maskininlärningsmodeller baserade på experiment. Ramverket kommer att förbättra snabbheten och effektiviteten i maskininlärningsarbetsflödet samt förbättra användarvänligheten för datavetare. Det gör du genom att ange en standardmall för varje maskininlärningsalgoritmtyp som ska vara till hjälp vid modelljustering. Slutresultatet gör att datavetare och datavetare kan fatta bättre modelloptimeringsbeslut för sina slutkunder.
 
 **Den här självstudiekursen hjälper dig att:**
 - Konfigurera receptkod.
@@ -96,7 +95,7 @@ Kom igång genom att följa självstudiekursen om hur du [optimerar en modell](.
 
 ## Posta en modell
 
-Poängen i Adobe Experience Platform [!DNL Data Science Workspace] kan uppnås genom att man matar in indata i en befintlig utbildad modell. Resultat av poängsättningen lagras och kan visas i en angiven utdatamängd som en ny grupp.
+Du kan göra poängsättningen i Adobe Experience Platform [!DNL Data Science Workspace] genom att mata in indata i en befintlig utbildad modell. Resultat av poängsättningen lagras och kan visas i en angiven utdatamängd som en ny grupp.
 
 **Den här självstudiekursen hjälper dig att:**
 - Skapa en ny poängkörning.
@@ -106,7 +105,7 @@ Kom igång genom att följa poängen i en [API-självstudiekurs](../data-science
 
 ## Publicera en modell som en tjänst
 
-Med Adobe Experience Platform [!DNL Data Science Workspace] kan du publicera din modell som en tjänst, vilket gör att användare i IMS-organisationen kan få poäng utan att behöva skapa egna modeller. Detta kan du göra med [!DNL Platform] användargränssnittet eller [!DNL Sensei Machine Learning] API:t.
+Med Adobe Experience Platform [!DNL Data Science Workspace] kan du publicera din modell som en tjänst, vilket gör att användare i IMS-organisationen kan få sina data poäng utan att behöva skapa egna modeller. Detta kan du göra med [!DNL Platform] användargränssnittet eller [!DNL Sensei Machine Learning] API:t.
 
 **Den här självstudiekursen hjälper dig att:**
 - Publicera en modell som en tjänst.
@@ -116,7 +115,7 @@ Kom igång genom att följa självstudiekursen [för publicering av en modell so
 
 ## Boka utbildning och poängsättning för en modell
 
-Med Adobe Experience Platform [!DNL Data Science Workspace] kan du ställa in schemalagda kurser i maskininlärning. Genom att automatisera utbildnings- och poängprocessen kan du behålla och förbättra en tjänsts effektivitet genom att hålla jämna steg med era datamönster.
+Med Adobe Experience Platform [!DNL Data Science Workspace] kan du konfigurera schemalagda kurser i maskininlärning. Genom att automatisera utbildnings- och poängprocessen kan du behålla och förbättra en tjänsts effektivitet genom att hålla jämna steg med era datamönster.
 
 **Den här självstudiekursen hjälper dig att:**
 - Konfigurera schemalagd poängsättning
@@ -127,9 +126,10 @@ Kom igång genom att följa självstudiekursen [för modellgränssnitt](../data-
 ## Skapa en funktionspipeline
 
 >[!NOTE]
+>
 >För närvarande är funktionspipelinjer bara tillgängliga via API.
 
-Med Adobe Experience Platform kan du skapa och skapa anpassade rörledningar för att utföra funktionstekniken i stor skala via [!DNL Sensei Machine Learning Framework Runtime].
+Med Adobe Experience Platform kan du skapa och skapa anpassade rörledningar för att utföra funktionstekniker i stor skala via [!DNL Sensei Machine Learning Framework Runtime].
 
 **Den här guiden hjälper dig att:**
 - Implementera rörlighetsklasser för funktioner.
