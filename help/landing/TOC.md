@@ -2,11 +2,12 @@
 product: experience-platform
 audience: user
 user-guide-title: Hjälp om Adobe Experience Platform
+user-guide-description: Adobe Experience Platform is the most powerful, flexible, and open system on the market for building and managing complete solutions that drive customer experience. Experience Platform enables organizations to centralize and standardize customer data and content from any system and apply data science and machine learning to dramatically improve the design and delivery of rich, personalized experiences.
 translation-type: tm+mt
-source-git-commit: a2726bfc5ef7feac374e57af9c986a9c521efa48
+source-git-commit: bd3c31e7d39f7f66d755356a3dbb754e97c196fb
 workflow-type: tm+mt
 source-wordcount: '306'
-ht-degree: 8%
+ht-degree: 20%
 
 ---
 
@@ -15,9 +16,9 @@ ht-degree: 8%
 
 * [Experience Platform - översikt](home.md)
 * [Komma igång](get-started.md)
-* Experience Platform dokumentation {#documentation}
+* Dokumentation om Experience Platform {#documentation}
    * [Dokumentationsöversikt](documentation/overview.md)
-   * [Åtkomstkontroll](https://docs.adobe.com/content/help/en/experience-platform/access-control/home.html)
+   * [Åtkomstkontroll](https://docs.adobe.com/content/help/sv-SE/experience-platform/access-control/home.html)
    * [Revisor](https://docs.adobe.com/content/help/en/auditor/using/overview.html)
    * [Katalog och datauppsättningar](https://docs.adobe.com/content/help/en/experience-platform/catalog/home.html)
    * [Dataåtkomst](https://docs.adobe.com/content/help/en/experience-platform/data-access/home.html)
@@ -29,19 +30,19 @@ ht-degree: 8%
    * [Beslutstjänst](https://docs.adobe.com/content/help/en/experience-platform/decisioning/home.html)
    * [Mål](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/destinations/destinations-overview.html)
    * [ETL (Extrahera, Omforma, Läs in)](https://docs.adobe.com/content/help/en/experience-platform/etl/home.html)
-   * [Identitetstjänst](https://docs.adobe.com/content/help/en/experience-platform/identity/home.html)
+   * [Identitetstjänst](https://docs.adobe.com/content/help/sv-SE/experience-platform/identity/home.html)
    * [Intelligenta tjänster](https://docs.adobe.com/content/help/en/experience-platform/intelligent-services/home.html)
    * [Starta](https://docs.adobe.com/content/help/en/launch/using/overview.html)
    * [Insikter om observerbarhet](https://docs.adobe.com/content/help/en/experience-platform/observability/home.html)
    * [Privacy Service](https://docs.adobe.com/content/help/en/experience-platform/privacy/home.html)
-   * [Profil (kundprofil i realtid)](https://docs.adobe.com/content/help/en/experience-platform/profile/home.html)
+   * [Profil (kundprofil i realtid)](https://docs.adobe.com/content/help/sv-SE/experience-platform/profile/home.html)
    * [Frågetjänst](https://docs.adobe.com/content/help/en/experience-platform/query/home.html)
-   * [Kunddata i realtid Platform](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/overview.html)
+   * [Kunddataplattform i realtid](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/overview.html)
    * [Sandlådor](https://docs.adobe.com/content/help/en/experience-platform/sandbox/home.html)
    * [Segmentering](https://docs.adobe.com/content/help/en/experience-platform/segmentation/home.html)
    * [Källor (kopplingar)](https://docs.adobe.com/content/help/en/experience-platform/sources/home.html)
    * [Web SDK](https://docs.adobe.com/content/help/sv-SE/experience-platform/edge/home.html)
-   * [XDM (Experience Data Model)](https://docs.adobe.com/content/help/en/experience-platform/xdm/home.html)
+   * [XDM (Experience Data Model)](https://docs.adobe.com/content/help/sv-SE/experience-platform/xdm/home.html)
 * [Självstudiekurser för Experience Platform](https://docs.adobe.com/content/help/en/experience-platform/tutorials/home.html)
 * [Versionsinformation](https://docs.adobe.com/content/help/en/experience-platform/release-notes/latest.html)
 * [Ordlista](glossary.md)
