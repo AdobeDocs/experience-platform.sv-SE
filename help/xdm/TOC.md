@@ -2,11 +2,12 @@
 product: experience-platform
 audience: user
 user-guide-title: Experience Data Model (XDM) - systemhjälp
+user-guide-description: Experience Data Model (XDM) is a publicly documented specification designed to improve the power of digital experiences. It provides common structures and definitions for any application to use to communicate with Adobe Experience Platform services. By adhering to XDM standards, all customer experience data can be incorporated into a common representation that can deliver insights in a faster, more integrated way.
 translation-type: tm+mt
-source-git-commit: ef11e3c4f0a3be42e17080f8b2deb464ae6fcd2a
+source-git-commit: bd3c31e7d39f7f66d755356a3dbb754e97c196fb
 workflow-type: tm+mt
 source-wordcount: '115'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
 
@@ -34,7 +35,7 @@ ht-degree: 0%
    * [Beskrivningar](api/descriptors.md)
    * [Ad hoc-scheman](api/ad-hoc.md)
    * [Bilaga](api/appendix.md)
-* Tutorials {#tutorials}
+* Självstudiekurser {#tutorials}
    * [Skapa ett schema (API)](tutorials/create-schema-api.md)
    * [Skapa ett schema (UI)](tutorials/create-schema-ui.md)
    * [Definiera en relation mellan två scheman (API)](tutorials/relationship-api.md)
@@ -42,4 +43,4 @@ ht-degree: 0%
    * [Skapa ett ad hoc-schema (API)](tutorials/ad-hoc.md)
 * [Felsökningsguide](troubleshooting-guide.md)
 * [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)
-* [Versionsinformation för Platform](https://www.adobe.com/go/platform-release-notes-en)
+* [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
