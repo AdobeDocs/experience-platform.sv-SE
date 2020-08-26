@@ -4,7 +4,7 @@ solution: Adobe Experience Platform Data Science Workspace
 title: Skapa en funktionspipeline
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '1367'
 ht-degree: 0%
@@ -15,6 +15,7 @@ ht-degree: 0%
 # Skapa en funktionspipeline
 
 >[!IMPORTANT]
+>
 > Funktionspipeliner är för närvarande bara tillgängliga via API.
 
 Med Adobe Experience Platform kan du skapa och skapa anpassade rörledningar för att utföra funktionstekniker i stor skala via Sensei Machine Learning Framework Runtime (nedan kallad Runtime).
@@ -24,7 +25,7 @@ I det här dokumentet beskrivs de olika klasserna som finns i en funktionspipeli
 Följande arbetsflöde utförs när en funktionspipeline körs:
 
 1. Mottagaren läser in datauppsättningen till en pipeline.
-2. Funktionsomformningen görs på datauppsättningen och skrivs tillbaka till Adobe Experience Platform.
+2. Funktionstransformering görs på datauppsättningen och skrivs tillbaka till Adobe Experience Platform.
 3. De omformade data läses in för utbildning.
 4. Funktionspipelinen definierar faserna med regressorn för övertoning som vald modell.
 5. Rörledningen används för att passa utbildningsdata och den tränade modellen skapas.
@@ -390,6 +391,7 @@ scoring.dataSaver: MyDatasetSaver
 Nu när du har skapat din funktionspipeline måste du skapa en Docker-bild för att kunna anropa funktionens pipeline-slutpunkter i [!DNL Sensei Machine Learning] API. Du behöver en Docker-bild-URL för att kunna anropa funktionens pipeline-slutpunkter.
 
 >[!TIP]
+>
 >Om du inte har någon Docker-URL kan du gå till [Paketkällfilerna i en recept](../models-recipes/package-source-files-recipe.md) -självstudiekurs för att stegvis gå igenom hur du skapar en Docker-värd-URL.
 
 Du kan också använda följande Postman-samling för att underlätta arbetet med API:t för funktionspipeline:
@@ -416,13 +418,14 @@ När du är klar skickar du en GET-begäran om `/experiments/{EXPERIMENT_ID}` at
 
 ### Ange utbildningsuppgift för körning av experiment {#training}
 
-Därefter måste du [specificera uppgiften](../api/experiments.md#experiment-training-scoring)för utbildningskörningen. Gör en POST till `experiments/{EXPERIMENT_ID}/runs` och i brödtexten och ställ in läget på `train` och skicka en mängd uppgifter som innehåller dina utbildningsparametrar. Ett godkänt svar returnerar en nyttolast som innehåller information om den begärda experten.
+Därefter måste du [specificera uppgiften](../api/experiments.md#experiment-training-scoring)för utbildningskörningen. Gör en POST till `experiments/{EXPERIMENT_ID}/runs` och i brödtexten och ange läget till `train` och skicka en array med uppgifter som innehåller dina utbildningsparametrar. Ett godkänt svar returnerar en nyttolast som innehåller information om den begärda experten.
 
 När du är klar skickar du en GET-begäran om `/experiments/{EXPERIMENT_ID}` att [hämta experimentstatusen](../api/experiments.md#retrieve-specific) och väntar på att Experimentstatus ska uppdateras.
 
 ### Ange poänguppgiften för testkörningen {#scoring}
 
 >[!NOTE]
+>
 > För att slutföra det här steget måste du ha minst en lyckad utbildning kopplad till din Experiment.
 
 Efter en lyckad utbildning måste du [ange poängkörningsuppgift](../api/experiments.md#experiment-training-scoring). Gör en POST till `experiments/{EXPERIMENT_ID}/runs` och i brödtexten och ange `mode` attributet till &quot;score&quot;. Detta startar din resultatutvärderingsexpertsession.
