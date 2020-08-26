@@ -1,17 +1,18 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Hjälp om datainmatning i Adobe Experience Platform
+user-guide-title: Hjälp om Adobe Experience Platform datainmatning
+user-guide-description: Adobe Experience Platform brings data from multiple sources together in order to help marketers better understand the behavior of their customers. Adobe Experience Platform Data Ingestion represents the multiple methods by which Platform ingests data from these sources, as well as how that data is persisted within the Data Lake for use by downstream Platform services.
 translation-type: tm+mt
-source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
+source-git-commit: bd3c31e7d39f7f66d755356a3dbb754e97c196fb
 workflow-type: tm+mt
 source-wordcount: '108'
-ht-degree: 4%
+ht-degree: 5%
 
 ---
 
 
-# Adobe Experience Platform datainmatning {#ingestion}
+# Adobe Experience Platform Data Ingestion {#ingestion}
 
 - [Översikt över datainmatning](home.md)
 - Direktinmatning {#streaming}
@@ -23,7 +24,7 @@ ht-degree: 4%
    - [API för gruppinmatning](batch-ingestion/api-overview.md)
    - [Partiellt batchintag](batch-ingestion/partial.md)
    - [Felsökning](batch-ingestion/troubleshooting.md)
-- Tutorials {#tutorials}
+- Självstudiekurser {#tutorials}
    - [Mappa en CSV-fil till XDM](tutorials/map-a-csv-file.md)
    - [Infoga batchdata med användargränssnittet](tutorials/ingest-batch-data.md)
    - [Skapa en autentiserad direktuppspelningsanslutning](tutorials/create-authenticated-streaming-connection.md)
@@ -40,4 +41,4 @@ ht-degree: 4%
    - [Prenumerera på dataöverföringshändelser](quality/subscribe-events.md)
 - [Källkopplingar](source-connectors.md)
 - [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml)
-- [Versionsinformation för Platform](https://www.adobe.com/go/platform-release-notes-en)
+- [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
