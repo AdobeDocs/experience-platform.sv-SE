@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Maskininlärning i realtid - översikt
 topic: Overview
 translation-type: tm+mt
-source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '502'
 ht-degree: 1%
@@ -15,6 +15,7 @@ ht-degree: 1%
 # Maskininlärningsöversikt i realtid (alfa)
 
 >[!IMPORTANT]
+>
 >Maskininlärning i realtid är inte tillgängligt för alla användare ännu. Den här funktionen är alfabet och testas fortfarande. Dokumentet kan komma att ändras.
 
 Maskininlärning i realtid kan dramatiskt öka relevansen i ert innehåll för digitala upplevelser för era slutanvändare. Detta blir möjligt genom att man utnyttjar realtidskonferenser och kontinuerlig inlärning på [!DNL Experience Edge].
@@ -58,6 +59,7 @@ Marknadsförarna kan sedan definiera segment och regler som mappar Machine Learn
 Maskininlärning i realtid är för närvarande alfavärdet. Funktionerna som beskrivs nedan kan ändras när fler funktioner och noder blir tillgängliga.
 
 >[!NOTE]
+>
 > Alfabegränsningar:
 > - För närvarande stöds endast ONNX-baserade modeller.
 > - Funktioner som används i noder kan inte serialiseras. En lambda-funktion används till exempel i en Pandarod.
@@ -70,7 +72,7 @@ Maskininlärning i realtid är för närvarande alfavärdet. Funktionerna som be
 
 |  | Alfa (maj) |
 | --- | --- |
-| **Funktioner** | - Med RTML-mallen för bärbara datorer kan du skapa, testa och distribuera en anpassad maskininlärningsmodell. <br> - Stöd för import av förutbildade maskininlärningsmodeller. <br> - Machine Learning SDK i realtid. <br> - Startuppsättning med redigeringsnoder. <br> - distribueras till Adobe Experience Platform Hub. |
+| **Funktioner** | - Med RTML-mallen för bärbara datorer kan du skapa, testa och distribuera en anpassad maskininlärningsmodell. <br> - Stöd för import av förutbildade maskininlärningsmodeller. <br> - Machine Learning SDK i realtid. <br> - Startuppsättning med redigeringsnoder. <br> - Distribueras till Adobe Experience Platform Hub. |
 | **Tillgänglighet** | Nordamerika |
 | **Redigeringsnoder** | - Pandor <br> - ScikitLearn <br> - ONNXNode <br> - Split <br> - ModelUpload <br> - OneHotEncoder |
 | **Körtider för poäng** | ONNX |
