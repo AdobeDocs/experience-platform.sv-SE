@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Importera ett paketerat recept (UI)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '1665'
 ht-degree: 0%
@@ -131,12 +131,14 @@ Sidan *Konfigurera* för arbetsflödet *Importera recept* visas. Ange ett namn o
 ![konfigurera arbetsflöde](../images/models-recipes/import-package-ui/configure-workflow.png)
 
 >[!NOTE]
+>
 > I källfilerna för [paketet till en Recept](./package-source-files-recipe.md) -självstudiekurs angavs en Docker-URL när köpreceptet för butik skapades med Python-källfiler.
 
 När du är på *Select source* -sidan klistrar du in den Docker-URL som motsvarar det paketerade receptet som skapats med [!DNL Python] källfilerna i **[!UICONTROL Source URL]** fältet. Importera sedan den angivna konfigurationsfilen genom att dra och släppa eller använd **filläsaren**. Den angivna konfigurationsfilen finns på `experience-platform-dsw-reference/recipes/python/retail/retail.config.json`. Välj **[!UICONTROL Python]** i listrutan *Körtid* och **[!UICONTROL Classification]** i listrutan *Typ* . När allt är ifyllt klickar du **[!UICONTROL Next]** i det övre högra hörnet för att gå vidare till *Hantera scheman*.
 
 >[!NOTE]
-> *Text *har stöd **[!UICONTROL Classification]**och **[!UICONTROL Regression]**. Om modellen inte faller under någon av dessa typer väljer du **[!UICONTROL Custom]**.
+>
+> *Text* har stöd **[!UICONTROL Classification]** och **[!UICONTROL Regression]**. Om modellen inte faller under någon av dessa typer väljer du **[!UICONTROL Custom]**.
 
 ![](../images/models-recipes/import-package-ui/recipe_source_python.png)
 
@@ -163,12 +165,14 @@ Sidan *Konfigurera* för arbetsflödet *Importera recept* visas. Ange ett namn o
 ![konfigurera arbetsflöde](../images/models-recipes/import-package-ui/configure-workflow.png)
 
 >[!NOTE]
+>
 > I källfilerna för [paketet till en Recept](./package-source-files-recipe.md) -självstudiekurs angavs en Docker-URL när köpreceptet för butik skapades med hjälp av R-källfiler.
 
 När du är på *Select source* -sidan klistrar du in den Docker-URL som motsvarar det paketerade recept som skapats med R-källfiler i **[!UICONTROL Source URL]** fältet. Importera sedan den angivna konfigurationsfilen genom att dra och släppa eller använd **filläsaren**. Den angivna konfigurationsfilen finns på `experience-platform-dsw-reference/recipes/R/Retail\ -\ GradientBoosting/retail.config.json`. Välj **[!UICONTROL R]** i listrutan *Körtid* och **[!UICONTROL Classification]** i listrutan *Typ* . När allt är ifyllt klickar du **[!UICONTROL Next]** i det övre högra hörnet för att gå vidare till *Hantera scheman*.
 
 >[!NOTE]
-> *Text *har stöd **[!UICONTROL Classification]**och **[!UICONTROL Regression]**. Om modellen inte faller under någon av dessa typer väljer du **[!UICONTROL Custom]**.
+>
+> *Text* har stöd **[!UICONTROL Classification]** och **[!UICONTROL Regression]**. Om modellen inte faller under någon av dessa typer väljer du **[!UICONTROL Custom]**.
 
 ![](../images/models-recipes/import-package-ui/recipe_source_R.png)
 
@@ -195,12 +199,14 @@ Sidan *Konfigurera* för arbetsflödet *Importera recept* visas. Ange ett namn o
 ![konfigurera arbetsflöde](../images/models-recipes/import-package-ui/configure-workflow.png)
 
 >[!NOTE]
+>
 > I källfilerna för [paketet till en Recept](./package-source-files-recipe.md) -självstudiekurs angavs en Docker-URL när köpreceptet för butik skapades med hjälp av PySpark-källfiler.
 
 När du är på *Select source* -sidan klistrar du in den Docker-URL som motsvarar det paketerade recept som skapats med PySpark-källfiler i **[!UICONTROL Source URL]** fältet. Importera sedan den angivna konfigurationsfilen genom att dra och släppa eller använd **filläsaren**. Den angivna konfigurationsfilen finns på `experience-platform-dsw-reference/recipes/pyspark/retail/pipeline.json`. Välj **[!UICONTROL PySpark]** i *listrutan* Runtime. När PySpark-miljön har valts fylls standardartefakten automatiskt i till **[!UICONTROL Docker]**. Välj sedan **[!UICONTROL Classification]** i listrutan *Typ* . När allt är ifyllt klickar du **[!UICONTROL Next]** i det övre högra hörnet för att gå vidare till *Hantera scheman*.
 
 >[!NOTE]
-> *Text *har stöd **[!UICONTROL Classification]**och **[!UICONTROL Regression]**. Om modellen inte faller under någon av dessa typer väljer du **[!UICONTROL Custom]**.
+>
+> *Text* har stöd **[!UICONTROL Classification]** och **[!UICONTROL Regression]**. Om modellen inte faller under någon av dessa typer väljer du **[!UICONTROL Custom]**.
 
 ![](../images/models-recipes/import-package-ui/pyspark-databricks.png)
 
@@ -227,12 +233,14 @@ Sidan *Konfigurera* för arbetsflödet *Importera recept* visas. Ange ett namn o
 ![konfigurera arbetsflöde](../images/models-recipes/import-package-ui/configure-workflow.png)
 
 >[!NOTE]
+>
 > I källfilerna för [paketet till en Recept](./package-source-files-recipe.md) -självstudiekurs angavs en Docker-URL när köpreceptet för butik skapades med hjälp av källfiler från Scala ([!DNL Spark]).
 
 När du är på *Select source* -sidan klistrar du in den Docker-URL som motsvarar det paketerade recept som skapats med Scala-källfiler i fältet *Source URL* (Källadress). Importera sedan den angivna konfigurationsfilen genom att dra och släppa eller använd **filläsaren**. Den angivna konfigurationsfilen finns på `experience-platform-dsw-reference/recipes/scala/retail/pipelineservice.json`. Välj **[!UICONTROL Spark]** i *listrutan* Runtime. När du har valt [!DNL Spark] runtime-modulen fylls standardartefakten automatiskt i **[!UICONTROL Docker]**. Välj sedan **[!UICONTROL Regression]** i listrutan *Typ* . När allt är ifyllt klickar du **[!UICONTROL Next]** i det övre högra hörnet för att gå vidare till *Hantera scheman*.
 
 >[!NOTE]
-> *Text *har stöd **[!UICONTROL Classification]**och **[!UICONTROL Regression]**. Om modellen inte faller under någon av dessa typer väljer du **[!UICONTROL Custom]**.
+>
+> *Text* har stöd **[!UICONTROL Classification]** och **[!UICONTROL Regression]**. Om modellen inte faller under någon av dessa typer väljer du **[!UICONTROL Custom]**.
 
 ![](../images/models-recipes/import-package-ui/scala-databricks.png)
 
@@ -250,7 +258,7 @@ Gå vidare till [nästa steg](#next-steps) för att ta reda på hur du skapar en
 
 ## Nästa steg {#next-steps}
 
-Den här självstudiekursen ger dig insikt i hur du konfigurerar och importerar ett recept till [!DNL Data Science Workspace]. Nu kan du skapa, utbilda och utvärdera en modell med hjälp av det nya receptet.
+I den här självstudiekursen finns information om hur du konfigurerar och importerar ett recept till [!DNL Data Science Workspace]. Nu kan du skapa, utbilda och utvärdera en modell med hjälp av det nya receptet.
 
 - [Utbildning och utvärdering av en modell i användargränssnittet](./train-evaluate-model-ui.md)
 - [Utbilda och utvärdera en modell med API:t](./train-evaluate-model-api.md)
