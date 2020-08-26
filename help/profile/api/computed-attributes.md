@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: Beräknade attribut - Kundprofils-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: fa439ebb9d02d4a08c8ed92b18f2db819d089174
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '2365'
 ht-degree: 0%
@@ -15,9 +15,10 @@ ht-degree: 0%
 # (Alfa) Slutpunkt för beräknade attribut
 
 >[!IMPORTANT]
+>
 >Den beräknade attributfunktionen som beskrivs i det här dokumentet är för närvarande alfavärden och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
 
-Med beräknade attribut kan du automatiskt beräkna fältvärden baserat på andra värden, beräkningar och uttryck. Beräknade attribut fungerar på profilnivån, vilket innebär att du kan samla värden för alla poster och händelser.
+Med beräknade attribut kan du automatiskt beräkna fältvärden baserat på andra värden, beräkningar och uttryck. Beräknade attribut fungerar på profilnivån, vilket innebär att du kan samla värden över alla poster och händelser.
 
 Varje beräknat attribut innehåller ett uttryck, eller &quot;rule&quot;, som utvärderar inkommande data och lagrar resultatvärdet i ett profilattribut eller i en händelse. Med hjälp av dessa beräkningar kan du enkelt besvara frågor som rör inköpstid, tid mellan köp eller antal programöppningar, utan att behöva utföra komplexa beräkningar manuellt varje gång informationen behövs.
 
@@ -48,6 +49,7 @@ Användningsexempel för beräknade attribut kan omfatta allt från enkla beräk
 För att kunna konfigurera ett beräknat attribut måste du först identifiera fältet som innehåller det beräknade attributvärdet. Det här fältet kan skapas med hjälp av en mixin för att lägga till fältet i ett befintligt schema, eller genom att markera ett fält som du redan har definierat i ett schema.
 
 >[!NOTE]
+>
 >Beräknade attribut kan inte läggas till i fält i Adobe-definierade blandningar. Fältet måste finnas i `tenant` namnutrymmet, vilket innebär att det måste vara ett fält som du definierar och lägger till i ett schema.
 
 För att kunna definiera ett beräknat attributfält måste schemat aktiveras för [!DNL Profile] och visas som en del av det unionsschema för klassen som schemat baseras på. Mer information om [!DNL Profile]aktiverade scheman och fackföreningar finns i avsnittet om att [!DNL Schema Registry] aktivera ett schema för profiler och visa fackscheman [](../../xdm/api/getting-started.md)i utvecklarhandboken. Vi rekommenderar även att du läser [avsnittet om fackföreningar](../../xdm/schema/composition.md) i dokumentationen för schemakomposition.
@@ -89,6 +91,7 @@ När du klickat på **[!UICONTROL Add field]** ett nytt objekt öppnas ett namn 
 Ange den information som behövs för det nya fältet, inklusive namn, visningsnamn och typ, med hjälp av avsnittet till höger om redigeraren. *[!UICONTROL Field properties]*
 
 >[!NOTE]
+>
 >Fälttypen måste vara av samma typ som det beräknade attributvärdet. Om det beräknade attributvärdet till exempel är en sträng måste fältet som definieras i schemat vara en sträng.
 
 När du är klar klickar du **[!UICONTROL Apply]** och fältets namn och typ visas i redigerarens *[!UICONTROL Structure]* avsnitt.
@@ -100,6 +103,7 @@ När du är klar klickar du **[!UICONTROL Apply]** och fältets namn och typ vis
 Innan du fortsätter kontrollerar du att schemat har aktiverats för [!DNL Profile]. Klicka på schemanamnet i *[!UICONTROL Structure]* delen av redigeraren så att *[!UICONTROL Schema Properties]* fliken visas. Om **[!UICONTROL Profile]** skjutreglaget är blått har schemat aktiverats för [!DNL Profile].
 
 >[!NOTE]
+>
 >Det [!DNL Profile] går inte att ångra aktiveringen av ett schema, så om du klickar på skjutreglaget när det har aktiverats behöver du inte riskera att det inaktiveras.
 
 ![](../images/computed-attributes/Profile.png)
