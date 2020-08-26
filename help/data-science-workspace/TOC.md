@@ -2,11 +2,12 @@
 product: experience-platform
 audience: user
 user-guide-title: Hjälp om Adobe Experience Platform Data Science Workspace
+user-guide-description: Adobe Experience Platform Data Science Workspace uses machine learning and artificial intelligence to unleash insights from your data. Integrated into Adobe Experience Platform, Data Science Workspace helps you make predictions using your content and data assets across Adobe applications.
 translation-type: tm+mt
-source-git-commit: 8a613237d3d835039185954e580d3c86a5e465ae
+source-git-commit: bd3c31e7d39f7f66d755356a3dbb754e97c196fb
 workflow-type: tm+mt
 source-wordcount: '215'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
 
@@ -42,7 +43,7 @@ ht-degree: 0%
 * Modellredigering {#authoring}
    * [SDK för modellredigering](authoring/sdk.md)
    * [Skapa en rörledning för funktioner](authoring/feature-pipeline.md)
-   * [Platform SDK Guide (Python)](authoring/platform-sdk.md)
+   * [Plattforms-SDK-guide (Python)](authoring/platform-sdk.md)
 * Självstudiekurser för modell och recept {#models-recipes}
    * [Skapa och publicera genomgång av en maskininlärningsmodell](models-recipes/create-publish-model.md)
    * [Skapa schema och datauppsättning för butiksförsäljning](models-recipes/create-retails-sales-dataset.md)
@@ -52,7 +53,7 @@ ht-degree: 0%
    * [Importera ett paketerat recept (API)](models-recipes/import-packaged-recipe-api.md)
    * [Utbildning och utvärdering av modell (UI)](models-recipes/train-evaluate-model-ui.md)
    * [Utbilda och utvärdera en modell (API)](models-recipes/train-evaluate-model-api.md)
-   * [Posta en modell (UI)](models-recipes/score-model-ui.md)
+   * [Skapa en modell (UI)](models-recipes/score-model-ui.md)
    * [Posta en modell (API)](models-recipes/score-model-api.md)
    * [Optimera en modell](models-recipes/optimize-model.md)
    * [Berika kundprofilen i realtid med maskininlärningsinsikter](models-recipes/enrich-profile.md)
@@ -62,4 +63,4 @@ ht-degree: 0%
 * [Migreringsguider för mottagare och anteckningsböcker](recipe-notebook-migration.md)
 * [Felsökningsguide](troubleshooting-guide.md)
 * [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml)
-* [Versionsinformation för Platform](https://www.adobe.com/go/platform-release-notes-en)
+* [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
