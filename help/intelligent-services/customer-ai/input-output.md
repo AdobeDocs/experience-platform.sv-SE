@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Indata och utdata för AI
 topic: Getting started
 translation-type: tm+mt
-source-git-commit: 5cab341138e809bae79623bb65e499ac6b955f27
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '828'
 ht-degree: 0%
@@ -33,6 +33,7 @@ I följande exempel används en enkel formel som hjälper dig att fastställa de
 Minimilängd på data som krävs = stödberättigande population + resultatfönster
 
 >[!NOTE]
+>
 > 30 är det minsta antal dagar som krävs för en stödberättigad population. Om detta inte anges är standardinställningen 120 dagar.
 
 Exempel :
@@ -50,6 +51,7 @@ Förutom de minsta data som krävs fungerar kundens AI också bäst med aktuella
 Kund-AI genererar flera attribut för enskilda profiler som anses berättigade. Det finns två sätt att använda poängen baserat på vad du har etablerat. Om du har aktiverat kundprofil i realtid för din datauppsättning kan du använda den via kundprofilen i realtid. Om du inte har någon kundprofil i realtid kan du hämta den kunds-AI-utdatauppsättning som finns tillgänglig i datasjön.
 
 >[!NOTE]
+>
 >Utdatavärden används av kundprofilen i realtid som kan användas för att skapa och definiera segment.
 
 Tabellen nedan beskriver de olika attribut som finns i utdata från kundens AI:
