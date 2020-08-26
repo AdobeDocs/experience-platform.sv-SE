@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Paketera källfiler i ett recept
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '1087'
 ht-degree: 0%
@@ -49,9 +49,11 @@ Sidan *Konfigurera* öppnas. Ange ett lämpligt *mottagarnamn*, t.ex.&quot;Detal
 Välj lämplig *körningsmiljö* och välj sedan en **[!UICONTROL Classification]** som *typ*. Dina autentiseringsuppgifter för Azure Container-registret genereras när de är klara.
 
 >[!NOTE]
->*Typ *är den typ av maskininlärningsproblem som receptet är utformat för och används efter utbildning för att skräddarsy eller utvärdera kursen.
+>
+>*Typ* är den typ av maskininlärningsproblem som receptet är utformat för och används efter utbildning för att skräddarsy eller utvärdera kursen.
 
 >[!TIP]
+>
 >- För [!DNL Python] recept väljer du **[!UICONTROL Python]** runtime-modulen.
 >- För R-recept väljer du **[!UICONTROL R]** runtime-modulen.
 >- För PySpark-recept väljer du **[!UICONTROL PySpark]** körningsversionen. En artefakttyp fylls i automatiskt.
@@ -63,6 +65,7 @@ Välj lämplig *körningsmiljö* och välj sedan en **[!UICONTROL Classification
 Observera värdena för *Docker Host*, *UserName* och *Password*. Dessa används för att skapa och föra din [!DNL Docker] image framåt i de arbetsflöden som beskrivs nedan.
 
 >[!NOTE]
+>
 >Källwebbadressen anges när du har slutfört stegen som beskrivs nedan. Konfigurationsfilen förklaras i efterföljande självstudiekurser i [nästa steg](#next-steps).
 
 ### Paketera källfilerna
@@ -180,6 +183,7 @@ Navigera sedan till katalogen `experience-platform-dsw-reference/recipes/scala` 
 ```
 
 >[!TIP]
+>
 >Om du får ett behörighetsfel när du försöker logga in på Docker med hjälp av `login.sh` skriptet kan du försöka med kommandot `bash login.sh`.
 
 När du kör inloggningsskriptet måste du ange Docker-värden, användarnamn och lösenord. När du bygger måste du ange Docker-värden och en versionstagg för bygget.
