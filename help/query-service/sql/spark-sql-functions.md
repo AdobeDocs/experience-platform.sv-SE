@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Spark SQL-funktioner
 topic: spark sql functions
 translation-type: tm+mt
-source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '4991'
 ht-degree: 5%
@@ -1745,6 +1745,7 @@ Exempel:
 ```
 
 Sedan: 1.5.0
+
 >[!NOTE]
 >
 >RSS-logik för arrayer är tillgänglig sedan 2.4.0.
@@ -1763,6 +1764,7 @@ Exempel:
 ```
 
 Sedan: 2.4.0
+
 >[!NOTE]
 >
 >funktionen är icke-deterministisk.
