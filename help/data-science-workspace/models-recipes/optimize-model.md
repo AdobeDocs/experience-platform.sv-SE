@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Optimera en modell
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
-source-wordcount: '1219'
+source-wordcount: '1221'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Efter att ha implementerat och utbildat en modell är nästa steg som en datavet
 
 Model Insights Framework har för närvarande stöd för följande körningsmiljöer:
 - [Scala](#scala)
-- [!DNL Python/Tensorflow](#pythontensorflow)
+- [Python/Tensorflow](#pythontensorflow)
 - [R](#r)
 
 Exempelkod för recept finns i databasen [experience-platform-dsw-reference](https://github.com/adobe/experience-platform-dsw-reference) under `recipes`. Specifika filer från den här databasen kommer att refereras i den här självstudiekursen.
