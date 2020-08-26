@@ -2,11 +2,12 @@
 product: experience-platform
 audience: user
 user-guide-title: Versionsinformation för Adobe Experience Platform
+user-guide-description: Monthly release notes for Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 3a650d8a6553cd313f49423a2280a89e5b5785fc
+source-git-commit: bd3c31e7d39f7f66d755356a3dbb754e97c196fb
 workflow-type: tm+mt
 source-wordcount: '25'
-ht-degree: 56%
+ht-degree: 60%
 
 ---
 
