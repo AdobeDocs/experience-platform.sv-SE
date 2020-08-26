@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform Query Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 5c5f6c4868e195aef76bacc0a1e5df3857647bde
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '148'
 ht-degree: 0%
@@ -12,10 +12,11 @@ ht-degree: 0%
 ---
 
 
-# Översikt över självstudiekurser för Adobe Experience Platform
+# Adobe Experience Platform självstudiekurser - översikt
 
 >[!NOTE]
->Självstudiekurserna för Adobe Experience Platform har nyligen flyttats. Om du vill hitta en självstudiekurs väljer du rätt [!DNL Platform] område i den vänstra navigeringen. Uppdatera eventuella bokmärken.
+>
+>Adobe Experience Platform självstudiekurser har nyligen flyttats. Om du vill hitta en självstudiekurs väljer du rätt [!DNL Platform] område i den vänstra navigeringen. Uppdatera eventuella bokmärken.
 
 Adobe Experience Platform är den första specialbyggda plattformen för kundupplevelsehantering. Med kundprofiler i realtid, kontinuerlig intelligens och en öppen och utbyggbar arkitektur blir det verklighet att leverera personaliserade upplevelser i stor skala. Kom igång [!DNL Platform] snabbt och enkelt genom att följa med i steg-för-steg-självstudiekurser för allt från att förbereda data för konsumtion till avancerade maskininlärningsalgoritmer.
 
