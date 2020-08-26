@@ -5,9 +5,9 @@ seo-title: Amazon S3-mål
 description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS) S3-lagring för att regelbundet exportera tabbavgränsade filer eller CSV-datafiler från Adobe Experience Platform till dina egna S3-butiker.
 seo-description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS) S3-lagring för att regelbundet exportera tabbavgränsade filer eller CSV-datafiler från Adobe Experience Platform till dina egna S3-butiker.
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: 4c45da353b1deeb66b0dedb37450158f4bdc2a7c
 workflow-type: tm+mt
-source-wordcount: '202'
+source-wordcount: '213'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Mer information om hur du ansluter till molnlagringsdestinationer finns [i arbet
 
 Ange följande information i arbetsflödet för att skapa mål för [!DNL Amazon S3] mål:
 
-* **[!DNL Amazon S3]åtkomstnyckel och[!DNL Amazon S3]hemlig nyckel**: Generera [!DNL Amazon S3]en åtkomstnyckel - nyckelpar för hemlig åtkomst som ger CDP-åtkomst i realtid i Adobe till ditt [!DNL Amazon S3] konto.
+* **[!DNL Amazon S3]åtkomstnyckel och[!DNL Amazon S3]hemlig nyckel**: Generera [!DNL Amazon S3]i stället ett `access key - secret access key` par som ger CDP-åtkomst i realtid i Adobe till ditt [!DNL Amazon S3] konto. Läs mer i [Amazon Web Services-dokumentationen](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 
 >[!IMPORTANT]
 >
