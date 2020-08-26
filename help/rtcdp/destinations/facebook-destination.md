@@ -5,7 +5,7 @@ seo-title: Facebook-mål
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 seo-description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '722'
 ht-degree: 2%
@@ -39,7 +39,7 @@ Ett flygbolag har olika kundnivåer (Bronze, Silver och Gold) och vill kunna erb
 
 För att rikta in sig på dem i olika sociala medier kan de lägga in kunddata från sina CRM i CDP i realtid i Adobe, med e-postadresserna som identifierare.
 
-Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-ID:n och kundnivåer, för att skapa nya målgruppssegment som de kan rikta sig till via [!DNL Facebook] målet.
+Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-ID:n och kundnivåer, för att skapa nya målgruppssegment som de kan rikta sig mot via [!DNL Facebook] målet.
 
 ## Destinationsspecifikationer {#destination-specs}
 
@@ -60,6 +60,7 @@ Innan du kan skicka målgruppssegment till [!DNL Facebook]kontrollerar du att du
 1. Ditt [!DNL Facebook] användarkonto måste ha **[!DNL Manage campaigns]** behörighet aktiverat för annonskontot som du tänker använda.
 2. Add the **Adobe Experience Cloud** business account as an advertising partner in your [!DNL Facebook Ad Account]. Använd `business ID=206617933627973`. Mer information finns i [Lägg till partner i din Business Manager](https://www.facebook.com/business/help/1717412048538897) i dokumentationen för Facebook.
    >[!IMPORTANT]
+   >
    > When configuring the permissions for Adobe Experience Cloud, you must enable the **Manage campaigns** permission. Det krävs för [!DNL Adobe Real-time CDP]-integreringen.
 3. Läs och signera [!DNL Facebook Custom Audiences] användarvillkoren. Gör det genom att gå till `https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]`, där `accountID` är din [!DNL Facebook Ad Account ID].
 
