@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Behandling av sekretessförfrågningar i Data Lake
 topic: overview
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
-source-wordcount: '1177'
+source-wordcount: '1179'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Behandling av sekretessförfrågningar i [!DNL Data Lake]
 
-Adobe Experience Platform [!DNL Privacy Service] behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt juridiska och organisatoriska sekretessbestämmelser.
+Adobe Experience Platform [!DNL Privacy Service] behandlar kundförfrågningar om åtkomst, avanmälan från försäljning eller radering av personuppgifter i enlighet med juridiska och organisatoriska sekretessbestämmelser.
 
 Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kunddata som lagras i [!DNL Data Lake].
 
@@ -29,7 +29,7 @@ Vi rekommenderar att du har en fungerande förståelse för följande [!DNL Expe
 
 ## Identitetsnamnutrymmen {#namespaces}
 
-Adobe Experience Platform [!DNL Identity Service] överbryggar kundens identitetsdata mellan system och enheter. [!DNL Identity Service] använder för **[!UICONTROL identity namespaces]** att ge sammanhang till identitetsvärden genom att koppla dem till deras ursprungssystem. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;E-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-id (&quot;AdCloud&quot;) eller ett Adobe Target-ID (&quot;TNTID&quot;).
+Adobe Experience Platform [!DNL Identity Service] förenar data om kundidentitet mellan system och enheter. [!DNL Identity Service] använder för **[!UICONTROL identity namespaces]** att ge sammanhang till identitetsvärden genom att koppla dem till deras ursprungssystem. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;E-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-id (&quot;AdCloud&quot;) eller ett Adobe Target-id (&quot;TNTID&quot;).
 
 [!DNL Identity Service] I lagras globalt definierade (standard) och användardefinierade (anpassade) identitetsnamnutrymmen. Standardnamnutrymmen är tillgängliga för alla organisationer (till exempel&quot;E-post&quot; och&quot;ECID&quot;), medan din organisation också kan skapa anpassade namnutrymmen som passar organisationens behov.
 
@@ -106,7 +106,7 @@ curl -X POST \
 | `xdm:sourceSchema` | Det unika URI-ID:t för datauppsättningens XDM-schema. |
 | `xdm:sourceVersion` | Den version av XDM-schemat som anges i `xdm:sourceSchema`. |
 | `xdm:sourceProperty` | Sökvägen till schemafältet som beskrivningen tillämpas på. |
-| `xdm:namespace` | Ett av de [standardnamnutrymmen](../privacy-service/api/appendix.md#standard-namespaces) för identiteter som känns igen av [!DNL Privacy Service]eller ett anpassat namnutrymme som definieras av din organisation. |
+| `xdm:namespace` | Ett av de [vanliga ID-namnutrymmena](../privacy-service/api/appendix.md#standard-namespaces) som känns igen av [!DNL Privacy Service]eller ett anpassat namnutrymme som definieras av din organisation. |
 | `xdm:property` | Antingen &quot;xdm:id&quot; eller &quot;xdm:code&quot;, beroende på vilket namnutrymme som används under `xdm:namespace`. |
 | `xdm:isPrimary` | Ett booleskt värde (tillval). När värdet är true anger detta att fältet är en primär identitet. Scheman får endast innehålla en primär identitet. Standardvärdet är false om det inte inkluderas. |
 
@@ -132,7 +132,7 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och information om den nyska
 
 >[!NOTE]
 >
->I det här avsnittet beskrivs hur du formaterar sekretessförfrågningar för [!DNL Data Lake]. Vi rekommenderar att du läser igenom [!DNL Privacy Service UI](../privacy-service/ui/overview.md) - eller [!DNL Privacy Service API](../privacy-service/api/getting-started.md) -dokumentationen för att få information om hur du skickar ett sekretessjobb, inklusive hur inskickade användaridentitetsdata formateras korrekt i nyttolaster.
+>I det här avsnittet beskrivs hur du formaterar sekretessförfrågningar för [!DNL Data Lake]. Vi anmodar dig att läsa igenom [[!DNL Privacy Service] användargränssnittets](../privacy-service/ui/overview.md) eller [[!DNL Privacy Service] API](../privacy-service/api/getting-started.md) -dokumentationen för att få information om hur du skickar ett sekretessjobb, inklusive hur inskickade användaridentitetsdata formateras korrekt i nyttolaster.
 
 I följande avsnitt beskrivs hur du gör sekretessförfrågningar för [!DNL Data Lake] med hjälp av [!DNL Privacy Service] gränssnittet eller API:t.
 
@@ -144,7 +144,7 @@ När du skapar jobbbegäranden i användargränssnittet måste du markera **[!UI
 
 ### Använda API
 
-När du skapar jobbförfrågningar i API:t måste alla `userIDs` som anges använda ett specifikt `namespace` och `type` beroende på vilket datalager de gäller för. ID:n för [!DNL Data Lake] måste använda&quot;oregistrerad&quot; för sitt `type` värde, och ett `namespace` värde som matchar en av de [sekretessetiketter](#privacy-labels) som har lagts till i tillämpliga datauppsättningar.
+När du skapar jobbförfrågningar i API:t måste alla `userIDs` som anges använda ett specifikt `namespace` och `type` beroende på vilket datalager de gäller för. ID:n för [!DNL Data Lake] måste använda&quot;oregistrerad&quot; för sitt `type` värde och ett `namespace` värde som matchar en av de [sekretessetiketter](#privacy-labels) som har lagts till i tillämpliga datauppsättningar.
 
 Dessutom måste arrayen för den begärda nyttolasten innehålla produktvärdena för de olika datalager som begäran görs till. `include` När du gör förfrågningar till [!DNL Data Lake]måste arrayen innehålla värdet `aepDataLake`.
 
