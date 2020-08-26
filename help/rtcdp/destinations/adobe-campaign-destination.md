@@ -5,9 +5,9 @@ seo-title: Adobe Campaign
 description: Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera och leverera kampanjer i alla kanaler, både online och offline.
 seo-description: Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera och leverera kampanjer i alla kanaler, både online och offline.
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: e5a3539c8be8b7424f4965c7ab43d4260e39b380
 workflow-type: tm+mt
-source-wordcount: '481'
+source-wordcount: '544'
 ht-degree: 1%
 
 ---
@@ -42,7 +42,7 @@ För **[!UICONTROL SFTP with SSH Key]** anslutningar måste du ange domän, port
    * **[!UICONTROL Description]**: Ange en beskrivning för destinationen.
    * **[!UICONTROL Bucket Name]**: *För S3-anslutningar*. Ange platsen för S3-bucket där CDP i realtid ska placera dina exportdata som CSV- eller tabbavgränsade filer.
    * **[!UICONTROL Folder Path]**: Ange sökvägen till lagringsplatsen där CDP i realtid ska placera dina exportdata som CSV-filer eller tabbavgränsade filer.
-   * **[!UICONTROL File Format]**: **CSV** eller **TAB_DELIMITED**. Välj vilket filformat du vill exportera till lagringsplatsen.
+   * **[!UICONTROL File Format]**: **CSV** eller **TAB_DELIMITED**. Välj vilket filformat som ska exporteras till lagringsplatsen.
 
    ![Grundläggande information om kampanj](/help/rtcdp/destinations/assets/adobe-campaign-basic-information.png)
 
@@ -78,4 +78,11 @@ The presence of these files in your storage location is confirmation of successf
 
 ## Konfigurera dataimport till Adobe Campaign {#import-data-into-campaign}
 
-När du har anslutit CDP i realtid till din [!DNL Amazon S3] eller SFTP-lagringen måste du konfigurera dataimporten från din lagringsplats till Adobe Campaign. Mer information om hur du gör detta finns i [Importera data](https://docs.adobe.com/content/help/en/campaign-classic/using/automating-with-workflows/general-operation/importing-data.html) i hjälpdokumentationen för Adobe Campaign.
+>[!IMPORTANT]
+>
+>* Tänk på lagringsgränserna för SFTP, lagringsgränserna för databaser och de aktiva profilgränserna enligt ditt Adobe Campaign-avtal när du utför den här integreringen.
+>* Du måste schemalägga, importera och mappa exporterade segment i Adobe Campaign med hjälp av [!DNL Campaign] arbetsflöden. Mer information finns i [Konfigurera en återkommande import](https://docs.adobe.com/content/help/en/campaign-classic/using/automating-with-workflows/general-operation/importing-data.html#setting-up-a-recurring-import) i Adobe Campaign-dokumentationen.
+
+
+
+När du har anslutit CDP i realtid till din [!DNL Amazon S3] eller SFTP-lagringen måste du konfigurera dataimporten från din lagringsplats till Adobe Campaign. Mer information om hur du gör detta finns i [Importera data](https://docs.adobe.com/content/help/en/campaign-classic/using/automating-with-workflows/general-operation/importing-data.html) i Adobe Campaign-dokumentationen.
