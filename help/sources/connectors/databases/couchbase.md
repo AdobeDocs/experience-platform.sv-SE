@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Koppling till kuchbase
 topic: overview
 translation-type: tm+mt
-source-git-commit: 3b5e76afea5689dbd59f64f6192e6ef2a6acb7d3
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '179'
 ht-degree: 0%
@@ -15,9 +15,10 @@ ht-degree: 0%
 # (Beta)- [!DNL Couchbase] anslutning
 
 >[!NOTE]
+>
 >Kopplingen [!DNL Couchbase] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../home.md#terms-and-conditions) .
 
-Adobe Experience Platform erbjuder inbyggd anslutning för databasleverantörer som [!DNL Microsoft]MySQL och [!DNL Azure]så att du kan hämta data från dessa system. Olika typer av tredjepartsdatabaser stöds, bland annat relational, NoSQL och data warehouse. Stöd för databasleverantörer omfattar [!DNL Couchbase].
+Adobe Experience Platform erbjuder inbyggd anslutningsbarhet för databasleverantörer som [!DNL Microsoft], MySQL och [!DNL Azure]så att du kan hämta data från dessa system. Olika typer av tredjepartsdatabaser stöds, bland annat relational, NoSQL och data warehouse. Stöd för databasleverantörer omfattar [!DNL Couchbase].
 
 ## IP-adress tillåtelselista
 
