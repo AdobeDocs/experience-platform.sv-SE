@@ -5,7 +5,7 @@ solution: Experience Platform
 title: Flödeskörningsmeddelanden
 topic: overview
 translation-type: tm+mt
-source-git-commit: b5b785d8415c15e3acb9e1155811a66c51477717
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '859'
 ht-degree: 0%
@@ -44,6 +44,7 @@ Om du vill få meddelanden om status för flödeskörningen måste du registrera
 När du har skaffat en unik webbhotell-URL går du till [Adobe I/O-händelser](https://www.adobe.io/apis/experienceplatform/events.html) och följer stegen som beskrivs i dokumentet med [dataöverföringsmeddelanden](../ingestion/quality/subscribe-events.md) för att börja prenumerera på händelser.
 
 >[!IMPORTANT]
+>
 >Under prenumerationsprocessen kontrollerar du att du väljer [!DNL Platform] meddelanden som händelseleverantör och väljer följande händelseprenumerationer:
 >
 >* **[!UICONTROL Experience Platform Source's Flow Run Succeeded]**
@@ -60,6 +61,7 @@ När din webkrok är ansluten och din händelseprenumeration är klar kan du bö
 Ett meddelande returnerar information som antalet överföringsjobb som körs, filstorlek och fel. Ett meddelande returnerar också en nyttolast som är kopplad till ditt flöde som körs i JSON-format. Svarets nyttolast kan antingen klassificeras som `sources_flow_run_success` eller `sources_flow_run_failure`.
 
 >[!IMPORTANT]
+>
 >Om partiellt intag är aktiverat under skapandet av flödet markeras ett flöde som innehåller både lyckade och misslyckade inmatningar som `sources_flow_run_success` bara om antalet fel är under det tröskelvärde som angetts under skapandet av flödet. Om en lyckad flödeskörning innehåller fel inkluderas dessa fel fortfarande som en del av returnyttolasten.
 
 ### Lyckades
@@ -322,6 +324,7 @@ Följande svar är ett exempel på en misslyckad flödeskörning, där ett fel i
 | `fileInfo` | En URL som leder till en översikt över de filer som både kunde importeras och inte kunde hämtas. |
 
 >[!NOTE]
+>
 >Mer information om felmeddelanden finns i [bilagan](#errors) .
 
 ## Nästa steg
