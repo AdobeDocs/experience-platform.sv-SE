@@ -4,7 +4,7 @@ seo-title: Vanliga frågor om Adobe Experience Platform Web SDK
 description: Frågor och svar om Adobe Experience Platform Web SDK
 seo-description: Frågor och svar om Adobe Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 87669db063781750097057463536723274eb0b4f
+source-git-commit: 8cd9c52acd981c92d3959e12d91ebb65b2c3cec8
 workflow-type: tm+mt
 source-wordcount: '1684'
 ht-degree: 1%
@@ -48,7 +48,7 @@ Dessutom finns det för närvarande inget JavaScript-bibliotek som skickar data 
 
 ### Med Adobe Experience Platform Web SDK
 
-Den nya SDK:n för webben skickar data för följande lösningar till ett enda mål (AEP Edge Network) och löser de vanligaste användningsområdena för de ovannämnda lösningarna.
+Nya Web SDK skickar data för följande lösningar till ett enda mål (AEP Edge Network) och löser de vanligaste användningsområdena för de ovannämnda lösningarna.
 
 * Adobe Analytics
 * Adobe Audience Manager
