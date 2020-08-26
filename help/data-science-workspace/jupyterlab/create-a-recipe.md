@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa ett recept med Jupyter-anteckningsböcker
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '2273'
 ht-degree: 0%
@@ -30,7 +30,6 @@ Du kan skapa ett helt nytt recept i [!DNL Data Science Workspace]. Börja med at
 Med den [!UICONTROL Recipe Builder] bärbara datorn kan du köra utbildning och poängsättning inuti den bärbara datorn. Detta ger er flexibilitet att ändra deras `train()` och `score()` metoder mellan att köra experiment med kurser och poängdata. När du är nöjd med resultatet av kursen och poängsättningen kan du skapa ett recept som ska användas i [!DNL Data Science Workspace] den bärbara datorn för att hämta funktionalitet som är inbyggd i den bärbara datorn i Recipe Builder.
 
 >[!NOTE]
->
 >
 >Anteckningsboken Recipe Builder har stöd för att arbeta med alla filformat, men för närvarande har funktionen Skapa recept bara stöd [!DNL Python].
 
@@ -78,7 +77,6 @@ data_access_sdk_python
 
 >[!NOTE]
 >
->
 >Bibliotek eller specifika versioner som du lägger till kan vara inkompatibla med ovanstående bibliotek.
 
 ### Konfigurationsfiler {#configuration-files}
@@ -96,7 +94,7 @@ Om du vill hitta data- och schema-ID:n går du till fliken Data i anteckningsbö
 
 ![](../images/jupyterlab/create-recipe/datasets.png)
 
-Samma information finns på [Adobe Experience Platform](https://platform.adobe.com/) på flikarna **[Schema](https://platform.adobe.com/schema)**och**[Datauppsättningar](https://platform.adobe.com/dataset/overview)** .
+Samma information finns på [Adobe Experience Platform](https://platform.adobe.com/) på flikarna **[Schema](https://platform.adobe.com/schema)** och **[Datauppsättningar](https://platform.adobe.com/dataset/overview)** .
 
 Som standard ställs följande konfigurationsparametrar in åt dig när du använder data:
 
@@ -122,12 +120,11 @@ I det här steget används [pandabilden](https://pandas.pydata.org/pandas-docs/s
 
 >[!NOTE]
 >
->
 >I Recipe Builder-anteckningsboken läses data in via `platform_sdk` datainläsaren.
 
 ### [!DNL Platform] SDK {#platform-sdk}
 
-En ingående självstudiekurs om hur du använder `platform_sdk` datainläsaren finns i handboken [för](../authoring/platform-sdk.md)Platform SDK. Den här självstudiekursen innehåller information om autentisering av bygge, grundläggande läsning av data och grundläggande skrivande av data.
+En ingående självstudiekurs om hur du använder `platform_sdk` datainläsaren finns i handboken [för](../authoring/platform-sdk.md)plattforms-SDK. Den här självstudiekursen innehåller information om autentisering av bygge, grundläggande läsning av data och grundläggande skrivande av data.
 
 ### Externa källor {#external-sources}
 
@@ -153,8 +150,7 @@ Nu finns dina data i dataframe-objektet och kan analyseras och ändras i [nästa
 
 >[!CAUTION]
 >
->
-> `data_access_sdk_python` rekommenderas inte längre, se [Konvertera dataåtkomstkod till Platform SDK](../authoring/platform-sdk.md) för en guide om hur du använder `platform_sdk` datainläsaren.
+> `data_access_sdk_python` rekommenderas inte längre, se [Konvertera dataåtkomstkod till plattforms-SDK](../authoring/platform-sdk.md) för en guide om hur du använder `platform_sdk` datainläsaren.
 
 Användare kan läsa in data med hjälp av SDK för dataåtkomst. Biblioteket kan importeras högst upp på sidan genom att inkludera raden:
 
@@ -172,7 +168,6 @@ df = prodreader.load(data_set_id=configProperties['trainingDataSetId'],
 ```
 
 >[!NOTE]
->
 >
 >Som vi nämnt i avsnittet [](#configuration-files)Konfigurationsfil ställs följande konfigurationsparametrar in åt dig när du får åtkomst till data från [!DNL Experience Platform]:
 > - `ML_FRAMEWORK_IMS_USER_CLIENT_ID`
@@ -304,7 +299,6 @@ Filen innehåller `pipeline.py` logik för utbildning och poängsättning.
 Syftet med kursen är att skapa en modell med hjälp av funktioner och etiketter i utbildningsdatauppsättningen.
 
 >[!NOTE]
->
 > 
 >_Funktionerna_ avser den indatavariabel som används av maskininlärningsmodellen för att förutsäga _etiketterna_.
 
@@ -424,7 +418,7 @@ Observera att funktionen returnerar ett `metric` objekt som innehåller en array
 
 Filen `datasaver.py` innehåller `save()` funktionen som sparar din förutsägelse när du testar poängsättningen. Funktionen `save()` tar din förutsägelse och använder API: [!DNL Experience Platform Catalog] er, skriver data till den `scoringResultsDataSetId` du har angett i `scoring.conf` filen.
 
-Exemplet som används i exempelreceptet för försäljning inom detaljhandeln visas här. Observera hur biblioteket `DataSetWriter` används för att skriva data till Platform:
+Exemplet som används i exempelreceptet för försäljning inom detaljhandeln visas här. Observera hur biblioteket `DataSetWriter` används för att skriva data till plattformen:
 
 ```PYTHON
 from data_access_sdk_python.writer import DataSetWriter
