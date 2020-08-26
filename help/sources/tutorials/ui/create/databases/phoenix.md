@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa en Phoenix-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: ec2d0a33e0ae92a3153b7bdcad29734e487a0439
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '489'
 ht-degree: 1%
@@ -15,6 +15,7 @@ ht-degree: 1%
 # Skapa en [!DNL Phoenix] källanslutning i användargränssnittet
 
 >[!NOTE]
+>
 > Kopplingen [!DNL Phoenix] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
 Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Phoenix] källkoppling med [!DNL Platform] användargränssnittet.
@@ -37,7 +38,7 @@ För att få åtkomst till ditt [!DNL Phoenix] konto [!DNL Platform]måste du an
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
 | `host` | IP-adressen eller värdnamnet för [!DNL Phoenix] servern. |
-| `port` | Den TCP-port som [!DNL Phoenix] servern använder för att avlyssna klientanslutningar. Om du ansluter till [!DNL Azure HDInsights]anger du porten som 443. |
+| `port` | Den TCP-port som servern använder för att avlyssna klientanslutningar. [!DNL Phoenix] avlyssning. Om du ansluter till [!DNL Azure HDInsights]anger du porten som 443. |
 | `httpPath` | Den del av URL som motsvarar [!DNL Phoenix] servern. Ange /hbasephoenix0 om du använder [!DNL Azure HDInsights] klustret. |
 | `username` | Användarnamnet som du använder för att komma åt [!DNL Phoenix] servern. |
 | `password` | Lösenordet som motsvarar användaren. |
