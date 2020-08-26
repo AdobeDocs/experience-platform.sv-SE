@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Referenshandbok för Machine Learning-noder i realtid
 topic: Nodes reference
 translation-type: tm+mt
-source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '594'
 ht-degree: 0%
@@ -15,6 +15,7 @@ ht-degree: 0%
 # Referenshandbok för Machine Learning-noder i realtid (alfa)
 
 >[!IMPORTANT]
+>
 >Maskininlärning i realtid är inte tillgängligt för alla användare ännu. Den här funktionen är alfabet och testas fortfarande. Dokumentet kan komma att ändras.
 
 En nod är den grundläggande enhet som diagrammen är uppbyggda i. Varje nod utför en viss uppgift och kan kopplas ihop med hjälp av länkar för att skapa ett diagram som representerar en XML-pipeline. Uppgiften som utförs av en nod representerar en åtgärd för indata, till exempel en omvandling av data eller schema, eller en maskininlärningskonsekvens. Noden matar ut det omformade eller härledda värdet till nästa nod(er).
@@ -72,6 +73,7 @@ model_id = msg_model.model['model_id']
 ONNXNode är en intern Adobe-nod som tar ett modell-ID för att hämta den förtränade ONNX-modellen och använda den för att göra poäng på inkommande data.
 
 >[!TIP]
+>
 >Ange kolumnerna i samma ordning som du vill att data ska skickas till ONNX-modellen.
 
 ```python
@@ -121,7 +123,7 @@ msg6 = model_train.process(msg5)
 | Värde | Beskrivning |
 | --- | --- |
 | funktioner | Indatafunktioner för modellen (lista med strängar). <br> Till exempel: `browser`, `device`, `login_page`, `product_page`, `search_page` |
-| label | Target kolumnnamn (sträng). |
+| label | Målkolumnnamn (sträng). |
 | läge | Tåg/test (sträng). |
 | model_path | Sökväg till modellen Spara lokalt i ett format som inte är större än ett. |
 | params.model | Absolut importsökväg till modellen (sträng), t.ex.: `sklearn.linear_model.LogisticRegression`. |
