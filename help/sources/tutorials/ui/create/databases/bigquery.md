@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa en Google Big Query-källkoppling i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: a4ba11b8e05e5e054133c954b749381e39a7f721
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '469'
 ht-degree: 1%
@@ -15,6 +15,7 @@ ht-degree: 1%
 # Skapa en [!DNL Google Big Query] källanslutning i användargränssnittet
 
 >[!NOTE]
+>
 > Kopplingen [!DNL Google BigQuery] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
 
 Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Google Big Query] (nedan kallad GBQ) källkoppling med hjälp av [!DNL Platform] användargränssnittet.
