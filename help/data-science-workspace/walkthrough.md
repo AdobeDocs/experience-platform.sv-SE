@@ -3,10 +3,11 @@ keywords: Experience Platform;walkthrough;Data Science Workspace;popular topics
 solution: Experience Platform
 title: Genomgång av datavetenskapens arbetsyta
 topic: Walkthrough
+description: Det här dokumentet innehåller en genomgång av Adobe Experience Platform Data Science Workspace. Det allmänna arbetsflöde som en datavetare skulle gå igenom för att lösa ett problem med maskininlärning.
 translation-type: tm+mt
-source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
+source-git-commit: 194a29124949571638315efe00ff0b04bff19303
 workflow-type: tm+mt
-source-wordcount: '1638'
+source-wordcount: '1667'
 ht-degree: 0%
 
 ---
@@ -19,7 +20,7 @@ Det här dokumentet innehåller en genomgång för Adobe Experience Platform [!D
 ## Förutsättningar
 
 - Ett registrerat Adobe ID-konto
-   - Adobe ID måste ha lagts till i en organisation med tillgång till Adobe Experience Platform och [!DNL Data Science Workspace]
+   - Adobe ID-kontot måste ha lagts till i en organisation med tillgång till Adobe Experience Platform och [!DNL Data Science Workspace]
 
 ## Datavetenskaparens motivation
 
@@ -29,7 +30,7 @@ En återförsäljare står inför många utmaningar när det gäller att vara ko
 
 En datavetare kan utnyttja den stora mängd historiska data som en återförsäljare har tillgång till för att förutse framtida trender och optimera prissättningsbesluten. Vi kommer att använda tidigare försäljningsdata för att utbilda vår maskininlärningsmodell och använda modellen för att förutse framtida försäljningstrender. Med detta kan återförsäljaren få insikter som hjälper dem att ändra priserna.
 
-I den här översikten ska vi gå igenom de steg som en datavetare skulle gå igenom för att ta en datauppsättning och skapa en modell för att förutse försäljningen varje vecka. Vi går igenom följande avsnitt i den exempel på Adobe Experience Platform som handlar om detaljhandel [!DNL Data Science Workspace]:
+I den här översikten ska vi gå igenom de steg som en datavetare skulle gå igenom för att ta en datauppsättning och skapa en modell för att förutse försäljningen varje vecka. Vi går igenom följande avsnitt i den exempel som finns på Adobe Experience Platform [!DNL Data Science Workspace]:
 
 - [Inställningar](#setup)
 - [Utforska data](#exploring-data)
@@ -40,7 +41,7 @@ I den här översikten ska vi gå igenom de steg som en datavetare skulle gå ig
 
 För det första vill vi skapa en [!DNL JupyterLab] anteckningsbok för att öppna exempelanteckningsboken&quot;Detaljhandel&quot;. Om vi följer de steg som datavetenskaparen utför i den bärbara datorn kan vi få en förståelse för ett typiskt arbetsflöde.
 
-Klicka på fliken Datavetenskap i den övre menyn i användargränssnittet för Adobe Experience Platform för att ta dig till [!DNL Data Science Workspace]. På den här sidan klickar du på den [!DNL JupyterLab] flik som öppnar [!DNL JupyterLab] startprogrammet. Du bör se en liknande sida.
+I Adobe Experience Platform-gränssnittet klickar du på fliken Datavetenskap på den översta menyn för att ta dig till [!DNL Data Science Workspace]. På den här sidan klickar du på den [!DNL JupyterLab] flik som öppnar [!DNL JupyterLab] startprogrammet. Du bör se en liknande sida.
 
 ![](./images/walkthrough/jupyterlab_launcher.png)
 
@@ -110,7 +111,7 @@ Nu när vi känner till våra värden för dataramar vill vi komplettera detta m
 
 Univariata diagram är diagram av en enskild variabel. Ett vanligt unikt diagram som används för att visualisera dina data är lådor och morrdiagram.
 
-Med hjälp av våra butiksdata från tidigare kan vi generera låda och morrfack för var och en av de 45 butikerna och deras veckoförsäljning. Ritytan genereras med `seaborn.boxplot` funktionen.
+Med hjälp av våra butiksdata från tidigare kan vi generera låda och morrfack för var och en av de 45 butikerna och deras försäljning varje vecka. Ritytan genereras med `seaborn.boxplot` funktionen.
 
 ![](./images/walkthrough/box_whisker.png)
 
