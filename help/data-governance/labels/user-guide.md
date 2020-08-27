@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;data governance;data usage label;policy service;data usage labels user guide
 solution: Experience Platform
 title: Användarhandbok för etiketter för dataanvändning
 topic: labels
+description: Den här användarhandboken innehåller steg för att arbeta med dataanvändningsetiketter (kallas även DULE-etiketter) i Adobe Experience Platform användargränssnitt.
 translation-type: tm+mt
-source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
+source-git-commit: 2fdab7d984a7368df77110f8ba0e0ba687e96d7e
 workflow-type: tm+mt
-source-wordcount: '1045'
+source-wordcount: '1068'
 ht-degree: 0%
 
 ---
@@ -18,11 +19,11 @@ Den här användarhandboken innehåller steg för att arbeta med dataanvändning
 
 ## Hantera dataanvändningsetiketter på datauppsättningsnivå
 
-För att kunna hantera dataanvändningsetiketter på datauppsättningsnivå måste du välja en befintlig datauppsättning eller skapa en ny. När du har loggat in i Adobe Experience Platform väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen för att öppna arbetsytan _Datauppsättningar_ . På den här sidan visas alla skapade datauppsättningar som tillhör din organisation, tillsammans med användbar information om varje datauppsättning.
+För att kunna hantera dataanvändningsetiketter på datauppsättningsnivå måste du välja en befintlig datauppsättning eller skapa en ny. När du har loggat in på Adobe Experience Platform väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen för att öppna arbetsytan _Datauppsättningar_ . På den här sidan visas alla skapade datauppsättningar som tillhör din organisation, tillsammans med användbar information om varje datauppsättning.
 
 ![Fliken Datauppsättning i arbetsytan Data](../images/labels/datasets.png)
 
-I nästa avsnitt beskrivs hur du skapar en ny datauppsättning som du kan använda etiketter på. Om du vill redigera etiketter för en befintlig datauppsättning, markerar du datauppsättningen i listan och går vidare till att [lägga till etiketter för dataanvändning i datauppsättningen](#add-labels).
+I nästa avsnitt beskrivs hur du skapar en ny datauppsättning som du kan använda etiketter på. Om du vill redigera etiketter för en befintlig datauppsättning, markerar du datauppsättningen i listan och går vidare till att [lägga till dataanvändningsetiketter i datauppsättningen](#add-labels).
 
 ### Skapa en ny datauppsättning
 
@@ -112,7 +113,7 @@ Dialogrutan *[!UICONTROL Create label]* visas. Här anger du följande informati
 * **[!UICONTROL Name]**: Ett visningsnamn för etiketten.
 * **[!UICONTROL Description]**: (Valfritt) En beskrivning av etiketten som ger ytterligare kontext.
 
-När du är klar klickar du på **[!UICONTROL Create]**.
+Klicka på **[!UICONTROL Create]** när du är klar.
 
 ![](../images/labels/create-label.png)
 
