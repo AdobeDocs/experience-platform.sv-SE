@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användarhandbok för datauppsättningar
 topic: datasets
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1075'
+source-wordcount: '1088'
 ht-degree: 0%
 
 ---
@@ -21,11 +21,11 @@ Den här användarhandboken innehåller anvisningar om hur du utför vanliga åt
 Användarhandboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 * [Datauppsättningar](overview.md): Konstruktionen för lagring och hantering för databeständighet i [!DNL Experience Platform].
-* [!DNL Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigerare](../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar egna anpassade XDM-scheman med hjälp av [!DNL Schema Editor] i [!DNL Platform] användargränssnittet.
-* [!DNL Real-time Customer Profile](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [!DNL Data Governance](../../data-governance/home.md): Se till att era kunddata är kompatibla med regler, begränsningar och policyer.
+* [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Data Governance]](../../data-governance/home.md): Se till att era kunddata är kompatibla med regler, begränsningar och policyer.
 
 ## Visa datauppsättningar
 
@@ -143,7 +143,7 @@ Du kan klicka på en person **[!UICONTROL Batch ID]** för att komma åt *[!UICO
 
 ![](../images/datasets/user-guide/batch_overview.png)
 
-Om du vill ta bort gruppen kan du göra det genom att klicka på **[!UICONTROL Delete batch]** längst upp till höger på kontrollpanelen. Om du gör det tas även dess poster bort från den datauppsättning som batchen ursprungligen kopplades till.
+Om du vill ta bort gruppen kan du göra det genom att klicka på **[!UICONTROL Delete batch]** längst upp till höger på kontrollpanelen. Om du gör det tas även posterna bort från den datauppsättning som batchen ursprungligen skapades i.
 
 ![](../images/datasets/user-guide/delete_batch.png)
 
