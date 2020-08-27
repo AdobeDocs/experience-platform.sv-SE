@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Berika kundprofilen i realtid med maskininlärningsinsikter
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1133'
+source-wordcount: '1145'
 ht-degree: 0%
 
 ---
@@ -26,11 +26,11 @@ I det här dokumentet finns en stegvis självstudiekurs som berikar dig [!DNL Re
 
 Den här självstudiekursen kräver en fungerande förståelse av de olika aspekterna av [!DNL Adobe Experience Platform] att hämta in [!DNL Profile] data och skapa segment. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-* [!DNL Real-time Customer Profile](../../rtcdp/overview.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [!DNL Identity Service](../../identity-service/home.md): Möjliggör [!DNL Real-time Customer Profile] genom att överbrygga identiteter från olika datakällor som importeras till Platform.
-* [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att ordna kundupplevelsedata.
+* [[!DNL Real-time Customer Profile]](../../rtcdp/overview.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Identity Service]](../../identity-service/home.md): Möjliggör [!DNL Real-time Customer Profile] genom att överbrygga identiteter från olika datakällor som hämtas in till Platform.
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
 
-Förutom de ovannämnda dokumenten rekommenderar vi att du även granskar följande handböcker om scheman och schemaläggningsprogrammet:
+Förutom de ovannämnda dokumenten rekommenderar vi att du även granskar följande handledningar för scheman och schemaläggningsprogrammet:
 
 * [Grundläggande om schemakomposition](../../xdm/schema/composition.md): Beskriver XDM-scheman, byggstenar, principer och bästa praxis för dispositionsscheman som ska användas i [!DNL Experience Platform].
 * [Schemaredigeraren, genomgång](../../xdm/tutorials/create-schema-ui.md): Innehåller detaljerade anvisningar om hur du skapar scheman med Schemaredigeraren i [!DNL Experience Platform].
@@ -41,7 +41,7 @@ Det första steget mot att berika [!DNL Real-time Customer Profile] med poängs�
 
 Dispositionen av ett schema börjar med att tilldela en klass. Klasser definierar de beteendeaspekter av data som schemat ska innehålla (post- eller tidsserie). Det här avsnittet innehåller grundläggande instruktioner om hur du skapar ett schema med schemaverktyget. En mer ingående självstudiekurs finns i självstudiekursen om hur du [skapar ett schema med Schemaredigeraren](../../xdm/tutorials/create-schema-ui.md).
 
-1. På Adobe Experience Platform klickar du på **[!UICONTROL Schema]** fliken för att öppna schemaläsaren. Klicka **[!UICONTROL Create Schema]** för att öppna *Schemaredigeraren*där du interaktivt kan skapa scheman.
+1. I Adobe Experience Platform klickar du på **[!UICONTROL Schema]** fliken för att öppna schemaläsaren. Klicka **[!UICONTROL Create Schema]** för att öppna *Schemaredigeraren*där du interaktivt kan skapa scheman.
    ![](../images/models-recipes/enrich-rtcdp/schema_browser.png)
 
 2. I fönstret *Disposition* klickar du **[!UICONTROL Assign]** för att bläddra bland de tillgängliga klasserna.
@@ -105,10 +105,10 @@ När data hämtas in till en [!DNL Profile]aktiverad datauppsättning, hämtas s
 
 Nu när ni har genererat och inhämtat insikter i era [!DNL Profile]aktiverade datauppsättningar kan ni hantera dessa data genom att identifiera deluppsättningar av relaterade element med hjälp av segmentbyggaren. Följ stegen nedan för att skapa egna segment.
 
-1. På Adobe Experience Platform klickar du på **[!UICONTROL Segments]** fliken följt av **[!UICONTROL Create Segment]** för att öppna segmentbyggaren.
+1. I Adobe Experience Platform klickar du på **[!UICONTROL Segments]** fliken följt av **[!UICONTROL Create Segment]** för att öppna Segment Builder.
    ![](../images/models-recipes/enrich-rtcdp/segments_overview.png)
 
-2. I segmentbyggaren ger den vänstra listen tillgång till de centrala byggstenarna i segment: attribut, händelser och befintliga segment. Varje byggsten visas på sin egen flik. Välj den klass som det [!DNL Profile]aktiverade schemat omfattar och bläddra sedan efter byggstenarna för ditt segment.
+2. I segmentbyggaren ger den vänstra listen tillgång till segmentens kärnbyggstenar: attribut, händelser och befintliga segment. Varje byggsten visas på sin egen flik. Välj den klass som det [!DNL Profile]aktiverade schemat omfattar och bläddra sedan efter byggstenarna för ditt segment.
    ![](../images/models-recipes/enrich-rtcdp/segment_builder.png)
 
 3. Dra och släpp byggstenar på regelbyggarens arbetsyta, fyll i dem genom att ange jämförande satser.
