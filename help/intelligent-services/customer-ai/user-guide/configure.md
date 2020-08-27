@@ -3,10 +3,11 @@ keywords: Experience Platform;user guide;customer ai;popular topics;configure in
 solution: Experience Platform
 title: Konfigurera en AI-instans för kund
 topic: Instance creation
+description: Intelligenta tjänster ger kunden artificiell intelligens (AI) som en lättanvänd Adobe Sensei-tjänst som kan konfigureras för olika användningsområden. I följande avsnitt beskrivs hur du konfigurerar en instans av Kundens AI.
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: c30bbaead775e68f869b080e24e18d4a23cda973
 workflow-type: tm+mt
-source-wordcount: '695'
+source-wordcount: '726'
 ht-degree: 0%
 
 ---
@@ -20,7 +21,7 @@ Intelligenta tjänster ger kunden artificiell intelligens (AI) som en lättanvä
 
 ## Konfigurera din instans {#set-up-your-instance}
 
-Klicka på den vänstra navigeringen i användargränssnittet **[!UICONTROL Services]** för Platform. Webbläsaren visas och **[!UICONTROL Services]** visar alla tillgängliga tjänster. Klicka på i behållaren för kundens AI **[!UICONTROL Open]**.
+Klicka i det vänstra navigeringsfältet **[!UICONTROL Services]** i plattformsgränssnittet. Webbläsaren visas och **[!UICONTROL Services]** visar alla tillgängliga tjänster. Klicka på i behållaren för kundens AI **[!UICONTROL Open]**.
 
 ![](../images/user-guide/navigate-to-service.png)
 
@@ -66,7 +67,7 @@ Om du vill utesluta vissa händelser klickar du på **[!UICONTROL Add exclusion]
 
 ![](../images/user-guide/exclusion.png)
 
-Uteslut händelser efter behov och klicka sedan för **[!UICONTROL Finish]** att skapa instansen.
+Uteslut händelser efter behov och klicka sedan på **[!UICONTROL Finish]** för att skapa instansen.
 
 ![](../images/user-guide/advanced.png)
 
