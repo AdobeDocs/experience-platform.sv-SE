@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;attribution ai;access scores;popular topics
+keywords: Experience Platform;attribution ai;access scores;popular topics;download scores;attribution ai scores
 solution: Experience Platform
 title: Åtkomst till bakgrundsmusik i Attribution AI
 topic: Accessing scores
+description: Det här dokumentet är en guide för nedladdning av bakgrundsmusik för Attribution AI.
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: c30bbaead775e68f869b080e24e18d4a23cda973
 workflow-type: tm+mt
-source-wordcount: '1026'
+source-wordcount: '1038'
 ht-degree: 0%
 
 ---
