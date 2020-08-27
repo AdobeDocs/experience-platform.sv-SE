@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Direktuppspelande postdata
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1055'
+source-wordcount: '1072'
 ht-degree: 0%
 
 ---
@@ -20,8 +20,8 @@ Den här självstudiekursen hjälper dig att börja använda API:er för direktu
 
 Den här självstudiekursen kräver kunskaper om olika Adobe Experience Platform-tjänster. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-- [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar upplevelsedata.
-- [!DNL Real-time Customer Profile](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar upplevelsedata.
+- [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 - [Utvecklarhandbok](../../xdm/api/getting-started.md)för schemaregister: En omfattande guide som täcker alla tillgängliga slutpunkter i [!DNL Schema Registry] API:t och hur du anropar dem. Det handlar om att känna till din `{TENANT_ID}`information, som visas i samtal under kursen, och att veta hur man skapar scheman, som används för att skapa en datauppsättning för förtäring.
 
 Den här självstudien kräver dessutom att du redan har skapat en direktuppspelningsanslutning. Mer information om hur du skapar en direktuppspelningsanslutning finns i självstudiekursen [Skapa en direktuppspelningsanslutning](./create-streaming-connection.md).
@@ -96,7 +96,7 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/sch
 | -------- | ----------- |
 | `title` | Namnet som du vill använda för ditt schema. Namnet måste vara unikt. |
 | `description` | En meningsfull beskrivning av schemat som du skapar. |
-| `meta:immutableTags` | I det här exemplet används `union` -taggen för att lagra data i [!DNL Real-time Customer Profile](../../profile/home.md). |
+| `meta:immutableTags` | I det här exemplet används `union` -taggen för att lagra dina data i [[!DNL Real-time Customer Profile]](../../profile/home.md). |
 
 **Svar**
 
@@ -348,7 +348,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen ström
 
 ## Hämta nyligen inmatade postdata
 
-Om du vill validera de poster du redan har importerat kan du använda kommandot [!DNL Profile Access API](../../profile/api/entities.md) för att hämta postdata.
+Om du vill validera de poster som har importerats tidigare kan du använda API:t för [[!DNL-profilåtkomst]](../../profile/api/entities.md) för att hämta postdata.
 
 >[!NOTE]
 >
