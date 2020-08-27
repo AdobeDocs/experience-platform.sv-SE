@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Felsökning av direktuppspelning
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '987'
+source-wordcount: '991'
 ht-degree: 0%
 
 ---
@@ -52,7 +52,7 @@ Direktuppspelade händelser återspeglas i allmänhet på [!DNL Real-time Custom
 
 ### Kan jag inkludera flera meddelanden i samma API-begäran?
 
-Du kan gruppera flera meddelanden inom en enskild nyttolast för begäran och strömma dem till [!DNL Platform]. När det används på rätt sätt är gruppering av flera meddelanden i en enda begäran ett utmärkt sätt att optimera dataåtgärderna. Läs självstudiekursen om hur du [skickar flera meddelanden i en begäran](../tutorials/streaming-multiple-messages.md) om mer information.
+Du kan gruppera flera meddelanden inom en enskild nyttolast för begäran och strömma dem till [!DNL Platform]. När det används på rätt sätt är gruppering av flera meddelanden i en enda begäran ett utmärkt sätt att optimera dataåtgärderna. Läs självstudiekursen om hur du [skickar flera meddelanden i en begäran](../tutorials/streaming-multiple-messages.md) för mer information.
 
 ### Hur vet jag om de data jag skickar tas emot?
 
@@ -100,4 +100,4 @@ Om ett meddelande [!DNL Real-time Customer Profile] avvisas beror det troligtvis
 
 Det finns två typer av identitetsnamnutrymmen: standard och anpassad. När du använder anpassade namnutrymmen måste du kontrollera att namnutrymmet har registrerats i [!DNL Identity Service]. Mer information om hur du använder standardnamnutrymmen och anpassade namnutrymmen finns i Översikt över [](../../identity-service/namespaces.md) identitetsnamn.
 
-Du kan använda för [!DNL Experience Platform UI](https://platform.adobe.com) att se mer information om varför ett meddelande inte kunde hämtas. Klicka **[!UICONTROL Monitoring]** i den vänstra navigeringen och visa sedan _[!UICONTROL Streaming end-to-end]_fliken för att se meddelandebatchar som direktuppspelats under en vald tidsperiod.
+Du kan använda gränssnittet för [[!DNL Experience Platform]](https://platform.adobe.com) om du vill se mer information om varför ett meddelande inte kunde hämtas. Klicka **[!UICONTROL Monitoring]** i den vänstra navigeringen och visa sedan _[!UICONTROL Streaming end-to-end]_fliken för att se meddelandebatchar som direktuppspelats under en vald tidsperiod.
