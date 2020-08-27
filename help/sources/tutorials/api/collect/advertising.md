@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Samla in annonsdata via källkopplingar och API:er
 topic: overview
 translation-type: tm+mt
-source-git-commit: 744f7f1c5203f3537e979c50d7f8e20c1e8c50a5
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1632'
+source-wordcount: '1644'
 ht-degree: 0%
 
 ---
@@ -24,11 +24,11 @@ I den här självstudiekursen måste du ha information om filen som du vill häm
 
 Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [!DNL Experience Data Model (XDM) System](../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
+* [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Utvecklarhandbok](../../../../xdm/api/getting-started.md)för schemaregister: Innehåller viktig information som du behöver känna till för att kunna utföra anrop till API:t för schemaregister. Detta inkluderar ditt `{TENANT_ID}`, konceptet med&quot;behållare&quot; och de rubriker som krävs för att göra förfrågningar (med särskild uppmärksamhet på rubriken Godkänn och dess möjliga värden).
-* [!DNL Catalog Service](../../../../catalog/home.md): Katalog är systemet för registrering av dataplatser och -rader inom [!DNL Experience Platform].
-* [!DNL Batch ingestion](../../../../ingestion/batch-ingestion/overview.md): Med API:t för gruppinmatning kan du importera data till [!DNL Experience Platform] som gruppfiler.
+* [[!DNL Catalog Service]](../../../../catalog/home.md): Katalog är systemet för registrering av dataplatser och -länkar inom [!DNL Experience Platform].
+* [[!DNL Batch-ingång]](../../../../ingestion/batch-ingestion/overview.md): Med API:t för gruppinmatning kan du importera data till [!DNL Experience Platform] som gruppfiler.
 * [Sandlådor](../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till ett annonssystem med API:t. [!DNL Flow Service]
