@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Policy enforcement;marketing actions api;API-based enforcement;data governance
 solution: Experience Platform
 title: Marknadsföringsåtgärder
 topic: developer guide
+description: En marknadsföringsåtgärd, inom ramen för Adobe Experience Platform Data Governance, är en åtgärd som en datakonsument i Experience Platform vidtar och där det finns ett behov av att kontrollera om dataanvändningspolicyer har överträtts.
 translation-type: tm+mt
-source-git-commit: 12c53122d84e145a699a2a86631dc37ee0073578
+source-git-commit: cddc559dfb65ada888bb367d6265863091a9b2a1
 workflow-type: tm+mt
-source-wordcount: '681'
-ht-degree: 1%
+source-wordcount: '718'
+ht-degree: 0%
 
 ---
 
