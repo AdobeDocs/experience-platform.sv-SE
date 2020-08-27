@@ -3,10 +3,11 @@ keywords: Experience Platform;user guide;attribution ai;popular topics
 solution: Experience Platform
 title: Användarhandbok för Attribution AI
 topic: User guide
+description: Det här dokumentet är en guide för interaktion med Attribution AI i användargränssnittet för intelligenta tjänster.
 translation-type: tm+mt
-source-git-commit: 15f9f90e5a1439e071eeb46ad655eee10954c2ac
+source-git-commit: c30bbaead775e68f869b080e24e18d4a23cda973
 workflow-type: tm+mt
-source-wordcount: '1432'
+source-wordcount: '1449'
 ht-degree: 0%
 
 ---
@@ -90,7 +91,7 @@ När du har definierat konverteringen måste du bekräfta uppslagsfönstret. Ang
 
 ### Definiera kontaktytor
 
-När du definierar kontaktytor följer du ett arbetsflöde som liknar det som används för att [definiera konverteringar](#define-conversion-events). Först måste du namnge kontaktytan och välja ett kontaktytpunktsvärde i listrutan *Ange fältnamn* . När du har valt operatorlistrutan visas standardvärdet &quot;exists&quot;. Klicka på listrutan för att visa en lista med operatorer.
+När du definierar kontaktytor följer du ett arbetsflöde som liknar [hur du definierar konverteringar](#define-conversion-events). Först måste du namnge kontaktytan och välja ett kontaktytpunktsvärde i listrutan *Ange fältnamn* . När du har valt operatorlistrutan visas standardvärdet &quot;exists&quot;. Klicka på listrutan för att visa en lista med operatorer.
 
 ![operatorer](./images/user-guide/operators.png)
 
@@ -182,7 +183,7 @@ För att säkerställa att ni får den mest korrekta modellen är det viktigt at
 
 ![utbildningsfönster](./images/user-guide/training_window.png)
 
-När du har valt utbildningsfönstret klickar du på **Slutför** i det övre högra hörnet. Ge databearbetningen lite tid. När du är klar visas en dialogruta som bekräftar att instansinställningarna är klara. Klicka på **OK** om du vill omdirigeras till sidan *Tjänstinstanser* där du kan se tjänstinstansen.
+När du har valt utbildningsfönstret klickar du på **Slutför** i det övre högra hörnet. Ge databearbetningen lite tid. När du är klar visas en dialogruta som bekräftar att instansinställningarna är klara. Klicka på **OK** för att omdirigeras till sidan *Tjänstinstanser* där du kan se tjänstinstansen.
 
 ![installationen slutförd](./images/user-guide/instance_setup_complete.png)
 
