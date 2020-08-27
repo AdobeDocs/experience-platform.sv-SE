@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;catalog;api;replace an object
 solution: Experience Platform
 title: Ersätta ett objekt
 topic: developer guide
+description: Du kan skriva över innehållet i ett Catalog-objekt med hjälp av en PUT-begäran, där hela resursen ersätts med nyttolasten för begäran.
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: dd1f508b93e8eac14e3c41fac9d8f49769d08f46
 workflow-type: tm+mt
-source-wordcount: '138'
+source-wordcount: '161'
 ht-degree: 0%
 
 ---
