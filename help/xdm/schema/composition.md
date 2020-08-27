@@ -5,9 +5,9 @@ title: Grunderna för schemakomposition
 topic: overview
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 23a69653ee773562cb0261b8e0bb67411eb4856e
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '2787'
+source-wordcount: '2815'
 ht-degree: 0%
 
 ---
@@ -62,9 +62,9 @@ Både schema för post- och tidsserier innehåller en karta över identiteter (`
 
 Scheman används för inmatning av data i [!DNL Experience Platform]. Dessa data kan användas för flera tjänster för att skapa en enda, enhetlig vy av en enskild enhet. Därför är det viktigt att tänka på scheman när det gäller kundidentiteter och vilka fält som kan användas för att identifiera ett ämne oavsett varifrån data kommer.
 
-Nyckelfält i dina scheman kan markeras som identiteter för att underlätta med den här processen. När data matas in infogas uppgifterna i dessa fält i&quot;[!UICONTROL Identity Graph]&quot; för den personen. Diagramdata kan sedan nås av [!DNL Real-time Customer Profile](../../profile/home.md) och andra [!DNL Experience Platform] tjänster för att ge en sammanslagen bild av varje enskild kund.
+Nyckelfält i dina scheman kan markeras som identiteter för att underlätta med den här processen. När data matas in infogas uppgifterna i dessa fält i&quot;[!UICONTROL Identity Graph]&quot; för den personen. Diagramdata kan sedan nås av [[!DNL Real-time Customer Profile]](../../profile/home.md) och andra [!DNL Experience Platform] tjänster för att ge en sammanslagen bild av varje enskild kund.
 
-Fält som vanligen markeras som&quot;[!UICONTROL Identity]&quot; är: e-postadress, telefonnummer, CRM-ID [!DNL Experience Cloud ID (ECID)](https://docs.adobe.com/content/help/sv-SE/id-service/using/home.html)eller andra unika ID-fält. Du bör också ta hänsyn till unika identifierare som är specifika för din organisation, eftersom de kan vara bra&quot;[!UICONTROL Identity]&quot;-fält också.
+Fält som vanligen markeras som&quot;[!UICONTROL Identity]&quot; är: e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://docs.adobe.com/content/help/sv-SE/id-service/using/home.html), CRM ID eller andra unika ID-fält. Du bör också ta hänsyn till unika identifierare som är specifika för din organisation, eftersom de kan vara bra&quot;[!UICONTROL Identity]&quot;-fält också.
 
 Det är viktigt att tänka på kundens identiteter under schemaplaneringsfasen för att säkerställa att data samlas ihop för att skapa en så robust profil som möjligt. Läs översikten om [Adobe Experience Platform Identity Service](../../identity-service/home.md) om hur identitetsinformation kan hjälpa er att leverera digitala upplevelser till era kunder.
 
@@ -123,7 +123,7 @@ Eftersom bakåtkompatibilitet är en nödvändig förutsättning för schemautve
 
 ### Scheman och datainhämtning
 
-För att kunna importera data till måste [!DNL Experience Platform]en datauppsättning skapas. Datauppsättningar är byggstenarna för dataomvandling och -spårning för [!DNL Catalog Service](../../catalog/home.md)och representerar vanligtvis tabeller eller filer som innehåller inkapslade data. Alla datauppsättningar baseras på befintliga XDM-scheman, som innehåller begränsningar för vad de inmatade data ska innehålla och hur de ska struktureras. Mer information finns i översikten om [Adobe Experience Platform Data Ingclosure](../../ingestion/home.md) .
+För att kunna importera data till måste [!DNL Experience Platform]en datauppsättning skapas. Datauppsättningar är byggstenarna för dataomvandling och spårning för [[!DNL Catalog Service]](../../catalog/home.md), och representerar vanligtvis tabeller eller filer som innehåller inkapslade data. Alla datauppsättningar baseras på befintliga XDM-scheman, som innehåller begränsningar för vad de inmatade data ska innehålla och hur de ska struktureras. Mer information finns i översikten om [Adobe Experience Platform Data Ingclosure](../../ingestion/home.md) .
 
 ## Bygga block i ett schema
 
@@ -147,7 +147,7 @@ Det finns standardklasser som ingår i alla integreringar av [!DNL Experience Pl
 
 Det finns också klasser som används för att beskriva mer specifika användningsfall för enskilda organisationer inom [!DNL Platform]klassen&quot;Kund&quot;. Kundklasser definieras av en organisation när det inte finns några bransch- eller leverantörsklasser tillgängliga som beskriver ett unikt användningsfall.
 
-Ett schema som till exempel representerar medlemmar i ett Loyalty-program beskriver postdata om en individ och kan därför baseras på [!DNL XDM Individual Profile] klassen, en branschstandardklass som definieras av Adobe.
+Ett schema som till exempel representerar medlemmar i ett lojalitetsprogram beskriver postdata om en individ och kan därför baseras på [!DNL XDM Individual Profile] klassen, som är en branschstandardklass som definieras av Adobe.
 
 ### Mixa {#mixin}
 
@@ -194,11 +194,11 @@ Giltiga intervall för dessa skalära typer kan begränsas ytterligare till viss
 
 Vissa dataåtgärder som används av underordnade tjänster och program tillämpar begränsningar för specifika fälttyper. De tjänster som påverkas är bland annat följande:
 
-* [!DNL Real-time Customer Profile](../../profile/home.md)
-* [!DNL Identity Service](../../identity-service/home.md)
-* [!DNL Segmentation](../../segmentation/home.md)
-* [!DNL Query Service](../../query-service/home.md)
-* [!DNL Data Science Workspace](../../data-science-workspace/home.md)
+* [[!DNL-kundprofil i realtid]](../../profile/home.md)
+* [[!DNL Identity Service]](../../identity-service/home.md)
+* [[!DNL-segmentering]](../../segmentation/home.md)
+* [[!DNL Query Service]](../../query-service/home.md)
+* [[!DNL Data Science Workspace]](../../data-science-workspace/home.md)
 
 Innan du skapar ett schema för användning i underordnade tjänster bör du läsa lämplig dokumentation för dessa tjänster för att bättre förstå fältkraven och begränsningarna för de dataåtgärder som schemat är avsett för.
 
