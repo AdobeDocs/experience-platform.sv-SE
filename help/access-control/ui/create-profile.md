@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;product profile
 solution: Experience Platform
 title: Skapa en ny produktprofil
 topic: user guide
+description: Det här dokumentet innehåller de steg som krävs för att skapa en ny produktprofil i Adobe Admin Console. Om du vill börja skapa en ny profil går du till fliken Produktprofiler och klickar på Ny profil.
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
 workflow-type: tm+mt
-source-wordcount: '194'
-ht-degree: 1%
+source-wordcount: '228'
+ht-degree: 3%
 
 ---
 
@@ -20,11 +21,11 @@ Om du vill börja skapa en ny profil går du till *[!UICONTROL Product Profiles]
 
 Dialogrutan _[!UICONTROL Create New Profile]_visas där du uppmanas att ange en **[!UICONTROL Profile Name]**och **[!UICONTROL Description]**ange den nya profilen. Om du vill att profilens visningsnamn ska vara ett annat avmarkerar du **[!UICONTROL Same as Profile Name]**och anger visningsnamnet i textrutan som visas. Under *[!UICONTROL User Notifications]*kan du växla om användare ska meddelas via e-post när de läggs till eller tas bort från profilen.
 
-När du är klar klickar du på **[!UICONTROL Next]**.
+Klicka på **[!UICONTROL Next]** när du är klar.
 
 ![new-profile-details](../images/new-profile-details.png)
 
-Nästa skärm uppmanar dig att välja vilka [!DNL Platform] tjänster som ska ingå i profilen. Klicka på växlingsknappen bredvid en tjänst för att inaktivera den. Om en tjänst är inaktiverad är inte alla funktioner som är kopplade till den tjänsten tillgängliga för användare som är tilldelade den här produktprofilen. När du är klar klickar du på **[!UICONTROL Done]**.
+Nästa skärm uppmanar dig att välja vilka [!DNL Platform] tjänster som ska ingå i profilen. Klicka på växlingsknappen bredvid en tjänst för att inaktivera den. Om en tjänst är inaktiverad är inte alla funktioner som är kopplade till den tjänsten tillgängliga för användare som är tilldelade den här produktprofilen. Klicka på **[!UICONTROL Done]** när du är klar.
 
 ![new-profile-services](../images/new-profile-services.png)
 
