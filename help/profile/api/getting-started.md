@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Komma igång med kundprofil-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: 6df3e6579139f01d9877c1f033ea7721ca78118c
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '359'
+source-wordcount: '382'
 ht-degree: 0%
 
 ---
@@ -18,11 +18,11 @@ Med API:t kan du utföra grundläggande CRUD-åtgärder mot profilresurser, som 
 
 Att använda utvecklarhandboken kräver en fungerande förståelse av de olika Adobe Experience Platform-tjänster som arbetar med [!DNL Profile] data. Innan du börjar arbeta med API:t bör du läsa dokumentationen för följande tjänster: [!DNL Real-time Customer Profile]
 
-* [!DNL Real-time Customer Profile](../home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
-* [!DNL Adobe Experience Platform Identity Service](../../identity-service/home.md): Få en bättre bild av kunden och deras beteende genom att överbrygga identiteter mellan olika enheter och system.
-* [!DNL Adobe Experience Platform Segmentation Service](../../segmentation/home.md): Gör att ni kan bygga målgruppssegment utifrån kundprofildata i realtid.
-* [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
-* [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [[!DNL Real-time Customer Profile]](../home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Adobe Experience Platform Identity Service]](../../identity-service/home.md): Få en bättre bild av kunden och deras beteende genom att överbrygga identiteter mellan olika enheter och system.
+* [[!DNL Adobe Experience Platform Segmenteringstjänst]](../../segmentation/home.md): Gör att ni kan bygga målgruppssegment utifrån kundprofildata i realtid.
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
+* [[!DNL-sandlådor]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API- [!DNL Profile] slutpunkter.
 
