@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;product profile;manage permissions
 solution: Experience Platform
 title: Hantera behörigheter för en produktprofil
 topic: user guide
+description: Med åtkomstkontrollen i Adobe Experience Platform kan du hantera roller och behörigheter för olika plattformsfunktioner med Adobe Admin Console. Det här dokumentet är en guide till hur du hanterar behörigheter för en produktprofil för Platform.
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
 workflow-type: tm+mt
-source-wordcount: '256'
-ht-degree: 0%
+source-wordcount: '296'
+ht-degree: 1%
 
 ---
 
@@ -38,7 +39,7 @@ Om du vill lägga till en behörighet klickar du på **plusikonen (+)** bredvid 
 
 Om du vill ta bort en behörighet klickar du på **X** -ikonen bredvid behörighetens namn eller väljer **[!UICONTROL Remove all]** att ta bort alla behörigheter i den aktuella kategorin. Borttagna behörigheter visas igen under *[!UICONTROL Available Permission Items]*.
 
-Fortsätt gå igenom de tillgängliga kategorierna och lägg till behörigheter. När du är klar klickar du på **[!UICONTROL Save]**.
+Fortsätt gå igenom de tillgängliga kategorierna och lägg till behörigheter. Klicka på **[!UICONTROL Save]** när du är klar.
 
 ![behörigheter-avsluta](../images/permissions-finish.png)
 
