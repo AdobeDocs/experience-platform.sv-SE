@@ -5,9 +5,9 @@ title: Skapa ett schema med Schemaredigeraren
 topic: tutorials
 description: I den här självstudiekursen beskrivs stegen för hur du skapar ett schema med Schemaredigeraren i Experience Platform.
 translation-type: tm+mt
-source-git-commit: ed100e2acfcfc3dfabef6ccfbe88e98489193567
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '3313'
+source-wordcount: '3329'
 ht-degree: 0%
 
 ---
@@ -27,9 +27,9 @@ Om du hellre vill skapa ett schema med [!DNL Schema Registry] API:t börjar du m
 
 Den här självstudiekursen kräver en fungerande förståelse för de olika aspekter av Adobe Experience Platform som används för att skapa scheman. Innan du börjar med den här självstudiekursen bör du läsa om följande koncept i dokumentationen:
 
-* [!DNL Experience Data Model (XDM)](../home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
+* [[!DNL Experience Data Model (XDM)]](../home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
    * [Grundläggande om schemakomposition](../schema/composition.md): En översikt över XDM-scheman och deras byggstenar, inklusive klasser, mixins, datatyper och fält.
-* [!DNL Real-time Customer Profile](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 ## Bläddra bland befintliga scheman på [!UICONTROL Schemas] arbetsytan {#browse}
 
@@ -91,7 +91,7 @@ Den här blandningen bidrar med flera fält under namnet &quot;[!UICONTROL perso
 >
 >Kom ihåg att du kan använda skalära typer i fält (till exempel sträng, heltal, matris eller datum), liksom alla datatyper (en grupp fält som representerar ett gemensamt koncept) som definieras i [!DNL Schema Registry].
 
-Observera att fältet&quot;[!UICONTROL name]&quot; har datatypen&quot;[!UICONTROL Full name]&quot;, vilket innebär att det beskriver ett gemensamt koncept och innehåller namnrelaterade underfält som förnamn, efternamn, titel och suffix.
+Observera att&quot;[!UICONTROL name]&quot;-fältet har datatypen&quot;[!UICONTROL Full name]&quot;, vilket innebär att det beskriver ett gemensamt koncept och innehåller namnrelaterade underfält som förnamn, efternamn, titel och suffix.
 
 Markera de olika fälten på arbetsytan för att se eventuella ytterligare fält som de bidrar till schemastrukturen.
 
@@ -227,7 +227,7 @@ Det kan till exempel finnas tusentals lojalitetsprogrammedlemmar som tillhör sa
 >
 >Stegen som beskrivs nedan beskriver hur du lägger till en identitetsbeskrivning i ett befintligt schemafält. Som ett alternativ till att definiera identitetsfält i strukturen för själva schemat kan du även använda ett `identityMap` fält för att innehålla identitetsinformation i stället.
 >
->Om du planerar att använda `identityMap`bör du tänka på att den åsidosätter alla primära identiteter som du lägger till i schemat direkt. Mer information finns i avsnittet om `identityMap` i [grunderna i guiden](../schema/composition.md#identityMap) för schemakomposition.
+>Om du planerar att använda `identityMap`bör du tänka på att den åsidosätter alla primära identiteter som du lägger till i schemat direkt. Mer information finns i avsnittet om `identityMap` i [grunderna för schemakompositionsguiden](../schema/composition.md#identityMap) .
 
 I **[!UICONTROL Structure]** delen av redigeraren markerar du fältet&quot;[!DNL loyaltyId]&quot; och **[!UICONTROL Identity]** kryssrutan visas under **[!UICONTROL Field Properties]**. Markera kryssrutan och ange att den ska vara som den **[!UICONTROL Primary Identity]** visas. Markera även den här rutan.
 
@@ -245,11 +245,11 @@ Nu kommer alla data som hämtas in i&quot;[!DNL loyaltyId]&quot;-fältet att anv
 >
 >När ett schemafält har angetts som primär identitet får du ett felmeddelande om du senare försöker ange ett annat fält i schemat som primärt. Varje schema får endast innehålla ett primärt identitetsfält.
 
-Läs mer om hur du arbetar med identiteter i [!DNL Experience Platform]i [!DNL Identity Service](../../identity-service/home.md) dokumentationen.
+Mer information om hur du arbetar med identiteter i [!DNL Experience Platform]finns i dokumentationen för [[!DNL Identity Service]](../../identity-service/home.md) .
 
 ## Aktivera schemat för användning i [!DNL Real-time Customer Profile] {#profile}
 
-[!DNL Real-time Customer Profile](../../profile/home.md) utnyttjar identitetsdata i [!DNL Experience Platform] för att ge en helhetsbild av varje enskild kund. Tjänsten bygger robusta 360-gradersprofiler av kundattribut samt tidsstämplade konton för varje interaktion som kunderna har haft i alla system som är integrerade med [!DNL Experience Platform].
+[[!DNL Real-time Customer Profile]](../../profile/home.md) utnyttjar identitetsdata i för [!DNL Experience Platform] att ge en helhetsbild av varje enskild kund. Tjänsten bygger robusta 360-gradersprofiler av kundattribut samt tidsstämplade konton för varje interaktion som kunderna har haft i alla system som är integrerade med [!DNL Experience Platform].
 
 För att ett schema ska kunna aktiveras för användning med [!DNL Real-time Customer Profile]måste en primär identitet ha definierats. Du får ett felmeddelande om du försöker aktivera ett schema utan att först definiera en primär identitet.
 
