@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Förhandsgranska och beräkna slutpunkter
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '742'
+source-wordcount: '746'
 ht-degree: 1%
 
 ---
@@ -171,7 +171,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `results` | En lista över enhets-ID:n, tillsammans med deras relaterade identiteter. De angivna länkarna kan användas för att leta upp de angivna entiteterna med hjälp av [!DNL Profile Access API](../../profile/api/entities.md). |
+| `results` | En lista över enhets-ID:n, tillsammans med deras relaterade identiteter. Länkarna som anges kan användas för att söka efter de angivna entiteterna med hjälp av API:t [[!DNL Profile Access]](../../profile/api/entities.md). |
 
 ## Hämta resultaten från ett specifikt uppskattningsjobb {#get-estimate}
 
