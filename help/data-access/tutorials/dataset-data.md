@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;data access;data access api;query data access
 solution: Experience Platform
 title: Dataåtkomstöversikt
 topic: tutorial
+description: I det här dokumentet finns en stegvis självstudiekurs som beskriver hur du hittar, hämtar och hämtar data som lagras i en datauppsättning med hjälp av API:t för dataåtkomst i Adobe Experience Platform. Du kommer också att få en introduktion till några av de unika funktionerna i API:t för dataåtkomst, till exempel sidindelning och partiella nedladdningar.
 translation-type: tm+mt
-source-git-commit: cb5df9b44486bda84f08805f1077d6097e3666e2
+source-git-commit: cddc559dfb65ada888bb367d6265863091a9b2a1
 workflow-type: tm+mt
-source-wordcount: '1332'
+source-wordcount: '1384'
 ht-degree: 0%
 
 ---
@@ -18,7 +19,7 @@ Det här dokumentet innehåller en stegvis självstudiekurs som beskriver hur du
 
 ## Komma igång
 
-Den här självstudiekursen visar hur du skapar och fyller i en datauppsättning. Mer information finns i självstudiekursen [Skapa](../../catalog/datasets/create.md) datauppsättning.
+Den här självstudiekursen kräver en fungerande förståelse för hur du skapar och fyller i en datauppsättning. Mer information finns i självstudiekursen [Skapa](../../catalog/datasets/create.md) datauppsättning.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:erna för plattformen.
 
