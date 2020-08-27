@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;train and evaluate;Data Science Workspace;popular topics
+keywords: Experience Platform;train and evaluate;Data Science Workspace;popular topics;create a model;create a training run
 solution: Experience Platform
 title: Utbildning och utvärdering av modell (UI)
 topic: Tutorial
+description: I Adobe Experience Platform Data Science Workspace skapas en maskininlärningsmodell genom att en befintlig Recipe som är lämplig för modellens avsikt läggs till. Modellen är sedan utbildad och utvärderad för att optimera dess driftseffektivitet och effektivitet genom att finjustera de tillhörande hyperparametrarna. Recept kan återanvändas, vilket innebär att flera modeller kan skapas och skräddarsys för specifika syften med en enda Recept.
 translation-type: tm+mt
-source-git-commit: 1214728063c5835510fda1a16bf1fdcca4abee48
+source-git-commit: cddc559dfb65ada888bb367d6265863091a9b2a1
 workflow-type: tm+mt
-source-wordcount: '961'
-ht-degree: 2%
+source-wordcount: '1024'
+ht-degree: 1%
 
 ---
 
@@ -79,7 +80,7 @@ Den här självstudiekursen kräver en befintlig recept. Om du inte har någon r
    Precisionsmåttet beskriver procentandelen relevanta instanser jämfört med det totala antalet *hämtade* instanser. Precision kan ses som sannolikheten att ett slumpmässigt valt resultat blir korrekt.
    ![](../images/models-recipes/train-evaluate-ui/multiple_training_runs.png)
 
-   Klicka på en särskild övning för att se mer information om den. Detta kan göras även innan körningen har slutförts. På detaljsidan kan du se andra utvärderingsmått, konfigurationsparametrar och visualiseringar som är specifika för kursen. Du kan även hämta aktivitetsloggar för att se information om körningen. Loggar är särskilt användbara för misslyckade körningar för att se vad som gick fel.
+   Klicka på en särskild övning för att se mer information om den körningen. Detta kan göras även innan körningen har slutförts. På detaljsidan kan du se andra utvärderingsmått, konfigurationsparametrar och visualiseringar som är specifika för kursen. Du kan även hämta aktivitetsloggar för att se information om körningen. Loggar är särskilt användbara för misslyckade körningar för att se vad som gick fel.
    ![](../images/models-recipes/train-evaluate-ui/activity_logs.png)
 
 3. Hyperparametrar kan inte tränas och en modell måste optimeras genom att olika kombinationer av hyperparametrar testas. Upprepa denna modellutbildning och utvärderingsprocess tills du har nått en optimerad modell.
