@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;product purchase recipe;Data Science Workspace;popular topics
+keywords: Experience Platform;product purchase recipe;Data Science Workspace;popular topics;recipes;pre build recipe
 solution: Experience Platform
 title: Produktinköpsrecept
 topic: overview
+description: Med recept för produktinköpsförutsägelse kan du förutsäga sannolikheten för en viss typ av kundinköpshändelse, till exempel ett produktköp.
 translation-type: tm+mt
-source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
+source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
 workflow-type: tm+mt
-source-wordcount: '358'
+source-wordcount: '382'
 ht-degree: 5%
 
 ---
