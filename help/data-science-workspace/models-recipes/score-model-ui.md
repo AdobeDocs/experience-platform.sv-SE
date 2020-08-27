@@ -1,20 +1,21 @@
 ---
-keywords: Experience Platform;score a model;Data Science Workspace;popular topics
+keywords: Experience Platform;score a model;Data Science Workspace;popular topics;ui;scoring run;scoring results
 solution: Experience Platform
-title: Posta en modell (UI)
+title: Skapa en modell (UI)
 topic: Tutorial
+description: 'Du kan göra poängsättningen i Adobe Experience Platform Data Science Workspace genom att mata in indata i en befintlig utbildad modell. Resultat av poängsättningen lagras och kan visas i en angiven utdatamängd som en ny grupp. '
 translation-type: tm+mt
-source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
+source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
 workflow-type: tm+mt
-source-wordcount: '555'
+source-wordcount: '591'
 ht-degree: 0%
 
 ---
 
 
-# Posta en modell (UI)
+# Skapa en modell (UI)
 
-Poängen i Adobe Experience Platform [!DNL Data Science Workspace] kan uppnås genom att man matar in indata i en befintlig utbildad modell. Resultat av poängsättningen lagras och kan visas i en angiven utdatamängd som en ny grupp.
+Du kan göra poängsättningen i Adobe Experience Platform [!DNL Data Science Workspace] genom att mata in indata i en befintlig utbildad modell. Resultat av poängsättningen lagras och kan visas i en angiven utdatamängd som en ny grupp.
 
 I den här självstudiekursen visas de steg som krävs för att göra en modell i [!DNL Data Science Workspace] användargränssnittet.
 
