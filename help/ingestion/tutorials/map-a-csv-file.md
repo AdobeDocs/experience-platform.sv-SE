@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Mappa en CSV-fil till ett XDM-schema
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 7876e6d52815968802bd73bb5e340c99ea3387a8
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1292'
-ht-degree: 1%
+source-wordcount: '1309'
+ht-degree: 2%
 
 ---
 
@@ -22,14 +22,14 @@ I bilagan till den här självstudiekursen finns dessutom mer information om hur
 
 Den här självstudien kräver en fungerande förståelse av följande komponenter i [!DNL Platform]:
 
-- [!DNL Experience Data Model (XDM System)](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
-- [!DNL Batch ingestion](../batch-ingestion/overview.md): Den metod som används för att [!DNL Platform] importera data från datafiler som användaren anger.
+- [[!DNL Experience Data Model (XDM-system)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
+- [[!DNL Batch-ingång]](../batch-ingestion/overview.md): Den metod som används för att [!DNL Platform] importera data från datafiler som användaren anger.
 
 Den här självstudien kräver också att du redan har skapat en datauppsättning att importera dina CSV-data till. Anvisningar om hur du skapar en datauppsättning i användargränssnittet finns i [självstudiekursen](./ingest-batch-data.md)om dataimport.
 
 ## Välj ett mål
 
-Logga in på [!DNL Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Workflows]** från det vänstra navigeringsfältet för att komma åt *[!UICONTROL Workflows]* arbetsytan.
+Logga in på [[!DNL Adobe Experience Platform]](https://platform.adobe.com) och välj sedan **[!UICONTROL Workflows]** i det vänstra navigeringsfältet för att komma åt *[!UICONTROL Workflows]* arbetsytan.
 
 På **[!UICONTROL Workflows]** skärmen väljer du **[!UICONTROL Map CSV to XDM schema]** under **[!UICONTROL Data ingestion]** avsnittet och sedan **[!UICONTROL Launch]**.
 
@@ -117,7 +117,7 @@ När CSV-filen har mappats och skapats kan du övervaka de data som hämtas geno
 
 ## Nästa steg
 
-I den här självstudiekursen har du mappat en platt CSV-fil till ett XDM-schema och infogat den [!DNL Platform]. Dessa data kan nu användas av [!DNL Platform] tjänster längre fram i kedjan, till exempel [!DNL Real-time Customer Profile]. Se översikten för [!DNL Real-time Customer Profile](../../profile/home.md) mer information.
+I den här självstudiekursen har du mappat en platt CSV-fil till ett XDM-schema och infogat den [!DNL Platform]. Dessa data kan nu användas av [!DNL Platform] tjänster längre fram i kedjan, till exempel [!DNL Real-time Customer Profile]. Mer information finns i översikten för [[!DNL Real-time Customer Profile]](../../profile/home.md) .
 
 ## Bilaga
 
@@ -152,12 +152,12 @@ I följande tabell visas alla mappningsfunktioner som stöds, inklusive exempelu
 | först | Hämtar det första angivna argumentet. | first(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;) | &quot;1&quot; |
 | sista | Hämtar det senast angivna argumentet. | last(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;) | &quot;3&quot; |
 | uuid /<br>guid | Skapar ett pseudoslumpmässigt ID. | uuid()<br>guid() | {UNIQUE_ID} |
-| nu | Hämtar aktuell tid. | now() | `2019-10-23T10:10:24.556-07:00[America/Los_Angeles]` |
+| nu | Hämtar aktuell tid. | nu() | `2019-10-23T10:10:24.556-07:00[America/Los_Angeles]` |
 | tidsstämpel | Hämtar aktuell Unix-tid. | tidsstämpel() | 1571850624571 |
 | format | Formaterar indatadatum enligt ett angivet format. | format({DATE}, &quot;yyy-MM-dd HH:mm:ss&quot;) | &quot;2019-10-23 11:24:35&quot; |
 | dformat | Konverterar en tidsstämpel till en datumsträng enligt ett angivet format. | format(1571829875, &quot;dd-MMM-yyyy hh:mm&quot;) | &quot;23-Oct-2019 11:24&quot; |
 | datum | Konverterar en datumsträng till ett ZonedDateTime-objekt (ISO 8601-format). | date(&quot;23-Oct-2019 11:24&quot;) | &quot;2019-10-23T11:24:00+00:00&quot; |
-| date_part | Hämtar datumets delar. Följande komponentvärden stöds: <br><br>&quot;year&quot;<br>&quot;yyyy&quot;<br>&quot;yy&quot;<br><br>&quot;kvartal&quot;<br>&quot;qq&quot;<br>&quot;q&quot;<br><br>&quot;month&quot;<br>&quot;mm&quot;<br>&quot;m&quot;<br><br>&quot;day&quot;<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>&quot;dy&quot;år&quot;y&quot;&quot;dag&quot;dd&quot;dd&quot;dd&quot;d&quot;&quot;vecka&quot;Under&quot;&quot;veckodag&quot;&quot;dw&quot;&quot;w&quot;stapel&quot;timme&quot;Du&quot;har&quot;Under&quot;Under&quot;UnderUnderUnderUnderUnderUnderUnderUnder&quot;UnderUnderUnderUnderUnderUnderUnderUnderUnderUnder&quot;UnderUnder&quot;UnderUnderUnderUnderUnderUnderUnder&quot;Under&quot;UnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnder&quot;UnderUnderUnderUnder&quot;Under&quot;Under&quot;Under&quot;UnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnder&quot;Under&quot;Under&quot;h&quot;&quot;hh24&quot;&quot;hh12&quot;&quot;minut&quot;mi&quot;&quot;n&quot;&quot;sekund&quot;&quot;ss&quot;s&quot;&quot;millisekundnamn&quot;ms&quot; | date_part(date(&quot;2019-10-17 11:55:12&quot;), &quot;MM&quot;) | 10 |
+| date_part | Hämtar datumets delar. Följande komponentvärden stöds: <br><br>&quot;year&quot;<br>&quot;yyyy&quot;<br>&quot;yy&quot;<br><br>&quot;kvartal&quot;<br>&quot;qq&quot;<br>&quot;q&quot;<br><br>&quot;month&quot;<br>&quot;mm&quot;<br>&quot;m&quot;<br><br>&quot;day&quot;<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>&quot;dy&quot;år&quot;y&quot;&quot;dag&quot;dd&quot;dd&quot;dd&quot;d&quot;&quot;vecka&quot;Under&quot;&quot;veckodag&quot;&quot;dw&quot;&quot;w&quot;stapel&quot;timme&quot;Du&quot;har&quot;Under&quot;Under&quot;UnderUnderUnderUnderUnderUnderUnderUnder&quot;UnderUnderUnderUnderUnderUnderUnderUnderUnderUnder&quot;UnderUnder&quot;UnderUnderUnderUnderUnderUnderUnder&quot;Under&quot;UnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnder&quot;UnderUnderUnderUnder&quot;Under&quot;Under&quot;Under&quot;UnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnderUnder&quot;UnderUnderUnderUnderUnder&quot;Under&quot;Under&quot;h&quot;&quot;hh24&quot;&quot;hh12&quot;&quot;minut&quot;mi&quot;&quot;n&quot;&quot;sekund&quot;&quot;ss&quot;s&quot;&quot;millisekundnamn&quot;ms&quot; | date_part(date(&quot;2019-10-17 11:55:12&quot;), &quot;MM&quot;) | 10 |
 | set_date_part | Ersätter en komponent ett visst datum. Följande komponenter godkänns: <br><br>&quot;year&quot;<br>&quot;yyyy&quot;<br>&quot;yy&quot;<br><br>&quot;month&quot;<br>&quot;mm&quot;<br>&quot;m&quot;<br><br>&quot;day&quot;<br>&quot;dd&quot;<br>&quot;d&quot;<br><br>&quot;hour&quot;<br><br><br><br><br><br><br><br><br>&quot;hh&quot;&quot;minut&quot;mi&quot;Under&quot;&quot;n&quot;&quot;sekund&quot;Under&quot;ss&quot;&quot;s&quot; | set_date_part(&quot;m&quot;, 4, date(&quot;2016-11-09T11:44:44.797&quot;) | &quot;2016-04-09T11:44:44.797&quot; |
 | make_date_time /<br>make_timestamp | Skapar ett datum från delar. | make_date_time(2019, 10, 17, 11, 55, 12, 999, &quot;America/Los_Angeles&quot;) | `2019-10-17T11:55:12.0&#x200B;00000999-07:00[America/Los_Angeles]` |
 | current_timestamp | Returnerar den aktuella tidsstämpeln. | current_timestamp() | 1571850624571 |
