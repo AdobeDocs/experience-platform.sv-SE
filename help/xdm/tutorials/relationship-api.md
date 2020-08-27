@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Definiera en relation mellan två scheman med API:t för schemaregister
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1274'
+source-wordcount: '1282'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Möjligheten att förstå relationen mellan era kunder och deras interaktioner m
 
 Schemarelationer kan härledas genom användning av unionsschemat och [!DNL Real-time Customer Profile]detta gäller endast scheman som delar samma klass. Om du vill upprätta en relation mellan två scheman som tillhör olika klasser måste ett dedikerat **relationsfält** läggas till i ett källschema, som refererar till identiteten för ett målschema.
 
-Det här dokumentet innehåller en självstudiekurs för att definiera en 1:1-relation mellan två scheman som definierats av din organisation med hjälp av [!DNL Schema Registry API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml).
+Det här dokumentet innehåller en självstudiekurs för att definiera en 1:1-relation mellan två scheman som definierats av din organisation med hjälp av API:t för [[!DNL Schema Registry]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml).
 
 ## Komma igång
 
@@ -27,7 +27,7 @@ Den här självstudiekursen kräver en fungerande förståelse av [!DNL Experien
 
 * [XDM System i Experience Platform](../home.md): En översikt över XDM och dess implementering i [!DNL Experience Platform].
    * [Grundläggande om schemakomposition](../schema/composition.md): En introduktion av byggstenarna i XDM-scheman.
-* [!DNL Real-time Customer Profile](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till [!DNL Schema Registry] API:t. Detta inkluderar ditt `{TENANT_ID}`, konceptet med&quot;behållare&quot; och de rubriker som krävs för att göra förfrågningar (med särskild uppmärksamhet på [!DNL Accept] rubriken och dess möjliga värden).
@@ -110,7 +110,7 @@ Registrera `$id` värdena för de två scheman som du vill definiera en relation
 
 ## Definiera ett referensfält för källschemat
 
-I [!DNL Schema Registry]fungerar relationsbeskrivningarna på liknande sätt som sekundärnycklar i relationsdatabastabeller: ett fält i källschemat fungerar som en referens till det **primära identitetsfältet** i ett målschema. Om källschemat inte har något fält för det här ändamålet kan du behöva skapa en blandning med det nya fältet och lägga till det i schemat. Det nya fältet måste ha `type` värdet &quot;[!DNL string]&quot;.
+I [!DNL Schema Registry]fungerar relationsbeskrivningarna på liknande sätt som sekundärnycklar i relationsdatabastabeller: ett fält i källschemat fungerar som en referens till det **primära identitetsfältet** i ett målschema. Om källschemat inte har något fält för detta ändamål, kan du behöva skapa en blandning med det nya fältet och lägga till det i schemat. Det nya fältet måste ha `type` värdet &quot;[!DNL string]&quot;.
 
 >[!IMPORTANT]
 >
