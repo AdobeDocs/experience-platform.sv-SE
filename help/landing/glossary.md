@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform produktdokumentation
 topic: getting started
 translation-type: tm+mt
-source-git-commit: c91bcdff5b57ef69f79e211fbeb912e3d7fcdb39
+source-git-commit: 18ea9482b9c6691c6326d91b2d0d3da9a8dc7195
 workflow-type: tm+mt
-source-wordcount: '7236'
+source-wordcount: '7178'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 0%
 
 **Aktivera:** I [!DNL Real-time Customer Data Platform]är aktivering den åtgärd som en användare utför för att mappa ett segment eller profiler till ett mål som [!DNL Oracle Eloqua], [!DNL Google]eller [!DNL Salesforce Marketing Cloud].
 
-**Aktivitet:** I [!DNL Decisioning Service]är en aktivitet en uppsättning erbjudanden som marknadsföraren vill att beslutsmotorn ska välja det bästa erbjudandet från.
+**Aktivitet:** En aktivitet är [!DNL Offer Decisioning]en uppsättning erbjudanden som marknadsföraren vill att beslutsmotorn ska välja det bästa erbjudandet från.
 
 **Administratör:** En eller flera personer i organisationen som kan konfigurera och anpassa behörigheter för Experience Platform.
 
@@ -33,8 +33,6 @@ ht-degree: 0%
 **Adobe Connectors:** Adobe Connectors är förkonfigurerade anslutningar som skapats av Adobe för att data ska kunna flöda in och ut [!DNL Experience Platform]. Kopplingar inkluderar [!DNL Microsoft Dynamics], [!DNL Salesforce], [!DNL Amazon S3]och [!DNL Azure Blob].
 
 **Adobe Experience Platform:** Adobe Experience Platform standardiserar data och innehåll i hela företaget, vilket driver konsumentprofiler i realtid, möjliggör datavetenskap och snabbar upp innehållets hastighet för att driva upplevelsepersonalisering över hela kundresan.
-
-**Adobe Experience Platform beslutstjänst** utnyttjar kundprofilen i realtid för att fastställa det mest troliga val en kund kommer att göra utifrån en uppsättning alternativ, baserat på de beteendedata som profilen hämtar från aktiverade datauppsättningar.
 
 **Adobe Experience Platform Launch:** [!DNL Launch] är ett tagg- och SDK-hanteringsekosystem som är integrerat med [!DNL Experience Platform] och [!DNL Experience Cloud] program. [!DNL Launch] innehåller verktyg för att driftsätta, sammanställa och hantera analyser, marknadsföring och annonser som är nödvändiga för att driva relevanta kundupplevelser på alla kundenheter.
 
@@ -98,7 +96,7 @@ ht-degree: 0%
 
 ## C
 
-**Takning:** I [!DNL Decisioning Service]används capping i beslutsregler för att definiera hur många gånger ett erbjudande presenteras. Det finns två typer av tak, hur många gånger ett erbjudande kan föreslås för den kombinerade målgruppen, även kallat&quot;Global Cap&quot;, och hur många gånger ett erbjudande kan föreslås för samma slutanvändare, även kallat&quot;Profile Cap&quot;.
+**Takning:** I [!DNL Offer Decisioning]används capping i beslutsregler för att definiera hur många gånger ett erbjudande presenteras. Det finns två typer av versaler: hur många gånger ett erbjudande kan föreslås för den kombinerade målgruppen, även kallat&quot;Global Cap&quot;, och hur många gånger ett erbjudande kan erbjudas för samma slutanvändare, även kallat&quot;Profile Cap&quot;.
 
 **Katalog:** I [!DNL Real-time Customer Data Platform]källor och på destinationer är en katalog ett galleri med tillgängliga anslutningar till Adobe-program och tredjepartstekniker.
 
@@ -106,7 +104,7 @@ ht-degree: 0%
 
 **Klient:** En klient är ett externt verktyg eller program som ansluter till [!DNL Query Service] via postgres-protokoll eller HTTP API.
 
-**Samling:** I [!DNL Decisioning Service]är samlingar delmängder av erbjudanden som baseras på fördefinierade villkor som definieras av en marknadsförare, till exempel erbjudandets kategori.
+**Samling:** I [!DNL Offer Decisioning]detta exempel är samlingar delmängder av erbjudanden som baseras på fördefinierade villkor som definieras av en marknadsförare, till exempel erbjudandets kategori.
 
 **Kombinera med PII-marknadsföringsåtgärder** En marknadsföringsåtgärd som kombinerar personligt identifierbar information med anonyma data. Kontrakt för data som hämtas från annonsnätverk, annonsservrar och tredjepartsleverantörer av data innehåller ofta särskilda avtalsförbud för användning av sådana data med direkt identifierbara data.
 
@@ -132,7 +130,7 @@ ht-degree: 0%
 
 **C4-kontraktsetikett:** `C4` Etiketten för avtalsstyrd datastyrning anger att data inte kan användas för annonser eller innehåll, varken på plats eller på en annan plats. C4 är den mest restriktiva etiketten eftersom den omfattar etiketterna C5, C6 och C7.
 
-**C5-kontraktsetikett:** `C5` Etiketten för avtalsbaserad datastyrning anger att data inte kan användas för intressebaserad, övergripande målinriktning av innehåll eller annonser. Intressebaserad målinriktning, eller personalisering, uppstår om följande tre villkor uppfylls:  De data som samlas in på webbplatsen används för att dra slutsatser om en användares intresse, och används i ett annat sammanhang, t.ex. på en annan webbplats eller i en annan app, och används för att välja vilket innehåll eller vilka annonser som ska hanteras baserat på dessa slutsatser.
+**C5-kontraktsetikett:** `C5` Etiketten för avtalsstyrd datastyrning anger att data inte kan användas för intressebaserad, övergripande målinriktning av innehåll eller annonser. Intressebaserad målinriktning, eller personalisering, uppstår om följande tre villkor uppfylls:  De data som samlas in på webbplatsen används för att dra slutsatser om en användares intresse, och används i ett annat sammanhang, t.ex. på en annan webbplats eller i en annan app, och används för att välja vilket innehåll eller vilka annonser som ska hanteras baserat på dessa slutsatser.
 
 **C6 Kontraktsetikett:** `C6` Etiketten för avtalsstyrd datastyrning anger att data inte kan användas för annonsanpassning på plats. Data kan inte användas för annonsanpassning på plats, inklusive val och leverans av annonser på organisationens webbplatser eller i appar, eller för att mäta leveransen och effektiviteten av sådana annonser.  Detta inkluderar att använda tidigare insamlade data på plats om användarnas intresse för att välja annonser, bearbeta data om vilka annonser som visades, när och var de visades och om användarna vidtagit några åtgärder som rör annonsen, som att klicka på en annons eller göra ett köp.
 
@@ -144,7 +142,7 @@ ht-degree: 0%
 
 **C10 Kontraktsetikett:** `C10` Etiketten för styrningsdata för kontrakt anger att data inte kan användas för aktivering av sammanfogade identiteter. Vissa dataanvändningsprinciper begränsar användningen av sammanfogade identitetsdata för personalisering. C10-etiketten används automatiskt på segment om deras sammanfogningsprinciper använder alternativet &quot;privat diagram&quot;.
 
-**Skapad datumkolumn:** Att markera en `Created Date` kolumn är ett alternativ när du anger data från tredje part via en anslutning. När strategin för att spara som tillägg har valts och datauppsättningen innehåller ett schema som är relaterat till flera datum, måste användaren välja från det tillgängliga schemat för datum/tid för att ange en `Created Date` nyckelkolumn. `Created Date` är inte tillgängligt när du har valt en sparningsstrategi för överskrivning.
+**Skapad datumkolumn:** Att markera en `Created Date` kolumn är ett alternativ när du anger data från tredje part via en anslutning. När strategin för att spara som tillägg har valts och datauppsättningen innehåller ett schema som är relaterat till flera datum, måste användaren välja från det tillgängliga schemat för datum/tid för att ange en `Created Date` nyckelkolumn. `Created Date` är inte tillgängligt när du har valt en strategi för att spara överskrivningar.
 
 **Skapa tabell som markerad:** Skapa tabell som markerad är ett SQL-kommando som, när det körs som en del av en fullständig och giltig SQL-fråga, instruerar användaren [!DNL Query Service] att behålla resultatet av frågan i en datamängd i datasjön. Alternativen är: Skapa ny, skriv över alla föregående och lägg till i föregående.
 
@@ -202,7 +200,7 @@ ht-degree: 0%
 
 **Beslutshändelse:** En beslutshändelse används för att samla in kommentarer om resultatet och sammanhanget för en beslutsaktivitet. Beslutshändelsen innehåller information om hur beslutet fattades, när det fattades, vilka alternativ som föreslogs (valdes) och vilket kontextuellt tillstånd som antingen påverkade beslutet eller kunde observeras under beslutsprocessen. Beslutshändelsen innehåller också förslags-ID:t, en globalt unik identifierare som kan användas för att korrelera beslutet till andra händelser.
 
-**Beslutsregel:** I [!DNL Decisioning Service]så fall är en beslutsregel den logik som definierar och kontrollerar vad, när, var och hur ett erbjudande presenteras för slutanvändarna.
+**Beslutsregel:** En beslutsregel är den logik som definierar och styr vad, när, var och hur ett erbjudande presenteras för slutanvändarna.
 
 **Beslutstjänst:** Det [!DNL Decisioning Service] är en samling tjänster och användargränssnitt som gör det möjligt för marknadsförare att skapa och leverera personaliserade erbjudandeupplevelser för slutanvändare i alla kanaler och i alla tillämpningar med hjälp av logiska funktioner och beslutsregler.
 
@@ -226,9 +224,9 @@ ht-degree: 0%
 
 ## E
 
-**Berättigat erbjudande:** I [!DNL Decisioning Service]det här exemplet uppfyller ett kvalificerat erbjudande de krav som anges ovan och som konsekvent kan erbjudas en profil.
+**Berättigat erbjudande:** Ett kvalificerat erbjudande uppfyller de krav som anges ovan och som konsekvent kan erbjudas en profil.
 
-**Villkor:** I [!DNL Decisioning Service]används berättiganderegler för en profil som är relaterad till kalendern, schemat och begränsningsbegränsningar.
+**Villkor:** I [!DNL Offer Decisioning]används berättiganderegler för en profil som är relaterad till kalendern, schemat och begränsningsbegränsningar.
 
 **Marknadsföringsåtgärd** för e-postmarknadsföring En marknadsföringsåtgärd som använder data i kampanjer för e-postmarknadsföring.
 
@@ -260,7 +258,7 @@ ht-degree: 0%
 
 ## F
 
-**Reserverbjudanden:** I [!DNL Decisioning Service]så fall visas ett reserverbjudande som standard när en slutanvändare inte är berättigad till något av erbjudandena i den mängd som används.
+**Reserverbjudanden:** Ett reserverbjudande är standarderbjudande som visas när en slutanvändare inte är berättigad till något av erbjudandena i den mängd som används.
 
 **Funktionsmappning:** Funktionsmappning avser processen att mappa funktioner från data till indata- och målfunktioner som krävs av en maskininlärningsmodell.
 
@@ -372,11 +370,11 @@ ht-degree: 0%
 
 ## O
 
-**Erbjudande:** I [!DNL Decisioning Service]så fall är ett erbjudande ett marknadsföringsmeddelande som kan ha kopplade regler som anger vem som är berättigad att se erbjudandet.
+**Erbjudande:** Ett erbjudande är ett marknadsföringsmeddelande som kan ha regler kopplade till sig och som anger vem som är berättigad att se erbjudandet.
 
-**Beslut om erbjudande:** I [!DNL Decisioning Service]paketet kan en marknadsförare hantera regler och tränade modeller för erbjudandeförslag när de interagerar med en slutanvändare baserat på data som samlats in över olika kanaler och tillämpningar.
+**Beslut om erbjudande:** Med offertbeslut kan en marknadsförare hantera regler och tränade modeller av erbjudandeförslag när han eller hon kontaktar en slutanvändare baserat på data som samlats in över olika kanaler och tillämpningar.
 
-**Erbjudandebibliotek:** I [!DNL Decisioning Service]biblioteket är erbjudandebiblioteket ett centralt bibliotek som används för att hantera personaliserade erbjudanden och reserverbjudanden, beslutsregler och aktiviteter.
+**Erbjudandebibliotek:** Erbjudandebiblioteket är ett centralt bibliotek som används för att hantera personaliserade erbjudanden och reserverbjudanden, beslutsregler och aktiviteter.
 
 **Marknadsföringsåtgärd** för personalisering på plats En marknadsföringsåtgärd som använder data för innehållspersonalisering på plats. Personalisering på plats är alla data som används för att dra slutsatser om användarnas intressen, och används för att välja vilket innehåll eller vilka annonser som betjänas baserat på dessa slutsatser.
 
@@ -394,9 +392,9 @@ ht-degree: 0%
 
 **Parquet-filer:** En parquet-fil är ett kolumnlagringsfilformat med komplexa kapslade datastrukturer. Parquet-filer krävs för att lägga till data för att fylla i en schemadatauppsättning.
 
-**Personaliserade erbjudanden:** I [!DNL Decisioning Service]paketet är ett personaliserat erbjudande ett anpassningsbart marknadsföringsmeddelande baserat på regler och begränsningar för behörighet.
+**Personaliserade erbjudanden:** Ett personaliserat erbjudande är ett anpassningsbart marknadsföringsmeddelande som baseras på regler och begränsningar för behörighet.
 
-**Placeringar:** I [!DNL Decisioning Service]är en placering den plats och/eller det sammanhang där ett erbjudande visas för en slutanvändare.
+**Placeringar:** En placering är den plats och/eller det sammanhang där ett erbjudande visas för en slutanvändare.
 
 **Arbetsytan** Profiler Möjliggör datahantering för att visa och hantera egna etiketter och kärnetiketter för organisationen.
 
@@ -406,7 +404,7 @@ ht-degree: 0%
 
 **Primärnyckel:** Primär nyckel är en beteckning i ett schema som unikt identifierar alla poster.
 
-**Prioritet:** I [!DNL Decisioning Service]används prioritet för att rangordna erbjudanden som uppfyller alla krav, som berättigande, kalender och appning.
+**Prioritet:** Prioriteten [!DNL Offer Decisioning]används för att rangordna erbjudanden som uppfyller alla krav, som berättigande, kalender och appning.
 
 **Privat identitetsdiagram:** Privat identitetsdiagram är en privat karta över relationer mellan sammanfogade och länkade identiteter som bara visas av din organisation och som bygger på dina egna data.
 
@@ -448,7 +446,7 @@ ht-degree: 0%
 
 **Återkommande:** En upprepning definierar om en [!DNL Query Service] fråga schemaläggs att köras endast en gång eller en gång i taget.
 
-**Representation:** I [!DNL Decisioning Service]är en representation information som används av en kanal, till exempel plats eller språk för att visa ett erbjudande.
+**Representation:** I [!DNL Offer Decisioning]det här exemplet är en representation information som används av en kanal, till exempel plats eller språk för att visa ett erbjudande.
 
 **Resurs:** I [!DNL Experience Platform Launch]är resurs en allmän term som refererar till alternativ som [!DNL Launch] användaren kan konfigurera inuti klientmiljön, inklusive tillägg, dataelement och regler.
 
