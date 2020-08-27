@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa och publicera genomgång av en maskininlärningsmodell
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1489'
+source-wordcount: '1495'
 ht-degree: 0%
 
 ---
@@ -45,10 +45,10 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
 * Ladda ned de tre nödvändiga [!DNL Jupyter Notebook] filerna från <a href="https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources/Notebooks-Thurs" target="_blank">Adobe offentliga [!DNL Git] databas</a>. De används för att demonstrera [!DNL JupyterLab] arbetsflödet i [!DNL Data Science Workspace].
 
 * En fungerande förståelse för följande viktiga begrepp som används i den här självstudiekursen:
-   * [!DNL Experience Data Model](../../xdm/home.md): Den standardiseringsinsats som Adobe ledde till för att definiera standardscheman som [!DNL Profile] och ExperienceEvent för Customer Experience Management.
+   * [[!DNL Experience Data Model]](../../xdm/home.md): Den standardiseringsinsats som Adobe ledde till för att definiera standardscheman som [!DNL Profile] och ExperienceEvent för Customer Experience Management.
    * Datauppsättningar: En lagrings- och hanteringskonstruktion för faktiska data. En fysisk instansierad instans av ett [XDM-schema](../../xdm/schema/field-dictionary.md).
    * Grupper: Datauppsättningar består av grupper. En batch är en uppsättning data som samlats in under en tidsperiod och som bearbetas tillsammans som en enda enhet.
-   * [!DNL JupyterLab]: [!DNL JupyterLab](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) är ett webbaserat gränssnitt för Project med öppen källkod [!DNL Jupyter] som är nära integrerat i [!DNL Experience Platform].
+   * [!DNL JupyterLab]: [[!DNL JupyterLab]](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) är ett webbaserat gränssnitt med öppen källkod för Project [!DNL Jupyter] och är nära integrerat med [!DNL Experience Platform].
 
 ## Förbered data {#prepare-your-data}
 
@@ -164,4 +164,4 @@ När poängsättningen är klar kan du förhandsgranska resultatet och se de ins
 
 Klart! Du har skapat produktrekommendationer!
 
-I den här självstudiekursen presenterades arbetsflödet för [!DNL Data Science Workspace]att visa hur obearbetade data kan förvandlas till användbar information via maskininlärning. Om du vill veta mer om hur du använder [!DNL Data Science Workspace]produkten kan du fortsätta med nästa guide om [hur du skapar försäljningsschemat och datauppsättningen](./create-retails-sales-dataset.md)för detaljhandeln.
+I den här självstudiekursen presenterades arbetsflödet för [!DNL Data Science Workspace]att visa hur obearbetade data kan förvandlas till användbar information via maskininlärning. Om du vill veta mer om hur du använder [!DNL Data Science Workspace]produkten fortsätter du till nästa guide om [hur du skapar försäljningsschema och datauppsättning](./create-retails-sales-dataset.md)för detaljhandeln.
