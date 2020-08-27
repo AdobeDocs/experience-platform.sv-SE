@@ -5,9 +5,9 @@ title: Adobe Experience Platform Identity Service
 topic: overview
 description: 'Identitetsnamnutrymmen är en komponent i identitetstjänsten som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet"name<span>@email.com" som e-postadress eller"443522" som ett numeriskt CRM-ID. '
 translation-type: tm+mt
-source-git-commit: 235f611115b89a87c924a00409a6acae4f5ac97d
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '748'
+source-wordcount: '761'
 ht-degree: 1%
 
 ---
@@ -15,15 +15,15 @@ ht-degree: 1%
 
 # Översikt över namnområde för identitet
 
-Identitetsnamnutrymmen är en komponent i [!DNL Identity Service](./home.md) som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet&quot;name<span>@email.com&quot; som e-postadress eller&quot;443522&quot; som ett numeriskt CRM-ID.
+Identitetsnamnutrymmen är en komponent i [[!DNL Identity Service]](./home.md) som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet&quot;name<span>@email.com&quot; som e-postadress eller&quot;443522&quot; som ett numeriskt CRM-ID.
 
 ## Komma igång
 
 Att arbeta med identitetsnamnutrymmen kräver förståelse för de olika Adobe Experience Platform-tjänsterna. Innan du börjar arbeta med namnutrymmen bör du läsa dokumentationen för följande tjänster:
 
-- [!DNL Real-time Customer Profile](../profile/home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
-- [!DNL Identity Service](./home.md): Få en bättre bild av enskilda kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system.
-- [!DNL Privacy Service](../privacy-service/home.md): Identitetsnamnutrymmen används för att uppfylla den allmänna dataskyddsförordningen (GDPR), där GDPR-begäranden kan göras i förhållande till ett namnutrymme.
+- [[!DNL Real-time Customer Profile]](../profile/home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
+- [[!DNL Identity Service]](./home.md): Få en bättre bild av enskilda kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system.
+- [[!DNL-Privacy Service]](../privacy-service/home.md): Identitetsnamnutrymmen används för att uppfylla den allmänna dataskyddsförordningen (GDPR), där GDPR-begäranden kan göras i förhållande till ett namnutrymme.
 
 ## Identitetsnamnutrymmen
 
