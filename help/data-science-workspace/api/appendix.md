@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;developer guide;endpoint;Data Science Workspace;popular topics
+keywords: Experience Platform;developer guide;endpoint;Data Science Workspace;popular topics;
 solution: Experience Platform
 title: Bilaga
 topic: Developer guide
+description: I följande avsnitt finns referensinformation för olika funktioner i API:t Sensei Machine Learning.
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 194a29124949571638315efe00ff0b04bff19303
 workflow-type: tm+mt
-source-wordcount: '298'
-ht-degree: 1%
+source-wordcount: '313'
+ht-degree: 0%
 
 ---
 
@@ -74,7 +75,7 @@ Följande är ett exempel på konfiguration som anger hur du använder en CPU f�
 
 ## Resurskonfigurationer för PySpark och Spark {#resource-config}
 
-Spark Engines kan modifiera beräkningsresurser för utbildning och poängsättning. Dessa resurser beskrivs i följande tabell:
+Spark Engines kan modifiera dataresurser för utbildning och poängsättning. Dessa resurser beskrivs i följande tabell:
 
 | Resurs | Beskrivning | Typ |
 | -------- | ----------- | ---- |
