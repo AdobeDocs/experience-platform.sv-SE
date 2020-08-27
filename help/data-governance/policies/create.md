@@ -4,17 +4,17 @@ solution: Experience Platform
 title: Skapa en dataanvändningsprincip
 topic: policies
 translation-type: tm+mt
-source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1186'
-ht-degree: 0%
+source-wordcount: '1194'
+ht-degree: 1%
 
 ---
 
 
 # Skapa en dataanvändningsprincip i API:t
 
-Varumärkning och verkställighet av dataanvändning (DULE) är huvudmekanismen för Adobe Experience Platform [!DNL Data Governance]. Med API:t för [DULE Policy Service](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) kan du skapa och hantera DULE-principer för att avgöra vilka marknadsföringsåtgärder som kan vidtas mot data som innehåller vissa DULE-etiketter.
+DULE (Data Usage Labeling and Enforcement) är Adobe Experience Platform kärnmekanism [!DNL Data Governance]. Med API:t för [DULE Policy Service](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) kan du skapa och hantera DULE-principer för att avgöra vilka marknadsföringsåtgärder som kan vidtas mot data som innehåller vissa DULE-etiketter.
 
 Det här dokumentet innehåller en stegvis självstudiekurs för att skapa en DULE-princip med API:t. [!DNL Policy Service] En mer utförlig guide till de olika åtgärder som är tillgängliga i API:t finns i Utvecklarhandbok för [principtjänst](../api/getting-started.md).
 
@@ -22,9 +22,9 @@ Det här dokumentet innehåller en stegvis självstudiekurs för att skapa en DU
 
 Den här självstudiekursen kräver en fungerande förståelse av följande viktiga koncept som används för att skapa och utvärdera DULE-policyer:
 
-* [!DNL Data Governance](../home.md): Ramverket som [!DNL Platform] genomdriver efterlevnad av dataanvändning.
+* [[!DNL Data Governance]](../home.md): Ramverket som [!DNL Platform] genomdriver efterlevnad av dataanvändning.
 * [Dataanvändningsetiketter](../labels/overview.md): Dataanvändningsetiketter används i XDM-datafält, vilket anger begränsningar för hur data kan nås.
-* [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
 * [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa DULE [!DNL Policy Service] API, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
@@ -123,7 +123,7 @@ Ett lyckat svar returnerar det totala antalet marknadsföringsåtgärder som hit
 
 När du hittar den marknadsföringsåtgärd du vill använda ska du registrera värdet på dess `href` egenskap. Det här värdet används under nästa steg när du [skapar en DULE-princip](#create-policy).
 
-### Skapa en ny marknadsföringsåtgärd {#create-new}
+### Create a new marketing action {#create-new}
 
 Du kan skapa en ny marknadsföringsåtgärd genom att göra en PUT-begäran till `/marketingActions/custom/` slutpunkten och ange ett namn för marknadsföringsåtgärden i slutet av den begärda sökvägen.
 
