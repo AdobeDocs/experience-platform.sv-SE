@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användarhandbok för dataanvändningsprinciper
 topic: policies
 translation-type: tm+mt
-source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '684'
+source-wordcount: '687'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Användarhandbok för dataanvändningsprinciper
 
-Adobe Experience Platform [!DNL Data Governance] har ett användargränssnitt där du kan skapa och hantera dataanvändningsprinciper. Det här dokumentet innehåller en översikt över de åtgärder du kan utföra på arbetsytan _Profiler_ i [!DNL Experience Platform] användargränssnittet.
+Adobe Experience Platform [!DNL Data Governance] har ett användargränssnitt där du kan skapa och hantera principer för dataanvändning. Det här dokumentet innehåller en översikt över de åtgärder du kan utföra på arbetsytan _Profiler_ i [!DNL Experience Platform] användargränssnittet.
 
 >[!IMPORTANT]
 >
@@ -24,7 +24,7 @@ Adobe Experience Platform [!DNL Data Governance] har ett användargränssnitt d�
 
 Handboken kräver en fungerande förståelse av följande [!DNL Experience Platform] begrepp:
 
-- [!DNL Data Governance](../home.md)
+- [[!DNL Data Governance]](../home.md)
 - [Dataanvändningspolicyer](./overview.md)
 
 ## Visa dataanvändningspolicyer {#view-policies}
@@ -59,7 +59,7 @@ Steget *[!UICONTROL Select marketing actions]* visas. Välj lämpliga marknadsf�
 
 ![](../images/policies/add-marketing-actions.png)
 
-Steget visas så att du kan granska informationen om den nya profilen innan du skapar den. *[!UICONTROL Review]* När du är nöjd klickar du på **[!UICONTROL Finish]** för att skapa profilen.
+Steget visas så att du kan granska informationen om den nya profilen innan du skapar den. *[!UICONTROL Review]* När du är nöjd skapar du profilen genom **[!UICONTROL Finish]** att klicka.
 
 ![](../images/policies/policy-review.png)
 
