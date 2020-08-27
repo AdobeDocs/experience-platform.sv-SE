@@ -5,9 +5,9 @@ title: Översikt över Adobe Experience Platform batchintag
 topic: overview
 description: Med API:t för gruppinmatning kan du importera data till Adobe Experience Platform som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en parquet-fil) eller data som följer ett känt schema i XDM-registret (Experience Data Model).
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1196'
+source-wordcount: '1199'
 ht-degree: 1%
 
 ---
@@ -34,8 +34,8 @@ Med [!DNL Data Ingestion] API kan du importera data som grupper (en dataenhet so
 
 ### [!DNL Data Ingestion] krav
 
-- Data som ska överföras måste vara antingen i Parquet- eller JSON-format.
-- En datauppsättning som skapats i [!DNL Catalog services](../../catalog/home.md).
+- Data som ska överföras måste vara i något av formaten Parquet eller JSON.
+- En datauppsättning skapades i [[!DNL Catalog Services]](../../catalog/home.md).
 - Innehållet i parquet-filen måste matcha en delmängd av schemat i den datauppsättning som överförs till.
 - Ha din unika åtkomsttoken efter autentisering.
 
