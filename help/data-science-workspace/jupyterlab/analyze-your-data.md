@@ -5,7 +5,7 @@ title: Analysera dina data med bärbara datorer
 topic: Tutorial
 description: I den här självstudiekursen fokuseras på hur du använder Jupyter-anteckningsböcker som är byggda i Data Science Workspace för att få tillgång till, utforska och visualisera dina data.
 translation-type: tm+mt
-source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
+source-git-commit: 33b14fed0d52792de0486897c11dd86c1ea2dd45
 workflow-type: tm+mt
 source-wordcount: '1731'
 ht-degree: 0%
@@ -91,7 +91,7 @@ Nu kan vi högerklicka på `Retail-Training-<your-alias>` datauppsättningen och
 
 >[!TIP]
 >
->gå till [[!DNL Platform SDK]](../authoring/platform-sdk.md) -guiden för att konvertera koden.
+>Mer information om hur du konverterar koden finns i [[!DNL Platform SDK]](../authoring/platform-sdk.md) -guiden.
 
 ```PYTHON
 from data_access_sdk_python.reader import DataSetReader
