@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics;enable dataset;Dataset;dataset
 solution: Experience Platform
 title: Användarhandbok för datauppsättningar
 topic: datasets
+description: Den här användarhandboken för datauppsättningar innehåller anvisningar om hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
 workflow-type: tm+mt
-source-wordcount: '1088'
+source-wordcount: '1108'
 ht-degree: 0%
 
 ---
