@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Felsökning av direktuppspelning
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: c8e53a25c5b22e8d840658fe26ff47875947a6d0
 workflow-type: tm+mt
 source-wordcount: '991'
 ht-degree: 0%
