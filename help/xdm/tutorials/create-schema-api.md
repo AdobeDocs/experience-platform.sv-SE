@@ -5,9 +5,9 @@ title: Skapa ett schema med API:t för schemaregister
 topic: tutorials
 description: I den här självstudiekursen används API:t för schemaregister för att vägleda dig genom stegen för att skapa ett schema med en standardklass.
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '2343'
+source-wordcount: '2368'
 ht-degree: 0%
 
 ---
@@ -23,10 +23,10 @@ I den här självstudiekursen används API:t för att vägleda dig genom stegen 
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [!DNL Experience Data Model (XDM) System](../home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+* [[!DNL Experience Data Model (XDM) System]](../home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grundläggande om schemakomposition](../schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-* [!DNL Real-time Customer Profile](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL-sandlådor]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till [!DNL Schema Registry] API:t. Detta inkluderar ditt `{TENANT_ID}`, konceptet med&quot;behållare&quot; och de rubriker som krävs för att göra förfrågningar (med särskild uppmärksamhet på rubriken Godkänn och dess möjliga värden).
 
@@ -192,7 +192,7 @@ PATCH /tenant/schemas/{schema meta:altId or url encoded $id URI}
 
 **Begäran**
 
-Denna begäran uppdaterar (PATCH) schemat för lojalitetsmedlemmar så att fälten i blandningen &quot;profile-person-details&quot; inkluderas.
+Denna begäran uppdaterar (PATCH) schemat för lojalitetsmedlemmar så att fälten i mixen &quot;profile-person-details&quot; inkluderas.
 
 Genom att lägga till blandningen &quot;profile-person-details&quot; hämtar schemat för lojalitetsmedlemmar nu information om medlemmar i bonusprogrammet, till exempel förnamn, efternamn och födelsedag.
 
@@ -343,7 +343,7 @@ Schemat för lojalitetsmedlemmar bör nu innehålla tre `$ref` värden i `allOf`
 
 Lojalitetsmedlemmens schema behöver hämta information som är unik för bonusprogrammet. Denna information ingår inte i någon standardblandning.
 
-Kontot [!DNL Schema Registry] för detta genom att du kan definiera dina egna mixar i innehavarbehållaren. Dessa mixar är unika för din organisation och kan inte visas eller redigeras av någon utanför din IMS-organisation.
+Kontot [!DNL Schema Registry] för detta genom att du kan definiera egna blandningar i klientens behållare. Dessa mixar är unika för din organisation och kan inte visas eller redigeras av någon utanför din IMS-organisation.
 
 För att skapa (POST) en ny blandning måste din begäran innehålla ett `meta:intendedToExtend` fält som innehåller `$id` för basklassen (basklasserna) som blandningen är kompatibel med, tillsammans med de egenskaper som blandningen kommer att innehålla.
 
@@ -955,9 +955,9 @@ När du utför en GET-begäran om att söka efter schemat visas nu referensen ti
 
 ### Definiera en identitetsbeskrivning
 
-Scheman används för inmatning av data i [!DNL Experience Platform]. Dessa data används slutligen för flera tjänster för att skapa en enda, enhetlig vy av en individ. Nyckelfält kan markeras som&quot;Identitet&quot; som hjälp med den här processen, och när data hämtas infogas data i dessa fält i&quot;Identitetsdiagram&quot; för den aktuella personen. Diagramdata kan sedan nås av [!DNL Real-time Customer Profile](../../profile/home.md) och andra [!DNL Experience Platform] tjänster för att ge en sammanslagen bild av varje enskild kund.
+Scheman används för inmatning av data i [!DNL Experience Platform]. Dessa data används slutligen för flera tjänster för att skapa en enda, enhetlig vy av en individ. Nyckelfält kan markeras som&quot;Identitet&quot; som hjälp med den här processen, och när data hämtas infogas data i dessa fält i&quot;Identitetsdiagram&quot; för den aktuella personen. Diagramdata kan sedan nås av [[!DNL Real-time Customer Profile]](../../profile/home.md) och andra [!DNL Experience Platform] tjänster för att ge en sammansatt bild av varje enskild kund.
 
-Fält som vanligen markeras som&quot;Identitet&quot; är: e-postadress, telefonnummer, CRM-ID [!DNL Experience Cloud ID (ECID)](https://docs.adobe.com/content/help/sv-SE/id-service/using/home.html)eller andra unika ID-fält.
+Fält som vanligen markeras som&quot;Identitet&quot; är: e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://docs.adobe.com/content/help/sv-SE/id-service/using/home.html), CRM ID eller andra unika ID-fält.
 
 Överväg alla unika identifierare som är specifika för din organisation, eftersom de också kan vara bra identifieringsfält.
 
@@ -996,7 +996,7 @@ curl -X POST \
 
 >[!NOTE]
 >
->Du kan visa tillgängliga xdm:namespace-värden eller skapa nya med hjälp av [!DNL Identity Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml). Värdet för xdm:property kan vara antingen xdm:code eller xdm:id, beroende på vilket xdm:namespace som används.
+>Du kan visa tillgängliga xdm:namespace-värden eller skapa nya värden med API:t för [[!DNL Identity Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml). Värdet för xdm:property kan vara antingen xdm:code eller xdm:id, beroende på vilket xdm:namespace som används.
 
 **Svar**
 
