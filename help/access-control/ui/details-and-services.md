@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;product profile
 solution: Experience Platform
 title: Hantera information och ytterligare tjänster för en produktprofil
 topic: user guide
+description: Det här dokumentet innehåller de steg som krävs för att hantera information och ytterligare tjänster för en produktprofil i Adobe Admin Console. Du kan konfigurera information om en profil och få tillgång till ytterligare tjänster på menyn Profilinställningar.
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
 workflow-type: tm+mt
-source-wordcount: '148'
-ht-degree: 0%
+source-wordcount: '187'
+ht-degree: 1%
 
 ---
 
@@ -34,6 +35,6 @@ På *[!UICONTROL Services]* menyn kan du ändra en profils åtkomst till ytterli
 
 Klicka på växlingsknappen till höger om en viss tjänst för att aktivera eller inaktivera den. Du kan även klicka på **[!UICONTROL All on]** kryssrutan för att aktivera eller inaktivera alla tjänster i listan.
 
-När du är klar klickar du på **[!UICONTROL Save]**.
+Klicka på **[!UICONTROL Save]** när du är klar.
 
 ![edit-additional-services](../images/edit-additional-services.png)
