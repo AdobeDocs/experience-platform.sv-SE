@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Analysera dina data med bärbara datorer
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1702'
+source-wordcount: '1710'
 ht-degree: 0%
 
 ---
@@ -18,9 +18,9 @@ I den här självstudiekursen fokuseras på hur du använder Jupyter-antecknings
 
 Följande koncept har introducerats:
 
-- **[!DNL JupyterLab]:**[!DNL JupyterLab](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906)är nästa generations webbaserade gränssnitt för Project Jupyter, som är nära integrerat i[!DNL Adobe Experience Platform].
+- **[!DNL JupyterLab]:** [[!DNL JupyterLab]](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) är nästa generations webbaserade gränssnitt för Project Jupyter och är nära integrerat i [!DNL Adobe Experience Platform].
 - **Grupper:** Datauppsättningar består av grupper. En batch är en uppsättning data som samlats in under en tidsperiod och som bearbetas tillsammans som en enda enhet. Nya grupper skapas när data läggs till i en datauppsättning.
-- **SDK för dataåtkomst (borttagen):** SDK för dataåtkomst är nu föråldrat. Använd [!DNL Platform SDK](../authoring/platform-sdk.md) guiden.
+- **SDK för dataåtkomst (borttagen):** SDK för dataåtkomst är nu föråldrat. Använd [[!DNL Platform SDK]](../authoring/platform-sdk.md) -guiden.
 
 ## Utforska anteckningsböcker i Data Science Workspace
 
@@ -52,7 +52,7 @@ Koden för butiksförsäljning är ett fristående exempel som använder samma d
 
 >[!NOTE]
 >
->Funktionen `data_access_sdk_python` är föråldrad och rekommenderas inte längre. Se självstudiekursen om [dataåtkomst för SDK till Platform SDK](../authoring/platform-sdk.md) för att konvertera din kod. Samma steg nedan gäller fortfarande för den här självstudiekursen.
+>Funktionen `data_access_sdk_python` är föråldrad och rekommenderas inte längre. Se självstudiekursen [Konvertera dataåtkomst till SDK till Platform SDK](../authoring/platform-sdk.md) för att konvertera koden. Samma steg nedan gäller fortfarande för den här självstudiekursen.
 
 Vi kommer att gå igenom åtkomsten till data internt från [!DNL Adobe Experience Platform] och externt. Vi kommer att använda biblioteket för att komma åt interna data som datauppsättningar och XDM-scheman. `data_access_sdk_python` För externa data kommer vi att använda [!DNL Python] pandabiblioteket.
 
@@ -90,7 +90,7 @@ Nu kan vi högerklicka på `Retail-Training-<your-alias>` datauppsättningen och
 
 >[!TIP]
 >
->se guiden för att konvertera koden [!DNL Platform SDK](../authoring/platform-sdk.md) .
+>gå till [[!DNL Platform SDK]](../authoring/platform-sdk.md) -guiden för att konvertera koden.
 
 ```PYTHON
 from data_access_sdk_python.reader import DataSetReader
@@ -162,9 +162,9 @@ Nu när vi känner till våra värden för dataramar vill vi komplettera detta m
 
 I det här avsnittet går vi snabbt igenom några fördelar med att använda varje bibliotek.
 
-[Matplotlib](https://matplotlib.org/) är det äldsta [!DNL Python] visualiseringspaketet. Deras mål är att göra&quot;enkla saker enkla och hårda saker möjliga&quot;. Detta brukar vara sant eftersom paketet är extremt kraftfullt men också innehåller komplexitet. Det är inte alltid lätt att få en rimlig bild utan att behöva ägna en hel del tid och arbete.
+[Matplotlib](https://matplotlib.org/) är det äldsta [!DNL Python] visualiseringspaketet. Deras mål är att göra&quot;enkla saker enkla och hårda saker möjliga&quot;. Detta brukar vara sant eftersom paketet är extremt kraftfullt men också innehåller komplexitet. Det är inte alltid lätt att få en bra bild utan att behöva lägga en hel del tid och arbete på att göra det.
 
-[Pandor](https://pandas.pydata.org/) används främst för objektet DataFrame, vilket möjliggör datamanipulering med integrerad indexering. Pandor har dock även en inbyggd plottningsfunktion som är baserad på matplotlib.
+[Pandor](https://pandas.pydata.org/) används främst för objektet DataFrame, vilket möjliggör datahantering med integrerad indexering. Pandor har dock även en inbyggd plottningsfunktion som är baserad på matplotlib.
 
 [seaborn](https://seaborn.pydata.org/) är ett paket som byggs ovanpå matplotlib. Det främsta målet är att göra standarddiagram mer visuellt tilltalande och att förenkla skapandet av komplicerade diagram.
 
@@ -175,7 +175,7 @@ I det här avsnittet går vi snabbt igenom några fördelar med att använda var
 
 Univariata diagram är diagram av en enskild variabel. Ett vanligt univariat-diagram används för att visualisera dina data är lådan och morrplotten.
 
-Med hjälp av våra butiksdata från tidigare kan vi generera låda och morrfack för var och en av de 45 butikerna och deras veckoförsäljning. Ritytan genereras med `seaborn.boxplot` funktionen.
+Med hjälp av våra butiksdata från tidigare kan vi generera låda och morrfack för var och en av de 45 butikerna och deras försäljning varje vecka. Ritytan genereras med `seaborn.boxplot` funktionen.
 
 ![](../images/jupyterlab/analyze-data/box_whisker.png)
 
