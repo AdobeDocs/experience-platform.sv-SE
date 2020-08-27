@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;retail sales recipe;Data Science Workspace;popular topics
+keywords: Experience Platform;retail sales recipe;Data Science Workspace;popular topics;recipes;pre build recipe
 solution: Experience Platform
 title: Butiksförsäljningsrecept
 topic: overview
+description: Med butiksförsäljningsreceptet kan du förutsäga försäljningsprognos för alla butiker som behövs under en viss tidsperiod. Med en korrekt prognosmodell skulle handlaren kunna hitta förhållandet mellan efterfrågan och prispolitiken och fatta optimerade prissättningsbeslut för att maximera försäljningen och intäkterna.
 translation-type: tm+mt
-source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
+source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
 workflow-type: tm+mt
-source-wordcount: '523'
+source-wordcount: '571'
 ht-degree: 1%
 
 ---
