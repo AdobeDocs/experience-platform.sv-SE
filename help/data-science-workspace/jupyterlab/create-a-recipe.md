@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa ett recept med Jupyter-anteckningsböcker
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '2273'
+source-wordcount: '2276'
 ht-degree: 0%
 
 ---
@@ -115,7 +115,7 @@ I följande två avsnitt går det längre att läsa in data och förbereda data.
 
 I det här steget används [pandabilden](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html). Data kan läsas in från filer i [!DNL Adobe Experience Platform] med [!DNL Platform] SDK (`platform_sdk`) eller från externa källor med pandas `read_csv()` eller `read_json()` funktioner.
 
-- [!DNL Platform SDK](#platform-sdk)
+- [[!DNL Platform SDK]](#platform-sdk)
 - [Externa källor](#external-sources)
 
 >[!NOTE]
