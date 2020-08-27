@@ -6,9 +6,9 @@ last-update: March 10, 2020
 author: ens71067
 keywords: release notes;
 translation-type: tm+mt
-source-git-commit: f881c1365684b1ca9e6bf9a8ce866d234dc54128
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '848'
+source-wordcount: '861'
 ht-degree: 2%
 
 ---
@@ -20,17 +20,17 @@ ht-degree: 2%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
-* [!DNL Data Governance](#governance)
-* [!DNL Data Ingestion](#ingestion)
-* [!DNL Destinations](#destinations)
-* [!DNL Identity Service](#identity)
-* [!DNL Sources](#sources)
+* [[!DNL Data Governance]](#governance)
+* [[!DNL-datainmatning]](#ingestion)
+* [[!DNL-mål]](#destinations)
+* [[!DNL Identity Service]](#identity)
+* [[!DNL-källor]](#sources)
 
 ## [!DNL Data Governance] {#governance}
 
 [!DNL Experience Platform] gör det möjligt för företag att samla data från flera företagssystem för att bättre kunna identifiera, förstå och engagera kunder. [!DNL Experience Platform] omfattar en infrastruktur för datastyrning från början till slut, inklusive märkning och verkställighet av data (DULE), för att säkerställa att data används på rätt sätt inom [!DNL Platform] och när de delas mellan system.
 
-Adobe Experience Platform [!DNL Data Governance] är ett antal strategier och tekniker som används för att hantera kunddata och säkerställa att regler, begränsningar och policyer som gäller för dataanvändning följs. Det spelar en viktig roll på [!DNL Experience Platform] olika nivåer, bland annat i fråga om katalogisering, datalinje, etikettering av dataanvändning, dataåtkomstprinciper och åtkomstkontroll av data för marknadsföringsåtgärder.
+Adobe Experience Platform [!DNL Data Governance] är en serie strategier och tekniker som används för att hantera kunddata och säkerställa att regler, begränsningar och regler som gäller för dataanvändning följs. Det spelar en viktig roll på [!DNL Experience Platform] olika nivåer, bland annat i fråga om katalogisering, datalinje, etikettering av dataanvändning, dataåtkomstprinciper och åtkomstkontroll av data för marknadsföringsåtgärder.
 
 **Nya funktioner**
 
@@ -52,28 +52,28 @@ Mer information om [!DNL Data Governance]finns i översikten över [datastyrning
 
 ## Dataintag {#ingestion}
 
-Adobe Experience Platform har en mängd funktioner för att importera alla typer av data och fördröjningar. Adobe Experience Platform [!DNL Data Ingestion] erbjuder flera alternativ för inmatning av data, bland annat API:er för gruppbearbetning, API:er för direktuppspelning, Adobe-kopplingar, dataintegrationspartners och användargränssnittet för Adobe Experience Platform.
+Adobe Experience Platform har en omfattande uppsättning funktioner för att importera alla typer av data och fördröjningar. Adobe Experience Platform [!DNL Data Ingestion] erbjuder flera alternativ för datainhämtning, inklusive API:er för gruppbearbetning, API:er för direktuppspelning, Adobe-anslutningar, dataintegrationspartners eller Adobe Experience Platform användargränssnitt.
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 |------- | -----------|
-| Partiellt batchintag | Partiell batchförbrukning är möjligheten att importera data som innehåller fel, upp till en viss tröskel. Med den här funktionen kan användare importera alla korrekta data till Adobe Experience Platform samtidigt som alla felaktiga data grupperas separat. Information läggs till i misslyckade batchar för att förklara varför de inte klarade valideringen. Mer information om partiell batchförbrukning finns i dokumentationen för [partiell batchförbrukning](../../ingestion/batch-ingestion/partial.md). |
+| Partiellt batchintag | Partiell batchförbrukning är möjligheten att importera data som innehåller fel, upp till en viss tröskel. Med den här funktionen kan användare importera alla korrekta data till Adobe Experience Platform samtidigt som felaktiga data grupperas separat. Information läggs till i misslyckade batchar för att förklara varför de inte klarade valideringen. Mer information om partiell batchförbrukning finns i dokumentationen för [partiell batchförbrukning](../../ingestion/batch-ingestion/partial.md). |
 
 **Kända fel**
 
 * Ingen
 
-Läs mer om hur du importerar data till Platform i dokumentationen för [datainmatning](../../ingestion/home.md).
+Mer information om hur du hämtar data till Platform finns i dokumentationen [för](../../ingestion/home.md)datainmatning.
 
 
 ## Mål {#destinations}
 
-I [Adobe Real-time Customer Data Platform](../../rtcdp/overview.md)är destinationer färdiga integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
+I [Adobe kunddataplattform](../../rtcdp/overview.md)i realtid är destinationer färdigbyggda integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
 
 **Nya destinationer**
 
-Det finns nya destinationer där du kan aktivera data från Adobe Experience Platform. Mer information finns nedan:
+Det finns nya destinationer där du kan aktivera dina Adobe Experience Platform-data. Mer information finns nedan:
 
 | Destination | Beskrivning |
 |--- | ---|
@@ -86,7 +86,7 @@ Mer information finns på [destinationsöversikten](../../rtcdp/destinations/des
 
 För att kunna leverera relevanta digitala upplevelser måste ni ha en fullständig förståelse för era kunder. Detta blir svårare när era kunddata fragmenteras över olika system, vilket gör att varje enskild kund ser ut att ha flera&quot;identiteter&quot;.
 
-Adobe Experience Platform hjälper er att få en bättre bild av era kunder och deras beteende genom att överbrygga identiteterna mellan olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid. [!DNL Identity Service]
+Adobe Experience Platform [!DNL Identity Service] hjälper er att få en bättre bild av era kunder och deras beteende genom att överbrygga identiteter mellan olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 
 **Nya funktioner**
 
@@ -110,7 +110,7 @@ Adobe Experience Platform kan importera data från externa källor och samtidigt
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Undertryckta signaler för koppling till Adobe Audience Manager | Signalnivådata från Audience Manager kommer inte längre att skickas. Observera att segmentmedlemskap för Traits and Segments fortfarande inkluderas. Till följd av den här ändringen kommer inkommande datauppsättningar inte längre att genereras. |
+| Undertryckta signaler för Adobe Audience Manager Connector | Signalnivådata från Audience Manager kommer inte längre att skickas. Observera att segmentmedlemskap för Traits and Segments fortfarande inkluderas. Till följd av den här ändringen kommer inkommande datauppsättningar inte längre att genereras. |
 | Ändrade namn på datauppsättningar | Datauppsättningar som genereras av Audience Manager-kopplingen har uppdaterade namn och beskrivningar. |
 | Aktivera [!DNL Profile] växling i Audience Manger | [!DNL Profile] växlingsknappen kan aktiveras eller inaktiveras för att befordra datauppsättningen till [!DNL Real-time Customer Profile]. Växla aktiveras som standard. |
 | Användargränssnittsstöd för molnlagringssystem | Ny källkoppling för [!DNL Azure Data Lake Storage Gen2] i användargränssnittet. |
