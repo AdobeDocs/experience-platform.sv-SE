@@ -5,9 +5,9 @@ seo-title: Destinationstyper och -kategorier
 description: 'På Adobe kunddataplattform i realtid samlar mål för profiler och segmentexport in händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Starta tillägg för att vidarebefordra råa händelsedata till flera olika typer av destinationer. '
 seo-description: På Adobe kunddataplattform i realtid samlar mål för profiler och segmentexport in händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Starta tillägg för att vidarebefordra råa händelsedata till flera olika typer av destinationer.
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '576'
+source-wordcount: '583'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ Profilexportdestinationer genererar en fil som innehåller profiler och/eller at
 
 #### Segmentexportdestinationer
 
-Destinationer för segmentexport skickar profilerna och de segment de är kvalificerade för till målplattformarna. Dessa mål använder segment-ID eller användar-ID. Reklamdestinationer som [!DNL Google Display & Video 360](/help/rtcdp/destinations/google-dv360-destination.md) eller [!DNL Google Ads](/help/rtcdp/destinations/google-ads-destination.md) är exempel på dessa typer av destinationer.
+Destinationer för segmentexport skickar profilerna och de segment de är kvalificerade för till målplattformarna. Dessa mål använder segment-ID eller användar-ID. Annonsmål som [[!DNL Google Display &amp; Video 360]](/help/rtcdp/destinations/google-dv360-destination.md) eller [[!DNL Google Ads]](/help/rtcdp/destinations/google-ads-destination.md) är exempel på dessa typer av destinationer.
 
 #### Destinationer för profilexport och segmentexport - videoöversikt
 
