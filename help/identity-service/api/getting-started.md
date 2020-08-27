@@ -4,25 +4,25 @@ solution: Experience Platform
 title: Komma igång
 topic: API guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '714'
-ht-degree: 0%
+source-wordcount: '726'
+ht-degree: 1%
 
 ---
 
 
 # [!DNL Identity Service] Utvecklarhandbok för API
 
-Adobe Experience Platform [!DNL Identity Service] hanterar enhetsoberoende, kanalövergripande och nästan realtidsidentifiering av era kunder i det som kallas identitetsdiagram i Adobe Experience Platform.
+Adobe Experience Platform [!DNL Identity Service] hanterar identifieringen av era kunder över olika enheter, i olika kanaler och i realtid i det som kallas identitetsdiagram inom Adobe Experience Platform.
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [!DNL Identity Service](../home.md): Lös den grundläggande utmaning som fragmenteringen av kundprofildata innebär. Det gör man genom att överbrygga identiteter mellan enheter och system där kunderna interagerar med ert varumärke.
-- [!DNL Real-time Customer Profile](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-- [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
+- [[!DNL Identity Service]](../home.md): Lös den grundläggande utmaning som fragmenteringen av kundprofildata innebär. Det gör man genom att överbrygga identiteter mellan enheter och system där kunderna interagerar med ert varumärke.
+- [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
 
 I följande avsnitt finns ytterligare information som du behöver känna till eller ha till hands för att kunna anropa [!DNL Identity Service] API:t.
 
