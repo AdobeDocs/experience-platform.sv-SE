@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;catalog;multiple object lookup;api
 solution: Experience Platform
 title: Söka efter flera objekt
 topic: developer guide
+description: Om du vill visa flera specifika objekt, i stället för att göra en begäran per objekt, finns det en enkel genväg för att begära flera objekt av samma typ i Katalog. Du kan använda en enda GET-begäran för att returnera flera specifika objekt genom att ta med en kommaavgränsad lista med ID:n.
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: dd1f508b93e8eac14e3c41fac9d8f49769d08f46
 workflow-type: tm+mt
-source-wordcount: '176'
+source-wordcount: '223'
 ht-degree: 0%
 
 ---
@@ -18,7 +19,7 @@ Om du vill visa flera specifika objekt, i stället för att göra en begäran pe
 
 >[!NOTE]
 >
->Även när du begär specifika [!DNL Catalog] objekt är det fortfarande bra att `properties` använda frågeparametern för att returnera endast de egenskaper du behöver.
+>Även när du begär specifika [!DNL Catalog] objekt är det fortfarande bra att `properties` fråga parametern så att den bara returnerar de egenskaper du behöver.
 
 **API-format**
 
