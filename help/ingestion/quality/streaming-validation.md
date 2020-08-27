@@ -5,9 +5,9 @@ title: Direktinmatningsvalidering
 topic: overview
 description: Med direktuppspelningsintag kan du överföra data till Adobe Experience Platform med direktuppspelningsslutpunkter i realtid. API:er för direktuppspelning stöder två valideringslägen - synkron och asynkron.
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '843'
+source-wordcount: '852'
 ht-degree: 2%
 
 ---
@@ -21,8 +21,8 @@ Med direktuppspelningsintag kan du överföra data till Adobe Experience Platfor
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [!DNL Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
-- [!DNL Streaming Ingestion](../streaming-ingestion/overview.md): En av metoderna som data kan skickas till [!DNL Experience Platform].
+- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+- [[!DNL-strömningsinmatning]](../streaming-ingestion/overview.md): En av metoderna som data kan skickas till [!DNL Experience Platform].
 
 ### Läser exempel-API-anrop
 
