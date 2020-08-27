@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;publish a model;Data Science Workspace;popular topics
+keywords: Experience Platform;publish a model;Data Science Workspace;popular topics;sensei machine learning api
 solution: Experience Platform
 title: Publicera en modell som en tjänst (API)
 topic: Tutorial
+description: I den här självstudien beskrivs processen att publicera en modell som en tjänst med hjälp av API:t Sensei Machine Learning.
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
 workflow-type: tm+mt
-source-wordcount: '1483'
+source-wordcount: '1501'
 ht-degree: 0%
 
 ---
