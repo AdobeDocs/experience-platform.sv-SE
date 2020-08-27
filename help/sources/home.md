@@ -5,9 +5,9 @@ title: Adobe Experience Platform Source Connectors - översikt
 topic: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: c8e53a25c5b22e8d840658fe26ff47875947a6d0
 workflow-type: tm+mt
-source-wordcount: '940'
+source-wordcount: '836'
 ht-degree: 0%
 
 ---
@@ -47,68 +47,68 @@ Källor i [!DNL Experience Platform] är grupperade i följande kategorier:
 
 Lagringskällor i molnet kan hämta dina egna data [!DNL Platform] utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM-parquet eller avgränsade. Varje steg i processen integreras i arbetsflödet Källor med användargränssnittet. Mer information finns i följande relaterade dokument:
 
-- [[!DNL Azure Data Lake Storage Gen2]](connectors/cloud-storage/adls-gen2.md) -anslutning
-- [[!DNL Azure Blob]](connectors/cloud-storage/blob.md) -koppling
-- [[!DNL Amazon Kinesis]](connectors/cloud-storage/kinesis.md) -anslutning
-- [[!DNL Amazon S3]](connectors/cloud-storage/s3.md) -anslutning
-- [[!DNL Apache HDFS]](connectors/cloud-storage/hdfs.md) -anslutning
-- [[!DNL Azure Event Hubs]](connectors/cloud-storage/eventhub.md) -anslutning
-- [[!DNL Azure File Storage]](connectors/cloud-storage/azure-file-storage.md) -anslutning
-- [[!DNL FTP och SFTP]](connectors/cloud-storage/ftp-sftp.md) -anslutning
-- [[!DNL Google Cloud Storage]](connectors/cloud-storage/google-cloud-storage.md) -anslutning
+- [[!DNL Azure Data Lake Storage Gen2] koppling](connectors/cloud-storage/adls-gen2.md)
+- [[!DNL Azure Blob] koppling](connectors/cloud-storage/blob.md)
+- [[!DNL Amazon Kinesis] koppling](connectors/cloud-storage/kinesis.md)
+- [[!DNL Amazon S3] koppling](connectors/cloud-storage/s3.md)
+- [[!DNL Apache HDFS] koppling](connectors/cloud-storage/hdfs.md)
+- [[!DNL Azure Event Hubs] koppling](connectors/cloud-storage/eventhub.md)
+- [[!DNL Azure File Storage] koppling](connectors/cloud-storage/azure-file-storage.md)
+- [[!DNL FTP and SFTP] koppling](connectors/cloud-storage/ftp-sftp.md)
+- [[!DNL Google Cloud Storage] koppling](connectors/cloud-storage/google-cloud-storage.md)
 
 ### CRM (Customer Relationship Management)
 
 CRM-system tillhandahåller data som kan hjälpa till att bygga upp kundrelationer, vilket i sin tur skapar lojalitet och driver kundlojalitet. [!DNL Experience Platform] har stöd för att importera CRM-data från [!DNL Microsoft Dynamics 365] och [!DNL Salesforce]. Mer information finns i följande relaterade dokument:
 
-- [[!DNL Microsoft Dynamics]](connectors/crm/ms-dynamics.md) -koppling
-- [[!DNL Salesforce]](connectors/crm/salesforce.md) -anslutning
+- [[!DNL Microsoft Dynamics] koppling](connectors/crm/ms-dynamics.md)
+- [[!DNL Salesforce] koppling](connectors/crm/salesforce.md)
 
 ### Nöjda kunder
 
 [!DNL Experience Platform] har stöd för inmatning av data från en tredjepartsapp för kundframgångar. Mer information finns i följande relaterade dokument:
 
-- [[!DNL Salesforce Service Cloud]](connectors/customer-success/salesforce-service-cloud.md) -koppling
-- [[!DNL ServiceNow]](connectors/customer-success/servicenow.md) -anslutning
+- [[!DNL Salesforce Service Cloud] koppling](connectors/customer-success/salesforce-service-cloud.md)
+- [[!DNL ServiceNow] koppling](connectors/customer-success/servicenow.md)
 
 ### Databas
 
 [!DNL Experience Platform] har stöd för inmatning av data från en tredjepartsdatabas. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
-- [[!DNL Amazon Redshift]](connectors/databases/redshift.md) -anslutning
-- [[!DNL Apache Hive på Azure HDInsights]](connectors/databases/hive.md) -kontakten
-- [[!DNL Apache Spark på Azure HDInsights]](connectors/databases/spark.md) -kontakt
-- [[!DNL Azure Data Explorer]](connectors/databases/data-explorer.md) -koppling
-- [[!DNL Azure Synapse Analytics]](connectors/databases/synapse-analytics.md) -koppling
-- [[!DNL Azure Table Storage]](connectors/databases/ats.md) -anslutning
-- [[!DNL Couchbase]](connectors/databases/couchbase.md) -anslutning
-- [[!DNL Google BigQuery]](connectors/databases/bigquery.md) -koppling
-- [[!DNL GreenPlum]](connectors/databases/greenplum.md) -koppling
-- [[!DNL HP Vertica]](connectors/databases/hp-vertica.md) -koppling
-- [[!DNL IBM DB2]](connectors/databases/ibm-db2.md) -anslutning
-- [[!DNL Microsoft SQL Server]](connectors/databases/sql-server.md) -anslutning
-- [[!DNL MySQL]](connectors/databases/mysql.md) -koppling
-- [[!DNL Oracle]](connectors/databases/oracle.md) -koppling
-- [[!DNL Phoenix]](connectors/databases/phoenix.md) -anslutning
-- [[!DNL PostgreSQL]](connectors/databases/postgres.md) -koppling
+- [[!DNL Amazon Redshift] koppling](connectors/databases/redshift.md)
+- [[!DNL Apache Hive on Azure HDInsights] koppling](connectors/databases/hive.md)
+- [[!DNL Apache Spark on Azure HDInsights] koppling](connectors/databases/spark.md)
+- [[!DNL Azure Data Explorer] koppling](connectors/databases/data-explorer.md)
+- [[!DNL Azure Synapse Analytics] koppling](connectors/databases/synapse-analytics.md)
+- [[!DNL Azure Table Storage] koppling](connectors/databases/ats.md)
+- [[!DNL Couchbase] koppling](connectors/databases/couchbase.md)
+- [[!DNL Google BigQuery] koppling](connectors/databases/bigquery.md)
+- [[!DNL GreenPlum] koppling](connectors/databases/greenplum.md)
+- [[!DNL HP Vertica] koppling](connectors/databases/hp-vertica.md)
+- [[!DNL IBM DB2] koppling](connectors/databases/ibm-db2.md)
+- [[!DNL Microsoft SQL Server] koppling](connectors/databases/sql-server.md)
+- [[!DNL MySQL] koppling](connectors/databases/mysql.md)
+- [[!DNL Oracle] koppling](connectors/databases/oracle.md)
+- [[!DNL Phoenix] koppling](connectors/databases/phoenix.md)
+- [[!DNL PostgreSQL] koppling](connectors/databases/postgres.md)
 
 ### Marknadsföringsautomatisering
 
 [!DNL Experience Platform] har stöd för inmatning av data från ett automatiseringssystem för marknadsföring från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
-- [[!DNL HubSpot]](connectors/marketing-automation/hubspot.md) -anslutning
+- [[!DNL HubSpot] koppling](connectors/marketing-automation/hubspot.md)
 
 ### Betalningar
 
 [!DNL Experience Platform] har stöd för inmatning av data från ett betalningssystem från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
-- [[!DNL PayPal]](connectors/payments/paypal.md) -koppling
+- [[!DNL PayPal] koppling](connectors/payments/paypal.md)
 
 ### Protokoll
 
 [!DNL Experience Platform] har stöd för inmatning av data från ett tredjepartsprotokollsystem. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
-- [[!DNL Generic OData]](connectors/protocols/odata.md) -koppling
+- [[!DNL Generic OData] koppling](connectors/protocols/odata.md)
 
 ## Åtkomstkontroll för källor vid datainhämtning
 
