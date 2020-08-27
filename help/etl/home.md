@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa ETL-integreringar
 topic: overview
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 8b1b61b6446b28f92d6cf221003674fa09716c53
 workflow-type: tm+mt
-source-wordcount: '4158'
+source-wordcount: '4153'
 ht-degree: 0%
 
 ---
@@ -78,7 +78,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 Till att börja med loggar en ETL-användare in i [!DNL Experience Platform] användargränssnittet och skapar datauppsättningar för förtäring med hjälp av en standardanslutning eller push-tjänstanslutning.
 
-I användargränssnittet skapar användaren utdata genom att välja ett dataschema. Vilket schema som väljs beror på vilken typ av data (post- eller tidsserie) som inhämtas [!DNL Platform]. Genom att klicka på fliken Scheman i användargränssnittet kan användaren visa alla tillgängliga scheman, inklusive den beteendetyp som schemat stöder.
+I användargränssnittet skapar användaren utdatauppsättningen genom att välja ett dataschema. Vilket schema som väljs beror på vilken typ av data (post- eller tidsserie) som inhämtas [!DNL Platform]. Genom att klicka på fliken Scheman i användargränssnittet kan användaren visa alla tillgängliga scheman, inklusive den beteendetyp som schemat stöder.
 
 I ETL-verktyget kommer användaren att börja designa sina mappningstransformeringar efter att ha konfigurerat lämplig anslutning (med hjälp av sina autentiseringsuppgifter). ETL-verktyget antas redan ha [!DNL Experience Platform] anslutningar installerade (processen definieras inte i den här integreringshandboken).
 
@@ -522,7 +522,7 @@ Information om filtrering av grupper finns i [dataåtkomstsjälvstudiekursen](..
 
 ### Hämta filer från en grupp
 
-När du har ID:t för gruppen du söker (`{BATCH_ID}`) är det möjligt att hämta en lista över filer som tillhör en viss grupp via [[!DNL Data Access API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml).  Mer information finns i [dataåtkomstsjälvstudiekursen](../data-access/tutorials/dataset-data.md).
+När du har ID:t för gruppen du söker (`{BATCH_ID}`) är det möjligt att hämta en lista över filer som tillhör en viss grupp via [[!DNL Data Access API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml).  Mer information finns i [[!DNL Data Access] självstudiekursen](../data-access/tutorials/dataset-data.md).
 
 **Begäran**
 
@@ -548,7 +548,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/files/{FILE_ID}" \
   -H "x-api-key : {API_KEY}"
 ```
 
-Svaret kan peka på en enskild fil eller en katalog. Mer information finns i [dataåtkomstsjälvstudiekursen](../data-access/tutorials/dataset-data.md).
+Svaret kan peka på en enskild fil eller en katalog. Mer information finns i [[!DNL Data Access] självstudiekursen](../data-access/tutorials/dataset-data.md).
 
 ### Åtkomst till filinnehåll
 
@@ -568,7 +568,7 @@ Svaret på den här begäran innehåller innehållet i filen. Mer information, i
 
 ### Validera poster för schemakompatibilitet
 
-När data skrivs kan användarna välja att validera data enligt de valideringsregler som definieras i XDM-schemat. Mer information om schemavalidering finns i [ETL-ekosystemets integreringsreferenskod på GitHub](https://github.com/adobe/experience-platform-etl-reference/blob/fd08dd9f74ae45b849d5482f645f859f330c1951/README.md#validation).
+När data skrivs kan användarna välja att validera data enligt de valideringsregler som definieras i XDM-schemat. Mer information om schemavalidering finns i [ETL-ekosystemets integreringsreferenskod på [!DNL GitHub]](https://github.com/adobe/experience-platform-etl-reference/blob/fd08dd9f74ae45b849d5482f645f859f330c1951/README.md#validation).
 
 Om du använder den referensimplementering som finns på [[!DNL GitHub]](https://github.com/adobe/experience-platform-etl-reference/blob/fd08dd9f74ae45b849d5482f645f859f330c1951/README.md)kan du aktivera schemavalidering i den här implementeringen med hjälp av systemegenskapen `-DenableSchemaValidation=true`.
 
