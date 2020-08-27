@@ -5,9 +5,9 @@ title: Övervaka datainmatning
 topic: overview
 description: I den här användarhandboken beskrivs hur du övervakar data i Adobe Experience Platform användargränssnitt. Den här guiden kräver att du har en Adobe ID och tillgång till Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '544'
+source-wordcount: '552'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ I användargränssnittet [för](https://platform.adobe.com)Experience Platform k
 
 ![](../images/quality/monitor-data-flows/click-streaming-end-to-end.png)
 
-Övervakningssidan visas *[!UICONTROL Streaming end-to-end]* . Den här arbetsytan innehåller ett diagram som visar hur många direktuppspelade händelser som tas emot av [!DNL Platform]och ett diagram som visar hur många direktuppspelade händelser som bearbetades av [!DNL Real-time Customer Profile](../../profile/home.md)samt en detaljerad lista över inkommande data.
+Övervakningssidan visas *[!UICONTROL Streaming end-to-end]* . Den här arbetsytan innehåller ett diagram som visar hur många direktuppspelade händelser som tas emot av [!DNL Platform], ett diagram som visar hur många direktuppspelade händelser som bearbetades av [[!DNL Real-time Customer Profile]](../../profile/home.md)samt en detaljerad lista över inkommande data.
 
 ![](../images/quality/monitor-data-flows/list-streams.png)
 
@@ -61,7 +61,7 @@ Misslyckade poster innehåller dessutom information om de fel som uppstod när g
 
 ## Övervaka dataöverföring från slutpunkt till slutpunkt
 
-Klicka på den vänstra navigeringsmenyn [!DNL Experience Platform UI](https://platform.adobe.com)**[!UICONTROL Monitoring]** i.
+I gränssnittet för [[!DNL Experience Platform]](https://platform.adobe.com)klickar du **[!UICONTROL Monitoring]** på den vänstra navigeringsmenyn.
 
 ![](../images/quality/monitor-data-flows/click-monitoring.png)
 
