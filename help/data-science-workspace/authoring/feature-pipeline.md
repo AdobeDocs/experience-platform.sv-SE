@@ -5,7 +5,7 @@ title: Skapa en funktionspipeline
 topic: Tutorial
 description: Med Adobe Experience Platform kan du skapa och skapa anpassade rörledningar för att utföra funktionstekniker i stor skala via Sensei Machine Learning Framework Runtime. I det här dokumentet beskrivs de olika klasserna som finns i en funktionspipeline och här finns en stegvis självstudiekurs för att skapa en anpassad funktionspipeline med hjälp av modellredigerings-SDK i PySpark.
 translation-type: tm+mt
-source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
+source-git-commit: 78f080fd7598799825c59a4fdfdcaf7d294560a3
 workflow-type: tm+mt
 source-wordcount: '1426'
 ht-degree: 0%
@@ -419,7 +419,7 @@ När du är klar skickar du en GET-begäran om `/experiments/{EXPERIMENT_ID}` at
 
 ### Ange utbildningsuppgift för körning av experiment {#training}
 
-Därefter måste du [specificera uppgiften](../api/experiments.md#experiment-training-scoring)för utbildningskörningen. Gör en POST till `experiments/{EXPERIMENT_ID}/runs` och i brödtexten och ställ in läget på `train` och skicka en mängd uppgifter som innehåller dina utbildningsparametrar. Ett godkänt svar returnerar en nyttolast som innehåller information om den begärda experten.
+Därefter måste du [specificera uppgiften](../api/experiments.md#experiment-training-scoring)för utbildningskörningen. Gör en POST till `experiments/{EXPERIMENT_ID}/runs` och i brödtexten och ange läget till `train` och skicka en array med uppgifter som innehåller dina utbildningsparametrar. Ett godkänt svar returnerar en nyttolast som innehåller information om den begärda experten.
 
 När du är klar skickar du en GET-begäran om `/experiments/{EXPERIMENT_ID}` att [hämta experimentstatusen](../api/experiments.md#retrieve-specific) och väntar på att Experimentstatus ska uppdateras.
 
