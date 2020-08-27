@@ -5,9 +5,9 @@ seo-title: Arbetsflöde för molnlagringsmål
 description: Instruktioner för att ansluta till lagringsplatser i molnet
 seo-description: Instruktioner för att ansluta till lagringsplatser i molnet
 translation-type: tm+mt
-source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '493'
+source-wordcount: '500'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ På den här sidan beskrivs hur du kan ansluta till molnlagringsplatser i kundda
    >
    >Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]** knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](/help/rtcdp/destinations/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
 
-2. Om du tidigare har konfigurerat en anslutning till molnlagringsmålet markerar du den befintliga anslutningen i **[!UICONTROL Authentication]** steget **[!UICONTROL Existing Account]** . Du kan också välja **[!UICONTROL New Account]** att konfigurera en ny anslutning till molnlagringsmålet. Fyll i autentiseringsuppgifter för ditt konto och välj **[!UICONTROL Connect to destination]**. <br> Mer information om inloggningsuppgifter finns i [Amazon S3](/help/rtcdp/destinations/amazon-s3-destination.md) -målet, [!DNL Amazon Kinesis](/help/rtcdp/destinations/amazon-kinesis-destination.md) -målet, - [!DNL Azure Event Hubs](/help/rtcdp/destinations/azure-event-hubs-destination.md) målet och [SFTP](/help/rtcdp/destinations/sftp-destination.md) -målet i **autentiseringssteget** .
+2. Om du tidigare har konfigurerat en anslutning till molnlagringsmålet markerar du den befintliga anslutningen i **[!UICONTROL Authentication]** steget **[!UICONTROL Existing Account]** . Du kan också välja **[!UICONTROL New Account]** att konfigurera en ny anslutning till molnlagringsmålet. Fyll i autentiseringsuppgifter för ditt konto och välj **[!UICONTROL Connect to destination]**. <br> Se [Amazon S3](/help/rtcdp/destinations/amazon-s3-destination.md) -mål, [[!DNL Amazon Kinesis]](/help/rtcdp/destinations/amazon-kinesis-destination.md) -mål, [[!DNL Azure Event Hubs]](/help/rtcdp/destinations/azure-event-hubs-destination.md) -mål och [SFTP](/help/rtcdp/destinations/sftp-destination.md) -mål för mer information om inloggningsuppgifter i **autentiseringssteget** .
 
    >[!NOTE]
    >
