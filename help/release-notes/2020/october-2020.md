@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: October, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: e9d7a045a88e0126549adcfa6136684e7b933b71
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '289'
+source-wordcount: '294'
 ht-degree: 3%
 
 ---
@@ -19,8 +19,8 @@ ht-degree: 3%
 
 Nya funktioner i Adobe Experience Platform:
 
-- [!DNL Access control](#access-control)
-- [!DNL Sandboxes](#sandboxes)
+- [[!DNL Access control]](#access-control)
+- [[!DNL-sandlådor]](#sandboxes)
 
 ## [!DNL Access control] {#access-control}
 
@@ -31,7 +31,7 @@ Nya funktioner i Adobe Experience Platform:
 | Funktion | Beskrivning |
 |--- | ---|
 | Behörigheter | På fliken [!DNL Admin Console]i en [!DNL Platform] produktprofil kan du anpassa vilka [!DNL Platform] funktioner som är tillgängliga för användarna som är kopplade till profilen. Tillgängliga behörighetskategorier är: [!UICONTROL Data Modeling], [!UICONTROL Data Management], [!UICONTROL Profile Management], [!UICONTROL Identities], [!UICONTROL Data Monitoring], [!UICONTROL Sandbox Administration], [!UICONTROL Destinations], [!UICONTROL Sources]. |
-| Åtkomst till sandlådor | Fliken [!UICONTROL _Behörigheter _]i en[!DNL Platform]produktprofil kan ge användare åtkomst till specifika sandlådor. Mer information finns i avsnittet om[sandlådor](#sandboxes)nedan. |
+| Åtkomst till sandlådor | Fliken [!UICONTROL _Behörigheter_] i en [!DNL Platform] produktprofil kan ge användare åtkomst till specifika sandlådor. Mer information finns i avsnittet om [sandlådor](#sandboxes) nedan. |
 
 Mer information finns i översikten över [åtkomstkontrollen](../../access-control/home.md).
 
