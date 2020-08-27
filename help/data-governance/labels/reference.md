@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;data governance;data usage label api;policy service api;supported data usage labels;contract labels;identity labels;sensitive labels
 solution: Experience Platform
 title: Etiketter för grundläggande dataanvändning
 topic: labels
+description: I det här dokumentet finns en översikt över alla dataanvändningsetiketter som för närvarande stöds av Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 876ac35f6366411adda821805bf628470839f80e
+source-git-commit: cddc559dfb65ada888bb367d6265863091a9b2a1
 workflow-type: tm+mt
-source-wordcount: '1869'
+source-wordcount: '1882'
 ht-degree: 1%
 
 ---
@@ -14,9 +15,9 @@ ht-degree: 1%
 
 # Etiketter för grundläggande dataanvändning
 
-Med etiketter för dataanvändning kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Adobe Experience Platform Data Governance har flera färdiga etiketter för dataanvändning som du kan använda för att kategorisera dina data.
+Med etiketter för dataanvändning kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Adobe Experience Platform Data Governance innehåller flera färdiga etiketter för dataanvändning som du kan använda för att kategorisera dina data.
 
-I det här dokumentet finns en beskrivning av de etiketter för användning av kärndata som för närvarande finns i [!DNL Experience Platform]. Mer information om [!DNL Data Governance] datastyrning finns i översikten över [](../home.md)datastyrning.
+I det här dokumentet finns en beskrivning av de etiketter för användning av kärndata som för närvarande tillhandahålls av [!DNL Experience Platform]. Mer information om [!DNL Data Governance] datastyrning finns i översikten över [](../home.md)datastyrning.
 
 ## Kontraktsetiketter
 
@@ -117,11 +118,11 @@ DAA: Onlineannonsering omfattar inte aktiviteter som utförs av första part, an
 
 #### C8 {#c8}
 
-Data kan inte användas för att mäta, förstå och rapportera om hur användare använder organisationens webbplatser eller appar. Detta inkluderar inte intressebaserad målinriktning (målinriktning över flera webbplatser), som är en samling information om din användning av den här tjänsten för att sedan personalisera innehåll och/eller reklam för dig i andra sammanhang, dvs. på andra tjänster, som webbplatser eller appar, över tid.
+Data kan inte användas för att mäta, förstå och rapportera om hur användare använder organisationens webbplatser eller appar. Detta inkluderar inte intressebaserad målinriktning (målinriktning över flera webbplatser), som är en samling information om din användning av den här tjänsten för att sedan personalisera innehåll och/eller annonsering för dig i andra sammanhang, dvs. på andra tjänster, som webbplatser eller appar, över tid.
 
 #### C9 {#c9}
 
-Vissa avtal innehåller uttryckliga förbud mot dataanvändning för datavetenskap. Ibland formuleras dessa i termer som förbjuder användning av data för artificiell intelligens (AI), maskininlärning (ML) eller modellering.
+I vissa avtal ingår uttryckliga förbud mot dataanvändning för datavetenskap. Ibland formuleras dessa i termer som förbjuder användning av data för artificiell intelligens (AI), maskininlärning (ML) eller modellering.
 
 #### C10 {#c10}
 
