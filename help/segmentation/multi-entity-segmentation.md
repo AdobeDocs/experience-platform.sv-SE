@@ -5,9 +5,9 @@ title: Segmentering för flera enheter
 topic: overview
 description: Multientitetssegmentering är möjligheten att utöka profildata med ytterligare data baserat på produkter, butiker eller andra icke-profilklasser. När de är anslutna blir data från ytterligare klasser tillgängliga som om de vore inbyggda i profilschemat.
 translation-type: tm+mt
-source-git-commit: cb5df9b44486bda84f08805f1077d6097e3666e2
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '409'
+source-wordcount: '418'
 ht-degree: 0%
 
 ---
@@ -25,9 +25,9 @@ Om du vill veta mer om segmentering av flera enheter kan du fortsätta att läsa
 
 Den här självstudiekursen kräver en fungerande förståelse för de olika Adobe Experience Platform-tjänster som använder segmentering. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-- [!DNL Real-time Customer Profile](../profile/home.md): Ger en enhetlig konsumentprofil i realtid, baserad på aggregerade data från flera källor.
+- [[!DNL Real-time Customer Profile]](../profile/home.md): Ger en enhetlig konsumentprofil i realtid, baserad på aggregerade data från flera källor.
 - [Adobe Experience Platform segmenteringstjänst](./home.md): Gör att ni kan bygga segment utifrån kundprofilen i realtid.
-- [!DNL Experience Data Model (XDM)](../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
+- [[!DNL Experience Data Model (XDM)]](../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
 
 ## Definiera XDM-relationer
 
@@ -43,6 +43,6 @@ Detta kan göras antingen med [!DNL Segmentation] API:t eller med [!DNL Segment 
 
 ## Så här utvärderar och får du tillgång till segment för flera enheter
 
-När du har skapat ett segment kan du utvärdera och komma åt segmentresultaten med hjälp av [!DNL Segmentation Service] -API:t. Utvärderingen av ett segment med flera enheter påminner mycket om utvärderingen av ett reguljärt segment.
+När du har skapat ett segment kan du utvärdera och komma åt segmentresultaten med hjälp av [!DNL Segmentation Service] API:t. Utvärderingen av ett segment med flera enheter påminner mycket om utvärderingen av ett reguljärt segment.
 
 Den här processen kan bara utföras med API:t [!DNL Segmentation Service] . En detaljerad guide om hur du använder API för att utvärdera och få tillgång till segment finns i självstudiekursen om [utvärdering och åtkomst av segment](./tutorials/evaluate-a-segment.md).
