@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa e-postmarknadsföringsmål
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1610'
+source-wordcount: '1621'
 ht-degree: 0%
 
 ---
@@ -26,9 +26,9 @@ Om du föredrar att använda användargränssnittet i Adobe CDP i realtid för a
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [!DNL Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
-* [!DNL Catalog Service](../../catalog/home.md): [!DNL Catalog] är systemet för registrering av dataplatser och datalinje inom [!DNL Experience Platform].
-* [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+* [[!DNL Catalog Service]](../../catalog/home.md): [!DNL Catalog] är systemet för registrering av dataplatser och datalinje inom [!DNL Experience Platform].
+* [[!DNL-sandlådor]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data till e-postmarknadsföringsmål i CDP i realtid i Adobe.
 
