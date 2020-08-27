@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;create batch;catalog service;api
 solution: Experience Platform
 title: Skapa en datauppsättning
 topic: developer guide
+description: För att en datauppsättning ska kunna importera data måste den ha en associerad batch. Med ID-värdet för en befintlig datauppsättning kan du skapa en batch genom att göra en POST-förfrågan till /batches-slutpunkten i Catalog API.
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
 workflow-type: tm+mt
-source-wordcount: '86'
-ht-degree: 1%
+source-wordcount: '128'
+ht-degree: 0%
 
 ---
 
