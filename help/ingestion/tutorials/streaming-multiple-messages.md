@@ -4,17 +4,17 @@ solution: Experience Platform
 title: Direktuppspelning av flera meddelanden i en enda HTTP-begäran
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 80392190c7fcae9b6e73cc1e507559f834853390
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1452'
-ht-degree: 0%
+source-wordcount: '1459'
+ht-degree: 1%
 
 ---
 
 
 # Skicka flera meddelanden i en enda HTTP-begäran
 
-När data direktuppspelas till Adobe Experience Platform kan det vara dyrt att göra ett antal HTTP-anrop. I stället för att skapa 200 HTTP-begäranden med 1 kB-nyttolaster är det till exempel mycket effektivare att skapa 1 HTTP-begäran med 200 meddelanden på 1 kB vardera, med en enda nyttolast på 200 kB. När det används på rätt sätt är gruppering av flera meddelanden i en enda begäran ett utmärkt sätt att optimera data som skickas till [!DNL Experience Platform].
+När du direktuppspelar data till Adobe Experience Platform kan det vara dyrt att ringa ett antal HTTP-anrop. I stället för att skapa 200 HTTP-begäranden med 1 kB-nyttolaster är det till exempel mycket effektivare att skapa 1 HTTP-begäran med 200 meddelanden på 1 kB vardera, med en enda nyttolast på 200 kB. När det används på rätt sätt är gruppering av flera meddelanden i en enda begäran ett utmärkt sätt att optimera data som skickas till [!DNL Experience Platform].
 
 Det här dokumentet innehåller en självstudiekurs för att skicka flera meddelanden till [!DNL Experience Platform] en enda HTTP-begäran med direktuppspelningsinmatning.
 
@@ -25,7 +25,7 @@ Den här självstudiekursen kräver en fungerande förståelse för Adobe Experi
 - [Översikt över](../home.md)datainmatning: Täcker kärnbegreppen för [!DNL Experience Platform Data Ingestion], inklusive intagsmetoder och dataanslutningar.
 - [Översikt över](../streaming-ingestion/overview.md)direktuppspelning: Arbetsflödet och byggstenarna för direktuppspelningsuppläsning, som direktuppspelningsanslutningar, datauppsättningar [!DNL XDM Individual Profile]och [!DNL XDM ExperienceEvent].
 
-I den här självstudiekursen måste du också ha slutfört [autentiseringen till Adobe Experience Platform](../../tutorials/authentication.md) för att kunna anropa API: [!DNL Platform] er. När du slutför självstudiekursen för autentisering får du det värde för auktoriseringshuvud som krävs för alla API-anrop i den här självstudiekursen. Rubriken visas i exempelanrop enligt följande:
+Den här självstudiekursen kräver även att du har slutfört [autentiseringen till Adobe Experience Platform](../../tutorials/authentication.md) för att kunna ringa anrop till API: [!DNL Platform] er. När du slutför självstudiekursen för autentisering får du det värde för auktoriseringshuvud som krävs för alla API-anrop i den här självstudiekursen. Rubriken visas i exempelanrop enligt följande:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 
@@ -508,9 +508,9 @@ Det andra meddelandet misslyckades eftersom det saknade meddelandetext. Samlings
     },
 ```
 
-Det tredje meddelandet misslyckades på grund av att ett ogiltigt IMS-organisations-ID användes i huvudet. IMS-organisationen måste matcha den {CONNECTION_ID} som du försöker publicera till. För att avgöra vilket IMS-organisations-ID som matchar den direktuppspelningsanslutning du använder kan du utföra en `GET inlet` begäran med hjälp av [!DNL Data Ingestion API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml). Se [Hämta en direktuppspelningsanslutning](./create-streaming-connection.md#get-data-collection-url) för ett exempel på hur du hämtar tidigare skapade direktuppspelningsanslutningar.
+Det tredje meddelandet misslyckades på grund av att ett ogiltigt IMS-organisations-ID användes i huvudet. IMS-organisationen måste matcha den {CONNECTION_ID} som du försöker publicera till. För att avgöra vilket IMS-organisations-ID som matchar den direktuppspelningsanslutning du använder kan du utföra en `GET inlet` begäran med hjälp av API:t för [[!DNL-datainmatning]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml). Se [Hämta en direktuppspelningsanslutning](./create-streaming-connection.md#get-data-collection-url) för ett exempel på hur du hämtar tidigare skapade direktuppspelningsanslutningar.
 
-Det fjärde meddelandet misslyckades eftersom det inte följde det förväntade XDM-schemat. Det `xdmSchema` som ingår i begärans huvud och brödtext matchar inte XDM-schemat för `{DATASET_ID}`. Om du korrigerar schemat i meddelandehuvudet och meddelandetexten kan det godkänna DCCS-validering och skickas till [!DNL Platform]. Meddelandetexten måste också uppdateras för att matcha XDM-schemat för `{DATASET_ID}` att den ska kunna godkännas vid direktuppspelningsvalidering [!DNL Platform]. Mer information om vad som händer med meddelanden som kan direktuppspelas till Platform finns i avsnittet [Bekräfta inmatade](#confirm-messages-ingested) meddelanden i den här självstudiekursen.
+Det fjärde meddelandet misslyckades eftersom det inte följde det förväntade XDM-schemat. Det `xdmSchema` som ingår i begärans huvud och brödtext matchar inte XDM-schemat för `{DATASET_ID}`. Om du korrigerar schemat i meddelandehuvudet och meddelandetexten kan det godkänna DCCS-validering och skickas till [!DNL Platform]. Meddelandetexten måste också uppdateras för att matcha XDM-schemat för `{DATASET_ID}` att den ska kunna godkännas vid direktuppspelningsvalidering [!DNL Platform]. Mer information om vad som händer med meddelanden som kan direktuppspelas på Platform finns i avsnittet [Bekräfta inmatade](#confirm-messages-ingested) meddelanden i den här självstudiekursen.
 
 ### Hämta misslyckade meddelanden från [!DNL Platform]
 
@@ -529,7 +529,7 @@ Batchmeddelanden som godkänns vid direktuppspelningsvalidering [!DNL Platform] 
 
 ## Nästa steg
 
-Nu när du vet hur du skickar flera meddelanden i en enda begäran och verifierar när meddelanden har importerats till måldatauppsättningen, kan du börja direktuppspela dina egna data till [!DNL Platform]. En översikt över hur du hämtar inkapslade data från [!DNL Platform]finns i [!DNL Data Access](../../data-access/tutorials/dataset-data.md) guiden.
+Nu när du vet hur du skickar flera meddelanden i en enda begäran och verifierar när meddelanden har importerats till måldatauppsättningen, kan du börja direktuppspela dina egna data till [!DNL Platform]. En översikt över hur du hämtar inkapslade data från [!DNL Platform]finns i handboken [[!DNL Data Access]](../../data-access/tutorials/dataset-data.md) .
 
 ## Bilaga
 
