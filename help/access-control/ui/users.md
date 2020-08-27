@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;product profile
 solution: Experience Platform
 title: Hantera användare för en produktprofil
 topic: user guide
+description: I det här dokumentet visas hur du hanterar användare för en produktprofil i användargränssnittet för Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
 workflow-type: tm+mt
-source-wordcount: '173'
+source-wordcount: '192'
 ht-degree: 1%
 
 ---
@@ -24,7 +25,7 @@ Dialogrutan *[!UICONTROL Add User]* visas. Med hjälp av sökfältet kan du sök
 
 >[!NOTE]
 >
->Om en användare inte visas i fönstret Komplettera automatiskt anger du den fullständiga e-postadressen i sökfältet. En inbjudan skickas till e-postmeddelandet med instruktioner om hur du konfigurerar ett Adobe ID.
+>Om en användare inte visas i fönstret Komplettera automatiskt anger du den fullständiga e-postadressen i sökfältet. En inbjudan skickas till e-postmeddelandet med instruktioner om hur du konfigurerar ett Adobe ID-konto.
 
 När du har valt en användare klickar du för **[!UICONTROL Save]** att lägga till dem i produktprofilen.
 
