@@ -5,9 +5,9 @@ title: Privacy Service developer guide
 description: Använd RESTful API för att hantera personuppgifter för dina registrerade i olika Adobe Experience Cloud-program
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '725'
+source-wordcount: '728'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,11 @@ Adobe Experience Platform [!DNL Privacy Service] har ett RESTful-API och använd
 
 I den här handboken beskrivs hur du använder [!DNL Privacy Service] API:t. Mer information om hur du använder användargränssnittet finns i översikten över användargränssnittet för [Privacy Service](../ui/overview.md). En fullständig lista över alla tillgängliga slutpunkter i [!DNL Privacy Service] API finns i [API-referensen](https://www.adobe.io/apis/experiencecloud/gdpr/api-reference.html).
 
-## Getting started {#getting-started}
+## Komma igång {#getting-started}
 
 Handboken kräver en fungerande förståelse av följande [!DNL Experience Platform] funktioner:
 
-* [!DNL Privacy Service](../home.md): Tillhandahåller ett RESTful-API och användargränssnitt som gör att du kan hantera förfrågningar från registrerade (kunder) i olika Adobe Experience Cloud-program.
+* [[!DNL-Privacy Service]](../home.md): Tillhandahåller ett RESTful-API och användargränssnitt som gör att du kan hantera förfrågningar från registrerade (kunder) i olika Adobe Experience Cloud-program.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa Privacy Service-API:t.
 
@@ -59,7 +59,7 @@ Stegen för att generera dessa värden beskrivs närmare nedan.
 
 #### Engångskonfiguration
 
-Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med Adobe ID. Följ sedan stegen som beskrivs i självstudiekursen om hur du [skapar ett tomt projekt](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) i dokumentationen för Adobe Developer Console.
+Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med din Adobe ID. Följ sedan stegen som beskrivs i självstudiekursen om hur du [skapar ett tomt projekt](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) i dokumentationen för Adobe Developer Console.
 
 När du har skapat ett nytt projekt klickar du **[!UICONTROL Add API]** på _[!UICONTROL Project Overview]_skärmen.
 
