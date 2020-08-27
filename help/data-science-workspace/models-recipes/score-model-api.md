@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;Score a model;Data Science Workspace;popular topics
+keywords: Experience Platform;Score a model;Data Science Workspace;popular topics;sensei machine learning api
 solution: Experience Platform
 title: Posta en modell (API)
 topic: Tutorial
+description: I den här självstudiekursen visas hur du använder API:erna för inlärning i Sensei-maskinvara för att skapa en Experiment och en Experimentrunda.
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
 workflow-type: tm+mt
-source-wordcount: '508'
+source-wordcount: '529'
 ht-degree: 0%
 
 ---
@@ -34,7 +35,7 @@ curl -X POST \
   -d '{JSON_PAYLOAD}'
 ```
 
-`{IMS_ORG}`: Dina IMS-organisationsuppgifter hittades i din unika integrering med Adobe Experience Platform.\
+`{IMS_ORG}`: Dina IMS-organisationsuppgifter finns i din unika Adobe Experience Platform-integrering.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
 `{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.\
 `{JSON_PAYLOAD}`: Objekt för experimentkörning som ska skickas. Exemplet vi använder i vår självstudiekurs visas här:
@@ -108,7 +109,7 @@ Följande är svaret efter att den schemalagda experten har skapats.
 
 ### Skapa en provkörning för poängsättning
 
-Med den tränade modellen kan vi nu skapa en Experiment Run för poängsättning. Värdet på `modelId` parametern är den `id` parameter som returneras i GET Model-begäran ovan.
+Med den tränade modellen kan vi nu skapa en Experiment Run för poängsättning. Värdet för `modelId` parametern är den `id` parameter som returneras i GET Model-begäran ovan.
 
 **Begäran**
 
@@ -122,7 +123,7 @@ curl -X POST \
   -d '{JSON_PAYLOAD}'
 ```
 
-`{IMS_ORG}`: Dina IMS-organisationsuppgifter hittades i din unika integrering med Adobe Experience Platform.\
+`{IMS_ORG}`: Dina IMS-organisationsuppgifter finns i din unika Adobe Experience Platform-integrering.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
 `{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.\
 `{EXPERIMENT_ID}`: Det ID som motsvarar den experiment som du vill använda som mål. Det här finns i svaret när du skapar din Experiment.\
@@ -187,7 +188,7 @@ curl -X GET \
 
 `{EXPERIMENT_ID}`:  Det ID som motsvarar det Experiment som Kör finns under.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{IMS_ORG}`: Dina IMS-organisationsuppgifter hittades i din unika integrering med Adobe Experience Platform.
+`{IMS_ORG}`: Dina IMS-organisationsuppgifter finns i din unika Adobe Experience Platform-integrering.
 
 Eftersom det finns flera Experiment Runs för en viss Experiment har det returnerade svaret en array med Run ID:n.
 
@@ -228,9 +229,9 @@ curl -X DELETE \
   -H 'x-gw-ims-org-id: {IMS_ORG}'
 ```
 
-`{EXPERIMENT_ID}`:  ID:t som motsvarar Experiment.\
+`{EXPERIMENT_ID}`:  Det ID som motsvarar Experimenten.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{IMS_ORG}`: Dina IMS-organisationsuppgifter hittades i din unika integrering med Adobe Experience Platform.
+`{IMS_ORG}`: Dina IMS-organisationsuppgifter finns i din unika Adobe Experience Platform-integrering.
 
 >[!NOTE]
 >
