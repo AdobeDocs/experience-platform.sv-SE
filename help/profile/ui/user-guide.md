@@ -5,9 +5,9 @@ title: Användarhandbok för kundprofil i realtid
 topic: guide
 description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofiler i realtid i Adobe Experience Platform användargränssnitt.
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1151'
+source-wordcount: '1167'
 ht-degree: 0%
 
 ---
@@ -23,13 +23,13 @@ Det här dokumentet fungerar som en guide för interaktion med [!DNL Real-time C
 
 Den här användarhandboken kräver förståelse för de olika [!DNL Experience Platform] tjänsterna som är kopplade till hantering [!DNL Real-time Customer Profiles]. Innan du läser den här användarhandboken bör du läsa dokumentationen för följande tjänster:
 
-* [!DNL Real-time Customer Profile](../home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [!DNL Identity Service](../../identity-service/home.md): Möjliggör [!DNL Real-time Customer Profile] genom att överbrygga identiteter från olika datakällor när de hämtas till [!DNL Platform].
-* [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
+* [[!DNL Real-time Customer Profile]](../home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Identity Service]](../../identity-service/home.md): Möjliggör [!DNL Real-time Customer Profile] genom att överbrygga identiteter från olika datakällor när de hämtas till [!DNL Platform].
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
 
 ## Översikt
 
-Klicka i [!DNL Experience Platform UI](http://platform.adobe.com)den vänstra navigeringen **[!UICONTROL Profiles]** för att öppna _[!UICONTROL Overview]_fliken. På den här fliken finns länkar till dokumentation och videoklipp som hjälper dig att förstå och börja arbeta med profiler.
+Öppna fliken genom att klicka [i det vänstra navigeringsfältet i användargränssnittet för](http://platform.adobe.com)[!DNL Experience Platform] **[!UICONTROL Profiles]** _[!UICONTROL Overview]_. På den här fliken finns länkar till dokumentation och videoklipp som hjälper dig att förstå och börja arbeta med profiler.
 
 ![](../images/user-guide/profiles-overview.png)
 
