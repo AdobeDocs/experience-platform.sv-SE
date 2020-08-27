@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;data governance;data usage label api;policy service api;data usage labels overview
 solution: Experience Platform
 title: Översikt över etiketter för dataanvändning
 topic: labels
+description: DULE (Data Usage Labeling and Enforcement) är kärnmekanismen i Adobe Experience Platform datastyrning. DULE-funktioner gör att du kan använda dataanvändningsetiketter på datauppsättningar och fält, och kategorisera dem efter relaterade principer för dataanvändning. Det här dokumentet innehåller en översikt över dataanvändningsetiketter (kallas även DULE-etiketter) i Experience Platform.
 translation-type: tm+mt
-source-git-commit: 5e65c843c3c612b657ebe915c53f14f0b8d7f541
+source-git-commit: cddc559dfb65ada888bb367d6265863091a9b2a1
 workflow-type: tm+mt
-source-wordcount: '577'
+source-wordcount: '631'
 ht-degree: 0%
 
 ---
@@ -30,13 +31,13 @@ Förutom etiketterna från Adobe kan du även definiera egna etiketter för din 
 
 ## Etikettarv för målgruppssegment
 
-Alla målgruppssegment som skapas av [Adobe Experience Platform Segmentation Service](../../segmentation/home.md) ärver användningsetiketterna för sina motsvarande datauppsättningar. Detta gör att program som är byggda ovanpå [!DNL Experience Platform] (till exempel [!DNL Real-time Customer Data Platform]) automatiskt kan tillämpa dataanvändningsprinciper när segment aktiveras till mål.
+Alla målgruppssegment som skapas av [Adobe Experience Platform Segmentation Service](../../segmentation/home.md) ärver användningsetiketterna för sina motsvarande datauppsättningar. Detta gör att program som är byggda ovanpå [!DNL Experience Platform] (till exempel [!DNL Real-time Customer Data Platform]) automatiskt kan tillämpa dataanvändningsprinciper när segment aktiveras för destinationer.
 
 Förutom att ärva etiketter på datauppsättningsnivå ärver segment som standard alla etiketter på fältnivå från de associerade datauppsättningarna. Beroende på hur ditt [!DNL Platform]baserade program använder segment kan du eventuellt ange vilka fält som ska användas, vilket förhindrar segmentet från att ärva etiketter från exkluderade fält.
 
 Mer information om hur automatisk exekvering fungerar i CDP i realtid finns i översikten om [datastyrning i CDP](../../rtcdp/privacy/data-governance-overview.md#enforce-data-usage-compliance)i realtid.
 
-### Arv från dataexportkontroller i Adobe Audience Manager
+### Arv från Adobe Audience Manager dataexportkontroller
 
 [!DNL Experience Platform] kan dela segment med Adobe Audience Manager. Alla dataexportkontroller som har tillämpats på Audience Manager-segment översätts till motsvarande etiketter och marknadsföringsåtgärder som erkänns av [!DNL Experience Platform][!DNL Data Governance].
 
