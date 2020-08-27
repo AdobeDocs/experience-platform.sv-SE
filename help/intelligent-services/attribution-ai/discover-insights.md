@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;insights;attribution ai;popular topics
+keywords: Experience Platform;insights;attribution ai;popular topics;attribution ai insights
 solution: Experience Platform
 title: Upptäck insikter inom Attribution AI
 topic: Attribution AI insights
+description: Det här dokumentet är en guide för interaktion med Service Instance-insikter i användargränssnittet för Adobe Intelligent Services.
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: c30bbaead775e68f869b080e24e18d4a23cda973
 workflow-type: tm+mt
-source-wordcount: '1164'
+source-wordcount: '1183'
 ht-degree: 0%
 
 ---
@@ -166,6 +167,6 @@ När du är klar med filtreringen av data och kan visa lämplig information kan 
 
 ## Ytterligare resurser
 
-Följande videofilm är utformad för att hjälpa dig att lära dig hur ni kan använda sidan med insikter om Attribution AI för att förstå avkastningen på marknadsföringskanaler och kampanjer.
+Följande videofilm är utformad för att hjälpa dig att lära dig hur du använder informationssidan för Attribution AI för att förstå avkastningen på marknadsföringskanaler och kampanjer.
 
 >[!VIDEO](https://video.tv.adobe.com/v/32669?learn=on&quality=12)
