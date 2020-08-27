@@ -5,7 +5,7 @@ title: Skapa och publicera genomgång av en maskininlärningsmodell
 topic: Tutorial
 description: Med Adobe Experience Platform Data Science Workspace kan du uppnå dina mål med hjälp av den färdiga Recommendations Recipe. Följ den här självstudiekursen för att se hur du kan få tillgång till och förstå dina detaljhandelsdata, skapa och optimera en maskininlärningsmodell och generera insikter i Data Science Workspace.
 translation-type: tm+mt
-source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
+source-git-commit: 78f080fd7598799825c59a4fdfdcaf7d294560a3
 workflow-type: tm+mt
 source-wordcount: '1542'
 ht-degree: 0%
@@ -43,7 +43,7 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
    * Golden Data Set postValues
    * Golden Data Set Schema
 
-* Ladda ned de tre nödvändiga [!DNL Jupyter Notebook] filerna från <a href="https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources/Notebooks-Thurs" target="_blank">Adobe offentliga [!DNL Git] databas</a>. De används för att demonstrera [!DNL JupyterLab] arbetsflödet i [!DNL Data Science Workspace].
+* Ladda ned de tre nödvändiga [!DNL Jupyter Notebook] filerna från [Adobe [!DNL Git] offentliga databas](https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources/Notebooks-Thurs). De används för att demonstrera [!DNL JupyterLab] arbetsflödet i [!DNL Data Science Workspace].
 
 * En fungerande förståelse för följande viktiga begrepp som används i den här självstudiekursen:
    * [[!DNL Experience Data Model]](../../xdm/home.md): Den standardiseringsinsats som Adobe ledde till för att definiera standardscheman som [!DNL Profile] och ExperienceEvent för Customer Experience Management.
