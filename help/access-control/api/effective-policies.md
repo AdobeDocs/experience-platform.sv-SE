@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;effective policies;access control api
 solution: Experience Platform
 title: Visa gällande policyer
 topic: developer guide
+description: Med åtkomstkontrollen i Adobe Experience Platform kan du hantera roller och behörigheter för olika plattformsfunktioner med Adobe Admin Console. Det här dokumentet är en guide till hur du visar effektiva profiler med hjälp av API:t för åtkomstkontroll för Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
 workflow-type: tm+mt
-source-wordcount: '262'
-ht-degree: 1%
+source-wordcount: '306'
+ht-degree: 0%
 
 ---
 
