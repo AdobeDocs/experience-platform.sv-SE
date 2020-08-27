@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Edge Projection - Real-time Customer Profile API
 topic: guide
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1900'
+source-wordcount: '1905'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för 
 
 ## Komma igång
 
-API-slutpunkten som används i den här handboken är en del av [!DNL Real-time Customer Profile API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml). Innan du fortsätter bör du läsa [Komma igång-guiden](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API i det här dokumentet samt viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform] -API.
+API-slutpunkten som används i den här guiden ingår i [[!DNL Real-time Customer Profile API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml). Innan du fortsätter bör du läsa [Komma igång-guiden](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API i det här dokumentet samt viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform] -API.
 
 >[!NOTE]
 >
@@ -620,7 +620,7 @@ Returnerar endast stadsfältet för alla element i adressarrayen.
 
 >[!NOTE]
 >
->När ett kapslat fält returneras innehåller projektionen de omslutande överordnade objekten. De överordnade fälten innehåller inga andra underordnade fält såvida de inte också markeras uttryckligen.
+>När ett kapslat fält returneras, innehåller projektionen de omslutande överordnade objekten. De överordnade fälten innehåller inga andra underordnade fält såvida de inte också markeras uttryckligen.
 
 **adresser(typ, ort)**
 
