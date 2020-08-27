@@ -5,9 +5,9 @@ title: 'Hantera dataanvändningsetiketter med API:er '
 topic: developer guide
 description: Med API:t för datauppsättningstjänsten kan du tillämpa och redigera användningsetiketter för datauppsättningar. Den ingår i Adobe Experience Platform datakatalogfunktioner, men är skild från katalogtjänstens API, som hanterar datauppsättningsmetadata.
 translation-type: tm+mt
-source-git-commit: 2fdab7d984a7368df77110f8ba0e0ba687e96d7e
+source-git-commit: 4096a7c1ec2b3640886d3a8c69b578987fe96dd4
 workflow-type: tm+mt
-source-wordcount: '1003'
+source-wordcount: '1007'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 Det här dokumentet innehåller steg för hur du hanterar dataanvändningsetiketter med hjälp av [!DNL Policy Service] API och [!DNL Dataset Service] API.
 
-Här [!DNL Policy Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) finns flera slutpunkter som du kan använda för att skapa och hantera dataanvändningsetiketter för din organisation.
+API:t för [[!DNL Policy Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) innehåller flera slutpunkter som gör att du kan skapa och hantera dataanvändningsetiketter för din organisation.
 
 Med [!DNL Dataset Service] API kan du använda och redigera användningsetiketter för datauppsättningar. Den är en del av Adobe Experience Platform datakatalogfunktioner, men är skild från API:t som hanterar metadata för datauppsättningar [!DNL Catalog Service] .
 
