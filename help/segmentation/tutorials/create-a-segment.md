@@ -5,9 +5,9 @@ title: Skapa ett segment
 topic: tutorial
 description: Det här dokumentet innehåller en självstudiekurs för att utveckla, testa, förhandsgranska och spara en segmentdefinition med Adobe Experience Platform Segmentation Service API.
 translation-type: tm+mt
-source-git-commit: a93b3a1980ca0f1d3a32257a923eb7ffc8896fd5
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '894'
+source-wordcount: '916'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # Skapa ett segment
 
-Det här dokumentet innehåller en självstudiekurs för att utveckla, testa, förhandsgranska och spara en segmentdefinition med [!DNL Adobe Experience Platform Segmentation Service API](../api/getting-started.md).
+I det här dokumentet finns en självstudiekurs för att utveckla, testa, förhandsgranska och spara en segmentdefinition med [[!DNL Adobe Experience Platform Segmentation Service API]](../api/getting-started.md).
 
 Mer information om hur du skapar segment med användargränssnittet finns i guiden [](../ui/overview.md)Skapa segment.
 
@@ -23,9 +23,9 @@ Mer information om hur du skapar segment med användargränssnittet finns i guid
 
 Den här självstudiekursen kräver en fungerande förståelse av de olika [!DNL Adobe Experience Platform] tjänster som används för att skapa målgruppssegment. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-- [!DNL Real-time Customer Profile](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-- [!DNL Adobe Experience Platform Segmentation Service](../home.md): Gör att ni kan bygga målgruppssegment utifrån kundprofildata i realtid.
-- [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
+- [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+- [[!DNL Adobe Experience Platform Segmenteringstjänst]](../home.md): Gör att ni kan bygga målgruppssegment utifrån kundprofildata i realtid.
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API: [!DNL Platform] erna.
 
