@@ -5,9 +5,9 @@ title: Skapa en datauppsättning med API:er
 topic: datasets
 description: Det här dokumentet innehåller allmänna steg för att skapa en datauppsättning med Adobe Experience Platform API:er och fylla i datauppsättningen med hjälp av en fil.
 translation-type: tm+mt
-source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1251'
+source-wordcount: '1259'
 ht-degree: 0%
 
 ---
@@ -22,8 +22,8 @@ Det här dokumentet innehåller allmänna steg för att skapa en datauppsättnin
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 * [Batchförtäring](../../ingestion/batch-ingestion/overview.md): [!DNL Experience Platform] gör att du kan importera data som gruppfiler.
-* [!DNL Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
-* [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+* [[!DNL-sandlådor]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API: [!DNL Platform] erna.
 
@@ -295,7 +295,7 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och ett svarsobjekt som inne
 
 ## Överför filer till en grupp
 
-När du har skapat en ny batch för överföring kan du nu överföra filer till den specifika datauppsättningen. Det är viktigt att komma ihåg att du angav filformatet som parquet när du definierade datauppsättningen. Filerna som du överför måste därför ha det formatet.
+När du har skapat en ny batch för överföring kan du nu överföra filer till den specifika datauppsättningen. Det är viktigt att komma ihåg att du angav filformatet som parquet när du definierade datauppsättningen. Därför måste de filer du överför ha det formatet.
 
 >[!NOTE]
 >
@@ -357,7 +357,7 @@ En slutförd batch returnerar en tom svarstext och HTTP-status 200 (OK).
 
 ## Bildskärmsingång
 
-Beroende på storleken på data tar batcharna olika lång tid att importera. Du kan övervaka statusen för en batch genom att lägga till en begärandeparameter som innehåller batchens ID till en `batch` `GET /batches` begäran. API:t avsöker datauppsättningen för batchstatus från att hämtas tills `status` i svaret anger att åtgärden har slutförts (&quot;lyckats&quot; eller&quot;misslyckats&quot;).
+Beroende på storleken på data tar batcharna olika lång tid att importera. Du kan övervaka status för en batch genom att lägga till en begärandeparameter som innehåller batchens ID till en `batch` `GET /batches` begäran. API:t avsöker datauppsättningen för batchstatus från att hämtas tills `status` i svaret anger att åtgärden har slutförts (&quot;lyckats&quot; eller&quot;misslyckats&quot;).
 
 **API-format**
 
@@ -472,7 +472,7 @@ Detaljerade steg för hur du arbetar med API:t för dataåtkomst finns i [utveck
 
 Du kan lägga till fält och lägga in ytterligare data i datauppsättningar som du har skapat. För att göra detta måste du först uppdatera schemat genom att lägga till ytterligare egenskaper som definierar nya data. Detta kan göras med åtgärderna PATCH och/eller PUT för att uppdatera det befintliga schemat.
 
-Mer information om hur du uppdaterar scheman finns i Utvecklarhandbok [för](../../xdm/api/getting-started.md)schemaregister-API.
+Mer information om att uppdatera scheman finns i Utvecklarhandbok [för](../../xdm/api/getting-started.md)schemaregister-API.
 
 När du har uppdaterat schemat kan du följa stegen i den här självstudiekursen igen för att importera nya data som följer det reviderade schemat.
 
