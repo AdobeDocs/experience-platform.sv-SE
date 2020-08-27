@@ -5,9 +5,9 @@ title: Filtrera katalogdata med frågeparametrar
 topic: developer guide
 description: Med Catalog Service API kan svarsdata filtreras med hjälp av frågeparametrar. En del av de bästa sätten för Catalog är att använda filter i alla API-anrop, eftersom de minskar belastningen på API:t och bidrar till att förbättra prestanda generellt.
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 71678b10c9e137016ea404305b272508b9c8cabe
 workflow-type: tm+mt
-source-wordcount: '2085'
+source-wordcount: '2084'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 API:t tillåter att svarsdata filtreras med hjälp av frågeparametrar för begäran. [!DNL Catalog Service] En del av de bästa sätten för [!DNL Catalog] är att använda filter i alla API-anrop, eftersom de minskar belastningen på API:t och bidrar till att förbättra den övergripande prestandan.
 
-Det här dokumentet innehåller de vanligaste metoderna för filtrering av [!DNL Catalog] objekt i API:t. Vi rekommenderar att du refererar till det här dokumentet när du läser [katalogutvecklarhandboken](getting-started.md) för att få mer information om hur du interagerar med [!DNL Catalog] API:t. Mer allmän information om [!DNL Catalog Service]finns i [Katalogöversikt](../home.md).
+Det här dokumentet innehåller de vanligaste metoderna för filtrering av [!DNL Catalog] objekt i API:t. Vi rekommenderar att du refererar till det här dokumentet när du läser [katalogutvecklarhandboken](getting-started.md) för att få mer information om hur du interagerar med [!DNL Catalog] API:t. Mer allmän information om [!DNL Catalog Service]finns i [[!DNL Catalog] översikten](../home.md).
 
 ## Begränsa returnerade objekt
 
