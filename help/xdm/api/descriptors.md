@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Beskrivningar
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: b021b6813af18e29f544dc55541f23dd7dd57d47
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1475'
+source-wordcount: '1479'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Beskrivningar
 
-Scheman definierar en statisk vy av datatabeller, men ger inga specifika detaljer om hur data som baseras på dessa scheman (till exempel datauppsättningar) kan relateras till varandra. Med Adobe Experience Platform kan du beskriva dessa relationer och andra tolkningsmetadata om ett schema med hjälp av beskrivningar.
+Scheman definierar en statisk vy av datatabeller, men ger inga specifika detaljer om hur data som baseras på dessa scheman (till exempel datauppsättningar) kan relateras till varandra. Med Adobe Experience Platform kan du beskriva dessa relationer och andra tolka metadata om ett schema med hjälp av beskrivningar.
 
 Schemabeskrivare är metadata på tenant-nivå, vilket innebär att de är unika för IMS-organisationen och alla beskrivningsåtgärder utförs i klientbehållaren.
 
@@ -279,7 +279,7 @@ I följande avsnitt ges en översikt över tillgängliga beskrivningstyper, inkl
 
 #### Identitetsbeskrivare
 
-En identitetsbeskrivning signalerar att&quot;[!UICONTROL sourceProperty]&quot; för&quot;[!UICONTROL sourceSchema]&quot; är ett [!DNL Identity] fält som beskrivs av [Adobe Experience Platform Identitetstjänst](../../identity-service/home.md).
+En identitetsbeskrivning signalerar att&quot;[!UICONTROL sourceProperty]&quot; för&quot;[!UICONTROL sourceSchema]&quot; är ett [!DNL Identity] fält som beskrivs av [Adobe Experience Platform Identity Service](../../identity-service/home.md).
 
 ```json
 {
@@ -300,7 +300,7 @@ En identitetsbeskrivning signalerar att&quot;[!UICONTROL sourceProperty]&quot; f
 | `xdm:sourceSchema` | URI:n `$id` för schemat där beskrivningen definieras. |
 | `xdm:sourceVersion` | Huvudversionen av källschemat. |
 | `xdm:sourceProperty` | Sökvägen till den specifika egenskap som ska vara identiteten. Sökvägen ska börja med ett &quot;/&quot; och inte sluta med ett. Ta inte med &quot;egenskaper&quot; i sökvägen (använd t.ex. &quot;/personalEmail/address&quot; istället för &quot;/properties/personalEmail/properties/address&quot;) |
-| `xdm:namespace` | Identitetsnamnutrymmets `id` - eller `code` -värde. En lista med namnutrymmen finns med hjälp av [!DNL Identity Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml). |
+| `xdm:namespace` | Identitetsnamnutrymmets `id` - eller `code` -värde. En lista med namnutrymmen finns med API:t för [[!DNL Identity Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml). |
 | `xdm:property` | Antingen `xdm:id` eller `xdm:code`, beroende på vilken `xdm:namespace` som används. |
 | `xdm:isPrimary` | Ett booleskt värde (tillval). När värdet är true anges fältet som primär identitet. Scheman får endast innehålla en primär identitet. |
 
