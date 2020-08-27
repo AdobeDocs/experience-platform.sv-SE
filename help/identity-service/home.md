@@ -5,9 +5,9 @@ title: Adobe Experience Platform Identity Service
 topic: overview
 description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1707'
+source-wordcount: '1711'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,7 @@ Som framgår av bilden nedan är både kända och anonyma identiteter viktiga ko
 Exempel på [!DNL Identity Service] implementeringar är:
 
 - Ett telekomföretag kan förlita sig på värdet för&quot;telefonnummer&quot;, där ett telefonnummer hänvisar till samma person i intresse både offline och online.
-- Ett detaljhandelsföretag kan använda&quot;e-postadress&quot; i offline-datauppsättningar och ECID i online-datauppsättningar på grund av den stora andelen anonyma besökare.
+- Ett detaljhandelsföretag kan använda&quot;e-postadress&quot; i offlinedatauppsättningar och ECID i onlinedatauppsättningar på grund av den stora andelen anonyma besökare.
 - En bank kan föredra&quot;kontonummer&quot; i offlinedatauppsättningar, t.ex. filialtransaktioner. De kan vara beroende av&quot;inloggnings-ID&quot; i onlinedatauppsättningar, eftersom de flesta besökare autentiseras under besöket.
 - Dina kunder kan också ha unika egna ID:n, som GUID eller andra universellt unika ID:n.
 
@@ -95,7 +95,7 @@ I det här avsnittet beskrivs hur data som skickas till Adobe Experience Platfor
 
 Beroende på er strategi för insamling av företagsdata avgör de datafält som du anger som identiteter vilka data som inkluderas i identitetskartan. För att få ut så mycket som möjligt av Adobe Experience Platform och de mest omfattande kundidentiteterna bör du ladda upp både online- och offlinedata.
 
-- Onlinedata är data som beskriver närvaro och beteende online, till exempel användarnamn och e-postadresser.
+- Onlinedata är data som beskriver närvaro och beteende online, t.ex. användarnamn och e-postadresser.
 
 - Offlinedata avser data som inte är direkt relaterade till onlinenärvaro, t.ex. ID:n från CRM-system. Den här typen av data gör era identiteter mer robusta och stöder datamedlemskap i olika system.
 
@@ -146,4 +146,4 @@ Adobe Experience Platform har byggts med sekretess i åtanke och innehåller ett
 
 ## Nästa steg
 
-Nu när du förstår de viktigaste begreppen i [!DNL Identity Service] och dess roll i [!DNL Experience Platform]kan du börja lära dig hur du arbetar med identitetsdiagrammet med hjälp av [!DNL Identity Service API](./api/getting-started.md).
+Nu när du förstår de viktigaste begreppen i [!DNL Identity Service] och dess roll i [!DNL Experience Platform]kan du börja lära dig hur du arbetar med identitetsdiagrammet med hjälp av API:t för [[!DNL Identity Service]](./api/getting-started.md).
