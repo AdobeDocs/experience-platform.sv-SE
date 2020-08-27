@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;package source files;Data Science Workspace;popular topics
+keywords: Experience Platform;package source files;Data Science Workspace;popular topics;Docker;docker image
 solution: Experience Platform
 title: Paketera källfiler i ett recept
 topic: Tutorial
+description: I den här självstudiekursen finns anvisningar om hur du kan paketera de angivna källfilerna för butiksförsäljning i en arkivfil, som kan användas för att skapa ett recept i Adobe Experience Platform Data Science Workspace genom att följa arbetsflödet för receptimport antingen i användargränssnittet eller med API:t.
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
 workflow-type: tm+mt
-source-wordcount: '1097'
+source-wordcount: '1146'
 ht-degree: 0%
 
 ---
