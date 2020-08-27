@@ -5,9 +5,9 @@ title: Arbeta med körningsmiljön för beslutstjänsten med API:er
 topic: tutorial
 description: 'I det här dokumentet finns en självstudiekurs om hur du arbetar med körtidstjänsterna i beslutstjänsten med Adobe Experience Platform API:er. '
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '2004'
+source-wordcount: '2017'
 ht-degree: 0%
 
 ---
@@ -21,9 +21,9 @@ Det här dokumentet innehåller en självstudiekurs om hur du arbetar med runtim
 
 Den här självstudiekursen kräver en fungerande förståelse för de tjänster som är inblandade i att fatta beslut och fastställa nästa bästa erbjudande som ska presenteras under kundupplevelserna. [!DNL Experience Platform] Innan du börjar med den här självstudiekursen bör du läsa i dokumentationen om följande:
 
-- [!DNL Decisioning Service](./../home.md): Innehåller ett ramverk för att lägga till och ta bort erbjudanden och skapa algoritmer för att välja det bästa som ska visas under en kunds upplevelse.
-- [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
-- [!DNL Profile Query Language (PQL)](../../segmentation/pql/overview.md): PQL används för att definiera regler och filter.
+- [[!DNL Decision Service]](./../home.md): Innehåller ett ramverk för att lägga till och ta bort erbjudanden och skapa algoritmer för att välja det bästa som ska visas under en kunds upplevelse.
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
+- [[!DNL Profile Query Language (PQL)]](../../segmentation/pql/overview.md): PQL används för att definiera regler och filter.
 - [Hantera beslutsobjekt och regler med API:er](./entities.md): Innan du använder körningsmiljön för beslutstjänster måste du konfigurera de relaterade entiteterna.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API: [!DNL Platform] erna.
@@ -68,7 +68,7 @@ Det första banelementet efter slutpunkten är `containerId`. Den här identifie
 
 ## Sammanställning av beslutsmodeller
 
-Aktiveringen av logiska enheter sker automatiskt och kontinuerligt. Så snart ett nytt alternativ sparas i databasen och markeras som godkänt, kan det ingå i uppsättningen med tillgängliga alternativ. Så snart en beslutsregel har uppdaterats kommer regeluppsättningen att återskapas och förberedas för körning. I det här automatiska aktiveringssteget utvärderas eventuella begränsningar som definieras av affärslogiken som inte är beroende av körningssammanhanget. Resultatet av aktiveringssteget skickas till en cache där de är tillgängliga för [!DNL Decisioning Service] körningsmiljön.
+Aktiveringen av logiska enheter sker automatiskt och kontinuerligt. Så snart ett nytt alternativ sparas i databasen och markeras som godkänt, kan det ingå i uppsättningen med tillgängliga alternativ. Så snart en beslutsregel har uppdaterats kommer regeluppsättningen att återskapas och förberedas för körning. I det här automatiska aktiveringssteget utvärderas eventuella begränsningar som definieras av affärslogiken som inte är beroende av körningssammanhanget. Resultatet av det här aktiveringssteget skickas till en cache där de är tillgängliga för [!DNL Decisioning Service] körningsmiljön.
 
 ### Effekter av placeringar, filter och livscykeltillstånd
 
@@ -87,7 +87,7 @@ curl -X GET {DECISION_SERVICE_ENDPOINT_PATH}/{CONTAINER_ID}/offers?activityId={A
 
 **Svar**
 
-Parametern `activityId` kan upprepas i url och upp till 30 olika aktivitetsreferenser kan ges i en begäran. Svaret är användbart för att upptäcka eventuella oväntade omständigheter som uppstått vid installationen och ser ut så här:
+Parametern `activityId` kan upprepas i url och upp till 30 olika aktivitetsreferenser kan ges i en begäran. Svaret är användbart för att upptäcka eventuella oväntade omständigheter som kan uppstå vid installationen och ser ut så här:
 
 ```json
 {
