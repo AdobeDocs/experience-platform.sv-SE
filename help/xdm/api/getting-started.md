@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Utvecklarhandbok för API för schematabell
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: f7fe8f9ac8d6f0e2eaec53d96f2ced0904061c89
 workflow-type: tm+mt
-source-wordcount: '1207'
+source-wordcount: '1237'
 ht-degree: 0%
 
 ---
@@ -167,9 +167,21 @@ Anrop till [!DNL Schema Registry] API kräver att du använder en `CONTAINER_ID`
 
 Den globala behållaren innehåller alla standardklasser, mixins, datatyper och scheman som tillhandahålls av Adobe och [!DNL Experience Platform] partner. Du får bara utföra list- och uppslagsbegäranden (GET) mot den globala behållaren.
 
+Ett exempel på ett anrop som använder den globala behållaren skulle se ut så här:
+
+```http
+GET /global/classes
+```
+
 ### Klientbehållaren
 
 Klientbehållaren ska inte förväxlas med din unika `TENANT_ID`eftersom den innehåller alla klasser, blandningar, datatyper, scheman och beskrivningar som definieras av en IMS-organisation. De är unika för varje organisation, vilket innebär att de inte är synliga eller hanterbara av andra IMS-organisationer. Du kan utföra alla CRUD-åtgärder (GET, POST, PUT, PATCH, DELETE) mot resurser som du skapar i innehavarbehållaren.
+
+Ett exempel på ett anrop som använder innehavarbehållaren skulle se ut så här:
+
+```http
+POST /tenant/mixins
+```
 
 När du skapar en klass, mixin, schema eller datatyp i innehavarbehållaren, sparas den i [!DNL Schema Registry] och tilldelas en `$id` URI som innehåller din `TENANT_ID`. Detta `$id` används i hela API:t för att referera till specifika resurser. Exempel på `$id` värden finns i nästa avsnitt.
 
