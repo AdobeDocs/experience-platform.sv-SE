@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 'Hantera dataanvändningsetiketter för datauppsättningar med API:er '
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 3b6f46c5a81e1b6e8148bf4b78ae2560723f9d20
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '912'
+source-wordcount: '916'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Hantera dataanvändningsetiketter för datauppsättningar med API:er
 
-Med [!DNL Dataset Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dataset-service.yaml) den kan du använda och redigera användningsetiketter för datauppsättningar. Den är en del av Adobe Experience Platform datakatalogfunktioner, men är skild från API:t som hanterar metadata för datauppsättningar [!DNL Catalog Service] .
+Med [[!DNL-datauppsättnings-API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dataset-service.yaml) kan du använda och redigera användningsetiketter för datauppsättningar. Den är en del av Adobe Experience Platform datakatalogfunktioner, men är skild från API:t som hanterar metadata för datauppsättningar [!DNL Catalog Service] .
 
 Det här dokumentet beskriver hur du hanterar etiketter för datauppsättningar och fält med hjälp av [!DNL Dataset Service API]. Anvisningar om hur du hanterar etiketter för dataanvändning i sig med API-anrop finns i [etikettens slutpunktshandbok](../api/labels.md) för [!DNL Policy Service API].
 
