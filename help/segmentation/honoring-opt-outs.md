@@ -5,9 +5,9 @@ title: Ansvarsfriskrivningar
 topic: overview
 description: 'Experience Platform tillåter dina kunder att skicka avanmälningsbegäranden om användning och lagring av sina data i kundprofilen i realtid]. Dessa avanmälningsförfrågningar ingår i California Consumer Privacy Act (CCPA), som ger personer bosatta i Kalifornien rätt att få tillgång till och radera sina personuppgifter och att få veta om deras personuppgifter säljs eller offentliggörs (och till vem). '
 translation-type: tm+mt
-source-git-commit: 0fc356b67af4d34e35cd9329385ec284d9336953
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '987'
+source-wordcount: '1011'
 ht-degree: 0%
 
 ---
@@ -23,10 +23,10 @@ När en kund har avanmält sig är det viktigt att organisationen följer avanm�
 
 För att kunna uppfylla avanmälningsbegäranden krävs en förståelse för de olika [!DNL Adobe Experience Platform] tjänsterna. Innan du arbetar med avanmälningsbegäranden ska du läsa dokumentationen för följande tjänster:
 
-- [!DNL Real-time Customer Profile](../profile/home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
-- [!DNL Adobe Experience Platform Segmentation Service](./home.md): Gör att ni kan skapa målgruppssegment utifrån [!DNL Real-time Customer Profile] data.
-- [!DNL Experience Data Model (XDM)](../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
-- [!DNL Adobe Experience Platform Privacy Service](../privacy-service/home.md): Hjälper organisationer att automatisera efterlevnaden av datasekretesregler som omfattar kunddata inom [!DNL Platform].
+- [[!DNL Real-time Customer Profile]](../profile/home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
+- [[!DNL Adobe Experience Platform Segmenteringstjänst]](./home.md): Gör att ni kan skapa målgruppssegment utifrån [!DNL Real-time Customer Profile] data.
+- [[!DNL Experience Data Model (XDM)]](../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
+- [[!DNL Adobe Experience Platform Privacy Service]](../privacy-service/home.md): Hjälper organisationer att automatisera efterlevnaden av datasekretesregler som omfattar kunddata inom [!DNL Platform].
 
 ## Avanmäl mixar
 
@@ -132,4 +132,4 @@ In some instances, such as building a segment of people who have opted out, it m
 
 Mer information om segmentering, inklusive arbete med segmentdefinitioner och målgrupper via API:t och användargränssnittet, får du om du börjar med att läsa [segmenteringsöversikten](./home.md).
 
-Mer information om datasekretess [!DNL Platform]och hur [!DNL Privacy Service] underlättar automatiserad efterlevnad av juridiska och organisatoriska sekretessbestämmelser finns i dokumentationen om [!DNL Privacy Service](../privacy-service/home.md).
+Om du vill veta mer om datasekretess inom [!DNL Platform], inklusive hur [!DNL Privacy Service] underlättar automatiserad efterlevnad av juridiska och organisatoriska sekretessbestämmelser, kan du läsa dokumentationen om [[!DNL-Privacy Service]](../privacy-service/home.md).
