@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: December 12, 2019
 author: ens71067
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '666'
+source-wordcount: '680'
 ht-degree: 3%
 
 ---
@@ -19,10 +19,10 @@ ht-degree: 3%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
-* [!DNL Segmentation Service](#segmentation)
-* [!DNL Decisioning Service](#decisioning)
-* [!DNL Sources](#sources)
-* [!DNL Experience Data Model (XDM) System](#xdm)
+* [[!DNL-segmenteringstjänst]](#segmentation)
+* [[!DNL Decisioning Service]](#decisioning)
+* [[!DNL-källor]](#sources)
+* [[!DNL Experience Data Model (XDM) System]](#xdm)
 
 ## [!DNL Segmentation Service] {#segmentation}
 
@@ -34,8 +34,8 @@ Adobe Experience Platform segmenteringstjänst tillhandahåller ett användargr�
 
 | Funktion | Beskrivning |
 |--- | ---|
-| Fliken Sammanfogade målgrupper i [!DNL Segment Builder] | Flikarna [!UICONTROL _Segment _]och[!UICONTROL _Publiker_] i [!DNL Segment Builder] har kombinerats till en enda [!UICONTROL _publikflik _]. På den här fliken kan du bläddra och söka efter befintliga målgrupper, som du sedan kan dra och släppa på arbetsytan i regelbyggaren för att skapa en ny segmentdefinition. Referenser till en målgrupp kan lägga till en av följande uppsättningar regellogik i den nya segmentdefinitionen: Målgruppsmedlemskap som regel, den fullständiga uppsättningen regellogik som definierar den refererade målgruppen. |
-| Ny plats för kopplingsprincipväljaren | Platsen för sammanslagningsprincipväljaren i [!DNL Segment Builder] har ändrats. Om du vill välja en sammanfogningsprincip för en segmentdefinition klickar du på kugghjulsikonen på fliken [!UICONTROL _Fält _]och väljer sedan den sammanfogningsprincip du vill använda i_[!UICONTROL Merge Policy]_ listrutan. |
+| Fliken Sammanfogade målgrupper i [!DNL Segment Builder] | Flikarna [!UICONTROL _Segment_] och [!UICONTROL _Publiker_] i [!DNL Segment Builder] har kombinerats till en enda [!UICONTROL _publikflik_] . På den här fliken kan du bläddra och söka efter befintliga målgrupper, som du sedan kan dra och släppa på arbetsytan i regelbyggaren för att skapa en ny segmentdefinition. Referenser till en målgrupp kan lägga till en av följande uppsättningar regellogik i den nya segmentdefinitionen: Målgruppsmedlemskap som regel, den fullständiga uppsättningen regellogik som definierar den refererade målgruppen. |
+| Ny plats för kopplingsprincipväljaren | Platsen för sammanslagningsprincipväljaren i [!DNL Segment Builder] har ändrats. Om du vill välja en sammanfogningsprincip för en segmentdefinition klickar du på kugghjulsikonen på fliken [!UICONTROL _Fält_] och väljer sedan den sammanfogningsprincip du vill använda i _[!UICONTROL Merge Policy]_listrutan. |
 
 **Kända fel**
 
