@@ -3,11 +3,11 @@ keywords: Experience Platform;JupyterLab;notebooks;Data Science Workspace;popula
 solution: Experience Platform
 title: Användarhandbok för JupyterLab
 topic: Overview
-description: JupyterLab är ett webbaserat användargränssnitt för Project Jupyter och är nära integrerat med Adobe Experience Platform. Den utgör en interaktiv utvecklingsmiljö där datavetare kan arbeta med Jupyters bärbara datorer, kod och data.
+description: JupyterLab är ett webbaserat användargränssnitt för Project Jupyter och är nära integrerat med Adobe Experience Platform. Den utgör en interaktiv utvecklingsmiljö där datavetare kan arbeta med Jupyters bärbara datorer, kod och data. Det här dokumentet innehåller en översikt över JupyterLab och dess funktioner samt instruktioner om hur du utför vanliga åtgärder.
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 9ba229195892245d29fb4f17b9f2e5cd6c6ea567
 workflow-type: tm+mt
-source-wordcount: '3682'
+source-wordcount: '3700'
 ht-degree: 10%
 
 ---
@@ -638,7 +638,7 @@ timedf.show()
 | klippa | 1.3.0 |
 | seaborn | 0.9.0 |
 | statsmodels | 0.10.1 |
-| elastisk | 5.1.0.17 |
+| vetenskapsman | 5.1.0.17 |
 | ggplot | 0.11.5 |
 | py-xgboost | 0.90 |
 | opencv | 3.4.1 |
