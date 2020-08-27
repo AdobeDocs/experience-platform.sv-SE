@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Användarhandbok för sammanslagningsprinciper
 topic: guide
 translation-type: tm+mt
-source-git-commit: 98be95e0a6e0661dcddf2db1cf6993b643d4df2b
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1329'
+source-wordcount: '1341'
 ht-degree: 0%
 
 ---
@@ -24,9 +24,9 @@ Om du föredrar att arbeta med sammanfogningsprinciper med hjälp av [!DNL Real-
 
 Den här guiden kräver en fungerande förståelse av de olika [!DNL Experience Platform] tjänsterna som är kopplade till sammanslagningsprinciper. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-* [!DNL Real-time Customer Profile](../home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [!DNL Identity Service](../../identity-service/home.md): Möjliggör [!DNL Real-time Customer Profile] genom att överbrygga identiteter från olika datakällor som inhämtas till [!DNL Platform].
-* [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
+* [[!DNL Real-time Customer Profile]](../home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Identity Service]](../../identity-service/home.md): Möjliggör [!DNL Real-time Customer Profile] genom att överbrygga identiteter från olika datakällor som inhämtas till [!DNL Platform].
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
 
 ## Visa kopplingsprinciper
 
@@ -58,7 +58,7 @@ Skärmen visas så att du kan ange viktig information för den nya sammanfogning
 * **[!UICONTROL Attribute merge]**: Ett profilfragment är profilinformationen för endast en identitet från listan över identiteter som finns för en enskild kund. När typen av identitetsdiagram som används resulterar i mer än en identitet, finns det en risk för att profilattribut som står i konflikt med varandra, och prioritet måste anges. Med [!UICONTROL Attribute merge] kan du ange vilka datamängdsprofilvärden som ska prioriteras om en sammanslagningskonflikt inträffar mellan datamängder av typen nyckelvärde (postdata). Det finns två möjliga värden:
    * **[!UICONTROL Timestamp ordered]**: Om det uppstår en konflikt ska du prioritera profilen som uppdaterades senast. [!UICONTROL Timestamp ordered] stöder också anpassade tidsstämplar som får högre prioritet än systemtidsstämplar när data sammanfogas inom samma datauppsättning (flera identiteter) eller mellan datauppsättningar. Mer information finns i avsnittet [Tidsstämpelordning](#timestamp-ordered) som följer.
    * **[!UICONTROL Dataset precedence]** : Prioritera profilfragment baserat på den datauppsättning som de kommer från. När du väljer det här alternativet måste du välja relaterade datauppsättningar och deras prioritetsordning. Mer information finns i informationen om [datauppsättningsprioritet](#dataset-precedence) nedan.
-* **[!UICONTROL Default merge policy]**: En växlingsknapp som gör att du kan välja om sammanfogningsprincipen ska vara standard för din organisation eller inte. Om väljaren är aktiverad och den nya profilen sparas, uppdateras din tidigare standardprofil automatiskt till att inte längre vara standard.
+* **[!UICONTROL Default merge policy]**: En växlingsknapp som gör att du kan välja om sammanfogningsprincipen ska vara standard för din organisation eller inte. Om väljaren är aktiverad och den nya profilen sparas, uppdateras din tidigare standardprincip automatiskt till att inte längre vara standard.
 
 ### Tidsstämpel beställd {#timestamp-ordered}
 
