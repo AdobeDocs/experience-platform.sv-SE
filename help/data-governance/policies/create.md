@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;data governance;data usage policy
 solution: Experience Platform
 title: Skapa en dataanvändningsprincip
 topic: policies
+description: DULE (Data Usage Labeling and Enforcement) är kärnmekanismen i Adobe Experience Platform datastyrning. Med DULE Policy Service API kan du skapa och hantera DULE-principer för att avgöra vilka marknadsföringsåtgärder som kan vidtas mot data som innehåller vissa DULE-etiketter. Det här dokumentet innehåller en stegvis självstudiekurs för att skapa en DULE-princip med hjälp av API:t för principtjänsten.
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
 workflow-type: tm+mt
-source-wordcount: '1194'
-ht-degree: 1%
+source-wordcount: '1254'
+ht-degree: 0%
 
 ---
 
