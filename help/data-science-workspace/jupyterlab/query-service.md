@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Frågetjänst i anteckningsbok för Jupyter
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '750'
+source-wordcount: '769'
 ht-degree: 1%
 
 ---
@@ -27,14 +27,14 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
 - En [!DNL Adobe Analytics] datauppsättning
 
 - En fungerande förståelse för följande viktiga begrepp som används i den här självstudiekursen:
-   - [!DNL Experience Data Model (XDM) and XDM System](../../xdm/home.md)
-   - [!DNL Query Service](../../query-service/home.md)
-   - [!DNL Query Service SQL Syntax](../../query-service/sql/overview.md)
+   - [[!DNL Experience Data Model (XDM) och XDM System]](../../xdm/home.md)
+   - [[!DNL Query Service]](../../query-service/home.md)
+   - [[!DNL Query Service SQL-syntax]](../../query-service/sql/overview.md)
    - [Adobe Analytics]
 
 ## Åtkomst [!DNL JupyterLab] och [!DNL Query Service] {#access-jupyterlab-and-query-service}
 
-1. I [!DNL Experience Platform](https://platform.adobe.com)navigerar du till **[!UICONTROL Notebooks]** från den vänstra navigeringskolumnen. Tillåt ett ögonblick för JupyterLab att läsas in.
+1. I [[!DNL Experience Platform]](https://platform.adobe.com)navigerar du till **[!UICONTROL Notebooks]** från den vänstra navigeringskolumnen. Tillåt ett ögonblick för JupyterLab att läsas in.
 
    ![](../images/jupyterlab/query/jupyterlab_launcher.png)
 
