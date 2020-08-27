@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics
 solution: Experience Platform
 title: Bläddra i arbetsytan för åtkomstkontroll
 topic: user guide
+description: Det här dokumentet innehåller de steg som krävs för att bläddra på arbetsytan för åtkomstkontroll. Om du vill konfigurera åtkomstkontroll för Experience Platform via Adobe Admin Console måste du vara administratör för en IMS-organisation som har ett abonnemang på Experience Platform.
 translation-type: tm+mt
-source-git-commit: 6f599c0c6d8b349ebfb8cc0523543904fd628f8d
+source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
 workflow-type: tm+mt
-source-wordcount: '245'
+source-wordcount: '288'
 ht-degree: 3%
 
 ---
