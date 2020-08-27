@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;machine learning model;Data Science Workspace;Real-time Customer Profile;popular topics
+keywords: Experience Platform;machine learning model;Data Science Workspace;Real-time Customer Profile;popular topics;machine learning insights
 solution: Experience Platform
 title: Berika kundprofilen i realtid med maskininlärningsinsikter
 topic: Tutorial
+description: I det här dokumentet finns en stegvis självstudiekurs för att berika kundprofilen i realtid med maskininlärningsinsikter, stegen delas in i följande avsnitt, skapa ett utdatabema/en datamängd, konfigurera ett utdatchema/datamängd och skapa segment med hjälp av segmentbyggaren.
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
 workflow-type: tm+mt
-source-wordcount: '1145'
+source-wordcount: '1184'
 ht-degree: 0%
 
 ---
