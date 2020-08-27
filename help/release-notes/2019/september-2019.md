@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: September 13, 2019
 author: ens28527
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '542'
 ht-degree: 2%
 
 ---
@@ -19,25 +19,25 @@ ht-degree: 2%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
-* [!DNL Data Ingestion](#ingestion)
-* [!DNL Data Science Workspace](#dsw)
-* [!DNL Query Service](#query)
+* [[!DNL-datainmatning]](#ingestion)
+* [[!DNL Data Science Workspace]](#dsw)
+* [[!DNL Query Service]](#query)
 
 ## [!DNL Data Ingestion] {#ingestion}
 
-Adobe Experience Platform har en mängd funktioner för att importera alla typer av data och fördröjningar. Adobe Experience Platform [!DNL Data Ingestion] erbjuder flera alternativ för inmatning av data, bland annat API:er för gruppbearbetning, API:er för direktuppspelning, Adobe-kopplingar, dataintegrationspartners och användargränssnittet för Adobe Experience Platform.
+Adobe Experience Platform har en omfattande uppsättning funktioner för att importera alla typer av data och fördröjningar. Adobe Experience Platform [!DNL Data Ingestion] erbjuder flera alternativ för datainhämtning, inklusive API:er för gruppbearbetning, API:er för direktuppspelning, Adobe-anslutningar, dataintegrationspartners eller Adobe Experience Platform användargränssnitt.
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 | ----------- | ---------- |
-| Ny domän för direktuppspelning | Domänen har `dcs.data.adobe.net` flyttats till den nya gemensamma datainsamlingsdomänen `dcs.adobedc.net`. Användare måste uppdatera sina implementeringar enligt den reviderade dokumentationen för direktuppspelning i Adobe Experience Platform. All dokumentation som rör direktuppspelning i Adobe Experience Platform har uppdaterats för att använda den nya domänen. |
+| Ny domän för direktuppspelning | Domänen har `dcs.data.adobe.net` flyttats till den nya gemensamma datainsamlingsdomänen `dcs.adobedc.net`. Användare måste uppdatera sina implementeringar enligt den reviderade dokumentationen för direktuppspelning från Adobe Experience Platform. All dokumentation som rör inhämtning av direktuppspelning från Adobe Experience Platform har uppdaterats för att använda den nya domänen. |
 
 Mer information finns i dokumentationen för [datainmatning](../../ingestion/home.md).
 
 ## [!DNL Data Science Workspace] {#dsw}
 
-Adobe Experience Platform [!DNL Data Science Workspace] är en helt hanterad tjänst inom [!DNL Experience Platform] vilken datavetare smidigt kan generera insikter från data och innehåll i olika Adobe-lösningar och tredjepartssystem genom att bygga och driftsätta Machine Learning-modeller. [!DNL Data Science Workspace] är nära integrerat med [!DNL Platform] och driver hela livscykeln för datavetenskap, inklusive utforskning och förberedelse av XDM-data, följt av utveckling och driftsättning av modeller som automatiskt berikar [!DNL Real-time Customer Profile] med maskininlärningsinsikter.
+Adobe Experience Platform [!DNL Data Science Workspace] är en helt hanterad tjänst inom [!DNL Experience Platform] vilken datavetare smidigt kan generera insikter från data och innehåll i olika Adobe-lösningar och tredjepartssystem genom att skapa och driftsätta Machine Learning-modeller. [!DNL Data Science Workspace] är nära integrerat med [!DNL Platform] och driver hela livscykeln för datavetenskap, inklusive utforskning och förberedelse av XDM-data, följt av utveckling och driftsättning av modeller som automatiskt berikar [!DNL Real-time Customer Profile] med maskininlärningsinsikter.
 
 **Nya funktioner**
 
@@ -57,7 +57,7 @@ Mer information finns på [Data Science Workspace Overview](../../data-science-w
 
 ## [!DNL Query Service] {#query}
 
-[!DNL Query Service] ger möjlighet att använda standard-SQL för att fråga data i Adobe Experience Platform som stöd för en mängd olika användningsfall för analys och datahantering. Det är ett serverlöst verktyg som gör att du kan koppla ihop datauppsättningar från [!DNL Data Lake] och samla in frågeresultaten som en ny datauppsättning för användning vid rapportering [!DNL Data Science Workspace]eller för förtäring i [!DNL Real-time Customer Profile].
+[!DNL Query Service] ger möjlighet att använda standard-SQL för att fråga data i Adobe Experience Platform för att stödja en rad olika användningsfall för analys och datahantering. Det är ett serverlöst verktyg som gör att du kan koppla ihop datauppsättningar från [!DNL Data Lake] och samla in frågeresultaten som en ny datauppsättning för användning vid rapportering [!DNL Data Science Workspace]eller för förtäring i [!DNL Real-time Customer Profile].
 
 Ni kan använda [!DNL Query Service] för att skapa ekosystem för dataanalys och skapa en bild av kunderna över deras olika interaktionskanaler. Dessa kanaler kan omfatta försäljningssystem, webb-, mobil- eller CRM-system.
 
@@ -65,7 +65,7 @@ Ni kan använda [!DNL Query Service] för att skapa ekosystem för dataanalys oc
 
 | Funktion | Beskrivning |
 | -----------| ---------- |
-| Förbättringar av [!DNL Query Editor] | En sparfunktion har lagts till som gör att du kan spara en fråga och arbeta med den senare. En flik för Bläddra har lagts till i användargränssnittet på Adobe Experience Platform och där visas frågor som sparats av användare i din organisation. [!DNL Query Service] Implementerade en frågeinformationspanel som visar användbara metadata om frågan som visas. |
+| Förbättringar av [!DNL Query Editor] | En sparfunktion har lagts till som gör att du kan spara en fråga och arbeta med den senare. En bläddringsflik har lagts till i användargränssnittet i Adobe Experience Platform med frågor som sparats av användare i din organisation. [!DNL Query Service] Implementerade en frågeinformationspanel som visar användbara metadata om frågan som visas. |
 | Nya attribueringsfunktioner | Adobe-definierade funktioner i [!DNL Query Service] för att fråga efter kanalattribuering med parametrar för förfallodatum. |
 | Förbättringar av SQL-syntax | Stöd för iLike-syntax. |
 | Generera datauppsättningar med ett definierat XDM-schema | En ny sats har lagts till i CTAS-frågor (Create Table as Select) som gör att du kan ange ett målschema. |
