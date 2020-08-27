@@ -5,9 +5,9 @@ title: Utvecklarhandbok för katalogtjänst
 topic: developer guide
 description: Den här utvecklarhandboken innehåller steg som hjälper dig att börja använda Catalog API. Handboken innehåller sedan exempel på API-anrop för att utföra nyckelåtgärder med hjälp av Katalog.
 translation-type: tm+mt
-source-git-commit: c081a7521be9715ca32d35504922a70767924fd7
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '584'
+source-wordcount: '589'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Den här utvecklarhandboken innehåller steg som hjälper dig att börja använd
 
 [!DNL Catalog] spårar metadata för flera olika typer av resurser och åtgärder i [!DNL Experience Platform]. Utvecklarhandboken kräver en fungerande förståelse av de olika [!DNL Experience Platform] tjänster som är förknippade med att skapa och hantera dessa resurser:
 
-* [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
 * [Batchförtäring](../../ingestion/batch-ingestion/overview.md): Så här [!DNL Experience Platform] importerar och lagrar du data från datafiler, som CSV och Parquet.
 * [Direktinmatning](../../ingestion/streaming-ingestion/overview.md): Hur data [!DNL Experience Platform] importeras och lagras från klient- och serverenheter i realtid.
 
@@ -63,7 +63,7 @@ Eftersom vissa frågor kan belasta API:t avsevärt, har globala begränsningar i
 
 ## Nästa steg
 
-Det här dokumentet innehöll den nödvändiga kunskapen som krävs för att anropa [!DNL Catalog] API:t. Du kan nu gå vidare till exempelsamtalen i den här utvecklarhandboken och följa med i instruktionerna för dessa.
+Det här dokumentet innehöll den nödvändiga kunskapen som krävs för att ringa anrop till [!DNL Catalog] API:t. Du kan nu gå vidare till exempelsamtalen i den här utvecklarhandboken och följa med i instruktionerna för dessa.
 
 I de flesta av exemplen i den här handboken används `/dataSets` slutpunkten, men principerna kan tillämpas på andra slutpunkter inom [!DNL Catalog] (till exempel `/batches` och `/accounts`). En fullständig lista över alla anrop och åtgärder som är tillgängliga för varje slutpunkt finns i API-referensen [för](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) katalogtjänsten.
 
