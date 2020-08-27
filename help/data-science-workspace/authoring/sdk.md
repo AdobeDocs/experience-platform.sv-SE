@@ -3,10 +3,11 @@ keywords: Experience Platform;developer guide;SDK;Model authoring;Data Science W
 solution: Experience Platform
 title: Utvecklarhandbok för SDK
 topic: Overview
+description: Med hjälp av SDK för modellredigering kan du utveckla anpassade maskininlärningsrecept och funktionsprofiler som kan användas i Adobe Experience Platform Data Science Workspace, med implementerbara mallar i PySpark och Spark (Scala).
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
 workflow-type: tm+mt
-source-wordcount: '930'
+source-wordcount: '964'
 ht-degree: 0%
 
 ---
@@ -37,7 +38,7 @@ I följande tabell beskrivs de abstrakta metoderna för en PySpark Data Loader-k
         <tr>
             <td>
                 <p><code class=" language-undefined">load(self, configProperties, spark)</code></p>
-                <p>Läsa in och returnera Platform-data som en Pandas DataFrame</p>
+                <p>Läsa in och returnera plattformsdata som en Pandas DataFrame</p>
             </td>
             <td>
                 <ul>
@@ -65,7 +66,7 @@ I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] Data Loa
         <tr>
             <td>
                 <p><code class=" language-undefined">load(configProperties, sparkSession)</code></p>
-                <p>Läsa in och returnera Platform-data som en DataFrame</p>
+                <p>Läs in och returnera plattformsdata som en DataFrame</p>
             </td>
             <td>
                 <ul>
@@ -211,7 +212,7 @@ I följande tabell beskrivs de abstrakta metoderna för en [!DNL PySpark] Data S
         <tr>
             <td>
                 <p><code class=" language-undefined">save(self, configProperties, dataframe)</code></p>
-                <p>Ta emot utdata som en DataFrame och lagra dem i en Platform-datauppsättning</p>
+                <p>Ta emot utdata som en DataFrame och lagra dem i en plattformsdatauppsättning</p>
             </td>
             <td>
                 <ul>
@@ -239,7 +240,7 @@ I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] Data Sav
         <tr>
             <td>
                 <p><code class=" language-undefined">save(configProperties, dataFrame)</code></p>
-                <p>Ta emot utdata som en DataFrame och lagra dem i en Platform-datauppsättning</p>
+                <p>Ta emot utdata som en DataFrame och lagra dem i en plattformsdatauppsättning</p>
             </td>
             <td>
                 <ul>
