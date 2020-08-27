@@ -5,9 +5,9 @@ title: Handbok för frågetjänstutvecklare
 topic: query templates
 description: Den här utvecklarhandboken innehåller steg för att utföra olika åtgärder i Adobe Experience Platform Query Service API.
 translation-type: tm+mt
-source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '369'
+source-wordcount: '380'
 ht-degree: 1%
 
 ---
@@ -21,9 +21,9 @@ Den här utvecklarhandboken innehåller steg för att utföra olika åtgärder i
 
 Den här guiden kräver en fungerande förståelse av de olika Adobe Experience Platform-tjänster som används i [!DNL Query Service].
 
-- [!DNL Query Service](../home.md): Ger möjlighet att fråga datauppsättningar och hämta de resulterande frågorna som nya datauppsättningar i [!DNL Experience Platform].
-- [!DNL Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
-- [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+- [[!DNL Query Service]](../home.md): Ger möjlighet att fråga datauppsättningar och hämta de resulterande frågorna som nya datauppsättningar i [!DNL Experience Platform].
+- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+- [[!DNL-sandlådor]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna använda API [!DNL Query Service] .
 
