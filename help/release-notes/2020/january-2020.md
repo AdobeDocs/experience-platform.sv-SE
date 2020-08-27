@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: January 15, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: f881c1365684b1ca9e6bf9a8ce866d234dc54128
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '879'
+source-wordcount: '892'
 ht-degree: 3%
 
 ---
@@ -19,10 +19,10 @@ ht-degree: 3%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
-* [!DNL Experience Data Model (XDM) System](#xdm)
-* [!DNL Privacy Service](#privacy)
-* [!DNL Sources](#sources)
-* [!DNL Destinations](#destinations)
+* [[!DNL Experience Data Model (XDM) System]](#xdm)
+* [[!DNL-Privacy Service]](#privacy)
+* [[!DNL-källor]](#sources)
+* [[!DNL-mål]](#destinations)
 
 ## [!DNL Experience Data Model] (XDM) System {#xdm}
 
@@ -98,14 +98,14 @@ I [Adobe CDP](../../rtcdp/overview.md)i realtid är destinationer färdiga integ
 
 | Funktion | Beskrivning |
 |--- | ---|
-| Stöd för åtkomstkontrollsbehörigheter | Funktionen Destinationer i CDP i realtid fungerar med åtkomstkontrollsbehörigheter i Adobe Experience Platform. Beroende på din användares behörighetsnivå kan du visa, hantera och aktivera mål. |
+| Stöd för åtkomstkontrollsbehörigheter | Funktionen Destinationer i CDP i realtid fungerar med Adobe Experience Platform åtkomstkontrollsbehörigheter. Beroende på din användares behörighetsnivå kan du visa, hantera och aktivera mål. |
 
 **Åtkomstkontrollbehörigheter**
 
 | Kategori | Behörighet | Beskrivning |
 |--- | --- | ---|
 | Mål  | Hantera mål | Åtkomst för att läsa, skapa, redigera och inaktivera mål. |
-| Mål  | Visa mål | Skrivskyddad åtkomst till tillgängliga mål på fliken [!UICONTROL _Katalog _]och autentiserade mål på fliken_ Bläddra _. |
+| Mål  | Visa mål | Skrivskyddad åtkomst till tillgängliga mål på fliken [!UICONTROL _Katalog_] och autentiserade mål på fliken _Bläddra_ . |
 | Mål  | Aktivera destinationer | Möjlighet att aktivera data till destinationer. Den här behörigheten kräver att antingen Hantera destinationer eller Visa destinationer läggs till i produktprofilen. |
 
 **Kända fel**
