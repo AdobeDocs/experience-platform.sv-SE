@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Hantera beslutstjänstentiteter med API:er
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '7207'
+source-wordcount: '7220'
 ht-degree: 0%
 
 ---
@@ -26,9 +26,9 @@ Självstudiekursen består av två delar:
 
 Den här självstudiekursen kräver en fungerande förståelse av [!DNL Experience Platform] tjänsterna och API-konventionerna. Databasen är en tjänst som används av flera andra [!DNL Platform] [!DNL Platform] tjänster för att lagra affärsobjekt och olika typer av metadata. Det är ett säkert och flexibelt sätt att hantera och fråga efter dessa objekt för användning av flera runtime-tjänster. Det [!DNL Decisioning Service] är en sådan. Innan du börjar med den här självstudiekursen bör du läsa i dokumentationen om följande:
 
-- [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
-- [!DNL Decisioning Service](./../home.md): Beskriver de begrepp och komponenter som används för Experience Decision i allmänhet och offertbeslut i synnerhet. Illustrerar de strategier som används för att välja det bästa alternativet att presentera under en kunds upplevelse.
-- [!DNL Profile Query Language (PQL)](../../segmentation/pql/overview.md): PQL är ett kraftfullt språk för att skriva uttryck över XDM-instanser. PQL används för att definiera beslutsregler.
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
+- [[!DNL Decision Service]](./../home.md): Beskriver de begrepp och komponenter som används för Experience Decision i allmänhet och offertbeslut i synnerhet. Illustrerar de strategier som används för att välja det bästa alternativet att presentera under en kunds upplevelse.
+- [[!DNL Profile Query Language (PQL)]](../../segmentation/pql/overview.md): PQL är ett kraftfullt språk för att skriva uttryck över XDM-instanser. PQL används för att definiera beslutsregler.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API: [!DNL Platform] erna.
 
