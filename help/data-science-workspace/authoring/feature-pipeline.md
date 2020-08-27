@@ -4,9 +4,9 @@ solution: Adobe Experience Platform Data Science Workspace
 title: Skapa en funktionspipeline
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1367'
+source-wordcount: '1372'
 ht-degree: 0%
 
 ---
@@ -438,4 +438,4 @@ När poängsättningen är klar bör ditt tillvägagångssätt fungera.
 
 [//]: # (Next steps section should refer to tutorials on how to score data using the feature pipeline Engine. Update this document once those tutorials are available)
 
-Genom att läsa det här dokumentet har du skapat en funktionspipeline med hjälp av Model Authoring SDK, skapat en Docker-bild och använt Docker-bildens URL för att skapa en funktionspipeline med hjälp av [!DNL Sensei Machine Learning] API. Nu kan du fortsätta att omforma datauppsättningar och extrahera datafunktioner i stor skala med [!DNL Sensei Machine Learning API](../api/getting-started.md).
+Genom att läsa det här dokumentet har du skapat en funktionspipeline med hjälp av Model Authoring SDK, skapat en Docker-bild och använt Docker-bildens URL för att skapa en funktionspipeline med hjälp av [!DNL Sensei Machine Learning] API. Du kan nu fortsätta att omforma datauppsättningar och extrahera datafunktioner i stor skala med API:t [[!DNL Sensei Machine Learning]](../api/getting-started.md).
