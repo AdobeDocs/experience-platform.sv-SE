@@ -3,10 +3,11 @@ keywords: Experience Platform;troubleshooting;Data Science Workspace;popular top
 solution: Experience Platform
 title: Felsökningsguide för Data Science Workspace
 topic: Troubleshooting
+description: Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform Data Science Workspace.
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 194a29124949571638315efe00ff0b04bff19303
 workflow-type: tm+mt
-source-wordcount: '665'
+source-wordcount: '680'
 ht-degree: 0%
 
 ---
@@ -22,7 +23,7 @@ Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Pla
 >
 >Problemet har åtgärdats men kan fortfarande finnas i webbläsaren Google Chrome 80.x. Kontrollera att webbläsaren Chrome är uppdaterad.
 
-I webbläsarversionen 80.x blockeras alla cookies från tredje part som standard. [!DNL Google Chrome] Den här principen kan förhindra [!DNL JupyterLab] inläsning i Adobe Experience Platform.
+I webbläsarversionen 80.x blockeras alla cookies från tredje part som standard. [!DNL Google Chrome] Den här profilen kan förhindra [!DNL JupyterLab] inläsning inom Adobe Experience Platform.
 
 Så här åtgärdar du problemet:
 
