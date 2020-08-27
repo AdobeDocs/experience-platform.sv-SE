@@ -3,10 +3,11 @@ keywords: Experience Platform;download scores;customer ai;popular topics
 solution: Experience Platform
 title: Ladda ned bakgrundsmusik i kundens AI
 topic: Downloading scores
+description: Med Customer AI kan du hämta poäng i parquet-filformat.
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: c30bbaead775e68f869b080e24e18d4a23cda973
 workflow-type: tm+mt
-source-wordcount: '931'
+source-wordcount: '943'
 ht-degree: 0%
 
 ---
@@ -166,7 +167,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller ett `_links` objekt. I
 }
 ```
 
-## Hämta dina filer {#retrieving-your-files}
+## Hämta filer {#retrieving-your-files}
 
 Använd det `href` värde du fick i föregående steg som ett API-anrop för att göra en ny GET-förfrågan om att hämta din filkatalog.
 
