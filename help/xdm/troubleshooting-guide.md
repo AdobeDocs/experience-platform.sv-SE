@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Felsökningsguide för Experience Data Model (XDM)
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1816'
+source-wordcount: '1829'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Det här dokumentet innehåller svar på vanliga frågor om [!DNL Experience Data Model] (XDM) System samt en felsökningsguide för vanliga fel. För frågor och felsökning som rör andra tjänster i Adobe Experience Platform, se felsökningsguiden för [Experience Platform](../landing/troubleshooting.md).
 
-**[!DNL Experience Data Model](XDM)**är en öppen källkodsspecifikation som definierar standardiserade scheman för kundupplevelsehantering. Metoden som[!DNL Experience Platform]byggs på,**XDM System **, används för att göra[!DNL Experience Data Model]scheman tillgängliga för[!DNL Platform]tjänster. Det **[!DNL Schema Registry]**innehåller ett användargränssnitt och ett RESTful-API för åtkomst till **[!DNL Schema Library]**dem[!DNL Experience Platform]. Mer information finns i[XDM-dokumentationen](home.md).
+**[!DNL Experience Data Model](XDM)** är en öppen källkodsspecifikation som definierar standardiserade scheman för kundupplevelsehantering. Metoden som [!DNL Experience Platform] byggs på, **XDM System**, används för att göra [!DNL Experience Data Model] scheman tillgängliga för [!DNL Platform] tjänster. I **[!DNL Schema Registry]** finns ett användargränssnitt och ett RESTful-API för att komma åt **[!DNL Schema Library]** innehållet [!DNL Experience Platform]. Mer information finns i [XDM-dokumentationen](home.md) .
 
 ## Vanliga frågor och svar 
 
@@ -24,7 +24,7 @@ Nedan följer en lista med svar på vanliga frågor om XDM-system och användnin
 
 ### Hur lägger jag till fält i ett schema?
 
-Du kan lägga till fält i ett schema med hjälp av en mixin. Varje blandning är kompatibel med en eller flera klasser, vilket gör att mixin kan användas i alla scheman som implementerar en av dessa kompatibla klasser. Adobe Experience Platform innehåller flera branschblandningar med sina egna fördefinierade fält, men du kan lägga till egna fält i ett schema genom att skapa nya mixiner med API:t eller användargränssnittet.
+Du kan lägga till fält i ett schema med hjälp av en mixin. Varje blandning är kompatibel med en eller flera klasser, vilket gör att mixin kan användas i alla scheman som implementerar en av dessa kompatibla klasser. Adobe Experience Platform erbjuder flera branschblandningar med sina egna fördefinierade fält, men du kan lägga till egna fält i ett schema genom att skapa nya mixiner med API:t eller användargränssnittet.
 
 Mer information om hur du skapar nya mixiner i API:t finns i [Skapa ett mixin](api/create-mixin.md) -dokument i utvecklarhandboken för [!DNL Schema Registry] API. Om du använder användargränssnittet läser du i [schemaredigerarens självstudiekurs](./tutorials/create-schema-ui.md).
 
@@ -42,7 +42,7 @@ Mer information finns i avsnittet om [schemaidentifiering](api/getting-started.m
 
 ### När börjar ett schema förhindra att ändringar bryts?
 
-Du kan göra ändringar i ett schema så länge det aldrig har använts för att skapa en datauppsättning eller aktiverats för användning i [!DNL Real-time Customer Profile](../profile/home.md). När ett schema har använts för att skapa en datauppsättning eller aktiverats för användning med [!DNL Real-time Customer Profile], kommer reglerna för [schemautveckling](schema/composition.md#evolution) att tillämpas strikt av systemet.
+Du kan göra ändringar i ett schema så länge det aldrig har använts för att skapa en datauppsättning eller aktiverats för användning i [[!DNL-kundprofil i realtid]](../profile/home.md). När ett schema har använts för att skapa en datauppsättning eller aktiverats för användning med [!DNL Real-time Customer Profile], kommer reglerna för [schemautveckling](schema/composition.md#evolution) att tillämpas strikt av systemet.
 
 ### Vilken är den maximala storleken för en lång fälttyp?
 
@@ -52,7 +52,7 @@ Mer information om fälttyper finns i avsnittet [Definiera XDM-fälttyper](api/a
 
 ### Hur definierar jag identiteter för mitt schema?
 
-I [!DNL Experience Platform]används identiteter för att identifiera ett ämne (vanligtvis en enskild person) oavsett vilka datakällor som tolkas. De definieras i scheman genom att nyckelfält markeras som&quot;Identitet&quot;. Vanliga fält för identitet är e-postadress, telefonnummer, CRM-ID [!DNL Experience Cloud ID (ECID)](https://docs.adobe.com/content/help/sv-SE/id-service/using/home.html)och andra unika ID-fält.
+I [!DNL Experience Platform]används identiteter för att identifiera ett ämne (vanligtvis en enskild person) oavsett vilka datakällor som tolkas. De definieras i scheman genom att nyckelfält markeras som&quot;Identitet&quot;. Vanliga fält för identitet är e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://docs.adobe.com/content/help/sv-SE/id-service/using/home.html), CRM ID och andra unika ID-fält.
 
 Fält kan markeras som identiteter med antingen API:t eller användargränssnittet.
 
@@ -76,7 +76,7 @@ Primära identiteter är valfria eftersom scheman kan ha 0 eller 1 av dem. Ett s
 
 ### Hur aktiverar jag ett schema för användning i [!DNL Real-time Customer Profile]?
 
-Scheman kan användas i [!DNL Real-time Customer Profile](../profile/home.md) genom att en &quot;union&quot;-tagg läggs till i schemats `meta:immutableTags` attribut. Du [!DNL Profile] kan aktivera ett schema för användning med API:t eller användargränssnittet.
+Scheman är aktiverade för användning i [[!DNL Real-time Customer Profile]](../profile/home.md) genom att en &quot;union&quot;-tagg läggs till, som finns i schemats `meta:immutableTags` -attribut. Du [!DNL Profile] kan aktivera ett schema för användning med API:t eller användargränssnittet.
 
 #### Aktivera ett befintligt schema för [!DNL Profile] användning av API
 
