@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Autentisera och få åtkomst till Experience Platform API:er
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 5c5f6c4868e195aef76bacc0a1e5df3857647bde
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '840'
+source-wordcount: '843'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Autentisera och få åtkomst till API: [!DNL Experience Platform] er
 
-I det här dokumentet finns en stegvis självstudiekurs för att få tillgång till ett utvecklarkonto i Adobe Experience Platform för att ringa till [!DNL Experience Platform] API:er.
+Det här dokumentet innehåller en stegvis självstudiekurs för att få tillgång till ett Adobe Experience Platform-utvecklarkonto för att ringa till API: [!DNL Experience Platform] er.
 
 ## Autentisera för att göra API-anrop
 
@@ -31,11 +31,11 @@ För att kunna anropa API: [!DNL Experience Platform] er krävs följande:
 * Ett registrerat Adobe ID-konto
 * En Admin Console-administratör som lägger till dig som **utvecklare** och som **användare** för en produkt.
 
-I följande avsnitt går vi igenom stegen för att skapa ett Adobe ID och bli utvecklare och användare för en organisation.
+I följande avsnitt går vi igenom stegen för att skapa en Adobe ID och bli utvecklare och användare för en organisation.
 
-### Skapa ett Adobe ID
+### Skapa en Adobe ID
 
-Om du inte har något Adobe ID kan du skapa ett med följande steg:
+Om du inte har någon Adobe ID kan du skapa en med följande steg:
 
 1. Gå till [Adobe Developer Console](https://console.adobe.io)
 2. Klicka på **[!UICONTROL create a new account]**
@@ -47,7 +47,7 @@ Innan du skapar integreringar på Adobe I/O måste ditt konto ha utvecklarbehör
 
 **Få utvecklaråtkomst**
 
-Kontakta en [!DNL Admin Console] administratör i organisationen om du vill lägga till dig som utvecklare för någon av organisationens produkter med hjälp av [!DNL Admin Console](https://adminconsole.adobe.com/).
+Kontakta en [!DNL Admin Console] administratör i din organisation om du vill lägga till dig som utvecklare för någon av organisationens produkter med hjälp av [[!DNL Admin Console]](https://adminconsole.adobe.com/).
 
 ![](images/authentication/assign-developer.png)
 
@@ -85,7 +85,7 @@ Stegen beskrivs närmare nedan.
 
 ### Engångskonfiguration
 
-Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med Adobe ID. Följ sedan stegen som beskrivs i självstudiekursen om hur du [skapar ett tomt projekt](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) i dokumentationen för Adobe Developer Console.
+Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med din Adobe ID. Följ sedan stegen som beskrivs i självstudiekursen om hur du [skapar ett tomt projekt](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) i dokumentationen för Adobe Developer Console.
 
 När du har skapat ett nytt projekt klickar du **[!UICONTROL Add API]** på skärmen _Projektöversikt_ .
 
@@ -155,7 +155,7 @@ Om ditt svar liknar det som visas nedan är dina inloggningsuppgifter giltiga oc
 
 ## Använd Postman för JWT-autentisering och API-anrop
 
-[Postman](https://www.getpostman.com/) är ett populärt verktyg för att arbeta med RESTful API:er. I det här [mellanbrevet](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) beskrivs hur du kan konfigurera postman så att den automatiskt utför JWT-autentisering och använder den för att använda Adobe Experience Platform API:er.
+[Postman](https://www.getpostman.com/) är ett populärt verktyg för att arbeta med RESTful API:er. I det här [mellanbrevet](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) beskrivs hur du kan konfigurera postman så att JWT-autentisering utförs automatiskt och använda den för att använda Adobe Experience Platform API:er.
 
 ## Nästa steg
 
