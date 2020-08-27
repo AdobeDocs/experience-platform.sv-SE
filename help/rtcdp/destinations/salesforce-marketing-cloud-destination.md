@@ -5,9 +5,9 @@ seo-title: Salesforce Marketing Cloud
 description: Salesforce Marketing Cloud är en digital marknadsföringssvit som tidigare kallades ExactTarget som gör att ni kan skapa och anpassa resor för besökare och kunder för att personalisera deras upplevelse.
 seo-description: Salesforce Marketing Cloud är en digital marknadsföringssvit som tidigare kallades ExactTarget som gör att ni kan skapa och anpassa resor för besökare och kunder för att personalisera deras upplevelse.
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '462'
+source-wordcount: '466'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## Översikt
 
-[!DNL Salesforce Marketing Cloud](https://www.salesforce.com/products/marketing-cloud/email-marketing/) är en digital marknadsföringssvit som tidigare kallades ExactTarget som gör att ni kan skapa och anpassa resor för besökare och kunder för att personalisera deras upplevelse.
+[[!DNL Salesforce Marketing Cloud]](https://www.salesforce.com/products/marketing-cloud/email-marketing/) är en digital marknadsföringssvit som tidigare kallades ExactTarget som gör att du kan skapa och anpassa resor för besökare och kunder för att personalisera deras upplevelse.
 
 Om du vill skicka segmentdata till [!DNL Salesforce Marketing Cloud]måste du först [ansluta målet](#connect-destination) i Adobe CDP i realtid och sedan [konfigurera en dataimport](#import-data-into-salesforce) från lagringsplatsen till [!DNL Salesforce Marketing Cloud].
 
@@ -38,7 +38,7 @@ För **[!UICONTROL SFTP with SSH Key]** anslutningar måste du ange domän, port
    * **[!UICONTROL Name]**: Välj ett relevant namn för destinationen.
    * **[!UICONTROL Description]**: Ange en beskrivning för destinationen.
    * **[!UICONTROL Folder Path]**: Ange sökvägen till lagringsplatsen där CDP i realtid ska placera dina exportdata som CSV-filer eller tabbavgränsade filer.
-   * **[!UICONTROL File Format]**: **[!UICONTROL CSV]** eller **[!UICONTROL TAB_DELIMITED]**. Välj vilket filformat du vill exportera till lagringsplatsen.
+   * **[!UICONTROL File Format]**: **[!UICONTROL CSV]** eller **[!UICONTROL TAB_DELIMITED]**. Välj vilket filformat som ska exporteras till lagringsplatsen.
 
    ![Grundläggande information för Salesforce](/help/rtcdp/destinations/assets/salesforce-basic-information.png)
 
