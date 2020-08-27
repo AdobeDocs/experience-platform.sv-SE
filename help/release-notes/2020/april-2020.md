@@ -6,9 +6,9 @@ last-update: April 13, 2020
 author: ens71067
 keywords: release notes;
 translation-type: tm+mt
-source-git-commit: f881c1365684b1ca9e6bf9a8ce866d234dc54128
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '975'
+source-wordcount: '993'
 ht-degree: 2%
 
 ---
@@ -19,18 +19,18 @@ ht-degree: 2%
 **Releasedatum: 8 april 2020**
 
 Nya funktioner i Adobe Experience Platform:
-* [!DNL Intelligent Services](#intelligent)
+* [[!DNL Intelligent Services]](#intelligent)
 
 Uppdateringar av befintliga funktioner:
-* [!DNL Experience Data Model (XDM)](#xdm)
-* [!DNL Data Governance](#governance)
-* [!DNL Destinations](#destinations)
-* [!DNL Privacy Service](#privacy)
-* [!DNL Sources](#sources)
+* [[!DNL Experience Data Model (XDM)]](#xdm)
+* [[!DNL Data Governance]](#governance)
+* [[!DNL-mål]](#destinations)
+* [[!DNL-Privacy Service]](#privacy)
+* [[!DNL-källor]](#sources)
 
 ## [!DNL Intelligent Services] {#intelligent}
 
-[!DNL Intelligent Services] ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskaplig expertis. Dessutom kan marknadsförare aktivera prognoser i Adobe Experience Cloud, Adobe Experience Platform och program från tredje part.
+[!DNL Intelligent Services] ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskaplig expertis. Dessutom kan marknadsförare aktivera prognoser i Adobe Experience Cloud, Adobe Experience Platform och tredjepartsprogram.
 
 **Viktiga funktioner**
 
@@ -69,7 +69,7 @@ XDM är en öppet dokumenterad specifikation som utformats för att förbättra 
 
 ## [!DNL Data Governance] {#governance}
 
-Adobe Experience Platform [!DNL Data Governance] är ett antal strategier och tekniker som används för att hantera kunddata och säkerställa att regler, begränsningar och policyer som gäller för dataanvändning följs. Det spelar en viktig roll på [!DNL Experience Platform] olika nivåer, bland annat i fråga om katalogisering, datalinje, etikettering av dataanvändning, dataåtkomstprinciper och åtkomstkontroll av data för marknadsföringsåtgärder.
+Adobe Experience Platform [!DNL Data Governance] är en serie strategier och tekniker som används för att hantera kunddata och säkerställa att regler, begränsningar och regler som gäller för dataanvändning följs. Det spelar en viktig roll på [!DNL Experience Platform] olika nivåer, bland annat i fråga om katalogisering, datalinje, etikettering av dataanvändning, dataåtkomstprinciper och åtkomstkontroll av data för marknadsföringsåtgärder.
 
 För att komma igång med datastyrning krävs en grundlig förståelse för de regler, avtalsförpliktelser och företagspolicyer som gäller för era kunddata. Därifrån kan data klassificeras med hjälp av lämpliga etiketter för dataanvändning, och användningen av dessa kan styras med hjälp av definitionen av policyer för dataanvändning.
 
@@ -90,7 +90,7 @@ Mer information finns i översikten över [datastyrning](../../data-governance/h
 
 ## Mål {#destinations}
 
-I [Adobe Real-time Customer Data Platform](../../rtcdp/overview.md)är destinationer färdiga integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
+I [Adobe kunddataplattform](../../rtcdp/overview.md)i realtid är destinationer färdigbyggda integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
 
 **Nya destinationer**
 
@@ -99,7 +99,7 @@ Adobe CDP i realtid har nu stöd för dataaktivering i över femtio [!DNL Experi
 | Dokumentation | Beskrivning |
 |--- | ---|
 | [Måltyper och -kategorier](/help/rtcdp/destinations/destination-types.md) | I den här artikeln förklaras skillnaden mellan anslutningar och tillägg i CDP-gränssnittet i realtid för Adobe och en rekommendation om när var och en av dessa destinationer ska användas. |
-| [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md) | På den här sidan förklaras vilka [!DNL Launch] tillägg som är, en lista över användningsfall för dem och länkar till dokumentation för varje [!DNL Launch] tillägg i Adobe Real-time CDP. |
+| [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md) | På den här sidan förklaras vad [!DNL Launch] tillägg är, en lista över användningsfall för dem och länkar till dokumentation för varje [!DNL Launch] tillägg i Adobe Real-time CDP. |
 
 Mer information finns i Översikt över [destinationer](/help/rtcdp/destinations/destinations-overview.md).
 
