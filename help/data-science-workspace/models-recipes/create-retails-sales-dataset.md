@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa försäljningsschema och datauppsättning för återförsäljning
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '497'
+source-wordcount: '502'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
    - [diktor](https://pypi.org/project/dictor/)
    - [JWT](https://pypi.org/project/jwt/)
 - En arbetsförståelse för följande koncept som används i den här självstudiekursen:
-   - [!DNL Experience Data Model (XDM)](../../xdm/home.md)
+   - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)
    - [Grunderna för schemakomposition](../../xdm/schema/field-dictionary.md)
 
 ## Skapa schema och datauppsättning för butiksförsäljning
