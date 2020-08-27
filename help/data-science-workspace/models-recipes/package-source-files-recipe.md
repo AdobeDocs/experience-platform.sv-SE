@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Paketera källfiler i ett recept
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1087'
+source-wordcount: '1097'
 ht-degree: 0%
 
 ---
@@ -23,10 +23,10 @@ Koncept att förstå:
 
 ## Förutsättningar
 
-- [!DNL Docker](https://docs.docker.com/install/#supported-platforms)
-- [!DNL Python 3 and pip](https://docs.conda.io/en/latest/miniconda.html)
-- [!DNL Scala](https://www.scala-sbt.org/download.html?_ga=2.42231906.690987621.1558478883-2004067584.1558478883)
-- [!DNL Maven](https://maven.apache.org/install.html)
+- [[!DNL Docker]](https://docs.docker.com/install/#supported-platforms)
+- [[!DNL Python 3 och pip]](https://docs.conda.io/en/latest/miniconda.html)
+- [[!DNL Scala]](https://www.scala-sbt.org/download.html?_ga=2.42231906.690987621.1558478883-2004067584.1558478883)
+- [[!DNL Maven]](https://maven.apache.org/install.html)
 
 ## Recipe creation
 
