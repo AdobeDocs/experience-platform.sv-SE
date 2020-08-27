@@ -5,9 +5,9 @@ title: Katalogtjänst - översikt
 topic: overview
 description: Katalogtjänsten är arkivsystemet för dataplatser och -länkar inom Adobe Experience Platform. Alla data som importeras till Experience Platform lagras i Data Lake som filer och kataloger, men i Catalog finns metadata och beskrivning för dessa filer och kataloger för sökning och övervakning.
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 71678b10c9e137016ea404305b272508b9c8cabe
 workflow-type: tm+mt
-source-wordcount: '782'
+source-wordcount: '781'
 ht-degree: 0%
 
 ---
@@ -64,4 +64,4 @@ I följande tabell visas de olika objekttyper som stöds av [!DNL Catalog]:
 
 ## Nästa steg
 
-Det här dokumentet innehåller en introduktion till [!DNL Catalog Service] och hur det fungerar inom det större omfånget av [!DNL Experience Platform]. Anvisningar om hur du interagerar med de olika slutpunkterna i det [katalogutvecklarhandboken](api/getting-started.md) [!DNL Catalog] finns i. Vi rekommenderar att du också läser guiden om [filtrering av katalogdata](api/filter-data.md) för att följa vedertagna standarder för att begränsa vilka data som returneras i API-svar.
+Det här dokumentet innehåller en introduktion till [!DNL Catalog Service] och hur det fungerar inom det större omfånget av [!DNL Experience Platform]. Se [[!DNL Catalog] utvecklarhandboken](api/getting-started.md) för steg om hur du interagerar med de olika slutpunkterna i det [!DNL Catalog] API:t. Vi rekommenderar att du också läser guiden om [filtrering av katalogdata](api/filter-data.md) för att följa vedertagna standarder för att begränsa vilka data som returneras i API-svar.
