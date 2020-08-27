@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Konfigurera en datauppsättning för profil- och identitetstjänsten med API:er
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1020'
+source-wordcount: '1035'
 ht-degree: 0%
 
 ---
@@ -27,10 +27,10 @@ I den här självstudiekursen beskrivs hur du aktiverar en datauppsättning för
 
 Den här självstudiekursen kräver en fungerande förståelse för de olika Adobe Experience Platform-tjänster som används för att hantera [!DNL Profile]aktiverade datauppsättningar. Innan du börjar med den här självstudiekursen ska du läsa dokumentationen för dessa relaterade [!DNL Platform] tjänster:
 
-- [!DNL Real-time Customer Profile](../home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-- [!DNL Identity Service](../../identity-service/home.md): Möjliggör [!DNL Real-time Customer Profile] genom att överbrygga identiteter från olika datakällor som inhämtas till [!DNL Platform].
-- [!DNL Catalog Service](../../catalog/home.md): Ett RESTful-API som gör att du kan skapa datauppsättningar och konfigurera dem för [!DNL Real-time Customer Profile] och [!DNL Identity Service].
-- [!DNL Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
+- [[!DNL Real-time Customer Profile]](../home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+- [[!DNL Identity Service]](../../identity-service/home.md): Möjliggör [!DNL Real-time Customer Profile] genom att överbrygga identiteter från olika datakällor som inhämtas till [!DNL Platform].
+- [[!DNL Catalog Service]](../../catalog/home.md): Ett RESTful-API som gör att du kan skapa datauppsättningar och konfigurera dem för [!DNL Real-time Customer Profile] och [!DNL Identity Service].
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:erna för plattformen.
 
