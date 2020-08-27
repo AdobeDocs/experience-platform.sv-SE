@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Utvecklarhandbok för Policy Service API
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: cb3a17aa08c67c66101cbf3842bf306ebcca0305
+source-git-commit: 71678b10c9e137016ea404305b272508b9c8cabe
 workflow-type: tm+mt
-source-wordcount: '474'
+source-wordcount: '472'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Med Adobe Experience Platform [!DNL Data Governance] kan ni hantera kunddata och
 
 API:t innehåller flera slutpunkter som gör det möjligt att programmässigt hantera etiketter och policyer för dataanvändning samt utvärdera marknadsföringsåtgärder för policyöverträdelser. [!DNL Policy Service] Dessa slutpunkter beskrivs nedan. Besök de enskilda slutpunktshandböckerna för mer information och se [komma igång-guiden](./getting-started.md) för viktig information om obligatoriska huvuden, läsning av exempel-API-anrop med mera.
 
-Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder går du till API:t för [principtjänsten](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml).
+Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder går du till [[!DNL Policy Service] API-växlaren](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml).
 
 ## Etiketter
 
