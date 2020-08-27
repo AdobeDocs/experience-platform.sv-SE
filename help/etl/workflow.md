@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;ETL;etl;etl workflow;ETL workflow
 solution: Experience Platform
 title: ETL-arbetsflöde
 topic: overview
+description: Olika extraherings-, omformnings- och inläsningsverktyg (ETL) kan ha olika format, men de flesta exponerar liknande funktioner för att underlätta kombinationen av flera datakällor.
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: f4a4e65a087313dc4e2414f999e021e3f6e17137
 workflow-type: tm+mt
-source-wordcount: '177'
+source-wordcount: '202'
 ht-degree: 0%
 
 ---
@@ -22,7 +23,7 @@ I följande diagram visas modeller av vanliga ETL-åtgärder och en allmän anv�
 
 De åtgärder som visas nedan beskrivs i de steg som beskrivs i [ETL Integration Guide](home.md). Vissa steg hänvisar till specifika&quot;figurer&quot;, andra beskriver liknande åtgärder som arbetsflödet som visas här.
 
-### Bild 1 - Konfigurera ny Adobe Experience Platform-anslutning:
+### Bild 1 - Konfigurera nya Adobe Experience Platform Connector:
 
 ![](images/image2.png)
 
