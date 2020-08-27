@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: November 18, 2019
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: cb5df9b44486bda84f08805f1077d6097e3666e2
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1882'
+source-wordcount: '1908'
 ht-degree: 1%
 
 ---
@@ -18,15 +18,15 @@ ht-degree: 1%
 **Releasedatum: 18 november 2019**
 
 Nya funktioner i Adobe Experience Platform:
-* [!DNL Real-time Customer Data Platform](#rtcdp)
-* [!DNL Destinations](#destinations)
-* [!DNL Sources](#sources)
+* [[!DNL Customer Data Platform i realtid]](#rtcdp)
+* [[!DNL-mål]](#destinations)
+* [[!DNL-källor]](#sources)
 
 Uppdateringar av befintliga funktioner:
-* [!DNL Data Science Workspace](#dsw)
-* [!DNL Experience Data Model (XDM) System](#xdm)
-* [!DNL Real-time Customer Profile](#profile)
-* [!DNL Segmentation Service](#segmentation)
+* [[!DNL Data Science Workspace]](#dsw)
+* [[!DNL Experience Data Model (XDM) System]](#xdm)
+* [[!DNL-kundprofil i realtid]](#profile)
+* [[!DNL-segmenteringstjänst]](#segmentation)
 
 ## [!DNL Real-time Customer Data Platform] {#rtcdp}
 
@@ -95,7 +95,7 @@ Adobe Experience Platform kan importera data från externa källor och samtidigt
 | ---------- | ------------ |
 | Källgränssnitt | Nytt användargränssnitt för att skapa, visa och hantera källanslutningar. |
 | Förbättrade arbetsflöden för CRM-anslutningar | Nytt intuitivt arbetsflöde för användargränssnitt för att skapa och hantera [!DNL Microsoft Dynamics] och [!DNL Salesforce] ansluta. |
-| Stöd för anslutning för molnbaserade lagringslösningar | Kopplingar kan nu komma åt molnbaserade lagringsmedier. Nya källor är bland annat [!DNL Amazon S3]FTP- [!DNL Azure Blob]och SFTP-servrar. |
+| Stöd för anslutning för molnbaserade lagringslösningar | Kopplingar kan nu komma åt molnbaserade lagringsmedier. Nya källor är [!DNL Amazon S3]bl.a. FTP- [!DNL Azure Blob]och SFTP-servrar. |
 
 **Kända fel**
 
