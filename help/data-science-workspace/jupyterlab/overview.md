@@ -5,7 +5,7 @@ title: Användarhandbok för JupyterLab
 topic: Overview
 description: JupyterLab är ett webbaserat användargränssnitt för Project Jupyter och är nära integrerat med Adobe Experience Platform. Den utgör en interaktiv utvecklingsmiljö där datavetare kan arbeta med Jupyters bärbara datorer, kod och data. Det här dokumentet innehåller en översikt över JupyterLab och dess funktioner samt instruktioner om hur du utför vanliga åtgärder.
 translation-type: tm+mt
-source-git-commit: 9ba229195892245d29fb4f17b9f2e5cd6c6ea567
+source-git-commit: 78f080fd7598799825c59a4fdfdcaf7d294560a3
 workflow-type: tm+mt
 source-wordcount: '3700'
 ht-degree: 10%
@@ -155,8 +155,8 @@ Med den anpassade *startguiden* får du användbara anteckningsboksmallar för d
 | --- | --- |
 | Tom | En tom anteckningsboksfil. |
 | Starter | En förfylld anteckningsbok som visar datautforskandet med exempeldata. |
-| Detaljhandel | En förfylld anteckningsbok med information om <a href="https://adobe.ly/2wOgO3L" target="_blank">butiksförsäljningsmottagare</a> med exempeldata. |
-| Recipe Builder | En anteckningsboksmall för att skapa ett recept i [!DNL JupyterLab]. Den är förfylld med kod och kommentarer som demonstrerar och beskriver processen att skapa recept. I den <a href="https://www.adobe.com/go/data-science-create-recipe-notebook-tutorial-en" target="_blank">bärbara datorn finns självstudiekurser</a> om du vill se en detaljerad genomgång. |
+| Detaljhandel | En förfylld anteckningsbok med [säljrecept](https://adobe.ly/2wOgO3L) med exempeldata. |
+| Recipe Builder | En anteckningsboksmall för att skapa ett recept i [!DNL JupyterLab]. Den är förfylld med kod och kommentarer som demonstrerar och beskriver processen att skapa recept. I den [bärbara datorn finns självstudiekurser](https://www.adobe.com/go/data-science-create-recipe-notebook-tutorial-en) om du vill se en detaljerad genomgång. |
 | [!DNL Query Service] | En förfylld anteckningsbok som visar hur data används [!DNL Query Service] direkt i [!DNL JupyterLab] de medföljande exempelarbetsflödena för att analysera data i stor skala. |
 | XDM-händelser | En förfylld anteckningsbok som visar datautforskande av Experience Event-data efter värde, med fokus på gemensamma funktioner i datastrukturen. |
 | XDM-frågor | En förfylld anteckningsbok som visar exempel på affärsfrågor om Experience Event-data. |
@@ -455,9 +455,9 @@ Ett anpassat [!DNL Data Science Workspace] magiskt kommando för att läsa eller
 
 ### Fråga data med [!DNL Query Service] hjälp av [!DNL Python]
 
-[!DNL JupyterLab] på [!DNL Platform] kan du använda SQL i en [!DNL Python] anteckningsbok för att komma åt data via <a href="https://www.adobe.com/go/query-service-home-en" target="_blank">Adobe Experience Platform Query Service</a>. Att komma åt data via [!DNL Query Service] kan vara användbart för att hantera stora datauppsättningar på grund av dess överlägsna körtider. Observera att sökning efter data med [!DNL Query Service] har en tidsgräns på tio minuter.
+[!DNL JupyterLab] på [!DNL Platform] kan du använda SQL i en [!DNL Python] anteckningsbok för att komma åt data via [Adobe Experience Platform Query Service](https://www.adobe.com/go/query-service-home-en). Att komma åt data via [!DNL Query Service] kan vara användbart för att hantera stora datauppsättningar på grund av dess överlägsna körtider. Observera att sökning efter data med [!DNL Query Service] har en tidsgräns på tio minuter.
 
-Innan du använder [!DNL Query Service] i [!DNL JupyterLab]måste du ha en fungerande förståelse för <a href="https://www.adobe.com/go/query-service-sql-syntax-en" target="_blank">[!DNL Query Service] SQL-syntaxen</a>.
+Innan du använder [!DNL Query Service] i [!DNL JupyterLab]måste du ha en fungerande förståelse för [[!DNL Query Service] SQL-syntaxen](https://www.adobe.com/go/query-service-sql-syntax-en).
 
 Om du frågar efter data med [!DNL Query Service] måste du ange namnet på måldatauppsättningen. Du kan generera de nödvändiga kodcellerna genom att söka efter den önskade datauppsättningen med **Data Explorer**. Högerklicka på datauppsättningslistan och klicka på **Fråga data i anteckningsbok** för att generera följande två kodceller i anteckningsboken:
 
@@ -638,7 +638,7 @@ timedf.show()
 | klippa | 1.3.0 |
 | seaborn | 0.9.0 |
 | statsmodels | 0.10.1 |
-| vetenskapsman | 5.1.0.17 |
+| elastisk | 5.1.0.17 |
 | ggplot | 0.11.5 |
 | py-xgboost | 0.90 |
 | opencv | 3.4.1 |
@@ -728,7 +728,7 @@ timedf.show()
 | scipy | 0.19.1 |
 | klippa | 1.3.3 |
 | statsmodels | 0.8.0 |
-| vetenskapsman | 4.0.30.44 |
+| elastisk | 4.0.30.44 |
 | py-xgboost | 0.60 |
 | opencv | 3.1.0 |
 | pipa | 0.8.0 |
