@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Importera data till Adobe Experience Platform
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 6e4a3ebe84c82790f58f8ec54e6f72c2aca0b7da
 workflow-type: tm+mt
 source-wordcount: '1185'
 ht-degree: 0%
@@ -148,6 +148,6 @@ Om du vill veta mer om batchförbrukning kan du läsa översikten över [](../ba
 
 >[!WARNING]
 >
-> Gränssnittet [!DNL Platform] som visas i följande video är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
+>Gränssnittet [!DNL Platform] som visas i följande video är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
 
 >[!VIDEO](https://video.tv.adobe.com/v/27269?quality=12&learn=on)
