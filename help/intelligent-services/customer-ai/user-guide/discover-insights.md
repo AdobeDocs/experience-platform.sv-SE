@@ -5,7 +5,7 @@ title: Identifiera insikter med kundens AI
 topic: Discovering insights
 description: Kundens AI, som en del av de intelligenta tjänsterna, ger marknadsförarna möjlighet att utnyttja Adobe Sensei för att förutse vad kunderna kommer att göra härnäst. Kundens AI används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, utbildning eller driftsättning.
 translation-type: tm+mt
-source-git-commit: c30bbaead775e68f869b080e24e18d4a23cda973
+source-git-commit: 6e4a3ebe84c82790f58f8ec54e6f72c2aca0b7da
 workflow-type: tm+mt
 source-wordcount: '1098'
 ht-degree: 0%
@@ -122,7 +122,9 @@ Om du klickar på **[!UICONTROL Create Segment]** knappen i någon av buckarna f
 
 Segmentverktyget används för att definiera ett segment. När du väljer **[!UICONTROL Create Segment]** från Insights-sidan lägger Kund-AI automatiskt till den valda bukettinformationen i segmentet. Slutför segmentskapandet genom att fylla i behållarna *Namn* och *Beskrivning* som finns till höger i segmentbyggarens användargränssnitt. När du har gett segmentet ett namn och en beskrivning klickar du **[!UICONTROL Save]** i det övre högra hörnet.
 
->!![NOTE] Eftersom benägenhetspoängen skrivs till den enskilda profilen är de tillgängliga i segmentbyggaren som andra profilattribut. När du navigerar till segmentbyggaren för att skapa nya segment kan du se alla olika benägenhetspoäng under din namnområdes-AI för kunder.
+>[!NOTE]
+>
+>Eftersom benägenhetspoängen skrivs till den enskilda profilen är de tillgängliga i segmentbyggaren som andra profilattribut. När du navigerar till segmentbyggaren för att skapa nya segment kan du se alla olika benägenhetspoäng under din namnområdes-AI för kunder.
 
 ![Segmentfyllning in](../images/insights/segment-saving.png)
 
