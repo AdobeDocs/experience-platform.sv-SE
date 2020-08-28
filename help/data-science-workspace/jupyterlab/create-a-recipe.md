@@ -5,7 +5,7 @@ title: Skapa ett recept med Jupyter-anteckningsböcker
 topic: Tutorial
 description: Den här självstudiekursen går igenom två huvudavsnitt. Först skapar du en maskininlärningsmodell med hjälp av en mall i JupyterLab Notebook. Därefter ska du använda anteckningsboken för att hämta arbetsflöden i JupyterLab för att skapa ett recept i arbetsytan Data Science.
 translation-type: tm+mt
-source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
+source-git-commit: 6e4a3ebe84c82790f58f8ec54e6f72c2aca0b7da
 workflow-type: tm+mt
 source-wordcount: '2317'
 ht-degree: 0%
@@ -475,6 +475,7 @@ När processen är klar ser receptet ut ungefär så här:
 ![](../images/jupyterlab/create-recipe/recipe_details.png)
 
 >[!CAUTION]
+>
 > - Ta inte bort någon av filcellerna
 > - Redigera inte raden `%%writefile` överst i filcellerna
 > - Skapa inte recept i olika anteckningsböcker samtidigt
