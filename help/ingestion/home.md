@@ -5,7 +5,7 @@ title: Översikt över Adobe Experience Platform datainmatning
 topic: overview
 description: I det här dokumentet introduceras de tre viktigaste sätten att överföra data till plattformen, med länkar till deras respektive översiktsdokumentation för mer detaljerad information.
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 6e4a3ebe84c82790f58f8ec54e6f72c2aca0b7da
 workflow-type: tm+mt
 source-wordcount: '442'
 ht-degree: 0%
@@ -43,10 +43,10 @@ Mer information finns i [Källöversikt](../sources/home.md) .
 
 ## Nästa steg och ytterligare resurser
 
-Detta dokument innehåller en kort introduktion till de olika aspekterna av [!DNL Data Ingestion] i [!DNL Experience Platform]. Fortsätt att läsa översiktsdokumentationen för varje metod för att bekanta dig med deras olika funktioner, användningsfall och bästa metoder. Du kan även komplettera din inlärning genom att titta på videon med en översikt över importen nedan. Mer information om hur du [!DNL Experience Platform] spårar metadata för inkapslade poster finns i [Katalogtjänstöversikt](../catalog/home.md).
+Detta dokument innehåller en kort introduktion till de olika aspekterna av [!DNL Data Ingestion] i [!DNL Experience Platform]. Fortsätt att läsa översiktsdokumentationen för varje intagsmetod för att bekanta dig med deras olika funktioner, användningsfall och bästa metoder. Du kan även komplettera din inlärning genom att titta på videon med en översikt över importen nedan. Mer information om hur du [!DNL Experience Platform] spårar metadata för inkapslade poster finns i [Katalogtjänstöversikt](../catalog/home.md).
 
 >[!WARNING]
 >
-> Termen Enhetlig profil som används i följande video är inaktuell. Termerna [!DNL "Profile"] eller [!DNL "Real-time Customer Profile"] termerna är de korrekta termer som används i [!DNL Experience Platform] dokumentationen. Läs dokumentationen om de senaste funktionerna.
+>Termen Enhetlig profil som används i följande video är inaktuell. Termerna [!DNL "Profile"] eller [!DNL "Real-time Customer Profile"] termerna är de korrekta termer som används i [!DNL Experience Platform] dokumentationen. Läs dokumentationen om de senaste funktionerna.
 
 >[!VIDEO](https://video.tv.adobe.com/v/27106?quality=12&learn=on)
