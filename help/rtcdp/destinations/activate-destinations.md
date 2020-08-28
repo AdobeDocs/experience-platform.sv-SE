@@ -5,7 +5,7 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i kunddataplattformen i Adobe i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i kunddataplattformen i Adobe i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
+source-git-commit: 22bca041673cec5eee54ed4234aba19eca470441
 workflow-type: tm+mt
 source-wordcount: '1492'
 ht-degree: 0%
@@ -51,9 +51,9 @@ Markera ett eller flera segment som ska aktiveras för målet på **[!UICONTROL 
 
 ### **[!UICONTROL Identity mapping]** steg {#identity-mapping}
 
-![Steg för identitetsmappning](/help/rtcdp/destinations/assets/identity-mapping-icon.png)
-
 Gäller för: sociala mål och Google Customer Match-annonsmål
+
+![Steg för identitetsmappning](/help/rtcdp/destinations/assets/identity-mapping-icon.png)
 
 För *sociala mål* kan du i **[!UICONTROL Identity mapping]** steget välja källattribut att mappa som målidentiteter i målet. Det här steget är valfritt eller obligatoriskt, beroende på vilken primär identitet du använder i schemat. <br> 
 
