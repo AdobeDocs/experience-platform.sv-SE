@@ -5,9 +5,9 @@ seo-title: Översikt över destinationer
 description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från kunddataplattformen i realtid. Ni kan använda Destinationer i kunddataplattformen i realtid i Adobe för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad annonsering och många andra användningsfall.
 seo-description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från kunddataplattformen i realtid. Ni kan använda Destinationer i kunddataplattformen i realtid i Adobe för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad annonsering och många andra användningsfall.
 translation-type: tm+mt
-source-git-commit: 54df4778a025811504801306120bda78e04281c1
+source-git-commit: 22bca041673cec5eee54ed4234aba19eca470441
 workflow-type: tm+mt
-source-wordcount: '525'
+source-wordcount: '527'
 ht-degree: 0%
 
 ---
@@ -56,7 +56,7 @@ Datastyrning upprätthålls för CDP-destinationer i realtid genom:
 * *Marknadsföringsanvändningsfall* som du kan välja i arbetsflödet för att skapa destinationer;
 * *Dataanvändningsprinciper* som begränsar data som innehåller vissa användningsetiketter från att aktiveras till mål med vissa användningsfall för marknadsföring.
 
-Mer information om [!DNL Data Governance] användningsfall [för marknadsföring och](/help/rtcdp/privacy/data-governance-overview.md#destinations) lösning av datapolicyöverträdelser finns [i dokumentationen om CDP i realtid](/help/rtcdp/privacy/data-governance-overview.md#enforcement).
+Mer information om [!DNL Data Governance] användningsfall [och](/help/rtcdp/privacy/data-governance-overview.md#destinations) lösning av datapolicyöverträdelser finns [](/help/rtcdp/privacy/data-governance-overview.md#enforcement)i dokumentationen för CDP i realtid.
 
 Mer information om hur du väljer användningsfall för marknadsföring i arbetsflödet för att skapa mål finns på följande sidor för de olika måltyperna i CDP för realtid:
 
@@ -65,6 +65,6 @@ Mer information om hur du väljer användningsfall för marknadsföring i arbets
 * [Annonsmål - Google Display och Video 360 ](/help/rtcdp/destinations/google-dv360-destination.md)
 * [Lagringsmål i molnet](/help/rtcdp/destinations/cloud-storage-destinations-workflow.md)
 * [E-postmarknadsföringsmål](/help/rtcdp/destinations/email-marketing-destinations.md)
-* [Målgrupper i sociala nätverk](/help/rtcdp/destinations/social-network-destinations-workflow.md)
+* [eto](/help/rtcdp/destinations/social-network-destinations-workflow.md)
 
-Mer information om brott mot datapolicyer i arbetsflödet för segmentaktivering finns i steg 7 i [Aktivera profiler och segment till ett mål](/help/rtcdp/destinations/activate-destinations.md).
+Mer information om brott mot datapolicyer i arbetsflödet för segmentaktivering finns i steget Granska i [Aktivera profiler och segment till ett mål](/help/rtcdp/destinations/activate-destinations.md#review).
