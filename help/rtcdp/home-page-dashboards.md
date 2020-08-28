@@ -5,7 +5,7 @@ seo-title: Hemsida och instrumentpaneler för kunddataplattformen i realtid
 description: Kontrollpaneler, startsidan och förstagångsupplevelsen av Adobe Experience Platform
 seo-description: Kontrollpaneler, startsidan och förstagångsupplevelsen av Adobe Experience Platform
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: 98d3792f50f2ab95b86d162c51af9445f06343b5
 workflow-type: tm+mt
 source-wordcount: '614'
 ht-degree: 0%
@@ -19,7 +19,7 @@ Hemsidan Adobe Real-time Customer Data Platform (CDP i realtid), som innehåller
 
 Hemsidan är bara en av platserna där metriska kort visas. CDP ger dig mätkort i realtid genom hela upplevelsen. Dessa mätvärden ger information om data, profiler och målgrupper i systemet.
 
-![bild](assets/home2.jpg)
+![bild](assets/home.png)
 
 Om det inte finns några data i systemet när du loggar in på CDP i realtid visas inte instrumentpanelen på startsidan. I det här fallet innehåller startsidan utbildningsmaterial för en förstagångsupplevelse. När data samlas in - dvs. <!--sources-->datauppsättningar, profiler, segment och mål skapas och dataflöden in i systemet - uppdateras instrumentpanelen automatiskt så att information om dessa data<!-- in metric cards-->visas.
 
@@ -31,14 +31,14 @@ Kontrollpanelen är uppdelad i<!-- two areas.-->:
 
 * **Ledpanelen** visas längst upp på kontrollpanelen. I resultatlistan visas antalet datauppsättningar, profiler, segment och mål i systemet.
 
-   ![bild](assets/home-leaderboard2.jpg)
+   ![bild](assets/leaderboard.png)
 
 <!-- * **Metric cards** display beneath the leaderboard. Metric cards show additional information, such as percentages or trends. Metric cards appear as data is collected.
     ![image](assets/home-metrics.jpg)
 Some information is shown in different ways on both the leaderboard and metric cards. -->
 * **De senaste objekten** listar de fem senaste datauppsättningarna, källorna, segmenten och destinationerna som lagts till i systemet.
 
-   ![bild](assets/home-recent.jpg)
+   ![bild](assets/recent.png)
 
 Ytterligare mätvärden - till exempel för profiler och segment - finns tillgängliga i andra delar av kunddataplattformen i realtid.
 
