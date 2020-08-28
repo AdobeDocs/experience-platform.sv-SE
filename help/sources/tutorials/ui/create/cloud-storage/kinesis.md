@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa en Amazon Kinesis-källanslutning i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: a664a0420189d6a2dda9f33b3aa58cb4883e252f
 workflow-type: tm+mt
 source-wordcount: '443'
 ht-degree: 1%
@@ -29,7 +29,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
    - [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 - [[!DNL Real-time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Om du redan har en giltig [!DNL Kinesis] anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen om hur du [konfigurerar ett dataflöde](../../dataflow/streaming/cloud-storage.md).
+Om du redan har en giltig [!DNL Kinesis] anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen om hur du [konfigurerar ett dataflöde](../../dataflow/streaming/cloud-storage-streaming.md).
 
 ### Samla in nödvändiga inloggningsuppgifter
 
@@ -71,4 +71,4 @@ Om du vill ansluta ett befintligt konto markerar du det [!DNL Kinesis] konto du 
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du anslutit till ditt [!DNL Kinesis] konto till [!DNL Platform]. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till [!DNL Platform]](../../dataflow/streaming/cloud-storage.md).
+Genom att följa den här självstudiekursen har du anslutit till ditt [!DNL Kinesis] konto till [!DNL Platform]. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till [!DNL Platform]](../../dataflow/streaming/cloud-storage-streaming.md).
