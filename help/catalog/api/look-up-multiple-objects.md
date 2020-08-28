@@ -5,9 +5,9 @@ title: Söka efter flera objekt
 topic: developer guide
 description: Om du vill visa flera specifika objekt, i stället för att göra en begäran per objekt, finns det en enkel genväg för att begära flera objekt av samma typ i Katalog. Du kan använda en enda GET-begäran för att returnera flera specifika objekt genom att ta med en kommaavgränsad lista med ID:n.
 translation-type: tm+mt
-source-git-commit: dd1f508b93e8eac14e3c41fac9d8f49769d08f46
+source-git-commit: b791e9e060d7686e8fc264c445bbfd1e01ff5987
 workflow-type: tm+mt
-source-wordcount: '223'
+source-wordcount: '225'
 ht-degree: 0%
 
 ---
@@ -28,6 +28,8 @@ GET /{OBJECT_TYPE}/{ID_1},{ID_2},{ID_3},{ID_4}
 GET /{OBJECT_TYPE}/{ID_1},{ID_2},{ID_3},{ID_4}?properties={PROPERTY_1},{PROPERTY_2},{PROPERTY_3}
 ```
 
+| Parameter | Beskrivning |
+| -------- | ----------- |
 | `{OBJECT_TYPE}` | Den typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{ID}` | En identifierare för ett av de specifika objekt som du vill hämta. |
 
