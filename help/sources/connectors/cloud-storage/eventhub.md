@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Azure Event Hubs-koppling
 topic: overview
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: e628621903dbc0ec7381dfeae99902f503b34869
 workflow-type: tm+mt
 source-wordcount: '223'
 ht-degree: 0%
@@ -65,4 +65,4 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Azure Eve
 ## Ansluta [!DNL Azure Event Hubs] till [!DNL Platform] användargränssnittet
 
 - [Skapa en Azure Event Hubs-källkoppling i användargränssnittet](../../tutorials/ui/create/cloud-storage/eventhub.md)
-- [Konfigurera ett dataflöde för en molnlagringskontakt i användargränssnittet](../../tutorials/ui/dataflow/streaming/cloud-storage.md)
+- [Konfigurera ett dataflöde för en molnlagringskontakt i användargränssnittet](../../tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
