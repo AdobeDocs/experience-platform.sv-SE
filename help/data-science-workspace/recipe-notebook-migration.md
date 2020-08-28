@@ -5,7 +5,7 @@ title: Migreringsguider för mottagare och anteckningsböcker
 topic: Tutorial
 description: I följande handledningar beskrivs stegen och informationen som krävs för att migrera befintliga recept och anteckningsböcker i arbetsytan Datavetenskap.
 translation-type: tm+mt
-source-git-commit: 9ba229195892245d29fb4f17b9f2e5cd6c6ea567
+source-git-commit: 6e4a3ebe84c82790f58f8ec54e6f72c2aca0b7da
 workflow-type: tm+mt
 source-wordcount: '3330'
 ht-degree: 0%
@@ -16,6 +16,7 @@ ht-degree: 0%
 # Migreringsguider för mottagare och anteckningsböcker
 
 >[!NOTE]
+>
 >Bärbara datorer och recept som använder [!DNL Python]/R påverkas inte. Migreringen gäller endast PySpark/[!DNL Spark] (2.3)-recept och anteckningsböcker.
 
 Följande guider beskriver stegen och informationen som krävs för att migrera befintliga recept och anteckningsböcker.
@@ -85,6 +86,7 @@ var df = sparkSession.read.format("com.adobe.platform.query")
 ```
 
 >[!TIP]
+>
 > Interaktivt läge ger timeout om frågor körs längre än 10 minuter. Om du vill importera mer än ett fåtal gigabyte bör du växla till gruppläge. Batchläget tar längre tid att starta men kan hantera större datauppsättningar.
 
 #### Skriv till en datauppsättning
@@ -138,6 +140,7 @@ Scala-receptet finns i följande katalog `experience-platform-dsw-reference/reci
 En ny fil behövs i receptmappen för att det dockningsbaserade arbetsflödet ska kunna användas. Kopiera och klistra in Dockerfile från mappen recept som finns på `experience-platform-dsw-reference/recipes/scala/Dockerfile`. Du kan också kopiera och klistra in koden nedan i en ny fil med namnet `Dockerfile`.
 
 >[!IMPORTANT]
+>
 > Beskrivningsfilen som visas nedan `ml-retail-sample-spark-*-jar-with-dependencies.jar` ska ersättas med namnet på mottagarens jar-fil.
 
 ```scala
@@ -222,6 +225,7 @@ pd = sparkSession.read.format("com.adobe.platform.query")
 ```
 
 >[!TIP]
+>
 > Interaktivt läge ger timeout om frågor körs längre än 10 minuter. Om du vill importera mer än ett fåtal gigabyte bör du växla till gruppläge. Batchläget tar längre tid att starta men kan hantera större datauppsättningar.
 
 #### Skriv till en datauppsättning
@@ -275,6 +279,7 @@ PySpark-receptet finns i följande katalog `experience-platform-dsw-reference/re
 En ny fil behövs i receptmappen för att det dockningsbaserade arbetsflödet ska kunna användas. Kopiera och klistra in Dockerfile från mappen recept som finns på `experience-platform-dsw-reference/recipes/pyspark/Dockerfile`. Du kan också kopiera och klistra in koden nedan och skapa en ny fil med namnet `Dockerfile`.
 
 >[!IMPORTANT]
+>
 > Den exempeläggfil som visas nedan `pysparkretailapp-*.egg` bör ersättas med namnet på mottagarens äggfil.
 
 ```scala
