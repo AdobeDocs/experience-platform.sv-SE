@@ -5,7 +5,7 @@ title: Motorer
 topic: Developer guide
 description: Motorer är grunden för maskininlärningsmodeller i arbetsytan för datavetenskap. De innehåller algoritmer för maskininlärning som löser specifika problem, rörledningar för att utföra funktionsteknik eller bådadera.
 translation-type: tm+mt
-source-git-commit: 9ba229195892245d29fb4f17b9f2e5cd6c6ea567
+source-git-commit: 6e4a3ebe84c82790f58f8ec54e6f72c2aca0b7da
 workflow-type: tm+mt
 source-wordcount: '1147'
 ht-degree: 0%
@@ -20,6 +20,7 @@ Motorer är grunden för maskininlärningsmodeller i arbetsytan för datavetensk
 ## Slå upp Docker-registret
 
 >[!TIP]
+>
 >Om du inte har någon Docker-URL kan du gå till [Paketkällfilerna i en recept](../models-recipes/package-source-files-recipe.md) -självstudiekurs för att stegvis gå igenom hur du skapar en Docker-värd-URL.
 
 Docker-registerautentiseringsuppgifterna krävs för att överföra en paketerad mottagarfil, inklusive Docker-värdens URL, användarnamn och lösenord. Du kan söka efter den här informationen genom att utföra följande GET-förfrågan:
