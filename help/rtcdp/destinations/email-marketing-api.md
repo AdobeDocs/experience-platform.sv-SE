@@ -4,15 +4,15 @@ solution: Experience Platform
 title: Skapa e-postmarknadsföringsmål
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 3cfbee08c1948b2e073547f9bbf0c8526cbfd4bc
 workflow-type: tm+mt
-source-wordcount: '1621'
+source-wordcount: '1624'
 ht-degree: 0%
 
 ---
 
 
-# Skapa e-postmarknadsföringsmål och aktivera data i Adobe [!DNL Real-time Customer Data Platform]
+# Skapa e-postmarknadsföringsmål och aktivera data med API-anrop i Adobe [!DNL Real-time Customer Data Platform]
 
 I den här självstudiekursen visas hur du använder API-anrop för att ansluta till dina Adobe Experience Platform-data, skapa ett [e-postmarknadsföringsmål](../../rtcdp/destinations/email-marketing-destinations.md), skapa ett dataflöde till det nya målet som du skapat och aktivera data till det nya målet som du skapat.
 
