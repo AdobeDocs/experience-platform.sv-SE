@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics; flow service; payment; paypal
 solution: Experience Platform
 title: Samla in betalningsdata via källanslutningar och API:er
 topic: overview
+description: Den här självstudiekursen beskriver stegen för att hämta data från ett betalningsprogram från tredje part och hämta dem till plattformen via källanslutningar och API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: c26b2b4256d8d1d23a285efbacd8b6c9e255cd18
+source-git-commit: 6578fd607d6f897a403d0af65c81dafe3dc12578
 workflow-type: tm+mt
-source-wordcount: '1702'
+source-wordcount: '1747'
 ht-degree: 0%
 
 ---
@@ -16,7 +17,7 @@ ht-degree: 0%
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-Den här självstudiekursen beskriver stegen för att hämta data från ett betalningsprogram och att hämta in dem [!DNL Platform] via källanslutningar och API:er.
+Den här självstudiekursen beskriver stegen för att hämta data från ett tredjepartsbetalningssystem och hämta in dem [!DNL Platform] via källanslutningar och API:t för [[!DNL Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) .
 
 ## Komma igång
 
@@ -24,11 +25,11 @@ Den här självstudiekursen kräver att du har tillgång till ett betalningssyst
 
 Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](../../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+* [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Utvecklarhandbok](../../../../xdm/api/getting-started.md)för schemaregister: Innehåller viktig information som du behöver känna till för att kunna utföra anrop till API:t för schemaregister. Detta inkluderar ditt `{TENANT_ID}`, konceptet med&quot;behållare&quot; och de rubriker som krävs för att göra förfrågningar (med särskild uppmärksamhet på rubriken Godkänn och dess möjliga värden).
-* [Katalogtjänst](../../../../catalog/home.md): Katalog är systemet för registrering av dataplatser och -rader inom [!DNL Experience Platform].
-* [Batchförtäring](../../../../ingestion/batch-ingestion/overview.md): Med API:t för gruppinmatning kan du importera data till [!DNL Experience Platform] som gruppfiler.
+* [[!DNL Catalog Service]](../../../../catalog/home.md): Katalog är systemet för registrering av dataplatser och -länkar inom [!DNL Experience Platform].
+* [[!DNL Batch-ingång]](../../../../ingestion/batch-ingestion/overview.md): Med API:t för gruppinmatning kan du importera data till [!DNL Experience Platform] som gruppfiler.
 * [Sandlådor](../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till ett betalningsprogram med API:t. [!DNL Flow Service]
