@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användarhandbok för Privacy Service
 topic: UI guide
 translation-type: tm+mt
-source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
+source-git-commit: c8446f6040ac9ef1f4196d9057b531011e243258
 workflow-type: tm+mt
 source-wordcount: '1023'
 ht-degree: 0%
@@ -121,7 +121,7 @@ När du använder den _anpassade_ namnområdestypen måste du skriva in namnutry
 
 <img src="../images/user-guide/custom-namespace.png" width="500" /><br/>
 
-När du är klar klickar du på **[!UICONTROL Create]**.
+Klicka på **[!UICONTROL Create]** när du är klar.
 
 <img src="../images/user-guide/request-builder-create.png" width="500" /><br/>
 
@@ -129,7 +129,7 @@ Dialogrutan försvinner och det nya jobbet (eller de nya jobben) visas i widgete
 
 ### Överföra en JSON-fil {#json}
 
-När du skapar mer komplicerade begäranden, t.ex. sådana som använder flera ID-typer för varje registrerade som behandlas, kan du skapa en begäran genom att överföra en JSON-fil.
+När du skapar mer komplicerade begäranden, till exempel sådana som använder flera ID-typer för varje registrerade som behandlas, kan du skapa en begäran genom att överföra en JSON-fil.
 
 Klicka på pilen bredvid **[!UICONTROL Create Request]**, under widgeten Statusrapport till höger på skärmen. Välj i listan med alternativ som visas **[!UICONTROL Upload JSON]**.
 
@@ -147,7 +147,7 @@ Om du inte har någon JSON-fil att överföra klickar du för **[!UICONTROL Down
 
 Leta reda på JSON-filen på datorn och dra den till dialogfönstret. Om överföringen lyckas visas filnamnet i dialogrutan. Du kan fortsätta lägga till fler JSON-filer om det behövs genom att dra och släppa dem i dialogrutan.
 
-När du är klar klickar du på **[!UICONTROL Create]**. Dialogrutan försvinner och det nya jobbet (eller de nya jobben) visas i widgeten _Jobbförfrågningar_ tillsammans med deras aktuella bearbetningsstatus.
+Klicka på **[!UICONTROL Create]** när du är klar. Dialogrutan försvinner och det nya jobbet (eller de nya jobben) visas i widgeten _Jobbförfrågningar_ tillsammans med deras aktuella bearbetningsstatus.
 
 ### Nästa steg
 
