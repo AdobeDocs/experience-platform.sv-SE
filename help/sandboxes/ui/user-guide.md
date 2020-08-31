@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Handbok för sandlådeanvändare
 topic: user guide
 translation-type: tm+mt
-source-git-commit: c52d8cdbc5a4ee6fab8c2b1b284efea5f735d424
+source-git-commit: c8446f6040ac9ef1f4196d9057b531011e243258
 workflow-type: tm+mt
 source-wordcount: '505'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Handbok för sandlådeanvändare
 
-Det här dokumentet innehåller steg om hur du utför olika åtgärder som rör sandlådor i användargränssnittet i Adobe Experience Platform.
+Det här dokumentet innehåller steg om hur du utför olika åtgärder relaterade till sandlådor i Adobe Experience Platform användargränssnitt.
 
 ## Visa sandlådor
 
@@ -48,7 +48,7 @@ Om du vill skapa en ny sandlåda i användargränssnittet klickar du **[!UICONTR
 
 Dialogrutan visas och du uppmanas att ange en visningsrubrik och ett namn för sandlådan. _[!UICONTROL Create Sandbox]_Visningsrubriken ****är avsedd att vara läsbar för människor och bör vara tillräckligt beskrivande för att vara lätt att identifiera. Sandlådan **[!UICONTROL Name]**är en helgemen identifierare som ska användas i API-anrop och ska därför vara unik och koncis.
 
-När du är klar klickar du på **[!UICONTROL Create]**.
+Klicka på **[!UICONTROL Create]** när du är klar.
 
 ![](../images/ui/create-sandbox-dialog.png)
 
