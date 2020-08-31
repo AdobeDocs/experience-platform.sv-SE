@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Felsökningsguide för sandlådor
 topic: troubleshooting guide
 translation-type: tm+mt
-source-git-commit: f15049ca917818d325b5783c70faaa53ba669aba
+source-git-commit: d4ae318f43904dd73756985512c303fa7149b678
 workflow-type: tm+mt
-source-wordcount: '487'
+source-wordcount: '530'
 ht-degree: 0%
 
 ---
@@ -14,13 +14,13 @@ ht-degree: 0%
 
 # Felsökningsguide för sandlådor
 
-Det här dokumentet innehåller svar på vanliga frågor om sandlådor i Adobe Experience Platform. För frågor och felsökning som rör andra Platform-tjänster, se felsökningsguiden för [Experience Platform](../landing/troubleshooting.md).
+Det här dokumentet innehåller svar på vanliga frågor om sandlådor i Adobe Experience Platform. För frågor och felsökning som rör andra plattformstjänster, se felsökningsguiden för [Experience Platform](../landing/troubleshooting.md).
 
-Sandlådor delar en enda Platform-instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser. Mer information finns i översikten över [](home.md) sandlådor.
+Sandlådor delar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser. Mer information finns i översikten över [](home.md) sandlådor.
 
 ## Vad är en sandlåda?
 
-Sandlådor är virtuella partitioner i en enda instans av Experience Platform. Varje sandlåda har ett eget oberoende bibliotek med Platform-resurser (inklusive scheman, datauppsättningar, profiler och så vidare). Allt innehåll och alla åtgärder som vidtas i en sandlåda begränsas till enbart den sandlådan och påverkar inte några andra sandlådor. Mer information finns i översikten över [](home.md) sandlådor.
+Sandlådor är virtuella partitioner i en enda instans av Experience Platform. Varje sandlåda har ett eget oberoende bibliotek med plattformsresurser (inklusive scheman, datauppsättningar, profiler och så vidare). Allt innehåll och alla åtgärder som vidtas i en sandlåda begränsas till enbart den sandlådan och påverkar inte några andra sandlådor. Mer information finns i översikten över [](home.md) sandlådor.
 
 ## Vilka typer av sandlådor är tillgängliga och vilka är skillnaderna?
 
@@ -29,19 +29,19 @@ Det finns två typer av sandlådor i Experience Platform:
 * Produktionssandlåda
 * Icke-produktionssandlåda
 
-Experience Platform har en enda **produktionssandlåda** som inte kan tas bort eller återställas. Det får bara finnas en produktionssandlåda för en enda Platform-instans.
+Experience Platform har en enda **produktionssandlåda** som inte kan tas bort eller återställas. Det får bara finnas en produktionssandlåda för en enda plattformsinstans.
 
-Däremot kan flera **icke-produktionssandlådor** skapas av sandlådeadministratörer för en enda Platform-instans. Med icke-produktionssandlådor kan du testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka din produktionssandlåda. Dessutom har icke-produktionssandlådor en återställningsfunktion som tar bort alla kundskapade resurser från sandlådan. Det går inte att konvertera icke-produktionssandlådor till produktionssandlådor.
+Däremot kan flera **icke-produktionssandlådor** skapas av sandlådeadministratörer för en enda plattformsinstans. Med icke-produktionssandlådor kan du testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka din produktionssandlåda. Dessutom har icke-produktionssandlådor en återställningsfunktion som tar bort alla kundskapade resurser från sandlådan. Det går inte att konvertera icke-produktionssandlådor till produktionssandlådor. En standardlicens för Experience Platform ger dig fem sandlådor (en och fyra icke-produktioner). Du kan lägga till paket med tio icke-produktionssandlådor, upp till totalt 75 sandlådor. Kontakta din IMS-organisationsadministratör eller din Adobe-säljare om du vill ha mer information.
 
 Mer information finns i översikten över [](./home.md) sandlådor.
 
 ## Kan jag få åtkomst till en resurs från mer än en sandlåda?
 
-Sandlådor är isolerade partitioner av en enda Platform-instans, där varje sandlåda underhåller ett eget oberoende resursbibliotek. En resurs som finns i en sandlåda kan inte nås från någon annan sandlåda, oavsett sandlådetyp (produktion eller icke-produktion).
+Sandlådor är isolerade partitioner av en enda plattformsinstans, där varje sandlåda underhåller ett eget oberoende resursbibliotek. En resurs som finns i en sandlåda kan inte nås från någon annan sandlåda, oavsett sandlådetyp (produktion eller icke-produktion).
 
 ## Hur många produktionssandlådor kan jag ha?
 
-Experience Platform har endast stöd för en produktionssandlåda per IMS-organisation, som medföljer. Även om det går att byta namn på produktionssandlådan kan den inte tas bort eller återställas. Användare med administratörsbehörighet för sandlådan kan bara skapa, återställa och ta bort sandlådor som inte är produktionssandlådor.
+Experience Platform har endast stöd för en produktionssandlåda per IMS-organisation, som medföljer. Även om det går att byta namn på produktionssandlådan kan den inte tas bort eller återställas. Användare med administratörsbehörighet för sandlådan kan bara skapa, återställa och ta bort icke-produktionssandlådor.
 
 ## Hur många icke-produktionssandlådor kan jag ha?
 
