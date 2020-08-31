@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics; flow service; advertising; google adwords
 solution: Experience Platform
 title: Samla in annonsdata via källkopplingar och API:er
 topic: overview
+description: Den här självstudiekursen beskriver stegen för att hämta data från en annonsapplikation från tredje part och hämta dem till plattformen via källanslutningar och API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 6578fd607d6f897a403d0af65c81dafe3dc12578
 workflow-type: tm+mt
-source-wordcount: '1644'
+source-wordcount: '1561'
 ht-degree: 0%
 
 ---
@@ -16,7 +17,7 @@ ht-degree: 0%
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-Den här självstudiekursen beskriver stegen för att hämta data från en annonsapplikation från tredje part och föra in dem [!DNL Platform] via källkopplingar och API:er.
+Den här självstudiekursen beskriver stegen för att hämta data från ett annonsprogram från tredje part och att hämta dem till [!DNL Platform] via källanslutningar och API:t för [[!DNL Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) .
 
 ## Komma igång
 
@@ -41,29 +42,21 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
-* Behörighet: Bearer `{ACCESS_TOKEN}`
-* x-api-key: `{API_KEY}`
-* x-gw-ims-org-id: `{IMS_ORG}`
+* `Authorization: Bearer {ACCESS_TOKEN}`
+* `x-api-key: {API_KEY}`
+* `x-gw-ims-org-id: {IMS_ORG}`
 
 Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
-* x-sandbox-name: `{SANDBOX_NAME}`
+* `x-sandbox-name: {SANDBOX_NAME}`
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
 
-* Innehållstyp: `application/json`
-
-## Skapa en ad hoc XDM-klass och ett schema
-
-För att externa data ska kunna hämtas [!DNL Platform] via källkopplingar måste en ad hoc-XDM-klass och ett schema skapas för råkälldata.
-
-Om du vill skapa en ad hoc-klass och ett ad hoc-schema följer du stegen som beskrivs i [ad hoc-schemautstudiekursen](../../../../xdm/tutorials/ad-hoc.md). När du skapar en ad hoc-klass måste alla fält i källdata beskrivas i begärandetexten.
-
-Fortsätt att följa stegen som beskrivs i utvecklarhandboken tills du har skapat ett ad hoc-schema. Den unika identifieraren (`$id`) för ad hoc-schemat krävs för att fortsätta till nästa steg i den här självstudiekursen.
+* `Content-Type: application/json`
 
 ## Skapa en källanslutning {#source}
 
-När ett ad hoc-XDM-schema har skapats kan en källanslutning skapas med hjälp av en POST till [!DNL Flow Service] API:t. En källanslutning består av en basanslutning, en källdatafil och en referens till schemat som beskriver källdata.
+Du kan skapa en källanslutning genom att göra en POST-förfrågan till [!DNL Flow Service] API:t. En källanslutning består av ett anslutnings-ID, en sökväg till källdatafilen och ett anslutnings-spec-ID.
 
 Om du vill skapa en källanslutning måste du också definiera ett uppräkningsvärde för dataformatattributet.
 
@@ -99,10 +92,6 @@ curl -X POST \
         "description": "Advertising source connection",
         "data": {
             "format": "tabular",
-            "schema": {
-                "id": "https://ns.adobe.com/{TENANT_ID}/schemas/9056f97e74edfa68ccd811380ed6c108028dcb344168746d",
-                "version": "application/vnd.adobe.xed-full-notext+json; version=1"
-            }
         },
         "params": {
             "path": "v201809.AD_PERFORMANCE_REPORT"
@@ -117,7 +106,6 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `baseConnectionId` | Det unika anslutnings-ID:t för det annonsprogram från tredje part som du använder. |
-| `data.schema.id` | The `$id` of the ad hoc XDM schema. |
 | `params.path` | Källfilens sökväg. |
 | `connectionSpec.id` | Det anslutnings-spec-ID som är kopplat till ditt specifika tredjepartsannonsprogram. |
 
