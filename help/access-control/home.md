@@ -5,9 +5,9 @@ topic: overview
 title: Översikt över åtkomstkontroll
 description: Åtkomstkontroll för Adobe Experience Platform tillhandahålls via Adobe Admin Console. Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor.
 translation-type: tm+mt
-source-git-commit: cddc559dfb65ada888bb367d6265863091a9b2a1
+source-git-commit: e22b0f64fd6153f76cff862a6e973a235257430e
 workflow-type: tm+mt
-source-wordcount: '1056'
+source-wordcount: '1087'
 ht-degree: 1%
 
 ---
@@ -57,7 +57,7 @@ I [!DNL Admin Console]tilldelas användare behörigheter genom att använda **[!
 
 ## Sandlådor och behörigheter
 
-[!DNL Experience Platform] ger åtkomst till en produktionssandlåda och gör att du kan skapa **sandlådor** som inte är i produktion. Sandlådor som inte är produktionssandlådor är en form av datavirtualisering som gör att du kan isolera data från andra sandlådor och som vanligtvis används för utvecklingsexperiment, testning och testning. En produktprofils **[!UICONTROL permissions]** ger profilens användare tillgång till [!DNL Platform] funktioner i sandlådemiljöer som de har beviljats åtkomst till.
+Sandlådor som inte är produktionssandlådor är en form av datavirtualisering som gör att du kan isolera data från andra sandlådor och som vanligtvis används för utvecklingsexperiment, testning och testning. En produktprofils **[!UICONTROL permissions]** ger profilens användare tillgång till [!DNL Platform] funktioner i sandlådemiljöer som de har beviljats åtkomst till. En standardlicens för Experience Platform ger dig fem sandlådor (en och fyra icke-produktioner). Du kan lägga till paket med tio icke-produktionssandlådor, upp till totalt högst 75 sandlådor. Kontakta din IMS-organisationsadministratör eller din Adobe-säljare om du vill ha mer information.
 
 Mer information om sandlådor i finns i [!DNL Experience Platform]översikten över [sandlådor](../sandboxes/home.md).
 
