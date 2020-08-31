@@ -4,15 +4,15 @@ solution: Experience Platform
 title: Ansluta till direktuppspelningsmål och aktivera data
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 3cfbee08c1948b2e073547f9bbf0c8526cbfd4bc
 workflow-type: tm+mt
-source-wordcount: '1815'
+source-wordcount: '1816'
 ht-degree: 0%
 
 ---
 
 
-# Ansluta till direktuppspelningsmål och aktivera data i Adobe Real-time Customer Data Platform med API:er
+# Ansluta till direktuppspelningsmål och aktivera data med API-anrop i Adobe Real-time Customer Data Platform
 
 >[!NOTE]
 >
