@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics; flow service; database; sql; no sql; data warehouse
 solution: Experience Platform
 title: Samla in data från en tredjepartsdatabas via källanslutningar och API:er
 topic: overview
+description: Den här självstudiekursen beskriver stegen för att hämta data från en tredjepartsdatabas och hämta dem till plattformen via källanslutningar och API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 6578fd607d6f897a403d0af65c81dafe3dc12578
 workflow-type: tm+mt
-source-wordcount: '1745'
+source-wordcount: '1653'
 ht-degree: 0%
 
 ---
@@ -14,9 +15,9 @@ ht-degree: 0%
 
 # Samla in data från en tredjepartsdatabas via källanslutningar och API:er
 
-[[!DNL Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-Den här självstudiekursen beskriver stegen för att hämta data från en tredjepartsdatabas och hämta in dem [!DNL Platform] via källanslutningar och API:er.
+Den här självstudiekursen beskriver stegen för att hämta data från en tredjepartsdatabas och hämta dem till [!DNL Platform] via källanslutningar och API:t för [[!DNL Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) .
 
 ## Komma igång
 
@@ -24,11 +25,11 @@ Den här självstudien kräver att du har en giltig anslutning till en tredjepar
 
 Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](../../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+* [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Utvecklarhandbok](../../../../xdm/api/getting-started.md)för schemaregister: Innehåller viktig information som du behöver känna till för att kunna utföra anrop till API:t för schemaregister. Detta inkluderar ditt `{TENANT_ID}`, konceptet med&quot;behållare&quot; och de rubriker som krävs för att göra förfrågningar (med särskild uppmärksamhet på rubriken Godkänn och dess möjliga värden).
-* [Katalogtjänst](../../../../catalog/home.md): Katalog är systemet för registrering av dataplatser och -länkar inom [!DNL Experience Platform].
-* [Batchförtäring](../../../../ingestion/batch-ingestion/overview.md): Med API:t för gruppinmatning kan du importera data till [!DNL Experience Platform] som gruppfiler.
+* [[!DNL Catalog Service]](../../../../catalog/home.md): Katalog är systemet för registrering av dataplatser och -länkar inom [!DNL Experience Platform].
+* [[!DNL Batch-ingång]](../../../../ingestion/batch-ingestion/overview.md): Med API:t för gruppinmatning kan du importera data till [!DNL Experience Platform] som gruppfiler.
 * [Sandlådor](../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ansluta till en tredjepartsdatabas med API:t för [[!DNL Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) .
@@ -41,29 +42,21 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
-* Behörighet: Bearer `{ACCESS_TOKEN}`
-* x-api-key: `{API_KEY}`
-* x-gw-ims-org-id: `{IMS_ORG}`
+* `Authorization: Bearer {ACCESS_TOKEN}`
+* `x-api-key: {API_KEY}`
+* `x-gw-ims-org-id: {IMS_ORG}`
 
 Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
-* x-sandbox-name: `{SANDBOX_NAME}`
+* `x-sandbox-name: {SANDBOX_NAME}`
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
 
-* Innehållstyp: `application/json`
-
-## Skapa en ad hoc XDM-klass och ett schema
-
-För att externa data ska kunna hämtas [!DNL Platform] via källkopplingar måste en ad hoc-XDM-klass och ett schema skapas för råkälldata.
-
-Om du vill skapa en ad hoc-klass och ett ad hoc-schema följer du stegen som beskrivs i [ad hoc-schemautstudiekursen](../../../../xdm/tutorials/ad-hoc.md). När du skapar en ad hoc-klass måste alla fält i källdata beskrivas i begärandetexten.
-
-Fortsätt att följa stegen som beskrivs i utvecklarhandboken tills du har skapat ett ad hoc-schema. Hämta och lagra den unika identifieraren (`$id`) för ad hoc-schemat och fortsätt sedan till nästa steg i kursen.
+* `Content-Type: application/json`
 
 ## Skapa en källanslutning {#source}
 
-När ett ad hoc-XDM-schema har skapats kan en källanslutning skapas med hjälp av en POST till [!DNL Flow Service] API:t. En källanslutning består av ett anslutnings-ID, en källdatafil och en referens till schemat som beskriver källdata.
+Du kan skapa en källanslutning genom att göra en POST-förfrågan till [!DNL Flow Service] API:t. En källanslutning består av ett anslutnings-ID, en sökväg till källdatafilen och ett anslutnings-spec-ID.
 
 Om du vill skapa en källanslutning måste du också definiera ett uppräkningsvärde för dataformatattributet.
 
@@ -99,10 +92,6 @@ curl -X POST \
         "description": "A test source connector for a third-party database",
         "data": {
             "format": "tabular",
-            "schema": {
-                "id": "https://ns.adobe.com/{TENANT_ID}/schemas/21b30fa2c00a2a8d7c3010272dffa16d3cc9eec504aa6c7",
-                "version": "application/vnd.adobe.xed-full-notext+json; version=1"
-            }
         },
         "params": {
             "path": "ADMIN.E2E"
@@ -117,7 +106,6 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `baseConnectionId` | Anslutnings-ID för tredje parts databaskälla. |
-| `data.schema.id` | The `$id` of the ad hoc XDM schema. |
 | `params.path` | Källfilens sökväg. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID för tredje parts databaskälla. I [bilagan](#appendix) finns en lista över databasspecifika ID:n. |
 
