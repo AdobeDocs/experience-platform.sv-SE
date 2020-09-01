@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Apache Spark;apache spark;Azure HDInsights;azure hdinsights
 solution: Experience Platform
 title: Apache Spark på Azure HDInsights-kontakten
 topic: overview
+description: Dokumentationen nedan innehåller information om hur du ansluter Apache Spark på Azure HDInsights till plattformen med API:er eller användargränssnittet.
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
 workflow-type: tm+mt
-source-wordcount: '231'
+source-wordcount: '253'
 ht-degree: 0%
 
 ---
