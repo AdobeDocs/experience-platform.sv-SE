@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API
+keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API;consent;Consent;preferences;Preferences;privacyOptOuts;marketingPreferences;optOutType;basisOfProcessing;
 solution: Adobe Experience Platform
 title: Översikt över mixning av sekretess
+description: Blandningen av sekretess-/marknadsföringsinställningar (samtycke) är en XDM-blandning (Experience Data Model) som har stöd för insamling av användarbehörigheter och -inställningar som genereras av CMP och andra källor från kunder. Detta dokument omfattar strukturen och den avsedda användningen av de olika fält som anges i blandningen.
 topic: guide
 translation-type: tm+mt
-source-git-commit: 02014c503dc9d4597e1129cafe3ba86f4abe37e9
+source-git-commit: 74a4a3cc713cc068be30379e8ee11572f8bb0c63
 workflow-type: tm+mt
-source-wordcount: '1778'
+source-wordcount: '1827'
 ht-degree: 0%
 
 ---
@@ -238,7 +239,7 @@ För att kunna använda den [!DNL Privacy Consent] här blandningen för att imp
 
 I självstudiekursen om hur du [skapar ett schema i användargränssnittet](http://www.adobe.com/go/xdm-schema-editor-tutorial-en) finns anvisningar om hur du lägger till blandningar i ett schema. Blandningen[!DNL  Privacy Consent] är kompatibel med scheman som baseras på klasserna [!DNL XDM Individual Profile] eller [!DNL XDM ExperienceEvent].
 
-När du har skapat ett schema som innehåller [!DNL Privacy Consent] mixinen kan du läsa avsnittet om hur du [skapar en datauppsättning](../../catalog/datasets/user-guide.md#create) i användarhandboken för datauppsättningen och följa stegen för att skapa en datauppsättning med ett befintligt schema.
+När du har skapat ett schema som innehåller [!DNL Privacy Consent] mixinen ska du läsa avsnittet om hur du [skapar en datauppsättning](../../catalog/datasets/user-guide.md#create) i användarhandboken för datauppsättningen, som följer stegen för att skapa en datauppsättning med ett befintligt schema.
 
 >[!IMPORTANT]
 >
@@ -246,7 +247,7 @@ När du har skapat ett schema som innehåller [!DNL Privacy Consent] mixinen kan
 
 ## Bilaga {#appendix}
 
-I avsnitten nedan finns ytterligare referensinformation om [!DNL Privacy Consent] mixinen.
+Avsnitten nedan innehåller ytterligare referensinformation om [!DNL Privacy Consent] blandningen.
 
 ### Godkända värden för xdm:optOutType {#optOutType-values}
 
@@ -266,7 +267,7 @@ I följande tabell visas de godkända värdena för `xdm:basisOfProcessing`:
 
 | Värde | Beskrivning |
 | --- | --- |
-| `consent` **(Standard)** | Insamling av uppgifter för det angivna ändamålet är tillåten, eftersom den enskilda personen har gett uttryckligt tillstånd. Det här är standardvärdet för `xdm:basisOfProcessing` om inget annat värde anges. <br><br>**VIKTIGT **: Värdena för`xdm:choice`och`xdm:optOutValue`respekteras bara när`xdm:basisOfProcessing`är inställt på`consent`. Om något av de andra värdena som anges i den här tabellen används för`xdm:basisOfProcessing`i stället, ignoreras personens val av samtycke. |
+| `consent` **(Standard)** | Insamling av uppgifter för det angivna ändamålet är tillåten, eftersom den enskilda personen har gett uttryckligt tillstånd. Det här är standardvärdet för `xdm:basisOfProcessing` om inget annat värde anges. <br><br>**VIKTIGT**: Värdena för `xdm:choice` och `xdm:optOutValue` respekteras bara när `xdm:basisOfProcessing` är inställt på `consent`. Om något av de andra värdena som anges i den här tabellen används för `xdm:basisOfProcessing` i stället, ignoreras personens val av samtycke. |
 | `compliance` | Insamlingen av uppgifter för det angivna ändamålet krävs för att uppfylla företagets rättsliga skyldigheter. |
 | `contract` | Insamling av uppgifter för det angivna ändamålet krävs för att uppfylla avtalsförpliktelser med den enskilda personen. |
 | `legitimate_interest` | Det legitima affärsintresset att samla in och behandla dessa uppgifter för det särskilda ändamålet uppväger den potentiella skada som de kan åsamka den enskilda personen. |
@@ -280,7 +281,7 @@ I följande tabell visas godkända värden för `xdm:choice` och `xdm:optOutValu
 | Värde | Beskrivning |
 | --- | --- |
 | `pending` | Systemet har ännu inte fått information om kundernas önskemål om samtycke. Kan användas för den första sidan på en webbplats medan samtycke inhämtas. Den kan också användas för att ange att samtycke är&quot;antaget&quot;, i stället för att uttryckligen anges. |
-| `in` | Användaren har valt att godkänna. De **samtycker med andra ord** till att deras uppgifter används, vilket anges i den aktuella medgivandepreferensen. |
+| `in` | Användaren har valt att godkänna. Med andra ord **godkänner** de att deras uppgifter används på det sätt som anges i den aktuella medgivandepreferensen. |
 | `out` | Användaren har avanmält sig från inställningen för samtycke. Med andra ord **samtycker de inte** till att deras uppgifter används på det sätt som anges i den aktuella medgivandepreferensen. |
 | `not_applicable` | Den aktuella medgivandepreferensen gäller inte för kunden. |
 | `not_provided` | Kunden har inte lämnat någon information om samtyckespreferens. |
