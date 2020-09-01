@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics; flow service; crm; salesforce; dynamics
+keywords: Experience Platform;home;popular topics;crm;CRM
 solution: Experience Platform
 title: Samla in CRM-data via källanslutningar och API:er
 topic: overview
-description: Den här självstudiekursen beskriver stegen för att hämta data från ett CRM-system från tredje part och att hämta dem till plattformen via källanslutningar och API:t för Flow Service.
+description: Den här självstudiekursen beskriver stegen för att hämta data från ett CRM-system från tredje part och föra in dem på plattformen via källanslutningar och API:er.
 translation-type: tm+mt
-source-git-commit: 6578fd607d6f897a403d0af65c81dafe3dc12578
+source-git-commit: 6f4714561c2946a084eed4e89d3148df5b8044f5
 workflow-type: tm+mt
-source-wordcount: '1596'
+source-wordcount: '1595'
 ht-degree: 0%
 
 ---
