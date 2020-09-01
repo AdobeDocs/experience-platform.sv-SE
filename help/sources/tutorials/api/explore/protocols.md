@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;protocol
 solution: Experience Platform
 title: Utforska ett protokollsystem med API:t för Flow Service
 topic: overview
+description: I den här självstudien används API:t för Flow Service för att utforska protokollprogram.
 translation-type: tm+mt
-source-git-commit: fc5cdaa661c47e14ed5412868f3a54fd7bd2b451
+source-git-commit: 25f1dfab07d0b9b6c2ce5227b507fc8c8ecf9873
 workflow-type: tm+mt
-source-wordcount: '567'
-ht-degree: 0%
+source-wordcount: '578'
+ht-degree: 1%
 
 ---
 
@@ -189,4 +190,4 @@ Ett lyckat svar returnerar strukturen för den angivna tabellen. Information om 
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du utforskat ditt protokollprogram, hittat sökvägen till den tabell som du vill importera [!DNL Platform]och fått information om dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in data från dina protokollprogram och överföra dem till Platform](../collect/protocols.md).
+Genom att följa den här självstudiekursen har du utforskat ditt protokollprogram, hittat sökvägen till den tabell som du vill importera [!DNL Platform]och fått information om dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in data från ditt protokollprogram och överföra dem till Platform](../collect/protocols.md).
