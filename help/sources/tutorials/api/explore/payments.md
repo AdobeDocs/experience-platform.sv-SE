@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;payment
 solution: Experience Platform
 title: Utforska ett betalningssystem med API:t för Flow Service
 topic: overview
+description: I den här självstudien används API:t för Flow Service för att utforska betalningsprogram.
 translation-type: tm+mt
-source-git-commit: fc5cdaa661c47e14ed5412868f3a54fd7bd2b451
+source-git-commit: 25f1dfab07d0b9b6c2ce5227b507fc8c8ecf9873
 workflow-type: tm+mt
-source-wordcount: '576'
-ht-degree: 0%
+source-wordcount: '587'
+ht-degree: 1%
 
 ---
 
@@ -29,7 +30,7 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-Den här självstudien kräver att du har en giltig anslutning till det betalningsprogram från tredje part som du vill importera data från. En giltig anslutning innefattar programmets anslutningsspecifikations-ID och anslutnings-ID. Mer information om hur du skapar en betalningsanslutning och hämtar dessa värden finns i självstudiekursen [Koppla en betalningskälla till Platform](../../api/create/payments/paypal.md) .
+Den här självstudien kräver att du har en giltig anslutning till det betalningsprogram från tredje part som du vill importera data från. En giltig anslutning innefattar programmets anslutningsspecifikations-ID och anslutnings-ID. Mer information om hur du skapar en betalningsanslutning och hämtar dessa värden finns i självstudiekursen [Koppla en betalningskälla till plattform](../../api/create/payments/paypal.md) .
 
 ### Läser exempel-API-anrop
 
