@@ -5,7 +5,7 @@ topic: overview
 title: Översikt över åtkomstkontroll
 description: Åtkomstkontroll för Adobe Experience Platform tillhandahålls via Adobe Admin Console. Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor.
 translation-type: tm+mt
-source-git-commit: e22b0f64fd6153f76cff862a6e973a235257430e
+source-git-commit: 397f08efa276f7885e099a0a8d9dc6d23fe0e8cc
 workflow-type: tm+mt
 source-wordcount: '1087'
 ht-degree: 1%
@@ -32,7 +32,7 @@ Ett arbetsflöde på hög nivå för att hämta och tilldela åtkomstbehörighet
 - Administratören kan visa [standardproduktprofilerna](#product-profiles) eller skapa nya kundproduktprofiler efter behov.
 - Administratören kan redigera behörigheter och användare för befintliga produktprofiler.
 - När du skapar eller redigerar en produktprofil lägger administratören till användare i profilen med hjälp av fliken **[!UICONTROL users]** och tilldelar behörigheter till dessa användare (till exempel&quot;[!UICONTROL Read Datasets]&quot; eller&quot;[!UICONTROL Manage Schemas]&quot;) med hjälp av **[!UICONTROL permissions]** fliken. På samma sätt kan administratören tilldela åtkomst till sandlådor med samma behörighetsflik.
-- När användare loggar in på [!DNL Experience Platform] användargränssnittet styrs deras åtkomst till [!DNL Platform] funktioner av de behörigheter som de har fått från steg 2. Om en användare t.ex. inte har behörigheten &quot;[!UICONTROL View Datasets]&quot; kommer fliken på *[!UICONTROL Datasets]* sidomenyn inte att vara synlig för användaren.
+- När användare loggar in på [!DNL Experience Platform] användargränssnittet styrs deras åtkomst till [!DNL Platform] funktioner av de behörigheter som de har fått från steg 2. Om en användare t.ex. inte har behörigheten &quot;[!UICONTROL View Datasets]&quot; kommer fliken på **[!UICONTROL Datasets]** sidomenyn inte att vara synlig för användaren.
 
 Mer detaljerad information om hur du hanterar åtkomstkontroll i [!DNL Experience Platform]finns i användarhandboken för [åtkomstkontroll](./ui/overview.md).
 
@@ -95,10 +95,10 @@ I följande tabell visas de tillgängliga behörigheterna för [!DNL Experience 
 | [!DNL Sandbox Administration] | [!UICONTROL View Sandboxes] | Skrivskyddad åtkomst för sandlådor som tillhör din organisation. |
 | [!DNL Sandbox Administration] | [!UICONTROL Reset a Sandbox] | Möjlighet att återställa en sandlåda. |
 | [!DNL Destinations] | [!UICONTROL Manage Destinations] | Åtkomst för att läsa, skapa, redigera och inaktivera mål.* |
-| [!DNL Destinations] | [!UICONTROL View Destinations] | Skrivskyddad åtkomst till tillgängliga destinationer på *[!UICONTROL Catalog]* fliken och autentiserade destinationer på *[!UICONTROL Browse]* fliken.* |
+| [!DNL Destinations] | [!UICONTROL View Destinations] | Skrivskyddad åtkomst till tillgängliga destinationer på **[!UICONTROL Catalog]** fliken och autentiserade destinationer på **[!UICONTROL Browse]** fliken.* |
 | [!DNL Destinations] | [!UICONTROL Activate Destinations] | Möjlighet att aktivera data till aktiva destinationer som har skapats. Den här behörigheten kräver antingen Visa mål eller Hantera [!UICONTROL Destinations”] för den användare som ska aktivera mål.* |
 | [!DNL Data Ingestion] | [!UICONTROL Manage Sources] | Tillgång till att läsa, skapa, redigera och inaktivera källor. |
-| [!DNL Data Ingestion] | [!UICONTROL View Sources] | Skrivskyddad åtkomst till tillgängliga källor på *[!UICONTROL Catalog]* fliken och autentiserade källor på *[!UICONTROL Browse]* fliken. |
+| [!DNL Data Ingestion] | [!UICONTROL View Sources] | Skrivskyddad åtkomst till tillgängliga källor på **[!UICONTROL Catalog]** fliken och autentiserade källor på **[!UICONTROL Browse]** fliken. |
 | [!DNL Data Science Workspace] | [!UICONTROL Manage Data Science Workspace] | Åtkomst att läsa, skapa, redigera och ta bort i [!DNL Data Science Workspace]. |
 
 _(*) Detta tillstånd kräver bestämmelser för[!DNL Real-time Customer Data Platform]. Mer information om CDP i realtid finns i[realtidsöversikten](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/overview.html)._
