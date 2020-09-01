@@ -5,7 +5,7 @@ title: Användarhandbok för Segmentering Service Segment Builder
 topic: ui guide
 description: 'I Segment Builder finns en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper. '
 translation-type: tm+mt
-source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '1660'
 ht-degree: 0%
@@ -49,7 +49,7 @@ Sedan kan du enkelt dra och släppa [!DNL ExperienceEvents] och [!UICONTROL Even
 
 ![](../images/ui/segment-builder/events-eventTypes.png)
 
-Som standard visas endast ifyllda schemafält från ditt datalager. Det inkluderar [!UICONTROL Event Types]. Om [!UICONTROL Event Types] listan inte visas, eller om du bara kan välja &quot;[!UICONTROL Any]&quot; som [!UICONTROL Event Type]en, markerar du kugghjulsikonen bredvid **[!UICONTROL Fields]** och väljer **[!UICONTROL Show full XDM schema]** under **[!UICONTROL Available Fields]**. Välj kugghjulsikonen igen om du vill gå tillbaka till **[!UICONTROL Fields]** fliken. Nu bör du kunna visa flera fält [!UICONTROL Event Types] och schemafält, oavsett om de innehåller data eller inte.
+Som standard visas endast ifyllda schemafält från ditt datalager. Det inkluderar [!UICONTROL Event Types]. Om [!UICONTROL Event Types] listan inte visas, eller om du bara kan välja &quot;[!UICONTROL Any]&quot; som [!UICONTROL Event Type]en, markerar du kugghjulsikonen bredvid **[!UICONTROL Fields]** och väljer **[!UICONTROL Show full XDM schema]** under **[!UICONTROL Available Fields]**. Välj kugghjulsikonen igen för att gå tillbaka till **[!UICONTROL Fields]** fliken. Nu bör du kunna visa flera [!UICONTROL Event Types] - och schemafält, oavsett om de innehåller data eller inte.
 
 ![](../images/ui/segment-builder/show-populated.png)
 
@@ -131,7 +131,7 @@ Om du vill välja en sammanfogningsprincip för segmentdefinitionen väljer du k
 
 ## Segmentegenskaper
 
-När du skapar en segmentdefinition visas en uppskattning av storleken på det *[!UICONTROL Segment Properties]* segment som skapas i avsnittet till höger om arbetsytan, så att du kan justera segmentdefinitionen efter behov innan du skapar själva målgruppen.
+När du skapar en segmentdefinition visas en uppskattning av storleken på det **[!UICONTROL Segment Properties]** segment som skapas i avsnittet till höger om arbetsytan, så att du kan justera segmentdefinitionen efter behov innan du skapar själva målgruppen.
 
 I det **[!UICONTROL Segment Properties]** här avsnittet kan du även ange viktig information om segmentdefinitionen, inklusive dess **[!UICONTROL Name]** och **[!UICONTROL Description]**. Segmentdefinitionsnamn används för att identifiera ditt segment bland dem som definieras av organisationen och bör därför vara beskrivande, koncisa och unika.
 
