@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Azure Table Storage;azure table storage;ats;ATS
 solution: Experience Platform
 title: Skapa en Azure Table Storage-källanslutning i användargränssnittet
 topic: overview
+description: I den här självstudiekursen beskrivs hur du skapar en källanslutning för Azure Table Storage (nedan kallad ATS) med hjälp av användargränssnittet för plattformen.
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: f82dfee2c75a0b8b2ec1615266780b309152ead4
 workflow-type: tm+mt
-source-wordcount: '453'
+source-wordcount: '475'
 ht-degree: 1%
 
 ---
