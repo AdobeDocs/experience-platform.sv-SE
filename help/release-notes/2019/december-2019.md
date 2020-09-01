@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: December 12, 2019
 author: ens71067
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: f8d13b305a61f8606c4fa1ceee6d4518b5d83fda
 workflow-type: tm+mt
-source-wordcount: '680'
+source-wordcount: '679'
 ht-degree: 3%
 
 ---
@@ -35,7 +35,7 @@ Adobe Experience Platform segmenteringstjänst tillhandahåller ett användargr�
 | Funktion | Beskrivning |
 |--- | ---|
 | Fliken Sammanfogade målgrupper i [!DNL Segment Builder] | Flikarna [!UICONTROL _Segment_] och [!UICONTROL _Publiker_] i [!DNL Segment Builder] har kombinerats till en enda [!UICONTROL _publikflik_] . På den här fliken kan du bläddra och söka efter befintliga målgrupper, som du sedan kan dra och släppa på arbetsytan i regelbyggaren för att skapa en ny segmentdefinition. Referenser till en målgrupp kan lägga till en av följande uppsättningar regellogik i den nya segmentdefinitionen: Målgruppsmedlemskap som regel, den fullständiga uppsättningen regellogik som definierar den refererade målgruppen. |
-| Ny plats för kopplingsprincipväljaren | Platsen för sammanslagningsprincipväljaren i [!DNL Segment Builder] har ändrats. Om du vill välja en sammanfogningsprincip för en segmentdefinition klickar du på kugghjulsikonen på fliken [!UICONTROL _Fält_] och väljer sedan den sammanfogningsprincip du vill använda i _[!UICONTROL Merge Policy]_listrutan. |
+| Ny plats för kopplingsprincipväljaren | Platsen för sammanslagningsprincipväljaren i [!DNL Segment Builder] har ändrats. Om du vill välja en sammanfogningsprincip för en segmentdefinition klickar du på kugghjulsikonen på **[!UICONTROL Fields]** fliken och väljer sedan den **[!UICONTROL Merge Policy]** nedrullningsbara menyn som du vill använda. |
 
 **Kända fel**
 
