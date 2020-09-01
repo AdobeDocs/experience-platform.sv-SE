@@ -4,17 +4,17 @@ solution: Experience Platform
 title: Prenumerera på sekretesshändelser
 topic: privacy events
 translation-type: tm+mt
-source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '812'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
 
 # Prenumerera på [!DNL Privacy Events]
 
-[!DNL Privacy Events] är meddelanden från Adobe Experience Platform [!DNL Privacy Service], som utnyttjar Adobe I/O-händelser som skickas till en konfigurerad webkrok för att underlätta en effektiv automatisering av jobbförfrågningar. De minskar eller eliminerar behovet av att avfråga [!DNL Privacy Service] API för att kontrollera om ett jobb är färdigt eller om en viss milstolpe i ett arbetsflöde har nåtts.
+[!DNL Privacy Events] är meddelanden från Adobe Experience Platform [!DNL Privacy Service]som utnyttjar Adobe I/O-händelser som skickas till en konfigurerad webkrok för att underlätta automatisering av jobbförfrågningar. De minskar eller eliminerar behovet av att avfråga [!DNL Privacy Service] API för att kontrollera om ett jobb är färdigt eller om en viss milstolpe i ett arbetsflöde har nåtts.
 
 Det finns för närvarande fyra typer av meddelanden som rör livscykeln för sekretessjobben:
 
@@ -60,7 +60,7 @@ Dessa kommandon installerar alla beroenden och initierar servern. Om du lyckas h
 
 ## Skapa en webkrok med ngrok
 
-Öppna ett nytt kommandoradsfönster och navigera till den katalog där du installerade kommandot tidigare. Här skriver du följande kommando:
+Öppna ett nytt kommandoradsfönster och navigera till den katalog där du tidigare installerade blocket. Här skriver du följande kommando:
 
 ```shell
 ./ngrok http -bind-tls=true 3000
@@ -74,7 +74,7 @@ Anteckna `Forwarding` URL (`https://212d6cd2.ngrok.io`), eftersom den används f
 
 ## Skapa ett nytt projekt i Adobe Developer Console
 
-Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med Adobe ID. Följ sedan stegen som beskrivs i självstudiekursen om hur du [skapar ett tomt projekt](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) i dokumentationen för Adobe Developer Console.
+Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med din Adobe ID. Följ sedan stegen som beskrivs i självstudiekursen om hur du [skapar ett tomt projekt](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) i dokumentationen för Adobe Developer Console.
 
 ## Lägg till sekretessaktiviteter i projektet
 
@@ -86,7 +86,7 @@ Dialogrutan _Lägg till händelser_ visas. Välj **[!UICONTROL Experience Cloud]
 
 ![](./images/privacy-events/add-privacy-events.png)
 
-Dialogrutan _Konfigurera händelseregistrering_ visas. Välj vilka händelser du vill ta emot genom att markera motsvarande kryssrutor. Händelser som du väljer visas under _[!UICONTROL Subscribed Events]_i den vänstra kolumnen. När du är klar klickar du på&#x200B;**[!UICONTROL Next]**.
+Dialogrutan _Konfigurera händelseregistrering_ visas. Välj vilka händelser du vill ta emot genom att markera motsvarande kryssrutor. Händelser som du väljer visas under **[!UICONTROL Subscribed Events]** i den vänstra kolumnen. Klicka på **[!UICONTROL Next]** när du är klar.
 
 ![](./images/privacy-events/choose-subscriptions.png)
 
@@ -106,11 +106,11 @@ Ange ett namn och en beskrivning för händelseregistreringen på nästa skärm.
 
 ![](./images/privacy-events/event-details.png)
 
-Du kan konfigurera hur du tar emot händelser ytterligare på samma skärm. Markera **[!UICONTROL Webhook]** och ange `Forwarding` URL:en för den webbkrok som du skapade tidigare under _[!UICONTROL Webhook URL]_. Välj sedan önskad leveransstil (en eller flera) innan du klickar på&#x200B;**[!UICONTROL Save configured events]**för att slutföra registreringen av evenemanget.
+Du kan konfigurera hur du tar emot händelser ytterligare på samma skärm. Markera **[!UICONTROL Webhook]** och ange `Forwarding` URL:en för den webbkrok som du skapade tidigare under **[!UICONTROL Webhook URL]**. Välj sedan önskad leveransstil (en eller flera) innan du klickar på **[!UICONTROL Save configured events]** för att slutföra registreringen av evenemanget.
 
 ![](./images/privacy-events/webhook-details.png)
 
-Informationssidan för ditt projekt visas igen och [!DNL Privacy Events] visas under _[!UICONTROL Events]_den vänstra navigeringen.
+Informationssidan för ditt projekt visas igen och [!DNL Privacy Events] visas under **[!UICONTROL Events]** den vänstra navigeringen.
 
 ## Visa händelsedata
 
@@ -118,7 +118,7 @@ När du har registrerat dig [!DNL Privacy Events] i ditt projekt och sekretessjo
 
 ![](./images/privacy-events/events-left-nav.png)
 
-Fliken _Registreringsinformation_ visas, där du kan visa mer information om registreringen, redigera konfigurationen eller visa de faktiska händelser som tagits emot sedan du aktiverade din webkrok.
+Fliken _Registreringsinformation_ visas, där du kan visa mer information om registreringen, redigera konfigurationen eller visa de faktiska händelser som tagits emot sedan du aktiverade webkroken.
 
 ![](./images/privacy-events/registration-details.png)
 
@@ -126,7 +126,7 @@ Klicka på **[!UICONTROL Debug Tracing]** fliken för att visa en lista över mo
 
 ![](images/privacy-events/debug-tracing.png)
 
-Avsnittet innehåller information om den valda händelsen, inklusive dess händelsetyp ( _[!UICONTROL Payload]_`com.adobe.platform.gdpr.productcomplete`) som markeras i exemplet ovan.
+Avsnittet innehåller information om den valda händelsen, inklusive dess händelsetyp ( **[!UICONTROL Payload]**`com.adobe.platform.gdpr.productcomplete`) som markeras i exemplet ovan.
 
 ## Nästa steg
 
