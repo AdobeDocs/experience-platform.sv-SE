@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Azure Data Lake Storage Gen2;ADLS Gen2;adls gen2;adls connector
 solution: Experience Platform
 title: Skapa en Azure Data Lake Storage Gen2-källanslutning i gränssnittet
 topic: overview
+description: I den här självstudiekursen beskrivs steg för hur du autentiserar en källanslutning för Azure Data Lake Storage Gen2 (nedan kallad ADLS Gen2) med hjälp av användargränssnittet för plattformen.
 translation-type: tm+mt
-source-git-commit: dd036cf4df5d772206d2b73292c60f2d866ba0de
+source-git-commit: 0da686743e8bc57d310f7eff6f1bf812a8f31238
 workflow-type: tm+mt
-source-wordcount: '434'
+source-wordcount: '459'
 ht-degree: 1%
 
 ---
