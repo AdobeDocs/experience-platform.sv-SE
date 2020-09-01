@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;mixin;Mixin;mixins;Mixins;create
 solution: Experience Platform
 title: Skapa en blandning
 topic: developer guide
+description: Blandningar är en uppsättning fält som används för att beskriva ett visst koncept, till exempel"adress" eller"profilinställningar". Det finns många standardblandningar att tillgå, eller så kan du definiera en egen när du vill hämta in information som är unik för din organisation.
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: 74a4a3cc713cc068be30379e8ee11572f8bb0c63
 workflow-type: tm+mt
-source-wordcount: '303'
+source-wordcount: '345'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # Skapa en blandning
 
-Blandningar är en uppsättning fält som används för att beskriva ett visst koncept, till exempel&quot;adress&quot; eller&quot;profilinställningar&quot;. Det finns många standardblandningar att tillgå, eller så kan du definiera en egen när du vill hämta in information som är unik för din organisation. Varje mixin innehåller ett `meta:intendedToExtend` fält som listar de klasser som blandningen är kompatibel med.
+Blandningar är en uppsättning fält som används för att beskriva ett visst koncept, till exempel&quot;adress&quot; eller&quot;profilinställningar&quot;. Det finns många standardblandningar att tillgå, eller så kan du definiera en egen när du vill hämta in information som är unik för din organisation. Varje blandning innehåller ett `meta:intendedToExtend` fält som listar de klasser som blandningen är kompatibel med.
 
 Det kan vara praktiskt att granska alla tillgängliga mixar för att bekanta dig med fälten i varje. Du kan visa (GET) alla blandningar som är kompatibla med en viss klass genom att utföra en begäran mot var och en av behållarna &quot;global&quot; och &quot;tenant&quot;, och bara returnera de blandningar där fältet &quot;meta:intendedToExtend&quot; matchar klassen som du använder. Exemplen nedan returnerar alla blandningar som kan användas med [!DNL XDM Individual Profile] klassen:
 
