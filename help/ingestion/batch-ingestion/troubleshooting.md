@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics;ingested data
+keywords: Experience Platform;home;popular topics;ingested data;troubleshooting;faq;Ingestion;Batch ingestion;batch ingestion;
 solution: Experience Platform
 title: Felsökningsguide för Adobe Experience Platform batchmatning
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: 9766cadee83e81bacc2abe6b13342ac95aae19a9
+source-git-commit: c04fb056d4564e53f192e0734a700a13820f5ba7
 workflow-type: tm+mt
 source-wordcount: '1389'
 ht-degree: 1%
@@ -190,7 +190,7 @@ En batch kan i sin livscykel gå igenom följande lägen:
 | Inaktiv | x | Batchen befordrades, men har antingen återställts eller gått ut. Batchen kommer inte längre att vara tillgänglig för nedströmsförbrukning, men underliggande data kommer att vara Överordnad tills de har sparats, arkiverats eller på annat sätt tagits bort. |
 | Läser in |  | Klienten skriver för närvarande data för gruppen. Batchen är för närvarande **inte** redo för befordran. |
 | Inläst |  | Klienten har slutfört skrivningen av data för batchen. Batchen är klar för befordran. |
-| Bevarad |  | Data har tagits bort från Överordnad och i ett särskilt arkiv i Adobe Data Lake. |
+| Bevarad |  | Uppgifterna har tagits bort från Överordnad och i ett särskilt arkiv i Adobe Data Lake. |
 | Mellanlagring |  | Klienten har signalerat batchen för befordran och data mellanlagras för förbrukning nedströms. |
 | Försöker igen |  | Klienten har signalerat batchen för befordran, men på grund av ett fel görs ett nytt försök att bearbeta batchen av en tjänst för batchövervakning. Det här läget kan användas för att tala om för kunderna att det kan dröja med inhämtningen av data. |
 | Stängd |  | Klienten har signalerat batchen för befordran, men efter `n` återförsök av en batchövervakningstjänst har batchkampanjen avstannat. |
