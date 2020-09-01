@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;access data sources
 solution: Experience Platform
 title: Självstudiekurser för dataåtkomst
 topic: tutorial
+description: Med Adobe Experience Platform kan användare identifiera och få åtkomst till kapslade datauppsättningar i Experience Platform med hjälp av API:t för dataåtkomst.
 translation-type: tm+mt
-source-git-commit: 5c5f6c4868e195aef76bacc0a1e5df3857647bde
+source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
 workflow-type: tm+mt
-source-wordcount: '102'
+source-wordcount: '121'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # Åtkomst till Experience Platform data
 
-Adobe Experience Platform gör det möjligt för användare att identifiera och komma åt kapslade datauppsättningar i [!DNL Experience Platform] med hjälp av API:t för dataåtkomst.
+Med Adobe Experience Platform kan användare identifiera och få åtkomst till kapslade datauppsättningar i [!DNL Experience Platform] med hjälp av API:t för dataåtkomst.
 
 ## Få åtkomst till data med API:er
 
