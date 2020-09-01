@@ -5,7 +5,7 @@ title: Användargränssnittshandbok för Adobe Experience Platform Query Service
 topic: guide
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation.
 translation-type: tm+mt
-source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '594'
 ht-degree: 1%
@@ -19,17 +19,17 @@ Adobe Experience Platform [!DNL Query Service] har ett användargränssnitt som 
 
 ## [!DNL Query Editor]
 
-Med den här funktionen [!DNL Query Editor] kan du skriva och köra frågor utan att använda en extern klient. Klicka **[!UICONTROL Create Query]** för att öppna [!DNL Query Editor] och skapa en ny fråga. Du kan också öppna sökningen [!DNL Query Editor] genom att välja en fråga på *[!UICONTROL Log]* flikarna eller *[!UICONTROL Browse]* flikarna. Om du väljer en tidigare utförd eller sparad fråga öppnas [!DNL Query Editor] och SQL-uttrycket för den valda frågan visas.
+Med den här funktionen [!DNL Query Editor] kan du skriva och köra frågor utan att använda en extern klient. Klicka **[!UICONTROL Create Query]** för att öppna [!DNL Query Editor] och skapa en ny fråga. Du kan också öppna sökningen [!DNL Query Editor] genom att välja en fråga på **[!UICONTROL Log]** flikarna eller **[!UICONTROL Browse]** flikarna. Om du väljer en tidigare utförd eller sparad fråga öppnas [!DNL Query Editor] och SQL-uttrycket för den valda frågan visas.
 
 ![Bild](../images/queries/ui-overview/overview.png)
 
-[!DNL Query Editor] innehåller redigeringsutrymme där du kan börja skriva en fråga. När du skriver fyller redigeraren automatiskt i reserverade ord, tabeller och fältnamn från SQL i tabeller. När du är klar med frågan klickar du på knappen **Spela upp** för att köra frågan. Fliken *[!UICONTROL Console]* under redigeraren visar vad som [!DNL Query Service] pågår och visar när en fråga har returnerats. På fliken *[!UICONTROL Result]* bredvid konsolen visas frågeresultat. Mer information om hur du använder [redigeringsguiden][query-editor] finns i [!DNL Query Editor].
+[!DNL Query Editor] innehåller redigeringsutrymme där du kan börja skriva en fråga. När du skriver fyller redigeraren automatiskt i reserverade ord, tabeller och fältnamn från SQL i tabeller. När du är klar med frågan klickar du på knappen **Spela upp** för att köra frågan. Fliken **[!UICONTROL Console]** under redigeraren visar vad som [!DNL Query Service] pågår och visar när en fråga har returnerats. På fliken **[!UICONTROL Result]** bredvid konsolen visas frågeresultat. Mer information om hur du använder [redigeringsguiden][query-editor] finns i [!DNL Query Editor].
 
 ![Bild](../images/queries/ui-overview/query-editor.png)
 
 ## Bläddra
 
-På fliken *[!UICONTROL Browse]* visas frågor som sparats av användare i din organisation. Det är praktiskt att tänka på dessa som frågeprojekt, eftersom frågor som sparas här fortfarande kan vara under uppbyggnad. Frågor som visas på *[!UICONTROL Browse]* fliken visas även som körningsfrågor på *[!UICONTROL Log]* fliken om de tidigare har körts av [!DNL Query Service].
+På fliken **[!UICONTROL Browse]** visas frågor som sparats av användare i din organisation. Det är praktiskt att tänka på dessa som frågeprojekt, eftersom frågor som sparas här fortfarande kan vara under uppbyggnad. Frågor som visas på **[!UICONTROL Browse]** fliken visas även som körningsfrågor på **[!UICONTROL Log]** fliken om de tidigare har körts av [!DNL Query Service].
 
 ![Bild](../images/queries/ui-overview/browse.png)
 
@@ -42,7 +42,7 @@ På fliken *[!UICONTROL Browse]* visas frågor som sparats av användare i din o
 
 ## Logg
 
-Fliken innehåller en lista med frågor som har körts tidigare. *[!UICONTROL Log]* Som standard visas frågorna i loggen i omvänd kronologi.
+Fliken innehåller en lista med frågor som har körts tidigare. **[!UICONTROL Log]** Som standard listas frågorna i loggen i omvänd kronologi.
 
 ![Bild](../images/queries/ui-overview/log.png)
 
@@ -58,7 +58,7 @@ Fliken innehåller en lista med frågor som har körts tidigare. *[!UICONTROL Lo
 
 ## Autentiseringsuppgifter
 
-På *[!UICONTROL Credentials]* fliken visas dina [!DNL Postgres] inloggningsuppgifter. Klicka på **[!UICONTROL Copy]** ikonen bredvid ett fält för att lagra dess innehåll i tangentbordsbufferten. Mer information om hur du använder dessa autentiseringsuppgifter för att ansluta till externa klienter finns i [handboken][connect-clients]för att ansluta till klienter.
+På **[!UICONTROL Credentials]** fliken visas dina [!DNL Postgres] inloggningsuppgifter. Klicka på **[!UICONTROL Copy]** ikonen bredvid ett fält för att lagra dess innehåll i tangentbordsbufferten. Mer information om hur du använder dessa autentiseringsuppgifter för att ansluta till externa klienter finns i [handboken][connect-clients]för att ansluta till klienter.
 
 ![Bild](../images/queries/ui-overview/credentials.png)
 
