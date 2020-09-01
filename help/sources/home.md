@@ -5,7 +5,7 @@ title: Adobe Experience Platform Source Connectors - översikt
 topic: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 translation-type: tm+mt
-source-git-commit: c8e53a25c5b22e8d840658fe26ff47875947a6d0
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '836'
 ht-degree: 0%
@@ -112,14 +112,14 @@ CRM-system tillhandahåller data som kan hjälpa till att bygga upp kundrelation
 
 ## Åtkomstkontroll för källor vid datainhämtning
 
-Behörigheter för källor vid dataöverföring kan hanteras inom Adobe Admin Console. Du kan få åtkomst till behörigheter via fliken *[!UICONTROL Permissions]* i en viss produktprofil. Från **[!UICONTROL Edit Permissions]** panelen kan du komma åt de behörigheter som gäller för källor via *[!UICONTROL data ingestion]* menyalternativet. Behörigheten **[!UICONTROL View Sources]** ger skrivskyddad åtkomst till tillgängliga källor på *[!UICONTROL Catalog]* fliken och till autentiserade källor på *[!UICONTROL Browse]* **[!UICONTROL Manage Sources]** fliken, medan behörigheten ger fullständig åtkomst för att läsa, skapa, redigera och inaktivera källor.
+Behörigheter för källor vid dataöverföring kan hanteras inom Adobe Admin Console. Du kan få åtkomst till behörigheter via fliken **[!UICONTROL Permissions]** i en viss produktprofil. Från **[!UICONTROL Edit Permissions]** panelen kan du komma åt de behörigheter som gäller för källor via **[!UICONTROL data ingestion]** menyalternativet. Behörigheten **[!UICONTROL View Sources]** ger skrivskyddad åtkomst till tillgängliga källor på **[!UICONTROL Catalog]** fliken och till autentiserade källor på **[!UICONTROL Browse]** **[!UICONTROL Manage Sources]** fliken, medan behörigheten ger fullständig åtkomst för att läsa, skapa, redigera och inaktivera källor.
 
 Följande tabell visar hur användargränssnittet beter sig baserat på olika kombinationer av dessa behörigheter:
 
 | Behörighetsnivå | Beskrivning |
 | ---- | ----|
 | **[!UICONTROL View Sources]** På | Ge skrivskyddad åtkomst till källor i varje källtyp på fliken *Katalog* , samt flikarna *Bläddra*, *Konton* och *DataFlow* . |
-| **[!UICONTROL Manage Sources]** På | Förutom de funktioner som ingår i **[!UICONTROL View Sources]** ger tillgång till *[!UICONTROL Connect Source]* alternativen i *[!UICONTROL Catalog]* och till *[!UICONTROL Select Data]* alternativen i *[!UICONTROL Browse]*. **[!UICONTROL Manage Sources]** kan du även aktivera eller inaktivera *[!UICONTROL DataFlows]* och redigera deras scheman. |
+| **[!UICONTROL Manage Sources]** På | Förutom de funktioner som ingår i **[!UICONTROL View Sources]** ger tillgång till **[!UICONTROL Connect Source]** alternativen i **[!UICONTROL Catalog]** och till **[!UICONTROL Select Data]** alternativen i **[!UICONTROL Browse]**. **[!UICONTROL Manage Sources]** kan du även aktivera eller inaktivera **[!UICONTROL DataFlows]** och redigera deras scheman. |
 | **[!UICONTROL View Sources]** Av och **[!UICONTROL Manage Sources]** Av | Återkalla all åtkomst till källor. |
 
 Mer information om de behörigheter som ges via Admin Console, inklusive dessa fyra källor, finns i [åtkomstkontrollsöversikten](../access-control/home.md).
