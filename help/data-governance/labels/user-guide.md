@@ -3,11 +3,11 @@ keywords: Experience Platform;home;popular topics;data governance;data usage lab
 solution: Experience Platform
 title: Användarhandbok för etiketter för dataanvändning
 topic: labels
-description: Den här användarhandboken innehåller steg för att arbeta med dataanvändningsetiketter (kallas även DULE-etiketter) i Adobe Experience Platform användargränssnitt.
+description: Den här användarhandboken innehåller steg för hur du arbetar med dataanvändningsetiketter i Adobe Experience Platform användargränssnitt.
 translation-type: tm+mt
-source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
+source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
 workflow-type: tm+mt
-source-wordcount: '1066'
+source-wordcount: '1053'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # Användarhandbok för etiketter för dataanvändning
 
-Den här användarhandboken innehåller steg för att arbeta med dataanvändningsetiketter (kallas även DULE-etiketter) i [!DNL Experience Platform] användargränssnittet. Innan du använder guiden bör du läsa översikten över [datastyrning](../home.md) för en mer robust introduktion till DULE-ramverket.
+Den här användarhandboken innehåller steg för att arbeta med dataanvändningsetiketter i [!DNL Experience Platform] användargränssnittet. Innan du använder guiden bör du läsa [[!DNL Data Governance] översikten](../home.md) för en mer robust introduktion till [!DNL Data Governance] ramverket.
 
 ## Hantera dataanvändningsetiketter på datauppsättningsnivå
 
