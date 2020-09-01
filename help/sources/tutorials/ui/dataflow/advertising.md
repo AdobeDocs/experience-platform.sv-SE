@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;configure dataflow;advertising connector
 solution: Experience Platform
 title: Konfigurera ett dataflöde för en annonskontakt i användargränssnittet
 topic: overview
+description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en Adobe Experience Platform-datauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt annonskonto.
 translation-type: tm+mt
-source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
+source-git-commit: fb60e11b9502c31e654d3fbe5dc240ace9429332
 workflow-type: tm+mt
-source-wordcount: '1211'
+source-wordcount: '1244'
 ht-degree: 0%
 
 ---
