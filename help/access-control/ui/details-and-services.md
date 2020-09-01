@@ -5,7 +5,7 @@ title: Hantera information och ytterligare tjänster för en produktprofil
 topic: user guide
 description: Det här dokumentet innehåller de steg som krävs för att hantera information och ytterligare tjänster för en produktprofil i Adobe Admin Console. Du kan konfigurera information om en profil och få tillgång till ytterligare tjänster på menyn Profilinställningar.
 translation-type: tm+mt
-source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '187'
 ht-degree: 1%
@@ -15,19 +15,19 @@ ht-degree: 1%
 
 # Hantera information och ytterligare tjänster för en produktprofil
 
-Du kan konfigurera en profils information och åtkomst till ytterligare tjänster från *[!UICONTROL Profile Settings]* menyn. Du öppnar menyn genom att klicka **[!UICONTROL Settings]** på *[!UICONTROL Product Profile]* sidan.
+Du kan konfigurera en profils information och åtkomst till ytterligare tjänster från **[!UICONTROL Profile Settings]** menyn. Du öppnar menyn genom att klicka **[!UICONTROL Settings]** på **[!UICONTROL Product Profile]** sidan.
 
 ![profile-settings](../images/profile-settings.png)
 
-Menyn *[!UICONTROL Profile Settings]* visas med början på *[!UICONTROL Details]* fliken. På den här fliken kan du ange och redigera **[!UICONTROL Profile Name]** och **[!UICONTROL Description]**. Du kan också ändra inställningarna för ditt konto **[!UICONTROL Display Name]** samt e-postaviseringar för ditt konto.
+Menyn **[!UICONTROL Profile Settings]** visas med början på **[!UICONTROL Details]** fliken. På den här fliken kan du ange och redigera **[!UICONTROL Profile Name]** och **[!UICONTROL Description]**. Du kan också ändra inställningarna för ditt konto **[!UICONTROL Display Name]** samt e-postaviseringar för ditt konto.
 
 ![edit-details-settings](../images/edit-details-settings.png)
 
-Klicka **[!UICONTROL Services]** för att komma åt *[!UICONTROL Services]* sidan.
+Klicka **[!UICONTROL Services]** för att komma åt **[!UICONTROL Services]** sidan.
 
 ![services-page](../images/services-page.png)
 
-På *[!UICONTROL Services]* menyn kan du ändra en profils åtkomst till ytterligare [!DNL Platform] tjänster som ursprungligen konfigurerades när profilen skapades. Beroende på din [!DNL Platform] prenumeration kan dessa tjänster omfatta:
+På **[!UICONTROL Services]** menyn kan du ändra en profils åtkomst till ytterligare [!DNL Platform] tjänster som ursprungligen konfigurerades när profilen skapades. Beroende på din [!DNL Platform] prenumeration kan dessa tjänster omfatta:
 
 - [!DNL Data Science Workspace]
 - [!DNL Query Service]
