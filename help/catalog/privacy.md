@@ -5,7 +5,7 @@ title: Behandling av sekretessförfrågningar i Data Lake
 topic: overview
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt juridiska och organisatoriska sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kunddata som lagras i Data Lake.
 translation-type: tm+mt
-source-git-commit: c8446f6040ac9ef1f4196d9057b531011e243258
+source-git-commit: 397f08efa276f7885e099a0a8d9dc6d23fe0e8cc
 workflow-type: tm+mt
 source-wordcount: '1239'
 ht-degree: 0%
@@ -57,7 +57,7 @@ Det finns två metoder för att lägga till en identitetsbeskrivning i ett datas
 
 ### Använda gränssnittet {#identity-ui}
 
-I [!DNL Experience Platform ]användargränssnittet kan du redigera befintliga XDM-scheman på _[!UICONTROL Schemas]_arbetsytan. Om du vill lägga till en identitetsbeskrivning till ett schema väljer du schemat i listan och följer stegen för att[ange ett schemafält som ett identitetsfält](../xdm/tutorials/create-schema-ui.md#identity-field)i[!DNL Schema Editor]självstudiekursen.
+I [!DNL Experience Platform ]användargränssnittet kan du redigera befintliga XDM-scheman på **[!UICONTROL Schemas]** arbetsytan. Om du vill lägga till en identitetsbeskrivning till ett schema väljer du schemat i listan och följer stegen för att [ange ett schemafält som ett identitetsfält](../xdm/tutorials/create-schema-ui.md#identity-field) i [!DNL Schema Editor] självstudiekursen.
 
 När du har angett rätt fält i schemat som identitetsfält kan du gå vidare till nästa avsnitt om [att skicka sekretessförfrågningar](#submit).
 
@@ -139,7 +139,7 @@ I följande avsnitt beskrivs hur du gör sekretessförfrågningar för [!DNL Dat
 
 ### Använda gränssnittet
 
-När du skapar jobbbegäranden i användargränssnittet måste du markera **[!UICONTROL AEP Data Lake]** och/eller **[!UICONTROL Profile]** under _[!UICONTROL Products]_för att kunna bearbeta jobb för data som lagras i[!DNL Data Lake]respektive[!DNL Real-time Customer Profile].
+När du skapar jobbbegäranden i användargränssnittet måste du markera **[!UICONTROL AEP Data Lake]** och/eller **[!UICONTROL Profile]** under **[!UICONTROL Products]** för att kunna bearbeta jobb för data som lagras i [!DNL Data Lake] respektive [!DNL Real-time Customer Profile].
 
 <img src="images/privacy/product-value.png" width="450"><br>
 
