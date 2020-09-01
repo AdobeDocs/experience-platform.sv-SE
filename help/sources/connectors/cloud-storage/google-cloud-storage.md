@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Google Cloud Storage Connector
 topic: overview
 translation-type: tm+mt
-source-git-commit: 340f5d0611e9e9eb4676018ee10c8a8aa08dbb2d
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '357'
 ht-degree: 0%
@@ -60,13 +60,13 @@ Sidan visas **[!UICONTROL Settings]** . Härifrån kan du se information om ditt
 
 ![](../../images/tutorials/create/google-cloud-storage/project-access.png)
 
-Sidan innehåller **[!UICONTROL Interoperability]** information om autentisering, åtkomstnycklar och standardprojektet som är kopplat till ditt användarkonto. Om du inte redan har etablerat ett standardprojekt för interoperabel åtkomst kan du konfigurera ett i *[!UICONTROL Default project for interoperable access]* -avsnittet. Om ett standardprojekt redan har etablerats visas en bekräftelse på att ett projekt har angetts som standard i avsnittet.
+Sidan innehåller **[!UICONTROL Interoperability]** information om autentisering, åtkomstnycklar och standardprojektet som är kopplat till ditt användarkonto. Om du inte redan har etablerat ett standardprojekt för interoperabel åtkomst kan du konfigurera ett i **[!UICONTROL Default project for interoperable access]** -avsnittet. Om ett standardprojekt redan har etablerats visas en bekräftelse på att ett projekt har angetts som standard i avsnittet.
 
 Om du vill generera ett nytt ID för åtkomstnyckel och en hemlig åtkomstnyckel för ditt användarkonto väljer du **[!UICONTROL Create a Key]**.
 
 ![](../../images/tutorials/create/google-cloud-storage/interoperability.png)
 
-Du kan använda ditt nyligen genererade åtkomstnyckel-ID och den hemliga åtkomstnyckeln för att ansluta ditt [!DNL Google Cloud Storage] konto till [!DNL Platform].
+Du kan använda ditt nyligen genererade ID för åtkomstnyckel och hemlig åtkomstnyckel för att ansluta ditt [!DNL Google Cloud Storage] konto till [!DNL Platform].
 
 ## Anslut [!DNL Google Cloud Storage] till [!DNL Platform]
 
