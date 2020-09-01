@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics; flow service; database; sql; no sql; data warehouse
+keywords: Experience Platform;home;popular topics;third-party database;third party database
 solution: Experience Platform
 title: Samla in data från en tredjepartsdatabas via källanslutningar och API:er
 topic: overview
-description: Den här självstudiekursen beskriver stegen för att hämta data från en tredjepartsdatabas och hämta dem till plattformen via källanslutningar och API:t för Flow Service.
+description: Den här självstudiekursen beskriver stegen för att hämta data från en tredjepartsdatabas och hämta dem till plattformen via källanslutningar och API:er.
 translation-type: tm+mt
-source-git-commit: 6578fd607d6f897a403d0af65c81dafe3dc12578
+source-git-commit: 6f4714561c2946a084eed4e89d3148df5b8044f5
 workflow-type: tm+mt
-source-wordcount: '1653'
+source-wordcount: '1650'
 ht-degree: 0%
 
 ---
