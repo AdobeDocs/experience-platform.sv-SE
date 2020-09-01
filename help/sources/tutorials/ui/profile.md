@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Aktivera inkommande källdata för att fylla i kundprofiler
 topic: overview
 translation-type: tm+mt
-source-git-commit: 6bd5dc5a68fb2814ab99d43b34f90aa7e50aa463
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '451'
 ht-degree: 0%
@@ -47,7 +47,7 @@ Skärmen visas **[!UICONTROL Dataset activity]** . I **[!UICONTROL Properties]**
 
 ![](../../images/tutorials/dataflow/cloud-storage/batch/select-dataset-schema.png)
 
-Då **[!UICONTROL Schema Editor]** visas schemats struktur på arbetsytan i mitten. Markera det fält som ska anges som primär identitet på arbetsytan. Markera kryssrutan under fliken *[!UICONTROL Field properties]* som visas och markera sedan **[!UICONTROL Identity]** kryssrutan **[!UICONTROL Primary identity]**. Välj sedan ett lämpligt alternativ **[!UICONTROL Identity namespace]** och klicka på **[!UICONTROL Apply]**.
+Då **[!UICONTROL Schema Editor]** visas schemats struktur på arbetsytan i mitten. Markera det fält som ska anges som primär identitet på arbetsytan. Markera kryssrutan under fliken **[!UICONTROL Field properties]** som visas och markera sedan **[!UICONTROL Identity]** kryssrutan **[!UICONTROL Primary identity]**. Välj sedan ett lämpligt alternativ **[!UICONTROL Identity namespace]** och klicka på **[!UICONTROL Apply]**.
 
 ![](../../images/tutorials/dataflow/cloud-storage/batch/set-schema-identity.png)
 
