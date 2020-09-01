@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Azure File Storage;Azure File Storage connector
 solution: Experience Platform
 title: Skapa en Azure File Storage-källanslutning i användargränssnittet
 topic: overview
+description: I den här självstudiekursen beskrivs hur du autentiserar en Azure File Storage-källanslutning med hjälp av användargränssnittet för plattformen.
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 0da686743e8bc57d310f7eff6f1bf812a8f31238
 workflow-type: tm+mt
-source-wordcount: '444'
+source-wordcount: '461'
 ht-degree: 1%
 
 ---
