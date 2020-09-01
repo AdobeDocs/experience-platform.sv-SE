@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;XDM;XDM system;XDM individual profile;XDM ExperienceEvent;XDM Experience Event;experienceEvent;experience event;Mixins;mixins;mixin;Mixin;Experience event;XDM Experience Event;XDM ExperienceEvent;experienceEvent;experienceevent;XDM Experienceevenet
+keywords: Experience Platform;home;popular topics;XDM;XDM system;XDM individual profile;XDM ExperienceEvent;XDM Experience Event;experienceEvent;experience event;Mixins;mixins;mixin;Mixin;Experience event;XDM Experience Event;XDM ExperienceEvent;experienceEvent;experienceevent;XDM Experienceevenet;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;schema library;Schema Library;schema;record data;time series;time-series
 solution: Experience Platform
 title: Experience Data Model (XDM) System
 topic: overview
 description: 'Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. Experience Data Model (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering. '
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: ed1f2fdac0f9c977d11c867327c084353c1bcd0f
 workflow-type: tm+mt
 source-wordcount: '1638'
 ht-degree: 0%
@@ -76,7 +76,7 @@ Experience Events kan vara antingen explicita eller implicita. Explicit händels
 
 [!DNL Catalog] data lagras i [!DNL Data Lake]ett mycket detaljerat datalager som innehåller alla data som hanteras av, [!DNL Platform]oavsett ursprung eller filformat.
 
-För att börja inhämta data till [!DNL Experience Platform]skapas en datauppsättning med [!DNL Catalog Service]. Datauppsättningen refererar till ett XDM-schema som beskriver strukturen för de data som ska importeras. Om en datamängd skapas utan ett schema, [!DNL Experience Platform] kommer att härleda ett &quot;observerat schema&quot; genom att undersöka typen och innehållet i inkapslade datafält. Datauppsättningar spåras sedan i [!DNL Catalog] och lagras i [!DNL Data Lake] tillsammans med scheman och observerade scheman som de baseras på.
+För att börja inhämta data till [!DNL Experience Platform]skapas en datauppsättning med [!DNL Catalog Service]. Datauppsättningen refererar till ett XDM-schema som beskriver strukturen för de data som ska importeras. Om en datamängd skapas utan ett schema, [!DNL Experience Platform] kommer att härleda ett &quot;observerat schema&quot; genom att undersöka typen och innehållet i inkapslade datafält. Datauppsättningar spåras sedan i [!DNL Catalog] och lagras i [!DNL Data Lake] tillsammans med de scheman och observerade scheman som de baseras på.
 
 Mer information om [!DNL Catalog]finns i [Katalogtjänst - översikt](../catalog/home.md). Mer information om Adobe Experience Platform datainmatning finns i översikten över [datainmatning](../ingestion/home.md).
 
