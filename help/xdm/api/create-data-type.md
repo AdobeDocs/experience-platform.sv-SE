@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;data type;data types;Data types;Data type;datatype;Datatype
+keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;datatype;Datatype;data type;Data type;create
 solution: Experience Platform
 title: Skapa en datatyp
 topic: developer guide
 description: 'När det finns gemensamma datastrukturer som din organisation vill använda på flera sätt kanske du vill definiera en datatyp. Datatyper möjliggör konsekvent användning av flerfältsstrukturer, med större flexibilitet än blandningar, eftersom de kan inkluderas var som helst i ett schema genom att lägga till dem som"typ" för ett fält. '
 translation-type: tm+mt
-source-git-commit: cc81d590f308c7e2677cec000c27e8aca42437f5
+source-git-commit: ed1f2fdac0f9c977d11c867327c084353c1bcd0f
 workflow-type: tm+mt
 source-wordcount: '256'
 ht-degree: 0%
