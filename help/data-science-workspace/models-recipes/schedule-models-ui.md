@@ -5,7 +5,7 @@ title: Schemalägg en modell (UI)
 topic: Tutorial
 description: Med Adobe Experience Platform Data Science Workspace kan du skapa schemalagda kurser i maskininlärning. Genom att automatisera utbildnings- och poängprocessen kan du behålla och förbättra en tjänsts effektivitet genom att hålla jämna steg med era datamönster.
 translation-type: tm+mt
-source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '519'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Med Adobe Experience Platform [!DNL Data Science Workspace] kan du konfigurera schemalagda kurser i maskininlärning. Genom att automatisera utbildnings- och poängprocessen kan du behålla och förbättra en tjänsts effektivitet genom att hålla jämna steg med era datamönster.
 
-Den här självstudiekursen går igenom stegen för att konfigurera utbildnings- och poängsättningsscheman för en befintlig tjänst via *[!UICONTROL Service Gallery]*. Den delas in i följande huvudavsnitt:
+Den här självstudiekursen går igenom stegen för att konfigurera utbildnings- och poängsättningsscheman för en befintlig tjänst via **[!UICONTROL Service Gallery]**. Den delas in i följande huvudavsnitt:
 
 - [Konfigurera schemalagd poängsättning](#configure-scheduled-scoring)
 - [Konfigurera schemalagd utbildning](#configure-scheduled-training)
@@ -51,7 +51,7 @@ När schemalagd utbildning konfigureras körs på en tjänst säkerställer du a
 
 När en tjänst har skapats följer du stegen nedan för att konfigurera och tillämpa ett utbildningsschema:
 
-1. I Adobe Experience Platform klickar du på den **[!UICONTROL Services]** flik som finns i den vänstra navigeringskolumnen för att komma åt *[!UICONTROL Service Gallery]*. Hitta den tjänst som du vill schemalägga kurser för och klicka på **[!UICONTROL Open]** sidan *Översikt* .
+1. I Adobe Experience Platform klickar du på den **[!UICONTROL Services]** flik som finns i den vänstra navigeringskolumnen för att komma åt **[!UICONTROL Service Gallery]**. Hitta den tjänst som du vill schemalägga kurser för och klicka på **[!UICONTROL Open]** sidan *Översikt* .
    ![](../images/models-recipes/schedule/click_to_open.png)
 
 2. På sidan Översikt visas tjänstens utbildningsinformation. Klicka på **[!UICONTROL Update Schedule]** länken för att konfigurera ett utbildningsschema.
