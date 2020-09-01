@@ -5,7 +5,7 @@ title: Användarhandbok för Frågeredigeraren
 topic: query editor
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 translation-type: tm+mt
-source-git-commit: 3376d6cace9ab196f457e2bf7b84cde06693103c
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '1060'
 ht-degree: 1%
@@ -77,19 +77,19 @@ När fel upptäcks kan du visa de specifika felmeddelandena genom att hovra öve
 
 ### Frågeinformation
 
-När du visar en fråga i [!DNL Query Editor]innehåller panelen verktyg för att hantera den valda *[!UICONTROL Query Details]* frågan.
+När du visar en fråga i [!DNL Query Editor]innehåller panelen verktyg för att hantera den valda **[!UICONTROL Query Details]** frågan.
 
 ![Bild](../images/queries/query-editor-overview/query-details.png)
 
-På den här panelen kan du generera en utdatauppsättning direkt från användargränssnittet, ta bort eller namnge den visade frågan och visa SQL-koden i ett format som är enkelt att kopiera på *[!UICONTROL SQL Query]* fliken. På den här panelen visas även användbara metadata som den senaste gången frågan ändrades och vem som ändrade den, om tillämpligt. Om du vill generera en datauppsättning klickar du på **[!UICONTROL Output Dataset]**. Dialogrutan *[!UICONTROL Output Dataset]* visas. Ange ett namn och en beskrivning och klicka sedan på **[!UICONTROL Run Query]**. Den nya datauppsättningen visas på *[!UICONTROL Datasets]* fliken i [!DNL Query Service] användargränssnittet på [!DNL Platform].
+På den här panelen kan du generera en utdatauppsättning direkt från användargränssnittet, ta bort eller namnge den visade frågan och visa SQL-koden i ett format som är enkelt att kopiera på **[!UICONTROL SQL Query]** fliken. På den här panelen visas även användbara metadata som den senaste gången frågan ändrades och vem som ändrade den, om tillämpligt. Om du vill generera en datauppsättning klickar du på **[!UICONTROL Output Dataset]**. Dialogrutan **[!UICONTROL Output Dataset]** visas. Ange ett namn och en beskrivning och klicka sedan på **[!UICONTROL Run Query]**. Den nya datauppsättningen visas på **[!UICONTROL Datasets]** fliken i [!DNL Query Service] användargränssnittet på [!DNL Platform].
 
 ### Sparar frågor
 
-[!DNL Query Editor] innehåller en funktion för att spara som gör att du kan spara en fråga och arbeta med den senare. Om du vill spara en fråga klickar du **[!UICONTROL Save]** i det övre högra hörnet av [!DNL Query Editor]. Innan en fråga kan sparas måste du ange ett namn för frågan med hjälp av *[!UICONTROL Query Details]* panelen.
+[!DNL Query Editor] innehåller en funktion för att spara som gör att du kan spara en fråga och arbeta med den senare. Om du vill spara en fråga klickar du **[!UICONTROL Save]** i det övre högra hörnet av [!DNL Query Editor]. Innan en fråga kan sparas måste du ange ett namn för frågan med hjälp av **[!UICONTROL Query Details]** panelen.
 
 ### Söka efter tidigare frågor
 
-Alla frågor som körs från [!DNL Query Editor] hämtas i loggtabellen. Du kan använda sökfunktionen på fliken *[!UICONTROL Log]* för att hitta frågekörningar. Sparade frågor visas på *[!UICONTROL Browse]* fliken.
+Alla frågor som körs från [!DNL Query Editor] hämtas i loggtabellen. Du kan använda sökfunktionen på fliken **[!UICONTROL Log]** för att hitta frågekörningar. Sparade frågor visas på **[!UICONTROL Browse]** fliken.
 
 Mer information finns i översikten över användargränssnittet för [frågetjänsten][query-service-ui] .
 
@@ -99,7 +99,7 @@ Mer information finns i översikten över användargränssnittet för [frågetj�
 
 ## Köra frågor med Frågeredigeraren
 
-Om du vill köra en fråga i [!DNL Query Editor]kan du ange SQL i redigeraren eller läsa in en tidigare fråga från *loggen* eller *[!UICONTROL Browse]* fliken och klicka på **Spela upp**. Status för frågekörning visas på fliken *[!UICONTROL Console]* nedan och utdata visas på *[!UICONTROL Results]* fliken.
+Om du vill köra en fråga i [!DNL Query Editor]kan du ange SQL i redigeraren eller läsa in en tidigare fråga från *loggen* eller **[!UICONTROL Browse]** fliken och klicka på **Spela upp**. Status för frågekörning visas på fliken **[!UICONTROL Console]** nedan och utdata visas på **[!UICONTROL Results]** fliken.
 
 ### Konsol
 
@@ -113,7 +113,7 @@ Konsolen ger information om status och funktion för [!DNL Query Service]. Konso
 
 ### Frågeresultat
 
-När en fråga är klar visas resultatet på *[!UICONTROL Results]* fliken bredvid *[!UICONTROL Console]* fliken. I den här vyn visas frågans tabellutdata med upp till 100 rader. I den här vyn kan du verifiera att frågan ger förväntat resultat. Om du vill generera en datauppsättning med frågan tar du bort begränsningar för returnerade rader och kör frågan med `CREATE TABLE tablename AS SELECT` för att generera en datauppsättning med utdata. I självstudiekursen [][query-service-create-datasets] om att generera datauppsättningar finns instruktioner om hur du genererar en datauppsättning från frågeresultat i [!DNL Query Editor].
+När en fråga är klar visas resultatet på **[!UICONTROL Results]** fliken bredvid **[!UICONTROL Console]** fliken. I den här vyn visas frågans tabellutdata med upp till 100 rader. I den här vyn kan du verifiera att frågan ger förväntat resultat. Om du vill generera en datauppsättning med frågan tar du bort begränsningar för returnerade rader och kör frågan med `CREATE TABLE tablename AS SELECT` för att generera en datauppsättning med utdata. I självstudiekursen [][query-service-create-datasets] om att generera datauppsättningar finns instruktioner om hur du genererar en datauppsättning från frågeresultat i [!DNL Query Editor].
 
 ![Bild](../images/queries/query-editor-overview/query-results.png)
 
