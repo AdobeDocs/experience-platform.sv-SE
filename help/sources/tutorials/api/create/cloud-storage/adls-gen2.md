@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Azure Data Lake Storage Gen2;azure data lake storage;Azure
 solution: Experience Platform
 title: Skapa en Gen2-anslutning för Azure Data Lake Storage med API:t för Flow Service
 topic: overview
+description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till Azure Data Lake Storage Gen2 (nedan kallat ADLS Gen2).
 translation-type: tm+mt
-source-git-commit: 11431ffcfc2204931fe3e863bfadc7878a40b49c
+source-git-commit: 25f1dfab07d0b9b6c2ce5227b507fc8c8ecf9873
 workflow-type: tm+mt
-source-wordcount: '541'
-ht-degree: 0%
+source-wordcount: '570'
+ht-degree: 1%
 
 ---
 
@@ -23,7 +24,7 @@ I den här självstudiekursen används API:t för att vägleda dig genom stegen 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 * [Källor](../../../../home.md): [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda Platform-instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna skapa en ADLS Gen2-källkoppling med hjälp av [!DNL Flow Service] API.
 
