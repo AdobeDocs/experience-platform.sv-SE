@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics
 solution: Experience Platform
 title: Självstudiekurser för beslutsfattande
 topic: tutorial
+description: Beslutstjänsten ger möjlighet att skapa personaliserade, optimerade och samordnade upplevelser i program som körs på Adobe Experience Platform. Med hjälp av beslutstjänsten kan du fastställa det bästa alternativet bland en uppsättning tillgängliga alternativ.
 translation-type: tm+mt
-source-git-commit: 5c5f6c4868e195aef76bacc0a1e5df3857647bde
+source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
 workflow-type: tm+mt
-source-wordcount: '118'
+source-wordcount: '152'
 ht-degree: 0%
 
 ---
@@ -18,7 +19,7 @@ ht-degree: 0%
 
 ## Arbeta med [!DNL Decisioning Service] runtime
 
-Lär dig hur du arbetar med runtime-tjänsterna för att [!DNL Decisioning Service] använda API:er för Adobe Experience Platform genom att följa [självstudiekursen](../decisioning-service/tutorials/runtime.md)för beslutstjänsten.
+Lär dig hur du arbetar med runtime-tjänsterna för att [!DNL Decisioning Service] använda Adobe Experience Platform API:er genom att följa [självstudiekursen](../decisioning-service/tutorials/runtime.md)om beslutstjänsten.
 
 ## Hantera [!DNL Decisioning Service] enheter
 
