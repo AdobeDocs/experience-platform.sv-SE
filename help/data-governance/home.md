@@ -5,9 +5,9 @@ title: Adobe Experience Platform datastyrning
 topic: overview
 description: Med Adobe Experience Platform Data Governance kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en nyckelroll inom Experience Platform på olika nivåer, bland annat i fråga om katalogisering, datalinje, märkning av dataanvändning, dataanvändningspolicyer och kontroll av användningen av data för marknadsföringsåtgärder
 translation-type: tm+mt
-source-git-commit: c081a7521be9715ca32d35504922a70767924fd7
+source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
 workflow-type: tm+mt
-source-wordcount: '1394'
+source-wordcount: '1326'
 ht-degree: 0%
 
 ---
@@ -43,11 +43,11 @@ Marknadsförarna är slutpunkten för datastyrning. De begär data från den inf
 * Marknadsföringsspecialister och Experience Designers använder data för att utforma nya kundupplevelser.
 
 
-## DULE-ramverk
+## [!DNL Data Governance] ramverk
 
-DULE (Data Usage Labeling and Enforcement) är grundramverket för [!DNL Experience Platform] [!DNL Data Governance]. DULE förenklar och effektiviserar arbetet med att kategorisera data och skapa principer för dataanvändning. När dataetiketter har tillämpats och dataanvändningspolicyer har införts kan marknadsföringsåtgärder utvärderas för att säkerställa korrekt dataanvändning.
+Ramverket [!DNL Data Governance] förenklar och effektiviserar processen att kategorisera data och skapa policyer för dataanvändning. När dataetiketter har tillämpats och dataanvändningspolicyer har införts kan marknadsföringsåtgärder utvärderas för att säkerställa korrekt dataanvändning.
 
-DULE-ramverket består av tre nyckelelement: Etiketter, profiler och verkställighet.
+Det finns tre viktiga delar i [!DNL Data Governance] ramverket: Etiketter, profiler och verkställighet.
 
 1. **Etiketter:** Klassificera data som återspeglar integritetsrelaterade överväganden och avtalsvillkor så att de överensstämmer med regler och organisationsprofiler.
 1. **Profiler:** Beskriv vilka typer av marknadsföringsåtgärder som är tillåtna eller inte får vidtas på specifika data.
@@ -57,7 +57,7 @@ DULE-ramverket består av tre nyckelelement: Etiketter, profiler och verkställi
 
 [!DNL Data Governance] gör det möjligt för dataserier att använda användningsetiketter på data- och fältnivå för att kategorisera data efter vilken typ av profiler som används.
 
-DULE-ramverket innehåller fördefinierade etiketter för dataanvändning som kan användas för att kategorisera data på tre sätt:
+Ramverket innehåller fördefinierade etiketter för dataanvändning som kan användas för att kategorisera data på tre sätt: [!DNL Data Governance]
 
 ![Etikettkategorier för dataanvändning](./images/overview/label-categories.png)
 
@@ -79,7 +79,7 @@ För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste
 
 Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en datauppsättning till en tredjepartstjänst. Om det finns en policy som säger att vissa typer av data, t.ex. PII (Personally Identiitable Information), inte kan exporteras och en I-etikett (Identity Data) har tillämpats på datauppsättningen, får du ett svar från [!DNL Policy Service] dig om att en dataanvändningspolicy har överträtts.
 
-När dataanvändningsetiketterna har tillämpats kan datafördelningar skapa principer med DULE [!DNL Policy Service] API eller [!DNL Experience Platform] användargränssnittet.
+När dataanvändningsetiketterna har tillämpats kan datafördelningar skapa principer med hjälp av [!DNL Policy Service] API:t eller [!DNL Experience Platform] användargränssnittet.
 
 >[!IMPORTANT]
 >
@@ -89,7 +89,7 @@ Mer information om dataanvändningspolicyer och marknadsföringsåtgärder finns
 
 ## Nästa steg
 
-Det här dokumentet innehåller en introduktion på hög nivå till [!DNL Data Governance] och DULE-ramverket. Du kan nu fortsätta med användarhandboken för [dataanvändningsetiketter](labels/user-guide.md) och börja lägga till användningsetiketter till dina upplevelsedata.
+Det här dokumentet innehåller en introduktion på hög nivå till [!DNL Data Governance] och[!DNL Data Governance] ramverket. Du kan nu fortsätta med användarhandboken för [dataanvändningsetiketter](labels/user-guide.md) och börja lägga till användningsetiketter till dina upplevelsedata.
 
 ## Bilaga
 
@@ -97,7 +97,7 @@ I följande avsnitt finns ytterligare information om [!DNL Data Governance].
 
 ### [!DNL Data Governance] terminologi
 
-Följande tabell visar nyckeltermer relaterade till [!DNL Data Governance] och DULE-ramverket.
+Följande tabell visar nyckeltermer relaterade till [!DNL Data Governance] och[!DNL Data Governance] ramverket.
 
 | Term | Definition |
 |---|---|
@@ -107,7 +107,6 @@ Följande tabell visar nyckeltermer relaterade till [!DNL Data Governance] och D
 | **Dataförvaltare** | Dataförvaltningarna är den person som ansvarar för förvaltning, tillsyn och verkställighet av en organisations datatillgångar. En dataförvaltare säkerställer också att policyer för datastyrning skyddas och upprätthålls så att de följer myndighetsregler och organisationsregler. |
 | **Dataanvändningsetiketter** | Etiketter för dataanvändning ger användarna möjlighet att kategorisera data som speglar integritetsrelaterade överväganden och avtalsvillkor så att de uppfyller regler och företagspolicyer. |
 | **Datauppsättningsetiketter** | Etiketter kan läggas till i en datauppsättning. Alla fält i en datauppsättning ärver datauppsättningens etiketter. |
-| **DULE** | DULE är en förkortning av&quot;Dataanvändningsetiketter och -verkställighet&quot;. DULE är en viktig del av datastyrningen och är en samling funktioner som gör det möjligt att sätta etiketter för dataanvändning och tillämpa policyer för dataåtkomst för styrningsbehov inom en organisation. |
 | **Fältetiketter** | Fältetiketter är datastyrningsetiketter som antingen ärvs från en datamängd eller tillämpas direkt på ett fält.  Datastyrningsetiketter som används i ett fält ärvs inte upp till en datamängd. |
 | **Geofence** | En geofence är en virtuell geografisk gräns, som definieras av GPS- eller RFID-teknik, som gör att programvara kan utlösa ett svar när en mobil enhet kommer in i eller lämnar ett visst område. |
 | **Identitetsetiketter** | Identitet&quot;I&quot;-etiketter används för att kategorisera data som kan identifiera eller kontakta en viss person. |
@@ -118,6 +117,6 @@ Följande tabell visar nyckeltermer relaterade till [!DNL Data Governance] och D
 
 ## Ytterligare resurser
 
-Följande video är tänkt att ge stöd för din förståelse av [!DNL Data Governance]och beskriver de viktigaste aspekterna i ramverket för märkning och verkställighet av dataanvändning (DULE).
+Följande video är tänkt att ge stöd för din förståelse av [!DNL Data Governance] ramverket.
 
 >[!VIDEO](https://video.tv.adobe.com/v/29708?quality=12&enable10seconds=on&speedcontrol=on)
