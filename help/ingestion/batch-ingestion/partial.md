@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över partiell gruppinmatning i Adobe Experience Platform
 topic: overview
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '1387'
 ht-degree: 0%
@@ -89,7 +89,7 @@ Om du vill skapa en ny källanslutning följer du stegen i listan i [Källövers
 
 Med **[!UICONTROL Partial ingestion]** växlingsknappen kan du aktivera eller inaktivera användning av partiell gruppinmatning.
 
-Växlingsknappen **[!UICONTROL Error diagnostics]** visas bara när **[!UICONTROL Partial ingestion]** växlingsknappen är inaktiverad. Med den här funktionen kan du [!DNL Platform] generera detaljerade felmeddelanden om dina inkapslade batchar. Om *[!UICONTROL Partial ingestion]* växeln är aktiverad aktiveras förbättrad feldiagnostik automatiskt.
+Växlingsknappen **[!UICONTROL Error diagnostics]** visas bara när **[!UICONTROL Partial ingestion]** växlingsknappen är inaktiverad. Med den här funktionen kan du [!DNL Platform] generera detaljerade felmeddelanden om dina inkapslade batchar. Om **[!UICONTROL Partial ingestion]** växeln är aktiverad aktiveras förbättrad feldiagnostik automatiskt.
 
 ![](../images/batch-ingestion/partial-ingestion/configure-batch-partial-ingestion-focus.png)
 
