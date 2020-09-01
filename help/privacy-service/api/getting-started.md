@@ -5,7 +5,7 @@ title: Privacy Service developer guide
 description: Använd RESTful API för att hantera personuppgifter för dina registrerade i olika Adobe Experience Cloud-program
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '728'
 ht-degree: 0%
@@ -61,15 +61,15 @@ Stegen för att generera dessa värden beskrivs närmare nedan.
 
 Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med din Adobe ID. Följ sedan stegen som beskrivs i självstudiekursen om hur du [skapar ett tomt projekt](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) i dokumentationen för Adobe Developer Console.
 
-När du har skapat ett nytt projekt klickar du **[!UICONTROL Add API]** på _[!UICONTROL Project Overview]_skärmen.
+När du har skapat ett nytt projekt klickar du **[!UICONTROL Add API]** på **[!UICONTROL Project Overview]** skärmen.
 
 ![](../images/api/getting-started/add-api-button.png)
 
-Skärmen visas _[!UICONTROL Add an API]_. Välj **[!UICONTROL Privacy Service API]**i listan med tillgängliga API:er innan du klickar på&#x200B;**[!UICONTROL Next]**.
+Skärmen visas **[!UICONTROL Add an API]** . Välj **[!UICONTROL Privacy Service API]** i listan med tillgängliga API:er innan du klickar på **[!UICONTROL Next]**.
 
 ![](../images/api/getting-started/add-privacy-service-api.png)
 
-Skärmen visas _[!UICONTROL Configure API]_. Välj alternativet att **[!UICONTROL Generate a key pair]**markera och klicka sedan **[!UICONTROL Generate keypair]**i det nedre högra hörnet.
+Skärmen visas **[!UICONTROL Configure API]** . Välj alternativet att **[!UICONTROL Generate a key pair]** markera och klicka sedan **[!UICONTROL Generate keypair]** i det nedre högra hörnet.
 
 ![](../images/api/getting-started/generate-key-pair.png)
 
@@ -77,7 +77,7 @@ Nyckelparet genereras automatiskt och en ZIP-fil som innehåller en privat nycke
 
 ![](../images/api/getting-started/key-pair-generated.png)
 
-När API:t har lagts till i projektet visas projektsidan igen på _Privacy Service-API:ts översiktssida_ . Här bläddrar du nedåt till _[!UICONTROL Service Account (JWT)]_avsnittet som innehåller följande åtkomstautentiseringsuppgifter som krävs för alla anrop till[!DNL Privacy Service]API:
+När API:t har lagts till i projektet visas projektsidan igen på _Privacy Service-API:ts översiktssida_ . Här bläddrar du nedåt till **[!UICONTROL Service Account (JWT)]** avsnittet som innehåller följande åtkomstautentiseringsuppgifter som krävs för alla anrop till [!DNL Privacy Service] API:
 
 * **[!UICONTROL CLIENT ID]**: Klient-ID är det som krävs `{API_KEY}` för detta måste anges i x-api-key-huvudet.
 * **[!UICONTROL ORGANIZATION ID]**: Organisations-ID är det `{IMS_ORG}` värde som måste användas i rubriken x-gw-ims-org-id.
@@ -88,7 +88,7 @@ När API:t har lagts till i projektet visas projektsidan igen på _Privacy Servi
 
 Den sista obligatoriska autentiseringsuppgifterna som du måste samla in är din `{ACCESS_TOKEN}`, som används i auktoriseringshuvudet. Till skillnad från värdena för `{API_KEY}` och `{IMS_ORG}`måste en ny token genereras var 24:e timme för att kunna fortsätta använda [!DNL Platform] API:er.
 
-Om du vill skapa en ny `{ACCESS_TOKEN}`nyckel öppnar du den tidigare hämtade privata nyckeln och klistrar in innehållet i textrutan bredvid _[!UICONTROL Generate access token]_innan du klickar **[!UICONTROL Generate Token]**.
+Om du vill skapa en ny `{ACCESS_TOKEN}`nyckel öppnar du den tidigare hämtade privata nyckeln och klistrar in innehållet i textrutan bredvid **[!UICONTROL Generate access token]** innan du klickar **[!UICONTROL Generate Token]**.
 
 ![](../images/api/getting-started/paste-private-key.png)
 
