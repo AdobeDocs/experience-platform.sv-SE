@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;query service;Query service;adobe defined functions;sql;
 solution: Experience Platform
 title: Adobe-definierade funktioner
 topic: functions
 translation-type: tm+mt
-source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
+source-git-commit: c5d3be4706ca6d6a30e203067db6ddc894b9bfb4
 workflow-type: tm+mt
 source-wordcount: '2156'
 ht-degree: 3%
@@ -438,7 +438,7 @@ Syntax: `PREVIOUS(key, [shift, [ignoreNulls]]) OVER ([partition] [order] [frame]
 | Parameter | Beskrivning |
 | --- | --- |
 | `key` | Kolumnen eller fältet från händelsen. |
-| `shift` | (valfritt) Antalet händelser utanför den aktuella händelsen. Standardvärdet är 1. |
+| `shift` | (valfritt) Antalet händelser som ligger utanför den aktuella händelsen. Standardvärdet är 1. |
 | `ingnoreNulls` | Boolean som ska anges om null- `key` värden ska ignoreras. Default is `false`. |
 
 
@@ -488,7 +488,7 @@ Syntax: `NEXT(key, [shift, [ignoreNulls]]) OVER ([partition] [order] [frame])`
 | Parameter | Beskrivning |
 | --- | --- |
 | `key` | Kolumnen eller fältet från händelsen |
-| `shift` | (valfritt) Antalet händelser utanför den aktuella händelsen. Standardvärdet är 1. |
+| `shift` | (valfritt) Antalet händelser som ligger utanför den aktuella händelsen. Standardvärdet är 1. |
 | `ingnoreNulls` | Boolean som ska anges om null- `key` värden ska ignoreras. Default is `false`. |
 
 
