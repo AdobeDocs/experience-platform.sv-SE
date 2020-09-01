@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Microsoft Dynamics;microsoft dynamics;dynamics;Dynamics
 solution: Experience Platform
 title: Skapa en Microsoft Dynamics-anslutning med API:t för Flow Service
 topic: overview
+description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta plattformen till ett Microsoft Dynamics-konto (nedan kallat Dynamics) för att samla in CRM-data.
 translation-type: tm+mt
-source-git-commit: 5839e4695589455bd32b6e3e33a7c377343f920d
+source-git-commit: 25f1dfab07d0b9b6c2ce5227b507fc8c8ecf9873
 workflow-type: tm+mt
-source-wordcount: '679'
+source-wordcount: '709'
 ht-degree: 0%
 
 ---
@@ -183,7 +184,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `auth.params.serviceUri` | Den tjänst-URI som är associerad med din [!DNL Dynamics] instans. |
-| `auth.params.username` | Det användarnamn som är kopplat till ditt [!DNL Dynamics] konto. |
+| `auth.params.username` | Användarnamnet som är associerat med ditt [!DNL Dynamics] konto. |
 | `auth.params.password` | Lösenordet som är kopplat till ditt [!DNL Dynamics] konto. |
 | `connectionSpec.id` | Anslutningsspecifikationen `id` för ditt [!DNL Dynamics] konto som hämtades i föregående steg. |
 
