@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;hubspot;Hubspot
 solution: Experience Platform
 title: Skapa en HubSpot-anslutning med API:t för Flow Service
 topic: overview
+description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till HubSpot.
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 5959d4344ec1c16542de045899ce74beb39a7bc4
 workflow-type: tm+mt
-source-wordcount: '586'
+source-wordcount: '605'
 ht-degree: 0%
 
 ---
