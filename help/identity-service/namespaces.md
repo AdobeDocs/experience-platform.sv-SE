@@ -5,7 +5,7 @@ title: Adobe Experience Platform Identity Service
 topic: overview
 description: 'Identitetsnamnutrymmen är en komponent i identitetstjänsten som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet"name<span>@email.com" som e-postadress eller"443522" som ett numeriskt CRM-ID. '
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '761'
 ht-degree: 1%
@@ -53,7 +53,7 @@ Följande identitetstyper är tillgängliga i [!DNL Platform]:
 
 I Adobe Experience Platform finns flera identitetsnamnutrymmen som är tillgängliga för alla organisationer. Dessa kallas standardnamnutrymmen och visas med [!DNL Identity Service] API:t eller via [!DNL Platform] gränssnittet.
 
-Om du vill visa standardnamnutrymmen i användargränssnittet klickar du **[!UICONTROL Identities]** i den vänstra listen och sedan på *[!UICONTROL Browse]* fliken. Alla identitetsnamnutrymmen som är tillgängliga för din organisation visas, men de med&quot;[!UICONTROL Standard]&quot; som&quot;[!UICONTROL Owner]&quot; är standardnamnutrymmena från Adobe.
+Om du vill visa standardnamnutrymmen i användargränssnittet klickar du **[!UICONTROL Identities]** i den vänstra listen och sedan på **[!UICONTROL Browse]** fliken. Alla identitetsnamnutrymmen som är tillgängliga för din organisation visas, men de med&quot;[!UICONTROL Standard]&quot; som&quot;[!UICONTROL Owner]&quot; är standardnamnutrymmena från Adobe.
 
 Du kan sedan klicka på ett av namnutrymmena för att visa information.
 
@@ -71,7 +71,7 @@ Namnutrymmen som du definierar är privata för din organisation och kräver ett
 
 ![](./images/create-identity-namespace.png)
 
-På samma sätt som för standardnamnutrymmen kan du klicka på ett anpassat namnutrymme på fliken för att visa information om det, men med ett anpassat namnutrymme kan du även redigera dess visningsnamn och beskrivning i informationsområdet. *[!UICONTROL Browse]*
+På samma sätt som för standardnamnutrymmen kan du klicka på ett anpassat namnutrymme på fliken för att visa information om det, men med ett anpassat namnutrymme kan du även redigera dess visningsnamn och beskrivning i informationsområdet. **[!UICONTROL Browse]**
 
 >[!NOTE]
 >
