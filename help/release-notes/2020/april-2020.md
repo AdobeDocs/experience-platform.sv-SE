@@ -6,9 +6,9 @@ last-update: April 13, 2020
 author: ens71067
 keywords: release notes;
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
 workflow-type: tm+mt
-source-wordcount: '993'
+source-wordcount: '991'
 ht-degree: 2%
 
 ---
@@ -73,7 +73,7 @@ Adobe Experience Platform [!DNL Data Governance] är en serie strategier och tek
 
 För att komma igång med datastyrning krävs en grundlig förståelse för de regler, avtalsförpliktelser och företagspolicyer som gäller för era kunddata. Därifrån kan data klassificeras med hjälp av lämpliga etiketter för dataanvändning, och användningen av dessa kan styras med hjälp av definitionen av policyer för dataanvändning.
 
-DULE-ramverket förenklar och effektiviserar processen att kategorisera data och skapa dataanvändningsprinciper via [!DNL Experience Platform] användargränssnittet och DULE [!DNL Policy Service] API.
+Ramverket [!DNL Data Governance] förenklar och effektiviserar processen att kategorisera data och skapa dataanvändningsprinciper via [!DNL Experience Platform] användargränssnittet och [!DNL Policy Service] API.
 
 **Nya funktioner**
 
