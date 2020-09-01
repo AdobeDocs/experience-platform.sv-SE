@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics
 solution: Experience Platform
 title: Självstudiekurser för datastyrning och sekretess
 topic: tutorial
+description: DULE (Data Usage Labeling and Enforcement) är kärnmekanismen i Adobe Experience Platform datastyrning. DULE-funktioner gör att du kan använda dataanvändningsetiketter på datauppsättningar och fält, och kategorisera dem efter relaterade principer för dataanvändning.
 translation-type: tm+mt
-source-git-commit: 5c5f6c4868e195aef76bacc0a1e5df3857647bde
+source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
 workflow-type: tm+mt
-source-wordcount: '470'
+source-wordcount: '506'
 ht-degree: 0%
 
 ---
@@ -14,9 +15,9 @@ ht-degree: 0%
 
 # [!DNL Data Governance] och [!DNL Privacy] Tutorials
 
-[!DNL Data Usage Labeling and Enforcement] (DULE) är kärnmekanismen i Adobe Experience Platform [!DNL Data Governanc]e. DULE-funktioner gör att du kan använda dataanvändningsetiketter på datauppsättningar och fält, och kategorisera dem efter relaterade principer för dataanvändning. Innan du börjar med etiketter kan du läsa översikten [över](../data-governance/home.md) datastyrning för en mer robust introduktion till DULE-ramverket i [!DNL Platform].
+[!DNL Data Usage Labeling and Enforcement] (DULE) är Adobe Experience Platform kärnmekanism [!DNL Data Governance]. DULE-funktioner gör att du kan använda dataanvändningsetiketter på datauppsättningar och fält, och kategorisera dem efter relaterade principer för dataanvändning. Innan du börjar med etiketter kan du läsa översikten [över](../data-governance/home.md) datastyrning för en mer robust introduktion till DULE-ramverket i [!DNL Platform].
 
-Adobe Experience Platform [!DNL Privacy Service] har ett RESTful API och användargränssnitt som gör att du kan samordna förfrågningar om sekretess och regelefterlevnad i olika lösningar. Börja med att läsa översikten över [Privacy Servicen](../privacy-service/home.md)om du vill veta mer.
+Adobe Experience Platform [!DNL Privacy Service] tillhandahåller ett RESTful API och användargränssnitt som gör att ni kan samordna förfrågningar om sekretess och regelefterlevnad i olika lösningar. Börja med att läsa översikten över [Privacy Servicen](../privacy-service/home.md)om du vill veta mer.
 
 ## Lägg till etiketter för dataanvändning
 
@@ -28,7 +29,7 @@ Med DULE [!DNL Policy Service] API kan du skapa och hantera DULE-principer för 
 
 ## Använd principer för dataanvändning
 
-När du har skapat DULE-etiketter (Data Usage Labeling and Enforcement) för dina data och skapat DULE-profiler för marknadsföringsåtgärder mot dessa etiketter, kan du använda DULE [!DNL Policy Service] API för att utvärdera om en marknadsföringsåtgärd som utförts på en datauppsättning, eller en godtycklig grupp med DULE-etiketter, utgör en policyöverträdelse. Du kan sedan konfigurera egna interna protokoll för att hantera policyöverträdelser baserat på API-svaret. Kom igång genom att gå till översikten över [policyefterlevnaden](../data-governance/enforcement/overview.md).
+När du har skapat DULE-etiketter (Data Usage Labeling and Enforcement) för dina data och skapat DULE-profiler för marknadsföringsåtgärder mot dessa etiketter, kan du använda DULE [!DNL Policy Service] API för att utvärdera om en marknadsföringsåtgärd som utförts på en datauppsättning, eller en godtycklig grupp med DULE-etiketter, utgör en policyöverträdelse. Du kan sedan konfigurera egna interna protokoll för att hantera policyöverträdelser baserat på API-svaret. Kom igång genom att gå till [översikt](../data-governance/enforcement/overview.md)över policyefterlevnaden.
 
 ## Använd regelefterlevnad för ett målgruppssegment
 
