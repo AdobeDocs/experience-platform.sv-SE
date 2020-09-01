@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Prenumerera på dataöverföringshändelser
 topic: overview
 translation-type: tm+mt
-source-git-commit: 5a10a31f4be5173af8b459b9ab8a53096348be1d
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '805'
 ht-degree: 0%
@@ -55,7 +55,7 @@ När du har skapat ett nytt projekt går du till projektets översiktsskärm. Kl
 
 ![](../images/quality/subscribe-events/add-event-button.png)
 
-Dialogrutan _[!UICONTROL Add events]_visas. Klicka **[!UICONTROL Experience Platform]**för att filtrera listan med tillgängliga alternativ och klicka sedan **[!UICONTROL Platform notifications]**innan du klickar **[!UICONTROL Next]**.
+Dialogrutan **[!UICONTROL Add events]** visas. Klicka **[!UICONTROL Experience Platform]** för att filtrera listan med tillgängliga alternativ och klicka sedan **[!UICONTROL Platform notifications]** innan du klickar **[!UICONTROL Next]**.
 
 ![](../images/quality/subscribe-events/select-platform-events.png)
 
