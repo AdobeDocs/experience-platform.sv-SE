@@ -3,11 +3,11 @@ keywords: Experience Platform;home;popular topics;data governance;data usage pol
 solution: Experience Platform
 title: Skapa en dataanvändningsprincip
 topic: policies
-description: DULE (Data Usage Labeling and Enforcement) är kärnmekanismen i Adobe Experience Platform datastyrning. Med DULE Policy Service API kan du skapa och hantera DULE-principer för att avgöra vilka marknadsföringsåtgärder som kan vidtas mot data som innehåller vissa DULE-etiketter. Det här dokumentet innehåller en stegvis självstudiekurs för att skapa en DULE-princip med hjälp av API:t för principtjänsten.
+description: Med API:t för principtjänsten kan du skapa och hantera dataanvändningsprinciper för att avgöra vilka marknadsföringsåtgärder som kan vidtas mot data som innehåller vissa dataanvändningsetiketter. Det här dokumentet innehåller en stegvis självstudiekurs för att skapa en profil med hjälp av API:t för principtjänsten.
 translation-type: tm+mt
-source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
+source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
 workflow-type: tm+mt
-source-wordcount: '1254'
+source-wordcount: '1209'
 ht-degree: 0%
 
 ---
@@ -15,33 +15,33 @@ ht-degree: 0%
 
 # Skapa en dataanvändningsprincip i API:t
 
-DULE (Data Usage Labeling and Enforcement) är Adobe Experience Platform kärnmekanism [!DNL Data Governance]. Med API:t för [DULE Policy Service](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) kan du skapa och hantera DULE-principer för att avgöra vilka marknadsföringsåtgärder som kan vidtas mot data som innehåller vissa DULE-etiketter.
+Med API:t [för](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) principtjänsten kan du skapa och hantera dataanvändningsprinciper för att avgöra vilka marknadsföringsåtgärder som kan vidtas mot data som innehåller vissa dataanvändningsetiketter.
 
-Det här dokumentet innehåller en stegvis självstudiekurs för att skapa en DULE-princip med API:t. [!DNL Policy Service] En mer utförlig guide till de olika åtgärder som är tillgängliga i API:t finns i Utvecklarhandbok för [principtjänst](../api/getting-started.md).
+I det här dokumentet finns en stegvis självstudiekurs för att skapa en profil med hjälp av [!DNL Policy Service] API:t. En mer utförlig guide till de olika åtgärder som är tillgängliga i API:t finns i Utvecklarhandbok för [principtjänst](../api/getting-started.md).
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse av följande viktiga koncept som används för att skapa och utvärdera DULE-policyer:
+Den här självstudiekursen kräver en fungerande förståelse av följande viktiga begrepp när du skapar och utvärderar policyer:
 
 * [[!DNL Data Governance]](../home.md): Ramverket som [!DNL Platform] genomdriver efterlevnad av dataanvändning.
 * [Dataanvändningsetiketter](../labels/overview.md): Dataanvändningsetiketter används i XDM-datafält, vilket anger begränsningar för hur data kan nås.
 * [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
 * [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa DULE [!DNL Policy Service] API, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
+Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till [!DNL Policy Service] API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
 
 ## Definiera en marknadsföringsåtgärd {#define-action}
 
 Inom [!DNL Data Governance] ramen är en marknadsföringsåtgärd en åtgärd som en [!DNL Experience Platform] datakonsument vidtar, och för vilken det finns ett behov av att kontrollera om dataanvändningspolicyer har överträtts.
 
-Det första steget i att skapa en DULE-policy är att avgöra vilka marknadsföringsåtgärder som policyn kommer att utvärdera. Detta kan du göra med något av följande alternativ:
+Det första steget i att skapa en dataanvändningspolicy är att avgöra vilken marknadsföringsåtgärd som principen ska utvärdera. Detta kan du göra med något av följande alternativ:
 
 * [Slå upp en befintlig marknadsföringsåtgärd](#look-up)
 * [Skapa en ny marknadsföringsåtgärd](#create-new)
 
 ### Slå upp en befintlig marknadsföringsåtgärd {#look-up}
 
-Du kan slå upp befintliga marknadsföringsåtgärder som ska utvärderas av din DULE-policy genom att göra en GET-förfrågan till någon av `/marketingActions` slutpunkterna.
+Du kan slå upp befintliga marknadsföringsåtgärder som ska utvärderas av din policy genom att göra en GET-förfrågan till någon av `/marketingActions` slutpunkterna.
 
 **API-format**
 
@@ -122,7 +122,7 @@ Ett lyckat svar returnerar det totala antalet marknadsföringsåtgärder som hit
 | --- | --- |
 | `_links.self.href` | Varje objekt i `children` arrayen innehåller ett URI-ID för den listade marknadsföringsåtgärden. |
 
-När du hittar den marknadsföringsåtgärd du vill använda ska du registrera värdet på dess `href` egenskap. Det här värdet används under nästa steg när du [skapar en DULE-princip](#create-policy).
+När du hittar den marknadsföringsåtgärd du vill använda ska du registrera värdet på dess `href` egenskap. Det här värdet används under nästa steg när du [skapar en profil](#create-policy).
 
 ### Create a new marketing action {#create-new}
 
@@ -188,13 +188,13 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och information om den nylig
 | --- | --- |
 | `_links.self.href` | URI-ID för marknadsföringsåtgärden. |
 
-Registrera URI-ID:t för den nyligen skapade marknadsföringsåtgärden, så som det kommer att användas i nästa steg när du skapar en DULE-princip.
+Registrera URI-ID:t för den nyligen skapade marknadsföringsåtgärden, så som det kommer att användas i nästa steg i skapandet av en profil.
 
-## Skapa en DULE-princip {#create-policy}
+## Skapa en profil {#create-policy}
 
-Om du skapar en ny princip måste du tillhandahålla URI-ID:t för en marknadsföringsåtgärd med ett uttryck för DULE-etiketterna som förbjuder den marknadsföringsåtgärden.
+Om du skapar en ny princip måste du tillhandahålla URI-ID:t för en marknadsföringsåtgärd med ett uttryck för användningsetiketterna som förbjuder den marknadsföringsåtgärden.
 
-Det här uttrycket kallas ett **principuttryck** och är ett objekt som innehåller antingen (A) en DULE-etikett eller (B) en operator och operander, men inte båda. I sin tur är varje operand också ett principuttrycksobjekt. En policy för export av data till en tredje part kan till exempel vara förbjuden om det finns `C1 OR (C3 AND C7)` etiketter. Detta uttryck skulle anges som:
+Det här uttrycket kallas ett **principuttryck** och är ett objekt som innehåller antingen (A) en etikett eller (B) en operator och operander, men inte båda. I sin tur är varje operand också ett principuttrycksobjekt. En policy för export av data till en tredje part kan till exempel vara förbjuden om det finns `C1 OR (C3 AND C7)` etiketter. Detta uttryck skulle anges som:
 
 ```json
 "deny": {
@@ -222,7 +222,7 @@ Det här uttrycket kallas ett **principuttryck** och är ett objekt som innehål
 >
 >Endast operatorerna OR och AND stöds.
 
-När du har konfigurerat ditt principuttryck kan du skapa en ny DULE-princip genom att göra en POST-förfrågan till `/policies/custom` slutpunkten.
+När du har konfigurerat ditt principuttryck kan du skapa en ny princip genom att göra en POST-förfrågan till `/policies/custom` slutpunkten.
 
 **API-format**
 
@@ -232,7 +232,7 @@ POST /policies/custom
 
 **Begäran**
 
-Följande begäran skapar en DULE-princip med namnet&quot;Exportera data till tredje part&quot; genom att tillhandahålla en marknadsföringsåtgärd och ett policyuttryck i nyttolasten för begäran.
+I följande begäran skapas en princip som heter&quot;Exportera data till tredje part&quot; genom att en marknadsföringsåtgärd och ett policyuttryck tillhandahålls i nyttolasten för begäran.
 
 ```shell
 curl -X POST \
@@ -268,7 +268,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `marketingActionRefs` | En array som innehåller värdet `href` för en marknadsföringsåtgärd, som du fick i [föregående steg](#define-action). I exemplet ovan anges endast en marknadsföringsåtgärd, men flera åtgärder kan också anges. |
-| `deny` | Principuttrycksobjektet. Definierar DULE-etiketter och villkor som skulle få principen att avvisa den marknadsföringsåtgärd som refereras i `marketingActionRefs`. |
+| `deny` | Principuttrycksobjektet. Definierar de användningsetiketter och villkor som skulle få principen att avvisa den marknadsföringsåtgärd som refereras i `marketingActionRefs`. |
 
 **Svar**
 
@@ -319,17 +319,17 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och information om den nya p
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `id` | Ett skrivskyddat systemgenererat värde som unikt identifierar DULE-principen. |
+| `id` | Ett skrivskyddat systemgenererat värde som unikt identifierar principen. |
 
-Registrera URI-ID:t för den nya DULE-principen så som den används i nästa steg för att aktivera principen.
+Registrera URI-ID:t för den nyligen skapade principen så som den används i nästa steg för att aktivera principen.
 
-## Aktivera DULE-principen
+## Aktivera profilen
 
 >[!NOTE]
 >
->Detta steg är valfritt om du vill lämna din DULE-princip i `DRAFT` status, men tänk på att en policy som standard måste ha sin status inställd på `ENABLED` för att kunna delta i utvärderingen. Se självstudiekursen om hur du [verkställer DULE-regler](../enforcement/api-enforcement.md) för mer information om hur du gör undantag för policyer i `DRAFT` status.
+>Detta steg är valfritt om du vill lämna din policy i `DRAFT` status, men tänk på att som standard måste en policy ha sin status inställd på `ENABLED` för att kunna delta i utvärderingen. Mer information om hur du gör undantag för principer som [har](../enforcement/api-enforcement.md) status finns i handboken om policytillämpning `DRAFT` .
 
-Som standard deltar inte DULE-principer som har egenskapen `status` inställd på att `DRAFT` delta i utvärderingen. Du kan aktivera din princip för utvärdering genom att göra en PATCH-begäran till `/policies/custom/` slutpunkten och ange den unika identifieraren för principen i slutet av sökvägen.
+Som standard deltar inte principer som har egenskapen `status` inställd på att `DRAFT` delta i utvärderingen. Du kan aktivera din princip för utvärdering genom att göra en PATCH-begäran till `/policies/custom/` slutpunkten och ange den unika identifieraren för principen i slutet av sökvägen.
 
 **API-format**
 
@@ -343,7 +343,7 @@ PATCH /policies/custom/{POLICY_ID}
 
 **Begäran**
 
-Följande begäran utför en PATCH-åtgärd på egenskapen `status` för DULE-principen och ändrar dess värde från `DRAFT` till `ENABLED`.
+Följande begäran utför en PATCH-åtgärd på `status` egenskapen för principen och ändrar dess värde från `DRAFT` till `ENABLED`.
 
 ```shell
 curl -X PATCH \
