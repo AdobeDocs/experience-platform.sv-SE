@@ -5,7 +5,7 @@ title: Anslut med PSQL
 topic: connect
 description: 'PSQL är ett kommandoradsgränssnitt som medföljer när du installerar Postgres på datorn. Du kan installera det genom att följa dessa anvisningar. '
 translation-type: tm+mt
-source-git-commit: c081a7521be9715ca32d35504922a70767924fd7
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '186'
 ht-degree: 1%
@@ -63,9 +63,9 @@ psql (PostgreSQL) 9.5.14
 
 ## Anslut PSQL och [!DNL Query Service]
 
-Återgå till [!DNL Platform] gränssnittet på *[!UICONTROL Connect BI Tools]* sidan.
+Återgå till [!DNL Platform] gränssnittet på **[!UICONTROL Connect BI Tools]** sidan.
 
-Klicka **[!UICONTROL copy]** för *[!UICONTROL PSQL Command]*.
+Klicka **[!UICONTROL copy]** för **[!UICONTROL PSQL Command]**.
 
 ![Bild](../images/clients/psql/connect-bi.png)
 
