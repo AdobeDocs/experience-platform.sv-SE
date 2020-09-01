@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Importera data till Adobe Experience Platform
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 6e4a3ebe84c82790f58f8ec54e6f72c2aca0b7da
+source-git-commit: f8d13b305a61f8606c4fa1ceee6d4518b5d83fda
 workflow-type: tm+mt
 source-wordcount: '1185'
 ht-degree: 0%
@@ -26,7 +26,7 @@ Om du föredrar att importera data med hjälp av API:er för datainmatning börj
 
 På arbetsytan Datauppsättningar i [!DNL Experience Platform] kan du visa och hantera alla datauppsättningar som din IMS-organisation har skapat, samt skapa nya.
 
-Visa arbetsytan Datauppsättningar genom att klicka **[!UICONTROL Datasets]** i den vänstra navigeringen. Arbetsytan Datauppsättningar innehåller en lista med datauppsättningar, inklusive kolumner som visar _[!UICONTROL Name]_,_[!UICONTROL Created]_ (datum och tid), _[!UICONTROL Source]_,_[!UICONTROL Schema]_ och _[!UICONTROL Last Batch Status]_, samt datum och tid som datauppsättningen var_[!UICONTROL Last Updated]_.
+Visa arbetsytan Datauppsättningar genom att klicka **[!UICONTROL Datasets]** i den vänstra navigeringen. Arbetsytan Datauppsättningar innehåller en lista med datauppsättningar, inklusive kolumner som visar **[!UICONTROL Name]**, **[!UICONTROL Created]** (datum och tid), **[!UICONTROL Source]**, **[!UICONTROL Schema]** och **[!UICONTROL Last Batch Status]**, samt datum och tid som datauppsättningen var **[!UICONTROL Last Updated]**.
 
 >[!NOTE]
 >
@@ -70,9 +70,9 @@ När datauppsättningen har ett namn och en beskrivning klickar du på **[!UICON
 
 En tom datauppsättning har nu skapats och du har återgått till fliken **[!UICONTROL Dataset Activity]** i arbetsytan Datauppsättningar. Du bör se namnet på datauppsättningen i det övre vänstra hörnet av arbetsytan, tillsammans med ett meddelande om att&quot;Inga grupper har lagts till&quot;. Detta förväntas eftersom du inte har lagt till några batchar i den här datauppsättningen än.
 
-Till höger på arbetsytan Datauppsättningar ser du fliken **[!UICONTROL Info]** med information om den nya datauppsättningen, till exempel _[!UICONTROL Dataset ID]_,_[!UICONTROL Name]_, _[!UICONTROL Description]_,_[!UICONTROL Table Name]_, _[!UICONTROL Schema]_,_[!UICONTROL Streaming]_ och _[!UICONTROL Source]_. Fliken Info innehåller även information om när datauppsättningen skapades_[!UICONTROL Created]_ och dess _[!UICONTROL Last Modified]_datum.
+Till höger på arbetsytan Datauppsättningar ser du fliken **[!UICONTROL Info]** med information om den nya datauppsättningen, till exempel **[!UICONTROL Dataset ID]**, **[!UICONTROL Name]**, **[!UICONTROL Description]**, **[!UICONTROL Table Name]**, **[!UICONTROL Schema]**, **[!UICONTROL Streaming]** och **[!UICONTROL Source]**. Fliken Info innehåller även information om när datauppsättningen skapades **[!UICONTROL Created]** och dess **[!UICONTROL Last Modified]** datum.
 
-På fliken Info finns även en _[!UICONTROL Profile]_växlingsknapp som används för att aktivera datauppsättningen för användning med[!DNL Real-time Customer Profile]. Användning av den här växeln, och[!DNL Real-time Customer Profile]den, förklaras mer ingående i det följande avsnittet.
+På fliken Info finns även en **[!UICONTROL Profile]** växlingsknapp som används för att aktivera datauppsättningen för användning med [!DNL Real-time Customer Profile]. Användning av den här växeln, och [!DNL Real-time Customer Profile]den, förklaras mer ingående i det följande avsnittet.
 
 ![Datauppsättningsaktivitet](../images/tutorials/ingest-batch-data/dataset_activity.png)
 
@@ -116,19 +116,19 @@ När du drar och släpper (eller bläddrar och väljer) en parquet eller JSON-fi
 
 ## Datauppsättningsmått
 
-När filen har laddats upp visas inte längre &quot;Inga batchar har lagts till&quot; på fliken **[!UICONTROL Dataset Activity]** . Istället visas datamängdsmått på fliken *[!UICONTROL Dataset Activity]* . Alla mätvärden visar &quot;0&quot; i det här skedet eftersom batchen ännu inte har lästs in.
+När filen har laddats upp visas inte längre &quot;Inga batchar har lagts till&quot; på fliken **[!UICONTROL Dataset Activity]** . Istället visas datamängdsmått på fliken **[!UICONTROL Dataset Activity]** . Alla mätvärden visar &quot;0&quot; i det här skedet eftersom batchen ännu inte har lästs in.
 
-Längst ned på fliken finns en lista som visar _[!UICONTROL Batch ID]_vilka data som precis har importerats via[processen Lägg till data i datauppsättning](#add-data-to-dataset). Här finns även information om batchen, inklusive_[!UICONTROL Ingested]_ datum, antal _[!UICONTROL Records Ingested]_och aktuell batch_[!UICONTROL Status]_.
+Längst ned på fliken finns en lista som visar **[!UICONTROL Batch ID]** vilka data som precis har importerats via [processen Lägg till data i datauppsättning](#add-data-to-dataset) . Här finns även information om batchen, inklusive **[!UICONTROL Ingested]** datum, antal **[!UICONTROL Records Ingested]** och aktuell batch **[!UICONTROL Status]**.
 
 ![Datauppsättningsmått](../images/tutorials/ingest-batch-data/batch_loading.png)
 
 ## Batchinformation
 
-Klicka på _[!UICONTROL Batch ID]_för att visa en **[!UICONTROL Batch Overview]**grupp med ytterligare information om gruppen. När batchen har lästs in uppdateras informationen om batchen så att den visar antalet_[!UICONTROL Records Ingested]_ och _[!UICONTROL File Size]_. Värdet ändras också_[!UICONTROL Status]_ till Slutfört eller Misslyckat. Om batchen misslyckas kommer avsnittet att innehålla information om eventuella fel under importen. _[!UICONTROL Error Code]_
+Klicka på **[!UICONTROL Batch ID]** för att visa en **[!UICONTROL Batch Overview]** grupp med ytterligare information om gruppen. När batchen har lästs in uppdateras informationen om batchen så att den visar antalet **[!UICONTROL Records Ingested]** och **[!UICONTROL File Size]**. Värdet ändras också **[!UICONTROL Status]** till Slutfört eller Misslyckat. Om batchen misslyckas kommer avsnittet att innehålla information om eventuella fel under importen. **[!UICONTROL Error Code]**
 
 Mer information och vanliga frågor om batchförbrukning finns i felsökningsguiden för [batchmatning](../batch-ingestion/troubleshooting.md).
 
-Om du vill gå tillbaka till **[!UICONTROL Dataset Activity]** skärmen klickar du på datauppsättningens (_[!UICONTROL Loyalty Details]_) namn i den synliga sökvägen.
+Om du vill gå tillbaka till **[!UICONTROL Dataset Activity]** skärmen klickar du på datauppsättningens (**[!UICONTROL Loyalty Details]**) namn i den synliga sökvägen.
 
 ![Gruppöversikt](../images/tutorials/ingest-batch-data/batch_overview.png)
 
