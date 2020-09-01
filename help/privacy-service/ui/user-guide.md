@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användarhandbok för Privacy Service
 topic: UI guide
 translation-type: tm+mt
-source-git-commit: c8446f6040ac9ef1f4196d9057b531011e243258
+source-git-commit: 397f08efa276f7885e099a0a8d9dc6d23fe0e8cc
 workflow-type: tm+mt
 source-wordcount: '1023'
 ht-degree: 0%
@@ -70,7 +70,7 @@ Du kan filtrera listan genom att skriva nyckelord i sökfältet under rubriken J
 
 ![Sökalternativ för jobbförfrågan](../images/user-guide/job-search.png)
 
-Om du vill visa information om en viss jobbförfrågan klickar du på begärans jobb-ID i listan för att öppna *[!UICONTROL Job Details]* sidan.
+Om du vill visa information om en viss jobbförfrågan klickar du på begärans jobb-ID i listan för att öppna **[!UICONTROL Job Details]** sidan.
 
 ![Information om användargränssnittsjobb för GDPR](../images/user-guide/job-details.png)
 
@@ -101,7 +101,7 @@ Om du vill börja använda Request Builder klickar du **[!UICONTROL Create Reque
 
 ![Klicka på Skapa förfrågan](../images/user-guide/create-request.png)
 
-Dialogrutan öppnas och visar tillgängliga alternativ för att skicka en begäran om sekretessjobb för den valda regeltypen. *[!UICONTROL Create Request]*
+Dialogrutan öppnas och visar tillgängliga alternativ för att skicka en begäran om sekretessjobb för den valda regeltypen. **[!UICONTROL Create Request]**
 
 <img src="../images/user-guide/request-builder.png" width="500" /><br/>
 
@@ -109,7 +109,7 @@ Markera **[!UICONTROL Job Type]** begäran (&quot;Ta bort&quot; eller&quot;Åtko
 
 <img src="../images/user-guide/type-and-products.png" width="500" /><br/>
 
-Under *[!UICONTROL Namespace type]* väljer du lämplig namnområdestyp för de kund-ID som skickas till [!DNL Privacy Service].
+Under **[!UICONTROL Namespace type]** väljer du lämplig namnområdestyp för de kund-ID som skickas till [!DNL Privacy Service].
 
 <img src="../images/user-guide/namespace-type.png" width="500" /><br/>
 
@@ -135,7 +135,7 @@ Klicka på pilen bredvid **[!UICONTROL Create Request]**, under widgeten Statusr
 
 ![Alternativ för att skapa förfrågningar](../images/user-guide/create-options.png)
 
-Dialogrutan visas. Där finns ett fönster där du kan dra och släppa JSON-filen i. *[!UICONTROL Upload JSON]*
+Dialogrutan visas. Där finns ett fönster där du kan dra och släppa JSON-filen i. **[!UICONTROL Upload JSON]**
 
 <img src="../images/user-guide/upload-json.png" width="500" /><br/>
 
