@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;list identities;list cluster
 solution: Experience Platform
 title: Visa klusteridentiteter
 topic: API guide
+description: Identiteter som är relaterade till ett identitetsdiagram, oavsett namnutrymme, anses ingå i samma kluster i det identitetsdiagrammet. Med alternativen nedan får du tillgång till alla klustermedlemmar.
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
 workflow-type: tm+mt
-source-wordcount: '312'
+source-wordcount: '347'
 ht-degree: 0%
 
 ---
