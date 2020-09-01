@@ -5,7 +5,7 @@ title: Användarhandbok för Machine Learning-anteckningsbok i realtid
 topic: Training and scoring a ML model
 description: Följande guide beskriver de steg som krävs för att skapa ett Machine Learning-program i realtid i Adobe Experience Platform JupyterLab.
 translation-type: tm+mt
-source-git-commit: 9ba229195892245d29fb4f17b9f2e5cd6c6ea567
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '1637'
 ht-degree: 0%
@@ -86,13 +86,13 @@ Börja med att läsa in dina utbildningsdata.
 >
 >I **realtids-ML** -mallen hämtas data för [bilförsäkrings-CSV](https://github.com/adobe/experience-platform-dsw-reference/tree/master/datasets/insurance) från [!DNL Github].
 
-![Läs in inläsningsdata](../images/rtml/load_training.png)
+![Läs in utbildningsdata](../images/rtml/load_training.png)
 
 Om du vill använda en datauppsättning inifrån Adobe Experience Platform avkommenterar du cellen nedan. Därefter måste du ersätta `DATASET_ID` med rätt värde.
 
 ![rtml datamängd](../images/rtml/rtml-dataset.png)
 
-Om du vill få åtkomst till en datauppsättning i din [!DNL JupyterLab] anteckningsbok väljer du fliken **Data** i den vänstra navigeringen i [!DNL JupyterLab]. The *[!UICONTROL Datasets]* and *[!UICONTROL Schemas]* directories appear. Markera **[!UICONTROL Datasets]** och högerklicka och välj sedan det **[!UICONTROL Explore Data in Notebook]** alternativ på den nedrullningsbara menyn som finns i den datauppsättning som du vill använda. En körbar kodpost visas längst ned i anteckningsboken. Den här cellen har din `dataset_id`.
+Om du vill få åtkomst till en datauppsättning i din [!DNL JupyterLab] anteckningsbok väljer du fliken **Data** i den vänstra navigeringen i [!DNL JupyterLab]. The **[!UICONTROL Datasets]** and **[!UICONTROL Schemas]** directories appear. Markera **[!UICONTROL Datasets]** och högerklicka och välj sedan det **[!UICONTROL Explore Data in Notebook]** alternativ på den nedrullningsbara menyn som finns i den datauppsättning som du vill använda. En körbar kodpost visas längst ned i anteckningsboken. Den här cellen har din `dataset_id`.
 
 ![datauppsättningsåtkomst](../images/rtml/access-dataset.png)
 
@@ -113,11 +113,11 @@ config_properties = {
 
 ### Förbered din modell
 
-När du använder *[!UICONTROL Real-time ML]* mallen måste du analysera, förbearbeta, utbilda och utvärdera din ML-modell. Detta görs genom att tillämpa dataomvandlingar och bygga upp en utbildningsväg.
+När du använder **[!UICONTROL Real-time ML]** mallen måste du analysera, förbearbeta, utbilda och utvärdera din ML-modell. Detta görs genom att tillämpa dataomvandlingar och bygga upp en utbildningsväg.
 
 **Dataomvandlingar**
 
-Cellen *[!UICONTROL Real-time ML]* Dataomvandlingar ** för mallar måste ändras för att fungera med din egen datauppsättning. Vanligtvis innebär detta att byta namn på kolumner, datasammanslagning och datainsamling/funktionsteknik.
+Cellen **[!UICONTROL Real-time ML]** Dataomvandlingar ** för mallar måste ändras för att fungera med din egen datauppsättning. Vanligtvis innebär detta att byta namn på kolumner, datasammanslagning och datainsamling/funktionsteknik.
 
 >[!NOTE]
 >
@@ -410,7 +410,7 @@ Du får tillbaka den uppdaterade DSL:en.
 
 ## Poäng {#scoring}
 
-Efter publicering till [!DNL Edge]utförs poängsättningen av en POST från en klient. Vanligtvis kan detta göras från ett klientprogram som behöver ML-poäng. Du kan också göra det från Postman. I mallen används *[!UICONTROL Real-time ML]* EdgeUtils för att demonstrera den här processen.
+Efter publicering till [!DNL Edge]utförs poängsättningen av en POST från en klient. Vanligtvis kan detta göras från ett klientprogram som behöver ML-poäng. Du kan också göra det från Postman. I mallen används **[!UICONTROL Real-time ML]** EdgeUtils för att demonstrera den här processen.
 
 >[!NOTE]
 >
