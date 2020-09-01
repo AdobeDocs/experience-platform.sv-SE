@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Real-time Customer Profile;Identity Service;
 solution: Experience Platform
 title: Självstudiekurser i kundprofil i realtid
 topic: tutorial
+description: I det här dokumentet beskrivs de olika stegen och det finns länkar till självstudiekurser för att slutföra varje enskilt arbetsflöde.
 translation-type: tm+mt
-source-git-commit: 5c5f6c4868e195aef76bacc0a1e5df3857647bde
+source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
 workflow-type: tm+mt
-source-wordcount: '450'
+source-wordcount: '466'
 ht-degree: 0%
 
 ---
@@ -18,7 +19,7 @@ För att kunna konfigurera [!DNL Real-time Customer Profile] för din organisati
 
 ## Aktivera schema för [!DNL Profile] och [!DNL Identity]
 
-Innan data kan hämtas in till Adobe Experience Platform och användas när de skapas måste ett schema skapas för att ge strukturen för de data som ska importeras och det schemat måste aktiveras för användning i [!DNL Real-time Customer Profiles]och Adobe Experience Platform [!DNL Profile] [!DNL Identity Service]. Stegvisa instruktioner om hur du skapar ett schema som är aktiverat för både [!DNL Profile] och [!DNL Identity Service]finns i självstudiekurserna för att [skapa ett schema med API:t](../xdm/tutorials/create-schema-api.md) för schemaregister eller [skapa ett schema med hjälp av gränssnittet](../xdm/tutorials/create-schema-ui.md)i Schema Builder.
+Innan data kan hämtas in till Adobe Experience Platform och användas för att skapa [!DNL Real-time Customer Profiles]måste ett schema skapas för att ge strukturen för de data som ska importeras och det schemat måste aktiveras för användning i [!DNL Profile] och i Adobe Experience Platform [!DNL Identity Service]. Stegvisa instruktioner om hur du skapar ett schema som är aktiverat för både [!DNL Profile] och [!DNL Identity Service]finns i självstudiekurserna för att [skapa ett schema med API:t](../xdm/tutorials/create-schema-api.md) för schemaregister eller [skapa ett schema med hjälp av gränssnittet](../xdm/tutorials/create-schema-ui.md)i Schema Builder.
 
 ## Konfigurera en datauppsättning för [!DNL Profile] och [!DNL Identity]
 
