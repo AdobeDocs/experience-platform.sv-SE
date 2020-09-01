@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;marketing automation
 solution: Experience Platform
 title: Utforska ett automatiserat marknadsföringssystem med API:t för Flow Service
 topic: overview
+description: I den här självstudien används API:t för Flow Service för att utforska automatiserade marknadsföringssystem.
 translation-type: tm+mt
-source-git-commit: fc5cdaa661c47e14ed5412868f3a54fd7bd2b451
+source-git-commit: 25f1dfab07d0b9b6c2ce5227b507fc8c8ecf9873
 workflow-type: tm+mt
-source-wordcount: '596'
+source-wordcount: '608'
 ht-degree: 0%
 
 ---
@@ -29,7 +30,7 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-Den här självstudiekursen kräver att du har en giltig anslutning till det program för automatiserad marknadsföring från tredje part som du vill importera data från. En giltig anslutning innefattar programmets anslutningsspecifikations-ID och anslutnings-ID. Mer information om hur du skapar en anslutning för automatiserad marknadsföring och hämtar dessa värden finns i [koppla en källa för automatiserad marknadsföring till Platform](../../api/create/marketing-automation/hubspot.md) självstudiekurs.
+Den här självstudiekursen kräver att du har en giltig anslutning till det program för automatiserad marknadsföring från tredje part som du vill importera data från. En giltig anslutning innefattar programmets anslutningsspecifikations-ID och anslutnings-ID. Mer information om hur du skapar en anslutning för automatiserad marknadsföring och hämtar dessa värden finns i [självstudiekursen om att koppla en källa för automatiserad marknadsföring till Platform](../../api/create/marketing-automation/hubspot.md) .
 
 ### Läser exempel-API-anrop
 
@@ -185,4 +186,4 @@ Ett lyckat svar returnerar strukturen för en tabell. Information om tabellens k
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du utforskat ditt automatiseringssystem för marknadsföring, hittat sökvägen till tabellen som du vill ta med [!DNL Platform]och fått information om dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in data från ditt automatiseringssystem för marknadsföring och föra in dem i Platform](../collect/marketing-automation.md).
+Genom att följa den här självstudiekursen har du utforskat ditt automatiseringssystem för marknadsföring, hittat sökvägen till tabellen som du vill ta med [!DNL Platform]och fått information om dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in data från ditt automatiseringssystem för marknadsföring och föra in den i Platform](../collect/marketing-automation.md).
