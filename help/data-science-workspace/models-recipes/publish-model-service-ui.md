@@ -5,7 +5,7 @@ title: Publicera en modell som en tjänst (UI)
 topic: Tutorial
 description: Med Adobe Experience Platform Data Science Workspace kan du publicera din utbildade och utvärderade modell som en tjänst, vilket gör att användare i IMS-organisationen kan få sina data poäng utan att behöva skapa egna modeller.
 translation-type: tm+mt
-source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '436'
 ht-degree: 0%
@@ -40,7 +40,7 @@ Om du föredrar att publicera en modell med hjälp av API:er för Sensei Machine
 
 ## Poäng med hjälp av en tjänst {#access-a-service}
 
-1. I Adobe Experience Platform klickar du på den **[!UICONTROL Services]** flik som finns i den vänstra navigeringskolumnen för att komma åt *[!UICONTROL Service Gallery]*. Leta reda på den tjänst du vill använda och klicka på **[!UICONTROL Score]**.
+1. I Adobe Experience Platform klickar du på den **[!UICONTROL Services]** flik som finns i den vänstra navigeringskolumnen för att komma åt **[!UICONTROL Service Gallery]**. Leta reda på den tjänst du vill använda och klicka på **[!UICONTROL Score]**.
    ![](../images/models-recipes/publish-model/click_to_score.png)
 2. Välj en lämplig indatauppsättning för poängkörningen och klicka sedan på **[!UICONTROL Next]**.
    ![](../images/models-recipes/publish-model/6_scoring_input.png)
@@ -53,4 +53,4 @@ Om du föredrar att publicera en modell med hjälp av API:er för Sensei Machine
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du publicerat en modell som en tillgänglig tjänst och gjort en bedömning av data med den nya tjänsten via *[!UICONTROL Service Gallery]*. Fortsätt till nästa självstudiekurs för att lära dig hur du kan [schemalägga automatiska kurser och poängsättning för en tjänst](./schedule-models-ui.md).
+Genom att följa den här självstudiekursen har du publicerat en modell som en tillgänglig tjänst och gjort en bedömning av data med den nya tjänsten via **[!UICONTROL Service Gallery]**. Fortsätt till nästa självstudiekurs för att lära dig hur du kan [schemalägga automatiska kurser och poängsättning för en tjänst](./schedule-models-ui.md).
