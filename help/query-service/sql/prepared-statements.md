@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;query service;Query service;prepared statements;prepared;sql;
 solution: Experience Platform
 title: Förberedda programsatser
 topic: prepared statements
 translation-type: tm+mt
-source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+source-git-commit: c5d3be4706ca6d6a30e203067db6ddc894b9bfb4
 workflow-type: tm+mt
 source-wordcount: '340'
 ht-degree: 7%
@@ -14,7 +14,7 @@ ht-degree: 7%
 
 # Förberedda programsatser
 
-I SQL används förberedda satser för att mallatisera liknande frågor eller uppdateringar. Adobe Experience Platform [!DNL Query Service] stöder förberedda satser genom att använda en parametriserad fråga. Detta kan användas för att optimera prestanda eftersom du inte längre behöver tolka en fråga om och om igen.
+I SQL används förberedda satser för att mallatisera liknande frågor eller uppdateringar. Adobe Experience Platform [!DNL Query Service] stöder förberedda satser med hjälp av en parametriserad fråga. Detta kan användas för att optimera prestanda eftersom du inte längre behöver tolka en fråga om och om igen.
 
 ## Använda förberedda satser
 
@@ -108,7 +108,7 @@ När det anropas ser du exakt samma resultat som tidigare:
 | id | förnamn | efternamn | födelsedatum | e-post | stad | land |
 |--- | --------- | -------- | --------- | ----- | ------- | ---- |
 | 10000 | alexander | davis | 1993-09-15 | example@example.com | Vancouver | Kanada |
-| 10001 | antoin | dubois | 1967-03-14 | example2@example.com | Paris | Frankrike |
+| 10001 | antoin | dubois | 1967-03-14 | is | Paris | Japan |
 | 10002 | kyoko | sakura | 1999-11-26 | example3@example.com | Tokyo | Japan |
 | 10003 | linus | pettersson | 1982-06-03 | example4@example.com | Stockholm | Sverige |
 | 10004 | aasir | mithaka | 1976-12-17 | example5@example.com | Nairobi | Kenya |
