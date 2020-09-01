@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Behandling av sekretessförfrågningar i kundprofil i realtid
 topic: overview
 translation-type: tm+mt
-source-git-commit: c8446f6040ac9ef1f4196d9057b531011e243258
+source-git-commit: 397f08efa276f7885e099a0a8d9dc6d23fe0e8cc
 workflow-type: tm+mt
 source-wordcount: '598'
 ht-degree: 0%
@@ -93,7 +93,7 @@ curl -X POST \
 
 ### Använda gränssnittet
 
-När du skapar jobbbegäranden i användargränssnittet måste du markera **[!UICONTROL AEP Data Lake]** och/eller **[!UICONTROL Profile]** under _[!UICONTROL Products]_för att kunna bearbeta jobb för data som lagras i[!DNL Data Lake]respektive[!DNL Real-time Customer Profile].
+När du skapar jobbbegäranden i användargränssnittet måste du markera **[!UICONTROL AEP Data Lake]** och/eller **[!UICONTROL Profile]** under **[!UICONTROL Products]** för att kunna bearbeta jobb för data som lagras i [!DNL Data Lake] respektive [!DNL Real-time Customer Profile].
 
 <img src="images/privacy/product-value.png" width="450"><br>
 
