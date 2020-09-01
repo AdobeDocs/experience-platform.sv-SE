@@ -5,7 +5,7 @@ title: Skapa ett schema med Schemaredigeraren
 topic: tutorials
 description: I den här självstudiekursen beskrivs stegen för hur du skapar ett schema med Schemaredigeraren i Experience Platform.
 translation-type: tm+mt
-source-git-commit: ed1f2fdac0f9c977d11c867327c084353c1bcd0f
+source-git-commit: d946f5014707bf73f373d712b287de259c3df5cd
 workflow-type: tm+mt
 source-wordcount: '3329'
 ht-degree: 0%
@@ -113,7 +113,7 @@ Ungefär som i fältet&quot;[!UICONTROL name]&quot; representerar de fält du ju
 
 &quot;[!UICONTROL Loyalty Members]&quot;-schemat är avsett för att samla in data som är relaterade till medlemmarna i ett lojalitetsprogram, så det kräver vissa specifika lojalitetsrelaterade fält. Det finns inga standardblandningar som innehåller de nödvändiga fälten, och du måste därför definiera en ny blandning.
 
-När du öppnar dialogrutan väljer du den här gången *[!UICONTROL Add Mixin]* **[!UICONTROL Create New Mixin]**. Du ombeds sedan ange en **[!UICONTROL Display Name]** och **[!UICONTROL Description]** en för din blandning.
+När du öppnar dialogrutan väljer du den här gången **[!UICONTROL Add Mixin]** **[!UICONTROL Create New Mixin]**. Du ombeds sedan ange en **[!UICONTROL Display Name]** och **[!UICONTROL Description]** en för din blandning.
 
 ![](../images/tutorials/create-schema/mixin_create_new.png)
 
