@@ -5,7 +5,7 @@ title: Definiera en relation mellan två scheman med schemaredigeraren
 description: I det här dokumentet finns en självstudiekurs för att definiera en relation mellan två scheman med hjälp av Schemaredigeraren i användargränssnittet i Experience Platform.
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: 74a4a3cc713cc068be30379e8ee11572f8bb0c63
+source-git-commit: d946f5014707bf73f373d712b287de259c3df5cd
 workflow-type: tm+mt
 source-wordcount: '884'
 ht-degree: 0%
@@ -43,7 +43,7 @@ I följande avsnitt beskrivs strukturen för varje schema som används i den hä
 
 ### [!UICONTROL Loyalty Members] schema
 
-Källschemat&quot;[!UICONTROL Loyalty Members]&quot; baseras på XDM- [!DNL Individual Profile] klassen och är det schema som skapades i självstudiekursen för att [skapa ett schema i användargränssnittet](create-schema-ui.md). Det innehåller ett&quot;[!UICONTROL loyalty]&quot;-objekt under namnutrymmet&quot;\_tenantId&quot;, som innehåller flera lojalitetsspecifika fält. Ett av dessa fält, &quot;loyaltyId&quot;, fungerar som primär identitet för schemat under &quot;[!UICONTROL Email]&quot;-namnområdet. Så som visas under _[!UICONTROL Schema Properties]_har schemat aktiverats för användning i[!DNL Real-time Customer Profile].
+Källschemat&quot;[!UICONTROL Loyalty Members]&quot; baseras på XDM- [!DNL Individual Profile] klassen och är det schema som skapades i självstudiekursen för att [skapa ett schema i användargränssnittet](create-schema-ui.md). Det innehåller ett&quot;[!UICONTROL loyalty]&quot;-objekt under namnutrymmet&quot;\_tenantId&quot;, som innehåller flera lojalitetsspecifika fält. Ett av dessa fält, &quot;loyaltyId&quot;, fungerar som primär identitet för schemat under &quot;[!UICONTROL Email]&quot;-namnområdet. Så som visas under **[!UICONTROL Schema Properties]** har schemat aktiverats för användning i [!DNL Real-time Customer Profile].
 
 ![](../images/tutorials/relationship/loyalty-members.png)
 
@@ -61,19 +61,19 @@ Målschemat&quot;[!UICONTROL Hotels]&quot; baseras på en anpassad&quot;[!UICONT
 
 För att kunna definiera en relation mellan två scheman måste källschemat ha ett dedikerat fält som ska användas som referens till målschemat. Du kan lägga till det här fältet i källschemat genom att skapa en ny blandning.
 
-Börja med att klicka **[!UICONTROL Add]** i _[!UICONTROL Mixins]_avsnittet.
+Börja med att klicka **[!UICONTROL Add]** i **[!UICONTROL Mixins]** avsnittet.
 
 ![](../images/tutorials/relationship/loyalty-add-mixin.png)
 
-Dialogrutan _[!UICONTROL Add Mixin]_visas. Klicka här **[!UICONTROL Create New Mixin]**. I textfälten som visas anger du ett visningsnamn och en beskrivning för den nya blandningen. Klicka **[!UICONTROL Add Mixin]**när du är klar.
+Dialogrutan **[!UICONTROL Add Mixin]** visas. Klicka här **[!UICONTROL Create New Mixin]**. I textfälten som visas anger du ett visningsnamn och en beskrivning för den nya blandningen. Klicka **[!UICONTROL Add Mixin]** när du är klar.
 
 <img src="../images/tutorials/relationship/loyalty-create-new-mixin.png" width="750"><br>
 
-Arbetsytan visas igen med&quot;[!UICONTROL Loyalty Relationship]&quot; i _[!UICONTROL Mixins]_avsnittet. Klicka på blandningsnamnet och klicka sedan på&#x200B;**[!UICONTROL Add Field]**bredvid rotnivåfältet &quot;[!UICONTROL Loyalty Members]&quot;.
+Arbetsytan visas igen med&quot;[!UICONTROL Loyalty Relationship]&quot; i **[!UICONTROL Mixins]** avsnittet. Klicka på blandningsnamnet och klicka sedan på **[!UICONTROL Add Field]** bredvid rotnivåfältet &quot;[!UICONTROL Loyalty Members]&quot;.
 
 ![](../images/tutorials/relationship/loyalty-add-field.png)
 
-Ett nytt fält visas på arbetsytan under namnutrymmet &quot;\_tenantId&quot;. Under _[!UICONTROL Field Properties]_anger du ett fältnamn och ett visningsnamn för fältet och anger dess typ till &quot;[!UICONTROL String]&quot;.
+Ett nytt fält visas på arbetsytan under namnutrymmet &quot;\_tenantId&quot;. Under **[!UICONTROL Field Properties]** anger du ett fältnamn och ett visningsnamn för fältet och anger dess typ till &quot;[!UICONTROL String]&quot;.
 
 ![](../images/tutorials/relationship/relationship-field-details.png)
 
@@ -89,7 +89,7 @@ Det uppdaterade fältet&quot;[!UICONTROL favoriteHotel]&quot; visas på arbetsyt
 
 När ett dedikerat referensfält har definierats i källschemat kan du ange det som ett relationsfält.
 
-Markera referensfältet på arbetsytan och rulla sedan nedåt under _[!UICONTROL Field Properties]_tills **[!UICONTROL Relationship]**kryssrutan visas. Markera kryssrutan för att visa de parametrar som krävs för att konfigurera ett relationsfält.
+Markera referensfältet på arbetsytan och rulla sedan nedåt under **[!UICONTROL Field Properties]** tills **[!UICONTROL Relationship]** kryssrutan visas. Markera kryssrutan för att visa de parametrar som krävs för att konfigurera ett relationsfält.
 
 ![](../images/tutorials/relationship/relationship-checkbox.png)
 
