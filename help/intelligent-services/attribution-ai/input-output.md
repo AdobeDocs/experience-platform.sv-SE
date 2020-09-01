@@ -5,7 +5,7 @@ title: Indata och utdata från Attribution AI
 topic: Input and Output data for Attribution AI
 description: Följande dokument visar de olika indata och utdata som används i Attribution AI.
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '2067'
 ht-degree: 0%
@@ -136,11 +136,11 @@ I följande tabell visas schemafälten i utdata för råpoängsexempel:
 
 ### Visa sökvägar för Raw-poäng (UI) {#raw-score-path}
 
-Du kan visa sökvägen till dina bakgrundsmusik i användargränssnittet. Börja med att välja **[!UICONTROL Schemas]** i plattformsgränssnittet och sök sedan efter och välj ditt AI-poängschema för attribuering från *[!UICONTROL Browse]* fliken.
+Du kan visa sökvägen till dina bakgrundsmusik i användargränssnittet. Börja med att välja **[!UICONTROL Schemas]** i plattformsgränssnittet och sök sedan efter och välj ditt AI-poängschema för attribuering från **[!UICONTROL Browse]** fliken.
 
 ![Välj schema](./images/input-output/schemas_browse.png)
 
-Därefter väljer du ett fält i *[!UICONTROL Structure]* fönstret för användargränssnittet, så öppnas *[!UICONTROL Field properties]* fliken. Inom *[!UICONTROL Field properties]* är det *[!UICONTROL Path]* fält som mappar till dina Raw-resultat.
+Därefter väljer du ett fält i **[!UICONTROL Structure]** fönstret för användargränssnittet, så öppnas **[!UICONTROL Field properties]** fliken. Inom **[!UICONTROL Field properties]** är det **[!UICONTROL Path]** fält som mappar till dina Raw-resultat.
 
 ![Välj ett schema](./images/input-output/field_properties.png)
 
