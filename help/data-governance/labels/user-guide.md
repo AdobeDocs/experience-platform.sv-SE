@@ -5,9 +5,9 @@ title: Användarhandbok för etiketter för dataanvändning
 topic: labels
 description: Den här användarhandboken innehåller steg för att arbeta med dataanvändningsetiketter (kallas även DULE-etiketter) i Adobe Experience Platform användargränssnitt.
 translation-type: tm+mt
-source-git-commit: 2fdab7d984a7368df77110f8ba0e0ba687e96d7e
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
-source-wordcount: '1068'
+source-wordcount: '1066'
 ht-degree: 0%
 
 ---
@@ -31,29 +31,29 @@ I nästa avsnitt beskrivs hur du skapar en ny datauppsättning som du kan använ
 >
 >I det här exemplet skapas en datauppsättning med ett förkonfigurerat [!DNL Experience Data Model] (XDM) schema. Mer information om XDM-scheman finns i [XDM-systemöversikten](../../xdm/home.md) och [grunderna för schemakomposition](../../xdm/schema/composition.md).
 
-Om du vill skapa en ny datauppsättning klickar du **[!UICONTROL Create Dataset]** i det övre högra hörnet av _[!UICONTROL Datasets]_arbetsytan.
+Om du vill skapa en ny datauppsättning klickar du **[!UICONTROL Create Dataset]** i det övre högra hörnet av **[!UICONTROL Datasets]** arbetsytan.
 
 ![](../images/labels/create_dataset.png)
 
-Skärmen visas _[!UICONTROL Create Dataset]_. Klicka här **[!UICONTROL Create Dataset from Schema]**.
+Skärmen visas **[!UICONTROL Create Dataset]** . Klicka här **[!UICONTROL Create Dataset from Schema]**.
 
 ![Skapa datauppsättning från schema](../images/labels/dataset_create.png)
 
-Skärmen visas _[!UICONTROL Select Schema]_, där alla tillgängliga scheman som du kan använda för att skapa en datauppsättning visas. Klicka på alternativknappen bredvid ett schema för att markera det. I avsnittet till höger visas ytterligare information om det valda schemat_[!UICONTROL Schemas]_ . När du har valt ett schema klickar du på **[!UICONTROL Next]**.
+Skärmen visas **[!UICONTROL Select Schema]** , där alla tillgängliga scheman som du kan använda för att skapa en datauppsättning visas. Klicka på alternativknappen bredvid ett schema för att markera det. I avsnittet till höger visas ytterligare information om det valda schemat **[!UICONTROL Schemas]** . När du har valt ett schema klickar du på **[!UICONTROL Next]**.
 
 ![Välj datauppsättningsschema](../images/labels/dataset_schema.png)
 
-Skärmen _Konfigurera datauppsättning_ visas. Ange ett **namn** (obligatoriskt) och en **beskrivning** (valfritt, men rekommenderas) för den nya datauppsättningen och klicka sedan på **[!UICONTROL Finish]**.
+Skärmen visas **[!UICONTROL Configure Dataset]** . Ange ett **namn** (obligatoriskt) och en **beskrivning** (valfritt, men rekommenderas) för den nya datauppsättningen och klicka sedan på **[!UICONTROL Finish]**.
 
 ![Konfigurera datauppsättning med namn och beskrivning](../images/labels/dataset_configure.png)
 
-Sidan visas och _[!UICONTROL Dataset Activity]_innehåller information om den nya datauppsättningen. I det här exemplet heter datauppsättningen&quot;Förmånsmedlemmar&quot;, vilket innebär att den översta navigeringen visar_ Datauppsättningar > Förmånsmedlemmar _.
+Sidan visas och **[!UICONTROL Dataset Activity]** innehåller information om den nya datauppsättningen. I det här exemplet heter datauppsättningen&quot;Förmånsmedlemmar&quot;, vilket innebär att den översta navigeringen visar **Datauppsättningar > Förmånsmedlemmar**.
 
 ![Sidan Datauppsättningsaktivitet](../images/labels/dataset_activity.png)
 
 ### Lägg till dataanvändningsetiketter i datauppsättningen {#add-labels}
 
-När du har skapat en ny datauppsättning eller valt en befintlig datauppsättning i listan på _[!UICONTROL Datasets]_arbetsytan klickar du på&#x200B;**[!UICONTROL Data Governance]**för att öppna_[!UICONTROL Data Governance]_ arbetsytan. På arbetsytan kan du hantera dataanvändningsetiketter på datauppsättningsnivå och fältnivå.
+När du har skapat en ny datauppsättning eller valt en befintlig datauppsättning i listan på **[!UICONTROL Datasets]** arbetsytan klickar du på **[!UICONTROL Data Governance]** för att öppna **[!UICONTROL Data Governance]** arbetsytan. På arbetsytan kan du hantera dataanvändningsetiketter på datauppsättningsnivå och fältnivå.
 
 ![Fliken Datamängdsstyrning](../images/labels/dataset_data_governance.png)
 
@@ -61,11 +61,11 @@ Om du vill redigera dataanvändningsetiketter på datauppsättningsnivå börjar
 
 ![Redigera etiketter på datauppsättningsnivå](../images/labels/dataset_labels_edit_button.png)
 
-Dialogrutan _[!UICONTROL Edit Governance Labels]_öppnas. I dialogrutan markerar du rutorna bredvid de etiketter du vill använda på datauppsättningen. Kom ihåg att dessa etiketter ärvs av alla fält i datauppsättningen. Rubriken uppdateras när du markerar varje ruta och visar de etiketter du har valt._[!UICONTROL Applied Labels]_ När du har markerat etiketterna klickar du på **[!UICONTROL Save Changes]**.
+Dialogrutan **[!UICONTROL Edit Governance Labels]** öppnas. I dialogrutan markerar du rutorna bredvid de etiketter du vill använda på datauppsättningen. Kom ihåg att dessa etiketter ärvs av alla fält i datauppsättningen. Rubriken uppdateras när du markerar varje ruta och visar de etiketter du har valt. **[!UICONTROL Applied Labels]** När du har markerat etiketterna klickar du på **[!UICONTROL Save Changes]**.
 
 <img alt="Tillämpa styrningsetiketter på datauppsättningsnivå" src="../images/labels/apply-labels-dataset.png" width="700"><br>
 
-Arbetsytan visas igen och visar de etiketter som du har använt på datauppsättningsnivå. _[!UICONTROL Data Governance]_Du kan också se att etiketterna ärvs ned till vart och ett av fälten i datauppsättningen.
+Arbetsytan visas igen och visar de etiketter som du har använt på datauppsättningsnivå. **[!UICONTROL Data Governance]** Du kan också se att etiketterna ärvs ned till vart och ett av fälten i datauppsättningen.
 
 ![Datauppsättningsetiketter ärvda av fält](../images/labels/dataset_inherited_labels.png)
 
@@ -77,21 +77,21 @@ Alternativet är **[!UICONTROL Show Inherited Labels]** aktiverat som standard, 
 
 ## Hantera dataanvändningsetiketter på datamängdsfältnivå
 
-Genom att fortsätta arbetsflödet för att [lägga till och redigera dataanvändningsetiketter på datauppsättningsnivå](#add-labels)kan du även hantera fältetiketter på _[!UICONTROL Data Governance]_arbetsytan för den datauppsättningen.
+Genom att fortsätta arbetsflödet för att [lägga till och redigera dataanvändningsetiketter på datauppsättningsnivå](#add-labels)kan du även hantera fältetiketter på **[!UICONTROL Data Governance]** arbetsytan för den datauppsättningen.
 
 Om du vill använda dataanvändningsetiketter på ett enskilt fält markerar du kryssrutan bredvid fältnamnet och klickar sedan på **[!UICONTROL Edit Governance Labels]**.
 
 ![Redigera fältetiketter](../images/labels/fields_single_field.png)
 
-Dialogrutan _[!UICONTROL Edit Governance Labels]_visas. I dialogrutan visas rubriker med markerade fält, tillämpade etiketter och ärvda etiketter. Observera att de ärvda etiketterna (C2 och C5) är nedtonade i dialogrutan. De är skrivskyddade etiketter som ärvs från datauppsättningsnivån och kan därför bara redigeras på datauppsättningsnivå.
+Dialogrutan **[!UICONTROL Edit Governance Labels]** visas. I dialogrutan visas rubriker med markerade fält, tillämpade etiketter och ärvda etiketter. Observera att de ärvda etiketterna (C2 och C5) är nedtonade i dialogrutan. De är skrivskyddade etiketter som ärvs från datauppsättningsnivån och kan därför bara redigeras på datauppsättningsnivå.
 
 <img alt="Redigera styrningsetiketter för ett enskilt fält" src="../images/labels/field-label-inheritance.png" width="700"><br>
 
-Välj etiketter på fältnivå genom att klicka i kryssrutan bredvid varje etikett som du vill använda. När du väljer etiketter uppdateras sidhuvudet och _[!UICONTROL Applied Labels]_visar etiketter som används i fälten som visas i_[!UICONTROL Selected Fields]_ sidhuvudet. När du har valt etiketter på fältnivå klickar du på **[!UICONTROL Save Changes]**.
+Välj etiketter på fältnivå genom att klicka i kryssrutan bredvid varje etikett som du vill använda. När du väljer etiketter uppdateras sidhuvudet och **[!UICONTROL Applied Labels]** visar etiketter som används i fälten som visas i **[!UICONTROL Selected Fields]** sidhuvudet. När du har valt etiketter på fältnivå klickar du på **[!UICONTROL Save Changes]**.
 
 <img alt="Använda etiketter på fältnivå" src="../images/labels/apply-labels-field.png" width="700"><br>
 
-Arbetsytan visas igen, där de markerade fältetiketterna visas på raden bredvid fältnamnet. _[!UICONTROL Data Governance]_Observera att fältnivåetiketten har ett &quot;x&quot; bredvid sig, vilket gör att du kan ta bort etiketten.
+Arbetsytan visas igen, där de markerade fältetiketterna visas på raden bredvid fältnamnet. **[!UICONTROL Data Governance]** Observera att fältnivåetiketten har ett &quot;x&quot; bredvid sig, vilket gör att du kan ta bort etiketten.
 
 ![Fält som visar etiketter på fältnivå](../images/labels/fields_show_field_level_labels.png)
 
@@ -103,11 +103,11 @@ Det är viktigt att komma ihåg att arv endast flyttas från den översta nivån
 
 ## Hantera anpassade etiketter
 
-Du kan skapa egna anpassade användningsetiketter på arbetsytan i *[!UICONTROL Policies]* [!DNL Experience Platform] användargränssnittet. Klicka **[!UICONTROL Policies]** i den vänstra navigeringen och klicka sedan för **[!UICONTROL Labels]** att visa en lista med befintliga etiketter. Klicka här **[!UICONTROL Create label]**.
+Du kan skapa egna anpassade användningsetiketter på arbetsytan i **[!UICONTROL Policies]** [!DNL Experience Platform] användargränssnittet. Klicka **[!UICONTROL Policies]** i den vänstra navigeringen och klicka sedan för **[!UICONTROL Labels]** att visa en lista med befintliga etiketter. Klicka här **[!UICONTROL Create label]**.
 
 ![](../images/labels/create-label-btn.png)
 
-Dialogrutan *[!UICONTROL Create label]* visas. Här anger du följande information för den nya etiketten:
+Dialogrutan **[!UICONTROL Create label]** visas. Här anger du följande information för den nya etiketten:
 
 * **[!UICONTROL Identifier]**: En unik identifierare för etiketten. Detta värde används för uppslagsändamål och bör därför vara kort och koncist.
 * **[!UICONTROL Name]**: Ett visningsnamn för etiketten.
@@ -117,11 +117,11 @@ Klicka på **[!UICONTROL Create]** när du är klar.
 
 ![](../images/labels/create-label.png)
 
-Dialogrutan stängs och den nya anpassade etiketten visas i listan under *[!UICONTROL Labels]* fliken.
+Dialogrutan stängs och den nya anpassade etiketten visas i listan under **[!UICONTROL Labels]** fliken.
 
 ![](../images/labels/label-created.png)
 
-Etiketten kan nu väljas under *[!UICONTROL Custom Labels]* redigering av användningsetiketter för datauppsättningar och fält, eller när du skapar dataanvändningsprinciper.
+Etiketten kan nu väljas under **[!UICONTROL Custom Labels]** redigering av användningsetiketter för datauppsättningar och fält, eller när du skapar dataanvändningsprinciper.
 
 <img src="../images/labels/add-custom-label.png" width="600" /><br>
 
