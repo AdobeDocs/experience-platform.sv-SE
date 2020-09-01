@@ -5,7 +5,7 @@ seo-title: Datastyrning i kunddataplattformen i realtid
 description: 'Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. '
 seo-description: 'Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. '
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '1016'
 ht-degree: 0%
@@ -76,7 +76,7 @@ Om en principöverträdelse inträffar från försök att aktivera ett segment (
 
 ![](assets/violation-popover.png)
 
-Leveransfliken anger den åtgärd som utlöste överträdelsen och varför den inträffade, och ger förslag på hur problemet kan lösas. *[!UICONTROL Details]*
+Leveransfliken anger den åtgärd som utlöste överträdelsen och varför den inträffade, och ger förslag på hur problemet kan lösas. **[!UICONTROL Details]**
 
 Klicka **[!UICONTROL Data Lineage]** för att spåra mål, segment, sammanfogningsprinciper eller datauppsättningar vars dataetiketter utlöste överträdelsen.
 
