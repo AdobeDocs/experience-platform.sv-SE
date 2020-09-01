@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;segment evaluation
+keywords: Experience Platform;home;popular topics;segment evaluation;Segmentation Service;segmentation;Segmentation;evaluate a segment;access segment results;evaluate and access segment;
 solution: Experience Platform
 title: Utvärdera ett segment
 topic: tutorial
 description: I det här dokumentet finns en självstudiekurs för att utvärdera segment och komma åt segmentresultat med segmenterings-API:t.
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
 workflow-type: tm+mt
 source-wordcount: '1560'
 ht-degree: 0%
