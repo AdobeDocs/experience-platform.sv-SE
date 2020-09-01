@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Handbok för sandlådeanvändare
 topic: user guide
 translation-type: tm+mt
-source-git-commit: c8446f6040ac9ef1f4196d9057b531011e243258
+source-git-commit: 397f08efa276f7885e099a0a8d9dc6d23fe0e8cc
 workflow-type: tm+mt
 source-wordcount: '505'
 ht-degree: 0%
@@ -18,7 +18,7 @@ Det här dokumentet innehåller steg om hur du utför olika åtgärder relaterad
 
 ## Visa sandlådor
 
-I användargränssnittet för Experience Platform klickar du **[!UICONTROL Sandboxes]** i den vänstra navigeringen för att öppna _[!UICONTROL Sandboxes]_instrumentpanelen. På kontrollpanelen visas alla tillgängliga sandlådor för din organisation, inklusive sandlådetyp (produktion eller utveckling) och tillstånd (aktiv, skapa, borttagen eller misslyckades).
+I användargränssnittet för Experience Platform klickar du **[!UICONTROL Sandboxes]** i den vänstra navigeringen för att öppna **[!UICONTROL Sandboxes]** instrumentpanelen. På kontrollpanelen visas alla tillgängliga sandlådor för din organisation, inklusive sandlådetyp (produktion eller utveckling) och tillstånd (aktiv, skapa, borttagen eller misslyckades).
 
 ![](../images/ui/sandboxes-tab.png)
 
@@ -46,7 +46,7 @@ Om du vill skapa en ny sandlåda i användargränssnittet klickar du **[!UICONTR
 
 ![](../images/ui/create-sandbox-button.png)
 
-Dialogrutan visas och du uppmanas att ange en visningsrubrik och ett namn för sandlådan. _[!UICONTROL Create Sandbox]_Visningsrubriken ****är avsedd att vara läsbar för människor och bör vara tillräckligt beskrivande för att vara lätt att identifiera. Sandlådan **[!UICONTROL Name]**är en helgemen identifierare som ska användas i API-anrop och ska därför vara unik och koncis.
+Dialogrutan visas och du uppmanas att ange en visningsrubrik och ett namn för sandlådan. **[!UICONTROL Create Sandbox]** Visningsrubriken **** är avsedd att vara läsbar för människor och bör vara tillräckligt beskrivande för att vara lätt att identifiera. Sandlådan **[!UICONTROL Name]** är en helgemen identifierare som ska användas i API-anrop och ska därför vara unik och koncis.
 
 Klicka på **[!UICONTROL Create]** när du är klar.
 
@@ -56,7 +56,7 @@ Klicka på **[!UICONTROL Create]** när du är klar.
 >
 >Eftersom du endast är begränsad till att skapa icke-produktionssandlådtyper är alternativet låst vid &quot;Ej produktion&quot; och kan inte ändras. **[!UICONTROL type]**
 
-När du är klar med att skapa sandlådan uppdaterar du sidan och den nya sandlådan visas på _[!UICONTROL Sandboxes]_instrumentpanelen med statusen&quot;[!UICONTROL Creating]&quot;. Nya sandlådor tar ca 15 minuter att etablera av systemet, varefter deras status ändras till&quot;[!UICONTROL Active]&quot;.
+När du är klar med att skapa sandlådan uppdaterar du sidan och den nya sandlådan visas på **[!UICONTROL Sandboxes]** instrumentpanelen med statusen&quot;[!UICONTROL Creating]&quot;. Nya sandlådor tar ca 15 minuter att etablera av systemet, varefter deras status ändras till&quot;[!UICONTROL Active]&quot;.
 
 ![](../images/ui/sandbox-created.png)
 
@@ -96,7 +96,7 @@ En dialogruta visas där du uppmanas att bekräfta ditt val. Klicka **[!UICONTRO
 
 <img src="../images/ui/delete-are-you-sure.png" width="350"><br>
 
-Ett bekräftelsemeddelande visas och sandlådan tas bort från _[!UICONTROL Sandboxes]_arbetsytan.
+Ett bekräftelsemeddelande visas och sandlådan tas bort från **[!UICONTROL Sandboxes]** arbetsytan.
 
 ## Nästa steg
 
