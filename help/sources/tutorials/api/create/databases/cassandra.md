@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Apache Cassandra;apache cassandra;Cassandra;cassandra
 solution: Experience Platform
-title: Skapa en Apache Cassandra-anslutning med API:t för flödestjänsten
+title: Skapa en Apache Cassandra-anslutning med API:t för Flow Service
 topic: overview
+description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Apache Cassandra (nedan kallat "Cassandra") till Experience Platform.
 translation-type: tm+mt
-source-git-commit: fc5cdaa661c47e14ed5412868f3a54fd7bd2b451
+source-git-commit: 25f1dfab07d0b9b6c2ce5227b507fc8c8ecf9873
 workflow-type: tm+mt
-source-wordcount: '588'
+source-wordcount: '613'
 ht-degree: 0%
 
 ---
@@ -34,7 +35,7 @@ För [!DNL Flow Service] att kunna ansluta till [!DNL Cassandra]måste du ange v
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
 | `host` | IP-adressen eller värdnamnet för [!DNL Cassandra] servern. |
-| `port` | Den TCP-port som [!DNL Cassandra] servern använder för att avlyssna klientanslutningar. Standardporten är `9042`. |
+| `port` | Den TCP-port som servern använder för att avlyssna klientanslutningar. [!DNL Cassandra] avlyssning. Standardporten är `9042`. |
 | `username` | Användarnamnet som används för att ansluta till [!DNL Cassandra] servern för autentisering. |
 | `password` | Lösenordet för att ansluta till [!DNL Cassandra] servern för autentisering. |
 | `connectionSpec.id` | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikationens ID för [!DNL Cassandra] är `a8f4d393-1a6b-43f3-931f-91a16ed857f4`. |
@@ -105,7 +106,7 @@ curl -X POST \
 | Parameter | Beskrivning |
 | --------- | ----------- |
 | `auth.params.host` | IP-adressen eller värdnamnet för [!DNL Cassandra] servern. |
-| `auth.params.port` | Den TCP-port som [!DNL Cassandra] servern använder för att avlyssna klientanslutningar. Standardporten är `9042`. |
+| `auth.params.port` | Den TCP-port som servern använder för att avlyssna klientanslutningar. [!DNL Cassandra] avlyssning. Standardporten är `9042`. |
 | `auth.params.username` | Användarnamnet som används för att ansluta till [!DNL Cassandra] servern för autentisering. |
 | `auth.params.password` | Lösenordet för att ansluta till [!DNL Cassandra] servern för autentisering. |
 | `connectionSpec.id` | Anslutningens spec-ID [!DNL Cassandra] : `a8f4d393-1a6b-43f3-931f-91a16ed857f4`. |
