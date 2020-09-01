@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;crm schema;crm;CRM
+keywords: Experience Platform;home;popular topics;crm schema;crm;CRM;salesforce;Salesforce
 solution: Experience Platform
 title: Salesforce-koppling
 topic: overview
 description: Experience Platform har stöd för inmatning av data från ett CRM-system från tredje part. Stöd för CRM-providers inkluderar Salesforce.
 translation-type: tm+mt
-source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
+source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
 workflow-type: tm+mt
 source-wordcount: '199'
 ht-degree: 0%
