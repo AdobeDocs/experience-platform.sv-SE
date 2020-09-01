@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: Beräknade attribut - Kundprofils-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '2365'
 ht-degree: 0%
@@ -60,7 +60,7 @@ Arbetsflödet i den här självstudien använder ett [!DNL Profile]aktiverat sch
 
 Stegen som följer använder Adobe Experience Platform användargränssnitt för att hitta ett schema, lägga till en blandning och definiera ett fält. Om du föredrar att använda [!DNL Schema Registry] API:t läser du i utvecklarhandboken [för](../../xdm/api/getting-started.md) schemaregister om hur du skapar en blandning, lägger till en blandning i ett schema och aktiverar ett schema för användning med [!DNL Real-time Customer Profile].
 
-I användargränssnittet klickar du **[!UICONTROL Schemas]** i den vänstra listen och använder sökfältet på *[!UICONTROL Browse]* fliken för att snabbt hitta det schema som du vill uppdatera.
+I användargränssnittet klickar du **[!UICONTROL Schemas]** i den vänstra listen och använder sökfältet på **[!UICONTROL Browse]** fliken för att snabbt hitta det schema som du vill uppdatera.
 
 ![](../images/computed-attributes/Schemas-Browse.png)
 
@@ -70,7 +70,7 @@ När du har hittat schemat klickar du på dess namn för att öppna det [!DNL Sc
 
 ### Skapa en blandning
 
-Om du vill skapa en ny blandning klickar du på **[!UICONTROL Add]** bredvid *Blandningar* i *[!UICONTROL Composition]* avsnittet till vänster i redigeraren. Då öppnas en dialogruta där du kan se de befintliga blandningarna. **[!UICONTROL Add mixin]** Klicka på alternativknappen för **[!UICONTROL Create new mixin]** att definiera din nya blandning.
+Om du vill skapa en ny blandning klickar du på **[!UICONTROL Add]** bredvid *Blandningar* i **[!UICONTROL Composition]** avsnittet till vänster i redigeraren. Då öppnas en dialogruta där du kan se de befintliga blandningarna. **[!UICONTROL Add mixin]** Klicka på alternativknappen för **[!UICONTROL Create new mixin]** att definiera din nya blandning.
 
 Ge blandningen ett namn och en beskrivning och klicka på **[!UICONTROL Add mixin]** när du är klar.
 
@@ -78,29 +78,29 @@ Ge blandningen ett namn och en beskrivning och klicka på **[!UICONTROL Add mixi
 
 ### Lägg till ett beräknat attributfält i schemat
 
-Din nya blandning ska nu visas i *[!UICONTROL Mixins]* avsnittet under *[!UICONTROL Composition]*. Klicka på namnet på mixen så visas flera **[!UICONTROL Add field]** knappar i redigerarens *[!UICONTROL Structure]* avsnitt.
+Din nya blandning ska nu visas i **[!UICONTROL Mixins]** avsnittet under **[!UICONTROL Composition]**. Klicka på namnet på mixen så visas flera **[!UICONTROL Add field]** knappar i *[!UICONTROL Structure]**-delen av redigeraren.
 
 Välj **[!UICONTROL Add field]** bredvid schemats namn för att lägga till ett fält på den översta nivån, eller välj att lägga till fältet var som helst i det schema du föredrar.
 
-När du klickat på **[!UICONTROL Add field]** ett nytt objekt öppnas ett namn med ditt klientorganisations-ID som visar att fältet finns i rätt namnutrymme. I det objektet *[!UICONTROL New field]* visas en bild. Detta gäller fältet där du definierar det beräknade attributet.
+När du klickat på **[!UICONTROL Add field]** ett nytt objekt öppnas ett namn med ditt klientorganisations-ID som visar att fältet finns i rätt namnutrymme. I det objektet **[!UICONTROL New field]** visas en bild. Detta gäller fältet där du definierar det beräknade attributet.
 
 ![](../images/computed-attributes/New-field.png)
 
 ### Konfigurera fältet
 
-Ange den information som behövs för det nya fältet, inklusive namn, visningsnamn och typ, med hjälp av avsnittet till höger om redigeraren. *[!UICONTROL Field properties]*
+Ange den information som behövs för det nya fältet, inklusive namn, visningsnamn och typ, med hjälp av avsnittet till höger om redigeraren. **[!UICONTROL Field properties]**
 
 >[!NOTE]
 >
 >Fälttypen måste vara av samma typ som det beräknade attributvärdet. Om det beräknade attributvärdet till exempel är en sträng måste fältet som definieras i schemat vara en sträng.
 
-När du är klar klickar du **[!UICONTROL Apply]** och fältets namn och typ visas i redigerarens *[!UICONTROL Structure]* avsnitt.
+När du är klar klickar du **[!UICONTROL Apply]** och fältets namn och typ visas i redigerarens **[!UICONTROL Structure]** avsnitt.
 
 ![](../images/computed-attributes/Apply.png)
 
 ### Aktivera schema för [!DNL Profile]
 
-Innan du fortsätter kontrollerar du att schemat har aktiverats för [!DNL Profile]. Klicka på schemanamnet i *[!UICONTROL Structure]* delen av redigeraren så att *[!UICONTROL Schema Properties]* fliken visas. Om **[!UICONTROL Profile]** skjutreglaget är blått har schemat aktiverats för [!DNL Profile].
+Innan du fortsätter kontrollerar du att schemat har aktiverats för [!DNL Profile]. Klicka på schemanamnet i **[!UICONTROL Structure]** delen av redigeraren så att **[!UICONTROL Schema Properties]** fliken visas. Om **[!UICONTROL Profile]** skjutreglaget är blått har schemat aktiverats för [!DNL Profile].
 
 >[!NOTE]
 >
