@@ -5,7 +5,7 @@ title: Bläddra i arbetsytan för åtkomstkontroll
 topic: user guide
 description: Det här dokumentet innehåller de steg som krävs för att bläddra på arbetsytan för åtkomstkontroll. Om du vill konfigurera åtkomstkontroll för Experience Platform via Adobe Admin Console måste du vara administratör för en IMS-organisation som har ett abonnemang på Experience Platform.
 translation-type: tm+mt
-source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '288'
 ht-degree: 3%
@@ -19,11 +19,11 @@ Om du vill konfigurera åtkomstkontroll för [!DNL Experience Platform] via Adob
 
 Om du inte har administratörsbehörighet kontaktar du systemadministratören för att få åtkomst.
 
-När du har administratörsbehörighet går du till [Adobe Admin Console](https://adminconsole.adobe.com) och loggar in med inloggningsuppgifterna för Adobe. När du är inloggad visas sidan för den IMS-organisation som du har administratörsbehörighet för. *[!UICONTROL Overview]* På den här sidan visas de produkter som din IMS-organisation prenumererar på, tillsammans med andra kontroller för att lägga till användare och administratörer i IMS-organisationen som helhet. Klicka **[!UICONTROL Adobe Experience Platform]** för att öppna arbetsytan för åtkomstkontroll för din [!DNL Platform] integrering.
+När du har administratörsbehörighet går du till [Adobe Admin Console](https://adminconsole.adobe.com) och loggar in med inloggningsuppgifterna för Adobe. När du är inloggad visas sidan för den IMS-organisation som du har administratörsbehörighet för. **[!UICONTROL Overview]** På den här sidan visas de produkter som din IMS-organisation prenumererar på, tillsammans med andra kontroller för att lägga till användare och administratörer i IMS-organisationen som helhet. Klicka **[!UICONTROL Adobe Experience Platform]** för att öppna arbetsytan för åtkomstkontroll för din [!DNL Platform] integrering.
 
 ![overview-page](../images/overview-page.png)
 
-Arbetsytan för åtkomstkontroll för Adobe Experience Platform visas och öppnas på *[!UICONTROL Product Profiles]* fliken. På den här fliken kan du visa alla produktprofiler och hantera olika inställningar enligt beskrivningen i det här dokumentet.
+Arbetsytan för åtkomstkontroll för Adobe Experience Platform visas och öppnas på **[!UICONTROL Product Profiles]** fliken. På den här fliken kan du visa alla produktprofiler och hantera olika inställningar enligt beskrivningen i det här dokumentet.
 
 ![platform-access-control](../images/platform-access-control.png)
 
