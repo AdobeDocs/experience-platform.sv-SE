@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;create schema;schema api;enum;primary identity;primary idenity;enum datatype;schema design
+keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;schema;Schema;schemas;Schemas;create
 solution: Experience Platform
 title: Skapa ett schema med API:t för schemaregister
 topic: tutorials
 description: I den här självstudiekursen används API:t för schemaregister för att vägleda dig genom stegen för att skapa ett schema med en standardklass.
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: ed1f2fdac0f9c977d11c867327c084353c1bcd0f
 workflow-type: tm+mt
 source-wordcount: '2368'
 ht-degree: 0%
@@ -955,7 +955,7 @@ När du utför en GET-begäran om att söka efter schemat visas nu referensen ti
 
 ### Definiera en identitetsbeskrivning
 
-Scheman används för inmatning av data i [!DNL Experience Platform]. Dessa data används slutligen för flera tjänster för att skapa en enda, enhetlig vy av en individ. Nyckelfält kan markeras som&quot;Identitet&quot; som hjälp med den här processen, och när data hämtas infogas data i dessa fält i&quot;Identitetsdiagram&quot; för den aktuella personen. Diagramdata kan sedan nås av [[!DNL Real-time Customer Profile]](../../profile/home.md) och andra [!DNL Experience Platform] tjänster för att ge en sammansatt bild av varje enskild kund.
+Scheman används för inmatning av data i [!DNL Experience Platform]. Dessa data används slutligen för flera tjänster för att skapa en enda, enhetlig vy av en individ. Nyckelfält kan markeras som&quot;Identitet&quot; som hjälp med den här processen, och när data har matats in infogas data i dessa fält i&quot;Identitetsdiagram&quot; för den aktuella personen. Diagramdata kan sedan nås av [[!DNL Real-time Customer Profile]](../../profile/home.md) och andra [!DNL Experience Platform] tjänster för att ge en sammansatt bild av varje enskild kund.
 
 Fält som vanligen markeras som&quot;Identitet&quot; är: e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://docs.adobe.com/content/help/sv-SE/id-service/using/home.html), CRM ID eller andra unika ID-fält.
 
