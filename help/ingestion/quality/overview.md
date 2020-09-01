@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Data quality;quality;Quality;Supported validation;Validation;supported validation;
 solution: Experience Platform
 title: Kvalitet på dataöverföring
 topic: overview
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: c04fb056d4564e53f192e0734a700a13820f5ba7
 workflow-type: tm+mt
 source-wordcount: '282'
 ht-degree: 4%
@@ -14,7 +14,7 @@ ht-degree: 4%
 
 # Datakvalitet i Adobe Experience Platform
 
-Adobe Experience Platform ger väldefinierade garantier för fullständighet, exakthet och konsekvens för alla data som överförs via både batch- och direktuppspelningsinmatning. Följande dokument innehåller en sammanfattning av de kontroller och valideringsbeteenden som stöds för import av grupper och direktuppspelning i [!DNL Experience Platform].
+Adobe Experience Platform ger väldefinierade garantier för fullständighet, exakthet och enhetlighet för alla data som överförs via både batch- och direktuppspelningsinmatning. Följande dokument innehåller en sammanfattning av de kontroller och valideringsbeteenden som stöds för import av grupper och direktuppspelning i [!DNL Experience Platform].
 
 ## Kontroller som stöds
 
