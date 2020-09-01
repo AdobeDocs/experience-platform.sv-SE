@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Apache Hadoop Distributed File System;Apache hadoop;hdfs;HDFS
 solution: Experience Platform
 title: Skapa en Apache HDFS-anslutning med API:t för Flow Service
 topic: overview
+description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta ett Apache Hadoop Distributed File System (nedan kallat HDFS) till Experience Platform.
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 25f1dfab07d0b9b6c2ce5227b507fc8c8ecf9873
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '561'
 ht-degree: 1%
 
 ---
@@ -114,4 +115,4 @@ Ett godkänt svar returnerar information om den nya anslutningen, inklusive dess
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en HDFS-anslutning med API:t och fått anslutningens unika ID-värde. [!DNL Flow Service] Du kan använda det här ID:t i nästa självstudiekurs när du lär dig hur du [utforskar ett molnlagringsutrymme från tredje part med API:t](../../explore/cloud-storage.md)för Flow Service.
+Genom att följa den här självstudiekursen har du skapat en HDFS-anslutning med API:t och fått anslutningens unika ID-värde. [!DNL Flow Service] Du kan använda det här ID:t i nästa självstudiekurs när du lär dig hur du [utforskar ett molnlagringsutrymme från tredje part med API:t](../../explore/cloud-storage.md)för Flow Service.
