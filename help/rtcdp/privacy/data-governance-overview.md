@@ -5,9 +5,9 @@ seo-title: Datastyrning i kunddataplattformen i realtid
 description: 'Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. '
 seo-description: 'Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. '
 translation-type: tm+mt
-source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
+source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
 workflow-type: tm+mt
-source-wordcount: '1016'
+source-wordcount: '1015'
 ht-degree: 0%
 
 ---
@@ -58,7 +58,7 @@ I följande diagram visas hur regelefterlevnad integreras i dataflödet för seg
 
 ![](assets/enforcement-flow.png)
 
-När ett segment aktiveras första gången kontrollerar DULE [!DNL Policy Service] om det finns policyöverträdelser baserat på följande faktorer:
+När ett segment aktiveras för första gången utförs en sökning efter policyöverträdelser baserat på följande faktorer: [!DNL Policy Service]
 
 * De dataanvändningsetiketter som används för fält och datauppsättningar i segmentet som ska aktiveras.
 * Destinationens marknadsföringssyfte.
