@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics
 solution: Experience Platform
 title: XDM-scheman och -beskrivningar
 topic: tutorial
+description: Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. Experience Data Model (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering. Scheman är standardmetoden för att beskriva data i Experience Platform, vilket gör att alla data som överensstämmer med scheman kan återanvändas utan konflikter i en organisation och till och med delas mellan flera organisationer.
 translation-type: tm+mt
-source-git-commit: 5c5f6c4868e195aef76bacc0a1e5df3857647bde
+source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
 workflow-type: tm+mt
-source-wordcount: '407'
+source-wordcount: '473'
 ht-degree: 0%
 
 ---
@@ -18,7 +19,7 @@ Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience
 
 ## Skapa ett schema med schemaregistret
 
-Schemaregistret innehåller ett användargränssnitt och RESTful API som du kan använda för att visa och hantera alla resurser i schemabiblioteket i Adobe Experience Platform. Schemabiblioteket innehåller resurser som du har fått av Adobe, [!DNL Experience Platform] partners och leverantörer vars program du använder, samt resurser som du definierar och sparar i schemaregistret. Om du vill lära dig hur du skapar scheman för din organisation kan du följa självstudiekurserna för att [skapa ett schema med API:t](../xdm/tutorials/create-schema-api.md) för schemaregister eller [skapa ett schema med användargränssnittet](../xdm/tutorials/create-schema-ui.md)för Schemaredigeraren.
+Schemaregistret innehåller ett användargränssnitt och RESTful API som du kan använda för att visa och hantera alla resurser i Adobe Experience Platform Schema Library. Schemabiblioteket innehåller resurser som du har fått av Adobe, [!DNL Experience Platform] partners och leverantörer vars program du använder, samt resurser som du definierar och sparar i schemaregistret. Om du vill lära dig hur du skapar scheman för din organisation kan du följa självstudiekurserna för att [skapa ett schema med API:t](../xdm/tutorials/create-schema-api.md) för schemaregister eller [skapa ett schema med användargränssnittet](../xdm/tutorials/create-schema-ui.md)för Schemaredigeraren.
 
 ## Definiera en relation mellan två scheman
 
