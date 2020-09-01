@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Felsökning av direktuppspelning
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: c8e53a25c5b22e8d840658fe26ff47875947a6d0
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '991'
 ht-degree: 0%
@@ -58,7 +58,7 @@ Du kan gruppera flera meddelanden inom en enskild nyttolast för begäran och st
 
 Alla data som skickas till [!DNL Platform] (utan fel eller på annat sätt) lagras som gruppfiler innan de lagras i datauppsättningar. Batchernas bearbetningsstatus visas i den datauppsättning de skickades till.
 
-Du kan verifiera om data har importerats genom att kontrollera datauppsättningsaktiviteten med [användargränssnittet](https://platform.adobe.com)i Experience Platform. Klicka **[!UICONTROL Datasets]** i den vänstra navigeringen för att visa en lista med datauppsättningar. Markera den datauppsättning som du direktuppspelar till i den lista som visas för att öppna dess *[!UICONTROL Dataset activity]* sida och visa alla batchar som har skickats under en vald tidsperiod. Mer information om hur du använder [!DNL Experience Platform] för att övervaka dataströmmar finns i guiden om [övervakning av dataflöden](../quality/monitor-data-flows.md)för direktuppspelning.
+Du kan verifiera om data har importerats genom att kontrollera datauppsättningsaktiviteten med [användargränssnittet](https://platform.adobe.com)i Experience Platform. Klicka **[!UICONTROL Datasets]** i den vänstra navigeringen för att visa en lista med datauppsättningar. Markera den datauppsättning som du direktuppspelar till i den lista som visas för att öppna dess **[!UICONTROL Dataset activity]** sida och visa alla batchar som har skickats under en vald tidsperiod. Mer information om hur du använder [!DNL Experience Platform] för att övervaka dataströmmar finns i guiden om [övervakning av dataflöden](../quality/monitor-data-flows.md)för direktuppspelning.
 
 Om dina data inte kunde importera och du vill återställa dem från [!DNL Platform]kan du hämta de misslyckade batcharna genom att skicka deras ID:n till [!DNL Data Access API]. Mer information finns i guiden om hur du [hämtar misslyckade batchar](../quality/retrieve-failed-batches.md) .
 
@@ -100,4 +100,4 @@ Om ett meddelande [!DNL Real-time Customer Profile] avvisas beror det troligtvis
 
 Det finns två typer av identitetsnamnutrymmen: standard och anpassad. När du använder anpassade namnutrymmen måste du kontrollera att namnutrymmet har registrerats i [!DNL Identity Service]. Mer information om hur du använder standardnamnutrymmen och anpassade namnutrymmen finns i Översikt över [](../../identity-service/namespaces.md) identitetsnamn.
 
-Du kan använda gränssnittet för [[!DNL Experience Platform]](https://platform.adobe.com) om du vill se mer information om varför ett meddelande inte kunde hämtas. Klicka **[!UICONTROL Monitoring]** i den vänstra navigeringen och visa sedan _[!UICONTROL Streaming end-to-end]_fliken för att se meddelandebatchar som direktuppspelats under en vald tidsperiod.
+Du kan använda gränssnittet för [[!DNL Experience Platform]](https://platform.adobe.com) om du vill se mer information om varför ett meddelande inte kunde hämtas. Klicka **[!UICONTROL Monitoring]** i den vänstra navigeringen och visa sedan **[!UICONTROL Streaming end-to-end]** fliken för att se meddelandebatchar som direktuppspelats under en vald tidsperiod.
