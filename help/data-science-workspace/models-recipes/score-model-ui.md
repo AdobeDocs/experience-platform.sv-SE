@@ -5,9 +5,9 @@ title: Skapa en modell (UI)
 topic: Tutorial
 description: 'Du kan göra poängsättningen i Adobe Experience Platform Data Science Workspace genom att mata in indata i en befintlig utbildad modell. Resultat av poängsättningen lagras och kan visas i en angiven utdatamängd som en ny grupp. '
 translation-type: tm+mt
-source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
-source-wordcount: '591'
+source-wordcount: '589'
 ht-degree: 0%
 
 ---
@@ -43,7 +43,7 @@ En bedömningsrunda skapas med optimerade konfigurationer från en tidigare slut
 5. I det sista steget i arbetsflödet uppmanas du att konfigurera din poängkörning. Dessa konfigurationer används av modellen för poängkörningen.
 Observera att du inte kan ta bort ärvda parametrar som angavs när modellen skapades. Du kan redigera eller återställa icke ärvda parametrar genom att dubbelklicka på värdet eller klicka på återställningsikonen när du håller markören över posten.
    ![](../images/models-recipes/score/configuration.png)
-Granska och bekräfta poängkonfigurationerna och klicka på **[!UICONTROL Finish]** för att skapa och köra poängkörningen. Du dirigeras till fliken *Poängkörningar* och den nya poängkörningen visar en status.
+Granska och bekräfta poängkonfigurationerna och klicka på **[!UICONTROL Finish]** för att skapa och köra poängkörningen. Du dirigeras till **[!UICONTROL Scoring Runs]** fliken och den nya poängsättningen visas med en status.
    ![](../images/models-recipes/score/scoring_runs_tab.png)
 I en bedömningsrunda visas någon av följande fyra statusvärden: Väntande, Fullständigt, Misslyckades eller Körs och uppdateras automatiskt. Fortsätt till nästa steg om statusen är antingen Slutförd eller Misslyckad.
 
