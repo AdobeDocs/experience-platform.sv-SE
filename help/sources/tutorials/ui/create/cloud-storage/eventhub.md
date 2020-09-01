@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Azure Event Hubs;Event Hubs;azure event hubs
 solution: Experience Platform
 title: Skapa en Azure Event Hubs-källkoppling i användargränssnittet
 topic: overview
+description: I den här självstudiekursen beskrivs hur du autentiserar en Azure Event Hubs-källkoppling (nedan kallad Event Hubs) med hjälp av användargränssnittet för plattformen.
 translation-type: tm+mt
-source-git-commit: a664a0420189d6a2dda9f33b3aa58cb4883e252f
+source-git-commit: 0da686743e8bc57d310f7eff6f1bf812a8f31238
 workflow-type: tm+mt
-source-wordcount: '452'
+source-wordcount: '475'
 ht-degree: 1%
 
 ---
