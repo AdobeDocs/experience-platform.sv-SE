@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;class;Class;classes;Classes;create
 solution: Experience Platform
 title: Skapa en klass
+description: Den primära byggstenen för ett schema är en klass. Klassen innehåller den minsta uppsättning fält som måste definieras för att kunna hämta huvuddata från ett schema. Om du till exempel utformade ett schema för bilar och lastbilar skulle de troligen använda en klass som heter Vehicle som beskriver de grundläggande gemensamma egenskaperna för alla fordon.
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: 74a4a3cc713cc068be30379e8ee11572f8bb0c63
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '539'
 ht-degree: 0%
 
 ---
