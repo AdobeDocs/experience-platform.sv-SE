@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Stöd för IAB TCF 2.0 i kunddataplattformen i realtid
 topic: privacy events
 translation-type: tm+mt
-source-git-commit: e7cbbd2e376ab109367d1d16cb9e033202866a6f
+source-git-commit: f8d13b305a61f8606c4fa1ceee6d4518b5d83fda
 workflow-type: tm+mt
 source-wordcount: '1282'
 ht-degree: 0%
@@ -71,7 +71,7 @@ Varje sekretessblandning varierar i struktur och de typer av fält som de inneh�
 
 ## Skapa kundmedgivandescheman {#create-schemas}
 
-Klicka i det vänstra navigeringsfältet **[!UICONTROL Schemas]** i Plattformsgränssnittet för att öppna *[!UICONTROL Schemas]arbetsytan *. Härifrån följer du stegen i avsnitten nedan för att skapa varje obligatoriskt schema.
+Klicka i det vänstra navigeringsfältet **[!UICONTROL Schemas]** i Plattformsgränssnittet för att öppna *[!UICONTROL Schemas]arbetsytan*. Härifrån följer du stegen i avsnitten nedan för att skapa varje obligatoriskt schema.
 
 >[!NOTE]
 >
@@ -79,11 +79,11 @@ Klicka i det vänstra navigeringsfältet **[!UICONTROL Schemas]** i Plattformsgr
 
 ### Skapa ett postbaserat medgivandeschema {#profile-schema}
 
-Skapa ett nytt schema baserat på **[!UICONTROL Browse]** klassen *[!UICONTROL Schemas]från fliken på&#x200B;*arbetsytan**[!DNL XDM Individual Profile]**. När du har öppnat schemat i Schemaredigeraren klickar du **[!UICONTROL Add]**under *[!UICONTROL Mixins]*avsnittet till vänster på arbetsytan.
+Skapa ett nytt schema baserat på **[!UICONTROL Browse]** klassen **[!UICONTROL Schemas]från fliken på** arbetsytan **[!DNL XDM Individual Profile]**. När du har öppnat schemat i Schemaredigeraren klickar du **[!UICONTROL Add]** under **[!UICONTROL Mixins]** avsnittet till vänster på arbetsytan.
 
 ![](../assets/iab/add-mixin-profile.png)
 
-Dialogrutan *[!UICONTROL Add mixin]* visas. Välj **[!UICONTROL Profile privacy]** från listan. Du kan även använda sökfältet för att begränsa resultatet och enklare hitta mixen. När du har valt mixen klickar du på **[!UICONTROL Add mixin]**.
+Dialogrutan **[!UICONTROL Add mixin]** visas. Välj **[!UICONTROL Profile privacy]** från listan. Du kan även använda sökfältet för att begränsa resultatet och enklare hitta mixen. När du har valt mixen klickar du på **[!UICONTROL Add mixin]**.
 
 ![](../assets/iab/add-profile-privacy.png)
 
@@ -112,7 +112,7 @@ För [!DNL Real-time CDP] att kunna koppla de medgivandedata de får till specif
 >
 >Steg om hur du anger ett primärt identitetsfält för ett schema finns i självstudiekursen [för att skapa](../../../xdm/tutorials/create-schema-ui.md#identity-field)schema.
 
-Om du vill aktivera schemat för [!DNL Profile]klickar du på schemats namn i den vänstra listen för att öppna *[!UICONTROL Schema properties]* dialogrutan i den högra listen. Klicka på **[!UICONTROL Profile]** växlingsknappen härifrån.
+Om du vill aktivera schemat för [!DNL Profile]klickar du på schemats namn i den vänstra listen för att öppna **[!UICONTROL Schema properties]** dialogrutan i den högra listen. Klicka på **[!UICONTROL Profile]** växlingsknappen härifrån.
 
 ![](../assets/iab/profile-enable-profile.png)
 
@@ -126,11 +126,11 @@ Klicka slutligen på **[!UICONTROL Save]** för att bekräfta ändringarna.
 
 ### Skapa ett tidsseriebaserat medgivandeschema {#event-schema}
 
-Skapa ett nytt schema baserat på **[!UICONTROL Browse]** klassen *[!UICONTROL Schemas]från fliken på&#x200B;*arbetsytan**[!DNL XDM ExperienceEvent]**. När du har öppnat schemat i Schemaredigeraren klickar du **[!UICONTROL Add]**under *[!UICONTROL Mixins]*avsnittet till vänster på arbetsytan.
+Skapa ett nytt schema baserat på **[!UICONTROL Browse]** klassen **[!UICONTROL Schemas]från fliken på** arbetsytan **[!DNL XDM ExperienceEvent]**. När du har öppnat schemat i Schemaredigeraren klickar du **[!UICONTROL Add]** under **[!UICONTROL Mixins]** avsnittet till vänster på arbetsytan.
 
 ![](../assets/iab/add-mixin-event.png)
 
-Dialogrutan *[!UICONTROL Add mixin]* visas. Välj **[!UICONTROL Experience event privacy mixin]** från listan. Du kan även använda sökfältet för att begränsa resultatet och enklare hitta mixen. När du har valt mixen klickar du på **[!UICONTROL Add mixin]**.
+Dialogrutan **[!UICONTROL Add mixin]** visas. Välj **[!UICONTROL Experience event privacy mixin]** från listan. Du kan även använda sökfältet för att begränsa resultatet och enklare hitta mixen. När du har valt mixen klickar du på **[!UICONTROL Add mixin]**.
 
 ![](../assets/iab/add-event-privacy.png)
 
@@ -161,11 +161,11 @@ På nästa sida väljer du **[!UICONTROL Create dataset from schema]**.
 
 ![](../assets/iab/dataset-create-from-schema.png)
 
-Arbetsflödet _[!UICONTROL Create dataset from schema]_visas med början i_[!UICONTROL Select schema]_ steget. Leta reda på ett av de medgivandescheman som du skapade tidigare i listan. Du kan även använda sökfunktionen för att begränsa resultaten och enklare hitta ditt schema. Klicka på alternativknappen bredvid schemat för att markera det och klicka sedan på **[!UICONTROL Next]** för att fortsätta.
+Arbetsflödet **[!UICONTROL Create dataset from schema]** visas med början i **[!UICONTROL Select schema]** steget. Leta reda på ett av de medgivandescheman som du skapade tidigare i listan. Du kan även använda sökfunktionen för att begränsa resultaten och enklare hitta ditt schema. Klicka på alternativknappen bredvid schemat för att markera det och klicka sedan på **[!UICONTROL Next]** för att fortsätta.
 
 ![](../assets/iab/dataset-select-schema.png)
 
-Steget _[!UICONTROL Configure dataset]_visas. Ange ett unikt, enkelt identifierbart namn och en beskrivning för datauppsättningen innan du klickar på&#x200B;**[!UICONTROL Finish]**.
+Steget **[!UICONTROL Configure dataset]** visas. Ange ett unikt, enkelt identifierbart namn och en beskrivning för datauppsättningen innan du klickar på **[!UICONTROL Finish]**.
 
 ![](../assets/iab/dataset-configure.png)
 
