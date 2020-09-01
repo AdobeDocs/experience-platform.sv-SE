@@ -5,7 +5,7 @@ title: Översikt över arbetsytan Datavetenskap
 topic: overview
 description: Den här guiden ger en översikt över de viktigaste begreppen som rör arbetsytan för datavetenskap.
 translation-type: tm+mt
-source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
+source-git-commit: f8d13b305a61f8606c4fa1ceee6d4518b5d83fda
 workflow-type: tm+mt
 source-wordcount: '2578'
 ht-degree: 0%
@@ -50,7 +50,7 @@ Här följer en kort sammanfattning av de viktigaste termerna innan du börjar g
 | Maskinininlärning | Maskininlärning är det studieområde som gör det möjligt för datorer att lära sig utan att programmeras explicit. |
 | [!DNL Sensei] ML Framework | [!DNL Sensei] ML Framework är ett enhetligt ramverk för maskininlärning i hela Adobe som utnyttjar data på [!DNL Experience Platform] för att möjliggöra för datavetare att utveckla maskininlärningsdrivna underrättelsetjänster på ett snabbare, skalbart och återanvändbart sätt. |
 | [!DNL Experience Data Model] | [!DNL Experience Data Model] (XDM) är den standardiseringsinsats som Adobe leder för att definiera standardscheman som [!DNL Profile] och [!DNL ExperienceEvent]för Customer Experience Management. |
-| [!DNL JupyterLab] | [!DNL JupyterLab] är ett webbaserat gränssnitt med öppen källkod för Project Jupyter och är nära integrerat i [!DNL Experience Platform]. |
+| [!DNL JupyterLab] | [!DNL JupyterLab] är ett webbaserat gränssnitt med öppen källkod för Project Jupyter som är nära integrerat i [!DNL Experience Platform]. |
 | Recept | Ett recept är en AdobeTerm för en modellspecifikation och är en toppnivåbehållare som representerar en specifik maskininlärning, AI-algoritm eller en kombination av algoritmer, bearbetningslogik och konfiguration som krävs för att skapa och köra en tränad modell och därmed bidra till att lösa specifika affärsproblem. |
 | Modell | En modell är en instans av ett maskininlärningsrecept som är utbildat med historiska data och konfigurationer för att lösa ett affärsärende. |
 | Utbildning | Utbildning är processen att lära sig mönster och insikter från märkta data. |
@@ -64,7 +64,7 @@ I följande diagram visas det hierarkiska förhållandet mellan Recept, Models, 
 
 ## Förstå [!DNL Data Science Workspace]
 
-Med [!DNL Data Science Workspace]hjälp av datavetare kan era datavetare effektivisera den krångliga processen att hitta insikter i stora datamängder. Bygger på ett gemensamt ramverk för maskininlärning och runtime-modulen och [!DNL Data Science Workspace] levererar avancerad arbetsflödeshantering, modellhantering och skalbarhet. Intelligenta tjänster stöder återanvändning av maskininlärningsrecept för att driva en rad olika tillämpningar som skapats med Adobe-produkter och -lösningar.
+Med [!DNL Data Science Workspace]hjälp av datavetare kan era datavetare effektivisera den krångliga processen att hitta insikter i stora datamängder. Bygger på ett gemensamt ramverk för maskininlärning och runtime-modulen och [!DNL Data Science Workspace] levererar avancerad arbetsflödeshantering, modellhantering och skalbarhet. Intelligenta tjänster stöder återanvändning av maskininlärningsrecept för att driva ett antal tillämpningar som skapats med Adobe-produkter och -lösningar.
 
 ### Åtkomst till data i ett steg
 
@@ -88,7 +88,7 @@ Oavsett vilken nivå ni har av datavetenskaplig expertis hjälper [!DNL Data Sci
 
 Att hitta rätt data och förbereda dem är den mest arbetsintensiva delen av att bygga upp ett effektivt recept. [!DNL Data Science Workspace] och Adobe Experience Platform kommer att hjälpa er att snabbare komma från data till insikter.
 
-På Adobe Experience Platform centraliseras och lagras data i XDM:s standardiserade schema, vilket gör det enklare att hitta, förstå och rensa data. Ett enda datalager som baseras på ett gemensamt schema kan spara oräkneliga timmars datautforskande och förberedelse.
+På Adobe Experience Platform centraliseras och lagras data i XDM:s standardiserade schema, så det blir enklare att hitta, förstå och rensa data. Ett enda datalager som baseras på ett gemensamt schema kan spara oräkneliga timmars datautforskande och förberedelse.
 
 När du bläddrar kan du använda R, [!DNL Python]eller Scala med den integrerade värddatorn [!DNL Jupyter Notebook] för att bläddra i datakatalogen [!DNL Platform]. Om du använder något av dessa språk kan du även använda [!DNL Spark] ML och TensorFlow. Börja från början eller använd någon av de mallar för bärbara datorer som finns för specifika affärsproblem.
 
@@ -132,7 +132,7 @@ I följande tabell visas effekterna av att ha den här behörigheten aktiverad e
 
 | Behörighet | Aktiverad | Handikappade |
 |---|---|---|
-| [!DNL Manage Data Science Workspace] | Ger åtkomst till alla tjänster i [!DNL Data Science Workspace]. | API- och gränssnittsåtkomst till alla tjänster i [!DNL Data Science Workspace] inaktiveras. När funktionen är inaktiverad går det inte att dirigera till [!DNL Data Science Workspace] och *[!UICONTROL Models]* *[!UICONTROL Services]* till sidor. |
+| [!DNL Manage Data Science Workspace] | Ger åtkomst till alla tjänster i [!DNL Data Science Workspace]. | API- och gränssnittsåtkomst till alla tjänster i [!DNL Data Science Workspace] inaktiveras. När funktionen är inaktiverad går det inte att dirigera till [!DNL Data Science Workspace] och **[!UICONTROL Models]** **[!UICONTROL Services]** till sidor. |
 
 ### Säkerhet och sinnesfrid
 
