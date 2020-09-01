@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Stöd för IAB TCF 2.0 i kunddataplattformen i realtid
 topic: privacy events
 translation-type: tm+mt
-source-git-commit: 06eda1502d34da1caeebbe9b753dd437bbd9d6ab
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '2377'
 ht-degree: 1%
@@ -109,7 +109,7 @@ Mer information om hur du arbetar med sammanfogningsprinciper finns i användarh
 
 >[!NOTE]
 >
->Det krävs att [!DNL Experience Platform] Web SDK används för att behandla data som medgetts direkt i Adobe Experience Platform. [!DNL Experience Cloud Identity Service] stöds för närvarande inte.
+>Det krävs att [!DNL Experience Platform] Web SDK används för att bearbeta data som medger direkt i Adobe Experience Platform. [!DNL Experience Cloud Identity Service] stöds för närvarande inte.
 >
 >[!DNL Experience Cloud Identity Service] stöds dock fortfarande för godkännandebearbetning i Adobe Audience Manager, och efterlevnad av TCF 2.0 kräver bara att biblioteket uppdateras till [version 5.0](https://github.com/Adobe-Marketing-Cloud/id-service/releases).
 
@@ -121,7 +121,7 @@ När du har konfigurerat din CMP för att generera medgivandesträngar måste du
 
 För att SDK ska kunna skicka data till [!DNL Experience Platform]måste du först skapa en ny kantkonfiguration för [!DNL Platform] i [!DNL Adobe Experience Platform Launch]. Specifika steg för hur du skapar en ny konfiguration finns i [SDK-dokumentationen](../../../edge/fundamentals/edge-configuration.md).
 
-När du har angett ett unikt namn för konfigurationen väljer du växlingsknappen bredvid *[!UICONTROL Adobe Experience Platform]*. Använd sedan följande värden för att fylla i resten av formuläret:
+När du har angett ett unikt namn för konfigurationen väljer du växlingsknappen bredvid **[!UICONTROL Adobe Experience Platform]**. Använd sedan följande värden för att fylla i resten av formuläret:
 
 | Konfiguration av Edge-fält | Värde |
 | --- | --- |
