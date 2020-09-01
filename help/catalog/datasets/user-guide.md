@@ -5,7 +5,7 @@ title: Användarhandbok för datauppsättningar
 topic: datasets
 description: Den här användarhandboken för datauppsättningar innehåller anvisningar om hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 translation-type: tm+mt
-source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '1108'
 ht-degree: 0%
@@ -30,18 +30,18 @@ Användarhandboken kräver en fungerande förståelse av följande komponenter i
 
 ## Visa datauppsättningar
 
-I [!DNL Experience Platform] användargränssnittet klickar du **[!UICONTROL Datasets]** i den vänstra navigeringen för att öppna *[!UICONTROL Datasets]* kontrollpanelen. Kontrollpanelen visar alla tillgängliga datauppsättningar för din organisation. Information visas för varje datamängd som anges, inklusive namn, schema som datauppsättningen följer och status för den senaste importen.
+I [!DNL Experience Platform] användargränssnittet klickar du **[!UICONTROL Datasets]** i den vänstra navigeringen för att öppna **[!UICONTROL Datasets]** kontrollpanelen. Kontrollpanelen visar alla tillgängliga datauppsättningar för din organisation. Information visas för varje datamängd som anges, inklusive namn, schema som datauppsättningen följer och status för den senaste importen.
 
 ![](../images/datasets/user-guide/browse_datasets.png)
 
-Klicka på namnet på en datauppsättning för att komma åt dess *[!UICONTROL Dataset activity]* skärm och se information om den datauppsättning du valde. Fliken Aktivitet innehåller ett diagram som visar hur många meddelanden som har förbrukats samt en lista över lyckade och misslyckade batchar.
+Klicka på namnet på en datauppsättning för att komma åt dess **[!UICONTROL Dataset activity]** skärm och se information om den datauppsättning du valde. Fliken Aktivitet innehåller ett diagram som visar hur många meddelanden som har förbrukats samt en lista över lyckade och misslyckade batchar.
 
 ![](../images/datasets/user-guide/dataset_activity_1.png)
 ![](../images/datasets/user-guide/dataset_activity_2.png)
 
 ## Förhandsgranska en datauppsättning
 
-På *[!UICONTROL Dataset activity]* skärmen klickar du **[!UICONTROL Preview dataset]** i skärmens övre högra hörn för att förhandsgranska upp till 100 rader med data. Om datauppsättningen är tom inaktiveras förhandsgranskningslänken och det står i stället **[!UICONTROL Preview not available]**.
+På **[!UICONTROL Dataset activity]** skärmen klickar du **[!UICONTROL Preview dataset]** i skärmens övre högra hörn för att förhandsgranska upp till 100 rader med data. Om datauppsättningen är tom inaktiveras förhandsgranskningslänken och det står i stället **[!UICONTROL Preview not available]**.
 
 ![](../images/datasets/user-guide/click_to_preview.png)
 
@@ -56,7 +56,7 @@ För mer robusta metoder för att få tillgång till dina data erbjuder [!DNL Ex
 
 ## Skapa en datauppsättning {#create}
 
-Om du vill skapa en ny datauppsättning börjar du med att klicka **[!UICONTROL Create dataset]** på *[!UICONTROL Datasets]* instrumentpanelen.
+Om du vill skapa en ny datauppsättning börjar du med att klicka **[!UICONTROL Create dataset]** på **[!UICONTROL Datasets]** instrumentpanelen.
 
 ![](../images/datasets/user-guide/click_to_create.png)
 
@@ -67,29 +67,29 @@ På nästa skärm visas följande två alternativ för att skapa en ny dataupps�
 
 ### Skapa en datauppsättning med ett befintligt schema
 
-Klicka på *[!UICONTROL Create dataset]* skärmen **[!UICONTROL Create dataset from schema]** för att skapa en ny tom datauppsättning.
+Klicka på **[!UICONTROL Create dataset]** skärmen **[!UICONTROL Create dataset from schema]** för att skapa en ny tom datauppsättning.
 
 ![](../images/datasets/user-guide/create_dataset_schema.png)
 
-Steget *[!UICONTROL Select schema]* visas. Bläddra i schemalistan och välj det schema som datauppsättningen ska följa innan du klickar **[!UICONTROL Next]**.
+Steget **[!UICONTROL Select schema]** visas. Bläddra i schemalistan och välj det schema som datauppsättningen ska följa innan du klickar **[!UICONTROL Next]**.
 
 ![](../images/datasets/user-guide/select_schema.png)
 
-Steget *[!UICONTROL Configure dataset]* visas. Ange ett namn och en valfri beskrivning för datauppsättningen och klicka sedan på **[!UICONTROL Finish]** för att skapa datauppsättningen.
+Steget **[!UICONTROL Configure dataset]** visas. Ange ett namn och en valfri beskrivning för datauppsättningen och klicka sedan på **[!UICONTROL Finish]** för att skapa datauppsättningen.
 
 ![](../images/datasets/user-guide/configure_dataset_schema.png)
 
 ### Skapa en datauppsättning med en CSV-fil
 
-När en datauppsättning skapas med en CSV-fil skapas ett ad hoc-schema som ger datauppsättningen en struktur som matchar den angivna CSV-filen. Klicka på rutan som anger på *[!UICONTROL Create dataset]* skärmen **[!UICONTROL Create dataset from CSV file]**.
+När en datauppsättning skapas med en CSV-fil skapas ett ad hoc-schema som ger datauppsättningen en struktur som matchar den angivna CSV-filen. Klicka på rutan som anger på **[!UICONTROL Create dataset]** skärmen **[!UICONTROL Create dataset from CSV file]**.
 
 ![](../images/datasets/user-guide/create_dataset_csv.png)
 
-Steget *[!UICONTROL Configure]* visas. Ange ett namn och en valfri beskrivning för datauppsättningen och klicka sedan på **[!UICONTROL Next]**.
+Steget **[!UICONTROL Configure]** visas. Ange ett namn och en valfri beskrivning för datauppsättningen och klicka sedan på **[!UICONTROL Next]**.
 
 ![](../images/datasets/user-guide/configure_dataset_csv.png)
 
-Steget *[!UICONTROL Add data]* visas. Överför CSV-filen genom att antingen dra och släppa den mitt på skärmen eller klicka på **[!UICONTROL Browse]** för att utforska din filkatalog. Filen kan vara upp till tio gigabyte stor. När CSV-filen har överförts klickar du på **[!UICONTROL Save]** för att skapa datauppsättningen.
+Steget **[!UICONTROL Add data]** visas. Överför CSV-filen genom att antingen dra och släppa den mitt på skärmen eller klicka på **[!UICONTROL Browse]** för att utforska din filkatalog. Filen kan vara upp till tio gigabyte stor. När CSV-filen har överförts klickar du på **[!UICONTROL Save]** för att skapa datauppsättningen.
 
 >[!NOTE]
 >
@@ -106,7 +106,7 @@ Alla datauppsättningar har möjlighet att förbättra kundprofiler med inkapsla
 
 Mer information om hur du aktiverar ett schema för [!DNL Profile]finns i [användarhandboken](../../xdm/tutorials/create-schema-ui.md)för Schemaredigeraren.
 
-Om du vill aktivera en datauppsättning för profilen öppnar du dess *[!UICONTROL Dataset activity]* skärm och klickar på **[!UICONTROL Profile]** växlingsknappen i *[!UICONTROL Properties]* kolumnen. När den är aktiverad används även data som är inkapslade i datauppsättningen för att fylla i kundprofiler.
+Om du vill aktivera en datauppsättning för profilen öppnar du dess **[!UICONTROL Dataset activity]** skärm och klickar på **[!UICONTROL Profile]** växlingsknappen i **[!UICONTROL Properties]** kolumnen. När den är aktiverad används även data som är inkapslade i datauppsättningen för att fylla i kundprofiler.
 
 ![](../images/datasets/user-guide/enable_dataset_profiles.png)
 
@@ -118,7 +118,7 @@ DULE (Data Usage Labeling and Enforcement) är den viktigaste mekanismen för da
 
 ## Ta bort en datauppsättning
 
-Du kan ta bort en datauppsättning genom att först gå till dess *[!UICONTROL Dataset activity]* skärm. Klicka sedan på **[!UICONTROL Delete dataset]** för att ta bort den.
+Du kan ta bort en datauppsättning genom att först gå till dess **[!UICONTROL Dataset activity]** skärm. Klicka sedan på **[!UICONTROL Delete dataset]** för att ta bort den.
 
 >[!NOTE]
 >
@@ -136,11 +136,11 @@ Om en datauppsättning är aktiverad för [!DNL Profile]och du tar bort den via 
 
 ## Övervaka datainmatning
 
-Klicka i det [!DNL Experience Platform] vänstra navigeringsfönstret **[!UICONTROL Monitoring]** i användargränssnittet. På *[!UICONTROL Monitoring]* kontrollpanelen kan du visa status för inkommande data från antingen batch- eller direktuppspelningsinmatning. Om du vill visa status för enskilda grupper klickar du på antingen *[!UICONTROL Batch end-to-end]* eller *[!UICONTROL Streaming end-to-end]*. På kontrollpanelerna visas alla grupper- eller direktuppspelningskörningar, inklusive de som har slutförts, misslyckats eller pågår. Varje lista innehåller information om batchen, inklusive batch-ID:t, namnet på måldatauppsättningen och antalet poster som har importerats. Om måldatauppsättningen är aktiverad för [!DNL Profile]visas även antalet inkapslade identitets- och profilposter.
+Klicka i det [!DNL Experience Platform] vänstra navigeringsfönstret **[!UICONTROL Monitoring]** i användargränssnittet. På **[!UICONTROL Monitoring]** kontrollpanelen kan du visa status för inkommande data från antingen batch- eller direktuppspelningsinmatning. Om du vill visa status för enskilda grupper klickar du på antingen **[!UICONTROL Batch end-to-end]** eller **[!UICONTROL Streaming end-to-end]**. På kontrollpanelerna visas alla grupper- eller direktuppspelningskörningar, inklusive de som har slutförts, misslyckats eller pågår. Varje lista innehåller information om batchen, inklusive batch-ID:t, namnet på måldatauppsättningen och antalet poster som har importerats. Om måldatauppsättningen är aktiverad för [!DNL Profile]visas även antalet inkapslade identitets- och profilposter.
 
 ![](../images/datasets/user-guide/batch_listing.png)
 
-Du kan klicka på en person **[!UICONTROL Batch ID]** för att komma åt *[!UICONTROL Batch overview]* kontrollpanelen och se information om gruppen, inklusive felloggar om gruppen inte kan importeras.
+Du kan klicka på en person **[!UICONTROL Batch ID]** för att komma åt **[!UICONTROL Batch overview]** kontrollpanelen och se information om gruppen, inklusive felloggar om gruppen inte kan importeras.
 
 ![](../images/datasets/user-guide/batch_overview.png)
 
