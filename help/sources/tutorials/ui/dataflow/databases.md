@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;database connector
 solution: Experience Platform
 title: Konfigurera ett dataflöde för en databasanslutning i användargränssnittet
 topic: overview
+description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt databaskonto.
 translation-type: tm+mt
-source-git-commit: 6bd5dc5a68fb2814ab99d43b34f90aa7e50aa463
+source-git-commit: 14044f9af50cd4c922294cd60f7b6549828e8aca
 workflow-type: tm+mt
-source-wordcount: '1191'
+source-wordcount: '1222'
 ht-degree: 0%
 
 ---
@@ -25,7 +26,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
    - [Schemaredigeraren, genomgång](../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 - [[!DNL Real-time Customer Profile]](../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Den här självstudien kräver dessutom att du redan har skapat ett databaskonto. En lista med självstudiekurser för att skapa olika databasanslutningar i användargränssnittet finns i [källanslutningsöversikten](../../../home.md).
+Den här självstudiekursen kräver dessutom att du redan har skapat ett databaskonto. En lista med självstudiekurser för att skapa olika databasanslutningar i användargränssnittet finns i [källanslutningsöversikten](../../../home.md).
 
 ## Markera data
 
@@ -135,7 +136,7 @@ Du kan ta bort dataflöden som inte längre är nödvändiga eller som har skapa
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat ett dataflöde som hämtar in data från en extern databas och fått insikter om att övervaka datauppsättningar. Inkommande data kan nu användas av [!DNL Platform] tjänster längre fram i kedjan som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+I den här självstudiekursen har du skapat ett dataflöde för att hämta in data från en extern databas och fått insikter om att övervaka datauppsättningar. Inkommande data kan nu användas av [!DNL Platform] tjänster längre fram i kedjan som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 - [[!DNL Real-time Customer Profile] översikt](../../../../profile/home.md)
 - [[!DNL Data Science Workspace] översikt](../../../../data-science-workspace/home.md)
