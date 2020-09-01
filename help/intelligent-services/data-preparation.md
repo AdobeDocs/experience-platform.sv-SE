@@ -5,7 +5,7 @@ title: Förbered data för användning i intelligenta tjänster
 topic: Intelligent Services
 description: 'För att Intelligent Services ska kunna hitta insikter från era marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. Intelligenta tjänster utnyttjar XDM-scheman (Experience Data Model) för att uppnå detta. Närmare bestämt måste alla datauppsättningar som används i Intelligent Services] överensstämma med CEE-XDM-schemat (Consumer Experience Event). '
 translation-type: tm+mt
-source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '1979'
 ht-degree: 0%
@@ -272,7 +272,7 @@ När du har skapat och sparat schemat kan du skapa en ny datauppsättning som ba
 * [Skapa en datauppsättning i användargränssnittet](../catalog/datasets/user-guide.md#create) (Följ arbetsflödet för att använda ett befintligt schema)
 * [Skapa en datauppsättning i API:t](../catalog/datasets/create.md)
 
-När datauppsättningen har skapats kan du hitta den i plattformsgränssnittet på *[!UICONTROL Datasets]* arbetsytan.
+När datauppsättningen har skapats kan du hitta den i plattformsgränssnittet på **[!UICONTROL Datasets]** arbetsytan.
 
 ![](images/data-preparation/dataset-location.png)
 
@@ -362,7 +362,7 @@ Om dina data lagras i ett tredjepartsprogram som stöds kan du även välja att 
 
 ## Nästa steg {#next-steps}
 
-Detta dokument innehåller allmän vägledning om hur du förbereder dina data för användning i [!DNL Intelligent Services]. Om du behöver ytterligare konsultation baserat på ditt användningsfall, kontakta Adobe konsultsupport.
+Detta dokument innehåller allmän vägledning om hur du förbereder dina data för användning i [!DNL Intelligent Services]. Om du behöver ytterligare konsultationer baserat på ditt användningsfall, kontakta Adobe konsultsupport.
 
 När ni har fyllt i en datauppsättning med era kundupplevelsedata kan ni använda [!DNL Intelligent Services] för att generera insikter. Se följande dokument för att komma igång:
 
