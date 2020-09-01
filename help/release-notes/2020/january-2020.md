@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: January 15, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '892'
 ht-degree: 3%
@@ -82,7 +82,7 @@ Adobe Experience Platform kan importera data från externa källor och samtidigt
 | Kategori | Behörighet | Beskrivning |
 |--- | --- | ---|
 | Dataintag | Hantera källor | Tillgång till att läsa, skapa, redigera och inaktivera källor. |
-| Dataintag | Visa källor | Skrivskyddad åtkomst till tillgängliga källor på *[!UICONTROL Catalog]* fliken och autentiserade källor på *[!UICONTROL Browse]* fliken. |
+| Dataintag | Visa källor | Skrivskyddad åtkomst till tillgängliga källor på **[!UICONTROL Catalog]** fliken och autentiserade källor på **[!UICONTROL Browse]** fliken. |
 
 **Kända fel**
 
