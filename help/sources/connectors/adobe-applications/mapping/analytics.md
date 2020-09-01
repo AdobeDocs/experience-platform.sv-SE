@@ -1,20 +1,21 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Analytics mapping fields;analytics mapping
 solution: Experience Platform
-title: Analytics-mappningsfält
+title: Mappningsfält för analyser
 topic: overview
+description: Med Adobe Experience Platform kan ni importera Adobe Analytics-data via Analytics Data Connector (ADC). Vissa data som hämtas via ADC kan mappas direkt från analysfält till XDM-fält (Experience Data Model), medan andra data kräver omformningar och specifika funktioner för att kunna mappas.
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
 workflow-type: tm+mt
-source-wordcount: '3328'
+source-wordcount: '3378'
 ht-degree: 0%
 
 ---
 
 
-# Analytics-mappningsfält
+# Mappningsfält för analyser
 
-Med Adobe Experience Platform kan du importera Adobe Analytics-data via Analytics Data Connector (ADC). Vissa data som hämtas via ADC kan mappas direkt från Analytics-fält till XDM-fält (Experience Data Model), medan andra data kräver omformningar och specifika funktioner för att kunna mappas.
+Med Adobe Experience Platform kan ni importera Adobe Analytics-data via Analytics Data Connector (ADC). Vissa data som hämtas via ADC kan mappas direkt från analysfält till XDM-fält (Experience Data Model), medan andra data kräver omformningar och specifika funktioner för att kunna mappas.
 
 ![](../images/analytics-data-experience-platform.png)
 
@@ -22,13 +23,13 @@ Med Adobe Experience Platform kan du importera Adobe Analytics-data via Analytic
 
 Markerade fält mappas direkt från Adobe Analytics till Experience Data Model (XDM).
 
-Följande tabell innehåller kolumner som visar namnet på Analytics-fältet (*Analytics-fältet*), motsvarande XDM-fält (*XDM-fält*) och dess typ (*XDM-typ*) samt en beskrivning av fältet (*Beskrivning*).
+Följande tabell innehåller kolumner som visar namnet på analysfältet (*analysfältet*), motsvarande XDM-fält (*XDM-fält*) och dess typ (*XDM-typ*) samt en beskrivning av fältet (*Beskrivning*).
 
 >[!NOTE]
 >
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
-| Analytics | XDM-fält | XDM-typ | Beskrivning |
+| Analysfält | XDM-fält | XDM-typ | Beskrivning |
 | --------------- | --------- | -------- | ---------- |
 | m_evar1 - m_evar250 | _experience.analytics.customDimensions.eVars.eVar1 - _experience.analytics.customDimensions.eVars.eVar250 | string | En anpassad variabel som kan ligga mellan 1 och 250. Varje organisation kommer att använda dessa anpassade eVars på olika sätt. |
 | m_prop1 - m_prop75 | _experience.analytics.customDimensions.props.prop1 - _experience.analytics.customDimensions.props.prop75 | string | Anpassade trafikvariabler, som kan variera mellan 1 och 75. |
@@ -127,7 +128,7 @@ Följande tabell innehåller kolumner som visar namnet på Analytics-fältet (*A
 
 Dessa fält har en enda källa, men mappas till **flera** XDM-platser.
 
-| Analytics | XDM-fält | XDM-typ | Beskrivning |
+| Analysfält | XDM-fält | XDM-typ | Beskrivning |
 | --------------- | --------- | -------- | ---------- |
 | s_resolution | device.screenWidth, device.screenHeight | heltal | Numeriskt ID som representerar bildskärmens upplösning. |
 | mobileosversion | environment.operatingSystem, environment.operatingSystemVersion | string | Mobil operativsystemversion. |
@@ -137,13 +138,13 @@ Dessa fält har en enda källa, men mappas till **flera** XDM-platser.
 
 Vissa fält från ADC måste omformas, vilket kräver logik utöver en direkt kopia från Adobe Analytics för att kunna genereras i XDM.
 
-Följande tabell innehåller kolumner som visar namnet på Analytics-fältet (*Analytics-fältet*), motsvarande XDM-fält (*XDM-fält*) och dess typ (*XDM-typ*) samt en beskrivning av fältet (*Beskrivning*).
+Följande tabell innehåller kolumner som visar namnet på analysfältet (*analysfältet*), motsvarande XDM-fält (*XDM-fält*) och dess typ (*XDM-typ*) samt en beskrivning av fältet (*Beskrivning*).
 
 >[!NOTE]
 >
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
-| Analytics | XDM-fält | XDM-typ | Beskrivning |
+| Analysfält | XDM-fält | XDM-typ | Beskrivning |
 | --------------- | --------- | -------- | ----------- |
 | m_prop1 - m_prop75 | _experience.analytics.customDimensions.listprops.prop1 - _experience.analytics.customDimensions.listprops.prop75 | Objekt | Anpassade trafikvariabler, från 1 till 75 | {} |
 | m_hier1 - m_hier5 | _experience.analytics.customDimensions.hierarchies.hier1 - _experience.analytics.customDimensions.hierarkies.hier5 | Objekt | Används av hierarkivariabler. Den innehåller en | avgränsad lista med värden. | {values (array), delimiter (string)} |
@@ -197,13 +198,13 @@ Markera fält (så kallade postvärden) kräver mer avancerade omvandlingar inna
 
 Mer information om hur du utför den här omvandlingen med hjälp av frågetjänsten finns i dokumentationen för [Adobe-definierade funktioner](../../../../query-service/sql/adobe-defined-functions.md) .
 
-Följande tabell innehåller kolumner som visar namnet på Analytics-fältet (*Analytics-fältet*), motsvarande XDM-fält (*XDM-fält*) och dess typ (*XDM-typ*) samt en beskrivning av fältet (*Beskrivning*).
+Följande tabell innehåller kolumner som visar namnet på analysfältet (*analysfältet*), motsvarande XDM-fält (*XDM-fält*) och dess typ (*XDM-typ*) samt en beskrivning av fältet (*Beskrivning*).
 
 >[!NOTE]
 >
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
-| Analytics | XDM-fält | XDM-typ | Beskrivning |
+| Analysfält | XDM-fält | XDM-typ | Beskrivning |
 | --------------- | --------- | -------- | ---------- |
 | post_evar1 - post_evar250 | _experience.analytics.customDimensions.eVars.eVar1 - _experience.analytics.customDimensions.eVars.eVar250 | string | En anpassad variabel som kan ligga mellan 1 och 250. Varje organisation kommer att använda dessa anpassade eVars på olika sätt. |
 | post_prop1 - post_prop75 | _experience.analytics.customDimensions.props.prop1 - _experience.analytics.customDimensions.props.prop75 | string | Anpassade trafikvariabler, som kan variera mellan 1 och 75. |
