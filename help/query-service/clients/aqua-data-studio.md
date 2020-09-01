@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Anslut till Aqua Data Studio
 topic: connect
 translation-type: tm+mt
-source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '213'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -20,12 +20,12 @@ Efter installationen [!DNL Aqua Data Studio]måste du först registrera servern.
 
 ![](../images/clients/aqua-data-studio/register-server.png)
 
-Dialogrutan *[!UICONTROL Register Server]* visas. Under *[!UICONTROL General]* fliken väljer du **[!UICONTROL PostgreSQL]** i listan till vänster. Ange följande information för serverinställningarna i dialogrutan som visas.
+Dialogrutan **[!UICONTROL Register Server]** visas. Under **[!UICONTROL General]** fliken väljer du **[!UICONTROL PostgreSQL]** i listan till vänster. Ange följande information för serverinställningarna i dialogrutan som visas.
 
 - **[!UICONTROL Name]**: Namnet på anslutningen.
 - **[!UICONTROL Login Name and Password]**: De inloggningsuppgifter som ska användas. Användarnamnet har formen av `ORG_ID@AdobeOrg`.
 - **[!UICONTROL Host and Port]**: Värdslutpunkten och dess port för [!DNL Query Service].
-- **[!UICONTROL Database]:**Databasen som ska användas.
+- **[!UICONTROL Database]:** Databasen som ska användas.
 
 >[!NOTE]
 >
@@ -33,7 +33,7 @@ Dialogrutan *[!UICONTROL Register Server]* visas. Under *[!UICONTROL General]* f
 
 ![](../images/clients/aqua-data-studio/register-server-general-tab.png)
 
-Klicka på **[!UICONTROL Driver]** fliken. Under *[!UICONTROL Parameters]* anger du värdet som `?sslmode=require`
+Klicka på fliken **[!UICONTROL Driver]**.  Under **[!UICONTROL Parameters]** anger du värdet som `?sslmode=require`
 
 ![](../images/clients/aqua-data-studio/register-server-driver-tab.png)
 
@@ -41,4 +41,4 @@ När du har angett anslutningsinformationen klickar du på **[!UICONTROL Test Co
 
 ## Nästa steg
 
-Nu när du har anslutit till [!DNL Query Service]kan du använda *[!UICONTROL Query Analyzer]* i [!DNL Aqua Data Studio] för att köra och redigera SQL-satser. Mer information om hur du skriver och kör frågor finns i [frågeguiden](../creating-queries/creating-queries.md).
+Nu när du har anslutit till [!DNL Query Service]kan du använda **[!UICONTROL Query Analyzer]** i [!DNL Aqua Data Studio] för att köra och redigera SQL-satser. Mer information om hur du skriver och kör frågor finns i [frågeguiden](../creating-queries/creating-queries.md).
