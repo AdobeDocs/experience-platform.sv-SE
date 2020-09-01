@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Vanliga frågor om Adobe Experience Platform och felsökningsguide
+title: Adobe Experience Platform FAQ and Troubleshooting Guide
 topic: getting started
 translation-type: tm+mt
-source-git-commit: 9eeddfaf3e704d66b81f983afcdf5ef3c45c6075
+source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
 workflow-type: tm+mt
-source-wordcount: '1962'
+source-wordcount: '1951'
 ht-degree: 1%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 1%
 
 # [!DNL Platform] Vanliga frågor och felsökningsguide
 
-Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform samt en felsökningsguide på hög nivå för vanliga fel som kan uppstå i alla [!DNL Experience Platform] API:er. Felsökningsguider för enskilda [!DNL Platform] tjänster finns i [tjänstens felsökningskatalog](#service-troubleshooting-directory) nedan.
+I det här dokumentet finns svar på vanliga frågor om Adobe Experience Platform samt en felsökningsguide på hög nivå för vanliga fel som kan uppstå i alla [!DNL Experience Platform] API:er. Felsökningsguider för enskilda [!DNL Platform] tjänster finns i [tjänstens felsökningskatalog](#service-troubleshooting-directory) nedan.
 
 ## Vanliga frågor och svar {#faq}
 
-Här följer en lista med svar på vanliga frågor om Adobe Experience Platform.
+Nedan följer en lista med svar på vanliga frågor om Adobe Experience Platform.
 
 ## Vad är [!DNL Experience Platform] API:er? {#what-are-experience-platform-apis}
 
@@ -32,7 +32,7 @@ Format för förfrågningar varierar beroende på vilket API som [!DNL Platform]
 
 I dokumentationen för [!DNL Experience Platform] visas exempel-API-anrop på två olika sätt. Först presenteras anropet i dess **API-format**, en mallrepresentation som endast visar operationen (GET, POST, PUT, PATCH, DELETE) och den slutpunkt som används (till exempel `/global/classes`). Vissa mallar visar också var det finns variabler för att illustrera hur ett anrop ska formuleras, till exempel `GET /{VARIABLE}/classes/{ANOTHER_VARIABLE}`.
 
-Anropen visas sedan som cURL-kommandon i en **begäran**, som innehåller nödvändiga rubriker och fullständig &quot;bassökväg&quot; som behövs för att interagera med API:t. Basbanan ska vara förpended för alla slutpunkter. Den tidigare nämnda `/global/classes` slutpunkten blir till exempel `https://platform.adobe.io/data/foundation/schemaregistry/global/classes`. Du kommer att se API-formatet/begäranmönstret i hela dokumentationen och förväntas använda den fullständiga sökvägen som visas i exempelbegäran när du anropar Platform API:er.
+Anropen visas sedan som cURL-kommandon i en **begäran**, som innehåller nödvändiga rubriker och fullständig &quot;bassökväg&quot; som behövs för att interagera med API:t. Basbanan ska vara förpended för alla slutpunkter. Den tidigare nämnda `/global/classes` slutpunkten blir till exempel `https://platform.adobe.io/data/foundation/schemaregistry/global/classes`. Du kommer att se API-formatet/begäranmönstret i hela dokumentationen och förväntas använda den fullständiga sökvägen som visas i exempelbegäran när du anropar egna API:er för plattformen.
 
 ### Exempel på API-begäran
 
@@ -84,7 +84,7 @@ Svaret visar vad du förväntar dig efter ett lyckat anrop till API:t, baserat p
 }
 ```
 
-Mer information om specifika slutpunkter i Platform API:er, inklusive obligatoriska rubriker och förfrågningsbrödtext, finns i [API-referensdokumentationen](https://www.adobe.io/apis/experienceplatform/home/api-reference.html).
+Mer information om specifika slutpunkter i plattforms-API:er, inklusive obligatoriska huvuden och begärandetexter, finns i [API-referensdokumentationen](https://www.adobe.io/apis/experienceplatform/home/api-reference.html).
 
 ## Vad är min IMS-organisation? {#what-is-my-ims-organization}
 
@@ -142,7 +142,7 @@ Följande statuskoder kan påträffas i alla [!DNL Experience Platform] API:er. 
 
 | Statuskod | Beskrivning | Möjliga orsaker |
 --- | --- | ---
-| 400 | Felaktig begäran | Begäran är felaktigt konstruerad, saknar nyckelinformation och/eller innehåller felaktig syntax. |
+| 400 | Felaktig begäran | Begäran är felaktigt konstruerad, nyckelinformation saknas och/eller innehåller felaktig syntax. |
 | 401 | Autentiseringen misslyckades | Begäran klarade inte en autentiseringskontroll. Åtkomsttoken kanske saknas eller är ogiltig. Mer information finns i avsnittet [OAuth-tokenfel](#oauth-token-is-missing) nedan. |
 | 403 | Förbjuden | Resursen hittades, men du har inte rätt autentiseringsuppgifter för att visa den. |
 | 404 | Hittades inte | Det gick inte att hitta den begärda resursen på servern. Resursen kan ha tagits bort eller så har den begärda sökvägen angetts felaktigt. |
@@ -238,16 +238,15 @@ Det här felmeddelandet visas när en POST-, PUT eller PATCH-begäran har ett og
 Här följer en lista med felsökningsguider och API-referensdokumentation för API: [!DNL Experience Platform] er. Varje felsökningsguide ger svar på vanliga frågor och lösningar på problem som är specifika för enskilda [!DNL Platform] tjänster. API-referensdokumenten innehåller en omfattande guide till alla tillgängliga slutpunkter för varje tjänst och visar exempel på begärandetexter, svar och felkoder som du kan få.
 
 | Tjänst | API-referens | Felsökning |
---- | --- | ---
+| --- | --- | --- |
 | Åtkomstkontroll | [API för åtkomstkontroll](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/access-control.yaml) | [Felsökningsguide för åtkomstkontroll](../access-control/troubleshooting-guide.md) |
-| Katalog | [Katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) |  |
-| Dataintag (batch) | [API för datainmatning](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) | [Felsökningsguide för batchimport](../ingestion/batch-ingestion/troubleshooting.md) |
-| Dataintag (direktuppspelning) | [API för datainmatning](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) | [Felsökningsguide för direktuppspelning](../ingestion/streaming-ingestion/troubleshooting.md) |
-| Datavetenskapens arbetsyta | [API för Sensei Machine Learning](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) | [Felsökningsguide för Data Science Workspace](../data-science-workspace/troubleshooting-guide.md) |
-| Dataanvändningsetiketter och -verkställighet (DULE) | [API för DULE-principtjänst](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) |  |
-| Experience Data Model (XDM) | [API för schemaregister](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml) | [Vanliga frågor om XDM-system och felsökningsguide](../xdm/troubleshooting-guide.md) |
-| Identitetstjänst | [Identitetstjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml) | [Felsökningsguide för identitetstjänst](../identity-service/troubleshooting-guide.md) |
-| Frågetjänst | [API för frågetjänst](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/qs-api.yaml) | [Felsökningsguide för frågetjänst](../query-service/troubleshooting-guide.md) |
-| Kundprofil i realtid | [Kundprofil-API i realtid](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml) | [Felsökningsguide för profiler](../profile/troubleshooting.md) |
+| Adobe Experience Platform datainmatning | [[!DNL-API för datainmatning]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) | [Felsökningsguide](../ingestion/batch-ingestion/troubleshooting.md)<br><br>[för gruppinmatningFelsökningsguide för direktuppspelning](../ingestion/streaming-ingestion/troubleshooting.md) |
+| Adobe Experience Platform Data Science Workspace | [[!DNL Sensei Machine Learning API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) | [[!DNL Data Science Workspace] felsökningsguide](../data-science-workspace/troubleshooting-guide.md) |
+| Adobe Experience Platform datastyrning | [[!DNL Policy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) |  |
+| Adobe Experience Platform Identity Service | [[!DNL Identity Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml) | [[!DNL Identity Service] felsökningsguide](../identity-service/troubleshooting-guide.md) |
+| Adobe Experience Platform Query Service | [[!DNL Query Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/qs-api.yaml) | [[!DNL Query Service] felsökningsguide](../query-service/troubleshooting-guide.md) |
+| Adobe Experience Platform Segmentering | [[!DNL Segmentation API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml) |
+| [!DNL Catalog Service] | [[!DNL Catalog Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) |  |
+| [!DNL Experience Data Model] (XDM) | [[!DNL Schema Registry API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml) | [[!DNL XDM System] Vanliga frågor och felsökningsguide](../xdm/troubleshooting-guide.md) |
+| [!DNL Real-time Customer Profile] | [[!DNL Customer Profile API i realtid]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml) | [[!DNL Profile] felsökningsguide](../profile/troubleshooting.md) |
 | Sandlådor | [Sandbox-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sandbox-api.yaml) | [Felsökningsguide för sandlådor](../sandboxes/troubleshooting-guide.md) |
-| Segmentering | [Segmenterings-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml) |
