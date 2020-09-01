@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;SFTP;FTP;ftp;sftp
 solution: Experience Platform
 title: Skapa en FTP- eller SFTP-källanslutning i användargränssnittet
 topic: overview
+description: I den här självstudiekursen beskrivs hur du skapar en FTP- eller SFTP-källkoppling med hjälp av användargränssnittet för plattformen.
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 0da686743e8bc57d310f7eff6f1bf812a8f31238
 workflow-type: tm+mt
-source-wordcount: '530'
+source-wordcount: '547'
 ht-degree: 1%
 
 ---
