@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Azure Synapse Analytics;azure synapse analytics;Synapse;synapse
 solution: Experience Platform
-title: Azure Synapse Analytics Connector
+title: Azure Synapse Analytics-koppling
 topic: overview
+description: Dokumentationen nedan innehåller information om hur du ansluter Azure Synapse Analytics till plattformen med API:er eller användargränssnittet.
 translation-type: tm+mt
-source-git-commit: 3b5e76afea5689dbd59f64f6192e6ef2a6acb7d3
+source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
 workflow-type: tm+mt
-source-wordcount: '203'
+source-wordcount: '223'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # (Beta)- [!DNL Azure Synapse Analytics] anslutning
 
-Adobe Experience Platform tillåter att data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
 [!DNL Experience Platform] har stöd för inmatning av data från en tredjepartsdatabas. [!DNL Platform] kan ansluta till olika typer av databaser, till exempel relational, NoSQL eller data warehouse. Stöd för databasleverantörer är bland annat [!DNL Azure Synapse Analytics].
 
@@ -60,5 +61,5 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Azure Syn
 
 ## Ansluta [!DNL Azure Synapse Analytics] till [!DNL Platform] användargränssnittet
 
-- [Skapa en Azure Synapse Analytics-källanslutning i användargränssnittet](../../tutorials/ui/create/databases/synapse-analytics.md)
+- [Skapa en Azure Synapse Analytics-källkoppling i användargränssnittet](../../tutorials/ui/create/databases/synapse-analytics.md)
 - [Konfigurera ett dataflöde för en databasanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
