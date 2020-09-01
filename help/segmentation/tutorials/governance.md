@@ -4,9 +4,9 @@ solution: Experience Platform
 title: säkerställa att målgruppssegmentens dataanvändning följs
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
+source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
 workflow-type: tm+mt
-source-wordcount: '1335'
+source-wordcount: '1333'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Den här självstudien kräver en fungerande förståelse av följande komponent
 - [[!DNL Real-time Customer Profile]](../../profile/home.md): [!DNL Real-time Customer Profile] är ett generiskt uppslagsenhetsarkiv och används för att hantera [!DNL Experience Data Model] (XDM) data i [!DNL Platform]. Profilen sammanfogar data över olika företagsdata och ger åtkomst till dessa data i en enhetlig presentation.
    - [Sammanslagningsprinciper](../../profile/api/merge-policies.md): Regler som används av [!DNL Real-time Customer Profile] för att avgöra vilka data som kan sammanfogas i en enhetlig vy under vissa villkor. Sammanslagningsprinciper kan konfigureras för [!DNL Data Governance] syften.
 - [[!DNL-segmentering]](../home.md): Hur [!DNL Real-time Customer Profile] delar upp en stor grupp individer som finns i profilbutiken i mindre grupper som har liknande egenskaper och som reagerar på liknande sätt som marknadsföringsstrategier.
-- [[!DNL Data Governance]](../../data-governance/home.md): [!DNL Data Governance] tillhandahåller infrastrukturen för märkning och tillämpning av dataanvändning (DULE) med hjälp av följande komponenter:
+- [[!DNL Data Governance]](../../data-governance/home.md): [!DNL Data Governance] tillhandahåller infrastrukturen för märkning och tillämpning av dataanvändning med hjälp av följande komponenter:
    - [Dataanvändningsetiketter](../../data-governance/labels/user-guide.md): Etiketter som används för att beskriva datauppsättningar och fält utifrån känslighetsnivån som deras respektive data ska hanteras med.
    - [Dataanvändningsprinciper](../../data-governance/policies/overview.md): Konfigurationer som anger vilka marknadsföringsåtgärder som tillåts för data som kategoriseras av särskilda dataanvändningsetiketter.
    - [Politiska åtgärder](../../data-governance/enforcement/overview.md): Gör att du kan tillämpa dataanvändningsprinciper och förhindra dataåtgärder som utgör policyöverträdelser.
@@ -187,7 +187,7 @@ Ett lyckat svar returnerar information om sammanfogningsprincipen.
 >
 > I det här steget antas att du har minst en aktiv dataanvändningsprincip som förhindrar att specifika marknadsföringsåtgärder utförs på data som innehåller vissa etiketter. Om du inte har någon tillämpbar användarprofil för de datauppsättningar som utvärderas, ska du följa självstudiekursen [för att skapa en](../../data-governance/policies/create.md) princip innan du fortsätter med det här steget.
 
-När du har fått ID:n för sammanfogningsprincipens källdatauppsättningar kan du använda [DULE Policy Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) för att utvärdera dessa datauppsättningar mot specifika marknadsföringsåtgärder för att kontrollera om det finns överträdelser av dataanvändningspolicyn.
+När du har fått ID:n för sammanfogningsprincipens källdatauppsättningar kan du använda API:t för [principtjänsten](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) för att utvärdera dessa datauppsättningar mot specifika marknadsföringsåtgärder för att kontrollera om det finns överträdelser av dataanvändningspolicyn.
 
 Om du vill utvärdera datauppsättningarna måste du ange namnet på marknadsföringsåtgärden i sökvägen till en begäran om POST, samtidigt som du anger datauppsättnings-ID:n i begärandetexten, vilket visas i exemplet nedan.
 
