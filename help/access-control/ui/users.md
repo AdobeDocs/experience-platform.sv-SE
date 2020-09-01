@@ -5,7 +5,7 @@ title: Hantera användare för en produktprofil
 topic: user guide
 description: I det här dokumentet visas hur du hanterar användare för en produktprofil i användargränssnittet för Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
+source-git-commit: f8d13b305a61f8606c4fa1ceee6d4518b5d83fda
 workflow-type: tm+mt
 source-wordcount: '192'
 ht-degree: 1%
@@ -15,11 +15,11 @@ ht-degree: 1%
 
 # Hantera användare för en produktprofil
 
-Om du vill tilldela eller ta bort användare från en produktprofil öppnar du profilens informationssida och går till *[!UICONTROL Users]* fliken. Klicka här **[!UICONTROL Add User]**.
+Om du vill tilldela eller ta bort användare från en produktprofil öppnar du profilens informationssida och går till **[!UICONTROL Users]** fliken. Klicka här **[!UICONTROL Add User]**.
 
 ![add-users-button](../images/add-users-button.png)
 
-Dialogrutan *[!UICONTROL Add User]* visas. Med hjälp av sökfältet kan du söka efter användare för att lägga till antingen efter namn eller via e-post. När du skriver visas matchande användare i ett fönster under textrutan som fylls i automatiskt.
+Dialogrutan **[!UICONTROL Add User]** visas. Med hjälp av sökfältet kan du söka efter användare för att lägga till antingen efter namn eller via e-post. När du skriver visas matchande användare i ett fönster under textrutan som fylls i automatiskt.
 
 ![add-user-autocomplete](../images/add-user-autocomplete.png)
 
@@ -31,7 +31,7 @@ När du har valt en användare klickar du för **[!UICONTROL Save]** att lägga 
 
 ![add-user-save](../images/add-user-save.png)
 
-Fliken *[!UICONTROL Users]* för produktprofilen visas igen, där den tillagda användaren nu visas.
+Fliken **[!UICONTROL Users]** för produktprofilen visas igen, där den tillagda användaren nu visas.
 
 ![användartillagd](../images/user-added.png)
 
