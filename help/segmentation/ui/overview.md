@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användarhandbok för segmenteringstjänsten
 topic: ui guide
 translation-type: tm+mt
-source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
+source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
 workflow-type: tm+mt
-source-wordcount: '1333'
+source-wordcount: '1327'
 ht-degree: 0%
 
 ---
@@ -155,13 +155,13 @@ Mer information om direktuppspelningssegmentering finns i användarhandboken fö
 >
 >För att direktuppspelningssegmenteringen ska fungera måste du aktivera schemalagd segmentering för organisationen. Mer information om hur du aktiverar schemalagd segmentering finns [i avsnittet om direktuppspelningssegmentering i den här användarhandboken](#scheduled-segmentation).
 
-## Felaktiga policyöverträdelser
+## Policyöverträdelser
 
 >[!NOTE]
 >
->Principöverträdelser av typen DULE gäller bara om du skapar ett segment som har tilldelats ett mål.
+>Policyöverträdelser gäller bara om du skapar ett segment som har tilldelats ett mål.
 
-När du är klar med segmentet analyseras segmentet av [!DNL Data Governance] att kontrollera att det inte finns några policyöverträdelser inom segmentet. Mer information om DULE och policyöverträdelser finns i [översikten](../../data-governance/labels/overview.md)för dataanvändningsetiketten.
+När du är klar med segmentet analyseras segmentet av Adobe Experience Platform Data Governance för att säkerställa att det inte förekommer några överträdelser av policyer inom segmentet. Mer information finns i [[!DNL Data Governance] översikten](../../data-governance/home.md) .
 
 ![](../images/ui/overview/segment-dule-policy-violations.png)
 
