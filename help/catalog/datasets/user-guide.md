@@ -5,9 +5,9 @@ title: Användarhandbok för datauppsättningar
 topic: datasets
 description: Den här användarhandboken för datauppsättningar innehåller anvisningar om hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 translation-type: tm+mt
-source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
+source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
 workflow-type: tm+mt
-source-wordcount: '1108'
+source-wordcount: '1099'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Användarhandboken kräver en fungerande förståelse av följande komponenter i
    * [Grundläggande om schemakomposition](../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigerare](../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar egna anpassade XDM-scheman med hjälp av [!DNL Schema Editor] i [!DNL Platform] användargränssnittet.
 * [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [[!DNL Data Governance]](../../data-governance/home.md): Se till att era kunddata är kompatibla med regler, begränsningar och policyer.
+* [[!DNL Adobe Experience Platform Data Governance]](../../data-governance/home.md): Se till att era kunddata är kompatibla med regler, begränsningar och policyer.
 
 ## Visa datauppsättningar
 
@@ -114,7 +114,7 @@ Om en datauppsättning redan innehåller data och sedan aktiveras för [!DNL Pro
 
 ## Hantera och tillämpa datastyrning på en datauppsättning
 
-DULE (Data Usage Labeling and Enforcement) är den viktigaste mekanismen för datastyrning för [!DNL Experience Platform]. DULE-etiketter gör att du kan kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Mer information om etiketter finns i översikten [över](../../data-governance/home.md) datastyrning, eller i användarhandboken [för](../../data-governance/labels/overview.md) dataanvändningsetiketter finns instruktioner om hur du använder etiketter på datauppsättningar.
+Med etiketter för dataanvändning kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Mer information om etiketter finns i översikten [över](../../data-governance/home.md) datastyrning, eller i användarhandboken [för](../../data-governance/labels/overview.md) dataanvändningsetiketter finns instruktioner om hur du använder etiketter på datauppsättningar.
 
 ## Ta bort en datauppsättning
 
