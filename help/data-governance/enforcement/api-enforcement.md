@@ -3,11 +3,11 @@ keywords: Experience Platform;home;popular topics;Policy enforcement;Automatic e
 solution: Experience Platform
 title: Använd principer för dataanvändning med hjälp av API:t för principtjänsten
 topic: enforcement
-description: När du har skapat dataanvändningsetiketter för dina data och skapat användarprofiler för marknadsföringsåtgärder mot dessa etiketter, kan du använda DULE Policy Service API för att utvärdera om en marknadsföringsåtgärd som utförs på en datauppsättning eller en godtycklig grupp av etiketter utgör en policyöverträdelse. Du kan sedan konfigurera egna interna protokoll för att hantera policyöverträdelser baserat på API-svaret.
+description: När du har skapat dataanvändningsetiketter för dina data, och har skapat användningsprinciper för marknadsföringsåtgärder mot dessa etiketter, kan du använda principtjänstens API för att utvärdera om en marknadsföringsåtgärd som utförs på en datauppsättning eller en godtycklig grupp av etiketter utgör en policyöverträdelse. Du kan sedan konfigurera egna interna protokoll för att hantera policyöverträdelser baserat på API-svaret.
 translation-type: tm+mt
-source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
+source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
 workflow-type: tm+mt
-source-wordcount: '941'
+source-wordcount: '936'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # Använd principer för dataanvändning med [!DNL Policy Service] API
 
-När du har skapat dataanvändningsetiketter för dina data och skapat användarprofiler för marknadsföringsåtgärder mot dessa etiketter kan du använda [[!DNL DULE Policy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) för att utvärdera om en marknadsföringsåtgärd som har utförts på en datauppsättning eller en godtycklig grupp av etiketter utgör en principöverträdelse. Du kan sedan konfigurera egna interna protokoll för att hantera policyöverträdelser baserat på API-svaret.
+När du har skapat dataanvändningsetiketter för dina data och skapat användarprofiler för marknadsföringsåtgärder mot dessa etiketter kan du använda [[!DNL Policy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) för att utvärdera om en marknadsföringsåtgärd som har utförts på en datauppsättning eller en godtycklig grupp av etiketter utgör en principöverträdelse. Du kan sedan konfigurera egna interna protokoll för att hantera policyöverträdelser baserat på API-svaret.
 
 >[!NOTE]
 >
@@ -25,18 +25,18 @@ Det här dokumentet innehåller steg om hur du använder API:t för att söka ef
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse av följande viktiga koncept som används för att genomföra DULE-policyer:
+Den här självstudiekursen kräver en fungerande förståelse av följande viktiga begrepp som används i att implementera dataanvändningspolicyer:
 
 * [Datastyrning](../home.md): Ramverket som [!DNL Platform] genomdriver efterlevnad av dataanvändning.
    * [Dataanvändningsetiketter](../labels/overview.md): Dataanvändningsetiketter används för datauppsättningar (och/eller enskilda fält inom dessa datauppsättningar), vilket anger begränsningar för hur data kan användas.
-   * [Dataanvändningsprinciper](../policies/overview.md): Dataanvändningsprinciper är regler som beskriver vilken typ av marknadsföringsåtgärder som är tillåtna eller begränsade för vissa uppsättningar DULE-etiketter.
+   * [Dataanvändningsprinciper](../policies/overview.md): Dataanvändningsprinciper är regler som beskriver den typ av marknadsföringsåtgärder som är tillåtna eller begränsade för vissa uppsättningar av dataanvändningsetiketter.
 * [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna anropa DULE [!DNL Policy Service] API, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
+Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till [!DNL Policy Service] API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
 
-## Utvärdera med DULE-etiketter och en marknadsföringsåtgärd
+## Utvärdera med hjälp av etiketter och en marknadsföringsåtgärd
 
-Du kan utvärdera en policy genom att testa en marknadsföringsåtgärd mot en uppsättning DULE-etiketter som skulle finnas i en datauppsättning. Detta görs med frågeparametern, där DULE-etiketter anges som en kommaavgränsad lista med värden, vilket visas i exemplet nedan. `duleLabels`
+Du kan utvärdera en policy genom att testa en marknadsföringsåtgärd mot en uppsättning dataanvändningsetiketter som skulle finnas i en datauppsättning. Detta görs med frågeparametern, där etiketter anges som en kommaavgränsad lista med värden, vilket visas i exemplet nedan. `duleLabels`
 
 **API-format**
 
@@ -47,7 +47,7 @@ GET /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints?duleLabels={LAB
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{MARKETING_ACTION_NAME}` | Namnet på den marknadsföringsåtgärd som är associerad med den DULE-princip som du utvärderar. |
+| `{MARKETING_ACTION_NAME}` | Namnet på den marknadsföringsåtgärd som är associerad med den dataanvändningsprincip som du utvärderar. |
 | `{LABEL_1}` | En dataanvändningsetikett som testar marknadsföringsåtgärden mot. Minst en etikett måste anges. Om du anger flera etiketter måste de separeras med kommatecken. |
 
 **Begäran**
@@ -69,7 +69,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar URL:en för marknadsföringsåtgärden, de DULE-etiketter som den testades mot och en lista över eventuella DULE-principer som överträtts som ett resultat av testning av åtgärden mot dessa etiketter. I det här exemplet visas principen&quot;Exportera data till tredje part&quot; i `violatedPolicies` arrayen, vilket anger att marknadsföringsåtgärden utlöste den förväntade principöverträdelsen.
+Ett lyckat svar returnerar URL:en för marknadsföringsåtgärden, användningsetiketterna som den testades mot och en lista över profiler som överträds som ett resultat av att åtgärden testades mot dessa etiketter. I det här exemplet visas principen&quot;Exportera data till tredje part&quot; i `violatedPolicies` arrayen, vilket anger att marknadsföringsåtgärden utlöste den förväntade principöverträdelsen.
 
 ```json
 {
@@ -129,11 +129,11 @@ Ett lyckat svar returnerar URL:en för marknadsföringsåtgärden, de DULE-etike
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `violatedPolicies` | En matris med en lista över alla DULE-principer som överträtts genom att marknadsföringsåtgärden (anges i `marketingActionRef`) testades mot den angivna `duleLabels`. |
+| `violatedPolicies` | En matris med en lista över principer som har överträtts genom att marknadsföringsåtgärden (anges i `marketingActionRef`) testas mot den angivna `duleLabels`. |
 
 ## Utvärdera med datauppsättningar
 
-Du kan utvärdera en DULE-princip genom att testa en marknadsföringsåtgärd mot en eller flera datauppsättningar från vilka DULE-etiketter kan samlas in. Detta görs genom att en POST begär `/marketingActions/core/{MARKETING_ACTION_NAME}/constraints` och tillhandahåller datauppsättnings-ID i begärandetexten, vilket visas i exemplet nedan.
+Du kan utvärdera en dataanvändningsprincip genom att testa en marknadsföringsåtgärd mot en eller flera datauppsättningar från vilka etiketter kan samlas in. Detta görs genom att en POST begär `/marketingActions/core/{MARKETING_ACTION_NAME}/constraints` och tillhandahåller datauppsättnings-ID i begärandetexten, vilket visas i exemplet nedan.
 
 **API-format**
 
@@ -144,7 +144,7 @@ POST /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{MARKETING_ACTION_NAME}` | Namnet på den marknadsföringsåtgärd som är associerad med den DULE-princip som du utvärderar. |
+| `{MARKETING_ACTION_NAME}` | Namnet på den marknadsföringsåtgärd som är associerad med policyn som du utvärderar. |
 
 **Begäran**
 
@@ -181,7 +181,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar URL:en för marknadsföringsåtgärden, DULE-etiketterna som samlades in från de angivna datauppsättningarna och en lista över eventuella DULE-principer som överträtts som ett resultat av testning av åtgärden mot dessa etiketter. I det här exemplet visas principen&quot;Exportera data till tredje part&quot; i `violatedPolicies` arrayen, vilket anger att marknadsföringsåtgärden utlöste den förväntade principöverträdelsen.
+Ett lyckat svar returnerar URL:en för marknadsföringsåtgärden, de användningsetiketter som samlades in från de angivna datauppsättningarna och en lista över principer som överträtts som ett resultat av att åtgärden testades mot dessa etiketter. I det här exemplet visas principen&quot;Exportera data till tredje part&quot; i `violatedPolicies` arrayen, vilket anger att marknadsföringsåtgärden utlöste den förväntade principöverträdelsen.
 
 ```json
 {
@@ -362,12 +362,12 @@ Ett lyckat svar returnerar URL:en för marknadsföringsåtgärden, DULE-etikette
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `duleLabels` | En lista med DULE-etiketter som har extraherats från de datauppsättningar som anges i nyttolasten för begäran. |
-| `discoveredLabels` | En lista över de datauppsättningar som tillhandahölls i nyttolasten för begäran, med information om DULE-etiketter på datamängdsnivå och fältnivå som hittades i varje. |
-| `violatedPolicies` | En matris med en lista över alla DULE-principer som överträtts genom att marknadsföringsåtgärden (anges i `marketingActionRef`) testades mot den angivna `duleLabels`. |
+| `duleLabels` | En lista över dataanvändningsetiketter som har extraherats från datauppsättningarna som tillhandahålls i nyttolasten för begäran. |
+| `discoveredLabels` | En lista över de datauppsättningar som tillhandahölls i nyttolasten för begäran, med information om de datauppsättningsnivårubriker och fältetiketter som hittades i varje. |
+| `violatedPolicies` | En matris med en lista över principer som har överträtts genom att marknadsföringsåtgärden (anges i `marketingActionRef`) testas mot den angivna `duleLabels`. |
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du sökt efter policyöverträdelser när du utför en marknadsföringsåtgärd på en datauppsättning eller en uppsättning DULE-etiketter. Med hjälp av data som returneras i API-svar kan du konfigurera protokoll i ditt upplevelseprogram så att regelöverträdelser verkställs korrekt när de inträffar.
+Genom att läsa det här dokumentet har du sökt efter policyöverträdelser när du utför en marknadsföringsåtgärd på en datauppsättning eller en uppsättning dataanvändningsetiketter. Med hjälp av data som returneras i API-svar kan du konfigurera protokoll i ditt upplevelseprogram så att regelöverträdelser verkställs korrekt när de inträffar.
 
 Anvisningar om hur du tillämpar dataanvändningspolicyer för målgruppssegment i [!DNL Real-time Customer Profile]finns i följande [självstudiekurs](../../segmentation/tutorials/governance.md).
