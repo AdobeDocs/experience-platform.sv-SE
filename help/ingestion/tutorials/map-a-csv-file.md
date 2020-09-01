@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Mappa en CSV-fil till ett XDM-schema
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '1309'
 ht-degree: 2%
@@ -29,13 +29,13 @@ Den här självstudien kräver också att du redan har skapat en datauppsättnin
 
 ## Välj ett mål
 
-Logga in på [[!DNL Adobe Experience Platform]](https://platform.adobe.com) och välj sedan **[!UICONTROL Workflows]** i det vänstra navigeringsfältet för att komma åt *[!UICONTROL Workflows]* arbetsytan.
+Logga in på [[!DNL Adobe Experience Platform]](https://platform.adobe.com) och välj sedan **[!UICONTROL Workflows]** i det vänstra navigeringsfältet för att komma åt **[!UICONTROL Workflows]** arbetsytan.
 
 På **[!UICONTROL Workflows]** skärmen väljer du **[!UICONTROL Map CSV to XDM schema]** under **[!UICONTROL Data ingestion]** avsnittet och sedan **[!UICONTROL Launch]**.
 
 ![](../images/tutorials/map-a-csv-file/workflows.png)
 
-Arbetsflödet *[!UICONTROL Map CSV to XDM schema]* visas med början på *[!UICONTROL Destination]* steget. Välj en datauppsättning för inkommande data som ska importeras till. Du kan antingen använda en befintlig datauppsättning eller skapa en ny.
+Arbetsflödet **[!UICONTROL Map CSV to XDM schema]** visas med början på **[!UICONTROL Destination]** steget. Välj en datauppsättning för inkommande data som ska importeras till. Du kan antingen använda en befintlig datauppsättning eller skapa en ny.
 
 **Använd en befintlig datauppsättning**
 
@@ -49,27 +49,27 @@ Om du vill importera dina CSV-data till en ny datauppsättning markerar du **[!U
 
 ## Lägg till data
 
-Steget *[!UICONTROL Add data]* visas. Dra och släpp CSV-filen i det tillgängliga utrymmet, eller välj **[!UICONTROL Choose files]** om du vill ange CSV-filen manuellt.
+Steget **[!UICONTROL Add data]** visas. Dra och släpp CSV-filen i det tillgängliga utrymmet, eller välj **[!UICONTROL Choose files]** om du vill ange CSV-filen manuellt.
 
 ![](../images/tutorials/map-a-csv-file/add-data.png)
 
-Avsnittet visas när filen har överförts och visar de tio första dataraderna. *[!UICONTROL Sample data]* När du har bekräftat att data har överförts som förväntat väljer du **[!UICONTROL Next]**.
+Avsnittet visas när filen har överförts och visar de tio första dataraderna. **[!UICONTROL Sample data]** När du har bekräftat att data har överförts som förväntat väljer du **[!UICONTROL Next]**.
 
 ![](../images/tutorials/map-a-csv-file/sample-data.png)
 
 ## Mappa CSV-fält till XDM-schemafält
 
-Steget *[!UICONTROL Mapping]* visas. Kolumnerna i CSV-filen listas under *[!UICONTROL Source Field]*, med motsvarande XDM-schemafält listade under *[!UICONTROL Target Field]*. Omarkerade målfält markeras med röda konturer. Du kan använda filterfältalternativet för att begränsa listan med tillgängliga källfält.
+Steget **[!UICONTROL Mapping]** visas. Kolumnerna i CSV-filen listas under **[!UICONTROL Source Field]**, med motsvarande XDM-schemafält listade under **[!UICONTROL Target Field]**. Omarkerade målfält markeras med röda konturer. Du kan använda filterfältalternativet för att begränsa listan med tillgängliga källfält.
 
 Om du vill mappa en CSV-kolumn till ett XDM-fält väljer du schemaikonen bredvid kolumnens motsvarande målfält.
 
 ![](../images/tutorials/map-a-csv-file/mapping.png)
 
-Fönstret *[!UICONTROL Select schema field]* visas. Här kan du navigera i XDM-schemats struktur och leta upp det fält som du vill mappa CSV-kolumnen till. Klicka på ett XDM-fält för att markera det och klicka sedan på **[!UICONTROL Select]**.
+Fönstret **[!UICONTROL Select schema field]** visas. Här kan du navigera i XDM-schemats struktur och leta upp det fält som du vill mappa CSV-kolumnen till. Klicka på ett XDM-fält för att markera det och klicka sedan på **[!UICONTROL Select]**.
 
 ![](../images/tutorials/map-a-csv-file/select-schema-field.png)
 
-Skärmen visas igen och det markerade XDM-fältet visas nu under *[!UICONTROL Mapping]* *[!UICONTROL Target Field]*.
+Skärmen visas igen och det markerade XDM-fältet visas nu under **[!UICONTROL Mapping]** **[!UICONTROL Target Field]**.
 
 ![](../images/tutorials/map-a-csv-file/field-mapped.png)
 
@@ -77,7 +77,7 @@ Om du inte vill mappa en viss CSV-kolumn kan du ta bort mappningen genom att kli
 
 ![](../images/tutorials/map-a-csv-file/remove-mapping.png)
 
-Om du vill lägga till en ny mappning väljer du **[!UICONTROL Add new mapping]** längst upp i *[!UICONTROL Source Field]* listan.
+Om du vill lägga till en ny mappning väljer du **[!UICONTROL Add new mapping]** längst upp i **[!UICONTROL Source Field]** listan.
 
 ![](../images/tutorials/map-a-csv-file/add-mapping.png)
 
@@ -125,7 +125,7 @@ I följande avsnitt finns ytterligare information om hur du mappar CSV-kolumner 
 
 ### Mappningsfunktioner
 
-Vissa mappningsfunktioner kan användas för att beräkna och beräkna värden baserat på vad som anges i källfält. Om du vill använda en funktion skriver du in den under *[!UICONTROL Source Field]* med lämplig syntax och indata.
+Vissa mappningsfunktioner kan användas för att beräkna och beräkna värden baserat på vad som anges i källfält. Om du vill använda en funktion skriver du in den under **[!UICONTROL Source Field]** med lämplig syntax och indata.
 
 Om du till exempel vill sammanfoga CSV-fält för **ort** och **land** och tilldela dem till XDM-fältet för **stad** anger du källfältet som `concat(city, ", ", county)`.
 
