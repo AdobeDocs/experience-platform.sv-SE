@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Google Cloud Storage;google cloud storage;GCS;gcs
 solution: Experience Platform
-title: Skapa en Google Cloud-källanslutning för lagring i användargränssnittet
+title: Google Cloud Storage-källanslutning (UI)
 topic: overview
+description: I den här självstudiekursen beskrivs hur du skapar en källanslutning för Google Cloud Storage (nedan kallad GCS) med hjälp av användargränssnittet för plattformen.
 translation-type: tm+mt
-source-git-commit: ec2d0a33e0ae92a3153b7bdcad29734e487a0439
+source-git-commit: 0da686743e8bc57d310f7eff6f1bf812a8f31238
 workflow-type: tm+mt
-source-wordcount: '518'
+source-wordcount: '536'
 ht-degree: 1%
 
 ---
