@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics; flow service; advertising; google adwords
+keywords: Experience Platform;home;popular topics;flow service;advertising;google adwords;advertising
 solution: Experience Platform
 title: Samla in annonsdata via källkopplingar och API:er
 topic: overview
 description: Den här självstudiekursen beskriver stegen för att hämta data från en annonsapplikation från tredje part och hämta dem till plattformen via källanslutningar och API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: 6578fd607d6f897a403d0af65c81dafe3dc12578
+source-git-commit: 6f4714561c2946a084eed4e89d3148df5b8044f5
 workflow-type: tm+mt
 source-wordcount: '1561'
 ht-degree: 0%
