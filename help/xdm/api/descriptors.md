@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;descriptor;Descriptor;descriptors;Descriptors;identity;Identity;friendly name;Friendly name;alternatedisplayinfo;reference;Reference;relationship;Relationship
 solution: Experience Platform
 title: Beskrivningar
+description: 'Scheman definierar en statisk vy av datatabeller, men ger inga specifika detaljer om hur data som baseras på dessa scheman (till exempel datauppsättningar) kan relateras till varandra. Med Adobe Experience Platform kan du beskriva dessa relationer och andra tolka metadata om ett schema med hjälp av beskrivningar. '
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 74a4a3cc713cc068be30379e8ee11572f8bb0c63
 workflow-type: tm+mt
-source-wordcount: '1479'
+source-wordcount: '1526'
 ht-degree: 0%
 
 ---
