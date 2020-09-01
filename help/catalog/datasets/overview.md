@@ -5,9 +5,9 @@ title: Översikt över datauppsättningar
 topic: datasets
 description: Det här dokumentet innehåller en översikt på hög nivå över datauppsättningar i Experience Platform.
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
 workflow-type: tm+mt
-source-wordcount: '731'
+source-wordcount: '722'
 ht-degree: 0%
 
 ---
@@ -41,7 +41,7 @@ Mer information finns i översikten över [](../../ingestion/home.md) datainmatn
 
 ## Använda användningsetiketter på datauppsättningar
 
-Med Adobe Experience Platform [!DNL Data Governance] kan ni hantera kunddata för att säkerställa att ni följer gällande regler, begränsningar och policyer för dataanvändning. Med DULE (Data Usage Labeling and Enforcement) som huvudramverk kan du [!DNL Data Governance] använda användningsetiketter för att kategorisera data enligt de användningsprinciper som gäller för dessa data.
+Med Adobe Experience Platform [!DNL Data Governance] kan ni hantera kunddata för att säkerställa att ni följer gällande regler, begränsningar och policyer för dataanvändning. Med [!DNL Data Governance] ramverket kan du använda användningsetiketter för att kategorisera data enligt de användningsprinciper som gäller för dessa data.
 
 Dataanvändningsetiketter kan användas på hela datauppsättningar eller enskilda datauppsättningsfält. Etiketter som läggs till på datauppsättningsnivå ärvs av alla fält i den datauppsättningen.
 
