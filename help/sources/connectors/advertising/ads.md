@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Google AdWords;google adwords
 solution: Experience Platform
 title: Google AdWords-koppling
 topic: overview
+description: Dokumentationen nedan innehåller information om hur du ansluter Google AdWords till plattformen med hjälp av API:er eller användargränssnittet.
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
 workflow-type: tm+mt
-source-wordcount: '200'
+source-wordcount: '219'
 ht-degree: 0%
 
 ---
