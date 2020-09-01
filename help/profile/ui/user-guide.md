@@ -5,7 +5,7 @@ title: Användarhandbok för kundprofil i realtid
 topic: guide
 description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofiler i realtid i Adobe Experience Platform användargränssnitt.
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '1167'
 ht-degree: 0%
@@ -29,19 +29,19 @@ Den här användarhandboken kräver förståelse för de olika [!DNL Experience 
 
 ## Översikt
 
-Öppna fliken genom att klicka [i det vänstra navigeringsfältet i användargränssnittet för](http://platform.adobe.com)[!DNL Experience Platform] **[!UICONTROL Profiles]** _[!UICONTROL Overview]_. På den här fliken finns länkar till dokumentation och videoklipp som hjälper dig att förstå och börja arbeta med profiler.
+Öppna fliken genom att klicka [i det vänstra navigeringsfältet i användargränssnittet för](http://platform.adobe.com)[!DNL Experience Platform] **[!UICONTROL Profiles]** **[!UICONTROL Overview]** . På den här fliken finns länkar till dokumentation och videoklipp som hjälper dig att förstå och börja arbeta med profiler.
 
 ![](../images/user-guide/profiles-overview.png)
 
 ## Bläddra
 
-Välj fliken för att bläddra bland profiler efter identitet. *[!UICONTROL Browse]*
+Välj fliken för att bläddra bland profiler efter identitet. **[!UICONTROL Browse]**
 
 ![](../images/user-guide/profiles-browse.png)
 
 ### Profilmått {#profile-metrics}
 
-Till höger på *[!UICONTROL Browse]* fliken finns flera viktiga mätvärden för dina profildata, inklusive det totala [profilantalet](#profile-count) samt en lista över [profiler per namnutrymme](#profiles-by-namespace).
+Till höger på **[!UICONTROL Browse]** fliken finns flera viktiga mätvärden för dina profildata, inklusive det totala [profilantalet](#profile-count) samt en lista över [profiler per namnutrymme](#profiles-by-namespace).
 
 Dessa profilvärden utvärderas med organisationens standardpolicy för sammanfogning. Mer information om hur du arbetar med sammanfogningsprinciper, inklusive hur du definierar en standardsammanfogningsprincip, finns i användarhandboken för [sammanfogningsprinciper](merge-policies.md).
 
@@ -59,13 +59,13 @@ När inmatningen av poster i [!DNL Profile Store] ökar eller minskar antalet me
 
 ### Profiler efter namnområde {#profiles-by-namespace}
 
-I måttet visas det totala antalet och den totala uppdelningen av namnutrymmen för alla sammanfogade profiler i din profilbutik. *[!UICONTROL Profiles by namespace]* Det totala antalet profiler per namnutrymme (med andra ord, om de värden som visas för varje namnutrymme läggs ihop) kommer alltid att vara högre än det för antalet profiler, eftersom en profil kan ha flera namnutrymmen kopplade till sig. Om en kund till exempel interagerar med varumärket i mer än en kanal kommer flera namnutrymmen att kopplas till den enskilda kunden.
+I måttet visas det totala antalet och den totala uppdelningen av namnutrymmen för alla sammanfogade profiler i din profilbutik. **[!UICONTROL Profiles by namespace]** Det totala antalet profiler per namnutrymme (med andra ord, om de värden som visas för varje namnutrymme läggs ihop) kommer alltid att vara högre än det för antalet profiler, eftersom en profil kan ha flera namnutrymmen kopplade till sig. Om en kund till exempel interagerar med varumärket i mer än en kanal kommer flera namnutrymmen att kopplas till den enskilda kunden.
 
 På samma sätt som för [profilräknemeterialet](#profile-count) , när inmatningen av poster i [!DNL Profile Store] ökar eller minskar antalet med mer än 5 %, utlöses ett jobb för att uppdatera namnområdesmåtten. För arbetsflöden med direktuppspelningsdata görs en timkontroll för att avgöra om tröskelvärdet på 5 % har uppnåtts eller ej. Om så är fallet utlöses ett jobb automatiskt för att uppdatera antalet profiler. Om tröskelvärdet på 5 % ökning eller minskning uppnås, körs ett jobb för att uppdatera mätvärdena för batchintag inom 15 minuter efter att en sats har importerats till [!DNL Profile Store].
 
 ### Kopplingsprincip
 
-Väljaren väljer automatiskt **[!UICONTROL Merge policy]** standardprincip för sammanslagning för din organisation. Om du inte vill använda den sammanfogningsprincipen kan du välja `X` bredvid standardsammanfogningsprincipen för att öppna en *[!UICONTROL Select merge policy]* dialogruta där du kan välja en annan sammanfogningsprincip. Mer information om sammanfogningsprinciper finns i [användarhandboken](merge-policies.md)för sammanfogningsprinciper.
+Väljaren väljer automatiskt **[!UICONTROL Merge policy]** standardprincip för sammanslagning för din organisation. Om du inte vill använda den sammanfogningsprincipen kan du välja `X` bredvid standardsammanfogningsprincipen för att öppna en **[!UICONTROL Select merge policy]** dialogruta där du kan välja en annan sammanfogningsprincip. Mer information om sammanfogningsprinciper finns i [användarhandboken](merge-policies.md)för sammanfogningsprinciper.
 
 ![](../images/user-guide/profiles-search-merge-policy.png)
 
@@ -75,13 +75,13 @@ Väljaren öppnar en dialogruta där du kan välja det identitetsnamnutrymme som
 
 ![](../images/user-guide/profiles-search-filter.png)
 
-I *[!UICONTROL Select identity namespace]* dialogrutan väljer du det namnutrymme som du vill söka efter, eller använder **[!UICONTROL Search]** fältet i dialogrutan för att skriva namnet på ett namnutrymme. Du kan markera ett namnutrymme om du vill visa mer information, och när du har hittat namnutrymmet kan du markera alternativknappen och trycka på **[!UICONTROL Select]** för att fortsätta.
+I **[!UICONTROL Select identity namespace]** dialogrutan väljer du det namnutrymme som du vill söka efter, eller använder **[!UICONTROL Search]** fältet i dialogrutan för att skriva namnet på ett namnutrymme. Du kan markera ett namnutrymme om du vill visa mer information, och när du har hittat namnutrymmet kan du markera alternativknappen och trycka på **[!UICONTROL Select]** för att fortsätta.
 
 ![](../images/user-guide/profiles-select-identity-namespace.png)
 
 ### Identitetsvärde
 
-När du har valt ett **[!UICONTROL Identity namespace]** alternativ återgår du till den *[!UICONTROL Browse]* flik där du kan ange ett **[!UICONTROL Identity value]**. Det här värdet är specifikt för en enskild kundprofil och måste vara en giltig post för det angivna namnutrymmet. Om du till exempel väljer **[!UICONTROL Identity namespace]** &quot;E-post&quot; måste du ange en giltig e-postadress **[!UICONTROL Identity value]** i form av en giltig e-postadress.
+När du har valt ett **[!UICONTROL Identity namespace]** alternativ återgår du till den **[!UICONTROL Browse]** flik där du kan ange ett **[!UICONTROL Identity value]**. Det här värdet är specifikt för en enskild kundprofil och måste vara en giltig post för det angivna namnutrymmet. Om du till exempel väljer **[!UICONTROL Identity namespace]** &quot;E-post&quot; måste du ange en giltig e-postadress **[!UICONTROL Identity value]** i form av en giltig e-postadress.
 
 ![](../images/user-guide/profiles-show-profile.png)
 
@@ -91,17 +91,17 @@ När ett värde har angetts, väljer du **[!UICONTROL Show profile]** och return
 
 ### Profilinformation {#profile-detail}
 
-När du väljer **[!UICONTROL Profile ID]**&#x200B;öppnas _[!UICONTROL Detail]_fliken. På den här sidan visas information om den valda profilen, inklusive grundläggande attribut, länkade identiteter och tillgängliga kontaktkanaler. Profilinformationen som visas har sammanfogats från flera profilfragment till en enda vy över den enskilda kunden.
+När du väljer **[!UICONTROL Profile ID]**&#x200B;öppnas **[!UICONTROL Detail]** fliken. På den här sidan visas information om den valda profilen, inklusive grundläggande attribut, länkade identiteter och tillgängliga kontaktkanaler. Profilinformationen som visas har sammanfogats från flera profilfragment till en enda vy över den enskilda kunden.
 
 ![](../images/user-guide/profiles-profile-detail.png)
 
-Du kan visa ytterligare information om profilen inklusive *[!UICONTROL Attributes]*, *[!UICONTROL Events]* och *[!UICONTROL Segments]* till vilken profilen är medlem.
+Du kan visa ytterligare information om profilen inklusive **[!UICONTROL Attributes]**, **[!UICONTROL Events]** och **[!UICONTROL Segments]** till vilken profilen är medlem.
 
 ![](../images/user-guide/profiles-attributes-events-segments.png)
 
 ## Sammanfoga profiler
 
-Välj fliken *[!UICONTROL Merge Policies]* om du vill visa en lista över sammanfogningsprinciper som tillhör din organisation. Varje listad princip visar sitt namn, oavsett om det är standardprincipen för sammanslagning eller inte, och det schema som den gäller för.
+Välj fliken **[!UICONTROL Merge Policies]** om du vill visa en lista över sammanfogningsprinciper som tillhör din organisation. Varje listad princip visar sitt namn, oavsett om det är standardprincipen för sammanslagning eller inte, och det schema som den gäller för.
 
 Mer information om sammanfogningsprinciper finns i [användarhandboken](merge-policies.md)för sammanfogningsprinciper.
 
