@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;protocol connector
 solution: Experience Platform
 title: Konfigurera ett dataflöde för en protokollanslutning i användargränssnittet
 topic: overview
+description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en Adobe Experience Platform-datauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt protokollkonto.
 translation-type: tm+mt
-source-git-commit: 6bd5dc5a68fb2814ab99d43b34f90aa7e50aa463
+source-git-commit: 14044f9af50cd4c922294cd60f7b6549828e8aca
 workflow-type: tm+mt
-source-wordcount: '1203'
+source-wordcount: '1236'
 ht-degree: 0%
 
 ---
@@ -40,7 +41,7 @@ Markera den katalog som du vill använda och klicka sedan på **[!UICONTROL Next
 
 ## Mappa datafält till ett XDM-schema
 
-Steget visas med ett interaktivt gränssnitt som du kan använda för att mappa källdata till en **[!UICONTROL Mapping]** [!DNL Platform] datauppsättning.
+Steget visas och innehåller ett interaktivt gränssnitt för att mappa källdata till en **[!UICONTROL Mapping]** [!DNL Platform] datauppsättning.
 
 Välj en datauppsättning för inkommande data som ska importeras till. Du kan antingen använda en befintlig datauppsättning eller skapa en ny datauppsättning.
 
