@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics
 solution: Experience Platform
 title: Självstudiekurser för segmentering
 topic: tutorial
+description: Adobe Experience Platform Segmentation Service har ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper utifrån kundprofildata i realtid. Dessa segment är centralt konfigurerade och underhållna på Platform och är tillgängliga för alla Adobe-lösningar.
 translation-type: tm+mt
-source-git-commit: ae244711ed89f4c7d6f87fd38bf7f8324e9b64be
+source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
 workflow-type: tm+mt
-source-wordcount: '540'
+source-wordcount: '584'
 ht-degree: 0%
 
 ---
@@ -38,7 +39,7 @@ Segment som är aktiverade för användning i [!DNL Real-time Customer Profile] 
 
 ## Direktuppspelningssegmentering
 
-Direktuppspelningssegmentering är möjligheten att omedelbart utvärdera en kund så snart en händelse kommer in i en viss segmentgrupp. Med den här funktionen kan de flesta segmentregler utvärderas när data skickas till Adobe Experience Platform, vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs. Mer information finns i översikten över [direktuppspelningssegmentering](../segmentation/api/streaming-segmentation.md).
+Direktuppspelningssegmentering är möjligheten att omedelbart utvärdera en kund så snart en händelse kommer in i en viss segmentgrupp. Med den här funktionen kan de flesta segmentregler utvärderas när data överförs till Adobe Experience Platform, vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs. Mer information finns i översikten över [direktuppspelningssegmentering](../segmentation/api/streaming-segmentation.md).
 
 ## Segmentering för flera enheter
 
