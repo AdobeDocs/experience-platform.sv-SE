@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;label identities
 solution: Experience Platform
 title: Ange etikett för ett fält som identitet
 topic: api guide
+description: Fält som innehåller personligt identifierbar information (PII) kan märkas som identitetsfält. Ett värde som anges i ett identitetsfält tolkas som en identitet av identitetstjänsten. Identitetens namnutrymme anges som en del av fältets etikett.
 translation-type: tm+mt
-source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
 workflow-type: tm+mt
-source-wordcount: '145'
+source-wordcount: '187'
 ht-degree: 1%
 
 ---
