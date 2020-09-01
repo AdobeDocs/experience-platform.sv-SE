@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa en direktuppspelningsanslutning med användargränssnittet
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: f8d13b305a61f8606c4fa1ceee6d4518b5d83fda
 workflow-type: tm+mt
 source-wordcount: '462'
 ht-degree: 0%
@@ -26,30 +26,30 @@ Observera att du måste ha tillgång till Adobe Experience Platform för att kun
 
 ## Skapa en direktuppspelningsanslutning
 
-När du har loggat in i [!DNL Experience Platform] användargränssnittet klickar du **[!UICONTROL Sources]** för att öppna *[!UICONTROL Catalog]* fliken. På den här sidan visas tillgängliga källtyper som enskilda kort, där varje kort innehåller en bubbla som visar antalet dataflöden som har skapats från direktuppspelningsanslutningar till datauppsättningar.
+När du har loggat in i [!DNL Experience Platform] användargränssnittet klickar du **[!UICONTROL Sources]** för att öppna **[!UICONTROL Catalog]** fliken. På den här sidan visas tillgängliga källtyper som enskilda kort, där varje kort innehåller en bubbla som visar antalet dataflöden som har skapats från direktuppspelningsanslutningar till datauppsättningar.
 
 ![](../images/streaming-ingestion/ui/click-sources.png)
 
-On the *[!UICONTROL Sources]* page, click **[!UICONTROL HTTP API]**, then **[!UICONTROL Connect source]**.
+On the **[!UICONTROL Sources]** page, click **[!UICONTROL HTTP API]**, then **[!UICONTROL Connect source]**.
 
 ![](../images/streaming-ingestion/ui/click-connect-source.png)
 
-Skärmen visas *[!UICONTROL Connect to HTTP]* . Under *[!UICONTROL Service details]* anger du både **[!UICONTROL name]** och en **[!UICONTROL description]** för den nya direktuppspelningsanslutningen.
+Skärmen visas **[!UICONTROL Connect to HTTP]** . Under **[!UICONTROL Service details]** anger du både **[!UICONTROL name]** och en **[!UICONTROL description]** för den nya direktuppspelningsanslutningen.
 
-Under *[!UICONTROL Account Authentication]* väljer du följande konfigurationsegenskaper för din direktuppspelningsanslutning:
+Under **[!UICONTROL Account Authentication]** väljer du följande konfigurationsegenskaper för din direktuppspelningsanslutning:
 
-- **[!UICONTROL Authentication]:**Om direktuppspelningsanslutningen kräver autentisering eller inte. Autentisering säkerställer att data samlas in från betrodda källor. Vi rekommenderar att detta är aktiverat om det handlar om personligt identifierbar information (PII).
-- **[!UICONTROL XDM Schema Compatibility]:**Anger om den här direktuppspelningsanslutningen ska skicka händelser som är kompatibla med XDM-scheman eller inte. Som standard är den här egenskapen**aktiverad **.
+- **[!UICONTROL Authentication]:** Om direktuppspelningsanslutningen kräver autentisering eller inte. Autentisering säkerställer att data samlas in från betrodda källor. Vi rekommenderar att detta är aktiverat om det handlar om personligt identifierbar information (PII).
+- **[!UICONTROL XDM Schema Compatibility]:** Anger om den här direktuppspelningsanslutningen ska skicka händelser som är kompatibla med XDM-scheman eller inte. Som standard är den här egenskapen **aktiverad**.
 
-När du har valt konfigurationsegenskaperna klickar du på **[!UICONTROL Connect]**. Din HTTP-direktuppspelningsanslutning har skapats och kan nu visas på fliken *[!UICONTROL Browse]* på *[!UICONTROL Sources]* arbetsytan.
+När du har valt konfigurationsegenskaperna klickar du på **[!UICONTROL Connect]**. Din HTTP-direktuppspelningsanslutning har skapats och kan nu visas på fliken **[!UICONTROL Browse]** på **[!UICONTROL Sources]** arbetsytan.
 
 ![](../images/streaming-ingestion/ui/http-sources-details.png)
 
-På fliken *[!UICONTROL Browse]* kan du klicka på din nyligen skapade Streaming HTTP Connection och visa information om anslutningen.
+På fliken **[!UICONTROL Browse]** kan du klicka på din nyligen skapade Streaming HTTP Connection och visa information om anslutningen.
 
 ![](../images/streaming-ingestion/ui/browse-sources.png)
 
-Genom att klicka på hyperlänken för anslutningsnamnet kan du välja vilka data som ska visas genom att konfigurera vilken datauppsättning som ska anslutas genom att klicka på *[!UICONTROL Select data]*.
+Genom att klicka på hyperlänken för anslutningsnamnet kan du välja vilka data som ska visas genom att konfigurera vilken datauppsättning som ska anslutas genom att klicka på **[!UICONTROL Select data]**.
 
 ![](../images/streaming-ingestion/ui/select-data.png)
 
