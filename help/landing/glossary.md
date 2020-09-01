@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform produktdokumentation
 topic: getting started
 translation-type: tm+mt
-source-git-commit: 18ea9482b9c6691c6326d91b2d0d3da9a8dc7195
+source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
 workflow-type: tm+mt
-source-wordcount: '7178'
+source-wordcount: '7136'
 ht-degree: 0%
 
 ---
@@ -217,8 +217,6 @@ ht-degree: 0%
 **Regler för direktsamtal:** i [!DNL Experience Platform Launch]kan du konfigurera en [!UICONTROL direct call] [!UICONTROL rule] som körs när den anropas direkt från sidan. Om sidinläsningen eller åtgärden på webbplatsen är mycket enkel, eller om den är unik och kan utföra en viss uppsättning instruktioner varje gång (anges [!DNL eVar4] till X och utlöses [!DNL event2] varje gång), kan du använda en [!UICONTROL direct call] [!UICONTROL rule]. Se [!DNL Launch] dokumentationen om hur du skapar [!UICONTROL direct call] [!UICONTROL rules].
 
 **Visningsnamn:** Visningsnamnet är ett användarvänligt namn på ett fält som visas i användargränssnittet.
-
-**DUL:** DULE är en akronym för *dataanvändningsetiketter och -tvång*. DULE är en viktig del av datastyrningen och en samling nyckelfunktioner som gör det möjligt att sätta etiketter för dataanvändning och tillämpa dataåtkomstprinciper för styrningsbehov inom en organisation.
 
 [Till början](#adobe-experience-platform-glossary)
 
