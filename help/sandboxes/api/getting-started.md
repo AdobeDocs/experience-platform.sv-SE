@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;sandbox developer guide
 solution: Experience Platform
 title: Utvecklarhandbok för sandbox-API
 topic: developer guide
+description: Den här utvecklarhandboken innehåller steg som hjälper dig att använda sandbox-API:t för att hantera sandlådor i Experience Platform, och innehåller exempel på API-anrop för att utföra olika åtgärder.
 translation-type: tm+mt
-source-git-commit: b4741cdfd065bbaed7f2feeafe8619191e4b8f6c
+source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
 workflow-type: tm+mt
-source-wordcount: '337'
+source-wordcount: '364'
 ht-degree: 0%
 
 ---
@@ -28,7 +29,7 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 ### Samla in värden för obligatoriska rubriker
 
-Den här guiden kräver att du har slutfört [autentiseringssjälvstudiekursen](../../tutorials/authentication.md) för att kunna anropa Platform API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+Den här guiden kräver att du har slutfört [autentiseringssjälvstudiekursen](../../tutorials/authentication.md) för att kunna ringa anrop till plattforms-API:er. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
