@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;HP Vertica
 solution: Experience Platform
 title: Skapa en HP Vertica-källkoppling i användargränssnittet
 topic: overview
+description: I den här självstudiekursen beskrivs hur du skapar en HP Vertica-källkoppling med hjälp av användargränssnittet för plattformen.
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
 workflow-type: tm+mt
-source-wordcount: '461'
+source-wordcount: '477'
 ht-degree: 1%
 
 ---
