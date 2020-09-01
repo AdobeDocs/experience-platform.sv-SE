@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Konfigurera ett dataflöde för en annonskontakt i användargränssnittet
 topic: overview
 translation-type: tm+mt
-source-git-commit: 6bd5dc5a68fb2814ab99d43b34f90aa7e50aa463
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
-source-wordcount: '1212'
+source-wordcount: '1211'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Dessutom kräver den här självstudiekursen att du redan har skapat ett annonsk
 
 ## Markera data
 
-När du har skapat ditt annonskonto visas *[!UICONTROL Select data]* steget och du får ett interaktivt gränssnitt där du kan utforska din filhierarki.
+När du har skapat ditt annonskonto visas **[!UICONTROL Select data]** steget och du får ett interaktivt gränssnitt där du kan utforska din filhierarki.
 
 - Den vänstra halvan av gränssnittet är en katalogwebbläsare som visar serverns filer och kataloger.
 - I den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader data från en kompatibel fil.
@@ -40,7 +40,7 @@ Markera den katalog som du vill använda och välj sedan **[!UICONTROL Next]**.
 
 ## Mappa datafält till ett XDM-schema
 
-Steget visas med ett interaktivt gränssnitt som du kan använda för att mappa källdata till en *[!UICONTROL Mapping]* [!DNL Platform] datauppsättning.
+Steget visas och innehåller ett interaktivt gränssnitt för att mappa källdata till en **[!UICONTROL Mapping]** [!DNL Platform] datauppsättning.
 
 Välj en datauppsättning för inkommande data som ska importeras till. Du kan antingen använda en befintlig datauppsättning eller skapa en ny datauppsättning.
 
@@ -50,7 +50,7 @@ Om du vill importera data till en befintlig datauppsättning väljer du **[!UICO
 
 ![use-existing-dataset](../../../images/tutorials/dataflow/advertising/use-existing-target-dataset.png)
 
-Dialogrutan *[!UICONTROL Select dataset]* visas. Hitta den datauppsättning du vill använda, markera den och klicka sedan på **[!UICONTROL Continue]**.
+Dialogrutan **[!UICONTROL Select dataset]** visas. Hitta den datauppsättning du vill använda, markera den och klicka sedan på **[!UICONTROL Continue]**.
 
 ![select-existing-dataset](../../../images/tutorials/dataflow/advertising/select-existing-dataset.png)
 
@@ -62,7 +62,7 @@ Du kan bifoga ett schemafält genom att ange ett schemanamn i **[!UICONTROL Sele
 
 ![create-new-dataset](../../../images/tutorials/dataflow/all-tabular/new-target-dataset.png)
 
-Dialogrutan *[!UICONTROL Select schema]* visas. Välj det schema som du vill använda för den nya datauppsättningen och klicka sedan på **[!DNL Done]**.
+Dialogrutan **[!UICONTROL Select schema]** visas. Välj det schema som du vill använda för den nya datauppsättningen och klicka sedan på **[!DNL Done]**.
 
 ![select-schema](../../../images/tutorials/dataflow/advertising/select-existing-schema.png)
 
@@ -74,14 +74,14 @@ När källdata har mappats klickar du på **[!UICONTROL Next]**.
 
 ## Schemalägg körning av inmatning
 
-Steget visas så att du kan konfigurera ett schema för att automatiskt importera valda källdata med de konfigurerade mappningarna. *[!UICONTROL Scheduling]* I följande tabell visas de olika konfigurerbara fälten för schemaläggning:
+Steget visas så att du kan konfigurera ett schema för att automatiskt importera valda källdata med de konfigurerade mappningarna. **[!UICONTROL Scheduling]** I följande tabell visas de olika konfigurerbara fälten för schemaläggning:
 
 | Fält | Beskrivning |
 | --- | --- |
 | Frekvens | Valbara frekvenser inkluderar `Once`, `Minute`, `Hour`, `Day`och `Week`. |
 | Intervall | Ett heltal som anger intervallet för den valda frekvensen. |
 | Starttid | En UTC-tidsstämpel som anger när det allra första intaget är inställt. |
-| Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om *[!UICONTROL Backfill]* är aktiverat importeras alla aktuella filer i den angivna sökvägen under den första schemalagda importen. Om *Backfill* är inaktiverad, kommer endast de filer som läses in mellan den första uppsättningen av inmatning och den *[!UICONTROL Start time]* att importeras. Filer som lästs in tidigare *[!UICONTROL Start time]* kommer inte att importeras. |
+| Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om **[!UICONTROL Backfill]** är aktiverat importeras alla aktuella filer i den angivna sökvägen under den första schemalagda importen. Om **[!UICONTROL Backfill]** är inaktiverat importeras endast de filer som är inlästa mellan den första importen och den andra **[!UICONTROL Start time]** . Filer som lästs in tidigare **[!UICONTROL Start time]** kommer inte att importeras. |
 | Delta-kolumn | Ett alternativ med en filtrerad uppsättning källschemafält av typen, datumet eller tiden. Det här fältet används för att skilja mellan nya och befintliga data. Inkrementella data importeras baserat på tidsstämpeln för den markerade kolumnen. |
 
 Dataflöden är utformade för att automatiskt importera data enligt schema. Börja med att välja intagsfrekvens. Ange sedan intervallet för att ange perioden mellan två flödeskörningar. Intervallets värde måste vara ett heltal som inte är noll och måste vara större än eller lika med 15.
