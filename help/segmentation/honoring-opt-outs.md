@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;opt-out
+keywords: Experience Platform;home;popular topics;opt-out;Segmentation;Segmentation service;segmentation service;honor opt-outs;opt-outs;opt out;opt outs;
 solution: Experience Platform
 title: Ansvarsfriskrivningar
 topic: overview
 description: 'Experience Platform tillåter dina kunder att skicka avanmälningsbegäranden om användning och lagring av sina data i kundprofilen i realtid]. Dessa avanmälningsförfrågningar ingår i California Consumer Privacy Act (CCPA), som ger personer bosatta i Kalifornien rätt att få tillgång till och radera sina personuppgifter och att få veta om deras personuppgifter säljs eller offentliggörs (och till vem). '
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
 workflow-type: tm+mt
 source-wordcount: '1011'
 ht-degree: 0%
