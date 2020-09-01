@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;query service;Query service;data deduplication;deduplication;
 solution: Experience Platform
 title: Datadeduplicering
 topic: queries
 translation-type: tm+mt
-source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+source-git-commit: c5d3be4706ca6d6a30e203067db6ddc894b9bfb4
 workflow-type: tm+mt
 source-wordcount: '405'
 ht-degree: 0%
@@ -14,9 +14,9 @@ ht-degree: 0%
 
 # Datadeduplicering i [!DNL Query Service]
 
-Adobe Experience Platform har stöd för datadeduplicering när det kan krävas att en hel rad tas bort från en beräkning eller att en viss uppsättning fält ignoreras eftersom endast en del av data i raden är en dubblett. [!DNL Query Service] I det vanliga mönstret för borttagning av dubbletter används funktionen i ett fönster för ett ID, eller ID-par, över den ordnade tiden (med hjälp av `ROW_NUMBER()` XDM- [!DNL Experience Data Model] `timestamp` fältet) för att returnera ett nytt fält som representerar det antal gånger en dubblett har identifierats. När det här värdet är `1`refererar det till den ursprungliga instansen, och i de flesta fall är det instansen som du vill använda, och ignorerar alla andra instanser. Detta görs oftast inuti en undermarkering där borttagningen av dubbletter görs på en högre nivå `SELECT` som att utföra en sammanställning.
+Adobe Experience Platform [!DNL Query Service] har stöd för datadeduplicering när det kan behövas att ta bort en hel rad från en beräkning eller ignorera en viss uppsättning fält eftersom endast en del av data i raden är en dubblett. I det vanliga mönstret för borttagning av dubbletter används funktionen i ett fönster för ett ID, eller ID-par, över den ordnade tiden (med hjälp av `ROW_NUMBER()` XDM- [!DNL Experience Data Model] `timestamp` fältet) för att returnera ett nytt fält som representerar det antal gånger en dubblett har identifierats. När det här värdet är `1`refererar det till den ursprungliga instansen, och i de flesta fall är det instansen som du vill använda, och ignorerar alla andra instanser. Detta görs oftast inuti en undermarkering där borttagningen av dubbletter görs på en högre nivå `SELECT` som att utföra en sammanställning.
 
-## Användningsexempel
+## Användningsfall
 
 Vissa användningsfall för borttagning av dubbletter är globala inom datumintervallet och vissa är begränsade till ett enda besökar- eller slutanvändar-ID inom `identityMap`.
 
@@ -31,7 +31,7 @@ Om ExperienceEvents dupliceras vill du troligen ignorera hela raden.
 
 >[!CAUTION]
 >
->Många DataSets i [!DNL Experience Platform], inklusive de som har skapats av Adobe Analytics Data Connector, har redan borttagning av dubbletter på ExperienceEvent-nivå. Därför är det inte nödvändigt att återanvända den här nivån av borttagning av dubbletter, vilket kommer att göra frågan långsammare. Det är viktigt att förstå källan till dina DataSets och veta om borttagning av dubbletter på ExperienceEvent-nivå redan har tillämpats. För alla datauppsättningar som direktuppspelas (till exempel uppspelningar från Adobe Target) måste du använda borttagning på ExperienceEvent-nivå eftersom dessa datakällor har semantik på minst en gång.
+>Många DataSets i [!DNL Experience Platform], inklusive de som har skapats av Adobe Analytics Data Connector, har redan borttagning av dubbletter på ExperienceEvent-nivå. Därför är det inte nödvändigt att återanvända den här nivån av borttagning av dubbletter, vilket kommer att göra frågan långsammare. Det är viktigt att förstå källan till dina DataSets och veta om borttagning av dubbletter på ExperienceEvent-nivå redan har tillämpats. För alla datauppsättningar som direktuppspelas (till exempel uppsättningar från Adobe Target) måste du använda borttagning på ExperienceEvent-nivå eftersom dessa datakällor har minst en semantik.
 
 **Omfång:** Global
 
