@@ -5,7 +5,7 @@ title: Konfigurera ett dataflöde för en CRM-koppling i användargränssnittet
 topic: overview
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt CRM-konto.
 translation-type: tm+mt
-source-git-commit: c15f582eeaa895f03441b2f488686a9a48942f3d
+source-git-commit: f8d13b305a61f8606c4fa1ceee6d4518b5d83fda
 workflow-type: tm+mt
 source-wordcount: '1295'
 ht-degree: 0%
@@ -41,7 +41,7 @@ Markera den katalog som du vill använda och klicka sedan på **[!UICONTROL Next
 
 ## Mappa datafält till ett XDM-schema
 
-Steget visas med ett interaktivt gränssnitt som du kan använda för att mappa källdata till en *[!UICONTROL Mapping]* [!DNL Platform] datauppsättning.
+Steget visas och innehåller ett interaktivt gränssnitt för att mappa källdata till en **[!UICONTROL Mapping]** [!DNL Platform] datauppsättning.
 
 Välj en datauppsättning för inkommande data som ska importeras till. Du kan antingen använda en befintlig datauppsättning eller skapa en ny datauppsättning.
 
@@ -51,7 +51,7 @@ Om du vill importera data till en befintlig datauppsättning väljer du **[!UICO
 
 ![use-existing-dataset](../../../images/tutorials/dataflow/crm/use-existing-dataset.png)
 
-Dialogrutan *[!UICONTROL Select dataset]* visas. Hitta den datauppsättning du vill använda, markera den och klicka sedan på **[!UICONTROL Continue]**.
+Dialogrutan **[!UICONTROL Select dataset]** visas. Hitta den datauppsättning du vill använda, markera den och klicka sedan på **[!UICONTROL Continue]**.
 
 ![select-existing-dataset](../../../images/tutorials/dataflow/crm/select-existing-dataset.png)
 
@@ -63,7 +63,7 @@ Du kan bifoga ett schemafält genom att ange ett schemanamn i **[!UICONTROL Sele
 
 ![create-new-dataset](../../../images/tutorials/dataflow/all-tabular/new-target-dataset.png)
 
-Dialogrutan *[!UICONTROL Select schema]* visas. Välj det schema som du vill använda för den nya datauppsättningen och klicka sedan på **[!UICONTROL Done]**.
+Dialogrutan **[!UICONTROL Select schema]** visas. Välj det schema som du vill använda för den nya datauppsättningen och klicka sedan på **[!UICONTROL Done]**.
 
 ![select-schema](../../../images/tutorials/dataflow/crm/select-schema.png)
 
@@ -75,14 +75,14 @@ När källdata har mappats klickar du på **[!UICONTROL Next]**.
 
 ## Schemalägg körning av inmatning
 
-Steget visas så att du kan konfigurera ett schema för att automatiskt importera valda källdata med de konfigurerade mappningarna. *[!UICONTROL Scheduling]* I följande tabell visas de olika konfigurerbara fälten för schemaläggning:
+Steget visas så att du kan konfigurera ett schema för att automatiskt importera valda källdata med de konfigurerade mappningarna. **[!UICONTROL Scheduling]** I följande tabell visas de olika konfigurerbara fälten för schemaläggning:
 
 | Fält | Beskrivning |
 | --- | --- |
 | Frekvens | Valbara frekvenser inkluderar `Once`, `Minute`, `Hour`, `Day`och `Week`. |
 | Intervall | Ett heltal som anger intervallet för den valda frekvensen. |
 | Starttid | En UTC-tidsstämpel som anger när det allra första intaget är inställt. |
-| Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om *[!UICONTROL Backfill]* är aktiverat importeras alla aktuella filer i den angivna sökvägen under den första schemalagda importen. Om *Backfill* är inaktiverad, kommer endast de filer som läses in mellan den första uppsättningen av inmatning och den *[!UICONTROL Start time]* att importeras. Filer som lästs in tidigare *[!UICONTROL Start time]* kommer inte att importeras. |
+| Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om **[!UICONTROL Backfill]* är aktiverat importeras alla aktuella filer i den angivna sökvägen under den första schemalagda importen. Om *Backfill* är inaktiverad, kommer endast de filer som läses in mellan den första uppsättningen av inmatning och den *[!UICONTROL Start time]* att importeras. Filer som lästs in tidigare *[!UICONTROL Start time]** kommer inte att importeras. |
 | Delta-kolumn | Ett alternativ med en filtrerad uppsättning källschemafält av typen, datumet eller tiden. Det här fältet används för att skilja mellan nya och befintliga data. Inkrementella data importeras baserat på tidsstämpeln för den markerade kolumnen. |
 
 Dataflöden är utformade för att automatiskt importera data enligt schema. Börja med att välja intagsfrekvens. Ange sedan intervallet för att ange perioden mellan två flödeskörningar. Intervallets värde måste vara ett heltal som inte är noll och måste vara större än eller lika med 15.
@@ -107,9 +107,9 @@ När du har angett lämpliga värden för schemat väljer du **[!UICONTROL Next]
 
 ## Ange information om dataflöde
 
-Stegen visas så att du kan ange ett namn och en kort beskrivning av det nya dataflödet. *[!UICONTROL Dataflow detail]*
+Stegen visas så att du kan ange ett namn och en kort beskrivning av det nya dataflödet. **[!UICONTROL Dataflow detail]**
 
-Under den här processen kan du även aktivera *[!UICONTROL Partial ingestion]* och *[!UICONTROL Error diagnostics]*. Aktivering *[!UICONTROL Partial ingestion]* ger möjlighet att importera data som innehåller fel upp till ett visst tröskelvärde. När *[!UICONTROL Partial ingestion]* det är aktiverat drar du i *[!UICONTROL Error threshold %]* reglaget för att justera batchens feltröskel. Du kan också justera tröskelvärdet manuellt genom att markera inmatningsrutan. Mer information finns i översikten över [partiell gruppöverföring](../../../../ingestion/batch-ingestion/partial.md).
+Under den här processen kan du även aktivera **[!UICONTROL Partial ingestion]** och **[!UICONTROL Error diagnostics]**. Aktivering **[!UICONTROL Partial ingestion]** ger möjlighet att importera data som innehåller fel upp till ett visst tröskelvärde. När **[!UICONTROL Partial ingestion]** det är aktiverat drar du i **[!UICONTROL Error threshold %]** reglaget för att justera batchens feltröskel. Du kan också justera tröskelvärdet manuellt genom att markera inmatningsrutan. Mer information finns i översikten över [partiell gruppöverföring](../../../../ingestion/batch-ingestion/partial.md).
 
 Ange värden för dataflödet och välj **[!UICONTROL Next]**.
 
@@ -119,9 +119,9 @@ Ange värden för dataflödet och välj **[!UICONTROL Next]**.
 
 Steget *Granska* visas så att du kan granska det nya dataflödet innan det skapas. Informationen är grupperad i följande kategorier:
 
-* *[!UICONTROL Connection details]*: Visar källtypen, den relevanta sökvägen för den valda källfilen och mängden kolumner i källfilen.
-* *[!UICONTROL Mapping details]*: Visar vilken datauppsättning källdata hämtas till, inklusive det schema som datauppsättningen följer.
-* *[!UICONTROL Schedule details]*: Visar den aktiva perioden, frekvensen och intervallet för intag-schemat.
+* **[!UICONTROL Connection details]**: Visar källtypen, den relevanta sökvägen för den valda källfilen och mängden kolumner i källfilen.
+* **[!UICONTROL Mapping details]**: Visar vilken datauppsättning källdata hämtas till, inklusive det schema som datauppsättningen följer.
+* **[!UICONTROL Schedule details]**: Visar den aktiva perioden, frekvensen och intervallet för intag-schemat.
 
 När du har granskat dataflödet kan du klicka **[!UICONTROL Finish]** och vänta tills dataflödet har skapats.
 
@@ -133,7 +133,7 @@ När dataflödet har skapats kan du övervaka de data som importeras genom det f
 
 ## Ta bort ditt dataflöde
 
-Du kan ta bort dataflöden som inte längre är nödvändiga eller som har skapats felaktigt med den *[!UICONTROL Delete]* funktion som finns på *[!UICONTROL Dataflows]* arbetsytan. Mer information om hur du tar bort dataflöden finns i självstudiekursen om hur du [tar bort dataflöden i användargränssnittet](../delete.md).
+Du kan ta bort dataflöden som inte längre är nödvändiga eller som har skapats felaktigt med den **[!UICONTROL Delete]** funktion som finns på **[!UICONTROL Dataflows]** arbetsytan. Mer information om hur du tar bort dataflöden finns i självstudiekursen om hur du [tar bort dataflöden i användargränssnittet](../delete.md).
 
 ## Nästa steg
 
@@ -156,11 +156,11 @@ I följande avsnitt finns ytterligare information om hur du arbetar med källkop
 
 När ett dataflöde skapas blir det omedelbart aktivt och importerar data enligt det schema som det gavs. Du kan när som helst inaktivera ett aktivt dataflöde genom att följa instruktionerna nedan.
 
-Markera namnet på anslutningen som är kopplad till det dataflöde som du vill inaktivera på *[!UICONTROL authenticaton]* skärmen.
+Markera namnet på anslutningen som är kopplad till det dataflöde som du vill inaktivera på **[!UICONTROL authenticaton]** skärmen.
 
 ![](../../../images/tutorials/dataflow/crm/monitor.png)
 
-Sidan _Källaktivitet_ visas. Markera det aktiva dataflödet i listan för att öppna dess *[!UICONTROL Properties]* kolumn till höger på skärmen, som innehåller en **[!UICONTROL Enabled]** växlingsknapp. Klicka på växlingsknappen för att inaktivera dataflödet. Samma växlingsknapp kan användas för att återaktivera ett dataflöde efter att det har inaktiverats.
+Sidan **Källaktivitet** visas. Markera det aktiva dataflödet i listan för att öppna dess **[!UICONTROL Properties]** kolumn till höger på skärmen, som innehåller en **[!UICONTROL Enabled]** växlingsknapp. Klicka på växlingsknappen för att inaktivera dataflödet. Samma växlingsknapp kan användas för att återaktivera ett dataflöde efter att det har inaktiverats.
 
 ![disable](../../../images/tutorials/dataflow/crm/disable.png)
 
