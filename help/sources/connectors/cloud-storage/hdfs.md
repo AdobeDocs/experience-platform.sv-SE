@@ -5,9 +5,9 @@ title: HDFS-kontakt
 topic: overview
 description: Dokumentationen nedan innehåller information om hur du ansluter Apache HDFS till plattformen med API:er eller användargränssnittet.
 translation-type: tm+mt
-source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
+source-git-commit: d42351c194bb5a11f3175535de83fbd3b6ac58d2
 workflow-type: tm+mt
-source-wordcount: '205'
+source-wordcount: '366'
 ht-degree: 0%
 
 ---
@@ -53,15 +53,28 @@ Följande IP-adresser måste läggas till tillåtelselista innan du kan arbeta m
 - `40.79.163.80/28`
 - `40.79.171.160/28`
 
+## Namnbegränsningar för filer och kataloger
+
+Nedan följer en lista över begränsningar som du måste ta hänsyn till när du namnger molnlagringsfilen eller -katalogen.
+
+- Katalog- och filkomponentnamn får inte innehålla fler än 255 tecken.
+- Katalog- och filnamn får inte sluta med ett snedstreck (`/`). Om det finns kommer det att tas bort automatiskt.
+- Följande reserverade URL-tecken måste escape-konverteras: `! * ' ( ) ; : @ & = + $ , / ? % # [ ]`
+- Följande tecken tillåts inte: `" \ / : | < > * ?`.
+- Ogiltiga URL-sökvägstecken tillåts inte. Kodpunkter som `\uE000`är ogiltiga i NTFS-filnamn, men som inte är giltiga Unicode-tecken. Dessutom tillåts inte vissa ASCII- eller Unicode-tecken, som kontrolltecken (0x00 till 0x1F, \u0081 osv.). Regler som styr Unicode-strängar i HTTP/1.1 finns i [RFC 2616, avsnitt 2.2: Grundregler](https://www.ietf.org/rfc/rfc2616.txt) och [RFC 3987](https://www.ietf.org/rfc/rfc3987.txt).
+- Följande filnamn är inte tillåtna: LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, PRN, AUX, NUL, CON, CLOCK$, punkttecken (.) och två punkttecken (.).
+
+## Anslut [!DNL Apache] HDFS till [!DNL Platform]
+
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Apache] HDFS till [!DNL Platform] med API:er eller användargränssnittet:
 
-## Ansluta [!DNL Apache] HDFS till [!DNL Platform] API:er
+### Använda API:er
 
 - [Skapa en HDFS-kontakt med API:t för Flow Service](../../tutorials/api/create/cloud-storage/hdfs.md)
 - [Utforska ett molnlagringssystem med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
 - [Samla in molnlagringsdata med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
 
-## Ansluta [!DNL Apache] HDFS till [!DNL Platform] användargränssnittet
+### Använda gränssnittet
 
 - [Skapa en Apache HDFS-källanslutning i användargränssnittet](../../tutorials/ui/create/cloud-storage/hdfs.md)
 - [Konfigurera ett dataflöde för en molnlagringskontakt i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
