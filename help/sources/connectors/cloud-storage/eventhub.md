@@ -5,9 +5,9 @@ title: Azure Event Hubs-koppling
 topic: overview
 description: Dokumentationen nedan innehåller information om hur du ansluter Azure Event Hubs till plattformen med hjälp av API:er eller användargränssnittet.
 translation-type: tm+mt
-source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
+source-git-commit: 7b92327cfeb2410baf313dd650f68cfeb6db36e6
 workflow-type: tm+mt
-source-wordcount: '243'
+source-wordcount: '241'
 ht-degree: 0%
 
 ---
@@ -55,15 +55,17 @@ Följande IP-adresser måste läggas till tillåtelselista innan du kan arbeta m
 - `40.79.163.80/28`
 - `40.79.171.160/28`
 
+## Anslut [!DNL Azure Event Hubs] till [!DNL Platform]
+
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Azure Event Hubs] till [!DNL Platform] med API:er eller användargränssnittet:
 
-## Anslut [!DNL Azure Event Hubs] till [!DNL Platform] med API:er
+### Använda API:er
 
 - [Skapa en Azure Event Hubs-koppling med API:t för Flow Service](../../tutorials/api/create/cloud-storage/eventhub.md)
 - [Utforska ett molnlagringssystem med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
 - [Samla in molnlagringsdata med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
 
-## Ansluta [!DNL Azure Event Hubs] till [!DNL Platform] användargränssnittet
+### Använda gränssnittet
 
 - [Skapa en Azure Event Hubs-källkoppling i användargränssnittet](../../tutorials/ui/create/cloud-storage/eventhub.md)
 - [Konfigurera ett dataflöde för en molnlagringskontakt i användargränssnittet](../../tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
