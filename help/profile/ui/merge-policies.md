@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Användarhandbok för sammanslagningsprinciper
 topic: guide
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 95b4964f4d506a7f5618590fe43116e2297be22e
 workflow-type: tm+mt
-source-wordcount: '1341'
+source-wordcount: '1348'
 ht-degree: 0%
 
 ---
@@ -55,16 +55,16 @@ Skärmen visas så att du kan ange viktig information för den nya sammanfogning
 * **[!UICONTROL ID stitching]**: I det här fältet definieras hur en kunds relaterade identiteter ska fastställas. Det finns två möjliga värden:
    * **[!UICONTROL None]**: Utför ingen identitetssammanfogning.
    * **[!UICONTROL Private Graph]**: Utför identitetssammanfogning baserat på ditt privata identitetsdiagram.
-* **[!UICONTROL Attribute merge]**: Ett profilfragment är profilinformationen för endast en identitet från listan över identiteter som finns för en enskild kund. När typen av identitetsdiagram som används resulterar i mer än en identitet, finns det en risk för att profilattribut som står i konflikt med varandra, och prioritet måste anges. Med [!UICONTROL Attribute merge] kan du ange vilka datamängdsprofilvärden som ska prioriteras om en sammanslagningskonflikt inträffar mellan datamängder av typen nyckelvärde (postdata). Det finns två möjliga värden:
-   * **[!UICONTROL Timestamp ordered]**: Om det uppstår en konflikt ska du prioritera profilen som uppdaterades senast. [!UICONTROL Timestamp ordered] stöder också anpassade tidsstämplar som får högre prioritet än systemtidsstämplar när data sammanfogas inom samma datauppsättning (flera identiteter) eller mellan datauppsättningar. Mer information finns i avsnittet [Tidsstämpelordning](#timestamp-ordered) som följer.
-   * **[!UICONTROL Dataset precedence]** : Prioritera profilfragment baserat på den datauppsättning som de kommer från. När du väljer det här alternativet måste du välja relaterade datauppsättningar och deras prioritetsordning. Mer information finns i informationen om [datauppsättningsprioritet](#dataset-precedence) nedan.
+* **[!UICONTROL Attribute merge]**: Ett profilfragment innehåller information för bara en identitet från listan över identiteter som finns för en enskild kund. När typen av identitetsdiagram som används resulterar i mer än en identitet, finns det en risk för att profilattribut som står i konflikt med varandra, och prioritet måste anges. Med [!UICONTROL Attribute merge] kan du ange vilka datauppsättningsprofilvärden som ska prioriteras om en sammanslagningskonflikt inträffar mellan datauppsättningar av typen nyckelvärde (postdata). Det finns två möjliga värden:
+   * **[!UICONTROL Timestamp ordered]**: I händelse av en konflikt prioriteras profilen som uppdaterades senast. [!UICONTROL Timestamp ordered] stöder också anpassade tidsstämplar som får högre prioritet än systemtidsstämplar när data sammanfogas inom samma datauppsättning (flera identiteter) eller mellan datauppsättningar. Mer information finns i avsnittet [Tidsstämpelordning](#timestamp-ordered) som följer.
+   * **[!UICONTROL Dataset precedence]** : I händelse av en konflikt ska du prioritera profilfragment baserat på den datauppsättning som de kommer från. När du väljer det här alternativet måste du välja relaterade datauppsättningar och deras prioritetsordning. Mer information finns i informationen om [datauppsättningsprioritet](#dataset-precedence) nedan.
 * **[!UICONTROL Default merge policy]**: En växlingsknapp som gör att du kan välja om sammanfogningsprincipen ska vara standard för din organisation eller inte. Om väljaren är aktiverad och den nya profilen sparas, uppdateras din tidigare standardprincip automatiskt till att inte längre vara standard.
 
 ### Tidsstämpel beställd {#timestamp-ordered}
 
 När profilposter hämtas till Experience Platform hämtas en systemtidsstämpel vid tidpunkten för inmatningen och läggs till i posten. När [!UICONTROL Timestamp ordered] är valt som [!UICONTROL Attribute merge] typ för en sammanfogningsprincip sammanfogas profiler baserat på systemets tidsstämpel. Sammanfogningen görs med andra ord baserat på den tidsstämpel som användes när posten hämtades till Platform.
 
-Ibland kan det finnas användningsfall, t.ex. för att fylla i data baklänges eller för att säkerställa rätt ordning på händelser om posterna är inlästa i fel ordning, där det är nödvändigt att ange en anpassad tidsstämpel och att sammanfogningsprincipen följer den anpassade tidsstämpeln i stället för systemtidsstämpeln.
+Ibland kan det finnas situationer där det är nödvändigt att ange en anpassad tidsstämpel och låta sammanfogningsprincipen använda den anpassade tidsstämpeln i stället för systemtidsstämpeln. Exempel på detta är att fylla i data baklänges eller att säkerställa rätt ordning för händelser om posterna är inlästa i fel ordning.
 
 >[!NOTE]
 >
@@ -84,7 +84,7 @@ På följande skärmbild visas fälten i [!UICONTROL External Source System Audi
 
 ![](../images/merge-policies/custom-timestamp-mixin.png)
 
-Om du vill arbeta med anpassade tidsstämplar med API:t läser du bilagan till slutpunktshandboken för [sammanfogningsprinciper](../api/merge-policies.md) och sedan avsnittet om [att använda anpassade tidsstämplar](../api/merge-policies.md#custom-timestamps).
+Om du vill arbeta med anpassade tidsstämplar med API:t läser du bilagan till [slutpunktshandboken](../api/merge-policies.md) för sammanfogningsprinciper och avsnittet om [att använda anpassade tidsstämplar](../api/merge-policies.md#custom-timestamps).
 
 ### Datauppsättningsprioritet {#dataset-precedence}
 
@@ -92,7 +92,7 @@ När du väljer ett [!UICONTROL Attribute merge] värde kan du välja [!UICONTRO
 
 Ett exempel är om din organisation har information i en datauppsättning som är att föredra eller lita på framför data i en annan datauppsättning.
 
-När du markerar [!UICONTROL Dataset precedence]öppnas en separat panel där du måste välja [!UICONTROL Available datasets] (eller markera alla) vilka datauppsättningar som ska inkluderas. Du kan sedan dra och släppa datauppsättningarna på [!UICONTROL Selected Datasets] panelen och dra dem till rätt prioritetsordning. Den översta datauppsättningen får högsta prioritet, den andra datauppsättningen får näst högsta prioritet och så vidare.
+När du markerar [!UICONTROL Dataset precedence]öppnas en separat panel där du måste välja från [!UICONTROL Available datasets] vilken datauppsättning som ska inkluderas (eller markera alla med kryssrutan). Du kan sedan dra och släppa datauppsättningarna på [!UICONTROL Selected Datasets] panelen och dra dem till rätt prioritetsordning. Den översta datauppsättningen får högsta prioritet, den andra datauppsättningen får näst högsta prioritet och så vidare.
 
 ![](../images/merge-policies/dataset-precedence.png)
 
@@ -100,11 +100,11 @@ När du är klar med sammanfogningsprincipen väljer du **[!UICONTROL Save]** at
 
 ## Redigera en kopplingsprofil
 
-Du kan ändra en befintlig kopplingsprofil på fliken [!UICONTROL Merge policies] genom att klicka på [!UICONTROL Policy name]* för den kopplingsprofil som du vill redigera.
+Du kan ändra en befintlig kopplingsprofil på [!UICONTROL Merge policies] -fliken genom att välja **[!UICONTROL Policy name]** för den kopplingsprofil som du vill redigera.
 
 ![Landningssida för sammanslagningspolicyer](../images/merge-policies/select-edit.png)
 
-När [!UICONTROL Edit merge policy] skärmen visas kan du ändra [!UICONTROL Name], [!UICONTROL Schema], [!UICONTROL ID stitching] typ och [!UICONTROL Attribute merge] typ samt välja om profilen ska användas [!UICONTROL Default merge policy] för din organisation eller inte.
+När **[!UICONTROL Edit merge policy]** skärmen visas kan du ändra [!UICONTROL Name], [!UICONTROL Schema], [!UICONTROL ID stitching] typ och [!UICONTROL Attribute merge] typ samt välja om profilen ska användas [!UICONTROL Default merge policy] för din organisation eller inte.
 
 >[!NOTE]
 >
