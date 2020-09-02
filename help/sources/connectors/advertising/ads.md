@@ -5,9 +5,9 @@ title: Google AdWords-koppling
 topic: overview
 description: Dokumentationen nedan innehåller information om hur du ansluter Google AdWords till plattformen med hjälp av API:er eller användargränssnittet.
 translation-type: tm+mt
-source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
+source-git-commit: ca3084a9c30cc2dd9e0ebc9cef5ae630cbe47b98
 workflow-type: tm+mt
-source-wordcount: '219'
+source-wordcount: '217'
 ht-degree: 0%
 
 ---
@@ -55,15 +55,17 @@ Följande IP-adresser måste läggas till tillåtelselista innan du kan arbeta m
 - `40.79.163.80/28`
 - `40.79.171.160/28`
 
+## Anslut [!DNL Google AdWords] till [!DNL Platform]
+
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Google AdWords] till [!DNL Platform] med API:er eller användargränssnittet:
 
-## Anslut [!DNL Google AdWords] till [!DNL Platform] med API:er
+### Använda API:er
 
 - [Skapa en Google AdWords-koppling med API:t för Flow Service](../../tutorials/api/create/advertising/ads.md)
 - [Utforska ett annonssystem med API:t för Flow Service](../../tutorials/api/explore/advertising.md)
 - [Samla in annonsdata med API:t för Flow Service](../../tutorials/api/collect/advertising.md)
 
-## Ansluta [!DNL Google AdWords] till [!DNL Platform] användargränssnittet
+### Använda gränssnittet
 
 - [Skapa en Google AdWords-källkoppling i användargränssnittet](../../tutorials/ui/create/advertising/ads.md)
 - [Konfigurera ett dataflöde för en annonskontakt i användargränssnittet](../../tutorials/ui/dataflow/advertising.md)
