@@ -5,9 +5,9 @@ title: Amazon Kinesis Connector
 topic: overview
 description: Dokumentationen nedan innehåller information om hur du ansluter Amazon Kinesis till plattformen med hjälp av API:er eller användargränssnittet.
 translation-type: tm+mt
-source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
+source-git-commit: 7b92327cfeb2410baf313dd650f68cfeb6db36e6
 workflow-type: tm+mt
-source-wordcount: '233'
+source-wordcount: '231'
 ht-degree: 0%
 
 ---
@@ -55,15 +55,17 @@ Följande IP-adresser måste läggas till tillåtelselista innan du kan arbeta m
 - `40.79.163.80/28`
 - `40.79.171.160/28`
 
+## Anslut [!DNL Amazon Kinesis] till [!DNL Platform]
+
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Amazon Kinesis] till [!DNL Platform] med API:er eller användargränssnittet:
 
-## Anslut [!DNL Amazon Kinesis] till [!DNL Platform] med API:er
+### Använda API:er
 
 - [Skapa en Amazon Kinesis-anslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/kinesis.md)
 - [Utforska ett molnlagringssystem med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
 - [Samla in molnlagringsdata med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
 
-## Ansluta [!DNL Amazon Kinesis] till [!DNL Platform] användargränssnittet
+### Använda gränssnittet
 
 - [Skapa en Amazon Kinesis-källanslutning i användargränssnittet](../../tutorials/ui/create/cloud-storage/kinesis.md)
 - [Konfigurera ett dataflöde för en molnlagringskontakt i användargränssnittet](../../tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
