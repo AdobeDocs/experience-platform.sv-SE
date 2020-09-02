@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Sammanslagningsprinciper - Kundprofils-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 95b4964f4d506a7f5618590fe43116e2297be22e
 workflow-type: tm+mt
-source-wordcount: '2397'
+source-wordcount: '2382'
 ht-degree: 0%
 
 ---
@@ -123,7 +123,7 @@ Ett profilfragment är profilinformationen för endast en identitet från listan
 
 Där `{ATTRIBUTE_MERGE_TYPE}` är något av följande:
 
-* **`timestampOrdered`**: (standard) Prioritera profilen som uppdaterades senast vid en eventuell konflikt. Attributet är inte obligatoriskt om du använder den här sammanfogningstypen `data` . `timestampOrdered` stöder också anpassade tidsstämplar som har företräde när profilfragment sammanfogas inom eller mellan datauppsättningar. Mer information finns i avsnittet Bilaga om [hur du använder anpassade tidsstämplar](#custom-timestamps).
+* **`timestampOrdered`**: (standard) Prioritera profilen som uppdaterades senast. Attributet är inte obligatoriskt om du använder den här sammanfogningstypen `data` . `timestampOrdered` stöder också anpassade tidsstämplar som har företräde när profilfragment sammanfogas inom eller mellan datauppsättningar. Mer information finns i avsnittet Bilaga om [hur du använder anpassade tidsstämplar](#custom-timestamps).
 * **`dataSetPrecedence`** : Prioritera profilfragment baserat på den datauppsättning som de kommer från. Detta kan användas när information som finns i en datauppsättning är att föredra eller betrodd framför data i en annan datauppsättning. När du använder den här sammanfogningstypen är attributet obligatoriskt, eftersom det visar datauppsättningarna i prioritetsordning. `order`
    * **`order`**: När&quot;dataSetPriedence&quot; används måste en `order` array anges med en lista över datauppsättningar. Datauppsättningar som inte ingår i listan kommer inte att sammanfogas. Datamängder måste med andra ord anges explicit för att sammanfogas till en profil. Arrayen visar `order` datauppsättningens ID i prioritetsordning.
 
@@ -734,23 +734,23 @@ I det här avsnittet finns ytterligare information om hur du arbetar med sammanf
 
 ### Använda egna tidsstämplar {#custom-timestamps}
 
-När profilposter hämtas till Experience Platform hämtas en systemtidsstämpel vid tidpunkten för inmatningen och läggs till i posten. När `timestampOrdered` är valt som `attributeMerge` typ för en sammanfogningsprincip sammanfogas profiler baserat på systemets tidsstämpel. Sammanfogningen görs med andra ord baserat på den tidsstämpel som användes när posten hämtades till Platform.
+När poster hämtas till Experience Platform hämtas en systemtidsstämpel vid tidpunkten för inmatningen och läggs till i posten. När `timestampOrdered` är valt som `attributeMerge` typ för en sammanfogningsprincip sammanfogas profiler baserat på systemets tidsstämpel. Sammanfogningen görs med andra ord baserat på den tidsstämpel som användes när posten hämtades till Platform.
 
 Ibland kan det finnas användningsfall, t.ex. för att fylla i data baklänges eller för att säkerställa rätt ordning på händelser om posterna är inlästa i fel ordning, där det är nödvändigt att ange en anpassad tidsstämpel och att sammanfogningsprincipen följer den anpassade tidsstämpeln i stället för systemtidsstämpeln.
 
-För att du ska kunna använda en anpassad tidsstämpel måste den [externa källsystemets granskningsinformation](#mixin-details) läggas till i profilschemat. När du har lagt till den anpassade tidsstämpeln kan du fylla i den med hjälp av `xdm:lastUpdatedDate` fältet. När en post hämtas in med fältet ifyllt, kommer Experience Platform att använda det fältet för att sammanfoga poster eller profilfragment inom och mellan datauppsättningar. `xdm:lastUpdatedDate` Om `xdm:lastUpdatedDate` inte finns, eller inte är ifylld, fortsätter Platform att använda systemtidsstämpeln.
+Om du vill använda en anpassad tidsstämpel måste [[!DNL External Source System Audit Details Mixin]](#mixin-details) läggas till i ditt profilschema. När du har lagt till den anpassade tidsstämpeln kan du fylla i den med hjälp av `xdm:lastUpdatedDate` fältet. När en post hämtas in med fältet ifyllt, kommer Experience Platform att använda det fältet för att sammanfoga poster eller profilfragment inom och mellan datauppsättningar. `xdm:lastUpdatedDate` Om `xdm:lastUpdatedDate` inte finns, eller inte är ifylld, fortsätter Platform att använda systemtidsstämpeln.
 
 >[!NOTE]
 >
 >Du måste se till att `xdm:lastUpdatedDate` tidsstämpeln fylls i när du skickar ett PATCH på samma post.
 
-Stegvisa anvisningar om hur du arbetar med scheman med API:t för schemaregister, inklusive hur du lägger till mixiner i scheman, finns i [självstudiekursen för att skapa ett schema med API](../../xdm/tutorials/create-schema-api.md).
+Stegvisa anvisningar om hur du arbetar med scheman med API:t för schematabeller, inklusive hur du lägger till mixiner i scheman, finns i [självstudiekursen för att skapa ett schema med API](../../xdm/tutorials/create-schema-api.md).
 
 Om du vill arbeta med anpassade tidsstämplar med hjälp av användargränssnittet läser du avsnittet om hur du [använder anpassade tidsstämplar](../ui/merge-policies.md#custom-timestamps) i användarhandboken för [sammanfogningsprinciper](../ui/merge-policies.md).
 
-#### Information om delad granskning av externa källsystem {#mixin-details}
+#### [!DNL External Source System Audit Details Mixin] information {#mixin-details}
 
-I följande exempel visas korrekt ifyllda fält i den externa källsystemets granskningsinformation. Den fullständiga JSON-blandningen kan också visas i XDM-rapporten ( [public Experience Data Model)](https://github.com/adobe/xdm/blob/master/schemas/common/external-source-system-audit-details.schema.json) på GitHub.
+I följande exempel visas korrekt ifyllda fält i [!DNL External Source System Audit Details Mixin]. Den fullständiga JSON-blandningen kan också visas i XDM-rapporten ( [public Experience Data Model)](https://github.com/adobe/xdm/blob/master/components/mixins/shared/external-source-system-audit-details.schema.json) på GitHub.
 
 ```json
 {
