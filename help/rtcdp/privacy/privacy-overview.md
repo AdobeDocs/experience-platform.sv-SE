@@ -5,10 +5,10 @@ seo-title: Sekretess i kunddataprofil i realtid
 description: Med kunddataprofilen i realtid kan ni effektivisera processen att se till att era dataåtgärder följer sekretessreglerna.
 seo-description: Med kunddataprofilen i realtid kan ni effektivisera processen att se till att era dataåtgärder följer sekretessreglerna.
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: f9b21ee51d6246dbdae4500aad050b200539ff88
 workflow-type: tm+mt
 source-wordcount: '312'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -25,7 +25,7 @@ Med Adobe Experience Platform [!DNL Privacy Service] kan ni effektivisera proces
 
 Det finns två metoder för att skicka in enskilda förfrågningar från registrerade personer om GDPR och CCPA för att få tillgång till och ta bort kunddata:
 
-* Använd gränssnittet för [[!DNL-Privacy Service]](https://gdprui.cloud.adobe.io/) för att skapa och övervaka åtkomst- och borttagningsbegäranden i en visuell arbetsyta. I självstudiekursen [för](../../privacy-service/ui/overview.md) Privacy Service finns stegvisa instruktioner.
+* Använd gränssnittet för [[!DNL-Privacy Service]](https://privacyui.cloud.adobe.io/) för att skapa och övervaka åtkomst- och borttagningsbegäranden i en visuell arbetsyta. I användarhandboken [för](../../privacy-service/ui/overview.md) Privacy Service finns stegvisa instruktioner.
 * Använd API:t för [[!DNL-Privacy Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/privacy-service.yaml) för att hantera åtkomst- och borttagningsbegäranden med RESTful API-anrop. I självstudiekursen [för](../../privacy-service/api/getting-started.md) Privacy Service-API finns stegvisa instruktioner.
 
 <!-- (Capability will not be available for November GA) 
