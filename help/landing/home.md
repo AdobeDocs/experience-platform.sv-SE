@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;CJA;journey analytics;customer journey analytics;campaign orchestration;orchestration;customer journey;journey
+keywords: Experience Platform;home;popular topics;CJA;journey analytics;customer journey analytics;campaign orchestration;orchestration;customer journey;journey;journey orchestration
 solution: Experience Platform
 title: Adobe Experience Platform - översikt
 topic: getting started
 description: Adobe Experience Platform är det mest kraftfulla, flexibla och öppna systemet på marknaden för att bygga och hantera kompletta lösningar som ger en bättre kundupplevelse. Med Experience Platform kan organisationer centralisera och standardisera kunddata och innehåll från alla system och tillämpa datavetenskap och maskininlärning för att dramatiskt förbättra utformningen och leveransen av avancerade, personaliserade upplevelser.
 translation-type: tm+mt
-source-git-commit: 4c3a947051c11860ab4f0f53b48d8f4bda8dc195
+source-git-commit: 96be9401b3d3bf28176cbce5d139c42f63707c81
 workflow-type: tm+mt
-source-wordcount: '870'
-ht-degree: 0%
+source-wordcount: '934'
+ht-degree: 2%
 
 ---
 
@@ -82,6 +82,13 @@ Adobe Experience Platform-dokumentationen finns på flera språk. Om du vill än
 
 [!DNL Experience Platform] finns i flera format för olika funktioner och tjänster. Om du vill veta mer om vilka typer av dokumentation som finns tillgängliga, och om du vill läsa korta beskrivningar av var och en av [!DNL Platform] tjänsterna, kan du gå till [Experience Platform dokumentationsöversikt](documentation/overview.md). Du kan också börja lära dig mer om en viss [!DNL Platform] tjänst direkt genom att välja en guide i den alfabetiska listan i den vänstra navigeringen.
 
+### Dokumentation för programtjänster som bygger på [!DNL Experience Platform]
+
+Förutom tjänsterna i den vänstra navigeringen har Adobe byggt andra applikationstjänster ovanpå Experience Platform. Dokumentation för dessa tjänster finns i deras egna dokumentationsarkiv, som är länkade nedan:
+
+* [[!DNL Customer Journey Analytics]](https://docs.adobe.com/content/help/en/analytics-platform/using/cja-landing.html)
+* [[!DNL Journey Orchestration]](https://docs.adobe.com/content/help/sv-SE/journeys/using/journey-orchestration-home.html)
+
 >[!NOTE]
 >
 >Från och med maj 2020 kommer Adobe att lansera uppdateringar av domänen och huvudfältet för att göra upplevelsen enhetlig och bättre i alla Experience Cloud-program. Här finns en ny hjälpmeny. Den nya hjälpmenyn innehåller följande:
@@ -97,7 +104,7 @@ Ibland kan du få en enkät om ytterligare feedback.
 >
 >Den här utrullningen är gradvis, så du kanske inte ser ändringarna direkt. Du kan när som helst visa den uppdaterade upplevelsen genom att gå till [https://experience.adobe.com/platform](https://experience.adobe.com/platform).
 
-## [!DNL Experience Platform] självstudiekurser
+## Självstudiekurser om [!DNL Experience Platform]
 
 Kom igång [!DNL Platform] snabbt och enkelt genom att följa med i steg-för-steg-självstudiekurser för allt från att förbereda data för konsumtion till avancerade maskininlärningsalgoritmer. Dessa självstudiekurser har utformats för att komplettera informationen som finns i [!DNL Experience Platform] dokumentationen, så att du får bästa möjliga resultat om du sparar dokumenten samtidigt som du slutför självstudiekurserna. Gå till [Experience Platform självstudiekurserna](../tutorials/home.md) för att komma igång.
 
@@ -131,7 +138,7 @@ En av de stora fördelarna med Adobe Experience Platform är att det kan integre
 
 >[!VIDEO](https://video.tv.adobe.com/v/32553?quality=12&learn=on)
 
-Titta på följande video om du vill ha mer information om Adobe Experience Platform arkitektur:
+Titta på följande video om du vill ha mer information om vilken arkitektur Adobe Experience Platform har:
 
 >[!VIDEO](https://video.tv.adobe.com/v/32456?quality=12&learn=on)
 
@@ -146,11 +153,6 @@ I följande videofilmer visas nyckelfunktioner och användningsexempel för [!DN
 **Användningsfall:**
 
 >[!VIDEO](https://video.tv.adobe.com/v/32806?quality=12&learn=on)
-
-
-
-
-
 
 
 
