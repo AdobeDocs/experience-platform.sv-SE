@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;consent;Consent
 solution: Experience Platform
 title: Vanliga frågor om CCPA
 topic: troubleshooting
+description: I det här dokumentet finns svar på vanliga frågor om California Consumer Protection Act (CCPA) och dess implementering i Adobe Experience Cloud.
 translation-type: tm+mt
-source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
+source-git-commit: 172710c62b6f60de74e05364edb1191fbba0ff64
 workflow-type: tm+mt
-source-wordcount: '787'
+source-wordcount: '809'
 ht-degree: 0%
 
 ---
@@ -55,11 +56,11 @@ Personlig information kan också omfatta information om internetaktiviteter elle
 Enligt CCPA gäller följande roller Adobe och dess kunder:
 
 - Kunder i Adobe (den part som begär att få samla in och använda personuppgifter från personer bosatta i Kalifornien) betraktas som ett **företag**.
-- Adobe, i sin roll att tillhandahålla tjänsten, skulle betraktas som en **tjänsteleverantör**.
+- Adobe, som i sin roll att tillhandahålla tjänsten, skulle betraktas som en **tjänsteleverantör**.
 
 Med tanke på detta förhållande och Adobe avtalsspråk skulle utlämnande av information till Adobe sannolikt inte betraktas som en&quot;försäljning&quot; som företagen måste meddela och erbjuda en avanmälan för.
 
-Adobe tjänster kan dock användas för att möjliggöra viss datadelning och överföring till tredje part. Dessa överföringar från tredje part kan betraktas som&quot;försäljning&quot; och kräver enligt lag offentliggörande och avanmälan.  Kunderna bör samarbeta med sin juridiska rådgivare för att utvärdera specifika användningsfall för att bedöma tillämpliga krav.
+Adobe tjänster kan dock användas för att möjliggöra viss datadelning och överföring till tredje part. Dessa överföringar från tredje part kan betraktas som&quot;försäljning&quot; och kräver enligt lag utlämnande och avanmälan.  Kunderna bör samarbeta med sin juridiska rådgivare för att utvärdera specifika användningsfall för att bedöma tillämpliga krav.
 
 ## Hur många dagar måste ett företag svara på en konsumentförfrågan om att få tillgång till eller ta bort personlig information?
 
@@ -71,11 +72,11 @@ Som tjänsteleverantör samlar Adobe in och behandlar personuppgifter för före
 
 Med tanke på detta förhållande och Adobe avtalsspråk omfattas information till Adobe av lagens bestämmelser om tjänsteleverantörer, och skulle sannolikt inte betraktas som en&quot;försäljning&quot; som företagen skulle behöva meddela och erbjuda en avanmälan för.
 
-Adobe kan användas för att möjliggöra viss datadelning och överföring till tredje part. Dessa överföringar från tredje part kan betraktas som&quot;försäljning&quot; och kräver enligt lag offentliggörande och avanmälan.  Kunderna bör samarbeta med sin juridiska rådgivare för att utvärdera specifika användningsfall för att bedöma tillämpliga krav.
+Adobe kan användas för att möjliggöra viss datadelning och överföring till tredje part. Dessa överföringar från tredje part kan betraktas som&quot;försäljning&quot; och kräver enligt lag utlämnande och avanmälan.  Kunderna bör samarbeta med sin juridiska rådgivare för att utvärdera specifika användningsfall för att bedöma tillämpliga krav.
 
 ## Hur kan jag stödja konsumentsekretesskrav enligt CCPA om jag upprätthåller vissa typer av data som omfattas av kraven?
 
-När du har vidtagit de åtgärder som krävs för att autentisera CA-konsumenter kan du med Adobe Experience Platform [!DNL Privacy Service] skicka förfrågningar om konsumentintegritet till kompatibla [!DNL Experience Cloud] program. Mer information finns i översikten över [](../home.md) Privacy Servicen. Mer information om hur dina [!DNL Experience Cloud] program kan uppfylla sekretesskrav finns i handboken om [Privacy Service och Experience Cloud-program](../experience-cloud-apps.md).
+När du har vidtagit de åtgärder som krävs för att autentisera CA-konsumenter kan du med Adobe Experience Platform skicka in förfrågningar om konsumentintegritet till kompatibla [!DNL Privacy Service] [!DNL Experience Cloud] program. Mer information finns i översikten över [](../home.md) Privacy Servicen. Mer information om hur dina [!DNL Experience Cloud] program kan uppfylla sekretesskrav finns i handboken om [Privacy Service och Experience Cloud-program](../experience-cloud-apps.md).
 
 >[!NOTE]
 >
