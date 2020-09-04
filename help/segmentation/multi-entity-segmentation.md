@@ -5,9 +5,9 @@ title: Segmentering för flera enheter
 topic: overview
 description: Multientitetssegmentering är möjligheten att utöka profildata med ytterligare data baserat på produkter, butiker eller andra icke-profilklasser. När de är anslutna blir data från ytterligare klasser tillgängliga som om de vore inbyggda i profilschemat.
 translation-type: tm+mt
-source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
+source-git-commit: 5dd07bf9afe96be3a4c3f4a4d4e3b23aef4fde70
 workflow-type: tm+mt
-source-wordcount: '418'
+source-wordcount: '605'
 ht-degree: 0%
 
 ---
@@ -15,34 +15,48 @@ ht-degree: 0%
 
 # Segmentering för flera enheter
 
-Multientitetssegmentering är möjligheten att utöka [!DNL Profile] data med ytterligare data baserat på produkter, butiker eller andra icke-profilklasser. När de är anslutna blir data från ytterligare klasser tillgängliga som om de vore inbyggda i [!DNL Profile] schemat.
-
-Om du vill veta mer om segmentering av flera enheter kan du fortsätta att läsa dokumentationen och komplettera din inlärning genom att titta på videon nedan eller utforska [segmenteringsöversikten](./home.md).
-
->[!VIDEO](https://video.tv.adobe.com/v/28947?quality=12&learn=on)
+Segmentering för flera enheter är en avancerad funktion som ingår i Adobe Experience Platform [!DNL Segmentation Service]. Med den här funktionen kan du utöka [!DNL Real-time Customer Profile] data med ytterligare&quot;icke-persondata&quot; (kallas även&quot;dimensionsenheter&quot;) som din organisation kan definiera, till exempel data relaterade till produkter eller butiker. Multientitetssegmentering ger flexibilitet när det gäller att definiera målgruppssegment baserat på data som är relevanta för era unika affärsbehov och kan utföras utan att ni behöver ha expertis inom databaser. Med segmentering av flera enheter kan ni lägga till nyckeldata till era segment utan att behöva göra kostsamma ändringar i dataströmmar eller vänta på en datasammanfogning.
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse för de olika Adobe Experience Platform-tjänster som använder segmentering. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
+Segmentering på flera enheter kräver en fungerande förståelse av de olika Adobe Experience Platform-tjänster som är inblandade i segmentering. Läs följande dokumentation innan du fortsätter med den här guiden:
 
-- [[!DNL Real-time Customer Profile]](../profile/home.md): Ger en enhetlig konsumentprofil i realtid, baserad på aggregerade data från flera källor.
-- [Adobe Experience Platform segmenteringstjänst](./home.md): Gör att ni kan bygga segment utifrån kundprofilen i realtid.
-- [[!DNL Experience Data Model (XDM)]](../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
+* [!DNL Real-time Customer Profile](../profile/home.md): Ger en enhetlig konsumentprofil i realtid, baserad på aggregerade data från flera källor.
+   * [Profilskyddsutkast](../profile/guardrails.md): Bästa tillvägagångssätt för att skapa datamodeller som stöds av [!DNL Profile].
+* [!DNL Adobe Experience Platform Segmentation Service](./home.md): Gör att ni kan skapa segment utifrån [!DNL Real-time Customer Profile] data.
+* [!DNL Experience Data Model (XDM)](../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
+   * [Grundläggande om schemakomposition](../xdm/schema/composition.md#union): Lär dig de bästa sätten att skapa scheman som ska användas i Experience Platform.
 
-## Definiera XDM-relationer
+## Användningsfall
 
-Att definiera relationer med strukturen i dina [!DNL Experience Data Model] (XDM) scheman är en viktig och viktig del av att skapa segment.
+För att illustrera värdet av segmentering av flera enheter bör du överväga tre vanliga användningsfall för marknadsföring som illustrerar utmaningarna i de flesta marknadsföringsprogram:
 
-Den här processen kan utföras antingen med [!DNL Schema Registry] API:t eller [!DNL Schema Editor]. En detaljerad guide om hur du använder API:t för att definiera en relation mellan två scheman finns [i självstudiekursen om hur du definierar en relation mellan två scheman med API](../xdm/tutorials/relationship-api.md). En detaljerad guide om hur du använder [!DNL Schema Editor] för att definiera en relation mellan två scheman finns [i självstudiekursen om hur du definierar en relation mellan två scheman med hjälp av Schemaredigeraren](../xdm/tutorials/relationship-ui.md).
+### Kombinera inköpsdata online och offline
 
-## Så här skapar du segment som använder XDM-relationer
+En marknadsförare som har skapat en e-postkampanj kan ha försökt att skapa ett segment för en målgrupp genom att använda de senaste kundbutikerna de senaste tre månaderna. Helst skulle det här segmentet kräva både artikelnamnet och namnet på butiken där köpet gjordes. Tidigare hade utmaningen varit att hämta butiksidentifieraren från inköpshändelsen och tilldela den till en enskild kundprofil.
 
-När du har definierat dina XDM-relationer kan du använda API:t för att skapa ett segment [!DNL Segmentation Service] .
+### Återmarknadsföring via e-post för övergivna varukorgar
 
-Detta kan göras antingen med [!DNL Segmentation] API:t eller med [!DNL Segment Builder] användargränssnittet. En detaljerad guide om hur du använder API:t för att skapa ett segment finns [i självstudiekursen om hur du skapar ett segment med segmenterings-API](./tutorials/create-a-segment.md). En detaljerad guide om hur du använder Segment Builder för att skapa ett segment finns [i användarhandboken](./ui/overview.md)för Segment Builder.
+Det är ofta komplicerat att skapa och kvalificera användare i segment där kundvagnen överges. Att veta vilka produkter som ska ingå i en personaliserad återannonskampanj kräver uppgifter om vilka produkter som övergetts av varje enskild person. Dessa data är kopplade till e-handelshändelser som tidigare krävde en utmaning att övervaka och extrahera data från.
 
-## Så här utvärderar och får du tillgång till segment för flera enheter
+## Skapa segment med flera enheter
 
-När du har skapat ett segment kan du utvärdera och komma åt segmentresultaten med hjälp av [!DNL Segmentation Service] API:t. Utvärderingen av ett segment med flera enheter påminner mycket om utvärderingen av ett reguljärt segment.
+Om du vill skapa ett segment med flera enheter först måste du definiera relationerna mellan scheman innan du använder gränssnittet för [!DNL Segmentation] API eller segmentbyggaren för att skapa segmentdefinitionen.
 
-Den här processen kan bara utföras med API:t [!DNL Segmentation Service] . En detaljerad guide om hur du använder API för att utvärdera och få tillgång till segment finns i självstudiekursen om [utvärdering och åtkomst av segment](./tutorials/evaluate-a-segment.md).
+### Definiera relationer
+
+Att definiera relationer inom strukturen för era XDM-scheman (Experience Data Model) är en viktig del av att skapa segment för flera enheter. Den här processen kan utföras antingen med API:t för schemaregister eller med Schemaredigeraren. Välj bland följande självstudiekurser för detaljerade steg som visar hur du definierar en relation mellan två scheman:
+
+* [Definiera en relation mellan två scheman med API:t](../xdm/tutorials/relationship-api.md)
+* [Definiera en relation mellan två scheman med hjälp av gränssnittet i Schemaredigeraren](../xdm/tutorials/relationship-ui.md)
+
+### Skapa ett segment med flera enheter
+
+När du har definierat de nödvändiga XDM-relationerna kan du börja skapa ett segment med flera enheter. Den här processen kan utföras antingen med segmenterings-API:t eller segmentbyggargränssnittet. Mer information finns i följande handböcker:
+
+* [Skapa ett segment med segmenterings-API](./tutorials/create-a-segment.md)
+* [Skapa ett segment med hjälp av gränssnittet i segmentbyggaren](./ui/overview.md)
+
+## Utvärdera och få tillgång till segment med flera enheter
+
+När du har skapat ett segment kan du utvärdera och komma åt segmentresultaten med segmenterings-API:t. Utvärderingen av ett segment med flera enheter påminner mycket om utvärderingen av ett standardsegment. Den här processen kan bara utföras med segmenterings-API:t. Om du vill ha en detaljerad guide om hur du använder API för att utvärdera och få tillgång till segment kan du läsa självstudiekursen [Utvärdera och få tillgång till segment](./tutorials/evaluate-a-segment.md) .
