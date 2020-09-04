@@ -5,9 +5,9 @@ title: Adobe Experience Platform segmenteringstjänst
 topic: overview
 description: Det här dokumentet innehåller en översikt över segmenteringstjänsten och vilken roll den spelar i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
+source-git-commit: 5dd07bf9afe96be3a4c3f4a4d4e3b23aef4fde70
 workflow-type: tm+mt
-source-wordcount: '1991'
+source-wordcount: '1387'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ När du skapar ett nytt segment måste du ange ett segmentnamn. Segmentnamnet an
 
 ### Sammanfoga profiler
 
-Sammanslagningsprinciper är regler som används för [!DNL Profile] att bestämma hur data ska prioriteras och kombineras till en enhetlig vy under vissa villkor.
+Sammanslagningspolicyer är regler som används för [!DNL Profile] att bestämma hur data ska prioriteras och kombineras till en enhetlig vy under vissa villkor.
 Om ingen sammanfogningsprincip har definierats används standardprincipen för [!DNL Platform] sammanfogning. Om du hellre vill använda en sammanfogningspolicy som är specifik för din organisation, kan du skapa en egen och markera den som din organisations standardpolicy.
 
 Mer information om sammanfogningsprinciper finns i guiden [för](../profile/api/merge-policies.md)sammanfogningsprinciper.
@@ -129,97 +129,11 @@ Genom att tilldela en variabel till inköpsattributet förenklar ditt dynamiska 
 
 ## Segmentering för flera enheter {#multi-entity}
 
-Med den avancerade funktionen för segmentering av flera enheter kan du skapa segment med hjälp av flera XDM-klasser och på så sätt lägga till tillägg till personscheman. Det innebär att [!DNL Segmentation Service] kan få åtkomst till ytterligare fält under segmentdefinitionen som om de vore inbyggda i profildatalagret.
-
-Multientitetssegmentering ger den flexibilitet som behövs för att identifiera målgrupper baserat på data som är relevanta för företagets behov. Denna process kan utföras snabbt och enkelt utan att man behöver ha expertis i databasfrågor. På så sätt kan ni lägga till nyckeldata i era segment utan att behöva göra kostsamma ändringar i dataströmmar eller vänta på en datasammanfogning.
-
-Följande video är avsedd att ge stöd för din förståelse av segmentering för flera enheter och ger en översikt över både segmentsegmentering och segmentkontext (segmentnyttolast).
-
->[!VIDEO](https://video.tv.adobe.com/v/28947?quality=12&learn=on)
-
-### Användningsfall: Prisdriven kampanj
-
-För att illustrera värdet av den här avancerade segmenteringsfunktionen bör du överväga en dataarkitekt som samarbetar med en marknadsförare.
-
-I det här exemplet förenar dataarkitekten data för en individ (som består av scheman med [!DNL XDM Individual Profile] och [!DNL XDM ExperienceEvent] som basklasser) till en annan klass med hjälp av en nyckel. När de är anslutna kan dataarkitekten eller marknadsföraren använda dessa nya fält under segmentdefinitionen som om de vore inbyggda i basklassens schema.
-
-**Problemet**
-
-Både dataarkitekten och marknadsföraren fungerar för samma klädåterförsäljare. Detaljhandlaren har över 1 000 butiker i Nordamerika och sänker regelbundet sina produktpriser under hela livscykeln. Marknadsföraren vill därför genomföra en specialkampanj för att ge de kunder som köpt produkterna en chans att köpa dem till det rabatterade priset.
-
-Datasektionens resurser omfattar tillgång till webbdata från kundsurfning samt kundvagnsinformation som innehåller produkt-SKU-identifierare. De har också tillgång till en separat&quot;produkter&quot;-klass där ytterligare produktinformation (inklusive produktpris) lagras. Deras vägledning är att fokusera på kunder som har lagt till en produkt i kundvagnen de senaste 14 dagarna, men inte köpt artikeln, vars pris nu har sjunkit.
-
-**Lösningen**
-
->[!NOTE]
->
->I det här exemplet antar vi att dataarkitekten redan har upprättat ett ID-namnutrymme.
-
-Med API:t kopplar dataarkitekten nyckeln från [!DNL ExperienceEvent] schemat till klassen&quot;products&quot;. På så sätt kan dataarkitekten använda de extra fälten från klassen&quot;products&quot; som om de vore inbyggda i [!DNL ExperienceEvent] schemat. Som det sista steget i konfigurationsarbetet måste dataarkitekten överföra rätt data till [!DNL Real-time Customer Profile]. Detta görs genom att aktivera datauppsättningen&quot;products&quot; för användning med [!DNL Profile]. När konfigurationen är klar kan antingen dataarkitekten eller marknadsföraren skapa målsegmentet i [!DNL Segment Builder].
-
-Se översikten över [](../xdm/schema/composition.md#union) schemakomposition för att lära dig hur du definierar relationer mellan XDM-klasser.
-
-<!-- ## Personalization payload
-
-Segments can now carry a payload of contextual details to enable deep personalization of Adobe Solutions as well as external non-Adobe applications. These payloads can be added while defining your target segment.
-
-With contextual data built into the segment itself, this advanced Segmentation Service feature allows you to better connect with your customer.
-
-Segment Payload helps you answer questions surrounding your customer’s frame of reference such as:
-- What: What product was purchased? What product should be recommended next?
-- When: At what time and date did the purchase occur?
-- Where: In which store or city did the customer make their purchase?
-
-While this solution does not change the binary nature of segment membership, it does add additional context to each profile through an associated segment membership object. Each segment membership object has the capacity to include three kinds of contextual data:
-
-- **Identifier**: this is the ID for the segment 
-- **Attributes**: this would include information about the segment ID such as last qualification time, XDM version, status and so on.
-- **Event data**: Specific aspects of experience events which resulted in the profile qualifying for the segment
-
-Adding this specific data to the segment itself allows execution engines to personalize the experience for the customers in their target audience. -->
-
-### Användningsfall
-
-För att illustrera värdet av den här avancerade segmenteringsfunktionen bör du överväga tre standardanvändningsfall som illustrerar de utmaningar som fanns i marknadsföringsapplikationer innan segmentnyttolastförbättringen:
-- E-postpersonalisering
-- Återmarknadsföring via e-post
-- Återannonsering
-
-**E-postpersonalisering**
-
-En marknadsförare som har skapat en e-postkampanj kan ha försökt att skapa ett segment för en målgrupp genom att använda de senaste kundbutikerna de senaste tre månaderna. Helst skulle det här segmentet kräva både artikelnamnet och namnet på butiken där köpet gjordes. Före förbättringarna var utmaningen att hämta butiksidentifieraren från inköpshändelsen och tilldela den till kundens profil.
-
-**Återmarknadsföring via e-post**
-
-Det är ofta komplicerat att skapa och kvalificera segment för e-postkampanjer som riktar sig till &quot;kundvagnsöverlåtelse&quot;. Före förbättringarna var det svårt att veta vilka produkter som skulle inkluderas i ett personaliserat meddelande på grund av att de nödvändiga uppgifterna fanns tillgängliga. Data som produkterna övergavs för är knutna till upplevelsehändelser som tidigare var utmanande att övervaka och extrahera data från.
-
-**Återannonsering**
-
-En annan traditionell utmaning för marknadsförare har varit att skapa annonser för att rikta om kunder med övergivna kundvagnsartiklar. Även om segmentdefinitionerna var en utmaning fanns det ingen formell metod för att skilja mellan inköpta produkter och övergivna produkter innan förbättringarna gjordes. Nu kan du rikta in dig på specifika datauppsättningar under segmentdefinitionen.
+Med den avancerade segmenteringsfunktionen för flera enheter kan du utöka [!DNL Real-time Customer Profile] data med ytterligare data baserat på produkter, butiker eller andra icke-personella enheter, även kallade&quot;dimensionsenheter&quot;. Detta innebär att [!DNL Segmentation Service] kan få åtkomst till ytterligare fält under segmentdefinitionen som om de vore inbyggda i [!DNL Profile] datalagret. Multientitetssegmentering ger flexibilitet när det gäller att identifiera målgrupper baserat på data som är relevanta för era unika affärsbehov. Mer information, inklusive användningsexempel och arbetsflöden, finns i segmenteringsguiden för [flera enheter](multi-entity-segmentation.md).
 
 ## [!DNL Segmentation Service] datatyper
 
-[!DNL Segmentation Service] har stöd för flera olika datatyper, inklusive:
-
-- Sträng
-- Unik resurs-ID
-- Enum
-- Siffra
-- Lång
-- Heltal
-- Kort
-- Byte
-- Boolean
-- Datum
-- Datum-tid
-- Array
-- Objekt
-- Mappa
-- Händelser
-- Externa målgrupper
-- Segment
-
-Mer detaljerad information om dessa datatyper som stöds finns i det [datatypsdokument](./data-types.md)som stöds.
+[!DNL Segmentation Service] har stöd för flera olika primitiva och komplexa datatyper. Detaljerad information, inklusive en lista över datatyper som stöds, finns i guiden [för datatyper som](./data-types.md)stöds.
 
 ## Nästa steg
 
