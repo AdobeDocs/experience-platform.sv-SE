@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API;consent;Consent;preferences;Preferences;privacyOptOuts;marketingPreferences;optOutType;basisOfProcessing;
+keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API;consent;Consent;preferences;Preferences;privacyOptOuts;marketingPreferences;optOutType;basisOfProcessing;consent;Consent
 solution: Adobe Experience Platform
 title: Översikt över mixning av sekretess
 description: Blandningen av sekretess-/marknadsföringsinställningar (samtycke) är en XDM-blandning (Experience Data Model) som har stöd för insamling av användarbehörigheter och -inställningar som genereras av CMP och andra källor från kunder. Detta dokument omfattar strukturen och den avsedda användningen av de olika fält som anges i blandningen.
 topic: guide
 translation-type: tm+mt
-source-git-commit: 74a4a3cc713cc068be30379e8ee11572f8bb0c63
+source-git-commit: 172710c62b6f60de74e05364edb1191fbba0ff64
 workflow-type: tm+mt
 source-wordcount: '1827'
 ht-degree: 0%
