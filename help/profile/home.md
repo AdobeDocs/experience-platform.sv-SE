@@ -5,9 +5,9 @@ title: Översikt över kundprofiler i realtid
 topic: guide
 description: Kundprofil i realtid är ett generiskt uppslagsarkiv som sammanfogar data från olika företagsdatatillgångar och sedan ger tillgång till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 5dd07bf9afe96be3a4c3f4a4d4e3b23aef4fde70
 workflow-type: tm+mt
-source-wordcount: '1718'
+source-wordcount: '1649'
 ht-degree: 0%
 
 ---
@@ -17,21 +17,26 @@ ht-degree: 0%
 
 Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med [!DNL Real-time Customer Profile]det kan ni få en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. [!DNL Profile] kan ni sammanställa era olika kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion. Den här översikten hjälper dig att förstå rollen och användningen av [!DNL Real-time Customer Profile] i [!DNL Experience Platform].
 
-## Förstå [!DNL Real-time Customer Profile]
+
+## [!DNL Profile] i Experience Platform
+
+Förhållandet mellan kundprofil i realtid och andra tjänster inom Experience Platform framgår av följande diagram:
+
+![Adobe Experience Platform tjänster.](images/profile-overview/profile-in-platform.png)
+
+## Profildata
 
 [!DNL Real-time Customer Profile] är ett generiskt uppslagsarkiv som sammanfogar data från olika företagsdataresurser och sedan ger tillgång till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 
-### [!DNL Profile] datalager
+### Profilskyddsutkast
+
+Experience Platform tillhandahåller ett antal skyddsutkast som hjälper dig att undvika att skapa XDM-scheman ( [Experience Data Model)](../xdm/home.md) som kundprofilen i realtid inte stöder. Detta inkluderar mjuka gränser som resulterar i försämrade prestanda, samt hårda gränser som resulterar i fel och systemfel. Mer information, inklusive en lista över riktlinjer och exempel på användningsfall, finns i dokumentationen för [profilskyddsutkast](guardrails.md) .
+
+### Profilarkiv
 
 Även om inkapslade data [!DNL Real-time Customer Profile] bearbetas och Adobe Experience Platform används [!DNL Identity Service] för att sammanfoga relaterade data via identitetsmappning, behåller det sina egna data i [!DNL Profile] arkivet. Med andra ord är [!DNL Profile] arkivet skilt från [!DNL Catalog] data ([!DNL Data Lake]) och [!DNL Identity Service] data (identitetsdiagram).
 
-### [!DNL Profile] och [!DNL Platform] tjänster
-
-Relationen mellan [!DNL Real-time Customer Profile] och andra tjänster inom [!DNL Experience Platform] visas i följande diagram:
-
-![Förhållandet mellan Profil och andra Experience Platform-tjänster.](images/profile-overview/profile-in-platform.png)
-
-### Profiler och registrera data
+### Registrera data
 
 En profil är en representation av ett ämne, en organisation eller en individ, som också kallas registerdata. Profilen för en produkt kan t.ex. innehålla en SKU och en beskrivning, medan profilen för en person innehåller information som förnamn, efternamn och e-postadress. Med [!DNL Experience Platform]kan du anpassa profiler så att de använder datatyper som är relevanta för ditt företag. Standardklassen [!DNL Experience Data Model] (XDM) [!DNL Individual Profile] är den klass som oftast används för att skapa ett schema när kundpostdata beskrivs, och som tillhandahåller data som är integrerade i många interaktioner mellan plattformstjänster. Mer information om hur du arbetar med scheman i [!DNL Experience Platform]finns i [XDM-systemöversikten](../xdm/home.md).
 
@@ -59,7 +64,7 @@ När ni sammanfogar data från flera olika källor och kombinerar dem för att f
 
 >[!IMPORTANT]
 >
->Den beräknade attributfunktionaliteten som beskrivs i det här dokumentet är alfavärden. Dokumentationen och funktionaliteten kan komma att ändras.
+>Den beräknade attributfunktionen är alfavärden. Dokumentationen och funktionaliteten kan komma att ändras.
 
 Med beräknade attribut kan du automatiskt beräkna fältvärden baserat på andra värden, beräkningar och uttryck. Beräknade attribut fungerar på profilnivån, vilket innebär att du kan samla värden över alla poster och händelser. Varje beräknat attribut innehåller ett uttryck, eller &quot;rule&quot;, som utvärderar inkommande data och lagrar resultatvärdet i ett profilattribut eller i en händelse. Med hjälp av dessa beräkningar kan du enkelt besvara frågor som rör inköpstid, tid mellan köp eller antal programöppningar, utan att behöva utföra komplexa beräkningar manuellt varje gång informationen behövs. Mer information om beräknade attribut och steg-för-steg-instruktioner om hur du arbetar med dem med API:t finns i [!DNL Real-time Customer Profile] slutpunktshandboken [](api/computed-attributes.md)för beräknade attribut. Den här guiden hjälper dig att bättre förstå vilken roll beräknade attribut spelar i Adobe Experience Platform, och den innehåller exempel på API-anrop för grundläggande CRUD-åtgärder.
 
@@ -75,7 +80,7 @@ Realtidsinmatning är möjlig genom en process som kallas direktuppspelning. Nä
 
 För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Adobe Experience Platform ger realtidsåtkomst till data genom att använda kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Adobe-program som Adobe Target och Adobe Campaign använder kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten. Om du vill veta mer och börja arbeta med projektioner med hjälp av [!DNL Real-time Customer Profile] API:t kan du läsa guiden [för](api/edge-projections.md)kantprojektionsslutpunkter.
 
-## Lägg till data i [!DNL Real-time Customer Profile]
+## Infoga data i [!DNL Profile]
 
 [!DNL Platform] kan konfigureras för att skicka data från poster och tidsserier till [!DNL Profile]med stöd för direktuppspelning i realtid och batchförbrukning. Mer information finns i självstudiekursen om hur du [lägger till data i kundprofilen](tutorials/add-profile-data.md)i realtid.
 
@@ -101,39 +106,6 @@ När det gäller åtkomst av data spelar datastyrning en viktig roll på [!DNL E
 ### Hantera avanmälan och förfrågningar om datasekretess
 
 [!DNL Experience Platform] gör det möjligt för dina kunder att skicka avanmälningsförfrågningar som rör användningen och lagringen av deras data inom [!DNL Real-time Customer Profile]. Mer information om hur avanmälningsbegäranden hanteras finns i dokumentationen om [hur avanmälningsbegäranden](../segmentation/honoring-opt-outs.md)respekteras.
-
-## [!DNL Profile] riktlinjer
-
-[!DNL Experience Platform] har ett antal riktlinjer att följa för att effektivt kunna använda [!DNL Profile].
-
-| Avsnitt | Gräns |
-| ------- | -------- |
-| [!DNL Profile] union | Högst **20** datauppsättningar kan bidra till [!DNL Profile] unionsschemat. |
-| Relationer för flera enheter | Högst **5** relationer med flera enheter kan skapas. |
-| JSON-djup för association med flera enheter | Högsta JSON-djup är **4**. |
-| Tidsseriedata | Tidsseriedata är **inte** tillåtna i [!DNL Profile] för icke-personenheter. |
-| Icke-personschemarelationer | Icke-personschemarelationer tillåts **inte** . |
-| Profilfragment | Den rekommenderade maximala storleken för ett profilfragment är **10 kB**.<br><br> Den absoluta största storleken för ett profilfragment är **1 MB**. |
-| Icke-personenhet | Den största totala storleken för en enskild icke-personenhet är **200 MB**. |
-| Datauppsättningar per icke-personenhet | Högst **1** datauppsättning kan associeras med en icke-personentitet. |
-
-<!--
-| Section | Boundary | Enforcement |
-| ------- | -------- | ----------- |
-| Profile union schema | A maximum of **20** datasets can contribute to the Profile union schema. | A message stating you've reached the maximum number of datasets appears. You must either disable or clean up other obsolete datasets in order to create a new dataset. |
-| Multi-entity relationships | A maximum of **5** multi-entity relationship can be created. | A message stating all available mappings have been used appears when the fifth relationship is mapped. An error message letting you know you have exceeded the number of available mappings appears when attempting to map a sixth relationship. | 
-| JSON depth for multi-entity association | The maximum JSON depth is **4**. | When trying to use the relationship selector with a field that is more than four levels deep, an error message appears, stating it is ineligible for multi-entity association. |
-| Time series data | Time-series data is **not** permitted in Profile for non-people entities. | A message stating that this data cannot be enabled for Profile because it is of an unsupported type appears. |
-| Non-people schema relationships | Non-people schema relationships are **not** permitted. | Relationships between two non-people schemas cannot be created. The relationships checkbox will be disabled. |
-| Profile fragment | The recommended maximum size of a profile fragment is **10kB**.<br><br> The absolute maximum size of a profile fragment is **1MB**. | If you upload a fragment that is larger than 10kB, a warning appears, stating that performance may be degraded since the fragment exceeds the recommended maximum working size.<br><br> If you upload a fragment that is larger than 1MB, ingestion will fail, and an alert letting you know that records have failed will be sent. |
-| Non-person entity | The maximum total size for a single non-person entity is **200MB**. | If you load an object as a non-person entity that is larger than 200MB, an alert will appear, stating that the entity has exceeded the maximum allowable size and will not be useable for segmentation. |
-| Datasets per non-person entity | A maximum of **1** dataset can be associated to a non-person entity. | If you try to create a second dataset that is associated to the same non-person entity, an error appears, stating that only one dataset can be active per non-person entity. |
-
---->
-
->[!NOTE]
->
->En icke-personenhet refererar till alla XDM-klasser som **inte** ingår i [!DNL Profile].
 
 ## Nästa steg och ytterligare resurser
 
