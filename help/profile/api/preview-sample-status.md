@@ -5,9 +5,9 @@ title: Förhandsgranskning av profil - Kundprofil-API i realtid
 description: Med Adobe Experience Platform kan ni importera kunddata från flera olika källor och skapa stabila, enhetliga profiler för enskilda kunder. När data som har aktiverats för kundprofil i realtid hämtas till plattformen lagras de i profildatalagret. När antalet poster i profilarkivet ökar eller minskar körs ett exempeljobb som innehåller information om hur många profilfragment och sammanfogade profiler som finns i datalagret. Med hjälp av profil-API:t kan du förhandsgranska det senaste framgångsrika exemplet samt lista profildistributionen per datauppsättning och per identitetsnamnområde.
 topic: guide
 translation-type: tm+mt
-source-git-commit: 75a07abd27f74bcaa2c7348fcf43820245b02334
+source-git-commit: 2edba7cba4892f5c8dd41b15219bf45597bd5219
 workflow-type: tm+mt
-source-wordcount: '1439'
+source-wordcount: '1475'
 ht-degree: 0%
 
 ---
@@ -59,6 +59,10 @@ Svaret innehåller information om det senaste exempeljobbet som kördes för IMS
 ```json
 {
   "numRowsToRead": "41003",
+  "sampleJobRunning": {
+    "status": true,
+    "submissionTimestamp": "2020-08-01 17:57:57.0"
+  },
   "cosmosDocCount": "\"300803\"",
   "totalFragmentCount": 47429,
   "lastSuccessfulBatchTimestamp": "\"null\"",
@@ -75,6 +79,7 @@ Svaret innehåller information om det senaste exempeljobbet som kördes för IMS
 | Egenskap | Beskrivning |
 |---|---|
 | `numRowsToRead` | Det totala antalet sammanfogade profiler i exemplet. |
+| `sampleJobRunning` | Ett booleskt värde som returneras `true` när ett provjobb pågår. Ger transparens i den fördröjning som uppstår när en gruppfil överförs till när den läggs till i profilarkivet. |
 | `cosmosDocCount` | Totalt antal dokument i Cosmos. |
 | `totalFragmentCount` | Totalt antal profilfragment i profilarkivet. |
 | `lastSuccessfulBatchTimestamp` | Senaste lyckade tidsstämpel för batchimport. |
@@ -206,7 +211,7 @@ Följande begäran anger ingen `date` parameter och returnerar därför den sena
 
 ```shell
 curl -X GET \
-  https://platform.adobe.io/data/core/ups/previewsamplestatus/report/dataset \
+  https://platform.adobe.io/data/core/ups/previewsamplestatus/report/namespace \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
