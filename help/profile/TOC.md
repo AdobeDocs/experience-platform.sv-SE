@@ -4,9 +4,9 @@ audience: user
 user-guide-title: Hjälp om kundprofil i realtid
 user-guide-description: Real-time Customer Profile provides a holistic view of each individual customer by combining data from multiple channels, including online, offline, CRM, and third-party data. Profile allows you to consolidate your disparate customer data into a unified view offering an actionable, timestamped account of every customer interaction.
 translation-type: tm+mt
-source-git-commit: 31166ddf8afbe13874be66b29c89501bd6ce1e51
+source-git-commit: 16f2bd7c650c5fbb09066940a730fa9dc768b261
 workflow-type: tm+mt
-source-wordcount: '86'
+source-wordcount: '89'
 ht-degree: 4%
 
 ---
@@ -15,6 +15,7 @@ ht-degree: 4%
 # [!DNL Real-time Customer Profile] {#profile}
 
 * [[!DNL Profile] översikt](home.md)
+* [[!DNL Profile] skyddsräcken](guardrails.md)
 * [!DNL Profile] Utvecklarhandbok för API {#api}
    * [Översikt](api/overview.md)
    * [Komma igång](api/getting-started.md)
@@ -31,7 +32,7 @@ ht-degree: 4%
    * [Användarhandbok för sammanslagningsprinciper](ui/merge-policies.md)
 * Självstudiekurser {#tutorials}
    * [Lägg till data i [!DNL Profile]](tutorials/add-profile-data.md)
-   * [Konfigurera datauppsättning för [!DNL Profile] och [!DNL Identity]](tutorials/dataset-configuration.md)
+   * [Konfigurera en datauppsättning [!DNL Profile] & [!DNL Identity] för tjänsten](tutorials/dataset-configuration.md)
    * [Fler självstudiekurser](https://docs.adobe.com/content/help/en/experience-platform/tutorials/home.html)
 * [Behandling av sekretessförfrågningar](privacy.md)
 * [[!DNL Profile] felsökningsguide](troubleshooting.md)
