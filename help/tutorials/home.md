@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;workflow
 solution: Experience Platform
 title: Adobe Experience Platform Query Service
 topic: overview
 description: Dessa självstudiekurser har utformats för att komplettera informationen i Experience Platform-dokumentationen, så att du får bästa möjliga resultat om du behåller dokumenten när du slutför självstudiekurserna.
 translation-type: tm+mt
-source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
+source-git-commit: 2a528c705a7aa610f57047be39be1ce9886ce44c
 workflow-type: tm+mt
 source-wordcount: '175'
 ht-degree: 0%
