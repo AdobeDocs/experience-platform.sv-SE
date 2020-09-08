@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;GDPR;gdpr;ccpa:CCPA
+keywords: Experience Platform;home;popular topics;GDPR;gdpr;ccpa:CCPA;pdpa;PDPA;pdpa_that;PDPA_THA;lgpd;LGPD;lgpd_bra;LGPD_BRA;
 solution: Experience Platform
 title: Adobe Experience Platform Privacy Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 5d88aca08b7cf1d55e1eed989de6aa514f82e113
 workflow-type: tm+mt
-source-wordcount: '1498'
-ht-degree: 2%
+source-wordcount: '1561'
+ht-degree: 1%
 
 ---
 
@@ -47,7 +47,8 @@ I följande tabell beskrivs de juridiska integritetsregler som hanterar förfrå
 | --- | --- |
 | CCPA (Kalifornien) | CCPA ( [!DNL California Consumer Privacy Act] the CCPA) förbättrar integritetsrättigheterna och konsumentskyddet för personer bosatta i Kalifornien, USA. CCPA ger personer bosatta i Kalifornien nya integritetsrättigheter, inklusive rätten att få tillgång till och radera sina personuppgifter, att få veta om deras personuppgifter säljs eller offentliggörs (och till vem) samt rätten att avanmäla sig från att få sina uppgifter sålda till tredje part.<br/><br/>Länkar till ytterligare dokumentation: <ul><li>[Juridisk översikt](https://oag.ca.gov/privacy/ccpa)</li><li>[Vanliga frågor om CCPA](ccpa/faq.md)</li></ul> |
 | GDPR (Europeiska unionen) | The [!DNL General Data Protection Regulation] (GDPR) introduced several new data privacy rights for members of the European Union, including the **Right to Access** and the **Right to be Forgotten**. Detta innebär att alla EU-medborgare vars personuppgifter har samlats in av ert företag när som helst kan begära att få tillgång till eller radera sina uppgifter. <br/><br/>Länkar till ytterligare dokumentation: <ul><li>[Juridisk översikt](https://gdpr-info.eu/)</li><li>[Vanliga frågor om GDPR](gdpr/faq.md)</li><li>[GDPR-terminologi](gdpr/terminology.md)</li></ul> |
-| PDPA_THA (Thailand) | Den thailändska lagen om skydd av personuppgifter (PDPA) infördes för att skydda thailändska dataägare från olaglig insamling, användning eller utlämnande av deras personuppgifter. Förordningen inspireras av EU:s allmänna dataskyddsförordningen och ger de thailändska medborgarna rätt att begära tillgång till eller radering av lagrade personuppgifter.<br/><br/>Länkar till ytterligare dokumentation: <ul><li>[Juridisk översikt](https://www.dataprotectionreport.com/2020/02/thailand-personal-data-protection-law/)</li><li>[PDPA_THA FAQ](pdpa-tha/faq.md)</li><li>[PDPA_THA-terminologi](pdpa-tha/terminology.md)</li></ul> |
+| LGPD (Brasilien) | Syftet [!DNL Lei Geral de Proteção de Dados] (LGPD) är att reglera behandlingen av personuppgifter för alla enskilda eller fysiska personer i Brasilien. LGPD ger Brasilien-medborgarna rätt att få tillgång till och radera sina personuppgifter, att ta reda på om deras personuppgifter säljs eller offentliggörs (och till vem) samt rätt att avanmäla sig från att få sina uppgifter sålda till tredje part.<br/><br/>Länkar till ytterligare dokumentation: <ul><li>[Juridisk översikt](https://gdpr.eu/gdpr-vs-lgpd/)</li></ul> |
+| PDPA (Thailand) | Thailand (PDPA) infördes [!DNL Personal Data Protection Act] för att skydda thailändska dataägare från olaglig insamling, användning eller utlämnande av deras personuppgifter. Förordningen inspireras av EU:s allmänna dataskyddsförordningen och ger de thailändska medborgarna rätt att begära tillgång till eller radering av lagrade personuppgifter.<br/><br/>Länkar till ytterligare dokumentation: <ul><li>[Juridisk översikt](https://www.dataprotectionreport.com/2020/02/thailand-personal-data-protection-law/)</li><li>[Vanliga frågor om PDPA](pdpa-tha/faq.md)</li><li>[PDPA-terminologi](pdpa-tha/terminology.md)</li></ul> |
 
 Om dina dataåtgärder omfattas av någon av ovanstående regler, bör du läsa deras dokumentation för att få viktig information, som vilka specifika sekretessrättigheter de har för dina kunder, samt för att få koll på efterlevnadsförfrågningar. Denna information bör beaktas när ni avgör hur ni ska integrera dem [!DNL Privacy Service] i ert CRM-system och hur kunderna ska interagera med er webbplats för att kunna göra sekretessförfrågningar.
 
