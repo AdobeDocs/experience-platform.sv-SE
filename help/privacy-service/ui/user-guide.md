@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användarhandbok för Privacy Service
 topic: UI guide
 translation-type: tm+mt
-source-git-commit: 172710c62b6f60de74e05364edb1191fbba0ff64
+source-git-commit: a09d80f4bacd5d4be77443d75aad278ad89259ef
 workflow-type: tm+mt
-source-wordcount: '1023'
+source-wordcount: '1021'
 ht-degree: 0%
 
 ---
@@ -24,11 +24,12 @@ Kontrollpanelen för [!DNL Privacy Service] användargränssnittet innehåller t
 
 ### Regeltyp
 
-[!DNL Privacy Service] stöder jobbförfrågningar för tre regeltyper:
+[!DNL Privacy Service] stöder jobbförfrågningar för fyra regeltyper:
 
-* Europeiska unionens [!DNL General Data Protection Regulation] (GDPR)
-* The [!DNL California Consumer Privacy Act] (CCPA)
-* Thailand [!DNL Personal Data Protection Act] (PDPA_THA)
+* Europeiska unionens [!DNL General Data Protection Regulation] ([!UICONTROL GDPR])
+* The [!DNL California Consumer Privacy Act] ([!UICONTROL CCPA])
+* Brasilien [!DNL Lei Geral de Proteção de Dados] ([!UICONTROL LGPD_BRA])
+* Thailand [!DNL Personal Data Protection Act] ([!UICONTROL PDPA_THA])
 
 Jobb för varje regel spåras separat. Om du vill växla mellan olika regeltyper klickar du på **[!UICONTROL Regulation Type]** listrutan och väljer önskad regel i listan.
 
@@ -56,7 +57,7 @@ Om du vill visa mer information om en viss datapunkt klickar du på datapunkten 
 
 >[!NOTE]
 >
->När ett filter har tillämpats på widgeten Jobbförfrågningar kan du ta bort filtret genom att klicka på **[!UICONTROL X]** filterfliken. Jobbförfrågningar återgår sedan till standardspårningslistan.
+>När ett filter har tillämpats på widgeten Jobbförfrågningar kan du ta bort filtret genom att klicka på **X** i filterpillet. Jobbförfrågningar återgår sedan till standardspårningslistan.
 
 ### Jobbförfrågningar
 
