@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Prenumerera på dataöverföringshändelser
 topic: overview
 translation-type: tm+mt
-source-git-commit: d2f098cb9e4aaf5beaad02173a22a25a87a43756
+source-git-commit: 80a1694f11cd2f38347989731ab7c56c2c198090
 workflow-type: tm+mt
-source-wordcount: '805'
+source-wordcount: '612'
 ht-degree: 0%
 
 ---
@@ -20,75 +20,77 @@ Data som läses in till [!DNL Platform] måste gå igenom flera steg för att n�
 
 För att underlätta övervakningen av intagsprocessen är det möjligt att prenumerera på en uppsättning händelser som publiceras i varje steg i processen och meddela dig om statusen för inmatade data och eventuella fel. [!DNL Experience Platform]
 
-## Tillgängliga statusmeddelandehändelser
+## Registrera en webkrok för meddelanden om dataöverföring
 
-Nedan visas en lista över tillgängliga statusmeddelanden för dataöverföring som du kan prenumerera på.
+För att kunna ta emot meddelanden om dataintrång måste du använda [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) för att registrera en webkrok för integreringen med Experience Platform.
+
+Följ självstudiekursen om [att prenumerera på [!DNL Adobe I/O Event] meddelanden](../../observability/notifications/subscribe.md) för mer information om hur du gör detta.
+
+>[!IMPORTANT]
+>
+>Under prenumerationsprocessen kontrollerar du att du väljer **[!UICONTROL Platform notifications]** händelseleverantör och väljer **[!UICONTROL Data ingestion notification]** händelseprenumeration när du uppmanas till det.
+
+## Ta emot meddelanden om dataöverföring
+
+När du har registrerat din webkrok och nya data har importerats kan du börja få händelsemeddelanden. Dessa händelser kan visas med webbhollen eller genom att du väljer **[!UICONTROL Debug Tracing]** fliken i projektregistreringsöversikten i Adobe Developer Console.
+
+Följande JSON är ett exempel på en meddelandenyttolast som skulle skickas till din webkrok om en batchöverföringshändelse misslyckades:
+
+```json
+{
+  "event_id": "93a5b11a-b0e6-4b29-ad82-81b1499cb4f2",
+  "event": {
+    "xdm:ingestionId": "01EGK8H8HF9JGFKNDCABHGA24G",
+    "xdm:customerIngestionId": "01EGK8H8HF9JGFKNDCABHGA24G",
+    "xdm:imsOrg": "{IMS_ORG}",
+    "xdm:completed": 1598374341560,
+    "xdm:datasetId": "5e55b556c2ae4418a8446037",
+    "xdm:eventCode": "ing_load_failure",
+    "xdm:sandboxName": "prod",
+    "sentTime": "1598374341595",
+    "processStartTime": 1598374342614,
+    "transformedTime": 1598374342621,
+    "header": {
+      "_adobeio": {
+        "imsOrgId": "{IMS_ORG}",
+        "providerMetadata": "aep_observability_catalog_events",
+        "eventCode": "platform_event"
+      }
+    }
+  }
+}
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `event_id` | Ett unikt systemgenererat ID för meddelandet. |
+| `event` | Ett objekt som innehåller information om händelsen som utlöste meddelandet. |
+| `event.xdm:datasetId` | ID:t för den datauppsättning som ingetthändelsen gäller för. |
+| `event.xdm:eventCode` | En statuskod som anger vilken typ av händelse som utlöstes för datauppsättningen. Specifika värden och definitioner finns i [bilagan](#event-codes) . |
+
+Se den [offentliga GitHub-databasen](https://github.com/adobe/xdm/blob/master/schemas/notifications/ingestion.schema.json)för att se det fullständiga schemat för händelsemeddelanden.
+
+## Nästa steg
+
+När du har registrerat [!DNL Platform] meddelanden i projektet kan du visa mottagna händelser från [!UICONTROL Project overview]. Mer information om hur du spårar händelser finns i guiden om [spårning av Adobe I/O-händelser](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/support/tracing.md) .
+
+## Bilaga
+
+Följande avsnitt innehåller ytterligare information om hur du tolkar nyttolaster för meddelanden om dataintrång.
+
+### Tillgängliga statusmeddelandehändelser {#event-codes}
+
+Följande tabell visar vilka statusmeddelanden för dataöverföring som du kan prenumerera på.
+
+| Händelsekod | Plattformstjänst | Status | Händelsebeskrivning |
+| --- | ---------------- | ------ | ----------------- |
+| `ing_load_success` | [!DNL Data Ingestion] | framgång | En batch har importerats till en datauppsättning i [!DNL Data Lake]. |
+| `ing_load_failure` | [!DNL Data Ingestion] | fel | Det gick inte att importera en batch till en datauppsättning i [!DNL Data Lake]. |
+| `ps_load_success` | [!DNL Real-time Customer Profile] | framgång | En batch har importerats till [!DNL Profile] datalagret. |
+| `ps_load_failure` | [!DNL Real-time Customer Profile] | fel | Det gick inte att importera en batch till [!DNL Profile] datalagret. |
+| `ig_load_success` | [!DNL Identity Service] | framgång | Data lästes in i identitetsdiagrammet. |
+| `ig_load_failure` | [!DNL Identity Service] | fel | Det gick inte att läsa in data i identitetsdiagrammet. |
 
 >[!NOTE]
 >
 >Det finns bara ett händelseämne för alla meddelanden om dataöverföring. Händelsekoden kan användas för att skilja mellan olika statusvärden.
-
-| Plattformstjänst | Status | Händelsebeskrivning | Händelsekod |
-| ---------------- | ------ | ----------------- | ---------- |
-| Datalager | framgång | Inmatning - batchen har slutförts | ing_load_success |
-| Datalager | fel | Inmatning - batchen misslyckades | ing_load_error |
-| Kundprofil i realtid | framgång | Profiltjänst - datainläsningsbatch lyckades | ps_load_success |
-| Kundprofil i realtid | fel | Profiltjänst - Datainläsningsbatchen misslyckades | ps_load_error |
-| Identitetsdiagram | framgång | Identitetsdiagram - datainläsningsbatchen har slutförts | ig_load_success |
-| Identitetsdiagram | fel | Identitetsdiagram - datainläsningsbatchen misslyckades | ig_load_error |
-
-## Meddelandenyttolastschema
-
-Datainmatningsmeddelandets händelseschema är ett [!DNL Experience Data Model] (XDM)-schema som innehåller fält och värden som ger information om statusen för de data som hämtas. Besök den offentliga XDM- [!DNL GitHub] rapporten för att se det senaste [meddelandenyttolastschemat](https://github.com/adobe/xdm/blob/master/schemas/notifications/ingestion.schema.json).
-
-## Prenumerera på statusmeddelanden för dataöverföring
-
-Via [Adobe I/O Events](https://www.adobe.io/apis/experienceplatform/events.html)kan du prenumerera på flera olika typer av meddelanden via webbhooks. I avsnitten nedan beskrivs stegen för att prenumerera på [!DNL Platform] meddelanden om dataöverföringshändelser med hjälp av Adobe Developer Console.
-
-### Skapa ett nytt projekt i Adobe Developer Console
-
-Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med din Adobe ID. Följ sedan stegen som beskrivs i självstudiekursen om hur du [skapar ett tomt projekt](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) i dokumentationen för Adobe Developer Console.
-
-### Lägg till [!DNL Experience Platform] händelser i projektet
-
-När du har skapat ett nytt projekt går du till projektets översiktsskärm. Klicka här **[!UICONTROL Add event]**.
-
-![](../images/quality/subscribe-events/add-event-button.png)
-
-Dialogrutan **[!UICONTROL Add events]** visas. Klicka **[!UICONTROL Experience Platform]** för att filtrera listan med tillgängliga alternativ och klicka sedan **[!UICONTROL Platform notifications]** innan du klickar **[!UICONTROL Next]**.
-
-![](../images/quality/subscribe-events/select-platform-events.png)
-
-På nästa skärm visas en lista med händelsetyper att prenumerera på. Markera **[!UICONTROL Data ingestion notification]** och klicka sedan på **[!UICONTROL Next]**.
-
-![](../images/quality/subscribe-events/choose-event-subscriptions.png)
-
-Nästa skärm uppmanar dig att skapa en JSON Web Token (JWT). Du kan generera ett nyckelpar automatiskt eller överföra en egen offentlig nyckel som genererats i terminalen.
-
-I den här självstudiekursen används det första alternativet. Klicka på alternativrutan för **[!UICONTROL Generate a key pair]** och klicka sedan på **[!UICONTROL Generate keypair]** knappen i det nedre högra hörnet.
-
-![](../images/quality/subscribe-events/generate-keypair.png)
-
-När nyckelparet genereras hämtas det automatiskt av webbläsaren. Du måste lagra den här filen själv eftersom den inte sparas i Developer Console.
-
-På nästa skärm kan du granska informationen om det nya nyckelparet. Klicka **[!UICONTROL Next]** för att fortsätta.
-
-![](../images/quality/subscribe-events/keypair-generated.png)
-
-Ange ett namn och en beskrivning för händelseregistreringen på nästa skärm. Det bästa sättet är att skapa ett unikt, enkelt identifierbart namn som hjälper till att skilja den här evenemangsregistreringen från andra i samma projekt.
-
-![](../images/quality/subscribe-events/registration-details.png)
-
-På samma skärm kan du välja att konfigurera hur händelser ska tas emot. **[!UICONTROL Webhook]** gör att du kan ange en anpassad webbadress för att ta emot händelser, medan du **[!UICONTROL Runtime action]** kan göra samma sak med [Adobe I/O Runtime](https://www.adobe.io/apis/experienceplatform/runtime/docs.html).
-
-I den här självstudien hoppas det här valfria konfigurationssteget över. När du är klar klickar du **[!UICONTROL Save configured events]** för att slutföra registreringen av evenemanget.
-
-![](../images/quality/subscribe-events/receive-events.png)
-
-Informationssidan för den nyligen skapade händelseregistreringen visas, där du kan granska mottagna händelser, utföra felsökningsspårning och redigera konfigurationen.
-
-![](../images/quality/subscribe-events/registration-complete.png)
-
-## Nästa steg
-
-När du har registrerat [!DNL Platform] meddelanden till projektet kan du visa mottagna händelser från projektkontrollpanelen. Mer information om hur du spårar händelser finns i guiden [Adobe I/O-händelser](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/support/tracing.md) .
