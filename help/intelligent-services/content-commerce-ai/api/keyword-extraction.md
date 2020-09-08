@@ -5,9 +5,9 @@ title: Färgextrahering
 topic: Developer guide
 description: Tjänsten för extrahering av nyckelord extraherar automatiskt nyckelord eller nyckelfraser som bäst beskriver dokumentets ämne när de anges i ett textdokument. För att extrahera nyckelord används en kombination av algoritmer för namngiven enhetsigenkänning (NER) och extrahering av nyckelord utan övervakning.
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 31e4f1441676daa79f064c567ddc47e9198d0a0b
 workflow-type: tm+mt
-source-wordcount: '742'
+source-wordcount: '625'
 ht-degree: 2%
 
 ---
@@ -20,14 +20,6 @@ ht-degree: 2%
 >[!DNL Content and Commerce AI] är i betaversion. Dokumentationen kan komma att ändras.
 
 Tjänsten för extrahering av nyckelord extraherar automatiskt nyckelord eller nyckelfraser som bäst beskriver dokumentets ämne när de anges i ett textdokument. För att extrahera nyckelord används en kombination av algoritmer för namngiven enhetsigenkänning (NER) och extrahering av nyckelord utan övervakning.
-
-**Oövervakad extrahering av nyckelord**
-
-För oövervakad extrahering av nyckelord används [[!DNL YAKE]](http://yake.inesctec.pt/) . [!DNL YAKE] är en snabb och korrekt automatisk extraheringsmetod utan övervakning som används för att välja de viktigaste nyckelorden från ett dokument. Nyckelordsutdragen [!DNL YAKE] filtreras sedan så att endast tio fraser markeras.
-
-**Identifiering av namngiven enhet**
-
-För namngiven entitetsigenkänning används [[!DNL spaCy]](https://spacy.io/)OntoNotes-modellen. Den här modellen tilldelar kontextspecifika tokenvektorer, POS-taggar (part-of-tal), beroendeanalys och namngivna entiteter. OntoNotes-modellen är en av de viktigaste [!DNL spaCy] modellerna. Mer information om OntoNotes-modellen finns [här](https://spacy.io/models/en).
 
 Namngivna entiteter som känns igen av [!DNL Content and Commerce AI] visas i följande tabell:
 
@@ -44,8 +36,6 @@ Namngivna entiteter som känns igen av [!DNL Content and Commerce AI] visas i f�
 | WORK_OF_ART | Boktitlar, låtar osv. |
 | LAW | Namngivna dokument som gjorts till lagar. |
 | SPRÅK | Valfritt namngivet språk. |
-
-Resultaten från [!DNL OntoNotes] kombineras med nyckelorden från [!DNL YAKE]och returneras sedan i rangordningsordning efter deras prioritet.
 
 **API-format**
 
