@@ -5,9 +5,9 @@ title: Segmentering för flera enheter
 topic: overview
 description: Multientitetssegmentering är möjligheten att utöka profildata med ytterligare data baserat på produkter, butiker eller andra icke-profilklasser. När de är anslutna blir data från ytterligare klasser tillgängliga som om de vore inbyggda i profilschemat.
 translation-type: tm+mt
-source-git-commit: 5dd07bf9afe96be3a4c3f4a4d4e3b23aef4fde70
+source-git-commit: 8568c55003127a295acff9cfbbc3bbf6005e7a51
 workflow-type: tm+mt
-source-wordcount: '605'
+source-wordcount: '620'
 ht-degree: 0%
 
 ---
@@ -21,10 +21,10 @@ Segmentering för flera enheter är en avancerad funktion som ingår i Adobe Exp
 
 Segmentering på flera enheter kräver en fungerande förståelse av de olika Adobe Experience Platform-tjänster som är inblandade i segmentering. Läs följande dokumentation innan du fortsätter med den här guiden:
 
-* [!DNL Real-time Customer Profile](../profile/home.md): Ger en enhetlig konsumentprofil i realtid, baserad på aggregerade data från flera källor.
+* [[!DNL Real-time Customer Profile]](../profile/home.md): Ger en enhetlig konsumentprofil i realtid, baserad på aggregerade data från flera källor.
    * [Profilskyddsutkast](../profile/guardrails.md): Bästa tillvägagångssätt för att skapa datamodeller som stöds av [!DNL Profile].
-* [!DNL Adobe Experience Platform Segmentation Service](./home.md): Gör att ni kan skapa segment utifrån [!DNL Real-time Customer Profile] data.
-* [!DNL Experience Data Model (XDM)](../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
+* [[!DNL Adobe Experience Platform Segmenteringstjänst]](./home.md): Gör att ni kan skapa segment utifrån [!DNL Real-time Customer Profile] data.
+* [[!DNL Experience Data Model (XDM)]](../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grundläggande om schemakomposition](../xdm/schema/composition.md#union): Lär dig de bästa sätten att skapa scheman som ska användas i Experience Platform.
 
 ## Användningsfall
