@@ -5,10 +5,10 @@ solution: Experience Platform
 title: Flödeskörningsmeddelanden
 topic: overview
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: c5455dc0812b251483170ac19506d7c60ad4ecaa
 workflow-type: tm+mt
-source-wordcount: '859'
-ht-degree: 0%
+source-wordcount: '773'
+ht-degree: 1%
 
 ---
 
@@ -25,34 +25,23 @@ Det här dokumentet innehåller anvisningar om hur du prenumererar på händelse
 
 ## Komma igång
 
-Dokumentet kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
+I den här självstudien antas att du redan har skapat minst en källanslutning vars flöde du vill övervaka. Om du ännu inte har konfigurerat en källanslutning kan du börja med att gå till [källöversikten](./home.md) och konfigurera valfri källa innan du går tillbaka till den här guiden.
 
-* [[!DNL Experience Data Model (XDM) System]](../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
-* [[!DNL Real-time Customer Profile]](../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [[!DNL Adobe Experience Platform - datahantering]](../ingestion/home.md): [!DNL Data Ingestion] representerar de olika metoder som används för att [!DNL Platform] importera data från dessa källor samt hur dessa data bevaras inom [!DNL Data Lake] ramen för att användas av [!DNL Platform] tjänster i senare led.
+Det här dokumentet kräver också en fungerande förståelse för webbhooks och hur du ansluter en webkrok från ett program till ett annat. Se [[!DNL I/O Events] dokumentationen](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/intro/webhook_docs_intro.md) för en introduktion till webbböcker.
 
-Det här dokumentet kräver också en fungerande förståelse för webbhooks och hur du ansluter en webkrok från ett program till ett annat. Mer information om webbhooks finns i följande [dokumentation](https://requestbin.com/blog/working-with-webhooks/) .
+## Registrera en webkrok för meddelanden om flödeskörning
 
-## Registrera din webbkrok
+För att få meddelanden om flödeskörning måste du använda Adobe Developer Console för att registrera en webkrok för din [!DNL Experience Platform] integrering.
 
-Om du vill få meddelanden om status för flödeskörningen måste du registrera en webkrok genom att ange en unik webkroks-URL som en del av informationen om händelseregistreringen. Om du vill ansluta en webkrok till din [!DNL I/O Events] prenumeration går du till [webbkroktjänsten](https://webhook.site/) och kopierar den unika webbadressen.
-
-![webkrok](./images/notifications/webhook-url.png)
-
-## Prenumerera på event
-
-När du har skaffat en unik webbhotell-URL går du till [Adobe I/O-händelser](https://www.adobe.io/apis/experienceplatform/events.html) och följer stegen som beskrivs i dokumentet med [dataöverföringsmeddelanden](../ingestion/quality/subscribe-events.md) för att börja prenumerera på händelser.
+Följ självstudiekursen om [att prenumerera på [!DNL I/O Event] meddelanden](../observability/notifications/subscribe.md) för mer information om hur du gör detta.
 
 >[!IMPORTANT]
 >
->Under prenumerationsprocessen kontrollerar du att du väljer [!DNL Platform] meddelanden som händelseleverantör och väljer följande händelseprenumerationer:
+>Under prenumerationsprocessen kontrollerar du att du väljer **[!UICONTROL Platform notifications]** händelseleverantör och väljer följande händelseprenumerationer:
 >
 >* **[!UICONTROL Experience Platform Source's Flow Run Succeeded]**
 >* **[!UICONTROL Experience Platform Source's Flow Run Failed]**
 
->
->
-När du uppmanas att ange en webbkrokadress använder du den webbkroks-URL som du har hämtat tidigare.
 
 ## Ta emot meddelanden om flödeskörning
 
