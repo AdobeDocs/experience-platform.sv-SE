@@ -5,9 +5,9 @@ solution: Experience Platform
 title: Övervaka konton och dataflöden
 topic: overview
 translation-type: tm+mt
-source-git-commit: b900ea05cc046cf19d415543c581d0bcdc4296ba
+source-git-commit: e5898da7d25a708f3431b251f1cfa620b943e9a5
 workflow-type: tm+mt
-source-wordcount: '896'
+source-wordcount: '821'
 ht-degree: 0%
 
 ---
@@ -42,25 +42,15 @@ Välj trattikonen längst upp till vänster för att starta sorteringsfönstret.
 
 På sorteringspanelen kan du komma åt konton från en viss källa. Välj den källa du vill arbeta med och välj kontot i listan till höger.
 
->[!TIP]
->
-> Använd ![spektrumkontrollknappen](../../images/tutorials/monitor/spectrum-control.png) i **[!UICONTROL Name]** kolumnen för att skapa ett nytt källdataflöde för det valda kontot.
-
 ![välj konton](../../images/tutorials/monitor/accounts-sort.png)
 
-På **[!UICONTROL Accounts]** sidan kan du visa en lista över befintliga dataflöden eller måldatauppsättningar som är kopplade till kontot du har öppnat.Välj den sekundära kontrollen om du vill visa fler alternativ för det valda dataflödet. Dessa alternativ beskrivs närmare nedan:
-
-| Kontroll | Beskrivning |
-| ------- | ----------- |
-| [!UICONTROL Edit Schedule] | Gör att du kan redigera dataflödets intag. |
-| [!UICONTROL Disable dataflow] | Gör att du kan inaktivera datainmatning för det valda dataflödet. |
-| [!UICONTROL Delete] | Gör att du kan ta bort det markerade dataflödet. |
+På **[!UICONTROL Accounts]** sidan kan du visa en lista över befintliga dataflöden eller måldatauppsättningar som är kopplade till kontot du har öppnat.
 
 ![dataflöden](../../images/tutorials/monitor/dataflows.png)
 
 ## Övervaka dataflöden
 
-Dataflöden kan nås direkt från **[!UICONTROL Catalog]** sidan utan att visas **[!UICONTROL Accounts]**. Välj **[!UICONTROL Dataflows]** i den övre rubriken om du vill visa en lista med dataflöden.
+Dataflöden kan nås direkt från **[!UICONTROL Catalog]** sidan utan att visas **[!UICONTROL Accounts]**. Välj **[!UICONTROL Dataflows]** i den övre rubriken om du vill visa en lista över befintliga dataflöden.
 
 ![catalog-dataflows](../../images/tutorials/monitor/catalog-dataflows.png)
 
@@ -68,7 +58,7 @@ En lista över befintliga dataflöden visas. På den här sidan finns en lista m
 
 ![dataflows-list](../../images/tutorials/monitor/dataflows-list.png)
 
-Sorteringspanelen visas. Välj den källa som du vill komma åt på rullningsmenyn och välj dataflödet i listan till höger. Du kan också välja den sekundära kontrollen för att visa fler alternativ för det valda dataflödet.
+Sorteringspanelen visas. Välj den källa som du vill komma åt på rullningsmenyn och välj dataflödet i listan till höger.
 
 ![sort-dataflows](../../images/tutorials/monitor/dataflows-sort.png)
 
@@ -92,10 +82,11 @@ Informationen **[!UICONTROL Dataflow run overview]** visas om dataflödet, inklu
 
 I följande tabell finns felkoder som du kan se i **[!UICONTROL Error summary]**.
 
-| Fel | Beskrivning |
+| Felkod | Felmeddelande |
 | ---------- | ----------- |
-| `CONNECTOR-1001-500` | Ett fel uppstod när data kopierades från en källa. |
-| `CONNECTOR-2001-500` | Ett fel uppstod när kopierade data bearbetades till [!DNL Platform]. Det här felet kan gälla parsning, validering eller omformning. |
+| `CONNECTOR-1001-500` | &quot;Ett problem uppstod med kopieringsaktiviteten.&quot; |
+| `CONNECTOR-2001-500` | &quot;Det gick inte att kopiera från Experience Platform-källan till datauppsättningen.&quot; |
+| `CONNECTOR-3001-500` | &quot;Ett problem uppstod med flödesprovidern när en grupp skapades med API för massimport.&quot; |
 
 Den nedre halvan av skärmen innehåller information om **[!UICONTROL Dataflow run errors]**. Härifrån kan du även visa de filer som har importerats, förhandsgranska och ladda ned feldiagnostik eller ladda ned filmanifestet.
 
