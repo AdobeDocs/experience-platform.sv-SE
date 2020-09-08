@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Jobb
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
+source-git-commit: e7bb3e8a418631e9220865e49a1651e4dc065daf
 workflow-type: tm+mt
-source-wordcount: '1795'
+source-wordcount: '1782'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ GET /jobs?regulation={REGULATION}&page={PAGE}&size={SIZE}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{REGULATION}` | Regeltypen som ska sökas efter. Godkända värden är `gdpr`, `ccpa`och `pdpa_tha`. |
+| `{REGULATION}` | Regeltypen som ska sökas efter. Godkända värden är `gdpr`, `ccpa`, `lgpd_bra`och `pdpa_tha`. |
 | `{PAGE}` | Sidan med data som ska visas med nollbaserad numrering. Standardvärdet är `0`. |
 | `{SIZE}` | Antalet resultat som ska visas på varje sida. Standardvärdet är `1` och maxvärdet är `100`. Om det maximala värdet överskrids returneras ett 400-kodfel. |
 
@@ -153,7 +153,7 @@ curl -X POST \
 | `expandIDs` | En valfri egenskap som, när den anges till `true`, representerar en optimering för bearbetning av ID:n i programmen (stöds för närvarande bara av [!DNL Analytics]). Om det utelämnas blir det här värdet som standard `false`. |
 | `priority` | En valfri egenskap som används av Adobe Analytics och som anger prioriteten för bearbetning av begäranden. Godkända värden är `normal` och `low`. Om `priority` utelämnas används standardbeteendet `normal`. |
 | `analyticsDeleteMethod` | En valfri egenskap som anger hur Adobe Analytics ska hantera personuppgifter. Två möjliga värden accepteras för det här attributet: <ul><li>`anonymize`: Alla data som refereras av den angivna samlingen med användar-ID görs anonyma. Om `analyticsDeleteMethod` utelämnas är detta standardbeteendet.</li><li>`purge`: Alla data tas bort helt.</li></ul> |
-| `regulation` **(Obligatoriskt)** | Förordningen om begäran. Måste vara något av följande tre värden: <ul><li>gdpr</li><li>ccpa</li><li>pdpa_tha</li></ul> |
+| `regulation` **(Obligatoriskt)** | Förordningen om begäran. Måste vara ett av följande fyra värden: <ul><li>`gdpr`</li><li>`ccpa`</li><li>`lgpd_bra`</li><li>`pdpa_tha`</li></ul> |
 
 **Svar**
 
@@ -286,7 +286,7 @@ curl -X POST \
 | `expandIDs` | En valfri egenskap som, när den anges till `true`, representerar en optimering för bearbetning av ID:n i programmen (stöds för närvarande bara av [!DNL Analytics]). Om det utelämnas blir det här värdet som standard `false`. |
 | `priority` | En valfri egenskap som används av Adobe Analytics och som anger prioriteten för bearbetning av begäranden. Godkända värden är `normal` och `low`. Om `priority` utelämnas används standardbeteendet `normal`. |
 | `analyticsDeleteMethod` | En valfri egenskap som anger hur Adobe Analytics ska hantera personuppgifter. Två möjliga värden accepteras för det här attributet: <ul><li>`anonymize`: Alla data som refereras av den angivna samlingen med användar-ID görs anonyma. Om `analyticsDeleteMethod` utelämnas är detta standardbeteendet.</li><li>`purge`: Alla data tas bort helt.</li></ul> |
-| `regulation` **(Obligatoriskt)** | Förordningen om begäran. Måste vara något av följande tre värden: <ul><li>gdpr</li><li>ccpa</li><li>pdpa_tha</li></ul> |
+| `regulation` **(Obligatoriskt)** | Förordningen om begäran. Måste vara ett av följande fyra värden: <ul><li>`gdpr`</li><li>`ccpa`</li><li>`lgpd_bra`</li><li>`pdpa_tha`</li></ul> |
 
 **Svar**
 
@@ -449,14 +449,14 @@ I följande tabell visas olika möjliga jobbstatuskategorier och deras motsvaran
 
 | Statuskategori | Betydelse |
 | -------------- | -------- |
-| Slutförd | Jobbet är klart och (om det behövs) filer överförs från alla program. |
-| Bearbetar | Ansökningarna har bekräftat jobbet och bearbetar för närvarande. |
-| Skickat | Jobbet skickas till alla tillämpliga program. |
-| Fel | Något misslyckades vid bearbetningen av jobbet - mer specifik information kan hämtas genom att information om enskilda jobb hämtas. |
+| `complete` | Jobbet är klart och (om det behövs) filer överförs från alla program. |
+| `processing` | Ansökningarna har bekräftat jobbet och bearbetar för närvarande. |
+| `submitted` | Jobbet skickas till alla tillämpliga program. |
+| `error` | Något misslyckades vid bearbetningen av jobbet - mer specifik information kan hämtas genom att information om enskilda jobb hämtas. |
 
 >[!NOTE]
 >
->Ett skickat jobb kan vara i ett bearbetningstillstånd om det har ett beroende underordnat jobb som fortfarande bearbetas.
+>Ett skickat jobb kan vara i ett `processing` tillstånd om det har ett beroende underordnat jobb som fortfarande bearbetas.
 
 ## Nästa steg
 
