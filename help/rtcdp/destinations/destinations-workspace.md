@@ -5,9 +5,9 @@ seo-title: Arbetsytan Destinationer
 description: Arbetsytan Destinationer består av fyra avsnitt, Katalog, Bläddra, Konton och Systemvy, som beskrivs i avsnitten nedan.
 seo-description: I Adobe Real-time Customer Data Platform väljer du Destinationer i det vänstra navigeringsfältet för att komma åt målarbetsytan.
 translation-type: tm+mt
-source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
+source-git-commit: 59ac673c35954696fbb37417510035bdebff6f62
 workflow-type: tm+mt
-source-wordcount: '748'
+source-wordcount: '764'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 1%
 
 # Arbetsytan Destinationer {#destinations-workspace}
 
-I Adobe Real-time Customer Data Platform väljer du **[!UICONTROL Destinations]** från det vänstra navigeringsfältet för att komma åt [!UICONTROL Destinations] arbetsytan.
+I Adobe Customer Data Platform för realtid väljer du **[!UICONTROL Destinations]** i det vänstra navigeringsfältet för att komma åt [!UICONTROL Destinations] arbetsytan.
 
 Arbetsytan består [!UICONTROL Destinations] av fyra avsnitt, **[!UICONTROL Catalog]**, **[!UICONTROL Browse]**, **[!UICONTROL Accounts]** och **[!UICONTROL System View]**, som beskrivs i avsnitten nedan.
 
@@ -52,9 +52,31 @@ Välj ett målkort i katalogen för att öppna den högra listen.  Här visas en
 
 Mer information om målkategorier och information om varje mål finns i [Målkatalog](/help/rtcdp/destinations/destinations-catalog.md) och [Måltyper och -kategorier](/help/rtcdp/destinations/destination-types.md).
 
+## [!UICONTROL Accounts] {#accounts}
+
+På fliken **[!UICONTROL Accounts]** kan du lära dig mer om anslutningar som du har upprättat med olika mål. Se tabellen nedan för all information du kan få på varje mål:
+
+>[!TIP]
+>
+>Använd knappen ![](/help/rtcdp/destinations/assets/add-data-symbol.png) Lägg till data i **[!UICONTROL Platform]** kolumnen för att skapa en ny målanslutning för det kontot.
+
+![Fliken Konton](/help/rtcdp/destinations/assets/accounts-tab.png)
+
+| Element | Beskrivning |
+---------|----------
+| [!UICONTROL Platform] | Det mål som du har konfigurerat anslutningen för. |
+| [!UICONTROL Connection Type] | Representerar anslutningstypen för din lagringsbucket eller destination. <ul><li>För e-postmarknadsföringsmål: Kan vara S3 eller FTP.</li><li>För reklamdestinationer i realtid: Server-till-server</li><li>För molnlagringsmål för Amazon S3: Åtkomstnyckel </li><li>För SFTP-molnlagringsmål: Grundläggande autentisering för SFTP</li></ul> |
+| [!UICONTROL Username] | Användarnamnet som du valde i [målguiden](/help/rtcdp/destinations/email-marketing-destinations.md#connect-destination)för anslutning. |
+| [!UICONTROL Destinations] | Representerar antalet unika lyckade målflöden som är kopplade till grundläggande information som skapats för ett mål. |
+| [!UICONTROL Authorized] | Det datum då anslutningen till det här målet auktoriserades. |
+
 ## [!UICONTROL Browse] {#browse}
 
-På fliken **[!UICONTROL Browse]** visas de mål som du har upprättat en anslutning till. Destinationer med **[!UICONTROL enabled]** växlingsknappen aktiverad anger målet som aktivt och vice versa. Du kan också visa de mål där data flödar genom att välja **[!UICONTROL Segments]** > **[!UICONTROL Browse]** och markera ett segment som ska inspekteras. Se tabellen nedan för all information som finns för varje mål på fliken Bläddra:
+På fliken **[!UICONTROL Browse]** visas de mål som du har upprättat en anslutning till. Destinationer med **[!UICONTROL Enabled]** växlingsknappen aktiverad anger målet som aktivt och vice versa. Du kan också visa de mål där data flödar genom att välja **[!UICONTROL Segments]** > **[!UICONTROL Browse]** och markera ett segment som ska inspekteras. Se tabellen nedan för all information som finns för varje mål på fliken Bläddra:
+
+>[!TIP]
+>
+>Använd knappen ![](/help/rtcdp/destinations/assets/add-data-symbol.png) Lägg till data i **[!UICONTROL Name]** kolumnen för att aktivera ytterligare segment för det målet.
 
 ![Fliken Bläddra](/help/rtcdp/destinations/assets/browse-tab.png)
 
@@ -73,21 +95,6 @@ Klicka på en målrad för att visa mer information om målet i den högra liste
 ![Klicka på målraden](/help/rtcdp/destinations/assets/click-destination-row.png)
 
 Markera målnamnet om du vill visa information om de segment som har aktiverats för det här målet. Klicka **[!UICONTROL Edit activation]** för att ändra eller lägga till i de segment som skickas till det här målet.
-
-## [!UICONTROL Accounts] {#accounts}
-
-På fliken **[!UICONTROL Accounts]** kan du lära dig mer om anslutningar som du har upprättat med olika mål. Se tabellen nedan för all information du kan få på varje mål:
-
-![Fliken Konton](/help/rtcdp/destinations/assets/accounts-tab.png)
-
-| Element | Beskrivning |
----------|----------
-| [!UICONTROL Platform] | Det mål som du har konfigurerat anslutningen för. |
-| [!UICONTROL Connection Type] | Representerar anslutningstypen för din lagringsbucket eller destination. <ul><li>För e-postmarknadsföringsmål: Kan vara S3 eller FTP.</li><li>För reklamdestinationer i realtid: Server-till-server</li><li>För molnlagringsmål för Amazon S3: Åtkomstnyckel </li><li>För SFTP-molnlagringsmål: Grundläggande autentisering för SFTP</li></ul> |
-| [!UICONTROL Username] | Användarnamnet som du valde i [målguiden](/help/rtcdp/destinations/email-marketing-destinations.md#connect-destination)för anslutning. |
-| [!UICONTROL Data Flows] | Representerar antalet unika lyckade målflöden som är kopplade till grundläggande information som skapats för ett mål. |
-| [!UICONTROL Authorized] | Det datum då anslutningen till det här målet auktoriserades. |
-| [!UICONTROL Status] | `Active` eller `Inactive`. Anger om data för närvarande aktiveras till det här målet. Information om hur du redigerar status finns i [Inaktivera aktivering](/help/rtcdp/destinations/activate-destinations.md#disable-activation). |
 
 ## [!UICONTROL System View] {#system-view}
 
