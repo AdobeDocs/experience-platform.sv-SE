@@ -5,9 +5,9 @@ title: Översikt över kundprofiler i realtid
 topic: guide
 description: Kundprofil i realtid är ett generiskt uppslagsarkiv som sammanfogar data från olika företagsdatatillgångar och sedan ger tillgång till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 translation-type: tm+mt
-source-git-commit: 5dd07bf9afe96be3a4c3f4a4d4e3b23aef4fde70
+source-git-commit: cef27082fec97530031061476b46f60859717825
 workflow-type: tm+mt
-source-wordcount: '1649'
+source-wordcount: '1650'
 ht-degree: 0%
 
 ---
@@ -90,7 +90,7 @@ För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för 
 
 ### [!DNL Profile] mätvärden för förtäring
 
-Med Insikter om observerbarhet kan ni visa nyckeltal i Adobe Experience Platform. Förutom [!DNL Platform] användningsstatistik och resultatindikatorer för olika [!DNL Platform] funktioner finns det specifika [!DNL Profile]mätvärden som gör att ni kan få insikt i hur många begäranden som kommer in, hur många som kommer in, hur många som kommer in, hur många som kommer in, hur många som kommer in i bilden och hur många som kommer in. Om du vill veta mer kan du börja med att läsa översikten [över](../observability/home.md)observabilitetsinsikter och en fullständig lista över [!DNL Profile] mätvärden finns i dokumentationen om [tillgängliga mätvärden](../observability/metrics.md).
+Med Insikter om observerbarhet kan ni visa nyckeltal i Adobe Experience Platform. Förutom [!DNL Platform] användningsstatistik och resultatindikatorer för olika [!DNL Platform] funktioner finns det specifika [!DNL Profile]mätvärden som gör att ni kan få insikt i hur många begäranden som kommer in, hur många som kommer in, hur många som kommer in, hur många som kommer in, hur många som kommer in i bilden och hur många som kommer in. Om du vill veta mer kan du börja med att läsa översikten över API:t för [observabilitet](../observability/api/overview.md), och en fullständig lista över [!DNL Profile] mätvärden finns i dokumentationen om [tillgängliga mätvärden](../observability/api/metrics.md#available-metrics).
 
 ## [!DNL Data governance] och [!DNL Privacy]
 
