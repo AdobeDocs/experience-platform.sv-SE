@@ -5,9 +5,9 @@ title: Konfigurera ett dataflöde för en betalningsanslutning i användargräns
 topic: overview
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en Adobe Experience Platform-datauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt betalkonto.
 translation-type: tm+mt
-source-git-commit: 14044f9af50cd4c922294cd60f7b6549828e8aca
+source-git-commit: 5d4aa8eebc1837a5d8b275fa631f4af73c38158e
 workflow-type: tm+mt
-source-wordcount: '1236'
+source-wordcount: '1280'
 ht-degree: 0%
 
 ---
@@ -35,9 +35,15 @@ När du har skapat ditt betalkonto visas **[!UICONTROL Select data]** steget och
 - Den vänstra halvan av gränssnittet är en katalogwebbläsare som visar serverns filer och kataloger.
 - I den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader data från en kompatibel fil.
 
-Markera den katalog som du vill använda och välj sedan **[!UICONTROL Next]**.
+Du kan använda alternativet längst upp på sidan för att snabbt identifiera de källdata som du tänker använda. **[!UICONTROL Search]**
 
-![tilläggsdata](../../../images/tutorials/dataflow/payments/add-data.png)
+>[!NOTE]
+>
+>Sökkällans dataalternativ är tillgängligt för alla tabellbaserade källanslutningar, med undantag för Analytics-, Classifications-, Event Hubs- och Kinesis-anslutningar.
+
+När du har hittat källdata markerar du katalogen och klickar sedan på **[!UICONTROL Next]**.
+
+![select-data](../../../images/tutorials/dataflow/all-tabular/select-data.png)
 
 ## Mappa datafält till ett XDM-schema
 
