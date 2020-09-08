@@ -5,9 +5,9 @@ title: API-slutpunkt för textklassificering
 topic: Developer guide
 description: När textklassificeringstjänsten anger ett textfragment kan den klassificeras i en eller flera etiketter. Klassificeringen kan vara en enstaka etikett, flera etiketter eller hierarkisk.
 translation-type: tm+mt
-source-git-commit: 4f7b5ca50171f4948726c44dbf31025011adf35f
+source-git-commit: 31e4f1441676daa79f064c567ddc47e9198d0a0b
 workflow-type: tm+mt
-source-wordcount: '447'
+source-wordcount: '431'
 ht-degree: 2%
 
 ---
@@ -20,8 +20,6 @@ ht-degree: 2%
 >Innehåll och handel AI är i betaversion. Dokumentationen kan komma att ändras.
 
 När textklassificeringstjänsten anger ett textfragment kan den klassificeras i en eller flera etiketter. Klassificeringen kan vara en enstaka etikett, flera etiketter eller hierarkisk.
-
-Textklassificering använder en [FastText](https://fasttext.cc/) -baserad modell som har tränats med anpassade data.
 
 **API-format**
 
