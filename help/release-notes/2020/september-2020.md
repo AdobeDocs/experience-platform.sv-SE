@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: September 8, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 64b6b59923d549cdcbf35d2e375529aec8cf81b8
+source-git-commit: 23c7a0d82cb849568d6411c1a09c7a16b86d4954
 workflow-type: tm+mt
-source-wordcount: '397'
+source-wordcount: '507'
 ht-degree: 3%
 
 ---
@@ -21,6 +21,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 * [[!DNL Data Governance]](#governance)
 * [[!DNL-mål]](#destinations)
+* [[!DNL-Privacy Service]](#privacy)
 * [[!DNL-källor]](#sources)
 
 ## [!DNL Data Governance] {#governance}
@@ -33,7 +34,7 @@ Adobe Experience Platform Data Governance är en serie strategier och tekniker s
 | --- | --- |
 | Förbättringar av användargränssnittet för datauppsättningar | Flera nya sorterings- och filtreringskontroller har lagts till i användargränssnittet för datauppsättningar för att göra det enklare att arbeta med stora scheman: <ul><li>Sortera fält i alfabetisk ordning baserat på den fullständiga schemasökvägen.</li><li>Utför delsökningar på fältsökvägsnamn.</li><li>Filtrera fält utan etiketter, en markerad etikett eller en etikettkategori.</li></ul> |
 
-Mer information om tjänsten finns i [datastyrningsöversikten](../../data-governance/home.md) .
+Mer information om tjänsten finns i översikten över [](../../data-governance/home.md) datastyrning.
 
 ## Mål {#destinations}
 
@@ -46,6 +47,18 @@ I [Adobe kunddataplattform](../../rtcdp/overview.md)i realtid är destinationer 
 | UX-förbättringar | Användare kan komma åt textbundna tabellåtgärder för enklare åtkomst till primära åtgärder som att lägga till data, redigera schemaläggning och lägga till segment. Mer information finns i dokumentet för [målarbetsytan](../../rtcdp/destinations/destinations-workspace.md) . |
 
 Mer information finns på [destinationsöversikten](../../rtcdp/destinations/destinations-overview.md)
+
+## [!DNL Privacy Service] {#privacy}
+
+Flera juridiska och organisatoriska bestämmelser ger användarna rätt att få tillgång till eller ta bort sina personuppgifter från era datalager på begäran. Adobe Experience Platform [!DNL Privacy Service] tillhandahåller ett RESTful API och användargränssnitt som hjälper dig att hantera dessa dataförfrågningar från dina kunder. Med [!DNL Privacy Service]kan ni skicka in förfrågningar om åtkomst till och radering av privata eller personliga kunddata från Adobe Experience Cloud-program, vilket underlättar automatiserad efterlevnad av juridiska och organisatoriska sekretessbestämmelser.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Stöd för LGPD (Brasilien) | Privacy job can now be created under Brazil&#39;s [!DNL Lei Geral de Proteção de Dados] (LGPD) Regulation. Dessa jobb spåras enligt föreskriftskoden `lgpd_bra`. |
+
+Mer information om tjänsten finns i översikten över [](../../privacy-service/home.md) Privacy Servicen.
 
 ## Sources {#sources}
 
