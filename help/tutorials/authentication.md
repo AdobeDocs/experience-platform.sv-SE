@@ -5,7 +5,7 @@ title: Autentisera och få åtkomst till Experience Platform API:er
 topic: tutorial
 description: 'Det här dokumentet innehåller en stegvis självstudiekurs för att få tillgång till ett Adobe Experience Platform-utvecklarkonto för att ringa anrop till Experience Platform API:er. '
 translation-type: tm+mt
-source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
+source-git-commit: 76e6e1a5484dce0a4640c2ce1f43cf7d84e049bf
 workflow-type: tm+mt
 source-wordcount: '868'
 ht-degree: 0%
@@ -156,7 +156,7 @@ Om ditt svar liknar det som visas nedan är dina inloggningsuppgifter giltiga oc
 
 ## Använd Postman för JWT-autentisering och API-anrop
 
-[Postman](https://www.getpostman.com/) är ett populärt verktyg för att arbeta med RESTful API:er. I det här [mellanbrevet](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) beskrivs hur du kan konfigurera postman så att JWT-autentisering utförs automatiskt och använda den för att använda Adobe Experience Platform API:er.
+[Postman](https://www.postman.com/) är ett populärt verktyg för att arbeta med RESTful API:er. I det här [mellanbrevet](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) beskrivs hur du kan konfigurera postman så att JWT-autentisering utförs automatiskt och använda den för att använda Adobe Experience Platform API:er.
 
 ## Nästa steg
 
