@@ -5,7 +5,7 @@ title: Grunderna för schemakomposition
 topic: overview
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 4251dc292ead3ce4dc8aef68ff04bb774047160d
+source-git-commit: 4a76101cb8a7afb947bdce263a73f79d931db154
 workflow-type: tm+mt
 source-wordcount: '2815'
 ht-degree: 0%
@@ -173,7 +173,7 @@ Ett fält är den mest grundläggande byggstenen i ett schema. Fält innehåller
 
 * Sträng
 * Heltal
-* Siffra
+* Dubbel
 * Boolean
 * Array
 * Objekt
