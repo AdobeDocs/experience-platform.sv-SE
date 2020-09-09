@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Versionsinformation om Privacy Service
 topic: release notes
 translation-type: tm+mt
-source-git-commit: 4cfa64e3371496e2408fe8fee64d49883334917c
+source-git-commit: 6eee7e903d36ed641c9f8e6120f549c02cb4bce4
 workflow-type: tm+mt
-source-wordcount: '511'
+source-wordcount: '538'
 ht-degree: 5%
 
 ---
@@ -19,6 +19,14 @@ Det här dokumentet innehåller information om nya funktioner för Adobe Experie
 >[!NOTE]
 >
 >Den senaste versionsinformationen för andra [!DNL Experience Platform] tjänster finns [här](../release-notes/latest/latest.md).
+
+## 9 september 2020
+
+### Nya funktioner
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Stöd för LGPD (Brasilien) | Privacy job can now be created under Brazil&#39;s [!DNL Lei Geral de Proteção de Dados] (LGPD) Regulation. Dessa jobb spåras enligt föreskriftskoden `lgpd_bra`. |
 
 ## 8 april 2020
 
