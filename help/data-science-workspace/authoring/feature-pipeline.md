@@ -5,7 +5,7 @@ title: Skapa en funktionspipeline
 topic: Tutorial
 description: Med Adobe Experience Platform kan du skapa och skapa anpassade rörledningar för att utföra funktionstekniker i stor skala via Sensei Machine Learning Framework Runtime. I det här dokumentet beskrivs de olika klasserna som finns i en funktionspipeline och här finns en stegvis självstudiekurs för att skapa en anpassad funktionspipeline med hjälp av modellredigerings-SDK i PySpark.
 translation-type: tm+mt
-source-git-commit: 78f080fd7598799825c59a4fdfdcaf7d294560a3
+source-git-commit: 76e6e1a5484dce0a4640c2ce1f43cf7d84e049bf
 workflow-type: tm+mt
 source-wordcount: '1426'
 ht-degree: 0%
@@ -397,7 +397,7 @@ Nu när du har skapat din funktionspipeline måste du skapa en Docker-bild för 
 
 Du kan också använda följande Postman-samling för att underlätta arbetet med API:t för funktionspipeline:
 
-https://www.getpostman.com/collections/c5fc0d1d5805a5ddd41a
+https://www.postman.com/collections/c5fc0d1d5805a5ddd41a
 
 ### Skapa en rörlig motor för funktioner {#create-engine-api}
 
