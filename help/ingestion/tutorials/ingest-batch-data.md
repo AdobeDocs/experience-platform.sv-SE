@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Importera data till Adobe Experience Platform
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: d2f098cb9e4aaf5beaad02173a22a25a87a43756
+source-git-commit: 0816781620ca73a0511290d8d04b8f1a96db8a11
 workflow-type: tm+mt
-source-wordcount: '1185'
+source-wordcount: '1186'
 ht-degree: 0%
 
 ---
@@ -32,17 +32,19 @@ Visa arbetsytan Datauppsättningar genom att klicka **[!UICONTROL Datasets]** i 
 >
 >Klicka på filterikonen bredvid sökfältet för att använda filterfunktioner för att visa endast de datauppsättningar som är aktiverade för [!DNL Profile].
 
-![Visa alla datauppsättningar](../images/tutorials/ingest-batch-data/datasets_workspace.png)
+![Visa alla datauppsättningar](../images/tutorials/ingest-batch-data/datasets-overview.png)
 
 ## Skapa en datauppsättning
 
 Om du vill skapa en datauppsättning klickar du **[!UICONTROL Create Dataset]** i det övre högra hörnet på arbetsytan Datauppsättningar.
 
+![](../images/tutorials/ingest-batch-data/click-create-datasets.png)
+
 På **[!UICONTROL Create Dataset]** skärmen väljer du om du vill &quot;[!UICONTROL Create Dataset from Schema]&quot; eller &quot;[!UICONTROL Create Dataset from CSV File]&quot;.
 
 I den här självstudiekursen används ett schema för att skapa datauppsättningen. Klicka **[!UICONTROL Create Dataset from Schema]** för att fortsätta.
 
-![Välj datakälla](../images/tutorials/ingest-batch-data/create_dataset.png)
+![Välj datakälla](../images/tutorials/ingest-batch-data/create-dataset.png)
 
 ## Välj dataschema
 
@@ -50,7 +52,7 @@ Välj ett schema på **[!UICONTROL Select Schema]** skärmen genom att klicka p�
 
 När du har markerat alternativknappen bredvid det schema du vill använda klickar du på **[!UICONTROL Next]**.
 
-![Välj schema](../images/tutorials/ingest-batch-data/select_schema.png)
+![Välj schema](../images/tutorials/ingest-batch-data/select-schema.png)
 
 ## Konfigurera datauppsättning
 
@@ -64,7 +66,7 @@ På **[!UICONTROL Configure Dataset]** skärmen måste du ge datauppsättningen 
 
 När datauppsättningen har ett namn och en beskrivning klickar du på **[!UICONTROL Finish]**.
 
-![Konfigurera datauppsättning](../images/tutorials/ingest-batch-data/configure_dataset.png)
+![Konfigurera datauppsättning](../images/tutorials/ingest-batch-data/configure-dataset.png)
 
 ## Datauppsättningsaktivitet
 
@@ -74,7 +76,7 @@ Till höger på arbetsytan Datauppsättningar ser du fliken **[!UICONTROL Info]*
 
 På fliken Info finns även en **[!UICONTROL Profile]** växlingsknapp som används för att aktivera datauppsättningen för användning med [!DNL Real-time Customer Profile]. Användning av den här växeln, och [!DNL Real-time Customer Profile]den, förklaras mer ingående i det följande avsnittet.
 
-![Datauppsättningsaktivitet](../images/tutorials/ingest-batch-data/dataset_activity.png)
+![Datauppsättningsaktivitet](../images/tutorials/ingest-batch-data/sample-dataset.png)
 
 ## Aktivera datauppsättning för [!DNL Real-time Customer Profile]
 
@@ -86,15 +88,15 @@ Mer information om [!DNL Real-time Customer Profile] och hur du arbetar med iden
 
 Om du vill aktivera datauppsättningen för [!DNL Real-time Customer Profile]klickar du på **[!UICONTROL Profile]** växlingsknappen på **[!UICONTROL Info]** fliken.
 
-![Växla profil](../images/tutorials/ingest-batch-data/enable_dataset_unified_profile.png)
+![Växla profil](../images/tutorials/ingest-batch-data/dataset-profile-toggle.png)
 
 En dialogruta visas där du ombeds bekräfta att du vill aktivera datauppsättningen för [!DNL Real-time Customer Profile].
 
-![Dialogrutan Aktivera profil](../images/tutorials/ingest-batch-data/confirm_dataset_enable.png)
+![Dialogrutan Aktivera profil](../images/tutorials/ingest-batch-data/enable-dataset-for-profile.png)
 
 Klicka **[!UICONTROL Enable]** och växlingsknappen blir blå, vilket anger att den är aktiverad.
 
-![Aktiverad för profil](../images/tutorials/ingest-batch-data/dataset_enabled.png)
+![Aktiverad för profil](../images/tutorials/ingest-batch-data/profile-enabled-dataset.png)
 
 ## Lägg till data i datauppsättning
 
@@ -106,13 +108,13 @@ Klicka på **[!UICONTROL Add Data]** fliken för att börja lägga till data i d
 >
 >Plattformen har stöd för två filtyper för dataöverföring, parquet eller JSON. Du kan lägga till upp till fem filer i taget, där den maximala filstorleken för varje fil är 10 GB.
 
-![Fliken Lägg till data](../images/tutorials/ingest-batch-data/add_data.png)
+![Fliken Lägg till data](../images/tutorials/ingest-batch-data/drag-and-drop.png)
 
 ## Överföra en fil
 
 När du drar och släpper (eller bläddrar och väljer) en parquet eller JSON-fil som du vill ladda upp, [!DNL Platform] börjar bearbetningen omedelbart och en **[!UICONTROL Uploading]** dialogruta visas på **[!UICONTROL Add Data]** fliken med förloppet för filöverföringen.
 
-![Överför dialogruta](../images/tutorials/ingest-batch-data/uploading.png)
+![Överför dialogruta](../images/tutorials/ingest-batch-data/uploading-file.png)
 
 ## Datauppsättningsmått
 
@@ -120,7 +122,7 @@ När filen har laddats upp visas inte längre &quot;Inga batchar har lagts till&
 
 Längst ned på fliken finns en lista som visar **[!UICONTROL Batch ID]** vilka data som precis har importerats via [processen Lägg till data i datauppsättning](#add-data-to-dataset) . Här finns även information om batchen, inklusive **[!UICONTROL Ingested]** datum, antal **[!UICONTROL Records Ingested]** och aktuell batch **[!UICONTROL Status]**.
 
-![Datauppsättningsmått](../images/tutorials/ingest-batch-data/batch_loading.png)
+![Datauppsättningsmått](../images/tutorials/ingest-batch-data/batch-id.png)
 
 ## Batchinformation
 
@@ -130,7 +132,7 @@ Mer information och vanliga frågor om batchförbrukning finns i felsökningsgui
 
 Om du vill gå tillbaka till **[!UICONTROL Dataset Activity]** skärmen klickar du på datauppsättningens (**[!UICONTROL Loyalty Details]**) namn i den synliga sökvägen.
 
-![Gruppöversikt](../images/tutorials/ingest-batch-data/batch_overview.png)
+![Gruppöversikt](../images/tutorials/ingest-batch-data/batch-details.png)
 
 ## Förhandsgranska datauppsättning
 
@@ -138,7 +140,7 @@ När datauppsättningen är klar visas ett alternativ som **[!UICONTROL Preview 
 
 Klicka **[!UICONTROL Preview Dataset]** för att öppna en dialogruta med exempeldata i datauppsättningen. Om datauppsättningen skapades med ett schema visas information om datauppsättningsschemat till vänster i förhandsgranskningen. Du kan expandera schemat med hjälp av pilarna för att se schemastrukturen. Varje kolumnrubrik i förhandsvisningsdata representerar ett fält i datauppsättningen.
 
-![Information om datauppsättning](../images/tutorials/ingest-batch-data/dataset_details.png)
+![Information om datauppsättning](../images/tutorials/ingest-batch-data/dataset-preview.png)
 
 ## Nästa steg och ytterligare resurser
 
@@ -151,3 +153,4 @@ Om du vill veta mer om batchförbrukning kan du läsa översikten över [](../ba
 >Gränssnittet [!DNL Platform] som visas i följande video är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
 
 >[!VIDEO](https://video.tv.adobe.com/v/27269?quality=12&learn=on)
+dra
