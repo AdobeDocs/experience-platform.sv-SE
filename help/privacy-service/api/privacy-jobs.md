@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Jobb
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: e7bb3e8a418631e9220865e49a1651e4dc065daf
+source-git-commit: 5d06932cbfe8a04589d33590c363412c054fc9fd
 workflow-type: tm+mt
-source-wordcount: '1782'
+source-wordcount: '1309'
 ht-degree: 0%
 
 ---
@@ -15,6 +15,10 @@ ht-degree: 0%
 # Sekretessjobb
 
 Det här dokumentet beskriver hur du arbetar med sekretessjobb med API-anrop. Det omfattar särskilt användningen av `/job` slutpunkten i [!DNL Privacy Service] API:t. Innan du läser den här handboken bör du läsa avsnittet [](./getting-started.md#getting-started) Komma igång för att få viktig information som du behöver känna till för att kunna anropa API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
+
+>[!NOTE]
+>
+>Om du försöker hantera begäranden om samtycke eller avanmälan från kunder, se [slutpunktshandboken](./consent.md)för godkännande.
 
 ## Visa alla jobb {#list}
 
@@ -206,128 +210,6 @@ Ett lyckat svar returnerar information om de nya jobben.
 | `jobId` | Ett skrivskyddat, unikt systemgenererat ID för ett jobb. Det här värdet används i nästa steg när du söker efter ett specifikt jobb. |
 
 När du har skickat jobbförfrågan kan du fortsätta till nästa steg för att [kontrollera jobbets status](#check-status).
-
-### Skapa ett avanmälningsjobb {#opt-out}
-
-I det här avsnittet visas hur du gör en avanmälningsjobbbegäran med API:t.
-
-**API-format**
-
-```http
-POST /jobs
-```
-
-**Begäran**
-
-Följande begäran skapar en ny jobbbegäran, konfigurerad med attributen som anges i nyttolasten enligt beskrivningen nedan.
-
-```shell
-curl -X POST \
-  https://platform.adobe.io/data/privacy/gdpr/ \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'Content-Type: application/json' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -d '{
-    "companyContexts": [
-      {
-        "namespace": "imsOrgID",
-        "value": "{IMS_ORG}"
-      }
-    ],
-    "users": [
-      {
-        "key": "DavidSmith",
-        "action": ["opt-out-of-sale"],
-        "userIDs": [
-          {
-            "namespace": "email",
-            "value": "dsmith@acme.com",
-            "type": "standard"
-          },
-          {
-            "namespace": "ECID",
-            "type": "standard",
-            "value":  "443636576799758681021090721276",
-            "isDeletedClientSide": false
-          }
-        ]
-      },
-      {
-        "key": "user12345",
-        "action": ["opt-out-of-sale"],
-        "userIDs": [
-          {
-            "namespace": "email",
-            "value": "ajones@acme.com",
-            "type": "standard"
-          },
-          {
-            "namespace": "loyaltyAccount",
-            "value": "12AD45FE30R29",
-            "type": "integrationCode"
-          }
-        ]
-      }
-    ],
-    "include": ["Analytics", "AudienceManager"],
-    "expandIds": false,
-    "priority": "normal",
-    "analyticsDeleteMethod": "anonymize",
-    "regulation": "ccpa"
-}'
-```
-
-| Egenskap | Beskrivning |
-| --- | --- |
-| `companyContexts` **(Obligatoriskt)** | En array som innehåller autentiseringsinformation för din organisation. Varje identifierare i listan innehåller följande attribut: <ul><li>`namespace`: Namnutrymmet för en identifierare.</li><li>`value`: Identifierarens värde.</li></ul>Det **krävs** att en av identifierarna använder `imsOrgId` den som `namespace`, med `value` det unika ID:t för IMS-organisationen. <br/><br/>Ytterligare identifierare kan vara produktspecifika företagskvalificerare (till exempel `Campaign`) som identifierar en integrering med ett Adobe-program som tillhör din organisation. Möjliga värden är kontonamn, klientkoder, klient-ID:n eller andra programidentifierare. |
-| `users` **(Obligatoriskt)** | En array som innehåller en samling med minst en användare vars information du vill komma åt eller ta bort. Högst 1 000 användar-ID kan anges i en enda begäran. Varje användarobjekt innehåller följande information: <ul><li>`key`: En identifierare för en användare som används för att kvalificera separata jobb-ID:n i svarsdata. Det är bäst att välja en unik, lätt identifierbar sträng för det här värdet så att det är enkelt att referera till eller söka efter den senare.</li><li>`action`: En array som listar önskade åtgärder som ska utföras på data. För begäran om avanmälan från försäljning får arrayen endast innehålla värdet `opt-out-of-sale`.</li><li>`userIDs`: En samling identiteter för användaren. Antalet identiteter som en enskild användare kan ha är begränsat till nio. Varje identitet består av en `namespace`, en `value`och en namnutrymmeskvalificerare (`type`). Mer information om de här obligatoriska egenskaperna finns i [bilagan](appendix.md) .</li></ul> En mer detaljerad förklaring av `users` och `userIDs`information finns i [felsökningsguiden](../troubleshooting-guide.md#user-ids). |
-| `include` **(Obligatoriskt)** | En uppsättning Adobe-produkter som ska ingå i bearbetningen. Om det här värdet saknas eller är tomt på annat sätt, kommer begäran att avvisas. Inkludera endast produkter som din organisation är integrerad med. Mer information finns i avsnittet om [godkända produktvärden](appendix.md) i bilagan. |
-| `expandIDs` | En valfri egenskap som, när den anges till `true`, representerar en optimering för bearbetning av ID:n i programmen (stöds för närvarande bara av [!DNL Analytics]). Om det utelämnas blir det här värdet som standard `false`. |
-| `priority` | En valfri egenskap som används av Adobe Analytics och som anger prioriteten för bearbetning av begäranden. Godkända värden är `normal` och `low`. Om `priority` utelämnas används standardbeteendet `normal`. |
-| `analyticsDeleteMethod` | En valfri egenskap som anger hur Adobe Analytics ska hantera personuppgifter. Två möjliga värden accepteras för det här attributet: <ul><li>`anonymize`: Alla data som refereras av den angivna samlingen med användar-ID görs anonyma. Om `analyticsDeleteMethod` utelämnas är detta standardbeteendet.</li><li>`purge`: Alla data tas bort helt.</li></ul> |
-| `regulation` **(Obligatoriskt)** | Förordningen om begäran. Måste vara ett av följande fyra värden: <ul><li>`gdpr`</li><li>`ccpa`</li><li>`lgpd_bra`</li><li>`pdpa_tha`</li></ul> |
-
-**Svar**
-
-Ett lyckat svar returnerar information om de nya jobben.
-
-```json
-{
-    "jobs": [
-        {
-            "jobId": "6fc09b53-c24f-4a6c-9ca2-c6076bd9vjs0",
-            "customer": {
-                "user": {
-                    "key": "DavidSmith",
-                    "action": [
-                        "opt-out-of-sale"
-                    ]
-                }
-            }
-        },
-        {
-            "jobId": "6fc09b53-c24f-4a6c-9ca2-c6076bes0ewj2",
-            "customer": {
-                "user": {
-                    "key": "user12345",
-                    "action": [
-                        "opt-out-of-sale"
-                    ]
-                }
-            }
-        }
-    ],
-    "requestStatus": 1,
-    "totalRecords": 2
-}
-```
-
-| Egenskap | Beskrivning |
-| --- | --- |
-| `jobId` | Ett skrivskyddat, unikt systemgenererat ID för ett jobb. Det här värdet används för att hitta ett specifikt jobb i nästa steg. |
-
-När du har skickat jobbförfrågan kan du fortsätta till nästa steg för att kontrollera jobbets status.
 
 ## Kontrollera status för ett jobb {#check-status}
 
