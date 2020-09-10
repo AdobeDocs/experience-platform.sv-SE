@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Segmentjobb
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
+source-git-commit: 3926c989a05ee97f2a09c0ab38d6a444674563cb
 workflow-type: tm+mt
-source-wordcount: '993'
+source-wordcount: '1002'
 ht-degree: 1%
 
 ---
@@ -191,7 +191,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `segmentId` | ID:t för segmentdefinitionen som du vill skapa ett segmentjobb för. Mer information om segmentdefinitioner finns i [segmentdefinitionsslutpunktshandboken](./segment-definitions.md). |
+| `segmentId` | ID:t för segmentdefinitionen som du vill skapa ett segmentjobb för. Dessa segmentdefinitioner kan tillhöra olika sammanfogningsprinciper. Mer information om segmentdefinitioner finns i [segmentdefinitionsslutpunktshandboken](./segment-definitions.md). |
 
 **Svar**
 
