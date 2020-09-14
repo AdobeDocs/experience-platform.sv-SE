@@ -5,9 +5,9 @@ solution: Experience Platform
 title: Övervaka konton och dataflöden
 topic: overview
 translation-type: tm+mt
-source-git-commit: 737ee0bd55dbf178505c9be0875b2a0b75d3217a
+source-git-commit: 20c3037295b49cba45fcc5901803107dea26b3b2
 workflow-type: tm+mt
-source-wordcount: '896'
+source-wordcount: '936'
 ht-degree: 0%
 
 ---
@@ -47,6 +47,14 @@ På sorteringspanelen kan du komma åt konton från en viss källa. Välj den k�
 > Använd ![spektrumkontrollknappen](../../images/tutorials/monitor/spectrum-control.png) i **[!UICONTROL Name]** kolumnen för att skapa ett nytt källdataflöde för det valda kontot.
 
 ![välj konton](../../images/tutorials/monitor/accounts-sort.png)
+
+Dessutom kan du redigera befintlig kontoinformation och uppdatera dina kontoinloggningsuppgifter. Välj pennikonen för den kontoinformation som du vill redigera.
+
+![](../../images/tutorials/monitor/click-edit.png)
+
+Den **[!UICONTROL Edit account details]** modala visas. Från den här sidan kan du uppdatera din befintliga kontoinformation och autentiseringsuppgifter.
+
+![](../../images/tutorials/monitor/edit-account.png)
 
 På **[!UICONTROL Accounts]** sidan kan du visa en lista över befintliga dataflöden eller måldatauppsättningar som är kopplade till kontot du har öppnat. Markera ellipsknappen (`...`) för att visa fler tillgängliga alternativ för det valda dataflödet. Dessa alternativ beskrivs närmare nedan:
 
