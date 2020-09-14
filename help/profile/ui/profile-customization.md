@@ -5,9 +5,9 @@ title: Anpassning av profildetaljer
 description: 'Den här guiden innehåller stegvisa instruktioner för hur kundprofildata i realtid visas i Adobe Experience Platform användargränssnitt. '
 topic: guide
 translation-type: tm+mt
-source-git-commit: b08644102e6455d4c4c8b03e747411d3c05c7deb
+source-git-commit: 52cccd7436e203725a9fb4be8406332d8f23a71d
 workflow-type: tm+mt
-source-wordcount: '1151'
+source-wordcount: '1094'
 ht-degree: 0%
 
 ---
@@ -103,11 +103,7 @@ När du har sparat programmet återgår du till den [!UICONTROL Detail] flik dä
 
 ## Återställ standardkort
 
-Om du någon gång bestämmer dig för att du vill ta bort redigeringarna och återgå till standardvyn kan du snabbt och enkelt återställa alla standardkort och -attribut. Om du vill göra det väljer du **[!UICONTROL Modify dashboard]** och sedan **[!UICONTROL Restore default cards]**. Då tas alla anpassningar bort (inklusive storleksändring) som du har gjort bort. Du kan sedan välja **[!UICONTROL Save]** att spara ändringarna eller, om du inte vill återställa standardinställningen, välja **[!UICONTROL Cancel]** att behålla de ändringar du har gjort.
-
->[!NOTE]
->
->Var försiktig när du återställer standardkort och -attribut. När standardinställningen har återställts och sparats är det enda sättet att återgå till vyanpassningarna att skapa dem igen med de steg som beskrivs i det här dokumentet.
+Om du någon gång bestämmer dig för att du vill återställa standardkort som sedan dess har tagits bort, kan du snabbt och enkelt göra det. Markera först **[!UICONTROL Modify dashboard]** och sedan **[!UICONTROL Restore default cards]**. När standardkorten visas kan du välja **[!UICONTROL Save]** att spara dina ändringar eller välja **[!UICONTROL Cancel]** om du inte vill återställa standardkorten.
 
 ![](../images/profile-customization/profiles-restore-default.png)
 
