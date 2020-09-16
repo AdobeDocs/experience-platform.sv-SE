@@ -5,9 +5,9 @@ description: Lär dig spåra Experience Platform Web SDK-händelser
 seo-description: Lär dig spåra Experience Platform Web SDK-händelser
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon;send Beacon;documentUnloading;document Unloading;onBeforeEventSend;
 translation-type: tm+mt
-source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
+source-git-commit: 69ddfca041624123b03eb01d0f10a5bdb36cd119
 workflow-type: tm+mt
-source-wordcount: '688'
+source-wordcount: '1116'
 ht-degree: 0%
 
 ---
@@ -27,6 +27,7 @@ Data som skickas till Adobe Experience Cloud kan delas in i två kategorier:
 XDM-data är ett objekt vars innehåll och struktur matchar ett schema som du har skapat i Adobe Experience Platform. [Läs mer om hur du skapar ett schema.](../../xdm/tutorials/create-schema-ui.md)
 
 Alla XDM-data som du vill ingå i dina analyser, personaliseringar, målgrupper eller mål ska skickas med `xdm` alternativet.
+
 
 ```javascript
 alloy("sendEvent", {
@@ -53,7 +54,37 @@ För närvarande stöds inte sändning av data som inte matchar ett XDM-schema. 
 
 ### Inställning `eventType`
 
-I en XDM-upplevelsehändelse finns det ett `eventType` fält. Detta innehåller postens primära händelsetyp. Detta kan skickas som en del av `xdm` alternativet.
+I en XDM-upplevelsehändelse finns det ett valfritt `eventType` fält. Detta innehåller postens primära händelsetyp. Genom att ange en händelsetyp kan du skilja mellan olika händelser som du skickar in. XDM innehåller flera fördefinierade händelsetyper som du kan använda eller så skapar du alltid egna anpassade händelsetyper för dina användningsfall. Nedan visas en lista med alla fördefinierade händelsetyper som tillhandahålls av XDM.
+
+
+| **Händelsetyp:** | **Definition:** |
+| ---------------------------------- | ------------ |
+| advertising.completes | Anger om en mediefil som visas i tid har bevakats tills den är klar - det behöver inte innebära att användaren har tittat på hela videon. visningsprogrammet kunde ha hoppat över i förväg |
+| advertising.timePlayed | Beskriver hur mycket tid en användare har lagt på en viss medieresurs med tidsangivelser |
+| advertising.federated | Anger om en upplevelsehändelse har skapats via datafederation (datadelning mellan kunder) |
+| advertising.clicks | Klicka på åtgärder i en annons |
+| advertising.conversions | En fördefinierad åtgärd som utlöser en händelse för prestandautvärdering av en kund |
+| advertising.firstQuartiles | En digital videoannons har spelat upp 25 % av sin längd med normal hastighet |
+| advertising.impressions | Imponering(ar) av en annons till en slutanvändare som kan visas |
+| advertising.midpoints | En digital videoannons har spelat upp 50 % av sin längd med normal hastighet |
+| advertising.starts | En digital videoannons har börjat spela upp |
+| advertising.thirdQuartiles | En digital videoannons har spelat upp 75 % av sin längd med normal hastighet |
+| web.webpagedetails.pageViews | En webbsidas vy(er) har inträffat |
+| web.webinteraction.linkClicks | Klicka på en webblänk har inträffat |
+| commerce.checkouts | En åtgärd under en utcheckningsprocess för en produktlista kan vara mer än en utcheckningshändelse om det finns flera steg i en utcheckningsprocess. Om det finns flera steg används händelsetidsinformationen och sidan eller upplevelsen som refereras till för att identifiera det steg som enskilda händelser representerar i ordningen |
+| commerce.productListAdds | En produkt läggs till i produktlistan. Exempel på en produkt som läggs till i en kundvagn |
+| commerce.productListOpens | Initieringar av en ny produktlista. Exempel på en kundvagn skapas |
+| commerce.productListRemovals | Borttagning av en produktpost från en produktlista. Exempel på en produkt som tas bort från en kundvagn |
+| commerce.productListReopens | En produktlista som inte längre var tillgänglig (övergiven) har återaktiverats av användaren. Exempel via en ommarknadsföringsaktivitet |
+| commerce.productListViews | En produktlistas vy(er) har inträffat |
+| commerce.productViews | En eller flera produktvyer har skapats |
+| commerce.purchases | En beställning har godkänts. Inköp är den enda nödvändiga åtgärden i en handelskonvertering. Köpet måste ha en produktlista som refereras |
+| commerce.saveForLaters | Produktlistan sparas för framtida bruk. Exempel på en önskelista för en produkt |
+| delivery.feedback | Feedback-händelser för leverans. Exempel på feedback-händelser för e-postleverans |
+
+
+De här händelsetyperna visas i en listruta om du använder tillägget Launch eller så kan du alltid skicka dem utan Launch. De kan skickas in som en del av `xdm` alternativet.
+
 
 ```javascript
 alloy("sendEvent", {
@@ -73,6 +104,7 @@ alloy("sendEvent", {
 
 Alternativt kan `eventType` händelsen skickas till händelsekommandot med hjälp av `type` alternativet . Bakom scenerna läggs detta till i XDM-data. Med alternativet `type` som kan du enkelt ställa in `eventType` utan att behöva ändra XDM-nyttolasten.
 
+
 ```javascript
 var myXDMData = { ... };
 
@@ -85,6 +117,7 @@ alloy("sendEvent", {
 ### Åsidosätta datauppsättnings-ID
 
 I vissa fall kanske du vill skicka en händelse till en annan datauppsättning än den som konfigurerats i konfigurationsgränssnittet. Därför måste du ange alternativet `datasetId` för `sendEvent` kommandot:
+
 
 ```javascript
 var myXDMData = { ... };
@@ -102,7 +135,8 @@ Du kan även lägga till anpassad identitetsinformation till händelsen. Se [Hä
 
 ## Använda API:t sendBeacon
 
-Det kan vara svårt att skicka händelsedata precis innan webbsidans användare har navigerat. Om begäran tar för lång tid kan webbläsaren avbryta den. Vissa webbläsare har implementerat ett webbläsar-API som anropas `sendBeacon` för att göra det enklare att samla in data under tiden. När du använder `sendBeacon`webbläsaren görs en webbförfrågan i det globala webbläsarsammanhanget. Det innebär att webbläsaren gör beacon-begäran i bakgrunden och inte håller upp sidnavigeringen. Om du vill ange att Adobe Experience Platform [!DNL Web SDK] ska använda `sendBeacon`lägger du till alternativet `"documentUnloading": true` i händelsekommandot.  Här är ett exempel:
+Det kan vara svårt att skicka händelsedata precis innan webbsidans användare har navigerat. Om begäran tar för lång tid kan webbläsaren avbryta den. Vissa webbläsare har implementerat ett webbläsar-API som anropas `sendBeacon` för att göra det enklare att samla in data under tiden. När webbläsaren använder `sendBeacon`den görs en webbförfrågan i det globala webbläsarsammanhanget. Det innebär att webbläsaren gör beacon-begäran i bakgrunden och inte håller upp sidnavigeringen. Om du vill ange att Adobe Experience Platform [!DNL Web SDK] ska använda `sendBeacon`lägger du till alternativet `"documentUnloading": true` i händelsekommandot.  Här är ett exempel:
+
 
 ```javascript
 alloy("sendEvent", {
@@ -125,6 +159,7 @@ Webbläsare har angett begränsningar för hur mycket data som kan skickas med `
 ## Hantera svar från händelser
 
 Om du vill hantera ett svar från en händelse kan du få ett meddelande om att åtgärden lyckades eller misslyckades enligt följande:
+
 
 ```javascript
 alloy("sendEvent", {
@@ -150,6 +185,7 @@ alloy("sendEvent", {
 ## Ändra händelser globalt {#modifying-events-globally}
 
 Om du vill lägga till, ta bort eller ändra fält från händelsen globalt, kan du konfigurera ett `onBeforeEventSend` återanrop.  Det här återanropet anropas varje gång en händelse skickas.  Det här återanropet skickas i ett händelseobjekt med ett `xdm` fält.  Ändra `event.xdm` om du vill ändra data som skickas i händelsen.
+
 
 ```javascript
 alloy("configure", {
