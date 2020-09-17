@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Mappa en CSV-fil till ett XDM-schema
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: d2f098cb9e4aaf5beaad02173a22a25a87a43756
+source-git-commit: 785bc95ff3460ebbb1a126ac5fec85ad165ca973
 workflow-type: tm+mt
-source-wordcount: '1309'
+source-wordcount: '1297'
 ht-degree: 2%
 
 ---
@@ -61,6 +61,10 @@ Avsnittet visas när filen har överförts och visar de tio första dataraderna.
 
 Steget **[!UICONTROL Mapping]** visas. Kolumnerna i CSV-filen listas under **[!UICONTROL Source Field]**, med motsvarande XDM-schemafält listade under **[!UICONTROL Target Field]**. Omarkerade målfält markeras med röda konturer. Du kan använda filterfältalternativet för att begränsa listan med tillgängliga källfält.
 
+>[!TIP]
+>
+>[!DNL Platform] innehåller intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du har valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall.
+
 Om du vill mappa en CSV-kolumn till ett XDM-fält väljer du schemaikonen bredvid kolumnens motsvarande målfält.
 
 ![](../images/tutorials/map-a-csv-file/mapping.png)
@@ -69,17 +73,9 @@ Fönstret **[!UICONTROL Select schema field]** visas. Här kan du navigera i XDM
 
 ![](../images/tutorials/map-a-csv-file/select-schema-field.png)
 
-Skärmen visas igen och det markerade XDM-fältet visas nu under **[!UICONTROL Mapping]** **[!UICONTROL Target Field]**.
+När du har slutfört stegen för de återstående omappade källfälten visas skärmen igen och det markerade XDM-fältet visas nu under **[!UICONTROL Mapping]** **[!UICONTROL Target Field]**.
 
 ![](../images/tutorials/map-a-csv-file/field-mapped.png)
-
-Om du inte vill mappa en viss CSV-kolumn kan du ta bort mappningen genom att klicka på **borttagningsikonen** bredvid målfältet. Du kan också ta bort alla mappningar genom att markera **[!UICONTROL Clear all mappings button]**.
-
-![](../images/tutorials/map-a-csv-file/remove-mapping.png)
-
-Om du vill lägga till en ny mappning väljer du **[!UICONTROL Add new mapping]** längst upp i **[!UICONTROL Source Field]** listan.
-
-![](../images/tutorials/map-a-csv-file/add-mapping.png)
 
 När du mappar fält kan du även inkludera funktioner för att beräkna värden baserat på indatakällfält. Mer information finns i avsnittet om [mappningsfunktioner](#mapping-functions) i bilagan.
 
@@ -89,7 +85,7 @@ Beräknade fält tillåter att värden skapas baserat på attributen i indatabla
 
 Klicka på **[!UICONTROL Add calculated field]** knappen för att fortsätta.
 
-![](../images/tutorials/map-a-csv-file/add-calculated-field.png)
+![](../images/tutorials/map-a-csv-file/add-calculate-field.png)
 
 Panelen **[!UICONTROL Create calculated field]** visas. Den vänstra dialogrutan innehåller de fält, funktioner och operatorer som stöds i beräkningsfält. Välj en av flikarna för att börja lägga till funktioner, fält eller operatorer i uttrycksredigeraren.
 
