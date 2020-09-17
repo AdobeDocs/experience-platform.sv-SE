@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användarhandbok för segmenteringstjänsten
 topic: ui guide
 translation-type: tm+mt
-source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
+source-git-commit: c9ff4d26accd880d5169526f84be607fc722883b
 workflow-type: tm+mt
-source-wordcount: '1327'
+source-wordcount: '1417'
 ht-degree: 0%
 
 ---
@@ -41,7 +41,19 @@ Klicka på **[!UICONTROL Browse]** fliken för att visa en lista över alla segm
 
 ![](../images/ui/overview/segment-browse-all.png)
 
-I den här vyn visas information om segmentdefinitionen, inklusive utvärderingsmetod, skapad den och senaste ändringsdatum.
+I den här vyn visas information om segmentdefinitionen, inklusive uppdelning, kurva, antal profiler, utvärderingsmetod, datum när segmentet skapades och senaste ändringsdatum.
+
+Neddelningen visar ett stolpdiagram som visar procentandelen profiler som tillhör var och en av följande statusvärden: [!UICONTROL Entered], [!UICONTROL Realized]och [!UICONTROL Exiting].
+
+![](../images/ui/overview/segment-browse-breakdown.png)
+
+| Status | Beskrivning |
+| ------ | ----------- |
+| Anges | En ny profil inom segmentet. |
+| Realiserad | En befintlig profil som finns kvar inom segmentet. |
+| Avslutar | En befintlig profil som lämnar segmentet. |
+
+Kurvan anger hur många procent av profilerna som ändras inom en segmentdefinition jämfört med den senaste gången segmentjobbet kördes, medan antalet profiler representerar det totala antalet profiler som kvalificerar sig för segmentet.
 
 Utvärderingsmetoden kan antingen vara direktuppspelning eller batch. Direktuppspelningssegment utvärderas ständigt när data kommer in i systemet. Gruppsegmenten utvärderas enligt ett angivet schema.
 
