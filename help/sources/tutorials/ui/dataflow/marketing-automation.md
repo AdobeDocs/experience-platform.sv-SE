@@ -5,9 +5,9 @@ title: Konfigurera ett dataflöde för en koppling för automatiserad marknadsf�
 topic: overview
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en [!DNL Platform] datauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt automatiserade marknadsföringskonto.
 translation-type: tm+mt
-source-git-commit: 5d4aa8eebc1837a5d8b275fa631f4af73c38158e
+source-git-commit: 785bc95ff3460ebbb1a126ac5fec85ad165ca973
 workflow-type: tm+mt
-source-wordcount: '1297'
+source-wordcount: '1324'
 ht-degree: 0%
 
 ---
@@ -75,9 +75,13 @@ Dialogrutan **[!UICONTROL Select schema]** visas. Välj det schema som du vill a
 
 Beroende på dina behov kan du välja att mappa fält direkt eller använda mappningsfunktioner för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om datamappning och mappningsfunktioner finns i självstudiekursen om att [mappa CSV-data till XDM-schemafält](../../../../ingestion/tutorials/map-a-csv-file.md).
 
-När källdata har mappats klickar du på **[!UICONTROL Next]**.
+>[!TIP]
+>
+>[!DNL Platform] innehåller intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du har valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall.
 
-![](../../../images/tutorials/dataflow/all-tabular/mapping-updated.png)
+När källdata har mappats väljer du **[!UICONTROL Next]**.
+
+![](../../../images/tutorials/dataflow/all-tabular/mapping.png)
 
 ## Schemalägg körning av inmatning
 
