@@ -5,9 +5,9 @@ title: Felsökningsguide för Data Science Workspace
 topic: Troubleshooting
 description: Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform Data Science Workspace.
 translation-type: tm+mt
-source-git-commit: 194a29124949571638315efe00ff0b04bff19303
+source-git-commit: 76e598c743df320e4b3cb821e118749fe7304d9c
 workflow-type: tm+mt
-source-wordcount: '680'
+source-wordcount: '750'
 ht-degree: 0%
 
 ---
@@ -112,3 +112,7 @@ Du kan konfigurera resurser genom att lägga till följande block i den första 
 ```
 
 Mer information om konfiguration av [!DNL Spark] klusterresurser, inklusive en fullständig lista över konfigurerbara egenskaper, finns i [användarhandboken](./jupyterlab/overview.md#kernels)för JupyterLab.
+
+## Varför får jag ett fel när jag försöker köra vissa uppgifter för större datamängder?
+
+Om du får ett felmeddelande av en anledning som `Reason: Remote RPC client disassociated. Likely due to containers exceeding thresholds, or network issues.` detta innebär det vanligtvis att drivrutinen eller en exekvering har slut på minne. Mer information om databegränsningar och hur du utför åtgärder på stora datauppsättningar finns i dokumentationen om [dataåtkomst](./jupyterlab/access-notebook-data.md) för JupyterLab-anteckningsböcker. Vanligtvis kan det här felet lösas genom att ändra `mode` från `interactive` till `batch`.
