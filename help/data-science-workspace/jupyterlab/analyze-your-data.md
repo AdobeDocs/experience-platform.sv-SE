@@ -5,7 +5,7 @@ title: Analysera dina data med bärbara datorer
 topic: Tutorial
 description: I den här självstudiekursen fokuseras på hur du använder Jupyter-anteckningsböcker som är byggda i Data Science Workspace för att få tillgång till, utforska och visualisera dina data.
 translation-type: tm+mt
-source-git-commit: 33b14fed0d52792de0486897c11dd86c1ea2dd45
+source-git-commit: 3876c33a2d20481f45bd12eda3921898e9e65654
 workflow-type: tm+mt
 source-wordcount: '1731'
 ht-degree: 0%
@@ -41,7 +41,7 @@ Som standard fungerar Tensorflow-receptet i ett GPU-kluster och Python körs i e
 
 Klicka på fliken Datavetenskap i den övre menyn i [!DNL Adobe Experience Platform] användargränssnittet för att ta dig till arbetsytan Datavetenskap. På den här sidan klickar du på den [!DNL JupyterLab] flik som öppnar [!DNL JupyterLab] startprogrammet. Du bör se en liknande sida.
 
-![](../images/jupyterlab/analyze-data/jupyterlab_launcher.png)
+![](../images/jupyterlab/analyze-data/jupyterlab-launcher.png)
 
 I vår självstudiekurs kommer vi att använda [!DNL Python] 3 i Jupyter Notebook för att visa hur du kommer åt och utforskar data. På startsidan finns exempelanteckningsböcker. Vi kommer att använda recept för [!DNL Python] 3.
 
