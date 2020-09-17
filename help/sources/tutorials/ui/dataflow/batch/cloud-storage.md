@@ -5,9 +5,9 @@ title: Konfigurera ett dataflöde för en batchanslutning för molnlagring i anv
 topic: overview
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt molnlagringskonto.
 translation-type: tm+mt
-source-git-commit: c15f582eeaa895f03441b2f488686a9a48942f3d
+source-git-commit: 785bc95ff3460ebbb1a126ac5fec85ad165ca973
 workflow-type: tm+mt
-source-wordcount: '1493'
+source-wordcount: '1520'
 ht-degree: 0%
 
 ---
@@ -63,7 +63,7 @@ Filformat som stöds för ett molnlagringskonto inkluderar även JSON och Parque
 
 ## Mappa datafält till ett XDM-schema
 
-Steget visas med ett interaktivt gränssnitt som du kan använda för att mappa källdata till en **[!UICONTROL Mapping]** [!DNL Platform] datauppsättning. Källfiler som är formaterade i JSON eller Parquet måste vara XDM-kompatibla och kräver inte att du konfigurerar mappningen manuellt. CSV-filer kräver däremot att du uttryckligen konfigurerar mappningen, men låter dig välja vilka källdatafält som ska mappas.
+Steget visas och innehåller ett interaktivt gränssnitt för att mappa källdata till en **[!UICONTROL Mapping]** [!DNL Platform] datauppsättning. Källfiler som är formaterade i JSON eller Parquet måste vara XDM-kompatibla och kräver inte att du konfigurerar mappningen manuellt. CSV-filer kräver däremot att du uttryckligen konfigurerar mappningen, men låter dig välja vilka källdatafält som ska mappas.
 
 Välj en datauppsättning för inkommande data som ska importeras till. Du kan antingen använda en befintlig datauppsättning eller skapa en ny.
 
@@ -88,6 +88,10 @@ Dialogrutan **[!UICONTROL Select schema]** visas. Välj det schema som du vill t
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-schema.png)
 
 Beroende på dina behov kan du välja att mappa fält direkt eller använda mappningsfunktioner för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om datamappning och mappningsfunktioner finns i självstudiekursen om att [mappa CSV-data till XDM-schemafält](../../../../../ingestion/tutorials/map-a-csv-file.md).
+
+>[!TIP]
+>
+>[!DNL Platform] innehåller intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du har valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall.
 
 När källdata har mappats väljer du **[!UICONTROL Next]**.
 
