@@ -5,7 +5,7 @@ title: Frågetjänst i anteckningsbok för Jupyter
 topic: Tutorial
 description: Med Adobe Experience Platform kan du använda SQL (Structured Query Language) i arbetsytan Data Science genom att integrera Query Service i JupyterLab som standardfunktion. I den här självstudiekursen visas exempel på SQL-frågor för vanliga användningsområden för att utforska, omvandla och analysera Adobe Analytics-data.
 translation-type: tm+mt
-source-git-commit: 3876c33a2d20481f45bd12eda3921898e9e65654
+source-git-commit: 69c466658e1cb41f4da957148e63b962ad975a21
 workflow-type: tm+mt
 source-wordcount: '812'
 ht-degree: 1%
@@ -118,14 +118,12 @@ SELECT Substring(timestamp, 1, 10)                               AS Day,
        Count(DISTINCT concat(enduserids._experience.aaid.id, 
                              _experience.analytics.session.num)) AS Visit_Count 
 FROM   {target_table}
-WHERE _acp_year = {target_year} 
-      AND _acp_month = {target_month}  
-      AND _acp_day = {target_day}
+WHERE TIMESTAMP = to_timestamp('{target_year}-{target_month}-{target_day}')
 GROUP  BY Day, Hour
 ORDER  BY Hour;
 ```
 
-I ovanstående fråga ställs målet `_acp_year` i `WHERE` -satsen in på att vara värdet för `target_year`. Inkludera variabler i SQL-frågor genom att innesluta dem i klammerparenteser (`{}`).
+I ovanstående fråga ställs tidsstämpeln i `WHERE` -satsen in på värdet för `target_year`. Inkludera variabler i SQL-frågor genom att innesluta dem i klammerparenteser (`{}`).
 
 Den första raden i frågan innehåller den valfria variabeln `hourly_visitor`. Frågeresultat lagras i den här variabeln som en Pandas-dataram. Om du lagrar resultat i en dataram kan du senare visualisera frågeresultaten med ett önskat [!DNL Python] paket. Kör följande [!DNL Python] kod i en ny cell för att generera ett stapeldiagram:
 
@@ -160,9 +158,7 @@ SELECT Substring(timestamp, 1, 10)                        AS Day,
                     _experience.analytics.session.num,
                     _experience.analytics.session.depth)) AS Count 
 FROM   {target_table}
-WHERE  _acp_year = {target_year} 
-       AND _acp_month = {target_month}  
-       AND _acp_day = {target_day}
+WHERE TIMESTAMP = to_timestamp('{target_year}-{target_month}-{target_day}')
 GROUP  BY Day, Hour
 ORDER  BY Hour;
 ```
@@ -210,9 +206,7 @@ SELECT concat(enduserids._experience.aaid.id,
               _experience.analytics.session.num) AS aaid_sess_key, 
        Count(timestamp)                          AS Count 
 FROM   {target_table}
-WHERE  _acp_year = {target_year} 
-       AND _acp_month = {target_month}  
-       AND _acp_day = {target_day}
+WHERE TIMESTAMP = to_timestamp('{target_year}-{target_month}-{target_day}')
 GROUP BY aaid_sess_key
 ORDER BY Count DESC;
 ```
@@ -243,9 +237,7 @@ Följande fråga returnerar de tio vanligaste sidorna för ett angivet datum:
 SELECT web.webpagedetails.name                 AS Page_Name, 
        Sum(web.webpagedetails.pageviews.value) AS Page_Views 
 FROM   {target_table}
-WHERE  _acp_year = {target_year}
-       AND _acp_month = {target_month}
-       AND _acp_day = {target_day}
+WHERE TIMESTAMP = to_timestamp('{target_year}-{target_month}-{target_day}')
 GROUP  BY web.webpagedetails.name 
 ORDER  BY page_views DESC 
 LIMIT  10;
@@ -262,9 +254,7 @@ Följande fråga returnerar de tio mest aktiva användarna för ett angivet datu
 SELECT enduserids._experience.aaid.id AS aaid, 
        Count(timestamp)               AS Count
 FROM   {target_table}
-WHERE  _acp_year = {target_year}
-       AND _acp_month = {target_month}
-       AND _acp_day = {target_day}
+WHERE TIMESTAMP = to_timestamp('{target_year}-{target_month}-{target_day}')
 GROUP  BY aaid
 ORDER  BY Count DESC
 LIMIT  10;
@@ -281,9 +271,7 @@ Följande fråga returnerar de tio städer som genererar de flesta användarakti
 SELECT concat(placeContext.geo.stateProvince, ' - ', placeContext.geo.city) AS state_city, 
        Count(timestamp)                                                     AS Count
 FROM   {target_table}
-WHERE  _acp_year = {target_year}
-       AND _acp_month = {target_month}
-       AND _acp_day = {target_day}
+WHERE TIMESTAMP = to_timestamp('{target_year}-{target_month}-{target_day}')
 GROUP  BY state_city
 ORDER  BY Count DESC
 LIMIT  10;
