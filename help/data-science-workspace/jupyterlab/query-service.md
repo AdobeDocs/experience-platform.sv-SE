@@ -5,7 +5,7 @@ title: Frågetjänst i anteckningsbok för Jupyter
 topic: Tutorial
 description: Med Adobe Experience Platform kan du använda SQL (Structured Query Language) i arbetsytan Data Science genom att integrera Query Service i JupyterLab som standardfunktion. I den här självstudiekursen visas exempel på SQL-frågor för vanliga användningsområden för att utforska, omvandla och analysera Adobe Analytics-data.
 translation-type: tm+mt
-source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
+source-git-commit: 3876c33a2d20481f45bd12eda3921898e9e65654
 workflow-type: tm+mt
 source-wordcount: '812'
 ht-degree: 1%
@@ -37,7 +37,7 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
 
 1. I [[!DNL Experience Platform]](https://platform.adobe.com)navigerar du till **[!UICONTROL Notebooks]** från den vänstra navigeringskolumnen. Tillåt ett ögonblick för JupyterLab att läsas in.
 
-   ![](../images/jupyterlab/query/jupyterlab_launcher.png)
+   ![](../images/jupyterlab/query/jupyterlab-launcher.png)
 
    >[!NOTE]
    >
@@ -289,6 +289,6 @@ ORDER  BY Count DESC
 LIMIT  10;
 ```
 
-## Nästa steg <!-- omit in toc -->
+## Nästa steg
 
 I den här självstudiekursen visades några exempel på användning av exempel [!DNL Query Service] i [!DNL Jupyter] bärbara datorer. Följ [självstudiekursen Analysera data med Jupyter Notebooks](./analyze-your-data.md) för att se hur liknande åtgärder utförs med SDK för dataåtkomst.
