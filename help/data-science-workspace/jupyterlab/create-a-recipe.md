@@ -5,9 +5,9 @@ title: Skapa ett recept med Jupyter-anteckningsböcker
 topic: Tutorial
 description: Den här självstudiekursen går igenom två huvudavsnitt. Först skapar du en maskininlärningsmodell med hjälp av en mall i JupyterLab Notebook. Därefter ska du använda anteckningsboken för att hämta arbetsflöden i JupyterLab för att skapa ett recept i arbetsytan Data Science.
 translation-type: tm+mt
-source-git-commit: 6e4a3ebe84c82790f58f8ec54e6f72c2aca0b7da
+source-git-commit: 3876c33a2d20481f45bd12eda3921898e9e65654
 workflow-type: tm+mt
-source-wordcount: '2317'
+source-wordcount: '2316'
 ht-degree: 0%
 
 ---
@@ -34,11 +34,11 @@ Med den [!UICONTROL Recipe Builder] bärbara datorn kan du köra utbildning och 
 >
 >Anteckningsboken Recipe Builder har stöd för att arbeta med alla filformat, men för närvarande har funktionen Skapa recept bara stöd [!DNL Python].
 
-![](../images/jupyterlab/create-recipe/recipe-builder.png)
+![](../images/jupyterlab/create-recipe/recipe_builder.png)
 
-När du klickar på anteckningsboken i Recipe Builder i startprogrammet öppnas anteckningsboken på fliken. Mallen som används i anteckningsboken är Python Retail Sales Forecasting Recipe, som också finns i [denna offentliga databas](https://github.com/adobe/experience-platform-dsw-reference/tree/master/recipes/python/retail/)
+När du klickar på anteckningsboken i Recipe Builder från startprogrammet öppnas anteckningsboken på fliken. Mallen som används i anteckningsboken är Python Retail Sales Forecasting Recipe, som också finns i [denna offentliga databas](https://github.com/adobe/experience-platform-dsw-reference/tree/master/recipes/python/retail/)
 
-Du ser att det finns ytterligare tre åtgärder i verktygsfältet: - **[!UICONTROL Train]**, **[!UICONTROL Score]** och **[!UICONTROL Create Recipe]**. De här ikonerna visas bara i den [!UICONTROL Recipe Builder] anteckningsboken. Mer information om de här åtgärderna kommer att behandlas [i avsnittet](#training-and-scoring) Utbildning och poängsättning när du har skapat din recept i anteckningsboken.
+Du ser att det finns ytterligare tre åtgärder i verktygsfältet: - **[!UICONTROL Train]**, **[!UICONTROL Score]** och **[!UICONTROL Create Recipe]**. De här ikonerna visas bara i [!UICONTROL Recipe Builder] anteckningsboken. Mer information om de här åtgärderna kommer att behandlas [i avsnittet](#training-and-scoring) Utbildning och poängsättning när du har skapat din recept i anteckningsboken.
 
 ![](../images/jupyterlab/create-recipe/toolbar_actions.png)
 
