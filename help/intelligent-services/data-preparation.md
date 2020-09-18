@@ -5,9 +5,9 @@ title: Förbered data för användning i intelligenta tjänster
 topic: Intelligent Services
 description: 'För att Intelligent Services ska kunna hitta insikter från era marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. Intelligenta tjänster utnyttjar XDM-scheman (Experience Data Model) för att uppnå detta. Närmare bestämt måste alla datauppsättningar som används i Intelligent Services] överensstämma med CEE-XDM-schemat (Consumer Experience Event). '
 translation-type: tm+mt
-source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
+source-git-commit: d9bf87e41fe002ac1d70a241b48c7b9fd1139d6c
 workflow-type: tm+mt
-source-wordcount: '1979'
+source-wordcount: '1978'
 ht-degree: 0%
 
 ---
@@ -238,7 +238,7 @@ Detta fält innehåller information om marknadsföringsaktiviteter som är aktiv
 
 Fullständig information om samtliga obligatoriska underfält för `xdm:productListItems`finns i [produktresumén](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/marketing.schema.md) .
 
-## Mappning och inhämtning av data (#mapping)
+## Mappning och inhämtning av data {#mapping}
 
 När du har fastställt om dina data för marknadsföringshändelser kan mappas till CEE-schemat är nästa steg att avgöra vilka data du ska hämta till [!DNL Intelligent Services]. Alla historiska data som används i [!DNL Intelligent Services] måste ligga inom den kortaste tidsgränsen på fyra månaders data plus det antal dagar som är avsett som en uppslagsperiod.
 
