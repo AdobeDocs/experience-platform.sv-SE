@@ -2,9 +2,9 @@
 product: adobe experience platform
 audience: user
 user-guide-title: Handbok för kunddataplattform i realtid
-user-guide-description: Built on Adobe Experience Platform, Adobe Real-time Customer Data Platform (Real-time CDP) helps companies bring together known and anonymous data from multiple enterprise sources in order to create customer profiles that can be used to provide personalized customer experiences across all channels and devices in real time.
+user-guide-description: Bring together known and anonymous data from multiple enterprise sources to create customer profiles, create audience segments from those profiles, and activate those segments to third-party destinations.
 translation-type: tm+mt
-source-git-commit: 1565c19fdd07935e503e9faa2d9f748331d7f933
+source-git-commit: 72b2172bbcc8613a2030b4784270321c3933f6aa
 workflow-type: tm+mt
 source-wordcount: '460'
 ht-degree: 4%
@@ -112,7 +112,7 @@ ht-degree: 4%
          * [Autentiseringsflöde för mål för sociala nätverk](/help/rtcdp/destinations/social-network-destinations-workflow.md)
          * [Adobe Livefyre-tillägg](/help/rtcdp/destinations/adobe-livefyre-extension.md)
          * [Facebook-mål](/help/rtcdp/destinations/facebook-destination.md)
-      * Undersökningsmål {#survey-destinations}
+      * Socialundersökningsmål {#survey-destinations}
          * [Översikt över undersökningsmål](/help/rtcdp/destinations/survey-destinations.md)
          * [Foresee-tillägg](/help/rtcdp/destinations/foresee-extension.md)
          * [InMoment-tillägg](/help/rtcdp/destinations/inmoment-extension.md)
