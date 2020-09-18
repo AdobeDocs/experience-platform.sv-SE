@@ -5,9 +5,9 @@ title: Självstudiekurser för datavetenskap
 topic: tutorial
 description: Adobe Experience Platform Data Science Workspace använder maskininlärning och artificiell intelligens för att skapa insikter utifrån era data. Data Science Workspace är integrerat i Adobe Experience Platform och hjälper er att göra prognoser med hjälp av ert innehåll och era dataresurser över alla Adobe-lösningar.
 translation-type: tm+mt
-source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
+source-git-commit: 10c9ce66b0fb3b5d1be931f37d95d283673bef15
 workflow-type: tm+mt
-source-wordcount: '1208'
+source-wordcount: '1295'
 ht-degree: 0%
 
 ---
@@ -41,10 +41,18 @@ Om du vill veta mer och få de värden som krävs för att utföra CRUD-åtgärd
 - Få åtkomst till och förstå [!DNL JupyterLab] gränssnittet.
 - Förstå kodceller och tillgängliga kärnor i [!DNL JupyterLab].
 - Förstå GPU- och minnesserverkonfiguration i [!DNL Python]/R.
-- Läs och fråga efter [!DNL Platform] data med hjälp av anteckningsböcker.
-- Förstå datagränserna för bärbara datorer.
 
 Mer information finns i användarhandboken för [JupyterLab](../data-science-workspace/jupyterlab/overview.md).
+
+## Dataåtkomst i JupyterLab-anteckningsböcker
+
+JupyterLab i Data Science Workspace stöder för närvarande bärbara datorer för [!DNL Python], R, PySpark och Scala. Varje kärna som stöds har inbyggda funktioner som gör att du kan läsa plattformsdata från en datamängd i en anteckningsbok. Stöd för sidnumrering av data är dock begränsat till bärbara datorer [!DNL Python] och R-datorer. Den här guiden fokuserar på hur du använder JupyterLab-anteckningsböcker för att få tillgång till dina data.
+
+**Den här guiden hjälper dig att:**
+- Läs, skriv och fråga plattformsdata med hjälp av de bärbara datorerna Python, R, PySpark och Scala.
+- Förstå läsbegränsningarna för alla typer av bärbara datorer.
+
+Mer information finns i utvecklarhandboken för [JupyterLab-programmet för dataåtkomst till bärbara datorer](../data-science-workspace/jupyterlab/access-notebook-data.md)
 
 ## Paketera källfiler för [!DNL Docker] receptframtagning
 
