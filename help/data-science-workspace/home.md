@@ -5,9 +5,9 @@ title: Översikt över arbetsytan Datavetenskap
 topic: overview
 description: Den här guiden ger en översikt över de viktigaste begreppen som rör arbetsytan för datavetenskap.
 translation-type: tm+mt
-source-git-commit: f8d13b305a61f8606c4fa1ceee6d4518b5d83fda
+source-git-commit: 581d11bdb934f46c53a6703829b4dc470076e195
 workflow-type: tm+mt
-source-wordcount: '2578'
+source-wordcount: '2572'
 ht-degree: 0%
 
 ---
@@ -196,7 +196,7 @@ När du utbildar dina modeller genereras kurser och utvärderingar. [!DNL Data S
 
 ![](./images/home/evaluation_metrics.png)
 
-I [det här avsnittet](https://www.adobe.io/apis/experienceplatform/home/tutorials/data-science-workspace/dsw-tutorials/trainmodel.html) finns självstudiekurser om hur du utbildar och utvärderar modeller i [!DNL Data Science Workspace].
+Besök [API](./models-recipes/train-evaluate-model-api.md) - eller [UI](./models-recipes/train-evaluate-model-ui.md) -självstudiekursen om hur du utbildar och utvärderar modeller i [!DNL Data Science Workspace].
 
 ### Använda modellen
 
@@ -206,7 +206,7 @@ En publicerad intelligent tjänst är konfigurerbar för att automatiskt utbilda
 
 ## Nästa steg
 
-[!DNL Data Science Workspace] hjälper till att effektivisera och förenkla datavetenskapens arbetsflöde, från datainsamling till algoritmer till intelligenta tjänster, för datavetare på alla kunskapsnivåer. Med de sofistikerade verktygen [!DNL Data Science Workspace] kan ni avsevärt korta tiden från data till insikter.
+[!DNL Data Science Workspace] hjälper till att effektivisera och förenkla datavetenskapens arbetsflöde, från datainsamling till algoritmer till intelligenta tjänster för datavetare på alla kunskapsnivåer. Med de sofistikerade verktygen [!DNL Data Science Workspace] kan ni avsevärt korta tiden från data till insikter.
 
 Viktigast av allt är att datavetenskapen och algoritmisk optimering i Adobe ledande marknadsföringsplattform ligger i händerna på datavetare i näringslivet. [!DNL Data Science Workspace] För första gången kan företag ta med egna algoritmer till plattformen och utnyttja Adobe kraftfulla maskininlärnings- och AI-funktioner för att leverera personaliserade kundupplevelser i stor skala.
 
