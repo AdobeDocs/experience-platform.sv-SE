@@ -1,0 +1,222 @@
+---
+keywords: Experience Platform;home;popular topics;schema;Schema;mixin;Mixin;Mixins;mixins;data type;data types;Data types;Data type;schema design;datatype;Datatype;data type;Data type;schemas;Schemas;Schema design;map;Map;
+solution: Experience Platform
+title: Begränsningar för XDM-fälttyp
+topic: overview
+description: En referens för XDM-fälttypsbegränsningar, inklusive andra serialiseringsformat som de kan mappas till och hur du definierar egna fälttyper i API:t.
+translation-type: tm+mt
+source-git-commit: 19167f58fae6fac7d938deb74182d2e19960beb3
+workflow-type: tm+mt
+source-wordcount: '994'
+ht-degree: 3%
+
+---
+
+
+# Begränsningar för XDM-fälttyp
+
+De XDM-fälttyper som du väljer för dina scheman begränsar vilka typer av data dessa fält kan innehålla. Det här dokumentet innehåller en översikt över varje huvudfälttyp, inklusive andra serialiseringsformat som de kan mappas till, och hur du definierar egna fälttyper i API för att tillämpa olika begränsningar.
+
+## Komma igång
+
+Innan du använder den här guiden bör du läsa [grunderna för schemakomposition](./composition.md) för en introduktion till XDM-scheman, klasser och mixiner.
+
+Om du planerar att definiera dina egna fälttyper rekommenderar vi att du börjar med [utvecklarhandboken](../api/getting-started.md) för schemaregister för att lära dig hur du skapar blandningar och datatyper som du vill inkludera dina anpassade fält i.
+
+## Mappa XDM-typer till andra format
+
+Tabellen nedan beskriver mappningen mellan varje XDM-typ (`meta:xdmType`) och andra serialiseringsformat.
+
+| XDM-typ<br>(meta:xdmType) | JSON<br>(JSON-schema) | Parquet<br>(typ/anteckning) | [!DNL Spark] SQL | Java | Scala | .NET | CosmosDB | MongoDB | Aerospike | Protobuf 2 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| string | text:sträng | BYTE_ARRAY/UTF8 | StringType | java.lang.String | Sträng | System.String | Sträng | string | Sträng | string |
+| tal | text:tal | DUBBELT | DoubleType | java.lang.Double | Dubbel | System.Double | Siffra | double | Dubbel | double |
+| long | text:<br>integermaximum:2^53+1<br>minimum:-2^53+1 | INT64 | LongType | java.lang.Long | Lång | System.Int64 | Siffra | long | Heltal | int64 |
+| int | text:<br>integermaximum:2^31<br>minimum:-2^31 | INT32/INT_32 | IntegerType | java.lang.Integer | Int | System.Int32 | Siffra | int | Heltal | int32 |
+| kort | text:<br>integermaximum:2^15<br>minimum:-2^15 | INT32/INT_16 | ShortType | java.lang.Short | Kort | System.Int16 | Siffra | int | Heltal | int32 |
+| byte | text:<br>heltalMaximal:2^7<br>minimum:-2^7 | INT32/INT_8 | ByteType | java.lang.Short | Byte | System.SByte | Siffra | int | Heltal | int32 |
+| boolesk | text:boolesk | BOOLEAN | BooleanType | java.lang.Boolean | Boolean | System.Boolean | Boolean | bool | Heltal | Heltal | bool |
+| datum | text:<br>stringformat:datum<br>(RFC 3339, avsnitt 5.6) | INT32/DATE | DateType | java.util.Date | java.util.Date | System.DateTime | Sträng | datum | Heltal<br>(unix millis) | int64<br>(unix millis) |
+| date-time | text:<br>stringformat:datum-tid<br>(RFC 3339, avsnitt 5.6) | INT64/TIMESTAMP_MILLIS | TimestampType | java.util.Date | java.util.Date | System.DateTime | Sträng | tidsstämpel | Heltal<br>(unix millis) | int64<br>(unix millis) |
+| map | object | MAP-kommenterad grupp<br><br>&lt;<span>key_type</span>> MÅSTE vara STRING<br><br>&lt;<span>value_type</span>> typ av mappningsvärden | MapType<br><br>&quot;keyType&quot; MÅSTE vara StringType<br><br>&quot;valueType&quot; är en typ av mappningsvärden. | java.util.Map | Mappa | --- | object | object | map | map&lt;<span>key_type, value_type</span>> |
+
+## Definiera XDM-fälttyper i API
+
+XDM-scheman definieras med [JSON-scheman](https://json-schema.org/) och grundläggande fälttyper, med ytterligare begränsningar för fältnamn som används av [!DNL Experience Platform]. Med API:t för [schemaregister](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml) kan du definiera ytterligare fälttyper genom att använda format och valfria begränsningar. XDM-fälttyper visas av fältnivåattributet `meta:xdmType`.
+
+>[!NOTE]
+>
+>`meta:xdmType` är ett systemgenererat värde och du behöver därför inte lägga till den här egenskapen i JSON-filen för fältet. Bästa sättet är att använda JSON-schematyper (till exempel sträng och heltal) med rätt min/max-begränsningar enligt tabellen nedan.
+
+Följande tabell visar lämplig formatering för att definiera skalära fälttyper och mer specifika fälttyper med hjälp av valfria egenskaper. Mer information om valfria egenskaper och typspecifika nyckelord finns i dokumentationen för [JSON-schemat](https://json-schema.org/understanding-json-schema/reference/type.html).
+
+Börja med att hitta önskad fälttyp och använd exempelkoden som medföljer för att skapa en API-begäran för att [skapa en blandning](../api/create-mixin.md) eller [skapa en datatyp](../api/create-data-type.md).
+
+<table>
+  <tr>
+    <th>Önskad typ<br/>(meta:xdmType)</th>
+    <th>JSON<br/>(JSON-schema)</th>
+    <th>Exempel på kod</th>
+  </tr>
+  <tr>
+    <td>string</td>
+    <td>typ:<br/><br/><strong>stringOptional-egenskaper:</strong><br/>
+      <ul>
+        <li>mönster</li>
+        <li>minLength</li>
+        <li>maxLength</li>
+      </ul>
+    </td>
+    <td>
+      <pre class="JSON language-JSON hljs">
+        "sampleField": { "type": "string", "pattern": "^[A-Z]{2}$", "maxLength": 2 }
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>uri<br/>(xdmType:string)</td>
+    <td>typ:<br/>stringformat: uri</td>
+    <td>
+      <pre class="JSON language-JSON hljs">
+        "sampleField": { "type": "string", "format": "uri" }
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>enum<br/>(xdmType: sträng)</td>
+    <td>typ: Egenskapen<br/><br/><strong>stringOptional:</strong><br/>
+      <ul>
+        <li>standard</li>
+      </ul>
+    </td>
+    <td>Ange kundtillvända alternativetiketter med "meta:enum":
+      <pre class="JSON language-JSON hljs">
+        "sampleField": { "type": "string", "enum": [ "value1", "value2", "value3" ], "meta:enum": { "value1": "Värde 1", "värde2": "Värde 2", "värde3": "Value 3" }, "default": "value1" }
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>tal</td>
+    <td>typ: minsta<br/>antal: ±2,23×10^308<br/>maximum: ±1,80×10^308</td>
+    <td>
+      <pre class="JSON language-JSON hljs">
+        "sampleField": { "type": "number" }
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>long</td>
+    <td>typ:<br/>integermaximum:2^53+1<br>minimum:-2^53+1</td>
+    <td>
+      <pre class="JSON language-JSON hljs">
+        "sampleField": { "type": "integer", "minimum": -9007199254740992, "maximum": 9007199254740992 }
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>int</td>
+    <td>typ:<br/>integermaximum:2^31<br>minimum:-2^31</td>
+    <td>
+      <pre class="JSON language-JSON hljs">
+        "sampleField": { "type": "integer", "minimum": -2147483648, "maximum": 2147483648 }
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>kort</td>
+    <td>typ:<br/>integermaximum:2^15<br>minimum:-2^15</td>
+    <td>
+      <pre class="JSON language-JSON hljs">
+        "sampleField": { "type": "integer", "minimum": -32768, "maximum": 32768 }
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>byte</td>
+    <td>typ:<br/>integermaximum:2^7<br>minimum:-2^7</td>
+    <td>
+      <pre class="JSON language-JSON hljs">
+        "sampleField": { "type": "integer", "minimum": -128, "maximum": 128 }
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>boolesk</td>
+    <td><br/>typ: boolesk<br/>{true, false}<br/><br/><strong>Valfri egenskap:</strong><br/>
+      <ul>
+        <li>standard</li>
+      </ul>
+    </td>
+    <td>
+      <pre class="JSON language-JSON hljs">
+        "sampleField": { "type": "boolean", "default": false }
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td>datum</td>
+    <td>typ:<br/>stringformat: datum</td>
+    <td>
+      <pre class="JSON language-JSON hljs">
+        "sampleField": { "type": "string", "format": "date", "examples": ["2004-10-23"] }
+      </pre>
+      Datum enligt definition i <a href="https://tools.ietf.org/html/rfc3339#section-5.6" target="_blank">RFC 3339, avsnitt 5.6</a>, där "fulldatum" = datum-fullår "-" datum-månad "-" datum-mdag (ÅÅÅÅ-MM-DD)
+    </td>
+  </tr>
+  <tr>
+    <td>date-time</td>
+    <td>typ:<br/>stringformat: date-time</td>
+    <td>
+      <pre class="JSON language-JSON hljs">
+        "sampleField": { "type": "string", "format": "date-time", "examples": ["2004-10-23T12:00:00-06:00"] }
+      </pre>
+      Datum-Tid enligt definition i <a href="https://tools.ietf.org/html/rfc3339#section-5.6" target="_blank">RFC 3339, avsnitt 5.6</a>, där "date-time" = "T" heltid:<br/>(YYYY-MM-DD'T'HH:MM:SS.SSSSX)
+    </td>
+  </tr>
+  <tr>
+    <td>array</td>
+    <td>typ: array</td>
+    <td>items.type kan definieras med vilken skalär som helst:
+      <pre class="JSON language-JSON hljs">
+        "sampleField": { "type": "array", "items": { "type": "string" }
+      </pre>
+      Array med objekt som definieras av ett annat schema:<br/>
+      <pre class="JSON language-JSON hljs">
+        "sampleField": { "type": "array", "items": { "$ref": "id" }
+      </pre>
+      Där "id" är {id} för referensschemat.
+    </td>
+  </tr>
+  <tr>
+    <td>object</td>
+    <td>typ: object</td>
+    <td>egenskaper.{field}.type kan definieras med valfri skalär typ:
+      <pre class="JSON language-JSON hljs">
+        "sampleField": { "type": "object", "properties": { "field1": { "type": "string" }, "field2": { "type": "number" } }
+      </pre>
+      Fält av typen "object" som definieras av ett referensschema:
+      <pre class="JSON language-JSON hljs">
+        "sampleField": { "type": "object", "$ref": "id" }
+      </pre>
+      Där "id" är {id} för referensschemat.
+    </td>
+  </tr>
+  <tr>
+    <td>map</td>
+    <td>typ:<br/><br/><strong>objectNote:</strong><br/>Användning av datatypen"map" är reserverad för användning av bransch- och leverantörsschema och är inte tillgänglig för användning i innehavardefinierade fält. Den används i standardscheman när data representeras som nycklar som mappar till ett visst värde, eller där nycklar inte rimligen kan inkluderas i ett statiskt schema och måste behandlas som datavärden.</td>
+    <td>En karta får INTE definiera några egenskaper. Det MÅSTE definiera ett enskilt"[!UICONTROL additionalProperties]"-schema för att beskriva värdetypen i 'map'. En karta i XDM kan bara innehålla en enda datatyp. Värdena kan vara vilken giltig XDM-schemadefinition som helst, inklusive en array eller ett objekt, eller som en referens till ett annat schema (via $ref).<br/><br/>Mappningsfält med värden av typen 'string':
+      <pre class="JSON language-JSON hljs">
+        "sampleField": { "type": "object", "additionalProperties":{ "type": "string" }
+      </pre>
+    Mappa fält med värden som en array med strängar:
+      <pre class="JSON language-JSON hljs">
+        "sampleField": { "type": "object", "additionalProperties":{ "type": "array", "items": { "type": "string" } }
+      </pre>
+    Mappningsfält som refererar till ett annat schema:
+      <pre class="JSON language-JSON hljs">
+        "sampleField": { "type": "object", "additionalProperties":{ "$ref": "id" }
+      </pre>
+      Där "id" är {id} för referensschemat.
+    </td>
+  </tr>
+</table>
