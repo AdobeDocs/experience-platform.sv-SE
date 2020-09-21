@@ -2,12 +2,12 @@
 keywords: RTCDP;CDP;Real-time Customer Data Platform;real time customer data platform;real time cdp;cdp;destinations;destination;rtcdp
 title: Översikt över destinationer
 seo-title: Översikt över destinationer
-description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från kunddataplattformen i realtid. Ni kan använda Destinationer i kunddataplattformen i realtid i Adobe för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad annonsering och många andra användningsfall.
+description: Använd destinationer i Adobe Experience Platform för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 seo-description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från kunddataplattformen i realtid. Ni kan använda Destinationer i kunddataplattformen i realtid i Adobe för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad annonsering och många andra användningsfall.
 translation-type: tm+mt
-source-git-commit: 22bca041673cec5eee54ed4234aba19eca470441
+source-git-commit: 5c3016e822ea23407af5de525c27785df8e2f795
 workflow-type: tm+mt
-source-wordcount: '527'
+source-wordcount: '503'
 ht-degree: 0%
 
 ---
