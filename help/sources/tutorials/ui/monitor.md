@@ -5,9 +5,9 @@ solution: Experience Platform
 title: Övervaka konton och dataflöden
 topic: overview
 translation-type: tm+mt
-source-git-commit: 20c3037295b49cba45fcc5901803107dea26b3b2
+source-git-commit: 8f752d6a08496f9583627781d9143ee7f9159bf0
 workflow-type: tm+mt
-source-wordcount: '936'
+source-wordcount: '1019'
 ht-degree: 0%
 
 ---
@@ -72,7 +72,18 @@ Dataflöden kan nås direkt från **[!UICONTROL Catalog]** sidan utan att visas 
 
 ![catalog-dataflows](../../images/tutorials/monitor/catalog-dataflows.png)
 
-En lista över befintliga dataflöden visas. På den här sidan finns en lista med visningsbara dataflöden, inklusive information om källa, användarnamn, antal dataflöden och status. Välj trattsymbolen längst upp till vänster för att sortera.
+En lista över befintliga dataflöden visas. På den här sidan finns en lista med visningsbara dataflöden, inklusive information om källa, användarnamn, antal dataflöden och status.
+
+Se följande tabell för mer information om status:
+
+| Status | Beskrivning |
+| ------ | ----------- |
+| Aktiverad | Statusen anger att ett dataflöde är aktivt och att det hämtar data enligt det schema som det angavs. `Enabled` |
+| Handikappade | Statusen anger att ett dataflöde är inaktivt och inte innehåller några data. `Disabled` |
+| Bearbetar | Statusen visar att ett dataflöde ännu inte är aktivt. `Processing` Denna status inträffar ofta omedelbart efter att ett nytt dataflöde har skapats. |
+| Fel | Statusen `Error` anger att aktiveringsprocessen för ett dataflöde har avbrutits. |
+
+Välj trattsymbolen längst upp till vänster för att sortera.
 
 ![dataflows-list](../../images/tutorials/monitor/dataflows-list.png)
 
