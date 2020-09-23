@@ -5,9 +5,9 @@ title: Konfigurera ett dataflöde för en koppling för automatiserad marknadsf�
 topic: overview
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en [!DNL Platform] datauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt automatiserade marknadsföringskonto.
 translation-type: tm+mt
-source-git-commit: ad9b52e46d3eb4f6ed7774e4cbcb031a52801b49
+source-git-commit: 63eb8407617cda64f3f3b0cefd6bf427314e0216
 workflow-type: tm+mt
-source-wordcount: '1363'
+source-wordcount: '1410'
 ht-degree: 0%
 
 ---
@@ -67,7 +67,11 @@ Om du vill importera data till en ny datauppsättning markerar du **[!UICONTROL 
 
 Du kan bifoga ett schemafält genom att ange ett schemanamn i **[!UICONTROL Select schema]** sökfältet. Du kan också välja listruteikonen för att visa en lista över befintliga scheman. Du kan också välja **[!UICONTROL Advanced search]** att få åtkomst till skärmen med befintliga scheman, inklusive deras respektive detaljer.
 
-![create-new-dataset](../../../images/tutorials/dataflow/all-tabular/new-target-dataset.png)
+Under det här steget kan du aktivera datauppsättningen för [!DNL Real-time Customer Profile] och skapa en helhetsbild av en enhets attribut och beteenden. Data från alla aktiverade datauppsättningar inkluderas i [!DNL Profile] och ändringar tillämpas när du sparar dataflödet.
+
+Aktivera måldatauppsättningen för genom att växla **[!UICONTROL Profile dataset]** knapp [!DNL Profile].
+
+![create-new-dataset](../../../images/tutorials/dataflow/marketing-automation/new-dataset.png)
 
 Dialogrutan **[!UICONTROL Select schema]** visas. Välj det schema som du vill använda för den nya datauppsättningen och klicka sedan på **[!UICONTROL Done]**.
 
