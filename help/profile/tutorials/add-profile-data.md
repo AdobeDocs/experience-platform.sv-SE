@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API;enable profile;Enable profile
-solution: Adobe Experience Platform
 title: Lägg till data i kundprofilen i realtid
 topic: tutorial
 description: I den här självstudien beskrivs de steg som krävs för att lägga till data i kundprofilen i realtid.
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
 workflow-type: tm+mt
 source-wordcount: '368'
 ht-degree: 0%
