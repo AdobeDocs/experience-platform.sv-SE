@@ -5,9 +5,9 @@ title: Konfigurera ett dataflöde för en batchanslutning för molnlagring i anv
 topic: overview
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt molnlagringskonto.
 translation-type: tm+mt
-source-git-commit: a4fd95904159a7b3e9c420f720a315641fd6706f
+source-git-commit: 63eb8407617cda64f3f3b0cefd6bf427314e0216
 workflow-type: tm+mt
-source-wordcount: '1559'
+source-wordcount: '1606'
 ht-degree: 0%
 
 ---
@@ -81,7 +81,11 @@ Dialogrutan **[!UICONTROL Select dataset]** visas. Hitta den datauppsättning du
 
 Om du vill importera data till en ny datauppsättning markerar du **[!UICONTROL New dataset]** och anger ett namn och en beskrivning för datauppsättningen i de angivna fälten. Om du vill lägga till ett schema kan du ange ett befintligt schemanamn i **[!UICONTROL Select schema]** dialogrutan. Du kan också välja **[!UICONTROL Schema advanced search]** att söka efter ett lämpligt schema.
 
-![](../../../../images/tutorials/dataflow/cloud-storage/batch/use-new-dataset.png)
+Under det här steget kan du aktivera datauppsättningen för [!DNL Real-time Customer Profile] och skapa en helhetsbild av en enhets attribut och beteenden. Data från alla aktiverade datauppsättningar inkluderas i [!DNL Profile] och ändringar tillämpas när du sparar dataflödet.
+
+Aktivera måldatauppsättningen för genom att växla **[!UICONTROL Profile dataset]** knapp [!DNL Profile].
+
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/new-dataset.png)
 
 Dialogrutan **[!UICONTROL Select schema]** visas. Välj det schema som du vill tillämpa på den nya datauppsättningen och välj sedan **[!UICONTROL Done]**.
 
