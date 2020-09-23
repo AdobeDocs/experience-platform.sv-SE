@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform;segmentation;segmentation service;troubleshooting;API;seg;segment;Segment;search;segment search;
-solution: Adobe Experience Platform
 title: Slutpunkt för segmentsökning
 topic: guide
 description: Segmentsökning används för att söka efter fält som finns i olika datakällor och returnera dem i nära realtid. Den här handboken innehåller information som hjälper dig att förstå segmentsökning bättre och innehåller exempel på API-anrop för att utföra grundläggande åtgärder med API:t.
 translation-type: tm+mt
-source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
+source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
 workflow-type: tm+mt
 source-wordcount: '1179'
 ht-degree: 0%
