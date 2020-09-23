@@ -1,10 +1,9 @@
 ---
 keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API
-solution: Adobe Experience Platform
 title: Edge Projection - Real-time Customer Profile API
 topic: guide
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
 workflow-type: tm+mt
 source-wordcount: '1905'
 ht-degree: 0%
@@ -620,7 +619,7 @@ Returnerar endast stadsfältet för alla element i adressarrayen.
 
 >[!NOTE]
 >
->När ett kapslat fält returneras, innehåller projektionen de omslutande överordnade objekten. De överordnade fälten innehåller inga andra underordnade fält såvida de inte också markeras uttryckligen.
+>När ett kapslat fält returneras innehåller projektionen de omslutande överordnade objekten. De överordnade fälten innehåller inga andra underordnade fält såvida de inte också markeras uttryckligen.
 
 **adresser(typ, ort)**
 
