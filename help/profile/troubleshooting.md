@@ -1,10 +1,9 @@
 ---
 keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API
-solution: Adobe Experience Platform
 title: Felsökningsguide för kundprofiler i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: 94fd6ee324b35acb7ef1185f7851d76d76f3e91c
+source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
 workflow-type: tm+mt
 source-wordcount: '979'
 ht-degree: 0%
@@ -26,15 +25,15 @@ Nedan följer en lista med svar på vanliga frågor om kundprofilen i realtid.
 
 Profilen godkänner både **post** - och **tidsseriedata** , förutsatt att data i fråga innehåller minst ett identitetsvärde som associerar data med en unik individ.
 
-Precis som alla Platform-tjänster kräver Profile att data i den ska vara semantiskt strukturerade under ett XDM-schema (Experience Data Model). Schemat måste i sin tur ha en **primär identitet** definierad och vara aktiverat för användning i profilen.
+Precis som alla plattformstjänster kräver Profile att data i profilen ska vara semantiskt strukturerade under ett XDM-schema (Experience Data Model). Schemat måste i sin tur ha en **primär identitet** definierad och vara aktiverat för användning i profilen.
 
 Om du inte känner till XDM kan du börja med [XDM-översikten](../xdm/home.md) och lära dig mer. I användarhandboken för XDM finns anvisningar om hur du [anger identitetsfält](../xdm/tutorials/create-schema-ui.md#identity-field) och [aktiverar ett schema för profil](../xdm/tutorials/create-schema-ui.md#profile).
 
 ### Var lagras profildata?
 
-Kundprofilen i realtid underhåller ett eget datalager (kallas&quot;profilarkiv&quot;) som är skilt från datasjön som innehåller andra inkapslade Platform-data.
+Kundprofilen i realtid underhåller ett eget datalager (kallas&quot;profilarkiv&quot;) som är skilt från datasjön som innehåller andra inkapslade plattformsdata.
 
-### Om jag redan har inhämtat data till Platform, kan jag då göra dem tillgängliga i profilbutiken?
+### Om jag redan har inhämtat data till Platform, kan jag göra dem tillgängliga i profilbutiken?
 
 Om data har importerats till en datauppsättning som inte är en profildatauppsättning måste du importera dessa data på nytt till en profilaktiverad datauppsättning för att kunna göra dem tillgängliga i profilarkivet. Det går att aktivera en befintlig datauppsättning för profilen, men alla data som har importerats före den konfigurationen visas fortfarande inte i profilarkivet.
 
@@ -48,7 +47,7 @@ Det finns flera sätt att visa profildata, beroende på om du använder API:t el
 
 Om du känner till ID:n för de profilentiteter som du vill komma åt kan du använda `/entities` (profilåtkomst)-slutpunkten i profil-API:t för att söka efter dessa entiteter. Mer information finns i avsnittet om [enheter](./api/entities.md) i utvecklarhandboken.
 
-Du kan också använda Adobe Experience Platform Segmentation Service API för att få tillgång till de enskilda profilerna för kunder som har kvalificerat sig för ett segmentmedlemskap. Mer information finns i Översikt över [](../segmentation/home.md) segmenteringstjänsten.
+Du kan också använda API:t för Adobe Experience Platform segmenteringstjänst för att komma åt de enskilda profilerna för kunder som har kvalificerat sig för ett segmentmedlemskap. Mer information finns i Översikt över [](../segmentation/home.md) segmenteringstjänsten.
 
 #### Använda gränssnittet
 
@@ -58,7 +57,7 @@ Du kan även visa en lista över dina segment på fliken **[!UICONTROL Browse]**
 
 ## Felkoder
 
-Nedan följer en lista över felmeddelanden som du kan stöta på när du arbetar med kundprofils-API:t i realtid. Om felet som du stöter på inte finns med här kan du hitta det i den allmänna felsökningsguiden [för](../landing/troubleshooting.md) Platform.
+Nedan följer en lista över felmeddelanden som du kan stöta på när du arbetar med kundprofils-API:t i realtid. Om felet som du stöter på inte listas här kan du hitta det i den allmänna felsökningsguiden [för](../landing/troubleshooting.md) plattformen istället.
 
 ### Det gick inte att hitta schemat för det beräknade attributet för den angivna sökvägen
 
@@ -122,7 +121,7 @@ Det här felet inträffar när en ogiltig nyttolast anges för ett raderingssyst
 }
 ```
 
-Det här felet inträffar när det inte går att hitta en giltig grupp när en begäran om att ta bort profildata skapas. Kontrollera att du har angett rätt ID för en profilaktiverad datauppsättning innan du försöker igen.
+Det här felet inträffar när det inte går att hitta en giltig grupp när en borttagningsbegäran för profildata skapas. Kontrollera att du har angett rätt ID för en profilaktiverad datauppsättning innan du försöker igen.
 
 ### Projektionsmålet har inte skapats ännu
 
