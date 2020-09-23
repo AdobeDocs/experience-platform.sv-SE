@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API;preview;sample
-solution: Adobe Experience Platform
 title: Förhandsgranskning av profil - Kundprofil-API i realtid
 description: Med Adobe Experience Platform kan ni importera kunddata från flera olika källor och skapa stabila, enhetliga profiler för enskilda kunder. När data som har aktiverats för kundprofil i realtid hämtas till plattformen lagras de i profildatalagret. När antalet poster i profilarkivet ökar eller minskar körs ett exempeljobb som innehåller information om hur många profilfragment och sammanfogade profiler som finns i datalagret. Med hjälp av profil-API:t kan du förhandsgranska det senaste framgångsrika exemplet samt lista profildistributionen per datauppsättning och per identitetsnamnområde.
 topic: guide
 translation-type: tm+mt
-source-git-commit: 2edba7cba4892f5c8dd41b15219bf45597bd5219
+source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
 workflow-type: tm+mt
 source-wordcount: '1475'
 ht-degree: 0%
