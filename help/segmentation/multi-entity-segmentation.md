@@ -5,9 +5,9 @@ title: Segmentering för flera enheter
 topic: overview
 description: Multientitetssegmentering är möjligheten att utöka profildata med ytterligare data baserat på produkter, butiker eller andra icke-profilklasser. När de är anslutna blir data från ytterligare klasser tillgängliga som om de vore inbyggda i profilschemat.
 translation-type: tm+mt
-source-git-commit: 8568c55003127a295acff9cfbbc3bbf6005e7a51
+source-git-commit: 4dd5a91146b116953ba180e3f39d24b4e1ec289e
 workflow-type: tm+mt
-source-wordcount: '620'
+source-wordcount: '671'
 ht-degree: 0%
 
 ---
@@ -45,14 +45,16 @@ Om du vill skapa ett segment med flera enheter först måste du definiera relati
 
 ### Definiera relationer
 
-Att definiera relationer inom strukturen för era XDM-scheman (Experience Data Model) är en viktig del av att skapa segment för flera enheter. Den här processen kan utföras antingen med API:t för schemaregister eller med Schemaredigeraren. Välj bland följande självstudiekurser för detaljerade steg som visar hur du definierar en relation mellan två scheman:
+Att definiera relationer inom strukturen för era XDM-scheman (Experience Data Model) är en viktig del av att skapa segment för flera enheter. För relationer måste fältet i målet markeras som den primära identiteten för det schemat. En identitet kan bara markeras på strängar och kan inte markeras på arrayer. Dessutom behöver relationer inte nödvändigtvis vara en-till-en, eftersom du kan koppla profiler och uppleva händelser till flera mål.
+
+Du kan definiera relationer antingen med API:t för schemaregister eller med schemaredigeraren. Välj bland följande självstudiekurser för detaljerade steg som visar hur du definierar en relation mellan två scheman:
 
 * [Definiera en relation mellan två scheman med API:t](../xdm/tutorials/relationship-api.md)
 * [Definiera en relation mellan två scheman med hjälp av gränssnittet i Schemaredigeraren](../xdm/tutorials/relationship-ui.md)
 
 ### Skapa ett segment med flera enheter
 
-När du har definierat de nödvändiga XDM-relationerna kan du börja skapa ett segment med flera enheter. Den här processen kan utföras antingen med segmenterings-API:t eller segmentbyggargränssnittet. Mer information finns i följande handböcker:
+När du har definierat de nödvändiga XDM-relationerna kan du börja skapa ett segment med flera enheter. Detta kan göras antingen med segmenterings-API:t eller segmentbyggargränssnittet. Mer information finns i följande handböcker:
 
 * [Skapa ett segment med segmenterings-API](./tutorials/create-a-segment.md)
 * [Skapa ett segment med hjälp av gränssnittet i segmentbyggaren](./ui/overview.md)
