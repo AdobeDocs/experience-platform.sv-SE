@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;Synapse;synapse;Azure Synapse 
 solution: Experience Platform
 title: Skapa en Azure Synapse Analytics-koppling med API:t för Flow Service
 topic: overview
+type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Azure Synapse Analytics (nedan kallad Synapse) till Experience Platform.
 translation-type: tm+mt
-source-git-commit: 5959d4344ec1c16542de045899ce74beb39a7bc4
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '585'
 ht-degree: 1%
