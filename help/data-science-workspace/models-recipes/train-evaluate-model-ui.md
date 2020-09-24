@@ -2,10 +2,11 @@
 keywords: Experience Platform;train and evaluate;Data Science Workspace;popular topics;create a model;create a training run
 solution: Experience Platform
 title: Utbildning och utvärdering av modell (UI)
-topic: Tutorial
+topic: tutorial
+type: Tutorial
 description: I Adobe Experience Platform Data Science Workspace skapas en maskininlärningsmodell genom att en befintlig Recipe som är lämplig för modellens avsikt läggs till. Modellen är sedan utbildad och utvärderad för att optimera dess driftseffektivitet och effektivitet genom att finjustera de tillhörande hyperparametrarna. Recept kan återanvändas, vilket innebär att flera modeller kan skapas och skräddarsys för specifika syften med en enda Recept.
 translation-type: tm+mt
-source-git-commit: cddc559dfb65ada888bb367d6265863091a9b2a1
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '1024'
 ht-degree: 1%
