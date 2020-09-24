@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;marketing automation system;Co
 solution: Experience Platform
 title: Samla in data för automatiserad marknadsföring via källanslutningar och API:er
 topic: overview
+type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett automatiserat marknadsföringssystem och föra in dem på plattformen via källanslutningar och API:er.
 translation-type: tm+mt
-source-git-commit: 6f4714561c2946a084eed4e89d3148df5b8044f5
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '1584'
 ht-degree: 0%
