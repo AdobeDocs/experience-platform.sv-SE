@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Anslut till Aqua Data Studio
 topic: connect
 translation-type: tm+mt
-source-git-commit: d2f098cb9e4aaf5beaad02173a22a25a87a43756
+source-git-commit: 106d5150371a890e2d4c295bf5d12c110c593568
 workflow-type: tm+mt
-source-wordcount: '213'
-ht-degree: 1%
+source-wordcount: '220'
+ht-degree: 2%
 
 ---
 
@@ -24,7 +24,7 @@ Dialogrutan **[!UICONTROL Register Server]** visas. Under **[!UICONTROL General]
 
 - **[!UICONTROL Name]**: Namnet på anslutningen.
 - **[!UICONTROL Login Name and Password]**: De inloggningsuppgifter som ska användas. Användarnamnet har formen av `ORG_ID@AdobeOrg`.
-- **[!UICONTROL Host and Port]**: Värdslutpunkten och dess port för [!DNL Query Service].
+- **[!UICONTROL Host and Port]**: Värdslutpunkten och dess port för [!DNL Query Service]. Du måste använda port 80 för att ansluta till [!DNL Query Service].
 - **[!UICONTROL Database]:** Databasen som ska användas.
 
 >[!NOTE]
