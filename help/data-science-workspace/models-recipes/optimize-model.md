@@ -2,10 +2,11 @@
 keywords: Experience Platform;optimize;model;Data Science Workspace;popular topics;model insights
 solution: Experience Platform
 title: Optimera en modell
-topic: Tutorial
+topic: tutorial
+type: Tutorial
 description: Model Insights Framework förser datavetenskaparen med verktyg i Data Science Workspace som gör snabba och välgrundade val för optimala maskininlärningsmodeller baserade på experiment.
 translation-type: tm+mt
-source-git-commit: 9ba229195892245d29fb4f17b9f2e5cd6c6ea567
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '1249'
 ht-degree: 0%
