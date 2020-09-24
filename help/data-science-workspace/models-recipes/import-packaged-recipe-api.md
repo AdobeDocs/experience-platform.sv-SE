@@ -2,10 +2,11 @@
 keywords: Experience Platform;import packaged recipe;Data Science Workspace;popular topics;recipes;api;sensei machine learning;create engine
 solution: Experience Platform
 title: Importera ett paketerat recept (API)
-topic: Tutorial
+topic: tutorial
+type: Tutorial
 description: 'I den här självstudien används API:t Sensei Machine Learning för att skapa en motor, som också kallas Recept i användargränssnittet. '
 translation-type: tm+mt
-source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '981'
 ht-degree: 0%
