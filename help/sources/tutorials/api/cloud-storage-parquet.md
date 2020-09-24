@@ -3,11 +3,12 @@ keywords: Experience Platform;home;popular topics;data source connection
 solution: Experience Platform
 title: Hämta parquetdata från ett molnlagringssystem från tredje part med API:t för Flow Service
 topic: overview
+type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att importera tolkningsdata från ett molnlagringssystem från en annan leverantör.
 translation-type: tm+mt
-source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
-source-wordcount: '1092'
+source-wordcount: '1088'
 ht-degree: 1%
 
 ---
@@ -36,17 +37,17 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
-- Behörighet: Bearer `{ACCESS_TOKEN}`
-- x-api-key: `{API_KEY}`
-- x-gw-ims-org-id: `{IMS_ORG}`
+- `Authorization: Bearer {ACCESS_TOKEN}`
+- `x-api-key: {API_KEY}`
+- `x-gw-ims-org-id: {IMS_ORG}`
 
 Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
-- x-sandbox-name: `{SANDBOX_NAME}`
+- `x-sandbox-name: `{SANDBOX_NAME}`
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
 
-- Innehållstyp: `application/json`
+- `Content-Type: application/json`
 
 ## Skapa en anslutning
 
