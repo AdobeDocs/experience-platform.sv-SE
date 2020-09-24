@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;Apache Hadoop Distributed File
 solution: Experience Platform
 title: Skapa en Apache HDFS-anslutning med API:t för Flow Service
 topic: overview
+type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta ett Apache Hadoop Distributed File System (nedan kallat HDFS) till Experience Platform.
 translation-type: tm+mt
-source-git-commit: 25f1dfab07d0b9b6c2ce5227b507fc8c8ecf9873
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '561'
 ht-degree: 1%
