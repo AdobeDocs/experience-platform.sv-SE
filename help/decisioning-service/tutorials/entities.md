@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;manage decisioning;decisioning
 solution: Experience Platform
 title: Hantera beslutstjänstentiteter med API:er
 topic: tutorial
+type: Tutorial
 description: 'I det här dokumentet finns en självstudiekurs om hur du arbetar med affärsenheterna i beslutstjänsten med hjälp av Adobe Experience Platform API:er. '
 translation-type: tm+mt
-source-git-commit: f4a4e65a087313dc4e2414f999e021e3f6e17137
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '7239'
 ht-degree: 0%
