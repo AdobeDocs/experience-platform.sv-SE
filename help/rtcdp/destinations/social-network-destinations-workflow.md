@@ -1,11 +1,12 @@
 ---
 keywords: Facebook;facebook;Social network;Social Network;social network authentication;Social network authentication
 title: Målarbetsflöde för sociala nätverk
+type: Tutorial
 seo-title: Målarbetsflöde för sociala nätverk
 description: Instruktioner för att ansluta till sociala nätverk och konton
 seo-description: Instruktioner för att ansluta till sociala nätverk och konton
 translation-type: tm+mt
-source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
+source-git-commit: 120ba866cf6e6509c51a29cb07e73550006fe5eb
 workflow-type: tm+mt
 source-wordcount: '470'
 ht-degree: 0%
