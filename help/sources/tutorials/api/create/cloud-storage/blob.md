@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;Azure;azure blob;blob;Blob
 solution: Experience Platform
 title: Skapa en Azure Blob-koppling med API:t för Flow Service
 topic: overview
+type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till en Azure Blob-lagring (nedan kallad Blob-lagring).
 translation-type: tm+mt
-source-git-commit: 25f1dfab07d0b9b6c2ce5227b507fc8c8ecf9873
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '609'
 ht-degree: 0%
