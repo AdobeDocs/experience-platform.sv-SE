@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;Azure Blob;azure blob;Azure bl
 solution: Experience Platform
 title: Skapa en Azure Blob-källkoppling i användargränssnittet
 topic: overview
+type: Tutorial
 description: I den här självstudiekursen beskrivs hur du skapar en Azure-blob (nedan kallad blob) med hjälp av användargränssnittet för plattformen.
 translation-type: tm+mt
-source-git-commit: 0da686743e8bc57d310f7eff6f1bf812a8f31238
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '530'
 ht-degree: 1%
