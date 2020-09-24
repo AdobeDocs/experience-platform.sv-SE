@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics; flow service; update connecti
 solution: Experience Platform
 title: Uppdatera anslutningsinformation med API:t för Flow Service
 topic: overview
+type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för hur du uppdaterar anslutningsinformationen, inklusive namn, beskrivning och autentiseringsuppgifter med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: 81ce43bf705bea65b523ac612fae5961e8eeb322
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '713'
 ht-degree: 1%
