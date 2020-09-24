@@ -4,8 +4,9 @@ description: Källkopplingar i Adobe Experience Platform gör det möjligt att i
 solution: Experience Platform
 title: Övervaka konton och dataflöden
 topic: overview
+type: Tutorial
 translation-type: tm+mt
-source-git-commit: 8f752d6a08496f9583627781d9143ee7f9159bf0
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '1019'
 ht-degree: 0%
