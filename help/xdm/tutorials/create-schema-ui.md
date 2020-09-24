@@ -5,9 +5,9 @@ title: Skapa ett schema med Schemaredigeraren
 topic: tutorials
 description: I den här självstudiekursen beskrivs stegen för hur du skapar ett schema med Schemaredigeraren i Experience Platform.
 translation-type: tm+mt
-source-git-commit: 58e0ee234492731d5f875ab845fca11fcda3539b
+source-git-commit: f0d3aad649fa550443db0fc5168c848ae85fb459
 workflow-type: tm+mt
-source-wordcount: '3599'
+source-wordcount: '3637'
 ht-degree: 0%
 
 ---
@@ -143,7 +143,7 @@ Börja med att markera blandningsnamnet i **[!UICONTROL Mixins]** avsnittet. Nä
 
 ![](../images/tutorials/create-schema/loyalty_details_structure.png)
 
-Välj **[!UICONTROL Add field]** bredvid&quot;[!DNL Loyalty Members]&quot; för att skapa en ny nod i strukturen. Den här noden (kallas &quot;_tenantId&quot; i det här exemplet) representerar din IMS-organisations klient-ID, föregånget av ett understreck. Närvaron av innehavar-ID anger att fälten som du lägger till finns i organisationens namnutrymme.
+Välj **[!UICONTROL Add field]** bredvid&quot;[!DNL Loyalty Members]&quot; för att skapa en ny nod i strukturen. Den här noden (anropas `_tenantId` i det här exemplet) representerar din IMS-organisations klient-ID, föregånget av ett understreck. Närvaron av innehavar-ID anger att fälten som du lägger till finns i organisationens namnutrymme.
 
 Med andra ord är de fält du lägger till unika för din organisation och kommer att sparas i [!DNL Schema Registry] i ett specifikt område som bara är tillgängligt för din organisation. Fält som du definierar måste alltid läggas till i klientnamnutrymmet för att förhindra kollisioner med namn från andra standardklasser, mixins, datatyper och fält.
 
@@ -236,6 +236,10 @@ Schemat innehåller nu flera blandningar utöver de fält som anges i basklassen
 Om du letar efter ett visst fält i ditt schema kan du även använda sökfältet för att filtrera visade fält efter namn, oavsett vilken blandning de anges under.
 
 ![](../images/tutorials/create-schema/search.png)
+
+>[!IMPORTANT]
+>
+>Sökfunktionen tar hänsyn till alla valda blandningsfilter när matchande fält visas. Om sökfrågan inte visar de förväntade resultaten kan du behöva dubbelkontrollera att du inte filtrerar bort relevanta blandningar.
 
 ## Ange ett schemafält som identitetsfält {#identity-field}
 
