@@ -2,9 +2,10 @@
 keywords: connect destination;destination connect;how to connect destination
 title: Anslut till ett mål i Adobe Real-time Customer Data Platform
 seo-title: Anslut till ett mål i Adobe Real-time Customer Data Platform
+type: Tutorial
 description: I den här självstudiekursen listas stegen för att ansluta en destination i Adobe kunddataplattform i realtid
 translation-type: tm+mt
-source-git-commit: 4c45da353b1deeb66b0dedb37450158f4bdc2a7c
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '122'
 ht-degree: 0%
