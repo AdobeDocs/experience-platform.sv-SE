@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;Azure Data Lake Storage Gen2;a
 solution: Experience Platform
 title: Skapa en Gen2-anslutning för Azure Data Lake Storage med API:t för Flow Service
 topic: overview
+type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till Azure Data Lake Storage Gen2 (nedan kallat ADLS Gen2).
 translation-type: tm+mt
-source-git-commit: 25f1dfab07d0b9b6c2ce5227b507fc8c8ecf9873
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '570'
 ht-degree: 1%
