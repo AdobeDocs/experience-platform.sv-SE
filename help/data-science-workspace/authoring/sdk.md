@@ -5,7 +5,7 @@ title: Utvecklarhandbok för SDK
 topic: Overview
 description: Med hjälp av SDK för modellredigering kan du utveckla anpassade maskininlärningsrecept och funktionsprofiler som kan användas i Adobe Experience Platform Data Science Workspace, med implementerbara mallar i PySpark och Spark (Scala).
 translation-type: tm+mt
-source-git-commit: 2a528c705a7aa610f57047be39be1ce9886ce44c
+source-git-commit: e1b8bc378c2f72862c0c28e44dceb8a35e44a29e
 workflow-type: tm+mt
 source-wordcount: '964'
 ht-degree: 0%
@@ -37,14 +37,14 @@ I följande tabell beskrivs de abstrakta metoderna för en PySpark Data Loader-k
     <tbody>
         <tr>
             <td>
-                <p><code class=" language-undefined">load(self, configProperties, spark)</code></p>
+                <p><code>load(self, configProperties, spark)</code></p>
                 <p>Läsa in och returnera plattformsdata som en Pandas DataFrame</p>
             </td>
             <td>
                 <ul>
-                    <li><code class=" language-undefined">self</code>: Självreferens</li>
-                    <li><code class=" language-undefined">configProperties</code>: Mappning av konfigurationsegenskaper</li>
-                    <li><code class=" language-undefined">spark</code>: Spark-session</li>
+                    <li><code>self</code>: Självreferens</li>
+                    <li><code>configProperties</code>: Mappning av konfigurationsegenskaper</li>
+                    <li><code>spark</code>: Spark-session</li>
                 </ul>
             </td>
         </tr>
@@ -65,13 +65,13 @@ I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] Data Loa
     <tbody>
         <tr>
             <td>
-                <p><code class=" language-undefined">load(configProperties, sparkSession)</code></p>
+                <p><code>load(configProperties, sparkSession)</code></p>
                 <p>Läs in och returnera plattformsdata som en DataFrame</p>
             </td>
             <td>
                 <ul>
-                    <li><code class=" language-undefined">configProperties</code>: Mappning av konfigurationsegenskaper</li>
-                    <li><code class=" language-undefined">sparkSession</code>: Spark-session</li>
+                    <li><code>configProperties</code>: Mappning av konfigurationsegenskaper</li>
+                    <li><code>sparkSession</code>: Spark-session</li>
                 </ul>
             </td>
         </tr>
@@ -211,14 +211,14 @@ I följande tabell beskrivs de abstrakta metoderna för en [!DNL PySpark] Data S
     <tbody>
         <tr>
             <td>
-                <p><code class=" language-undefined">save(self, configProperties, dataframe)</code></p>
+                <p><code>save(self, configProperties, dataframe)</code></p>
                 <p>Ta emot utdata som en DataFrame och lagra dem i en plattformsdatauppsättning</p>
             </td>
             <td>
                 <ul>
-                    <li><code class=" language-undefined">self</code>: Självreferens</li>
-                    <li><code class=" language-undefined">configProperties</code>: Mappning av konfigurationsegenskaper</li>
-                    <li><code class=" language-undefined">dataframe</code>: Data som ska lagras i form av en DataFrame</li>
+                    <li><code>self</code>: Självreferens</li>
+                    <li><code>configProperties</code>: Mappning av konfigurationsegenskaper</li>
+                    <li><code>dataframe</code>: Data som ska lagras i form av en DataFrame</li>
                 </ul>
             </td>
         </tr>
@@ -239,13 +239,13 @@ I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] Data Sav
     <tbody>
         <tr>
             <td>
-                <p><code class=" language-undefined">save(configProperties, dataFrame)</code></p>
+                <p><code>save(configProperties, dataFrame)</code></p>
                 <p>Ta emot utdata som en DataFrame och lagra dem i en plattformsdatauppsättning</p>
             </td>
             <td>
                 <ul>
-                    <li><code class=" language-undefined">configProperties</code>: Mappning av konfigurationsegenskaper</li>
-                    <li><code class=" language-undefined">dataFrame</code>: Data som ska lagras i form av en DataFrame</li>
+                    <li><code>configProperties</code>: Mappning av konfigurationsegenskaper</li>
+                    <li><code>dataFrame</code>: Data som ska lagras i form av en DataFrame</li>
                 </ul>
             </td>
         </tr>
@@ -413,14 +413,14 @@ I följande tabell beskrivs klassmetoderna för en PySpark-datamängdstransforme
     <tbody>
         <tr>
             <td>
-                <p><i>abstrakt</i><br/><code class=" language-undefined">transform(self, configProperties, dataset)</code></p>
+                <p><i>abstrakt</i><br/><code>transform(self, configProperties, dataset)</code></p>
                 <p>Tar en datauppsättning som indata och skapar en ny härledd datauppsättning</p>
             </td>
             <td>
                 <ul>
-                    <li><code class=" language-undefined">self</code>: Självreferens</li>
-                    <li><code class=" language-undefined">configProperties</code>: Mappning av konfigurationsegenskaper</li>
-                    <li><code class=" language-undefined">dataset</code>: Indatauppsättningen för omvandling</li>
+                    <li><code>self</code>: Självreferens</li>
+                    <li><code>configProperties</code>: Mappning av konfigurationsegenskaper</li>
+                    <li><code>dataset</code>: Indatauppsättningen för omvandling</li>
                 </ul>
             </td>
         </tr>
@@ -441,13 +441,13 @@ I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] datamän
     <tbody>
         <tr>
             <td>
-                <p><code class=" language-undefined">transform(configProperties, dataset)</code></p>
+                <p><code>transform(configProperties, dataset)</code></p>
                 <p>Tar en datauppsättning som indata och skapar en ny härledd datauppsättning</p>
             </td>
             <td>
                 <ul>
-                    <li><code class=" language-undefined">configProperties</code>: Mappning av konfigurationsegenskaper</li>
-                    <li><code class=" language-undefined">dataset</code>: Indatauppsättningen för omvandling</li>
+                    <li><code>configProperties</code>: Mappning av konfigurationsegenskaper</li>
+                    <li><code>dataset</code>: Indatauppsättningen för omvandling</li>
                 </ul>
             </td>
         </tr>
@@ -472,26 +472,26 @@ I följande tabell beskrivs klassmetoderna för en PySpark FeaturePipelineFactor
     <tbody>
         <tr>
             <td>
-                <p><i>abstrakt</i><br/><code class=" language-undefined">create_pipeline(self, configProperties)</code></p>
+                <p><i>abstrakt</i><br/><code>create_pipeline(self, configProperties)</code></p>
                 <p>Skapa och returnera en Spark Pipeline som innehåller en serie Spark-omformare</p>
             </td>
             <td>
                 <ul>
-                    <li><code class=" language-undefined">self</code>: Självreferens</li>
-                    <li><code class=" language-undefined">configProperties</code>: Mappning av konfigurationsegenskaper</li>
+                    <li><code>self</code>: Självreferens</li>
+                    <li><code>configProperties</code>: Mappning av konfigurationsegenskaper</li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td>
-                <p><i>abstrakt</i><br/><code class=" language-undefined">get_param_map(self, configProperties, sparkSession)</code></p>
+                <p><i>abstrakt</i><br/><code>get_param_map(self, configProperties, sparkSession)</code></p>
                 <p>Hämta och returnera parametermappning från konfigurationsegenskaper</p>
             </td>
             <td>
                 <ul>
-                    <li><code class=" language-undefined">self</code>: Självreferens</li>
-                    <li><code class=" language-undefined">configProperties</code>: Konfigurationsegenskaper</li>
-                    <li><code class=" language-undefined">sparkSession</code>: Spark-session</li>
+                    <li><code>self</code>: Självreferens</li>
+                    <li><code>configProperties</code>: Konfigurationsegenskaper</li>
+                    <li><code>sparkSession</code>: Spark-session</li>
                 </ul>
             </td>
         </tr>
@@ -512,24 +512,24 @@ I följande tabell beskrivs klassmetoderna för en [!DNL Spark] FeaturePipelineF
     <tbody>
         <tr>
             <td>
-                <p><i>abstrakt</i><br/><code class=" language-undefined">createPipeline(configProperties)</code></p>
+                <p><i>abstrakt</i><br/><code>createPipeline(configProperties)</code></p>
                 <p>Skapa och returnera en pipeline som innehåller en serie transformerare</p>
             </td>
             <td>
                 <ul>
-                    <li><code class=" language-undefined">configProperties</code>: Mappning av konfigurationsegenskaper</li>
+                    <li><code>configProperties</code>: Mappning av konfigurationsegenskaper</li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td>
-                <p><i>abstrakt</i><br/><code class=" language-undefined">getParamMap(configProperties, sparkSession)</code></p>
+                <p><i>abstrakt</i><br/><code>getParamMap(configProperties, sparkSession)</code></p>
                 <p>Hämta och returnera parametermappning från konfigurationsegenskaper</p>
             </td>
             <td>
                 <ul>
-                    <li><code class=" language-undefined">configProperties</code>: Konfigurationsegenskaper</li>
-                    <li><code class=" language-undefined">sparkSession</code>: Spark-session</li>
+                    <li><code>configProperties</code>: Konfigurationsegenskaper</li>
+                    <li><code>sparkSession</code>: Spark-session</li>
                 </ul>
             </td>
         </tr>
@@ -554,53 +554,53 @@ I följande tabell beskrivs klassmetoderna för en PySpark PipelineFactory:
     <tbody>
         <tr>
             <td>
-                <p><i>abstrakt</i><br/><code class=" language-undefined">apply(self, configProperties)</code></p>
+                <p><i>abstrakt</i><br/><code>apply(self, configProperties)</code></p>
                 <p>Skapa och returnera en Spark Pipeline som innehåller logik och algoritm för modellutbildning och poängsättning</p>
             </td>
             <td>
                 <ul>
-                    <li><code class=" language-undefined">self</code>: Självreferens</li>
-                    <li><code class=" language-undefined">configProperties</code>: Konfigurationsegenskaper</li>
+                    <li><code>self</code>: Självreferens</li>
+                    <li><code>configProperties</code>: Konfigurationsegenskaper</li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td>
-                <p><i>abstrakt</i><br/><code class=" language-undefined">train(self, configProperties, dataframe)</code></p>
+                <p><i>abstrakt</i><br/><code>train(self, configProperties, dataframe)</code></p>
                 <p>Returnera en anpassad pipeline som innehåller logik och algoritm för utbildning av en modell. Den här metoden krävs inte om en Spark Pipeline används</p>
             </td>
             <td>
                 <ul>
-                    <li><code class=" language-undefined">self</code>: Självreferens</li>
-                    <li><code class=" language-undefined">configProperties</code>: Konfigurationsegenskaper</li>
-                    <li><code class=" language-undefined">dataframe</code>: Funktionsuppsättning för utbildningsmaterial</li>
+                    <li><code>self</code>: Självreferens</li>
+                    <li><code>configProperties</code>: Konfigurationsegenskaper</li>
+                    <li><code>dataframe</code>: Funktionsuppsättning för utbildningsmaterial</li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td>
-                <p><i>abstrakt</i><br/><code class=" language-undefined">score(self, configProperties, dataframe, model)</code></p>
+                <p><i>abstrakt</i><br/><code>score(self, configProperties, dataframe, model)</code></p>
                 <p>Poäng med hjälp av den tränade modellen och returnera resultatet</p>
             </td>
             <td>
                 <ul>
-                    <li><code class=" language-undefined">self</code>: Självreferens</li>
-                    <li><code class=" language-undefined">configProperties</code>: Konfigurationsegenskaper</li>
-                    <li><code class=" language-undefined">dataframe</code>: Indatauppsättning för poängsättning</li>
-                    <li><code class=" language-undefined">model</code>: En tränad modell som används för bedömning</li>
+                    <li><code>self</code>: Självreferens</li>
+                    <li><code>configProperties</code>: Konfigurationsegenskaper</li>
+                    <li><code>dataframe</code>: Indatauppsättning för poängsättning</li>
+                    <li><code>model</code>: En tränad modell som används för bedömning</li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td>
-                <p><i>abstrakt</i><br/><code class=" language-undefined">get_param_map(self, configProperties, sparkSession)</code></p>
+                <p><i>abstrakt</i><br/><code>get_param_map(self, configProperties, sparkSession)</code></p>
                 <p>Hämta och returnera parametermappning från konfigurationsegenskaper</p>
             </td>
             <td>
                 <ul>
-                    <li><code class=" language-undefined">self</code>: Självreferens</li>
-                    <li><code class=" language-undefined">configProperties</code>: Konfigurationsegenskaper</li>
-                    <li><code class=" language-undefined">sparkSession</code>: Spark-session</li>
+                    <li><code>self</code>: Självreferens</li>
+                    <li><code>configProperties</code>: Konfigurationsegenskaper</li>
+                    <li><code>sparkSession</code>: Spark-session</li>
                 </ul>
             </td>
         </tr>
@@ -621,24 +621,24 @@ I följande tabell beskrivs klassmetoderna för en [!DNL Spark] PipelineFactory:
     <tbody>
         <tr>
             <td>
-                <p><i>abstrakt</i><br/><code class=" language-undefined">apply(configProperties)</code></p>
+                <p><i>abstrakt</i><br/><code>apply(configProperties)</code></p>
                 <p>Skapa och returnera en pipeline som innehåller logik och algoritm för modellutbildning och poängsättning</p>
             </td>
             <td>
                 <ul>
-                    <li><code class=" language-undefined">configProperties</code>: Konfigurationsegenskaper</li>
+                    <li><code>configProperties</code>: Konfigurationsegenskaper</li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td>
-                <p><i>abstrakt</i><br/><code class=" language-undefined">getParamMap(configProperties, sparkSession)</code></p>
+                <p><i>abstrakt</i><br/><code>getParamMap(configProperties, sparkSession)</code></p>
                 <p>Hämta och returnera parametermappning från konfigurationsegenskaper</p>
             </td>
             <td>
                 <ul>
-                    <li><code class=" language-undefined">configProperties</code>: Konfigurationsegenskaper</li>
-                    <li><code class=" language-undefined">sparkSession</code>: Spark-session</li>
+                    <li><code>configProperties</code>: Konfigurationsegenskaper</li>
+                    <li><code>sparkSession</code>: Spark-session</li>
                 </ul>
             </td>
         </tr>
@@ -663,28 +663,28 @@ I följande tabell beskrivs klassmetoderna för en PySpark MLEvaluator:
     <tbody>
         <tr>
             <td>
-                <p><i>abstrakt</i><br/><code class=" language-undefined">split(self, configProperties, dataframe)</code></p>
+                <p><i>abstrakt</i><br/><code>split(self, configProperties, dataframe)</code></p>
                 <p>Delar in datauppsättningen i underuppsättningar för utbildning och testning</p>
             </td>
             <td>
                 <ul>
-                    <li><code class=" language-undefined">self</code>: Självreferens</li>
-                    <li><code class=" language-undefined">configProperties</code>: Konfigurationsegenskaper</li>
-                    <li><code class=" language-undefined">dataframe</code>: Indatauppsättning som ska delas</li>
+                    <li><code>self</code>: Självreferens</li>
+                    <li><code>configProperties</code>: Konfigurationsegenskaper</li>
+                    <li><code>dataframe</code>: Indatauppsättning som ska delas</li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td>
-                <p><i>abstrakt</i><br/><code class=" language-undefined">evaluate(self, dataframe, model, configProperties)</code></p>
+                <p><i>abstrakt</i><br/><code>evaluate(self, dataframe, model, configProperties)</code></p>
                 <p>Utvärderar en utbildad modell och returnerar utvärderingsresultaten</p>
             </td>
             <td>
                 <ul>
-                    <li><code class=" language-undefined">self</code>: Självreferens</li>
-                    <li><code class=" language-undefined">dataframe</code>: En DataFrame som består av utbildnings- och testdata</li>
-                    <li><code class=" language-undefined">model</code>: En tränad modell</li>
-                    <li><code class=" language-undefined">configProperties</code>: Konfigurationsegenskaper</li>
+                    <li><code>self</code>: Självreferens</li>
+                    <li><code>dataframe</code>: En DataFrame som består av utbildnings- och testdata</li>
+                    <li><code>model</code>: En tränad modell</li>
+                    <li><code>configProperties</code>: Konfigurationsegenskaper</li>
                 </ul>
             </td>
         </tr>
@@ -705,26 +705,26 @@ I följande tabell beskrivs klassmetoderna för en [!DNL Spark] MLEvaluator:
     <tbody>
         <tr>
             <td>
-                <p><i>abstrakt</i><br/><code class=" language-undefined">split(configProperties, data)</code></p>
+                <p><i>abstrakt</i><br/><code>split(configProperties, data)</code></p>
                 <p>Delar in datauppsättningen i underuppsättningar för utbildning och testning</p>
             </td>
             <td>
                 <ul>
-                    <li><code class=" language-undefined">configProperties</code>: Konfigurationsegenskaper</li>
-                    <li><code class=" language-undefined">data</code>: Indatauppsättning som ska delas</li>
+                    <li><code>configProperties</code>: Konfigurationsegenskaper</li>
+                    <li><code>data</code>: Indatauppsättning som ska delas</li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td>
-                <p><i>abstrakt</i><br/><code class=" language-undefined">evaluate(configProperties, model, data)</code></p>
+                <p><i>abstrakt</i><br/><code>evaluate(configProperties, model, data)</code></p>
                 <p>Utvärderar en utbildad modell och returnerar utvärderingsresultaten</p>
             </td>
             <td>
                 <ul>
-                    <li><code class=" language-undefined">configProperties</code>: Konfigurationsegenskaper</li>
-                    <li><code class=" language-undefined">model</code>: En tränad modell</li>
-                    <li><code class=" language-undefined">data</code>: En DataFrame som består av utbildnings- och testdata</li>
+                    <li><code>configProperties</code>: Konfigurationsegenskaper</li>
+                    <li><code>model</code>: En tränad modell</li>
+                    <li><code>data</code>: En DataFrame som består av utbildnings- och testdata</li>
                 </ul>
             </td>
         </tr>
