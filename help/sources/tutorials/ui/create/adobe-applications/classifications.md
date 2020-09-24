@@ -4,8 +4,9 @@ description: I den här självstudiekursen beskrivs hur du skapar en Adobe Analy
 solution: Experience Platform
 title: Skapa en Adobe Analytics Classifications-dataanslutning i användargränssnittet
 topic: overview
+type: Tutorial
 translation-type: tm+mt
-source-git-commit: 0da686743e8bc57d310f7eff6f1bf812a8f31238
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '587'
 ht-degree: 1%
