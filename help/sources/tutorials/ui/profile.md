@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;activate inbound data;populate
 solution: Experience Platform
 title: Aktivera inkommande källdata för att fylla i kundprofiler
 topic: overview
+type: Tutorial
 description: Inkommande data från källkopplingen kan användas för att berika och fylla i kundprofildata i realtid.
 translation-type: tm+mt
-source-git-commit: fb60e11b9502c31e654d3fbe5dc240ace9429332
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '469'
 ht-degree: 0%
