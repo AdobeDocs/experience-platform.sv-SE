@@ -2,10 +2,11 @@
 keywords: Experience Platform;import packaged recipe;Data Science Workspace;popular topics;recipes;ui;create engine
 solution: Experience Platform
 title: Importera ett paketerat recept (UI)
-topic: Tutorial
+topic: tutorial
+type: Tutorial
 description: I den här självstudiekursen får du information om hur du konfigurerar och importerar ett paketerat recept med hjälp av det angivna exemplet på detaljhandelsförsäljning. I slutet av den här självstudiekursen kan du skapa, utbilda och utvärdera en modell i Adobe Experience Platform Data Science Workspace.
 translation-type: tm+mt
-source-git-commit: 9ba229195892245d29fb4f17b9f2e5cd6c6ea567
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '1708'
 ht-degree: 0%
