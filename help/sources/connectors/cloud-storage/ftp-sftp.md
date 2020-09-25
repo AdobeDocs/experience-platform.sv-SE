@@ -5,9 +5,9 @@ title: FTP- och SFTP-anslutning
 topic: overview
 description: Dokumentationen nedan innehåller information om hur du ansluter en FTP- eller STFP-server till plattformen med API:er eller användargränssnittet.
 translation-type: tm+mt
-source-git-commit: d42351c194bb5a11f3175535de83fbd3b6ac58d2
+source-git-commit: 2aa6ef66444dbcd397e91e6f3075e020ba963579
 workflow-type: tm+mt
-source-wordcount: '424'
+source-wordcount: '476'
 ht-degree: 0%
 
 ---
@@ -67,6 +67,8 @@ Nedan följer en lista över begränsningar som du måste ta hänsyn till när d
 - Följande filnamn är inte tillåtna: LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, PRN, AUX, NUL, CON, CLOCK$, punkttecken (.) och två punkttecken (.).
 
 ## Anslut FTP och SFTP till [!DNL Platform]
+
+> [!IMPORTANT]: Användarna måste inaktivera interaktiv tangentbordsautentisering i SFTP-serverkonfigurationen innan de ansluter. Om du inaktiverar inställningen kan du ange lösenord manuellt, i stället för att skriva in via en tjänst eller ett program. Mer information om interaktiv autentisering för tangentbord finns i [Component Pro-dokumentet](https://doc.componentpro.com/ComponentPro-Sftp/authenticating-with-a-keyboard-interactive-authentication) .
 
 Dokumentationen nedan innehåller information om hur du ansluter en FTP- eller SFTP-server till [!DNL Platform] API:er eller användargränssnittet:
 
