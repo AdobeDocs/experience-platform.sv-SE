@@ -6,9 +6,9 @@ topic: overview
 type: Tutorial
 description: I den här självstudiekursen beskrivs hur du skapar en FTP- eller SFTP-källkoppling med hjälp av användargränssnittet för plattformen.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: c3352c090ce9e5a89d9285aabdc4851632d4d437
 workflow-type: tm+mt
-source-wordcount: '547'
+source-wordcount: '680'
 ht-degree: 1%
 
 ---
@@ -61,9 +61,24 @@ Sidan visas **[!UICONTROL Connect to SFTP]** . På den här sidan kan du antinge
 
 ### Nytt konto
 
-Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. Ange ett namn, en valfri beskrivning och dina FTP- eller SFTP-uppgifter i det indataformulär som visas. När du är klar väljer du **[!UICONTROL Connect]** och tillåt sedan en tid för att upprätta den nya anslutningen.
+Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. Ange ett namn, en valfri beskrivning och dina inloggningsuppgifter på det indataformulär som visas. När du är klar väljer du **[!UICONTROL Connect]** och tillåt sedan en tid för att upprätta den nya anslutningen.
 
-![koppla](../../../../images/tutorials/create/sftp/new.png)
+SFTP-anslutningen ger dig olika typer av autentisering för åtkomst. Under **[!UICONTROL Account authentication]** Välj **[!UICONTROL Password]** att använda en lösenordsbaserad autentiseringsuppgift.
+
+![connect-password](../../../../images/tutorials/create/sftp/password.png)
+
+Du kan också välja **[offentlig SSH-nyckel]** och ansluta ditt SFTP-konto med en kombination av **[!UICONTROL Private key content]** och **[!UICONTROL Passphrase]**.
+
+>[!IMPORTANT]
+>
+>SFTP-anslutningen stöder en RSA/DSA OpenSSH-nyckel. Se till att nyckelfilens innehåll börjar med `"-----BEGIN [RSA/DSA] PRIVATE KEY-----"`. Om den privata nyckelfilen är en PPK-formatfil använder du PuTTY-verktyget för att konvertera från PPK till OpenSSH-format.
+
+![connect-ssh](../../../../images/tutorials/create/sftp/ssh.png)
+
+| Autentiseringsuppgifter | Beskrivning |
+| ---------- | ----------- |
+| Innehåll för privat nyckel | A Base64 encoded SSH private key content. Den privata SSH-nyckeln ska vara i OpenSSH-format. |
+| Lösenfras | Anger lösenordsfrasen eller lösenordet som den privata nyckeln ska dekrypteras om nyckelfilen eller nyckelinnehållet skyddas av en lösenordsfras. Om PrivateKeyContent är lösenordsskyddat måste den här parametern användas med PrivateKeyContent-innehållets lösenfras som värde. |
 
 ### Befintligt konto
 
