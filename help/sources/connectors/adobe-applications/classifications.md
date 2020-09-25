@@ -5,9 +5,9 @@ title: Adobe Analytics Classifications Data Connector
 topic: overview
 description: Dokumentationen nedan innehåller information om hur du ansluter Analytics-klassificeringar till plattformen med användargränssnittet
 translation-type: tm+mt
-source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
+source-git-commit: 1a49cccfbf8d565c8154329cf1f94382911b2f85
 workflow-type: tm+mt
-source-wordcount: '135'
+source-wordcount: '172'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Med Adobe Experience Platform kan data hämtas från externa källor samtidigt s
 
 [!DNL Experience Platform] har stöd för inmatning av Analytics-klassificeringsdata i Adobe Experience Platform.
 
-Tack vare klassificeringar kan variabeldata i Analytics kategoriseras och visas på olika sätt när rapporter genereras.
+Tack vare klassificeringar kan variabeldata i Analytics kategoriseras och visas på olika sätt när rapporter genereras. Data Connector för Analytics-klassificeringar kräver att dina data har migrerats till den nya [!DNL Classifications] infrastrukturen i Adobe Analytics innan de används. Kontakta Adobe Customer Success Manager för att bekräfta migreringsstatusen för dina data.
 
 Dokumentationen nedan innehåller information om hur du ansluter Analytics-klassificeringar till plattformen med användargränssnittet:
 
