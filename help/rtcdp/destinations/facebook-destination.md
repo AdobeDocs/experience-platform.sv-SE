@@ -1,14 +1,14 @@
 ---
-keywords: facebook extensions;facebook extension;facebook destinations;facebook
+keywords: facebook extensions;facebook extension;facebook destinations;facebook;instagram;messenger;facebook messenger
 title: Facebook-mål
 seo-title: Facebook-mål
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 seo-description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 72ceb747bd4b278afc51dfb5ab6d6386d7b05c82
 workflow-type: tm+mt
-source-wordcount: '722'
-ht-degree: 2%
+source-wordcount: '758'
+ht-degree: 4%
 
 ---
 
@@ -19,7 +19,10 @@ ht-degree: 2%
 
 Aktivera profiler för era [!DNL Facebook] kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 
+Du kan använda den här målgruppen för målgruppsanpassning i olika appar som stöds av [!DNL Facebook’s] , inklusive [!DNL Custom Audiences], [!DNL Facebook]och [!DNL Instagram][!DNL Audience Network] [!DNL Messenger]. Det program som ni valt att köra kampanjen mot anges av placeringsnivån i [!DNL Facebook Ads Manager].
+
 ![Facebook-mål i CDP-gränssnittet i realtid](/help/rtcdp/destinations/assets/facebook-destination.png)
+
 
 ## Användningsexempel
 
