@@ -5,7 +5,7 @@ title: FTP- och SFTP-anslutning
 topic: overview
 description: Dokumentationen nedan innehåller information om hur du ansluter en FTP- eller STFP-server till plattformen med API:er eller användargränssnittet.
 translation-type: tm+mt
-source-git-commit: 2aa6ef66444dbcd397e91e6f3075e020ba963579
+source-git-commit: 93584ecbbe3be40c6ebee09cac85d497e4a99317
 workflow-type: tm+mt
 source-wordcount: '476'
 ht-degree: 0%
@@ -68,7 +68,9 @@ Nedan följer en lista över begränsningar som du måste ta hänsyn till när d
 
 ## Anslut FTP och SFTP till [!DNL Platform]
 
-> [!IMPORTANT]: Användarna måste inaktivera interaktiv tangentbordsautentisering i SFTP-serverkonfigurationen innan de ansluter. Om du inaktiverar inställningen kan du ange lösenord manuellt, i stället för att skriva in via en tjänst eller ett program. Mer information om interaktiv autentisering för tangentbord finns i [Component Pro-dokumentet](https://doc.componentpro.com/ComponentPro-Sftp/authenticating-with-a-keyboard-interactive-authentication) .
+>[!IMPORTANT]
+>
+>Användarna måste inaktivera interaktiv tangentbordsautentisering i SFTP-serverkonfigurationen innan de ansluter. Om du inaktiverar inställningen kan du ange lösenord manuellt, i stället för att skriva in via en tjänst eller ett program. Mer information om interaktiv autentisering för tangentbord finns i [Component Pro-dokumentet](https://doc.componentpro.com/ComponentPro-Sftp/authenticating-with-a-keyboard-interactive-authentication) .
 
 Dokumentationen nedan innehåller information om hur du ansluter en FTP- eller SFTP-server till [!DNL Platform] API:er eller användargränssnittet:
 
