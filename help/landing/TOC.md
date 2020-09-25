@@ -5,9 +5,9 @@ user-guide-title: Hjälp om Adobe Experience Platform
 breadcrumb-title: Experience Platform Guide
 user-guide-description: Centralize and standardize customer data and content and apply data science and machine learning to improve the design and delivery of rich, personalized experiences.
 translation-type: tm+mt
-source-git-commit: 857ad65335db338c8d0e5d2ea1f92f00d6a1da1e
+source-git-commit: df881ceaeab7b5e51e1574b6487c3a8368c5c596
 workflow-type: tm+mt
-source-wordcount: '306'
+source-wordcount: '309'
 ht-degree: 20%
 
 ---
@@ -48,5 +48,6 @@ ht-degree: 20%
 * [Versionsinformation](https://docs.adobe.com/content/help/en/experience-platform/release-notes/latest.html)
 * [Ordlista](glossary.md)
 * [Felsökningsguide](troubleshooting.md)
+* [ADLS Gen2-migrering](adls2-gen2-migration.md)
 * [Grundläggande om API](api-fundamentals.md)
 * [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html)
