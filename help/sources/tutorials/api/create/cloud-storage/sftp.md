@@ -6,10 +6,10 @@ topic: overview
 type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till en SFTP-server (Secure File Transfer Protocol).
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 781a26486a42f304308f567284cef53d591aa124
 workflow-type: tm+mt
-source-wordcount: '568'
-ht-degree: 1%
+source-wordcount: '793'
+ht-degree: 0%
 
 ---
 
@@ -44,6 +44,8 @@ För [!DNL Flow Service] att kunna ansluta till SFTP måste du ange värden för
 | `host` | Namnet eller IP-adressen som är associerad med SFTP-servern. |
 | `username` | Användarnamnet som ger åtkomst till din SFTP-server. |
 | `password` | Lösenordet för SFTP-servern. |
+| `privateKeyContent` | Base64-kodat innehåll för privat SSH-nyckel. SSH-filens OpenSSH-format (RSA/DSA). |
+| `passPhrase` | Lösenordsfrasen eller lösenordet för att dekryptera den privata nyckeln om nyckelfilen eller nyckelinnehållet skyddas av en lösenordsfras. Om PrivateKeyContent är lösenordsskyddat måste den här parametern användas med PrivateKeyContent-innehållets lösenfras som värde. |
 
 ### Läser exempel-API-anrop
 
@@ -68,6 +70,10 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 ## Skapa en anslutning
 
 En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per SFTP-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+
+### Skapa en SFTP-anslutning med grundläggande autentisering
+
+Om du vill skapa en SFTP-anslutning med grundläggande autentisering skickar du en POST till [!DNL Flow Service] API:t och anger värden för anslutningens `host`, `userName`och `password`.
 
 **API-format**
 
@@ -105,7 +111,62 @@ curl -X POST \
 | `auth.params.host` | Värdnamnet för SFTP-servern. |
 | `auth.params.username` | Användarnamnet som är associerat med SFTP-servern. |
 | `auth.params.password` | Lösenordet som är kopplat till SFTP-servern. |
-| `connectionSpec.id` | ID för anslutningsspecifikationen för STFP-servern: `b7bf2577-4520-42c9-bae9-cad01560f7bc` |
+| `connectionSpec.id` | SFTP-serveranslutningsspecifikation-ID: `b7bf2577-4520-42c9-bae9-cad01560f7bc` |
+
+**Svar**
+
+Ett lyckat svar returnerar den unika identifieraren (`id`) för den nya anslutningen. Detta ID krävs för att utforska din SFTP-server i nästa självstudiekurs.
+
+```json
+{
+    "id": "bf367b0d-3d9b-4060-b67b-0d3d9bd06094",
+    "etag": "\"1700cc7b-0000-0200-0000-5e3b3fba0000\""
+}
+```
+
+### Skapa en SFTP-anslutning med autentisering med SSH-offentlig nyckel
+
+Om du vill skapa en SFTP-anslutning med SSH-autentisering med offentlig nyckel, skickar du en POST till [!DNL Flow Service] API:t samtidigt som du anger värden för anslutningens `host`, `userName``privateKeyContent`och `passPhrase`.
+
+**API-format**
+
+```http
+POST /connections
+```
+
+**Begäran**
+
+```shell
+curl -X POST \
+    'http://platform.adobe.io/data/foundation/flowservice/connections' \
+    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+    -H 'x-api-key: {API_KEY}' \
+    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-sandbox-name: {SANDBOX_NAME}' \
+    -H 'Content-Type: application/json' \
+    -d  "auth": {
+        "specName": "SSH PublicKey Authentication for sftp",
+        "params": {
+            "host": "{HOST_NAME}",
+            "userName": "{USER_NAME}",
+            "privateKeyContent": "{PRIVATE_KEY_CONTENT}",
+            "passPhrase": "{PASS_PHRASE}"
+        }
+    },
+    "connectionSpec": {
+        "id": "b7bf2577-4520-42c9-bae9-cad01560f7bc",
+        "version": "1.0"
+    }
+}
+```
+
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `auth.params.host` | Värdnamnet för SFTP-servern. |
+| `auth.params.username` | Användarnamnet som är associerat med SFTP-servern. |
+| `auth.params.privateKeyContent` | Base64-kodat innehåll för privat SSH-nyckel. SSH-filens OpenSSH-format (RSA/DSA). |
+| `auth.params.passPhrase` | Lösenordsfrasen eller lösenordet för att dekryptera den privata nyckeln om nyckelfilen eller nyckelinnehållet skyddas av en lösenordsfras. Om PrivateKeyContent är lösenordsskyddat måste den här parametern användas med PrivateKeyContent-innehållets lösenfras som värde. |
+| `connectionSpec.id` | SFTP-serveranslutningsspecifikation-ID: `b7bf2577-4520-42c9-bae9-cad01560f7bc` |
 
 **Svar**
 
