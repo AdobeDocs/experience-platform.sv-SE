@@ -5,7 +5,7 @@ user-guide-title: Hjälp om Adobe Experience Platform segmenteringstjänst
 breadcrumb-title: Segmentation Service Guide
 user-guide-description: Build segments and generate audiences from your Real-time Customer Profile data.
 translation-type: tm+mt
-source-git-commit: d7b9d2e78273999432355006dff25af6ecfabc25
+source-git-commit: 1bfb876dc1665ebef4450a6f5363fba1ea1b7c61
 workflow-type: tm+mt
 source-wordcount: '118'
 ht-degree: 7%
