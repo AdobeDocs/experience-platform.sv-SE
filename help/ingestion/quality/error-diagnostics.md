@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över partiell gruppinmatning i Adobe Experience Platform
 topic: overview
 translation-type: tm+mt
-source-git-commit: 01b1d9a0d0af82f5380bbc204e65b682d4a50ac1
+source-git-commit: 4652722b17a290c9ef53244498257eb4cb97ac6d
 workflow-type: tm+mt
-source-wordcount: '871'
+source-wordcount: '881'
 ht-degree: 1%
 
 ---
@@ -292,7 +292,15 @@ Om batchen har ett eller flera fel och feldiagnostik är aktiverat, returnerar s
 >}
 >```
 
-## Feltyper för partiell batchöverföring {#appendix}
+## Nästa steg {#next-steps}
+
+I den här självstudiekursen beskrivs hur du övervakar fel vid partiell gruppinmatning. Mer information om batchintag finns i Utvecklarhandbok för [batchintag](../batch-ingestion/api-overview.md).
+
+## Bilaga {#appendix}
+
+I det här avsnittet finns ytterligare information om olika typer av matningsfel.
+
+### Feltyper för partiell batchöverföring {#partial-ingestion-types}
 
 Partiell gruppinmatning har tre olika feltyper vid datainmatning:
 
@@ -379,7 +387,3 @@ Ett exempelsvar på hämtning av felfilen visas nedan:
     "_filename": "parsing_errors_0.json"
 }
 ```
-
-## Nästa steg {#next-steps}
-
-I den här självstudiekursen beskrivs hur du övervakar fel vid partiell gruppinmatning. Mer information om batchintag finns i Utvecklarhandbok för [batchintag](../batch-ingestion/api-overview.md).
