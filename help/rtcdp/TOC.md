@@ -4,7 +4,7 @@ audience: user
 user-guide-title: Handbok för kunddataplattform i realtid
 user-guide-description: Bring together known and anonymous data from multiple enterprise sources to create customer profiles, create audience segments from those profiles, and activate those segments to third-party destinations.
 translation-type: tm+mt
-source-git-commit: 1bfb876dc1665ebef4450a6f5363fba1ea1b7c61
+source-git-commit: e3017744bfe35c6a60cf921121135352a1119bdd
 workflow-type: tm+mt
 source-wordcount: '460'
 ht-degree: 4%
@@ -107,12 +107,12 @@ ht-degree: 4%
          * [Gainsight-tillägg](/help/rtcdp/destinations/gainsight-extension.md)
          * [Kickfire-tillägg](/help/rtcdp/destinations/kickfire-extension.md)
          * [Marketo Web Personalization extension](destinations/marketo-web-personalization-extension.md)
-      * Målgrupper i sociala nätverk{#social-destinations}
+      * eto{#social-destinations}
          * [Översikt över mål för sociala nätverk](/help/rtcdp/destinations/social-network-destinations.md)
          * [Autentiseringsflöde för mål för sociala nätverk](/help/rtcdp/destinations/social-network-destinations-workflow.md)
          * [Adobe Livefyre-tillägg](/help/rtcdp/destinations/adobe-livefyre-extension.md)
          * [Facebook-mål](/help/rtcdp/destinations/facebook-destination.md)
-      * Socialundersökningsmål {#survey-destinations}
+      * Undersökningsmål {#survey-destinations}
          * [Översikt över undersökningsmål](/help/rtcdp/destinations/survey-destinations.md)
          * [Foresee-tillägg](/help/rtcdp/destinations/foresee-extension.md)
          * [InMoment-tillägg](/help/rtcdp/destinations/inmoment-extension.md)
