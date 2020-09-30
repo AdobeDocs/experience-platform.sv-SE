@@ -1,27 +1,58 @@
 ---
-keywords: Experience Platform;home;popular topics;access data sources
+keywords: Experience Platform;home;popular topics;access data sources;data access;spark sdk;python sdk
 solution: Experience Platform
 title: Självstudiekurser för dataåtkomst
 topic: tutorial
 type: Tutorial
 description: Med Adobe Experience Platform kan användare identifiera och få åtkomst till kapslade datauppsättningar i Experience Platform med hjälp av API:t för dataåtkomst.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 0ec93ef44facc725e22547d002de677d93f3bd1f
 workflow-type: tm+mt
-source-wordcount: '121'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
 
 
-# Åtkomst till Experience Platform data
+# Självstudiekurser för dataåtkomst
 
-Med Adobe Experience Platform kan användare identifiera och få åtkomst till kapslade datauppsättningar i [!DNL Experience Platform] med hjälp av API:t för dataåtkomst.
+Data Access stöder Adobe Experience Platform genom att tillhandahålla användarverktyg som fokuserar på att upptäcka och tillgängliggöra inkapslade datauppsättningar inom Experience Platform.
 
-## Få åtkomst till data med API:er
+Om du vill veta mer börjar du med att läsa översikten över [dataåtkomst](../data-access/home.md).
 
-Lär dig hur du hittar, får tillgång till och hämtar data som lagras i en datauppsättning med hjälp av API:t för dataåtkomst i Adobe Experience Platform, samt några av de unika funktionerna i API:t för dataåtkomst, som sidindelning och partiella hämtningar. Kom igång genom att följa självstudiekursen [för API för](../data-access/tutorials/dataset-data.md)dataåtkomst.
+## Fråga en datauppsättning med hjälp av API:t för dataåtkomst
 
-## Skapa en datauppsättning
+API:t för dataåtkomst stöder Adobe Experience Platform genom att ge användarna ett RESTful-gränssnitt som fokuserar på identifierbarhet och tillgänglighet för kapslade datauppsättningar i Experience Platform.
 
-Följ stegvisa instruktioner för att skapa en datauppsättning med hjälp av API: [!DNL Platform] er och fylla i datauppsättningen med hjälp av en fil i självstudiekursen [Skapa en datauppsättning](../catalog/datasets/create.md).
+**Den här självstudiekursen hjälper dig att:**
+- Hitta data på plattformen.
+- Öppna en fil med ett fil-ID.
+- Hämta metadata för en fil.
+- Få åtkomst till innehållet i en fil.
+- Hämta delar av innehållet i en fil.
+- Konfigurera API-svarssidnumrering.
+
+Kom igång genom att följa självstudiekursen [för API för](../data-access/tutorials/dataset-data.md)dataåtkomst.
+
+## Använd Secure Python SDK för att komma åt data
+
+Secure Python Data Access SDK är ett programutvecklingspaket som gör det möjligt att läsa och skriva datauppsättningar från Experience Platform med Python.
+
+**Den här guiden hjälper dig att:**
+- Konfigurera miljön och installera rätt paket.
+- Läs från en datauppsättning.
+- Skriv till en datauppsättning.
+- Läs och skriv till en användarutrymmeskatalog.
+
+Du kommer igång genom att läsa dokumentationen [för](../data-access/tutorials/python-sdk.md)Python Data Access SDK.
+
+## Använd Secure Spark SDK för att komma åt data
+
+SDK:t för säker Spark-dataåtkomst är ett programutvecklingspaket som gör det möjligt att läsa och skriva datauppsättningar från Adobe Experience Platform med Spark.
+
+**Den här guiden hjälper dig att:**
+- Konfigurera miljön och installera rätt paket.
+- Läs från en datauppsättning.
+- Skriv till en datauppsättning.
+
+Kom igång genom att läsa dokumentationen [till](../data-access/tutorials/spark-sdk.md)Spark Data Access SDK.
