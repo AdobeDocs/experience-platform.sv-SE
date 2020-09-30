@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics;data ingestion notifications;n
 solution: Experience Platform
 title: Prenumerera på dataöverföringshändelser
 topic: overview
+description: För att underlätta övervakningen av intagsprocessen kan Adobe Experience Platform prenumerera på en uppsättning händelser som publiceras i varje steg i processen och meddela dig om status för inmatade data och eventuella fel.
 translation-type: tm+mt
-source-git-commit: 80a1694f11cd2f38347989731ab7c56c2c198090
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '612'
+source-wordcount: '654'
 ht-degree: 0%
 
 ---
