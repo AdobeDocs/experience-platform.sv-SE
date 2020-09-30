@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;home;popular topics;data ingestion;batch;Batch;enable dataset;Batch ingestion overview;overview;batch ingestion overview;
 solution: Experience Platform
-title: Översikt över Adobe Experience Platform batchintag
+title: Översikt över batchintag
 topic: overview
 description: Med API:t för gruppinmatning kan du importera data till Adobe Experience Platform som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en parquet-fil) eller data som följer ett känt schema i XDM-registret (Experience Data Model).
 translation-type: tm+mt
-source-git-commit: c04fb056d4564e53f192e0734a700a13820f5ba7
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '1199'
+source-wordcount: '1196'
 ht-degree: 1%
 
 ---
