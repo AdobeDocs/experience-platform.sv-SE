@@ -4,10 +4,11 @@ solution: Experience Platform
 title: säkerställa att målgruppssegmentens dataanvändning följs
 topic: tutorial
 type: Tutorial
+description: Den här självstudiekursen beskriver stegen för att implementera efterlevnad av dataanvändning för målgruppssegment för kundprofiler i realtid med API:er.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '1333'
+source-wordcount: '1351'
 ht-degree: 0%
 
 ---
