@@ -4,10 +4,11 @@ solution: Experience Platform
 title: Skapa en datauppsättning för att exportera ett målgruppssegment
 topic: tutorial
 type: Tutorial
+description: I den här självstudiekursen går du igenom de steg som krävs för att skapa en datauppsättning som kan användas för att exportera ett målgruppssegment med hjälp av användargränssnittet i Experience Platform.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '674'
+source-wordcount: '699'
 ht-degree: 0%
 
 ---
