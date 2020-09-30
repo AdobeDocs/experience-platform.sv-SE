@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics;query service;api guide;connec
 solution: Experience Platform
 title: Handbok för frågetjänstutvecklare
 topic: connection parameters
+description: Du kan hämta anslutningsparametrar för användning av den interaktiva tjänsten genom att göra en GET-förfrågan till slutpunkten /connection_parameters.
 translation-type: tm+mt
-source-git-commit: c5d3be4706ca6d6a30e203067db6ddc894b9bfb4
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '122'
+source-wordcount: '143'
 ht-degree: 0%
 
 ---
