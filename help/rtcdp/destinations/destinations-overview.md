@@ -2,12 +2,12 @@
 keywords: RTCDP;CDP;Real-time Customer Data Platform;real time customer data platform;real time cdp;cdp;destinations;destination;rtcdp
 title: Översikt över destinationer
 seo-title: Översikt över destinationer
-description: Använd destinationer i Adobe Experience Platform för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+description: Aktivera plattformsdata till destinationer för flerkanalskampanjer, e-post, riktad reklam och mycket annat.
 seo-description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från kunddataplattformen i realtid. Ni kan använda Destinationer i kunddataplattformen i realtid i Adobe för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad annonsering och många andra användningsfall.
 translation-type: tm+mt
-source-git-commit: 5c3016e822ea23407af5de525c27785df8e2f795
+source-git-commit: 4e358fda1c8f7aebe57a009a146b8b73cf88e169
 workflow-type: tm+mt
-source-wordcount: '503'
+source-wordcount: '490'
 ht-degree: 0%
 
 ---
@@ -65,6 +65,6 @@ Mer information om hur du väljer användningsfall för marknadsföring i arbets
 * [Annonsmål - Google Display och Video 360 ](/help/rtcdp/destinations/google-dv360-destination.md)
 * [Lagringsmål i molnet](/help/rtcdp/destinations/cloud-storage-destinations-workflow.md)
 * [E-postmarknadsföringsmål](/help/rtcdp/destinations/email-marketing-destinations.md)
-* [eto](/help/rtcdp/destinations/social-network-destinations-workflow.md)
+* [Målgrupper i sociala nätverk](/help/rtcdp/destinations/social-network-destinations-workflow.md)
 
 Mer information om brott mot datapolicyer i arbetsflödet för segmentaktivering finns i steget Granska i [Aktivera profiler och segment till ett mål](/help/rtcdp/destinations/activate-destinations.md#review).
