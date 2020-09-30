@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segm
 solution: Experience Platform
 title: Förhandsgranska och beräkna slutpunkter
 topic: developer guide
+description: När ni utvecklar er segmentdefinition kan ni använda verktygen för uppskattning och förhandsgranskning i Adobe Experience Platform för att se information på sammanfattningsnivå för att säkerställa att ni isolerar den förväntade målgruppen.
 translation-type: tm+mt
-source-git-commit: 69d173e163720c962d910fa4c1e2491fb1262251
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '746'
+source-wordcount: '777'
 ht-degree: 1%
 
 ---
