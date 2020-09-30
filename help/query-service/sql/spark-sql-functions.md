@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics;query service;Query service;sp
 solution: Experience Platform
 title: Spark SQL-funktioner
 topic: spark sql functions
+description: Den här dokumentationen innehåller information om Spark SQL-hjälpredor som tillhandahåller inbyggda Spark SQL-funktioner för att utöka SQL-funktioner.
 translation-type: tm+mt
-source-git-commit: c5d3be4706ca6d6a30e203067db6ddc894b9bfb4
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '4991'
+source-wordcount: '5009'
 ht-degree: 5%
 
 ---
