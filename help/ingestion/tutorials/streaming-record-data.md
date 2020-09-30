@@ -4,10 +4,11 @@ solution: Experience Platform
 title: Direktuppspelande postdata
 topic: tutorial
 type: Tutorial
+description: Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform datainmatningstjänst.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '1072'
+source-wordcount: '1092'
 ht-degree: 0%
 
 ---
