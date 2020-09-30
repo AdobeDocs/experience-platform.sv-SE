@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics;query service;Query service;sc
 solution: Experience Platform
 title: Handbok för frågetjänstutvecklare
 topic: scheduled queries
+description: I följande avsnitt går du igenom de olika API-anrop du kan göra för schemalagda frågor med API:t för frågetjänsten.
 translation-type: tm+mt
-source-git-commit: c5d3be4706ca6d6a30e203067db6ddc894b9bfb4
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '943'
+source-wordcount: '963'
 ht-degree: 0%
 
 ---
