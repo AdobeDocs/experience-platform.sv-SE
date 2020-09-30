@@ -4,10 +4,11 @@ solution: Experience Platform
 title: Sammanfoga datauppsättningar
 topic: queries
 type: Tutorial
+description: Genom att koppla datauppsättningar kan du inkludera data från andra datauppsättningar i din fråga. I det här exemplet används en anpassad datamängd för operativsystem för att mappa operatorsystemID till operativsystemsvärdet.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 37356db1666b0c800119b1e254940ad72550848a
 workflow-type: tm+mt
-source-wordcount: '53'
+source-wordcount: '82'
 ht-degree: 1%
 
 ---
