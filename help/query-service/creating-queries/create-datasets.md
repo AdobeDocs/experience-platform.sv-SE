@@ -4,11 +4,12 @@ solution: Experience Platform
 title: Generera datauppsättningar från frågeresultat
 topic: queries
 type: Tutorial
+description: 'Med frågetjänsten kan du skapa datauppsättningar från användargränssnittet. När en datauppsättning har skapats kan den nås som vilken annan datauppsättning som helst i datasjön och användas för en mängd olika användningsfall. '
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '266'
-ht-degree: 1%
+source-wordcount: '301'
+ht-degree: 0%
 
 ---
 
