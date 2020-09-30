@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segm
 solution: Experience Platform
 title: Segmentjobb
 topic: developer guide
+description: Den här handboken innehåller information som hjälper dig att förstå segmentjobben bättre och innehåller exempel på API-anrop för att utföra grundläggande åtgärder med API:t.
 translation-type: tm+mt
-source-git-commit: 3926c989a05ee97f2a09c0ab38d6a444674563cb
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '1002'
+source-wordcount: '1025'
 ht-degree: 1%
 
 ---
