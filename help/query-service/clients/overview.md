@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics;Query service;query service;co
 solution: Experience Platform
 title: Anslut klienter till frågetjänsten
 topic: connect
+description: Det här dokumentet förklarar hur du ansluter till Query Service från ett antal klientprogram och hur du verifierar dessa anslutningar.
 translation-type: tm+mt
-source-git-commit: c5d3be4706ca6d6a30e203067db6ddc894b9bfb4
+source-git-commit: 37356db1666b0c800119b1e254940ad72550848a
 workflow-type: tm+mt
-source-wordcount: '75'
+source-wordcount: '97'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # Koppla klienter till [!DNL Query Service]
 
-I det här avsnittet beskrivs hur du ansluter till [!DNL Query Service] från ett antal datorklientprogram och hur du verifierar dessa anslutningar. [!DNL Query Service] använder [!DNL Postgres] protokollet, så instruktionerna i det här avsnittet förklarar hur du använder [!DNL Postgres] verktyg och drivrutiner för att ansluta och skriva frågor.
+I det här avsnittet beskrivs hur du ansluter till [!DNL Query Service] från en mängd olika klientprogram för datorer och hur du verifierar dessa anslutningar. [!DNL Query Service] använder [!DNL Postgres] protokollet, så instruktionerna i det här avsnittet förklarar hur du använder [!DNL Postgres] verktyg och drivrutiner för att ansluta och skriva frågor.
 
 Instruktioner finns för följande klienter:
 
