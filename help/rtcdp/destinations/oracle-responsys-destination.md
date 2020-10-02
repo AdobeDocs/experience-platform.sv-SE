@@ -5,9 +5,9 @@ seo-title: Oracle Responsys-mål
 description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som erbjuds av Oracle för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
 seo-description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som erbjuds av Oracle för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: d0a04c61bfe4024a2bb45ea7babab9073fcd6c22
 workflow-type: tm+mt
-source-wordcount: '449'
+source-wordcount: '487'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,11 @@ ht-degree: 0%
 
 [Responsys](https://www.oracle.com/marketingcloud/products/cross-channel-orchestration/) är ett verktyg för e-postmarknadsföring i storföretag för flerkanalskampanjer som erbjuds av [!DNL Oracle] att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
 
-Om du vill skicka segmentdata till [!DNL Oracle Responsys]måste du först [ansluta till målet](#connect-destination) i kunddataplattformen för Adobe i realtid och sedan [konfigurera en dataimport](#import-data-into-responsys) från lagringsplatsen till [!DNL Oracle Responsys].
+Om du vill skicka segmentdata till [!DNL Oracle Responsys]måste du först [ansluta till målet](#connect-destination) i kunddataplattformen i Adobe och sedan [konfigurera en dataimport](#import-data-into-responsys) från lagringsplatsen till [!DNL Oracle Responsys].
+
+## Exporttyp {#export-type}
+
+**Profilexport** - du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du väljer på skärmen Välj attribut i arbetsflödet [för](/help/rtcdp/destinations/activate-destinations.md#select-attributes)målaktivering.
 
 ## Koppla mål {#connect-destination}
 
@@ -38,7 +42,7 @@ För **[!UICONTROL SFTP with SSH Key]** anslutningar måste du ange domän, port
    * **[!UICONTROL Name]**: Välj ett relevant namn för destinationen.
    * **[!UICONTROL Description]**: Ange en beskrivning för destinationen.
    * **[!UICONTROL Folder Path]**: Ange sökvägen till lagringsplatsen där CDP i realtid ska placera dina exportdata som CSV-filer eller tabbavgränsade filer.
-   * **[!UICONTROL File Format]**: **CSV** eller **TAB_DELIMITED**. Välj vilket filformat du vill exportera till lagringsplatsen.
+   * **[!UICONTROL File Format]**: **CSV** eller **TAB_DELIMITED**. Välj vilket filformat som ska exporteras till lagringsplatsen.
 
    ![Grundläggande information om svar](/help/rtcdp/destinations/assets/responsys-basic-information.png)
 
