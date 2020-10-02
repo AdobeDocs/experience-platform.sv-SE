@@ -5,9 +5,9 @@ seo-title: Amazon S3-mål
 description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS) S3-lagring för att regelbundet exportera tabbavgränsade filer eller CSV-datafiler från Adobe Experience Platform till dina egna S3-butiker.
 seo-description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS) S3-lagring för att regelbundet exportera tabbavgränsade filer eller CSV-datafiler från Adobe Experience Platform till dina egna S3-butiker.
 translation-type: tm+mt
-source-git-commit: 4c45da353b1deeb66b0dedb37450158f4bdc2a7c
+source-git-commit: d0a04c61bfe4024a2bb45ea7babab9073fcd6c22
 workflow-type: tm+mt
-source-wordcount: '213'
+source-wordcount: '256'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,12 @@ ht-degree: 0%
 ## Översikt
 
 Skapa en utgående liveanslutning till ditt [!DNL Amazon Web Services] (AWS) S3-lagringsutrymme för att regelbundet exportera tabbavgränsade eller CSV-datafiler från Adobe Experience Platform till dina egna S3-butiker.
+
+## Exporttyp {#export-type}
+
+**Profilexport** - du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du väljer på skärmen Välj attribut i arbetsflödet [för](/help/rtcdp/destinations/activate-destinations.md#select-attributes)målaktivering.
+
+![Profilbaserad export av Amazon S3](/help/rtcdp/destinations/assets/aws-export-type.png)
 
 ## Koppla mål {#connect-destination}
 
