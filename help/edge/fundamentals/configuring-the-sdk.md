@@ -5,7 +5,7 @@ description: Lär dig hur du konfigurerar Experience Platform Web SDK
 seo-description: Lär dig hur du konfigurerar Experience Platform Web SDK
 keywords: configuring;configuration;SDK;edge;Web SDK;configure;edgeConfigId;context;web;device;environment;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;web sdk settings;prehidingStyle;opacity;cookieDestinationsEnabled;urlDestinationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 translation-type: tm+mt
-source-git-commit: fe53ecbf6adff4f1e09979cd170a88ac0bd3cb75
+source-git-commit: d036595dc96af98fd53c7eb40162585bac48f05c
 workflow-type: tm+mt
 source-wordcount: '745'
 ht-degree: 4%
@@ -103,7 +103,7 @@ Ange detta för att konfigurera ett återanrop som anropas för varje händelse 
 
 ## Sekretessalternativ
 
-### `defaultConsent`
+### `defaultConsent` {#default-consent}
 
 | **Typ** | **Obligatoriskt** | **Standardvärde** |
 | -------- | ------------ | ----------------- |
