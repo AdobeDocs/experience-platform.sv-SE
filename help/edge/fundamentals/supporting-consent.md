@@ -5,7 +5,7 @@ description: Lär dig hur du stöder medgivandeinställningar med Experience Pla
 seo-description: Lär dig hur du stöder medgivandeinställningar med Experience Platform Web SDK
 keywords: consent;defaultConsent;default consent;setConsent;Profile Privacy Mixin;Experience Event Privacy Mixin;Privacy Mixin;
 translation-type: tm+mt
-source-git-commit: fe53ecbf6adff4f1e09979cd170a88ac0bd3cb75
+source-git-commit: f178da80d0902f76868986426600f3da426cf24d
 workflow-type: tm+mt
 source-wordcount: '756'
 ht-degree: 0%
@@ -97,7 +97,7 @@ alloy("setConsent", {
 });
 ```
 
-När medgivandet har ställts in på det här sättet uppdateras den enhetliga profilen med medgivandeinformationen. För att detta ska fungera måste profilens XDM-schema innehålla [profilsekretessmixen](https://github.com/adobe/xdm/blob/master/docs/reference/context/profile-privacy.schema.md). När händelser skickas måste IAB:s medgivandeinformation läggas till manuellt i händelsens xdm-objekt. SDK inkluderar inte automatiskt information om samtycke i händelserna. Om du vill skicka medgivandeinformation i händelser måste [Experience Event Privacy Mixin](https://github.com/adobe/xdm/blob/master/docs/reference/context/experienceevent-privacy.schema.md) läggas till i händelseschemat.
+När medgivandet har ställts in på det här sättet uppdateras kundprofilen i realtid med medgivandeinformationen. För att detta ska fungera måste profilens XDM-schema innehålla [profilsekretessmixen](https://github.com/adobe/xdm/blob/master/docs/reference/context/profile-privacy.schema.md). När händelser skickas måste IAB:s medgivandeinformation läggas till manuellt i händelsens XDM-objekt. SDK inkluderar inte automatiskt information om samtycke i händelserna. Om du vill skicka medgivandeinformation i händelser måste [Experience Event Privacy Mixin](https://github.com/adobe/xdm/blob/master/docs/reference/context/experienceevent-privacy.schema.md) läggas till i Experience Event-schemat.
 
 ## Skicka båda standarderna i en begäran
 
