@@ -5,9 +5,9 @@ seo-title: SFTP-mål
 description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Experience Platform.
 seo-description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Experience Platform.
 translation-type: tm+mt
-source-git-commit: cbd748c1881c61f5e636567d94b68f2cf7302fa5
+source-git-commit: d0a04c61bfe4024a2bb45ea7babab9073fcd6c22
 workflow-type: tm+mt
-source-wordcount: '171'
+source-wordcount: '206'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,11 @@ ht-degree: 0%
 
 Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Experience Platform.
 
-Så här exporterar du data:
+## Exporttyp {#export-type}
+
+**Profilexport** - du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du väljer på skärmen Välj attribut i arbetsflödet [för](/help/rtcdp/destinations/activate-destinations.md#select-attributes)målaktivering.
+
+![Profilbaserad SFTP-exporttyp](/help/rtcdp/destinations/assets/sftp-export-type.png)
 
 ## Koppla mål {#connect-destination}
 
