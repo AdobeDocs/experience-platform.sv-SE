@@ -5,7 +5,7 @@ seo-title: Google Customer Match Destination
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egenskaper, som Search, Shopping, Gmail och YouTube.
 seo-description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egenskaper, som Search, Shopping, Gmail och YouTube.
 translation-type: tm+mt
-source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
+source-git-commit: c66fb4cf0a414e02ceb58becc9d9b59db3fe987b
 workflow-type: tm+mt
 source-wordcount: '1490'
 ht-degree: 0%
@@ -40,7 +40,7 @@ För att befordra releasen överför de e-postadresser från sin CRM-databas til
 
 Destinationerna i CDP i realtid i Adobe kan ha vissa regler och skyldigheter för data som skickas till eller tas emot från målplattformen. Du ansvarar för att förstå begränsningar och skyldigheter för dina data och hur du använder dessa data i Adobe Experience Platform och målplattformen. Adobe Experience Platform tillhandahåller datastyrningsverktyg som hjälper er att hantera vissa av dessa dataanvändningsskyldigheter. [Läs mer](/help/data-governance/labels/overview.md) om verktyg och policyer för datastyrning.
 
-## Aktiveringstyp och identiteter {#activation-type}
+## Exporttyp och identiteter {#export-type}
 
 **Segmentexport** - du exporterar alla medlemmar i ett segment (publik) med identifierarna (namn, telefonnummer osv.) används i [!DNL Google Customer Match] målet.
 
