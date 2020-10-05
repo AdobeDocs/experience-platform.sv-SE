@@ -5,9 +5,9 @@ description: Lär dig hur du skickar länkdata till Adobe Analytics med Experien
 seo-description: Lär dig hur du skickar länkdata till Adobe Analytics med Experience Platform Web SDK
 keywords: adobe analytics;analytics;sendEvent;s.t();s.tl();webPageDetails;pageViews;webInteraction;web Interaction;page views;link tracking;links;track links;clickCollection;click collection;
 translation-type: tm+mt
-source-git-commit: c6b572f8757e46ccb22ccea326a7537747f81893
+source-git-commit: 8840e00ec3aa28d43c371b793da4a4b9bfc8d259
 workflow-type: tm+mt
-source-wordcount: '361'
+source-wordcount: '362'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # Skicka data till Adobe Analytics
 
-Tidigare fanns det olika funktioner att skilja mellan en sidvy och en länk (till exempel `s.t(), s.tl()`), men i Web SDK finns bara `sendEvent` kommandot. De data du skickar med en händelse avgör om det ska vara en sidvy eller en länk.
+Tidigare fanns det olika funktioner för att skilja mellan en sidvy och en länk (till exempel `s.t(), s.tl()`), men i Web SDK finns bara `sendEvent` kommandot. De data du skickar med en händelse avgör om det ska vara en sidvy eller en länk.
 
 ## Skicka en sidvy
 
@@ -35,7 +35,7 @@ alloy("sendEvent", {
 });
 ```
 
-Även om analysfunktionen tekniskt sett registrerar en sidvy även om variabeln inte är inställd, är det bäst att ställa in den här variabeln när du vill registrera en sidvy som explicit i dina data och att framtidskorrektur för implementeringen.
+Även om analysfunktionen tekniskt sett registrerar en sidvy även om variabeln inte är inställd, är det bäst att ställa in variabeln när du vill registrera en sidvy som explicit i dina data och att i framtiden bevisa implementeringen.
 
 ## Spårningslänkar
 
