@@ -5,7 +5,7 @@ title: Översikt över policyer för dataanvändning
 topic: policies
 description: För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste dataanvändningsprinciper implementeras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom Experience Platform.
 translation-type: tm+mt
-source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
+source-git-commit: 259c26a9d3b6ef397acd552e255f68ecb25b2dd1
 workflow-type: tm+mt
 source-wordcount: '1003'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Det här dokumentet innehåller en översikt över dataanvändningsprinciper på
 
 ## Marknadsföringsåtgärder {#marketing-actions}
 
-**Marknadsföringsåtgärder**(kallas även **användningsfall** för marknadsföring) inom ramen för datastyrningsramverket är åtgärder som en [!DNL Experience Platform] datakonsument kan vidta och som din organisation vill begränsa dataanvändningen för. En dataanvändningsprincip definieras därför enligt följande:
+Marknadsföringsåtgärder (kallas även användningsfall för marknadsföring) inom ramen för datastyrningsramverket är åtgärder som en [!DNL Experience Platform] datakonsument kan vidta och som din organisation vill begränsa dataanvändningen för. En dataanvändningsprincip definieras därför enligt följande:
 
 1. En specifik marknadsföringsåtgärd
 2. Etiketter för dataanvändning som åtgärden är begränsad från att utföras mot
@@ -78,7 +78,7 @@ Tabellen nedan beskriver de viktigaste marknadsföringsåtgärderna som tillhand
 
 | Marknadsföringsåtgärd | Beskrivning |
 | --- | --- |
-| Analytics | En åtgärd som använder data för analysändamål, som att mäta, analysera och rapportera om kundens användning av organisationens webbplatser eller appar. |
+| Analytics  | En åtgärd som använder data för analysändamål, som att mäta, analysera och rapportera om kundens användning av organisationens webbplatser eller appar. |
 | Kombinera med PII | En åtgärd som kombinerar all personligt identifierbar information med anonyma data. Kontrakt för data som hämtas från annonsnätverk, annonsservrar och tredjepartsleverantörer av data innehåller ofta särskilda avtalsförbud för användning av sådana data med direkt identifierbara data. |
 | Målgruppsövergripande | En åtgärd som använder data för annonsanpassning mellan webbplatser. En kombination av data från flera platser, inklusive en kombination av data på plats och data utanför platsen eller en kombination av data från flera källor utanför platsen, kallas data mellan olika platser. Data från olika webbplatser samlas in och behandlas vanligtvis för att man ska kunna dra slutsatser om användarnas intressen. |
 | Datavetenskap | En åtgärd som använder data för arbetsflöden inom datavetenskap. I vissa avtal ingår uttryckliga förbud mot dataanvändning för datavetenskap. Ibland formuleras dessa i termer som förbjuder användning av data för artificiell intelligens (AI), maskininlärning (ML) eller modellering. |
