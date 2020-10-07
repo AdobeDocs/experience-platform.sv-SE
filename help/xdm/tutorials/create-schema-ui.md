@@ -6,9 +6,9 @@ topic: tutorial
 type: Tutorials
 description: I den här självstudiekursen beskrivs stegen för hur du skapar ett schema med Schemaredigeraren i Experience Platform.
 translation-type: tm+mt
-source-git-commit: eb6505bdcad9eee6d7e9674504223ca919f19c34
+source-git-commit: 9c7119ad836007af3437dc2e938b68aff3ca0f56
 workflow-type: tm+mt
-source-wordcount: '3637'
+source-wordcount: '3650'
 ht-degree: 0%
 
 ---
@@ -126,7 +126,7 @@ Ungefär som i `name` fältet representerar de fält du just lade till koncept f
 
 &quot;[!UICONTROL Loyalty Members]&quot;-schemat är avsett för att samla in data som är relaterade till medlemmarna i ett lojalitetsprogram, så det kräver vissa specifika lojalitetsrelaterade fält. Det finns inga standardblandningar som innehåller de nödvändiga fälten, och du måste därför definiera en ny blandning.
 
-När du öppnar dialogrutan väljer du den här gången **[!UICONTROL Add Mixin]** **[!UICONTROL Create New Mixin]**. Du ombeds sedan ange en **[!UICONTROL Display Name]** och **[!UICONTROL Description]** en för din blandning.
+När du öppnar dialogrutan väljer du den här gången **[!UICONTROL Add Mixin]** **[!UICONTROL Create New Mixin]**. Du ombeds sedan ange ett visningsnamn och en beskrivning för din blandning.
 
 ![](../images/tutorials/create-schema/mixin_create_new.png)
 
@@ -167,7 +167,7 @@ Varje fält kräver följande information:
 * **[!UICONTROL Type]:** Fältets datatyp. Detta inkluderar grundläggande skalära typer och alla datatyper som definieras i [!DNL Schema Registry]. Exempel: [!UICONTROL String], [!UICONTROL Integer], [!UICONTROL Boolean], [!UICONTROL Person], [!UICONTROL Address], [!UICONTROL Phone number]osv.
 * **[!UICONTROL Description]:** En valfri beskrivning av fältet ska inkluderas, skriven med inledande versal, med högst 200 tecken.
 
-Det första fältet för `Loyalty` objektet blir en sträng med namnet `loyaltyId`. När du anger det nya fältets typ till &quot;[!UICONTROL String]&quot; fylls avsnittet i med flera alternativ för att tillämpa begränsningar, till exempel **[!UICONTROL Field properties]** , **[!UICONTROL Default value]** och **[!UICONTROL Format]****[!UICONTROL Maximum length]**.
+Det första fältet för `Loyalty` objektet blir en sträng med namnet `loyaltyId`. När du anger det nya fältets typ till &quot;[!UICONTROL String]&quot; fylls avsnittet i med flera alternativ för att tillämpa begränsningar, inklusive standardvärde, format och maximal längd **[!UICONTROL Field properties]** .
 
 ![](../images/tutorials/create-schema/string_constraints.png)
 
@@ -226,7 +226,7 @@ När du nu tittar under **[!UICONTROL Structure]** ser du att `loyalty` fältet 
 
 ![](../images/tutorials/create-schema/loyalty_data_type.png)
 
-I ett framtida schema kan du nu tilldela ett fält **[!UICONTROL Type]** av typen &quot;[!DNL Loyalty]&quot; och det skulle automatiskt inkludera fält för ID, lojalitetsnivå, medlem sedan och poäng.
+I ett framtida schema kan du nu tilldela ett fält som en&quot;[!DNL Loyalty]&quot;-typ och då inkluderas automatiskt fält för ID, lojalitetsnivå, medlem sedan och poäng.
 
 ## Söka efter och filtrera schemafält
 
@@ -336,7 +336,7 @@ Markera på **[!UICONTROL Schemas]** arbetsytan **[!UICONTROL Create schema]** o
 
 ![](../images/tutorials/create-schema/browse-classes.png)
 
-En dialogruta visas där du kan välja från en lista med tillgängliga klasser. Välj **[!UICONTROL Create new class]**. Du kan sedan ge den nya klassen ett **[!UICONTROL Display name]** (kort, beskrivande, unikt och användarvänligt namn för klassen), ett **[!UICONTROL Description]** och ett **[!UICONTROL Behavior]** (&quot;[!UICONTROL Record]&quot; eller&quot;[!UICONTROL Time Series]&quot;) för de data som schemat ska definiera.
+En dialogruta visas där du kan välja från en lista med tillgängliga klasser. Välj **[!UICONTROL Create new class]**. Du kan sedan ge den nya klassen ett visningsnamn (ett kort, beskrivande, unikt och användarvänligt namn för klassen), en beskrivning och ett beteende (&quot;[!UICONTROL Record]&quot; eller&quot;[!UICONTROL Time Series]&quot;) för de data som schemat ska definiera.
 
 ![](../images/tutorials/create-schema/create_new_class.png)
 
