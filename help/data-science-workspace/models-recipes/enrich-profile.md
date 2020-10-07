@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: I det här dokumentet finns en stegvis självstudiekurs för att berika kundprofilen i realtid med maskininlärningsinsikter, stegen delas in i följande avsnitt, skapa ett utdatabema/en datamängd, konfigurera ett utdatchema/datamängd och skapa segment med hjälp av segmentbyggaren.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1184'
 ht-degree: 0%
@@ -43,10 +43,10 @@ Det första steget mot att berika [!DNL Real-time Customer Profile] med poängs�
 
 Dispositionen av ett schema börjar med att tilldela en klass. Klasser definierar de beteendeaspekter av data som schemat ska innehålla (post- eller tidsserie). Det här avsnittet innehåller grundläggande instruktioner om hur du skapar ett schema med schemaverktyget. En mer ingående självstudiekurs finns i självstudiekursen om hur du [skapar ett schema med Schemaredigeraren](../../xdm/tutorials/create-schema-ui.md).
 
-1. I Adobe Experience Platform klickar du på **[!UICONTROL Schema]** fliken för att öppna schemaläsaren. Klicka **[!UICONTROL Create Schema]** för att öppna *Schemaredigeraren*där du interaktivt kan skapa scheman.
+1. I Adobe Experience Platform klickar du på **[!UICONTROL Schema]** fliken för att öppna schemaläsaren. Klicka **[!UICONTROL Create Schema]** för att öppna **Schemaredigeraren**där du interaktivt kan skapa scheman.
    ![](../images/models-recipes/enrich-rtcdp/schema_browser.png)
 
-2. I fönstret *Disposition* klickar du **[!UICONTROL Assign]** för att bläddra bland de tillgängliga klasserna.
+2. I fönstret **Disposition** klickar du **[!UICONTROL Assign]** för att bläddra bland de tillgängliga klasserna.
    * Om du vill tilldela en befintlig klass klickar du på och markerar den önskade klassen och klickar sedan på **[!UICONTROL Assign Class]**.
       ![](../images/models-recipes/enrich-rtcdp/existing_class.png)
 
@@ -55,7 +55,7 @@ Dispositionen av ett schema börjar med att tilldela en klass. Klasser definiera
 
    Nu bör schemats struktur innehålla några klassfält och du är redo att tilldela mixins. En blandning är en grupp med ett eller flera fält som beskriver ett visst koncept.
 
-3. I *dispositionsfönstret* klickar du **[!UICONTROL Add]** i underavsnittet *Blandningar* .
+3. I **dispositionsfönstret** klickar du **[!UICONTROL Add]** i underavsnittet **Blandningar** .
    * Om du vill tilldela en befintlig blandning klickar du på och markerar den önskade blandningen och klickar sedan på **[!UICONTROL Add Mixin]**. Till skillnad från klasser kan flera blandningar tilldelas till ett enda schema så länge det är lämpligt.
       ![](../images/models-recipes/enrich-rtcdp/existing_mixin.png)
 
