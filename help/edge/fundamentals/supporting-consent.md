@@ -5,7 +5,7 @@ description: Lär dig hur du stöder medgivandeinställningar med Experience Pla
 seo-description: Lär dig hur du stöder medgivandeinställningar med Experience Platform Web SDK
 keywords: consent;defaultConsent;default consent;setConsent;Profile Privacy Mixin;Experience Event Privacy Mixin;Privacy Mixin;
 translation-type: tm+mt
-source-git-commit: f178da80d0902f76868986426600f3da426cf24d
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '756'
 ht-degree: 0%
@@ -56,7 +56,7 @@ alloy("setConsent", {
 });
 ```
 
-Eftersom användaren nu har valt att gå in, kör SDK alla kommandon som tidigare placerats i kö. Framtida kommandon som är beroende av att användaren väljer att logga in kommer _inte_ att ställas i kö, utan i stället köras direkt.
+Eftersom användaren nu har valt att gå in, kör SDK alla kommandon som tidigare placerats i kö. Framtida kommandon som är beroende av att användaren väljer att gå in kommer inte att ställas i kö och i stället köras direkt.
 
 Om användaren väljer att avanmäla sig kör du `setConsent` kommandot med `general` alternativet inställt på `out` följande:
 
