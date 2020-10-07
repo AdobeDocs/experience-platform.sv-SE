@@ -5,9 +5,9 @@ description: 'Lär dig hur du konfigurerar Experience Platform Edge-nätverket. 
 seo-description: 'Lär dig hur du konfigurerar Experience Platform Edge-nätverket. '
 keywords: configuration;edge;edge configuration id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destinations;url Destinations;Analytics Settings Blockreport suite id;
 translation-type: tm+mt
-source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
+source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
 workflow-type: tm+mt
-source-wordcount: '810'
+source-wordcount: '813'
 ht-degree: 1%
 
 ---
@@ -41,7 +41,7 @@ Nedan finns alla inställningar som är tillgängliga för en miljö. De flesta 
 
 #### [!UICONTROL Identity]
 
-Identitetsavsnittet är det enda avsnitt som alltid är på. Det finns två tillgängliga inställningar: [!UICONTROL ID Syncs Enabled] och [!UICONTROL ID Sync Container ID].
+Identitetsavsnittet är det enda avsnitt som alltid är på. Det finns två tillgängliga inställningar: &quot;[!UICONTROL ID Syncs Enabled]&quot; och &quot;[!UICONTROL ID Sync Container ID]&quot;.
 
 ![Identitetsavsnittet i konfigurationsgränssnittet](../../assets/edge_configuration_identity.png)
 
@@ -65,7 +65,7 @@ Sandlådor är platser i Adobe Experience Platform som gör att kunderna kan iso
 
 ##### [!UICONTROL Streaming Inlet]
 
-Ett inlopp för direktuppspelning är en HTTP-källa i Adobe Experience Platform. Dessa skapas under fliken [!UICONTROL Sources] i Adobe Experience Platform som ett HTTP-API.
+Ett inlopp för direktuppspelning är en HTTP-källa i Adobe Experience Platform. Dessa skapas under fliken&quot;[!UICONTROL Sources]&quot; i Adobe Experience Platform som ett HTTP-API.
 
 ##### [!UICONTROL Event Dataset]
 
@@ -95,7 +95,7 @@ Egenskapstoken finns i [!UICONTROL Adobe Target] > [!UICONTROL setup] > [!UICONT
 
 [Med miljöer](https://docs.adobe.com/content/help/en/target/using/administer/hosts.html) i Adobe Target kan ni hantera implementeringen i alla utvecklingsfaser. Den här inställningen anger vilken miljö du ska använda för varje miljö.
 
-Adobe rekommenderar att du ställer in detta på olika sätt för var och en av dina `dev`- `stage`och `prod` edge-konfigurationsmiljöer för att göra saker och ting enkla. Om du redan har [!UICONTROL Adobe Target environments] definierat dem kan du använda dem.
+Adobe rekommenderar att du ställer in detta på olika sätt för var och en av dina `dev`- `stage`och `prod` edge-konfigurationsmiljöer för att göra saker och ting enkla. Om du redan har definierat Adobe Target-miljöer kan du använda dessa.
 
 #### Adobe Audience Manager
 
