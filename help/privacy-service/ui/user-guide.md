@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användarhandbok för Privacy Service
 topic: UI guide
 translation-type: tm+mt
-source-git-commit: a09d80f4bacd5d4be77443d75aad278ad89259ef
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '1021'
+source-wordcount: '1022'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Det här dokumentet innehåller steg för att skapa och hantera sekretessförfr�
 
 ## Bläddra i [!DNL Privacy Service] UI-kontrollpanelen
 
-Kontrollpanelen för [!DNL Privacy Service] användargränssnittet innehåller två widgetar som gör att du kan visa statusen för dina sekretessjobb: **[!UICONTROL Status Report]** och **[!UICONTROL Job Requests]**. Kontrollpanelen visar även den aktuella valda regeln för de visade jobben.
+Kontrollpanelen för [!DNL Privacy Service] användargränssnittet innehåller två widgetar som gör att du kan visa statusen för dina sekretessjobb: &quot;[!UICONTROL Status Report]&quot; och &quot;[!UICONTROL Job Requests]&quot;. Kontrollpanelen visar även den aktuella valda regeln för de visade jobben.
 
 ![Kontrollpanel för användargränssnitt](../images/user-guide/dashboard.png)
 
@@ -106,7 +106,7 @@ Dialogrutan öppnas och visar tillgängliga alternativ för att skicka en begär
 
 <img src="../images/user-guide/request-builder.png" width="500" /><br/>
 
-Markera **[!UICONTROL Job Type]** begäran (&quot;Ta bort&quot; eller&quot;Åtkomst&quot;) och en eller flera tillgängliga **[!UICONTROL Products]** i listan.
+Välj önskad version (&quot;Ta bort&quot; eller&quot;Åtkomst&quot;) och en eller flera tillgängliga produkter i listan. **[!UICONTROL Job Type]**
 
 <img src="../images/user-guide/type-and-products.png" width="500" /><br/>
 
@@ -114,11 +114,11 @@ Under **[!UICONTROL Namespace type]** väljer du lämplig namnområdestyp för d
 
 <img src="../images/user-guide/namespace-type.png" width="500" /><br/>
 
-När du använder _standardtypen_ av namnutrymme väljer du ett namnutrymme på den nedrullningsbara menyn (e-post, ECID eller AAID), skriver sedan ID-värdena i textrutan till höger och trycker på **\&lt;enter>** för varje ID för att lägga till det i listan.
+När du använder standardtypen av namnutrymme väljer du ett namnutrymme på den nedrullningsbara menyn (e-post, ECID eller AAID), skriver sedan ID-värdena i textrutan till höger och trycker på **\&lt;enter>** för varje ID för att lägga till det i listan.
 
 <img src="../images/user-guide/standard-namespace.png" width="500" /><br/>
 
-När du använder den _anpassade_ namnområdestypen måste du skriva in namnutrymmet manuellt innan du anger ID-värdena nedan.
+När du använder den anpassade namnområdestypen måste du skriva in namnutrymmet manuellt innan du anger ID-värdena nedan.
 
 <img src="../images/user-guide/custom-namespace.png" width="500" /><br/>
 
@@ -148,7 +148,7 @@ Om du inte har någon JSON-fil att överföra klickar du för **[!UICONTROL Down
 
 Leta reda på JSON-filen på datorn och dra den till dialogfönstret. Om överföringen lyckas visas filnamnet i dialogrutan. Du kan fortsätta lägga till fler JSON-filer om det behövs genom att dra och släppa dem i dialogrutan.
 
-Klicka på **[!UICONTROL Create]** när du är klar. Dialogrutan försvinner och det nya jobbet (eller de nya jobben) visas i widgeten _Jobbförfrågningar_ tillsammans med deras aktuella bearbetningsstatus.
+Klicka på **[!UICONTROL Create]** när du är klar. Dialogrutan försvinner och det nya jobbet (eller de nya jobben) visas i widgeten Jobbförfrågningar tillsammans med deras aktuella bearbetningsstatus.
 
 ### Nästa steg
 
