@@ -5,15 +5,15 @@ title: Användarhandbok för segmenteringstjänsten
 topic: ui guide
 description: Adobe Experience Platform segmenteringstjänst innehåller ett användargränssnitt för att skapa och hantera segmentdefinitioner.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '1432'
+source-wordcount: '1434'
 ht-degree: 0%
 
 ---
 
 
-# [!UICONTROL Segmentation Service] användarhandbok
+# Användarhandbok för segmenteringstjänsten
 
 [!DNL Adobe Experience Platform Segmentation Service] innehåller ett användargränssnitt för att skapa och hantera segmentdefinitioner.
 
