@@ -3,7 +3,7 @@ keywords: Experience Platform;profile;real-time customer profile;troubleshooting
 title: Edge Projection - Real-time Customer Profile API
 topic: guide
 translation-type: tm+mt
-source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1905'
 ht-degree: 0%
@@ -226,7 +226,7 @@ Svarsobjektet visar information om projektionsmålet. Attributet `id` ska matcha
 
 ### Uppdatera ett mål
 
-En befintlig destination kan uppdateras genom att en PUT-begäran görs till `/config/destinations` slutpunkten och med ID:t för den destination som ska uppdateras i den begärda sökvägen. Den här åtgärden _skriver_ om målet, och därför måste samma attribut anges i texten i begäran som när ett nytt mål skapas.
+En befintlig destination kan uppdateras genom att en PUT-begäran görs till `/config/destinations` slutpunkten och med ID:t för den destination som ska uppdateras i den begärda sökvägen. Den här åtgärden skriver i stort sett om målet, och därför måste samma attribut anges i texten i begäran som när ett nytt mål skapas.
 
 >[!CAUTION]
 >
