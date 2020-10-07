@@ -5,9 +5,9 @@ seo-title: Mål för Google Ads
 description: Google Ads, som tidigare kallades Google AdWords, är en onlinereklam som gör att företag kan betala per klick för annonsering vid textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appar.
 seo-description: Google Ads, som tidigare kallades Google AdWords, är en onlinereklam som gör att företag kan betala per klick för annonsering vid textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appar.
 translation-type: tm+mt
-source-git-commit: c66fb4cf0a414e02ceb58becc9d9b59db3fe987b
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '635'
+source-wordcount: '636'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 Observera följande information som är specifik för [!DNL Google Ads] destinationer:
 
-* Du kan skicka följande [identiteter](../../identity-service/namespaces.md) till [!DNL Google Ads] mål: **Google cookie ID, IDFA, GAID, Roku ID, Microsoft ID, Amazon Fire TV ID**.
+* Du kan skicka följande [identiteter](../../identity-service/namespaces.md) till [!DNL Google Ads] mål: Google cookie ID, IDFA, GAID, Roku ID, Microsoft ID och Amazon Fire TV ID.
 * Aktiverade målgrupper skapas programmatiskt på [!DNL Google] plattformen.
 * CDP i realtid i Adobe innehåller för närvarande inga mätvärden som validerar den lyckade aktiveringen. Se antalet målgrupper i Google för att validera integrationen och förstå målgruppens målgruppsstorlek.
 
