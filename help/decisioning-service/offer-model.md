@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;home;popular topics;offer management;Offer Management
 solution: Experience Platform
-title: Domänmodell för beslut om erbjudande
+title: Offer Decisioning domänmodell
 topic: overview
 description: Avtalsbeslut är ett användbart fall av beslutstjänst där ni formaliserar och centralt hanterar de regler och prognoser som används för att engagera kunder med erbjudanden.
 translation-type: tm+mt
-source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
+source-git-commit: a362b67cec1e760687abb0c22dc8c46f47e766b7
 workflow-type: tm+mt
 source-wordcount: '2640'
 ht-degree: 0%
@@ -13,27 +13,27 @@ ht-degree: 0%
 ---
 
 
-# Översikt över domänmodellen för beslut om erbjudande
+# Översikt över Offer Decisioning domänmodell
 
-Att fatta beslut om erbjudanden är ett exempel på hur ni formaliserar och centralt hanterar de regler och prognoser som används för att engagera kunderna med erbjudanden. [!DNL Decisioning Service] Avtalsbeslut är en typ av _**innehållsbeslut**_. I detta fall kallas _**beslutsalternativen**_ _**erbjudanden**_ och karakteriseras som sådana av innehållet i dem. En introduktion till objektmodellen som används av [!DNL Decisioning Service]finns i Domänmodell för [beslutstjänst](experience-model.md).
+Avtalsbeslut är ett exempel på hur ni formaliserar och centralt hanterar de regler och prognoser som används för att engagera kunder med erbjudanden. [!DNL Decisioning Service] Avtalsbeslut är en typ av innehållsbeslut. I det här fallet kallas beslutsalternativen för erbjudanden och karakteriseras som sådana av innehållet i dem. En introduktion till objektmodellen som används av [!DNL Decisioning Service]finns i Domänmodell för [beslutstjänst](experience-model.md).
 
 Målet är att ge slutanvändaren&quot;bästa erbjudandet&quot; i alla kanaler baserat på kriterier för målinriktning, kostnader och frekvensbegränsningar samt föregående interaktioner över alla kanaler inklusive tidigare erbjudanden.
 
-Precis som med alla beslutsärenden hanteras beslutsalternativen (erbjudandena) i en databas som delas av ett valfritt antal program. Erbjudandena kan skapas av olika avdelningar inom organisationen eller av partners, och dessa erbjudanden kan läggas till och tas bort varje dag.
+Precis som för alla beslutssituationer hanteras beslutsalternativen (erbjudandena) i en databas som delas av ett valfritt antal program. Erbjudandena kan skapas av olika avdelningar inom organisationen eller av partners, och dessa erbjudanden kan läggas till och tas bort varje dag.
 
-Erbjudandena placeras visuellt i större upplevelser av det program som levererar upplevelsen. _**Placeringar**_, som ibland kallas fläckar eller kortplatser, är viktiga komponenter för att skapa en strategi. Utformningen av en strategi för erbjudanden börjar ofta med definitionen av dessa ersättningar. Ett erbjudande innehåller vanligtvis flera _**innehållsrepresentationer**_ så att det kan integreras korrekt i en mängd olika upplevelser, där varje erbjudande har olika dimensionella eller andra begränsningar och kräver olika medieformat.
+Erbjudandena placeras visuellt i större upplevelser av det program som levererar upplevelsen. Placeringar, som ibland kallas fläckar eller kortplatser, är viktiga komponenter för att skapa en strategi. Utformningen av en strategi för erbjudanden börjar ofta med definitionen av dessa ersättningar. Ett erbjudande har vanligtvis flera innehållsrepresentationer så att det kan integreras korrekt i en mängd olika upplevelser, där varje erbjudande har olika dimensionella eller andra begränsningar och kräver olika medieformat.
 
-Erbjudandena har ofta en koppling till fysiska varor eller tjänster och det finns en kostnadsberäkning. En organisation måste kunna begränsa de resurser som förbrukas av erbjudanden och måste därför kunna _**begränsa**_ det totala antalet gånger ett erbjudande kan föreslås.
+Erbjudandena har ofta en koppling till fysiska varor eller tjänster och det finns en kostnadsberäkning. En organisation måste kunna begränsa de resurser som förbrukas av erbjudanden och måste därför kunna begränsa det totala antalet gånger ett erbjudande kan föreslås.
 
 Det förutspådda värdet av ett accepterat erbjudande till organisationen är optimeringskriterierna och står i strid med kostnaden för att göra ett erbjudande. Kostnad, sannolikhet för godkännande och förväntat värde används för att rangordna erbjudandena. Det bästa erbjudandet är det som har störst förväntad positiv effekt på målen för era erbjudandeaktiviteter.
 
-I offertbeslutet beaktas de interaktioner som en slutanvändare hade, _**i många kanaler**_ och i många tillämpningar, vilket utnyttjar slutanvändarens profil- och upplevelsehändelsedata. Exempelvis kan en call center-applikation använda offertbeslut för att aktivera eller inaktivera ett erbjudande baserat på inköp och recensioner som slutanvändaren gjort. eller ett e-posthanteringsprogram kan förlita sig på att Offer Decisioning väljer Nästa bästa erbjudande i ett veckonyhetsbrev baserat på webbsidans webbhistorik.
+Offer Decisioning anser att de interaktioner som en slutanvändare haft, i många kanaler och tillämpningar, utnyttjar slutanvändarens profil- och upplevelsehändelsedata. Exempelvis kan en call center-applikation använda Offer Decisioning för att aktivera eller inaktivera ett erbjudande baserat på köp och recensioner som slutanvändaren gjort. eller ett e-posthanteringsprogram kan förlita sig på att Offer Decisioning väljer nästa bästa erbjudande i ett veckonyhetsbrev baserat på webbsidans webbhistorik.
 
-Erbjudandena har andra intressanta egenskaper. Ofta finns det ett definierat _**schema**_ eller datum- och tidsintervall när erbjudandet är giltigt och när erbjudandet måste ogiltigförklaras.
+Erbjudandena har andra intressanta egenskaper. Det finns ofta ett definierat schema, datum och tidsintervall när erbjudandet är giltigt och när erbjudandet måste ogiltigförklaras.
 
-Slutligen försämras det sätt på vilket ett erbjudande överklagas med den frekvens som det presenteras. Ett erbjudande som inte accepteras efter att ha föreslagits upprepade gånger är en förlorad möjlighet eftersom ett annat erbjudande kan ha presenterats. Av den anledningen måste slutanvändarens _**trötthet**_ hanteras.
+Slutligen försämras det sätt på vilket ett erbjudande överklagas med den frekvens som det presenteras. Ett erbjudande som inte accepteras efter att ha föreslagits upprepade gånger är en förlorad möjlighet eftersom ett annat erbjudande kan ha presenterats. Därför måste slutanvändarnas trötthet hanteras.
 
-## Fatta en överblick över beslutsstrategin
+## Här hittar du en översikt över beslutsstrategin
 
 Det övergripande tillvägagångssättet är att begränsa urvalet av erbjudanden tills alla begränsningar är uppfyllda, sedan tillämpa rangordningsmodellen på de återstående alternativen och sedan optimera för flera aktiviteter med hjälp av begränsningar för begränsning (borttagning av dubbletter och undvikande av reservval).
 
@@ -51,8 +51,8 @@ Det övergripande tillvägagångssättet är att begränsa urvalet av erbjudande
 | Beslutsregler | Villkor |
 | Modell för *förväntat verktyg* | Prioritet eller prioritet |
 
-Det totala antalet erbjudanden i optionsförteckningen är vanligtvis ganska stort (i storleksordningen 10 000) och varje erbjudandeaktivitet kan fokuseras på erbjudanden som hör till en annan kategori (ämne). Med beslutsstrategin för erbjudandet kan ett erbjudandefilter bifogas till en erbjudandeaktivitet. Ytterligare begränsningar kommer att utvärderas när beslutet begärs.
-I följande avsnitt beskrivs komponenterna för domänen för beslut om erbjudande i detalj.
+Det totala antalet erbjudanden i optionsförteckningen är vanligtvis ganska stort (i storleksordningen 10 000) och varje erbjudandeaktivitet kan fokuseras på erbjudanden som tillhör en annan kategori (ämne). Med beslutsstrategin för erbjudandet kan ett erbjudandefilter bifogas till en erbjudandeaktivitet. Ytterligare begränsningar kommer att utvärderas när beslutet begärs.
+I följande avsnitt beskrivs komponenterna för Offer Decisioning-domänen i detalj.
 
 ## Allmänna erbjudanden
 
@@ -78,7 +78,7 @@ En placering begränsar vilken typ av innehållsobjekt som kan läggas till i re
 
 Reserverbjudanden är beslutsalternativ som inte har ytterligare begränsningar förutom placeringsreglerna. Reserverbjudanden har innehållsrepresentationer som är kopplade till placeringar, precis som alla andra erbjudanden.
 
-Reserverbjudanden anges i aktiviteter för att indikera en livskraftig innehållsupplevelse när kombinerade begränsningar diskvalificerar alla begränsade alternativ. Eftersom det inte är beroende av körningssammanhanget eller profilen, kan placeringsbegränsningen kontrolleras i förväg när aktiviteten sätts samman. Med hjälp av reserverbjudanden finns det alltid ett svar på frågan: Vilket är för närvarande det bästa erbjudandet?
+Reserverbjudanden anges i aktiviteter för att indikera en användbar innehållsupplevelse när kombinerade begränsningar diskvalificerar alla begränsade alternativ. Eftersom det inte är beroende av körningssammanhanget eller profilen, kan placeringsbegränsningen kontrolleras i förväg när aktiviteten sätts samman. Med hjälp av reserverbjudanden finns det alltid ett svar på frågan: Vilket är för närvarande det bästa erbjudandet?
 
 ## Villkor
 
@@ -126,7 +126,7 @@ När alternativ placeras explicit i en samling ignoreras deras tagguppsättning 
 
 ## Erbjudandeaktiviteter
 
-Aktiviteter som konfigurerar och styr beslutsprocessen. Beslutsstrategin är för närvarande i första hand förbestämd, men framtida versioner av domänmodellen för beslut om erbjudanden gör det möjligt att välja modeller, ytterligare regler och begränsningar.
+Aktiviteter som konfigurerar och styr beslutsprocessen. För närvarande är beslutsstrategin i första hand förbestämd, men framtida versioner av Offer Decisioning domänmodell gör det möjligt att välja modeller, ytterligare regler och begränsningar.
 
 En upplevelse kan sammanställas med många aktiviteter samtidigt. För närvarande kan upp till 30 aktiviteter hanteras i en enda beslutsbegäran. Om fler än 30 aktiviteter eller kortplatser i en upplevelse måste fyllas med innehåll, kan flera begäranden göras för samma profil. När verksamheter ingår i samma beslutsbegäran kommer dock dubbla erbjudandeförslag att tas bort bland dessa verksamheter.
 
