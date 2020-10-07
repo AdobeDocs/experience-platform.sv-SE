@@ -5,7 +5,7 @@ title: Beslutstjänst
 topic: overview
 description: Beslutstjänsten ger möjlighet att skapa personaliserade, optimerade och samordnade upplevelser i program som körs på Adobe Experience Platform. Med hjälp av beslutstjänsten kan du fastställa det bästa alternativet bland en uppsättning tillgängliga alternativ. Dessa alternativ, som också kallas alternativ, kan vara erbjudanden, produktrekommendationer, innehållskomponenter för en webbupplevelse, konversationsskript och åtgärder som ska vidtas.
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: a362b67cec1e760687abb0c22dc8c46f47e766b7
 workflow-type: tm+mt
 source-wordcount: '1648'
 ht-degree: 0%
@@ -15,9 +15,9 @@ ht-degree: 0%
 
 # Översikt över beslutstjänsten
 
-[!DNL Decisioning Service] ger möjlighet att skapa personaliserade, optimerade och samordnade upplevelser i program som körs på Adobe Experience Platform. Med [!DNL Decisioning Service]kan du avgöra vilket *alternativ* som är bäst av en uppsättning tillgängliga alternativ. Dessa alternativ, som också kallas alternativ, kan vara erbjudanden, produktrekommendationer, innehållskomponenter för en webbupplevelse, konversationsskript och åtgärder som ska vidtas. För närvarande stöds användningsexempel och domän för *offertbeslut* , där beslutsalternativen utformas specifikt som erbjudanden, med stöd för fler användningsfall.
+[!DNL Decisioning Service] ger möjlighet att skapa personaliserade, optimerade och samordnade upplevelser i program som körs på Adobe Experience Platform. Med [!DNL Decisioning Service]kan du avgöra vilket *alternativ* som är bäst av en uppsättning tillgängliga alternativ. Dessa alternativ, som också kallas alternativ, kan vara erbjudanden, produktrekommendationer, innehållskomponenter för en webbupplevelse, konversationsskript och åtgärder som ska vidtas. För närvarande stöds *Offer Decisioning* användningsfall och domän, där beslutsalternativen utformas specifikt som erbjudanden, med stöd för fler användningsfall.
 
-Med [!DNL Decisioning Service]kan kunderna återanvända affärslogik och dela en katalog med alternativ i olika kanaler och i olika tillämpningar. I stället för att hantera beslutsalternativ - och strategier för att välja ut dem - på djupet i en applikation kan de nu utnyttjas oavsett när, hur och på vilken kanal en kunds slutanvändare interagerar med ett företag eller en organisation.
+Med [!DNL Decisioning Service]kan kunderna återanvända affärslogik och dela en katalog med alternativ i olika kanaler och i olika tillämpningar. I stället för att hantera beslutsalternativ - och strategier för att välja ut dem - på djupet i en applikation, kan de nu utnyttjas oavsett när, hur och på vilken kanal en kunds slutanvändare interagerar med ett företag eller en organisation.
 
 Beslutsstrategier kan påverka de många interaktioner en kund har haft, i många kanaler och i många tillämpningar. Anropscentrets programaktivitet kan t.ex. aktivera eller inaktivera ett marknadsföringsmeddelande under en tid efter ett klagomål, och själva meddelandet kan vara baserat på inköp och recensioner som kunden gjort.
 
@@ -49,7 +49,7 @@ Alternativt eller ytterligare kan en strategi baseras på resultat som samlats i
 
 ### Beslutsstrategi
 
-Beslutsstrategier konfigureras via objekt som kallas _aktiviteter_. Varje beslutsstrategi är i princip en algoritm eller en funktion som tar N-alternativen {o1, o2, ...oN} som indata och skapar en ordnad lista med alternativ (o1, o2,...oK) där det första alternativet i listan anses vara det bästa enligt ett optimeringskriterier, det andra alternativet i resultatlistan betraktas sedan som det näst bästa alternativet o.s.v.
+Beslutsstrategier konfigureras via objekt som kallas aktiviteter. Varje beslutsstrategi är i princip en algoritm eller en funktion som tar N-alternativen {o1, o2, ...oN} som indata och skapar en ordnad lista med alternativ (o1, o2,...oK) där det första alternativet i listan anses vara det bästa enligt ett optimeringskriterier, det andra alternativet i resultatlistan betraktas sedan som det näst bästa alternativet o.s.v.
 
 Vid en given tidpunkt under kundresan utvärderas det bästa alternativet för en viss aktivitet på nytt baserat på den senaste uppsättningen sammanhangsvariabler, regler och begränsningar. Sammanhangsvariabler innehåller de poster som lagras i [!DNL Real Time Customer Profile]. En central postenhet är en kunds profil, men andra enheter som affärsdata är lika tillgängliga för aktiviteten.
 
@@ -83,12 +83,12 @@ Den typiska stegsekvensen börjar med att bygga ut profiler:
 
 Om du vill använda [!DNL Decisioning Service]följande steg:
 
-- Definiera beslutskomponenter med hjälp av API:er för databaser. Detta är de affärslogikenheter som utgör beslutsstrategin. Beslutskomponenterna kompileras automatiskt till ett format som används av [!DNL Decision Service Runtime]. Databas-API:erna visas till vänster i diagrammet nedan.
+- Definiera beslutskomponenter med hjälp av databas-API:er. Detta är de affärslogikenheter som utgör beslutsstrategin. Beslutskomponenterna kompileras automatiskt till ett format som används av [!DNL Decision Service Runtime]. Databas-API:erna visas till vänster i diagrammet nedan.
 - Anropa körtids-API:t för att få det bästa alternativet enligt den affärslogik som definierats i föregående steg. API: [!DNL Decision Service Runtime] erna visas till höger i diagrammet nedan.
 
 ![decisioning-API1](./images/decisioning-API1.png)
 
-Aktiveringen av logiska enheter sker automatiskt och kontinuerligt. Så snart ett nytt alternativ sparas i databasen och markeras som godkänt, kan det ingå i uppsättningen med tillgängliga alternativ. När en beslutsregel uppdateras, kommer regeluppsättningen att återskapas och förberedas för körning. I det här automatiska aktiveringssteget utvärderas eventuella begränsningar som definieras av affärslogiken som inte är beroende av körningssammanhanget. Resultatet av aktiveringssteget skickas till en cache där de är tillgängliga för [!DNL Decisioning Service] körningsmiljön. Detta illustreras i följande diagram.
+Aktiveringen av logiska enheter sker automatiskt och kontinuerligt. Så snart ett nytt alternativ sparas i databasen och markeras som godkänt, kan det ingå i uppsättningen med tillgängliga alternativ. När en beslutsregel uppdateras, kommer regeluppsättningen att återskapas och förberedas för körning. I det här automatiska aktiveringssteget utvärderas eventuella begränsningar som definieras av affärslogiken som inte är beroende av körningssammanhanget. Resultatet av det här aktiveringssteget skickas till en cache där de är tillgängliga för [!DNL Decisioning Service] körningsmiljön. Detta illustreras i följande diagram.
 
 ![decisioning-API2](./images/decisioning-API2.png)
 
