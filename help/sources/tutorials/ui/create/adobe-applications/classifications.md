@@ -6,9 +6,9 @@ title: Skapa en Adobe Analytics Classifications-dataanslutning i användargräns
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 1a49cccfbf8d565c8154329cf1f94382911b2f85
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '624'
+source-wordcount: '632'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ Under **[!UICONTROL Adobe applications]** kategorin markerar du **[!UICONTROL Ad
 
 ![](../../../../images/tutorials/create/classifications/catalog.png)
 
-Steget **[!UICONTROL Analytics source add data]** visas. Välj **[!UICONTROL Classifications]** i det övre huvudet om du vill se en lista över [!DNL Classifications] datauppsättningar, inklusive information om deras **[!UICONTROL Dimension ID]**, **[!UICONTROL Report Suite name]** och **[!UICONTROL Report Suite ID]**.
+Steget **[!UICONTROL Analytics source add data]** visas. Välj **[!UICONTROL Classifications]** i den övre rubriken om du vill se en lista över [!DNL Classifications] datauppsättningar, inklusive information om deras mått-ID, rapportsvitens namn och rapportsvitens-ID.
 
 Varje sida visar upp till tio olika [!DNL Classifications] datauppsättningar som du kan välja mellan. Välj **[!UICONTROL Next]** längst ned på sidan om du vill bläddra efter fler alternativ. Panelen till höger visar det totala antalet datauppsättningar som du har valt samt deras namn. [!DNL Classifications] På den här panelen kan du även ta bort alla datauppsättningar som du har valt av misstag eller rensa alla markeringar med en åtgärd. [!DNL Classifications]
 
