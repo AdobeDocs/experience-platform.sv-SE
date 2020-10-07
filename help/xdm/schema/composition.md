@@ -5,7 +5,7 @@ title: Grunderna för schemakomposition
 topic: overview
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: f7abccb677294e1595fb35c27e03c30eb968082a
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '2815'
 ht-degree: 0%
@@ -54,7 +54,7 @@ Data som är avsedda att användas i [!DNL Experience Platform] är grupperade i
 * **Postdata**: Innehåller information om attributen för ett ämne. Ett ämne kan vara en organisation eller individ.
 * **Tidsseriedata**: Ger en ögonblicksbild av systemet när en åtgärd vidtas, antingen direkt eller indirekt, av ett postämne.
 
-Alla XDM-scheman beskriver data som kan kategoriseras som post- eller tidsserier. Databeteendet för ett schema definieras av schemats **klass**, som tilldelas ett schema när det skapas för första gången. XDM-klasser beskrivs mer ingående senare i det här dokumentet.
+Alla XDM-scheman beskriver data som kan kategoriseras som post- eller tidsserier. Databeteendet för ett schema definieras av schemats klass, som tilldelas till ett schema när det skapas första gången. XDM-klasser beskrivs mer ingående senare i det här dokumentet.
 
 Både schema för post- och tidsserier innehåller en karta över identiteter (`xdm:identityMap`). Det här fältet innehåller identitetsbeteckningen för ett ämne, som har ritats från fält markerade som &quot;Identitet&quot; enligt beskrivningen i nästa avsnitt.
 
@@ -133,7 +133,7 @@ Scheman består av följande formel:
 
 **Class + Mixin&amp;ast; = XDM-schema**
 
-&amp;ast;Ett schema består av en klass och _noll eller flera_ blandningar. Det innebär att du kan komponera ett datamängdsschema utan att använda blandningar alls.
+&amp;ast;Ett schema består av en klass och noll eller flera blandningar. Det innebär att du kan komponera ett datamängdsschema utan att använda blandningar alls.
 
 ### Klass
 
