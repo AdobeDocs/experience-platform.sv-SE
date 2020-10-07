@@ -5,7 +5,7 @@ title: Adobe Experience Platform - översikt
 topic: getting started
 description: Adobe Experience Platform är det mest kraftfulla, flexibla och öppna systemet på marknaden för att bygga och hantera kompletta lösningar som ger en bättre kundupplevelse. Med Experience Platform kan organisationer centralisera och standardisera kunddata och innehåll från alla system och tillämpa datavetenskap och maskininlärning för att dramatiskt förbättra utformningen och leveransen av avancerade, personaliserade upplevelser.
 translation-type: tm+mt
-source-git-commit: e94278c1b64e1d940f55861518c78cca24822c1b
+source-git-commit: fa667d86c089c692f22cfd1b46f3f11b6e9a68d7
 workflow-type: tm+mt
 source-wordcount: '934'
 ht-degree: 2%
@@ -110,7 +110,7 @@ Kom igång [!DNL Platform] snabbt och enkelt genom att följa med i steg-för-st
 
 ## Videosjälvstudiekurser
 
-Se [självstudiekurser](https://docs.adobe.com/content/help/en/platform-learn/tutorials/overview.html) på video för en mängd olika [!DNL Experience Platform] ämnen.
+Se [självstudiekurser](https://docs.adobe.com/content/help/sv-SE/platform-learn/tutorials/overview.html) på video för en mängd olika [!DNL Experience Platform] ämnen.
 
 Titta på följande video om du vill få en snabb genomgång av [!DNL Experience Platform's] användargränssnittet:
 
@@ -153,9 +153,6 @@ I följande videofilmer visas nyckelfunktioner och användningsexempel för [!DN
 **Användningsfall:**
 
 >[!VIDEO](https://video.tv.adobe.com/v/32806?quality=12&learn=on)
-
-
-
 
 <!-- 
 ## What's New
