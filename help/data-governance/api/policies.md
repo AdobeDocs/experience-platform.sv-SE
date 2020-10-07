@@ -5,7 +5,7 @@ title: Profiler
 topic: developer guide
 description: Dataanvändningspolicyer är regler som din organisation antar som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom Experience Platform. Slutpunkten /policies används för alla API-anrop som rör visning, skapande, uppdatering eller borttagning av dataanvändningsprinciper.
 translation-type: tm+mt
-source-git-commit: cddc559dfb65ada888bb367d6265863091a9b2a1
+source-git-commit: a362b67cec1e760687abb0c22dc8c46f47e766b7
 workflow-type: tm+mt
 source-wordcount: '1804'
 ht-degree: 0%
@@ -235,7 +235,7 @@ I API:t [!DNL Policy Service] definieras en princip av följande:
 * En referens till en viss marknadsföringsåtgärd
 * Ett uttryck som beskriver dataanvändningsetiketterna som marknadsföringsåtgärden är begränsad från att utföras mot
 
-För att uppfylla det senare kravet måste principdefinitionerna innehålla ett booleskt uttryck om förekomsten av dataanvändningsetiketter. Det här uttrycket kallas ett **principuttryck**.
+För att uppfylla det senare kravet måste principdefinitionerna innehålla ett booleskt uttryck om förekomsten av dataanvändningsetiketter. Det här uttrycket kallas för ett principuttryck.
 
 Policyuttryck tillhandahålls i form av en `deny` egenskap i varje principdefinition. Ett exempel på ett enkelt `deny` objekt som bara kontrollerar om det finns en enda etikett ser ut så här:
 
@@ -245,7 +245,7 @@ Policyuttryck tillhandahålls i form av en `deny` egenskap i varje principdefini
 }
 ```
 
-Många principer anger dock mer komplexa villkor för förekomsten av dataanvändningsetiketter. Om du vill ha stöd för dessa användningsfall kan du även inkludera booleska åtgärder som beskriver dina policyuttryck. Principuttrycksobjektet måste innehålla _antingen_ en etikett _eller_ en operator och operander, men inte båda. I sin tur är varje operand också ett principuttrycksobjekt.
+Många principer anger dock mer komplexa villkor för förekomsten av dataanvändningsetiketter. Om du vill ha stöd för dessa användningsfall kan du även inkludera booleska åtgärder som beskriver dina policyuttryck. Principuttrycksobjektet måste innehålla antingen en etikett eller en operator och operander, men inte båda. I sin tur är varje operand också ett principuttrycksobjekt.
 
 För att definiera en princip som förhindrar att en marknadsföringsåtgärd utförs på data där det finns `C1 OR (C3 AND C7)` etiketter, skulle principens `deny` egenskap anges som:
 
@@ -375,7 +375,7 @@ Ett lyckat svar returnerar information om den nya principen, inklusive dess `id`
 >
 >Du kan bara uppdatera anpassade profiler. Om du vill aktivera eller inaktivera kärnprinciper läser du avsnittet om att [uppdatera listan över aktiverade kärnprinciper](#update-enabled-core).
 
-Du kan uppdatera en befintlig anpassad princip genom att ange dess ID i sökvägen till en PUT-begäran med en nyttolast som innehåller den uppdaterade formen av profilen i sin helhet. Med andra ord skriver PUT i själva verket _om policyn_ .
+Du kan uppdatera en befintlig anpassad princip genom att ange dess ID i sökvägen till en PUT-begäran med en nyttolast som innehåller den uppdaterade formen av profilen i sin helhet. Med andra ord skriver PUT i själva verket om policyn.
 
 >[!NOTE]
 >
