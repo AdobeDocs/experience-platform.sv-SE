@@ -5,7 +5,7 @@ title: Audience Manager-kontakt
 topic: overview
 description: Adobe Audience Manager dataanslutning strömmar data från första part som samlats in i Adobe Audience Manager till Adobe Experience Platform. Kopplingen Audience Manager importerar tre datakategorier till plattformen.
 translation-type: tm+mt
-source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
+source-git-commit: 9bd893820c7ab60bf234456fdd110fb2fbe6697c
 workflow-type: tm+mt
 source-wordcount: '673'
 ht-degree: 0%
@@ -67,7 +67,7 @@ Audience Manager-datauppsättningar är inaktiverade som standard för Profil oc
 
 ### Anslutningar
 
-Adobe Audience Manager skapar en anslutning i katalogen: **Audience Manager Connection**. Katalog är det system som används för att lagra och lagra data inom Adobe Experience Platform. En anslutning är ett katalogobjekt som är en kundspecifik instans av Connectors. Mer information om kataloger, anslutningar och anslutningar finns i översikten [för](../../../catalog/home.md) katalogtjänsten.
+Adobe Audience Manager skapar en anslutning i katalogen: Audience Manager Connection. Katalog är det system som används för att lagra och lagra data inom Adobe Experience Platform. En anslutning är ett katalogobjekt som är en kundspecifik instans av Connectors. Mer information om kataloger, anslutningar och anslutningar finns i översikten [för](../../../catalog/home.md) katalogtjänsten.
 
 ## Vilken fördröjning förväntas för Audience Manager Data on Platform?
 
