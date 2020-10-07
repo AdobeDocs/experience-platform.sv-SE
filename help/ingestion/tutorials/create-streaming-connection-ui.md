@@ -6,9 +6,9 @@ topic: tutorial
 type: Tutorial
 description: Den här gränssnittshandboken hjälper dig att skapa en direktuppspelningsanslutning med Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '476'
+source-wordcount: '481'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ On the **[!UICONTROL Sources]** page, click **[!UICONTROL HTTP API]**, then **[!
 
 ![](../images/streaming-ingestion/ui/click-connect-source.png)
 
-Skärmen visas **[!UICONTROL Connect to HTTP]** . Under **[!UICONTROL Service details]** anger du både **[!UICONTROL name]** och en **[!UICONTROL description]** för den nya direktuppspelningsanslutningen.
+Skärmen visas **[!UICONTROL Connect to HTTP]** . Under **[!UICONTROL Service details]** anger du både namnet och en beskrivning för den nya direktuppspelningsanslutningen.
 
 Under **[!UICONTROL Account Authentication]** väljer du följande konfigurationsegenskaper för din direktuppspelningsanslutning:
 
@@ -59,7 +59,7 @@ Du kan antingen [skapa en ny datauppsättning](#create-a-new-dataset) eller [anv
 
 ### Skapa en ny datauppsättning
 
-Om du vill skapa en ny datamängd anger du **[!UICONTROL Name]**, **[!UICONTROL Description]** samt målet **[!UICONTROL Schema]** för datauppsättningen.
+Om du vill skapa en ny datauppsättning anger du namn, beskrivning och målschema för datauppsättningen.
 
 ![](../images/streaming-ingestion/ui/create-new-dataset.png)
 
