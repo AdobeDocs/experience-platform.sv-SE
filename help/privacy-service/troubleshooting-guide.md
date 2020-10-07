@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Vanliga frågor om Privacy Service
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
+source-git-commit: 28b733a16b067f951a885c299d59e079f0074df8
 workflow-type: tm+mt
 source-wordcount: '853'
 ht-degree: 0%
@@ -94,7 +94,7 @@ Mer information finns i avsnittet om att [söka efter ett jobb med hjälp av des
 
 ### Använda gränssnittet
 
-På [!DNL Privacy Service] UI-kontrollpanelen hittar du det jobb du vill hämta från widgeten **Jobbförfrågningar** . Klicka på ID:t för jobbet för att öppna sidan _Jobbinformation_ . Hämta ZIP-filen genom att klicka på **Hämta** i det övre högra hörnet. Mer information finns i användarhandboken [för](ui/user-guide.md) Privacy Service.
+På [!DNL Privacy Service] UI-kontrollpanelen hittar du det jobb du vill hämta från widgeten **Jobbförfrågningar** . Klicka på ID:t för jobbet för att öppna sidan Jobbinformation. Hämta ZIP-filen genom att klicka på **Hämta** i det övre högra hörnet. Mer information finns i användarhandboken [för](ui/user-guide.md) Privacy Service.
 
 ## Vanliga felmeddelanden
 
