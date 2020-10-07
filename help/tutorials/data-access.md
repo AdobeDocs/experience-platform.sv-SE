@@ -6,9 +6,9 @@ topic: tutorial
 type: Tutorial
 description: Med Adobe Experience Platform kan användare identifiera och få åtkomst till kapslade datauppsättningar i Experience Platform med hjälp av API:t för dataåtkomst.
 translation-type: tm+mt
-source-git-commit: 0ec93ef44facc725e22547d002de677d93f3bd1f
+source-git-commit: bececfde1df15fd8648d75b937da5e264d60b9a4
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '140'
 ht-degree: 0%
 
 ---
@@ -33,26 +33,3 @@ API:t för dataåtkomst stöder Adobe Experience Platform genom att ge användar
 - Konfigurera API-svarssidnumrering.
 
 Kom igång genom att följa självstudiekursen [för API för](../data-access/tutorials/dataset-data.md)dataåtkomst.
-
-## Använd Secure Python SDK för att komma åt data
-
-Secure Python Data Access SDK är ett programutvecklingspaket som gör det möjligt att läsa och skriva datauppsättningar från Experience Platform med Python.
-
-**Den här guiden hjälper dig att:**
-- Konfigurera miljön och installera rätt paket.
-- Läs från en datauppsättning.
-- Skriv till en datauppsättning.
-- Läs och skriv till en användarutrymmeskatalog.
-
-Du kommer igång genom att läsa dokumentationen [för](../data-access/tutorials/python-sdk.md)Python Data Access SDK.
-
-## Använd Secure Spark SDK för att komma åt data
-
-SDK:t för säker Spark-dataåtkomst är ett programutvecklingspaket som gör det möjligt att läsa och skriva datauppsättningar från Adobe Experience Platform med Spark.
-
-**Den här guiden hjälper dig att:**
-- Konfigurera miljön och installera rätt paket.
-- Läs från en datauppsättning.
-- Skriv till en datauppsättning.
-
-Kom igång genom att läsa dokumentationen [till](../data-access/tutorials/spark-sdk.md)Spark Data Access SDK.
