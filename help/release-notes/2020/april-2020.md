@@ -6,7 +6,7 @@ last-update: April 13, 2020
 author: ens71067
 keywords: release notes;
 translation-type: tm+mt
-source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
+source-git-commit: a362b67cec1e760687abb0c22dc8c46f47e766b7
 workflow-type: tm+mt
 source-wordcount: '991'
 ht-degree: 2%
@@ -79,7 +79,7 @@ Ramverket [!DNL Data Governance] förenklar och effektiviserar processen att kat
 
 | Funktion | Beskrivning |
 | -----------| ---------- |
-| Hantera dataanvändningsprinciper i användargränssnittet | Dataanvändningsprinciper kan nu hanteras inom arbetsytan _Profiler_ i [!DNL Experience Platform] gränssnittet. Mer information finns i användarhandboken [för](../../data-governance/policies/user-guide.md) profilen. |
+| Hantera dataanvändningsprinciper i användargränssnittet | Dataanvändningsprinciper kan nu hanteras inom arbetsytan **Profiler** i [!DNL Experience Platform] gränssnittet. Mer information finns i användarhandboken [för](../../data-governance/policies/user-guide.md) profilen. |
 
 **Kända fel**
 
