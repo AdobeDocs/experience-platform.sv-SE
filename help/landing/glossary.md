@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform produktdokumentation
 topic: getting started
 translation-type: tm+mt
-source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
+source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
 workflow-type: tm+mt
-source-wordcount: '7136'
+source-wordcount: '7145'
 ht-degree: 0%
 
 ---
@@ -214,7 +214,7 @@ ht-degree: 0%
 
 **Målkatalog:** En målkatalog är en lista över tillgängliga mål i [!DNL Real-time Customer Data Platform].
 
-**Regler för direktsamtal:** i [!DNL Experience Platform Launch]kan du konfigurera en [!UICONTROL direct call] [!UICONTROL rule] som körs när den anropas direkt från sidan. Om sidinläsningen eller åtgärden på webbplatsen är mycket enkel, eller om den är unik och kan utföra en viss uppsättning instruktioner varje gång (anges [!DNL eVar4] till X och utlöses [!DNL event2] varje gång), kan du använda en [!UICONTROL direct call] [!UICONTROL rule]. Se [!DNL Launch] dokumentationen om hur du skapar [!UICONTROL direct call] [!UICONTROL rules].
+**Regler för direktsamtal:** i [!DNL Experience Platform Launch]kan du konfigurera en regel för direktanrop som körs när den anropas direkt från sidan. Om sidinläsningen eller åtgärden på webbplatsen är mycket enkel, eller om den är unik och kan utföra en viss uppsättning instruktioner varje gång (anges [!DNL eVar4] till X och utlöses [!DNL event2] varje gång), kan du använda en regel för direktanrop. Mer information finns i [!DNL Launch] dokumentationen om hur du skapar regler för direktanrop.
 
 **Visningsnamn:** Visningsnamnet är ett användarvänligt namn på ett fält som visas i användargränssnittet.
 
@@ -370,7 +370,7 @@ ht-degree: 0%
 
 **Erbjudande:** Ett erbjudande är ett marknadsföringsmeddelande som kan ha regler kopplade till sig och som anger vem som är berättigad att se erbjudandet.
 
-**Beslut om erbjudande:** Med offertbeslut kan en marknadsförare hantera regler och tränade modeller av erbjudandeförslag när han eller hon kontaktar en slutanvändare baserat på data som samlats in över olika kanaler och tillämpningar.
+**Offer Decisioning:** Med offertbeslut kan en marknadsförare hantera regler och tränade modeller av erbjudandeförslag när han eller hon kontaktar en slutanvändare baserat på data som samlats in över olika kanaler och tillämpningar.
 
 **Erbjudandebibliotek:** Erbjudandebiblioteket är ett centralt bibliotek som används för att hantera personaliserade erbjudanden och reserverbjudanden, beslutsregler och aktiviteter.
 
