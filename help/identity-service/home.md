@@ -5,7 +5,7 @@ title: Adobe Experience Platform Identity Service
 topic: overview
 description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 translation-type: tm+mt
-source-git-commit: 6e4a3ebe84c82790f58f8ec54e6f72c2aca0b7da
+source-git-commit: 28b733a16b067f951a885c299d59e079f0074df8
 workflow-type: tm+mt
 source-wordcount: '1711'
 ht-degree: 0%
@@ -35,11 +35,11 @@ Identitetsrelationerna som [!DNL Identity Service] definierar och upprätthålle
 
 ### Identiteter
 
-En identitet är data som är unika för en enhet, vanligtvis en enskild person. En identitet som ett inloggnings-ID, ECID eller lojalitets-ID kallas en **känd identitet**.
+En identitet är data som är unika för en enhet, vanligtvis en enskild person. En identitet som ett inloggnings-ID, ECID eller lojalitets-ID kallas en känd identitet.
 
 PII, som e-postadress och telefonnummer, används för att identifiera en kund direkt. Resultatet blir att PII-kod används för att matcha en kunds olika identiteter i olika system.
 
-**Okända eller anonyma identiteter** singlar ut en enhet utan att identifiera den person som använder den. Den här kategorin innehåller information som en besökares IP-adress och cookie-ID. Beteendedata kan samlas in från en enhet med hjälp av okända identiteter, men att koppla dessa identiteter till olika enheter eller medier är begränsat tills kunden tillhandahåller PII under resan.
+Okända eller anonyma identiteter singlar ut en enhet utan att identifiera den person som använder den. Den här kategorin innehåller information som en besökares IP-adress och cookie-ID. Beteendedata kan samlas in från en enhet med hjälp av okända identiteter, men att koppla dessa identiteter till olika enheter eller medier är begränsat tills kunden tillhandahåller PII under resan.
 
 Som framgår av bilden nedan är både kända och anonyma identiteter viktiga komponenter i [identitetsdiagram](#identity-graphs), som beskrivs senare i det här dokumentet.
 
