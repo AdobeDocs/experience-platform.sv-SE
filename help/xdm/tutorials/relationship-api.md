@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en självstudiekurs för att defini
 topic: tutorial
 type: Tutorials
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1304'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 Möjligheten att förstå relationen mellan era kunder och deras interaktioner med ert varumärke i olika kanaler är en viktig del av Adobe Experience Platform. Genom att definiera dessa relationer inom strukturen för era [!DNL Experience Data Model] (XDM) scheman kan ni få komplexa insikter i era kunddata.
 
-Schemarelationer kan härledas genom användning av unionsschemat och [!DNL Real-time Customer Profile]detta gäller endast scheman som delar samma klass. Om du vill upprätta en relation mellan två scheman som tillhör olika klasser måste ett dedikerat **relationsfält** läggas till i ett källschema, som refererar till identiteten för ett målschema.
+Schemarelationer kan härledas genom användning av unionsschemat och [!DNL Real-time Customer Profile]detta gäller endast scheman som delar samma klass. Om du vill upprätta en relation mellan två scheman som tillhör olika klasser måste ett dedikerat relationsfält läggas till i ett källschema, som refererar till identiteten för ett målschema.
 
 Det här dokumentet innehåller en självstudiekurs för att definiera en 1:1-relation mellan två scheman som definierats av din organisation med hjälp av API:t för [[!DNL Schema Registry]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml).
 
@@ -111,7 +111,7 @@ Registrera `$id` värdena för de två scheman som du vill definiera en relation
 
 ## Definiera ett referensfält för källschemat
 
-I [!DNL Schema Registry]fungerar relationsbeskrivningarna på liknande sätt som sekundärnycklar i relationsdatabastabeller: ett fält i källschemat fungerar som en referens till det **primära identitetsfältet** i ett målschema. Om källschemat inte har något fält för detta ändamål, kan du behöva skapa en blandning med det nya fältet och lägga till det i schemat. Det nya fältet måste ha `type` värdet &quot;[!DNL string]&quot;.
+I [!DNL Schema Registry]fungerar relationsbeskrivningarna på liknande sätt som sekundärnycklar i relationsdatabastabeller: ett fält i källschemat fungerar som en referens till det primära identitetsfältet i ett målschema. Om källschemat inte har något fält för detta ändamål, kan du behöva skapa en blandning med det nya fältet och lägga till det i schemat. Det nya fältet måste ha `type` värdet &quot;[!DNL string]&quot;.
 
 >[!IMPORTANT]
 >
