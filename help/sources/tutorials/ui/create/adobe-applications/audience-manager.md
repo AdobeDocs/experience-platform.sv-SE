@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: I den här självstudiekursen får du hjälp med att skapa en källanslutning för Adobe Audience Manager för att hämta data om konsumentupplevelsehändelser till plattformen med hjälp av användargränssnittet.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '298'
 ht-degree: 2%
@@ -20,9 +20,9 @@ I den här självstudiekursen får du hjälp med att skapa en källanslutning f�
 
 ## Skapa en källanslutning med Adobe Audience Manager
 
-Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **Källor** i det vänstra navigeringsfältet för att komma åt källarbetsytan. På *katalogskärmen* visas ett antal olika källor som du kan skapa källanslutningar med, och varje källa visar antalet befintliga anslutningar som är kopplade till dem.
+Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **Källor** i det vänstra navigeringsfältet för att komma åt källarbetsytan. På **katalogskärmen** visas ett antal olika källor som du kan skapa källanslutningar med, och varje källa visar antalet befintliga anslutningar som är kopplade till dem.
 
-Under programkategorin *Adobe väljer du* Adobe Audience Manager **** för att visa ett informationsfält till höger på skärmen. Informationsfältet innehåller en kort beskrivning av den valda källan samt alternativ för att visa dess dokumentation eller ansluta till källan.
+Under programkategorin **Adobe väljer du** Adobe Audience Manager **** för att visa ett informationsfält till höger på skärmen. Informationsfältet innehåller en kort beskrivning av den valda källan samt alternativ för att visa dess dokumentation eller ansluta till källan.
 
 Om du vill skapa en ny källanslutning för Adobe Audience Manager klickar du på **Lägg till data**.
 
@@ -32,7 +32,7 @@ En dialogruta visas. Klicka på **Anslut** för att skapa anslutningen.
 
 ![](../../../../images/tutorials/create/aam/connect_full.png)
 
-Om en källanslutning till Adobe Audience Manager har upprättats visas *källaktivitetssidan* för Audience Manager-anslutningen.
+Om en källanslutning till Adobe Audience Manager har upprättats visas **källaktivitetssidan** för Audience Manager-anslutningen.
 
 ![](../../../../images/tutorials/create/aam/flow.png)
 
