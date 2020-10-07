@@ -6,10 +6,10 @@ topic: overview
 type: Tutorial
 description: I den här självstudiekursen beskrivs hur du skapar en källanslutning i användargränssnittet för att samla in kundattributprofildata i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '368'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -28,7 +28,7 @@ Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj s
 
 ![](../../../../images/tutorials/create/customer-attributes/catalog.png)
 
-På skärmen *Källaktivitet* visas alla tidigare upprättade anslutningar för kundattributprofildata. Du kan skapa en ny anslutning genom att klicka på **Välj data**.
+På skärmen **Källaktivitet** visas alla tidigare upprättade anslutningar för kundattributprofildata. Du kan skapa en ny anslutning genom att klicka på **Välj data**.
 
 >[!NOTE]
 >
@@ -44,10 +44,10 @@ I listan över tillgängliga kundattributprofildatauppsättningar väljer du den
 
 ![](../../../../images/tutorials/create/customer-attributes/select_data.png)
 
-Steget *Granska* visas så att du kan granska den nya inkommande anslutningen innan den skapas. Detaljerna om anslutningen är grupperade efter kategorier, inklusive:
+Steget **Granska** visas så att du kan granska den nya inkommande anslutningen innan den skapas. Detaljerna om anslutningen är grupperade efter kategorier, inklusive:
 
-* *Källinformation*: Visar typen av källanslutning och valda källdata.
-* *Målinformation*: När du skapar andra källanslutningar visar den här behållaren vilka data som källdata hämtas till, inklusive det schema som datauppsättningen följer. Kundattributprofildata mappas automatiskt och hämtas in i kundprofiler i realtid.
+* **Källinformation**: Visar typen av källanslutning och valda källdata.
+* **Målinformation**: När du skapar andra källanslutningar visar den här behållaren vilka data som källdata hämtas till, inklusive det schema som datauppsättningen följer. Kundattributprofildata mappas automatiskt och hämtas in i kundprofiler i realtid.
 
 ![](../../../../images/tutorials/create/customer-attributes/review.png)
 
