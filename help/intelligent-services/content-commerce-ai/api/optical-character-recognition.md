@@ -1,13 +1,13 @@
 ---
-keywords: text classification;Text classification
+keywords: OCR;text presence;optical character recognition
 solution: Experience Platform
-title: API-slutpunkt för textklassificering
+title: Optisk teckenigenkänning
 topic: Developer guide
-description: När textklassificeringstjänsten anger ett textfragment kan den klassificeras i en eller flera etiketter. Klassificeringen kan vara en enstaka etikett, flera etiketter eller hierarkisk.
+description: Tjänsten för textnärvaro/optisk teckenigenkänning (OCR), när en bild anges, kan visa om det finns text i bilden. Om det finns text kan OCR returnera texten
 translation-type: tm+mt
-source-git-commit: d57d4412ffd8beccc529681db559007a14ff8120
+source-git-commit: 4d12caf949aeb6619cd27b55855014a61d4e54bb
 workflow-type: tm+mt
-source-wordcount: '508'
+source-wordcount: '512'
 ht-degree: 2%
 
 ---
