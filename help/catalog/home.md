@@ -5,9 +5,9 @@ title: Katalogtjänst - översikt
 topic: overview
 description: Katalogtjänsten är arkivsystemet för dataplatser och -länkar inom Adobe Experience Platform. Alla data som importeras till Experience Platform lagras i Data Lake som filer och kataloger, men i Catalog finns metadata och beskrivning för dessa filer och kataloger för sökning och övervakning.
 translation-type: tm+mt
-source-git-commit: 71678b10c9e137016ea404305b272508b9c8cabe
+source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
 workflow-type: tm+mt
-source-wordcount: '781'
+source-wordcount: '782'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 [!DNL Catalog Service] är registersystemet för dataplatser och datalinje inom Adobe Experience Platform. Alla data som är inkapslade i [!DNL Experience Platform] lagras i [!DNL Data Lake] som filer och kataloger, men [!DNL Catalog] innehåller metadata och beskrivning för dessa filer och kataloger för sökning och övervakning.
 
-Kort och gott: fungerar som ett metadataarkiv eller&quot; [!DNL Catalog] &quot; där du kan hitta information om dina data[!UICONTROL catalog][!DNL Experience Platform]. Du kan använda [!DNL Catalog] för att svara på följande frågor:
+Kort och gott: fungerar som ett metadataarkiv eller&quot;katalog&quot; där du kan hitta information om dina data [!DNL Catalog] [!DNL Experience Platform]. Du kan använda [!DNL Catalog] för att svara på följande frågor:
 
 * Var finns mina data?
 * I vilket skede av bearbetningen befinner sig dessa data?
@@ -35,7 +35,7 @@ Resurserna som [!DNL Catalog Service] spårar används av flera [!DNL Experience
 
 [!DNL Experience Data Model] (XDM) System är det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata. [!DNL Experience Platform] utnyttjar XDM-scheman för att beskriva datastrukturen på ett konsekvent och återanvändbart sätt.
 
-När data hämtas till [!DNL Platform]mappas datastrukturen till ett XDM-schema och lagras i [!DNL Data Lake] som en del av en **datauppsättning**. Metadata för varje datauppsättning spåras av [!DNL Catalog Service], som innehåller en referens till XDM-schemat som datauppsättningen följer.
+När data hämtas in till [!DNL Platform]mappas datastrukturen till ett XDM-schema och lagras i [!DNL Data Lake] som en del av en datauppsättning. Metadata för varje datauppsättning spåras av [!DNL Catalog Service], som innehåller en referens till XDM-schemat som datauppsättningen följer.
 
 Mer allmän information om XDM System finns i [XDM-systemöversikten](../xdm/home.md).
 
@@ -43,7 +43,7 @@ Mer allmän information om XDM System finns i [XDM-systemöversikten](../xdm/hom
 
 [!DNL Experience Platform] importerar data från flera källor och behåller poster som datauppsättningar i [!DNL Data Lake]. [!DNL Catalog] spårar metadata för dessa datauppsättningar, oavsett källa eller metod för intaget.
 
-När du använder gruppbearbetningsmetoden spåras även ytterligare metadata för [!DNL Catalog] gruppfiler **** . Batchar är dataenheter som består av en eller flera filer som ska importeras som en enda enhet. [!DNL Catalog] spårar metadata för dessa gruppfiler samt de datauppsättningar som de sparas i efter inmatning. Batchmetadata innehåller information om antalet poster som har importerats samt eventuella poster som misslyckades och associerade felmeddelanden.
+När du använder gruppbearbetningsmetoden spåras även ytterligare metadata för gruppfiler [!DNL Catalog] . Batchar är dataenheter som består av en eller flera filer som ska importeras som en enda enhet. [!DNL Catalog] spårar metadata för dessa gruppfiler samt de datauppsättningar som de sparas i efter inmatning. Batchmetadata innehåller information om antalet poster som har importerats samt eventuella poster som misslyckades och associerade felmeddelanden.
 
 Mer information finns i översikten över [](../ingestion/home.md) dataöverföring.
 
