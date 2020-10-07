@@ -5,7 +5,7 @@ seo-title: Arbetsytan Destinationer
 description: Arbetsytan Destinationer består av fyra avsnitt, Katalog, Bläddra, Konton och Systemvy, som beskrivs i avsnitten nedan.
 seo-description: I Adobe Real-time Customer Data Platform väljer du Destinationer i det vänstra navigeringsfältet för att komma åt målarbetsytan.
 translation-type: tm+mt
-source-git-commit: 59ac673c35954696fbb37417510035bdebff6f62
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '764'
 ht-degree: 1%
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 I Adobe Customer Data Platform för realtid väljer du **[!UICONTROL Destinations]** i det vänstra navigeringsfältet för att komma åt [!UICONTROL Destinations] arbetsytan.
 
-Arbetsytan består [!UICONTROL Destinations] av fyra avsnitt, **[!UICONTROL Catalog]**, **[!UICONTROL Browse]**, **[!UICONTROL Accounts]** och **[!UICONTROL System View]**, som beskrivs i avsnitten nedan.
+Arbetsytan består [!UICONTROL Destinations] av fyra avsnitt, [!UICONTROL Catalog], [!UICONTROL Browse], [!UICONTROL Accounts]och [!UICONTROL System View], som beskrivs i avsnitten nedan.
 
 ![Destinationer - översikt](/help/rtcdp/destinations/assets/destinations-overview.png)
 
@@ -28,8 +28,8 @@ På fliken **[!UICONTROL Catalog]** visas en lista med alla mål som är tillgä
 Användargränssnittet för CDP i realtid i Adobe innehåller ett antal sök- och filteralternativ på katalogsidan för mål:
 
 * Använd sökfunktionen på sidan för att hitta ett specifikt mål.
-* Filtrera mål med hjälp av **[!UICONTROL Categories]** kontrollen.
-* Växla mellan **[!UICONTROL All destinations]** och **[!UICONTROL My destinations]**. När **[!UICONTROL All destinations]** är markerat visas alla tillgängliga CDP-mål i realtid i Adobe. När **[!UICONTROL My destinations]** är markerat kan du bara se de mål som du har upprättat en anslutning till.
+* Filtrera mål med hjälp av [!UICONTROL Categories] kontrollen.
+* Växla mellan [!UICONTROL All destinations] och [!UICONTROL My destinations]. När **[!UICONTROL All destinations]** är markerat visas alla tillgängliga CDP-mål i realtid i Adobe. När **[!UICONTROL My destinations]** är markerat kan du bara se de mål som du har upprättat en anslutning till.
 * Välj för att visa **[!UICONTROL Connections]** och/eller **[!UICONTROL Extensions]**. Mer information om skillnaden mellan de två kategorierna finns i [Måltyper och kategorier](/help/rtcdp/destinations/destination-types.md).
 
 ![målgruppsfiltrering och sökdemo](/help/rtcdp/destinations/assets/destinations-search-and-filter.gif)
