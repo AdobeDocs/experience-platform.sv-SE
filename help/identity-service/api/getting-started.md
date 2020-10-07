@@ -5,7 +5,7 @@ title: Komma igång
 topic: API guide
 description: 'Adobe Experience Platform Identity Service hanterar identifieringen av era kunder över olika enheter, i flera kanaler och i realtid i det som kallas identitetsdiagram inom Adobe Experience Platform. '
 translation-type: tm+mt
-source-git-commit: 2a528c705a7aa610f57047be39be1ce9886ce44c
+source-git-commit: fa667d86c089c692f22cfd1b46f3f11b6e9a68d7
 workflow-type: tm+mt
 source-wordcount: '754'
 ht-degree: 1%
@@ -88,4 +88,4 @@ Exemplen i det här dokumentet täcker inte hela funktionaliteten i [!DNL Identi
 
 ## Nästa steg
 
-Nu när du har samlat in de nödvändiga inloggningsuppgifterna kan du nu fortsätta att läsa resten av utvecklarhandboken. Varje avsnitt innehåller viktig information om deras slutpunkter och visar exempel på API-anrop för att utföra CRUD-åtgärder. Varje anrop innehåller det allmänna **API-formatet**, en **exempelbegäran** med obligatoriska huvuden och korrekt formaterade nyttolaster samt ett **exempelsvar** för ett lyckat anrop.
+Nu när du har samlat in de nödvändiga inloggningsuppgifterna kan du nu fortsätta att läsa resten av utvecklarhandboken. Varje avsnitt innehåller viktig information om deras slutpunkter och visar exempel på API-anrop för att utföra CRUD-åtgärder. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran som visar nödvändiga huvuden och korrekt formaterade nyttolaster samt ett exempelsvar för ett lyckat anrop.
