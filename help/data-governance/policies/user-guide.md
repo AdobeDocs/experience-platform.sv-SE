@@ -5,7 +5,7 @@ title: Användarhandbok för dataanvändningsprinciper
 topic: policies
 description: Adobe Experience Platform Data Governance har ett användargränssnitt där du kan skapa och hantera dataanvändningspolicyer. Det här dokumentet innehåller en översikt över de åtgärder du kan utföra på arbetsytan Profiler i användargränssnittet i Experience Platform.
 translation-type: tm+mt
-source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
+source-git-commit: a362b67cec1e760687abb0c22dc8c46f47e766b7
 workflow-type: tm+mt
 source-wordcount: '724'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # Användarhandbok för dataanvändningsprinciper
 
-Adobe Experience Platform [!DNL Data Governance] har ett användargränssnitt där du kan skapa och hantera principer för dataanvändning. Det här dokumentet innehåller en översikt över de åtgärder du kan utföra på arbetsytan _Profiler_ i [!DNL Experience Platform] användargränssnittet.
+Adobe Experience Platform [!DNL Data Governance] har ett användargränssnitt där du kan skapa och hantera principer för dataanvändning. Det här dokumentet innehåller en översikt över de åtgärder du kan utföra på arbetsytan **Profiler** i [!DNL Experience Platform] användargränssnittet.
 
 >[!IMPORTANT]
 >
@@ -56,7 +56,7 @@ Steget **[!UICONTROL Select marketing actions]** visas. Välj lämpliga marknads
 
 >[!NOTE]
 >
->När man väljer flera marknadsföringsåtgärder tolkas de som en &quot;OR&quot;-regel. Med andra ord gäller policyn om _någon_ av de valda marknadsföringsåtgärderna utförs.
+>När man väljer flera marknadsföringsåtgärder tolkas de som en &quot;OR&quot;-regel. Med andra ord gäller policyn om **någon** av de valda marknadsföringsåtgärderna utförs.
 
 ![](../images/policies/add-marketing-actions.png)
 
