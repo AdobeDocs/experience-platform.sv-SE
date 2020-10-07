@@ -5,7 +5,7 @@ title: Privacy Service developer guide
 description: Använd RESTful API för att hantera personuppgifter för dina registrerade i olika Adobe Experience Cloud-program
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
+source-git-commit: 28b733a16b067f951a885c299d59e079f0074df8
 workflow-type: tm+mt
 source-wordcount: '728'
 ht-degree: 0%
@@ -77,7 +77,7 @@ Nyckelparet genereras automatiskt och en ZIP-fil som innehåller en privat nycke
 
 ![](../images/api/getting-started/key-pair-generated.png)
 
-När API:t har lagts till i projektet visas projektsidan igen på _Privacy Service-API:ts översiktssida_ . Här bläddrar du nedåt till **[!UICONTROL Service Account (JWT)]** avsnittet som innehåller följande åtkomstautentiseringsuppgifter som krävs för alla anrop till [!DNL Privacy Service] API:
+När API:t har lagts till i projektet visas projektsidan igen på **Privacy Service-API:ts översiktssida** . Här bläddrar du nedåt till **[!UICONTROL Service Account (JWT)]** avsnittet som innehåller följande åtkomstautentiseringsuppgifter som krävs för alla anrop till [!DNL Privacy Service] API:
 
 * **[!UICONTROL CLIENT ID]**: Klient-ID är det som krävs `{API_KEY}` för detta måste anges i x-api-key-huvudet.
 * **[!UICONTROL ORGANIZATION ID]**: Organisations-ID är det `{IMS_ORG}` värde som måste användas i rubriken x-gw-ims-org-id.
