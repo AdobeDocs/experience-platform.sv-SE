@@ -6,9 +6,9 @@ type: Tutorial
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 seo-description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '772'
+source-wordcount: '773'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ Anslut till antingen Amazon S3 eller SFTP i det anslutande målflödet som beskr
 
    ![Anslut till mål](/help/rtcdp/destinations/assets/connect-email-marketing.png)
 
-2. Om du tidigare har konfigurerat en anslutning till ditt e-postmarknadsföringsmål markerar du den befintliga anslutningen i **[!UICONTROL Authentication]** steget **[!UICONTROL Existing Account]** . Du kan också välja **[!UICONTROL New Account]** att skapa en ny anslutning till ditt mål för e-postmarknadsföring. I väljaren kan du välja mellan **[!UICONTROL Connection type]** Amazon S3 **,** SFTP med lösenord **och** SFTP med SSH-nyckel ****. Fyll i informationen nedan, beroende på vilken typ av anslutning du har, och välj sedan **[!UICONTROL Connect]**.
+2. Om du tidigare har konfigurerat en anslutning till ditt e-postmarknadsföringsmål markerar du den befintliga anslutningen i **[!UICONTROL Authentication]** steget **[!UICONTROL Existing Account]** . Du kan också välja **[!UICONTROL New Account]** att skapa en ny anslutning till ditt mål för e-postmarknadsföring. I väljaren kan du välja mellan Amazon S3, SFTP med lösenord eller SFTP med SSH-nyckel. **[!UICONTROL Connection type]** Fyll i informationen nedan, beroende på vilken typ av anslutning du har, och välj sedan **[!UICONTROL Connect]**.
 
    För **S3-anslutningar** måste du ange ditt Amazon Access Key ID och Secret Access Key.
 
@@ -38,9 +38,9 @@ Anslut till antingen Amazon S3 eller SFTP i det anslutande målflödet som beskr
 
    För **SFTP med SSH-nyckelanslutningar** måste du ange domän, port, användarnamn och SSH-nyckel för SFTP-servern.
 
-3. I **[!UICONTROL Setup]** steget anger du ett **[!UICONTROL Name]** och ett **[!UICONTROL Description]** för det nya målet samt **[!UICONTROL File format]** för de exporterade filerna. <br>
-Om du valde Amazon S3 som lagringsalternativ i föregående steg, sätter du in **[!UICONTROL Bucket name]** och **[!UICONTROL Folder path]** i molnlagringsmålet där filerna ska levereras. För alternativet SFTP-lagring anger du den plats **[!UICONTROL Folder path]** där filerna ska levereras. <br>
-I det här steget kan du även välja vilket som helst **[!UICONTROL Marketing use case]** som ska gälla för det här målet. Fall av marknadsanvändning anger avsikten för vilken data ska exporteras till destinationen. Du kan välja bland Adobe-definierade användningsfall för marknadsföring eller skapa ett eget marknadsföringsexempel. Mer information om användningsfall för marknadsföring finns på sidan [Datastyrning i CDP](/help/rtcdp/privacy/data-governance-overview.md#destinations) i realtid. Mer information om de enskilda Adobe-definierade användningsfallen för marknadsföring finns i översikten över [dataanvändningspolicyn](/help/data-governance/policies/overview.md#core-actions). <br>
+3. I **[!UICONTROL Setup]** steget anger du ett [!UICONTROL Name] och ett [!UICONTROL Description] för det nya målet samt [!UICONTROL File format] för de exporterade filerna. <br>
+Om du valde Amazon S3 som lagringsalternativ i föregående steg, sätter du in [!UICONTROL Bucket name] och [!UICONTROL Folder path] i molnlagringsmålet där filerna ska levereras. För alternativet SFTP-lagring anger du den plats [!UICONTROL Folder path] där filerna ska levereras. <br>
+I det här steget kan du även välja vilket som helst [!UICONTROL Marketing use case] som ska gälla för det här målet. Fall av marknadsanvändning anger avsikten för vilken data ska exporteras till destinationen. Du kan välja bland Adobe-definierade användningsfall för marknadsföring eller skapa ett eget marknadsföringsexempel. Mer information om användningsfall för marknadsföring finns på sidan [Datastyrning i CDP](/help/rtcdp/privacy/data-governance-overview.md#destinations) i realtid. Mer information om de enskilda Adobe-definierade användningsfallen för marknadsföring finns i översikten över [dataanvändningspolicyn](/help/data-governance/policies/overview.md#core-actions). <br>
    ![Steget för e-postkonfiguration](/help/rtcdp/destinations/assets/email-setup-step.png)
 
 ## Steg 2 - Välj vilka segmentmedlemmar som ska inkluderas i målexporten {#select-segments}
