@@ -6,7 +6,7 @@ topic: policies
 type: Tutorial
 description: Med API:t för principtjänsten kan du skapa och hantera dataanvändningsprinciper för att avgöra vilka marknadsföringsåtgärder som kan vidtas mot data som innehåller vissa dataanvändningsetiketter. Det här dokumentet innehåller en stegvis självstudiekurs för att skapa en profil med hjälp av API:t för principtjänsten.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1209'
 ht-degree: 0%
@@ -195,7 +195,7 @@ Registrera URI-ID:t för den nyligen skapade marknadsföringsåtgärden, så som
 
 Om du skapar en ny princip måste du tillhandahålla URI-ID:t för en marknadsföringsåtgärd med ett uttryck för användningsetiketterna som förbjuder den marknadsföringsåtgärden.
 
-Det här uttrycket kallas ett **principuttryck** och är ett objekt som innehåller antingen (A) en etikett eller (B) en operator och operander, men inte båda. I sin tur är varje operand också ett principuttrycksobjekt. En policy för export av data till en tredje part kan till exempel vara förbjuden om det finns `C1 OR (C3 AND C7)` etiketter. Detta uttryck skulle anges som:
+Det här uttrycket kallas ett principuttryck och är ett objekt som innehåller antingen (A) en etikett eller (B) en operator och operander, men inte båda. I sin tur är varje operand också ett principuttrycksobjekt. En policy för export av data till en tredje part kan till exempel vara förbjuden om det finns `C1 OR (C3 AND C7)` etiketter. Detta uttryck skulle anges som:
 
 ```json
 "deny": {
