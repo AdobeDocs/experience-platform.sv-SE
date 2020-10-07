@@ -5,7 +5,7 @@ title: Felsökningsguide för åtkomstkontroll
 topic: troubleshooting guide
 description: Det här dokumentet innehåller svar på vanliga frågor om åtkomstkontroll i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
+source-git-commit: 28b733a16b067f951a885c299d59e079f0074df8
 workflow-type: tm+mt
 source-wordcount: '308'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Det här dokumentet innehåller svar på vanliga frågor om åtkomstkontroll i Adobe Experience Platform. För frågor och felsökning som rör andra [!DNL Platform] tjänster, se felsökningsguiden för [Experience Platform](../landing/troubleshooting.md).
 
-[!DNL Experience Platform] utnyttjar produktprofiler i [Adobe Admin Console](http://adminconsole.adobe.com) för att tillhandahålla rollbaserad **åtkomstkontroll** som länkar användare med behörigheter och sandlådor.  Mer information finns i [åtkomstkontrollsöversikten](home.md) .
+[!DNL Experience Platform] använder produktprofiler i [Adobe Admin Console](http://adminconsole.adobe.com) för att tillhandahålla rollbaserad åtkomstkontroll, som länkar användare med behörigheter och sandlådor.  Mer information finns i [åtkomstkontrollsöversikten](home.md) .
 
 ## Var hittar jag mina nuvarande åtkomstbehörigheter?
 
