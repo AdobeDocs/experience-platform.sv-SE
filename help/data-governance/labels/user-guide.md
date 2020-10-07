@@ -5,9 +5,9 @@ title: Användarhandbok för etiketter för dataanvändning
 topic: labels
 description: Den här användarhandboken innehåller steg för hur du arbetar med dataanvändningsetiketter i Adobe Experience Platform användargränssnitt.
 translation-type: tm+mt
-source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
+source-git-commit: 259c26a9d3b6ef397acd552e255f68ecb25b2dd1
 workflow-type: tm+mt
-source-wordcount: '1053'
+source-wordcount: '1052'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Den här användarhandboken innehåller steg för att arbeta med dataanvändning
 
 ## Hantera dataanvändningsetiketter på datauppsättningsnivå
 
-För att kunna hantera dataanvändningsetiketter på datauppsättningsnivå måste du välja en befintlig datauppsättning eller skapa en ny. När du har loggat in på Adobe Experience Platform väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen för att öppna arbetsytan _Datauppsättningar_ . På den här sidan visas alla skapade datauppsättningar som tillhör din organisation, tillsammans med användbar information om varje datauppsättning.
+För att kunna hantera dataanvändningsetiketter på datauppsättningsnivå måste du välja en befintlig datauppsättning eller skapa en ny. När du har loggat in på Adobe Experience Platform väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen för att öppna **[!UICONTROL Datasets]** arbetsytan. På den här sidan visas alla skapade datauppsättningar som tillhör din organisation, tillsammans med användbar information om varje datauppsättning.
 
 ![Fliken Datauppsättning i arbetsytan Data](../images/labels/datasets.png)
 
@@ -43,7 +43,7 @@ Skärmen visas **[!UICONTROL Select Schema]** , där alla tillgängliga scheman 
 
 ![Välj datauppsättningsschema](../images/labels/dataset_schema.png)
 
-Skärmen visas **[!UICONTROL Configure Dataset]** . Ange ett **namn** (obligatoriskt) och en **beskrivning** (valfritt, men rekommenderas) för den nya datauppsättningen och klicka sedan på **[!UICONTROL Finish]**.
+Skärmen visas **[!UICONTROL Configure Dataset]** . Ange ett namn (obligatoriskt) och en beskrivning (valfritt, men rekommenderas) för den nya datauppsättningen och klicka sedan på **[!UICONTROL Finish]**.
 
 ![Konfigurera datauppsättning med namn och beskrivning](../images/labels/dataset_configure.png)
 
