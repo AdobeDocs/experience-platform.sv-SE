@@ -5,9 +5,9 @@ title: Bläddra i arbetsytan för åtkomstkontroll
 topic: user guide
 description: Det här dokumentet innehåller de steg som krävs för att bläddra på arbetsytan för åtkomstkontroll. Om du vill konfigurera åtkomstkontroll för Experience Platform via Adobe Admin Console måste du vara administratör för en IMS-organisation som har ett abonnemang på Experience Platform.
 translation-type: tm+mt
-source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
+source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
 workflow-type: tm+mt
-source-wordcount: '288'
+source-wordcount: '295'
 ht-degree: 3%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 3%
 
 # Bläddra i arbetsytan för åtkomstkontroll
 
-Om du vill konfigurera åtkomstkontroll för [!DNL Experience Platform] via Adobe Admin Console måste du vara administratör för en IMS-organisation som har en prenumeration på [!DNL Experience Platform]. Adobe stöder flexibla administratörshierarkier för IMS-organisationer, men du måste ha **[!UICONTROL system administrator]** behörighet **[!UICONTROL product administrator]** eller **[!UICONTROL product profile administrator]** behörighet att konfigurera åtkomstkontroll. Mer information finns i Adobe Help Center artikel om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html) .
+Om du vill konfigurera åtkomstkontroll för [!DNL Experience Platform] via Adobe Admin Console måste du vara administratör för en IMS-organisation som har en prenumeration på [!DNL Experience Platform]. Adobe stöder flexibla administratörshierarkier för IMS-organisationer, men du måste ha behörighet som systemadministratör, produktadministratör eller produktprofiladministratör för att kunna konfigurera åtkomstkontroll. Mer information finns i Adobe Help Center artikel om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html) .
 
 Om du inte har administratörsbehörighet kontaktar du systemadministratören för att få åtkomst.
 
