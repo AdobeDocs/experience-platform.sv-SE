@@ -5,9 +5,9 @@ title: Skapa en ny produktprofil
 topic: user guide
 description: Det här dokumentet innehåller de steg som krävs för att skapa en ny produktprofil i Adobe Admin Console. Om du vill börja skapa en ny profil går du till fliken Produktprofiler och klickar på Ny profil.
 translation-type: tm+mt
-source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
+source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
 workflow-type: tm+mt
-source-wordcount: '228'
+source-wordcount: '231'
 ht-degree: 3%
 
 ---
@@ -19,7 +19,7 @@ Om du vill börja skapa en ny profil går du till **[!UICONTROL Product Profiles
 
 ![new-profile-button](../images/new-profile-button.png)
 
-Dialogrutan **[!UICONTROL Create New Profile]** visas där du uppmanas att ange en **[!UICONTROL Profile Name]** och **[!UICONTROL Description]** ange den nya profilen. Om du vill att profilens visningsnamn ska vara ett annat avmarkerar du **[!UICONTROL Same as Profile Name]** och anger visningsnamnet i textrutan som visas. Under **[!UICONTROL User Notifications]** kan du växla om användare ska meddelas via e-post när de läggs till eller tas bort från profilen.
+Dialogrutan visas där du uppmanas att ange ett profilnamn och en beskrivning för den nya profilen. **[!UICONTROL Create New Profile]** Om du vill att profilens visningsnamn ska vara ett annat avmarkerar du **[!UICONTROL Same as Profile Name]** och anger visningsnamnet i textrutan som visas. Under **[!UICONTROL User Notifications]** kan du växla om användare ska meddelas via e-post när de läggs till eller tas bort från profilen.
 
 Klicka på **[!UICONTROL Next]** när du är klar.
 
