@@ -5,7 +5,7 @@ title: Översikt över policytillämpning
 topic: enforcement
 description: När dataanvändningsetiketter har tillämpats på Adobe Experience Platform datauppsättningar, och dataanvändningspolicyer har definierats för marknadsföringsåtgärder mot dessa etiketter, kan ni med datastyrningsfunktionerna tillämpa dessa policyer och förhindra dataåtgärder som utgör policyöverträdelser. Det finns två metoder för policytillämpning som tillhandahålls av datastyrningsfunktioner på plattformen, API-baserad tillämpning och automatisk tillämpning.
 translation-type: tm+mt
-source-git-commit: 2fdab7d984a7368df77110f8ba0e0ba687e96d7e
+source-git-commit: 28b733a16b067f951a885c299d59e079f0074df8
 workflow-type: tm+mt
 source-wordcount: '262'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 När dataanvändningsetiketter har tillämpats på [!DNL Platform] [!DNL Data Governance] datauppsättningar och dataanvändningsprinciper har definierats för marknadsföringsåtgärder mot dessa etiketter, kan ni med hjälp av funktioner tillämpa dessa policyer och förhindra dataåtgärder som utgör policyöverträdelser.
 
-Det finns två metoder för policytillämpning som tillhandahålls av [!DNL Data Governance] funktioner på [!DNL Platform]: **API-baserad tillämpning** och **automatisk tillämpning**.
+Det finns två metoder för policytillämpning som tillhandahålls av [!DNL Data Governance] funktioner på [!DNL Platform]: API-baserad tillämpning och automatisk tillämpning.
 
 ## API-baserad tillämpning
 
