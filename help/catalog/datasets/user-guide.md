@@ -5,9 +5,9 @@ title: Användarhandbok för datauppsättningar
 topic: datasets
 description: Den här användarhandboken för datauppsättningar innehåller anvisningar om hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 translation-type: tm+mt
-source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
+source-git-commit: eaff457140ba4ac7c25a0f3a3e5aef47d1b99773
 workflow-type: tm+mt
-source-wordcount: '1099'
+source-wordcount: '1105'
 ht-degree: 0%
 
 ---
@@ -41,7 +41,7 @@ Klicka på namnet på en datauppsättning för att komma åt dess **[!UICONTROL 
 
 ## Förhandsgranska en datauppsättning
 
-På **[!UICONTROL Dataset activity]** skärmen klickar du **[!UICONTROL Preview dataset]** i skärmens övre högra hörn för att förhandsgranska upp till 100 rader med data. Om datauppsättningen är tom inaktiveras förhandsgranskningslänken och det står i stället **[!UICONTROL Preview not available]**.
+På **[!UICONTROL Dataset activity]** skärmen klickar du **[!UICONTROL Preview dataset]** i skärmens övre högra hörn för att förhandsgranska upp till 100 rader med data. Om datauppsättningen är tom inaktiveras förhandsgranskningslänken och det står i stället att förhandsvisningen inte är tillgänglig.
 
 ![](../images/datasets/user-guide/click_to_preview.png)
 
