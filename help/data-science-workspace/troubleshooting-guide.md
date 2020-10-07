@@ -5,7 +5,7 @@ title: Felsökningsguide för Data Science Workspace
 topic: Troubleshooting
 description: Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform Data Science Workspace.
 translation-type: tm+mt
-source-git-commit: 76e598c743df320e4b3cb821e118749fe7304d9c
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '750'
 ht-degree: 0%
@@ -31,7 +31,7 @@ Navigera till det övre högra hörnet i din [!DNL Chrome] webbläsare och välj
 
 ![avancerat krom](./images/faq/chrome-advanced.png)
 
-Avsnittet *Sekretess och säkerhet* visas. Klicka sedan på **Webbplatsinställningar** följt av **cookies och webbplatsdata**.
+Avsnittet **Sekretess och säkerhet** visas. Klicka sedan på **Webbplatsinställningar** följt av **cookies och webbplatsdata**.
 
 ![avancerat krom](./images/faq/privacy-security.png)
 
@@ -63,7 +63,7 @@ Välj **Avancerat** i inställningsfönstret i Safari. Markera sedan *Visa menyn
 
 ![Safari avancerat](./images/faq/advanced.png)
 
-Välj sedan **Framkalla** i det övre navigeringsfältet. I listrutan *Framkalla* för du muspekaren över *användaragenten*. Du kan välja den **[!DNL Chrome]** - eller **[!DNL Firefox]** användaragentsträng som du vill använda.
+Välj sedan **Framkalla** i det övre navigeringsfältet. I listrutan **Framkalla** för du muspekaren över **användaragenten**. Du kan välja den **[!DNL Chrome]** - eller **[!DNL Firefox]** användaragentsträng som du vill använda.
 
 ![Menyn Framkalla](./images/faq/user-agent.png)
 
