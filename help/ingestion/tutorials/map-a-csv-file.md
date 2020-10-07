@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: I den här självstudiekursen beskrivs hur du mappar en CSV-fil till ett XDM-schema med Adobe Experience Platform användargränssnitt.
 translation-type: tm+mt
-source-git-commit: 7adf18e4251f377fee586c8a0f23b89acd75afca
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '833'
 ht-degree: 0%
@@ -117,7 +117,7 @@ När CSV-filen har mappats och skapats kan du övervaka de data som hämtas geno
 
 Om du vill använda en funktion skriver du in den under **[!UICONTROL Source Field]** med lämplig syntax och indata.
 
-Om du till exempel vill sammanfoga CSV-fält för **ort** och **land** och tilldela dem till XDM-fältet för **stad** anger du källfältet som `concat(city, ", ", county)`.
+Om du till exempel vill sammanfoga CSV-fält för stad och land och tilldela dem till XDM-fältet för stad anger du källfältet som `concat(city, ", ", county)`.
 
 ![](../images/tutorials/map-a-csv-file/mapping-function.png)
 
