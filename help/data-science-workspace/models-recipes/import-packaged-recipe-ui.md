@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: I den här självstudiekursen får du information om hur du konfigurerar och importerar ett paketerat recept med hjälp av det angivna exemplet på detaljhandelsförsäljning. I slutet av den här självstudiekursen kan du skapa, utbilda och utvärdera en modell i Adobe Experience Platform Data Science Workspace.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1708'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Den här självstudiekursen kräver ett paketerat recept i form av en Docker-bil
 
 ## Arbetsflöde för användargränssnitt
 
-För att importera ett paketerat recept till [!DNL Data Science Workspace] krävs särskilda receptkonfigurationer, som kompileras till en enda JSON-fil (JavaScript Object Notation). Den här kompileringen av receptkonfigurationer kallas **konfigurationsfilen**. Ett paketerat recept med en viss uppsättning konfigurationer kallas en **recept-instans**. Ett recept kan användas för att skapa många receptinstanser i [!DNL Data Science Workspace].
+För att importera ett paketerat recept till [!DNL Data Science Workspace] krävs särskilda receptkonfigurationer, som kompileras till en enda JSON-fil (JavaScript Object Notation). Den här kompileringen av receptkonfigurationer kallas konfigurationsfilen. Ett paketerat recept med en viss uppsättning konfigurationer kallas en recept-instans. Ett recept kan användas för att skapa många receptinstanser i [!DNL Data Science Workspace].
 
 Arbetsflödet för att importera ett paketrecept består av följande steg:
 - [Konfigurera ett recept](#configure)
@@ -124,11 +124,11 @@ I den här självstudiekursen kan du lämna standardkonfigurationsfilerna för b
 
 ### Importera Docker-baserat recept - [!DNL Python] {#python}
 
-Börja med att navigera och välja **[!UICONTROL Workflows]** i det övre vänstra hörnet i [!DNL Platform] användargränssnittet. Välj sedan *Importera recept* och klicka på **[!UICONTROL Launch]**.
+Börja med att navigera och välja **[!UICONTROL Workflows]** i det övre vänstra hörnet i [!DNL Platform] användargränssnittet. Välj sedan **Importera recept** och klicka på **[!UICONTROL Launch]**.
 
 ![](../images/models-recipes/import-package-ui/launch-import.png)
 
-Sidan *Konfigurera* för arbetsflödet *Importera recept* visas. Ange ett namn och en beskrivning för receptet och välj sedan **[!UICONTROL Next]** i det övre högra hörnet.
+Sidan **Konfigurera** för arbetsflödet **Importera recept** visas. Ange ett namn och en beskrivning för receptet och välj sedan **[!UICONTROL Next]** i det övre högra hörnet.
 
 ![konfigurera arbetsflöde](../images/models-recipes/import-package-ui/configure-workflow.png)
 
@@ -136,19 +136,19 @@ Sidan *Konfigurera* för arbetsflödet *Importera recept* visas. Ange ett namn o
 >
 > I källfilerna för [paketet till en Recept](./package-source-files-recipe.md) -självstudiekurs angavs en Docker-URL när köpreceptet för butik skapades med Python-källfiler.
 
-När du är på *Select source* -sidan klistrar du in den Docker-URL som motsvarar det paketerade receptet som skapats med [!DNL Python] källfilerna i **[!UICONTROL Source URL]** fältet. Importera sedan den angivna konfigurationsfilen genom att dra och släppa eller använd **filläsaren**. Den angivna konfigurationsfilen finns på `experience-platform-dsw-reference/recipes/python/retail/retail.config.json`. Välj **[!UICONTROL Python]** i listrutan *Körtid* och **[!UICONTROL Classification]** i listrutan *Typ* . När allt är ifyllt klickar du **[!UICONTROL Next]** i det övre högra hörnet för att gå vidare till *Hantera scheman*.
+När du är på **Select source** -sidan klistrar du in den Docker-URL som motsvarar det paketerade receptet som skapats med [!DNL Python] källfilerna i **[!UICONTROL Source URL]** fältet. Importera sedan den angivna konfigurationsfilen genom att dra och släppa eller använd **filläsaren**. Den angivna konfigurationsfilen finns på `experience-platform-dsw-reference/recipes/python/retail/retail.config.json`. Välj **[!UICONTROL Python]** i listrutan **Körtid** och **[!UICONTROL Classification]** i listrutan **Typ** . När allt är ifyllt klickar du **[!UICONTROL Next]** i det övre högra hörnet för att gå vidare till **Hantera scheman**.
 
 >[!NOTE]
 >
-> *Text* har stöd **[!UICONTROL Classification]** och **[!UICONTROL Regression]**. Om modellen inte faller under någon av dessa typer väljer du **[!UICONTROL Custom]**.
+> Typstöd **[!UICONTROL Classification]** och **[!UICONTROL Regression]**. Om modellen inte faller under någon av dessa typer väljer du **[!UICONTROL Custom]**.
 
 ![](../images/models-recipes/import-package-ui/recipe_source_python.png)
 
-Välj sedan in- och utdatamodeller för detaljhandel under avsnittet *Hantera scheman*, som skapades med det tillhandahållna bootstrap-skriptet i [skapa säljchemat för detaljhandeln och självstudiekursen för datauppsättningar](../models-recipes/create-retails-sales-dataset.md) .
+Välj sedan in- och utdatamodeller för detaljhandel under avsnittet **Hantera scheman**, som skapades med det tillhandahållna bootstrap-skriptet i [skapa säljchemat för detaljhandeln och självstudiekursen för datauppsättningar](../models-recipes/create-retails-sales-dataset.md) .
 
 ![](../images/models-recipes/import-package-ui/recipe_schema.png)
 
-Klicka på din innehavaridentifiering i schemavisaren under avsnittet *Funktionshantering* för att expandera indatabasschemat för butiksförsäljning. Välj in- och utdatafunktioner genom att markera den önskade funktionen och markera antingen **[!UICONTROL Input Feature]** eller **[!UICONTROL Target Feature]** i det högra **[!UICONTROL Field Properties]** fönstret. I den här självstudiekursen anger du **[!UICONTROL weeklySales]** som **[!UICONTROL Target Feature]** och allt annat som **[!UICONTROL Input Feature]**. Klicka **[!UICONTROL Next]** för att granska ditt nya konfigurerade recept.
+Klicka på din innehavaridentifiering i schemavisaren under avsnittet **Funktionshantering** för att expandera indatabasschemat för butiksförsäljning. Välj in- och utdatafunktioner genom att markera den önskade funktionen och markera antingen **[!UICONTROL Input Feature]** eller **[!UICONTROL Target Feature]** i det högra **[!UICONTROL Field Properties]** fönstret. I den här självstudiekursen anger du **[!UICONTROL weeklySales]** som **[!UICONTROL Target Feature]** och allt annat som **[!UICONTROL Input Feature]**. Klicka **[!UICONTROL Next]** för att granska ditt nya konfigurerade recept.
 
 Granska recept, lägg till, ändra eller ta bort konfigurationer efter behov. Klicka **[!UICONTROL Finish]** för att skapa receptet.
 
@@ -158,11 +158,11 @@ Gå vidare till [nästa steg](#next-steps) för att ta reda på hur du skapar en
 
 ### Importera Docker-baserat recept - R {#r}
 
-Börja med att navigera och välja **[!UICONTROL Workflows]** i det övre vänstra hörnet i [!DNL Platform] användargränssnittet. Välj sedan *Importera recept* och klicka på **[!UICONTROL Launch]**.
+Börja med att navigera och välja **[!UICONTROL Workflows]** i det övre vänstra hörnet i [!DNL Platform] användargränssnittet. Välj sedan **Importera recept** och klicka på **[!UICONTROL Launch]**.
 
 ![](../images/models-recipes/import-package-ui/launch-import.png)
 
-Sidan *Konfigurera* för arbetsflödet *Importera recept* visas. Ange ett namn och en beskrivning för receptet och välj sedan **[!UICONTROL Next]** i det övre högra hörnet.
+Sidan **Konfigurera** för arbetsflödet **Importera recept** visas. Ange ett namn och en beskrivning för receptet och välj sedan **[!UICONTROL Next]** i det övre högra hörnet.
 
 ![konfigurera arbetsflöde](../images/models-recipes/import-package-ui/configure-workflow.png)
 
@@ -170,7 +170,7 @@ Sidan *Konfigurera* för arbetsflödet *Importera recept* visas. Ange ett namn o
 >
 > I källfilerna för [paketet till en Recept](./package-source-files-recipe.md) -självstudiekurs angavs en Docker-URL när köpreceptet för butik skapades med hjälp av R-källfiler.
 
-När du är på *Select source* -sidan klistrar du in den Docker-URL som motsvarar det paketerade recept som skapats med R-källfiler i **[!UICONTROL Source URL]** fältet. Importera sedan den angivna konfigurationsfilen genom att dra och släppa eller använd **filläsaren**. Den angivna konfigurationsfilen finns på `experience-platform-dsw-reference/recipes/R/Retail\ -\ GradientBoosting/retail.config.json`. Välj **[!UICONTROL R]** i listrutan *Körtid* och **[!UICONTROL Classification]** i listrutan *Typ* . När allt är ifyllt klickar du **[!UICONTROL Next]** i det övre högra hörnet för att gå vidare till *Hantera scheman*.
+När du är på **Select source** -sidan klistrar du in den Docker-URL som motsvarar det paketerade recept som skapats med R-källfiler i **[!UICONTROL Source URL]** fältet. Importera sedan den angivna konfigurationsfilen genom att dra och släppa eller använd **filläsaren**. Den angivna konfigurationsfilen finns på `experience-platform-dsw-reference/recipes/R/Retail\ -\ GradientBoosting/retail.config.json`. Välj **[!UICONTROL R]** i listrutan **Körtid** och **[!UICONTROL Classification]** i listrutan **Typ** . När allt är ifyllt klickar du **[!UICONTROL Next]** i det övre högra hörnet för att gå vidare till **Hantera scheman**.
 
 >[!NOTE]
 >
@@ -178,7 +178,7 @@ När du är på *Select source* -sidan klistrar du in den Docker-URL som motsvar
 
 ![](../images/models-recipes/import-package-ui/recipe_source_R.png)
 
-Välj sedan in- och utdatamodeller för detaljhandel under avsnittet *Hantera scheman*, som skapades med det tillhandahållna bootstrap-skriptet i [skapa säljchemat för detaljhandeln och självstudiekursen för datauppsättningar](../models-recipes/create-retails-sales-dataset.md) .
+Välj sedan in- och utdatamodeller för detaljhandel under avsnittet **Hantera scheman**, som skapades med det tillhandahållna bootstrap-skriptet i [skapa säljchemat för detaljhandeln och självstudiekursen för datauppsättningar](../models-recipes/create-retails-sales-dataset.md) .
 
 ![](../images/models-recipes/import-package-ui/recipe_schema.png)
 
@@ -192,11 +192,11 @@ Gå vidare till [nästa steg](#next-steps) för att ta reda på hur du skapar en
 
 ### Importera Docker-baserat recept - PySpark {#pyspark}
 
-Börja med att navigera och välja **[!UICONTROL Workflows]** i det övre vänstra hörnet i [!DNL Platform] användargränssnittet. Välj sedan *Importera recept* och klicka på **[!UICONTROL Launch]**.
+Börja med att navigera och välja **[!UICONTROL Workflows]** i det övre vänstra hörnet i [!DNL Platform] användargränssnittet. Välj sedan **Importera recept** och klicka på **[!UICONTROL Launch]**.
 
 ![](../images/models-recipes/import-package-ui/launch-import.png)
 
-Sidan *Konfigurera* för arbetsflödet *Importera recept* visas. Ange ett namn och en beskrivning för receptet och fortsätt sedan genom att välja **[!UICONTROL Next]** i det övre högra hörnet.
+Sidan **Konfigurera** för arbetsflödet **Importera recept** visas. Ange ett namn och en beskrivning för receptet och fortsätt sedan genom att välja **[!UICONTROL Next]** i det övre högra hörnet.
 
 ![konfigurera arbetsflöde](../images/models-recipes/import-package-ui/configure-workflow.png)
 
@@ -204,7 +204,7 @@ Sidan *Konfigurera* för arbetsflödet *Importera recept* visas. Ange ett namn o
 >
 > I källfilerna för [paketet till en Recept](./package-source-files-recipe.md) -självstudiekurs angavs en Docker-URL när köpreceptet för butik skapades med hjälp av PySpark-källfiler.
 
-När du är på *Select source* -sidan klistrar du in den Docker-URL som motsvarar det paketerade recept som skapats med PySpark-källfiler i **[!UICONTROL Source URL]** fältet. Importera sedan den angivna konfigurationsfilen genom att dra och släppa eller använd **filläsaren**. Den angivna konfigurationsfilen finns på `experience-platform-dsw-reference/recipes/pyspark/retail/pipeline.json`. Välj **[!UICONTROL PySpark]** i *listrutan* Runtime. När PySpark-miljön har valts fylls standardartefakten automatiskt i till **[!UICONTROL Docker]**. Välj sedan **[!UICONTROL Classification]** i listrutan *Typ* . När allt är ifyllt klickar du **[!UICONTROL Next]** i det övre högra hörnet för att gå vidare till *Hantera scheman*.
+När du är på **Select source** -sidan klistrar du in den Docker-URL som motsvarar det paketerade recept som skapats med PySpark-källfiler i **[!UICONTROL Source URL]** fältet. Importera sedan den angivna konfigurationsfilen genom att dra och släppa eller använd **filläsaren**. Den angivna konfigurationsfilen finns på `experience-platform-dsw-reference/recipes/pyspark/retail/pipeline.json`. Välj **[!UICONTROL PySpark]** i **listrutan** Runtime. När PySpark-miljön har valts fylls standardartefakten automatiskt i till **[!UICONTROL Docker]**. Välj sedan **[!UICONTROL Classification]** i listrutan **Typ** . När allt är ifyllt klickar du **[!UICONTROL Next]** i det övre högra hörnet för att gå vidare till **Hantera scheman**.
 
 >[!NOTE]
 >
@@ -212,11 +212,11 @@ När du är på *Select source* -sidan klistrar du in den Docker-URL som motsvar
 
 ![](../images/models-recipes/import-package-ui/pyspark-databricks.png)
 
-Välj sedan in- och utdatamodeller för detaljhandel under avsnittet *Hantera scheman*, som skapades med det tillhandahållna bootstrap-skriptet i [skapa säljchemat för detaljhandeln och självstudiekursen för datauppsättningar](../models-recipes/create-retails-sales-dataset.md) .
+Välj sedan in- och utdatamodeller för detaljhandel under avsnittet **Hantera scheman**, som skapades med det tillhandahållna bootstrap-skriptet i [skapa säljchemat för detaljhandeln och självstudiekursen för datauppsättningar](../models-recipes/create-retails-sales-dataset.md) .
 
 ![](../images/models-recipes/import-package-ui/recipe_schema.png)
 
-Klicka på din innehavaridentifiering i schemavisaren under avsnittet *Funktionshantering* för att expandera indatabasschemat för butiksförsäljning. Välj in- och utdatafunktioner genom att markera den önskade funktionen och markera antingen **[!UICONTROL Input Feature]** eller **[!UICONTROL Target Feature]** i det högra **[!UICONTROL Field Properties]** fönstret. I den här självstudiekursen anger du **[!UICONTROL weeklySales]** som **[!UICONTROL Target Feature]** och allt annat som **[!UICONTROL Input Feature]**. Klicka **[!UICONTROL Next]** för att granska ditt nya konfigurerade recept.
+Klicka på din innehavaridentifiering i schemavisaren under avsnittet **Funktionshantering** för att expandera indatabasschemat för butiksförsäljning. Välj in- och utdatafunktioner genom att markera den önskade funktionen och markera antingen **[!UICONTROL Input Feature]** eller **[!UICONTROL Target Feature]** i det högra **[!UICONTROL Field Properties]** fönstret. I den här självstudiekursen anger du **[!UICONTROL weeklySales]** som **[!UICONTROL Target Feature]** och allt annat som **[!UICONTROL Input Feature]**. Klicka **[!UICONTROL Next]** för att granska ditt nya konfigurerade recept.
 
 Granska recept, lägg till, ändra eller ta bort konfigurationer efter behov. Klicka **[!UICONTROL Finish]** för att skapa receptet.
 
@@ -226,11 +226,11 @@ Gå vidare till [nästa steg](#next-steps) för att ta reda på hur du skapar en
 
 ### Importera Docker-baserat recept - Scala {#scala}
 
-Börja med att navigera och välja **[!UICONTROL Workflows]** i det övre vänstra hörnet i [!DNL Platform] användargränssnittet. Välj sedan *Importera recept* och klicka på **[!UICONTROL Launch]**.
+Börja med att navigera och välja **[!UICONTROL Workflows]** i det övre vänstra hörnet i [!DNL Platform] användargränssnittet. Välj sedan **Importera recept** och klicka på **[!UICONTROL Launch]**.
 
 ![](../images/models-recipes/import-package-ui/launch-import.png)
 
-Sidan *Konfigurera* för arbetsflödet *Importera recept* visas. Ange ett namn och en beskrivning för receptet och fortsätt sedan genom att välja **[!UICONTROL Next]** i det övre högra hörnet.
+Sidan **Konfigurera** för arbetsflödet **Importera recept** visas. Ange ett namn och en beskrivning för receptet och fortsätt sedan genom att välja **[!UICONTROL Next]** i det övre högra hörnet.
 
 ![konfigurera arbetsflöde](../images/models-recipes/import-package-ui/configure-workflow.png)
 
@@ -238,19 +238,19 @@ Sidan *Konfigurera* för arbetsflödet *Importera recept* visas. Ange ett namn o
 >
 > I källfilerna för [paketet till en Recept](./package-source-files-recipe.md) -självstudiekurs angavs en Docker-URL när köpreceptet för butik skapades med hjälp av källfiler från Scala ([!DNL Spark]).
 
-När du är på *Select source* -sidan klistrar du in den Docker-URL som motsvarar det paketerade recept som skapats med Scala-källfiler i fältet *Source URL* (Källadress). Importera sedan den angivna konfigurationsfilen genom att dra och släppa eller använd **filläsaren**. Den angivna konfigurationsfilen finns på `experience-platform-dsw-reference/recipes/scala/retail/pipelineservice.json`. Välj **[!UICONTROL Spark]** i *listrutan* Runtime. När du har valt [!DNL Spark] runtime-modulen fylls standardartefakten automatiskt i **[!UICONTROL Docker]**. Välj sedan **[!UICONTROL Regression]** i listrutan *Typ* . När allt är ifyllt klickar du **[!UICONTROL Next]** i det övre högra hörnet för att gå vidare till *Hantera scheman*.
+När du är på **Select source** -sidan klistrar du in den Docker-URL som motsvarar det paketerade recept som skapats med Scala-källfiler i fältet Source URL (Källadress). Importera sedan den angivna konfigurationsfilen genom att dra och släppa eller använd filläsaren. Den angivna konfigurationsfilen finns på `experience-platform-dsw-reference/recipes/scala/retail/pipelineservice.json`. Välj **[!UICONTROL Spark]** i **listrutan** Runtime. När du har valt [!DNL Spark] runtime-modulen fylls standardartefakten automatiskt i **[!UICONTROL Docker]**. Välj sedan **[!UICONTROL Regression]** i listrutan **Typ** . När allt är ifyllt klickar du **[!UICONTROL Next]** i det övre högra hörnet för att gå vidare till **Hantera scheman**.
 
 >[!NOTE]
 >
-> *Text* har stöd **[!UICONTROL Classification]** och **[!UICONTROL Regression]**. Om modellen inte faller under någon av dessa typer väljer du **[!UICONTROL Custom]**.
+> Typstöd **[!UICONTROL Classification]** och **[!UICONTROL Regression]**. Om modellen inte faller under någon av dessa typer väljer du **[!UICONTROL Custom]**.
 
 ![](../images/models-recipes/import-package-ui/scala-databricks.png)
 
-Välj sedan in- och utdatamodeller för detaljhandel under avsnittet *Hantera scheman*, som skapades med det tillhandahållna bootstrap-skriptet i [skapa säljchemat för detaljhandeln och självstudiekursen för datauppsättningar](../models-recipes/create-retails-sales-dataset.md) .
+Välj sedan in- och utdatamodeller för detaljhandel under avsnittet **Hantera scheman**, som skapades med det tillhandahållna bootstrap-skriptet i [skapa säljchemat för detaljhandeln och självstudiekursen för datauppsättningar](../models-recipes/create-retails-sales-dataset.md) .
 
 ![](../images/models-recipes/import-package-ui/recipe_schema.png)
 
-Klicka på din innehavaridentifiering i schemavisaren under avsnittet *Funktionshantering* för att expandera indatabasschemat för butiksförsäljning. Välj in- och utdatafunktioner genom att markera den önskade funktionen och markera antingen **[!UICONTROL Input Feature]** eller **[!UICONTROL Target Feature]** i det högra **[!UICONTROL Field Properties]** fönstret. I den här självstudiekursen anger du **[!UICONTROL weeklySales]** som **[!UICONTROL Target Feature]** och allt annat som **[!UICONTROL Input Feature]**. Klicka **[!UICONTROL Next]** för att granska ditt nya konfigurerade recept.
+Klicka på din innehavaridentifiering i schemavisaren under avsnittet **Funktionshantering** för att expandera indatabasschemat för butiksförsäljning. Välj in- och utdatafunktioner genom att markera den önskade funktionen och markera antingen **[!UICONTROL Input Feature]** eller **[!UICONTROL Target Feature]** i det högra **[!UICONTROL Field Properties]** fönstret. I den här självstudiekursen anger du&quot;[!UICONTROL weeklySales]&quot; som **[!UICONTROL Target Feature]** och allt annat som **[!UICONTROL Input Feature]**. Klicka **[!UICONTROL Next]** för att granska ditt nya konfigurerade recept.
 
 Granska recept, lägg till, ändra eller ta bort konfigurationer efter behov. Klicka **[!UICONTROL Finish]** för att skapa receptet.
 
