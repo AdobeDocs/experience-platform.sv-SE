@@ -6,9 +6,9 @@ topic: tutorial
 type: Tutorial
 description: I den här självstudiekursen finns anvisningar om hur du kan paketera de angivna källfilerna för butiksförsäljning i en arkivfil, som kan användas för att skapa ett recept i Adobe Experience Platform Data Science Workspace genom att följa arbetsflödet för receptimport antingen i användargränssnittet eller med API:t.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '1146'
+source-wordcount: '1143'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ Logga in på [Adobe Experience Platform](https://platform.adobe.com)för att få
 
 ![](../images/models-recipes/package-source-files/import.png)
 
-Sidan *Konfigurera* öppnas. Ange ett lämpligt *mottagarnamn*, t.ex.&quot;Detaljhandelsrecept&quot;, och ange eventuellt en beskrivning- eller dokumentations-URL. När du är klar klickar du på **[!UICONTROL Next]**.
+The **[!UICONTROL Configure]** page opens. Ange ett lämpligt **[!UICONTROL Recipe Name]** exempel,&quot;Retail Sales recept&quot;, och ange eventuellt en beskrivning- eller dokumentations-URL. När du är klar klickar du på **[!UICONTROL Next]**.
 
 ![](../images/models-recipes/package-source-files/configure.png)
 
@@ -64,7 +64,7 @@ Välj lämplig *körningsmiljö* och välj sedan en **[!UICONTROL Classification
 
 ![](../images/models-recipes/package-source-files/docker-creds.png)
 
-Observera värdena för *Docker Host*, *UserName* och *Password*. Dessa används för att skapa och föra din [!DNL Docker] image framåt i de arbetsflöden som beskrivs nedan.
+Observera värdena för Docker-värd, användarnamn och lösenord. Dessa används för att skapa och föra din [!DNL Docker] image framåt i de arbetsflöden som beskrivs nedan.
 
 >[!NOTE]
 >
