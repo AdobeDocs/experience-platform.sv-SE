@@ -5,7 +5,7 @@ description: Lär dig hur du skaffar Adobe Experience Cloud ID.
 seo-description: Lär dig hur du skaffar Adobe Experience Cloud ID.
 keywords: Identity;First Party Identity;Identity Service;3rd Party Identity;ID Migration;Visitor ID;third party identity;thirdPartyCookiesEnabled;idMigrationEnabled;getIdentity;Syncing Identities;syncIdentity;sendEvent;identityMap;primary;ecid;Identity Namespace;namespace id;authenticationState;hashEnabled;
 translation-type: tm+mt
-source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
+source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
 workflow-type: tm+mt
 source-wordcount: '729'
 ht-degree: 1%
@@ -64,7 +64,7 @@ Dessutom [!DNL Identity Service] kan du synkronisera dina egna identifierare med
 >
 >Vi rekommenderar att du skickar alla tillgängliga identiteter för varje `sendEvent` kommando. Detta frigör en rad användningsfall, inklusive personalisering. Nu när du kan skicka dessa identiteter i `sendEvent` kommandot kan de placeras direkt i ditt DataLayer.
 
-Genom att synkronisera identiteter kan du identifiera en enhet/användare med flera identiteter, ange deras autentiseringstillstånd och avgöra vilken identifierare som betraktas som den primära. Om ingen identifierare har angetts som `primary`, används `ECID`.
+Genom att synkronisera identiteter kan du identifiera en enhet/användare med flera identiteter, ange deras autentiseringstillstånd och avgöra vilken identifierare som betraktas som den primära. Om ingen identifierare har angetts som `primary`är standardinställningen `ECID`.
 
 ```javascript
 alloy("sendEvent", {
@@ -91,7 +91,7 @@ alloy("sendEvent", {
 | -------- | ------------ | ----------------- |
 | Sträng | Ja | ingen |
 
-Nyckeln för objektet är [Identity Namespace](../../identity-service/namespaces.md) Symbol. I Adobe Experience Platform användargränssnitt hittar du det här under [!UICONTROL Identities].
+Nyckeln för objektet är [Identity Namespace](../../identity-service/namespaces.md) Symbol. I Adobe Experience Platform användargränssnitt hittar du det under &quot;[!UICONTROL Identities]&quot;.
 
 #### `id`
 
