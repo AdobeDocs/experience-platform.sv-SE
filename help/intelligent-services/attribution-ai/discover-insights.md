@@ -5,9 +5,9 @@ title: Upptäck insikter inom Attribution AI
 topic: Attribution AI insights
 description: Det här dokumentet är en guide för interaktion med Service Instance-insikter i användargränssnittet för Adobe Intelligent Services.
 translation-type: tm+mt
-source-git-commit: c30bbaead775e68f869b080e24e18d4a23cda973
+source-git-commit: c5e2ea5daf813bf580a11f0182361197e55c6fe8
 workflow-type: tm+mt
-source-wordcount: '1183'
+source-wordcount: '1152'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ För att kunna utnyttja insikter om Attribution AI måste du ha en tjänstinstan
 
 ## Översikt över insikter om tjänstinstans
 
-Klicka på [!DNL Adobe Experience Platform] Tjänster **i den vänstra navigeringen i** användargränssnittet. Webbläsaren *Services* visas och visar tillgängliga Adobe Intelligent Services. Klicka på **Öppna** i behållaren för Attribution AI.
+In the [!DNL Adobe Experience Platform] UI, click **[!UICONTROL Services]** in the left navigation. Webbläsaren visas och visar tillgängliga Adobe Intelligent Services. **[!UICONTROL Services]** Klicka på i behållaren för Attribution AI **[!UICONTROL Open]**.
 
 ![Åtkomst till din instans](./images/insights/open_Attribution_ai.png)
 
@@ -43,7 +43,7 @@ Därefter visas informationssidan för den aktuella tjänstinstansen, där du f�
 
 ### Information om tjänstinstans
 
-Om du vill visa mer information om en tjänstinstans klickar du på **Visa mer** i det övre högra hörnet.
+Om du vill visa mer information om en tjänstinstans klickar du **[!UICONTROL Show more]** i det övre högra hörnet.
 
 ![visa mer](./images/insights/show-more.png)
 
@@ -53,20 +53,20 @@ En detaljerad lista visas. Mer information om egenskaperna finns i användarhand
 
 ### Redigera en instans
 
-Om du vill redigera en instans klickar du på *Redigera* i den övre högra navigeringen.
+Om du vill redigera en instans klickar du **[!UICONTROL Edit]** i den övre högra navigeringen.
 ![klicka på redigeringsknappen](./images/insights/edit-button.png)
 
-Dialogrutan Redigera visas. Du kan redigera beskrivningen och bedömningsfrekvensen för instansen. Om du vill bekräfta ändringarna och stänga dialogrutan klickar du på *Redigera* längst ned till höger.
+Dialogrutan Redigera visas. Du kan redigera beskrivningen och bedömningsfrekvensen för instansen. Bekräfta ändringarna och stäng dialogrutan genom att klicka **[!UICONTROL Edit]** i det nedre högra hörnet.
 
 ![redigera poesi](./images/insights/edit-popover.png)
 
 ### Fler åtgärder {#more-actions}
 
-Knappen *Fler åtgärder* finns i den övre högra navigeringen bredvid *Redigera*. Om du klickar på **Fler åtgärder** öppnas en listruta där du kan välja någon av följande åtgärder:
+Knappen finns i den övre högra navigeringen bredvid **[!UICONTROL More actions]** Redigera **. När du klickar **[!UICONTROL More actions]** öppnas en listruta där du kan välja någon av följande åtgärder:
 
 - **Ta bort**: Tar bort instansen.
 - **Hämta sammanfattningsdata**: Hämtar en CSV-fil som innehåller sammanfattningsdata.
-- **Åtkomstpoäng**: Om du klickar på *Åtkomstpoäng* omdirigeras du till [åtkomstpoängen för självstudiekursen](./download-scores.md).
+- **Åtkomstpoäng**: Om du klickar på **Åtkomstpoäng** omdirigeras du till [åtkomstpoängen för självstudiekursen](./download-scores.md).
 - **Visa körningshistorik**: En pover som innehåller en lista över alla poäng som är associerade med tjänstinstansen visas.
 
 ![fler åtgärder](./images/insights/more-actions.png)
@@ -77,31 +77,31 @@ Med hjälp av Attribution AI kan du filtrera data och automatiskt uppdatera grä
 
 >[!NOTE]
 >
->Som standard är alla filter inställda på &quot;Alla&quot; förutom filtret *Attribution model* , som är inställt på &quot;Inkrementella och påverkade attributkonverteringar&quot;.
+>Som standard är alla filter inställda på &quot;Alla&quot; förutom &quot;[!UICONTROL Attribution Model]&quot;-filtret som är inställt på &quot;Inkrementella och påverkade attributkonverteringar&quot;.
 
 ### Konverteringshändelse
 
 När du skapar en ny instans i Attribution AI är ett av de obligatoriska fälten&quot;Conversion events&quot;. Konverteringshändelser är affärsmål som identifierar effekten av marknadsföringsaktiviteter, som e-handelsorder, butiksköp och webbplatsbesök.
 
-I listrutan *Conversion Events* kan du välja någon av de händelser som är definierade för instansen för att filtrera data. Om du väljer specifika händelser ändras visualiseringarna av användargränssnittet så att endast konverteringar som tillhör dessa händelser fylls i.
+I **[!UICONTROL Conversion events]** listrutan kan du välja någon av de händelser som är definierade för instansen för att filtrera data. Om du väljer specifika händelser ändras visualiseringarna av användargränssnittet så att endast konverteringar som tillhör dessa händelser fylls i.
 
 ![konverteringshändelse](./images/insights/conversion-event.png)
 
 ### Attributionsmodell
 
-När du klickar på *Attribution Model* öppnas en listruta med alla olika attribueringsmodeller. Du kan välja flera modeller för att jämföra resultaten. Mer information om de olika attribueringsmodellerna och hur de fungerar finns i översikten över [Attribution AI](./overview.md) , som innehåller en tabell med information om varje modell.
+När du klickar **[!UICONTROL Attribution Model]** öppnas en listruta med alla olika attribueringsmodeller tillgängliga. Du kan välja flera modeller för att jämföra resultaten. Mer information om de olika attribueringsmodellerna och hur de fungerar finns i översikten över [Attribution AI](./overview.md) , som innehåller en tabell med information om varje modell.
 
 ![attribueringsmodell](./images/insights/attribution-model.png)
 
 ### Produkt
 
-Med *produktfiltret* kan du välja bland de produkter som ursprungligen var inkapslade när du skapade instansen. Klicka på listrutan och använd sökfunktionen för att snabbt välja alla produkter du vill jämföra.
+Med **[!UICONTROL Product]** filtret kan du välja bland de produkter som ursprungligen var inkapslade när du skapade instansen. Klicka på listrutan och använd sökfunktionen för att snabbt välja alla produkter du vill jämföra.
 
 ![produktfilter](./images/insights/product-filter.png)
 
 ### Geografi
 
-Filtret *Geografi* fyller i landskoder som baseras på regionsbaserade modeller. Beroende på dina data kan det här filtret finnas eller inte finnas.
+Filtret **[!UICONTROL Geography]** fyller i landskoder baserat på regionsbaserade modeller. Beroende på dina data kan det här filtret finnas eller inte finnas.
 
 >[!NOTE]
 >
@@ -117,7 +117,7 @@ Med det här filtret kan du markera alla områden som du har konfigurerat när d
 
 ### Kanal
 
-När du klickar på *kanalfiltret* visas en listruta med alla tillgängliga marknadsföringskanaler. Du kan välja flera kanaler för att jämföra dem.
+När du klickar på **[!UICONTROL Channel]** filtret visas en listruta med alla tillgängliga marknadsföringskanaler. Du kan välja flera kanaler för att jämföra dem.
 
 ![Kanal](./images/insights/channel.png)
 
@@ -129,13 +129,13 @@ Klicka på kalenderikonen för att öppna datumintervallposeraren. Början- och 
 
 ## Översikt över era data
 
-På *översiktskortet* visas det totala antalet konverteringar per attribueringsmodell. Det totala antalet ändras baserat på hur specifik sökningen är med hjälp av de filter som beskrivs tidigare i det här dokumentet. Om du väljer flera modeller läggs ytterligare cirklar till i översikten, där var och en har en egen färg som motsvarar teckenförklaringen.
+På **[!UICONTROL Overview]** kortet visas det totala antalet konverteringar per attribueringsmodell. Det totala antalet ändras baserat på hur specifik sökningen är med hjälp av de filter som beskrivs tidigare i det här dokumentet. Om du väljer flera modeller läggs ytterligare cirklar till i översikten, där var och en har en egen färg som motsvarar teckenförklaringen.
 
 ![översikt](./images/insights/Overview.png)
 
 ## Trender varje vecka
 
-Kortet *för veckotrender* delar upp din totala konvertering med det datumintervall du anger under filtreringsprocessen.
+Kortet **[!UICONTROL Weekly trends]** delar upp den totala konverteringen enligt det datumintervall du anger under filtreringsprocessen.
 
 ![trender](./images/insights/weekly-trends.png)
 
@@ -147,17 +147,17 @@ När du hovrar över dataraden för en viss attribueringsmodell skapas en pover 
 
 ## Uppdelning efter kanal
 
-Uppdelningen *per kanal* används för att bestämma det totala antalet konverteringar i förhållande till varje kanal. Detta kort kan användas för att fatta beslut om varje kanals effektivitet och avkastningen på investeringen.
+Kortet används för att bestämma det totala antalet konverteringar i förhållande till varje kanal. **[!UICONTROL Breakdown by channel]** Detta kort kan användas för att fatta beslut om varje kanals effektivitet och avkastningen på investeringen.
 
 ![fördelningskanal](./images/insights/channel-breakdown.png)
 
-Om du klickar på ellipserna i det övre högra hörnet av *kortet för uppdelning efter kanal* öppnas en listruta där du kan fylla i data baserat på kontaktytor.
+När du klickar på ellipserna i det övre högra hörnet av **[!UICONTROL Breakdown by channel]** kortet öppnas en listruta där du kan fylla i data baserat på kontaktytor.
 
 ![kontaktytor](./images/insights/breakdown-by-touchpoints.png)
 
 ## Populära kampanjer
 
-Kortet *Top campaign* visar en översikt över era kampanjer och hur kampanjen fungerar i varje kanal. Kortet kan hjälpa ditt team att informera om hur effektiv en viss kampanj är för en viss kanal och ge insikt i var ytterligare investeringar ska göras.
+Kortet visar en översikt över era kampanjer och hur kampanjen fungerar i varje kanal. **[!UICONTROL Top campaigns]** Kortet kan hjälpa ditt team att informera om hur effektiv en viss kampanj är för en viss kanal och ge insikt i var ytterligare investeringar ska göras.
 
 ![toppkampanjer](./images/insights/top-campaigns.png)
 
