@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Tillgängliga mått
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: c5455dc0812b251483170ac19506d7c60ad4ecaa
+source-git-commit: ae6f220cdec54851fb78b7ba8a8eb19f2d06b684
 workflow-type: tm+mt
-source-wordcount: '1174'
-ht-degree: 2%
+source-wordcount: '2007'
+ht-degree: 1%
 
 ---
 
@@ -22,11 +22,18 @@ API-slutpunkten som används i den här guiden ingår i [[!DNL Observability Ins
 
 ## Hämta mätvärden för observerbarhet
 
-Du kan hämta observerbarhetsvärden genom att göra en GET-förfrågan till `/metrics` slutpunkten i [!DNL Observability Insights] API:t.
+Det finns två metoder som stöds för att hämta metadata med API:
+
+* [Version 1](#v1): Ange mätvärden med hjälp av frågeparametrar.
+* [Version 2](#v2): Ange och tillämpa filter på mått med JSON-nyttolast.
+
+### Version 1 {#v1}
+
+Du kan hämta mätdata genom att göra en GET-förfrågan till `/metrics` slutpunkten och ange mätvärden med hjälp av frågeparametrar.
 
 **API-format**
 
-När du använder `/metrics` slutpunkten måste minst en parameter för metrisk begäran anges. Andra frågeparametrar är valfria för filtrering av resultat.
+Minst ett mått måste anges i `metric` -parametern. Andra frågeparametrar är valfria för filtrering av resultat.
 
 ```http
 GET /metrics?metric={METRIC}
@@ -39,7 +46,7 @@ GET /metrics?metric={METRIC}&metric={METRIC_2}&id={ID}&dateRange={DATE_RANGE}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{METRIC}` | Det mätvärde som du vill visa. När du kombinerar flera mätvärden i ett enda anrop måste du använda ett et-tecken (`&`) för att separera enskilda mätvärden. Exempel, `metric={METRIC_1}&metric={METRIC_2}`. |
-| `{ID}` | Identifieraren för en viss [!DNL Platform] resurs vars mätvärden du vill visa. Detta ID kan vara valfritt, obligatoriskt eller inte tillämpligt beroende på vilka mätvärden som används. I [bilagan](#available-metrics) finns en lista över tillgängliga mätvärden samt ID:n som stöds (både obligatoriska och valfria) för varje mätvärde. |
+| `{ID}` | Identifieraren för en viss [!DNL Platform] resurs vars mätvärden du vill visa. Detta ID kan vara valfritt, obligatoriskt eller inte tillämpligt beroende på vilka mätvärden som används. I [bilagan](#available-metrics) finns en lista med tillgängliga mått, inklusive vilka ID som stöds (både obligatoriska och valfria) för varje mätvärde. |
 | `{DATE_RANGE}` | Datumintervallet för de mätvärden som du vill visa, i ISO 8601-format (till exempel `2018-10-01T07:00:00.000Z/2018-10-09T07:00:00.000Z`). |
 
 **Begäran**
@@ -55,57 +62,212 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar en lista med objekt, där var och en innehåller en tidsstämpel inom det angivna `dateRange` och motsvarande värden för de mått som anges i sökvägen för begäran. Om en `id` resurs är inkluderad [!DNL Platform] i den begärda sökvägen gäller resultaten endast den aktuella resursen. Om `id` utelämnas gäller resultatet alla tillämpliga resurser i IMS-organisationen.
+Ett lyckat svar returnerar en lista med objekt, där var och en innehåller en tidsstämpel inom det angivna `dateRange` och motsvarande värden för de mått som anges i sökvägen för begäran. Om en `id` resurs är inkluderad [!DNL Platform] i den begärda sökvägen gäller resultaten endast den aktuella resursen. Om `id` utelämnas gäller resultatet alla tillämpliga resurser i IMS-organisationen.
 
 ```json
 {
-    "id": "5cf8ab4ec48aba145214abeb",
-    "imsOrgId": "{IMS_ORG}",
-    "timeseries": {
-        "granularity": "MONTH",
-        "items": [
-            {
-                "timestamp": "2019-06-01T00:00:00Z",
-                "metrics": {
-                    "timeseries.ingestion.dataset.recordsuccess.count": 1125,
-                    "timeseries.ingestion.dataset.size": 32320
-                }
-            },
-            {
-                "timestamp": "2019-05-01T00:00:00Z",
-                "metrics": {
-                    "timeseries.ingestion.dataset.recordsuccess.count": 1003,
-                    "timeseries.ingestion.dataset.size": 31409
-                }
-            },
-            {
-                "timestamp": "2019-04-01T00:00:00Z",
-                "metrics": {
-                    "timeseries.ingestion.dataset.recordsuccess.count": 740,
-                    "timeseries.ingestion.dataset.size": 25809
-                }
-            },
-            {
-                "timestamp": "2019-03-01T00:00:00Z",
-                "metrics": {
-                    "timeseries.ingestion.dataset.recordsuccess.count": 740,
-                    "timeseries.ingestion.dataset.size": 25809
-                }
-            },
-            {
-                "timestamp": "2019-02-01T00:00:00Z",
-                "metrics": {
-                    "timeseries.ingestion.dataset.recordsuccess.count": 390,
-                    "timeseries.ingestion.dataset.size": 16801
-                }
-            }
-        ],
-        "_page": null,
-        "_links": null
-    },
-    "stats": {}
+  "id": "5cf8ab4ec48aba145214abeb",
+  "imsOrgId": "{IMS_ORG}",
+  "timeseries": {
+    "granularity": "MONTH",
+    "items": [
+      {
+        "timestamp": "2019-06-01T00:00:00Z",
+        "metrics": {
+          "timeseries.ingestion.dataset.recordsuccess.count": 1125,
+          "timeseries.ingestion.dataset.size": 32320
+        }
+      },
+      {
+        "timestamp": "2019-05-01T00:00:00Z",
+        "metrics": {
+          "timeseries.ingestion.dataset.recordsuccess.count": 1003,
+          "timeseries.ingestion.dataset.size": 31409
+        }
+      },
+      {
+        "timestamp": "2019-04-01T00:00:00Z",
+        "metrics": {
+          "timeseries.ingestion.dataset.recordsuccess.count": 740,
+          "timeseries.ingestion.dataset.size": 25809
+        }
+      },
+      {
+        "timestamp": "2019-03-01T00:00:00Z",
+        "metrics": {
+          "timeseries.ingestion.dataset.recordsuccess.count": 740,
+          "timeseries.ingestion.dataset.size": 25809
+        }
+      },
+      {
+        "timestamp": "2019-02-01T00:00:00Z",
+        "metrics": {
+          "timeseries.ingestion.dataset.recordsuccess.count": 390,
+          "timeseries.ingestion.dataset.size": 16801
+        }
+      }
+    ],
+    "_page": null,
+    "_links": null
+  },
+  "stats": {}
 }
 ```
+
+### Version 2 {#v2}
+
+Du kan hämta mätdata genom att göra en begäran om POST till `/metrics` slutpunkten och ange de mätvärden som du vill hämta i nyttolasten.
+
+**API-format**
+
+```http
+POST /metrics
+```
+
+**Begäran**
+
+```sh
+curl -X POST \
+  https://platform.adobe.io/data/infrastructure/observability/insights/metrics \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '{
+        "start": "2020-07-14T00:00:00.000Z",
+        "end": "2020-07-22T00:00:00.000Z",
+        "granularity": "day",
+        "metrics": [
+          {
+            "name": "timeseries.ingestion.dataset.recordsuccess.count",
+            "filters": [
+              {
+                "name": "dataSetId",
+                "value": "5edcfb2fbb642119194c7d94|5eddb21420f516191b7a8dad",
+                "groupBy": true
+              }
+            ],
+            "aggregator": "sum",
+            "downsample": "sum"
+          },
+          {
+            "name": "timeseries.ingestion.dataset.dailysize",
+            "filters": [
+              {
+                "name": "dataSetId",
+                "value": "5eddb21420f516191b7a8dad",
+                "groupBy": false
+              }
+            ],
+            "aggregator": "sum",
+            "downsample": "sum"
+          }
+        ]
+      }'
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `start` | Det tidigaste datum/den tidigaste tid från vilken mätdata ska hämtas. |
+| `end` | Det senaste datumet/den senaste tiden från vilket mätdata ska hämtas. |
+| `granularity` | Ett valfritt fält som anger ett tidsintervall för att dividera mätdata med. Ett värde på `DAY` returnerar till exempel mått för varje dag mellan `start` och `end` datum, medan ett värde på `MONTH` skulle gruppera mätresultaten per månad i stället. När du använder det här fältet måste även en motsvarande `downsample` egenskap anges för att ange den aggregeringsfunktion som data ska grupperas med. |
+| `metrics` | En array med objekt, en för varje mätvärde som du vill hämta. |
+| `name` | Namnet på ett mätvärde som identifieras av observabilitetsinsikter. En fullständig lista med giltiga måttnamn finns i [bilagan](#available-metrics) . |
+| `filters` | Ett valfritt fält där du kan filtrera mätvärden efter specifika datauppsättningar. Fältet är en array med objekt (ett för varje filter), där varje objekt innehåller följande egenskaper: <ul><li>`name`: Den typ av entitet som mätvärden ska filtreras mot. För närvarande `dataSets` stöds bara.</li><li>`value`: ID för en eller flera datauppsättningar. Flera datauppsättnings-ID:n kan anges som en enda sträng, där varje ID avgränsas med lodräta streck (`|`).</li><li>`groupBy`: Om värdet är true visar det att motsvarande `value` representerar flera datauppsättningar vars mätresultat ska returneras separat. Om värdet är false grupperas mätresultaten för de datauppsättningarna tillsammans.</li></ul> |
+| `aggregator` | Anger den aggregeringsfunktion som ska användas för att gruppera poster med flera serier till enstaka resultat. Mer information om tillgängliga aggregerare finns i [OpenTSDB-dokumentationen](http://opentsdb.net/docs/build/html/user_guide/query/aggregators.html). |
+| `downsample` | Ett valfritt fält som gör att du kan ange en aggregeringsfunktion för att minska samplingsfrekvensen för mätdata genom att sortera fält i intervall (eller&quot;bucket&quot;). Intervallet för nedsamplingen bestäms av `granularity` egenskapen. Mer information om nedsampling finns i dokumentationen [för](http://opentsdb.net/docs/build/html/user_guide/query/downsampling.html)OpenTSDB. |
+
+**Svar**
+
+Ett lyckat svar returnerar de resulterande datapunkterna för de mätvärden och filter som anges i begäran.
+
+```json
+{
+  "metricResponses": [
+    {
+      "metric": "timeseries.ingestion.dataset.recordsuccess.count",
+      "filters": [
+        {
+          "name": "dataSetId",
+          "value": "5edcfb2fbb642119194c7d94|5eddb21420f516191b7a8dad",
+          "groupBy": true
+        }
+      ],
+      "datapoints": [
+        {
+          "groupBy": {
+            "dataSetId": "5edcfb2fbb642119194c7d94"
+          },
+          "dps": {
+            "2020-07-14T00:00:00Z": 44.0,
+            "2020-07-15T00:00:00Z": 46.0,
+            "2020-07-16T00:00:00Z": 36.0,
+            "2020-07-17T00:00:00Z": 50.0,
+            "2020-07-18T00:00:00Z": 38.0,
+            "2020-07-19T00:00:00Z": 40.0,
+            "2020-07-20T00:00:00Z": 42.0,
+            "2020-07-21T00:00:00Z": 42.0,
+            "2020-07-22T00:00:00Z": 50.0
+          }
+        },
+        {
+          "groupBy": {
+            "dataSetId": "5eddb21420f516191b7a8dad"
+          },
+          "dps": {
+            "2020-07-14T00:00:00Z": 44.0,
+            "2020-07-15T00:00:00Z": 46.0,
+            "2020-07-16T00:00:00Z": 36.0,
+            "2020-07-17T00:00:00Z": 50.0,
+            "2020-07-18T00:00:00Z": 38.0,
+            "2020-07-19T00:00:00Z": 40.0,
+            "2020-07-20T00:00:00Z": 42.0,
+            "2020-07-21T00:00:00Z": 42.0,
+            "2020-07-22T00:00:00Z": 50.0
+          }
+        }
+      ],
+      "granularity": "DAY"
+    },
+    {
+      "metric": "timeseries.ingestion.dataset.dailysize",
+      "filters": [
+        {
+          "name": "dataSetId",
+          "value": "5eddb21420f516191b7a8dad",
+          "groupBy": false
+        }
+      ],
+      "datapoints": [
+        {
+          "groupBy": {},
+          "dps": {
+            "2020-07-14T00:00:00Z": 38455.0,
+            "2020-07-15T00:00:00Z": 40213.0,
+            "2020-07-16T00:00:00Z": 31476.0,
+            "2020-07-17T00:00:00Z": 43705.0,
+            "2020-07-18T00:00:00Z": 33227.0,
+            "2020-07-19T00:00:00Z": 34977.0,
+            "2020-07-20T00:00:00Z": 36735.0,
+            "2020-07-21T00:00:00Z": 36737.0,
+            "2020-07-22T00:00:00Z": 43715.0
+          }
+        }
+      ],
+      "granularity": "DAY"
+    }
+  ]
+}
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `metricResponses` | En array vars objekt representerar alla mått som anges i begäran. Varje objekt innehåller information om filterkonfigurationen och returnerade mätdata. |
+| `metric` | Namnet på ett av måtten som anges i begäran. |
+| `filters` | Filterkonfigurationen för det angivna måttet. |
+| `datapoints` | En array vars objekt representerar resultatet av det angivna måttet och filtren. Antalet objekt i arrayen beror på de filteralternativ som anges i begäran. Om inga filter har angetts innehåller arrayen bara ett objekt som representerar alla datauppsättningar. |
+| `groupBy` | Om flera datauppsättningar har angetts i egenskapen `filter` för ett mätresultat, och alternativet har angetts till true i begäran, kommer det här objektet att innehålla ID:t för den datauppsättning som motsvarande `groupBy` `dps` egenskap gäller för.<br><br>Om det här objektet visas tomt i svaret gäller motsvarande `dps` egenskap för alla datamängder som finns i `filters` arrayen (eller alla datamängder i [!DNL Platform] om inga filter har angetts). |
+| `dps` | Returnerade data för angivet mått, filter och tidsintervall. Varje nyckel i det här objektet representerar en tidsstämpel med ett motsvarande värde för det angivna måttet. Tidsperioden mellan varje datapunkt beror på det `granularity` värde som anges i begäran. |
 
 ## Bilaga
 
@@ -206,3 +368,46 @@ I följande tabell visas måtten för [!DNL Real-time Customer Profile].
 | platform.ups.profile-commons.ingest.streaming.dataSet.record.updated.timestamp | Tidsstämpel för senaste begäran om uppdatering av post för en datauppsättning. | Datauppsättnings-ID (**obligatoriskt**) |
 | platform.ups.ingest.streaming.record.size.m1_rate | Genomsnittlig poststorlek. | IMS-organisation (**krävs**) |
 | platform.ups.ingest.streaming.records.updated.m15_rate | Frekvens för uppdateringsbegäranden för poster som har importerats för en datauppsättning. | Datauppsättnings-ID (**obligatoriskt**) |
+
+### Felmeddelanden
+
+Svar från `/metrics` slutpunkten kan returnera felmeddelanden under vissa förhållanden. Dessa felmeddelanden returneras i följande format:
+
+```json
+{
+    "type": "http://ns.adobe.com/aep/errors/INSGHT-1000-400",
+    "title": "Bad Request - Start date cannot be after end date.",
+    "status": 400,
+    "report": {
+        "tenantInfo": {
+            "sandboxName": "prod",
+            "sandboxId": "49f58060-5d47-34rd-aawf-a5384333ff12",
+            "imsOrgId": "{IMS_ORG}"
+        },
+        "additionalContext": null
+    },
+    "error-chain": [
+        {
+            "serviceId": "INSGHT",
+            "errorCode": "INSGHT-1000-400",
+            "invokingServiceId": "INSGHT",
+            "unixTimeStampMs": 1602095177129
+        }
+    ]
+}
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `title` | En sträng som innehåller felmeddelandet och den möjliga orsaken till felet. |
+| `report` | Innehåller sammanhangsbaserad information om felet, inklusive den sandlåda och den IMS-organisation som används i åtgärden som utlöste felet. |
+
+I följande tabell visas de olika felkoderna som kan returneras av API:t:
+
+| Felkod | Titel | Beskrivning |
+| --- | --- | --- |
+| `INSGHT-1000-400` | Ogiltig nyttolast för begäran | Något var fel med nyttolasten för begäran. Kontrollera att du matchar nyttolastens formatering exakt som visas [ovan](#v2). Alla möjliga orsaker kan utlösa det här felet:<ul><li>Obligatoriska fält saknas, till exempel `aggregator`</li><li>Ogiltiga mått</li><li>Begäran innehåller en ogiltig aggregator</li><li>Ett startdatum infaller efter ett slutdatum</li></ul> |
+| `INSGHT-1001-400` | Mätningsfrågan misslyckades | Det uppstod ett fel när mätdatabasen skulle frågas på grund av en felaktig begäran eller att själva frågan inte kunde tolkas. Kontrollera att din begäran är korrekt formaterad innan du försöker igen. |
+| `INSGHT-1001-500` | Mätningsfrågan misslyckades | Det uppstod ett fel när mätdatabasen skulle frågas på grund av ett serverfel. Försök igen. Om problemet kvarstår kan du kontakta Adobe support. |
+| `INSGHT-1002-500` | Tjänstfel | Begäran kunde inte behandlas på grund av ett internt fel. Försök igen. Om problemet kvarstår kan du kontakta Adobe support. |
+| `INSGHT-1003-401` | Valideringsfel för sandlådan | Begäran kunde inte behandlas på grund av ett valideringsfel i sandlådan. Kontrollera att namnet på sandlådan som du angav i huvudet representerar en giltig, aktiverad sandlåda för din IMS-organisation innan du försöker utföra begäran igen. `x-sandbox-name` |
