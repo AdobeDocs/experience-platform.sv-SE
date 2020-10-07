@@ -5,9 +5,9 @@ title: Identifiera insikter med kundens AI
 topic: Discovering insights
 description: Kundens AI, som en del av de intelligenta tjänsterna, ger marknadsförarna möjlighet att utnyttja Adobe Sensei för att förutse vad kunderna kommer att göra härnäst. Kundens AI används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, utbildning eller driftsättning.
 translation-type: tm+mt
-source-git-commit: 6e4a3ebe84c82790f58f8ec54e6f72c2aca0b7da
+source-git-commit: c5e2ea5daf813bf580a11f0182361197e55c6fe8
 workflow-type: tm+mt
-source-wordcount: '1098'
+source-wordcount: '1094'
 ht-degree: 0%
 
 ---
@@ -98,7 +98,7 @@ Betygsningssammanfattning visar det totala antalet profiler med poäng och kateg
 
 ## Distribution av bakgrundsmusik
 
-Distributionen av Scores ** - kortet ger en visuell sammanfattning av populationen baserat på poängen. Färgerna som visas på *Distribuera poäng* representerar den typ av poäng som genereras.
+Kortet **[!UICONTROL Distribution of Scores]** ger en synlig sammanfattning av populationen baserat på poängen. Färgerna som visas på *Distribuera poäng* representerar den typ av poäng som genereras.
 
 ![fördelning av poäng](../images/insights/distribution-of-scores.png)
 
@@ -128,7 +128,7 @@ Segmentverktyget används för att definiera ett segment. När du väljer **[!UI
 
 ![Segmentfyllning in](../images/insights/segment-saving.png)
 
-Om du vill visa det nya segmentet i plattformsgränssnittet klickar du **[!UICONTROL Segments]** i den vänstra navigeringen. Sidan *Bläddra* visas och alla tillgängliga segment visas.
+Om du vill visa det nya segmentet i plattformsgränssnittet klickar du **[!UICONTROL Segments]** i den vänstra navigeringen. Sidan visas **[!UICONTROL Browse]** och alla tillgängliga segment visas.
 
 ![Alla segment](../images/insights/Segments-dashboard.png)
 
