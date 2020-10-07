@@ -6,9 +6,9 @@ title: Övervaka konton och dataflöden
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '1019'
+source-wordcount: '1031'
 ht-degree: 0%
 
 ---
@@ -96,7 +96,7 @@ Sidan innehåller information om hur många poster som har importerats och vilka
 
 ![datflow-activity](../../images/tutorials/monitor/dataflow-activity.png)
 
-I kalendern kan du visa olika tidsramar för inkapslade poster. Du kan välja ett av de två förinställda alternativen **[!UICONTROL Last 7 days]** eller **[!UICONTROL Last 30 days]**. Du kan också ange en anpassad tidsram i kalendern. Välj önskad tidsram och välj **[!UICONTROL Apply]** för att fortsätta.
+I kalendern kan du visa olika tidsramar för inkapslade poster. Du kan välja ett av de två förinställda alternativen &quot;[!UICONTROL Last 7 days]&quot; eller &quot;[!UICONTROL Last 30 days]&quot;. Du kan också ange en anpassad tidsram i kalendern. Välj önskad tidsram och välj **[!UICONTROL Apply]** för att fortsätta.
 
 ![flödeskalender](../../images/tutorials/monitor/flow-calendar.png)
 
@@ -106,7 +106,7 @@ Välj **[!UICONTROL Dataflow run start]** för att komma åt **[!UICONTROL Dataf
 
 ![körningar](../../images/tutorials/monitor/run-metadata.png)
 
-Informationen **[!UICONTROL Dataflow run overview]** visas om dataflödet, inklusive dess metadata, **[!UICONTROL Partial ingestion]** status och tilldelade **[!UICONTROL Error threshold]**. Den övre rubriken innehåller också en **[!UICONTROL Error summary]**. Den **[!UICONTROL Error summary]** innehåller det specifika felet på den översta nivån som visar i vilket steg som inmatningsprocessen påträffade ett fel.
+Informationen **[!UICONTROL Dataflow run overview]** visas om dataflödet, inklusive dess metadata, status för partiellt intag och tilldelat feltröskelvärde. Den övre rubriken innehåller även en felsammanfattning. Den **[!UICONTROL Error summary]** innehåller det specifika felet på den översta nivån som visar i vilket steg som inmatningsprocessen påträffade ett fel.
 
 ![dataflow-run-overview](../../images/tutorials/monitor/dataflow-run-overview.png)
 
@@ -119,13 +119,13 @@ I följande tabell finns felen som du kan se i **[!UICONTROL Error summary]**.
 
 Den nedre halvan av skärmen innehåller information om **[!UICONTROL Dataflow run errors]**. Härifrån kan du även visa de filer som har importerats, förhandsgranska och ladda ned feldiagnostik eller ladda ned filmanifestet.
 
-I **[!UICONTROL Dataflow run errors]** avsnittet visas **[!UICONTROL Error code]** antalet misslyckade poster och information som beskriver felet.
+I **[!UICONTROL Dataflow run errors]** avsnittet visas felkoden, antalet poster som misslyckades och information som beskriver felet.
 
 Välj det här alternativet **[!UICONTROL Preview error diagnostics]** om du vill ha mer information om felet.
 
 ![Dataflödeskörningsfel](../../images/tutorials/monitor/dataflow-run-errors.png)
 
-Panelen **[!UICONTROL Error diagnostics preview]** visas. På den här skärmen visas specifik information om felet vid importen, inklusive **[!UICONTROL File name]** namnet **[!UICONTROL Error code]**, namnet på den kolumn där felet inträffade samt en beskrivning av felet.
+Panelen **[!UICONTROL Error diagnostics preview]** visas. På den här skärmen visas specifik information om felet i fråga, inklusive filnamn, felkod, namnet på den kolumn där felet inträffade samt en beskrivning av felet.
 
 I det här avsnittet finns även en förhandsgranskning av kolumnen som innehåller felet.
 
