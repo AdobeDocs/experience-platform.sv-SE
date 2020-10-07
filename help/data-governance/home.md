@@ -5,7 +5,7 @@ title: Adobe Experience Platform datastyrning
 topic: overview
 description: Med Adobe Experience Platform Data Governance kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en nyckelroll inom Experience Platform på olika nivåer, bland annat i fråga om katalogisering, datalinje, märkning av dataanvändning, dataanvändningspolicyer och kontroll av användningen av data för marknadsföringsåtgärder
 translation-type: tm+mt
-source-git-commit: fb21acc63448ec837b2f3bcbf6eb4da83fcddc63
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1338'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Med Adobe Experience Platform [!DNL Data Governance] kan ni hantera kunddata och
 
 ## Datastyrningsroller
 
-Som begrepp är datastyrning varken automatisk eller sker i ett vakuum. Det som började som en roll för en individ, som vanligen kallas **dataförvaltare**, har ökat avsevärt i takt med att ekosystemet för datastyrning har expanderat. Idag kräver datastyrning kontinuerlig hantering och övervakning för att bli framgångsrik och bygger på datahanteringar med verktyg som data kan märkas med, användarprofiler kan skapas och regelefterlevnaden kan upprätthållas.
+Som begrepp är datastyrning varken automatisk eller sker i ett vakuum. Det som började som en roll för en individ, vanligen erkänd som en dataförvaltare, har ökat avsevärt i takt med att ekosystemet för datastyrning har expanderat. Idag kräver datastyrning kontinuerlig hantering och övervakning för att bli framgångsrik och bygger på datahanteringar med verktyg som data kan märkas med, användarprofiler kan skapas och regelefterlevnaden kan upprätthållas.
 
 Även om datastyrning bör vara ansvaret för varje enskild person i organisationen finns det några av de viktigaste rollerna inom datastyrningscykeln:
 
