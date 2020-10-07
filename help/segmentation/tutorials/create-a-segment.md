@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: Det här dokumentet innehåller en självstudiekurs för att utveckla, testa, förhandsgranska och spara en segmentdefinition med Adobe Experience Platform Segmentation Service API.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '916'
 ht-degree: 0%
@@ -56,7 +56,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Utveckla en segmentdefinition
 
-Det första steget i segmenteringen är att definiera ett segment, som representeras i en konstruktion som kallas **segmentdefinition**. En segmentdefinition är ett objekt som kapslar in en fråga skriven i [!DNL Profile Query Language] (PQL). Det här objektet kallas även för ett **PQL-predikat**. PQL predikerar regler för segmentet baserat på villkor som relaterar till data från post- eller tidsserier som du skickar till [!DNL Real-time Customer Profile]. Mer information om hur du skriver PQL-frågor finns i [PQL-guiden](../pql/overview.md) .
+Det första steget i segmenteringen är att definiera ett segment, som representeras i en konstruktion som kallas segmentdefinition. En segmentdefinition är ett objekt som kapslar in en fråga skriven i [!DNL Profile Query Language] (PQL). Det här objektet kallas även för ett PQL-predikat. PQL predikerar regler för segmentet baserat på villkor som relaterar till data från post- eller tidsserier som du skickar till [!DNL Real-time Customer Profile]. Mer information om hur du skriver PQL-frågor finns i [PQL-guiden](../pql/overview.md) .
 
 Du kan skapa en ny segmentdefinition genom att göra en POST-förfrågan till slutpunkten i `/segment/definitions` [!DNL Segmentation] API:t. Följande exempel visar hur du formaterar en definitionsbegäran, inklusive vilken information som krävs för att ett segment ska kunna definieras korrekt.
 
