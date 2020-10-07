@@ -6,9 +6,9 @@ topic: tutorial
 type: Tutorial
 description: Det här dokumentet innehåller en självstudiekurs för att skicka flera meddelanden till Adobe Experience Platform inom en enda HTTP-begäran med direktuppspelningsinmatning.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '1480'
+source-wordcount: '1482'
 ht-degree: 1%
 
 ---
@@ -45,7 +45,7 @@ När du har registrerat en direktuppspelningsanslutning får du som DataProducer
 
 I följande exempel visas hur du skickar flera meddelanden till en viss datauppsättning i en enda HTTP-begäran. Infoga datauppsättnings-ID:t i meddelanderubriken om du vill att meddelandet ska infogas direkt i det.
 
-Du kan hämta ID:t för en befintlig datauppsättning med [!DNL Platform] användargränssnittet eller med en liståtgärd i API:t. Du hittar datauppsättnings-ID:t på [Experience Platform](https://platform.adobe.com) genom att gå till **[!UICONTROL Datasets]** fliken, klicka på den datauppsättning som du vill ha ID:t för och kopiera strängen från **[!UICONTROL Dataset ID]** fältet på **[!UICONTROL Info]** fliken. Mer information om hur du hämtar datauppsättningar med API finns i [Katalogtjänstöversikten](../../catalog/home.md) .
+Du kan hämta ID:t för en befintlig datauppsättning med [!DNL Platform] användargränssnittet eller med en liståtgärd i API:t. Du hittar datauppsättnings-ID:t på [Experience Platform](https://platform.adobe.com) genom att gå till **[!UICONTROL Datasets]** fliken, klicka på den datauppsättning som du vill ha ID:t för och kopiera strängen från datauppsättnings-ID:t på **[!UICONTROL Info]** fliken. Mer information om hur du hämtar datauppsättningar med API finns i [Katalogtjänstöversikten](../../catalog/home.md) .
 
 I stället för att använda en befintlig datauppsättning kan du skapa en ny datauppsättning. Mer information om hur du skapar en datauppsättning med API:er finns i [självstudiekursen](../../catalog/api/create-dataset.md) Skapa en datauppsättning med API:er.
 
@@ -543,7 +543,7 @@ I följande tabell visas statuskoder som returnerats av slutförda och misslycka
 
 | Statuskod | Beskrivning |
 | :---: | --- |
-| 207 | Även om&quot;207&quot; används som övergripande svarsstatuskod måste mottagaren läsa innehållet i multistatus-svarstexten för mer information om huruvida metoden har slutförts eller misslyckats. Svarskoden används i lyckade, partiella framgångar och även i felsituationer. |
+| 207 | Även om&quot;207&quot; används som övergripande svarsstatuskod måste mottagaren läsa innehållet i flerstatussvarstexten för att få mer information om huruvida metoden har körts eller inte. Svarskoden används i lyckade, partiella framgångar och även i felsituationer. |
 | 400 | Ett problem uppstod med begäran. I svarstexten finns ett mer specifikt felmeddelande (till exempel saknas obligatoriska fält för meddelandenyttolasten eller meddelandet var okänt xdm-format). |
 | 401 | Obehörig: begäran saknar giltigt auktoriseringshuvud. Detta returneras endast för inmatningar som har autentisering aktiverat. |
 | 403 | Obehörig:  Angiven auktoriseringstoken är ogiltig eller har gått ut. Detta returneras endast för inmatningar som har autentisering aktiverat. |
