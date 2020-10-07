@@ -5,9 +5,9 @@ description: Lär dig hur du konfigurerar Experience Platform Web SDK
 seo-description: Lär dig hur du konfigurerar Experience Platform Web SDK
 keywords: configuring;configuration;SDK;edge;Web SDK;configure;edgeConfigId;context;web;device;environment;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;web sdk settings;prehidingStyle;opacity;cookieDestinationsEnabled;urlDestinationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 translation-type: tm+mt
-source-git-commit: d036595dc96af98fd53c7eb40162585bac48f05c
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '745'
+source-wordcount: '749'
 ht-degree: 4%
 
 ---
@@ -135,7 +135,7 @@ Om du t.ex. har ett element på webbsidan med ett ID `container` vars standardin
 | -------- | ------------ | ----------------- |
 | Boolean | Nej | `true` |
 
-Aktiverar [!DNL Audience Manager] , [!UICONTROL cookie destinations]vilket möjliggör inställning av cookies baserat på segmentkvalificering.
+Aktiverar destinationer för [!DNL Audience Manager] cookies, vilket gör det möjligt att ställa in cookies baserat på segmentkvalificering.
 
 ### `urlDestinationsEnabled`
 
@@ -143,7 +143,7 @@ Aktiverar [!DNL Audience Manager] , [!UICONTROL cookie destinations]vilket möjl
 | -------- | ------------ | ----------------- |
 | Boolean | Nej | `true` |
 
-Aktiverar [!DNL Audience Manager] , [!UICONTROL URL destinations]vilket gör det möjligt att bränna URL:er baserat på segmentkvalificering.
+Aktiverar [!DNL Audience Manager] URL-mål, vilket gör det möjligt att bränna URL:er baserat på segmentkvalificering.
 
 ## Identitetsalternativ
 
