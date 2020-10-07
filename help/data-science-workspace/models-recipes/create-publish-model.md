@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: Med Adobe Experience Platform Data Science Workspace kan du uppnå dina mål med hjälp av den färdiga Recommendations Recipe. Följ den här självstudiekursen för att se hur du kan få tillgång till och förstå dina detaljhandelsdata, skapa och optimera en maskininlärningsmodell och generera insikter i Data Science Workspace.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1542'
 ht-degree: 0%
@@ -85,7 +85,7 @@ Recept är grunden för en modell eftersom de innehåller maskininlärningsalgor
    ![](../images/models-recipes/model-walkthrough/browse_recipes.png)
 2. Leta reda på och öppna den angivna filen **[!UICONTROL Recommendations Recipe]** genom att klicka på dess namn.
    ![](../images/models-recipes/model-walkthrough/recommendations_recipe_110.png)
-3. Klicka på den högra listen för **[!UICONTROL Recommendations Input Schema]** att se vilket schema som används för receptet. Schemafälten **[!UICONTROL itemId]** och **[!UICONTROL userId]** motsvarande en produkt som kunden köpt (**[!UICONTROL interactionType]**) vid en viss tidpunkt (**[!UICONTROL timestamp]**). Följ samma steg för att granska fälten för **[!UICONTROL Recommendations Output Schema]**.
+3. Klicka på den högra listen för **[!UICONTROL Recommendations Input Schema]** att se vilket schema som används för receptet. Schemafälten&quot;[!UICONTROL itemId]&quot; och&quot;[!UICONTROL userId]&quot; motsvarar en produkt som kunden köpt ([!UICONTROL interactionType]) vid en viss tidpunkt ([!UICONTROL timestamp]). Följ samma steg för att granska fälten för **[!UICONTROL Recommendations Output Schema]**.
    ![](../images/models-recipes/model-walkthrough/preview_schemas.png)
 
 Du har nu granskat de in- och utdatamodeller som krävs av Product Recommendations Recipe. Du kan nu fortsätta till nästa avsnitt för att ta reda på hur du skapar, utbildar och utvärderar en Recommendations-produktmodell.
@@ -113,9 +113,9 @@ Du kan välja att vänta tills kursen är klar eller fortsätta att skapa en ny 
 
 ### Utbilda modellen med anpassade hyperparametrar
 
-1. På sidan *Modellöversikt* klickar du **[!UICONTROL Train]** i det övre högra hörnet för att skapa en ny utbildning. Välj samma indatauppsättning som du använde när du skapade modellen och klicka på **[!UICONTROL Next]**.
+1. På sidan **Modellöversikt** klickar du **[!UICONTROL Train]** i det övre högra hörnet för att skapa en ny utbildning. Välj samma indatauppsättning som du använde när du skapade modellen och klicka på **[!UICONTROL Next]**.
    ![](../images/models-recipes/model-walkthrough/training_select_dataset.png)
-2. Sidan *Konfiguration* visas. Här kan du konfigurera kursens **[!UICONTROL num_recommendations]** värde, även kallat en hyperparameter. En utbildad och optimerad modell använder de bästa hyperparametrarna baserat på resultatet av kursen.
+2. Sidan **Konfiguration** visas. Här kan du konfigurera utbildningskörningens &quot;[!UICONTROL num_recommendations]&quot;-värde, som också kallas hyperparameter. En utbildad och optimerad modell använder de bästa hyperparametrarna baserat på resultatet av kursen.
 
    Det går inte att lära sig hyperparametrar, och de måste därför tilldelas innan utbildning kan genomföras. Justering av hyperparametrar kan ändra noggrannheten för utbildningsmodellen. Eftersom det är en iterativ process att optimera en modell kan det krävas flera kurser innan en tillfredsställande utvärdering kan göras.
 
@@ -159,7 +159,7 @@ När poängsättningen är klar kan du förhandsgranska resultatet och se de ins
 
 1. Klicka på den färdiga poängkörningen på sidan för resultaträkning och klicka sedan på **[!UICONTROL Preview Scoring Results Dataset]** den högra listen.
    ![](../images/models-recipes/model-walkthrough/score_complete.png)
-2. I förhandsgranskningstabellen innehåller varje rad produktrekommendationer för en viss kund, märkta som **[!UICONTROL recommendations]** respektive **[!UICONTROL userId]** . Eftersom **[!UICONTROL num_recommendations]** hyperparametern var inställd på 10 i exempelskärmbilderna kan varje rad med rekommendationer innehålla upp till 10 produktidentiteter avgränsade med ett nummertecken (#).
+2. I förhandsgranskningstabellen innehåller varje rad produktrekommendationer för en viss kund, märkta som [!UICONTROL recommendations] respektive [!UICONTROL userId] . Eftersom [!UICONTROL num_recommendations] hyperparametern var inställd på 10 i exempelskärmbilderna kan varje rad med rekommendationer innehålla upp till 10 produktidentiteter avgränsade med ett nummertecken (#).
    ![](../images/models-recipes/model-walkthrough/preview_score_results.png)
 
 ## Nästa steg {#next-steps}
