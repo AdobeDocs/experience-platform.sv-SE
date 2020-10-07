@@ -5,7 +5,7 @@ title: Stöd för IAB TCF 2.0 i kunddataplattformen i realtid
 topic: privacy events
 description: Det här dokumentet innehåller steg för hur du konfigurerar de två datauppsättningar som krävs för att samla in IAB TCF 2.0-medgivandedata.
 translation-type: tm+mt
-source-git-commit: 172710c62b6f60de74e05364edb1191fbba0ff64
+source-git-commit: fa667d86c089c692f22cfd1b46f3f11b6e9a68d7
 workflow-type: tm+mt
 source-wordcount: '1299'
 ht-degree: 0%
@@ -72,7 +72,7 @@ Varje sekretessblandning varierar i struktur och de typer av fält som de inneh�
 
 ## Skapa kundmedgivandescheman {#create-schemas}
 
-Klicka i det vänstra navigeringsfältet **[!UICONTROL Schemas]** i Plattformsgränssnittet för att öppna *[!UICONTROL Schemas]arbetsytan*. Härifrån följer du stegen i avsnitten nedan för att skapa varje obligatoriskt schema.
+Öppna arbetsytan genom att klicka på **[!UICONTROL Schemas]** i den vänstra navigeringen i plattformsgränssnittet **[!UICONTROL Schemas]** . Härifrån följer du stegen i avsnitten nedan för att skapa varje obligatoriskt schema.
 
 >[!NOTE]
 >
@@ -80,7 +80,7 @@ Klicka i det vänstra navigeringsfältet **[!UICONTROL Schemas]** i Plattformsgr
 
 ### Skapa ett postbaserat medgivandeschema {#profile-schema}
 
-Skapa ett nytt schema baserat på **[!UICONTROL Browse]** klassen **[!UICONTROL Schemas]från fliken på** arbetsytan **[!DNL XDM Individual Profile]**. När du har öppnat schemat i Schemaredigeraren klickar du **[!UICONTROL Add]** under **[!UICONTROL Mixins]** avsnittet till vänster på arbetsytan.
+Skapa ett nytt schema baserat på **[!UICONTROL Browse]** klassen på fliken **[!UICONTROL Schemas]i** arbetsytan [!DNL XDM Individual Profile] . När du har öppnat schemat i Schemaredigeraren klickar du **[!UICONTROL Add]** under **[!UICONTROL Mixins]** avsnittet till vänster på arbetsytan.
 
 ![](../assets/iab/add-mixin-profile.png)
 
@@ -127,7 +127,7 @@ Klicka slutligen på **[!UICONTROL Save]** för att bekräfta ändringarna.
 
 ### Skapa ett tidsseriebaserat medgivandeschema {#event-schema}
 
-Skapa ett nytt schema baserat på **[!UICONTROL Browse]** klassen **[!UICONTROL Schemas]från fliken på** arbetsytan **[!DNL XDM ExperienceEvent]**. När du har öppnat schemat i Schemaredigeraren klickar du **[!UICONTROL Add]** under **[!UICONTROL Mixins]** avsnittet till vänster på arbetsytan.
+Skapa ett nytt schema baserat på **[!UICONTROL Browse]** klassen på fliken i **[!UICONTROL Schemas]** [!DNL XDM ExperienceEvent] arbetsytan. När du har öppnat schemat i Schemaredigeraren klickar du **[!UICONTROL Add]** under **[!UICONTROL Mixins]** avsnittet till vänster på arbetsytan.
 
 ![](../assets/iab/add-mixin-event.png)
 
