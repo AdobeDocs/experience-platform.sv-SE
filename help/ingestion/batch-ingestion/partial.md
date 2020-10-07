@@ -5,9 +5,9 @@ title: Översikt över partiell batchöverföring
 topic: overview
 description: Det här dokumentet innehåller en självstudiekurs för hantering av partiell batchimport.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '858'
+source-wordcount: '857'
 ht-degree: 0%
 
 ---
@@ -121,7 +121,7 @@ Växlingsknappen **[!UICONTROL Error diagnostics]** visas bara när **[!UICONTRO
 
 ![](../images/batch-ingestion/partial-ingestion/xdm-csv-workflow-partial-ingestion-focus.png)
 
-Med **[!UICONTROL Error threshold]** den kan du ange procentandelen godtagbara fel innan hela gruppen misslyckas. Som standard är värdet 5 %.
+**[!UICONTROL Error threshold]** gör att du kan ange procentandelen godtagbara fel innan hela gruppen misslyckas. Som standard är värdet 5 %.
 
 ## Nästa steg {#next-steps}
 
