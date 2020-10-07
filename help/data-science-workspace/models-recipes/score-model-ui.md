@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: 'Du kan göra poängsättningen i Adobe Experience Platform Data Science Workspace genom att mata in indata i en befintlig utbildad modell. Resultat av poängsättningen lagras och kan visas i en angiven utdatamängd som en ny grupp. '
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '589'
 ht-degree: 0%
@@ -32,7 +32,7 @@ En bedömningsrunda skapas med optimerade konfigurationer från en tidigare slut
 
 1. Hitta den bästa kursen för att använda dess konfigurationer för poängsättning. Öppna önskad utbildningskurs genom att klicka på namnet.
 
-2. Klicka på **[!UICONTROL Evaluation]** **[!UICONTROL Score]** knappen längst upp till höger på skärmen på fliken Utbildningskörning. Detta kommer att starta ett nytt arbetsflöde för *att köra poängberäkning* .
+2. Klicka på **[!UICONTROL Evaluation]** **[!UICONTROL Score]** knappen längst upp till höger på skärmen på fliken Utbildningskörning. Detta kommer att starta ett nytt arbetsflöde för **att köra poängberäkning** .
    ![](../images/models-recipes/score/training_run_overview.png)
 
 3. Markera datamängden för indataskalförändring och klicka på **[!UICONTROL Next]**.
