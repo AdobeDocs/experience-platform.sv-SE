@@ -5,7 +5,7 @@ title: Förbered data för användning i intelligenta tjänster
 topic: Intelligent Services
 description: 'För att Intelligent Services ska kunna hitta insikter från era marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. Intelligenta tjänster utnyttjar XDM-scheman (Experience Data Model) för att uppnå detta. Närmare bestämt måste alla datauppsättningar som används i Intelligent Services] överensstämma med CEE-XDM-schemat (Consumer Experience Event). '
 translation-type: tm+mt
-source-git-commit: d9bf87e41fe002ac1d70a241b48c7b9fd1139d6c
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1978'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # Förbered data för användning i [!DNL Intelligent Services]
 
-För [!DNL Intelligent Services] att ni ska kunna hitta insikter från era marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. [!DNL Intelligent Services] utnyttja [!DNL Experience Data Model] XDM-scheman för att uppnå detta. Alla datauppsättningar som används i måste överensstämma med [!DNL Intelligent Services] CEE-schemat (Consumer Experience ExperienceEvent) **** .
+För [!DNL Intelligent Services] att ni ska kunna hitta insikter från era marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. [!DNL Intelligent Services] utnyttja [!DNL Experience Data Model] XDM-scheman för att uppnå detta. I synnerhet måste alla datauppsättningar som används i [!DNL Intelligent Services] överensstämma med CEE-XDM-schemat (Consumer ExperienceEvent).
 
 Det här dokumentet innehåller allmän vägledning om hur du mappar data om marknadsföringshändelser från flera kanaler till det här schemat, och ger information om viktiga fält i schemat för att hjälpa dig att avgöra hur data effektivt kan mappas till dess struktur.
 
