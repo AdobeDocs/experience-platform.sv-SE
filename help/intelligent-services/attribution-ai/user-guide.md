@@ -5,9 +5,9 @@ title: Användarhandbok för Attribution AI
 topic: User guide
 description: Det här dokumentet är en guide för interaktion med Attribution AI i användargränssnittet för intelligenta tjänster.
 translation-type: tm+mt
-source-git-commit: 2a528c705a7aa610f57047be39be1ce9886ce44c
+source-git-commit: c5e2ea5daf813bf580a11f0182361197e55c6fe8
 workflow-type: tm+mt
-source-wordcount: '1449'
+source-wordcount: '1420'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Det här dokumentet är en guide för interaktion med Attribution AI i användar
 
 ## Skapa en instans
 
-Klicka på [!DNL Adobe Experience Platform] Tjänster **i den vänstra navigeringen i** användargränssnittet. Webbläsaren *Services* visas och visar tillgängliga smarta Adobe-tjänster. Klicka på **Öppna** i behållaren för Attribution AI.
+In the [!DNL Adobe Experience Platform] UI, click **[!UICONTROL Services]** in the left navigation. Webbläsaren visas och visar tillgängliga smarta Adobe-tjänster. **[!UICONTROL Services]** Klicka på i behållaren för Attribution AI **[!UICONTROL Open]**.
 
 ![Åtkomst till din instans](./images/user-guide/open_Attribution_ai.png)
 
@@ -35,7 +35,7 @@ Därefter visas konfigurationssidan för Attribution AI, där du kan ange grundl
 
 ### Namnge instansen
 
-Ange ett namn och en valfri beskrivning av tjänstinstansen under *Grundläggande information*.
+Under **[!UICONTROL Basic information]** anger du ett namn och en valfri beskrivning för tjänstinstansen.
 
 ![namnge en instans](./images/user-guide/naming_instance.png)
 
@@ -67,15 +67,15 @@ När en händelse har valts visas en ny listruta till höger om händelsen. Den 
 
 ![ingen listruta](./images/user-guide/conversion_event_1.png)
 
-Knapparna *Lägg till händelse* och *Lägg till grupp* används för att ytterligare definiera konverteringen. Beroende på vilken konvertering du definierar kan du behöva använda knapparna *Lägg till händelse* och *Lägg till grupp* för att få ytterligare kontext.
+Knapparna **[!UICONTROL Add event]** och **[!UICONTROL Add Group]** används för att ytterligare definiera konverteringen. Beroende på vilken konvertering du definierar kan du behöva använda knapparna **[!UICONTROL Add event]** och **[!UICONTROL Add group]** för att skapa ytterligare kontext.
 
 ![add, händelse](./images/user-guide/add_event.png)
 
-Om du klickar på **Lägg till händelse** skapas ytterligare fält som kan fyllas i med samma metod som beskrivs ovan. Då läggs en *AND* -sats till i strängdefinitionen nedanför *konverteringsnamnet*. Klicka på **x** för att ta bort en händelse som har lagts till.
+Om du klickar **[!UICONTROL Add event]** skapas ytterligare fält som kan fyllas i med samma metod som beskrivs ovan. När du gör det läggs en AND-sats till i strängdefinitionen under konverteringsnamnet. Klicka på **x** för att ta bort en händelse som har lagts till.
 
 ![lägg till händelsemeny](./images/user-guide/add_event_result.png)
 
-Om du klickar på **Lägg till grupp** kan du skapa ytterligare fält som är åtskilda från originalet. När du lägger till grupper visas en blå *Och* -knapp. Om du klickar på **Och** får du ett alternativ för att ändra parametern så att den innehåller &quot;Eller&quot;. &quot;Eller&quot; används för att definiera flera lyckade konverteringssökvägar. &quot;And&quot; utökar konverteringssökvägen så att den innehåller ytterligare villkor.
+Om du klickar **[!UICONTROL Add Group]** får du möjlighet att skapa ytterligare fält som är åtskilda från originalet. När du lägger till grupper visas en blå *Och* -knapp. Om du klickar på **Och** får du ett alternativ för att ändra parametern så att den innehåller &quot;Eller&quot;. &quot;Eller&quot; används för att definiera flera lyckade konverteringssökvägar. &quot;And&quot; utökar konverteringssökvägen så att den innehåller ytterligare villkor.
 
 ![använder och](./images/user-guide/and_or.png)
 
@@ -157,7 +157,7 @@ Klicka på klockikonen om du vill ändra den tidpunkt på dagen som du vill att 
 
 Kundernas beteenden kan skilja sig avsevärt mellan olika länder och geografiska regioner. För globala företag kan användning av landsbaserade eller regionbaserade modeller öka attribueringsnoggrannheten. Varje region som läggs till skapar en ny modell med den regionens data.
 
-Om du vill definiera en ny region börjar du med att klicka på **Lägg till region**. Ange ett namn för regionen i behållaren som visas. Endast ett värde (&quot;placeContext.geo.countryCode&quot;) fylls i från listrutan *Ange fältnamn* . Välj det här värdet.
+Om du vill definiera en ny region börjar du med att klicka **[!UICONTROL Add region]**. Ange ett namn för regionen i behållaren som visas. Endast ett värde (&quot;placeContext.geo.countryCode&quot;) fylls i från **[!UICONTROL Enter Field Name]** listrutan. Välj det här värdet.
 
 ![Välj region att](./images/user-guide/select_region_att.png)
 
@@ -165,7 +165,7 @@ Välj sedan en operator.
 
 ![operatorn region](./images/user-guide/region_operators.png)
 
-Skriv landskoden i listrutan *Ange fältvärde* .
+Skriv till sist landskoden i **[!UICONTROL Enter Field Value]** listrutan.
 
 >[!NOTE]
 >
@@ -183,7 +183,7 @@ För att säkerställa att ni får den mest korrekta modellen är det viktigt at
 
 ![utbildningsfönster](./images/user-guide/training_window.png)
 
-När du har valt utbildningsfönstret klickar du på **Slutför** i det övre högra hörnet. Ge databearbetningen lite tid. När du är klar visas en dialogruta som bekräftar att instansinställningarna är klara. Klicka på **OK** för att omdirigeras till sidan *Tjänstinstanser* där du kan se tjänstinstansen.
+När du har valt ett utbildningsfönster klickar du **[!UICONTROL Finish]** i det övre högra hörnet. Ge databearbetningen lite tid. När du är klar visas en dialogruta som bekräftar att instansinställningarna är klara. Klicka **[!UICONTROL Ok]** för att omdirigeras till den **[!UICONTROL Service instances]** sida där du kan se tjänstinstansen.
 
 ![installationen slutförd](./images/user-guide/instance_setup_complete.png)
 
