@@ -6,9 +6,9 @@ topic: tutorial
 type: Tutorial
 description: I den här självstudiekursen går du igenom de steg som krävs för att skapa en datauppsättning som kan användas för att exportera ett målgruppssegment med hjälp av användargränssnittet i Experience Platform.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '699'
+source-wordcount: '722'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Om du vill visa unionsscheman i användargränssnittet klickar du **[!UICONTROL 
 
 Med arbetsytan Datauppsättningar i [!DNL Experience Platform] användargränssnittet kan du visa och hantera alla datauppsättningar som din IMS-organisation har skapat, samt skapa nya.
 
-Om du vill visa arbetsytan för datauppsättningar klickar du **[!UICONTROL Datasets]** i den vänstra navigeringen och sedan på **[!UICONTROL Browse]** fliken. Arbetsytan för datauppsättningar innehåller en lista med datauppsättningar, inklusive kolumner som visar **[!UICONTROL Name]**, **[!UICONTROL Created]** (datum och tid), **[!UICONTROL Source]**, **[!UICONTROL Schema]** och **[!UICONTROL Last Batch Status]**, samt datum och tid då datauppsättningen skapades **[!UICONTROL Last Updated]**. Beroende på bredden på varje kolumn kan du behöva rulla åt vänster eller höger för att se alla kolumner.
+Om du vill visa arbetsytan för datauppsättningar klickar du **[!UICONTROL Datasets]** i den vänstra navigeringen och sedan på **[!UICONTROL Browse]** fliken. Arbetsytan för datauppsättningar innehåller en lista med datauppsättningar, inklusive kolumner med namn, skapad (datum och tid), källa, schema och senaste batchstatus, samt datum och tid då datauppsättningen senast uppdaterades. Beroende på bredden på varje kolumn kan du behöva rulla åt vänster eller höger för att se alla kolumner.
 
 >[!NOTE]
 >
@@ -45,7 +45,7 @@ Om du vill visa arbetsytan för datauppsättningar klickar du **[!UICONTROL Data
 
 ## Skapa en datauppsättning
 
-Om du vill skapa en datauppsättning klickar du **[!UICONTROL Create Dataset]** i det övre högra hörnet av [!UICONTROL Datasets] arbetsytan.
+Om du vill skapa en datauppsättning klickar du **[!UICONTROL Create Dataset]** i det övre högra hörnet av **[!UICONTROL Datasets]** arbetsytan.
 
 ![Klicka på Skapa datauppsättning](../images/tutorials/segment-export-dataset/dataset-click-create.png)
 
@@ -63,7 +63,7 @@ Markerade alternativknappen bredvid **[!UICONTROL XDM Individual Profile]** och 
 
 ## Konfigurera datauppsättning
 
-På **[!UICONTROL Configure Dataset]** skärmen måste du ge datauppsättningen en **[!UICONTROL Name]** och kan även tillhandahålla en **[!UICONTROL Description]** av datauppsättningarna.
+På **[!UICONTROL Configure Dataset]** skärmen måste du ge datauppsättningen ett namn och du kan även ge en beskrivning av datauppsättningen.
 
 **Kommentarer om datauppsättningsnamn:**
 - Datauppsättningsnamnen ska vara korta och beskrivande så att datauppsättningen kan hittas i biblioteket senare.
@@ -76,9 +76,9 @@ När datauppsättningen har ett namn och en beskrivning klickar du på **[!UICON
 
 ## Datauppsättningsaktivitet
 
-En tom datauppsättning har nu skapats och du har returnerats till **[!UICONTROL Dataset Activity]** fliken i [!UICONTROL Datasets] arbetsytan. Du bör se namnet på datauppsättningen i det övre vänstra hörnet av arbetsytan, tillsammans med ett meddelande om att&quot;Inga grupper har lagts till&quot;. Detta förväntas eftersom du inte har lagt till några batchar i den här datauppsättningen än.
+En tom datauppsättning har nu skapats och du har returnerats till **[!UICONTROL Dataset Activity]** fliken i **[!UICONTROL Datasets]** arbetsytan. Du bör se namnet på datauppsättningen i det övre vänstra hörnet av arbetsytan, tillsammans med ett meddelande om att&quot;Inga grupper har lagts till&quot;. Detta förväntas eftersom du inte har lagt till några batchar i den här datauppsättningen än.
 
-Till höger på arbetsytan Datauppsättningar ser du fliken **[!UICONTROL Info]** med information om den nya datauppsättningen, till exempel **[!UICONTROL Dataset ID]**, **[!UICONTROL Name]**, **[!UICONTROL Description]**, **[!UICONTROL Table Name]**, **[!UICONTROL Schema]**, **[!UICONTROL Streaming]** och **[!UICONTROL Source]**. Fliken innehåller även information om när datauppsättningen skapades [!UICONTROL Info] och dess **[!UICONTROL Created]** **[!UICONTROL Last Modified]** datum.
+Till höger på arbetsytan Datauppsättningar visas fliken med information om den nya datauppsättningen, till exempel datauppsättnings-ID, namn, beskrivning, tabellnamn, schema], direktuppspelning och källa. **[!UICONTROL Info]** Fliken innehåller även information om när datauppsättningen skapades och om dess senaste ändringsdatum. **[!UICONTROL Info]**
 
 Observera **[!UICONTROL Dataset ID]** detta eftersom det här värdet krävs för att slutföra arbetsflödet för målgruppsexport.
 
@@ -86,6 +86,6 @@ Observera **[!UICONTROL Dataset ID]** detta eftersom det här värdet krävs fö
 
 ## Nästa steg
 
-Nu när du har skapat en datauppsättning baserat på [!DNL XDM Individual Profile Union Schema]kan du använda **[!UICONTROL Dataset ID]** för att fortsätta [utvärdera och komma åt segmentresultaten](./evaluate-a-segment.md) .
+Nu när du har skapat en datauppsättning baserat på [!DNL XDM Individual Profile Union Schema]kan du använda datauppsättnings-ID för att fortsätta med självstudiekursen för [utvärdering och åtkomst av segmentresultat](./evaluate-a-segment.md) .
 
 Nu kan du gå tillbaka till självstudiekursen för utvärdering av segmentresultat och hämta från [genereringsprofilerna för målgruppsmedlemmar](./evaluate-a-segment.md#generate-profiles) i steget för att exportera ett segmentarbetsflöde.
