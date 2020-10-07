@@ -5,9 +5,9 @@ title: Skapa kundsegment med förutbestämda poäng
 topic: Create a segment
 description: När en förutsägelsekörning är klar används automatiskt förväntade benägenhetspoäng av profiler. Genom att förbättra profiler med kundens AI-poäng kan man skapa kundsegment för att hitta målgrupper baserat på deras benägenhetspoäng. I det här avsnittet beskrivs hur du skapar segment med hjälp av segmentverktyget.
 translation-type: tm+mt
-source-git-commit: c30bbaead775e68f869b080e24e18d4a23cda973
+source-git-commit: c5e2ea5daf813bf580a11f0182361197e55c6fe8
 workflow-type: tm+mt
-source-wordcount: '307'
+source-wordcount: '305'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Klicka i det vänstra navigeringsfältet i Plattformsgränssnittet **[!UICONTROL
 
 ![](../images/user-guide/segments.png)
 
-Segmentbyggaren ** visas. Klicka på mappen med namnet i den vänstra kolumnen *Fält* och i fliken *Attribut* klickar du på mappen med namnet **[!UICONTROL XDM Individual Profile]** och sedan på mappen med organisationens namnområde. Mappen med namnet **[!UICONTROL Customer AI]** innehåller resultatet av prediktionskörningar och namnges efter instansen som poängen tillhör. Klicka på en instansmapp för att komma åt resultatet av den önskade instansen.
+Segmentbyggaren **** visas. I den vänstra **[!UICONTROL Fields]** kolumnen och under **[!UICONTROL Attributes]** fliken klickar du på mappen med namnet **[!UICONTROL XDM Individual Profile]** och sedan på mappen med organisationens namnområde. Mappen med namnet **[!UICONTROL Customer AI]** innehåller resultatet av prediktionskörningar och namnges efter instansen som poängen tillhör. Klicka på en instansmapp för att komma åt resultatet av den önskade instansen.
 
 ![](../images/user-guide/results.png)
 
