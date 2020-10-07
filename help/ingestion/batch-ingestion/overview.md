@@ -5,7 +5,7 @@ title: Översikt över batchintag
 topic: overview
 description: Med API:t för gruppinmatning kan du importera data till Adobe Experience Platform som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en parquet-fil) eller data som följer ett känt schema i XDM-registret (Experience Data Model).
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1196'
 ht-degree: 1%
@@ -127,7 +127,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
 
 När du har skapat en ny batch för överföring kan filer sedan överföras till en viss datauppsättning.
 
-Du kan överföra filer med API:t för överföring av **liten fil**. Om filerna är för stora och gatewaygränsen överskrids (t.ex. utökade tidsgränser, begäranden om kroppsstorlek överskrids och andra begränsningar) kan du växla till API:t för **stor filöverföring**. Denna API överför filen i segment och sammanfogar data med API-anropet **Large File Upload Complete** .
+Du kan överföra filer med hjälp av API:t för liten filöverföring. Om filerna är för stora och gatewaygränsen överskrids (t.ex. utökade tidsgränser, begäranden om kroppsstorlek har överskridits och andra begränsningar) kan du växla till API:t för stor filöverföring. Denna API överför filen i segment och sammanfogar data med API-anropet Large File Upload Complete.
 
 >[!NOTE]
 >
@@ -238,7 +238,7 @@ curl -X PATCH "https://platform.adobe.io/data/foundation/import/batches/{BATCH_I
 
 ## Slutförande av signalbatch
 
-När alla filer har överförts till gruppen kan gruppen signaleras för slutförande. På så sätt skapas [!DNL Catalog] DataSetFile **** -posterna för de slutförda filerna och kopplas till den grupp som genereras ovan. Batchen markeras sedan som [!DNL Catalog] lyckad, vilket aktiverar efterföljande flöden för att importera tillgängliga data.
+När alla filer har överförts till gruppen kan gruppen signaleras för slutförande. På så sätt skapas [!DNL Catalog] DataSetFile-posterna för de slutförda filerna och kopplas till den grupp som genereras ovan. Batchen markeras sedan som [!DNL Catalog] lyckad, vilket aktiverar efterföljande flöden för att importera tillgängliga data.
 
 **Begäran**
 
@@ -389,10 +389,10 @@ Fältet `"status"` visar den aktuella statusen för den begärda batchen. Batche
 | Status | Beskrivning |
 | ------ | ----------- |
 | Övergiven | Batchen har inte slutförts inom den förväntade tidsramen. |
-| Avbruten | En avbrottsåtgärd har **explicit** anropats (via API:t för gruppinmatning) för den angivna gruppen. När batchen är i ett **inläst** tillstånd kan den inte avbrytas. |
-| Aktiv | Batchen har befordrats och är tillgänglig för nedladdning. Den här statusen kan användas utan **fel**. |
+| Avbruten | En avbrottsåtgärd har **explicit** anropats (via API:t för gruppinmatning) för den angivna gruppen. När batchen är i inläst läge kan den inte avbrytas. |
+| Aktiv | Batchen har befordrats och är tillgänglig för nedladdning. Den här statusen kan användas omväxlande med &quot;Lyckades&quot;. |
 | Borttagen | Data för batchen har tagits bort helt. |
-| Misslyckades | Ett terminaltillstånd som antingen beror på felaktig konfiguration och/eller felaktiga data. Data för en misslyckad batch visas **inte** . Den här statusen kan användas utan **fel**. |
+| Misslyckades | Ett terminaltillstånd som antingen beror på felaktig konfiguration och/eller felaktiga data. Data för en misslyckad batch visas **inte** . Den här statusen kan användas som ersättning med &quot;Misslyckades&quot;. |
 | Inaktiv | Batchen befordrades men har återförts eller gått ut. Batchen är inte längre tillgänglig för nedströmsförbrukning. |
 | Inläst | Data för batchen har slutförts och batchen är klar för befordran. |
 | Läser in | Data för den här batchen överförs och batchen är **inte** klar att befordras. |
