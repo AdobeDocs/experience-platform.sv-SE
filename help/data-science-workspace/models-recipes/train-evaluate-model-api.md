@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: I den här självstudiekursen visas hur du skapar, utbilda och utvärderar en modell med hjälp av API-anrop för Sensei Machine Learning.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1210'
 ht-degree: 0%
@@ -35,7 +35,7 @@ Från självstudiekursen bör du nu ha följande värden:
 
 ## API-arbetsflöde
 
-Vi kommer att konsumera API:erna för att skapa en Experimentrunda för utbildning. I den här självstudiekursen kommer vi att fokusera på slutpunkterna **för motorer**, **MLInstances** och **Experiment** . I följande diagram visas relationen mellan de tre versionerna och även en introduktion till en Run och en Model.
+Vi kommer att konsumera API:erna för att skapa en Experimentrunda för utbildning. I den här självstudiekursen kommer vi att fokusera på slutpunkterna för motorer, MLInstances och Experiments. I följande diagram visas relationen mellan de tre versionerna och även en introduktion till en Run och en Model.
 
 ![](../images/models-recipes/train-evaluate-api/engine_hierarchy_api.png)
 
