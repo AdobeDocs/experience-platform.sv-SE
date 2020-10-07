@@ -5,7 +5,7 @@ seo-title: Mål för Google Ad Manager
 description: 'Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar. '
 seo-description: 'Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar. '
 translation-type: tm+mt
-source-git-commit: c66fb4cf0a414e02ceb58becc9d9b59db3fe987b
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '673'
 ht-degree: 0%
@@ -49,11 +49,11 @@ Innan du skapar [!DNL Google Ad Manager] målet i realtid-CDP i Adobe måste du 
 * **Kund-ID** : det här är Adobe kundkonto-ID med [!DNL Google]. Kontakta Adobe kundtjänst eller Adobe för att få detta ID.
 * **Nätverks-ID** : det här är ditt konto med [!DNL Google Ad Manager]
 * **Målgruppslänks-ID** : det här är ditt konto med [!DNL Google Ad Manager]
-* Din kontotyp. **DFP av Google** eller **AdX-köpare**.
+* Din kontotyp. DFP av Google eller AdX-köpare.
 
 ## Konfigurera mål
 
-1. In **[!UICONTROL Connections]** > **[!UICONTROL Destinations]**, select [!DNL Google Ad Manager], and select **[!UICONTROL Configure]**.
+1. In **[!UICONTROL Connections]** > **[!UICONTROL Destinations]**, select **[!DNL Google Ad Manager]**, and select **[!UICONTROL Configure]**.
    ![Anslut Google Ad Manager-mål](/help/rtcdp/destinations/assets/google-1-destination.png)
 
    >[!NOTE]
