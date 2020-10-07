@@ -5,7 +5,7 @@ title: Användarhandbok för Machine Learning-anteckningsbok i realtid
 topic: Training and scoring a ML model
 description: Följande guide beskriver de steg som krävs för att skapa ett Machine Learning-program i realtid i Adobe Experience Platform JupyterLab.
 translation-type: tm+mt
-source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
+source-git-commit: 28b733a16b067f951a885c299d59e079f0074df8
 workflow-type: tm+mt
 source-wordcount: '1637'
 ht-degree: 0%
@@ -23,7 +23,7 @@ I följande guide beskrivs de steg som krävs för att skapa ett Machine Learnin
 
 ## Skapa en Machine Learning-anteckningsbok i realtid
 
-I Adobe Experience Platform-gränssnittet väljer du **[!UICONTROL Notebooks]** inom *datavetenskap*. Välj sedan **[!UICONTROL JupyterLab]** och tillåt lite tid för att läsa in miljön.
+I Adobe Experience Platform-gränssnittet väljer du **[!UICONTROL Notebooks]** inom **datavetenskap**. Välj sedan **[!UICONTROL JupyterLab]** och tillåt lite tid för att läsa in miljön.
 
 ![öppna JupyterLab](../images/rtml/open-jupyterlab.png)
 
@@ -117,7 +117,7 @@ När du använder **[!UICONTROL Real-time ML]** mallen måste du analysera, för
 
 **Dataomvandlingar**
 
-Cellen **[!UICONTROL Real-time ML]** Dataomvandlingar ** för mallar måste ändras för att fungera med din egen datauppsättning. Vanligtvis innebär detta att byta namn på kolumner, datasammanslagning och datainsamling/funktionsteknik.
+Cellen **[!UICONTROL Real-time ML]** Dataomvandlingar **** för mallar måste ändras för att fungera med din egen datauppsättning. Vanligtvis innebär detta att byta namn på kolumner, datasammanslagning och datainsamling/funktionsteknik.
 
 >[!NOTE]
 >
