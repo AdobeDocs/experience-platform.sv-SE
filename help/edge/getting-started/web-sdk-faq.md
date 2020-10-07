@@ -4,7 +4,7 @@ seo-title: Vanliga frågor om Adobe Experience Platform Web SDK
 description: Frågor och svar om Adobe Experience Platform Web SDK
 seo-description: Frågor och svar om Adobe Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: f178da80d0902f76868986426600f3da426cf24d
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1683'
 ht-degree: 1%
@@ -117,7 +117,7 @@ Det beror på. Adobe Experience Platform Web SDK kan användas i två olika form
 
 * **Bara en annan tagg:** Om webbplatsen redan är taggad för lösningar och du inte kan tagga om, men du vill skicka data till Adobe Experience Platform Edge Network för Experience Platform eller kommande funktioner på startservern (se nedan), kan du lägga till taggen på webbplatsen, där den fungerar som&quot;bara en annan tagg&quot;. `alloy.js`
 
-* **Den enda taggen:** Om du vill använda Web SDK för en Experience Cloud-lösning måste du använda den för _alla_ lösningar på den sidan. Om din webbplats till exempel redan är taggad för Analytics (Analyser) och du vill använda den för Target, måste du använda den för både och för alla andra i framtiden.
+* **Den enda taggen:** Om du vill använda Web SDK för en Experience Cloud-lösning måste du använda den för alla lösningar på den sidan. Om din webbplats till exempel redan är taggad för Analytics (Analyser) och du vill använda den för Target, måste du använda den för både och för alla andra i framtiden.
 
 Det innebär, att om du bestämmer dig för att använda Adobe Experience Platform Web SDK för icke-lösningsrelaterade fall, kan du tagga webbplatsen med `alloy.js` och gå vidare som om det vore en ny lösning. Om du vill använda den för Adobe Analytics, Target eller Audience Manager, eller för programanvändning, kan du behöva ta bort någon av de äldre koderna på sidan.
 
@@ -141,7 +141,7 @@ Men:
 
 * Adobe Experience Platform Web SDK kräver något som kallas Experience Edge-konfigurations-ID så att edge-nätverket kan identifiera strömmen och avgöra vad som ska göras med data. Detta ID skapas i Launch. Det innebär inte att du måste använda Launch för att skapa egenskaper eller distribuera JavaScript-koden, men du måste använda Launch för att skapa ett konfigurations-ID.
 
-* Adobe Experience Platform Launch är inte bara den bästa taggen och SDK-hanteraren, utan gör det mycket enkelt att driftsätta `alloy.js` och mappa data till XDM-scheman. Om du bestämmer dig för att inte använda Launch måste du hantera distribuering `alloy.js`, händelser och mappning av data till XDM innan du skickar dem. Det här är en _mycket_ svårare process än att använda Launch.
+* Adobe Experience Platform Launch är inte bara den bästa taggen och SDK-hanteraren, utan gör det mycket enkelt att driftsätta `alloy.js` och mappa data till XDM-scheman. Om du bestämmer dig för att inte använda Launch måste du hantera distribuering `alloy.js`, händelser och mappning av data till XDM innan du skickar dem. Det här är en mycket svårare process än att använda Launch.
 
 * Vi rekommenderar att du använder Launch för att distribuera `alloy.js`, även om det är den enda taggen du använder den för.
 
