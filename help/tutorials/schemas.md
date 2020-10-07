@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. Experience Data Model (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering. Scheman är standardmetoden för att beskriva data i Experience Platform, vilket gör att alla data som överensstämmer med scheman kan återanvändas utan konflikter i en organisation och till och med delas mellan flera organisationer.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '473'
 ht-degree: 0%
