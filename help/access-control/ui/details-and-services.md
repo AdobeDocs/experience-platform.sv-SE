@@ -5,9 +5,9 @@ title: Hantera information och ytterligare tjänster för en produktprofil
 topic: user guide
 description: Det här dokumentet innehåller de steg som krävs för att hantera information och ytterligare tjänster för en produktprofil i Adobe Admin Console. Du kan konfigurera information om en profil och få tillgång till ytterligare tjänster på menyn Profilinställningar.
 translation-type: tm+mt
-source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
+source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
 workflow-type: tm+mt
-source-wordcount: '187'
+source-wordcount: '192'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ Du kan konfigurera en profils information och åtkomst till ytterligare tjänste
 
 ![profile-settings](../images/profile-settings.png)
 
-Menyn **[!UICONTROL Profile Settings]** visas med början på **[!UICONTROL Details]** fliken. På den här fliken kan du ange och redigera **[!UICONTROL Profile Name]** och **[!UICONTROL Description]**. Du kan också ändra inställningarna för ditt konto **[!UICONTROL Display Name]** samt e-postaviseringar för ditt konto.
+Menyn **[!UICONTROL Profile Settings]** visas med början på **[!UICONTROL Details]** fliken. På den här fliken kan du ange och redigera profilens namn och beskrivning. Du kan också ändra visningsnamnet och e-postmeddelandeinställningarna för ditt konto.
 
 ![edit-details-settings](../images/edit-details-settings.png)
 
