@@ -5,7 +5,7 @@ seo-title: Sidan Destinationsinformation
 description: 'På informationssidan för ett enskilt mål finns en översikt över målinformationen, t.ex. målnamn, ID, segment som är mappade till målet samt kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet. '
 seo-description: 'På informationssidan för ett enskilt mål finns en översikt över målinformationen, t.ex. målnamn, ID, segment som är mappade till målet samt kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet. '
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: 9bd893820c7ab60bf234456fdd110fb2fbe6697c
 workflow-type: tm+mt
 source-wordcount: '499'
 ht-degree: 1%
@@ -53,8 +53,8 @@ Rätt spår innehåller information om destinationen. Se tabellen nedan för mer
 | Plattform | Representerar målplattformen som målgrupperna skickas till. Mer information finns i [Målkatalog](/help/rtcdp/destinations/destinations-catalog.md) . |
 | Beskrivning | Du kan redigera beskrivningen av målflödet. |
 | Kategori | Anger typen av mål. Mer information finns i [Målkatalog](/help/rtcdp/destinations/destinations-catalog.md) . |
-| Anslutningstyp | Anger i vilket format era målgrupper skickas till målet. Kan vara **[!UICONTROL Cookie]** eller **[!UICONTROL Profile-based]**. |
-| Frekvens | Anger hur ofta målgrupperna skickas till målet. Kan vara **[!UICONTROL Streaming]** eller **[!UICONTROL Batch]**. |
+| Anslutningstyp | Anger i vilket format era målgrupper skickas till målet. Kan vara [!UICONTROL Cookie] eller [!UICONTROL Profile-based]. |
+| Frekvens | Anger hur ofta målgrupperna skickas till målet. Kan vara [!UICONTROL Streaming] eller [!UICONTROL Batch]. |
 | Identitet | Representerar det identitetsnamnutrymme som accepteras av målet. Identitetsfältet kan till exempel vara GAID, IDFA, email. Mer information om alla godkända identitetsnamnutrymmen finns i Standardnamnutrymmen i [översikten](../../identity-service/namespaces.md)över identitetsnamnen. |
 | Skapad av | Anger den användare som skapade det här målflödet. |
 | Skapad | Anger UTC-datum och UTC-tid när målflödet skapades. |
