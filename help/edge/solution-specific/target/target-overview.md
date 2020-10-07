@@ -5,7 +5,7 @@ description: Lär dig hur du återger anpassat innehåll med Experience Platform
 seo-description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Target
 keywords: target;adobe target;activity.id;experience.id;renderDecisions;decisionScopes;prehiding snippet;vec;Form-Based Experience Composer;xdm;audiences;decisions;scope;schema;
 translation-type: tm+mt
-source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
+source-git-commit: 43a2074d4d1b9f642c3cbfb0c29217eb2fb112c3
 workflow-type: tm+mt
 source-wordcount: '634'
 ht-degree: 2%
@@ -87,7 +87,7 @@ alloy
 
 `decisionScopes` definierar avsnitt, platser eller delar av sidorna där du vill återge en personlig upplevelse. Dessa `decisionScopes` är anpassningsbara och användardefinierade. För nuvarande [!DNL Target] kunder `decisionScopes` kallas även&quot;mboxes&quot;. I [!DNL Target] användargränssnittet visas `decisionScopes` som &quot;platser&quot;.
 
-## __visa__ omfång
+## The `__view__` Scope
 
 AEP [!DNL Web SDK] innehåller en funktion där du kan hämta VEC-åtgärder utan att förlita dig på AEP [!DNL Web SDK] för att återge VEC-åtgärder åt dig. Skicka en händelse med `__view__` definierad som en `decisionScopes`.
 
@@ -127,10 +127,10 @@ Om du har Target-aktiviteter med fördefinierade målgrupper som använder anpas
 
 ## Terminologi
 
-__Besluten__ - I [!DNL Target]det här fallet står de i relation till den erfarenhet som har valts i en aktivitet.
+**Besluten** - I [!DNL Target]det här fallet står de i relation till den erfarenhet som har valts i en aktivitet.
 
-__Tillämpningsområde__ - Beslutets tillämpningsområde. Här [!DNL Target]är mBox. Den globala mBox är `__view__` omfånget.
+**Tillämpningsområde** - Beslutets tillämpningsområde. Här [!DNL Target]är mBox. Den globala mBox är `__view__` omfånget.
 
-__Schema__ - Schemat för ett beslut är den typ av erbjudande som finns i [!DNL Target].
+**Schema** - Schemat för ett beslut är den typ av erbjudande som finns i [!DNL Target].
 
-__XDM__ - XDM serialiseras till punktnotation och sätts sedan in [!DNL Target] som mBox-parametrar.
+**XDM** - XDM serialiseras till punktnotation och sätts sedan in [!DNL Target] som mBox-parametrar.
