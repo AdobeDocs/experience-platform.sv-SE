@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: January 15, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
+source-git-commit: a362b67cec1e760687abb0c22dc8c46f47e766b7
 workflow-type: tm+mt
-source-wordcount: '892'
+source-wordcount: '891'
 ht-degree: 3%
 
 ---
@@ -55,7 +55,7 @@ Nya juridiska och organisatoriska bestämmelser ger användarna rätt att få ti
 | Nya API-slutpunkter | Bassökvägen för [!DNL Privacy Service] API har uppdaterats från `/data/privacy/gdpr` till `/data/core/privacy/jobs`. |
 | Ny obligatorisk `regulation` egenskap | När du skapar nya jobb i [!DNL Privacy Service] API måste en `regulation` egenskap anges i nyttolasten för begäran för att ange vilken regel som jobbet ska spåras under. Godkända värden är `gdpr` och `ccpa`. |
 | Stöd för [!DNL Adobe Primetime Authentication] | [!DNL Privacy Service] nu tar emot begäranden om åtkomst/borttagning från Adobe [!DNL Primetime Authentication]med `primetimeAuthentication` som produktvärde. |
-| Förbättringar av användargränssnittet för Privacy Service | Separata jobbspårningssidor för GDPR- och CCPA-regler. Ny _regeltypsmeny_ för att växla mellan spårningsdata för GDPR och CCPA. |
+| Förbättringar av användargränssnittet för Privacy Service | Separata jobbspårningssidor för GDPR- och CCPA-regler. Ny **Regeltyp **listruta för att växla mellan spårningsdata för GDPR och CCPA. |
 
 **Kända fel**
 
@@ -105,7 +105,7 @@ I [Adobe CDP](../../rtcdp/overview.md)i realtid är destinationer färdiga integ
 | Kategori | Behörighet | Beskrivning |
 |--- | --- | ---|
 | Mål  | Hantera mål | Åtkomst för att läsa, skapa, redigera och inaktivera mål. |
-| Mål  | Visa mål | Skrivskyddad åtkomst till tillgängliga mål på fliken [!UICONTROL _Katalog_] och autentiserade mål på fliken _Bläddra_ . |
+| Mål  | Visa mål | Skrivskyddad åtkomst till tillgängliga mål på **[!UICONTROL Catalog]** fliken och autentiserade mål på fliken **Bläddra** . |
 | Mål  | Aktivera destinationer | Möjlighet att aktivera data till destinationer. Den här behörigheten kräver att antingen Hantera destinationer eller Visa destinationer läggs till i produktprofilen. |
 
 **Kända fel**
