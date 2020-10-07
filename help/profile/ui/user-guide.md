@@ -4,9 +4,9 @@ title: Användarhandbok för kundprofil i realtid
 topic: guide
 description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofiler i realtid i Adobe Experience Platform användargränssnitt.
 translation-type: tm+mt
-source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '1256'
 ht-degree: 0%
 
 ---
@@ -40,11 +40,11 @@ Välj fliken för att bläddra bland profiler efter identitet. **[!UICONTROL Bro
 
 ### Profilmått {#profile-metrics}
 
-Till höger på [!UICONTROL Browse] fliken finns flera viktiga mätvärden för dina profildata, inklusive det totala [profilantalet](#profile-count) samt en lista över [profiler per namnutrymme](#profiles-by-namespace).
+Till höger på **[!UICONTROL Browse]** fliken finns flera viktiga mätvärden för dina profildata, inklusive det totala [profilantalet](#profile-count) samt en lista över [profiler per namnutrymme](#profiles-by-namespace).
 
 Dessa profilvärden utvärderas med organisationens standardpolicy för sammanfogning. Mer information om hur du arbetar med sammanfogningsprinciper, inklusive hur du definierar en standardsammanfogningsprincip, finns i användarhandboken för [sammanfogningsprinciper](merge-policies.md).
 
-Förutom dessa mått innehåller profilmätningsavsnittet även ett [!UICONTROL Last updated] datum och en tidpunkt som visar när mätvärdena senast utvärderades.
+Förutom dessa mått innehåller profilmätningsavsnittet även ett senast uppdaterat datum och en uppdaterad tid, som visar när mätvärdena senast utvärderades.
 
 ![](../images/user-guide/profiles-profile-metrics.png)
 
@@ -80,7 +80,7 @@ I **[!UICONTROL Select identity namespace]** dialogrutan väljer du det namnutry
 
 ### Identitetsvärde
 
-När du har valt ett [!UICONTROL Identity namespace]alternativ återgår du till den [!UICONTROL Browse] flik där du kan ange ett **[!UICONTROL Identity value]**. Det här värdet är specifikt för en enskild kundprofil och måste vara en giltig post för det angivna namnutrymmet. Om du till exempel väljer [!UICONTROL Identity namespace] &quot;E-post&quot; måste du ange en giltig e-postadress [!UICONTROL Identity value] i form av en giltig e-postadress.
+När du har valt ett identitetsnamnutrymme återgår du till den **[!UICONTROL Browse]** flik där du kan ange ett **[!UICONTROL Identity value]**. Det här värdet är specifikt för en enskild kundprofil och måste vara en giltig post för det angivna namnutrymmet. Om du t.ex. väljer identitetsnamnet&quot;E-post&quot; krävs ett identitetsvärde i form av en giltig e-postadress.
 
 ![](../images/user-guide/profiles-show-profile.png)
 
@@ -90,17 +90,17 @@ När ett värde har angetts, väljer du **[!UICONTROL Show profile]** och return
 
 ### Profilinformation {#profile-detail}
 
-När du väljer [!UICONTROL Profile ID]öppnas **[!UICONTROL Detail]** fliken. Profilinformationen som visas på [!UICONTROL Detail] fliken har sammanfogats från flera profilfragment till en enda vy över den enskilda kunden. Detta inkluderar kundinformation som grundläggande attribut, länkade identiteter och kanalinställningar. Standardfälten som visas kan också ändras på organisationsnivå för att visa de önskade profilattributen. Om du vill veta mer om hur du anpassar de här fälten, inklusive stegvisa instruktioner för hur du lägger till och tar bort attribut och ändrar storlek på kontrollpaneler, läser du [anpassningsguiden](profile-customization.md)för profildetaljer.
+När du väljer **[!UICONTROL Profile ID]**&#x200B;öppnas **[!UICONTROL Detail]** fliken. Profilinformationen som visas på **[!UICONTROL Detail]** fliken har sammanfogats från flera profilfragment till en enda vy över den enskilda kunden. Detta inkluderar kundinformation som grundläggande attribut, länkade identiteter och kanalinställningar. Standardfälten som visas kan också ändras på organisationsnivå för att visa de önskade profilattributen. Om du vill veta mer om hur du anpassar de här fälten, inklusive stegvisa instruktioner för hur du lägger till och tar bort attribut och ändrar storlek på kontrollpaneler, läser du [anpassningsguiden](profile-customization.md)för profildetaljer.
 
 ![](../images/user-guide/profiles-profile-detail.png)
 
-Du kan visa ytterligare information om den enskilda profilen genom att välja en annan av de tillgängliga flikarna. Dessa flikar innehåller [!UICONTROL Attributes], [!UICONTROL Events]och [!UICONTROL Segment membership], som visar [!UICONTROL Segments] för vilken profilen är kvalificerad.
+Du kan visa ytterligare information om den enskilda profilen genom att välja en annan av de tillgängliga flikarna. Dessa flikar innehåller attribut, händelser och segmentmedlemskap, som visar de segment som profilen är kvalificerad för just nu.
 
 ![](../images/user-guide/profiles-attributes-events-segments.png)
 
 ## Sammanfoga profiler
 
-På huvudmenyn [!UICONTROL Profiles] väljer du **[!UICONTROL Merge Policies]** fliken för att visa en lista över sammanfogningsprinciper som tillhör organisationen. Varje listad princip visar sitt namn, oavsett om det är standardprincipen för sammanslagning eller inte, och det schema som den gäller för.
+På huvudmenyn **[!UICONTROL Profiles]** väljer du **[!UICONTROL Merge Policies]** fliken för att visa en lista över sammanfogningsprinciper som tillhör organisationen. Varje listad princip visar sitt namn, oavsett om det är standardprincipen för sammanslagning eller inte, och det schema som den gäller för.
 
 Mer information om sammanfogningsprinciper finns i användarhandboken för [sammanfogningsprinciper](merge-policies.md).
 
@@ -108,7 +108,7 @@ Mer information om sammanfogningsprinciper finns i användarhandboken för [samm
 
 ## Unionsschema {#union-schema}
 
-På huvudmenyn [!UICONTROL Profiles] väljer du **[!UICONTROL Union Schema]** fliken för att visa föreningsscheman för dina profildata. Ett unionsschema är en kombination av alla [!DNL Experience Data Model] (XDM) fält under samma klass, vars scheman har aktiverats för användning i [!DNL Real-time Customer Profile]. Genom att välja en klass från [!UICONTROL Class] listan till vänster kan du visa strukturen för dess schema på arbetsytan. Om du t.ex. väljer &quot;[!DNL XDM Profile]&quot; visas föreningsschemat för [!DNL XDM Individual Profile] klassen.
+På huvudmenyn **[!UICONTROL Profiles]** väljer du **[!UICONTROL Union Schema]** fliken för att visa föreningsscheman för dina profildata. Ett unionsschema är en kombination av alla [!DNL Experience Data Model] (XDM) fält under samma klass, vars scheman har aktiverats för användning i [!DNL Real-time Customer Profile]. Genom att välja en klass i listan&quot;[!UICONTROL Class]&quot; till vänster kan du visa strukturen för dess schema på arbetsytan. Om du t.ex. väljer &quot;[!DNL XDM Profile]&quot; visas föreningsschemat för [!DNL XDM Individual Profile] klassen.
 
 Mer information om unionsscheman och deras roll i Adobe Experience Platform finns i avsnittet om unionsscheman i [schemakompositionsguiden](../../xdm/schema/composition.md).
 
