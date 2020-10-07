@@ -5,9 +5,9 @@ topic: overview
 title: Översikt över åtkomstkontroll
 description: Åtkomstkontroll för Adobe Experience Platform tillhandahålls via Adobe Admin Console. Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor.
 translation-type: tm+mt
-source-git-commit: 397f08efa276f7885e099a0a8d9dc6d23fe0e8cc
+source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
 workflow-type: tm+mt
-source-wordcount: '1087'
+source-wordcount: '1097'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 1%
 
 ## Åtkomststyrningshierarki och arbetsflöde
 
-Om du vill konfigurera åtkomstkontroll för [!DNL Experience Platform]måste du ha administratörsbehörighet för en organisation som har en [!DNL Experience Platform] produktintegrering. Minimirollen som beviljar eller återkallar behörigheter är en **[!UICONTROL product profile administrator]**. Andra administratörsroller som kan hantera behörigheter är **[!UICONTROL product administrators]** (kan hantera alla profiler i en produkt) och **[!UICONTROL system administrators]** (inga begränsningar). Mer information finns i Adobe Help Center artikel om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html) .
+Om du vill konfigurera åtkomstkontroll för [!DNL Experience Platform]måste du ha administratörsbehörighet för en organisation som har en [!DNL Experience Platform] produktintegrering. Den minsta rollen som beviljar eller återkallar behörigheter är en administratör för produktprofilen. Andra administratörsroller som kan hantera behörigheter är produktadministratörer (kan hantera alla profiler i en produkt) och systemadministratörer (utan begränsningar). Mer information finns i Adobe Help Center artikel om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html) .
 
 >[!NOTE]
 >
@@ -44,7 +44,7 @@ Adobe Admin Console är en central plats för hantering av Adobe produktberätti
 
 ### Produktprofiler
 
-I [!DNL Admin Console]tilldelas användare behörigheter genom att använda **[!UICONTROL product profiles]**. Med produktprofiler kan du bevilja behörigheter till en eller flera användare, och de kan även innehålla deras åtkomst till omfattningen av de sandlådor som de har tilldelats via produktprofiler. Användare kan tilldelas till en eller flera produktprofiler som tillhör din organisation.
+I [!DNL Admin Console]tilldelas användare behörigheter genom användning av produktprofiler. Med produktprofiler kan du bevilja behörigheter till en eller flera användare, och de kan även innehålla deras åtkomst till omfattningen av de sandlådor som de har tilldelats via produktprofiler. Användare kan tilldelas till en eller flera produktprofiler som tillhör din organisation.
 
 ### Standardproduktprofiler
 
@@ -57,7 +57,7 @@ I [!DNL Admin Console]tilldelas användare behörigheter genom att använda **[!
 
 ## Sandlådor och behörigheter
 
-Sandlådor som inte är produktionssandlådor är en form av datavirtualisering som gör att du kan isolera data från andra sandlådor och som vanligtvis används för utvecklingsexperiment, testning och testning. En produktprofils **[!UICONTROL permissions]** ger profilens användare tillgång till [!DNL Platform] funktioner i sandlådemiljöer som de har beviljats åtkomst till. En standardlicens för Experience Platform ger dig fem sandlådor (en och fyra icke-produktioner). Du kan lägga till paket med tio icke-produktionssandlådor, upp till totalt högst 75 sandlådor. Kontakta din IMS-organisationsadministratör eller din Adobe-säljare om du vill ha mer information.
+Sandlådor som inte är produktionssandlådor är en form av datavirtualisering som gör att du kan isolera data från andra sandlådor och som vanligtvis används för utvecklingsexperiment, testning och testning. En produktprofils behörigheter ger profilens användare åtkomst till [!DNL Platform] funktioner i sandlådemiljöer som de har beviljats åtkomst till. En standardlicens för Experience Platform ger dig fem sandlådor (en och fyra icke-produktioner). Du kan lägga till paket med tio icke-produktionssandlådor, upp till totalt högst 75 sandlådor. Kontakta din IMS-organisationsadministratör eller din Adobe-säljare om du vill ha mer information.
 
 Mer information om sandlådor i finns i [!DNL Experience Platform]översikten över [sandlådor](../sandboxes/home.md).
 
@@ -71,7 +71,7 @@ Med behörigheten&quot;Sandlådehantering&quot; kan användare hantera, visa och
 
 ### Behörigheter
 
-På fliken **Behörigheter** i en produktprofil visas de sandlådor och behörigheter som är aktiva för den profilen:
+På fliken Behörigheter i en produktprofil visas de sandlådor och behörigheter som är aktiva för den profilen:
 
 ![](./images/permissions-overview.png)
 
