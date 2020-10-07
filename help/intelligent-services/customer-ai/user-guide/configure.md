@@ -5,9 +5,9 @@ title: Konfigurera en AI-instans för kund
 topic: Instance creation
 description: Intelligenta tjänster ger kunden artificiell intelligens (AI) som en lättanvänd Adobe Sensei-tjänst som kan konfigureras för olika användningsområden. I följande avsnitt beskrivs hur du konfigurerar en instans av Kundens AI.
 translation-type: tm+mt
-source-git-commit: c30bbaead775e68f869b080e24e18d4a23cda973
+source-git-commit: c5e2ea5daf813bf580a11f0182361197e55c6fe8
 workflow-type: tm+mt
-source-wordcount: '726'
+source-wordcount: '723'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Nedan finns viktig information om värden som du måste ge instansen:
 
 * Instansens namn används på alla platser där kundens AI-poäng visas. Namnen bör därför beskriva vad förutsägelsepoängen representerar, till exempel&quot;Sannolikhet för att avbryta tidskriftsprenumeration&quot;.
 
-* Propensitetstypen bestämmer poängsättets och den metriska polaritetens avsikt. Du kan antingen välja **[!UICONTROL Churn]** eller **[!UICONTROL Conversion]**. Se anteckningen under [poängsammanfattning](./discover-insights.md#scoring-summary) i dokumentet om upptäckt av insikter för mer information om hur benägenhetstypen påverkar din instans.
+* Propensitetstypen bestämmer poängsättets och den metriska polaritetens avsikt. Du kan antingen välja &quot;[!UICONTROL Churn]&quot; eller &quot;[!UICONTROL Conversion]&quot;. Se anteckningen under [poängsammanfattning](./discover-insights.md#scoring-summary) i dokumentet om upptäckt av insikter för mer information om hur benägenhetstypen påverkar din instans.
 
 * Datakällan är den plats där data finns. Datauppsättningen är den indatamängd som används för att förutsäga bakgrundsmusik. Kunds-AI använder per design data om kundupplevelsehändelser för att beräkna benägenhetspoängen. När du väljer en datauppsättning i listruteväljaren visas bara de som är kompatibla med kundens AI.
 
@@ -47,7 +47,7 @@ Ange önskade värden och klicka sedan på **[!UICONTROL Next]**.
 
 ### Definiera ett mål {#define-a-goal}
 
-Steget *Definiera mål* visas och innehåller en interaktiv miljö där du kan definiera ett mål visuellt. Ett mål består av en eller flera händelser, där varje händelses förekomst baseras på det villkor den innehåller. Målet för en kundens AI-instans är att fastställa sannolikheten för att uppnå dess mål inom en viss tidsram.
+Steget visas och innehåller en interaktiv miljö där du kan definiera ett mål visuellt. **[!UICONTROL Define goal]** Ett mål består av en eller flera händelser, där varje händelses förekomst baseras på det villkor den innehåller. Målet för en kundens AI-instans är att fastställa sannolikheten för att uppnå dess mål inom en viss tidsram.
 
 Klicka på **[!UICONTROL Enter Field Name]** och välj ett fält i listrutan. Klicka på den andra inmatningen och välj en sats för händelsens villkor och ange sedan ett målvärde för att slutföra händelsen. Ytterligare händelser kan konfigureras genom att klicka **[!UICONTROL Add event]**. Slutför målet genom att tillämpa en tidsram för förutsägelse i antal dagar och klicka sedan på **[!UICONTROL Next]**.
 
@@ -55,7 +55,7 @@ Klicka på **[!UICONTROL Enter Field Name]** och välj ett fält i listrutan. Kl
 
 ### Konfigurera ett schema *(valfritt)* {#configure-a-schedule}
 
-Det *avancerade* steget visas. Med det här valfria steget kan du konfigurera ett schema för att automatisera prediktionskörningar, definiera undantag för förutsägelser för att filtrera vissa händelser eller klicka **[!UICONTROL Finish]** om inget behövs.
+Steget **[!UICONTROL Advanced]** visas. Med det här valfria steget kan du konfigurera ett schema för att automatisera prediktionskörningar, definiera undantag för förutsägelser för att filtrera vissa händelser eller klicka **[!UICONTROL Finish]** om inget behövs.
 
 Konfigurera ett poängschema genom att konfigurera *poängfrekvensen*. Automatiserade prognoskörningar kan schemaläggas att köras antingen varje vecka eller varje månad.
 
