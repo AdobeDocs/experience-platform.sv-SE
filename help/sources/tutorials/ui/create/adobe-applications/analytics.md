@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: I den här självstudiekursen beskrivs hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '766'
 ht-degree: 0%
@@ -28,7 +28,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 ## Skapa en källanslutning med Adobe Analytics
 
-Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt källarbetsytan. På *katalogskärmen* visas tillgängliga källor för att skapa inkommande anslutningar, och varje källa visar antalet befintliga konton och datauppsättningsflöden som är kopplade till dem.
+Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt källarbetsytan. På **katalogskärmen** visas tillgängliga källor för att skapa inkommande anslutningar, och varje källa visar antalet befintliga konton och datauppsättningsflöden som är kopplade till dem.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
@@ -73,7 +73,7 @@ När datauppsättningsflödet har skapats kan du övervaka de data som hämtas g
 
 ![](../../../../images/tutorials/create/analytics/catalog-dataset-flows.png)
 
-Skärmen *Datauppsättningsflöden* visas. På den här sidan finns ett par datauppsättningsflöden, inklusive information om namn, källdata, skapandetid och status.
+Skärmen **Datauppsättningsflöden** visas. På den här sidan finns ett par datauppsättningsflöden, inklusive information om namn, källdata, skapandetid och status.
 
 Kopplingen instansierar två datauppsättningsflöden. Det ena flödet representerar data för bakåtfyllnad och det andra för livedata. Backfill-data är inte konfigurerade för profil, men skickas till datasjön för analytiska och datavetenskapliga användningsfall.
 
@@ -83,7 +83,7 @@ Välj det datauppsättningsflöde du vill visa i listan.
 
 ![](../../../../images/tutorials/create/analytics/backfill.png)
 
-Sidan *Datauppsättningsaktivitet* visas. På den här sidan visas hur många meddelanden som används i form av ett diagram. Välj *Datastyrning* i det övre huvudet för att komma åt etikettfälten.
+Sidan **Datauppsättningsaktivitet** visas. På den här sidan visas hur många meddelanden som används i form av ett diagram. Välj *Datastyrning* i det övre huvudet för att komma åt etikettfälten.
 
 ![](../../../../images/tutorials/create/analytics/batches.png)
 
@@ -91,7 +91,7 @@ Du kan visa ett datauppsättningsflödes ärvda etiketter från skärmen *Datast
 
 ![](../../../../images/tutorials/create/analytics/data-gov.png)
 
-Panelen *Redigera styrningsetiketter* visas. På den här skärmen kan du komma åt och redigera ett datauppsättningsflödes kontrakt, identitet och känsliga etiketter.
+Panelen **Redigera styrningsetiketter** visas. På den här skärmen kan du komma åt och redigera ett datauppsättningsflödes kontrakt, identitet och känsliga etiketter.
 
 Mer information om etikettering av data som kommer från Analytics finns i etikettguiden för [dataanvändning](../../../../../data-governance/labels/user-guide.md).
 
