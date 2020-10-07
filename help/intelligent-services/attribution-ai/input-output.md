@@ -5,9 +5,9 @@ title: Indata och utdata från Attribution AI
 topic: Input and Output data for Attribution AI
 description: Följande dokument visar de olika indata och utdata som används i Attribution AI.
 translation-type: tm+mt
-source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
+source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
 workflow-type: tm+mt
-source-wordcount: '2067'
+source-wordcount: '2068'
 ht-degree: 0%
 
 ---
@@ -140,7 +140,7 @@ Du kan visa sökvägen till dina bakgrundsmusik i användargränssnittet. Börja
 
 ![Välj schema](./images/input-output/schemas_browse.png)
 
-Därefter väljer du ett fält i **[!UICONTROL Structure]** fönstret för användargränssnittet, så öppnas **[!UICONTROL Field properties]** fliken. Inom **[!UICONTROL Field properties]** är det **[!UICONTROL Path]** fält som mappar till dina Raw-resultat.
+Därefter väljer du ett fält i **[!UICONTROL Structure]** fönstret för användargränssnittet, så öppnas **[!UICONTROL Field properties]** fliken. Inom **[!UICONTROL Field properties]** är sökvägsfältet som mappar till dina Raw-resultat.
 
 ![Välj ett schema](./images/input-output/field_properties.png)
 
