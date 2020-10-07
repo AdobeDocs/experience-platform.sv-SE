@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Versionsinformation om Privacy Service
 topic: release notes
 translation-type: tm+mt
-source-git-commit: 6eee7e903d36ed641c9f8e6120f549c02cb4bce4
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 5%
@@ -53,7 +53,7 @@ Det här dokumentet innehåller information om nya funktioner för Adobe Experie
 
 * [!DNL Privacy Service] Förbättringar av användargränssnittet:
    * Separata jobbspårningssidor för GDPR- och CCPA-regler.
-   * Ny _regeltypsmeny_ för att växla mellan spårningsdata för GDPR och CCPA.
+   * Ny *regeltypsmeny* för att växla mellan spårningsdata för GDPR och CCPA.
 
 ## 25 juli 2019
 
