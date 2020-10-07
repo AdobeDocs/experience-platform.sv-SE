@@ -5,10 +5,10 @@ title: Dataåtkomstöversikt
 topic: overview
 description: Data Access stöder Adobe Experience Platform genom att tillhandahålla användarverktyg som fokuserar på att upptäcka och tillgängliggöra inkapslade datauppsättningar inom Experience Platform.
 translation-type: tm+mt
-source-git-commit: 75e1d3c9912e54e925032bbc2ae4e984948a30eb
+source-git-commit: bececfde1df15fd8648d75b937da5e264d60b9a4
 workflow-type: tm+mt
-source-wordcount: '210'
-ht-degree: 0%
+source-wordcount: '173'
+ht-degree: 1%
 
 ---
 
@@ -23,17 +23,11 @@ ht-degree: 0%
 
 Detaljerad information om hur du använder [!DNL Data Access] API:t för att ansluta [!DNL Platform] finns i utvecklarhandboken för [Data Access](api.md).
 
-## [!DNL Python] SDK
+## Åtkomst till data i arbetsytan Datavetenskap
 
-Du kan läsa och skriva med datauppsättningar med hjälp av [!DNL Python] SDK. Mer detaljerad information om [!DNL Python] SDK finns i [Python SDK-självstudiekursen](./tutorials/python-sdk.md).
+Du kan läsa och skriva till datauppsättningar med [!DNL Python] och [!DNL Spark] för recept- och modellutveckling i arbetsytan Data Science. Mer information om hur du får åtkomst till dina data finns i [Pythons dokumentation om dataåtkomst](../data-science-workspace/authoring/python.md) och [Spark-dataåtkomst](../data-science-workspace/authoring/spark.md) .
 
-[!DNL Data Science Workspace] använder [!DNL Python] SDK i bärbara datorer och Recept-filer. Mer information [!DNL Data Science Workspace]finns i översikten över arbetsytan [Data Science Workspace](../data-science-workspace/home.md).
-
-## [!DNL Spark] SDK
-
-Du kan läsa och skriva med datauppsättningar med hjälp av [!DNL Spark] SDK. Mer detaljerad information om [!DNL Spark] SDK finns i [Spark SDK-självstudiekursen](./tutorials/spark-sdk.md).
-
-[!DNL Data Science Workspace] använder [!DNL Spark] SDK i bärbara datorer och Recept-filer. Mer information [!DNL Data Science Workspace]finns i översikten över arbetsytan [Data Science Workspace](../data-science-workspace/home.md).
+Mer information om [!DNL Data Science Workspace]finns i översikten över arbetsytan [Data Science Workspace](../data-science-workspace/home.md).
 
 ## Prenumerera på dataöverföringshändelser
 
