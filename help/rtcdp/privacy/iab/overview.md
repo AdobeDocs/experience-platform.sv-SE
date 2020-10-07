@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Stöd för IAB TCF 2.0 i kunddataplattformen i realtid
 topic: privacy events
 translation-type: tm+mt
-source-git-commit: 172710c62b6f60de74e05364edb1191fbba0ff64
+source-git-commit: fa667d86c089c692f22cfd1b46f3f11b6e9a68d7
 workflow-type: tm+mt
 source-wordcount: '2377'
 ht-degree: 1%
@@ -89,7 +89,7 @@ Den här dialogrutan måste göra det möjligt för kunden att välja att inte g
 
 ### Samtyckessträngar {#consent-strings}
 
-Oavsett vilken metod du använder för att samla in data är målet att generera ett strängvärde baserat på de alternativ för samtycke som kunden valt, vilket kallas en **medgivandesträng**.
+Oavsett vilken metod du använder för att samla in data, är målet att generera ett strängvärde baserat på de alternativ för samtycke som kunden valt, vilket kallas godkännandesträng.
 
 I TCF-specifikationen används medgivandesträngar för att koda relevant information om en kunds medgivandeinställningar, i termer av specifika marknadsföringssyften som definieras av policyer och leverantörer. [!DNL Real-time CDP] använder dessa strängar för att lagra medgivandeinställningarna för varje kund, och därför måste en ny medgivandesträng skapas varje gång inställningarna ändras.
 
