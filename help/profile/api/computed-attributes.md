@@ -3,9 +3,9 @@ keywords: Experience Platform;profile;real-time customer profile;troubleshooting
 title: Beräknade attribut - Kundprofils-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '2365'
+source-wordcount: '2366'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ API-slutpunkten som används i den här guiden ingår i [kundprofils-API](https:
 
 Med Adobe Experience Platform kan du enkelt importera och sammanfoga data från flera källor för att generera [!DNL Real-time Customer Profiles]. Varje profil innehåller viktig information om en individ, t.ex. kontaktinformation, inställningar och inköpshistorik, vilket ger en helhetsbild av kunden.
 
-En del av den information som samlas in i profilen är lätt att förstå när datafälten läses direkt (t.ex.&quot;förnamn&quot;) medan andra data kräver att man utför flera beräkningar eller använder andra fält och värden för att kunna generera informationen (t.ex.&quot;köpsumma för livstid&quot;). Om du vill göra dessa data lättare att förstå snabbt kan du skapa [!DNL Platform] **[!UICONTROL computed attributes]** som automatiskt utför dessa referenser och beräkningar och returnerar värdet i rätt fält.
+En del av den information som samlas in i profilen är lätt att förstå när datafälten läses direkt (t.ex.&quot;förnamn&quot;) medan andra data kräver att man utför flera beräkningar eller använder andra fält och värden för att kunna generera informationen (t.ex.&quot;köpsumma för livstid&quot;). Om du vill göra dessa data lättare att förstå snabbt kan du [!DNL Platform] skapa beräknade attribut som automatiskt utför dessa referenser och beräkningar och returnerar värdet i rätt fält.
 
 Beräknade attribut inkluderar att skapa ett uttryck, eller &quot;rule&quot;, som fungerar på inkommande data och lagrar resultatvärdet i ett profilattribut eller en händelse. Uttryck kan definieras på flera olika sätt, så att du kan ange att en regel endast utvärderar inkommande händelser, inkommande händelse- och profildata eller inkommande händelse, profildata och historiska händelser.
 
@@ -69,7 +69,7 @@ När du har hittat schemat klickar du på dess namn för att öppna det [!DNL Sc
 
 ### Skapa en blandning
 
-Om du vill skapa en ny blandning klickar du på **[!UICONTROL Add]** bredvid *Blandningar* i **[!UICONTROL Composition]** avsnittet till vänster i redigeraren. Då öppnas en dialogruta där du kan se de befintliga blandningarna. **[!UICONTROL Add mixin]** Klicka på alternativknappen för **[!UICONTROL Create new mixin]** att definiera din nya blandning.
+Om du vill skapa en ny blandning klickar du på **[!UICONTROL Add]** bredvid **[!UICONTROL Mixins]** i **[!UICONTROL Composition]** avsnittet till vänster i redigeraren. Då öppnas en dialogruta där du kan se de befintliga blandningarna. **[!UICONTROL Add mixin]** Klicka på alternativknappen för **[!UICONTROL Create new mixin]** att definiera din nya blandning.
 
 Ge blandningen ett namn och en beskrivning och klicka på **[!UICONTROL Add mixin]** när du är klar.
 
@@ -77,7 +77,7 @@ Ge blandningen ett namn och en beskrivning och klicka på **[!UICONTROL Add mixi
 
 ### Lägg till ett beräknat attributfält i schemat
 
-Din nya blandning ska nu visas i **[!UICONTROL Mixins]** avsnittet under **[!UICONTROL Composition]**. Klicka på namnet på mixen så visas flera **[!UICONTROL Add field]** knappar i *[!UICONTROL Structure]**-delen av redigeraren.
+Din nya blandning ska nu visas i avsnittet &quot;[!UICONTROL Mixins]&quot; under &quot;[!UICONTROL Composition]&quot;. Klicka på namnet på mixen så visas flera **[!UICONTROL Add field]** knappar i redigerarens **[!UICONTROL Structure]** avsnitt.
 
 Välj **[!UICONTROL Add field]** bredvid schemats namn för att lägga till ett fält på den översta nivån, eller välj att lägga till fältet var som helst i det schema du föredrar.
 
