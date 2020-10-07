@@ -5,7 +5,7 @@ title: Anslut till Power BI
 topic: connect
 description: Det här dokumentet går igenom stegen för att ansluta Power BI med Adobe Experience Platform Query Service.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '320'
 ht-degree: 0%
@@ -61,7 +61,7 @@ ORDER BY SUM(web.webPageDetails.pageviews.value) DESC
 LIMIT 10
 ```
 
-- Välj antingen **[!UICONTROL DirectQuery]** eller **[!UICONTROL Import]** läge. I **[!UICONTROL Import]** läget importeras data i [!DNL Power BI]. I **[!UICONTROL DirectQuery]** läget skickas alla frågor till [!DNL Query Service] för körning.
+- Välj antingen &quot;[!UICONTROL DirectQuery]&quot; eller &quot;[!UICONTROL Import]&quot;. I [!UICONTROL DirectQuery] läget skickas alla frågor till [!DNL Query Service] för körning. I [!UICONTROL Import] läget importeras data i [!DNL Power BI].
 
 - Klicka på **[!UICONTROL OK]**. Ansluter nu [!DNL Power BI] till [!DNL Query Service] och skapar en förhandsgranskning om det inte finns några fel. Det finns ett känt fel med återgivningen av numeriska kolumner i förhandsvisningen. Gå vidare till nästa steg.
 
