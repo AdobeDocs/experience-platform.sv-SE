@@ -5,7 +5,7 @@ title: Profilfrågespråk (PQL) - översikt
 topic: developer guide
 description: Den här guiden ger en allmän översikt över PQL, som beskriver riktlinjer för formatering och innehåller exempel på PQL-uttryck.
 translation-type: tm+mt
-source-git-commit: 5a10a31f4be5173af8b459b9ab8a53096348be1d
+source-git-commit: 9bd893820c7ab60bf234456fdd110fb2fbe6697c
 workflow-type: tm+mt
 source-wordcount: '705'
 ht-degree: 1%
@@ -29,7 +29,7 @@ PQL-frågor har följande signatur:
 
 Indataparametern kan vara enkel primitiv, till exempel ett booleskt värde eller en sträng, eller en mer komplex typ, till exempel ett objekt, en array eller en karta.
 
-Det finns **tre** olika sätt att referera till indataparametrar i brödtexten för ett PQL-uttryck:
+Det finns tre olika sätt att referera till indataparametrar i brödtexten för ett PQL-uttryck:
 
 ### Implicit referens till den första parametern
 
