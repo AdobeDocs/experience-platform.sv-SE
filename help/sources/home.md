@@ -5,7 +5,7 @@ title: Adobe Experience Platform Source Connectors - översikt
 topic: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 translation-type: tm+mt
-source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
+source-git-commit: 9bd893820c7ab60bf234456fdd110fb2fbe6697c
 workflow-type: tm+mt
 source-wordcount: '836'
 ht-degree: 0%
@@ -118,7 +118,7 @@ Följande tabell visar hur användargränssnittet beter sig baserat på olika ko
 
 | Behörighetsnivå | Beskrivning |
 | ---- | ----|
-| **[!UICONTROL View Sources]** På | Ge skrivskyddad åtkomst till källor i varje källtyp på fliken *Katalog* , samt flikarna *Bläddra*, *Konton* och *DataFlow* . |
+| **[!UICONTROL View Sources]** På | Ge skrivskyddad åtkomst till källor i varje källtyp på fliken Katalog samt på flikarna Bläddra, Konton och Dataflöde. |
 | **[!UICONTROL Manage Sources]** På | Förutom de funktioner som ingår i **[!UICONTROL View Sources]** ger tillgång till **[!UICONTROL Connect Source]** alternativen i **[!UICONTROL Catalog]** och till **[!UICONTROL Select Data]** alternativen i **[!UICONTROL Browse]**. **[!UICONTROL Manage Sources]** kan du även aktivera eller inaktivera **[!UICONTROL DataFlows]** och redigera deras scheman. |
 | **[!UICONTROL View Sources]** Av och **[!UICONTROL Manage Sources]** Av | Återkalla all åtkomst till källor. |
 
