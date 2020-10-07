@@ -5,7 +5,7 @@ title: Utvecklarhandbok för API för schematabell
 description: Schemaregistret används för att komma åt schemabiblioteket i Adobe Experience Platform, med ett användargränssnitt och RESTful API som alla tillgängliga biblioteksresurser kan nås från. Med API:t för schemaregister kan du utföra grundläggande CRUD-åtgärder för att visa och hantera alla scheman och relaterade resurser som är tillgängliga för dig inom Adobe Experience Platform.
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 74a4a3cc713cc068be30379e8ee11572f8bb0c63
+source-git-commit: 9bd893820c7ab60bf234456fdd110fb2fbe6697c
 workflow-type: tm+mt
 source-wordcount: '1295'
 ht-degree: 0%
@@ -162,7 +162,7 @@ Ett svar returnerar information om hur din organisation använder [!DNL Schema R
 
 ## Förstå `CONTAINER_ID` {#container}
 
-Anrop till [!DNL Schema Registry] API kräver att du använder en `CONTAINER_ID`. Det finns två behållare som API-anrop kan göras mot: den **globala behållaren** och **innehavarbehållaren**.
+Anrop till [!DNL Schema Registry] API kräver att du använder en `CONTAINER_ID`. Det finns två behållare som API-anrop kan göras mot: den globala behållaren och innehavarbehållaren.
 
 ### Global behållare
 
