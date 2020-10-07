@@ -5,7 +5,7 @@ description: Lär dig hur du sammanfogar händelsedata för Experience Platform 
 seo-description: Lär dig hur du sammanfogar händelsedata för Experience Platform Web SDK
 keywords: merge;event data;eventMergeId;createEventMergeId;sendEvent;mergeId;merge id;eventMergeIdPromise; Merge Id Promise;
 translation-type: tm+mt
-source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
+source-git-commit: a362b67cec1e760687abb0c22dc8c46f47e766b7
 workflow-type: tm+mt
 source-wordcount: '408'
 ht-degree: 0%
@@ -19,7 +19,7 @@ ht-degree: 0%
 >
 >Den här funktionen är fortfarande under utveckling. Alla lösningar kan inte sammanfoga händelsedata enligt beskrivningen på den här sidan.
 
-Ibland är inte alla data tillgängliga när en händelse inträffar. Du kanske vill hämta data som du _har_ så att de inte går förlorade om användaren till exempel stänger webbläsaren. Å andra sidan kan du även inkludera data som blir tillgängliga senare.
+Ibland är inte alla data tillgängliga när en händelse inträffar. Du kanske vill samla in data som du har så att de inte går förlorade om användaren till exempel stänger webbläsaren. Å andra sidan kan du även inkludera data som blir tillgängliga senare.
 
 I sådana fall kan du sammanfoga data med tidigare händelser genom att skicka `eventMergeId` som ett alternativ till `event` kommandon enligt följande:
 
@@ -124,7 +124,7 @@ eventMergeIdPromise.then(function(results) {
 
 ## Kommentarer i XDM-format
 
-I händelsekommandot läggs `mergeId` det till i `xdm` nyttolasten.  Om du vill kan du skicka filen som en del av xdm-alternativet, så här: `mergeId`
+I händelsekommandot läggs `mergeId` det till i `xdm` nyttolasten.  Om du vill kan du skicka filen som en del av xdm-alternativet i stället, så här: `mergeId`
 
 ```javascript
 alloy("sendEvent", {
