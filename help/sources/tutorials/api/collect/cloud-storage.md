@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett molnlagringsutrymme från tredje part och föra in dem på plattformen via källanslutningar och API:er.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1581'
 ht-degree: 0%
@@ -60,7 +60,7 @@ Du kan skapa en källanslutning genom att göra en POST-förfrågan till [!DNL F
 
 Om du vill skapa en källanslutning måste du också definiera ett uppräkningsvärde för dataformatattributet.
 
-Använd följande uppräkningsvärden för **filbaserade kopplingar**:
+Använd följande uppräkningsvärden för filbaserade kopplingar:
 
 | Data.format | Uppräkningsvärde |
 | ----------- | ---------- |
@@ -68,7 +68,7 @@ Använd följande uppräkningsvärden för **filbaserade kopplingar**:
 | JSON-filer | `json` |
 | Parquet-filer | `parquet` |
 
-För alla **tabellbaserade kopplingar** används fasttextvärdet: `tabular`.
+För alla tabellbaserade anslutningar används fasttextvärdet: `tabular`.
 
 **API-format**
 
