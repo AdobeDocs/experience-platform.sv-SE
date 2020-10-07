@@ -5,9 +5,9 @@ title: Behandling av sekretessförfrågningar i Data Lake
 topic: overview
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt juridiska och organisatoriska sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kunddata som lagras i Data Lake.
 translation-type: tm+mt
-source-git-commit: 397f08efa276f7885e099a0a8d9dc6d23fe0e8cc
+source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
 workflow-type: tm+mt
-source-wordcount: '1239'
+source-wordcount: '1243'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ Vi rekommenderar att du har en fungerande förståelse för följande [!DNL Expe
 
 ## Identitetsnamnutrymmen {#namespaces}
 
-Adobe Experience Platform [!DNL Identity Service] förenar data om kundidentitet mellan system och enheter. [!DNL Identity Service] använder för **[!UICONTROL identity namespaces]** att ge sammanhang till identitetsvärden genom att koppla dem till deras ursprungssystem. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;E-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-id (&quot;AdCloud&quot;) eller ett Adobe Target-id (&quot;TNTID&quot;).
+Adobe Experience Platform [!DNL Identity Service] förenar data om kundidentitet mellan system och enheter. [!DNL Identity Service] använder identitetsnamnutrymmen för att ge kontext till identitetsvärden genom att koppla dem till deras ursprungssystem. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;E-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-id (&quot;AdCloud&quot;) eller ett Adobe Target-id (&quot;TNTID&quot;).
 
 [!DNL Identity Service] I lagras globalt definierade (standard) och användardefinierade (anpassade) identitetsnamnutrymmen. Standardnamnutrymmen är tillgängliga för alla organisationer (till exempel&quot;E-post&quot; och&quot;ECID&quot;), medan din organisation också kan skapa anpassade namnutrymmen som passar organisationens behov.
 
@@ -38,7 +38,7 @@ Mer information om namnutrymmen för identiteter i [!DNL Experience Platform]fin
 
 ## Lägga till identitetsdata i datauppsättningar
 
-När du skapar sekretessförfrågningar för [!DNL Data Lake]måste giltiga identitetsvärden (och tillhörande namnutrymmen) anges för varje enskild kund för att deras data ska kunna hittas och bearbetas därefter. Därför måste alla datauppsättningar som omfattas av sekretessförfrågningar innehålla en **[!UICONTROL identity descriptor]** i deras associerade XDM-schema.
+När du skapar sekretessförfrågningar för [!DNL Data Lake]måste giltiga identitetsvärden (och tillhörande namnutrymmen) anges för varje enskild kund för att deras data ska kunna hittas och bearbetas därefter. Därför måste alla datauppsättningar som omfattas av sekretessförfrågningar innehålla en identitetsbeskrivning i det associerade XDM-schemat.
 
 >[!NOTE]
 >
