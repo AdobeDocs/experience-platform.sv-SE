@@ -6,9 +6,9 @@ topic: overview
 type: Tutorial
 description: I den här självstudiekursen beskrivs hur du skapar en FTP- eller SFTP-källkoppling med hjälp av användargränssnittet för plattformen.
 translation-type: tm+mt
-source-git-commit: c3352c090ce9e5a89d9285aabdc4851632d4d437
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '680'
+source-wordcount: '679'
 ht-degree: 1%
 
 ---
@@ -43,7 +43,7 @@ Om du redan har en giltig FTP- eller SFTP-anslutning kan du hoppa över resten a
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att få åtkomst till FTP- eller SFTP-servern på [!DNL Platform]måste du ange serverns **värdnamn**, ett **användarnamn** och ett **lösenord**.
+För att få åtkomst till FTP- eller SFTP-servern på [!DNL Platform]måste du ange serverns värdnamn, användarnamn och lösenord.
 
 ## Anslut till FTP- eller SFTP-servern
 
