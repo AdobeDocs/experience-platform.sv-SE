@@ -5,9 +5,9 @@ title: Användarhandbok för Segmentering Service Segment Builder
 topic: ui guide
 description: 'I Segment Builder finns en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper. '
 translation-type: tm+mt
-source-git-commit: d2f098cb9e4aaf5beaad02173a22a25a87a43756
+source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
 workflow-type: tm+mt
-source-wordcount: '1660'
+source-wordcount: '1668'
 ht-degree: 0%
 
 ---
@@ -21,9 +21,9 @@ ht-degree: 0%
 
 ## Byggstenar för segmentdefinitioner
 
-De grundläggande byggstenarna för segmentdefinitioner är **[!UICONTROL Attributes]** och **[!UICONTROL Events]**. Dessutom **[!UICONTROL Audiences]** kan attributen och händelserna som finns i befintliga komponenter också användas som komponenter för nya definitioner.
+De grundläggande byggstenarna för segmentdefinitioner är attribut och händelser. Dessutom kan attribut och händelser i befintliga målgrupper också användas som komponenter för nya definitioner.
 
-Dessa byggstenar visas i **[!UICONTROL Fields]** avsnittet till vänster på [!DNL Segment Builder] arbetsytan. **[!UICONTROL Fields]** innehåller en flik för varje huvudbyggsten: **[!UICONTROL Attributes]**, **[!UICONTROL Events]** och **[!UICONTROL Audiences]**.
+Dessa byggstenar visas i **[!UICONTROL Fields]** avsnittet till vänster på [!DNL Segment Builder] arbetsytan. **[!UICONTROL Fields]** innehåller en flik för varje huvudbyggsten: &quot;[!UICONTROL Attributes]&quot;, &quot;[!UICONTROL Events]&quot; och &quot;[!UICONTROL Audiences]&quot;.
 
 ![](../images/ui/segment-builder/segment-fields.png)
 
@@ -45,11 +45,11 @@ Du kan söka efter alla typer av komponenter genom att skriva deras namn i sökf
 >
 >Det kan ta upp till 24 timmar innan anpassade schemafält som definieras av organisationen visas och blir tillgängliga för användning i byggregler.
 
-Sedan kan du enkelt dra och släppa [!DNL ExperienceEvents] och [!UICONTROL Event Types] in i segmentdefinitionen.
+Du kan sedan enkelt dra och släppa [!DNL ExperienceEvents] och[!UICONTROL Event Types]släppa i segmentdefinitionen.
 
 ![](../images/ui/segment-builder/events-eventTypes.png)
 
-Som standard visas endast ifyllda schemafält från ditt datalager. Det inkluderar [!UICONTROL Event Types]. Om [!UICONTROL Event Types] listan inte visas, eller om du bara kan välja &quot;[!UICONTROL Any]&quot; som [!UICONTROL Event Type]en, markerar du kugghjulsikonen bredvid **[!UICONTROL Fields]** och väljer **[!UICONTROL Show full XDM schema]** under **[!UICONTROL Available Fields]**. Välj kugghjulsikonen igen för att gå tillbaka till **[!UICONTROL Fields]** fliken. Nu bör du kunna visa flera [!UICONTROL Event Types] - och schemafält, oavsett om de innehåller data eller inte.
+Som standard visas endast ifyllda schemafält från ditt datalager. Det inkluderar &quot;[!UICONTROL Event Types]&quot;. Om listan &quot;[!UICONTROL Event Types]&quot; inte visas, eller om du bara kan välja &quot;[!UICONTROL Any]&quot; som &quot;[!UICONTROL Event Type]&quot;, markerar du **kugghjulsikonen** bredvid **[!UICONTROL Fields]** och väljer **[!UICONTROL Show full XDM schema]** under **[!UICONTROL Available Fields]**. Välj **kugghjulsikonen** igen för att återgå till **[!UICONTROL Fields]** fliken. Nu bör du kunna visa flera &quot;[!UICONTROL Event Types]&quot;- och schemafält, oavsett om de innehåller data eller inte.
 
 ![](../images/ui/segment-builder/show-populated.png)
 
@@ -63,13 +63,13 @@ Du kan hovra över ⓘ bredvid en målgrupp för att visa information om målgru
 
 ![](../images/ui/segment-builder/audience-folder-structure.png)
 
-Du kan också söka efter [!UICONTROL Audiences] med sökfältet som använder [Lucenes söksyntax](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Om du väljer en mapp på den översta nivån på fliken **[!UICONTROL Audiences]** visas sökfältet så att du kan söka i mappen. Sökresultaten fylls bara i när hela ord anges. Om du till exempel vill söka efter ett [!UICONTROL Audience] namn `Online Shoppers`börjar du skriva &quot;Online&quot; i sökfältet. När ordet &quot;Online&quot; har skrivits in fullständigt visas sökresultat som innehåller ordet &quot;Online&quot;.
+Du kan också söka efter målgrupper med sökfältet, som använder [Lucenes söksyntax](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Om du väljer en mapp på den översta nivån på fliken **[!UICONTROL Audiences]** visas sökfältet så att du kan söka i mappen. Sökresultaten fylls bara i när hela ord anges. Om du till exempel vill hitta en målgrupp med namnet `Online Shoppers`&quot;Online&quot; börjar du skriva&quot;Online&quot; i sökfältet. När ordet &quot;Online&quot; har skrivits in fullständigt visas sökresultat som innehåller ordet &quot;Online&quot;.
 
 ## Regelbyggarens arbetsyta {#rule-builder-canvas}
 
 En segmentdefinition är en samling regler som används för att beskriva viktiga egenskaper eller beteenden hos en målgrupp. Dessa regler skapas med hjälp av regelbyggarens arbetsyta, som finns i mitten av [!DNL Segment Builder].
 
-Om du vill lägga till en ny regel i segmentdefinitionen drar du en platta från **[!UICONTROL Fields]** fliken och släpper den på regelbyggarens arbetsyta. Därefter visas sammanhangsspecifika alternativ beroende på vilken typ av data som läggs till. Tillgängliga datatyper: strängar, datum [!DNL ExperienceEvents], [!UICONTROL Event Types]och [!UICONTROL Audiences].
+Om du vill lägga till en ny regel i segmentdefinitionen drar du en platta från **[!UICONTROL Fields]** fliken och släpper den på regelbyggarens arbetsyta. Därefter visas sammanhangsspecifika alternativ beroende på vilken typ av data som läggs till. Tillgängliga datatyper: strängar, datum, [!DNL ExperienceEvents]&quot;[!UICONTROL Event Types]&quot; och målgrupper.
 
 ![](../images/ui/segment-builder/rule-builder-canvas.png)
 
@@ -133,7 +133,7 @@ Om du vill välja en sammanfogningsprincip för segmentdefinitionen väljer du k
 
 När du skapar en segmentdefinition visas en uppskattning av storleken på det **[!UICONTROL Segment Properties]** segment som skapas i avsnittet till höger om arbetsytan, så att du kan justera segmentdefinitionen efter behov innan du skapar själva målgruppen.
 
-I det **[!UICONTROL Segment Properties]** här avsnittet kan du även ange viktig information om segmentdefinitionen, inklusive dess **[!UICONTROL Name]** och **[!UICONTROL Description]**. Segmentdefinitionsnamn används för att identifiera ditt segment bland dem som definieras av organisationen och bör därför vara beskrivande, koncisa och unika.
+I det **[!UICONTROL Segment Properties]** här avsnittet kan du även ange viktig information om segmentdefinitionen, inklusive namn och beskrivning. Segmentdefinitionsnamn används för att identifiera ditt segment bland dem som definieras av organisationen och bör därför vara beskrivande, koncisa och unika.
 
 När du fortsätter att skapa en segmentdefinition kan du visa en sidnumrerad förhandsvisning av målgruppen genom att välja **[!UICONTROL View Profiles]**.
 
