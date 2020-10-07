@@ -5,7 +5,7 @@ title: Experience Data Model (XDM) System
 topic: overview
 description: 'Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. Experience Data Model (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering. '
 translation-type: tm+mt
-source-git-commit: d49bbc91b67dec0468b46d165521c7d097a801ee
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1638'
 ht-degree: 0%
@@ -19,7 +19,7 @@ Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience
 
 XDM är en öppet dokumenterad specifikation som utformats för att förbättra möjligheterna med digitala upplevelser. Den innehåller gemensamma strukturer och definitioner för alla program som används för att kommunicera med [!DNL Platform] tjänster. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation som kan ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och uttrycka kundattribut i personaliseringssyfte.
 
-XDM är det grundläggande ramverk som gör det möjligt för Adobe Experience Cloud, som drivs av [!DNL Experience Platform], att leverera rätt budskap till rätt person, i rätt kanal, i precis rätt ögonblick. Metoden som [!DNL Experience Platform] byggs på, **XDM System**, används för att göra [!DNL Experience Data Model] scheman tillgängliga för [!DNL Platform] tjänster.
+XDM är det grundläggande ramverk som gör det möjligt för Adobe Experience Cloud, som drivs av [!DNL Experience Platform], att leverera rätt budskap till rätt person, i rätt kanal, i precis rätt ögonblick. Metoden som [!DNL Experience Platform] byggs på, XDM System, används för [!DNL Experience Data Model] scheman som ska användas av [!DNL Platform] tjänster.
 
 Det här dokumentet innehåller en översikt över XDM-systemets roll i [!DNL Experience Platform].
 
@@ -44,7 +44,7 @@ Data som är avsedda att användas i [!DNL Experience Platform] är grupperade i
 * **Postdata**: Innehåller information om attributen för ett ämne. Ett ämne kan vara en organisation eller individ.
 * **Tidsseriedata**: Ger en ögonblicksbild av systemet när en åtgärd vidtas, antingen direkt eller indirekt, av ett postämne.
 
-Alla XDM-scheman beskriver data som kan kategoriseras som post- eller tidsserier. Databeteendet för ett schema definieras av schemats **klass**, som tilldelas ett schema när det skapas för första gången. XDM-klasser beskriver det minsta antal egenskaper ett schema måste innehålla för att representera ett visst databeteende.
+Alla XDM-scheman beskriver data som kan kategoriseras som post- eller tidsserier. Databeteendet för ett schema definieras av schemats klass, som tilldelas till ett schema när det skapas första gången. XDM-klasser beskriver det minsta antal egenskaper ett schema måste innehålla för att representera ett visst databeteende.
 
 Även om du kan definiera egna klasser i [!DNL Schema Registry]bör du använda de klasser du föredrar **[!DNL XDM Individual Profile]** och **[!DNL XDM ExperienceEvent]** för data i post- och tidsserier. Dessa klasser beskrivs mer ingående nedan.
 
