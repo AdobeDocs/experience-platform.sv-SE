@@ -5,7 +5,7 @@ title: Skapa ETL-integreringar
 topic: overview
 description: Integreringsguiden för ETL beskriver allmänna steg för att skapa säkra anslutningar med höga prestanda för Experience Platform och inmatning av data på plattformen.
 translation-type: tm+mt
-source-git-commit: f4a4e65a087313dc4e2414f999e021e3f6e17137
+source-git-commit: a362b67cec1e760687abb0c22dc8c46f47e766b7
 workflow-type: tm+mt
 source-wordcount: '4173'
 ht-degree: 0%
@@ -79,7 +79,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 Till att börja med loggar en ETL-användare in i [!DNL Experience Platform] användargränssnittet och skapar datauppsättningar för förtäring med hjälp av en standardanslutning eller push-tjänstanslutning.
 
-I användargränssnittet skapar användaren utdata genom att välja ett dataschema. Vilket schema som väljs beror på vilken typ av data (post- eller tidsserie) som inhämtas [!DNL Platform]. Genom att klicka på fliken Scheman i användargränssnittet kan användaren visa alla tillgängliga scheman, inklusive den beteendetyp som schemat stöder.
+I användargränssnittet skapar användaren utdatauppsättningen genom att välja ett dataschema. Vilket schema som väljs beror på vilken typ av data (post- eller tidsserie) som inhämtas [!DNL Platform]. Genom att klicka på fliken Scheman i användargränssnittet kan användaren visa alla tillgängliga scheman, inklusive den beteendetyp som schemat stöder.
 
 I ETL-verktyget kommer användaren att börja designa sina mappningstransformeringar efter att ha konfigurerat lämplig anslutning (med hjälp av sina autentiseringsuppgifter). ETL-verktyget antas redan ha [!DNL Experience Platform] anslutningar installerade (processen definieras inte i den här integreringshandboken).
 
@@ -95,7 +95,7 @@ Med hjälp av datakällan för mappningen kan en lista över alla tillgängliga 
 
 Du kan utfärda en enda API-begäran för att visa alla tillgängliga datauppsättningar (t.ex. `GET /dataSets`), med bästa praxis att inkludera frågeparametrar som begränsar svarsstorleken.
 
-Om _fullständig_ datauppsättningsinformation begärs kan svarsnyttolasten nå över 3 GB, vilket kan försämra den totala prestandan. Om du använder frågeparametrar för att filtrera bara den information som behövs blir [!DNL Catalog] frågorna därför mer effektiva.
+Om fullständig datauppsättningsinformation begärs kan svarsnyttolasten nå över 3 GB, vilket kan försämra den totala prestandan. Om du använder frågeparametrar för att filtrera bara den information som behövs blir [!DNL Catalog] frågorna därför mer effektiva.
 
 #### Listfiltrering
 
@@ -165,7 +165,7 @@ Svaret innehåller tre (`limit=3`) datauppsättningar som visar &quot;name&quot;
 
 ### Visa dataschema
 
-Egenskapen schemaRef för en datamängd innehåller en URI som refererar till det XDM-schema som datamängden baseras på. XDM-schemat (&quot;schemaRef&quot;) representerar alla _möjliga_ fält som kan användas av datauppsättningen, inte nödvändigtvis de fält som _används_ (se &quot;observerableSchema&quot; nedan).
+Egenskapen schemaRef för en datamängd innehåller en URI som refererar till det XDM-schema som datamängden baseras på. XDM-schemat (&quot;schemaRef&quot;) representerar alla möjliga fält som kan användas av datauppsättningen, inte nödvändigtvis de fält som används (se &quot;observerableSchema&quot; nedan).
 
 XDM-schemat är det schema som du använder när du behöver visa en lista över alla tillgängliga fält som kan skrivas till användaren.
 
@@ -601,7 +601,7 @@ Information om hur du skapar en batch, inklusive exempelbegäranden och svar, fi
 
 ### Skriv till datauppsättning
 
-När en ny grupp har skapats kan filer sedan överföras till en viss datauppsättning. Flera filer kan publiceras i en grupp tills den befordras. Filer kan överföras med API:t för överföring av _liten fil_; Om filerna är för stora och gatewaygränsen överskrids kan du använda API:t för _stor filöverföring_. Information om hur du använder både stor och liten filöverföring finns i översikten över [](../ingestion/batch-ingestion/overview.md)gruppinmatning.
+När en ny grupp har skapats kan filer sedan överföras till en viss datauppsättning. Flera filer kan publiceras i en grupp tills den befordras. Filer kan överföras med API:t för liten filöverföring; Om filerna är för stora och gatewaygränsen överskrids kan du använda API:t för stor filöverföring. Information om hur du använder både stor och liten filöverföring finns i översikten över [](../ingestion/batch-ingestion/overview.md)gruppinmatning.
 
 **Begäran**
 
