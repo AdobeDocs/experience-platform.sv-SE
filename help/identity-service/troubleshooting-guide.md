@@ -5,7 +5,7 @@ title: Felsökningsguide för Adobe Experience Platform Identity Service
 topic: troubleshooting
 description: Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform Identity Service samt en felsökningsguide för vanliga fel.
 translation-type: tm+mt
-source-git-commit: 04efbf63741ef39bbf0b22795be74087f1f7c595
+source-git-commit: 28b733a16b067f951a885c299d59e079f0074df8
 workflow-type: tm+mt
 source-wordcount: '2248'
 ht-degree: 0%
@@ -57,7 +57,7 @@ Fält som ZIP-koder och IP-adresser ska inte märkas som identiteter för enskil
 
 ## Varför länkar inte mina identitetsfält på det sätt jag förväntar mig?
 
-Med hjälp av [`/cluster/members` slutpunkten](./api/list-cluster-identites.md) i API:t för identitetstjänsten kan du visa associerade identiteter för ett eller flera identitetsfält. Om svaret inte returnerar de länkade identiteter som du förväntar dig ska du se till att du anger rätt identitetsinformation i dina XDM-data. Mer information finns i avsnittet om [att tillhandahålla XDM-data till identitetstjänsten](./home.md) i översikten över identitetstjänsten.
+Med hjälp av [`/cluster/members` slutpunkten](./api/list-cluster-identites.md) i identitetstjänstens API kan du visa associerade identiteter för ett eller flera identitetsfält. Om svaret inte returnerar de länkade identiteter som du förväntar dig ska du se till att du anger rätt identitetsinformation i dina XDM-data. Mer information finns i avsnittet om [att tillhandahålla XDM-data till identitetstjänsten](./home.md) i översikten över identitetstjänsten.
 
 ## Vad är ett identitetsnamnutrymme?
 
@@ -100,11 +100,11 @@ Med API:t för [identitetstjänsten](https://www.adobe.io/apis/experienceplatfor
 
 ## Vad är sammansatta identiteter och XID:n?
 
-Identiteter refereras i API-anrop antingen av deras sammansatta identitet eller XID. En **sammansatt identitet** är en representation av en identitet som innehåller ett ID-värde och ett namnutrymme. Ett **XID** är en identifierare med ett enda värde som representerar samma konstruktion som en sammansatt identitet (ett ID och ett namnutrymme), och tilldelas automatiskt till nya identiteter när de bevaras av identitetstjänsten. Mer information finns i API-översikt [för](./home.md) identitetstjänsten.
+Identiteter refereras i API-anrop antingen av deras sammansatta identitet eller XID. En sammansatt identitet är en representation av en identitet som innehåller ett ID-värde och ett namnutrymme. Ett XID är en identifierare med ett enda värde som representerar samma konstruktion som en sammansatt identitet (ett ID och ett namnutrymme), och tilldelas automatiskt till nya identiteter när de bevaras av identitetstjänsten. Mer information finns i API-översikt [för](./home.md) identitetstjänsten.
 
 ## Hur hanterar Identity Service personligt identifierbar information (PII)?
 
-Identitetstjänsten skapar en stark, envägs kryptografisk hash av PII-filen innan beständiga värden används. Identitetsdata i namnutrymmena &quot;Telefon&quot; och &quot;E-post&quot; hashas automatiskt med SHA-256, där värdena &quot;E-post&quot; automatiskt konverteras till gemener före hashning.
+Identitetstjänsten skapar en stark, envägs kryptografisk hash av PII-filen innan beständiga värden används. Identitetsdata i namnutrymmena&quot;Telefon&quot; och&quot;E-post&quot; hashas automatiskt med SHA-256, där värdena&quot;E-post&quot; automatiskt konverteras till gemener före hashning.
 
 ## Ska jag kryptera alla PII-filer innan jag skickar till plattformen?
 
@@ -114,7 +114,7 @@ Anvisningar om hur du använder och hanterar dataanvändningsetiketter finns i s
 
 ## Är det något du bör tänka på när du hash-kodar PII-baserade identiteter?
 
-Om du skickar hash-kodade PII-värden till identitetstjänsten måste du använda samma krypteringsmetod i alla datauppsättningar. Detta garanterar att samma identitetsvärde för alla datauppsättningar genererar samma hash-kodade värden och kan matchas och länkas korrekt i identitetsdiagrammet.
+Om du skickar hash-kodade PII-värden till identitetstjänsten måste du använda samma krypteringsmetod i alla datauppsättningar. Detta garanterar att samma identitetsvärde över datauppsättningar genererar samma hash-kodade värden och kan matchas och länkas korrekt i identitetsdiagrammet.
 
 <!-- Documentation does not show any methods of editing the identityMap directly, and this table never overtly recommends using identityMap anyway. This should probably be removed unless PM thinks otherwise. -->
 <!-- ## When should I use the Identity map rather than labeling individual XDM schema fields?
