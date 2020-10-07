@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: 'Det här dokumentet innehåller en stegvis självstudiekurs för att få tillgång till ett Adobe Experience Platform-utvecklarkonto för att ringa anrop till Experience Platform API:er. '
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '868'
 ht-degree: 0%
@@ -89,17 +89,17 @@ Stegen beskrivs närmare nedan.
 
 Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med din Adobe ID. Följ sedan stegen som beskrivs i självstudiekursen om hur du [skapar ett tomt projekt](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) i dokumentationen för Adobe Developer Console.
 
-När du har skapat ett nytt projekt klickar du **[!UICONTROL Add API]** på skärmen _Projektöversikt_ .
+När du har skapat ett nytt projekt klickar du **[!UICONTROL Add API]** på skärmen **Projektöversikt** .
 
 ![](images/authentication/add-api-button.png)
 
-Skärmen _Lägg till ett API_ visas. Klicka på produktikonen för Adobe Experience Platform och välj sedan **[!UICONTROL Experience Platform API]** innan du klickar **[!UICONTROL Next]**.
+Skärmen **Lägg till ett API** visas. Klicka på produktikonen för Adobe Experience Platform och välj sedan **[!UICONTROL Experience Platform API]** innan du klickar **[!UICONTROL Next]**.
 
 ![](images/authentication/add-platform-api.png)
 
 När du har valt [!DNL Experience Platform] att lägga till API:t i projektet följer du stegen som beskrivs i självstudiekursen om hur du [lägger till ett API i ett projekt med ett tjänstkonto (JWT)](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/services-add-api-jwt.md) (med början från steget Konfigurera API) för att slutföra processen.
 
-När API:t har lagts till i projektet visas följande autentiseringsuppgifter som krävs i alla anrop till API:er på _projektöversiktssidan_ [!DNL Experience Platform] :
+När API:t har lagts till i projektet visas följande autentiseringsuppgifter som krävs i alla anrop till API:er på **projektöversiktssidan** [!DNL Experience Platform] :
 
 * `{API_KEY}` (Klient-ID)
 * `{IMS_ORG}` (Organisations-ID)
