@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: Den här självstudiekursen går igenom två huvudavsnitt. Först skapar du en maskininlärningsmodell med hjälp av en mall i JupyterLab Notebook. Därefter ska du använda anteckningsboken för att hämta arbetsflöden i JupyterLab för att skapa ett recept i arbetsytan Data Science.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '2316'
 ht-degree: 0%
@@ -302,7 +302,7 @@ Syftet med kursen är att skapa en modell med hjälp av funktioner och etiketter
 
 >[!NOTE]
 > 
->_Funktionerna_ avser den indatavariabel som används av maskininlärningsmodellen för att förutsäga _etiketterna_.
+>Funktionerna avser den indatavariabel som används av maskininlärningsmodellen för att förutsäga etiketterna.
 
 Funktionen ska omfatta `train()` utbildningsmodellen och returnera den utbildade modellen. Exempel på olika modeller finns i dokumentationen till användarhandboken [med](https://scikit-learn.org/stable/user_guide.html)vetenskaplig information.
 
