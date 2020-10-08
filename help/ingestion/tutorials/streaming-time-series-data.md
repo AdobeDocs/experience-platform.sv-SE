@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform datainmatningstjänst.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: fce215edb99cccc8be0109f8743c9e56cace2be0
 workflow-type: tm+mt
 source-wordcount: '1163'
 ht-degree: 0%
@@ -217,11 +217,12 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/des
 
 >[!NOTE]
 >
->&#x200B; &#x200B;**ID-namnområdeskoder**
+>&#x200B;**namnområdeskoder för identitet**
 >
 > Kontrollera att koderna är giltiga - i exemplet ovan används&quot;email&quot; som är ett vanligt identitetsnamnutrymme. Andra vanliga standardnamnutrymmen för identiteter finns i Vanliga frågor om [identitetstjänsten](../../identity-service/troubleshooting-guide.md#what-are-the-standard-identity-namespaces-provided-by-experience-platform).
 >
 > Om du vill skapa ett anpassat namnutrymme följer du de steg som beskrivs i [översikten](../../identity-service/home.md)över identitetsnamnutrymmet.
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 201 med information om schemats nya primära identitetsnamnrymd.
