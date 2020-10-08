@@ -3,7 +3,7 @@ keywords: Experience Platform;profile;real-time customer profile;troubleshooting
 title: Användarhandbok för sammanslagningsprinciper
 topic: guide
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: fcced39c0a78457ebb108b7378e32f1b2f75808b
 workflow-type: tm+mt
 source-wordcount: '1368'
 ht-degree: 0%
@@ -119,7 +119,7 @@ När du har gjort de nödvändiga ändringarna väljer du **[!UICONTROL Save]** 
 
 När du skapar eller uppdaterar en sammanfogningsprincip görs en kontroll för att avgöra om sammanfogningsprincipen bryter mot någon av de dataanvändningsprinciper som din organisation har definierat. Dataanvändningspolicyer är en del av Adobe Experience Platform [!DNL Data Governance] och är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från för att utföra på specifika [!DNL Platform] data. Om en sammanfogningsprincip till exempel användes för att skapa ett segment som aktiverats för ett tredjepartsmål, och din organisation har en dataanvändningsprincip som förhindrar export av specifika data till tredje part, får du ett&quot;[!UICONTROL Data governance policy violation detected]&quot;-meddelande när du försöker spara sammanfogningsprincipen.
 
-Det här meddelandet innehåller en lista över dataanvändningsprinciper som har överträtts och gör att du kan visa information om överträdelsen genom att välja en princip i listan. När du har valt en obehörig princip anger fliken orsaken till överträdelsen och de aktiveringar som påverkas], där de ger mer information om hur dataanvändningsprincipen har överträtts. **[!UICONTROL Data lineage]**
+Det här meddelandet innehåller en lista över dataanvändningsprinciper som har överträtts och gör att du kan visa information om överträdelsen genom att välja en princip i listan. När du har valt en obehörig princip anger fliken orsaken till överträdelsen och de aktiveringar som påverkas, och där finns mer information om hur dataanvändningsprincipen har överträtts. **[!UICONTROL Data lineage]**
 
 Om du vill veta mer om hur datastyrning utförs inom Adobe Experience Platform börjar du med att läsa översikten över [datastyrning](../../data-governance/home.md).
 
