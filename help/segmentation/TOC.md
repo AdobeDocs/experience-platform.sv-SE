@@ -5,9 +5,9 @@ user-guide-title: Hjälp om Adobe Experience Platform segmenteringstjänst
 breadcrumb-title: Segmentation Service Guide
 user-guide-description: Build segments and generate audiences from your Real-time Customer Profile data.
 translation-type: tm+mt
-source-git-commit: 1bfb876dc1665ebef4450a6f5363fba1ea1b7c61
+source-git-commit: beacce03136e1620ff57fb549f335d2199bb6001
 workflow-type: tm+mt
-source-wordcount: '118'
+source-wordcount: '121'
 ht-degree: 7%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 7%
 
 - [Översikt](home.md)
 - [Segmenteringsdatatyper](data-types.md)
-- Utvecklarhandbok för Segmenterings-API{#api}
+- Utvecklarhandbok för Segmenterings-API {#api}
    - [Översikt](api/overview.md)
    - [Komma igång](api/getting-started.md)
    - [Exportera jobb](api/export-jobs.md)
@@ -31,6 +31,7 @@ ht-degree: 7%
    - [Översikt](ui/overview.md)
    - [Segment Builder](ui/segment-builder.md)
    - [Direktuppspelningssegmentering](ui/streaming-segmentation.md)
+   - [Omfaktorisering av tidsbegränsningar](ui/segment-refactoring.md)
 - [Ansvarsfriskrivningar](honoring-opt-outs.md)
 - [Segmentering för flera enheter](multi-entity-segmentation.md)
 - Profilfrågespråk {#pql}
@@ -47,7 +48,7 @@ ht-degree: 7%
    - [Filterfunktioner](pql/filter-functions.md)
    - [Logiska kvantifierare](pql/logical-quantifiers.md)
    - [Diverse funktioner](pql/misc-functions.md)
-- Självstudiekurser {#tutorials}
+- Tutorials {#tutorials}
    - [Skapa ett segment](tutorials/create-a-segment.md)
    - [Utvärdera ett segment](tutorials/evaluate-a-segment.md)
    - [Skapa en datauppsättning för att exportera data](tutorials/create-dataset-export-segment.md)
