@@ -3,9 +3,9 @@ keywords: Experience Platform;profile;real-time customer profile;troubleshooting
 title: Användarhandbok för sammanslagningsprinciper
 topic: guide
 translation-type: tm+mt
-source-git-commit: fcced39c0a78457ebb108b7378e32f1b2f75808b
+source-git-commit: 45f42bae4060e107e6c131659cea5d10457c34f8
 workflow-type: tm+mt
-source-wordcount: '1368'
+source-wordcount: '1365'
 ht-degree: 0%
 
 ---
@@ -91,7 +91,7 @@ När du väljer ett **[!UICONTROL Attribute merge]** värde kan du välja **[!UI
 
 Ett exempel är om din organisation har information i en datauppsättning som är att föredra eller lita på framför data i en annan datauppsättning.
 
-När du markerar **[!UICONTROL Dataset precedence]**&#x200B;öppnas en separat panel där du måste välja från **[!UICONTROL Available datasets]** vilken datauppsättning som ska inkluderas (eller markera alla med kryssrutan). Du kan sedan dra och släppa datauppsättningarna i panelen [**!UICONTROL-markerade datauppsättningar]** och dra dem till rätt prioritetsordning. Den översta datauppsättningen får högsta prioritet, den andra datauppsättningen får näst högsta prioritet och så vidare.
+När du markerar **[!UICONTROL Dataset precedence]**&#x200B;öppnas en separat panel där du måste välja från **[!UICONTROL Available datasets]** vilken datauppsättning som ska inkluderas (eller markera alla med kryssrutan). Du kan sedan dra och släppa datauppsättningarna på **[!UICONTROL Selected Datasets]** panelen och dra dem till rätt prioritetsordning. Den översta datauppsättningen får högsta prioritet, den andra datauppsättningen får näst högsta prioritet och så vidare.
 
 ![](../images/merge-policies/dataset-precedence.png)
 
