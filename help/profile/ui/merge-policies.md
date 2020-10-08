@@ -61,7 +61,7 @@ Skärmen visas så att du kan ange viktig information för den nya sammanfogning
 
 ### Tidsstämpel beställd {#timestamp-ordered}
 
-När profilposter hämtas till Experience Platform hämtas en systemtidsstämpel vid tidpunkten för inmatningen och läggs till i posten. När **[!UICONTROL Timestamp ordered]** är markerat som&quot;[!UICONTROL Attribute merge]&quot;-typ för en sammanfogningsprincip sammanfogas profiler baserat på systemets tidsstämpel. Sammanfogningen görs med andra ord baserat på den tidsstämpel som användes när posten hämtades till Platform.
+När profilposter hämtas till Experience Platform hämtas en systemtidsstämpel vid tidpunkten för inmatningen och läggs till i posten. När **[!UICONTROL Timestamp ordered]** är valt som **[!UICONTROL Attribute merge]** typ för en sammanfogningsprincip sammanfogas profiler baserat på systemets tidsstämpel. Sammanfogningen görs med andra ord baserat på den tidsstämpel som användes när posten hämtades till Platform.
 
 Ibland kan det finnas situationer där det är nödvändigt att ange en anpassad tidsstämpel och låta sammanfogningsprincipen använda den anpassade tidsstämpeln i stället för systemtidsstämpeln. Exempel på detta är att fylla i data baklänges eller att säkerställa rätt ordning för händelser om posterna är inlästa i fel ordning.
 
