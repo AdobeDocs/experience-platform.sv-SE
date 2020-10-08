@@ -5,9 +5,9 @@ title: Användarhandbok för Segmentering Service Segment Builder
 topic: ui guide
 description: 'I Segment Builder finns en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper. '
 translation-type: tm+mt
-source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
+source-git-commit: beacce03136e1620ff57fb549f335d2199bb6001
 workflow-type: tm+mt
-source-wordcount: '1668'
+source-wordcount: '1719'
 ht-degree: 0%
 
 ---
@@ -72,6 +72,10 @@ En segmentdefinition är en samling regler som används för att beskriva viktig
 Om du vill lägga till en ny regel i segmentdefinitionen drar du en platta från **[!UICONTROL Fields]** fliken och släpper den på regelbyggarens arbetsyta. Därefter visas sammanhangsspecifika alternativ beroende på vilken typ av data som läggs till. Tillgängliga datatyper: strängar, datum, [!DNL ExperienceEvents]&quot;[!UICONTROL Event Types]&quot; och målgrupper.
 
 ![](../images/ui/segment-builder/rule-builder-canvas.png)
+
+>[!IMPORTANT]
+>
+>De senaste ändringarna av Adobe Experience Platform har uppdaterat användningen av operatorerna `OR` och `AND` logiskt mellan händelserna. Dessa uppdateringar påverkar inte befintliga segment. Alla efterföljande uppdateringar av befintliga segment och nya segment kommer dock att påverkas av dessa ändringar. Mer information finns i [tidskonstanternas uppdatering](./segment-refactoring.md) .
 
 ### Lägga till målgrupper
 
