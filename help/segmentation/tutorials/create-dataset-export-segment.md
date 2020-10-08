@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: I den här självstudiekursen går du igenom de steg som krävs för att skapa en datauppsättning som kan användas för att exportera ett målgruppssegment med hjälp av användargränssnittet i Experience Platform.
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: fce215edb99cccc8be0109f8743c9e56cace2be0
 workflow-type: tm+mt
 source-wordcount: '722'
 ht-degree: 0%
@@ -78,7 +78,7 @@ När datauppsättningen har ett namn och en beskrivning klickar du på **[!UICON
 
 En tom datauppsättning har nu skapats och du har returnerats till **[!UICONTROL Dataset Activity]** fliken i **[!UICONTROL Datasets]** arbetsytan. Du bör se namnet på datauppsättningen i det övre vänstra hörnet av arbetsytan, tillsammans med ett meddelande om att&quot;Inga grupper har lagts till&quot;. Detta förväntas eftersom du inte har lagt till några batchar i den här datauppsättningen än.
 
-Till höger på arbetsytan Datauppsättningar visas fliken med information om den nya datauppsättningen, till exempel datauppsättnings-ID, namn, beskrivning, tabellnamn, schema], direktuppspelning och källa. **[!UICONTROL Info]** Fliken innehåller även information om när datauppsättningen skapades och om dess senaste ändringsdatum. **[!UICONTROL Info]**
+Till höger på arbetsytan Datauppsättningar visas fliken med information om den nya datauppsättningen, till exempel datauppsättnings-ID, namn, beskrivning, tabellnamn, schema, direktuppspelning och källa. **[!UICONTROL Info]** Fliken innehåller även information om när datauppsättningen skapades och om dess senaste ändringsdatum. **[!UICONTROL Info]**
 
 Observera **[!UICONTROL Dataset ID]** detta eftersom det här värdet krävs för att slutföra arbetsflödet för målgruppsexport.
 
