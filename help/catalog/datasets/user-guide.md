@@ -5,7 +5,7 @@ title: Användarhandbok för datauppsättningar
 topic: datasets
 description: Den här användarhandboken för datauppsättningar innehåller anvisningar om hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 translation-type: tm+mt
-source-git-commit: eaff457140ba4ac7c25a0f3a3e5aef47d1b99773
+source-git-commit: 79dca07d3e6ecf998a6278fa49178a7fa8cc0e8c
 workflow-type: tm+mt
 source-wordcount: '1105'
 ht-degree: 0%
@@ -62,10 +62,10 @@ Om du vill skapa en ny datauppsättning börjar du med att klicka **[!UICONTROL 
 
 På nästa skärm visas följande två alternativ för att skapa en ny datauppsättning:
 
-* [Skapa datauppsättning från schema](#create-a-dataset-with-an-existing-schema)
-* [Skapa datauppsättning från CSV-fil](#create-a-dataset-with-a-csv-file)
+* [Skapa datauppsättning från schema](#schema)
+* [Skapa datauppsättning från CSV-fil](#csv)
 
-### Skapa en datauppsättning med ett befintligt schema
+### Skapa en datauppsättning med ett befintligt schema {#schema}
 
 Klicka på **[!UICONTROL Create dataset]** skärmen **[!UICONTROL Create dataset from schema]** för att skapa en ny tom datauppsättning.
 
@@ -79,7 +79,7 @@ Steget **[!UICONTROL Configure dataset]** visas. Ange ett namn och en valfri bes
 
 ![](../images/datasets/user-guide/configure_dataset_schema.png)
 
-### Skapa en datauppsättning med en CSV-fil
+### Skapa en datauppsättning med en CSV-fil {#csv}
 
 När en datauppsättning skapas med en CSV-fil skapas ett ad hoc-schema som ger datauppsättningen en struktur som matchar den angivna CSV-filen. Klicka på rutan som anger på **[!UICONTROL Create dataset]** skärmen **[!UICONTROL Create dataset from CSV file]**.
 
