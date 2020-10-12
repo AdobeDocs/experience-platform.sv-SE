@@ -5,7 +5,7 @@ seo-title: HTTP-målet är en kunddataplattform i realtid i Adobe som hjälper d
 description: HTTP-målet är en kunddataplattform i realtid i Adobe som hjälper dig att skicka profildata till HTTP-slutpunkter från tredje part.
 seo-description: HTTP-målet är en kunddataplattform i realtid i Adobe som hjälper dig att skicka profildata till HTTP-slutpunkter från tredje part.
 translation-type: tm+mt
-source-git-commit: cf100e8df225a665eade5ee6ddab071707e93f8b
+source-git-commit: 5a5cbc31c6445f141d41fca5082b666ec3b26510
 workflow-type: tm+mt
 source-wordcount: '540'
 ht-degree: 0%
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 Målet är [!DNL HTTP] ett [!DNL Adobe Real-Time Customer Data Platform] direktuppspelningsmål som gör det enklare att skicka profildata till [!DNL HTTP] slutpunkter från tredje part.
 
-Om du vill skicka profildata till [!DNL HTTP] slutpunkter måste du först ansluta till målet i [!DNL Adobe Real-Time Customer Data Platform](#connect-destination).
+Om du vill skicka profildata till [!DNL HTTP] slutpunkter måste du först ansluta till målet i [[!DNL Adobe Real-Time Customer Data Platform]](#connect-destination).
 
 ## Use Cases {#use-cases}
 
@@ -33,14 +33,15 @@ Målet är kunder som behöver exportera XDM-profildata och målgruppssegment ti
 
 ## Anslut till mål {#connect-destination}
 
-1. In **[!UICONTROL Connections]** > **[!UICONTROL Destinations]**, select [!DNL  HTTP API], and select **[!UICONTROL Configure]**.
+1. In **[!UICONTROL Connections]** > **[!UICONTROL Destinations]**, select [!DNL HTTP API], and select **[!UICONTROL Configure]**.
 
    ![Aktivera HTTP-mål](assets/activate-http-destination.png)
 
    >[!NOTE]
    >
    >Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]** knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](../destinations/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
-   ![Aktivera HTTP-mål](assets/connect-http-destination.png)
+   >
+   >![Aktivera HTTP-mål](assets/connect-http-destination.png)
 
 2. I [!UICONTROL Account] steget måste du definiera anslutningsinformationen för HTTP-slutpunkten. Markera **[!UICONTROL New account]** och ange anslutningsinformation för den HTTP-slutpunkt som du vill ansluta till.
    * **[!UICONTROL httpEndpoint]**: den fullständiga HTTP-slutpunkten [!DNL URL] som du vill skicka profildata till.
