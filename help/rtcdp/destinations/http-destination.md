@@ -5,7 +5,7 @@ seo-title: HTTP-målet är en kunddataplattform i realtid i Adobe som hjälper d
 description: HTTP-målet är en kunddataplattform i realtid i Adobe som hjälper dig att skicka profildata till HTTP-slutpunkter från tredje part.
 seo-description: HTTP-målet är en kunddataplattform i realtid i Adobe som hjälper dig att skicka profildata till HTTP-slutpunkter från tredje part.
 translation-type: tm+mt
-source-git-commit: 5a5cbc31c6445f141d41fca5082b666ec3b26510
+source-git-commit: f4840f028bb855e79c0f2ae5c82bc38906a7aaec
 workflow-type: tm+mt
 source-wordcount: '540'
 ht-degree: 0%
