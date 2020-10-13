@@ -4,10 +4,10 @@ audience: user
 user-guide-title: Handbok för kunddataplattform i realtid
 user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgruppssegment utifrån dessa profiler och aktivera dessa segment för tredjepartsdestinationer.
 translation-type: tm+mt
-source-git-commit: 797aff558f0f8b818609631792e96be3f6277b62
+source-git-commit: d9e9440bb8a7735aa8a5d24285c1fb56f32733cb
 workflow-type: tm+mt
-source-wordcount: '490'
-ht-degree: 4%
+source-wordcount: '507'
+ht-degree: 3%
 
 ---
 
@@ -35,6 +35,7 @@ ht-degree: 4%
       * Adobe destinationer{#adobe-destinations}
          * [Översikt över destinationer i Adobe](destinations/adobe-destinations.md)
          * [Adobe Campaign](destinations/adobe-campaign-destination.md)
+         * [Delning av Experience Platform-segment (öppnar dokumentationen för Audience Manager)](https://docs.adobe.com/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
       * Annonsmål{#advertising-destinations}
          * [Översikt över reklamdestinationer](destinations/advertising-destinations.md)
          * [Adobe Advertising Cloud-tillägg](/help/rtcdp/destinations/adobe-advertising-cloud-extension.md)
