@@ -4,9 +4,9 @@ audience: user
 user-guide-title: Handbok för kunddataplattform i realtid
 user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgruppssegment utifrån dessa profiler och aktivera dessa segment för tredjepartsdestinationer.
 translation-type: tm+mt
-source-git-commit: ac114a7d0313582c6adf05404e0626c618a13253
+source-git-commit: 797aff558f0f8b818609631792e96be3f6277b62
 workflow-type: tm+mt
-source-wordcount: '489'
+source-wordcount: '490'
 ht-degree: 4%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 4%
       * [Sidan med målinformation](destinations/destination-details-page.md)
    * Målkatalog {#destinations-cat}
       * [Översikt över destinationskatalogen](destinations/destinations-catalog.md)
-      * [HTTP-mål](/help/rtcdp/destinations/http-destination.md)
+      * [ (Alfa) HTTP-mål](/help/rtcdp/destinations/http-destination.md)
       * Adobe destinationer{#adobe-destinations}
          * [Översikt över destinationer i Adobe](destinations/adobe-destinations.md)
          * [Adobe Campaign](destinations/adobe-campaign-destination.md)
