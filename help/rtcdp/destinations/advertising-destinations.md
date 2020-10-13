@@ -5,9 +5,9 @@ seo-title: Annonsmål
 description: Koppla samman er kunddataplattform i realtid med en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 seo-description: Koppla samman er kunddataplattform i realtid med en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 translation-type: tm+mt
-source-git-commit: 54df4778a025811504801306120bda78e04281c1
+source-git-commit: b510f715133cc3fed98861f977b3ce9a857a5ced
 workflow-type: tm+mt
-source-wordcount: '183'
+source-wordcount: '219'
 ht-degree: 0%
 
 ---
@@ -21,6 +21,21 @@ När ni ansluter till en annonsdestination skickas era målgrupper som ID:n till
 
 För närvarande stöder CDP i realtid de reklamdestinationer som anges nedan. Information om hur du ansluter till dessa mål finns i de enskilda länkarna:
 
+## Anslutningar
+
+Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar](/help/rtcdp/destinations/destination-types.md#connections) på sidan Måltyper och kategorier.
+
+
+* [Google Display &amp; Video 360](/help/rtcdp/destinations/google-dv360-destination.md)
+* [Google Ads](/help/rtcdp/destinations/google-ads-destination.md)
+* [Google Ad Manager](/help/rtcdp/destinations/google-ad-manager-destination.md)
+* [Google Customer Match](/help/rtcdp/destinations/google-customer-match-destination.md)
+
+
+## Tillägg
+
+Mer information om skillnaden mellan anslutningar och tillägg finns i [Tillägg](/help/rtcdp/destinations/destination-types.md#extensions) på sidan Måltyper och kategorier.
+
 * [Adobe Advertising Cloud-tillägg](/help/rtcdp/destinations/adobe-advertising-cloud-extension.md)
 * [Tillägget Awin Advertising Conversion Tag](/help/rtcdp/destinations/awin-conversiontag-extension.md)
 * [Awin Advertising Mastertag-tillägg](/help/rtcdp/destinations/awin-mastertag-extension.md)
@@ -30,13 +45,8 @@ För närvarande stöder CDP i realtid de reklamdestinationer som anges nedan. I
 * [Dubbelklicka på FlowLight-tillägg](/help/rtcdp/destinations/doubleclick-floodlight-extension.md)
 * [Pixeltillägg för Facebook](/help/rtcdp/destinations/facebook-pixel-extension.md)
 * [Flashtalk OneTag-tillägg](/help/rtcdp/destinations/flashtalking-extension.md)
-* [Google Display &amp; Video 360](/help/rtcdp/destinations/google-dv360-destination.md)
-* [Google Ads](/help/rtcdp/destinations/google-ads-destination.md)
 * [Google Ads-tillägg](/help/rtcdp/destinations/google-ads-extension.md)
-* [Google Ad Manager](/help/rtcdp/destinations/google-ad-manager-destination.md)
-* [Google Customer Match](/help/rtcdp/destinations/google-customer-match-destination.md)
 * [Google-taggtillägg](/help/rtcdp/destinations/gtag-advertising-extension.md)
 * [Tillägget LinkedIn Insight-tagg](linkedin-extension.md)
 * [Tillägg för Pinterest Conversion Tracking](pinterest-extension.md)
 * [Twitter Universal Website Tag-tillägg](twitter-uwt-extension.md)
-
