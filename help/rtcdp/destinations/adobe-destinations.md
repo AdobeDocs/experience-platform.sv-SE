@@ -1,13 +1,13 @@
 ---
-keywords: destinations;experience cloud solutions; target;target destination; ad cloud; audience manager; audience manager destination
+keywords: destinations;experience cloud solutions; target;target destination; ad cloud; advertising cloud; audience manager; adobe target destination; target; audience manager destination;
 title: Adobe Destinationer
 seo-title: Adobe Destinationer
 description: Hantera kundupplevelsen genom att koppla era data i realtid från CDP i Adobe till andra Adobe Experience Cloud-lösningar för annonsanpassning, personalisering, automatiserad marknadsföring med mera
 seo-description: Hantera kundupplevelsen genom att koppla era data i realtid från CDP i Adobe till andra Adobe Experience Cloud-lösningar för annonsanpassning, personalisering, automatiserad marknadsföring med mera
 translation-type: tm+mt
-source-git-commit: d1b87d696e113d229d69059a3a0f1b7786fa5add
+source-git-commit: e3e01474fcd6874f50b929116eff5bdfd4298f22
 workflow-type: tm+mt
-source-wordcount: '226'
+source-wordcount: '228'
 ht-degree: 0%
 
 ---
@@ -43,4 +43,4 @@ Mer information om skillnaden mellan anslutningar och tillägg finns i [Tillägg
 
 Använd segmentdelningsfunktionen Experience Platform för att dela dina Experience Platform-segment med andra Adobe-destinationer. Se sidan nedan för mer information (öppnas i dokumentationsportalen för Audience Manager):
 
-* [Delning av Experience Platform-segment med Adobe Audience Manager, Ad Cloud och Target via integreringen av bastjänsterna](https://docs.adobe.com/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
+* [Dela Experience Platform med Adobe Audience Manager, Adobe Advertising Cloud och Adobe Target via integreringen med bastjänsterna](https://docs.adobe.com/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
