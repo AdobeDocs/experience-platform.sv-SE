@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Azure File Storage till Experience Platform.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: d332226541685108b58d88096146ed6048606774
 workflow-type: tm+mt
 source-wordcount: '573'
 ht-degree: 1%
@@ -79,7 +79,6 @@ POST /connections
 **Begäran**
 
 Följande begäran skapar en ny [!DNL Azure File Storage] anslutning som konfigureras av egenskaperna som anges i nyttolasten:
-
 
 ```shell
 curl -X POST \
