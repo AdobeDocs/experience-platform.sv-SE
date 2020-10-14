@@ -1,79 +1,38 @@
 ---
 title: Versionsinformation för Adobe Experience Platform
-description: Versionsinformation för Experience Platform 9 september 2020
+description: Versionsinformation för Experience Platform 14 oktober 2020
 doc-type: release notes
-last-update: September 8, 2020
+last-update: October 13, 2020
 author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: 312794af2cdb111fb81c0aa226dec68db2cbc374
+source-git-commit: 43ceda3d95511c3972fd0588f472c6c412dd95bf
 workflow-type: tm+mt
-source-wordcount: '883'
-ht-degree: 3%
+source-wordcount: '478'
+ht-degree: 2%
 
 ---
 
 
 # Versionsinformation för Adobe Experience Platform
 
-**Releasedatum: 9 september 2020**
+**Releasedatum: 14 oktober 2020**
 
-Uppdateringar av befintliga funktioner i Adobe Experience Platform:
+- [Dataprep](#data-prep)
+- [Kundprofil i realtid](#profile)
+- [Källor](#sources)
 
-- [[!DNL Data Governance]](#governance)
-- [[!DNL-mål]](#destinations)
-- [[!DNL-observabilitetsinsikter]](#observability)
-- [[!DNL-Privacy Service]](#privacy)
-- [[!DNL-kundprofil i realtid]](#profile)
-- [[!DNL-segmenteringstjänst]](#segmentation)
-- [[!DNL-källor]](#sources)
+## Dataprep {#data-prep}
 
-## [!DNL Data Governance] {#governance}
+Med Data Prep kan datatekniker mappa, omvandla och validera data till och från Experience Data Model (XDM).
 
-Adobe Experience Platform Data Governance är en serie strategier och tekniker som används för att hantera kunddata och säkerställa att regler, begränsningar och policyer som gäller för dataanvändning följs. Det spelar en viktig roll på [!DNL Experience Platform] olika nivåer, bland annat i fråga om katalogisering, datalinje, etikettering av dataanvändning, dataåtkomstprinciper och åtkomstkontroll av data för marknadsföringsåtgärder.
-
-**Nya funktioner**
+**Viktiga funktioner**
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Förbättringar av användargränssnittet för datauppsättningar | Flera nya sorterings- och filtreringskontroller har lagts till i användargränssnittet för datauppsättningar för att göra det enklare att arbeta med stora scheman: <ul><li>Sortera fält i alfabetisk ordning baserat på den fullständiga schemasökvägen.</li><li>Utför delsökningar på fältsökvägsnamn.</li><li>Filtrera fält utan etiketter, en markerad etikett eller en etikettkategori.</li></ul> |
+| `is_set` funktion | Med den här `is_set` funktionen kan du kontrollera om det finns ett attribut i källdata. `is_set` kan användas tillsammans med `is_empty` för att kontrollera både förekomsten av attributet och förekomsten av värdet i attributet. |
+| `get_values` funktion | Med den här funktionen kan du hämta värden från indatamappningen för en given nyckel. `get_values` |
 
-Mer information om tjänsten finns i översikten över [](../../data-governance/home.md) datastyrning.
-
-## Mål {#destinations}
-
-I [Adobe kunddataplattform](../../rtcdp/overview.md)i realtid är destinationer färdigbyggda integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
-
-**Nya funktioner**
-
-| Funktion | Beskrivning |
-| ------- | ----------- |
-| UX-förbättringar | Användare kan komma åt textbundna tabellåtgärder för enklare åtkomst till primära åtgärder som att lägga till data, redigera schemaläggning och lägga till segment. Mer information finns i dokumentet för [målarbetsytan](../../rtcdp/destinations/destinations-workspace.md) . |
-
-Mer information finns på [destinationsöversikten](../../rtcdp/destinations/destinations-overview.md)
-
-## [!DNL Observability Insights] {#observability}
-
-[!DNL Observability Insights] gör att ni kan övervaka aktiviteter på Adobe Experience Platform med hjälp av statistik och händelsemeddelanden.
-
-**Nya funktioner**
-
-| Funktion | Beskrivning |
-| --- | --- |
-| Adobe I/O-händelsemeddelanden | [!DNL Observability Insights] använder Adobe I/O-händelser för att skapa händelsemeddelanden för flera Experience Platform-tjänster. Meddelandenyttolaster skickas till en konfigurerad webkrok som du sedan kan använda för att automatisera ytterligare processer längre fram i kedjan. Mer information finns i [meddelandeöversikten](../../observability/notifications/overview.md) . |
-
-Mer information om tjänsten finns i [[!DNL Observability Insights] översikten](../../observability/home.md) .
-
-## [!DNL Privacy Service] {#privacy}
-
-Flera juridiska och organisatoriska bestämmelser ger användarna rätt att få tillgång till eller ta bort sina personuppgifter från era datalager på begäran. Adobe Experience Platform [!DNL Privacy Service] tillhandahåller ett RESTful API och användargränssnitt som hjälper dig att hantera dessa dataförfrågningar från dina kunder. Med [!DNL Privacy Service]kan ni skicka in förfrågningar om åtkomst till och radering av privata eller personliga kunddata från Adobe Experience Cloud-program, vilket underlättar automatiserad efterlevnad av juridiska och organisatoriska sekretessbestämmelser.
-
-**Nya funktioner**
-
-| Funktion | Beskrivning |
-| ------- | ----------- |
-| Stöd för LGPD (Brasilien) | Privacy job can now be created under Brazil&#39;s [!DNL Lei Geral de Proteção de Dados] (LGPD) Regulation. Dessa jobb spåras enligt föreskriftskoden `lgpd_bra`. |
-
-Mer information om tjänsten finns i översikten över [](../../privacy-service/home.md) Privacy Servicen.
+Mer information finns i översikten över [dataförberedelser](../../data-prep/home.md).
 
 ## Kundprofil i realtid {#profile}
 
@@ -81,24 +40,10 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Profilvisningsprogram | Profilvisningsprogrammet i plattformsgränssnittet har uppdaterats till att vara en kontrollpanel med fullständig anpassning. Användaren kan nu göra följande: <ul><li>Uppdatera de valda standardattributen och anpassade attribut i widgeten för grundläggande information.</li><li>Skapa, redigera och ta bort anpassade widgetar</li><li>Ändra storlek på och ordna om widgetar</li></ul> |
+| API-tillägg för förhandsgranskning av profil | API:t för förhandsgranskning av profil (`/previewsamplestatus`) innehåller nu möjligheten att visa en uppdelning av det totala profilfragmentet i hela IMS-organisationen samt att visa distributionen av profilfragment över identitetsnamnutrymmen. |
+| Uppdateringar av unionens schemavy | I användargränssnittet i Experience Platform är det enklare att hitta information om alla scheman och datauppsättningar som bidrar till unionsschemat samt attribut för ytnycklar som identitets- och relationsfält. Dessa uppdateringar förbättrar möjligheten att felsöka och verifiera att profiler är korrekt konfigurerade, identiteterna är korrekt sammanfogade och data har importerats. |
 
 Mer information om [!DNL Real-time Customer Profile]bland annat självstudiekurser och bästa metoder för att arbeta med [!DNL Profile] data finns i [Kundprofilöversikt](../../profile/home.md)i realtid.
-
-## Segmenteringstjänst {#segmentation}
-
-Adobe Experience Platform segmenteringstjänst tillhandahåller ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper utifrån dina [!DNL Real-time Customer Profile] data. Dessa segment konfigureras och underhålls centralt [!DNL Platform]så att de är lättillgängliga i alla Adobe-program.
-
-[!DNL Segmentation Service] definierar en viss underuppsättning profiler genom att beskriva kriterierna som särskiljer en säljbar grupp av personer inom kundbasen. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
-
-**Nya funktioner**
-
-| Funktion | Beskrivning |
-| ------- | ----------- |
-| Exportera jobb | En flagga lades till för att tillåta att segment utvärderas som en del av ett exportjobb. Det innebär att användare kan köra både segmentering och export i ett enda jobb. |
-| Sammanfoga profiler | Flera sammanfogningspolicyer kan inkluderas i ett enda batchsegmenteringsjobb. |
-
-Mer information om [!DNL Segmentation Service]segmentering finns i [segmenteringsöversikten](../../segmentation/home.md)
 
 ## Sources {#sources}
 
@@ -110,7 +55,8 @@ Adobe Experience Platform kan importera data från externa källor och samtidigt
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Automatisk mappning | [!DNL Platform] tillhandahåller intelligenta rekommendationer för automatisk mappning under arbetsflödet för dataöverföring, baserat på ett målschema eller en datamängd som användaren valt. Du kan justera reglerna för automatisk mappning manuellt så att de passar dina behov. |
-| UX-förbättringar | Användare kan komma åt textbundna tabellåtgärder för enklare åtkomst till primära åtgärder som att lägga till data, redigera schemaläggning och lägga till segment. Mer information finns i dokumentet [för övervakning av dataflöden](../../sources/tutorials/ui/monitor.md) . |
+| Hierarkisk mappning | Du kan förhandsgranska en hierarkisk källfil, som JSON eller Parquet, under dataöverföringsprocessen. |
+| SSH-autentiseringsstöd för SFTP | Du kan ansluta ditt SFTP-konto till [!DNL Platform] med RSA/DSA Open SSH-nycklar. Mer information finns i [SFTP-översikten](../../sources/connectors/cloud-storage/ftp-sftp.md) . |
+| UX-förbättringar | Du kan aktivera datauppsättningen för [!DNL Profile] under dataöverföringsprocessen. Mer information finns i självstudiekursen om arbetsflöde [](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md) för molnlagring. |
 
 Mer information om källor finns i [Källöversikt](../../sources/home.md).
