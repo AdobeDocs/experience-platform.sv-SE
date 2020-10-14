@@ -6,9 +6,9 @@ topic: overview
 type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta plattformen till ett Microsoft Dynamics-konto (nedan kallat Dynamics) för att samla in CRM-data.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: d332226541685108b58d88096146ed6048606774
 workflow-type: tm+mt
-source-wordcount: '709'
+source-wordcount: '703'
 ht-degree: 0%
 
 ---
@@ -142,11 +142,9 @@ Ett lyckat svar returnerar anslutningsspecifikationerna för [!DNL Dynamics], in
 }
 ```
 
-## Skapa en basanslutning
+## Skapa en anslutning för API:t
 
-En basanslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en basanslutning krävs per [!DNL Dynamics] konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
-
-Utför följande POST-förfrågan för att skapa en basanslutning.
+En anslutning för API anger en källa och innehåller dina autentiseringsuppgifter för den källan. Det krävs bara en anslutning för API:t per [!DNL Dynamics] konto eftersom det kan användas för att skapa flera källanslutningar för att hämta olika data.
 
 **API-format**
 
@@ -158,7 +156,7 @@ POST /connections
 
 ```shell
 curl -X POST \
-    'http://platform.adobe.io/data/foundation/flowservice/connections' \
+    'https://platform.adobe.io/data/foundation/flowservice/connections' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -202,4 +200,4 @@ Ett lyckat svar innehåller basanslutningsens unika identifierare (`id`). Detta 
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en basanslutning för ditt [!DNL Dynamics] konto med hjälp av API:er och ett unikt ID har hämtats som en del av svarstexten. Du kan använda detta grundläggande anslutnings-ID i nästa självstudiekurs när du lär dig hur du [utforskar CRM-system med API:t](../../explore/crm.md)för Flow Service.
+I den här självstudiekursen har du skapat en anslutning för ditt [!DNL Dynamics] konto med hjälp av API:er och ett unikt ID har hämtats som en del av svarstexten. Du kan använda detta anslutnings-ID i nästa självstudiekurs när du lär dig hur du [utforskar CRM-system med API:t](../../explore/crm.md)för Flow Service.
