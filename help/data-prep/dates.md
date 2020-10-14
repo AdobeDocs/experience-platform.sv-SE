@@ -5,9 +5,9 @@ title: Datumfunktioner
 topic: overview
 description: I det här dokumentet introduceras de datumfunktioner som används med Data Prep.
 translation-type: tm+mt
-source-git-commit: db38f0666f5c945461043ad08939ebda52c21855
+source-git-commit: 1f9833c06a3423c334edb8aa7e441adfd74be0f2
 workflow-type: tm+mt
-source-wordcount: '389'
+source-wordcount: '384'
 ht-degree: 17%
 
 ---
@@ -80,4 +80,4 @@ Tabellen nedan visar vilka mönsterbokstäver som är definierade för formatstr
 
 **Exempel**
 
-Uttrycket `date(orderDate, 'yyyy-MM-dd')` konverterar orderDate, om dess värde var &quot;31 december 2020&quot;, till en datumtid med värdet &quot;2020-12-31&quot;.
+Uttrycket `date(orderDate, 'yyyy-MM-dd')` konverterar `orderDate` värdet &quot;31 december 2020&quot; till datetime-värdet &quot;2020-12-31&quot;.
