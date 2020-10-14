@@ -5,9 +5,9 @@ title: Direktuppspelningssegmentering
 topic: ui guide
 description: Med direktuppspelningssegmentering på Adobe Experience Platform kan ni segmentera i nära realtid samtidigt som ni fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificering allt eftersom data når plattformen, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data överförs till plattformen, vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 translation-type: tm+mt
-source-git-commit: c7e8cf31f4c03eec9b24064c6888e09a7070aaa5
+source-git-commit: 578579438ca1d6a7a8c0a023efe2abd616a6dff2
 workflow-type: tm+mt
-source-wordcount: '823'
+source-wordcount: '751'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Med direktuppspelningssegmentering på [!DNL Adobe Experience Platform] kan kund
 
 >[!NOTE]
 >
->Direktuppspelningssegmentering kan bara användas för att utvärdera data som direktuppspelas på plattformen. Med andra ord kommer data som matas in via batchinmatning inte att utvärderas genom direktuppspelningssegmentering, och batchutvärderingen måste utlösas.
+>Direktuppspelningssegmentering kan bara användas för att utvärdera data som direktuppspelas på plattformen. Med andra ord kommer data som hämtas via batchinmatning inte att utvärderas genom direktuppspelningssegmentering, utan kommer att utvärderas tillsammans med det nightly schemalagda segmenterade jobbet.
 
 ## Frågetyper för direktuppspelningssegmentering
 
@@ -36,26 +36,25 @@ En fråga utvärderas automatiskt med direktuppspelningssegmentering om den uppf
 | Frågetyp | Detaljer | Exempel |
 | ---------- | ------- | ------- |
 | Inkommande träff | En segmentdefinition som refererar till en enda inkommande händelse utan tidsbegränsning. | ![](../images/ui/streaming-segmentation/incoming-hit.png) |
-| Inkommande träff inom ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse **inom de senaste sju dagarna**. | ![](../images/ui/streaming-segmentation/relative-hit-success.png) |
+| Inkommande träff inom ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse. | ![](../images/ui/streaming-segmentation/relative-hit-success.png) |
 | Endast profil | En segmentdefinition som bara refererar till ett profilattribut. |  |
 | Inkommande träde som refererar till en profil | En segmentdefinition som refererar till en enda inkommande händelse, utan tidsbegränsning, och ett eller flera profilattribut. | ![](../images/ui/streaming-segmentation/profile-hit.png) |
-| Inkommande träde som refererar till en profil inom ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse och ett eller flera profilattribut **under de senaste sju dagarna**. | ![](../images/ui/streaming-segmentation/profile-relative-success.png) |
+| Inkommande träde som refererar till en profil inom ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse och ett eller flera profilattribut. | ![](../images/ui/streaming-segmentation/profile-relative-success.png) |
 | Flera händelser som refererar till en profil | Alla segmentdefinitioner som refererar till flera händelser **under de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. | ![](../images/ui/streaming-segmentation/event-history-success.png) |
 
 I följande avsnitt visas exempel på segmentdefinitioner som **inte** kommer att aktiveras för direktuppspelningssegmentering.
 
-| Frågetyp | Detaljer | Exempel |
-| ---------- | ------- | ------- |
-| Inkommande träff inom ett relativt tidsfönster | Om segmentdefinitionen refererar till en inkommande händelse **som inte** är under den **senaste sju-dagarsperioden**. Till exempel under de **senaste två veckorna**. | ![](../images/ui/streaming-segmentation/relative-hit-failure.png) |
-| Inkommande träde som refererar till en profil i ett relativt fönster | Följande alternativ har **inte** stöd för direktuppspelningssegmentering:<ul><li>En inkommande händelse **som inte** är under den **senaste sjudagarsperioden**.</li><li>En segmentdefinition som innehåller [!DNL Adobe Audience Manager (AAM)] segment eller egenskaper.</li></ul> | ![](../images/ui/streaming-segmentation/profile-relative-failure.png) |
-| Flera händelser som refererar till en profil | Följande alternativ har **inte** stöd för direktuppspelningssegmentering:<ul><li>En händelse som **inte** inträffar **de senaste 24 timmarna**.</li><li>En segmentdefinition som innehåller Adobe Audience Manager-segment (AAM) eller egenskaper.</li></ul> | ![](../images/ui/streaming-segmentation/event-history-failure.png) |
-| Flerenhetsfrågor | Flerenhetsfrågor stöds **inte** av direktuppspelningssegmentering som helhet. |  |
+| Frågetyp | Detaljer |
+| ---------- | ------- |
+| Inkommande träde som refererar till en profil i ett relativt fönster | En segmentdefinition som innehåller [!DNL Adobe Audience Manager (AAM)] segment eller egenskaper. |
+| Flera händelser som refererar till en profil | En segmentdefinition som innehåller Adobe Audience Manager-segment (AAM) eller egenskaper. |
+| Flerenhetsfrågor | Flerenhetsfrågor stöds **inte** av direktuppspelningssegmentering som helhet. |
 
 Dessutom gäller vissa riktlinjer för direktuppspelningssegmentering:
 
 | Frågetyp | Riktlinje |
 | ---------- | -------- |
-| Enkel händelsefråga | Fönstret för att titta tillbaka är begränsat till **sju dagar**. |
+| Enkel händelsefråga | Det finns inga begränsningar för uppslagsfönstret. |
 | Fråga med händelsehistorik | <ul><li>Fönstret för att titta tillbaka är begränsat till **en dag**.</li><li>Det **måste** finnas ett strikt ordningsvillkor mellan händelserna.</li><li>Endast enkla tidsinställningar (före och efter) mellan händelserna tillåts.</li><li>De enskilda händelserna **kan inte** negeras. Hela frågan **kan** dock negeras.</li></ul> |
 
 Om en segmentdefinition ändras så att den inte längre uppfyller villkoren för direktuppspelningssegmentering, kommer segmentdefinitionen automatiskt att växla från&quot;direktuppspelning&quot; till&quot;Gruppering&quot;.
