@@ -5,9 +5,9 @@ title: Direktuppspelningssegmentering
 topic: developer guide
 description: Det här dokumentet innehåller exempel på hur du använder direktuppspelningssegmentering med API:t för direktuppspelningssegmentering.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 578579438ca1d6a7a8c0a023efe2abd616a6dff2
 workflow-type: tm+mt
-source-wordcount: '1441'
+source-wordcount: '1359'
 ht-degree: 0%
 
 ---
@@ -25,14 +25,14 @@ Med direktuppspelningssegmentering på [!DNL Adobe Experience Platform] kan kund
 
 >[!NOTE]
 >
->Direktuppspelningssegmentering kan bara användas för att utvärdera data som direktuppspelas på plattformen. Med andra ord kommer data som matas in via batchinmatning inte att utvärderas genom direktuppspelningssegmentering, och batchutvärderingen måste utlösas.
+>Direktuppspelningssegmentering kan bara användas för att utvärdera data som direktuppspelas på plattformen. Med andra ord kommer data som hämtas via batchinmatning inte att utvärderas genom direktuppspelningssegmentering, utan kommer att utvärderas tillsammans med det nightly schemalagda segmenterade jobbet.
 
 ## Komma igång
 
 Den här utvecklarhandboken kräver en fungerande förståelse av de olika [!DNL Adobe Experience Platform] tjänster som är kopplade till direktuppspelningssegmentering. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 - [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid, baserad på aggregerade data från flera källor.
-- [[!DNL-segmentering]](../home.md): Ger möjlighet att skapa segment och målgrupper utifrån era [!DNL Real-time Customer Profile] data.
+- [[!DNL Segmentation]](../home.md): Ger möjlighet att skapa segment och målgrupper utifrån era [!DNL Real-time Customer Profile] data.
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API: [!DNL Platform] er.
@@ -74,26 +74,25 @@ För att ett segment ska kunna utvärderas med hjälp av direktuppspelningssegme
 | Frågetyp | Detaljer |
 | ---------- | ------- |
 | Inkommande träff | En segmentdefinition som refererar till en enda inkommande händelse utan tidsbegränsning. |
-| Inkommande träff inom ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse **inom de senaste sju dagarna**. |
+| Inkommande träff inom ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse. |
 | Endast profil | En segmentdefinition som bara refererar till ett profilattribut. |
 | Inkommande träde som refererar till en profil | En segmentdefinition som refererar till en enda inkommande händelse, utan tidsbegränsning, och ett eller flera profilattribut. |
-| Inkommande träde som refererar till en profil inom ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse och ett eller flera profilattribut **under de senaste sju dagarna**. |
+| Inkommande träde som refererar till en profil inom ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse och ett eller flera profilattribut. |
 | Flera händelser som refererar till en profil | Alla segmentdefinitioner som refererar till flera händelser **under de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. |
 
 I följande avsnitt visas exempel på segmentdefinitioner som **inte** kommer att aktiveras för direktuppspelningssegmentering.
 
 | Frågetyp | Detaljer |
 | ---------- | ------- | 
-| Inkommande träff inom ett relativt tidsfönster | Om segmentdefinitionen refererar till en inkommande händelse **som inte** är under den **senaste sju-dagarsperioden**. Till exempel under de **senaste två veckorna**. |
-| Inkommande träde som refererar till en profil i ett relativt fönster | Följande alternativ har **inte** stöd för direktuppspelningssegmentering:<ul><li>En inkommande händelse **som inte** är under den **senaste sjudagarsperioden**.</li><li>En segmentdefinition som innehåller Adobe Audience Manager-segment (AAM) eller egenskaper.</li></ul> |
-| Flera händelser som refererar till en profil | Följande alternativ har **inte** stöd för direktuppspelningssegmentering:<ul><li>En händelse som **inte** inträffar **de senaste 24 timmarna**.</li><li>En segmentdefinition som innehåller Adobe Audience Manager-segment (AAM) eller egenskaper.</li></ul> |
+| Inkommande träde som refererar till en profil i ett relativt fönster | En segmentdefinition som innehåller Adobe Audience Manager-segment (AAM) eller egenskaper. |
+| Flera händelser som refererar till en profil | En segmentdefinition som innehåller Adobe Audience Manager-segment (AAM) eller egenskaper. |
 | Flerenhetsfrågor | Flerenhetsfrågor stöds **inte** av direktuppspelningssegmentering som helhet. |
 
 Dessutom gäller vissa riktlinjer för direktuppspelningssegmentering:
 
 | Frågetyp | Riktlinje |
 | ---------- | -------- |
-| Enkel händelsefråga | Fönstret för att titta tillbaka är begränsat till **sju dagar**. |
+| Enkel händelsefråga | Det finns inga begränsningar för uppslagsfönstret. |
 | Fråga med händelsehistorik | <ul><li>Fönstret för att titta tillbaka är begränsat till **en dag**.</li><li>Det **måste** finnas ett strikt ordningsvillkor mellan händelserna.</li><li>Endast enkla tidsinställningar (före och efter) mellan händelserna tillåts.</li><li>De enskilda händelserna **kan inte** negeras. Hela frågan **kan** dock negeras.</li></ul> |
 
 ## Hämta alla segment som är aktiverade för direktuppspelningssegmentering
@@ -336,7 +335,7 @@ curl -X POST \
 | `name` | **(Obligatoriskt)** Schemats namn. Måste vara en sträng. |
 | `type` | **(Obligatoriskt)** Jobbtypen i strängformat. De typer som stöds är `batch_segmentation` och `export`. |
 | `properties` | **(Obligatoriskt)** Ett objekt som innehåller ytterligare egenskaper som är relaterade till schemat. |
-| `properties.segments` | **(Krävs när`type`är lika med`batch_segmentation`)** Om du använder `["*"]` inkluderas alla segment. |
+| `properties.segments` | **(Krävs när `type` är lika med `batch_segmentation`)** Om du använder `["*"]` inkluderas alla segment. |
 | `schedule` | **(Obligatoriskt)** En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Det exempel som visas (`0 0 1 * * ?`) innebär att jobbet utlöses varje dag kl. 1:00:00 UTC. Mer information finns i dokumentationen för [cron expression](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) . |
 | `state` | *(Valfritt)* Sträng som innehåller schemat. Tillgängliga värden: `active` och `inactive`. Standardvärdet är `inactive`. En IMS-organisation kan bara skapa ett schema. Steg för att uppdatera schemat är tillgängliga senare i den här självstudiekursen. |
 
