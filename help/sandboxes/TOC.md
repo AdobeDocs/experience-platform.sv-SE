@@ -2,12 +2,12 @@
 product: experience-platform
 audience: user
 user-guide-title: Sandlådor i hjälpen för Adobe Experience Platform
-breadcrumb-title: Sandoxes Guide
-user-guide-description: Partition a Platform instance into virtual environments for development, testing, and application deployment.
+breadcrumb-title: Handbok för sandlådor
+user-guide-description: Partitionera en plattformsinstans i virtuella miljöer för utveckling, testning och programdistribution.
 translation-type: tm+mt
 source-git-commit: 4e358fda1c8f7aebe57a009a146b8b73cf88e169
 workflow-type: tm+mt
-source-wordcount: '71'
+source-wordcount: '86'
 ht-degree: 2%
 
 ---
