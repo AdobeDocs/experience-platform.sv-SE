@@ -6,9 +6,9 @@ topic: tutorial
 type: Tutorial
 description: Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform datainmatningstjänst.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: e94272bf9a18595a4efd0742103569a26e4be415
 workflow-type: tm+mt
-source-wordcount: '1092'
+source-wordcount: '1142'
 ht-degree: 0%
 
 ---
@@ -98,7 +98,7 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/sch
 | -------- | ----------- |
 | `title` | Namnet som du vill använda för ditt schema. Namnet måste vara unikt. |
 | `description` | En meningsfull beskrivning av schemat som du skapar. |
-| `meta:immutableTags` | I det här exemplet används `union` -taggen för att lagra dina data i [[!DNL Real-time Customer Profile]](../../profile/home.md). |
+| `meta:immutableTags` | I det här exemplet används `union` -taggen för att lagra data i [[!DNL Real-time Customer Profile]](../../profile/home.md). |
 
 **Svar**
 
@@ -281,6 +281,10 @@ POST /collection/{CONNECTION_ID}?synchronousValidation=true
 
 **Begäran**
 
+Inmatning av postdata till en direktuppspelningsanslutning kan göras antingen med eller utan källnamnet.
+
+Exempelbegäran nedan importerar en post med ett saknat källnamn till plattformen. Om en post saknar källnamnet läggs käll-ID:t till från anslutningsdefinitionen för direktuppspelning.
+
 >[!NOTE]
 >
 >Följande API-anrop kräver **inga** autentiseringshuvuden.
@@ -326,6 +330,22 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValid
 }'
 ```
 
+Om du vill ta med ett källnamn visar följande exempel hur du skulle ta med det.
+
+```json
+    "header": {
+        "schemaRef": {
+            "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
+            "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
+        },
+        "imsOrgId": "{IMS_ORG}",
+        "datasetId": "{DATASET_ID}",
+        "source": {
+            "name": "Sample source name"
+        }
+    }
+```
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen strömmade filen [!DNL Profile].
@@ -350,7 +370,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen ström
 
 ## Hämta nyligen inmatade postdata
 
-Om du vill validera de poster som har importerats tidigare kan du använda API:t för [[!DNL-profilåtkomst]](../../profile/api/entities.md) för att hämta postdata.
+Om du vill validera de poster du redan har importerat kan du använda kommandot [[!DNL Profile Access API]](../../profile/api/entities.md) för att hämta postdata.
 
 >[!NOTE]
 >
