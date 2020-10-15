@@ -2,13 +2,13 @@
 product: experience-platform
 audience: user
 user-guide-title: Hjälp om Adobe Experience Platform datainmatning
-breadcrumb-title: Data Ingestion Guide
-user-guide-description: Bring your data into Platform through batch or streaming ingestion.
+breadcrumb-title: Handbok för dataöverföring
+user-guide-description: Använd era data på plattformen genom batchvis eller direktuppspelande ingrepp.
 translation-type: tm+mt
 source-git-commit: da0c65b5afc19e2497816c4b84270f5f5c4617f2
 workflow-type: tm+mt
-source-wordcount: '111'
-ht-degree: 5%
+source-wordcount: '124'
+ht-degree: 4%
 
 ---
 
@@ -25,7 +25,7 @@ ht-degree: 5%
    - [API för gruppinmatning](batch-ingestion/api-overview.md)
    - [Partiellt batchintag](batch-ingestion/partial.md)
    - [Felsökning](batch-ingestion/troubleshooting.md)
-- Självstudiekurser {#tutorials}
+- Tutorials {#tutorials}
    - [Mappa en CSV-fil till XDM](tutorials/map-a-csv-file.md)
    - [Infoga batchdata med användargränssnittet](tutorials/ingest-batch-data.md)
    - [Skapa en autentiserad direktuppspelningsanslutning](tutorials/create-authenticated-streaming-connection.md)
