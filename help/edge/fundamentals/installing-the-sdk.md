@@ -5,9 +5,9 @@ description: Lär dig hur du installerar Experience Platform Web SDK
 seo-description: Lär dig hur du installerar Experience Platform Web SDK
 keywords: web sdk installation;installing web sdk;internet explorer;promise;
 translation-type: tm+mt
-source-git-commit: 7aa0e654300f10db774794d66ece9d0d040cb2ba
+source-git-commit: 5ef902ef7f7717121744f7f0074c0aa17e5a9e9a
 workflow-type: tm+mt
-source-wordcount: '623'
+source-wordcount: '626'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # Installera SDK {#installing-the-sdk}
 
-Det bästa sättet att använda Adobe Experience Platform Web SDK är via [Launch](http://launch.adobe.com/). Sök efter tillägget `AEP Web SDK` i tilläggskatalogen, installera och konfigurera sedan tillägget.
+Det bästa sättet att använda Adobe Experience Platform Web SDK är via [Adobe Experience Platform Launch](http://launch.adobe.com/). Sök efter tillägget `AEP Web SDK` i tilläggskatalogen, installera och konfigurera sedan tillägget.
 
 AEP web SDK finns också på ett CDN som du kan använda. Du kan referera till den här filen eller ladda ned den och lagra den i din egen infrastruktur. Den finns i minifierad och icke-minifierad version. Den version som inte är miniatyrversion är användbar i felsökningssyfte.
 
