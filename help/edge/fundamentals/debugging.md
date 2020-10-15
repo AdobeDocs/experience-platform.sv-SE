@@ -5,9 +5,9 @@ description: Lär dig hur du växlar felsökning för Experience Platform Web SD
 seo-description: Lär dig hur du växlar felsökning för Experience Platform Web SDK
 keywords: debugging web sdk;debugging;configure;configure command;debug command;edgeConfigId;setDebug;debugEnabled;debug;
 translation-type: tm+mt
-source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
+source-git-commit: e21374eb51ec1d572f6a4973d33cadf9ae17969b
 workflow-type: tm+mt
-source-wordcount: '324'
+source-wordcount: '384'
 ht-degree: 0%
 
 ---
@@ -68,3 +68,17 @@ När felsökning ställs in via `debug` kommando- eller frågesträngsparametern
 * Sessionens slut
 * Du kör `debug` kommandot
 * Du ställer in frågesträngsparametern igen
+
+## Hämtar biblioteksinformation
+
+Det är ofta praktiskt att komma åt en del av informationen bakom biblioteket som du har laddat in på din webbplats. Om du vill göra det kör du `getLibraryInfo` kommandot enligt följande:
+
+```js
+alloy("getLibraryInfo").then(function(libraryInfo) {
+  console.log(libraryInfo.version);
+});
+```
+
+För närvarande innehåller det angivna `libraryInfo` objektet följande egenskaper:
+
+* `version` Det här är versionen av det inlästa biblioteket. Om till exempel versionen av biblioteket som läses in är 1.0.0 blir värdet `1.0.0`.
