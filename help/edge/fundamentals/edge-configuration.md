@@ -5,9 +5,9 @@ description: 'Lär dig hur du konfigurerar Experience Platform Edge-nätverket. 
 seo-description: 'Lär dig hur du konfigurerar Experience Platform Edge-nätverket. '
 keywords: configuration;edge;edge configuration id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destinations;url Destinations;Analytics Settings Blockreport suite id;
 translation-type: tm+mt
-source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
+source-git-commit: d069b3007265406367ca9de2b85540b2a070cf36
 workflow-type: tm+mt
-source-wordcount: '813'
+source-wordcount: '834'
 ht-degree: 1%
 
 ---
@@ -17,21 +17,23 @@ ht-degree: 1%
 
 Konfigurationen för Adobe Experience Platform [!DNL Web SDK] är uppdelad på två platser. Kommandot [](configuring-the-sdk.md) configure i SDK styr saker som måste hanteras på klienten, till exempel `edgeDomain`. Edge-konfigurationen hanterar all annan konfiguration för SDK. När en begäran skickas till Adobe Experience Platform [!DNL Edge Network]används den `edgeConfigId` för att referera till konfigurationen på serversidan. På så sätt kan du uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
 
+Din organisation måste etableras för den här funktionen. Kontakta din Certified software manager (CSM) för att få tag i tillåtelselista.
+
 ## Skapa ett Edge Configuration ID
 
-Konfiguration-ID:n för Edge kan skapas i Adobe [!DNL Launch] med hjälp av edge-konfigurationsverktyget. Med det här verktyget kan du skapa både edge-konfigurationen och miljöer i dessa konfigurationer.
+Konfiguration-ID:n för Edge kan skapas i Adobe [!DNL Experience Platform Launch] med hjälp av edge-konfigurationsverktyget. Med det här verktyget kan du skapa både edge-konfigurationen och miljöer i dessa konfigurationer.
 
 ![navigering för konturkonfigurationsverktyg](../../assets/edge_configuration_nav.png)
 
 >[!NOTE]
 >
->Kunder på tillåtelselista kan använda kantkonfigurationsverktyget oavsett om de använder [!DNL Launch] som tagghanterare eller inte. Dessutom kräver användare framkallningsbehörigheter i [!DNL Launch]. Mer information finns i artikeln [Användarbehörigheter](https://docs.adobe.com/content/help/en/launch/using/reference/admin/user-permissions.html) i [!DNL Launch] dokumentationen.
+>Kunder på tillåtelselista kan använda kantkonfigurationsverktyget oavsett om de använder [!DNL Experience Platform Launch] som tagghanterare eller inte. Dessutom kräver användare framkallningsbehörigheter i [!DNL Experience Platform Launch]. Mer information finns i artikeln [Användarbehörigheter](https://docs.adobe.com/content/help/en/launch/using/reference/admin/user-permissions.html) i [!DNL Experience Platform Launch] dokumentationen.
 
 Du kan skapa en kantkonfiguration genom att klicka på **[!UICONTROL New Edge Configuration]** i skärmens övre högra hörn. När du har angett ett namn och en beskrivning ombeds du ange standardinställningarna för varje miljö.
 
 ### Standardmiljöinställningar
 
-Dessa standardinställningar används för att skapa de tre första miljöerna med identiska inställningar. Dessa tre miljöer är *dev*, *stage* och *prod*. De matchar de tre standardmiljöerna i [!DNL Launch]. När du skapar ett [!DNL Launch] bibliotek till en utvecklingsmiljö använder biblioteket automatiskt dev-miljön från din konfiguration. Du kan redigera inställningar i enskilda miljöer så mycket du vill.
+Dessa standardinställningar används för att skapa de tre första miljöerna med identiska inställningar. Dessa tre miljöer är *dev*, *stage* och *prod*. De matchar de tre standardmiljöerna i [!DNL Experience Platform Launch]. När du skapar ett [!DNL Experience Platform Launch] bibliotek till en utvecklingsmiljö använder biblioteket automatiskt dev-miljön från din konfiguration. Du kan redigera inställningar i enskilda miljöer så mycket du vill.
 
 Det ID som används i SDK som `edgeConfigId` är ett sammansatt ID som anger konfigurationen och miljön. Om ingen miljö finns används produktionsmiljön.
 
@@ -113,7 +115,7 @@ Tillåter SDK att dela segmentinformation via [URL-mål](https://docs.adobe.com/
 
 #### Adobe Analytics
 
-Kontrollerar om data skickas till Adobe Analytics. Ytterligare information finns i [Analytics Overview](../solution-specific/analytics/analytics-overview.md).
+Kontrollerar om data skickas till Adobe Analytics. Ytterligare information finns i [Analytics Overview](../data-collection/adobe-analytics/analytics-overview.md).
 
 ![Adobe Analytics Settings Block](../../assets/edge_configuration_aa.png)
 
