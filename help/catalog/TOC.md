@@ -2,12 +2,12 @@
 product: experience-platform
 audience: user
 user-guide-title: Handbok för kataloger och datauppsättningar
-user-guide-description: Explore data lineage, metadata, file descriptions, directories, and datasets within the Data Lake.
+user-guide-description: Utforska datalinje, metadata, filbeskrivningar, kataloger och datauppsättningar i Data Lake.
 translation-type: tm+mt
 source-git-commit: 4e358fda1c8f7aebe57a009a146b8b73cf88e169
 workflow-type: tm+mt
-source-wordcount: '93'
-ht-degree: 2%
+source-wordcount: '106'
+ht-degree: 1%
 
 ---
 
