@@ -1,36 +1,45 @@
 ---
 keywords: Experience Platform;home;popular topics;CJA;journey analytics;customer journey analytics;campaign orchestration;orchestration;customer journey;journey;journey orchestration;capability;workflow
 solution: Experience Platform
-title: Adobe Experience Platform Documentation
+title: Adobe Experience Platform - dokumentationsöversikt
 topic: overview
 description: Adobe Experience Platform-dokumentation finns i flera format, inklusive översikter, självstudiekurser och guider för både användargränssnittet och API. Här följer en kort beskrivning av de vanligaste dokumentationstyperna som är tillgängliga för Experience Platform.
 translation-type: tm+mt
-source-git-commit: e94278c1b64e1d940f55861518c78cca24822c1b
+source-git-commit: 13aa49c28db0818df5d47560ae7a220d0790610f
 workflow-type: tm+mt
-source-wordcount: '1084'
-ht-degree: 1%
+source-wordcount: '1035'
+ht-degree: 0%
 
 ---
 
 
-# Adobe Experience Platform - dokumentationsöversikt
+# Översikt över dokumentationen för Experience Platform
 
 >[!NOTE]
 >
 >Adobe Experience Platform-dokumentationen har nyligen flyttats. Titta närmare på den nya navigeringen och uppdatera eventuella bokmärken.
 
-## Typ av dokumentation
-
 Adobe Experience Platform-dokumentation finns i flera format, inklusive översikter, självstudiekurser och guider för både användargränssnittet och API. Här följer en kort beskrivning av de vanligaste dokumentationstyperna som är tillgängliga för [!DNL Experience Platform] tjänster:
 
 * **API-referens:** Läs API-referensdokumentationen för varje tjänst om du vill veta mer om tillgängliga slutpunkter, inklusive rubriker, parametrar, exempelbegäranden och svar. Dessa referensmaterial ger inte samma detaljnivå som dokumentationen. Vi rekommenderar att du läser den tjänstspecifika utvecklarhandboken för detaljerade exempel på API-användning.
+
 * **Utvecklarhandbok:** Varje utvecklarhandbok innehåller detaljerad användningsinformation för alla API-slutpunkter som är tillgängliga för en viss tjänst. Guiden innehåller tillgängliga frågeparametrar, exempelbegäranden och exempelsvar samt en beskrivning av&quot;gotchas&quot; som du kan undvika när du anropar API: [!DNL Platform] er.
+
 * **Översikt:** En översikt ger en översikt på hög nivå över tjänsten eller funktionen och hur den interagerar med andra [!DNL Platform] tjänster. Översikten är det bästa stället att börja med när du lär dig mer om nya funktioner i [!DNL Platform].
+
 * **Felsökningsguide:** Använd felsökningsguiden för att hitta svar på vanliga frågor och information om felmeddelanden som du troligtvis kommer att stöta på när du använder API:t. Felsökningsguiden ger stöd för allmänna frågor och fel, medan enskilda tjänster tillhandahåller felsökningsguider som är specifika för just deras område. [!DNL Experience Platform]
+
 * **Självstudiekurs:** En självstudiekurs är en steg-för-steg-guide genom användargränssnittet, API:t eller en blandning av båda, som leder till ett visst resultat. Till skillnad från en utvecklarguide kan en API-självstudiekurs bara fokusera på en eller två slutpunkter och är inte en fullständig API-resurs. På samma sätt kan självstudiekurser för användargränssnitt bara fokusera på specifika steg, inte på hela användargränssnittet som är tillgängligt för den tjänsten. Tutorials är ofta en del av ett större arbetsflöde och innehåller&quot;nästa steg&quot; som beskriver vilka självstudiekurser du kan vilja prova härnäst.
+
 * **Användarhandbok:** En användarhandbok visar de åtgärder som är tillgängliga i [!DNL Platform] användargränssnittet för en viss tjänst. Dessa dokument innehåller skärmbilder och steg som fokuserar på interaktion med plattformen via användargränssnittet. På samma sätt som i en utvecklarhandbok visar användarhandboken alla tillgängliga åtgärder och alternativ, inklusive gotchas, som kan undvikas. Det här är den mest detaljerade resursen för att arbeta med användargränssnittet.
 
-## [!DNL Experience Platform] tjänster
+## Stöd för dokumentationsspråk
+
+Dokumentationen för Experience Platform finns på flera språk. Om du vill ändra språk markerar du listrutan för språk och väljer önskat språk.
+
+![bild](../images/overview/lang.jpg)
+
+## [!DNL Experience Platform] dokumentation
 
 Dokumentation finns för närvarande för Adobe Experience Platform tjänster och funktioner som listas nedan. Du kan lära dig mer om tjänsterna med hjälp av de korta beskrivningarna här och få en djupare förståelse genom att välja i den alfabetiska listan i den vänstra navigeringen.
 
@@ -42,13 +51,12 @@ Dokumentation finns för närvarande för Adobe Experience Platform tjänster oc
 * **[!DNL Data Ingestion](Batch &amp; Streaming):** Hämta in data i Adobe Experience Platform med batchinmatning, direktuppspelning och [källanslutningar](#sources).
 * **[!DNL Data Science Workspace]:** [!DNL Data Science Workspace] erbjuder fördefinierade modeller för maskininlärning som du kan använda i dina egna lösningar samt möjligheten att skapa egna modeller.
 * **[!DNL Debugger]:** Adobe Experience Cloud Debugger-tillägget [!DNL Chrome] undersöker dina webbsidor och hjälper dig att hitta problem med hur dina [!DNL Experience Cloud] lösningar implementeras.
-* **[!DNL Decisioning Service]:** Skapa personaliserade, optimerade och samordnade upplevelser i program som körs på Adobe Experience Platform.
 * **[!DNL Destinations]:** Destinationer är färdiga integrationer med vanliga applikationer som möjliggör smidig aktivering av data från kunddataplattformen i realtid. Ni kan använda Destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 * **ETL (Extract, Transform, Load):** Skapa högpresterande anslutningar för dataintegreringsverktyg som kan integreras med Adobe Experience Platform.
+* **Experience Platform Launch:** Experience Platform Launch är ett enkelt sätt att driftsätta och hantera alla de analyser-, marknadsförings- och annonstaggar som behövs för att ge era kunder en personaliserad, relevant upplevelse i realtid.
 * **[!DNL Experience Platform Web SDK](Beta):** Adobe Experience Platform Web SDK JavaScript-bibliotek på klientsidan gör det möjligt för Adobe Experience Cloud-kunder att interagera med de olika tjänsterna i Experience Cloud.
 * **[!DNL Identity Service]:** Få en bättre förståelse för era kunder genom att överbrygga identiteter från olika enheter och beteenden i olika kanaler och skapa en enda bild av varje enskild kund.
 * **[!DNL Intelligent Services]:** Ge marknadsförare och marknadsföringsanalytiker möjlighet att utnyttja artificiell intelligens och maskininlärning för att leverera kundupplevelser.
-* **[!DNL Launch]:** Launch är ett enkelt sätt att driftsätta och hantera alla analys-, marknadsförings- och annonstaggar som behövs för att ge era kunder en personaliserad, relevant upplevelse i realtid.
 * **[!DNL Observability Insights]:** Exponera viktiga mätvärden för observerbarhet i Adobe Experience Platform och få insikt i användningsstatistik, historiska trender och resultatindikatorer för olika [!DNL Platform] funktioner.
 * **[!DNL Privacy Service]:** Privacy Servicen har ett RESTful-API och användargränssnitt som gör att du kan göra dataåtkomst och ta bort begäranden som följer sekretesslagstiftningen.
 * **[!DNL Profile](Kundprofil i realtid):** Se en helhetsbild av varje enskild kund genom att kombinera data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata i [!DNL Real-time Customer Profiles].
@@ -57,11 +65,4 @@ Dokumentation finns för närvarande för Adobe Experience Platform tjänster oc
 * **[!DNL Sandboxes]:** Sandlådor delar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 * **[!DNL Segmentation]:** Skapa segment baserat på kundprofildata i realtid för att generera målgrupper och förbättra kundupplevelserna.
 * **[!DNL Sources](Anslutningar):** {#sources} Hämta in data till Adobe Experience Platform från en mängd olika källor som Adobe-program, molnbaserad lagring, databaser med mera.
-* **XDM (Experience Data Model)**: XDM drivs av Adobe och är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering. XDM-scheman som stöder samverkan mellan olika [!DNL Experience Platform] komponenter.
-
-## Programtjänster som bygger på [!DNL Experience Platform]
-
-Förutom tjänsterna i den vänstra navigeringen har Adobe byggt andra applikationstjänster ovanpå Experience Platform. Dokumentation för dessa tjänster finns i deras egna dokumentationsarkiv, som är länkade nedan:
-
-* [[!DNL Customer Journey Analytics]](https://docs.adobe.com/content/help/en/analytics-platform/using/cja-landing.html)
-* [[!DNL Journey Orchestration]](https://docs.adobe.com/content/help/sv-SE/journeys/using/journey-orchestration-home.html)
+* **Scheman**: Experience Data Model (XDM) drivs av Adobe och är en ansträngning att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering. XDM-scheman stöder samverkan mellan data för olika [!DNL Experience Platform] komponenter.
