@@ -6,9 +6,9 @@ title: Övervaka konton och dataflöden
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: 2514c282d16a1b6ddb2232e46e6283ab2ab3d356
 workflow-type: tm+mt
-source-wordcount: '1031'
+source-wordcount: '1037'
 ht-degree: 0%
 
 ---
@@ -54,6 +54,10 @@ Dessutom kan du redigera befintlig kontoinformation och uppdatera dina kontoinlo
 ![](../../images/tutorials/monitor/click-edit.png)
 
 Den **[!UICONTROL Edit account details]** modala visas. Från den här sidan kan du uppdatera din befintliga kontoinformation och autentiseringsuppgifter.
+
+>[!NOTE]
+>
+> Det finns information om redigeringskonton för alla batchkällanslutningar.
 
 ![](../../images/tutorials/monitor/edit-account.png)
 
