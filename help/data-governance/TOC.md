@@ -2,12 +2,12 @@
 product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Data Governance - hjälp
-breadcrumb-title: Data Governance Guide
-user-guide-description: Enforce data usage restrictions through the use of labels, marketing actions, and policies.
+breadcrumb-title: Handbok för datastyrning
+user-guide-description: Använd etiketter, marknadsföringsåtgärder och policyer för att begränsa användningen av data.
 translation-type: tm+mt
 source-git-commit: 4e358fda1c8f7aebe57a009a146b8b73cf88e169
 workflow-type: tm+mt
-source-wordcount: '107'
+source-wordcount: '123'
 ht-degree: 3%
 
 ---
