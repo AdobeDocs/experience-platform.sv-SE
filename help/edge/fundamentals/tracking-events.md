@@ -5,9 +5,9 @@ description: Lär dig spåra Experience Platform Web SDK-händelser
 seo-description: Lär dig spåra Experience Platform Web SDK-händelser
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon;send Beacon;documentUnloading;document Unloading;onBeforeEventSend;
 translation-type: tm+mt
-source-git-commit: 69ddfca041624123b03eb01d0f10a5bdb36cd119
+source-git-commit: db742119d8f169817080f1fd4e0dc08a0f0faa47
 workflow-type: tm+mt
-source-wordcount: '1116'
+source-wordcount: '1139'
 ht-degree: 0%
 
 ---
@@ -54,7 +54,7 @@ För närvarande stöds inte sändning av data som inte matchar ett XDM-schema. 
 
 ### Inställning `eventType`
 
-I en XDM-upplevelsehändelse finns det ett valfritt `eventType` fält. Detta innehåller postens primära händelsetyp. Genom att ange en händelsetyp kan du skilja mellan olika händelser som du skickar in. XDM innehåller flera fördefinierade händelsetyper som du kan använda eller så skapar du alltid egna anpassade händelsetyper för dina användningsfall. Nedan visas en lista med alla fördefinierade händelsetyper som tillhandahålls av XDM.
+I en XDM-upplevelsehändelse finns det ett valfritt `eventType` fält. Detta innehåller postens primära händelsetyp. Genom att ange en händelsetyp kan du skilja mellan olika händelser som du skickar in. XDM innehåller flera fördefinierade händelsetyper som du kan använda eller så skapar du alltid egna anpassade händelsetyper för dina användningsfall. Nedan visas en lista med alla fördefinierade händelsetyper som tillhandahålls av XDM. [Läs mer i den offentliga rapporten om XDM](https://github.com/adobe/xdm/blob/master/docs/reference/behaviors/time-series.schema.md#xdmeventtype-known-values)
 
 
 | **Händelsetyp:** | **Definition:** |
@@ -83,7 +83,7 @@ I en XDM-upplevelsehändelse finns det ett valfritt `eventType` fält. Detta inn
 | delivery.feedback | Feedback-händelser för leverans. Exempel på feedback-händelser för e-postleverans |
 
 
-De här händelsetyperna visas i en listruta om du använder tillägget Launch eller så kan du alltid skicka dem utan Launch. De kan skickas in som en del av `xdm` alternativet.
+De här händelsetyperna visas i en listruta om du använder Adobe Experience Platform Launch-tillägget eller så kan du alltid skicka dem utan Experience Platform Launch. De kan skickas in som en del av `xdm` alternativet.
 
 
 ```javascript
@@ -131,7 +131,7 @@ alloy("sendEvent", {
 
 ### Lägga till identitetsinformation
 
-Du kan även lägga till anpassad identitetsinformation till händelsen. Se [Hämta Experience Cloud-ID](./identity.md)
+Du kan även lägga till anpassad identitetsinformation till händelsen. Se [Hämta Experience Cloud-ID](../identity/overview.md)
 
 ## Använda API:t sendBeacon
 
@@ -205,7 +205,7 @@ alloy("configure", {
 `xdm` fält anges i den här ordningen:
 
 1. Värden som skickas som alternativ till händelsekommandot `alloy("sendEvent", { xdm: ... });`
-2. Automatiskt insamlade värden.  (Se [Automatisk information](../reference/automatic-information.md).)
+2. Automatiskt insamlade värden.  (Se [Automatisk information](../data-collection/automatic-information.md).)
 3. Ändringarna som har gjorts i `onBeforeEventSend` återanropet.
 
 Om återanropet genererar ett undantag skickas händelsen fortfarande. `onBeforeEventSend` Inga av de ändringar som gjordes i återanropet tillämpas emellertid på den sista händelsen.
