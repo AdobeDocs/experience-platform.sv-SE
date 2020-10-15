@@ -6,9 +6,9 @@ topic: tutorial
 type: Tutorial
 description: Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform datainmatningstjänst.
 translation-type: tm+mt
-source-git-commit: fce215edb99cccc8be0109f8743c9e56cace2be0
+source-git-commit: e94272bf9a18595a4efd0742103569a26e4be415
 workflow-type: tm+mt
-source-wordcount: '1163'
+source-wordcount: '1215'
 ht-degree: 0%
 
 ---
@@ -101,7 +101,7 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/sch
 | -------- | ----------- |
 | `title` | Namnet som du vill använda för ditt schema. Namnet måste vara unikt. |
 | `description` | En meningsfull beskrivning av schemat som du skapar. |
-| `meta:immutableTags` | I det här exemplet används `union` -taggen för att lagra dina data i [[!DNL Real-time Customer Profile]](../../profile/home.md). |
+| `meta:immutableTags` | I det här exemplet används `union` -taggen för att lagra data i [[!DNL Real-time Customer Profile]](../../profile/home.md). |
 
 **Svar**
 
@@ -312,10 +312,13 @@ POST /collection/{CONNECTION_ID}?synchronousValidation=true
 
 **Begäran**
 
+Inmatning av tidsseriedata till en direktuppspelningsanslutning kan göras antingen med eller utan källnamnet.
+
+Exemplet nedan anger att tidsseriedata med ett saknat källnamn ska importeras till plattformen. Om källnamnet saknas i data läggs käll-ID:t till från anslutningsdefinitionen för direktuppspelning.
+
 >[!NOTE]
 >
 >Du måste skapa din egen `xdmEntity._id` och `xdmEntity.timestamp`. Ett bra sätt att generera ett ID är att använda ett UUID. Dessutom kräver följande API-anrop **inga** autentiseringshuvuden.
-
 
 ```shell
 curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValidation=true \
@@ -380,6 +383,22 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValid
 }'
 ```
 
+Om du vill ta med ett källnamn visar följande exempel hur du skulle ta med det.
+
+```json
+    "header": {
+        "schemaRef": {
+            "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
+            "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
+        },
+        "imsOrgId": "{IMS_ORG}",
+        "datasetId": "{DATASET_ID}",
+        "source": {
+            "name": "Sample source name"
+        }
+    }
+```
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen strömmade filen [!DNL Profile].
@@ -404,7 +423,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen ström
 
 ## Hämta data för den nyligen inmatade tidsserien
 
-Om du vill validera de poster som har importerats tidigare kan du använda API:t för [[!DNL-profilåtkomst]](../../profile/api/entities.md) för att hämta data från tidsserierna. Detta kan göras med en GET-begäran till `/access/entities` slutpunkten och med valfria frågeparametrar. Flera parametrar kan användas, avgränsade med et-tecken (&amp;).&quot;
+Om du vill validera de poster som har importerats tidigare kan du använda [[!DNL Profile Access API]](../../profile/api/entities.md) för att hämta tidsseriedata. Detta kan göras med en GET-begäran till `/access/entities` slutpunkten och med valfria frågeparametrar. Flera parametrar kan användas, avgränsade med et-tecken (&amp;).&quot;
 
 >[!NOTE]
 >
