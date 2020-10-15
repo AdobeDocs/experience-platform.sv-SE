@@ -5,7 +5,7 @@ description: Lär dig hur du konfigurerar Experience Platform Web SDK
 seo-description: Lär dig hur du konfigurerar Experience Platform Web SDK
 keywords: configuring;configuration;SDK;edge;Web SDK;configure;edgeConfigId;context;web;device;environment;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;web sdk settings;prehidingStyle;opacity;cookieDestinationsEnabled;urlDestinationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: 233bbd33e3d1e89ff67a9daa00372732934ac573
 workflow-type: tm+mt
 source-wordcount: '749'
 ht-degree: 4%
@@ -46,7 +46,7 @@ Ditt tilldelade konfigurations-ID, som länkar SDK till rätt konton och konfigu
 | ---------------- | ------------ | -------------------------------------------------- |
 | Array med strängar | Nej | `["web", "device", "environment", "placeContext"]` |
 
-Anger vilka sammanhangskategorier som ska samlas in automatiskt enligt beskrivningen i [Automatisk information](../reference/automatic-information.md).  Om den här konfigurationen inte anges används alla kategorier som standard.
+Anger vilka sammanhangskategorier som ska samlas in automatiskt enligt beskrivningen i [Automatisk information](../data-collection/automatic-information.md).  Om den här konfigurationen inte anges används alla kategorier som standard.
 
 ### `debugEnabled`
 
@@ -109,7 +109,7 @@ Ange detta för att konfigurera ett återanrop som anropas för varje händelse 
 | -------- | ------------ | ----------------- |
 | Objekt | Nej | `"in"` |
 
-Anger användarens standardsamtycke. Detta används när det inte finns någon inställning för samtycke som redan har sparats för användaren. Det andra giltiga värdet är `"pending"`. När detta är inställt kommer arbetet att ställas i kö tills användaren ger sitt medgivande. När användarens inställningar har angetts fortsätter arbetet eller avbryts baserat på användarens inställningar. Mer information finns i [Supporting Consent](supporting-consent.md) .
+Anger användarens standardsamtycke. Detta används när det inte finns någon inställning för samtycke som redan har sparats för användaren. Det andra giltiga värdet är `"pending"`. När detta är inställt kommer arbetet att ställas i kö tills användaren ger sitt medgivande. När användarens inställningar har angetts fortsätter arbetet eller avbryts baserat på användarens inställningar. Mer information finns i [Supporting Consent](../consent/supporting-consent.md) .
 
 ## Anpassningsalternativ
 
