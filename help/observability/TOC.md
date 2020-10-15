@@ -2,12 +2,12 @@
 product: experience-platform
 audience: user
 user-guide-title: Insikter - guide
-user-guide-description: Monitor Platform activities through the use of statistical metrics and event notifications.
+user-guide-description: Övervaka plattformsaktiviteter med hjälp av statistik och händelsemeddelanden.
 translation-type: tm+mt
 source-git-commit: 72b2172bbcc8613a2030b4784270321c3933f6aa
 workflow-type: tm+mt
-source-wordcount: '43'
-ht-degree: 11%
+source-wordcount: '55'
+ht-degree: 9%
 
 ---
 
