@@ -5,11 +5,11 @@ title: Adobe Experience Platform FAQ and Troubleshooting Guide
 description: Hitta svar på vanliga frågor och en guide för felsökning av vanliga fel i Experience Platform.
 topic: getting started
 type: Documentation
-user-guide-description: Find answers to frequently asked questions and a guide for troubleshooting common errors in Experience Platform.
+user-guide-description: Hitta svar på vanliga frågor och en guide för felsökning av vanliga fel i Experience Platform.
 translation-type: tm+mt
 source-git-commit: bc7c0a5d59c666ba80fac81a859b5ecf4dd37412
 workflow-type: tm+mt
-source-wordcount: '1981'
+source-wordcount: '1956'
 ht-degree: 1%
 
 ---
@@ -243,7 +243,7 @@ Här följer en lista med felsökningsguider och API-referensdokumentation för 
 | Tjänst | API-referens | Felsökning |
 | --- | --- | --- |
 | Åtkomstkontroll | [API för åtkomstkontroll](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/access-control.yaml) | [Felsökningsguide för åtkomstkontroll](../access-control/troubleshooting-guide.md) |
-| Adobe Experience Platform datainmatning | [[!DNL-API för datainmatning]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) | [Felsökningsguide](../ingestion/batch-ingestion/troubleshooting.md)<br><br>[för gruppinmatningFelsökningsguide för direktuppspelning](../ingestion/streaming-ingestion/troubleshooting.md) |
+| Adobe Experience Platform datainmatning | [[!DNL Data Ingestion API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) | [Felsökningsguide](../ingestion/batch-ingestion/troubleshooting.md)<br><br>[för gruppinmatningFelsökningsguide för direktuppspelning](../ingestion/streaming-ingestion/troubleshooting.md) |
 | Adobe Experience Platform Data Science Workspace | [[!DNL Sensei Machine Learning API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) | [[!DNL Data Science Workspace] felsökningsguide](../data-science-workspace/troubleshooting-guide.md) |
 | Adobe Experience Platform datastyrning | [[!DNL Policy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) |  |
 | Adobe Experience Platform Identity Service | [[!DNL Identity Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml) | [[!DNL Identity Service] felsökningsguide](../identity-service/troubleshooting-guide.md) |
@@ -252,6 +252,6 @@ Här följer en lista med felsökningsguider och API-referensdokumentation för 
 | [!DNL Catalog Service] | [[!DNL Catalog Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) |  |
 | [!DNL Experience Data Model] (XDM) | [[!DNL Schema Registry API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml) | [[!DNL XDM System] Vanliga frågor och felsökningsguide](../xdm/troubleshooting-guide.md) |
 | [!DNL Flow Service] ([!DNL Sources] och [!DNL Destinations]) | [[!DNL Flow Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) |  |
-| [!DNL Real-time Customer Profile] | [[!DNL Customer Profile API i realtid]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml) | [[!DNL Profile] felsökningsguide](../profile/troubleshooting.md) |
+| [!DNL Real-time Customer Profile] | [[!DNL Real-time Customer Profile API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml) | [[!DNL Profile] felsökningsguide](../profile/troubleshooting.md) |
 | Sandlådor | [Sandbox-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sandbox-api.yaml) | [Felsökningsguide för sandlådor](../sandboxes/troubleshooting-guide.md) |
 
