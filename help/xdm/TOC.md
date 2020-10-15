@@ -2,12 +2,12 @@
 product: experience-platform
 audience: user
 user-guide-title: Experience Data Model (XDM) - systemhjälp
-breadcrumb-title: Data Model (XDM) Guide
-user-guide-description: Use Experience Data Model (XDM) classes and mixins to standardize experience data.
+breadcrumb-title: Datamodellguide (XDM)
+user-guide-description: Använd XDM-klasser (Experience Data Model) och mixins för att standardisera upplevelsedata.
 translation-type: tm+mt
 source-git-commit: 4e358fda1c8f7aebe57a009a146b8b73cf88e169
 workflow-type: tm+mt
-source-wordcount: '119'
+source-wordcount: '135'
 ht-degree: 2%
 
 ---
@@ -37,7 +37,7 @@ ht-degree: 2%
    * [Beskrivningar](api/descriptors.md)
    * [Ad hoc-scheman](api/ad-hoc.md)
    * [Bilaga](api/appendix.md)
-* Självstudiekurser {#tutorials}
+* Tutorials {#tutorials}
    * [Skapa ett schema (API)](tutorials/create-schema-api.md)
    * [Skapa ett schema (UI)](tutorials/create-schema-ui.md)
    * [Definiera en relation mellan två scheman (API)](tutorials/relationship-api.md)
