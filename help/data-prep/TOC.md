@@ -2,11 +2,11 @@
 product: experience-platform
 audience: user
 user-guide-title: Handbok för dataförberedelse
-user-guide-description: Prepare your data for ingestion into Adobe Experience Platform.
+user-guide-description: Förbered data för konsumtion i Adobe Experience Platform.
 translation-type: tm+mt
 source-git-commit: c9daf77f4b7db113b972ee268681999bc7f7fa8d
 workflow-type: tm+mt
-source-wordcount: '20'
+source-wordcount: '29'
 ht-degree: 0%
 
 ---
