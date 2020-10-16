@@ -5,9 +5,9 @@ title: Ansluta till direktuppspelningsmål och aktivera data
 topic: tutorial
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: eb6505bdcad9eee6d7e9674504223ca919f19c34
+source-git-commit: 65ad4d09d95cdd52e75221e6646a684bab3c277d
 workflow-type: tm+mt
-source-wordcount: '1817'
+source-wordcount: '1808'
 ht-degree: 0%
 
 ---
@@ -166,7 +166,7 @@ Ett lyckat svar innehåller basanslutningsens unika identifierare (`id`). Lagra 
 }
 ```
 
-### Ansluta till dina Experience Platform-data
+### Ansluta till dina Experience Platform-data {#connect-to-platform-data}
 
 **API-format**
 
@@ -263,12 +263,12 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 * `{CONNECTION_SPEC_ID}`: Använd det anslutningsspec-ID som du fick i steget [Hämta listan med tillgängliga mål](#get-the-list-of-available-destinations).
 * `{AUTHENTICATION_CREDENTIALS}`: Fyll i namnet på strömningsmålet, t.ex.: `Amazon Kinesis authentication credentials` eller `Azure Event Hubs authentication credentials`.
-* `{ACCESS_ID}`: *För[!DNL Amazon Kinesis]anslutningar.* Ditt åtkomst-ID för din lagringsplats för Amazon Kinesis.
-* `{SECRET_KEY}`: *För[!DNL Amazon Kinesis]anslutningar.* Din hemliga nyckel för din lagringsplats för Amazon Kinesis.
-* `{REGION}`: *För[!DNL Amazon Kinesis]anslutningar.* Den region på ditt [!DNL Amazon Kinesis] konto där Adobe Real-time CDP strömmar dina data.
-* `{SAS_KEY_NAME}`: *För[!DNL Azure Event Hubs]anslutningar.* Fyll i ditt SAS-nyckelnamn. Läs om hur du autentiserar [!DNL Azure Event Hubs] med SAS-nycklar i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
-* `{SAS_KEY}`: *För[!DNL Azure Event Hubs]anslutningar.* Fyll i SAS-nyckeln. Läs om hur du autentiserar [!DNL Azure Event Hubs] med SAS-nycklar i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
-* `{EVENT_HUB_NAMESPACE}`: *För[!DNL Azure Event Hubs]anslutningar.* Fyll i [!DNL Azure Event Hubs] namnutrymmet där Adobe Real-time CDP strömmar dina data. Mer information finns i [Skapa ett namnutrymme](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) för händelsehubbar i [!DNL Microsoft] dokumentationen.
+* `{ACCESS_ID}`: *För [!DNL Amazon Kinesis] anslutningar.* Ditt åtkomst-ID för din lagringsplats för Amazon Kinesis.
+* `{SECRET_KEY}`: *För [!DNL Amazon Kinesis] anslutningar.* Din hemliga nyckel för din lagringsplats för Amazon Kinesis.
+* `{REGION}`: *För [!DNL Amazon Kinesis] anslutningar.* Den region på ditt [!DNL Amazon Kinesis] konto där Adobe Real-time CDP strömmar dina data.
+* `{SAS_KEY_NAME}`: *För [!DNL Azure Event Hubs] anslutningar.* Fyll i ditt SAS-nyckelnamn. Läs om hur du autentiserar [!DNL Azure Event Hubs] med SAS-nycklar i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
+* `{SAS_KEY}`: *För [!DNL Azure Event Hubs] anslutningar.* Fyll i SAS-nyckeln. Läs om hur du autentiserar [!DNL Azure Event Hubs] med SAS-nycklar i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
+* `{EVENT_HUB_NAMESPACE}`: *För [!DNL Azure Event Hubs] anslutningar.* Fyll i [!DNL Azure Event Hubs] namnutrymmet där Adobe Real-time CDP strömmar dina data. Mer information finns i [Skapa ett namnutrymme](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) för händelsehubbar i [!DNL Microsoft] dokumentationen.
 
 **Svar**
 
@@ -319,9 +319,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 * `{BASE_CONNECTION_ID}`: Använd det grundläggande anslutnings-ID som du fick i steget ovan.
 * `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikationen som du fick i steget [Hämta listan med tillgängliga mål](#get-the-list-of-available-destinations).
-* `{NAME_OF_DATA_STREAM}`: *För[!DNL Amazon Kinesis]anslutningar.* Ange namnet på din befintliga dataström i ditt [!DNL Amazon Kinesis] konto. Adobe CDP i realtid exporterar data till den här strömmen.
-* `{REGION}`: *För[!DNL Amazon Kinesis]anslutningar.* Den region på ditt Amazon Kinesis-konto där Adobe Real-time CDP strömmar dina data.
-* `{EVENT_HUB_NAME}`: *För[!DNL Azure Event Hubs]anslutningar.* Fyll i det [!DNL Azure Event Hub] namn där Adobe Real-time CDP strömmar era data. Mer information finns i [Skapa en händelsehubb](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) i [!DNL Microsoft] dokumentationen.
+* `{NAME_OF_DATA_STREAM}`: *För [!DNL Amazon Kinesis] anslutningar.* Ange namnet på din befintliga dataström i ditt [!DNL Amazon Kinesis] konto. Adobe CDP i realtid exporterar data till den här strömmen.
+* `{REGION}`: *För [!DNL Amazon Kinesis] anslutningar.* Den region på ditt Amazon Kinesis-konto där Adobe Real-time CDP strömmar dina data.
+* `{EVENT_HUB_NAME}`: *För [!DNL Azure Event Hubs] anslutningar.* Fyll i det [!DNL Azure Event Hub] namn där Adobe Real-time CDP strömmar era data. Mer information finns i [Skapa en händelsehubb](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) i [!DNL Microsoft] dokumentationen.
 
 **Svar**
 
