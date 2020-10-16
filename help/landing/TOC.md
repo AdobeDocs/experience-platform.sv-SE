@@ -5,9 +5,9 @@ user-guide-title: Adobe Experience Platform - översikt
 breadcrumb-title: Experience Platform - översikt
 user-guide-description: Läs om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid.
 translation-type: tm+mt
-source-git-commit: 13aa49c28db0818df5d47560ae7a220d0790610f
+source-git-commit: e36a6be43bffa90ce707933c5f9407fade0b6474
 workflow-type: tm+mt
-source-wordcount: '399'
+source-wordcount: '402'
 ht-degree: 14%
 
 ---
@@ -26,6 +26,7 @@ ht-degree: 14%
    * [Roller och projektfaser (video)](video/roles-project-phases.md)
 * Experience Platform UI {#platform-ui}
    * [Användargränssnittshandbok för plattformen](ui-guide.md)
+   * [Handbok för plattformsarbetsflöden](workflows.md)
    * [Demo av användargränssnittet för plattformen (video)](video/platform-ui.md)
    * [Stöd för webbläsare och språk](browser-language-support.md)
 * Experience Platform API:er {#platform-apis}
