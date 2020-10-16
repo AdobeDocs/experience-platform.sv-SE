@@ -5,7 +5,7 @@ user-guide-title: Adobe Experience Platform - översikt
 breadcrumb-title: Experience Platform - översikt
 user-guide-description: Läs om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid.
 translation-type: tm+mt
-source-git-commit: e36a6be43bffa90ce707933c5f9407fade0b6474
+source-git-commit: 36707e95a63b6be60d1d7badbe1cdc9d0bc3548c
 workflow-type: tm+mt
 source-wordcount: '402'
 ht-degree: 14%
@@ -26,13 +26,13 @@ ht-degree: 14%
    * [Roller och projektfaser (video)](video/roles-project-phases.md)
 * Experience Platform UI {#platform-ui}
    * [Användargränssnittshandbok för plattformen](ui-guide.md)
-   * [Handbok för plattformsarbetsflöden](workflows.md)
    * [Demo av användargränssnittet för plattformen (video)](video/platform-ui.md)
+   * [Användargränssnittshandbok för arbetsflöden](workflows.md)
    * [Stöd för webbläsare och språk](browser-language-support.md)
 * Experience Platform API:er {#platform-apis}
    * [Grundläggande om API](api-fundamentals.md)
+   * [API-referensdokument](https://www.adobe.io/apis/experienceplatform/home/api-reference.html)
    * [Autentisera till Experience Platform API:er](https://docs.adobe.com/content/help/en/platform-learn/tutorials/platform-api-authentication.html)
-   * [Referenshandlingar för plattforms-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html)
 * Plattformsdokumentation {#documentation}
    * [Dokumentationsöversikt](documentation/overview.md)
    * [Åtkomstkontroll](https://docs.adobe.com/content/help/sv-SE/experience-platform/access-control/home.html)
@@ -56,8 +56,8 @@ ht-degree: 14%
    * [Frågetjänst](https://docs.adobe.com/content/help/en/experience-platform/query/home.html)
    * [Kunddataplattform i realtid](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/overview.html)
    * [Sandlådor](https://docs.adobe.com/content/help/en/experience-platform/sandbox/home.html)
+   * [Scheman (XDM)](https://docs.adobe.com/content/help/sv-SE/experience-platform/xdm/home.html)
    * [Segmentering](https://docs.adobe.com/content/help/en/experience-platform/segmentation/home.html)
-   * [Scheman](https://docs.adobe.com/content/help/sv-SE/experience-platform/xdm/home.html)
    * [Källor (kopplingar)](https://docs.adobe.com/content/help/en/experience-platform/sources/home.html)
    * [Web SDK](https://docs.adobe.com/content/help/sv-SE/experience-platform/edge/home.html)
 * Plattform i Adobe-ekosystemet {#ecosystem}
