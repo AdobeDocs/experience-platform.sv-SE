@@ -5,9 +5,9 @@ title: Adobe Experience Platform UI Guide
 topic: ui guide
 description: 'Adobe Experience Platform '
 translation-type: tm+mt
-source-git-commit: 84f1f840e15cb4487807c13131d0787772fa063a
+source-git-commit: bde9763aafb4ba32877f7ec14873eeae99760a45
 workflow-type: tm+mt
-source-wordcount: '1532'
+source-wordcount: '1543'
 ht-degree: 0%
 
 ---
@@ -111,7 +111,7 @@ Navigeringen till vänster på skärmen visar alla olika tjänster som stöds i 
 
 I det här avsnittet kan du gå tillbaka till startsidan för användargränssnittet för plattformen. **[!UICONTROL Home]**
 
-I avsnittet visas en lista med arbetsflöden i flera steg för att utföra åtgärder inom plattformen. **[!UICONTROL Workflows]**
+I avsnittet visas en lista med arbetsflöden i flera steg för att utföra åtgärder inom plattformen. **[!UICONTROL Workflows]** Mer information om arbetsflöden finns i [arbetsflödesöversikten](./workflows.md).
 
 ### [!UICONTROL Connections]
 
