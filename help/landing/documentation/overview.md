@@ -5,7 +5,7 @@ title: Adobe Experience Platform - dokumentationsöversikt
 topic: overview
 description: Adobe Experience Platform-dokumentation finns i flera format, inklusive översikter, självstudiekurser och guider för både användargränssnittet och API. Här följer en kort beskrivning av de vanligaste dokumentationstyperna som är tillgängliga för Experience Platform.
 translation-type: tm+mt
-source-git-commit: 13aa49c28db0818df5d47560ae7a220d0790610f
+source-git-commit: 36707e95a63b6be60d1d7badbe1cdc9d0bc3548c
 workflow-type: tm+mt
 source-wordcount: '1035'
 ht-degree: 0%
@@ -31,7 +31,7 @@ Adobe Experience Platform-dokumentation finns i flera format, inklusive översik
 
 * **Självstudiekurs:** En självstudiekurs är en steg-för-steg-guide genom användargränssnittet, API:t eller en blandning av båda, som leder till ett visst resultat. Till skillnad från en utvecklarguide kan en API-självstudiekurs bara fokusera på en eller två slutpunkter och är inte en fullständig API-resurs. På samma sätt kan självstudiekurser för användargränssnitt bara fokusera på specifika steg, inte på hela användargränssnittet som är tillgängligt för den tjänsten. Tutorials är ofta en del av ett större arbetsflöde och innehåller&quot;nästa steg&quot; som beskriver vilka självstudiekurser du kan vilja prova härnäst.
 
-* **Användarhandbok:** En användarhandbok visar de åtgärder som är tillgängliga i [!DNL Platform] användargränssnittet för en viss tjänst. Dessa dokument innehåller skärmbilder och steg som fokuserar på interaktion med plattformen via användargränssnittet. På samma sätt som i en utvecklarhandbok visar användarhandboken alla tillgängliga åtgärder och alternativ, inklusive gotchas, som kan undvikas. Det här är den mest detaljerade resursen för att arbeta med användargränssnittet.
+* **Användargränssnittsguide:** En gränssnittsguide visar de åtgärder som är tillgängliga i [!DNL Platform] användargränssnittet för en viss tjänst. Dessa dokument innehåller skärmbilder och steg som fokuserar på interaktion med plattformen via användargränssnittet. Precis som en utvecklarguide visar användargränssnittsguiden alla tillgängliga åtgärder och alternativ, inklusive&quot;gotchas&quot; för att undvika. Det här är den mest detaljerade resursen för att arbeta med användargränssnittet.
 
 ## Stöd för dokumentationsspråk
 
@@ -63,6 +63,6 @@ Dokumentation finns för närvarande för Adobe Experience Platform tjänster oc
 * **[!DNL Query Service]:** Använd SQL-frågor för att hämta data från Adobe Experience Platform, t.ex. data från Adobe-lösningar, kunddata från första part eller andra plattformsdata.
 * **[!DNL Real-time Customer Data Platform]:** CDP i realtid kombinerar flera datakällor för företag för att skapa enhetliga profiler i realtid som kan användas för att leverera personliga personaliserade kundupplevelser i alla kanaler och enheter.
 * **[!DNL Sandboxes]:** Sandlådor delar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* **Scheman**: Experience Data Model (XDM) drivs av Adobe och är en ansträngning att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering. XDM-scheman stöder samverkan mellan data för olika [!DNL Experience Platform] komponenter.
 * **[!DNL Segmentation]:** Skapa segment baserat på kundprofildata i realtid för att generera målgrupper och förbättra kundupplevelserna.
 * **[!DNL Sources](Anslutningar):** {#sources} Hämta in data till Adobe Experience Platform från en mängd olika källor som Adobe-program, molnbaserad lagring, databaser med mera.
-* **Scheman**: Experience Data Model (XDM) drivs av Adobe och är en ansträngning att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering. XDM-scheman stöder samverkan mellan data för olika [!DNL Experience Platform] komponenter.
