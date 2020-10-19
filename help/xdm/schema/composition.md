@@ -5,9 +5,9 @@ title: Grunderna för schemakomposition
 topic: overview
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: b7b57c0b70b1af3a833f0386bc809bb92c9b50f8
 workflow-type: tm+mt
-source-wordcount: '2815'
+source-wordcount: '2810'
 ht-degree: 0%
 
 ---
@@ -64,7 +64,7 @@ Scheman används för inmatning av data i [!DNL Experience Platform]. Dessa data
 
 Nyckelfält i dina scheman kan markeras som identiteter för att underlätta med den här processen. När data matas in infogas uppgifterna i dessa fält i&quot;[!UICONTROL Identity Graph]&quot; för den personen. Diagramdata kan sedan nås av [[!DNL Real-time Customer Profile]](../../profile/home.md) och andra [!DNL Experience Platform] tjänster för att ge en sammanslagen bild av varje enskild kund.
 
-Fält som vanligen markeras som&quot;[!UICONTROL Identity]&quot; är: e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://docs.adobe.com/content/help/sv-SE/id-service/using/home.html), CRM ID eller andra unika ID-fält. Du bör också ta hänsyn till unika identifierare som är specifika för din organisation, eftersom de kan vara bra&quot;[!UICONTROL Identity]&quot;-fält också.
+Fält som vanligen markeras som&quot;[!UICONTROL Identity]&quot; är: e-postadress, telefonnummer, CRM-ID [[!DNL Experience Cloud ID (ECID)]](https://docs.adobe.com/content/help/sv-SE/id-service/using/home.html)eller andra unika ID-fält. Du bör också ta hänsyn till unika identifierare som är specifika för din organisation, eftersom de kan vara bra&quot;[!UICONTROL Identity]&quot;-fält också.
 
 Det är viktigt att tänka på kundens identiteter under schemaplaneringsfasen för att säkerställa att data samlas ihop för att skapa en så robust profil som möjligt. Läs översikten om [Adobe Experience Platform Identity Service](../../identity-service/home.md) om hur identitetsinformation kan hjälpa er att leverera digitala upplevelser till era kunder.
 
@@ -123,7 +123,7 @@ Eftersom bakåtkompatibilitet är en nödvändig förutsättning för schemautve
 
 ### Scheman och datainhämtning
 
-För att kunna importera data till måste [!DNL Experience Platform]en datauppsättning skapas. Datauppsättningar är byggstenarna för dataomvandling och spårning för [[!DNL Catalog Service]](../../catalog/home.md), och representerar vanligtvis tabeller eller filer som innehåller inkapslade data. Alla datauppsättningar baseras på befintliga XDM-scheman, som innehåller begränsningar för vad de inmatade data ska innehålla och hur de ska struktureras. Mer information finns i översikten om [Adobe Experience Platform Data Ingclosure](../../ingestion/home.md) .
+För att kunna importera data till måste [!DNL Experience Platform]en datauppsättning skapas. Datauppsättningar är byggstenarna för dataomvandling och -spårning för [[!DNL Catalog Service]](../../catalog/home.md)och representerar vanligtvis tabeller eller filer som innehåller inkapslade data. Alla datauppsättningar baseras på befintliga XDM-scheman, som innehåller begränsningar för vad de inmatade data ska innehålla och hur de ska struktureras. Mer information finns i översikten om [Adobe Experience Platform Data Ingclosure](../../ingestion/home.md) .
 
 ## Bygga block i ett schema
 
@@ -194,9 +194,9 @@ Giltiga intervall för dessa skalära typer kan begränsas ytterligare till viss
 
 Vissa dataåtgärder som används av underordnade tjänster och program tillämpar begränsningar för specifika fälttyper. De tjänster som påverkas är bland annat följande:
 
-* [[!DNL-kundprofil i realtid]](../../profile/home.md)
+* [[!DNL Real-time Customer Profile]](../../profile/home.md)
 * [[!DNL Identity Service]](../../identity-service/home.md)
-* [[!DNL-segmentering]](../../segmentation/home.md)
+* [[!DNL Segmentation]](../../segmentation/home.md)
 * [[!DNL Query Service]](../../query-service/home.md)
 * [[!DNL Data Science Workspace]](../../data-science-workspace/home.md)
 
@@ -238,7 +238,12 @@ Alla datafiler som är inkapslade i [!DNL Experience Platform] måste överensst
 
 ## Nästa steg
 
-Nu när du förstår grunderna i schemakomposition kan du börja skapa scheman med [!DNL Schema Registry].
+Nu när du förstår grunderna i schemakomposition kan du börja utforska och skapa scheman med [!DNL Schema Registry].
+
+Om du vill granska strukturen för de två grundläggande XDM-klasserna och deras vanligaste kompatibla mixiner läser du följande referensdokumentation:
+
+* [[!DNL XDM Individual Profile]](../classes/individual-profile.md)
+* [[!DNL XDM ExperienceEvent]](../classes/experienceevent.md)
 
 Den [!DNL Schema Registry] används för att komma åt [!DNL Schema Library] Adobe Experience Platform och innehåller ett användargränssnitt och RESTful API som alla tillgängliga biblioteksresurser kan nås från. Det [!DNL Schema Library] innehåller branschresurser som definieras av Adobe, leverantörsresurser som definieras av [!DNL Experience Platform] partners samt klasser, mixins, datatyper och scheman som har skapats av medlemmar i organisationen.
 
