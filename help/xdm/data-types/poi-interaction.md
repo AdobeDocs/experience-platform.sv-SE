@@ -5,7 +5,7 @@ title: Datatyp för intresseinteraktion
 topic: overview
 description: Det här dokumentet innehåller en översikt över XDM-datatypen Point of Interest Interaction.
 translation-type: tm+mt
-source-git-commit: f5bddb39c16eb25e85297f56e331d3aa51510eb9
+source-git-commit: 032adc72db7f094b268f14e8f7d48810830a84e4
 workflow-type: tm+mt
 source-wordcount: '150'
 ht-degree: 0%
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `poiDetail` | [!UICONTROL Point of interest details](./poi-details.md) | Beskriver information om det POI som orsakade händelsen. |
+| `poiDetail` | [[!UICONTROL Point of interest details]](./poi-details.md) | Beskriver information om det POI som orsakade händelsen. |
 | `poiEntries` | Objekt | Beskriver hur många gånger en person har angett POI. Innehåller två egenskaper: <ul><li>`id`: En unik identifierare för måttet.</li><li>`value`: Åtgärdens kvantifierbara värde.</li></ul> |
 | `poiExits` | Objekt | Beskriver hur många gånger en person har lämnat POI. Innehåller två egenskaper: <ul><li>`id`: En unik identifierare för måttet.</li><li>`value`: Åtgärdens kvantifierbara värde.</li></ul> |
 
