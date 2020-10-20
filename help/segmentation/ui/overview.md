@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;Segmentation Service;segmentation;segmentation service;user guide;ui guide;segmentation ui guide;segment builder;Segment builder;
+keywords: Experience Platform;home;popular topics;Segmentation Service;segmentation;segmentation service;user guide;ui guide;segmentation ui guide;segment builder;Segment builder;realized;existing;exiting;
 solution: Experience Platform
 title: Användarhandbok för segmenteringstjänsten
 topic: ui guide
 description: Adobe Experience Platform segmenteringstjänst innehåller ett användargränssnitt för att skapa och hantera segmentdefinitioner.
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: 1aff9329e1ae97caa34a205bbfbbc6f51b54b8fb
 workflow-type: tm+mt
-source-wordcount: '1434'
+source-wordcount: '1416'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 Att arbeta med segmentdefinitioner kräver förståelse för de olika [!DNL Experience Platform] tjänster som är förknippade med segmentering. Innan du läser den här användarhandboken bör du läsa dokumentationen för följande tjänster:
 
-- [[!DNL-segmenteringstjänst]](../home.md): [!DNL Segmentation Service] gör att du kan dela in data som lagras i [!DNL Experience Platform] som rör enskilda personer (t.ex. kunder, prospects, användare eller organisationer) i mindre grupper.
+- [[!DNL Segmentation Service]](../home.md): [!DNL Segmentation Service] gör att du kan dela in data som lagras i [!DNL Experience Platform] som rör enskilda personer (t.ex. kunder, prospects, användare eller organisationer) i mindre grupper.
 - [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 - [[!DNL Adobe Experience Platform Identity Service]](../../identity-service/home.md): Gör det möjligt att skapa kundprofiler genom att överbrygga identiteter från olika datakällor som importeras till [!DNL Platform].
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
@@ -44,7 +44,7 @@ Klicka på **[!UICONTROL Browse]** fliken för att visa en lista över alla segm
 
 I den här vyn visas information om segmentdefinitionen, inklusive uppdelning, kurva, antal profiler, utvärderingsmetod, datum när segmentet skapades och senaste ändringsdatum.
 
-Neddelningen visar ett stolpdiagram som visar procentandelen profiler som tillhör var och en av följande statusvärden: [!UICONTROL Entered], [!UICONTROL Realized]och [!UICONTROL Exiting].
+I uppdelningen visas ett stolpdiagram som visar procentandelen profiler som tillhör var och en av följande statusvärden: [!UICONTROL Entered], [!UICONTROL Realized]och [!UICONTROL Exiting].
 
 ![](../images/ui/overview/segment-browse-breakdown.png)
 
