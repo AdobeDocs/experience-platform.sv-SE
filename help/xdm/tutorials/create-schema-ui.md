@@ -8,7 +8,7 @@ description: I den här självstudiekursen beskrivs stegen för hur du skapar et
 translation-type: tm+mt
 source-git-commit: 9c7119ad836007af3437dc2e938b68aff3ca0f56
 workflow-type: tm+mt
-source-wordcount: '3650'
+source-wordcount: '3634'
 ht-degree: 0%
 
 ---
@@ -274,11 +274,11 @@ När du har tillämpat ändringen visas en fingeravtryckssymbol med ikonen för 
 
 ![](../images/tutorials/create-schema/identity-applied.png)
 
-Nu kommer alla data som hämtas in i `loyaltyId` fältet att användas för att identifiera den personen och sammanfoga en enda bild av kunden. Mer information om hur du arbetar med identiteter i [!DNL Experience Platform]finns i dokumentationen för [[!DNL Identity Service]](../../identity-service/home.md) .
+Nu kommer alla data som hämtas in i `loyaltyId` fältet att användas för att identifiera den personen och sammanfoga en enda bild av kunden. Läs mer om hur du arbetar med identiteter i [!DNL Experience Platform]i [[!DNL Identity Service]](../../identity-service/home.md) dokumentationen.
 
 ## Aktivera schemat för användning i [!DNL Real-time Customer Profile] {#profile}
 
-[[!DNL Real-time Customer Profile]](../../profile/home.md) utnyttjar identitetsdata i för [!DNL Experience Platform] att ge en helhetsbild av varje enskild kund. Tjänsten bygger robusta 360-gradersprofiler av kundattribut samt tidsstämplade konton för varje interaktion som kunderna har haft i alla system som är integrerade med [!DNL Experience Platform].
+[[!DNL Real-time Customer Profile]](../../profile/home.md) utnyttjar identitetsdata i [!DNL Experience Platform] för att ge en helhetsbild av varje enskild kund. Tjänsten bygger robusta 360-gradersprofiler av kundattribut samt tidsstämplade konton för varje interaktion som kunderna har haft i alla system som är integrerade med [!DNL Experience Platform].
 
 För att ett schema ska kunna aktiveras för användning med [!DNL Real-time Customer Profile]måste en primär identitet ha definierats. Du får ett felmeddelande om du försöker aktivera ett schema utan att först definiera en primär identitet.
 
