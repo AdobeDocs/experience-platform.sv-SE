@@ -5,7 +5,7 @@ description: Lär dig spåra Experience Platform Web SDK-händelser
 seo-description: Lär dig spåra Experience Platform Web SDK-händelser
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon;send Beacon;documentUnloading;document Unloading;onBeforeEventSend;
 translation-type: tm+mt
-source-git-commit: db742119d8f169817080f1fd4e0dc08a0f0faa47
+source-git-commit: 14b10aeeb382e9d638cf9fdf62deddbee3e72600
 workflow-type: tm+mt
 source-wordcount: '1139'
 ht-degree: 0%
@@ -54,7 +54,7 @@ För närvarande stöds inte sändning av data som inte matchar ett XDM-schema. 
 
 ### Inställning `eventType`
 
-I en XDM-upplevelsehändelse finns det ett valfritt `eventType` fält. Detta innehåller postens primära händelsetyp. Genom att ange en händelsetyp kan du skilja mellan olika händelser som du skickar in. XDM innehåller flera fördefinierade händelsetyper som du kan använda eller så skapar du alltid egna anpassade händelsetyper för dina användningsfall. Nedan visas en lista med alla fördefinierade händelsetyper som tillhandahålls av XDM. [Läs mer i den offentliga rapporten om XDM](https://github.com/adobe/xdm/blob/master/docs/reference/behaviors/time-series.schema.md#xdmeventtype-known-values)
+I en XDM-upplevelsehändelse finns det ett valfritt `eventType` fält. Detta innehåller postens primära händelsetyp. Genom att ange en händelsetyp kan du skilja mellan olika händelser som du skickar in. XDM innehåller flera fördefinierade händelsetyper som du kan använda eller så skapar du alltid egna anpassade händelsetyper för dina användningsfall. Nedan visas en lista med alla fördefinierade händelsetyper som tillhandahålls av XDM. [Läs mer i XDM:s offentliga rapport](https://github.com/adobe/xdm/blob/master/docs/reference/behaviors/time-series.schema.md#xdmeventtype-known-values).
 
 
 | **Händelsetyp:** | **Definition:** |
@@ -131,7 +131,7 @@ alloy("sendEvent", {
 
 ### Lägga till identitetsinformation
 
-Du kan även lägga till anpassad identitetsinformation till händelsen. Se [Hämta Experience Cloud-ID](../identity/overview.md)
+Du kan även lägga till anpassad identitetsinformation till händelsen. Se [Hämta Experience Cloud-ID](../identity/overview.md).
 
 ## Använda API:t sendBeacon
 
