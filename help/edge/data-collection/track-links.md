@@ -5,7 +5,7 @@ description: Lär dig hur du skickar länkdata till Adobe Analytics med Experien
 seo-description: Lär dig hur du skickar länkdata till Adobe Analytics med Experience Platform Web SDK
 keywords: adobe analytics;analytics;sendEvent;s.t();s.tl();webPageDetails;pageViews;webInteraction;web Interaction;page views;link tracking;links;track links;clickCollection;click collection;
 translation-type: tm+mt
-source-git-commit: ab1618a9d8c6cc60407d301dad03983ce432bbbe
+source-git-commit: 2e28fda40a135330054c749d73439448a55db52c
 workflow-type: tm+mt
 source-wordcount: '250'
 ht-degree: 0%
@@ -46,7 +46,7 @@ Länktypen kan vara ett av tre värden:
 
 ## Automatisk länkspårning {#automaticLinkTracking}
 
-Som standard hämtar Web SDK, [etiketter](#labelingLinks)och [poster](https://github.com/adobe/xdm/blob/master/docs/reference/context/webinteraction.schema.md) klickar på [kvalificerande](#qualifyingLinks) länktaggar. Klickningar hämtas med en händelseavlyssnare för [klickning](https://www.w3.org/TR/uievents/#capture-phase) som bifogas till dokumentet.
+Som standard hämtar Web SDK, [etiketter](#labelingLinks)och [poster](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/webinteraction.schema.md) klickar på [kvalificerande](#qualifyingLinks) länktaggar. Klickningar hämtas med en händelseavlyssnare för [klickning](https://www.w3.org/TR/uievents/#capture-phase) som bifogas till dokumentet.
 
 Du kan inaktivera automatisk länkspårning genom att [konfigurera](../fundamentals/configuring-the-sdk.md#clickCollectionEnabled) Web SDK.
 
