@@ -5,7 +5,7 @@ description: Lär dig vilka variabler som automatiskt mappas i Adobe Analytics m
 seo-description: Lär dig vilka variabler som automatiskt mappas i Adobe Analytics med Experience Platform Web SDK
 keywords: adobe analytics;variables;analytics;automatic map;automatically mapped;
 translation-type: tm+mt
-source-git-commit: 5ef902ef7f7717121744f7f0074c0aa17e5a9e9a
+source-git-commit: 2e28fda40a135330054c749d73439448a55db52c
 workflow-type: tm+mt
 source-wordcount: '547'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 Nedan finns en lista med variabler som Adobe Experience Platform [!DNL Edge Network] automatiskt mappar till [!DNL Analytics].
 
 | Sökväg till XDM-fält | [!DNL Analytics Query String] / HTTP Header | Beskrivning |
-| ---------- | ------------------------- | -------- |
+| ---------- | ------------------------- | ----------------------------------------- |
 | `commerce.order.purchaseID` | `pi` | AppMeasurement-frågeparametern PURCHASEID-mappning. |
 | `commerce.order.currencyCode` | `cc` | AppMeasurement-frågeparameterns CURRENCY-mappning. |
 | `commerce.purchases.value` | `events` | AppMeasurement-frågeparametern EVENT_LIST_FULL-mappning med konverteringen COMMERCE_PURCHASE, med avgränsare `,`. |
