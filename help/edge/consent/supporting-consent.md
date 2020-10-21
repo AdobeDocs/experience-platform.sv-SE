@@ -5,9 +5,9 @@ description: Lär dig hur du stöder medgivandeinställningar med Experience Pla
 seo-description: Lär dig hur du stöder medgivandeinställningar med Experience Platform Web SDK
 keywords: consent;defaultConsent;default consent;setConsent;Profile Privacy Mixin;Experience Event Privacy Mixin;Privacy Mixin;
 translation-type: tm+mt
-source-git-commit: d069b3007265406367ca9de2b85540b2a070cf36
+source-git-commit: 2e28fda40a135330054c749d73439448a55db52c
 workflow-type: tm+mt
-source-wordcount: '751'
+source-wordcount: '753'
 ht-degree: 0%
 
 ---
@@ -97,7 +97,7 @@ alloy("setConsent", {
 });
 ```
 
-När medgivandet har ställts in på det här sättet uppdateras kundprofilen i realtid med medgivandeinformationen. För att detta ska fungera måste profilens XDM-schema innehålla [profilsekretessmixen](https://github.com/adobe/xdm/blob/master/docs/reference/context/profile-privacy.schema.md). När händelser skickas måste IAB:s medgivandeinformation läggas till manuellt i händelsens XDM-objekt. SDK inkluderar inte automatiskt information om samtycke i händelserna. Om du vill skicka medgivandeinformation i händelser måste [Experience Event Privacy Mixin](https://github.com/adobe/xdm/blob/master/docs/reference/context/experienceevent-privacy.schema.md) läggas till i Experience Event-schemat.
+När medgivandet har ställts in på det här sättet uppdateras kundprofilen i realtid med medgivandeinformationen. För att detta ska fungera måste profilens XDM-schema innehålla [profilsekretessmixen](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-privacy.schema.md). När händelser skickas måste IAB:s medgivandeinformation läggas till manuellt i händelsens XDM-objekt. SDK inkluderar inte automatiskt information om samtycke i händelserna. Om du vill skicka medgivandeinformation i händelser måste [Experience Event Privacy Mixin](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/experience-event/experienceevent-privacy.schema.md) läggas till i Experience Event-schemat.
 
 ## Skicka båda standarderna i en begäran
 
