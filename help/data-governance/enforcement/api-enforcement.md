@@ -6,9 +6,9 @@ topic: enforcement
 type: Tutorial
 description: När du har skapat dataanvändningsetiketter för dina data, och har skapat användningsprinciper för marknadsföringsåtgärder mot dessa etiketter, kan du använda principtjänstens API för att utvärdera om en marknadsföringsåtgärd som utförs på en datauppsättning eller en godtycklig grupp av etiketter utgör en policyöverträdelse. Du kan sedan konfigurera egna interna protokoll för att hantera policyöverträdelser baserat på API-svaret.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 00688e271b3c1e3ad1a17ceb6045e3316bd65961
 workflow-type: tm+mt
-source-wordcount: '936'
+source-wordcount: '993'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 # Använd principer för dataanvändning med [!DNL Policy Service] API
 
-När du har skapat dataanvändningsetiketter för dina data och skapat användarprofiler för marknadsföringsåtgärder mot dessa etiketter kan du använda [[!DNL Policy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) för att utvärdera om en marknadsföringsåtgärd som har utförts på en datauppsättning eller en godtycklig grupp av etiketter utgör en principöverträdelse. Du kan sedan konfigurera egna interna protokoll för att hantera policyöverträdelser baserat på API-svaret.
+När du har skapat dataanvändningsetiketter för dina data och har skapat användarprofiler för marknadsföringsåtgärder mot dessa etiketter, kan du använda [[!DNL Policy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) för att utvärdera om en marknadsföringsåtgärd som utförs på en datauppsättning eller en godtycklig grupp av etiketter utgör en policyöverträdelse. Du kan sedan konfigurera egna interna protokoll för att hantera policyöverträdelser baserat på API-svaret.
 
 >[!NOTE]
 >
@@ -170,7 +170,13 @@ curl -X POST \
     },
     {
       "entityType": "dataSet",
-      "entityId": "5cc1fb685410ef14b748c55f"
+      "entityId": "5cc1fb685410ef14b748c55f",
+      "entityMeta": {
+          "fields": [
+              "/properties/personalEmail/properties/address",
+              "/properties/person/properties/name/properties/fullName"
+          ]
+      }
     }
   ]'
 ```
@@ -179,6 +185,7 @@ curl -X POST \
 | --- | --- |
 | `entityType` | Varje objekt i nyttolastarrayen måste ange vilken typ av enhet som definieras. I det här fallet kommer värdet alltid att vara &quot;dataSet&quot;. |
 | `entityId` | Varje objekt i nyttolastarrayen måste ange ett unikt ID för en datamängd. |
+| `entityMeta.fields` | (Valfritt) En array med [JSON-pekarsträngar](../../landing/api-fundamentals.md#json-pointer) , som refererar till specifika fält i datasetens schema. Om den här arrayen inkluderas endast fälten i arrayen i utvärderingen. Schemafält som inte ingår i arrayen kommer inte att utvärderas.<br><br>Om det här fältet inte inkluderas inkluderas alla fält i datasetet i utvärderingen. |
 
 **Svar**
 
@@ -304,13 +311,13 @@ Ett lyckat svar returnerar URL:en för marknadsföringsåtgärden, de användnin
                         "labels": [
                             "C5"
                         ],
-                        "path": "/properties/createdByBatchID"
+                        "path": "/properties/personalEmail/properties/address",
                     },
                     {
                         "labels": [
                             "C5"
                         ],
-                        "path": "/properties/faxPhone"
+                        "path": "/properties/person/properties/name/properties/fullName"
                     }
                 ]
             }
