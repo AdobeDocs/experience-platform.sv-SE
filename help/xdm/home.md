@@ -5,9 +5,9 @@ title: Experience Data Model (XDM) System
 topic: overview
 description: 'Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. Experience Data Model (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering. '
 translation-type: tm+mt
-source-git-commit: b7b57c0b70b1af3a833f0386bc809bb92c9b50f8
+source-git-commit: 1aceddc02a5120b0bf7413db33c2c03d0ab2948c
 workflow-type: tm+mt
-source-wordcount: '1639'
+source-wordcount: '1638'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience
 
 XDM är en öppet dokumenterad specifikation som utformats för att förbättra möjligheterna med digitala upplevelser. Den innehåller gemensamma strukturer och definitioner för alla program som används för att kommunicera med [!DNL Platform] tjänster. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation som kan ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och uttrycka kundattribut i personaliseringssyfte.
 
-XDM är det grundläggande ramverk som gör det möjligt för Adobe Experience Cloud, som drivs av [!DNL Experience Platform]den, att leverera rätt budskap till rätt person, i rätt kanal, i precis rätt ögonblick. Metoden som [!DNL Experience Platform] byggs på, XDM System, används för [!DNL Experience Data Model] scheman som ska användas av [!DNL Platform] tjänster.
+XDM är det grundläggande ramverk som gör det möjligt för Adobe Experience Cloud, som drivs av [!DNL Experience Platform], att leverera rätt budskap till rätt person, i rätt kanal, i precis rätt ögonblick. Metoden som [!DNL Experience Platform] byggs på, XDM System, används för [!DNL Experience Data Model] scheman som ska användas av [!DNL Platform] tjänster.
 
 Det här dokumentet innehåller en översikt över XDM-systemets roll i [!DNL Experience Platform].
 
@@ -48,7 +48,7 @@ Alla XDM-scheman beskriver data som kan kategoriseras som post- eller tidsserier
 
 Även om du kan definiera egna klasser i [!DNL Schema Registry]bör du använda de klasser du föredrar **[!DNL XDM Individual Profile]** och **[!DNL XDM ExperienceEvent]** för data i post- och tidsserier. Dessa klasser beskrivs mer ingående nedan.
 
-### [!DNL XDM Individual Profile] (#xdm-individual-profile)
+### [!DNL XDM Individual Profile] {#xdm-individual-profile}
 
 [!DNL XDM Individual Profile] är en postbaserad klass som bildar en enda representation av attributen hos både identifierade och delvis identifierade ämnen. Profiler som är välidentifierade kan användas för personlig kommunikation eller målinriktade åtaganden och kan innehålla detaljerad personlig information som namn, kön, födelsedatum, plats och kontaktinformation, inklusive telefonnummer och e-postadresser.
 
