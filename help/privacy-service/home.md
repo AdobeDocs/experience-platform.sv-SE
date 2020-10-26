@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform Privacy Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 5d88aca08b7cf1d55e1eed989de6aa514f82e113
+source-git-commit: f3872d433949e6c14c28c6833b8498d4d01b8de3
 workflow-type: tm+mt
-source-wordcount: '1561'
+source-wordcount: '1623'
 ht-degree: 1%
 
 ---
@@ -30,7 +30,7 @@ Dessa beslut kan sammanfattas i följande frågor:
    * För att kunna använda [!DNL Privacy Service]på bästa sätt måste ni ha en detaljerad förståelse för vilka typer av data ni samlar in från era kunder, och vilka av dem som omfattas av sekretesslagstiftningen. Mer information finns i avsnittet [om sekretesskrav](#requirements) .
 1. **Har jag märkt mina data korrekt?**
    * Data måste vara korrekt märkta för att tjänsten ska kunna avgöra vilka fält som ska användas eller tas bort under sekretessjobb. Mer information finns i avsnittet om [etikettdata](#label) .
-1. **Vet jag vilka ID:n jag ska skicka till[!DNL Privacy Service]?**
+1. **Vet jag vilka ID:n jag ska skicka till [!DNL Privacy Service]?**
    * När sekretessförfrågningar skickas måste enskilda kund-ID:n som är specifika för vissa Adobe-program tillhandahållas. Mer information finns i avsnitten om [att tillhandahålla identitetsdata](#identity) och [göra sekretessförfrågningar](#requests) .
 1. **Hur spårar jag mina sekretessjobb?**
    * När du har gjort sekretessförfrågningar finns det flera alternativ för att spåra deras status och resultat. Mer information finns i avsnittet [Övervaka sekretessjobb](#monitor) .
@@ -75,10 +75,12 @@ När du har fastställt ditt företags sekretessbehov och bestämt vilka identit
 >Avsnitten nedan innehåller länkar till dokumentation som beskriver hur du gör allmänna sekretessförfrågningar i API:t eller användargränssnittet. Beroende på vilka program du använder kan dock de fält som du måste skicka i nyttolasten för begäran skilja sig från de exempel som visas i dessa handböcker. [!DNL Experience Cloud]
 >
 >I dokumentet om [Privacy Service- och Experience Cloud-program](./experience-cloud-apps.md) finns mer information om hur du formaterar sekretessförfrågningar för just dina [!DNL Experience Cloud] program.
+>
+>Det är också viktigt att notera att sekretessförfrågningar behandlas asynkront mellan olika Experience Cloud-program. När en begäran har tagits emot av Privacy Servicen kan det ta en stund mellan minuter och veckor innan den kan slutföras. Den tid det tar att slutföra varje begäran är specifik för programmet du arbetar med och den mängd data som behöver behandlas.
 
 #### Använda API
 
-API:t för [[!DNL-Privacy Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/privacy-service.yaml) innehåller flera slutpunkter för att skapa och hantera sekretessjobb med RESTful API-anrop, vilket gör att du kan programmässigt hantera kompatibilitetsregler för dina [!DNL Experience Cloud] program. Detaljerade anvisningar om hur du använder API:t finns i utvecklarhandboken [för](api/getting-started.md)Privacy Service API.
+Den [[!DNL Privacy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/privacy-service.yaml) innehåller flera slutpunkter för att skapa och hantera sekretessjobb med RESTful API-anrop, vilket gör att du kan programmässigt hantera kompatibiliteten för sekretesslagstiftning för dina [!DNL Experience Cloud] program. Detaljerade anvisningar om hur du använder API:t finns i utvecklarhandboken [för](api/getting-started.md)Privacy Service API.
 
 #### Använda gränssnittet
 
