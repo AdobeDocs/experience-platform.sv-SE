@@ -5,9 +5,9 @@ title: Behandling av sekretessförfrågningar i Data Lake
 topic: overview
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt juridiska och organisatoriska sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kunddata som lagras i Data Lake.
 translation-type: tm+mt
-source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
+source-git-commit: 066337419431db24bde0a8d0d30b85132d08f43c
 workflow-type: tm+mt
-source-wordcount: '1243'
+source-wordcount: '1266'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretess
 
 Vi rekommenderar att du har en fungerande förståelse för följande [!DNL Experience Platform] tjänster innan du läser den här handboken:
 
-* [[!DNL-Privacy Service]](../privacy-service/home.md): Hanterar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter mellan olika Adobe Experience Cloud-program.
+* [[!DNL Privacy Service]](../privacy-service/home.md): Hanterar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter mellan olika Adobe Experience Cloud-program.
 * [[!DNL Catalog Service]](home.md): Registreringssystemet för dataplatsen och datalinje inom [!DNL Experience Platform]. Tillhandahåller ett API som kan användas för att uppdatera datauppsättningsmetadata.
 * [[!DNL Experience Data Model (XDM) System]](../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
 * [[!DNL Identity Service]](../identity-service/home.md): Lös den grundläggande utmaning som fragmenteringen av kundupplevelsedata innebär genom att överbrygga identiteter mellan olika enheter och system.
@@ -136,6 +136,10 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och information om den nyska
 >I det här avsnittet beskrivs hur du formaterar sekretessförfrågningar för [!DNL Data Lake]. Vi anmodar dig att läsa igenom [[!DNL Privacy Service] användargränssnittets](../privacy-service/ui/overview.md) eller [[!DNL Privacy Service] API](../privacy-service/api/getting-started.md) -dokumentationen för att få information om hur du skickar ett sekretessjobb, inklusive hur inskickade användaridentitetsdata formateras korrekt i nyttolaster.
 
 I följande avsnitt beskrivs hur du gör sekretessförfrågningar för [!DNL Data Lake] med hjälp av [!DNL Privacy Service] gränssnittet eller API:t.
+
+>[!IMPORTANT]
+>
+>Det går inte att garantera hur lång tid en sekretessbegäran kan ta att slutföra. Om det sker ändringar i datasjön medan en begäran fortfarande bearbetas, kan även dessa poster inte garanteras.
 
 ### Använda gränssnittet
 
