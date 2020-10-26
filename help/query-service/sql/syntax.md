@@ -5,7 +5,7 @@ title: SQL-syntax
 topic: syntax
 description: Det här dokumentet visar SQL-syntax som stöds av Query Service.
 translation-type: tm+mt
-source-git-commit: 43bebfbe0c0fca57d6e1ed0116e317b03125f175
+source-git-commit: c044194ed22b5e6fcd5e2e2102f3cd4eda45aa84
 workflow-type: tm+mt
 source-wordcount: '2067'
 ht-degree: 0%
@@ -118,7 +118,7 @@ Följande syntax definierar en `CREATE TABLE AS SELECT` (CTAS)-fråga som stöds
 CREATE TABLE table_name [ WITH (schema='target_schema_title', rowvalidation='false') ] AS (select_query)
 ```
 
-där,`target_schema_title` är titeln på XDM-schemat. Använd bara den här satsen om du vill använda ett befintligt XDM-schema för den nya datauppsättningen som skapas av CTAS-frågan`rowvalidation` om användaren vill validera radnivån för alla nya batchar som hämtas för den nya datauppsättningen som skapas. Standardvärdet är &quot;false&quot;
+där,`target_schema_title` är titeln på XDM-schemat. Använd bara den här satsen om du vill använda ett befintligt XDM-schema för den nya datauppsättningen som skapas av CTAS-frågan`rowvalidation` om användaren vill validera radnivån för alla nya batchar som hämtas för den nya datauppsättningen som skapas. Standardvärdet är &#39;true&#39;
 
 och `select_query` är en `SELECT` -programsats vars syntax definieras ovan i det här dokumentet.
 
