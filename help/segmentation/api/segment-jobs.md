@@ -5,9 +5,9 @@ title: Segmentjobb
 topic: developer guide
 description: Den här handboken innehåller information som hjälper dig att förstå segmentjobben bättre och innehåller exempel på API-anrop för att utföra grundläggande åtgärder med API:t.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 8c5c3aed4d46c8b3873009ab9f17ff9bca93302c
 workflow-type: tm+mt
-source-wordcount: '1025'
+source-wordcount: '1153'
 ht-degree: 1%
 
 ---
@@ -96,9 +96,9 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentjobb för d
                             "format": "pql/json",
                             "value": "{PQL_EXPRESSION}"
                         },
-                        "mergePolicyId": "b83185bb-0bc6-489c-9363-0075eb30b4c8",
+                        "mergePolicyId": "25c548a0-ca7f-4dcd-81d5-997642f178b9",
                         "mergePolicy": {
-                            "id": "b83185bb-0bc6-489c-9363-0075eb30b4c8",
+                            "id": "25c548a0-ca7f-4dcd-81d5-997642f178b9",
                             "version": 1
                         }
                     }
@@ -115,14 +115,25 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentjobb för d
                     "endTimeInMs": 1573204395655,
                     "totalTimeInMs": 128928
                 },
-                "totalProfiles": 0,
-                "segmentedProfileCounter": {
-                    "30230300-ccf1-48ad-8012-c5563a007069": 0,
-                    "ca763983-5572-4ea4-809c-b7dff7e0d79b": 0
+                "totalProfiles":13146432,
+                "segmentedProfileCounter":{
+                    "94509dba-7387-452f-addc-5d8d979f6ae8":1033
                 },
-                "segmentedProfileByNamespaceCounter": {
-                    "30230300-ccf1-48ad-8012-c5563a007069": {},
-                    "ca763983-5572-4ea4-809c-b7dff7e0d79b": {}
+                "segmentedProfileByNamespaceCounter":{
+                    "94509dba-7387-452f-addc-5d8d979f6ae8":{
+                        "tenantiduserobjid":1033,
+                        "campaign_profile_mscom_mkt_prod2":1033
+                    }
+                },
+                "segmentedProfileByStatusCounter":{
+                    "94509dba-7387-452f-addc-5d8d979f6ae8":{
+                        "exited":144646,
+                        "existing":10,
+                        "realized":2056
+                    }
+                },
+                "totalProfilesByMergePolicy":{
+                    "25c548a0-ca7f-4dcd-81d5-997642f178b9":13146432
                 }
             },
             "requestId": "4e538382-dbd8-449e-988a-4ac639ebe72b-1573203600264",
@@ -162,6 +173,12 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentjobb för d
 | `segments.segment.id` | ID för segmentdefinitionen. |
 | `segments.segment.expression` | Ett objekt som innehåller information om segmentdefinitionens uttryck, skrivet i PQL. |
 | `metrics` | Ett objekt som innehåller diagnostikinformation om segmentjobbet. |
+| `metrics.totalTime` | Ett objekt som innehåller information om när segmenteringsjobbet påbörjades och avslutades samt den totala tiden. |
+| `metrics.profileSegmentationTime` | Ett objekt som innehåller information om de tidpunkter då segmenteringsutvärderingen påbörjades och avslutades samt den totala tiden. |
+| `metrics.segmentProfileCounter` | Antalet profiler som kvalificerats per segment. |
+| `metrics.segmentedProfileByNamespaceCounter` | Antalet profiler som är kvalificerade för varje identitetsnamnutrymme per segment. |
+| `metrics.segmentProfileByStatusCounter` | Antalet **profilfragment** för varje status. Följande tre statusvärden stöds: <ul><li>&quot;real&quot; - antalet nya profiler som har lagts till i segmentet.</li><li>&quot;existing&quot; - antalet profiler som fortfarande finns i segmentet.</li><li>&quot;exited&quot; - antalet profilsegment som inte längre finns i segmentet.</li></ul> |
+| `metrics.totalProfilesByMergePolicy` | Det totala antalet sammanfogade profiler per sammanfogningspolicy. |
 
 ## Skapa ett nytt segmentjobb {#create}
 
