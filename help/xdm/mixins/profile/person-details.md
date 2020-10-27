@@ -1,21 +1,25 @@
 ---
 keywords: Experience Platform;home;popular topics;schema;Schema;XDM;individual profile;fields;schemas;Schemas;Schema design;mixin;mixin;person;person details;profile person details;person;
 solution: Experience Platform
-title: Blanda profilpersonuppgifter
+title: Blandning av demografiska detaljer
 topic: overview
-description: Det här dokumentet innehåller en översikt över klassen XDM Individual Profile.
+description: I det här dokumentet finns en översikt över blandningen av demografiska detaljer.
 translation-type: tm+mt
-source-git-commit: 27ce9b6e8608bbfccac25387ba96f998272273c1
+source-git-commit: f9d8021643e72e3fbb5315b54a19815dcdaaa702
 workflow-type: tm+mt
-source-wordcount: '221'
-ht-degree: 3%
+source-wordcount: '237'
+ht-degree: 2%
 
 ---
 
 
-# [!UICONTROL Profile person details] blanda
+# [!UICONTROL Demographic Details] blanda
 
-[!UICONTROL Profile person details] är en standardblandning för [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md). Mixin tillhandahåller ett objekt på rotnivå `person` vars underfält beskriver information om en enskild person.
+>[!NOTE]
+>
+>Namnen på flera blandningar har ändrats. Mer information finns i dokumentet om uppdatering [av](../name-updates.md) blandade namn.
+
+[!UICONTROL Demographic Details] är en standardblandning för [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md). Mixin tillhandahåller ett objekt på rotnivå `person` vars underfält beskriver information om en enskild person.
 
 <img src="../../images/mixins/profile-person-details.png" width="600" /><br />
 
@@ -33,4 +37,4 @@ ht-degree: 3%
 Mer information om blandningen finns i den offentliga XDM-databasen:
 
 * [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/mixins/profile/profile-person-details.example.1.json)
-* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/mixins/profile/profile-person-details.schema.json)
+* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/mixins/profile/profile-person-details.schema.json)å
