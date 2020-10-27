@@ -6,9 +6,9 @@ title: Ta bort dataflöden
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: cbd9b3ed0cf43d582d734098b9ce58fc074fb375
 workflow-type: tm+mt
-source-wordcount: '434'
+source-wordcount: '433'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 # Ta bort dataflöden
 
-Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du tar bort dataflöden från [!UICONTROL Sources] arbetsytan.
+Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du tar bort dataflöden från **[!UICONTROL Sources]** arbetsytan.
 
 ## Komma igång
 
@@ -64,7 +64,6 @@ Efter en stund visas en grön bekräftelseruta längst ned på skärmen som bekr
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du fått åtkomst till befintliga konton och dataflöden från **[!UICONTROL Sources]** arbetsytan. Inkommande data kan nu användas av [!DNL Platform] tjänster längre fram i kedjan som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+I den här självstudiekursen har du använt arbetsytan för att ta bort befintliga dataflöden **[!UICONTROL Sources]** .
 
-- [[!DNL Real-time Customer Profile] översikt](../../../profile/home.md)
-- [[!DNL Data Science Workspace] översikt](../../../data-science-workspace/home.md)
+Anvisningar om hur du utför dessa åtgärder programmatiskt med API:t finns i självstudiekursen om hur du [!DNL Flow Service] [tar bort anslutningar med API:t för Flow Service](../../tutorials/api/delete.md)
