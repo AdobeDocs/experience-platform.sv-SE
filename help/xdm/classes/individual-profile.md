@@ -5,9 +5,9 @@ title: Klassen XDM Individuell profil
 topic: overview
 description: Det här dokumentet innehåller en översikt över klassen XDM Individual Profile.
 translation-type: tm+mt
-source-git-commit: b7b57c0b70b1af3a833f0386bc809bb92c9b50f8
+source-git-commit: f9d8021643e72e3fbb5315b54a19815dcdaaa702
 workflow-type: tm+mt
-source-wordcount: '333'
+source-wordcount: '350'
 ht-degree: 0%
 
 ---
@@ -34,10 +34,14 @@ Själva [!DNL XDM Individual Profile] klassen innehåller flera systemgenererade
 
 ## Kompatibla blandningar {#mixins}
 
+>[!NOTE]
+>
+>Namnen på flera blandningar har ändrats. Mer information finns i dokumentet om uppdatering [av](../mixins/name-updates.md) blandade namn.
+
 Adobe innehåller flera standardblandningar som kan användas med [!DNL XDM Individual Profile] klassen. Nedan följer en lista över de vanligaste blandningarna för klassen:
 
 * [[!UICONTROL IdentityMap]](../mixins/profile/identitymap.md)
-* [[!UICONTROL Profile person details]](../mixins/profile/person-details.md)
-* [[!UICONTROL Profile personal details]](../mixins/profile/personal-details.md)
-* [[!UICONTROL Profile work details]](../mixins/profile/work-details.md)
-* [[!UICONTROL Profile segmentation]](../mixins/profile/segmentation.md)
+* [[!UICONTROL Demographic Details]](../mixins/profile/person-details.md)
+* [[!UICONTROL Personal Contact Details]](../mixins/profile/personal-details.md)
+* [[!UICONTROL Work Contact Details]](../mixins/profile/work-details.md)
+* [[!UICONTROL Segment Membership Details]](../mixins/profile/segmentation.md)
