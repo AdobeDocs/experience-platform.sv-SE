@@ -5,9 +5,9 @@ title: Användarhandbok för datauppsättningar
 topic: datasets
 description: Den här användarhandboken för datauppsättningar innehåller anvisningar om hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 translation-type: tm+mt
-source-git-commit: 79dca07d3e6ecf998a6278fa49178a7fa8cc0e8c
+source-git-commit: 1c00456ee06c1fc09c8e4ce070c90255f51811e1
 workflow-type: tm+mt
-source-wordcount: '1105'
+source-wordcount: '1089'
 ht-degree: 0%
 
 ---
@@ -122,7 +122,7 @@ Du kan ta bort en datauppsättning genom att först gå till dess **[!UICONTROL 
 
 >[!NOTE]
 >
->Det går inte att ta bort datauppsättningar som skapats och använts av program och tjänster från Adobe (t.ex. Adobe Analytics, Adobe Audience Manager eller [!DNL Decisioning Service]).
+>Det går inte att ta bort datauppsättningar som skapats och använts av program och tjänster från Adobe (t.ex. Adobe Analytics, Adobe Audience Manager eller [!DNL Offer Decisioning]).
 
 ![](../images/datasets/user-guide/delete_dataset.png)
 
