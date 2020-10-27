@@ -5,9 +5,9 @@ user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: Datamodellguide (XDM)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och mixins för att standardisera upplevelsedata.
 translation-type: tm+mt
-source-git-commit: a091acf1cfc572df7b300a7be6a673b1e7469be5
+source-git-commit: 6c52998421b6a5d9719f287ec8cb7099780cb1ff
 workflow-type: tm+mt
-source-wordcount: '197'
+source-wordcount: '198'
 ht-degree: 4%
 
 ---
@@ -28,13 +28,13 @@ ht-degree: 4%
 * Blandningar {#mixins}
    * Profilinmixningar {#profile}
       * [IdentityMap](./mixins/profile/identitymap.md)
-      * [Profilpersoninformation](./mixins/profile/person-details.md)
-      * [Profilens personuppgifter](./mixins/profile/personal-details.md)
-      * [Profilsegmentering](./mixins/profile/segmentation.md)
-      * [Profilarbetsinformation](./mixins/profile/work-details.md)
+      * [Demografiska detaljer](./mixins/profile/person-details.md)
+      * [Kontaktinformation, privat](./mixins/profile/personal-details.md)
+      * [Information om segmentmedlemskap](./mixins/profile/segmentation.md)
+      * [Kontaktinformation, arbete](./mixins/profile/work-details.md)
    * Händelseblandningar {#event}
-      * [ExperienceEvent EndUserID:n](./mixins/event/enduserids.md)
-      * [ExperienceEvent-miljöinformation](./mixins/event/environment-details.md)
+      * [Information om slutanvändar-ID](./mixins/event/enduserids.md)
+      * [Miljöinformation](./mixins/event/environment-details.md)
    * [Uppdateringar av blandade namn](./mixins/name-updates.md)
 * Datatyper {#data-types}
    * [Beacon](./data-types/beacon.md)
