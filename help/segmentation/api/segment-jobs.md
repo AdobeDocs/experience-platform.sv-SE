@@ -5,9 +5,9 @@ title: Segmentjobb
 topic: developer guide
 description: Den här handboken innehåller information som hjälper dig att förstå segmentjobben bättre och innehåller exempel på API-anrop för att utföra grundläggande åtgärder med API:t.
 translation-type: tm+mt
-source-git-commit: 8c5c3aed4d46c8b3873009ab9f17ff9bca93302c
+source-git-commit: 521b760da850144d7a8e75126453c2aae5c2ce72
 workflow-type: tm+mt
-source-wordcount: '1153'
+source-wordcount: '1152'
 ht-degree: 1%
 
 ---
@@ -177,7 +177,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentjobb för d
 | `metrics.profileSegmentationTime` | Ett objekt som innehåller information om de tidpunkter då segmenteringsutvärderingen påbörjades och avslutades samt den totala tiden. |
 | `metrics.segmentProfileCounter` | Antalet profiler som kvalificerats per segment. |
 | `metrics.segmentedProfileByNamespaceCounter` | Antalet profiler som är kvalificerade för varje identitetsnamnutrymme per segment. |
-| `metrics.segmentProfileByStatusCounter` | Antalet **profilfragment** för varje status. Följande tre statusvärden stöds: <ul><li>&quot;real&quot; - antalet nya profiler som har lagts till i segmentet.</li><li>&quot;existing&quot; - antalet profiler som fortfarande finns i segmentet.</li><li>&quot;exited&quot; - antalet profilsegment som inte längre finns i segmentet.</li></ul> |
+| `metrics.segmentProfileByStatusCounter` | Antalet profiler för varje status. Följande tre statusvärden stöds: <ul><li>&quot;real&quot; - antalet nya profiler som har lagts till i segmentet.</li><li>&quot;existing&quot; - antalet profiler som fortfarande finns i segmentet.</li><li>&quot;exited&quot; - antalet profilsegment som inte längre finns i segmentet.</li></ul> |
 | `metrics.totalProfilesByMergePolicy` | Det totala antalet sammanfogade profiler per sammanfogningspolicy. |
 
 ## Skapa ett nytt segmentjobb {#create}
