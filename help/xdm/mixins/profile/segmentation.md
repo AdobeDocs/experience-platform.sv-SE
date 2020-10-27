@@ -1,21 +1,25 @@
 ---
 keywords: Experience Platform;home;popular topics;schema;Schema;XDM;individual profile;fields;schemas;Schemas;segment;segmentMembership;segment membership;Schema design;map;Map;
 solution: Experience Platform
-title: Blandning av profilsegmentering
+title: Blandning av detaljer för segmentmedlemskap
 topic: overview
-description: Det här dokumentet innehåller en översikt över klassen XDM Individual Profile.
+description: Det här dokumentet innehåller en översikt över blandningen av information om segmentmedlemskap.
 translation-type: tm+mt
-source-git-commit: 53575488c08f73a65a7f1cc5f803f9ead707ae48
+source-git-commit: f9d8021643e72e3fbb5315b54a19815dcdaaa702
 workflow-type: tm+mt
-source-wordcount: '361'
+source-wordcount: '379'
 ht-degree: 0%
 
 ---
 
 
-# [!UICONTROL Profile segmentation] blanda
+# [!UICONTROL Segment Membership Details] blanda
 
-[!UICONTROL Profile segmentation] är en standardblandning för [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md). Kombinationen innehåller ett enda kartfält som samlar in information om segmentmedlemskap, inklusive vilka segment personen tillhör, senaste kvalificeringstid och när medlemskapet gäller till.
+>[!NOTE]
+>
+>Namnen på flera blandningar har ändrats. Mer information finns i dokumentet om uppdatering [av](../name-updates.md) blandade namn.
+
+[!UICONTROL Segment Membership Details] är en standardblandning för [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md). Kombinationen innehåller ett enda kartfält som samlar in information om segmentmedlemskap, inklusive vilka segment personen tillhör, senaste kvalificeringstid och när medlemskapet gäller till.
 
 >[!WARNING]
 >
