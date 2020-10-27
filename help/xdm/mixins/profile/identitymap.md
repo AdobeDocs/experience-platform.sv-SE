@@ -5,15 +5,19 @@ title: IdentityMap-blandning
 topic: overview
 description: Det här dokumentet innehåller en översikt över klassen XDM Individual Profile.
 translation-type: tm+mt
-source-git-commit: fd5bd4134bd35d5d87c79bf1e75bc88c67511b2b
+source-git-commit: f9d8021643e72e3fbb5315b54a19815dcdaaa702
 workflow-type: tm+mt
-source-wordcount: '94'
+source-wordcount: '111'
 ht-degree: 0%
 
 ---
 
 
 # [!UICONTROL IdentityMap] blanda
+
+>[!NOTE]
+>
+>Namnen på flera blandningar har ändrats. Mer information finns i dokumentet om uppdatering [av](../name-updates.md) blandade namn.
 
 [!UICONTROL IdentityMap] är en standardblandning för [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md). MixIn innehåller ett enda kartfält som innehåller en uppsättning användaridentiteter som skrivs med namnutrymme.
 
