@@ -5,9 +5,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 translation-type: tm+mt
-source-git-commit: da0c65b5afc19e2497816c4b84270f5f5c4617f2
+source-git-commit: 26d117726a59dea0c08cf6ca5a13bf54951f7f44
 workflow-type: tm+mt
-source-wordcount: '645'
+source-wordcount: '654'
 ht-degree: 0%
 
 ---
@@ -134,10 +134,11 @@ ht-degree: 0%
    - [Skapa en datauppsättningsbasanslutning med API:t för Flow Service](tutorials/api/create-dataset-base-connection.md)
    - [Övervaka dataflöden med API:t för Flow Service](tutorials/api/monitor.md)
    - [Uppdatera anslutningsinformation med API:t för Flow Service](tutorials/api/update.md)
+   - [Ta bort anslutningar med API:t för Flow Service](tutorials/api/delete.md)
 - Självstudiekurser för användargränssnitt {#ui-tutorials}
    - Skapa en källkoppling {#create}
       - Adobe-program {#adobe-applications}
-         - [Adobe Analytics Classifications Data Connector](tutorials/ui/create/adobe-applications/classifications.md)
+         - [Adobe Analytics Classifications Data connector](tutorials/ui/create/adobe-applications/classifications.md)
          - [Adobe Analytics Connector](tutorials/ui/create/adobe-applications/analytics.md)
          - [Adobe Audience Manager Connector](tutorials/ui/create/adobe-applications/audience-manager.md)
          - [Koppling för kundattribut](tutorials/ui/create/adobe-applications/customer-attributes.md)
@@ -195,6 +196,7 @@ ht-degree: 0%
       - [Konfigurera ett dataflöde för en protokollanslutning](tutorials/ui/dataflow/protocols.md)
    - [Aktivera inkommande data för att fylla i kundprofiler](tutorials/ui/profile.md)
    - [Övervaka konton och dataflöden](tutorials/ui/monitor.md)
+   - [Ta bort konton](tutorials/ui/delete-accounts.md)
    - [Ta bort dataflöden](tutorials/ui/delete.md)
 - [Flödeskörningsmeddelanden](notifications.md)
 - [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
