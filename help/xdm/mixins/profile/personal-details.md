@@ -1,21 +1,25 @@
 ---
 keywords: Experience Platform;home;popular topics;schema;Schema;XDM;individual profile;fields;schemas;Schemas;personal details;Schema design;mixin;Mixin;
 solution: Experience Platform
-title: Blanda personliga profiluppgifter
+title: Blanda personliga kontaktuppgifter
 topic: overview
-description: Det här dokumentet innehåller en översikt över klassen XDM Individual Profile.
+description: Det här dokumentet innehåller en översikt över blandningen Personlig kontaktinformation.
 translation-type: tm+mt
-source-git-commit: e58c669b5542453b7fbf6d90deedcd2cf349c0b6
+source-git-commit: f9d8021643e72e3fbb5315b54a19815dcdaaa702
 workflow-type: tm+mt
-source-wordcount: '116'
+source-wordcount: '127'
 ht-degree: 2%
 
 ---
 
 
-# [!UICONTROL Profile personal details] blanda
+# [!UICONTROL Personal Contact Details] blanda
 
-[!UICONTROL Profile personal details] är en standardblandning för [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md). Mixin tillhandahåller ett `person` objekt på rotnivå, vars underfält beskriver kontaktinformation om en enskild person.
+>[!NOTE]
+>
+>Namnen på flera blandningar har ändrats. Mer information finns i dokumentet om uppdatering [av](../name-updates.md) blandade namn.
+
+[!UICONTROL Personal Contact Details] är en standardblandning för [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md) som beskriver kontaktinformationen för en enskild person.
 
 <img src="../../images/mixins/profile-personal-details.png" width="700" /><br />
 
