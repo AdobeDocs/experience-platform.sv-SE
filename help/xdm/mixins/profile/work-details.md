@@ -1,21 +1,25 @@
 ---
 keywords: Experience Platform;home;popular topics;schema;Schema;XDM;individual profile;fields;schemas;Schemas;Schema design;mixin;mixins;work details;profile work;
 solution: Experience Platform
-title: Blanda profilarbetsdetaljer
+title: Arbetskontaktdetaljer, blandning
 topic: overview
-description: Det här dokumentet innehåller en översikt över klassen XDM Individual Profile.
+description: Det här dokumentet innehåller en översikt över mixen Arbetskontaktinformation.
 translation-type: tm+mt
-source-git-commit: e58c669b5542453b7fbf6d90deedcd2cf349c0b6
+source-git-commit: f9d8021643e72e3fbb5315b54a19815dcdaaa702
 workflow-type: tm+mt
-source-wordcount: '133'
+source-wordcount: '150'
 ht-degree: 2%
 
 ---
 
 
-# [!UICONTROL Profile work details] blanda
+# [!UICONTROL Work Contact Details] blanda
 
-[!UICONTROL Profile work details] är en standardblandning för [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md). Mixin innehåller flera fält som samlar in yrkesinformation om en enskild person, t.ex. arbetsadress, e-post till arbetet, telefonnummer till arbetet och organisationer som personen tillhör.
+>[!NOTE]
+>
+>Namnen på flera blandningar har ändrats. Mer information finns i dokumentet om uppdatering [av](../name-updates.md) blandade namn.
+
+[!UICONTROL Work Contact Details] är en standardblandning för [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md). Mixin innehåller flera fält som samlar in yrkesinformation om en enskild person, t.ex. arbetsadress, e-post till arbetet, telefonnummer till arbetet och organisationer som personen tillhör.
 
 <img src="../../images/mixins/profile-work-details.png" width="550" /><br />
 
