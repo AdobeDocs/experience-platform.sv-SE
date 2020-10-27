@@ -5,9 +5,9 @@ title: Klassen XDM ExperienceEvent
 topic: overview
 description: Det här dokumentet innehåller en översikt över klassen XDM ExperienceEvent.
 translation-type: tm+mt
-source-git-commit: b7b57c0b70b1af3a833f0386bc809bb92c9b50f8
+source-git-commit: f9d8021643e72e3fbb5315b54a19815dcdaaa702
 workflow-type: tm+mt
-source-wordcount: '759'
+source-wordcount: '776'
 ht-degree: 0%
 
 ---
@@ -33,10 +33,14 @@ Själva [!DNL XDM ExperienceEvent] klassen tillhandahåller flera tidsserierelat
 
 ## Kompatibla blandningar {#mixins}
 
+>[!NOTE]
+>
+>Namnen på flera blandningar har ändrats. Mer information finns i dokumentet om uppdatering [av](../mixins/name-updates.md) blandade namn.
+
 Adobe innehåller flera standardblandningar som kan användas med [!DNL XDM ExperienceEvent] klassen. Nedan följer en lista över några vanliga blandningar för klassen:
 
-* [[!UICONTROL ExperienceEvent EndUserIDs]](../mixins/event/enduserids.md)
-* [[!UICONTROL ExperienceEvent environment details]](../mixins/event/environment-details.md)
+* [[!UICONTROL End User ID Details]](../mixins/event/enduserids.md)
+* [[!UICONTROL Environment Details]](../mixins/event/environment-details.md)
 
 ## Bilaga
 
