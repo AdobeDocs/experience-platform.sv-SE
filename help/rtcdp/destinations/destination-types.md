@@ -2,12 +2,12 @@
 keywords: destinations;destination;destination types
 title: Destinationstyper och -kategorier
 seo-title: Destinationstyper och -kategorier
-description: 'På Adobe kunddataplattform i realtid samlar mål för profiler och segmentexport in händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Starta tillägg för att vidarebefordra råa händelsedata till flera olika typer av destinationer. '
-seo-description: På Adobe kunddataplattform i realtid samlar mål för profiler och segmentexport in händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Starta tillägg för att vidarebefordra råa händelsedata till flera olika typer av destinationer.
+description: 'På Adobe kunddataplattform i realtid samlar mål för profiler och segmentexport in händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Med Experience Platform Launch-tillägg vidarebefordras råa händelsedata till flera typer av destinationer. '
+seo-description: På Adobe kunddataplattform i realtid samlar mål för profiler och segmentexport in händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Med Experience Platform Launch-tillägg vidarebefordras råa händelsedata till flera typer av destinationer.
 translation-type: tm+mt
-source-git-commit: b510f715133cc3fed98861f977b3ce9a857a5ced
+source-git-commit: e6276eac05f0a20a668051034e83831002a464f0
 workflow-type: tm+mt
-source-wordcount: '576'
+source-wordcount: '587'
 ht-degree: 0%
 
 ---
@@ -49,13 +49,13 @@ I videon nedan beskrivs de två typerna av destinationer:
 
 ### Tillägg {#extensions}
 
-Adobe CDP i realtid utnyttjar Experience Platform Launch kraft och flexibilitet för att inkludera Launch-tillägg i CDP-gränssnittet i realtid i Adobe.
+Adobe CDP i realtid utnyttjar kraften och flexibiliteten i Adobe Experience Platform Launch för att inkludera tillägg för Platform Launch i CDP-gränssnittet i realtid i Adobe.
 
 >[!TIP]
 >
->Mer information om tillägg för Experience Platform Launch, inklusive användningsexempel och hur du hittar dem i gränssnittet, finns i [Översikt över](/help/rtcdp/destinations/experience-platform-launch-extensions.md)tillägg för Launch.
+>Mer information om Adobe Experience Platform Launch-tillägg, inklusive användningsexempel och hur du hittar dem i gränssnittet, finns i [Adobe Experience Platform Launch-tilläggsöversikten](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
 
-Starta tillägg för att vidarebefordra råa händelsedata till flera olika typer av destinationer. Tänk på tillägg som en **typ av mål för vidarebefordran** av händelser. Detta är en enklare typ av integrering med målplattformar, som bara vidarebefordrar råhändelsedata. Exempel på sådana är tillägget [](/help/rtcdp/destinations/gainsight-extension.md) Gainsight-anpassning eller [bekräftelsen från kundens tillägg](/help/rtcdp/destinations/confirmit-digital-feedback-extension.md).
+Plattformsstartstillägg vidarebefordrar råa händelsedata till flera typer av destinationer. Tänk på tillägg som en **typ av mål för vidarebefordran** av händelser. Detta är en enklare typ av integrering med målplattformar, som bara vidarebefordrar råhändelsedata. Exempel på sådana är tillägget [](/help/rtcdp/destinations/gainsight-extension.md) Gainsight-anpassning eller [bekräftelsen från kundens tillägg](/help/rtcdp/destinations/confirmit-digital-feedback-extension.md).
 
 ![Experience Platform Launch-tillägg jämfört med andra destinationer](/help/rtcdp/destinations/assets/launch-and-other-destinations.png)
 
