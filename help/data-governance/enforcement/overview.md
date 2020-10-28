@@ -5,9 +5,9 @@ title: Översikt över policytillämpning
 topic: enforcement
 description: När dataanvändningsetiketter har tillämpats på Adobe Experience Platform datauppsättningar, och dataanvändningspolicyer har definierats för marknadsföringsåtgärder mot dessa etiketter, kan ni med datastyrningsfunktionerna tillämpa dessa policyer och förhindra dataåtgärder som utgör policyöverträdelser. Det finns två metoder för policytillämpning som tillhandahålls av datastyrningsfunktioner på plattformen, API-baserad tillämpning och automatisk tillämpning.
 translation-type: tm+mt
-source-git-commit: 28b733a16b067f951a885c299d59e079f0074df8
+source-git-commit: 83f1392ffab3571ebd91325123fbe7095ad59e28
 workflow-type: tm+mt
-source-wordcount: '262'
+source-wordcount: '257'
 ht-degree: 0%
 
 ---
@@ -29,4 +29,4 @@ I självstudiekursen om [policytillämpning](api-enforcement.md) finns anvisning
 
 Vissa program som är byggda ovanpå [!DNL Experience Platform] (till exempel [!DNL Real-time Customer Data Platform]) har automatisk tillämpning av dataanvändningsprinciper. Varje program har en egen metod för att hantera överträdelser av policyer och innehåller åtgärder för att lösa problem.
 
-Mer information om automatisk tillämpning av dataanvändningsprinciper finns i dokumentationen för det [!DNL Platform]baserade programmet som du använder. Information om automatisk policytillämpning i CDP i realtid finns i CDP-översikten [i](../../rtcdp/privacy/data-governance-overview.md#enforce-data-usage-compliance)realtid.
+Automatisk policytillämpning i realtid CDP utnyttjar funktioner för datalänkning, dataklassificering och policyhantering för att utvärdera och upptäcka överträdelser av policyer. Mer information finns i [realtidsöversikten](../../rtcdp/privacy/data-governance-overview.md#enforce-data-usage-compliance) för CDP Data Governance.
