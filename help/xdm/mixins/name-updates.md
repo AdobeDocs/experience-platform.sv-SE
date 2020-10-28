@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;XDM;ExperienceEvent;fields;schemas;Schemas;Schema design;mixin;mixin;enduserids;end-user;end user;ids;
+keywords: Experience Platform;home;popular topics;schema;Schema;XDM;ExperienceEvent;fields;schemas;Schemas;Schema design;mixin;mixin;enduserids;end-user;end user;ids;updates;
 solution: Experience Platform
 title: Uppdateringar av blandade namn
 topic: overview
 description: En lista över de senaste namnändringarna för XDM-mixin.
 translation-type: tm+mt
-source-git-commit: 0f36cf30e94c53aad8cdd11174a3656fda32d961
+source-git-commit: 4f50926a9c5bc02255bd62c51cca13fc9094a9e8
 workflow-type: tm+mt
 source-wordcount: '93'
 ht-degree: 0%
@@ -21,7 +21,6 @@ I följande tabell visas de befintliga blandningar som har uppdaterats, tillsamm
 
 | Föregående namn | Uppdaterat namn |
 | --- | --- |
-| [!UICONTROL Consumer ExperienceEvent mixin] | [!UICONTROL Content Consumption Details] |
 | [!UICONTROL Experience event privacy mixin] | [!UICONTROL Privacy Details] |
 | [!UICONTROL ExperienceEvent application details] | [!UICONTROL Application Details] |
 | [!UICONTROL ExperienceEvent channel details] | [!UICONTROL Channel Details] |
@@ -44,7 +43,7 @@ I följande tabell visas de befintliga blandningar som har uppdaterats, tillsamm
 | [!UICONTROL Profile Phones] | [!UICONTROL Phone Number Details] |
 | [!UICONTROL Profile preferences details] | [!UICONTROL Preference Details] |
 | [!UICONTROL Profile privacy] | [!UICONTROL Privacy Details] |
-| [!UICONTROL Profile push details] | [!UICONTROL Push Notification Details] |
+| [!UICONTROL Profile push details] | [!UICONTROL Push Notification Token Details] |
 | [!UICONTROL Profile segmentation] | [!UICONTROL Segment Membership Details] |
 | [!UICONTROL Profile subscriptions] | [!UICONTROL Subscription Details] |
 | [!UICONTROL Profile work details] | [!UICONTROL Work Contact Details] |
