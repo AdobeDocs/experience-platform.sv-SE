@@ -5,9 +5,9 @@ title: Användarhandbok för Attribution AI
 topic: User guide
 description: Det här dokumentet är en guide för interaktion med Attribution AI i användargränssnittet för intelligenta tjänster.
 translation-type: tm+mt
-source-git-commit: c5e2ea5daf813bf580a11f0182361197e55c6fe8
+source-git-commit: 4c1aa1fc5ca1f335dedba47623709d5d2ce12c6e
 workflow-type: tm+mt
-source-wordcount: '1420'
+source-wordcount: '1691'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,29 @@ In the [!DNL Adobe Experience Platform] UI, click **[!UICONTROL Services]** in t
 
 ![Åtkomst till din instans](./images/user-guide/open_Attribution_ai.png)
 
-Attribution AI tjänstsida visas. På den här sidan visas tjänstinstanser av Attribution AI och information om dem, inklusive namnet på instansen, konverteringshändelser, hur ofta instansen körs och status för den senaste uppdateringen. Klicka på **Skapa instans** för att börja.
+Attribution AI tjänstsida visas. På den här sidan visas tjänstinstanser av Attribution AI och information om dem, inklusive namnet på instansen, konverteringshändelser, hur ofta instansen körs och status för den senaste uppdateringen.
+
+Du hittar mätvärdena som finns i den nedre högra delen av **[!UICONTROL Total conversion events scored]** **[!UICONTROL Create instance]** behållaren. Det här måttet spårar det totala antalet konverteringshändelser som har bedömts av Attribution AI för det aktuella kalenderåret, inklusive alla sandlådemiljöer och eventuella borttagna tjänstinstanser.
+
+![](./images/user-guide/total_conversions.png)
+
+Tjänstinstanser kan redigeras, klonas och tas bort med kontrollerna till höger i användargränssnittet. Om du vill visa dessa kontroller väljer du en instans från din befintliga **[!UICONTROL Service instances]**. Kontrollerna innehåller följande information:
+
+- **[!UICONTROL Edit]**: Om du väljer **[!UICONTROL Edit]** det här alternativet kan du ändra en befintlig tjänstinstans. Du kan redigera namn, beskrivning, status och bedömningsfrekvens för instansen.
+- **[!UICONTROL Clone]**: Om du väljer **[!UICONTROL Clone]** det här alternativet kopieras den markerade tjänstinstansen. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny instans.
+- **[!UICONTROL Delete]**: Du kan ta bort en tjänstinstans, inklusive alla tidigare körningar.
+- **[!UICONTROL Data source]**: En länk till datauppsättningen som används av den här instansen.
+- **[!UICONTROL Last run details]**: Detta visas bara när en körning misslyckas. Här visas information om varför körningen misslyckades, t.ex. felkoder.
+
+![](./images/user-guide/side_panel.png)
+
+- **[!UICONTROL Conversion events]**: En snabb översikt över konverteringshändelserna som konfigurerats för den här instansen.
+- **[!UICONTROL Lookback window]**: Den tidsram som du definierade visar hur många dagar före kontaktytorna för konverteringshändelsen som ingår.
+- **[!UICONTROL Touchpoints]**: En lista med alla kontaktytor som du definierade när du skapade den här instansen.
+
+![](./images/user-guide/side_panel_2.png)
+
+Välj **[!UICONTROL Create instance]** att börja.
 
 ![Skapa instans](./images/user-guide/landing_page.png)
 
@@ -133,7 +155,7 @@ När du har definierat alla nödvändiga kontaktytor rullar du uppåt och klicka
 
 ## Avancerad utbildning och poängsättning
 
-Den sista sidan i Attribution AI är den *avancerade* sidan som används för att ställa in utbildning och poängsättning.
+Den sista sidan i Attribution AI är den **[!UICONTROL Advanced]** sida som används för att ställa in utbildning och poängsättning.
 
 ![ny sida avancerad](./images/user-guide/advanced_settings.png)
 
@@ -152,6 +174,12 @@ Klicka på klockikonen om du vill ändra den tidpunkt på dagen som du vill att 
 >Det kan ta upp till 24 timmar för varje poängprocess att slutföra.
 
 ![klockikon](./images/user-guide/time_of_day.png)
+
+### Kolumner för extra poängdatauppsättning (valfritt)
+
+Som standard skapas en poängdatauppsättning för varje tjänstinstans i ett standardschema. Du kan välja att lägga till ytterligare kolumner baserat på dina Conversion Event- och Touchpoint-konfigurationer i utdata för poängdatauppsättningen. Börja med att välja kolumner från indatauppsättningen. Du kan sedan dra och släppa dem för att ändra ordningen genom att hålla ned vänster musknapp över hamburgikonen.
+
+![kolumntillägg för stackdata](./images/user-guide/Add-score-dataset.png)
 
 ### Regionbaserad modellering (valfritt) {#region-based-modeling-optional}
 
@@ -189,7 +217,7 @@ När du har valt ett utbildningsfönster klickar du **[!UICONTROL Finish]** i de
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en tjänstinstans i Attribution AI. När instansen är klar med poängsättningen (upp till 24 timmar) är du redo att [identifiera Attribution AI insikter](./discover-insights.md). Om du dessutom vill ladda ned dina poängresultat går du till [nedladdningsdokumentationen för](./download-scores.md) bakgrundsmusik.
+Genom att följa den här självstudiekursen har du skapat en tjänstinstans i Attribution AI. När instansen är klar med poängsättningen (upp till 24 timmar) är du redo att [identifiera Attribution AI insikter](./discover-insights.md). Om du vill ladda ned poängresultaten går du till [nedladdningsdokumentationen](./download-scores.md) .
 
 ## Ytterligare resurser
 
