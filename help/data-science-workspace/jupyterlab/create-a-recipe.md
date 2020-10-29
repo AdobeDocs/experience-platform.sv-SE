@@ -6,9 +6,9 @@ topic: tutorial
 type: Tutorial
 description: Den här självstudiekursen går igenom två huvudavsnitt. Först skapar du en maskininlärningsmodell med hjälp av en mall i JupyterLab Notebook. Därefter ska du använda anteckningsboken för att hämta arbetsflöden i JupyterLab för att skapa ett recept i arbetsytan Data Science.
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: adaa7fbaf78a37131076501c21bf18559c17ed94
 workflow-type: tm+mt
-source-wordcount: '2316'
+source-wordcount: '2331'
 ht-degree: 0%
 
 ---
@@ -67,10 +67,10 @@ Nu när du vet grunderna för [!DNL JupyterLab] anteckningsboksmiljön kan du b�
 
 ### Kravfil {#requirements-file}
 
-Kravfilen används för att deklarera ytterligare bibliotek som du vill använda i receptet. Du kan ange versionsnumret om det finns ett beroende. Om du vill söka efter fler bibliotek går du till https://anaconda.org. Listan med de huvudbibliotek som redan används är:
+Kravfilen används för att deklarera ytterligare bibliotek som du vill använda i receptet. Du kan ange versionsnumret om det finns ett beroende. Om du vill söka efter fler bibliotek går du till [anaconda.org](https://anaconda.org). Mer information om hur du formaterar kravfilen finns på [Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-file-manually). Listan med de huvudbibliotek som redan används är:
 
 ```JSON
-python=3.5.2
+python=3.6.7
 scikit-learn
 pandas
 numpy
@@ -79,7 +79,7 @@ data_access_sdk_python
 
 >[!NOTE]
 >
->Bibliotek eller specifika versioner som du lägger till kan vara inkompatibla med ovanstående bibliotek.
+>Bibliotek eller specifika versioner som du lägger till kan vara inkompatibla med ovanstående bibliotek. Om du dessutom väljer att skapa en miljöfil manuellt kan `name` fältet inte åsidosättas.
 
 ### Konfigurationsfiler {#configuration-files}
 
@@ -148,30 +148,32 @@ df = pd.read_json(data)
 
 Nu finns dina data i dataframe-objektet och kan analyseras och ändras i [nästa avsnitt](#data-preparation-and-feature-engineering).
 
-### Från SDK för dataåtkomst (borttagen)
+### Från plattforms-SDK
 
->[!CAUTION]
->
-> `data_access_sdk_python` rekommenderas inte längre, se [Konvertera dataåtkomstkod till plattforms-SDK](../authoring/platform-sdk.md) för en guide om hur du använder `platform_sdk` datainläsaren.
+Du kan läsa in data med hjälp av Platform SDK. Biblioteket kan importeras högst upp på sidan genom att inkludera raden:
 
-Användare kan läsa in data med hjälp av SDK för dataåtkomst. Biblioteket kan importeras högst upp på sidan genom att inkludera raden:
-
-`from data_access_sdk_python.reader import DataSetReader`
+`from platform_sdk.dataset_reader import DatasetReader`
 
 Sedan använder vi metoden för att hämta utbildningsdatauppsättningen från `load()` enligt vår konfigurationsfil ( `trainingDataSetId``recipe.conf`).
 
 ```PYTHON
-prodreader = DataSetReader(client_id=configProperties['ML_FRAMEWORK_IMS_USER_CLIENT_ID'],
-                           user_token=configProperties['ML_FRAMEWORK_IMS_TOKEN'],
-                           service_token=configProperties['ML_FRAMEWORK_IMS_ML_TOKEN'])
+def load(config_properties):
+    print("Training Data Load Start")
 
-df = prodreader.load(data_set_id=configProperties['trainingDataSetId'],
-                     ims_org=configProperties['ML_FRAMEWORK_IMS_TENANT_ID'])
+    #########################################
+    # Load Data
+    #########################################    
+    client_context = get_client_context(config_properties)
+    
+    dataset_reader = DatasetReader(client_context, config_properties['trainingDataSetId'])
+    
+    timeframe = config_properties.get("timeframe")
+    tenant_id = config_properties.get("tenant_id")
 ```
 
 >[!NOTE]
 >
->Som vi nämnt i avsnittet [](#configuration-files)Konfigurationsfil ställs följande konfigurationsparametrar in åt dig när du får åtkomst till data från [!DNL Experience Platform]:
+>Som vi har nämnt i avsnittet [](#configuration-files)Konfigurationsfil ställs följande konfigurationsparametrar in åt dig när du får åtkomst till data från Experience Platform via `client_context`:
 > - `ML_FRAMEWORK_IMS_USER_CLIENT_ID`
 > - `ML_FRAMEWORK_IMS_TOKEN`
 > - `ML_FRAMEWORK_IMS_ML_TOKEN`
@@ -227,46 +229,51 @@ Funktionen ska `load()` slutföras med `train` och `val` datauppsättningen som 
 Förfarandet för att läsa in data för poängsättning liknar inläsningen av utbildningsdata i `split()` funktionen. Vi använder SDK:n för dataåtkomst för att läsa in data från de `scoringDataSetId` som finns i vår `recipe.conf` fil.
 
 ```PYTHON
-def load(configProperties):
+def load(config_properties):
 
     print("Scoring Data Load Start")
 
     #########################################
     # Load Data
     #########################################
-    prodreader = DataSetReader(client_id=configProperties['ML_FRAMEWORK_IMS_USER_CLIENT_ID'],
-                               user_token=configProperties['ML_FRAMEWORK_IMS_TOKEN'],
-                               service_token=configProperties['ML_FRAMEWORK_IMS_ML_TOKEN'])
+    client_context = get_client_context(config_properties)
 
-    df = prodreader.load(data_set_id=configProperties['scoringDataSetId'],
-                         ims_org=configProperties['ML_FRAMEWORK_IMS_TENANT_ID'])
+    dataset_reader = DatasetReader(client_context, config_properties['scoringDataSetId'])
+    timeframe = config_properties.get("timeframe")
+    tenant_id = config_properties.get("tenant_id")
 ```
 
 När du har läst in data färdigställs data och funktionen är klar.
 
 ```PYTHON
-#########################################
-# Data Preparation/Feature Engineering
-#########################################
-df.date = pd.to_datetime(df.date)
-df['week'] = df.date.dt.week
-df['year'] = df.date.dt.year
+    #########################################
+    # Data Preparation/Feature Engineering
+    #########################################
+    if '_id' in dataframe.columns:
+        #Rename columns to strip tenantId
+        dataframe = dataframe.rename(columns = lambda x : str(x)[str(x).find('.')+1:])
+        #Drop id, eventType and timestamp
+        dataframe.drop(['_id', 'eventType', 'timestamp'], axis=1, inplace=True)
 
-df = pd.concat([df, pd.get_dummies(df['storeType'])], axis=1)
-df.drop('storeType', axis=1, inplace=True)
-df['isHoliday'] = df['isHoliday'].astype(int)
+    dataframe.date = pd.to_datetime(dataframe.date)
+    dataframe['week'] = dataframe.date.dt.week
+    dataframe['year'] = dataframe.date.dt.year
 
-df['weeklySalesAhead'] = df.shift(-45)['weeklySales']
-df['weeklySalesLag'] = df.shift(45)['weeklySales']
-df['weeklySalesDiff'] = (df['weeklySales'] - df['weeklySalesLag']) / df['weeklySalesLag']
-df.dropna(0, inplace=True)
+    dataframe = pd.concat([dataframe, pd.get_dummies(dataframe['storeType'])], axis=1)
+    dataframe.drop('storeType', axis=1, inplace=True)
+    dataframe['isHoliday'] = dataframe['isHoliday'].astype(int)
 
-df = df.set_index(df.date)
-df.drop('date', axis=1, inplace=True)
+    dataframe['weeklySalesAhead'] = dataframe.shift(-45)['weeklySales']
+    dataframe['weeklySalesLag'] = dataframe.shift(45)['weeklySales']
+    dataframe['weeklySalesDiff'] = (dataframe['weeklySales'] - dataframe['weeklySalesLag']) / dataframe['weeklySalesLag']
+    dataframe.dropna(0, inplace=True)
 
-print("Scoring Data Load Finish")
+    dataframe = dataframe.set_index(dataframe.date)
+    dataframe.drop('date', axis=1, inplace=True)
 
-return df
+    print("Scoring Data Load Finish")
+
+    return dataframe
 ```
 
 Eftersom syftet med vår modell är att förutsäga framtida försäljning varje vecka, måste du skapa en poängsättningsdatauppsättning som används för att utvärdera hur väl modellens förutsägelse fungerar.
