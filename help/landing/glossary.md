@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform produktdokumentation
 topic: getting started
 translation-type: tm+mt
-source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
+source-git-commit: 852075bad28a71f94ee914769076542a5347de1c
 workflow-type: tm+mt
-source-wordcount: '7145'
+source-wordcount: '7091'
 ht-degree: 0%
 
 ---
@@ -18,9 +18,9 @@ ht-degree: 0%
 
 **Åtkomstkontroll:** {#access-control} Åtkomstkontroll för [!DNL Experience Platform] länkar till användare med åtkomstbehörigheter och sandlådemiljöer via produktprofiler i Adobe Admin Console.
 
-**Åtkomstnyckel-ID:** Åtkomstnyckel-ID är en unik identifierare som är kopplad till en [!DNL Amazon] S3-hemlig åtkomstnyckel. Åtkomstnyckel-ID och hemlig åtkomstnyckel används tillsammans för att signera AWS-begäranden.
+**Åtkomstnyckel-ID:** Ett åtkomstnyckel-ID är en unik identifierare som är kopplad till en [!DNL Amazon] S3-hemlig åtkomstnyckel. Åtkomstnyckel-ID och hemlig åtkomstnyckel används tillsammans för att signera AWS-begäranden.
 
-**Åtgärd:** I [!DNL Experience Platform Launch]är en åtgärd en specifik typ av regelkomponent som definierar vad som ska hända efter att en händelse inträffar och villkoren utvärderas och skickas.
+**Åtgärd:** I [!DNL Adobe Experience Platform Launch]är en åtgärd en specifik typ av regelkomponent som definierar vad som ska hända efter att en händelse inträffar och villkoren utvärderas och skickas.
 
 **Aktivera:** I [!DNL Real-time Customer Data Platform]är aktivering den åtgärd som en användare utför för att mappa ett segment eller profiler till ett mål som [!DNL Oracle Eloqua], [!DNL Google]eller [!DNL Salesforce Marketing Cloud].
 
@@ -34,9 +34,9 @@ ht-degree: 0%
 
 **Adobe Experience Platform:** Adobe Experience Platform standardiserar data och innehåll i hela företaget, vilket driver konsumentprofiler i realtid, möjliggör datavetenskap och snabbar upp innehållets hastighet för att driva upplevelsepersonalisering över hela kundresan.
 
-**Adobe Experience Platform Launch:** [!DNL Launch] är ett tagg- och SDK-hanteringsekosystem som är integrerat med [!DNL Experience Platform] och [!DNL Experience Cloud] program. [!DNL Launch] innehåller verktyg för att driftsätta, sammanställa och hantera analyser, marknadsföring och annonser som är nödvändiga för att driva relevanta kundupplevelser på alla kundenheter.
+**Adobe Experience Platform Launch:** [!DNL Platform Launch] är ett tagg- och SDK-hanteringsekosystem som är integrerat med [!DNL Experience Platform] och [!DNL Experience Cloud] program. [!DNL Platform Launch] innehåller verktyg för att driftsätta, sammanställa och hantera analyser, marknadsföring och annonser som är nödvändiga för att driva relevanta kundupplevelser på alla kundenheter.
 
-**Adobe Experience Platform Launch Extensions:** [!DNL Experience Platform Launch] tillägg gör det möjligt att leverera rådata direkt till [!DNL Real-time Customer Data Platform] destinationer. Du måste ha tillgång till [!DNL Launch] egenskaper för att kunna installera [!DNL Launch] tillägg.
+**Adobe Experience Platform Launch Extensions:** [!DNL Platform Launch] tillägg gör det möjligt att leverera rådata direkt till [!DNL Real-time Customer Data Platform] destinationer. Du måste ha tillgång till [!DNL Platform Launch] egenskaper för att kunna installera [!DNL Platform Launch] tillägg.
 
 **Adobe Experience Platform Query Service** möjliggör användning av standard-SQL för att fråga data i Experience Platform, koppla datauppsättningar inom datasjön och samla in frågeresultat som en ny datauppsättning för användning i rapportering, Data Science Workspace eller Real-time Customer Profile.
 
@@ -52,11 +52,11 @@ ht-degree: 0%
 
 **Amazon S3-anslutning:** [!DNL Amazon] S3-kontakten gör det möjligt för kunder av [!DNL Experience Platform] att på ett säkert sätt ansluta till och få tillgång till sina [!DNL Amazon] S3-data.
 
-**Analytics Marketing Action:** En marknadsföringsåtgärd som använder data för analyssyften, som att mäta, analysera och rapportera om kundens användning av organisationens webbplatser eller appar.
+**Marknadsföringsåtgärd för analyser:** En marknadsföringsåtgärd som använder data för analyssyften, som att mäta, analysera och rapportera om kundens användning av organisationens webbplatser eller appar.
 
-**Lägg till Spara strategi:** Den `Append` sparade strategin är ett alternativ som används när du anger data från tredje part som ska importeras via en anslutning och lägger till nya data eller rader i slutet av datauppsättningen. De tidigare infogade raderna förblir orörda och endast rader som skapats sedan den senaste schemalagda körningen importeras till [!DNL Experience Platform]. Alla rader som har ändrats i källsystemet ändras inte [!DNL Experience Platform].
+**Lägg till sparstrategi:** Den `Append` sparade strategin är ett alternativ som används när du anger data från tredje part som ska importeras via en anslutning och lägger till nya data eller rader i slutet av datauppsättningen. De tidigare infogade raderna förblir orörda och endast rader som skapats sedan den senaste schemalagda körningen importeras till [!DNL Experience Platform]. Alla rader som har ändrats i källsystemet ändras inte [!DNL Experience Platform].
 
-**Livscykelhantering för program:** Programmets livscykelhantering gör att du kan skapa separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+**Hantering av programlivscykler:** Programmets livscykelhantering gör att du kan skapa separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 **Array:** Arrayer används för ordnade element med samma datatyp.
 
@@ -78,19 +78,19 @@ ht-degree: 0%
 
 **Backfill:** I [!DNL Real-time Customer Data Platform]schemalagda källanslutningar möjliggör bakåtfyllnad inmatning av historiska data.
 
-**Föråldringsperiod:** `Backfill period` är ett alternativ för att ange hur lång tid det tar att hämta historikdata från tredje part via en anslutning. Om du väljer en period för underfyllning för alltid importeras hela källdatans historik till [!DNL Experience Platform].
+**Föråldringsperiod:** Alternativet `Backfill period` är att ange hur lång tid det tar att hämta in historikdata från tredje part via en anslutning. Om du väljer en period för underfyllning för alltid importeras hela källdatans historik till [!DNL Experience Platform].
 
-**Grupp:** Batch är en uppsättning data som samlats in under en tidsperiod och som bearbetas tillsammans som en enda enhet.
+**Grupp:** En batch är en uppsättning data som samlats in under en tidsperiod och som bearbetas tillsammans som en enda enhet.
 
-**Batch-ID:** Batch-ID är en Adobe-genererad identifierare för en datagrupp.
+**Batch-ID:** Ett batch-ID är en Adobe-genererad identifierare för en datauppsättning.
 
-**Batchintag:** Genom att lägga in data i grupp kan användarna importera petabyte data och göra dem tillgängliga i affärssystemen. Med de senaste teknologierna kan användare nu importera alla schema-XDM och icke-XDM till [!DNL Experience Platform].
+**Batchförtäring:** Genom att lägga in data i grupp kan användarna importera petabyte data och göra dem tillgängliga i affärssystemen. Med de senaste teknologierna kan användare nu importera alla schema-XDM och icke-XDM till [!DNL Experience Platform].
 
 **Gruppsegmentering:** Gruppsegmentering är ett alternativ till en pågående dataurvalsprocess och flyttar alla profildata samtidigt genom segmentdefinitioner för att skapa motsvarande målgrupper. När segmentet har skapats sparas det och lagras så att det kan exporteras för användning.
 
-**Bygg:** I [!DNL Experience Platform Launch]är ett bygge ett distribuerat bibliotek. Build är en fil eller en uppsättning filer som innehåller alla konfigurationer och all kod som behövs för att köra affärslogiken som finns i biblioteket.
+**Bygg:** I [!DNL Adobe Experience Platform Launch]är ett bygge ett distribuerat bibliotek. Build är en fil eller en uppsättning filer som innehåller alla konfigurationer och all kod som behövs för att köra affärslogiken som finns i biblioteket.
 
-**Business Intelligence Tools:** Business Intelligence, som också kallas BI-verktyg, är i första hand integrerade med [!DNL Experience Platform Query Service]. BI-verktyg är typer av programprogramvara som samlar in och bearbetar stora mängder ostrukturerade data från interna och externa system.
+**Business Intelligence-verktyg:** Business Intelligence, som också kallas BI-verktyg, är i första hand integrerade med [!DNL Experience Platform Query Service]. BI-verktyg är typer av programprogramvara som samlar in och bearbetar stora mängder ostrukturerade data från interna och externa system.
 
 [Till början](#adobe-experience-platform-glossary)
 
@@ -102,13 +102,13 @@ ht-degree: 0%
 
 **Klass:** En klass definierar den minsta uppsättning fält som används för att skapa ett schema och är basbeteendet som beskriver affärsobjektet.
 
-**Klient:** En klient är ett externt verktyg eller program som ansluter till [!DNL Query Service] via postgres-protokoll eller HTTP API.
+**Klient:** En klient är ett externt verktyg eller program som ansluter till [!DNL Query Service] via Postgres-protokollet eller HTTP API.
 
 **Samling:** I [!DNL Offer Decisioning]detta exempel är samlingar delmängder av erbjudanden som baseras på fördefinierade villkor som definieras av en marknadsförare, till exempel erbjudandets kategori.
 
 **Kombinera med PII-marknadsföringsåtgärder** En marknadsföringsåtgärd som kombinerar personligt identifierbar information med anonyma data. Kontrakt för data som hämtas från annonsnätverk, annonsservrar och tredjepartsleverantörer av data innehåller ofta särskilda avtalsförbud för användning av sådana data med direkt identifierbara data.
 
-**Kommandoradsgränssnitt:** Kommandoradsgränssnitt är ett kommandoradsverktyg som används för att ansluta till [!DNL Query Service] för körning av raw-frågor.
+**Kommandoradsgränssnitt:** Ett kommandoradsgränssnitt är ett kommandoradsverktyg som används för att ansluta till [!DNL Query Service] för körning av raw-frågor.
 
 **Disposition**: En komposition är en gruppering av komponenter som bildar tillsammans för att bilda schemat.
 
@@ -116,41 +116,41 @@ ht-degree: 0%
 
 **Koppling:** Med Adobe Experience Platform Source Connectors kan man enkelt importera data från olika källor och strukturera, märka och förbättra data med [!DNL Experience Platform Services]. Data kan hämtas från en mängd olika källor som molnbaserad lagring, tredjepartsprogramvara och CRM-system.
 
-**Villkor:** I Experience Platform Launch är ett villkor en regelkomponent som utvärderar en logisk programsats som måste returnera `true` eller `false`. Alla villkor måste utvärderas till `true` och alla undantagsvillkor måste utvärderas till `false` innan några åtgärder i regeln körs.
+**Villkor:** I [!DNL Adobe Experience Platform Launch]är ett villkor en regelkomponent som utvärderar en logisk programsats som måste returneras `true` eller `false`. Alla villkor måste utvärderas till `true` och alla undantagsvillkor måste utvärderas till `false` innan några åtgärder i regeln körs.
 
 **Konsol:** I [!DNL Query Service]konsolen finns information om status och funktion för en fråga. Konsolen visar anslutningsstatus till [!DNL Query Service], frågeåtgärder som körs och eventuella felmeddelanden som är ett resultat av dessa frågor.
 
-**Kontraktsdataetiketter C:** Kontraktsetiketter `C` används för att kategorisera data som har avtalsmässiga skyldigheter eller som är relaterade till en kunds policyer för datastyrning.
+**Kontraktsdata, C-etiketter:** Kontraktsetiketter `C` används för att kategorisera data som har avtalsmässiga skyldigheter eller som är relaterade till en kunds policyer för datastyrning.
 
-**C1 Kontraktsetikett:** `C1` Etiketten för styrningsdata för kontrakt anger att data endast kan exporteras från Adobe Experience Cloud i en aggregerad form utan att det inkluderar enskilda identifierare eller enhetsidentifierare. Till exempel data som kommer från sociala nätverk.
+**C1-kontraktsetikett:** En etikett för användning av avtalsdata anger att data endast kan exporteras från Adobe Experience Cloud i en aggregerad form utan att det inkluderar individuella identifierare eller enhetsidentifierare. `C1` Till exempel data som kommer från sociala nätverk.
 
-**C2 Kontraktsetikett:** `C2` Etiketten för styrningsdata för kontrakt anger data som inte kan exporteras till en tredje part. Vissa dataleverantörer har villkor i sina kontrakt som förbjuder export av data som de ursprungligen samlades in från.  Kontrakt för sociala nätverk begränsar till exempel ofta överföringen av data som du får från dem. C2 är mer restriktiv än C1, som bara kräver aggregation och anonyma uppgifter.
+**C2-kontraktsetikett:** En etikett för användning av avtalsdata anger data som inte kan exporteras till en tredje part. `C2` Vissa dataleverantörer har villkor i sina kontrakt som förbjuder export av data som de ursprungligen samlades in från.  Kontrakt för sociala nätverk begränsar till exempel ofta överföringen av data som du får från dem. C2 är mer restriktiv än C1, som bara kräver aggregation och anonyma uppgifter.
 
-**C3-kontraktsetikett:** `C3` Etiketten för styrning av avtalsdata anger data som inte kan kombineras eller på annat sätt användas med direkt identifierbar information. Vissa dataleverantörer har villkor i sina kontrakt som förbjuder kombinationen eller användningen av dessa data med direkt identifierbar information.  Till exempel innehåller kontrakt för data som hämtas från annonsnätverk, annonsservrar och tredjepartsleverantörer av data ofta specifika avtalsförbud för användning av direkt identifierbara data.
+**Etikett för C3-kontrakt:** En etikett för användning av avtalsdata anger data som inte kan kombineras eller på annat sätt användas med direkt identifierbar information. `C3` Vissa dataleverantörer har villkor i sina kontrakt som förbjuder kombinationen eller användningen av dessa data med direkt identifierbar information.  Till exempel innehåller kontrakt för data som hämtas från annonsnätverk, annonsservrar och tredjepartsleverantörer av data ofta specifika avtalsförbud för användning av direkt identifierbara data.
 
-**C4-kontraktsetikett:** `C4` Etiketten för avtalsstyrd datastyrning anger att data inte kan användas för annonser eller innehåll, varken på plats eller på en annan plats. C4 är den mest restriktiva etiketten eftersom den omfattar etiketterna C5, C6 och C7.
+**C4-kontraktsetikett:** En etikett för användning av avtalsdata anger att data inte kan användas för annonsering eller innehåll, varken på plats eller på en annan plats. `C4` C4 är den mest restriktiva etiketten eftersom den omfattar etiketterna C5, C6 och C7.
 
-**C5-kontraktsetikett:** `C5` Etiketten för avtalsstyrd datastyrning anger att data inte kan användas för intressebaserad, övergripande målinriktning av innehåll eller annonser. Intressebaserad målinriktning, eller personalisering, uppstår om följande tre villkor uppfylls:  De data som samlas in på webbplatsen används för att dra slutsatser om en användares intresse, och används i ett annat sammanhang, t.ex. på en annan webbplats eller i en annan app, och används för att välja vilket innehåll eller vilka annonser som ska hanteras baserat på dessa slutsatser.
+**C5-kontraktsetikett:** En etikett för användning av avtalsdata anger att data inte kan användas för intressebaserad, övergripande målinriktning av innehåll eller annonser. `C5` Intressebaserad målinriktning, eller personalisering, uppstår om följande tre villkor uppfylls:  De data som samlas in på webbplatsen används för att dra slutsatser om en användares intresse, och används i ett annat sammanhang, t.ex. på en annan webbplats eller i en annan app, och används för att välja vilket innehåll eller vilka annonser som ska hanteras baserat på dessa slutsatser.
 
-**C6 Kontraktsetikett:** `C6` Etiketten för avtalsstyrd datastyrning anger att data inte kan användas för annonsanpassning på plats. Data kan inte användas för annonsanpassning på plats, inklusive val och leverans av annonser på organisationens webbplatser eller i appar, eller för att mäta leveransen och effektiviteten av sådana annonser.  Detta inkluderar att använda tidigare insamlade data på plats om användarnas intresse för att välja annonser, bearbeta data om vilka annonser som visades, när och var de visades och om användarna vidtagit några åtgärder som rör annonsen, som att klicka på en annons eller göra ett köp.
+**C6-kontraktsetikett:** En etikett för `C6` avtalsdataanvändning anger att data inte kan användas för annonsanpassning på plats. Data kan inte användas för annonsanpassning på plats, inklusive val och leverans av annonser på organisationens webbplatser eller i appar, eller för att mäta leveransen och effektiviteten av sådana annonser.  Detta inkluderar att använda tidigare insamlade data på plats om användarnas intresse för att välja annonser, bearbeta data om vilka annonser som visades, när och var de visades och om användarna vidtagit några åtgärder som rör annonsen, som att klicka på en annons eller göra ett köp.
 
-**C7 Kontraktsetikett:** `C7` Etiketten för avtalsstyrd datastyrning anger att data inte kan användas för målinriktning på plats för innehåll.  Data kan inte användas för att målinrikta innehåll på plats, inklusive val och leverans av innehåll på organisationens webbplatser eller appar, eller för att mäta leveransen och effektiviteten av sådant innehåll.  Detta inkluderar tidigare insamlad information om användarnas intresse av att välja innehåll, bearbetning av data om vilket innehåll som visades, hur ofta eller hur länge det visades, när och var det visades, och om användarna vidtagit några åtgärder som rör innehållet, till exempel att klicka på innehållet.
+**C7-kontraktsetikett:** En etikett för användning av avtalsdata anger att data inte kan användas för målning av innehåll på plats. `C7`  Data kan inte användas för att målinrikta innehåll på plats, inklusive val och leverans av innehåll på organisationens webbplatser eller appar, eller för att mäta leveransen och effektiviteten av sådant innehåll.  Detta inkluderar tidigare insamlad information om användarnas intresse av att välja innehåll, bearbetning av data om vilket innehåll som visades, hur ofta eller hur länge det visades, när och var det visades, och om användarna vidtagit några åtgärder som rör innehållet, till exempel att klicka på innehållet.
 
-**C8 Kontraktsetikett:** `C8` Etiketten för avtalsstyrd datastyrning anger att data inte kan användas för mätning av organisationens webbplatser eller appar. Data kan inte användas för att mäta, förstå och rapportera om hur användare använder organisationens webbplatser eller appar. Detta inkluderar inte intressebaserad målinriktning, som är insamling av information om din användning av den här tjänsten för att senare personalisera innehåll och/eller annonsering i andra sammanhang.
+**C8-kontraktsetikett:** En etikett för användning av avtalsdata anger att data inte kan användas för att mäta organisationens webbplatser eller appar. `C8` Data kan inte användas för att mäta, förstå och rapportera om hur användare använder organisationens webbplatser eller appar. Detta inkluderar inte intressebaserad målinriktning, som är insamling av information om din användning av den här tjänsten för att senare personalisera innehåll och/eller annonsering i andra sammanhang.
 
-**C9 Kontraktsetikett:** `C9` Etiketten för styrd data anger att data inte kan användas i arbetsflöden för datavetenskap. Vissa avtal innehåller uttryckliga förbud mot data som används för datavetenskap.  Ibland formuleras dessa i termer som förbjuder användning av data för artificiell intelligens (AI), maskininlärning (ML) eller modellering.
+**C9-kontraktsetikett:** En etikett för användning av avtalsdata anger att data inte kan användas i arbetsflöden för datavetenskap. `C9` Vissa avtal innehåller uttryckliga förbud mot data som används för datavetenskap.  Ibland formuleras dessa i termer som förbjuder användning av data för artificiell intelligens (AI), maskininlärning (ML) eller modellering.
 
-**C10 Kontraktsetikett:** `C10` Etiketten för styrningsdata för kontrakt anger att data inte kan användas för aktivering av sammanfogade identiteter. Vissa dataanvändningsprinciper begränsar användningen av sammanfogade identitetsdata för personalisering. C10-etiketten används automatiskt på segment om deras sammanfogningsprinciper använder alternativet &quot;privat diagram&quot;.
+**C10 kontraktsetikett:** En etikett för användning av avtalsdata anger att data inte kan användas för aktivering av sammanfogade identiteter. `C10` Vissa dataanvändningsprinciper begränsar användningen av sammanfogade identitetsdata för personalisering. C10-etiketten används automatiskt på segment om deras sammanfogningsprinciper använder alternativet &quot;privat diagram&quot;.
 
-**Skapad datumkolumn:** Att markera en `Created Date` kolumn är ett alternativ när du anger data från tredje part via en anslutning. När strategin för att spara som tillägg har valts och datauppsättningen innehåller ett schema som är relaterat till flera datum, måste användaren välja från det tillgängliga schemat för datum/tid för att ange en `Created Date` nyckelkolumn. `Created Date` är inte tillgängligt när du har valt en strategi för att spara överskrivningar.
+**Skapad den: kolumn** Att markera en `Created Date` kolumn är ett alternativ när du anger data från tredje part via en anslutning. När strategin för att spara som tillägg har valts och datauppsättningen innehåller ett schema som är relaterat till flera datum, måste användaren välja från det tillgängliga schemat för datum/tid för att ange en `Created Date` nyckelkolumn. `Created Date` är inte tillgängligt när du har valt en strategi för att spara överskrivningar.
 
 **Skapa tabell som markerad:** Skapa tabell som markerad är ett SQL-kommando som, när det körs som en del av en fullständig och giltig SQL-fråga, instruerar användaren [!DNL Query Service] att behålla resultatet av frågan i en datamängd i datasjön. Alternativen är: Skapa ny, skriv över alla föregående och lägg till i föregående.
 
 **Data för flera webbplatser:** Data på olika platser är en kombination av data från flera platser, inklusive en kombination av data på plats och data utanför platsen eller en kombination av data från flera externa källor.
 
-**Målinriktad marknadsföring** på flera webbplatser Använder data för annonsanpassning på flera webbplatser. En kombination av data från flera platser, inklusive en kombination av data på plats och data utanför platsen eller en kombination av data från flera källor utanför platsen, kallas data mellan olika platser. Data från olika webbplatser samlas in och behandlas vanligtvis för att man ska kunna dra slutsatser om användarnas intressen.
+**Marknadsföringsåtgärder** för flera webbplatser använder data för annonsanpassning över flera webbplatser. En kombination av data från flera platser, inklusive en kombination av data på plats och data utanför platsen eller en kombination av data från flera källor utanför platsen, kallas data mellan olika platser. Data från olika webbplatser samlas in och behandlas vanligtvis för att man ska kunna dra slutsatser om användarnas intressen.
 
-**Namnområde för anpassad identitet:** Anpassade identitetsnamnutrymmen är kundskapade identifierare som används för att representera identiteter för en viss organisation eller ett visst affärsfall.
+**Namnutrymme för anpassad identitet:** Anpassade identitetsnamnutrymmen är kundskapade identifierare som används för att representera identiteter för en viss organisation eller ett visst affärsfall.
 
 **Egna etiketter:** Anpassade etiketter för datastyrning gör det möjligt för användare att skapa och använda specifika etiketter på datafält som uppfyller specifika affärsbehov.
 
@@ -160,21 +160,19 @@ ht-degree: 0%
 
 ## D
 
-**Dataordlista:** I [!DNL Experience Platform Launch]är en dataordlista en uppsättning dataelement som definieras i en egenskap.
+**Dataordlista:** I [!DNL Adobe Experience Platform Launch]är en dataordlista en uppsättning dataelement som definieras i en egenskap.
 
-**Dataelement:** Ett dataelement [!DNL Experience Platform Launch]är en pekare som används i regler och tillägg för att peka på en viss datadel som finns på klientenheten.
+**Dataelement:** Ett dataelement [!DNL Adobe Experience Platform Launch]är en pekare som används i regler och tillägg för att peka på en viss datadel som finns på klientenheten.
 
-**Datalager:** I [!DNL Experience Platform Launch]det här fallet är ett datalager en datastruktur som finns på klientenheten och som innehåller metadata om i vilket sammanhang en sida eller skärm visas.
+**Datalager:** I [!DNL Adobe Experience Platform Launch]det här fallet är ett datalager en datastruktur som finns på klientenheten och som innehåller metadata om i vilket sammanhang en sida eller skärm visas.
 
 **Datamappning:** Datamappning är processen att mappa källdatafält till målrelaterade målfält.
 
-**Datastyrning:** [!DNL Data governance] omfattar strategier och tekniker som används för att säkerställa att data överensstämmer med regler och organisationsstrategier när det gäller dataanvändning.
-
-**Datastyrningsetiketter:** [!DNL Data governance] etiketter ger användarna möjlighet att klassificera data som speglar integritetsrelaterade överväganden och avtalsvillkor så att de uppfyller regler och företagspolicyer. [!DNL Data governance] etiketter som läggs till i en datauppsättning ärvs ned eller används på alla fält i den datauppsättningen. [!DNL Data governance] kan även användas direkt i fält.
+**Datastyrning:** Datastyrning omfattar strategier och tekniker som används för att säkerställa att data överensstämmer med regler och organisationsstrategier när det gäller dataanvändning.
 
 **Partners för dataintegrering:** Dataintegrationspartners förenklar och automatiserar inläsningen och omvandlingen av stora datavolymer från över 200 källor till [!DNL Experience Platform] utan att behöva skriva kod.
 
-**Datauppsättningsetiketter:** Dataanvändningsetiketter kan läggas till i datauppsättningar. Alla fält i den datauppsättningen ärver datauppsättningens etiketter.
+**Datauppsättningsrubriker:** Dataanvändningsetiketter kan läggas till i datauppsättningar. Alla fält i den datauppsättningen ärver datauppsättningens etiketter.
 
 **Data Science Workspace:** [!DNL Data Science Workspace] inom [!DNL Experience Platform] vilken kunderna kan skapa maskininlärningsmodeller med hjälp av data mellan [!DNL Experience Platform] - och Adobe-applikationer för att generera intelligenta insikter och prognoser för att skapa roliga digitala upplevelser för slutanvändarna.
 
@@ -186,27 +184,21 @@ ht-degree: 0%
 
 **Datatyp:** Datatypen är ett återanvändbart objekt med egenskaper i en hierarkisk representation.
 
-**Dataanvändningsetiketter:** Etiketter för dataanvändning ger användarna möjlighet att kategorisera data som speglar integritetsrelaterade överväganden och avtalsvillkor så att de uppfyller regler och företagspolicyer.
+**Dataanvändningsetiketter:** Etiketter för dataanvändning ger användarna möjlighet att kategorisera data som speglar integritetsrelaterade överväganden och avtalsvillkor så att de uppfyller regler och företagspolicyer. Dataanvändningsetiketter som läggs till i en datauppsättning ärvs ned eller används för alla fält i den datauppsättningen. Dataanvändningsetiketter kan också användas direkt i fält.
 
 **Dataflöde:** I [!DNL Real-time Customer Data Platform]det här fallet är ett dataflöde en virtuell pipeline med data som flödar in [!DNL Platform] från en källa och ut till mål.
 
-**Körning av dataflöde:** Dataflödeskörning är ett dataflöde som körs i Experience Platform baserat på ett användarspecificerat schema.
+**Körning av dataflöde:** En dataflödeskörning är ett dataflöde som körs i Experience Platform baserat på ett användarspecificerat schema.
 
 **Datauppsättning:** En datauppsättning är en lagrings- och hanteringskonstruktion för en datamängd, vanligtvis en tabell, som innehåller schema (kolumner) och fält (rader).
 
 **Datauppsättnings-ID:** En Adobe-genererad identifierare för en inkapslad datauppsättning.
 
-**Utdata för datauppsättning:** Datauppsättningsutdata är en mekanism för att avgöra vad alternativet *Skapa tabell som markerad* ska användas för en viss [!DNL Query Service] körning.
-
-**Beslutshändelse:** En beslutshändelse används för att samla in kommentarer om resultatet och sammanhanget för en beslutsaktivitet. Beslutshändelsen innehåller information om hur beslutet fattades, när det fattades, vilka alternativ som föreslogs (valdes) och vilket kontextuellt tillstånd som antingen påverkade beslutet eller kunde observeras under beslutsprocessen. Beslutshändelsen innehåller också förslags-ID:t, en globalt unik identifierare som kan användas för att korrelera beslutet till andra händelser.
-
-**Beslutsregel:** En beslutsregel är den logik som definierar och styr vad, när, var och hur ett erbjudande presenteras för slutanvändarna.
-
-**Beslutstjänst:** Det [!DNL Decisioning Service] är en samling tjänster och användargränssnitt som gör det möjligt för marknadsförare att skapa och leverera personaliserade erbjudandeupplevelser för slutanvändare i alla kanaler och i alla tillämpningar med hjälp av logiska funktioner och beslutsregler.
+**Utdata för datauppsättning:** Datauppsättningsutdata är en mekanism för att avgöra vad alternativet Skapa tabell som markering ska användas för en viss [!DNL Query Service] körning.
 
 **Delta-kolumn:** I [!DNL Real-time Customer Data Platform]deltakolumnen aktiveras val av källdatafält för en tidsstämpel för inkrementellt intag
 
-**Delta Save Strategy:** `Delta save strategy` är ett alternativ för att hämta tredjepartsdata via en anslutning. Med det här alternativet kan användaren ange att nya eller ändrade rader med källdata ska importeras till [!DNL Experience Platform]. Nya rader läggs till i slutet av datauppsättningen och ändrade rader uppdateras i datauppsättningen [!DNL Experience Platform].
+**strategi för att spara ändringar:** Det `Delta save strategy` är ett alternativ för att importera tredjepartsdata via en anslutning. Med det här alternativet kan användaren ange att nya eller ändrade rader med källdata ska importeras till [!DNL Experience Platform]. Nya rader läggs till i slutet av datauppsättningen och ändrade rader uppdateras i datauppsättningen [!DNL Experience Platform].
 
 **Mål:** I [!DNL Real-time Customer Data Platform] en destination är en allmän term för alla slutpunkter, som Adobe, annonsplattform, molnlagringstjänst eller marknadsföringstjänst, där en målgrupp aktiveras och levereras.
 
@@ -214,7 +206,7 @@ ht-degree: 0%
 
 **Målkatalog:** En målkatalog är en lista över tillgängliga mål i [!DNL Real-time Customer Data Platform].
 
-**Regler för direktsamtal:** i [!DNL Experience Platform Launch]kan du konfigurera en regel för direktanrop som körs när den anropas direkt från sidan. Om sidinläsningen eller åtgärden på webbplatsen är mycket enkel, eller om den är unik och kan utföra en viss uppsättning instruktioner varje gång (anges [!DNL eVar4] till X och utlöses [!DNL event2] varje gång), kan du använda en regel för direktanrop. Mer information finns i [!DNL Launch] dokumentationen om hur du skapar regler för direktanrop.
+**Regler för direktsamtal:** I [!DNL Adobe Experience Platform Launch]kan du konfigurera en regel för direktanrop som körs när den anropas direkt från sidan. Om sidinläsningen eller åtgärden på webbplatsen är mycket enkel, eller om den är unik och kan utföra en viss uppsättning instruktioner varje gång (anges [!DNL eVar4] till X och utlöses [!DNL event2] varje gång), kan du använda en regel för direktanrop. Mer information finns i [!DNL Launch] dokumentationen om hur du skapar regler för direktanrop.
 
 **Visningsnamn:** Visningsnamnet är ett användarvänligt namn på ett fält som visas i användargränssnittet.
 
@@ -228,15 +220,15 @@ ht-degree: 0%
 
 **Marknadsföringsåtgärd** för e-postmarknadsföring En marknadsföringsåtgärd som använder data i kampanjer för e-postmarknadsföring.
 
-**Bädda in kod:** I [!DNL Experience Platform Launch]är inbäddningskoden en script-tagg som placeras i HTML-koden på en plats eller i en miljö. Inbäddningskoden instruerar webbläsaren var bygget ska hämtas.
+**Bädda in kod:** I [!DNL Adobe Experience Platform Launch]är inbäddningskoden en script-tagg som placeras i HTML-koden på en plats eller i en miljö. Inbäddningskoden instruerar webbläsaren var bygget ska hämtas.
 
-**Uppräkning:** En uppräkning är en lista med värden som representerar giltiga data för ett fält.
+**Uppräkning:** En uppräkning (uppräkning) är en lista med värden som representerar giltiga data för ett fält.
 
-**Miljö:** I [!DNL Experience Platform Launch]är en miljö en uppsättning distributionsinstruktioner som anger värdleveransen och filformatet för ett bygge. Ett bibliotek måste kombineras med en miljö innan det kan byggas.
+**Miljö:** I [!DNL Adobe Experience Platform Launch]är en miljö en uppsättning distributionsinstruktioner som anger värdleveransen och filformatet för ett bygge. Ett bibliotek måste kombineras med en miljö innan det kan byggas.
 
 **Feldiagnostik:** Med feldiagnostik kan du skapa detaljerade felmeddelanden för inkapslade batchar. Feltröskelvärdet gör att du kan konfigurera procentandelen godtagbara fel innan hela gruppen misslyckas.
 
-**Händelse** I [!DNL Experience Platform Launch]är en händelse en specifik typ av regelkomponent, en utlösare som inträffar på en klientenhet för att påbörja körningen av en regel.
+**Händelse** I [!DNL Adobe Experience Platform Launch]är en händelse en specifik typ av regelkomponent, en utlösare som inträffar på en klientenhet för att påbörja körningen av en regel.
 
 **Händelser:** Händelser är de beteendedata som är associerade med en profil.
 
@@ -246,11 +238,11 @@ ht-degree: 0%
 
 **Experimentera:** Experimentera är processen att tillämpa en tränad modell på en liten del av liveproduktionsdata för att validera dess prestanda. Detta skiljer sig från en tränad modell som testas mot en testdatamängd för utelämnande. Detta skiljer sig också från begreppet Experiment i vissa XML-ramverk, där det i själva verket handlar om ett exempelmodelleringsprojekt.
 
-**ExperienceEvent:** ExperienceEvent är ett [!DNL Experience Platform] standardschema som samlar in observationer, inklusive tidpunkten och identiteten för det aktuella ämnet. Experience Events är faktauppgifter om vad som hände, vilket representerar vad som hände utan aggregering eller tolkning.
+**ExperienceEvent:** En ExperienceEvent är ett [!DNL Experience Platform] standardschema som samlar in observationer, inklusive tidpunkten och identiteten för det aktuella ämnet. Experience Events är faktauppgifter om vad som hände, vilket representerar vad som hände utan aggregering eller tolkning.
 
-**Tillägg:** I [!DNL Experience Platform Launch]är ett tillägg ett paket med funktioner som lagts till i en [!DNL Launch] egenskap.  Ett tillägg är vanligtvis inriktat på en viss marknadsförings- eller analyslösning och innehåller de verktyg som behövs för att driftsätta tekniken i en klientmiljö.
+**Tillägg:** I [!DNL Adobe Experience Platform Launch]är ett tillägg ett paket med funktioner som lagts till i en [!DNL Platform Launch] egenskap.  Ett tillägg är vanligtvis inriktat på en viss marknadsförings- eller analyslösning och innehåller de verktyg som behövs för att driftsätta tekniken i en klientmiljö.
 
-**Tilläggspaket:** I [!DNL Experience Platform Launch]är ett tilläggspaket en ZIP-fil som skapas och överförs av en tilläggsutvecklare och innehåller allt som [!DNL Launch] användarna behöver för att installera tillägget i sin egenskap.  Ett tilläggspaket innehåller ett manifest som specificerar information om det tillägg, den HTML och JavaScript som behövs för att slutanvändarna ska kunna konfigurera beteendet för [!DNL Launch] tillägget och det körbara JavaScript som levererats till klientmiljön, om det behövs.
+**Tilläggspaket:** I [!DNL Adobe Experience Platform Launch]är ett tilläggspaket en ZIP-fil som skapas och överförs av en tilläggsutvecklare och innehåller allt som [!DNL Platform Launch] användarna behöver för att installera tillägget i sin egenskap.  Ett tilläggspaket innehåller ett manifest som specificerar information om det tillägg, den HTML och JavaScript som behövs för att slutanvändarna ska kunna konfigurera beteendet för [!DNL Platform Launch] tillägget och det körbara JavaScript som levererats till klientmiljön, om det behövs.
 
 [Till början](#adobe-experience-platform-glossary)
 
@@ -260,7 +252,7 @@ ht-degree: 0%
 
 **Funktionsmappning:** Funktionsmappning avser processen att mappa funktioner från data till indata- och målfunktioner som krävs av en maskininlärningsmodell.
 
-**Fält:** Ett fält är det lägsta nivåelementet i en datauppsättning. Varje fält har ett namn för referens och en typ för att identifiera vilken typ av data det innehåller. Fälttyperna kan vara heltal, tal, sträng, booleskt värde och schema.
+**Fält:** Ett fält är det lägsta nivåelementet i en datauppsättning. Varje fält har ett namn för referens och en typ för att identifiera vilken typ av data det innehåller. Fälttyperna kan vara heltal, tal, sträng, booleskt och schema.
 
 **Fältetiketter:** Fältetiketter är datastyrningsetiketter som antingen ärvs från en datamängd eller tillämpas direkt på ett fält.
 
@@ -274,15 +266,15 @@ ht-degree: 0%
 
 **Geofence:** En geofence är en virtuell geografisk gräns, som definieras av GPS- eller RFID-teknik, som gör att programvara kan utlösa ett svar när en mobil enhet kommer in i eller lämnar ett visst område.
 
-**GDPR:** Den allmänna dataskyddsförordningen (GDPR) är en rättslig ram som fastställer riktlinjer för insamling och behandling av personuppgifter inom EU. Den allmänna dataskyddsförordningen fastställer principerna för datahantering och individens rättigheter och omfattar alla företag som hanterar EU-medborgarnas uppgifter.
+**GDPR (General Data Protection Regulation):** Den allmänna dataskyddsförordningen (GDPR) är en rättslig ram som fastställer riktlinjer för insamling och behandling av personuppgifter inom EU. Den allmänna dataskyddsförordningen fastställer principerna för datahantering och individens rättigheter och omfattar alla företag som hanterar EU-medborgarnas uppgifter.
 
-**GDPR-dataetikett:** Etiketten för GDPR-styrning används för att definiera fält som kan innehålla personliga identifierare för användning i GDPR-begäranden om åtkomst och/eller borttagning.
+**Etikett för GDPR-dataanvändning:** Etiketten för GDPR-dataanvändning används för att definiera de fält som kan innehålla personliga identifierare för användning i GDPR-begäranden om åtkomst och/eller borttagning.
 
 [Till början](#adobe-experience-platform-glossary)
 
 ## H
 
-**Värd:** I [!DNL Experience Platform Launch]anger en värd den plats, domän och de användarautentiseringsuppgifter som krävs för [!DNL Launch] att leverera ett bygge.
+**Värd:** I [!DNL Adobe Experience Platform Launch]anger en värd den plats, domän och de användarautentiseringsuppgifter som krävs för [!DNL Platform Launch] att leverera ett bygge.
 
 [Till början](#adobe-experience-platform-glossary)
 
@@ -290,31 +282,31 @@ ht-degree: 0%
 
 **Identitet:** Identitet är en identifierare som ett cookie-ID, ett enhets-ID eller ett e-post-ID som unikt representerar en slutkund.
 
-**Identitet&quot;I&quot;-dataetiketter:** `Identity I` används för att kategorisera data som kan identifiera eller kontakta en viss person.
+**Identitet&quot;I&quot;-etiketter:** `Identity I` dataanvändningsetiketter används för att kategorisera data som kan identifiera eller kontakta en viss person.
 
 **Identitetsdiagram:** Identitetsdiagram är en karta över relationer mellan sammanfogade och länkade identiteter, som uppdateras nästan i realtid med kundaktivitet.
 
-**Identitetsnamnrymd:** Ett identitetsnamnutrymme är en identifierare, till exempel cookie-id, enhets-ID eller e-post-ID, som anger det sammanhang som data kommer från och används för att identifiera och länka identiteter över [!DNL Experience Cloud].
+**Identitetsnamnutrymme:** Ett identitetsnamnutrymme är en identifierare, till exempel cookie-id, enhets-ID eller e-post-ID, som anger det sammanhang som data kommer från och används för att identifiera och länka identiteter över [!DNL Experience Cloud].
 
 **Identitetstjänst:** [!DNL Experience Platform Identity Service] Med användargränssnittet kan du skapa och hantera identitetstyper för att länka identiteter mellan olika enheter och kanaler för en fullständig användarvy från [!DNL Real-time Customer Profile].
 
-**Identitetskorrigering:** Identitetssammanfogning är processen att identifiera databragment och sammanfoga dem för att bilda en fullständig registrering av en profil.
+**Sammanfogning av identitet:** Identitetssammanfogning är processen att identifiera databragment och sammanfoga dem för att bilda en fullständig registrering av en profil.
 
-**Identitetssymbol:** Identitetssymbolen är en förkortning av ett identitetsnamnutrymme som kan användas som referens i API:er.
+**Identitetssymbol:** En identitetssymbol är en förkortning av ett identitetsnamnutrymme som kan användas som referens i API:er.
 
 **Identitetsvärde:** Identitetsvärde är data som är associerade med en tilldelad identitet i schemat. När postdata matchas mellan profilfragment måste både identitetsvärdet och namnutrymmet matcha.
 
-**I1-dataetikett:** Dataetiketten används för att klassificera direkt identifierbara data som kan identifiera eller kontakta en viss person i stället för en enhet. `I1`
+**Etikett för dataanvändning i1:** Etiketten för `I1` dataanvändning används för att klassificera direkt identifierbara data som kan identifiera eller kontakta en viss person i stället för en enhet.
 
-**I2-dataetikett:** Dataetiketten används för att klassificera indirekt identifierbara data som kan användas i kombination med andra data för att identifiera eller kontakta en viss person. `I2`
+**Etikett för dataanvändning i I2:** Etiketten för dataanvändning används för att klassificera indirekt identifierbara data som kan användas i kombination med andra data för att identifiera eller kontakta en viss person. `I2`
 
-**Ingest:** Inmatning är processen att lägga till data från en källa till [!DNL Experience Platform]. Data kan importeras till [!DNL Experience Platform] på flera olika sätt, bland annat via direktuppspelning, gruppering eller tillägg via anslutning.
+**Inmatning:** Inmatning är processen att lägga till data från en källa till [!DNL Experience Platform]. Data kan importeras till [!DNL Experience Platform] på flera olika sätt, bland annat via direktuppspelning, gruppering eller tillägg via anslutning.
 
-**Inmatningsschema:** Injektionsschemat ger tidsbaserade alternativ när man ska hämta från en källa till [!DNL Experience Platform].
+**Injektionsschema:** Ett intag-schema ger tidsbaserade alternativ när man tar något från en källa till [!DNL Experience Platform].
 
 **Indatafunktion:** Indatafunktionen anges i funktionsmappningen och används av en maskininlärningsmodell för att göra prognoser.
 
-**Intelligenta tjänster:** [!DNL Intelligent Services] som [!DNL Attribution AI] och [!DNL Customer AI] är maskininlärning, artificiell intelligens-baserade, målinriktade modeller som kräver [!DNL Experience Platform] att datorn körs och används.
+**[!DNL Intelligent Services]:** [!DNL Intelligent Services] som [!DNL Attribution AI] och [!DNL Customer AI] är maskininlärning, artificiell intelligens-baserade, målinriktade modeller som kräver [!DNL Experience Platform] att datorn körs och används.
 
 **Intressebaserad målinriktning eller personalisering:** Intressebaserad målinriktning, som också kallas personalisering, uppstår om följande tre villkor uppfylls: data som samlas in på plats används för att dra slutsatser om en användares intresse, data används i ett annat sammanhang, t.ex. på en annan webbplats eller i en app (utanför webbplatsen), och om data används för att välja vilket innehåll eller vilka annonser som ska hanteras baserat på dessa slutsatser.
 
@@ -332,15 +324,15 @@ ht-degree: 0%
 
 ## L
 
-**Bibliotek:** I [!DNL Experience Platform Launch]är ett bibliotek en uppsättning affärslogik som innehåller instruktioner för hur [!DNL Launch] biblioteket ska fungera på klientenheten.
+**Bibliotek:** I [!DNL Adobe Experience Platform Launch]är ett bibliotek en uppsättning affärslogik som innehåller instruktioner för hur [!DNL Platform Launch] biblioteket ska fungera på klientenheten.
 
 [Till början](#adobe-experience-platform-glossary)
 
 ## M
 
-**Maskininlärning (ML):** Maskininlärning är det studieområde som gör det möjligt för datorer att lära sig utan att programmeras explicit.
+**Maskinininlärning (ML):** Maskininlärning är det studieområde som gör det möjligt för datorer att lära sig utan att programmeras explicit.
 
-**Maskininlärningsmodell:** En maskininlärningsmodell är en instans av ett maskininlärningsrecept som har tränats med historiska data och konfigurationer för att lösa ett affärsärende. I Adobe [!DNL Data Science Workspace]kallas maskininlärningsmodeller recept.
+**Maskinininlärningsmodell:** En maskininlärningsmodell är en instans av ett maskininlärningsrecept som har tränats med historiska data och konfigurationer för att lösa ett affärsärende. I Adobe [!DNL Data Science Workspace]kallas maskininlärningsmodeller recept.
 
 **Mappning:** I [!DNL Real-time Customer Data Platform]är datamappning processen att mappa källdatafält till målrelaterade målfält.
 
@@ -354,7 +346,7 @@ ht-degree: 0%
 
 **Ändrad datumkolumn:** Att markera en `Modified Date` kolumn är ett alternativ när du anger data från tredje part via en anslutning. När `Delta` sparningsstrategin har valts och datauppsättningen innehåller flera datumrelaterade scheman, måste användaren välja från det tillgängliga schemat av typen datum/tid för att ange en ändrad datumnyckelkolumn. `Modified Date` är inte tillgängligt när du har valt `Overwrite` sparstrategi.
 
-**Modul:** I [!DNL Experience Platform Launch]är en modul ett fragment av körbar JavaScript som tillhandahålls av ett tillägg, som utför åtgärder i en klientmiljö utan att användaren behöver skapa en regel [!DNL Launch] .
+**Modul:** I [!DNL Adobe Experience Platform Launch]är en modul ett fragment av körbar JavaScript som tillhandahålls av ett tillägg, som utför åtgärder i en klientmiljö utan att användaren behöver skapa en regel [!DNL Platform Launch] .
 
 [Till början](#adobe-experience-platform-glossary)
 
@@ -362,7 +354,7 @@ ht-degree: 0%
 
 **Icke-produktionssandlåda:** Sandlådor som inte är produktionssandlådor är en form av datvirtualisering som gör att du kan isolera data från andra sandlådor och som vanligtvis används för utvecklingsexperiment, testning och testning. Sandlådor som inte är produktionssandlådor kan återställas och tas bort.
 
-**[!DNL Notebooks]:** [!DNL Notebooks] skapas med *[!DNL Jupyter Notebook]* och innehåller analysbeskrivning, resultat och kan köras för att utföra dataanalys.
+**[!DNL Notebooks]:** [!DNL Notebooks] skapas med [!DNL Jupyter Notebook] och innehåller analysbeskrivning, resultat och kan köras för att utföra dataanalys.
 
 [Till början](#adobe-experience-platform-glossary)
 
@@ -370,17 +362,17 @@ ht-degree: 0%
 
 **Erbjudande:** Ett erbjudande är ett marknadsföringsmeddelande som kan ha regler kopplade till sig och som anger vem som är berättigad att se erbjudandet.
 
-**Offer Decisioning:** Med offertbeslut kan en marknadsförare hantera regler och tränade modeller av erbjudandeförslag när han eller hon kontaktar en slutanvändare baserat på data som samlats in över olika kanaler och tillämpningar.
+**[!DNL Offer Decisioning]:** [!DNL Offer Decisioning] gör det möjligt för en marknadsförare att hantera regler och tränade modeller för erbjudandeförslag när de interagerar med en slutanvändare baserat på data som samlats in över olika kanaler och tillämpningar.
 
 **Erbjudandebibliotek:** Erbjudandebiblioteket är ett centralt bibliotek som används för att hantera personaliserade erbjudanden och reserverbjudanden, beslutsregler och aktiviteter.
 
-**Marknadsföringsåtgärd** för personalisering på plats En marknadsföringsåtgärd som använder data för innehållspersonalisering på plats. Personalisering på plats är alla data som används för att dra slutsatser om användarnas intressen, och används för att välja vilket innehåll eller vilka annonser som betjänas baserat på dessa slutsatser.
+**Marknadsföringsåtgärd** för personalisering på plats En marknadsföringsåtgärd som använder data för innehållspersonalisering på plats. Webbplatspersonalisering är alla data som används för att dra slutsatser om användarnas intressen och används för att välja vilket innehåll eller vilka annonser som ska hanteras baserat på dessa slutsatser.
 
-**Marknadsföringsåtgärd** för marknadsföring på plats En marknadsföringsåtgärd som använder data för annonser på plats, inklusive urval och leverans av annonser på organisationens webbplatser eller i appar, eller för att mäta leveransen och effektiviteten av sådana annonser.
+**Marknadsföringsåtgärd** för riktad marknadsföring på plats En marknadsföringsåtgärd som använder data för annonser på plats, inklusive markering och leverans av annonser på organisationens webbplatser eller i appar, eller för att mäta hur effektiva dessa annonser är och hur de levereras.
 
-**Organisation:** En organisation är det namn som används för att identifiera ett företag eller en specifik grupp inom ett företag mellan olika Adobe-produkter. Administratören kan konfigurera och hantera åtkomst och behörigheter för funktioner för användare i en organisation.
+**Organisation:** En organisation är det namn som används för att identifiera ett företag eller en specifik grupp inom ett företag mellan olika Adobe-produkter. Administratörer kan konfigurera och hantera åtkomst och behörigheter för funktioner för användare i en organisation.
 
-**Skriv över sparad strategi:** `Overwrite` strategi för att spara är ett alternativ för att hämta tredjepartsdata via en anslutning, där användaren anger om inmatade data ska skrivas över enligt ett angivet schema. [!DNL Experience Platform] kommer att importera den angivna datauppsättningen från tredje parts källa och skriva över datauppsättningen på [!DNL Experience Platform].
+**Skriv över sparstrategi:** Den här `Overwrite` sparningsstrategin är ett alternativ för att hämta tredjepartsdata via en anslutning, där användaren anger om inmatade data ska skrivas över enligt ett angivet schema. [!DNL Experience Platform] kommer att importera den angivna datauppsättningen från tredje parts källa och skriva över datauppsättningen på [!DNL Experience Platform].
 
 [Till början](#adobe-experience-platform-glossary)
 
@@ -388,19 +380,19 @@ ht-degree: 0%
 
 **Delvis intag:** Delvis förtäring möjliggör förtäring av giltiga poster med batchdata inom ett angivet feltröskelvärde. Feldiagnostik för misslyckade poster kan hämtas eller komma åt i körningsöversikten för övervakning eller Källor.
 
-**Parquet-filer:** En parquet-fil är ett kolumnlagringsfilformat med komplexa kapslade datastrukturer. Parquet-filer krävs för att lägga till data för att fylla i en schemadatauppsättning.
+**Parquet-filer:** En Parquet-fil är ett kolumnlagringsfilformat med komplexa kapslade datastrukturer. Parquet-filer krävs för att lägga till data för att fylla i en schemadatauppsättning.
 
 **Personaliserade erbjudanden:** Ett personaliserat erbjudande är ett anpassningsbart marknadsföringsmeddelande som baseras på regler och begränsningar för behörighet.
 
 **Placeringar:** En placering är den plats och/eller det sammanhang där ett erbjudande visas för en slutanvändare.
 
-**Arbetsytan** Profiler Möjliggör datahantering för att visa och hantera egna etiketter och kärnetiketter för organisationen.
+**Arbetsytan** Profiler Möjliggör datahantering för att visa och hantera etiketter och etiketter för din organisation.
 
 **Princip:** En dataanvändningspolicy är en regel som anger marknadsföringsåtgärder som är begränsade baserat på användningen av dataanvändningsetiketter på data i [!DNL Experience Platform].
 
-**Policy Enforcement** Möjliggör tillämpning av dataanvändningspolicyer med tillämpade marknadsföringsåtgärder för att förhindra dataåtgärder som utgör policyöverträdelser inom en organisation.
+**Politisk tillämpning** Möjliggör tillämpning av dataanvändningspolicyer med tillämpade marknadsföringsåtgärder för att förhindra dataåtgärder som utgör policyöverträdelser inom en organisation.
 
-**Primärnyckel:** Primär nyckel är en beteckning i ett schema som unikt identifierar alla poster.
+**Primär nyckel:** En primärnyckel är en beteckning i ett schema som unikt identifierar alla poster.
 
 **Prioritet:** Prioriteten [!DNL Offer Decisioning]används för att rangordna erbjudanden som uppfyller alla krav, som berättigande, kalender och appning.
 
@@ -408,9 +400,11 @@ ht-degree: 0%
 
 **Produktprofil:** Med produktprofiler kan administratörer ge användare åtkomst till alla eller en delmängd av tjänster som är kopplade till [!DNL Experience Platform].
 
-**Production Sandbox:** En produktionssandlåda där virtuella data isoleras på plattformen som inte kan återställas eller tas bort.
+**Produktionssandlåda:** En produktionssandlåda där virtuella data isoleras på plattformen som inte kan återställas eller tas bort.
 
-**Profil:** [!DNL Profile] är en [!DNL Experience Platform] standarddatamodell som används för att definiera konsumenternas attribut. En profil kan också vara en sammanställning av händelsedata och attribut som relaterar till en person och/eller enhet.
+**Profil:** {#profile} För att inte blandas ihop med kundprofilen [i](#rtcp)realtid är en profil utdata av [!DNL Identity Service] och [!DNL Real-time Customer Profile] data, tar in inmatade profildata med identitetsfält och skapar en representation av en person.
+
+**Profildata:** Profildata hämtas under klassen XDM Individual Profile. Dessa data beskriver vanligtvis kundattribut, i motsats till händelsedata.
 
 **Profilexport:** [!DNL Profile] export är en av de två typerna av destinationer i [!DNL Real-time Customer Data Platform]. [!DNL Profile] vid export genereras en fil som innehåller profiler och attribut, och obearbetade PII-data används med e-post och används för integrering med automatiseringsplattformar för marknadsföring och e-post.
 
@@ -418,7 +412,7 @@ ht-degree: 0%
 
 **Profil-ID:** Ett profil-ID är en automatiskt genererad identifierare som är associerad med en identitetstyp och representerar en profil.
 
-**Egenskap:** I [!DNL Experience Platform Launch]är en egenskap en behållare för allt som behövs för att distribuera en uppsättning taggar.
+**Egenskap:** I [!DNL Adobe Experience Platform Launch]är en egenskap en behållare för allt som behövs för att distribuera en uppsättning taggar.
 
 [Till början](#adobe-experience-platform-glossary)
 
@@ -428,7 +422,7 @@ ht-degree: 0%
 
 **Frågeredigeraren:** Frågeredigeraren är ett verktyg för att skriva, validera och skicka SQL-satser i [!DNL Query Service].
 
-**Query Service för Adobe Experience Platform:** *[!DNL Experience Platform Query Service]* gör det möjligt för dataanalytiker att fråga efter [!DNL ExperienceEvents] och XDM:er för användning inom analys och maskininlärning. Med [!DNL Query Service]det kan datavetare och analytiker hämta in alla sina datauppsättningar som lagras i [!DNL Experience Platform] - inklusive beteendedata samt POS (point-of-sales), CRM (customer relationship management) med mera - och få svar på specifika frågor om dessa data.
+**Query Service för Adobe Experience Platform:** [!DNL Experience Platform Query Service] gör det möjligt för dataanalytiker att fråga efter [!DNL ExperienceEvents] och XDM:er för användning inom analys och maskininlärning. Med [!DNL Query Service]det kan datavetare och analytiker hämta in alla sina datauppsättningar som lagras i [!DNL Experience Platform] - inklusive beteendedata samt POS (point-of-sales), CRM (customer relationship management) med mera - och få svar på specifika frågor om dessa data.
 
 [Till början](#adobe-experience-platform-glossary)
 
@@ -436,7 +430,7 @@ ht-degree: 0%
 
 **Kunddataplattform i realtid:** Adobe sammanför kända och okända kunddata för att skapa tillförlitliga kundprofiler med förenklad integrering, intelligent segmentering och realtidsaktivering under hela den digitala kundresan. [!DNL Real-time Customer Data Platform]
 
-**Kundprofil i realtid:** [!DNL Real-time Customer Profile] är en centraliserad profil för riktad och personaliserad upplevelsehantering och ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+**Kundprofil i realtid:**{#rtcp} Att inte förväxlas med en generisk [profil](#profile), [!DNL Real-time Customer Profile]som ofta kallas &quot;profil&quot;, är ett generiskt uppslagsenhetsarkiv som sammanfogar data från olika företagsdatatillgångar och sedan ger tillgång till dessa data i form av individuella kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 
 **Mottagare:** Ett recept är en AdobeTerm för en modellspecifikation och är en toppnivåbehållare som representerar en specifik maskininlärning, AI-algoritm eller en kombination av algoritmer, bearbetningslogik och konfiguration som krävs för att skapa och köra en tränad modell och därmed bidra till att lösa specifika affärsproblem.
 
@@ -446,13 +440,13 @@ ht-degree: 0%
 
 **Representation:** I [!DNL Offer Decisioning]det här exemplet är en representation information som används av en kanal, till exempel plats eller språk för att visa ett erbjudande.
 
-**Resurs:** I [!DNL Experience Platform Launch]är resurs en allmän term som refererar till alternativ som [!DNL Launch] användaren kan konfigurera inuti klientmiljön, inklusive tillägg, dataelement och regler.
+**Resurs:** I [!DNL Adobe Experience Platform Launch]det här fallet är en resurs en allmän term som refererar till alternativ som [!DNL Platform Launch] användaren kan konfigurera i klientmiljön, inklusive tillägg, dataelement och regler.
 
 **Rollbaserad åtkomstkontroll:** Med rollbaserad åtkomstkontroll kan administratörer tilldela åtkomst och behörigheter till användare av [!DNL Experience Platform]. Behörigheter omfattar möjligheten att visa och/eller använda [!DNL Experience Platform] funktioner, som att skapa sandlådor, definiera scheman och hantera datauppsättningar.
 
-**Regel:** I [!DNL Experience Platform Launch]är en regel en samling regelkomponenter som definierar en specifik uppsättning händelser, villkor och åtgärder som ska grupperas logiskt.
+**Regel:** I [!DNL Adobe Experience Platform Launch]är en regel en samling regelkomponenter som definierar en specifik uppsättning händelser, villkor och åtgärder som ska grupperas logiskt.
 
-**Regelkomponent:** Regelkomponenter är i [!DNL Experience Platform Launch]sin tur händelser, villkor och åtgärder som utgör en regel.
+**Regelkomponent:** Regelkomponenter är i [!DNL Adobe Experience Platform Launch]sin tur händelser, villkor och åtgärder som utgör en regel.
 
 **Körtid:** Runtime-modulen anger en körningsmiljö för ett maskininlärningsrecept. [!DNL Python]Körningsmiljöerna , R, [!DNL Spark]PySpark och Tensorflow möjliggör indata från en URL till en dockningsbild för en receptkälla.
 
@@ -464,31 +458,31 @@ ht-degree: 0%
 
 **Sandlåda:** En sandlåda är en form av isolering av virtuella data i en användarorganisation [!DNL Experience Platform].
 
-**Återställ sandlåda:** Återställ sandlådan, tar bort alla data inklusive data, profiler och segment i en sandlåda. Sandlådeåterställning kan påverka data som är anslutna till interna eller externa mål.
+**Återställ sandlåda:** En sandlådeåterställning tar bort alla data inklusive data, profiler och segment i en sandlåda. Sandlådeåterställning kan påverka data som är anslutna till interna eller externa mål.
 
 **Sandlådeväxlare:** Med sandlådeväxlarkontrollen i [!DNL Experience Platform] kan användare navigera mellan sandlådor som de har tillgång till. Om du byter en sandlåda ändras allt innehåll och funktionsåtkomst kan ändras baserat på behörigheter.
 
-**Schema:** Schema är en användardefinierad specifikation av frekvens eller avbruten datainmatning från en datakälla från tredje part till Adobe [!DNL Experience Platform].
+**Schema:** Ett schema är en användardefinierad specifikation om hur ofta eller hur länge data ska hämtas från en datakälla från tredje part till Adobe [!DNL Experience Platform].
 
 **Poäng:** Poängberäkning är processen att generera insikter från data med hjälp av en tränad modell.
 
-**Schema:** Schemat består av en klass och valfri blandning och används för att skapa datauppsättningar och dataströmmar. Ett schema innehåller beteendeattribut, tidsstämpel, identitet, attributdefinitioner och relationer.
+**Schema:** Ett schema består av en klass och valfri blandning och används för att skapa datauppsättningar och dataströmmar. Ett schema innehåller beteendeattribut, tidsstämpel, identitet, attributdefinitioner och relationer.
 
-**Schemabeskrivning:** Schemabeskrivningen är ytterligare schemarelaterade metadata som beskriver beteenden som kan användas av [!DNL Experience Platform] för att förstå avsedd schemafunktion, till exempel relationen mellan två scheman.
+**Schemabeskrivning:** En schemabeskrivning är ytterligare schemarelaterade metadata som beskriver beteenden som kan användas av [!DNL Experience Platform] för att förstå avsedd schemafunktion, till exempel relationen mellan två scheman.
 
-**Nyckel för hemlig åtkomst:** En hemlig åtkomstnyckel är en [!DNL Amazon] S3-nyckel som används tillsammans med åtkomstnyckel-ID för att signera AWS-begäranden.
+**Hemlig åtkomstnyckel:** En hemlig åtkomstnyckel är en [!DNL Amazon] S3-nyckel som används tillsammans med åtkomstnyckel-ID för att signera AWS-begäranden.
 
 **Segment:** Ett segment är en uppsättning regler som innehåller attribut och händelsedata som kvalificerar ett antal profiler för att bli en målgrupp.
 
-**Segment Builder:** [!DNL Segment Builder] är den visuella utvecklingsmiljö som används för att skapa segmentdefinitioner och fungerar som en gemensam komponent i alla program som använder [!DNL Real-time Customer Profile] Segmentering på [!DNL Experience Platform].
+**Segment Builder:** [!DNL Segment Builder] är den visuella utvecklingsmiljö som används för att skapa segmentdefinitioner och fungerar som en gemensam komponent i alla program som använder [!DNL Segmentation Service] på [!DNL Experience Platform].
 
-**Segmentdefinition:** Segmentdefinition är den regeluppsättning som används för att beskriva nyckelegenskaper eller beteenden hos en målgrupp. När reglerna i en segmentdefinition är färdiga används de för att avgöra vilka målgruppsmedlemmar som är kvalificerade för ett segment.
+**Segmentdefinition:** En segmentdefinition är den regeluppsättning som används för att beskriva nyckelegenskaper eller beteenden hos en målpublik. När reglerna i en segmentdefinition är färdiga används de för att avgöra vilka målgruppsmedlemmar som är kvalificerade för ett segment.
 
-**Utvärderingsmetod för segment:** Utvärdering enligt segmentschema möjliggör ett återkommande schema för körning av ett exportjobb vid en viss tidpunkt, medan utvärdering på begäran innebär att ett segmentjobb skapas för att skapa målgruppen omedelbart.
+**Metod för segmentutvärdering:** Vid en schemalagd utvärdering av ett segment aktiveras ett återkommande schema för körning av ett exportjobb vid en viss tidpunkt, medan vid utvärdering på begäran måste ett segmentjobb skapas för att målgruppen ska kunna byggas omedelbart.
 
 **Segmentexport:** Segmentexport är en av de två typerna av destinationer i [!DNL Real-time Customer Data Platform]. Vid segmentexport kan du skicka de profiler som är kvalificerade och har mappats till målet. Använder segment- och användar-ID:n och pseudonyma data och integreras vanligtvis med sociala nätverk och andra målplattformar för digitala medier.
 
-**Segment-ID:** Segment-ID är en automatiskt genererad identifierare som är associerad med ett segment.
+**Segment-ID:** Ett segment-ID är en automatiskt genererad identifierare som är kopplad till ett segment.
 
 **Segmentmedlemskap:** Segmentmedlemskap visar vilket segment en profil tillhör för närvarande.
 
@@ -500,15 +494,15 @@ ht-degree: 0%
 
 **Sensei ML Framework:** Sensei ML Framework är ett enhetligt ramverk för maskininlärning i hela Adobe som utnyttjar data på [!DNL Experience Platform] för att möjliggöra för datavetare att utveckla maskininlärningsdrivna underrättelsetjänster på ett snabbare, skalbart och återanvändbart sätt.
 
-**Känsliga dataetiketter:** Känsliga&quot;S&quot;-etiketter används för att kategorisera data som anses vara känsliga, till exempel olika typer av beteendedata eller geografiska data som du vill ska markeras som känsliga.
+**Känsliga etiketter:** Känsliga&quot;S&quot;-etiketter används för att kategorisera data som anses vara känsliga, till exempel olika typer av beteendedata eller geografiska data som du vill ska markeras som känsliga.
 
 **Tjänster:** Ett kraftfullt ramverk för att driftsätta AI- och ML-tjänster genom att utnyttja Adobe Intelligent Services. Tjänsterna ger personaliserade kundupplevelser i realtid eller driftsätter anpassade intelligenta tjänster.
 
-**Single Identity Personalization Marketing Action** A marketing action that uses data for on site content personalization. Personalisering på plats är alla data som används för att dra slutsatser om användarnas intressen, och används för att välja vilket innehåll eller vilka annonser som betjänas baserat på dessa slutsatser.
+**Marknadsföringsåtgärd** för personalisering av en enda identitet En marknadsföringsåtgärd som använder data för innehållspersonalisering på plats. Personalisering på plats är alla data som används för att dra slutsatser om användarnas intressen, och används för att välja vilket innehåll eller vilka annonser som betjänas baserat på dessa slutsatser.
 
-**Dataetikett S1:** `S1` dataetiketten används för att klassificera data som anger latitud och longitud som kan användas för att bestämma den exakta placeringen av en enhet.
+**Etikett för dataanvändning i S1:** En dataanvändningsetikett används för att klassificera data som anger latitud och longitud som kan användas för att bestämma den exakta placeringen av en enhet. `S1`
 
-**Dataetikett för S2:** `S2` dataetikett används för att klassificera data som kan användas för att fastställa ett brett definierat geostängningsområde.
+**Etikett för S2-dataanvändning:** En dataanvändningsetikett används för att klassificera data som kan användas för att fastställa ett brett definierat geostängningsområde. `S2`
 
 **Källa:** Källa är en allmän term för alla indataanslutningar i [!DNL Real-time Customer Data Platform].
 
@@ -520,17 +514,17 @@ ht-degree: 0%
 
 **Källkoppling:** Med Adobe Experience Platform Source Connectors kan man enkelt importera data från olika källor och strukturera, märka och förbättra data med [!DNL Experience Platform Services]. Data kan hämtas från en mängd olika källor som molnbaserad lagring, tredjepartsprogramvara och CRM-system.
 
-**Namnområde för standardidentitet:** Standardnamnutrymmen för identiteter är fördefinierade identifierare i Adobe, inklusive Adobe och branschstandardlösningar som används för att identifiera användare.
+**Direktuppspelningsanslutning:** En direktuppspelningsanslutning är en unik slutpunkt som tillhandahålls av Adobe och som är knuten till en kunds IMS-organisation för att strömma data till [!DNL Experience Platform].
+
+**Standardnamnutrymme för identitet:** Standardnamnutrymmen för identiteter är fördefinierade identifierare i Adobe, inklusive Adobe och branschstandardlösningar som används för att identifiera användare.
 
 **Standardschema:** Standardscheman består av klasser och blandningar och är avsedda för återanvändning.
 
-**URL för direktuppspelningsslutpunkt:** En URL för direktuppspelningsslutpunkt är en unik slutpunkt som tillhandahålls av Adobe och som är knuten till en kunds IMS-organisation för att strömma data till [!DNL Experience Platform].
-
-**Direktuppspelningsinmatning:** Direktuppspelning ger användarna en metod för att skicka data från klient- och serverenheter till [!DNL Experience Platform] i realtid.
+**Direktuppspelning:** Direktuppspelning ger användarna en metod för att skicka data från klient- och serverenheter till [!DNL Experience Platform] i realtid.
 
 **Direktuppspelningssegmentering:** Direktuppspelningssegmentering är en kontinuerlig process för urval av data som uppdaterar segment som svar på användaraktivitet. När ett segment har skapats och sparats tillämpas segmentdefinitionen på inkommande data i [!DNL Real-time Customer Profile]. Tillägg och borttagningar av segment behandlas regelbundet, vilket säkerställer att målgruppen förblir relevant.
 
-**Symbol:** Symbol är en förkortning av ett identitetsnamnutrymme som kan användas som referens i API:er.
+**Symbol:** En symbol är en förkortning av ett identitetsnamnutrymme som kan användas som referens i API:er.
 
 **Systemvy:** Systemvyn är en visuell representation av källdatauppsättningar som flödar genom [!DNL Real-time Customer Profile] till mål.
 
@@ -550,7 +544,7 @@ ht-degree: 0%
 
 ## U
 
-**Unionsschema:** Unionsschema är en konsolidering av scheman som har aktiverats för [!DNL Real-time Customer Profile].
+**Unionsschema:** Ett unionsschema är en konsolidering av scheman som har aktiverats för [!DNL Real-time Customer Profile].
 
 [Till början](#adobe-experience-platform-glossary)
 
