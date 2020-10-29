@@ -5,9 +5,9 @@ description: Lär dig vilka variabler som automatiskt mappas i Adobe Analytics m
 seo-description: Lär dig vilka variabler som automatiskt mappas i Adobe Analytics med Experience Platform Web SDK
 keywords: adobe analytics;variables;analytics;automatic map;automatically mapped;
 translation-type: tm+mt
-source-git-commit: 2e28fda40a135330054c749d73439448a55db52c
+source-git-commit: 8e3bef77b84e40c836a6279a9a3e3901565c9920
 workflow-type: tm+mt
-source-wordcount: '547'
+source-wordcount: '681'
 ht-degree: 0%
 
 ---
@@ -28,11 +28,12 @@ Nedan finns en lista med variabler som Adobe Experience Platform [!DNL Edge Netw
 | `commerce.checkouts.value` | `events` | AppMeasurement-frågeparametern EVENT_LIST_FULL-mappning med konverteringen COMMERCE_SC_CHECKOUT, med avgränsaren `,`. |
 | `commerce.productListAdds.value` | `events` | AppMeasurement-frågeparametern EVENT_LIST_FULL-mappning med konverteringen COMMERCE_SC_ADD, med avgränsaren `,`. |
 | `commerce.productListRemovals.value` | `events` | AppMeasurement-frågeparametern EVENT_LIST_FULL-mappning med konverteringen COMMERCE_SC_REMOVE, med avgränsaren `,`. |
-| `commerce.productViews.id` | `events` | `prodView` Händelseserialisering. |
-| `commerce.productListOpens.id` | `events` | `scOpen` Händelseserialisering. |
-| `commerce.productListViews.id` | `events` | `scView` Händelseserialisering. |
-| `commerce.productListAdds.id` | `events` | `scAdd` Händelseserialisering. |
-| `commerce.productListRemovals.id` | `events` | `scRemove` Händelseserialisering. |
+| `commerce.productViews.id` | `events` | (Valfritt) `prodView` händelseserialisering. Om det här fältet exkluderas (dvs. för oserialiserade händelser) genereras och tilldelas entiteten ett eget ID-värde. |
+| `commerce.productListOpens.id` | `events` | (Valfritt) `scOpen` händelseserialisering. Om det här fältet exkluderas (dvs. för oserialiserade händelser) genereras och tilldelas entiteten ett eget ID-värde. |
+| `commerce.productListViews.id` | `events` | (Valfritt) `scView` händelseserialisering. Om det här fältet exkluderas (dvs. för oserialiserade händelser) genereras och tilldelas entiteten ett eget ID-värde. |
+| `commerce.productListAdds.id` | `events` | (Valfritt) `scAdd` händelseserialisering. Om det här fältet exkluderas (dvs. för oserialiserade händelser) genereras och tilldelas entiteten ett eget ID-värde. |
+| `commerce.productListRemovals.id` | `events` | (Valfritt) `scRemove` händelseserialisering. Om det här fältet exkluderas (dvs. för oserialiserade händelser) genereras och tilldelas entiteten ett eget ID-värde. |
+| `commerce.checkouts.id` | `events` | (Valfritt) `scCheckout` händelseserialisering. Om det här fältet exkluderas (dvs. för oserialiserade händelser) genereras och tilldelas entiteten ett eget ID-värde. |
 | `commerce.checkouts.id` | `events` | `scCheckout` Händelseserialisering. |
 | `device.screenHeight` | `s` | AppMeasurement-frågeparametern Screen Resolution-mappning. |
 | `device.screenWidth` | `s` | AppMeasurement-frågeparametern Screen Resolution-mappning. |
