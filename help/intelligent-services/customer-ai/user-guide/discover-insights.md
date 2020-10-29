@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;insights;customer ai;popular topics
+keywords: Experience Platform;insights;customer ai;popular topics;customer ai insights
 solution: Experience Platform
 title: Identifiera insikter med kundens AI
 topic: Discovering insights
-description: Kundens AI, som en del av de intelligenta tjänsterna, ger marknadsförarna möjlighet att utnyttja Adobe Sensei för att förutse vad kunderna kommer att göra härnäst. Kundens AI används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, utbildning eller driftsättning.
+description: Det här dokumentet fungerar som en guide för interaktion med Service Instance Insights i användargränssnittet för AI för Intelligent Services.
 translation-type: tm+mt
-source-git-commit: c5e2ea5daf813bf580a11f0182361197e55c6fe8
+source-git-commit: 0b92346065b7c9615d8aef4c9b13c84e0383b4b9
 workflow-type: tm+mt
-source-wordcount: '1094'
+source-wordcount: '1342'
 ht-degree: 0%
 
 ---
@@ -48,15 +48,22 @@ Därefter visas informationssidan för den tjänstinstansen, där du får visual
 
 ### Information om tjänstinstans
 
-Det finns två sätt att visa tjänstinstansinformation, det första från kontrollpanelen och det andra från tjänstinstansen.
+Det finns två sätt att visa tjänstinstansinformation: från kontrollpanelen eller i tjänstinstansen.
 
-Om du vill visa information från kontrollpanelen klickar du på en tjänstinstansbehållare och undviker hyperlänken som är kopplad till namnet. Detta öppnar en höger ratt med ytterligare information som beskrivning, poängfrekvens, förutsägelsemål och stödberättigad population. Dessutom kan du välja att redigera och ta bort instansen genom att klicka på **[!UICONTROL Edit]** eller **[!UICONTROL Delete]**.
+Om du vill visa en översikt över tjänstinstansinformationen på kontrollpanelen väljer du en tjänstinstansbehållare och undviker hyperlänken som är kopplad till namnet. Då öppnas en högerrät som innehåller ytterligare information. Kontrollerna innehåller följande:
 
-![höger räl](../images/insights/success-run.png)
+- **[!UICONTROL Edit]**: Om du väljer **[!UICONTROL Edit]** det här alternativet kan du ändra en befintlig tjänstinstans. Du kan redigera namn, beskrivning och bedömningsfrekvens för instansen.
+- **[!UICONTROL Clone]**: Om du väljer **[!UICONTROL Clone]** det här alternativet kopieras den valda tjänstinstansen. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny instans.
+- **[!UICONTROL Delete]**: Du kan ta bort en tjänstinstans, inklusive eventuella tidigare körningar.
+- **[!UICONTROL Data source]**: En länk till den datauppsättning som används av den här instansen.
+- **[!UICONTROL Run Frequency]**: Hur ofta en poängsättning äger rum och när.
+- **[!UICONTROL Score definition]**: En snabb översikt över målet som du konfigurerade för den här instansen.
+
+![](../images/user-guide/service-instance-panel.png)
 
 >[!NOTE]
 >
->Om en poängkörning misslyckas visas ett felmeddelande. Felmeddelandet visas under *Senaste körningsinformation* i den högra listen, som bara är synlig för misslyckade körningar.
+>Om en poängkörning misslyckas visas ett felmeddelande. Felmeddelandet visas under **Senaste körningsinformation** i den högra listen, som bara är synlig för misslyckade körningar.
 
 ![meddelande om misslyckad körning](../images/insights/failed-run.png)
 
@@ -72,7 +79,7 @@ Om du vill redigera en instans klickar du **[!UICONTROL Edit]** i den övre hög
 
 ![klicka på redigeringsknappen](../images/insights/edit-button.png)
 
-Dialogrutan Redigera visas. Du kan redigera *beskrivning* och *bedömningsfrekvens* för instansen. Bekräfta ändringarna och stäng dialogrutan genom att klicka **[!UICONTROL Edit]** i det nedre högra hörnet.
+Dialogrutan Redigera visas. Du kan redigera instansens namn, beskrivning, status och bedömningsfrekvens. Om du vill bekräfta ändringarna och stänga dialogrutan väljer du **[!UICONTROL Save]** i det nedre högra hörnet.
 
 ![redigera poesi](../images/insights/edit-instance.png)
 
@@ -80,15 +87,16 @@ Dialogrutan Redigera visas. Du kan redigera *beskrivning* och *bedömningsfrekve
 
 Knappen finns i den övre högra navigeringen bredvid **[!UICONTROL More actions]** **[!UICONTROL Edit]**. När du klickar **[!UICONTROL More actions]** öppnas en listruta där du kan välja någon av följande åtgärder:
 
+- **[!UICONTROL Clone]**: Om du väljer **[!UICONTROL Clone]** det här alternativet kopieras tjänstinstansens inställning. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny instans.
 - **[!UICONTROL Delete]**: Tar bort instansen.
-- **[!UICONTROL Access scores]**: När du klickar på *Åtkomstpoäng* öppnas en dialogruta med en länk till [nedladdningspoängen för Kundens AI](./download-scores.md) -självstudiekurs. Dialogrutan innehåller även det datauppsättnings-ID som krävs för att göra API-anrop.
+- **[!UICONTROL Access scores]**: När du väljer **[!UICONTROL Access scores]** det här alternativet öppnas en dialogruta med en länk till [nedladdningspoängen för kundens AI](./download-scores.md) -självstudiekurs. Dialogrutan innehåller även det datauppsättnings-ID som krävs för att göra API-anrop.
 - **[!UICONTROL View run history]**: En dialogruta med en lista över alla poängserier som är associerade med tjänstinstansen visas.
 
 ![fler åtgärder](../images/insights/more-actions.png)
 
-## Poängsammanfattning {#scoring-summary}
+## Sammanfattning av poäng {#scoring-summary}
 
-Betygsningssammanfattning visar det totala antalet profiler med poäng och kategoriserar dem i grupper som innehåller hög, medelhög och låg benägenhet. Propensitetsbucketerna baseras på poängintervall, låg är mindre än 24, medel är 25 till 74 och hög är över 74. Varje hink har en färg som motsvarar teckenförklaringen.
+Bedömningssammanfattning visar det totala antalet profiler som poängsatts och kategoriserar dem i grupper som innehåller hög, medelhög och låg benägenhet. Propensitetsbucketerna baseras på poängintervall, låg är mindre än 24, medel är 25 till 74 och hög är över 74. Varje hink har en färg som motsvarar teckenförklaringen.
 
 >[!NOTE]
 >
@@ -96,9 +104,13 @@ Betygsningssammanfattning visar det totala antalet profiler med poäng och kateg
 
 ![poängsammanfattning](../images/insights/scoring-summary.png)
 
+Du kan hovra över en färg i ringen om du vill visa ytterligare information, till exempel ett procenttal och det totala antalet profiler som tillhör en hink.
+
+![](../images/insights/scoring-ring.png)
+
 ## Distribution av bakgrundsmusik
 
-Kortet **[!UICONTROL Distribution of Scores]** ger en synlig sammanfattning av populationen baserat på poängen. Färgerna som visas på *Distribuera poäng* representerar den typ av poäng som genereras.
+Kortet **[!UICONTROL Distribution of Scores]** ger en synlig sammanfattning av populationen baserat på poängen. Färgerna som visas på [!UICONTROL Distribution of Scores] kortet representerar den typ av prioritetsskala som genereras. Genom att hovra över någon av poängfördelningarna får du det exakta antal som hör till den fördelningen.
 
 ![fördelning av poäng](../images/insights/distribution-of-scores.png)
 
@@ -108,9 +120,21 @@ För varje poänggrupp skapas ett kort som visar de tio viktigaste inflytelserik
 
 ![Influensafaktorer](../images/insights/influential-factors.png)
 
+### Influentiella faktornivåreglagen
+
+När du hovrar över någon av de viktigaste inflytelserika faktorerna bryts data ytterligare. Du får en översikt över varför vissa profiler tillhör en benägenhetsklocka. Beroende på faktorn kan du få tal, kategoriserade värden eller booleska värden. I exemplet nedan visas kategoriska värden per region.
+
+![detaljbild, bild](../images/insights/drilldown.png)
+
+Dessutom kan du använda drolldowns för att jämföra en fördelningsfaktor om den förekommer i två eller flera benägenhetsintervall och skapa mer specifika segment med dessa värden. I följande exempel visas det första användningsfallet:
+
+![](../images/insights/drilldown-compare.png)
+
+Du ser att det är mindre troligt att profiler med låg benägenhet att konvertera har gjort ett besök på adobe.com-webbsidorna nyligen. Faktorn&quot;Dagar sedan senaste webVisit&quot; har bara 8 % täckning jämfört med 26 % i medelstora prioritetsprofiler. Med hjälp av dessa tal kan du jämföra fördelningen inom varje hink för faktorn. Den här informationen kan användas för att dra slutsatsen att den senaste webbbesöket inte har lika stor inverkan på den låga benägenhetsknappen som den är i en större benägenhetsklocka.
+
 ### Skapa ett segment
 
-Om du klickar på **[!UICONTROL Create Segment]** knappen i någon av buckarna för Låg, Medel eller Hög benägenhet dirigeras du om till segmentbyggaren.
+Om du markerar knappen i någon av grupperna för låg, medel och hög **[!UICONTROL Create Segment]** benägenhet dirigeras du om till segmentbyggaren.
 
 >[!NOTE]
 >
