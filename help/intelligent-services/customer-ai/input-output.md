@@ -5,9 +5,9 @@ title: Indata och utdata för AI
 topic: Getting started
 description: Följande dokument visar de olika in- och utdata som används i kundens AI.
 translation-type: tm+mt
-source-git-commit: c30bbaead775e68f869b080e24e18d4a23cda973
+source-git-commit: 0f45f12ca4f43de9489eb609fd541aa2be3bae78
 workflow-type: tm+mt
-source-wordcount: '841'
+source-wordcount: '824'
 ht-degree: 0%
 
 ---
@@ -25,13 +25,13 @@ Kunds-AI använder data från kundupplevelsehändelser för att beräkna benäge
 
 Kundens AI kräver historiska data för modellutbildning, men mängden data som krävs baseras på två nyckelelement: resultatfönstret och den berättigade populationen.
 
-Som standard söker AI efter en användare att ha haft aktivitet de senaste 120 dagarna om ingen tillämplig populationsdefinition anges under programkonfigurationen. Förutom den minsta mängd data för kundupplevelsehändelser som krävs, behöver kundens AI även ett minsta antal lyckade händelser baserat på en förutsedd måldefinition. För närvarande behöver kundens AI minst 500 lyckade händelser.
+Som standard söker AI efter en användare att ha haft aktivitet de senaste 120 dagarna om ingen tillämplig populationsdefinition anges under programkonfigurationen. Dessutom kräver kundens AI minst 500 kvalificerande och 500 icke-kvalificerande händelser (totalt 1 000) av historiska data baserat på en förutsedd måldefinition.
 
 I följande exempel används en enkel formel som hjälper dig att fastställa den minsta mängden data som krävs. Om du har mer än minimikraven är det troligt att modellen ger mer korrekta resultat. Om du har mindre än minimiantalet som krävs kommer modellen att misslyckas eftersom det inte finns tillräckligt med data för modellutbildning.
 
 **Formel**:
 
-Minimilängd på data som krävs = stödberättigande population + resultatfönster
+Minsta längd på de data som krävs = stödberättigande population + resultatfönster
 
 >[!NOTE]
 >
