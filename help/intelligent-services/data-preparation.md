@@ -5,9 +5,9 @@ title: Förbered data för användning i intelligenta tjänster
 topic: Intelligent Services
 description: 'För att Intelligent Services ska kunna hitta insikter från era marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. Intelligenta tjänster utnyttjar XDM-scheman (Experience Data Model) för att uppnå detta. Närmare bestämt måste alla datauppsättningar som används i Intelligent Services] överensstämma med CEE-XDM-schemat (Consumer Experience Event). '
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: 3083c50b31746bfd32634278cb55b926bd477b2b
 workflow-type: tm+mt
-source-wordcount: '1978'
+source-wordcount: '1881'
 ht-degree: 0%
 
 ---
@@ -276,81 +276,15 @@ När datauppsättningen har skapats kan du hitta den i plattformsgränssnittet p
 
 ![](images/data-preparation/dataset-location.png)
 
-#### Lägg till en primär ID-namnområdestagg i datauppsättningen
+#### Lägg till identitetsfält i datauppsättningen
 
 >[!NOTE]
 >
 >Framtida releaser av [!DNL Intelligent Services] kommer att integrera [Adobe Experience Platform Identity Service](../identity-service/home.md) i sina funktioner för kundidentifiering. Stegen nedan kan ändras.
 
-Om du hämtar in data från [!DNL Adobe Audience Manager], [!DNL Adobe Analytics]eller någon annan extern källa, måste du lägga till en `primaryIdentityNameSpace` -tagg i datauppsättningen. Detta kan du göra genom att göra en PATCH-begäran till katalogtjänstens API.
+Om du hämtar in data från [!DNL Adobe Audience Manager], [!DNL Adobe Analytics]eller någon annan extern källa, har du möjlighet att ange ett schemafält som ett identitetsfält. Om du vill ange ett schemafält som ett identitetsfält kan du läsa avsnittet om att ange identitetsfält i [användargränssnittets självstudiekurs](../xdm/tutorials/create-schema-ui.md#identity-field) för att skapa ett schema med Schemaredigeraren eller alternativt [API-självstudiekursen](../xdm/tutorials/create-schema-api.md#define-an-identity-descriptor).
 
 Om du importerar data från en lokal CSV-fil kan du gå vidare till nästa avsnitt om [mappning och datainhämtning](#ingest).
-
-Innan du följer med exempelanropet till API:t nedan finns viktig information om obligatoriska huvuden i avsnittet [](../catalog/api/getting-started.md) Komma igång i guiden för katalogutvecklare.
-
-**API-format**
-
-```http
-PATCH /dataSets/{DATASET_ID}
-```
-
-| Parameter | Beskrivning |
-| --- | --- |
-| `{DATASET_ID}` | ID:t för datauppsättningen som du skapade tidigare. |
-
-**Begäran**
-
-Beroende på vilken källa du hämtar data från måste du ange lämpliga `primaryIdentityNamespace` - och `sourceConnectorId` taggvärden i nyttolasten för begäran.
-
-Följande begäran lägger till lämpliga taggvärden för Audience Manager:
-
-```shell
-curl -X PATCH \
-  https://platform.adobe.io/data/foundation/catalog/dataSets/5ba9452f7de80400007fc52a \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}' \
-  -H 'Content-Type: application/json' \
-  -d '{
-        "tags": {
-          "primaryIdentityNameSpace": ["mcid"],
-          "sourceConnectorId": ["audiencemanager"],
-        }
-      }'
-```
-
-Följande begäran lägger till lämpliga taggvärden för Analytics:
-
-```shell
-curl -X PATCH \
-  https://platform.adobe.io/data/foundation/catalog/dataSets/5ba9452f7de80400007fc52a \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}' \
-  -H 'Content-Type: application/json' \
-  -d '{
-        "tags": {
-          "primaryIdentityNameSpace": ["aaid"],
-          "sourceConnectorId": ["analytics"],
-        }
-      }'
-```
-
->[!NOTE]
->
->Mer information om hur du arbetar med identitetsnamnutrymmen i plattformen finns i översikten över [identitetsnamnutrymmet](../identity-service/namespaces.md).
-
-**Svar**
-
-Ett lyckat svar returnerar en array som innehåller ID:t för den uppdaterade datauppsättningen. Detta ID ska matcha det som skickades i PATCH-begäran.
-
-```json
-[
-    "@/dataSets/5ba9452f7de80400007fc52a"
-]
-```
 
 #### Mappa och importera data {#ingest}
 
