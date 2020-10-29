@@ -6,9 +6,9 @@ topic: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt molnlagringskonto.
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: 52129cbc597c6bef6f858e581edc0db23b06ad67
 workflow-type: tm+mt
-source-wordcount: '1610'
+source-wordcount: '1724'
 ht-degree: 0%
 
 ---
@@ -54,17 +54,23 @@ När förhandsvisningsfönstret har fyllts i kan du välja **[!UICONTROL Next]**
 
 ### Ingest Parquet- eller JSON-filer
 
-Filformat som stöds för ett molnlagringskonto inkluderar även JSON och Parquet. JSON- och Parquet-filer måste vara XDM-kompatibla. Om du vill importera JSON- eller Parquet-filer väljer du lämpligt filformat i katalogwebbläsaren och tillämpar kompatibelt dataformat från det högra gränssnittet. Välj **[!UICONTROL Next]** att fortsätta.
+Molnlagringskonton har också stöd för JSON- och Parquet-filer. Parquet-filer måste vara XDM-kompatibla, medan JSON-filer inte behöver vara XDM-kompatibla. Om du vill importera JSON- eller Parquet-filer väljer du lämpligt filformat i katalogwebbläsaren och tillämpar kompatibelt dataformat från det högra gränssnittet.
+
+Om dataformatet är i JSON visas en förhandsvisning med information om data i filen. På förhandsgranskningsskärmen kan du välja om JSON är XDM-kompatibel med hjälp av **[!UICONTROL XDM compliant]** listrutan.
+
+Välj **[!UICONTROL Next]** att fortsätta.
+
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/json-preview.png)
 
 >[!IMPORTANT]
 >
->Till skillnad från avgränsade filtyper är JSON- och Parquet-formaterade filer inte tillgängliga för förhandsgranskning.
+>Till skillnad från filtyperna separerad och JSON är Parquet-formaterade filer inte tillgängliga för förhandsgranskning.
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-data-parquet.png)
 
 ## Mappa datafält till ett XDM-schema
 
-Steget visas och innehåller ett interaktivt gränssnitt för att mappa källdata till en **[!UICONTROL Mapping]** [!DNL Platform] datauppsättning. Källfiler som är formaterade i JSON eller Parquet måste vara XDM-kompatibla och kräver inte att du konfigurerar mappningen manuellt. CSV-filer kräver däremot att du uttryckligen konfigurerar mappningen, men låter dig välja vilka källdatafält som ska mappas.
+Steget visas och innehåller ett interaktivt gränssnitt för att mappa källdata till en **[!UICONTROL Mapping]** [!DNL Platform] datauppsättning. Källfiler som är formaterade i Parquet måste vara XDM-kompatibla och kräver inte att du konfigurerar mappningen manuellt, medan CSV-filer kräver att du uttryckligen konfigurerar mappningen, men tillåter att du väljer vilka källdatafält som ska mappas. Om JSON-filer markeras som XDM-klagomål krävs ingen manuell konfiguration. Om den inte är markerad som XDM-kompatibel måste du explicit konfigurera mappningen.
 
 Välj en datauppsättning för inkommande data som ska importeras till. Du kan antingen använda en befintlig datauppsättning eller skapa en ny.
 
@@ -94,11 +100,19 @@ Dialogrutan **[!UICONTROL Select schema]** visas. Välj det schema som du vill t
 
 Beroende på dina behov kan du välja att mappa fält direkt eller använda mappningsfunktioner för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om datamappning och mappningsfunktioner finns i självstudiekursen om att [mappa CSV-data till XDM-schemafält](../../../../../ingestion/tutorials/map-a-csv-file.md).
 
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/mapping.png)
+
+För JSON-filer kan du, förutom att direkt mappa fält till andra fält, direkt mappa objekt till andra objekt och arrayer till andra arrayer.
+
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/source-field-json.png)
+
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/target-field-json.png)
+
+Observera att du inte kan mappa mellan olika typer. Du kan till exempel inte mappa ett objekt till en array eller ett fält till ett objekt.
+
 >[!TIP]
 >
 >[!DNL Platform] innehåller intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du har valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall.
-
-![](../../../../images/tutorials/dataflow/cloud-storage/batch/mapping.png)
 
 Välj **[!UICONTROL Preview data]** om du vill visa mappningsresultat på upp till 100 rader med exempeldata från den valda datauppsättningen.
 
