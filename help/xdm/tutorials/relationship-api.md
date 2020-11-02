@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en självstudiekurs för att defini
 topic: tutorial
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 097fe219e0d64090de758f388ba98e6024db2201
+source-git-commit: 4d9e66a55c265b60ab12070dd5e435c6567b7d0f
 workflow-type: tm+mt
 source-wordcount: '1296'
 ht-degree: 0%
@@ -117,7 +117,7 @@ I [!DNL Schema Registry]fungerar relationsbeskrivningarna på liknande sätt som
 >
 >Till skillnad från målschemat kan källschemat inte använda sin primära identitet som referensfält.
 
-I den här självstudiekursen innehåller målschemat&quot;[!DNL Hotels]&quot; ett `email` fält som fungerar som schemats primära identitet och fungerar därför även som referensfält. Källschemat &quot;[!DNL Loyalty Members]&quot; har emellertid inget dedikerat fält som ska användas som referens och måste ges en ny blandning som lägger till ett nytt fält i schemat: `favoriteHotel`.
+I den här självstudiekursen innehåller målschemat&quot;[!DNL Hotels]&quot; ett `hotelId` fält som fungerar som schemats primära identitet och fungerar därför även som referensfält. Källschemat &quot;[!DNL Loyalty Members]&quot; har emellertid inget dedikerat fält som ska användas som referens och måste ges en ny blandning som lägger till ett nytt fält i schemat: `favoriteHotel`.
 
 >[!NOTE]
 >
@@ -339,7 +339,7 @@ Ett lyckat svar returnerar detaljerna i det uppdaterade schemat, som nu inkluder
 
 ## Skapa en beskrivning av en referensidentitet {#reference-identity}
 
-Schemafält måste ha en referensidentitetsbeskrivare om de används som referens från andra scheman i en relation. Eftersom `favoriteHotel` fältet i &quot;[!DNL Loyalty Members]&quot; refererar till `email` fältet i &quot;[!DNL Hotels]&quot;, måste du `email` ange en referensidentitetsbeskrivning.
+Schemafält måste ha en referensidentitetsbeskrivare om de används som referens från andra scheman i en relation. Eftersom `favoriteHotel` fältet i &quot;[!DNL Loyalty Members]&quot; refererar till `hotelId` fältet i &quot;[!DNL Hotels]&quot;, måste du `favoriteHotel` ange en referensidentitetsbeskrivning.
 
 Skapa en referensbeskrivning för målschemat genom att göra en POST-förfrågan till `/tenant/descriptors` slutpunkten.
 
@@ -351,7 +351,7 @@ POST /tenant/descriptors
 
 **Begäran**
 
-Följande begäran skapar en referensbeskrivning för `email` fältet i målschemat &quot;[!DNL Hotels]&quot;.
+Följande begäran skapar en referensbeskrivning för `hotelId` fältet i målschemat &quot;[!DNL Hotels]&quot;.
 
 ```shell
 curl -X POST \
@@ -365,8 +365,8 @@ curl -X POST \
     "@type": "xdm:descriptorReferenceIdentity",
     "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/d4ad4b8463a67f6755f2aabbeb9e02c7",
     "xdm:sourceVersion": 1,
-    "xdm:sourceProperty": "/_{TENANT_ID}/email",
-    "xdm:identityNamespace": "Email"
+    "xdm:sourceProperty": "/_{TENANT_ID}/hotelId",
+    "xdm:identityNamespace": "Hotel ID"
   }'
 ```
 
@@ -387,8 +387,8 @@ Ett lyckat svar returnerar information om den nya referensbeskrivningen för må
     "@type": "xdm:descriptorReferenceIdentity",
     "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/d4ad4b8463a67f6755f2aabbeb9e02c7",
     "xdm:sourceVersion": 1,
-    "xdm:sourceProperty": "/_{TENANT_ID}/email",
-    "xdm:identityNamespace": "Email",
+    "xdm:sourceProperty": "/_{TENANT_ID}/hotelId",
+    "xdm:identityNamespace": "Hotel ID",
     "meta:containerId": "tenant",
     "@id": "53180e9f86eed731f6bf8bf42af4f59d81949ba6"
 }
@@ -423,7 +423,7 @@ curl -X POST \
     "xdm:sourceProperty": "/_{TENANT_ID}/favoriteHotel",
     "xdm:destinationSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/d4ad4b8463a67f6755f2aabbeb9e02c7",
     "xdm:destinationVersion": 1,
-    "xdm:destinationProperty": "/_{TENANT_ID}/email"
+    "xdm:destinationProperty": "/_{TENANT_ID}/hotelId"
   }'
 ```
 
