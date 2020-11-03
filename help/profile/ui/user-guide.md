@@ -1,26 +1,24 @@
 ---
 keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API;unified profile;Unified Profile;unified;Profile;rtcp;enable profile;Enable profile;Union schema;UNION PROFILE;union profile
-title: Användarhandbok för kundprofil i realtid
+title: Användargränssnittsguide för kundprofiler i realtid
 topic: guide
 description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofiler i realtid i Adobe Experience Platform användargränssnitt.
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: 342a05e4c378732331968ab7695a3ba7b47f2956
 workflow-type: tm+mt
-source-wordcount: '1256'
+source-wordcount: '1210'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Real-time Customer Profile] användarhandbok
+# [!DNL Real-time Customer Profile] Användargränssnittsguide
 
-[!DNL Real-time Customer Profile] skapar en helhetsbild av var och en av era enskilda kunder och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata.
-
-Det här dokumentet är en guide för interaktion med [!DNL Real-time Customer Profile] data i Adobe Experience Platform användargränssnitt.
+[!DNL Real-time Customer Profile] skapar en helhetsbild av var och en av era enskilda kunder och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med [!DNL Real-time Customer Profile] data i Adobe Experience Platform användargränssnitt.
 
 ## Komma igång
 
-Den här användarhandboken kräver förståelse för de olika [!DNL Experience Platform] tjänsterna som är kopplade till hantering [!DNL Real-time Customer Profiles]. Innan du läser den här användarhandboken bör du läsa dokumentationen för följande tjänster:
+Den här gränssnittshandboken kräver förståelse för de olika [!DNL Experience Platform] tjänster som är kopplade till hantering [!DNL Real-time Customer Profiles]. Innan du läser den här handboken eller arbetar i användargränssnittet bör du läsa dokumentationen för följande tjänster:
 
 * [[!DNL Real-time Customer Profile]](../home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [[!DNL Identity Service]](../../identity-service/home.md): Möjliggör [!DNL Real-time Customer Profile] genom att överbrygga identiteter från olika datakällor när de hämtas till [!DNL Platform].
@@ -102,15 +100,15 @@ Du kan visa ytterligare information om den enskilda profilen genom att välja en
 
 På huvudmenyn **[!UICONTROL Profiles]** väljer du **[!UICONTROL Merge Policies]** fliken för att visa en lista över sammanfogningsprinciper som tillhör organisationen. Varje listad princip visar sitt namn, oavsett om det är standardprincipen för sammanslagning eller inte, och det schema som den gäller för.
 
-Mer information om sammanfogningsprinciper finns i användarhandboken för [sammanfogningsprinciper](merge-policies.md).
+Mer information om sammanfogningsprinciper finns i [användargränssnittshandboken](merge-policies.md)för sammanfogningsprinciper.
 
 ![](../images/user-guide/profiles-merge-policies.png)
 
 ## Unionsschema {#union-schema}
 
-På huvudmenyn **[!UICONTROL Profiles]** väljer du **[!UICONTROL Union Schema]** fliken för att visa föreningsscheman för dina profildata. Ett unionsschema är en kombination av alla [!DNL Experience Data Model] (XDM) fält under samma klass, vars scheman har aktiverats för användning i [!DNL Real-time Customer Profile]. Genom att välja en klass i listan&quot;[!UICONTROL Class]&quot; till vänster kan du visa strukturen för dess schema på arbetsytan. Om du t.ex. väljer &quot;[!DNL XDM Profile]&quot; visas föreningsschemat för [!DNL XDM Individual Profile] klassen.
+På huvudmenyn **[!UICONTROL Profiles]** väljer du **[!UICONTROL Union Schema]** fliken för att visa föreningsscheman för dina inkapslade data. Ett unionsschema är en kombination av alla [!DNL Experience Data Model] (XDM) fält under samma klass, vars scheman har aktiverats för användning i [!DNL Real-time Customer Profile].
 
-Mer information om unionsscheman och deras roll i Adobe Experience Platform finns i avsnittet om unionsscheman i [schemakompositionsguiden](../../xdm/schema/composition.md).
+Mer information om unionsscheman finns i användargränssnittshandboken för [unionsscheman](union-schema.md).
 
 ![](../images/user-guide/profiles-union-schema.png)
 
