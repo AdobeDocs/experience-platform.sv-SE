@@ -4,9 +4,9 @@ audience: user
 user-guide-title: Kundprofilguide i realtid
 user-guide-description: Sammanfoga kunddata för att skapa en enhetlig bild av kundinteraktioner över alla kanaler.
 translation-type: tm+mt
-source-git-commit: 4e358fda1c8f7aebe57a009a146b8b73cf88e169
+source-git-commit: 8971d373228099d42249d3ec4af13e711323a0cc
 workflow-type: tm+mt
-source-wordcount: '96'
+source-wordcount: '100'
 ht-degree: 5%
 
 ---
@@ -27,10 +27,11 @@ ht-degree: 5%
    * [Förhandsgranska exempelstatus ([!DNL Profile] förhandsgranskning)](api/preview-sample-status.md)
    * [[!DNL Profile] systemjobb (Delete-begäranden)](api/profile-system-jobs.md)
 * Användargränssnittsguider {#ui}
-   * [[!DNL Profile] användarhandbok](ui/user-guide.md)
+   * [[!DNL Profile] Användargränssnittsguide](ui/user-guide.md)
    * [[!DNL Profile] anpassning av detaljer](ui/profile-customization.md)
-   * [Användarhandbok för sammanslagningsprinciper](ui/merge-policies.md)
-* Tutorials {#tutorials}
+   * [Användargränssnittshandbok för sammanslagningsprinciper](ui/merge-policies.md)
+   * [Användargränssnittshandbok för unionsschema](ui/union-schema.md)
+* Självstudiekurser {#tutorials}
    * [Lägg till data i [!DNL Profile]](tutorials/add-profile-data.md)
    * [Konfigurera en datauppsättning [!DNL Profile] & [!DNL Identity] för tjänsten](tutorials/dataset-configuration.md)
    * [Fler självstudiekurser](https://docs.adobe.com/content/help/en/experience-platform/tutorials/home.html)
