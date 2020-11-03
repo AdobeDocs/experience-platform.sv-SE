@@ -5,9 +5,9 @@ title: Förinställningsfunktioner för data
 topic: overview
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 translation-type: tm+mt
-source-git-commit: 16c718c7c653a0cfe4c3dcefddfc5472525e1828
+source-git-commit: 6deb8f5e11b87550601679f06c8445d90fd22709
 workflow-type: tm+mt
-source-wordcount: '3432'
+source-wordcount: '3459'
 ht-degree: 2%
 
 ---
@@ -42,7 +42,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | concat | Sammanfogar de angivna strängarna. | <ul><li>STRING: Strängarna som ska sammanfogas.</li></ul> | concat(STRING_1, STRING_2) | concat(&quot;Hi, &quot;, &quot;there&quot;, &quot;!&quot;) | `"Hi, there!"` |
 | explodera | Delar strängen baserat på en regex och returnerar en array med delar. Kan även inkludera regex för att dela upp strängen. Som standard tolkas delningen som &quot;,&quot;. | <ul><li>STRING: **Obligatoriskt** Strängen som måste delas.</li><li>REGEX: *Valfritt* Det reguljära uttryck som kan användas för att dela strängen.</li></ul> | explode(STRING, REGEX) | explode(&quot;Hej, där!&quot;, &quot;&quot;) | `["Hi,", "there"]` |
 | instr | Returnerar platsen/indexvärdet för en delsträng. | <ul><li>INMATNING: **Obligatoriskt** Den sträng som söks igenom.</li><li>SUBSTRING: **Obligatoriskt** Den delsträng som söks efter i strängen.</li><li>START_POSITION: *Valfritt* Den plats där sökningen ska börja i strängen.</li><li>FÖREKOMST: *Valfritt* Den n förekomsten att söka efter från startpositionen. Som standard är det 1. </li></ul> | instr(INPUT, SUBSTRING, START_POSITION, OCCURRENCE) | instr(&quot;adobe`<span>`.com&quot;, &quot;com&quot;) | 6 |
@@ -51,7 +51,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | lower /<br>lcase | Konverterar en sträng till gemener. | <ul><li>INMATNING: **Obligatoriskt** Den sträng som ska konverteras till gemener.</li></ul> | lower(INPUT) | lower(&quot;HanLo&quot;)<br>lcase(&quot;HanLo&quot;) | &quot;hello&quot; |
 | upper /<br>ucase | Konverterar en sträng till versaler. | <ul><li>INMATNING: **Obligatoriskt** Den sträng som ska konverteras till versaler.</li></ul> | upper(INPUT) | upper(&quot;HanLo&quot;)<br>ucase(&quot;HanLo&quot;) | &quot;HELLO&quot; |
 | dela | Delar en indatasträng på en avgränsare. | <ul><li>INMATNING: **Obligatoriskt** Den indatasträng som ska delas.</li><li>AVGRÄNSARE: **Obligatoriskt** Den sträng som används för att dela indata.</li></ul> | split(INPUT, SEPARATOR) | split(&quot;Hello world&quot;, &quot; &quot;) | `["Hello", "world"]` |
-| join | Sammanfogar en lista med objekt med hjälp av avgränsaren. | <ul><li>AVGRÄNSARE: **Obligatoriskt** Den sträng som ska användas för att förena objekten.</li><li>OBJEKT: **Obligatoriskt** En array med strängar som ska förenas.</li></ul> | `join(SEPARATOR, [OBJECTS])` | `join(" ", ["Hello", "world"])` | &quot;Hello world&quot; |
+| join | Sammanfogar en lista med objekt med hjälp av avgränsaren. | <ul><li>AVGRÄNSARE: **Obligatoriskt** Den sträng som ska användas för att förena objekten.</li><li>OBJEKT: **Obligatoriskt** En array med strängar som ska förenas.</li></ul> | `join(SEPARATOR, [OBJECTS])` | `join(" ", to_array(true, "Hello", "world"))` | &quot;Hello world&quot; |
 | lpad | Placerar den vänstra sidan av en sträng med den andra angivna strängen. | <ul><li>INMATNING: **Obligatoriskt** Strängen som ska utfyllas. Strängen kan vara null.</li><li>ANTAL: **Obligatoriskt** Strängstorleken som ska utfyllas.</li><li>PADDING: **Obligatoriskt** Strängen som indata ska fyllas med. Om värdet är null eller tomt behandlas det som ett enda mellanslag.</li></ul> | lpad(INPUT, COUNT, PADDING) | lpad(&quot;bat&quot;, 8, &quot;yz&quot;) | &quot;yzybat&quot; |
 | rpad | Placerar höger sida av en sträng med den andra angivna strängen. | <ul><li>INMATNING: **Obligatoriskt** Strängen som ska utfyllas. Strängen kan vara null.</li><li>ANTAL: **Obligatoriskt** Strängstorleken som ska utfyllas.</li><li>PADDING: **Obligatoriskt** Strängen som indata ska fyllas med. Om värdet är null eller tomt behandlas det som ett enda mellanslag.</li></ul> | rpad(INPUT, COUNT, PADDING) | rpad(&quot;bat&quot;, 8, &quot;yz&quot;) | &quot;batyzyzy&quot; |
 | vänster | Hämtar de första n-tecknen i den angivna strängen. | <ul><li>STRING: **Obligatoriskt** Strängen som du hämtar de första n-tecknen för.</li><li>ANTAL: **Obligatoriskt** De n-tecken som du vill hämta från strängen.</li></ul> | left(STRING, COUNT) | left(&quot;abcde&quot;, 2) | &quot;ab&quot; |
@@ -69,7 +69,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | sha1 | Tar en inmatning och skapar ett hash-värde med SHA-1 (Secure Hash Algorithm 1). | <ul><li>INMATNING: **Obligatoriskt** Den oformaterade texten ska hash-kodas.</li><li>CHARSET: *Valfritt* Teckenuppsättningens namn. Möjliga värden är UTF-8, UTF-16, ISO-8859-1 och US-ASCII.</li></ul> | sha1(INPUT, CHARSET) | sha1(&quot;min text&quot;, &quot;UTF-8&quot;) | c3599c11e47719df18a24 &#x200B; 48690840c5dfcce3c80 |
 | sha256 | Tar en inmatning och skapar ett hash-värde med hjälp av den säkra hash-algoritmen 256 (SHA-256). | <ul><li>INMATNING: **Obligatoriskt** Den oformaterade texten ska hash-kodas.</li><li>CHARSET: *Valfritt* Teckenuppsättningens namn. Möjliga värden är UTF-8, UTF-16, ISO-8859-1 och US-ASCII.</li></ul> | sha256(INPUT, CHARSET) | sha256(&quot;min text&quot;, &quot;UTF-8&quot;) | 7330d2b39ca35eaf4cb95fc846c21 &#x200B; ee6a39af698154a83a586ee270a0d372104 |
 | sha512 | Tar en inmatning och skapar ett hash-värde med hjälp av den säkra hash-algoritmen 512 (SHA-512). | <ul><li>INMATNING: **Obligatoriskt** Den oformaterade texten ska hash-kodas.</li><li>CHARSET: *Valfritt* Teckenuppsättningens namn. Möjliga värden är UTF-8, UTF-16, ISO-8859-1 och US-ASCII.</li></ul> | sha512(INPUT, CHARSET) | sha512(&quot;min text&quot;, &quot;UTF-8&quot;) | a3d7e45a0d9be5fd4e4b9a3b8c9c2163c21ef &#x200B; 708bf11b4232bb21d2a8704ada2cdcd7b367dd07 88a89 &#x200B; a5c908cfe377aceb1072a7b386b7d4fd2ff68a8fd24d16 |
@@ -83,7 +83,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | get_url_protocol | Returnerar protokollet från angiven URL. Om indata är ogiltiga returneras null. | <ul><li>URL: **Obligatoriskt** Den URL som protokollet måste extraheras från.</li></ul> | get_url_protocol(URL) | get_url_protocol(&quot;https://platform.adobe.com/home&quot;) | https |
 | get_url_host | Returnerar värddatorn för angiven URL. Om indata är ogiltiga returneras null. | <ul><li>URL: **Obligatoriskt** Den URL som värden måste extraheras från.</li></ul> | get_url_host(URL) | get_url_host(&quot;https://platform.adobe.com/home&quot;) | platform.adobe.com |
 | get_url_port | Returnerar porten för angiven URL. Om indata är ogiltiga returneras null. | <ul><li>URL: **Obligatoriskt** Den URL som porten måste extraheras från.</li></ul> | get_url_port(URL) | get_url_port(&quot;sftp://example.com//home/joe/employee.csv&quot;) | 22 |
@@ -97,7 +97,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | nu | Hämtar aktuell tid. |  | nu() | nu() | `2020-09-23T10:10:24.556-07:00[America/Los_Angeles]` |
 | tidsstämpel | Hämtar aktuell Unix-tid. |  | tidsstämpel() | tidsstämpel() | 1571850624571 |
 | format | Formaterar indatadatum enligt ett angivet format. | <ul><li>DATUM: **Obligatoriskt** Indatadatum, som ett ZonedDateTime-objekt, som du vill formatera.</li><li>FORMAT: **Obligatoriskt** Det format som du vill att datumet ska ändras till.</li></ul> | format(DATE, FORMAT) | format(2019-10-23T11:24:00+00:00, &quot;yyyy-MM-dd HH:mm:ss&quot;) | &quot;2019-10-23 11:24:35&quot; |
@@ -118,13 +118,14 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | size_of | Returnerar storleken på indata. | <ul><li>INMATNING: **Obligatoriskt** Det objekt som du försöker hitta storleken på.</li></ul> | size_of(INPUT) | `size_of([1, 2, 3, 4])` | 4 |
 | is_empty | Kontrollerar om ett objekt är tomt eller inte. | <ul><li>INMATNING: **Obligatoriskt** Objektet som du försöker kontrollera är tomt.</li></ul> | is_empty(INPUT) | `is_empty([1, 2, 3])` | falskt |
 | arrayer_to_object | Skapar en lista med objekt. | <ul><li>INMATNING: **Obligatoriskt** En gruppering av nyckel- och matrispar.</li></ul> | arrayer_to_object(INPUT) | need sample | need sample |
 | to_object | Skapar ett objekt baserat på de platta nyckel-/värdepar som anges. | <ul><li>INMATNING: **Krävs** en platt lista med nyckel/värde-par.</li></ul> | to_object(INPUT) | to_object(&quot;firstName&quot;, &quot;John&quot;, &quot;lastName&quot;, &quot;Doe&quot;) | `{"firstName": "John", "lastName": "Doe"}` |
 | str_to_object | Skapar ett objekt från indatasträngen. | <ul><li>STRING: **Obligatoriskt** Strängen som tolkas för att skapa ett objekt.</li><li>VALUE_DELIMITER: *Valfritt* Avgränsaren som skiljer ett fält från värdet. Standardavgränsaren är `:`.</li><li>FIELD_DELIMITER: *Valfritt* Avgränsaren som avgränsar fältvärdepar. Standardavgränsaren är `,`.</li></ul> | str_to_object(STRING, VALUE_DELIMITER, FIELD_DELIMITER) | str_to_object(&quot;firstName - John | lastName - | telefon - 123 456 7890&quot;, &quot;-&quot;, &quot; | &quot;) | `{"firstName": "John", "lastName": "Doe", "phone": "123 456 7890"}` |
 | is_set | Kontrollerar om objektet finns i källdata. | <ul><li>INMATNING: **Obligatoriskt** Sökvägen som ska kontrolleras om den finns i källdata.</li></ul> | is_set(INPUT) | is_set(&quot;evar.evar.field1&quot;) | sant |
+| null | Anger värdet för attributet till `null`. Detta bör användas när du inte vill kopiera fältet till målschemat. |  | nullify() | nullify() | `null` |
 
 ### Hierarkier - matriser
 
@@ -133,7 +134,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | coalesce | Returnerar det första icke-null-objektet i en given array. | <ul><li>INMATNING: **Obligatoriskt** Den array som du vill hitta det första icke-null-objektet i.</li></ul> | coalesce(INPUT) | coalesce(null, null, null, &quot;first&quot;, null, &quot;second&quot;) | &quot;first&quot; |
 | först | Hämtar det första elementet i den angivna arrayen. | <ul><li>INMATNING: **Obligatoriskt** Den array som du vill hitta det första elementet i.</li></ul> | first(INPUT) | first(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;) | &quot;1&quot; |
 | sista | Hämtar det sista elementet i den angivna arrayen. | <ul><li>INMATNING: **Obligatoriskt** Den array som du vill hitta det sista elementet i.</li></ul> | last(INPUT) | last(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;) | &quot;3&quot; |
@@ -146,7 +147,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | decode | Om en nyckel och en lista med nyckelvärdepar förenklas som en array, returnerar funktionen värdet om nyckeln hittas eller returnerar ett standardvärde om det finns i arrayen. | <ul><li>NYCKEL: **Nödvändig** nyckel som ska matchas.</li><li>OPTIONS: **Obligatoriskt** En förenklad array med nyckel/värde-par. Ett standardvärde kan också placeras i slutet.</li></ul> | decode(KEY, OPTIONS) | decode(stateCode, &quot;ca&quot;, &quot;California&quot;, &quot;pa&quot;, &quot;Pennsylvania&quot;, &quot;N/A&quot;) | Om given stateCode är &quot;ca&quot;, &quot;California&quot;.<br>Om den angivna statskoden är &quot;pa&quot;, &quot;Pennsylvania&quot;.<br>Om stateCode inte matchar följande, &quot;N/A&quot;. |
 | iif | Utvärderar ett givet booleskt uttryck och returnerar det angivna värdet baserat på resultatet. | <ul><li>BOOLEAN_EXPRESSION: **Obligatoriskt** booleskt uttryck som utvärderas.</li><li>TRUE_VALUE: **Obligatoriskt** Det värde som returneras om uttrycket utvärderas till true.</li><li>FALSE_VALUE: **Obligatoriskt** Det värde som returneras om uttrycket utvärderas till false.</li></ul> | iif(BOOLEAN_EXPRESSION, TRUE_VALUE, FALSE_VALUE) | iif(&quot;s&quot;.equalsIgnoreCase(&quot;S&quot;), &quot;True&quot;, &quot;False&quot;) | &quot;Sant&quot; |
 
@@ -157,7 +158,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | min | Returnerar det minsta av de angivna argumenten. Använder naturlig beställning. | <ul><li>OPTIONS: **Obligatoriskt** ett eller flera objekt som kan jämföras med varandra.</li></ul> | min(OPTIONS) | min(3, 1, 4) | 1 |
 | max | Returnerar det maximala antalet angivna argument. Använder naturlig beställning. | <ul><li>OPTIONS: **Obligatoriskt** ett eller flera objekt som kan jämföras med varandra.</li></ul> | max(OPTIONS) | max(3, 1, 4) | 4 |
 
@@ -168,7 +169,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | to_bigint | Konverterar en sträng till ett BigInteger. | <ul><li>STRING: **Obligatoriskt** Den sträng som ska konverteras till ett BigInteger.</li></ul> | to_bigint(STRING) | to_bigint(&quot;100000.34&quot;) | 1000000.34 |
 | to_decimal | Konverterar en sträng till en dubbel sträng. | <ul><li>STRING: **Obligatoriskt** Strängen som ska konverteras till Double.</li></ul> | to_decimal(STRING) | to_decimal(&quot;20.5&quot;) | 20.5 |
 | to_float | Konverterar en sträng till en flyttal. | <ul><li>STRING: **Obligatoriskt** Strängen som ska konverteras till ett flyttal.</li></ul> | to_float(STRING) | to_float(&quot;12.3456&quot;) | 12.34566 |
@@ -181,7 +182,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | json_to_object | Deserialisera JSON-innehåll från den angivna strängen. | <ul><li>STRING: **Kräver** att JSON-strängen avserialiseras.</li></ul> | json_to_object(STRING) | json_to_object({&quot;info&quot;:{&quot;firstName&quot;:&quot;John&quot;,&quot;lastName&quot; : &quot;Doe&quot;}) | Ett objekt som representerar JSON. |
 
 ### Särskilda åtgärder
@@ -191,7 +192,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | uuid /<br>guid | Skapar ett pseudoslumpmässigt ID. |  | uuid()<br>guid() | uuid()<br>guid() | 7c0267d2-bb74-4e1a-9275-3bf4fccda5f4<br>c7016dc7-3163-43f7-afc7-2e1c9c20633 |
 
 ### Användaragentfunktioner
@@ -201,7 +202,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | ua_os_name | Extraherar operativsystemets namn från användaragentsträngen. | <ul><li>USER_AGENT: **Nödvändig** användaragentsträng.</li></ul> | ua_os_name(USER_AGENT) | ua_os_name(&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 5_1_1 som Mac OS X) AppleWebKit/534.46 (KHTML, t.ex. Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS |
 | ua_os_version_major | Extraherar operativsystemets huvudversion från användaragentsträngen. | <ul><li>USER_AGENT: **Nödvändig** användaragentsträng.</li></ul> | ua_os_version_major(USER_AGENT) | ua_os_version_major(&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 5_1_1 som Mac OS X) AppleWebKit/534.46 (KHTML, t.ex. Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS 5 |
 | ua_os_version | Extraherar operativsystemets version från användaragentsträngen. | <ul><li>USER_AGENT: **Nödvändig** användaragentsträng.</li></ul> | ua_os_version(USER_AGENT) | ua_os_version(&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 5_1_1 som Mac OS X) AppleWebKit/534.46 (KHTML, t.ex. Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | 5.1.1 |
