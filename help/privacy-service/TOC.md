@@ -5,10 +5,10 @@ user-guide-title: Hjälp om Adobe Experience Platform Privacy Service
 breadcrumb-title: Privacy Service Guide
 user-guide-description: Hantera förfrågningar om kunddata för att följa juridiska sekretessregler som GDPR och CCPA.
 translation-type: tm+mt
-source-git-commit: 4e358fda1c8f7aebe57a009a146b8b73cf88e169
+source-git-commit: 37f07e11abe3c6757edc635153454339118fc45c
 workflow-type: tm+mt
-source-wordcount: '104'
-ht-degree: 3%
+source-wordcount: '91'
+ht-degree: 7%
 
 ---
 
@@ -28,14 +28,10 @@ ht-degree: 3%
    * [Översikt över användargränssnittet i Privacy Service](ui/overview.md)
    * [Användarhandbok för Privacy Service](ui/user-guide.md)
 * [Prenumerera på sekretesshändelser](privacy-events.md)
-* GDPR-guider {#gdpr}
-   * [Vanliga frågor om GDPR](gdpr/faq.md)
-   * [GDPR-terminologi](gdpr/terminology.md)
-* CCPA-stödlinjer {#ccpa}
-   * [Vanliga frågor om CCPA](ccpa/faq.md)
-* PDPA-guider (Thailand) {#pdpa-tha}
-   * [PDPA (Thailand) - frågor och svar](./pdpa-tha/faq.md)
-   * [PDPA-terminologi (Thailand)](./pdpa-tha/terminology.md)
+* Riktlinjer för sekretessbestämmelser {#regulations}
+   * [Översikt](regulations/overview.md)
+   * [Vanliga frågor och svar ](regulations/faq.md)
+   * [Terminologi](regulations/terminology.md)
 * [Felsökningsguide](troubleshooting-guide.md)
 * [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/privacy-service.yaml)
 * [Versionsinformation](release-notes.md)
