@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en självstudiekurs för att defini
 topic: tutorial
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 4d9e66a55c265b60ab12070dd5e435c6567b7d0f
+source-git-commit: ce06550e9608163e6e5819d79cc73a4b1f92e915
 workflow-type: tm+mt
 source-wordcount: '1296'
 ht-degree: 0%
@@ -339,7 +339,7 @@ Ett lyckat svar returnerar detaljerna i det uppdaterade schemat, som nu inkluder
 
 ## Skapa en beskrivning av en referensidentitet {#reference-identity}
 
-Schemafält måste ha en referensidentitetsbeskrivare om de används som referens från andra scheman i en relation. Eftersom `favoriteHotel` fältet i &quot;[!DNL Loyalty Members]&quot; refererar till `hotelId` fältet i &quot;[!DNL Hotels]&quot;, måste du `favoriteHotel` ange en referensidentitetsbeskrivning.
+Schemafält måste ha en referensidentitetsbeskrivare om de används som referens från andra scheman i en relation. Eftersom `favoriteHotel` fältet i &quot;[!DNL Loyalty Members]&quot; refererar till `hotelId` fältet i &quot;[!DNL Hotels]&quot;, måste du `hotelId` ange en referensidentitetsbeskrivning.
 
 Skapa en referensbeskrivning för målschemat genom att göra en POST-förfrågan till `/tenant/descriptors` slutpunkten.
 
