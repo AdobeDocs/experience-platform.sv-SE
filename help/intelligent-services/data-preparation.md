@@ -5,9 +5,9 @@ title: Förbered data för användning i intelligenta tjänster
 topic: Intelligent Services
 description: 'För att Intelligent Services ska kunna hitta insikter från era marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. Intelligenta tjänster utnyttjar XDM-scheman (Experience Data Model) för att uppnå detta. Närmare bestämt måste alla datauppsättningar som används i Intelligent Services] överensstämma med CEE-XDM-schemat (Consumer Experience Event). '
 translation-type: tm+mt
-source-git-commit: 3083c50b31746bfd32634278cb55b926bd477b2b
+source-git-commit: 630f3bd0249dc3d0e73ace52c534d5f20ec0f87a
 workflow-type: tm+mt
-source-wordcount: '1881'
+source-wordcount: '1850'
 ht-degree: 0%
 
 ---
@@ -278,11 +278,7 @@ När datauppsättningen har skapats kan du hitta den i plattformsgränssnittet p
 
 #### Lägg till identitetsfält i datauppsättningen
 
->[!NOTE]
->
->Framtida releaser av [!DNL Intelligent Services] kommer att integrera [Adobe Experience Platform Identity Service](../identity-service/home.md) i sina funktioner för kundidentifiering. Stegen nedan kan ändras.
-
-Om du hämtar in data från [!DNL Adobe Audience Manager], [!DNL Adobe Analytics]eller någon annan extern källa, har du möjlighet att ange ett schemafält som ett identitetsfält. Om du vill ange ett schemafält som ett identitetsfält kan du läsa avsnittet om att ange identitetsfält i [användargränssnittets självstudiekurs](../xdm/tutorials/create-schema-ui.md#identity-field) för att skapa ett schema med Schemaredigeraren eller alternativt [API-självstudiekursen](../xdm/tutorials/create-schema-api.md#define-an-identity-descriptor).
+Om du hämtar in data från [!DNL Adobe Audience Manager], [!DNL Adobe Analytics]eller någon annan extern källa, har du möjlighet att ange ett schemafält som ett identitetsfält. Om du vill ange ett schemafält som ett identitetsfält kan du läsa avsnittet om att ange identitetsfält i [självstudiekursen](../xdm/tutorials/create-schema-ui.md#identity-field) för användargränssnittet eller [API-självstudiekursen](../xdm/tutorials/create-schema-api.md#define-an-identity-descriptor) för att skapa ett schema.
 
 Om du importerar data från en lokal CSV-fil kan du gå vidare till nästa avsnitt om [mappning och datainhämtning](#ingest).
 
