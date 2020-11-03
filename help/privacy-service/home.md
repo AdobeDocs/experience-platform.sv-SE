@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Adobe Experience Platform Privacy Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: f3872d433949e6c14c28c6833b8498d4d01b8de3
+source-git-commit: d2f1255be48c1df04757f7e071221e0552a0b921
 workflow-type: tm+mt
-source-wordcount: '1623'
-ht-degree: 1%
+source-wordcount: '1356'
+ht-degree: 0%
 
 ---
 
@@ -41,16 +41,9 @@ Avsnitten nedan innehåller allmän vägledning om dessa viktiga nödvändiga st
 
 Beroende på vilken typ av verksamhet ni bedriver och vilka jurisdiktioner ni bedriver under, kan det bero på att era uppgifter omfattas av lagenliga sekretessbestämmelser. Dessa bestämmelser ger ofta kunderna rätt att begära åtkomst till de uppgifter ni samlar in från dem och rätt att begära att lagrade uppgifter tas bort. Dessa kundförfrågningar om deras personuppgifter kallas för&quot;sekretessförfrågningar&quot; i hela dokumentationen.
 
-I följande tabell beskrivs de juridiska integritetsregler som hanterar förfrågningar, inklusive länkar till dokumentation för mer information: [!DNL Privacy Service]
+Mer information om de olika juridiska sekretessreglerna som hanterar förfrågningar, inklusive nyckeltermer och svar på vanliga frågor och svar, finns i dokumentationen [!DNL Privacy Service] till [](./regulations/overview.md)sekretesslagstiftningen.
 
-| Förordning | Beskrivning |
-| --- | --- |
-| CCPA (Kalifornien) | CCPA ( [!DNL California Consumer Privacy Act] the CCPA) förbättrar integritetsrättigheterna och konsumentskyddet för personer bosatta i Kalifornien, USA. CCPA ger personer bosatta i Kalifornien nya integritetsrättigheter, inklusive rätten att få tillgång till och radera sina personuppgifter, att få veta om deras personuppgifter säljs eller offentliggörs (och till vem) samt rätten att avanmäla sig från att få sina uppgifter sålda till tredje part.<br/><br/>Länkar till ytterligare dokumentation: <ul><li>[Juridisk översikt](https://oag.ca.gov/privacy/ccpa)</li><li>[Vanliga frågor om CCPA](ccpa/faq.md)</li></ul> |
-| GDPR (Europeiska unionen) | The [!DNL General Data Protection Regulation] (GDPR) introduced several new data privacy rights for members of the European Union, including the **Right to Access** and the **Right to be Forgotten**. Detta innebär att alla EU-medborgare vars personuppgifter har samlats in av ert företag när som helst kan begära att få tillgång till eller radera sina uppgifter. <br/><br/>Länkar till ytterligare dokumentation: <ul><li>[Juridisk översikt](https://gdpr-info.eu/)</li><li>[Vanliga frågor om GDPR](gdpr/faq.md)</li><li>[GDPR-terminologi](gdpr/terminology.md)</li></ul> |
-| LGPD (Brasilien) | Syftet [!DNL Lei Geral de Proteção de Dados] (LGPD) är att reglera behandlingen av personuppgifter för alla enskilda eller fysiska personer i Brasilien. LGPD ger Brasilien-medborgarna rätt att få tillgång till och radera sina personuppgifter, att ta reda på om deras personuppgifter säljs eller offentliggörs (och till vem) samt rätt att avanmäla sig från att få sina uppgifter sålda till tredje part.<br/><br/>Länkar till ytterligare dokumentation: <ul><li>[Juridisk översikt](https://gdpr.eu/gdpr-vs-lgpd/)</li></ul> |
-| PDPA (Thailand) | Thailand (PDPA) infördes [!DNL Personal Data Protection Act] för att skydda thailändska dataägare från olaglig insamling, användning eller utlämnande av deras personuppgifter. Förordningen inspireras av EU:s allmänna dataskyddsförordningen och ger de thailändska medborgarna rätt att begära tillgång till eller radering av lagrade personuppgifter.<br/><br/>Länkar till ytterligare dokumentation: <ul><li>[Juridisk översikt](https://www.dataprotectionreport.com/2020/02/thailand-personal-data-protection-law/)</li><li>[Vanliga frågor om PDPA](pdpa-tha/faq.md)</li><li>[PDPA-terminologi](pdpa-tha/terminology.md)</li></ul> |
-
-Om dina dataåtgärder omfattas av någon av ovanstående regler, bör du läsa deras dokumentation för att få viktig information, som vilka specifika sekretessrättigheter de har för dina kunder, samt för att få koll på efterlevnadsförfrågningar. Denna information bör beaktas när ni avgör hur ni ska integrera dem [!DNL Privacy Service] i ert CRM-system och hur kunderna ska interagera med er webbplats för att kunna göra sekretessförfrågningar.
+Om dina dataåtgärder omfattas av någon av de regler som stöds kan du läsa deras dokumentation för att få viktig information, t.ex. vilka specifika sekretessrättigheter de har för dina kunder, samt för att kontrollera att efterlevnadskrav uppfylls. Denna information bör beaktas när ni avgör hur ni ska integrera dem [!DNL Privacy Service] i ert CRM-system och hur kunderna ska interagera med er webbplats för att kunna göra sekretessförfrågningar.
 
 Förutom lagar och andra författningar bör alla branschstandarder som är tillämpliga för din organisation också beaktas när du fattar dessa beslut.
 
