@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Översikt över JavaScript-biblioteket Adobe Privacy
 topic: overview
 translation-type: tm+mt
-source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
+source-git-commit: 6d706b33573e88b2f1ea9d386928dcfdb089a9c5
 workflow-type: tm+mt
-source-wordcount: '921'
-ht-degree: 3%
+source-wordcount: '922'
+ht-degree: 4%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 3%
 
 Som personuppgiftsbiträde behandlar Adobe personuppgifter i enlighet med ditt företags tillstånd och instruktioner. Som personuppgiftsansvarig bestämmer du vilka personuppgifter Adobe behandlar och lagrar för din räkning. Beroende på vilken information du väljer att skicka via Adobe Experience Cloud lösningar kan Adobe lagra privat information som är tillämplig på sekretessbestämmelser som [!DNL General Data Protection Regulation] (GDPR) och [!DNL California Consumer Privacy Act] (CCPA). Mer information om hur Experience Cloud lösningar samlar in privata data finns i dokumentet om [sekretess i Adobe Experience Cloud](https://www.adobe.com/privacy/marketing-cloud.html) .
 
-Med **Adobe Privacy JavaScript Library** kan personuppgiftsansvariga automatisera hämtningen av alla registrerade identiteter som genererats av [!DNL Experience Cloud] lösningar för en viss domän. Med hjälp av API:t från [Adobe Experience Platform Privacy Servicen](home.md)kan dessa identiteter sedan användas för att skapa åtkomst- och borttagningsbegäranden för privata data som tillhör de registrerade.
+Med **Adobe Privacy JavaScript Library** kan personuppgiftsansvariga automatisera hämtningen av alla registrerade identiteter som genererats av [!DNL Experience Cloud] lösningar för en viss domän. Med hjälp av API:t från [Adobe Experience Platform Privacy Service](home.md)kan dessa identiteter sedan användas för att skapa åtkomst- och borttagningsförfrågningar för privata data som tillhör de registrerade.
 
 >[!NOTE]
 >
@@ -31,7 +31,7 @@ Följande tabell visar de olika funktionerna i biblioteket:
 |  -funktion | Beskrivning |
 | --- | --- |
 | `retrieveIdentities` | Returnerar en array med matchande identiteter (`validIds`) som hämtades från [!DNL Privacy Service]samt en array med identiteter som inte hittades (`failedIds`). |
-| `removeIdentities` | Tar bort varje matchande (giltig) identitet från webbläsaren. Returnerar en array med matchande identiteter (`validIds`), där varje identitet innehåller ett `isDeleteClientSide` booleskt värde som anger om detta ID har tagits bort. |
+| `removeIdentities` | Tar bort varje matchande (giltig) identitet från webbläsaren. Returnerar en array med matchande identiteter (`validIds`), där varje identitet innehåller ett `isDeletedClientSide` booleskt värde som anger om detta ID har tagits bort. |
 | `retrieveThenRemoveIdentities` | Hämtar en array med matchande identiteter (`validIds`) och tar sedan bort dessa identiteter från webbläsaren. Även om den här funktionen liknar `removeIdentities`den är bäst att använda när Adobe-lösningen som du använder kräver en åtkomstbegäran innan det går att ta bort den (till exempel när en unik identifierare måste hämtas innan den kan tas bort). |
 
 >[!NOTE]
@@ -47,7 +47,7 @@ Om du vill börja använda [!DNL Privacy JS Library]programmet måste du install
 
 * Installera med npm genom att köra följande kommando: `npm install @adobe/adobe-privacy`
 * Använd Adobe Launch Extension under namnet `AdobePrivacy`
-* Hämta från [https://github.com/Adobe-Marketing-Cloud/adobe-privacy](https://github.com/Adobe-Marketing-Cloud/adobe-privacy)
+* Hämta från [Experience Cloud GitHub-databasen](https://github.com/Adobe-Marketing-Cloud/adobe-privacy)
 
 ## Instansiera [!DNL Privacy JS Library]
 
@@ -56,7 +56,6 @@ Alla program som använder [!DNL Privacy JS Library] måste skapa ett nytt `Adob
 ```js
 var adobePrivacy = new AdobePrivacy({
     imsOrgID: "{IMS_ORG}",
-    key: "{DATA_SUBJECT_ID}",
     reportSuite: "{REPORT_SUITE_ID}",
     trackingServer: "{SERVER_URL}",
     clientCode: "{TARGET_CLIENT_CODE}"
@@ -202,7 +201,7 @@ Nedan följer en lista över godkända konfigurationsparametrar för Adobe-lösn
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `aamUUIDCookieName` | Namnet på den cookie som innehåller det unika användar-ID som returnerats från Adobe Audience Manager. |
+| `aamUUIDCookieName` | Namnet på cookien som innehåller det unika användar-ID som returnerats från Adobe Audience Manager. |
 
 **Adobe ID Service (ECID)**
 
