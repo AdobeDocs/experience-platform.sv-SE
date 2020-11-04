@@ -5,7 +5,7 @@ description: Lär dig hur du installerar Experience Platform Web SDK
 seo-description: Lär dig hur du installerar Experience Platform Web SDK
 keywords: web sdk installation;installing web sdk;internet explorer;promise;
 translation-type: tm+mt
-source-git-commit: 5ef902ef7f7717121744f7f0074c0aa17e5a9e9a
+source-git-commit: d23568f7ce63df5aa98dc237a6671eeadde0c9b2
 workflow-type: tm+mt
 source-wordcount: '626'
 ht-degree: 0%
@@ -23,8 +23,8 @@ URL-struktur: https://cdn1.adoberesources.net/alloy/[VERSION]/alloy.min.js OR al
 
 Exempel:
 
-* Miniatyrbild: [https://cdn1.adoberesources.net/alloy/2.1.0/alloy.min.js](https://cdn1.adoberesources.net/alloy/2.1.0/alloy.min.js)
-* Unminified: [https://cdn1.adoberesources.net/alloy/2.1.0/alloy.js](https://cdn1.adoberesources.net/alloy/2.1.0/alloy.js)
+* Miniatyrbild: [https://cdn1.adoberesources.net/alloy/2.3.0/alloy.min.js](https://cdn1.adoberesources.net/alloy/2.3.0/alloy.min.js)
+* Unminified: [https://cdn1.adoberesources.net/alloy/2.3.0/alloy.js](https://cdn1.adoberesources.net/alloy/2.3.0/alloy.js)
 
 ## Lägga till koden {#adding-the-code}
 
@@ -37,7 +37,7 @@ Det första steget i implementeringen av Adobe Experience Platform [!DNL Web SDK
   function(i,l){n[o].q.push([i,l,u])})},n[o].q=[])})}
   (window,["alloy"]);
 </script>
-<script src="https://cdn1.adoberesources.net/alloy/2.1.0/alloy.min.js" async></script>
+<script src="https://cdn1.adoberesources.net/alloy/2.3.0/alloy.min.js" async></script>
 ```
 
 Baskoden skapar en global funktion med namnet `alloy`. Använd den här funktionen för att interagera med SDK:n. Om du vill ge den globala funktionen ett annat namn kan du ändra `alloy` namnet enligt följande:
@@ -49,7 +49,7 @@ Baskoden skapar en global funktion med namnet `alloy`. Använd den här funktion
   function(i,l){n[o].q.push([i,l,u])})},n[o].q=[])})}
   (window,["mycustomname"]);
 </script>
-<script src="https://cdn1.adoberesources.net/alloy/2.1.0/alloy.min.js" async></script>
+<script src="https://cdn1.adoberesources.net/alloy/2.3.0/alloy.min.js" async></script>
 ```
 
 I det här exemplet byter den globala funktionen namn `mycustomname`i stället för `alloy`.
@@ -99,5 +99,5 @@ Om du vill läsa in filen synkront i stället för asynkront tar du bort attribu
   function(i,l){n[o].q.push([i,l,u])})},n[o].q=[])})}
   (window,["alloy"]);
 </script>
-<script src="https://cdn1.adoberesources.net/alloy/2.1.0/alloy.min.js"></script>
+<script src="https://cdn1.adoberesources.net/alloy/2.3.0/alloy.min.js"></script>
 ```
