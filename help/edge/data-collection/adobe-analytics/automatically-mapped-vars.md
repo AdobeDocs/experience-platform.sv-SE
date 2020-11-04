@@ -5,9 +5,9 @@ description: Lär dig vilka variabler som automatiskt mappas i Adobe Analytics m
 seo-description: Lär dig vilka variabler som automatiskt mappas i Adobe Analytics med Experience Platform Web SDK
 keywords: adobe analytics;variables;analytics;automatic map;automatically mapped;
 translation-type: tm+mt
-source-git-commit: 3ed89011313006cf627945bf8c75bfd0b87a69bc
+source-git-commit: b81c0c450ddee4b0c0abedfd8ca53c3a599fb3cb
 workflow-type: tm+mt
-source-wordcount: '680'
+source-wordcount: '674'
 ht-degree: 0%
 
 ---
@@ -91,9 +91,8 @@ Nedan finns en lista med variabler som Adobe Experience Platform [!DNL Edge Netw
 | `placeContext.geo.postalCode` | `zip` | ZIP-mappning för parametern för AppMeasurement-fråga. |
 | `placeContext.geo.stateProvince` | `state` | Parametern STATE-mappning för AppMeasurement-fråga. |
 | `productlistitems.[N]._[NAME_SPACE].*` | `products` | AppMeasurement-frågeparametern Products Merchandise Events/Evars-mappning. |
-| `productlistitems.[N].lineitemid` | `products` | AppMeasurement-frågeparameter Produktkategorimappning. |
 | `productlistitems.[N].name` | `products` | AppMeasurement-frågeparameter Produktnamnsmappning. |
-| `productlistitems.[N].pricetotal` | `products` | AppMeasurement-frågeparametern Produkt, prismappning. |
+| `productlistitems.[N].priceTotal` | `products` | AppMeasurement-frågeparametern Produkt, prismappning. |
 | `productlistitems.[N].quantity` | `products` | AppMeasurement-frågeparametern Produkt Kvantitetsmappning. |
 | `web.webInteraction.URL` | `pev1` | AppMeasurement-frågeparametern PAGE_EVENT_VAR1-mappning. |
 | `web.webInteraction.name` | `pev2` | AppMeasurement-frågeparametern PAGE_EVENT_VAR2-mappning. |
