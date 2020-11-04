@@ -6,10 +6,10 @@ user-guide-title: Hjälp för Adobe Experience Platform Web SDK
 breadcrumb-title: Web SDK Guide
 user-guide-description: Interagera med Experience Cloud via Edge Network.
 translation-type: tm+mt
-source-git-commit: 7f3d4f0266b58b1327d2b8743538c7fc9b67669b
+source-git-commit: 502da50576dfd550598111658b41da6a62bb7e79
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '123'
+ht-degree: 10%
 
 ---
 
@@ -43,6 +43,7 @@ ht-degree: 0%
    * [Hantera flimmer](personalization/manage-flicker.md)
    * Adobe Target {#adobe-target}
       * [Målöversikt](personalization/adobe-target/target-overview.md)
+      * [Implementering av Single Page-program](personalization/adobe-target/spa-implementation.md)
 * Godkännande {#consent}
    * [Godkännande](consent/supporting-consent.md)
    * IAB Transparency and Consent Framework 2.0 {#iab-tcf}
