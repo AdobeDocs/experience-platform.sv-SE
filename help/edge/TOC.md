@@ -6,9 +6,9 @@ user-guide-title: Hjälp för Adobe Experience Platform Web SDK
 breadcrumb-title: Web SDK Guide
 user-guide-description: Interagera med Experience Cloud via Edge Network.
 translation-type: tm+mt
-source-git-commit: 502da50576dfd550598111658b41da6a62bb7e79
+source-git-commit: cea3e2f32d9489f5f06be70581bd974b9374646d
 workflow-type: tm+mt
-source-wordcount: '123'
+source-wordcount: '128'
 ht-degree: 10%
 
 ---
@@ -44,6 +44,8 @@ ht-degree: 10%
    * Adobe Target {#adobe-target}
       * [Målöversikt](personalization/adobe-target/target-overview.md)
       * [Implementering av Single Page-program](personalization/adobe-target/spa-implementation.md)
+   * Offer Decisioning {#offer-decisioning}
+      * [Offer Decisioning - översikt](personalization/offer-decisioning/offer-decisioning-overview.md)
 * Godkännande {#consent}
    * [Godkännande](consent/supporting-consent.md)
    * IAB Transparency and Consent Framework 2.0 {#iab-tcf}
