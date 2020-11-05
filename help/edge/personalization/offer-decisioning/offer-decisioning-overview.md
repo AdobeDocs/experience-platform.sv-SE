@@ -5,9 +5,9 @@ description: Adobe Experience Platform Web SDK kan leverera och återge personal
 seo-description: Adobe Experience Platform Web SDK kan leverera och återge personaliserade erbjudanden som hanteras i Offer Decisioning. Du kan skapa erbjudanden och andra relaterade objekt med Offer Decisioning gränssnitt eller API.
 keywords: offer decisioning;decisioning;Web SDK;Platform Web SDK;personalized offers;deliver offers;offer delivery;offer personalization;
 translation-type: tm+mt
-source-git-commit: b10b930dca504b7672eb05bd88ab44d09d9e5c0a
+source-git-commit: 86d819daf26eaf1b46afe76054d475e61720dd27
 workflow-type: tm+mt
-source-wordcount: '850'
+source-wordcount: '839'
 ht-degree: 4%
 
 ---
@@ -56,9 +56,9 @@ Det är viktigt att förstå följande terminologi när du arbetar med Offer Dec
 
    ![](assets/decision-scope-copy.png)
 
-**Konfiguration:** Mer information finns i dokumentationen för [kantkonfigurationen](../../fundamentals/edge-configuration.md) .
+* **Konfiguration:** Mer information finns i dokumentationen för [kantkonfigurationen](../../fundamentals/edge-configuration.md) .
 
-**Identitet**: Mer information finns i den här dokumentationen om hur [Platform Web SDK utnyttjar identitetstjänsten](../../identity/overview.md).
+* **Identitet**: Mer information finns i den här dokumentationen om hur [Platform Web SDK utnyttjar identitetstjänsten](../../identity/overview.md).
 
 ## Aktivera Offer Decisioning
 
@@ -66,7 +66,7 @@ Om du vill aktivera Offer Decisioning måste du utföra följande steg:
 
 1. Aktiverade Adobe Experience Platform i din [edge-konfiguration](../../fundamentals/edge-configuration.md) och markera kryssrutan Offer Decisioning
    ![offer-decisioning-edge-config](./assets/offer-decisioning-edge-config.png)
-2. Följ instruktionerna för att [installera SDK](../../fundamentals/installing-the-sdk.md) (SDK kan installeras fristående eller via [Adobe Experience Platform Launch](http://launch.adobe.com/). Här är en [snabbstartsguide till Launch](https://docs.adobe.com/content/help/en/launch/using/intro/get-started/quick-start.html)).
+2. Följ instruktionerna för att [installera SDK](../../fundamentals/installing-the-sdk.md) (SDK kan installeras fristående eller via [Adobe Experience Platform Launch](http://launch.adobe.com/). Här är en [snabbstartsguide till Platform Launch](https://docs.adobe.com/content/help/en/launch/using/intro/get-started/quick-start.html)).
 3. [Konfigurera SDK](../../fundamentals/configuring-the-sdk.md) för Offer Decisioning. Ytterligare Offer Decisioning-specifika steg finns nedan.
    * Fristående installerat SDK
       1. Konfigurera åtgärden&quot;sendEvent&quot; med `decisionScopes`
@@ -80,19 +80,19 @@ Om du vill aktivera Offer Decisioning måste du utföra följande steg:
           ]
       })
       ```
-   * Starta installerad SDK
-      1. [Skapa en Launch-egenskap](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html)
-      2. [Lägg till startkoden för inbäddning](https://docs.adobe.com/content/help/en/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
-      3. Installera och konfigurera AEP Web SDK-tillägget med den Edge Configuration som du nyss skapade genom att välja konfigurationen i listrutan Edge Configuration. Användbar dokumentation om [tillägg](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html).
+   * Plattformsuppstart installerat SDK
+      1. [Skapa en startegenskap för en plattform](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html)
+      2. [Lägg till koden för plattformsinbäddning](https://docs.adobe.com/content/help/en/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
+      3. Installera och konfigurera Adobe Experience Platform Web SDK-tillägget med den Edge Configuration som du nyss skapade genom att välja konfigurationen i listrutan Edge Configuration. Användbar dokumentation om [tillägg](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html).
          ![install-aep-web-sdk-extension](./assets/install-aep-web-sdk-extension.png)
 
          ![configure-aep-web-sdk-extension](./assets/configure-aep-web-sdk-extension.png)
-      4. Skapa nödvändiga [dataelement](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/data-elements.html). Du måste skapa ett AEP Web SDK Identity Map och ett AEP Web SDK XDM-objektdataelement. (Förhoppningsvis finns det mer dokumentation om dataelementen i AEP Web SDK som vi kan länka här)
+      4. Skapa nödvändiga [dataelement](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/data-elements.html). Minimikravet är att du måste skapa en identitetskarta för SDK och ett XDM-objektdataelement för Platform Web SDK.
          ![identity-map-data-element](./assets/identity-map-data-element.png)
 
          ![xdm-object-data-element](./assets/xdm-object-data-element.png)
       5. Skapa dina [regler](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/rules.html).
-         * Lägg till en AEP Web SDK Send Event-åtgärd och lägg till relevant `decisionScopes` i åtgärdens konfiguration
+         * Lägg till en SDK-sändningshändelse för en plattform och lägg till relevant `decisionScopes` i åtgärdens konfiguration
             ![send-event-action-DecisionScopes](./assets/send-event-action-decisionScopes.png)
       6. [Skapa och publicera ett bibliotek](https://docs.adobe.com/content/help/en/launch/using/reference/publish/libraries.html) som innehåller alla relevanta regler, dataelement och tillägg som du har konfigurerat
 
