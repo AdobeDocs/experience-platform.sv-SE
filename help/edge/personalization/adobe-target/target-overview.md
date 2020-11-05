@@ -5,9 +5,9 @@ description: Lär dig hur du återger anpassat innehåll med Experience Platform
 seo-description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Target
 keywords: target;adobe target;activity.id;experience.id;renderDecisions;decisionScopes;prehiding snippet;vec;Form-Based Experience Composer;xdm;audiences;decisions;scope;schema;
 translation-type: tm+mt
-source-git-commit: d069b3007265406367ca9de2b85540b2a070cf36
+source-git-commit: f08452fa9a6ece93e40ef8ca811530feb0620969
 workflow-type: tm+mt
-source-wordcount: '634'
+source-wordcount: '621'
 ht-degree: 2%
 
 ---
@@ -20,10 +20,6 @@ Adobe Experience Platform [!DNL Web SDK] kan leverera och återge personaliserad
 ## Aktivera Adobe Target
 
 Om du vill aktivera [!DNL Target]måste du göra följande:
-
-1. Aktivera tokens för activity.id och experience.id-svar i [!DNL Target] användargränssnittet.
-
-![target_response_token](./assets/target_response_token.png)
 
 1. Aktivera målet i [kantkonfigurationen](../../fundamentals/edge-configuration.md) med rätt klientkod.
 1. Lägg till alternativet `renderDecisions` till dina händelser.
