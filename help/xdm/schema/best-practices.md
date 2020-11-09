@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;enum;;primary identity;primary identity;XDM individual profile;Experience event;XDM Experience Event;XDM ExperienceEvent;experienceEvent;experienceevent;XDM Experienceevenet;schema design
+keywords: Experience Platform;home;popular topics;schema;Schema;enum;;primary identity;primary identity;XDM individual profile;Experience event;XDM Experience Event;XDM ExperienceEvent;experienceEvent;experienceevent;XDM Experienceevenet;schema design;best practices
 solution: Experience Platform
 title: Bästa tillvägagångssätt för datamodellering i Adobe Experience Platform
 topic: overview
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: e15df78978c06da254319d9d394be35c4668caa9
+source-git-commit: 5fe75ab7c939c8437d675212b71229fe3fb70c01
 workflow-type: tm+mt
-source-wordcount: '2472'
+source-wordcount: '2480'
 ht-degree: 1%
 
 ---
@@ -220,7 +220,7 @@ Det här dokumentet innehåller allmänna riktlinjer och bästa praxis för utfo
 
 * Använd en uppifrån och ned-metod genom att sortera dina datatabeller i profil-, uppslags- och händelsekategorier innan du skapar dina scheman.
 * Det finns ofta flera strategier och alternativ när det gäller att utforma scheman för olika syften.
-* Datamodellen bör stödja användningsfall för segmentering.
+* Datamodellen bör stödja era affärsanvändningsfall, som segmentering eller kundreseanalys.
 * Gör dina scheman så enkla som möjligt och lägg bara till nya fält när det är absolut nödvändigt.
 
 När du är klar kan du läsa självstudiekursen om hur du [skapar ett schema i användargränssnittet](../tutorials/create-schema-ui.md) för att få stegvisa instruktioner om hur du skapar ett schema, tilldelar lämplig klass för enheten och lägger till fält som du kan mappa data till.
