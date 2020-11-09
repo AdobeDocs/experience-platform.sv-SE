@@ -5,9 +5,9 @@ description: Lär dig hur du återger anpassat innehåll med Experience Platform
 seo-description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Target
 keywords: target;adobe target;xdm views; views;single page applications;SPA;SPA lifecycle;client-side;AB testing;AB;Experience targeting;XT;VEC
 translation-type: tm+mt
-source-git-commit: 485c2e3b0ad7b38a8e4a482cac49c123a744c47b
+source-git-commit: 8aeeef09602386f219fd8284b332469c04e88ffb
 workflow-type: tm+mt
-source-wordcount: '1664'
+source-wordcount: '1671'
 ht-degree: 0%
 
 ---
@@ -223,7 +223,7 @@ När du har definierat dina XDM-vyer och implementerat`sendEvent()` med de XDM-v
 
 >[!NOTE]
 >
->Om du vill använda Visual Experience Composer för SPA måste du installera [Adobe Target VEC Helper Chrome Extension](https://chrome.google.com/webstore/detail/adobe-target-vec-helper/ggjpideecfnbipkacplkhhaflkdjagak).
+>Om du vill använda VEC för SPA måste du installera och aktivera [Firefox](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/) eller [Chrome](https://chrome.google.com/webstore/detail/adobe-target-vec-helper/ggjpideecfnbipkacplkhhaflkdjagak) VEC Helper Extension.
 
 ### Panelen Ändringar
 
