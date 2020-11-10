@@ -6,9 +6,9 @@ title: Skapa en Adobe Analytics Classifications-dataanslutning i användargräns
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
 workflow-type: tm+mt
-source-wordcount: '632'
+source-wordcount: '625'
 ht-degree: 0%
 
 ---
@@ -22,9 +22,9 @@ I den här självstudiekursen beskrivs hur du skapar en Adobe Analytics Classifi
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [[!DNL Experience Data Model] (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
+* [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
 * [[!DNL Real-time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [[!DNL-sandlådor]](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [[!DNL Sandboxes]](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 Data Connector för Analytics-klassificeringar kräver att dina data har migrerats till den nya [!DNL Classifications] infrastrukturen i Adobe Analytics innan de används. Kontakta Adobe Customer Success Manager för att bekräfta migreringsstatusen för dina data.
 
