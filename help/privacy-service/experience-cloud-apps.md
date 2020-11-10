@@ -4,17 +4,17 @@ solution: Experience Platform
 title: Privacy Service och Experience Cloud
 topic: overview
 translation-type: tm+mt
-source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
+source-git-commit: 4cd7b9d3ca542c2fba83d066197b92775c053729
 workflow-type: tm+mt
-source-wordcount: '567'
-ht-degree: 9%
+source-wordcount: '555'
+ht-degree: 11%
 
 ---
 
 
 # [!DNL Privacy Service] och [!DNL Experience Cloud] program
 
-Adobe Experience Platform [!DNL Privacy Service] har tagits fram för att stödja sekretessförfrågningar för flera Adobe Experience Cloud-program. Varje program har stöd för olika produktvärden och ID:n för att identifiera de registrerade.
+Adobe Experience Platform [!DNL Privacy Service] är utformat för att stödja sekretessförfrågningar för flera Adobe Experience Cloud-program. Varje program har stöd för olika produktvärden och ID:n för att identifiera de registrerade.
 
 Det här dokumentet fungerar som referens för [!DNL Experience Cloud] programdokumentation som beskriver hur du konfigurerar programmet för sekretessrelaterade åtgärder. Detta inkluderar hur du formaterar och etiketterar data. Det finns två typer av ansökningar:
 
@@ -29,10 +29,10 @@ Nedan följer en lista med program som är integrerade med [!DNL Experience Clou
 
 | Program | Åtkomst/borttagning | Avanmäl dig från försäljningen | Dokumentation och överväganden |
 --- | :---: | :---: | ---
-| Adobe Advertising Cloud | ✓ | ✓ | <ul><li>[Åtkomst/borttagning av dokumentation](https://docs.adobe.com/content/help/en/advertising-cloud/all/privacy/ad-cloud-gdpr.html) </li><li>[!DNL Advertising Cloud] utnyttjar befintliga funktioner för global avanmälan från Adobe Privacy Center. Mer information finns i guiden [om hur du begär](https://docs.adobe.com/content/help/en/audience-manager/user-guide/overview/data-privacy/data-privacy-requests.html#opt-out-requests) datasekretess.</li></ul> |
+| Adobe Advertising Cloud | ✓ | ✓ | <ul><li>[Åtkomst/radering av dokumentation för GDPR](https://experienceleague.adobe.com/docs/advertising-cloud/privacy/ad-cloud-gdpr.html)</li><li>[Åtkomst-/borttagningsdokumentation för CCPA](https://experienceleague.adobe.com/docs/advertising-cloud/privacy/ad-cloud-ccpa-access-delete.html)</li><li>[Dokumentation för avanmälan av försäljning för CCPA](https://experienceleague.adobe.com/docs/advertising-cloud/privacy/ad-cloud-ccpa-opt-out-of-sale.html)</li></ul> |
 | Adobe Analytics | ✓ | ✓ | <ul><li>[Åtkomst/borttagning av dokumentation](https://docs.adobe.com/content/help/en/analytics/admin/data-governance/an-gdpr-overview.html)</li><li>[!DNL Analytics] hanterar avanmälningsbegäranden med hjälp av variabler för [sekretessrapportering](https://docs.adobe.com/content/help/en/analytics/admin/data-governance/consent-variables.html)</li></ul> |
 | Adobe Audience Manager | ✓ | ✓ | <ul><li>[Åtkomst/borttagning av dokumentation](https://docs.adobe.com/content/help/en/audience-manager/user-guide/overview/data-privacy/data-privacy-requests.html)</li><li>[Dokumentation om avanmälan](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/declared-ids.html)</li></ul> |
-| Adobe Campaign Standard | ✓ | ✓ | <ul><li>[Åtkomst/borttagning av dokumentation](https://docs.campaign.adobe.com/doc/standard/getting_started/en/ACS_GDPR.html)</li><li>[Dokumentation om avanmälan](../segmentation/honoring-opt-outs.md)</li></ul> |
+| Adobe Campaign Standard | ✓ | ✓ | <ul><li>[Åtkomst/borttagning av dokumentation](https://helpx.adobe.com/se/campaign/kb/campaign-privacy.html)</li><li>[Dokumentation om avanmälan](../segmentation/honoring-opt-outs.md)</li></ul> |
 | Adobe kundattribut (CRS) | ✓ | Ej tillämpligt | <ul><li>[Åtkomst/radering av dokumentation för GDPR](https://docs.adobe.com/content/help/sv-SE/core-services/interface/customer-attributes/gdpr.html)</li><li>[Åtkomst-/borttagningsdokumentation för CCPA](https://docs.adobe.com/content/help/sv-SE/core-services/interface/customer-attributes/ccpa.html)</li><li>Kundattribut har inte möjlighet att överföra data, och därför kan du inte avanmäla dig från försäljning.</li></ul> |
 | Adobe Experience Platform | ✓ | ✓ | <ul><li>[Åtkomst/borttagningsdokumentation för datasjön](../catalog/privacy.md)</li><li>[Åtkomst/radering av dokumentation för kundprofil i realtid](../profile/privacy.md)</li><li>[!DNL Experience Platform] uppfyller [avanmälningsbegäranden för målgruppssegment](../segmentation/honoring-opt-outs.md).</li></ul> |
 | Adobe Primetime-autentisering | ✓ | Ej tillämpligt | <ul><li>[Åtkomst/borttagning av dokumentation](http://tve.helpdocsonline.com/how-to-make-a-privacy-request)</li><li>[!DNL Primetime] har inte möjlighet att överföra data, och därför är begäran om avanmälan från försäljning inte tillämplig.</li></ul> |
