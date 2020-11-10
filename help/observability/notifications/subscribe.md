@@ -5,9 +5,9 @@ title: Prenumerera på händelsemeddelanden för Adobe I/O
 topic: developer guide
 description: Det här dokumentet innehåller anvisningar om hur du prenumererar på Adobe I/O-händelsemeddelanden för Adobe Experience Platform-tjänster. Referensinformation om tillgängliga händelsetyper tillhandahålls också, tillsammans med länkar till ytterligare dokumentation om hur returnerade händelsedata ska tolkas för varje [!DNL Platform] tillämplig tjänst.
 translation-type: tm+mt
-source-git-commit: c5455dc0812b251483170ac19506d7c60ad4ecaa
+source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
 workflow-type: tm+mt
-source-wordcount: '735'
+source-wordcount: '733'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ På nästa skärm visas en lista med händelsetyper att prenumerera på. Välj d
 >
 >* [[!DNL Privacy Service] meddelanden](../../privacy-service/privacy-events.md)
 >* [[!DNL Data Ingestion] meddelanden](../../ingestion/quality/subscribe-events.md)
->* [[!DNL Flow Service] (källor) meddelanden](../../sources/notifications.md)
+>* [[!DNL Flow Service (sources)] meddelanden](../../sources/notifications.md)
 
 
 ![](../images/notifications/choose-event-subscriptions.png)
@@ -99,6 +99,6 @@ Genom att följa den här självstudiekursen har du registrerat en webkrok för 
 
 * [[!DNL Privacy Service] meddelanden](../../privacy-service/privacy-events.md)
 * [[!DNL Data Ingestion] meddelanden](../../ingestion/quality/subscribe-events.md)
-* [[!DNL Flow Service] (källor) meddelanden](../../sources/notifications.md)
+* [[!DNL Flow Service (sources)] meddelanden](../../sources/notifications.md)
 
 Se [[!DNL Observability Insights] översikten](../home.md) för mer information om hur du kan övervaka dina aktiviteter på [!DNL Experience Platform] och [!DNL Privacy Service].
