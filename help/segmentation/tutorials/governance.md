@@ -6,9 +6,9 @@ topic: tutorial
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att implementera efterlevnad av dataanvändning för målgruppssegment för kundprofiler i realtid med API:er.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
 workflow-type: tm+mt
-source-wordcount: '1351'
+source-wordcount: '1338'
 ht-degree: 0%
 
 ---
@@ -22,9 +22,9 @@ Den här självstudiekursen beskriver stegen för att implementera efterlevnad a
 
 Den här självstudien kräver en fungerande förståelse av följande komponenter i [!DNL Adobe Experience Platform]:
 
-- [[!DNL Real-time Customer Profile]](../../profile/home.md): [!DNL Real-time Customer Profile] är ett generiskt uppslagsenhetsarkiv och används för att hantera [!DNL Experience Data Model] (XDM) data i [!DNL Platform]. Profilen sammanfogar data över olika företagsdata och ger åtkomst till dessa data i en enhetlig presentation.
+- [[!DNL Real-time Customer Profile]](../../profile/home.md): [!DNL Real-time Customer Profile] är ett generiskt sökentitetsarkiv och används för att hantera [!DNL Experience Data Model (XDM)] data i [!DNL Platform]. Profilen sammanfogar data över olika företagsdata och ger åtkomst till dessa data i en enhetlig presentation.
    - [Sammanslagningsprinciper](../../profile/api/merge-policies.md): Regler som används av [!DNL Real-time Customer Profile] för att avgöra vilka data som kan sammanfogas i en enhetlig vy under vissa villkor. Sammanslagningsprinciper kan konfigureras för [!DNL Data Governance] syften.
-- [[!DNL-segmentering]](../home.md): Hur [!DNL Real-time Customer Profile] delar upp en stor grupp individer som finns i profilbutiken i mindre grupper som har liknande egenskaper och som reagerar på liknande sätt som marknadsföringsstrategier.
+- [[!DNL Segmentation]](../home.md): Hur [!DNL Real-time Customer Profile] delar upp en stor grupp individer som finns i profilbutiken i mindre grupper som har liknande egenskaper och som reagerar på liknande sätt som marknadsföringsstrategier.
 - [[!DNL Data Governance]](../../data-governance/home.md): [!DNL Data Governance] tillhandahåller infrastrukturen för märkning och tillämpning av dataanvändning med hjälp av följande komponenter:
    - [Dataanvändningsetiketter](../../data-governance/labels/user-guide.md): Etiketter som används för att beskriva datauppsättningar och fält utifrån känslighetsnivån som deras respektive data ska hanteras med.
    - [Dataanvändningsprinciper](../../data-governance/policies/overview.md): Konfigurationer som anger vilka marknadsföringsåtgärder som tillåts för data som kategoriseras av särskilda dataanvändningsetiketter.
@@ -385,4 +385,4 @@ Mer information finns i avsnittet [Exportera ett segment](./evaluate-a-segment.m
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du tittat på etiketterna för dataanvändning som är kopplade till ett målgruppssegment och testat dem för policyöverträdelser mot specifika marknadsföringsåtgärder. Mer information om [!DNL Data Governance] i [!DNL Experience Platform]finns i översikten för [[!DNL Data Governance]](../../data-governance/home.md).
+Genom att följa den här självstudiekursen har du tittat på etiketterna för dataanvändning som är kopplade till ett målgruppssegment och testat dem för policyöverträdelser mot specifika marknadsföringsåtgärder. Mer information om [!DNL Data Governance] i [!DNL Experience Platform]finns i översikten [[!DNL Data Governance]](../../data-governance/home.md).
