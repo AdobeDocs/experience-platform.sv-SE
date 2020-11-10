@@ -5,9 +5,9 @@ seo-title: Sekretess i kunddataprofil i realtid
 description: Med kunddataprofilen i realtid kan ni effektivisera processen att se till att era dataåtgärder följer sekretessreglerna.
 seo-description: Med kunddataprofilen i realtid kan ni effektivisera processen att se till att era dataåtgärder följer sekretessreglerna.
 translation-type: tm+mt
-source-git-commit: 1eaadb1877cc5221bf6b0b8eed042287e59155bf
+source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
 workflow-type: tm+mt
-source-wordcount: '361'
+source-wordcount: '360'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Mer information finns i dokumentet om [att hantera avanmälningsbegäranden](../
 
 ## Stöd för IAB TCF 2.0
 
-[!DNL Real-time CDP] är en del av den registrerade [leverantörslistan](https://iabeurope.eu/vendor-list-tcf-v2-0/) för [!DNL Transparency & Consent Framework] (TCF), enligt vad som anges av [!DNL Interactive Advertising Bureau] (IAB). I enlighet med kraven för TCF 2.0 kan ni samla in detaljerade data om kundgodkännande och integrera dem i era lagrade kundprofiler. [!DNL Real-time CDP] Dessa data om samtycke kan sedan beaktas för att avgöra om vissa profiler ingår i exporterade målgruppssegment, beroende på hur de används.
+[!DNL Real-time CDP] är en del av den registrerade [leverantörslistan](https://iabeurope.eu/vendor-list-tcf-v2-0/) för [!DNL Transparency & Consent Framework (TCF)], enligt vad som anges av [!DNL Interactive Advertising Bureau] (IAB). I enlighet med kraven för TCF 2.0 kan ni samla in detaljerade data om kundgodkännande och integrera dem i era lagrade kundprofiler. [!DNL Real-time CDP] Dessa data om samtycke kan sedan beaktas för att avgöra om vissa profiler ingår i exporterade målgruppssegment, beroende på hur de används.
 
 Mer information finns i översikten om stöd för [IAB TCF 2.0 i [!DNL Real-time CDP]](./iab/overview.md) .
 
