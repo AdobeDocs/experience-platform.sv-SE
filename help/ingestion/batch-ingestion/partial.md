@@ -5,9 +5,9 @@ title: Översikt över partiell batchöverföring
 topic: overview
 description: Det här dokumentet innehåller en självstudiekurs för hantering av partiell batchimport.
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
 workflow-type: tm+mt
-source-wordcount: '857'
+source-wordcount: '856'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Det här dokumentet innehåller en självstudiekurs för hantering av partiell b
 Den här självstudiekursen kräver en fungerande kunskap om de olika Adobe Experience Platform-tjänster som är involverade i partiell batchförbrukning. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 - [Batchförtäring](./overview.md): Den metod som används för att [!DNL Platform] importera och lagra data från datafiler, till exempel CSV och Parquet.
-- [[!DNL Experience Data Model] (XDM)](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API: [!DNL Platform] er.
 
