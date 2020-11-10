@@ -5,7 +5,7 @@ title: Spark SQL-funktioner
 topic: spark sql functions
 description: Den här dokumentationen innehåller information om Spark SQL-hjälpredor som tillhandahåller inbyggda Spark SQL-funktioner för att utöka SQL-funktioner.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: d0fa57effb45fad6934345323366ef45383bed01
 workflow-type: tm+mt
 source-wordcount: '5009'
 ht-degree: 5%
@@ -2813,7 +2813,7 @@ Uttrycken `start` och `stop` måste kunna evalueras till samma typ. Om `start` o
 Argument:
 - `start`: Ett uttryck. Intervallets början.
 - `stop`: Ett uttryck. Slutet av intervallet (inklusive).
-- `step`: Ett valfritt uttryck. Intervallets steg. Som standard `step` är 1 om `start` är mindre än eller lika med `stop`, i annat fall -1. För de tidsmässiga sekvenserna är det 1 dag respektive -1 dag. Om `start` är större än `stop`måste `step` värdet vara negativt och vice versa.
+- `step`: Ett valfritt uttryck. Intervallets steg. Som standard `step` är &#39;1&#39; om `start` är mindre än eller lika med `stop`, annars &#39;-1&#39;. För de temporala sekvenserna är det &#39;1&#39; dag respektive &#39;-1&#39; dag. Om `start` är större än `stop`måste `step` värdet vara negativt och vice versa.
 
 Exempel:
 
@@ -2822,7 +2822,7 @@ Exempel:
  [1,2,3,4,5]
 > SELECT sequence(5, 1);
  [5,4,3,2,1]
-> SELECT sequence(to_date('2018-01-01'), to_date('2018-03-01'), interval 1 month);
+> SELECT sequence(to_date('2018-01-01'), to_date('2018-03-01'), interval '1' month);
  [2018-01-01,2018-02-01,2018-03-01]
 ```
 
