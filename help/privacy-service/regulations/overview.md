@@ -5,9 +5,9 @@ title: Översikt över sekretessbestämmelser
 topic: troubleshooting
 description: Det här dokumentet innehåller en översikt över de olika sekretessregler som stöds av Adobe Experience Cloud.
 translation-type: tm+mt
-source-git-commit: fa401ce2acfaabc7f0b081b8f0f206730baffd3b
+source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
 workflow-type: tm+mt
-source-wordcount: '346'
+source-wordcount: '342'
 ht-degree: 8%
 
 ---
@@ -21,10 +21,10 @@ Genom att använda Adobe Experience Platform Privacy Service stöder Experience 
 
 | Förordning | Beskrivning |
 | --- | --- |
-| CCPA (Kalifornien) | CCPA [[!DNL California Consumer Privacy Act] (](https://oag.ca.gov/privacy/ccpa) CCPA)förbättrar sekretessen och konsumentskyddet för personer bosatta i Kalifornien, USA. CCPA ger personer bosatta i Kalifornien nya integritetsrättigheter, inklusive rätten att få tillgång till och radera sina personuppgifter, att få veta om deras personuppgifter säljs eller offentliggörs (och till vem) samt rätten att avanmäla sig från att få sina uppgifter sålda till tredje part. |
-| GDPR (Europeiska unionen) | The [[!DNL General Data Protection Regulation] (GDPR)](https://gdpr-info.eu) introduced several new data privacy rights for members of the European Union, including the Right to Access and the Right to be Forgotten. Detta innebär att alla EU-medborgare vars personuppgifter har samlats in av ert företag när som helst kan begära att få tillgång till eller radera sina uppgifter. |
-| LGPD (Brasilien) | Syftet [[!DNL Lei Geral de Proteção de Dados] (LGPD)](https://gdpr.eu/gdpr-vs-lgpd/) är att reglera behandlingen av personuppgifter för alla enskilda eller fysiska personer i Brasilien. LGPD ger Brasilien-medborgarna rätt att få tillgång till och radera sina personuppgifter, att ta reda på om deras personuppgifter säljs eller offentliggörs (och till vem) samt rätt att avanmäla sig från att få sina uppgifter sålda till tredje part. |
-| PDPA (Thailand) | Det [[!DNL Personal Data Protection Act] (pdf)](https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act) infördes för att skydda thailändska datapartners mot olaglig insamling, användning eller utlämnande av personuppgifter. Förordningen inspireras av EU:s allmänna dataskyddsförordningen och ger de thailändska medborgarna rätt att begära tillgång till eller radering av lagrade personuppgifter. |
+| CCPA (Kalifornien) | Detta [[!DNL California Consumer Privacy Act (CCPA)]](https://oag.ca.gov/privacy/ccpa) förbättrar sekretessen och konsumentskyddet för personer bosatta i Kalifornien, USA. CCPA ger personer bosatta i Kalifornien nya integritetsrättigheter, inklusive rätten att få tillgång till och radera sina personuppgifter, att få veta om deras personuppgifter säljs eller offentliggörs (och till vem) samt rätten att avanmäla sig från att få sina uppgifter sålda till tredje part. |
+| GDPR (Europeiska unionen) | The [[!DNL General Data Protection Regulation (GDPR)]](https://gdpr-info.eu) introduced several new data privacy rights for members of the European Union, including the Right to Access and the Right to be Forgotten. Detta innebär att alla EU-medborgare vars personuppgifter har samlats in av ert företag när som helst kan begära att få tillgång till eller radera sina uppgifter. |
+| LGPD (Brasilien) | Syftet [[!DNL Lei Geral de Proteção de Dados (LGPD)]](https://gdpr.eu/gdpr-vs-lgpd/) är att reglera behandlingen av personuppgifter för alla enskilda eller fysiska personer i Brasilien. LGPD ger Brasilien-medborgarna rätt att få tillgång till och radera sina personuppgifter, att ta reda på om deras personuppgifter säljs eller offentliggörs (och till vem) samt rätt att avanmäla sig från att få sina uppgifter sålda till tredje part. |
+| PDPA (Thailand) | De [[!DNL Personal Data Protection Act (PDPA)]](https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act) infördes för att skydda thailändska dataägare från olaglig insamling, användning eller utlämnande av deras personuppgifter. Förordningen inspireras av EU:s allmänna dataskyddsförordningen och ger de thailändska medborgarna rätt att begära tillgång till eller radering av lagrade personuppgifter. |
 
 ## Nästa steg
 
