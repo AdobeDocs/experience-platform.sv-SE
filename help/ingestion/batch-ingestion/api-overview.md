@@ -5,9 +5,9 @@ title: Utvecklarhandbok för batchintag
 topic: developer guide
 description: Det här dokumentet innehåller en omfattande översikt över hur du använder API:er för gruppinmatning.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
 workflow-type: tm+mt
-source-wordcount: '2678'
+source-wordcount: '2675'
 ht-degree: 3%
 
 ---
@@ -28,8 +28,8 @@ I följande avsnitt finns ytterligare information som du behöver känna till el
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 - [Batchförtäring](./overview.md): Gör att du kan importera data till Adobe Experience Platform som gruppfiler.
-- [[!DNL Experience Data Model] (XDM) System](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
-- [[!DNL-sandlådor]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+- [[!DNL Experience Data Model (XDM)] System](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+- [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ### Läser exempel-API-anrop
 
