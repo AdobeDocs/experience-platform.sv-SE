@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: October, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: fc1174c8435c1afc3c58dd748daf89f387a19980
+source-git-commit: e2b0048703816dc481eb9486310d86a8f2483af2
 workflow-type: tm+mt
-source-wordcount: '591'
-ht-degree: 2%
+source-wordcount: '1028'
+ht-degree: 1%
 
 ---
 
@@ -21,6 +21,7 @@ ht-degree: 2%
 - [Kundprofil i realtid](#profile)
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
+- [Tid till värde](#time-to-value)
 
 ## Dataprep {#data-prep}
 
@@ -75,3 +76,45 @@ Adobe Experience Platform kan importera data från externa källor och samtidigt
 | UX-förbättringar | Du kan aktivera datauppsättningen för [!DNL Profile] under dataöverföringsprocessen. Mer information finns i självstudiekursen om arbetsflöde [](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md) för molnlagring. |
 
 Mer information om källor finns i [Källöversikt](../../sources/home.md).
+
+## Tid till värde {#time-to-value}
+
+Med Adobe Experience Platform kan marknadsföringsteamen skapa en helhetsbild av sina kunder utan att behöva omfattande datateknik. Målet är att snabba upp team och öka värdet med datahastigheten.
+
+&quot;Time to Value&quot; skär ut på olika personligheter. Datatekniker kan utföra uppgifter på ett effektivt och accelererat sätt med genomskinlighet i dataaktiviteten, så att en robust, skalbar kundprofil i realtid blir tillgänglig snabbare. Marknadsförarna kan sedan använda den kompletta, robusta kundprofilen för segmentering och aktivering.
+
+### Funktioner i korthet
+
+#### Schema
+
+Uppgraderar användbarhet och arbetsflöde och ger körklara insikter, standardisering och genomskinlighet för nyckelfält i schemakompositioner. Exponerar datalinje för kombinationen av enskilda datamodeller, som representeras av det&quot;fackliga schemat&quot;, vilket ger insikt i strukturen och ingredienserna i kundprofilen i realtid.
+
+- Uppgradering av schemaarbetsflöde
+   - Använd genvägar för den vanligaste typen av XDM-scheman, med automatiska inställningar i schemaredigeraren och mixin rekommendationer baserat på era mål
+   - Öka arbetsflödets effektivitet med flera funktioner för mixning och förhandsgranskning
+   - Ge genomskinlighet för nyckelattribut för schemakomposition, inklusive identitet, relation samt obligatoriska och inaktuella fält
+- Genomskinlighet för datarad för unionsschema och nyckelattribut
+
+#### Inmatning och insamling av data
+
+Uppgraderingen av automatisk mappning, förgranskning av mappning och användbarhet gör att data kan användas i profiler, segmentering och aktivering från alla plattformar och källor. Systemet har den effektivitet och intelligens som krävs för att göra den här processen enklare att använda, även utanför IT-avdelningen.
+
+- Enklare åtkomst till datakällor med katalogsidkort och datatabellsintern uppgradering av åtgärdsmönster
+- Beräknat fält/uttryck för datainmatning
+- Rekommendationer för datamappning snabbar upp inmatningsprocessen
+- Förhandsgranskning och validering av mappning
+
+#### Profilkonfiguration
+
+Marknadsvänligt profilvisningsprogram med anpassning hjälper er att förstå hur en profil är sammansatt för användning vid segmentering, planering och aktivering. Det konsoliderade arbetsflödet överbryggar profilen på ett kontrollerat och effektivt sätt genom att tillhandahålla ett stegvis arbetsflöde för sammanslagningsprinciper.
+
+- Visa varje enskild profil i ett förbättrat profilvisningsprogram som visar en instrumentpanel med fullständig anpassning, vilket möjliggör grupperade flerkanalsdata baserat på marknadsförarens affärsmål.
+- Redigera standardattribut och anpassade attribut i widgeten Grundläggande information, efter behov.
+- Anpassa widgetar med attribut från kundprofilen i realtid med hjälp av föreningsschemaväljaren. Unionsschemat härleds från de underliggande datamodeller som används inom profildatainmatning.
+
+
+#### Övervakning
+
+Säkerställer genomskinlighet i dataflödet och ger insikt om hur hälsosam datatrafiken är i systemet från källanslutningar, vilket ger mer självbetjäning och snabbare åtgärder för felsökningssituationer.
+
+- Övervaka alla flödeskörningar och se en detaljerad översikt över varje körning, inklusive slutförandestatus, körningstid, lista över bearbetade filer, fel och körbar diagnostik
