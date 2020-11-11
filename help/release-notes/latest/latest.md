@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: November 10, 2020
 author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: 49541c94d8f4891286ed3e9a9d314ca32fe1ed1b
+source-git-commit: 7c4b60dad1ad2071bb19a9b9e181f2db495187c2
 workflow-type: tm+mt
-source-wordcount: '2018'
+source-wordcount: '2026'
 ht-degree: 2%
 
 ---
@@ -203,7 +203,7 @@ Adobe Experience Platform kan importera data från externa källor och samtidigt
 **Nya källor**
 | Funktion | Beskrivning |
 | — | — |
-| [!DNL Shopify] | Du kan nu ansluta [!DNL Shopify] till [!DNL Experience Platform] med [!DNL Flow Service] API:t eller gränssnittet. |
+| [!DNL Shopify] | Du kan nu ansluta [!DNL Shopify] till [!DNL Experience Platform] med [!DNL Flow Service] API:t eller gränssnittet. Mer information finns i översikten [för](../../sources/connectors/ecommerce/shopify.md) Förminska koppling. |
 
 **Viktiga funktioner**
 
