@@ -6,9 +6,9 @@ type: Tutorial
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 seo-description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: 5238d98db0554d34c2b0bcd28b64354f544faa0f
 workflow-type: tm+mt
-source-wordcount: '773'
+source-wordcount: '789'
 ht-degree: 0%
 
 ---
@@ -24,38 +24,39 @@ Att ansluta till e-postmarknadsföringsmål är en process i tre steg. Varje ste
 
 Anslut till antingen Amazon S3 eller SFTP i det anslutande målflödet som beskrivs i avsnittet nedan. CDP exporterar dina segment som `.csv` eller `.txt` filer i realtid och levererar dem till den plats du önskar. Schemalägg dataimporten på er e-postmarknadsföringsplattform från den lagringsplats som är aktiverad i CDP i realtid. Processen för att importera data varierar för varje partner. Mer information finns i de enskilda destinationsartiklarna.
 
-## Steg 1 - Konfigurera mål {#connect-destination}
+## Konfigurera mål {#connect-destination}
 
-1. I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** väljer du det mål för e-postmarknadsföring som du vill ansluta till och sedan **[!UICONTROL Configure]**.
+I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** väljer du det mål för e-postmarknadsföring som du vill ansluta till och sedan **[!UICONTROL Configure]**.
 
-   ![Anslut till mål](/help/rtcdp/destinations/assets/connect-email-marketing.png)
+![Anslut till mål](./assets/connect-email-marketing.png)
 
-2. Om du tidigare har konfigurerat en anslutning till ditt e-postmarknadsföringsmål markerar du den befintliga anslutningen i **[!UICONTROL Authentication]** steget **[!UICONTROL Existing Account]** . Du kan också välja **[!UICONTROL New Account]** att skapa en ny anslutning till ditt mål för e-postmarknadsföring. I väljaren kan du välja mellan Amazon S3, SFTP med lösenord eller SFTP med SSH-nyckel. **[!UICONTROL Connection type]** Fyll i informationen nedan, beroende på vilken typ av anslutning du har, och välj sedan **[!UICONTROL Connect]**.
+Om du tidigare har konfigurerat en anslutning till ditt e-postmarknadsföringsmål markerar du den befintliga anslutningen i **[!UICONTROL Authentication]** steget **[!UICONTROL Existing Account]** . Du kan också välja **[!UICONTROL New Account]** att skapa en ny anslutning till ditt mål för e-postmarknadsföring. I väljaren kan du välja mellan Amazon S3, SFTP med lösenord eller SFTP med SSH-nyckel. **[!UICONTROL Connection type]** Fyll i informationen nedan, beroende på vilken typ av anslutning du har, och välj sedan **[!UICONTROL Connect]**.
 
-   För **S3-anslutningar** måste du ange ditt Amazon Access Key ID och Secret Access Key.
+- För **S3-anslutningar** måste du ange ditt Amazon Access Key ID och Secret Access Key.
+- För **SFTP med lösenordsanslutningar** måste du ange domän, port, användarnamn och lösenord för SFTP-servern.
+- För **SFTP med SSH-nyckelanslutningar** måste du ange domän, port, användarnamn och SSH-nyckel för SFTP-servern.
 
-   För **SFTP med lösenordsanslutningar** måste du ange domän, port, användarnamn och lösenord för SFTP-servern.
+I **[!UICONTROL Setup]** steget anger du ett namn och en beskrivning för det nya målet samt filformatet för de exporterade filerna.
 
-   För **SFTP med SSH-nyckelanslutningar** måste du ange domän, port, användarnamn och SSH-nyckel för SFTP-servern.
+Om du valde Amazon S3 som lagringsalternativ i föregående steg anger du namnet på hakparentesen och mappsökvägen i molnlagringsmålet där filerna ska levereras. För alternativet SFTP-lagring anger du den mappsökväg där filerna ska levereras.
 
-3. I **[!UICONTROL Setup]** steget anger du ett [!UICONTROL Name] och ett [!UICONTROL Description] för det nya målet samt [!UICONTROL File format] för de exporterade filerna. <br>
-Om du valde Amazon S3 som lagringsalternativ i föregående steg, sätter du in [!UICONTROL Bucket name] och [!UICONTROL Folder path] i molnlagringsmålet där filerna ska levereras. För alternativet SFTP-lagring anger du den plats [!UICONTROL Folder path] där filerna ska levereras. <br>
-I det här steget kan du även välja vilket som helst [!UICONTROL Marketing use case] som ska gälla för det här målet. Fall av marknadsanvändning anger avsikten för vilken data ska exporteras till destinationen. Du kan välja bland Adobe-definierade användningsfall för marknadsföring eller skapa ett eget marknadsföringsexempel. Mer information om användningsfall för marknadsföring finns på sidan [Datastyrning i CDP](/help/rtcdp/privacy/data-governance-overview.md#destinations) i realtid. Mer information om de enskilda Adobe-definierade användningsfallen för marknadsföring finns i översikten över [dataanvändningspolicyn](/help/data-governance/policies/overview.md#core-actions). <br>
-   ![Steget för e-postkonfiguration](/help/rtcdp/destinations/assets/email-setup-step.png)
+I det här steget kan du även välja alla användningsfall för marknadsföring som ska gälla för den här destinationen. Fall av marknadsanvändning anger avsikten för vilken data ska exporteras till destinationen. Du kan välja bland Adobe-definierade användningsfall för marknadsföring eller skapa ett eget marknadsföringsexempel. Mer information om användningsfall för marknadsföring finns på sidan [Datastyrning i CDP](/help/rtcdp/privacy/data-governance-overview.md#destinations) i realtid. Mer information om de enskilda Adobe-definierade användningsfallen för marknadsföring finns i översikten över [dataanvändningspolicyn](/help/data-governance/policies/overview.md#core-actions).
 
-## Steg 2 - Välj vilka segmentmedlemmar som ska inkluderas i målexporten {#select-segments}
+![Steget för e-postkonfiguration](./assets/email-setup-step.png)
+
+## Välj vilka segmentmedlemmar som ska inkluderas i målexporten {#select-segments}
 
 På **[!UICONTROL Select Segments]** sidan väljer du vilka segment som ska skickas till målet. Mer information om fälten finns i avsnitten nedan.
 
 ![Markera segment](/help/rtcdp/destinations/assets/email-select-segments.png)
 
-## Steg 3 - Konfigurera filnamn
+## Konfigurera filnamn
 
 Mer information om redigeringsalternativen för filnamn finns i [konfigurationssteget](/help/rtcdp/destinations/activate-destinations.md#configure) i självstudiekursen om aktiveringsmål.
 
-## Steg 4 - Välj attribut - Välj vilka schemafält som ska användas som målattribut i de exporterade filerna {#destination-attributes}
+## Välj attribut - Välj vilka schemafält som ska användas som målattribut i de exporterade filerna {#destination-attributes}
 
-I det här steget väljer du vilka fält som ska exporteras till e-postmarknadsföringsmål.
+I det här steget väljer du vilka fält som ska exporteras till e-postmarknadsföringsmål samt markerar vilka fält som är obligatoriska.
 
 ![Målattribut](/help/rtcdp/destinations/assets/recommended-attributes.png)
 
@@ -86,14 +87,14 @@ Välj vilka andra fält du vill exportera till e-postmålet i fältet Schema. N�
 | Födelsedag | `person.birthDayAndMonth` |
 | Segmentmedlemskap | `segmentMembership.status` |
 
-## Steg 5 - Importera data från lagringsplatsen till målet
+## Importera data från lagringsplatsen till målet
 
 Läs de enskilda artiklarna om destinationsorten för e-postmarknadsföring om du vill lära dig hur du importerar data från din lagringsplats till destinationer:
 
-* [Adobe Campaign](/help/rtcdp/destinations/adobe-campaign-destination.md#import-data-into-campaign)
-* [Salesforce Marketing Cloud](/help/rtcdp/destinations/salesforce-marketing-cloud-destination.md#import-data-into-salesforce)
-* [Oracle Eloqua](/help/rtcdp/destinations/oracle-eloqua-destination.md#import-data-into-eloqua)
-* [Oracle Responsys](/help/rtcdp/destinations/oracle-responsys-destination.md#import-data-into-responsys)
+- [Adobe Campaign](/help/rtcdp/destinations/adobe-campaign-destination.md#import-data-into-campaign)
+- [Salesforce Marketing Cloud](/help/rtcdp/destinations/salesforce-marketing-cloud-destination.md#import-data-into-salesforce)
+- [Oracle Eloqua](/help/rtcdp/destinations/oracle-eloqua-destination.md#import-data-into-eloqua)
+- [Oracle Responsys](/help/rtcdp/destinations/oracle-responsys-destination.md#import-data-into-responsys)
 
 ## Aktivera segment för e-postmarknadsföringsmål
 
@@ -101,5 +102,5 @@ Instruktioner om hur du aktiverar segment för e-postmarknadsföringsmål finns 
 
 ## Ytterligare resurser
 
-* [Aktivera data till mål](/help/rtcdp/destinations/activate-destinations.md)
-* [Skapa e-postmarknadsföringsmål och aktivera data med API:t för Flow Service](https://docs.adobe.com/content/help/en/experience-platform/tutorials/destinations/email-marketing-api.html)
+- [Aktivera data till mål](/help/rtcdp/destinations/activate-destinations.md)
+- [Skapa e-postmarknadsföringsmål och aktivera data med API:t för Flow Service](https://docs.adobe.com/content/help/en/experience-platform/tutorials/destinations/email-marketing-api.html)
