@@ -3,12 +3,12 @@ keywords: activate destination;activate destinations;activate data
 title: Aktivera profiler och segment till ett mål
 type: Tutorial
 seo-title: Aktivera profiler och segment till ett mål
-description: Aktivera data i kunddataplattformen i Adobe i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
-seo-description: Aktivera data i kunddataplattformen i Adobe i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
+description: Aktivera data i kunddataplattformen i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
+seo-description: Aktivera data i kunddataplattformen i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 74f49db15028aa27fc7ee73a79ea236ee42f37e8
 workflow-type: tm+mt
-source-wordcount: '1492'
+source-wordcount: '1521'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 # Aktivera profiler och segment till ett mål
 
-Aktivera data i kunddataplattformen i Adobe i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
+Aktivera data i kunddataplattformen i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 
 ## Förutsättningar {#prerequisites}
 
@@ -30,68 +30,67 @@ Stegen i aktiveringsarbetsflödet varierar något mellan måltyperna. Det fullst
 
 Gäller för: Alla destinationer
 
-1. Navigera till **[!UICONTROL Destinations]** > **[!UICONTROL Browse]**i CDP-användargränssnittet i realtid i Adobe och välj det mål där du vill aktivera dina segment.
-   ![bläddra till mål](assets/oracle-eloqua-connect.png)
-2. Klicka på målets namn. Detta tar dig till aktiveringsarbetsflödet.
-   ![activate-flow](assets/activate-flow.png)Observera att om det redan finns ett aktiveringsarbetsflöde för ett mål kan du se de segment som för närvarande aktiveras för målet. Välj **[!UICONTROL Edit activation]** i den högra listen och följ stegen nedan för att ändra aktiveringsinformationen.
-3. Välj **[!UICONTROL Activate]**.
+Navigera till **[!UICONTROL Destinations]** > **[!UICONTROL Browse]**i CDP-användargränssnittet i realtid och välj den destination där du vill aktivera segmenten.
+![bläddra till mål](assets/oracle-eloqua-connect.png)
 
-<br> 
+Välj namnet på målet för att navigera till aktiveringsarbetsflödet.
 
-### **[!UICONTROL Select Segments]** steg {#select-segments}
+![activate-flow](assets/activate-flow.png)
+
+Observera att om det redan finns ett aktiveringsarbetsflöde för ett mål, kan du se vilka segment som för närvarande aktiveras för målet. Välj **[!UICONTROL Edit activation]** i den högra listen och följ stegen nedan för att ändra aktiveringsinformationen.
+
+När du har valt ett mål väljer du **[!UICONTROL Activate]**.
+
+### [!UICONTROL Select Segments] steg {#select-segments}
 
 Gäller för: Alla destinationer
 
-![Markera segmentsteg](/help/rtcdp/destinations/assets/select-segments-icon.png)
+![Markera segmentsteg](./assets/select-segments-icon.png)
 
-
-Markera ett eller flera segment som ska aktiveras för målet på **[!UICONTROL Activate destination]** **[!UICONTROL Select Segments]** sidan i arbetsflödet. Tryck på **[!UICONTROL Next]** för att gå vidare till nästa steg.
+Markera ett eller flera segment som ska aktiveras för målet på **[!UICONTROL Activate destination]** **[!UICONTROL Select Segments]** sidan i arbetsflödet. Välj **[!UICONTROL Next]** att fortsätta till nästa steg.
 ![segment-till-mål](assets/email-select-segments.png)
 
-<br> 
-
-### **[!UICONTROL Identity mapping]** steg {#identity-mapping}
+### [!UICONTROL Identity mapping] steg {#identity-mapping}
 
 Gäller för: sociala mål och Google Customer Match-annonsmål
 
-![Steg för identitetsmappning](/help/rtcdp/destinations/assets/identity-mapping-icon.png)
+![Steg för identitetsmappning](./assets/identity-mapping-icon.png)
 
-För *sociala mål* kan du i **[!UICONTROL Identity mapping]** steget välja källattribut att mappa som målidentiteter i målet. Det här steget är valfritt eller obligatoriskt, beroende på vilken primär identitet du använder i schemat. <br> 
+För sociala mål kan du välja källattribut att mappa som målidentiteter i målet. Det här steget är valfritt eller obligatoriskt, beroende på vilken primär identitet du använder i schemat.
 
-*E-postadress som primär identitet*: Om du använder e-postadress som primär identitet i ditt schema kan du hoppa över steget Identitetsmappning, vilket visas nedan:
+Om du använder e-postadress som primär identitet i ditt schema kan du hoppa över steget Identitetsmappning, vilket visas nedan:
 
 ![E-postadress som identitet](assets/email-as-identity.gif)
 
-<br> 
-
-*Ett annat ID som primär identitet*: Om du använder ett annat ID, till exempel *Rewards ID* eller *Loyalty ID*, som primär identitet i ditt schema, måste du manuellt mappa e-postadressen från ditt identitetsschema som en målidentitet i det sociala målet, vilket visas nedan:
+Om du använder ett annat ID, t.ex. &quot;Rewards ID&quot; eller &quot;Loyalty ID&quot;, som primär identitet i ditt schema, måste du manuellt mappa e-postadressen från ditt identitetsschema som en målidentitet i det sociala målet, vilket visas nedan:
 
 ![Förmåns-ID som identitet](assets/rewardsid-as-identity.gif)
 
+Välj `Email_LC_SHA256` som målidentitet om du har hashas i kundens e-postadresser när data hämtas till Adobe Experience Platform, enligt [!DNL Facebook] e- [posthashkraven](/help/rtcdp/destinations/facebook-destination.md#email-hashing-requirements).
 
-Välj `Email_LC_SHA256` som målidentitet om du har hashas i kundens e-postadresser när data hämtas till Adobe Experience Platform, enligt [!DNL Facebook] e- [posthashkraven](/help/rtcdp/destinations/facebook-destination.md#email-hashing-requirements). <br> Välj `Email` som målidentitet om e-postadresserna du använder inte är hashas. Adobe CDP i realtid hash-kodar e-postadresserna så att de uppfyller [!DNL Facebook] kraven.
+Välj `Email` som målidentitet om e-postadresserna du använder inte är hashas. CDP-koden i realtid hash-kodar e-postadresserna så att de uppfyller [!DNL Facebook] kraven.
 
 ![identitetsmappning efter att fält fyllts i](assets/identity-mapping.png)
-
-<br> 
 
 ### **[!UICONTROL Configure]** steg {#configure}
 
 Gäller för: Destinationer för e-postmarknadsföring och molnlagring
 
-![Konfigurera steg](/help/rtcdp/destinations/assets/configure-icon.png)
+![Konfigurera steg](./assets/configure-icon.png)
 
-Det här steget är valfritt. I **[!UICONTROL Configure]** steget kan du konfigurera filnamnen för varje segment som du exporterar. Standardfilnamnen består av målnamn, segment-ID och datum- och tidsindikator. Du kan till exempel redigera de exporterade filnamnen för att skilja mellan olika kampanjer eller för att lägga till tiden för dataexport till filerna.
+I **[!UICONTROL Configure]** steget kan du konfigurera filnamnen för varje segment som du exporterar. Det är valfritt att konfigurera filnamnet.
 
-Välj **[!UICONTROL Next]** att använda standardfilnamnen eller klicka på pennikonen för att öppna ett modalt fönster och redigera filnamnen. Observera att filnamn är begränsade till 255 tecken.
+Standardfilnamnen består av målnamn, segment-ID och datum- och tidsindikator. Du kan till exempel redigera de exporterade filnamnen för att skilja mellan olika kampanjer eller för att lägga till tiden för dataexport till filerna.
 
-![konfigurera filnamn](assets/activation-workflow-configure-step.png)
+Välj pennikonen för att öppna ett modalt fönster och redigera filnamnen. Observera att filnamn är begränsade till 255 tecken.
+
+![konfigurera filnamn](./assets/activate-destinations/configure-name.png)
 
 I filnamnsredigeraren kan du välja olika komponenter att lägga till i filnamnet. Målnamnet och segment-ID kan inte tas bort från filnamn. Utöver dessa kan du lägga till följande:
 
-* **[!UICONTROL Segment name]**: Du kan lägga till segmentnamnet till filnamnet.
-* **[!UICONTROL Date and time]**: Välj mellan att lägga till ett `MMDDYYYY_HHMMSS` format eller en Unix 10-siffrig tidsstämpel för den tidpunkt då filerna genereras. Välj ett av dessa alternativ om du vill att ett dynamiskt filnamn ska skapas för varje stegvis export.
-* **[!UICONTROL Custom text]**: Lägg till egen text i filnamnen.
+- **[!UICONTROL Segment name]**: Du kan lägga till segmentnamnet till filnamnet.
+- **[!UICONTROL Date and time]**: Välj mellan att lägga till ett `MMDDYYYY_HHMMSS` format eller en Unix 10-siffrig tidsstämpel för den tidpunkt då filerna genereras. Välj ett av dessa alternativ om du vill att ett dynamiskt filnamn ska skapas för varje stegvis export.
+- **[!UICONTROL Custom text]**: Lägg till egen text i filnamnen.
 
 Select **[!UICONTROL Apply changes]** to confirm your selection.
 
@@ -99,15 +98,15 @@ Select **[!UICONTROL Apply changes]** to confirm your selection.
 > 
 >Om du inte markerar **[!UICONTROL Date and Time]** komponenten kommer filnamnen att vara statiska och den nya exporterade filen kommer att skriva över den tidigare filen på lagringsplatsen vid varje export. Detta är det rekommenderade alternativet när du kör ett återkommande importjobb från en lagringsplats till en e-postmarknadsföringsplattform.
 
-![redigera filnamnsalternativ](assets/activate-workflow-configure-step-2.png)
+![redigera filnamnsalternativ](./assets/activate-workflow-configure-step-2.png)
 
-<br> 
+När du är klar med konfigurationen av alla segment väljer du **[!UICONTROL Next]** att fortsätta.
 
-### **[!UICONTROL Segment Schedule]** steg {#segment-schedule}
+### **[!UICONTROL Segment schedule]** steg {#segment-schedule}
 
 Gäller för: reklamdestinationer, sociala destinationer
 
-![steg för segmentschema](/help/rtcdp/destinations/assets/segment-schedule-icon.png)
+![steg för segmentschema](./assets/segment-schedule-icon.png)
 
 På **[!UICONTROL Segment schedule]** sidan kan du ange startdatum för att skicka data till målet samt hur ofta data ska skickas till målet.
 
@@ -115,61 +114,53 @@ På **[!UICONTROL Segment schedule]** sidan kan du ange startdatum för att skic
 >
 >För sociala mål måste du välja målgruppens ursprung i det här steget. Du kan bara fortsätta till nästa steg efter att du har valt något av alternativen i bilden nedan.
 
-![välj datakälla](assets/choose-data-origin.png)
-
-<br> 
+![välj datakälla](./assets/choose-data-origin.png)
 
 ### **[!UICONTROL Scheduling]** steg {#scheduling}
 
 Gäller för: mål för e-postmarknadsföring och molnlagring
 
-![steg för segmentschema](assets/scheduling-icon.png)
+![steg för segmentschema](./assets/scheduling-icon.png)
 
 På **[!UICONTROL Scheduling]** sidan kan du se startdatumet för att skicka data till målet samt hur ofta data skickas till målet. Dessa värden kan inte redigeras.
-
-<br> 
 
 ### **[!UICONTROL Select attributes]** steg {#select-attributes}
 
 Gäller för: mål för e-postmarknadsföring och molnlagring
 
-![välj attributsteg](/help/rtcdp/destinations/assets/select-attributes-icon.png)
+![välj attributsteg](./assets/select-attributes-icon.png)
 
-
-På **[!UICONTROL Select Attributes]** sidan markerar du **[!UICONTROL Add new field]** och väljer de attribut som du vill skicka till målet.
+På **[!UICONTROL Select attributes]** sidan markerar du **[!UICONTROL Add new field]** och väljer de attribut som du vill skicka till målet.
 
 >[!NOTE]
 >
-> CDP i realtid i Adobe fyller markeringen med fyra rekommenderade attribut från schemat: `person.name.firstName`, `person.name.lastName`, `personalEmail.address`, `segmentMembership.status`.
+> CDP fyller markeringen i realtid med fyra rekommenderade attribut från schemat: `person.name.firstName`, `person.name.lastName`, `personalEmail.address`, `segmentMembership.status`.
 
-Filexporten varierar enligt följande beroende på om `segmentMembership.status` är markerat:
-* Om `segmentMembership.status` fältet är markerat innehåller exporterade filer **aktiva** medlemmar i den första fullständiga ögonblicksbilden samt **aktiva** och **utgångna** medlemmar i efterföljande stegvisa exporter.
-* Om `segmentMembership.status` fältet inte är markerat innehåller exporterade filer endast **aktiva** medlemmar i den ursprungliga fullständiga ögonblicksbilden och i efterföljande stegvisa exporter.
+Filexporter varierar på följande sätt, beroende på om `segmentMembership.status` är markerat:
+- Om `segmentMembership.status` fältet är markerat innehåller de exporterade filerna **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och **[!UICONTROL Active]** medlemmar i den efterföljande stegvisa **[!UICONTROL Expired]** exporten.
+- Om `segmentMembership.status` fältet inte är markerat innehåller exporterade filer endast **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och i efterföljande stegvisa exporter.
 
-![rekommenderade attribut](/help/rtcdp/destinations/assets/recommended-attributes.png)
+![rekommenderade attribut](./assets/activate-destinations/mark-mandatory.png)
 
+Dessutom kan du markera olika attribut som obligatoriska. Om du markerar ett attribut som obligatoriskt innebär det att det exporterade segmentet måste innehålla det attributet. Det innebär att den kan användas som en extra form av filtrering. Det är **inte** nödvändigt att markera ett attribut som obligatoriskt.
 
-Vi rekommenderar att ett av attributen är en [unik identifierare](/help/rtcdp/destinations/email-marketing-destinations.md#identity) från ditt schema. Mer information om obligatoriska attribut finns i Identitet i artikeln [E-postmarknadsföringsmål](/help/rtcdp/destinations/email-marketing-destinations.md#identity) .
+Vi rekommenderar att ett av attributen är en [unik identifierare](/help/rtcdp/destinations/email-marketing-destinations.md#identity) från ditt schema. Mer information om obligatoriska attribut finns i avsnittet om identitet i dokumentationen för [e-postmarknadsföringsmål](/help/rtcdp/destinations/email-marketing-destinations.md#identity) .
 
 >[!NOTE]
 > 
 >Om några dataanvändningsetiketter har tillämpats på vissa fält i en datauppsättning (i stället för på hela datauppsättningen), tillämpas dessa fältetiketter vid aktiveringen på följande villkor:
->* Fälten används i segmentdefinitionen.
->* Fälten konfigureras som projicerade attribut för målmålet.
+>- Fälten används i segmentdefinitionen.
+>- Fälten konfigureras som projicerade attribut för målmålet.
 
 >
 > 
-Titta på skärmbilden nedan. Om fältet till exempel `person.name.firstName` hade vissa etiketter för dataanvändning som strider mot målets användningsfall för marknadsföring, skulle du se en överträdelse av dataanvändningsprincipen i granskningssteget (steg 9). Mer information finns i [Datastyrning i CDP](/help/rtcdp/privacy/data-governance-overview.md#destinations)i realtid.
-
-![mål-attribut](assets/select-attributes-step.png)
-
-<br> 
+Om fältet till exempel `person.name.firstName` har vissa etiketter för dataanvändning som är i konflikt med målets användningsfall för marknadsföring, visas en överträdelse av dataanvändningsprincipen i granskningssteget. Mer information finns i [Datastyrning i CDP](/help/rtcdp/privacy/data-governance-overview.md#destinations)i realtid.
 
 ### **[!UICONTROL Review]** steg {#review}
 
 Gäller för: alla destinationer
 
-![granskningssteg](/help/rtcdp/destinations/assets/review-icon.png)
+![granskningssteg](./assets/review-icon.png)
 
 På **[!UICONTROL Review]** sidan visas en sammanfattning av markeringen. Välj **[!UICONTROL Cancel]** om du vill dela upp flödet, **[!UICONTROL Back]** om du vill ändra inställningarna eller **[!UICONTROL Finish]** om du vill bekräfta urvalet och börja skicka data till målet.
 
@@ -183,7 +174,6 @@ Om inga principöverträdelser har identifierats markerar du **[!UICONTROL Finis
 
 ![bekräfta-val](assets/confirm-selection.png)
 
-
 ## Redigera aktivering {#edit-activation}
 
 Följ stegen nedan för att redigera befintliga aktiveringsflöden i realtid med CDP:
@@ -195,7 +185,7 @@ Följ stegen nedan för att redigera befintliga aktiveringsflöden i realtid med
 
 ### Destinationer för e-postmarknadsföring och molnlagring {#esp-and-cloud-storage}
 
-För e-postmarknadsföringsmål och molnlagringsmål skapar Adobe Real-time CDP en tabbavgränsad `.csv` eller `.txt` fil på den lagringsplats som du angav. Förvänta dig att en ny fil ska skapas på din lagringsplats varje dag. Standardfilformatet är:
+För e-postmarknadsföringsmål och molnlagringsmål skapar CDP i realtid en tabbavgränsad fil `.csv` eller `.txt` fil på den lagringsplats som du angav. Förvänta dig att en ny fil ska skapas på din lagringsplats varje dag. Standardfilformatet är:
 `<destinationName>_segment<segmentID>_<timestamp-yyyymmddhhmmss>.csv|txt`
 
 Observera att du kan redigera filformatet. Mer information finns i [Konfigurera](/help/rtcdp/destinations/activate-destinations.md#configure) -steget för molnlagringsmål och e-postmarknadsföringsmål.
@@ -220,7 +210,7 @@ En lyckad aktivering [!DNL Facebook]innebär att en [!DNL Facebook] anpassad må
 
 >[!TIP]
 >
->Integrationen mellan CDP i realtid i Adobe och [!DNL Facebook] stöder historiska efterfyllningar. Alla historiska segmentkvalifikationer skickas till [!DNL Facebook] när du aktiverar segmenten till målet.
+>Integrationen mellan CDP i realtid och [!DNL Facebook] stöder historiska efterfyllningar av målgrupper. Alla historiska segmentkvalifikationer skickas till [!DNL Facebook] när du aktiverar segmenten till målet.
 
 ## Inaktivera aktivering {#disable-activation}
 
