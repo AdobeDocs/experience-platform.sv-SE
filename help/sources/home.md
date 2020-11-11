@@ -5,9 +5,9 @@ title: Adobe Experience Platform Source Connectors - översikt
 topic: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 translation-type: tm+mt
-source-git-commit: 9bd893820c7ab60bf234456fdd110fb2fbe6697c
+source-git-commit: d26eaf699a67a1bc7111f5f97da277368fcc4629
 workflow-type: tm+mt
-source-wordcount: '836'
+source-wordcount: '856'
 ht-degree: 0%
 
 ---
@@ -41,7 +41,7 @@ Källor i [!DNL Experience Platform] är grupperade i följande kategorier:
 
 [!DNL Experience Platform] ger stöd för inmatning av data från ett annonssystem från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
-- [[!DNL Google AdWords]](connectors/advertising/ads.md) -koppling
+- [[!DNL Google AdWords]](connectors/advertising/ads.md) koppling
 
 ### molnlagring
 
@@ -91,6 +91,12 @@ CRM-system tillhandahåller data som kan hjälpa till att bygga upp kundrelation
 - [[!DNL Oracle] koppling](connectors/databases/oracle.md)
 - [[!DNL Phoenix] koppling](connectors/databases/phoenix.md)
 - [[!DNL PostgreSQL] koppling](connectors/databases/postgres.md)
+
+### eCommerce
+
+[!DNL Experience Platform] har stöd för inmatning av data från ett e-handelssystem från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+
+- [[!DNL Shopify]](connectors/ecommerce/shopify.md)
 
 ### Marknadsföringsautomatisering
 
