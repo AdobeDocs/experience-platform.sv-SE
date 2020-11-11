@@ -5,9 +5,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 translation-type: tm+mt
-source-git-commit: 26d117726a59dea0c08cf6ca5a13bf54951f7f44
+source-git-commit: 9e005b0b225e8a643a080fb3d4b014d981748973
 workflow-type: tm+mt
-source-wordcount: '654'
+source-wordcount: '676'
 ht-degree: 0%
 
 ---
@@ -62,6 +62,8 @@ ht-degree: 0%
       - [Oracle-koppling](connectors/databases/oracle.md)
       - [Phoenix-kontakt](connectors/databases/phoenix.md)
       - [PostgreSQL-koppling](connectors/databases/postgres.md)
+   - eCommerce {#ecommerce}
+      - [Förminska koppling](connectors/ecommerce/shopify.md)
    - Automatisering av marknadsföring {#marketing-automation}
       - [HubSpot-anslutning](connectors/marketing-automation/hubspot.md)
    - Betalningar {#payments}
@@ -106,6 +108,8 @@ ht-degree: 0%
          - [Phoenix-kontakt](tutorials/api/create/databases/phoenix.md)
          - [PostgreSQL-koppling](tutorials/api/create/databases/postgres.md)
          - [SQL Server-koppling](tutorials/api/create/databases/sql-server.md)
+      - eCommerce {#ecommerce}
+         - [Förminska koppling](tutorials/api/create/ecommerce/shopify.md)
       - Automatisering av marknadsföring {#marketing-automation}
          - [HubSpot-anslutning](tutorials/api/create/marketing-automation/hubspot.md)
       - Betalningar {#payments}
@@ -118,6 +122,7 @@ ht-degree: 0%
       - [Utforska CRM-data](tutorials/api/explore/crm.md)
       - [Utforska data om kundframgångar](tutorials/api/explore/customer-success.md)
       - [Utforska databas eller NoSQL-data](tutorials/api/explore/database-nosql.md)
+      - [Utforska e-handelsdata](tutorials/api/explore/ecommerce.md)
       - [Utforska automatiserade marknadsföringsdata](tutorials/api/explore/marketing-automation.md)
       - [Utforska betalningsdata](tutorials/api/explore/payments.md)
       - [Utforska protokolldata](tutorials/api/explore/protocols.md)
@@ -127,6 +132,7 @@ ht-degree: 0%
       - [Samla in CRM-data](tutorials/api/collect/crm.md)
       - [Samla in kunddata](tutorials/api/collect/customer-success.md)
       - [Samla in databas- eller NoSQL-data](tutorials/api/collect/database-nosql.md)
+      - [Samla in e-handelsdata](tutorials/api/collect/ecommerce.md)
       - [Samla in automatiserade marknadsföringsdata](tutorials/api/collect/marketing-automation.md)
       - [Samla in betalningsdata](tutorials/api/collect/payments.md)
       - [Samla in protokolldata](tutorials/api/collect/protocols.md)
@@ -138,7 +144,7 @@ ht-degree: 0%
 - Självstudiekurser för användargränssnitt {#ui-tutorials}
    - Skapa en källkoppling {#create}
       - Adobe-program {#adobe-applications}
-         - [Adobe Analytics Classifications Data connector](tutorials/ui/create/adobe-applications/classifications.md)
+         - [Adobe Analytics Classifications Data Connector](tutorials/ui/create/adobe-applications/classifications.md)
          - [Adobe Analytics Connector](tutorials/ui/create/adobe-applications/analytics.md)
          - [Adobe Audience Manager Connector](tutorials/ui/create/adobe-applications/audience-manager.md)
          - [Koppling för kundattribut](tutorials/ui/create/adobe-applications/customer-attributes.md)
@@ -178,6 +184,8 @@ ht-degree: 0%
          - [Oracle-koppling](tutorials/ui/create/databases/oracle.md)
          - [Phoenix-kontakt](tutorials/ui/create/databases/phoenix.md)
          - [PostgreSQL-koppling](tutorials/ui/create/databases/postgres.md)
+      - eCommerce {#ecommerce}
+         - [Förminska koppling](tutorials/ui/create/ecommerce/shopify.md)
       - Automatisering av marknadsföring {#marketing-automation}
          - [HubSpot-anslutning](tutorials/ui/create/marketing-automation/hubspot.md)
       - Betalningar {#payments}
@@ -188,9 +196,10 @@ ht-degree: 0%
       - [Konfigurera ett dataflöde för en reklamanslutning](tutorials/ui/dataflow/advertising.md)
       - [Konfigurera ett dataflöde för en batchanslutning för molnlagring](tutorials/ui/dataflow/batch/cloud-storage.md)
       - [Konfigurera ett dataflöde för en direktuppspelad molnlagringskontakt](tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
-      - [Konfigurera ett dataflöde för en databasanslutning](tutorials/ui/dataflow/databases.md)
       - [Konfigurera ett dataflöde för en CRM-koppling](tutorials/ui/dataflow/crm.md)
       - [Konfigurera ett dataflöde för en koppling för kundframgångar](tutorials/ui/dataflow/customer-success.md)
+      - [Konfigurera ett dataflöde för en databasanslutning](tutorials/ui/dataflow/databases.md)
+      - [Konfigurera ett dataflöde för en eCommerce-koppling](tutorials/ui/dataflow/ecommerce.md)
       - [Konfigurera ett dataflöde för en koppling för automatiserad marknadsföring](tutorials/ui/dataflow/marketing-automation.md)
       - [Konfigurera ett dataflöde för en betalningsanslutning](tutorials/ui/dataflow/payments.md)
       - [Konfigurera ett dataflöde för en protokollanslutning](tutorials/ui/dataflow/protocols.md)
