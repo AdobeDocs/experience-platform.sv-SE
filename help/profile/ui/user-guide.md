@@ -4,9 +4,9 @@ title: Användargränssnittsguide för kundprofiler i realtid
 topic: guide
 description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofiler i realtid i Adobe Experience Platform användargränssnitt.
 translation-type: tm+mt
-source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
+source-git-commit: 295315ab052ff151bea9037567bf2690d705367b
 workflow-type: tm+mt
-source-wordcount: '1209'
+source-wordcount: '1210'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ Ungefär som [profilräknemeterialet](#profile-count) , utlöses ett jobb för a
 
 ### Kopplingsprincip
 
-Väljaren väljer automatiskt **[!UICONTROL Merge policy]** standardprincip för sammanslagning för din organisation. Om du inte vill använda den sammanfogningsprincipen kan du välja `X` bredvid standardsammanfogningsprincipen för att öppna **[!UICONTROL Select merge policy]** dialogrutan där du kan välja en annan sammanfogningsprincip. Mer information om kopplingsprofiler och deras roll inom plattformen finns i användarhandboken för [kopplingsprofiler](merge-policies.md).
+Väljaren väljer automatiskt **[!UICONTROL Merge policy]** standardprincip för sammanslagning för din organisation. Om du inte vill använda den sammanfogningsprincipen kan du välja `X` bredvid standardsammanfogningsprincipen för att öppna **[!UICONTROL Select merge policy]** dialogrutan där du kan välja en annan sammanfogningsprincip. Mer information om kopplingsprofiler och deras roll inom plattformen finns i [användargränssnittshandboken](merge-policies.md)för kopplingsprofiler.
 
 ![](../images/user-guide/profiles-search-merge-policy.png)
 
@@ -98,7 +98,7 @@ Du kan visa ytterligare information om den enskilda profilen genom att välja en
 
 ## Sammanfoga profiler
 
-På huvudmenyn **[!UICONTROL Profiles]** väljer du **[!UICONTROL Merge Policies]** fliken för att visa en lista över sammanfogningsprinciper som tillhör organisationen. Varje listad princip visar sitt namn, oavsett om det är standardprincipen för sammanslagning eller inte, och det schema som den gäller för.
+På huvudmenyn **[!UICONTROL Profiles]** väljer du **[!UICONTROL Merge Policies]** fliken för att visa en lista över sammanfogningsprinciper som tillhör organisationen. Varje listad princip visar sitt namn, oavsett om det är standardprincipen för sammanslagning eller inte, och schemaklassen som den gäller för.
 
 Mer information om sammanfogningsprinciper finns i [användargränssnittshandboken](merge-policies.md)för sammanfogningsprinciper.
 
