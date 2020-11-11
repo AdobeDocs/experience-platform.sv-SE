@@ -3,9 +3,9 @@ keywords: Experience Platform;profile;real-time customer profile;troubleshooting
 title: Sammanslagningsprinciper - Kundprofils-API i realtid
 topic: guide
 translation-type: tm+mt
-source-git-commit: 47c65ef5bdd083c2e57254189bb4a1f1d9c23ccc
+source-git-commit: 6bfc256b50542e88e28f8a0c40cec7a109a05aa6
 workflow-type: tm+mt
-source-wordcount: '2458'
+source-wordcount: '2494'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,13 @@ API-slutpunkten som används i den här handboken är en del av [[!DNL Real-time
 
 ## Komponenter i sammanfogningsprinciper {#components-of-merge-policies}
 
-Sammanslagningsprinciper är privata för IMS-organisationen, vilket gör att du kan skapa olika profiler för att sammanfoga scheman på det sätt du behöver. Alla API-åtkomstdata kräver en sammanfogningsprincip, men ett standardvärde kommer att användas om det inte uttryckligen anges. [!DNL Profile] [!DNL Platform] innehåller en standardprincip för sammanfogning, eller så kan du skapa en sammanfogningsprincip för ett specifikt schema och markera den som standard för din organisation. Varje organisation kan ha flera sammanfogningsprinciper per per schema, men varje schema kan bara ha en standardsammanfogningsprincip. Alla sammanfogningsprinciper som anges som standard används i de fall där schemanamnet anges och en sammanfogningsprincip krävs, men inte anges. När du anger en sammanfogningsprincip som standard kommer alla befintliga sammanfogningsprinciper som tidigare var inställda som standard automatiskt att uppdateras till att inte längre användas som standard.
+Sammanslagningsprinciper är privata för IMS-organisationen, vilket gör att du kan skapa olika profiler för att sammanfoga scheman på de specifika sätt som du behöver. Alla API-åtkomstdata kräver en sammanfogningsprincip, men ett standardvärde kommer att användas om det inte uttryckligen anges. [!DNL Profile] [!DNL Platform] innehåller en standardprincip för sammanfogning, eller så kan du skapa en sammanfogningsprincip för en specifik XDM-schemaklass (Experience Data Model) och markera den som standard för din organisation.
+
+Även om varje organisation kan ha flera sammanfogningsprinciper per per schemaklass, kan varje klass bara ha en standardsammanfogningsprincip. Alla sammanfogningsprinciper som anges som standard används om namnet på schemaklassen anges och en sammanfogningsprincip krävs men inte anges.
+
+>[!NOTE]
+>
+>När du anger en ny sammanfogningsprincip som standard uppdateras automatiskt alla befintliga sammanfogningsprinciper som tidigare var inställda som standard så att de inte längre används som standard.
 
 ### Slutför policyobjekt för sammanfogning
 
@@ -41,7 +47,7 @@ Det fullständiga principobjektet för sammanfogning representerar en uppsättni
         "name": "{NAME}",
         "imsOrgId": "{IMS_ORG}",
         "schema": {
-            "name": "{SCHEMA_NAME}"
+            "name": "{SCHEMA_CLASS_NAME}"
         },
         "version": 1,
         "identityGraph": {
@@ -62,7 +68,7 @@ Det fullständiga principobjektet för sammanfogning representerar en uppsättni
 | `imsOrgId` | Organisations-ID som den här sammanfogningsprincipen tillhör |
 | `identityGraph` | [Identitetsdiagramobjekt](#identity-graph) som anger identitetsdiagrammet som relaterade identiteter ska hämtas från. Profilfragment som hittas för alla relaterade identiteter sammanfogas. |
 | `attributeMerge` | [Kopplingsobjekt för attribut](#attribute-merge) anger hur sammanfogningsprincipen prioriterar profilattribut vid datakonflikter. |
-| `schema` | Det [schemaobjekt](#schema) som sammanfogningsprincipen kan användas på. |
+| `schema.name` | Som en del av [`schema`](#schema) objektet innehåller `name` fältet den XDM-schemaklass som sammanfogningsprincipen relaterar till. Mer information om scheman och klasser finns i [XDM-dokumentationen](../../xdm/home.md). |
 | `default` | Booleskt värde som anger om den här sammanfogningsprincipen är standard för det angivna schemat. |
 | `version` | [!DNL Platform] en sparad version av sammanfogningsprincipen. Det här skrivskyddade värdet ökas stegvis när en sammanfogningsprincip uppdateras. |
 | `updateEpoch` | Datum för den senaste uppdateringen av sammanfogningsprincipen. |
@@ -132,7 +138,7 @@ Där `{ATTRIBUTE_MERGE_TYPE}` är något av följande:
 * **`dataSetPrecedence`** : Prioritera profilfragment baserat på den datauppsättning som de kommer från. Detta kan användas när information som finns i en datauppsättning är att föredra eller betrodd framför data i en annan datauppsättning. När du använder den här sammanfogningstypen är attributet obligatoriskt, eftersom det visar datauppsättningarna i prioritetsordning. `order`
    * **`order`**: När&quot;dataSetPriedence&quot; används måste en `order` array anges med en lista över datauppsättningar. Datauppsättningar som inte ingår i listan kommer inte att sammanfogas. Datamängder måste med andra ord anges explicit för att sammanfogas till en profil. Arrayen visar `order` datauppsättningens ID i prioritetsordning.
 
-**Exempel på attributeMerge-objekt som använder `dataSetPrecedence` typ**
+#### Exempel på `attributeMerge` objekt som använder `dataSetPrecedence` text
 
 ```json
     "attributeMerge": {
@@ -146,7 +152,7 @@ Där `{ATTRIBUTE_MERGE_TYPE}` är något av följande:
     }
 ```
 
-**Exempel på attributeMerge-objekt som använder `timestampOrdered` typ**
+#### Exempel på `attributeMerge` objekt som använder `timestampOrdered` text
 
 ```json
     "attributeMerge": {
@@ -156,7 +162,7 @@ Där `{ATTRIBUTE_MERGE_TYPE}` är något av följande:
 
 ### Schema {#schema}
 
-Schemaobjektet anger XDM-schemat (Experience Data Model) som sammanfogningsprincipen skapas för.
+Schemaobjektet anger XDM-schemaklassen (Experience Data Model) som sammanfogningsprincipen skapas för.
 
 **`schema`object**
 
@@ -731,7 +737,7 @@ En slutförd borttagningsbegäran returnerar HTTP-status 200 (OK) och en tom sva
 
 ## Nästa steg
 
-Nu när ni vet hur ni skapar och konfigurerar sammanfogningsprinciper för er IMS-organisation kan ni använda dem för att skapa målgruppssegment utifrån era [!DNL Real-time Customer Profile] data. Se dokumentationen [till](../../segmentation/home.md) Adobe Experience Platform Segmentation Service för att börja definiera och arbeta med segment.
+Nu när ni vet hur ni skapar och konfigurerar sammanfogningspolicyer för er organisation kan ni använda dem för att justera visningen av kundprofiler inom Platform och för att skapa målgruppssegment utifrån era [!DNL Real-time Customer Profile] data. Se dokumentationen [till](../../segmentation/home.md) Adobe Experience Platform Segmentation Service för att börja definiera och arbeta med segment.
 
 ## Bilaga
 
