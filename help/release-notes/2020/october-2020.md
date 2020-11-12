@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: October, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: e2b0048703816dc481eb9486310d86a8f2483af2
+source-git-commit: 5ff73aa1745e78f0026ada2c66908888be5f4498
 workflow-type: tm+mt
-source-wordcount: '1028'
+source-wordcount: '1009'
 ht-degree: 1%
 
 ---
@@ -71,7 +71,6 @@ Adobe Experience Platform kan importera data från externa källor och samtidigt
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Hierarkisk mappning | Du kan förhandsgranska en hierarkisk källfil, som JSON eller Parquet, under dataöverföringsprocessen. |
 | SSH-autentiseringsstöd för SFTP | Du kan ansluta ditt SFTP-konto till [!DNL Platform] med RSA/DSA Open SSH-nycklar. Mer information finns i [SFTP-översikten](../../sources/connectors/cloud-storage/ftp-sftp.md) . |
 | UX-förbättringar | Du kan aktivera datauppsättningen för [!DNL Profile] under dataöverföringsprocessen. Mer information finns i självstudiekursen om arbetsflöde [](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md) för molnlagring. |
 
