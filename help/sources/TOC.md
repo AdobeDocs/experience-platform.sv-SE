@@ -5,9 +5,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 translation-type: tm+mt
-source-git-commit: 9e005b0b225e8a643a080fb3d4b014d981748973
+source-git-commit: 89a807c0adbc3c9e4396adbb96764453034c8ea3
 workflow-type: tm+mt
-source-wordcount: '676'
+source-wordcount: '680'
 ht-degree: 0%
 
 ---
@@ -208,4 +208,5 @@ ht-degree: 0%
    - [Ta bort konton](tutorials/ui/delete-accounts.md)
    - [Ta bort dataflöden](tutorials/ui/delete.md)
 - [Flödeskörningsmeddelanden](notifications.md)
+- [IP-adress tillåtelselista](ip-address-allow-list.md)
 - [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
