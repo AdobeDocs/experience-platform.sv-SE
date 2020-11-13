@@ -5,9 +5,9 @@ seo-title: Annonsmål
 description: Koppla samman er kunddataplattform i realtid med en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 seo-description: Koppla samman er kunddataplattform i realtid med en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 translation-type: tm+mt
-source-git-commit: b510f715133cc3fed98861f977b3ce9a857a5ced
+source-git-commit: 77b1ffdd20cbc4e1645688da83769277f6729091
 workflow-type: tm+mt
-source-wordcount: '219'
+source-wordcount: '222'
 ht-degree: 0%
 
 ---
@@ -30,6 +30,7 @@ Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutni
 * [Google Ads](/help/rtcdp/destinations/google-ads-destination.md)
 * [Google Ad Manager](/help/rtcdp/destinations/google-ad-manager-destination.md)
 * [Google Customer Match](/help/rtcdp/destinations/google-customer-match-destination.md)
+* [The Trade Desk](/help/rtcdp/destinations/tradedesk-destination.md)
 
 
 ## Tillägg
