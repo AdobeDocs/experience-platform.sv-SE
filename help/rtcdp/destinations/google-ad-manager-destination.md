@@ -5,9 +5,9 @@ seo-title: Mål för Google Ad Manager
 description: 'Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar. '
 seo-description: 'Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar. '
 translation-type: tm+mt
-source-git-commit: 485c4b1c3c68755396da087d4b5864c8a36e64df
+source-git-commit: d20b558a6f4518be74cd5969c50a5db310370c08
 workflow-type: tm+mt
-source-wordcount: '671'
+source-wordcount: '673'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Observera följande information som är specifik för [!DNL Google Ad Manager] d
 
 ### Exporttyp {#export-type}
 
-**[!DNL Segment Export]** - du exporterar alla medlemmar i ett segment (publik) till Google-målet.
+**Segmentexport** - du exporterar alla medlemmar i ett segment (publik) till Google-målet.
 
 ## Förutsättningar
 
