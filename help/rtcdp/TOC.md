@@ -5,7 +5,7 @@ audience: user
 user-guide-title: Handbok för kunddataplattform i realtid
 user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgruppssegment utifrån dessa profiler och aktivera dessa segment för tredjepartsdestinationer.
 translation-type: tm+mt
-source-git-commit: 308b07dc32cd2d3ad105f171d57145bbb1952df7
+source-git-commit: 2a4d55b2d429fbeb1459a6bd095b0bc39d52917d
 workflow-type: tm+mt
 source-wordcount: '513'
 ht-degree: 3%
@@ -57,7 +57,7 @@ ht-degree: 3%
          * [Tillägget LinkedIn Insight-tagg](/help/rtcdp/destinations/linkedin-extension.md)
          * [Microsoft Bing](/help/rtcdp/destinations/bing-destination.md)
          * [Tillägg för Pinterest Conversion Tracking](destinations/pinterest-extension.md)
-         * [The Trade Desk destination](destinations/tradedesk-destination.md)
+         * [The Trade Desk destination](/help/rtcdp/destinations/tradedesk-destination.md)
          * [Twitter Universal Website Tag-tillägg](destinations/twitter-uwt-extension.md)
       * Analysmål {#analytics-destinations}
          * [Översikt över Analytics-destinationer](destinations/analytics-destinations.md)
