@@ -5,9 +5,9 @@ topic: overview
 title: Översikt över åtkomstkontroll
 description: Åtkomstkontroll för Adobe Experience Platform tillhandahålls via Adobe Admin Console. Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor.
 translation-type: tm+mt
-source-git-commit: ccb7286e47aa4cf6356d22f84111b0c0fb30dfa8
+source-git-commit: 205bfb5f3b3fa083f64fc0160ea6bdf7bba74c9b
 workflow-type: tm+mt
-source-wordcount: '1199'
+source-wordcount: '1198'
 ht-degree: 1%
 
 ---
@@ -52,8 +52,8 @@ I [!DNL Admin Console]tilldelas användare behörigheter genom användning av pr
 
 | Produktprofil | Sandlådeåtkomst | Behörigheter |
 | --- | --- | --- |
-| Standardproduktion - Alla åtkomst | Produktion | Alla behörigheter som gäller för [!DNL Experience Platform], förutom sandlådeadministration. |
-| Förvald sandlådeadministration | Ej tillämpligt | Ger endast åtkomst till sandlådeadministrationsbehörigheter. |
+| Standardproduktion, all åtkomst | Produktion | Alla behörigheter som gäller för [!DNL Experience Platform], förutom sandlådeadministration. |
+| Sandlådeadministratörer | Ej tillämpligt | Ger endast åtkomst till sandlådeadministrationsbehörigheter. |
 
 ## Sandlådor och behörigheter
 
