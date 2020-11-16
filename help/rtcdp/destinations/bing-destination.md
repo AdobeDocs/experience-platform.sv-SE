@@ -5,7 +5,7 @@ seo-title: Med Microsoft Bing-målet kan du skicka profildata till Microsoft Dis
 description: Med Microsoft Bing-målet kan ni genomföra återannonsering och målgruppsanpassade digitala kampanjer i Microsoft Display Advertising.
 seo-description: Med Microsoft Bing-målet kan ni genomföra återannonsering och målgruppsanpassade digitala kampanjer i Microsoft Display Advertising.
 translation-type: tm+mt
-source-git-commit: 43795e31f4e39dcabeaf6d69529e80cabe9c90c5
+source-git-commit: a64f9f1f078d8380cc25c9760eac1699512a5870
 workflow-type: tm+mt
 source-wordcount: '468'
 ht-degree: 1%
@@ -50,8 +50,8 @@ När du konfigurerar målet måste du ange följande information:
    >[!NOTE]
    >
    >Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]** knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](../destinations/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
-
-   ![Aktivera Microsoft Bing-mål](assets/bing-destination-activate.png)
+   >
+   >![Aktivera Microsoft Bing-mål](assets/bing-destination-activate.png)
 
 1. I [!UICONTROL Authentication] steget måste du ange information om målanslutningen:
 
