@@ -5,9 +5,9 @@ seo-title: The Trade Desk Destination
 description: 'Trade Desk är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer för olika annonser, videoklipp och mobila inventeringskällor. '
 seo-description: Trade Desk är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer för olika annonser, videoklipp och mobila inventeringskällor.
 translation-type: tm+mt
-source-git-commit: c9fb63b390d4c7dddcdb35a85710ff664614ad63
+source-git-commit: 43795e31f4e39dcabeaf6d69529e80cabe9c90c5
 workflow-type: tm+mt
-source-wordcount: '539'
+source-wordcount: '541'
 ht-degree: 0%
 
 ---
@@ -46,10 +46,10 @@ Som marknadsförare vill jag kunna använda segment som är inbyggda i [!DNL Tra
    >[!NOTE]
    >
    >Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]** knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](../destinations/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
-   >
-   >![Aktivera målet för handelsavdelningen](assets/tradedesk-destination-activate.png)
 
-1. I [!UICONTROL Authentication] steget måste du ange [!DNL The Trade Desk] anslutningsinformation:
+       ![Aktivera målet för handelsdagen](assets/tradedesk-destination-activate.png)
+   
+2. I [!UICONTROL Authentication] steget måste du ange [!DNL The Trade Desk] anslutningsinformation:
 
    * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
    * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
@@ -67,13 +67,13 @@ Som marknadsförare vill jag kunna använda segment som är inbyggda i [!DNL Tra
 
    ![The Trade Desk Authentication Step](assets/tradedesk-destination-authentication.png)
 
-1. Klicka på **[!UICONTROL Create destination]**. Målet har skapats. Du kan klicka [!UICONTROL Save & Exit] om du vill aktivera segment senare eller välja [!UICONTROL Next] att fortsätta arbetsflödet och välja segment som ska aktiveras. I båda fallen finns mer information i nästa avsnitt, [Aktivera segment](#activate-segments), för resten av arbetsflödet.
+3. Klicka på **[!UICONTROL Create destination]**. Målet har skapats. Du kan klicka [!UICONTROL Save & Exit] om du vill aktivera segment senare eller välja [!UICONTROL Next] att fortsätta arbetsflödet och välja segment som ska aktiveras. I båda fallen finns mer information i nästa avsnitt, [Aktivera segment](#activate-segments), för resten av arbetsflödet.
 
 ## Aktivera segment {#activate-segments}
 
 Mer information om arbetsflödet för [aktivering finns i Aktivera profiler och segment till ett mål](activate-destinations.md#select-attributes) .
 
-Under steget [Segmentschema](activate-destinations.md#segment-schedule) måste du manuellt mappa dina segment till motsvarande ID eller egna namn i målet.
+I steget [Segmentschema](activate-destinations.md#segment-schedule) måste du manuellt mappa dina segment till motsvarande ID eller egna namn i målet.
 
 När du mappar segment rekommenderar vi att du använder [!DNL Platform] segmentnamnet eller en kortare form av det för att underlätta användningen. Segment-ID:t eller namnet i målet behöver dock inte matcha det i ditt [!DNL Platform] konto. Alla värden som du infogar i mappningsfältet återspeglas av målet.
 
