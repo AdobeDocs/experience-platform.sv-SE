@@ -5,7 +5,7 @@ title: Visa gällande policyer
 topic: developer guide
 description: Med åtkomstkontrollen i Adobe Experience Platform kan du hantera roller och behörigheter för olika plattformsfunktioner med Adobe Admin Console. Det här dokumentet är en guide till hur du visar effektiva profiler med hjälp av API:t för åtkomstkontroll för Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 481f093e52c8533d2919504051af9e63704a0f4a
+source-git-commit: 8967a820ab19bceb2be69f37e3399ed99f0b8e72
 workflow-type: tm+mt
 source-wordcount: '306'
 ht-degree: 0%
@@ -95,8 +95,6 @@ permissions/manage-privacy-workflows
 permissions/manage-profile-configs
 permissions/manage-profiles
 permissions/manage-queries
-permissions/manage-schema-identities
-permissions/manage-schema-relationships
 permissions/manage-schemas
 permissions/manage-segments
 permissions/manage-sources
