@@ -5,7 +5,7 @@ seo-title: Med Microsoft Bing-målet kan du skicka profildata till Microsoft Dis
 description: Med Microsoft Bing-målet kan ni genomföra återannonsering och målgruppsanpassade digitala kampanjer i Microsoft Display Advertising.
 seo-description: Med Microsoft Bing-målet kan ni genomföra återannonsering och målgruppsanpassade digitala kampanjer i Microsoft Display Advertising.
 translation-type: tm+mt
-source-git-commit: 979256ea975dcc0c1f6c59792b70d6899ee11376
+source-git-commit: 43795e31f4e39dcabeaf6d69529e80cabe9c90c5
 workflow-type: tm+mt
 source-wordcount: '468'
 ht-degree: 1%
@@ -50,8 +50,8 @@ När du konfigurerar målet måste du ange följande information:
    >[!NOTE]
    >
    >Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]** knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](../destinations/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
-   >
-   >![Aktivera Microsoft Bing-mål](assets/bing-destination-activate.png)
+
+   ![Aktivera Microsoft Bing-mål](assets/bing-destination-activate.png)
 
 1. I [!UICONTROL Authentication] steget måste du ange information om målanslutningen:
 
@@ -68,7 +68,7 @@ När du konfigurerar målet måste du ange följande information:
 
 Mer information om arbetsflödet för [aktivering finns i Aktivera profiler och segment till ett mål](activate-destinations.md#select-attributes) .
 
-Under steget [Segmentschema](activate-destinations.md#segment-schedule) måste du manuellt mappa dina segment till motsvarande ID eller egna namn i målet.
+I steget [Segmentschema](activate-destinations.md#segment-schedule) måste du manuellt mappa dina segment till motsvarande ID eller egna namn i målet.
 
 När du mappar segment rekommenderar vi att du använder [!DNL Platform] segmentnamnet eller en kortare form av det för att underlätta användningen. Segment-ID:t eller namnet i målet behöver dock inte matcha det i ditt [!DNL Platform] konto. Alla värden som du infogar i mappningsfältet återspeglas av målet.
 
