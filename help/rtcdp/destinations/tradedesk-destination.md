@@ -5,9 +5,9 @@ seo-title: The Trade Desk Destination
 description: 'Trade Desk är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer för olika annonser, videoklipp och mobila inventeringskällor. '
 seo-description: Trade Desk är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer för olika annonser, videoklipp och mobila inventeringskällor.
 translation-type: tm+mt
-source-git-commit: 43795e31f4e39dcabeaf6d69529e80cabe9c90c5
+source-git-commit: a64f9f1f078d8380cc25c9760eac1699512a5870
 workflow-type: tm+mt
-source-wordcount: '541'
+source-wordcount: '539'
 ht-degree: 0%
 
 ---
@@ -46,9 +46,9 @@ Som marknadsförare vill jag kunna använda segment som är inbyggda i [!DNL Tra
    >[!NOTE]
    >
    >Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]** knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](../destinations/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
+   >
+   >![Aktivera målet för handelsavdelningen](assets/tradedesk-destination-activate.png)
 
-       ![Aktivera målet för handelsdagen](assets/tradedesk-destination-activate.png)
-   
 2. I [!UICONTROL Authentication] steget måste du ange [!DNL The Trade Desk] anslutningsinformation:
 
    * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
