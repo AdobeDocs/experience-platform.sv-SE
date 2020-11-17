@@ -6,9 +6,9 @@ type: Tutorial
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 seo-description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 translation-type: tm+mt
-source-git-commit: 5238d98db0554d34c2b0bcd28b64354f544faa0f
+source-git-commit: 42b694c532f140b51913ba5ceb0aaeacc2263039
 workflow-type: tm+mt
-source-wordcount: '789'
+source-wordcount: '820'
 ht-degree: 0%
 
 ---
@@ -35,6 +35,8 @@ Om du tidigare har konfigurerat en anslutning till ditt e-postmarknadsföringsm�
 - För **S3-anslutningar** måste du ange ditt Amazon Access Key ID och Secret Access Key.
 - För **SFTP med lösenordsanslutningar** måste du ange domän, port, användarnamn och lösenord för SFTP-servern.
 - För **SFTP med SSH-nyckelanslutningar** måste du ange domän, port, användarnamn och SSH-nyckel för SFTP-servern.
+
+Du kan även bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna under **[!UICONTROL Key]** avsnittet. Observera att den här offentliga nyckeln **måste** skrivas som en Base64-kodad sträng.
 
 I **[!UICONTROL Setup]** steget anger du ett namn och en beskrivning för det nya målet samt filformatet för de exporterade filerna.
 
