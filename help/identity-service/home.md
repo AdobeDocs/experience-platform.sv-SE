@@ -5,9 +5,9 @@ title: Adobe Experience Platform Identity Service
 topic: overview
 description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 translation-type: tm+mt
-source-git-commit: 28b733a16b067f951a885c299d59e079f0074df8
+source-git-commit: af7eab0599b17be55d5a4c129f7ebaeba91333bc
 workflow-type: tm+mt
-source-wordcount: '1711'
+source-wordcount: '1719'
 ht-degree: 0%
 
 ---
@@ -87,6 +87,8 @@ Alla kundidentitetsdiagram hanteras och uppdateras gemensamt av [!DNL Identity S
 
 Som ett exempel på möjliga typer av faktorer som du bör tänka på när du anger och etiketterar identitetsdata, kan användning av telefonnummer som &quot;arbetstelefon&quot; resultera i fler relationer än du tänkt dig i identitetsdiagrammet. Det kan finnas många anställda som hänvisar till samma nummer för arbetet, och att&quot;hem&quot; och&quot;mobil&quot; fungerar bättre för att hålla relationerna så exakta som möjligt.
 
+Mer information finns i självstudiekursen om [åtkomst till identitetsdiagramvisningsprogrammet](./ui/identity-graph-viewer.md)
+
 ## Identitetsdata skickas till [!DNL Identity Service]
 
 I det här avsnittet beskrivs hur data som skickas till Adobe Experience Platform behandlas innan de används för [!DNL Identity Service] att skapa ett identitetsdiagram för varje kund.
@@ -146,4 +148,4 @@ Adobe Experience Platform har byggts med sekretess i åtanke och innehåller ett
 
 ## Nästa steg
 
-Nu när du förstår de viktigaste begreppen i [!DNL Identity Service] och dess roll i [!DNL Experience Platform]kan du börja lära dig hur du arbetar med identitetsdiagrammet med hjälp av API:t för [[!DNL Identity Service]](./api/getting-started.md).
+Nu när du förstår de viktigaste begreppen i [!DNL Identity Service] och dess roll i [!DNL Experience Platform]kan du börja lära dig hur du arbetar med identitetsdiagrammet med hjälp av [[!DNL Identity Service API]](./api/getting-started.md).
