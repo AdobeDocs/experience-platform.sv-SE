@@ -6,9 +6,9 @@ topic: tutorial
 type: Tutorial
 description: I den här självstudiekursen beskrivs hur du mappar en CSV-fil till ett XDM-schema med Adobe Experience Platform användargränssnitt.
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: d69d0dd8c5a3d3a5e92cc88e390c079ed46aba32
 workflow-type: tm+mt
-source-wordcount: '833'
+source-wordcount: '806'
 ht-degree: 0%
 
 ---
@@ -24,14 +24,14 @@ I bilagan till den här självstudiekursen finns dessutom mer information om hur
 
 Den här självstudien kräver en fungerande förståelse av följande komponenter i [!DNL Platform]:
 
-- [[!DNL Experience Data Model (XDM-system)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
-- [[!DNL Batch-ingång]](../batch-ingestion/overview.md): Den metod som används för att [!DNL Platform] importera data från datafiler som användaren anger.
+- [[!DNL Experience Data Model (XDM System)]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
+- [[!DNL Batch ingestion]](../batch-ingestion/overview.md): Den metod som används för att [!DNL Platform] importera data från datafiler som användaren anger.
 
 Den här självstudien kräver också att du redan har skapat en datauppsättning att importera dina CSV-data till. Anvisningar om hur du skapar en datauppsättning i användargränssnittet finns i [självstudiekursen](./ingest-batch-data.md)om dataimport.
 
 ## Välj ett mål
 
-Logga in på [[!DNL Adobe Experience Platform]](https://platform.adobe.com) och välj sedan **[!UICONTROL Workflows]** i det vänstra navigeringsfältet för att komma åt **[!UICONTROL Workflows]** arbetsytan.
+Logga in på [[!DNL Adobe Experience Platform]](https://platform.adobe.com) och välj sedan **[!UICONTROL Workflows]** från det vänstra navigeringsfältet för att komma åt **[!UICONTROL Workflows]** arbetsytan.
 
 På **[!UICONTROL Workflows]** skärmen väljer du **[!UICONTROL Map CSV to XDM schema]** under **[!UICONTROL Data ingestion]** avsnittet och sedan **[!UICONTROL Launch]**.
 
@@ -61,25 +61,29 @@ Avsnittet visas när filen har överförts och visar de tio första dataraderna.
 
 ## Mappa CSV-fält till XDM-schemafält
 
-Steget **[!UICONTROL Mapping]** visas. Kolumnerna i CSV-filen listas under **[!UICONTROL Source Field]**, med motsvarande XDM-schemafält listade under **[!UICONTROL Target Field]**. Omarkerade målfält markeras med röda konturer. Du kan använda filterfältalternativet för att begränsa listan med tillgängliga källfält.
+Steget **[!UICONTROL Mapping]** visas. Kolumnerna i CSV-filen listas under **[!UICONTROL Source Field]**, med motsvarande XDM-schemafält listade under **[!UICONTROL Target Field]**.
 
->[!TIP]
->
->[!DNL Platform] innehåller intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du har valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall.
+[!DNL Platform] ger automatiskt intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du har valt. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall.
 
-Om du vill mappa en CSV-kolumn till ett XDM-fält väljer du schemaikonen bredvid kolumnens motsvarande målfält.
+![](../images/tutorials/map-a-csv-file/mapping-with-suggestions.png)
 
-![](../images/tutorials/map-a-csv-file/mapping.png)
+Om du vill acceptera alla värden för automatisk generering av mappning markerar du kryssrutan &quot;[!UICONTROL Accept all target fields]&quot;.
 
-Fönstret **[!UICONTROL Select schema field]** visas. Här kan du navigera i XDM-schemats struktur och leta upp det fält som du vill mappa CSV-kolumnen till. Klicka på ett XDM-fält för att markera det och klicka sedan på **[!UICONTROL Select]**.
+![](../images/tutorials/map-a-csv-file/filled-mapping-with-suggestions.png)
 
-![](../images/tutorials/map-a-csv-file/select-schema-field.png)
+Ibland finns det mer än en rekommendation för källschemat. När detta inträffar visas den mest framträdande rekommendationen på mappningskortet, följt av en blå cirkel som innehåller antalet tillgängliga ytterligare rekommendationer. Om du väljer glödlampsikonen visas en lista med ytterligare rekommendationer. Du kan välja en av de alternativa rekommendationerna genom att markera kryssrutan bredvid den rekommendation du vill mappa till i stället.
 
-När du har slutfört stegen för de återstående omappade källfälten visas skärmen igen och det markerade XDM-fältet visas nu under **[!UICONTROL Mapping]** **[!UICONTROL Target Field]**.
+![](../images/tutorials/map-a-csv-file/multiple-recommendations.png)
 
-![](../images/tutorials/map-a-csv-file/field-mapped.png)
+Du kan också välja att manuellt mappa källschemat till målschemat. Håll pekaren över det källschema som du vill mappa och välj sedan plusikonen.
 
-När du mappar fält kan du även inkludera funktioner för att beräkna värden baserat på indatakällfält. Mer information finns i avsnittet om [mappningsfunktioner](#mapping-functions) i bilagan.
+![](../images/tutorials/map-a-csv-file/mapping-with-suggestions-and-buttons.png)
+
+Skruvningen **[!UICONTROL Map source to target field]** visas. Här kan du välja vilket fält som du vill mappa och sedan lägga **[!UICONTROL Save]** till din nya mappning.
+
+![](../images/tutorials/map-a-csv-file/manual-mapping.png)
+
+Om du vill ta bort en av mappningarna för du pekaren över mappningen och väljer minusikonen.
 
 ### Lägg till beräknat fält
 
@@ -87,7 +91,7 @@ Beräknade fält tillåter att värden skapas baserat på attributen i indatabla
 
 Klicka på **[!UICONTROL Add calculated field]** knappen för att fortsätta.
 
-![](../images/tutorials/map-a-csv-file/add-calculate-field.png)
+![](../images/tutorials/map-a-csv-file/add-calculated-field.png)
 
 Panelen **[!UICONTROL Create calculated field]** visas. Den vänstra dialogrutan innehåller de fält, funktioner och operatorer som stöds i beräkningsfält. Välj en av flikarna för att börja lägga till funktioner, fält eller operatorer i uttrycksredigeraren.
 
@@ -96,33 +100,23 @@ Panelen **[!UICONTROL Create calculated field]** visas. Den vänstra dialogrutan
 | Tabb | Beskrivning |
 | --------- | ----------- |
 | Fält | Fliken Fält visar de fält och attribut som är tillgängliga i källschemat. |
-| Funktioner | På fliken Funktioner visas de funktioner som är tillgängliga för att omforma data. |
+| Funktioner | På fliken Funktioner visas de funktioner som är tillgängliga för att omforma data. Om du vill veta mer om de funktioner du kan använda i beräkningsfält kan du läsa guiden om hur du [använder datapersonfunktioner](../../data-prep/functions.md)(Mapper). |
 | Operatorer | På fliken Operatorer visas de operatorer som är tillgängliga för att omforma data. |
 
 Du kan lägga till fält, funktioner och operatorer manuellt med uttrycksredigeraren i mitten. Välj redigeraren för att börja skapa ett uttryck.
 
-![](../images/tutorials/map-a-csv-file/expression-editor.png)
+![](../images/tutorials/map-a-csv-file/create-calculated-field.png)
 
 Välj **[!UICONTROL Save]** att fortsätta.
 
 Mappningsskärmen visas igen med det nya källfältet. Tillämpa motsvarande målfält och välj **[!UICONTROL Finish]** för att slutföra mappningen.
 
-![](../images/tutorials/map-a-csv-file/new-field.png)
+![](../images/tutorials/map-a-csv-file/new-calculated-field.png)
 
 ## Övervaka dataflödet
 
 När CSV-filen har mappats och skapats kan du övervaka de data som hämtas genom den. Mer information om att övervaka dataflöden finns i självstudiekursen om [övervakning av dataflöden](../../ingestion/quality/monitor-data-flows.md)för direktuppspelning.
 
-## Använda mappningsfunktioner
-
-Om du vill använda en funktion skriver du in den under **[!UICONTROL Source Field]** med lämplig syntax och indata.
-
-Om du till exempel vill sammanfoga CSV-fält för stad och land och tilldela dem till XDM-fältet för stad anger du källfältet som `concat(city, ", ", county)`.
-
-![](../images/tutorials/map-a-csv-file/mapping-function.png)
-
-Mer information om hur du mappar kolumner till XDM-fält finns i guiden om hur du [använder datapersonfunktioner](../../data-prep/functions.md)(Mapper).
-
 ## Nästa steg
 
-I den här självstudiekursen har du mappat en platt CSV-fil till ett XDM-schema och infogat den [!DNL Platform]. Dessa data kan nu användas av [!DNL Platform] tjänster längre fram i kedjan, till exempel [!DNL Real-time Customer Profile]. Mer information finns i översikten för [[!DNL Real-time Customer Profile]](../../profile/home.md) .
+I den här självstudiekursen har du mappat en platt CSV-fil till ett XDM-schema och infogat den [!DNL Platform]. Dessa data kan nu användas av [!DNL Platform] tjänster längre fram i kedjan, till exempel [!DNL Real-time Customer Profile]. Se översikten för [[!DNL Real-time Customer Profile]](../../profile/home.md) mer information.
