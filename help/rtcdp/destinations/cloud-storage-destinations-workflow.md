@@ -6,9 +6,9 @@ type: Tutorial
 description: Instruktioner för att ansluta till lagringsplatser i molnet
 seo-description: Instruktioner för att ansluta till lagringsplatser i molnet
 translation-type: tm+mt
-source-git-commit: 5238d98db0554d34c2b0bcd28b64354f544faa0f
+source-git-commit: 42b694c532f140b51913ba5ceb0aaeacc2263039
 workflow-type: tm+mt
-source-wordcount: '493'
+source-wordcount: '521'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ På den här sidan beskrivs hur du kan ansluta till molnlagringsplatser i kundda
    >
    >Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]** knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](/help/rtcdp/destinations/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
 
-2. Om du tidigare har konfigurerat en anslutning till molnlagringsmålet markerar du den befintliga anslutningen i **[!UICONTROL Authentication]** steget **[!UICONTROL Existing Account]** . Du kan också välja **[!UICONTROL New Account]** att konfigurera en ny anslutning till molnlagringsmålet. Fyll i autentiseringsuppgifter för ditt konto och välj **[!UICONTROL Connect to destination]**. <br> Mer information om inloggningsuppgifter finns i [Amazon S3](/help/rtcdp/destinations/amazon-s3-destination.md) -målet, [[!DNL Amazon Kinesis]](/help/rtcdp/destinations/amazon-kinesis-destination.md) -målet, - [[!DNL Azure Event Hubs]](/help/rtcdp/destinations/azure-event-hubs-destination.md) målet och [SFTP](/help/rtcdp/destinations/sftp-destination.md) -målet i **autentiseringssteget** .
+2. Om du tidigare har konfigurerat en anslutning till molnlagringsmålet markerar du den befintliga anslutningen i **[!UICONTROL Authentication]** steget **[!UICONTROL Existing Account]** . Du kan också välja **[!UICONTROL New Account]** att konfigurera en ny anslutning till molnlagringsmålet. Fyll i autentiseringsuppgifter för ditt konto och välj **[!UICONTROL Connect to destination]**. Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Observera att den här offentliga nyckeln **måste** skrivas som en Base64-kodad sträng. <br> Mer information om inloggningsuppgifter finns i [Amazon S3](/help/rtcdp/destinations/amazon-s3-destination.md) -målet, [[!DNL Amazon Kinesis]](/help/rtcdp/destinations/amazon-kinesis-destination.md) -målet, - [[!DNL Azure Event Hubs]](/help/rtcdp/destinations/azure-event-hubs-destination.md) målet och [SFTP](/help/rtcdp/destinations/sftp-destination.md) -målet i **autentiseringssteget** .
 
    >[!NOTE]
    >
