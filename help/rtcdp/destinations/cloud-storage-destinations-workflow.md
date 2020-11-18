@@ -6,7 +6,7 @@ type: Tutorial
 description: Instruktioner för att ansluta till lagringsplatser i molnet
 seo-description: Instruktioner för att ansluta till lagringsplatser i molnet
 translation-type: tm+mt
-source-git-commit: 42b694c532f140b51913ba5ceb0aaeacc2263039
+source-git-commit: d72f392bc3b47bb23ed36b3d1d218373f62b4679
 workflow-type: tm+mt
 source-wordcount: '521'
 ht-degree: 0%
