@@ -5,9 +5,9 @@ audience: user
 user-guide-title: Handbok för kunddataplattform i realtid
 user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgruppssegment utifrån dessa profiler och aktivera dessa segment för tredjepartsdestinationer.
 translation-type: tm+mt
-source-git-commit: 2a4d55b2d429fbeb1459a6bd095b0bc39d52917d
+source-git-commit: 8fa7642f90653ba11ad6ff90175a4bb705ae6d80
 workflow-type: tm+mt
-source-wordcount: '513'
+source-wordcount: '520'
 ht-degree: 3%
 
 ---
@@ -102,6 +102,9 @@ ht-degree: 3%
          * [Salesforce Marketing Cloud](destinations/salesforce-marketing-cloud-destination.md)
       * Experience Platform Launch-tillägg{#launch-extensions}
          * [Översikt över Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md)
+      * Mobildestinationer {#mobile}
+         * [Översikt över mobildestinationer](destinations/mobile-destinations.md)
+         * [Braze destination](destinations/braze-destination.md)
       * Destinationer för personalisering {#personalization-destinations}
          * [Översikt över destinationer för personalisering](/help/rtcdp/destinations/personalization-destinations.md)
          * [Adobe Target-tillägg](/help/rtcdp/destinations/adobe-target-extension.md)
