@@ -1,23 +1,22 @@
 ---
 keywords: mobile messaging;mobile messaging destinations;Braze; Airship
-title: Mobildestinationer
-seo-title: Mobildestinationer
-description: Infoga användningsexempel för mobila destinationer
-seo-description: Infoga användningsexempel för mobila destinationer
+title: Destinationer för mobilengagemang
+seo-title: Destinationer för mobilengagemang
+description: Adobe Experience Platform stöder de mål för mobilengagemang som listas nedan
+seo-description: Adobe Experience Platform stöder de mål för mobilengagemang som listas nedan
 translation-type: tm+mt
-source-git-commit: 6c8084f35c4981b41a5beecd57ce5b3ef4e409d6
+source-git-commit: 4b1bf5bbce57a22529c5d025c5bae10557400d54
 workflow-type: tm+mt
-source-wordcount: '38'
+source-wordcount: '41'
 ht-degree: 0%
 
 ---
 
 
-# Mobildestinationer {#mobile-destinations}
+# Destinationer för mobilengagemang {#mobile-destinations}
 
-Infoga en beskrivning för mobila destinationer
+[!DNL Adobe Experience Platform] har för närvarande stöd för följande mål för mobilengagemang:
 
-[!DNL Adobe Experience Platform] har för närvarande stöd för följande mobildestinationer:
-
-* Airship - infoga länk till sidan med luftfartygsdokumentation
+* [Attribut för luftskepp](airship-attributes-destination.md)
+* [Luftfartygstaggar](airship-tags-destination.md)
 * [Braze](braze-destination.md)
