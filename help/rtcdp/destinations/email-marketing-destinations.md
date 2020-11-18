@@ -6,9 +6,9 @@ type: Tutorial
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 seo-description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 translation-type: tm+mt
-source-git-commit: 42b694c532f140b51913ba5ceb0aaeacc2263039
+source-git-commit: 425287d78deebf0113d6cf6350bcb516c99ee995
 workflow-type: tm+mt
-source-wordcount: '820'
+source-wordcount: '823'
 ht-degree: 0%
 
 ---
@@ -54,7 +54,7 @@ På **[!UICONTROL Select Segments]** sidan väljer du vilka segment som ska skic
 
 ## Konfigurera filnamn
 
-Mer information om redigeringsalternativen för filnamn finns i [konfigurationssteget](/help/rtcdp/destinations/activate-destinations.md#configure) i självstudiekursen om aktiveringsmål.
+Mer information om redigeringsalternativen för segmentschema och filnamn finns i [konfigurationssteget](/help/rtcdp/destinations/activate-destinations.md#configure) i självstudiekursen om aktiveringsmål.
 
 ## Välj attribut - Välj vilka schemafält som ska användas som målattribut i de exporterade filerna {#destination-attributes}
 
