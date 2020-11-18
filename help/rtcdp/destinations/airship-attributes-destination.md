@@ -1,19 +1,19 @@
 ---
 keywords: airship attributes;airship destination
-title: Destination för luftfartygsattribut
-seo-title: Destination för luftfartygsattribut
+title: Mål för luftfartygsattribut
+seo-title: Mål för luftfartygsattribut
 description: Skicka smidigt data från Adobe till Airship som målgruppsattribut för målinriktning inom Airship.
 seo-description: Skicka smidigt data från Adobe till Airship som målgruppsattribut för målinriktning inom Airship.
 translation-type: tm+mt
-source-git-commit: 0e065bbc0917d5009738b4cae890ffd13c0ab154
+source-git-commit: 4b1bf5bbce57a22529c5d025c5bae10557400d54
 workflow-type: tm+mt
-source-wordcount: '1187'
+source-wordcount: '1186'
 ht-degree: 1%
 
 ---
 
 
-# (Beta) [!DNL Airship Attributes] Destination {#airship-attributes-destination}
+# (Beta) [!DNL Airship Attributes] -mål {#airship-attributes-destination}
 
 >[!IMPORTANT]
 >
@@ -57,19 +57,19 @@ Adobe Experience Platform-profilattribut liknar [!DNL Airship] attribut och kan 
 1. Klicka **[!UICONTROL Create Token]** och spara informationen konfidentiellt.
 
 
-## Use Cases {#use-cases}
+## Användningsfall {#use-cases}
 
 För att du bättre ska förstå hur och när du ska använda [!DNL Airship Attributes] destinationen finns exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här destinationen.
 
-### Användningsfall 1
+### Använd skiftläge 1
 
 Utnyttja profildata som samlats in inom Adobe Experience Platform för personalisering av budskapet och multimediematerial i någon av [!DNL Airship]dess kanaler. Använd till exempel [!DNL Experience Platform] profildata för att ange platsattribut i [!DNL Airship]. På så sätt kan ett hotellmärke visa en bild för varje användares närmaste hotell.
 
-### Användningsfall nr 2
+### Använd skiftläge 2
 
 Utnyttja attribut från Adobe Experience Platform för att ytterligare berika [!DNL Airship] profiler och kombinera dem med SDK eller [!DNL Airship] prediktiva data. En återförsäljare kan t.ex. skapa ett segment med lojalitetsstatus och platsdata (attribut från Platform) och [!DNL Airship] förutspås omdirigera data för att skicka extremt målinriktade meddelanden till användare med guldlojalitetsstatus som bor i Las Vegas, NV, och som har stor sannolikhet för kurning.
 
-## Anslut till [!DNL Airship] attribut {#connect-airship-attributes}
+## Anslut till [!DNL Airship Attributes] {#connect-airship-attributes}
 
 1. Bläddra till **[!UICONTROL Destinations]** kategorin i **[!UICONTROL Catalog]**> **[!UICONTROL Mobile Engagement]** . Markera **[!DNL Airship Attributes]** och markera sedan **[!UICONTROL Configure]**.
 
