@@ -1,11 +1,11 @@
 ---
 keywords: mobile; braze; messaging;
-title: Braze Destination
-seo-title: Braze Destination
+title: Braze destination
+seo-title: Braze destination
 description: Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar.
 seo-description: Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar.
 translation-type: tm+mt
-source-git-commit: 9126a9b3a27aa0a0ecefb5d490475423d7840791
+source-git-commit: 4b1bf5bbce57a22529c5d025c5bae10557400d54
 workflow-type: tm+mt
 source-wordcount: '871'
 ht-degree: 0%
@@ -57,6 +57,7 @@ Som marknadsförare vill jag rikta in mig på användare i ett mål för mobilen
    >![Aktivera Braze Destination](assets/braze-destination-activate.png)
 
 1. I [!UICONTROL Account] steget måste du ange din [!DNL Braze] kontotoken. Det här är din [!DNL Braze] [!DNL API] nyckel. Här finns detaljerade instruktioner om hur du får fram din [!DNL API] nyckel: [REST API Key Overview](https://www.braze.com/docs/api/api_key/). Ange token och klicka på **[!UICONTROL Connect to destination]**.
+
    ![Steg för Braze Destination Account](assets/braze-destination-account.png)
 
 1. Klicka på **[!UICONTROL Next]**.
