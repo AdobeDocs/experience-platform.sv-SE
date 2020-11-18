@@ -6,9 +6,9 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i kunddataplattformen i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i kunddataplattformen i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: 74f49db15028aa27fc7ee73a79ea236ee42f37e8
+source-git-commit: bb59d93e016d49a0ebba77af1f90563a8767f072
 workflow-type: tm+mt
-source-wordcount: '1521'
+source-wordcount: '1691'
 ht-degree: 0%
 
 ---
@@ -78,7 +78,19 @@ Gäller för: Destinationer för e-postmarknadsföring och molnlagring
 
 ![Konfigurera steg](./assets/configure-icon.png)
 
-I **[!UICONTROL Configure]** steget kan du konfigurera filnamnen för varje segment som du exporterar. Det är valfritt att konfigurera filnamnet.
+I **[!UICONTROL Configure]** steget kan du konfigurera schemat och filnamnen för varje segment som du exporterar. Det är obligatoriskt att konfigurera schemat, men det är valfritt att konfigurera filnamnet.
+
+Om du vill lägga till ett schema för segmentet väljer du **[!UICONTROL Create schedule]**.
+
+![](./assets/activate-destinations/configure-destination-schedule.png)
+
+En pover visas med alternativ för att skapa segmentschemat.
+
+- **Filexport**: Du kan antingen exportera hela eller inkrementella filer. När du exporterar en fullständig fil publiceras en fullständig ögonblicksbild av alla profiler som är kvalificerade för det segmentet. När du exporterar en inkrementell fil publiceras det delta i profiler som är kvalificerade för det segmentet sedan den senaste exporten.
+- **Frekvens**: Om du **[!UICONTROL Export full files]** väljer det här alternativet kan du exportera **[!UICONTROL Once]** eller **[!UICONTROL Daily]**. Om **[!UICONTROL Export incremental files]** alternativet är markerat kan du bara exportera **[!UICONTROL Daily]**. När du exporterar en fil **[!UICONTROL Once]** exporteras den en gång. Vid export av en fil **[!UICONTROL Daily]** exporteras filen varje dag från startdatumet till slutdatumet kl. 12:00 UTC (7:00 PM EST) om fullständiga filer har valts och kl. 12:00 UTC (7:00 AM EST) om inkrementella filer har valts.
+- **Datum**: Om du **[!UICONTROL Once]** väljer det här alternativet kan du välja datumet för engångsexporten. Om du **[!UICONTROL Daily]** väljer det här alternativet kan du välja start- och slutdatum för exporten.
+
+![](./assets/activate-destinations/export-full-file.png)
 
 Standardfilnamnen består av målnamn, segment-ID och datum- och tidsindikator. Du kan till exempel redigera de exporterade filnamnen för att skilja mellan olika kampanjer eller för att lägga till tiden för dataexport till filerna.
 
