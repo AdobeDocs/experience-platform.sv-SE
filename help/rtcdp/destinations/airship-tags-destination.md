@@ -1,11 +1,11 @@
 ---
 keywords: airship tags;airship destination
 title: Destination för luftfartygets taggar
-seo-title: Destination för luftfartygets taggar
+seo-title: Mål för luftfartygets taggar
 description: Skicka smidigt data från Adobe till Airship som målgruppstaggar för målinriktning inom Airship.
 seo-description: Skicka smidigt data från Adobe till Airship som målgruppstaggar för målinriktning inom Airship.
 translation-type: tm+mt
-source-git-commit: f08b90531455cdbeb73deb83eed05ba7a9b19df6
+source-git-commit: 4b1bf5bbce57a22529c5d025c5bae10557400d54
 workflow-type: tm+mt
 source-wordcount: '1178'
 ht-degree: 1%
@@ -13,7 +13,7 @@ ht-degree: 1%
 ---
 
 
-# (Beta) [!DNL Airship Tags] Destination {#airship-tags-destination}
+# (Beta) [!DNL Airship Tags] -mål {#airship-tags-destination}
 
 >[!IMPORTANT]
 >
@@ -63,15 +63,15 @@ Mer information om hur du skapar tagggruppen finns i [Hantera tagggrupper](https
 1. Klicka **[!UICONTROL Create Token]** och spara informationen konfidentiellt.
 
 
-## Användningsexempel
+## Användningsfall
 
 För att du bättre ska förstå hur och när du ska använda [!DNL Airship Tags] destinationen finns exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här destinationen.
 
-### Användningsfall 1
+### Använd skiftläge 1
 
 Återförsäljare eller underhållningsplattformar kan skapa användarprofiler för sina lojalitetskunder och skicka in dessa segment [!DNL Airship] för att rikta meddelanden till mobilkampanjer.
 
-### Användningsfall nr 2
+### Använd skiftläge 2
 
 Utlös personliga meddelanden i realtid när användare faller in i eller ut ur specifika segment inom Adobe Experience Platform.
 
