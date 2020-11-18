@@ -3,11 +3,11 @@ keywords: RTCDP;rtcdp
 title: Arbetsytan Destinationer
 seo-title: Arbetsytan Destinationer
 description: Arbetsytan Destinationer består av fyra avsnitt, Katalog, Bläddra, Konton och Systemvy, som beskrivs i avsnitten nedan.
-seo-description: I Adobe Real-time Customer Data Platform väljer du Destinationer i det vänstra navigeringsfältet för att komma åt målarbetsytan.
+seo-description: Välj Destinationer i det vänstra navigeringsfältet i kunddataplattformen i realtid för att komma åt målarbetsytan.
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: a3e35dee98b7b2758a4246a63bb0e1bde6b2f165
 workflow-type: tm+mt
-source-wordcount: '764'
+source-wordcount: '840'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 1%
 
 # Arbetsytan Destinationer {#destinations-workspace}
 
-I Adobe Customer Data Platform för realtid väljer du **[!UICONTROL Destinations]** i det vänstra navigeringsfältet för att komma åt [!UICONTROL Destinations] arbetsytan.
+I kunddataplattformen i realtid väljer du **[!UICONTROL Destinations]** i det vänstra navigeringsfältet för att komma åt [!UICONTROL Destinations] arbetsytan.
 
 Arbetsytan består [!UICONTROL Destinations] av fyra avsnitt, [!UICONTROL Catalog], [!UICONTROL Browse], [!UICONTROL Accounts]och [!UICONTROL System View], som beskrivs i avsnitten nedan.
 
@@ -23,13 +23,13 @@ Arbetsytan består [!UICONTROL Destinations] av fyra avsnitt, [!UICONTROL Catalo
 
 ## [!UICONTROL Catalog] {#catalog}
 
-På fliken **[!UICONTROL Catalog]** visas en lista med alla mål som är tillgängliga i CDP i realtid i Adobe som du kan skicka data till.
+På fliken **[!UICONTROL Catalog]** visas en lista med alla mål som är tillgängliga i CDP i realtid och som du kan skicka data till.
 
-Användargränssnittet för CDP i realtid i Adobe innehåller ett antal sök- och filteralternativ på katalogsidan för mål:
+Användargränssnittet för CDP i realtid innehåller ett antal sök- och filteralternativ på katalogsidan för mål:
 
 * Använd sökfunktionen på sidan för att hitta ett specifikt mål.
 * Filtrera mål med hjälp av [!UICONTROL Categories] kontrollen.
-* Växla mellan [!UICONTROL All destinations] och [!UICONTROL My destinations]. När **[!UICONTROL All destinations]** är markerat visas alla tillgängliga CDP-mål i realtid i Adobe. När **[!UICONTROL My destinations]** är markerat kan du bara se de mål som du har upprättat en anslutning till.
+* Växla mellan [!UICONTROL All destinations] och [!UICONTROL My destinations]. När **[!UICONTROL All destinations]** är markerat visas alla tillgängliga CDP-mål i realtid. När **[!UICONTROL My destinations]** är markerat kan du bara se de mål som du har upprättat en anslutning till.
 * Välj för att visa **[!UICONTROL Connections]** och/eller **[!UICONTROL Extensions]**. Mer information om skillnaden mellan de två kategorierna finns i [Måltyper och kategorier](/help/rtcdp/destinations/destination-types.md).
 
 ![målgruppsfiltrering och sökdemo](/help/rtcdp/destinations/assets/destinations-search-and-filter.gif)
@@ -60,7 +60,7 @@ På fliken **[!UICONTROL Accounts]** kan du lära dig mer om anslutningar som du
 >
 >Använd knappen ![](/help/rtcdp/destinations/assets/add-data-symbol.png) Lägg till data i **[!UICONTROL Platform]** kolumnen för att skapa en ny målanslutning för det kontot.
 
-![Fliken Konton](/help/rtcdp/destinations/assets/accounts-tab.png)
+![Fliken Konton](./assets/workspace/edit-account-destinations.png)
 
 | Element | Beskrivning |
 ---------|----------
@@ -69,6 +69,18 @@ På fliken **[!UICONTROL Accounts]** kan du lära dig mer om anslutningar som du
 | [!UICONTROL Username] | Användarnamnet som du valde i [målguiden](/help/rtcdp/destinations/email-marketing-destinations.md#connect-destination)för anslutning. |
 | [!UICONTROL Destinations] | Representerar antalet unika lyckade målflöden som är kopplade till grundläggande information som skapats för ett mål. |
 | [!UICONTROL Authorized] | Det datum då anslutningen till det här målet auktoriserades. |
+
+Dessutom kan du redigera eller uppdatera din kontoinformation. Klicka på knappen ![](./assets/workspace/pencil-icon.png) Redigera konto i **[!UICONTROL Platform]** kolumnen om du vill redigera kontoinformationen.
+
+För konton som använder en `OAuth2` anslutningstyp kan du välja **[!UICONTROL Reconnect OAuth]** att förnya dina kontoinloggningsuppgifter.
+
+![Oauth-bild](./assets/workspace/reconnect-oauth.png)
+
+För konton som använder en `Access Key` - eller `ConnectionString` anslutningstyp kan du redigera din kontoautentiseringsinformation, inklusive information som åtkomst-ID, hemliga nycklar eller anslutningssträngar.
+
+![Kontoinformationsbild](./assets/workspace/edit-account-details.png)
+
+När du är klar med redigeringen av din kontoinformation väljer du **[!UICONTROL Save]** att slutföra uppdateringen.
 
 ## [!UICONTROL Browse] {#browse}
 
