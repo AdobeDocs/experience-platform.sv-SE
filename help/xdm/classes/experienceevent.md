@@ -5,9 +5,9 @@ title: Klassen XDM ExperienceEvent
 topic: overview
 description: Det här dokumentet innehåller en översikt över klassen XDM ExperienceEvent.
 translation-type: tm+mt
-source-git-commit: 4d109244e57799c7e3837ceee3e2f5d17fbf0a18
+source-git-commit: 9e55e9ef6c619a952ca7519ca05dab59da2c573b
 workflow-type: tm+mt
-source-wordcount: '789'
+source-wordcount: '786'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Själva [!DNL XDM ExperienceEvent] klassen tillhandahåller flera tidsserierelat
 | `eventMergeId` | ID:t för den inkapslade batchen som gjorde att posten skapades. Det här fältet fylls i automatiskt av systemet när data hämtas. |
 | `eventType` | En sträng som anger postens primära händelsetyp. Godkända värden och deras definitioner finns i [avsnittet](#eventType)Bilaga. |
 | `identityMap` | Ett kartfält som innehåller en uppsättning namngivna identiteter för den person som händelsen gäller för. Det här fältet uppdateras automatiskt av systemet när identitetsdata hämtas. Om du vill kunna använda det här fältet för kundprofil [i](../../profile/home.md)realtid ska du inte försöka uppdatera fältets innehåll manuellt i dataåtgärderna.<br /><br />I avsnittet om identitetskartor i [grunderna för schemakomposition](../schema/composition.md#identityMap) finns mer information om hur de används. |
-| `timestamp` | Den tid då händelsen eller observationen inträffade. Alla datetime-värden måste anges i [RFC 339](https://tools.ietf.org/html/rfc3339) -format. |
+| `timestamp` | Den tidpunkt då händelsen eller observationen inträffade, formaterad enligt [RFC 339, avsnitt 5.6](https://tools.ietf.org/html/rfc3339#section-5.6)). |
 
 ## Kompatibla blandningar {#mixins}
 
