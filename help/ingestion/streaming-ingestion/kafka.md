@@ -5,9 +5,9 @@ title: Kafka-kontakt
 topic: overview
 description: Strömkopplingen för Adobe Experience Platform baseras på Apache Kafka Connect. Det här biblioteket kan användas för att direktuppspela JSON-händelser från Kafka-avsnitt i ditt datacenter direkt till Experience Platform i realtid.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 7fc7f0e525d994904dc71b1eb7136f11c05d5672
 workflow-type: tm+mt
-source-wordcount: '181'
+source-wordcount: '177'
 ht-degree: 0%
 
 ---
@@ -22,4 +22,4 @@ Strömkopplingen är en enkelriktad koppling som levererar data från [!DNL Kafk
 - Autentiserad datainsamling
 - Gruppera meddelanden för att minska nätverksanrop och öka genomströmningen
 
-Mer information om [!DNL Kafka] anslutningen, inklusive anvisningar om hur du konfigurerar anslutningen, finns i guiden [](https://github.com/adobe/experience-platform-streaming-connect)Komma igång. Mer information om arbetsflödet finns i [utvecklarhandboken](https://github.com/adobe/experience-platform-streaming-connect/blob/master/DEVELOPER_GUIDE.md).
+Mer information om [!DNL Kafka] anslutningen, inklusive anvisningar om hur du konfigurerar anslutningen, finns i guiden [](https://github.com/adobe/experience-platform-streaming-connect)Komma igång. Mer information om arbetsflödet finns i [utvecklarhandboken](https://www.adobe.com/go/kafka-connector-developer-guide).
