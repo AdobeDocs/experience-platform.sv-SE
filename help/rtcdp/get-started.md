@@ -1,23 +1,23 @@
 ---
 keywords: RTCDP;CDP;Real-time Customer Data Platform;real time customer data platform;real time cdp;cdp;rtcdp
-title: Komma igång med Adobe kunddataplattform i realtid
-seo-title: Komma igång med Adobe kunddataplattform i realtid
-description: Exempelscenario för Adobe kunddataplattform i realtid
-seo-description: Exempelscenario för Adobe kunddataplattform i realtid
+title: Komma igång med kunddataplattformen i realtid
+seo-title: Komma igång med kunddataplattformen i realtid
+description: Exempelscenario för kunddataplattform i realtid
+seo-description: Exempelscenario för kunddataplattform i realtid
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '2321'
+source-wordcount: '2313'
 ht-degree: 0%
 
 ---
 
 
-# Komma igång med Adobe kunddataplattform i realtid
+# Komma igång med kunddataplattformen i realtid
 
-Den här guiden leder dig genom en exempelimplementering av kunddataplattformen Adobe Real-time (CDP). Du kan använda det som exempel när du konfigurerar en egen implementering. Även om den här guiden innehåller specifika exempel länkas den till ytterligare information som du kan använda när du skapar din konfiguration.
+Den här guiden leder dig genom en exempelimplementering av kunddataplattformen i realtid (CDP). Du kan använda det som exempel när du konfigurerar en egen implementering. Även om den här guiden innehåller specifika exempel länkas den till ytterligare information som du kan använda när du skapar din konfiguration.
 
-I det här exemplet visas styrkan hos Adobe Real-time Customer Data Platform, som drivs av Adobe Experience Platform, att:
+I det här exemplet visas kraften i kunddataplattformen i realtid, som drivs av Adobe Experience Platform, för att:
 
 * Hämta in data från flera källor
 * Sammanfoga dem i en enda [!DNL real-time customer profile]
@@ -121,7 +121,7 @@ Det personliga innehållet hjälper Sarah att snabbt hitta relevanta objekt. Det
 
 Sarah blir distraherad och lämnar sajten. Luma kan använda sina data i Adobe Experience Platform för att ta med henne till webbplatsen.
 
-Adobe kunddataplattform i realtid, som drivs av Adobe Experience Platform, är framtagen för kundupplevelsehantering. Med programmet kan man
+Real-time Customer Data Platform, som drivs av Adobe Experience Platform, är byggd för kundupplevelsehantering. Med programmet kan man
 
 * Förenkla integrering och aktivering av data
 * Styr känd och okänd dataanvändning
