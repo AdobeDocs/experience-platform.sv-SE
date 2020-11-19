@@ -2,12 +2,12 @@
 keywords: PebblePost;pebblepost;PebblePost Programmatic Direct Mail;pebblepost programmatic direct mail
 title: PebblePost-tillägg
 seo-title: PebblePost-tillägg
-description: PebblePost-tillägget är ett e-postmål i kunddataplattformen i realtid i Adobe. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget PebblePost är ett e-postmål i kunddataplattformen i Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: PebblePost-tillägget är ett e-postmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: PebblePost-tillägget är ett e-postmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 6eabcd70b133051205b669253f280cb92c24412f
 workflow-type: tm+mt
-source-wordcount: '576'
+source-wordcount: '573'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 [!DNL PebblePost's Programmatic Direct Mail®] som hjälper digitala marknadsförare att koppla samman online-intressen och avsikter med online-offlinematerial som konverterar. Marknadsförarna kan utnyttja de anpassade datasegment som de har skapat i Adobe för att nu rikta sig till konsumenterna med ett relevant, långvarigt mediefunktioner i hemmet. Analysera prestanda i realtid baserat på responssökvägsaktivitet och konverteringar på plats.
 
-[!DNL PebblePost] är ett e-posttillägg i kunddataplattformen Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100315.programmatic-direct-mail.html).
+[!DNL PebblePost] är ett e-posttillägg i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100315.programmatic-direct-mail.html).
 
 Det här målet är ett Adobe Experience Platform Launch-tillägg. Mer information om hur plattformstillägg fungerar i CDP i realtid i Adobe finns i Översikt över [Adobe Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
 
