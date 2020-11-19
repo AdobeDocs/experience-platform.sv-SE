@@ -5,9 +5,9 @@ seo-title: Sidan Destinationsinformation
 description: 'På informationssidan för ett enskilt mål finns en översikt över målinformationen, t.ex. målnamn, ID, segment som är mappade till målet samt kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet. '
 seo-description: 'På informationssidan för ett enskilt mål finns en översikt över målinformationen, t.ex. målnamn, ID, segment som är mappade till målet samt kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet. '
 translation-type: tm+mt
-source-git-commit: 0c2acd79492c474ba664ce32d1592969da71f385
+source-git-commit: ff36899f455848584ab2f5e236812795d2c81681
 workflow-type: tm+mt
-source-wordcount: '640'
+source-wordcount: '639'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ I Adobe Experience Platform användargränssnitt kan du visa och övervaka attri
 >
 >Målinformationssidan är en del av arbetsytan i användargränssnittet för plattformen. [!UICONTROL Destinations] Mer information finns i översikten över [[!UICONTROL Destinations]](./destinations-workspace.md) arbetsytan.
 
-Navigera till fliken och markera namnet på ett gruppmål som du vill visa på arbetsytan i plattformens användargränssnitt **[!UICONTROL Destinations]** **[!UICONTROL Browse]** .
+Gå till fliken och markera namnet på det mål som du vill visa på arbetsytan i Plattformsgränssnittet **[!UICONTROL Destinations]** . Gå till **[!UICONTROL Browse]** fliken.
 
 ![](./assets/details-page/select-destination.png)
 
