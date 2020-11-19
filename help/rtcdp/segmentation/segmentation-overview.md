@@ -1,12 +1,12 @@
 ---
 keywords: segmentation; segmentation rtcdp;real time customer data platform segmentation
 title: Översikt över segmenteringstjänsten
-seo-title: Segmenteringstjänst i Adobe kunddataplattform i realtid
+seo-title: Segmenteringstjänst i kunddataplattform i realtid
 description: CDP i realtid är byggt på Adobe Experience Platform och utnyttjar många av Experience Platform:s tjänster och funktioner. Med hjälp av segmenteringstjänsten kan ni erbjuda skräddarsydd marknadsföring genom att dela upp kunderna i mindre grupper med liknande egenskaper.
 translation-type: tm+mt
-source-git-commit: 54df4778a025811504801306120bda78e04281c1
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '274'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # [!DNL Segmentation Service] i [!DNL Real-time Customer Data Platform]
 
-[!DNL Real-time Customer Data Platform] (CDP i realtid) gör att ni kan hämta data från flera källor för att skapa en samordnad och enhetlig upplevelse för era kunder. Leverera relevanta personaliserade marknadsföringskampanjer med Adobe Experience Platform, [!DNL Segmentation Service]som ingår i programmet.
+[!DNL Real-time Customer Data Platform] (CDP i realtid) gör att ni kan hämta data från flera olika källor för att skapa en samordnad och enhetlig upplevelse för era kunder. Leverera relevanta personaliserade marknadsföringskampanjer med Adobe Experience Platform, [!DNL Segmentation Service]som ingår i programmet.
 
 CDP är byggt i realtid ovanpå Adobe Experience Platform och utnyttjar många av de [!DNL Experience Platform] tjänster och funktioner som finns. Med [!DNL Segmentation Service]hjälp av kan ni tillhandahålla skräddarsydd marknadsföring genom att dela upp kunderna i mindre grupper med liknande egenskaper.
 
