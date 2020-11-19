@@ -2,12 +2,12 @@
 keywords: QuestionPro Intercept Surveys;questionpro intercept surveys;QuestionPro;questionpro
 title: QuestionPro Intercept Surveys extension
 seo-title: QuestionPro Intercept Surveys extension
-description: Tillägget QuestionPro Intercept Surveys är en undersökningsdestination i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget QuestionPro Intercept Surveys är en undersökningsdestination i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Tillägget QuestionPro Intercept Surveys är en undersökningsdestination i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: Tillägget QuestionPro Intercept Surveys är en undersökningsdestination i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 6eabcd70b133051205b669253f280cb92c24412f
 workflow-type: tm+mt
-source-wordcount: '560'
+source-wordcount: '557'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 [!DNL QuestionPro Intercept Surveys] är en plattform för att distribuera enkäter och samla in attityddata vid transaktionstillfället eller när användare öppnar/lämnar din webbplats.
 
-[!DNL QuestionPro Intercept Surveys] är ett enkättillägg i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.90096.questionpro-surveys.html).
+[!DNL QuestionPro Intercept Surveys] är ett enkättillägg i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.90096.questionpro-surveys.html).
 
 Det här målet är ett Adobe Experience Platform Launch-tillägg. Mer information om hur plattformstillägg fungerar i CDP i realtid i Adobe finns i Översikt över [Adobe Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
 
