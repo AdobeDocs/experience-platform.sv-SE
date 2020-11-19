@@ -2,12 +2,12 @@
 keywords: Nielsen VideoJS Player Handler;nielsen video js player;nielsen videojs player;Nielsen;nielsen;Nielsen videojs player;Nielsen Digital SDK;nielsen digital sdk
 title: Nielsen VideoJS Player Handler Extension
 seo-title: Nielsen VideoJS Player Handler Extension
-description: Tillägget Nielsen VideoJS Player Handler är ett analysmål i kunddataplattformen Adobe Real-time. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Nielsen VideoJS Player Handler är ett analysmål i kunddataplattformen i Adobe. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Tillägget Nielsen VideoJS Player Handler är ett analysmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: Tillägget Nielsen VideoJS Player Handler är ett analysmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 6eabcd70b133051205b669253f280cb92c24412f
 workflow-type: tm+mt
-source-wordcount: '630'
+source-wordcount: '627'
 ht-degree: 2%
 
 ---
@@ -23,7 +23,7 @@ DCR: En mätningslösning som ger daglig mätning av icke-linjärt digitalt inne
 
 DTVR: Detta gäller för linjär TV-visning på datorer och mobila enheter för deltagande programmeringskällor. Detta är den första lösningen som får ackreditering från MRC för dess bidrag till mätning av tv-publik för programmering som visas på datorer och mobila enheter.
 
-[!DNL Nielsen VideoJS Player Handler] är ett analystillägg i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101361.nielsen-digital-sdk-extension.html).
+[!DNL Nielsen VideoJS Player Handler] är ett analystillägg i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101361.nielsen-digital-sdk-extension.html).
 
 Det här målet är ett Adobe Experience Platform Launch-tillägg. Mer information om hur plattformstillägg fungerar i CDP i realtid i Adobe finns i Översikt över [Adobe Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
 
