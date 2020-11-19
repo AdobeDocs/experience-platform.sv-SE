@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: November 10, 2020
 author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: ade9da107ee6dd100a33a7e7e9a20b4335721e0a
+source-git-commit: 5aa8dbcd85fa506f90515ce3e01d35993dd99c10
 workflow-type: tm+mt
-source-wordcount: '2055'
+source-wordcount: '2054'
 ht-degree: 2%
 
 ---
@@ -107,7 +107,7 @@ Mer information finns i dokumentet om att [skapa ett recept med Jupyter-anteckni
 
 ## [!DNL Destinations] Tjänst {#destinations}
 
-I [Adobe kunddataplattform](../../rtcdp/overview.md)i realtid är destinationer färdigbyggda integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
+I kunddataplattformen [i](../../rtcdp/overview.md)realtid är mål färdiga integreringar med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
 
 **Nya destinationer**
 
