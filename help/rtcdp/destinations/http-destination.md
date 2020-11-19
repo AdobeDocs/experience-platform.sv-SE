@@ -1,13 +1,13 @@
 ---
 keywords: streaming;
-title: HTTP-målet är en kunddataplattform i realtid i Adobe som hjälper dig att skicka profildata till HTTP-slutpunkter från tredje part.
-seo-title: HTTP-målet är en kunddataplattform i realtid i Adobe som hjälper dig att skicka profildata till HTTP-slutpunkter från tredje part.
-description: HTTP-målet är en kunddataplattform i realtid i Adobe som hjälper dig att skicka profildata till HTTP-slutpunkter från tredje part.
-seo-description: HTTP-målet är en kunddataplattform i realtid i Adobe som hjälper dig att skicka profildata till HTTP-slutpunkter från tredje part.
+title: HTTP-målet är ett mål för kunddataplattformen i realtid som hjälper dig att skicka profildata till HTTP-slutpunkter från tredje part.
+seo-title: HTTP-målet är ett mål för kunddataplattformen i realtid som hjälper dig att skicka profildata till HTTP-slutpunkter från tredje part.
+description: HTTP-målet är ett mål för kunddataplattformen i realtid som hjälper dig att skicka profildata till HTTP-slutpunkter från tredje part.
+seo-description: HTTP-målet är ett mål för kunddataplattformen i realtid som hjälper dig att skicka profildata till HTTP-slutpunkter från tredje part.
 translation-type: tm+mt
-source-git-commit: f4840f028bb855e79c0f2ae5c82bc38906a7aaec
+source-git-commit: 6eabcd70b133051205b669253f280cb92c24412f
 workflow-type: tm+mt
-source-wordcount: '540'
+source-wordcount: '536'
 ht-degree: 0%
 
 ---
@@ -21,9 +21,9 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Målet är [!DNL HTTP] ett [!DNL Adobe Real-Time Customer Data Platform] direktuppspelningsmål som gör det enklare att skicka profildata till [!DNL HTTP] slutpunkter från tredje part.
+Målet är [!DNL HTTP] ett [!DNL Real-time Customer Data Platform] direktuppspelningsmål som gör det enklare att skicka profildata till [!DNL HTTP] slutpunkter från tredje part.
 
-Om du vill skicka profildata till [!DNL HTTP] slutpunkter måste du först ansluta till målet i [[!DNL Adobe Real-Time Customer Data Platform]](#connect-destination).
+Om du vill skicka profildata till [!DNL HTTP] slutpunkter måste du först ansluta till målet i [[!DNL Real-time Customer Data Platform]](#connect-destination).
 
 ## Use Cases {#use-cases}
 
