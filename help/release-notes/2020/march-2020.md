@@ -6,9 +6,9 @@ last-update: March 10, 2020
 author: ens71067
 keywords: release notes;
 translation-type: tm+mt
-source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '854'
+source-wordcount: '840'
 ht-degree: 2%
 
 ---
@@ -21,10 +21,10 @@ ht-degree: 2%
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 * [[!DNL Data Governance]](#governance)
-* [[!DNL-datainmatning]](#ingestion)
-* [[!DNL-mål]](#destinations)
+* [[!DNL Data Ingestion]](#ingestion)
+* [[!DNL Destinations]](#destinations)
 * [[!DNL Identity Service]](#identity)
-* [[!DNL-källor]](#sources)
+* [[!DNL Sources]](#sources)
 
 ## [!DNL Data Governance] {#governance}
 
@@ -69,7 +69,7 @@ Mer information om hur du hämtar data till Platform finns i dokumentationen [f�
 
 ## Mål {#destinations}
 
-I [Adobe kunddataplattform](../../rtcdp/overview.md)i realtid är destinationer färdigbyggda integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
+I kunddataplattformen [i](../../rtcdp/overview.md)realtid är mål färdiga integreringar med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
 
 **Nya destinationer**
 
