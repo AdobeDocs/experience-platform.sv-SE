@@ -5,9 +5,9 @@ description: Lär dig hur du sammanfogar händelsedata för Experience Platform 
 seo-description: Lär dig hur du sammanfogar händelsedata för Experience Platform Web SDK
 keywords: merge;event data;eventMergeId;createEventMergeId;sendEvent;mergeId;merge id;eventMergeIdPromise; Merge Id Promise;
 translation-type: tm+mt
-source-git-commit: a362b67cec1e760687abb0c22dc8c46f47e766b7
+source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
 workflow-type: tm+mt
-source-wordcount: '408'
+source-wordcount: '462'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 Ibland är inte alla data tillgängliga när en händelse inträffar. Du kanske vill samla in data som du har så att de inte går förlorade om användaren till exempel stänger webbläsaren. Å andra sidan kan du även inkludera data som blir tillgängliga senare.
 
-I sådana fall kan du sammanfoga data med tidigare händelser genom att skicka `eventMergeId` som ett alternativ till `event` kommandon enligt följande:
+I sådana fall kan du sammanfoga data med tidigare händelser genom att skicka `mergeId` som ett alternativ till `event` kommandon enligt följande:
 
 ```javascript
 alloy("sendEvent", {
@@ -34,8 +34,8 @@ alloy("sendEvent", {
         "priceTotal": 999.98
       }
     }
-  }
-  "eventMergeId": "ABC123"
+  },
+  "mergeId": "ABC123"
 });
 
 // Time passes and more data becomes available
@@ -54,20 +54,20 @@ alloy("sendEvent", {
         ]
       }
     }
-  }
-  "eventMergeId": "ABC123"
+  },
+  "mergeId": "ABC123"
 });
 ```
 
-Genom att skicka samma `eventMergeID` värde till båda händelsekommandona i det här exemplet utökas data i det andra händelsekommandot till data som tidigare skickats vid det första händelsekommandot. En post för varje händelsekommando skapas i [!DNL Experience Data Platform], men under rapporteringen förenas posterna med `eventMergeID` och visas som en enda händelse.
+Genom att skicka samma värde för alternativet till båda händelsekommandona i det här exemplet, utökas data i det andra händelsekommandot till data som tidigare skickats vid det första händelsekommandot. `mergeId` En post för varje händelsekommando skapas i [!DNL Experience Data Platform], men under rapporteringen sammanfogas posterna med händelsesammanfognings-ID:t och visas som en enda händelse.
 
-Om du skickar data om en viss händelse till tredjepartsleverantörer kan du även inkludera dessa data `eventMergeID` med dem. Om du senare väljer att importera tredjepartsdata till Adobe Experience Platform används de för att sammanfoga alla data som samlats in som ett resultat av den diskreta händelse som inträffade på din webbsida. `eventMergeID`
+Om du skickar data om en viss händelse till tredjepartsleverantörer kan du även inkludera samma ID för händelsesammanfogning med dessa data. Om du senare väljer att importera data från tredje part till Adobe Experience Platform, kommer ID:t för händelsesammanfogning att användas för att sammanfoga alla data som samlats in som ett resultat av den diskreta händelsen som inträffade på din webbsida.
 
-## Generera en `eventMergeID`
+## Generera ett ID för händelsesammanfogning
 
-Värdet kan vara vilken sträng du vill, men kom ihåg att alla händelser som skickas med samma ID rapporteras som en enda händelse, så var försiktig med att framtvinga unika händelser när händelser inte ska sammanfogas. `eventMergeID` Om du vill att SDK ska generera ett unikt värde `eventMergeID` åt dig (enligt den vitt spridda [UID v4-specifikationen](https://www.ietf.org/rfc/rfc4122.txt)) kan du använda `createEventMergeId` kommandot för att göra det.
+Händelsens sammanfognings-ID kan vara vilken sträng som helst, men kom ihåg att alla händelser som skickas med samma ID rapporteras som en enda händelse, så var försiktig med att framtvinga unika händelser när händelser inte ska sammanfogas. Om du vill att SDK ska generera ett unikt ID för händelsesammanfogning åt dig (i enlighet med den allmänt använda [UID v4-specifikationen](https://www.ietf.org/rfc/rfc4122.txt)) kan du använda `createEventMergeId` kommandot för att göra det.
 
-Precis som med alla kommandon returneras ett löfte eftersom du kan köra kommandot innan SDK-filen har lästs in. Löftet löses med ett unikt `eventMergeID` snarast möjligt. Du kan vänta på att löftet ska lösas innan du skickar data till servern enligt följande:
+Precis som med alla kommandon returneras ett löfte eftersom du kan köra kommandot innan SDK-filen har lästs in. Löftet löses med ett unikt ID för händelsesammanfogning så snart som möjligt. Du kan vänta på att löftet ska lösas innan du skickar data till servern enligt följande:
 
 ```javascript
 var eventMergeIdPromise = alloy("createEventMergeId");
@@ -83,7 +83,7 @@ eventMergeIdPromise.then(function(results) {
           "priceTotal": 999.98
         }
       }
-    }
+    },
     "mergeId": results.eventMergeId
   });
 });
@@ -105,13 +105,13 @@ eventMergeIdPromise.then(function(results) {
           ]
         }
       }
-    }
+    },
     "mergeId": results.eventMergeId
   });
 });
 ```
 
-Följ samma mönster om du vill ha åtkomst till `eventMergeID` av andra anledningar (till exempel för att skicka det till en tredjepartsleverantör):
+Följ samma mönster om du av andra anledningar vill ha åtkomst till händelsesammanfognings-ID (till exempel för att skicka det till en tredjepartsleverantör):
 
 ```javascript
 var eventMergeIdPromise = alloy("createEventMergeId");
@@ -124,7 +124,7 @@ eventMergeIdPromise.then(function(results) {
 
 ## Kommentarer i XDM-format
 
-I händelsekommandot läggs `mergeId` det till i `xdm` nyttolasten.  Om du vill kan du skicka filen som en del av xdm-alternativet i stället, så här: `mergeId`
+I händelsekommandot läggs ID:t för händelsesammanfogning till i nyttolasten på rätt plats för din räkning. `xdm`  Om du vill kan du istället skicka händelsens sammanfognings-ID som en del av `xdm` alternativet, enligt följande:
 
 ```javascript
 alloy("sendEvent", {
@@ -141,3 +141,5 @@ alloy("sendEvent", {
   }
 });
 ```
+
+När du lägger till händelsesammanfognings-ID:t direkt till `xdm` objektet, ska du lägga märke till att namnet `eventMergeID` används i stället för `mergeId`.
