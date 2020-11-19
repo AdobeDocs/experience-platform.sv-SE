@@ -3,9 +3,9 @@ keywords: Experience Platform;profile;real-time customer profile;merge policies;
 title: Användargränssnittshandbok för sammanslagningsprinciper
 topic: guide
 translation-type: tm+mt
-source-git-commit: 6bfc256b50542e88e28f8a0c40cec7a109a05aa6
+source-git-commit: e865bf254a9a3190fcfc053bd83e9968b1a4f7f1
 workflow-type: tm+mt
-source-wordcount: '2551'
+source-wordcount: '2557'
 ht-degree: 0%
 
 ---
@@ -23,11 +23,11 @@ Om du föredrar att arbeta med sammanfogningsprinciper med API:t [!DNL Real-time
 
 ## Komma igång
 
-Handboken kräver en fungerande förståelse av flera viktiga [!DNL Experience Platform] funktioner. Innan du följer den här guiden, eller använder profil-API:er, bör du läsa dokumentationen för följande tjänster:
+Handboken kräver en fungerande förståelse av flera viktiga [!DNL Experience Platform] funktioner. Innan du följer den här guiden eller använder profil-API:er bör du läsa dokumentationen för följande tjänster:
 
-* [[!DNL Real-time Customer Profile]](../home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [Kundprofil](../home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [Adobe Experience Platform Identity Service](../../identity-service/home.md): Möjliggör kundprofil i realtid genom att överbrygga identiteter från olika datakällor som hämtas in [!DNL Platform].
-* [[!DNL Experience Data Model] (XDM)](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
+* [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverket som [!DNL Platform] organiserar kundupplevelsedata.
 
 ## Sammanfogningsmetoder {#merge-methods}
 
