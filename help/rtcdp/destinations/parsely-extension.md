@@ -2,12 +2,12 @@
 keywords: Parse. ly;parsely;Parsely;parse.ly;Parse.ly
 title: Analysera.ly Analytics-tillägg
 seo-title: Analysera.ly Analytics-tillägg
-description: Tillägget Parse.ly Analytics är ett analysmål i kunddataplattformen i Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Parse.ly Analytics är ett analysmål i kunddataplattformen i Adobe-realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Tillägget Parse.ly Analytics är ett analysmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: Tillägget Parse.ly Analytics är ett analysmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 6eabcd70b133051205b669253f280cb92c24412f
 workflow-type: tm+mt
-source-wordcount: '530'
+source-wordcount: '527'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 [!DNL Parse.ly Analytics] hjälper över 2 500 företag att använda data för att förstå sin onlinepublik. Det här tillägget installerar ett JavaScript-fragment som spårar hur besökare interagerar med innehåll på platsen.
 
-Parse.ly är ett analystillägg i kunddataplattformen i Adobe-realtid. Mer information om tilläggsfunktioner finns i [Analysera.ly Analytics](https://www.parse.ly/).
+Parse.ly är ett analystillägg i kunddataplattformen i realtid. Mer information om tilläggsfunktioner finns i [Analysera.ly Analytics](https://www.parse.ly/).
 
 Det här målet är ett Adobe Experience Platform Launch-tillägg. Mer information om hur plattformstillägg fungerar i CDP i realtid i Adobe finns i Översikt över [Adobe Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
 
