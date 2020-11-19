@@ -2,12 +2,12 @@
 keywords: branch;branch extension;branch destination
 title: Filialtillägg
 seo-title: Filialtillägg
-description: Filialtillägget är en annonsdestination i kunddataplattformen Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Filialtillägget är en annonsdestination i kunddataplattformen Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Filialtillägget är en annonsdestination i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: Filialtillägget är en annonsdestination i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 6eabcd70b133051205b669253f280cb92c24412f
 workflow-type: tm+mt
-source-wordcount: '525'
+source-wordcount: '522'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 Branch tillhandahåller kraftfulla länkar och lösningar som hjälper er att värva, engagera och mäta på alla enheter, kanaler och plattformar.
 
-Filialen är ett reklamtillägg i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på sidan [](https://branch.io/features/) Funktioner på webbplatsen för grenen.
+Filialen är ett reklamtillägg i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på sidan [](https://branch.io/features/) Funktioner på webbplatsen för grenen.
 
 Det här målet är ett Adobe Experience Platform Launch-tillägg. Mer information om hur plattformstillägg fungerar i CDP i realtid i Adobe finns i Översikt över [Adobe Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
 
