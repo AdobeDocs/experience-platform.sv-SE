@@ -2,12 +2,12 @@
 keywords: Awin Advertiser mastertag extension;mastertag tag;Awin;awin;AWIN
 title: Awin Advertiser Mastertag-tillägg
 seo-title: Awin Advertiser Mastertag-tillägg
-description: Awin Advertiser Mastertag-tillägget är en annonsdestination i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Awin Advertiser Mastertag-tillägget är en annonsdestination i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Awin Advertiser Mastertag-tillägget är ett reklammål i kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: Awin Advertiser Mastertag-tillägget är ett reklammål i kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: d9bf874dbfcc00c0a6e267f1a2e96f1223054825
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '545'
+source-wordcount: '542'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 Detta [!DNL MasterTag] är ett JavaScript-bibliotek som innehåller alla funktioner som krävs för Awin-spårningslösningen och som ska läggas till ovillkorligt på varje sida på webbplatsen, inklusive bekräftelsesidan, men inte någon sida som visar eller bearbetar betalningsinformation.
 
-[!DNL Awin Advertiser Mastertag] är en annonsutökning i kunddataplattformen Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.103176.awin-advertiser-mastertag.html).
+[!DNL Awin Advertiser Mastertag] är ett annonstillägg i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.103176.awin-advertiser-mastertag.html).
 
 Det här målet är ett [!DNL Experience Platform Launch] tillägg. Mer information om hur Launch-tillägg fungerar i CDP i realtid i Adobe finns i Översikt över [](/help/rtcdp/destinations/experience-platform-launch-extensions.md)tillägg i Experience Platform Launch.
 
