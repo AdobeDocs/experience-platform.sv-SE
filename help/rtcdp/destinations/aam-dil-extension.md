@@ -2,12 +2,12 @@
 keywords: Audience Manager DIL extension;destination audience manager;dil extension
 title: Audience Manager DIL utökningen
 seo-title: Audience Manager DIL utökningen
-description: Tillägget Audience Manager DIL är en DMP-destination i Adobe kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Audience Manager DIL är en DMP-destination i Adobe kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Tillägget Audience Manager DIL är en DMP-destination (Data Management Platform) i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: Tillägget Audience Manager DIL är en DMP-destination (Data Management Platform) i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: d9bf874dbfcc00c0a6e267f1a2e96f1223054825
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '595'
+source-wordcount: '592'
 ht-degree: 5%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 5%
 
 Det här är Adobe Audience Manager Data Integration Library-tillägget (implementering på klientsidan). Obs! Det här tillägget är inte avsett att användas för vidarebefordran av Adobe Analytics-data på serversidan. För SSF använder du Adobe Analytics-tillägget. Viktigt: Från och med version 8.0 är DIL beroende av [!DNL Experience Cloud] ID-tjänsten, version 3.3 eller senare. Implementera både [!DNL Experience Cloud] ID-tjänsten och DIL för att få fullständig [!DNL Audience Manager] dataintegrering.
 
-[!DNL Audience Manager] DIL är ett DMP-tillägg (Data Management Platform) i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionen finns på [Audience Manager-tilläggssidan](https://docs.adobe.com/content/help/sv-SE/launch/using/extensions-ref/adobe-extension/adobe-audience-manager-extension.html) i dokumentationen för Experience Platform Launch.
+[!DNL Audience Manager] DIL är ett DMP-tillägg (Data Management Platform) i kunddataplattformen i realtid. Mer information om tilläggsfunktionen finns på [Audience Manager-tilläggssidan](https://docs.adobe.com/content/help/sv-SE/launch/using/extensions-ref/adobe-extension/adobe-audience-manager-extension.html) i dokumentationen för Experience Platform Launch.
 
 Det här målet är ett [!DNL Experience Platform Launch] tillägg. Mer information om hur Launch-tillägg fungerar i CDP i realtid i Adobe finns i Översikt över [](/help/rtcdp/destinations/experience-platform-launch-extensions.md)tillägg i Experience Platform Launch.
 
