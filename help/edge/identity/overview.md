@@ -5,9 +5,9 @@ description: Lär dig hur du skaffar Adobe Experience Cloud ID.
 seo-description: Lär dig hur du skaffar Adobe Experience Cloud ID.
 keywords: Identity;First Party Identity;Identity Service;3rd Party Identity;ID Migration;Visitor ID;third party identity;thirdPartyCookiesEnabled;idMigrationEnabled;getIdentity;Syncing Identities;syncIdentity;sendEvent;identityMap;primary;ecid;Identity Namespace;namespace id;authenticationState;hashEnabled;
 translation-type: tm+mt
-source-git-commit: d069b3007265406367ca9de2b85540b2a070cf36
+source-git-commit: 1b5ee9b1f9bdc7835fa8de59020b3eebb4f59505
 workflow-type: tm+mt
-source-wordcount: '729'
+source-wordcount: '730'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 1%
 
 # Identitet - Hämtar Experience Cloud-ID
 
-Adobe Experience Platform [!DNL Web SDK] använder [Adobe Identity Service](../../identity-service/ecid.md). Detta garanterar att varje enhet har en unik identifierare som är beständig på enheten så att aktiviteten mellan sidorna kan knytas ihop.
+Adobe Experience Platform Web SDK använder [Adobe Identity Service](../../identity-service/ecid.md). Detta garanterar att varje enhet har en unik identifierare som är beständig på enheten så att aktiviteten mellan sidorna kan knytas ihop.
 
 ## Identitet för första part
 
@@ -27,11 +27,11 @@ Det [!DNL Identity Service] går att synkronisera ett ID med en tredje parts dom
 
 ## ID-migrering
 
-När du migrerar från med Visitor API kan du även migrera befintliga AMCV-cookies. Om du vill aktivera ECID-migrering anger du parametern `idMigrationEnabled` i konfigurationen. ID-migreringen är konfigurerad för att aktivera vissa användningsfall:
+När du migrerar från med Visitor API kan du även migrera befintliga AMCV-cookies. Om du vill aktivera ECID-migrering anger du parametern `idMigrationEnabled` i konfigurationen. ID-migrering aktiverar följande användningsfall:
 
-* När vissa sidor i en domän använder Visitor API och andra sidor använder denna SDK. Som stöd för detta fall läser SDK befintliga AMCV-cookies och skriver en ny cookie med det befintliga ECID:t. Dessutom skriver SDK AMCV-cookies så att efterföljande sidor som är instrumenterade med Visitor API har samma ECID om ECID hämtas först på en sida som är instrumenterad med AEP Web SDK.
-* När AEP Web SDK har konfigurerats på en sida som även har Visitor API. Om AMCV-cookien inte är inställd söker SDK efter besökar-API:t på sidan och anropar den för att hämta ECID.
-* När hela webbplatsen använder AEP Web SDK och inte har något Visitor-API är det bra att migrera ECID:n så att informationen om den returnerade besökaren behålls. När SDK har distribuerats `idMigrationEnabled` under en tidsperiod så att de flesta besöks-cookies migreras, kan inställningen inaktiveras.
+* När vissa sidor i en domän använder Visitor API och andra sidor använder denna SDK. Som stöd för detta fall läser SDK befintliga AMCV-cookies och skriver en ny cookie med det befintliga ECID:t. Dessutom skriver SDK AMCV-cookies så att efterföljande sidor som är instrumenterade med Visitor API har samma ECID om ECID hämtas först på en sida som är instrumenterad med SDK.
+* När Adobe Experience Platform Web SDK har konfigurerats på en sida som även har Visitor API. Om AMCV-cookien inte är inställd söker SDK efter besökar-API:t på sidan och anropar den för att hämta ECID.
+* När hela webbplatsen använder Adobe Experience Platform Web SDK och inte har något Visitor-API är det bra att migrera ECID:n så att informationen om den returnerade besökaren behålls. När SDK har distribuerats `idMigrationEnabled` under en tidsperiod så att de flesta besöks-cookies migreras, kan inställningen inaktiveras.
 
 ## Hämtar besökar-ID
 
@@ -43,13 +43,14 @@ Om du vill använda det här unika ID:t använder du `getIdentity` kommandot. `g
 
 ```javascript
 alloy("getIdentity")
-  .then(function(result.identity.ECID) {
-    // This function will get called with Adobe Experience Cloud Id when the command promise is resolved
+  .then(function(result) {
+    // The command succeeded.
+    console.log(result.identity.ECID);
   })
   .catch(function(error) {
     // The command failed.
-    // "error" will be an error object with additional information
-  })
+    // "error" will be an error object with additional information.
+  });
 ```
 
 ## Synkroniserar identiteter
@@ -79,21 +80,14 @@ alloy("sendEvent", {
       ]
     }
   }
-})
+});
 ```
 
+Varje egenskap i `identityMap` representerar identiteter som tillhör ett visst [identitetsnamnutrymme](../../identity-service/namespaces.md). Egenskapsnamnet ska vara identitetssymbolen för namnutrymme, som du hittar i användargränssnittet i Adobe Experience Platform under &quot;[!UICONTROL Identities]&quot;. Egenskapsvärdet ska vara en array med identiteter som gäller det identitetsnamnutrymmet.
 
-### Alternativ för synkning av identiteter
+Varje identitetsobjekt i identitetsarrayen är strukturerat på följande sätt:
 
-#### Namnutrymmessymbol för identitet
-
-| **Typ** | **Obligatoriskt** | **Standardvärde** |
-| -------- | ------------ | ----------------- |
-| Sträng | Ja | ingen |
-
-Nyckeln för objektet är [Identity Namespace](../../identity-service/namespaces.md) Symbol. I Adobe Experience Platform användargränssnitt hittar du det under &quot;[!UICONTROL Identities]&quot;.
-
-#### `id`
+### `id`
 
 | **Typ** | **Obligatoriskt** | **Standardvärde** |
 | -------- | ------------ | ----------------- |
@@ -101,7 +95,7 @@ Nyckeln för objektet är [Identity Namespace](../../identity-service/namespaces
 
 Detta är det ID som du vill synkronisera för det angivna namnutrymmet.
 
-#### `authenticationState`
+### `authenticationState`
 
 | **Typ** | **Obligatoriskt** | **Standardvärde** | **Möjliga värden** |
 | -------- | ------------ | ----------------- | ------------------------------------ |
@@ -109,18 +103,10 @@ Detta är det ID som du vill synkronisera för det angivna namnutrymmet.
 
 Autentiseringstillståndet för ID:t.
 
-#### `primary`
+### `primary`
 
 | **Typ** | **Obligatoriskt** | **Standardvärde** |
 | -------- | ------------ | ----------------- |
 | Boolean | valfri | falskt |
 
 Avgör om den här identiteten ska användas som ett primärt fragment i den enhetliga profilen. Som standard anges ECID som användarens primära identifierare.
-
-#### `hashEnabled`
-
-| **Typ** | **Obligatoriskt** | **Standardvärde** |
-| -------- | ------------ | ----------------- |
-| Boolean | valfri | falskt |
-
-Om alternativet är aktiverat kommer det att hash-koda identiteten med SHA256-hash.
