@@ -6,9 +6,9 @@ type: Tutorial
 description: Instruktioner för att ansluta till lagringsplatser i molnet
 seo-description: Instruktioner för att ansluta till lagringsplatser i molnet
 translation-type: tm+mt
-source-git-commit: d72f392bc3b47bb23ed36b3d1d218373f62b4679
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '521'
+source-wordcount: '520'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 ## Översikt
 
-På den här sidan beskrivs hur du kan ansluta till molnlagringsplatser i kunddataplattformen Adobe Real-time.
+På den här sidan beskrivs hur du kan ansluta till molnlagringsplatser i kunddataplattformen i realtid.
 
 1. I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** väljer du önskat molnlagringsmål och väljer sedan **[!UICONTROL Configure]**.
 
