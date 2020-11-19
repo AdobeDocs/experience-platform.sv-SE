@@ -2,12 +2,12 @@
 keywords: Quantum Metric Extension;Quantum Metric;quantum metric;Quantum metric
 title: Quantum Metric-tillägg
 seo-title: Quantum Metric-tillägg
-description: Tillägget Quantum Metric är ett analysmål i kunddataplattform i realtid i Adobe. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Quantum Metric är ett analysmål i kunddataplattformen i Adobe-realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Quantum Metric-tillägget är ett analysmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: Quantum Metric-tillägget är ett analysmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 6eabcd70b133051205b669253f280cb92c24412f
 workflow-type: tm+mt
-source-wordcount: '561'
+source-wordcount: '558'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 [!DNL Quantum Metric's] integrering med Adobe Launch underlättar kodlös driftsättning av taggen för datainsamling [!DNL Quantum Metric's] . Det här tillägget ger dessutom möjlighet att hämta startelement med användbar information från API:t. [!DNL Quantum Metric]
 
-[!DNL Quantum Metric] är ett analystillägg i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101535.quantum-metric-extension-for-adobe-launch.html).
+[!DNL Quantum Metric] är ett analystillägg i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101535.quantum-metric-extension-for-adobe-launch.html).
 
 Det här målet är ett Adobe Experience Platform Launch-tillägg. Mer information om hur plattformstillägg fungerar i CDP i realtid i Adobe finns i Översikt över [Adobe Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
 
