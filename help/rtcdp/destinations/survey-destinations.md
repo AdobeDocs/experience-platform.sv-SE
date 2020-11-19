@@ -5,9 +5,9 @@ seo-title: Destinationer för undersökning
 description: Plattformarna identifierar enkäthändelser, samlar in feedback från kunderna i realtid via dataelement och delar data med Adobe CDP i realtid.
 seo-description: Plattformarna identifierar enkäthändelser, samlar in feedback från kunderna i realtid via dataelement och delar data med Adobe CDP i realtid.
 translation-type: tm+mt
-source-git-commit: cbd748c1881c61f5e636567d94b68f2cf7302fa5
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '104'
+source-wordcount: '103'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Plattformarna identifierar enkäthändelser, samlar in feedback från kunderna i realtid via dataelement och delar data med Adobe CDP i realtid.
 
-För närvarande stöder Adobe Real-time Customer Data Platform de undersökningsmål som anges nedan. Information om hur du ansluter till dessa mål finns i de enskilda länkarna:
+För närvarande stöder kunddataplattformen i realtid de undersökningsmål som anges nedan. Information om hur du ansluter till dessa mål finns i de enskilda länkarna:
 
 * [Foresee-tillägg](/help/rtcdp/destinations/foresee-extension.md)
 * [InMoment-tillägg](/help/rtcdp/destinations/inmoment-extension.md)
