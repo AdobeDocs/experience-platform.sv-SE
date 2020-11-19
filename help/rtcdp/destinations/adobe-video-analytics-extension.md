@@ -2,12 +2,12 @@
 keywords: media analytics extension;media analytics;audio and video extension
 title: Adobe Media Analytics för ljud- och videotillägg
 seo-title: Adobe Media Analytics för ljud- och videotillägg
-description: Tillägget Adobe Media Analytics för ljud och video är ett analysmål i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Adobe Media Analytics for Video-tillägget är ett analysmål i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Tillägget Adobe Media Analytics för ljud och video är ett analysmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: Adobe Media Analytics for Video-tillägget är ett analysmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: d9bf874dbfcc00c0a6e267f1a2e96f1223054825
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '573'
+source-wordcount: '570'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 Adobe Media Analytics for Audio and Video är ett tillägg till basanalysverktyget som ger kunderna robusta mått för video, ljud och annonser.
 
-Adobe Media Analytics for Audio and Video är ett analystillägg i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100157.html).
+Adobe Media Analytics for Audio and Video är ett analystillägg i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100157.html).
 
 Det här målet är ett [!DNL Adobe Experience Platform Launch] tillägg. Mer information om hur [!DNL Platform Launch] tillägg fungerar i CDP i realtid i Adobe finns i Översikt över [tillägg i](/help/rtcdp/destinations/experience-platform-launch-extensions.md)Experience Platform Launch.
 
