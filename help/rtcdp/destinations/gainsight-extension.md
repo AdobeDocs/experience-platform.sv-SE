@@ -2,12 +2,12 @@
 keywords: foresee;foresee extension;foresee destination
 title: Gainsight-tillägg
 seo-title: Gainsight-tillägg
-description: Gainsight-tillägget är ett personaliseringsmål i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Gainsight-tillägget är ett personaliseringsmål i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Gainsight-tillägget är ett personaliseringsmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: Gainsight-tillägget är ett personaliseringsmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '544'
+source-wordcount: '541'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 [!DNL Gainsight] ger produktägare de verktyg de behöver för att förstå användarbeteenden, få fler att ta till sig produkter och samla in feedback från användarna.
 
-[!DNL Gainsight] är ett personaliseringstillägg i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://www.adobeexchange.com/experiencecloud.details.103343.html).
+[!DNL Gainsight] är ett personaliseringstillägg i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://www.adobeexchange.com/experiencecloud.details.103343.html).
 
 Det här målet är ett Adobe Experience Platform Launch-tillägg. Mer information om hur plattformstillägg fungerar i CDP i realtid i Adobe finns i Översikt över [Adobe Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
 
