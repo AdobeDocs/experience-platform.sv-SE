@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: September 8, 2020
 author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: 9436779e91bf82382056acd526671b30b55e11d4
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '883'
+source-wordcount: '862'
 ht-degree: 3%
 
 ---
@@ -20,12 +20,12 @@ ht-degree: 3%
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [[!DNL Data Governance]](#governance)
-- [[!DNL-mål]](#destinations)
-- [[!DNL-observabilitetsinsikter]](#observability)
-- [[!DNL-Privacy Service]](#privacy)
-- [[!DNL-kundprofil i realtid]](#profile)
-- [[!DNL-segmenteringstjänst]](#segmentation)
-- [[!DNL-källor]](#sources)
+- [[!DNL Destinations]](#destinations)
+- [[!DNL Observability Insights]](#observability)
+- [[!DNL Privacy Service]](#privacy)
+- [[!DNL Real-time Customer Profile]](#profile)
+- [[!DNL Segmentation Service]](#segmentation)
+- [[!DNL Sources]](#sources)
 
 ## [!DNL Data Governance] {#governance}
 
@@ -37,11 +37,11 @@ Adobe Experience Platform Data Governance är en serie strategier och tekniker s
 | ------- | ----------- |
 | Förbättringar av användargränssnittet för datauppsättningar | Flera nya sorterings- och filtreringskontroller har lagts till i användargränssnittet för datauppsättningar för att göra det enklare att arbeta med stora scheman: <ul><li>Sortera fält i alfabetisk ordning baserat på den fullständiga schemasökvägen.</li><li>Utför delsökningar på fältsökvägsnamn.</li><li>Filtrera fält utan etiketter, en markerad etikett eller en etikettkategori.</li></ul> |
 
-Mer information om tjänsten finns i [datastyrningsöversikten](../../data-governance/home.md) .
+Mer information om tjänsten finns i översikten över [](../../data-governance/home.md) datastyrning.
 
 ## Mål {#destinations}
 
-I [Adobe kunddataplattform](../../rtcdp/overview.md)i realtid är destinationer färdigbyggda integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
+I kunddataplattformen [i](../../rtcdp/overview.md)realtid är mål färdiga integreringar med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
 
 **Nya funktioner**
 
