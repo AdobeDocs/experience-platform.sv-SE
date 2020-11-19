@@ -2,12 +2,12 @@
 keywords: Google ads;google ads;google ads extension;Google Ads extension
 title: Google Ads-tillägg
 seo-title: Google Ads-tillägg
-description: Tillägget Google Ads är en annonsdestination i kunddataplattformen Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Google Ads är en annonsdestination i kunddataplattformen Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Tillägget Google Ads är en annonsdestination i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: Tillägget Google Ads är en annonsdestination i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '562'
+source-wordcount: '559'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 Det här tillägget spårar konverteringar från användare som klickar på dina [!DNL Google Ads]sidor. Du måste också installera gtag.js-tillägget och lägga till det i biblioteket, beroende på vilket som är [!DNL Google Ads] beroende av det.
 
-[!DNL Google Ads] är en annonsutökning i kunddataplattformen Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://www.adobeexchange.com/experiencecloud.details.101383.google-ads.html).
+[!DNL Google Ads] är ett annonstillägg i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://www.adobeexchange.com/experiencecloud.details.101383.google-ads.html).
 
 Det här målet är ett Adobe Experience Platform Launch-tillägg. Mer information om hur plattformstillägg fungerar i CDP i realtid i Adobe finns i Översikt över [Adobe Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
 
