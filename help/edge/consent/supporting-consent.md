@@ -5,9 +5,9 @@ description: Lär dig hur du stöder medgivandeinställningar med Experience Pla
 seo-description: Lär dig hur du stöder medgivandeinställningar med Experience Platform Web SDK
 keywords: consent;defaultConsent;default consent;setConsent;Profile Privacy Mixin;Experience Event Privacy Mixin;Privacy Mixin;
 translation-type: tm+mt
-source-git-commit: 2e28fda40a135330054c749d73439448a55db52c
+source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
 workflow-type: tm+mt
-source-wordcount: '753'
+source-wordcount: '752'
 ht-degree: 0%
 
 ---
@@ -80,7 +80,7 @@ Eftersom användaren valde att avanmäla sig avvisas löften som returnerats fr�
 
 >[!NOTE]
 >
->För närvarande stöder SDK bara `general` syftet. Även om vi planerar att bygga ut en mer robust uppsättning syften eller kategorier som kommer att motsvara de olika möjligheterna och produkterbjudandena för Adobe, är den nuvarande implementeringen en metod som helt eller inte alls kan användas.  Detta gäller endast JavaScript-biblioteken Adobe Experience Platform [!DNL Web SDK] och INTE andra Adobe.
+>För närvarande stöder SDK bara `general` syftet. Även om vi planerar att bygga ut en mer robust uppsättning syften eller kategorier som kommer att motsvara de olika möjligheterna och produkterbjudandena för Adobe, är den nuvarande implementeringen en metod som helt eller inte alls kan användas.  Detta gäller endast Adobe Experience Platform [!DNL Web SDK] och INTE andra JavaScript-bibliotek från Adobe.
 
 ## Kommunicera medgivandepreferenser via IAB TCF-standarden
 
