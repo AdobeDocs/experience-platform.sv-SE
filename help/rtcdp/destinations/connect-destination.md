@@ -1,13 +1,13 @@
 ---
 keywords: connect destination;destination connect;how to connect destination
-title: Anslut till ett mål i Adobe Real-time Customer Data Platform
-seo-title: Anslut till ett mål i Adobe Real-time Customer Data Platform
+title: Anslut till ett mål i realtidskundens dataplattform
+seo-title: Anslut till ett mål i realtidskundens dataplattform
 type: Tutorial
-description: I den här självstudiekursen listas stegen för att ansluta en destination i Adobe kunddataplattform i realtid
+description: I den här självstudiekursen listas stegen för att ansluta en destination i kunddataplattformen i realtid
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '122'
+source-wordcount: '118'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # Ansluta ett mål
 
-Följ stegen nedan för att ansluta till en destination i Adobe Customer Data Platform i realtid:
+Följ stegen nedan för att ansluta till en destination i kunddataplattformen i realtid:
 
 1. Navigera till **[!UICONTROL Destinations]** från det vänstra navigeringsfältet.
 2. Välj det mål som du vill ansluta till på fliken [[!UICONTROL Catalog]](/help/rtcdp/destinations/destinations-workspace.md#catalog) .
