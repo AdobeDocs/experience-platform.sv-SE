@@ -6,9 +6,9 @@ type: Tutorial
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 seo-description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 translation-type: tm+mt
-source-git-commit: 425287d78deebf0113d6cf6350bcb516c99ee995
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '823'
+source-wordcount: '822'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 # E-postmarknadsföringsmål {#email-marketing-destinations}
 
-Med ESP (Email Service Providers) kan du hantera dina e-postmarknadsföringsaktiviteter, som att skicka e-postkampanjer med reklam. Adobe kunddataplattform i realtid integreras med ESP:er genom att ni kan aktivera segment för e-postmarknadsföringsmål.
+Med ESP (Email Service Providers) kan du hantera dina e-postmarknadsföringsaktiviteter, som att skicka e-postkampanjer med reklam. Kunddataplattformen i realtid integreras med ESP:er genom att ni kan aktivera segment för e-postmarknadsföringsmål.
 
 För att skicka segment till e-postmarknadsföringsmål för era kampanjer måste CDP i realtid i Adobe först ansluta till destinationen.
 
