@@ -5,9 +5,9 @@ seo-title: Google Customer Match Destination
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egenskaper, som Search, Shopping, Gmail och YouTube.
 seo-description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egenskaper, som Search, Shopping, Gmail och YouTube.
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '1490'
+source-wordcount: '1489'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ## Användningsexempel
 
-För att du bättre ska förstå hur och när du ska använda [!DNL Google Customer Match] målet finns det exempel på användning som kunder med kunddataplattformen Adobe Real-time kan lösa med den här funktionen.
+För att du bättre ska förstå hur och när du ska använda [!DNL Google Customer Match] målet finns det exempel på användning som kunder med kunddataplattform i realtid kan lösa med den här funktionen.
 
 
 ### Användningsfall 1
