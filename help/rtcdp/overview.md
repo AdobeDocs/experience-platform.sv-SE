@@ -5,21 +5,21 @@ seo-title: Översikt över kunddataplattformen i realtid
 description: Översikt över kunddataplattformen i realtid
 seo-description: Översikt över kunddataplattformen i realtid
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '292'
+source-wordcount: '289'
 ht-degree: 0%
 
 ---
 
 
-# Adobe Real-time Customer Data Platform - översikt
+# Översikt över Customer Data Platform i realtid
 
-Adobe Customer Data Platform (CDP i realtid) bygger på Adobe Experience Platform och hjälper företag att samla in kända och anonyma data från flera olika företagskällor för att skapa kundprofiler som kan användas för att leverera personaliserade kundupplevelser över alla kanaler och enheter i realtid.
+Med Adobe Experience Platform som bas kan man i realtid samla in kända och anonyma data från flera olika källor för att skapa kundprofiler som kan användas för att leverera personaliserade kundupplevelser i alla kanaler och enheter i realtid.
 
 CDP för realtid innehåller verktyg för datastyrning, identitetshantering, avancerad segmentering och datavetenskap, så att ni kan skapa profiler och definiera målgrupper, samt få goda insikter och samtidigt genomföra strikta policyer för datastyrning.
 
-Adobe kunddataplattform i realtid är kopplad till ett stort antal partners, för att inte tala om inbyggd integrering med Adobe Experience Cloud, så att ni smidigt kan aktivera dessa målgrupper och leverera enastående kundupplevelser i alla kanaler, från personalisering på plats eller i appen till e-post, betalda medier, callcenters, anslutna enheter med mera.
+Kunddataplattformen i realtid är kopplad till ett stort antal partners, för att inte tala om integreringen med Adobe Experience Cloud, så att ni smidigt kan aktivera dessa målgrupper och leverera enastående kundupplevelser i alla kanaler, från personalisering på plats eller i appen till e-post, betalda medier, callcenters, anslutna enheter med mera.
 
 Med kunddataplattformen i realtid kan ni
 
