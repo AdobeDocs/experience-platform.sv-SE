@@ -2,12 +2,12 @@
 keywords: destinations;destination;destination types
 title: Destinationstyper och -kategorier
 seo-title: Destinationstyper och -kategorier
-description: 'På Adobe kunddataplattform i realtid samlar mål för profiler och segmentexport in händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Med Experience Platform Launch-tillägg vidarebefordras råa händelsedata till flera typer av destinationer. '
-seo-description: På Adobe kunddataplattform i realtid samlar mål för profiler och segmentexport in händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Med Experience Platform Launch-tillägg vidarebefordras råa händelsedata till flera typer av destinationer.
+description: 'I kunddataplattformen i realtid samlar mål för profiler och segmentexport in händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Med Experience Platform Launch-tillägg vidarebefordras råa händelsedata till flera typer av destinationer. '
+seo-description: I kunddataplattformen i realtid samlar mål för profiler och segmentexport in händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Med Experience Platform Launch-tillägg vidarebefordras råa händelsedata till flera typer av destinationer.
 translation-type: tm+mt
-source-git-commit: e6276eac05f0a20a668051034e83831002a464f0
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '587'
+source-wordcount: '582'
 ht-degree: 0%
 
 ---
@@ -15,11 +15,11 @@ ht-degree: 0%
 
 # Måltyper och -kategorier
 
-Läs den här sidan om du vill veta mer om de olika typerna och kategorierna av kunddataplattformsmål för Adobe i realtid.
+Läs den här sidan om du vill veta mer om de olika typerna och kategorierna för kunddataplattformens mål i realtid.
 
 ## Måltyper
 
-På Adobe kunddataplattform i realtid skiljer vi mellan två måltyper - anslutningar och tillägg. Det finns två typer av anslutningsmål: Profilexportmål och Segmentexportmål.
+I kunddataplattformen i realtid skiljer vi mellan två måltyper - anslutningar och tillägg. Det finns två typer av anslutningsmål: Profilexportmål och Segmentexportmål.
 
 ![Typer av destinationer](/help/rtcdp/destinations/assets/types-of-destinations.png)
 
@@ -27,7 +27,7 @@ På Adobe kunddataplattform i realtid skiljer vi mellan två måltyper - anslutn
 
 ### Anslutningar {#connections}
 
-**[!UICONTROL Profile Export]** och mål **[!UICONTROL Segment Export]** i kunddataplattformen i Adobe i realtid samlar in händelsedata, kombinerar dem med andra datakällor för att skapa kundprofilen [i](/help/profile/home.md)realtid, tillämpa segmentering och exportera segment och kvalificerade profiler till destinationer.
+**[!UICONTROL Profile Export]** och **[!UICONTROL Segment Export]** mål i kunddataplattformen i realtid samlar in händelsedata, kombinerar dem med andra datakällor för att skapa kundprofilen [i](/help/profile/home.md)realtid, tillämpa segmentering och exportera segment och kvalificerade profiler till destinationer.
 
 <br> 
 
