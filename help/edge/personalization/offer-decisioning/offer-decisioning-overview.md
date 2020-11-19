@@ -5,9 +5,9 @@ description: Adobe Experience Platform Web SDK kan leverera och återge personal
 seo-description: Adobe Experience Platform Web SDK kan leverera och återge personaliserade erbjudanden som hanteras i Offer Decisioning. Du kan skapa erbjudanden och andra relaterade objekt med Offer Decisioning gränssnitt eller API.
 keywords: offer decisioning;decisioning;Web SDK;Platform Web SDK;personalized offers;deliver offers;offer delivery;offer personalization;
 translation-type: tm+mt
-source-git-commit: a0ede8c7d3088fe80d6ea014b4a4f9f08ee8a7aa
+source-git-commit: 5f90f238a8845cc7bf07d54b89c5c6ccff40469a
 workflow-type: tm+mt
-source-wordcount: '810'
+source-wordcount: '831'
 ht-degree: 4%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 4%
 
 Adobe Experience Platform [!DNL Web SDK] kan leverera och återge personaliserade erbjudanden som hanteras i Offer Decisioning. Du kan skapa erbjudanden och andra relaterade objekt med Offer Decisioning användargränssnitt (UI) eller API:er.
 
-## Krav
+## Förutsättningar
 
 * IMS-organisation är aktiverad för kantbeslut
 * Erbjudanden, skapade aktiviteter
@@ -29,7 +29,7 @@ Adobe Experience Platform [!DNL Web SDK] kan leverera och återge personaliserad
 
 ## Terminologi
 
-Det är viktigt att förstå följande terminologi när du arbetar med Offer Decisioning. <!--For more information and to view additional terms, please visit the [Offer Decisioning glossary](/docs/offer-decisioning/using/get-started/glossary.html)-->.
+Det är viktigt att förstå följande terminologi när du arbetar med Offer Decisioning. Mer information och ytterligare termer finns i [Offer Decisioning ordlista](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/glossary.html).
 
 * **Behållare:** En behållare är en isoleringsmekanism för att hålla olika bekymmer isär. Behållar-ID är det första sökvägselementet för alla databas-API:er. Alla beslutsobjekt finns i en behållare.
 
