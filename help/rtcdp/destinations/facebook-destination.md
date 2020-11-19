@@ -5,9 +5,9 @@ seo-title: Facebook-mål
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 seo-description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 translation-type: tm+mt
-source-git-commit: c66fb4cf0a414e02ceb58becc9d9b59db3fe987b
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '758'
+source-wordcount: '753'
 ht-degree: 4%
 
 ---
@@ -26,7 +26,7 @@ Du kan använda den här målgruppen för målgruppsanpassning i olika appar som
 
 ## Användningsexempel
 
-För att du bättre ska förstå hur och när du ska använda [!DNL Facebook] destinationen finns det två exempel på användning som kunder med kunddataplattform för Adobe i realtid kan lösa genom att använda den här funktionen.
+För att du bättre ska förstå hur och när du ska använda [!DNL Facebook] målet finns det två exempel på användningsområden som kunder med kunddataplattform i realtid kan lösa genom att använda den här funktionen.
 
 
 ### Användningsfall 1
@@ -101,7 +101,7 @@ Instruktioner om hur du aktiverar segment [!DNL Facebook]finns i [Aktivera data 
 
 ## Exporterade data {#exported-data}
 
-En lyckad aktivering [!DNL Facebook]innebär att en [!DNL Facebook] anpassad målgrupp skapas programmatiskt i [[!DNL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/). Segmentmedlemskap i målgruppen skulle läggas till och tas bort eftersom användarna är kvalificerade eller diskvalificerade för de aktiverade segmenten.
+En lyckad aktivering [!DNL Facebook]innebär att en [!DNL Facebook] anpassad målgrupp skapas i [[!DNL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/). Segmentmedlemskap i målgruppen skulle läggas till och tas bort eftersom användarna är kvalificerade eller diskvalificerade för de aktiverade segmenten.
 
 >[!TIP]
 >
