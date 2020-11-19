@@ -2,12 +2,12 @@
 keywords: bing;bing ads event tracking;event tracking bing;UET;UET extension
 title: Bing Ads UET-tillägg (Universal Event Tracking)
 seo-title: Bing Ads UET-tillägg (Universal Event Tracking)
-description: Tillägget Bing Ads Universal Event Tracking (UET) är en annonsdestination i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Bing Ads Universal Event Tracking (UET) är en annonsdestination i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Tillägget Bing Ads Universal Event Tracking (UET) är en annonsdestination i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: Tillägget Bing Ads Universal Event Tracking (UET) är en annonsdestination i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: d9bf874dbfcc00c0a6e267f1a2e96f1223054825
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '568'
+source-wordcount: '565'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 [!DNL Bing Ads Universal Event Tracking] (UET) för [!DNL Experience Platform Launch] är ett användbart sätt att spåra vad som händer efter att någon har klickat på din sökannons. Genom att använda en enda UET-tagg för att registrera vad kunderna gör på er webbplats kan ni utnyttja dessa data och spåra konverteringar eller målgrupper med hjälp av återmarknadsföringslistor.
 
-[!DNL Bing Ads Universal Event Tracking] (UET) är ett annonstillägg i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100154.html).
+[!DNL Bing Ads Universal Event Tracking] (UET) är ett annonstillägg i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100154.html).
 
 Det här målet är ett [!DNL Adobe Experience Platform Launch] tillägg. Mer information om hur [!DNL Platform Launch] tillägg fungerar i CDP i realtid i Adobe finns i Översikt över [tillägg i](/help/rtcdp/destinations/experience-platform-launch-extensions.md)Experience Platform Launch.
 
