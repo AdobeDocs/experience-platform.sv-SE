@@ -2,12 +2,12 @@
 keywords: kickfire;Kickfire;kickfire extension;Kickfire Extension
 title: KickFire-tillägg
 seo-title: KickFire-tillägg
-description: KickFire-tillägget är en personaliseringsdestination i kunddataplattformen i Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: KickFire-tillägget är en personaliseringsdestination i kunddataplattformen i Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: KickFire-tillägget är ett personaliseringsmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: KickFire-tillägget är ett personaliseringsmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '533'
+source-wordcount: '530'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 [!DNL KickFire's] Med IP-adressintelligens och B2B-data kan ni översätta IP-adresser till företag, identifiera anonyma webbbesökare och integrera kontodata i er teknologi - allt baserat på ett företags IP-adress.
 
-[!DNL KickFire] är ett personaliseringstillägg i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktioner finns på [Kickfire-webbplatsen](https://www.kickfire.com/).
+[!DNL KickFire] är ett personaliseringstillägg i kunddataplattformen i realtid. Mer information om tilläggsfunktioner finns på [Kickfire-webbplatsen](https://www.kickfire.com/).
 
 Det här målet är ett Adobe Experience Platform Launch-tillägg. Mer information om hur plattformstillägg fungerar i CDP i realtid i Adobe finns i Översikt över [Adobe Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
 
