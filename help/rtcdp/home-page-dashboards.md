@@ -5,9 +5,9 @@ seo-title: Hemsida och instrumentpaneler för kunddataplattformen i realtid
 description: Kontrollpaneler, startsidan och förstagångsupplevelsen av Adobe Experience Platform
 seo-description: Kontrollpaneler, startsidan och förstagångsupplevelsen av Adobe Experience Platform
 translation-type: tm+mt
-source-git-commit: 98d3792f50f2ab95b86d162c51af9445f06343b5
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '614'
+source-wordcount: '613'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # [!DNL Real-time Customer Data Platform] översikt över mätvärden
 
-Hemsidan Adobe Real-time Customer Data Platform (CDP i realtid), som innehåller en mätinstrumentpanel, visas när du loggar in på CDP i realtid.
+Hemsidan för Customer Data Platform (CDP i realtid), som innehåller en mätinstrumentpanel, visas när du loggar in på CDP i realtid.
 
 Hemsidan är bara en av platserna där metriska kort visas. CDP ger dig mätkort i realtid genom hela upplevelsen. Dessa mätvärden ger information om data, profiler och målgrupper i systemet.
 
