@@ -2,12 +2,12 @@
 keywords: Marketo;marketo;Marketo extension;marketo extension
 title: Marketo-tillägg
 seo-title: Marketo-tillägg
-description: Tillägget Marketo är ett e-postmål i Adobe kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Marketo är ett e-postmål i Adobe kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Marketo-tillägget är ett e-postmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: Marketo-tillägget är ett e-postmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '544'
+source-wordcount: '541'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 [!DNL Marketo's] kraftfulla program för automatiserad marknadsföring hjälper marknadsförare att överordnad konsten och vetenskapen inom digital marknadsföring för att engagera kunder och potentiella kunder.
 
-[!DNL Marketo] är ett e-posttillägg i kunddataplattformen Adobe i realtid. Mer information om tilläggsfunktionerna finns på [tilläggssidan på Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101071.marketo-for-adobe-launch.html).
+[!DNL Marketo] är ett e-posttillägg i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på [tilläggssidan på Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101071.marketo-for-adobe-launch.html).
 
 Det här målet är ett Adobe Experience Platform Launch-tillägg. Mer information om hur plattformstillägg fungerar i CDP i realtid i Adobe finns i Översikt över [Adobe Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
 
