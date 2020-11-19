@@ -6,9 +6,9 @@ seo-title: Målarbetsflöde för sociala nätverk
 description: Instruktioner för att ansluta till sociala nätverk och konton
 seo-description: Instruktioner för att ansluta till sociala nätverk och konton
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '469'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 ## Arbetsflöde för att skapa mål för sociala nätverk
 
-I den här självstudiekursen används [!DNL Facebook] som exempel, men arbetsflödet i kunddataplattformen i Adobe i realtid kommer att vara detsamma för alla mål för sociala nätverk, när fler läggs till i produkten.
+I den här självstudiekursen används [!DNL Facebook] som exempel, men arbetsflödet i kunddataplattformen i realtid är detsamma för alla mål för sociala nätverk, när mer har lagts till i produkten.
 
 1. Bläddra till **[!UICONTROL Destinations]** kategorin i **[!UICONTROL Catalog]**> **[!UICONTROL Social]** . Välj önskat mål för sociala nätverk och välj sedan **[!UICONTROL Configure]**.
 
