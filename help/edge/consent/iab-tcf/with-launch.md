@@ -4,9 +4,9 @@ seo-title: Konfigurera IAB TCF 2.0-samtycke med Adobe Experience Platform Launch
 description: Lär dig hur du ställer in IAB TCF 2.0-samtycke med Adobe Experience Platform Launch och Adobe Experience Platform Web SDK
 seo-description: Lär dig hur du ställer in IAB TCF 2.0-samtycke med Adobe Experience Platform Launch och Adobe Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: db742119d8f169817080f1fd4e0dc08a0f0faa47
+source-git-commit: 1b5ee9b1f9bdc7835fa8de59020b3eebb4f59505
 workflow-type: tm+mt
-source-wordcount: '892'
+source-wordcount: '852'
 ht-degree: 0%
 
 ---
@@ -14,13 +14,13 @@ ht-degree: 0%
 
 # Använda IAB TCF 2.0 med Experience Platform Launch och AEP Web SDK-tillägget
 
-Adobe Experience Platform Web Software Development Kit (Adobe Experience Platform Web SDK) stöder Interactive Advertising Bureau Transparency &amp; Consent Framework, version 2.0 (IAB TCF 2.0). Den här guiden visar hur du ställer in en Adobe Experience Platform Launch-egenskap för att skicka IAB TCF 2.0-medgivandeinformation till Adobe med hjälp av AEP Web SDK-tillägget för Experience Platform Launch.
+Adobe Experience Platform Web SDK stöder Interactive Advertising Bureau Transparency &amp; Consent Framework, version 2.0 (IAB TCF 2.0). Den här guiden visar hur du ställer in en Adobe Experience Platform Launch-egenskap för att skicka IAB TCF 2.0-medgivandeinformation till Adobe med hjälp av AEP Web SDK-tillägget för Experience Platform Launch.
 
 Om du inte vill använda Experience Platform Launch, se guiden om hur du [använder IAB TCF 2.0 utan Experience Platform Launch](./without-launch.md).
 
 ## Komma igång
 
-Om du vill använda IAB TCF 2.0 med Experience Platform Launch och AEP Web SDK-tillägget måste du ha ett XDM-schema och en datauppsättning tillgänglig. Om du inte har konfigurerat något av dessa kan du börja med att läsa den här snabbstartguiden för Adobe Experience Platform Web SDK Launch innan du fortsätter.
+Om du vill använda IAB TCF 2.0 med Experience Platform Launch och AEP Web SDK-tillägget måste du ha ett XDM-schema och en datauppsättning tillgänglig.
 
 Den här guiden kräver dessutom att du har en fungerande förståelse för Adobe Experience Platform Web SDK. Läs översikten [för](../../home.md) Adobe Experience Platform Web SDK och dokumentationen med [vanliga frågor och svar](../../web-sdk-faq.md) om en snabb uppdatering.
 
@@ -75,7 +75,7 @@ Den här anpassade koden gör två saker:
 
 >[!IMPORTANT]
 >
->Du kan inte välja dessa dataelement med hjälp av dataelementväljaren eftersom de skapades med anpassad kod. Du måste ange ett procenttecken i dataelementnamnet. Den här koden uppdaterar kundens profil med de nya medgivandeinställningarna så snart de ändras. Dessutom returnerar servern ett cookie-värde som kan förhindra att Adobe Experience Platform Web SDK kan spela in Experience Events.
+>Du kan inte välja dessa dataelement med hjälp av dataelementväljaren eftersom de skapades med anpassad kod. Du måste ange ett procenttecken i dataelementnamnet. Den här koden uppdaterar kundens profil med de nya medgivandeinställningarna så snart de ändras. Dessutom returnerar servern ett cookie-värde som kan förhindra att Adobe Experience Platform Web SDK spelar in Experience Events.
 
 ## Skapa ett XDM-dataelement för Experience Events
 
@@ -122,12 +122,12 @@ addEventListener();
 
 Den här koden är identisk med den tidigare anpassade koden, förutom att både `useractioncomplete` - och `tcloaded` -händelser hanteras. Den [tidigare anpassade koden](#consent-code-1) aktiveras bara när kunden väljer sina inställningar för första gången. Den här koden utlöses också när kunden redan har valt sina inställningar. På den andra sidan laddas till exempel.
 
-Lägg till en&quot;Skicka händelse&quot;-åtgärd från Adobe Experience Platform Web SDK-tillägget. I XDM-fältet väljer du XDM-dataelementet som du skapade i föregående avsnitt.
+Lägg till en&quot;Skicka händelse&quot;-åtgärd från AEP Web SDK-tillägget. I XDM-fältet väljer du XDM-dataelementet som du skapade i föregående avsnitt.
 
 ## Skicka andra händelser med IAB TCF 2.0-medgivandeinformation
 
-När händelser utlöses efter den första Experience Event-händelsen definieras de två dataelementen fortfarande och kan användas för att skicka IAB:s medgivandeinformation. Använd samma XDM-dataelement för att skicka framtida händelser. Information om IAB TCF 2.0 finns med.
+När händelser utlöses efter den första Experience Event-händelsen definieras de två dataelementen fortfarande och kan användas för att skicka IAB:s medgivandeinformation. Använd samma XDM-dataelement för att skicka framtida händelser. Information om IAB TCF 2.0 ingår.
 
 ## Nästa steg
 
-Nu när du har lärt dig att använda IAB TCF 2.0 med Adobe Experience Platform Web SDK-tillägget kan du även integrera med andra Adobe-lösningar som Adobe Analytics eller kunddataplattformen i realtid. Mer information finns i [IAB Transparency &amp; Consent Framework 2.0-översikten](./overview.md) .
+Nu när du har lärt dig att använda IAB TCF 2.0 med AEP Web SDK-tillägget kan du även integrera med andra Adobe-lösningar som Adobe Analytics eller kunddataplattformen i realtid. Mer information finns i [IAB Transparency &amp; Consent Framework 2.0-översikten](./overview.md) .
