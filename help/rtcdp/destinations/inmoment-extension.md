@@ -2,12 +2,12 @@
 keywords: InMoment;inmoment;Inmoment;launch integration
 title: InMoment-tillägg
 seo-title: InMoment-tillägg
-description: Tillägget InMoment är en undersökningsdestination i kunddataplattformen i Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget InMoment är en undersökningsdestination i kunddataplattformen i Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Tillägget InMoment är ett undersökningsmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: Tillägget InMoment är ett undersökningsmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '565'
+source-wordcount: '562'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 Med [!DNL InMoment] Launch Integration kan du snabbt och enkelt aktivera online-feedback via Digital Intercept. I appen kan spärrar konfigureras och hanteras via CXI Cloud Admin, vilket ger CX-hanterare mer kontroll över deras program.
 
-[!DNL InMoment] är ett enkättillägg i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100847.html).
+[!DNL InMoment] är ett enkättillägg i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100847.html).
 
 Det här målet är ett Adobe Experience Platform Launch-tillägg. Mer information om hur plattformstillägg fungerar i CDP i realtid i Adobe finns i Översikt över [Adobe Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
 
