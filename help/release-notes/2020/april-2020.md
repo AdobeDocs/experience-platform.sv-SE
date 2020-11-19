@@ -6,9 +6,9 @@ last-update: April 13, 2020
 author: ens71067
 keywords: release notes;
 translation-type: tm+mt
-source-git-commit: a362b67cec1e760687abb0c22dc8c46f47e766b7
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '991'
+source-wordcount: '972'
 ht-degree: 2%
 
 ---
@@ -24,9 +24,9 @@ Nya funktioner i Adobe Experience Platform:
 Uppdateringar av befintliga funktioner:
 * [[!DNL Experience Data Model (XDM)]](#xdm)
 * [[!DNL Data Governance]](#governance)
-* [[!DNL-mål]](#destinations)
-* [[!DNL-Privacy Service]](#privacy)
-* [[!DNL-källor]](#sources)
+* [[!DNL Destinations]](#destinations)
+* [[!DNL Privacy Service]](#privacy)
+* [[!DNL Sources]](#sources)
 
 ## [!DNL Intelligent Services] {#intelligent}
 
@@ -90,7 +90,7 @@ Mer information finns i översikten över [datastyrning](../../data-governance/h
 
 ## Mål {#destinations}
 
-I [Adobe kunddataplattform](../../rtcdp/overview.md)i realtid är destinationer färdigbyggda integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
+I kunddataplattformen [i](../../rtcdp/overview.md)realtid är mål färdiga integreringar med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
 
 **Nya destinationer**
 
