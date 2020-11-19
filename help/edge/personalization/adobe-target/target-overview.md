@@ -5,9 +5,9 @@ description: Lär dig hur du återger anpassat innehåll med Experience Platform
 seo-description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Target
 keywords: target;adobe target;activity.id;experience.id;renderDecisions;decisionScopes;prehiding snippet;vec;Form-Based Experience Composer;xdm;audiences;decisions;scope;schema;
 translation-type: tm+mt
-source-git-commit: f2bd8b89207901e57272a4f56d7f561ac10eb60a
+source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
 workflow-type: tm+mt
-source-wordcount: '626'
+source-wordcount: '629'
 ht-degree: 2%
 
 ---
@@ -35,7 +35,7 @@ Om du vill använda VEC med en Platform Web SDK-implementering måste du install
 
 ## Återge VEC-aktiviteter automatiskt
 
-AEP Web SDK kan automatiskt återge dina upplevelser som definieras via Adobe Target VEC på webben för dina användare. Skicka en händelse med `renderDecisions = true`:
+Adobe Experience Platform Web SDK kan automatiskt återge de upplevelser som definieras via Adobe Target VEC på webben för dina användare. Skicka en händelse med `renderDecisions = true`:
 
 ```javascript
 alloy
@@ -85,32 +85,33 @@ alloy
 
 ## The `__view__` Scope
 
-AEP [!DNL Web SDK] innehåller en funktion där du kan hämta VEC-åtgärder utan att förlita dig på AEP [!DNL Web SDK] för att återge VEC-åtgärder åt dig. Skicka en händelse med `__view__` definierad som en `decisionScopes`.
+Adobe Experience Platform Web SDK innehåller funktioner där du kan hämta VEC-åtgärder utan att förlita dig på SDK för att återge VEC-åtgärder åt dig. Skicka en händelse med `__view__` definierad som en `decisionScopes`.
 
 ```javascript
 alloy("sendEvent", {
-  decisionScopes: [“__view__”,"foo", "bar"], 
-  "xdm": { 
-    "web": { 
-      "webPageDetails": { 
-        "name": "Home Page"
-       }
-      } 
-     }
+      "decisionScopes": ["__view__", "foo", "bar"], 
+      "xdm": { 
+        "web": { 
+          "webPageDetails": { 
+            "name": "Home Page"
+          }
+        } 
+      }
     }
-   ).then(results){
-  for (decision of results.decisions){
-     if(decision.decisionScope == "__view__")
-       console.log(decision.content)
-}
-};
+  ).then(function(results) {
+    for (decision of results.decisions) {
+      if (decision.decisionScope === "__view__") {
+        console.log(decision.content)
+      }
+    }
+  });
 ```
 
 ## Målgrupper i XDM
 
-När du definierar målgrupper för målaktiviteter som ska levereras via AEP Web SDK måste [XDM](https://docs.adobe.com/content/help/sv-SE/experience-platform/xdm/home.html) definieras och användas. När du har definierat XDM-scheman, klasser och blandningar kan du skapa en målgruppsregel som definieras av XDM-data för målinriktning. I Target visas XDM-data i Audience Builder som en anpassad parameter. XDM-filen serialiseras med punktnotation (till exempel `web.webPageDetails.name`).
+När du definierar målgrupper för målaktiviteter som ska levereras via Adobe Experience Platform Web SDK måste [XDM](https://docs.adobe.com/content/help/sv-SE/experience-platform/xdm/home.html) definieras och användas. När du har definierat XDM-scheman, klasser och blandningar kan du skapa en målgruppsregel som definieras av XDM-data för målinriktning. I Target visas XDM-data i Audience Builder som en anpassad parameter. XDM-filen serialiseras med punktnotation (till exempel `web.webPageDetails.name`).
 
-Om du har Target-aktiviteter med fördefinierade målgrupper som använder anpassade parametrar eller en användarprofil bör du vara medveten om att de inte levereras korrekt via AEP Web SDK. I stället för att använda egna parametrar eller användarprofilen måste du använda XDM i stället. Det finns dock färdiga målgruppsfält som stöds via AEP Web SDK och som inte kräver XDM. Det här är de fält i målgränssnittet som inte kräver XDM:
+Om du har Target-aktiviteter med fördefinierade målgrupper som använder anpassade parametrar eller en användarprofil bör du vara medveten om att de inte levereras korrekt via SDK. I stället för att använda egna parametrar eller användarprofilen måste du använda XDM i stället. Det finns dock färdiga målgruppsfält som stöds via Adobe Experience Platform Web SDK och som inte kräver XDM. Det här är de fält i målgränssnittet som inte kräver XDM:
 
 * Målbibliotek
 * Geo
