@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: November 18, 2019
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '1908'
+source-wordcount: '1878'
 ht-degree: 1%
 
 ---
@@ -18,19 +18,19 @@ ht-degree: 1%
 **Releasedatum: 18 november 2019**
 
 Nya funktioner i Adobe Experience Platform:
-* [[!DNL Customer Data Platform i realtid]](#rtcdp)
-* [[!DNL-mål]](#destinations)
-* [[!DNL-källor]](#sources)
+* [[!DNL Real-time Customer Data Platform]](#rtcdp)
+* [[!DNL Destinations]](#destinations)
+* [[!DNL Sources]](#sources)
 
 Uppdateringar av befintliga funktioner:
 * [[!DNL Data Science Workspace]](#dsw)
 * [[!DNL Experience Data Model (XDM) System]](#xdm)
-* [[!DNL-kundprofil i realtid]](#profile)
-* [[!DNL-segmenteringstjänst]](#segmentation)
+* [[!DNL Real-time Customer Profile]](#profile)
+* [[!DNL Segmentation Service]](#segmentation)
 
 ## [!DNL Real-time Customer Data Platform] {#rtcdp}
 
-Adobe kunddataplattform i realtid (CDP) bygger på Adobe Experience Platform och hjälper företag att sammanföra kända och okända data för att aktivera kundprofiler med intelligent beslutsfattande under hela kundresan. CDP i realtid kombinerar flera datakällor för företag för att skapa enhetliga profiler i realtid som kan användas för att leverera personliga personaliserade kundupplevelser i alla kanaler och enheter.
+Kunddataplattformen i realtid bygger på Adobe Experience Platform och hjälper företag att samla kända och okända data för att aktivera kundprofiler med intelligent beslutsfattande under hela kundresan. CDP i realtid kombinerar flera datakällor för företag för att skapa enhetliga profiler i realtid som kan användas för att leverera personliga personaliserade kundupplevelser i alla kanaler och enheter.
 
 [!DNL Real-time Customer Data Platform] innehåller verktyg för datastyrning, identitetshantering, avancerad segmentering och datavetenskap, så att ni kan skapa profiler och definiera målgrupper samt få djupgående insikter samtidigt som ni kan tillämpa strikta policyer för datastyrning.
 
@@ -43,19 +43,19 @@ Med CDP i realtid kan man
 * Generera användbara insikter och skala målgrupper med hjälp av AI och maskininlärning från Adobe Sensei som är framtagen för marknadsförare.
 * Leverera personaliserade upplevelser i realtid i alla kanaler och på alla destinationer.
 
-Mer information finns i dokumentationen [för](../../rtcdp/overview.md)Adobe kunddataplattform i realtid.
+Mer information finns i dokumentationen [för](../../rtcdp/overview.md)kunddataplattformen i realtid.
 
 **Viktiga funktioner**
 
 | Funktion | Beskrivning |
 |---|---|
 | Mål  | Färdiga integreringar med målplattformar som stöds av Adobe och [!DNL Real-time Customer Data Platform] som aktiverar data till dessa partners på ett smidigt sätt. Mer information finns i [Destinationer](#destinations) nedan. |
-| Kontrollpanel för måttuppgifter på startsida | På Adobe Real-time Customer Data Platform (CDP i realtid) finns en mätinstrumentpanel som visar information om profiler och segment. Hemsidan innehåller även länkar till utbildningsmaterial. Se avsnittet om kunddata för [kundens dataplattmått](#real-time-customer-data-platform-metrics) i realtid nedan. |
+| Kontrollpanel för måttuppgifter på startsida | Hemsidan för Customer Data Platform (CDP i realtid) innehåller en mätinstrumentpanel som visar information om profiler och segment. Hemsidan innehåller även länkar till utbildningsmaterial. Se avsnittet om kunddata för [kundens dataplattmått](#real-time-customer-data-platform-metrics) i realtid nedan. |
 | Källor | Du kan importera data från en mängd olika källor som Adobe Solutions, molnbaserad lagring, tredjepartsprogramvara och CRM. Läs mer i avsnittet [Källor](#sources) nedan. |
 
 **[!DNL Real-time Customer Data Platform]mått**
 
-Hemsidan Adobe Real-time Customer Data Platform (CDP i realtid), som innehåller en mätinstrumentpanel, visas när du loggar in på CDP i realtid.
+Hemsidan för Customer Data Platform (CDP i realtid), som innehåller en mätinstrumentpanel, visas när du loggar in på CDP i realtid.
 
 Hemsidan är bara en av platserna där metriska kort visas. CDP ger dig mätkort i realtid genom hela upplevelsen. Dessa mätvärden ger information om data, profiler och målgrupper i systemet.
 
