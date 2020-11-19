@@ -2,12 +2,12 @@
 title: Adobe Experience Platform Web SDK - hjälp
 seo-title: Adobe Experience Platform Web SDK - hjälp
 description: Lär dig vad Adobe Experience Platform Web SDK är och hur det kan användas.
-seo-description: låta Adobe Experience Cloud kunder interagera med de olika tjänsterna i Experience Cloud.
+seo-description: Lär dig hur Adobe Experience Cloud kunder kan interagera med de olika tjänsterna i Experience Cloud.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;edge;Visitor.js;AppMeasurement.js;AT.js;DIL.js;web sdk;SDK;web SDK;Launch;launch
 translation-type: tm+mt
-source-git-commit: 2e28fda40a135330054c749d73439448a55db52c
+source-git-commit: bdd80b15258bf4e3c0dee1e260fd3469c76d5885
 workflow-type: tm+mt
-source-wordcount: '708'
+source-wordcount: '689'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # Vad är Adobe Experience Platform Web SDK?
 
-Adobe Experience Platform Web SDK är ett JavaScript-bibliotek på klientsidan som gör att Adobe Experience Cloud kunder kan interagera med de olika tjänsterna i [!DNL Experience Cloud] Adobe [!DNL Experience Platform Edge Network]. Förutom JavaScript-biblioteket finns det ett [Experience Platform Launch-tillägg](https://docs.adobe.com/content/help/en/launch/using/extensions-ref/adobe-extension/aep-extension/overview.html) som kan användas med dina Web SDK-konfigurationer.
+Adobe Experience Platform Web SDK är ett JavaScript-bibliotek på klientsidan som gör att Adobe Experience Cloud kunder kan interagera med de olika tjänsterna i [!DNL Experience Cloud] via Adobe Experience Platform Edge Network. Förutom JavaScript-biblioteket finns det ett [Experience Platform Launch-tillägg](https://docs.adobe.com/content/help/en/launch/using/extensions-ref/adobe-extension/aep-extension/overview.html) som kan användas med dina Web SDK-konfigurationer.
 
 ## Experience Edge
 
@@ -42,7 +42,7 @@ Med ett enda konsoliderat edge-system kan kunderna hantera sina annonserings-, m
 
 ## Videoöversikt
 
-I följande videofilm visas en översikt över Adobe Experience Platform [!DNL Web SDK] och [!DNL Edge Network].
+I följande videofilm visas en översikt över Adobe Experience Platform [!DNL Web SDK] och Adobe Experience Platform [!DNL Edge Network].
 
 >[!VIDEO](https://video.tv.adobe.com/v/34141?quality=12&learn=on)
 
@@ -59,13 +59,9 @@ Detta är inte bara en wrapper runt befintliga bibliotek. Det är en fullständi
 
 Förutom ett nytt bibliotek finns det en ny slutpunkt som effektiviserar HTTP-begäranden till Adobe-lösningar. Tidigare skickade Visitor.js ett blockerande anrop till besökar-ID-tjänsten och AT.js skickade ett anrop till Adobe Target, DIL.js skickade ett anrop till Adobe Audience Manager och slutligen AppMeasurement.js skickade ett anrop till Adobe Analytics. Det nya biblioteket och slutpunkten kan hämta ett ID, hämta en [!DNL Target] upplevelse, skicka data till [!DNL Audience Manager]och skicka data till Adobe Experience Platform i ett enda anrop.
 
-I följande video visas Adobe Experience Platform [!DNL Web SDK] och [!DNL Edge Network] in action. I videoexemplet används ett enda anrop till Adobe som skickar data till [!DNL Experience Platform], [!DNL Analytics], [!DNL Audience Manager]och [!DNL Target].
+I följande video visas Adobe Experience Platform [!DNL Web SDK] och Adobe Experience Platform [!DNL Edge Network] in action. I videoexemplet används ett enda anrop till Adobe som skickar data till [!DNL Experience Platform], [!DNL Analytics], [!DNL Audience Manager]och [!DNL Target].
 
 >[!VIDEO](https://video.tv.adobe.com/v/34148?quality=12&learn=on)
-
-## Komma igång
-
-Vi rekommenderar att du [går igenom guiden](fundamentals/prerequisite.md) Komma igång för att få en snabb genomgång av hur du kommer igång med Adobe Experience Platform Launch.
 
 Produkten utvecklas ständigt och växer för att klara fler och fler användningsfall. Ta en titt på vår [fallpanel](https://github.com/adobe/alloy/projects/5)för att hålla dig à jour med det senaste. Vi håller detta uppdaterat med de användningsfall som vi för närvarande stöder och de som vi arbetar med för att du ska kunna fatta bästa möjliga beslut.
 
