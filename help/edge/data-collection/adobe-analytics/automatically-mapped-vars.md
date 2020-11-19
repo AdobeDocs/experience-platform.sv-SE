@@ -5,9 +5,9 @@ description: Lär dig vilka variabler som automatiskt mappas i Adobe Analytics m
 seo-description: Lär dig vilka variabler som automatiskt mappas i Adobe Analytics med Experience Platform Web SDK
 keywords: adobe analytics;variables;analytics;automatic map;automatically mapped;
 translation-type: tm+mt
-source-git-commit: b81c0c450ddee4b0c0abedfd8ca53c3a599fb3cb
+source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
 workflow-type: tm+mt
-source-wordcount: '674'
+source-wordcount: '675'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # Variabler mappas automatiskt i [!DNL Analytics]
 
-Nedan finns en lista med variabler som Adobe Experience Platform [!DNL Edge Network] automatiskt mappar till [!DNL Analytics].
+Nedan finns en lista med variabler som Adobe Experience Platform Edge Network automatiskt mappar till [!DNL Analytics].
 
 | Sökväg till XDM-fält | [!DNL Analytics Query String] / HTTP Header | Beskrivning |
 | ---------- | ------------------------- | ----------------------------------------- |
