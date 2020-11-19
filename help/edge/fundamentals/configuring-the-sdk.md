@@ -5,9 +5,9 @@ description: Lär dig hur du konfigurerar Experience Platform Web SDK
 seo-description: Lär dig hur du konfigurerar Experience Platform Web SDK
 keywords: configuring;configuration;SDK;edge;Web SDK;configure;edgeConfigId;context;web;device;environment;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;web sdk settings;prehidingStyle;opacity;cookieDestinationsEnabled;urlDestinationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 translation-type: tm+mt
-source-git-commit: 2e28fda40a135330054c749d73439448a55db52c
+source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
 workflow-type: tm+mt
-source-wordcount: '749'
+source-wordcount: '710'
 ht-degree: 4%
 
 ---
@@ -85,13 +85,7 @@ Ditt tilldelade [!DNL Experience Cloud] organisations-ID.  När du konfigurerar 
 | -------- | ------------ | ----------------- |
 | Boolean | Nej | `true` |
 
-Anger om data som är associerade med länkklick ska samlas in automatiskt. För klickningar som kvalificerar som länkklick samlas följande [webbinteraktionsdata](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/webinteraction.schema.md) in:
-
-| **Egenskap** | **Beskrivning** |
-| ------------ | ----------------------------------- |
-| Länknamn | Namnet bestäms av länkkontexten |
-| Länk-URL | Normaliserad URL |
-| Länktyp | Ange om du vill hämta, avsluta eller någon annan |
+Anger om data som är associerade med länkklick ska samlas in automatiskt. Mer information finns i [Automatisk länkspårning](../data-collection/track-links.md#automaticLinkTracking) .
 
 ### `onBeforeEventSend`
 
@@ -153,7 +147,7 @@ Aktiverar [!DNL Audience Manager] URL-mål, vilket gör det möjligt att bränna
 | -------- | ------------ | ----------------- |
 | Boolean | Nej | sant |
 
-Om true läser SDK in gamla AMCV-cookies. Detta underlättar vid övergång till AEP Web SDK medan vissa delar av webbplatsen fortfarande använder Visitor.js. Om dessutom Visitor-API är definierat på sidan kommer SDK att efterfråga besökar-API:t för ECID. På så sätt kan du dubbeltagga sidor med AEP Web SDK och fortfarande ha samma ECID.
+Om true läser SDK in gamla AMCV-cookies. Detta underlättar vid övergång till Adobe Experience Platform Web SDK medan vissa delar av webbplatsen fortfarande använder Visitor.js. Om dessutom Visitor-API är definierat på sidan kommer SDK att efterfråga besökar-API:t för ECID. På så sätt kan du dubbeltagga sidor med AEP Web SDK och fortfarande ha samma ECID.
 
 ### `thirdPartyCookiesEnabled`
 
