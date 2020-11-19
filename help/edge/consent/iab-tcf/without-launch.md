@@ -1,18 +1,18 @@
 ---
 title: Använda IAB TCF 2.0 utan Experience Platform Launch
 seo-title: Konfigurera IAB TCF 2.0-samtycke med Adobe Experience Platform Web SDK
-description: Lär dig hur du ställer in godkännande för IAB TCF 2.0 med Adobe Experience Platform Web SDK
-seo-description: Lär dig hur du ställer in godkännande för IAB TCF 2.0 med Adobe Experience Platform Web SDK
+description: Lär dig hur du ställer in IAB TCF 2.0-samtycke med Adobe Experience Platform Web SDK
+seo-description: Lär dig hur du ställer in IAB TCF 2.0-samtycke med Adobe Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: db742119d8f169817080f1fd4e0dc08a0f0faa47
+source-git-commit: 1b5ee9b1f9bdc7835fa8de59020b3eebb4f59505
 workflow-type: tm+mt
-source-wordcount: '697'
+source-wordcount: '687'
 ht-degree: 0%
 
 ---
 
 
-# Använda IAB TCF 2.0 med Adobe Experience Platform Web SDK-tillägget
+# Använda IAB TCF 2.0 med AEP Web SDK-tillägget
 
 Den här guiden visar hur du integrerar Interactive Advertising Bureau Transparency &amp; Consent Framework, version 2.0 (IAB TCF 2.0) med Adobe Experience Platform Web SDK utan att använda Experience Platform Launch. En översikt över integrationen med IAB TCF 2.0 finns i [översikten](./overview.md). En guide om hur du integrerar med Experience Platform Launch finns i [IAB TCF 2.0 guide for Experience Platform Launch](./with-launch.md).
 
@@ -58,7 +58,7 @@ I det här exemplet anropas `configure` kommandot efter att `tcData` det har hä
 
 ## Använda händelsen setConsent
 
-API:t IAB TCF 2.0 innehåller en händelse för när kunden uppdaterar medgivandet. Detta inträffar när kunden från början ställer in sina inställningar och när kunden uppdaterar sina inställningar.
+IAB TCF 2.0 API innehåller en händelse för när kunden uppdaterar medgivandet. Detta inträffar när kunden från början ställer in sina inställningar och när kunden uppdaterar sina inställningar.
 
 I följande exempel visas ett sätt att göra detta:
 
@@ -110,4 +110,4 @@ Det andra sättet att lägga till medgivandeinformationen i varje begäran är m
 
 ## Nästa steg
 
-Nu när du har lärt dig att använda IAB TCF 2.0 med Adobe Experience Platform Web SDK-tillägget kan du även integrera med andra Adobe-lösningar som Adobe Analytics eller kunddataplattformen i realtid. Mer information finns i [IAB Transparency &amp; Consent Framework 2.0-översikten](./overview.md) .
+Nu när du har lärt dig att använda IAB TCF 2.0 med AEP Web SDK-tillägget kan du även integrera med andra Adobe-lösningar som Adobe Analytics eller kunddataplattformen i realtid. Mer information finns i [IAB Transparency &amp; Consent Framework 2.0-översikten](./overview.md) .
