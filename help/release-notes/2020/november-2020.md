@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: November 10, 2020
 author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: 5aa8dbcd85fa506f90515ce3e01d35993dd99c10
+source-git-commit: d6b603e2918b502635b11fb1aa693a4b4311c125
 workflow-type: tm+mt
-source-wordcount: '2054'
+source-wordcount: '2103'
 ht-degree: 2%
 
 ---
@@ -122,6 +122,7 @@ I kunddataplattformen [i](../../rtcdp/overview.md)realtid är mål färdiga inte
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
+| UX-uppdateringar för målinformation | Arbetsflödet för mål-CDP i realtid innefattar nu intern övervakning så att du kan se vilka gruppaktiveringar som lyckades. Med den här funktionen kan användare lösa problem direkt i arbetsflödet för batchdestinationer via aviseringar och en kontrollpanel för övervakning för att spåra fel i bearbetningsprocessen. |
 | Obligatoriska fält | Användarna kan markera fält som obligatoriska och se till att endast fält som innehåller det obligatoriska fältet exporteras. |
 
 <!-- | File scheduling | For both email based and cloud storage destinations, users can create a one-time export or create daily snapshots. |
