@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: August 10, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: b4ce4c2e5ff5083f663c2daf23c32a1cec32124c
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '597'
+source-wordcount: '582'
 ht-degree: 3%
 
 ---
@@ -20,9 +20,9 @@ ht-degree: 3%
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [[!DNL Data Science Workspace]](#dsw)
-- [[!DNL-mål]](#destinations)
-- [[!DNL Customer Data Platform i realtid]](#rtcdp)
-- [[!DNL-källor]](#sources)
+- [[!DNL Destinations]](#destinations)
+- [[!DNL Real-time Customer Data Platform]](#rtcdp)
+- [[!DNL Sources]](#sources)
 
 ## [!DNL Data Science Workspace] {#dsw}
 
@@ -38,7 +38,7 @@ Mer information om [!DNL JupyterLab]finns i [[!DNL JupyterLab] användarhandboke
 
 ## Mål {#destinations}
 
-I [Adobe kunddataplattform](../../rtcdp/overview.md)i realtid är destinationer färdigbyggda integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
+I kunddataplattformen [i](../../rtcdp/overview.md)realtid är mål färdiga integreringar med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
 
 **Nya destinationer**
 
@@ -57,7 +57,7 @@ Det finns nya destinationer där du kan aktivera dina Adobe Experience Platform-
 
 ## [!DNL Real-time Customer Data Platform] {#rtcdp}
 
-Adobe Customer Data Platform ([!DNL Real-time CDP]) som bygger på Experience Platform hjälper företag att sammanföra kända och okända data i realtid för att aktivera kundprofiler med intelligent beslutsfattande under hela kundresan. [!DNL Real-time CDP] kombinerar flera datakällor för företag för att skapa kundprofiler i realtid. Segment som byggts utifrån dessa profiler kan sedan skickas till efterföljande destinationer för att tillhandahålla personliga kundupplevelser i alla kanaler och enheter.
+Med kunddataplattformen ([!DNL Real-time CDP]) som bygger på Experience Platform kan företag i realtid samla in kända och okända data för att aktivera kundprofiler med intelligent beslutsfattande under hela kundresan. [!DNL Real-time CDP] kombinerar flera datakällor för företag för att skapa kundprofiler i realtid. Segment som byggts utifrån dessa profiler kan sedan skickas till efterföljande destinationer för att tillhandahålla personliga kundupplevelser i alla kanaler och enheter.
 
 **Nya funktioner**
 
