@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: November 10, 2020
 author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: 5ff73aa1745e78f0026ada2c66908888be5f4498
+source-git-commit: ade9da107ee6dd100a33a7e7e9a20b4335721e0a
 workflow-type: tm+mt
-source-wordcount: '2063'
+source-wordcount: '2055'
 ht-degree: 2%
 
 ---
@@ -213,7 +213,7 @@ Adobe Experience Platform kan importera data från externa källor och samtidigt
 | Ta bort anslutningar | Batchanslutningar som innehåller fel eller har blivit onödiga kan nu tas bort med API:t och gränssnittet [!DNL Flow Service] . Mer information finns i självstudiekursen om hur du [tar bort anslutningar med API:t](../../sources/tutorials/api/delete.md) för Flow Service och [tar bort konton med gränssnittet](../../sources/tutorials/ui/delete-accounts.md). |
 | Hierarkisk mappning | Du kan förhandsgranska en hierarkisk källfil, som JSON eller Parquet, under dataöverföringsprocessen. Mer information finns i självstudiekursen om hur du [konfigurerar ett dataflöde för molnlagringskontakter i användargränssnittet](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md) . |
 | API-stöd för mappning i strömningskällor | Nu kan du använda API:er för att utföra mappningsfunktioner med direktuppspelningskällor. |
-| API-stöd för anpassade avgränsare för molnlagringskällor | Nu kan du samla in filer som inte är CSV-avgränsade med molnlagringskällor. Du kan använda valfri kolumnavgränsare, t.ex. tabb, komma, pipe, semikolon eller hash, för att samla platta filer i alla format. Standardvärdet är ett komma om det inte anges. |
+| API-stöd för anpassade avgränsare för molnlagringskällor | Nu kan du samla in filer som inte är CSV-avgränsade med molnlagringskällor. Du kan använda valfri kolumnavgränsare, t.ex. tabb, komma, pipe, semikolon eller hash, för att samla platta filer i alla format. |
 | Stöd för sandlåda i Adobe Audience Manager Connector | Kopplingen Audience Manager är nu sandlådebaserad. Användare kan aktivera kopplingen för att dirigera datauppsättningar från Audience Manager till valfri sandlåda (inklusive icke-produktionssandlådor). Konfigurationen är begränsad till en sandlåda per IMS-organisation. |
 | UX-förbättringar | Filbaserad inmatning är nu tillgängligt via källkatalogen. |
 
