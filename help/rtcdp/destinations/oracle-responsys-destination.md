@@ -2,12 +2,12 @@
 keywords: email;Email;e-mail;email destinations;oracle responsys destination
 title: Oracle Responsys-mål
 seo-title: Oracle Responsys-mål
-description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som erbjuds av Oracle för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
-seo-description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som erbjuds av Oracle för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
+description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som Oracle erbjuder för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
+seo-description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som Oracle erbjuder för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
 translation-type: tm+mt
-source-git-commit: 67a353c950bef11ccbaa52c49d213f08449baa96
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '486'
+source-wordcount: '485'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 [Responsys](https://www.oracle.com/marketingcloud/products/cross-channel-orchestration/) är ett verktyg för e-postmarknadsföring i storföretag för flerkanalskampanjer som erbjuds av [!DNL Oracle] att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
 
-Om du vill skicka segmentdata till [!DNL Oracle Responsys]måste du först [ansluta till målet](#connect-destination) i kunddataplattformen i Adobe och sedan [konfigurera en dataimport](#import-data-into-responsys) från lagringsplatsen till [!DNL Oracle Responsys].
+Om du vill skicka segmentdata till [!DNL Oracle Responsys]måste du först [ansluta till målet](#connect-destination) i kunddataplattformen i realtid och sedan [konfigurera en dataimport](#import-data-into-responsys) från lagringsplatsen till [!DNL Oracle Responsys].
 
 ## Exporttyp {#export-type}
 
