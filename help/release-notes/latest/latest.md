@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: November 10, 2020
 author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: b5fa40deb480f264b02a8be56aff2c50e4149cb2
+source-git-commit: 6cf9c88f6dc751a4cc877670a89cc99d1efb1b2a
 workflow-type: tm+mt
-source-wordcount: '2103'
+source-wordcount: '2157'
 ht-degree: 2%
 
 ---
@@ -113,20 +113,18 @@ I kunddataplattformen [i](../../rtcdp/overview.md)realtid är mål färdiga inte
 
 | Destination | Beskrivning |
 | ----------- | ----------- |
+| Braze | Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar. |
 | Microsoft Bing | Microsoft Bing-målet hjälper er att genomföra återannonsering och målgruppsanpassade digitala kampanjer i Microsoft Display Advertising. |
 | The Trade Desk | Trade Desk är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer för olika annonser, videoklipp och mobila inventeringskällor. |
-
-<!-- | Braze | Braze is a comprehensive customer engagement platform that power relevant and memorable experiences between customers and the brands they love. |  -->
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
 | UX-uppdateringar för målinformation | Arbetsflödet för mål-CDP i realtid innefattar nu intern övervakning så att du kan se vilka gruppaktiveringar som lyckades. Med den här funktionen kan användare lösa problem direkt i arbetsflödet för batchdestinationer via aviseringar och en kontrollpanel för övervakning för att spåra fel i bearbetningsprocessen. |
+| Filkryptering | För filbaserade mål kan användare nu lägga till kryptering i de exporterade filerna. |
+| Filplanering | För både e-postbaserade och molnbaserade lagringsplatser kan användare skapa en engångs export eller skapa dagliga ögonblicksbilder. |
 | Obligatoriska fält | Användarna kan markera fält som obligatoriska och se till att endast fält som innehåller det obligatoriska fältet exporteras. |
-
-<!-- | File scheduling | For both email based and cloud storage destinations, users can create a one-time export or create daily snapshots. |
-| File encryption | For file based destinations, users can now add encryption to their exported files. | -->
 
 Mer information finns i Översikt över [destinationer](../../rtcdp/destinations/destinations-overview.md).
 
@@ -202,9 +200,10 @@ Adobe Experience Platform kan importera data från externa källor och samtidigt
 [!DNL Experience Platform] innehåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
 
 **Nya källor**
+
 | Funktion | Beskrivning |
-| — | — |
-| [!DNL Shopify] | Du kan nu ansluta [!DNL Shopify] till [!DNL Experience Platform] med [!DNL Flow Service] API:t eller gränssnittet. Mer information finns i översikten [för](../../sources/connectors/ecommerce/shopify.md) Förminska koppling. |
+| ------- | ----------- |
+| [!DNL Shopify] | Nu kan du ansluta [!DNL Shopify] till [!DNL Experience Platform] med [!DNL Flow Service] API:t eller gränssnittet. Mer information finns i översikten [för](../../sources/connectors/ecommerce/shopify.md) Förminska koppling. |
 
 **Viktiga funktioner**
 
