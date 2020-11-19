@@ -2,12 +2,12 @@
 keywords: Invoca;invoca
 title: Anropa taggtillägg
 seo-title: Anropa taggtillägg
-description: Tillägget för anropstaggar är en röst för kundens mål i kunddataplattformen i Adobe. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget för anropstaggar är en röst för kundens mål i kunddataplattformen i Adobe. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Tillägget för anropstaggar är en röst för kundens mål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: Tillägget för anropstaggar är en röst för kundens mål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '571'
+source-wordcount: '568'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 [!DNL Invoca] för in samtalsdata och röstinsikter i den digitala kundresan. Med [!DNL Invoca’s] en plattform för samtalsanalys har marknadsförarna äntligen analyser för att mäta samtalsresultat och koppla offline-konverteringar tillbaka till digitala utgifter.
 
-[!DNL Invoca Tags] är en röst för kundens utökning i Adobe kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100067.invoca.html).
+[!DNL Invoca Tags] är en röst för kundens tillägg i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100067.invoca.html).
 
 Det här målet är ett Adobe Experience Platform Launch-tillägg. Mer information om hur plattformstillägg fungerar i CDP i realtid i Adobe finns i Översikt över [Adobe Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
 
