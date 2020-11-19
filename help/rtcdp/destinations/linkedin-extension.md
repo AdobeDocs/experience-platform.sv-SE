@@ -2,12 +2,12 @@
 keywords: LinkedIn;linkedin;Linkedin;LinkedIn Insight Tag;insight tag;Insight Tag
 title: Tillägget LinkedIn Insight-tagg
 seo-title: Tillägget LinkedIn Insight-tagg
-description: Tillägget LinkedIn Insight Tag är en annonsdestination i kunddataplattformen i Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget LinkedIn Insight Tag är en annonsdestination i kunddataplattformen i Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Tillägget LinkedIn Insight Tag är ett reklammål i kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: Tillägget LinkedIn Insight Tag är ett reklammål i kunddataplattform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '541'
+source-wordcount: '538'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 Installera om du [!DNL LinkedIn Insight Tag] vill använda funktioner för konverteringsspårning, omdirigering och demografi av webbplatser.
 
-[!DNL LinkedIn Insight Tag] är en annonsutökning i kunddataplattformen Adobe i realtid. Mer information om tilläggsfunktioner finns i [LinkedIn Insight-tagg](https://business.linkedin.com/marketing-solutions/insight-tag).
+[!DNL LinkedIn Insight Tag] är ett annonstillägg i kunddataplattformen i realtid. Mer information om tilläggsfunktioner finns i [LinkedIn Insight-tagg](https://business.linkedin.com/marketing-solutions/insight-tag).
 
 Det här målet är ett Adobe Experience Platform Launch-tillägg. Mer information om hur plattformstillägg fungerar i CDP i realtid i Adobe finns i Översikt över [Adobe Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
 
