@@ -5,9 +5,9 @@ description: Beskrivning av all information som Adobe Experience Cloud SDK autom
 seo-description: Beskrivning av all information som Adobe Experience Cloud SDK automatiskt samlar in
 keywords: collect information;context;configure;device;screenHeight;screen Height;screenOrientation;screen Orientation;screenWidth;screen Width;environment;viewportHeight;viewport Height;viewportWidth;viewport Width;crowserDetails;browser details;implementationDetails;implementation Details;name;version;placeContext;localTime;local Time;localTimezoneOffset;local Timezone Offset;timestamp;web;url;webPageDetails;web Page Details;webReferrer;web Referrer;landscape;portrait;
 translation-type: tm+mt
-source-git-commit: e21374eb51ec1d572f6a4973d33cadf9ae17969b
+source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
 workflow-type: tm+mt
-source-wordcount: '387'
+source-wordcount: '385'
 ht-degree: 7%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 7%
 
 # Information samlas in automatiskt
 
-Adobe Experience Cloud SDK samlar automatiskt in ett antal informationsdelar utan specialkonfigurationer. Den här informationen kan dock inaktiveras om det behövs med hjälp av `context` alternativet i `configure` kommandot. [Se Konfigurera SDK](../fundamentals/configuring-the-sdk.md). Nedan finns en lista över dessa informationsdelar. Namnet inom parentes anger den sträng som ska användas när kontexten konfigureras.
+Adobe Experience Platform Web SDK samlar automatiskt in ett antal informationsdelar utan specialkonfigurationer. Den här informationen kan dock inaktiveras om det behövs med hjälp av `context` alternativet i `configure` kommandot. [Se Konfigurera SDK](../fundamentals/configuring-the-sdk.md). Nedan finns en lista över dessa informationsdelar. Namnet inom parentes anger den sträng som ska användas när kontexten konfigureras.
 
 ## Device (`device`)
 
@@ -57,7 +57,7 @@ Webbläsare
 | ------------------------------- | ------------ |
 | `events[].xdm.environment.type` | `browser` |
 
-Den typ av miljö som upplevelsen mötte. Adobe Experience Platform SDK för JavaScript anges alltid `browser`.
+Den typ av miljö som upplevelsen upplevde. Adobe Experience Platform Web SDK anger alltid detta som `browser`.
 
 ### Höjd på visningsruta
 
