@@ -5,9 +5,9 @@ description: Lär dig återge personaliserat innehåll med Experience Platform W
 seo-description: Lär dig återge personaliserat innehåll med Experience Platform Web SDK
 keywords: personalization;renderDecisions;sendEvent;decisionScopes;result.decisions;
 translation-type: tm+mt
-source-git-commit: db742119d8f169817080f1fd4e0dc08a0f0faa47
+source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
 workflow-type: tm+mt
-source-wordcount: '237'
+source-wordcount: '236'
 ht-degree: 0%
 
 ---
@@ -51,12 +51,12 @@ alloy("sendEvent",{
     if (result.decisions){
       // Do something with the decisions.
     }
-  })
+  });
 ```
 
 Detta returnerar en lista med beslut som ett JSON-objekt för varje beslut.
 
-```javascript
+```json
 {
   "decisions": [
     {
