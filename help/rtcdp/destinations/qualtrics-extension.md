@@ -2,12 +2,12 @@
 keywords: Qualtrics;qualtrics;Qualtrics Website Feedback;qualtrics website feedback;Qualtricks website feedback
 title: Qualtrics-tillägg för webbplatsfeedback
 seo-title: Qualtrics-tillägg för webbplatsfeedback
-description: Tillägget Qualtrics Website Feedback är ett undersökningsmål i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Qualtrics Website Feedback är ett undersökningsmål i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Tillägget Qualtrics Website Feedback är ett undersökningsmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: Tillägget Qualtrics Website Feedback är ett undersökningsmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 6eabcd70b133051205b669253f280cb92c24412f
 workflow-type: tm+mt
-source-wordcount: '615'
+source-wordcount: '612'
 ht-degree: 2%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 2%
 
 Skapa och distribuera välriktade, varumärkesanpassade webbmeddelanden på några minuter med ett intuitivt musstyrt gränssnitt. De data och insikter ni samlar in från er webbplats möts av kundfeedback i alla kanaler, vilket ger en fullständig bild av kundupplevelsen - allt på en och samma plattform.
 
-[!DNL Qualtrics Website Feedback] är ett enkättillägg i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101569.qualtrics-website-feedback.html).
+[!DNL Qualtrics Website Feedback] är ett enkättillägg i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101569.qualtrics-website-feedback.html).
 
 Det här målet är ett Adobe Experience Platform Launch-tillägg. Mer information om hur plattformstillägg fungerar i CDP i realtid i Adobe finns i Översikt över [Adobe Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
 
