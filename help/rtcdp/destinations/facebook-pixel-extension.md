@@ -2,12 +2,12 @@
 keywords: facebook pixel extensions;facebook pixel extension;facebook pixel destinations;facebook pixel
 title: Pixeltillägg för Facebook
 seo-title: Pixeltillägg för Facebook
-description: Facebook Pixel-tillägget är ett annonsmål i kunddataplattformen Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Facebook Pixel-tillägget är ett annonsmål i kunddataplattformen Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Facebook Pixel-tillägget är ett annonsmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: Facebook Pixel-tillägget är ett annonsmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '529'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 Det [!DNL Facebook Pixel] är ett analysverktyg som gör att ni kan mäta hur effektiv er annonsering är genom att förstå vilka åtgärder användarna vidtar på er webbplats.
 
-[!DNL Facebook Pixel] är en annonsutökning i kunddataplattformen Adobe i realtid. Mer information om tilläggsfunktioner finns på [Facebook Pixel-webbplatsen](https://developers.facebook.com/docs/facebook-pixel/).
+[!DNL Facebook Pixel] är ett annonstillägg i kunddataplattformen i realtid. Mer information om tilläggsfunktioner finns på [Facebook Pixel-webbplatsen](https://developers.facebook.com/docs/facebook-pixel/).
 
 Det här målet är ett Adobe Experience Platform Launch-tillägg. Mer information om hur plattformstillägg fungerar i CDP i realtid i Adobe finns i Översikt över [Adobe Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
 
