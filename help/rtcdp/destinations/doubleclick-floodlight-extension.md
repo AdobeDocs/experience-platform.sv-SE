@@ -2,12 +2,12 @@
 keywords: DoubleClick Floodlight;doubleclick floodlight extension;doubleclick;floodlight
 title: Dubbelklicka på FlöLjus-tillägget (beta)
 seo-title: Dubbelklicka på FlöLjus-tillägget (beta)
-description: Tillägget DoubleClick Floodlight (Beta) är en annonsdestination i kunddataplattformen Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget DoubleClick Floodlight (Beta) är en annonsdestination i kunddataplattformen Adobe i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Tillägget DoubleClick Floodlight (Beta) är en annonsdestination i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: Tillägget DoubleClick Floodlight (Beta) är en annonsdestination i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '546'
+source-wordcount: '543'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 Med det här tillägget kan du snabbt och enkelt distribuera [!DNL DoubleClick Floodlight] taggar med det traditionella flyttalsformatet (inte Global Site Tag). Obs! Det här tillägget är i betaversion.
 
-[!DNL DoubleClick Floodlight] (Beta) är ett annonstillägg i Adobe Real-time Customer Data Platform. Mer information om tilläggsfunktionen finns i supportdokumentationen för [!DNL Google] DoubleClick Floodlight [](https://support.google.com/dcm/answer/2823388?hl=en).
+[!DNL DoubleClick Floodlight] (Beta) är ett annonstillägg i Real-time Customer Data Platform. Mer information om tilläggsfunktionen finns i supportdokumentationen för [!DNL Google] DoubleClick Floodlight [](https://support.google.com/dcm/answer/2823388?hl=en).
 
 Det här målet är ett Adobe Experience Platform Launch-tillägg. Mer information om hur plattformstillägg fungerar i CDP i realtid i Adobe finns i Översikt över [Adobe Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
 
