@@ -5,9 +5,9 @@ seo-title: Adobe Campaign
 description: Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera och leverera kampanjer i alla kanaler, både online och offline.
 seo-description: Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera och leverera kampanjer i alla kanaler, både online och offline.
 translation-type: tm+mt
-source-git-commit: 67a353c950bef11ccbaa52c49d213f08449baa96
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '582'
+source-wordcount: '581'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 1%
 
 Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera och leverera kampanjer i alla kanaler, både online och offline. Mer information finns [i Om Adobe Campaign Classic](https://docs.adobe.com/content/help/en/campaign-classic/using/getting-started/starting-with-adobe-campaign/about-adobe-campaign-classic.html) .
 
-Om du vill skicka segmentdata till Adobe Campaign måste du först [ansluta målet](#connect-destination) i Adobe Customer Data Platform i realtid och sedan [konfigurera en dataimport](#import-data-into-campaign) från din lagringsplats till Adobe Campaign.
+Om du vill skicka segmentdata till Adobe Campaign måste du först [ansluta målet](#connect-destination) i kunddataplattformen i realtid och sedan [konfigurera en dataimport](#import-data-into-campaign) från lagringsplatsen till Adobe Campaign.
 
 ## Exporttyp {#export-type}
 
