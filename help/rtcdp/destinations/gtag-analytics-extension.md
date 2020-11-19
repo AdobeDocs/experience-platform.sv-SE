@@ -2,12 +2,12 @@
 keywords: Google Global Site Tag;gtag;google gtag;google extension;google gtag extension;GTAG
 title: Tillägget Google Global Site Tag
 seo-title: Tillägget Google Global Site Tag
-description: Tillägget Google Global Site Tag är ett analysmål i kunddataplattformen i Adobe. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Google Global Site Tag är ett analysmål i kunddataplattformen i Adobe. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+description: Tillägget Google Global Site Tag är ett analysmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+seo-description: Tillägget Google Global Site Tag är ett analysmål i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '552'
+source-wordcount: '549'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 Skicka data till [!DNL Google Analytics], [!DNL Google Ads]och [!DNL Google Marketing Platform] via [!DNL Google's Global Site Tag], eller gtag.js. Flera konton per produkt kan konfigureras.
 
-[!DNL Google Global Site Tag] är ett analystillägg i Adobe Customer Data Platform i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101437.google-global-site-tag-gtag.html).
+[!DNL Google Global Site Tag] är ett analystillägg i kunddataplattformen i realtid. Mer information om tilläggsfunktionerna finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101437.google-global-site-tag-gtag.html).
 
 Det här målet är ett Adobe Experience Platform Launch-tillägg. Mer information om hur plattformstillägg fungerar i CDP i realtid i Adobe finns i Översikt över [Adobe Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md).
 
