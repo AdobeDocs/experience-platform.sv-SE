@@ -5,9 +5,9 @@ title: Amazon Kinesis Connector
 topic: overview
 description: Dokumentationen nedan innehåller information om hur du ansluter Amazon Kinesis till plattformen med hjälp av API:er eller användargränssnittet.
 translation-type: tm+mt
-source-git-commit: e0a0b7fc28b8cc85c5140d3840e06e5c7078c307
+source-git-commit: c0c609e3f385665cf88129def0c69e7d153ce201
 workflow-type: tm+mt
-source-wordcount: '234'
+source-wordcount: '223'
 ht-degree: 0%
 
 ---
@@ -34,8 +34,7 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Amazon Ki
 ### Använda API:er
 
 - [Skapa en Amazon Kinesis-anslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/kinesis.md)
-- [Utforska ett molnlagringssystem med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
-- [Samla in molnlagringsdata med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
+- [Samla in strömmande data med API:t för Flow Service](../../tutorials/api/collect/streaming.md)
 
 ### Använda gränssnittet
 
