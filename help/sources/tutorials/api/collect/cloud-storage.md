@@ -6,9 +6,9 @@ topic: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett molnlagringsutrymme från tredje part och föra in dem på plattformen via källanslutningar och API:er.
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: b0f6e51a784aec7850d92be93175c21c91654563
 workflow-type: tm+mt
-source-wordcount: '1581'
+source-wordcount: '1567'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Den här självstudiekursen beskriver stegen för att hämta data från ett moln
 
 ## Komma igång
 
-I den här självstudiekursen måste du ha tillgång till ett molnlagringsutrymme från tredje part via en giltig anslutning och information om filen som du vill hämta till DNL Platform, inklusive filens sökväg och struktur. Om du inte har den här informationen kan du gå till självstudiekursen om hur du [utforskar ett molnlagringsutrymme [!DNL Flow Service] från tredje part med API](../explore/cloud-storage.md) innan du provar den här självstudiekursen.
+Den här självstudiekursen kräver att du har tillgång till ett molnlagringsutrymme från tredje part via en giltig anslutning och information om filen som du vill hämta till [!DNL Platform], inklusive filens sökväg och struktur. Om du inte har den här informationen kan du gå till självstudiekursen om hur du [utforskar ett molnlagringsutrymme [!DNL Flow Service] från tredje part med API](../explore/cloud-storage.md) innan du provar den här självstudiekursen.
 
 Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
@@ -30,7 +30,7 @@ Den här självstudiekursen kräver även att du har en fungerande förståelse 
    - [Grundläggande om schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    - [Utvecklarhandbok](../../../../xdm/api/getting-started.md)för schemaregister: Innehåller viktig information som du behöver känna till för att kunna utföra anrop till API:t för schemaregister. Detta inkluderar ditt `{TENANT_ID}`, konceptet med&quot;behållare&quot; och de rubriker som krävs för att göra förfrågningar (med särskild uppmärksamhet på rubriken Godkänn och dess möjliga värden).
 - [[!DNL Catalog Service]](../../../../catalog/home.md): Katalog är systemet för registrering av dataplatser och -länkar inom [!DNL Experience Platform].
-- [[!DNL Batch-ingång]](../../../../ingestion/batch-ingestion/overview.md): Med API:t för gruppinmatning kan du importera data till [!DNL Experience Platform] som gruppfiler.
+- [[!DNL Batch ingestion]](../../../../ingestion/batch-ingestion/overview.md): Med API:t för gruppinmatning kan du importera data till [!DNL Experience Platform] som gruppfiler.
 - [Sandlådor](../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till ett molnlagringsutrymme med API:t [!DNL Flow Service] .
 
