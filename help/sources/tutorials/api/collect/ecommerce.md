@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett e-handelssystem från en annan leverantör och hämta dem till plattformen via källanslutningar och API:er.
 translation-type: tm+mt
-source-git-commit: 4696bcb17427bb50549a315294baf7fbd87ac01d
+source-git-commit: a9d6c6dda560ec401bdf41319994153e7f2c0572
 workflow-type: tm+mt
 source-wordcount: '1500'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 ---
 
 
-# Samla in e-handelsdata via källanslutningar och API:er
+# Samla in e-handelsdata via källkopplingar och API:er
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
