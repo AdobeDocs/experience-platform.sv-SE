@@ -5,9 +5,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 translation-type: tm+mt
-source-git-commit: 89a807c0adbc3c9e4396adbb96764453034c8ea3
+source-git-commit: 39e419b78938afd91e3d7471241e377f352214ee
 workflow-type: tm+mt
-source-wordcount: '680'
+source-wordcount: '683'
 ht-degree: 0%
 
 ---
@@ -50,7 +50,7 @@ ht-degree: 0%
       - [Apache Hive på Azure HDInsights-kontakten](connectors/databases/hive.md)
       - [Apache Spark på Azure HDInsights-kontakten](connectors/databases/spark.md)
       - [Azure Data Explorer Connector](connectors/databases/data-explorer.md)
-      - [Azure Synapse Analytics-koppling](connectors/databases/synapse-analytics.md)
+      - [azure synapse Analytics Connector](connectors/databases/synapse-analytics.md)
       - [Azure Table Storage-koppling](connectors/databases/ats.md)
       - [Koppling till kuchbase](connectors/databases/couchbase.md)
       - [Google BigQuery-koppling](connectors/databases/bigquery.md)
@@ -59,7 +59,7 @@ ht-degree: 0%
       - [IBM DB2-anslutning](connectors/databases/ibm-db2.md)
       - [Microsoft SQL Server-anslutning](connectors/databases/sql-server.md)
       - [MySQL-koppling](connectors/databases/mysql.md)
-      - [Oracle-koppling](connectors/databases/oracle.md)
+      - [Oracle Connector](connectors/databases/oracle.md)
       - [Phoenix-kontakt](connectors/databases/phoenix.md)
       - [PostgreSQL-koppling](connectors/databases/postgres.md)
    - eCommerce {#ecommerce}
@@ -96,7 +96,7 @@ ht-degree: 0%
          - [Apache Hive på Azure HDInsights-kontakten](tutorials/api/create/databases/hive.md)
          - [Apache Spark på Azure HDInsights-kontakten](tutorials/api/create/databases/spark.md)
          - [Azure Data Explorer Connector](tutorials/api/create/databases/data-explorer.md)
-         - [Azure Synapse Analytics-koppling](tutorials/api/create/databases/synapse-analytics.md)
+         - [azure synapse Analytics Connector](tutorials/api/create/databases/synapse-analytics.md)
          - [Azure Table Storage-koppling](tutorials/api/create/databases/ats.md)
          - [Koppling till kuchbase](tutorials/api/create/databases/couchbase.md)
          - [Google BigQuery-koppling](tutorials/api/create/databases/bigquery.md)
@@ -104,7 +104,7 @@ ht-degree: 0%
          - [HP Vertica-koppling](tutorials/api/create/databases/hp-vertica.md)
          - [IBM DB2-anslutning](tutorials/api/create/databases/ibm-db2.md)
          - [MySQL-koppling](tutorials/api/create/databases/mysql.md)
-         - [Oracle-koppling](tutorials/api/create/databases/oracle.md)
+         - [Oracle Connector](tutorials/api/create/databases/oracle.md)
          - [Phoenix-kontakt](tutorials/api/create/databases/phoenix.md)
          - [PostgreSQL-koppling](tutorials/api/create/databases/postgres.md)
          - [SQL Server-koppling](tutorials/api/create/databases/sql-server.md)
@@ -136,6 +136,7 @@ ht-degree: 0%
       - [Samla in automatiserade marknadsföringsdata](tutorials/api/collect/marketing-automation.md)
       - [Samla in betalningsdata](tutorials/api/collect/payments.md)
       - [Samla in protokolldata](tutorials/api/collect/protocols.md)
+      - [Samla in strömmande data](tutorials/api/collect/streaming.md)
    - [Hämta parquetdata från ett molnlagringssystem från en annan leverantör](tutorials/api/cloud-storage-parquet.md)
    - [Skapa en datauppsättningsbasanslutning med API:t för Flow Service](tutorials/api/create-dataset-base-connection.md)
    - [Övervaka dataflöden med API:t för Flow Service](tutorials/api/monitor.md)
@@ -172,7 +173,7 @@ ht-degree: 0%
          - [Apache Hive på Azure HDInsights-kontakten](tutorials/ui/create/databases/hive.md)
          - [Apache Spark på Azure HDInsights-kontakten](tutorials/ui/create/databases/spark.md)
          - [Azure Data Explorer Connector](tutorials/ui/create/databases/data-explorer.md)
-         - [Azure Synapse Analytics-koppling](tutorials/ui/create/databases/synapse-analytics.md)
+         - [azure synapse Analytics Connector](tutorials/ui/create/databases/synapse-analytics.md)
          - [Azure Table Storage-koppling](tutorials/ui/create/databases/ats.md)
          - [Koppling till kuchbase](tutorials/ui/create/databases/couchbase.md)
          - [Google Big Query-koppling](tutorials/ui/create/databases/bigquery.md)
@@ -181,7 +182,7 @@ ht-degree: 0%
          - [IBM DB2-anslutning](tutorials/ui/create/databases/ibm-db2.md)
          - [Microsoft SQL Server-anslutning](tutorials/ui/create/databases/sql-server.md)
          - [MySQL-koppling](tutorials/ui/create/databases/mysql.md)
-         - [Oracle-koppling](tutorials/ui/create/databases/oracle.md)
+         - [Oracle Connector](tutorials/ui/create/databases/oracle.md)
          - [Phoenix-kontakt](tutorials/ui/create/databases/phoenix.md)
          - [PostgreSQL-koppling](tutorials/ui/create/databases/postgres.md)
       - eCommerce {#ecommerce}
