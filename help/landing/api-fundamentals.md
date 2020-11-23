@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Grundläggande om Adobe Experience Platform API
 topic: getting started
 translation-type: tm+mt
-source-git-commit: fac4b3d02a6e58a9d2c298f9b849fa7345e4fa93
+source-git-commit: b6d62492a60494deb848a88a9334e3ef20a93919
 workflow-type: tm+mt
 source-wordcount: '483'
 ht-degree: 2%
@@ -95,7 +95,7 @@ Följande JSON representerar ett förenklat XDM-schema vars fält kan refereras 
 >
 >När du hanterar `xdm:sourceProperty` och `xdm:destinationProperty` attribut för [!DNL Experience Data Model] (XDM)-beskrivningar måste alla `properties` nycklar **uteslutas** från JSON-pekarsträngen. Mer information finns i underhandboken om [!DNL Schema Registry] API-utvecklare om [beskrivningar](../xdm/api/descriptors.md) .
 
-## JSON Patch
+## JSON Patch {#json-patch}
 
 Det finns många PATCH-åtgärder för API: [!DNL Platform] er som accepterar JSON Patch-objekt för deras begärandenyttolaster. JSON Patch är ett standardiserat format ([RFC 6902](https://tools.ietf.org/html/rfc6902)) för att beskriva ändringar i ett JSON-dokument. Det gör att du kan definiera partiella uppdateringar av JSON utan att behöva skicka hela dokumentet i en begärandetext.
 
