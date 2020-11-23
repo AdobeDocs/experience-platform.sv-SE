@@ -5,9 +5,9 @@ title: Felsökningsguide för Experience Data Model (XDM)
 description: Det här dokumentet innehåller svar på vanliga frågor om Experience Data Model (XDM) System samt en felsökningsguide för vanliga fel.
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: 2a528c705a7aa610f57047be39be1ce9886ce44c
+source-git-commit: e87fcd9f028bc6dedaec0435c4eef54e6aecae2d
 workflow-type: tm+mt
-source-wordcount: '1852'
+source-wordcount: '1821'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Det här dokumentet innehåller svar på vanliga frågor om [!DNL Experience Data Model] (XDM) System samt en felsökningsguide för vanliga fel. För frågor och felsökning som rör andra tjänster i Adobe Experience Platform, se felsökningsguiden för [Experience Platform](../landing/troubleshooting.md).
 
-**[!DNL Experience Data Model](XDM)** är en öppen källkodsspecifikation som definierar standardiserade scheman för kundupplevelsehantering. Metoden som [!DNL Experience Platform] byggs på, **XDM System**, används för att göra [!DNL Experience Data Model] scheman tillgängliga för [!DNL Platform] tjänster. I **[!DNL Schema Registry]** finns ett användargränssnitt och ett RESTful-API för att komma åt **[!DNL Schema Library]** innehållet [!DNL Experience Platform]. Mer information finns i [XDM-dokumentationen](home.md) .
+**[!DNL Experience Data Model](XDM)** är en öppen källkodsspecifikation som definierar standardiserade scheman för kundupplevelsehantering. Metoden som [!DNL Experience Platform] byggs på, **XDM System**, används för att göra [!DNL Experience Data Model] scheman tillgängliga för [!DNL Platform] tjänster. I **[!DNL Schema Registry]** finns ett användargränssnitt och ett RESTful-API för att komma åt **[!DNL Schema Library]** innehållet [!DNL Experience Platform]. See the [XDM documentation](home.md) for more information.
 
 ## Vanliga frågor och svar 
 
@@ -27,7 +27,7 @@ Nedan följer en lista med svar på vanliga frågor om XDM-system och användnin
 
 Du kan lägga till fält i ett schema med hjälp av en mixin. Varje blandning är kompatibel med en eller flera klasser, vilket gör att mixin kan användas i alla scheman som implementerar en av dessa kompatibla klasser. Adobe Experience Platform erbjuder flera branschblandningar med sina egna fördefinierade fält, men du kan lägga till egna fält i ett schema genom att skapa nya mixiner med API:t eller användargränssnittet.
 
-Mer information om hur du skapar nya mixiner i API:t finns i [Skapa ett mixin](api/create-mixin.md) -dokument i utvecklarhandboken för [!DNL Schema Registry] API. Om du använder användargränssnittet läser du i [schemaredigerarens självstudiekurs](./tutorials/create-schema-ui.md).
+Mer information om hur du skapar nya blandningar i [!DNL Schema Registry] API finns i [blandningens slutpunktshandbok](api/mixins.md#create). Om du använder användargränssnittet läser du i [schemaredigerarens självstudiekurs](./tutorials/create-schema-ui.md).
 
 ### Vilket är det bästa användningsområdet för blandningar och datatyper?
 
@@ -39,21 +39,21 @@ Mer information om hur du skapar nya mixiner i API:t finns i [Skapa ett mixin](a
 
 Alla [!DNL Schema Registry] resurser (scheman, mixins, datatyper, klasser) har en URI som fungerar som ett unikt ID för referens- och sökningsändamål. När du visar ett schema i API:t finns det på den översta nivån `$id` och i `meta:altId` attributen.
 
-Mer information finns i avsnittet om [schemaidentifiering](api/getting-started.md#schema-identification) i utvecklarhandboken för [!DNL Schema Registry] API.
+Mer information finns i avsnittet om [resursidentifiering](api/getting-started.md#resource-identification) i API-utvecklarhandboken [!DNL Schema Registry] .
 
 ### När börjar ett schema förhindra att ändringar bryts?
 
-Du kan göra ändringar i ett schema så länge det aldrig har använts för att skapa en datauppsättning eller aktiverats för användning i [[!DNL-kundprofil i realtid]](../profile/home.md). När ett schema har använts för att skapa en datauppsättning eller aktiverats för användning med [!DNL Real-time Customer Profile], kommer reglerna för [schemautveckling](schema/composition.md#evolution) att tillämpas strikt av systemet.
+Du kan göra ändringar i ett schema så länge det aldrig har använts för att skapa en datauppsättning eller aktiverats för användning i [[!DNL Real-time Customer Profile]](../profile/home.md). När ett schema har använts för att skapa en datauppsättning eller aktiverats för användning med [!DNL Real-time Customer Profile], kommer reglerna för [schemautveckling](schema/composition.md#evolution) att tillämpas strikt av systemet.
 
 ### Vilken är den maximala storleken för en lång fälttyp?
 
 En lång fälttyp är ett heltal med en maximal storlek på 53 (+1) bitar, vilket ger den ett möjligt intervall mellan -9007199254740992 och 900719925474092. Detta beror på en begränsning av hur JavaScript-implementeringar av JSON representerar långa heltal.
 
-Mer information om fälttyper finns i avsnittet [Definiera XDM-fälttyper](api/appendix.md#field-types) i utvecklarhandboken för [!DNL Schema Registry] API.
+Mer information om fälttyper finns i dokumentet om begränsningar [för](./schema/field-constraints.md)XDM-fälttyper.
 
 ### Hur definierar jag identiteter för mitt schema?
 
-I [!DNL Experience Platform]används identiteter för att identifiera ett ämne (vanligtvis en enskild person) oavsett vilka datakällor som tolkas. De definieras i scheman genom att nyckelfält markeras som&quot;Identitet&quot;. Vanliga fält för identitet är e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://docs.adobe.com/content/help/sv-SE/id-service/using/home.html), CRM ID och andra unika ID-fält.
+I [!DNL Experience Platform]används identiteter för att identifiera ett ämne (vanligtvis en enskild person) oavsett vilka datakällor som tolkas. De definieras i scheman genom att nyckelfält markeras som&quot;Identitet&quot;. Vanliga fält för identitet är e-postadress, telefonnummer, CRM-ID [[!DNL Experience Cloud ID (ECID)]](https://docs.adobe.com/content/help/sv-SE/id-service/using/home.html)och andra unika ID-fält.
 
 Fält kan markeras som identiteter med antingen API:t eller användargränssnittet.
 
@@ -77,7 +77,7 @@ Primära identiteter är valfria eftersom scheman kan ha 0 eller 1 av dem. Ett s
 
 ### Hur aktiverar jag ett schema för användning i [!DNL Real-time Customer Profile]?
 
-Scheman är aktiverade för användning i [[!DNL Real-time Customer Profile]](../profile/home.md) genom att en &quot;union&quot;-tagg läggs till, som finns i schemats `meta:immutableTags` -attribut. Du [!DNL Profile] kan aktivera ett schema för användning med API:t eller användargränssnittet.
+Scheman kan användas i [[!DNL Real-time Customer Profile]](../profile/home.md) genom att en &quot;union&quot;-tagg läggs till i schemats `meta:immutableTags` attribut. Du [!DNL Profile] kan aktivera ett schema för användning med API:t eller användargränssnittet.
 
 #### Aktivera ett befintligt schema för [!DNL Profile] användning av API
 
@@ -120,7 +120,7 @@ Här följer en lista med felmeddelanden som du kan stöta på när du arbetar m
 
 Det här felet visas när systemet inte kan hitta en viss resurs. Resursen kan ha tagits bort eller så är sökvägen i API-anropet ogiltig. Kontrollera att du har angett en giltig sökväg för API-anropet innan du försöker igen. Du kanske vill kontrollera att du har angett rätt ID för resursen och att sökvägen har rätt namn tillsammans med rätt behållare (global eller klientorganisation).
 
-Mer information om hur du skapar sökvägar i API:t finns i avsnitten om [behållar](./api/getting-started.md#container) - och [schemaidentifiering](api/getting-started.md#schema-identification) i [!DNL Schema Registry] utvecklarhandboken.
+Mer information om hur du skapar sökvägar i API:t finns i avsnitten om [behållar](./api/getting-started.md#container) - och [resursidentifiering](api/getting-started.md#resource-identification) i [!DNL Schema Registry] utvecklarhandboken.
 
 ### Titeln måste vara unik
 
@@ -149,7 +149,7 @@ Det här felmeddelandet visas när du försöker skapa en resurs med en titel so
 }
 ```
 
-Det här felmeddelandet visas när du försöker skapa en ny blandning med felnamngivna fält. Blandningar som definieras av din IMS-organisation måste namnge sina fält med en `TENANT_ID` för att undvika konflikter med andra bransch- och leverantörsresurser. Detaljerade exempel på lämpliga datastrukturer för blandningar finns i dokumentet om hur du [skapar ett mixin](api/create-mixin.md) -avsnitt i utvecklarhandboken för [!DNL Schema Registry] API.
+Det här felmeddelandet visas när du försöker skapa en ny blandning med felnamngivna fält. Blandningar som definieras av din IMS-organisation måste namnge sina fält med en `TENANT_ID` för att undvika konflikter med andra bransch- och leverantörsresurser. Detaljerade exempel på korrekta datastrukturer för blandningar finns i [blandningens slutpunktshandbok](./api/mixins.md#create).
 
 
 ### [!DNL Real-time Customer Profile] fel
