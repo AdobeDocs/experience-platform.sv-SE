@@ -5,9 +5,9 @@ title: Schema Registry developer appendix
 description: Det här dokumentet innehåller ytterligare information om hur du arbetar med API:t för schemaregister.
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 42d3bed14c5f926892467baeeea09ee7a140ebdc
+source-git-commit: 0b55f18eabcf1d7c5c233234c59eb074b2670b93
 workflow-type: tm+mt
-source-wordcount: '457'
+source-wordcount: '730'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,43 @@ ht-degree: 0%
 # Bilaga
 
 Det här dokumentet innehåller ytterligare information om hur du arbetar med [!DNL Schema Registry] API:t.
+
+## Använda frågeparametrar {#query}
+
+Det finns [!DNL Schema Registry] stöd för användning av frågeparametrar för att filtrera resultat och sidor när resurser listas.
+
+>[!NOTE]
+>
+>När du kombinerar flera frågeparametrar måste de avgränsas med et-tecken (`&`).
+
+### Sidindelning {#paging}
+
+De vanligaste frågeparametrarna för sidindelning är:
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `start` | Ange var de listade resultaten ska börja. Det här värdet kan hämtas från attributet för ett listsvar och användas för att komma åt nästa resultatsida. `_page.next` Om `_page.next` värdet är null finns ingen ytterligare sida tillgänglig. |
+| `limit` | Begränsa antalet returnerade resurser. Exempel: `limit=5` kommer att returnera en lista med fem resurser. |
+| `orderby` | Sortera resultaten efter en specifik egenskap. Exempel: `orderby=title` sorterar resultaten efter rubrik i stigande ordning (A-Z). Om du lägger till en `-` före parametervärdet (`orderby=-title`) sorteras objekt efter rubrik i fallande ordning (Z-A). |
+
+### Filtrering {#filtering}
+
+Du kan filtrera resultat med hjälp av `property` parametern, som används för att tillämpa en viss operator på en viss JSON-egenskap i de hämtade resurserna. Operatorer som stöds är:
+
+| Operatör | Beskrivning | Exempel |
+| --- | --- | --- |
+| `==` | Filtrerar efter om egenskapen är lika med det angivna värdet. | `property=title==test` |
+| `!=` | Filtrerar efter om egenskapen inte är lika med det angivna värdet. | `property=title!=test` |
+| `<` | Filtrerar efter om egenskapen är mindre än det angivna värdet. | `property=version<5` |
+| `>` | Filtrerar efter om egenskapen är större än det angivna värdet. | `property=version>5` |
+| `<=` | Filtrerar efter om egenskapen är mindre än eller lika med det angivna värdet. | `property=version<=5` |
+| `>=` | Filtrerar efter om egenskapen är större än eller lika med det angivna värdet. | `property=version>=5` |
+| `~` | Filtrerar efter om egenskapen matchar ett angivet reguljärt uttryck. | `property=title~test$` |
+| (Ingen) | Om du bara anger egenskapsnamnet returneras bara poster där egenskapen finns. | `property=title` |
+
+>[!TIP]
+>
+>Du kan använda parametern `property` för att filtrera blandningar efter deras kompatibla klass. Returnerar till exempel bara blandningar som är kompatibla med `property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile` [!DNL XDM Individual Profile] klassen.
 
 ## Kompatibilitetsläge
 
