@@ -6,9 +6,9 @@ topic: overview
 type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till ett Amazon Kinesis-konto.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 967585ba078edd13f90c820f6b1a0490140ca0cf
 workflow-type: tm+mt
-source-wordcount: '540'
+source-wordcount: '534'
 ht-degree: 1%
 
 ---
@@ -41,7 +41,7 @@ För [!DNL Flow Service] att kunna ansluta till ditt [!DNL Amazon Kinesis] konto
 | ---------- | ----------- |
 | `accessKeyId` | Åtkomstnyckel-ID för ditt [!DNL Kinesis] konto. |
 | `secretKey` | Den hemliga åtkomstnyckeln för ditt [!DNL Kinesis] konto. |
-| `region` |  | Regionen för ditt [!DNL Kinesis] konto. |
+| `region` | Regionen för ditt [!DNL Kinesis] konto. |
 | `connectionSpec.id` | ID för [!DNL Kinesis] anslutningsspecifikation: `86043421-563b-46ec-8e6c-e23184711bf6` |
 
 Mer information om dessa värden finns i [det här Kinesis-dokumentet](https://docs.aws.amazon.com/streams/latest/dev/getting-started.html).
@@ -54,17 +54,17 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
-* Behörighet: Bearer `{ACCESS_TOKEN}`
-* x-api-key: `{API_KEY}`
-* x-gw-ims-org-id: `{IMS_ORG}`
+* `Authorization: Bearer {ACCESS_TOKEN}`
+* `x-api-key: {API_KEY}`
+* `x-gw-ims-org-id: {IMS_ORG}`
 
 Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
-* x-sandbox-name: `{SANDBOX_NAME}`
+* `x-sandbox-name: {SANDBOX_NAME}`
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
 
-* Innehållstyp: `application/json`
+* `Content-Type: application/json`
 
 ## Skapa en anslutning
 
@@ -123,4 +123,4 @@ Ett godkänt svar returnerar information om den nya anslutningen, inklusive dess
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en [!DNL Amazon Kinesis] anslutning med API:er och ett unikt ID har hämtats som en del av svarstexten. Du kan använda detta anslutnings-ID för att [utforska molnlagring med API:t](../../explore/cloud-storage.md)för Flow Service.
+Genom att följa den här självstudiekursen har du skapat en [!DNL Amazon Kinesis] anslutning med API:er och ett unikt ID har hämtats som en del av svarstexten. Du kan använda det här anslutnings-ID:t för att [samla in strömmande data med API:t](../../collect/streaming.md)för Flow Service.
