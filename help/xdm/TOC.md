@@ -5,10 +5,10 @@ user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: Datamodellguide (XDM)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och mixins för att standardisera upplevelsedata.
 translation-type: tm+mt
-source-git-commit: 0a5b6bab6a0a11a572a4cd5de95b33f8d61d34bc
+source-git-commit: 321dc16a1296aeb28ba78825f191a0368df16547
 workflow-type: tm+mt
-source-wordcount: '203'
-ht-degree: 3%
+source-wordcount: '181'
+ht-degree: 6%
 
 ---
 
@@ -56,21 +56,17 @@ ht-degree: 3%
    * [POI-interaktion](./data-types/poi-interaction.md)
    * [Postadress](./data-types/postal-address.md)
 * API för schemaregister {#api}
+   * [Översikt](api/overview.md)
    * [Komma igång](api/getting-started.md)
-   * [Visa resurser](api/list-resources.md)
-   * [Söka efter en resurs](api/look-up-resource.md)
-   * [Uppdatera en resurs](api/update-resource.md)
-   * [Ersätta en resurs](api/replace-resource.md)
-   * [Ta bort en resurs](api/delete-resource.md)
-   * [Skapa en klass](api/create-class.md)
-   * [Skapa en blandning](api/create-mixin.md)
-   * [Skapa en datatyp](api/create-data-type.md)
-   * [Skapa ett schema](api/create-schema.md)
-   * [Unions](api/unions.md)
+   * [Scheman](api/schemas.md)
+   * [Klasser](api/classes.md)
+   * [Blandningar](api/mixins.md)
+   * [Datatyper](api/data-types.md)
    * [Beskrivningar](api/descriptors.md)
+   * [Unions](api/unions.md)
    * [Ad hoc-scheman](api/ad-hoc.md)
    * [Bilaga](api/appendix.md)
-* Tutorials {#tutorials}
+* Självstudiekurser {#tutorials}
    * [Skapa ett schema (API)](tutorials/create-schema-api.md)
    * [Skapa ett schema (UI)](tutorials/create-schema-ui.md)
    * [Definiera en relation mellan två scheman (API)](tutorials/relationship-api.md)
