@@ -2,18 +2,18 @@
 keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;descriptor;Descriptor;descriptors;Descriptors;identity;Identity;friendly name;Friendly name;alternatedisplayinfo;reference;Reference;relationship;Relationship
 solution: Experience Platform
 title: Beskrivningar
-description: 'Scheman definierar en statisk vy av datatabeller, men ger inga specifika detaljer om hur data som baseras på dessa scheman (till exempel datauppsättningar) kan relateras till varandra. Med Adobe Experience Platform kan du beskriva dessa relationer och andra tolka metadata om ett schema med hjälp av beskrivningar. '
+description: Med slutpunkten /descriptors i API:t för schemaregister kan du programmässigt hantera XDM-beskrivningar i ditt upplevelseprogram.
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: a362b67cec1e760687abb0c22dc8c46f47e766b7
+source-git-commit: e92294b9dcea37ae2a4a398c9d3397dcf5aa9b9e
 workflow-type: tm+mt
-source-wordcount: '1526'
+source-wordcount: '1567'
 ht-degree: 0%
 
 ---
 
 
-# Beskrivningar
+# Beskrivningsslutpunkt
 
 Scheman definierar en statisk vy av datatabeller, men ger inga specifika detaljer om hur data som baseras på dessa scheman (till exempel datauppsättningar) kan relateras till varandra. Med Adobe Experience Platform kan du beskriva dessa relationer och andra tolka metadata om ett schema med hjälp av beskrivningar.
 
@@ -21,15 +21,15 @@ Schemabeskrivare är metadata på tenant-nivå, vilket innebär att de är unika
 
 Varje schema kan ha en eller flera schemabeskrivningsentiteter tillämpade. Varje schemabeskrivningsentitet innehåller en beskrivning `@type` och den `sourceSchema` som den gäller. När dessa beskrivningar har tillämpats gäller de alla datauppsättningar som har skapats med schemat.
 
-Det här dokumentet innehåller exempel-API-anrop för beskrivningar, samt en fullständig lista över tillgängliga beskrivningar och de fält som krävs för att definiera varje typ.
+Med `/descriptors` slutpunkten i [!DNL Schema Registry] API kan du programmässigt hantera beskrivningar i ditt upplevelseprogram.
 
->[!NOTE]
->
->Beskrivningar kräver unika Accept-huvuden som ersätter `xed` med `xdm`, men som i övrigt ser mycket lika ut som Accept-huvuden som används i andra delar av [!DNL Schema Registry]. Rätt Accept-huvuden har tagits med i samplingsanropen nedan, men var extra försiktig för att se till att rätt huvuden används.
+## Komma igång
 
-## Listbeskrivare
+Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/class-registry.yaml). Innan du fortsätter bör du läsa [Komma igång-guiden](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
-En enda GET-förfrågan kan användas för att returnera en lista över alla beskrivningar som har definierats av din organisation.
+## Hämta en lista med beskrivningar {#list}
+
+Du kan visa alla beskrivningar som har definierats av din organisation genom att göra en GET-förfrågan till `/tenant/descriptors`.
 
 **API-format**
 
@@ -49,21 +49,24 @@ curl -X GET \
   -H 'Accept: application/vnd.adobe.xdm-link+json'
 ```
 
-Svarsformatet beror på vilket Acceptera-huvud som skickas i begäran. Observera att `/descriptors` slutpunkten använder Acceptera rubriker som skiljer sig från alla andra slutpunkter i [!DNL Schema Registry] API:t.
+Svarsformatet beror på vilket sidhuvud som skickas i begäran `Accept` . Observera att `/descriptors` slutpunkten använder `Accept` rubriker som skiljer sig från alla andra slutpunkter i [!DNL Schema Registry] API:t.
 
-Rubrikerna för godkännande av beskrivning ersätter `xed` med `xdm`och erbjuder ett `link` alternativ som är unikt för beskrivningar.
+>[!IMPORTANT]
+>
+>Beskrivningar kräver unika `Accept` rubriker som ersätter `xed` med `xdm`och har även ett `link` alternativ som är unikt för beskrivare. Rätt `Accept` rubriker har tagits med i exempelanropen nedan, men var extra försiktig för att se till att rätt rubriker används när du arbetar med beskrivningar.
 
-| Acceptera | Beskrivning |
+| `Accept` header | Beskrivning |
 | -------|------------ |
 | `application/vnd.adobe.xdm-id+json` | Returnerar en array med beskrivande ID:n |
 | `application/vnd.adobe.xdm-link+json` | Returnerar en array med API-sökvägar för beskrivningar |
 | `application/vnd.adobe.xdm+json` | Returnerar en array med expanderade beskrivningsobjekt |
+| `application/vnd.adobe.xdm-v2+json` | Den här sidhuvudet måste användas för att sidindelningen ska kunna användas. `Accept` |
 
 **Svar**
 
 Svaret innehåller en array för varje beskrivningstyp som har definierade beskrivningar. Om det inte finns några beskrivningar av en viss `@type` definierad typ returnerar registret alltså ingen tom array för den beskrivningstypen.
 
-När du använder `link` Accept-huvudet visas varje beskrivning som ett arrayobjekt i formatet `/{CONTAINER}/descriptors/{DESCRIPTOR_ID}`
+När du använder `link``Accept` rubriken visas varje beskrivning som ett arrayobjekt i formatet `/{CONTAINER}/descriptors/{DESCRIPTOR_ID}`
 
 ```JSON
 {
@@ -81,7 +84,7 @@ När du använder `link` Accept-huvudet visas varje beskrivning som ett arrayobj
 }
 ```
 
-## Söka efter en beskrivning
+## Söka efter en beskrivning {#lookup}
 
 Om du vill visa information om en viss beskrivning kan du söka efter (GET) en enskild beskrivning med hjälp av dess `@id`.
 
@@ -97,7 +100,7 @@ GET /tenant/descriptors/{DESCRIPTOR_ID}
 
 **Begäran**
 
-Beskrivningar har ingen version, därför krävs ingen Accept-rubrik i sökningsbegäran.
+Följande begäran hämtar en beskrivning med dess `@id` värde. Beskrivningar har ingen version och därför krävs ingen `Accept` rubrik i sökningsbegäran.
 
 ```SHELL
 curl -X GET \
@@ -132,9 +135,13 @@ Ett lyckat svar returnerar information om beskrivningen, inklusive dess `@type` 
 }
 ```
 
-## Skapa beskrivning
+## Skapa en beskrivning {#create}
 
-Med [!DNL Schema Registry] den kan du definiera flera olika beskrivningstyper. Varje beskrivningstyp kräver att dess egna specifika fält skickas i POSTEN. En fullständig lista med beskrivningar, och de fält som behövs för att definiera dem, finns i avsnittet om tillägg om [att definiera beskrivningar](#defining-descriptors).
+Du kan skapa en ny beskrivning genom att göra en POST-förfrågan till `/tenant/descriptors` slutpunkten.
+
+>[!IMPORTANT]
+>
+>Med [!DNL Schema Registry] den kan du definiera flera olika beskrivningstyper. Varje beskrivningstyp kräver att dess egna specifika fält skickas i begärandetexten. I [bilagan](#defining-descriptors) finns en fullständig lista över beskrivningar och de fält som behövs för att definiera dem.
 
 **API-format**
 
@@ -184,9 +191,9 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och information om den nyska
 }
 ```
 
-## Uppdateringsbeskrivning
+## Uppdatera en beskrivning {#put}
 
-Du kan uppdatera en beskrivning genom att göra en PUT-begäran som refererar till den beskrivning `@id` som du vill uppdatera i sökvägen till begäran.
+Du kan uppdatera en beskrivning genom att ta med den `@id` i sökvägen för en PUT-begäran.
 
 **API-format**
 
@@ -200,9 +207,13 @@ PUT /tenant/descriptors/{DESCRIPTOR_ID}
 
 **Begäran**
 
-Denna begäran skriver i princip om beskrivningen, så begärandetexten måste innehålla alla fält som krävs för att definiera en beskrivning av den typen. Med andra ord är nyttolasten som ska uppdatera (PUT) en beskrivning densamma som nyttolasten för att skapa (POST) en beskrivning av samma typ.
+Denna begäran skriver i princip om beskrivningen, så begärandetexten måste innehålla alla fält som krävs för att definiera en beskrivning av den typen. Med andra ord är nyttolasten som ska uppdatera (PUT) en beskrivning densamma som nyttolasten som ska [skapa (POST) en beskrivning](#create) av samma typ.
 
-I det här exemplet uppdateras identitetsbeskrivningen så att den refererar till en annan `xdm:sourceProperty` (&quot;mobiltelefon&quot;) och ändrar `xdm:namespace` den till &quot;Telefon&quot;.
+>[!IMPORTANT]
+>
+>Precis som när du skapar beskrivningar med hjälp av POST-begäranden, kräver varje beskrivningstyp att egna specifika fält skickas i nyttolasterna för PUT-begäran. I [bilagan](#defining-descriptors) finns en fullständig lista över beskrivningar och de fält som behövs för att definiera dem.
+
+I följande exempel uppdateras en identitetsbeskrivning så att den refererar till en annan `xdm:sourceProperty` (`mobile phone`) och ändrar `xdm:namespace` till `Phone`.
 
 ```SHELL
 curl -X PUT \
@@ -223,8 +234,6 @@ curl -X PUT \
       }'
 ```
 
-Information om egenskaperna `xdm:namespace` och `xdm:property`hur du får tillgång till dem finns i avsnittet om tillägg om [att definiera beskrivningar](#defining-descriptors).
-
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 201 (Skapad) och `@id` den uppdaterade beskrivningen (som ska matcha den som `@id` skickades i begäran).
@@ -235,9 +244,9 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och `@id` den uppdaterade be
 }
 ```
 
-Om du utför en sökning (GET) för att visa beskrivningen visas att fälten nu har uppdaterats för att återspegla de ändringar som skickats i PUT-begäran.
+Om du utför en [sökbegäran](#lookup) (GET) för att visa beskrivningen visas att fälten nu har uppdaterats för att återspegla de ändringar som skickats i PUT-begäran.
 
-## Ta bort beskrivning
+## Ta bort en beskrivning {#delete}
 
 Ibland kan du behöva ta bort en beskrivning som du har definierat från [!DNL Schema Registry]. Detta gör du genom att göra en DELETE-begäran som refererar till `@id` den beskrivning som du vill ta bort.
 
@@ -253,8 +262,6 @@ DELETE /tenant/descriptors/{DESCRIPTOR_ID}
 
 **Begäran**
 
-Du behöver inte acceptera rubriker när du tar bort beskrivningar.
-
 ```SHELL
 curl -X DELETE \
   https://platform.adobe.io/data/foundation/schemaregistry/tenant/descriptors/ca921946fb5281cbdb8ba5e07087486ce531a1f2  \
@@ -268,13 +275,13 @@ curl -X DELETE \
 
 Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och en tom brödtext.
 
-Om du vill bekräfta att beskrivningen har tagits bort kan du utföra en uppslagsbegäran mot beskrivningen `@id`. Svaret returnerar HTTP-status 404 (Hittades inte) eftersom beskrivningen har tagits bort från [!DNL Schema Registry].
+Om du vill bekräfta att beskrivningen har tagits bort kan du utföra en [uppslagsbegäran](#lookup) mot beskrivningen `@id`. Svaret returnerar HTTP-status 404 (Hittades inte) eftersom beskrivningen har tagits bort från [!DNL Schema Registry].
 
 ## Bilaga
 
 Följande avsnitt innehåller ytterligare information om hur du arbetar med beskrivningar i [!DNL Schema Registry] API.
 
-### Definiera beskrivningar
+### Definiera beskrivningar {#defining-descriptors}
 
 I följande avsnitt ges en översikt över tillgängliga beskrivningstyper, inklusive de fält som krävs för att definiera en beskrivning av varje typ.
 
@@ -301,7 +308,7 @@ En identitetsbeskrivning signalerar att&quot;[!UICONTROL sourceProperty]&quot; f
 | `xdm:sourceSchema` | URI:n `$id` för schemat där beskrivningen definieras. |
 | `xdm:sourceVersion` | Huvudversionen av källschemat. |
 | `xdm:sourceProperty` | Sökvägen till den specifika egenskap som ska vara identiteten. Sökvägen ska börja med ett &quot;/&quot; och inte sluta med ett. Ta inte med &quot;egenskaper&quot; i sökvägen (använd t.ex. &quot;/personalEmail/address&quot; istället för &quot;/properties/personalEmail/properties/address&quot;) |
-| `xdm:namespace` | Identitetsnamnutrymmets `id` - eller `code` -värde. En lista med namnutrymmen finns med API:t för [[!DNL Identity Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml). |
+| `xdm:namespace` | Identitetsnamnutrymmets `id` - eller `code` -värde. En lista med namnutrymmen finns med hjälp av [[!DNL Identity Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml). |
 | `xdm:property` | Antingen `xdm:id` eller `xdm:code`, beroende på vilken `xdm:namespace` som används. |
 | `xdm:isPrimary` | Ett booleskt värde (tillval). När värdet är true anges fältet som primär identitet. Scheman får endast innehålla en primär identitet. |
 
@@ -337,7 +344,7 @@ Med egna namnbeskrivningar kan användaren ändra värdena `title`, `description
 | `xdm:sourceProperty` | Sökvägen till den specifika egenskap som ska vara identiteten. Sökvägen ska börja med ett &quot;/&quot; och inte sluta med ett. Ta inte med &quot;egenskaper&quot; i sökvägen (använd t.ex. &quot;/personalEmail/address&quot; istället för &quot;/properties/personalEmail/properties/address&quot;) |
 | `xdm:title` | Den nya rubriken som du vill visa för det här fältet, skriven i Inledande versal. |
 | `xdm:description` | En valfri beskrivning kan läggas till tillsammans med titeln. |
-| `meta:enum` | Om fältet som anges av `xdm:sourceProperty` är ett strängfält, `meta:enum` bestämmer listan med föreslagna värden för fältet i [!DNL Experience Platform] användargränssnittet. Det är viktigt att komma ihåg att `meta:enum` inte deklarerar en uppräkning eller tillhandahåller någon datavalidering för XDM-fältet.<br><br>Detta ska endast användas för XDM-fält som definieras av Adobe. Om egenskapen source är ett anpassat fält som definieras av din organisation bör du i stället redigera fältets `meta:enum` egenskap direkt via en [PATCH-begäran](./update-resource.md). |
+| `meta:enum` | Om fältet som anges av `xdm:sourceProperty` är ett strängfält, `meta:enum` bestämmer listan med föreslagna värden för fältet i [!DNL Experience Platform] användargränssnittet. Det är viktigt att komma ihåg att `meta:enum` inte deklarerar en uppräkning eller tillhandahåller någon datavalidering för XDM-fältet.<br><br>Detta ska endast användas för XDM-fält som definieras av Adobe. Om källegenskapen är ett anpassat fält som definieras av din organisation, bör du i stället redigera fältets `meta:enum` egenskap direkt via en PATCH-begäran till fältets överordnade resurs. |
 
 #### Relationsbeskrivning
 
