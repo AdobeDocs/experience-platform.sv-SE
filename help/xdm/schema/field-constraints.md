@@ -5,7 +5,7 @@ title: Begränsningar för XDM-fälttyp
 topic: overview
 description: En referens för XDM-fälttypsbegränsningar, inklusive andra serialiseringsformat som de kan mappas till och hur du definierar egna fälttyper i API:t.
 translation-type: tm+mt
-source-git-commit: 19167f58fae6fac7d938deb74182d2e19960beb3
+source-git-commit: e92294b9dcea37ae2a4a398c9d3397dcf5aa9b9e
 workflow-type: tm+mt
 source-wordcount: '994'
 ht-degree: 3%
@@ -40,7 +40,7 @@ Tabellen nedan beskriver mappningen mellan varje XDM-typ (`meta:xdmType`) och an
 | date-time | text:<br>stringformat:datum-tid<br>(RFC 3339, avsnitt 5.6) | INT64/TIMESTAMP_MILLIS | TimestampType | java.util.Date | java.util.Date | System.DateTime | Sträng | tidsstämpel | Heltal<br>(unix millis) | int64<br>(unix millis) |
 | map | object | MAP-kommenterad grupp<br><br>&lt;<span>key_type</span>> MÅSTE vara STRING<br><br>&lt;<span>value_type</span>> typ av mappningsvärden | MapType<br><br>&quot;keyType&quot; MÅSTE vara StringType<br><br>&quot;valueType&quot; är en typ av mappningsvärden. | java.util.Map | Mappa | --- | object | object | map | map&lt;<span>key_type, value_type</span>> |
 
-## Definiera XDM-fälttyper i API
+## Definiera XDM-fälttyper i API {#define-fields}
 
 XDM-scheman definieras med [JSON-scheman](https://json-schema.org/) och grundläggande fälttyper, med ytterligare begränsningar för fältnamn som används av [!DNL Experience Platform]. Med API:t för [schemaregister](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml) kan du definiera ytterligare fälttyper genom att använda format och valfria begränsningar. XDM-fälttyper visas av fältnivåattributet `meta:xdmType`.
 
@@ -50,7 +50,7 @@ XDM-scheman definieras med [JSON-scheman](https://json-schema.org/) och grundlä
 
 Följande tabell visar lämplig formatering för att definiera skalära fälttyper och mer specifika fälttyper med hjälp av valfria egenskaper. Mer information om valfria egenskaper och typspecifika nyckelord finns i dokumentationen för [JSON-schemat](https://json-schema.org/understanding-json-schema/reference/type.html).
 
-Börja med att hitta önskad fälttyp och använd exempelkoden som medföljer för att skapa en API-begäran för att [skapa en blandning](../api/create-mixin.md) eller [skapa en datatyp](../api/create-data-type.md).
+Börja med att hitta önskad fälttyp och använd exempelkoden som medföljer för att skapa en API-begäran för att [skapa en blandning](../api/mixins.md#create) eller [skapa en datatyp](../api/data-types.md#create).
 
 <table>
   <tr>
