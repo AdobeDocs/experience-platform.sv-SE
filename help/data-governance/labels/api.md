@@ -5,9 +5,9 @@ title: 'Hantera dataanvändningsetiketter med API:er '
 topic: developer guide
 description: Med API:t för datauppsättningstjänsten kan du tillämpa och redigera användningsetiketter för datauppsättningar. Den ingår i Adobe Experience Platform datakatalogfunktioner, men är skild från katalogtjänstens API, som hanterar datauppsättningsmetadata.
 translation-type: tm+mt
-source-git-commit: 4096a7c1ec2b3640886d3a8c69b578987fe96dd4
+source-git-commit: 4b5e116d221e6689f95c8da0c54ef3af6827adc1
 workflow-type: tm+mt
-source-wordcount: '1007'
+source-wordcount: '1003'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 Det här dokumentet innehåller steg för hur du hanterar dataanvändningsetiketter med hjälp av [!DNL Policy Service] API och [!DNL Dataset Service] API.
 
-API:t för [[!DNL Policy Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) innehåller flera slutpunkter som gör att du kan skapa och hantera dataanvändningsetiketter för din organisation.
+Här [[!DNL Policy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) finns flera slutpunkter som du kan använda för att skapa och hantera dataanvändningsetiketter för din organisation.
 
 Med [!DNL Dataset Service] API kan du använda och redigera användningsetiketter för datauppsättningar. Den är en del av Adobe Experience Platform datakatalogfunktioner, men är skild från API:t som hanterar metadata för datauppsättningar [!DNL Catalog Service] .
 
@@ -327,7 +327,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `labels` | En lista med dataanvändningsetiketter som du vill lägga till i datauppsättningen. |
-| `optionalLabels` | En lista över enskilda fält i datauppsättningen som du vill lägga till etiketter i. Varje objekt i den här arrayen måste ha följande egenskaper: <br/><br/>`option`: Ett objekt som innehåller fältets [!DNL Experience Data Model] (XDM) attribut. Följande tre egenskaper krävs:<ul><li>id</code>: URI $id</code> -värdet för schemat som är associerat med fältet.</li><li>contentType</code>: Innehållstypen och versionsnumret för schemat. Detta bör göras i form av en av de giltiga <a href="../../xdm/api/look-up-resource.md">Acceptera rubrikerna</a> för en XDM-sökningsbegäran.</li><li>schemaPath</code>: Sökvägen till fältet i datasetens schema.</li></ul>`labels`: En lista över dataanvändningsetiketter som du vill lägga till i fältet. |
+| `optionalLabels` | En lista över enskilda fält i datauppsättningen som du vill lägga till etiketter i. Varje objekt i den här arrayen måste ha följande egenskaper: <br/><br/>`option`: Ett objekt som innehåller fältets [!DNL Experience Data Model] (XDM) attribut. Följande tre egenskaper krävs:<ul><li>id</code>: URI $id</code> -värdet för schemat som är associerat med fältet.</li><li>contentType</code>: Innehållstypen och versionsnumret för schemat. Detta bör göras i form av en av de giltiga <a href="../../xdm/api/getting-started.md#accept">Acceptera rubrikerna</a> för en XDM-sökningsbegäran.</li><li>schemaPath</code>: Sökvägen till fältet i datasetens schema.</li></ul>`labels`: En lista över dataanvändningsetiketter som du vill lägga till i fältet. |
 
 **Svar**
 
