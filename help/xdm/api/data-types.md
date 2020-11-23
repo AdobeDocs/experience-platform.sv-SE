@@ -1,0 +1,628 @@
+---
+keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;data type registry;Schema Registry;data type;Data type;data types;Data types;create
+solution: Experience Platform
+title: Skapa en datatyp
+description: Med slutpunkten /datatypes i API:t för schemaregister kan du programmässigt hantera XDM-datatyper i ditt upplevelseprogram.
+translation-type: tm+mt
+source-git-commit: 0b55f18eabcf1d7c5c233234c59eb074b2670b93
+workflow-type: tm+mt
+source-wordcount: '1110'
+ht-degree: 0%
+
+---
+
+
+# Slutpunkt för datatyper
+
+Datatyper används som referenstypfält i klasser eller blandningar på samma sätt som grundläggande litteralfält, med den största skillnaden är att datatyper kan definiera flera underfält. Även om de liknar blandningar i genom att de medger konsekvent användning av en struktur med flera fält, är datatyperna mer flexibla eftersom de kan inkluderas var som helst i schemastrukturen medan mixar bara kan läggas till på rotnivån. Med `/datatypes` slutpunkten i [!DNL Schema Registry] API kan du programmässigt hantera datatyper i ditt upplevelseprogram.
+
+## Komma igång
+
+Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/mixin-registry.yaml). Innan du fortsätter bör du läsa [Komma igång-guiden](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+
+## Hämta en lista med datatyper {#list}
+
+Du kan visa alla datatyper under `global` - eller `tenant` -behållaren genom att göra en GET-förfrågan till `/global/datatypes` respektive `/tenant/datatypes`.
+
+>[!NOTE]
+>
+>När resurser listas begränsas resultatmängden till 300 objekt. Om du vill returnera resurser som överskrider den här gränsen måste du använda sidindelningsparametrar. Vi rekommenderar också att du använder ytterligare frågeparametrar för att filtrera resultaten och minska antalet returnerade resurser. Mer information finns i avsnittet om [frågeparametrar](./appendix.md#query) i bilagan.
+
+**API-format**
+
+```http
+GET /{CONTAINER_ID}/datatypes?{QUERY_PARAMS}
+```
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `{CONTAINER_ID}` | Behållaren som du vill hämta datatyper från: `global` för datatyper som skapats av Adobe eller `tenant` för datatyper som ägs av din organisation. |
+| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. En lista med tillgängliga parametrar finns i [bilagan](./appendix.md#query) . |
+
+**Begäran**
+
+Följande begäran hämtar en lista med datatyper från `tenant` behållaren, med hjälp av en `orderby` frågeparameter för att sortera datatyperna efter deras `title` attribut.
+
+```shell
+curl -X GET \
+  https://platform.adobe.io/data/foundation/schemaregistry/tenant/datatypes?orderby=title \
+  -H 'Accept: application/vnd.adobe.xed-id+json' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
+Svarsformatet beror på vilket sidhuvud som skickas i begäran `Accept` . Följande `Accept` rubriker är tillgängliga för att lista datatyper:
+
+| `Accept` header | Beskrivning |
+| --- | --- |
+| `application/vnd.adobe.xed-id+json` | Returnerar en kort sammanfattning av varje resurs. Det här är det rekommenderade huvudet för att lista resurser. (Gräns: 300) |
+| `application/vnd.adobe.xed+json` | Returnerar den fullständiga JSON-datatypen för varje resurs, med ursprunglig `$ref` och `allOf` inkluderad. (Gräns: 300) |
+
+**Svar**
+
+I begäran ovan användes `application/vnd.adobe.xed-id+json``Accept` rubriken, och därför innehåller svaret bara attributen `title`, `$id`, `meta:altId`och `version` för varje datatyp. Om du använder den andra `Accept` rubriken (`application/vnd.adobe.xed+json`) returneras alla attribut för varje datatyp. Välj lämplig `Accept` rubrik beroende på vilken information du behöver i ditt svar.
+
+```json
+{
+  "results": [
+    {
+      "$id": "https://ns.adobe.com/{TENANT_ID}/datatypes/78570e371092c032260714dd8bfd6d44",
+      "meta:altId": "_{TENANT_ID}.datatypes.78570e371092c032260714dd8bfd6d44",
+      "version": "1.0",
+      "title": "Loyalty"
+    },
+    {
+      "$id": "https://ns.adobe.com/{TENANT_ID}/datatypes/4b0329b5573cbb7cb757db667d7fdf66",
+      "meta:altId": "_{TENANT_ID}.datatypes.4b0329b5573cbb7cb757db667d7fdf66",
+      "version": "1.0",
+      "title": "Property Details"
+    }
+  ],
+  "_page": {
+    "orderby": "title",
+    "next": null,
+    "count": 2
+  },
+  "_links": {
+    "next": null,
+    "global_schemas": {
+      "href": "https://platform.adobe.io/data/foundation/schemaregistry/global/datatypes?orderby=title"
+    }
+  }
+}
+```
+
+## Söka efter en datatyp {#lookup}
+
+Du kan söka efter en viss datatyp genom att ta med datatypens ID i sökvägen för en GET-begäran.
+
+**API-format**
+
+```http
+GET /{CONTAINER_ID}/datatypes/{DATA_TYPE_ID}
+```
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `{CONTAINER_ID}` | Behållaren som innehåller den datatyp som du vill hämta: `global` för en datatyp som skapats av Adobe eller `tenant` för en datatyp som ägs av din organisation. |
+| `{DATA_TYPE_ID}` | Den `meta:altId` eller URL-kodade datatypen `$id` som du vill söka efter. |
+
+**Begäran**
+
+Följande begäran hämtar en datatyp med det `meta:altId` värde som anges i sökvägen.
+
+```shell
+curl -X GET \
+  https://platform.adobe.io/data/foundation/schemaregistry/tenant/datatypes/_{TENANT_ID}.datatypes.78570e371092c032260714dd8bfd6d44 \
+  -H 'Accept: application/vnd.adobe.xed+json' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
+Svarsformatet beror på vilket sidhuvud som skickas i begäran `Accept` . Alla uppslagsbegäranden måste `version` inkluderas i `Accept` rubriken. The following `Accept` headers are available:
+
+| `Accept` header | Beskrivning |
+| ------- | ------------ |
+| `application/vnd.adobe.xed+json; version={MAJOR_VERSION}` | Raw med `$ref` och `allOf`har rubriker och beskrivningar. |
+| `application/vnd.adobe.xed-full+json; version={MAJOR_VERSION}` | `$ref` och `allOf` är åtgärdade, har rubriker och beskrivningar. |
+| `application/vnd.adobe.xed-notext+json; version={MAJOR_VERSION}` | Raw med `$ref` och `allOf`, inga titlar eller beskrivningar. |
+| `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` och `allOf` löste sig - inga titlar eller beskrivningar. |
+| `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` och `allOf` åtgärdade, beskrivningar inkluderades. |
+
+**Svar**
+
+Ett lyckat svar returnerar informationen om datatypen. Vilka fält som returneras beror på vilket sidhuvud som skickas i begäran `Accept` . Experimentera med olika `Accept` rubriker för att jämföra svaren och ta reda på vilket sidhuvud som är bäst för dig.
+
+```json
+{
+  "$id": "https://ns.adobe.com/{TENANT_ID}/datatypes/78570e371092c032260714dd8bfd6d44",
+  "meta:altId": "_{TENANT_ID}.datatypes.78570e371092c032260714dd8bfd6d44",
+  "meta:resourceType": "datatypes",
+  "version": "1.0",
+  "title": "Loyalty",
+  "type": "object",
+  "description": "Loyalty object containing loyalty-specific fields.",
+  "definitions": {
+    "customFields": {
+      "properties": {
+        "loyaltyId": {
+          "title": "Loyalty ID",
+          "description": "Unique loyalty program member ID. Should be in the format of an email address.",
+          "type": "string",
+          "meta:xdmType": "string"
+        },
+        "memberSince": {
+          "title": "Member Since",
+          "description": "Date person joined loyalty program.",
+          "type": "string",
+          "format": "date",
+          "meta:xdmType": "date"
+        },
+        "points": {
+          "title": "Points",
+          "description": "Accumulated loyalty points",
+          "type": "integer",
+          "meta:xdmType": "int"
+        },
+        "loyaltyLevel": {
+          "title": "Loyalty Level",
+          "description": "The current loyalty program level to which the individual member belongs.",
+          "type": "string",
+          "enum": [
+            "platinum",
+            "gold",
+            "silver",
+            "bronze"
+          ],
+          "meta:enum": {
+            "platinum": "Platinum",
+            "gold": "Gold",
+            "silver": "Silver",
+            "bronze": "Bronze"
+          },
+          "meta:xdmType": "string"
+        }
+      },
+      "type": "object",
+      "meta:xdmType": "object"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "#/definitions/customFields"
+    }
+  ],
+  "imsOrg": "{IMS_ORG}",
+  "meta:extensible": true,
+  "meta:abstract": true,
+  "meta:xdmType": "object",
+  "meta:registryMetadata": {
+    "repo:createdDate": 1557529442681,
+    "repo:lastModifiedDate": 1557529442681,
+    "xdm:createdClientId": "{CLIENT_ID}",
+    "xdm:lastModifiedClientId": "{CLIENT_ID}",
+    "xdm:lastModifiedUserId": "{USER_ID}",
+    "eTag": "50b8008b588e911314f9685240dd4c23a247f37179a6d9ff6ba3877dc11ca504",
+    "meta:globalLibVersion": "1.15.4"
+  },
+  "meta:containerId": "tenant",
+  "meta:tenantNamespace": "_{TENANT_ID}"
+}
+```
+
+## Skapa en datatyp {#create}
+
+Du kan definiera en anpassad datatyp under `tenant` behållaren genom att göra en POST-förfrågan.
+
+**API-format**
+
+```http
+POST /tenant/datatypes
+```
+
+**Begäran**
+
+För att definiera en datatyp krävs inte `meta:extends` eller `meta:intendedToExtend` fält, och inte heller måste fält kapslas för att undvika kollisioner.
+
+```SHELL
+curl -X POST \
+  https://platform.adobe.io/data/foundation/schemaregistry/tenant/datatypes \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '{
+        "title":"Property Construction",
+        "description":"Information related to the property construction",
+        "type":"object",
+        "properties": {
+          "yearBuilt": {
+            "type":"integer",
+            "title": "Year Built",
+            "description": "The year the property was constructed."
+          },
+          "propertyType": {
+            "type":"string",
+            "title": "Property Type",
+            "description": "Type of building or structure in which the property exists.",
+            "enum": [
+              "freeStanding",
+              "mall",
+              "shoppingCenter"
+            ],
+            "meta:enum": {
+              "freeStanding": "Free Standing Building",
+              "mall": "Mall Space",
+              "shoppingCenter": "Shopping Center"
+            }
+          }
+        } 
+      }'
+```
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehåller information om den nya datatypen, inklusive `$id`, `meta:altId`och `version`. Dessa tre värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
+
+```JSON
+{
+  "$id": "https://ns.adobe.com/{TENANT_ID}/datatypes/7602bc6e97e5786a31c95d9e6531a1596687433451d97bc1",
+  "meta:altId": "_{TENANT_ID}.datatypes.7602bc6e97e5786a31c95d9e6531a1596687433451d97bc1",
+  "meta:resourceType": "datatypes",
+  "version": "1.0",
+  "title": "Property Construction",
+  "type": "object",
+  "description": "Information related to the property construction",
+  "properties": {
+    "yearBuilt": {
+      "type": "integer",
+      "title": "Year Built",
+      "description": "The year the property was constructed.",
+      "meta:xdmType": "int"
+    },
+    "propertyType": {
+      "type": "string",
+      "title": "Property Type",
+      "description": "Type of building or structure in which the property exists.",
+      "enum": [
+        "freeStanding",
+        "mall",
+        "shoppingCenter"
+      ],
+      "meta:enum": {
+        "freeStanding": "Free Standing Building",
+        "mall": "Mall Space",
+        "shoppingCenter": "Shopping Center"
+      },
+      "meta:xdmType": "string"
+    }
+  },
+  "refs": [],
+  "imsOrg": "{IMS_ORG}",
+  "meta:extensible": true,
+  "meta:abstract": true,
+  "meta:xdmType": "object",
+  "meta:registryMetadata": {
+    "repo:createdDate": 1604524729435,
+    "repo:lastModifiedDate": 1604524729435,
+    "xdm:createdClientId": "{CLIENT_ID}",
+    "xdm:lastModifiedClientId": "{CLIENT_ID}",
+    "xdm:createdUserId": "{USER_ID}",
+    "xdm:lastModifiedUserId": "{USER_ID}",
+    "eTag": "1c838764342756868ca1297869f582a38d15f03ed0acfc97fda7532d22e942c7",
+    "meta:globalLibVersion": "1.15.4"
+  },
+  "meta:containerId": "tenant",
+  "meta:sandboxId": "ff0f6870-c46d-11e9-8ca3-036939a64204",
+  "meta:sandboxType": "production",
+  "meta:tenantNamespace": "_{TENANT_ID}"
+}
+```
+
+Om du utför en GET-begäran om att [lista alla datatyper](#list) i klientbehållaren skulle datatypen Egenskapsinformation ingå, eller så kan du [utföra en sökning (GET)-begäran](#lookup) med den URL-kodade `$id` URI:n för att visa den nya datatypen direkt.
+
+## Uppdatera en datatyp {#put}
+
+Du kan ersätta en hel datatyp genom en PUT-åtgärd, vilket i själva verket innebär att resursen skrivs om. När du uppdaterar en datatyp via en PUT-begäran måste brödtexten innehålla alla fält som krävs när du [skapar en ny datatyp](#create) i en POST-begäran.
+
+>[!NOTE]
+>
+>Om du bara vill uppdatera en del av en datatyp i stället för att ersätta den helt, ska du läsa avsnittet om att [uppdatera en del av en datatyp](#patch).
+
+**API-format**
+
+```http
+PUT /tenant/datatypes/{DATA_TYPE_ID}
+```
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `{DATA_TYPE_ID}` | Den `meta:altId` eller URL-kodade `$id` datatypen som du vill skriva om. |
+
+**Begäran**
+
+Följande begäran skriver om en befintlig datatyp och lägger till ett nytt `floorSize` fält.
+
+```SHELL
+curl -X PUT \
+  https://platform.adobe.io/data/foundation/schemaregistry/tenant/datatypes/_{TENANT_ID}.datatypes.7602bc6e97e5786a31c95d9e6531a1596687433451d97bc1 \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '{
+        "title": "Property Construction",
+        "description": "Information related to the property construction",
+        "type": "object",
+        "properties": {
+          "yearBuilt": {
+            "type":"integer",
+            "title": "Year Built",
+            "description": "The year the property was constructed."
+          },
+          "propertyType": {
+            "type":"string",
+            "title": "Property Type",
+            "description": "Type of building or structure in which the property exists.",
+            "enum": [
+              "freeStanding",
+              "mall",
+              "shoppingCenter"
+            ],
+            "meta:enum": {
+              "freeStanding": "Free Standing Building",
+              "mall": "Mall Space",
+              "shoppingCenter": "Shopping Center"
+            }
+          },
+          "floorSize" {
+            "type": "integer",
+            "title": "Floor Size",
+            "description": "The floor size of the property, in square feet."
+          }
+        } 
+      }'
+```
+
+**Svar**
+
+Ett godkänt svar returnerar information om den uppdaterade datatypen.
+
+```JSON
+{
+  "$id": "https://ns.adobe.com/{TENANT_ID}/datatypes/7602bc6e97e5786a31c95d9e6531a1596687433451d97bc1",
+  "meta:altId": "_{TENANT_ID}.datatypes.7602bc6e97e5786a31c95d9e6531a1596687433451d97bc1",
+  "meta:resourceType": "datatypes",
+  "version": "1.0",
+  "title": "Property Construction",
+  "type": "object",
+  "description": "Information related to the property construction",
+  "properties": {
+    "yearBuilt": {
+      "type": "integer",
+      "title": "Year Built",
+      "description": "The year the property was constructed.",
+      "meta:xdmType": "int"
+    },
+    "propertyType": {
+      "type": "string",
+      "title": "Property Type",
+      "description": "Type of building or structure in which the property exists.",
+      "enum": [
+        "freeStanding",
+        "mall",
+        "shoppingCenter"
+      ],
+      "meta:enum": {
+        "freeStanding": "Free Standing Building",
+        "mall": "Mall Space",
+        "shoppingCenter": "Shopping Center"
+      },
+      "meta:xdmType": "string"
+    },
+    "floorSize" {
+      "type":  "integer",
+      "title":  "Floor Size",
+      "description":  "The floor size of the property, in square feet.",
+      "meta:xdmType": "int"
+    }
+  },
+  "refs": [],
+  "imsOrg": "{IMS_ORG}",
+  "meta:extensible": true,
+  "meta:abstract": true,
+  "meta:xdmType": "object",
+  "meta:registryMetadata": {
+    "repo:createdDate": 1604524729435,
+    "repo:lastModifiedDate": 1604524729435,
+    "xdm:createdClientId": "{CLIENT_ID}",
+    "xdm:lastModifiedClientId": "{CLIENT_ID}",
+    "xdm:createdUserId": "{USER_ID}",
+    "xdm:lastModifiedUserId": "{USER_ID}",
+    "eTag": "1c838764342756868ca1297869f582a38d15f03ed0acfc97fda7532d22e942c7",
+    "meta:globalLibVersion": "1.15.4"
+  },
+  "meta:containerId": "tenant",
+  "meta:sandboxId": "ff0f6870-c46d-11e9-8ca3-036939a64204",
+  "meta:sandboxType": "production",
+  "meta:tenantNamespace": "_{TENANT_ID}"
+}
+```
+
+## Uppdatera en del av en datatyp {#patch}
+
+Du kan uppdatera en del av en datatyp genom att använda en PATCH-begäran. Den [!DNL Schema Registry] stöder alla vanliga JSON Patch-åtgärder, inklusive `add`, `remove`och `replace`. Mer information om JSON Patch finns i [API-handboken](../../landing/api-fundamentals.md#json-patch).
+
+>[!NOTE]
+>
+>Om du vill ersätta en hel resurs med nya värden i stället för att uppdatera enskilda fält läser du avsnittet om att [ersätta en datatyp med en PUT-åtgärd](#put).
+
+**API-format**
+
+```http
+PATCH /tenant/data type/{DATA_TYPE_ID} 
+```
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `{DATA_TYPE_ID}` | Den URL-kodade `$id` URI eller `meta:altId` den datatyp som du vill uppdatera. |
+
+**Begäran**
+
+Exempelbegäran nedan uppdaterar `description` en befintlig datatyp och lägger till ett nytt `floorSize` fält.
+
+Begärandetexten har formen av en array där varje listat-objekt representerar en specifik ändring i ett enskilt fält. Varje objekt innehåller den åtgärd som ska utföras (`op`), vilket fält åtgärden ska utföras på (`path`) och vilken information som ska inkluderas i åtgärden (`value`).
+
+```SHELL
+curl -X PATCH \
+  https://platform.adobe.io/data/foundation/schemaregistry/tenant/datatypes/_{TENANT_ID}.datatypes.8779fd45d6e4eb074300023a439862bbba359b60d451627a \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'content-type: application/json' \
+  -d '[
+        {
+          "op": "replace",
+          "path": "/description",
+          "value": "Construction-related information for a company-operated property."
+        },
+        { 
+          "op": "add",
+          "path": "/properties/floorSize",
+          "value": {
+            "type": "integer",
+            "title": "Floor Size",
+            "description": "The floor size of the property, in square feet."
+          }
+        }
+      ]'
+```
+
+**Svar**
+
+Svaret visar att båda åtgärderna har utförts. Den `description` har uppdaterats och `floorSize` har lagts till under `definitions`.
+
+```JSON
+{
+  "$id": "https://ns.adobe.com/{TENANT_ID}/datatypes/8779fd45d6e4eb074300023a439862bbba359b60d451627a",
+  "meta:altId": "_{TENANT_ID}.datatypes.8779fd45d6e4eb074300023a439862bbba359b60d451627a",
+  "meta:resourceType": "datatypes",
+  "version": "1.2",
+  "title": "Property Details",
+  "type": "object",
+  "description": "Details relating to a property operated by the company.",
+  "definitions": {
+    "property": {
+      "properties": {
+        "_{TENANT_ID}": {
+        "type":"object",
+        "properties": {
+            "propertyName": {
+              "type": "string",
+              "title": "Property Name",
+              "description": "Name of the property"
+            },
+            "propertyCity": {
+              "title": "Property City",
+              "description": "City where the property is located.",
+              "type": "string"
+            },
+            "propertyCountry": {
+              "title": "Property Country",
+              "description": "Country where the property is located.",
+              "type": "string"
+            },
+            "phoneNumber": {
+              "title": "Phone Number",
+              "description": "Primary phone number for the property.",
+              "type": "string"
+            },
+            "propertyType": {
+              "type": "string",
+              "title": "Property Type",
+              "description": "Type and primary use of property.",
+              "enum": [
+                  "retail",
+                  "yoga",
+                  "fitness"
+              ],
+              "meta:enum": {
+                  "retail": "Retail Store",
+                  "yoga": "Yoga Studio",
+                  "fitness": "Fitness Center"
+              }
+            },
+            "propertyConstruction": {
+              "$ref": "https://ns.adobe.com/{TENANT_ID}/datatypes/24c643f618647344606222c494bd0102"
+            }
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "#/definitions/customFields",
+      "type": "object",
+      "meta:xdmType": "object"
+    }
+  ],
+  "imsOrg": "{IMS_ORG}",
+  "meta:extensible": true,
+  "meta:abstract": true,
+  "meta:intendedToExtend": [
+    "https://ns.adobe.com/xdm/context/profile"
+  ],
+  "meta:xdmType": "object",
+  "meta:registryMetadata": {
+    "repo:createdDate": 1594941263588,
+    "repo:lastModifiedDate": 1594941538433,
+    "xdm:createdClientId": "{CLIENT_ID}",
+    "xdm:lastModifiedClientId": "{CLIENT_ID}",
+    "xdm:createdUserId": "{USER_ID}",
+    "xdm:lastModifiedUserId": "{USER_ID}",
+    "eTag": "5e8a5e508eb2ed344c08cb23ed27cfb60c841bec59a2f7513deda0f7af903021",
+    "meta:globalLibVersion": "1.15.4"
+  },
+  "meta:containerId": "tenant",
+  "meta:tenantNamespace": "_{TENANT_ID}"
+}
+```
+
+## Ta bort en datatyp {#delete}
+
+Det kan ibland vara nödvändigt att ta bort en datatyp från schemaregistret. Detta görs genom att utföra en DELETE-begäran med det datatyp-ID som anges i sökvägen.
+
+**API-format**
+
+```http
+DELETE /tenant/datatypes/{DATA_TYPE_ID}
+```
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `{DATA_TYPE_ID}` | Den URL-kodade `$id` URI:n eller `meta:altId` den datatyp som du vill ta bort. |
+
+**Begäran**
+
+```shell
+curl -X DELETE \
+  https://platform.adobe.io/data/foundation/schemaregistry/tenant/datatypes/_{TENANT_ID}.datatypes.d5cc04eb8d50190001287e4c869ebe67 \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och en tom brödtext.
+
+Du kan bekräfta borttagningen genom att försöka utföra en [sökbegäran](#lookup) till datatypen. Du måste inkludera en rubrik i begäran, men du bör få HTTP-status 404 (Hittades inte) eftersom datatypen har tagits bort från schemaregistret. `Accept`
