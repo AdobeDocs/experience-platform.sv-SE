@@ -5,9 +5,9 @@ title: Utforska ett molnlagringssystem med API:t för Flow Service
 topic: overview
 description: I den här självstudien används API:t för Flow Service för att utforska ett molnlagringssystem från en annan leverantör.
 translation-type: tm+mt
-source-git-commit: 25f1dfab07d0b9b6c2ce5227b507fc8c8ecf9873
+source-git-commit: 026007e5f80217f66795b2b53001b6cf5e6d2344
 workflow-type: tm+mt
-source-wordcount: '697'
+source-wordcount: '745'
 ht-degree: 1%
 
 ---
@@ -15,9 +15,7 @@ ht-degree: 1%
 
 # Utforska ett molnlagringssystem med hjälp av [!DNL Flow Service] API
 
-[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
-
-I den här självstudiekursen används API:t för att utforska ett molnlagringssystem från tredje part. [!DNL Flow Service]
+I den här självstudien används [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) för att utforska ett molnlagringssystem från tredje part.
 
 ## Komma igång
 
@@ -28,14 +26,16 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till ett molnlagringssystem med hjälp av [!DNL Flow Service] API:t.
 
-### Hämta en basanslutning
+### Hämta ett anslutnings-ID
 
-För att kunna utforska molnlagring från tredje part med hjälp av API: [!DNL Platform] er måste du ha ett giltigt ID för basanslutningen. Om du inte redan har en basanslutning för det lagringsutrymme du vill arbeta med kan du skapa en genom följande självstudier:
+För att kunna utforska molnlagring från tredje part med hjälp av API: [!DNL Platform] er måste du ha ett giltigt anslutnings-ID. Om du inte redan har en anslutning till det lagringsutrymme du vill arbeta med kan du skapa en genom följande självstudier:
 
 * [Amazon S3](../create/cloud-storage/s3.md)
 * [Azure Blob](../create/cloud-storage/blob.md)
 * [Azure Data Lake Storage Gen2](../create/cloud-storage/adls-gen2.md)
+* [Azure-fillagring](../create/cloud-storage/azure-file-storage.md)
 * [Google Cloud Store](../create/cloud-storage/google.md)
+* [HDFS](../create/cloud-storage/hdfs.md)
 * [SFTP](../create/cloud-storage/sftp.md)
 
 ### Läser exempel-API-anrop
@@ -46,21 +46,21 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
 
-* Behörighet: Bearer `{ACCESS_TOKEN}`
-* x-api-key: `{API_KEY}`
-* x-gw-ims-org-id: `{IMS_ORG}`
+* `Authorization: Bearer {ACCESS_TOKEN}`
+* `x-api-key: {API_KEY}`
+* `x-gw-ims-org-id: {IMS_ORG}`
 
 Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
-* x-sandbox-name: `{SANDBOX_NAME}`
+* `x-sandbox-name: {SANDBOX_NAME}`
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
 
-* Innehållstyp: `application/json`
+* `Content-Type: application/json`
 
 ## Utforska din molnlagring
 
-Genom att använda basanslutningen för ditt molnlagringsutrymme kan du utforska filer och kataloger genom att utföra GETTER. När du gör GET-förfrågningar för att utforska ditt molnlagringsutrymme måste du inkludera frågeparametrarna som listas i tabellen nedan:
+Med anslutnings-ID:t för molnlagringen kan du utforska filer och kataloger genom att utföra GET-förfrågningar. När du gör GET-förfrågningar för att utforska ditt molnlagringsutrymme måste du inkludera frågeparametrarna som listas i tabellen nedan:
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
@@ -72,20 +72,20 @@ Använd följande anrop för att hitta sökvägen till filen som du vill hämta 
 **API-format**
 
 ```http
-GET /connections/{BASE_CONNECTION_ID}/explore?objectType=root
-GET /connections/{BASE_CONNECTION_ID}/explore?objectType=folder&object={PATH}
+GET /connections/{CONNECTION_ID}/explore?objectType=root
+GET /connections/{CONNECTION_ID}/explore?objectType=folder&object={PATH}
 ```
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{BASE_CONNECTION_ID}` | ID:t för en molnbaserad anslutning. |
+| `{CONNECTION_ID}` | Anslutnings-ID för din källanslutning till molnlagring. |
 | `{PATH}` | Sökvägen till en katalog. |
 
 **Begäran**
 
 ```shell
 curl -X GET \
-    'http://platform.adobe.io/data/foundation/flowservice/connections/{BASE_CONNECTION_ID}/explore?objectType=folder&object=/some/path/' \
+    'http://platform.adobe.io/data/foundation/flowservice/connections/{CONNECTION_ID}/explore?objectType=folder&object=/some/path/' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -113,25 +113,30 @@ Ett lyckat svar returnerar en array med filer och mappar som finns i den efterfr
 
 ## Inspect en fils struktur
 
-Om du vill inspektera datafilens struktur från ditt molnlagringsutrymme utför du en GET-förfrågan och anger filens sökväg som en frågeparameter.
+Om du vill inspektera datafilens struktur från ditt molnlagringsutrymme utför du en GET-förfrågan och anger filens sökväg och typ som en frågeparameter.
+
+Du kan inspektera strukturen för en CSV- eller TSV-fil genom att ange en anpassad avgränsare som en frågepperimeter. Ett teckenvärde är en tillåten kolumnavgränsare. Om inget anges `(,)` används ett komma som standardvärde.
 
 **API-format**
 
 ```http
-GET /connections/{BASE_CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&fileType={FILE_TYPE}
+GET /connections/{CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&fileType={FILE_TYPE}
+GET /connections/{CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&fileType={FILE_TYPE}&preview=true&fileType=delimited&columnDelimiter=;
+GET /connections/{CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&fileType={FILE_TYPE}&preview=true&fileType=delimited&columnDelimiter=\t
 ```
 
 | Parameter | Beskrivning |
-| --- | --- |
-| `{BASE_CONNECTION_ID}` | ID:t för en molnbaserad anslutning. |
-| `{FILE_PATH}` | Sökväg till en fil. |
+| --------- | ----------- |
+| `{CONNECTION_ID}` | Anslutnings-ID för din molnlagringskälla. |
+| `{FILE_PATH}` | Sökvägen till filen som du vill inspektera. |
 | `{FILE_TYPE}` | Filtypen. Filtyper som stöds:<ul><li>AVGRÄNSAD</code>: Avgränsaravgränsat värde. DSV-filer måste vara kommaavgränsade.</li><li>JSON</code>: JavaScript-objektnotation. JSON-filer måste vara XDM-kompatibla</li><li>PARQUET</code>: Apache Parquet. Parquet-filer måste vara XDM-kompatibla.</li></ul> |
+| `columnDelimiter` | Värdet för ett tecken som du angav som en kolumnavgränsare för att inspektera CSV- eller TSV-filer. Om parametern inte anges används ett kommatecken som standard `(,)`. |
 
 **Begäran**
 
 ```shell
 curl -X GET \
-    'http://platform.adobe.io/data/foundation/flowservice/connections/{BASE_CONNECTION_ID}/explore?objectType=file&object=/some/path/data.csv&fileType=DELIMITED' \
+    'http://platform.adobe.io/data/foundation/flowservice/connections/{CONNECTION_ID}/explore?objectType=file&object=/some/path/data.csv&fileType=DELIMITED' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
