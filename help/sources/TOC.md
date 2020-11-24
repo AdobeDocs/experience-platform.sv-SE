@@ -5,9 +5,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 translation-type: tm+mt
-source-git-commit: 39e419b78938afd91e3d7471241e377f352214ee
+source-git-commit: 68ed1ceb2f7410bd970fa43c5f0db11b1b8ea388
 workflow-type: tm+mt
-source-wordcount: '683'
+source-wordcount: '663'
 ht-degree: 0%
 
 ---
@@ -138,10 +138,11 @@ ht-degree: 0%
       - [Samla in protokolldata](tutorials/api/collect/protocols.md)
       - [Samla in strömmande data](tutorials/api/collect/streaming.md)
    - [Hämta parquetdata från ett molnlagringssystem från en annan leverantör](tutorials/api/cloud-storage-parquet.md)
-   - [Skapa en datauppsättningsbasanslutning med API:t för Flow Service](tutorials/api/create-dataset-base-connection.md)
-   - [Övervaka dataflöden med API:t för Flow Service](tutorials/api/monitor.md)
-   - [Uppdatera anslutningsinformation med API:t för Flow Service](tutorials/api/update.md)
-   - [Ta bort anslutningar med API:t för Flow Service](tutorials/api/delete.md)
+   - [Skapa en datauppsättningsanslutning](tutorials/api/create-dataset-base-connection.md)
+   - [Övervaka dataflöden](tutorials/api/monitor.md)
+   - [Uppdatera anslutningar](tutorials/api/update.md)
+   - [Ta bort anslutningar](tutorials/api/delete.md)
+   - [Ta bort dataflöden](tutorials/api/delete-dataflows.md)
 - Självstudiekurser för användargränssnitt {#ui-tutorials}
    - Skapa en källkoppling {#create}
       - Adobe-program {#adobe-applications}
