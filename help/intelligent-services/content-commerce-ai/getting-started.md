@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;getting started;content ai;commerce ai;content and commerce ai
 solution: Experience Platform
-title: Komma igång med innehåll och handel [AI]
+title: Komma igång med innehåll och handel med AI
 topic: Getting started
 description: Innehåll och AI för handel använder API:er för Adobe i/O. För att kunna ringa anrop till API:er för Adobe i/O och I/O-konsolintegrering måste du först slutföra självstudiekursen om autentisering.
 translation-type: tm+mt
-source-git-commit: 9ee888b02b4a402200ca4fcaed4a59c0a7eb94cd
+source-git-commit: 2be04547b96e1a6c293cc63e782fe1b3259619ba
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '571'
 ht-degree: 0%
 
 ---
 
 
-# Getting started with [!DNL Content and Commerce AI]
+# Komma igång med innehåll och handel med AI
 
 >[!NOTE]
 >
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 [!DNL Content and Commerce AI] använder I/O-API:er för Adobe. För att kunna ringa anrop till API:er för Adobe i/O och I/O-konsolintegrering måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md).
 
-När du kommer till steget **Lägg till API** finns API:t under Experience Cloud i stället för Adobe Experience Platform, vilket visas i skärmbilden nedan:
+När du kommer till steget **Lägg till API** finns API:t under Experience Cloud i stället för Adobe Experience Platform, vilket visas i följande skärmbild:
 
 ![lägga till innehåll och handel med AI](./images/add-api.png)
 
@@ -75,4 +75,4 @@ När du har alla dina autentiseringsuppgifter är du redo att konfigurera en anp
 
 Om du vill veta mer om Extensibility Framework börjar du med att läsa [introduktionen till utökningsdokumentet](https://docs.adobe.com/content/help/en/asset-compute/using/extend/understand-extensibility.html) . I det här dokumentet beskrivs förutsättningarna och etableringskraven.
 
-Om du vill veta mer om hur du konfigurerar en miljö för [!DNL Content and Commerce AI]börjar du med att läsa guiden för [att konfigurera en utvecklarmiljö](https://docs.adobe.com/content/help/en/asset-compute/using/extend/setup-environment.html). Det här dokumentet innehåller konfigurationsinstruktioner som gör att du kan utveckla för tjänsten Resursberäkning.
+Om du vill veta mer om hur du konfigurerar en miljö för [!DNL Content and Commerce AI]börjar du med att läsa guiden för [att konfigurera en utvecklarmiljö](https://docs.adobe.com/content/help/en/asset-compute/using/extend/setup-environment.html). Det här dokumentet innehåller konfigurationsinstruktioner som gör att du kan utveckla för tjänsten Asset compute.
