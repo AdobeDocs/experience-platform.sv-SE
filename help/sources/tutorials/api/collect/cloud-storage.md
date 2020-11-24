@@ -6,17 +6,15 @@ topic: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett molnlagringsutrymme från tredje part och föra in dem på plattformen via källanslutningar och API:er.
 translation-type: tm+mt
-source-git-commit: b0f6e51a784aec7850d92be93175c21c91654563
+source-git-commit: 026007e5f80217f66795b2b53001b6cf5e6d2344
 workflow-type: tm+mt
-source-wordcount: '1567'
+source-wordcount: '1583'
 ht-degree: 0%
 
 ---
 
 
 # Samla in molnlagringsdata via källanslutningar och API:er
-
-[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
 Den här självstudiekursen beskriver stegen för att hämta data från ett molnlagringsutrymme från tredje part och föra in dem på plattformen via källanslutningar och [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
@@ -62,13 +60,17 @@ Om du vill skapa en källanslutning måste du också definiera ett uppräkningsv
 
 Använd följande uppräkningsvärden för filbaserade kopplingar:
 
-| Data.format | Uppräkningsvärde |
+| Dataformat | Uppräkningsvärde |
 | ----------- | ---------- |
-| Avgränsade filer | `delimited` |
-| JSON-filer | `json` |
-| Parquet-filer | `parquet` |
+| Avgränsad | `delimited` |
+| JSON | `json` |
+| Parquet | `parquet` |
 
-För alla tabellbaserade anslutningar används fasttextvärdet: `tabular`.
+För alla tabellbaserade kopplingar anger du värdet till `tabular`.
+
+>[!NOTE]
+>
+>Du kan importera CSV- och TSV-filer med en anslutning till en molnlagringskälla genom att ange en kolumnavgränsare som en egenskap. Ett teckenvärde är en tillåten kolumnavgränsare. Om inget anges `(,)` används ett komma som standardvärde.
 
 **API-format**
 
@@ -88,13 +90,14 @@ curl -X POST \
     -H 'Content-Type: application/json' \
     -d '{
         "name": "Cloud storage source connector",
-        "baseConnectionId": "9e2541a0-b143-4d23-a541-a0b143dd2301",
+        "connectionId": "9e2541a0-b143-4d23-a541-a0b143dd2301",
         "description": "Cloud storage source connector",
         "data": {
-            "format": "delimited"
+            "format": "delimited",
+            "columnDelimiter": "\t"
         },
         "params": {
-            "path": "/demo/data7.csv",
+            "path": "/ingestion-demos/leads/tsv_data/*.tsv",
             "recursive": "true"
         },
             "connectionSpec": {
@@ -106,7 +109,9 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `baseConnectionId` | Det unika anslutnings-ID:t för det molnlagringssystem från tredje part som du använder. |
+| `connectionId` | Det unika anslutnings-ID:t för det molnlagringssystem från tredje part som du använder. |
+| `data.format` | Ett uppräkningsvärde som definierar dataformatsattributet. |
+| `data.columnDelimiter` | Du kan använda valfri kolumnavgränsare för tecken för att samla in platta filer. Den här egenskapen krävs bara vid import av CSV- eller TSV-filer. |
 | `params.path` | Sökvägen till källfilen som du försöker komma åt. |
 | `connectionSpec.id` | Det anslutningsspec-ID som är kopplat till ditt specifika molnlagringssystem från tredje part. I [bilagan](#appendix) finns en lista över anslutningsspecifikations-ID:n. |
 
@@ -126,8 +131,6 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 För att källdata ska kunna användas i [!DNL Platform]måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en [!DNL Platform] datauppsättning där källdata finns.
 
 Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till API:t för [schemaregister](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml).
-
-Om du föredrar att använda användargränssnittet i [!DNL Experience Platform]innehåller [schemaredigerarsjälvstudiekursen](../../../../xdm/tutorials/create-schema-ui.md) stegvisa instruktioner för hur du utför liknande åtgärder i Schemaredigeraren.
 
 **API-format**
 
@@ -322,7 +325,7 @@ curl -X POST \
 | -------- | ----------- |
 | `data.schema.id` | The `$id` of the target XDM schema. |
 | `params.dataSetId` | ID för måldatauppsättningen. |
-| `connectionSpec.id` | Det fasta anslutningens spec-ID till datasjön. Detta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
+| `connectionSpec.id` | Det fasta anslutningens spec-ID till Data Lake. Detta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
 
 **Svar**
 
@@ -403,8 +406,8 @@ Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusi
     "version": 0,
     "createdDate": 1597784069368,
     "modifiedDate": 1597784069368,
-    "createdBy": "28AF22BA5DE6B0B40A494036@AdobeID",
-    "modifiedBy": "28AF22BA5DE6B0B40A494036@AdobeID"
+    "createdBy": "{CREATED_BY}",
+    "modifiedBy": "{MODIFIED_BY}"
 }
 ```
 
