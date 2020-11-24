@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics; flow service; update connections
+keywords: Experience Platform;home;popular topics;flow service;delete connections;delete;api
 solution: Experience Platform
 title: Ta bort en anslutning med API:t för Flow Service
 topic: overview
 type: Tutorial
 description: I den här självstudiekursen beskrivs hur du tar bort en anslutning med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: 9c807270181084a94f288c248a678821ca58e194
+source-git-commit: 9e28591ef9f07217363cddf72356b8e5cd8a15a3
 workflow-type: tm+mt
-source-wordcount: '581'
+source-wordcount: '580'
 ht-degree: 1%
 
 ---
@@ -31,7 +31,7 @@ Den här självstudiekursen kräver även att du har en fungerande förståelse 
 * [Källor](../../home.md): [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster.
 * [Sandlådor](../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna uppdatera anslutningsinformationen med hjälp av [!DNL Flow Service] -API:t.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ta bort en anslutning med API:t. [!DNL Flow Service]
 
 ### Läser exempel-API-anrop
 
@@ -132,7 +132,7 @@ DELETE /connections/{CONNECTION_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{CONNECTION_ID}` | Det unika `id` värdet för anslutningen som du vill uppdatera. |
+| `{CONNECTION_ID}` | Det unika `id` värdet för anslutningen som du vill ta bort. |
 
 **Begäran**
 
