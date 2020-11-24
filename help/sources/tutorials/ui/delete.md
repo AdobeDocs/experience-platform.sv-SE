@@ -6,7 +6,7 @@ title: Ta bort dataflöden
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
+source-git-commit: e327a3e195d97c0b547608f360c5b0b6a8aded61
 workflow-type: tm+mt
 source-wordcount: '432'
 ht-degree: 0%
@@ -66,4 +66,4 @@ Efter en stund visas en grön bekräftelseruta längst ned på skärmen som bekr
 
 I den här självstudiekursen har du använt arbetsytan för att ta bort befintliga dataflöden **[!UICONTROL Sources]** .
 
-Anvisningar om hur du utför dessa åtgärder programmatiskt med API:t finns i självstudiekursen om hur du [!DNL Flow Service] [tar bort anslutningar med API:t för Flow Service](../../tutorials/api/delete.md)
+Anvisningar om hur du utför dessa åtgärder programmatiskt med API:t finns i självstudiekursen om hur du [!DNL Flow Service] [tar bort dataflöden med API:t för Flow Service](../../tutorials/api/delete-dataflows.md)
