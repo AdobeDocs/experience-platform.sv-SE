@@ -6,9 +6,9 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i kunddataplattformen i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i kunddataplattformen i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: bb59d93e016d49a0ebba77af1f90563a8767f072
+source-git-commit: 5928242537acdb1f130a0e8ac1bca3f14c184c6a
 workflow-type: tm+mt
-source-wordcount: '1691'
+source-wordcount: '1647'
 ht-degree: 0%
 
 ---
@@ -127,14 +127,6 @@ På **[!UICONTROL Segment schedule]** sidan kan du ange startdatum för att skic
 >För sociala mål måste du välja målgruppens ursprung i det här steget. Du kan bara fortsätta till nästa steg efter att du har valt något av alternativen i bilden nedan.
 
 ![välj datakälla](./assets/choose-data-origin.png)
-
-### **[!UICONTROL Scheduling]** steg {#scheduling}
-
-Gäller för: mål för e-postmarknadsföring och molnlagring
-
-![steg för segmentschema](./assets/scheduling-icon.png)
-
-På **[!UICONTROL Scheduling]** sidan kan du se startdatumet för att skicka data till målet samt hur ofta data skickas till målet. Dessa värden kan inte redigeras.
 
 ### **[!UICONTROL Select attributes]** steg {#select-attributes}
 
