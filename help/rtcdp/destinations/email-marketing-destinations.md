@@ -6,9 +6,9 @@ type: Tutorial
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 seo-description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 translation-type: tm+mt
-source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
+source-git-commit: 7903d6c715747dfc298a5e4a4615d8ecbbe5d359
 workflow-type: tm+mt
-source-wordcount: '822'
+source-wordcount: '828'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ Om du tidigare har konfigurerat en anslutning till ditt e-postmarknadsföringsm�
 - För **SFTP med lösenordsanslutningar** måste du ange domän, port, användarnamn och lösenord för SFTP-servern.
 - För **SFTP med SSH-nyckelanslutningar** måste du ange domän, port, användarnamn och SSH-nyckel för SFTP-servern.
 
-Du kan även bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna under **[!UICONTROL Key]** avsnittet. Observera att den här offentliga nyckeln **måste** skrivas som en Base64-kodad sträng.
+I **[!UICONTROL Encryption PGP/GPG]** avsnittet kan du även bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering med PGP/GPG till de exporterade filerna under **[!UICONTROL Key]** avsnittet. Observera att den här offentliga nyckeln **måste** skrivas som en Base64-kodad sträng.
 
 I **[!UICONTROL Setup]** steget anger du ett namn och en beskrivning för det nya målet samt filformatet för de exporterade filerna.
 
