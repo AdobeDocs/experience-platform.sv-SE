@@ -2,10 +2,10 @@
 title: Mappa variabler manuellt i Adobe Analytics
 seo-title: Mappa variabler manuellt i Adobe Analytics med Web SDK
 description: Mappa variabler manuellt till Adobe Analytics med bearbetningsregler
-seo-description: mappa variabler manuellt till Adobe Analytics med bearbetningsregler med Web SDK
+seo-description: Mappa variabler manuellt till Adobe Analytics med bearbetningsregler med Web SDK
 keywords: adobe analytics;analytics;variables;mapping variables;map variables;contextData;context Data;Processing rules;rules;xdm;schema;
 translation-type: tm+mt
-source-git-commit: 1b5ee9b1f9bdc7835fa8de59020b3eebb4f59505
+source-git-commit: 206b5addd6baf5a120b469b21313ee86ac1fe53b
 workflow-type: tm+mt
 source-wordcount: '385'
 ht-degree: 0%
@@ -52,7 +52,7 @@ XDM-data som ska användas av [!DNL Analytics]förenklas med punktnotation och b
 
 Alla data som samlas in av edge-nätverket kan nås via [bearbetningsregler](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/processing-rules/processing-rules-configuration/t-processing-rules.html). I [!DNL Analytics]kan du använda bearbetningsregler för att införliva kontextdata i [!DNL Analytics] variabler.
 
-I följande regel är Adobe Analytics till exempel inställt på att fylla i **interna söktermer (eVar2)** med data som är associerade med **a.x_atag.search.term(Context Data)**.
+I följande regel är Adobe Analytics till exempel inställt på att fylla i **interna söktermer (eVar2)** med data som är associerade med **a.x._atag.search.term(Context Data)**.
 
 ![](assets/examplerule.png)
 
