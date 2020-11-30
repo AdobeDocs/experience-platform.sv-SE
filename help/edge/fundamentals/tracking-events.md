@@ -5,9 +5,9 @@ description: Lär dig spåra Experience Platform Web SDK-händelser
 seo-description: Lär dig spåra Experience Platform Web SDK-händelser
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon;send Beacon;documentUnloading;document Unloading;onBeforeEventSend;
 translation-type: tm+mt
-source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
+source-git-commit: 51a846124f71012b2cb324cc1469ec7c9753e574
 workflow-type: tm+mt
-source-wordcount: '1138'
+source-wordcount: '1331'
 ht-degree: 0%
 
 ---
@@ -43,6 +43,35 @@ alloy("sendEvent", {
   }
 });
 ```
+
+En tid kan gå mellan när `sendEvent` kommandot körs och när data skickas till servern (till exempel om Web SDK-biblioteket inte har lästs in fullständigt eller om samtycke ännu inte har tagits emot). Om du tänker ändra någon del av `xdm` objektet efter att du har kört `sendEvent` kommandot rekommenderar vi att du klonar `xdm` objektet _innan_ du kör `sendEvent` kommandot. Exempel:
+
+```javascript
+var clone = function(value) {
+  return JSON.parse(JSON.stringify(value));
+};
+
+var dataLayer = {
+  "commerce": {
+    "order": {
+      "purchaseID": "a8g784hjq1mnp3",
+      "purchaseOrderNumber": "VAU3123",
+      "currencyCode": "USD",
+      "priceTotal": 999.98
+    }
+  }
+};
+
+alloy("sendEvent", {
+  "xdm": clone(dataLayer)
+});
+
+// This change will not be reflected in the data sent to the 
+// server for the prior sendEvent command.
+dataLayer.commerce = null;
+```
+
+I det här exemplet klonas datalagret genom att serialisera det till JSON och sedan deserialisera det. Därefter skickas det klonade resultatet till `sendEvent` kommandot. Om du gör det ser du till att `sendEvent` kommandot har en ögonblicksbild av datalagret så som det var när `sendEvent` kommandot kördes, så att senare ändringar av det ursprungliga datalagret inte återspeglas i data som skickas till servern. Om du använder ett händelsestyrt datalager hanteras kloningen av dina data troligtvis redan automatiskt. Om du till exempel använder [Adobe-klientdatalagret](https://github.com/adobe/adobe-client-data-layer/wiki)`getState()` , ger metoden en beräknad, klonad ögonblicksbild av alla tidigare ändringar. Detta hanteras också automatiskt om du använder AEP Web SDK Launch-tillägget.
 
 >[!NOTE]
 >
