@@ -5,9 +5,9 @@ title: Adobe Experience Platform Identity Service
 topic: tutorial
 description: Ett identitetsdiagram är en karta över relationer mellan olika identiteter för en viss kund, vilket ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler.
 translation-type: tm+mt
-source-git-commit: af7eab0599b17be55d5a4c129f7ebaeba91333bc
+source-git-commit: df165baceaf8dc2b21055201ec78bd392044b938
 workflow-type: tm+mt
-source-wordcount: '801'
+source-wordcount: '808'
 ht-degree: 1%
 
 ---
@@ -98,6 +98,7 @@ Diagramvisningsprogrammet returnerar ett fel om följande krav inte uppfylls:
 - Identitetsvärdet finns inte i det valda namnutrymmet.
 - Diagrammet har färre än två identiteter.
 - Diagrammet överskrider maxgränsen på 400 identiteter.
+- Du befinner dig i en icke-produktionssandlådemiljö.
 
 ![stora kluster](../images/identity-graph-viewer/error-screen.png)
 
