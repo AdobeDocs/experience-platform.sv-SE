@@ -1,22 +1,22 @@
 ---
-keywords: Experience Platform;home;popular topics;monitor accounts;monitor dataflows;data flows
-description: Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du visar befintliga konton och dataflöden från arbetsytan Källor.
+keywords: Experience Platform;home;popular topics;monitor accounts;monitor dataflows;dataflows
+description: Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du visar befintliga dataflöden från arbetsytan Källor.
 solution: Experience Platform
-title: Övervaka konton och dataflöden
+title: Övervaka dataflöden
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
+source-git-commit: 12b8ced6705c2b14b50ea237391d9f829c894b99
 workflow-type: tm+mt
-source-wordcount: '1036'
-ht-degree: 0%
+source-wordcount: '771'
+ht-degree: 1%
 
 ---
 
 
-# Övervaka konton och dataflöden i användargränssnittet
+# Övervaka dataflöden i användargränssnittet
 
-Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du visar befintliga konton och dataflöden från [!UICONTROL Sources] arbetsytan.
+Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du visar befintliga dataflöden från [!UICONTROL Sources] arbetsytan.
 
 ## Komma igång
 
@@ -27,53 +27,9 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
    - [Schemaredigeraren, genomgång](../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 - [[!DNL Real-time Customer Profile]](../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-## Övervaka konton
-
-Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt **[!UICONTROL Sources]** arbetsytan. På **[!UICONTROL Catalog]** skärmen visas en mängd olika källor som du kan skapa konton och dataflöden med. Varje källa visar antalet befintliga konton och dataflöden som är kopplade till dem.
-
-Välj **[!UICONTROL Accounts]** i den övre rubriken om du vill visa befintliga konton.
-
-![katalog](../../images/tutorials/monitor/catalog-accounts.png)
-
-Sidorna **[!UICONTROL Accounts]** visas. På den här sidan finns en lista med visningsbara konton, inklusive information om källa, användarnamn, antal dataflöden och datum när de skapades.
-
-Välj trattikonen längst upp till vänster för att starta sorteringsfönstret.
-
-![konton](../../images/tutorials/monitor/accounts-list.png)
-
-På sorteringspanelen kan du komma åt konton från en viss källa. Välj den källa du vill arbeta med och välj kontot i listan till höger.
-
->[!TIP]
->
-> Använd ![spektrumkontrollknappen](../../images/tutorials/monitor/spectrum-control.png) i **[!UICONTROL Name]** kolumnen för att skapa ett nytt källdataflöde för det valda kontot.
-
-![välj konton](../../images/tutorials/monitor/accounts-sort.png)
-
-Dessutom kan du redigera befintlig kontoinformation och uppdatera dina kontoinloggningsuppgifter. Välj pennikonen för den kontoinformation som du vill redigera.
-
-![](../../images/tutorials/monitor/click-edit.png)
-
-Den **[!UICONTROL Edit account details]** modala visas. Från den här sidan kan du uppdatera din befintliga kontoinformation och autentiseringsuppgifter.
-
->[!NOTE]
->
-> Det finns information om redigeringskonton för alla batchkällanslutningar.
-
-![](../../images/tutorials/monitor/edit-account.png)
-
-På **[!UICONTROL Accounts]** sidan kan du visa en lista över befintliga dataflöden eller måldatauppsättningar som är kopplade till kontot du har öppnat. Markera ellipsknappen (`...`) för att visa fler tillgängliga alternativ för det valda dataflödet. Dessa alternativ beskrivs närmare nedan:
-
-| Kontroll | Beskrivning |
-| ------- | ----------- |
-| [!UICONTROL Edit schedule] | Gör att du kan redigera dataflödets intag. |
-| [!UICONTROL Disable dataflow] | Gör att du kan inaktivera datainmatning för det valda dataflödet. |
-| [!UICONTROL Delete] | Gör att du kan ta bort det markerade dataflödet. |
-
-![dataflöden](../../images/tutorials/monitor/dataflows.png)
-
 ## Övervaka dataflöden
 
-Dataflöden kan nås direkt från **[!UICONTROL Catalog]** sidan utan att visas **[!UICONTROL Accounts]**. Välj **[!UICONTROL Dataflows]** i den övre rubriken om du vill visa en lista med dataflöden.
+Logga in för att logga in på användargränssnittet [för](https://platform.adobe.com) Experience Platform och välj sedan **[!UICONTROL Sources]** från den vänstra navigeringen för att komma åt [!UICONTROL Sources] arbetsytan. Välj **[!UICONTROL Dataflows]** i den övre rubriken om du vill visa befintliga dataflöden.
 
 ![catalog-dataflows](../../images/tutorials/monitor/catalog-dataflows.png)
 
