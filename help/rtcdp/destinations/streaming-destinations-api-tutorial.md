@@ -5,9 +5,9 @@ title: Ansluta till direktuppspelningsmål och aktivera data
 topic: tutorial
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 502d913400a8ddc0132c64253cd30ea9f9fcd239
+source-git-commit: f12b400ca95e23d8e6ac282fafa8f4bb141d703a
 workflow-type: tm+mt
-source-wordcount: '1865'
+source-wordcount: '2007'
 ht-degree: 0%
 
 ---
@@ -592,6 +592,31 @@ Det returnerade svaret ska i parametern inkludera de segment och profilattribut 
   }
 }
 ```
+
+## Använda Postman-samlingar för att ansluta till direktuppspelningsmål  {#collections}
+
+Om du vill ansluta till de direktuppspelningsmål som beskrivs i den här självstudiekursen på ett effektivare sätt kan du använda [[!DNL Postman]](https://www.postman.com/).
+
+[!DNL Postman] är ett verktyg som du kan använda för att göra API-anrop och hantera bibliotek med fördefinierade anrop och miljöer.
+
+För den här specifika självstudiekursen har vi tagit med följande [!DNL Postman] samlingar som är bifogade den här artikeln:
+
+* [!DNL AWS Kinesis] [!DNL Postman] samling
+* [!DNL Azure Event Hubs] [!DNL Postman] samling
+
+Klicka [här](assets/DestinationPostmanCollection.zip) för att hämta samlingsarkivet.
+
+Varje samling innehåller de nödvändiga förfrågningarna och miljövariablerna för [!DNL AWS Kinesis], [!DNL Azure Event Hub]respektive.
+
+### Så här använder du Postman-samlingarna
+
+Följ de här stegen för att ansluta till målen med de bifogade [!DNL Postman] samlingarna:
+
+* Hämta och installera [!DNL Postman];
+* [Ladda ned](assets/DestinationPostmanCollection.zip) och zippa upp de bifogade samlingarna,
+* Importera samlingarna från deras motsvarande mappar till Postman.
+* Fyll i miljövariablerna enligt instruktionerna i denna artikel.
+* Kör [!DNL API] förfrågningarna från Postman utifrån instruktionerna i den här artikeln.
 
 ## Nästa steg
 
