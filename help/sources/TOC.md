@@ -5,7 +5,7 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 translation-type: tm+mt
-source-git-commit: 68ed1ceb2f7410bd970fa43c5f0db11b1b8ea388
+source-git-commit: e31e09449b79b8a1600cfb2b162f51c26d482847
 workflow-type: tm+mt
 source-wordcount: '663'
 ht-degree: 0%
@@ -206,7 +206,8 @@ ht-degree: 0%
       - [Konfigurera ett dataflöde för en betalningsanslutning](tutorials/ui/dataflow/payments.md)
       - [Konfigurera ett dataflöde för en protokollanslutning](tutorials/ui/dataflow/protocols.md)
    - [Aktivera inkommande data för att fylla i kundprofiler](tutorials/ui/profile.md)
-   - [Övervaka konton och dataflöden](tutorials/ui/monitor.md)
+   - [Övervaka dataflöden](tutorials/ui/monitor.md)
+   - [Uppdatera konton](tutorials/ui/update.md)
    - [Ta bort konton](tutorials/ui/delete-accounts.md)
    - [Ta bort dataflöden](tutorials/ui/delete.md)
 - [Flödeskörningsmeddelanden](notifications.md)
