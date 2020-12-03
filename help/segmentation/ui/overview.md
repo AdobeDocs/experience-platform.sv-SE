@@ -5,7 +5,7 @@ title: Användarhandbok för segmenteringstjänsten
 topic: ui guide
 description: Adobe Experience Platform segmenteringstjänst innehåller ett användargränssnitt för att skapa och hantera segmentdefinitioner.
 translation-type: tm+mt
-source-git-commit: 1aff9329e1ae97caa34a205bbfbbc6f51b54b8fb
+source-git-commit: adf8e8457c8ffef263223a38d3f9c345cf7c6ab2
 workflow-type: tm+mt
 source-wordcount: '1416'
 ht-degree: 0%
@@ -44,7 +44,7 @@ Klicka på **[!UICONTROL Browse]** fliken för att visa en lista över alla segm
 
 I den här vyn visas information om segmentdefinitionen, inklusive uppdelning, kurva, antal profiler, utvärderingsmetod, datum när segmentet skapades och senaste ändringsdatum.
 
-I uppdelningen visas ett stolpdiagram som visar procentandelen profiler som tillhör var och en av följande statusvärden: [!UICONTROL Entered], [!UICONTROL Realized]och [!UICONTROL Exiting].
+Neddelningen visar ett stolpdiagram som visar procentandelen profiler som tillhör var och en av följande statusvärden: [!UICONTROL Entered], [!UICONTROL Realized]och [!UICONTROL Exiting].
 
 ![](../images/ui/overview/segment-browse-breakdown.png)
 
@@ -102,7 +102,7 @@ I **[!UICONTROL Activated destinations]** avsnittet visas de mål som det här s
 
 >[!NOTE]
 >
-> Destinationer är en funktion som är tillgänglig med [!DNL Real-time Customer Data Platform]och som gör att du kan exportera data till externa plattformar. Mer information om destinationer finns i [destinationsöversikten](../../rtcdp/destinations/destinations-overview.md). Om du vill veta hur du aktiverar ett segment till ett mål kan du läsa [guiden om hur du aktiverar segment till ett mål](../../rtcdp/destinations/activate-destinations.md).
+> Destinationer är en funktion som är tillgänglig med [!DNL Real-time Customer Data Platform]och som gör att du kan exportera data till externa plattformar. Mer information om destinationer finns i [destinationsöversikten](../../destinations/home.md). Om du vill veta hur du aktiverar ett segment till ett mål kan du läsa [guiden om hur du aktiverar segment till ett mål](../../destinations/ui/activate-destinations.md).
 
 ### Profilexempel
 
