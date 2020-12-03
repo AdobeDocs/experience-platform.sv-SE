@@ -5,9 +5,9 @@ title: Skapa kundsegment med förutbestämda poäng
 topic: Create a segment
 description: När en förutsägelsekörning är klar används automatiskt förväntade benägenhetspoäng av profiler. Genom att förbättra profiler med kundens AI-poäng kan man skapa kundsegment för att hitta målgrupper baserat på deras benägenhetspoäng. I det här avsnittet beskrivs hur du skapar segment med hjälp av segmentverktyget.
 translation-type: tm+mt
-source-git-commit: c5e2ea5daf813bf580a11f0182361197e55c6fe8
+source-git-commit: d29f7c7243ec798abe60fff895b36277996cb4a0
 workflow-type: tm+mt
-source-wordcount: '305'
+source-wordcount: '296'
 ht-degree: 0%
 
 ---
@@ -41,4 +41,4 @@ Ovanför den vänstra kolumnen *Fält* klickar du på **kugghjulsikonen** och v�
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du hittat målgrupper baserat på deras benägenhetspoäng med hjälp av segmentbyggaren. Nu kan ni inrikta er på era målgrupper genom att aktivera dem för destinationer. Mer information finns i [destinationsöversikten](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/destinations/destinations-overview.html) .
+Genom att följa den här självstudiekursen har du hittat målgrupper baserat på deras benägenhetspoäng med hjälp av segmentbyggaren. Nu kan ni inrikta er på era målgrupper genom att aktivera dem för destinationer. Mer information finns i [destinationsöversikten](../../../destinations/home.md) .
