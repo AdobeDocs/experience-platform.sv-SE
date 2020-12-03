@@ -5,9 +5,9 @@ title: Adobe Experience Platform Identity Service
 topic: tutorial
 description: Ett identitetsdiagram är en karta över relationer mellan olika identiteter för en viss kund, vilket ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler.
 translation-type: tm+mt
-source-git-commit: df165baceaf8dc2b21055201ec78bd392044b938
+source-git-commit: ef1025dfacc91b13c064db99e6304f2c09abb3d9
 workflow-type: tm+mt
-source-wordcount: '808'
+source-wordcount: '871'
 ht-degree: 1%
 
 ---
@@ -93,14 +93,19 @@ Identitetsdiagram med större kluster av identiteter kan även nås via visnings
 
 ## Bilaga
 
-Diagramvisningsprogrammet returnerar ett fel om följande krav inte uppfylls:
+Följande avsnitt innehåller ytterligare information om hur du arbetar med identitetsdiagramvisningsprogrammet.
 
-- Identitetsvärdet finns inte i det valda namnutrymmet.
-- Diagrammet har färre än två identiteter.
-- Diagrammet överskrider maxgränsen på 400 identiteter.
-- Du befinner dig i en icke-produktionssandlådemiljö.
+### Om felmeddelanden
 
-![stora kluster](../images/identity-graph-viewer/error-screen.png)
+Fel kan inträffa vid åtkomst till identitetsdiagramvisningsprogrammet. Nedan följer en lista över krav och begränsningar som ska beaktas när du arbetar med identitetsdiagramvisningsprogrammet.
+
+- Ett identitetsvärde måste finnas i det valda namnutrymmet.
+- Identitetsdiagramvisningsprogrammet kräver minst två länkade identiteter för att kunna generera.
+- Identitetsdiagramvisningsprogrammet får inte överskrida maximalt 400 identiteter.
+- Identitetsdiagramvisningsprogrammet är för närvarande inte tillgängligt i icke-produktionssandlådor.
+- Identitetsdiagramvisningsprogrammet har för närvarande bara stöd för batchimport av data och visar inte data som importerats med direktuppspelningskällor.
+
+![error-screen](../images/identity-graph-viewer/error-screen.png)
 
 ## Nästa steg
 
