@@ -6,9 +6,9 @@ last-update: March 10, 2020
 author: ens71067
 keywords: release notes;
 translation-type: tm+mt
-source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
+source-git-commit: adf8e8457c8ffef263223a38d3f9c345cf7c6ab2
 workflow-type: tm+mt
-source-wordcount: '840'
+source-wordcount: '838'
 ht-degree: 2%
 
 ---
@@ -77,10 +77,10 @@ Det finns nya destinationer där du kan aktivera dina Adobe Experience Platform-
 
 | Destination | Beskrivning |
 |--- | ---|
-| Lagringsmål i molnet | Adobe CDP i realtid kan nu leverera dina segment som datafiler till dina [!DNL Amazon S3] eller SFTP:s molnlagringsplatser. Detta gör att du kan skicka målgrupper och deras profilattribut till dina interna system via CSV eller tabbavgränsade filer. |
-| Annonsmål | Målkortet delas nu upp i tre destinationskort för de tre olika [!DNL Google] [!DNL Google] plattformar som för närvarande stöds i CDP i realtid i Adobe: [!DNL Google Ads], [!DNL Google Ad Manager], [!DNL Google] Display &amp; Video 360. |
+| Lagringsmål i molnet | CDP kan nu leverera era segment som datafiler till era [!DNL Amazon S3] - eller SFTP-molnlagringsplatser i realtid. Detta gör att du kan skicka målgrupper och deras profilattribut till dina interna system via CSV eller tabbavgränsade filer. |
+| Annonsmål | Målkortet är nu [!DNL Google] uppdelat i tre destinationskort för de tre olika [!DNL Google] plattformar som för närvarande stöds i CDP i realtid: [!DNL Google Ads], [!DNL Google Ad Manager], [!DNL Google] Display &amp; Video 360. |
 
-Mer information finns på [destinationsöversikten](../../rtcdp/destinations/destinations-overview.md)
+Mer information finns på [destinationsöversikten](../../destinations/home.md)
 
 ## [!DNL Identity Service] {#identity}
 
