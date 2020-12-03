@@ -5,9 +5,9 @@ user-guide-title: Adobe Experience Platform - översikt
 breadcrumb-title: Experience Platform - översikt
 user-guide-description: Läs om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid.
 translation-type: tm+mt
-source-git-commit: 36707e95a63b6be60d1d7badbe1cdc9d0bc3548c
+source-git-commit: 5761394285e56214fd59e31d530756eed1f5ad08
 workflow-type: tm+mt
-source-wordcount: '402'
+source-wordcount: '399'
 ht-degree: 14%
 
 ---
@@ -45,7 +45,7 @@ ht-degree: 14%
    * [Datavetenskapens arbetsyta](https://docs.adobe.com/content/help/en/experience-platform/data-science-workspace/home.html)
    * [Felsökning](https://docs.adobe.com/content/help/en/debugger/using/experience-cloud-debugger.html)
    * [Felsökning 2.0 (beta)](https://docs.adobe.com/content/help/en/debugger/using-v2/experience-cloud-debugger.html)
-   * [Mål](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/destinations/destinations-overview.html)
+   * [Mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/home.html)
    * [ETL (Extrahera, Omforma, Läs in)](https://docs.adobe.com/content/help/en/experience-platform/etl/home.html)
    * [Identitetstjänst](https://docs.adobe.com/content/help/sv-SE/experience-platform/identity/home.html)
    * [Intelligenta tjänster](https://docs.adobe.com/content/help/en/experience-platform/intelligent-services/home.html)
