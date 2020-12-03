@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: January 15, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: a362b67cec1e760687abb0c22dc8c46f47e766b7
+source-git-commit: adf8e8457c8ffef263223a38d3f9c345cf7c6ab2
 workflow-type: tm+mt
-source-wordcount: '891'
+source-wordcount: '877'
 ht-degree: 3%
 
 ---
@@ -20,9 +20,9 @@ ht-degree: 3%
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 * [[!DNL Experience Data Model (XDM) System]](#xdm)
-* [[!DNL-Privacy Service]](#privacy)
-* [[!DNL-källor]](#sources)
-* [[!DNL-mål]](#destinations)
+* [[!DNL Privacy Service]](#privacy)
+* [[!DNL Sources]](#sources)
+* [[!DNL Destinations]](#destinations)
 
 ## [!DNL Experience Data Model] (XDM) System {#xdm}
 
@@ -92,7 +92,7 @@ Mer information om källor finns i [Källor - översikt](../../sources/home.md)
 
 ## Mål {#destinations}
 
-I [Adobe CDP](../../rtcdp/overview.md)i realtid är destinationer färdiga integrationer med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
+I CDP [i](../../rtcdp/overview.md)realtid är mål färdiga integreringar med målplattformar som aktiverar data till dessa partners på ett smidigt sätt.
 
 **Nya funktioner**
 
@@ -112,4 +112,4 @@ I [Adobe CDP](../../rtcdp/overview.md)i realtid är destinationer färdiga integ
 
 * Ingen
 
-Mer information finns i Översikt över [](../../rtcdp/destinations/destinations-overview.md) Destinationer.
+Mer information finns i Översikt över [](../../destinations/home.md) Destinationer.
