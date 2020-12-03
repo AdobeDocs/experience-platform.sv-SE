@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: November 18, 2019
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
+source-git-commit: 5f120a716cc3396ef7749463bb6052a8ced2fbb4
 workflow-type: tm+mt
 source-wordcount: '1878'
 ht-degree: 1%
@@ -65,7 +65,7 @@ Mer information finns i Översikt över kunddata för [kunddataplattformen i rea
 
 ## [!DNL Destinations] {#destinations}
 
-[!DNL Destinations] är färdiga integreringar med målplattformar som stöds av Adobe kunddataplattform i realtid och som aktiverar data till dessa partners på ett smidigt sätt. Mer information finns i artikeln Översikt över [](../../rtcdp/destinations/destinations-overview.md) destinationer.
+[!DNL Destinations] är färdiga integreringar med målplattformar som stöds av Adobe kunddataplattform i realtid och som aktiverar data till dessa partners på ett smidigt sätt. Mer information finns i artikeln Översikt över [](../../destinations/home.md) destinationer.
 
 **Tillgängliga destinationer**
 
@@ -74,12 +74,12 @@ I november-versionen stöder Adobe kunddataplattform i realtid följande destina
 * Advertising: [!DNL Google]
 * E-postmarknadsföring: Adobe Campaign, [!DNL Salesforce Marketing Cloud], [!DNL Responsys], [!DNL Oracle Eloqua]
 
-Information om var och en av destinationerna finns i [målkatalogen](../../rtcdp/destinations/destinations-catalog.md) .
+Information om var och en av destinationerna finns i [målkatalogen](../../destinations/catalog/overview.md) .
 
 **Kända begränsningar**
 
-* Kontrollen som tillåter anpassade aktiveringsscheman i [aktiveringsflödet](../../rtcdp/destinations/activate-destinations.md#activate-data) (schemasteget) är inte tillgänglig i den första versionen.
-* Det finns för närvarande inget sätt att redigera eller ta bort en målkonfiguration. Du kan undvika den här begränsningen genom att aktivera eller inaktivera målet i det övre högra hörnet på sidan [med](../../rtcdp/destinations/destination-details-page.md)målinformation.
+* Kontrollen som tillåter anpassade aktiveringsscheman i [aktiveringsflödet](../../destinations/ui/activate-destinations.md#activate-data) (schemasteget) är inte tillgänglig i den första versionen.
+* Det finns för närvarande inget sätt att redigera eller ta bort en målkonfiguration. Du kan undvika den här begränsningen genom att aktivera eller inaktivera målet i det övre högra hörnet på sidan [med](../../destinations/ui/destination-details-page.md)målinformation.
 * Det finns för närvarande ingen validering för kontoinformation, sökväg eller autentiseringsuppgifter vid anslutning till ditt mål eller lagringskonto. Se till att du anger rätt autentiseringsuppgifter och dubbelkontrollera om det finns stavfel eller stavfel.
 * Inga autentiseringsuppgifter har förnyats i den första versionen. När ett konto har gått ut eller behöver uppdateras, måste du skapa en ny målanslutning och mappa om de segment som du tidigare har mappat.
 
