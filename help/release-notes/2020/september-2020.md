@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: September 8, 2020
 author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
+source-git-commit: adf8e8457c8ffef263223a38d3f9c345cf7c6ab2
 workflow-type: tm+mt
 source-wordcount: '862'
 ht-degree: 3%
@@ -37,7 +37,7 @@ Adobe Experience Platform Data Governance är en serie strategier och tekniker s
 | ------- | ----------- |
 | Förbättringar av användargränssnittet för datauppsättningar | Flera nya sorterings- och filtreringskontroller har lagts till i användargränssnittet för datauppsättningar för att göra det enklare att arbeta med stora scheman: <ul><li>Sortera fält i alfabetisk ordning baserat på den fullständiga schemasökvägen.</li><li>Utför delsökningar på fältsökvägsnamn.</li><li>Filtrera fält utan etiketter, en markerad etikett eller en etikettkategori.</li></ul> |
 
-Mer information om tjänsten finns i översikten över [](../../data-governance/home.md) datastyrning.
+Mer information om tjänsten finns i [datastyrningsöversikten](../../data-governance/home.md) .
 
 ## Mål {#destinations}
 
@@ -47,9 +47,9 @@ I kunddataplattformen [i](../../rtcdp/overview.md)realtid är mål färdiga inte
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| UX-förbättringar | Användare kan komma åt textbundna tabellåtgärder för enklare åtkomst till primära åtgärder som att lägga till data, redigera schemaläggning och lägga till segment. Mer information finns i dokumentet för [målarbetsytan](../../rtcdp/destinations/destinations-workspace.md) . |
+| UX-förbättringar | Användare kan komma åt textbundna tabellåtgärder för enklare åtkomst till primära åtgärder som att lägga till data, redigera schemaläggning och lägga till segment. Mer information finns i dokumentet för [målarbetsytan](../../destinations/ui/destinations-workspace.md) . |
 
-Mer information finns på [destinationsöversikten](../../rtcdp/destinations/destinations-overview.md)
+Mer information finns på [destinationsöversikten](../../destinations/home.md)
 
 ## [!DNL Observability Insights] {#observability}
 
@@ -59,7 +59,7 @@ Mer information finns på [destinationsöversikten](../../rtcdp/destinations/des
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Adobe I/O-händelsemeddelanden | [!DNL Observability Insights] använder Adobe I/O-händelser för att skapa händelsemeddelanden för flera Experience Platform-tjänster. Meddelandenyttolaster skickas till en konfigurerad webkrok som du sedan kan använda för att automatisera ytterligare processer längre fram i kedjan. Mer information finns i [meddelandeöversikten](../../observability/notifications/overview.md) . |
+| Adobe I/O-händelsemeddelanden | [!DNL Observability Insights] använder Adobe I/O Events för att skapa händelsemeddelanden för flera Experience Platform-tjänster. Meddelandenyttolaster skickas till en konfigurerad webkrok som du sedan kan använda för att automatisera ytterligare processer längre fram i kedjan. Mer information finns i [meddelandeöversikten](../../observability/notifications/overview.md) . |
 
 Mer information om tjänsten finns i [[!DNL Observability Insights] översikten](../../observability/home.md) .
 
