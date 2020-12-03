@@ -5,7 +5,7 @@ title: Audience Manager-kontakt
 topic: overview
 description: Adobe Audience Manager dataanslutning strömmar data från första part som samlats in i Adobe Audience Manager till Adobe Experience Platform. Kopplingen Audience Manager importerar tre datakategorier till plattformen.
 translation-type: tm+mt
-source-git-commit: 4ab5c3a8f9dbecc27686c7ce7db4f66ac18c2d2a
+source-git-commit: e51f750dae2a76cd05076edfe8c6423efe949891
 workflow-type: tm+mt
 source-wordcount: '798'
 ht-degree: 0%
@@ -74,4 +74,4 @@ Adobe Audience Manager skapar en anslutning i katalogen: Audience Manager Connec
 | Audience Manager data | Latens | Anteckningar |
 | --- | --- | --- |
 | Realtidsdata | &lt; 35 minuter. | Tiden från att hämtas på noden Audience Manager Edge till att visas på Data Lake för plattformen. |
-| Profildata | &lt; 2 dagar | Tid från att hämtas via DCS/PCS Edge-data och on-board-data, bearbetas till en användarprofil, till att sedan visas i profilen. Dessa data landar inte direkt på Platform Data Lake idag. Profilväxling kan aktiveras på datauppsättningar för Audience Manager-profiler för att importera dessa data direkt till profilen. |
+| Profildata | &lt; 2 dagar | Tid från att hämtas via DCS/PCS Edge-data och on-board-data, bearbetas till en användarprofil, till att sedan visas i profilen. Dessa data landar inte direkt på Platform Data Lake idag. Profilväxling kan aktiveras för datauppsättningar i Audience Manager-profiler för att importera dessa data direkt till profilen. |
