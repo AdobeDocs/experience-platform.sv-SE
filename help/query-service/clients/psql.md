@@ -5,10 +5,10 @@ title: Anslut med PSQL
 topic: connect
 description: 'PSQL är ett kommandoradsgränssnitt som medföljer när du installerar Postgres på datorn. Du kan installera det genom att följa dessa anvisningar. '
 translation-type: tm+mt
-source-git-commit: d2f098cb9e4aaf5beaad02173a22a25a87a43756
+source-git-commit: 8ffe7c68c87cacb6b54d9634a5204fa24a9986ac
 workflow-type: tm+mt
-source-wordcount: '186'
-ht-degree: 1%
+source-wordcount: '203'
+ht-degree: 0%
 
 ---
 
@@ -71,7 +71,7 @@ Klicka **[!UICONTROL copy]** för **[!UICONTROL PSQL Command]**.
 
 >[!IMPORTANT]
 >
->Om du är på en dator använder du en textredigerare för att ta bort radbrytningarna i kommandosträngen och kopierar sedan strängen.
+>Om du är på en dator använder du en textredigerare för att ta bort radbrytningarna i kommandosträngen och kopierar sedan strängen. Om du använder version 12.0 eller senare måste du dessutom lägga `PGGSSENCMODE=disable` till i anslutningssträngen.
 
 Klistra in kommandosträngen i ett terminal- eller kommandofönster och tryck på Retur.
 
