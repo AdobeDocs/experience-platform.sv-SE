@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: November 10, 2020
 author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: 6cf9c88f6dc751a4cc877670a89cc99d1efb1b2a
+source-git-commit: adf8e8457c8ffef263223a38d3f9c345cf7c6ab2
 workflow-type: tm+mt
 source-wordcount: '2157'
 ht-degree: 2%
@@ -126,7 +126,7 @@ I kunddataplattformen [i](../../rtcdp/overview.md)realtid är mål färdiga inte
 | Filplanering | För både e-postbaserade och molnbaserade lagringsplatser kan användare skapa en engångs export eller skapa dagliga ögonblicksbilder. |
 | Obligatoriska fält | Användarna kan markera fält som obligatoriska och se till att endast fält som innehåller det obligatoriska fältet exporteras. |
 
-Mer information finns i Översikt över [destinationer](../../rtcdp/destinations/destinations-overview.md).
+Mer information finns i Översikt över [destinationer](../../destinations/home.md).
 
 ## Intelligenta tjänster {#intelligent-services}
 
