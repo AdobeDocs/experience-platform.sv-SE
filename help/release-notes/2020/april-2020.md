@@ -6,9 +6,9 @@ last-update: April 13, 2020
 author: ens71067
 keywords: release notes;
 translation-type: tm+mt
-source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
+source-git-commit: adf8e8457c8ffef263223a38d3f9c345cf7c6ab2
 workflow-type: tm+mt
-source-wordcount: '972'
+source-wordcount: '969'
 ht-degree: 2%
 
 ---
@@ -94,14 +94,14 @@ I kunddataplattformen [i](../../rtcdp/overview.md)realtid är mål färdiga inte
 
 **Nya destinationer**
 
-Adobe CDP i realtid har nu stöd för dataaktivering i över femtio [!DNL Experience Cloud Launch] tillägg, vilket möjliggör analyser, personalisering och andra användningsfall. Mer information finns nedan:
+CDP har nu stöd för dataaktivering i realtid i över femtio [!DNL Experience Cloud Launch] tillägg, vilket möjliggör analyser, personalisering och andra användningsfall. Mer information finns nedan:
 
 | Dokumentation | Beskrivning |
 |--- | ---|
-| [Måltyper och -kategorier](/help/rtcdp/destinations/destination-types.md) | I den här artikeln förklaras skillnaden mellan anslutningar och tillägg i CDP-gränssnittet i realtid för Adobe och en rekommendation om när var och en av dessa destinationer ska användas. |
-| [Experience Platform Launch-tillägg](/help/rtcdp/destinations/experience-platform-launch-extensions.md) | På den här sidan förklaras vad [!DNL Launch] tillägg är, en lista över användningsfall för dem och länkar till dokumentation för varje [!DNL Launch] tillägg i Adobe Real-time CDP. |
+| [Måltyper och -kategorier](../../destinations/destination-types.md) | I den här artikeln förklaras skillnaden mellan anslutningar och tillägg i CDP-gränssnittet i realtid och en rekommendation om när var och en av dessa destinationer ska användas. |
+| [Experience Platform Launch-tillägg](../../destinations/catalog/launch-extensions/overview.md) | På den här sidan förklaras vad [!DNL Launch] tillägg är, en lista över användningsfall för dem och länkar till dokumentation för varje [!DNL Launch] tillägg i CDP för realtid. |
 
-Mer information finns i Översikt över [destinationer](/help/rtcdp/destinations/destinations-overview.md).
+Mer information finns i Översikt över [destinationer](../../destinations/home.md).
 
 ## [!DNL Privacy Service] {#privacy}
 
