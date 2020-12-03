@@ -5,9 +5,9 @@ seo-title: Komma igång med kunddataplattformen i realtid
 description: Exempelscenario för kunddataplattform i realtid
 seo-description: Exempelscenario för kunddataplattform i realtid
 translation-type: tm+mt
-source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
+source-git-commit: 8369bd517639cc66eeb95a811c3ddf46b8c4c48d
 workflow-type: tm+mt
-source-wordcount: '2313'
+source-wordcount: '2312'
 ht-degree: 0%
 
 ---
@@ -237,7 +237,7 @@ När du har lagt till segmentet&quot;Gift Giving Cart Abandoners&quot; kan du se
 
 Klicka på **[!UICONTROL Send to destinations]**.
 
-På Adobe CDP i realtid kan Luma agera sömlöst på sina målgruppssegment för personalisering.\
+I realtid kan Luma agera sömlöst på sina målgruppssegment för personalisering.\
 Här ser vi alla destinationer som Luma kan skicka till både Adobe och andra lösningar än Adobe:
 
 ![bild](assets/luma-dest.png)
