@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: August 10, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
+source-git-commit: d29f7c7243ec798abe60fff895b36277996cb4a0
 workflow-type: tm+mt
-source-wordcount: '582'
+source-wordcount: '581'
 ht-degree: 3%
 
 ---
@@ -46,14 +46,14 @@ Det finns nya destinationer där du kan aktivera dina Adobe Experience Platform-
 
 | Destination | Beskrivning |
 |--- | ---|
-| [!DNL Google Customer Match] | Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egendomar, som: [!DNL Search], [!DNL Shopping], Gmail och YouTube. <br><br> På [!DNL Google Customer Match] sidan [](/help/rtcdp/destinations/google-customer-match-destination.md) i målkatalogen finns mer information om destinationen och hur du konfigurerar den i Adobe Real-time CDP. |
+| [!DNL Google Customer Match] | Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egendomar, som: [!DNL Search], [!DNL Shopping], Gmail och YouTube. <br><br> På [!DNL Google Customer Match] sidan [](../../destinations/catalog/advertising/google-customer-match.md) i målkatalogen finns mer information om destinationen och hur du konfigurerar den i CDP i realtid. |
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 |------- | -----------|
-| Anpassad filnamnsredigerare | Uppdatera till arbetsflödet för dataaktivering för e-postmarknadsföringsmål och molnlagringsmål där du kan redigera namnet på de exporterade filerna. Mer information finns i [ konfigurationssteget](/help/rtcdp/destinations/activate-destinations.md#configure) i aktiveringsarbetsflödet. |
-| Rekommenderade attribut | Uppdatera till arbetsflödet för dataaktivering för e-postmarknadsföringsmål och molnlagringsmål som visar rekommenderade attribut som du kan lägga till i de exporterade filerna. Mer information finns i steget [](/help/rtcdp/destinations/activate-destinations.md#select-attributes) Välj attribut i aktiveringsarbetsflödet. |
+| Anpassad filnamnsredigerare | Uppdatera till arbetsflödet för dataaktivering för e-postmarknadsföringsmål och molnlagringsmål där du kan redigera namnet på de exporterade filerna. Mer information finns i [ konfigurationssteget](../../destinations/ui/activate-destinations.md#configure) i aktiveringsarbetsflödet. |
+| Rekommenderade attribut | Uppdatera till arbetsflödet för dataaktivering för e-postmarknadsföringsmål och molnlagringsmål som visar rekommenderade attribut som du kan lägga till i de exporterade filerna. Mer information finns i steget [](../../destinations/ui/activate-destinations.md#select-attributes) Välj attribut i aktiveringsarbetsflödet. |
 
 ## [!DNL Real-time Customer Data Platform] {#rtcdp}
 
