@@ -5,7 +5,7 @@ title: Adobe Experience Platform UI Guide
 topic: ui guide
 description: 'Adobe Experience Platform '
 translation-type: tm+mt
-source-git-commit: bde9763aafb4ba32877f7ec14873eeae99760a45
+source-git-commit: adf8e8457c8ffef263223a38d3f9c345cf7c6ab2
 workflow-type: tm+mt
 source-wordcount: '1543'
 ht-degree: 0%
@@ -37,7 +37,7 @@ I **[!UICONTROL Profiles]** avsnittet visas det totala antalet personer med prof
 
 I **[!UICONTROL Segments]** avsnittet visas det totala antalet segment som skapats i IMS-organisationen. Numret uppdateras när ett nytt segment skapas. Mer information om segment finns i översikten över [segmenteringstjänsten](../segmentation/home.md).
 
-I **[!UICONTROL Destinations]** avsnittet visas det totala antalet destinationer som skapats för IMS-organisationen. Numret uppdateras när ett nytt mål skapas. Mer information om destinationer finns i [destinationsöversikten](../rtcdp/destinations/destinations-overview.md).
+I **[!UICONTROL Destinations]** avsnittet visas det totala antalet destinationer som skapats för IMS-organisationen. Numret uppdateras när ett nytt mål skapas. Mer information om destinationer finns i [destinationsöversikten](../destinations/home.md).
 
 ### Senaste data
 
@@ -51,7 +51,7 @@ I **[!UICONTROL Recent sources]** avsnittet visas de fem senast skapade källans
 
 I **[!UICONTROL Recent segments]** avsnittet visas de fem senast skapade segmentdefinitionerna i din IMS-organisation. Listan uppdateras varje gång en ny segmentdefinition skapas. Du kan välja en segmentdefinition i listan om du vill visa mer information om den angivna segmentdefinitionen eller välja **[!UICONTROL View all]** att visa en lista över alla skapade segmentdefinitioner. Mer information om segment finns i översikten över [segmenteringstjänsten](../segmentation/home.md).
 
-I **[!UICONTROL Recent destinations]** avsnittet visas de fem senast skapade destinationerna inom din IMS-organisation. Listan uppdateras varje gång ett nytt mål skapas. Du kan välja ett mål i listan om du vill visa mer information om det angivna målet eller välja **[!UICONTROL View all]** att visa en lista över alla skapade mål. Mer information om destinationer finns i [destinationsöversikten](../rtcdp/destinations/destinations-overview.md).
+I **[!UICONTROL Recent destinations]** avsnittet visas de fem senast skapade destinationerna inom din IMS-organisation. Listan uppdateras varje gång ett nytt mål skapas. Du kan välja ett mål i listan om du vill visa mer information om det angivna målet eller välja **[!UICONTROL View all]** att visa en lista över alla skapade mål. Mer information om destinationer finns i [destinationsöversikten](../destinations/home.md).
 
 ### Rekommenderad utbildning
 
@@ -117,7 +117,7 @@ I avsnittet visas en lista med arbetsflöden i flera steg för att utföra åtg�
 
 I avsnittet kan du **[!UICONTROL Sources]** skapa, uppdatera och ta bort källanslutningar, så att du kan importera data från externa källor till plattformen. Mer information om källor finns i [Källöversikt](../sources/home.md).
 
-I avsnittet kan du **[!UICONTROL Destinations]** skapa, uppdatera och ta bort mål, så att du kan exportera data från Platform till många externa mål. Mer information om destinationer finns i [destinationsöversikten](../rtcdp/destinations/destinations-overview.md).
+I avsnittet kan du **[!UICONTROL Destinations]** skapa, uppdatera och ta bort mål, så att du kan exportera data från Platform till många externa mål. Mer information om destinationer finns i [destinationsöversikten](../destinations/home.md).
 
 ### [!UICONTROL Customer]
 
