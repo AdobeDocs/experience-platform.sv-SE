@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: Lär dig skapa olika typer av destinationer och aktivera data.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: d29f7c7243ec798abe60fff895b36277996cb4a0
 workflow-type: tm+mt
 source-wordcount: '78'
 ht-degree: 0%
@@ -20,8 +20,8 @@ Lär dig skapa olika typer av destinationer och aktivera data. Den här funktion
 
 ## E-postmarknadsföringsmål {#email-destinations}
 
-* [Skapa ett mål för e-postmarknadsföring och aktivera data](/help/rtcdp/destinations/email-marketing-api.md)
+* [Skapa ett mål för e-postmarknadsföring och aktivera data](../destinations/api/email-marketing.md)
 
 ## Mål för direktuppspelning av molnlagring {#streaming-destinations}
 
-* [Ansluta till direktuppspelningsmål och aktivera data](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md)
+* [Ansluta till direktuppspelningsmål och aktivera data](../destinations/api/streaming-destinations.md)
