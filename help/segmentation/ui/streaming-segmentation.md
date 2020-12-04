@@ -5,9 +5,9 @@ title: Direktuppspelningssegmentering
 topic: ui guide
 description: Med direktuppspelningssegmentering på Adobe Experience Platform kan ni segmentera i nära realtid samtidigt som ni fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificering allt eftersom data når plattformen, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data överförs till plattformen, vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 translation-type: tm+mt
-source-git-commit: 578579438ca1d6a7a8c0a023efe2abd616a6dff2
+source-git-commit: 2bd4b773f7763ca408b55e3b0e2d0bbe9e7b66ba
 workflow-type: tm+mt
-source-wordcount: '751'
+source-wordcount: '706'
 ht-degree: 0%
 
 ---
@@ -42,20 +42,17 @@ En fråga utvärderas automatiskt med direktuppspelningssegmentering om den uppf
 | Inkommande träde som refererar till en profil inom ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse och ett eller flera profilattribut. | ![](../images/ui/streaming-segmentation/profile-relative-success.png) |
 | Flera händelser som refererar till en profil | Alla segmentdefinitioner som refererar till flera händelser **under de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. | ![](../images/ui/streaming-segmentation/event-history-success.png) |
 
-I följande avsnitt visas exempel på segmentdefinitioner som **inte** kommer att aktiveras för direktuppspelningssegmentering.
+En segmentdefinition aktiveras **inte** för direktuppspelningssegmentering i följande scenarier:
 
-| Frågetyp | Detaljer |
-| ---------- | ------- |
-| Inkommande träde som refererar till en profil i ett relativt fönster | En segmentdefinition som innehåller [!DNL Adobe Audience Manager (AAM)] segment eller egenskaper. |
-| Flera händelser som refererar till en profil | En segmentdefinition som innehåller Adobe Audience Manager-segment (AAM) eller egenskaper. |
-| Flerenhetsfrågor | Flerenhetsfrågor stöds **inte** av direktuppspelningssegmentering som helhet. |
+- Segmentdefinitionen innehåller Adobe Audience Manager (AAM) segment eller egenskaper.
+- Segmentdefinitionen innehåller flera enheter (frågor om flera enheter).
 
 Dessutom gäller vissa riktlinjer för direktuppspelningssegmentering:
 
 | Frågetyp | Riktlinje |
 | ---------- | -------- |
 | Enkel händelsefråga | Det finns inga begränsningar för uppslagsfönstret. |
-| Fråga med händelsehistorik | <ul><li>Fönstret för att titta tillbaka är begränsat till **en dag**.</li><li>Det **måste** finnas ett strikt ordningsvillkor mellan händelserna.</li><li>Endast enkla tidsinställningar (före och efter) mellan händelserna tillåts.</li><li>De enskilda händelserna **kan inte** negeras. Hela frågan **kan** dock negeras.</li></ul> |
+| Fråga med händelsehistorik | <ul><li>Uppslagsfönstret är begränsat till **en dag**.</li><li>Det **måste** finnas ett strikt tidsordningsvillkor mellan händelserna.</li><li>Frågor med minst en negerad händelse stöds. Hela händelsen **kan dock inte** vara en negation.</li></ul> |
 
 Om en segmentdefinition ändras så att den inte längre uppfyller villkoren för direktuppspelningssegmentering, kommer segmentdefinitionen automatiskt att växla från&quot;direktuppspelning&quot; till&quot;Gruppering&quot;.
 
