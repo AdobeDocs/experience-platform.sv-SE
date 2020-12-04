@@ -8,7 +8,7 @@ description: I den här självstudiekursen beskrivs steg för hur du hämtar inf
 translation-type: tm+mt
 source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '622'
+source-wordcount: '613'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Den här självstudiekursen innehåller steg för att hämta information om en m
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 - [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
-- [[!DNL-datainmatning]](../home.md): Metoderna som data kan skickas till [!DNL Experience Platform].
+- [[!DNL Data Ingestion]](../home.md): Metoderna som data kan skickas till [!DNL Experience Platform].
 
 ### Läser exempel-API-anrop
 
