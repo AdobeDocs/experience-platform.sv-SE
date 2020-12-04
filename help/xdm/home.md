@@ -19,7 +19,7 @@ Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience
 
 XDM är en öppet dokumenterad specifikation som utformats för att förbättra möjligheterna med digitala upplevelser. Den innehåller gemensamma strukturer och definitioner för alla program som används för att kommunicera med [!DNL Platform] tjänster. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation som kan ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och uttrycka kundattribut i personaliseringssyfte.
 
-XDM är det grundläggande ramverk som gör det möjligt för Adobe Experience Cloud, som drivs av [!DNL Experience Platform], att leverera rätt budskap till rätt person, i rätt kanal, i precis rätt ögonblick. Metoden som [!DNL Experience Platform] byggs på, XDM System, används för [!DNL Experience Data Model] scheman som ska användas av [!DNL Platform] tjänster.
+XDM är det grundläggande ramverk som gör det möjligt för Adobe Experience Cloud, som drivs av [!DNL Experience Platform]den, att leverera rätt budskap till rätt person, i rätt kanal, i precis rätt ögonblick. Metoden som [!DNL Experience Platform] byggs på, XDM System, används för [!DNL Experience Data Model] scheman som ska användas av [!DNL Platform] tjänster.
 
 Det här dokumentet innehåller en översikt över XDM-systemets roll i [!DNL Experience Platform].
 
