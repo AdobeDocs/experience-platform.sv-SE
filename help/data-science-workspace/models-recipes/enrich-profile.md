@@ -8,7 +8,7 @@ description: I det här dokumentet finns en stegvis självstudiekurs för att be
 translation-type: tm+mt
 source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '1184'
+source-wordcount: '1172'
 ht-degree: 0%
 
 ---
