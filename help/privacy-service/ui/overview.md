@@ -14,13 +14,13 @@ ht-degree: 1%
 
 # [!DNL Privacy Service] Översikt över användargränssnittet
 
-Adobe Experience Platform [!DNL Privacy Service] har ett RESTful API och användargränssnitt som gör att du kan samordna förfrågningar om sekretess och regelefterlevnad i olika lösningar. Det här dokumentet utforskar [!DNL Privacy Service] användargränssnittet. Information om hur du använder API finns i [Privacy Servicens utvecklarhandbok](../api/getting-started.md).
+Adobe Experience Platform [!DNL Privacy Service] tillhandahåller ett RESTful API och användargränssnitt som gör att ni kan samordna förfrågningar om sekretess och regelefterlevnad i olika lösningar. Det här dokumentet utforskar [!DNL Privacy Service] användargränssnittet. Information om hur du använder API finns i [Privacy Servicens utvecklarhandbok](../api/getting-started.md).
 
 ## Logga in i [!DNL Privacy Service] användargränssnittet
 
-Du måste ha ett Adobe ID för att kunna autentisera med [!DNL Privacy Service] användargränssnittet. Dessutom måste du ha behörighet som systemadministratör i den organisation som Adobe ID är kopplat till.
+Du måste ha en Adobe ID för att kunna autentisera med [!DNL Privacy Service] användargränssnittet. Dessutom måste du ha behörighet som systemadministratör i den organisation som din Adobe ID är kopplad till.
 
-Gå till inloggningssidan för Adobe Experience Cloud på https://experience.adobe.com. Klicka **[!UICONTROL Sign In with an Adobe ID]** och ange autentiseringsuppgifter för Adobe ID när du uppmanas till detta.
+Gå till inloggningssidan för Adobe Experience Cloud på https://experience.adobe.com. Klicka **[!UICONTROL Sign In with an Adobe ID]** och ange dina Adobe ID-uppgifter när du uppmanas till det.
 
 När du är inloggad klickar du på **[!UICONTROL Privacy UI]**.
 
