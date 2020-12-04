@@ -5,7 +5,7 @@ topic: guide
 translation-type: tm+mt
 source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
 workflow-type: tm+mt
-source-wordcount: '1201'
+source-wordcount: '1192'
 ht-degree: 1%
 
 ---
@@ -62,7 +62,7 @@ Vi rekommenderar att du följer följande skyddsutkast när du skapar en datamod
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Antal datauppsättningar som rekommenderas för att bidra till [!DNL Profile] unionsschemat | 20 | Mjuk | **Högst 20[!DNL Profile]aktiverade datauppsättningar rekommenderas.** Om du vill aktivera en annan datauppsättning för [!DNL Profile]måste du först ta bort eller inaktivera en befintlig datauppsättning. |
+| Antal datauppsättningar som rekommenderas för att bidra till [!DNL Profile] unionsschemat | 20 | Mjuk | **Högst 20 [!DNL Profile]aktiverade datauppsättningar rekommenderas.** Om du vill aktivera en annan datauppsättning för [!DNL Profile]måste du först ta bort eller inaktivera en befintlig datauppsättning. |
 | Antal multientitetsrelationer som rekommenderas | 5 | Mjuk | **Högst fem multientitetsrelationer som definierats mellan primära entiteter och dimensionsenheter rekommenderas.** Ytterligare relationsmappningar ska inte göras förrän en befintlig relation tas bort eller inaktiveras. |
 | Högsta JSON-djup för ID-fält som används i relationer med flera enheter | 4 | Mjuk | **Rekommenderat maximalt JSON-djup för ett ID-fält som används i relationer med flera enheter är 4.** Detta innebär att i ett mycket kapslat schema ska fält som är kapslade mer än fyra nivåer djupa inte användas som ID-fält i en relation. |
 | Matriskardinalitet i ett profilfragment | &lt;=500 | Mjuk | **Den optimala arraykardinaliteten i ett profilfragment (tidsoberoende data) är &lt;=500.** |
@@ -72,8 +72,8 @@ Vi rekommenderar att du följer följande skyddsutkast när du skapar en datamod
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Inga tidsseriedata tillåts för icke-[!DNL XDM Individual Profile] enheter | 0 | Hård | **Tidsseriedata tillåts inte för icke-[!DNL XDM Individual Profile]enheter i profiltjänsten.** Om en tidsseriedatauppsättning är associerad med ett icke-[!DNL XDM Individual Profile] -ID ska datauppsättningen inte aktiveras för [!DNL Profile]. |
-| Inga kapslade relationer | 0 | Mjuk | **Du bör inte skapa en relation mellan två icke-[!DNL XDM Individual Profile]scheman.** Möjligheten att skapa relationer rekommenderas inte för scheman som inte ingår i [!DNL Profile] unionsschemat. |
+| Inga tidsseriedata tillåts för icke-[!DNL XDM Individual Profile] enheter | 0 | Hård | **Tidsseriedata tillåts inte för icke-[!DNL XDM Individual Profile] enheter i profiltjänsten.** Om en tidsseriedatauppsättning är associerad med ett icke-[!DNL XDM Individual Profile] -ID ska datauppsättningen inte aktiveras för [!DNL Profile]. |
+| Inga kapslade relationer | 0 | Mjuk | **Du bör inte skapa en relation mellan två icke-[!DNL XDM Individual Profile] scheman.** Möjligheten att skapa relationer rekommenderas inte för scheman som inte ingår i [!DNL Profile] unionsschemat. |
 | Högsta JSON-djup för primärt ID-fält | 4 | Mjuk | **Rekommenderat maximalt JSON-djup för det primära ID-fältet är 4.** Det innebär att du inte ska välja ett fält som primärt ID i ett kapslat schema om det är mer än fyra nivåer djupt. Ett fält på den fjärde kapslade nivån kan användas som primärt ID. |
 
 ## Skyddsutkast för datastorlek
