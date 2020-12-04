@@ -13,7 +13,7 @@ ht-degree: 0%
 ---
 
 
-# Komma igång med [!DNL Observability Insights] API
+# Getting started with the [!DNL Observability Insights] API
 
 Med API:t kan du [!DNL Observability Insights] hämta mätdata för olika Adobe Experience Platform-funktioner. Det här dokumentet innehåller en introduktion till de centrala koncept du behöver känna till innan du försöker anropa [!DNL Observability Insights] API:t.
 
