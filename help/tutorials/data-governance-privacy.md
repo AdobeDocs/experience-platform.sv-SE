@@ -36,6 +36,6 @@ När du har lagt till användningsetiketter för dina data, och har skapat polic
 
 Segment som är aktiverade för användning i [!DNL Real-time Customer Profile] innehåller ett ID för sammanfogningsprincip i segmentdefinitionen. Den här sammanfogningsprincipen innehåller information om vilka datauppsättningar som ska inkluderas i segmentet, som i sin tur innehåller tillämpliga dataanvändningsetiketter. Följ självstudiekursen för [regelefterlevnad för segment](../segmentation/tutorials/governance.md)om du vill få en mer detaljerad genomgång av hur dataanvändningen efterlevs för ett målgruppssegment.
 
-## Get started with [!DNL Privacy Service]
+## Kom igång med [!DNL Privacy Service]
 
 [!DNL Privacy Service] har ett RESTful-API och användargränssnitt som gör att du kan hantera personuppgifter för dina registrerade (kunder) i alla Adobe Experience Cloud-program. [!DNL Privacy Service] har också en central mekanism för granskning och loggning som gör att du kan komma åt status och resultat för jobb som innefattar [!DNL Experience Cloud] program. Anvisningar om hur du skapar och övervakar [!DNL Privacy Service] jobb finns i [Privacy Servicens utvecklarguide](../privacy-service/api/getting-started.md) eller i användarhandboken [för](../privacy-service/ui/overview.md)Privacy Servicen.
