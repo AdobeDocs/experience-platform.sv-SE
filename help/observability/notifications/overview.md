@@ -17,6 +17,6 @@ ht-degree: 0%
 
 [!DNL Observability Insights] gör att du kan prenumerera på händelsemeddelanden om Adobe Experience Platform-aktiviteter. De minskar eller eliminerar behovet av att avfråga [[!DNL Observability Insights] API](../api/overview.md) för att kontrollera om ett jobb har slutförts eller om en viss milstolpe i ett arbetsflöde har nåtts.
 
-[!DNL Observability] för närvarande utnyttjar meddelanden Adobe I/O-händelser, som kan skickas till en konfigurerad webkrok för att underlätta effektiv automatisering av aktivitetsövervakning. Meddelandefunktionerna kommer dock så småningom även att omfatta e-post- och gränssnittsmeddelanden.
+[!DNL Observability] för närvarande utnyttjar meddelanden från Adobe I/O Events, som kan skickas till en konfigurerad webkrok för att underlätta en effektiv automatisering av aktivitetsövervakningen. Meddelandefunktionerna kommer dock så småningom även att omfatta e-post- och gränssnittsmeddelanden.
 
 Om du vill komma igång med [!DNL Observability] meddelanden fortsätter du till självstudiekursen om hur du [prenumererar på I/O-händelsemeddelanden](./subscribe.md).
