@@ -5,7 +5,7 @@ seo-title: Hemsida och instrumentpaneler för kunddataplattformen i realtid
 description: Kontrollpaneler, startsidan och förstagångsupplevelsen av Adobe Experience Platform
 seo-description: Kontrollpaneler, startsidan och förstagångsupplevelsen av Adobe Experience Platform
 translation-type: tm+mt
-source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
+source-git-commit: f2fdc3b75d275698a4b1e4c8969b1b840429c919
 workflow-type: tm+mt
 source-wordcount: '613'
 ht-degree: 0%
@@ -68,7 +68,7 @@ Mer information om segment finns i Översikt över [segmenteringstjänsten](segm
 
 **[!UICONTROL Destinations]** visar det totala antalet destinationer som skapats för organisationen. Numret uppdateras när nya mål skapas.
 
-Mer information om destinationer finns i Översikt över [destinationer](destinations/destinations-overview.md).
+Mer information om destinationer finns i Översikt över [destinationer](destinations/overview.md).
 
 <!-- ### Successful profile records
 
@@ -134,4 +134,4 @@ På **[!UICONTROL Recent destinations]** mätkortet visas de fem senaste destina
 
 Klicka på ett mål om du vill visa information om det objektet eller **[!UICONTROL View all]** om du vill visa information om fler mål.
 
-Mer information om destinationer finns i Översikt över [destinationer](destinations/destinations-overview.md).
+Mer information om destinationer finns i Översikt över [destinationer](destinations/overview.md).
