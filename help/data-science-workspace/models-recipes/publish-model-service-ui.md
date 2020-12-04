@@ -8,7 +8,7 @@ description: Med Adobe Experience Platform Data Science Workspace kan du publice
 translation-type: tm+mt
 source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '438'
 ht-degree: 0%
 
 ---
