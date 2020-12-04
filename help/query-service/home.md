@@ -39,7 +39,7 @@ Adobe Experience Platform [!DNL Segmentation Service] gör det möjligt för anv
 
 ### Användningsexempel för Looker BI
 
-Med Adobe Experience Platform kan ni importera, lagra, strukturera och hämta in alla lagrade datauppsättningar, inklusive beteendedata, CRM-data och butiksdata. Med [!DNL Experience Platform's Query Service]kan ni hämta frågor om dessa datauppsättningar och besvara specifika frågor om verksamheten och sedan börja generera slagkraftiga insikter. I följande video visas värdet av att bygga kontrollpaneler i affärsinformationsverktyg (BI) med [!DNL Query Service].
+Med Adobe Experience Platform kan ni importera, lagra, strukturera och hämta in alla lagrade datauppsättningar - inklusive beteendes-, CRM- och försäljningsdata. Med [!DNL Experience Platform's Query Service]kan ni hämta frågor om dessa datauppsättningar och besvara specifika frågor om verksamheten och sedan börja generera slagkraftiga insikter. I följande video visas värdet av att bygga instrumentpaneler i affärsinformationsverktyg (BI) med [!DNL Query Service].
 
 >[!VIDEO](https://video.tv.adobe.com/v/28981?quality=12&learn=on)
 
