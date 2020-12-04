@@ -6,7 +6,7 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i kunddataplattformen i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i kunddataplattformen i realtid genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: 5f120a716cc3396ef7749463bb6052a8ced2fbb4
+source-git-commit: f2fdc3b75d275698a4b1e4c8969b1b840429c919
 workflow-type: tm+mt
 source-wordcount: '1691'
 ht-degree: 0%
@@ -68,7 +68,7 @@ Om du använder ett annat ID, t.ex. &quot;Rewards ID&quot; eller &quot;Loyalty I
 
 ![Förmåns-ID som identitet](../assets/ui/activate-destinations/rewardsid-as-identity.gif)
 
-Välj `Email_LC_SHA256` som målidentitet om du har hashas i kundens e-postadresser när data hämtas till Adobe Experience Platform, enligt [!DNL Facebook] e- [posthashkraven](/help/rtcdp/destinations/facebook-destination.md#email-hashing-requirements).
+Välj `Email_LC_SHA256` som målidentitet om du har hashas i kundens e-postadresser när data hämtas till Adobe Experience Platform, enligt [!DNL Facebook] e- [posthashkraven](../catalog/social/facebook.md#email-hashing-requirements).
 
 Välj `Email` som målidentitet om e-postadresserna du använder inte är hashas. CDP-koden i realtid hash-kodar e-postadresserna så att de uppfyller [!DNL Facebook] kraven.
 
@@ -158,7 +158,7 @@ Filexporter varierar på följande sätt, beroende på om `segmentMembership.sta
 
 Dessutom kan du markera olika attribut som obligatoriska. Om du markerar ett attribut som obligatoriskt innebär det att det exporterade segmentet måste innehålla det attributet. Det innebär att den kan användas som en extra form av filtrering. Det är **inte** nödvändigt att markera ett attribut som obligatoriskt.
 
-Vi rekommenderar att ett av attributen är en [unik identifierare](/help/rtcdp/destinations/email-marketing-destinations.md#identity) från ditt schema. Mer information om obligatoriska attribut finns i avsnittet om identitet i dokumentationen för [e-postmarknadsföringsmål](/help/rtcdp/destinations/email-marketing-destinations.md#identity) .
+Vi rekommenderar att ett av attributen är en [unik identifierare](../../destinations/catalog/email-marketing/overview.md#identity) från ditt schema. Mer information om obligatoriska attribut finns i avsnittet om identitet i dokumentationen för [e-postmarknadsföringsmål](../../destinations/catalog/email-marketing/overview.md#identity) .
 
 >[!NOTE]
 > 
