@@ -5,7 +5,7 @@ seo-title: Översikt över kunddataplattformen i realtid
 description: Översikt över kunddataplattformen i realtid
 seo-description: Översikt över kunddataplattformen i realtid
 translation-type: tm+mt
-source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
+source-git-commit: 4dfef6649b3ae07593667eb5165dad6bacc8ed2f
 workflow-type: tm+mt
 source-wordcount: '289'
 ht-degree: 0%
@@ -38,5 +38,5 @@ Följande dokumentation rekommenderas för att hjälpa dig att komma igång med 
 * [Så här importerar du data](sources/sources-overview.md)
 * [Åtkomst till profiler](profile/profile-overview.md)
 * [Så här skapar du segment](segmentation/segmentation-overview.md)
-* [Så här aktiverar du segment till mål](destinations/activate-destinations.md)
+* [Så här aktiverar du segment till mål](destinations/overview.md)
 * [Definiera och tillämpa policyer för datastyrning](privacy/data-governance-overview.md)
