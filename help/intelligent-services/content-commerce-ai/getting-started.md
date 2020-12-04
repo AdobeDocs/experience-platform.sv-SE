@@ -3,7 +3,7 @@ keywords: Experience Platform;getting started;content ai;commerce ai;content and
 solution: Experience Platform
 title: Komma igång med innehåll och handel med AI
 topic: Getting started
-description: Innehåll och AI för handel använder API:er för Adobe i/O. För att kunna ringa anrop till API:er för Adobe i/O och I/O-konsolintegrering måste du först slutföra självstudiekursen om autentisering.
+description: Innehåll och AI för handel använder Adobe I/O API:er. För att kunna ringa anrop till Adobe I/O API:er och I/O-konsolintegreringen måste du först slutföra självstudiekursen om autentisering.
 translation-type: tm+mt
 source-git-commit: 2be04547b96e1a6c293cc63e782fe1b3259619ba
 workflow-type: tm+mt
@@ -19,13 +19,13 @@ ht-degree: 0%
 >
 >Innehåll och handel AI är i betaversion. Dokumentationen kan komma att ändras.
 
-[!DNL Content and Commerce AI] använder I/O-API:er för Adobe. För att kunna ringa anrop till API:er för Adobe i/O och I/O-konsolintegrering måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md).
+[!DNL Content and Commerce AI] använder Adobe I/O API:er. För att kunna ringa anrop till Adobe I/O API:er och I/O-konsolintegreringen måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md).
 
 När du kommer till steget **Lägg till API** finns API:t under Experience Cloud i stället för Adobe Experience Platform, vilket visas i följande skärmbild:
 
 ![lägga till innehåll och handel med AI](./images/add-api.png)
 
-När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Adobe, vilket visas nedan:
+När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla Adobe I/O API-anrop, vilket visas nedan:
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
@@ -63,7 +63,7 @@ Nu kan du välja din miljö i listrutan i det övre högra hörnet och automatis
 
 ![exempel](./images/select-environment.png)
 
-Mer information om hur du arbetar med Adobe I/O API:er med Postman finns i posten Medium om hur du [använder Postman för JWT-autentisering på Adobe I/O](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f).
+Mer information om hur du arbetar med Adobe I/O API:er med Postman finns i posten Medium om hur du [använder Postman för JWT-autentisering i Adobe I/O](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f).
 
 ## Läser exempel-API-anrop
 
