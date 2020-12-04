@@ -8,7 +8,7 @@ description: I det här dokumentet finns en självstudiekurs för att utvärdera
 translation-type: tm+mt
 source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
-source-wordcount: '1560'
+source-wordcount: '1535'
 ht-degree: 0%
 
 ---
@@ -16,14 +16,14 @@ ht-degree: 0%
 
 # Utvärdera och få tillgång till segmentresultaten
 
-Det här dokumentet innehåller en självstudiekurs för att utvärdera segment och få åtkomst till segmentresultat med [[!DNL Segmentation API]](../api/getting-started.md).
+I det här dokumentet finns en självstudiekurs för att utvärdera segment och komma åt segmentresultat med [[!DNL Segmentation API]](../api/getting-started.md).
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av de olika [!DNL Adobe Experience Platform] tjänster som används för att skapa målgruppssegment. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 - [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
-- [[!DNL Adobe Experience Platform Segmenteringstjänst]](../home.md): Gör att ni kan skapa målgruppssegment utifrån [!DNL Real-time Customer Profile] data.
+- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md): Gör att ni kan skapa målgruppssegment utifrån [!DNL Real-time Customer Profile] data.
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
 - [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
@@ -230,10 +230,10 @@ Mer detaljerad information om hur du använder den här slutpunkten finns i slut
 
 ## Nästa steg
 
-När exporten är klar är dina data tillgängliga i [!DNL Data Lake] In- [!DNL Experience Platform]. Du kan sedan använda API:t för [[!DNL-dataåtkomst]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) för att få åtkomst till data med hjälp av det `batchId` som är kopplat till exporten. Beroende på segmentets storlek kan data vara i segment och gruppen kan bestå av flera filer.
+När exporten är klar är dina data tillgängliga i [!DNL Data Lake] In- [!DNL Experience Platform]. Du kan sedan använda [[!DNL Data Access API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) till att få åtkomst till data med hjälp av de `batchId` som är kopplade till exporten. Beroende på segmentets storlek kan data vara i segment och gruppen kan bestå av flera filer.
 
 Följ självstudiekursen ( [!DNL Data Access] Data Access) om du vill ha stegvisa anvisningar om hur du använder API:t för att få åtkomst till och hämta gruppfiler [](../../data-access/tutorials/dataset-data.md).
 
 Du kan också komma åt exporterade segmentdata med [!DNL Adobe Experience Platform Query Service]. Med API:t UI eller RESTful kan du [!DNL Query Service] skriva, validera och köra frågor på data i [!DNL Data Lake].
 
-Mer information om hur du frågar efter målgruppsdata finns i dokumentationen om [[!DNL Query Service]](../../query-service/home.md).
+Mer information om hur man hämtar information finns i dokumentationen om [[!DNL Query Service]](../../query-service/home.md).
