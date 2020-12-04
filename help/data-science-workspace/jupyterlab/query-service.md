@@ -8,7 +8,7 @@ description: Med Adobe Experience Platform kan du använda SQL (Structured Query
 translation-type: tm+mt
 source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '813'
+source-wordcount: '794'
 ht-degree: 1%
 
 ---
@@ -29,9 +29,9 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
 - En [!DNL Adobe Analytics] datauppsättning
 
 - En fungerande förståelse för följande viktiga begrepp som används i den här självstudiekursen:
-   - [[!DNL Experience Data Model (XDM) och XDM System]](../../xdm/home.md)
+   - [[!DNL Experience Data Model (XDM) and XDM System]](../../xdm/home.md)
    - [[!DNL Query Service]](../../query-service/home.md)
-   - [[!DNL Query Service SQL-syntax]](../../query-service/sql/overview.md)
+   - [[!DNL Query Service SQL Syntax]](../../query-service/sql/overview.md)
    - Adobe Analytics
 
 ## Åtkomst [!DNL JupyterLab] och [!DNL Query Service] {#access-jupyterlab-and-query-service}
