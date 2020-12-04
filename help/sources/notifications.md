@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;home;popular topics; notifications
-description: Med Adobe I/O Events kan du prenumerera på händelser och använda webbhooks för att få meddelanden om status för dina flödeskörningar. Dessa meddelanden innehåller information om hur flödeskörningen lyckades eller om fel som bidragit till ett körningsfel.
+description: Med Adobe I/O Events kan du prenumerera på händelser och använda webhooks för att få meddelanden om status för dina flödeskörningar. Dessa meddelanden innehåller information om hur flödeskörningen lyckades eller om fel som bidragit till ett körningsfel.
 solution: Experience Platform
 title: Flödeskörningsmeddelanden
 topic: overview
 translation-type: tm+mt
 source-git-commit: c5455dc0812b251483170ac19506d7c60ad4ecaa
 workflow-type: tm+mt
-source-wordcount: '773'
+source-wordcount: '767'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ Med Adobe Experience Platform kan data hämtas från externa källor samtidigt s
 
 [[!DNL Adobe Experience Platform Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) används för att samla in och centralisera kunddata från olika källor inom [!DNL Platform]. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-Med Adobe I/O Events kan du prenumerera på händelser och använda webbhooks för att få meddelanden om status för dina flödeskörningar. Dessa meddelanden innehåller information om hur flödeskörningen lyckades eller om fel som bidragit till ett körningsfel.
+Med Adobe I/O Events kan du prenumerera på händelser och använda webhooks för att få meddelanden om status för dina flödeskörningar. Dessa meddelanden innehåller information om hur flödeskörningen lyckades eller om fel som bidragit till ett körningsfel.
 
 Det här dokumentet innehåller anvisningar om hur du prenumererar på händelser, registrerar webhooks och får meddelanden som innehåller information om statusen för dina flödeskörningar.
 
