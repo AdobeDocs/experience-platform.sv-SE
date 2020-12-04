@@ -175,7 +175,7 @@ Det här felmeddelandet visas när ett `Authorization` huvud saknas i en API-beg
 }
 ```
 
-Det här felmeddelandet visas när den angivna åtkomsttoken i huvudet inte är giltig `Authorization` . Kontrollera att token har angetts korrekt eller [generera en ny token](../tutorials/authentication.md) i Adobe I/O-konsolen.
+Det här felmeddelandet visas när den angivna åtkomsttoken i huvudet inte är giltig `Authorization` . Kontrollera att token har angetts korrekt eller [generera en ny token](../tutorials/authentication.md) i Adobe I/O Console.
 
 ### API-nyckel krävs
 
@@ -197,7 +197,7 @@ Det här felmeddelandet visas när en API-nyckelrubrik (`x-api-key`) saknas i en
 }
 ```
 
-Det här felmeddelandet visas när värdet för det angivna API-nyckelhuvudet (`x-api-key`) är ogiltigt. Kontrollera att du har angett nyckeln korrekt innan du försöker igen. Om du inte känner till API-nyckeln kan du hitta den i [Adobe I/O-konsolen](https://console.adobe.io): på fliken **Integrationer** navigerar du till avsnittet **Översikt** för en viss integrering för att hitta API-nyckeln under **Klientautentiseringsuppgifter**.
+Det här felmeddelandet visas när värdet för det angivna API-nyckelhuvudet (`x-api-key`) är ogiltigt. Kontrollera att du har angett nyckeln korrekt innan du försöker igen. Om du inte känner till API-nyckeln kan du hitta den i [Adobe I/O Console](https://console.adobe.io): på fliken **Integrationer** navigerar du till avsnittet **Översikt** för en viss integrering för att hitta API-nyckeln under **Klientautentiseringsuppgifter**.
 
 
 ### Rubrik saknas
@@ -220,7 +220,7 @@ Det här felmeddelandet visas när en IMS-organisationshuvud (`x-gw-ims-org-id`)
 }
 ```
 
-Det här felmeddelandet visas när användaren eller Adobe I/O-integreringen (identifieras av [åtkomsttoken](#how-do-i-get-an-access-token) i `Authorization` huvudet) inte har rätt att göra anrop till API: [!DNL Experience Platform] er för IMS-organisationen som finns i `x-gw-ims-org-id` rubriken. Kontrollera att du har angett rätt ID för IMS-organisationen i sidhuvudet innan du försöker igen. Om du inte känner till ditt organisations-ID kan du hitta det i [Adobe I/O-konsolen](https://console.adobe.io): på fliken **Integrationer** navigerar du till avsnittet **Översikt** för en specifik integrering för att hitta ID:t under **Klientautentiseringsuppgifter**.
+Det här felmeddelandet visas när användaren eller Adobe I/O-integreringen (identifieras av [åtkomsttoken](#how-do-i-get-an-access-token) i `Authorization` huvudet) inte har rätt att göra anrop till API: [!DNL Experience Platform] er för IMS-organisationen som anges i `x-gw-ims-org-id` rubriken. Kontrollera att du har angett rätt ID för IMS-organisationen i sidhuvudet innan du försöker igen. Om du inte känner till ditt organisations-ID kan du hitta det i [Adobe I/O Console](https://console.adobe.io): på fliken **Integrationer** navigerar du till avsnittet **Översikt** för en specifik integrering för att hitta ID:t under **Klientautentiseringsuppgifter**.
 
 ### Giltig innehållstyp har inte angetts
 
