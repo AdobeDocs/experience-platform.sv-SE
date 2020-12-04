@@ -1,9 +1,9 @@
 ---
 keywords: Experience Platform;home;popular topics;Azure Synapse Analytics;azure synapse analytics;Synapse;synapse
 solution: Experience Platform
-title: Azure Synapse Analytics-koppling
+title: azure synapse Analytics Connector
 topic: overview
-description: Dokumentationen nedan innehåller information om hur du ansluter Azure Synapse Analytics till plattformen med API:er eller användargränssnittet.
+description: Dokumentationen nedan innehåller information om hur du ansluter Azure synapse Analytics till plattformen med API:er eller användargränssnittet.
 translation-type: tm+mt
 source-git-commit: e0a0b7fc28b8cc85c5140d3840e06e5c7078c307
 workflow-type: tm+mt
@@ -27,11 +27,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Azure Syn
 
 ## Anslut [!DNL Azure Synapse Analytics] till [!DNL Platform] med API:er
 
-- [Skapa en Azure Synapse Analytics-koppling med API:t för Flow Service](../../tutorials/api/create/databases/synapse-analytics.md)
+- [Skapa en Azure synapse Analytics-anslutning med API:t för Flow Service](../../tutorials/api/create/databases/synapse-analytics.md)
 - [Utforska ett databassystem med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
 - [Samla in data från en databas med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
 
 ## Ansluta [!DNL Azure Synapse Analytics] till [!DNL Platform] användargränssnittet
 
-- [Skapa en Azure Synapse Analytics-källkoppling i användargränssnittet](../../tutorials/ui/create/databases/synapse-analytics.md)
+- [Skapa en Azure synapse Analytics-källanslutning i användargränssnittet](../../tutorials/ui/create/databases/synapse-analytics.md)
 - [Konfigurera ett dataflöde för en databasanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
