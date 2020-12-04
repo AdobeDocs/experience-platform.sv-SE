@@ -5,7 +5,7 @@ seo-title: Datastyrning i kunddataplattformen i realtid
 description: 'Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. '
 seo-description: 'Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. '
 translation-type: tm+mt
-source-git-commit: 66042cb9397b9c7b507fc063f33e92f4f4c381c7
+source-git-commit: 91b60539010318ea8d545bff4e5cc7e2d0aa70fc
 workflow-type: tm+mt
 source-wordcount: '1580'
 ht-degree: 0%
@@ -41,7 +41,7 @@ Du kan ange begränsningar för dataanvändning för ett mål genom att definier
 
 Genom att definiera användningsfall för marknadsföring på destinationer kan ni se till att profiler och segment som skickas till dessa destinationer följer dataanvändningsprinciperna. Ni bör därför lägga till lämpliga användningsfall för marknadsföring till era destinationer baserat på organisationens behov av att tillämpa policybegränsningar för aktivering.
 
-Marknadsföringsfall kan bara väljas när du ställer in ett mål för första gången. Beroende på vilken typ av mål du arbetar med visas möjligheten att konfigurera användningsfall för marknadsföring vid olika tillfällen i konfigurationsarbetsflödet. Anvisningar om hur du konfigurerar ett visst mål finns i [måldokumentationen](../destinations/destinations-overview.md#data-governance) .
+Marknadsföringsfall kan bara väljas när du ställer in ett mål för första gången. Beroende på vilken typ av mål du arbetar med visas möjligheten att konfigurera användningsfall för marknadsföring vid olika tillfällen i konfigurationsarbetsflödet. Anvisningar om hur du konfigurerar ett visst mål finns i [måldokumentationen](../destinations/overview.md) .
 
 ## Hantera dataanvändningsprinciper {#policies}
 
