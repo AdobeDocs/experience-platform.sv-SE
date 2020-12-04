@@ -7,7 +7,7 @@ description: Med Catalog Service API kan svarsdata filtreras med hjälp av fråg
 translation-type: tm+mt
 source-git-commit: 71678b10c9e137016ea404305b272508b9c8cabe
 workflow-type: tm+mt
-source-wordcount: '2084'
+source-wordcount: '2077'
 ht-degree: 0%
 
 ---
