@@ -8,7 +8,7 @@ description: Git är ett distribuerat versionshanteringssystem för att spåra �
 translation-type: tm+mt
 source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
-source-wordcount: '277'
+source-wordcount: '270'
 ht-degree: 1%
 
 ---
@@ -28,7 +28,7 @@ Miljön är en [!DNL Data Science Workspace JupyterLab] värdbaserad miljö som 
 
 ## Anslut [!DNL Git] till [!DNL Data Science Workspace JupyterLab Notebooks] miljön
 
-Börja med att starta [!DNL Adobe Experience Platform] och navigera till [[!DNL JupyterLabs Notebooks]](https://platform.adobe.com/notebooks/jupyterLab) -miljön.
+Börja med att starta [!DNL Adobe Experience Platform] och navigera till [[!DNL JupyterLabs Notebooks]](https://platform.adobe.com/notebooks/jupyterLab) miljön.
 
 I [!DNL JupyterLab]väljer du **[!UICONTROL File]** och håller pekaren över **[!UICONTROL New]**. Välj i listrutan som visas **[!UICONTROL Terminal]**.
 
@@ -60,4 +60,4 @@ Sedan klonar du den databas du vill använda med hjälp av `git clone` kommandot
 
 ## Nästa steg
 
-När du är klar med kloningen av din databas kan du använda Git på samma sätt som du brukar göra på din lokala dator för att samarbeta med andra på bärbara datorer. Mer information om vad du kan göra i [!DNL JupyterLab]finns i användarhandboken för [[!DNL JupyterLab]](./overview.md).
+När du är klar med kloningen av din databas kan du använda Git på samma sätt som du brukar göra på din lokala dator för att samarbeta med andra på bärbara datorer. Mer information om vad du kan göra i [!DNL JupyterLab]finns i [[!DNL JupyterLab user guide]](./overview.md).
