@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Stöd för IAB TCF 2.0 i kunddataplattformen i realtid
 topic: privacy events
 translation-type: tm+mt
-source-git-commit: b24c624df188be3cbe7f71dcdf8a23d2478c287c
+source-git-commit: 75a0b4ba1342ece3e34a7ef41782b9014516d4fe
 workflow-type: tm+mt
 source-wordcount: '2377'
 ht-degree: 1%
@@ -45,7 +45,7 @@ Handboken kräver även en fungerande förståelse av följande Adobe Experience
    * [SDK-medgivandekommandon](../../../edge/consent/supporting-consent.md): En översikt över de medgivande-relaterade SDK-kommandona som visas i den här handboken.
 * [Adobe Experience Platform segmenteringstjänst](../../../segmentation/home.md): Gör att ni kan dela in [!DNL Real-time Customer Profile] data i grupper av individer som delar liknande egenskaper och kommer att svara på liknande sätt som marknadsföringsstrategier.
 
-Utöver de tjänster som anges ovan bör du även känna till [!DNL Platform] destinationer [och deras användning i](../../destinations/destinations-overview.md) [!DNL Real-time CDP].
+Utöver de tjänster som anges ovan bör du även känna till [!DNL Platform] destinationer [och deras användning i](../../destinations/overview.md) [!DNL Real-time CDP].
 
 ## Sammanfattning av kundens godkännandeflöde {#summary}
 
