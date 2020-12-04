@@ -7,7 +7,7 @@ description: Det här dokumentet innehåller information om övervakning av batc
 translation-type: tm+mt
 source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '904'
+source-wordcount: '892'
 ht-degree: 1%
 
 ---
@@ -24,7 +24,7 @@ Det här dokumentet innehåller information om övervakning av batchförbrukning
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 - [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
-- [[!DNL Adobe Experience Platform - datainmatning]](../home.md): Metoderna som data kan skickas till [!DNL Experience Platform].
+- [[!DNL Adobe Experience Platform Data Ingestion]](../home.md): Metoderna som data kan skickas till [!DNL Experience Platform].
 
 ### Läser exempel-API-anrop
 
