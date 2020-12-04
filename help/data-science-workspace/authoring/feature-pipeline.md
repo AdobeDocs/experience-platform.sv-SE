@@ -7,7 +7,7 @@ description: Med Adobe Experience Platform kan du skapa och skapa anpassade rör
 translation-type: tm+mt
 source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '1426'
+source-wordcount: '1421'
 ht-degree: 0%
 
 ---
@@ -439,4 +439,4 @@ När poängsättningen är klar bör ditt tillvägagångssätt fungera.
 
 [//]: # (Next steps section should refer to tutorials on how to score data using the feature pipeline Engine. Update this document once those tutorials are available)
 
-Genom att läsa det här dokumentet har du skapat en funktionspipeline med hjälp av Model Authoring SDK, skapat en Docker-bild och använt Docker-bildens URL för att skapa en funktionspipeline med hjälp av [!DNL Sensei Machine Learning] API. Du kan nu fortsätta att omforma datauppsättningar och extrahera datafunktioner i stor skala med API:t [[!DNL Sensei Machine Learning]](../api/getting-started.md).
+Genom att läsa det här dokumentet har du skapat en funktionspipeline med hjälp av Model Authoring SDK, skapat en Docker-bild och använt Docker-bildens URL för att skapa en funktionspipeline med hjälp av [!DNL Sensei Machine Learning] API. Nu kan du fortsätta att omforma datauppsättningar och extrahera datafunktioner i stor skala med [[!DNL Sensei Machine Learning API]](../api/getting-started.md).
