@@ -8,7 +8,7 @@ description: Autentiserad datainsamling gör det möjligt för Adobe Experience 
 translation-type: tm+mt
 source-git-commit: 37356db1666b0c800119b1e254940ad72550848a
 workflow-type: tm+mt
-source-wordcount: '659'
+source-wordcount: '650'
 ht-degree: 0%
 
 ---
