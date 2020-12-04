@@ -8,7 +8,7 @@ description: I den här självstudiekursen fokuseras på hur du använder Jupyte
 translation-type: tm+mt
 source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
-source-wordcount: '1731'
+source-wordcount: '1723'
 ht-degree: 0%
 
 ---
@@ -20,9 +20,9 @@ I den här självstudiekursen fokuseras på hur du använder Jupyter-antecknings
 
 Följande koncept har introducerats:
 
-- **[!DNL JupyterLab]:** [[!DNL JupyterLab]](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) är nästa generations webbaserade gränssnitt för Project Jupyter och är nära integrerat i [!DNL Adobe Experience Platform].
+- **[!DNL JupyterLab]:** [[!DNL JupyterLab]](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) är nästa generations webbaserade gränssnitt för Project Jupyter, som är nära integrerat i [!DNL Adobe Experience Platform].
 - **Grupper:** Datauppsättningar består av grupper. En batch är en uppsättning data som samlats in under en tidsperiod och som bearbetas tillsammans som en enda enhet. Nya grupper skapas när data läggs till i en datauppsättning.
-- **SDK för dataåtkomst (borttagen):** SDK för dataåtkomst är nu föråldrat. Använd [[!DNL Platform SDK]](../authoring/platform-sdk.md) -guiden.
+- **SDK för dataåtkomst (borttagen):** SDK för dataåtkomst är nu föråldrat. Använd [[!DNL Platform SDK]](../authoring/platform-sdk.md) guiden.
 
 ## Utforska anteckningsböcker i Data Science Workspace
 
@@ -92,7 +92,7 @@ Nu kan vi högerklicka på `Retail-Training-<your-alias>` datauppsättningen och
 
 >[!TIP]
 >
->Mer information om hur du konverterar koden finns i [[!DNL Platform SDK]](../authoring/platform-sdk.md) -guiden.
+>Mer information om hur du konverterar koden finns i [[!DNL Platform SDK]](../authoring/platform-sdk.md) guiden.
 
 ```PYTHON
 from data_access_sdk_python.reader import DataSetReader
