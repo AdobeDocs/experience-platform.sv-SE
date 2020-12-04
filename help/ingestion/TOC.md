@@ -25,7 +25,7 @@ ht-degree: 4%
    - [API för gruppinmatning](batch-ingestion/api-overview.md)
    - [Partiellt batchintag](batch-ingestion/partial.md)
    - [Felsökning](batch-ingestion/troubleshooting.md)
-- Tutorials {#tutorials}
+- Självstudiekurser {#tutorials}
    - [Mappa en CSV-fil till XDM](tutorials/map-a-csv-file.md)
    - [Infoga batchdata med användargränssnittet](tutorials/ingest-batch-data.md)
    - [Skapa en autentiserad direktuppspelningsanslutning](tutorials/create-authenticated-streaming-connection.md)
