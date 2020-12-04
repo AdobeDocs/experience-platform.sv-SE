@@ -22,7 +22,7 @@ ht-degree: 6%
    - [Komma igång](api/getting-started.md)
    - [Exportera jobb](api/export-jobs.md)
    - [Förhandsvisningar och uppskattningar](api/previews-and-estimates.md)
-   - [Scheman](api/schedules.md)
+   - [Schemaläggare](api/schedules.md)
    - [Segmentdefinitioner](api/segment-definitions.md)
    - [Segmentjobb](api/segment-jobs.md)
    - [Segmentsökning](api/segment-search.md)
@@ -48,7 +48,7 @@ ht-degree: 6%
    - [Filterfunktioner](pql/filter-functions.md)
    - [Logiska kvantifierare](pql/logical-quantifiers.md)
    - [Diverse funktioner](pql/misc-functions.md)
-- Tutorials {#tutorials}
+- Självstudiekurser {#tutorials}
    - [Skapa ett segment](tutorials/create-a-segment.md)
    - [Utvärdera ett segment](tutorials/evaluate-a-segment.md)
    - [Skapa en datauppsättning för att exportera data](tutorials/create-dataset-export-segment.md)
