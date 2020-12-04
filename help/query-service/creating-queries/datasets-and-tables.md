@@ -19,7 +19,7 @@ ht-degree: 1%
 Granska listan över tillgängliga datauppsättningar i [Adobe Experience Platform-gränssnittet](https://platform.adobe.com/datasets)och observera datauppsättningsnamnen.
 >[!NOTE]
 >
->Vissa datauppsättningsnamn har blanksteg och kan annars vara SQL-säkra.
+>Vissa datauppsättningsnamn har blanksteg och kan i annat fall vara SQL-säkra.
 
 ![](../images/queries/datasets-and-tables/dataset-names.png)
 
