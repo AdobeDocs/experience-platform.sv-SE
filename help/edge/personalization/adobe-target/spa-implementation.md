@@ -63,7 +63,7 @@ Begreppet Vyer kan utvidgas mycket mer än så. Detta är bara några exempel p�
 
 XDM-vyer kan användas i Adobe Target för att marknadsförarna ska kunna köra A/B- och XT-tester på SPA via Visual Experience Composer. Detta kräver att du utför följande steg för att slutföra en engångsinstallation av en utvecklare:
 
-1. Installera [Adobe Experience Platform Web SDK](../../fundamentals/installing-the-sdk.md)
+1. Install [Adobe Experience Platform Web SDK](../../fundamentals/installing-the-sdk.md)
 2. Avgör alla XDM-vyer i Single Page-programmet som du vill anpassa.
 3. När du har definierat XDM-vyerna implementerar du funktionen med `sendEvent()` inställningen `renderDecisions` `true` och motsvarande XDM-vy i Single Page-programmet för att kunna leverera AB- eller XT VEC-aktiviteter. XDM-vyn måste skickas `xdm.web.webPageDetails.viewName`. I det här steget kan marknadsförarna använda Visual Experience Composer för att starta A/B- och XT-tester för dessa XDM.
 
