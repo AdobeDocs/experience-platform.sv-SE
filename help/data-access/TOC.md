@@ -17,6 +17,6 @@ ht-degree: 2%
 
 - [Dataåtkomstöversikt](home.md)
 - [API för dataåtkomst](api.md)
-- Tutorials {#tutorials}
+- Självstudiekurser {#tutorials}
    - [Åtkomst till datauppsättningsdata](tutorials/dataset-data.md)
 - [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
