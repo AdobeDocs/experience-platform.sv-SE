@@ -7,7 +7,7 @@ description: Snabbstartguide för Adobe Experience Platform Query Service.
 translation-type: tm+mt
 source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '131'
+source-wordcount: '128'
 ht-degree: 0%
 
 ---
