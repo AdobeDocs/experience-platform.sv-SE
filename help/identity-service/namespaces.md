@@ -7,7 +7,7 @@ description: 'Identitetsnamnutrymmen är en komponent i identitetstjänsten som 
 translation-type: tm+mt
 source-git-commit: dfb16c1808ac61e6c4f4d97c08ac3d1dcc8499a8
 workflow-type: tm+mt
-source-wordcount: '759'
+source-wordcount: '746'
 ht-degree: 1%
 
 ---
@@ -23,7 +23,7 @@ Att arbeta med identitetsnamnutrymmen kräver förståelse för de olika Adobe E
 
 - [[!DNL Real-time Customer Profile]](../profile/home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
 - [[!DNL Identity Service]](./home.md): Få en bättre bild av enskilda kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system.
-- [[!DNL-Privacy Service]](../privacy-service/home.md): Identitetsnamnutrymmen används för att uppfylla den allmänna dataskyddsförordningen (GDPR), där GDPR-begäranden kan göras i förhållande till ett namnutrymme.
+- [[!DNL Privacy Service]](../privacy-service/home.md): Identitetsnamnutrymmen används för att uppfylla den allmänna dataskyddsförordningen (GDPR), där GDPR-begäranden kan göras i förhållande till ett namnutrymme.
 
 ## Identitetsnamnutrymmen
 
