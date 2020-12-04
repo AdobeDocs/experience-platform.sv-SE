@@ -8,7 +8,7 @@ description: 'Det här dokumentet innehåller en stegvis självstudiekurs för a
 translation-type: tm+mt
 source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '868'
+source-wordcount: '865'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Det här dokumentet innehåller en stegvis självstudiekurs för att få tillgå
 
 ## Autentisera för att göra API-anrop
 
-För att skydda program och användare måste alla förfrågningar till API:er för Adobe I/O autentiseras och auktoriseras med standarder som OAuth och JSON Web Tokens (JWT). JWT används sedan tillsammans med klientspecifik information för att generera din personliga åtkomsttoken.
+För att skydda program och användare måste alla förfrågningar till Adobe I/O API:er autentiseras och auktoriseras med standarder som OAuth och JSON Web Tokens (JWT). JWT används sedan tillsammans med klientspecifik information för att generera din personliga åtkomsttoken.
 
 I den här självstudiekursen beskrivs stegen för autentisering genom att skapa en åtkomsttoken som beskrivs i följande flödesschema:
 ![](images/authentication/authentication-flowchart.png)
@@ -49,7 +49,7 @@ Innan du skapar integreringar på Adobe I/O måste ditt konto ha utvecklarbehör
 
 **Få utvecklaråtkomst**
 
-Kontakta en [!DNL Admin Console] administratör i din organisation om du vill lägga till dig som utvecklare för någon av organisationens produkter med hjälp av [[!DNL Admin Console]](https://adminconsole.adobe.com/).
+Kontakta en [!DNL Admin Console] administratör i organisationen om du vill lägga till dig som utvecklare för någon av organisationens produkter med hjälp av [[!DNL Admin Console]](https://adminconsole.adobe.com/).
 
 ![](images/authentication/assign-developer.png)
 
@@ -57,7 +57,7 @@ Administratören måste tilldela dig som utvecklare minst en produktprofil för 
 
 ![](images/authentication/add-developer.png)
 
-När du har tilldelats behörighet som utvecklare får du behörighet att skapa integreringar på [Adobe I/O](https://www.adobe.com/go/devs_console_ui). Dessa integreringar är en pipeline från externa program och tjänster till Adobe API.
+När du har utsetts till utvecklare får du behörighet att skapa integreringar på [Adobe I/O](https://www.adobe.com/go/devs_console_ui). Dessa integreringar är en pipeline från externa program och tjänster till Adobe API.
 
 **Få användaråtkomst**
 
