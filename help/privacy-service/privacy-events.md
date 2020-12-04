@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # Prenumerera på [!DNL Privacy Service Events]
 
-[!DNL Privacy Service Events] är meddelanden från Adobe Experience Platform [!DNL Privacy Service]som utnyttjar Adobe I/O-händelser som skickas till en konfigurerad webkrok för att underlätta automatisering av jobbförfrågningar. De minskar eller eliminerar behovet av att avfråga [!DNL Privacy Service] API för att kontrollera om ett jobb är färdigt eller om en viss milstolpe i ett arbetsflöde har nåtts.
+[!DNL Privacy Service Events] är meddelanden från Adobe Experience Platform [!DNL Privacy Service]som utnyttjar Adobe I/O Events som skickas till en konfigurerad webkrok för att underlätta automatisering av jobbförfrågningar. De minskar eller eliminerar behovet av att avfråga [!DNL Privacy Service] API för att kontrollera om ett jobb är färdigt eller om en viss milstolpe i ett arbetsflöde har nåtts.
 
 Det finns för närvarande fyra typer av meddelanden som rör livscykeln för sekretessjobben:
 
