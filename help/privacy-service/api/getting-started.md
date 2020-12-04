@@ -7,7 +7,7 @@ topic: developer guide
 translation-type: tm+mt
 source-git-commit: 28b733a16b067f951a885c299d59e079f0074df8
 workflow-type: tm+mt
-source-wordcount: '728'
+source-wordcount: '725'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ I den här handboken beskrivs hur du använder [!DNL Privacy Service] API:t. Mer
 
 Handboken kräver en fungerande förståelse av följande [!DNL Experience Platform] funktioner:
 
-* [[!DNL-Privacy Service]](../home.md): Tillhandahåller ett RESTful-API och användargränssnitt som gör att du kan hantera förfrågningar från registrerade (kunder) i olika Adobe Experience Cloud-program.
+* [[!DNL Privacy Service]](../home.md): Tillhandahåller ett RESTful-API och användargränssnitt som gör att du kan hantera förfrågningar från registrerade (kunder) i olika Adobe Experience Cloud-program.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa Privacy Service-API:t.
 
