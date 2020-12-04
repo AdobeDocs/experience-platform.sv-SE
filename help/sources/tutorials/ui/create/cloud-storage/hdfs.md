@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa en Apache HDFS-källanslutning i användargränssnittet
 topic: overview
 type: Tutorial
-description: I den här självstudiekursen beskrivs hur du autentiserar en källanslutning till ett Apache Hadoop Distributed File System (nedan kallat HDFS) med hjälp av användargränssnittet för plattformen.
+description: I den här självstudiekursen beskrivs hur du autentiserar en källanslutning till en Apache Hadoop Distributed File System (nedan kallad HDFS) med hjälp av användargränssnittet för plattformen.
 translation-type: tm+mt
 source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
 workflow-type: tm+mt
