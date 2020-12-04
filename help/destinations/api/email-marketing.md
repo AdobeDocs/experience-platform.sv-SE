@@ -5,7 +5,7 @@ title: Skapa e-postmarknadsföringsmål
 topic: tutorial
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 5f120a716cc3396ef7749463bb6052a8ced2fbb4
+source-git-commit: f2fdc3b75d275698a4b1e4c8969b1b840429c919
 workflow-type: tm+mt
 source-wordcount: '1619'
 ht-degree: 0%
@@ -344,7 +344,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 * `{CONNECTION_SPEC_ID}`: Använd det anslutningsspec-ID som du fick i steget [Hämta listan med tillgängliga mål](#get-the-list-of-available-destinations).
-* `{S3 or SFTP}`: fylla i önskad anslutningstyp för det här målet. Bläddra till önskat mål i [målkatalogen](../../rtcdp/destinations/destinations-catalog.md)för att se om anslutningstyperna S3 och/eller SFTP stöds.
+* `{S3 or SFTP}`: fylla i önskad anslutningstyp för det här målet. Bläddra till önskat mål i [målkatalogen](../catalog/overview.md)för att se om anslutningstyperna S3 och/eller SFTP stöds.
 * `{ACCESS_ID}`: Ditt åtkomst-ID för din [!DNL Amazon] S3-lagringsplats.
 * `{SECRET_KEY}`: Din hemliga nyckel för din [!DNL Amazon] S3-lagringsplats.
 
