@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segmentation Service;schedules;schedule;api;API;
 solution: Experience Platform
-title: Scheman
+title: Schemaläggare
 topic: developer guide
 description: Scheman är ett verktyg som kan användas för att automatiskt köra batchsegmenteringsjobb en gång om dagen.
 translation-type: tm+mt
@@ -142,7 +142,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/config/schedules \
 | `name` | **Obligatoriskt.** Schemats namn som en sträng. |
 | `type` | **Obligatoriskt.** Typ av jobb som en sträng. De två typer som stöds är&quot;batch_segmentation&quot; och&quot;export&quot;. |
 | `properties` | **Obligatoriskt.** Ett objekt som innehåller ytterligare egenskaper som är relaterade till schemat. |
-| `properties.segments` | **Obligatoriskt när`type`är lika med&quot;batch_segmentation&quot;.** Om du använder `["*"]` säkerställs att alla segment ingår. |
+| `properties.segments` | **Obligatoriskt när `type` är lika med&quot;batch_segmentation&quot;.** Om du använder `["*"]` säkerställs att alla segment ingår. |
 | `schedule` | *Valfritt.* En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Mer information om cron-scheman finns i [dokumentationen för cron-uttrycksformat](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) . I det här exemplet betyder &quot;0 0 1 * *&quot; att schemat kommer att köras vid midnatt den första i varje månad. <br><br>Om strängen inte anges genereras ett systemgenererat schema automatiskt. |
 | `state` | *Valfritt.* En sträng som innehåller schematillståndet. De två lägen som stöds är &quot;active&quot; och &quot;inactive&quot;. Som standard är läget inställt på &quot;inaktiv&quot;. |
 
