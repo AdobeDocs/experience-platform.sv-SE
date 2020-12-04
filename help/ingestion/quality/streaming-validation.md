@@ -8,7 +8,7 @@ description: Med direktuppspelningsintag kan du överföra data till Adobe Exper
 translation-type: tm+mt
 source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '852'
+source-wordcount: '843'
 ht-degree: 2%
 
 ---
@@ -23,7 +23,7 @@ Med direktuppspelningsintag kan du överföra data till Adobe Experience Platfor
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 - [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
-- [[!DNL-strömningsinmatning]](../streaming-ingestion/overview.md): En av metoderna som data kan skickas till [!DNL Experience Platform].
+- [[!DNL Streaming Ingestion]](../streaming-ingestion/overview.md): En av metoderna som data kan skickas till [!DNL Experience Platform].
 
 ### Läser exempel-API-anrop
 
