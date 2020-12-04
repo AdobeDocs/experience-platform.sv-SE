@@ -91,7 +91,7 @@ När du har gjort sekretessjobb har du flera alternativ för att övervaka statu
 | --- | --- |
 | [!DNL Privacy Service] UI | Användargränssnittet [!DNL Privacy Service] innehåller en kontrollpanel som gör att du kan visa en visuell representation av statusen för alla aktiva begäranden. Mer information finns i användarhandboken [för](ui/overview.md) Privacy Service. |
 | [!DNL Privacy Service] API | Du kan övervaka sekretessjobbens status programmatiskt med hjälp av sökslutpunkterna från [!DNL Privacy Service] API:t. Mer information om hur du använder API finns i [utvecklarhandboken](./api/getting-started.md) för Privacy Service. |
-| [!DNL Privacy Events] | [!DNL Privacy Events] utnyttja Adobe I/O-händelser som skickas till en konfigurerad webkrok för att underlätta en effektiv automatisering av jobbförfrågningar. De minskar eller eliminerar behovet av att avfråga [!DNL Privacy Service] API för att kontrollera om ett jobb är färdigt eller om en viss milstolpe i ett arbetsflöde har nåtts. Mer information finns i självstudiekursen om hur du [prenumererar på sekretesshändelser](./privacy-events.md) . |
+| [!DNL Privacy Events] | [!DNL Privacy Events] utnyttja Adobe I/O Events som skickas till en konfigurerad webkrok för att underlätta automatisering av jobbförfrågningar. De minskar eller eliminerar behovet av att avfråga [!DNL Privacy Service] API för att kontrollera om ett jobb är färdigt eller om en viss milstolpe i ett arbetsflöde har nåtts. Mer information finns i självstudiekursen om hur du [prenumererar på sekretesshändelser](./privacy-events.md) . |
 
 ## Nästa steg
 
