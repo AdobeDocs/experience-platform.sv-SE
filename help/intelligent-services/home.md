@@ -27,7 +27,7 @@ Intelligenta tjänster [!DNL Adobe Experience Platform]ger marknadsförare som a
 
 ### Kostnadseffektiv snabbhet på marknaden
 
-Adobe har AI/ML-expertis i kombination med djupgående CXM-upplevelser, och Intelligent Services har utformats särskilt för marknadsförare så att de omedelbart kan få AI/ML på plats för vanliga användningsfall inom marknadsföring utan att behöva anställa kompetenta och dyra datavetare, vilket snabbar upp time to market och åtgärdbarhet.
+Adobe har AI/ML-expertis i kombination med djupgående CXM-upplevelser, och Intelligent Services har utformats särskilt för marknadsförare så att de omedelbart kan få AI/ML på plats för vanliga fall av marknadsföring utan att behöva anställa kompetenta och dyra datavetare, vilket snabbar upp time to market och åtgärdbarhet.
 
 ### Exaktare prediktiva insikter
 
