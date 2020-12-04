@@ -7,13 +7,13 @@ description: Med hjälp av API:t för principtjänst kan du skapa och hantera ol
 translation-type: tm+mt
 source-git-commit: 3376d6cace9ab196f457e2bf7b84cde06693103c
 workflow-type: tm+mt
-source-wordcount: '440'
+source-wordcount: '427'
 ht-degree: 0%
 
 ---
 
 
-# Komma igång med [!DNL Policy Service] API
+# Getting started with the [!DNL Policy Service] API
 
 Med API:t kan du [!DNL Policy Service] skapa och hantera olika resurser för Adobe Experience Platform [!DNL Data Governance]. Det här dokumentet innehåller en introduktion till de centrala koncept du behöver känna till innan du försöker anropa [!DNL Policy Service] API:t.
 
