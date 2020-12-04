@@ -1,10 +1,10 @@
 ---
 keywords: Experience Platform;home;popular topics;Azure Synapse Analytics;Synapse;synapse;azure synapse analytics
 solution: Experience Platform
-title: Skapa en Azure Synapse Analytics-källkoppling i användargränssnittet
+title: Skapa en Azure synapse Analytics-källanslutning i användargränssnittet
 topic: overview
 type: Tutorial
-description: I den här självstudiekursen beskrivs hur du skapar en Azure Synapse Analytics-källkoppling (nedan kallad Synapse) med hjälp av användargränssnittet för plattformen.
+description: I den här självstudiekursen beskrivs hur du skapar en Azure synapse Analytics-källkoppling (nedan kallad Synapse) med hjälp av användargränssnittet för plattformen.
 translation-type: tm+mt
 source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
 workflow-type: tm+mt
