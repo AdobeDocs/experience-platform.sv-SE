@@ -271,7 +271,7 @@ Om du vill veta mer om de bärbara datorer som stöds och hur du använder dem k
 | klippa | 1.3.0 |
 | seaborn | 0.9.0 |
 | statsmodels | 0.10.1 |
-| vetenskapsman | 5.1.0.17 |
+| elastisk | 5.1.0.17 |
 | ggplot | 0.11.5 |
 | py-xgboost | 0.90 |
 | opencv | 3.4.1 |
