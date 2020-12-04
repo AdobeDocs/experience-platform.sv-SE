@@ -7,7 +7,7 @@ description: Med API:t för gruppinmatning kan du importera data till Adobe Expe
 translation-type: tm+mt
 source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '1196'
+source-wordcount: '1193'
 ht-degree: 1%
 
 ---
@@ -35,7 +35,7 @@ Med [!DNL Data Ingestion] API kan du importera data som grupper (en dataenhet so
 ### [!DNL Data Ingestion] krav
 
 - Data som ska överföras måste vara i något av formaten Parquet eller JSON.
-- En datauppsättning skapades i [[!DNL Catalog Services]](../../catalog/home.md).
+- En datauppsättning som skapats i [[!DNL Catalog services]](../../catalog/home.md).
 - Innehållet i parquet-filen måste matcha en delmängd av schemat i den datauppsättning som överförs till.
 - Ha din unika åtkomsttoken efter autentisering.
 
