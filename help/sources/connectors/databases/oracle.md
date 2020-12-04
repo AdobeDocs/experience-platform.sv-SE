@@ -1,9 +1,9 @@
 ---
 keywords: Experience Platform;home;popular topics;Oracle;oracle
 solution: Experience Platform
-title: Oracle-koppling
+title: Oracle Connector
 topic: overview
-description: Dokumentationen nedan innehåller information om hur du ansluter Oracle till plattformen med hjälp av API:er eller användargränssnittet.
+description: Dokumentationen nedan innehåller information om hur du ansluter Oracle till plattformen med API:er eller användargränssnittet.
 translation-type: tm+mt
 source-git-commit: e0a0b7fc28b8cc85c5140d3840e06e5c7078c307
 workflow-type: tm+mt
@@ -31,7 +31,7 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Oracle] t
 
 ## Anslut [!DNL Oracle] till [!DNL Platform] med API:er
 
-- [Skapa en Oracle-koppling med API:t för Flow Service](../../tutorials/api/create/databases/oracle.md)
+- [Skapa en Oracle-anslutning med API:t för Flow Service](../../tutorials/api/create/databases/oracle.md)
 - [Utforska ett databassystem med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
 - [Samla in data från en databas med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
 
