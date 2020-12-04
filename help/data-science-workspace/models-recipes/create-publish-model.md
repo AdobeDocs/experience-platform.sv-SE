@@ -8,7 +8,7 @@ description: Med Adobe Experience Platform Data Science Workspace kan du uppnå 
 translation-type: tm+mt
 source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '1542'
+source-wordcount: '1536'
 ht-degree: 0%
 
 ---
@@ -50,7 +50,7 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
    * [[!DNL Experience Data Model]](../../xdm/home.md): Den standardiseringsinsats som Adobe ledde till för att definiera standardscheman som [!DNL Profile] och ExperienceEvent för Customer Experience Management.
    * Datauppsättningar: En lagrings- och hanteringskonstruktion för faktiska data. En fysisk instansierad instans av ett [XDM-schema](../../xdm/schema/field-dictionary.md).
    * Grupper: Datauppsättningar består av grupper. En batch är en uppsättning data som samlats in under en tidsperiod och som bearbetas tillsammans som en enda enhet.
-   * [!DNL JupyterLab]: [[!DNL JupyterLab]](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) är ett webbaserat gränssnitt med öppen källkod för Project [!DNL Jupyter] och är nära integrerat med [!DNL Experience Platform].
+   * [!DNL JupyterLab]: [[!DNL JupyterLab]](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) är ett webbaserat gränssnitt för Project med öppen källkod [!DNL Jupyter] som är nära integrerat i [!DNL Experience Platform].
 
 ## Förbered data {#prepare-your-data}
 
@@ -166,4 +166,4 @@ När poängsättningen är klar kan du förhandsgranska resultatet och se de ins
 
 Klart! Du har skapat produktrekommendationer!
 
-I den här självstudiekursen presenterades arbetsflödet för [!DNL Data Science Workspace]att visa hur obearbetade data kan förvandlas till användbar information via maskininlärning. Om du vill veta mer om hur du använder [!DNL Data Science Workspace]produkten fortsätter du till nästa guide om [hur du skapar försäljningsschema och datauppsättning](./create-retails-sales-dataset.md)för detaljhandeln.
+I den här självstudiekursen presenterades arbetsflödet för [!DNL Data Science Workspace]att visa hur obearbetade data kan förvandlas till användbar information via maskininlärning. Om du vill veta mer om hur du använder [!DNL Data Science Workspace]produkten kan du fortsätta med nästa guide om [hur du skapar försäljningsschemat och datauppsättningen](./create-retails-sales-dataset.md)för detaljhandeln.
