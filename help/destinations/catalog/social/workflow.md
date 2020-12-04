@@ -6,7 +6,7 @@ seo-title: Målarbetsflöde för sociala nätverk
 description: Instruktioner för att ansluta till sociala nätverk och konton
 seo-description: Instruktioner för att ansluta till sociala nätverk och konton
 translation-type: tm+mt
-source-git-commit: 85e6a65e1407ca60e7b63681c045fadaaa24aef9
+source-git-commit: f2fdc3b75d275698a4b1e4c8969b1b840429c919
 workflow-type: tm+mt
 source-wordcount: '468'
 ht-degree: 0%
@@ -38,7 +38,7 @@ Om du tidigare har konfigurerat en anslutning till ditt sociala nätverk i **aut
 
 När dina inloggningsuppgifter har bekräftats och Adobe Experience Cloud är anslutet till ditt sociala nätverk kan du välja **[!UICONTROL Next]** att fortsätta till **[!UICONTROL Setup]** steget.
 
-![Autentiseringsuppgifterna har bekräftats](/help/rtcdp/destinations/assets/facebook-post-connection-view.png)
+![Autentiseringsuppgifterna har bekräftats](../../assets/catalog/social/workflow/post-connect.png)
 
 I **[!UICONTROL Setup]** steget anger du ett [!UICONTROL Name] och ett [!UICONTROL Description] för aktiveringsflödet och fyller i [!UICONTROL Account ID] i det sociala nätverkets annonskonto.
 
