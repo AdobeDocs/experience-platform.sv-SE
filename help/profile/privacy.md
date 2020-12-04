@@ -107,7 +107,7 @@ När du skapar jobbbegäranden i användargränssnittet måste du markera **[!UI
 
 ## Profilfragment i sekretessförfrågningar {#fragments}
 
-Personuppgifterna för en enskild kund i [!DNL Profile] datalagret består ofta av flera profilfragment som kopplas till personen via identitetsdiagrammet. När du gör sekretessförfrågningar till [!DNL Profile] butiken är det viktigt att tänka på att förfrågningar bara behandlas på profilfragmentnivån, i stället för på hela profilen.
+Personuppgifterna för en enskild kund i [!DNL Profile] datalagret består ofta av flera profilfragment som kopplas till personen via identitetsdiagrammet. När du gör sekretessförfrågningar till [!DNL Profile] butiken är det viktigt att notera att förfrågningar bara behandlas på profilfragmentnivån, i stället för på hela profilen.
 
 Tänk dig till exempel en situation där du lagrar kundattributdata i tre separata datauppsättningar, som använder olika identifierare för att associera dessa data med enskilda kunder:
 
