@@ -7,7 +7,7 @@ description: Med åtkomstkontrollen i Adobe Experience Platform kan du hantera r
 translation-type: tm+mt
 source-git-commit: 28b733a16b067f951a885c299d59e079f0074df8
 workflow-type: tm+mt
-source-wordcount: '379'
+source-wordcount: '375'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 [!DNL Access control] administreras [!DNL Experience Platform] via [Adobe Admin Console](https://adminconsole.adobe.com). Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor. Mer information finns i [åtkomstkontrollsöversikten](../home.md) .
 
-Den här utvecklarhandboken innehåller information om hur du formaterar dina begäranden till [[!DNL Access Control API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/access-control.yaml)och omfattar följande åtgärder:
+Den här utvecklarhandboken innehåller information om hur du formaterar dina förfrågningar till [[!DNL Access Control API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/access-control.yaml)användaren och omfattar följande åtgärder:
 
 - [Listnamn på behörigheter och resurstyper](./permissions-and-resource-types.md)
 - [Visa gällande principer för den aktuella användaren](./effective-policies.md)
