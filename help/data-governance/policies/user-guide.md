@@ -7,7 +7,7 @@ description: Adobe Experience Platform Data Governance har ett användargränssn
 translation-type: tm+mt
 source-git-commit: a362b67cec1e760687abb0c22dc8c46f47e766b7
 workflow-type: tm+mt
-source-wordcount: '724'
+source-wordcount: '721'
 ht-degree: 0%
 
 ---
