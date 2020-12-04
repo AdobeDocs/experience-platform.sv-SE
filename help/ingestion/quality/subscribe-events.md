@@ -73,7 +73,7 @@ Se den [offentliga GitHub-databasen](https://github.com/adobe/xdm/blob/master/sc
 
 ## Nästa steg
 
-När du har registrerat [!DNL Platform] meddelanden i projektet kan du visa mottagna händelser från [!UICONTROL Project overview]. Mer information om hur du spårar händelser finns i guiden om [spårning av Adobe I/O-händelser](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/support/tracing.md) .
+När du har registrerat [!DNL Platform] meddelanden i projektet kan du visa mottagna händelser från [!UICONTROL Project overview]. Mer information om hur du spårar händelser finns i guiden om [spårning av Adobe I/O Events](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/support/tracing.md) .
 
 ## Bilaga
 
