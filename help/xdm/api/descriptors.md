@@ -113,7 +113,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar information om beskrivningen, inklusive dess `@type` och `sourceSchema`, samt ytterligare information som varierar beroende på typen av beskrivning. Det returnerade `@id` måste matcha den beskrivning `@id` som anges i begäran.
+Ett lyckat svar returnerar information om beskrivningen, inklusive dess `@type` och `sourceSchema`, samt ytterligare information som varierar beroende på typen av beskrivning. Den returnerade `@id` typen ska matcha den beskrivning `@id` som anges i begäran.
 
 ```JSON
 {
