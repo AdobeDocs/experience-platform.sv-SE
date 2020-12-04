@@ -19,4 +19,4 @@ ht-degree: 0%
 
 CDP är byggt i realtid ovanpå Adobe Experience Platform och utnyttjar många av de [!DNL Experience Platform] tjänster och funktioner som finns. Du kan alltså vara säker på att dina data kommer att kontrolleras och valideras när de importeras.
 
-Mer detaljerad information om datakvalitet finns i [dokumentationen om datakvalitet på Adobe I/O](../../ingestion/quality/overview.md).
+Mer information om datakvalitet finns i [dokumentationen om datakvalitet på Adobe I/O](../../ingestion/quality/overview.md).
