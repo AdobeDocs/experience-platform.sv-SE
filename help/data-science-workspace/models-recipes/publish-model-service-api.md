@@ -8,7 +8,7 @@ description: I den här självstudien beskrivs processen att publicera en modell
 translation-type: tm+mt
 source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
-source-wordcount: '1501'
+source-wordcount: '1496'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 # Publicera en modell som en tjänst (API)
 
-I den här självstudien beskrivs processen att publicera en modell som en tjänst med API:t för [[!DNL Sensei Machine Learning]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml).
+I den här självstudiekursen beskrivs hur du publicerar en modell som en tjänst med hjälp av [[!DNL Sensei Machine Learning API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml).
 
 ## Komma igång
 
