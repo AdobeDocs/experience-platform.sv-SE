@@ -8,7 +8,7 @@ description: Det här dokumentet innehåller en självstudiekurs för att skicka
 translation-type: tm+mt
 source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '1482'
+source-wordcount: '1475'
 ht-degree: 1%
 
 ---
@@ -510,7 +510,7 @@ Det andra meddelandet misslyckades eftersom det saknade meddelandetext. Samlings
     },
 ```
 
-Det tredje meddelandet misslyckades på grund av att ett ogiltigt IMS-organisations-ID användes i huvudet. IMS-organisationen måste matcha den {CONNECTION_ID} som du försöker publicera till. För att avgöra vilket IMS-organisations-ID som matchar den direktuppspelningsanslutning du använder kan du utföra en `GET inlet` begäran med hjälp av API:t för [[!DNL-datainmatning]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml). Se [Hämta en direktuppspelningsanslutning](./create-streaming-connection.md#get-data-collection-url) för ett exempel på hur du hämtar tidigare skapade direktuppspelningsanslutningar.
+Det tredje meddelandet misslyckades på grund av att ett ogiltigt IMS-organisations-ID användes i huvudet. IMS-organisationen måste matcha den {CONNECTION_ID} som du försöker publicera till. För att avgöra vilket IMS-organisations-ID som matchar den direktuppspelningsanslutning du använder kan du utföra en `GET inlet` begäran med hjälp av [[!DNL Data Ingestion API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml). Se [Hämta en direktuppspelningsanslutning](./create-streaming-connection.md#get-data-collection-url) för ett exempel på hur du hämtar tidigare skapade direktuppspelningsanslutningar.
 
 Det fjärde meddelandet misslyckades eftersom det inte följde det förväntade XDM-schemat. Det `xdmSchema` som ingår i begärans huvud och brödtext matchar inte XDM-schemat för `{DATASET_ID}`. Om du korrigerar schemat i meddelandehuvudet och meddelandetexten kan det godkänna DCCS-validering och skickas till [!DNL Platform]. Meddelandetexten måste också uppdateras för att matcha XDM-schemat för `{DATASET_ID}` att den ska kunna godkännas vid direktuppspelningsvalidering [!DNL Platform]. Mer information om vad som händer med meddelanden som kan direktuppspelas på Platform finns i avsnittet [Bekräfta inmatade](#confirm-messages-ingested) meddelanden i den här självstudiekursen.
 
@@ -531,7 +531,7 @@ Batchmeddelanden som godkänns vid direktuppspelningsvalidering [!DNL Platform] 
 
 ## Nästa steg
 
-Nu när du vet hur du skickar flera meddelanden i en enda begäran och verifierar när meddelanden har importerats till måldatauppsättningen, kan du börja direktuppspela dina egna data till [!DNL Platform]. En översikt över hur du hämtar inkapslade data från [!DNL Platform]finns i handboken [[!DNL Data Access]](../../data-access/tutorials/dataset-data.md) .
+Nu när du vet hur du skickar flera meddelanden i en enda begäran och verifierar när meddelanden har importerats till måldatauppsättningen, kan du börja direktuppspela dina egna data till [!DNL Platform]. En översikt över hur du hämtar inkapslade data från [!DNL Platform]finns i [[!DNL Data Access]](../../data-access/tutorials/dataset-data.md) guiden.
 
 ## Bilaga
 
