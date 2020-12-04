@@ -7,7 +7,7 @@ description: Multientitetssegmentering är möjligheten att utöka profildata me
 translation-type: tm+mt
 source-git-commit: 4dd5a91146b116953ba180e3f39d24b4e1ec289e
 workflow-type: tm+mt
-source-wordcount: '671'
+source-wordcount: '656'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Segmentering på flera enheter kräver en fungerande förståelse av de olika Ad
 
 * [[!DNL Real-time Customer Profile]](../profile/home.md): Ger en enhetlig konsumentprofil i realtid, baserad på aggregerade data från flera källor.
    * [Profilskyddsutkast](../profile/guardrails.md): Bästa tillvägagångssätt för att skapa datamodeller som stöds av [!DNL Profile].
-* [[!DNL Adobe Experience Platform Segmenteringstjänst]](./home.md): Gör att ni kan skapa segment utifrån [!DNL Real-time Customer Profile] data.
+* [[!DNL Adobe Experience Platform Segmentation Service]](./home.md): Gör att ni kan skapa segment utifrån [!DNL Real-time Customer Profile] data.
 * [[!DNL Experience Data Model (XDM)]](../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grundläggande om schemakomposition](../xdm/schema/composition.md#union): Lär dig de bästa sätten att skapa scheman som ska användas i Experience Platform.
 
