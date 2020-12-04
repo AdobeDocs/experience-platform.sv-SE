@@ -7,7 +7,7 @@ description: När ni utvecklar er segmentdefinition kan ni använda verktygen f�
 translation-type: tm+mt
 source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '777'
+source-wordcount: '773'
 ht-degree: 1%
 
 ---
@@ -172,7 +172,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `results` | En lista över enhets-ID:n, tillsammans med deras relaterade identiteter. Länkarna som anges kan användas för att söka efter de angivna entiteterna med hjälp av API:t [[!DNL Profile Access]](../../profile/api/entities.md). |
+| `results` | En lista över enhets-ID:n, tillsammans med deras relaterade identiteter. De angivna länkarna kan användas för att söka efter de angivna entiteterna med hjälp av [[!DNL Profile Access API]](../../profile/api/entities.md). |
 
 ## Hämta resultaten från ett specifikt uppskattningsjobb {#get-estimate}
 
