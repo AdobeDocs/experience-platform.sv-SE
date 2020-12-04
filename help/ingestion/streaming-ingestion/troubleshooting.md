@@ -7,7 +7,7 @@ description: Det här dokumentet innehåller svar på vanliga frågor om direktu
 translation-type: tm+mt
 source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '1006'
+source-wordcount: '1002'
 ht-degree: 0%
 
 ---
@@ -101,4 +101,4 @@ Om ett meddelande [!DNL Real-time Customer Profile] avvisas beror det troligtvis
 
 Det finns två typer av identitetsnamnutrymmen: standard och anpassad. När du använder anpassade namnutrymmen måste du kontrollera att namnutrymmet har registrerats i [!DNL Identity Service]. Mer information om hur du använder standardnamnutrymmen och anpassade namnutrymmen finns i Översikt över [](../../identity-service/namespaces.md) identitetsnamn.
 
-Du kan använda gränssnittet för [[!DNL Experience Platform]](https://platform.adobe.com) om du vill se mer information om varför ett meddelande inte kunde hämtas. Klicka **[!UICONTROL Monitoring]** i den vänstra navigeringen och visa sedan **[!UICONTROL Streaming end-to-end]** fliken för att se meddelandebatchar som direktuppspelats under en vald tidsperiod.
+Du kan använda för [[!DNL Experience Platform UI]](https://platform.adobe.com) att se mer information om varför ett meddelande inte kunde hämtas. Klicka **[!UICONTROL Monitoring]** i den vänstra navigeringen och visa sedan **[!UICONTROL Streaming end-to-end]** fliken för att se meddelandebatchar som direktuppspelats under en vald tidsperiod.
