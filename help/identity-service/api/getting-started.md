@@ -7,7 +7,7 @@ description: 'Adobe Experience Platform Identity Service hanterar identifieringe
 translation-type: tm+mt
 source-git-commit: fa667d86c089c692f22cfd1b46f3f11b6e9a68d7
 workflow-type: tm+mt
-source-wordcount: '754'
+source-wordcount: '742'
 ht-degree: 1%
 
 ---
