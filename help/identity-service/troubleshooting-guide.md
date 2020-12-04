@@ -104,7 +104,7 @@ Identiteter refereras i API-anrop antingen av deras sammansatta identitet eller 
 
 ## Hur hanterar Identity Service personligt identifierbar information (PII)?
 
-Identitetstjänsten skapar en stark, envägs kryptografisk hash av PII-filen innan beständiga värden används. Identitetsdata i namnutrymmena&quot;Telefon&quot; och&quot;E-post&quot; hashas automatiskt med SHA-256, där värdena&quot;E-post&quot; automatiskt konverteras till gemener före hashning.
+Identitetstjänsten skapar en stark, envägs kryptografisk hash av PII-filen innan beständiga värden används. Identitetsdata i namnutrymmena &quot;Telefon&quot; och &quot;E-post&quot; hashas automatiskt med SHA-256, där värdena &quot;E-post&quot; automatiskt konverteras till gemener före hashning.
 
 ## Ska jag kryptera alla PII-filer innan jag skickar till plattformen?
 
