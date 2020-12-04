@@ -21,7 +21,7 @@ Det här dokumentet innehåller allmän vägledning om hur du konfigurerar data�
 
 ## Identiteter och namnutrymmen
 
-När en kund kan interagera med ert varumärke via flera olika kanaler kan det vara svårt att kombinera de olika identifierare som registreras från dessa många interaktioner. Detta kan i sin tur göra det svårt att avgöra vilka data som tillhör en viss person i dina [!DNL Experience Cloud] program.
+När en kund kan interagera med ert varumärke via flera olika kanaler kan det vara svårt att förena de olika identifierare som registreras från dessa många interaktioner. Detta kan i sin tur göra det svårt att avgöra vilka data som tillhör en viss person i dina [!DNL Experience Cloud] program.
 
 När du till exempel hanterar kunddatabegäranden i kan en identitet representera ett cookie-värde som angetts under en Adobe-kontrollerad domän, ett cookie-värde under en tredjepartsdomän och som delas med Adobe, eller en anpassad identifierare som du uttryckligen definierar inom IMS-organisationen. [!DNL Privacy Service]
 
