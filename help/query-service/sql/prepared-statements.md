@@ -86,7 +86,7 @@ SQL-frågan ovan returnerar följande svar:
 | id | förnamn | efternamn | födelsedatum | e-post | stad | land |
 |--- | --------- | -------- | --------- | ----- | ------- | ---- |
 | 10000 | alexander | davis | 1993-09-15 | example@example.com | Vancouver | Kanada |
-| 10001 | antoin | dubois | 1967-03-14 | is | Paris | Frankrike |
+| 10001 | antoin | dubois | 1967-03-14 | example2@example.com | Paris | Frankrike |
 | 10002 | kyoko | sakura | 1999-11-26 | example3@example.com | Tokyo | Japan |
 | 10003 | linus | pettersson | 1982-06-03 | example4@example.com | Stockholm | Sverige |
 | 10004 | aasir | mithaka | 1976-12-17 | example5@example.com | Nairobi | Kenya |
@@ -109,7 +109,7 @@ När det anropas ser du exakt samma resultat som tidigare:
 | id | förnamn | efternamn | födelsedatum | e-post | stad | land |
 |--- | --------- | -------- | --------- | ----- | ------- | ---- |
 | 10000 | alexander | davis | 1993-09-15 | example@example.com | Vancouver | Kanada |
-| 10001 | antoin | dubois | 1967-03-14 | is | Paris | Irland |
+| 10001 | antoin | dubois | 1967-03-14 | example2@example.com | Paris | Frankrike |
 | 10002 | kyoko | sakura | 1999-11-26 | example3@example.com | Tokyo | Japan |
 | 10003 | linus | pettersson | 1982-06-03 | example4@example.com | Stockholm | Sverige |
 | 10004 | aasir | mithaka | 1976-12-17 | example5@example.com | Nairobi | Kenya |
