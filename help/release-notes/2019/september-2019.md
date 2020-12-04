@@ -7,7 +7,7 @@ author: ens28527
 translation-type: tm+mt
 source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '542'
+source-wordcount: '532'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
-* [[!DNL-datainmatning]](#ingestion)
+* [[!DNL Data Ingestion]](#ingestion)
 * [[!DNL Data Science Workspace]](#dsw)
 * [[!DNL Query Service]](#query)
 
