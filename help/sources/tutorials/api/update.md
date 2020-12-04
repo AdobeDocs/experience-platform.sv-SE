@@ -8,7 +8,7 @@ description: I den här självstudiekursen beskrivs stegen för hur du uppdatera
 translation-type: tm+mt
 source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
-source-wordcount: '713'
+source-wordcount: '709'
 ht-degree: 1%
 
 ---
@@ -20,7 +20,7 @@ Med Adobe Experience Platform kan data hämtas från externa källor samtidigt s
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudiekursen beskrivs stegen för uppdatering av anslutningsinformation, inklusive namn, beskrivning och autentiseringsuppgifter med API:t för [[!DNL Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
+I den här självstudiekursen beskrivs stegen för uppdatering av anslutningsinformation, inklusive namn, beskrivning och autentiseringsuppgifter med hjälp av [[!DNL Flow Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
 ## Komma igång
 
