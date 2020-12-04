@@ -9,12 +9,12 @@ translation-type: tm+mt
 source-git-commit: cea3e2f32d9489f5f06be70581bd974b9374646d
 workflow-type: tm+mt
 source-wordcount: '128'
-ht-degree: 10%
+ht-degree: 14%
 
 ---
 
 
-# Adobe Experience Platform Web SDK {#edge}
+# Webb-SDK för Adobe Experience Platform {#edge}
 
 * [Web SDK - översikt](home.md)
 * Grundläggande {#fundamentals}
