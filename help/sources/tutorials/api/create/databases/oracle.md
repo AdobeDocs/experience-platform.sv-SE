@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics;Oracle;oracle
 solution: Experience Platform
-title: Skapa en Oracle-koppling med API:t för Flow Service
+title: Skapa en Oracle-anslutning med API:t för Flow Service
 topic: overview
 type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Oracle till Experience Platform.
