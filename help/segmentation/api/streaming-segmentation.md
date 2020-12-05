@@ -5,9 +5,9 @@ title: Direktuppspelningssegmentering
 topic: developer guide
 description: Det här dokumentet innehåller exempel på hur du använder direktuppspelningssegmentering med API:t för direktuppspelningssegmentering.
 translation-type: tm+mt
-source-git-commit: 578579438ca1d6a7a8c0a023efe2abd616a6dff2
+source-git-commit: 2bd4b773f7763ca408b55e3b0e2d0bbe9e7b66ba
 workflow-type: tm+mt
-source-wordcount: '1359'
+source-wordcount: '1310'
 ht-degree: 0%
 
 ---
@@ -80,20 +80,17 @@ För att ett segment ska kunna utvärderas med hjälp av direktuppspelningssegme
 | Inkommande träde som refererar till en profil inom ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse och ett eller flera profilattribut. |
 | Flera händelser som refererar till en profil | Alla segmentdefinitioner som refererar till flera händelser **under de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. |
 
-I följande avsnitt visas exempel på segmentdefinitioner som **inte** kommer att aktiveras för direktuppspelningssegmentering.
+En segmentdefinition aktiveras **inte** för direktuppspelningssegmentering i följande scenarier:
 
-| Frågetyp | Detaljer |
-| ---------- | ------- | 
-| Inkommande träde som refererar till en profil i ett relativt fönster | En segmentdefinition som innehåller Adobe Audience Manager-segment (AAM) eller egenskaper. |
-| Flera händelser som refererar till en profil | En segmentdefinition som innehåller Adobe Audience Manager-segment (AAM) eller egenskaper. |
-| Flerenhetsfrågor | Flerenhetsfrågor stöds **inte** av direktuppspelningssegmentering som helhet. |
+- Segmentdefinitionen innehåller Adobe Audience Manager (AAM) segment eller egenskaper.
+- Segmentdefinitionen innehåller flera enheter (frågor om flera enheter).
 
 Dessutom gäller vissa riktlinjer för direktuppspelningssegmentering:
 
 | Frågetyp | Riktlinje |
 | ---------- | -------- |
 | Enkel händelsefråga | Det finns inga begränsningar för uppslagsfönstret. |
-| Fråga med händelsehistorik | <ul><li>Fönstret för att titta tillbaka är begränsat till **en dag**.</li><li>Det **måste** finnas ett strikt ordningsvillkor mellan händelserna.</li><li>Endast enkla tidsinställningar (före och efter) mellan händelserna tillåts.</li><li>De enskilda händelserna **kan inte** negeras. Hela frågan **kan** dock negeras.</li></ul> |
+| Fråga med händelsehistorik | <ul><li>Uppslagsfönstret är begränsat till **en dag**.</li><li>Det **måste** finnas ett strikt tidsordningsvillkor mellan händelserna.</li><li>Frågor med minst en negerad händelse stöds. Hela händelsen **kan dock inte** vara en negation.</li></ul> |
 
 ## Hämta alla segment som är aktiverade för direktuppspelningssegmentering
 
