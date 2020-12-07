@@ -2,11 +2,11 @@
 product: experience-platform
 audience: user
 user-guide-title: Destinationshandbok
-user-guide-description: Infoga beskrivning av destinationer här.
+user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 translation-type: tm+mt
-source-git-commit: eccf962fd9a24e6b5085f706766693ee7e468aea
+source-git-commit: 395a8c2aa7fc89cde04263dbbfb3315318245ef6
 workflow-type: tm+mt
-source-wordcount: '415'
+source-wordcount: '429'
 ht-degree: 0%
 
 ---
