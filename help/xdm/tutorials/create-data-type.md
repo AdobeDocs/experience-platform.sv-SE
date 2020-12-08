@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: I den här självstudien används användargränssnittet för Experience Platform för att vägleda dig genom stegen för att skapa en anpassad datatyp.
 translation-type: tm+mt
-source-git-commit: 9008b49e1eb5e32b0f4cda7049bf873c689f6442
+source-git-commit: bfb65743764b454754ca8ebb01bfe4407833b291
 workflow-type: tm+mt
 source-wordcount: '1215'
 ht-degree: 0%
@@ -26,7 +26,7 @@ I den här självstudiekursen beskrivs stegen för att skapa och redigera anpass
 
 Den här självstudiekursen kräver en fungerande förståelse för XDM System. Se översikten över [](../home.md) XDM för en introduktion till XDM:s roll i ekosystemet Experience Platform och [grunderna i schemakomposition](../schema/composition.md) för hur datatyper bidrar till XDM-scheman.
 
-Även om det inte krävs för den här självstudiekursen rekommenderar vi att du också följer självstudiekursen om hur du [komponerar ett schema i användargränssnittet](./-schema-ui.md) för att bekanta dig med de olika funktionerna i [!DNL Schema Editor].
+Även om det inte krävs för den här självstudiekursen rekommenderar vi att du också följer självstudiekursen om hur du [komponerar ett schema i användargränssnittet](./create-schema-ui.md) för att bekanta dig med de olika funktionerna i [!DNL Schema Editor].
 
 ## Öppna [!DNL Schema Editor] för en datatyp
 
