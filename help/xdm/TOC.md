@@ -5,10 +5,10 @@ user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: Datamodellguide (XDM)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och mixins för att standardisera upplevelsedata.
 translation-type: tm+mt
-source-git-commit: 321dc16a1296aeb28ba78825f191a0368df16547
+source-git-commit: 1a4dd167ecd4f4f61ffe26af786b355e4561b30d
 workflow-type: tm+mt
-source-wordcount: '181'
-ht-degree: 6%
+source-wordcount: '184'
+ht-degree: 5%
 
 ---
 
@@ -22,7 +22,7 @@ ht-degree: 6%
    * [Begränsningar för XDM-fälttyp](schema/field-constraints.md)
    * [XDM-fältordlista](schema/field-dictionary.md)
    * Användningsexempel för schema {#use-cases}
-      * [Integritet och samtycke](schema/privacy-consent.md)
+      * [Datatypen Innehåll och inställningar](schema/privacy-consent.md)
 * Klasser {#classes}
    * [Individuell XDM-profil](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
@@ -40,6 +40,7 @@ ht-degree: 6%
 * Datatyper {#data-types}
    * [Beacon](./data-types/beacon.md)
    * [Webbläsarinformation](./data-types/browser-details.md)
+   * [Innehåll och inställningar](./data-types/consents.md)
    * [Enhet](./data-types/device.md)
    * [E-postadress](./data-types/email-address.md)
    * [Miljö](./data-types/environment.md)
