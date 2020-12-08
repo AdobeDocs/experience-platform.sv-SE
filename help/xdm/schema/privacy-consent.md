@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API;consent;Consent;preferences;Preferences;privacyOptOuts;marketingPreferences;optOutType;basisOfProcessing;consent;Consent
-title: Översikt över mixning av sekretess
+title: Datatypen Innehåll och inställningar
 description: Datatypen Privacy/Marketing Preferences (Consent) är avsedd att stödja insamling av kundbehörigheter och preferenser som genereras av CMP (Consent Management Platforms) och andra källor från era dataåtgärder.
 topic: guide
 translation-type: tm+mt
-source-git-commit: ba045a635f840c62980288a1a3ad5015f54121da
+source-git-commit: 1a4dd167ecd4f4f61ffe26af786b355e4561b30d
 workflow-type: tm+mt
-source-wordcount: '2022'
+source-wordcount: '2023'
 ht-degree: 0%
 
 ---
@@ -18,10 +18,6 @@ Datatypen (nedan kallad&quot; [!DNL Privacy/Marketing Preferences (Consent)] dat
 
 Detta dokument omfattar strukturen och den avsedda användningen av de fält som anges av [!DNL Consents & Preferences] datatypen.
 
->[!IMPORTANT]
->
->Datatypen är avsedd att omfatta en rad olika användningsområden för samtycke och preferenshantering. [!DNL Consents & Preferences] Därför beskriver det här dokumentet användningen av datatypens fält i allmänna termer och ger bara förslag på hur du ska tolka användningen av dessa fält. Kontakta ditt juridiska team för sekretess för att anpassa datatypens struktur till hur din organisation tolkar och presenterar dessa samtycke och preferenser för dina kunder.
-
 ## Förutsättningar {#prerequisites}
 
 Det här dokumentet kräver en fungerande förståelse av XDM och användningen av scheman i [!DNL Experience Platform]. Läs följande dokumentation innan du fortsätter:
@@ -30,6 +26,10 @@ Det här dokumentet kräver en fungerande förståelse av XDM och användningen 
 * [Grunderna för schemakomposition](http://www.adobe.com/go/xdm-schema-best-practices-en)
 
 ## Datatypstruktur {#structure}
+
+>[!IMPORTANT]
+>
+>Datatypen är avsedd att omfatta en rad olika användningsområden för samtycke och preferenshantering. [!DNL Consents & Preferences] Därför beskriver det här dokumentet användningen av datatypens fält i allmänna termer och ger bara förslag på hur du ska tolka användningen av dessa fält. Kontakta ditt juridiska team för sekretess för att anpassa datatypens struktur till hur din organisation tolkar och presenterar dessa samtycke och preferenser för dina kunder.
 
 Datatypen [!DNL Consents & Preferences] innehåller flera fält som används för att samla in **information om samtycke** och **inställningar** .
 
