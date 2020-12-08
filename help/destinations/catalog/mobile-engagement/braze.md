@@ -5,9 +5,9 @@ seo-title: Braze destination
 description: Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar.
 seo-description: Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar.
 translation-type: tm+mt
-source-git-commit: 9380c9c24267f815b788eb51949da13b8c47558f
+source-git-commit: 6b19cfa3c4a5327b6b7543123f631d0355995f09
 workflow-type: tm+mt
-source-wordcount: '872'
+source-wordcount: '900'
 ht-degree: 0%
 
 ---
@@ -33,6 +33,10 @@ Observera följande information som är specifik för [!DNL Braze] målet:
 
 * Du kan skicka vilken [identitet](../../../identity-service/namespaces.md) som helst till [!DNL Braze] målet, förutsatt att du mappar den till [!DNL Braze][`external_id`](https://www.braze.com/docs/api/basics/#external-user-id-explanation).
 * [!DNL Adobe Experience Platform] segment exporteras till [!DNL Braze] under `AdobeExperiencePlatformSegments` attributet.
+
+>[!NOTE]
+>
+>Tänk på att om du skickar ytterligare anpassade attribut till [!DNL Braze] kan det leda till ökad [!DNL Braze] datapunktsförbrukning. Kontakta din [!DNL Braze] kontoansvarige innan du skickar ytterligare anpassade attribut.
 
 ## Användningsfall {#use-cases}
 
