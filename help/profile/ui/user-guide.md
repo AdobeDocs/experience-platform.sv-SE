@@ -4,9 +4,9 @@ title: Användargränssnittsguide för kundprofiler i realtid
 topic: guide
 description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofiler i realtid i Adobe Experience Platform användargränssnitt.
 translation-type: tm+mt
-source-git-commit: 295315ab052ff151bea9037567bf2690d705367b
+source-git-commit: b991a767f34f0e318b9ca5092fd4cf099de11e0a
 workflow-type: tm+mt
-source-wordcount: '1210'
+source-wordcount: '1267'
 ht-degree: 0%
 
 ---
@@ -26,9 +26,19 @@ Den här gränssnittshandboken kräver förståelse för de olika [!DNL Experien
 
 ## Översikt
 
-I [[!DNL Experience Platform] användargränssnittet](http://platform.adobe.com)väljer du **[!UICONTROL Profiles]** i den vänstra navigeringen för att öppna **[!UICONTROL Overview]** fliken. På den här fliken finns länkar till dokumentation och videoklipp som hjälper dig att förstå och börja arbeta med profiler.
+I användargränssnittet för Experience Platform väljer du **[!UICONTROL Profiles]** i den vänstra navigeringen för att öppna **[!UICONTROL Overview]** fliken. På den här fliken finns länkar till dokumentation och videoklipp som hjälper dig att förstå och börja arbeta med profiler.
 
 ![](../images/user-guide/profiles-overview.png)
+
+### (Alfa) Kontrollpanel för profil
+
+>[!IMPORTANT]
+>
+>Instrumentpanelsfunktionen är för närvarande alfavärden och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+
+För vissa användare kan du välja **[!UICONTROL Profiles]** i den vänstra navigeringen och öppna **[!UICONTROL Overview]** fliken med en instrumentpanel som visar viktiga mått relaterade till dina profildata.
+
+Mer information finns i guiden [för](profile-dashboard.md)profilkontrollpanelen.
 
 ## Bläddra
 
