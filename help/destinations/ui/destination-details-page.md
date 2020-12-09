@@ -5,9 +5,9 @@ seo-title: Sidan Destinationsinformation
 description: 'På informationssidan för ett enskilt mål finns en översikt över målinformationen, t.ex. målnamn, ID, segment som är mappade till målet samt kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet. '
 seo-description: 'På informationssidan för ett enskilt mål finns en översikt över målinformationen, t.ex. målnamn, ID, segment som är mappade till målet samt kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet. '
 translation-type: tm+mt
-source-git-commit: 5f120a716cc3396ef7749463bb6052a8ced2fbb4
+source-git-commit: 8ac368081c37ca5bfc2cc3382774a912e8ad68eb
 workflow-type: tm+mt
-source-wordcount: '639'
+source-wordcount: '691'
 ht-degree: 0%
 
 ---
@@ -29,6 +29,10 @@ Målets informationssida visas med de tillgängliga kontrollerna. Om du visar in
 
 ![](../assets/ui/details-page/details.png)
 
+På fliken Bläddra kan du dessutom välja att ta bort det markerade dataflödet genom att markera ![papperskorgsikonen](../assets/ui/details-page/trash-icon.png) . Alla segment som aktiveras för ett mål mappas om innan dataflödet tas bort.
+
+![](../assets/ui/details-page/delete-flow.png)
+
 ## Höger räl
 
 Den högra listen visar grundläggande information om målet.
@@ -40,6 +44,7 @@ Följande tabell omfattar de kontroller och den information som tillhandahålls 
 | Högerrälsartikel | Beskrivning |
 | --- | --- |
 | [!UICONTROL Activate] | Välj den här kontrollen om du vill redigera vilka segment som mappas till målet. Mer information finns i guiden om hur du [aktiverar segment till ett mål](./activate-destinations.md) . |
+| [!UICONTROL Delete] | Gör att du kan ta bort det här dataflödet och ta bort mappningar för segment som tidigare har aktiverats, om det finns några. |
 | [!UICONTROL Destination name] | Det här fältet kan redigeras för att uppdatera målets namn. |
 | [!UICONTROL Description] | Det här fältet kan redigeras för att uppdatera eller lägga till en valfri beskrivning till målet. |
 | [!UICONTROL Destination] | Representerar målplattformen som målgrupperna skickas till. Mer information finns i [målkatalogen](../catalog/overview.md) . |
@@ -75,11 +80,11 @@ Om du vill visa information om ett visst dataflöde väljer du körningens start
 
 ![](../assets/ui/details-page/dataflow.png)
 
-## [!UICONTROL Segments]
+## [!UICONTROL Activation data]
 
-På fliken [!UICONTROL Segments] visas en lista med segment som har mappats till målet, inklusive startdatum och slutdatum (om tillämpligt). Om du vill visa information om ett visst segment väljer du dess namn i listan.
+På fliken [!UICONTROL Activation data] visas en lista med segment som har mappats till målet, inklusive startdatum och slutdatum (om tillämpligt). Om du vill visa information om ett visst segment väljer du dess namn i listan.
 
-![](../assets/ui/details-page/segments.png)
+![](../assets/ui/details-page/activation-data.png)
 
 >[!NOTE]
 >
