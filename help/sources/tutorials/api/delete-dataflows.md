@@ -4,11 +4,11 @@ solution: Experience Platform
 title: Ta bort ett dataflöde med API:t för Flow Service
 topic: overview
 type: Tutorial
-description: I den här självstudien beskrivs stegen för hur du tar bort ett dataflöde med API:t för Flow Service.
+description: I den här självstudiekursen beskrivs stegen för att ta bort batch- och direktuppspelade dataflöden med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: ae3e64a5f9a82c0efe3cffeb6d4d425ae2e72bda
+source-git-commit: b63b17f2a7271fc673abc8245a4917c0daca4ef3
 workflow-type: tm+mt
-source-wordcount: '449'
+source-wordcount: '467'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,9 @@ ht-degree: 1%
 
 # Ta bort ett dataflöde med API:t för Flow Service
 
-I den här självstudiekursen beskrivs stegen för att ta bort dataflöden som skapats med både batch- och direktuppspelningskällor med hjälp av [[!DNL Flow Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
+Du kan ta bort batch- och direktuppspelade dataflöden som innehåller fel eller har blivit föråldrade med [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
+
+I den här självstudiekursen beskrivs stegen för att ta bort dataflöden som skapats med både batch- och direktuppspelningskällor med [!DNL Flow Service].
 
 ## Komma igång
 
