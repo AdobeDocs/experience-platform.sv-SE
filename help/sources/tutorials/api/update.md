@@ -4,11 +4,11 @@ solution: Experience Platform
 title: Uppdatera anslutningsinformation med API:t för Flow Service
 topic: overview
 type: Tutorial
-description: I den här självstudiekursen beskrivs stegen för hur du uppdaterar anslutningsinformationen, inklusive namn, beskrivning och autentiseringsuppgifter med API:t för Flow Service.
+description: Under vissa omständigheter kan det vara nödvändigt att uppdatera informationen för en befintlig källanslutning. Med API:t för Flow Service kan du lägga till, redigera och ta bort information om en befintlig batch- eller direktuppspelningsanslutning, inklusive namn, beskrivning och autentiseringsuppgifter.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: d1a9f7d0c83b8bb34e26b6e5a9825488e62b43de
 workflow-type: tm+mt
-source-wordcount: '709'
+source-wordcount: '696'
 ht-degree: 1%
 
 ---
@@ -16,11 +16,9 @@ ht-degree: 1%
 
 # Uppdatera anslutningsinformation med API:t för Flow Service
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Under vissa omständigheter kan det vara nödvändigt att uppdatera informationen för en befintlig källanslutning. [!DNL Flow Service] ger dig möjlighet att lägga till, redigera och ta bort information om en befintlig batch- eller direktuppspelningsanslutning, inklusive namn, beskrivning och autentiseringsuppgifter.
 
-[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
-
-I den här självstudiekursen beskrivs stegen för uppdatering av anslutningsinformation, inklusive namn, beskrivning och autentiseringsuppgifter med hjälp av [[!DNL Flow Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
+I den här självstudiekursen beskrivs stegen för hur du uppdaterar information och autentiseringsuppgifter för en befintlig anslutning med hjälp av [[!DNL Flow Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
 ## Komma igång
 
