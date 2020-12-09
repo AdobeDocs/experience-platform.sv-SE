@@ -5,9 +5,9 @@ title: XDM - systemöversikt
 topic: overview
 description: 'Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. Experience Data Model (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering. '
 translation-type: tm+mt
-source-git-commit: d96890fd79acaa09628dbba49ee6930ed4f9d0e6
+source-git-commit: b0b2f0c5aa91a5aeb5836d9795a580ccc69e3e17
 workflow-type: tm+mt
-source-wordcount: '1584'
+source-wordcount: '1581'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Mer information om schemakompositionsmodellen, inklusive designprinciper och bä
 
 ### [!DNL Schema Registry] och [!DNL Schema Library]
 
-Det **[!DNL Schema Registry]** innehåller ett användargränssnitt och RESTful API som du kan använda för att visa och hantera alla schemarelaterade resurser i Adobe Experience Platform **[!DNL Schema Library]**. Det [!DNL Schema Library] innehåller standardresurser från Adobe och resurser från [!DNL Experience Platform] partners och leverantörer vars program du använder. Användargränssnittet och API:t för schemaregister kan också användas för att skapa och hantera nya scheman och resurser som är unika för din organisation.
+Det **[!DNL Schema Registry]** innehåller ett användargränssnitt och RESTful API som du kan använda för att visa och hantera alla schemarelaterade resurser i Adobe Experience Platform **[!DNL Schema Library]**. Det [!DNL Schema Library] innehåller resurser som blivit tillgängliga av Adobe och resurser från [!DNL Experience Platform] partners och leverantörer vars program du använder. Användargränssnittet och API:t för schemaregister kan också användas för att skapa och hantera nya scheman och resurser som är unika för din organisation.
 
 En utförlig guide till de viktigaste åtgärderna i [!DNL Schema Registry]finns i Utvecklarhandbok [för](api/getting-started.md)schemaregister.
 
@@ -46,7 +46,7 @@ Data som är avsedda att användas i [!DNL Experience Platform] är grupperade i
 
 Alla XDM-scheman beskriver data som kan kategoriseras som post- eller tidsserier. Databeteendet för ett schema definieras av schemats klass, som tilldelas till ett schema när det skapas första gången. XDM-klasser beskriver det minsta antal egenskaper ett schema måste innehålla för att representera ett visst databeteende.
 
-Även om du kan definiera egna klasser i [!DNL Schema Registry]bör du använda de klasser du föredrar **[!DNL XDM Individual Profile]** och **[!DNL XDM ExperienceEvent]** för data i post- och tidsserier. Dessa klasser beskrivs mer ingående nedan.
+Även om du kan definiera egna klasser i [!DNL Schema Registry]bör du använda de klasser du föredrar **[!DNL XDM Individual Profile]** och **[!DNL XDM ExperienceEvent]** för post- och tidsseriedata. Dessa klasser beskrivs mer ingående nedan.
 
 ### [!DNL XDM Individual Profile] {#xdm-individual-profile}
 
@@ -68,7 +68,7 @@ Experience Events kan vara antingen explicita eller implicita. Explicit händels
 
 ## XDM-scheman och - [!DNL Experience Platform] tjänster
 
-[!DNL Experience Platform] är schemagnostiska, vilket innebär att alla scheman som uppfyller XDM-standarden är tillgängliga för användning av [!DNL Platform] tjänster. Hur olika [!DNL Platform] tjänster använder scheman beskrivs närmare nedan.
+[!DNL Experience Platform] är schemagnostiska, vilket innebär att alla scheman som följer XDM-standarden är tillgängliga för användning av [!DNL Platform] tjänster. Hur olika [!DNL Platform] tjänster använder scheman beskrivs närmare nedan.
 
 ### [!DNL Catalog Service], [!DNL Data Ingestion] &amp; [!DNL Data Lake]
 
