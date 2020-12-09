@@ -5,7 +5,7 @@ title: Adobe Experience Platform Identity Service
 topic: tutorial
 description: Ett identitetsdiagram är en karta över relationer mellan olika identiteter för en viss kund, vilket ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler.
 translation-type: tm+mt
-source-git-commit: ef1025dfacc91b13c064db99e6304f2c09abb3d9
+source-git-commit: 7c52760bdceb8d45d76cd22d69241f8c23943674
 workflow-type: tm+mt
 source-wordcount: '871'
 ht-degree: 1%
@@ -55,7 +55,7 @@ Identitetsdiagramvisningsprogrammet visas. Till vänster på skärmen finns iden
 
 >[!IMPORTANT]
 >
->Ett identitetsdiagram kräver minst två länkade identiteter att generera, samt ett giltigt namnutrymme och ID-par. Det maximala antalet identiteter som diagramvisningsprogrammet kan visa är 400. Mer information finns i avsnittet [Bilaga](#appendix) nedan.
+>Ett identitetsdiagram kräver minst två länkade identiteter att generera, samt ett giltigt namnutrymme och ID-par. Det maximala antalet identiteter som diagramvisningsprogrammet kan visa är 150. Mer information finns i avsnittet [Bilaga](#appendix) nedan.
 
 ![identitetsdiagram](../images/identity-graph-viewer/graph-viewer.png)
 
@@ -101,7 +101,7 @@ Fel kan inträffa vid åtkomst till identitetsdiagramvisningsprogrammet. Nedan f
 
 - Ett identitetsvärde måste finnas i det valda namnutrymmet.
 - Identitetsdiagramvisningsprogrammet kräver minst två länkade identiteter för att kunna generera.
-- Identitetsdiagramvisningsprogrammet får inte överskrida maximalt 400 identiteter.
+- Identitetsdiagramvisningsprogrammet får inte överskrida det maximala antalet 150 identiteter.
 - Identitetsdiagramvisningsprogrammet är för närvarande inte tillgängligt i icke-produktionssandlådor.
 - Identitetsdiagramvisningsprogrammet har för närvarande bara stöd för batchimport av data och visar inte data som importerats med direktuppspelningskällor.
 
