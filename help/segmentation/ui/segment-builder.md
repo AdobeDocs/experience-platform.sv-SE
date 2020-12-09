@@ -5,7 +5,7 @@ title: Användarhandbok för Segmentering Service Segment Builder
 topic: ui guide
 description: 'I Segment Builder finns en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper. '
 translation-type: tm+mt
-source-git-commit: beacce03136e1620ff57fb549f335d2199bb6001
+source-git-commit: 761a212abc407fac5bc59c6f5a57c6c17c932230
 workflow-type: tm+mt
 source-wordcount: '1719'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 ---
 
 
-# [!DNL Segment Builder] användarhandbok
+# [!DNL Segment Builder] Användargränssnittsguide
 
 [!DNL Segment Builder] innehåller en omfattande arbetsyta som gör att du kan interagera med [!DNL Profile] dataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 
