@@ -1,69 +1,66 @@
 ---
 keywords: Experience Platform;home;popular topics; delete dataflows
-description: Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudien beskrivs hur du tar bort dataflöden från arbetsytan Källor.
+description: På arbetsytan för källor kan du ta bort befintliga grupper och strömmande dataflöden som innehåller fel eller har blivit föråldrade.
 solution: Experience Platform
 title: Ta bort dataflöden
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: e327a3e195d97c0b547608f360c5b0b6a8aded61
+source-git-commit: 7cb5862112c80e386e697aa2bd503abe49f11a3f
 workflow-type: tm+mt
-source-wordcount: '432'
-ht-degree: 0%
+source-wordcount: '349'
+ht-degree: 1%
 
 ---
 
 
-# Ta bort dataflöden
+# Ta bort dataflöden i användargränssnittet
 
-Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du tar bort dataflöden från **[!UICONTROL Sources]** arbetsytan.
+På arbetsytan kan du ta bort befintliga grupper och strömmande dataflöden som innehåller fel eller har blivit föråldrade. [!UICONTROL Sources]
+
+I den här självstudiekursen beskrivs hur du tar bort dataflöden med hjälp av [!UICONTROL Sources] arbetsytan.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [[!DNL Experience Data Model (XDM)] System](../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
-   - [Grundläggande om schemakomposition](../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   - [Schemaredigeraren, genomgång](../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
-- [[!DNL Real-time Customer Profile]](../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+- [Källor](../../home.md): [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster.
+- [Sandlådor](../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-## Ta bort dataflöden med användargränssnittet
+## Ta bort dataflöden
 
-Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt **[!UICONTROL Sources]** arbetsytan. På **[!UICONTROL Catalog]** skärmen visas en mängd olika källor som du kan skapa konton och dataflöden med. Varje källa visar antalet befintliga konton och dataflöden som är kopplade till dem.
+I användargränssnittet [för](https://platform.adobe.com)Experience Platform väljer du **[!UICONTROL Sources]** i den vänstra navigeringen för att få åtkomst till [!UICONTROL Sources] arbetsytan och väljer sedan **[!UICONTROL Dataflows]** i den övre rubriken.
 
-Markera **[!UICONTROL Dataflows]** för att komma åt **[!UICONTROL Dataflows]** sidan.
+![katalog](../../images/tutorials/delete/catalog.png)
 
-![dataset-flow-activity](../../images/tutorials/delete/dataflows.png)
+Sidan visas **[!UICONTROL Dataflows]** . På den här sidan finns en lista med visningsbara dataflöden, inklusive information om måldatauppsättningen, källan, kontonamnet och datumet då de skapades.
 
-En lista över befintliga dataflöden visas. På den här sidan finns en lista med sorterbar information för befintliga dataflöden, t.ex. källa, användarnamn, körningsstatus och senaste körningsdatum. Välj **kanalikonen** längst upp till vänster om du vill sortera.
+Välj filterikonen (![filterikonen](../../images/tutorials/delete/filter.png)) längst upp till vänster för att öppna sorteringspanelen.
 
-![dataflows-list](../../images/tutorials/delete/dataflows-list.png)
+![dataflöden](../../images/tutorials/delete/dataflows.png)
 
-Sorteringspanelen visas till vänster på skärmen och innehåller en lista med tillgängliga källor.
-Du kan välja mer än en källa med sorteringsfunktionen.
+Sorteringspanelen innehåller en lista med alla källor. Du kan välja mer än en källa i listan för att få tillgång till ett filtrerat urval av dataflöden som är kopplade till de särskilda källor du valde.
 
-Välj den källa som du vill komma åt och leta reda på det dataflöde som du vill ta bort från listan med dataflöden i huvudgränssnittet. I exemplet är den valda källan **[!DNL Azure Blob Storage]** och dataflödets namn är **[!UICONTROL Customer profiles dataflow]**. När du väljer flera källor från sorteringspanelen visas de senast skapade dataflödena först eftersom listan sorteras efter skapad den.
+Välj den källa som du vill arbeta med för att visa en lista över befintliga dataflöden. När du har identifierat dataflödet som du vill ta bort markerar du ellipserna (`...`) bredvid dataflödets namn.
 
-Markera det dataflöde som du vill ta bort.
+![dataflows-filter](../../images/tutorials/delete/dataflows-filter.png)
 
-![dataflows-sort](../../images/tutorials/delete/dataflows-sort.png)
+En listruta visas med alternativ för att redigera dataflödets schema, inaktivera dataflödet eller ta bort det helt.
 
-Panelen visas till höger på skärmen och innehåller information om det markerade dataflödet samt ett alternativ för att **[!UICONTROL Properties]** välja **[!UICONTROL Edit schedule]**.
-
-Om du vill ta bort dataflödet markerar du **[!UICONTROL Delete]**.
-
-![dataflows-sort](../../images/tutorials/delete/dataflows-properties.png)
-
-En slutgiltig bekräftelsedialogruta visas. Välj **[!UICONTROL Delete]** för att slutföra processen.
+Välj **[!UICONTROL Delete]** att ta bort dataflödet.
 
 ![delete](../../images/tutorials/delete/delete.png)
 
-Efter en stund visas en grön bekräftelseruta längst ned på skärmen som bekräftar att borttagningen lyckades.
+En slutgiltig bekräftelsedialogruta visas. Välj **[!UICONTROL Delete]** för att slutföra processen.
+
+![bekräfta](../../images/tutorials/delete/confirm.png)
+
+Efter en stund visas en bekräftelseruta längst ned på skärmen som bekräftar att borttagningen lyckades.
 
 ![bekräftad](../../images/tutorials/delete/confirmed.png)
 
 ## Nästa steg
 
-I den här självstudiekursen har du använt arbetsytan för att ta bort befintliga dataflöden **[!UICONTROL Sources]** .
+I den här självstudiekursen har du använt arbetsytan för att ta bort ett befintligt dataflöde [!UICONTROL Sources] .
 
-Anvisningar om hur du utför dessa åtgärder programmatiskt med API:t finns i självstudiekursen om hur du [!DNL Flow Service] [tar bort dataflöden med API:t för Flow Service](../../tutorials/api/delete-dataflows.md)
+I självstudiekursen om hur du [tar bort dataflöden med API:t](../../tutorials/api/delete-dataflows.md) för Flow Service finns anvisningar om hur du utför dessa åtgärder programmatiskt med API-anrop.
