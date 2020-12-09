@@ -1,22 +1,22 @@
 ---
-keywords: Experience Platform;home;popular topics;update accounts;
-description: null
+keywords: Experience Platform;home;popular topics;update accounts
+description: Under vissa omständigheter kan det vara nödvändigt att uppdatera informationen för ett befintligt källkonto. På arbetsytan Källor kan du lägga till, redigera och ta bort information om en befintlig batch- eller direktuppspelningsanslutning, inklusive namn, beskrivning och autentiseringsuppgifter.
 solution: Experience Platform
 title: Uppdatera kontoinformation i användargränssnittet
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 413687a0d9e790ea3f61a858002e9510216d7c34
+source-git-commit: 9b48bc1426e6259ea0b2cf9b420b55b92712f7c2
 workflow-type: tm+mt
-source-wordcount: '389'
-ht-degree: 1%
+source-wordcount: '424'
+ht-degree: 0%
 
 ---
 
 
 # Uppdatera kontoinformation i användargränssnittet
 
-Under vissa omständigheter kan det vara nödvändigt att uppdatera informationen för ett befintligt källkonto. På arbetsytan [!UICONTROL Sources] kan du redigera, lägga till och ta bort information om ett konto, inklusive värden för namn, beskrivning och autentiseringsuppgifter.
+Under vissa omständigheter kan det vara nödvändigt att uppdatera informationen för ett befintligt källkonto. På arbetsytan kan du lägga till, redigera och ta bort information om en befintlig batch- eller direktuppspelningsanslutning, inklusive namn, beskrivning och autentiseringsuppgifter. [!UICONTROL Sources]
 
 I den här självstudiekursen beskrivs hur du uppdaterar information och autentiseringsuppgifter för ett befintligt konto från [!UICONTROL Sources] arbetsytan.
 
@@ -24,14 +24,12 @@ I den här självstudiekursen beskrivs hur du uppdaterar information och autenti
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [[!DNL Experience Data Model (XDM)] System](../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
-   - [Grundläggande om schemakomposition](../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   - [Schemaredigeraren, genomgång](../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
-- [[!DNL Real-time Customer Profile]](../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+- [Källor](../../home.md): Med DNL Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
+- [Sandlådor](../../../sandboxes/home.md): DNL Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ## Uppdatera konton
 
-Logga in för att logga in på användargränssnittet [för](https://platform.adobe.com) Experience Platform och välj sedan **[!UICONTROL Sources]** från den vänstra navigeringen för att komma åt [!UICONTROL Sources] arbetsytan. Välj **[!UICONTROL Accounts]** i den övre rubriken om du vill visa befintliga konton.
+Logga in i användargränssnittet [för](https://platform.adobe.com) Experience Platform och välj sedan **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt [!UICONTROL Sources] arbetsytan. Välj **[!UICONTROL Accounts]** i den övre rubriken om du vill visa befintliga konton.
 
 ![katalog](../../images/tutorials/update/catalog.png)
 
