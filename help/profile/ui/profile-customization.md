@@ -4,7 +4,7 @@ title: Anpassning av profildetaljer
 description: 'Den här guiden innehåller stegvisa instruktioner för hur kundprofildata i realtid visas i Adobe Experience Platform användargränssnitt. '
 topic: guide
 translation-type: tm+mt
-source-git-commit: 9068d12e60da63a6a2a2ff18c016080ea581104f
+source-git-commit: d05884c87445ec16b0ad44f593cf782b8c80d646
 workflow-type: tm+mt
 source-wordcount: '1095'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 I Adobe Experience Platform användargränssnitt kan du visa och interagera med [!DNL Real-time Customer Profile] data i form av kundprofiler. Profilinformationen som visas i användargränssnittet har sammanfogats från flera profilfragment till en enda vy över varje enskild kund. Detta inkluderar information som grundläggande attribut, länkade identiteter och kanalinställningar. Standardfälten som visas i profiler kan också ändras på organisationsnivå för att visa önskade [!DNL Profile] attribut. Den här handboken innehåller stegvisa instruktioner för hur du anpassar hur [!DNL Profile] data visas i plattformens användargränssnitt.
 
-En fullständig guide till användargränssnittet för profiler finns i användarhandboken för [profiler](user-guide.md).
+En fullständig guide till användargränssnittet för profiler finns i [användargränssnittsguiden](user-guide.md)för profiler.
 
 ## Ändra ordning på och storlek på kort {#reorder-and-resize-cards}
 
