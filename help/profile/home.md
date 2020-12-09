@@ -4,9 +4,9 @@ title: Översikt över kundprofiler i realtid
 topic: guide
 description: Kundprofil i realtid är ett generiskt uppslagsarkiv som sammanfogar data från olika företagsdatatillgångar och sedan ger tillgång till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 translation-type: tm+mt
-source-git-commit: 47c65ef5bdd083c2e57254189bb4a1f1d9c23ccc
+source-git-commit: b8d6bd5caf6c6f4d1da218b6ca12cec154d64412
 workflow-type: tm+mt
-source-wordcount: '1820'
+source-wordcount: '1844'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,9 @@ Förhållandet mellan kundprofil i realtid och andra tjänster inom Experience P
 
 ### Profildatalager
 
-Även om inkapslade data [!DNL Real-time Customer Profile] bearbetas och Adobe Experience Platform används [!DNL Identity Service] för att sammanfoga relaterade data via identitetsmappning, behåller det sina egna data i [!DNL Profile] arkivet. Med andra ord är [!DNL Profile] arkivet skilt från [!DNL Catalog] data ([!DNL Data Lake]) och [!DNL Identity Service] data (identitetsdiagram).
+Även om inkapslade data [!DNL Real-time Customer Profile] bearbetas och Adobe Experience Platform används [!DNL Identity Service] för att sammanfoga relaterade data via identitetsmappning, behåller det sina egna data i [!DNL Profile] arkivet. Lagringen [!DNL Profile] är skild från [!DNL Catalog] data i [!DNL Data Lake] och [!DNL Identity Service] data i identitetsdiagrammet.
+
+Profilarkivet använder en Microsoft Azure Cosmos DB-infrastruktur och Platform Data Lake använder Microsoft Azure Data Lake-lagring.
 
 ### Profilskyddsutkast
 
@@ -34,7 +36,7 @@ Experience Platform tillhandahåller ett antal skyddsutkast som hjälper dig att
 
 [!DNL Real-time Customer Profile] sammanfogar data från olika affärssystem och ger sedan tillgång till dessa data i form av kundprofiler med relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler. I följande avsnitt beskrivs några av de grundläggande begrepp som du måste förstå för att effektivt kunna skapa och underhålla profiler inom plattformen.
 
-### Profilfragment jämfört med sammanslagna profiler
+### Profilfragment jämfört med sammanslagna profiler {#profile-fragments-vs-merged-profiles}
 
 Varje enskild kundprofil består av flera profilfragment som har sammanfogats till en enda vy av kunden. Om en kund till exempel interagerar med ert varumärke i flera kanaler kommer organisationen att ha flera profilfragment som är kopplade till den enskilda kunden som visas i flera datauppsättningar. När de här fragmenten hämtas till Platform sammanfogas de för att skapa en enda profil för kunden.
 
