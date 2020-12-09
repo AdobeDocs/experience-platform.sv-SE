@@ -5,9 +5,9 @@ title: Översikt över arbetsytan Datavetenskap
 topic: overview
 description: Den här guiden ger en översikt över de viktigaste begreppen som rör arbetsytan för datavetenskap.
 translation-type: tm+mt
-source-git-commit: 581d11bdb934f46c53a6703829b4dc470076e195
+source-git-commit: 8b1be4e94c147124fd26f4b877ca807177c9f5ff
 workflow-type: tm+mt
-source-wordcount: '2572'
+source-wordcount: '2371'
 ht-degree: 0%
 
 ---
@@ -120,35 +120,12 @@ När du är nöjd med ditt recept är det bara några klick att skapa en intelli
 
 Datavetare kan dra nytta av nya tekniker och datauppsättningar så snart de är tillgängliga via Adobe. Genom de regelbundna uppdateringarna arbetar vi med att integrera datauppsättningar och tekniker i plattformen, så att du inte behöver göra det.
 
-### Åtkomstkontroll i [!DNL Data Science Workspace]
-
-Åtkomstkontroll för [!DNL Experience Platform] administreras via [Adobe Admin Console](https://adminconsole.adobe.com). Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor. Mer information finns i [åtkomstkontrollsöversikten](../access-control/home.md) .
-
->[!IMPORTANT]
->
->För att kunna använda [!DNL Data Science Workspace]måste [!UICONTROL "Manage Data Science Workspace"] behörigheten vara aktiverad.
-
-I följande tabell visas effekterna av att ha den här behörigheten aktiverad eller inaktiverad:
-
-| Behörighet | Aktiverad | Handikappade |
-|---|---|---|
-| [!DNL Manage Data Science Workspace] | Ger åtkomst till alla tjänster i [!DNL Data Science Workspace]. | API- och gränssnittsåtkomst till alla tjänster i [!DNL Data Science Workspace] inaktiveras. När funktionen är inaktiverad går det inte att dirigera till [!DNL Data Science Workspace] och **[!UICONTROL Models]** **[!UICONTROL Services]** till sidor. |
-
 ### Säkerhet och sinnesfrid
 
 Att skydda era data är högsta prioritet för Adobe. Adobe skyddar era data med säkerhetsprocesser och kontroller som utvecklats för att hjälpa er att följa standarder, bestämmelser och certifieringar som godkänts av branschen.
 
 Säkerheten är inbyggd i programvara och tjänster som en del av Adobe Secure Product Lifecycle.
 Läs mer om Adobe data- och programvarusäkerhet, regelefterlevnad med mera på säkerhetssidan på https://www.adobe.com/security.html.
-
-### Stöd för sandlådor
-
-Sandlådor är virtuella partitioner i en enda instans av [!DNL Experience Platform]. Varje [!DNL Platform] instans har stöd för en produktionssandlåda och flera icke-produktionssandlådor, där varje instans har ett eget bibliotek med [!DNL Platform] resurser. Med icke-produktionssandlådor kan du testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka din produktionssandlåda. Mer information om sandlådor finns i översikten över [sandlådor](../sandboxes/home.md).
-
-För närvarande [!DNL Data Science Workspace] finns det några sandlådebegränsningar:
-
-- Beräkningsresurser delas mellan sandlådan för produktion och icke-produktionssandlådor. Isolering för produktionssandlådor kommer att tillhandahållas i framtiden.
-- Arbetsbelastningarna Scala/[!DNL Spark] och PySpark för både bärbara datorer och recept stöds för närvarande bara i produktionssandlådan. Stöd för icke-produktionssandlådor kommer att ges i framtiden.
 
 ## [!DNL Data Science Workspace] in action
 
