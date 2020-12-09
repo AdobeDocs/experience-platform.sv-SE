@@ -5,9 +5,9 @@ title: Utvecklarhandbok för API för schematabell
 description: 'Med API:t för schemaregister kan du programmässigt hantera alla scheman och tillhörande XDM-resurser som är tillgängliga i Experience Platform. '
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: d0e5865fddcf2592e9b6d8d4b2747bdceee6bda7
+source-git-commit: 33f9ee45e8dd649d23f9b3b4f03ecf00d8e18fd2
 workflow-type: tm+mt
-source-wordcount: '929'
+source-wordcount: '961'
 ht-degree: 0%
 
 ---
@@ -33,9 +33,13 @@ XDM-scheman representerar och validerar strukturen och formatet för data som h�
 
 En steg-för-steg-guide om hur du skapar ett fullständigt schema i API:t för schemaregister, inklusive hur du skapar och lägger till blandningar och datatyper, finns i självstudiekursen [för att skapa](../tutorials/create-schema-api.md)API-schema.
 
+## Beteenden
+
+Beteenden definierar den typ av data som ett schema beskriver. Varje XDM-klass måste referera till ett specifikt beteende, som alla scheman som använder den klassen ärver. Se [beteendeslutpunktshandboken](./behaviors.md) för att lära dig hur du visar tillgängliga beteenden i API:t.
+
 ## Klasser
 
-Klasser definierar de beteendeaspekter av data som ett schema innehåller (post- eller tidsserie). En klass avgör dessutom grundstrukturen för gemensamma egenskaper som alla scheman som baseras på den klassen måste innehålla. En schemaklass avgör vilka mixar som är berättigade att användas i schemat. Mer information om hur du arbetar med klasser i API finns i [klassernas slutpunktshandbok](./classes.md) .
+En klass definierar den grundläggande strukturen för gemensamma egenskaper som alla scheman baserade på den klassen måste innehålla, och avgör vilka mixar som kan användas i dessa scheman. Alla klasser måste kopplas till ett befintligt beteende. Mer information om hur du arbetar med klasser i API finns i [klassernas slutpunktshandbok](./classes.md) .
 
 ## Blandningar
 
@@ -47,7 +51,7 @@ Datatyper används som referenstypfält i klasser eller blandningar på samma s�
 
 ## Beskrivningar
 
-Beskrivningar är uppsättningar metadata som tilldelas specifika fält i ett schema, med olika sammanhangsberoende detaljer, inklusive hur dessa fält (och själva schemat) är relaterade till andra scheman. Varje schema kan ha en eller flera beskrivningsentiteter tillämpade och det finns flera olika beskrivningstyper som kan användas i olika syften. Mer information om hur du arbetar med beskrivningar i API:t finns i [beskrivningens slutpunktshandbok](./descriptors.md) , samt en översikt över de olika beskrivningstyperna och deras användningsfall.
+Beskrivare är uppsättningar metadata som tilldelas till specifika fält i ett schema, och ger olika sammanhangsberoende detaljer, inklusive hur dessa fält (och själva schemat) är relaterade till andra scheman. Varje schema kan ha en eller flera beskrivningsentiteter tillämpade och det finns flera olika beskrivningstyper som kan användas i olika syften. Mer information om hur du arbetar med beskrivningar i API:t finns i [beskrivningens slutpunktshandbok](./descriptors.md) , samt en översikt över de olika beskrivningstyperna och deras användningsfall.
 
 ## Unions
 
