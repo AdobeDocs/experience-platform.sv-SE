@@ -5,9 +5,9 @@ user-guide-title: Adobe Experience Platform - översikt
 breadcrumb-title: Experience Platform - översikt
 user-guide-description: Läs om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid.
 translation-type: tm+mt
-source-git-commit: 5761394285e56214fd59e31d530756eed1f5ad08
+source-git-commit: 761a212abc407fac5bc59c6f5a57c6c17c932230
 workflow-type: tm+mt
-source-wordcount: '399'
+source-wordcount: '402'
 ht-degree: 14%
 
 ---
@@ -64,6 +64,7 @@ ht-degree: 14%
    * [Programtjänster](application-services.md)
    * [Program och intelligenta tjänster (video)](video/application-intelligent-services.md)
    * [Plattformsintegrering med Experience Cloud (video)](video/experience-cloud-integrations.md)
+* [Kontrollpanel för licensanvändning](license-usage-dashboard.md)
 * [Felsökningsguide](troubleshooting.md)
 * [ADLS Gen2-migrering](adls2-gen2-migration.md)
 * [Ordlista](glossary.md)
