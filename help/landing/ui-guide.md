@@ -5,9 +5,9 @@ title: Adobe Experience Platform UI Guide
 topic: ui guide
 description: 'Adobe Experience Platform '
 translation-type: tm+mt
-source-git-commit: adf8e8457c8ffef263223a38d3f9c345cf7c6ab2
+source-git-commit: 761a212abc407fac5bc59c6f5a57c6c17c932230
 workflow-type: tm+mt
-source-wordcount: '1543'
+source-wordcount: '1666'
 ht-degree: 0%
 
 ---
@@ -143,13 +143,25 @@ I det här **[!UICONTROL Services]** avsnittet kan ni hantera era publicerade mo
 
 ### [!UICONTROL Data management]
 
-I det här **[!UICONTROL Schemas]** avsnittet kan du skapa och hantera scheman. Om du vill veta mer om hur du använder schemaavsnittet kan du läsa självstudiekursen om hur du [skapar ett schema](../xdm/tutorials/create-schema-ui.md). Mer information om Experience Data Model (XDM) finns i [XDM-översikten](../xdm/home.md).
+I avsnittet kan du **[!UICONTROL Schemas]** skapa och hantera XDM-scheman (Experience Data Model). Om du vill veta mer om scheman kan du läsa självstudiekursen om hur du [skapar ett schema](../xdm/tutorials/create-schema-ui.md). Mer information om XDM finns i [XDM-systemöversikten](../xdm/home.md).
 
-I det här **[!UICONTROL Datasets]** avsnittet kan du skapa och hantera datauppsättningar. Mer information om avsnittet Datauppsättningar finns i användarhandboken för [datauppsättningar](../catalog/datasets/user-guide.md).
+I det här **[!UICONTROL Datasets]** avsnittet kan du skapa och hantera datauppsättningar. Mer information om datauppsättningar finns i användarhandboken för [datauppsättningar](../catalog/datasets/user-guide.md).
 
-I avsnittet kan du **[!UICONTROL Queries]** skapa och hantera frågor, logga SQL-frågor som har gjorts av Query Service och visa dina PostgreSQL-autentiseringsuppgifter. Mer information om avsnittet Frågor finns i användarhandboken för [frågetjänsten](../query-service/ui/overview.md).
+I det här **[!UICONTROL Queries]** avsnittet kan du skapa och hantera frågor, logga SQL-frågor som skapats av Adobe Experience Platform Query Service och visa dina PostgreSQL-autentiseringsuppgifter. Mer information om frågor finns i användarhandboken för [frågetjänsten](../query-service/ui/overview.md).
 
-I det här avsnittet kan du övervaka inmatning av grupper och strömning. **[!UICONTROL Monitoring]** Mer information om övervakningsavsnittet finns i användarhandboken för [övervakning av dataöverföring](../ingestion/quality/monitor-data-flows.md).
+I det här avsnittet kan du övervaka inmatning av grupper och strömning. **[!UICONTROL Monitoring]** Mer information om övervakning finns i användarhandboken för [övervakning av dataöverföring](../ingestion/quality/monitor-data-flows.md).
+
+### [!UICONTROL Decisioning]
+
+Offer Decisioning är en programtjänst som är integrerad med Adobe Experience Platform. Ni kan utnyttja Experience Platform för att leverera det bästa erbjudandet och upplevelsen till era kunder via alla kontaktytor vid rätt tidpunkt. Läs mer om Offer Decisioning, inklusive hur du arbetar med [!UICONTROL Offers] och [!UICONTROL Activities] går till [Offer Decisioning dokumentation](https://experienceleague.adobe.com/docs/offer-decisioning.html).
+
+### [!UICONTROL Administration]
+
+Användargränssnittet för plattformen (UI) är en kontrollpanel där du kan visa viktig information om din organisations licensanvändning, som den har hämtats under en ögonblicksbild. Du kommer åt detta genom att välja **[!UICONTROL License usage]** i navigeringen. Mer information om kontrollpanelen för licensanvändning finns i handboken [för](license-usage-dashboard.md)kontrollpanelen för licensanvändning.
+
+>[!IMPORTANT]
+>
+>Kontrollpanelsfunktionen för licensanvändning är för närvarande alfabetisk och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
 
 ## Nästa steg
 
