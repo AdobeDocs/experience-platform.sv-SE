@@ -6,9 +6,9 @@ topic: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt molnlagringskonto.
 translation-type: tm+mt
-source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
+source-git-commit: 7f24413a99b57e28ca2106214b7eedb5b068b045
 workflow-type: tm+mt
-source-wordcount: '1723'
+source-wordcount: '1742'
 ht-degree: 0%
 
 ---
@@ -143,11 +143,11 @@ Ange värden för schemat och välj **[!UICONTROL Next]**.
 
 ### Konfigurera ett dataflöde för engångsbruk
 
-Om du vill ställa in engångsintag väljer du den nedrullningsbara pilen för frekvens och väljer **[!UICONTROL Once]**. Du kan fortsätta att redigera ett dataflöde för att få en engångsfrekvens så länge som starttiden är kvar i framtiden. När starttiden har passerat kan engångsfrekvensvärdet inte längre redigeras.
+Om du vill ställa in engångsintag väljer du den nedrullningsbara pilen för frekvens och väljer **[!UICONTROL Once]**. Du kan fortsätta att redigera ett dataflöde för att få en engångsfrekvens så länge som starttiden är kvar i framtiden. När starttiden har passerat kan engångsfrekvensvärdet inte längre redigeras. **[!UICONTROL Interval]** och **[!UICONTROL Backfill]** är inte synliga när du ställer in ett dataflöde för engångsinmatning.
 
->[!TIP]
+>[!IMPORTANT]
 >
->**[!UICONTROL Interval]** och **[!UICONTROL Backfill]** inte är synliga vid engångsbruk.
+>Vi rekommenderar att du schemalägger dataflödet för engångsbruk när du använder [FTP-anslutningen](../../../../connectors/cloud-storage/ftp.md).
 
 När du har angett lämpliga värden för schemat väljer du **[!UICONTROL Next]**.
 
