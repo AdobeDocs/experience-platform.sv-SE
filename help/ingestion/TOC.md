@@ -5,7 +5,7 @@ user-guide-title: Hjälp om Adobe Experience Platform datainmatning
 breadcrumb-title: Handbok för dataöverföring
 user-guide-description: Använd era data på plattformen genom batchvis eller direktuppspelande ingrepp.
 translation-type: tm+mt
-source-git-commit: da0c65b5afc19e2497816c4b84270f5f5c4617f2
+source-git-commit: cfdaf72b7f4bf190877006ccd4cc6a7fd014adc2
 workflow-type: tm+mt
 source-wordcount: '124'
 ht-degree: 4%
@@ -36,7 +36,7 @@ ht-degree: 4%
    - [Direktuppspelning av flera meddelanden](tutorials/streaming-multiple-messages.md)
 - Kvalitet på dataintaget och övervakning{#quality}
    - [Översikt](quality/overview.md)
-   - [Övervaka dataflöden](quality/monitor-data-flows.md)
+   - [Övervaka datainmatning](quality/monitor-data-ingestion.md)
    - [Hämta feldiagnostik](quality/error-diagnostics.md)
    - [Hämta misslyckade batchar](quality/retrieve-failed-batches.md)
    - [Direktinmatningsvalidering](quality/streaming-validation.md)
