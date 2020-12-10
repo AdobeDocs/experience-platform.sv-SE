@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för Adobe Experience Platform-arbetsflöden
 topic: ui guide
 description: 'Adobe Experience Platform '
 translation-type: tm+mt
-source-git-commit: 068e8270f389ed84cae6ef4b7185259cb5f6dadc
+source-git-commit: 72f60ef80a23f5ca4e70147ee6aa6027028fefd0
 workflow-type: tm+mt
-source-wordcount: '253'
+source-wordcount: '252'
 ht-degree: 1%
 
 ---
@@ -21,9 +21,9 @@ I avsnittet **[!UICONTROL Workflows]** i Adobe Experience Platform användargrä
 
 ## [!UICONTROL Data ingestion]
 
-Med hjälp av arbetsflödet kan du överföra och konvertera en CSV-fil till ett XDM-schemaformat (Experience Data Model). **[!UICONTROL Map CSV to XDM schema]** Mer information om det här arbetsflödet finns i självstudiekursen om hur du [mappar en CSV-fil till ett XDM-schema](../ingestion/tutorials/map-a-csv-file.md).
+Med hjälp av arbetsflödet kan du överföra och konvertera en CSV-fil till ett XDM-schema (Experience Data Model). **[!UICONTROL Map CSV to XDM schema]** Mer information om det här arbetsflödet finns i självstudiekursen om hur du [mappar en CSV-fil till ett XDM-schema](../ingestion/tutorials/map-a-csv-file.md).
 
-Med arbetsflödet kan du **[!UICONTROL Create dataset from schema]** skapa en ny datauppsättning från ett registrerat XDM-schema. Mer information om det här arbetsflödet finns i användarhandboken för [datauppsättningar](../catalog/datasets/user-guide.md#schema).
+Med arbetsflödet kan du **[!UICONTROL Create dataset from schema]** skapa en ny datauppsättning från ett befintligt XDM-schema. Mer information om det här arbetsflödet finns i användarhandboken för [datauppsättningar](../catalog/datasets/user-guide.md#schema).
 
 Med arbetsflödet kan du **[!UICONTROL Create dataset from CSV]** skapa en ny datauppsättning genom att överföra en CSV-fil. Mer information om det här arbetsflödet finns i användarhandboken för [datauppsättningar](../catalog/datasets/user-guide.md#csv).
 
@@ -37,4 +37,4 @@ Med hjälp av arbetsflödet kan du publicera en modell som du har skapat som en 
 
 ## Nästa steg
 
-Genom att läsa den här guiden har du lagts till på [!UICONTROL Workflows] sidan i användargränssnittet i Experience Platform. Mer information om användargränssnittet för plattformen finns i användargränssnittshandboken för [Adobe Experience Platform](./ui-guide.md).
+Genom att läsa den här guiden har du lagts till i användargränssnittet för Experience Platform. [!UICONTROL Workflows] Mer information om plattformsgränssnittets funktioner finns i [Adobe Experience Platform användargränssnittshandbok](ui-guide.md).
