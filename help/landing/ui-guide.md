@@ -5,7 +5,7 @@ title: Adobe Experience Platform UI Guide
 topic: ui guide
 description: 'Adobe Experience Platform '
 translation-type: tm+mt
-source-git-commit: 761a212abc407fac5bc59c6f5a57c6c17c932230
+source-git-commit: 3fc24b996d2c8bdf062e70a1c5e8d8206641cd06
 workflow-type: tm+mt
 source-wordcount: '1666'
 ht-degree: 0%
@@ -149,7 +149,7 @@ I det här **[!UICONTROL Datasets]** avsnittet kan du skapa och hantera dataupps
 
 I det här **[!UICONTROL Queries]** avsnittet kan du skapa och hantera frågor, logga SQL-frågor som skapats av Adobe Experience Platform Query Service och visa dina PostgreSQL-autentiseringsuppgifter. Mer information om frågor finns i användarhandboken för [frågetjänsten](../query-service/ui/overview.md).
 
-I det här avsnittet kan du övervaka inmatning av grupper och strömning. **[!UICONTROL Monitoring]** Mer information om övervakning finns i användarhandboken för [övervakning av dataöverföring](../ingestion/quality/monitor-data-flows.md).
+I det här avsnittet kan du övervaka inmatning av grupper och strömning. **[!UICONTROL Monitoring]** Mer information om övervakning finns i användarhandboken för [övervakning av dataöverföring](../ingestion/quality/monitor-data-ingestion.md).
 
 ### [!UICONTROL Decisioning]
 
