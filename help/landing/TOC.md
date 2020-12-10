@@ -5,10 +5,10 @@ user-guide-title: Adobe Experience Platform - översikt
 breadcrumb-title: Experience Platform - översikt
 user-guide-description: Läs om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid.
 translation-type: tm+mt
-source-git-commit: 761a212abc407fac5bc59c6f5a57c6c17c932230
+source-git-commit: 72f60ef80a23f5ca4e70147ee6aa6027028fefd0
 workflow-type: tm+mt
-source-wordcount: '402'
-ht-degree: 14%
+source-wordcount: '142'
+ht-degree: 3%
 
 ---
 
@@ -31,35 +31,10 @@ ht-degree: 14%
    * [Stöd för webbläsare och språk](browser-language-support.md)
 * Experience Platform API:er {#platform-apis}
    * [Grundläggande om API](api-fundamentals.md)
-   * [API-referensdokument](https://www.adobe.io/apis/experienceplatform/home/api-reference.html)
-   * [Autentisera till Experience Platform API:er](https://docs.adobe.com/content/help/en/platform-learn/tutorials/platform-api-authentication.html)
+   * [API-referensdokument](http://www.adobe.com/go/platform-api-reference-en)
+   * [Autentisera till Experience Platform API:er](http://www.adobe.com/go/platform-api-authentication-en)
 * Plattformsdokumentation {#documentation}
    * [Dokumentationsöversikt](documentation/overview.md)
-   * [Åtkomstkontroll](https://docs.adobe.com/content/help/sv-SE/experience-platform/access-control/home.html)
-   * [Revisor](https://docs.adobe.com/content/help/en/auditor/using/overview.html)
-   * [Katalog och datauppsättningar](https://docs.adobe.com/content/help/en/experience-platform/catalog/home.html)
-   * [Dataåtkomst](https://docs.adobe.com/content/help/en/experience-platform/data-access/home.html)
-   * [Datastyrning](https://docs.adobe.com/content/help/en/experience-platform/data-governance/home.html)
-   * [Dataprep](https://docs.adobe.com/content/help/en/experience-platform/data-prep/home.html)
-   * [Dataintag](https://docs.adobe.com/content/help/en/experience-platform/ingestion/home.html)
-   * [Datavetenskapens arbetsyta](https://docs.adobe.com/content/help/en/experience-platform/data-science-workspace/home.html)
-   * [Felsökning](https://docs.adobe.com/content/help/en/debugger/using/experience-cloud-debugger.html)
-   * [Felsökning 2.0 (beta)](https://docs.adobe.com/content/help/en/debugger/using-v2/experience-cloud-debugger.html)
-   * [Mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/home.html)
-   * [ETL (Extrahera, Omforma, Läs in)](https://docs.adobe.com/content/help/en/experience-platform/etl/home.html)
-   * [Identitetstjänst](https://docs.adobe.com/content/help/sv-SE/experience-platform/identity/home.html)
-   * [Intelligenta tjänster](https://docs.adobe.com/content/help/en/experience-platform/intelligent-services/home.html)
-   * [Starta](https://docs.adobe.com/content/help/en/launch/using/overview.html)
-   * [Insikter om observerbarhet](https://docs.adobe.com/content/help/en/experience-platform/observability/home.html)
-   * [Privacy Service](https://docs.adobe.com/content/help/en/experience-platform/privacy/home.html)
-   * [Profil (kundprofil i realtid)](https://docs.adobe.com/content/help/sv-SE/experience-platform/profile/home.html)
-   * [Frågetjänst](https://docs.adobe.com/content/help/en/experience-platform/query/home.html)
-   * [Kunddataplattform i realtid](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/overview.html)
-   * [Sandlådor](https://docs.adobe.com/content/help/en/experience-platform/sandbox/home.html)
-   * [Scheman (XDM)](https://docs.adobe.com/content/help/sv-SE/experience-platform/xdm/home.html)
-   * [Segmentering](https://docs.adobe.com/content/help/en/experience-platform/segmentation/home.html)
-   * [Källor (kopplingar)](https://docs.adobe.com/content/help/en/experience-platform/sources/home.html)
-   * [Web SDK](https://docs.adobe.com/content/help/sv-SE/experience-platform/edge/home.html)
 * Plattform i Adobe-ekosystemet {#ecosystem}
    * [Programtjänster](application-services.md)
    * [Program och intelligenta tjänster (video)](video/application-intelligent-services.md)
@@ -68,4 +43,4 @@ ht-degree: 14%
 * [Felsökningsguide](troubleshooting.md)
 * [ADLS Gen2-migrering](adls2-gen2-migration.md)
 * [Ordlista](glossary.md)
-* [Versionsinformation](https://docs.adobe.com/content/help/en/experience-platform/release-notes/latest.html)
+* [Versionsinformation](https://www.adobe.com/go/platform-release-notes-en)
