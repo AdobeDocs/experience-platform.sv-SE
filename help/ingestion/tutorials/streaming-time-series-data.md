@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform datainmatningstjänst.
 translation-type: tm+mt
-source-git-commit: e94272bf9a18595a4efd0742103569a26e4be415
+source-git-commit: cfdaf72b7f4bf190877006ccd4cc6a7fd014adc2
 workflow-type: tm+mt
 source-wordcount: '1215'
 ht-degree: 0%
@@ -525,6 +525,6 @@ Ett lyckat svar returnerar HTTP-status 200 med information om de begärda entite
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet kan du nu förstå hur du importerar postdata till [!DNL Platform] med direktuppspelningsanslutningar. Du kan försöka göra fler anrop med olika värden och hämta de uppdaterade värdena. Dessutom kan du börja övervaka dina inkapslade data via [!DNL Platform] användargränssnittet. Mer information finns i guiden [för dataöverföring](../quality/monitor-data-flows.md) .
+Genom att läsa det här dokumentet kan du nu förstå hur du importerar postdata till [!DNL Platform] med direktuppspelningsanslutningar. Du kan försöka göra fler anrop med olika värden och hämta de uppdaterade värdena. Dessutom kan du börja övervaka dina inkapslade data via [!DNL Platform] användargränssnittet. Mer information finns i guiden [för dataöverföring](../quality/monitor-data-ingestion.md) .
 
 Mer information om direktuppspelningsuppläsning i allmänhet finns i översikten över [direktuppspelningsuppläsning](../streaming-ingestion/overview.md).
