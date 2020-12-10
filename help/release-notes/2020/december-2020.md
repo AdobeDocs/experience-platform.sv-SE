@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: December 9, 2020
 author: ens60013 & ens72471
 translation-type: tm+mt
-source-git-commit: 908b9e6e8b548dea8e39f9f9a5de396d4c9520f4
+source-git-commit: ae353e6dda3f92647c32ee8e731be5785d24e5cb
 workflow-type: tm+mt
-source-wordcount: '343'
+source-wordcount: '426'
 ht-degree: 2%
 
 ---
@@ -17,19 +17,35 @@ ht-degree: 2%
 
 **Releasedatum: 9 december 2020**
 
+Nya funktioner i Adobe Experience Platform:
+
+- [[!DNL Dataflows]](#dataflows)
+
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [[!DNL Data Science Workspace]](#dsw)
 - [[!DNL Sources]](#sources)
 
+## [!DNL Dataflows] {#dataflows}
+
+Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, till identitets- och profiltjänster samt till mål.
+
+**Nyckelfunktion**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Genomskinlighet för dataflöden | Du kan övervaka dataflöden för källor och mål. Mer information finns i [självstudiekursen om övervakningskällor](../../dataflows/ui/monitor-sources.md) och i [självstudiekursen om övervakning av destinationer](../../dataflows/ui/monitor-destinations.md). |
+
+Mer information om dataflöden finns i [översikten](../../dataflows/home.md)för dataflöden.
+
 ## [!DNL Data Science Workspace] {#dsw}
 
 Data Science Workspace använder maskininlärning och artificiell intelligens för att skapa insikter utifrån era data. Data Science Workspace är integrerat i Adobe Experience Platform och hjälper er att göra prognoser med hjälp av ert innehåll och era dataresurser över alla Adobe-lösningar.
 
-### Viktiga funktioner
+**Viktiga funktioner**
 
 | Funktion | Beskrivning |
-|--- | ---|
+| --- | ---|
 | Adobe Experience Platform Intelligence-pakettillägg | Adobe Experience Platform Intelligence-paketet är en uppgradering av en Data Science Workspace som aktiverar ytterligare funktioner som: <li> UI-driven modellexperimenterande och utvärdering.</li><li> Möjlighet att driftsätta och driftsätta modeller med schemalagda utbildnings- och konferensjobb.</li><li> Stöd för djupinlärning i Tensorflow-modeller (GPU Compute).</li><li> Spark-baserad distribuerad beräkning för att träna och poängsätta mot stora datamängder (10 MM + rader).</li><li>Och mer</li> |
 
 Mer information om Adobe Experience Platform Intelligence-pakettillägget finns i dokumentationen om [Data Science Workspace-åtkomst och -funktioner](../../data-science-workspace/access-features-dsw.md).
