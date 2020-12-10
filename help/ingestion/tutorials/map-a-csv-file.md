@@ -6,10 +6,10 @@ topic: tutorial
 type: Tutorial
 description: I den här självstudiekursen beskrivs hur du mappar en CSV-fil till ett XDM-schema med Adobe Experience Platform användargränssnitt.
 translation-type: tm+mt
-source-git-commit: d69d0dd8c5a3d3a5e92cc88e390c079ed46aba32
+source-git-commit: c19360450d7b1f11063683b796774a04f3dbe16c
 workflow-type: tm+mt
-source-wordcount: '806'
-ht-degree: 0%
+source-wordcount: '807'
+ht-degree: 1%
 
 ---
 
@@ -113,9 +113,9 @@ Mappningsskärmen visas igen med det nya källfältet. Tillämpa motsvarande må
 
 ![](../images/tutorials/map-a-csv-file/new-calculated-field.png)
 
-## Övervaka dataflödet
+## Övervaka datainmatning
 
-När CSV-filen har mappats och skapats kan du övervaka de data som hämtas genom den. Mer information om att övervaka dataflöden finns i självstudiekursen om [övervakning av dataflöden](../../ingestion/quality/monitor-data-flows.md)för direktuppspelning.
+När CSV-filen har mappats och skapats kan du övervaka de data som hämtas genom den. Mer information om hur du övervakar dataöverföring finns i självstudiekursen om [övervakning av dataöverföring](../../ingestion/quality/monitor-data-ingestion.md).
 
 ## Nästa steg
 
