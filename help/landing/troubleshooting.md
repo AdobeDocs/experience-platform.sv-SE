@@ -7,9 +7,9 @@ landing-page-description: Find answers to frequently asked questions and a guide
 topic: getting started
 type: Documentation
 translation-type: tm+mt
-source-git-commit: 4a65d5e31eda3973d3e8e0d8e066692c667934e1
+source-git-commit: 72f60ef80a23f5ca4e70147ee6aa6027028fefd0
 workflow-type: tm+mt
-source-wordcount: '1940'
+source-wordcount: '1954'
 ht-degree: 1%
 
 ---
@@ -25,7 +25,7 @@ Nedan följer en lista med svar på vanliga frågor om Adobe Experience Platform
 
 ## Vad är [!DNL Experience Platform] API:er? {#what-are-experience-platform-apis}
 
-[!DNL Experience Platform] erbjuder flera RESTful-API:er som använder HTTP-begäranden för att komma åt [!DNL Platform] resurser. Dessa tjänst-API:er visar flera slutpunkter och gör att du kan utföra åtgärder för att lista (GET), söka (GET), redigera (PUT och/eller PATCH) och ta bort (DELETE) resurser. Mer information om specifika slutpunkter och åtgärder som är tillgängliga för respektive tjänst finns i [API-referensdokumentationen](https://www.adobe.io/apis/experienceplatform/home/api-reference.html) för Adobe I/O.
+[!DNL Experience Platform] erbjuder flera RESTful-API:er som använder HTTP-begäranden för att komma åt [!DNL Platform] resurser. Dessa tjänst-API:er visar flera slutpunkter och gör att du kan utföra åtgärder för att lista (GET), söka (GET), redigera (PUT och/eller PATCH) och ta bort (DELETE) resurser. Mer information om specifika slutpunkter och åtgärder som är tillgängliga för respektive tjänst finns i [API-referensdokumentationen](http://www.adobe.com/go/platform-api-reference-en) för Adobe I/O.
 
 ## Hur formaterar jag en API-begäran? {#how-do-i-format-an-api-request}
 
@@ -87,19 +87,19 @@ Svaret visar vad du förväntar dig efter ett lyckat anrop till API:t, baserat p
 }
 ```
 
-Mer information om specifika slutpunkter i plattforms-API:er, inklusive obligatoriska huvuden och begärandetexter, finns i [API-referensdokumentationen](https://www.adobe.io/apis/experienceplatform/home/api-reference.html).
+Mer information om specifika slutpunkter i plattforms-API:er, inklusive obligatoriska huvuden och begärandetexter, finns i [API-referensdokumentationen](http://www.adobe.com/go/platform-api-reference-en).
 
 ## Vad är min IMS-organisation? {#what-is-my-ims-organization}
 
-En IMS-organisation är en Adobe-representation av en kund. Alla licensierade Adobe-lösningar är integrerade med den här kundorganisationen. När en IMS-organisation har rätt till [!DNL Experience Platform]kan den tilldela utvecklare åtkomst. IMS-organisationsnumret (`x-gw-ims-org-id`) representerar organisationen som ett API-anrop ska köras för och därför krävs som huvud i alla API-begäranden. Detta ID finns på [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui): på fliken **Integrationer** navigerar du till avsnittet **Översikt** för en viss integrering för att hitta ID:t under **Klientautentiseringsuppgifter**. En stegvis genomgång av hur du autentiserar dig [!DNL Platform]finns i [självstudiekursen](../tutorials/authentication.md)för autentisering.
+En IMS-organisation är en Adobe-representation av en kund. Alla licensierade Adobe-lösningar är integrerade med den här kundorganisationen. När en IMS-organisation har rätt till [!DNL Experience Platform]kan den tilldela utvecklare åtkomst. IMS-organisationsnumret (`x-gw-ims-org-id`) representerar organisationen som ett API-anrop ska köras för och därför krävs som huvud i alla API-begäranden. Detta ID finns på [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui): på fliken **Integrationer** navigerar du till avsnittet **Översikt** för en viss integrering för att hitta ID:t under **Klientautentiseringsuppgifter**. En stegvis genomgång av hur du autentiserar dig [!DNL Platform]finns i [självstudiekursen](http://www.adobe.com/go/platform-api-authentication-en)för autentisering.
 
 ## Var hittar jag min API-nyckel? {#where-can-i-find-my-api-key}
 
-En API-nyckel krävs som huvud i alla API-begäranden. Den finns på [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). På fliken **Integrationer** i konsolen går du till **Översikt** för en viss integrering och du hittar nyckeln under **Klientautentiseringsuppgifter**. En stegvis genomgång av hur du autentiserar dig [!DNL Platform]finns i [självstudiekursen](../tutorials/authentication.md)för autentisering.
+En API-nyckel krävs som huvud i alla API-begäranden. Den finns på [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). På fliken **Integrationer** i konsolen går du till **Översikt** för en viss integrering och du hittar nyckeln under **Klientautentiseringsuppgifter**. En stegvis genomgång av hur du autentiserar dig [!DNL Platform]finns i [självstudiekursen](http://www.adobe.com/go/platform-api-authentication-en)för autentisering.
 
 ## Hur får jag en åtkomsttoken? {#how-do-i-get-an-access-token}
 
-Åtkomsttoken krävs i auktoriseringshuvudet för alla API-anrop. De kan genereras med ett `curl` kommando, förutsatt att du har tillgång till en integrering för en IMS-organisation. Åtkomsttoken är bara giltiga i 24 timmar. Därefter måste en ny token skapas för att du ska kunna fortsätta använda API:t. Mer information om hur du genererar åtkomsttoken finns i [självstudiekursen](../tutorials/authentication.md)för autentisering.
+Åtkomsttoken krävs i auktoriseringshuvudet för alla API-anrop. De kan genereras med ett `curl` kommando, förutsatt att du har tillgång till en integrering för en IMS-organisation. Åtkomsttoken är bara giltiga i 24 timmar. Därefter måste en ny token skapas för att du ska kunna fortsätta använda API:t. Mer information om hur du genererar åtkomsttoken finns i [självstudiekursen](http://www.adobe.com/go/platform-api-authentication-en)för autentisering.
 
 ## Hur använder jag frågeparametrar? {#how-do-i-user-query-parameters}
 
@@ -153,7 +153,7 @@ Följande statuskoder kan påträffas i alla [!DNL Experience Platform] API:er. 
 
 ## Fel i begärandehuvud {#request-header-errors}
 
-Alla API-anrop i [!DNL Platform] kräver specifika begäranderubriker. Om du vill se vilka huvuden som krävs för enskilda tjänster kan du läsa [API-referensdokumentationen](https://www.adobe.io/apis/experienceplatform/home/api-reference.html). Om du vill hitta värden för de obligatoriska autentiseringshuvuden kan du läsa [Autentisering](../tutorials/authentication.md). Om någon av dessa rubriker saknas eller är ogiltig när ett API-anrop görs kan följande fel uppstå.
+Alla API-anrop i [!DNL Platform] kräver specifika begäranderubriker. Om du vill se vilka huvuden som krävs för enskilda tjänster kan du läsa [API-referensdokumentationen](http://www.adobe.com/go/platform-api-reference-en). Om du vill hitta värden för de obligatoriska autentiseringshuvuden kan du läsa [Autentisering](http://www.adobe.com/go/platform-api-authentication-en). Om någon av dessa rubriker saknas eller är ogiltig när ett API-anrop görs kan följande fel uppstå.
 
 ### OAuth-token saknas {#oauth-token-is-missing}
 
@@ -175,7 +175,7 @@ Det här felmeddelandet visas när ett `Authorization` huvud saknas i en API-beg
 }
 ```
 
-Det här felmeddelandet visas när den angivna åtkomsttoken i huvudet inte är giltig `Authorization` . Kontrollera att token har angetts korrekt eller [generera en ny token](../tutorials/authentication.md) i Adobe I/O Console.
+Det här felmeddelandet visas när den angivna åtkomsttoken i huvudet inte är giltig `Authorization` . Kontrollera att token har angetts korrekt eller [generera en ny token](http://www.adobe.com/go/platform-api-authentication-en) i Adobe I/O Console.
 
 ### API-nyckel krävs
 
