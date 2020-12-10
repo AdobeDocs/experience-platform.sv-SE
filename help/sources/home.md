@@ -5,9 +5,9 @@ title: Adobe Experience Platform Source Connectors - översikt
 topic: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 translation-type: tm+mt
-source-git-commit: d26eaf699a67a1bc7111f5f97da277368fcc4629
+source-git-commit: 5e5ac80e0c79b3cc0354b469edc036523e29b45d
 workflow-type: tm+mt
-source-wordcount: '856'
+source-wordcount: '857'
 ht-degree: 0%
 
 ---
@@ -54,8 +54,9 @@ Lagringskällor i molnet kan hämta dina egna data [!DNL Platform] utan att du b
 - [[!DNL Apache HDFS] koppling](connectors/cloud-storage/hdfs.md)
 - [[!DNL Azure Event Hubs] koppling](connectors/cloud-storage/eventhub.md)
 - [[!DNL Azure File Storage] koppling](connectors/cloud-storage/azure-file-storage.md)
-- [[!DNL FTP and SFTP] koppling](connectors/cloud-storage/ftp-sftp.md)
+- [[!DNL FTP] koppling](connectors/cloud-storage/ftp.md)
 - [[!DNL Google Cloud Storage] koppling](connectors/cloud-storage/google-cloud-storage.md)
+- [[!DNL SFTP] koppling](connectors/cloud-storage/sftp.md)
 
 ### CRM (Customer Relationship Management)
 
@@ -132,7 +133,7 @@ Mer information om de behörigheter som ges via Admin Console, inklusive dessa f
 
 ## Villkor {#terms-and-conditions}
 
-Genom att använda någon av källorna som är märkta som beta (&quot;Beta&quot;) bekräftar du härmed att betaversionen tillhandahålls ***&quot;som den är&quot; utan någon garanti av något slag***.
+Genom att använda någon av källorna som är märkta som beta (&quot;Beta&quot;) bekräftar du härmed att betaversionen tillhandahålls ***&quot;i befintligt skick&quot; utan garanti av något slag***.
 
 Adobe har ingen skyldighet att upprätthålla, korrigera, uppdatera, ändra, ändra eller på annat sätt stödja betaversionen. Du rekommenderas att vara försiktig och inte på något sätt förlita dig på att betaversionen och/eller det medföljande materialet fungerar som de ska. Beta betraktas som konfidentiell information om Adobe.
 
