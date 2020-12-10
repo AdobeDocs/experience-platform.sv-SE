@@ -5,9 +5,9 @@ title: Utforska ett molnlagringssystem med API:t för Flow Service
 topic: overview
 description: I den här självstudien används API:t för Flow Service för att utforska ett molnlagringssystem från en annan leverantör.
 translation-type: tm+mt
-source-git-commit: 026007e5f80217f66795b2b53001b6cf5e6d2344
+source-git-commit: 3d104cdf7c97022fe60feafd3587056d378b56bd
 workflow-type: tm+mt
-source-wordcount: '745'
+source-wordcount: '746'
 ht-degree: 1%
 
 ---
@@ -34,6 +34,7 @@ För att kunna utforska molnlagring från tredje part med hjälp av API: [!DNL P
 * [Azure Blob](../create/cloud-storage/blob.md)
 * [Azure Data Lake Storage Gen2](../create/cloud-storage/adls-gen2.md)
 * [Azure-fillagring](../create/cloud-storage/azure-file-storage.md)
+* [FTP](../create/cloud-storage/ftp.md)
 * [Google Cloud Store](../create/cloud-storage/google.md)
 * [HDFS](../create/cloud-storage/hdfs.md)
 * [SFTP](../create/cloud-storage/sftp.md)
