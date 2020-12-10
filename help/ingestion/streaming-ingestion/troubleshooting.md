@@ -5,7 +5,7 @@ title: Felsökning av direktuppspelning
 topic: troubleshooting
 description: Det här dokumentet innehåller svar på vanliga frågor om direktuppspelning på Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: cfdaf72b7f4bf190877006ccd4cc6a7fd014adc2
 workflow-type: tm+mt
 source-wordcount: '1002'
 ht-degree: 0%
@@ -59,7 +59,7 @@ Du kan gruppera flera meddelanden inom en enskild nyttolast för begäran och st
 
 Alla data som skickas till [!DNL Platform] (utan fel eller på annat sätt) lagras som gruppfiler innan de lagras i datauppsättningar. Batchernas bearbetningsstatus visas i den datauppsättning de skickades till.
 
-Du kan verifiera om data har importerats genom att kontrollera datauppsättningsaktiviteten med [användargränssnittet](https://platform.adobe.com)i Experience Platform. Klicka **[!UICONTROL Datasets]** i den vänstra navigeringen för att visa en lista med datauppsättningar. Markera den datauppsättning som du direktuppspelar till i den lista som visas för att öppna dess **[!UICONTROL Dataset activity]** sida och visa alla batchar som har skickats under en vald tidsperiod. Mer information om hur du använder [!DNL Experience Platform] för att övervaka dataströmmar finns i guiden om [övervakning av dataflöden](../quality/monitor-data-flows.md)för direktuppspelning.
+Du kan verifiera om data har importerats genom att kontrollera datauppsättningsaktiviteten med [användargränssnittet](https://platform.adobe.com)i Experience Platform. Klicka **[!UICONTROL Datasets]** i den vänstra navigeringen för att visa en lista med datauppsättningar. Markera den datauppsättning som du direktuppspelar till i den lista som visas för att öppna dess **[!UICONTROL Dataset activity]** sida och visa alla batchar som har skickats under en vald tidsperiod. Mer information om hur du använder [!DNL Experience Platform] för att övervaka dataströmmar finns i guiden om [övervakning av dataflöden](../quality/monitor-data-ingestion.md)för direktuppspelning.
 
 Om dina data inte kunde importera och du vill återställa dem från [!DNL Platform]kan du hämta de misslyckade batcharna genom att skicka deras ID:n till [!DNL Data Access API]. Mer information finns i guiden om hur du [hämtar misslyckade batchar](../quality/retrieve-failed-batches.md) .
 
