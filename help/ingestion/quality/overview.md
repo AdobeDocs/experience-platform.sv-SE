@@ -5,7 +5,7 @@ title: Kvalitet på dataöverföring
 topic: overview
 description: Följande dokument innehåller en sammanfattning av de kontroller och valideringsbeteenden som stöds för import av grupper och direktuppspelning i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: cfdaf72b7f4bf190877006ccd4cc6a7fd014adc2
 workflow-type: tm+mt
 source-wordcount: '304'
 ht-degree: 4%
@@ -56,4 +56,4 @@ Följande valideringar görs för direktuppspelning:
 | Datauppsättning | Ser till att datauppsättningen är angiven, aktiverad och inte har tagits bort. |
 | Sidhuvud | Ser till att rubriken är angiven och giltig. |
 
-Mer information om hur [!DNL Platform] övervakar och validerar data finns i dokumentationen för [övervakning av dataflöden](./monitor-data-flows.md).
+Mer information om hur [!DNL Platform] övervakar och validerar data finns i dokumentationen för [övervakning av dataflöden](./monitor-data-ingestion.md).
