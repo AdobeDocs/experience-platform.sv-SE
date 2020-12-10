@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med molnlagringsbasen.
 translation-type: tm+mt
-source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
+source-git-commit: cfdaf72b7f4bf190877006ccd4cc6a7fd014adc2
 workflow-type: tm+mt
 source-wordcount: '670'
 ht-degree: 0%
@@ -78,7 +78,7 @@ När du har granskat dataflödet kan du klicka **[!UICONTROL Finish]** och vänt
 
 ## Övervaka och ta bort dataflödet
 
-När ditt molnlagringsdataflöde har skapats kan du övervaka de data som hämtas genom det. Mer information om att övervaka och ta bort dataflöden finns i självstudiekursen om [övervakning av dataflöden](../../../../../ingestion/quality/monitor-data-flows.md).
+När ditt molnlagringsdataflöde har skapats kan du övervaka de data som hämtas genom det. Mer information om att övervaka och ta bort dataflöden finns i självstudiekursen om [övervakning av dataflöden](../../../../../ingestion/quality/monitor-data-ingestion.md).
 
 ## Nästa steg
 
