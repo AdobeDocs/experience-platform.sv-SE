@@ -5,9 +5,9 @@ title: Adobe Experience Platform UI Guide
 topic: ui guide
 description: 'Adobe Experience Platform '
 translation-type: tm+mt
-source-git-commit: 3fc24b996d2c8bdf062e70a1c5e8d8206641cd06
+source-git-commit: 852792c1288cf7b4815fb0afb742046d7a595da2
 workflow-type: tm+mt
-source-wordcount: '1666'
+source-wordcount: '1677'
 ht-degree: 0%
 
 ---
@@ -17,15 +17,15 @@ ht-degree: 0%
 
 Den här guiden är en introduktion till hur du använder Adobe Experience Platform användargränssnitt, förklarar vad de olika komponenterna används för och ger länkar till ytterligare dokumentation för mer information.
 
-Läs mer om Adobe Experience Platform i översikten över [](./home.md)Experience Platform.
+Läs mer om Adobe Experience Platform i översikten över [](home.md)Experience Platform.
 
 ## Hemskärm
 
-När du har loggat in på Adobe Experience Platform kommer du till [!UICONTROL Home] sidan, som består av kontrollpanelen för mätvärden, senaste data och rekommenderade utbildningsavsnitt.
+När du har loggat in på Adobe Experience Platform finns du på [!UICONTROL Home] sidan, som består av kontrollpanelen för [mätvärden](#metrics), [senaste data](#recent-data)och [rekommenderade utbildningsavsnitt](#recommended-learning) .
 
 ![](images/user-guide/homepage.png)
 
-### Kontrollpanel för mått
+### Mätvärden
 
 Kontrollpanelen för mätvärden innehåller kort som ger dig information om datauppsättningar, profiler, segment och mål inom organisationen.
 
@@ -63,13 +63,13 @@ I det här avsnittet finns länkar till användbar dokumentation för att komma 
 
 Det övre navigeringsfältet i plattformsgränssnittet visar den IMS-organisation som du är inloggad på och innehåller flera viktiga kontroller.
 
-Till vänster i navigeringsfältet finns Adobe Experience Platform logotyp. Om du väljer det här alternativet återgår du till startskärmen för användargränssnittet för plattformen.
+Till vänster i navigeringsfältet finns Adobe Experience Platform logotyp. Om du väljer det här alternativet när som helst kommer du tillbaka till startskärmen för användargränssnittet för plattformen.
 
 ![](./images/user-guide/homepage-top-nav-bar.png)
 
 ### IMS-organisationsväljare
 
-Det första objektet till höger om navigeringsfältet är **IMS-organisationväxlaren**.
+Det första objektet till höger om det övre navigeringsfältet är **IMS-organisationväxlaren**.
 
 ![](./images/user-guide/homepage-ims-org.png)
 
@@ -79,7 +79,7 @@ Om du väljer väljaren öppnas en listruta med IMS-organisationer som du har ti
 
 ### Byt program
 
-Nästa objekt till höger är **programväljaren**, som representeras av ikonen för ![programväljaren](./images/user-guide/app-switcher-icon.png) . När du väljer den här ikonen kan du växla mellan Experience Platform, Resurser, Exchange och Launch.
+Nästa objekt till höger om den översta navigeringen är **programväljaren**, som representeras av ![programväljarikonen](./images/user-guide/app-switcher-icon.png) . När du väljer den här ikonen kan du växla mellan de Adobe-program som din IMS-organisation har åtkomst till, till exempel Experience Platform, Analytics, Assets och Launch.
 
 ### Hjälp
 
@@ -89,7 +89,7 @@ Till höger om programväljaren finns **hjälp- och supportmenyn**, som represen
 
 ### Meddelanden
 
-När hjälp- och supportmenyn är **meddelandeavsnittet**, som representeras av ikonen ![för meddelanden och meddelanden](images/user-guide/notification-icon.png) . På fliken **[!UICONTROL Notifications]** visas viktig information om produkten och andra relevanta uppdateringar, medan det på **[!UICONTROL Announcements]** fliken visas meddelanden om serviceunderhåll.
+I **meddelandeavsnittet**, som representeras av ikonen ![för meddelanden och meddelanden](images/user-guide/notification-icon.png) . Fliken visar viktig information om produkten och andra relevanta uppdateringar, medan fliken **[!UICONTROL Notifications]** **[!UICONTROL Announcements]** visar information om underhåll av tjänsten.
 
 ### Användarprofil
 
