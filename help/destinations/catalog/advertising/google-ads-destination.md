@@ -5,9 +5,9 @@ seo-title: Mål för Google Ads
 description: Google Ads, som tidigare kallades Google AdWords, är en onlinereklam som gör att företag kan betala per klick för annonsering vid textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appar.
 seo-description: Google Ads, som tidigare kallades Google AdWords, är en onlinereklam som gör att företag kan betala per klick för annonsering vid textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appar.
 translation-type: tm+mt
-source-git-commit: c24676970629f5a39297001357f8af40895533d9
+source-git-commit: 7129a375b1bf4623f78989ed75fcd2bb5dad4a02
 workflow-type: tm+mt
-source-wordcount: '629'
+source-wordcount: '646'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,9 @@ Observera följande information som är specifik för [!DNL Google Ads] destinat
 
 ### Befintligt [!DNL Google Ads] konto
 
-[!DNL Google] har pausat alla nya [!DNL Google Ads] integreringar med tredjepartsleverantörer. Du måste ha en befintlig integrering med [!DNL Google Ads] för att kunna utföra tillåtelselista-stegen i nästa avsnitt och skapa ett [!DNL Google Ads] mål i CDP i realtid.
+>[!IMPORTANT]
+>
+> [!DNL Google] har ersatt nya [!DNL Google Ads] cookie-integreringar med tredjepartsleverantörer. För att kunna utföra tillåtelselista-stegen i nästa avsnitt måste du ha en befintlig integrering med [!DNL Google Ads]. Därför rekommenderar vi att du [!DNL Google Ads] konfigurerar en [!DNL Google Customer Match] integrering. Mer information om hur du skapar en [!DNL Google Customer Match] integrering finns i självstudiekursen om hur du skapar en [[!DNL Google Customer Match]](./google-customer-match.md) anslutning.
 
 ### Tillåtelselista
 
