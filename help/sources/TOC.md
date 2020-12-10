@@ -5,9 +5,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 translation-type: tm+mt
-source-git-commit: e31e09449b79b8a1600cfb2b162f51c26d482847
+source-git-commit: 5e5ac80e0c79b3cc0354b469edc036523e29b45d
 workflow-type: tm+mt
-source-wordcount: '663'
+source-wordcount: '665'
 ht-degree: 0%
 
 ---
@@ -36,8 +36,9 @@ ht-degree: 0%
       - [Azure Blob-koppling](connectors/cloud-storage/blob.md)
       - [Azure Event Hubs-koppling](connectors/cloud-storage/eventhub.md)
       - [Azure File Storage Connector](connectors/cloud-storage/azure-file-storage.md)
-      - [FTP- och SFTP-anslutning](connectors/cloud-storage/ftp-sftp.md)
+      - [FTP-anslutning](connectors/cloud-storage/ftp.md)
       - [Google Cloud Storage Connector](connectors/cloud-storage/google-cloud-storage.md)
+      - [SFTP-anslutning](connectors/cloud-storage/sftp.md)
       - [Amazon S3 och Azure Blob Connector](connectors/cloud-storage/blob-s3.md)
    - CRM {#crm}
       - [Microsoft Dynamics-anslutning](connectors/crm/ms-dynamics.md)
@@ -82,6 +83,7 @@ ht-degree: 0%
          - [Azure Data Lake Storage Gen2-anslutning](tutorials/api/create/cloud-storage/adls-gen2.md)
          - [Azure Event Hubs-koppling](tutorials/api/create/cloud-storage/eventhub.md)
          - [Azure File Storage Connector](tutorials/api/create/cloud-storage/azure-file-storage.md)
+         - [FTP-anslutning](tutorials/api/create/cloud-storage/ftp.md)
          - [Google Cloud Storage Connector](tutorials/api/create/cloud-storage/google.md)
          - [SFTP-anslutning](tutorials/api/create/cloud-storage/sftp.md)
       - CRM {#crm}
@@ -160,8 +162,9 @@ ht-degree: 0%
          - [Azure Blob-koppling](tutorials/ui/create/cloud-storage/blob.md)
          - [Azure Event Hubs-koppling](tutorials/ui/create/cloud-storage/eventhub.md)
          - [Azure File Storage Connector](tutorials/ui/create/cloud-storage/azure-file-storage.md)
-         - [FTP- och SFTP-anslutning](tutorials/ui/create/cloud-storage/ftp-sftp.md)
+         - [FTP-anslutning](tutorials/ui/create/cloud-storage/ftp.md)
          - [Google Cloud Storage Connector](tutorials/ui/create/cloud-storage/google-cloud-storage.md)
+         - [SFTP-anslutning](tutorials/ui/create/cloud-storage/sftp.md)
          - [Amazon S3 och Blob-anslutning](tutorials/ui/create/cloud-storage/blob-s3.md)
       - CRM {#crm}
          - [Microsoft Dynamics-anslutning](tutorials/ui/create/crm/dynamics.md)
