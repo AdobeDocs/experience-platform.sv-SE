@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;getting started;customer ai;popular topics;customer ai input;customer ai output
-solution: Experience Platform
+solution: Experience Platform, Intelligent Services, Real-time Customer Data Platform
 title: Indata och utdata för AI
 topic: Getting started
 description: Följande dokument visar de olika in- och utdata som används i kundens AI.
 translation-type: tm+mt
-source-git-commit: 0f45f12ca4f43de9489eb609fd541aa2be3bae78
+source-git-commit: de16ebddd8734f082f908f5b6016a1d3eadff04c
 workflow-type: tm+mt
 source-wordcount: '824'
 ht-degree: 0%
@@ -31,7 +31,7 @@ I följande exempel används en enkel formel som hjälper dig att fastställa de
 
 **Formel**:
 
-Minsta längd på de data som krävs = stödberättigande population + resultatfönster
+Minimilängd på data som krävs = stödberättigande population + resultatfönster
 
 >[!NOTE]
 >
