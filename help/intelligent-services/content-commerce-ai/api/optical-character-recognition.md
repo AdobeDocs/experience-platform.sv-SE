@@ -1,11 +1,11 @@
 ---
 keywords: OCR;text presence;optical character recognition
-solution: Experience Platform
+solution: Experience Platform, Intelligent Services
 title: Optisk teckenigenkänning
 topic: Developer guide
 description: Tjänsten för textnärvaro/optisk teckenigenkänning (OCR), när en bild anges, kan visa om det finns text i bilden. Om det finns text kan OCR returnera texten
 translation-type: tm+mt
-source-git-commit: 4d12caf949aeb6619cd27b55855014a61d4e54bb
+source-git-commit: de16ebddd8734f082f908f5b6016a1d3eadff04c
 workflow-type: tm+mt
 source-wordcount: '512'
 ht-degree: 2%
