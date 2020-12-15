@@ -1,14 +1,14 @@
 ---
 keywords: Experience Platform;home;popular topics;monitor accounts;monitor dataflows;dataflows;destinations
-description: Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du visar befintliga dataflöden från arbetsytan Källor.
+description: Med destinationer kan ni aktivera data från Adobe Experience Platform för ett oändligt antal externa partner. I den här självstudiekursen finns anvisningar om hur du kan övervaka dataflöden för dina mål med hjälp av användargränssnittet i Experience Platform.
 solution: Experience Platform
 title: Övervaka dataflöden
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 791ad61f2f28da03ef3e5cb5efdd89154e9b1a0b
+source-git-commit: 12a6682b6e28e656899aee5c38d3bb4a84bcdd2f
 workflow-type: tm+mt
-source-wordcount: '410'
+source-wordcount: '414'
 ht-degree: 0%
 
 ---
