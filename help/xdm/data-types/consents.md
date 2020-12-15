@@ -4,7 +4,7 @@ title: Datatypen Innehåll och inställningar
 description: Datatypen Privacy/Marketing Preferences (Consent) är avsedd att stödja insamling av kundbehörigheter och preferenser som genereras av CMP (Consent Management Platforms) och andra källor från era dataåtgärder.
 topic: guide
 translation-type: tm+mt
-source-git-commit: 1a4dd167ecd4f4f61ffe26af786b355e4561b30d
+source-git-commit: 640f0be8a297fada0eee10ff80fec3b3142c09b9
 workflow-type: tm+mt
 source-wordcount: '2022'
 ht-degree: 0%
@@ -333,4 +333,4 @@ I följande tabell visas de godkända värdena för `xdm:preferred`:
 
 ### Fullständigt [!DNL Consents & Preferences] schema {#full-schema}
 
-Mer information om det fullständiga schemat för [!DNL Consents & Preferences] datatypen finns i den [officiella XDM-databasen](https://github.com/adobe/xdm/blob/master/components/datatypes/consentpreferences.schema.json).
+Mer information om det fullständiga schemat för [!DNL Consents & Preferences] datatypen finns i den [officiella XDM-databasen](https://github.com/adobe/xdm/blob/master/components/datatypes/consent-preferences.schema.json).
