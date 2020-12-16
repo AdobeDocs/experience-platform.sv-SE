@@ -6,9 +6,9 @@ topic: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett molnlagringsutrymme från tredje part och föra in dem på plattformen via källanslutningar och API:er.
 translation-type: tm+mt
-source-git-commit: 7f24413a99b57e28ca2106214b7eedb5b068b045
+source-git-commit: cab1d65b643b919a6529926cd0856d89c5264d55
 workflow-type: tm+mt
-source-wordcount: '1599'
+source-wordcount: '1609'
 ht-degree: 0%
 
 ---
@@ -16,35 +16,35 @@ ht-degree: 0%
 
 # Samla in molnlagringsdata via källanslutningar och API:er
 
-Den här självstudiekursen beskriver stegen för att hämta data från ett molnlagringsutrymme från tredje part och föra in dem på plattformen via källanslutningar och [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
+I den här självstudiekursen beskrivs stegen för att hämta data från ett molnlagringsutrymme från tredje part och föra in dem på plattformen via källanslutningar och [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
 ## Komma igång
 
-Den här självstudiekursen kräver att du har tillgång till ett molnlagringsutrymme från tredje part via en giltig anslutning och information om filen som du vill hämta till [!DNL Platform], inklusive filens sökväg och struktur. Om du inte har den här informationen kan du gå till självstudiekursen om hur du [utforskar ett molnlagringsutrymme [!DNL Flow Service] från tredje part med API](../explore/cloud-storage.md) innan du provar den här självstudiekursen.
+I den här självstudiekursen måste du ha tillgång till ett molnlagringsutrymme från en annan leverantör via en giltig anslutning och information om filen som du vill hämta till plattformen, inklusive filens sökväg och struktur. Om du inte har den här informationen kan du gå till självstudiekursen om att [utforska ett molnlagringsutrymme från tredje part med hjälp av [!DNL Flow Service] API](../explore/cloud-storage.md) innan du provar den här självstudiekursen.
 
 Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
 - [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    - [Grundläggande om schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   - [Utvecklarhandbok](../../../../xdm/api/getting-started.md)för schemaregister: Innehåller viktig information som du behöver känna till för att kunna utföra anrop till API:t för schemaregister. Detta inkluderar ditt `{TENANT_ID}`, konceptet med&quot;behållare&quot; och de rubriker som krävs för att göra förfrågningar (med särskild uppmärksamhet på rubriken Godkänn och dess möjliga värden).
-- [[!DNL Catalog Service]](../../../../catalog/home.md): Katalog är systemet för registrering av dataplatser och -länkar inom [!DNL Experience Platform].
-- [[!DNL Batch ingestion]](../../../../ingestion/batch-ingestion/overview.md): Med API:t för gruppinmatning kan du importera data till [!DNL Experience Platform] som gruppfiler.
-- [Sandlådor](../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till ett molnlagringsutrymme med API:t [!DNL Flow Service] .
+   - [Utvecklarhandbok](../../../../xdm/api/getting-started.md) för schemaregister: Innehåller viktig information som du behöver känna till för att kunna utföra anrop till API:t för schemaregister. Detta inkluderar din `{TENANT_ID}`, begreppet &quot;behållare&quot; och de huvuden som krävs för att göra förfrågningar (med särskild uppmärksamhet på huvudet Godkänn och dess möjliga värden).
+- [[!DNL Catalog Service]](../../../../catalog/home.md): Katalog är systemet för registrering av dataplatser och -länkar inom Experience Platform.
+- [[!DNL Batch ingestion]](../../../../ingestion/batch-ingestion/overview.md): Med API:t för gruppinmatning kan du importera data till Experience Platform som gruppfiler.
+- [Sandlådor](../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till ett molnlagringsutrymme med API:t [!DNL Flow Service].
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna ringa anrop till plattforms-API:er måste du först slutföra [självstudiekursen](../../../../tutorials/authentication.md) för autentisering. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
 - `x-gw-ims-org-id: {IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i Experience Platform, inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till Platform API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - `x-sandbox-name: {SANDBOX_NAME}`
 
@@ -54,7 +54,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Skapa en källanslutning {#source}
 
-Du kan skapa en källanslutning genom att göra en POST-förfrågan till [!DNL Flow Service] API:t. En källanslutning består av ett anslutnings-ID, en sökväg till källdatafilen och ett anslutnings-spec-ID.
+Du kan skapa en källanslutning genom att göra en POST-förfrågan till API:t [!DNL Flow Service]. En källanslutning består av ett anslutnings-ID, en sökväg till källdatafilen och ett anslutnings-spec-ID.
 
 Om du vill skapa en källanslutning måste du också definiera ett uppräkningsvärde för dataformatattributet.
 
@@ -66,11 +66,11 @@ Använd följande uppräkningsvärden för filbaserade kopplingar:
 | JSON | `json` |
 | Parquet | `parquet` |
 
-För alla tabellbaserade kopplingar anger du värdet till `tabular`.
+För alla tabellbaserade anslutningar anger du värdet `tabular`.
 
 >[!NOTE]
 >
->Du kan importera CSV- och TSV-filer med en anslutning till en molnlagringskälla genom att ange en kolumnavgränsare som en egenskap. Ett teckenvärde är en tillåten kolumnavgränsare. Om inget anges `(,)` används ett komma som standardvärde.
+>Du kan importera CSV- och TSV-filer med en anslutning till en molnlagringskälla genom att ange en kolumnavgränsare som en egenskap. Ett teckenvärde är en tillåten kolumnavgränsare. Om inget anges används ett komma `(,)` som standardvärde.
 
 **API-format**
 
@@ -128,9 +128,9 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 ## Skapa ett mål-XDM-schema {#target-schema}
 
-För att källdata ska kunna användas i [!DNL Platform]måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en [!DNL Platform] datauppsättning där källdata finns.
+För att källdata ska kunna användas i Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en plattformsdatauppsättning där källdata finns.
 
-Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till API:t för [schemaregister](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml).
+Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [API:t för schemaregister](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml).
 
 **API-format**
 
@@ -239,7 +239,7 @@ Ett lyckat svar returnerar information om det nyligen skapade schemat inklusive 
 
 ## Skapa en måldatauppsättning
 
-En måldatauppsättning kan skapas genom att en POST till API:t [för](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)katalogtjänsten utförs, med ID:t för målschemat i nyttolasten.
+En måldatamängd kan skapas genom att utföra en POST-begäran till [katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), som anger målschemats ID i nyttolasten.
 
 **API-format**
 
@@ -284,7 +284,7 @@ Ett lyckat svar returnerar en array som innehåller ID:t för den nya datauppsä
 
 En målanslutning representerar anslutningen till målet där inkapslade data kommer in. Om du vill skapa en målanslutning måste du ange det fasta anslutnings-spec-ID som är associerat med datasjön. Detta anslutningsspec-ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
-Nu har du de unika identifierarna ett målschema, en måldatamängd och ett anslutningsspec-ID till Data Lake. Med hjälp av dessa identifierare kan du skapa en målanslutning med hjälp av API:t för att ange den datauppsättning som ska innehålla inkommande källdata. [!DNL Flow Service]
+Nu har du de unika identifierarna ett målschema, en måldatamängd och ett anslutningsspec-ID till datasjön. Med dessa identifierare kan du skapa en målanslutning med hjälp av API:t [!DNL Flow Service] för att ange den datauppsättning som ska innehålla inkommande källdata.
 
 **API-format**
 
@@ -323,7 +323,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `data.schema.id` | The `$id` of the target XDM schema. |
+| `data.schema.id` | `$id` för mål-XDM-schemat. |
 | `params.dataSetId` | ID för måldatauppsättningen. |
 | `connectionSpec.id` | Det fasta anslutningens spec-ID till Data Lake. Detta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
 
@@ -413,7 +413,7 @@ Ett lyckat svar returnerar information om den nyligen skapade mappningen inklusi
 
 ## Hämta dataflödesspecifikationer {#specs}
 
-Ett dataflöde ansvarar för att samla in data från källor och föra in dem i [!DNL Platform]. För att kunna skapa ett dataflöde måste du först få de dataflödesspecifikationer som ansvarar för att samla in molnlagringsdata.
+Ett dataflöde ansvarar för att samla in data från källor och föra in dem i plattformen. För att kunna skapa ett dataflöde måste du först få de dataflödesspecifikationer som ansvarar för att samla in molnlagringsdata.
 
 **API-format**
 
@@ -433,7 +433,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar information om dataflödesspecifikationen som ansvarar för att överföra data från molnlagringen till [!DNL Platform]. Svaret innehåller ett unikt flödesspec-ID. Detta ID krävs i nästa steg för att skapa ett nytt dataflöde.
+Ett lyckat svar returnerar information om dataflödesspecifikationen som ansvarar för att hämta data från källan till plattformen. Svaret innehåller den unika flödesspecifikation `id` som krävs för att skapa ett nytt dataflöde.
 
 ```json
 {
@@ -571,7 +571,7 @@ Det sista steget mot att samla in molnlagringsdata är att skapa ett dataflöde.
 
 Ett dataflöde ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en begäran om POST samtidigt som du anger de tidigare angivna värdena i nyttolasten.
 
-Om du vill schemalägga ett intag måste du först ange starttidsvärdet till epok time i sekunder. Sedan måste du ange frekvensvärdet till ett av de fem alternativen: `once`, `minute`, `hour`, `day`eller `week`. Intervallvärdet anger perioden mellan två på varandra följande inmatningar och att skapa en engångsinmatning kräver inget intervall. För alla andra frekvenser måste intervallvärdet anges till lika med eller större än `15`.
+Om du vill schemalägga ett intag måste du först ange starttidsvärdet till epok time i sekunder. Sedan måste du ange frekvensvärdet till ett av de fem alternativen: `once`, `minute`, `hour`, `day` eller `week`. Intervallvärdet anger perioden mellan två på varandra följande inmatningar och att skapa en engångsinmatning kräver inget intervall. För alla andra frekvenser måste intervallvärdet anges till lika med eller större än `15`.
 
 >[!IMPORTANT]
 >
@@ -626,10 +626,10 @@ curl -X POST \
 | --- | --- |
 | `flowSpec.id` | Det [flödesspec-ID](#specs) som hämtades i föregående steg. |
 | `sourceConnectionIds` | Det [källanslutnings-ID](#source) som hämtades i ett tidigare steg. |
-| `targetConnectionIds` | Det [målanslutnings-ID](#target-connection) som hämtades i ett tidigare steg. |
-| `transformations.params.mappingId` | Det [mappnings-ID](#mapping) som hämtades i ett tidigare steg. |
+| `targetConnectionIds` | [målanslutnings-ID](#target-connection) har hämtats i ett tidigare steg. |
+| `transformations.params.mappingId` | [mappnings-ID](#mapping) har hämtats i ett tidigare steg. |
 | `scheduleParams.startTime` | Starttiden för dataflödet i epok-tid. |
-| `scheduleParams.frequency` | Frekvensen med vilken dataflödet samlar in data. Godtagbara värden är: `once`, `minute`, `hour`, `day`eller `week`. |
+| `scheduleParams.frequency` | Frekvensen med vilken dataflödet samlar in data. Godtagbara värden är: `once`, `minute`, `hour`, `day` eller `week`. |
 | `scheduleParams.interval` | Intervallet anger perioden mellan två på varandra följande flödeskörningar. Intervallets värde ska vara ett heltal som inte är noll. Intervall krävs inte när frekvens har angetts som `once` och ska vara större än eller lika med `15` för andra frekvensvärden. |
 
 **Svar**
@@ -645,11 +645,11 @@ Ett godkänt svar returnerar ID:t (`id`) för det nya dataflödet.
 
 ## Övervaka dataflödet
 
-När dataflödet har skapats kan du övervaka de data som importeras genom det för att se information om flödeskörningar, slutförandestatus och fel. Mer information om hur du övervakar dataflöden finns i självstudiekursen om [övervakning av dataflöden i API:t](../monitor.md)
+När dataflödet har skapats kan du övervaka de data som importeras genom det för att se information om flödeskörningar, slutförandestatus och fel. Mer information om hur du övervakar dataflöden finns i självstudiekursen om [övervakning av dataflöden i API](../monitor.md)
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in data från din molnlagring på schemalagd basis. Inkommande data kan nu användas av [!DNL Platform] tjänster längre fram i kedjan som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in data från din molnlagring på schemalagd basis. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan, t.ex. [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 - [Översikt över kundprofiler i realtid](../../../../profile/home.md)
 - [Översikt över arbetsytan Datavetenskap](../../../../data-science-workspace/home.md)
