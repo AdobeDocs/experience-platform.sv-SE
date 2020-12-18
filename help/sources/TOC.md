@@ -5,15 +5,15 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 translation-type: tm+mt
-source-git-commit: 5e5ac80e0c79b3cc0354b469edc036523e29b45d
+source-git-commit: c9552b4d3bbb34c81996344f2e8c7cc385c525b6
 workflow-type: tm+mt
-source-wordcount: '665'
+source-wordcount: '663'
 ht-degree: 0%
 
 ---
 
 
-# Källkopplingar {#sources}
+# Källanslutningar {#sources}
 
 - [Översikt över källkopplingar](home.md)
 - Tillgängliga källanslutningar {#connectors}
@@ -22,13 +22,13 @@ ht-degree: 0%
       - [Analytics-dataanslutning](connectors/adobe-applications/analytics.md)
       - [Audience Manager-kontakt](connectors/adobe-applications/audience-manager.md)
       - [Koppling för kundattribut](connectors/adobe-applications/customer-attributes.md)
-      - Mappa programfält i Adobe {#mapping}
+      - Mappa Adobe-programfält {#mapping}
          - [Mappningsfält för analyser](connectors/adobe-applications/mapping/analytics.md)
          - [Mappningsfält för Audience Manager](connectors/adobe-applications/mapping/audience-manager.md)
          - [Målmappningsfält](connectors/adobe-applications/mapping/target.md)
-   - Advertising {#advertising}
+   - Reklam {#advertising}
       - [Google AdWords-koppling](connectors/advertising/ads.md)
-   - molnlagring {#cloud-storage}
+   - Molnlagring {#cloud-storage}
       - [Amazon Kinesis Connector](connectors/cloud-storage/kinesis.md)
       - [Amazon S3-anslutning](connectors/cloud-storage/s3.md)
       - [Apache HDFS-kontakt](connectors/cloud-storage/hdfs.md)
@@ -63,19 +63,19 @@ ht-degree: 0%
       - [Oracle Connector](connectors/databases/oracle.md)
       - [Phoenix-kontakt](connectors/databases/phoenix.md)
       - [PostgreSQL-koppling](connectors/databases/postgres.md)
-   - eCommerce {#ecommerce}
+   - e-handel {#ecommerce}
       - [Förminska koppling](connectors/ecommerce/shopify.md)
-   - Automatisering av marknadsföring {#marketing-automation}
+   - Automatiserad marknadsföring {#marketing-automation}
       - [HubSpot-anslutning](connectors/marketing-automation/hubspot.md)
    - Betalningar {#payments}
       - [PayPal-anslutning](connectors/payments/paypal.md)
    - Protokoll {#protocols}
       - [Allmän OData-koppling](connectors/protocols/odata.md)
 - API-självstudiekurser {#api-tutorials}
-   - Skapa en källkoppling {#create}
-      - Advertising {#advertising}
+   - Skapa en källanslutning {#create}
+      - Reklam {#advertising}
          - [Google AdWords-koppling](tutorials/api/create/advertising/ads.md)
-      - molnlagring {#cloud-storage}
+      - Molnlagring {#cloud-storage}
          - [Amazon Kinesis](tutorials/api/create/cloud-storage/kinesis.md)
          - [Amazon S3-anslutning](tutorials/api/create/cloud-storage/s3.md)
          - [Apache HDFS-kontakt](tutorials/api/create/cloud-storage/hdfs.md)
@@ -87,7 +87,6 @@ ht-degree: 0%
          - [Google Cloud Storage Connector](tutorials/api/create/cloud-storage/google.md)
          - [SFTP-anslutning](tutorials/api/create/cloud-storage/sftp.md)
       - CRM {#crm}
-         - [HubSpot-anslutning](tutorials/api/create/crm/hubspot.md)
          - [Microsoft Dynamics-anslutning](tutorials/api/create/crm/ms-dynamics.md)
          - [Salesforce-koppling](tutorials/api/create/crm/salesforce.md)
       - Nöjda kunder {#customer-success}
@@ -110,9 +109,9 @@ ht-degree: 0%
          - [Phoenix-kontakt](tutorials/api/create/databases/phoenix.md)
          - [PostgreSQL-koppling](tutorials/api/create/databases/postgres.md)
          - [SQL Server-koppling](tutorials/api/create/databases/sql-server.md)
-      - eCommerce {#ecommerce}
+      - e-handel {#ecommerce}
          - [Förminska koppling](tutorials/api/create/ecommerce/shopify.md)
-      - Automatisering av marknadsföring {#marketing-automation}
+      - Automatiserad marknadsföring {#marketing-automation}
          - [HubSpot-anslutning](tutorials/api/create/marketing-automation/hubspot.md)
       - Betalningar {#payments}
          - [PayPal-anslutning](tutorials/api/create/payments/paypal.md)
@@ -146,15 +145,15 @@ ht-degree: 0%
    - [Ta bort anslutningar](tutorials/api/delete.md)
    - [Ta bort dataflöden](tutorials/api/delete-dataflows.md)
 - Självstudiekurser för användargränssnitt {#ui-tutorials}
-   - Skapa en källkoppling {#create}
+   - Skapa en källanslutning {#create}
       - Adobe-program {#adobe-applications}
          - [Adobe Analytics Classifications Data Connector](tutorials/ui/create/adobe-applications/classifications.md)
          - [Adobe Analytics Connector](tutorials/ui/create/adobe-applications/analytics.md)
          - [Adobe Audience Manager Connector](tutorials/ui/create/adobe-applications/audience-manager.md)
          - [Koppling för kundattribut](tutorials/ui/create/adobe-applications/customer-attributes.md)
-      - Advertising {#create}
+      - Reklam {#create}
          - [Google AdWords-koppling](tutorials/ui/create/advertising/ads.md)
-      - molnlagring {#cloud-storage}
+      - Molnlagring {#cloud-storage}
          - [Amazon Kinesis Connector](tutorials/ui/create/cloud-storage/kinesis.md)
          - [Amazon S3-anslutning](tutorials/ui/create/cloud-storage/s3.md)
          - [Apache HDFS-kontakt](tutorials/ui/create/cloud-storage/hdfs.md)
@@ -189,9 +188,9 @@ ht-degree: 0%
          - [Oracle Connector](tutorials/ui/create/databases/oracle.md)
          - [Phoenix-kontakt](tutorials/ui/create/databases/phoenix.md)
          - [PostgreSQL-koppling](tutorials/ui/create/databases/postgres.md)
-      - eCommerce {#ecommerce}
+      - e-handel {#ecommerce}
          - [Förminska koppling](tutorials/ui/create/ecommerce/shopify.md)
-      - Automatisering av marknadsföring {#marketing-automation}
+      - Automatiserad marknadsföring {#marketing-automation}
          - [HubSpot-anslutning](tutorials/ui/create/marketing-automation/hubspot.md)
       - Betalningar {#payments}
          - [PayPal-anslutning](tutorials/ui/create/payments/paypal.md)
