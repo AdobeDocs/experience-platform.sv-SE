@@ -6,21 +6,21 @@ topic: overview
 type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till en SFTP-server (Secure File Transfer Protocol).
 translation-type: tm+mt
-source-git-commit: 7b638f0516804e6a2dbae3982d6284a958230f42
+source-git-commit: 9092c3d672967d3f6f7bf7116c40466a42e6e7b1
 workflow-type: tm+mt
-source-wordcount: '749'
+source-wordcount: '770'
 ht-degree: 0%
 
 ---
 
 
-# Skapa en SFTP-anslutning med [!DNL Flow Service] API
+# Skapa en SFTP-anslutning med hjälp av API:t [!DNL Flow Service]
 
 >[!NOTE]
 >
->SFTP-kopplingen är i betaversion. Funktionerna och dokumentationen kan komma att ändras. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
+>SFTP-kopplingen är i betaversion. Funktionerna och dokumentationen kan komma att ändras. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
-I den här självstudiekursen används API:t för att vägleda dig genom stegen för att ansluta Experience Platform till en SFTP-server (Secure File Transfer Protocol). [!DNL Flow Service]
+I den här självstudien används API:t [!DNL Flow Service] för att vägleda dig genom stegen för att ansluta Experience Platform till en SFTP-server (Secure File Transfer Protocol).
 
 ## Komma igång
 
@@ -29,11 +29,11 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [Källor](../../../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till en SFTP-server med hjälp av [!DNL Flow Service] API:t.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till en SFTP-server med hjälp av API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För [!DNL Flow Service] att kunna ansluta till SFTP måste du ange värden för följande anslutningsegenskaper:
+För att [!DNL Flow Service] ska kunna ansluta till SFTP måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -45,23 +45,23 @@ För [!DNL Flow Service] att kunna ansluta till SFTP måste du ange värden för
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](../../../../../tutorials/authentication.md) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
-* Behörighet: Bearer `{ACCESS_TOKEN}`
-* x-api-key: `{API_KEY}`
-* x-gw-ims-org-id: `{IMS_ORG}`
+* `Authorization: Bearer {ACCESS_TOKEN}`
+* `x-api-key: {API_KEY}`
+* `x-gw-ims-org-id: {IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
-* x-sandbox-name: `{SANDBOX_NAME}`
+* `x-sandbox-name: {SANDBOX_NAME}`
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
 
-* Innehållstyp: `application/json`
+* `Content-Type: application/json`
 
 ## Skapa en anslutning
 
@@ -69,7 +69,7 @@ En anslutning anger en källa och innehåller dina autentiseringsuppgifter för 
 
 ### Skapa en SFTP-anslutning med grundläggande autentisering
 
-Om du vill skapa en SFTP-anslutning med grundläggande autentisering skickar du en POST till [!DNL Flow Service] API:t och anger värden för anslutningens `host`, `userName`och `password`.
+Om du vill skapa en SFTP-anslutning med grundläggande autentisering skickar du en POST till [!DNL Flow Service]-API:t och anger värden för din anslutnings `host`, `userName` och `password`.
 
 **API-format**
 
@@ -78,6 +78,8 @@ POST /connections
 ```
 
 **Begäran**
+
+För att en SFTP-anslutning ska kunna skapas måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikations-ID för SFTP är `b7bf2577-4520-42c9-bae9-cad01560f7bc`.
 
 ```shell
 curl -X POST \
@@ -125,7 +127,7 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nya anslutni
 
 ### Skapa en SFTP-anslutning med autentisering med SSH-offentlig nyckel
 
-Om du vill skapa en SFTP-anslutning med SSH-autentisering med offentlig nyckel, skickar du en POST till [!DNL Flow Service] API:t samtidigt som du anger värden för anslutningens `host`, `userName``privateKeyContent`och `passPhrase`.
+Om du vill skapa en SFTP-anslutning med SSH-autentisering med offentlig nyckel gör du en POST-förfrågan till [!DNL Flow Service]-API:t och anger värden för anslutningsens `host`, `userName`, `privateKeyContent` och `passPhrase`.
 
 **API-format**
 
@@ -183,4 +185,4 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nya anslutni
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en SFTP-anslutning med API:t och fått anslutningens unika ID-värde. [!DNL Flow Service] Du kan använda det här anslutnings-ID:t för att [utforska molnlagring med API:t](../../explore/cloud-storage.md) för Flow Service eller [inmatningsdata med API:t](../../cloud-storage-parquet.md)för Flow Service.
+I den här självstudiekursen har du skapat en SFTP-anslutning med hjälp av API:t [!DNL Flow Service] och har fått anslutningens unika ID-värde. Du kan använda det här anslutnings-ID:t för att [utforska molnlagring med API:t för Flow Service](../../explore/cloud-storage.md) eller [ingest parquet data med API:t för Flow Service](../../cloud-storage-parquet.md).
