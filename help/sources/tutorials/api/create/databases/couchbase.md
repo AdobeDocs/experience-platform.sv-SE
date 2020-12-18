@@ -6,63 +6,63 @@ topic: overview
 type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Couchbase till Experience Platform.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 36620a229fc8e6e3fa4545bfc775a49bc89935bb
 workflow-type: tm+mt
-source-wordcount: '535'
+source-wordcount: '530'
 ht-degree: 1%
 
 ---
 
 
-# Skapa en [!DNL Couchbase] koppling med [!DNL Flow Service] API:t
+# Skapa en [!DNL Couchbase]-koppling med hjälp av API:t [!DNL Flow Service]
 
 >[!NOTE]
 >
->Kopplingen [!DNL Couchbase] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
+>[!DNL Couchbase]-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor och föra in dem i Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudien används API:t för Flow Service för att vägleda dig genom de steg som du ska ansluta [!DNL Couchbase] till [!DNL Experience Platform].
+I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta [!DNL Couchbase] till [!DNL Experience Platform].
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL Couchbase] med [!DNL Flow Service] API:t.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL Couchbase] med API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga inloggningsuppgifter
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `connectionString` | Anslutningssträngen som används för att ansluta till din [!DNL Couchbase] instans. Anslutningssträngsmönstret för [!DNL Couchbase] är `Server={SERVER}; Port={PORT};AuthMech=1;CredString=[{\"user\": \"{USER}\", \"pass\":\"{PASS}\"}];`. Mer information om hur du hämtar en anslutningssträng finns i [det här dokumentet](https://docs.Couchbase.com/c-sdk/2.10/client-settings.html#configuring-overview). |
+| `connectionString` | Anslutningssträngen som används för att ansluta till din [!DNL Couchbase]-instans. Anslutningssträngsmönstret för [!DNL Couchbase] är `Server={SERVER}; Port={PORT};AuthMech=1;CredString=[{\"user\": \"{USER}\", \"pass\":\"{PASS}\"}];`. Mer information om hur du hämtar en anslutningssträng finns i [detta Couchbase-dokument](https://docs.Couchbase.com/c-sdk/2.10/client-settings.html#configuring-overview). |
 | `connectionSpec.id` | Den identifierare som krävs för att skapa en anslutning. Det fasta anslutningens spec-ID för [!DNL Couchbase] är `1fe283f6-9bec-11ea-bb37-0242ac130002`. |
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](../../../../../tutorials/authentication.md) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
-* Behörighet: Bearer `{ACCESS_TOKEN}`
-* x-api-key: `{API_KEY}`
-* x-gw-ims-org-id: `{IMS_ORG}`
+* `Authorization: Bearer {ACCESS_TOKEN}`
+* `x-api-key: {API_KEY}`
+* `x-gw-ims-org-id: {IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
-* x-sandbox-name: `{SANDBOX_NAME}`
+* `x-sandbox-name: {SANDBOX_NAME}`
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
 
-* Innehållstyp: `application/json`
+* `Content-Type: application/json`
 
 ## Skapa en anslutning
 
-En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en koppling krävs per [!DNL Couchbase] konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en koppling krävs per [!DNL Couchbase]-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
 
 **API-format**
 
@@ -72,7 +72,7 @@ POST /connections
 
 **Begäran**
 
-Följande begäran skapar en ny [!DNL Couchbase] anslutning som konfigureras av egenskaperna som anges i nyttolasten:.
+Följande begäran skapar en ny [!DNL Couchbase]-anslutning, konfigurerad med egenskaperna i nyttolasten:.
 
 ```shell
 curl -X POST \
@@ -100,8 +100,8 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `auth.params.connectionString` | Anslutningssträngen som används för att ansluta till ett [!DNL Couchbase] konto. Anslutningssträngsmönstret är: `Server={SERVER}; Port={PORT};AuthMech=1;CredString=[{\"user\": \"{USER}\", \"pass\":\"{PASS}\"}];`. |
-| `connectionSpec.id` | Anslutningens spec-ID [!DNL Couchbase] : `1fe283f6-9bec-11ea-bb37-0242ac130002`. |
+| `auth.params.connectionString` | Anslutningssträngen som används för att ansluta till ett [!DNL Couchbase]-konto. Anslutningssträngsmönstret är: `Server={SERVER}; Port={PORT};AuthMech=1;CredString=[{\"user\": \"{USER}\", \"pass\":\"{PASS}\"}];`. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID för [!DNL Couchbase]: `1fe283f6-9bec-11ea-bb37-0242ac130002`. |
 
 **Svar**
 
@@ -116,4 +116,4 @@ Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inkl
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en [!DNL Couchbase] anslutning med hjälp av [!DNL Flow Service] API:t och fått anslutningens unika ID-värde. Du kan använda det här ID:t i nästa självstudiekurs när du lär dig hur du [utforskar databaser med API:t](../../explore/database-nosql.md)för Flow Service.
+I den här självstudiekursen har du skapat en [!DNL Couchbase]-anslutning med hjälp av API:t [!DNL Flow Service] och har fått anslutningens unika ID-värde. Du kan använda det här ID:t i nästa självstudiekurs när du lär dig att [utforska databaser med API:t för Flow Service](../../explore/database-nosql.md).
