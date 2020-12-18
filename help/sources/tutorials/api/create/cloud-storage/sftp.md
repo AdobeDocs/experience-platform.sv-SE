@@ -6,9 +6,9 @@ topic: overview
 type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till en SFTP-server (Secure File Transfer Protocol).
 translation-type: tm+mt
-source-git-commit: 9092c3d672967d3f6f7bf7116c40466a42e6e7b1
+source-git-commit: c88b9400144f511ef456fd5fdc968a5a6b7a3dc0
 workflow-type: tm+mt
-source-wordcount: '770'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -29,6 +29,10 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [Källor](../../../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
+>[!IMPORTANT]
+>
+>Du bör undvika radmatningar och radmatningar när du importerar JSON-objekt med en SFTP-källanslutning. Du kan undvika begränsningarna genom att använda ett enda JSON-objekt per rad och flera rader för att skapa filer.
+
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till en SFTP-server med hjälp av API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga inloggningsuppgifter
@@ -45,11 +49,11 @@ För att [!DNL Flow Service] ska kunna ansluta till SFTP måste du ange värden 
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](../../../../../tutorials/authentication.md) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+För att kunna ringa anrop till plattforms-API:er måste du först slutföra [självstudiekursen](../../../../../tutorials/authentication.md) för autentisering. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
@@ -65,7 +69,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Skapa en anslutning
 
-En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per SFTP-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs eftersom den kan användas för att skapa flera dataflöden för att hämta olika data.
 
 ### Skapa en SFTP-anslutning med grundläggande autentisering
 
