@@ -6,34 +6,34 @@ topic: overview
 type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till en Azure Blob-lagring (nedan kallad Blob-lagring).
 translation-type: tm+mt
-source-git-commit: d332226541685108b58d88096146ed6048606774
+source-git-commit: fc6449d260ea7b96956689ce6c95c5e8b9002d89
 workflow-type: tm+mt
-source-wordcount: '609'
+source-wordcount: '605'
 ht-degree: 0%
 
 ---
 
 
-# Skapa en [!DNL Azure Blob] koppling med [!DNL Flow Service] API:t
+# Skapa en [!DNL Azure Blob]-koppling med hjälp av API:t [!DNL Flow Service]
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudiekursen används API:t för att vägleda dig genom de olika stegen för att ansluta [!DNL Flow Service] till ett [!DNL Experience Platform] [!DNL Azure Blob] lagringsutrymme (nedan kallat&quot;blob&quot;).
+I den här självstudien används API:t [!DNL Flow Service] för att vägleda dig genom stegen för att ansluta [!DNL Experience Platform] till ett [!DNL Azure Blob]-lagringsutrymme (kallas nedan&quot;Blob&quot;).
 
-Om du föredrar att använda användargränssnittet i [!DNL Experience Platform]innehåller [självstudiekursen](../../../ui/create/cloud-storage/blob.md) Azure Blob source connector UI steg-för-steg-instruktioner för att utföra liknande åtgärder.
+Om du föredrar att använda användargränssnittet i [!DNL Experience Platform] innehåller självstudiekursen [Azure Blob source connector UI](../../../ui/create/cloud-storage/blob.md) stegvisa instruktioner för att utföra liknande åtgärder.
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till en blobblagring med hjälp av [!DNL Flow Service] API:t.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till en blobblagring med hjälp av API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För [!DNL Flow Service] att kunna ansluta till blobblagringen måste du ange värden för följande anslutningsegenskap:
+För att [!DNL Flow Service] ska kunna ansluta till ditt Blob-lagringsutrymme måste du ange värden för följande anslutningsegenskap:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -44,23 +44,23 @@ Mer information om hur du hämtar en anslutningssträng finns i [det här Azure 
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](../../../../../tutorials/authentication.md) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
-* Behörighet: Bearer `{ACCESS_TOKEN}`
-* x-api-key: `{API_KEY}`
-* x-gw-ims-org-id: `{IMS_ORG}`
+* `Authorization: Bearer {ACCESS_TOKEN}`
+* `x-api-key: {API_KEY}`
+* `x-gw-ims-org-id: {IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
-* x-sandbox-name: `{SANDBOX_NAME}`
+* `x-sandbox-name: {SANDBOX_NAME}`
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
 
-* Innehållstyp: `application/json`
+* `Innehållstyp: application/json&quot;
 
 ## Skapa en anslutning
 
@@ -74,7 +74,7 @@ POST /connections
 
 **Begäran**
 
-För att skapa en blobanslutning måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikations-ID för Blob är `4c10e202-c428-4796-9208-5f1f5732b1cf`.
+För att skapa en blobanslutning måste dess unika anslutningsspecifikations-ID anges som en del av POSTEN. Anslutningsspecifikationens ID för blob är `4c10e202-c428-4796-9208-5f1f5732b1cf`.
 
 ```shell
 curl -X POST \
@@ -107,7 +107,7 @@ curl -X POST \
 
 **Svar**
 
-Ett godkänt svar returnerar information om den nya anslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att du ska kunna utforska ditt lagringsutrymme i nästa självstudiekurs.
+Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att du ska kunna utforska ditt lagringsutrymme i nästa självstudiekurs.
 
 ```json
 {
@@ -118,4 +118,4 @@ Ett godkänt svar returnerar information om den nya anslutningen, inklusive dess
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat en blobanslutning med API:er och ett unikt ID har hämtats som en del av svarstexten. Du kan använda det här anslutnings-ID:t för att [utforska molnlagring med API:t](../../explore/cloud-storage.md) för Flow Service eller [inmatningsdata med API:t](../../cloud-storage-parquet.md)för Flow Service.
+I den här självstudiekursen har du skapat en blobanslutning med API:er och ett unikt ID har hämtats som en del av svarstexten. Du kan använda det här anslutnings-ID:t för att [utforska molnlagring med API:t för Flow Service](../../explore/cloud-storage.md) eller [ingest parquet data med API:t för Flow Service](../../cloud-storage-parquet.md).
