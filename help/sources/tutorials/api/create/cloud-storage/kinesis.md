@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till ett Amazon Kinesis-konto.
 translation-type: tm+mt
-source-git-commit: 967585ba078edd13f90c820f6b1a0490140ca0cf
+source-git-commit: fc6449d260ea7b96956689ce6c95c5e8b9002d89
 workflow-type: tm+mt
 source-wordcount: '534'
 ht-degree: 1%
@@ -14,51 +14,51 @@ ht-degree: 1%
 ---
 
 
-# Skapa en [!DNL Amazon Kinesis] koppling med API:t för Flow Service
+# Skapa en [!DNL Amazon Kinesis]-koppling med API:t för Flow Service
 
 >[!NOTE]
 >
->Kopplingen [!DNL Amazon Kineses] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
+>[!DNL Amazon Kineses]-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudiekursen används API:t för att vägleda dig genom stegen för att ansluta [!DNL Flow Service] till ett [!DNL Experience Platform] [!DNL Amazon Kinesis] konto.
+I den här självstudien används API:t [!DNL Flow Service] för att vägleda dig genom stegen för att ansluta [!DNL Experience Platform] till ett [!DNL Amazon Kinesis]-konto.
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../../home.md): [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster.
-* [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
+* [Sandlådor](../../../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till ett [!DNL Amazon Kinesis] konto med [!DNL Flow Service] API.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till ett [!DNL Amazon Kinesis]-konto med API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För [!DNL Flow Service] att kunna ansluta till ditt [!DNL Amazon Kinesis] konto måste du ange värden för följande anslutningsegenskaper:
+För att [!DNL Flow Service] ska kunna ansluta till ditt [!DNL Amazon Kinesis]-konto måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `accessKeyId` | Åtkomstnyckel-ID för ditt [!DNL Kinesis] konto. |
-| `secretKey` | Den hemliga åtkomstnyckeln för ditt [!DNL Kinesis] konto. |
-| `region` | Regionen för ditt [!DNL Kinesis] konto. |
-| `connectionSpec.id` | ID för [!DNL Kinesis] anslutningsspecifikation: `86043421-563b-46ec-8e6c-e23184711bf6` |
+| `accessKeyId` | Åtkomstnyckel-ID för ditt [!DNL Kinesis]-konto. |
+| `secretKey` | Den hemliga åtkomstnyckeln för ditt [!DNL Kinesis]-konto. |
+| `region` | Regionen för ditt [!DNL Kinesis]-konto. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID för [!DNL Kinesis]: `86043421-563b-46ec-8e6c-e23184711bf6` |
 
 Mer information om dessa värden finns i [det här Kinesis-dokumentet](https://docs.aws.amazon.com/streams/latest/dev/getting-started.html).
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](../../../../../tutorials/authentication.md) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
@@ -68,7 +68,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Skapa en anslutning
 
-En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per [!DNL Amazon Kinesis] konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
+En anslutning anger en källa och innehåller dina autentiseringsuppgifter för den källan. Endast en anslutning krävs per [!DNL Amazon Kinesis]-konto eftersom den kan användas för att skapa flera källanslutningar för att hämta olika data.
 
 **API-format**
 
@@ -105,14 +105,14 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `auth.params.accessKeyId` | Åtkomstnyckel-ID för ditt [!DNL Kinesis] konto. |
-| `auth.params.secretKey` | Den hemliga åtkomstnyckeln för ditt [!DNL Kinesis] konto. |
-| `auth.params.region` | Regionen för ditt [!DNL Kinesis] konto. |
-| `connectionSpec.id` | ID för [!DNL Kinesis] anslutningsspecifikation: `86043421-563b-46ec-8e6c-e23184711bf6` |
+| `auth.params.accessKeyId` | Åtkomstnyckel-ID för ditt [!DNL Kinesis]-konto. |
+| `auth.params.secretKey` | Den hemliga åtkomstnyckeln för ditt [!DNL Kinesis]-konto. |
+| `auth.params.region` | Regionen för ditt [!DNL Kinesis]-konto. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID för [!DNL Kinesis]: `86043421-563b-46ec-8e6c-e23184711bf6` |
 
 **Svar**
 
-Ett godkänt svar returnerar information om den nya anslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att du ska kunna utforska dina molnlagringsdata i nästa självstudiekurs.
+Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att du ska kunna utforska dina molnlagringsdata i nästa självstudiekurs.
 
 ```json
 {
@@ -123,4 +123,4 @@ Ett godkänt svar returnerar information om den nya anslutningen, inklusive dess
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en [!DNL Amazon Kinesis] anslutning med API:er och ett unikt ID har hämtats som en del av svarstexten. Du kan använda det här anslutnings-ID:t för att [samla in strömmande data med API:t](../../collect/streaming.md)för Flow Service.
+Genom att följa den här självstudiekursen har du skapat en [!DNL Amazon Kinesis]-anslutning med API:er och ett unikt ID hämtades som en del av svarstexten. Du kan använda detta anslutnings-ID för att [samla in strömmande data med API:t för flödestjänst](../../collect/streaming.md).
