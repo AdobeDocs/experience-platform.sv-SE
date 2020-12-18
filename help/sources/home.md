@@ -5,9 +5,9 @@ title: Adobe Experience Platform Source Connectors - översikt
 topic: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 translation-type: tm+mt
-source-git-commit: 5e5ac80e0c79b3cc0354b469edc036523e29b45d
+source-git-commit: 466cb072537cbf462d2c4d8f3ee4b6eccc0199a0
 workflow-type: tm+mt
-source-wordcount: '857'
+source-wordcount: '896'
 ht-degree: 0%
 
 ---
@@ -15,19 +15,19 @@ ht-degree: 0%
 
 # Översikt över källkopplingar
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserade lager, databaser och många andra.
 
-[!DNL Experience Platform] innehåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar till olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera dina tredjepartssystem, ange tider för att få tillgång till dem och hantera dataöverföringshastigheten.
+[!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom plattformen. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som gör att du enkelt kan konfigurera källanslutningar till olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera dina tredjepartssystem, ange tider för att få tillgång till dem och hantera dataöverföringshastigheten.
 
-Med [!DNL Experience Platform]hjälp av kan ni centralisera data som ni samlar in från olika källor och använda de insikter ni får för att göra mer.
+Med Experience Platform kan ni centralisera data som ni samlar in från olika källor och använda de insikter ni får för att göra mer.
 
 ## Typer av källor
 
-Källor i [!DNL Experience Platform] är grupperade i följande kategorier:
+Källor i Experience Platform är grupperade i följande kategorier:
 
 ### Adobe-program
 
-[!DNL Experience Platform] tillåter att data hämtas från andra Adobe-program, inklusive Adobe Analytics, Adobe Audience Manager och [!DNL Experience Platform Launch]. Mer information finns i följande relaterade dokument:
+Experience Platform tillåter att data hämtas från andra Adobe-program, inklusive Adobe Analytics, Adobe Audience Manager och [!DNL Experience Platform Launch]. Mer information finns i följande relaterade dokument:
 
 - [Adobe Audience Manager Connector - översikt](connectors/adobe-applications/audience-manager.md)
 - [Skapa en Adobe Audience Manager-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/audience-manager.md)
@@ -39,13 +39,13 @@ Källor i [!DNL Experience Platform] är grupperade i följande kategorier:
 
 ### Reklam
 
-[!DNL Experience Platform] ger stöd för inmatning av data från ett annonssystem från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+Experience Platform stöder inmatning av data från ett annonssystem från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [[!DNL Google AdWords]](connectors/advertising/ads.md) koppling
 
 ### molnlagring
 
-Lagringskällor i molnet kan hämta dina egna data [!DNL Platform] utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM-parquet eller avgränsade. Varje steg i processen integreras i arbetsflödet Källor med användargränssnittet. Mer information finns i följande relaterade dokument:
+Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM-parquet eller avgränsade. Varje steg i processen integreras i arbetsflödet Källor med användargränssnittet. Mer information finns i följande relaterade dokument:
 
 - [[!DNL Azure Data Lake Storage Gen2] koppling](connectors/cloud-storage/adls-gen2.md)
 - [[!DNL Azure Blob] koppling](connectors/cloud-storage/blob.md)
@@ -60,21 +60,21 @@ Lagringskällor i molnet kan hämta dina egna data [!DNL Platform] utan att du b
 
 ### CRM (Customer Relationship Management)
 
-CRM-system tillhandahåller data som kan hjälpa till att bygga upp kundrelationer, vilket i sin tur skapar lojalitet och driver kundlojalitet. [!DNL Experience Platform] har stöd för att importera CRM-data från [!DNL Microsoft Dynamics 365] och [!DNL Salesforce]. Mer information finns i följande relaterade dokument:
+CRM-system tillhandahåller data som kan hjälpa till att bygga upp kundrelationer, vilket i sin tur skapar lojalitet och driver kundlojalitet. Experience Platform har stöd för att importera CRM-data från [!DNL Microsoft Dynamics 365] och [!DNL Salesforce]. Mer information finns i följande relaterade dokument:
 
 - [[!DNL Microsoft Dynamics] koppling](connectors/crm/ms-dynamics.md)
 - [[!DNL Salesforce] koppling](connectors/crm/salesforce.md)
 
 ### Nöjda kunder
 
-[!DNL Experience Platform] har stöd för inmatning av data från en tredjepartsapp för kundframgångar. Mer information finns i följande relaterade dokument:
+Experience Platform har stöd för inhämtning av data från tredjepartsprogram. Mer information finns i följande relaterade dokument:
 
 - [[!DNL Salesforce Service Cloud] koppling](connectors/customer-success/salesforce-service-cloud.md)
 - [[!DNL ServiceNow] koppling](connectors/customer-success/servicenow.md)
 
 ### Databas
 
-[!DNL Experience Platform] har stöd för inmatning av data från en tredjepartsdatabas. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+Experience Platform har stöd för att importera data från en tredjepartsdatabas. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [[!DNL Amazon Redshift] koppling](connectors/databases/redshift.md)
 - [[!DNL Apache Hive on Azure HDInsights] koppling](connectors/databases/hive.md)
@@ -95,45 +95,45 @@ CRM-system tillhandahåller data som kan hjälpa till att bygga upp kundrelation
 
 ### eCommerce
 
-[!DNL Experience Platform] har stöd för inmatning av data från ett e-handelssystem från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+Experience Platform stöder inmatning av data från ett e-handelssystem från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [[!DNL Shopify]](connectors/ecommerce/shopify.md)
 
 ### Marknadsföringsautomatisering
 
-[!DNL Experience Platform] har stöd för inmatning av data från ett automatiseringssystem för marknadsföring från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+Experience Platform stöder inmatning av data från ett system för automatisering av tredjepartsmarknadsföring. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [[!DNL HubSpot] koppling](connectors/marketing-automation/hubspot.md)
 
 ### Betalningar
 
-[!DNL Experience Platform] har stöd för inmatning av data från ett betalningssystem från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+Experience Platform stöder inmatning av data från tredje parts betalningssystem. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [[!DNL PayPal] koppling](connectors/payments/paypal.md)
 
 ### Protokoll
 
-[!DNL Experience Platform] har stöd för inmatning av data från ett tredjepartsprotokollsystem. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+Experience Platform har stöd för inmatning av data från tredjepartsprotokollsystem. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [[!DNL Generic OData] koppling](connectors/protocols/odata.md)
 
 ## Åtkomstkontroll för källor vid datainhämtning
 
-Behörigheter för källor vid dataöverföring kan hanteras inom Adobe Admin Console. Du kan få åtkomst till behörigheter via fliken **[!UICONTROL Permissions]** i en viss produktprofil. Från **[!UICONTROL Edit Permissions]** panelen kan du komma åt de behörigheter som gäller för källor via **[!UICONTROL data ingestion]** menyalternativet. Behörigheten **[!UICONTROL View Sources]** ger skrivskyddad åtkomst till tillgängliga källor på **[!UICONTROL Catalog]** fliken och till autentiserade källor på **[!UICONTROL Browse]** **[!UICONTROL Manage Sources]** fliken, medan behörigheten ger fullständig åtkomst för att läsa, skapa, redigera och inaktivera källor.
+Behörigheter för källor vid dataöverföring kan hanteras inom Adobe Admin Console. Du kan få åtkomst till behörigheter via fliken **[!UICONTROL Permissions]** i en viss produktprofil. Från panelen **[!UICONTROL Edit Permissions]** kan du komma åt de behörigheter som gäller för källor via menyposten **[!UICONTROL data ingestion]**. **[!UICONTROL View Sources]**-behörigheten ger skrivskyddad åtkomst till tillgängliga källor på fliken **[!UICONTROL Catalog]** och autentiserade källor på fliken **[!UICONTROL Browse]**, medan behörigheten **[!UICONTROL Manage Sources]** ger fullständig åtkomst till att läsa, skapa, redigera och inaktivera källor.
 
 Följande tabell visar hur användargränssnittet beter sig baserat på olika kombinationer av dessa behörigheter:
 
 | Behörighetsnivå | Beskrivning |
 | ---- | ----|
 | **[!UICONTROL View Sources]** På | Ge skrivskyddad åtkomst till källor i varje källtyp på fliken Katalog samt på flikarna Bläddra, Konton och Dataflöde. |
-| **[!UICONTROL Manage Sources]** På | Förutom de funktioner som ingår i **[!UICONTROL View Sources]** ger tillgång till **[!UICONTROL Connect Source]** alternativen i **[!UICONTROL Catalog]** och till **[!UICONTROL Select Data]** alternativen i **[!UICONTROL Browse]**. **[!UICONTROL Manage Sources]** kan du även aktivera eller inaktivera **[!UICONTROL DataFlows]** och redigera deras scheman. |
-| **[!UICONTROL View Sources]** Av och **[!UICONTROL Manage Sources]** Av | Återkalla all åtkomst till källor. |
+| **[!UICONTROL Manage Sources]** På | Förutom de funktioner som ingår i **[!UICONTROL View Sources]** ger åtkomst till alternativet **[!UICONTROL Connect Source]** i **[!UICONTROL Catalog]** och till alternativet **[!UICONTROL Select Data]** i **[!UICONTROL Browse]**. **[!UICONTROL Manage Sources]** kan du även aktivera eller inaktivera  **[!UICONTROL DataFlows]** och redigera deras scheman. |
+| **[!UICONTROL View Sources]** Av och  **[!UICONTROL Manage Sources]** Av | Återkalla all åtkomst till källor. |
 
-Mer information om de behörigheter som ges via Admin Console, inklusive dessa fyra källor, finns i [åtkomstkontrollsöversikten](../access-control/home.md).
+Mer information om tillgängliga behörigheter som beviljats via Admin Console, inklusive dessa fyra källor, finns i [översikten över åtkomstkontroll](../access-control/home.md).
 
 ## Villkor {#terms-and-conditions}
 
-Genom att använda någon av källorna som är märkta som beta (&quot;Beta&quot;) bekräftar du härmed att betaversionen tillhandahålls ***&quot;i befintligt skick&quot; utan garanti av något slag***.
+Genom att använda någon av källorna som är märkta som beta (&quot;Beta&quot;) bekräftar du härmed att betaversionen tillhandahålls ***som den är utan någon garanti av något slag***.
 
 Adobe har ingen skyldighet att upprätthålla, korrigera, uppdatera, ändra, ändra eller på annat sätt stödja betaversionen. Du rekommenderas att vara försiktig och inte på något sätt förlita dig på att betaversionen och/eller det medföljande materialet fungerar som de ska. Beta betraktas som konfidentiell information om Adobe.
 
