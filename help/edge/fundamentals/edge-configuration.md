@@ -5,7 +5,7 @@ description: 'Lär dig hur du konfigurerar Experience Platform Edge-nätverket. 
 seo-description: 'Lär dig hur du konfigurerar Experience Platform Edge-nätverket. '
 keywords: configuration;edge;edge configuration id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destinations;url Destinations;Analytics Settings Blockreport suite id;
 translation-type: tm+mt
-source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
+source-git-commit: 94b3faf3157f4e1f4e46b6055914a04883dc44fa
 workflow-type: tm+mt
 source-wordcount: '829'
 ht-degree: 0%
@@ -15,23 +15,23 @@ ht-degree: 0%
 
 # Konfigurera Edge
 
-Konfigurationen för Adobe Experience Platform Web SDK är uppdelad på två platser. Kommandot [](configuring-the-sdk.md) configure i SDK styr saker som måste hanteras på klienten, till exempel `edgeDomain`. Edge-konfigurationen hanterar all annan konfiguration för SDK. När en begäran skickas till Adobe Experience Platform Edge Network används den för att referera till konfigurationen på serversidan `edgeConfigId` . På så sätt kan du uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
+Konfigurationen för Adobe Experience Platform Web SDK är uppdelad på två platser. [konfigurationskommandot](configuring-the-sdk.md) i SDK styr saker som måste hanteras på klienten, till exempel `edgeDomain`. Edge-konfigurationen hanterar all annan konfiguration för SDK. När en begäran skickas till Adobe Experience Platform Edge Network används `edgeConfigId` för att referera till konfigurationen på serversidan. På så sätt kan du uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
 
-Din organisation måste etableras för den här funktionen. Kontakta din Certified software manager (CSM) för att få tag i tillåtelselista.
+Din organisation måste etableras för den här funktionen. Kontakta din Customer Success Manager (CSM) för att komma igång med tillåtelselista.
 
 ## Skapa en Edge-konfiguration
 
-Du kan skapa kantkonfigurationer i Adobe [!DNL Experience Platform Launch] med hjälp av kantkonfigurationsverktyget.
+Kantkonfigurationer kan skapas i Adobe [!DNL Experience Platform Launch] med hjälp av edge-konfigurationsverktyget.
 
 ![navigering för konturkonfigurationsverktyg](../../assets/edge_configuration_nav.png)
 
 >[!NOTE]
 >
->Kunder på tillåtelselista kan använda kantkonfigurationsverktyget oavsett om de använder [!DNL Experience Platform Launch] som tagghanterare eller inte. Dessutom kräver användare framkallningsbehörigheter i [!DNL Experience Platform Launch]. Mer information finns i artikeln [Användarbehörigheter](https://docs.adobe.com/content/help/en/launch/using/reference/admin/user-permissions.html) i [!DNL Experience Platform Launch] dokumentationen.
+>Kunder på tillåtelselista kan använda kantkonfigurationsverktyget oavsett om de använder [!DNL Experience Platform Launch] som tagghanterare eller inte. Dessutom kräver användare framkallningsbehörighet i [!DNL Experience Platform Launch]. Mer information finns i artikeln [Användarbehörigheter](https://docs.adobe.com/content/help/en/launch/using/reference/admin/user-permissions.html) i [!DNL Experience Platform Launch]-dokumentationen.
 
-Skapa en kantkonfiguration genom att klicka på **[!UICONTROL New Edge Configuration]** i skärmens övre högra hörn. När du har angett ett namn och en beskrivning ombeds du ange standardinställningarna för varje miljö. Tillgängliga inställningar anges nedan.
+Skapa en kantkonfiguration genom att klicka på **[!UICONTROL New Edge Configuration]** i skärmens övre högra del. När du har angett ett namn och en beskrivning ombeds du ange standardinställningarna för varje miljö. Tillgängliga inställningar anges nedan.
 
-När du skapar en kantkonfiguration skapas automatiskt tre miljöer med identiska inställningar. Dessa tre miljöer är *dev*, *stage* och *prod*. De matchar de tre standardmiljöerna i [!DNL Experience Platform Launch]. När du skapar ett [!DNL Experience Platform Launch] bibliotek till en utvecklingsmiljö använder biblioteket automatiskt dev-miljön från din konfiguration. Du kan redigera inställningar i enskilda miljöer så mycket du vill.
+När du skapar en kantkonfiguration skapas automatiskt tre miljöer med identiska inställningar. Dessa tre miljöer är *dev*, *stage* och *prod*. De matchar de tre standardmiljöerna i [!DNL Experience Platform Launch]. När du skapar ett [!DNL Experience Platform Launch]-bibliotek i en dev-miljö använder biblioteket automatiskt dev-miljön från din konfiguration. Du kan redigera inställningar i enskilda miljöer så mycket du vill.
 
 Det ID som används i SDK som `edgeConfigId` är ett sammansatt ID som anger konfigurationen och miljön (till exempel `1c86778b-cdba-4684-9903-750e52912ad1:stage`). Om det inte finns någon miljö i det sammansatta ID:t (till exempel `stage` i föregående exempel) används produktionsmiljön.
 
@@ -59,15 +59,15 @@ Med inställningarna som anges här kan du skicka data till Adobe Experience Pla
 
 ### [!UICONTROL Sandbox]
 
-Sandlådor är platser i Adobe Experience Platform som gör att kunderna kan isolera sina data och implementeringar från varandra. Mer information om hur de fungerar finns i dokumentationen [för](../../sandboxes/home.md)sandlådor.
+Sandlådor är platser i Adobe Experience Platform som gör att kunderna kan isolera sina data och implementeringar från varandra. Mer information om hur de fungerar finns i [dokumentationen till sandlådor](../../sandboxes/home.md).
 
 ### [!UICONTROL Streaming Inlet]
 
-Ett inlopp för direktuppspelning är en HTTP-källa i Adobe Experience Platform. Dessa skapas under fliken&quot;[!UICONTROL Sources]&quot; i Adobe Experience Platform som ett HTTP-API.
+Ett inlopp för direktuppspelning är en HTTP-källa i Adobe Experience Platform. Dessa skapas under fliken [!UICONTROL Sources] i Adobe Experience Platform som ett HTTP-API.
 
 ### [!UICONTROL Event Dataset]
 
-Edge-konfigurationer har stöd för att skicka data till datauppsättningar som har ett klassschema [!UICONTROL Experience Event].
+Edge-konfigurationer har stöd för att skicka data till datauppsättningar som har ett schema av klassen [!UICONTROL Experience Event].
 
 ## Adobe Target-inställningar
 
@@ -81,19 +81,19 @@ Om du vill konfigurera Adobe Target måste du ange en klientkod. De andra fälte
 
 ### [!UICONTROL Client Code]
 
-Unikt ID för ett målkonto. Du hittar detta genom att navigera till [!UICONTROL Adobe Target] > [!UICONTROL Setup]> [!UICONTROL Implementation] > [!UICONTROL edit settings] bredvid [!UICONTROL download] knappen för antingen [!UICONTROL at.js] eller [!UICONTROL mbox.js]
+Unikt ID för ett målkonto. Du hittar detta genom att navigera till [!UICONTROL Adobe Target] > [!UICONTROL Setup]> [!UICONTROL Implementation] > [!UICONTROL edit settings] bredvid knappen [!UICONTROL download] för antingen [!UICONTROL at.js] eller [!UICONTROL mbox.js]
 
 ### [!UICONTROL Property Token]
 
-[!DNL Target] låter kunderna styra behörigheter genom att använda egenskaper. Mer information finns under [Enterprise Permissions](https://docs.adobe.com/content/help/en/target/using/administer/manage-users/enterprise/properties-overview.html) (Enterprise-behörigheter) i [!DNL Target] dokumentationen.
+[!DNL Target] låter kunderna styra behörigheter genom att använda egenskaper. Mer information finns i avsnittet [Enterprise Permissions](https://docs.adobe.com/content/help/en/target/using/administer/manage-users/enterprise/properties-overview.html) i [!DNL Target]-dokumentationen.
 
 Egenskapstoken finns i [!UICONTROL Adobe Target] > [!UICONTROL setup] > [!UICONTROL Properties]
 
 ### [!UICONTROL Target Environment ID]
 
-[Med miljöer](https://docs.adobe.com/content/help/en/target/using/administer/hosts.html) i Adobe Target kan ni hantera implementeringen i alla utvecklingsfaser. Den här inställningen anger vilken miljö du ska använda för varje miljö.
+[Med ](https://docs.adobe.com/content/help/en/target/using/administer/hosts.html) Adobe Target kan du hantera implementeringen i alla utvecklingsfaser. Den här inställningen anger vilken miljö du ska använda för varje miljö.
 
-Adobe rekommenderar att du ställer in detta på olika sätt för var och en av dina `dev`- `stage`och `prod` edge-konfigurationsmiljöer för att göra saker och ting enkla. Om du redan har definierat Adobe Target-miljöer kan du använda dessa.
+Adobe rekommenderar att du anger detta annorlunda för var och en av edge-konfigurationsmiljöerna `dev`, `stage` och `prod` för att göra saker och ting enkla. Om du redan har definierat Adobe Target-miljöer kan du använda dessa.
 
 ## Adobe Audience Manager-inställningar
 
@@ -103,15 +103,15 @@ Allt som behövs för att skicka data till Adobe Audience Manager är att aktive
 
 ### [!UICONTROL Cookie Destinations Enabled]
 
-Gör att SDK kan dela segmentinformation via [cookie-mål](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/destinations/custom-destinations/create-cookie-destination.html) från [!DNL Audience Manager].
+Tillåter SDK att dela segmentinformation via [Cookie-mål](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/destinations/custom-destinations/create-cookie-destination.html) från [!DNL Audience Manager].
 
 ### [!UICONTROL URL Destinations Enabled]
 
-Tillåter SDK att dela segmentinformation via [URL-mål](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/destinations/custom-destinations/create-url-destination.html). Dessa är konfigurerade i [!DNL Audience Manager].
+Tillåter SDK att dela segmentinformation via [URL-mål](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/destinations/custom-destinations/create-url-destination.html). Dessa konfigureras i [!DNL Audience Manager].
 
 ## Adobe Analytics-inställningar
 
-Kontrollerar om data skickas till Adobe Analytics. Ytterligare information finns i [Analytics Overview](../data-collection/adobe-analytics/analytics-overview.md).
+Kontrollerar om data skickas till Adobe Analytics. Ytterligare information finns i [Analysöversikt](../data-collection/adobe-analytics/analytics-overview.md).
 
 ![Adobe Analytics Settings Block](../../assets/edge_configuration_aa.png)
 
