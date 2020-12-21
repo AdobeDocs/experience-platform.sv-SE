@@ -5,9 +5,9 @@ user-guide-title: Adobe Experience Platform Data Governance - hjälp
 breadcrumb-title: Handbok för datastyrning
 user-guide-description: Använd etiketter, marknadsföringsåtgärder och policyer för att begränsa användningen av data.
 translation-type: tm+mt
-source-git-commit: 4e358fda1c8f7aebe57a009a146b8b73cf88e169
+source-git-commit: d139eed4768384412a17b62037ed41c06c2941bd
 workflow-type: tm+mt
-source-wordcount: '123'
+source-wordcount: '118'
 ht-degree: 3%
 
 ---
@@ -21,13 +21,14 @@ ht-degree: 3%
    * [Etiketter för grundläggande dataanvändning](labels/reference.md)
    * [Hantera etiketter för dataanvändning i användargränssnittet](labels/user-guide.md)
    * [Hantera etiketter för datauppsättningar och fält med API:er](labels/dataset-api.md)
-* Dataanvändningspolicyer {#policies}
+* Dataanvändningsprinciper {#policies}
    * [Översikt över policyer för dataanvändning](policies/overview.md)
    * [Användarhandbok för dataanvändningsprinciper](policies/user-guide.md)
    * [Skapa en dataanvändningsprincip med hjälp av API:t för principtjänsten](policies/create.md)
-* Politiska åtgärder {#enforcement}
+* Principkontroll {#enforcement}
    * [Översikt över policytillämpning](enforcement/overview.md)
-   * [Använd principer för dataanvändning med hjälp av API:t för principtjänsten](enforcement/api-enforcement.md)
+   * [Automatisk kontroll](enforcement/auto-enforcement.md)
+   * [API-baserad tillämpning](enforcement/api-enforcement.md)
 * Utvecklarhandbok för Policy Service API {#api}
    * [Översikt](api/overview.md)
    * [Komma igång](api/getting-started.md)
