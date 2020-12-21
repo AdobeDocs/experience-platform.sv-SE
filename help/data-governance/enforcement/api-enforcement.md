@@ -6,38 +6,38 @@ topic: enforcement
 type: Tutorial
 description: När du har skapat dataanvändningsetiketter för dina data, och har skapat användningsprinciper för marknadsföringsåtgärder mot dessa etiketter, kan du använda principtjänstens API för att utvärdera om en marknadsföringsåtgärd som utförs på en datauppsättning eller en godtycklig grupp av etiketter utgör en policyöverträdelse. Du kan sedan konfigurera egna interna protokoll för att hantera policyöverträdelser baserat på API-svaret.
 translation-type: tm+mt
-source-git-commit: 00688e271b3c1e3ad1a17ceb6045e3316bd65961
+source-git-commit: e680191d495e4c33baa8242d40a15b9124eec8cd
 workflow-type: tm+mt
-source-wordcount: '993'
+source-wordcount: '992'
 ht-degree: 0%
 
 ---
 
 
-# Använd principer för dataanvändning med [!DNL Policy Service] API
+# Använd dataanvändningsprinciper med hjälp av API:t [!DNL Policy Service]
 
-När du har skapat dataanvändningsetiketter för dina data och har skapat användarprofiler för marknadsföringsåtgärder mot dessa etiketter, kan du använda [[!DNL Policy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) för att utvärdera om en marknadsföringsåtgärd som utförs på en datauppsättning eller en godtycklig grupp av etiketter utgör en policyöverträdelse. Du kan sedan konfigurera egna interna protokoll för att hantera policyöverträdelser baserat på API-svaret.
+När du har skapat dataanvändningsetiketter för dina data och har skapat användarprofiler för marknadsföringsåtgärder mot dessa etiketter, kan du använda [[!DNL Policy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) för att utvärdera om en marknadsföringsåtgärd som har utförts på en datauppsättning eller en godtycklig grupp av etiketter utgör en policyöverträdelse. Du kan sedan konfigurera egna interna protokoll för att hantera policyöverträdelser baserat på API-svaret.
 
 >[!NOTE]
 >
->Som standard kan endast profiler vars status är inställd på `ENABLED` delta i utvärderingen. Om du vill tillåta `DRAFT` profiler att delta i utvärderingen måste du ta med frågeparametern `includeDraft=true` i sökvägen till begäran.
+>Som standard kan endast profiler vars status är `ENABLED` delta i utvärderingen. Om du vill tillåta `DRAFT`-principer att delta i utvärderingen måste du inkludera frågeparametern `includeDraft=true` i sökvägen till begäran.
 
-Det här dokumentet innehåller steg om hur du använder API:t för att söka efter policyöverträdelser i olika scenarier. [!DNL Policy Service]
+Det här dokumentet innehåller steg om hur du använder API:t [!DNL Policy Service] för att kontrollera om det finns principfel i olika scenarier.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande viktiga begrepp som används i att implementera dataanvändningspolicyer:
 
-* [Datastyrning](../home.md): Ramverket som [!DNL Platform] genomdriver efterlevnad av dataanvändning.
+* [Datastyrning](../home.md): Det ramverk som  [!DNL Platform] genomdriver efterlevnad av dataanvändning.
    * [Dataanvändningsetiketter](../labels/overview.md): Dataanvändningsetiketter används för datauppsättningar (och/eller enskilda fält inom dessa datauppsättningar), vilket anger begränsningar för hur data kan användas.
    * [Dataanvändningsprinciper](../policies/overview.md): Dataanvändningsprinciper är regler som beskriver den typ av marknadsföringsåtgärder som är tillåtna eller begränsade för vissa uppsättningar av dataanvändningsetiketter.
-* [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Sandlådor](../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till [!DNL Policy Service] API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
+Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t [!DNL Policy Service], inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
 
 ## Utvärdera med hjälp av etiketter och en marknadsföringsåtgärd
 
-Du kan utvärdera en policy genom att testa en marknadsföringsåtgärd mot en uppsättning dataanvändningsetiketter som skulle finnas i en datauppsättning. Detta görs med frågeparametern, där etiketter anges som en kommaavgränsad lista med värden, vilket visas i exemplet nedan. `duleLabels`
+Du kan utvärdera en policy genom att testa en marknadsföringsåtgärd mot en uppsättning dataanvändningsetiketter som skulle finnas i en datauppsättning. Detta görs med frågeparametern `duleLabels`, där etiketter anges som en kommaavgränsad lista med värden, vilket visas i exemplet nedan.
 
 **API-format**
 
@@ -53,11 +53,11 @@ GET /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints?duleLabels={LAB
 
 **Begäran**
 
-Följande begäran testar marknadsföringsåtgärden mot etiketter `exportToThirdParty` och `C1` `C3`. Eftersom den dataanvändningsprincip som du skapade tidigare i den här självstudiekursen definierar `C1` etiketten som ett av `deny` villkoren i dess policyuttryck, bör marknadsföringsåtgärden utlösa en principöverträdelse.
+Följande begäran testar marknadsföringsåtgärden `exportToThirdParty` mot etiketterna `C1` och `C3`. Eftersom dataanvändningsprincipen som du skapade tidigare i den här självstudien definierar `C1`-etiketten som ett av `deny`-villkoren i sitt principuttryck, bör marknadsföringsåtgärden utlösa en principöverträdelse.
 
 >[!NOTE]
 >
->Dataanvändningsetiketter är skiftlägeskänsliga. Policyöverträdelser inträffar endast när etiketterna som definieras i deras policyuttryck matchar exakt. I det här exemplet skulle en `C1` etikett utlösa en överträdelse, medan en `c1` etikett inte skulle göra det.
+>Dataanvändningsetiketter är skiftlägeskänsliga. Policyöverträdelser inträffar endast när etiketterna som definieras i deras policyuttryck matchar exakt. I det här exemplet skulle en `C1`-etikett utlösa en överträdelse, medan en `c1`-etikett inte skulle göra det.
 
 ```shell
 curl -X GET \
@@ -70,7 +70,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar URL:en för marknadsföringsåtgärden, användningsetiketterna som den testades mot och en lista över profiler som överträds som ett resultat av att åtgärden testades mot dessa etiketter. I det här exemplet visas principen&quot;Exportera data till tredje part&quot; i `violatedPolicies` arrayen, vilket anger att marknadsföringsåtgärden utlöste den förväntade principöverträdelsen.
+Ett lyckat svar returnerar URL:en för marknadsföringsåtgärden, användningsetiketterna som den testades mot och en lista över profiler som överträds som ett resultat av att åtgärden testades mot dessa etiketter. I det här exemplet visas principen Exportera data till tredje part i `violatedPolicies`-arrayen, vilket anger att marknadsföringsåtgärden utlöste den förväntade principöverträdelsen.
 
 ```json
 {
@@ -130,11 +130,11 @@ Ett lyckat svar returnerar URL:en för marknadsföringsåtgärden, användningse
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `violatedPolicies` | En matris med en lista över principer som har överträtts genom att marknadsföringsåtgärden (anges i `marketingActionRef`) testas mot den angivna `duleLabels`. |
+| `violatedPolicies` | En matris med en lista över principer som har överträtts genom att marknadsföringsåtgärden testas (anges i `marketingActionRef`) mot den angivna `duleLabels`. |
 
 ## Utvärdera med datauppsättningar
 
-Du kan utvärdera en dataanvändningsprincip genom att testa en marknadsföringsåtgärd mot en eller flera datauppsättningar från vilka etiketter kan samlas in. Detta görs genom att en POST begär `/marketingActions/core/{MARKETING_ACTION_NAME}/constraints` och tillhandahåller datauppsättnings-ID i begärandetexten, vilket visas i exemplet nedan.
+Du kan utvärdera en dataanvändningsprincip genom att testa en marknadsföringsåtgärd mot en eller flera datauppsättningar från vilka etiketter kan samlas in. Detta görs genom att en POST begär `/marketingActions/core/{MARKETING_ACTION_NAME}/constraints` och tillhandahåller datauppsättnings-ID:n i begärandetexten, vilket visas i exemplet nedan.
 
 **API-format**
 
@@ -149,7 +149,7 @@ POST /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints
 
 **Begäran**
 
-Följande begäran testar marknadsföringsåtgärden mot tre olika datauppsättningar `exportToThirdParty` . Datamängderna refereras av typen och ID i en array som tillhandahålls i nyttolasten.
+Följande begäran testar marknadsföringsåtgärden `exportToThirdParty` mot tre olika datauppsättningar. Datamängderna refereras av typen och ID i en array som tillhandahålls i nyttolasten.
 
 ```shell
 curl -X POST \
@@ -185,11 +185,11 @@ curl -X POST \
 | --- | --- |
 | `entityType` | Varje objekt i nyttolastarrayen måste ange vilken typ av enhet som definieras. I det här fallet kommer värdet alltid att vara &quot;dataSet&quot;. |
 | `entityId` | Varje objekt i nyttolastarrayen måste ange ett unikt ID för en datamängd. |
-| `entityMeta.fields` | (Valfritt) En array med [JSON-pekarsträngar](../../landing/api-fundamentals.md#json-pointer) , som refererar till specifika fält i datasetens schema. Om den här arrayen inkluderas endast fälten i arrayen i utvärderingen. Schemafält som inte ingår i arrayen kommer inte att utvärderas.<br><br>Om det här fältet inte inkluderas inkluderas alla fält i datasetet i utvärderingen. |
+| `entityMeta.fields` | (Valfritt) En matris med [JSON-pekare](../../landing/api-fundamentals.md#json-pointer)-strängar som refererar till specifika fält i datasetens schema. Om den här arrayen inkluderas endast fälten i arrayen i utvärderingen. Schemafält som inte ingår i arrayen kommer inte att utvärderas.<br><br>Om det här fältet inte inkluderas inkluderas alla fält i datasetet i utvärderingen. |
 
 **Svar**
 
-Ett lyckat svar returnerar URL:en för marknadsföringsåtgärden, de användningsetiketter som samlades in från de angivna datauppsättningarna och en lista över principer som överträtts som ett resultat av att åtgärden testades mot dessa etiketter. I det här exemplet visas principen&quot;Exportera data till tredje part&quot; i `violatedPolicies` arrayen, vilket anger att marknadsföringsåtgärden utlöste den förväntade principöverträdelsen.
+Ett lyckat svar returnerar URL:en för marknadsföringsåtgärden, de användningsetiketter som samlades in från de angivna datauppsättningarna och en lista över principer som överträtts som ett resultat av att åtgärden testades mot dessa etiketter. I det här exemplet visas principen Exportera data till tredje part i `violatedPolicies`-arrayen, vilket anger att marknadsföringsåtgärden utlöste den förväntade principöverträdelsen.
 
 ```json
 {
@@ -372,10 +372,10 @@ Ett lyckat svar returnerar URL:en för marknadsföringsåtgärden, de användnin
 | --- | --- |
 | `duleLabels` | En lista över dataanvändningsetiketter som har extraherats från datauppsättningarna som tillhandahålls i nyttolasten för begäran. |
 | `discoveredLabels` | En lista över de datauppsättningar som tillhandahölls i nyttolasten för begäran, med information om de datauppsättningsnivårubriker och fältetiketter som hittades i varje. |
-| `violatedPolicies` | En matris med en lista över principer som har överträtts genom att marknadsföringsåtgärden (anges i `marketingActionRef`) testas mot den angivna `duleLabels`. |
+| `violatedPolicies` | En matris med en lista över principer som har överträtts genom att marknadsföringsåtgärden testas (anges i `marketingActionRef`) mot den angivna `duleLabels`. |
 
 ## Nästa steg
 
 Genom att läsa det här dokumentet har du sökt efter policyöverträdelser när du utför en marknadsföringsåtgärd på en datauppsättning eller en uppsättning dataanvändningsetiketter. Med hjälp av data som returneras i API-svar kan du konfigurera protokoll i ditt upplevelseprogram så att regelöverträdelser verkställs korrekt när de inträffar.
 
-Anvisningar om hur du tillämpar dataanvändningspolicyer för målgruppssegment i [!DNL Real-time Customer Profile]finns i följande [självstudiekurs](../../segmentation/tutorials/governance.md).
+Mer information om hur Platform automatiskt tillämpar skyddsprofiler för aktiverade segment finns i guiden [automatisk tillämpning](./auto-enforcement.md).
