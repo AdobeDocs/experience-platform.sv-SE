@@ -5,10 +5,10 @@ user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: XDM-guide (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och mixins för att standardisera upplevelsedata.
 translation-type: tm+mt
-source-git-commit: df763e246cd6930a31402f0a2c94d657159f4fe8
+source-git-commit: 099e88373d945660e7529bbd508e616869fd01da
 workflow-type: tm+mt
-source-wordcount: '197'
-ht-degree: 5%
+source-wordcount: '215'
+ht-degree: 6%
 
 ---
 
@@ -27,7 +27,7 @@ ht-degree: 5%
    * [Individuell XDM-profil](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
 * Blandningar {#mixins}
-   * Profilinmixningar {#profile}
+   * Profilblandningar {#profile}
       * [IdentityMap](./mixins/profile/identitymap.md)
       * [Demografiska detaljer](./mixins/profile/person-details.md)
       * [Kontaktinformation, privat](./mixins/profile/personal-details.md)
@@ -56,6 +56,22 @@ ht-degree: 5%
    * [POI-information](./data-types/poi-details.md)
    * [POI-interaktion](./data-types/poi-interaction.md)
    * [Postadress](./data-types/postal-address.md)
+* [!UICONTROL Schemas] UI  {#ui}
+   * [Översikt](./ui/overview.md)
+   * [Utforska XDM-resurser](./ui/explore.md)
+   * Skapa och redigera resurser {#resources}
+      * [Scheman](./ui/resources/schemas.md)
+      * [Klasser](./ui/resources/classes.md)
+      * [Blandningar](./ui/resources/mixins.md)
+      * [Datatyper](./ui/resources/data-types.md)
+   * Definiera fält {#fields}
+      * [Översikt](./ui/fields/overview.md)
+      * [Obligatoriska fält](./ui/fields/required.md)
+      * [Objektfält](./ui/fields/object.md)
+      * [Matrisfält](./ui/fields/array.md)
+      * [Uppräkningsfält](./ui/fields/enum.md)
+      * [Identitetsfält](./ui/fields/identity.md)
+      * [Relationsfält](./ui/fields/relationship.md)
 * API för schemaregister {#api}
    * [Översikt](api/overview.md)
    * [Komma igång](api/getting-started.md)
@@ -69,10 +85,8 @@ ht-degree: 5%
    * [Ad hoc-scheman](api/ad-hoc.md)
    * [Bilaga](api/appendix.md)
 * Självstudiekurser {#tutorials}
-   * [Utforska resurser i användargränssnittet](./tutorials/explore.md)
    * [Skapa ett schema (API)](tutorials/create-schema-api.md)
    * [Skapa ett schema (UI)](tutorials/create-schema-ui.md)
-   * [Skapa och redigera datatyper (UI)](./tutorials/create-data-type.md)
    * [Definiera en relation mellan två scheman (API)](tutorials/relationship-api.md)
    * [Definiera en relation mellan två scheman (UI)](tutorials/relationship-ui.md)
    * [Skapa ett ad hoc-schema (API)](tutorials/ad-hoc.md)
