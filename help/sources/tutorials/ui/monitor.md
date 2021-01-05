@@ -18,4 +18,4 @@ ht-degree: 0%
 
 Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis.
 
-Läs självstudiekursen [Övervaka dataflöden i källor](../../../dataflows/ui/monitor-sources.md) om du vill veta mer om hur du övervakar dataflöden för källanslutningar.
+Läs självstudiekursen [Övervaka dataflöden i källor](../../../dataflows/ui/monitor-sources.md) om du vill veta mer om att övervaka dataflöden för källanslutningar.
