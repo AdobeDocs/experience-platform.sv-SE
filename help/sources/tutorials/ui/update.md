@@ -16,9 +16,9 @@ ht-degree: 0%
 
 # Uppdatera kontoinformation i användargränssnittet
 
-Under vissa omständigheter kan det vara nödvändigt att uppdatera informationen för ett befintligt källkonto. På arbetsytan kan du lägga till, redigera och ta bort information om en befintlig batch- eller direktuppspelningsanslutning, inklusive namn, beskrivning och autentiseringsuppgifter. [!UICONTROL Sources]
+Under vissa omständigheter kan det vara nödvändigt att uppdatera informationen för ett befintligt källkonto. Med arbetsytan [!UICONTROL Sources] kan du lägga till, redigera och ta bort information om en befintlig batch- eller direktuppspelningsanslutning, inklusive namn, beskrivning och autentiseringsuppgifter.
 
-I den här självstudiekursen beskrivs hur du uppdaterar information och autentiseringsuppgifter för ett befintligt konto från [!UICONTROL Sources] arbetsytan.
+I den här självstudiekursen beskrivs hur du uppdaterar information och autentiseringsuppgifter för ett befintligt konto från arbetsytan [!UICONTROL Sources].
 
 ## Komma igång
 
@@ -29,13 +29,13 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 ## Uppdatera konton
 
-Logga in i användargränssnittet [för](https://platform.adobe.com) Experience Platform och välj sedan **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt [!UICONTROL Sources] arbetsytan. Välj **[!UICONTROL Accounts]** i den övre rubriken om du vill visa befintliga konton.
+Logga in på [Experience Platform-gränssnittet](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan [!UICONTROL Sources]. Välj **[!UICONTROL Accounts]** i den övre rubriken om du vill visa befintliga konton.
 
 ![katalog](../../images/tutorials/update/catalog.png)
 
-Sidan visas **[!UICONTROL Accounts]** . På den här sidan finns en lista med visningsbara konton, inklusive information om källa, användarnamn, antal dataflöden och datum när de skapades.
+Sidan **[!UICONTROL Accounts]** visas. På den här sidan finns en lista med visningsbara konton, inklusive information om källa, användarnamn, antal dataflöden och datum när de skapades.
 
-Välj ![filterikonfiltret](../../images/tutorials/update/filter.png) längst upp till vänster för att öppna sorteringspanelen.
+Välj filterikonen ![filter](../../images/tutorials/update/filter.png) längst upp till vänster för att starta sorteringspanelen.
 
 ![account-list](../../images/tutorials/update/accounts-list.png)
 
@@ -49,7 +49,7 @@ En listruta visas med alternativ för **[!UICONTROL Add data]**, **[!UICONTROL E
 
 ![uppdatera](../../images/tutorials/update/update.png)
 
-I **[!UICONTROL Edit account details]** dialogrutan kan du uppdatera ett kontos namn, beskrivning och autentiseringsuppgifter. När du har uppdaterat den önskade informationen väljer du **[!UICONTROL Save]**.
+I dialogrutan **[!UICONTROL Edit account details]** kan du uppdatera ett kontos namn, beskrivning och autentiseringsuppgifter. När du har uppdaterat den önskade informationen väljer du **[!UICONTROL Save]**.
 
 ![edit-account-details](../../images/tutorials/update/edit-account-details.png)
 
@@ -59,6 +59,6 @@ Efter en stund visas en grön bekräftelseruta längst ned på skärmen som bekr
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du använt arbetsytan för att uppdatera kontoinformationen [!UICONTROL Sources] .
+Genom att följa den här självstudiekursen har du använt arbetsytan [!UICONTROL Sources] för att uppdatera kontoinformationen.
 
-Anvisningar om hur du utför dessa åtgärder programmatiskt med API:t finns i självstudiekursen om hur du [!DNL Flow Service] uppdaterar anslutningsinformation med API:t [](../../tutorials/api/update.md)för Flow Service.
+Anvisningar om hur du utför dessa åtgärder programmatiskt med API:t [!DNL Flow Service] finns i självstudiekursen om att [uppdatera anslutningsinformation med API:t för Flow Service](../../tutorials/api/update.md).
