@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;class registry;Schema Registry;class;Class;classes;Classes;create
+keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;class registry;Schema Registry;class;Class;classes;Classes;create
 solution: Experience Platform
 title: Skapa en klass
 description: Med slutpunkten /classes i API:t för schemaregister kan du programmässigt hantera XDM-klasser i ditt upplevelseprogram.
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: b79482635d87efd5b79cf4df781fc0a3a6eb1b56
+source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
 workflow-type: tm+mt
 source-wordcount: '1463'
 ht-degree: 0%
@@ -24,19 +24,19 @@ Alla XDM-scheman (Experience Data Model) måste baseras på en klass. En klass a
 >
 >Mer information om klasser för databeteenden i termer av hur de påverkar schemakomposition finns i [grunderna för schemakomposition](../schema/composition.md).
 
-Med `/classes` slutpunkten i [!DNL Schema Registry] API kan du programmässigt hantera klasser i ditt upplevelseprogram.
+Med slutpunkten `/classes` i API:t [!DNL Schema Registry] kan du programmässigt hantera klasser i ditt upplevelseprogram.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/class-registry.yaml). Innan du fortsätter bör du läsa [Komma igång-guiden](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/class-registry.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anropen i det här dokumentet och viktig information om vilka huvuden som krävs för att anropa ett Experience Platform-API.
 
 ## Hämta en lista med klasser {#list}
 
-Du kan lista alla klasser under `global` - eller `tenant` -behållaren genom att göra en GET-förfrågan till `/global/classes` respektive `/tenant/classes`.
+Du kan lista alla klasser under `global`- eller `tenant`-behållaren genom att göra en GET-begäran till `/global/classes` respektive `/tenant/classes`.
 
 >[!NOTE]
 >
->När resurser listas begränsas resultatmängden till 300 objekt. Om du vill returnera resurser som överskrider den här gränsen måste du använda sidindelningsparametrar. Vi rekommenderar också att du använder ytterligare frågeparametrar för att filtrera resultaten och minska antalet returnerade resurser. Mer information finns i avsnittet om [frågeparametrar](./appendix.md#query) i bilagan.
+>När resurser listas begränsas resultatmängden till 300 objekt. Om du vill returnera resurser som överskrider den här gränsen måste du använda sidindelningsparametrar. Vi rekommenderar också att du använder ytterligare frågeparametrar för att filtrera resultaten och minska antalet returnerade resurser. Mer information finns i avsnittet [frågeparametrar](./appendix.md#query) i bilagan.
 
 **API-format**
 
@@ -47,11 +47,11 @@ GET /{CONTAINER_ID}/classes?{QUERY_PARAMS}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{CONTAINER_ID}` | Behållaren som du vill hämta klasser från: `global` för klasser som skapats av Adobe eller `tenant` för klasser som ägs av din organisation. |
-| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. En lista med tillgängliga parametrar finns i [bilagan](./appendix.md#query) . |
+| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. En lista över tillgängliga parametrar finns i [bilagan document](./appendix.md#query). |
 
 **Begäran**
 
-Följande begäran hämtar en lista med klasser från `tenant` behållaren och använder en `orderby` frågeparameter för att sortera klasserna efter deras `title` attribut.
+Följande begäran hämtar en lista med klasser från `tenant`-behållaren med en `orderby`-frågeparameter för att sortera klasserna efter deras `title`-attribut.
 
 ```shell
 curl -X GET \
@@ -63,7 +63,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-Svarsformatet beror på vilket sidhuvud som skickas i begäran `Accept` . Följande `Accept` rubriker är tillgängliga för klasser:
+Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Följande `Accept`-huvuden är tillgängliga för klasser:
 
 | `Accept` header | Beskrivning |
 | --- | --- |
@@ -72,7 +72,7 @@ Svarsformatet beror på vilket sidhuvud som skickas i begäran `Accept` . Följa
 
 **Svar**
 
-I begäran ovan användes `application/vnd.adobe.xed-id+json``Accept` rubriken, och därför innehåller svaret bara attributen `title`, `$id`, `meta:altId`och `version` för varje klass. Om du använder den andra `Accept` rubriken (`application/vnd.adobe.xed+json`) returneras alla attribut för varje klass. Välj lämplig `Accept` rubrik beroende på vilken information du behöver i ditt svar.
+I begäran ovan användes rubriken `application/vnd.adobe.xed-id+json` `Accept`, och därför innehåller svaret bara attributen `title`, `$id`, `meta:altId` och `version` för varje klass. Om du använder det andra `Accept`-huvudet (`application/vnd.adobe.xed+json`) returneras alla attribut för varje klass. Välj lämpligt `Accept`-huvud beroende på vilken information du behöver i ditt svar.
 
 ```json
 {
@@ -123,11 +123,11 @@ GET /{CONTAINER_ID}/classes/{CLASS_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{CONTAINER_ID}` | Den behållare som innehåller den klass som du vill hämta: `global` för en klass som skapats av Adobe eller `tenant` för en klass som ägs av din organisation. |
-| `{CLASS_ID}` | Den `meta:altId` eller URL-kodade `$id` klassen som du vill söka efter. |
+| `{CLASS_ID}` | `meta:altId` eller URL-kodad `$id` för den klass som du vill söka efter. |
 
 **Begäran**
 
-Följande begäran hämtar en klass med det `meta:altId` värde som anges i sökvägen.
+Följande begäran hämtar en klass med det `meta:altId`-värde som anges i sökvägen.
 
 ```shell
 curl -X GET \
@@ -139,19 +139,19 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-Svarsformatet beror på vilket sidhuvud som skickas i begäran `Accept` . Alla uppslagsbegäranden måste `version` inkluderas i `Accept` rubriken. The following `Accept` headers are available:
+Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Alla uppslagsbegäranden kräver att `version` inkluderas i `Accept`-huvudet. Följande `Accept` rubriker är tillgängliga:
 
 | `Accept` header | Beskrivning |
 | ------- | ------------ |
-| `application/vnd.adobe.xed+json; version={MAJOR_VERSION}` | Raw med `$ref` och `allOf`har rubriker och beskrivningar. |
-| `application/vnd.adobe.xed-full+json; version={MAJOR_VERSION}` | `$ref` och `allOf` är åtgärdade, har rubriker och beskrivningar. |
+| `application/vnd.adobe.xed+json; version={MAJOR_VERSION}` | Raw med `$ref` och `allOf` har rubriker och beskrivningar. |
+| `application/vnd.adobe.xed-full+json; version={MAJOR_VERSION}` | `$ref` och  `allOf` löses, har rubriker och beskrivningar. |
 | `application/vnd.adobe.xed-notext+json; version={MAJOR_VERSION}` | Raw med `$ref` och `allOf`, inga titlar eller beskrivningar. |
-| `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` och `allOf` löste sig - inga titlar eller beskrivningar. |
-| `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` och `allOf` åtgärdade, beskrivningar inkluderades. |
+| `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` och  `allOf` lösts - inga titlar eller beskrivningar. |
+| `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` och  `allOf` åtgärdade, beskrivningar inkluderades. |
 
 **Svar**
 
-Ett lyckat svar returnerar informationen om klassen. Vilka fält som returneras beror på vilket sidhuvud som skickas i begäran `Accept` . Experimentera med olika `Accept` rubriker för att jämföra svaren och ta reda på vilket sidhuvud som är bäst för dig.
+Ett lyckat svar returnerar informationen om klassen. Vilka fält som returneras beror på det `Accept`-huvud som skickas i begäran. Experimentera med olika `Accept`-rubriker för att jämföra svaren och avgöra vilken rubrik som är bäst för ditt användningssätt.
 
 ```json
 {
@@ -242,13 +242,13 @@ Ett lyckat svar returnerar informationen om klassen. Vilka fält som returneras 
 
 ## Skapa en klass {#create}
 
-Du kan definiera en anpassad klass under `tenant` behållaren genom att göra en POST-förfrågan.
+Du kan definiera en anpassad klass under `tenant`-behållaren genom att göra en POST-förfrågan.
 
 >[!IMPORTANT]
 >
->När du komponerar ett schema baserat på en anpassad klass som du definierar, kan du inte använda standardblandningar. Varje mixin definierar de klasser som de är kompatibla med i deras `meta:intendedToExtend` -attribut. När du börjar definiera blandningar som är kompatibla med den nya klassen (genom att använda den nya klassen `$id` i fältet `meta:intendedToExtend` för blandningen), kan du återanvända dessa blandningar varje gång du definierar ett schema som implementerar den klass du definierade. Mer information finns i avsnitten om [att skapa mixins](./mixins.md#create) och [skapa scheman](./schemas.md#create) i respektive slutpunktsguider.
+>När du komponerar ett schema baserat på en anpassad klass som du definierar, kan du inte använda standardblandningar. Varje mixin definierar de klasser som de är kompatibla med i sina `meta:intendedToExtend`-attribut. När du börjar definiera blandningar som är kompatibla med den nya klassen (genom att använda `$id` för den nya klassen i fältet `meta:intendedToExtend` för blandningen), kan du återanvända dessa blandningar varje gång du definierar ett schema som implementerar den klass du definierade. Mer information finns i avsnitten [skapa mixins](./mixins.md#create) och [skapa scheman](./schemas.md#create) i respektive slutpunktsguider.
 >
->Om du planerar att använda scheman som baseras på anpassade klasser i kundprofilen i realtid är det också viktigt att komma ihåg att fackscheman bara är konstruerade baserat på scheman som delar samma klass. Om du vill inkludera ett schema av anpassad klass i unionen för en annan klass som [!UICONTROL XDM Individual Profile] eller [!UICONTROL XDM ExperienceEvent]måste du skapa en relation med ett annat schema som använder den klassen. Mer information finns i självstudiekursen om hur du [skapar en relation mellan två scheman i API:t](../tutorials/relationship-api.md) .
+>Om du planerar att använda scheman som baseras på anpassade klasser i kundprofilen i realtid är det också viktigt att komma ihåg att fackscheman bara är konstruerade baserat på scheman som delar samma klass. Om du vill inkludera ett schema av anpassad klass i unionen för en annan klass som [!UICONTROL XDM Individual Profile] eller [!UICONTROL XDM ExperienceEvent] måste du skapa en relation med ett annat schema som använder den klassen. Mer information finns i självstudiekursen om att [etablera en relation mellan två scheman i API](../tutorials/relationship-api.md).
 
 **API-format**
 
@@ -258,9 +258,9 @@ POST /tenant/classes
 
 **Begäran**
 
-Begäran om att skapa (POST) en klass måste innehålla ett `allOf` -attribut som innehåller ett `$ref` av två värden: `https://ns.adobe.com/xdm/data/record` eller `https://ns.adobe.com/xdm/data/time-series`. Dessa värden representerar det beteende som klassen baseras på (post- respektive tidsserierna). Mer information om skillnaderna mellan postdata och tidsseriedata finns i avsnittet om beteendetyper i [grunderna för schemakomposition](../schema/composition.md).
+Begäran om att skapa (POST) en klass måste innehålla ett `allOf`-attribut som innehåller `$ref` till ett av två värden: `https://ns.adobe.com/xdm/data/record` eller `https://ns.adobe.com/xdm/data/time-series`. Dessa värden representerar det beteende som klassen baseras på (post- respektive tidsserierna). Mer information om skillnaderna mellan postdata och tidsseriedata finns i avsnittet om beteendetyper i [grunderna för schemakomposition](../schema/composition.md).
 
-När du definierar en klass kan du även inkludera mixins eller anpassade fält i klassdefinitionen. Detta gör att de tillagda blandningarna och fälten inkluderas i alla scheman som implementerar klassen. I följande exempelbegäran definieras klassen&quot;Property&quot; som innehåller information om olika egenskaper som ägs och drivs av ett företag. Den innehåller ett `propertyId` fält som ska inkluderas varje gång klassen används.
+När du definierar en klass kan du även inkludera mixins eller anpassade fält i klassdefinitionen. Detta gör att de tillagda blandningarna och fälten inkluderas i alla scheman som implementerar klassen. I följande exempelbegäran definieras klassen&quot;Property&quot; som innehåller information om olika egenskaper som ägs och drivs av ett företag. Den innehåller ett `propertyId`-fält som ska inkluderas varje gång klassen används.
 
 ```SHELL
 curl -X POST \
@@ -311,12 +311,12 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `_{TENANT_ID}` | Namnutrymmet `TENANT_ID` för din organisation. Alla resurser som skapas av organisationen måste innehålla den här egenskapen för att undvika konflikter med andra resurser i [!DNL Schema Registry]. |
-| `allOf` | En lista med resurser vars egenskaper ska ärvas av den nya klassen. Ett av `$ref` objekten i arrayen definierar klassens beteende. I det här exemplet ärver klassen&quot;record&quot;-beteendet. |
+| `_{TENANT_ID}` | Namnutrymmet `TENANT_ID` för din organisation. Alla resurser som skapas av organisationen måste inkludera den här egenskapen för att undvika kollisioner med andra resurser i [!DNL Schema Registry]. |
+| `allOf` | En lista med resurser vars egenskaper ska ärvas av den nya klassen. Ett av `$ref`-objekten i arrayen definierar klassens beteende. I det här exemplet ärver klassen&quot;record&quot;-beteendet. |
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehåller information om den nyligen skapade klassen, inklusive `$id`, `meta:altId`och `version`. Dessa tre värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
+Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehåller information om den nyligen skapade klassen, inklusive `$id`, `meta:altId` och `version`. Dessa tre värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
 
 ```JSON
 {
@@ -380,15 +380,15 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehå
 }
 ```
 
-Om du utför en GET-begäran om att [lista alla klasser](#list) i `tenant` behållaren skulle det nu inkludera egenskapsklassen. Du kan också [utföra en sökning (GET)-begäran](#lookup) med URL-kodad `$id` för att visa den nya klassen direkt.
+Om du utför en GET-begäran till [skulle alla klasser](#list) i `tenant`-behållaren nu inkludera egenskapsklassen. Du kan också [utföra en sökning (GET)-begäran](#lookup) med URL-kodad `$id` för att visa den nya klassen direkt.
 
 ## Uppdatera en klass {#put}
 
-Du kan ersätta en hel klass med en PUT-åtgärd, i princip skriva om resursen. När du uppdaterar en klass via en PUT-begäran måste brödtexten innehålla alla fält som krävs när du [skapar en ny klass](#create) i en POST-begäran.
+Du kan ersätta en hel klass med en PUT-åtgärd, i princip skriva om resursen. När en klass uppdateras via en PUT-begäran måste brödtexten innehålla alla fält som krävs när [en ny klass](#create) skapas i en POST-begäran.
 
 >[!NOTE]
 >
->Om du bara vill uppdatera en del av en klass i stället för att ersätta den helt, ska du läsa avsnittet om hur du [uppdaterar en del av en klass](#patch).
+>Om du bara vill uppdatera en del av en klass i stället för att ersätta den helt, ska du läsa avsnittet [Uppdatera en del av en klass](#patch).
 
 **API-format**
 
@@ -398,11 +398,11 @@ PUT /tenant/classes/{CLASS_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{CLASS_ID}` | Den `meta:altId` eller URL-kodade `$id` klassen som du vill skriva om. |
+| `{CLASS_ID}` | `meta:altId` eller URL-kodad `$id` för den klass som du vill skriva om. |
 
 **Begäran**
 
-Följande begäran skriver om en befintlig klass och ändrar dess `description` och `title` ett av dess fält.
+Följande begäran skriver om en befintlig klass och ändrar dess `description` och `title` för ett av dess fält.
 
 ```SHELL
 curl -X PUT \
@@ -519,11 +519,11 @@ Ett lyckat svar returnerar information om den uppdaterade klassen.
 
 ## Uppdatera en del av en klass {#patch}
 
-Du kan uppdatera en del av en klass med en PATCH-begäran. Den [!DNL Schema Registry] stöder alla vanliga JSON Patch-åtgärder, inklusive `add`, `remove`och `replace`. Mer information om JSON Patch finns i [API-handboken](../../landing/api-fundamentals.md#json-patch).
+Du kan uppdatera en del av en klass med en PATCH-begäran. [!DNL Schema Registry] stöder alla JSON-standardåtgärder för korrigering, inklusive `add`, `remove` och `replace`. Mer information om JSON Patch finns i [API fundamentals guide](../../landing/api-fundamentals.md#json-patch).
 
 >[!NOTE]
 >
->Om du vill ersätta en hel resurs med nya värden i stället för att uppdatera enskilda fält läser du avsnittet om att [ersätta en klass med en PUT-åtgärd](#put).
+>Om du vill ersätta en hel resurs med nya värden i stället för att uppdatera enskilda fält läser du avsnittet [ersätta en klass med en PUT-åtgärd](#put).
 
 **API-format**
 
@@ -533,11 +533,11 @@ PATCH /tenant/class/{CLASS_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{CLASS_ID}` | Den URL-kodade `$id` URI:n eller `meta:altId` klassen som du vill uppdatera. |
+| `{CLASS_ID}` | URL-kodad `$id` URI eller `meta:altId` för den klass som du vill uppdatera. |
 
 **Begäran**
 
-Exempelbegäran nedan uppdaterar `description` en befintlig klass och ett `title` av dess fält.
+Exemplbegäran nedan uppdaterar `description` för en befintlig klass och `title` för ett av dess fält.
 
 Begärandetexten har formen av en array där varje listat-objekt representerar en specifik ändring i ett enskilt fält. Varje objekt innehåller den åtgärd som ska utföras (`op`), vilket fält åtgärden ska utföras på (`path`) och vilken information som ska inkluderas i åtgärden (`value`).
 
@@ -557,7 +557,7 @@ curl -X PATCH \
 
 **Svar**
 
-Svaret visar att båda åtgärderna har utförts. Fältet `description` har uppdaterats tillsammans med `title` fältets `propertyId` namn.
+Svaret visar att båda åtgärderna har utförts. `description` har uppdaterats tillsammans med `title` för `propertyId`-fältet.
 
 ```JSON
 {
@@ -633,7 +633,7 @@ DELETE /tenant/classes/{CLASS_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{CLASS_ID}` | Den URL-kodade `$id` URI:n eller `meta:altId` klassen som du vill ta bort. |
+| `{CLASS_ID}` | URL-kodad `$id` URI eller `meta:altId` för den klass som du vill ta bort. |
 
 **Begäran**
 
@@ -650,4 +650,4 @@ curl -X DELETE \
 
 Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och en tom brödtext.
 
-Du kan bekräfta borttagningen genom att försöka utföra en [sökbegäran](#lookup) för klassen. Du måste inkludera en rubrik i begäran, men du bör få HTTP-statusen 404 (Hittades inte) eftersom klassen har tagits bort från schemaregistret. `Accept`
+Du kan bekräfta borttagningen genom att försöka utföra en [sökbegäran (GET)](#lookup) för klassen. Du måste inkludera ett `Accept`-huvud i begäran, men du bör få HTTP-status 404 (Hittades inte) eftersom klassen har tagits bort från schemaregistret.
