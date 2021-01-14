@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;
+keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;
 solution: Experience Platform
 title: Komma igång med API:t för schemaregister
 description: Det här dokumentet innehåller en introduktion till de centrala koncept du behöver känna till innan du försöker anropa API:t för schemaregister.
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: b79482635d87efd5b79cf4df781fc0a3a6eb1b56
+source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
 workflow-type: tm+mt
 source-wordcount: '1132'
 ht-degree: 0%
@@ -13,42 +13,42 @@ ht-degree: 0%
 ---
 
 
-# Getting started with the [!DNL Schema Registry] API
+# Komma igång med API:t [!DNL Schema Registry]
 
-Med [!DNL Schema Registry] API kan du skapa och hantera olika XDM-resurser (Experience Data Model). Det här dokumentet innehåller en introduktion till de centrala koncept du behöver känna till innan du försöker anropa [!DNL Schema Registry] API:t.
+Med API:t [!DNL Schema Registry] kan du skapa och hantera olika XDM-resurser (Experience Data Model). Det här dokumentet innehåller en introduktion till de centrala koncept som du behöver känna till innan du försöker anropa API:t [!DNL Schema Registry].
 
 ## Förutsättningar
 
 För att du ska kunna använda utvecklarhandboken måste du ha en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [[!DNL Experience Data Model (XDM) System]](../home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+* [[!DNL Experience Data Model (XDM) System]](../home.md): Det standardiserade ramverket som  [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grundläggande om schemakomposition](../schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman.
 * [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [[!DNL Sandboxes]](../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-XDM använder JSON-schemaformatering för att beskriva och validera strukturen för importerade kundupplevelsedata. Vi rekommenderar därför starkt att du läser den [officiella JSON Schema-dokumentationen](https://json-schema.org/) för att få en bättre förståelse för den underliggande tekniken.
+XDM använder JSON-schemaformatering för att beskriva och validera strukturen för importerade kundupplevelsedata. Vi rekommenderar därför att du läser [JSON Schemas officiella dokumentation](https://json-schema.org/) för att få en bättre förståelse för den underliggande tekniken.
 
 ## Läser exempel-API-anrop
 
-API-dokumentationen innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. [!DNL Schema Registry] Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+API-dokumentationen för [!DNL Schema Registry] innehåller exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
 
 ## Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](../../tutorials/authentication.md) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Schema Registry], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Schema Registry], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform]finns i [dokumentationen](../../sandboxes/home.md)för sandlådan.
+>Mer information om sandlådor i [!DNL Platform] finns i [sandlådedokumentationen](../../sandboxes/home.md).
 
-Alla sökbegäranden (GET) till användaren [!DNL Schema Registry] kräver ytterligare ett `Accept` huvud, vars värde bestämmer vilket informationsformat som returneras av API:t. Mer information finns i avsnittet [Acceptera sidhuvud](#accept) nedan.
+Alla sökbegäranden (GET) till [!DNL Schema Registry] kräver ytterligare ett `Accept`-huvud, vars värde bestämmer formatet för den information som returneras av API:t. Mer information finns i avsnittet [Acceptera rubrik](#accept) nedan.
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -77,7 +77,7 @@ curl -X GET \
 
 **Svar**
 
-Ett svar returnerar information om hur din organisation använder [!DNL Schema Registry]. Detta inkluderar ett `tenantId` -attribut, vars värde är ditt `TENANT_ID`.
+Ett svar returnerar information om hur din organisation använder [!DNL Schema Registry]. Detta inkluderar ett `tenantId`-attribut, vars värde är ditt `TENANT_ID`.
 
 ```JSON
 {
@@ -156,13 +156,13 @@ Ett svar returnerar information om hur din organisation använder [!DNL Schema R
 
 ## Förstå `CONTAINER_ID` {#container}
 
-Anrop till [!DNL Schema Registry] API kräver att du använder en `CONTAINER_ID`. Det finns två behållare som API-anrop kan göras mot: behållaren `global` och `tenant` behållaren.
+Anrop till API:t [!DNL Schema Registry] kräver att du använder en `CONTAINER_ID`. Det finns två behållare som API-anrop kan göras mot: `global`-behållaren och `tenant`-behållaren.
 
 ### Global behållare
 
-Behållaren `global` innehåller alla standardklasser, mixins, datatyper och scheman som tillhandahålls av Adobe och [!DNL Experience Platform] partner. Du får bara utföra list- och uppslagsbegäranden (GET) mot `global` behållaren.
+Behållaren `global` innehåller alla standardklasser, mixiner, datatyper och scheman som partnern tillhandahåller för Adobe och [!DNL Experience Platform]. Du får bara utföra list- och uppslagsbegäranden (GET) mot `global`-behållaren.
 
-Ett exempel på ett anrop som använder `global` behållaren skulle se ut så här:
+Ett exempel på ett anrop som använder behållaren `global` skulle se ut så här:
 
 ```http
 GET /global/classes
@@ -170,19 +170,19 @@ GET /global/classes
 
 ### Klientbehållaren
 
-Behållaren ska inte blandas ihop med din unika `TENANT_ID``tenant` , utan innehålla alla klasser, blandningar, datatyper, scheman och beskrivningar som definieras av en IMS-organisation. De är unika för varje organisation, vilket innebär att de inte är synliga eller hanterbara av andra IMS-organisationer. Du kan utföra alla CRUD-åtgärder (GET, POST, PUT, PATCH, DELETE) mot resurser som du skapar i `tenant` behållaren.
+För att inte blandas ihop med din unika `TENANT_ID` innehåller `tenant`-behållaren alla klasser, mixins, datatyper, scheman och beskrivningar som definieras av en IMS-organisation. De är unika för varje organisation, vilket innebär att de inte är synliga eller hanterbara av andra IMS-organisationer. Du kan utföra alla CRUD-åtgärder (GET, POST, PUT, PATCH, DELETE) mot resurser som du skapar i `tenant`-behållaren.
 
-Ett exempel på ett anrop som använder `tenant` behållaren skulle se ut så här:
+Ett exempel på ett anrop som använder behållaren `tenant` skulle se ut så här:
 
 ```http
 POST /tenant/mixins
 ```
 
-När du skapar en klass, mixin, schema eller datatyp i `tenant` behållaren, sparas den i [!DNL Schema Registry] och tilldelas en `$id` URI som innehåller din `TENANT_ID`. Detta `$id` används i hela API:t för att referera till specifika resurser. Exempel på `$id` värden finns i nästa avsnitt.
+När du skapar en klass, mixin, schema eller datatyp i `tenant`-behållaren sparas den i [!DNL Schema Registry] och tilldelas en `$id`-URI som innehåller din `TENANT_ID`. Denna `$id` används i hela API för att referera till specifika resurser. Exempel på `$id`-värden finns i nästa avsnitt.
 
 ## Resursidentifiering {#resource-identification}
 
-XDM-resurser identifieras med ett `$id` -attribut i form av en URI, som i följande exempel:
+XDM-resurser identifieras med ett `$id`-attribut i form av en URI, som i följande exempel:
 
 * `https://ns.adobe.com/xdm/context/profile`
 * `https://ns.adobe.com/{TENANT_ID}/schemas/7442343-abs2343-21232421`
@@ -192,26 +192,26 @@ För att göra URI:n mer REST-vänlig har scheman även en punktnotation-kodning
 * `_xdm.context.profile`
 * `_{TENANT_ID}.schemas.7442343-abs2343-21232421`
 
-Anrop till [!DNL Schema Registry] API:t stöder antingen den URL-kodade `$id` URI:n eller `meta:altId` (punktnotation-format). Bästa sättet är att använda den URL-kodade `$id` URI:n när du gör ett REST-anrop till API:t, så här:
+Anrop till [!DNL Schema Registry]-API:t stöder antingen den URL-kodade `$id`-URI:n eller `meta:altId` (punktnotationsformat). Det bästa sättet är att använda den URL-kodade `$id`-URI:n när du gör ett REST-anrop till API, som i det här fallet:
 
 * `https%3A%2F%2Fns.adobe.com%2Fxdm%2Fcontext%2Fprofile`
 * `https%3A%2F%2Fns.adobe.com%2F{TENANT_ID}%2Fschemas%2F7442343-abs2343-21232421`
 
 ## Acceptera rubrik {#accept}
 
-När du utför list- och lookup-åtgärder (GET) i [!DNL Schema Registry] API:t krävs en `Accept` rubrik för att fastställa formatet för de data som returneras av API:t. När du söker efter specifika resurser måste ett versionsnummer också inkluderas i `Accept` rubriken.
+När du utför list- och lookup-åtgärder (GET) i API:t [!DNL Schema Registry] krävs ett `Accept`-huvud för att fastställa formatet för de data som returneras av API:t. När du söker efter specifika resurser måste ett versionsnummer också inkluderas i `Accept`-huvudet.
 
-I följande tabell visas kompatibla `Accept` rubrikvärden, inklusive de med versionsnummer, tillsammans med beskrivningar av vad API:t returnerar när de används.
+I följande tabell visas kompatibla `Accept`-huvudvärden, inklusive de med versionsnummer, tillsammans med beskrivningar av vad API:t returnerar när de används.
 
 | Acceptera | Beskrivning |
 | ------- | ------------ |
 | `application/vnd.adobe.xed-id+json` | Returnerar endast en lista med ID:n. Detta används oftast för att lista resurser. |
-| `application/vnd.adobe.xed+json` | Returnerar en lista med fullständigt JSON-schema med ursprungligt `$ref` och `allOf` inkluderat. Detta används för att returnera en lista med fullständiga resurser. |
+| `application/vnd.adobe.xed+json` | Returnerar en lista med det fullständiga JSON-schemat med det ursprungliga `$ref` och `allOf` inkluderade. Detta används för att returnera en lista med fullständiga resurser. |
 | `application/vnd.adobe.xed+json; version={MAJOR_VERSION}` | Raw XDM med `$ref` och `allOf`. Har rubriker och beskrivningar. |
-| `application/vnd.adobe.xed-full+json; version={MAJOR_VERSION}` | `$ref` attribut och `allOf` lösta. Har rubriker och beskrivningar. |
+| `application/vnd.adobe.xed-full+json; version={MAJOR_VERSION}` | `$ref` attribut och  `allOf` lösta. Har rubriker och beskrivningar. |
 | `application/vnd.adobe.xed-notext+json; version={MAJOR_VERSION}` | Raw XDM med `$ref` och `allOf`. Inga rubriker eller beskrivningar. |
-| `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` attribut och `allOf` lösta. Inga rubriker eller beskrivningar. |
-| `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` attribut och `allOf` lösta. Beskrivningar ingår. |
+| `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` attribut och  `allOf` lösta. Inga rubriker eller beskrivningar. |
+| `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` attribut och  `allOf` lösta. Beskrivningar ingår. |
 
 >[!NOTE]
 >
@@ -219,9 +219,9 @@ I följande tabell visas kompatibla `Accept` rubrikvärden, inklusive de med ver
 
 ## Begränsningar för XDM-fält och bästa praxis
 
-Fälten i ett schema visas i dess `properties` objekt. Varje fält är i sig ett objekt som innehåller attribut som beskriver och begränsar de data som fältet kan innehålla.
+Fälten i ett schema visas i dess `properties`-objekt. Varje fält är i sig ett objekt som innehåller attribut som beskriver och begränsar de data som fältet kan innehålla.
 
-Mer information om hur du definierar fälttyper i API finns i [bilagan](appendix.md) till den här guiden, inklusive kodexempel och valfria begränsningar för de vanligaste datatyperna.
+Mer information om hur du definierar fälttyper i API finns i [bilagan](appendix.md) för den här guiden, inklusive kodexempel och valfria begränsningar för de vanligaste datatyperna.
 
 I följande exempelfält visas ett korrekt formaterat XDM-fält, med mer information om namnbegränsningar och de bästa metoderna som anges nedan. Dessa metoder kan också användas när du definierar andra resurser som innehåller liknande attribut.
 
@@ -238,18 +238,18 @@ I följande exempelfält visas ett korrekt formaterat XDM-fält, med mer informa
 ```
 
 * Namnet på ett fältobjekt kan innehålla alfanumeriska tecken, bindestreck eller understreck, men **får inte** börja med ett understreck.
-   * **Korrekt:** `fieldName`, `field_name2`, `Field-Name`, `field-name_3`
+   * **Korrekt:** `fieldName`,  `field_name2`,  `Field-Name`,  `field-name_3`
    * **Felaktigt:** `_fieldName`
 * camelCase är att föredra som fältobjektets namn. Exempel: `fieldName`
-* Fältet ska innehålla en `title`, skriven i versaler. Exempel: `Field Name`
-* Fältet kräver ett `type`.
-   * Du kan behöva ange en valfri typ `format`.
+* Fältet ska innehålla en `title`, skriven i Title Case. Exempel: `Field Name`
+* Fältet kräver `type`.
+   * För att definiera vissa typer kan det krävas ett valfritt `format`.
    * Där en viss dataformatering krävs kan `examples` läggas till som en array.
-   * Fälttypen kan också definieras med valfri datatyp i registret. Mer information finns i avsnittet om [att skapa en datatyp](./data-types.md#create) i guiden för datatyper.
-* Fältet `description` och relevant information om fältdata förklaras. Det bör skrivas i fullständiga meningar med tydligt språk så att alla som använder schemat kan förstå fältets avsikt.
+   * Fälttypen kan också definieras med valfri datatyp i registret. Mer information finns i avsnittet [skapa en datatyp](./data-types.md#create) i slutpunktshandboken för datatyper.
+* `description` förklarar fältet och relevant information om fältdata. Det bör skrivas i fullständiga meningar med tydligt språk så att alla som använder schemat kan förstå fältets avsikt.
 
-I dokumentet om [fältbegränsningar](../schema/field-constraints.md) finns mer information om hur du definierar olika fälttyper i API:t.
+Mer information om hur du definierar olika fälttyper i API finns i dokumentet [fältbegränsningar](../schema/field-constraints.md).
 
 ## Nästa steg
 
-Om du vill börja ringa anrop med API:t väljer du en av de tillgängliga slutpunktsguiderna. [!DNL Schema Registry]
+Om du vill börja ringa anrop med API:t [!DNL Schema Registry] väljer du en av de tillgängliga slutpunktsguiderna.
