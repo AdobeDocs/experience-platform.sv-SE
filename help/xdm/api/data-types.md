@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;data type registry;Schema Registry;data type;Data type;data types;Data types;create
+keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;data type registry;Schema Registry;data type;Data type;data types;Data types;create
 solution: Experience Platform
 title: Skapa en datatyp
 description: Med slutpunkten /datatypes i API:t för schemaregister kan du programmässigt hantera XDM-datatyper i ditt upplevelseprogram.
 translation-type: tm+mt
-source-git-commit: 0b55f18eabcf1d7c5c233234c59eb074b2670b93
+source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
 workflow-type: tm+mt
 source-wordcount: '1110'
 ht-degree: 0%
@@ -14,19 +14,19 @@ ht-degree: 0%
 
 # Slutpunkt för datatyper
 
-Datatyper används som referenstypfält i klasser eller blandningar på samma sätt som grundläggande litteralfält, med den största skillnaden är att datatyper kan definiera flera underfält. Även om de liknar blandningar i genom att de medger konsekvent användning av en struktur med flera fält, är datatyperna mer flexibla eftersom de kan inkluderas var som helst i schemastrukturen medan mixar bara kan läggas till på rotnivån. Med `/datatypes` slutpunkten i [!DNL Schema Registry] API kan du programmässigt hantera datatyper i ditt upplevelseprogram.
+Datatyper används som referenstypfält i klasser eller blandningar på samma sätt som grundläggande litteralfält, med den största skillnaden är att datatyper kan definiera flera underfält. Även om de liknar blandningar i genom att de medger konsekvent användning av en struktur med flera fält, är datatyperna mer flexibla eftersom de kan inkluderas var som helst i schemastrukturen medan mixar bara kan läggas till på rotnivån. Med slutpunkten `/datatypes` i API:t [!DNL Schema Registry] kan du programmässigt hantera datatyper i ditt upplevelseprogram.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/mixin-registry.yaml). Innan du fortsätter bör du läsa [Komma igång-guiden](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/mixin-registry.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anropen i det här dokumentet och viktig information om vilka huvuden som krävs för att anropa ett Experience Platform-API.
 
 ## Hämta en lista med datatyper {#list}
 
-Du kan visa alla datatyper under `global` - eller `tenant` -behållaren genom att göra en GET-förfrågan till `/global/datatypes` respektive `/tenant/datatypes`.
+Du kan lista alla datatyper under `global`- eller `tenant`-behållaren genom att göra en GET-begäran till `/global/datatypes` respektive `/tenant/datatypes`.
 
 >[!NOTE]
 >
->När resurser listas begränsas resultatmängden till 300 objekt. Om du vill returnera resurser som överskrider den här gränsen måste du använda sidindelningsparametrar. Vi rekommenderar också att du använder ytterligare frågeparametrar för att filtrera resultaten och minska antalet returnerade resurser. Mer information finns i avsnittet om [frågeparametrar](./appendix.md#query) i bilagan.
+>När resurser listas begränsas resultatmängden till 300 objekt. Om du vill returnera resurser som överskrider den här gränsen måste du använda sidindelningsparametrar. Vi rekommenderar också att du använder ytterligare frågeparametrar för att filtrera resultaten och minska antalet returnerade resurser. Mer information finns i avsnittet [frågeparametrar](./appendix.md#query) i bilagan.
 
 **API-format**
 
@@ -37,11 +37,11 @@ GET /{CONTAINER_ID}/datatypes?{QUERY_PARAMS}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{CONTAINER_ID}` | Behållaren som du vill hämta datatyper från: `global` för datatyper som skapats av Adobe eller `tenant` för datatyper som ägs av din organisation. |
-| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. En lista med tillgängliga parametrar finns i [bilagan](./appendix.md#query) . |
+| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. En lista över tillgängliga parametrar finns i [bilagan document](./appendix.md#query). |
 
 **Begäran**
 
-Följande begäran hämtar en lista med datatyper från `tenant` behållaren, med hjälp av en `orderby` frågeparameter för att sortera datatyperna efter deras `title` attribut.
+Följande begäran hämtar en lista med datatyper från `tenant`-behållaren, med en `orderby`-frågeparameter för att sortera datatyperna efter deras `title`-attribut.
 
 ```shell
 curl -X GET \
@@ -53,16 +53,16 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-Svarsformatet beror på vilket sidhuvud som skickas i begäran `Accept` . Följande `Accept` rubriker är tillgängliga för att lista datatyper:
+Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Följande `Accept`-huvuden är tillgängliga för att lista datatyper:
 
 | `Accept` header | Beskrivning |
 | --- | --- |
 | `application/vnd.adobe.xed-id+json` | Returnerar en kort sammanfattning av varje resurs. Det här är det rekommenderade huvudet för att lista resurser. (Gräns: 300) |
-| `application/vnd.adobe.xed+json` | Returnerar den fullständiga JSON-datatypen för varje resurs, med ursprunglig `$ref` och `allOf` inkluderad. (Gräns: 300) |
+| `application/vnd.adobe.xed+json` | Returnerar den fullständiga JSON-datatypen för varje resurs, inklusive ursprunglig `$ref` och `allOf`. (Gräns: 300) |
 
 **Svar**
 
-I begäran ovan användes `application/vnd.adobe.xed-id+json``Accept` rubriken, och därför innehåller svaret bara attributen `title`, `$id`, `meta:altId`och `version` för varje datatyp. Om du använder den andra `Accept` rubriken (`application/vnd.adobe.xed+json`) returneras alla attribut för varje datatyp. Välj lämplig `Accept` rubrik beroende på vilken information du behöver i ditt svar.
+I begäran ovan användes rubriken `application/vnd.adobe.xed-id+json` `Accept`, och därför innehåller svaret endast attributen `title`, `$id`, `meta:altId` och `version` för varje datatyp. Om du använder det andra `Accept`-huvudet (`application/vnd.adobe.xed+json`) returneras alla attribut för varje datatyp. Välj lämpligt `Accept`-huvud beroende på vilken information du behöver i ditt svar.
 
 ```json
 {
@@ -94,7 +94,7 @@ I begäran ovan användes `application/vnd.adobe.xed-id+json``Accept` rubriken, 
 }
 ```
 
-## Söka efter en datatyp {#lookup}
+## Slå upp en datatyp {#lookup}
 
 Du kan söka efter en viss datatyp genom att ta med datatypens ID i sökvägen för en GET-begäran.
 
@@ -107,11 +107,11 @@ GET /{CONTAINER_ID}/datatypes/{DATA_TYPE_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{CONTAINER_ID}` | Behållaren som innehåller den datatyp som du vill hämta: `global` för en datatyp som skapats av Adobe eller `tenant` för en datatyp som ägs av din organisation. |
-| `{DATA_TYPE_ID}` | Den `meta:altId` eller URL-kodade datatypen `$id` som du vill söka efter. |
+| `{DATA_TYPE_ID}` | `meta:altId` eller URL-kodad `$id` för den datatyp som du vill söka efter. |
 
 **Begäran**
 
-Följande begäran hämtar en datatyp med det `meta:altId` värde som anges i sökvägen.
+Följande begäran hämtar en datatyp med det `meta:altId`-värde som anges i sökvägen.
 
 ```shell
 curl -X GET \
@@ -123,19 +123,19 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-Svarsformatet beror på vilket sidhuvud som skickas i begäran `Accept` . Alla uppslagsbegäranden måste `version` inkluderas i `Accept` rubriken. The following `Accept` headers are available:
+Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Alla uppslagsbegäranden kräver att `version` inkluderas i `Accept`-huvudet. Följande `Accept` rubriker är tillgängliga:
 
 | `Accept` header | Beskrivning |
 | ------- | ------------ |
-| `application/vnd.adobe.xed+json; version={MAJOR_VERSION}` | Raw med `$ref` och `allOf`har rubriker och beskrivningar. |
-| `application/vnd.adobe.xed-full+json; version={MAJOR_VERSION}` | `$ref` och `allOf` är åtgärdade, har rubriker och beskrivningar. |
+| `application/vnd.adobe.xed+json; version={MAJOR_VERSION}` | Raw med `$ref` och `allOf` har rubriker och beskrivningar. |
+| `application/vnd.adobe.xed-full+json; version={MAJOR_VERSION}` | `$ref` och  `allOf` löses, har rubriker och beskrivningar. |
 | `application/vnd.adobe.xed-notext+json; version={MAJOR_VERSION}` | Raw med `$ref` och `allOf`, inga titlar eller beskrivningar. |
-| `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` och `allOf` löste sig - inga titlar eller beskrivningar. |
-| `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` och `allOf` åtgärdade, beskrivningar inkluderades. |
+| `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` och  `allOf` lösts - inga titlar eller beskrivningar. |
+| `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` och  `allOf` åtgärdade, beskrivningar inkluderades. |
 
 **Svar**
 
-Ett lyckat svar returnerar informationen om datatypen. Vilka fält som returneras beror på vilket sidhuvud som skickas i begäran `Accept` . Experimentera med olika `Accept` rubriker för att jämföra svaren och ta reda på vilket sidhuvud som är bäst för dig.
+Ett lyckat svar returnerar informationen om datatypen. Vilka fält som returneras beror på det `Accept`-huvud som skickas i begäran. Experimentera med olika `Accept`-rubriker för att jämföra svaren och avgöra vilken rubrik som är bäst för ditt användningssätt.
 
 ```json
 {
@@ -216,7 +216,7 @@ Ett lyckat svar returnerar informationen om datatypen. Vilka fält som returnera
 
 ## Skapa en datatyp {#create}
 
-Du kan definiera en anpassad datatyp under `tenant` behållaren genom att göra en POST-förfrågan.
+Du kan definiera en anpassad datatyp under `tenant`-behållaren genom att göra en POST-förfrågan.
 
 **API-format**
 
@@ -226,7 +226,7 @@ POST /tenant/datatypes
 
 **Begäran**
 
-För att definiera en datatyp krävs inte `meta:extends` eller `meta:intendedToExtend` fält, och inte heller måste fält kapslas för att undvika kollisioner.
+För att definiera en datatyp krävs inte fälten `meta:extends` eller `meta:intendedToExtend`, och fält behöver inte heller kapslas för att undvika kollisioner.
 
 ```SHELL
 curl -X POST \
@@ -267,7 +267,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehåller information om den nya datatypen, inklusive `$id`, `meta:altId`och `version`. Dessa tre värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
+Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehåller information om den nya datatypen, inklusive `$id`, `meta:altId` och `version`. Dessa tre värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
 
 ```JSON
 {
@@ -324,15 +324,15 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehå
 }
 ```
 
-Om du utför en GET-begäran om att [lista alla datatyper](#list) i klientbehållaren skulle datatypen Egenskapsinformation ingå, eller så kan du [utföra en sökning (GET)-begäran](#lookup) med den URL-kodade `$id` URI:n för att visa den nya datatypen direkt.
+Om du utför en GET-begäran om att [lista alla datatyper](#list) i klientbehållaren skulle den nu innehålla datatypen Egenskapsinformation. Du kan också [utföra en sökning (GET)-begäran](#lookup) med URL-kodad `$id`-URI för att visa den nya datatypen direkt.
 
 ## Uppdatera en datatyp {#put}
 
-Du kan ersätta en hel datatyp genom en PUT-åtgärd, vilket i själva verket innebär att resursen skrivs om. När du uppdaterar en datatyp via en PUT-begäran måste brödtexten innehålla alla fält som krävs när du [skapar en ny datatyp](#create) i en POST-begäran.
+Du kan ersätta en hel datatyp genom en PUT-åtgärd, vilket i själva verket innebär att resursen skrivs om. När du uppdaterar en datatyp via en PUT-begäran måste brödtexten innehålla alla fält som krävs när [en ny datatyp](#create) skapas i en POST-begäran.
 
 >[!NOTE]
 >
->Om du bara vill uppdatera en del av en datatyp i stället för att ersätta den helt, ska du läsa avsnittet om att [uppdatera en del av en datatyp](#patch).
+>Om du bara vill uppdatera en del av en datatyp i stället för att ersätta den helt, ska du läsa avsnittet [Uppdatera en del av en datatyp](#patch).
 
 **API-format**
 
@@ -342,11 +342,11 @@ PUT /tenant/datatypes/{DATA_TYPE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{DATA_TYPE_ID}` | Den `meta:altId` eller URL-kodade `$id` datatypen som du vill skriva om. |
+| `{DATA_TYPE_ID}` | `meta:altId` eller URL-kodad `$id` för den datatyp som du vill skriva om. |
 
 **Begäran**
 
-Följande begäran skriver om en befintlig datatyp och lägger till ett nytt `floorSize` fält.
+Följande begäran skriver om en befintlig datatyp och lägger till ett nytt `floorSize`-fält.
 
 ```SHELL
 curl -X PUT \
@@ -457,11 +457,11 @@ Ett godkänt svar returnerar information om den uppdaterade datatypen.
 
 ## Uppdatera en del av en datatyp {#patch}
 
-Du kan uppdatera en del av en datatyp genom att använda en PATCH-begäran. Den [!DNL Schema Registry] stöder alla vanliga JSON Patch-åtgärder, inklusive `add`, `remove`och `replace`. Mer information om JSON Patch finns i [API-handboken](../../landing/api-fundamentals.md#json-patch).
+Du kan uppdatera en del av en datatyp genom att använda en PATCH-begäran. [!DNL Schema Registry] stöder alla JSON-standardåtgärder för korrigering, inklusive `add`, `remove` och `replace`. Mer information om JSON Patch finns i [API fundamentals guide](../../landing/api-fundamentals.md#json-patch).
 
 >[!NOTE]
 >
->Om du vill ersätta en hel resurs med nya värden i stället för att uppdatera enskilda fält läser du avsnittet om att [ersätta en datatyp med en PUT-åtgärd](#put).
+>Om du vill ersätta en hel resurs med nya värden i stället för att uppdatera enskilda fält läser du avsnittet [ersätta en datatyp med en PUT-åtgärd](#put).
 
 **API-format**
 
@@ -471,11 +471,11 @@ PATCH /tenant/data type/{DATA_TYPE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{DATA_TYPE_ID}` | Den URL-kodade `$id` URI eller `meta:altId` den datatyp som du vill uppdatera. |
+| `{DATA_TYPE_ID}` | URL-kodad `$id` URI eller `meta:altId` för den datatyp som du vill uppdatera. |
 
 **Begäran**
 
-Exempelbegäran nedan uppdaterar `description` en befintlig datatyp och lägger till ett nytt `floorSize` fält.
+Exempelbegäran nedan uppdaterar `description` för en befintlig datatyp och lägger till ett nytt `floorSize`-fält.
 
 Begärandetexten har formen av en array där varje listat-objekt representerar en specifik ändring i ett enskilt fält. Varje objekt innehåller den åtgärd som ska utföras (`op`), vilket fält åtgärden ska utföras på (`path`) och vilken information som ska inkluderas i åtgärden (`value`).
 
@@ -507,7 +507,7 @@ curl -X PATCH \
 
 **Svar**
 
-Svaret visar att båda åtgärderna har utförts. Den `description` har uppdaterats och `floorSize` har lagts till under `definitions`.
+Svaret visar att båda åtgärderna har utförts. `description` har uppdaterats och `floorSize` har lagts till under `definitions`.
 
 ```JSON
 {
@@ -608,7 +608,7 @@ DELETE /tenant/datatypes/{DATA_TYPE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{DATA_TYPE_ID}` | Den URL-kodade `$id` URI:n eller `meta:altId` den datatyp som du vill ta bort. |
+| `{DATA_TYPE_ID}` | URL-kodad `$id` URI eller `meta:altId` för den datatyp som du vill ta bort. |
 
 **Begäran**
 
@@ -625,4 +625,4 @@ curl -X DELETE \
 
 Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och en tom brödtext.
 
-Du kan bekräfta borttagningen genom att försöka utföra en [sökbegäran](#lookup) till datatypen. Du måste inkludera en rubrik i begäran, men du bör få HTTP-status 404 (Hittades inte) eftersom datatypen har tagits bort från schemaregistret. `Accept`
+Du kan bekräfta borttagningen genom att försöka utföra en [sökbegäran (GET)](#lookup) till datatypen. Du måste inkludera en `Accept`-rubrik i begäran, men du bör få HTTP-statusen 404 (Hittades inte) eftersom datatypen har tagits bort från schemaregistret.
