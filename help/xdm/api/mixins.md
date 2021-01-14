@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;mixin registry;Schema Registry;mixin;Mixin;mixins;Mixins;create
+keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;mixin registry;Schema Registry;mixin;Mixin;mixins;Mixins;create
 solution: Experience Platform
 title: Skapa en blandning
 description: Med slutpunkten /mixins i API:t för schemaregister kan du programmässigt hantera XDM-blandningar i ditt upplevelseprogram.
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 0b55f18eabcf1d7c5c233234c59eb074b2670b93
+source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
 workflow-type: tm+mt
 source-wordcount: '1102'
 ht-degree: 0%
@@ -15,19 +15,19 @@ ht-degree: 0%
 
 # Blandar slutpunkt
 
-Blandningar är återanvändbara komponenter som definierar ett eller flera fält som representerar ett visst koncept, till exempel en enskild person, en postadress eller en webbläsarmiljö. Blandningar är avsedda att ingå som en del av ett schema som implementerar en kompatibel klass, beroende på beteendet hos de data de representerar (post- eller tidsserie). Med `/mixins` slutpunkten i [!DNL Schema Registry] API kan du programmässigt hantera mixar i ditt upplevelseprogram.
+Blandningar är återanvändbara komponenter som definierar ett eller flera fält som representerar ett visst koncept, till exempel en enskild person, en postadress eller en webbläsarmiljö. Blandningar är avsedda att ingå som en del av ett schema som implementerar en kompatibel klass, beroende på beteendet hos de data de representerar (post- eller tidsserie). Med `/mixins`-slutpunkten i [!DNL Schema Registry]-API:t kan du programmässigt hantera blandningar i ditt upplevelseprogram.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/mixin-registry.yaml). Innan du fortsätter bör du läsa [Komma igång-guiden](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/mixin-registry.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anropen i det här dokumentet och viktig information om vilka huvuden som krävs för att anropa ett Experience Platform-API.
 
-## Hämta en lista med mixar {#list}
+## Hämta en lista med blandningar {#list}
 
-Du kan visa alla blandningar under `global` - eller `tenant` -behållaren genom att göra en GET-förfrågan till `/global/mixins` respektive `/tenant/mixins`.
+Du kan lista alla blandningar under `global`- eller `tenant`-behållaren genom att göra en GET-begäran till `/global/mixins` respektive `/tenant/mixins`.
 
 >[!NOTE]
 >
->När resurser listas begränsas resultatmängden till 300 objekt. Om du vill returnera resurser som överskrider den här gränsen måste du använda sidindelningsparametrar. Vi rekommenderar också att du använder ytterligare frågeparametrar för att filtrera resultaten och minska antalet returnerade resurser. Mer information finns i avsnittet om [frågeparametrar](./appendix.md#query) i bilagan.
+>När resurser listas begränsas resultatmängden till 300 objekt. Om du vill returnera resurser som överskrider den här gränsen måste du använda sidindelningsparametrar. Vi rekommenderar också att du använder ytterligare frågeparametrar för att filtrera resultaten och minska antalet returnerade resurser. Mer information finns i avsnittet [frågeparametrar](./appendix.md#query) i bilagan.
 
 **API-format**
 
@@ -38,11 +38,11 @@ GET /{CONTAINER_ID}/mixins?{QUERY_PARAMS}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{CONTAINER_ID}` | Behållaren som du vill hämta blandningar från: `global` för blandningar som skapats av Adobe eller `tenant` för blandningar som ägs av din organisation. |
-| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. En lista med tillgängliga parametrar finns i [bilagan](./appendix.md#query) . |
+| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. En lista över tillgängliga parametrar finns i [bilagan document](./appendix.md#query). |
 
 **Begäran**
 
-Följande begäran hämtar en lista med blandningar från `tenant` behållaren och använder en `orderby` frågeparameter för att sortera blandningarna efter deras `title` attribut.
+Följande begäran hämtar en lista med blandningar från `tenant`-behållaren, med en `orderby`-frågeparameter för att sortera mixinerna efter deras `title`-attribut.
 
 ```shell
 curl -X GET \
@@ -54,7 +54,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-Svarsformatet beror på vilket sidhuvud som skickas i begäran `Accept` . Följande `Accept` rubriker är tillgängliga för att lista blandningar:
+Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Följande `Accept`-huvuden är tillgängliga för att lista mixar:
 
 | `Accept` header | Beskrivning |
 | --- | --- |
@@ -63,7 +63,7 @@ Svarsformatet beror på vilket sidhuvud som skickas i begäran `Accept` . Följa
 
 **Svar**
 
-I begäran ovan användes `application/vnd.adobe.xed-id+json` rubriken. Svaret innehåller därför bara attributen `Accept` , `title`, `$id`och `meta:altId``version` för varje blandning. Om du använder den andra `Accept` rubriken (`application/vnd.adobe.xed+json`) returneras alla attribut för varje blandning. Välj lämplig `Accept` rubrik beroende på vilken information du behöver i ditt svar.
+I begäran ovan användes rubriken `application/vnd.adobe.xed-id+json` `Accept`, och därför innehåller svaret endast attributen `title`, `$id`, `meta:altId` och `version` för varje blandning. Om du använder det andra `Accept`-huvudet (`application/vnd.adobe.xed+json`) returneras alla attribut för varje blandning. Välj lämpligt `Accept`-huvud beroende på vilken information du behöver i ditt svar.
 
 ```json
 {
@@ -120,11 +120,11 @@ GET /{CONTAINER_ID}/mixins/{MIXIN_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{CONTAINER_ID}` | Den behållare som innehåller den blandning som du vill hämta: `global` för en blandning som skapats av Adobe eller `tenant` för en blandning som ägs av din organisation. |
-| `{MIXIN_ID}` | Den `meta:altId` eller URL-kodade `$id` för den blandning som du vill söka efter. |
+| `{MIXIN_ID}` | `meta:altId` eller URL-kodad `$id` för den blandning som du vill söka efter. |
 
 **Begäran**
 
-Följande begäran hämtar en blandning med det `meta:altId` värde som anges i sökvägen.
+Följande begäran hämtar en blandning med `meta:altId`-värdet som anges i sökvägen.
 
 ```shell
 curl -X GET \
@@ -136,19 +136,19 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-Svarsformatet beror på vilket sidhuvud som skickas i begäran `Accept` . Alla uppslagsbegäranden måste `version` inkluderas i `Accept` rubriken. The following `Accept` headers are available:
+Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Alla uppslagsbegäranden kräver att `version` inkluderas i `Accept`-huvudet. Följande `Accept` rubriker är tillgängliga:
 
 | `Accept` header | Beskrivning |
 | ------- | ------------ |
-| `application/vnd.adobe.xed+json; version={MAJOR_VERSION}` | Raw med `$ref` och `allOf`har rubriker och beskrivningar. |
-| `application/vnd.adobe.xed-full+json; version={MAJOR_VERSION}` | `$ref` och `allOf` är åtgärdade, har rubriker och beskrivningar. |
+| `application/vnd.adobe.xed+json; version={MAJOR_VERSION}` | Raw med `$ref` och `allOf` har rubriker och beskrivningar. |
+| `application/vnd.adobe.xed-full+json; version={MAJOR_VERSION}` | `$ref` och  `allOf` löses, har rubriker och beskrivningar. |
 | `application/vnd.adobe.xed-notext+json; version={MAJOR_VERSION}` | Raw med `$ref` och `allOf`, inga titlar eller beskrivningar. |
-| `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` och `allOf` löste sig - inga titlar eller beskrivningar. |
-| `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` och `allOf` åtgärdade, beskrivningar inkluderades. |
+| `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` och  `allOf` lösts - inga titlar eller beskrivningar. |
+| `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` och  `allOf` åtgärdade, beskrivningar inkluderades. |
 
 **Svar**
 
-Ett lyckat svar returnerar detaljerna för mixen. Vilka fält som returneras beror på vilket sidhuvud som skickas i begäran `Accept` . Experimentera med olika `Accept` rubriker för att jämföra svaren och ta reda på vilket sidhuvud som är bäst för dig.
+Ett lyckat svar returnerar detaljerna för mixen. Vilka fält som returneras beror på det `Accept`-huvud som skickas i begäran. Experimentera med olika `Accept`-rubriker för att jämföra svaren och avgöra vilken rubrik som är bäst för ditt användningssätt.
 
 ```json
 {
@@ -211,7 +211,7 @@ Ett lyckat svar returnerar detaljerna för mixen. Vilka fält som returneras ber
 
 ## Skapa en blandning {#create}
 
-Du kan definiera en anpassad blandning under `tenant` behållaren genom att göra en POST-förfrågan.
+Du kan definiera en anpassad blandning under `tenant`-behållaren genom att göra en POST-förfrågan.
 
 **API-format**
 
@@ -221,11 +221,11 @@ POST /tenant/mixins
 
 **Begäran**
 
-När du definierar en ny blandning måste den innehålla ett `meta:intendedToExtend` -attribut med en lista `$id` över de klasser som blandningen är kompatibel med. I det här exemplet är mixinen kompatibel med en `Property` klass som definierats tidigare. Anpassade fält måste kapslas under `_{TENANT_ID}` (som visas i exemplet) för att undvika kollisioner med liknande fält som tillhandahålls av klasser och andra blandningar.
+När du definierar en ny blandning måste den innehålla ett `meta:intendedToExtend`-attribut, som listar `$id` för de klasser som blandningen är kompatibel med. I det här exemplet är mixinen kompatibel med en `Property`-klass som definierats tidigare. Anpassade fält måste kapslas under `_{TENANT_ID}` (som visas i exemplet) för att undvika kollisioner med liknande fält som tillhandahålls av klasser och andra blandningar.
 
 >[!NOTE]
 >
->Mer information om hur du definierar olika fälttyper som ska ingå i din blandning finns i [fältbegränsningsguiden](../schema/field-constraints.md#define-fields).
+>Mer information om hur du definierar olika fälttyper som ska ingå i din blandning finns i [guiden för fältbegränsningar](../schema/field-constraints.md#define-fields).
 
 ```SHELL
 curl -X POST \
@@ -294,7 +294,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehåller information om den nyligen skapade mixinen, inklusive `$id`, `meta:altId`och `version`. Dessa värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
+Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehåller information om den nyligen skapade mixinen, inklusive `$id`, `meta:altId` och `version`. Dessa värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
 
 ```JSON
 {
@@ -378,15 +378,15 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehå
 }
 ```
 
-Om du utför en GET-begäran om att [lista alla blandningar](#list) i innehavarbehållaren skulle det nu inkludera blandningen Egenskapsinformation, eller så kan du [utföra en sökning (GET)-begäran](#lookup) med den URL-kodade `$id` URI:n för att visa den nya blandningen direkt.
+Om du utför en GET-begäran om att [lista alla mixiner](#list) i klientbehållaren skulle nu inkludera blandningen Egenskapsinformation. Du kan också [utföra en sökning (GET)-begäran](#lookup) med den URL-kodade URI:n `$id` för att visa den nya mixen direkt.
 
 ## Uppdatera en blandning {#put}
 
-Du kan ersätta en hel blandning med en PUT-åtgärd, vilket i själva verket innebär att resursen skrivs om. När du uppdaterar en mixin via en PUT-begäran måste brödtexten innehålla alla fält som krävs när du [skapar en ny mixin](#create) i en POST-begäran.
+Du kan ersätta en hel blandning med en PUT-åtgärd, vilket i själva verket innebär att resursen skrivs om. När du uppdaterar en blandning via en PUT-begäran måste brödtexten innehålla alla fält som krävs när [du skapar en ny blandning](#create) i en POST-begäran.
 
 >[!NOTE]
 >
->Om du bara vill uppdatera en del av en blandning i stället för att ersätta den helt, ska du läsa avsnittet om hur du [uppdaterar en del av en blandning](#patch).
+>Om du bara vill uppdatera en del av en blandning i stället för att ersätta den helt, ska du läsa avsnittet [Uppdatera en del av en blandning](#patch).
 
 **API-format**
 
@@ -396,11 +396,11 @@ PUT /tenant/mixins/{MIXIN_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{MIXIN_ID}` | Den `meta:altId` eller URL-kodade `$id` för den blandning som du vill skriva om. |
+| `{MIXIN_ID}` | `meta:altId` eller URL-kodad `$id` för den blandning som du vill skriva om. |
 
 **Begäran**
 
-Följande begäran skriver om en befintlig blandning och lägger till ett nytt `propertyCountry` fält.
+Följande begäran skriver om en befintlig blandning och lägger till ett nytt `propertyCountry`-fält.
 
 ```SHELL
 curl -X PUT \
@@ -565,11 +565,11 @@ Ett lyckat svar returnerar information om den uppdaterade mixinen.
 
 ## Uppdatera en del av en blandning {#patch}
 
-Du kan uppdatera en del av en blandning genom att använda en PATCH-begäran. Den [!DNL Schema Registry] stöder alla vanliga JSON Patch-åtgärder, inklusive `add`, `remove`och `replace`. Mer information om JSON Patch finns i [API-handboken](../../landing/api-fundamentals.md#json-patch).
+Du kan uppdatera en del av en blandning genom att använda en PATCH-begäran. [!DNL Schema Registry] stöder alla JSON-standardåtgärder för korrigering, inklusive `add`, `remove` och `replace`. Mer information om JSON Patch finns i [API fundamentals guide](../../landing/api-fundamentals.md#json-patch).
 
 >[!NOTE]
 >
->Om du vill ersätta en hel resurs med nya värden i stället för att uppdatera enskilda fält läser du avsnittet om att [ersätta en blandning med en PUT-åtgärd](#put).
+>Om du vill ersätta en hel resurs med nya värden i stället för att uppdatera enskilda fält läser du avsnittet [ersätta en blandning med en PUT-åtgärd](#put).
 
 **API-format**
 
@@ -579,11 +579,11 @@ PATCH /tenant/mixin/{MIXIN_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{MIXIN_ID}` | Den URL-kodade `$id` URI:n eller `meta:altId` den blandning som du vill uppdatera. |
+| `{MIXIN_ID}` | Den URL-kodade URI:n eller `meta:altId` för den blandning som du vill uppdatera.`$id` |
 
 **Begäran**
 
-Exempelbegäran nedan uppdaterar `description` innehållet i en befintlig blandning och lägger till ett nytt `propertyCity` fält.
+Exempelbegäran nedan uppdaterar `description` för en befintlig blandning och lägger till ett nytt `propertyCity`-fält.
 
 Begärandetexten har formen av en array där varje listat-objekt representerar en specifik ändring i ett enskilt fält. Varje objekt innehåller den åtgärd som ska utföras (`op`), vilket fält åtgärden ska utföras på (`path`) och vilken information som ska inkluderas i åtgärden (`value`).
 
@@ -615,7 +615,7 @@ curl -X PATCH \
 
 **Svar**
 
-Svaret visar att båda åtgärderna har utförts. Den `description` har uppdaterats och `propertyCountry` har lagts till under `definitions`.
+Svaret visar att båda åtgärderna har utförts. `description` har uppdaterats och `propertyCountry` har lagts till under `definitions`.
 
 ```JSON
 {
@@ -716,7 +716,7 @@ DELETE /tenant/mixins/{MIXIN_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{MIXIN_ID}` | Den URL-kodade `$id` URI:n eller `meta:altId` den blandning du vill ta bort. |
+| `{MIXIN_ID}` | Den URL-kodade URI:n eller `meta:altId` för den blandning som du vill ta bort.`$id` |
 
 **Begäran**
 
@@ -733,4 +733,4 @@ curl -X DELETE \
 
 Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och en tom brödtext.
 
-Du kan bekräfta borttagningen genom att försöka utföra en [uppslagsbegäran](#lookup) till mixen. Du måste inkludera en rubrik i begäran, men du bör få HTTP-status 404 (Hittades inte) eftersom mixinen har tagits bort från schemaregistret. `Accept`
+Du kan bekräfta borttagningen genom att försöka med en [sökbegäran (GET)](#lookup) till blandningen. Du måste inkludera ett `Accept`-huvud i begäran, men du bör få HTTP-status 404 (Hittades inte) eftersom mixinen har tagits bort från schemaregistret.
