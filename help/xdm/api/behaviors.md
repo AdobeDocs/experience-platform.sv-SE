@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;behavior;behaviour;behaviors;behaviours;
+keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;behavior;behaviour;behaviors;behaviours;
 solution: Experience Platform
 title: Slutpunktsguide för beteenden
 description: Med slutpunkten /behaviors i API:t för schemaregister kan du hämta alla tillgängliga beteenden i den globala behållaren.
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 72c9147cefd00c9fe734ac64f8062c899b0588bc
+source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
 workflow-type: tm+mt
 source-wordcount: '392'
 ht-degree: 1%
@@ -22,19 +22,19 @@ I Experience Data Model (XDM) definierar beteenden vilken typ av data som ett sc
 
 >[!NOTE]
 >
->Det finns vissa användningsfall i Platform som kräver användning av schema som inte har något av ovanstående beteenden. I dessa fall finns ett tredje &quot;ad hoc&quot;-beteende att tillgå. Mer information finns i självstudiekursen om hur du [skapar ett ad hoc-schema](../tutorials/ad-hoc.md) .
+>Det finns vissa användningsfall i Platform som kräver användning av schema som inte har något av ovanstående beteenden. I dessa fall finns ett tredje &quot;ad hoc&quot;-beteende att tillgå. Mer information finns i självstudiekursen om att [skapa ett ad hoc-schema](../tutorials/ad-hoc.md).
 >
->Mer allmän information om databeteenden i termer av hur de påverkar schemakomposition finns i guiden om [grunderna för schemakomposition](../schema/composition.md).
+>Mer allmän information om databeteenden i termer av hur de påverkar schemakomposition finns i guiden [grunder för schemakomposition](../schema/composition.md).
 
-Med `/behaviors` slutpunkten i [!DNL Schema Registry] API kan du visa tillgängliga beteenden i `global` behållaren.
+Med slutpunkten `/behaviors` i API:t [!DNL Schema Registry] kan du visa tillgängliga beteenden i `global`-behållaren.
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/behavior-registry.yaml). Innan du fortsätter bör du läsa [Komma igång-guiden](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/behavior-registry.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anropen i det här dokumentet och viktig information om vilka huvuden som krävs för att anropa ett Experience Platform-API.
 
 ## Hämta en lista med beteenden {#list}
 
-Du kan hämta en lista över alla tillgängliga beteenden genom att göra en GET-förfrågan till `/behaviors` slutpunkten.
+Du kan hämta en lista över alla tillgängliga beteenden genom att göra en GET-förfrågan till `/behaviors`-slutpunkten.
 
 **API-format**
 
@@ -91,7 +91,7 @@ curl -X GET \
 
 ## Söka efter ett beteende {#lookup}
 
-Du kan söka efter ett visst beteende genom att ange dess ID i sökvägen till en GET-begäran till `/behaviors` slutpunkten.
+Du kan söka efter ett visst beteende genom att ange dess ID i sökvägen för en GET-begäran till `/behaviors`-slutpunkten.
 
 **API-format**
 
@@ -101,7 +101,7 @@ GET /global/behaviors/{BEHAVIOR_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{BEHAVIOR_ID}` | Den `meta:altId` eller URL-kodade `$id` för beteendet som du vill söka efter. |
+| `{BEHAVIOR_ID}` | `meta:altId` eller URL-kodad `$id` för beteendet som du vill söka efter. |
 
 **Begäran**
 
@@ -172,4 +172,4 @@ Ett godkänt svar returnerar detaljerna om beteendet, inklusive version, beskriv
 
 ## Nästa steg
 
-Den här guiden beskriver användningen av `/behaviors` slutpunkten i [!DNL Schema Registry] API:t. Mer information om hur du tilldelar ett beteende till en klass med API finns i [klassens slutpunktshandbok](./classes.md).
+I den här guiden beskrivs användningen av slutpunkten `/behaviors` i [!DNL Schema Registry]-API:t. Mer information om hur du tilldelar ett beteende till en klass med API finns i [handboken för klassers slutpunkter](./classes.md).
