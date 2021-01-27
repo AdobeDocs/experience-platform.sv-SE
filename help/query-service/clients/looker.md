@@ -5,7 +5,7 @@ title: Anslut med Looker
 topic: connect
 description: Det här dokumentet går igenom stegen för att ansluta Looker till Adobe Experience Platform Query Service.
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: 9fbb6b829cd9ddec30f22b0de66874be7710e465
 workflow-type: tm+mt
 source-wordcount: '208'
 ht-degree: 0%
@@ -15,9 +15,9 @@ ht-degree: 0%
 
 # Anslut med [!DNL Looker]
 
-Följ stegen nedan för att ansluta [!DNL Looker] till [!DNL Query Service] Adobe Experience Platform:
+Följ stegen nedan för att ansluta [!DNL Looker] till [!DNL Query Service] på Adobe Experience Platform:
 
-När du har loggat in [!DNL Looker]klickar du på **[!UICONTROL Admin]**, följt av **[!UICONTROL Connections]**.
+När du har loggat in på [!DNL Looker] klickar du på **[!UICONTROL Admin]** följt av **[!UICONTROL Connections]**.
 
 ![](../images/clients/looker/click-admin-connections.png)
 
@@ -30,14 +30,14 @@ Härifrån kan du fylla i informationen för anslutningsinställningarna.
 ![](../images/clients/looker/new-connection.png)
 
 - **Namn:** Namnet på anslutningen.
-- **Dialekt:** Den dialekt som används för SQL-databasen. [!DNL Query Service] använder **[!DNL PostgreSQL]**.
-- **Värd och port:** Värdslutpunkten och dess port för [!DNL Query Service].
-- **Databas:** Databasen som ska användas.
+- **Dialekt:** Den dialekt som används för SQL-databasen. [!DNL Query Service] använder  **[!DNL PostgreSQL]**.
+- **Värd och port:** Värdslutpunkten och dess port för  [!DNL Query Service].
+- **Database:** The database that will be used.
 - **Användarnamn och lösenord:** De inloggningsuppgifter som ska användas. Användarnamnet kommer att ha formatet `ORG_ID@AdobeOrg`.
 
 >[!NOTE]
 >
->Mer information om hur du hittar värd och port, databasnamn och inloggningsuppgifter finns på [inloggningssidan på Platform](https://platform.adobe.com/query/configuration). Logga in på, [!DNL Platform]klicka **[!UICONTROL Queries]** och klicka sedan på **[!UICONTROL Credentials]** för att hitta dina inloggningsuppgifter.
+>Mer information om hur du hittar värd och port, databasnamn och inloggningsuppgifter finns på sidan [inloggningsuppgifter på Platform](https://platform.adobe.com/query/configuration). Om du vill hitta dina autentiseringsuppgifter loggar du in på [!DNL Platform], klickar på **[!UICONTROL Queries]** och sedan på **[!UICONTROL Credentials]**.
 
 När du har angett anslutningsinformationen klickar du på **[!UICONTROL Test These Settings]** för att kontrollera att inloggningsuppgifterna fungerar som de ska. Om de gör det visas ett meddelande om att du kan ansluta nedan. Om anslutningen lyckas klickar du på **[!UICONTROL Add Connection]** för att skapa anslutningen.
 
@@ -45,4 +45,4 @@ När du har angett anslutningsinformationen klickar du på **[!UICONTROL Test Th
 
 ## Nästa steg
 
-Nu när du är ansluten till [!DNL Query Service]kan du använda [!DNL Looker] för att skriva frågor. Mer information om hur du skriver och kör frågor finns i [frågeguiden](../creating-queries/creating-queries.md).
+Nu när du är ansluten till [!DNL Query Service] kan du använda [!DNL Looker] för att skriva frågor. Mer information om hur du skriver och kör frågor finns i [frågeguiden](../best-practices/writing-queries.md) som körs.
