@@ -5,9 +5,9 @@ title: Handbok för frågetjänstutvecklare
 topic: connection parameters
 description: Du kan hämta anslutningsparametrar för användning av den interaktiva tjänsten genom att göra en GET-förfrågan till slutpunkten /connection_parameters.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 648544bc60c0cee8ca8b167118391980b6c33d91
 workflow-type: tm+mt
-source-wordcount: '143'
+source-wordcount: '134'
 ht-degree: 0%
 
 ---
@@ -17,11 +17,11 @@ ht-degree: 0%
 
 ## Exempel på API-anrop
 
-Nu när du förstår vilka rubriker som ska användas kan du börja ringa anrop till [!DNL Query Service] API:t. I följande avsnitt går du igenom de olika API-anropen som du kan göra med hjälp av [!DNL Query Service] API:t. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
+Nu när du förstår vilka rubriker som ska användas kan du börja ringa anrop till API:t [!DNL Query Service]. Följande avsnitt går igenom de olika API-anrop du kan göra med API:t [!DNL Query Service]. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
 
-### Begär anslutningsparametrar för den interaktiva tjänsten
+### Begär anslutningsparametrar
 
-Du kan hämta anslutningsparametrar för användning av den [interaktiva tjänsten](../creating-queries/writing-queries.md) genom att göra en GET-förfrågan till `/connection_parameters` slutpunkten. Mer information om klienter som använder anslutningsparametrar för att ansluta via den interaktiva tjänsten finns i dokumentationen om [Query Service-klienter](../clients/overview.md).
+Du kan hämta anslutningsparametrar genom att göra en GET-förfrågan till `/connection_parameters`-slutpunkten. Mer information om klienter som använder anslutningsparametrar för att ansluta via den interaktiva tjänsten finns i dokumentationen om [Query Service-klienter](../clients/overview.md).
 
 **API-format**
 
