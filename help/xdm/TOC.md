@@ -5,10 +5,10 @@ user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: XDM-guide (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och mixins för att standardisera upplevelsedata.
 translation-type: tm+mt
-source-git-commit: 099e88373d945660e7529bbd508e616869fd01da
+source-git-commit: baf39df0e03170d6b2b5a151e753d4ad269a43fa
 workflow-type: tm+mt
-source-wordcount: '215'
-ht-degree: 6%
+source-wordcount: '214'
+ht-degree: 7%
 
 ---
 
@@ -21,8 +21,6 @@ ht-degree: 6%
    * [Bästa tillvägagångssätt för datamodellering](schema/best-practices.md)
    * [Begränsningar för XDM-fälttyp](schema/field-constraints.md)
    * [XDM-fältordlista](schema/field-dictionary.md)
-   * Användningsexempel för schema {#use-cases}
-      * [Datatypen Innehåll och inställningar](schema/privacy-consent.md)
 * Klasser {#classes}
    * [Individuell XDM-profil](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
@@ -82,6 +80,9 @@ ht-degree: 6%
    * [Datatyper](api/data-types.md)
    * [Beskrivningar](api/descriptors.md)
    * [Unions](api/unions.md)
+   * [Exportera/importera](api/export-import.md)
+   * [Exempeldata](api/sample-data.md)
+   * [Granskningslogg](api/audit-log.md)
    * [Ad hoc-scheman](api/ad-hoc.md)
    * [Bilaga](api/appendix.md)
 * Självstudiekurser {#tutorials}
