@@ -5,7 +5,7 @@ title: Adobe-definierade funktioner
 topic: functions
 description: Det här dokumentet innehåller information om de Adobe-definierade funktioner som är tillgängliga i frågetjänsten.
 translation-type: tm+mt
-source-git-commit: c95f976efd4a281640d2f47888b34bdd12a6c7a8
+source-git-commit: e15229601d35d1155fc9a8ab9296f8c41811ebf9
 workflow-type: tm+mt
 source-wordcount: '2889'
 ht-degree: 1%
@@ -667,14 +667,14 @@ En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönster
 **Exempelfråga**
 
 ```sql
-SELECT endUserIds._experience.mcid.id, _experience.analytics.session.num, timestamp, web.webPageDetails.name
+SELECT endUserIds._experience.mcid.id, timestamp, web.webPageDetails.name
     PREVIOUS(web.webPageDetails.name, 3)
-      OVER(PARTITION BY endUserIds._experience.mcid.id, _experience.analytics.session.num
+      OVER(PARTITION BY endUserIds._experience.mcid.id
            ORDER BY timestamp
            ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)
       AS previous_page
 FROM experience_events
-ORDER BY endUserIds._experience.mcid.id, _experience.analytics.session.num, timestamp ASC
+ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 ```
 
 **Resultat**
@@ -723,7 +723,7 @@ SELECT endUserIds._experience.aaid.id, timestamp, web.webPageDetails.name,
       OVER(PARTITION BY endUserIds._experience.aaid.id
            ORDER BY timestamp
            ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING)
-      AS previous_page
+      AS next_page
 FROM experience_events
 ORDER BY endUserIds._experience.aaid.id, timestamp ASC
 LIMIT 10
@@ -881,7 +881,7 @@ För den angivna exempelfrågan anges resultaten i kolumnen `average_minutes_unt
 
 ## Nästa steg
 
-Med funktionerna som beskrivs här kan du skriva frågor för att få tillgång till dina egna [!DNL Experience Event]-datauppsättningar med [!DNL Query Service]. Mer information om hur du skapar frågor i [!DNL Query Service] finns i dokumentationen om [hur du skapar frågor](../creating-queries/creating-queries.md).
+Med funktionerna som beskrivs här kan du skriva frågor för att få tillgång till dina egna [!DNL Experience Event]-datauppsättningar med [!DNL Query Service]. Mer information om hur du skapar frågor i [!DNL Query Service] finns i dokumentationen om [hur du skapar frågor](../best-practices/writing-queries.md).
 
 ## Ytterligare resurser
 
