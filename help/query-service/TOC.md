@@ -5,10 +5,10 @@ user-guide-title: Hjälp om Adobe Experience Platform Query Service
 breadcrumb-title: Handbok för frågetjänst
 user-guide-description: Använd standard-SQL för att fråga efter data i Platform Data Lake.
 translation-type: tm+mt
-source-git-commit: e38190aabfa5d36de85e03eb5fb4e76283fb7934
+source-git-commit: e2c648829bb3268ab319da934f5cc6cc811290b3
 workflow-type: tm+mt
-source-wordcount: '144'
-ht-degree: 5%
+source-wordcount: '135'
+ht-degree: 2%
 
 ---
 
@@ -27,14 +27,13 @@ ht-degree: 5%
 - Användargränssnitt för frågetjänst {#ui}
    - [Översikt över användargränssnittet](ui/overview.md)
    - [Användarhandbok för Frågeredigeraren](ui/user-guide.md)
-- Skapa frågor {#creating-queries}
-   - [Skapa frågor - översikt](creating-queries/creating-queries.md)
-   - [Datauppsättningar jämfört med tabeller och scheman](creating-queries/datasets-and-tables.md)
-   - [Allmän vägledning för frågekörning](creating-queries/writing-queries.md)
-   - [ExperienceEvent-frågor](creating-queries/experience-event-queries.md)
-   - [Sammanfoga datauppsättningar](creating-queries/joining-datasets.md)
-   - [Datadeduplicering](creating-queries/deduplication.md)
-- [Genererar datauppsättningar från frågeresultat](creating-queries/create-datasets.md)
+   - [Genererar datauppsättningar från frågeresultat](ui/create-datasets.md)
+- God praxis {#best-practices}
+   - [Allmän vägledning för frågekörning](best-practices/writing-queries.md)
+   - [Datadeduplicering](best-practices/deduplication.md)
+   - [Exempelfrågor om Experience Event](best-practices/experience-event-queries.md)
+   - [Exempel på Adobe Analytics-frågor](best-practices/adobe-analytics.md)
+   - [Exempel på Adobe Target-frågor](best-practices/adobe-target.md)
 - SQL-referens {#sql}
    - [SQL-översikt](sql/overview.md)
    - [SQL-syntax](sql/syntax.md)
@@ -42,10 +41,6 @@ ht-degree: 5%
    - [Spark SQL-funktioner](sql/spark-sql-functions.md)
    - [Metadata-kommandon](sql/metadata.md)
    - [Förberedda programsatser](sql/prepared-statements.md)
-- Exempelfrågor {#samples}
-   - [Exempelfrågor - översikt](sample-queries/overview.md)
-   - [Adobe Analytics](sample-queries/adobe-analytics.md)
-   - [Adobe Target](sample-queries/adobe-target.md)
 - Anslut klienter till frågetjänsten {#clients}
    - [Översikt över klientanslutningar](clients/overview.md)
    - [Aqua Data Studio](clients/aqua-data-studio.md)
