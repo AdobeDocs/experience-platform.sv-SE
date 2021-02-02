@@ -1,52 +1,52 @@
 ---
-keywords: Experience Platform;home;popular topics;ecommerce;eCommerce
+keywords: Experience Platform;hemmabruk;populära ämnen;e-handel;e-handel
 solution: Experience Platform
 title: Utforska en eCommerce-anslutning med API:t för Flow Service
 topic: overview
 description: I den här självstudien används API:t för Flow Service för att utforska e-handelsanslutningar.
 translation-type: tm+mt
-source-git-commit: 4696bcb17427bb50549a315294baf7fbd87ac01d
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '551'
+source-wordcount: '562'
 ht-degree: 1%
 
 ---
 
 
-# Utforska en e-handelsanslutning med [!DNL Flow Service] API
+# Utforska en e-handelsanslutning med hjälp av API:t [!DNL Flow Service]
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudiekursen används API:t för att utforska en [!DNL Flow Service] **[!UICONTROL eCommerce]** anslutning från tredje part.
+I den här självstudien används API:t [!DNL Flow Service] för att utforska en anslutning från en tredje part till **[!UICONTROL eCommerce]**.
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [[!DNL Sources]](../../../home.md): [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster.
-* [[!DNL Sandboxes]](../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [[!DNL Sources]](../../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
+* [[!DNL Sandboxes]](../../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till en **[!UICONTROL eCommerce]** anslutning med [!DNL Flow Service] API.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till en **[!UICONTROL eCommerce]**-anslutning med API:t [!DNL Flow Service].
 
 ### Hämta ett anslutnings-ID
 
-För att kunna utforska din **[!UICONTROL eCommerce]** anslutning med API: [!DNL Platform] er måste du ha ett giltigt anslutnings-ID. Om du inte redan har en anslutning för den anslutning du vill arbeta med kan du skapa en genom följande självstudiekurs: **[!UICONTROL eCommerce]**
+För att kunna utforska din **[!UICONTROL eCommerce]**-anslutning med hjälp av [!DNL Platform] API:er måste du ha ett giltigt anslutnings-ID. Om du inte redan har en anslutning för den **[!UICONTROL eCommerce]**-anslutning du vill arbeta med kan du skapa en genom följande självstudie:
 
 * [Förminska](../create/ecommerce/shopify.md)
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
@@ -56,7 +56,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Utforska era datatabeller
 
-Med ditt **[!UICONTROL eCommerce]** anslutnings-ID kan du utforska datatabeller genom att utföra GET-förfrågningar. Använd följande anrop för att hitta sökvägen till tabellen som du vill inspektera eller importera till [!DNL Platform].
+Med ditt **[!UICONTROL eCommerce]**-anslutnings-ID kan du utforska dina datatabeller genom att utföra GET-förfrågningar. Använd följande anrop för att hitta sökvägen till tabellen som du vill inspektera eller importera till [!DNL Platform].
 
 **API-format**
 
@@ -66,7 +66,7 @@ GET /connections/{CONNECTION_ID}/explore?objectType=root
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{CONNECTION_ID}` | Ditt **[!UICONTROL eCommerce]** anslutnings-ID. |
+| `{CONNECTION_ID}` | Ditt **[!UICONTROL eCommerce]**-anslutnings-ID. |
 
 **Begäran**
 
@@ -81,7 +81,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en array med tabeller från din **[!UICONTROL eCommerce]** anslutning. Leta reda på tabellen som du vill hämta in [!DNL Platform] och notera dess `path` egenskap, eftersom du måste ange den i nästa steg för att kontrollera dess struktur.
+Ett lyckat svar returnerar en matris med tabeller från din **[!UICONTROL eCommerce]**-anslutning. Leta reda på tabellen som du vill hämta till [!DNL Platform] och notera dess `path`-egenskap, eftersom du måste ange den i nästa steg för att kontrollera dess struktur.
 
 ```json
 [
@@ -118,7 +118,7 @@ Ett lyckat svar returnerar en array med tabeller från din **[!UICONTROL eCommer
 
 ## Inspect tabellstrukturen
 
-Om du vill inspektera tabellstrukturen från din **[!UICONTROL eCommerce]** anslutning utför du en GET-förfrågan samtidigt som du anger sökvägen till en tabell i en `object` frågeparameter.
+Om du vill inspektera strukturen för en tabell från din **[!UICONTROL eCommerce]**-anslutning utför du en GET-begäran samtidigt som du anger sökvägen till en tabell i en `object`-frågeparameter.
 
 **API-format**
 
@@ -128,8 +128,8 @@ GET /connections/{CONNECTION_ID}/explore?objectType=table&object={TABLE_PATH}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{CONNECTION_ID}` | Anslutnings-ID för din **[!UICONTROL eCommerce]** anslutning. |
-| `{TABLE_PATH}` | Sökvägen till en tabell i **[!UICONTROL eCommerce]** anslutningen. |
+| `{CONNECTION_ID}` | Anslutnings-ID för din **[!UICONTROL eCommerce]**-anslutning. |
+| `{TABLE_PATH}` | Sökvägen till en tabell i din **[!UICONTROL eCommerce]**-anslutning. |
 
 **Begäran**
 
@@ -144,7 +144,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar strukturen för den angivna tabellen. Information om tabellens kolumner finns i elementen i `columns` arrayen.
+Ett lyckat svar returnerar strukturen för den angivna tabellen. Information om tabellens kolumner finns i elementen i `columns`-arrayen.
 
 ```json
 {
@@ -198,4 +198,4 @@ Ett lyckat svar returnerar strukturen för den angivna tabellen. Information om 
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du utforskat din **[!UICONTROL eCommerce]** anslutning, hittat sökvägen till tabellen som du vill importera [!DNL Platform]och fått information om dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in e-handelsdata och överföra dem till Platform](../collect/ecommerce.md).
+I den här självstudiekursen har du undersökt din **[!UICONTROL eCommerce]**-anslutning, hittat sökvägen till tabellen som du vill importera till [!DNL Platform] och fått information om dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in e-handelsdata och hämta dem till plattformen](../collect/ecommerce.md).
