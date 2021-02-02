@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;data model;ui;workspace;identity;field;
+keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;data model;ui;workspace;identity;field;
 solution: Experience Platform
 title: Definiera ett identitetsfält i användargränssnittet
 description: Lär dig hur du definierar ett identitetsfält i användargränssnittet i Experience Platform.
@@ -7,7 +7,7 @@ topic: user guide
 translation-type: tm+mt
 source-git-commit: f5f507c2e962e2ff9f81376bfe363a6f438056cd
 workflow-type: tm+mt
-source-wordcount: '548'
+source-wordcount: '567'
 ht-degree: 0%
 
 ---
