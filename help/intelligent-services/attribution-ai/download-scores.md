@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;attribution ai;access scores;popular topics;download scores;attribution ai scores;export;Export
+keywords: Experience Platform;attribuering ai;åtkomstpoäng;populära ämnen;nedladdningspoäng;attribueringspoäng;export;Exportera
 solution: Experience Platform, Intelligent Services
 title: Åtkomst till bakgrundsmusik i Attribution AI
 topic: Accessing scores
 description: Det här dokumentet är en guide för nedladdning av bakgrundsmusik för Attribution AI.
 translation-type: tm+mt
-source-git-commit: de16ebddd8734f082f908f5b6016a1d3eadff04c
+source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
 workflow-type: tm+mt
-source-wordcount: '1038'
+source-wordcount: '1054'
 ht-degree: 0%
 
 ---
@@ -19,13 +19,13 @@ Det här dokumentet är en guide för nedladdning av bakgrundsmusik för Attribu
 
 ## Komma igång
 
-Med Attribution AI kan du hämta bakgrundsmusik i parquet-filformatet. Den här självstudien kräver att du har läst och slutfört nedladdningen av bakgrundsmusik i guiden [Komma igång](./getting-started.md) .
+Med Attribution AI kan du hämta bakgrundsmusik i filformatet Parquet. Den här självstudien kräver att du har läst och slutfört nedladdningen av bakgrundsmusik i guiden [komma igång](./getting-started.md).
 
-För att få åtkomst till bakgrundsmusik för Attribution AI måste du dessutom ha en tjänstinstans med statusen lyckad körning tillgänglig. Om du vill skapa en ny tjänstinstans går du till [Attribution AI användarhandbok](./user-guide.md). Om du nyligen har skapat en tjänstinstans och den fortfarande håller på att träna och betygsätta, kan du vänta i 24 timmar tills den är klar.
+För att få åtkomst till bakgrundsmusik för Attribution AI måste du dessutom ha en tjänstinstans med statusen lyckad körning tillgänglig. Om du vill skapa en ny tjänstinstans går du till [användarhandboken för Attribution AI](./user-guide.md). Om du nyligen har skapat en tjänstinstans och den fortfarande håller på att träna och betygsätta, kan du vänta i 24 timmar tills den är klar.
 
 ## Hitta ditt datauppsättnings-ID {#dataset-id}
 
-Klicka på listrutan *Fler åtgärder* i den övre högra navigeringen i tjänstinstansen och välj sedan Attribution AI **[!UICONTROL Access scores]**.
+Klicka på listrutan *Fler åtgärder* i den övre högra navigeringen och välj sedan **[!UICONTROL Access scores]** i tjänstinstansen för att få information om Attribution AI.
 
 ![fler åtgärder](./images/download-scores/more-actions.png)
 
@@ -35,7 +35,7 @@ En ny dialogruta visas med en länk till dokumentationen för nedladdning av bak
 
 ## Hämta ditt batch-ID {#retrieve-your-batch-id}
 
-Om du använder ditt datauppsättnings-ID från föregående steg måste du ringa ett anrop till katalog-API:t för att hämta ett batch-ID. Ytterligare frågeparametrar används för detta API-anrop för att returnera den senaste lyckade gruppen i stället för en lista med batchar som tillhör din organisation. Om du vill returnera ytterligare batchar ökar du talet för `limit` frågeparametern till önskad mängd som du vill returnera. Mer information om vilka typer av frågeparametrar som finns tillgängliga finns i guiden om [filtrering av katalogdata med hjälp av frågeparametrar](../../catalog/api/filter-data.md).
+Om du använder ditt datauppsättnings-ID från föregående steg måste du ringa ett anrop till katalog-API:t för att hämta ett batch-ID. Ytterligare frågeparametrar används för detta API-anrop för att returnera den senaste lyckade gruppen i stället för en lista med batchar som tillhör din organisation. Om du vill returnera ytterligare batchar ökar du talet för `limit`-frågeparametern till önskad mängd som du vill returnera. Mer information om vilka typer av frågeparametrar som finns tillgängliga finns i guiden [filtrera katalogdata med hjälp av frågeparametrar](../../catalog/api/filter-data.md).
 
 **API-format**
 
@@ -63,7 +63,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller ett batch-ID-objekt. I
 
 >[!NOTE]
 >
-> Objektet har formaterats om för läsbarhet i följande svar. `tags`
+> Objektet `tags` har formaterats om för läsbarhet i följande svar.
 
 ```json
 {
@@ -140,7 +140,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/01E5QSWCAA
 
 **Svar**
 
-Ett godkänt svar returnerar en nyttolast som innehåller ett `_links` objekt. I objektet finns ett `_links` objekt `href` med ett nytt API-anrop som värde. Kopiera det här värdet för att fortsätta till nästa steg.
+Ett godkänt svar returnerar en nyttolast som innehåller ett `_links`-objekt. I `_links`-objektet finns ett `href`-anrop med ett nytt API-anrop som värde. Kopiera det här värdet för att fortsätta till nästa steg.
 
 ```json
 {
@@ -166,9 +166,9 @@ Ett godkänt svar returnerar en nyttolast som innehåller ett `_links` objekt. I
 }
 ```
 
-## Hämta filer {#retrieving-your-files}
+## Hämta dina filer {#retrieving-your-files}
 
-Använd det `href` värde du fick i föregående steg som ett API-anrop för att göra en ny GET-förfrågan om att hämta din filkatalog.
+Använd det `href`-värde som du fick i det föregående steget som ett API-anrop för att skapa en ny GET-begäran för att hämta din filkatalog.
 
 **API-format**
 
@@ -178,7 +178,7 @@ GET files/{DATASETFILE_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{DATASETFILE_ID}` | DataSetFile-ID returneras i `href` värdet från [föregående steg](#retrieve-the-next-api-call-with-your-batch-id). Den är också tillgänglig i `data` arrayen under objekttypen `dataSetFileId`. |
+| `{DATASETFILE_ID}` | DataSetFile-ID returneras i `href`-värdet från [föregående steg](#retrieve-the-next-api-call-with-your-batch-id). Den är också tillgänglig i `data`-arrayen under objekttypen `dataSetFileId`. |
 
 **Begäran**
 
@@ -219,15 +219,15 @@ Svaret innehåller en datamatris som kan ha en enda post eller en lista med file
 | `_links.self.href` | Den URL för GET-begäran som används för att hämta en fil i din katalog. |
 
 
-Kopiera `href` värdet för alla filobjekt i `data` arrayen och fortsätt till nästa steg.
+Kopiera `href`-värdet för valfritt filobjekt i `data`-arrayen och fortsätt sedan till nästa steg.
 
 ## Hämta fildata
 
-Om du vill hämta fildata skickar du en GET till det `"href"` värde du kopierade i föregående steg när du [hämtade filerna](#retrieving-your-files).
+Om du vill hämta fildata skickar du en GET till `"href"`-värdet som du kopierade i föregående steg [när du hämtade dina filer](#retrieving-your-files).
 
 >[!NOTE]
 >
->Om du gör den här begäran direkt i kommandoraden kanske du uppmanas att lägga till en utdatafil efter rubrikerna i din begäran. Följande exempel på begäran använder `--output {FILENAME.FILETYPE}`.
+>Om du gör den här begäran direkt i kommandoraden kanske du uppmanas att lägga till en utdatafil efter rubrikerna i din begäran. I följande exempel används `--output {FILENAME.FILETYPE}`.
 
 **API-format**
 
@@ -237,7 +237,7 @@ GET files/{DATASETFILE_ID}?path={FILE_NAME}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{DATASETFILE_ID}` | DataSetFile-ID returneras i `href` värdet från ett [tidigare steg](#retrieve-the-next-api-call-with-your-batch-id). |
+| `{DATASETFILE_ID}` | DataSetFile-ID returneras i `href`-värdet från ett [föregående steg](#retrieve-the-next-api-call-with-your-batch-id). |
 | `{FILE_NAME}` | Filens namn. |
 
 **Begäran**
@@ -261,11 +261,11 @@ Svaret hämtar filen som du begärde i din aktuella katalog. I det här exemplet
 
 ![Terminal](./images/download-scores/terminal-output.png)
 
-Poängen som hämtas kommer att vara i parquet-format och måste ha en [!DNL Spark]skal- eller parquet-läsare för att visa poängen. För visning av råpoäng kan du använda [parquet-verktyg](https://github.com/apache/parquet-mr/tree/master/parquet-tools). Parquet-verktygen kan analysera data med [!DNL Spark].
+Poängen som hämtas kommer att vara i Parquet-format och måste ha en [!DNL Spark]-shell- eller Parquet-läsare för att visa poängen. För visning av råa poäng kan du använda [Apache Parquet-verktygen](https://github.com/apache/parquet-mr/tree/master/parquet-tools). Parquet-verktygen kan analysera data med [!DNL Spark].
 
 ## Nästa steg
 
-I det här dokumentet beskrivs stegen som krävs för att hämta bakgrundsmusik för Attribution AI. Mer information om bakgrundsmusik finns i dokumentationen för [attributets AI-indata och -utdata](./input-output.md) .
+I det här dokumentet beskrivs stegen som krävs för att hämta bakgrundsmusik för Attribution AI. Mer information om bakgrundsmusik finns i dokumentationen för [AI-attributindata och -utdata](./input-output.md).
 
 ## Åtkomst till bakgrundsmusik med Snowflake
 
@@ -289,7 +289,7 @@ När du har dina inloggningsuppgifter och URL-adresser kan du söka efter modell
 
 ### Hitta ditt schema i Snowflake
 
-Logga in på Snowflake med de angivna inloggningsuppgifterna. Klicka på fliken **Kalkylblad** i den övre vänstra navigeringen och navigera sedan till din databaskatalog i den vänstra panelen.
+Logga in på Snowflake med de angivna inloggningsuppgifterna. Klicka på fliken **Kalkylblad** i den övre vänstra huvudnavigeringen och navigera sedan till din databaskatalog i den vänstra panelen.
 
 ![Kalkylblad och navigering](./images/download-scores/edited_snowflake_1.png)
 
@@ -301,7 +301,7 @@ Klicka sedan på **Välj schema** i skärmens övre högra hörn. Bekräfta att 
 
 Dina inloggningsuppgifter för Snowflake kan användas för att skapa en anslutning mellan PowerBI Desktop och Snowflake-databaser.
 
-Skriv först Snowflake-URL:en i rutan *Server* . Skriv sedan in &quot;XSMALL&quot; under *Lagerställe*. Ange sedan ditt användarnamn och lösenord.
+I rutan *Server* skriver du Snowflake-URL:en. Skriv sedan in &quot;XSMALL&quot; under *Lagerställe*. Ange sedan ditt användarnamn och lösenord.
 
 ![exempel på POWERBI](./images/download-scores/powerbi-snowflake.png)
 
