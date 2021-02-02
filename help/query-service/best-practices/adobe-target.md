@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;query service;Query service;sample queries;sample query;adobe target;
+keywords: Experience Platform;home;populära topics;query service;Query service;sample queries;sample query;adobe target;
 solution: Experience Platform
 title: Exempelfrågor
 topic: queries
@@ -7,7 +7,7 @@ description: Data från Adobe Target omvandlas till Experience Event XDM-schema 
 translation-type: tm+mt
 source-git-commit: e2c648829bb3268ab319da934f5cc6cc811290b3
 workflow-type: tm+mt
-source-wordcount: '309'
+source-wordcount: '324'
 ht-degree: 0%
 
 ---
