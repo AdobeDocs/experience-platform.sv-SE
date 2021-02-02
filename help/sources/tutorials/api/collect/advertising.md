@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;flow service;advertising;google adwords;advertising
+keywords: Experience Platform;hemmabruk;populära ämnen;flödestjänst;annonsering;Google adwords;annonsering
 solution: Experience Platform
 title: Samla in annonsdata via källkopplingar och API:er
 topic: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från en annonsapplikation från tredje part och hämta dem till plattformen via källanslutningar och API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: 90a7e49033afe3bc348225df0688e17dbf842a15
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '1498'
+source-wordcount: '1513'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [självstudiekursen](../../../../tutorials/authentication.md) för autentisering. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna ringa anrop till plattforms-API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
