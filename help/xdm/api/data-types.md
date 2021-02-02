@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;data type registry;Schema Registry;data type;Data type;data types;Data types;create
+keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;Experience data model;Experience data model;data model;data model;data type register;schema Registry;data type;data type;data type;data types;data types;create
 solution: Experience Platform
 title: Skapa en datatyp
 description: Med slutpunkten /datatypes i API:t för schemaregister kan du programmässigt hantera XDM-datatyper i ditt upplevelseprogram.
 translation-type: tm+mt
 source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
 workflow-type: tm+mt
-source-wordcount: '1110'
+source-wordcount: '1147'
 ht-degree: 0%
 
 ---
