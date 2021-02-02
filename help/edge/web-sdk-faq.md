@@ -4,9 +4,9 @@ seo-title: Vanliga frågor om Adobe Experience Platform Web SDK
 description: Frågor och svar om Adobe Experience Platform Web SDK
 seo-description: Frågor och svar om Adobe Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: a493fad1bbd6114ba06074ebb3064268ba25b445
+source-git-commit: f4f0b00dfd324f69aa2b4348740f6e767e86a6de
 workflow-type: tm+mt
-source-wordcount: '1683'
+source-wordcount: '1808'
 ht-degree: 1%
 
 ---
@@ -124,7 +124,7 @@ Det innebär att om du bestämmer dig för att använda Adobe Experience Platfor
 
 ## Kan jag migrera ECID:n när jag börjar använda Alloy så att webbplatsens besökare inte börjar visas som nya besökare?
 
-Ja, Adobe Experience Platform Web SDK har en funktion för identitetsmigrering. Följ instruktionerna i [det här dokumentet](https://docs.adobe.com/content/help/en/experience-platform/edge/fundamentals/identity.html#id-migration) om du vill ha mer information.
+Ja, Adobe Experience Platform Web SDK har en funktion för identitetsmigrering. Följ instruktionerna för ID-migrering i [identitetshandboken för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/identity/overview.html?lang=en#id-migration) om du vill ha mer information.
 
 ## Hur skiljer sig Web SDK från Adobe Experience Platform Launch?
 
@@ -153,6 +153,18 @@ Senare under 2020 kommer Experience Platform Launch att släppa vidarebefordring
 ## Vad är en CNAME- eller First Party-domän och varför spelar det någon roll?
 
 Mer information om en CNAME finns i [Adobe-dokumentationen](https://docs.adobe.com/content/help/en/id-service/using/reference/analytics-reference/cname.html)
+
+## Använder Adobe Experience Platform Web SDK cookies? Om så är fallet, vilka cookies använder den?
+
+Ja, för närvarande använder Web SDK var som helst mellan 1-4 cookies beroende på implementeringen. Nedan visas en lista över de fyra cookies som du kan se med Web SDK och hur de används:
+
+**kCct_origin_identity:** Identitetskakan används för att lagra ECID samt annan information som rör ECID.
+
+**kndctr_original_medgivande:** Den här cookien lagrar användarens medgivandeinställning för webbplatsen.
+
+**kndctr_orgid_personalization:** Denna cookie innehåller sessionsinformation som Adobe Target använder för att anpassa webbsidor.
+
+**kndctr_orgid_consentcheck:** Denna sessionsbaserade cookie signalerar till servern att söka efter serversidan för medgivandeinställningarna.
 
 ## Var kan jag få mer information om Adobe Experience Platform Web SDK?
 
