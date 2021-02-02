@@ -1,21 +1,21 @@
 ---
-keywords: destinations;experience cloud solutions; target;target destination; ad cloud; advertising cloud; audience manager; adobe target destination; target; audience manager destination;
+keywords: mål;upplev molnlösningar; mål;mål; mål; annonsmoln annonsmoln, målgruppschef, adobe target destination, Mål. målgruppshanterarens destination,
 title: Adobe Destinationer
 seo-title: Adobe Destinationer
-description: Hantera kundupplevelsen genom att koppla era data i realtid CDP till andra Adobe Experience Cloud-lösningar för annonsanpassning, personalisering, automatiserad marknadsföring med mera
-seo-description: Hantera kundupplevelsen genom att koppla era data i realtid CDP till andra Adobe Experience Cloud-lösningar för annonsanpassning, personalisering, automatiserad marknadsföring med mera
+description: Hantera kundupplevelsen genom att koppla era data i Platform till andra Adobe Experience Cloud-lösningar för annonsanpassning, personalisering, automatiserad marknadsföring med mera
+seo-description: Hantera kundupplevelsen genom att koppla era data i Platform till andra Adobe Experience Cloud-lösningar för annonsanpassning, personalisering, automatiserad marknadsföring med mera
 translation-type: tm+mt
-source-git-commit: 0bb1622895b1e0f97fc47b5c61d456bc369746c8
+source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
 workflow-type: tm+mt
-source-wordcount: '224'
+source-wordcount: '243'
 ht-degree: 0%
 
 ---
 
 
-# Adobe Destinationer {#adobe-destinations}
+# Destinationer för Adobe {#adobe-destinations}
 
-Hantera er kundupplevelse genom att koppla era data i realtid CDP till andra Adobe Experience Cloud-lösningar för annonsanpassning, personalisering, automatiserad marknadsföring med mera.
+Hantera er kundupplevelse genom att koppla era data i Adobe Experience Platform till andra Adobe Experience Cloud-lösningar för målgruppsanpassning, personalisering, automatiserad marknadsföring med mera.
 
 ## Anslutningar
 
