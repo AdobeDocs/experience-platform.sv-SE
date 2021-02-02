@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;ad-hoc;ad hoc;adhoc;Ad-hoc;Ad hoc;Adhoc;
+keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;Experience data model;experience data model;data model;data model;schema register;schema Registry;ad hoc;ad hoc;adhoc;ad hoc;ad hoc;adhoc;Adhoc;
 solution: Experience Platform
 title: Ad hoc-scheman
 description: Under särskilda omständigheter kan det vara nödvändigt att skapa ett XDM-schema med fält som bara namnges av en enda datauppsättning. Detta kallas ett ad hoc-schema.
@@ -7,7 +7,7 @@ topic: developer guide
 translation-type: tm+mt
 source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
 workflow-type: tm+mt
-source-wordcount: '111'
+source-wordcount: '146'
 ht-degree: 0%
 
 ---
