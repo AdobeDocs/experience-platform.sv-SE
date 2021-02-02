@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;train and evaluate;Data Science Workspace;popular topics;Sensei Machine Learning API
+keywords: Experience Platform;utbilda och utvärdera;Data Science Workspace;populära ämnen;Sensei Machine Learning API
 solution: Experience Platform
 title: Utbilda och utvärdera en modell (API)
 topic: tutorial
 type: Tutorial
 description: I den här självstudiekursen visas hur du skapar, utbilda och utvärderar en modell med hjälp av API-anrop för Sensei Machine Learning.
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '1210'
+source-wordcount: '1230'
 ht-degree: 0%
 
 ---
@@ -17,13 +17,13 @@ ht-degree: 0%
 # Utbilda och utvärdera en modell (API)
 
 
-I den här självstudiekursen visas hur du skapar, utbilda och utvärderar en modell med API-anrop. I [det här dokumentet](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) finns en detaljerad lista över API-dokumentationen.
+I den här självstudiekursen visas hur du skapar, utbilda och utvärderar en modell med API-anrop. I [det här dokumentet](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) finns en detaljerad lista över API-dokumentation.
 
 ## Förutsättningar
 
 Följ [Importera ett paketerat recept med API](./import-packaged-recipe-api.md) för att skapa en motor, vilket krävs för att utbilda och utvärdera en modell med API:t.
 
-Följ den här [självstudiekursen](../../tutorials/authentication.md) för att börja göra API-anrop.
+Följ självstudiekursen [Experience Platform API-autentisering](https://www.adobe.com/go/platform-api-authentication-en) för att börja göra API-anrop.
 
 Från självstudiekursen bör du nu ha följande värden:
 
@@ -54,7 +54,7 @@ Vi kommer att konsumera API:erna för att skapa en Experimentrunda för utbildni
 
 ### Skapa en MLInstance
 
-Du kan skapa en MLInstance med följande begäran. Du kommer att använda det `{ENGINE_ID}` som returnerades när du skapade en motor från [Importera ett paketerat recept med hjälp av API](./import-packaged-recipe-ui.md) -självstudiekursen.
+Du kan skapa en MLInstance med följande begäran. Du kommer att använda den `{ENGINE_ID}` som returnerades när du skapade en motor från [Importera en paketerad mottagare med hjälp av API](./import-packaged-recipe-ui.md)-självstudiekursen.
 
 **Begäran**
 
@@ -126,9 +126,9 @@ curl -X POST \
 
 >[!NOTE]
 >
->I `{JSON_PAYLOAD}`definierar vi parametrar som används för utbildning och poängsättning i `tasks` arrayen. Detta `{ENGINE_ID}` är ID:t för den motor som du vill använda och `tag` fältet är en valfri parameter som används för att identifiera instansen.
+>I `{JSON_PAYLOAD}` definierar vi parametrar som används för utbildning och poängsättning i `tasks`-arrayen. `{ENGINE_ID}` är ID:t för den motor som du vill använda och fältet `tag` är en valfri parameter som används för att identifiera instansen.
 
-Svaret innehåller den `{INSTANCE_ID}` som representerar den MLInstance som skapas. Flera MLInstances-modeller med olika konfigurationer kan skapas.
+Svaret innehåller `{INSTANCE_ID}` som representerar den MLInstance som skapas. Flera MLInstances-modeller med olika konfigurationer kan skapas.
 
 **Svar**
 
@@ -222,7 +222,7 @@ Svaret från experten ser ut så här.
 
 Schemalagda experiment används så att vi inte behöver skapa varje enskild Experiment Runs via ett API-anrop. I stället tillhandahåller vi alla parametrar som behövs när du skapar en expertreplikation och varje körning skapas regelbundet.
 
-För att indikera att en schemalagd expert har skapats måste vi lägga till ett avsnitt `template` i förfrågningens innehåll. Dessutom `template`ingår alla nödvändiga parametrar för schemaläggning av körningar, till exempel `tasks`, som anger vilken åtgärd och `schedule`vilket anger tidpunkten för schemalagda körningar.
+För att indikera att en schemalagd experiment har skapats måste vi lägga till ett `template`-avsnitt i förfrågningens innehåll. I `template` inkluderas alla nödvändiga parametrar för schemaläggning av körningar, till exempel `tasks`, som anger vilken åtgärd och `schedule`, som anger tidpunkten för schemalagda körningar.
 
 **Begäran**
 
@@ -269,7 +269,7 @@ curl -X POST \
 }
 ```
 
-När vi skapar en expert `{JSON_PAYLOAD}`ska brödtexten innehålla antingen `mlInstanceId` - eller `mlInstanceQuery` -parametern. I det här exemplet kommer en schemalagd experiment att anropa en körning var 20:e minut, som anges i `cron` parametern, med början från `startTime` till `endTime`.
+När vi skapar en expert ska brödtexten, `{JSON_PAYLOAD}`, innehålla antingen parametern `mlInstanceId` eller `mlInstanceQuery`. I det här exemplet kommer en schemalagd experiment att anropa en körning var 20:e minut som anges i parametern `cron`, från `startTime` till `endTime`.
 
 **Svar**
 
@@ -335,7 +335,7 @@ curl -X POST \
 }
 ```
 
-Du kan också åsidosätta konfigurationsparametrarna genom att ta med en `tasks` array:
+Du kan även åsidosätta konfigurationsparametrarna genom att ta med en `tasks`-array:
 
 ```JSON
 {
@@ -354,7 +354,7 @@ Du kan också åsidosätta konfigurationsparametrarna genom att ta med en `tasks
 }
 ```
 
-Du får följande svar som informerar dig om `{EXPERIMENT_RUN_ID}` och konfigurationen under `tasks`.
+Du får följande svar som meddelar dig om `{EXPERIMENT_RUN_ID}` och konfigurationen under `tasks`.
 
 **Svar**
 
@@ -375,7 +375,7 @@ Du får följande svar som informerar dig om `{EXPERIMENT_RUN_ID}` och konfigura
 }
 ```
 
-`{EXPERIMENT_RUN_ID}`:  Det ID som representerar Experimentkörningen.\
+`{EXPERIMENT_RUN_ID}`: Det ID som representerar Experimentkörningen.\
 `{EXPERIMENT_ID}`: Det ID som representerar den experimentversion som Experiment Run är under.
 
 ### Hämta status för en experimentell körning
@@ -400,7 +400,7 @@ curl -X GET \
 
 **Svar**
 
-GET-anropet ger status i `state` parametern enligt nedan:
+GET-anropet ger status i parametern `state` enligt nedan:
 
 ```JSON
 {
@@ -433,15 +433,15 @@ GET-anropet ger status i `state` parametern enligt nedan:
 }
 ```
 
-`{EXPERIMENT_RUN_ID}`:  Det ID som representerar Experimentkörningen.\
+`{EXPERIMENT_RUN_ID}`: Det ID som representerar Experimentkörningen.\
 `{EXPERIMENT_ID}`: Det ID som representerar den experimentversion som Experiment Run är under.
 
-Förutom `DONE` läget omfattar andra lägen:
+Förutom tillståndet `DONE` innehåller andra lägen:
 - `PENDING`
 - `RUNNING`
 - `FAILED`
 
-Mer information finns i detaljerade loggar under `tasklogs` parametern.
+Mer information finns i detaljerade loggar under parametern `tasklogs`.
 
 ### Hämta den tränade modellen
 
@@ -487,12 +487,12 @@ Svaret representerar den tränade modell som skapades.
 ```
 
 `{MODEL_ID}`: Det ID som motsvarar modellen.\
-`{EXPERIMENT_ID}`:  Det ID som motsvarar den Experiment som Experiment Run finns under.\
+`{EXPERIMENT_ID}`: Det ID som motsvarar den Experiment som Experiment Run finns under.\
 `{EXPERIMENT_RUN_ID}`: Det ID som motsvarar Experimentkörningen.
 
 ### Stoppa och ta bort en schemalagd experiment
 
-Om du vill avbryta körningen av en schemalagd experiment innan den körs `endTime`kan du göra det genom att fråga en DELETE-begäran till `{EXPERIMENT_ID}`
+Om du vill avbryta körningen av en schemalagd experiment innan den `endTime` körs, kan du göra det genom att skicka en DELETE-begäran till `{EXPERIMENT_ID}`
 
 **Begäran**
 
@@ -503,7 +503,7 @@ curl -X DELETE \
   -H 'x-gw-ims-org-id: {IMS_ORG}'
 ```
 
-`{EXPERIMENT_ID}`:  Det ID som motsvarar Experimenten.\
+`{EXPERIMENT_ID}`: Det ID som motsvarar Experimenten.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
 `{IMS_ORG}`: Dina IMS-organisationsuppgifter finns i din unika Adobe Experience Platform-integrering.
 
@@ -525,4 +525,4 @@ Här följer ett svar som meddelar att experten har tagits bort.
 
 ## Nästa steg
 
-Den här självstudiekursen gick igenom hur du använder API:erna för att skapa en motor, en experimentell, schemalagda Experimentrunda och tränade modeller. I [nästa övning](./score-model-api.md)kommer ni att göra prognoser genom att betygsätta en ny datauppsättning med hjälp av den mest högpresterande tränade modellen.
+Den här självstudiekursen gick igenom hur du använder API:erna för att skapa en motor, en experimentell, schemalagda Experimentrunda och tränade modeller. I [nästa övning](./score-model-api.md) kommer du att göra prognoser genom att poängsätta en ny datamängd med hjälp av den mest högpresterande tränade modellen.
