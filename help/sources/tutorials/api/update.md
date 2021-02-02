@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics; flow service; update connections
+keywords: Experience Platform;hemmabruk;populära ämnen; flödestjänst, uppdateringsanslutningar
 solution: Experience Platform
 title: Uppdatera anslutningsinformation med API:t för Flow Service
 topic: overview
 type: Tutorial
 description: Under vissa omständigheter kan det vara nödvändigt att uppdatera informationen för en befintlig källanslutning. Med API:t för Flow Service kan du lägga till, redigera och ta bort information om en befintlig batch- eller direktuppspelningsanslutning, inklusive namn, beskrivning och autentiseringsuppgifter.
 translation-type: tm+mt
-source-git-commit: d1a9f7d0c83b8bb34e26b6e5a9825488e62b43de
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '696'
+source-wordcount: '709'
 ht-degree: 1%
 
 ---
@@ -18,32 +18,32 @@ ht-degree: 1%
 
 Under vissa omständigheter kan det vara nödvändigt att uppdatera informationen för en befintlig källanslutning. [!DNL Flow Service] ger dig möjlighet att lägga till, redigera och ta bort information om en befintlig batch- eller direktuppspelningsanslutning, inklusive namn, beskrivning och autentiseringsuppgifter.
 
-I den här självstudiekursen beskrivs stegen för hur du uppdaterar information och autentiseringsuppgifter för en befintlig anslutning med hjälp av [[!DNL Flow Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
+I den här självstudiekursen beskrivs stegen för att uppdatera information och autentiseringsuppgifter för en befintlig anslutning med [[!DNL Flow Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
 ## Komma igång
 
-Den här självstudiekursen kräver att du har ett giltigt anslutnings-ID. Om du inte har ett giltigt anslutnings-ID väljer du den önskade anslutningen i [källöversikten](../../home.md) och följer instruktionerna innan du provar den här självstudiekursen.
+Den här självstudiekursen kräver att du har ett giltigt anslutnings-ID. Om du inte har något giltigt anslutnings-ID väljer du den önskade anslutningen i [källöversikten](../../home.md) och följer instruktionerna innan du provar den här självstudien.
 
 Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../home.md): [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster.
-* [Sandlådor](../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
+* [Sandlådor](../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna uppdatera anslutningsinformationen med hjälp av [!DNL Flow Service] -API:t.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna uppdatera anslutningsinformationen med hjälp av API:t [!DNL Flow Service].
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
@@ -54,7 +54,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 ## Sök anslutningsinformation
 
 >[!NOTE]
->I den här självstudien används [Salesforce-källkopplingen](../../connectors/crm/salesforce.md) som exempel, men stegen som beskrivs gäller för alla [tillgängliga källanslutningar](../../home.md).
+>I den här självstudien används som exempel [Salesforce-källkopplingen](../../connectors/crm/salesforce.md), men stegen som beskrivs gäller för alla [tillgängliga källanslutningar](../../home.md).
 
 Det första steget när du uppdaterar anslutningsinformationen är att hämta anslutningsinformation med ditt anslutnings-ID.
 
@@ -66,7 +66,7 @@ GET /connections/{CONNECTION_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{CONNECTION_ID}` | Det unika `id` värdet för anslutningen som du vill hämta. |
+| `{CONNECTION_ID}` | Det unika `id`-värdet för anslutningen som du vill hämta. |
 
 **Begäran**
 
@@ -121,10 +121,10 @@ Ett lyckat svar returnerar aktuell information om anslutningen, inklusive autent
 
 ## Uppdatera anslutning
 
-När du har ett befintligt anslutnings-ID utför du en PATCH-begäran till [!DNL Flow Service] API:t.
+När du har ett befintligt anslutnings-ID utför du en PATCH-begäran till [!DNL Flow Service]-API:t.
 
 >[!IMPORTANT]
->En PATCH-begäran kräver att du använder `If-Match` huvudet. Värdet för den här rubriken är anslutningsens unika version.
+>En PATCH-begäran kräver att rubriken `If-Match` används. Värdet för den här rubriken är anslutningsens unika version.
 
 **API-format**
 
@@ -134,7 +134,7 @@ PATCH /connections/{CONNECTION_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{CONNECTION_ID}` | Det unika `id` värdet för anslutningen som du vill uppdatera. |
+| `{CONNECTION_ID}` | Det unika `id`-värdet för anslutningen som du vill uppdatera. |
 
 **Begäran**
 
@@ -173,7 +173,7 @@ curl -X PATCH \
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera anslutningen. Åtgärderna omfattar: `add`, `replace`och `remove`. |
+| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera anslutningen. Åtgärderna omfattar: `add`, `replace` och `remove`. |
 | `path` | Sökvägen till den parameter som ska uppdateras. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 
@@ -190,7 +190,7 @@ Ett lyckat svar returnerar ditt anslutnings-ID och en uppdaterad tagg.
 
 ## Sök efter uppdaterad anslutningsinformation
 
-Du kan hämta samma anslutnings-ID som du uppdaterade för att se de ändringar du gjorde genom att göra en GET-begäran till [!DNL Flow Service] API:t.
+Du kan hämta samma anslutnings-ID som du uppdaterade för att se de ändringar som du gjorde genom att göra en GET-begäran till API:t [!DNL Flow Service].
 
 **API-format**
 
@@ -200,7 +200,7 @@ GET /connections/{CONNECTION_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{CONNECTION_ID}` | Det unika `id` värdet för anslutningen som du vill hämta. |
+| `{CONNECTION_ID}` | Det unika `id`-värdet för anslutningen som du vill hämta. |
 
 **Begäran**
 
@@ -255,4 +255,4 @@ Ett godkänt svar returnerar den uppdaterade informationen om ditt anslutnings-I
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du uppdaterat autentiseringsuppgifter och information som är kopplad till din anslutning med hjälp av [!DNL Flow Service] -API:t. Mer information om hur du använder källkopplingar finns i [Källöversikt](../../home.md).
+Genom att följa den här självstudiekursen har du uppdaterat autentiseringsuppgifterna och informationen som är kopplad till din anslutning med hjälp av API:t [!DNL Flow Service]. Mer information om hur du använder källkopplingar finns i [Källöversikt](../../home.md).
