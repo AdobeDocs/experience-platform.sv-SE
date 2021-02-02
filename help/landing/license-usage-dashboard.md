@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform;user interface;UI;customization;license usage dashboard;dashboard;license usage;entitlement;consumption
+keywords: Experience Platform;användargränssnitt;användargränssnitt;anpassning;kontrollpanel för licensanvändning;kontrollpanel;licensanvändning;berättigande;förbrukning
 title: Kontrollpanel för licensanvändning
 description: 'I den här handboken finns en översikt över kontrollpanelen för licensanvändning i Adobe Experience Platform användargränssnitt. '
 topic: guide
 type: Documentation
 translation-type: tm+mt
-source-git-commit: 63758450276d47e7e0eddeb047779222cb80a3e2
+source-git-commit: 8e4d8d29ca13017d7f6de5ca790efe91b01c129d
 workflow-type: tm+mt
-source-wordcount: '531'
+source-wordcount: '606'
 ht-degree: 0%
 
 ---
 
 
-# (Alfa) [!UICONTROL License usage] -kontrollpanel {#license-usage-dashboard}
+# (Alfa) [!UICONTROL License usage] instrumentpanel {#license-usage-dashboard}
 
 >[!IMPORTANT]
 >
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 Adobe Experience Platform användargränssnitt (UI) är en kontrollpanel där du kan visa viktig information om din organisations licensanvändning, som den fångats in under en daglig ögonblicksbild. I den här handboken beskrivs hur du får åtkomst till och arbetar med kontrollpanelen för licensanvändning i användargränssnittet och den innehåller mer information om de visualiseringar som visas på kontrollpanelen.
 
-En allmän översikt över användargränssnittet för plattformen finns i [användargränssnittshandboken](ui-guide.md)för Experience Platform.
+En allmän översikt över användargränssnittet för plattformen finns i [användargränssnittsguiden för Experience Platform](ui-guide.md).
 
 ## Kontrollpanelsdata för licensanvändning
 
@@ -33,23 +33,23 @@ På kontrollpanelen för licensanvändning visas en ögonblicksbild av din organ
 
 ## Utforska kontrollpanelen för licensanvändning
 
-Om du vill navigera till kontrollpanelen för licensanvändning i användargränssnittet för plattformen väljer du **[!UICONTROL License usage]** i den vänstra listen. Detta öppnas med fliken **[!UICONTROL Overview]** som visar kontrollpanelen.
+Om du vill navigera till kontrollpanelen för licensanvändning i plattformsgränssnittet väljer du **[!UICONTROL License usage]** i den vänstra listen. Detta öppnas med fliken **[!UICONTROL Overview]** som visar kontrollpanelen.
 
 ![](images/license-usage-dashboard/dashboard-overview.png)
 
 ### Markera en sandlåda
 
-Om du vill välja en sandlåda att visa på kontrollpanelen väljer du antingen [!UICONTROL Production] eller [!UICONTROL Development]. Den markerade sandlådan indikeras av alternativknappen bredvid namnet på sandlådan.
+Välj antingen [!UICONTROL Production] eller [!UICONTROL Development] om du vill välja en sandlåda att visa på kontrollpanelen. Den markerade sandlådan indikeras av alternativknappen bredvid namnet på sandlådan.
 
 >[!NOTE]
 >
->Konsumtionsrapportering för sandlådor är kumulativ för alla sandlådor av samma typ. Det innebär att om du väljer [!UICONTROL Production] eller [!UICONTROL Development] kommer att rapportera om alla produktions- respektive utvecklingssandlådor.
+>Konsumtionsrapportering för sandlådor är kumulativ för alla sandlådor av samma typ. Om du väljer [!UICONTROL Production] eller [!UICONTROL Development] rapporteras med andra ord alla produktions- respektive utvecklingssandlådor.
 
 ![](images/license-usage-dashboard/select-sandbox.png)
 
 ### Välj ett datumintervall
 
-När du har valt en sandlåda kan du använda listrutan för datumintervall för att välja vilken tidsperiod som ska visas på instrumentpanelen. Det finns tre tillgängliga alternativ: [!UICONTROL Last 30 days], [!UICONTROL Last 90 days]och [!UICONTROL Last 12 months]. De senaste 30 dagarna markeras som standard.
+När du har valt en sandlåda kan du använda listrutan för datumintervall för att välja vilken tidsperiod som ska visas på instrumentpanelen. Det finns tre tillgängliga alternativ: [!UICONTROL Last 30 days], [!UICONTROL Last 90 days] och [!UICONTROL Last 12 months]. De senaste 30 dagarna markeras som standard.
 
 ![](images/license-usage-dashboard/select-date-range.png)
 
@@ -63,7 +63,13 @@ Experience Platform har för närvarande en widget som du kan använda för att 
 
 ### [!UICONTROL Addressable audiences] {#addressable-audiences}
 
-Widgeten mäter det totala antalet målgrupper som finns i profilarkivet, efter att ha tillämpat en systemgenererad sammanfogningsprincip för att kombinera alla aktuella datauppsättningar med en deterministisk (privat) diagramalgoritm. **[!UICONTROL Addressable audiences]** Sammanslagningsprincipen som används för att beräkna det här måttet genereras av Platform och kan inte redigeras, och inte heller kan en annan sammanfogningsprincip väljas.
+Widgeten **[!UICONTROL Addressable audiences]** visar det totala antalet sammanfogade profiler i profildatalagret, efter att ha tillämpat en systemgenererad sammanfogningsprincip för att kombinera profilfragment från alla aktuella datauppsättningar med hjälp av en deterministisk (privat) diagramalgoritm.
+
+Om du vill ha mer information om fragment och sammanfogade profiler börjar du med att läsa *profilfragment jämfört med sammanfogade profiler* i [profilöversikt](../profile/home.md).
+
+>[!NOTE]
+>
+>Sammanslagningsprincipen som används för att beräkna det här måttet genereras av Experience Platform och kan inte redigeras, och inte heller kan en annan sammanfogningsprincip väljas. Den systemgenererade sammanfogningsprincipen är inte densamma som standardsammanfogningsprincipen som används för att beräkna [!UICONTROL Audience size] på kontrollpanelen [!DNL Profile]. Därför är det inte troligt att antalet målgrupper i kontrollpanelerna [!UICONTROL License usage] och [!DNL Profile] är exakt detsamma.
 
 ![](images/license-usage-dashboard/addressable-audiences.png)
 
@@ -76,4 +82,4 @@ Plattformsgränssnittet innehåller ytterligare instrumentpaneler för att visa 
 
 ## Nästa steg
 
-Genom att följa det här dokumentet bör du nu kunna hitta kontrollpanelen för licensanvändning och välja en sandlåda att visa. Du bör också förstå mätvärdena som visas i de tillgängliga widgetarna. Mer information om användargränssnittet i Experience Platform finns i [användargränssnittshandboken](ui-guide.md)för plattformen.
+Genom att följa det här dokumentet bör du nu kunna hitta kontrollpanelen för licensanvändning och välja en sandlåda att visa. Du bör också förstå mätvärdena som visas i de tillgängliga widgetarna. Mer information om användargränssnittet i Experience Platform finns i [användargränssnittshandboken för plattformen](ui-guide.md).
