@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;query service;Query service;adobe defined functions;sql;
+keywords: Experience Platform;hem;populära ämnen;frågetjänst;Query Service;adobe defined functions;sql;
 solution: Experience Platform
 title: Adobe-definierade funktioner
 topic: functions
@@ -7,7 +7,7 @@ description: Det här dokumentet innehåller information om de Adobe-definierade
 translation-type: tm+mt
 source-git-commit: e15229601d35d1155fc9a8ab9296f8c41811ebf9
 workflow-type: tm+mt
-source-wordcount: '2889'
+source-wordcount: '2902'
 ht-degree: 1%
 
 ---
