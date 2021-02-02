@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;Authenticate;access
+keywords: Experience Platform;hem;populära ämnen;Autentisera;åtkomst
 solution: Experience Platform
 title: Autentisera och få åtkomst till Experience Platform API:er
 topic: tutorial
@@ -8,7 +8,7 @@ description: 'Det här dokumentet innehåller en stegvis självstudiekurs för a
 translation-type: tm+mt
 source-git-commit: 681a2554111f988ec03d40f23a3b2c8225a077ae
 workflow-type: tm+mt
-source-wordcount: '865'
+source-wordcount: '872'
 ht-degree: 0%
 
 ---
