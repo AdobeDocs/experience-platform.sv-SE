@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;query service;Query service;sample queries;sample query;adobe analytics;
+keywords: Experience Platform;home;populära topics;query service;Query service;sample queries;sample query;adobe analytics;
 solution: Experience Platform
 title: Exempelfrågor
 topic: queries
@@ -7,7 +7,7 @@ description: Data från utvalda Adobe Analytics rapportsviter omvandlas till XDM
 translation-type: tm+mt
 source-git-commit: e2c648829bb3268ab319da934f5cc6cc811290b3
 workflow-type: tm+mt
-source-wordcount: '1002'
+source-wordcount: '1017'
 ht-degree: 1%
 
 ---
@@ -215,7 +215,7 @@ Vid rapportering kommer order, intäkter, produktvisningar och kundvagnstillägg
 
 | eVar6 (produktsökningsmetod) | omsättning | order | produktvyer | kundvagn lägger till |
 | ------------------------------ | ------- | ------ | ------------- | ----- |
-| intern sökning:sommarskjorta | 19,99 | 1 | 3 | 1 |
+| intern sökning:sommarskjorta | 19,99 | 1 | 3 | 3 |
 | intern sökning:vintertid | 12,99 | 3 | 3 | 3 |
 
 Mer information om hur du använder konverteringssyntaxen finns i Adobe Analytics-dokumentationen om [implementering av eVars med konverteringssyntax](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar-merchandising.html?lang=en#implement-using-conversion-variable-syntax).
