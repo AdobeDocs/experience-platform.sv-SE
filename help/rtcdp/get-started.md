@@ -3,9 +3,9 @@ keywords: RTCDP;CDP;Real-time Customer Data Platform;real time customer data pla
 title: Komma igång med kunddataplattformen i realtid
 description: Använd det här exempelscenariot som exempel när du konfigurerar implementeringen av kunddataplattformen i realtid.
 translation-type: tm+mt
-source-git-commit: d4a205b2e5fe4ca1f8d419eec3e7636e2ed0e5ef
+source-git-commit: 00010d38a5d05800aeac9af8505093fee3593b45
 workflow-type: tm+mt
-source-wordcount: '2308'
+source-wordcount: '2321'
 ht-degree: 0%
 
 ---
@@ -51,12 +51,12 @@ Med CDP från Adobe Experience Platform i realtid kan Lumas marknadsföringsorga
 Den här självstudiekursen innehåller följande steg:
 
 1. Bygg [kundprofilen](#customer-profile).
-1. [Anpassa](#personalizing-the-user-experience) användarupplevelsen.
+1. [Anpassa ](#personalizing-the-user-experience) användarupplevelsen.
 1. Använd [flera datakällor](#using-multiple-data-sources).
 1. [Konfigurera en datakälla](#configuring-a-data-source).
-1. [Samla in data](#bringing-the-data-together-for-a-specific-customer) för en viss kund.
+1. [Samla in ](#bringing-the-data-together-for-a-specific-customer) data för en viss kund.
 1. Konfigurera [segment](#segments).
-1. Ställ in [mål](#destinations).
+1. Konfigurera [mål](#destinations).
 1. [Dra ihop profilen på olika enheter](#cross-device-identity-stitching).
 1. [Analysera profilen](#analyzing-the-profile).
 
@@ -76,7 +76,7 @@ En oidentifierad besökare går till exempel till Men&#39;s -avsnittet på Lumaw
 
 ![bild](assets/luma-sweatshirts.png)
 
-När kunden klickar för att få veta mer om dessa produkter samlas dessa produktvisningar in i Adobe Analytics och skickas till [!DNL Experience Platform].
+När kunden navigerar för att lära sig mer om dessa produkter samlas dessa produktvisningar in i Adobe Analytics och skickas till [!DNL Experience Platform].
 
 <!--![image](assets/luma-shirt-detail.png)-->
 
@@ -97,17 +97,17 @@ Två identiteter slås samman:
 
 Båda identiteterna kombineras till en enda profil i [!DNL Experience Platform]. Luma har nu en enhetlig bild av den här konsumenten.
 
-Baserat på den anonyma besökarens surfbeteende i Men&#39;s-delen av webbplatsen, kan det ha förutsatts att kunden var en man. Nu när hon är inloggad känner Luma igen Sarah Rose. Luma använder kraften i programmet för [!DNL Real-time Customer Profile] att förfina de meddelanden hon får i alla kanaler.
+Baserat på den anonyma besökarens surfbeteende i Men&#39;s-delen av webbplatsen, kan det ha förutsatts att kunden var en man. Nu när hon är inloggad känner Luma igen Sarah Rose. Luma använder kraften i [!DNL Real-time Customer Profile] för att förfina de meddelanden som skickas till henne i alla kanaler.
 
 ## Anpassa användarupplevelsen
 
 Sarah hälsas välkommen med ett lojalitetsmeddelande och tackar för att hon blivit Bronze-medlem med mer information om förmåner och hur hon kan förbättra sin status och sina poäng.
 
-Hon klickar på startsidan för att bläddra bland fler.
+Hon navigerar till hemsidan och bläddrar bland fler.
 
 ![bild](assets/luma-personal.png)
 
-Sarah får en personaliserad hemsida som levereras dynamiskt baserat på hennes erfarenheter [!DNL Real-time Customer Profile] i Adobe Experience Platform.
+Sarah får en personlig hemsida som levereras dynamiskt baserat på hennes [!DNL Real-time Customer Profile] i Adobe Experience Platform.
 
 Hon ser relevant innehåll, tack vare Adobe Sensei-driven personalisering i Adobe Target, som tar hänsyn till hennes tidigare inköp och tillhörighet till löpande kläder och utrustning. Luma skräddarsyr även männens kataloginnehåll mot löpverk för män baserat på hennes senaste surfning.
 
@@ -142,11 +142,11 @@ Alla dessa data från olika källor sammanfogas i en enda enhetlig kundprofil.
 
 ## Konfigurera en datakälla
 
-Använd [!DNL Real-time Customer Data Platform] för att ta in nya datakällor på plattformen. CDP i realtid innehåller en katalog med datakällor som kan läggas till i profilen med bara några klick.
+Använd [!DNL Real-time Customer Data Platform] för att hämta nya datakällor till plattformen. CDP i realtid innehåller en katalog med datakällor som snabbt och enkelt kan läggas till i profilen.
 
 ![bild](assets/luma-source-cat.png)
 
-Om du till exempel vill importera Lumas CRM-data filtrerar du katalogen efter *CRM* och alla färdiga anslutningar som innehåller *CRM* visas. Så här lägger du till [!DNL Microsoft Dynamics CRM] data:
+Om du till exempel vill importera Lumas CRM-data filtrerar du katalogen med *CRM* och alla färdiga anslutningar som innehåller *CRM* visas. Så här lägger du till [!DNL Microsoft Dynamics CRM]-data:
 
 1. Auktorisera anslutningen.
 
@@ -158,7 +158,7 @@ Om du till exempel vill importera Lumas CRM-data filtrerar du katalogen efter *C
 
    Välj till exempel **[!UICONTROL Contacts]**. En förhandsgranskning av kontaktdata läses in automatiskt så att du kan kontrollera att allt ser ut som förväntat.
 
-   Adobe Experience-plattformen tar mycket av det manuella arbetet bort genom att automatiskt mappa standardfält till [!DNL Experience Data Model] (XDM)-profilschemat.
+   Adobe Experience Platform tar mycket av det manuella arbetet bort genom att automatiskt mappa standardfält till [!DNL Experience Data Model]-profilschemat (XDM).
 
 1. Granska fältmappningarna.
 
@@ -171,11 +171,11 @@ Om du till exempel vill importera Lumas CRM-data filtrerar du katalogen efter *C
 
    ![bild](assets/luma-source-sched.png)
 
-Klart. Du har precis lagt till [!DNL Microsoft CRM] som en datakälla i [!DNL Experience Platform].
+Klart. Du har just lagt till [!DNL Microsoft CRM] som en datakälla i [!DNL Experience Platform].
 
 ### Märk inkapslade data för användningsprinciper
 
-Luma har många interna policyer som begränsar användningen av vissa typer av insamlad information och måste också uppfylla juridiska och sekretessrelaterade problem när det gäller dataanvändning. Med Adobe Experience Platform [!DNL Data Governance]kan fördefinierade dataanvändningsetiketter användas på datauppsättningar (och specifika fält i dessa datauppsättningar), vilket gör att Luma kan kategorisera sina data enligt specifika användningsbegränsningar.
+Luma har många interna policyer som begränsar användningen av vissa typer av insamlad information och måste också uppfylla juridiska och sekretessrelaterade problem när det gäller dataanvändning. Med Adobe Experience Platform [!DNL Data Governance] kan fördefinierade dataanvändningsetiketter användas på datauppsättningar (och specifika fält i dessa datauppsättningar), vilket gör att Luma kan kategorisera sina data enligt specifika användningsbegränsningar.
 
 ![](assets/governance-labels.png)
 
@@ -191,16 +191,16 @@ All profilinformation Luma har om Sarah visar. Detta inkluderar hennes personupp
 
 | Kategori | Beskrivning |
 |---|---|
-| Identiteter | Visar de identiteter som har kopplats ihop i [!DNL Platform] utifrån Sarah interaktioner med Luma över kanaler och enheter. Hennes ECID från webbplatsen visas. Hennes identitet innefattar också ECID från hennes mobilapp, hennes e-post-ID, ett CRM-ID från den nyligen tillagda [!DNL Microsoft Dynamics] datauppsättningen och ett lojalitets-ID som skickas till Adobe Experience Platform från Lumas lojalitetssystem. |
+| Identiteter | Visar de identiteter som har länkats tillsammans i [!DNL Platform] från Sarah&#39;s interaktioner med Luma över kanaler och enheter. Hennes ECID från webbplatsen visas. Hennes identitet omfattar även ECID från hennes mobilapp, hennes e-post-ID, ett CRM-ID från den nyligen tillagda [!DNL Microsoft Dynamics]-datauppsättningen och ett lojalitets-ID som skickas till Adobe Experience Platform från Lumas lojalitetssystem. |
 | Händelser | Visar alla Sarah interaktionsdata med Luma-varumärket. Detta inkluderar det som hon just tittat på, allt som hon tittat på tidigare, de e-postmeddelanden hon fått, hennes interaktioner med callcenter och vilken kanal och enhet som var och en av interaktionerna ägde rum på. |
 
 CDP-profilen i realtid minskar arbetsflödet för Luma-marknadsföringsteamet från veckor till minuter och frigör möjligheter till personalisering baserat på denna helhetsbild av kunden. Profilen sammanfogar beteendedata från när hon surfar på webbplatsen innan hon loggade in, med sin befintliga kundprofil, vilket skapar en heltäckande bild av Sarah.
 
-Marknadsföringsteamet kan använda det här förbättrade verktyget för [!DNL Real-time Customer Profile] att bättre personalisera Sarah upplevelse och öka varumärkeslojaliteten med Luma.
+Marknadsföringsteamet kan använda detta förbättrade [!DNL Real-time Customer Profile] för att bättre personalisera Sarah upplevelse och öka varumärkeslojaliteten med Luma.
 
 ## Segment
 
-Tack vare de kraftfulla segmenteringsfunktionerna i Adobe Experience Platform kan marknadsförarna kombinera attribut, händelser och befintliga segment baserat på data som samlats in i [!DNL Real-time Customer Profile]programmet.
+Tack vare de kraftfulla segmenteringsfunktionerna i Adobe Experience Platform kan marknadsförarna kombinera attribut, händelser och befintliga segment baserat på data från [!DNL Real-time Customer Profile].
 
 <!-- ![image](assets/luma-segments.png) -->
 
@@ -233,7 +233,7 @@ Eftersom Sarah lade till en gåva i vagnen och övergav den kan Luma rikta in si
 
 När du har lagt till segmentet&quot;Gift Giving Cart Abandoners&quot; kan du se ungefär hur många som ingår i det här segmentet. Ni kan vidta åtgärder för det och göra det tillgängligt för personalisering i alla kanaler.
 
-Klicka på **[!UICONTROL Send to destinations]**.
+Välj **[!UICONTROL Send to destinations]**.
 
 I realtid kan Luma agera sömlöst på sina målgruppssegment för personalisering.\
 Här ser vi alla destinationer som Luma kan skicka till både Adobe och andra lösningar än Adobe:
@@ -257,9 +257,9 @@ Du kan också schemalägga att segmentet ska börja eller sluta vid en viss tidp
 
 >[!NOTE]
 >
->Om du klickar i datumfältet kan du välja att schemalägga automatiskt för 90 dagar framåt.
+>Om du markerar datumfältet kan det automatiskt schemaläggas för 90 dagar framåt.
 
-Klicka **[!UICONTROL Save]** för att gå till nästa sida.
+Välj **[!UICONTROL Save]** om du vill gå till nästa sida.
 
 När en kund i den här målgruppen gör ett köp inaktiveras deras medlemskap i den här målgruppen i realtid. De är inte längre kvalificerade eftersom deras status har ändrats.
 
@@ -271,7 +271,7 @@ Adobe Experience Platform innehåller sekretess- och säkerhetskontroller för a
 
 Om din aktivitet bryter mot reglerna visas en varning. Den här varningen innehåller information om datalänkning som kan hjälpa dig att identifiera varför policyn överträds och vad du kan göra för att åtgärda överträdelsen.
 
-Med de här kontrollerna kan [!DNL Experience Platform] Luma följa regler och marknadsföra ansvarsfullt. Dessa reglage är flexibla och kan ändras för att uppfylla kraven från Lumas säkerhets- och styrningsteam, så att de tryggt kan uppfylla regionala och organisatoriska krav för att hantera kända och okända kunddata.
+Med dessa kontroller hjälper [!DNL Experience Platform] Luma att följa regler och marknadsföra ansvarsfullt. Dessa reglage är flexibla och kan ändras för att uppfylla kraven från Lumas säkerhets- och styrningsteam, så att de tryggt kan uppfylla regionala och organisatoriska krav för att hantera kända och okända kunddata.
 
 ### Arbetsyta för dataflöde
 
@@ -283,7 +283,7 @@ När du sparar visas det segment som är mappat från den enhetliga profilen til
 
 Sarah surfar på en sajt för sociala medier på sin mobila enhet, och hon ser en Luma-annons. Det påminner henne om det hon lämnade i vagnen.
 
-Senare öppnar hon sitt mejl och ser de omdirigerade mejlen. Hon klickar på en länk till Luma i ett mejl.
+Senare öppnar hon sitt mejl och ser de omdirigerade mejlen. Hon väljer en länk till Luma i ett e-postmeddelande.
 
 Länken tar Sarah till Lumas mobilsajt där hon ser en mycket personaliserad upplevelse som drivs av Adobe Target.
 
