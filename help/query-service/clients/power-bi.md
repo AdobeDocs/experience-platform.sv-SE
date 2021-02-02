@@ -1,68 +1,86 @@
 ---
-keywords: Experience Platform;home;popular topics;query service;Query service;Power BI;power bi;connect to query service;
+keywords: Experience Platform;hem;populära ämnen;frågetjänst;Query Service;Power BI;power bi;connect to query service;
 solution: Experience Platform
 title: Anslut till Power BI
 topic: connect
 description: Det här dokumentet går igenom stegen för att ansluta Power BI med Adobe Experience Platform Query Service.
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: eac93f3465fa6ce4af7a6aa783cf5f8fb4ac9b9b
 workflow-type: tm+mt
-source-wordcount: '320'
+source-wordcount: '459'
 ht-degree: 0%
 
 ---
 
 
-# Anslut med [!DNL Power BI] (PC)
+# [!DNL Power BI]
 
-PC-användare kan installera [!DNL Power BI] från [https://powerbi.microsoft.com/en-us/desktop/](https://powerbi.microsoft.com/en-us/desktop/).
-
-## Set up [!DNL Power BI]
-
-När du har [!DNL Power BI] installerat måste du konfigurera de komponenter som behövs för att stödja PostgreSQL-kopplingen. Följ de här stegen:
-
-- Hitta och installera `npgsql`ett .NET-drivrutinspaket för PostgreSQL som är det officiella sättet för PowerBI att ansluta.
-
-- Välj v4.0.10 (nyare versioner ger för närvarande ett fel).
-
-- Välj **[!UICONTROL Will be installed on local hard drive]** under Installation av Npgsql GAC på skärmen Anpassade inställningar. Om du inte installerar GAC kommer Power BI att misslyckas senare.
-
-- Starta om Windows.
-
-- Hitta utvärderingsversionen för [!DNL PowerBI] Skrivbordet.
-
-## Anslut [!DNL Power BI] till [!DNL Query Service]
-
-När du har utfört dessa förberedande steg kan du ansluta [!DNL Power BI] till [!DNL Query Service]:
-
-- Öppna [!DNL Power BI].
-
-- Klicka **[!UICONTROL Get Data]** på menyfliksområdet på den översta menyn.
-
-- Välj **[!UICONTROL PostgreSQL database]** och klicka sedan på **[!UICONTROL Connect]**.
-
-- Ange värden för servern och databasen. **[!UICONTROL Server]** är värddatorn som finns under anslutningsinformationen. För produktion lägger du till port `:80` i slutet av värdsträngen. **[!UICONTROL Database]** kan vara antingen&quot;all&quot; eller ett datamängdstabellnamn. (Prova någon av de CTAS-härledda datauppsättningarna.)
-
-- Click **[!UICONTROL Advanced options]**, and then uncheck **[!UICONTROL include relationship columns]**. Kontrollera inte **[!UICONTROL Navigate using full hierarchy]**.
-
-- *(Valfritt men rekommenderas när&quot;all&quot; deklareras för databasen)* Ange en SQL-sats.
+Det här dokumentet beskriver hur du ansluter Power BI till Adobe Experience Platform Query Service.
 
 >[!NOTE]
 >
->Om ingen SQL-sats anges [!DNL Power BI] förhandsvisas alla tabeller i databasen. För hierarkiska data bör en anpassad SQL-sats användas. Om tabellschemat är platt kommer det att fungera med eller utan en anpassad SQL-sats. Sammansatta typer stöds ännu inte av [!DNL Power BI] - för att hämta primitiva typer från sammansatta typer måste du skriva SQL-satser för att härleda dem.
+> Den här handboken förutsätter att du redan har tillgång till [!DNL Power BI] och är bekant med hur du navigerar i dess gränssnitt. Mer information om [!DNL Power BI] finns i [officiell [!DNL Power BI] dokumentation](https://docs.looker.com/).
+>
+> Dessutom är Power BI **endast** tillgängligt på Windows-enheter.
 
-```sql
-SELECT web.webPageDetails.name AS Page_Name, 
-SUM(web.webPageDetails.pageviews.value) AS Page_Views 
-FROM _TABLE_ 
-WHERE TIMESTAMP >= to_timestamp('2018-11-20')
-GROUP BY web.webPageDetails.name 
-ORDER BY SUM(web.webPageDetails.pageviews.value) DESC 
-LIMIT 10
-```
+## Konfigurera [!DNL Power BI]
 
-- Välj antingen &quot;[!UICONTROL DirectQuery]&quot; eller &quot;[!UICONTROL Import]&quot;. I [!UICONTROL DirectQuery] läget skickas alla frågor till [!DNL Query Service] för körning. I [!UICONTROL Import] läget importeras data i [!DNL Power BI].
+När du har installerat Power BI måste du installera `Npgsql`, ett .NET-drivrutinspaket för PostgreSQL. Mer information om Npgsql finns i [Npgsql-dokumentationen](https://www.npgsql.org/doc/index.html).
 
-- Klicka på **[!UICONTROL OK]**. Ansluter nu [!DNL Power BI] till [!DNL Query Service] och skapar en förhandsgranskning om det inte finns några fel. Det finns ett känt fel med återgivningen av numeriska kolumner i förhandsvisningen. Gå vidare till nästa steg.
+>[!IMPORTANT]
+>
+>Du måste hämta v4.0.10 eller tidigare, eftersom nyare versioner orsakar fel.
 
-- Klicka **[!UICONTROL Load]** för att hämta datauppsättningen till [!DNL Power BI].
+Välj **[!DNL Will be installed on local hard drive]** under [!DNL Npgsql GAC Installation] på den anpassade installationsskärmen.
+
+För att säkerställa att npgsql har installerats korrekt startar du om datorn innan du fortsätter till nästa steg.
+
+## Anslut [!DNL Power BI] till [!DNL Query Service]
+
+Om du vill ansluta [!DNL Power BI] till [!DNL Query Service] öppnar du [!DNL Power BI] och väljer **[!DNL Get Data]** i menyfliksområdet på den översta menyn.
+
+![](../images/clients/power-bi/open-power-bi.png)
+
+Välj **[!DNL PostgreSQL database]** följt av **[!DNL Connect]**.
+
+![](../images/clients/power-bi/get-data.png)
+
+Nu kan du ange värden för servern och databasen. Mer information om hur du hittar databasnamn, värd, port och inloggningsuppgifter finns på sidan [inloggningsuppgifter på Platform](https://platform.adobe.com/query/configuration). Logga in på [!DNL Platform] och välj **[!UICONTROL Queries]** följt av **[!UICONTROL Credentials]** för att hitta dina inloggningsuppgifter.
+
+**[!DNL Server]** är värddatorn som finns under anslutningsinformationen. För produktion lägger du till porten `:80` i slutet av värdsträngen. **[!DNL Database]** kan vara antingen&quot;all&quot; eller ett datamängdstabellnamn.
+
+Dessutom kan du välja din **[!DNL Data Connectivity mode]**. Välj **[!DNL Import]** om du vill visa en lista över alla tillgängliga tabeller, eller välj **[!DNL DirectQuery]** om du vill skapa en fråga direkt.
+
+Läs avsnittet [förhandsgranska och importera en tabell](#preview) om du vill veta mer om **[!DNL Import]**-läget. Mer information om läget **[!DNL DirectQuery]** finns i avsnittet [skapa SQL-satser](#create). Välj **[!DNL OK]** när du har bekräftat databasinformationen.
+
+![](../images/clients/power-bi/connectivity-mode.png)
+
+En fråga om ditt användarnamn, lösenord och programinställningar visas. Fyll i dessa uppgifter och välj sedan **[!DNL Connect]** för att fortsätta till nästa steg.
+
+![](../images/clients/power-bi/import-mode.png)
+
+## Förhandsgranska och importera en tabell {#preview}
+
+Om du har valt **[!DNL Import]**-läge visas en dialogruta med en lista över alla tillgängliga tabeller. Markera den tabell som du vill förhandsgranska, följt av **[!DNL Load]** för att hämta datauppsättningen till [!DNL Power BI].
+
+![](../images/clients/power-bi/preview-table.png)
+
+Tabellen importeras nu till Power BI.
+
+![](../images/clients/power-bi/import-table.png)
+
+## Skapa SQL-satser {#create}
+
+Om du har valt **[!DNL DirectQuery]**-läge måste du fylla i avsnittet Avancerade alternativ med den SQL-fråga som du vill skapa.
+
+Under **[!DNL SQL statement]** infogar du den SQL-fråga som du vill skapa. Kontrollera att kryssrutan **[!DNL Include relationship columns]** är markerad. När du har skrivit frågan väljer du **[!DNL OK]** för att fortsätta.
+
+![](../images/clients/power-bi/direct-query-mode.png)
+
+En förhandsgranskning av frågan visas. Välj **[!DNL Load]** om du vill visa resultatet av frågan.
+
+![](../images/clients/power-bi/preview-direct-query.png)
+
+## Nästa steg
+
+Nu när du är ansluten till [!DNL Query Service] kan du använda [!DNL Power BI] för att skriva frågor. Mer information om hur du skriver och kör frågor finns i guiden [kör frågor](../best-practices/writing-queries.md).
