@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;data model;ui;workspace;mixin;mixins;
+keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;data model;ui;workspace;mixin;mixins;
 solution: Experience Platform
 title: Skapa och redigera blandningar i användargränssnittet
 description: Lär dig hur du skapar och redigerar blandningar i användargränssnittet i Experience Platform.
@@ -7,7 +7,7 @@ topic: user guide
 translation-type: tm+mt
 source-git-commit: 2e20403122e65d28f04114af9b7e8d41874f76e2
 workflow-type: tm+mt
-source-wordcount: '634'
+source-wordcount: '653'
 ht-degree: 0%
 
 ---
