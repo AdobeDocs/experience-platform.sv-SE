@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;Policy enforcement;Automatic enforcement;API-based enforcement;data governance
+keywords: Experience Platform;hem;populära ämnen;Politiska åtgärder;Automatisk tillsyn;API-baserad tillämpning;datastyrning
 solution: Experience Platform
-title: Översikt över policytillämpning
-topic: enforcement
+title: Automatisk policytillämpning
+topic: guide
 description: Det här dokumentet beskriver hur dataanvändningspolicyer tillämpas automatiskt när segment aktiveras för destinationer i Experience Platform.
 translation-type: tm+mt
-source-git-commit: 385084f3de2ebfcbee94d6b0c116dae82f5df764
+source-git-commit: acc4fa59a4808ed9a32c2aaf664039e0d12dc1d8
 workflow-type: tm+mt
-source-wordcount: '1109'
+source-wordcount: '1122'
 ht-degree: 0%
 
 ---
