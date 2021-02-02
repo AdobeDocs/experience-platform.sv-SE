@@ -1,13 +1,13 @@
 ---
-keywords: google ad manager;google ad;doubleclick;DoubleClick AdX;DoubleClick;Google Ad Manager;Google ad manager
+keywords: Google ad manager;google ad;dubbelklicka;DoubleClick AdX;DoubleClick;Google Ad Manager;Google ad manager
 title: Mål för Google Ad Manager
 seo-title: Mål för Google Ad Manager
 description: 'Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar. '
 seo-description: 'Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar. '
 translation-type: tm+mt
-source-git-commit: c24676970629f5a39297001357f8af40895533d9
+source-git-commit: bb2fc2658d32c59b476dd9d526eb8bc2f055a1af
 workflow-type: tm+mt
-source-wordcount: '667'
+source-wordcount: '701'
 ht-degree: 0%
 
 ---
@@ -17,23 +17,24 @@ ht-degree: 0%
 
 ## Översikt
 
-[!DNL Google Ad Manager], tidigare känt [!DNL DoubleClick] för förlag eller [!DNL DoubleClick AdX], är en annonseringsplattform från [!DNL Google] vilken förläggarna kan hantera annonser på sina webbplatser, via video och i mobilappar.
+[!DNL Google Ad Manager], tidigare kallat  [!DNL DoubleClick] för utgivaren eller  [!DNL DoubleClick AdX], är en annonseringsplattform från  [!DNL Google] vilken förläggarna kan hantera annonser på sina webbplatser, via video och i mobilappar.
 
 ## Destinationsspecifikationer
 
-Observera följande information som är specifik för [!DNL Google Ad Manager] destinationer:
+Observera följande information som är specifik för [!DNL Google Ad Manager]-mål:
 
-* Du kan skicka följande [identiteter](../../../identity-service/namespaces.md) till [!DNL Google Ad Manager] mål: **Google cookie ID, IDFA, GAID, Roku ID, Microsoft ID, Amazon Fire TV ID**.
-* Aktiverade målgrupper skapas programmatiskt på [!DNL Google] plattformen.
-* CDP i realtid innehåller för närvarande inte någon mätmetod för validering av lyckad aktivering. Se antalet målgrupper i Google för att validera integrationen och förstå målgruppens målgruppsstorlek.
+* Du kan skicka följande [identiteter](../../../identity-service/namespaces.md) till [!DNL Google Ads] mål: [AAM UUID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html?lang=en), Google cookie ID, IDFA, GAID, Roku ID:n, Microsoft ID:n och Amazon Fire TV ID:n.
+   * Google använder [AAM UUID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html?lang=en) för målanvändare i Kalifornien och Google Cookie-ID för alla andra användare.
+* Aktiverade målgrupper skapas programmatiskt i [!DNL Google]-plattformen.
+* Plattformen har för närvarande inte något mätvärde för att validera aktiveringen. Se antalet målgrupper i Google för att validera integrationen och förstå målgruppens målgruppsstorlek.
 
 >[!IMPORTANT]
 >
->Om du vill skapa ditt första mål med [!DNL Google Ad Manager] och inte har aktiverat [ID-synkroniseringsfunktionen](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID Service tidigare (med Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL Google] integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till CDP i realtid.
+>Om du vill skapa ditt första mål med [!DNL Google Ad Manager] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID-tjänsten tidigare (med Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL Google]-integreringar i Audience Manager överförs ID-synkroniseringarna du har konfigurerat till Platform.
 
 ### Exporttyp {#export-type}
 
-**Segmentexport** - du exporterar alla medlemmar i ett segment (publik) till Google-målet.
+**Segmentexport**  - du exporterar alla medlemmar i ett segment (publik) till Google-målet.
 
 ## Förutsättningar
 
@@ -41,46 +42,46 @@ Observera följande information som är specifik för [!DNL Google Ad Manager] d
 
 >[!NOTE]
 >
->Tillåtelselista är obligatoriskt innan du ställer in ditt första [!DNL Google Ad Manager] mål i CDP i realtid. Kontrollera att tillåtelselista-processen som beskrivs nedan har slutförts [!DNL Google] innan du skapar ett mål.
+>Tillåtelselista är obligatoriskt innan du konfigurerar ditt första [!DNL Google Ad Manager]-mål i Platform. Kontrollera att tillåtelselista-processen som beskrivs nedan har slutförts av [!DNL Google] innan du skapar ett mål.
 
-Innan du skapar [!DNL Google Ad Manager] målet i CDP i realtid måste du kontakta Adobe [!DNL Google] för att få vara med i listan över tillåtna dataleverantörer och för att ditt konto ska läggas till i tillåtelselista. Kontakta [!DNL Google] och lämna följande information:
+Innan du skapar [!DNL Google Ad Manager]-målet i Platform måste du kontakta [!DNL Google] för att Adobe ska tas med i listan över tillåtna dataleverantörer och för att ditt konto ska läggas till i tillåtelselista. Kontakta [!DNL Google] och lämna följande information:
 
-* **Konto-ID** : det här är Adobe konto ID med [!DNL Google]. Kontakta Adobe kundtjänst eller Adobe för att få detta ID.
-* **Kund-ID** : det här är Adobe kundkonto-ID med [!DNL Google]. Kontakta Adobe kundtjänst eller Adobe för att få detta ID.
-* **Nätverks-ID** : det här är ditt konto med [!DNL Google Ad Manager]
-* **Målgruppslänks-ID** : det här är ditt konto med [!DNL Google Ad Manager]
+* **Konto-ID** : det här är Adobe konto ID med  [!DNL Google]. Kontakta Adobe kundtjänst eller Adobe för att få detta ID.
+* **Kund-ID** : det här är Adobe kundkonto-ID med  [!DNL Google]. Kontakta Adobe kundtjänst eller Adobe för att få detta ID.
+* **Nätverks-ID** : det här är ditt konto med  [!DNL Google Ad Manager]
+* **Audience Link ID** : det här är ditt konto med  [!DNL Google Ad Manager]
 * Din kontotyp. DFP av Google eller AdX-köpare.
 
 ## Konfigurera mål
 
-In **[!UICONTROL Connections]** > **[!UICONTROL Destinations]**, select **[!DNL Google Ad Manager]**, and select **[!UICONTROL Configure]**.
+I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** väljer du **[!DNL Google Ad Manager]** och väljer **[!UICONTROL Configure]**.
 
 ![Anslut Google Ad Manager-mål](../../assets/catalog/advertising/google-ad-manager/catalog.png)
 
 >[!NOTE]
 >
->Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]** knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](../../ui/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
+>Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]**-knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](../../ui/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
 
-I **konfigurationssteget** för att skapa målarbetsflödet fyller du i [!UICONTROL Basic Information] för målet.
+I steget **Konfigurera** i arbetsflödet för att skapa mål fyller du i [!UICONTROL Basic Information] för målet.
 
 ![Grundläggande information Google Ad Manager](../../assets/catalog/advertising/google-ad-manager/setup.png)
 
 * **[!UICONTROL Name]**: Fyll i det önskade namnet för det här målet.
 * **[!UICONTROL Description]**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
 * **[!UICONTROL Account Type]**: Välj ett alternativ, beroende på ditt konto hos Google:
-   * Använd `DFP by Google` för [!DNL DoubleClick] utgivare
+   * Använd `DFP by Google` för [!DNL DoubleClick] för utgivare
    * Använd `AdX buyer` för [!DNL Google AdX]
-* **[!UICONTROL Account ID]**: Fyll i ditt konto-ID med [!DNL Google]. Detta kan vara ditt nätverks-ID eller ditt Audience Link-ID. Vanligtvis är detta ett åttasiffrigt ID.
-* **[!UICONTROL Marketing use case]**: Fall av marknadsanvändning anger avsikten för vilken data ska exporteras till destinationen. Du kan välja bland Adobe-definierade användningsfall för marknadsföring eller skapa ett eget marknadsföringsexempel. Mer information om användningsfall för marknadsföring finns på sidan [Datastyrning i CDP](../../../rtcdp/privacy/data-governance-overview.md#destinations) i realtid. Mer information om de enskilda Adobe-definierade användningsfallen för marknadsföring finns i översikten över [dataanvändningspolicyn](../../../data-governance/policies/overview.md#core-actions).
+* **[!UICONTROL Account ID]**: Fyll i ditt konto-ID med  [!DNL Google]. Detta kan vara ditt nätverks-ID eller ditt Audience Link-ID. Vanligtvis är detta ett åttasiffrigt ID.
+* **[!UICONTROL Marketing use case]**: Fall av marknadsanvändning anger avsikten för vilken data ska exporteras till destinationen. Du kan välja bland Adobe-definierade användningsfall för marknadsföring eller skapa ett eget marknadsföringsexempel. Mer information om användningsfall för marknadsföring finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
 
 >[!NOTE]
 >
->När du ställer in en [!DNL Google Ad Manager] destination ska du samarbeta med din [!DNL Google Account Manager] eller Adobe-representant för att förstå vilken kontotyp du har.
+>När du konfigurerar ett [!DNL Google Ad Manager]-mål ska du samarbeta med din [!DNL Google Account Manager]- eller Adobe-representant för att förstå vilken kontotyp du har.
 
-## Aktivera segment för att [!DNL Google Ad Manager]
+## Aktivera segment till [!DNL Google Ad Manager]
 
-Instruktioner om hur du aktiverar segment [!DNL Google Ad Manager]finns i [Aktivera data till mål](../../ui/activate-destinations.md).
+Instruktioner om hur du aktiverar segment till [!DNL Google Ad Manager] finns i [Aktivera data till mål](../../ui/activate-destinations.md).
 
 ## Exporterade data
 
-Kontrollera ditt [!DNL Google Ad Manager] konto om du vill verifiera om data har exporterats till [!DNL Google Ad Manager] målet. Om aktiveringen lyckades fylls målgrupperna i ditt konto.
+Kontrollera ditt [!DNL Google Ad Manager]-konto för att kontrollera om data har exporterats till [!DNL Google Ad Manager]-målet. Om aktiveringen lyckades fylls målgrupperna i ditt konto.
