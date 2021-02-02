@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;data usage compliance;enforce;enforce data usage compliance;Segmentation Service;segmentation;Segmentation;
+keywords: Experience Platform;hemmabruk;populära ämnen;efterlevnad av dataanvändning;framtvinga efterlevnad av dataanvändning;Segmenteringstjänst;segmentering;Segmentering;
 solution: Experience Platform
 title: säkerställa att målgruppssegmentens dataanvändning följs
 topic: tutorial
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att implementera efterlevnad av dataanvändning för målgruppssegment för kundprofiler i realtid med API:er.
 translation-type: tm+mt
-source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '1338'
+source-wordcount: '1359'
 ht-degree: 0%
 
 ---
@@ -16,42 +16,42 @@ ht-degree: 0%
 
 # Använd API:er för att säkerställa att data används korrekt för ett målgruppssegment
 
-Den här självstudiekursen beskriver stegen för att implementera efterlevnad av dataanvändning för målgruppssegment med hjälp av API:er [!DNL Real-time Customer Profile] .
+Den här självstudiekursen beskriver stegen för att implementera efterlevnad av dataanvändning för [!DNL Real-time Customer Profile] målgruppssegment med API:er.
 
 ## Komma igång
 
 Den här självstudien kräver en fungerande förståelse av följande komponenter i [!DNL Adobe Experience Platform]:
 
-- [[!DNL Real-time Customer Profile]](../../profile/home.md): [!DNL Real-time Customer Profile] är ett generiskt sökentitetsarkiv och används för att hantera [!DNL Experience Data Model (XDM)] data i [!DNL Platform]. Profilen sammanfogar data över olika företagsdata och ger åtkomst till dessa data i en enhetlig presentation.
-   - [Sammanslagningsprinciper](../../profile/api/merge-policies.md): Regler som används av [!DNL Real-time Customer Profile] för att avgöra vilka data som kan sammanfogas i en enhetlig vy under vissa villkor. Sammanslagningsprinciper kan konfigureras för [!DNL Data Governance] syften.
-- [[!DNL Segmentation]](../home.md): Hur [!DNL Real-time Customer Profile] delar upp en stor grupp individer som finns i profilbutiken i mindre grupper som har liknande egenskaper och som reagerar på liknande sätt som marknadsföringsstrategier.
-- [[!DNL Data Governance]](../../data-governance/home.md): [!DNL Data Governance] tillhandahåller infrastrukturen för märkning och tillämpning av dataanvändning med hjälp av följande komponenter:
+- [[!DNL Real-time Customer Profile]](../../profile/home.md):  [!DNL Real-time Customer Profile] är ett generiskt uppslagsarkiv och används för att hantera  [!DNL Experience Data Model (XDM)] data i  [!DNL Platform]. Profilen sammanfogar data över olika företagsdata och ger åtkomst till dessa data i en enhetlig presentation.
+   - [Sammanslagningsprinciper](../../profile/api/merge-policies.md): Regler som används av  [!DNL Real-time Customer Profile] för att avgöra vilka data som kan sammanfogas i en enhetlig vy under vissa villkor. Sammanslagningsprinciper kan konfigureras för [!DNL Data Governance]-syften.
+- [[!DNL Segmentation]](../home.md): Hur  [!DNL Real-time Customer Profile] delar upp en stor grupp individer som finns i profilbutiken i mindre grupper som har liknande egenskaper och som kommer att svara på liknande sätt som marknadsföringsstrategier.
+- [[!DNL Data Governance]](../../data-governance/home.md):  [!DNL Data Governance] tillhandahåller infrastrukturen för märkning och tillämpning av dataanvändning med hjälp av följande komponenter:
    - [Dataanvändningsetiketter](../../data-governance/labels/user-guide.md): Etiketter som används för att beskriva datauppsättningar och fält utifrån känslighetsnivån som deras respektive data ska hanteras med.
    - [Dataanvändningsprinciper](../../data-governance/policies/overview.md): Konfigurationer som anger vilka marknadsföringsåtgärder som tillåts för data som kategoriseras av särskilda dataanvändningsetiketter.
    - [Politiska åtgärder](../../data-governance/enforcement/overview.md): Gör att du kan tillämpa dataanvändningsprinciper och förhindra dataåtgärder som utgör policyöverträdelser.
-- [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+- [Sandlådor](../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API: [!DNL Platform] erna.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:erna för [!DNL Platform].
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform] finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -61,7 +61,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 Det här arbetsflödet börjar med att man får åtkomst till ett känt målgruppssegment. Segment som är aktiverade för användning i [!DNL Real-time Customer Profile] innehåller ett ID för sammanfogningsprincip i segmentdefinitionen. Den här sammanfogningsprincipen innehåller information om vilka datauppsättningar som ska inkluderas i segmentet, som i sin tur innehåller tillämpliga dataanvändningsetiketter.
 
-Med hjälp av API:t kan du söka efter en segmentdefinition med hjälp av dess ID för att hitta den associerade sammanfogningsprincipen. [!DNL Segmentation]
+Med hjälp av API:t [!DNL Segmentation] kan du söka efter en segmentdefinition med hjälp av dess ID för att hitta den associerade sammanfogningsprincipen.
 
 **API-format**
 
@@ -128,7 +128,7 @@ Ett lyckat svar returnerar informationen om segmentdefinitionen.
 
 ## Hitta källdatauppsättningarna från sammanfogningsprincipen {#datasets}
 
-Sammanslagningsprinciper innehåller information om deras källdatauppsättningar, som i sin tur innehåller dataanvändningsetiketter. Du kan söka efter information om en sammanfogningsprincip genom att ange sammanfogningsprincip-ID i en GET-begäran till [!DNL Profile] API:t. Mer information om sammanfogningsprinciper finns i slutpunktshandboken för [sammanfogningsprinciper](../../profile/api/merge-policies.md).
+Sammanslagningsprinciper innehåller information om deras källdatauppsättningar, som i sin tur innehåller dataanvändningsetiketter. Du kan söka efter information om en sammanfogningsprincip genom att ange sammanfogningsprincip-ID:t i en GET-begäran till API:t [!DNL Profile]. Mer information om sammanfogningsprinciper finns i [slutpunktshandboken för sammanfogningsprinciper](../../profile/api/merge-policies.md).
 
 **API-format**
 
@@ -180,16 +180,16 @@ Ett lyckat svar returnerar information om sammanfogningsprincipen.
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `schema.name` | Namnet på schemat som är associerat med sammanfogningsprincipen. |
-| `attributeMerge.type` | Konfigurationstypen för sammanslagningsprincipen med prioritet för data. Om värdet är `dataSetPrecedence`listas de datauppsättningar som är associerade med den här sammanfogningsprincipen under `attributeMerge > data > order`. Om värdet är `timestampOrdered`används alla datauppsättningar som är associerade med schemat som refereras i av sammanfogningsprincipen `schema.name` . |
-| `attributeMerge.data.order` | Om attributet `attributeMerge.type` är `dataSetPrecedence`det är en array som innehåller ID:n för de datauppsättningar som används av den här sammanfogningsprincipen. Dessa ID:n används i nästa steg. |
+| `attributeMerge.type` | Konfigurationstypen för sammanslagningsprincipen med prioritet för data. Om värdet är `dataSetPrecedence` listas de datauppsättningar som är associerade med den här sammanfogningsprincipen under `attributeMerge > data > order`. Om värdet är `timestampOrdered` används alla datauppsättningar som är associerade med schemat som refereras i `schema.name` av sammanfogningsprincipen. |
+| `attributeMerge.data.order` | Om `attributeMerge.type` är `dataSetPrecedence` är det här attributet en array som innehåller ID:n för de datauppsättningar som används av den här sammanfogningsprincipen. Dessa ID:n används i nästa steg. |
 
 ## Utvärdera datauppsättningar för policyöverträdelser
 
 >[!NOTE]
 >
-> I det här steget antas att du har minst en aktiv dataanvändningsprincip som förhindrar att specifika marknadsföringsåtgärder utförs på data som innehåller vissa etiketter. Om du inte har någon tillämpbar användarprofil för de datauppsättningar som utvärderas, ska du följa självstudiekursen [för att skapa en](../../data-governance/policies/create.md) princip innan du fortsätter med det här steget.
+> I det här steget antas att du har minst en aktiv dataanvändningsprincip som förhindrar att specifika marknadsföringsåtgärder utförs på data som innehåller vissa etiketter. Om du inte har någon tillämpbar användarprofil för de datauppsättningar som utvärderas, ska du följa självstudiekursen [för att skapa en princip](../../data-governance/policies/create.md) innan du fortsätter med det här steget.
 
-När du har fått ID:n för sammanfogningsprincipens källdatauppsättningar kan du använda API:t för [principtjänsten](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) för att utvärdera dessa datauppsättningar mot specifika marknadsföringsåtgärder för att kontrollera om det finns överträdelser av dataanvändningspolicyn.
+När du har fått ID:n för sammanfogningsprincipens källdatauppsättningar kan du använda [API:t för principtjänsten](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) för att utvärdera dessa datauppsättningar mot specifika marknadsföringsåtgärder för att kontrollera om det finns brott mot dataanvändningspolicyn.
 
 Om du vill utvärdera datauppsättningarna måste du ange namnet på marknadsföringsåtgärden i sökvägen till en begäran om POST, samtidigt som du anger datauppsättnings-ID:n i begärandetexten, vilket visas i exemplet nedan.
 
@@ -202,11 +202,11 @@ POST /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{MARKETING_ACTION_NAME}` | Namnet på den marknadsföringsåtgärd som är associerad med dataanvändningsprincipen som du utvärderar datauppsättningarna efter. Beroende på om policyn har definierats av Adobe eller din organisation måste du använda `/marketingActions/core` respektive `/marketingActions/custom`. |
+| `{MARKETING_ACTION_NAME}` | Namnet på den marknadsföringsåtgärd som är associerad med dataanvändningsprincipen som du utvärderar datauppsättningarna efter. Beroende på om policyn har definierats av Adobe eller din organisation måste du använda `/marketingActions/core` eller `/marketingActions/custom`. |
 
 **Begäran**
 
-Följande begäran testar marknadsföringsåtgärden mot `exportToThirdParty` datauppsättningar som hämtats i [föregående steg](#datasets). Nyttolasten för begäran är en array som innehåller ID:n för varje datamängd.
+Följande begäran testar marknadsföringsåtgärden `exportToThirdParty` mot datauppsättningar som hämtats i [föregående steg](#datasets). Nyttolasten för begäran är en array som innehåller ID:n för varje datamängd.
 
 ```shell
 curl -X POST \
@@ -235,7 +235,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar URI:n för marknadsföringsåtgärden, dataanvändningsetiketterna som samlades in från de angivna datauppsättningarna och en lista över dataanvändningsprinciper som överträtts som ett resultat av testning av åtgärden mot dessa etiketter. I det här exemplet visas principen&quot;Exportera data till tredje part&quot; i `violatedPolicies` arrayen, vilket anger att marknadsföringsåtgärden utlöste en policyöverträdelse.
+Ett lyckat svar returnerar URI:n för marknadsföringsåtgärden, dataanvändningsetiketterna som samlades in från de angivna datauppsättningarna och en lista över dataanvändningsprinciper som överträtts som ett resultat av testning av åtgärden mot dessa etiketter. I det här exemplet visas principen Exportera data till tredje part i `violatedPolicies`-arrayen, vilket anger att marknadsföringsåtgärden utlöste en policyöverträdelse.
 
 ```json
 {
@@ -363,7 +363,7 @@ Ett lyckat svar returnerar URI:n för marknadsföringsåtgärden, dataanvändnin
 | --- | --- |
 | `duleLabels` | En lista över dataanvändningsetiketter som har extraherats från de angivna datauppsättningarna. |
 | `discoveredLabels` | En lista över de datauppsättningar som tillhandahölls i nyttolasten för begäran, med information om de datauppsättningsnivårubriker och fältetiketter som hittades i varje. |
-| `violatedPolicies` | En matris med en lista över dataanvändningsprinciper som har överträtts genom att marknadsföringsåtgärden (anges i `marketingActionRef`) testas mot den angivna `duleLabels`. |
+| `violatedPolicies` | En matris med en lista över dataanvändningsprinciper som har överträtts genom att marknadsföringsåtgärden testas (anges i `marketingActionRef`) mot den angivna `duleLabels`. |
 
 Med hjälp av data som returneras i API-svaret kan du skapa protokoll i ditt upplevelseprogram för att se till att regelöverträdelser verkställs korrekt när de inträffar.
 
@@ -377,12 +377,12 @@ Om du uppdaterar sammanfogningsprincipen för en segmentdefinition justeras de d
 
 ### Begränsa specifika datafält när segmentet exporteras
 
-När du exporterar ett segment till en datauppsättning med [!DNL Segmentation] API kan du filtrera de data som ingår i exporten med hjälp av `fields` parametern. Alla datafält som läggs till i den här parametern inkluderas i exporten, medan alla andra datafält exkluderas.
+När du exporterar ett segment till en datauppsättning med API:t [!DNL Segmentation] kan du filtrera data som ingår i exporten med parametern `fields`. Alla datafält som läggs till i den här parametern inkluderas i exporten, medan alla andra datafält exkluderas.
 
-Tänk dig ett segment som har datafält med namnen&quot;A&quot;,&quot;B&quot; och&quot;C&quot;. Om du bara vill exportera fält C, innehåller parametern bara fält C. `fields` Om du gör det exkluderas fälten A och B när du exporterar segmentet.
+Tänk dig ett segment som har datafält med namnen&quot;A&quot;,&quot;B&quot; och&quot;C&quot;. Om du bara vill exportera fältet &quot;C&quot; innehåller parametern `fields` bara fältet &quot;C&quot;. Om du gör det exkluderas fälten A och B när du exporterar segmentet.
 
-Mer information finns i avsnittet [Exportera ett segment](./evaluate-a-segment.md#export) i självstudiekursen för segmentering.
+Mer information finns i avsnittet [exportera ett segment](./evaluate-a-segment.md#export) i segmenteringsjälvstudiekursen.
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du tittat på etiketterna för dataanvändning som är kopplade till ett målgruppssegment och testat dem för policyöverträdelser mot specifika marknadsföringsåtgärder. Mer information om [!DNL Data Governance] i [!DNL Experience Platform]finns i översikten [[!DNL Data Governance]](../../data-governance/home.md).
+Genom att följa den här självstudiekursen har du tittat på etiketterna för dataanvändning som är kopplade till ett målgruppssegment och testat dem för policyöverträdelser mot specifika marknadsföringsåtgärder. Mer information om [!DNL Data Governance] i [!DNL Experience Platform] finns i översikten för [[!DNL Data Governance]](../../data-governance/home.md).
