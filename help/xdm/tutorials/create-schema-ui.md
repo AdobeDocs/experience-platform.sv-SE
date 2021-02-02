@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;ui;UI;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema editor;Schema Editor;schema;Schema;schemas;Schemas;create
+keywords: Experience Platform;hem;populära ämnen;ui;UI;XDM;XDM system;experience data model;Experience data model;Experience data model;data model;datamodell;schema editor;schema;schema;schema;scheman;scheman;scheman;scheman;skapa
 solution: Experience Platform
 title: Skapa ett schema med Schemaredigeraren
 topic: tutorial
@@ -8,7 +8,7 @@ description: I den här självstudiekursen beskrivs stegen för hur du skapar et
 translation-type: tm+mt
 source-git-commit: e5c5fea783aa4088d225f771905fa8b2098613cf
 workflow-type: tm+mt
-source-wordcount: '3423'
+source-wordcount: '3455'
 ht-degree: 0%
 
 ---
@@ -348,4 +348,4 @@ Du kan ändra schemaklassen när som helst under den inledande dispositionsproce
 >
 >Omtilldelning av klassen för ett schema bör göras med extrem försiktighet. Blandningar är bara kompatibla med vissa klasser, och om du ändrar klassen återställs arbetsytan och alla fält du har lagt till.
 
-Mer information om hur du ändrar klassen för ett schema finns i guiden om att hantera scheman i användargränssnittet[.](../ui/resources/schemas.md)
+Mer information om hur du ändrar klassen för ett schema finns i guiden om att hantera scheman i användargränssnittet](../ui/resources/schemas.md).[
