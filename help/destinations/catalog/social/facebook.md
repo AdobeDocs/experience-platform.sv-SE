@@ -1,14 +1,14 @@
 ---
-keywords: facebook extensions;facebook extension;facebook destinations;facebook;instagram;messenger;facebook messenger
+keywords: Facebook-tillägg;facebook-tillägg;facebook-mål;facebook;instagram;messenger;facebook messenger
 title: Facebook-mål
 seo-title: Facebook-mål
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 seo-description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 translation-type: tm+mt
-source-git-commit: 85e6a65e1407ca60e7b63681c045fadaaa24aef9
+source-git-commit: d0b6225a726c13e2b77ea0f61446ea489df81e69
 workflow-type: tm+mt
-source-wordcount: '751'
-ht-degree: 4%
+source-wordcount: '932'
+ht-degree: 3%
 
 ---
 
@@ -17,56 +17,74 @@ ht-degree: 4%
 
 ## Översikt {#overview}
 
-Aktivera profiler för era [!DNL Facebook] kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
+Aktivera profiler för [!DNL Facebook]-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hash-kodade e-postmeddelanden.
 
-Du kan använda den här målgruppen för målgruppsanpassning i olika appar som stöds av [!DNL Facebook’s] , inklusive [!DNL Custom Audiences], [!DNL Facebook]och [!DNL Instagram][!DNL Audience Network] [!DNL Messenger]. Det program som ni valt att köra kampanjen mot anges av placeringsnivån i [!DNL Facebook Ads Manager].
+Du kan använda det här målet för målgrupper i [!DNL Facebook’s]-familjen med program som stöds av [!DNL Custom Audiences], inklusive [!DNL Facebook], [!DNL Instagram], [!DNL Audience Network] och [!DNL Messenger]. Det program som ni valt att köra kampanjen mot anges av placeringsnivån i [!DNL Facebook Ads Manager].
 
-![Facebook-mål i CDP-gränssnittet i realtid](../../assets/catalog/social/facebook/catalog.png)
+![Facebook-mål i Adobe Experience Platform UI](../../assets/catalog/social/facebook/catalog.png)
 
 ## Användningsexempel
 
-För att du bättre ska förstå hur och när du ska använda [!DNL Facebook] målet finns det två exempel på användningsområden som kunder med kunddataplattform i realtid kan lösa genom att använda den här funktionen.
+För att du bättre ska förstå hur och när du ska använda målet [!DNL Facebook] finns det två exempel på användningsområden som Adobe Experience Platform-kunder kan lösa med den här funktionen.
 
 ### Användningsfall 1
 
-En webbutik vill nå befintliga kunder via sociala plattformar och visa dem personaliserade erbjudanden baserat på deras tidigare order. Onlinebutiken kan importera e-postadresser från sin egen CRM till CDP i realtid, bygga segment utifrån sina egna offlinedata och skicka dessa segment till den [!DNL Facebook] sociala plattformen för att optimera annonsutgifterna.
+En webbutik vill nå befintliga kunder via sociala plattformar och visa dem personaliserade erbjudanden baserat på deras tidigare order. Onlinebutiken kan importera e-postadresser från sin egen CRM till Adobe Experience Platform, bygga segment utifrån sina egna offlinedata och skicka dessa segment till den sociala plattformen [!DNL Facebook] för att optimera annonsutgifterna.
 
 ### Användningsfall nr 2
 
 Ett flygbolag har olika kundnivåer (Bronze, Silver och Gold) och vill kunna erbjuda varje nivå personaliserade erbjudanden via sociala plattformar. Alla kunder använder dock inte flygbolagets mobilapp, och vissa av dem har inte loggat in på företagets webbplats. De enda identifierare företaget har för dessa kunder är medlems-ID och e-postadresser.
 
-För att rikta in dem på sociala medier kan de lägga in kunddata från sina CRM i realtid via CDP, med e-postadresserna som identifierare.
+För att rikta in dem på sociala medier kan de lägga in kunddata från sina CRM i Adobe Experience Platform med e-postadresserna som identifierare.
 
-Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-ID:n och kundnivåer, för att skapa nya målgruppssegment som de kan rikta sig mot via [!DNL Facebook] målet.
+Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-ID:n och kundnivåer, för att skapa nya målgruppssegment som de kan rikta sig mot via målet [!DNL Facebook].
 
-## Destinationsspecifikationer {#destination-specs}
+## Målspecificeringar {#destination-specs}
 
-### Datastyrning för [!DNL Facebook] destinationer {#data-governance}
+### Datastyrning för [!DNL Facebook] mål {#data-governance}
 
 >[!IMPORTANT]
 >
->Data som skickas till [!DNL Facebook] ska inte innehålla sammanfogade identiteter. Du ansvarar för att uppfylla denna skyldighet och kan göra det genom att se till att segment som markerats för aktivering inte använder ett sammanslagningsalternativ i sammanfogningspolicyn. Läs mer om [sammanfogningsprinciper](/help/profile/ui/merge-policies.md).
+>Data som skickas till [!DNL Facebook] får inte innehålla sammanslagna identiteter. Du ansvarar för att uppfylla denna skyldighet och kan göra det genom att se till att segment som markerats för aktivering inte använder ett sammanslagningsalternativ i sammanfogningspolicyn. Läs mer om [sammanfogningsprinciper](/help/profile/ui/merge-policies.md).
 
 ### Exporttyp {#export-type}
 
-**Segmentexport** - du exporterar alla medlemmar i ett segment (publik) med identifierarna (namn, telefonnummer osv.) används i Facebook-målet.
+**Segmentexport**  - du exporterar alla medlemmar i ett segment (publik) med identifierarna (namn, telefonnummer osv.) används i Facebook-målet.
 
 ### Krav för Facebook-konto {#facebook-account-prerequisites}
 
-Innan du kan skicka målgruppssegment till [!DNL Facebook]kontrollerar du att du uppfyller följande krav:
+Innan du kan skicka målgruppssegment till [!DNL Facebook] måste du kontrollera att du uppfyller följande krav:
 
-- Ditt [!DNL Facebook] användarkonto måste ha **[!DNL Manage campaigns]** behörighet aktiverat för annonskontot som du tänker använda.
-- Du måste lägga till **Adobe Experience Cloud** -företagskontot som annonspartner i ditt [!DNL Facebook Ad Account]konto. Använd `business ID=206617933627973`. Mer information finns i [Lägg till partner i din Business Manager](https://www.facebook.com/business/help/1717412048538897) i dokumentationen för Facebook.
+- Ditt [!DNL Facebook]-användarkonto måste ha behörigheten **[!DNL Manage campaigns]** aktiverad för det annonskonto som du tänker använda.
+- Företagskontot **Adobe Experience Cloud** måste läggas till som annonspartner i [!DNL Facebook Ad Account]. Använd `business ID=206617933627973`. Mer information finns i [Lägg till partner i din Business Manager](https://www.facebook.com/business/help/1717412048538897) i dokumentationen för Facebook.
    >[!IMPORTANT]
    >
-   > When configuring the permissions for Adobe Experience Cloud, you must enable the **Manage campaigns** permission. Det krävs för [!DNL Real-time CDP]-integreringen.
+   > När du konfigurerar behörigheter för Adobe Experience Cloud måste du aktivera behörigheten **Hantera kampanjer**. Det krävs för [!DNL Adobe Experience Platform]-integreringen.
 - Läs och signera [!DNL Facebook Custom Audiences] användarvillkoren. Gör det genom att gå till `https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]`, där `accountID` är din [!DNL Facebook Ad Account ID].
 
-### Krav för e-posthashning {#email-hashing-requirements}
+### Krav för ID-matchning {#id-matching-requirements}
 
-[!DNL Facebook] kräver att ingen personligt identifierbar information (PII) skickas klart. Därför måste de målgrupper som aktiverats för [!DNL Facebook] kapas av *hash-* e-postadresser. Du kan välja att hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform, eller så kan du välja att arbeta med e-postadresser i klartext i Experience Platform och låta algoritmen hash-koda dem när de aktiveras.
+[!DNL Facebook] kräver att ingen personligt identifierbar information (PII) skickas klart. Därför kan målgrupper som är aktiverade för [!DNL Facebook] vara avstängda från *hash*-identifierare, till exempel e-postadresser eller telefonnummer.
 
-Om du vill veta mer om hur du kan importera e-postadresser i Experience Platform kan du läsa översikten över [](/help/ingestion/batch-ingestion/overview.md) batchimporten och översikten över [det](/help/ingestion/streaming-ingestion/overview.md)vanligaste inmatningsproblemet.
+Beroende på vilken typ av ID som du importerar till Adobe Experience Platform måste du följa deras motsvarande krav.
+
+#### Kraven för hashning av telefonnummer {#phone-number-hashing-requirements}
+
+Det finns två sätt att aktivera telefonnummer i [!DNL Facebook]:
+
+- **Hämtar råtelefonnummer**: kan du importera råa telefonnummer i  [!DNL E.164] formatet till  [!DNL Platform], som automatiskt hashas när du aktiverar. Om du väljer det här alternativet måste du alltid importera dina raw-telefonnummer till namnutrymmet `Phone_E.164`.
+- **Inmatning av hashade telefonnummer**: du kan förhash-koda dina telefonnummer innan du tar dig in i  [!DNL Platform]. Om du väljer det här alternativet måste du alltid importera dina hashade telefonnummer till namnutrymmet `Phone_SHA256`.
+
+>[!NOTE]
+>
+>Telefonnummer som är inkapslade i namnområdet `Phone` kan inte aktiveras i [!DNL Facebook].
+
+
+#### Krav för e-posthashning {#email-hashing-requirements}
+
+Du kan välja att hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform, eller så kan du välja att arbeta med e-postadresser i klartext i Experience Platform och låta algoritmen hash-koda dem när de aktiveras.
+
+Om du vill veta mer om att importera e-postadresser i Experience Platform kan du läsa översikten [batchfrågor](/help/ingestion/batch-ingestion/overview.md) och översikten [steaming-frågor](/help/ingestion/streaming-ingestion/overview.md).
 
 Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfylla följande krav:
 
@@ -77,25 +95,31 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
    - Exempel: `55e79200c1635b37ad31a378c39feb12f120f116625093a19bc32fff15041149`, inte `55E79200C1635B37AD31A378C39FEB12F120F116625093A19bC32FFF15041149`;
 - Salt inte strängen.
 
+Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Platform] vid aktiveringen.
 
->[!IMPORTANT]
->
->Om du väljer att inte hash-koda e-postadresser gör CDP det i realtid åt dig när du aktiverar segment till [!DNL Facebook]. I [aktiveringsarbetsflödet](../../ui/activate-destinations.md#activate-data) (se steg 5) väljer du det `Email` alternativ som visas nedan för *obearbetade e-postadresser* och `Email_LC_SHA256` för *hashade e-postadresser*.
+Attributkälldata hashas inte automatiskt. När källfältet innehåller ohashade attribut bör du markera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen.
+![Transformering av identitetsmappning](../../assets/ui/activate-destinations/identity-mapping-transformation.png)
 
-![Hindrar vid aktivering](../../assets/common/identity-mapping.png)
+#### Använda anpassade namnutrymmen {#custom-namespaces}
 
-## Anslut till mål {#connect-destination}
+Innan du kan använda namnutrymmet `Extern_ID` för att skicka data till [!DNL Facebook] måste du synkronisera dina egna identifierare med [!DNL Facebook Pixel]. Mer information finns i [den officiella dokumentationen](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/#external_identifiers).
 
-Mer information om hur du ansluter till [!DNL Facebook] målet finns i autentiseringsarbetsflöde [för mål för](./workflow.md)sociala nätverk.
+## Anslut till målet {#connect-destination}
 
-## Aktivera segment för att [!DNL Facebook] {#activate-segments}
+Mer information om hur du ansluter till [!DNL Facebook]-målet finns i [autentiseringsarbetsflöde för mål för sociala nätverk](./workflow.md).
 
-Instruktioner om hur du aktiverar segment [!DNL Facebook]finns i [Aktivera data till mål](../../ui/activate-destinations.md).
+## Aktivera segment till [!DNL Facebook] {#activate-segments}
+
+Instruktioner om hur du aktiverar segment till [!DNL Facebook] finns i [Aktivera data till mål](../../ui/activate-destinations.md).
+
+I steget **[!UICONTROL Segment schedule]** måste du ange [!UICONTROL Origin of audience] när du skickar segment till [!DNL Facebook Custom Audiences].
+
+![Publikens Facebook-ursprung](../../assets/catalog/social/facebook/facebook-origin-audience.png)
 
 ## Exporterade data {#exported-data}
 
-En lyckad aktivering [!DNL Facebook]innebär att en [!DNL Facebook] anpassad målgrupp skapas i [[!DNL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/). Segmentmedlemskap i målgruppen skulle läggas till och tas bort eftersom användarna är kvalificerade eller diskvalificerade för de aktiverade segmenten.
+För [!DNL Facebook] innebär en lyckad aktivering att en [!DNL Facebook] anpassad målgrupp skapas programmatiskt i [[!DNL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/). Segmentmedlemskap i målgruppen skulle läggas till och tas bort eftersom användarna är kvalificerade eller diskvalificerade för de aktiverade segmenten.
 
 >[!TIP]
 >
->Integrationen mellan CDP i realtid och [!DNL Facebook] stöder historiska efterfyllningar av målgrupper. Alla historiska segmentkvalifikationer skickas till [!DNL Facebook] när du aktiverar segmenten till målet.
+>Integrationen mellan Adobe Experience Platform och [!DNL Facebook] har stöd för historiska efterfyllningar av målgrupper. Alla historiska segmentkvalifikationer skickas till [!DNL Facebook] när du aktiverar segmenten till målet.
