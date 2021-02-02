@@ -5,9 +5,9 @@ audience: user
 user-guide-title: Handbok för kunddataplattform i realtid
 user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgruppssegment utifrån dessa profiler och aktivera dessa segment för tredjepartsdestinationer.
 translation-type: tm+mt
-source-git-commit: 6043ecb8e32dec70b7eaf7695a266d797f97b9f4
+source-git-commit: de2f4b16677ec6e820903b1e586213a132b126be
 workflow-type: tm+mt
-source-wordcount: '124'
+source-wordcount: '126'
 ht-degree: 11%
 
 ---
@@ -40,7 +40,8 @@ ht-degree: 11%
 * Segment {#segmentation}
    * [Översikt över segmentering](segmentation/segmentation-overview.md)
    * [Segmentbyggarguide](segmentation/segment-builder-guide.md)
-* Sources {#sources}
+   * [Kund-AI](segmentation/customer-ai.md)
+* Källor {#sources}
    * [Översikt över källor](sources/sources-overview.md)
    * [Implementera webbplatstaggar med Adobe Launch](sources/launch.md)
 * [Versionsinformation om Experience Platform](https://www.adobe.com/go/platform-release-notes-en)
