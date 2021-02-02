@@ -1,13 +1,13 @@
 ---
-keywords: RTCDP;CDP;Real-time Customer Data Platform;real time customer data platform;real time cdp;cdp
+keywords: RTCDP;CDP;Real-time Customer Data Platform;real-time customer data platform;real time cdp;cdp;Customer AI
 title: Översikt över kunddataplattformen i realtid
 seo-title: Översikt över kunddataplattformen i realtid
 description: Översikt över kunddataplattformen i realtid
 seo-description: Översikt över kunddataplattformen i realtid
 translation-type: tm+mt
-source-git-commit: 4dfef6649b3ae07593667eb5165dad6bacc8ed2f
+source-git-commit: 9f20f8bfeefb5bc427a72a11ac1f01816cdbc4b2
 workflow-type: tm+mt
-source-wordcount: '289'
+source-wordcount: '306'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ Med kunddataplattformen i realtid kan ni
 
 ## Ytterligare information
 
-Om du vill veta mer om Adobe Experience Platform börjar du med att läsa översikten över [](../landing/home.md)Experience Platform.
+Om du vill veta mer om Adobe Experience Platform börjar du med att läsa översikten [Experience Platform](../landing/home.md).
 
 Följande dokumentation rekommenderas för att hjälpa dig att komma igång med kunddataplattformen i realtid:
 
