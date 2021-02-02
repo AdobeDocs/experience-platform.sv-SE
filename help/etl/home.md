@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;ETL;etl;etl integrations;ETL integrations
+keywords: Experience Platform;hem;populära ämnen;ETL;etl;etl integrations;ETL integrations
 solution: Experience Platform
 title: Skapa ETL-integreringar
 topic: overview
 description: Integreringsguiden för ETL beskriver allmänna steg för att skapa säkra anslutningar med höga prestanda för Experience Platform och inmatning av data på plattformen.
 translation-type: tm+mt
-source-git-commit: a362b67cec1e760687abb0c22dc8c46f47e766b7
+source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
 workflow-type: tm+mt
-source-wordcount: '4117'
+source-wordcount: '4139'
 ht-degree: 0%
 
 ---
@@ -15,18 +15,18 @@ ht-degree: 0%
 
 # Utveckla ETL-integreringar för Adobe Experience Platform
 
-Integreringsguiden för ETL innehåller allmänna steg för att skapa säkra anslutningar med höga prestanda för [!DNL Experience Platform] och inmatning av data i [!DNL Platform].
+Integreringsguiden för ETL visar allmänna steg för att skapa säkra anslutningar med höga prestanda för [!DNL Experience Platform] och för att hämta data till [!DNL Platform].
 
 
 - [[!DNL Catalog]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)
 - [[!DNL Data Access]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml)
 - [[!DNL Data Ingestion]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml)
-- [API:er för autentisering och auktorisering](../tutorials/authentication.md)
+- [Autentisering och auktorisering för Experience Platform API:er](https://www.adobe.com/go/platform-api-authentication-en)
 - [[!DNL Schema Registry]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)
 
-Den här handboken innehåller även exempel på API-anrop som ska användas när du utformar en ETL-koppling, med länkar till dokumentation som beskriver varje [!DNL Experience Platform] tjänst och användningen av dess API, i detalj.
+Den här handboken innehåller även exempel på API-anrop som ska användas när du utformar en ETL-koppling, med länkar till dokumentation som beskriver varje [!DNL Experience Platform]-tjänst och användningen av dess API, i detalj.
 
-En exempelintegrering finns tillgänglig på [!DNL GitHub] via [ETL:s referenskod](https://github.com/adobe/acp-data-services-etl-reference) för integrering av ekosystem i [!DNL Apache] licensversion 2.0.
+Det finns ett exempel på integrering på [!DNL GitHub] via [ETL Ecosystem Integration Reference Code](https://github.com/adobe/acp-data-services-etl-reference) under [!DNL Apache] License Version 2.0.
 
 ## Arbetsflöde
 
@@ -38,38 +38,38 @@ Följande arbetsflödesdiagram ger en översikt på hög nivå över integration
 
 Det finns flera Experience Platform-komponenter som ingår i ETL-anslutningsintegreringar. I följande lista beskrivs flera viktiga komponenter och funktioner:
 
-- **Adobe Identity Management System (IMS)** - Tillhandahåller ett ramverk för autentisering till Adobe-tjänster.
-- **IMS-organisation** - en företagsenhet som kan äga eller licensiera produkter och tjänster och ge åtkomst till sina medlemmar.
-- **IMS-användare** - medlemmar i en IMS-organisation. Relationen organisation till användare är många för många.
-- **[!DNL Sandbox]** - En virtuell partition i en enda [!DNL Platform] instans för att utveckla och utveckla program för digitala upplevelser.
-- **Dataidentifiering** - Registrerar metadata för inkapslade och transformerade data i [!DNL Experience Platform].
-- **[!DNL Data Access]** - Ger användarna ett gränssnitt för att komma åt sina data i [!DNL Experience Platform].
-- **[!DNL Data Ingestion]** - Skickar data till [!DNL Experience Platform] med [!DNL Data Ingestion] API:er.
-- **[!DNL Schema Registry]** - Definierar och lagrar schema som beskriver strukturen för data som ska användas i [!DNL Experience Platform].
+- **Adobe Identity Management System (IMS)**  - Tillhandahåller ett ramverk för autentisering till Adobe-tjänster.
+- **IMS-organisation**  - en företagsenhet som kan äga eller licensiera produkter och tjänster och ge åtkomst till sina medlemmar.
+- **IMS-användare**  - medlemmar i en IMS-organisation. Relationen organisation till användare är många för många.
+- **[!DNL Sandbox]** - En virtuell partition i en enda  [!DNL Platform] instans för att utveckla och utveckla program för digitala upplevelser.
+- **Dataidentifiering**  - Registrerar metadata för importerade och transformerade data i  [!DNL Experience Platform].
+- **[!DNL Data Access]** - Ger användarna ett gränssnitt för att komma åt sina data i  [!DNL Experience Platform].
+- **[!DNL Data Ingestion]** - Skickar data till  [!DNL Experience Platform] med  [!DNL Data Ingestion] API:er.
+- **[!DNL Schema Registry]** - Definierar och lagrar schema som beskriver strukturen för data som ska användas i  [!DNL Experience Platform].
 
-## Getting started with [!DNL Experience Platform] APIs
+## Komma igång med [!DNL Experience Platform] API:er
 
-I följande avsnitt finns ytterligare information som du behöver känna till eller ha till hands för att kunna anropa API: [!DNL Experience Platform] er.
+I följande avsnitt finns ytterligare information som du behöver känna till eller ha till hands för att kunna anropa API:er för [!DNL Experience Platform].
 
 ### Läser exempel-API-anrop
 
-Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
+Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform] finns i översiktsdokumentationen för [sandlådan](../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -77,11 +77,11 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Allmänt användarflöde
 
-Till att börja med loggar en ETL-användare in i [!DNL Experience Platform] användargränssnittet och skapar datauppsättningar för förtäring med hjälp av en standardanslutning eller push-tjänstanslutning.
+Till att börja med loggar en ETL-användare in i användargränssnittet för [!DNL Experience Platform] och skapar datauppsättningar för förtäring med en standardanslutning eller en push-tjänstanslutning.
 
-I användargränssnittet skapar användaren utdatauppsättningen genom att välja ett dataschema. Vilket schema som väljs beror på vilken typ av data (post- eller tidsserie) som inhämtas [!DNL Platform]. Genom att klicka på fliken Scheman i användargränssnittet kan användaren visa alla tillgängliga scheman, inklusive den beteendetyp som schemat stöder.
+I användargränssnittet skapar användaren utdatauppsättningen genom att välja ett dataschema. Vilket schema som väljs beror på vilken typ av data (post- eller tidsserie) som importeras till [!DNL Platform]. Genom att klicka på fliken Scheman i användargränssnittet kan användaren visa alla tillgängliga scheman, inklusive den beteendetyp som schemat stöder.
 
-I ETL-verktyget kommer användaren att börja designa sina mappningstransformeringar efter att ha konfigurerat lämplig anslutning (med hjälp av sina autentiseringsuppgifter). ETL-verktyget antas redan ha [!DNL Experience Platform] anslutningar installerade (processen definieras inte i den här integreringshandboken).
+I ETL-verktyget kommer användaren att börja designa sina mappningstransformeringar efter att ha konfigurerat lämplig anslutning (med hjälp av sina autentiseringsuppgifter). ETL-verktyget antas redan ha [!DNL Experience Platform] anslutningar installerade (processen är inte definierad i den här integreringshandboken).
 
 Mockup för ett ETL-exempelverktyg och arbetsflöde har tillhandahållits i [ETL-arbetsflödet](./workflow.md). ETL-verktygen kan ha olika format, men de flesta visar liknande funktioner.
 
@@ -91,25 +91,25 @@ Mockup för ett ETL-exempelverktyg och arbetsflöde har tillhandahållits i [ETL
 
 ### Visa lista med datauppsättningar
 
-Med hjälp av datakällan för mappning kan en lista över alla tillgängliga datauppsättningar hämtas med hjälp av [[!DNL Catalog API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml).
+Med datakällan för mappning kan en lista över alla tillgängliga datauppsättningar hämtas med [[!DNL Catalog API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml).
 
-Du kan utfärda en enda API-begäran för att visa alla tillgängliga datauppsättningar (t.ex. `GET /dataSets`), med bästa praxis att inkludera frågeparametrar som begränsar svarsstorleken.
+Du kan utfärda en enda API-begäran för att visa alla tillgängliga datauppsättningar (t.ex. `GET /dataSets`), där det bästa är att ta med frågeparametrar som begränsar svarsstorleken.
 
-Om fullständig datauppsättningsinformation begärs kan svarsnyttolasten nå över 3 GB, vilket kan försämra den totala prestandan. Om du använder frågeparametrar för att filtrera bara den information som behövs blir [!DNL Catalog] frågorna därför mer effektiva.
+Om fullständig datauppsättningsinformation begärs kan svarsnyttolasten nå över 3 GB, vilket kan försämra den totala prestandan. Om du använder frågeparametrar för att filtrera endast den information som behövs blir [!DNL Catalog]-frågorna därför mer effektiva.
 
 #### Listfiltrering
 
 När du filtrerar svar kan du använda flera filter i ett enda anrop genom att separera parametrar med ett et-tecken (`&`). Vissa frågeparametrar accepterar kommaseparerade värdelistor, t.ex. &quot;properties&quot;-filtret i exempelbegäran nedan.
 
-[!DNL Catalog] svaren mäts automatiskt enligt konfigurerade gränser, men frågeparametern &quot;limit&quot; kan användas för att anpassa begränsningarna och begränsa antalet returnerade objekt. De förkonfigurerade [!DNL Catalog] svarsgränserna är:
+[!DNL Catalog] svaren mäts automatiskt enligt konfigurerade gränser, men frågeparametern &quot;limit&quot; kan användas för att anpassa begränsningarna och begränsa antalet returnerade objekt. De förkonfigurerade svarsgränserna för [!DNL Catalog] är:
 
 - Om ingen gränsparameter anges är det maximala antalet objekt per svarsnyttolast 20.
-- Den globala gränsen för alla andra [!DNL Catalog] frågor är 100 objekt.
+- Den globala gränsen för alla andra [!DNL Catalog]-frågor är 100 objekt.
 - Om du begär observerableSchema med frågeparametern properties för datauppsättningsfrågor är det maximala antalet returnerade datauppsättningar 20.
 - Ogiltiga gränsparametrar (inklusive `limit=0`) uppfylls med ett HTTP 400-fel som anger korrekta intervall.
 - Om gränser eller förskjutningar skickas som frågeparametrar har de företräde framför dem som skickas som rubriker.
 
-Frågeparametrar beskrivs mer ingående i [Katalogtjänstöversikt](../catalog/home.md).
+Frågeparametrar beskrivs närmare i [Katalogtjänstöversikt](../catalog/home.md).
 
 **API-format**
 
@@ -128,11 +128,11 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets?limit=3&
   -H "x-sandbox-name: {SANDBOX_NAME}"
 ```
 
-I översikten [över](../catalog/home.md) katalogtjänsten finns detaljerade exempel på hur du kan ringa samtal till [[!DNL Catalog API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml).
+Se [Katalogtjänstöversikt](../catalog/home.md) för detaljerade exempel på hur du anropar [[!DNL Catalog API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml).
 
 **Svar**
 
-Svaret innehåller tre (`limit=3`) datauppsättningar som visar &quot;name&quot;, &quot;description&quot; och &quot;schemaRef&quot; enligt `properties` frågeparametern.
+Svaret innehåller tre (`limit=3`) dataset som visar &quot;name&quot;, &quot;description&quot; och &quot;schemaRef&quot; enligt frågeparametern `properties`.
 
 ```json
 {
@@ -169,11 +169,11 @@ Egenskapen schemaRef för en datamängd innehåller en URI som refererar till de
 
 XDM-schemat är det schema som du använder när du behöver visa en lista över alla tillgängliga fält som kan skrivas till användaren.
 
-Det första värdet för schemaRef.id i det föregående svarsobjektet (`https://ns.adobe.com/{TENANT_ID}/schemas/274f17bc5807ff307a046bab1489fb18`) är en URI som pekar på ett specifikt XDM-schema i [!DNL Schema Registry]. Schemat kan hämtas genom att en sökning (GET) görs till [!DNL Schema Registry] API:t.
+Det första värdet för schemaRef.id i det föregående svarsobjektet (`https://ns.adobe.com/{TENANT_ID}/schemas/274f17bc5807ff307a046bab1489fb18`) är en URI som pekar på ett specifikt XDM-schema i [!DNL Schema Registry]. Schemat kan hämtas genom att en sökning (GET) görs till API:t [!DNL Schema Registry].
 
 >[!NOTE]
 >
->Egenskapen &quot;schemaRef&quot; ersätter den nu inaktuella egenskapen &quot;schema&quot;. Om &quot;schemaRef&quot; saknas i datauppsättningen eller inte innehåller något värde, måste du kontrollera om det finns en &quot;schema&quot;-egenskap. Detta kan göras genom att ersätta &quot;schemaRef&quot; med &quot;schema&quot; i frågeparametern i det föregående anropet `properties` . Mer information om egenskapen &quot;schema&quot; finns i avsnittet [Schemaegenskap](#dataset-schema-property-deprecated---eol-2019-05-30) för datauppsättningen som följer.
+>Egenskapen &quot;schemaRef&quot; ersätter den nu inaktuella egenskapen &quot;schema&quot;. Om &quot;schemaRef&quot; saknas i datauppsättningen eller inte innehåller något värde, måste du kontrollera om det finns en &quot;schema&quot;-egenskap. Detta kan göras genom att ersätta &quot;schemaRef&quot; med &quot;schema&quot; i frågeparametern `properties` i det föregående anropet. Mer information om egenskapen &quot;schema&quot; finns i avsnittet [Schemaegenskap för datauppsättning](#dataset-schema-property-deprecated---eol-2019-05-30) som följer.
 
 **API-format**
 
@@ -183,7 +183,7 @@ GET /schemaregistry/tenant/schemas/{url encoded schemaRef.id}
 
 **Begäran**
 
-Begäran använder schemats URL-kodade `id` URI (värdet för attributet &quot;schemaRef.id&quot;) och kräver en Accept-rubrik.
+Begäran använder URL-kodad `id` URI för schemat (värdet för attributet &quot;schemaRef.id&quot;) och kräver en Accept-rubrik.
 
 ```shell
 curl -X GET \
@@ -195,7 +195,7 @@ curl -X GET \
   -H 'Accept: application/vnd.adobe.xed-full+json; version=1' \
 ```
 
-Svarsformatet beror på vilken typ av Acceptera-huvud som skickas i begäran. Uppslagsbegäranden måste också `version` inkluderas i huvudet Godkänn. Följande tabell visar tillgängliga Accept headers för uppslag:
+Svarsformatet beror på vilken typ av Acceptera-huvud som skickas i begäran. Uppslagsbegäranden kräver också att `version` inkluderas i huvudet Godkänn. Följande tabell visar tillgängliga Accept headers för uppslag:
 
 | Acceptera | Beskrivning |
 | ------ | ----------- |
@@ -208,17 +208,17 @@ Svarsformatet beror på vilken typ av Acceptera-huvud som skickas i begäran. Up
 
 >[!NOTE]
 >
->`application/vnd.adobe.xed-id+json` och `application/vnd.adobe.xed-full+json; version={major version}` är de vanligaste sidhuvudena. `application/vnd.adobe.xed-id+json` är att föredra när du vill visa resurser i [!DNL Schema Registry] eftersom det bara returnerar&quot;title&quot;,&quot;id&quot; och&quot;version&quot;. `application/vnd.adobe.xed-full+json; version={major version}` är att föredra när du vill visa en viss resurs (med dess &quot;id&quot;) eftersom den returnerar alla fält (kapslade under &quot;properties&quot;) samt rubriker och beskrivningar.
+>`application/vnd.adobe.xed-id+json` och  `application/vnd.adobe.xed-full+json; version={major version}` är de vanligaste sidhuvudena. `application/vnd.adobe.xed-id+json` är att föredra om du vill visa resurser i  [!DNL Schema Registry] eftersom det bara returnerar &quot;title&quot;, &quot;id&quot; och &quot;version&quot;. `application/vnd.adobe.xed-full+json; version={major version}` är att föredra när du vill visa en viss resurs (med dess &quot;id&quot;) eftersom den returnerar alla fält (kapslade under &quot;properties&quot;) samt rubriker och beskrivningar.
 
 **Svar**
 
-Det returnerade JSON-schemat beskriver strukturen och fältnivåinformationen (&quot;type&quot;, &quot;format&quot;, &quot;minimum&quot;, &quot;maximum&quot;, etc.) av data, serialiserat som JSON. Om du använder ett annat serialiseringsformat än JSON för förtäring (t.ex. Parquet eller Scala) innehåller [schemaregisterguiden](../xdm/tutorials/create-schema-api.md) en tabell som visar önskad JSON-typ (&quot;meta:xdmType&quot;) och dess motsvarande representation i andra format.
+Det returnerade JSON-schemat beskriver strukturen och fältnivåinformationen (&quot;type&quot;, &quot;format&quot;, &quot;minimum&quot;, &quot;maximum&quot;, etc.) av data, serialiserat som JSON. Om du använder ett annat serialiseringsformat än JSON för förtäring (t.ex. Parquet eller Scala) innehåller [schemaregisterhandboken](../xdm/tutorials/create-schema-api.md) en tabell som visar önskad JSON-typ (&quot;meta:xdmType&quot;) och dess motsvarande representation i andra format.
 
-Tillsammans med den här tabellen innehåller [!DNL Schema Registry] Developer Guide detaljerade exempel på alla anrop som kan göras med [!DNL Schema Registry] API.
+Tillsammans med den här tabellen innehåller Utvecklarhandboken för [!DNL Schema Registry] djupgående exempel på alla anrop som kan göras med API:t [!DNL Schema Registry].
 
 ### Datauppsättningens schemaegenskap (DEPRECATED - EOL 2019-05-30)
 
-Datauppsättningar kan innehålla en schemaegenskap som nu är föråldrad och som tillfälligt är tillgänglig för bakåtkompatibilitet. En listbegäran (GET) som liknar den som gjordes tidigare, där &quot;schema&quot; ersattes med &quot;schemaRef&quot; i `properties` frågeparametern, kan returnera följande:
+Datauppsättningar kan innehålla en schemaegenskap som nu är föråldrad och som tillfälligt är tillgänglig för bakåtkompatibilitet. En listbegäran (GET) som liknar den som gjordes tidigare, där &quot;schema&quot; ersattes med &quot;schemaRef&quot; i `properties`-frågeparametern, kan returnera följande:
 
 ```json
 {
@@ -230,7 +230,7 @@ Datauppsättningar kan innehålla en schemaegenskap som nu är föråldrad och s
 }
 ```
 
-Om schemaegenskapen för en datauppsättning fylls i signalerar detta att schemat är ett inaktuellt `/xdms` schema och, om det stöds, ska ETL-kopplingen använda värdet i schemaegenskapen med `/xdms` slutpunkten (en inaktuell slutpunkt i [[!DNL Catalog API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)) för att hämta det äldre schemat.
+Om schemaegenskapen för en datauppsättning fylls i signalerar detta att schemat är ett inaktuellt `/xdms`-schema och, om det stöds, ska ETL-kopplingen använda värdet i schemaegenskapen med `/xdms`-slutpunkten (en inaktuell slutpunkt i [[!DNL Catalog API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)) för att hämta det äldre schemat.
 
 **API-format**
 
@@ -250,19 +250,19 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/xdms/context/pers
 
 >[!NOTE]
 >
->En valfri frågeparameter, `expansion=xdm`anger att API:t ska expandera och infoga alla refererade scheman. Du kanske vill göra detta när du visar en lista över alla möjliga fält för användaren.
+>En valfri frågeparameter, `expansion=xdm`, anger att API:t ska expandera och infoga alla refererade scheman. Du kanske vill göra detta när du visar en lista över alla möjliga fält för användaren.
 
 **Svar**
 
-På samma sätt som stegen för att [visa dataschemat](#view-dataset-schema)innehåller svaret ett JSON-schema som beskriver strukturen och fältnivåinformationen för data, serialiserat som JSON.
+Ungefär som i stegen för att [visa datauppsättningsschema](#view-dataset-schema) innehåller svaret ett JSON-schema som beskriver datastrukturens och fältnivåens information, serialiserat som JSON.
 
 >[!NOTE]
 >
->När schemafältet är tomt eller helt saknas, bör kopplingen läsa fältet &quot;schemaRef&quot; och använda API:t [för](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml) schemaregister enligt föregående steg för att [visa ett datamängdsschema](#view-dataset-schema).
+>När schemafältet är tomt eller helt saknas, ska kopplingen läsa fältet &quot;schemaRef&quot; och använda API:t [Schema Registry](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml) som i föregående steg för att [visa ett datamängdsschema](#view-dataset-schema).
 
 ### Egenskapen &quot;observerableSchema&quot;
 
-Egenskapen &quot;observerableSchema&quot; för en datauppsättning har en JSON-struktur som matchar XDM-schemats JSON. &quot;observerableSchema&quot; innehåller fälten som fanns i de inkommande indatafilerna. När data skrivs till [!DNL Experience Platform]behöver en användare inte använda alla fält från målschemat. I stället bör de bara ange de fält som används.
+Egenskapen &quot;observerableSchema&quot; för en datauppsättning har en JSON-struktur som matchar XDM-schemats JSON. &quot;observerableSchema&quot; innehåller fälten som fanns i de inkommande indatafilerna. När data skrivs till [!DNL Experience Platform] behöver en användare inte använda alla fält från målschemat. I stället bör de bara ange de fält som används.
 
 Det observerbara schemat är det schema som du skulle använda om du läste data eller presenterade en lista med fält som är tillgängliga att läsa/mappa från.
 
@@ -287,15 +287,15 @@ Det observerbara schemat är det schema som du skulle använda om du läste data
 
 ### Förhandsgranska data
 
-ETL-tillämpningen kan ge möjlighet att förhandsgranska data ([&quot;figur 8&quot; i ETL-arbetsflödet](./workflow.md)). API:t för dataåtkomst innehåller flera alternativ för att förhandsgranska data.
+ETL-programmet kan ge möjlighet att förhandsgranska data ([&quot;Bild 8&quot; i ETL-arbetsflödet](./workflow.md)). API:t för dataåtkomst innehåller flera alternativ för att förhandsgranska data.
 
-Ytterligare information, inklusive stegvisa anvisningar för att förhandsgranska data med hjälp av API:t för dataåtkomst, finns i [dataåtkomstsjälvstudiekursen](../data-access/tutorials/dataset-data.md).
+Ytterligare information, inklusive stegvisa anvisningar för att förhandsgranska data med hjälp av API:t för dataåtkomst, finns i [självstudiekursen](../data-access/tutorials/dataset-data.md) för dataåtkomst.
 
 ### Hämta datauppsättningsinformation med frågeparametern &quot;properties&quot;
 
-Så som visas i stegen ovan för att [visa en lista med datauppsättningar](#view-list-of-datasets)kan du begära &quot;filer&quot; med frågeparametern &quot;properties&quot;.
+Så som visas i stegen ovan för att [visa en lista med datauppsättningar](#view-list-of-datasets) kan du begära &quot;filer&quot; med frågeparametern &quot;properties&quot;.
 
-I översikten över [katalogtjänsten](../catalog/home.md) finns detaljerad information om hur du hämtar datauppsättningar och tillgängliga svarsfilter.
+I översikten [Katalogtjänst](../catalog/home.md) finns detaljerad information om hur du frågar datauppsättningar och tillgängliga svarsfilter.
 
 **API-format**
 
@@ -393,9 +393,9 @@ Svaret inkluderar datauppsättningens fil-ID som den översta egenskapen, med fi
 
 ### Hämta filinformation
 
-De datauppsättningsfil-ID som returnerades i det föregående svaret kan användas i en GET-begäran för att hämta ytterligare filinformation via [!DNL Data Access] API:t.
+De datauppsättningsfil-ID som returnerades i det föregående svaret kan användas i en GET-begäran för att hämta ytterligare filinformation via API:t [!DNL Data Access].
 
-I [dataåtkomstöversikten](../data-access/home.md) finns information om hur du använder [!DNL Data Access] -API:t.
+I [dataåtkomstöversikten](../data-access/home.md) finns information om hur du använder API:t [!DNL Data Access].
 
 **API-format**
 
@@ -431,7 +431,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/files/ea40946ac031
 
 ### Förhandsgranska fildata
 
-Egenskapen href kan användas för att hämta förhandsvisningsdata via [[!DNL Data Access API]](../data-access/home.md).
+Egenskapen href kan användas för att hämta förhandsgranskningsdata via [[!DNL Data Access API]](../data-access/home.md).
 
 **API-format**
 
@@ -451,11 +451,11 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/files/ea40946ac031
 
 Svaret på ovanstående begäran innehåller en förhandsgranskning av filens innehåll.
 
-Mer information om [!DNL Data Access] API, inklusive detaljerade förfrågningar och svar, finns i [dataåtkomstöversikten](../data-access/home.md).
+Mer information om API:t [!DNL Data Access], inklusive detaljerade begäranden och svar, finns i [dataåtkomstöversikten](../data-access/home.md).
 
 ### Hämta fileDescription från datauppsättningen
 
-Målkomponenten är utdata av transformerade data och datateknikern väljer en utdatauppsättning ([&quot;Figur 12&quot; i ETL-arbetsflödet](workflow.md)). XDM-schemat är associerat med utdatauppsättningen. De data som ska skrivas identifieras av attributet &quot;fileDescription&quot; för datauppsättningsentiteten från API:erna för dataidentifiering. Den här informationen kan hämtas med ett datauppsättnings-ID (`{DATASET_ID}`). Egenskapen fileDescription i JSON-svaret innehåller den begärda informationen.
+Målkomponenten som utdata av omformade data väljer datateknikern en utdatauppsättning ([&quot;Figur 12&quot; i ETL-arbetsflödet](workflow.md)). XDM-schemat är associerat med utdatauppsättningen. De data som ska skrivas identifieras av attributet &quot;fileDescription&quot; för datauppsättningsentiteten från API:erna för dataidentifiering. Den här informationen kan hämtas med ett datauppsättnings-ID (`{DATASET_ID}`). Egenskapen fileDescription i JSON-svaret innehåller den begärda informationen.
 
 **API-format**
 
@@ -465,7 +465,7 @@ GET /catalog/dataSets/{DATASET_ID}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{DATASET_ID}` | Värdet `id` på den datauppsättning som du försöker få åtkomst till. |
+| `{DATASET_ID}` | `id`-värdet för den datauppsättning som du försöker komma åt. |
 
 **Begäran**
 
@@ -492,21 +492,21 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets/59c93f3d
 }
 ```
 
-Data skrivs till [!DNL Experience Platform] med API:t för [datainmatning](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml).  Att skriva data är en asynkron process. När data skrivs till Adobe Experience Platform skapas en batch som markeras som lyckad först när alla data är skrivna.
+Data skrivs till [!DNL Experience Platform] med [API för datainmatning](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml).  Att skriva data är en asynkron process. När data skrivs till Adobe Experience Platform skapas en batch som markeras som lyckad först när alla data är skrivna.
 
-Data i [!DNL Experience Platform] bör skrivas i form av parquetfiler.
+Data i [!DNL Experience Platform] ska skrivas i form av Parquet-filer.
 
 ## Körningsfas
 
-När körningen startar kommer kopplingen (enligt definitionen i källkomponenten) att läsa data från [!DNL Experience Platform] med hjälp av [[!DNL Data Access API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml). Omvandlingsprocessen läser data för ett visst tidsintervall. Internt kommer programmet att fråga batchar med källdataset. Vid sökning används en parametriserad (rullande för tidsseriedata eller inkrementella data) startdatum och listdatauppsättningsfiler för dessa grupper, och begäran om data för dessa datauppsättningsfiler börjar.
+När körningen startar kommer kopplingen (enligt definitionen i källkomponenten) att läsa data från [!DNL Experience Platform] med [[!DNL Data Access API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml). Omvandlingsprocessen läser data för ett visst tidsintervall. Internt kommer programmet att fråga batchar med källdataset. Vid sökning används en parametriserad (rullande för tidsseriedata eller inkrementella data) startdatum och listdatauppsättningsfiler för dessa grupper, och begäran om data för dessa datauppsättningsfiler börjar.
 
 ### Exempelomformningar
 
-Exemplet på [ETL-omformningsdokument](./transformations.md) innehåller ett antal exempelomformningar, inklusive identitetshantering och datatypsmappningar. Använd dessa omformningar som referens.
+[ETL-omformningarna](./transformations.md)-dokumentet innehåller ett antal exempelomformningar, inklusive identitetshantering och datatypsmappningar. Använd dessa omformningar som referens.
 
-### Läs data från [!DNL Experience Platform]
+### Läsa data från [!DNL Experience Platform]
 
-Med hjälp av [[!DNL Catalog API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)kan du hämta alla batchar mellan en angiven starttid och sluttid och sortera dem i den ordning som de skapades.
+Med [[!DNL Catalog API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) kan du hämta alla batchar mellan en angiven starttid och sluttid och sortera dem i den ordning som de skapades.
 
 **Begäran**
 
@@ -519,11 +519,11 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/batches?dataSet=D
   -H "x-sandbox-name: {SANDBOX_NAME}"
 ```
 
-Information om filtrering av grupper finns i [dataåtkomstsjälvstudiekursen](../data-access/tutorials/dataset-data.md).
+Information om filtrering av grupper finns i [självstudiekursen om dataåtkomst](../data-access/tutorials/dataset-data.md).
 
 ### Hämta filer från en grupp
 
-När du har ID:t för den grupp du söker (`{BATCH_ID}`) är det möjligt att hämta en lista över filer som tillhör en viss grupp via [[!DNL Data Access API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml).  Mer information finns i [[!DNL Data Access] självstudiekursen](../data-access/tutorials/dataset-data.md).
+När du har ID:t för gruppen som du söker efter (`{BATCH_ID}`) är det möjligt att hämta en lista över filer som tillhör en specifik grupp via [[!DNL Data Access API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml).  Information om hur du gör detta finns i [[!DNL Data Access] självstudiekursen](../data-access/tutorials/dataset-data.md).
 
 **Begäran**
 
@@ -537,7 +537,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}
 
 ### Åtkomst till filer med fil-ID
 
-Med ett unikt ID för en fil (`{FILE_ID`) [[!DNL Data Access API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) kan du använda den för att få tillgång till filens specifika information, inklusive namn, storlek i byte och en länk för att hämta den.
+Med ett unikt ID för en fil (`{FILE_ID`) kan [[!DNL Data Access API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) användas för att komma åt den specifika informationen för filen, inklusive filens namn, storlek i byte och en länk för att hämta den.
 
 **Begäran**
 
@@ -553,7 +553,7 @@ Svaret kan peka på en enskild fil eller en katalog. Mer information finns i [[!
 
 ### Åtkomst till filinnehåll
 
-Du [[!DNL Data Access API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) kan använda den för att komma åt innehållet i en viss fil. För att hämta innehållet görs en GET-förfrågan med det värde som returnerades för `_links.self.href` när en fil skulle öppnas med fil-ID:t.
+[[!DNL Data Access API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) kan användas för att komma åt innehållet i en viss fil. För att hämta innehållet görs en GET-förfrågan med det värde som returnerats för `_links.self.href` när en fil öppnas med fil-ID:t.
 
 **Begäran**
 
@@ -565,23 +565,23 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/files/{DATASET_FIL
   -H "x-api-key: {API_KEY}"
 ```
 
-Svaret på den här begäran innehåller innehållet i filen. Mer information, inklusive information om svarssidnumrering, finns i självstudiekursen [Fråga data via API](../data-access/tutorials/dataset-data.md) för dataåtkomst.
+Svaret på den här begäran innehåller innehållet i filen. Mer information, inklusive information om svarssidnumrering, finns i självstudiekursen [Fråga data via API](../data-access/tutorials/dataset-data.md).
 
 ### Validera poster för schemakompatibilitet
 
-När data skrivs kan användarna välja att validera data enligt de valideringsregler som definieras i XDM-schemat. Mer information om schemavalidering finns i [ETL-ekosystemets integreringsreferenskod på [!DNL GitHub]](https://github.com/adobe/experience-platform-etl-reference/blob/fd08dd9f74ae45b849d5482f645f859f330c1951/README.md#validation).
+När data skrivs kan användarna välja att validera data enligt de valideringsregler som definieras i XDM-schemat. Mer information om schemavalidering finns i [ETL Ecosystem Integration Reference Code på [!DNL GitHub]](https://github.com/adobe/experience-platform-etl-reference/blob/fd08dd9f74ae45b849d5482f645f859f330c1951/README.md#validation).
 
-Om du använder den referensimplementering som hittades på [[!DNL GitHub]](https://github.com/adobe/experience-platform-etl-reference/blob/fd08dd9f74ae45b849d5482f645f859f330c1951/README.md)kan du aktivera schemavalidering i den här implementeringen med hjälp av egenskapen system `-DenableSchemaValidation=true`.
+Om du använder den referensimplementering som finns på [[!DNL GitHub]](https://github.com/adobe/experience-platform-etl-reference/blob/fd08dd9f74ae45b849d5482f645f859f330c1951/README.md) kan du aktivera schemavalidering i den här implementeringen med hjälp av systemegenskapen `-DenableSchemaValidation=true`.
 
-Validering kan utföras för logiska XDM-typer, med attribut som `minLength` och `maxlength` för strängar `minimum` och `maximum` för heltal med mera. Utvecklarhandboken [för](../xdm/api/getting-started.md) schematabellens API innehåller en tabell som visar XDM-typer och de egenskaper som kan användas för validering.
+Validering kan utföras för logiska XDM-typer, med attribut som `minLength` och `maxlength` för strängar, `minimum` och `maximum` för heltal med mera. Utvecklarhandboken för [API:t för schematabeller](../xdm/api/getting-started.md) innehåller en tabell som visar XDM-typer och de egenskaper som kan användas för validering.
 
 >[!NOTE]
 >
->Minimi- och maximivärdena för olika `integer` typer är de MIN- och MAX-värden som typen kan hantera, men dessa värden kan begränsas ytterligare till de minimi- och maximivärden du väljer.
+>Minimi- och maximivärdena som anges för olika `integer`-typer är de MIN- och MAX-värden som typen kan hantera, men dessa värden kan begränsas ytterligare till de minimi- och maximumvärden som du väljer.
 
 ### Skapa en batch
 
-När data har bearbetats skriver ETL-verktyget tillbaka data till [!DNL Experience Platform] med API:t för [gruppinmatning](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml). Innan data kan läggas till i en datauppsättning måste de länkas till en batch som senare överförs till en specifik datauppsättning.
+När data har bearbetats skriver ETL-verktyget tillbaka data till [!DNL Experience Platform] med hjälp av [API:t för gruppinmatning](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml). Innan data kan läggas till i en datauppsättning måste de länkas till en batch som senare överförs till en specifik datauppsättning.
 
 **Begäran**
 
@@ -597,15 +597,15 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
       }'
 ```
 
-Information om hur du skapar en batch, inklusive exempelbegäranden och svar, finns i översikten över [](../ingestion/batch-ingestion/overview.md)gruppinmatning.
+Information om hur du skapar en batch, inklusive exempelbegäranden och svar, finns i [översikten över gruppinmatning](../ingestion/batch-ingestion/overview.md).
 
 ### Skriv till datauppsättning
 
-När en ny grupp har skapats kan filer sedan överföras till en viss datauppsättning. Flera filer kan publiceras i en grupp tills den befordras. Filer kan överföras med API:t för liten filöverföring; Om filerna är för stora och gatewaygränsen överskrids kan du använda API:t för stor filöverföring. Information om hur du använder både stor och liten filöverföring finns i översikten över [](../ingestion/batch-ingestion/overview.md)gruppinmatning.
+När en ny grupp har skapats kan filer sedan överföras till en viss datauppsättning. Flera filer kan publiceras i en grupp tills den befordras. Filer kan överföras med API:t för liten filöverföring; Om filerna är för stora och gatewaygränsen överskrids kan du använda API:t för stor filöverföring. Information om hur du använder både stor och liten filöverföring finns i [översikten över gruppinmatning](../ingestion/batch-ingestion/overview.md).
 
 **Begäran**
 
-Data i [!DNL Experience Platform] bör skrivas i form av parquetfiler.
+Data i [!DNL Experience Platform] ska skrivas i form av Parquet-filer.
 
 ```shell
 curl -X PUT "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/dataSets/{DATASET_ID}/files/{FILE_NAME}.parquet" \
@@ -619,7 +619,7 @@ curl -X PUT "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ### Markera batchöverföring slutförd
 
-När alla filer har överförts till gruppen kan gruppen signaleras för slutförande. På så sätt skapas [!DNL Catalog] &quot;DataSetFile&quot;-posterna för de slutförda filerna och kopplas till genereringsgruppen. Batchen markeras sedan som [!DNL Catalog] lyckad, vilket aktiverar efterföljande flöden för att importera tillgängliga data.
+När alla filer har överförts till gruppen kan gruppen signaleras för slutförande. På så sätt skapas [!DNL Catalog] &quot;DataSetFile&quot;-posterna för de slutförda filerna och kopplas till genereringsgruppen. [!DNL Catalog]-batchen markeras sedan som lyckad, vilket utlöser flöden längre fram i kedjan för att importera tillgängliga data.
 
 Data kommer först att landas på mellanlagringsplatsen på Adobe Experience Platform och sedan flyttas till den slutliga platsen efter katalogisering och validering. Batchar markeras som lyckade när alla data har flyttats till en permanent plats.
 
@@ -641,7 +641,7 @@ I nästa omformningskörning, troligtvis genom schema eller händelseanrop, bör
 
 ### Hämta senaste batchstatus
 
-Innan du kör nya åtgärder i ETL-verktyget måste du se till att den senaste gruppen slutfördes korrekt. Här [[!DNL Catalog Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) finns ett gruppspecifikt alternativ som innehåller information om de relevanta batcharna.
+Innan du kör nya åtgärder i ETL-verktyget måste du se till att den senaste gruppen slutfördes korrekt. [[!DNL Catalog Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) innehåller ett gruppspecifikt alternativ som innehåller information om de relevanta batcharna.
 
 **Begäran**
 
@@ -675,7 +675,7 @@ Nya aktiviteter kan schemaläggas om det tidigare värdet för batchstatus är S
 
 ### Hämta senaste batchstatus med ID
 
-Du kan hämta en enskild batchstatus genom att [[!DNL Catalog Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) skicka en GET-förfrågan med hjälp av `{BATCH_ID}`. Det `{BATCH_ID}` använda skulle vara samma som det ID som returnerades när gruppen skapades.
+Du kan hämta en enskild batchstatus via [[!DNL Catalog Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) genom att skicka en GET-begäran med `{BATCH_ID}`. Det `{BATCH_ID}` som används skulle vara samma som det ID som returnerades när gruppen skapades.
 
 **Begäran**
 
@@ -760,9 +760,9 @@ När ögonblicksbildsprofiler används måste ETL-verktyget välja den sista gru
 
 Batchrepriser och dataombearbetning kan behövas om en klient upptäcker att de data som behandlas i ETL inte har utförts som förväntat under de senaste &#39;n&#39; dagarna, eller om själva källdata inte har varit korrekta.
 
-För att göra detta använder klientens dataadministratörer [!DNL Platform] gränssnittet för att ta bort de batchar som innehåller skadade data. Därefter kommer ETL sannolikt att behöva köras igen, vilket innebär att korrekta data fylls i igen. Om själva källan innehåller skadade data måste datateknikern/administratören korrigera källbatcherna och importera data igen (antingen till Adobe Experience Platform eller via ETL-anslutningar).
+För att göra detta använder klientens dataadministratörer [!DNL Platform]-gränssnittet för att ta bort de grupper som innehåller skadade data. Därefter kommer ETL sannolikt att behöva köras igen, vilket innebär att korrekta data fylls i igen. Om själva källan innehåller skadade data måste datateknikern/administratören korrigera källbatcherna och importera data igen (antingen till Adobe Experience Platform eller via ETL-anslutningar).
 
-Beroende på vilken typ av data som genereras blir det datateknikerns val att ta bort en enda batch eller alla batchar från vissa datauppsättningar. Data tas bort/arkiveras enligt [!DNL Experience Platform] riktlinjerna.
+Beroende på vilken typ av data som genereras blir det datateknikerns val att ta bort en enda batch eller alla batchar från vissa datauppsättningar. Data tas bort/arkiveras enligt [!DNL Experience Platform]-riktlinjerna.
 
 Det är sannolikt ett scenario där ETL-funktionen för att rensa data är viktig.
 
@@ -782,7 +782,7 @@ För källbatchar är den beroende av klientinställningar och kundbegränsning.
 
 Uppskov är en process där indata ännu inte är tillräckligt fullständiga för att skickas ut till processer längre fram i kedjan, men kan användas i framtiden. Kunderna bestämmer sin individuella tolerans för datarutor för framtida matchning jämfört med kostnaden för bearbetning för att kunna fatta beslut om att ta bort data och bearbeta dem på nytt i nästa omformningskörning, i hopp om att de kan berikas och sys.k. sys.k. vid någon framtida tidpunkt i kvarhållningsfönstret. Denna cykel pågår tills raden behandlas tillräckligt eller den anses vara för gammal för att fortsätta investera. Varje iteration genererar fördröjda data som är en överordnad mängd av alla fördröjda data i tidigare iterationer.
 
-Adobe Experience Platform identifierar för närvarande inte fördröjda data, så klientimplementeringar måste förlita sig på manuella konfigurationer för ETL och datauppsättning för att skapa en annan datauppsättning som [!DNL Platform] speglar källdatauppsättningen som kan användas för att behålla fördröjda data. I det här fallet liknar fördröjda data ögonblicksbildsdata. Vid varje körning av ETL-omvandlingen kommer källdata att förenas med fördröjda data och skickas för behandling.
+Adobe Experience Platform identifierar för närvarande inte fördröjda data, så klientimplementeringar måste förlita sig på manuella konfigurationer för ETL och datauppsättning för att skapa en annan datauppsättning i [!DNL Platform] som speglar källdatauppsättningen som kan användas för att behålla fördröjda data. I det här fallet liknar fördröjda data ögonblicksbildsdata. Vid varje körning av ETL-omvandlingen kommer källdata att förenas med fördröjda data och skickas för behandling.
 
 ## Changelog
 
@@ -790,5 +790,5 @@ Adobe Experience Platform identifierar för närvarande inte fördröjda data, s
 | ---- | ------ | ----------- |
 | 2019-01-19 | Borttagen fältegenskap från datauppsättningar | Datauppsättningar innehöll tidigare en fältegenskap som innehöll en kopia av schemat. Den här funktionen bör inte längre användas. Om egenskapen &quot;fields&quot; hittas bör den ignoreras och &quot;observeradSchema&quot; eller &quot;schemaRef&quot; används i stället. |
 | 2019-03-15 | Egenskapen &quot;schemaRef&quot; har lagts till i datamängder | Egenskapen schemaRef för en datauppsättning innehåller en URI som refererar till det XDM-schema som datauppsättningen baseras på och representerar alla möjliga fält som kan användas av datauppsättningen. |
-| 2019-03-15 | Alla slutanvändaridentifierare mappas till egenskapen identityMap | &quot;identityMap&quot; är en inkapsling av alla unika identifierare för ett ämne, till exempel CRM-ID, ECID eller program-ID för lojalitet. Kartan används av för [[!DNL Identity Service]](../identity-service/home.md) att matcha alla kända och anonyma identiteter för ett motiv och bilda ett enda identitetsdiagram för varje slutanvändare. |
-| 2019-05-30 | EOL och Ta bort schemaegenskap från datauppsättningar | Schemaegenskapen för datauppsättningen tillhandahöll en referenslänk till schemat med den inaktuella `/xdms` slutpunkten i [!DNL Catalog] API:t. Detta har ersatts av en &quot;schemaRef&quot; som innehåller &quot;id&quot;, &quot;version&quot; och &quot;contentType&quot; för schemat enligt den nya [!DNL Schema Registry] API:n. |
+| 2019-03-15 | Alla slutanvändaridentifierare mappas till egenskapen identityMap | &quot;identityMap&quot; är en inkapsling av alla unika identifierare för ett ämne, till exempel CRM-ID, ECID eller program-ID för lojalitet. Kartan används av [[!DNL Identity Service]](../identity-service/home.md) för att matcha alla kända och anonyma identiteter för ett ämne och bilda ett enda identitetsdiagram för varje slutanvändare. |
+| 2019-05-30 | EOL och Ta bort schemaegenskap från datauppsättningar | Datamängdens schemaegenskap tillhandahöll en referenslänk till schemat med hjälp av den inaktuella `/xdms`-slutpunkten i [!DNL Catalog]-API:t. Detta har ersatts av en &quot;schemaRef&quot; som innehåller &quot;id&quot;, &quot;version&quot; och &quot;contentType&quot; för schemat enligt den nya [!DNL Schema Registry]-API:n. |
