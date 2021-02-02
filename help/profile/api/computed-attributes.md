@@ -1,11 +1,13 @@
 ---
-keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API
-title: Beräknade attribut - Kundprofils-API i realtid
+keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API
+title: API-slutpunkt för beräknade attribut
 topic: guide
+type: Documentation
+description: 'Med beräknade attribut kan du automatiskt beräkna fältvärden baserat på andra värden, beräkningar och uttryck. Beräknade attribut fungerar på kundprofildata i realtid, vilket innebär att du kan samla värden för alla poster och händelser som lagras i Adobe Experience Platform. '
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: e6ecc5dac1d09c7906aa7c7e01139aa194ed662b
 workflow-type: tm+mt
-source-wordcount: '2366'
+source-wordcount: '2413'
 ht-degree: 0%
 
 ---
@@ -21,17 +23,17 @@ Med beräknade attribut kan du automatiskt beräkna fältvärden baserat på and
 
 Varje beräknat attribut innehåller ett uttryck, eller &quot;rule&quot;, som utvärderar inkommande data och lagrar resultatvärdet i ett profilattribut eller i en händelse. Med hjälp av dessa beräkningar kan du enkelt besvara frågor som rör inköpstid, tid mellan köp eller antal programöppningar, utan att behöva utföra komplexa beräkningar manuellt varje gång informationen behövs.
 
-Den här guiden hjälper dig att bättre förstå beräknade attribut i Adobe Experience Platform och innehåller exempel på API-anrop för att utföra grundläggande CRUD-åtgärder med `/config/computedAttributes` slutpunkten.
+Den här guiden hjälper dig att förstå beräknade attribut bättre i Adobe Experience Platform och innehåller exempel på API-anrop för att utföra grundläggande CRUD-åtgärder med `/config/computedAttributes`-slutpunkten.
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden ingår i [kundprofils-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)i realtid. Innan du fortsätter bör du läsa [Komma igång-guiden](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API i det här dokumentet samt viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform] -API.
+API-slutpunkten som används i den här guiden ingår i [Kundprofils-API:t för realtid](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform]-API.
 
 ## Förstå beräknade attribut
 
 Med Adobe Experience Platform kan du enkelt importera och sammanfoga data från flera källor för att generera [!DNL Real-time Customer Profiles]. Varje profil innehåller viktig information om en individ, t.ex. kontaktinformation, inställningar och inköpshistorik, vilket ger en helhetsbild av kunden.
 
-En del av den information som samlas in i profilen är lätt att förstå när datafälten läses direkt (t.ex.&quot;förnamn&quot;) medan andra data kräver att man utför flera beräkningar eller använder andra fält och värden för att kunna generera informationen (t.ex.&quot;köpsumma för livstid&quot;). Om du vill göra dessa data lättare att förstå snabbt kan du [!DNL Platform] skapa beräknade attribut som automatiskt utför dessa referenser och beräkningar och returnerar värdet i rätt fält.
+En del av den information som samlas in i profilen är lätt att förstå när datafälten läses direkt (t.ex.&quot;förnamn&quot;) medan andra data kräver att man utför flera beräkningar eller använder andra fält och värden för att kunna generera informationen (t.ex.&quot;köpsumma för livstid&quot;). Om du vill göra dessa data lättare att förstå snabbt kan du med [!DNL Platform] skapa beräknade attribut som automatiskt utför dessa referenser och beräkningar och returnera värdet i rätt fält.
 
 Beräknade attribut inkluderar att skapa ett uttryck, eller &quot;rule&quot;, som fungerar på inkommande data och lagrar resultatvärdet i ett profilattribut eller en händelse. Uttryck kan definieras på flera olika sätt, så att du kan ange att en regel endast utvärderar inkommande händelser, inkommande händelse- och profildata eller inkommande händelse, profildata och historiska händelser.
 
@@ -40,7 +42,7 @@ Beräknade attribut inkluderar att skapa ett uttryck, eller &quot;rule&quot;, so
 Användningsexempel för beräknade attribut kan omfatta allt från enkla beräkningar till mycket komplexa referenser. Här följer några exempel på hur du kan använda beräknade attribut:
 
 1. **[!UICONTROL Percentages]:** Ett enkelt beräknat attribut kan inkludera att ta två numeriska fält på en post och dela dem för att skapa en procentsats. Du kan t.ex. ta det totala antalet e-postmeddelanden som skickas till en individ och dividera det med antalet e-postmeddelanden personen öppnar. Om du tittar på det resulterande attributfältet visar det snabbt hur många procent av det totala antalet e-postmeddelanden som öppnats av den enskilda personen.
-1. **[!UICONTROL Application use]:** Ett annat exempel är möjligheten att samla det antal gånger en användare öppnar ditt program. Genom att spåra det totala antalet öppna applikationer, baserat på enskilda öppna händelser, kan ni leverera specialerbjudanden eller meddelanden till användarna på deras 100:e öppna sida, vilket främjar ett djupare engagemang i ert varumärke.
+1. **[!UICONTROL Application use]:** Ett annat exempel inkluderar möjligheten att samla det antal gånger en användare öppnar ditt program. Genom att spåra det totala antalet öppna applikationer, baserat på enskilda öppna händelser, kan ni leverera specialerbjudanden eller meddelanden till användarna på deras 100:e öppna sida, vilket främjar ett djupare engagemang i ert varumärke.
 1. **[!UICONTROL Lifetime values]:** Det kan vara svårt att samla in löpande summor, t.ex. ett livstidsvärde för en kund. Detta kräver att historiksumman uppdateras varje gång en ny köphändelse inträffar. Med ett beräknat attribut kan ni göra detta mycket enklare genom att behålla livstidsvärdet i ett enda fält som uppdateras automatiskt efter varje lyckad köphändelse som gäller kunden.
 
 ## Konfigurera ett beräknat attribut
@@ -49,27 +51,27 @@ För att kunna konfigurera ett beräknat attribut måste du först identifiera f
 
 >[!NOTE]
 >
->Beräknade attribut kan inte läggas till i fält i Adobe-definierade blandningar. Fältet måste finnas i `tenant` namnutrymmet, vilket innebär att det måste vara ett fält som du definierar och lägger till i ett schema.
+>Beräknade attribut kan inte läggas till i fält i Adobe-definierade blandningar. Fältet måste finnas i namnutrymmet `tenant`, vilket innebär att det måste vara ett fält som du definierar och lägger till i ett schema.
 
-För att kunna definiera ett beräknat attributfält måste schemat aktiveras för [!DNL Profile] och visas som en del av det unionsschema för klassen som schemat baseras på. Mer information om [!DNL Profile]aktiverade scheman och fackföreningar finns i avsnittet om att [!DNL Schema Registry] aktivera ett schema för profiler och visa fackscheman [](../../xdm/api/getting-started.md)i utvecklarhandboken. Vi rekommenderar även att du läser [avsnittet om fackföreningar](../../xdm/schema/composition.md) i dokumentationen för schemakomposition.
+För att kunna definiera ett beräknat attributfält måste schemat vara aktiverat för [!DNL Profile] och visas som en del av unionsschemat för den klass som schemat baseras på. Mer information om [!DNL Profile]-aktiverade scheman och fackföreningar finns i [!DNL Schema Registry]-utvecklarguiden på [som aktiverar ett schema för profil och visning av fackscheman](../../xdm/api/getting-started.md). Vi rekommenderar även att du läser avsnittet [om föreningar](../../xdm/schema/composition.md) i dokumentationen för schemakomposition.
 
-Arbetsflödet i den här självstudien använder ett [!DNL Profile]aktiverat schema och följer stegen för att definiera en ny blandning som innehåller det beräknade attributfältet och säkerställa att det är rätt namnutrymme. Om du redan har ett fält i rätt namnutrymme i ett profilaktiverat schema kan du fortsätta direkt till steget för att [skapa ett beräknat attribut](#create-a-computed-attribute).
+Arbetsflödet i den här självstudien använder ett [!DNL Profile]-aktiverat schema och följer stegen för att definiera en ny blandning som innehåller det beräknade attributfältet och säkerställa att det är rätt namnutrymme. Om du redan har ett fält i rätt namnutrymme i ett profilaktiverat schema kan du fortsätta direkt till steget för [att skapa ett beräknat attribut](#create-a-computed-attribute).
 
 ### Visa ett schema
 
-Stegen som följer använder Adobe Experience Platform användargränssnitt för att hitta ett schema, lägga till en blandning och definiera ett fält. Om du föredrar att använda [!DNL Schema Registry] API:t läser du i utvecklarhandboken [för](../../xdm/api/getting-started.md) schemaregister om hur du skapar en blandning, lägger till en blandning i ett schema och aktiverar ett schema för användning med [!DNL Real-time Customer Profile].
+Stegen som följer använder Adobe Experience Platform användargränssnitt för att hitta ett schema, lägga till en blandning och definiera ett fält. Om du föredrar att använda API:t [!DNL Schema Registry] kan du läsa [Utvecklarhandbok för schemaregister](../../xdm/api/getting-started.md) för steg om hur du skapar en blandning, lägger till en blandning i ett schema och aktiverar ett schema för användning med [!DNL Real-time Customer Profile].
 
-I användargränssnittet klickar du **[!UICONTROL Schemas]** i den vänstra listen och använder sökfältet på **[!UICONTROL Browse]** fliken för att snabbt hitta det schema som du vill uppdatera.
+I användargränssnittet klickar du på **[!UICONTROL Schemas]** i den vänstra listen och använder sökfältet på fliken **[!UICONTROL Browse]** för att snabbt hitta det schema som du vill uppdatera.
 
 ![](../images/computed-attributes/Schemas-Browse.png)
 
-När du har hittat schemat klickar du på dess namn för att öppna det [!DNL Schema Editor] där du kan redigera schemat.
+När du har hittat schemat klickar du på dess namn för att öppna [!DNL Schema Editor] där du kan redigera schemat.
 
 ![](../images/computed-attributes/Schema-Editor.png)
 
 ### Skapa en blandning
 
-Om du vill skapa en ny blandning klickar du på **[!UICONTROL Add]** bredvid **[!UICONTROL Mixins]** i **[!UICONTROL Composition]** avsnittet till vänster i redigeraren. Då öppnas en dialogruta där du kan se de befintliga blandningarna. **[!UICONTROL Add mixin]** Klicka på alternativknappen för **[!UICONTROL Create new mixin]** att definiera din nya blandning.
+Om du vill skapa en ny blandning klickar du på **[!UICONTROL Add]** bredvid **[!UICONTROL Mixins]** i **[!UICONTROL Composition]**-avsnittet till vänster i redigeraren. Dialogrutan **[!UICONTROL Add mixin]** öppnas där du kan se befintliga mixar. Klicka på alternativknappen för **[!UICONTROL Create new mixin]** för att definiera din nya blandning.
 
 Ge blandningen ett namn och en beskrivning och klicka på **[!UICONTROL Add mixin]** när du är klar.
 
@@ -77,43 +79,43 @@ Ge blandningen ett namn och en beskrivning och klicka på **[!UICONTROL Add mixi
 
 ### Lägg till ett beräknat attributfält i schemat
 
-Din nya blandning ska nu visas i avsnittet &quot;[!UICONTROL Mixins]&quot; under &quot;[!UICONTROL Composition]&quot;. Klicka på namnet på mixen så visas flera **[!UICONTROL Add field]** knappar i redigerarens **[!UICONTROL Structure]** avsnitt.
+Din nya blandning ska nu visas i avsnittet [!UICONTROL Mixins] under [!UICONTROL Composition]. Klicka på namnet på mixen och flera **[!UICONTROL Add field]**-knappar visas i **[!UICONTROL Structure]**-delen av redigeraren.
 
-Välj **[!UICONTROL Add field]** bredvid schemats namn för att lägga till ett fält på den översta nivån, eller välj att lägga till fältet var som helst i det schema du föredrar.
+Välj **[!UICONTROL Add field]** bredvid schemats namn om du vill lägga till ett fält på den översta nivån. Du kan också välja att lägga till fältet var som helst i det schema du vill.
 
-När du klickat på **[!UICONTROL Add field]** ett nytt objekt öppnas ett namn med ditt klientorganisations-ID som visar att fältet finns i rätt namnutrymme. I det objektet **[!UICONTROL New field]** visas en bild. Detta gäller fältet där du definierar det beräknade attributet.
+När du har klickat på **[!UICONTROL Add field]** öppnas ett nytt objekt med namnet för ditt klient-ID, som visar att fältet finns i rätt namnutrymme. Inom det objektet visas ett **[!UICONTROL New field]**-värde. Detta gäller fältet där du definierar det beräknade attributet.
 
 ![](../images/computed-attributes/New-field.png)
 
 ### Konfigurera fältet
 
-Ange den information som behövs för det nya fältet, inklusive namn, visningsnamn och typ, med hjälp av avsnittet till höger om redigeraren. **[!UICONTROL Field properties]**
+Använd avsnittet **[!UICONTROL Field properties]** till höger om redigeraren för att ange den information som behövs för det nya fältet, inklusive namn, visningsnamn och typ.
 
 >[!NOTE]
 >
 >Fälttypen måste vara av samma typ som det beräknade attributvärdet. Om det beräknade attributvärdet till exempel är en sträng måste fältet som definieras i schemat vara en sträng.
 
-När du är klar klickar du **[!UICONTROL Apply]** och fältets namn och typ visas i redigerarens **[!UICONTROL Structure]** avsnitt.
+När du är klar klickar du på **[!UICONTROL Apply]** och fältets namn och typ visas i **[!UICONTROL Structure]**-delen av redigeraren.
 
 ![](../images/computed-attributes/Apply.png)
 
 ### Aktivera schema för [!DNL Profile]
 
-Innan du fortsätter kontrollerar du att schemat har aktiverats för [!DNL Profile]. Klicka på schemanamnet i **[!UICONTROL Structure]** delen av redigeraren så att **[!UICONTROL Schema Properties]** fliken visas. Om **[!UICONTROL Profile]** skjutreglaget är blått har schemat aktiverats för [!DNL Profile].
+Kontrollera att schemat har aktiverats för [!DNL Profile] innan du fortsätter. Klicka på schemanamnet i avsnittet **[!UICONTROL Structure]** i redigeraren så att fliken **[!UICONTROL Schema Properties]** visas. Om skjutreglaget **[!UICONTROL Profile]** är blått har schemat aktiverats för [!DNL Profile].
 
 >[!NOTE]
 >
->Det [!DNL Profile] går inte att ångra aktiveringen av ett schema, så om du klickar på skjutreglaget när det har aktiverats behöver du inte riskera att det inaktiveras.
+>Det går inte att ångra aktiveringen av ett schema för [!DNL Profile], så om du klickar på skjutreglaget när det har aktiverats behöver du inte riskera att det inaktiveras.
 
 ![](../images/computed-attributes/Profile.png)
 
-Nu kan du klicka **[!UICONTROL Save]** för att spara det uppdaterade schemat och fortsätta med resten av självstudiekursen med API:t.
+Nu kan du klicka på **[!UICONTROL Save]** för att spara det uppdaterade schemat och fortsätta med resten av självstudiekursen med API:t.
 
 ### Skapa ett beräknat attribut {#create-a-computed-attribute}
 
-När ditt beräknade attributfält har identifierats och du har bekräftat att schemat är aktiverat för [!DNL Profile]kan du nu konfigurera ett beräknat attribut.
+När ditt beräknade attributfält har identifierats och du har bekräftat att schemat är aktiverat för [!DNL Profile] kan du nu konfigurera ett beräknat attribut.
 
-Börja med att göra en begäran om POST till `/config/computedAttributes` slutpunkten med en begärandetext som innehåller information om det beräknade attribut som du vill skapa.
+Börja med att göra en begäran om POST till `/config/computedAttributes`-slutpunkten med en begärandebrödtext som innehåller information om det beräknade attribut som du vill skapa.
 
 **API-format**
 
@@ -151,10 +153,10 @@ curl -X POST \
 | Egenskap | Beskrivning |
 |---|---|
 | `name` | Namnet på det beräknade attributfältet, som en sträng. |
-| `path` | Sökvägen till fältet som innehåller det beräknade attributet. Sökvägen finns i schemats attribut och ska INTE innehålla fältnamnet i sökvägen. Sökvägen är `properties` tom. När du skriver banan utelämnar du de olika attributnivåerna `properties` . |
-| `{TENANT_ID}` | Om du inte känner till ditt klientorganisations-ID kan du läsa stegen för att hitta ditt klientorganisations-ID i [utvecklarhandboken](../../xdm/api/getting-started.md#know-your-tenant_id)för schemaregister. |
+| `path` | Sökvägen till fältet som innehåller det beräknade attributet. Sökvägen finns i attributet `properties` för schemat och ska INTE innehålla fältnamnet i sökvägen. När du skriver sökvägen utelämnar du de olika nivåerna för `properties`-attribut. |
+| `{TENANT_ID}` | Om du inte känner till ditt klient-ID läser du stegen för att hitta ditt klient-ID i [Utvecklarhandbok för schemaregister](../../xdm/api/getting-started.md#know-your-tenant_id). |
 | `description` | En beskrivning av det beräknade attributet. Detta är särskilt användbart när flera beräknade attribut har definierats, eftersom det kommer att hjälpa andra inom IMS-organisationen att fastställa rätt beräknat attribut att använda. |
-| `expression.value` | Ett giltigt [!DNL Profile Query Language] PQL-uttryck. Mer information om PQL och länkar till frågor som stöds finns i [PQL-översikten](../../segmentation/pql/overview.md). |
+| `expression.value` | Ett giltigt [!DNL Profile Query Language]-uttryck (PQL). Mer information om PQL och länkar till frågor som stöds finns i [PQL overview](../../segmentation/pql/overview.md). |
 | `schema.name` | Den klass som schemat som innehåller det beräknade attributfältet baseras på. Exempel: `_xdm.context.experienceevent` för ett schema baserat på klassen XDM ExperienceEvent. |
 
 **Svar**
@@ -209,8 +211,8 @@ Ett beräknat attribut som skapats returnerar HTTP-status 200 (OK) och en svarst
 |---|---|
 | `id` | Ett unikt, skrivskyddat, systemgenererat ID som kan användas för att referera till det beräknade attributet under andra API-åtgärder. |
 | `imsOrgId` | IMS-organisationen som är relaterad till det beräknade attributet ska matcha värdet som skickades i begäran. |
-| `sandbox` | Sandlådeobjektet innehåller information om den sandlåda som det beräknade attributet konfigurerades i. Den här informationen hämtas från sandlådehuvudet som skickas i begäran. Mer information finns i Översikt över [sandlådor](../../sandboxes/home.md). |
-| `positionPath` | En array som innehåller det dekonstruerade fältet `path` som skickades i begäran. |
+| `sandbox` | Sandlådeobjektet innehåller information om den sandlåda som det beräknade attributet konfigurerades i. Den här informationen hämtas från sandlådehuvudet som skickas i begäran. Mer information finns i [översikten över sandlådor](../../sandboxes/home.md). |
+| `positionPath` | En array som innehåller det dekonstruerade `path` till fältet som skickades i begäran. |
 | `returnSchema.meta:xdmType` | Den typ av fält där det beräknade attributet ska lagras. |
 | `definedOn` | En array som visar de föreningsscheman som det beräknade attributet har definierats på. Innehåller ett objekt per union-schema, vilket innebär att det kan finnas flera objekt i arrayen om det beräknade attributet har lagts till i flera scheman baserade på olika klasser. |
 | `active` | Ett booleskt värde som visar om det beräknade attributet är aktivt eller inte. Som standard är värdet `true`. |
@@ -220,13 +222,13 @@ Ett beräknat attribut som skapats returnerar HTTP-status 200 (OK) och en svarst
 
 ## Få åtkomst till beräknade attribut
 
-När du arbetar med beräknade attribut med API:t finns det två alternativ för att komma åt beräknade attribut som har definierats av din organisation. Det första är att lista alla beräknade attribut, det andra är att visa ett specifikt beräknat attribut utifrån dess unika `id`.
+När du arbetar med beräknade attribut med API:t finns det två alternativ för att komma åt beräknade attribut som har definierats av din organisation. Det första är att lista alla beräknade attribut, det andra är att visa ett specifikt beräknat attribut med dess unika `id`.
 
 Steg för att både visa alla beräknade attribut och visa ett specifikt beräknat attribut beskrivs i följande avsnitt.
 
 ### Visa beräknade attribut {#list-computed-attributes}
 
-IMS-organisationen kan skapa flera beräknade attribut, och om du gör en GET-förfrågan till `/config/computedAttributes` slutpunkten kan du visa alla befintliga beräknade attribut för din organisation.
+IMS-organisationen kan skapa flera beräknade attribut, och om du utför en GET-begäran till `/config/computedAttributes`-slutpunkten kan du visa alla befintliga beräknade attribut för din organisation.
 
 **API-format**
 
@@ -247,9 +249,9 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar innehåller ett `_page` attribut som anger det totala antalet beräknade attribut (`totalCount`) och antalet beräknade attribut på sidan (`pageSize`).
+Ett svar innehåller ett `_page`-attribut som anger det totala antalet beräknade attribut (`totalCount`) och antalet beräknade attribut på sidan (`pageSize`).
 
-Svaret innehåller också en `children` array som består av ett eller flera objekt, där vart och ett innehåller detaljerna för ett beräknat attribut. Om din organisation inte har några beräknade attribut, kommer `totalCount` och `pageSize` att vara 0 (noll) och arrayen kommer att vara tom `children` .
+Svaret innehåller också en `children`-array som består av ett eller flera objekt, där var och en innehåller information om ett beräknat attribut. Om din organisation inte har några beräknade attribut kommer `totalCount` och `pageSize` att vara 0 (noll) och `children`-arrayen att vara tom.
 
 ```json
 {
@@ -357,14 +359,14 @@ Svaret innehåller också en `children` array som består av ett eller flera obj
 | Egenskap | Beskrivning |
 |---|---|
 | `_page.totalCount` | Det totala antalet beräknade attribut som definieras av IMS-organisationen. |
-| `_page.pageSize` | Antalet beräknade attribut som returneras på den här resultatsidan. Om `pageSize` är lika med `totalCount`betyder det att det bara finns en resultatsida och att alla beräknade attribut har returnerats. Om de inte är lika finns det ytterligare resultatsidor som du kan komma åt. Mer information finns `_links.next` i. |
-| `children` | En array som består av ett eller flera objekt, där vart och ett innehåller detaljerna för ett enskilt beräknat attribut. Om inga beräknade attribut har definierats är `children` arrayen tom. |
-| `id` | Ett unikt, skrivskyddat, systemgenererat värde som automatiskt tilldelas ett beräknat attribut när det skapas. Mer information om komponenterna i ett beräknat attributobjekt finns i avsnittet om att [skapa ett beräknat attribut](#create-a-computed-attribute) tidigare i den här självstudiekursen. |
-| `_links.next` | Om en enda sida med beräknade attribut returneras `_links.next` är ett tomt objekt, vilket visas i exempelsvaret ovan. Om din organisation har många beräknade attribut returneras de på flera sidor som du kan få åtkomst till genom att göra en GET-förfrågan till `_links.next` värdet. |
+| `_page.pageSize` | Antalet beräknade attribut som returneras på den här resultatsidan. Om `pageSize` är lika med `totalCount` betyder det att det bara finns en resultatsida och att alla beräknade attribut har returnerats. Om de inte är lika finns det ytterligare resultatsidor som du kan komma åt. Mer information finns i `_links.next`. |
+| `children` | En array som består av ett eller flera objekt, där vart och ett innehåller detaljerna för ett enskilt beräknat attribut. Om inga beräknade attribut har definierats är `children`-arrayen tom. |
+| `id` | Ett unikt, skrivskyddat, systemgenererat värde som automatiskt tilldelas ett beräknat attribut när det skapas. Mer information om komponenterna i ett beräknat attributobjekt finns i avsnittet [skapa ett beräknat attribut](#create-a-computed-attribute) tidigare i den här självstudiekursen. |
+| `_links.next` | Om en enda sida med beräknade attribut returneras är `_links.next` ett tomt objekt, vilket visas i exempelsvaret ovan. Om din organisation har många beräknade attribut returneras de på flera sidor som du kan komma åt genom att göra en GET-begäran till `_links.next`-värdet. |
 
 ### Visa ett beräknat attribut {#view-a-computed-attribute}
 
-Du kan också visa ett specifikt beräknat attribut genom att göra en GET-begäran till `/config/computedAttributes` slutpunkten och inkludera det beräknade attribut-ID:t i sökvägen för begäran.
+Du kan också visa ett specifikt beräknat attribut genom att göra en GET-begäran till `/config/computedAttributes`-slutpunkten och inkludera det beräknade attribut-ID:t i begärandesökvägen.
 
 **API-format**
 
@@ -435,7 +437,7 @@ curl -X GET \
 
 ## Uppdatera ett beräknat attribut
 
-Om du upptäcker att du behöver uppdatera ett befintligt beräknat attribut kan du göra det genom att göra en PATCH-begäran till `/config/computedAttributes` slutpunkten och inkludera ID:t för det beräknade attribut som du vill uppdatera i sökvägen till begäran.
+Om du upptäcker att du behöver uppdatera ett befintligt beräknat attribut kan du göra det genom att göra en PATCH-begäran till `/config/computedAttributes`-slutpunkten och inkludera ID:t för det beräknade attribut som du vill uppdatera i sökvägen till begäran.
 
 **API-format**
 
@@ -449,7 +451,7 @@ PATCH /config/computedAttributes/{ATTRIBUTE_ID}
 
 **Begäran**
 
-Denna begäran använder [JSON Patch-formatering](http://jsonpatch.com/) för att uppdatera &quot;värdet&quot; i &quot;expression&quot;-fältet.
+I den här begäran används [JSON Patch-formatering](http://jsonpatch.com/) för att uppdatera värdet i uttrycksfältet.
 
 ```shell
 curl -X PATCH \
@@ -475,7 +477,7 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 |---|---|
-| `{NEW_EXPRESSION_VALUE}` | Ett giltigt [!DNL Profile Query Language] PQL-uttryck. Mer information om PQL och länkar till frågor som stöds finns i [PQL-översikten](../../segmentation/pql/overview.md). |
+| `{NEW_EXPRESSION_VALUE}` | Ett giltigt [!DNL Profile Query Language]-uttryck (PQL). Mer information om PQL och länkar till frågor som stöds finns i [PQL overview](../../segmentation/pql/overview.md). |
 
 **Svar**
 
@@ -483,7 +485,7 @@ En lyckad uppdatering returnerar HTTP-status 204 (inget innehåll) och en tom sv
 
 ## Ta bort ett beräknat attribut
 
-Det går också att ta bort ett beräknat attribut med API:t. Detta gör du genom att göra en DELETE-begäran till `/config/computedAttributes` slutpunkten och inkludera ID:t för det beräknade attributet som du vill ta bort i sökvägen för begäran.
+Det går också att ta bort ett beräknat attribut med API:t. Detta gör du genom att göra en DELETE-begäran till `/config/computedAttributes`-slutpunkten och inkludera ID:t för det beräknade attributet som du vill ta bort i begärandesökvägen.
 
 >[!NOTE]
 >
