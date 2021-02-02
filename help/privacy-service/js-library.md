@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Översikt över JavaScript-biblioteket Adobe Privacy
 topic: overview
+description: Med Adobe Privacy JavaScript Library kan du hämta registrerade identiteter för användning i Privacy Service.
 translation-type: tm+mt
-source-git-commit: 6d706b33573e88b2f1ea9d386928dcfdb089a9c5
+source-git-commit: 5dad1fcc82707f6ee1bf75af6c10d34ff78ac311
 workflow-type: tm+mt
-source-wordcount: '922'
+source-wordcount: '944'
 ht-degree: 4%
 
 ---
@@ -14,36 +15,36 @@ ht-degree: 4%
 
 # Översikt över JavaScript-biblioteket Adobe Privacy
 
-Som personuppgiftsbiträde behandlar Adobe personuppgifter i enlighet med ditt företags tillstånd och instruktioner. Som personuppgiftsansvarig bestämmer du vilka personuppgifter Adobe behandlar och lagrar för din räkning. Beroende på vilken information du väljer att skicka via Adobe Experience Cloud lösningar kan Adobe lagra privat information som är tillämplig på sekretessbestämmelser som [!DNL General Data Protection Regulation] (GDPR) och [!DNL California Consumer Privacy Act] (CCPA). Mer information om hur Experience Cloud lösningar samlar in privata data finns i dokumentet om [sekretess i Adobe Experience Cloud](https://www.adobe.com/privacy/marketing-cloud.html) .
+Som personuppgiftsbiträde behandlar Adobe personuppgifter i enlighet med ditt företags tillstånd och instruktioner. Som personuppgiftsansvarig bestämmer du vilka personuppgifter Adobe behandlar och lagrar för din räkning. Beroende på vilken information du väljer att skicka via Adobe Experience Cloud-lösningar kan Adobe lagra privat information som är tillämplig på sekretessregler som t.ex. [!DNL General Data Protection Regulation] (GDPR) och [!DNL California Consumer Privacy Act] (CCPA). Mer information om hur Experience Cloud lösningar samlar in privata data finns i dokumentet om [sekretess i Adobe Experience Cloud](https://www.adobe.com/privacy/marketing-cloud.html).
 
-Med **Adobe Privacy JavaScript Library** kan personuppgiftsansvariga automatisera hämtningen av alla registrerade identiteter som genererats av [!DNL Experience Cloud] lösningar för en viss domän. Med hjälp av API:t från [Adobe Experience Platform Privacy Service](home.md)kan dessa identiteter sedan användas för att skapa åtkomst- och borttagningsförfrågningar för privata data som tillhör de registrerade.
+Med **Adobe Privacy JavaScript Library** kan personuppgiftsansvariga automatisera hämtningen av alla registrerade identiteter som genererats av [!DNL Experience Cloud]-lösningar för en specifik domän. Med hjälp av API:t från [Adobe Experience Platform Privacy Service](home.md) kan dessa identiteter sedan användas för att skapa åtkomst- och borttagningsbegäranden för privata data som tillhör de registrerade.
 
 >[!NOTE]
 >
->Vanligtvis behöver den bara installeras på sekretessrelaterade sidor och behöver inte installeras på alla sidor på en webbplats eller en domän. [!DNL Privacy JS Library]
+>[!DNL Privacy JS Library] behöver vanligtvis bara installeras på sekretessrelaterade sidor och behöver inte installeras på alla sidor på en webbplats eller en domän.
 
 ## Funktioner
 
-I [!DNL Privacy JS Library] finns flera funktioner för att hantera identiteter i [!DNL Privacy Service]. Dessa funktioner kan bara användas för att hantera identiteter som lagras i webbläsaren för en viss besökare. De kan inte användas för att skicka in information direkt till [!DNL Experience Cloud Central Service] .
+[!DNL Privacy JS Library] innehåller flera funktioner för att hantera identiteter i [!DNL Privacy Service]. Dessa funktioner kan bara användas för att hantera identiteter som lagras i webbläsaren för en viss besökare. De kan inte användas för att skicka information direkt till [!DNL Experience Cloud Central Service].
 
 Följande tabell visar de olika funktionerna i biblioteket:
 
 |  -funktion | Beskrivning |
 | --- | --- |
-| `retrieveIdentities` | Returnerar en array med matchande identiteter (`validIds`) som hämtades från [!DNL Privacy Service]samt en array med identiteter som inte hittades (`failedIds`). |
-| `removeIdentities` | Tar bort varje matchande (giltig) identitet från webbläsaren. Returnerar en array med matchande identiteter (`validIds`), där varje identitet innehåller ett `isDeletedClientSide` booleskt värde som anger om detta ID har tagits bort. |
-| `retrieveThenRemoveIdentities` | Hämtar en array med matchande identiteter (`validIds`) och tar sedan bort dessa identiteter från webbläsaren. Även om den här funktionen liknar `removeIdentities`den är bäst att använda när Adobe-lösningen som du använder kräver en åtkomstbegäran innan det går att ta bort den (till exempel när en unik identifierare måste hämtas innan den kan tas bort). |
+| `retrieveIdentities` | Returnerar en array med matchande identiteter (`validIds`) som hämtats från [!DNL Privacy Service], samt en array med identiteter som inte hittades (`failedIds`). |
+| `removeIdentities` | Tar bort varje matchande (giltig) identitet från webbläsaren. Returnerar en array med matchande identiteter (`validIds`), där varje identitet innehåller ett booleskt `isDeletedClientSide`-värde som anger om detta ID har tagits bort. |
+| `retrieveThenRemoveIdentities` | Hämtar en array med matchande identiteter (`validIds`) och tar sedan bort dessa identiteter från webbläsaren. Även om den här funktionen liknar `removeIdentities`, är den bäst att använda när Adobe-lösningen som du använder kräver en åtkomstbegäran innan det går att ta bort den (till exempel när en unik identifierare måste hämtas innan den kan tas bort). |
 
 >[!NOTE]
 >
->`removeIdentities` och ta `retrieveThenRemoveIdentities` bara bort identiteter från webbläsaren för specifika Adobe-lösningar som stöder dem. Adobe Audience Manager tar t.ex. inte bort de demdex-ID:n som lagras i cookies från tredje part, medan Adobe Target tar bort alla cookies som lagrar deras ID:n.
+>`removeIdentities` och ta  `retrieveThenRemoveIdentities` bara bort identiteter från webbläsaren för specifika Adobe-lösningar som stöder dem. Adobe Audience Manager tar t.ex. inte bort de demdex-ID:n som lagras i cookies från tredje part, medan Adobe Target tar bort alla cookies som lagrar deras ID:n.
 
 Eftersom alla tre funktionerna representerar asynkrona processer måste alla hämtade identiteter hanteras med återanrop eller löften.
 
 
 ## Installation
 
-Om du vill börja använda [!DNL Privacy JS Library]programmet måste du installera det på datorn på något av följande sätt:
+Om du vill börja använda [!DNL Privacy JS Library] måste du installera det på datorn på något av följande sätt:
 
 * Installera med npm genom att köra följande kommando: `npm install @adobe/adobe-privacy`
 * Använd Adobe Launch Extension under namnet `AdobePrivacy`
@@ -51,7 +52,7 @@ Om du vill börja använda [!DNL Privacy JS Library]programmet måste du install
 
 ## Instansiera [!DNL Privacy JS Library]
 
-Alla program som använder [!DNL Privacy JS Library] måste skapa ett nytt `AdobePrivacy` objekt som måste konfigureras till en viss Adobe-lösning. En instans för Adobe Analytics skulle till exempel se ut ungefär så här:
+Alla program som använder [!DNL Privacy JS Library] måste skapa en instans av ett nytt `AdobePrivacy`-objekt, som måste konfigureras till en viss Adobe-lösning. En instans för Adobe Analytics skulle till exempel se ut ungefär så här:
 
 ```js
 var adobePrivacy = new AdobePrivacy({
@@ -62,7 +63,7 @@ var adobePrivacy = new AdobePrivacy({
 });
 ```
 
-En fullständig lista över parametrar som stöds för olika Adobe-lösningar finns i bilagan om konfigurationsparametrar [för](#adobe-solution-configuration-parameters)Adobe-lösningar som stöds.
+En fullständig lista över parametrar som stöds för olika Adobe-lösningar finns i bilagan om [konfigurationsparametrar för Adobe-lösning](#adobe-solution-configuration-parameters) som stöds.
 
 ## Kodexempel
 
@@ -74,7 +75,7 @@ I det här exemplet visas hur du hämtar en lista med identiteter från [!DNL Ex
 
 #### JavaScript
 
-I följande kod definieras en funktion `handleRetrievedIDs`som ska användas som ett återanrop eller löfte för att hantera de identiteter som hämtas av `retrieveIdentities`.
+I följande kod definieras en funktion, `handleRetrievedIDs`, som ska användas som ett återanrop eller löfte för att hantera identiteter som hämtats av `retrieveIdentities`.
 
 ```javascript
 function handleRetrievedIDs(ids) {
@@ -92,11 +93,11 @@ adobePrivacy.retrieveIdentities().then(handleRetrievedIDs);
 | Variabel | Beskrivning |
 | --- | --- |
 | `validIds` | Ett JSON-objekt som innehåller alla ID:n som har hämtats. |
-| `failedIDs` | Ett JSON-objekt som innehåller alla ID:n som inte hämtades från [!DNL Privacy Service]eller på annat sätt inte kunde hittas. |
+| `failedIDs` | Ett JSON-objekt som innehåller alla ID:n som inte hämtades från [!DNL Privacy Service], eller på annat sätt inte kunde hittas. |
 
 #### Resultat
 
-Om koden körs utan fel fylls `validIDs` i med en lista över hämtade identiteter.
+Om koden körs korrekt fylls `validIDs` i med en lista över hämtade identiteter.
 
 ```json
 {
@@ -123,7 +124,7 @@ I det här exemplet visas hur du tar bort en lista med identiteter från webblä
 
 #### JavaScript
 
-I följande kod definieras en funktion `handleRemovedIDs`som ska användas som ett återanrop eller löfte för att hantera identiteter som hämtas av `removeIdentities` efter att de har tagits bort från webbläsaren.
+I följande kod definieras en funktion, `handleRemovedIDs`, som ska användas som ett återanrop eller löfte att hantera identiteter som hämtats av `removeIdentities` efter att de har tagits bort från webbläsaren.
 
 ```javascript
 function handleRemovedIDs(ids) {
@@ -141,11 +142,11 @@ adobePrivacy.removeIdentities().then(handleRemovedIDs)…
 | Variabel | Beskrivning |
 | --- | --- |
 | `validIds` | Ett JSON-objekt som innehåller alla ID:n som har hämtats. |
-| `failedIDs` | Ett JSON-objekt som innehåller alla ID:n som inte hämtades från [!DNL Privacy Service]eller på annat sätt inte kunde hittas. |
+| `failedIDs` | Ett JSON-objekt som innehåller alla ID:n som inte hämtades från [!DNL Privacy Service], eller på annat sätt inte kunde hittas. |
 
 #### Resultat
 
-Om koden körs utan fel fylls `validIDs` i med en lista över hämtade identiteter.
+Om koden körs korrekt fylls `validIDs` i med en lista över hämtade identiteter.
 
 ```json
 {
@@ -170,15 +171,15 @@ Om koden körs utan fel fylls `validIDs` i med en lista över hämtade identitet
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du lagts till i de centrala funktionerna i [!DNL Privacy JS Library]. När du har använt biblioteket för att hämta en lista över identiteter kan du använda dessa identiteter för att skapa dataåtkomst och ta bort begäranden till [!DNL Privacy Service] API. Mer information finns i [Privacy Servicens utvecklarhandbok](api/getting-started.md) .
+Genom att läsa det här dokumentet har du introducerats till huvudfunktionerna i [!DNL Privacy JS Library]. När du har använt biblioteket för att hämta en lista över identiteter kan du använda dessa identiteter för att skapa dataåtkomst och ta bort begäranden till API:t [!DNL Privacy Service]. Mer information finns i [handboken för utvecklare av Privacy Service](api/getting-started.md).
 
 ## Bilaga
 
-Detta avsnitt innehåller ytterligare information om hur du använder [!DNL Privacy JS Library].
+Det här avsnittet innehåller ytterligare information om hur du använder [!DNL Privacy JS Library].
 
 ### Konfigurationsparametrar för Adobe-lösningar
 
-Nedan följer en lista över godkända konfigurationsparametrar för Adobe-lösningar som stöds, som används vid [instansiering av ett AdobePrivacy-objekt](#instantiate-the-privacy-js-library).
+Nedan följer en lista över godkända konfigurationsparametrar för Adobe-lösningar som stöds, som används när [ett AdobePrivacy-objekt](#instantiate-the-privacy-js-library) initieras.
 
 **Adobe Analytics**
 
