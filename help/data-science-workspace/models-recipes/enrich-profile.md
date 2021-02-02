@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;machine learning model;Data Science Workspace;Real-time Customer Profile;popular topics;machine learning insights
+keywords: Experience Platform;maskininlärningsmodell;Data Science Workspace;Kundprofil i realtid;populära ämnen;maskininlärningsinsikter
 solution: Experience Platform
 title: Berika kundprofilen i realtid med maskininlärningsinsikter
 topic: tutorial
@@ -8,7 +8,7 @@ description: Det här dokumentet innehåller en guide om hur ni berikar kundprof
 translation-type: tm+mt
 source-git-commit: 62e6bb7e72637b06808ff87dc21f40af2c4e2d45
 workflow-type: tm+mt
-source-wordcount: '619'
+source-wordcount: '635'
 ht-degree: 0%
 
 ---
