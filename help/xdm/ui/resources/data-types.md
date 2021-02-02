@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;ui;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;schema;Schema;schemas;Schemas;create;data type;data types;
+keywords: Experience Platform;hem;populära ämnen;ui;XDM;XDM system;experience data model;Experience data model;experience data model;data model;data model;schema register;schema Registry;schema;schema;scheman;scheman;scheman;scheman;create;data type;data types;
 solution: Experience Platform
 title: Skapa och redigera datatyper med användargränssnittet
 topic: tutorial
@@ -8,7 +8,7 @@ description: Lär dig hur du skapar och redigerar datatyper i användargränssni
 translation-type: tm+mt
 source-git-commit: eca896ca068a02da7ec7379e8ced2105bbca9f2d
 workflow-type: tm+mt
-source-wordcount: '1071'
+source-wordcount: '1106'
 ht-degree: 0%
 
 ---
