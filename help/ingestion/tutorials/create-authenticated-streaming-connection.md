@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;authenticated streaming connection;streaming connection;create streaming connection;create authenticated streaming connection;streaming ingestion;ingestion;
+keywords: Experience Platform;hem;populära ämnen;autentiserad direktuppspelningsanslutning;direktuppspelningsanslutning;skapa direktuppspelningsanslutning;skapa autentiserad direktuppspelningsanslutning;direktuppspelningsproblem;
 solution: Experience Platform
 title: Skapa en autentiserad direktuppspelningsanslutning
 topic: tutorial
 type: Tutorial
 description: Autentiserad datainsamling gör det möjligt för Adobe Experience Platform-tjänster, som kundprofil och identitet i realtid, att skilja mellan poster som kommer från betrodda källor och otillförlitliga källor.
 translation-type: tm+mt
-source-git-commit: 37356db1666b0c800119b1e254940ad72550848a
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '650'
+source-wordcount: '674'
 ht-degree: 0%
 
 ---
@@ -16,40 +16,40 @@ ht-degree: 0%
 
 # Skapa en autentiserad direktuppspelningsanslutning
 
-Autentiserad datainsamling gör det möjligt för Adobe Experience Platform-tjänster, som [!DNL Real-time Customer Profile] och [!DNL Identity], att skilja mellan poster som kommer från betrodda källor och otillförlitliga källor. Klienter som vill skicka personligt identifierbar information (PII) kan göra det genom att skicka åtkomsttoken som en del av POSTEN.
+Autentiserad datainsamling gör att Adobe Experience Platform-tjänster, som [!DNL Real-time Customer Profile] och [!DNL Identity], kan skilja mellan poster som kommer från betrodda källor och otillförlitliga källor. Klienter som vill skicka personligt identifierbar information (PII) kan göra det genom att skicka åtkomsttoken som en del av POSTEN.
 
 ## Komma igång
 
 Registrering av direktuppspelningsanslutning krävs för att starta direktuppspelning av data till Adobe Experience Platform. När du registrerar en direktuppspelningsanslutning måste du ange viss nyckelinformation, som källan för direktuppspelningsdata.
 
-När du har registrerat en direktuppspelningsanslutning får du som DataProducer en unik URL som du kan använda för att strömma data till [!DNL Platform].
+När du har registrerat en direktuppspelningsanslutning får du som DataProducer en unik URL som kan användas för att strömma data till [!DNL Platform].
 
 Den här självstudiekursen kräver också kunskaper om olika Adobe Experience Platform-tjänster. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar upplevelsedata.
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som  [!DNL Platform] organiserar upplevelsedata.
 - [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:er för direktuppspelning.
 
 ### Läser exempel-API-anrop
 
-Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
+Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform] finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -69,7 +69,7 @@ POST /flowservice/connections
 
 >[!NOTE]
 >
->Värdena för de listade `providerId` och de `connectionSpec` måste **** användas enligt exemplet, eftersom de är vad som anger för API:t att du skapar en direktuppspelningsanslutning för direktuppspelningsinmatning.
+>Värdena för `providerId` och `connectionSpec` **måste** användas så som visas i exemplet, eftersom de är det som anger för API:t att du skapar en direktuppspelningsanslutning för direktuppspelningsinmatning.
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
@@ -111,7 +111,7 @@ Ett lyckat svar returnerar HTTP-status 201 med information om den nya anslutning
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `id` | Den nya `id` anslutningens namn. Detta kommer att kallas `{CONNECTION_ID}`. |
+| `id` | `id` för den nya anslutningen. Detta kallas `{CONNECTION_ID}`. |
 | `etag` | En identifierare som tilldelats anslutningen och som anger ändringen av anslutningen. |
 
 ## Hämta URL för datainsamling
@@ -126,7 +126,7 @@ GET /flowservice/connections/{CONNECTION_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{CONNECTION_ID}` | Värdet `id` för anslutningen som du skapade tidigare. |
+| `{CONNECTION_ID}` | `id`-värdet för anslutningen som du skapade tidigare. |
 
 **Begäran**
 
@@ -140,7 +140,7 @@ curl -X GET https://platform.adobe.io/data/foundation/flowservice/connections/{C
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den begärda anslutningen. URL:en för datainsamling skapas automatiskt med anslutningen och kan hämtas med `inletUrl` värdet.
+Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den begärda anslutningen. URL:en för datainsamling skapas automatiskt med anslutningen och kan hämtas med `inletUrl`-värdet.
 
 ```json
 {
@@ -179,7 +179,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den beg
 
 ## Nästa steg
 
-Nu när du har skapat en autentiserad direktuppspelningsanslutning kan du direktuppspela antingen tidsserier eller spela in data, så att du kan importera data i [!DNL Platform]. Om du vill lära dig hur du direktuppspelar tidsseriedata [!DNL Platform]går du till självstudiekursen [om data för](./streaming-time-series-data.md)direktuppspelningstidsserier. Om du vill lära dig hur du direktuppspelar postdata [!DNL Platform]går du till självstudiekursen [om](./streaming-record-data.md)direktuppspelningspostdata.
+Nu när du har skapat en autentiserad direktuppspelningsanslutning kan du direktuppspela antingen tidsserier eller spela in data, så att du kan importera data i [!DNL Platform]. Om du vill lära dig hur du direktuppspelar tidsseriedata till [!DNL Platform] går du till självstudiekursen [data för direktuppspelningstidsserie](./streaming-time-series-data.md). Om du vill lära dig hur du direktuppspelar postdata till [!DNL Platform] går du till självstudiekursen [dataströmning](./streaming-record-data.md).
 
 ## Bilaga
 
@@ -187,9 +187,9 @@ I det här avsnittet finns ytterligare information om autentiserade direktuppspe
 
 ### Skicka meddelanden till en autentiserad direktuppspelningsanslutning
 
-Om en direktuppspelningsanslutning har autentisering aktiverat måste klienten lägga till huvudet i sin begäran `Authorization` .
+Om en direktuppspelningsanslutning har autentisering aktiverat måste klienten lägga till `Authorization`-huvudet i sin begäran.
 
-Om det inte finns någon `Authorization` rubrik eller om en åtkomsttoken som är ogiltig/har upphört att gälla skickas returneras ett otillåtet HTTP 401-svar med ett liknande svar som nedan:
+Om rubriken `Authorization` inte finns, eller om en åtkomsttoken som är ogiltig/utgången skickas, returneras ett otillåtet HTTP 401-svar med ett liknande svar som nedan:
 
 **Svar**
 
