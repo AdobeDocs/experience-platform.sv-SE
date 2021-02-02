@@ -1,5 +1,5 @@
 ---
-keywords: insights;attribution ai;attribution ai insights;AAI query service;attribution queries;attribution scores
+keywords: insikter;attribuering;attribueringsinsikter;AAI-frågetjänst;attribueringsfrågor;attribueringspoäng
 solution: Intelligent Services, Experience Platform
 title: Snabbstartsguide för AAI-frågetjänst
 topic: Attribution AI queries
@@ -7,7 +7,7 @@ description: Det här dokumentet innehåller en guide och mallar för hur du anv
 translation-type: tm+mt
 source-git-commit: 32d49c9244414afeb2729ef44eb364fb2c609380
 workflow-type: tm+mt
-source-wordcount: '470'
+source-wordcount: '483'
 ht-degree: 0%
 
 ---
