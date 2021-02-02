@@ -1,13 +1,13 @@
 ---
-keywords: personalization;Personalization
+keywords: personalisering;personalisering
 title: Destinationer för personalisering
 seo-title: Destinationer för personalisering
 description: Personaliseringsplattformar samlar in data och insikter från enskilda beteenden. Dessa plattformar kan hjälpa marknadsförare att navigera i anonyma data och leverera erbjudanden eller annonser till potentiella kunder baserat på tidigare aktivitet eller som en del av målgruppssegment med liknande vanor.
 seo-description: Personaliseringsplattformar samlar in data och insikter från enskilda beteenden. Dessa plattformar kan hjälpa marknadsförare att navigera i anonyma data och leverera erbjudanden eller annonser till potentiella kunder baserat på tidigare aktivitet eller som en del av målgruppssegment med liknande vanor.
 translation-type: tm+mt
-source-git-commit: 3486aa053be903a3844bbc79a957699b18b30a74
+source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
 workflow-type: tm+mt
-source-wordcount: '169'
+source-wordcount: '170'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Personaliseringsplattformar samlar in data och insikter från enskilda beteenden. Dessa plattformar kan hjälpa marknadsförare att navigera i anonyma data och leverera erbjudanden eller annonser till potentiella kunder baserat på tidigare aktivitet eller som en del av målgruppssegment med liknande vanor.
 
-För närvarande stöder CDP i realtid de personaliseringsmål som anges nedan. Information om hur du ansluter till dessa mål finns i de enskilda länkarna:
+För närvarande stöder Platform de personaliseringsmål som listas nedan. Information om hur du ansluter till dessa mål finns i de enskilda länkarna:
 
 * [Adobe Target-tillägg](./adobe-target.md)
 * [Adobe Target v2-tillägg](./adobe-target-v2.md)
