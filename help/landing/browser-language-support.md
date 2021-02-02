@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;CJA;journey analytics;customer journey analytics;campaign orchestration;orchestration;customer journey;journey;journey orchestration;capability;region
+keywords: Experience Platform;hemmabruk;populära ämnen;CJA;reseanalys;kundreseanalys;kampanjsamordning;orkestrering;kundresa;resa;resesamordning;kapacitet;region
 solution: Experience Platform
 title: Adobe Experience Platform webbläsare och språkstöd
 topic: getting started
 description: Adobe Experience Platform är det mest kraftfulla, flexibla och öppna systemet på marknaden för att bygga och hantera kompletta lösningar som ger en bättre kundupplevelse. Med Experience Platform kan organisationer centralisera och standardisera kunddata och innehåll från alla system och tillämpa datavetenskap och maskininlärning för att dramatiskt förbättra utformningen och leveransen av avancerade, personaliserade upplevelser.
 translation-type: tm+mt
-source-git-commit: 56116abcb4273b27ffcb3aefed0acf2ac35152fe
+source-git-commit: 00010d38a5d05800aeac9af8505093fee3593b45
 workflow-type: tm+mt
-source-wordcount: '220'
+source-wordcount: '241'
 ht-degree: 0%
 
 ---
@@ -48,8 +48,8 @@ Standardspråket för användargränssnittet avgörs av den region som anges i d
 
 Så här byter du språk:
 
-1. Välj det aktuella språket i sidfoten i [!DNL Experience Platform] användargränssnittet.
-2. Klicka på **[!UICONTROL Change Region]** i profilinställningarna.
+1. Välj det aktuella språket i sidfoten i användargränssnittet för [!DNL Experience Platform].
+2. Välj **[!UICONTROL Change Region]** i dina profilinställningar.
 3. Välj region.
 
 >[!NOTE]
