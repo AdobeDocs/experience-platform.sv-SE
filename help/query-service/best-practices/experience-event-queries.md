@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;query service;Query service;experienceevent queries;experienceevent query;Experience Event query;
+keywords: Experience Platform;home;populära topics;query service;Query service;experience event queries;experience event query;Experience Event query;
 solution: Experience Platform
 title: Experience Event-frågor
 topic: queries
@@ -8,7 +8,7 @@ description: Följande dokument innehåller exempel på frågor som innehåller 
 translation-type: tm+mt
 source-git-commit: 5348ea4fb381f938ef635077c04cbff69c1b1a45
 workflow-type: tm+mt
-source-wordcount: '294'
+source-wordcount: '310'
 ht-degree: 0%
 
 ---
