@@ -1,13 +1,13 @@
 ---
-keywords: launch web tags;web tags launch;website tags;web tags;launch;Launch
+keywords: starta webbtaggar;webbtaggar starta;webbplatstaggar;webbtaggar;starta;Starta
 title: Självstudiekurs Implementera webbplatstaggar med Adobe Launch
 seo-title: Implementera webbplatstaggar med Adobe Launch
 description: Använda Adobe Launch för att implementera webbplatstaggar i Adobe Experience Platform
 seo-description: Använda Adobe Launch för att implementera webbplatstaggar i Adobe Experience Platform
 translation-type: tm+mt
-source-git-commit: 54df4778a025811504801306120bda78e04281c1
+source-git-commit: 00010d38a5d05800aeac9af8505093fee3593b45
 workflow-type: tm+mt
-source-wordcount: '476'
+source-wordcount: '488'
 ht-degree: 3%
 
 ---
@@ -27,23 +27,24 @@ I den här självstudiekursen beskrivs hur du implementerar webbplatstaggar för
 
 Den här självstudiekursen innehåller följande steg:
 
-1. Installera Adobe Experience Platform- [!DNL Web SDK] tillägget.
-1. Skapa en regel som anger [!DNL Launch] vilka data som ska skickas.
+1. Installera tillägget Adobe Experience Platform [!DNL Web SDK].
+1. Skapa en regel som berättar för [!DNL Launch] vilka data som ska skickas.
 1. Paketera tillägget och regeln i ett bibliotek.
 
-## Installera Adobe Experience Platform- [!DNL Web SDK] tillägget
+## Installera Adobe Experience Platform [!DNL Web SDK]-tillägget
 
-Installera först Adobe Experience Platform- [!DNL Web SDK] tillägget.
+Installera först Adobe Experience Platform [!DNL Web SDK]-tillägget.
 
-1. Öppna [!DNL Launch]fliken **[!UICONTROL Extensions]** i.
+1. Öppna fliken **[!UICONTROL Extensions]** i [!DNL Launch].
 
    ![bild](assets/launch-overview.png)
 
-1. Välj Adobe Experience Platform Web SDK-tillägget i starttilläggskatalogen. Konfigurationsskärmen öppnas.
+1. Välj Adobe Experience Platform Web SDK-tillägget i starttilläggskatalogen
+Konfigurationsskärmen öppnas.
 
    ![bild](assets/launch-extension-install.png)
 
-   Mer information finns i [Tillägg](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html) i [!DNL Launch] dokumentationen.
+   Mer information finns i [Tillägg](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html) i [!DNL Launch]-dokumentationen.
 
 1. Konfigurera tillägget.
 
@@ -52,31 +53,31 @@ Installera först Adobe Experience Platform- [!DNL Web SDK] tillägget.
    * **Konfigurations-ID:** Ange det konfigurations-ID som du fick från din Adobe-representant.
    * **Edge Domain:** Ange den kantdomän du fick från din Adobe-representant.
 
-1. Klicka **[!UICONTROL Save]** och fortsätt till nästa steg.
+1. Välj **[!UICONTROL Save]** och fortsätt till nästa steg.
 
-## Skapa en regel som anger [!DNL Launch] vilka data som ska skickas
+## Skapa en regel som berättar för [!DNL Launch] vilka data som ska skickas
 
-Skapa sedan en regel som meddelar [!DNL Launch] vilka data du vill skicka till Adobe Experience Platform och när du vill skicka dem.
+Skapa sedan en regel som gör att [!DNL Launch] vet vilka data du vill skicka till Adobe Experience Platform och när du vill skicka dem.
 
-1. Under fliken **[!UICONTROL Rules]** konfigurerar du en händelse som ska utlösas på varje ny sida på webbplatsen när [!DNL Launch] biblioteket läses in.
+1. Under fliken **[!UICONTROL Rules]** konfigurerar du en händelse som ska utlösas på varje ny sida på webbplatsen när biblioteket [!DNL Launch] läses in.
 
    ![bild](assets/launch-make-a-rule.png)
 
 1. Lägg till en åtgärd.
 
-   Om du vill konfigurera åtgärden anger du [!DNL Launch] var datalagret ska hittas. Datalagret är ett JavaScript-objekt som finns på sidan och som levereras från samma CMS-system som återger webbsidan. Ange JavaScript-sökvägen till dataobjektet.
+   Om du vill konfigurera åtgärden anger du var [!DNL Launch] ska hitta ditt datalager. Datalagret är ett JavaScript-objekt som finns på sidan och som levereras från samma CMS-system som återger webbsidan. Ange JavaScript-sökvägen till dataobjektet.
 
    ![bild](assets/launch-add-aep-action.png)
 
    Det dataobjekt som du skickar måste vara en giltig XDM som kan valideras mot schemat som används av datauppsättningen som är ansluten till ditt konfigurations-ID.
 
-1. Klicka på **[!UICONTROL Keep Changes]**.
+1. Välj **[!UICONTROL Keep Changes]**.
 
-Mer information finns i [Regler](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/rules.html) i [!DNL Launch] dokumentationen.
+Mer information finns i [Regler](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/rules.html) i [!DNL Launch]-dokumentationen.
 
 ## Paketera tillägget och regeln i ett bibliotek
 
-Därefter [paketerar du tillägget](https://docs.adobe.com/content/help/en/launch/using/reference/publish/overview.html) och den nya regeln tillsammans i ett bibliotek och testar ändringarna i en utvecklingsmiljö.
+Sedan [paketerar du tillägget](https://docs.adobe.com/content/help/en/launch/using/reference/publish/overview.html) och den nya regeln tillsammans i ett bibliotek och testar ändringarna i en utvecklingsmiljö.
 
 ![bild](assets/launch-add-changes-to-library.png)
 
@@ -84,4 +85,4 @@ När du är klar med testningen ska du befordra biblioteket genom arbetsflödet 
 
 ![bild](assets/launch-promote-library.png)
 
-Mer information finns i [Bibliotek](https://docs.adobe.com/content/help/en/launch/using/reference/publish/libraries.html) i [!DNL Launch] dokumentationen.
+Mer information finns i [Bibliotek](https://docs.adobe.com/content/help/en/launch/using/reference/publish/libraries.html) i [!DNL Launch]-dokumentationen.
