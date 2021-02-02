@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;batch ingestion;Batch ingestion;ingestion;developer guide;api guide;upload;ingest parquet;ingest json;
+keywords: Experience Platform;hem;populära ämnen;batchingång;batchingösning;ingift;utvecklarguide;api guide;upload;ingest Parquet;ingest json;
 solution: Experience Platform
 title: Utvecklarhandbok för batchintag
 topic: developer guide
 description: Det här dokumentet innehåller en omfattande översikt över hur du använder API:er för gruppinmatning.
 translation-type: tm+mt
-source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
+source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
 workflow-type: tm+mt
-source-wordcount: '2675'
+source-wordcount: '2698'
 ht-degree: 3%
 
 ---
@@ -15,9 +15,9 @@ ht-degree: 3%
 
 # Utvecklarhandbok för batchintag
 
-I det här dokumentet finns en omfattande översikt över hur du använder API:er för [gruppinmatning](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml).
+Det här dokumentet innehåller en omfattande översikt över hur du använder [API:er för batchimport](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml).
 
-I bilagan till det här dokumentet finns information om [formatering av data som ska användas för konsumtion](#data-transformation-for-batch-ingestion), inklusive exempel på CSV- och JSON-datafiler.
+I bilagan till det här dokumentet finns information om [formateringsdata som ska användas för att fylla i](#data-transformation-for-batch-ingestion), inklusive exempel på CSV- och JSON-datafiler.
 
 ## Komma igång
 
@@ -28,38 +28,38 @@ I följande avsnitt finns ytterligare information som du behöver känna till el
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 - [Batchförtäring](./overview.md): Gör att du kan importera data till Adobe Experience Platform som gruppfiler.
-- [[!DNL Experience Data Model (XDM)] System](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
-- [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+- [[!DNL Experience Data Model (XDM)] System](../../xdm/home.md): Det standardiserade ramverket som  [!DNL Experience Platform] organiserar kundupplevelsedata.
+- [[!DNL Sandboxes]](../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ### Läser exempel-API-anrop
 
-Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
+Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
 - `x-gw-ims-org-id: {IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform] finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
-Begäranden som innehåller en nyttolast (POST, PUT, PATCH) kan kräva ytterligare ett `Content-Type` huvud. Godkända värden som är specifika för varje anrop anges i anropsparametrarna.
+Begäranden som innehåller en nyttolast (POST, PUT, PATCH) kan kräva ytterligare ett `Content-Type`-huvud. Godkända värden som är specifika för varje anrop anges i anropsparametrarna.
 
 ## Typer
 
-När du importerar data är det viktigt att förstå hur [!DNL Experience Data Model] (XDM)-scheman fungerar. Mer information om hur XDM-fälttyper mappas till olika format finns i utvecklarhandboken för [schemaregister](../../xdm/api/getting-started.md).
+När du importerar data är det viktigt att du förstår hur [!DNL Experience Data Model]-scheman (XDM) fungerar. Mer information om hur XDM-fälttyper mappar till olika format finns i [Utvecklarhandbok för schemaregister](../../xdm/api/getting-started.md).
 
-Det finns viss flexibilitet vid inmatning av data - om en typ inte matchar vad som finns i målschemat konverteras data till den angivna måltypen. Om den inte kan det misslyckas batchen med ett `TypeCompatibilityException`.
+Det finns viss flexibilitet vid inmatning av data - om en typ inte matchar vad som finns i målschemat konverteras data till den angivna måltypen. Om den inte kan det misslyckas batchen med `TypeCompatibilityException`.
 
-Varken JSON eller CSV har till exempel typen datum eller tid. Därför uttrycks dessa värden med [ISO 8061-formaterade strängar](https://www.iso.org/iso-8601-date-and-time-format.html) (&quot;2018-07-10T15:05:59.000-08:00&quot;) eller Unix Time i millisekunder (153126395) 9000) och konverteras vid intag till mål-XDM-typen.
+Varken JSON eller CSV har till exempel typen datum eller tid. Därför uttrycks dessa värden med [ISO 8061-formaterade strängar](https://www.iso.org/iso-8601-date-and-time-format.html) (&quot;2018-07-10T15:05:59.000-08:00&quot;) eller Unix Time i millisekunder (153126) (3959000) och konverteras vid intag till mål-XDM-typen.
 
 Tabellen nedan visar de konverteringar som stöds vid inmatning av data.
 
@@ -100,7 +100,7 @@ För det första måste du skapa en batch med JSON som indataformat. När du ska
 
 >[!NOTE]
 >
->Exemplen nedan är för enradig JSON. Om du vill importera flerradig JSON måste du ange `isMultiLineJson` flaggan. Mer information finns i felsökningsguiden för [batchimport](./troubleshooting.md).
+>Exemplen nedan är för enradig JSON. Om du vill importera flerradig JSON måste du ange flaggan `isMultiLineJson`. Mer information finns i [felsökningsguiden för batchimport](./troubleshooting.md).
 
 **API-format**
 
@@ -158,11 +158,11 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 ### Överför filer
 
-Nu när du har skapat en grupp kan du använda kommandot `batchId` från tidigare för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
+Nu när du har skapat en grupp kan du använda `batchId` från tidigare för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
 
 >[!NOTE]
 >
->Ett [exempel på en korrekt formaterad JSON-datafil](#data-transformation-for-batch-ingestion)finns i bilagan.
+>I bilagan finns ett [exempel på en korrekt formaterad JSON-datafil](#data-transformation-for-batch-ingestion).
 
 **API-format**
 
@@ -297,7 +297,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
 
 ### Överför filer
 
-Nu när du har skapat en grupp kan du använda kommandot `batchId` från tidigare för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
+Nu när du har skapat en grupp kan du använda `batchId` från tidigare för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
 
 **API-format**
 
@@ -515,7 +515,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
 
 ### Fullständig stor fil
 
-Nu när du har skapat en grupp kan du använda kommandot `batchId` från tidigare för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
+Nu när du har skapat en grupp kan du använda `batchId` från tidigare för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
 
 **API-format**
 
@@ -578,7 +578,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ## Importera CSV-filer
 
-För att kunna importera CSV-filer måste du skapa en klass, ett schema och en datauppsättning som stöder CSV. Detaljerad information om hur du skapar nödvändiga klasser och scheman finns i instruktionerna i självstudiekursen [för att skapa](../../xdm/api/ad-hoc.md)ad hoc-scheman.
+För att kunna importera CSV-filer måste du skapa en klass, ett schema och en datauppsättning som stöder CSV. Detaljerad information om hur du skapar den klass och det schema som behövs finns i instruktionerna i självstudiekursen [skapa ad hoc-schema](../../xdm/api/ad-hoc.md).
 
 >[!NOTE]
 >
@@ -646,10 +646,10 @@ En förklaring till vad olika delar av avsnittet &quot;fileDescription&quot; i J
 | `delimiters` | Det tecken som ska användas som avgränsare. |
 | `quotes` | Det tecken som ska användas för citattecken. |
 | `escapes` | Det tecken som ska användas som escape-tecken. |
-| `header` | Den överförda filen **måste** innehålla rubriker. Eftersom schemavalideringen är klar måste detta anges till true. Dessutom får rubriker **inte** innehålla blanksteg. Om du har blanksteg i huvudet kan du ersätta dem med understreck istället. |
+| `header` | Den överförda filen **måste** innehålla rubriker. Eftersom schemavalideringen är klar måste detta anges till true. Dessutom får rubriker **inte** innehålla blanksteg. Om du har blanksteg i huvudet ska du ersätta dem med understreck i stället. |
 | `charset` | Ett valfritt fält. Andra teckenuppsättningar som stöds är&quot;US-ASCII&quot; och&quot;ISO-8869-1&quot;. Om den lämnas tom används UTF-8 som standard. |
 
-Den datauppsättning som refereras måste ha filbeskrivningsblocket som listas ovan och måste peka på ett giltigt schema i registret. Annars kan filen inte mastras i en parquet.
+Den datauppsättning som refereras måste ha filbeskrivningsblocket som listas ovan och måste peka på ett giltigt schema i registret. Annars kan filen inte mastras i Parquet.
 
 ### Skapa batch
 
@@ -716,11 +716,11 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 ### Överför filer
 
-Nu när du har skapat en grupp kan du använda kommandot `batchId` från tidigare för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
+Nu när du har skapat en grupp kan du använda `batchId` från tidigare för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
 
 >[!NOTE]
 >
->Ett [exempel på en korrekt formaterad CSV-datafil](#data-transformation-for-batch-ingestion)finns i bilagan.
+>I bilagan finns ett [exempel på en korrekt formaterad CSV-datafil](#data-transformation-for-batch-ingestion).
 
 **API-format**
 
@@ -819,7 +819,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ## Ta bort en grupp {#delete-a-batch}
 
-En batch kan tas bort genom att utföra följande begäran om POST med `action=REVERT` frågeparametern till ID:t för den grupp som du vill ta bort. Satsen är markerad som&quot;inaktiv&quot;, vilket gör att den kan användas för skräpinsamling. Batchen samlas in asynkront, och då markeras den som&quot;borttagen&quot;.
+En batch kan tas bort genom att utföra följande begäran om POST med frågeparametern `action=REVERT` till ID:t för gruppen som du vill ta bort. Satsen är markerad som&quot;inaktiv&quot;, vilket gör att den kan användas för skräpinsamling. Batchen samlas in asynkront, och då markeras den som&quot;borttagen&quot;.
 
 **API-format**
 
@@ -853,7 +853,7 @@ Om du vill ersätta en redan skickad batch kan du göra det med&quot;batchrepris
 
 ### Skapa batch
 
-För det första måste du skapa en batch med JSON som indataformat. När du skapar gruppen måste du ange ett datauppsättnings-ID. Du måste också se till att alla filer som överförs som en del av gruppen följer XDM-schemat som är länkat till den angivna datauppsättningen. Dessutom måste du ange de gamla batcherna som referens i avsnittet Spela upp. I exemplet nedan spelar du upp grupper med ID `batchIdA` och `batchIdB`.
+För det första måste du skapa en batch med JSON som indataformat. När du skapar gruppen måste du ange ett datauppsättnings-ID. Du måste också se till att alla filer som överförs som en del av gruppen följer XDM-schemat som är länkat till den angivna datauppsättningen. Dessutom måste du ange de gamla batcherna som referens i avsnittet Spela upp. I exemplet nedan spelar du upp grupper med ID:n `batchIdA` och `batchIdB`.
 
 **API-format**
 
@@ -927,7 +927,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 ### Överför filer
 
-Nu när du har skapat en grupp kan du använda kommandot `batchId` från tidigare för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
+Nu när du har skapat en grupp kan du använda `batchId` från tidigare för att överföra filer till gruppen. Du kan överföra flera filer till gruppen.
 
 **API-format**
 
@@ -1001,9 +1001,9 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ### Datatransformering för batchinmatning
 
-För att kunna importera en datafil till [!DNL Experience Platform]måste filens hierarkiska struktur följa det XDM-schema ( [Experience Data Model)](../../xdm/home.md) som är associerat med den datauppsättning som överförs till.
+För att kunna importera en datafil till [!DNL Experience Platform] måste filens hierarkiska struktur överensstämma med det [XDM-schema (Experience Data Model)](../../xdm/home.md) som är associerat med den datauppsättning som överförs till.
 
-Information om hur du mappar en CSV-fil så att den överensstämmer med ett XDM-schema finns i [exempeldokumentet för omformningar](../../etl/transformations.md) , tillsammans med ett exempel på en korrekt formaterad JSON-datafil. Exempelfiler som finns i dokumentet finns här:
+Information om hur du mappar en CSV-fil så att den överensstämmer med ett XDM-schema finns i [exempelomformningarna](../../etl/transformations.md)-dokumentet tillsammans med ett exempel på en korrekt formaterad JSON-datafil. Exempelfiler som finns i dokumentet finns här:
 
 - [CRM_profiles.csv](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.csv)
 - [CRM_profiles.json](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.json)
