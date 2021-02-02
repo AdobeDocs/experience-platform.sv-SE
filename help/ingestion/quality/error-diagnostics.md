@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;batch ingestion;Batch ingestion;partial ingestion;Partial ingestion;Retrieve error;retrieve error;Partial batch ingestion;partial batch ingestion;partial;ingestion;Ingestion;error diagnostics;retrieve error diagnostics;get error diagnostics;get error;get errors;retrieve errors;
+keywords: Experience Platform;hem;populära ämnen;batchförbrukning;batchförtäring;partiellt intag;partiellt intag;partiellt intag;Hämtningsfel;hämtningsfel;partiellt batchintag;partiellt, oralt;intag;Inmatning;feldiagnostik;hämta feldiagnos;hämta feldiagnos;få fel;hämta fel;hämta fel;
 solution: Experience Platform
 title: Översikt över partiell gruppinmatning i Adobe Experience Platform
 topic: overview
 description: Det här dokumentet innehåller information om övervakning av batchförbrukning, hantering av partiella batchöverföringsfel samt en referens för partiella batchinsatstyper.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '892'
+source-wordcount: '936'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 1%
 
 # Hämtar feldiagnostik
 
-Adobe Experience Platform har två metoder för att överföra och importera data. Du kan antingen använda gruppinmatning, vilket gör att du kan infoga data med olika filtyper (t.ex. CSV-filer), eller direktuppspelningsuppläsning, vilket gör att du kan infoga data i [!DNL Platform] direktuppspelningsslutpunkter i realtid.
+Adobe Experience Platform har två metoder för att överföra och importera data. Du kan antingen använda gruppinmatning, vilket gör att du kan infoga data med olika filtyper (t.ex. CSV-filer), eller direktuppspelning, vilket gör att du kan infoga data till [!DNL Platform] med direktuppspelningsslutpunkter i realtid.
 
 Det här dokumentet innehåller information om övervakning av batchförbrukning, hantering av partiella batchöverföringsfel samt en referens för partiella batchinsatstyper.
 
@@ -23,32 +23,32 @@ Det här dokumentet innehåller information om övervakning av batchförbrukning
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
-- [[!DNL Adobe Experience Platform Data Ingestion]](../home.md): Metoderna som data kan skickas till [!DNL Experience Platform].
+- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som  [!DNL Experience Platform] organiserar kundupplevelsedata.
+- [[!DNL Adobe Experience Platform Data Ingestion]](../home.md): Metoderna som data kan skickas till  [!DNL Experience Platform].
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
 - `x-gw-ims-org-id: {IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Schema Registry], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Schema Registry], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform] finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 ## Hämtar feldiagnostik {#download-diagnostics}
 
-Med Adobe Experience Platform kan användare hämta feldiagnostiken för indatafilerna. Diagnostiken behålls inom [!DNL Platform] upp till 30 dagar.
+Med Adobe Experience Platform kan användare hämta feldiagnostiken för indatafilerna. Diagnostiken sparas inom [!DNL Platform] i upp till 30 dagar.
 
 ### Visa indatafiler {#list-files}
 
@@ -107,7 +107,7 @@ Ett lyckat svar returnerar JSON-objekt som anger var diagnostikerna sparades.
 }
 ```
 
-### Hämta diagnostik för indatafiler {#retrieve-diagnostics}
+### Hämta diagnostik för indatafil {#retrieve-diagnostics}
 
 När du har hämtat en lista över alla olika indatafiler kan du hämta diagnostiken för den enskilda filen med följande begäran.
 
@@ -134,7 +134,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/af838510-22
 
 **Svar**
 
-Ett lyckat svar returnerar JSON-objekt som innehåller `path` objekt som anger var diagnostikerna sparades. Svaret returnerar `path` objekten i [JSON-radformat](https://jsonlines.org/) .
+Ett lyckat svar returnerar JSON-objekt som innehåller `path`-objekt som anger var diagnostikerna sparades. Svaret returnerar `path`-objekten i formatet [JSON-rader](https://jsonlines.org/).
 
 ```json
 {"path": "F1.json"}
@@ -157,7 +157,7 @@ GET /catalog/batches/{BATCH_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{BATCH_ID}` | Värdet `id` för den batch som du vill kontrollera status för. |
+| `{BATCH_ID}` | `id`-värdet för gruppen som du vill kontrollera statusen för. |
 
 **Begäran**
 
@@ -214,7 +214,7 @@ Ett lyckat svar returneras med detaljerad information om batchens status.
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `metrics.failedRecordCount` | Antalet rader som inte kunde bearbetas på grund av parsning, konvertering eller validering. Det här värdet kan härledas genom att subtrahera `inputRecordCount` från `outputRecordCount`. Det här värdet genereras för alla batchar, oavsett om det `errorDiagnostics` är aktiverat. |
+| `metrics.failedRecordCount` | Antalet rader som inte kunde bearbetas på grund av parsning, konvertering eller validering. Det här värdet kan härledas genom att subtrahera `inputRecordCount` från `outputRecordCount`. Det här värdet genereras för alla batchar oavsett om `errorDiagnostics` är aktiverat. |
 
 **Svara med fel**
 
@@ -277,8 +277,8 @@ Om batchen har ett eller flera fel och feldiagnostik är aktiverat, returnerar s
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `metrics.failedRecordCount` | Antalet rader som inte kunde bearbetas på grund av parsning, konvertering eller validering. Det här värdet kan härledas genom att subtrahera `inputRecordCount` från `outputRecordCount`. Det här värdet genereras för alla batchar, oavsett om det `errorDiagnostics` är aktiverat. |
-| `errors.recordCount` | Antalet rader som misslyckades för den angivna felkoden. Det här värdet genereras **bara** om `errorDiagnostics` är aktiverat. |
+| `metrics.failedRecordCount` | Antalet rader som inte kunde bearbetas på grund av parsning, konvertering eller validering. Det här värdet kan härledas genom att subtrahera `inputRecordCount` från `outputRecordCount`. Det här värdet genereras för alla batchar oavsett om `errorDiagnostics` är aktiverat. |
+| `errors.recordCount` | Antalet rader som misslyckades för den angivna felkoden. Det här värdet är **endast** som genereras om `errorDiagnostics` är aktiverat. |
 
 >[!NOTE]
 >
@@ -295,7 +295,7 @@ Om batchen har ett eller flera fel och feldiagnostik är aktiverat, returnerar s
 
 ## Nästa steg {#next-steps}
 
-I den här självstudiekursen beskrivs hur du övervakar fel vid partiell gruppinmatning. Mer information om batchintag finns i Utvecklarhandbok för [batchintag](../batch-ingestion/api-overview.md).
+I den här självstudiekursen beskrivs hur du övervakar fel vid partiell gruppinmatning. Mer information om batchförbrukning finns i [Utvecklarhandbok för batchkonsumtion](../batch-ingestion/api-overview.md).
 
 ## Bilaga {#appendix}
 
@@ -311,11 +311,11 @@ Partiell gruppinmatning har tre olika feltyper vid datainmatning:
 
 ### Oläsbara filer {#unreadable}
 
-Om det finns oläsbara filer i den inlästa gruppen bifogas batchfelen på själva gruppen. Mer information om hur du hämtar den misslyckade batchen finns i guiden [](../quality/retrieve-failed-batches.md)Hämta misslyckade batchar.
+Om det finns oläsbara filer i den inlästa gruppen bifogas batchfelen på själva gruppen. Mer information om hur du hämtar den misslyckade batchen finns i [guiden ](../quality/retrieve-failed-batches.md) om att hämta misslyckade batchar.
 
 ### Ogiltiga scheman eller rubriker {#schemas-headers}
 
-Om den inmatade gruppen har ett ogiltigt schema eller ogiltiga rubriker, bifogas batchfelen på själva gruppen. Mer information om hur du hämtar den misslyckade batchen finns i guiden [](../quality/retrieve-failed-batches.md)Hämta misslyckade batchar.
+Om den inmatade gruppen har ett ogiltigt schema eller ogiltiga rubriker, bifogas batchfelen på själva gruppen. Mer information om hur du hämtar den misslyckade batchen finns i [guiden ](../quality/retrieve-failed-batches.md) om att hämta misslyckade batchar.
 
 ### Otolkningsbara rader {#unparsable}
 
@@ -329,7 +329,7 @@ GET /export/batches/{BATCH_ID}/meta?path=row_errors
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{BATCH_ID}` | Värdet `id` för gruppen som du hämtar felinformation från. |
+| `{BATCH_ID}` | `id`-värdet för gruppen som du hämtar felinformation från. |
 
 **Begäran**
 
@@ -374,7 +374,7 @@ Ett lyckat svar returnerar en lista över de filer som innehåller fel.
 }
 ```
 
-Du kan sedan hämta detaljerad information om felen med hjälp av [diagnostikåterställningens slutpunkt](#retrieve-diagnostics).
+Du kan sedan hämta detaljerad information om felen med hjälp av [diagnostikslutpunkten](#retrieve-diagnostics).
 
 Ett exempelsvar på hämtning av felfilen visas nedan:
 
