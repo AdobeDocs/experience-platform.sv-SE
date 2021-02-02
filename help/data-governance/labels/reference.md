@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;data governance;data usage label api;policy service api;supported data usage labels;contract labels;identity labels;sensitive labels
+keywords: Experience Platform;hemanvändare;populära ämnen;datastyrning;dataanvändningsetikett api;principtjänst api;kompatibla dataanvändningsetiketter;kontraktsetiketter;identitetsetiketter;känsliga etiketter
 solution: Experience Platform
 title: Etiketter för grundläggande dataanvändning
 topic: labels
 description: I det här dokumentet finns en översikt över alla dataanvändningsetiketter som för närvarande stöds av Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: a362b67cec1e760687abb0c22dc8c46f47e766b7
+source-git-commit: 00010d38a5d05800aeac9af8505093fee3593b45
 workflow-type: tm+mt
-source-wordcount: '1882'
+source-wordcount: '1904'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 Med etiketter för dataanvändning kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Adobe Experience Platform Data Governance innehåller flera färdiga etiketter för dataanvändning som du kan använda för att kategorisera dina data.
 
-I det här dokumentet finns en beskrivning av de etiketter för användning av kärndata som för närvarande tillhandahålls av [!DNL Experience Platform]. Mer information om [!DNL Data Governance] datastyrning finns i översikten över [](../home.md)datastyrning.
+Det här dokumentet innehåller en översikt över de etiketter för användning av kärndata som för närvarande finns i [!DNL Experience Platform]. Mer information om [!DNL Data Governance] finns i [översikten över datastyrning](../home.md).
 
 ## Kontraktsetiketter
 
@@ -70,7 +70,7 @@ Vissa data kan bara exporteras från Adobe Experience Cloud i en aggregerad form
 
 #### C2 {#c2}
 
-Vissa dataleverantörer har villkor i sina kontrakt som förbjuder export av data som de ursprungligen samlades in från. Kontrakt för sociala nätverk begränsar till exempel ofta överföringen av data som du får från dem. C2-etiketten är mer restriktiv än [C1](#c1), som endast kräver aggregation och anonyma data.
+Vissa dataleverantörer har villkor i sina kontrakt som förbjuder export av data som de ursprungligen samlades in från. Kontrakt för sociala nätverk begränsar till exempel ofta överföringen av data som du får från dem. C2-etiketten är mer restriktiv än [C1](#c1), som bara kräver aggregering och anonyma data.
 
 #### C3 {#c3}
 
@@ -78,7 +78,7 @@ Vissa dataleverantörer har villkor i sina kontrakt som förbjuder kombinationen
 
 #### C4 {#c4}
 
-C4 är den mest restriktiva etiketten - den omfattar etiketterna [C5](#c5), [C6](#c6)och [C7](#c7).
+C4 är den mest restriktiva etiketten - den omfattar etiketterna [C5](#c5), [C6](#c6) och [C7](#c7).
 
 #### C5 {#c5}
 
@@ -98,21 +98,21 @@ DAA: Onlinebeteendeannonsering. Samla in data från en viss dator eller enhet om
 
 #### C6 {#c6}
 
-Annonser är meddelanden eller meddelanden, inklusive text och bilder, som visas på en webbplats eller i en app som främst är avsedda att marknadsföra försäljning av varor eller tjänster. Det är upp till dig att fastställa syftet med sådana meddelanden eller meddelanden. Annonserna är åtskilda från webbplatsinnehållet, som täcks av etiketten [C7](#c7). Data med en C6-etikett kan inte användas för annonsanpassning på plats, inklusive val och leverans av annonser på organisationens webbplatser eller appar, eller för att mäta leveransen och effektiviteten av sådana annonser. Detta inkluderar att använda tidigare insamlade data på plats om användarnas intressen för att välja annonser, bearbeta data om vilka annonser som visades, när och var de visades och om användarna vidtagit några åtgärder som rör annonsen, som att klicka på en annons eller göra ett köp. Vanligtvis kan det inte anses vara intressebaserad målinriktning (även kallad personalisering) att dra slutsatser om en användares preferenser baserat på den användarens aktiviteter på webbplatsen och sedan använda dessa preferenser i annonsinriktning på webbplatsen, eftersom den inte uppfyller alla tre kraven för intressebaserad målinriktning. *[Se etikett C5 för dessa krav.](#c5)*
+Annonser är meddelanden eller meddelanden, inklusive text och bilder, som visas på en webbplats eller i en app som främst är avsedda att marknadsföra försäljning av varor eller tjänster. Det är upp till dig att fastställa syftet med sådana meddelanden eller meddelanden. Annonserna är åtskilda från webbplatsinnehållet, som täcks av etiketten [C7](#c7). Data med en C6-etikett kan inte användas för annonsanpassning på plats, inklusive val och leverans av annonser på organisationens webbplatser eller appar, eller för att mäta leveransen och effektiviteten av sådana annonser. Detta inkluderar att använda tidigare insamlade data på plats om användarnas intressen för att välja annonser, bearbeta data om vilka annonser som visades, när och var de visades och om användarna vidtagit några åtgärder som rör annonsen, som att välja en annons eller göra ett köp. Vanligtvis kan det inte anses vara intressebaserad målinriktning (även kallad personalisering) att dra slutsatser om en användares preferenser baserat på den användarens aktiviteter på webbplatsen och sedan använda dessa preferenser i annonsinriktning på webbplatsen, eftersom den inte uppfyller alla tre kraven för intressebaserad målinriktning. *[Se etikett C5 för dessa krav.](#c5)*
 
 I slutändan är det upp till er att tolka etiketten och hur användningen av data med den etiketten upprätthålls. Som referens ges ramverken IAB och DAA nedan:
 
-IAB: 3. Val av annonser, leverans, rapportering: Insamling av information, och kombination med tidigare insamlad information, för att välja ut och leverera annonser för er och för att mäta hur effektiva dessa annonser är och hur de levereras. Detta inkluderar att använda tidigare insamlad information om era intressen för att välja annonser, bearbeta data om vilka annonser som visades, hur ofta de visades, när och var de visades och om ni vidtagit några åtgärder som rör annonsen, till exempel klicka på en annons eller göra ett köp. Detta inkluderar inte personalisering, som är insamling och bearbetning av information om din användning av den här tjänsten för att senare personalisera annonser och/eller innehåll för dig i andra sammanhang, som webbplatser eller appar, över tid.
+IAB: 3. Val av annonser, leverans, rapportering: Insamling av information, och kombination med tidigare insamlad information, för att välja ut och leverera annonser för er och för att mäta hur effektiva dessa annonser är och hur de levereras. Detta inkluderar att använda tidigare insamlad information om era intressen för att välja ut annonser, bearbeta data om vilka annonser som visades, hur ofta de visades, när och var de visades och om ni vidtagit några åtgärder som rör annonsen, t.ex. välja en annons eller göra ett köp. Detta inkluderar inte personalisering, som är insamling och bearbetning av information om din användning av den här tjänsten för att senare personalisera annonser och/eller innehåll för dig i andra sammanhang, som webbplatser eller appar, över tid.
 
 DAA: Onlineannonsering omfattar inte aktiviteter som utförs av första part, annonsleverans eller annonsrapportering eller sammanhangsbaserad annonsering (dvs. annonsering som baseras på innehållet på den webbsida som besöks, en kunds aktuella besök på en webbsida eller en sökfråga).
 
 #### C7 {#c7}
 
-Webbplatsinnehåll är text och bilder som är utformade för att informera, utbilda eller underhålla och som inte är skapade för att främja försäljningen av varor eller tjänster. Det är upp till er att fastställa syftet med innehållet, inklusive huruvida innehållet skulle kunna kvalificeras som ursprunglig reklam. C7-etiketten är inte avsedd att omfatta annonser på plats, som omfattas av etiketten [C6](#c6). Data med en C7-etikett kan inte användas för att målinrikta innehåll på plats, inklusive val och leverans av innehåll på organisationens webbplatser eller appar, eller för att mäta leveransen och effektiviteten av sådant innehåll. Detta inkluderar tidigare insamlad information om användarnas intressen i utvalda innehåll, bearbetning av data om vilket innehåll som visades, hur ofta eller hur länge det visades, när och var det visades, och om användarna vidtagit några åtgärder som rör innehållet, t.ex. att klicka på innehållet. Vanligtvis kan det inte anses vara intressebaserad målinriktning (även kallad personalisering) att dra slutsatser om en användares preferenser baserat på den användarens aktiviteter på webbplatsen och sedan använda dessa preferenser i målgruppsinriktning på webbplatsen, eftersom den inte uppfyller alla tre kraven för intressebaserad målinriktning. *[Se etikett C5 för dessa krav.](#c5)*
+Webbplatsinnehåll är text och bilder som är utformade för att informera, utbilda eller underhålla och som inte är skapade för att främja försäljningen av varor eller tjänster. Det är upp till er att fastställa syftet med innehållet, inklusive huruvida innehållet skulle kunna kvalificeras som ursprunglig reklam. C7-etiketten är inte avsedd att omfatta annonser på plats, som täcks av etiketten [C6](#c6). Data med en C7-etikett kan inte användas för att målinrikta innehåll på plats, inklusive val och leverans av innehåll på organisationens webbplatser eller appar, eller för att mäta leveransen och effektiviteten av sådant innehåll. Detta inkluderar tidigare insamlad information om användarnas intressen i utvalda innehåll, bearbetning av data om vilket innehåll som visades, hur ofta eller hur länge det visades, när och var det visades, och om användarna vidtagit några åtgärder som rör innehållet, t.ex. val av innehåll. Vanligtvis kan det inte anses vara intressebaserad målinriktning (även kallad personalisering) att dra slutsatser om en användares preferenser baserat på den användarens aktiviteter på webbplatsen och sedan använda dessa preferenser i målgruppsinriktning på webbplatsen, eftersom den inte uppfyller alla tre kraven för intressebaserad målinriktning. *[Se etikett C5 för dessa krav.](#c5)*
 
 I slutändan är det upp till er att tolka etiketten och hur användningen av data med den etiketten upprätthålls. Som referens ges ramverken IAB och DAA nedan:
 
-IAB: 4. Val, leverans, rapportering: Insamling av information, och kombination med tidigare insamlad information, för att välja ut och leverera innehåll åt er och för att mäta hur effektivt sådant innehåll levereras. Detta inkluderar att använda tidigare insamlad information om dina intressen för att välja innehåll, bearbeta data om vilket innehåll som visades, hur ofta eller hur länge det visades, när och var det visades, och om du vidtagit några åtgärder som rör innehållet, till exempel klicka på innehållet. Detta inkluderar inte personalisering, som är insamling och bearbetning av information om din användning av den här tjänsten för att senare anpassa innehåll och/eller annonsering för dig i andra sammanhang, som webbplatser eller appar, över tid.
+IAB: 4. Val, leverans, rapportering: Insamling av information, och kombination med tidigare insamlad information, för att välja ut och leverera innehåll åt er och för att mäta hur effektivt sådant innehåll levereras. Detta inkluderar att använda tidigare insamlad information om dina intressen för att välja innehåll, bearbeta data om vilket innehåll som visades, hur ofta eller hur länge det visades, när och var det visades, och om du vidtagit några åtgärder som rör innehållet, till exempel att välja innehåll. Detta inkluderar inte personalisering, som är insamling och bearbetning av information om din användning av den här tjänsten för att senare anpassa innehåll och/eller annonsering för dig i andra sammanhang, som webbplatser eller appar, över tid.
 
 DAA: Onlineannonsering omfattar inte aktiviteter som utförs av första part, annonsleverans eller annonsrapportering eller sammanhangsbaserad annonsering (dvs. annonsering som baseras på innehållet på den webbsida som ska besökas, en kunds aktuella besök på en webbsida eller en sökfråga).
 
