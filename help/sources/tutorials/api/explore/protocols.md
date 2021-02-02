@@ -1,52 +1,52 @@
 ---
-keywords: Experience Platform;home;popular topics;protocol
+keywords: Experience Platform;hem;populära ämnen;protokoll
 solution: Experience Platform
 title: Utforska ett protokollsystem med API:t för Flow Service
 topic: overview
 description: I den här självstudien används API:t för Flow Service för att utforska protokollprogram.
 translation-type: tm+mt
-source-git-commit: 25f1dfab07d0b9b6c2ce5227b507fc8c8ecf9873
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '578'
+source-wordcount: '588'
 ht-degree: 1%
 
 ---
 
 
-# Utforska ett protokollsystem med [!DNL Flow Service] API
+# Utforska ett protokollsystem med hjälp av API:t [!DNL Flow Service]
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudien används API:t för att utforska protokollprogram [!DNL Flow Service] .
+I den här självstudien används API:t [!DNL Flow Service] för att utforska protokollprogram.
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../home.md): [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster.
-* [Sandlådor](../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
+* [Sandlådor](../../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till ett protokollprogram med API:t [!DNL Flow Service] .
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till ett protokollprogram med API:t [!DNL Flow Service].
 
 ### Hämta en basanslutning
 
-För att kunna utforska ditt protokollsystem med API: [!DNL Platform] er måste du ha ett giltigt basanslutnings-ID. Om du inte redan har en basanslutning för det protokollsystem du vill arbeta med kan du skapa en genom följande självstudie:
+För att kunna utforska ditt protokollsystem med hjälp av [!DNL Platform] API:er måste du ha ett giltigt basanslutnings-ID. Om du inte redan har en basanslutning för det protokollsystem du vill arbeta med kan du skapa en genom följande självstudie:
 
 * [Allmän OData](../create/protocols/odata.md)
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
@@ -81,7 +81,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en array med tabeller från ditt protokollprogram. Leta reda på tabellen som du vill hämta in [!DNL Platform] och notera dess `path` egenskap, eftersom du måste ange den i nästa steg för att kontrollera dess struktur.
+Ett lyckat svar returnerar en array med tabeller från ditt protokollprogram. Leta reda på tabellen som du vill hämta till [!DNL Platform] och notera dess `path`-egenskap, eftersom du måste ange den i nästa steg för att kontrollera dess struktur.
 
 ```json
 [
@@ -142,7 +142,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar strukturen för den angivna tabellen. Information om tabellens kolumner finns i elementen i `columns` arrayen.
+Ett lyckat svar returnerar strukturen för den angivna tabellen. Information om tabellens kolumner finns i elementen i `columns`-arrayen.
 
 ```json
 {
@@ -190,4 +190,4 @@ Ett lyckat svar returnerar strukturen för den angivna tabellen. Information om 
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du utforskat ditt protokollprogram, hittat sökvägen till den tabell som du vill importera [!DNL Platform]och fått information om dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in data från ditt protokollprogram och överföra dem till Platform](../collect/protocols.md).
+Genom att följa den här självstudiekursen har du utforskat ditt protokollprogram, hittat sökvägen till tabellen som du vill importera till [!DNL Platform] och fått information om dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in data från ditt protokollprogram och överföra den till Platform](../collect/protocols.md).
