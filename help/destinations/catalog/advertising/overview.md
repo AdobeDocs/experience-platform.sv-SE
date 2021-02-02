@@ -1,13 +1,13 @@
 ---
-keywords: advertising destinations;destinations;rtcdp destinations
+keywords: reklamdestinationer;destinationer;plattformsdestinationer
 title: Annonsmål
 seo-title: Annonsmål
-description: Koppla samman er kunddataplattform i realtid med en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
-seo-description: Koppla samman er kunddataplattform i realtid med en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
+description: Koppla Adobe Experience Platform till en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
+seo-description: Koppla Adobe Experience Platform till en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 translation-type: tm+mt
-source-git-commit: 0bb1622895b1e0f97fc47b5c61d456bc369746c8
+source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
 workflow-type: tm+mt
-source-wordcount: '223'
+source-wordcount: '225'
 ht-degree: 0%
 
 ---
@@ -15,11 +15,11 @@ ht-degree: 0%
 
 # Annonsmål {#advertising-destinations}
 
-Koppla upp er [!DNL Real-time Customer Data Platform] till en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
+Koppla Adobe Experience Platform till en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 
 När ni ansluter till en annonsdestination skickas era målgrupper som ID:n till målplattformen, där de mappas till ett ID som är känt av målplattformen.
 
-För närvarande stöder CDP i realtid de reklamdestinationer som anges nedan. Information om hur du ansluter till dessa mål finns i de enskilda länkarna:
+För närvarande stöder Platform de reklamdestinationer som anges nedan. Information om hur du ansluter till dessa mål finns i de enskilda länkarna:
 
 ## Anslutningar
 
