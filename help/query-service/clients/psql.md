@@ -1,79 +1,37 @@
 ---
-keywords: Experience Platform;home;popular topics;PSQL;psqlconnect to query service;Query service;query service;
+keywords: Experience Platform;hem;populära ämnen;PSQL;psqlconnect to query service;Query service;query service;
 solution: Experience Platform
 title: Anslut med PSQL
 topic: connect
-description: 'PSQL är ett kommandoradsgränssnitt som medföljer när du installerar Postgres på datorn. Du kan installera det genom att följa dessa anvisningar. '
+description: 'PSQL är ett kommandoradsgränssnitt som medföljer när du installerar PostgreSQL på datorn. Du kan installera det genom att följa dessa anvisningar. '
 translation-type: tm+mt
-source-git-commit: 8ffe7c68c87cacb6b54d9634a5204fa24a9986ac
+source-git-commit: bc1bbdddd75b11ac180b5e6faa391fd74e5f7e02
 workflow-type: tm+mt
-source-wordcount: '203'
-ht-degree: 0%
+source-wordcount: '240'
+ht-degree: 1%
 
 ---
 
 
-# Anslut med PSQL
+# PSQL
 
-PSQL är ett kommandoradsgränssnitt som medföljer när du installerar [!DNL Postgres] på datorn. Du kan installera det genom att följa dessa anvisningar.
+PSQL är ett kommandoradsgränssnitt som installeras när du installerar [!DNL PostgreSQL] på datorn. Det här dokumentet innehåller stegen för att ansluta PSQL med Adobe Experience Platform [!DNL Query Service].
 
-## Installera Postgres på en Mac
-
-Öppna ett terminalfönster och skicka följande tre kommandon:
-
-```shell
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
-
-```shell
-brew install postgres
-```
-
-```shell
-which psql
-```
-
-När du har skapat dessa kommandon bör du se följande:
-
-```shell
-/usr/local/bin/psql
-```
-
-## Installera [!DNL Postgres] på en dator
-
-Hämta och installera [!DNL Postgres] från den här [platsen](https://www.postgresql.org/download/windows/).
-
-Redigera din sökvägsvariabel:
-
-![Bild](../images/clients/psql/path.png)
-
-Lägg till de två rader som visas och som innehåller &quot;[!DNL Postgres]&quot;.
-
-Spara uppdateringarna, öppna en kommandotolk och skriv:
-
-```shell
-psql -V
-```
-
-Du borde se något liknande:
-
-```shell
-psql (PostgreSQL) 9.5.14
-```
+>[!NOTE]
+>
+> Den här handboken förutsätter att du redan har tillgång till [!DNL PSQL] och är bekant med hur du använder den. Mer information om [!DNL PSQL] finns i [officiell [!DNL PSQL]-dokumentation](https://www.postgresql.org/docs/current/app-psql.html.
 
 ## Anslut PSQL och [!DNL Query Service]
 
-Återgå till [!DNL Platform] gränssnittet på **[!UICONTROL Connect BI Tools]** sidan.
-
-Klicka **[!UICONTROL copy]** för **[!UICONTROL PSQL Command]**.
+När du har installerat PSQL på datorn kan du ansluta PSQL med frågetjänsten. Återgå till användargränssnittet för [!DNL Platform] och välj sedan **[!UICONTROL Queries]** följt av **[!UICONTROL Credentials]**.
 
 ![Bild](../images/clients/psql/connect-bi.png)
 
+Markera ikonen om du vill kopiera avsnittet **[!UICONTROL PSQL Command]** och klistra sedan in kommandosträngen i ett terminal- eller kommandoradsfönster innan du trycker på Retur.
+
 >[!IMPORTANT]
 >
->Om du är på en dator använder du en textredigerare för att ta bort radbrytningarna i kommandosträngen och kopierar sedan strängen. Om du använder version 12.0 eller senare måste du dessutom lägga `PGGSSENCMODE=disable` till i anslutningssträngen.
-
-Klistra in kommandosträngen i ett terminal- eller kommandofönster och tryck på Retur.
+>Om du är på en dator använder du en textredigerare för att ta bort radbrytningarna i kommandosträngen och kopierar sedan strängen. Om du använder version 12.0 eller senare måste du lägga till `PGGSSENCMODE=disable` i anslutningssträngen.
 
 Du bör se följande resultat:
 
@@ -85,3 +43,7 @@ all=>
 ```
 
 Om du inte ser minst version 10.5 måste du ladda ned den versionen eller senare.
+
+## Nästa steg
+
+Nu när du är ansluten till [!DNL Query Service] kan du använda PSQL för att skriva frågor. Mer information om hur du skriver och kör frågor finns i guiden [kör frågor](../best-practices/writing-queries.md).
