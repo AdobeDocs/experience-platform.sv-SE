@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;dataset;Dataset;create a dataset;create dataset;enable dataset
+keywords: Experience Platform;hem;populära ämnen;datauppsättning;datauppsättning;skapa en datauppsättning;skapa datauppsättning;aktivera datauppsättning
 solution: Experience Platform
 title: Skapa en datauppsättning
 topic: developer guide
 description: I det här dokumentet beskrivs hur du skapar ett datauppsättningsobjekt i Katalog.
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
 workflow-type: tm+mt
-source-wordcount: '208'
+source-wordcount: '223'
 ht-degree: 0%
 
 ---
@@ -15,11 +15,11 @@ ht-degree: 0%
 
 # Skapa en datauppsättning
 
-Om du vill skapa en datauppsättning med [!DNL Catalog] API måste du känna till `$id` värdet för det [!DNL Experience Data Model] (XDM)-schema som datauppsättningen ska baseras på. När du har ett schema-ID kan du skapa en datauppsättning genom att göra en POST-förfrågan till `/datasets` slutpunkten i [!DNL Catalog] API:t.
+Om du vill skapa en datauppsättning med API:t [!DNL Catalog] måste du känna till `$id`-värdet för det [!DNL Experience Data Model] (XDM)-schema som datauppsättningen ska baseras på. När du har ett schema-ID kan du skapa en datauppsättning genom att göra en POST-förfrågan till `/datasets`-slutpunkten i [!DNL Catalog]-API:t.
 
 >[!NOTE]
 >
->Det här dokumentet innehåller bara information om hur du skapar ett datauppsättningsobjekt i [!DNL Catalog]. Mer information om hur du skapar, fyller i och övervakar en datauppsättning finns i följande [självstudiekurs](../datasets/create.md).
+>Det här dokumentet innehåller bara information om hur du skapar ett datauppsättningsobjekt i [!DNL Catalog]. Fullständiga anvisningar om hur du skapar, fyller i och övervakar en datauppsättning finns i följande [självstudiekurs](../datasets/create.md).
 
 **API-format**
 
@@ -56,11 +56,11 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `name` | Namnet på datauppsättningen som ska skapas. |
-| `schemaRef.id` | URI- `$id` värdet för XDM-schemat som datamängden baseras på. |
+| `schemaRef.id` | URI-värdet `$id` för XDM-schemat som datamängden baseras på. |
 
 >[!NOTE]
 >
->I det här exemplet används [parquet](https://parquet.apache.org/documentation/latest/) -filformatet för dess `containerFormat` egenskap. Ett exempel som använder JSON-filformatet finns i utvecklarhandboken för [batchimport](../../ingestion/batch-ingestion/api-overview.md).
+>I det här exemplet används filformatet [Apache Parquet](https://parquet.apache.org/documentation/latest/) för egenskapen `containerFormat`. Ett exempel som använder JSON-filformatet finns i [Utvecklarhandbok för gruppfrågor](../../ingestion/batch-ingestion/api-overview.md).
 
 **Svar**
 
