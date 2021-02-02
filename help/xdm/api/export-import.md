@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;export;import;rpc;
+keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;Experience data model;experience data model;data model;data model;data model;export;import;rpc;
 solution: Experience Platform
 title: Guiden Exportera/importera slutpunkt
 description: Med slutpunkterna /export och /import i API:t för schemaregister kan du dela XDM-resurser mellan IMS-organisationer och sandlådor.
@@ -7,7 +7,7 @@ topic: developer guide
 translation-type: tm+mt
 source-git-commit: dfa91e387b6fcd0d528a523a06d2516bc8befc20
 workflow-type: tm+mt
-source-wordcount: '474'
+source-wordcount: '500'
 ht-degree: 0%
 
 ---
