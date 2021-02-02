@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;query service;api guide;connection parameters;Query service;
+keywords: Experience Platform;home;populära topics;query service;api guide;connection parameters;Query service;
 solution: Experience Platform
 title: Handbok för frågetjänstutvecklare
 topic: connection parameters
@@ -7,7 +7,7 @@ description: Du kan hämta anslutningsparametrar för användning av den interak
 translation-type: tm+mt
 source-git-commit: 648544bc60c0cee8ca8b167118391980b6c33d91
 workflow-type: tm+mt
-source-wordcount: '134'
+source-wordcount: '147'
 ht-degree: 0%
 
 ---
