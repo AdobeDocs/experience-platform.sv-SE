@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;query service;Query service;sql syntax;sql;ctas;CTAS;Create table as select
+keywords: Experience Platform;hem;populära ämnen;frågetjänst;Frågetjänst;SQL-syntax;sql;ctas;CTAS;Skapa tabell som markerad
 solution: Experience Platform
 title: SQL-syntax
 topic: syntax
 description: Det här dokumentet visar SQL-syntax som stöds av Query Service.
 translation-type: tm+mt
-source-git-commit: e02028e9808eab3373143aba7bbc4a115c52746b
+source-git-commit: 14cb1d304fd8aad2ca287f8d66ac6865425db4c5
 workflow-type: tm+mt
-source-wordcount: '2067'
+source-wordcount: '2212'
 ht-degree: 0%
 
 ---
@@ -15,17 +15,18 @@ ht-degree: 0%
 
 # SQL-syntax
 
-[!DNL Query Service] ger möjlighet att använda ANSI SQL-standard för satser och andra begränsade kommandon `SELECT` . I det här dokumentet visas SQL-syntax som stöds av [!DNL Query Service].
+[!DNL Query Service] ger möjlighet att använda ANSI SQL-standard för  `SELECT` satser och andra begränsade kommandon. Det här dokumentet visar SQL-syntax som stöds av [!DNL Query Service].
 
 ## Definiera en SELECT-fråga
 
-Följande syntax definierar en `SELECT` fråga som stöds av [!DNL Query Service]:
+Följande syntax definierar en `SELECT`-fråga som stöds av [!DNL Query Service]:
 
 ```sql
 [ WITH with_query [, ...] ]
 SELECT [ ALL | DISTINCT [( expression [, ...] ) ] ]
     [ * | expression [ [ AS ] output_name ] [, ...] ]
     [ FROM from_item [, ...] ]
+    [ SNAPSHOT { SINCE start_snapshot_id | AS OF end_snapshot_id | BETWEEN start_snapshot_id AND end_snapshot_id } ]
     [ WHERE condition ]
     [ GROUP BY grouping_element [, ...] ]
     [ HAVING condition [, ...] ]
@@ -36,7 +37,7 @@ SELECT [ ALL | DISTINCT [( expression [, ...] ) ] ]
     [ OFFSET start ]
 ```
 
-där `from_item` kan vara något av följande:
+där `from_item` kan vara något av:
 
 ```sql
 table_name [ * ] [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
@@ -45,7 +46,7 @@ table_name [ * ] [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
     from_item [ NATURAL ] join_type from_item [ ON join_condition | USING ( join_column [, ...] ) ]
 ```
 
-och `grouping_element` kan vara något av följande:
+och `grouping_element` kan vara något av:
 
 ```sql
 ( )
@@ -64,6 +65,30 @@ och `with_query` är:
 TABLE [ ONLY ] table_name [ * ]
 ```
 
+### SNAPSHOT-sats
+
+Den här satsen kan användas för att läsa data i en tabell inkrementellt baserat på snapshot-ID:n. Ett ID för en ögonblicksbild är en kontrollpunktsmarkör som identifieras av ett tal, av typen Long, i en datalagertabell varje gång data skrivs till den. SNAPSHOT-satsen kopplar sig till den registerrelation som den används bredvid.
+
+```sql
+    [ SNAPSHOT { SINCE start_snapshot_id | AS OF end_snapshot_id | BETWEEN start_snapshot_id AND end_snapshot_id } ]
+```
+
+#### Exempel
+
+```sql
+SELECT * FROM Customers SNAPSHOT SINCE 123;
+
+SELECT * FROM Customers SNAPSHOT AS OF 345;
+
+SELECT * FROM Customers SNAPSHOT BETWEEN 123 AND 345;
+
+SELECT * FROM (SELECT id FROM CUSTOMERS BETWEEN 123 AND 345) C 
+
+SELECT * FROM Customers SNAPSHOT SINCE 123 INNER JOIN Inventory AS OF 789 ON Customers.id = Inventory.id;
+```
+
+Observera att en SNAPSHOT-sats fungerar med en tabell eller ett tabellalias men inte ovanpå en underfråga eller vy. En SNAPHOST-sats fungerar var som helst där en SELECT-fråga för en tabell kan tillämpas.
+
 ### WHERE ILIKE-sats
 
 Nyckelordet ILIKE kan användas i stället för LIKE för att skapa matchningar för WHERE-satsen i SELECT-frågans skiftlägeskänsliga.
@@ -73,10 +98,10 @@ Nyckelordet ILIKE kan användas i stället för LIKE för att skapa matchningar 
 ```
 
 Logiken i LIKE- och ILIKE-klausulerna är följande:
-- ```WHERE condition LIKE pattern```, ```~~``` motsvarar mönster
-- ```WHERE condition NOT LIKE pattern```, ```!~~``` motsvarar mönster
-- ```WHERE condition ILIKE pattern```, ```~~*``` motsvarar mönster
-- ```WHERE condition NOT ILIKE pattern```, ```!~~*``` motsvarar mönster
+- ```WHERE condition LIKE pattern```,  ```~~``` motsvarar mönster
+- ```WHERE condition NOT LIKE pattern```,  ```!~~``` motsvarar mönster
+- ```WHERE condition ILIKE pattern```,  ```~~*``` motsvarar mönster
+- ```WHERE condition NOT ILIKE pattern```,  ```!~~*``` motsvarar mönster
 
 
 #### Exempel
@@ -90,7 +115,7 @@ Returnerar kunder med namn som börjar på A eller a.
 
 ## FÖRENINGAR
 
-En `SELECT` fråga som använder kopplingar har följande syntax:
+En `SELECT`-fråga som använder kopplingar har följande syntax:
 
 ```sql
 SELECT statement
@@ -102,7 +127,7 @@ ON join condition
 
 ## UNION, INTERSECT, and EXCEPT
 
-Programsatserna `UNION`, `INTERSECT`och `EXCEPT` stöds för att kombinera eller exkludera liknande rader från två eller flera tabeller:
+Satserna `UNION`, `INTERSECT` och `EXCEPT` stöds för att kombinera eller exkludera liknande rader från två eller flera tabeller:
 
 ```sql
 SELECT statement 1
@@ -112,15 +137,17 @@ SELECT statement 2
 
 ## SKAPA TABELL SOM MARKERAD
 
-Följande syntax definierar en `CREATE TABLE AS SELECT` (CTAS)-fråga som stöds av [!DNL Query Service]:
+Följande syntax definierar en `CREATE TABLE AS SELECT`-fråga (CTAS) som stöds av [!DNL Query Service]:
 
 ```sql
 CREATE TABLE table_name [ WITH (schema='target_schema_title', rowvalidation='false') ] AS (select_query)
 ```
 
-där,`target_schema_title` är titeln på XDM-schemat. Använd bara den här satsen om du vill använda ett befintligt XDM-schema för den nya datauppsättningen som skapas av CTAS-frågan`rowvalidation` om användaren vill validera radnivån för alla nya batchar som hämtas för den nya datauppsättningen som skapas. Standardvärdet är &#39;true&#39;
+var,
+`target_schema_title` är titeln på XDM-schemat. Använd bara den här satsen om du vill använda ett befintligt XDM-schema för den nya datauppsättningen som skapas av CTAS-frågan
+`rowvalidation` anger om användaren vill validera radnivån för alla nya batchar som hämtas för den nya datamängden som skapas. Standardvärdet är &#39;true&#39;
 
-och `select_query` är en `SELECT` -programsats vars syntax definieras ovan i det här dokumentet.
+och `select_query` är en `SELECT`-sats vars syntax definieras ovan i det här dokumentet.
 
 
 ### Exempel
@@ -132,18 +159,23 @@ CREATE TABLE Chairs WITH (schema='target schema title') AS (SELECT color, count(
 
 Observera att för en viss CTAS-fråga:
 
-1. Programsatsen `SELECT` måste ha ett alias för de sammanställningsfunktioner som `COUNT`, `SUM`, `MIN`och så vidare.
-2. Programsatsen `SELECT` kan tillhandahållas med eller utan parenteser ().
+1. Programsatsen `SELECT` måste ha ett alias för de sammanställningsfunktioner som `COUNT`, `SUM`, `MIN` och så vidare.
+2. Programsatsen `SELECT` kan anges med eller utan parenteser ().
+3. Programsatsen `SELECT` kan tillhandahållas med en SNAPSHOT-sats för att läsa inkrementella deltas till måltabellen.
+
+```sql
+CREATE TABLE Chairs AS (SELECT color FROM Inventory SNAPSHOT SINCE 123)
+```
 
 ## INFOGA I
 
-Följande syntax definierar en `INSERT INTO` fråga som stöds av [!DNL Query Service]:
+Följande syntax definierar en `INSERT INTO`-fråga som stöds av [!DNL Query Service]:
 
 ```sql
 INSERT INTO table_name select_query
 ```
 
-där `select_query` är en `SELECT` -programsats vars syntax definieras ovan i det här dokumentet.
+där `select_query` är en `SELECT`-sats vars syntax definieras ovan i det här dokumentet.
 
 ### Exempel
 
@@ -154,7 +186,12 @@ INSERT INTO Customers SELECT SupplierName, City, Country FROM OnlineCustomers;
 Observera att för en given INSERT INTO-fråga:
 
 1. Programsatsen `SELECT` FÅR INTE omslutas av parenteser ().
-2. Schemat för resultatet av `SELECT` programsatsen måste överensstämma med schemat i tabellen som definierats i `INSERT INTO` programsatsen .
+2. Schemat för resultatet av `SELECT`-satsen måste överensstämma med schemat för tabellen som definieras i `INSERT INTO`-satsen.
+3. Programsatsen `SELECT` kan tillhandahållas med en SNAPSHOT-sats för att läsa inkrementella deltas till måltabellen.
+
+```sql
+INSERT INTO Customers AS (SELECT * from OnlineCustomers SNAPSHOT AS OF 345)
+```
 
 ### DROP TABLE
 
@@ -171,13 +208,14 @@ DROP [TEMP] TABLE [IF EXISTS] [db_name.]table_name
 
 ## SKAPA VY
 
-Följande syntax definierar en `CREATE VIEW` fråga som stöds av [!DNL Query Service]:
+Följande syntax definierar en `CREATE VIEW`-fråga som stöds av [!DNL Query Service]:
 
 ```sql
 CREATE [ OR REPLACE ] VIEW view_name AS select_query
 ```
 
-Var `view_name` är namnet på den vy som ska skapas och `select_query` är en `SELECT` -programsats vars syntax definieras ovan i det här dokumentet.
+Där `view_name` är namnet på vyn som ska skapas
+och `select_query` är en `SELECT`-sats vars syntax definieras ovan i det här dokumentet.
 
 Exempel:
 
@@ -188,13 +226,13 @@ CREATE OR REPLACE VIEW V1 AS SELECT model, version FROM Inventory
 
 ### DROP VIEW
 
-Följande syntax definierar en `DROP VIEW` fråga som stöds av [!DNL Query Service]:
+Följande syntax definierar en `DROP VIEW`-fråga som stöds av [!DNL Query Service]:
 
 ```sql
 DROP VIEW [IF EXISTS] view_name
 ```
 
-Var `view_name` är namnet på vyn som ska tas bort
+Där `view_name` är namnet på den vy som ska tas bort
 
 Exempel:
 
@@ -219,7 +257,7 @@ Om du vill returnera värdet för en inställning använder du `SHOW [setting na
 
 ### BÖRJA
 
-Det här kommandot tolkas och det slutförda kommandot skickas tillbaka till klienten. Detta är samma som `START TRANSACTION` kommandot.
+Det här kommandot tolkas och det slutförda kommandot skickas tillbaka till klienten. Detta är samma som kommandot `START TRANSACTION`.
 
 ```sql
 BEGIN [ TRANSACTION ]
@@ -280,13 +318,13 @@ DECLARE name CURSOR [ WITH  HOLD ] FOR query
 
 - `name`: Namnet på den markör som ska skapas.
 - `WITH HOLD`: Anger att markören kan fortsätta att användas efter att transaktionen som den skapades har genomförts.
-- `query`: Ett `SELECT` eller `VALUES` kommando som innehåller de rader som markören ska returnera.
+- `query`: Ett  `SELECT` eller  `VALUES` kommando som innehåller de rader som markören ska returnera.
 
 ### KÖR
 
-`EXECUTE` används för att köra en tidigare förberedd sats. Eftersom förberedda satser bara finns under en session måste den förberedda satsen ha skapats av en `PREPARE` -sats som kördes tidigare i den aktuella sessionen.
+`EXECUTE` används för att köra en tidigare förberedd sats. Eftersom förberedda satser bara finns under en session måste den förberedda satsen ha skapats av en `PREPARE`-sats som kördes tidigare i den aktuella sessionen.
 
-Om programsatsen som `PREPARE` skapade programsatsen angav vissa parametrar måste en kompatibel uppsättning parametrar skickas till `EXECUTE` programsatsen, annars uppstår ett fel. Observera att förberedda satser (till skillnad från funktioner) inte överläses baserat på parametrarnas typ eller antal. Namnet på en förberedd sats måste vara unikt i en databassession.
+Om `PREPARE`-satsen som skapade satsen angav vissa parametrar måste en kompatibel uppsättning parametrar skickas till `EXECUTE`-satsen, annars uppstår ett fel. Observera att förberedda satser (till skillnad från funktioner) inte överläses baserat på parametrarnas typ eller antal. Namnet på en förberedd sats måste vara unikt i en databassession.
 
 ```sql
 EXECUTE name [ ( parameter [, ...] ) ]
@@ -301,7 +339,7 @@ EXECUTE name [ ( parameter [, ...] ) ]
 
 Det här kommandot visar den körningsplan som PostgreSQL-plannern genererar för den angivna satsen. Körningsplanen visar hur tabellerna som programsatsen refererar till skannas - med vanlig sekventiell skanning, indexskanning och så vidare - och om flera tabeller refereras, vilka kopplingsalgoritmer som används för att sammanfoga de nödvändiga raderna från varje indatatabell.
 
-Den mest kritiska delen av visningen är den uppskattade kostnaden för satskörning, som är planeringens gissning på hur lång tid det tar att köra kontoutdraget (mäts i kostnadsenheter som är godtyckliga, men vanligtvis är disksideshämtningar). Faktiskt visas två tal: startkostnaden innan den första raden kan returneras och totalkostnaden för att returnera alla rader. För de flesta frågor är den totala kostnaden det som är viktigast, men i sammanhang som en underfråga i EXISTS väljer planeraren den minsta startkostnaden i stället för den minsta totalkostnaden (eftersom köraren slutar efter att ha hämtat en rad i alla fall). Om du begränsar antalet rader som ska returneras med en `LIMIT` sats, skapar planeraren en lämplig interpolation mellan slutpunktskostnaderna för att beräkna vilken plan som faktiskt är den billigaste.
+Den mest kritiska delen av visningen är den uppskattade kostnaden för satskörning, som är planeringens gissning på hur lång tid det tar att köra kontoutdraget (mäts i kostnadsenheter som är godtyckliga, men vanligtvis är disksideshämtningar). Faktiskt visas två tal: startkostnaden innan den första raden kan returneras och totalkostnaden för att returnera alla rader. För de flesta frågor är den totala kostnaden det som är viktigast, men i sammanhang som en underfråga i EXISTS väljer planeraren den minsta startkostnaden i stället för den minsta totalkostnaden (eftersom köraren slutar efter att ha hämtat en rad i alla fall). Om du begränsar antalet rader som ska returneras med en `LIMIT`-sats skapar planeraren en lämplig interpolation mellan slutpunktskostnaderna för att beräkna vilken plan som faktiskt är den billigaste.
 
 Alternativet `ANALYZE` gör att satsen körs, inte bara planerad. Sedan läggs statistik om faktisk körtid till i visningen, inklusive den totala förflutna tid som förbrukats i varje plannod (i millisekunder) och det totala antalet rader som returneras. Detta är användbart för att se om planeringens uppskattningar är i närheten av verkligheten.
 
@@ -319,15 +357,15 @@ where option can be one of:
 
 - `ANALYZE`: Utför kommandot och visa faktiska körtider och annan statistik. Parametern är som standard `FALSE`.
 - `FORMAT`: Ange utdataformatet, som kan vara TEXT, XML, JSON eller YAML. Utdata som inte är text innehåller samma information som textutdataformatet, men är enklare att tolka i program. Parametern är som standard `TEXT`.
-- `statement`: Alla `SELECT`, `INSERT`, `UPDATE`, `DELETE`, `VALUES`, `EXECUTE`, `DECLARE`, `CREATE TABLE AS`eller `CREATE MATERIALIZED VIEW AS` -programsatser vars körningsplan du vill se.
+- `statement`: Alla  `SELECT`,  `INSERT`,  `UPDATE`,  `DELETE`,  `VALUES`,  `EXECUTE`,  `DECLARE`,  `CREATE TABLE AS` eller  `CREATE MATERIALIZED VIEW AS` programsatser vars körningsplan du vill se.
 
 >[!IMPORTANT]
 >
->Kom ihåg att programsatsen faktiskt körs när alternativet `ANALYZE` används. Även om utdata som `EXPLAIN` returneras `SELECT` ignoreras, inträffar andra biverkningar av satsen som vanligt.
+>Kom ihåg att satsen faktiskt körs när alternativet `ANALYZE` används. Även om `EXPLAIN` ignorerar utdata som returneras av en `SELECT`, inträffar andra biverkningar av satsen som vanligt.
 
 #### Exempel
 
-Så här visar du planen för en enkel fråga i en tabell med en enda `integer` kolumn och 10 000 rader:
+Så här visar du planen för en enkel fråga i en tabell med en enda `integer`-kolumn och 10 000 rader:
 
 ```sql
 EXPLAIN SELECT * FROM foo;
@@ -342,7 +380,7 @@ EXPLAIN SELECT * FROM foo;
 
 `FETCH` hämtar rader med hjälp av en markör som skapats tidigare.
 
-En markör har en associerad position som används av `FETCH`. Markörpositionen kan vara före den första raden i frågeresultatet, på en viss resultatrad eller efter den sista resultatraden. När du skapar en markör placeras den före den första raden. När du har hämtat några rader placeras markören på den rad som senast hämtades. Om du `FETCH` inte längre kommer till den sista raden, kommer markören att vara kvar efter den sista raden. Om det inte finns någon sådan rad returneras ett tomt resultat och markörerna placeras före den första raden eller efter den sista raden.
+En markör har en associerad position som används av `FETCH`. Markörpositionen kan vara före den första raden i frågeresultatet, på en viss resultatrad eller efter den sista resultatraden. När du skapar en markör placeras den före den första raden. När du har hämtat några rader placeras markören på den rad som senast hämtades. Om `FETCH` inte kommer i slutet av de tillgängliga raderna flyttas markören efter den sista raden. Om det inte finns någon sådan rad returneras ett tomt resultat och markörerna placeras före den första raden eller efter den sista raden.
 
 ```sql
 FETCH num_of_rows [ IN | FROM ] cursor_name
@@ -355,11 +393,11 @@ FETCH num_of_rows [ IN | FROM ] cursor_name
 
 ### FÖRBEREDA
 
-`PREPARE` skapar en förberedd programsats. En förberedd programsats är ett objekt på serversidan som kan användas för att optimera prestanda. När `PREPARE` programsatsen körs tolkas, analyseras och skrivs om den angivna programsatsen. När ett `EXECUTE` kommando sedan utfärdas planeras och körs den förberedda satsen. Denna arbetsfördelning undviker repetitivt analysarbete, samtidigt som körningsplanen kan vara beroende av de angivna parametervärdena.
+`PREPARE` skapar en förberedd programsats. En förberedd programsats är ett objekt på serversidan som kan användas för att optimera prestanda. När `PREPARE`-satsen körs tolkas, analyseras och skrivs om den angivna satsen. När ett `EXECUTE`-kommando sedan utfärdas planeras och körs den förberedda satsen. Denna arbetsfördelning undviker repetitivt analysarbete, samtidigt som körningsplanen kan vara beroende av de angivna parametervärdena.
 
-Förförberedda satser kan innehålla parametrar, värden som ersätts med programsatsen när den körs. När du skapar den förberedda programsatsen ska du referera till parametrar per position, med $1, $2 och så vidare. Du kan också ange en motsvarande lista med parameterdatatyper. När en parameters datatyp inte har angetts eller deklarerats som okänd, härleds typen från kontexten där parametern först refereras, om det är möjligt. När du kör satsen anger du de faktiska värdena för de här parametrarna i `EXECUTE` -satsen.
+Förförberedda satser kan innehålla parametrar, värden som ersätts med programsatsen när den körs. När du skapar den förberedda programsatsen ska du referera till parametrar per position, med $1, $2 och så vidare. Du kan också ange en motsvarande lista med parameterdatatyper. När en parameters datatyp inte har angetts eller deklarerats som okänd, härleds typen från kontexten där parametern först refereras, om det är möjligt. När du kör satsen anger du de faktiska värdena för de här parametrarna i `EXECUTE`-satsen.
 
-Förförberedda satser varar bara så länge den aktuella databassessionen varar. När sessionen avslutas, glöms den förberedda programsatsen bort, så den måste återskapas innan den används igen. Det innebär också att en enda förberedd sats inte kan användas av flera samtidiga databasklienter. Varje klient kan dock skapa en egen förberedd sats som ska användas. Förförberedda satser kan rensas manuellt med hjälp av `DEALLOCATE` kommandot.
+Förförberedda satser varar bara så länge den aktuella databassessionen varar. När sessionen avslutas, glöms den förberedda programsatsen bort, så den måste återskapas innan den används igen. Det innebär också att en enda förberedd sats inte kan användas av flera samtidiga databasklienter. Varje klient kan dock skapa en egen förberedd sats som ska användas. Förförberedda satser kan rensas manuellt med kommandot `DEALLOCATE`.
 
 Förberedda satser kan ha den största prestandafördelen när en session används för att köra ett stort antal liknande satser. Prestandaskillnaden är särskilt stor om programsatserna är komplexa att planera eller skriva om, till exempel om frågan innehåller en join från många tabeller eller kräver tillämpning av flera regler. Om programsatsen är relativt enkel att planera och skriva om men relativt dyr att utföra, är prestandafördelen med förberedda programsatser mindre märkbar.
 
@@ -387,7 +425,7 @@ ROLLBACK [ WORK ]
 
 ### MARKERA I
 
-`SELECT INTO` skapar en ny tabell och fyller den med data som beräknas av en fråga. Data returneras inte till klienten, som de är med en normal `SELECT`. Den nya tabellens kolumner har de namn och datatyper som är associerade med utdatakolumnerna för `SELECT`.
+`SELECT INTO` skapar en ny tabell och fyller den med data som beräknas av en fråga. Data returneras inte till klienten, vilket är fallet med en normal `SELECT`. Den nya tabellens kolumner har de namn och datatyper som är associerade med utdatakolumnerna för `SELECT`.
 
 ```sql
 [ WITH [ RECURSIVE ] with_query [, ...] ]
@@ -409,7 +447,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 #### Parametrar
 
-- `TEMPORARAY` eller `TEMP`: Om det anges skapas tabellen som ett temporärt register.
+- `TEMPORARAY` eller  `TEMP`: Om det anges skapas tabellen som ett temporärt register.
 - `UNLOGGED:` om det anges skapas tabellen som en ologgad tabell.
 - `new_table` Namnet (eventuellt schemakvalificerat) på tabellen som ska skapas.
 
@@ -423,7 +461,7 @@ SELECT * INTO films_recent FROM films WHERE date_prod >= '2002-01-01';
 
 ### VISA
 
-`SHOW` visar den aktuella inställningen för körningsparametrar. Dessa variabler kan ställas in med `SET` programsatsen, genom att redigera konfigurationsfilen postgresql.conf, via `PGOPTIONS` miljövariabeln (när libpq eller ett libpq-baserat program används) eller via kommandoradsflaggor när postgres-servern startas.
+`SHOW` visar den aktuella inställningen för körningsparametrar. Dessa variabler kan ställas in med programsatsen `SET` genom att redigera konfigurationsfilen postgresql.conf, via miljövariabeln `PGOPTIONS` (när du använder libpq eller ett libpq-baserat program) eller via kommandoradsflaggor när postgres-servern startas.
 
 ```sql
 SHOW name
@@ -441,7 +479,7 @@ SHOW name
 
 #### Exempel
 
-Visa parameterns aktuella inställning `DateStyle`
+Visa den aktuella inställningen för parametern `DateStyle`
 
 ```sql
 SHOW DateStyle;
@@ -453,7 +491,7 @@ SHOW DateStyle;
 
 ### STARTA TRANSAKTION
 
-Det här kommandot tolkas och skickar tillbaka det slutförda kommandot till klienten. Detta är samma som `BEGIN` kommandot.
+Det här kommandot tolkas och skickar tillbaka det slutförda kommandot till klienten. Detta är samma som kommandot `BEGIN`.
 
 ```sql
 START TRANSACTION [ transaction_mode [, ...] ]
@@ -481,7 +519,7 @@ where 'format_name' is be one of:
 
 >[!NOTE]
 >
->Den fullständiga utdatasökvägen `adl://<ADLS_URI>/users/<USER_ID>/acp_foundation_queryService/folder_location/<QUERY_ID>`
+>Den fullständiga utdatasökvägen är `adl://<ADLS_URI>/users/<USER_ID>/acp_foundation_queryService/folder_location/<QUERY_ID>`
 
 
 ### ALTER
