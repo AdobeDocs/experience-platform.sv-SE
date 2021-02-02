@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;data ingestion;batch;Batch;enable dataset;Batch ingestion overview;overview;batch ingestion overview;
+keywords: Experience Platform;hem;populära ämnen;dataöverföring;batch;batchvis;aktivera datauppsättning;batchöverföring översikt;översikt;batchöverföring översikt;
 solution: Experience Platform
 title: Översikt över batchintag
 topic: overview
-description: Med API:t för gruppinmatning kan du importera data till Adobe Experience Platform som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en parquet-fil) eller data som följer ett känt schema i XDM-registret (Experience Data Model).
+description: Med API:t för gruppinmatning kan du importera data till Adobe Experience Platform som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som följer ett känt schema i XDM-registret (Experience Data Model).
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
 workflow-type: tm+mt
-source-wordcount: '1193'
+source-wordcount: '1216'
 ht-degree: 1%
 
 ---
@@ -15,9 +15,9 @@ ht-degree: 1%
 
 # [!DNL Batch Ingestion] översikt
 
-Med API:t kan du [!DNL Batch Ingestion] importera data till Adobe Experience Platform som gruppfiler. Data som ska importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en parquet-fil) eller data som följer ett känt schema i [!DNL Experience Data Model] (XDM)-registret.
+Med API:t [!DNL Batch Ingestion] kan du importera data till Adobe Experience Platform som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som överensstämmer med ett känt schema i [!DNL Experience Data Model]-registret (XDM).
 
-API-referensen [för](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) datainmatning innehåller ytterligare information om dessa API-anrop.
+[API-referensen för datainmatning](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) innehåller ytterligare information om dessa API-anrop.
 
 I följande diagram visas batchintagsprocessen:
 
@@ -25,7 +25,7 @@ I följande diagram visas batchintagsprocessen:
 
 ## Använda API
 
-Med [!DNL Data Ingestion] API kan du importera data som grupper (en dataenhet som består av en eller flera filer som ska importeras som en enda enhet) [!DNL Experience Platform] i tre enkla steg:
+Med API:t [!DNL Data Ingestion] kan du importera data som grupper (en dataenhet som består av en eller flera filer som ska importeras som en enda enhet) till [!DNL Experience Platform] i tre grundläggande steg:
 
 1. Skapa en ny batch.
 2. Överför filer till en angiven datauppsättning som matchar datans XDM-schema.
@@ -36,7 +36,7 @@ Med [!DNL Data Ingestion] API kan du importera data som grupper (en dataenhet so
 
 - Data som ska överföras måste vara i något av formaten Parquet eller JSON.
 - En datauppsättning som skapats i [[!DNL Catalog services]](../../catalog/home.md).
-- Innehållet i parquet-filen måste matcha en delmängd av schemat i den datauppsättning som överförs till.
+- Innehållet i Parquet-filen måste matcha en delmängd av schemat i datauppsättningen som överförs till.
 - Ha din unika åtkomsttoken efter autentisering.
 
 ### Bästa praxis för gruppkonsumtion
@@ -44,27 +44,27 @@ Med [!DNL Data Ingestion] API kan du importera data som grupper (en dataenhet so
 - Den rekommenderade batchstorleken är mellan 256 MB och 100 GB.
 - Varje grupp bör innehålla högst 1 500 filer.
 
-Om du vill överföra en fil som är större än 512 MB måste filen delas upp i mindre segment. Instruktioner om hur du överför en stor fil finns [här](#large-file-upload---create-file).
+Om du vill överföra en fil som är större än 512 MB måste filen delas upp i mindre segment. Instruktioner för att överföra en stor fil finns [här](#large-file-upload---create-file).
 
 ### Läser exempel-API-anrop
 
-Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
+Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform] finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -131,7 +131,7 @@ Du kan överföra filer med hjälp av API:t för liten filöverföring. Om filer
 
 >[!NOTE]
 >
->Exemplen nedan använder [filformatet parquet](https://parquet.apache.org/documentation/latest/) . Ett exempel som använder JSON-filformatet finns i utvecklarhandboken för [batchimport](./api-overview.md).
+>I exemplen nedan används filformatet [Apache Parquet](https://parquet.apache.org/documentation/latest/). Ett exempel som använder JSON-filformatet finns i [Utvecklarhandbok för gruppfrågor](./api-overview.md).
 
 ### Liten filöverföring
 
@@ -238,7 +238,7 @@ curl -X PATCH "https://platform.adobe.io/data/foundation/import/batches/{BATCH_I
 
 ## Slutförande av signalbatch
 
-När alla filer har överförts till gruppen kan gruppen signaleras för slutförande. På så sätt skapas [!DNL Catalog] DataSetFile-posterna för de slutförda filerna och kopplas till den grupp som genereras ovan. Batchen markeras sedan som [!DNL Catalog] lyckad, vilket aktiverar efterföljande flöden för att importera tillgängliga data.
+När alla filer har överförts till gruppen kan gruppen signaleras för slutförande. På så sätt skapas [!DNL Catalog] DataSetFile-posterna för de slutförda filerna och kopplas till den grupp som genereras ovan. [!DNL Catalog]-batchen markeras sedan som lyckad, vilket utlöser flöden längre fram i kedjan för att importera tillgängliga data.
 
 **Begäran**
 
@@ -389,13 +389,13 @@ Fältet `"status"` visar den aktuella statusen för den begärda batchen. Batche
 | Status | Beskrivning |
 | ------ | ----------- |
 | Övergiven | Batchen har inte slutförts inom den förväntade tidsramen. |
-| Avbruten | En avbrottsåtgärd har **explicit** anropats (via API:t för gruppinmatning) för den angivna gruppen. När batchen är i inläst läge kan den inte avbrytas. |
+| Avbruten | En avbruten åtgärd har **explicit** anropats (via API för gruppinmatning) för den angivna gruppen. När batchen är i inläst läge kan den inte avbrytas. |
 | Aktiv | Batchen har befordrats och är tillgänglig för nedladdning. Den här statusen kan användas omväxlande med &quot;Lyckades&quot;. |
 | Borttagen | Data för batchen har tagits bort helt. |
-| Misslyckades | Ett terminaltillstånd som antingen beror på felaktig konfiguration och/eller felaktiga data. Data för en misslyckad batch visas **inte** . Den här statusen kan användas som ersättning med &quot;Misslyckades&quot;. |
+| Misslyckades | Ett terminaltillstånd som antingen beror på felaktig konfiguration och/eller felaktiga data. Data för en misslyckad batch **visas inte**. Den här statusen kan användas som ersättning med &quot;Misslyckades&quot;. |
 | Inaktiv | Batchen befordrades men har återförts eller gått ut. Batchen är inte längre tillgänglig för nedströmsförbrukning. |
 | Inläst | Data för batchen har slutförts och batchen är klar för befordran. |
-| Läser in | Data för den här batchen överförs och batchen är **inte** klar att befordras. |
+| Läser in | Data för den här batchen överförs och batchen är för närvarande **inte** klar att befordras. |
 | Försöker igen | Data för den här batchen bearbetas. På grund av ett system- eller övergående fel misslyckades dock batchen. Detta innebär att batchen provas igen. |
 | Mellanlagrad | Mellanlagringsfasen av befordringsprocessen för en batch är slutförd och åtkomsten har körts. |
 | Mellanlagring | Data för batchen bearbetas. |
