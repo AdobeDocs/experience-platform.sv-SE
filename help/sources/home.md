@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;source connectors;source connector;sources;data sources;data source;data source connection
+keywords: Experience Platform;hem;populära ämnen;källkopplingar;källanslutning;källor;datakällor;datakällor;datakällanslutning;datakällanslutning
 solution: Experience Platform
 title: Adobe Experience Platform Source Connectors - översikt
 topic: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 translation-type: tm+mt
-source-git-commit: 466cb072537cbf462d2c4d8f3ee4b6eccc0199a0
+source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
 workflow-type: tm+mt
-source-wordcount: '896'
+source-wordcount: '913'
 ht-degree: 0%
 
 ---
@@ -45,7 +45,7 @@ Experience Platform stöder inmatning av data från ett annonssystem från tredj
 
 ### molnlagring
 
-Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM-parquet eller avgränsade. Varje steg i processen integreras i arbetsflödet Källor med användargränssnittet. Mer information finns i följande relaterade dokument:
+Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM Parquet eller avgränsade. Varje steg i processen integreras i arbetsflödet Källor med användargränssnittet. Mer information finns i följande relaterade dokument:
 
 - [[!DNL Azure Data Lake Storage Gen2] koppling](connectors/cloud-storage/adls-gen2.md)
 - [[!DNL Azure Blob] koppling](connectors/cloud-storage/blob.md)
