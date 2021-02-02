@@ -6,18 +6,18 @@ breadcrumb-title: Platform Tutorials
 user-guide-description: Kom igång snabbt och enkelt med Platform genom att följa med i stegvisa självstudiekurser som täcker allt från att förbereda data för konsumtion till att arbeta med avancerade maskininlärningsalgoritmer.
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 097fe219e0d64090de758f388ba98e6024db2201
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '70'
-ht-degree: 7%
+source-wordcount: '74'
+ht-degree: 6%
 
 ---
 
 
-# Adobe Experience Platform tutorials {#tutorials}
+# Adobe Experience Platform självstudiekurser {#tutorials}
 
 * [Tutorials - översikt](home.md)
-* [Autentisera till Experience Platform API:er](authentication.md)
+* [Autentisera till Experience Platform API:er](https://www.adobe.com/go/platform-api-authentication-en)
 * [Åtkomst till plattformsdata](data-access.md)
 * [Datastyrning och integritet](data-governance-privacy.md)
 * [Datavetenskapens arbetsyta](data-science-workspace.md)
