@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;namespace;Namespace;Namespaces;namespaces;identity namespace;Identity namespace;identity;Identity;Identity service;identity service
+keywords: Experience Platform;hem;populära ämnen;namnrymd;Namnrymd;Namnrymder;namnutrymmen;identitetsnamnrymd;Identitetsnamnrymd;Identitet;Identitetstjänst;Identitetstjänst
 solution: Experience Platform
 title: Adobe Experience Platform Identity Service
 topic: overview
@@ -7,7 +7,7 @@ description: 'Identitetsnamnutrymmen är en komponent i identitetstjänsten som 
 translation-type: tm+mt
 source-git-commit: 0547c33e831fe1ac684f55a0e79978cd7f191e65
 workflow-type: tm+mt
-source-wordcount: '1432'
+source-wordcount: '1451'
 ht-degree: 1%
 
 ---
