@@ -3,10 +3,11 @@ product: experience-platform
 audience: user
 user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 translation-type: tm+mt
-source-git-commit: 395a8c2aa7fc89cde04263dbbfb3315318245ef6
+source-git-commit: b348a5493b13112291dd8e9234d457ff8c694147
 workflow-type: tm+mt
-source-wordcount: '429'
+source-wordcount: '443'
 ht-degree: 0%
 
 ---
@@ -27,9 +28,9 @@ ht-degree: 0%
 * Målkatalog {#catalog}
    * [Översikt över destinationskatalogen](./catalog/overview.md)
    * [ (Alfa) HTTP-mål](./catalog/http-destination.md)
-   * Adobe destinationer{#adobe}
+   * Adobe mål{#adobe}
       * [Översikt över destinationer i Adobe](./catalog/adobe/overview.md)
-      * [Experience Platform segmentdelning](https://docs.adobe.com/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
+      * [Experience Platform segmentdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
    * Annonsmål{#advertising}
       * [Översikt över reklamdestinationer](./catalog/advertising/overview.md)
       * [Adobe Advertising Cloud](./catalog/advertising/adobe-advertising-cloud.md)
@@ -72,11 +73,12 @@ ht-degree: 0%
       * [SessionCam-mål](./catalog/analytics/sessioncam.md)
       * [TMMData-mål](./catalog/analytics/tmmdata.md)
       * [Spårningsmål för textkonvertering](./catalog/analytics/yext.md)
-   * Lagringsmål i molnet{#cloud-storage}
+   * Lagringsmål för molnet{#cloud-storage}
       * [Översikt över destinationer för molnlagring](./catalog/cloud-storage/overview.md)
       * [Arbetsflöde för att skapa molnlagringsmål](./catalog/cloud-storage/workflow.md)
       * [Amazon Kinesis](./catalog/cloud-storage/amazon-kinesis.md)
       * [Amazon S3-mål](./catalog/cloud-storage/amazon-s3.md)
+      * [Azure Blob-mål](./catalog/cloud-storage/azure-blob.md)
       * [Azure Event Hubs-mål](./catalog/cloud-storage/azure-event-hubs.md)
       * [SFTP-mål](./catalog/cloud-storage/sftp.md)
    * Plattformsmål för datahantering {#data-management}
@@ -110,7 +112,7 @@ ht-degree: 0%
       * [Gainsight-mål](./catalog/personalization/gainsight.md)
       * [Kickfire-mål](./catalog/personalization/kickfire.md)
       * [Marketo Web Personalization destination](./catalog/personalization/marketo-web-personalization.md)
-   * Målgrupper i sociala nätverk{#social}
+   * Destinationer för sociala nätverk{#social}
       * [Översikt över mål för sociala nätverk](./catalog/social/overview.md)
       * [Autentiseringsflöde för mål för sociala nätverk](./catalog/social/workflow.md)
       * [Adobe Livefyre-destinationen](./catalog/social/adobe-livefyre.md)
