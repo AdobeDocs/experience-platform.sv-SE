@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;collect customer success;customer success
+keywords: Experience Platform;hemanvändare;populära ämnen;samla in nöjda kunder;lyckade kunder
 solution: Experience Platform
 title: Samla in data från ett lyckat kundsystem via källanslutningar och API:er
 topic: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett system för kundframgångar och att hämta dem till plattformen via källanslutningar och API:er.
 translation-type: tm+mt
-source-git-commit: d8ec9b4b28602bce30365fe64829c8c8df1b9211
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '1527'
+source-wordcount: '1541'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](../../../../tutorials/authentication.md) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
