@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;data ingestion;ingested data;streaming;overview;streaming ingestion;latency;streaming latency;
+keywords: Experience Platform;hemmabruk;populära ämnen;datainmatning;inmatade data;strömning;översikt;strömningsupptagning;latens;strömningstid;
 solution: Experience Platform
 title: Adobe Experience Platform Streaming Inghit - översikt
 topic: overview
 description: Direktuppspelning för Adobe Experience Platform ger användare en metod för att skicka data från klient- och serverenheter till Experience Platform i realtid.
 translation-type: tm+mt
-source-git-commit: c04fb056d4564e53f192e0734a700a13820f5ba7
+source-git-commit: 2dbd92efbd992b70f4f750b09e9d2e0626e71315
 workflow-type: tm+mt
-source-wordcount: '272'
+source-wordcount: '286'
 ht-degree: 0%
 
 ---
@@ -19,31 +19,31 @@ Direktuppspelning för Adobe Experience Platform ger användarna en metod för a
 
 ## Vad kan du göra med direktuppspelning?
 
-Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser genom att skapa en [!DNL Real-time Customer Profile] för varje enskild kund. Direktuppspelning spelar en viktig roll när det gäller att skapa dessa profiler genom att ni kan leverera [!DNL Profile] data till [!DNL Data Lake] servern med så lite fördröjning som möjligt.
+Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser genom att generera en [!DNL Real-time Customer Profile] för var och en av era enskilda kunder. Direktuppspelning spelar en viktig roll när det gäller att skapa dessa profiler genom att göra det möjligt att leverera [!DNL Profile]-data till [!DNL Data Lake] med så lite fördröjning som möjligt.
 
 Följande video är utformad för att hjälpa dig förstå hur man får in strömmande material och beskriver koncepten ovan.
 
 >[!VIDEO](https://video.tv.adobe.com/v/28425?quality=12&learn=on)
 
-### Strömma profilposter och [!DNL ExperienceEvents]
+### Direktuppspelningsprofilsposter och [!DNL ExperienceEvents]
 
-Med direktuppspelningsinmatning kan användare strömma profilposter och [!DNL ExperienceEvents] till [!DNL Platform] på bara några sekunder för att hjälpa till att driva personaliseringen i realtid. Alla data som skickas till API:er för direktuppspelning sparas automatiskt i [!DNL Data Lake].
+Med direktuppspelningsinmatning kan användare strömma profilposter och [!DNL ExperienceEvents] till [!DNL Platform] på några sekunder för att hjälpa till att driva personaliseringen i realtid. Alla data som skickas till API:er för direktuppspelning sparas automatiskt i [!DNL Data Lake].
 
-Mer information finns i [Skapa en anslutningsguide](../tutorials/create-streaming-connection.md) för direktuppspelning.
+Läs [skapa en guide för direktuppspelad anslutning](../tutorials/create-streaming-connection.md) om du vill ha mer information.
 
 ### Strömma till datauppsättningar
 
-När du är säker på att dina data är rena kan du aktivera dina datauppsättningar för [!DNL Real-time Customer Profile] och [!DNL Identity Service].
+När du är säker på att dina data är rena kan du aktivera datauppsättningarna för [!DNL Real-time Customer Profile] och [!DNL Identity Service].
 
-Mer information om hur du aktiverar en datauppsättning för [!DNL Profile] och [!DNL Identity Service]finns i [Konfigurera en datauppsättningsguide](../../profile/tutorials/dataset-configuration.md).
+Mer information om hur du aktiverar en datauppsättning för [!DNL Profile] och [!DNL Identity Service] finns i [konfigurationsguiden](../../profile/tutorials/dataset-configuration.md).
 
-## Vilken fördröjning förväntas för direktuppspelad inmatning på [!DNL Platform]?
+## Vad är den förväntade fördröjningen för direktuppspelad inmatning på [!DNL Platform]?
 
 | Destination | Förväntad fördröjning |
 | --------- | ---------------- |
-| Kundprofil i realtid | &lt; 1 minut |
-| Data Lake | &lt; 60 minuter |
+| Kundprofil i realtid | &lt; 1=&quot;&quot; minute=&quot;&quot;> |
+| Data Lake | &lt; 60=&quot;&quot; minutes=&quot;&quot;> |
 
 ## Adobe Experience Platform-tillägg
 
-Du kan använda Adobe Experience Platform-tillägget för att skapa en ny direktuppspelningsanslutning. Tillägget innehåller åtgärder för att skicka beacons som är formaterade i [!DNL Experience Platform] (XDM) för realtidsintag till [!DNL Experience Data Model] [!DNL Experience Platform]. Mer information finns i dokumentationen för [Experience Platform Extension](https://docs.adobe.com/content/help/en/launch/using/extensions-ref/adobe-extension/adobe-experience-platform-extension.html) .
+Du kan använda Adobe Experience Platform-tillägget för att skapa en ny direktuppspelningsanslutning. Tillägget [!DNL Experience Platform] innehåller åtgärder för att skicka beacons som är formaterade i [!DNL Experience Data Model] (XDM) för realtidsinmatning till [!DNL Experience Platform]. Mer information finns i dokumentationen för [Experience Platform Extension](https://experienceleague.adobe.com/docs/launch/using/extensions-ref/adobe-extension/adobe-experience-platform-extension.html).
