@@ -1,13 +1,13 @@
 ---
-keywords: Survey destinations;survey;foresee;inmoment;web intercept surveys;qualtrics
+keywords: Undersökningsdestinationer;undersökning;förutse;instund;webbinfångsundersökningar;frågor
 title: Destinationer för undersökning
 seo-title: Destinationer för undersökning
-description: Plattformarna identifierar enkäthändelser, samlar in feedback från kunderna i realtid via dataelement och delar data med CDP i realtid.
-seo-description: Plattformarna identifierar enkäthändelser, samlar in feedback från kunderna i realtid via dataelement och delar data med CDP i realtid.
+description: Plattformarna identifierar enkäthändelser, samlar in feedback från kunderna i realtid via dataelement och delar data med Platform.
+seo-description: Plattformarna identifierar enkäthändelser, samlar in feedback från kunderna i realtid via dataelement och delar data med Platform.
 translation-type: tm+mt
-source-git-commit: 85e6a65e1407ca60e7b63681c045fadaaa24aef9
+source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
 workflow-type: tm+mt
-source-wordcount: '100'
+source-wordcount: '105'
 ht-degree: 0%
 
 ---
@@ -15,9 +15,9 @@ ht-degree: 0%
 
 # Undersökningsmål {#survey-destinations}
 
-Plattformarna identifierar enkäthändelser, samlar in feedback från kunderna i realtid via dataelement och delar data med CDP i realtid.
+Plattformarna identifierar enkäthändelser, samlar in feedback från kunderna i realtid via dataelement och delar data med Adobe Experience Platform.
 
-För närvarande stöder kunddataplattformen i realtid de undersökningsmål som anges nedan. Information om hur du ansluter till dessa mål finns i de enskilda länkarna:
+För närvarande stöder Platform de undersökningsmål som anges nedan. Information om hur du ansluter till dessa mål finns i de enskilda länkarna:
 
 - [Foresee-tillägg](./foresee.md)
 - [InMoment-tillägg](./inmoment.md)
