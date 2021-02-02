@@ -5,10 +5,10 @@ audience: user
 user-guide-title: Handbok för kunddataplattform i realtid
 user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgruppssegment utifrån dessa profiler och aktivera dessa segment för tredjepartsdestinationer.
 translation-type: tm+mt
-source-git-commit: de2f4b16677ec6e820903b1e586213a132b126be
+source-git-commit: 4a282f8890ace3be7808ffbf018377d792e30cb7
 workflow-type: tm+mt
-source-wordcount: '126'
-ht-degree: 11%
+source-wordcount: '109'
+ht-degree: 12%
 
 ---
 
@@ -29,9 +29,6 @@ ht-degree: 11%
 * Integritet och datahantering {#privacy}
    * [Sekretessöversikt](privacy/privacy-overview.md)
    * [Datastyrning - översikt](privacy/data-governance-overview.md)
-   * Stöd för IAB TCF 2.0 {#iab}
-      * [Stöd för IAB TCF 2.0 i CDP i realtid](privacy/iab/overview.md)
-      * [Skapa datauppsättningar för att hämta IAB TCF 2.0-medgivandedata](privacy/iab/dataset-preparation.md)
 * Profiler {#profile}
    * [Profilöversikt](profile/profile-overview.md)
    * [Identiteter och identitetsnamnutrymmen](profile/identities-overview.md)
