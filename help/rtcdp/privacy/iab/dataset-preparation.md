@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;IAB;IAB 2.0;consent;Consent
+keywords: Experience Platform;home;IAB;IAB 2.0;medgivande;Samtycke
 solution: Experience Platform
-title: Stöd för IAB TCF 2.0 i kunddataplattformen i realtid
+title: Skapa datauppsättningar för att hämta IAB TCF 2.0-medgivandedata
 topic: privacy events
 description: Det här dokumentet innehåller steg för hur du konfigurerar de två datauppsättningar som krävs för att samla in IAB TCF 2.0-medgivandedata.
 translation-type: tm+mt
-source-git-commit: fa667d86c089c692f22cfd1b46f3f11b6e9a68d7
+source-git-commit: 0fea6c4d215e16941010e59817a2a099d775d2cd
 workflow-type: tm+mt
-source-wordcount: '1299'
+source-wordcount: '1571'
 ht-degree: 0%
 
 ---
@@ -15,12 +15,12 @@ ht-degree: 0%
 
 # Skapa datauppsättningar för att hämta IAB TCF 2.0-medgivandedata
 
-För [!DNL Real-time Customer Data Platform] att kunna behandla kundmedgivandedata i enlighet med IAB [!DNL Transparency & Consent Framework] (TCF) 2.0 måste dessa data skickas till datauppsättningar vars scheman innehåller TCF 2.0-tillståndsfält.
+För att [!DNL Real-time Customer Data Platform] ska kunna bearbeta data om kundgodkännande i enlighet med IAB [!DNL Transparency & Consent Framework] (TCF) 2.0, måste dessa data skickas till datauppsättningar vars scheman innehåller TCF 2.0-tillståndsfält.
 
 Två datauppsättningar krävs för att hämta TCF 2.0-medgivandedata:
 
-* En datamängd som baseras på [!DNL XDM Individual Profile] klassen, som är aktiverad för användning i [!DNL Real-time Customer Profile].
-* En datauppsättning som baseras på [!DNL XDM ExperienceEvent] klassen.
+* En datauppsättning som baseras på klassen [!DNL XDM Individual Profile], som är aktiverad för användning i [!DNL Real-time Customer Profile].
+* En datauppsättning som baseras på klassen [!DNL XDM ExperienceEvent].
 
 Det här dokumentet innehåller steg för hur du konfigurerar dessa två datauppsättningar för att samla in IAB TCF 2.0-medgivandedata. En översikt över det fullständiga arbetsflödet för att konfigurera [!DNL Real-time CDP] för TCF 2.0 finns i [IAB TCF 2.0-kompatibilitetsöversikt](./overview.md).
 
@@ -28,67 +28,114 @@ Det här dokumentet innehåller steg för hur du konfigurerar dessa två dataupp
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM)](../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+* [Experience Data Model (XDM)](../../../xdm/home.md): Det standardiserade ramverket som  [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman.
    * [Skapa ett schema i användargränssnittet](../../../xdm/tutorials/create-schema-ui.md): En självstudiekurs som beskriver grunderna i att arbeta med Schemaredigeraren.
 * [Adobe Experience Platform Identity Service](../../../identity-service/home.md): Gör att ni kan kombinera kundidentiteter från olika datakällor på olika enheter och system.
-* [Kundprofil](../../../profile/home.md)i realtid: Tack vare [!DNL Identity Service] detta kan ni skapa detaljerade kundprofiler utifrån era datauppsättningar i realtid. [!DNL Real-time Customer Profile] hämtar data från Data Lake och behåller kundprofiler i sitt eget separata datalager.
+   * [Identitetsnamnutrymmen](../../../identity-service/namespaces.md): Kundidentitetsdata måste anges under ett specifikt ID-namnområde som identifieras av identitetstjänsten.
+* [Kundprofil](../../../profile/home.md) i realtid: Tack vare  [!DNL Identity Service] detta kan ni skapa detaljerade kundprofiler utifrån era datauppsättningar i realtid. [!DNL Real-time Customer Profile] hämtar data från Data Lake och behåller kundprofiler i sitt eget separata datalager.
 
-## Schemastruktur för samtycke {#structure}
+## [!UICONTROL Privacy Details] blandstruktur  {#structure}
 
-Det finns två XDM-mixiner som tillhandahåller medgivandefält som krävs för TCF 2.0-stöd: en för postbaserade data ([!DNL XDM Individual Profile]) och en annan för tidsseriebaserade data ([!DNL XDM ExperienceEvent]):
+[!UICONTROL Privacy Details]-mixinen innehåller tillståndsfält som krävs för TCF 2.0-stöd. Det finns två versioner av den här blandningen: en som är kompatibel med klassen [!DNL XDM Individual Profile] och den andra med klassen [!DNL XDM ExperienceEvent].
 
-| Schema | Beskrivning |
-| --- | --- |
-| Blanda profiler | Den här mixinen fångar upp en kunds aktuella medgivandepreferenser. När de används i ett [!DNL Profile]aktiverat schema, används de värden som anges i den här mixinen som en källa till sanning för hur genomdrivandet av samtycke ska gälla för en kunds data. |
-| [!DNL Experience Event] integritetsmixin | Den här mixinen fångar upp en kunds medgivandepreferenser vid en viss tidpunkt. De data som samlas in i dessa fält kan användas för att spåra ändringar i en kunds medgivandeinställningar över tid. |
+Avsnitten nedan förklarar strukturen för var och en av dessa blandningar, inklusive de data som förväntas vid intag.
 
-Även om varje blandning används på olika sätt är de specifika fält som de tillhandahåller ungefär likadana. Dessa fält förklaras närmare i följande avsnitt.
+### Profilblandning {#profile-mixin}
 
-### Samtyckesfält {#privacy-mixin}
-
-Varje sekretessblandning varierar i struktur och de typer av fält som de innehåller, men båda innehåller attributet, vars underfält krävs för att TCF 2.0 ska kunna användas. `xdm:consentString` Strukturen för dessa fält visas nedan tillsammans med de typer av värden som de förväntar sig:
+För scheman som baseras på [!DNL XDM Individual Profile] innehåller blandningen [!UICONTROL Privacy Details] ett enda mappningsfält, `xdm:identityPrivacyInfo`, som mappar kundidentiteter till deras IAB-medgivandeinställningar. Följande JSON är ett exempel på den typ av data som `xdm:identityPrivacyInfo` förväntar sig vid datainmatning:
 
 ```json
 {
-  "xdm:consentString": {
-    "xdm:consentStandard": "IAB TCF",
-    "xdm:consentStandardVersion": "2.0",
-    "xdm:consentStringValue": "BObdrPUOevsguAfDqFENCNAAAAAmeAAA.PVAfDObdrA.DqFENCAmeAENCDA",
-    "xdm:gdprApplies": true,
-    "xdm:containsPersonalData": false
-  }
+  "xdm:identityPrivacyInfo": {
+      "ECID": {
+        "13782522493631189": {
+          "xdm:identityIABConsent": {
+            "xdm:consentTimestamp": "2020-04-11T05:05:05Z",
+            "xdm:consentString": {
+              "xdm:consentStandard": "IAB TCF",
+              "xdm:consentStandardVersion": "2.0",
+              "xdm:consentStringValue": "BObdrPUOevsguAfDqFENCNAAAAAmeAAA.PVAfDObdrA.DqFENCAmeAENCDA",
+              "xdm:gdprApplies": true,
+              "xdm:containsPersonalData": false
+            }
+          }
+        }
+      }
+    }
 }
 ```
 
-| Egenskap | Beskrivning |
-| --- | --- |
-| `xdm:consentString` | Innehåller kundens uppdaterade data för samtycke och annan sammanhangsbaserad information. |
-| `xdm:consentStandard` | Samtyckesramverket som uppgifterna gäller för. För TCF-kompatibilitet ska värdet vara &quot;IAB TCF&quot;. |
-| `xdm:consentStandardVersion` | Versionsnumret för medgivanderamverket som anges av `xdm:consentStandard`. För TCF 2.0-kompatibilitet ska värdet vara &quot;2.0&quot;. |
-| `xdm:consentStringValue` | Den medgivandesträng som genererades baserat på kundens valda medgivandeinställningar. |
-| `xdm:gdprApplies` | Ett booleskt värde som anger om GDPR gäller för den här kunden eller inte. Värdet måste vara true för att TCF 2.0 ska kunna användas. Standardvärdet är &quot;false&quot; om det inte ingår. |
-| `xdm:containsPersonalData` | Ett booleskt värde som anger om medgivandeuppdateringen innehåller personuppgifter eller inte. Standardvärdet är &quot;false&quot; om det inte ingår. |
-
-## Skapa kundmedgivandescheman {#create-schemas}
-
-Öppna arbetsytan genom att klicka på **[!UICONTROL Schemas]** i den vänstra navigeringen i plattformsgränssnittet **[!UICONTROL Schemas]** . Härifrån följer du stegen i avsnitten nedan för att skapa varje obligatoriskt schema.
+Som exemplet visar motsvarar varje rotnivånyckel på `xdm:identityPrivacyInfo` ett identitetsnamnutrymme som identifieras av identitetstjänsten. Varje namespace-egenskap måste i sin tur ha minst en underegenskap vars nyckel matchar kundens motsvarande identitetsvärde för namnutrymmet. I det här exemplet identifieras kunden med ett Experience Cloud-ID (`ECID`)-värde på `13782522493631189`.
 
 >[!NOTE]
 >
->Om du har befintliga XDM-scheman som du vill använda för att hämta medgivandedata i stället, kan du redigera dessa scheman i stället för att skapa nya. När du redigerar befintliga scheman är det dock viktigt att följa [principerna för schemautveckling](../../../xdm/schema/composition.md#evolution) för att undvika att ändringarna bryts.
+>I ovanstående exempel används ett namnutrymmes-/värdepar för att representera kundens identitet, men du kan lägga till ytterligare nycklar för andra namnutrymmen, och varje namnområde kan ha flera identitetsvärden, var och en med sin egen uppsättning IAB-medgivandeinställningar.
+
+I identitetsvärdeobjektet finns ett enda fält, `xdm:identityIABConsent`. Det här objektet hämtar kundens IAB-medgivandevärden för det angivna identitetsnamnutrymmet och det angivna identitetsvärdet. Underegenskaperna i det här fältet visas nedan:
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `xdm:consentTimestamp` | En [ISO 8601](https://www.ietf.org/rfc/rfc3339.txt)-tidsstämpel för när IAB-medgivandevärdena ändrades. |
+| `xdm:consentString` | Ett objekt som innehåller kundens uppdaterade godkännandedata och annan sammanhangsbaserad information. Mer information om objektets obligatoriska underegenskaper finns i avsnittet [egenskaper för medgivandesträng](#consent-string). |
+
+### Händelseblandning i {#event-mixin}
+
+För scheman som baseras på [!DNL XDM ExperienceEvent] ger blandningen [!UICONTROL Privacy Details] ett enskilt fält av arraytyp: `xdm:consentStrings`. Varje objekt i den här arrayen måste vara ett objekt som innehåller de nödvändiga egenskaperna för en IAB-medgivandesträng, som liknar fältet `xdm:consentString` i profilmixen. Mer information om dessa underegenskaper finns i [nästa avsnitt](#consent-string).
+
+```json
+{
+  "xdm:consentStrings": [
+    {
+      "xdm:consentStandard": "IAB TCF",
+      "xdm:consentStandardVersion": "2.0",
+      "xdm:consentStringValue": "BObdrPUOevsguAfDqFENCNAAAAAmeAAA.PVAfDObdrA.DqFENCAmeAENCDA",
+      "xdm:gdprApplies": true,
+      "xdm:containsPersonalData": false
+    }
+  ]
+}
+```
+
+### Egenskaper för godkännandesträng {#consent-string}
+
+Båda versionerna av blandningen [!UICONTROL Privacy Details] kräver minst ett objekt som fångar de nödvändiga fälten som beskriver IAB-medgivandesträngen för kunden. Dessa egenskaper förklaras nedan:
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `xdm:consentStandard` | Samtyckesramverket som uppgifterna gäller för. För TCF-kompatibilitet måste värdet vara `IAB TCF`. |
+| `xdm:consentStandardVersion` | Versionsnumret för medgivanderamverket som anges av `xdm:consentStandard`. För TCF 2.0-kompatibilitet måste värdet vara `2.0`. |
+| `xdm:consentStringValue` | Medgivandesträngen som genererades av medgivandehanteringsplattformen (CMP) baserat på kundens valda inställningar. |
+| `xdm:gdprApplies` | Ett booleskt värde som anger om GDPR gäller för den här kunden eller inte. Värdet måste anges till `true` för att TCF 2.0 ska kunna användas. Standardvärdet är `false` om det inte ingår. |
+| `xdm:containsPersonalData` | Ett booleskt värde som anger om medgivandeuppdateringen innehåller personuppgifter eller inte. Standardvärdet är `false` om det inte ingår. |
+
+## Skapa kundmedgivandescheman {#create-schemas}
+
+Om du vill skapa datauppsättningar som hämtar medgivandedata måste du först skapa XDM-scheman som baserar dessa datauppsättningar på.
+
+I plattformsgränssnittet väljer du **[!UICONTROL Schemas]** i den vänstra navigeringen för att öppna arbetsytan [!UICONTROL Schemas]. Härifrån följer du stegen i avsnitten nedan för att skapa varje obligatoriskt schema.
+
+>[!NOTE]
+>
+>Om du har befintliga XDM-scheman som du vill använda för att hämta medgivandedata i stället, kan du redigera dessa scheman i stället för att skapa nya. Men om ett befintligt schema har aktiverats för användning i kundprofilen i realtid, kan dess primära identitet inte vara ett direkt identifierbart fält som är förbjudet att använda i intressebaserad annonsering, till exempel en e-postadress. Kontakta ditt juridiska ombud om du är osäker på vilka fält som är begränsade.
+>
+>När du redigerar befintliga scheman kan du dessutom bara göra additiva (fasta) ändringar. Mer information finns i avsnittet om [principerna för schemautveckling](../../../xdm/schema/composition.md#evolution).
 
 ### Skapa ett postbaserat medgivandeschema {#profile-schema}
 
-Skapa ett nytt schema baserat på **[!UICONTROL Browse]** klassen på fliken **[!UICONTROL Schemas]i** arbetsytan [!DNL XDM Individual Profile] . När du har öppnat schemat i Schemaredigeraren klickar du **[!UICONTROL Add]** under **[!UICONTROL Mixins]** avsnittet till vänster på arbetsytan.
+Välj **[!UICONTROL Create schema]** på arbetsytan **[!UICONTROL Schemas]** och välj sedan **[!UICONTROL XDM Individual Profile]** i listrutan.
+
+![](../assets/iab/create-schema-profile.png)
+
+[!DNL Schema Editor] visas och visar schemats struktur på arbetsytan. Använd den högra listen för att ange ett namn och en beskrivning av schemat och välj sedan **[!UICONTROL Add]** under **[!UICONTROL Mixins]** till vänster på arbetsytan.
 
 ![](../assets/iab/add-mixin-profile.png)
 
-Dialogrutan **[!UICONTROL Add mixin]** visas. Välj **[!UICONTROL Profile privacy]** från listan. Du kan även använda sökfältet för att begränsa resultatet och enklare hitta mixen. När du har valt mixen klickar du på **[!UICONTROL Add mixin]**.
+Dialogrutan **[!UICONTROL Add mixin]** visas. Här väljer du **[!UICONTROL Privacy Details]** i listan. Du kan även använda sökfältet för att begränsa resultatet och enklare hitta mixen. Välj **[!UICONTROL Add mixin]** när du har valt mixen.
 
 ![](../assets/iab/add-profile-privacy.png)
 
-Arbetsytan i Schemaredigeraren visas igen, så att du kan granska strukturen för de tillagda medgivandesträngfälten.
+Arbetsytan visas igen och visar att fältet `identityPrivacyInfo` har lagts till i schemastrukturen.
 
 ![](../assets/iab/profile-privacy-structure.png)
 
@@ -96,65 +143,69 @@ Upprepa stegen ovan om du vill lägga till följande ytterligare blandningar i s
 
 * [!UICONTROL IdentityMap]
 * [!UICONTROL Data capture region for Profile]
-* [!UICONTROL Profile person details]
-* [!UICONTROL Profile personal details]
+* [!UICONTROL Demographic Details]
+* [!UICONTROL Personal Contact Details]
 
 ![](../assets/iab/profile-all-mixins.png)
 
-Om du redigerar ett befintligt schema som redan har aktiverats för användning i [!DNL Real-time Customer Profile], klickar du på **[!UICONTROL Save]** för att bekräfta ändringarna innan du går vidare till avsnittet om [att skapa en datauppsättning baserat på ditt medgivandeschema](#dataset). Om du skapar ett nytt schema fortsätter du med de steg som beskrivs i underavsnittet nedan.
+Om du redigerar ett befintligt schema som redan har aktiverats för användning i [!DNL Real-time Customer Profile] väljer du **[!UICONTROL Save]** för att bekräfta dina ändringar innan du går vidare till avsnittet [skapa en datauppsättning baserat på ditt medgivandeschema](#dataset). Om du skapar ett nytt schema fortsätter du med de steg som beskrivs i underavsnittet nedan.
 
 #### Aktivera schemat för användning i [!DNL Real-time Customer Profile]
 
-För [!DNL Real-time CDP] att kunna koppla de medgivandedata de får till specifika kundprofiler måste medgivandeschemat aktiveras för användning i [!DNL Real-time Customer Profile].
+För att [!DNL Real-time CDP] ska kunna koppla de medgivandedata som tas emot till specifika kundprofiler måste medgivandeschemat aktiveras för användning i [!DNL Real-time Customer Profile].
 
 >[!NOTE]
 >
->Exempelschemat som visas i det här avsnittet använder sitt `identityMap` fält som primär identitet. Om du vill ange ett annat fält som primär identitet måste du se till att du använder en indirekt identifierare, som ett cookie-ID, och inte ett direkt identifierbart fält som är förbjudet att använda i intressebaserad annonsering, som en e-postadress. Kontakta ditt juridiska ombud om du är osäker på vilka fält som är begränsade.
+>Exempelschemat som visas i det här avsnittet använder fältet `identityMap` som sin primära identitet. Om du vill ange ett annat fält som primär identitet måste du se till att du använder en indirekt identifierare, som ett cookie-ID, och inte ett direkt identifierbart fält som är förbjudet att använda i intressebaserad annonsering, som en e-postadress. Kontakta ditt juridiska ombud om du är osäker på vilka fält som är begränsade.
 >
->Steg om hur du anger ett primärt identitetsfält för ett schema finns i självstudiekursen [för att skapa](../../../xdm/tutorials/create-schema-ui.md#identity-field)schema.
+>Steg om hur du anger ett primärt identitetsfält för ett schema finns i [självstudiekursen för att skapa schema](../../../xdm/tutorials/create-schema-ui.md#identity-field).
 
-Om du vill aktivera schemat för [!DNL Profile]klickar du på schemats namn i den vänstra listen för att öppna **[!UICONTROL Schema properties]** dialogrutan i den högra listen. Klicka på **[!UICONTROL Profile]** växlingsknappen härifrån.
+Om du vill aktivera schemat för [!DNL Profile] markerar du schemats namn i den vänstra listen för att öppna dialogrutan **[!UICONTROL Schema properties]** i den högra listen. Här väljer du alternativknappen **[!UICONTROL Profile]**.
 
 ![](../assets/iab/profile-enable-profile.png)
 
-En pover visas, vilket anger att en primär identitet saknas. Markera kryssrutan för att använda en alternativ primär identitet, eftersom den primära identiteten kommer att finnas i fältet identityMap.
+En pover visas, vilket anger att en primär identitet saknas. Markera kryssrutan för att använda en alternativ primär identitet, eftersom den primära identiteten kommer att finnas i fältet `identityMap`.
 
-<img src="../assets/iab/missing-primary-identity.png" width="600" /><br>
+![](../assets/iab/missing-primary-identity.png)
 
-Klicka slutligen på **[!UICONTROL Save]** för att bekräfta ändringarna.
+Slutligen väljer du **[!UICONTROL Save]** för att bekräfta ändringarna.
 
 ![](../assets/iab/profile-save.png)
 
 ### Skapa ett tidsseriebaserat medgivandeschema {#event-schema}
 
-Skapa ett nytt schema baserat på **[!UICONTROL Browse]** klassen på fliken i **[!UICONTROL Schemas]** [!DNL XDM ExperienceEvent] arbetsytan. När du har öppnat schemat i Schemaredigeraren klickar du **[!UICONTROL Add]** under **[!UICONTROL Mixins]** avsnittet till vänster på arbetsytan.
+Välj **[!UICONTROL Create schema]** på arbetsytan **[!UICONTROL Schemas]** och välj sedan **[!UICONTROL XDM ExperienceEvent]** i listrutan.
+
+![](../assets/iab/create-schema-event.png)
+
+[!DNL Schema Editor] visas och visar schemats struktur på arbetsytan. Använd den högra listen för att ange ett namn och en beskrivning av schemat och välj sedan **[!UICONTROL Add]** under **[!UICONTROL Mixins]** till vänster på arbetsytan.
 
 ![](../assets/iab/add-mixin-event.png)
 
-Dialogrutan **[!UICONTROL Add mixin]** visas. Välj **[!UICONTROL Experience event privacy mixin]** från listan. Du kan även använda sökfältet för att begränsa resultatet och enklare hitta mixen. När du har valt mixen klickar du på **[!UICONTROL Add mixin]**.
+Dialogrutan **[!UICONTROL Add mixin]** visas. Här väljer du **[!UICONTROL Privacy Details]** i listan. Du kan även använda sökfältet för att begränsa resultatet och enklare hitta mixen. När du har valt en blandning väljer du **[!UICONTROL Add mixin]**.
 
 ![](../assets/iab/add-event-privacy.png)
 
-Arbetsytan i Schemaredigeraren visas igen och de tillagda medgivandesträngsfälten visas.
+Arbetsytan visas igen och visar att matrisen `consentStrings` har lagts till i schemastrukturen.
 
 ![](../assets/iab/event-privacy-structure.png)
 
 Upprepa stegen ovan om du vill lägga till följande ytterligare blandningar i schemat:
 
 * [!UICONTROL IdentityMap]
-* [!UICONTROL ExperienceEvent environment details]
-* [!UICONTROL ExperienceEvent web details]
-* [!UICONTROL ExperienceEvent implementation details]
+* [!UICONTROL Environment Details]
+* [!UICONTROL Web Details]
+* [!UICONTROL Implementation Details]
 
-När du har lagt till mixarna avslutar du genom att klicka **[!UICONTROL Save]**.
+När mixarna har lagts till slutför du genom att välja **[!UICONTROL Save]**.
 
 ![](../assets/iab/event-all-mixins.png)
 
 ## Skapa datauppsättningar baserat på dina medgivandescheman {#datasets}
 
-För vart och ett av de obligatoriska scheman som beskrivs ovan måste du skapa en datauppsättning som i slutändan kommer att innehålla kundernas samtycke. Datauppsättningen som baseras på [!DNL XDM Individual Profile] schemat måste aktiveras för [!DNL Real-time Customer Profile], medan datauppsättningen som baseras på [!DNL XDM ExperienceEvent] schemat inte ska [!DNL Profile]aktiveras.
+För vart och ett av de obligatoriska scheman som beskrivs ovan måste du skapa en datauppsättning som i slutändan kommer att innehålla kundernas samtycke. Datauppsättningen som baseras på postschemat måste aktiveras för [!DNL Real-time Customer Profile], medan datauppsättningen som baseras på tidsseriens schema **inte ska vara**-aktiverad.[!DNL Profile]
 
-Börja med att markera **[!UICONTROL Datasets]** i den vänstra navigeringen och klicka sedan **[!UICONTROL Create dataset]** i det övre högra hörnet.
+Börja med att välja **[!UICONTROL Datasets]** i den vänstra navigeringen och välj sedan **[!UICONTROL Create dataset]** i det övre högra hörnet.
 
 ![](../assets/iab/dataset-create.png)
 
@@ -162,15 +213,17 @@ På nästa sida väljer du **[!UICONTROL Create dataset from schema]**.
 
 ![](../assets/iab/dataset-create-from-schema.png)
 
-Arbetsflödet **[!UICONTROL Create dataset from schema]** visas med början i **[!UICONTROL Select schema]** steget. Leta reda på ett av de medgivandescheman som du skapade tidigare i listan. Du kan även använda sökfunktionen för att begränsa resultaten och enklare hitta ditt schema. Klicka på alternativknappen bredvid schemat för att markera det och klicka sedan på **[!UICONTROL Next]** för att fortsätta.
+Arbetsflödet **[!UICONTROL Create dataset from schema]** visas med början i steget **[!UICONTROL Select schema]**. Leta reda på ett av de medgivandescheman som du skapade tidigare i listan. Du kan även använda sökfältet för att begränsa resultaten och enklare hitta ditt schema. Markera alternativknappen bredvid önskat schema och välj sedan **[!UICONTROL Next]** för att fortsätta.
 
 ![](../assets/iab/dataset-select-schema.png)
 
-Steget **[!UICONTROL Configure dataset]** visas. Ange ett unikt, enkelt identifierbart namn och en beskrivning för datauppsättningen innan du klickar på **[!UICONTROL Finish]**.
+**[!UICONTROL Configure dataset]**-steget visas. Ange ett unikt, enkelt identifierbart namn och en beskrivning för datauppsättningen innan du väljer **[!UICONTROL Finish]**.
 
 ![](../assets/iab/dataset-configure.png)
 
-Informationssidan för den nya datauppsättningen visas. Om datauppsättningen baseras på ditt [!DNL XDM ExperienceEvent] schema är processen slutförd. Om datauppsättningen baseras på ditt [!DNL XDM Individual Profile] schema är det sista steget i processen att aktivera datauppsättningen för användning i [!DNL Real-time Customer Profile]. Klicka på växlingsknappen till höger om du vill aktivera datauppsättningen. **[!UICONTROL Profile]**
+Informationssidan för den nya datauppsättningen visas. Om datauppsättningen baseras på ditt tidsserieschema är processen slutförd. Om datauppsättningen baseras på ditt postschema är det sista steget i processen att aktivera datauppsättningen för användning i [!DNL Real-time Customer Profile].
+
+I den högra listen väljer du alternativet **[!UICONTROL Profile]** och sedan **[!UICONTROL Enable]** i bekräftelseporten för att aktivera schemat för [!DNL Profile].
 
 ![](../assets/iab/dataset-enable-profile.png)
 
@@ -180,7 +233,7 @@ Följ stegen ovan igen för att skapa den andra nödvändiga datauppsättningen 
 
 Genom att följa den här självstudiekursen har du skapat två datauppsättningar som nu kan användas för att samla in data om kundens samtycke:
 
-* En [!DNL Profile]aktiverad datauppsättning baserad på ditt [!DNL XDM Individual Profile] schema.
-* En datauppsättning baserad på ditt [!DNL XDM ExperienceEvent] schema som inte är aktiverat för [!DNL Profile].
+* En postbaserad datauppsättning som är aktiverad för användning i kundprofilen i realtid.
+* En tidsseriebaserad datauppsättning som inte är aktiverad för [!DNL Profile].
 
-Du kan nu gå tillbaka till [IAB TCF 2.0-översikten](./overview.md#merge-policies) för att fortsätta konfigurera [!DNL Real-time CDP] för TCF 2.0-kompatibilitet.
+Du kan nu gå tillbaka till översikten [IAB TCF 2.0](./overview.md#merge-policies) för att fortsätta konfigurera [!DNL Real-time CDP] för TCF 2.0-kompatibilitet.
