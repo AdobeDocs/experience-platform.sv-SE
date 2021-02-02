@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;cloud storage data
+keywords: Experience Platform;hem;populära ämnen;molnlagringsdata
 solution: Experience Platform
 title: Samla in molnlagringsdata via källanslutningar och API:er
 topic: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett molnlagringsutrymme från tredje part och föra in dem på plattformen via källanslutningar och API:er.
 translation-type: tm+mt
-source-git-commit: cab1d65b643b919a6529926cd0856d89c5264d55
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '1609'
+source-wordcount: '1621'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till plattforms-API:er måste du först slutföra [självstudiekursen](../../../../tutorials/authentication.md) för autentisering. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+För att kunna ringa anrop till plattforms-API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
@@ -284,7 +284,7 @@ Ett lyckat svar returnerar en array som innehåller ID:t för den nya datauppsä
 
 En målanslutning representerar anslutningen till målet där inkapslade data kommer in. Om du vill skapa en målanslutning måste du ange det fasta anslutnings-spec-ID som är associerat med datasjön. Detta anslutningsspec-ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
-Nu har du de unika identifierarna ett målschema, en måldatamängd och ett anslutningsspec-ID till datasjön. Med dessa identifierare kan du skapa en målanslutning med hjälp av API:t [!DNL Flow Service] för att ange den datauppsättning som ska innehålla inkommande källdata.
+Nu har du de unika identifierarna ett målschema, en måldatamängd och ett anslutningsspec-ID till Data Lake. Med dessa identifierare kan du skapa en målanslutning med hjälp av API:t [!DNL Flow Service] för att ange den datauppsättning som ska innehålla inkommande källdata.
 
 **API-format**
 
