@@ -1,53 +1,53 @@
 ---
-keywords: Experience Platform;home;popular topics;dataset connection flow service;flow service;Flow service connection
+keywords: Experience Platform;hem;populära ämnen;Flödesanslutningstjänst för datauppsättning;Flödesanslutning
 solution: Experience Platform
 title: Skapa en Experience Platform-datauppsättningsbasanslutning med API:t för Flow Service
 topic: overview
 type: Tutorial
 description: Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '718'
+source-wordcount: '736'
 ht-degree: 0%
 
 ---
 
 
-# Skapa en [!DNL Experience Platform] datauppsättningsbasanslutning med [!DNL Flow Service] API
+# Skapa en [!DNL Experience Platform]-datauppsättningsbasanslutning med hjälp av API:t [!DNL Flow Service]
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-För att kunna ansluta data från en tredje parts källa till [!DNL Platform]måste en datauppsättningsbasanslutning först upprättas.
+För att kunna ansluta data från en tredjepartskälla till [!DNL Platform] måste en datauppsättningsbasanslutning först upprättas.
 
-I den här självstudiekursen används API:t för att vägleda dig genom stegen för att skapa en datauppsättningsbasanslutning. [!DNL Flow Service]
+I den här självstudien används API:t [!DNL Flow Service] för att vägleda dig genom stegen för att skapa en datauppsättningsbaserad anslutning.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+* [Experience Data Model (XDM) System](../../../xdm/home.md): Det standardiserade ramverket som  [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Utvecklarhandbok](../../../xdm/api/getting-started.md)för schemaregister: Innehåller viktig information som du behöver känna till för att kunna utföra anrop till API:t för schemaregister. Detta inkluderar ditt `{TENANT_ID}`, konceptet med&quot;behållare&quot; och de rubriker som krävs för att göra förfrågningar (med särskild uppmärksamhet på rubriken Godkänn och dess möjliga värden).
-* [Katalogtjänst](../../../catalog/home.md): Katalog är systemet för registrering av dataplatser och -länkar inom [!DNL Experience Platform].
+   * [Utvecklarhandbok](../../../xdm/api/getting-started.md) för schemaregister: Innehåller viktig information som du behöver känna till för att kunna utföra anrop till API:t för schemaregister. Detta inkluderar din `{TENANT_ID}`, begreppet &quot;behållare&quot; och de huvuden som krävs för att göra förfrågningar (med särskild uppmärksamhet på huvudet Godkänn och dess möjliga värden).
+* [Katalogtjänst](../../../catalog/home.md): Katalog är systemet för registrering av dataplatser och -länkar inom  [!DNL Experience Platform].
 * [Batchförtäring](../../../ingestion/batch-ingestion/overview.md): Med API:t för gruppimport kan du importera data till Experience Platform som gruppfiler.
-* [Sandlådor](../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Sandlådor](../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till Data Lake med [!DNL Flow Service] API.
+Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ansluta till Data Lake med API:t [!DNL Flow Service].
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
@@ -57,13 +57,13 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Söka efter anslutningsspecifikationer
 
-Det första steget i att skapa en datauppsättningsbasanslutning är att hämta en uppsättning anslutningsspecifikationer inifrån [!DNL Flow Service].
+Det första steget i att skapa en datauppsättningsbasanslutning är att hämta en uppsättning anslutningsspecifikationer från [!DNL Flow Service].
 
 **API-format**
 
 Varje tillgänglig källa har en egen unik uppsättning anslutningsspecifikationer för att beskriva kopplingsegenskaper som autentiseringskrav. Du kan söka efter anslutningsspecifikationer för en datauppsättningsbasanslutning genom att utföra en GET-begäran och använda frågeparametrar.
 
-Om du skickar en GET-begäran utan frågeparametrar returneras anslutningsspecifikationerna för alla tillgängliga källor. Du kan ta med frågan `property=id=="c604ff05-7f1a-43c0-8e18-33bf874cb11c"` för att få information om datauppsättningens basanslutning.
+Om du skickar en GET-begäran utan frågeparametrar returneras anslutningsspecifikationerna för alla tillgängliga källor. Du kan inkludera frågan `property=id=="c604ff05-7f1a-43c0-8e18-33bf874cb11c"` för att få information om datauppsättningens basanslutning.
 
 ```http
 GET /connectionSpecs
@@ -85,7 +85,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar anslutningsspecifikationerna och den unika identifierare (`id`) som krävs för att skapa en basanslutning.
+Ett lyckat svar returnerar anslutningsspecifikationerna och den unika identifieraren (`id`) som krävs för att skapa en basanslutning.
 
 ```json
 {
@@ -169,11 +169,11 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | ------------- | --------------- |
-| `connectionSpec.id` | Anslutningsspecifikationen `id` som hämtades i föregående steg. |
+| `connectionSpec.id` | Anslutningsspecifikationen `id` har hämtats i föregående steg. |
 
 **Svar**
 
-Ett godkänt svar returnerar information om den nya basanslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att skapa en målanslutning och importera data från en källanslutning från tredje part.
+Ett lyckat svar returnerar information om den nyskapade basanslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att skapa en målanslutning och importera data från en källanslutning från tredje part.
 
 ```json
 {
@@ -184,7 +184,7 @@ Ett godkänt svar returnerar information om den nya basanslutningen, inklusive d
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en anslutning till datauppsättningsbasen med hjälp av [!DNL Flow Service] API:t och har fått anslutningens unika ID-värde. Du kan använda den här basanslutningen för att skapa en målanslutning. I följande självstudiekurser får du hjälp med att skapa en målanslutning, beroende på vilken typ av källanslutning du använder:
+Genom att följa den här självstudiekursen har du skapat en datauppsättningsbasanslutning med hjälp av API:t [!DNL Flow Service] och har fått anslutningens unika ID-värde. Du kan använda den här basanslutningen för att skapa en målanslutning. I följande självstudiekurser får du hjälp med att skapa en målanslutning, beroende på vilken typ av källanslutning du använder:
 
 * [molnlagring](./collect/cloud-storage.md)
 * [CRM](./collect/crm.md)
