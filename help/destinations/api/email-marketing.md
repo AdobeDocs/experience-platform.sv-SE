@@ -1,37 +1,38 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Skapa e-postmarknadsföringsmål
+description: I det här dokumentet beskrivs hur du skapar e-postmarknadsföringsmål med hjälp av Adobe Experience Platform API
 topic: tutorial
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: f2fdc3b75d275698a4b1e4c8969b1b840429c919
+source-git-commit: d1f357659313aba0811b267598deda9770d946a1
 workflow-type: tm+mt
-source-wordcount: '1619'
+source-wordcount: '1640'
 ht-degree: 0%
 
 ---
 
 
-# Skapa e-postmarknadsföringsmål och aktivera data med API-anrop i Adobe [!DNL Real-time Customer Data Platform]
+# Skapa e-postmarknadsföringsmål och aktivera data med API-anrop i Adobe Experience Platform
 
-I den här självstudiekursen visas hur du använder API-anrop för att ansluta till dina Adobe Experience Platform-data, skapa ett [e-postmarknadsföringsmål](../catalog/email-marketing/overview.md), skapa ett dataflöde till det nya målet som du skapat och aktivera data till det nya målet som du skapat.
+I den här självstudien visas hur du använder API-anrop för att ansluta till dina Adobe Experience Platform-data, skapa ett [mål för e-postmarknadsföring](../catalog/email-marketing/overview.md), skapa ett dataflöde till det nya mål du skapat och aktivera data till det nya mål du skapat.
 
 I den här självstudien används Adobe Campaign-destinationen i alla exempel, men stegen är identiska för alla e-postmarknadsföringsmål.
 
 ![Översikt - stegen för att skapa ett mål och aktivera segment](../assets/api/email-marketing/overview.png)
 
-Om du föredrar att använda användargränssnittet i Adobe CDP i realtid för att ansluta ett mål och aktivera data, se [Koppla ett mål](../ui/connect-destination.md) och [Aktivera profiler och segment till en målsjälvstudiekurs](../ui/activate-destinations.md) .
+Om du föredrar att använda användargränssnittet i Platform för att ansluta till ett mål och aktivera data, se [Anslut ett mål](../ui/connect-destination.md) och [Aktivera profiler och segment till en målsjälvstudiekurs](../ui/activate-destinations.md).
 
 ## Kom igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
-* [[!DNL Catalog Service]](../../catalog/home.md): [!DNL Catalog] är systemet för registrering av dataplatser och datalinje inom [!DNL Experience Platform].
-* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som  [!DNL Experience Platform] organiserar kundupplevelsedata.
+* [[!DNL Catalog Service]](../../catalog/home.md):  [!DNL Catalog] är systemet för registrering av dataplatser och datalinje inom  [!DNL Experience Platform].
+* [[!DNL Sandboxes]](../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data till e-postmarknadsföringsmål i CDP i realtid.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data för e-postmarknadsföringsmål i Platform.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
@@ -42,23 +43,23 @@ Om du vill slutföra stegen i den här självstudiekursen bör du ha följande a
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska och valfria rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Resurser i [!DNL Experience Platform] kan isoleras till specifika virtuella sandlådor. I förfrågningar till [!DNL Platform] API:er kan du ange namn och ID för sandlådan som åtgärden ska utföras i. Dessa är valfria parametrar.
+Resurser i [!DNL Experience Platform] kan isoleras till specifika virtuella sandlådor. I begäranden till [!DNL Platform] API:er kan du ange namnet och ID för sandlådan som åtgärden ska utföras i. Dessa är valfria parametrar.
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Experience Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Experience Platform] finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
 
@@ -66,13 +67,13 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ### Dokumentation för Swagger
 
-Du hittar referensdokumentation för alla API-anrop i den här självstudiekursen i Swagger. Se [Flow Service API-dokumentationen på Adobe.io](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml). Vi rekommenderar att du använder den här självstudiekursen och dokumentationssidan för Swagger parallellt.
+Du hittar referensdokumentation för alla API-anrop i den här självstudiekursen i Swagger. Se [API-dokumentationen för Flow Service på Adobe.io](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml). Vi rekommenderar att du använder den här självstudiekursen och dokumentationssidan för Swagger parallellt.
 
 ## Hämta listan över tillgängliga mål {#get-the-list-of-available-destinations}
 
 ![Översiktssteg för målsteg 1](../assets/api/email-marketing/step1.png)
 
-Som ett första steg bör du bestämma vilket e-postmarknadsföringsmål som data ska aktiveras till. Börja med att ringa ett samtal för att begära en lista över tillgängliga mål som du kan ansluta och aktivera segment till. Utför följande GET-begäran till `connectionSpecs` slutpunkten för att returnera en lista över tillgängliga destinationer:
+Som ett första steg bör du bestämma vilket e-postmarknadsföringsmål som data ska aktiveras till. Börja med att ringa ett samtal för att begära en lista över tillgängliga mål som du kan ansluta och aktivera segment till. Utför följande GET-begäran till `connectionSpecs`-slutpunkten för att returnera en lista över tillgängliga mål:
 
 **API-format**
 
@@ -120,14 +121,14 @@ Ett lyckat svar innehåller en lista över tillgängliga destinationer och deras
 }
 ```
 
-## Anslut till dina [!DNL Experience Platform] data {#connect-to-your-experience-platform-data}
+## Anslut till dina [!DNL Experience Platform]-data {#connect-to-your-experience-platform-data}
 
 ![Översiktssteg för målsteg 2](../assets/api/email-marketing/step2.png)
 
-Därefter måste du ansluta till dina [!DNL Experience Platform] data, så att du kan exportera profildata och aktivera dem på det önskade målet. Detta består av två ämnen som beskrivs nedan.
+Därefter måste du ansluta till dina [!DNL Experience Platform]-data, så att du kan exportera profildata och aktivera dem på det önskade målet. Detta består av två ämnen som beskrivs nedan.
 
-1. Först måste du ringa ett samtal för att auktorisera åtkomst till dina data i [!DNL Experience Platform]genom att konfigurera en basanslutning.
-2. Med hjälp av basanslutnings-ID:t gör du sedan ett nytt anrop där du skapar en källanslutning som upprättar anslutningen till dina [!DNL Experience Platform] data.
+1. Först måste du ringa för att auktorisera åtkomst till dina data i [!DNL Experience Platform] genom att konfigurera en basanslutning.
+2. Med hjälp av basanslutnings-ID:t gör du sedan ett nytt anrop där du skapar en källanslutning som upprättar anslutningen till dina [!DNL Experience Platform]-data.
 
 
 ### Ge åtkomst till dina data i [!DNL Experience Platform]
@@ -182,7 +183,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 
-* `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikations-ID för Unified Profile Service - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`.
+* `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikations-ID för Unified Profile Service -  `8a9c3494-9708-43d7-ae3f-cda01e5030e1`.
 
 **Svar**
 
@@ -194,7 +195,7 @@ Ett lyckat svar innehåller basanslutningsens unika identifierare (`id`). Lagra 
 }
 ```
 
-### Anslut till dina [!DNL Experience Platform] data {#connect-to-platform-data}
+### Anslut till dina [!DNL Experience Platform]-data {#connect-to-platform-data}
 
 **API-format**
 
@@ -256,11 +257,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 * `{BASE_CONNECTION_ID}`: Använd det ID du fick i föregående steg.
-* `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikations-ID för [!DNL Unified Profile Service] - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`.
+* `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikations-ID för  [!DNL Unified Profile Service] -  `8a9c3494-9708-43d7-ae3f-cda01e5030e1`.
 
 **Svar**
 
-Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen till [!DNL Unified Profile Service]. Detta bekräftar att du har anslutit till dina [!DNL Experience Platform] data. Lagra det här värdet som det behövs i ett senare steg.
+Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen till [!DNL Unified Profile Service]. Detta bekräftar att du har anslutit till dina [!DNL Experience Platform]-data. Lagra det här värdet som det behövs i ett senare steg.
 
 ```json
 {
@@ -269,7 +270,7 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 ```
 
 
-## Anslut till mål för e-postmarknadsföring {#connect-to-email-marketing-destination}
+## Anslut till e-postmarknadsföringsmålet {#connect-to-email-marketing-destination}
 
 ![Översikt över destinationssteg 3](../assets/api/email-marketing/step3.png)
 
@@ -343,10 +344,10 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-* `{CONNECTION_SPEC_ID}`: Använd det anslutningsspec-ID som du fick i steget [Hämta listan med tillgängliga mål](#get-the-list-of-available-destinations).
-* `{S3 or SFTP}`: fylla i önskad anslutningstyp för det här målet. Bläddra till önskat mål i [målkatalogen](../catalog/overview.md)för att se om anslutningstyperna S3 och/eller SFTP stöds.
-* `{ACCESS_ID}`: Ditt åtkomst-ID för din [!DNL Amazon] S3-lagringsplats.
-* `{SECRET_KEY}`: Din hemliga nyckel för din [!DNL Amazon] S3-lagringsplats.
+* `{CONNECTION_SPEC_ID}`: Använd det anslutningsspec-ID som du fick i steget  [Hämta listan med tillgängliga mål](#get-the-list-of-available-destinations).
+* `{S3 or SFTP}`: fylla i önskad anslutningstyp för det här målet. Bläddra till önskat mål i [målkatalogen](../catalog/overview.md) för att se om anslutningstyperna S3 och/eller SFTP stöds.
+* `{ACCESS_ID}`: Ditt åtkomst-ID för din  [!DNL Amazon] lagringsplats för S3.
+* `{SECRET_KEY}`: Din hemliga nyckel för din  [!DNL Amazon] lagringsplats för S3.
 
 **Svar**
 
@@ -433,9 +434,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 * `{BASE_CONNECTION_ID}`: Använd det grundläggande anslutnings-ID som du fick i steget ovan.
-* `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikationen som du fick i steget [Hämta listan med tillgängliga mål](#get-the-list-of-available-destinations).
-* `{BUCKETNAME}`: Din [!DNL Amazon] S3-bucket, där CDP i realtid kommer att lagra dataexporten.
-* `{FILEPATH}`: Sökvägen i [!DNL Amazon] S3-bucket-katalogen där CDP i realtid kommer att placera dataexporten.
+* `{CONNECTION_SPEC_ID}`: Använd anslutningsspecifikationen som du fick i steget  [Hämta listan med tillgängliga mål](#get-the-list-of-available-destinations).
+* `{BUCKETNAME}`: Din  [!DNL Amazon] S3-bucket, där Platform sparar dataexporten.
+* `{FILEPATH}`: Sökvägen i  [!DNL Amazon] S3-bucket-katalogen där Platform placerar dataexporten.
 
 **Svar**
 
@@ -451,7 +452,7 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nya målansl
 
 ![Översikt över destinationssteg 4](../assets/api/email-marketing/step4.png)
 
-Med de ID:n du fick i föregående steg kan du nu skapa ett dataflöde mellan dina [!DNL Experience Platform] data och målet där du vill aktivera data. Tänk på det här steget som att skapa en pipeline, genom vilken data sedan flödar mellan [!DNL Experience Platform] och önskat mål.
+Med de ID:n du fick i föregående steg kan du nu skapa ett dataflöde mellan dina [!DNL Experience Platform]-data och målet där du vill aktivera data. Tänk på det här steget som att skapa pipeline, genom vilken data sedan flödar, mellan [!DNL Experience Platform] och det önskade målet.
 
 Om du vill skapa ett dataflöde ska du utföra en begäran om POST enligt nedan, med de värden som anges nedan i nyttolasten.
 
@@ -503,13 +504,13 @@ curl -X POST \
     }
 ```
 
-* `{FLOW_SPEC_ID}`: Använd flödet för det e-postmarknadsföringsmål som du vill ansluta till. Om du vill hämta flödesspecifikationen utför du en GET-åtgärd på `flowspecs` slutpunkten. Se Swagger-dokumentation här: https://platform.adobe.io/data/foundation/flowservice/swagger#/Flow%20Specs%20API/getFlowSpecs. I svaret söker du efter `upsTo` och kopierar motsvarande ID för e-postmarknadsföringsmålet som du vill ansluta till. För Adobe Campaign söker du till exempel efter `upsToCampaign` och kopierar `id` parametern.
-* `{SOURCE_CONNECTION_ID}`: Använd det källanslutnings-ID som du fick i steget [Anslut till Experience Platform](#connect-to-your-experience-platform-data).
-* `{TARGET_CONNECTION_ID}`: Använd det målanslutnings-ID som du fick i steget [Ansluta till e-postmarknadsföringsmålet](#connect-to-email-marketing-destination).
+* `{FLOW_SPEC_ID}`: Använd flödet för det e-postmarknadsföringsmål som du vill ansluta till. Om du vill hämta flödesspecifikationen utför du en GET-åtgärd på `flowspecs`-slutpunkten. Se Swagger-dokumentation här: https://platform.adobe.io/data/foundation/flowservice/swagger#/Flow%20Specs%20API/getFlowSpecs. I svaret söker du efter `upsTo` och kopierar motsvarande ID för det e-postmarknadsföringsmål som du vill ansluta till. För Adobe Campaign söker du till exempel efter `upsToCampaign` och kopierar parametern `id`.
+* `{SOURCE_CONNECTION_ID}`: Använd det källanslutnings-ID som du fick i steget  [Anslut till Experience Platform](#connect-to-your-experience-platform-data).
+* `{TARGET_CONNECTION_ID}`: Använd det målanslutnings-ID som du fick i steget  [Ansluta till e-postmarknadsföringsmålet](#connect-to-email-marketing-destination).
 
 **Svar**
 
-Ett godkänt svar returnerar ID:t (`id`) för det nya dataflödet och ett `etag`. Notera båda värdena nedåt. som du kommer att göra i nästa steg, för att aktivera segment.
+Ett lyckat svar returnerar ID (`id`) för det nyskapade dataflödet och ett `etag`. Notera båda värdena nedåt. som du kommer att göra i nästa steg, för att aktivera segment.
 
 ```json
 {
@@ -584,7 +585,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 * `{DATAFLOW_ID}`: Använd det dataflöde du fick i föregående steg.
 * `{ETAG}`: Använd taggen som du fick i föregående steg.
-* `{SEGMENT_ID}`: Ange det segment-ID som du vill exportera till det här målet. Om du vill hämta segment-ID:n för de segment som du vill aktivera går du till **https://www.adobe.io/apis/experienceplatform/home/api-reference.html#/**, väljer **[!UICONTROL Segmentation Service API]** i den vänstra navigeringsmenyn och letar efter `GET /segment/definitions` åtgärden i **[!UICONTROL Segment Definitions]**.
+* `{SEGMENT_ID}`: Ange det segment-ID som du vill exportera till det här målet. Om du vill hämta segment-ID:n för de segment som du vill aktivera går du till **https://www.adobe.io/apis/experienceplatform/home/api-reference.html#/**, väljer **[!UICONTROL Segmentation Service API]** i den vänstra navigeringsmenyn och letar efter åtgärden `GET /segment/definitions` i **[!UICONTROL Segment Definitions]**.
 * `{PROFILE_ATTRIBUTE}`: Exempel, `"person.lastName"`
 
 **Svar**
@@ -622,7 +623,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 **Svar**
 
-Det returnerade svaret ska i parametern inkludera de segment och profilattribut som du skickade in i det föregående steget. `transformations` En exempelparameter `transformations` i svaret kan se ut så här:
+Det returnerade svaret ska i parametern `transformations` inkludera de segment och profilattribut som du skickade i föregående steg. Ett exempel på `transformations`-parametern i svaret kan se ut så här:
 
 ```json
 "transformations": [
@@ -651,7 +652,7 @@ Det returnerade svaret ska i parametern inkludera de segment och profilattribut 
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du anslutit CDP i realtid till ett av dina önskade mål för e-postmarknadsföring och ställt in ett dataflöde för respektive mål. Utgående data kan nu användas i målet för e-postkampanjer, riktad reklam och många andra användningsfall. Mer information finns på följande sidor:
+Genom att följa den här självstudiekursen har du anslutit Plattform till ett av de e-postmarknadsföringsmål du föredrar och konfigurerat ett dataflöde till respektive mål. Utgående data kan nu användas i målet för e-postkampanjer, riktad reklam och många andra användningsfall. Mer information finns på följande sidor:
 
 * [Översikt över mål](../home.md)
 * [Översikt över destinationskatalogen](../catalog/overview.md)
