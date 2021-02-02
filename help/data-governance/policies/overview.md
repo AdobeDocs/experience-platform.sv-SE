@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;dule;DULE
+keywords: Experience Platform;hem;populära ämnen;modul;DULE
 solution: Experience Platform
 title: Översikt över policyer för dataanvändning
 topic: policies
 description: För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste dataanvändningsprinciper implementeras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom Experience Platform.
 translation-type: tm+mt
-source-git-commit: 259c26a9d3b6ef397acd552e255f68ecb25b2dd1
+source-git-commit: 2dbd92efbd992b70f4f750b09e9d2e0626e71315
 workflow-type: tm+mt
-source-wordcount: '1003'
+source-wordcount: '1010'
 ht-degree: 0%
 
 ---
@@ -15,54 +15,54 @@ ht-degree: 0%
 
 # Översikt över policyer för dataanvändning
 
-För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste dataanvändningsprinciper implementeras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom [!DNL Experience Platform].
+För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste dataanvändningsprinciper implementeras. Dataanvändningsprinciper är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data i [!DNL Experience Platform].
 
 Det här dokumentet innehåller en översikt över dataanvändningsprinciper på hög nivå och länkar till ytterligare dokumentation om hur du arbetar med principer i gränssnittet eller API:t.
 
 ## Marknadsföringsåtgärder {#marketing-actions}
 
-Marknadsföringsåtgärder (kallas även användningsfall för marknadsföring) inom ramen för datastyrningsramverket är åtgärder som en [!DNL Experience Platform] datakonsument kan vidta och som din organisation vill begränsa dataanvändningen för. En dataanvändningsprincip definieras därför enligt följande:
+Marknadsföringsåtgärder (kallas även användningsfall för marknadsföring) inom ramen för datastyrningsramverket är åtgärder som en [!DNL Experience Platform]-datakonsument kan vidta och som din organisation vill begränsa dataanvändningen för. En dataanvändningsprincip definieras därför enligt följande:
 
 1. En specifik marknadsföringsåtgärd
 2. Etiketter för dataanvändning som åtgärden är begränsad från att utföras mot
 
-Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en datauppsättning till en tredjepartstjänst. Om det finns en policy som säger att vissa typer av data (t.ex. personligt identifierbar information (PII)) inte kan exporteras, och du försöker exportera en datauppsättning som innehåller en I-etikett (identitetsdata), kommer du att få ett svar från användaren om [!DNL Policy Service] att en dataanvändningspolicy har överträttts.
+Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en datauppsättning till en tredjepartstjänst. Om det finns en policy som säger att vissa typer av data (t.ex. PII) inte kan exporteras, och du försöker exportera en datauppsättning som innehåller en I-etikett (identitetsdata), får du ett svar från [!DNL Policy Service] som säger att en dataanvändningspolicy har överträtts.
 
 >[!NOTE]
 >
 >Marknadsföringsåtgärder begränsar inte användningen av data. De måste inkluderas i aktiverade dataanvändningspolicyer för att dessa åtgärder ska kunna utvärderas för policyöverträdelser.
 
-När dataanvändningen sker i er organisations tjänst bör relevanta marknadsföringsåtgärder anges så att eventuella policyöverträdelser kan identifieras. Du kan sedan använda API:t för [principtjänsten](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) för att kontrollera om integreringen har brutit mot principer.
+När dataanvändningen sker i er organisations tjänst bör relevanta marknadsföringsåtgärder anges så att eventuella policyöverträdelser kan identifieras. Du kan sedan använda [API:t för principtjänsten](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) för att kontrollera om integreringen har brutit mot principer.
 
 >[!NOTE]
 >
->Om du använder [!DNL Real-time Customer Data Platform]kan du konfigurera användningsfall för marknadsföring på destinationer för att automatisera regelefterlevnaden. Mer information finns i dokumentet om [datastyrning i CDP](../../rtcdp/privacy/data-governance-overview.md) i realtid.
+>Om du använder [!DNL Real-time Customer Data Platform] kan du konfigurera användningsfall för marknadsföring på destinationer för att automatisera regelefterlevnaden. Mer information finns i dokumentet om [Datastyrning i CDP](../../rtcdp/privacy/data-governance-overview.md) i realtid.
 
-I bilagan till det här dokumentet finns en lista med [tillgängliga Adobe-definierade marknadsföringsåtgärder](#core-actions). Du kan också definiera egna anpassade marknadsföringsåtgärder med [!DNL Policy Service] API:t eller [!DNL Experience Platform ]användargränssnittet. Mer information om hur du arbetar med marknadsföringsåtgärder och -policyer finns i nästa avsnitt.
+I bilagan till det här dokumentet finns en lista över [tillgängliga Adobe-definierade marknadsföringsåtgärder](#core-actions). Du kan också definiera egna marknadsföringsåtgärder med hjälp av [!DNL Policy Service]-API:t eller [!DNL Experience Platform ]användargränssnittet. Mer information om hur du arbetar med marknadsföringsåtgärder och -policyer finns i nästa avsnitt.
 
 <!-- (Add after AAM DEC mapping doc is published)
 ### Inheritance from Adobe Audience Manager Data Export Controls
 
 Experience Platform has the ability to share segments with Adobe Audience Manager. Any Data Export Controls that have been applied to Audience Manager segments are translated to equivalent marketing use cases recognized by Experience Platform Data Governance.
 
-For a reference on how specific Data Export Controls map to marketing actions in Platform, please refer to the [Audience Manager documentation](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/data-export-controls.html).
+For a reference on how specific Data Export Controls map to marketing actions in Platform, please refer to the [Audience Manager documentation](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/data-export-controls.html).
 -->
 
-## Hantera dataanvändningspolicyer {#manage}
+## Hantera dataanvändningsprinciper {#manage}
 
-När dataanvändningsetiketterna har tillämpats kan datahanterarna använda [!DNL Policy Service] -API:t eller [!DNL Experience Platform] gränssnittet för att hantera och utvärdera principer som relaterar till marknadsföringsåtgärder som vidtas på data som innehåller dataanvändningsetiketter. Du kan skapa och uppdatera profiler, fastställa en profils status och arbeta med marknadsföringsåtgärder för att utvärdera om en viss åtgärd bryter mot en dataanvändningspolicy.
+När dataanvändningsetiketterna har tillämpats kan datafördelarna använda API:t [!DNL Policy Service] eller gränssnittet [!DNL Experience Platform] för att hantera och utvärdera principer som relaterar till marknadsföringsåtgärder som vidtas på data som innehåller dataanvändningsetiketter. Du kan skapa och uppdatera profiler, fastställa en profils status och arbeta med marknadsföringsåtgärder för att utvärdera om en viss åtgärd bryter mot en dataanvändningspolicy.
 
 >[!IMPORTANT]
 >
 >Alla dataanvändningsprinciper (inklusive huvudprinciper som tillhandahålls av Adobe) inaktiveras som standard. För att en enskild princip ska kunna användas måste du manuellt aktivera den principen via API:t eller användargränssnittet.
 
-Stegvisa instruktioner om hur du arbetar med marknadsföringsåtgärder och dataanvändningspolicyer i API:t finns i självstudiekursen om hur du [skapar och utvärderar dataanvändningspolicyer](create.md). Mer information om nyckelåtgärder som tillhandahålls av [!DNL Policy Service] API:t finns i utvecklarhandboken [för](../api/getting-started.md)principtjänsten.
+Stegvisa instruktioner om hur du arbetar med marknadsföringsåtgärder och dataanvändningsprinciper i API:t finns i självstudiekursen [skapa och utvärdera dataanvändningsprinciper](create.md). Mer information om nyckelåtgärder som tillhandahålls av API:t [!DNL Policy Service] finns i [Utvecklarhandboken för principtjänsten](../api/getting-started.md).
 
-Mer information om hur du arbetar med marknadsföringsåtgärder och -profiler i [!DNL Platform] användargränssnittet finns i användarhandboken för [dataanvändningspolicyn](./user-guide.md).
+Mer information om hur du arbetar med marknadsföringsåtgärder och -profiler i [!DNL Platform]-gränssnittet finns i [användarhandboken för dataanvändningsprincipen](./user-guide.md).
 
 ## Nästa steg
 
-Det här dokumentet innehåller en introduktion till dataanvändningsprinciper inom [!DNL Data Governance] ramverket. Du kan nu fortsätta att läsa den processdokumentation som är länkad till i den här handboken för att lära dig mer om hur du arbetar med policyer i API:t och användargränssnittet.
+Det här dokumentet innehåller en introduktion till dataanvändningsprinciper i [!DNL Data Governance]-ramverket. Du kan nu fortsätta att läsa den processdokumentation som är länkad till i den här handboken för att lära dig mer om hur du arbetar med policyer i API:t och användargränssnittet.
 
 ## Bilaga
 
