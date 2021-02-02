@@ -1,32 +1,33 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
-title: Jobb
+title: Slutpunkt för sekretessjobb
 topic: developer guide
+description: Lär dig hur du hanterar sekretessjobb för Experience Cloud-program med Privacy Service-API:t.
 translation-type: tm+mt
-source-git-commit: 5d06932cbfe8a04589d33590c363412c054fc9fd
+source-git-commit: 238a9200e4b43d41335bed0efab079780b252717
 workflow-type: tm+mt
-source-wordcount: '1309'
+source-wordcount: '1343'
 ht-degree: 0%
 
 ---
 
 
-# Sekretessjobb
+# Slutpunkt för sekretessjobb
 
-Det här dokumentet beskriver hur du arbetar med sekretessjobb med API-anrop. Det omfattar särskilt användningen av `/job` slutpunkten i [!DNL Privacy Service] API:t. Innan du läser den här handboken bör du läsa avsnittet [](./getting-started.md#getting-started) Komma igång för att få viktig information som du behöver känna till för att kunna anropa API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
+Det här dokumentet beskriver hur du arbetar med sekretessjobb med API-anrop. Det omfattar särskilt användningen av slutpunkten `/job` i [!DNL Privacy Service]-API:t. Innan du läser den här guiden bör du läsa [avsnittet ](./getting-started.md#getting-started) för att få viktig information som du behöver känna till för att kunna anropa API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
 
 >[!NOTE]
 >
->Om du försöker hantera begäranden om samtycke eller avanmälan från kunder, se [slutpunktshandboken](./consent.md)för godkännande.
+>Om du försöker hantera begäranden om samtycke eller avanmälan från kunder, se [slutpunktshandboken för medgivande](./consent.md).
 
 ## Visa alla jobb {#list}
 
-Du kan visa en lista över alla tillgängliga sekretessjobb inom din organisation genom att göra en GET-förfrågan till `/jobs` slutpunkten.
+Du kan visa en lista över alla tillgängliga sekretessjobb inom din organisation genom att göra en GET-förfrågan till `/jobs`-slutpunkten.
 
 **API-format**
 
-Det här frågeformatet använder en `regulation` frågeparameter på `/jobs` slutpunkten, och börjar därför med ett frågetecken (`?`) enligt nedan. Svaret sidnumreras så att du kan använda andra frågeparametrar (`page` och `size`) för att filtrera svaret. Du kan separera flera parametrar med et-tecken (`&`).
+I det här frågeformatet används en `regulation`-frågeparameter på `/jobs`-slutpunkten, och därför börjar det med ett frågetecken (`?`) enligt nedan. Svaret sidnumreras så att du kan använda andra frågeparametrar (`page` och `size`) för att filtrera svaret. Du kan separera flera parametrar med et-tecken (`&`).
 
 ```http
 GET /jobs?regulation={REGULATION}
@@ -37,9 +38,9 @@ GET /jobs?regulation={REGULATION}&page={PAGE}&size={SIZE}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{REGULATION}` | Regeltypen som ska sökas efter. Godkända värden är `gdpr`, `ccpa`, `lgpd_bra`och `pdpa_tha`. |
+| `{REGULATION}` | Regeltypen som ska sökas efter. Godkända värden är: <ul><li>`gdpr` (Europeiska unionen)</li><li>`ccpa` (Kalifornien)</li><li>`lgpd_bra` (Brasilien)</li><li>`nzpa_nzl` (Nya Zeeland)</li><li>`pdpa_tha` (Thailand)</li></ul> |
 | `{PAGE}` | Sidan med data som ska visas med nollbaserad numrering. Standardvärdet är `0`. |
-| `{SIZE}` | Antalet resultat som ska visas på varje sida. Standardvärdet är `1` och maxvärdet är `100`. Om det maximala värdet överskrids returneras ett 400-kodfel. |
+| `{SIZE}` | Antalet resultat som ska visas på varje sida. Standardvärdet är `1` och det högsta värdet är `100`. Om det maximala värdet överskrids returneras ett 400-kodfel. |
 
 **Begäran**
 
@@ -55,21 +56,21 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en lista med jobb, där varje jobb innehåller information om t.ex. dess `jobId`. I det här exemplet innehåller svaret en lista med 50 jobb, med början på den tredje resultatsidan.
+Ett lyckat svar returnerar en lista med jobb, där varje jobb innehåller detaljer som `jobId`. I det här exemplet innehåller svaret en lista med 50 jobb, med början på den tredje resultatsidan.
 
 ### Åtkomst till efterföljande sidor
 
-Om du vill hämta nästa resultatuppsättning i ett sidnumrerat svar måste du göra ett annat API-anrop till samma slutpunkt samtidigt som du ökar `page` frågeparametern med 1.
+Om du vill hämta nästa resultatuppsättning i ett sidnumrerat svar måste du göra ett annat API-anrop till samma slutpunkt samtidigt som du ökar `page`-frågeparametern med 1.
 
 ## Skapa ett sekretessjobb {#create-job}
 
-Innan du skapar en ny jobbbegäran måste du först samla in identifieringsinformation om de registrerade vars uppgifter du vill få tillgång till, ta bort eller avanmäla dig från försäljning. När du har de data som krävs måste de anges i nyttolasten för en POST-förfrågan till `/jobs` slutpunkten.
+Innan du skapar en ny jobbbegäran måste du först samla in identifieringsinformation om de registrerade vars uppgifter du vill få tillgång till, ta bort eller avanmäla dig från försäljning. När du har de data som krävs måste de anges i nyttolasten för en POST-begäran till `/jobs`-slutpunkten.
 
 >[!NOTE]
 >
->Kompatibla Adobe Experience Cloud-program använder olika värden för att identifiera registrerade. Mer information om vilka identifierare som krävs för dina program finns i guiden om program [för](../experience-cloud-apps.md) Privacy Service och Experience Cloud. Mer allmän vägledning om hur du avgör vilka ID:n du ska skicka till [!DNL Privacy Service]finns i dokumentet om [identitetsdata i sekretessförfrågningar](../identity-data.md).
+>Kompatibla Adobe Experience Cloud-program använder olika värden för att identifiera registrerade. Mer information om vilka identifierare som krävs för dina program finns i guiden [Privacy Service- och Experience Cloud-program](../experience-cloud-apps.md). Mer allmän vägledning om hur du avgör vilka ID:n som ska skickas till [!DNL Privacy Service] finns i dokumentet om [identitetsdata i sekretessförfrågningar](../identity-data.md).
 
-API:t [!DNL Privacy Service] stöder två typer av jobbförfrågningar för personuppgifter:
+API:t [!DNL Privacy Service] har stöd för två typer av jobbförfrågningar för personliga data:
 
 * [Åtkomst och/eller borttagning](#access-delete): Få åtkomst till (läsa) eller ta bort personuppgifter.
 * [Avanmäl dig](#opt-out): Märk personuppgifter som att de inte ska säljas.
@@ -151,13 +152,13 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `companyContexts` **(Obligatoriskt)** | En array som innehåller autentiseringsinformation för din organisation. Varje identifierare i listan innehåller följande attribut: <ul><li>`namespace`: Namnutrymmet för en identifierare.</li><li>`value`: Identifierarens värde.</li></ul>Det **krävs** att en av identifierarna använder `imsOrgId` den som `namespace`, med `value` det unika ID:t för IMS-organisationen. <br/><br/>Ytterligare identifierare kan vara produktspecifika företagskvalificerare (till exempel `Campaign`) som identifierar en integrering med ett Adobe-program som tillhör din organisation. Möjliga värden är kontonamn, klientkoder, klient-ID:n eller andra programidentifierare. |
-| `users` **(Obligatoriskt)** | En array som innehåller en samling med minst en användare vars information du vill komma åt eller ta bort. Högst 1 000 användar-ID kan anges i en enda begäran. Varje användarobjekt innehåller följande information: <ul><li>`key`: En identifierare för en användare som används för att kvalificera separata jobb-ID:n i svarsdata. Det är bäst att välja en unik, lätt identifierbar sträng för det här värdet så att det är enkelt att referera till eller söka efter den senare.</li><li>`action`: En array som visar vilka åtgärder som önskas för användarens data. Beroende på vilka åtgärder du vill utföra måste den här arrayen innehålla `access`, `delete`eller båda.</li><li>`userIDs`: En samling identiteter för användaren. Antalet identiteter som en enskild användare kan ha är begränsat till nio. Varje identitet består av en `namespace`, en `value`och en namnutrymmeskvalificerare (`type`). Mer information om de här obligatoriska egenskaperna finns i [bilagan](appendix.md) .</li></ul> En mer detaljerad förklaring av `users` och `userIDs`information finns i [felsökningsguiden](../troubleshooting-guide.md#user-ids). |
-| `include` **(Obligatoriskt)** | En uppsättning Adobe-produkter som ska ingå i bearbetningen. Om det här värdet saknas eller är tomt på annat sätt, kommer begäran att avvisas. Inkludera endast produkter som din organisation är integrerad med. Mer information finns i avsnittet om [godkända produktvärden](appendix.md) i bilagan. |
-| `expandIDs` | En valfri egenskap som, när den anges till `true`, representerar en optimering för bearbetning av ID:n i programmen (stöds för närvarande bara av [!DNL Analytics]). Om det utelämnas blir det här värdet som standard `false`. |
-| `priority` | En valfri egenskap som används av Adobe Analytics och som anger prioriteten för bearbetning av begäranden. Godkända värden är `normal` och `low`. Om `priority` utelämnas används standardbeteendet `normal`. |
+| `companyContexts` **(Obligatoriskt)** | En array som innehåller autentiseringsinformation för din organisation. Varje identifierare i listan innehåller följande attribut: <ul><li>`namespace`: Namnutrymmet för en identifierare.</li><li>`value`: Identifierarens värde.</li></ul>Det är **obligatoriskt** att en av identifierarna använder `imsOrgId` som `namespace`, med dess `value` som innehåller det unika ID:t för din IMS-organisation. <br/><br/>Ytterligare identifierare kan vara produktspecifika företagskvalificerare (till exempel  `Campaign`) som identifierar en integrering med ett Adobe-program som tillhör din organisation. Möjliga värden är kontonamn, klientkoder, klient-ID:n eller andra programidentifierare. |
+| `users` **(Obligatoriskt)** | En array som innehåller en samling med minst en användare vars information du vill komma åt eller ta bort. Högst 1 000 användar-ID kan anges i en enda begäran. Varje användarobjekt innehåller följande information: <ul><li>`key`: En identifierare för en användare som används för att kvalificera separata jobb-ID:n i svarsdata. Det är bäst att välja en unik, lätt identifierbar sträng för det här värdet så att det är enkelt att referera till eller söka efter den senare.</li><li>`action`: En array som visar vilka åtgärder som önskas för användarens data. Beroende på vilka åtgärder du vill utföra måste den här arrayen innehålla `access`, `delete` eller båda.</li><li>`userIDs`: En samling identiteter för användaren. Antalet identiteter som en enskild användare kan ha är begränsat till nio. Varje identitet består av en `namespace`, en `value` och en namnutrymmeskvalificerare (`type`). Mer information om de här obligatoriska egenskaperna finns i [bilagan](appendix.md).</li></ul> En mer detaljerad förklaring av `users` och `userIDs` finns i [felsökningsguiden](../troubleshooting-guide.md#user-ids). |
+| `include` **(Obligatoriskt)** | En uppsättning Adobe-produkter som ska ingå i bearbetningen. Om det här värdet saknas eller är tomt på annat sätt, kommer begäran att avvisas. Inkludera endast produkter som din organisation är integrerad med. Mer information finns i avsnittet [Godkända produktvärden](appendix.md) i bilagan. |
+| `expandIDs` | En valfri egenskap som, när den anges till `true`, representerar en optimering för bearbetning av ID:n i programmen (stöds för närvarande endast av [!DNL Analytics]). Om det utelämnas blir det här värdet som standard `false`. |
+| `priority` | En valfri egenskap som används av Adobe Analytics och som anger prioriteten för bearbetning av begäranden. Godkända värden är `normal` och `low`. Om `priority` utelämnas är standardbeteendet `normal`. |
 | `analyticsDeleteMethod` | En valfri egenskap som anger hur Adobe Analytics ska hantera personuppgifter. Två möjliga värden accepteras för det här attributet: <ul><li>`anonymize`: Alla data som refereras av den angivna samlingen med användar-ID görs anonyma. Om `analyticsDeleteMethod` utelämnas är detta standardbeteendet.</li><li>`purge`: Alla data tas bort helt.</li></ul> |
-| `regulation` **(Obligatoriskt)** | Förordningen om begäran. Måste vara ett av följande fyra värden: <ul><li>`gdpr`</li><li>`ccpa`</li><li>`lgpd_bra`</li><li>`pdpa_tha`</li></ul> |
+| `regulation` **(Obligatoriskt)** | Reglerna för sekretessarbetet. Följande värden accepteras: <ul><li>`gdpr` (Europeiska unionen)</li><li>`ccpa` (Kalifornien)</li><li>`lgpd_bra` (Brasilien)</li><li>`nzpa_nzl` (Nya Zeeland)</li><li>`pdpa_tha` (Thailand)</li></ul> |
 
 **Svar**
 
@@ -209,11 +210,11 @@ Ett lyckat svar returnerar information om de nya jobben.
 | --- | --- |
 | `jobId` | Ett skrivskyddat, unikt systemgenererat ID för ett jobb. Det här värdet används i nästa steg när du söker efter ett specifikt jobb. |
 
-När du har skickat jobbförfrågan kan du fortsätta till nästa steg för att [kontrollera jobbets status](#check-status).
+När du har skickat jobbbegäran kan du fortsätta till nästa steg i [kontrollera jobbets status](#check-status).
 
 ## Kontrollera status för ett jobb {#check-status}
 
-Du kan hämta information om ett visst jobb, till exempel dess aktuella bearbetningsstatus, genom att ta med det jobbet `jobId` i sökvägen för en GET-förfrågan till `/jobs` slutpunkten.
+Du kan hämta information om ett specifikt jobb, till exempel dess aktuella bearbetningsstatus, genom att ta med det jobbets `jobId` i sökvägen för en GET-begäran till slutpunkten `/jobs`.
 
 >[!IMPORTANT]
 >
@@ -227,11 +228,11 @@ GET /jobs/{JOB_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{JOB_ID}` | ID:t för det jobb som du vill söka efter. Detta ID returneras under `jobId` i lyckade API-svar för [att skapa ett jobb](#create-job) och [visa alla jobb](#list). |
+| `{JOB_ID}` | ID:t för det jobb som du vill söka efter. Detta ID returneras under `jobId` i lyckade API-svar för [skapandet av ett jobb](#create-job) och [som listar alla jobb](#list). |
 
 **Begäran**
 
-Följande begäran hämtar information om jobbet vars sökväg `jobId` anges i begäran.
+Följande begäran hämtar information om jobbet vars `jobId` anges i sökvägen till begäran.
 
 ```shell
 curl -X GET \
@@ -317,13 +318,13 @@ Ett lyckat svar returnerar information om det angivna jobbet.
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `productStatusResponse` | Varje objekt i `productResponses` arrayen innehåller information om jobbets aktuella status i förhållande till ett specifikt [!DNL Experience Cloud] program. |
-| `productStatusResponse.status` | Jobbets aktuella statuskategori. I tabellen nedan finns en lista över [tillgängliga statuskategorier](#status-categories) och deras motsvarande betydelse. |
+| `productStatusResponse` | Varje objekt i `productResponses`-arrayen innehåller information om jobbets aktuella status i förhållande till ett specifikt [!DNL Experience Cloud]-program. |
+| `productStatusResponse.status` | Jobbets aktuella statuskategori. I tabellen nedan finns en lista med [tillgängliga statuskategorier](#status-categories) och deras motsvarande betydelse. |
 | `productStatusResponse.message` | Jobbets specifika status, som motsvarar statuskategorin. |
-| `productStatusResponse.responseMsgCode` | En standardkod för produktsvarsmeddelanden som tas emot av [!DNL Privacy Service]. Information om meddelandet finns under `responseMsgDetail`. |
+| `productStatusResponse.responseMsgCode` | En standardkod för produktsvarsmeddelanden som tagits emot av [!DNL Privacy Service]. Information om meddelandet finns under `responseMsgDetail`. |
 | `productStatusResponse.responseMsgDetail` | En mer detaljerad förklaring av jobbets status. Meddelanden för liknande status kan variera mellan olika produkter. |
-| `productStatusResponse.results` | För vissa statusvärden kan vissa produkter returnera ett `results` objekt som ger ytterligare information som inte täcks av `responseMsgDetail`. |
-| `downloadURL` | Om jobbets status är `complete`ger det här attributet en URL för att hämta jobbresultaten som en ZIP-fil. Den här filen kan laddas ned i 60 dagar efter att jobbet har slutförts. |
+| `productStatusResponse.results` | För vissa statusvärden kan vissa produkter returnera ett `results`-objekt som ger ytterligare information som inte omfattas av `responseMsgDetail`. |
+| `downloadURL` | Om jobbstatusen är `complete`, ger det här attributet en URL för att hämta jobbresultaten som en ZIP-fil. Den här filen kan laddas ned i 60 dagar efter att jobbet har slutförts. |
 
 ### Jobbstatuskategorier {#status-categories}
 
@@ -338,8 +339,8 @@ I följande tabell visas olika möjliga jobbstatuskategorier och deras motsvaran
 
 >[!NOTE]
 >
->Ett skickat jobb kan vara i ett `processing` tillstånd om det har ett beroende underordnat jobb som fortfarande bearbetas.
+>Ett skickat jobb kan vara kvar i tillståndet `processing` om det har ett beroende underordnat jobb som fortfarande bearbetas.
 
 ## Nästa steg
 
-Nu vet du hur man skapar och övervakar sekretessjobb med [!DNL Privacy Service] API. Mer information om hur du utför samma uppgifter med användargränssnittet finns i [Privacy Servicens användargränssnitt - översikt](../ui/overview.md).
+Du kan nu skapa och övervaka sekretessjobb med API:t [!DNL Privacy Service]. Mer information om hur du utför samma uppgifter med användargränssnittet finns i [Privacy Servicens användargränssnitt - översikt](../ui/overview.md).
