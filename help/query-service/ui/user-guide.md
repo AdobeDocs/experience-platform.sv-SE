@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;Query editor;query editor;Query service;query service;
+keywords: Experience Platform;home;populära topics;Query editor;query editor;Query service;query service;
 solution: Experience Platform
 title: Användarhandbok för Frågeredigeraren
 topic: query editor
@@ -7,7 +7,7 @@ description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls a
 translation-type: tm+mt
 source-git-commit: f35443046a3d2bc5101d0fa2a58d07f4b6a31151
 workflow-type: tm+mt
-source-wordcount: '1041'
+source-wordcount: '1054'
 ht-degree: 1%
 
 ---
