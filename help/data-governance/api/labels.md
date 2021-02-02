@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Slutpunkt för etiketter
 topic: developer guide
+description: Lär dig hur du hanterar dataanvändningsetiketter i Experience Platform med hjälp av API:t för principtjänsten.
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 5dad1fcc82707f6ee1bf75af6c10d34ff78ac311
 workflow-type: tm+mt
-source-wordcount: '489'
+source-wordcount: '509'
 ht-degree: 1%
 
 ---
@@ -14,19 +15,19 @@ ht-degree: 1%
 
 # Slutpunkt för etiketter
 
-Med etiketter för dataanvändning kan du kategorisera data enligt de användarprofiler som kan gälla för dessa data. Med slutpunkten i `/labels` [!DNL Policy Service API] kan du programmässigt hantera dataanvändningsetiketter i ert upplevelseprogram.
+Med etiketter för dataanvändning kan du kategorisera data enligt de användarprofiler som kan gälla för dessa data. Med `/labels`-slutpunkten i [!DNL Policy Service API] kan du programmässigt hantera dataanvändningsetiketter i ditt upplevelseprogram.
 
 >[!NOTE]
 >
->Slutpunkten används bara för att hämta, skapa och uppdatera etiketter för dataanvändning. `/labels` Anvisningar om hur du lägger till etiketter i datauppsättningar och fält med API-anrop finns i handboken om [hantering av datauppsättningsrubriker](../labels/dataset-api.md).
+>Slutpunkten `/labels` används bara för att hämta, skapa och uppdatera dataanvändningsetiketter. Anvisningar om hur du lägger till etiketter i datauppsättningar och fält med API-anrop finns i guiden [hantera datauppsättningsrubriker](../labels/dataset-api.md).
 
 ## Komma igång
 
-API-slutpunkten som används i den här handboken är en del av [[!DNL Policy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml). Innan du fortsätter bör du läsa [Komma igång-guiden](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API i det här dokumentet samt viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform] -API.
+API-slutpunkten som används i den här guiden är en del av [[!DNL Policy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform]-API.
 
 ## Hämta en lista med etiketter {#list}
 
-Du kan visa alla `core` eller `custom` etiketter genom att göra en GET-förfrågan till `/labels/core` respektive `/labels/custom`.
+Du kan visa alla `core`- eller `custom`-etiketter genom att göra en GET-förfrågan till `/labels/core` respektive `/labels/custom`.
 
 **API-format**
 
@@ -50,7 +51,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar en lista med anpassade etiketter som hämtats från systemet. Eftersom exempelbegäran gjordes till `/labels/custom`visar svaret nedan endast anpassade etiketter.
+Ett godkänt svar returnerar en lista med anpassade etiketter som hämtats från systemet. Eftersom exempelbegäran ovan gjordes till `/labels/custom` visar svaret nedan bara anpassade etiketter.
 
 ```json
 {
@@ -108,7 +109,7 @@ Ett godkänt svar returnerar en lista med anpassade etiketter som hämtats från
 
 ## Söka efter en etikett {#look-up}
 
-Du kan söka efter en specifik etikett genom att ta med etikettens `name` egenskap i sökvägen för en GET-begäran till [!DNL Policy Service] API:t.
+Du kan söka efter en specifik etikett genom att ta med etikettens `name`-egenskap i sökvägen till en GET-begäran till API:t [!DNL Policy Service].
 
 **API-format**
 
@@ -123,7 +124,7 @@ GET /labels/custom/{LABEL_NAME}
 
 **Begäran**
 
-Följande begäran hämtar den anpassade etiketten `L2`enligt sökvägen.
+Följande begäran hämtar den anpassade etiketten `L2`, som anges i sökvägen.
 
 ```shell
 curl -X GET \
@@ -162,7 +163,7 @@ Ett godkänt svar returnerar informationen om den anpassade etiketten.
 
 ## Skapa eller uppdatera en anpassad etikett {#create-update}
 
-Om du vill skapa eller uppdatera en anpassad etikett måste du göra en PUT-begäran till [!DNL Policy Service] API:t.
+Om du vill skapa eller uppdatera en anpassad etikett måste du göra en PUT-begäran till API:t [!DNL Policy Service].
 
 **API-format**
 
@@ -176,7 +177,7 @@ PUT /labels/custom/{LABEL_NAME}
 
 **Begäran**
 
-Följande begäran skapar en ny etikett `L3`som beskriver data som innehåller information om kundernas valda betalningsplaner.
+Följande begäran skapar en ny etikett, `L3`, som syftar till att beskriva data som innehåller information om kundens valda betalningsplaner.
 
 ```shell
 curl -X PUT \
@@ -196,7 +197,7 @@ curl -X PUT \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `name` | En unik strängidentifierare för etiketten. Det här värdet används för uppslagssyften och för att använda etiketten på datauppsättningar och fält, och vi rekommenderar därför att det är kort och koncist. |
-| `category` | Etikettens kategori. Du kan skapa egna kategorier för anpassade etiketter, men du bör använda `Custom` dem om du vill att etiketten ska visas i användargränssnittet. |
+| `category` | Etikettens kategori. Du kan skapa egna kategorier för anpassade etiketter, men du bör använda `Custom` om du vill att etiketten ska visas i användargränssnittet. |
 | `friendlyName` | Ett eget namn för etiketten som används för visning. |
 | `description` | (Valfritt) En beskrivning av etiketten som ger ytterligare kontext. |
 
@@ -228,4 +229,4 @@ Ett lyckat svar returnerar informationen för en anpassad etikett, med HTTP-kod 
 
 ## Nästa steg
 
-Den här guiden beskriver användningen av `/labels` slutpunkten i API:t för principtjänsten. Anvisningar om hur du använder etiketter på datauppsättningar och fält finns i API-handboken för [datauppsättningsrubriker](../labels/dataset-api.md).
+I den här guiden beskrivs användningen av slutpunkten `/labels` i principtjänstens API. Anvisningar om hur du använder etiketter på datauppsättningar och fält finns i [API-guiden för datauppsättningsrubriker](../labels/dataset-api.md).
