@@ -5,7 +5,7 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 translation-type: tm+mt
-source-git-commit: c9552b4d3bbb34c81996344f2e8c7cc385c525b6
+source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
 workflow-type: tm+mt
 source-wordcount: '663'
 ht-degree: 0%
@@ -138,7 +138,7 @@ ht-degree: 0%
       - [Samla in betalningsdata](tutorials/api/collect/payments.md)
       - [Samla in protokolldata](tutorials/api/collect/protocols.md)
       - [Samla in strömmande data](tutorials/api/collect/streaming.md)
-   - [Hämta parquetdata från ett molnlagringssystem från en annan leverantör](tutorials/api/cloud-storage-parquet.md)
+   - [Infoga Parquet-data från ett molnlagringssystem från en annan leverantör](tutorials/api/cloud-storage-parquet.md)
    - [Skapa en datauppsättningsanslutning](tutorials/api/create-dataset-base-connection.md)
    - [Övervaka dataflöden](tutorials/api/monitor.md)
    - [Uppdatera anslutningar](tutorials/api/update.md)
