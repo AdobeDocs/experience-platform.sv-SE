@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;data model;ui;workspace;field;
+keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;data model;ui;workspace;field;
 solution: Experience Platform
 title: Definiera XDM-fält i användargränssnittet
 description: Lär dig hur du definierar XDM-fält i användargränssnittet för Experience Platform.
 topic: user guide
 translation-type: tm+mt
-source-git-commit: 2e20403122e65d28f04114af9b7e8d41874f76e2
+source-git-commit: 70b3ad788dd78c6100782869e3065cc17a54ece1
 workflow-type: tm+mt
-source-wordcount: '1176'
+source-wordcount: '1236'
 ht-degree: 3%
 
 ---
@@ -86,10 +86,10 @@ När du definierar ett nytt fält kan ytterligare konfigurationsalternativ visas
 | [!UICONTROL Format] | [!UICONTROL String] | Välj i en lista över fördefinierade format för strängar som värdet måste överensstämma med. Tillgängliga format: <ul><li>[[!UICONTROL date-time]](https://tools.ietf.org/html/rfc3339)</li><li>[[!UICONTROL email]](https://tools.ietf.org/html/rfc2822)</li><li>[[!UICONTROL hostname]](https://tools.ietf.org/html/rfc1123#page-13)</li><li>[[!UICONTROL ipv4]](https://tools.ietf.org/html/rfc791)</li><li>[[!UICONTROL ipv6]](https://tools.ietf.org/html/rfc2460)</li><li>[[!UICONTROL uri]](https://tools.ietf.org/html/rfc3986)</li><li>[[!UICONTROL uri-reference]](https://tools.ietf.org/html/rfc3986#section-4.1)</li><li>[[!UICONTROL url-template]](https://tools.ietf.org/html/rfc6570)</li><li>[[!UICONTROL json-pointer]](https://tools.ietf.org/html/rfc6901)</li></ul> |
 | [!UICONTROL Minimum length] | [!UICONTROL String] | Det minsta antalet tecken som strängen måste innehålla för att värdet ska accepteras vid förtäring. |
 | [!UICONTROL Maximum length] | [!UICONTROL String] | Det maximala antal tecken som strängen måste innehålla för att värdet ska accepteras vid förtäring. |
-| [!UICONTROL Minimum value] | [!UICONTROL Double] | Det lägsta värdet för Double som ska accepteras vid förtäring. Om det inmatade värdet exakt matchar det som anges här, accepteras värdet. |
-| [!UICONTROL Maximum value] | [!UICONTROL Double] | Det högsta värdet för Double som ska accepteras vid intag. Om det inmatade värdet exakt matchar det som anges här, accepteras värdet. |
-| [!UICONTROL Exclusive minimum value] | [!UICONTROL Double] | Det högsta värdet för Double som ska accepteras vid intag. Om det inmatade värdet exakt matchar det som anges här, avvisas värdet. |
-| [!UICONTROL Exclusive maximum value] | [!UICONTROL Double] | Det högsta värdet för Double som ska accepteras vid intag. Om det inmatade värdet exakt matchar det som anges här, avvisas värdet. |
+| [!UICONTROL Minimum value] | [!UICONTROL Double] | Det lägsta värdet för Double som ska accepteras vid förtäring. Om det inmatade värdet exakt matchar det som anges här, accepteras värdet. När den här begränsningen används måste villkoret [!UICONTROL Exclusive minimum value] lämnas tomt. |
+| [!UICONTROL Maximum value] | [!UICONTROL Double] | Det högsta värdet för Double som ska accepteras vid intag. Om det inmatade värdet exakt matchar det som anges här, accepteras värdet. När den här begränsningen används måste villkoret [!UICONTROL Exclusive maximum value] lämnas tomt. |
+| [!UICONTROL Exclusive minimum value] | [!UICONTROL Double] | Det högsta värdet för Double som ska accepteras vid intag. Om det inmatade värdet exakt matchar det som anges här, avvisas värdet. När du använder den här begränsningen måste villkoret [!UICONTROL Minimum value] (icke-exklusiv) lämnas tomt. |
+| [!UICONTROL Exclusive maximum value] | [!UICONTROL Double] | Det högsta värdet för Double som ska accepteras vid intag. Om det inmatade värdet exakt matchar det som anges här, avvisas värdet. När du använder den här begränsningen måste villkoret [!UICONTROL Maximum value] (icke-exklusiv) lämnas tomt. |
 
 ## Speciella fälttyper {#special}
 
