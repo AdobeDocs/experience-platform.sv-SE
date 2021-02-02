@@ -1,37 +1,37 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;schema;Schema;schemas;Schemas;create
+keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;Experience data model;Experience data model;Experience data model;data model;data model;schema register;schema Registry;schema;schema;schema;scheman;scheman;scheman;skapa
 solution: Experience Platform
 title: Skapa ett schema med API:t för schemaregister
 topic: tutorial
 type: Tutorial
 description: I den här självstudiekursen används API:t för schemaregister för att vägleda dig genom stegen för att skapa ett schema med en standardklass.
 translation-type: tm+mt
-source-git-commit: 097fe219e0d64090de758f388ba98e6024db2201
+source-git-commit: 2dbd92efbd992b70f4f750b09e9d2e0626e71315
 workflow-type: tm+mt
-source-wordcount: '2343'
+source-wordcount: '2373'
 ht-degree: 0%
 
 ---
 
 
-# Skapa ett schema med [!DNL Schema Registry] API
+# Skapa ett schema med hjälp av API:t [!DNL Schema Registry]
 
-Den [!DNL Schema Registry] används för att få åtkomst till [!DNL Schema Library] Adobe Experience Platform. Den [!DNL Schema Library] innehåller resurser som du har fått av Adobe, [!DNL Experience Platform] partners och leverantörer vars program du använder. Registret innehåller ett användargränssnitt och RESTful API från vilket alla tillgängliga biblioteksresurser är tillgängliga.
+[!DNL Schema Registry] används för att komma åt [!DNL Schema Library] i Adobe Experience Platform. [!DNL Schema Library] innehåller resurser som gjorts tillgängliga för dig av Adobe, [!DNL Experience Platform] partners och leverantörer vars program du använder. Registret innehåller ett användargränssnitt och RESTful API från vilket alla tillgängliga biblioteksresurser är tillgängliga.
 
-I den här självstudiekursen används API:t för att vägleda dig genom stegen för att skapa ett schema med en standardklass. [!DNL Schema Registry] Om du föredrar att använda användargränssnittet i [!DNL Experience Platform]innehåller [schemaredigerarens självstudiekurs](create-schema-ui.md) stegvisa instruktioner för hur du utför liknande åtgärder i schemaredigeraren.
+I den här självstudien används API:t [!DNL Schema Registry] för att vägleda dig genom stegen för att skapa ett schema med en standardklass. Om du föredrar att använda användargränssnittet i [!DNL Experience Platform] innehåller [självstudiekursen för schemaredigeraren](create-schema-ui.md) stegvisa instruktioner för att utföra liknande åtgärder i schemaredigeraren.
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [[!DNL Experience Data Model (XDM) System]](../home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+* [[!DNL Experience Data Model (XDM) System]](../home.md): Det standardiserade ramverket som  [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grundläggande om schemakomposition](../schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
 * [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [[!DNL Sandboxes]](../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till [!DNL Schema Registry] API:t. Detta inkluderar ditt `{TENANT_ID}`, konceptet med&quot;behållare&quot; och de rubriker som krävs för att göra förfrågningar (med särskild uppmärksamhet på rubriken Godkänn och dess möjliga värden).
+Innan du startar den här självstudiekursen bör du läsa igenom [utvecklarhandboken](../api/getting-started.md) för viktig information som du behöver känna till för att kunna ringa anrop till API:t [!DNL Schema Registry]. Detta inkluderar din `{TENANT_ID}`, begreppet &quot;behållare&quot; och de huvuden som krävs för att göra förfrågningar (med särskild uppmärksamhet på huvudet Godkänn och dess möjliga värden).
 
-Den här självstudiekursen går igenom stegen för att skapa ett bonusmedlemsschema som beskriver data som är relaterade till medlemmarna i ett butiksbonusprogram. Innan du börjar kanske du vill förhandsgranska det [fullständiga schemat](#complete-schema) för lojalitetsmedlemmar i bilagan.
+Den här självstudiekursen går igenom stegen för att skapa ett bonusmedlemsschema som beskriver data som är relaterade till medlemmarna i ett butiksbonusprogram. Innan du börjar kanske du vill förhandsgranska schemat [fullständiga bonusmedlemmar](#complete-schema) i bilagan.
 
 ## Skapa ett schema med en standardklass
 
@@ -41,7 +41,7 @@ Ett schema kan ses som en plan för de data som du vill importera till [!DNL Exp
 
 Schemadispositionsprocessen börjar med att en klass väljs. Klassen definierar viktiga beteendeaspekter för data (post- eller tidsserier) samt de minimifält som krävs för att beskriva de data som ska importeras.
 
-Schemat som du gör i den här självstudien använder [!DNL XDM Individual Profile] klassen. [!DNL XDM Individual Profile] är en standardklass som tillhandahålls av Adobe för att definiera postbeteende. Mer information om beteenden finns i [grunderna för schemakomposition](../schema/composition.md).
+Schemat som du gör i den här självstudien använder klassen [!DNL XDM Individual Profile]. [!DNL XDM Individual Profile] är en standardklass som tillhandahålls av Adobe för att definiera postbeteende. Mer information om beteenden finns i [grunderna för schemakomposition](../schema/composition.md).
 
 Om du vill tilldela en klass görs ett API-anrop för att skapa (POST) ett nytt schema i innehavarbehållaren. Det här anropet innehåller den klass som schemat ska implementera. Varje schema kan bara implementera en klass.
 
@@ -53,7 +53,7 @@ POST /tenant/schemas
 
 **Begäran**
 
-Begäran måste innehålla ett `allOf` attribut som refererar till `$id` en klass. Det här attributet definierar den &quot;basklass&quot; som schemat ska implementera. I det här exemplet är basklassen [!DNL XDM Individual Profile] klass. Klassens `$id` värde används som värde för [!DNL XDM Individual Profile] fältet i `$ref` `allOf` arrayen nedan.
+Begäran måste innehålla ett `allOf`-attribut som refererar till `$id` för en klass. Det här attributet definierar den &quot;basklass&quot; som schemat ska implementera. I det här exemplet är basklassen [!DNL XDM Individual Profile]-klassen. `$id` för klassen [!DNL XDM Individual Profile] används som värde för fältet `$ref` i arrayen `allOf` nedan.
 
 ```SHELL
 curl -X POST \
@@ -77,7 +77,7 @@ curl -X POST \
 
 **Svar**
 
-En slutförd begäran returnerar HTTP-svarsstatus 201 (Skapad) med en svarstext som innehåller information om det nyligen skapade schemat, inklusive `$id`, `meta:altIt`och `version`. Dessa värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
+En lyckad begäran returnerar HTTP-svarsstatus 201 (Skapad) med en svarstext som innehåller information om det nyligen skapade schemat, inklusive `$id`, `meta:altIt` och `version`. Dessa värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
 
 ```JSON
 {
@@ -117,7 +117,7 @@ En slutförd begäran returnerar HTTP-svarsstatus 201 (Skapad) med en svarstext 
 
 ### Söka efter ett schema
 
-Om du vill visa det nya schemat utför du en sökbegäran (GET) med schemats `meta:altId` - eller URL-kodade `$id` URI.
+Om du vill visa det nya schemat utför du en sökning (GET) med hjälp av URI:n `meta:altId` eller URL:en som är kodad `$id` för schemat.
 
 **API-format**
 
@@ -177,11 +177,11 @@ Svarsformatet beror på vilket Acceptera-huvud som skickas tillsammans med begä
 }
 ```
 
-### Lägga till en blandning {#add-a-mixin}
+### Lägg till en blandning {#add-a-mixin}
 
 Nu när schemat för lojalitetsmedlemmar har skapats och bekräftats kan mixins läggas till i det.
 
-Det finns olika standardblandningar som kan användas, beroende på vilken schemaklass som har valts. Varje blandning innehåller ett `intendedToExtend` fält som definierar den eller de klasser som blandningen är kompatibel med.
+Det finns olika standardblandningar som kan användas, beroende på vilken schemaklass som har valts. Varje blandning innehåller ett `intendedToExtend`-fält som definierar den eller de klasser som blandningen är kompatibel med.
 
 Blandningar definierar begrepp, till exempel&quot;namn&quot; eller&quot;adress&quot;, som kan återanvändas i alla scheman som behöver hämta samma information.
 
@@ -212,7 +212,7 @@ curl -X PATCH \
 
 **Svar**
 
-Svaret visar den nyligen tillagda mixen i `meta:extends` arrayen och innehåller en blandning `$ref` i `allOf` -attributet.
+Svaret visar den nyligen tillagda blandningen i `meta:extends`-arrayen och innehåller `$ref` till blandningen i `allOf`-attributet.
 
 ```JSON
 {
@@ -260,7 +260,7 @@ Nu kan du lägga till ytterligare en standardblandning genom att upprepa stegen 
 
 >[!TIP]
 >
->Det är värt att granska alla tillgängliga mixar för att bekanta dig med fälten som ingår i varje. Du kan visa (GET) alla mixar som är tillgängliga för användning med en viss klass genom att utföra en begäran mot var och en av behållarna &quot;global&quot; och &quot;tenant&quot;, och bara returnera de mixar där fältet &quot;meta:intendedToExtend&quot; matchar klassen som du använder. I det här fallet är det [!DNL XDM Individual Profile] klassen, så [!DNL XDM Individual Profile] används `$id` :
+>Det är värt att granska alla tillgängliga mixar för att bekanta dig med fälten som ingår i varje. Du kan visa (GET) alla mixar som är tillgängliga för användning med en viss klass genom att utföra en begäran mot var och en av behållarna &quot;global&quot; och &quot;tenant&quot;, och bara returnera de mixar där fältet &quot;meta:intendedToExtend&quot; matchar klassen som du använder. I det här fallet är det klassen [!DNL XDM Individual Profile], så [!DNL XDM Individual Profile] `$id` används:
 
 ```http
 GET /global/mixins?property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile
@@ -292,9 +292,9 @@ curl -X PATCH \
 
 **Svar**
 
-Svaret visar den nyligen tillagda mixen i `meta:extends` arrayen och innehåller en blandning `$ref` i `allOf` -attributet.
+Svaret visar den nyligen tillagda blandningen i `meta:extends`-arrayen och innehåller `$ref` till blandningen i `allOf`-attributet.
 
-Schemat för lojalitetsmedlemmar bör nu innehålla tre `$ref` värden i `allOf` arrayen: &quot;profile&quot;, &quot;profile-person-details&quot; och &quot;profile-personal-details&quot;, enligt nedan.
+Schemat för lojalitetsmedlemmar ska nu innehålla tre `$ref`-värden i `allOf`-arrayen: &quot;profile&quot;, &quot;profile-person-details&quot; och &quot;profile-personal-details&quot;, enligt nedan.
 
 ```JSON
 {
@@ -344,11 +344,11 @@ Schemat för lojalitetsmedlemmar bör nu innehålla tre `$ref` värden i `allOf`
 
 Lojalitetsmedlemmens schema behöver hämta information som är unik för bonusprogrammet. Denna information ingår inte i någon standardblandning.
 
-Kontot [!DNL Schema Registry] för detta genom att du kan definiera egna blandningar i klientens behållare. Dessa mixar är unika för din organisation och kan inte visas eller redigeras av någon utanför din IMS-organisation.
+[!DNL Schema Registry]-kontona för detta genom att du kan definiera dina egna mixar i innehavarbehållaren. Dessa mixar är unika för din organisation och kan inte visas eller redigeras av någon utanför din IMS-organisation.
 
-För att skapa (POST) en ny blandning måste din begäran innehålla ett `meta:intendedToExtend` fält som innehåller `$id` för basklassen (basklasserna) som blandningen är kompatibel med, tillsammans med de egenskaper som blandningen kommer att innehålla.
+För att kunna skapa (POST) en ny blandning måste din begäran innehålla ett `meta:intendedToExtend`-fält som innehåller `$id` för basklassen/basklasserna som blandningen är kompatibel med, tillsammans med de egenskaper som blandningen kommer att innehålla.
 
-Alla anpassade egenskaper måste kapslas under din `TENANT_ID` sida för att undvika kollisioner med andra blandningar eller fält.
+Alla anpassade egenskaper måste kapslas under `TENANT_ID` för att undvika kollisioner med andra mixiner eller fält.
 
 **API-format**
 
@@ -419,7 +419,7 @@ curl -X POST\
 
 **Svar**
 
-En slutförd begäran returnerar HTTP-svarsstatus 201 (Skapad) med en svarstext som innehåller information om den nyligen skapade mixen, inklusive `$id`, `meta:altIt`och `version`. Dessa värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
+En lyckad begäran returnerar HTTP-svarsstatus 201 (Skapad) med en svarstext som innehåller information om den nyligen skapade mixinen, inklusive `$id`, `meta:altIt` och `version`. Dessa värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
 
 ```JSON
 {
@@ -498,7 +498,7 @@ En slutförd begäran returnerar HTTP-svarsstatus 201 (Skapad) med en svarstext 
 
 ### Lägg till anpassad blandning till schema
 
-Nu kan du följa samma steg för att [lägga till en standardblandning](#add-a-mixin) för att lägga till den här nyligen skapade blandningen i ditt schema.
+Nu kan du följa samma steg för att [lägga till en standardblandning](#add-a-mixin) och lägga till den här nya mixen i ditt schema.
 
 **API-format**
 
@@ -525,7 +525,7 @@ curl -X PATCH \
 
 **Svar**
 
-Du kan se att mixinen har lagts till eftersom svaret nu visar den nyligen tillagda mixen i `meta:extends` arrayen och innehåller en blandning `$ref` i `allOf` -attributet.
+Du kan se att mixinen har lagts till eftersom svaret nu visar den nyligen tillagda mixen i `meta:extends`-arrayen och innehåller en `$ref`-blandning i `allOf`-attributet.
 
 ```JSON
 {
@@ -599,9 +599,9 @@ curl -X GET \
 
 **Svar**
 
-Genom att använda sidhuvudet `application/vnd.adobe.xed-full+json; version=1` Godkänn kan du se hela schemat med alla egenskaper. Dessa egenskaper är de fält som klassen och de blandningar som har använts för att komponera schemat har bidragit med. I det här exemplet har enskilda egenskapsattribut minimerats för utrymme. Du kan visa det fullständiga schemat, inklusive alla egenskaper och deras attribut, i [bilagan](#appendix) i slutet av det här dokumentet.
+Genom att använda rubriken `application/vnd.adobe.xed-full+json; version=1` Acceptera kan du se hela schemat med alla egenskaper. Dessa egenskaper är de fält som klassen och de blandningar som har använts för att komponera schemat har bidragit med. I det här exemplet har enskilda egenskapsattribut minimerats för utrymme. Du kan visa hela schemat, inklusive alla egenskaper och deras attribut, i [bilagan](#appendix) i slutet av det här dokumentet.
 
-Under `"properties"`visas det `_{TENANT_ID}` namnutrymme som skapades när du lade till den anpassade mixen. I det namnutrymmet är objektet&quot;loyalty&quot; och fälten som definierades när mixen skapades.
+Under `"properties"` kan du se namnutrymmet `_{TENANT_ID}` som skapades när du lade till den anpassade mixen. I det namnutrymmet är objektet&quot;loyalty&quot; och fälten som definierades när mixen skapades.
 
 ```JSON
 {
@@ -705,7 +705,7 @@ POST /tenant/datatypes
 
 **Begäran**
 
-För att definiera en datatyp krävs inte `meta:extends` eller `meta:intendedToExtend` fält, och inte heller måste fält kapslas för att undvika kollisioner.
+För att definiera en datatyp krävs inte fälten `meta:extends` eller `meta:intendedToExtend`, och fält behöver inte heller kapslas för att undvika kollisioner.
 
 ```SHELL
 curl -X POST \
@@ -756,7 +756,7 @@ curl -X POST \
 
 **Svar**
 
-En slutförd begäran returnerar HTTP-svarsstatus 201 (Skapad) med en svarstext som innehåller information om den nya datatypen, inklusive `$id`, `meta:altIt`och `version`. Dessa värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
+En slutförd begäran returnerar HTTP-svarsstatus 201 (Skapad) med en svarstext som innehåller information om den nya datatypen, inklusive `$id`, `meta:altIt` och `version`. Dessa värden är skrivskyddade och tilldelas av [!DNL Schema Registry].
 
 ```JSON
 {
@@ -818,7 +818,7 @@ En slutförd begäran returnerar HTTP-svarsstatus 201 (Skapad) med en svarstext 
 }
 ```
 
-Du kan utföra en sökning (GET)-begäran med den URL-kodade `$id` URI:n för att visa den nya datatypen direkt. Se till att du tar med `version` texten i huvudet Godkänn för en uppslagsbegäran.
+Du kan utföra en sökning (GET)-begäran med URL-kodad `$id` URI för att visa den nya datatypen direkt. Var noga med att ta med `version` i din Accept-rubrik för en uppslagsbegäran.
 
 ### Använd datatyp i schema
 
@@ -858,7 +858,7 @@ curl -X PATCH \
 
 **Svar**
 
-Svaret innehåller nu en referens (`$ref`) till datatypen i objektet &quot;loyalty&quot; i stället för de fält som tidigare definierats.
+Svaret innehåller nu en referens (`$ref`) till datatypen i &quot;loyalty&quot;-objektet i stället för de fält som tidigare definierats.
 
 ```JSON
 {
@@ -956,15 +956,15 @@ När du utför en GET-begäran om att söka efter schemat visas nu referensen ti
 
 ### Definiera en identitetsbeskrivning
 
-Scheman används för inmatning av data i [!DNL Experience Platform]. Dessa data används slutligen för flera tjänster för att skapa en enda, enhetlig vy av en individ. Nyckelfält kan markeras som&quot;Identitet&quot; som hjälp med den här processen, och när data har matats in infogas data i dessa fält i&quot;Identitetsdiagram&quot; för den aktuella personen. Diagramdata kan sedan nås av [[!DNL Real-time Customer Profile]](../../profile/home.md) och andra [!DNL Experience Platform] tjänster för att ge en sammanslagen bild av varje enskild kund.
+Scheman används för att importera data till [!DNL Experience Platform]. Dessa data används slutligen för flera tjänster för att skapa en enda, enhetlig vy av en individ. Nyckelfält kan markeras som&quot;Identitet&quot; som hjälp med den här processen, och när data hämtas infogas data i dessa fält i&quot;Identitetsdiagram&quot; för den aktuella personen. Diagramdata kan sedan nås av [[!DNL Real-time Customer Profile]](../../profile/home.md) och andra [!DNL Experience Platform]-tjänster för att ge en sammanslagen vy över varje enskild kund.
 
-Fält som vanligen markeras som&quot;Identitet&quot; är: e-postadress, telefonnummer, CRM-ID [[!DNL Experience Cloud ID (ECID)]](https://docs.adobe.com/content/help/sv-SE/id-service/using/home.html)eller andra unika ID-fält.
+Fält som vanligen markeras som&quot;Identitet&quot; är: e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html), CRM-ID eller andra unika ID-fält.
 
 Överväg alla unika identifierare som är specifika för din organisation, eftersom de också kan vara bra identifieringsfält.
 
 Identitetsbeskrivare signalerar att &quot;sourceProperty&quot; för &quot;sourceSchema&quot; är en unik identifierare som ska betraktas som en &quot;Identity&quot;.
 
-Mer information om hur du arbetar med beskrivningar finns i Utvecklarhandbok för [schemaregister](../api/getting-started.md).
+Mer information om hur du arbetar med beskrivningar finns i [Utvecklarhandbok för schemaregister](../api/getting-started.md).
 
 **API-format**
 
@@ -974,7 +974,7 @@ POST /tenant/descriptors
 
 **Begäran**
 
-Följande begäran definierar en identitetsbeskrivning i fältet&quot;loyaltyId&quot;. Detta anger [!DNL Experience Platform] att medlemsidentifieraren för det unika lojalitetsprogrammet (i det här fallet medlemmens e-postadress) ska användas för att sammanfoga information om den enskilda personen.
+Följande begäran definierar en identitetsbeskrivning i fältet&quot;loyaltyId&quot;. Detta anger för [!DNL Experience Platform] att använda det unika medlemsidentifieraren för lojalitetsprogram (i det här fallet medlemmens e-postadress) för att sammanfoga information om den enskilda personen.
 
 ```SHELL
 curl -X POST \
@@ -997,11 +997,11 @@ curl -X POST \
 
 >[!NOTE]
 >
->Du kan visa tillgängliga xdm:namespace-värden eller skapa nya med hjälp av [[!DNL Identity Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml). Värdet för xdm:property kan vara antingen xdm:code eller xdm:id, beroende på vilket xdm:namespace som används.
+>Du kan visa tillgängliga xdm:namespace-värden eller skapa nya med [[!DNL Identity Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml). Värdet för xdm:property kan vara antingen xdm:code eller xdm:id, beroende på vilket xdm:namespace som används.
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 201 (Skapad) med en svarstext som innehåller information om den nyligen skapade beskrivningen, inklusive dess `@id`. Fältet `@id` är skrivskyddat och har tilldelats av [!DNL Schema Registry] och används för att referera till beskrivningen i API:t.
+Ett lyckat svar returnerar HTTP-status 201 (Skapad) med en svarstext som innehåller information om den nyligen skapade beskrivningen, inklusive `@id`. `@id` är ett skrivskyddat fält som tilldelats av [!DNL Schema Registry] och används för att referera till beskrivningen i API:t.
 
 ```JSON
 {
@@ -1019,13 +1019,13 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) med en svarstext som innehå
 
 ## Aktivera schema för användning i [!DNL Real-time Customer Profile] {#profile}
 
-Genom att lägga till &quot;union&quot;-taggen i `meta:immutableTags` attributet kan du aktivera schemat för lojalitetsmedlemmar som kan användas av [!DNL Real-time Customer Profile].
+Genom att lägga till taggen &quot;union&quot; i attributet `meta:immutableTags` kan du aktivera schemat för lojalitetsmedlemmar som kan användas av [!DNL Real-time Customer Profile].
 
-Mer information om hur du arbetar med fackvyer finns i avsnittet om [fackföreningar](../api/unions.md) i [!DNL Schema Registry] utvecklarhandboken.
+Mer information om hur du arbetar med unionsvyer finns i avsnittet om [föreningar](../api/unions.md) i [!DNL Schema Registry]-utvecklarhandboken.
 
 ### Lägg till&quot;union&quot;-tagg
 
-För att ett schema ska kunna inkluderas i den sammanfogade unionsvyn måste taggen &quot;union&quot; läggas till i schemats `meta:immutableTags` attribut. Detta görs genom en PATCH-begäran om att uppdatera schemat och lägga till `meta:immutableTags` arrayen med värdet &quot;union&quot;.
+För att ett schema ska kunna inkluderas i den sammanfogade unionsvyn måste taggen union läggas till i schemats `meta:immutableTags`-attribut. Detta görs via en PATCH-begäran om att uppdatera schemat och lägga till `meta:immutableTags`-arrayen med värdet &quot;union&quot;.
 
 **API-format**
 
@@ -1050,7 +1050,7 @@ curl -X PATCH \
 
 **Svar**
 
-Svaret visar att åtgärden utfördes korrekt och schemat innehåller nu ett attribut på översta nivån, `meta:immutableTags`som är en matris som innehåller värdet &quot;union&quot;.
+Svaret visar att åtgärden utfördes utan fel och schemat innehåller nu ett attribut på översta nivån, `meta:immutableTags`, som är en matris som innehåller värdet &quot;union&quot;.
 
 ```JSON
 {
@@ -1105,9 +1105,9 @@ Svaret visar att åtgärden utfördes korrekt och schemat innehåller nu ett att
 
 ### Visa scheman i en union
 
-Du har nu lagt till ditt schema i [!DNL XDM Individual Profile] unionen. Om du vill se en lista över alla scheman som ingår i samma union kan du utföra en GET-förfrågan med hjälp av frågeparametrar för att filtrera svaret.
+Du har nu lagt till ditt schema i [!DNL XDM Individual Profile]-unionen. Om du vill se en lista över alla scheman som ingår i samma union kan du utföra en GET-förfrågan med hjälp av frågeparametrar för att filtrera svaret.
 
-Med parametern `property` query (fråga) kan du ange att endast scheman som innehåller ett `meta:immutableTags` fält som har `meta:class` samma värde som `$id` för [!DNL XDM Individual Profile] klassen returneras.
+Med frågeparametern `property` kan du ange att endast scheman som innehåller ett `meta:immutableTags`-fält som har `meta:class` som är lika med `$id` för klassen [!DNL XDM Individual Profile] returneras.
 
 **API-format**
 
@@ -1117,7 +1117,7 @@ GET /tenant/schemas?property=meta:immutableTags==union&property=meta:class=={CLA
 
 **Begäran**
 
-Exempelbegäran nedan returnerar alla scheman som är en del av [!DNL XDM Individual Profile] unionen.
+Exempelbegäran nedan returnerar alla scheman som är en del av [!DNL XDM Individual Profile]-unionen.
 
 ```SHELL
 curl -X GET \
@@ -1175,17 +1175,17 @@ Genom att följa den här självstudiekursen har du komponerat ett schema med b�
 
 Schemat för fullständiga lojalitetsmedlemmar, som det har skapats genom den här självstudiekursen, finns i följande bilaga. När du tittar på schemat kan du se hur blandningarna bidrar till den övergripande strukturen och vilka fält som är tillgängliga för dataöverföring.
 
-När du har skapat mer än ett schema kan du definiera relationer mellan dem med hjälp av relationsbeskrivare. Mer information finns i självstudiekursen om hur du [definierar en relation mellan två scheman](relationship-api.md) . Detaljerade exempel på hur du utför alla åtgärder (GET, POST, PUT, PATCH och DELETE) i registret finns i [utvecklarhandboken](../api/getting-started.md) för schemaregister när du arbetar med API:t.
+När du har skapat mer än ett schema kan du definiera relationer mellan dem med hjälp av relationsbeskrivare. Se självstudiekursen för [definiera en relation mellan två scheman](relationship-api.md) för mer information. Detaljerade exempel på hur du utför alla åtgärder (GET, POST, PUT, PATCH och DELETE) i registret finns i [Utvecklarhandbok för schemaregister](../api/getting-started.md) när du arbetar med API:t.
 
 ## Bilaga {#appendix}
 
 Följande information kompletterar API-självstudiekursen.
 
-## Fullständigt medlemsschema {#complete-schema}
+## Schema för fullständiga lojalitetsmedlemmar {#complete-schema}
 
 Under den här självstudiekursen består ett schema som beskriver medlemmarna i ett lojalitetsprogram för detaljhandeln.
 
-Schemat implementerar [!DNL XDM Individual Profile] klassen och kombinerar flera mixins. att lägga in information om lojalitetsmedlemmar med hjälp av standardblandningarna &quot;Personinformation&quot; och &quot;Personuppgifter&quot; samt via en &quot;Förmånsinformation&quot; som definieras under kursen.
+Schemat implementerar klassen [!DNL XDM Individual Profile] och kombinerar flera blandningar; att lägga in information om lojalitetsmedlemmar med hjälp av standardblandningarna &quot;Personinformation&quot; och &quot;Personuppgifter&quot; samt via en &quot;Förmånsinformation&quot; som definieras under kursen.
 
 I följande exempel visas det slutförda schemat för lojalitetsmedlemmar i JSON-format:
 
