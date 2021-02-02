@@ -1,45 +1,51 @@
 ---
-keywords: Experience Platform;home;popular topics;Query service;query service;Looker;looker;connect to query service;
+keywords: Experience Platform;hem;populära ämnen;frågetjänst;frågetjänst;Sökare;sökare;ansluta till frågetjänst;
 solution: Experience Platform
 title: Anslut med Looker
 topic: connect
 description: Det här dokumentet går igenom stegen för att ansluta Looker till Adobe Experience Platform Query Service.
 translation-type: tm+mt
-source-git-commit: 9fbb6b829cd9ddec30f22b0de66874be7710e465
+source-git-commit: bc1bbdddd75b11ac180b5e6faa391fd74e5f7e02
 workflow-type: tm+mt
-source-wordcount: '208'
+source-wordcount: '239'
 ht-degree: 0%
 
 ---
 
 
-# Anslut med [!DNL Looker]
+# [!DNL Looker]
 
-Följ stegen nedan för att ansluta [!DNL Looker] till [!DNL Query Service] på Adobe Experience Platform:
-
-När du har loggat in på [!DNL Looker] klickar du på **[!UICONTROL Admin]** följt av **[!UICONTROL Connections]**.
-
-![](../images/clients/looker/click-admin-connections.png)
-
-På den här sidan klickar du på **Ny anslutning**.
-
-![](../images/clients/looker/click-new-connection.png)
-
-Härifrån kan du fylla i informationen för anslutningsinställningarna.
-
-![](../images/clients/looker/new-connection.png)
-
-- **Namn:** Namnet på anslutningen.
-- **Dialekt:** Den dialekt som används för SQL-databasen. [!DNL Query Service] använder  **[!DNL PostgreSQL]**.
-- **Värd och port:** Värdslutpunkten och dess port för  [!DNL Query Service].
-- **Database:** The database that will be used.
-- **Användarnamn och lösenord:** De inloggningsuppgifter som ska användas. Användarnamnet kommer att ha formatet `ORG_ID@AdobeOrg`.
+Det här dokumentet innehåller stegen för att ansluta [!DNL Looker] med Adobe Experience Platform [!DNL Query Service].
 
 >[!NOTE]
 >
->Mer information om hur du hittar värd och port, databasnamn och inloggningsuppgifter finns på sidan [inloggningsuppgifter på Platform](https://platform.adobe.com/query/configuration). Om du vill hitta dina autentiseringsuppgifter loggar du in på [!DNL Platform], klickar på **[!UICONTROL Queries]** och sedan på **[!UICONTROL Credentials]**.
+> Den här handboken förutsätter att du redan har tillgång till [!DNL Looker] och är bekant med hur du navigerar i dess gränssnitt. Mer information om [!DNL Looker] finns i [officiell [!DNL Looker] dokumentation](https://docs.looker.com/).
 
-När du har angett anslutningsinformationen klickar du på **[!UICONTROL Test These Settings]** för att kontrollera att inloggningsuppgifterna fungerar som de ska. Om de gör det visas ett meddelande om att du kan ansluta nedan. Om anslutningen lyckas klickar du på **[!UICONTROL Add Connection]** för att skapa anslutningen.
+## Anslut [!DNL Looker] till plattformen
+
+När du har loggat in på [!DNL Looker] väljer du **[!DNL Admin]** följt av **[!DNL Connections]**.
+
+![](../images/clients/looker/click-admin-connections.png)
+
+Välj **[!DNL New Connection]** på den här sidan.
+
+![](../images/clients/looker/click-new-connection.png)
+
+Här kan du fylla i information om anslutningsinställningarna.
+
+![](../images/clients/looker/new-connection.png)
+
+- **[!DNL Name]:** Namnet på anslutningen.
+- **[!DNL Dialect]:** Den dialekt som används för SQL-databasen. [!DNL Query Service] använder  **[!DNL PostgreSQL]**.
+- **[!DNL Host and Port]:** Värdslutpunkten och dess port för  [!DNL Query Service].
+- **[!DNL Database]:** Databasen som ska användas.
+- **[!DNL Username and Password]:** De inloggningsuppgifter som ska användas. Användarnamnet kommer att ha formatet `ORG_ID@AdobeOrg`.
+
+>[!NOTE]
+>
+>Mer information om hur du hittar värd och port, databasnamn och inloggningsuppgifter finns på sidan [inloggningsuppgifter på Platform](https://platform.adobe.com/query/configuration). Logga in på [!DNL Platform] och välj **[!UICONTROL Queries]** följt av **[!UICONTROL Credentials]** för att hitta dina inloggningsuppgifter.
+
+När du har angett anslutningsinformationen väljer du **[!DNL Test These Settings]** för att se till att dina autentiseringsuppgifter fungerar som de ska. Om de gör det visas ett meddelande om att du kan ansluta nedan. Om anslutningen lyckas väljer du **[!DNL Add Connection]** för att skapa anslutningen.
 
 ![](../images/clients/looker/click-test-connection.png)
 
