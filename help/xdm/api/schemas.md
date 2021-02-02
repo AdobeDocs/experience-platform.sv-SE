@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;schema;Schema;schemas;Schemas;create
+keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;Experience data model;Experience data model;Experience data model;data model;data model;schema register;schema Registry;schema;schema;schema;scheman;scheman;scheman;skapa
 solution: Experience Platform
 title: Skapa ett schema
 description: Med slutpunkten /schemas i API:t för schemaregister kan du programmässigt hantera XDM-scheman i ditt upplevelseprogram.
@@ -7,7 +7,7 @@ topic: developer guide
 translation-type: tm+mt
 source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
 workflow-type: tm+mt
-source-wordcount: '1386'
+source-wordcount: '1418'
 ht-degree: 0%
 
 ---
