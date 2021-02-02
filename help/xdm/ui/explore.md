@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;ui;UI;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;explore;class;mixin;data type;schema;
+keywords: Experience Platform;hem;populära ämnen;ui;UI;XDM;XDM system;experience data model;Experience data model;experience data model;data model;data model;explore;class;mixin;data type;schema;
 solution: Experience Platform
 title: Utforska XDM-resurser i användargränssnittet
 description: Lär dig utforska befintliga scheman, klasser, mixins och datatyper i användargränssnittet i Experience Platform.
 topic: tutorial
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: e5c5fea783aa4088d225f771905fa8b2098613cf
+source-git-commit: 912d02477febdafa4a53aebc83bc3a93b0f84f09
 workflow-type: tm+mt
-source-wordcount: '832'
+source-wordcount: '912'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,7 @@ Med växlingsknappen **[!UICONTROL Included in Profile]** kan du filtrera result
 
 ![](../images/ui/explore/filter.png)
 
-Du kan också använda sökfältet för att begränsa resultaten till resurser vars namn matchar sökfrågan.
+Du kan även använda sökfältet för att begränsa resultaten ytterligare. När du söker efter en term representerar de översta objekten resurser vars namn matchar sökfrågan. Under **[!UICONTROL Standard Fields]** listas alla resurser som innehåller fält som matchar frågan. På så sätt kan du söka efter XDM-resurser baserat på vilken typ av data de innehåller, utan att först behöva veta namnet på resursen.
 
 ![](../images/ui/explore/search.png)
 
