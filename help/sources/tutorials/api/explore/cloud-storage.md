@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform;home;popular topics;cloud storage;Cloud storage
+keywords: Experience Platform;hem;populära ämnen;molnlagring;molnlagring
 solution: Experience Platform
 title: Utforska ett molnlagringssystem med API:t för Flow Service
 topic: overview
 description: I den här självstudien används API:t för Flow Service för att utforska ett molnlagringssystem från en annan leverantör.
 translation-type: tm+mt
-source-git-commit: 3d104cdf7c97022fe60feafd3587056d378b56bd
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '746'
+source-wordcount: '759'
 ht-degree: 1%
 
 ---
 
 
-# Utforska ett molnlagringssystem med hjälp av [!DNL Flow Service] API
+# Utforska ett molnlagringssystem med API:t [!DNL Flow Service]
 
 I den här självstudien används [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) för att utforska ett molnlagringssystem från tredje part.
 
@@ -21,14 +21,14 @@ I den här självstudien används [[!DNL Flow Service] API](https://www.adobe.io
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../home.md): [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster.
-* [Sandlådor](../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
+* [Sandlådor](../../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till ett molnlagringssystem med hjälp av [!DNL Flow Service] API:t.
+Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ansluta till ett molnlagringssystem med API:t [!DNL Flow Service].
 
 ### Hämta ett anslutnings-ID
 
-För att kunna utforska molnlagring från tredje part med hjälp av API: [!DNL Platform] er måste du ha ett giltigt anslutnings-ID. Om du inte redan har en anslutning till det lagringsutrymme du vill arbeta med kan du skapa en genom följande självstudier:
+För att kunna utforska ett molnlagringsutrymme från tredje part med hjälp av [!DNL Platform] API:er måste du ha ett giltigt anslutnings-ID. Om du inte redan har en anslutning till det lagringsutrymme du vill arbeta med kan du skapa en genom följande självstudier:
 
 * [Amazon S3](../create/cloud-storage/s3.md)
 * [Azure Blob](../create/cloud-storage/blob.md)
@@ -41,17 +41,17 @@ För att kunna utforska molnlagring från tredje part med hjälp av API: [!DNL P
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
@@ -95,7 +95,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en array med filer och mappar som finns i den efterfrågade katalogen. Observera vilken egenskap som `path` tillkommer den fil du vill överföra, eftersom du måste ange den i nästa steg för att kunna kontrollera filens struktur.
+Ett lyckat svar returnerar en array med filer och mappar som finns i den efterfrågade katalogen. Observera egenskapen `path` för filen som du vill överföra, eftersom du måste ange den i nästa steg för att kunna kontrollera filens struktur.
 
 ```json
 [
@@ -116,7 +116,7 @@ Ett lyckat svar returnerar en array med filer och mappar som finns i den efterfr
 
 Om du vill inspektera datafilens struktur från ditt molnlagringsutrymme utför du en GET-förfrågan och anger filens sökväg och typ som en frågeparameter.
 
-Du kan inspektera strukturen för en CSV- eller TSV-fil genom att ange en anpassad avgränsare som en frågepperimeter. Ett teckenvärde är en tillåten kolumnavgränsare. Om inget anges `(,)` används ett komma som standardvärde.
+Du kan inspektera strukturen för en CSV- eller TSV-fil genom att ange en anpassad avgränsare som en frågepperimeter. Ett teckenvärde är en tillåten kolumnavgränsare. Om inget anges används ett komma `(,)` som standardvärde.
 
 **API-format**
 
@@ -130,8 +130,8 @@ GET /connections/{CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&file
 | --------- | ----------- |
 | `{CONNECTION_ID}` | Anslutnings-ID för din molnlagringskälla. |
 | `{FILE_PATH}` | Sökvägen till filen som du vill inspektera. |
-| `{FILE_TYPE}` | Filtypen. Filtyper som stöds:<ul><li>AVGRÄNSAD</code>: Avgränsaravgränsat värde. DSV-filer måste vara kommaavgränsade.</li><li>JSON</code>: JavaScript-objektnotation. JSON-filer måste vara XDM-kompatibla</li><li>PARQUET</code>: Apache Parquet. Parquet-filer måste vara XDM-kompatibla.</li></ul> |
-| `columnDelimiter` | Värdet för ett tecken som du angav som en kolumnavgränsare för att inspektera CSV- eller TSV-filer. Om parametern inte anges används ett kommatecken som standard `(,)`. |
+| `{FILE_TYPE}` | Filtypen. Filtyper som stöds:<ul><li>DELIMITED</code>: Avgränsaravgränsat värde. DSV-filer måste vara kommaavgränsade.</li><li>JSON</code>: JavaScript-objektnotation. JSON-filer måste vara XDM-kompatibla</li><li>PARQUET</code>: Apache Parquet. Parquet-filer måste vara XDM-kompatibla.</li></ul> |
+| `columnDelimiter` | Värdet för ett tecken som du angav som en kolumnavgränsare för att inspektera CSV- eller TSV-filer. Om parametern inte anges används standardvärdet som komma `(,)`. |
 
 **Begäran**
 
@@ -175,4 +175,4 @@ Ett lyckat svar returnerar strukturen för den efterfrågade filen inklusive tab
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du utforskat ditt molnlagringssystem, hittat sökvägen till filen som du vill hämta till [!DNL Platform]och visat dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in data från ditt molnlagringsutrymme och överföra dem till plattformen](../collect/cloud-storage.md).
+Genom att följa den här självstudiekursen har du utforskat ditt molnlagringssystem, hittat sökvägen till filen som du vill hämta till [!DNL Platform] och visat dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in data från ditt molnlagringsutrymme och överföra den till plattformen](../collect/cloud-storage.md).
