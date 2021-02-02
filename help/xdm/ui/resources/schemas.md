@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;data model;ui;workspace;schema;schemas;
+keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;data model;ui;workspace;schema;schemas;schemas;
 solution: Experience Platform
 title: Skapa och redigera scheman i användargränssnittet
 description: Lär dig grunderna i hur du skapar och redigerar scheman i användargränssnittet i Experience Platform.
 topic: user guide
 translation-type: tm+mt
-source-git-commit: efa1d8efb26f4196f6724702784ccd13a9337a8a
+source-git-commit: 3aa838509e4e24c57508e7411b0ffcf135fbcf04
 workflow-type: tm+mt
-source-wordcount: '1000'
+source-wordcount: '1133'
 ht-degree: 0%
 
 ---
@@ -65,13 +65,21 @@ När du har öppnat ett schema i [!DNL Schema Editor] kan du lägga till fält i
 
 ![](../../images/ui/resources/schemas/add-mixin-button.png)
 
-I den dialogruta som visas kan du välja de önskade blandningarna i listan. Du kan välja flera blandningar i listan, där varje vald blandning visas i den högra listen.
+En dialogruta visas med en lista över mixar som du kan välja för schemat. Eftersom mixiner bara är kompatibla med en klass visas bara de mixar som är associerade med schemats valda klass. Som standard sorteras listade blandningar baserat på hur populära de är i din organisation.
+
+![](../../images/ui/resources/schemas/mixin-popularity.png)
+
+Du kan använda sökfältet för att hitta den blandning du vill använda. Blandningar vars namn matchar frågan visas högst upp i listan. Under **[!UICONTROL Standard Fields]** visas blandningar som innehåller fält som beskriver önskade dataattribut.
+
+![](../../images/ui/resources/schemas/mixin-search.png)
+
+Markera kryssrutan bredvid namnet på den blandning som du vill lägga till i schemat. Du kan välja flera blandningar i listan, där varje vald blandning visas i den högra listen.
 
 ![](../../images/ui/resources/schemas/add-mixin.png)
 
 >[!TIP]
 >
->För alla listade blandningar kan du välja förhandsgranskningsikonen (![](../../images/ui/resources/schemas/preview-icon.png)) för att visa strukturen för de fält som blandningen ger innan du bestämmer dig för att lägga till den i schemat.
+>För alla listade blandningar kan du hovra eller fokusera på informationsikonen (![](../../images/ui/resources/schemas/info-icon.png)) för att visa en kort beskrivning av den typ av data som blandningen hämtar. Du kan också markera förhandsvisningsikonen (![](../../images/ui/resources/schemas/preview-icon.png)) för att visa strukturen för de fält som blandningen tillhandahåller innan du bestämmer dig för att lägga till den i schemat.
 
 När du har valt mixin väljer du **[!UICONTROL Add mixin]** för att lägga till dem i schemat.
 
