@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;data governance;data usage policy user guide
+keywords: Experience Platform;hem;populära ämnen;datastyrning;användarhandbok för dataanvändningspolicy
 solution: Experience Platform
 title: Användarhandbok för dataanvändningsprinciper
 topic: policies
 description: Adobe Experience Platform Data Governance har ett användargränssnitt där du kan skapa och hantera dataanvändningspolicyer. Det här dokumentet innehåller en översikt över de åtgärder du kan utföra på arbetsytan Profiler i användargränssnittet i Experience Platform.
 translation-type: tm+mt
-source-git-commit: a362b67cec1e760687abb0c22dc8c46f47e766b7
+source-git-commit: 00010d38a5d05800aeac9af8505093fee3593b45
 workflow-type: tm+mt
-source-wordcount: '721'
+source-wordcount: '732'
 ht-degree: 0%
 
 ---
@@ -15,32 +15,32 @@ ht-degree: 0%
 
 # Användarhandbok för dataanvändningsprinciper
 
-Adobe Experience Platform [!DNL Data Governance] har ett användargränssnitt där du kan skapa och hantera principer för dataanvändning. Det här dokumentet innehåller en översikt över de åtgärder du kan utföra på arbetsytan **Profiler** i [!DNL Experience Platform] användargränssnittet.
+Adobe Experience Platform [!DNL Data Governance] har ett användargränssnitt där du kan skapa och hantera dataanvändningsprinciper. Det här dokumentet innehåller en översikt över de åtgärder du kan utföra i arbetsytan **Profiler** i [!DNL Experience Platform]-användargränssnittet.
 
 >[!IMPORTANT]
 >
->Alla dataanvändningsprinciper (inklusive huvudprinciper som tillhandahålls av Adobe) inaktiveras som standard. För att en enskild princip ska kunna användas för verkställighet måste du manuellt aktivera den principen. I avsnittet [Aktivera profiler](#enable) finns mer information om hur du gör detta i användargränssnittet.
+>Alla dataanvändningsprinciper (inklusive huvudprinciper som tillhandahålls av Adobe) inaktiveras som standard. För att en enskild princip ska kunna användas för verkställighet måste du manuellt aktivera den principen. I avsnittet [Aktivera profiler](#enable) finns anvisningar om hur du gör detta i användargränssnittet.
 
 ## Förutsättningar
 
-Handboken kräver en fungerande förståelse av följande [!DNL Experience Platform] begrepp:
+Handboken kräver en fungerande förståelse av följande [!DNL Experience Platform]-koncept:
 
 - [[!DNL Data Governance]](../home.md)
 - [Dataanvändningspolicyer](./overview.md)
 
-## Visa dataanvändningspolicyer {#view-policies}
+## Visa dataanvändningsprinciper {#view-policies}
 
-Öppna arbetsytan genom [!DNL Experience Platform] att klicka i **[!UICONTROL Policies]** användargränssnittet. **[!UICONTROL Policies]** . På fliken **[!UICONTROL Browse]** kan du se en lista över tillgängliga profiler, inklusive tillhörande etiketter, marknadsföringsåtgärder och status.
+I gränssnittet [!DNL Experience Platform] väljer du **[!UICONTROL Policies]** för att öppna arbetsytan **[!UICONTROL Policies]**. På fliken **[!UICONTROL Browse]** kan du se en lista över tillgängliga profiler, inklusive tillhörande etiketter, marknadsföringsåtgärder och status.
 
 ![](../images/policies/browse-policies.png)
 
-Klicka på en listad profil för att visa dess beskrivning och typ. Om du väljer en anpassad profil visas ytterligare kontroller för att redigera, ta bort eller [aktivera/inaktivera profilen](#enable).
+Välj en listad profil för att visa dess beskrivning och typ. Om en anpassad profil väljs visas ytterligare kontroller för att redigera, ta bort eller [aktivera/inaktivera profilen](#enable).
 
 ![](../images/policies/policy-details.png)
 
 ## Skapa en anpassad dataanvändningsprincip {#create-policy}
 
-Om du vill skapa en ny anpassad dataanvändningsprincip klickar du **[!UICONTROL Create policy]** i det övre högra hörnet av **[!UICONTROL Browse]** fliken på **[!UICONTROL Policies]** arbetsytan.
+Om du vill skapa en ny anpassad dataanvändningsprincip väljer du **[!UICONTROL Create policy]** i det övre högra hörnet på fliken **[!UICONTROL Browse]** på arbetsytan **[!UICONTROL Policies]**.
 
 ![](../images/policies/create-policy-button.png)
 
@@ -48,11 +48,11 @@ Arbetsflödet **[!UICONTROL Create policy]** visas. Börja med att ange ett namn
 
 ![](../images/policies/create-policy-description.png)
 
-Välj sedan de dataanvändningsetiketter som profilen ska baseras på. När du väljer flera etiketter kan du välja om informationen ska innehålla alla etiketter eller bara en av dem för att profilen ska kunna användas. Klicka **[!UICONTROL Next]** när du är klar.
+Välj sedan de dataanvändningsetiketter som profilen ska baseras på. När du väljer flera etiketter kan du välja om informationen ska innehålla alla etiketter eller bara en av dem för att profilen ska kunna användas. Välj **[!UICONTROL Next]** när du är klar.
 
 ![](../images/policies/add-labels.png)
 
-Steget **[!UICONTROL Select marketing actions]** visas. Välj lämpliga marknadsföringsåtgärder i listan och klicka sedan på **[!UICONTROL Next]** för att fortsätta.
+**[!UICONTROL Select marketing actions]**-steget visas. Välj lämpliga marknadsföringsåtgärder i listan och välj sedan **[!UICONTROL Next]** för att fortsätta.
 
 >[!NOTE]
 >
@@ -60,11 +60,11 @@ Steget **[!UICONTROL Select marketing actions]** visas. Välj lämpliga marknads
 
 ![](../images/policies/add-marketing-actions.png)
 
-Steget visas så att du kan granska informationen om den nya profilen innan du skapar den. **[!UICONTROL Review]** När du är nöjd skapar du profilen genom **[!UICONTROL Finish]** att klicka.
+Steget **[!UICONTROL Review]** visas, så att du kan granska informationen om den nya profilen innan du skapar den. När du är nöjd väljer du **[!UICONTROL Finish]** för att skapa profilen.
 
 ![](../images/policies/policy-review.png)
 
-Fliken visas igen, där den nya principen visas med statusen Utkast. **[!UICONTROL Browse]** Om du vill aktivera profilen går du till nästa avsnitt.
+Fliken **[!UICONTROL Browse]** visas igen, där den nya principen visas med statusen Utkast. Om du vill aktivera profilen går du till nästa avsnitt.
 
 ![](../images/policies/created-policy.png)
 
@@ -72,27 +72,27 @@ Fliken visas igen, där den nya principen visas med statusen Utkast. **[!UICONTR
 
 Alla dataanvändningsprinciper (inklusive huvudprinciper som tillhandahålls av Adobe) inaktiveras som standard. För att en enskild princip ska kunna användas måste du manuellt aktivera den principen via API:t eller användargränssnittet.
 
-Du kan aktivera eller inaktivera profiler på **[!UICONTROL Browse]** fliken på **[!UICONTROL Policies]** arbetsytan. Välj en anpassad profil i listan för att visa informationen till höger. Under **[!UICONTROL Status]** markerar du knappen för att aktivera eller inaktivera profilen.
+Du kan aktivera eller inaktivera profiler från fliken **[!UICONTROL Browse]** på arbetsytan **[!UICONTROL Policies]**. Välj en anpassad profil i listan för att visa informationen till höger. Under **[!UICONTROL Status]** väljer du växlingsknappen för att aktivera eller inaktivera profilen.
 
 ![](../images/policies/enable-policy.png)
 
-## Visa marknadsföringsaktiviteter {#view-marketing-actions}
+## Visa marknadsföringsåtgärder {#view-marketing-actions}
 
-På **[!UICONTROL Policies]** arbetsytan väljer du **[!UICONTROL Marketing actions]** fliken för att visa en lista över tillgängliga marknadsföringsåtgärder som definierats av Adobe och din egen organisation.
+På arbetsytan **[!UICONTROL Policies]** väljer du fliken **[!UICONTROL Marketing actions]** för att visa en lista över tillgängliga marknadsföringsåtgärder som definieras av Adobe och din egen organisation.
 
 ![](../images/policies/marketing-actions.png)
 
 ## Skapa en marknadsföringsåtgärd {#create-marketing-action}
 
-Om du vill skapa en ny anpassad marknadsföringsåtgärd klickar du **[!UICONTROL Create marketing action]** i det övre högra hörnet av **[!UICONTROL Marketing actions]** fliken på **[!UICONTROL Policies]** arbetsytan.
+Om du vill skapa en ny anpassad marknadsföringsåtgärd väljer du **[!UICONTROL Create marketing action]** i det övre högra hörnet på fliken **[!UICONTROL Marketing actions]** på arbetsytan **[!UICONTROL Policies]**.
 
 ![](../images/policies/create-marketing-action.png)
 
-Dialogrutan **[!UICONTROL Create marketing action]** visas. Ange ett namn och en beskrivning för marknadsföringsåtgärden och klicka sedan på **[!UICONTROL Create]**.
+Dialogrutan **[!UICONTROL Create marketing action]** visas. Ange ett namn och en beskrivning för marknadsföringsåtgärden och välj sedan **[!UICONTROL Create]**.
 
 ![](../images/policies/create-marketing-action-details.png)
 
-Den nyligen skapade åtgärden visas på **[!UICONTROL Marketing actions]** fliken. Du kan nu använda marknadsföringsåtgärden när du [skapar nya dataanvändningspolicyer](#create-policy).
+Den nyligen skapade åtgärden visas på fliken **[!UICONTROL Marketing actions]**. Du kan nu använda marknadsföringsåtgärden när [du skapar nya dataanvändningsprinciper](#create-policy).
 
 ![](../images/policies/created-marketing-action.png)
 
@@ -102,11 +102,11 @@ Den nyligen skapade åtgärden visas på **[!UICONTROL Marketing actions]** flik
 >
 >Endast anpassade marknadsföringsåtgärder som definieras av din organisation kan redigeras. Marknadsföringsåtgärder som definieras av Adobe kan inte ändras eller tas bort.
 
-På **[!UICONTROL Policies]** arbetsytan väljer du **[!UICONTROL Marketing actions]** fliken för att visa en lista över tillgängliga marknadsföringsåtgärder som definierats av Adobe och din egen organisation. Välj en anpassad marknadsföringsåtgärd i listan och använd sedan fälten i den högra delen för att redigera information om marknadsföringsåtgärden.
+På arbetsytan **[!UICONTROL Policies]** väljer du fliken **[!UICONTROL Marketing actions]** för att visa en lista över tillgängliga marknadsföringsåtgärder som definieras av Adobe och din egen organisation. Välj en anpassad marknadsföringsåtgärd i listan och använd sedan fälten i den högra delen för att redigera information om marknadsföringsåtgärden.
 
 ![](../images/policies/edit-marketing-action.png)
 
-Om marknadsföringsåtgärden inte används av någon befintlig användarprofil kan du ta bort den genom att klicka på **[!UICONTROL Delete marketing action]**.
+Om marknadsföringsåtgärden inte används av någon befintlig användarprofil kan du ta bort den genom att välja **[!UICONTROL Delete marketing action]**.
 
 >[!NOTE]
 >
@@ -116,8 +116,8 @@ Om marknadsföringsåtgärden inte används av någon befintlig användarprofil 
 
 ## Nästa steg
 
-Det här dokumentet innehåller en översikt över hur du hanterar dataanvändningsprinciper i [!DNL Experience Platform] användargränssnittet. Anvisningar om hur du hanterar profiler med hjälp av [!DNL Policy Service API]finns i [utvecklarhandboken](../api/getting-started.md). Mer information om hur du tillämpar dataanvändningsprinciper finns i [policyefterlevnadsöversikten](../enforcement/overview.md).
+Det här dokumentet innehåller en översikt över hur du hanterar dataanvändningsprinciper i [!DNL Experience Platform]-gränssnittet. Anvisningar om hur du hanterar principer med [!DNL Policy Service API] finns i [utvecklarhandboken](../api/getting-started.md). Mer information om hur du tillämpar dataanvändningsprinciper finns i [policyefterlevnadsöversikten](../enforcement/overview.md).
 
-I följande video visas hur du arbetar med användarprofiler i [!DNL Experience Platform] användargränssnittet:
+I följande video visas hur du arbetar med användarprofiler i användargränssnittet för [!DNL Experience Platform]:
 
 >[!VIDEO](https://video.tv.adobe.com/v/32977?quality=12&learn=on)
