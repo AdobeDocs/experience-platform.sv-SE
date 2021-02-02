@@ -1,13 +1,13 @@
 ---
-keywords: analytics destinations;analytics destination
+keywords: analysmål;analysmål
 title: Destinationer för analyser
 seo-title: Destinationer för analyser
 description: Analysdestinationer spårar hur besökare interagerar med innehåll på er webbplats och samlar in data för att förstå hur er målgrupp beter sig. Dessa plattformar ger unika insikter om engagemang och konvertering av era mest värdefulla besökare.
 seo-description: Analysdestinationer spårar hur besökare interagerar med innehåll på er webbplats och samlar in data för att förstå hur er målgrupp beter sig. Dessa plattformar ger unika insikter om engagemang och konvertering av era mest värdefulla besökare.
 translation-type: tm+mt
-source-git-commit: 85e6a65e1407ca60e7b63681c045fadaaa24aef9
+source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
 workflow-type: tm+mt
-source-wordcount: '201'
+source-wordcount: '204'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Analysdestinationer spårar hur besökare interagerar med innehåll på er webbplats och samlar in data för att förstå hur er målgrupp beter sig. Dessa plattformar ger unika insikter om engagemang och konvertering av era mest värdefulla besökare.
 
-För närvarande stöder kunddataplattformen i realtid de analysmål som anges nedan. Information om hur du ansluter till dessa mål finns i de enskilda länkarna:
+För närvarande stöder Adobe Experience Platform de analysmål som anges nedan. Information om hur du ansluter till dessa mål finns i de enskilda länkarna:
 
 - [Anpassa tillägg för webbplatsspårning](./adform.md)
 - [Adobe Analytics-tillägg](./adobe-analytics.md)
