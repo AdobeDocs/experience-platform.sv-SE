@@ -1,11 +1,13 @@
 ---
-keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API
-title: Sammanslagningsprinciper - Kundprofils-API i realtid
+keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API
+title: API-slutpunkt för sammanslagningsprinciper
 topic: guide
+type: Documentation
+description: 'Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanför dessa data är sammanslagningsprinciper de regler som används av Platform för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy. '
 translation-type: tm+mt
-source-git-commit: 6bfc256b50542e88e28f8a0c40cec7a109a05aa6
+source-git-commit: e6ecc5dac1d09c7906aa7c7e01139aa194ed662b
 workflow-type: tm+mt
-source-wordcount: '2494'
+source-wordcount: '2560'
 ht-degree: 0%
 
 ---
@@ -13,21 +15,21 @@ ht-degree: 0%
 
 # Slutpunkt för sammanslagningsprinciper
 
-Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanför dessa data är sammanslagningsprinciper de regler som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa den enhetliga vyn.
+Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanfogar dessa data är sammanfogningsprinciper de regler som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy.
 
 Om en kund till exempel interagerar med ert varumärke i flera kanaler kommer organisationen att ha flera profilfragment som är kopplade till den enskilda kunden som visas i flera datauppsättningar. När de här fragmenten hämtas till Platform sammanfogas de för att skapa en enda profil för kunden. När data från flera källor står i konflikt (t.ex. ett fragment listar kunden som&quot;enkel&quot; medan det andra listar kunden som&quot;gift&quot;) avgör sammanfogningspolicyn vilken information som ska inkluderas i profilen för den enskilda personen.
 
 Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen. Den här handboken innehåller steg för hur du arbetar med sammanfogningsprinciper med API:t.
 
-Om du vill arbeta med sammanfogningsprinciper med hjälp av användargränssnittet läser du i [användarhandboken](../ui/merge-policies.md)för sammanfogningsprinciper.
+Om du vill arbeta med sammanfogningsprinciper med hjälp av användargränssnittet läser du i [användargränssnittshandboken för sammanfogningsprinciper](../ui/merge-policies.md).
 
 ## Komma igång
 
-API-slutpunkten som används i den här handboken är en del av [[!DNL Real-time Customer Profile API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml). Innan du fortsätter bör du läsa [Komma igång-guiden](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API i det här dokumentet samt viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform] -API.
+API-slutpunkten som används i den här guiden är en del av [[!DNL Real-time Customer Profile API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform]-API.
 
 ## Komponenter i sammanfogningsprinciper {#components-of-merge-policies}
 
-Sammanslagningsprinciper är privata för IMS-organisationen, vilket gör att du kan skapa olika profiler för att sammanfoga scheman på de specifika sätt som du behöver. Alla API-åtkomstdata kräver en sammanfogningsprincip, men ett standardvärde kommer att användas om det inte uttryckligen anges. [!DNL Profile] [!DNL Platform] innehåller en standardprincip för sammanfogning, eller så kan du skapa en sammanfogningsprincip för en specifik XDM-schemaklass (Experience Data Model) och markera den som standard för din organisation.
+Sammanslagningsprinciper är privata för IMS-organisationen, vilket gör att du kan skapa olika profiler för att sammanfoga scheman på de specifika sätt som du behöver. Alla API:er som har åtkomst till [!DNL Profile]-data kräver en sammanfogningsprincip, men ett standardvärde kommer att användas om det inte finns någon explicit. [!DNL Platform] innehåller en standardprincip för sammanfogning, eller så kan du skapa en sammanfogningsprincip för en specifik XDM-schemaklass (Experience Data Model) och markera den som standard för din organisation.
 
 Även om varje organisation kan ha flera sammanfogningsprinciper per per schemaklass, kan varje klass bara ha en standardsammanfogningsprincip. Alla sammanfogningsprinciper som anges som standard används om namnet på schemaklassen anges och en sammanfogningsprincip krävs men inte anges.
 
@@ -66,9 +68,9 @@ Det fullständiga principobjektet för sammanfogning representerar en uppsättni
 | `id` | Den systemgenererade unika identifieraren som tilldelats vid skapandetillfället |
 | `name` | Eget namn som sammanfogningsprincipen kan identifieras med i listvyer. |
 | `imsOrgId` | Organisations-ID som den här sammanfogningsprincipen tillhör |
-| `identityGraph` | [Identitetsdiagramobjekt](#identity-graph) som anger identitetsdiagrammet som relaterade identiteter ska hämtas från. Profilfragment som hittas för alla relaterade identiteter sammanfogas. |
-| `attributeMerge` | [Kopplingsobjekt för attribut](#attribute-merge) anger hur sammanfogningsprincipen prioriterar profilattribut vid datakonflikter. |
-| `schema.name` | Som en del av [`schema`](#schema) objektet innehåller `name` fältet den XDM-schemaklass som sammanfogningsprincipen relaterar till. Mer information om scheman och klasser finns i [XDM-dokumentationen](../../xdm/home.md). |
+| `identityGraph` | [Identitetsdiagram ](#identity-graph) som anger identitetsdiagrammet som relaterade identiteter ska hämtas från. Profilfragment som hittas för alla relaterade identiteter sammanfogas. |
+| `attributeMerge` | [Attribut ](#attribute-merge) mergeobject anger på vilket sätt sammanfogningsprincipen prioriterar profilattribut vid datakonflikter. |
+| `schema.name` | Som en del av [`schema`](#schema)-objektet innehåller fältet `name` XDM-schemaklassen som sammanfogningsprincipen relaterar till. Mer information om scheman och klasser finns i [XDM-dokumentationen](../../xdm/home.md). |
 | `default` | Booleskt värde som anger om den här sammanfogningsprincipen är standard för det angivna schemat. |
 | `version` | [!DNL Platform] en sparad version av sammanfogningsprincipen. Det här skrivskyddade värdet ökas stegvis när en sammanfogningsprincip uppdateras. |
 | `updateEpoch` | Datum för den senaste uppdateringen av sammanfogningsprincipen. |
@@ -97,7 +99,7 @@ Det fullständiga principobjektet för sammanfogning representerar en uppsättni
 
 ### Identitetsdiagram {#identity-graph}
 
-[Adobe Experience Platform identitetstjänst](../../identity-service/home.md) hanterar de identitetsdiagram som används globalt och för varje organisation i [!DNL Experience Platform]. Attributet `identityGraph` för sammanfogningsprincipen definierar hur relaterade identiteter för en användare ska fastställas.
+[Adobe Experience Platform Identity ](../../identity-service/home.md) Services hanterar de identitetsdiagram som används globalt och för varje organisation i  [!DNL Experience Platform]. Attributet `identityGraph` för sammanfogningsprincipen definierar hur relaterade identiteter för en användare ska fastställas.
 
 **identityGraph-objekt**
 
@@ -120,9 +122,9 @@ Där `{IDENTITY_GRAPH_TYPE}` är något av följande:
     }
 ```
 
-### Koppla attribut {#attribute-merge}
+### Attributsammanslagning {#attribute-merge}
 
-Ett profilfragment är profilinformationen för endast en identitet från listan över identiteter som finns för en viss användare. När typen av identitetsdiagram som används resulterar i mer än en identitet, finns det en risk för att profilattribut som står i konflikt med varandra, och prioritet måste anges. Med `attributeMerge`kan du ange vilka profilattribut som ska prioriteras i händelse av en sammanslagningskonflikt mellan datamängder av typen nyckelvärde (postdata).
+Ett profilfragment är profilinformationen för endast en identitet från listan över identiteter som finns för en viss användare. När typen av identitetsdiagram som används resulterar i mer än en identitet, finns det en risk för att profilattribut som står i konflikt med varandra, och prioritet måste anges. Med `attributeMerge` kan du ange vilka profilattribut som ska prioriteras i händelse av en sammanslagningskonflikt mellan datamängder av typen nyckelvärde (postdata).
 
 **attributeMerge, objekt**
 
@@ -134,11 +136,11 @@ Ett profilfragment är profilinformationen för endast en identitet från listan
 
 Där `{ATTRIBUTE_MERGE_TYPE}` är något av följande:
 
-* **`timestampOrdered`**: (standard) Prioritera profilen som uppdaterades senast. Attributet är inte obligatoriskt om du använder den här sammanfogningstypen `data` . `timestampOrdered` stöder också anpassade tidsstämplar som har företräde när profilfragment sammanfogas inom eller mellan datauppsättningar. Mer information finns i avsnittet Bilaga om [hur du använder anpassade tidsstämplar](#custom-timestamps).
-* **`dataSetPrecedence`** : Prioritera profilfragment baserat på den datauppsättning som de kommer från. Detta kan användas när information som finns i en datauppsättning är att föredra eller betrodd framför data i en annan datauppsättning. När du använder den här sammanfogningstypen är attributet obligatoriskt, eftersom det visar datauppsättningarna i prioritetsordning. `order`
-   * **`order`**: När&quot;dataSetPriedence&quot; används måste en `order` array anges med en lista över datauppsättningar. Datauppsättningar som inte ingår i listan kommer inte att sammanfogas. Datamängder måste med andra ord anges explicit för att sammanfogas till en profil. Arrayen visar `order` datauppsättningens ID i prioritetsordning.
+* **`timestampOrdered`**: (standard) Prioritera profilen som uppdaterades senast. Attributet `data` krävs inte med den här sammanfogningstypen. `timestampOrdered` stöder också anpassade tidsstämplar som har företräde när profilfragment sammanfogas inom eller mellan datauppsättningar. Mer information finns i avsnittet Bilaga om [att använda anpassade tidsstämplar](#custom-timestamps).
+* **`dataSetPrecedence`** : Prioritera profilfragment baserat på den datauppsättning som de kommer från. Detta kan användas när information som finns i en datauppsättning är att föredra eller betrodd framför data i en annan datauppsättning. När du använder den här sammanfogningstypen krävs attributet `order` eftersom datamängderna visas i prioritetsordning.
+   * **`order`**: När&quot;dataSetPriedence&quot; används måste en  `order` array anges med en lista över datauppsättningar. Datauppsättningar som inte ingår i listan kommer inte att sammanfogas. Datamängder måste med andra ord anges explicit för att sammanfogas till en profil. Matrisen `order` visar datauppsättningens ID i prioritetsordning.
 
-#### Exempel på `attributeMerge` objekt som använder `dataSetPrecedence` text
+#### Exempel på `attributeMerge`-objekt som använder typen `dataSetPrecedence`
 
 ```json
     "attributeMerge": {
@@ -152,7 +154,7 @@ Där `{ATTRIBUTE_MERGE_TYPE}` är något av följande:
     }
 ```
 
-#### Exempel på `attributeMerge` objekt som använder `timestampOrdered` text
+#### Exempel på `attributeMerge`-objekt som använder typen `timestampOrdered`
 
 ```json
     "attributeMerge": {
@@ -182,15 +184,15 @@ Där värdet för `name` är namnet på XDM-klassen som schemat som är associer
     }
 ```
 
-Om du vill veta mer om XDM och arbeta med scheman i Experience Platform börjar du med att läsa [systemöversikten](../../xdm/home.md)för XDM.
+Om du vill veta mer om XDM och arbeta med scheman i Experience Platform börjar du med att läsa [systemöversikten för XDM](../../xdm/home.md).
 
 ## Åtkomst till sammanfogningsprinciper {#access-merge-policies}
 
-Med hjälp av [!DNL Real-time Customer Profile] API:t kan `/config/mergePolicies` slutpunkten utföra en sökbegäran för att visa en specifik sammanfogningsprincip med dess ID, eller få åtkomst till alla sammanfogningsprinciper i IMS-organisationen, filtrerade efter specifika villkor. Du kan också använda `/config/mergePolicies/bulk-get` slutpunkten för att hämta flera sammanfogningsprinciper efter deras ID:n. Steg för att utföra dessa anrop beskrivs i följande avsnitt.
+Med hjälp av API:t [!DNL Real-time Customer Profile] kan du utföra en uppslagsbegäran för att visa en specifik sammanfogningsprincip med hjälp av dess ID, eller få åtkomst till alla sammanfogningsprinciper i IMS-organisationen, filtrerade efter specifika villkor. `/config/mergePolicies` Du kan också använda slutpunkten `/config/mergePolicies/bulk-get` för att hämta flera sammanfogningsprinciper efter deras ID:n. Steg för att utföra dessa anrop beskrivs i följande avsnitt.
 
 ### Åtkomst till en sammanfogningsprincip via ID
 
-Du kan få åtkomst till en enskild sammanfogningsprincip via dess ID genom att göra en GET-begäran till `/config/mergePolicies` slutpunkten och inkludera den `mergePolicyId` i sökvägen för begäran.
+Du kan få åtkomst till en enskild sammanfogningsprincip via dess ID genom att göra en GET-begäran till `/config/mergePolicies`-slutpunkten och inkludera `mergePolicyId` i sökvägen för begäran.
 
 **API-format**
 
@@ -236,11 +238,11 @@ Ett lyckat svar returnerar information om sammanfogningsprincipen.
 }
 ```
 
-I avsnittet [Komponenter för sammanfogningsprinciper](#components-of-merge-policies) i början av det här dokumentet finns mer information om de enskilda elementen som utgör en sammanfogningsprincip.
+Avsnittet [komponenter i sammanfogningsprinciper](#components-of-merge-policies) i början av det här dokumentet innehåller information om de enskilda elementen som utgör en sammanfogningsprincip.
 
 ### Hämta flera sammanfogningsprinciper efter deras ID:n
 
-Du kan hämta flera sammanfogningsprinciper genom att göra en POST till `/config/mergePolicies/bulk-get` slutpunkten och inkludera ID:n för de sammanfogningsprinciper som du vill hämta i begärandetexten.
+Du kan hämta flera sammanfogningsprinciper genom att göra en POST-förfrågan till `/config/mergePolicies/bulk-get`-slutpunkten och inkludera ID:n för de sammanfogningsprinciper som du vill hämta i begärandetexten.
 
 **API-format**
 
@@ -333,11 +335,11 @@ Ett lyckat svar returnerar HTTP-status 2007 (Multi-Status) och information om de
 }
 ```
 
-I avsnittet [Komponenter för sammanfogningsprinciper](#components-of-merge-policies) i början av det här dokumentet finns mer information om de enskilda elementen som utgör en sammanfogningsprincip.
+Avsnittet [komponenter i sammanfogningsprinciper](#components-of-merge-policies) i början av det här dokumentet innehåller information om de enskilda elementen som utgör en sammanfogningsprincip.
 
 ### Lista flera sammanfogningsprinciper efter villkor
 
-Du kan lista flera sammanfogningsprinciper inom IMS-organisationen genom att skicka en GET-begäran till `/config/mergePolicies` slutpunkten och använda valfria frågeparametrar för att filtrera, ordna och numrera svaret. Flera parametrar kan inkluderas, avgränsade med et-tecken (&amp;). Om du anropar den här slutpunkten utan parametrar hämtas alla kopplingsprofiler som är tillgängliga för organisationen.
+Du kan lista flera sammanfogningsprinciper inom IMS-organisationen genom att skicka en GET-förfrågan till `/config/mergePolicies`-slutpunkten och använda valfria frågeparametrar för att filtrera, ordna och numrera svaret. Flera parametrar kan inkluderas, avgränsade med et-tecken (&amp;). Om du anropar den här slutpunkten utan parametrar hämtas alla kopplingsprofiler som är tillgängliga för organisationen.
 
 **API-format**
 
@@ -349,14 +351,14 @@ GET /config/mergePolicies?{QUERY_PARAMS}
 |---|---|
 | `default` | Ett booleskt värde som filtrerar resultat genom att sammanfogningsprinciperna är standard för en schemaklass eller inte. |
 | `limit` | Anger sidstorleksgränsen för att styra antalet resultat som ska inkluderas på en sida. Standardvärde: 20 |
-| `orderBy` | Anger fältet som resultatet ska sorteras efter som i `orderBy=name` eller `orderBy=+name` sorteras efter namn i stigande ordning, eller `orderBy=-name`sorteras i fallande ordning. Om du utelämnar det här värdet sorteras standardvärdet i `name` stigande ordning. |
+| `orderBy` | Anger det fält som resultatet ska sorteras efter i stigande ordning, som i `orderBy=name` eller `orderBy=+name`, eller `orderBy=-name`, som ska sorteras i fallande ordning. Om du utelämnar det här värdet sorteras `name` som standard i stigande ordning. |
 | `schema.name` | Namnet på schemat som tillgängliga sammanfogningsprinciper ska hämtas för. |
 | `identityGraph.type` | Filtrerar resultat efter typen av identitetsdiagram. Möjliga värden är none och pdg (Private graph). |
 | `attributeMerge.type` | Filtrerar resultat efter den attributsammanfogningstyp som används. Möjliga värden är &quot;timestampOrdered&quot; och &quot;dataSetPriedence&quot;. |
 | `start` | Sidförskjutning - ange det första ID:t för data som ska hämtas. Standardvärde: 0 |
 | `version` | Ange det här alternativet om du vill använda en specifik version av sammanfogningsprincipen. Som standard används den senaste versionen. |
 
-Mer information om `schema.name`, `identityGraph.type`och `attributeMerge.type`finns i avsnittet [Komponenter i sammanfogningsprinciper](#components-of-merge-policies) som fanns tidigare i den här handboken.
+Mer information om `schema.name`, `identityGraph.type` och `attributeMerge.type` finns i avsnittet [komponenter för sammanfogningsprinciper](#components-of-merge-policies) som finns tidigare i den här handboken.
 
 
 **Begäran**
@@ -448,7 +450,7 @@ Ett lyckat svar returnerar en numrerad lista med sammanfogningsprinciper som upp
 
 ## Skapa en kopplingsprofil
 
-Du kan skapa en ny sammanfogningsprincip för din organisation genom att göra en POST-förfrågan till `/config/mergePolicies` slutpunkten.
+Du kan skapa en ny sammanfogningsprincip för din organisation genom att göra en POST-förfrågan till `/config/mergePolicies`-slutpunkten.
 
 **API-format**
 
@@ -456,7 +458,8 @@ Du kan skapa en ny sammanfogningsprincip för din organisation genom att göra e
 POST /config/mergePolicies
 ```
 
-**Begäran** Följande begäran skapar en ny sammanfogningsprincip som konfigureras av attributvärdena i nyttolasten:
+****
+BegäranFöljande begäran skapar en ny sammanfogningsprincip som konfigureras av attributvärdena i nyttolasten:
 
 ```shell
 curl -X POST \
@@ -493,7 +496,7 @@ curl -X POST \
 | `schema` | Den XDM-schemaklass som är associerad med sammanfogningsprincipen. |
 | `default` | Anger om den här sammanfogningsprincipen är standard för schemat. |
 
-Mer information finns i avsnittet [Komponenter för sammanfogningsprinciper](#components-of-merge-policies) .
+Mer information finns i [komponenterna för sammanfogningsprinciper](#components-of-merge-policies).
 
 **Svar**
 
@@ -529,7 +532,7 @@ Ett lyckat svar returnerar information om den nya sammanfogningsprincipen.
 }
 ```
 
-I avsnittet [Komponenter för sammanfogningsprinciper](#components-of-merge-policies) i början av det här dokumentet finns mer information om de enskilda elementen som utgör en sammanfogningsprincip.
+Avsnittet [komponenter i sammanfogningsprinciper](#components-of-merge-policies) i början av det här dokumentet innehåller information om de enskilda elementen som utgör en sammanfogningsprincip.
 
 ## Uppdatera en sammanfogningsprincip {#update}
 
@@ -537,7 +540,7 @@ Du kan ändra en befintlig kopplingsprofil genom att redigera enskilda attribut 
 
 ### Redigera enskilda kopplingsprincipfält
 
-Du kan redigera enskilda fält för en sammanfogningsprincip genom att göra en PATCH-begäran till `/config/mergePolicies/{mergePolicyId}` slutpunkten:
+Du kan redigera enskilda fält för en sammanfogningsprincip genom att göra en PATCH-begäran till `/config/mergePolicies/{mergePolicyId}`-slutpunkten:
 
 **API-format**
 
@@ -551,7 +554,7 @@ PATCH /config/mergePolicies/{mergePolicyId}
 
 **Begäran**
 
-Följande begäran uppdaterar en angiven sammanfogningsprincip genom att ändra värdet för dess `default` egenskap till `true`:
+Följande begäran uppdaterar en angiven sammanfogningsprincip genom att ändra värdet för dess `default`-egenskap till `true`:
 
 ```shell
 curl -X PATCH \
@@ -570,11 +573,11 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 |---|---|
-| `op` | Anger vilken åtgärd som ska utföras. Exempel på andra PATCH-åtgärder finns i [JSON-patchdokumentationen](http://jsonpatch.com) |
+| `op` | Anger vilken åtgärd som ska utföras. Exempel på andra PATCH-åtgärder finns i [JSON Patch-dokumentationen](http://jsonpatch.com) |
 | `path` | Sökvägen till det fält som ska uppdateras. Godkända värden är: &quot;/name&quot;, &quot;/identityGraph.type&quot;, &quot;/attributeMerge.type&quot;, &quot;/schema.name&quot;, &quot;/version&quot;, &quot;/default&quot; |
 | `value` | Värdet som det angivna fältet ska anges till. |
 
-Mer information finns i avsnittet [Komponenter för sammanfogningsprinciper](#components-of-merge-policies) .
+Mer information finns i [komponenterna för sammanfogningsprinciper](#components-of-merge-policies).
 
 
 **Svar**
@@ -667,7 +670,7 @@ curl -X PUT \
 | `schema` | Den XDM-schemaklass som är associerad med sammanfogningsprincipen. |
 | `default` | Anger om den här sammanfogningsprincipen är standard för schemat. |
 
-Mer information finns i avsnittet [Komponenter för sammanfogningsprinciper](#components-of-merge-policies) .
+Mer information finns i [komponenterna för sammanfogningsprinciper](#components-of-merge-policies).
 
 
 **Svar**
@@ -706,7 +709,7 @@ Ett lyckat svar returnerar information om den uppdaterade sammanfogningsprincipe
 
 ## Ta bort en sammanfogningsprincip
 
-Du kan ta bort en sammanfogningsprincip genom att göra en DELETE-begäran till `/config/mergePolicies` slutpunkten och inkludera ID:t för den sammanfogningsprincip som du vill ta bort i sökvägen för begäran.
+Du kan ta bort en sammanfogningsprincip genom att göra en DELETE-begäran till `/config/mergePolicies`-slutpunkten och inkludera ID:t för den sammanfogningsprincip som du vill ta bort i sökvägen till begäran.
 
 **API-format**
 
@@ -737,31 +740,31 @@ En slutförd borttagningsbegäran returnerar HTTP-status 200 (OK) och en tom sva
 
 ## Nästa steg
 
-Nu när ni vet hur ni skapar och konfigurerar sammanfogningspolicyer för er organisation kan ni använda dem för att justera visningen av kundprofiler inom Platform och för att skapa målgruppssegment utifrån era [!DNL Real-time Customer Profile] data. Se dokumentationen [till](../../segmentation/home.md) Adobe Experience Platform Segmentation Service för att börja definiera och arbeta med segment.
+Nu när du vet hur man skapar och konfigurerar sammanfogningsprinciper för organisationen kan du använda dem för att justera visningen av kundprofiler inom Platform och för att skapa målgruppssegment utifrån dina [!DNL Real-time Customer Profile]-data. Se [Adobe Experience Platform Segmentation Service-dokumentationen](../../segmentation/home.md) för att börja definiera och arbeta med segment.
 
 ## Bilaga
 
 I det här avsnittet finns ytterligare information om hur du arbetar med sammanfogningsprinciper.
 
-### Använda egna tidsstämplar {#custom-timestamps}
+### Använda anpassade tidsstämplar {#custom-timestamps}
 
-När poster hämtas till Experience Platform hämtas en systemtidsstämpel vid tidpunkten för inmatningen och läggs till i posten. När `timestampOrdered` är valt som `attributeMerge` typ för en sammanfogningsprincip sammanfogas profiler baserat på systemets tidsstämpel. Sammanfogningen görs med andra ord baserat på den tidsstämpel som användes när posten hämtades till Platform.
+När poster hämtas till Experience Platform hämtas en systemtidsstämpel vid tidpunkten för inmatningen och läggs till i posten. När `timestampOrdered` har valts som `attributeMerge`-typ för en sammanfogningsprincip sammanfogas profiler baserat på systemets tidsstämpel. Sammanfogningen görs med andra ord baserat på den tidsstämpel som användes när posten hämtades till Platform.
 
 Ibland kan det finnas användningsfall, t.ex. för att fylla i data baklänges eller för att säkerställa rätt ordning på händelser om posterna är inlästa i fel ordning, där det är nödvändigt att ange en anpassad tidsstämpel och att sammanfogningsprincipen följer den anpassade tidsstämpeln i stället för systemtidsstämpeln.
 
-Om du vill använda en anpassad tidsstämpel måste den [[!DNL External Source System Audit Details Mixin]](#mixin-details) läggas till i ditt profilschema. När du har lagt till den anpassade tidsstämpeln kan du fylla i den med hjälp av `xdm:lastUpdatedDate` fältet. När en post hämtas in med fältet ifyllt, kommer Experience Platform att använda det fältet för att sammanfoga poster eller profilfragment inom och mellan datauppsättningar. `xdm:lastUpdatedDate` Om `xdm:lastUpdatedDate` inte finns, eller inte är ifylld, fortsätter Platform att använda systemtidsstämpeln.
+Om du vill använda en anpassad tidsstämpel måste [[!DNL External Source System Audit Details Mixin]](#mixin-details) läggas till i ditt profilschema. När du har lagt till den anpassade tidsstämpeln kan du fylla i den med fältet `xdm:lastUpdatedDate`. När en post hämtas med fältet `xdm:lastUpdatedDate` ifyllt, använder Experience Platform det fältet för att sammanfoga poster eller profilfragment inom och mellan datauppsättningar. Om `xdm:lastUpdatedDate` inte finns, eller inte är ifylld, kommer plattformen att fortsätta använda systemets tidsstämpel.
 
 >[!NOTE]
 >
->Du måste se till att `xdm:lastUpdatedDate` tidsstämpeln fylls i när du skickar ett PATCH på samma post.
+>Du måste se till att tidsstämpeln `xdm:lastUpdatedDate` fylls i när du skickar PATCH på samma post.
 
 Stegvisa anvisningar om hur du arbetar med scheman med API:t för schematabeller, inklusive hur du lägger till mixiner i scheman, finns i [självstudiekursen för att skapa ett schema med API](../../xdm/tutorials/create-schema-api.md).
 
-Om du vill arbeta med anpassade tidsstämplar med hjälp av användargränssnittet läser du avsnittet om hur du [använder anpassade tidsstämplar](../ui/merge-policies.md#custom-timestamps) i användarhandboken för [sammanfogningsprinciper](../ui/merge-policies.md).
+Om du vill arbeta med egna tidsstämplar med hjälp av användargränssnittet läser du avsnittet [Använda egna tidsstämplar](../ui/merge-policies.md#custom-timestamps) i [användarhandboken för sammanfogningsprinciper](../ui/merge-policies.md).
 
-#### [!DNL External Source System Audit Details Mixin] information {#mixin-details}
+#### [!DNL External Source System Audit Details Mixin] information  {#mixin-details}
 
-I följande exempel visas korrekt ifyllda fält i [!DNL External Source System Audit Details Mixin]. Den fullständiga JSON-blandningen kan också visas i XDM-rapporten ( [public Experience Data Model)](https://github.com/adobe/xdm/blob/master/components/mixins/shared/external-source-system-audit-details.schema.json) på GitHub.
+I följande exempel visas korrekt ifyllda fält i [!DNL External Source System Audit Details Mixin]. Den fullständiga JSON-blandningen kan också visas i [XDM-repo (public Experience Data Model)](https://github.com/adobe/xdm/blob/master/components/mixins/shared/external-source-system-audit-details.schema.json) på GitHub.
 
 ```json
 {
