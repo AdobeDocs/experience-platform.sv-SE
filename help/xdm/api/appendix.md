@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;compatibility;Compatibility;compatibility mode;Compatibility mode;field type;field types;
+keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;Experience data model;Experience data model;Experience data model;data model;data model;schema register;schema Registry;compatibility;compatibility;compatibility mode;Compatibility mode;Compatibility mode;field type;field types;
 solution: Experience Platform
 title: Schema Registry developer appendix
 description: Det här dokumentet innehåller ytterligare information om hur du arbetar med API:t för schemaregister.
@@ -7,7 +7,7 @@ topic: developer guide
 translation-type: tm+mt
 source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
 workflow-type: tm+mt
-source-wordcount: '730'
+source-wordcount: '767'
 ht-degree: 0%
 
 ---
