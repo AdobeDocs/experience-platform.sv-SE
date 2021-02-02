@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;retrieve failed batches;failed batches;batch ingestion;Batch ingestion;Failed batches;Get failed batches;get failed batches;Download failed batches;download failed batches;
+keywords: Experience Platform;hem;populära ämnen;hämta misslyckade batchar;misslyckade batchar;batchöverföring;Batchhämtning;Misslyckade batchar;Hämta misslyckade batchar;hämta misslyckade batchar;Hämtning misslyckades batchar;hämta misslyckade batchar;
 solution: Experience Platform
 title: Hämta misslyckade batchar
 topic: tutorial
 type: Tutorial
 description: I den här självstudiekursen beskrivs steg för hur du hämtar information om en misslyckad batch med hjälp av API:er för datainmatning.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '613'
+source-wordcount: '645'
 ht-degree: 0%
 
 ---
@@ -16,36 +16,36 @@ ht-degree: 0%
 
 # Hämtning av misslyckade batchar med API
 
-Adobe Experience Platform har två metoder för att överföra och importera data. Du kan antingen använda gruppinmatning, vilket gör att du kan infoga deras data med olika filtyper (t.ex. CSV-filer), eller direktuppspelning, vilket gör att du kan infoga deras data i [!DNL Platform] direktuppspelningsslutpunkter i realtid.
+Adobe Experience Platform har två metoder för att överföra och importera data. Du kan antingen använda batchinmatning, som gör att du kan infoga deras data med olika filtyper (t.ex. CSV-filer), eller direktuppspelning, vilket gör att du kan infoga deras data i [!DNL Platform] med direktuppspelningsslutpunkter i realtid.
 
-Den här självstudiekursen innehåller steg för att hämta information om en misslyckad batch med hjälp av API: [!DNL Data Ingestion] er.
+I den här självstudiekursen beskrivs steg för att hämta information om en misslyckad batch med hjälp av [!DNL Data Ingestion] API:er.
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
-- [[!DNL Data Ingestion]](../home.md): Metoderna som data kan skickas till [!DNL Experience Platform].
+- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som  [!DNL Experience Platform] organiserar kundupplevelsedata.
+- [[!DNL Data Ingestion]](../home.md): Metoderna som data kan skickas till  [!DNL Experience Platform].
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Schema Registry], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Schema Registry], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform] finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -53,7 +53,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ### Samplingen misslyckades
 
-I den här självstudien används exempeldata med en felaktigt formaterad tidsstämpel som anger månadens värde till **00**, vilket visas nedan:
+I den här självstudien används exempeldata med en felaktigt formaterad tidsstämpel som anger att månadens värde ska vara **00**, vilket visas nedan:
 
 ```json
 {
@@ -186,7 +186,7 @@ Eftersom den tidigare importerade batchen hade ett ogiltigt datum/tid visas föl
 
 ## Nästa steg
 
-Efter att ha läst den här självstudiekursen har du lärt dig hur du hämtar fel från misslyckade batchar. Mer information om batchintag finns i utvecklarhandboken för [batchintag](../batch-ingestion/overview.md). Mer information om direktuppspelning finns i självstudiekursen [Skapa en direktuppspelningsanslutning](../tutorials/create-streaming-connection.md).
+Efter att ha läst den här självstudiekursen har du lärt dig hur du hämtar fel från misslyckade batchar. Mer information om batchförbrukning finns i [Utvecklarhandbok för batchimport](../batch-ingestion/overview.md). Mer information om direktuppspelning finns i [självstudiekursen om att skapa en direktuppspelningsanslutning](../tutorials/create-streaming-connection.md).
 
 ## Bilaga
 
@@ -228,7 +228,7 @@ Det här felet visas om `schemaRef` för `xdmMeta` saknas.
 
 ### Källnamn saknas
 
-Det här felet visas om sidhuvudet `source` saknar sin `name`.
+Det här felet visas om `source` i huvudet saknar `name`.
 
 ```json
 {
@@ -244,7 +244,7 @@ Det här felet visas om sidhuvudet `source` saknar sin `name`.
 
 ### XDM-entitet saknas
 
-Det här felet visas om det inte finns någon `xdmEntity` tillgänglig.
+Det här felet visas om det inte finns någon `xdmEntity`.
 
 ```json
 {
