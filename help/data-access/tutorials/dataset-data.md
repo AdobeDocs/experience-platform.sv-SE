@@ -1,48 +1,48 @@
 ---
-keywords: Experience Platform;home;popular topics;data access;data access api;query data access
+keywords: Experience Platform;hem;populära ämnen;dataåtkomst;dataåtkomst api;frågedataåtkomst
 solution: Experience Platform
 title: Dataåtkomstöversikt
 topic: tutorial
 type: Tutorial
 description: I det här dokumentet finns en stegvis självstudiekurs som beskriver hur du hittar, hämtar och hämtar data som lagras i en datauppsättning med hjälp av API:t för dataåtkomst i Adobe Experience Platform. Du kommer också att få en introduktion till några av de unika funktionerna i API:t för dataåtkomst, till exempel sidindelning och partiella nedladdningar.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
 workflow-type: tm+mt
-source-wordcount: '1384'
+source-wordcount: '1400'
 ht-degree: 0%
 
 ---
 
 
-# Fråga datauppsättningsdata med [!DNL Data Access] API
+# Hämta datauppsättningsdata med hjälp av API:t [!DNL Data Access]
 
-Det här dokumentet innehåller en stegvis självstudiekurs som beskriver hur du hittar, hämtar och hämtar data som lagras i en datauppsättning med hjälp av API:t [!DNL Data Access] i Adobe Experience Platform. Du kommer också att få en introduktion till några av API:ts unika funktioner, till exempel sidindelning och partiella nedladdningar. [!DNL Data Access]
+I det här dokumentet finns en stegvis självstudiekurs som beskriver hur du hittar, hämtar och hämtar data som lagras i en datauppsättning med hjälp av API:t [!DNL Data Access] i Adobe Experience Platform. Du kommer också att få en introduktion till några av de unika funktionerna i API:t [!DNL Data Access], till exempel sidindelning och partiella nedladdningar.
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse för hur du skapar och fyller i en datauppsättning. Mer information finns i självstudiekursen [Skapa](../../catalog/datasets/create.md) datauppsättning.
+Den här självstudiekursen kräver en fungerande förståelse för hur du skapar och fyller i en datauppsättning. Mer information finns i självstudiekursen [Skapa datauppsättning](../../catalog/datasets/create.md).
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:erna för plattformen.
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform] är isolerade till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform] finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -50,23 +50,23 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Sekvensdiagram
 
-Den här självstudien följer de steg som beskrivs i sekvensdiagrammet nedan och framhäver kärnfunktionen i [!DNL Data Access] API:t.</br>
+Den här självstudien följer stegen som beskrivs i sekvensdiagrammet nedan och framhäver kärnfunktionen i [!DNL Data Access] API:t.</br>
 ![](../images/sequence_diagram.png)
 
-Med [!DNL Catalog] API kan du hämta information om grupper och filer. Med [!DNL Data Access] API kan du komma åt och hämta dessa filer via HTTP som antingen fullständiga eller partiella hämtningar, beroende på filens storlek.
+Med API:t [!DNL Catalog] kan du hämta information om grupper och filer. Med API:t [!DNL Data Access] kan du komma åt och hämta dessa filer via HTTP som antingen fullständiga eller partiella hämtningar, beroende på filens storlek.
 
 ## Hitta data
 
-Innan du kan börja använda API:t måste du identifiera platsen för de data som du vill komma åt. [!DNL Data Access] I [!DNL Catalog] API:t finns det två slutpunkter som du kan använda för att bläddra bland en organisations metadata och hämta ID:t för en grupp eller fil som du vill komma åt:
+Innan du kan börja använda API:t [!DNL Data Access] måste du identifiera platsen för de data som du vill komma åt. I API:t [!DNL Catalog] finns det två slutpunkter som du kan använda för att bläddra bland en organisations metadata och hämta ID:t för en grupp eller fil som du vill komma åt:
 
 - `GET /batches`: Returnerar en lista över batchar i din organisation
 - `GET /dataSetFiles`: Returnerar en lista med filer under din organisation
 
-En fullständig lista över slutpunkter i [!DNL Catalog] API finns i [API-referensen](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml).
+En fullständig lista över slutpunkter i [!DNL Catalog] API finns i [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml).
 
 ## Hämta en lista över batchar under IMS-organisationen
 
-Med hjälp av [!DNL Catalog] API:t kan du returnera en lista över grupper i din organisation:
+Med hjälp av API:t [!DNL Catalog] kan du returnera en lista över grupper i din organisation:
 
 **API-format**
 
@@ -109,7 +109,7 @@ Svaret innehåller ett objekt som listar alla batchar som hör till IMS-organisa
 
 ### Filtrera listan med batchar
 
-Det krävs ofta filter för att hitta en viss sats för att hämta relevanta data för ett visst användningsfall. Parametrar kan läggas till i en `GET /batches` begäran för att filtrera det returnerade svaret. Begäran nedan returnerar alla batchar som skapats efter en viss tid, inom en viss datauppsättning, sorterade efter när de skapades.
+Det krävs ofta filter för att hitta en viss sats för att hämta relevanta data för ett visst användningsfall. Parametrar kan läggas till i en `GET /batches`-begäran för att filtrera det returnerade svaret. Begäran nedan returnerar alla batchar som skapats efter en viss tid, inom en viss datauppsättning, sorterade efter när de skapades.
 
 **API-format**
 
@@ -121,7 +121,7 @@ GET /batches?createdAfter={START_TIMESTAMP}&dataSet={DATASET_ID}&sort={SORT_BY}
 | -------- | ----------- |
 | `{START_TIMESTAMP}` | Starttidsstämpeln i millisekunder (till exempel 1514836799000). |
 | `{DATASET_ID}` | Identifieraren för datauppsättningen. |
-| `{SORT_BY}` | Sorterar svaret efter angivet värde. Du kan till exempel `desc:created` sortera objekten efter skapandedatum i fallande ordning. |
+| `{SORT_BY}` | Sorterar svaret efter angivet värde. `desc:created` sorterar till exempel objekten efter skapandedatum i fallande ordning. |
 
 **Begäran**
 
@@ -197,7 +197,7 @@ En fullständig lista över parametrar och filter finns i [Catalog API-referense
 
 ## Hämta en lista med alla filer som tillhör en viss grupp
 
-Nu när du har ID:t för gruppen som du vill komma åt kan du använda API:t för att få en lista över filer som hör till gruppen. [!DNL Data Access]
+Nu när du har ID:t för gruppen som du vill komma åt kan du använda API:t [!DNL Data Access] för att få en lista över filer som tillhör den gruppen.
 
 **API-format**
 
@@ -250,11 +250,11 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/5c6f332168
 | -------- | ----------- |
 | `data._links.self.href` | Den URL som ska användas för att komma åt filen. |
 
-Svaret innehåller en datamatris som visar alla filer i den angivna gruppen. Filerna refereras till av deras fil-ID, som finns under `dataSetFileId` fältet.
+Svaret innehåller en datamatris som visar alla filer i den angivna gruppen. Filerna refereras till av deras fil-ID, som finns under fältet `dataSetFileId`.
 
 ## Åtkomst till en fil med ett fil-ID
 
-När du har ett unikt fil-ID kan du använda API:t för att få tillgång till specifik information om filen, inklusive filens namn, storlek i byte och en länk för att hämta den. [!DNL Data Access]
+När du har ett unikt fil-ID kan du använda API:t [!DNL Data Access] för att få tillgång till specifik information om filen, inklusive filens namn, storlek i byte och en länk för att hämta den.
 
 **API-format**
 
@@ -387,7 +387,7 @@ Svarshuvuden innehåller metadata för den efterfrågade filen, inklusive:
 
 ## Åtkomst till innehållet i en fil
 
-Du kan även komma åt innehållet i en fil med hjälp av [!DNL Data Access] API:t.
+Du kan även komma åt innehållet i en fil med API:t [!DNL Data Access].
 
 **API-format**
 
@@ -416,9 +416,9 @@ Ett godkänt svar returnerar filens innehåll.
 
 ## Hämta delar av innehållet i en fil
 
-Med API:t [!DNL Data Access] kan du hämta filer i segment. Du kan ange en intervallrubrik under en `GET /files/{FILE_ID}` begäran om att hämta ett visst intervall med byte från en fil. Om intervallet inte anges hämtas hela filen som standard av API:t.
+Med API:t [!DNL Data Access] kan du hämta filer i segment. Du kan ange en intervallrubrik under en `GET /files/{FILE_ID}`-begäran om att hämta ett specifikt intervall med byte från en fil. Om intervallet inte anges hämtas hela filen som standard av API:t.
 
-Exemplet HEAD i det [föregående avsnittet](#retrieve-the-metadata-of-a-file) visar storleken på en viss fil i byte.
+Exemplet HEAD i [föregående avsnitt](#retrieve-the-metadata-of-a-file) ger storleken på en viss fil i byte.
 
 **API-format**
 
@@ -451,12 +451,12 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb
 Svarstexten innehåller de första 100 byten i filen (enligt vad som anges i sidhuvudet Intervall i begäran) tillsammans med HTTP-status 206 (Del av innehåll). Svaret innehåller även följande rubriker:
 
 - Content-Length: 100 (antalet byte som returnerats)
-- Innehållstyp: application/parquet (en parquet-fil begärdes, därför är svarets innehållstyp parquet)
+- Innehållstyp: application/parquet (en Parquet-fil begärdes, därför är svarets innehållstyp `parquet`)
 - Innehållsintervall: byte 0-99/249058 (begärt intervall (0-99) av totalt antal byte (249058))
 
 ## Konfigurera API-svarssidnumrering
 
-Svaren i API:t [!DNL Data Access] numreras. Som standard är det maximala antalet poster per sida 100. Sidindelningsparametrar kan användas för att ändra standardbeteendet.
+Svaren inom API:t [!DNL Data Access] är sidnumrerade. Som standard är det maximala antalet poster per sida 100. Sidindelningsparametrar kan användas för att ändra standardbeteendet.
 
 - `limit`: Du kan ange antalet poster per sida enligt dina krav med hjälp av parametern &quot;limit&quot;.
 - `start`: Förskjutningen kan anges med frågeparametern &quot;start&quot;.
@@ -488,9 +488,9 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/5c102cac7c
 
 **Svar**:
 
-Svaret innehåller en `"data"` array med ett enda element, enligt parametern request `limit=1`. Det här elementet är ett objekt som innehåller information om den första tillgängliga filen, enligt parametern `start=0` i begäran (kom ihåg att det första elementet är &quot;0&quot; vid nollbaserad numrering).
+Svaret innehåller en `"data"`-array med ett enda element, enligt parametern `limit=1` för begäran. Det här elementet är ett objekt som innehåller information om den första tillgängliga filen, enligt parametern `start=0` i begäran (kom ihåg att det första elementet är &quot;0&quot; vid nollbaserad numrering).
 
-Värdet innehåller `_links.next.href` länken till nästa sida med svar, där du kan se att `start` parametern har utvecklats till `start=1`.
+Värdet `_links.next.href` innehåller länken till nästa sida med svar, där du kan se att parametern `start` har utvecklats till `start=1`.
 
 ```json
 {
