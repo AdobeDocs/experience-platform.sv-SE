@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;
+keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;Experience data model;experience data model;data model;data model;data model;schema register;schemaregister;
 solution: Experience Platform
 title: Utvecklarhandbok för API för schematabell
 description: 'Med API:t för schemaregister kan du programmässigt hantera alla scheman och tillhörande XDM-resurser som är tillgängliga i Experience Platform. '
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
+source-git-commit: 44a727f6ce4c2b90aa010379583c7c4d3ebd011c
 workflow-type: tm+mt
 source-wordcount: '961'
 ht-degree: 0%
@@ -63,19 +63,19 @@ Mer information om hur du visar fackföreningar i API:t för schemaregister finn
 
 Med API:t för schemaregister kan du överföra och dela XDM-resurser mellan sandlådor och IMS-organisationer. För alla scheman, mixin och datatyper kan du generera en exportnyttolast som innehåller resursstrukturen och alla beroende resurser. Denna nyttolast kan sedan användas för att importera resursen till en målsandlåda och IMS-organisation.
 
-Mer information om hur du använder den här slutpunkten finns i [API-referensen för schemaregistret](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml).
+Mer information om hur du använder dessa slutpunkter finns i guiden [för export/import av slutpunkter](./export-import.md).
 
 ## Exempeldata
 
 Du kan generera exempeldata för ett angivet schema i schemabiblioteket. Svarsobjektet som returneras kan sedan användas som källa för dataöverföring.
 
-Mer information om hur du använder den här slutpunkten finns i [API-referensen för schemaregistret](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml).
+Mer information om hur du använder den här slutpunkten finns i [exempeldataguiden](./sample-data.md).
 
 ## Granskningslogg
 
 Schemaregistret innehåller en logg över alla ändringar som har gjorts för en resurs (klass, mixin, datatyp eller schema) mellan olika uppdateringar. Du kan hämta loggen för en viss resurs genom att ange dess `$id` eller `meta:altId` i sökvägen för en GET-begäran till den här slutpunkten.
 
-Mer information om hur du använder den här slutpunkten finns i [API-referensen för schemaregistret](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml).
+Mer information om hur du använder den här slutpunkten finns i [slutpunktshandboken för granskningsloggen](./audit-log.md).
 
 ## Nästa steg
 
