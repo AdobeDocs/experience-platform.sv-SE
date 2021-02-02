@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;dataflow;Dataflow
+keywords: Experience Platform;hem;populära ämnen;dataflöde;Dataflöd
 solution: Experience Platform
 title: Konfigurera ett dataflöde för en batchanslutning för molnlagring i användargränssnittet
 topic: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt molnlagringskonto.
 translation-type: tm+mt
-source-git-commit: 7f24413a99b57e28ca2106214b7eedb5b068b045
+source-git-commit: 4e85dc702cda5c6c495a6f7fb70453b7897baa36
 workflow-type: tm+mt
-source-wordcount: '1742'
+source-wordcount: '1810'
 ht-degree: 0%
 
 ---
@@ -16,18 +16,18 @@ ht-degree: 0%
 
 # Konfigurera ett dataflöde för en batchanslutning för molnlagring i användargränssnittet
 
-Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en [!DNL Platform] datauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt molnlagringskonto.
+Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en [!DNL Platform]-datauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt molnlagringskonto.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+* [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverket som  [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [[!DNL Real-time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Den här självstudiekursen kräver dessutom att du har ett etablerat molnlagringskonto. En lista med självstudiekurser för att skapa olika molnlagringskonton i gränssnittet finns i [källanslutningsöversikten](../../../../home.md).
+Den här självstudiekursen kräver dessutom att du har ett etablerat molnlagringskonto. En lista med självstudiekurser för att skapa olika molnlagringskonton i användargränssnittet finns i [översikten över källanslutningar](../../../../home.md).
 
 ### Filformat som stöds
 
@@ -39,26 +39,32 @@ Den här självstudiekursen kräver dessutom att du har ett etablerat molnlagrin
 
 ## Markera data
 
-När du har skapat ditt molnlagringskonto visas **[!UICONTROL Select data]** steget och du får ett interaktivt gränssnitt där du kan utforska din molnlagringshierarki.
+När du har skapat ditt molnlagringskonto visas **[!UICONTROL Select data]**-steget som ger dig ett gränssnitt där du kan utforska din filhierarki i molnlagringen.
 
 * Den vänstra halvan av gränssnittet är en katalogwebbläsare som visar serverns filer och kataloger.
 * I den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader data från en kompatibel fil.
 
-Om du väljer en mapp i listan kan du gå igenom mapphierarkin till djupare mappar. När du har markerat en kompatibel fil eller mapp visas listrutan där du kan välja ett format för att visa data i förhandsvisningsfönstret. **[!UICONTROL Select data format]**
+Om du väljer en mapp i listan kan du gå igenom mapphierarkin till djupare mappar. När du har valt en kompatibel fil eller mapp visas listrutan **[!UICONTROL Select data format]** där du kan välja ett format för att visa data i förhandsgranskningsfönstret.
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-data.png)
 
-När förhandsvisningsfönstret har fyllts i kan du välja **[!UICONTROL Next]** att överföra alla filer i den valda mappen. Om du vill överföra till en viss fil markerar du filen i listan innan du väljer **[!UICONTROL Next]**.
+Välj lämpligt dataformat för filen som du vill importera och vänta i några sekunder tills förhandsvisningsfönstret fylls i.
 
-![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-data-preview.png)
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/data-format.png)
+
+Du kan ange en egen avgränsare när du importerar avgränsade filer. Välj alternativet **[!UICONTROL Delimiter]** och välj sedan en avgränsare i listrutan. Menyn innehåller de vanligaste alternativen för avgränsare, inklusive kommatecken (`,`), tabbar (`\t`) och en pipe (`|`). Du kan också välja **[!UICONTROL Custom]** och ange en egen avgränsare i popup-indatafältet.
+
+När du har valt dataformat och angett avgränsare väljer du **[!UICONTROL Next]**.
+
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/delimiter.png)
 
 ### Ingest Parquet- eller JSON-filer
 
 Molnlagringskonton har också stöd för JSON- och Parquet-filer. Parquet-filer måste vara XDM-kompatibla, medan JSON-filer inte behöver vara XDM-kompatibla. Om du vill importera JSON- eller Parquet-filer väljer du lämpligt filformat i katalogwebbläsaren och tillämpar kompatibelt dataformat från det högra gränssnittet.
 
-Om dataformatet är i JSON visas en förhandsvisning med information om data i filen. På förhandsgranskningsskärmen kan du välja om JSON är XDM-kompatibel med hjälp av **[!UICONTROL XDM compliant]** listrutan.
+Om dataformatet är i JSON visas en förhandsvisning med information om data i filen. På förhandsgranskningsskärmen kan du välja om JSON är XDM-kompatibel med hjälp av listrutan **[!UICONTROL XDM compliant]**.
 
-Välj **[!UICONTROL Next]** att fortsätta.
+Välj **[!UICONTROL Next]** för att fortsätta.
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/json-preview.png)
 
@@ -70,7 +76,7 @@ Välj **[!UICONTROL Next]** att fortsätta.
 
 ## Mappa datafält till ett XDM-schema
 
-Steget visas och innehåller ett interaktivt gränssnitt för att mappa källdata till en **[!UICONTROL Mapping]** [!DNL Platform] datauppsättning. Källfiler som är formaterade i Parquet måste vara XDM-kompatibla och kräver inte att du konfigurerar mappningen manuellt, medan CSV-filer kräver att du uttryckligen konfigurerar mappningen, men tillåter att du väljer vilka källdatafält som ska mappas. Om JSON-filer markeras som XDM-klagomål krävs ingen manuell konfiguration. Om den inte är markerad som XDM-kompatibel måste du explicit konfigurera mappningen.
+Steget **[!UICONTROL Mapping]** visas med ett interaktivt gränssnitt för att mappa källdata till en [!DNL Platform]-datauppsättning. Källfiler som är formaterade i Parquet måste vara XDM-kompatibla och kräver inte att du konfigurerar mappningen manuellt, medan CSV-filer kräver att du uttryckligen konfigurerar mappningen, men tillåter att du väljer vilka källdatafält som ska mappas. Om JSON-filer markeras som XDM-klagomål krävs ingen manuell konfiguration. Om den inte är markerad som XDM-kompatibel måste du explicit konfigurera mappningen.
 
 Välj en datauppsättning för inkommande data som ska importeras till. Du kan antingen använda en befintlig datauppsättning eller skapa en ny.
 
@@ -86,11 +92,11 @@ Dialogrutan **[!UICONTROL Select dataset]** visas. Hitta den datauppsättning du
 
 **Använd en ny datauppsättning**
 
-Om du vill importera data till en ny datauppsättning markerar du **[!UICONTROL New dataset]** och anger ett namn och en beskrivning för datauppsättningen i de angivna fälten. Om du vill lägga till ett schema kan du ange ett befintligt schemanamn i **[!UICONTROL Select schema]** dialogrutan. Du kan också välja **[!UICONTROL Schema advanced search]** att söka efter ett lämpligt schema.
+Om du vill importera data till en ny datauppsättning väljer du **[!UICONTROL New dataset]** och anger ett namn och en beskrivning för datauppsättningen i de angivna fälten. Om du vill lägga till ett schema kan du ange ett befintligt schemanamn i dialogrutan **[!UICONTROL Select schema]**. Du kan också välja **[!UICONTROL Schema advanced search]** för att söka efter ett lämpligt schema.
 
-Under det här steget kan du aktivera datauppsättningen för [!DNL Real-time Customer Profile] och skapa en helhetsbild av en enhets attribut och beteenden. Data från alla aktiverade datauppsättningar inkluderas i [!DNL Profile] och ändringar tillämpas när du sparar dataflödet.
+Under det här steget kan du aktivera datauppsättningen för [!DNL Real-time Customer Profile] och skapa en helhetsbild av en enhets attribut och beteenden. Data från alla aktiverade datauppsättningar inkluderas i [!DNL Profile] och ändringarna tillämpas när du sparar dataflödet.
 
-Aktivera måldatauppsättningen för genom att växla **[!UICONTROL Profile dataset]** knapp [!DNL Profile].
+Aktivera måldatauppsättningen för [!DNL Profile] genom att växla **[!UICONTROL Profile dataset]**-knappen.
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/new-dataset.png)
 
@@ -98,7 +104,7 @@ Dialogrutan **[!UICONTROL Select schema]** visas. Välj det schema som du vill t
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-schema.png)
 
-Beroende på dina behov kan du välja att mappa fält direkt eller använda mappningsfunktioner för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om datamappning och mappningsfunktioner finns i självstudiekursen om att [mappa CSV-data till XDM-schemafält](../../../../../ingestion/tutorials/map-a-csv-file.md).
+Beroende på dina behov kan du välja att mappa fält direkt eller använda mappningsfunktioner för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om datamappning och mappningsfunktioner finns i självstudiekursen om [mappning av CSV-data till XDM-schemafält](../../../../../ingestion/tutorials/map-a-csv-file.md).
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/mapping.png)
 
@@ -124,14 +130,14 @@ När källdata har mappats väljer du **[!UICONTROL Close]**.
 
 ## Schemalägg körning av inmatning
 
-Steget visas så att du kan konfigurera ett schema för att automatiskt importera valda källdata med de konfigurerade mappningarna. **[!UICONTROL Scheduling]** I följande tabell visas de olika konfigurerbara fälten för schemaläggning:
+Steget **[!UICONTROL Scheduling]** visas, vilket gör att du kan konfigurera ett schema för att automatiskt importera valda källdata med de konfigurerade mappningarna. I följande tabell visas de olika konfigurerbara fälten för schemaläggning:
 
 | Fält | Beskrivning |
 | --- | --- |
-| Frekvens | Valbara frekvenser inkluderar `Once`, `Minute`, `Hour`, `Day`och `Week`. |
+| Frekvens | Valbara frekvenser är `Once`, `Minute`, `Hour`, `Day` och `Week`. |
 | Intervall | Ett heltal som anger intervallet för den valda frekvensen. |
 | Starttid | En UTC-tidsstämpel som anger när det allra första intaget är inställt. |
-| Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om **[!UICONTROL Backfill]** är aktiverat importeras alla aktuella filer i den angivna sökvägen under den första schemalagda importen. Om **[!UICONTROL Backfill]** är inaktiverat importeras endast de filer som läses in mellan den första importkörningen och starttiden. Filer som lästs in före starttiden importeras inte. |
+| Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om **[!UICONTROL Backfill]** är aktiverat importeras alla aktuella filer i den angivna sökvägen under det första schemalagda intaget. Om **[!UICONTROL Backfill]** är inaktiverat importeras endast de filer som är inlästa mellan den första importkörningen och starttiden. Filer som lästs in före starttiden importeras inte. |
 
 Dataflöden är utformade för att automatiskt importera data enligt schema. Börja med att välja intagsfrekvens. Ange sedan intervallet för att ange perioden mellan två flödeskörningar. Intervallets värde måste vara ett heltal som inte är noll och måste vara större än eller lika med 15.
 
@@ -143,7 +149,7 @@ Ange värden för schemat och välj **[!UICONTROL Next]**.
 
 ### Konfigurera ett dataflöde för engångsbruk
 
-Om du vill ställa in engångsintag väljer du den nedrullningsbara pilen för frekvens och väljer **[!UICONTROL Once]**. Du kan fortsätta att redigera ett dataflöde för att få en engångsfrekvens så länge som starttiden är kvar i framtiden. När starttiden har passerat kan engångsfrekvensvärdet inte längre redigeras. **[!UICONTROL Interval]** och **[!UICONTROL Backfill]** är inte synliga när du ställer in ett dataflöde för engångsinmatning.
+Om du vill ställa in engångsintag väljer du den nedrullningsbara pilen för frekvens och väljer **[!UICONTROL Once]**. Du kan fortsätta att redigera ett dataflöde för att få en engångsfrekvens så länge som starttiden är kvar i framtiden. När starttiden har passerat kan engångsfrekvensvärdet inte längre redigeras. **[!UICONTROL Interval]** och  **[!UICONTROL Backfill]** är inte synliga när du ställer in ett dataflöde för engångsinmatning.
 
 >[!IMPORTANT]
 >
@@ -155,9 +161,9 @@ När du har angett lämpliga värden för schemat väljer du **[!UICONTROL Next]
 
 ## Ange information om dataflöde
 
-Stegen visas så att du kan ange ett namn och en kort beskrivning av det nya dataflödet. **[!UICONTROL Dataflow detail]**
+Steget **[!UICONTROL Dataflow detail]** visas så att du kan namnge och ge en kort beskrivning av det nya dataflödet.
 
-Under den här processen kan du även aktivera **[!UICONTROL Partial ingestion]** och **[!UICONTROL Error diagnostics]**. Aktivering **[!UICONTROL Partial ingestion]** ger möjlighet att importera data som innehåller fel, upp till ett visst tröskelvärde som du kan ange. Aktivering **[!UICONTROL Error diagnostics]** ger information om felaktiga data som grupperas separat. Mer information finns i översikten över [partiell gruppöverföring](../../../../../ingestion/batch-ingestion/partial.md).
+Under den här processen kan du även aktivera **[!UICONTROL Partial ingestion]** och **[!UICONTROL Error diagnostics]**. Om du aktiverar **[!UICONTROL Partial ingestion]** kan du importera data som innehåller fel, upp till ett visst tröskelvärde som du kan ange. Om du aktiverar **[!UICONTROL Error diagnostics]** får du information om felaktiga data som grupperas separat. Mer information finns i [översikten över partiell gruppöverföring](../../../../../ingestion/batch-ingestion/partial.md).
 
 Ange värden för dataflödet och välj **[!UICONTROL Next]**.
 
@@ -165,13 +171,13 @@ Ange värden för dataflödet och välj **[!UICONTROL Next]**.
 
 ## Granska ditt dataflöde
 
-Steget visas så att du kan granska det nya dataflödet innan det skapas. **[!UICONTROL Review]** Informationen är grupperad i följande kategorier:
+**[!UICONTROL Review]**-steget visas, så att du kan granska det nya dataflödet innan det skapas. Informationen är grupperad i följande kategorier:
 
 * **[!UICONTROL Connection]**: Visar källtypen, den relevanta sökvägen för den valda källfilen och mängden kolumner i källfilen.
 * **[!UICONTROL Assign dataset & map fields]**: Visar vilken datauppsättning källdata hämtas till, inklusive det schema som datauppsättningen följer.
 * **[!UICONTROL Scheduling]**: Visar den aktiva perioden, frekvensen och intervallet för intag-schemat.
 
-När du har granskat dataflödet kan du klicka **[!UICONTROL Finish]** och vänta tills dataflödet har skapats.
+När du har granskat dataflödet klickar du på **[!UICONTROL Finish]** och ger dig tid att skapa dataflödet.
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/review.png)
 
@@ -181,18 +187,18 @@ När dataflödet har skapats kan du övervaka de data som importeras genom det f
 
 ## Ta bort ditt dataflöde
 
-Du kan ta bort dataflöden som inte längre är nödvändiga eller som har skapats felaktigt med den **[!UICONTROL Delete]** funktion som finns på **[!UICONTROL Dataflows]** arbetsytan. Mer information om hur du tar bort dataflöden finns i självstudiekursen om hur du [tar bort dataflöden i användargränssnittet](../../delete.md).
+Du kan ta bort dataflöden som inte längre är nödvändiga eller som har skapats felaktigt med funktionen **[!UICONTROL Delete]** som finns på arbetsytan **[!UICONTROL Dataflows]**. Mer information om hur du tar bort dataflöden finns i självstudiekursen om att [ta bort dataflöden i användargränssnittet](../../delete.md).
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat ett dataflöde för att hämta in data från en extern molnlagring och fått insikter om att övervaka datauppsättningar. Om du vill veta mer om hur du skapar dataflöden kan du komplettera din inlärning genom att titta på videon nedan. Dessutom kan inkommande data nu användas av [!DNL Platform] tjänster längre fram i kedjan som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat ett dataflöde för att hämta in data från en extern molnlagring och fått insikter om att övervaka datauppsättningar. Om du vill veta mer om hur du skapar dataflöden kan du komplettera din inlärning genom att titta på videon nedan. Inkommande data kan nu användas av underordnade [!DNL Platform]-tjänster som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 * [[!DNL Real-time Customer Profile] översikt](../../../../../profile/home.md)
 * [[!DNL Data Science Workspace] översikt](../../../../../data-science-workspace/home.md)
 
 >[!WARNING]
 >
-> Gränssnittet [!DNL Platform] som visas i följande video är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
+> Användargränssnittet [!DNL Platform] som visas i följande video är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
 
 >[!VIDEO](https://video.tv.adobe.com/v/29695?quality=12&learn=on)
 
@@ -204,14 +210,14 @@ I följande avsnitt finns ytterligare information om hur du arbetar med källkop
 
 När ett dataflöde skapas blir det omedelbart aktivt och importerar data enligt det schema som det gavs. Du kan när som helst inaktivera ett aktivt dataflöde genom att följa instruktionerna nedan.
 
-Klicka på **[!UICONTROL Sources]** fliken på arbetsytan **[!UICONTROL Browse]** . Klicka sedan på namnet på kontot som är associerat med det aktiva dataflödet som du vill inaktivera.
+Klicka på fliken **[!UICONTROL Browse]** på arbetsytan **[!UICONTROL Sources]**. Klicka sedan på namnet på kontot som är associerat med det aktiva dataflödet som du vill inaktivera.
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/browse.png)
 
-Sidan visas **[!UICONTROL Source activity]** . Markera det aktiva dataflödet i listan för att öppna dess **[!UICONTROL Properties]** kolumn till höger på skärmen, som innehåller en **[!UICONTROL Enabled]** växlingsknapp. Klicka på växlingsknappen för att inaktivera dataflödet. Samma växlingsknapp kan användas för att återaktivera ett dataflöde efter att det har inaktiverats.
+Sidan **[!UICONTROL Source activity]** visas. Markera det aktiva dataflödet i listan för att öppna kolumnen **[!UICONTROL Properties]** till höger på skärmen, som innehåller en alternativknapp för **[!UICONTROL Enabled]**. Klicka på växlingsknappen för att inaktivera dataflödet. Samma växlingsknapp kan användas för att återaktivera ett dataflöde efter att det har inaktiverats.
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/disable-source.png)
 
-### Aktivera inkommande data för [!DNL Profile] populationen
+### Aktivera inkommande data för [!DNL Profile]-populationen
 
-Inkommande data från källkopplingen kan användas för att berika och fylla i dina [!DNL Real-time Customer Profile] data. Mer information om hur du fyller i dina [!DNL Real-time Customer Profile] data finns i självstudiekursen om [profilpopulationen](../../profile.md).
+Inkommande data från din källanslutning kan användas för att berika och fylla i dina [!DNL Real-time Customer Profile]-data. Mer information om hur du fyller i dina [!DNL Real-time Customer Profile]-data finns i självstudiekursen om [profilpopulationen](../../profile.md).
