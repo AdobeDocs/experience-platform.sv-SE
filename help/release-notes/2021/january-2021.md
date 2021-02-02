@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: January 27, 2021
 author: ens60013
 translation-type: tm+mt
-source-git-commit: cf70b21f3a8c02b25e5acd3be8c8feaa3f52a5e3
+source-git-commit: 74325dcfe9d7b117e3f812d88e0c4a980d44ef53
 workflow-type: tm+mt
-source-wordcount: '327'
+source-wordcount: '478'
 ht-degree: 2%
 
 ---
@@ -20,6 +20,7 @@ ht-degree: 2%
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [[!DNL Data Prep]](#data-prep)
+- [[!DNL Destinations]](#destinations)
 - [[!DNL Sources]](#sources)
 
 ## [!DNL Data Prep] {#data-prep}
@@ -33,6 +34,18 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 | Funktioner för reguljära uttryck | [!DNL Data Prep] Mapper har nu stöd för att matcha och extrahera delar av indatafältet baserat på reguljära uttryck. |
 
 Mer information finns i [[!DNL Data Prep] översikten](../../data-prep/home.md).
+
+## Mål {#destinations}
+
+[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Avancerad ID-matchning | Förbättringar av funktionerna för målgruppsmatchning i [!DNL Facebook Custom Audiences] och [!DNL Google Customer Match] genom att lägga till stöd för ytterligare identitetsmatchning, som externa ID:n, telefonnummer och mobila enhets-ID:n. Mer information finns i följande dokumentation: <ul><li>[Facebook-mål](../../destinations/catalog/social/facebook.md)</li><li>[Google Customer Match-mål](../../destinations/catalog/advertising/google-customer-match.md)</li><li>[Aktivera profiler och segment till ett mål](../../destinations/ui/activate-destinations.md)</li></ul> |
+
+Mer information finns i [målöversikten](../../destinations/home.md).
 
 ## [!DNL Sources] {#sources}
 
@@ -48,5 +61,6 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 | [!DNL Google BigQuery] förbättringar av källkopplingen | Du kan nu importera filer som är större än 10 GB i en flödeskörning med hjälp av [!DNL BigQuery]-källkopplingen. Mer information finns i [[!DNL BigQuery] översikten över källkopplingen](../../sources/connectors/databases/bigquery.md). |
 | Stöd för komplexa datatyper för molnlagring | Du kan nu importera komplexa datatyper, till exempel arrayer i JSON-filer, när du använder en anslutning till en molnlagringskälla. Självstudiekurserna om hur du skapar ett molnlagringsdataflöde [i gränssnittet](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md) eller [med API [!DNL Flow Service] API](../../sources/tutorials/api/collect/cloud-storage.md) innehåller mer information. |
 | Stöd för huvudnyckelbaserad autentisering för [!DNL Microsoft Dynamics]-källa | Du kan nu autentisera ditt [!DNL Dynamics]-konto med en tjänsthuvudnyckel som ett alternativ till lösenordsbaserad autentisering. Mer information finns i [[!DNL Dynamics] översikten över källkopplingen](../../sources/connectors/crm/ms-dynamics.md). |
+| Stöd för anpassade avgränsare i molnlagringskällor | Nu kan du ställa in en anpassad kolumnavgränsare, till exempel ett komma (`,`), en tabb (`\t`) eller en pipe (`|`), för att samla in avgränsade filer i användargränssnittet. Mer information finns i självstudiekursen om att [skapa ett dataflöde med en molnlagringskälla](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md) |
 
 Mer information om källor finns i [Källor - översikt](../../sources/home.md).
