@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;query service;Query service;data deduplication;deduplication;
+keywords: Experience Platform;hem;populära ämnen;frågetjänst;Frågetjänst;datadeduplicering;deduplicering;
 solution: Experience Platform
 title: Datadeduplicering
 topic: queries
@@ -8,7 +8,7 @@ description: Det här dokumentet innehåller exempel på delurval och fullständ
 translation-type: tm+mt
 source-git-commit: e2c648829bb3268ab319da934f5cc6cc811290b3
 workflow-type: tm+mt
-source-wordcount: '479'
+source-wordcount: '491'
 ht-degree: 0%
 
 ---
