@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;monitor dataflows;flow service api;Flow Service
+keywords: Experience Platform;hem;populära ämnen;övervaka dataflöden;flödestjänst api;Flödestjänst
 solution: Experience Platform
 title: Övervaka flöden och körningar
 topic: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för övervakning av körningsdata för flöde för fullständighet, fel och mätvärden med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '613'
+source-wordcount: '629'
 ht-degree: 0%
 
 ---
@@ -16,36 +16,36 @@ ht-degree: 0%
 
 # Övervaka dataflöden med API:t för Flow Service
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudiekursen beskrivs stegen för övervakning av körningsdata för flöde för fullständighet, fel och mätvärden med hjälp av [[!DNL Flow Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
+I den här självstudiekursen beskrivs stegen för övervakning av körningsdata för flöde för fullständighet, fel och mätvärden med [[!DNL Flow Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
 ## Komma igång
 
-I den här självstudiekursen måste du ha ID-värdet för ett giltigt dataflöde. Om du inte har något giltigt dataflödes-ID väljer du den önskade anslutningen i [källöversikten](../../home.md) och följer instruktionerna innan du provar den här självstudiekursen.
+I den här självstudiekursen måste du ha ID-värdet för ett giltigt dataflöde. Om du inte har något giltigt dataflödes-ID väljer du en valfri koppling i [källöversikten](../../home.md) och följer instruktionerna innan du provar den här självstudiekursen.
 
 Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../home.md): [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster.
-* [Sandlådor](../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
+* [Sandlådor](../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna övervaka flödeskörningar med API:t. [!DNL Flow Service]
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna övervaka flödeskörningar med API:t [!DNL Flow Service].
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
@@ -55,7 +55,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Körningar av bildskärmsflöde
 
-När du har gjort ett dataflöde utför du en GET-begäran till [!DNL Flow Service] API:t.
+När du har gjort ett dataflöde utför du en GET-begäran till API:t [!DNL Flow Service].
 
 **API-format**
 
@@ -65,7 +65,7 @@ GET /runs?property=flowId=={FLOW_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{FLOW_ID}` | Det unika `id` värdet för det dataflöde som du vill övervaka. |
+| `{FLOW_ID}` | Det unika `id`-värdet för det dataflöde som du vill övervaka. |
 
 **Begäran**
 
@@ -257,4 +257,4 @@ Ett lyckat svar returnerar information om flödeskörningen, inklusive informati
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du hämtat statistik och felinformation om ditt dataflöde med hjälp av [!DNL Flow Service] API. Du kan nu fortsätta att övervaka ditt dataflöde, beroende på ditt intag, för att spåra dess status och intag. Information om hur du utför samma uppgifter med användargränssnittet finns i självstudiekursen om [övervakning av dataflöden med användargränssnittet](../ui/monitor.md)
+Genom att följa den här självstudiekursen har du hämtat mått och felinformation för ditt dataflöde med hjälp av API:t [!DNL Flow Service]. Du kan nu fortsätta att övervaka ditt dataflöde, beroende på ditt intag, för att spåra dess status och intag. Information om hur du utför samma uppgifter med användargränssnittet finns i självstudiekursen om [övervakning av dataflöden med användargränssnittet](../ui/monitor.md).
