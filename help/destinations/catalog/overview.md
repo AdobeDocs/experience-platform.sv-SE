@@ -1,11 +1,11 @@
 ---
-keywords: Catalog;catalog
+keywords: Katalog;katalog
 title: Målkatalog
 seo-title: Målkatalog
 description: Destinationskatalogen innehåller en lista över tillgängliga destinationer som är klara att ta emot data. Dessa destinationer omfattar Adobe, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar med mera.
 seo-description: Destinationskatalogen innehåller en lista över tillgängliga destinationer som är klara att ta emot data. Dessa destinationer omfattar Adobe, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar med mera.
 translation-type: tm+mt
-source-git-commit: 5f120a716cc3396ef7749463bb6052a8ced2fbb4
+source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
 workflow-type: tm+mt
 source-wordcount: '170'
 ht-degree: 0%
@@ -15,13 +15,13 @@ ht-degree: 0%
 
 # [!DNL Destinations Catalog]
 
-Här **[!DNL Destinations Catalog]** finns en lista över tillgängliga målplattformar som kan ta emot data. Bland målplattformarna finns Adobe-lösningar, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar, Experience Platform-tillägg med mera.
+**[!DNL Destinations Catalog]** innehåller en lista över tillgängliga målplattformar som kan ta emot data. Bland målplattformarna finns Adobe-lösningar, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar, Experience Platform-tillägg med mera.
 
 Bläddra i katalogen för att fastställa vilka målplattformar som är bäst för era användningsfall för annonsering och personalisering, och konfigurera sedan flöden för att aktivera era segment till destinationer.
 
 ## Målkategorier
 
-Du kan aktivera dina data till olika målkategorier i kunddataplattformen i realtid. Länkarna nedan ger mer information om varje målkategori:
+Du kan aktivera dina data till olika målkategorier i Adobe Experience Platform. Länkarna nedan ger mer information om varje målkategori:
 
 - [Adobe](./adobe/overview.md)
 - [Annonsmål](./advertising/overview.md)
