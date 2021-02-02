@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;identity graph viewer;Identity graph viewer;graph viewer;Graph viewer;identity namespace;Identity namespace;identity;Identity;Identity service;identity service
+keywords: Experience Platform;hem;populära ämnen;identitetsdiagramvisningsprogram;Identitetsdiagramvisningsprogram;diagramvisningsprogram;Graph viewer;identity namespace;Identity namespace;identity;Identity;Identity service;identity service
 solution: Experience Platform
 title: Adobe Experience Platform Identity Service
 topic: tutorial
 description: Ett identitetsdiagram är en karta över relationer mellan olika identiteter för en viss kund, vilket ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler.
 translation-type: tm+mt
-source-git-commit: 7c52760bdceb8d45d76cd22d69241f8c23943674
+source-git-commit: 7c9c81492df9333945ac62602f10b6097296d62b
 workflow-type: tm+mt
-source-wordcount: '871'
+source-wordcount: '866'
 ht-degree: 1%
 
 ---
@@ -33,21 +33,21 @@ Att arbeta med identitetsdiagramvisningsprogrammet kräver förståelse för de 
 
 - **Identitet (nod):** En identitet eller en nod är data som är unika för en enhet, vanligtvis en person. En identitet består av ett namnutrymme och ett identitetsvärde.
 - **Länk (kant):** En länk eller kant representerar kopplingen mellan identiteter.
-- **Diagram (kluster):** Ett diagram eller kluster är en grupp identiteter och länkar som representerar en person.
+- **Diagram (kluster):** Ett diagram eller ett kluster är en grupp identiteter och länkar som representerar en person.
 
 ## Åtkomst till identitetsdiagramvisningsprogrammet
 
-Om du vill använda identitetsdiagramvisningsprogrammet i användargränssnittet väljer du **[!UICONTROL Identities]** i den vänstra navigeringen och sedan **[!UICONTROL Identity graph]** fliken. På **[!UICONTROL Identity Namespace]** skärmen klickar du på **[!UICONTROL Select identity namespace]** ikonen för att söka efter det namnutrymme som du vill använda.
+Om du vill använda identitetsdiagramvisningsprogrammet i användargränssnittet väljer du **[!UICONTROL Identities]** i den vänstra navigeringen och sedan fliken **[!UICONTROL Identity graph]**. På skärmen **[!UICONTROL Identity Namespace]** klickar du på ikonen **[!UICONTROL Select identity namespace]** för att söka efter det namnutrymme som du tänker använda.
 
 ![namespace-screen](../images/identity-graph-viewer/identity-namespace.png)
 
-Panelen **[!UICONTROL Select identity namespace]** visas. Den här skärmen innehåller en lista med namnutrymmen som är tillgängliga för din organisation, inklusive information om namnutrymmets **[!UICONTROL Display name]**, **[!UICONTROL Identity symbol]**, **[!UICONTROL Owner]**, **[!UICONTROL Last updated]** datum och **[!UICONTROL Description]**. Du kan använda vilket som helst av de angivna namnutrymmena om du har ett giltigt identitetsvärde kopplat till dem.
+Panelen **[!UICONTROL Select identity namespace]** visas. Den här skärmen innehåller en lista med namnutrymmen som är tillgängliga för din organisation, inklusive information om ett namnområdes **[!UICONTROL Display name]**, **[!UICONTROL Identity symbol]**, **[!UICONTROL Owner]**, **[!UICONTROL Last updated]** datum och **[!UICONTROL Description]**. Du kan använda vilket som helst av de angivna namnutrymmena om du har ett giltigt identitetsvärde kopplat till dem.
 
 Markera det namnutrymme som du vill använda och klicka på **[!UICONTROL Select]** för att fortsätta.
 
 ![select-identity-namespace](../images/identity-graph-viewer/select-identity-namespace.png)
 
-När du har valt ett namnutrymme anger du dess motsvarande värde för en viss kund i textrutan och väljer **[!UICONTROL Identity value]** **[!UICONTROL View]**.
+När du har valt ett namnutrymme anger du dess motsvarande värde för en viss kund i textrutan **[!UICONTROL Identity value]** och väljer **[!UICONTROL View]**.
 
 ![add-identity-value](../images/identity-graph-viewer/identity-value-filled.png)
 
@@ -55,19 +55,19 @@ Identitetsdiagramvisningsprogrammet visas. Till vänster på skärmen finns iden
 
 >[!IMPORTANT]
 >
->Ett identitetsdiagram kräver minst två länkade identiteter att generera, samt ett giltigt namnutrymme och ID-par. Det maximala antalet identiteter som diagramvisningsprogrammet kan visa är 150. Mer information finns i avsnittet [Bilaga](#appendix) nedan.
+>Ett identitetsdiagram kräver minst två länkade identiteter att generera, samt ett giltigt namnutrymme och ID-par. Det maximala antalet identiteter som diagramvisningsprogrammet kan visa är 150. Mer information finns i avsnittet [appendix](#appendix) nedan.
 
 ![identitetsdiagram](../images/identity-graph-viewer/graph-viewer.png)
 
-Välj en identitet om du vill uppdatera den markerade raden i **[!UICONTROL Identities]** tabellen och uppdatera informationen som finns på den högra listen, som innehåller en identitets **[!UICONTROL Value]** och dess **[!UICONTROL Batch ID]****[!UICONTROL Last updated]** datum.
+Välj en identitet för att uppdatera den markerade raden i tabellen **[!UICONTROL Identities]** och för att uppdatera informationen som finns på den högra listen, som innehåller identitetsdata **[!UICONTROL Value]**, **[!UICONTROL Batch ID]** och **[!UICONTROL Last updated]**-datumet.
 
 ![select-identity](../images/identity-graph-viewer/select-identity.png)
 
-Du kan filtrera genom ett diagram och isolera ett specifikt namnutrymme med sorteringsalternativet högst upp i **[!UICONTROL Identities]** tabellen. Välj det namnutrymme som du vill markera i listrutan.
+Du kan filtrera genom ett diagram och isolera ett specifikt namnutrymme med sorteringsalternativet ovanför tabellen **[!UICONTROL Identities]**. Välj det namnutrymme som du vill markera i listrutan.
 
 ![filter-för-namnutrymme](../images/identity-graph-viewer/filter-namespace.png)
 
-Diagramvisningsprogrammet returnerar och namnutrymmet som du markerade markeras. Filteralternativet uppdaterar också **[!UICONTROL Identities]** tabellen så att den returnerar information endast för det namnutrymme du har valt.
+Diagramvisningsprogrammet returnerar och namnutrymmet som du markerade markeras. Filteralternativet uppdaterar även tabellen **[!UICONTROL Identities]** så att endast information returneras för det namnutrymme som du har valt.
 
 ![filtrerad](../images/identity-graph-viewer/filtered.png)
 
@@ -75,7 +75,7 @@ Den övre högra delen av diagramvisningsrutan innehåller alternativ för förs
 
 ![zooma](../images/identity-graph-viewer/zoom.png)
 
-Du kan visa mer information om grupper genom att välja **[!UICONTROL Data source]** i sidhuvudet. I **[!UICONTROL Data source]** tabellen visas en lista med **[!UICONTROL Batch IDs]** associerade diagram samt dess **[!UICONTROL Linked IDs]** källschema och datum för inmatning.
+Du kan visa mer information om grupper genom att välja **[!UICONTROL Data source]** i rubriken. Tabellen **[!UICONTROL Data source]** visar en lista över **[!UICONTROL Batch IDs]** som är associerad med diagrammet samt dess **[!UICONTROL Linked IDs]**, källschema och datum för inmatningen.
 
 ![datakälla](../images/identity-graph-viewer/data-source-table.png)
 
@@ -102,11 +102,9 @@ Fel kan inträffa vid åtkomst till identitetsdiagramvisningsprogrammet. Nedan f
 - Ett identitetsvärde måste finnas i det valda namnutrymmet.
 - Identitetsdiagramvisningsprogrammet kräver minst två länkade identiteter för att kunna generera.
 - Identitetsdiagramvisningsprogrammet får inte överskrida det maximala antalet 150 identiteter.
-- Identitetsdiagramvisningsprogrammet är för närvarande inte tillgängligt i icke-produktionssandlådor.
-- Identitetsdiagramvisningsprogrammet har för närvarande bara stöd för batchimport av data och visar inte data som importerats med direktuppspelningskällor.
 
 ![error-screen](../images/identity-graph-viewer/error-screen.png)
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du lärt dig att utforska kundernas identitetsdiagram i användargränssnittet för plattformen. Mer information om identiteter i Platform finns i Översikt över [identitetstjänsten](../home.md)
+Genom att läsa det här dokumentet har du lärt dig att utforska kundernas identitetsdiagram i användargränssnittet för plattformen. Mer information om identiteter i Platform finns i [Översikt över identitetstjänsten](../home.md)
