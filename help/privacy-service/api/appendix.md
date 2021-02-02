@@ -1,24 +1,27 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
-title: Godkända ID-namnutrymmen och -kvalificerare
+title: Privacy Service API developer guide appendix
 topic: developer guide
+description: Det här dokumentet innehåller ytterligare information om hur du arbetar med Privacy Service-API:t.
 translation-type: tm+mt
-source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
+source-git-commit: 5dad1fcc82707f6ee1bf75af6c10d34ff78ac311
 workflow-type: tm+mt
-source-wordcount: '464'
-ht-degree: 7%
+source-wordcount: '498'
+ht-degree: 6%
 
 ---
 
 
 # Bilaga
 
+Följande avsnitt innehåller ytterligare information om hur du arbetar med Adobe Experience Platform Privacy Service API.
+
 ## Standardnamnutrymmen för identiteter {#standard-namespaces}
 
-Alla identiteter som skickas till [!DNL Privacy Service] måste anges under ett specifikt ID-namnutrymme. Identitetsnamnutrymmen är en komponent i [Adobe Experience Platform Identity Service](../../identity-service/home.md) som anger det sammanhang som en identitet relateras till.
+Alla identiteter som skickas till [!DNL Privacy Service] måste anges under ett specifikt identitetsnamnutrymme. Identitetsnamnutrymmen är en komponent i [Adobe Experience Platform Identity Service](../../identity-service/home.md) som anger kontexten som en identitet relateras till.
 
-I följande tabell visas flera vanliga, fördefinierade identitetstyper som är tillgängliga av [!DNL Experience Platform], tillsammans med tillhörande `namespace` värden:
+I följande tabell visas flera vanliga, fördefinierade identitetstyper som är tillgängliga av [!DNL Experience Platform], tillsammans med deras associerade `namespace`-värden:
 
 | Identitetstyp | `namespace` | `namespaceId` |
 | --- | --- | --- |
@@ -34,18 +37,18 @@ I följande tabell visas flera vanliga, fördefinierade identitetstyper som är 
 
 >[!NOTE]
 >
->Varje identitetstyp har också ett `namespaceId` heltalsvärde som kan användas i stället för `namespace` strängen när identitetsegenskapen ställs in på `type` namespaceId. Mer information finns i avsnittet om [namnutrymmeskvalificerare](#namespace-qualifiers) .
+>Varje identitetstyp har också ett `namespaceId`-heltalsvärde, som kan användas i stället för strängen `namespace` när identitetsegenskapen `type` anges till &quot;namespaceId&quot;. Mer information finns i avsnittet [namnutrymmeskvalificerare](#namespace-qualifiers).
 
-Du kan hämta en lista med identitetsnamnutrymmen som används av din organisation genom att göra en GET-begäran till `idnamespace/identities` slutpunkten i [!DNL Identity Service] API:t. Mer information finns i utvecklarhandboken [för](../../identity-service/api/getting-started.md) identitetstjänsten.
+Du kan hämta en lista med identitetsnamnutrymmen som används av din organisation genom att göra en GET-begäran till `idnamespace/identities`-slutpunkten i [!DNL Identity Service]-API:t. Mer information finns i [Utvecklarhandboken för identitetstjänsten](../../identity-service/api/getting-started.md).
 
 ## Namnutrymmeskvalificerare
 
-När du anger ett `namespace` värde i [!DNL Privacy Service] API:t måste en **namnutrymmeskvalificerare** inkluderas i en motsvarande `type` parameter. Följande tabell visar de olika godkända namnutrymmeskvalificerarna.
+När du anger ett `namespace`-värde i API:t [!DNL Privacy Service] måste en **namnutrymmeskvalificerare** inkluderas i en motsvarande `type`-parameter. Följande tabell visar de olika godkända namnutrymmeskvalificerarna.
 
 | Kvalificerare | Definition |
 | --------- | ---------- |
 | standard | Ett av standardnamnutrymmena som definierats globalt, inte kopplat till en enskild organisations datauppsättning (till exempel e-post, telefonnummer osv.). Namnområdes-ID anges. |
-| anpassad | Ett unikt namnutrymme som skapas i en organisations sammanhang och inte delas över hela [!DNL Experience Cloud]. Värdet representerar det egna namnet (&quot;namnfältet&quot;) som du vill söka efter. Namnområdes-ID anges. |
+| anpassad | Ett unikt namnutrymme som skapats i en organisations kontext, som inte delas över [!DNL Experience Cloud]. Värdet representerar det egna namnet (&quot;namnfältet&quot;) som du vill söka efter. Namnområdes-ID anges. |
 | integrationCode | Integrationskod - liknande&quot;anpassad&quot;, men specifikt definierad som integrationskoden för en datakälla som du vill söka efter. Namnområdes-ID anges. |
 | namespaceId | Anger att värdet är det faktiska ID:t för namnutrymmet som skapades eller mappades via namnområdestjänsten. |
 | oregistrerad | En friformssträng som inte är definierad i namnområdestjänsten och som tas &quot;as is&quot;. Alla program som hanterar den här typen av namnutrymmen kontrollerar mot dem och hanterar om det passar företagssammanhanget och datauppsättningen. Inget namnområdes-ID har angetts. |
@@ -54,9 +57,9 @@ När du anger ett `namespace` värde i [!DNL Privacy Service] API:t måste en **
 
 ## Godkända produktvärden
 
-I följande tabell visas de värden som accepteras för att ange en Adobe-produkt i attributet `include` för en jobbskapandebegäran.
+I följande tabell visas godkända värden för att ange en Adobe-produkt i attributet `include` för en jobbskapandebegäran.
 
-| Produkt | Värde som ska användas i `include` attributet |
+| Produkt | Värde som ska användas i attributet `include` |
 --- | ---
 | Adobe Advertising Cloud | &quot;AdCloud&quot; |
 | Adobe Analytics | &quot;Analytics&quot; |
