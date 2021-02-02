@@ -5,10 +5,10 @@ user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: XDM-guide (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och mixins för att standardisera upplevelsedata.
 translation-type: tm+mt
-source-git-commit: baf39df0e03170d6b2b5a151e753d4ad269a43fa
+source-git-commit: 2c0dc4d54dcd1dcd17ffec70dbe3b16bb45ee141
 workflow-type: tm+mt
-source-wordcount: '214'
-ht-degree: 7%
+source-wordcount: '216'
+ht-degree: 6%
 
 ---
 
@@ -48,12 +48,14 @@ ht-degree: 7%
    * [Info om geo-interaktion](./data-types/geo-interaction-details.md)
    * [Geo Shape](./data-types/geo-shape.md)
    * [Identitet](./data-types/identity.md)
+   * [Person](./data-types/person.md)
    * [Personnamn](./data-types/person-name.md)
    * [Telefonnummer](./data-types/phone-number.md)
    * [Montera kontext](./data-types/place-context.md)
    * [POI-information](./data-types/poi-details.md)
    * [POI-interaktion](./data-types/poi-interaction.md)
    * [Postadress](./data-types/postal-address.md)
+   * [Prenumeration](./data-types/subscription.md)
 * [!UICONTROL Schemas] UI  {#ui}
    * [Översikt](./ui/overview.md)
    * [Utforska XDM-resurser](./ui/explore.md)
