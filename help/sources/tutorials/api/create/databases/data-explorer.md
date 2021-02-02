@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;Azure Data Explorer;data explorer;Data Explorer
+keywords: Experience Platform;hem;populära ämnen;Azure Data Explorer;data explorer;Data Explorer
 solution: Experience Platform
 title: Skapa en Azure Data Explorer-koppling med API:t för Flow Service
 topic: overview
 type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Azure Data Explorer (nedan kallad Data Explorer) till Experience Platform.
 translation-type: tm+mt
-source-git-commit: 36620a229fc8e6e3fa4545bfc775a49bc89935bb
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '625'
+source-wordcount: '641'
 ht-degree: 0%
 
 ---
@@ -54,7 +54,7 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](../../../../../tutorials/authentication.md) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
