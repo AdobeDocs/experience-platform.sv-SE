@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;map csv;map csv file;map csv file to xdm;map csv to xdm;ui guide;mapper;mapping;date;date functions;dates;
+keywords: Experience Platform;hem;populära ämnen;map csv;map csv file;map csv file to xdm;map csv to xdm;ui guide;mapper;mappning;date;date functions;dates;
 solution: Experience Platform
 title: Datumfunktioner
 topic: overview
 description: I det här dokumentet introduceras de datumfunktioner som används med Data Prep.
 translation-type: tm+mt
-source-git-commit: 1f9833c06a3423c334edb8aa7e441adfd74be0f2
+source-git-commit: 28c13101be37c5c7680c5d46005509bfd122018f
 workflow-type: tm+mt
-source-wordcount: '384'
-ht-degree: 17%
+source-wordcount: '411'
+ht-degree: 16%
 
 ---
 
@@ -53,8 +53,8 @@ Tabellen nedan visar vilka mönsterbokstäver som är definierade för formatstr
 | Symbol | Betydelse | Presentation | Exempel |
 | ------ | ------- | ------------ | ------- |
 | G | The era | Text | AD; Anno Domini A |
-| Y | År, baserat på ISO-veckan | Siffra | 1996; 96 |
-| y | År | Siffra | 2004; 04 |
+| Y | År, baserat på ISO-veckan | Siffra | 1996, 96 |
+| y | År | Siffra | 2004, 04 |
 | M/L | Månad på året | Tal/text | 7. 07; juli Juli. J |
 | w | Vecka under året | Siffra | 27 |
 | W | Vecka i månaden | Siffra | 3 |
@@ -80,4 +80,4 @@ Tabellen nedan visar vilka mönsterbokstäver som är definierade för formatstr
 
 **Exempel**
 
-Uttrycket `date(orderDate, 'yyyy-MM-dd')` konverterar `orderDate` värdet &quot;31 december 2020&quot; till datetime-värdet &quot;2020-12-31&quot;.
+Uttrycket `date(orderDate, "yyyy-MM-dd")` konverterar `orderDate`-värdet &quot;December 31st, 2020&quot; till datetime-värdet &quot;2020-12-31&quot;.
