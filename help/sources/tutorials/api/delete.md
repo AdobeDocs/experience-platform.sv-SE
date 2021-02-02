@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;flow service;delete connections;delete;api
+keywords: Experience Platform;hem;populära ämnen;flödestjänst;ta bort anslutningar;ta bort;api
 solution: Experience Platform
 title: Ta bort en anslutning med API:t för Flow Service
 topic: overview
 type: Tutorial
 description: I den här självstudiekursen beskrivs hur du tar bort en anslutning med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: 9e28591ef9f07217363cddf72356b8e5cd8a15a3
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '580'
+source-wordcount: '595'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 # Ta bort en anslutning med API:t för Flow Service
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
@@ -24,28 +24,28 @@ I den här självstudiekursen beskrivs hur du tar bort med [[!DNL Flow Service A
 
 ## Komma igång
 
-Den här självstudiekursen kräver att du har ett giltigt anslutnings-ID. Om du inte har ett giltigt anslutnings-ID väljer du den önskade anslutningen i [källöversikten](../../home.md) och följer instruktionerna innan du provar den här självstudiekursen.
+Den här självstudiekursen kräver att du har ett giltigt anslutnings-ID. Om du inte har något giltigt anslutnings-ID väljer du den önskade anslutningen i [källöversikten](../../home.md) och följer instruktionerna innan du provar den här självstudien.
 
 Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../home.md): [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster.
-* [Sandlådor](../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
+* [Sandlådor](../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ta bort en anslutning med API:t. [!DNL Flow Service]
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ta bort en anslutning med API:t [!DNL Flow Service].
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
@@ -68,7 +68,7 @@ GET /connections/{CONNECTION_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{CONNECTION_ID}` | Det unika `id` värdet för anslutningen som du vill hämta. |
+| `{CONNECTION_ID}` | Det unika `id`-värdet för anslutningen som du vill hämta. |
 
 **Begäran**
 
@@ -122,7 +122,7 @@ Ett lyckat svar returnerar aktuell information om anslutningen, inklusive autent
 
 ## Ta bort anslutning
 
-När du har ett befintligt anslutnings-ID utför du en DELETE-begäran till [!DNL Flow Service] API:t.
+När du har ett befintligt anslutnings-ID utför du en DELETE-begäran till [!DNL Flow Service]-API:t.
 
 **API-format**
 
@@ -132,7 +132,7 @@ DELETE /connections/{CONNECTION_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{CONNECTION_ID}` | Det unika `id` värdet för anslutningen som du vill ta bort. |
+| `{CONNECTION_ID}` | Det unika `id`-värdet för anslutningen som du vill ta bort. |
 
 **Begäran**
 
@@ -153,6 +153,6 @@ Du kan bekräfta borttagningen genom att försöka utföra en sökning (GET) på
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du använt API:t för att ta bort befintliga konton. [!DNL Flow Service]
+I den här självstudiekursen har du använt API:t [!DNL Flow Service] för att ta bort befintliga konton.
 
 Anvisningar om hur du utför dessa åtgärder med användargränssnittet finns i självstudiekursen om att [ta bort konton i användargränssnittet](../../tutorials/ui/delete-accounts.md)
