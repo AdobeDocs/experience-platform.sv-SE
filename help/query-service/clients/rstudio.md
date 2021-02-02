@@ -1,23 +1,29 @@
 ---
-keywords: Experience Platform;home;popular topics;Query service;query service;RStudio;rstudio;connect to query service;
+keywords: Experience Platform;home;populära topics;Query service;query service;RStudio;rstudio;connect to query service;
 solution: Experience Platform
 title: Anslut med RStudio
 topic: connect
 description: Det här dokumentet går igenom stegen för att ansluta R Studio med Adobe Experience Platform Query Service.
 translation-type: tm+mt
-source-git-commit: 9fbb6b829cd9ddec30f22b0de66874be7710e465
+source-git-commit: eac93f3465fa6ce4af7a6aa783cf5f8fb4ac9b9b
 workflow-type: tm+mt
-source-wordcount: '223'
-ht-degree: 2%
+source-wordcount: '270'
+ht-degree: 1%
 
 ---
 
 
-# Anslut med [!DNL RStudio]
+# [!DNL RStudio]
 
-Det här dokumentet går igenom stegen för att ansluta R Studio med Adobe Experience Platform [!DNL Query Service].
+Det här dokumentet går igenom stegen för att ansluta [!DNL RStudio] med Adobe Experience Platform [!DNL Query Service].
 
-När du har installerat [!DNL RStudio] måste du först förbereda R-skriptet för att använda [!DNL PostgreSQL] på skärmen *Console*.
+>[!NOTE]
+>
+> Den här handboken förutsätter att du redan har tillgång till [!DNL RStudio] och är bekant med hur du använder den. Mer information om [!DNL RStudio] finns i [officiell [!DNL RStudio] dokumentation](https://rstudio.com/products/rstudio/).
+
+## Ansluter [!DNL RStudio] med [!DNL Query Service]
+
+När du har installerat [!DNL RStudio] måste du först förbereda R-skriptet för att använda [!DNL PostgreSQL] på skärmen **[!DNL Console]**.
 
 ```r
 install.packages("RPostgreSQL")
@@ -46,13 +52,13 @@ con <- dbConnect(drv,
 
 >[!NOTE]
 >
->Mer information om hur du hittar databasnamn, värd, port och inloggningsuppgifter finns på sidan [inloggningsuppgifter på Platform](https://platform.adobe.com/query/configuration). Om du vill hitta dina autentiseringsuppgifter loggar du in på [!DNL Platform], klickar på **[!UICONTROL Queries]** och sedan på **[!UICONTROL Credentials]**.
+>Mer information om hur du hittar databasnamn, värd, port och inloggningsuppgifter finns på sidan [inloggningsuppgifter på Platform](https://platform.adobe.com/query/configuration). Logga in på [!DNL Platform] och välj **[!UICONTROL Queries]** följt av **[!UICONTROL Credentials]** för att hitta dina inloggningsuppgifter.
 
-## Nästa steg
+## Skriver frågor
 
 Nu när du har anslutit till [!DNL Query Service] kan du skriva frågor för att köra och redigera SQL-satser. Du kan till exempel använda `dbGetQuery(con, sql)` för att köra frågor, där `sql` är den SQL-fråga som du vill köra.
 
-Följande fråga använder en datauppsättning som innehåller [ExperienceEvents](../best-practices/experience-event-queries.md) och skapar ett histogram över sidvisningar för en webbplats utifrån enhetens skärmhöjd.
+Följande fråga använder en datauppsättning som innehåller [Experience Events](../best-practices/experience-event-queries.md) och skapar ett histogram med sidvyer för en webbplats utifrån enhetens skärmhöjd.
 
 ```sql
 df_pageviews <- dbGetQuery(con,
@@ -87,4 +93,6 @@ df_pageviews
 7 600-699 3097040
 ```
 
-Mer information om hur du skriver och kör frågor finns i [frågeguiden](../best-practices/writing-queries.md) som körs.
+## Nästa steg
+
+Mer information om hur du skriver och kör frågor finns i guiden [kör frågor](../best-practices/writing-queries.md).
