@@ -1,70 +1,89 @@
 ---
-keywords: Experience Platform;home;popular topics;Microsoft Dynamics;microsoft dynamics;Dynamics;dynamics
+keywords: Experience Platform;hem;populära ämnen;Microsoft Dynamics;microsoft dynamics;Dynamics;dynamics
 solution: Experience Platform
 title: Skapa en Microsoft Dynamics-källkoppling i användargränssnittet
 topic: overview
 type: Tutorial
 description: I den här självstudiekursen beskrivs hur du skapar en Microsoft Dynamics-källkoppling (nedan kallad Dynamics) med hjälp av användargränssnittet för plattformen.
 translation-type: tm+mt
-source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
+source-git-commit: 4241e00fd444969e5a40c8b34dd7786b1a3c6dcb
 workflow-type: tm+mt
-source-wordcount: '431'
+source-wordcount: '563'
 ht-degree: 1%
 
 ---
 
 
-# Skapa en [!DNL Microsoft Dynamics] källanslutning i användargränssnittet
+# Skapa en [!DNL Microsoft Dynamics]-källkoppling i användargränssnittet
 
-Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata i CRM på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Microsoft Dynamics] källkoppling (nedan kallad[!DNL Dynamics]) med hjälp av [!DNL Platform] användargränssnittet.
+I den här självstudiekursen beskrivs hur du skapar en [!DNL Microsoft Dynamics]-källkoppling (kallas nedan &quot;[!DNL Dynamics]&quot;) med hjälp av användargränssnittet för plattformen.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+* [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [[!DNL Real-time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Om du redan har ett giltigt [!DNL Dynamics] konto kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen om hur du [konfigurerar ett dataflöde](../../dataflow/crm.md).
+Om du redan har ett giltigt [!DNL Dynamics]-konto kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen [konfigurera ett dataflöde för en CRM-källa](../../dataflow/crm.md).
 
 ### Samla in nödvändiga inloggningsuppgifter
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `serviceUri` | Tjänst-URL:en för din [!DNL Dynamics] instans. |
-| `username` | Användarnamnet för ditt [!DNL Dynamics] användarkonto. |
-| `password` | Lösenordet för ditt [!DNL Dynamics] konto. |
+| `serviceUri` | Tjänst-URL:en för din [!DNL Dynamics]-instans. |
+| `username` | Användarnamnet för ditt [!DNL Dynamics]-användarkonto. |
+| `password` | Lösenordet för ditt [!DNL Dynamics]-konto. |
+| `servicePrincipalId` | Klient-ID för ditt [!DNL Dynamics]-konto. Detta ID krävs när tjänstens huvudnamn och nyckelbaserad autentisering används. |
+| `servicePrincipalKey` | Tjänstens hemliga huvudnyckel. Denna autentiseringsuppgift krävs när tjänstens huvudnamn och nyckelbaserad autentisering används. |
 
-Mer information om hur du kommer igång finns i [ [!DNL Dynamics] det här dokumentet](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/authenticate-oauth).
+Mer information om hur du kommer igång finns i [det här [!DNL Dynamics] dokumentet](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/authenticate-oauth).
 
-## Anslut ditt [!DNL Dynamics] konto
+## Anslut ditt [!DNL Dynamics]-konto
 
-När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL Dynamics] konto till [!DNL Platform].
+När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL Dynamics]-konto till Platform.
 
-Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt **[!UICONTROL Sources]** arbetsytan. På **[!UICONTROL Catalog]** skärmen visas en mängd olika källor som du kan skapa ett konto med.
+Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan [!UICONTROL Sources]. Skärmen **[!UICONTROL Catalog]** visar en mängd olika källor som du kan skapa ett konto för.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Välj under **[!UICONTROL Databases]** kategorin **[!UICONTROL Dynamics]**. Om det är första gången du använder den här kopplingen väljer du **[!UICONTROL Configure]**. Annars väljer du **[!UICONTROL Add data]** att skapa en ny [!DNL Dynamics] koppling.
+Välj **[!UICONTROL Microsoft Dynamics]** under kategorin **[!UICONTROL CRM]**. Om det här är första gången du använder den här kopplingen väljer du **[!UICONTROL Configure]**. Annars väljer du **[!UICONTROL Add data]** för att skapa en ny [!DNL Dynamics]-koppling.
 
 ![katalog](../../../../images/tutorials/create/ms-dynamics/catalog.png)
 
-Sidan visas **[!UICONTROL Connect to Dynamics]** . På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
+Sidan **[!UICONTROL Connect to Dynamics]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
 ### Nytt konto
 
-Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. Ange ett namn, en valfri beskrivning och dina [!DNL Dynamics] inloggningsuppgifter i det indataformulär som visas. När du är klar väljer du **[!UICONTROL Connect]** och tillåt sedan en tid för att upprätta den nya anslutningen.
+Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. Ange ett namn och en valfri beskrivning för ditt nya [!DNL Dynamics]-konto på det indataformulär som visas.
 
-![koppla](../../../../images/tutorials/create/ms-dynamics/new.png)
+Anslutningen [!DNL Dynamics] ger dig olika autentiseringstyper för åtkomst. Under [!UICONTROL Account authentication] väljer du **[!UICONTROL Basic authentication]** om du vill använda lösenordsbaserade autentiseringsuppgifter.
+
+När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan en tid för det nya kontot att upprätta.
+
+![grundläggande autentisering](../../../../images/tutorials/create/ms-dynamics/basic-auth.png)
+
+Du kan också välja **[!UICONTROL Service-principal and key authentication]** och ansluta ditt [!DNL Dynamics]-konto med en kombination av [!UICONTROL Service principal ID] och [!UICONTROL Service principal key].
+
+>[!IMPORTANT]
+>
+> Grundläggande autentisering i [!DNL Dynamics] kan blockeras med tvåfaktorautentisering, vilket för närvarande inte stöds av plattformen. I det här fallet rekommenderas du att använda nyckelbaserad autentisering för att skapa en källkoppling med [!DNL Dynamics].
+
+![nyckelbaserad autentisering](../../../../images/tutorials/create/ms-dynamics/key-based-auth.png)
+
+| Autentiseringsuppgifter | Beskrivning |
+| ---------- | ----------- |
+| [!UICONTROL Service principal ID] | Klient-ID för ditt [!DNL Dynamics]-konto. Detta ID krävs när tjänstens huvudnamn och nyckelbaserad autentisering används. |
+| [!UICONTROL Service principal key] | Tjänstens hemliga huvudnyckel. Denna autentiseringsuppgift krävs när tjänstens huvudnamn och nyckelbaserad autentisering används. |
 
 ### Befintligt konto
 
-Om du vill ansluta till ett befintligt konto markerar du det [!DNL Dynamics] konto du vill ansluta till och fortsätter sedan **[!UICONTROL Next]** i det övre högra hörnet.
+Om du vill ansluta ett befintligt konto väljer du det [!DNL Dynamics]-konto du vill ansluta till och sedan väljer du **[!UICONTROL Next]** i det övre högra hörnet för att fortsätta.
 
 ![befintlig](../../../../images/tutorials/create/ms-dynamics/existing.png)
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Dynamics] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Platform]](../../dataflow/crm.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt [!DNL Dynamics]-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/crm.md).
