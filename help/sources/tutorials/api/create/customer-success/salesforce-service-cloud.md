@@ -1,15 +1,15 @@
 ---
-keywords: Experience Platform;home;popular topics;ssc;SSC;Salesforce Service Cloud;salesforce service cloud
+keywords: Experience Platform;hem;populära ämnen;ssc;SSC;Salesforce Service Cloud;salesforce service cloud
 solution: Experience Platform
 title: Skapa en Salesforce Service Cloud-koppling med API:t för flödestjänst
 topic: overview
 type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till Salesforce Service Cloud (nedan kallat SSC).
 translation-type: tm+mt
-source-git-commit: 9092c3d672967d3f6f7bf7116c40466a42e6e7b1
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '585'
-ht-degree: 1%
+source-wordcount: '602'
+ht-degree: 0%
 
 ---
 
@@ -51,7 +51,7 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](../../../../../tutorials/authentication.md) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
