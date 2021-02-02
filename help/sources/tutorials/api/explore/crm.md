@@ -1,53 +1,53 @@
 ---
-keywords: Experience Platform;home;popular topics;CRM;crm;crm flow service
+keywords: Experience Platform;hem;populära ämnen;CRM;crm;crm flow service
 solution: Experience Platform
 title: Utforska ett CRM-system med API:t för Flow Service
 topic: overview
 description: I den här självstudien används API:t för Flow Service för att utforska CRM-system.
 translation-type: tm+mt
-source-git-commit: 25f1dfab07d0b9b6c2ce5227b507fc8c8ecf9873
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '583'
+source-wordcount: '597'
 ht-degree: 1%
 
 ---
 
 
-# Utforska ett CRM-system med hjälp av [!DNL Flow Service] API
+# Utforska ett CRM-system med API:t [!DNL Flow Service]
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudien används API:t för att utforska CRM-system [!DNL Flow Service] .
+I den här självstudien används API:t [!DNL Flow Service] för att utforska CRM-system.
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../../home.md): [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster.
-* [Sandlådor](../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Källor](../../../home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
+* [Sandlådor](../../../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till ett CRM-system med hjälp av [!DNL Flow Service] API:t.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till ett CRM-system med API:t [!DNL Flow Service].
 
 ### Hämta en basanslutning
 
-För att kunna utforska ditt CRM-system med hjälp av API: [!DNL Platform] er måste du ha ett giltigt basanslutnings-ID. Om du inte redan har en basanslutning för det CRM-system som du vill arbeta med kan du skapa en genom följande självstudier:
+För att kunna utforska ditt CRM-system med hjälp av [!DNL Platform] API:er måste du ha ett giltigt grundläggande anslutnings-ID. Om du inte redan har en basanslutning för det CRM-system som du vill arbeta med kan du skapa en genom följande självstudier:
 
 * [Microsoft Dynamics](../create/crm/ms-dynamics.md)
 * [Salesforce](../create/crm/salesforce.md)
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Flow Service], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
@@ -82,7 +82,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar är en matris med tabeller från CRM-systemet. Leta reda på tabellen som du vill hämta in [!DNL Platform] och notera dess `path` egenskap, eftersom du måste ange den i nästa steg för att kontrollera dess struktur.
+Ett lyckat svar är en matris med tabeller från CRM-systemet. Leta reda på tabellen som du vill hämta till [!DNL Platform] och notera dess `path`-egenskap, eftersom du måste ange den i nästa steg för att kontrollera dess struktur.
 
 ```json
 [
@@ -138,7 +138,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar strukturen för en tabell. Information om tabellens kolumner finns i elementen i `columns` arrayen.
+Ett lyckat svar returnerar strukturen för en tabell. Information om tabellens kolumner finns i elementen i `columns`-arrayen.
 
 ```json
 {
@@ -173,4 +173,4 @@ Ett lyckat svar returnerar strukturen för en tabell. Information om tabellens k
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du utforskat CRM-systemet, hittat sökvägen till tabellen som du vill hämta [!DNL Platform]och fått information om dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in data från ditt CRM-system och överföra dem till Platform](../collect/crm.md).
+I den här självstudiekursen har du undersökt CRM-systemet, hittat sökvägen till tabellen som du vill hämta till [!DNL Platform] och fått information om dess struktur. Du kan använda den här informationen i nästa självstudiekurs för att [samla in data från ditt CRM-system och hämta dem till plattformen](../collect/crm.md).
