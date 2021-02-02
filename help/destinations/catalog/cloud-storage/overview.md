@@ -1,33 +1,34 @@
 ---
-keywords: cloud storage destination;cloud storage
+keywords: molnlagringsmål;molnlagring
 title: Lagringsmål i molnet
 seo-title: Lagringsmål i molnet
-description: CDP kan leverera era segment som datafiler till Amazon S3, AWS Kinesis, Azure Event Hubs eller SFTP:s molnlagringsplatser i realtid.
-seo-description: CDP kan leverera era segment som datafiler till Amazon S3, AWS Kinesis, Azure Event Hubs eller SFTP:s molnlagringsplatser i realtid.
+description: Plattformen kan leverera dina segment som datafiler till dina lagringsplatser i Amazon S3, AWS Kinesis, Azure Event Hubs eller SFTP.
+seo-description: Plattformen kan leverera dina segment som datafiler till dina lagringsplatser i Amazon S3, AWS Kinesis, Azure Event Hubs eller SFTP.
 translation-type: tm+mt
-source-git-commit: 0bb1622895b1e0f97fc47b5c61d456bc369746c8
+source-git-commit: b348a5493b13112291dd8e9234d457ff8c694147
 workflow-type: tm+mt
-source-wordcount: '175'
+source-wordcount: '182'
 ht-degree: 0%
 
 ---
 
 
-# Lagringsmål i molnet {#cloud-storage-destinations}
+# Lagringsmål för molnet {#cloud-storage-destinations}
 
-CDP kan leverera era segment som datafiler till era molnlagringsplatser i realtid. Detta gör att du kan skicka målgrupper och deras profilattribut till dina interna system via CSV eller tabbavgränsade filer för [!DNL Amazon S3] och SFTP. För [!DNL AWS Kinesis] och [!DNL Azure Event Hubs] för destinationer direktuppspelas data från Experience Platform i JSON-format.
+Adobe Experience Platform kan leverera dina segment som datafiler till dina molnlagringsplatser. Detta gör att du kan skicka målgrupper och deras profilattribut till dina interna system via CSV eller tabbavgränsade filer för [!DNL Amazon S3] och SFTP. För [!DNL AWS Kinesis]- och [!DNL Azure Event Hubs]-mål direktuppspelas data från Experience Platform i JSON-format.
 
-![Lagringsmål för Adobe Cloud](../../assets/catalog/cloud-storage/cloud-storage-destinations.png)
+![Adobe molnlagringsdestinationer](../../assets/catalog/cloud-storage/cloud-storage-destinations.png)
 
 Mer information om hur du ansluter till molnlagringsmål finns i [Arbetsflöde för att skapa molnlagringsmål](./workflow.md).
 
 ## Dataexporttyp
 
-**Profilbaserad export** - du exporterar information om individerna i målgruppen. Den här informationen behövs för personalisering och kan innehålla attribut, händelser, segmentmedlemskap osv.
+**Profilbaserad export**  - du exporterar information om individerna i målgruppen. Den här informationen behövs för personalisering och kan innehålla attribut, händelser, segmentmedlemskap osv.
 
-## Tillgängliga molnlagringsmål
+## Tillgängliga molnlagringsdestinationer
 
 - [Amazon S3-mål](./amazon-s3.md)
+- [Azure Blob-mål](./azure-blob.md)
 - [SFTP-mål](./sftp.md)
 
 ## Tillgängliga direktuppspelningsmål för molnlagring
