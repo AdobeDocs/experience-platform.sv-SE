@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;streaming;streaming ingestion;streaming ingestion validation;validation;Streaming ingestion validation;validate;Synchronous validation;synchronous validation;Asynchronous validation;asynchronous validation;
+keywords: Experience Platform;hem;populära ämnen;direktuppspelning;direktuppspelningsuppläsning;validering;direktuppspelningsvalidering;validering;synkron validering;synkron validering;asynkron validering;asynkron validering;
 solution: Experience Platform
 title: Direktinmatningsvalidering
 topic: tutorial
 type: Tutorial
 description: Med direktuppspelningsintag kan du överföra data till Adobe Experience Platform med direktuppspelningsslutpunkter i realtid. API:er för direktuppspelning stöder två valideringslägen - synkron och asynkron.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '843'
+source-wordcount: '875'
 ht-degree: 2%
 
 ---
@@ -22,28 +22,28 @@ Med direktuppspelningsintag kan du överföra data till Adobe Experience Platfor
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
-- [[!DNL Streaming Ingestion]](../streaming-ingestion/overview.md): En av metoderna som data kan skickas till [!DNL Experience Platform].
+- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverket som  [!DNL Experience Platform] organiserar kundupplevelsedata.
+- [[!DNL Streaming Ingestion]](../streaming-ingestion/overview.md): En av metoderna som data kan skickas till  [!DNL Experience Platform].
 
 ### Läser exempel-API-anrop
 
-I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [om hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i [!DNL Experience Platform] felsökningsguiden.
+I den här självstudiekursen finns exempel-API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Ett exempel på JSON som returneras i API-svar finns också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet [hur du läser exempel-API-anrop](../../landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för [!DNL Experience Platform].
 
 ### Samla in värden för obligatoriska rubriker
 
-För att kunna ringa anrop till API: [!DNL Platform] er måste du först slutföra [autentiseringssjälvstudiekursen](../../tutorials/authentication.md). När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop, vilket visas nedan:
+För att kunna anropa [!DNL Platform] API:er måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Schema Registry], isoleras till specifika virtuella sandlådor. Alla förfrågningar till API: [!DNL Platform] er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+Alla resurser i [!DNL Experience Platform], inklusive de som tillhör [!DNL Schema Registry], isoleras till specifika virtuella sandlådor. Alla begäranden till [!DNL Platform] API:er kräver en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->Mer information om sandlådor i [!DNL Platform]finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
+>Mer information om sandlådor i [!DNL Platform] finns i översiktsdokumentationen för [sandlådan](../../sandboxes/home.md).
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
@@ -138,11 +138,11 @@ När synkron validering är aktiverat innehåller ett lyckat svar alla påträff
 }
 ```
 
-Svaret ovan visar hur många schemaöverträdelser som har påträffats och vilka dessa överträdelser var. Det här svaret anger till exempel att nycklarna `workEmail` och `person` inte definierades i schemat och därför inte är tillåtna. Det flaggar också värdet för `_id` som felaktigt eftersom schemat förväntade ett `string`värde, men ett värde `long` infogades i stället. Observera att när fem fel har påträffats kommer valideringstjänsten att **sluta** bearbeta meddelandet. Andra meddelanden kommer dock att fortsätta att analyseras.
+Svaret ovan visar hur många schemaöverträdelser som har påträffats och vilka dessa överträdelser var. Det här svaret anger till exempel att nycklarna `workEmail` och `person` inte har definierats i schemat och därför inte är tillåtna. Värdet för `_id` flaggas också som felaktigt eftersom schemat förväntade ett `string`, men ett `long` infogades i stället. Observera att när fem fel har påträffats kommer valideringstjänsten **stoppa**-bearbetningen av meddelandet. Andra meddelanden kommer dock att fortsätta att analyseras.
 
 ## Asynkron validering
 
-Asynkron validering är en valideringsmetod som inte ger omedelbar feedback. I stället skickas data till en misslyckad batch [!DNL Data Lake] för att förhindra dataförlust. Data som inte fungerar kan hämtas senare för ytterligare analys och repriser. Denna metod bör användas i produktionen. Om inget annat anges används direktuppspelningsuppläsning i asynkront valideringsläge.
+Asynkron validering är en valideringsmetod som inte ger omedelbar feedback. I stället skickas data till en misslyckad batch i [!DNL Data Lake] för att förhindra dataförlust. Data som inte fungerar kan hämtas senare för ytterligare analys och repriser. Denna metod bör användas i produktionen. Om inget annat anges används direktuppspelningsuppläsning i asynkront valideringsläge.
 
 **API-format**
 
@@ -199,7 +199,7 @@ Det här avsnittet innehåller information om vad de olika statuskoderna innebä
 | ----------- | ------------- |
 | 200 | Lyckades. För synkron validering innebär det att valideringskontrollerna har slutförts. För asynkron validering innebär det att meddelandet endast har tagits emot. Användarna kan ta reda på den slutliga meddelandestatusen genom att observera datauppsättningen. |
 | 400 | Fel. Det är något fel på din begäran. Ett felmeddelande med mer information tas emot från Streaming Validation Services. |
-| 401 | Fel. Din begäran är inte auktoriserad - du måste begära med en innehavartoken. Mer information om hur du begär åtkomst finns i den här [självstudiekursen](../../tutorials/authentication.md) eller i det här [blogginlägget](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f). |
+| 401 | Fel. Din begäran är inte auktoriserad - du måste begära med en innehavartoken. Mer information om hur du begär åtkomst finns i denna [självstudiekurs](https://www.adobe.com/go/platform-api-authentication-en) eller i detta [blogginlägg](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f). |
 | 500 | Fel. Det finns ett internt systemfel. |
 | 501 | Fel. Det innebär att synkron validering **inte** stöds för den här platsen. |
 | 503 | Fel. Tjänsten är inte tillgänglig just nu. Kunderna bör försöka igen minst tre gånger med en exponentiell strategi för bakåtjustering. |
