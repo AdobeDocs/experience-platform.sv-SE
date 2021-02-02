@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;query service;Query service;generate datasets;generate dataset;create dataset;
+keywords: Experience Platform;hem;populära ämnen;frågetjänst;frågetjänst;generera datauppsättningar;generera datauppsättning;skapa datauppsättning;
 solution: Experience Platform
 title: Generera datauppsättningar från frågeresultat
 topic: queries
@@ -8,7 +8,7 @@ description: 'Med frågetjänsten kan du skapa datauppsättningar från använda
 translation-type: tm+mt
 source-git-commit: 0ba4e26927cdc96855f35d72a8a6de55f4a34bfa
 workflow-type: tm+mt
-source-wordcount: '301'
+source-wordcount: '316'
 ht-degree: 0%
 
 ---
