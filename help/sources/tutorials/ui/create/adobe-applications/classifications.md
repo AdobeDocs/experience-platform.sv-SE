@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics; analytics;classifications
+keywords: Experience Platform;hemmabruk;populära ämnen; analys;klassificeringar
 description: I den här självstudiekursen beskrivs hur du skapar en Adobe Analytics Classifications Data-koppling i användargränssnittet för att överföra klassificeringsdata till Adobe Experience Platform.
 solution: Experience Platform
 title: Skapa en Adobe Analytics Classifications-dataanslutning i användargränssnittet
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
+source-git-commit: 2dbd92efbd992b70f4f750b09e9d2e0626e71315
 workflow-type: tm+mt
-source-wordcount: '625'
+source-wordcount: '630'
 ht-degree: 0%
 
 ---
@@ -26,53 +26,53 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 * [[!DNL Real-time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [[!DNL Sandboxes]](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-Data Connector för Analytics-klassificeringar kräver att dina data har migrerats till den nya [!DNL Classifications] infrastrukturen i Adobe Analytics innan de används. Kontakta Adobe Customer Success Manager för att bekräfta migreringsstatusen för dina data.
+Data Connector för Analytics-klassificeringar kräver att dina data har migrerats till den nya [!DNL Classifications]-infrastrukturen i Adobe Analytics innan de används. Kontakta Adobe Customer Success Manager för att bekräfta migreringsstatusen för dina data.
 
 ## Välj klassificeringar
 
-Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt källarbetsytan. På **[!UICONTROL Catalog]** skärmen visas tillgängliga källor för att skapa inkommande anslutningar. Varje källkort visar ett alternativ för att antingen konfigurera ett nytt konto eller lägga till data till ett befintligt konto.
+Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt källarbetsytan. Skärmen **[!UICONTROL Catalog]** visar tillgängliga källor för att skapa inkommande anslutningar med. Varje källkort visar ett alternativ för att antingen konfigurera ett nytt konto eller lägga till data till ett befintligt konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under **[!UICONTROL Adobe applications]** kategorin markerar du **[!UICONTROL Adobe Analytics]** kortet och väljer sedan **[!UICONTROL Add data]** att börja arbeta med Analytics-klassificeringsdata.
+Välj **[!UICONTROL Adobe Analytics]**-kortet under kategorin **[!UICONTROL Adobe applications]** och välj sedan **[!UICONTROL Add data]** för att börja arbeta med Analytics Classifications Data.
 
 ![](../../../../images/tutorials/create/classifications/catalog.png)
 
-Steget **[!UICONTROL Analytics source add data]** visas. Välj **[!UICONTROL Classifications]** i den övre rubriken om du vill se en lista över [!DNL Classifications] datauppsättningar, inklusive information om deras mått-ID, rapportsvitens namn och rapportsvitens-ID.
+**[!UICONTROL Analytics source add data]**-steget visas. Välj **[!UICONTROL Classifications]** i den översta rubriken om du vill visa en lista över [!DNL Classifications]-datauppsättningar, inklusive information om deras dimension-ID, rapportsvitnamn och rapportsvitens-ID.
 
-Varje sida visar upp till tio olika [!DNL Classifications] datauppsättningar som du kan välja mellan. Välj **[!UICONTROL Next]** längst ned på sidan om du vill bläddra efter fler alternativ. Panelen till höger visar det totala antalet datauppsättningar som du har valt samt deras namn. [!DNL Classifications] På den här panelen kan du även ta bort alla datauppsättningar som du har valt av misstag eller rensa alla markeringar med en åtgärd. [!DNL Classifications]
+Varje sida visar upp till tio olika [!DNL Classifications]-datauppsättningar som du kan välja mellan. Välj **[!UICONTROL Next]** längst ned på sidan om du vill bläddra efter fler alternativ. Panelen till höger visar det totala antalet [!DNL Classifications] datamängder som du har valt samt deras namn. På den här panelen kan du även ta bort alla [!DNL Classifications]-datauppsättningar som du har valt av misstag eller rensa alla markeringar med en åtgärd.
 
-Du kan välja upp till 30 olika [!DNL Classifications] datauppsättningar att hämta till [!DNL Platform].
+Du kan välja upp till 30 olika [!DNL Classifications]-datauppsättningar att hämta till [!DNL Platform].
 
-När du har valt dina [!DNL Classifications] datauppsättningar väljer du **[!UICONTROL Next]** längst upp till höger på sidan.
+När du har valt dina [!DNL Classifications]-datauppsättningar väljer du **[!UICONTROL Next]** längst upp till höger på sidan.
 
 ![](../../../../images/tutorials/create/classifications/add-data.png)
 
 ## Granska dina klassificeringar
 
-Steget visas så att du kan granska de markerade datauppsättningarna innan du skapar dem **[!UICONTROL Review]** [!DNL Classifications] . Informationen är grupperad i följande kategorier:
+Steget **[!UICONTROL Review]** visas så att du kan granska dina valda [!DNL Classifications]-datauppsättningar innan de skapas. Informationen är grupperad i följande kategorier:
 
 * **[!UICONTROL Connection]**: Visar källplattformen och anslutningsstatus.
-* **[!UICONTROL Data type]**: Visar antalet markerade [!DNL Classifications].
-* **[!UICONTROL Scheduling]**: Visar synkroniseringsfrekvensen för [!DNL Classifications] data.
+* **[!UICONTROL Data type]**: Visar antalet markerade  [!DNL Classifications].
+* **[!UICONTROL Scheduling]**: Visar synkroniseringsfrekvensen för  [!DNL Classifications] data.
 
-När du har granskat dataflödet kan du klicka **[!UICONTROL Finish]** och vänta tills dataflödet har skapats.
+När du har granskat dataflödet klickar du på **[!UICONTROL Finish]** och ger dig tid att skapa dataflödet.
 
 ![](../../../../images/tutorials/create/classifications/review.png)
 
 ## Övervaka klassificeringens dataflöde
 
-När dataflödet har skapats kan du övervaka de data som hämtas genom det. På **[!UICONTROL Catalog]** skärmen väljer du **[!UICONTROL Dataflows]** för att visa en lista över etablerade flöden som är kopplade till ditt [!DNL Classifications] konto.
+När dataflödet har skapats kan du övervaka de data som hämtas genom det. På skärmen **[!UICONTROL Catalog]** väljer du **[!UICONTROL Dataflows]** för att visa en lista över etablerade flöden som är kopplade till ditt [!DNL Classifications]-konto.
 
 ![](../../../../images/tutorials/create/classifications/dataflows.png)
 
-Skärmen visas **[!UICONTROL Dataflows]** . På den här sidan finns en lista med dataflöden, inklusive information om namn, källdata och körningsstatus för dataflöde. Till höger finns den panel **[!UICONTROL Properties]** som innehåller metadata om [!DNL Classifications] dataflödet.
+Skärmen **[!UICONTROL Dataflows]** visas. På den här sidan finns en lista med dataflöden, inklusive information om namn, källdata och körningsstatus för dataflöde. Till höger finns panelen **[!UICONTROL Properties]** som innehåller metadata om [!DNL Classifications]-dataflödet.
 
-Välj den **[!UICONTROL Target dataset]** du vill komma åt.
+Markera **[!UICONTROL Target dataset]** som du vill komma åt.
 
 ![](../../../../images/tutorials/create/classifications/list-of-dataflows.png)
 
-På **[!UICONTROL Dataset activity]** sidan visas information om den valda måldatauppsättningen, inklusive information om dess batchstatus, datauppsättnings-ID och schema.
+På sidan **[!UICONTROL Dataset activity]** visas information om den valda måldatauppsättningen, inklusive information om dess batchstatus, datauppsättnings-ID och schema.
 
 >[!IMPORTANT]
 >
@@ -83,8 +83,8 @@ På **[!UICONTROL Dataset activity]** sidan visas information om den valda måld
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en dataanslutning för Analytics-klassificeringar som samlar in [!DNL Classifications] data [!DNL Platform]. Mer information om [!DNL Analytics] och [!DNL Classifications] data finns i följande dokument:
+Genom att följa den här självstudiekursen har du skapat en dataanslutning för Analytics-klassificeringar som hämtar [!DNL Classifications]-data till [!DNL Platform]. Mer information om [!DNL Analytics]- och [!DNL Classifications]-data finns i följande dokument:
 
 * [Översikt över Analytics Data Connector](../../../../connectors/adobe-applications/analytics.md)
 * [Skapa en Analytics Data Connector i användargränssnittet](./analytics.md)
-* [Om klassificeringar](https://docs.adobe.com/content/help/en/analytics/components/classifications/c-classifications.html#)
+* [Om klassificeringar](https://experienceleague.adobe.com/docs/analytics/components/classifications/c-classifications.html)
