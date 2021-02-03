@@ -2,11 +2,11 @@
 keywords: Experience Platform;hem;populära ämnen;ui;UI;XDM;XDM system;experience data model;Experience data model;experience data model;data model;data model;explore;class;mixin;data type;schema;
 solution: Experience Platform
 title: Utforska XDM-resurser i användargränssnittet
-description: Lär dig utforska befintliga scheman, klasser, mixins och datatyper i användargränssnittet i Experience Platform.
+description: Lär dig hur du utforskar befintliga scheman, klasser, blandningar och datatyper i användargränssnittet i Experience Platform.
 topic: tutorial
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 912d02477febdafa4a53aebc83bc3a93b0f84f09
+source-git-commit: 6246e623a711bff06eefe5d5954719d69df921c3
 workflow-type: tm+mt
 source-wordcount: '912'
 ht-degree: 0%
