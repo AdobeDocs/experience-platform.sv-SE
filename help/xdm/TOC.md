@@ -5,10 +5,10 @@ user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: XDM-guide (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och mixins för att standardisera upplevelsedata.
 translation-type: tm+mt
-source-git-commit: 2c0dc4d54dcd1dcd17ffec70dbe3b16bb45ee141
+source-git-commit: cbdeb7529d27cb8b1cacc4a64b90637bb80f514d
 workflow-type: tm+mt
-source-wordcount: '216'
-ht-degree: 6%
+source-wordcount: '224'
+ht-degree: 7%
 
 ---
 
@@ -36,6 +36,7 @@ ht-degree: 6%
       * [Miljöinformation](./mixins/event/environment-details.md)
    * [Uppdateringar av blandade namn](./mixins/name-updates.md)
 * Datatyper {#data-types}
+   * [Program](./data-types/application.md)
    * [Beacon](./data-types/beacon.md)
    * [Webbläsarinformation](./data-types/browser-details.md)
    * [Innehåll och inställningar](./data-types/consents.md)
@@ -48,6 +49,7 @@ ht-degree: 6%
    * [Info om geo-interaktion](./data-types/geo-interaction-details.md)
    * [Geo Shape](./data-types/geo-shape.md)
    * [Identitet](./data-types/identity.md)
+   * [Mät](./data-types/measure.md)
    * [Person](./data-types/person.md)
    * [Personnamn](./data-types/person-name.md)
    * [Telefonnummer](./data-types/phone-number.md)
@@ -55,7 +57,10 @@ ht-degree: 6%
    * [POI-information](./data-types/poi-details.md)
    * [POI-interaktion](./data-types/poi-interaction.md)
    * [Postadress](./data-types/postal-address.md)
+   * [Sökning](./data-types/search.md)
    * [Prenumeration](./data-types/subscription.md)
+   * [Interaktion via webben](./data-types/web-interactions.md)
+   * [Information om webbsidor](./data-types/webpage-details.md)
 * [!UICONTROL Schemas] UI  {#ui}
    * [Översikt](./ui/overview.md)
    * [Utforska XDM-resurser](./ui/explore.md)
