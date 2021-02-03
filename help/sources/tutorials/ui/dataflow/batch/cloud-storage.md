@@ -6,9 +6,9 @@ topic: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt molnlagringskonto.
 translation-type: tm+mt
-source-git-commit: 4e85dc702cda5c6c495a6f7fb70453b7897baa36
+source-git-commit: 2d1b49d774d04e7befbcc1c9e5417ee82323634a
 workflow-type: tm+mt
-source-wordcount: '1810'
+source-wordcount: '1831'
 ht-degree: 0%
 
 ---
@@ -108,7 +108,7 @@ Beroende på dina behov kan du välja att mappa fält direkt eller använda mapp
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/mapping.png)
 
-För JSON-filer kan du, förutom att direkt mappa fält till andra fält, direkt mappa objekt till andra objekt och arrayer till andra arrayer.
+För JSON-filer kan du, förutom att direkt mappa fält till andra fält, direkt mappa objekt till andra objekt och arrayer till andra arrayer. Du kan också förhandsgranska och mappa komplexa datatyper som arrayer i JSON-filer med hjälp av en koppling för molnlagringskälla.
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/source-field-json.png)
 
