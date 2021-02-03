@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från en annonsapplikation från tredje part och hämta dem till plattformen via källanslutningar och API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 48a5dcfe5679e360da1e33f6021dc1229b92948f
 workflow-type: tm+mt
 source-wordcount: '1513'
 ht-degree: 0%
@@ -85,15 +85,49 @@ curl -X POST \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
-        -d '{
+    -d '{
         "name": "Google AdWords source connection",
-        "connectionId": "2484f2df-c057-4ab5-84f2-dfc0577ab592",
+        "baseConnectionId": "2484f2df-c057-4ab5-84f2-dfc0577ab592",
         "description": "Google AdWords source connection",
         "data": {
             "format": "tabular",
         },
         "params": {
-            "path": "v201809.AD_PERFORMANCE_REPORT"
+            "tableName": "v201809.AD_PERFORMANCE_REPORT",
+            "columns": [
+                {
+                    "name": "CallOnlyPhoneNumber",
+                    "type": "string",
+                    "xdm": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "AdGroupId",
+                    "type": "long",
+                    "xdm": {
+                        "type": "integer",
+                        "minimum": -9007199254740992,
+                        "maximum": 9007199254740991
+                    }
+                },
+                {
+                    "name": "AdGroupName",
+                    "type": "string",
+                    "xdm": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "Date",
+                    "type": "string",
+                    "meta:xdmType": "date-time",
+                    "xdm": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            ]
         },
         "connectionSpec": {
             "id": "d771e9c1-4f26-40dc-8617-ce58c4b53702",
@@ -104,7 +138,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `connectionId` | Det unika anslutnings-ID:t för det annonsprogram som du använder. |
+| `baseConnectionId` | Det unika anslutnings-ID:t för det annonsprogram som du använder. |
 | `params.path` | Källfilens sökväg. |
 | `connectionSpec.id` | Det anslutnings-spec-ID som är kopplat till ditt annonsprogram. |
 
