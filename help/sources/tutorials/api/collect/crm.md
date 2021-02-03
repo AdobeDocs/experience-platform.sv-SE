@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett CRM-system från tredje part och föra in dem på plattformen via källanslutningar och API:er.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 48a5dcfe5679e360da1e33f6021dc1229b92948f
 workflow-type: tm+mt
 source-wordcount: '1552'
 ht-degree: 0%
@@ -87,13 +87,36 @@ curl -X POST \
     -H 'Content-Type: application/json' \
     -d '{
         "name": "Salesforce source connection",
-        "connectionId": "4cb0c374-d3bb-4557-b139-5712880adc55",
+        "baseConnectionId": "4cb0c374-d3bb-4557-b139-5712880adc55",
         "description": "Salesforce source connection",
         "data": {
             "format": "tabular",
         },
         "params": {
-            "path": "Accounts"
+            "tableName": "Accounts",
+            "columns": [
+                {
+                    "name": "first_name",
+                    "type": "string",
+                    "xdm": {
+                        "type": "String"
+                    }
+                },
+                {
+                    "name": "last_name",
+                    "type": "string",
+                    "xdm": {
+                        "type": "String"
+                    }
+                },
+                {
+                    "name": "email",
+                    "type": "string",
+                    "xdm": {
+                        "type": "String"
+                    }
+                }
+            ]
         },
         "connectionSpec": {
             "id": "ccfc0fee1-7dc0-40ef-b73e-d8b134c436f5",
@@ -104,7 +127,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `connectionId` | Det unika anslutnings-ID:t för det CRM-system från tredje part som du använder. |
+| `baseConnectionId` | Det unika anslutnings-ID:t för det CRM-system från tredje part som du använder. |
 | `params.path` | Källfilens sökväg. |
 | `connectionSpec.id` | Det anslutningsspec-ID som är kopplat till ditt specifika CRM-system från tredje part. I [bilagan](#appendix) finns en lista över anslutningsspecifikations-ID:n. |
 
