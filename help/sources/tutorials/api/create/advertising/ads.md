@@ -6,9 +6,9 @@ topic: overview
 type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till Google AdWords.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 48a5dcfe5679e360da1e33f6021dc1229b92948f
 workflow-type: tm+mt
-source-wordcount: '636'
+source-wordcount: '622'
 ht-degree: 0%
 
 ---
@@ -39,12 +39,12 @@ För att [!DNL Flow Service] ska kunna ansluta till AdWords måste du ange värd
 
 | **Autentiseringsuppgifter** | **Beskrivning** |
 | -------------- | --------------- |
-| Kund-ID | Kund-ID för AdWords-kontot. |
-| Utvecklartoken | Utvecklartoken som är associerad med hanterarkontot. |
-| Uppdatera token | Uppdateringstoken som hämtats från [!DNL Google] för auktorisering av åtkomst till AdWords. |
-| Klient-ID | Klient-ID:t för [!DNL Google]-programmet som används för att hämta uppdateringstoken. |
-| Klienthemlighet | Klienthemligheten för [!DNL Google]-programmet som används för att hämta uppdateringstoken. |
-| ID för anslutningsspecifikation | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikations-ID för [!DNL Google AdWords] är: `d771e9c1-4f26-40dc-8617-ce58c4b53702` |
+| `clientCustomerId` | Kund-ID för AdWords-kontot. |
+| `developerToken` | Utvecklartoken som är associerad med hanterarkontot. |
+| `refreshToken` | Uppdateringstoken som hämtats från [!DNL Google] för auktorisering av åtkomst till AdWords. |
+| `clientId` | Klient-ID:t för [!DNL Google]-programmet som används för att hämta uppdateringstoken. |
+| `clientSecret` | Klienthemligheten för [!DNL Google]-programmet som används för att hämta uppdateringstoken. |
+| `connectionSpec` | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikations-ID för [!DNL Google AdWords] är: `d771e9c1-4f26-40dc-8617-ce58c4b53702` |
 
 Mer information om dessa värden finns i det här [Google AdWords-dokumentet](https://developers.google.com/adwords/api/docs/guides/authentication).
 
