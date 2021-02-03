@@ -5,7 +5,7 @@ title: Skapa och redigera scheman i användargränssnittet
 description: Lär dig grunderna i hur du skapar och redigerar scheman i användargränssnittet i Experience Platform.
 topic: user guide
 translation-type: tm+mt
-source-git-commit: 3aa838509e4e24c57508e7411b0ffcf135fbcf04
+source-git-commit: e9df977272524b6aba516982e93f3128d1b9278b
 workflow-type: tm+mt
 source-wordcount: '1133'
 ht-degree: 0%
@@ -81,7 +81,7 @@ Markera kryssrutan bredvid namnet på den blandning som du vill lägga till i sc
 >
 >För alla listade blandningar kan du hovra eller fokusera på informationsikonen (![](../../images/ui/resources/schemas/info-icon.png)) för att visa en kort beskrivning av den typ av data som blandningen hämtar. Du kan också markera förhandsvisningsikonen (![](../../images/ui/resources/schemas/preview-icon.png)) för att visa strukturen för de fält som blandningen tillhandahåller innan du bestämmer dig för att lägga till den i schemat.
 
-När du har valt mixin väljer du **[!UICONTROL Add mixin]** för att lägga till dem i schemat.
+När du har valt dina mixiner väljer du **[!UICONTROL Add mixin]** för att lägga till dem i schemat.
 
 ![](../../images/ui/resources/schemas/add-mixin-finish.png)
 
