@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett automatiserat marknadsföringssystem och föra in dem på plattformen via källanslutningar och API:er.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: a9a4bbbd7128043596ebab45d12bdd6954554537
 workflow-type: tm+mt
 source-wordcount: '1537'
 ht-degree: 0%
@@ -87,7 +87,7 @@ curl -X POST \
     -H 'Content-Type: application/json' \
     -d '{
         "name": "HubSpot source connection",
-        "connectionId": "c6d4ee17-6752-4e83-94ee-1767522e83fa",
+        "baseConnectionId": "c6d4ee17-6752-4e83-94ee-1767522e83fa",
         "description": "HubSpot source connection",
         "data": {
             "format": "tabular",
@@ -104,7 +104,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `connectionId` | Unikt anslutnings-ID för det marknadsföringssystem från tredje part som du använder. |
+| `baseConnectionId` | Unikt anslutnings-ID för det marknadsföringssystem från tredje part som du använder. |
 | `params.path` | Sökvägen till källfilen som du försöker komma åt. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID för ert automatiseringssystem för marknadsföring. |
 
