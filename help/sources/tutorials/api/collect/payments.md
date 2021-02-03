@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett betalningsprogram och att hämta dem till plattformen via källanslutningar och API:er.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 9b4965e4256967961a92c544bbe355eae768e3dd
 workflow-type: tm+mt
 source-wordcount: '1560'
 ht-degree: 0%
@@ -87,14 +87,46 @@ curl -X POST \
     -H 'Content-Type: application/json' \
     -d '{
         "name": "PayPal source connection",
-        "connectionId": "24151d58-ffa7-4960-951d-58ffa7396097",
+        "baseConnectionId": "24151d58-ffa7-4960-951d-58ffa7396097",
         "description": "PayPal source connection",
         "data": {
             "format": "tabular",
             }
         },
         "params": {
-            "path": "PayPal.Catalog_Products"
+            "tableName": "PayPal.Catalog_Products",
+            "columns": [
+                {
+                    "name": "Product_Id",
+                    "type": "string",
+                    "xdm": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "Product_Name",
+                    "type": "string",
+                    "xdm": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "Description",
+                    "type": "string",
+                    "xdm": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "Create_Time",
+                    "type": "string",
+                    "meta:xdmType": "date-time",
+                    "xdm": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            ]
         },
         "connectionSpec": {
             "id": "221c7626-58f6-4eec-8ee2-042b0226f03b",
@@ -105,7 +137,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `connectionId` | Det unika anslutnings-ID:t för det tredjepartsbetalningsprogram du använder. |
+| `baseConnectionId` | Det unika anslutnings-ID:t för det tredjepartsbetalningsprogram du använder. |
 | `params.path` | Källfilens sökväg. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID för ditt betalningsprogram. |
 
