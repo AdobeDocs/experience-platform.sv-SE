@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett molnlagringsutrymme från tredje part och föra in dem på plattformen via källanslutningar och API:er.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 64627592b873a48b9cb58ef911e049869a2c21fb
 workflow-type: tm+mt
 source-wordcount: '1621'
 ht-degree: 0%
@@ -90,7 +90,7 @@ curl -X POST \
     -H 'Content-Type: application/json' \
     -d '{
         "name": "Cloud storage source connector",
-        "connectionId": "9e2541a0-b143-4d23-a541-a0b143dd2301",
+        "baseConnectionId": "9e2541a0-b143-4d23-a541-a0b143dd2301",
         "description": "Cloud storage source connector",
         "data": {
             "format": "delimited",
@@ -109,7 +109,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `connectionId` | Det unika anslutnings-ID:t för det molnlagringssystem från tredje part som du använder. |
+| `baseConnectionId` | Det unika anslutnings-ID:t för det molnlagringssystem från tredje part som du använder. |
 | `data.format` | Ett uppräkningsvärde som definierar dataformatsattributet. |
 | `data.columnDelimiter` | Du kan använda valfri kolumnavgränsare för tecken för att samla in platta filer. Den här egenskapen krävs bara vid import av CSV- eller TSV-filer. |
 | `params.path` | Sökvägen till källfilen som du försöker komma åt. |
