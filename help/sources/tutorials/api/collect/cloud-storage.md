@@ -6,9 +6,9 @@ topic: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett molnlagringsutrymme från tredje part och föra in dem på plattformen via källanslutningar och API:er.
 translation-type: tm+mt
-source-git-commit: 64627592b873a48b9cb58ef911e049869a2c21fb
+source-git-commit: c168a1b597a1ac2d85a8b896f3b6a8d213fcb1ae
 workflow-type: tm+mt
-source-wordcount: '1621'
+source-wordcount: '1639'
 ht-degree: 0%
 
 ---
@@ -341,6 +341,10 @@ Ett lyckat svar returnerar den nya målanslutningens unika identifierare (`id`).
 ## Skapa en mappning {#mapping}
 
 För att källdata ska kunna hämtas till en måldatamängd måste de först mappas till målschemat som måldatamängden följer. Detta uppnås genom att utföra en begäran om POST till konverteringstjänsten med datamappningar definierade i nyttolasten för begäran.
+
+>[!TIP]
+>
+>Du kan mappa komplexa datatyper som arrayer i JSON-filer med hjälp av en anslutning till en molnlagringskälla.
 
 **API-format**
 
