@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till Google BigQuery (nedan kallat BigQuery).
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: ddf5be2f30bc347a881bdcbc6b880f087c03e263
 workflow-type: tm+mt
 source-wordcount: '624'
 ht-degree: 0%
@@ -122,8 +122,8 @@ Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inkl
 
 ```json
 {
-    "id": "26ced882-729b-470f-8ed8-82729b570f03",
-    "etag": "\"6507cfd8-0000-0200-0000-5e18fc600000\""
+    "id": "6990abad-977d-41b9-a85d-17ea8cf1c0e4",
+    "etag": "\"ca00acbf-0000-0200-0000-60149e1e0000\""
 }
 ```
 
