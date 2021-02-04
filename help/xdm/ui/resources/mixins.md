@@ -5,9 +5,9 @@ title: Skapa och redigera blandningar i användargränssnittet
 description: Lär dig hur du skapar och redigerar blandningar i användargränssnittet i Experience Platform.
 topic: user guide
 translation-type: tm+mt
-source-git-commit: 2e20403122e65d28f04114af9b7e8d41874f76e2
+source-git-commit: cf74c7922271035474c7f10534692983add48616
 workflow-type: tm+mt
-source-wordcount: '653'
+source-wordcount: '689'
 ht-degree: 0%
 
 ---
@@ -45,9 +45,9 @@ En dialogruta med en lista över befintliga mixar för din organisation visas. V
 
 >[!NOTE]
 >
->Endast egna blandningar som definierats av din organisation kan redigeras.
+>Endast egna blandningar som definierats av din organisation kan redigeras och anpassas helt. För kärnblandningar som definieras av Adobe kan bara visningsnamnen för deras fält redigeras inom kontexten för enskilda scheman. Mer information finns i avsnittet [redigera visningsnamn för schemafält](./schemas.md#display-names).
 >
->När en blandning har sparats och använts i ett schema för dataintag kan dessutom endast additiva ändringar göras i blandningen därefter. Mer information finns i [reglerna för schemautveckling](../../schema/composition.md#evolution).
+>När en anpassad blandning har sparats och använts i ett schema för dataintag, kan endast additiva ändringar göras i blandningen därefter. Mer information finns i [reglerna för schemautveckling](../../schema/composition.md#evolution).
 
 Om du vill redigera en befintlig blandning måste du först öppna ett schema som använder blandningen i [!DNL Schema Editor]. Du kan [välja ett befintligt schema att redigera](./schemas.md#edit), eller [skapa ett nytt schema](./schemas.md#create) och lägga till den aktuella mixen.
 
