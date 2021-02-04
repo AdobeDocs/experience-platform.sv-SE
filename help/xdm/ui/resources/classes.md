@@ -5,9 +5,9 @@ title: Skapa och redigera klasser i användargränssnittet
 description: Lär dig hur du skapar och redigerar klasser i användargränssnittet i Experience Platform.
 topic: user guide
 translation-type: tm+mt
-source-git-commit: 2e20403122e65d28f04114af9b7e8d41874f76e2
+source-git-commit: 5bf729197de53e9d24675c8a1d0455e807fb90c5
 workflow-type: tm+mt
-source-wordcount: '829'
+source-wordcount: '865'
 ht-degree: 0%
 
 ---
@@ -53,9 +53,9 @@ Nu kan du börja [lägga till fält i klassen](#add-fields), som delas av alla s
 
 >[!NOTE]
 >
->Endast egna klasser som definierats av din organisation kan redigeras.
+>Endast anpassade klasser som definierats av din organisation kan redigeras och anpassas helt. För huvudklasser som definieras av Adobe kan bara visningsnamnen för deras fält redigeras inom kontexten för enskilda scheman. Mer information finns i avsnittet [redigera visningsnamn för schemafält](./schemas.md#display-names).
 >
->När en klass väl har sparats och använts vid ifyllandet av data kan den därefter bara ändras ytterligare. Mer information finns i [reglerna för schemautveckling](../../schema/composition.md#evolution).
+>När en anpassad klass har sparats och använts vid dataanvändningen kan endast additiva ändringar göras i den därefter. Mer information finns i [reglerna för schemautveckling](../../schema/composition.md#evolution).
 
 Om du vill redigera en befintlig klass väljer du fliken **[!UICONTROL Browse]** och väljer sedan namnet på ett schema som använder den klass som du vill redigera.
 
