@@ -5,9 +5,9 @@ title: Adobe Experience Platform Identity Service
 topic: tutorial
 description: Ett identitetsdiagram är en karta över relationer mellan olika identiteter för en viss kund, vilket ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler.
 translation-type: tm+mt
-source-git-commit: 7c9c81492df9333945ac62602f10b6097296d62b
+source-git-commit: 22685a8519529ba7afb7e50262ea4d40a450b382
 workflow-type: tm+mt
-source-wordcount: '866'
+source-wordcount: '891'
 ht-degree: 1%
 
 ---
@@ -100,7 +100,7 @@ Följande avsnitt innehåller ytterligare information om hur du arbetar med iden
 Fel kan inträffa vid åtkomst till identitetsdiagramvisningsprogrammet. Nedan följer en lista över krav och begränsningar som ska beaktas när du arbetar med identitetsdiagramvisningsprogrammet.
 
 - Ett identitetsvärde måste finnas i det valda namnutrymmet.
-- Identitetsdiagramvisningsprogrammet kräver minst två länkade identiteter för att kunna generera.
+- Identitetsdiagramvisningsprogrammet kräver minst två länkade identiteter för att kunna generera. Det är möjligt att det bara finns ett identitetsvärde och inga länkade identiteter, och i det här fallet finns värdet bara i [!DNL Profile]-visningsprogrammet.
 - Identitetsdiagramvisningsprogrammet får inte överskrida det maximala antalet 150 identiteter.
 
 ![error-screen](../images/identity-graph-viewer/error-screen.png)
