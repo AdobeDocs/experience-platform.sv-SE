@@ -5,9 +5,9 @@ title: Skapa och redigera scheman i användargränssnittet
 description: Lär dig grunderna i hur du skapar och redigerar scheman i användargränssnittet i Experience Platform.
 topic: user guide
 translation-type: tm+mt
-source-git-commit: e9df977272524b6aba516982e93f3128d1b9278b
+source-git-commit: babe47cc864d9f79eee28989ca8b658350b9d790
 workflow-type: tm+mt
-source-wordcount: '1133'
+source-wordcount: '1283'
 ht-degree: 0%
 
 ---
@@ -53,7 +53,7 @@ Om du vill redigera ett befintligt schema väljer du fliken **[!UICONTROL Browse
 >
 >Du kan använda arbetsytans sök- och filtreringsfunktioner för att enklare hitta schemat. Mer information finns i guiden [utforska XDM-resurser](../explore.md).
 
-När du har valt ett schema visas [!DNL Schema Editor] med schemats struktur på arbetsytan. Du kan nu [lägga till mixins](#add-mixins) i schemat eller [redigera befintliga anpassade mixiner](./mixins.md#edit) om schemat använder några.
+När du har valt ett schema visas [!DNL Schema Editor] med schemats struktur på arbetsytan. Du kan nu [lägga till mixar](#add-mixins) i schemat, [redigera fältvisningsnamn](#display-names) eller [redigera befintliga anpassade mixar](./mixins.md#edit) om schemat använder några.
 
 ## Lägg till blandningar i ett schema {#add-mixins}
 
@@ -116,6 +116,22 @@ Slutför processen genom att välja **[!UICONTROL Save]** och spara schemat.
 ![](../../images/ui/resources/schemas/profile-enabled.png)
 
 Schemat är nu aktiverat för användning i kundprofilen i realtid. När Platform samlar in data i datauppsättningar som baseras på det här schemat, kommer dessa data att införlivas i dina sammanställda profildata.
+
+## Redigera visningsnamn för schemafält {#display-names}
+
+När du har tilldelat en klass och lagt till mixar i ett schema kan du redigera visningsnamnen för alla fält i schemat, oavsett om dessa fält har tillhandahållits av standard eller anpassade XDM-resurser.
+
+>[!NOTE]
+>
+>Tänk på att visningsnamnen för fält som tillhör standardklasser eller mixiner bara kan redigeras i ett specifikt schema. Om du ändrar visningsnamnet för ett standardfält i ett schema påverkas alltså inte andra scheman som använder samma associerade klass eller blandning.
+
+Om du vill redigera visningsnamnet för ett schemafält markerar du fältet på arbetsytan. Ange det nya namnet under **[!UICONTROL Display name]** i den högra listen.
+
+![](../../images/ui/resources/schemas/display-name.png)
+
+Välj **[!UICONTROL Apply]** i den högra listen så uppdateras arbetsytan till att visa fältets nya visningsnamn. Välj **[!UICONTROL Save]** om du vill använda ändringarna i schemat.
+
+![](../../images/ui/resources/schemas/display-name-changed.png)
 
 ## Ändra ett schemas klass {#change-class}
 
