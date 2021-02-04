@@ -5,9 +5,9 @@ seo-title: Google Customer Match Destination
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egenskaper, som Search, Shopping, Gmail och YouTube.
 seo-description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egenskaper, som Search, Shopping, Gmail och YouTube.
 translation-type: tm+mt
-source-git-commit: 3837f00ff8b950e1f7642a9ffb5d194388dcab28
+source-git-commit: 4e3b7e5ad440cae1ce15e5ecb2c9bd53863a445a
 workflow-type: tm+mt
-source-wordcount: '1438'
+source-wordcount: '1462'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,10 @@ ht-degree: 0%
 # Google Customer Match Destination
 
 ## Översikt {#overview}
+
+>[!IMPORTANT]
+>
+>Kundmigrering till den nya målkonfigurationen pågår. Det kan för tillfället vara svårt att komma åt målkonfigurationssidan.
 
 [Med Google Customer ](https://support.google.com/google-ads/answer/6379332?hl=en) Matchlets kan ni använda era online- och offlinedata för att nå och återengagera era kunder över Googles egna och styrda egenskaper, som:  [!DNL Search],  [!DNL Shopping],  [!DNL Gmail]och  [!DNL YouTube].
 
@@ -49,30 +53,30 @@ Destinationerna i CDP i realtid kan ha vissa regler och skyldigheter för data s
 
 ### [!DNL Google Customer Match] kontokrav  {#google-account-prerequisites}
 
-Innan du konfigurerar ett [!DNL Google Customer Match]-mål i CDP i realtid måste du läsa och följa Googles policy för att använda [!DNL Customer Match], som beskrivs i [Google Support-dokumentationen](https://support.google.com/google-ads/answer/6299717).
+Innan du konfigurerar ett [!DNL Google Customer Match]-mål i realtid CDP måste du läsa och följa Googles policy för att använda [!DNL Customer Match], som beskrivs i [Google Support-dokumentationen](https://support.google.com/google-ads/answer/6299717).
 
-### Tillåtelselista {#allowlist}
+### Tillåt lista {#allowlist}
 
 >[!NOTE]
 >
->Det är obligatoriskt att lägga till i Googles tillåtelselista innan du ställer in ditt första [!DNL Google Customer Match]-mål i realtid CDP. Kontrollera att tillåtelselista-processen som beskrivs nedan har slutförts av Google innan du skapar ett mål.
+>Det är obligatoriskt att lägga till i Googles lista över tillåtna innan du ställer in ditt första [!DNL Google Customer Match]-mål i CDP i realtid. Kontrollera att processen för listan över tillåtna har slutförts av Google innan du skapar ett mål.
 
-Innan du skapar målet [!DNL Google Customer Match] i CDP för realtid måste du kontakta Google och följa instruktionerna i [Använd kundmatchningspartners för att överföra dina data](https://support.google.com/google-ads/answer/7361372?hl=en&amp;ref_topic=6296507) i Googles dokumentation.
+Innan du skapar [!DNL Google Customer Match]-målet i CDP för realtid måste du kontakta Google och följa anvisningarna i [Använd kundmatchningspartners för att överföra dina data](https://support.google.com/google-ads/answer/7361372?hl=en&amp;ref_topic=6296507) i Googles dokumentation.
 
-Dessutom finns det en andra Google tillåtelselista som du måste lägga till ditt konto i om du planerar att överföra data med Googles [användar-ID](https://developers.google.com/adwords/api/docs/guides/remarketing#customer_match_with_email_address_address_or_user_id). Kontakta din kontohanterare för Google och kontrollera att du har lagts till i tillåtelselista.
+Dessutom finns det en andra Google-lista över tillåtna användare som du måste lägga till ditt konto i om du planerar att överföra data med Googles [User_ID](https://developers.google.com/adwords/api/docs/guides/remarketing#customer_match_with_email_address_address_or_user_id). Kontakta din kontohanterare för Google för att kontrollera att du har lagts till i listan över tillåtna användare.
 
 ### Krav för ID-matchning {#id-matching-requirements}
 
-[!DNL Google] kräver att ingen personligt identifierbar information (PII) skickas klart. Därför kan målgrupper som är aktiverade för [!DNL Google Customer Match] vara avstängda från *hash*-identifierare, till exempel e-postadresser eller telefonnummer.
+[!DNL Google] kräver att ingen personligt identifierbar information (PII) skickas in tydligt. Därför kan de målgrupper som är aktiverade för [!DNL Google Customer Match] vara avaktiverade med *hash*-identifierare, till exempel e-postadresser eller telefonnummer.
 
 Beroende på vilken typ av ID som du importerar till Adobe Experience Platform måste du följa deras motsvarande krav.
 
-#### Kraven för hashning av telefonnummer {#phone-number-hashing-requirements}
+#### Kraven {#phone-number-hashing-requirements} för telefonnummerhashning
 
 Det finns två sätt att aktivera telefonnummer i [!DNL Google Customer Match]:
 
-* **Hämtar råtelefonnummer**: kan du importera råa telefonnummer i  [!DNL E.164] formatet till  [!DNL Platform], som automatiskt hashas när du aktiverar. Om du väljer det här alternativet måste du alltid importera dina raw-telefonnummer till namnutrymmet `Phone_E.164`.
-* **Inmatning av hashade telefonnummer**: du kan förhash-koda dina telefonnummer innan du tar dig in i  [!DNL Platform]. Om du väljer det här alternativet måste du alltid importera dina hashade telefonnummer till namnutrymmet `PHONE_SHA256_E.164`.
+* **Hämtar råtelefonnummer**: kan du importera råa telefonnummer i  [!DNL E.164] format till  [!DNL Platform], som automatiskt hashas till efter aktivering. Om du väljer det här alternativet måste du alltid importera dina raw-telefonnummer till namnutrymmet `Phone_E.164`.
+* **Inmatning av hashade telefonnummer**: Du kan förhash-koda dina telefonnummer innan du tar dig in i  [!DNL Platform]. Om du väljer det här alternativet måste du alltid importera dina hash-kodade telefonnummer till namnutrymmet `PHONE_SHA256_E.164`.
 
 >[!NOTE]
 >
@@ -82,7 +86,7 @@ Det finns två sätt att aktivera telefonnummer i [!DNL Google Customer Match]:
 
 Du kan välja att hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform, eller så kan du välja att arbeta med e-postadresser i klartext i Experience Platform och låta algoritmen hash-koda dem när de aktiveras.
 
-Mer information om Googles hash-krav och andra begränsningar för aktivering finns i följande avsnitt i Googles dokumentation:
+Mer information om Googles hashkrav och andra begränsningar för aktivering finns i följande avsnitt i Googles dokumentation:
 
 * [[!DNL Customer Match] med e-postadress, adress eller användar-ID](https://developers.google.com/adwords/api/docs/guides/remarketing#customer_match_with_email_address_address_or_user_id)
 * [[!DNL Customer Match] överväganden](https://developers.google.com/adwords/api/docs/guides/remarketing#customer_match_considerations)
@@ -90,9 +94,9 @@ Mer information om Googles hash-krav och andra begränsningar för aktivering fi
 * [Kundmatchning med mobila enhets-ID:n](https://developers.google.com/adwords/api/docs/guides/remarketing#customer_match_with_mobile_device_ids)
 
 
-Om du vill veta mer om att importera e-postadresser i Experience Platform kan du läsa översikten [över gruppimporten](../../../ingestion/batch-ingestion/overview.md) och översikten [över direktuppspelningsförslag](../../../ingestion/streaming-ingestion/overview.md).
+Om du vill veta mer om att importera e-postadresser i Experience Platform kan du läsa översikten över [batchkonsumtion](../../../ingestion/batch-ingestion/overview.md) och översikten över direktuppspelningsfrågor](../../../ingestion/streaming-ingestion/overview.md).[
 
-Om du väljer att hash-koda e-postadresserna själv måste du se till att följa kraven för Google som beskrivs i länkarna ovan.
+Om du väljer att hash-koda e-postadresserna själv måste du se till att följa de krav för Google som beskrivs i länkarna ovan.
 
 #### Använda anpassade namnutrymmen {#custom-namespaces}
 
@@ -103,9 +107,9 @@ Innan du kan använda namnutrymmet `User_ID` för att skicka data till Google m�
 Attribute source data is not automatically hashed. When your source field contains unhashed attributes, check the **[!UICONTROL Apply transformation]** option, to have [!DNL Platform] automatically hash the data on activation.
 ![Identity mapping transformation](../../assets/ui/activate-destinations/identity-mapping-transformation.png) -->
 
-## Anslut till målet {#connect-destination}
+## Anslut till mål {#connect-destination}
 
-Bläddra till kategorin **[!UICONTROL Advertising]** i **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**. Välj [!DNL Google Customer Match] och sedan **[!UICONTROL Configure]**.
+Bläddra till kategorin **[!UICONTROL Advertising]** i **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**. Välj [!DNL Google Customer Match] och välj sedan **[!UICONTROL Configure]**.
 
 ![Anslut till Googles kundmatchningsmål](../../assets/catalog/advertising/google-customer-match/connect.png)
 
@@ -113,31 +117,31 @@ Bläddra till kategorin **[!UICONTROL Advertising]** i **[!UICONTROL Destination
 >
 >Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]**-knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](../../ui/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
 
-Om du tidigare har konfigurerat en anslutning till ditt [!DNL Google Customer Match]-mål väljer du **[!UICONTROL Existing Account]** och väljer din befintliga anslutning i steget **Konto**. Du kan också välja **[!UICONTROL New Account]** för att konfigurera en ny anslutning till [!DNL Google Customer Match]. Välj **[!UICONTROL Connect to destination]** om du vill logga in och ansluta Adobe Experience Cloud till ditt [!DNL Google Ad]-konto.
+Om du tidigare har konfigurerat en anslutning till [!DNL Google Customer Match]-målet väljer du **[!UICONTROL Existing Account]** och väljer din befintliga anslutning i steget **Konto**. Du kan också välja **[!UICONTROL New Account]** för att konfigurera en ny anslutning till [!DNL Google Customer Match]. Välj **[!UICONTROL Connect to destination]** för att logga in och ansluta Adobe Experience Cloud till ditt [!DNL Google Ad]-konto.
 
 >[!NOTE]
 >
->CDP stöder validering av autentiseringsuppgifter i realtid i autentiseringsprocessen och visar ett felmeddelande om du anger felaktiga autentiseringsuppgifter för ditt [!DNL Google Ad]-konto. Detta säkerställer att du inte slutför arbetsflödet med felaktiga inloggningsuppgifter.
+>I realtid stöder CDP verifiering av autentiseringsuppgifter i autentiseringsprocessen och visar ett felmeddelande om du anger felaktiga autentiseringsuppgifter för ditt [!DNL Google Ad]-konto. Detta säkerställer att du inte slutför arbetsflödet med felaktiga inloggningsuppgifter.
 
-![Anslut till Google Customer Match-målet - autentiseringssteg](../../assets/catalog/advertising/google-customer-match/connection.png)
+![Anslut till Googles kundmatchningsmål - autentiseringssteg](../../assets/catalog/advertising/google-customer-match/connection.png)
 
 När dina inloggningsuppgifter har bekräftats och Adobe Experience Cloud är anslutet till ditt Google-konto kan du välja **[!UICONTROL Next]** för att fortsätta till **[!UICONTROL Setup]**-steget.
 
 ![Autentiseringsuppgifterna har bekräftats](../../assets/catalog/advertising/google-customer-match/connection-success.png)
 
-I steget **[!UICONTROL Authentication]** anger du [!UICONTROL Name] och [!UICONTROL Description] för ditt aktiveringsflöde och fyller i din Google-fil [!UICONTROL Account ID].
+I **[!UICONTROL Authentication]**-steget anger du en [!UICONTROL Name] och en [!UICONTROL Description] för ditt aktiveringsflöde och fyller i din Google-fil [!UICONTROL Account ID].
 
-I det här steget kan du även välja alla **[!UICONTROL Marketing use case]** som ska gälla för det här målet. Fall av marknadsanvändning anger avsikten för vilken data ska exporteras till destinationen. Du kan välja bland Adobe-definierade användningsfall för marknadsföring eller skapa ett eget marknadsföringsexempel. Mer information om användningsfall för marknadsföring finns på sidan [Datastyrning i realtid CDP](../../../rtcdp/privacy/data-governance-overview.md#destinations). Mer information om de enskilda Adobe-definierade användningsfallen för marknadsföring finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md#core-actions).
+I det här steget kan du även välja valfri **[!UICONTROL Marketing use case]** som ska gälla för det här målet. Fall av marknadsanvändning anger för vilken avsikt data ska exporteras till destinationen. Ni kan välja bland Adobe-definierade användningsfall för marknadsföring eller skapa ett eget marknadsexempel. Mer information om användningsfall för marknadsföring finns på sidan [Datastyrning i CDP](../../../rtcdp/privacy/data-governance-overview.md#destinations) i realtid. Mer information om de enskilda Adobe-definierade användningsfallen för marknadsföring finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md#core-actions).
 
 Välj **[!UICONTROL Create Destination]** när du har fyllt i fälten ovan.
 
 >[!IMPORTANT]
 >
 > * **[!UICONTROL Combine with PII]**-användningsfallet för marknadsföring är valt som standard för [!DNL Google Customer Match]-målet och kan inte tas bort.
-> * För [!DNL Google Customer Match]-mål. **[!UICONTROL Account ID]** är ditt kund-ID hos Google. Formatet på ID:t är xxx-xxx-xxxx.
+> * För [!DNL Google Customer Match] mål. **[!UICONTROL Account ID]** är ditt kund-ID med Google. Formatet på ID:t är xxx-xxx-xxxx.
 
 
-![Koppla ihop Google-kunder - autentiseringssteg](../../assets/catalog/advertising/google-customer-match/authentication.png)
+![Koppla Google-kundmatchning - autentiseringssteg](../../assets/catalog/advertising/google-customer-match/authentication.png)
 
 Målet har skapats. Du kan välja **[!UICONTROL Save & Exit]** om du vill aktivera segment senare eller välja **[!UICONTROL Next]** om du vill fortsätta arbetsflödet och välja segment som ska aktiveras. I båda fallen ska du läsa nästa avsnitt, [Aktivera segment till [!DNL Google Customer Match]](#activate-segments), för resten av arbetsflödet.
 
@@ -148,7 +152,7 @@ Instruktioner om hur du aktiverar segment till [!DNL Google Customer Match] finn
 
 I steget **[!UICONTROL Segment schedule]** måste du ange [!UICONTROL App ID] när du skickar segmenten [!DNL IDFA] eller [!DNL GAID] till [!DNL Google Customer Match].
 
-![Google Customer Match App ID](../../assets/catalog/advertising/google-customer-match/gcm-destination-appid.png)
+![Google-program-ID för kundmatchning](../../assets/catalog/advertising/google-customer-match/gcm-destination-appid.png)
 
 Mer information om hur du hittar [!DNL App ID] finns i [den officiella dokumentationen](https://developers.google.com/adwords/api/docs/reference/v201809/AdwordsUserListService.CrmBasedUserList#appid).
 
@@ -201,9 +205,9 @@ If no policy violations have been detected, select **[!UICONTROL Finish]** to co
 
 ## Verifiera att segmentaktiveringen lyckades {#verify-activation}
 
-När aktiveringsflödet är klart växlar du till ditt **[!UICONTROL Google Ads]**-konto. De aktiverade segmenten visas nu som kundlistor på ditt Google-konto. Observera att beroende på segmentstorleken kommer vissa målgrupper inte att fyllas i om det inte finns fler än 100 aktiva användare att betjäna.
+När aktiveringsflödet är klart växlar du till ditt **[!UICONTROL Google Ads]**-konto. De aktiverade segmenten visas nu som kundlistor på ditt Google-konto. Observera att beroende på segmentstorleken kommer vissa målgrupper inte att fyllas i om det inte finns fler än 1000 aktiva användare att betjäna.
 
-När du mappar ett segment till både [!DNL IDFA] och [!DNL GAID] mobila ID:n skapar [!DNL Google Customer Match] ett separat segment för varje ID-mappning. Ditt [!DNL Google Ads]-konto kommer att visa två olika segment, ett för [!DNL IDFA] och ett för [!DNL GAID]-mappningen.
+När du mappar ett segment till både [!DNL IDFA] och [!DNL GAID] mobil-ID skapar [!DNL Google Customer Match] ett separat segment för varje ID-mappning. Ditt [!DNL Google Ads]-konto kommer att visa två olika segment, ett för [!DNL IDFA] och ett för [!DNL GAID]-mappningen.
 
 ## Ytterligare resurser {#additional-resources}
 
