@@ -5,9 +5,9 @@ seo-title: Facebook-mål
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 seo-description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 translation-type: tm+mt
-source-git-commit: 4e3b7e5ad440cae1ce15e5ecb2c9bd53863a445a
+source-git-commit: 38b2bfd93bda85cf87dde4e0345ca9c11e419c2f
 workflow-type: tm+mt
-source-wordcount: '956'
+source-wordcount: '959'
 ht-degree: 3%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->Kundmigrering till den nya målkonfigurationen pågår. Det kan för tillfället vara svårt att komma åt målkonfigurationssidan.
+>Kundmigrering till de nya målversionerna pågår. Innan migreringen är klar visas endast de tillgängliga identiteterna [!UICONTROL EMAIL] och [!UICONTROL EMAIL_LC_SHA_256] för det här målet.
 
 Aktivera profiler för [!DNL Facebook]-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hash-kodade e-postmeddelanden.
 
