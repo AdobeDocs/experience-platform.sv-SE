@@ -1,21 +1,21 @@
 ---
-keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segmentation Service;pql;PQL;Profile Query Language;aggregation functions;aggregation;
+keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;pql;PQL;Profilfrågespråk;aggregeringsfunktioner;aggregering;
 solution: Experience Platform
-title: Sammanställningsfunktioner
+title: PQL-aggregeringsfunktioner
 topic: developer guide
 description: 'Sammanställningsfunktioner används för att gruppera flera värden inom PQL-arrayer (Profile Query Language) för att skapa ett enda sammanfattningsvärde. '
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '226'
-ht-degree: 3%
+source-wordcount: '244'
+ht-degree: 2%
 
 ---
 
 
 # Sammanställningsfunktioner
 
-Sammanställningsfunktioner används för att gruppera flera värden inom [!DNL Profile Query Language] PQL-arrayer för att skapa ett enda sammanfattningsvärde. Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikten](./overview.md).
+Sammanställningsfunktioner används för att gruppera flera värden inom [!DNL Profile Query Language]-arrayer (PQL) för att skapa ett enda sammanfattningsvärde. Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikten](./overview.md).
 
 ## Antal
 
@@ -55,7 +55,7 @@ orders.sum(order.price)
 
 ## Genomsnittlig
 
-Funktionen returnerar det aritmetiska medelvärdet av alla markerade värden i arrayen. `average`
+Funktionen `average` returnerar det aritmetiska medelvärdet för alla markerade värden i arrayen.
 
 **Format**
 
@@ -109,4 +109,4 @@ orders.max(order.price)
 
 ## Nästa steg
 
-Nu när du har lärt dig om sammanställningsfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i översikten [över](./overview.md)profilfrågespråk.
+Nu när du har lärt dig om sammanställningsfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [översikten över profilfrågespråk](./overview.md).
