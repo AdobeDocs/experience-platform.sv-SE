@@ -1,29 +1,29 @@
 ---
-keywords: Experience Platform;home;popular topics;segmentation;Segmentation;segment service;segments;Segments;multi-entity;multi-entity segmentation;multi-entity segments;
+keywords: Experience Platform;hemmabruk;populära ämnen;segmentering;segmentering;segmenttjänster;segment;segment;flerenhetssegmentering;flerenhetssegmentering;flerenhetssegment;
 solution: Experience Platform
-title: Segmentering för flera enheter
+title: Översikt över segmentering av flera enheter
 topic: overview
 description: Multientitetssegmentering är möjligheten att utöka profildata med ytterligare data baserat på produkter, butiker eller andra icke-profilklasser. När de är anslutna blir data från ytterligare klasser tillgängliga som om de vore inbyggda i profilschemat.
 translation-type: tm+mt
-source-git-commit: 4dd5a91146b116953ba180e3f39d24b4e1ec289e
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '656'
+source-wordcount: '674'
 ht-degree: 0%
 
 ---
 
 
-# Segmentering för flera enheter
+# Översikt över segmentering av flera enheter
 
-Segmentering för flera enheter är en avancerad funktion som ingår i Adobe Experience Platform [!DNL Segmentation Service]. Med den här funktionen kan du utöka [!DNL Real-time Customer Profile] data med ytterligare&quot;icke-persondata&quot; (kallas även&quot;dimensionsenheter&quot;) som din organisation kan definiera, till exempel data relaterade till produkter eller butiker. Multientitetssegmentering ger flexibilitet när det gäller att definiera målgruppssegment baserat på data som är relevanta för era unika affärsbehov och kan utföras utan att ni behöver ha expertis inom databaser. Med segmentering av flera enheter kan ni lägga till nyckeldata till era segment utan att behöva göra kostsamma ändringar i dataströmmar eller vänta på en datasammanfogning.
+Flerenhetssegmentering är en avancerad funktion som finns som en del av Adobe Experience Platform [!DNL Segmentation Service]. Med den här funktionen kan du utöka [!DNL Real-time Customer Profile]-data med ytterligare&quot;icke-persondata&quot; (kallas även&quot;dimensionsenheter&quot;) som din organisation kan definiera, till exempel data relaterade till produkter eller butiker. Multientitetssegmentering ger flexibilitet när det gäller att definiera målgruppssegment baserat på data som är relevanta för era unika affärsbehov och kan utföras utan att ni behöver ha expertis inom databaser. Med segmentering av flera enheter kan ni lägga till nyckeldata till era segment utan att behöva göra kostsamma ändringar i dataströmmar eller vänta på en datasammanfogning.
 
 ## Komma igång
 
 Segmentering på flera enheter kräver en fungerande förståelse av de olika Adobe Experience Platform-tjänster som är inblandade i segmentering. Läs följande dokumentation innan du fortsätter med den här guiden:
 
 * [[!DNL Real-time Customer Profile]](../profile/home.md): Ger en enhetlig konsumentprofil i realtid, baserad på aggregerade data från flera källor.
-   * [Profilskyddsutkast](../profile/guardrails.md): Bästa tillvägagångssätt för att skapa datamodeller som stöds av [!DNL Profile].
-* [[!DNL Adobe Experience Platform Segmentation Service]](./home.md): Gör att ni kan skapa segment utifrån [!DNL Real-time Customer Profile] data.
+   * [Profilskyddsutkast](../profile/guardrails.md): Bästa tillvägagångssätt för att skapa datamodeller som stöds av  [!DNL Profile].
+* [[!DNL Adobe Experience Platform Segmentation Service]](./home.md): Gör att ni kan skapa segment utifrån  [!DNL Real-time Customer Profile] data.
 * [[!DNL Experience Data Model (XDM)]](../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grundläggande om schemakomposition](../xdm/schema/composition.md#union): Lär dig de bästa sätten att skapa scheman som ska användas i Experience Platform.
 
@@ -41,7 +41,7 @@ Det är ofta komplicerat att skapa och kvalificera användare i segment där kun
 
 ## Skapa segment med flera enheter
 
-Om du vill skapa ett segment med flera enheter först måste du definiera relationerna mellan scheman innan du använder gränssnittet för [!DNL Segmentation] API eller segmentbyggaren för att skapa segmentdefinitionen.
+Om du vill skapa ett flerenhetssegment först måste du definiera relationer mellan scheman innan du använder gränssnittet för [!DNL Segmentation] eller segmentbyggaren för att skapa segmentdefinitionen.
 
 ### Definiera relationer
 
@@ -61,4 +61,4 @@ När du har definierat de nödvändiga XDM-relationerna kan du börja skapa ett 
 
 ## Utvärdera och få tillgång till segment med flera enheter
 
-När du har skapat ett segment kan du utvärdera och komma åt segmentresultaten med segmenterings-API:t. Utvärderingen av ett segment med flera enheter påminner mycket om utvärderingen av ett standardsegment. Den här processen kan bara utföras med segmenterings-API:t. Om du vill ha en detaljerad guide om hur du använder API för att utvärdera och få tillgång till segment kan du läsa självstudiekursen [Utvärdera och få tillgång till segment](./tutorials/evaluate-a-segment.md) .
+När du har skapat ett segment kan du utvärdera och komma åt segmentresultaten med segmenterings-API:t. Utvärderingen av ett segment med flera enheter påminner mycket om utvärderingen av ett standardsegment. Den här processen kan bara utföras med segmenterings-API:t. En detaljerad guide som visar hur du använder API:t för att utvärdera och få tillgång till segment finns i självstudiekursen [Utvärdera och få åtkomst till segment](./tutorials/evaluate-a-segment.md).
