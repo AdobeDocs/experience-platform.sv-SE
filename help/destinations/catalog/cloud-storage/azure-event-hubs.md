@@ -1,25 +1,21 @@
 ---
 keywords: Azure-händelsehubbsmål;azure-händelsehubb;azure-händelsehubb
-title: (Beta) Azure Event Hubs-mål
-seo-title: (Beta) Azure Event Hubs-mål
+title: (Beta) Azure Event Hubs Connection Destination
 description: Skapa en utgående anslutning i realtid till din Azure Event Hubs-lagring för att strömma data från Experience Platform.
-seo-description: Skapa en utgående anslutning i realtid till din Azure Event Hubs-lagring för att strömma data från Experience Platform.
 translation-type: tm+mt
-source-git-commit: 97c0a9f4726ec85b7a72dc682fbd201a6152c1ba
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '500'
+source-wordcount: '478'
 ht-degree: 0%
 
 ---
 
 
-# (Beta) [!DNL Azure Event Hubs] mål
+# (Beta) [!DNL Azure Event Hubs]-anslutning
 
 >[!IMPORTANT]
 >
 >Målet [!DNL Azure Event Hubs] i Platform är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
-
-## Översikt {#overview}
 
 [!DNL Azure Event Hubs] är en stor dataströmningsplattform och en tjänst för händelseredigering. Den kan ta emot och bearbeta miljontals händelser per sekund. Data som skickas till ett händelsehubb kan omformas och lagras med hjälp av alla realtidsanalysleverantörer eller batchnings-/lagringsadaptrar.
 
