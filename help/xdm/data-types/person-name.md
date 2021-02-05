@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;XDM;fields;schemas;Schemas;fullName;xdm:fullName;person name;name;datatype;data-type;data type;
+keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fält;scheman;scheman;fullständigt namn;xdm:fullständigtNamn;personnamn;datatyp;datatyp;datatyp;datatyp;
 solution: Experience Platform
 title: Datatyp för personnamn
 topic: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM för personnamn.
 translation-type: tm+mt
-source-git-commit: f5bddb39c16eb25e85297f56e331d3aa51510eb9
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '226'
+source-wordcount: '247'
 ht-degree: 0%
 
 ---
@@ -23,12 +23,12 @@ Dessutom innehåller datatypen ett antal valfria egenskaper som kan användas i 
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `courtesyTitle` | En förkortning av en persons titel, ära eller hälsningsfras (till exempel `Mr.`, `Miss.`eller `Dr.`). |
+| `courtesyTitle` | En förkortning av en persons titel, ära eller hälsningsfras (till exempel `Mr.`, `Miss.` eller `Dr.`). |
 | `firstName` | Det första segmentet i namnet i den skrivordning som oftast används på namnet. |
 | `fullName` | Personens fullständiga namn, i den skrivordning som är vanligast på namnet. |
 | `lastName` | Det sista segmentet i namnet i den skrivordning som oftast används på namnet. |
 | `middleName` | Mellannamn, alternativa namn eller ytterligare namn som anges mellan förnamnet och efternamnet. |
-| `suffix` | En grupp bokstäver som anges efter en persons namn för att ge ytterligare information (till exempel `Jr.`, `Sr.`, `M.D.`, `PhD`, `I`, `II`, `III`osv.). |
+| `suffix` | En grupp bokstäver som anges efter en persons namn för att tillhandahålla ytterligare information (till exempel `Jr.`, `Sr.`, `M.D.`, `PhD`, `I`, `II`, `III` och så vidare). |
 
 Mer information om personnamnets datatyp finns i den offentliga XDM-databasen:
 
