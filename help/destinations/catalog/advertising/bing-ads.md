@@ -1,21 +1,17 @@
 ---
 keywords: Bing;Bing ad ads händelsespårning;händelsespårning;UET;UET-tillägg
-title: Bing Ads UET-tillägg (Universal Event Tracking)
-seo-title: Bing Ads UET-tillägg (Universal Event Tracking)
+title: UET-tilläggsmål (Universal Event Tracking) för Bing Ads
 description: Tillägget Bing Ads Universal Event Tracking (UET) är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Bing Ads Universal Event Tracking (UET) är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '560'
+source-wordcount: '523'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL Bing Ads Universal Event Tracking] (UET)-tillägg  {#bing-ads-extension}
-
-## Översikt {#overview}
 
 [!DNL Bing Ads Universal Event Tracking] (UET) for  [!DNL Experience Platform Launch] är ett användbart sätt att spåra vad som händer efter att någon har klickat på din sökannons. Genom att använda en enda UET-tagg för att registrera vad kunderna gör på er webbplats kan ni utnyttja dessa data och spåra konverteringar eller målgrupper med hjälp av återmarknadsföringslistor.
 
