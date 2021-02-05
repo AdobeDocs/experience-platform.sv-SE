@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;schema;schema;enum;mixin;mixin;mixins;mixins;datatyp;datatyp;datatyper;datatyp;datatyp;primär identitet;enskild XDM-profil;XDM-fält;enum datatype;Experience event;XDM ExperienceEvent;experienceEvent;experienceevent;XDM ExperienceEvent;schema;klass;klass;klasser;klasser;datatyp;datatyp;datatyp;datatyp;datatyp;scheman;scheman;identityMap;identity map;identity map;schema design;map;union schema;union
 solution: Experience Platform
-title: Grunderna för schemakomposition
+tiTle: Basics of Schema Composition
 topic: overview
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 2dbd92efbd992b70f4f750b09e9d2e0626e71315
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '3141'
+source-wordcount: '3137'
 ht-degree: 0%
 
 ---
