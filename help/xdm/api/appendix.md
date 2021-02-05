@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;Experience data model;Experience data model;Experience data model;data model;data model;schema register;schema Registry;compatibility;compatibility;compatibility mode;Compatibility mode;Compatibility mode;field type;field types;
 solution: Experience Platform
-title: Schema Registry developer appendix
+title: API-handbok för schematabell
 description: Det här dokumentet innehåller ytterligare information om hur du arbetar med API:t för schemaregister.
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
+source-git-commit: b395535cbe7e4030606ee2808eb173998f5c32e0
 workflow-type: tm+mt
-source-wordcount: '767'
+source-wordcount: '772'
 ht-degree: 0%
 
 ---
 
 
-# Bilaga
+# API-guide för schematabell
 
 Det här dokumentet innehåller ytterligare information om hur du arbetar med API:t [!DNL Schema Registry].
 
