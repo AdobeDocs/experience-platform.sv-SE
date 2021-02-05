@@ -5,7 +5,7 @@ title: Översikt över användargränssnittet i Privacy Service
 topic: UI guide
 description: Kom igång med användargränssnittet för Privacy Service för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
 translation-type: tm+mt
-source-git-commit: 5dad1fcc82707f6ee1bf75af6c10d34ff78ac311
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
 source-wordcount: '171'
 ht-degree: 1%
