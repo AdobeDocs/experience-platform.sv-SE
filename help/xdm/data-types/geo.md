@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;XDM;fields;schemas;Schemas;geo;datatype;data-type;data type;
+keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;Schemas;geo;datatype;data type;data type;
 solution: Experience Platform
-title: Geo, datatyp
+title: Geo-datatyp
 topic: overview
 description: Det här dokumentet innehåller en översikt över datatypen Geo XDM.
 translation-type: tm+mt
-source-git-commit: 6a7967ac9e652c7e73fd713e89a9079287cf0ae5
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '176'
+source-wordcount: '192'
 ht-degree: 3%
 
 ---
@@ -24,11 +24,11 @@ ht-degree: 3%
 | `_schema` | [[!UICONTROL Geo Coordinates]](./geo-coordinates.md) | Beskriver platsens geografiska koordinater. |
 | `_id` | Sträng | Ett unikt, systemgenererat ID för koordinaterna. |
 | `city` | Sträng | Namnet på staden. |
-| `countryCode` | Sträng | Den tvåsiffriga <a href="https://datahub.io/core/country-list">ISO 3166-1 alfa-2</a> -koden för landet. |
+| `countryCode` | Sträng | Det två tecknet <a href="https://datahub.io/core/country-list">ISO 3166-1 alpha-2</a> för landet. |
 | `dmaID` | Heltal | Nielsens medieforskning har utsett ett marknadsområde. |
 | `msaID` | Heltal | Det statistiska storstadsområdet i Förenta staterna där observationen gjordes. |
 | `postalCode` | Sträng | Postnumret för platsen. Postnummer är inte tillgängliga för alla länder. I vissa länder innehåller detta endast en del av postnumret. |
-| `stateProvince` | Sträng | Delstaten eller provinsdelen av observationen. Formatet följer standarden [ISO 3166-2 (land och delområde)](http://www.unece.org/cefact/locode/subdivisions.html) . |
+| `stateProvince` | Sträng | Delstaten eller provinsdelen av observationen. Formatet följer standarden [ISO 3166-2 (land och delområde)](http://www.unece.org/cefact/locode/subdivisions.html). |
 
 Mer information om blandningen finns i den offentliga XDM-databasen:
 
