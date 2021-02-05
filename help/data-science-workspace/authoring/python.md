@@ -1,22 +1,22 @@
 ---
-keywords: Experience Platform;home;popular topics;data access;python sdk;data access api;read python;write python
+keywords: Experience Platform;hem;populära ämnen;dataåtkomst;python sdk;dataåtkomst api;read python;write python
 solution: Experience Platform
-title: Åtkomst av data med Python
+title: Åtkomst till data med Python i datavetenskapen
 topic: tutorial
 type: Tutorial
 description: Följande dokument innehåller exempel på hur du får åtkomst till data i Python för användning i Data Science Workspace.
 translation-type: tm+mt
-source-git-commit: fcb4088ecac76d10b0cb69b04ad55167f5cdac3e
+source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
 workflow-type: tm+mt
-source-wordcount: '396'
+source-wordcount: '420'
 ht-degree: 0%
 
 ---
 
 
-# Åtkomst av data med Python
+# Åtkomst till data med Python i Data Science Workspace
 
-Följande dokument innehåller exempel på hur du får åtkomst till data med Python för användning i Data Science Workspace. Information om hur du får åtkomst till data med JupyterLab-anteckningsböcker finns i [JupyterLab-anteckningsbokens](../jupyterlab/access-notebook-data.md) dokumentation för dataåtkomst.
+Följande dokument innehåller exempel på hur du får åtkomst till data med Python för användning i Data Science Workspace. Information om hur du får åtkomst till data med JupyterLab-anteckningsböcker finns i [dokumentationen för JupyterLab-anteckningsböcker för dataåtkomst](../jupyterlab/access-notebook-data.md).
 
 ## Läsa en datauppsättning
 
@@ -55,7 +55,7 @@ partitions = dataset.get_partitions_info()
 
 Med DISTINCT-satsen kan du hämta alla distinkta värden på rad-/kolumnnivå och ta bort alla dubblettvärden från svaret.
 
-Ett exempel på hur du använder `distinct()` funktionen finns nedan:
+Ett exempel på hur du använder funktionen `distinct()` visas nedan:
 
 ```python
 df = dataset_reader.select(['column-a']).distinct().read()
@@ -87,9 +87,9 @@ df = dataset_reader.where(experience_ds['timestamp'].gt(87879779797).And(experie
 
 ### ORDER BY-instruktion
 
-ORDER BY-satsen tillåter att mottagna resultat sorteras efter en angiven kolumn i en viss ordning (stigande eller fallande). Detta görs genom att använda `sort()` funktionen.
+ORDER BY-satsen tillåter att mottagna resultat sorteras efter en angiven kolumn i en viss ordning (stigande eller fallande). Detta görs med funktionen `sort()`.
 
-Ett exempel på hur du använder `sort()` funktionen finns nedan:
+Ett exempel på hur du använder funktionen `sort()` visas nedan:
 
 ```python
 df = dataset_reader.sort([('column_1', 'asc'), ('column_2', 'desc')])
@@ -99,7 +99,7 @@ df = dataset_reader.sort([('column_1', 'asc'), ('column_2', 'desc')])
 
 Med LIMIT-satsen kan du begränsa antalet poster som tas emot från datauppsättningen.
 
-Ett exempel på hur du använder `limit()` funktionen finns nedan:
+Ett exempel på hur du använder funktionen `limit()` visas nedan:
 
 ```python
 df = dataset_reader.limit(100).read()
@@ -109,7 +109,7 @@ df = dataset_reader.limit(100).read()
 
 Med satsen OFFSET kan du hoppa över rader från början och börja returnera rader från en senare punkt. I kombination med LIMIT kan detta användas för att iterera rader i block.
 
-Ett exempel på hur du använder `offset()` funktionen finns nedan:
+Ett exempel på hur du använder funktionen `offset()` visas nedan:
 
 ```python
 df = dataset_reader.offset(100).read()
@@ -138,7 +138,7 @@ För längre jobb som körs kan du behöva lagra mellanliggande steg. I instanse
 
 >[!NOTE]
 >
->Sökvägar till data lagras **inte** . Du måste lagra motsvarande sökväg till respektive data.
+>Sökvägar till data är **inte** lagrade. Du måste lagra motsvarande sökväg till respektive data.
 
 ### Skriv till användarområde
 
