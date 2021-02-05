@@ -6,9 +6,9 @@ user-guide-title: Hjälp om intelligenta tjänster
 breadcrumb-title: Guide för intelligenta tjänster
 user-guide-description: Använd intelligenta AI-tjänster för att generera bakgrundsmusik, hitta insikter och skapa segment utifrån era marknadsföringshändelsedata.
 translation-type: tm+mt
-source-git-commit: 0675b38397667e8764c75e22a1e2f2e4aaddeb3c
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '120'
+source-wordcount: '119'
 ht-degree: 4%
 
 ---
@@ -23,9 +23,9 @@ ht-degree: 4%
    - [Komma igång med Attribution AI](attribution-ai/getting-started.md)
    - [Indata och utdata](attribution-ai/input-output.md)
    - [Användargränssnittshandbok](attribution-ai/user-guide.md)
-   - [Identifiera insikter](attribution-ai/discover-insights.md)
-   - [Åtkomst till bakgrundsmusik](attribution-ai/download-scores.md)
-   - [Snabbstartsguide för AAI-frågetjänst](attribution-ai/aai-query-service.md)
+   - [Upptäck insikter](attribution-ai/discover-insights.md)
+   - [Hämta bakgrundsmusik](attribution-ai/download-scores.md)
+   - [Analysera bakgrundsmusik med hjälp av frågetjänsten](attribution-ai/aai-query-service.md)
 - Innehåll och handel AI (beta) {#content-commerce-ai}
    - [Översikt](content-commerce-ai/overview.md)
    - [Komma igång](content-commerce-ai/getting-started.md)
@@ -41,7 +41,7 @@ ht-degree: 4%
    - [Indata och utdata](customer-ai/input-output.md)
    - Användargränssnittsguider{#user-guide}
       - [Konfigurera en instans](customer-ai/user-guide/configure.md)
-      - [Identifiera insikter](customer-ai/user-guide/discover-insights.md)
+      - [Upptäck insikter](customer-ai/user-guide/discover-insights.md)
       - [Skapa segment med hjälp av AI-poäng för kunder](customer-ai/user-guide/create-segment.md)
-      - [Hämtar bakgrundsmusik](customer-ai/user-guide/download-scores.md)
+      - [Hämta bakgrundsmusik](customer-ai/user-guide/download-scores.md)
 - [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
