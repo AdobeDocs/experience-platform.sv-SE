@@ -1,23 +1,23 @@
 ---
-keywords: Experience Platform;developer guide;endpoint;Data Science Workspace;popular topics;mlservices;sensei machine learning api
+keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;populära topics;mlservices;sensei machine learning api
 solution: Experience Platform
-title: Tjänster
+title: API-slutpunkt för MLServices
 topic: Developer guide
 description: En MLService är en publicerad tränad modell som ger din organisation möjlighet att komma åt och återanvända tidigare utvecklade modeller. En viktig egenskap hos MLServices är möjligheten att automatisera kurser och poängsättning på schemalagd basis. Schemalagda kurser kan bidra till att bibehålla en modells effektivitet och exakthet, medan schemalagda kurser kan säkerställa att nya insikter genereras på ett konsekvent sätt.
 translation-type: tm+mt
-source-git-commit: 194a29124949571638315efe00ff0b04bff19303
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '872'
+source-wordcount: '890'
 ht-degree: 0%
 
 ---
 
 
-# MLServices
+# MLServices-slutpunkt
 
 En MLService är en publicerad tränad modell som ger din organisation möjlighet att komma åt och återanvända tidigare utvecklade modeller. En viktig egenskap hos MLServices är möjligheten att automatisera kurser och poängsättning på schemalagd basis. Schemalagda kurser kan bidra till att bibehålla en modells effektivitet och exakthet, medan schemalagda kurser kan säkerställa att nya insikter genereras på ett konsekvent sätt.
 
-Automatiserade utbildnings- och poängscheman definieras med en starttidsstämpel, en sluttidsstämpel och en frekvens som representeras som ett [cron-uttryck](https://en.wikipedia.org/wiki/Cron). Du kan definiera scheman när du [skapar en MLService](#create-an-mlservice) eller tillämpar dem genom att [uppdatera en befintlig MLService](#update-an-mlservice).
+Automatiska utbildnings- och poängsättningsscheman definieras med en starttidsstämpel, sluttidsstämpel och en frekvens som representeras som ett [cron expression](https://en.wikipedia.org/wiki/Cron). Scheman kan definieras när [du skapar en MLService](#create-an-mlservice) eller använder [uppdatering av en befintlig MLService](#update-an-mlservice).
 
 ## Skapa en MLService {#create-an-mlservice}
 
@@ -78,7 +78,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar en nyttolast som innehåller information om den nyligen skapade MLService, inklusive dess unika identifierare (`id`), test-ID för utbildning (`trainingExperimentId`), test-ID för poängsättning (`scoringExperimentId`) och datauppsättning-ID för inmatningsutbildning (`trainingDataSetId`).
+Ett lyckat svar returnerar en nyttolast som innehåller information om den nyligen skapade MLService, inklusive dess unika identifierare (`id`), test-ID för utbildning (`trainingExperimentId`), test-ID för poängsättning (`scoringExperimentId`) och indatauppsättning-ID för utbildning (`trainingDataSetId`).
 
 ```json
 {
@@ -109,7 +109,7 @@ Ett lyckat svar returnerar en nyttolast som innehåller information om den nylig
 
 ## Hämta en lista med MLServices {#retrieve-a-list-of-mlservices}
 
-Du kan hämta en lista över MLServices genom att utföra en enda begäran om GET. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](./appendix.md#query)av resurser i bilagan.
+Du kan hämta en lista över MLServices genom att utföra en enda begäran om GET. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista över tillgängliga frågor finns i avsnittet i bilagan [frågeparametrar för hämtning](./appendix.md#query).
 
 **API-format**
 
@@ -121,7 +121,7 @@ GET /mlServices?{QUERY_PARAMETER_1}={VALUE_1}&{QUERY_PARAMETER_2}={VALUE_2}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{QUERY_PARAMETER}` | En av de [tillgängliga frågeparametrarna](./appendix.md#query) som används för att filtrera resultaten. |
+| `{QUERY_PARAMETER}` | En av de [tillgängliga frågeparametrarna](./appendix.md#query) som används för att filtrera resultat. |
 | `{VALUE}` | Värdet för föregående frågeparameter. |
 
 **Begäran**
@@ -139,7 +139,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en lista över MLServices och deras detaljer inklusive deras MLService-ID (`{MLSERVICE_ID}`), Experiment-ID för utbildning (`{TRAINING_ID}`), Experiment-ID för poängsättning (`{SCORING_ID}`) och datauppsättnings-ID för inmatningsutbildning (`{DATASET_ID}`).
+Ett lyckat svar returnerar en lista över MLServices och deras information, inklusive deras MLService-ID (`{MLSERVICE_ID}`), test-ID för utbildning (`{TRAINING_ID}`), test-ID för poängsättning (`{SCORING_ID}`) och indatauppsättning-ID för utbildning (`{DATASET_ID}`).
 
 ```json
 {
@@ -216,7 +216,7 @@ Du kan uppdatera en befintlig MLService genom att skriva över dess egenskaper v
 
 >[!TIP]
 >
->För att denna PUT-begäran ska lyckas föreslår vi att du först utför en GET-begäran för att [hämta MLService via ID](#retrieve-a-specific-mlservice). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
+>För att försäkra dig om att denna PUT-begäran lyckas föreslår vi att du först utför en GET-begäran för att [hämta MLService med ID](#retrieve-a-specific-mlservice). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
 
 **API-format**
 
