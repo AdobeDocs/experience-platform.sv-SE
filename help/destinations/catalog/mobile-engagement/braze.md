@@ -1,25 +1,21 @@
 ---
 keywords: mobiler, bromsa, meddelanden,
-title: Braze destination
-seo-title: Braze destination
+title: Braze Connection Destination
 description: Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar.
-seo-description: Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar.
 translation-type: tm+mt
-source-git-commit: 95f57f9d1b3eeb0b16ba209b9774bd94f5758009
+source-git-commit: f4095a90ff70e8d054bae4f3b0f884552ffd30df
 workflow-type: tm+mt
-source-wordcount: '901'
+source-wordcount: '879'
 ht-degree: 0%
 
 ---
 
 
-# (Beta) [!DNL Braze] mål
+# (Beta) [!DNL Braze]-anslutning
 
 >[!IMPORTANT]
 >
 >Braze-målet i Adobe Experience Platform är för närvarande i Beta. Dokumentationen och funktionaliteten kan komma att ändras.
-
-## Översikt {#overview}
 
 Med [!DNL Braze]-målet kan du skicka profildata till [!DNL Braze].
 
