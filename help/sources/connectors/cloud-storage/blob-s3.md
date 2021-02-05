@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Azure Blob;Amazon S3;blob;Blob;S3;s3
 solution: Experience Platform
-title: Azure Blob och Amazon S3-anslutning
+title: Översikt över Azure Blob och Amazon S3 Source Connectors
 topic: overview
-description: Dokumentationen nedan innehåller information om hur du ansluter Azure Blob och Amazon S3 till plattformen med API:er eller användargränssnittet.
+description: Lär dig hur du ansluter Azure Blob och Amazon S3 till Adobe Experience Platform med API:er eller användargränssnittet.
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
-source-wordcount: '141'
+source-wordcount: '140'
 ht-degree: 0%
 
 ---
 
 
-# Azure Blob och Amazon S3-anslutning
+# Azure Blob och Amazon S3-anslutningar
 
 Adobe Experience Platform erbjuder systemspecifika anslutningsmöjligheter för molnleverantörer som AWS, [!DNL Google Cloud Platform] och [!DNL Azure]. Du kan överföra data från dessa system till [!DNL Platform].
 
