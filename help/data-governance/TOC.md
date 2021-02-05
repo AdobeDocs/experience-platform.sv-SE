@@ -5,10 +5,10 @@ user-guide-title: Adobe Experience Platform Data Governance - hjälp
 breadcrumb-title: Handbok för datastyrning
 user-guide-description: Använd etiketter, marknadsföringsåtgärder och policyer för att begränsa användningen av data.
 translation-type: tm+mt
-source-git-commit: d139eed4768384412a17b62037ed41c06c2941bd
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '118'
-ht-degree: 3%
+source-wordcount: '98'
+ht-degree: 7%
 
 ---
 
@@ -17,19 +17,19 @@ ht-degree: 3%
 
 * [Datastyrning - översikt](home.md)
 * Dataanvändningsetiketter {#labels}
-   * [Översikt över etiketter för dataanvändning](labels/overview.md)
-   * [Etiketter för grundläggande dataanvändning](labels/reference.md)
-   * [Hantera etiketter för dataanvändning i användargränssnittet](labels/user-guide.md)
-   * [Hantera etiketter för datauppsättningar och fält med API:er](labels/dataset-api.md)
+   * [Översikt](labels/overview.md)
+   * [Etikettordlista](labels/reference.md)
+   * [Hantera etiketter i användargränssnittet](labels/user-guide.md)
+   * [Hantera etiketter för datauppsättningar med API:er](labels/dataset-api.md)
 * Dataanvändningsprinciper {#policies}
-   * [Översikt över policyer för dataanvändning](policies/overview.md)
-   * [Användarhandbok för dataanvändningsprinciper](policies/user-guide.md)
-   * [Skapa en dataanvändningsprincip med hjälp av API:t för principtjänsten](policies/create.md)
+   * [Översikt](policies/overview.md)
+   * [Hantera profiler i användargränssnittet](policies/user-guide.md)
+   * [Skapa en princip i API:t](policies/create.md)
 * Principkontroll {#enforcement}
-   * [Översikt över policytillämpning](enforcement/overview.md)
+   * [Översikt](enforcement/overview.md)
    * [Automatisk kontroll](enforcement/auto-enforcement.md)
    * [API-baserad tillämpning](enforcement/api-enforcement.md)
-* Utvecklarhandbok för Policy Service API {#api}
+* API för principtjänst {#api}
    * [Översikt](api/overview.md)
    * [Komma igång](api/getting-started.md)
    * [Etiketter](api/labels.md)
