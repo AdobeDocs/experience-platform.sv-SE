@@ -1,21 +1,17 @@
 ---
 keywords: Audience Manager DIL-tillägg;målgruppshanterare;dil-tillägg
-title: Audience Manager DIL utökningen
-seo-title: Audience Manager DIL utökningen
+title: Audience Manager DIL Extension Destination
 description: Tillägget Audience Manager DIL är ett mål för datahanteringsplattformen (DMP) i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Audience Manager DIL är ett mål för datahanteringsplattformen (DMP) i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '581'
+source-wordcount: '547'
 ht-degree: 0%
 
 ---
 
 
 # Tillägget Audience Manager DIL {#aam-dil-extension}
-
-## Översikt {#overview}
 
 Det här är Adobe Audience Manager Data Integration Library-tillägget (implementering på klientsidan). Obs! Det här tillägget är inte avsett att användas för vidarebefordran av Adobe Analytics-data på serversidan. För SSF använder du Adobe Analytics-tillägget. Viktigt: Från och med version 8.0 är DIL beroende av ID-tjänsten [!DNL Experience Cloud], version 3.3 eller senare. Implementera både [!DNL Experience Cloud] ID-tjänsten och DIL för att få fullständiga [!DNL Audience Manager]-funktioner för dataintegrering.
 
