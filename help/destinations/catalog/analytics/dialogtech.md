@@ -1,21 +1,17 @@
 ---
 keywords: dialogtech extension;dialogTech;dialogtech destination;DialogTech;DialogTech SourceTrak
-title: DialogTech-tillägg
-seo-title: DialogTech-tillägg
+title: DialogTech Extension Destination
 description: Tillägget DialogTech är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget DialogTech är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '497'
+source-wordcount: '470'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL DialogTech] extension  {#dialogtech-extension}
-
-## Översikt {#overview}
 
 Inkludera [!DNL DialogTech SourceTrak] javascript-fragmentet i Adobe Launch
 
