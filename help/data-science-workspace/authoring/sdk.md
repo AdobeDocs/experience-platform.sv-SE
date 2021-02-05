@@ -1,21 +1,21 @@
 ---
-keywords: Experience Platform;developer guide;SDK;Model authoring;Data Science Workspace;popular topics;testing
+keywords: Experience Platform;utvecklarguide;SDK;Modellframställning;Data Science Workspace;populära topics;testing
 solution: Experience Platform
-title: Utvecklarhandbok för SDK
+title: SDK för modellredigering
 topic: Overview
 description: Med hjälp av SDK för modellredigering kan du utveckla anpassade maskininlärningsrecept och funktionsprofiler som kan användas i Adobe Experience Platform Data Science Workspace, med implementerbara mallar i PySpark och Spark (Scala).
 translation-type: tm+mt
-source-git-commit: e1b8bc378c2f72862c0c28e44dceb8a35e44a29e
+source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
 workflow-type: tm+mt
-source-wordcount: '964'
-ht-degree: 0%
+source-wordcount: '977'
+ht-degree: 1%
 
 ---
 
 
-# Utvecklarhandbok för SDK
+# SDK för modellredigering
 
-Med SDK för modellredigering kan du utveckla anpassade maskininlärningsrecept och funktionsförbereds som kan användas i arbetsytan för [!DNL Adobe Experience Platform] datavetenskap, med implementerbara mallar i [!DNL PySpark] och [!DNL Spark (Scala)].
+Med SDK för modellredigering kan du utveckla anpassade maskininlärningsrecept och funktionsförlopp som kan användas i [!DNL Adobe Experience Platform] Data Science Workspace, som innehåller implementerbara mallar i [!DNL PySpark] och [!DNL Spark (Scala)].
 
 Det här dokumentet innehåller information om de olika klasser som finns i SDK för modellredigering.
 
@@ -78,9 +78,9 @@ I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] Data Loa
     </tbody>
 </table>
 
-### Läsa in data från en [!DNL Platform] datauppsättning {#load-data-from-a-platform-dataset}
+### Läsa in data från en [!DNL Platform]-datauppsättning {#load-data-from-a-platform-dataset}
 
-Följande exempel hämtar [!DNL Platform] data efter ID och returnerar en DataFrame, där datauppsättnings-ID (`datasetId`) är en definierad egenskap i konfigurationsfilen.
+Följande exempel hämtar [!DNL Platform]-data efter ID och returnerar en DataFrame, där datauppsättnings-ID (`datasetId`) är en definierad egenskap i konfigurationsfilen.
 
 **PySpark**
 
@@ -252,14 +252,14 @@ I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] Data Sav
     </tbody>
 </table>
 
-### Spara data i en [!DNL Platform] datauppsättning {#save-data-to-a-platform-dataset}
+### Spara data i en [!DNL Platform]-datauppsättning {#save-data-to-a-platform-dataset}
 
-För att kunna lagra data i en [!DNL Platform] datauppsättning måste egenskaperna antingen anges eller definieras i konfigurationsfilen:
+För att kunna lagra data i en [!DNL Platform]-datauppsättning måste egenskaperna antingen anges eller definieras i konfigurationsfilen:
 
-- Ett giltigt [!DNL Platform] datauppsättnings-ID som data ska lagras på
+- Ett giltigt [!DNL Platform]-datauppsättnings-ID som data ska lagras på
 - Klient-ID som tillhör din organisation
 
-I följande exempel lagras data (`prediction`) i en [!DNL Platform] datauppsättning där datauppsättnings-ID (`datasetId`) och klient-ID (`tenantId`) definieras i konfigurationsfilen.
+I följande exempel lagras data (`prediction`) i en [!DNL Platform]-datauppsättning, där datauppsättnings-ID (`datasetId`) och klient-ID (`tenantId`) definieras i konfigurationsfilen.
 
 
 **PySpark**
@@ -395,7 +395,7 @@ class ScoringDataSaver extends DataSaver {
 
 ## DatasetTransformer {#datasettransformer}
 
-Klassen DatasetTransformer ändrar och omformar strukturen i en datauppsättning. Komponenten behöver [!DNL Sensei Machine Learning Runtime] inte definieras och implementeras utifrån dina krav.
+Klassen DatasetTransformer ändrar och omformar strukturen i en datauppsättning. [!DNL Sensei Machine Learning Runtime] kräver inte att den här komponenten definieras och implementeras baserat på dina krav.
 
 När det gäller en funktionspipeline kan datauppsättningsomvandlare användas tillsammans med en rörledningsfabrik för att förbereda data för funktionskonstruktion.
 
@@ -429,7 +429,7 @@ I följande tabell beskrivs klassmetoderna för en PySpark-datamängdstransforme
 
 **Spark (Scala)**
 
-I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark] datamängdstransformatorklass:
+I följande tabell beskrivs de abstrakta metoderna för en [!DNL Spark]-datamängdstransformatorklass:
 
 <table>
     <thead>
@@ -538,7 +538,7 @@ I följande tabell beskrivs klassmetoderna för en [!DNL Spark] FeaturePipelineF
 
 ## PipelineFactory {#pipelinefactory}
 
-Klassen PipelineFactory kapslar metoder och definitioner för modellutbildning och poängsättning, där utbildningslogik och algoritmer definieras i form av en [!DNL Spark] pipeline.
+Klassen PipelineFactory kapslar metoder och definitioner för modellutbildning och poängsättning, där utbildningslogik och algoritmer definieras i form av en [!DNL Spark]-pipeline.
 
 **PySpark**
 
