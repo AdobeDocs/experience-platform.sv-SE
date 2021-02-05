@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;datumintervall
 solution: Experience Platform
-title: Komma igång med API:t för observabilitetsinsikter
+title: Getting Started with the Observability Insights API
 topic: developer guide
 description: Med API:t för observabilitetsinsikter kan du hämta mätdata för olika Adobe Experience Platform-funktioner. Det här dokumentet innehåller en introduktion till de centrala koncept du behöver känna innan du försöker ringa till API:t för observationer.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
 source-wordcount: '253'
 ht-degree: 0%
