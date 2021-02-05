@@ -5,10 +5,10 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
-source-wordcount: '663'
-ht-degree: 0%
+source-wordcount: '551'
+ht-degree: 4%
 
 ---
 
@@ -22,10 +22,10 @@ ht-degree: 0%
       - [Analytics-dataanslutning](connectors/adobe-applications/analytics.md)
       - [Audience Manager-kontakt](connectors/adobe-applications/audience-manager.md)
       - [Koppling för kundattribut](connectors/adobe-applications/customer-attributes.md)
-      - Mappa Adobe-programfält {#mapping}
-         - [Mappningsfält för analyser](connectors/adobe-applications/mapping/analytics.md)
-         - [Mappningsfält för Audience Manager](connectors/adobe-applications/mapping/audience-manager.md)
-         - [Målmappningsfält](connectors/adobe-applications/mapping/target.md)
+      - Mappningar av programfält i Adobe {#mapping}
+         - [Mappningar av analysfält](connectors/adobe-applications/mapping/analytics.md)
+         - [Fältkopplingar i Audience Manager](connectors/adobe-applications/mapping/audience-manager.md)
+         - [Målfältsmappningar](connectors/adobe-applications/mapping/target.md)
    - Reklam {#advertising}
       - [Google AdWords-koppling](connectors/advertising/ads.md)
    - Molnlagring {#cloud-storage}
@@ -74,49 +74,49 @@ ht-degree: 0%
 - API-självstudiekurser {#api-tutorials}
    - Skapa en källanslutning {#create}
       - Reklam {#advertising}
-         - [Google AdWords-koppling](tutorials/api/create/advertising/ads.md)
+         - [Google AdWords](tutorials/api/create/advertising/ads.md)
       - Molnlagring {#cloud-storage}
          - [Amazon Kinesis](tutorials/api/create/cloud-storage/kinesis.md)
-         - [Amazon S3-anslutning](tutorials/api/create/cloud-storage/s3.md)
-         - [Apache HDFS-kontakt](tutorials/api/create/cloud-storage/hdfs.md)
-         - [Azure Blob-koppling](tutorials/api/create/cloud-storage/blob.md)
-         - [Azure Data Lake Storage Gen2-anslutning](tutorials/api/create/cloud-storage/adls-gen2.md)
-         - [Azure Event Hubs-koppling](tutorials/api/create/cloud-storage/eventhub.md)
-         - [Azure File Storage Connector](tutorials/api/create/cloud-storage/azure-file-storage.md)
-         - [FTP-anslutning](tutorials/api/create/cloud-storage/ftp.md)
-         - [Google Cloud Storage Connector](tutorials/api/create/cloud-storage/google.md)
-         - [SFTP-anslutning](tutorials/api/create/cloud-storage/sftp.md)
+         - [Amazon S3](tutorials/api/create/cloud-storage/s3.md)
+         - [Apache HDFS](tutorials/api/create/cloud-storage/hdfs.md)
+         - [Azure Blob](tutorials/api/create/cloud-storage/blob.md)
+         - [Azure Data Lake Storage Gen2](tutorials/api/create/cloud-storage/adls-gen2.md)
+         - [Azure Event Hubs](tutorials/api/create/cloud-storage/eventhub.md)
+         - [Azure-fillagring](tutorials/api/create/cloud-storage/azure-file-storage.md)
+         - [FTP](tutorials/api/create/cloud-storage/ftp.md)
+         - [Google Cloud-lagring](tutorials/api/create/cloud-storage/google.md)
+         - [SFTP](tutorials/api/create/cloud-storage/sftp.md)
       - CRM {#crm}
-         - [Microsoft Dynamics-anslutning](tutorials/api/create/crm/ms-dynamics.md)
-         - [Salesforce-koppling](tutorials/api/create/crm/salesforce.md)
+         - [Microsoft Dynamics](tutorials/api/create/crm/ms-dynamics.md)
+         - [Salesforce](tutorials/api/create/crm/salesforce.md)
       - Nöjda kunder {#customer-success}
-         - [Salesforce Service Cloud-anslutning](tutorials/api/create/customer-success/salesforce-service-cloud.md)
-         - [ServiceNow-koppling](tutorials/api/create/customer-success/servicenow.md)
+         - [Salesforce Service Cloud](tutorials/api/create/customer-success/salesforce-service-cloud.md)
+         - [ServiceNow](tutorials/api/create/customer-success/servicenow.md)
       - Databaser {#databases}
-         - [Amazon Redshift-anslutning](tutorials/api/create/databases/redshift.md)
-         - [Apache Hive på Azure HDInsights-kontakten](tutorials/api/create/databases/hive.md)
-         - [Apache Spark på Azure HDInsights-kontakten](tutorials/api/create/databases/spark.md)
-         - [Azure Data Explorer Connector](tutorials/api/create/databases/data-explorer.md)
-         - [azure synapse Analytics Connector](tutorials/api/create/databases/synapse-analytics.md)
-         - [Azure Table Storage-koppling](tutorials/api/create/databases/ats.md)
-         - [Koppling till kuchbase](tutorials/api/create/databases/couchbase.md)
-         - [Google BigQuery-koppling](tutorials/api/create/databases/bigquery.md)
-         - [GreenPlum-kontakt](tutorials/api/create/databases/greenplum.md)
-         - [HP Vertica-koppling](tutorials/api/create/databases/hp-vertica.md)
-         - [IBM DB2-anslutning](tutorials/api/create/databases/ibm-db2.md)
-         - [MySQL-koppling](tutorials/api/create/databases/mysql.md)
-         - [Oracle Connector](tutorials/api/create/databases/oracle.md)
-         - [Phoenix-kontakt](tutorials/api/create/databases/phoenix.md)
-         - [PostgreSQL-koppling](tutorials/api/create/databases/postgres.md)
-         - [SQL Server-koppling](tutorials/api/create/databases/sql-server.md)
+         - [Amazon Redshift](tutorials/api/create/databases/redshift.md)
+         - [Apache Hive på Azure HDInsights](tutorials/api/create/databases/hive.md)
+         - [Apache Spark på Azure HDInsights](tutorials/api/create/databases/spark.md)
+         - [Azure-Data Explorer](tutorials/api/create/databases/data-explorer.md)
+         - [azure synapse Analytics](tutorials/api/create/databases/synapse-analytics.md)
+         - [Azure Table Storage](tutorials/api/create/databases/ats.md)
+         - [Kuchbase](tutorials/api/create/databases/couchbase.md)
+         - [Google BigQuery](tutorials/api/create/databases/bigquery.md)
+         - [GreenPlum](tutorials/api/create/databases/greenplum.md)
+         - [HP Vertica](tutorials/api/create/databases/hp-vertica.md)
+         - [IBM DB2](tutorials/api/create/databases/ibm-db2.md)
+         - [MySQL](tutorials/api/create/databases/mysql.md)
+         - [Oracle](tutorials/api/create/databases/oracle.md)
+         - [Phoenix](tutorials/api/create/databases/phoenix.md)
+         - [PostgreSQL](tutorials/api/create/databases/postgres.md)
+         - [SQL Server](tutorials/api/create/databases/sql-server.md)
       - e-handel {#ecommerce}
-         - [Förminska koppling](tutorials/api/create/ecommerce/shopify.md)
+         - [Förminska](tutorials/api/create/ecommerce/shopify.md)
       - Automatiserad marknadsföring {#marketing-automation}
-         - [HubSpot-anslutning](tutorials/api/create/marketing-automation/hubspot.md)
+         - [HubSpot](tutorials/api/create/marketing-automation/hubspot.md)
       - Betalningar {#payments}
-         - [PayPal-anslutning](tutorials/api/create/payments/paypal.md)
+         - [PayPal](tutorials/api/create/payments/paypal.md)
       - Protokoll {#protocols}
-         - [Allmän OData-koppling](tutorials/api/create/protocols/odata.md)
+         - [Allmän OData](tutorials/api/create/protocols/odata.md)
    - Utforska data {#explore}
       - [Utforska annonsdata](tutorials/api/explore/advertising.md)
       - [Utforska molnlagringsdata](tutorials/api/explore/cloud-storage.md)
@@ -147,66 +147,66 @@ ht-degree: 0%
 - Självstudiekurser för användargränssnitt {#ui-tutorials}
    - Skapa en källanslutning {#create}
       - Adobe-program {#adobe-applications}
-         - [Adobe Analytics Classifications Data Connector](tutorials/ui/create/adobe-applications/classifications.md)
-         - [Adobe Analytics Connector](tutorials/ui/create/adobe-applications/analytics.md)
-         - [Adobe Audience Manager Connector](tutorials/ui/create/adobe-applications/audience-manager.md)
-         - [Koppling för kundattribut](tutorials/ui/create/adobe-applications/customer-attributes.md)
+         - [Adobe Analytics (report-suite data)](tutorials/ui/create/adobe-applications/analytics.md)
+         - [Adobe Analytics (klassificeringsdata)](tutorials/ui/create/adobe-applications/classifications.md)
+         - [Adobe Audience Manager](tutorials/ui/create/adobe-applications/audience-manager.md)
+         - [Kundattribut](tutorials/ui/create/adobe-applications/customer-attributes.md)
       - Reklam {#create}
-         - [Google AdWords-koppling](tutorials/ui/create/advertising/ads.md)
+         - [Google AdWords](tutorials/ui/create/advertising/ads.md)
       - Molnlagring {#cloud-storage}
-         - [Amazon Kinesis Connector](tutorials/ui/create/cloud-storage/kinesis.md)
-         - [Amazon S3-anslutning](tutorials/ui/create/cloud-storage/s3.md)
-         - [Apache HDFS-kontakt](tutorials/ui/create/cloud-storage/hdfs.md)
-         - [Azure Data Lake Storage Gen2-anslutning](tutorials/ui/create/cloud-storage/adls-gen2.md)
-         - [Azure Blob-koppling](tutorials/ui/create/cloud-storage/blob.md)
-         - [Azure Event Hubs-koppling](tutorials/ui/create/cloud-storage/eventhub.md)
-         - [Azure File Storage Connector](tutorials/ui/create/cloud-storage/azure-file-storage.md)
-         - [FTP-anslutning](tutorials/ui/create/cloud-storage/ftp.md)
-         - [Google Cloud Storage Connector](tutorials/ui/create/cloud-storage/google-cloud-storage.md)
-         - [SFTP-anslutning](tutorials/ui/create/cloud-storage/sftp.md)
-         - [Amazon S3 och Blob-anslutning](tutorials/ui/create/cloud-storage/blob-s3.md)
+         - [Amazon Kinesis](tutorials/ui/create/cloud-storage/kinesis.md)
+         - [Amazon S3](tutorials/ui/create/cloud-storage/s3.md)
+         - [Apache HDFS](tutorials/ui/create/cloud-storage/hdfs.md)
+         - [Azure Data Lake Storage Gen2](tutorials/ui/create/cloud-storage/adls-gen2.md)
+         - [Azure Blob](tutorials/ui/create/cloud-storage/blob.md)
+         - [Azure Event Hubs](tutorials/ui/create/cloud-storage/eventhub.md)
+         - [Azure-fillagring](tutorials/ui/create/cloud-storage/azure-file-storage.md)
+         - [FTP](tutorials/ui/create/cloud-storage/ftp.md)
+         - [Google Cloud-lagring](tutorials/ui/create/cloud-storage/google-cloud-storage.md)
+         - [SFTP](tutorials/ui/create/cloud-storage/sftp.md)
+         - [Amazon S3 och Blob](tutorials/ui/create/cloud-storage/blob-s3.md)
       - CRM {#crm}
-         - [Microsoft Dynamics-anslutning](tutorials/ui/create/crm/dynamics.md)
-         - [Salesforce-koppling](tutorials/ui/create/crm/salesforce.md)
+         - [Microsoft Dynamics](tutorials/ui/create/crm/dynamics.md)
+         - [Salesforce](tutorials/ui/create/crm/salesforce.md)
       - Nöjda kunder {#customer-success}
-         - [Salesforce Service Cloud-anslutning](tutorials/ui/create/customer-success/salesforce-service-cloud.md)
-         - [ServiceNow-koppling](tutorials/ui/create/customer-success/servicenow.md)
+         - [Salesforce Service Cloud](tutorials/ui/create/customer-success/salesforce-service-cloud.md)
+         - [ServiceNow](tutorials/ui/create/customer-success/servicenow.md)
       - Databaser {#databases}
-         - [Amazon Redshift-anslutning](tutorials/ui/create/databases/redshift.md)
-         - [Apache Hive på Azure HDInsights-kontakten](tutorials/ui/create/databases/hive.md)
-         - [Apache Spark på Azure HDInsights-kontakten](tutorials/ui/create/databases/spark.md)
-         - [Azure Data Explorer Connector](tutorials/ui/create/databases/data-explorer.md)
-         - [azure synapse Analytics Connector](tutorials/ui/create/databases/synapse-analytics.md)
-         - [Azure Table Storage-koppling](tutorials/ui/create/databases/ats.md)
-         - [Koppling till kuchbase](tutorials/ui/create/databases/couchbase.md)
-         - [Google Big Query-koppling](tutorials/ui/create/databases/bigquery.md)
-         - [GreenPlum-kontakt](tutorials/ui/create/databases/greenplum.md)
-         - [HP Vertica-koppling](tutorials/ui/create/databases/hp-vertica.md)
-         - [IBM DB2-anslutning](tutorials/ui/create/databases/ibm-db2.md)
-         - [Microsoft SQL Server-anslutning](tutorials/ui/create/databases/sql-server.md)
-         - [MySQL-koppling](tutorials/ui/create/databases/mysql.md)
-         - [Oracle Connector](tutorials/ui/create/databases/oracle.md)
-         - [Phoenix-kontakt](tutorials/ui/create/databases/phoenix.md)
-         - [PostgreSQL-koppling](tutorials/ui/create/databases/postgres.md)
+         - [Amazon Redshift](tutorials/ui/create/databases/redshift.md)
+         - [Apache Hive på Azure HDInsights](tutorials/ui/create/databases/hive.md)
+         - [Apache Spark på Azure HDInsights](tutorials/ui/create/databases/spark.md)
+         - [Azure-Data Explorer](tutorials/ui/create/databases/data-explorer.md)
+         - [azure synapse Analytics](tutorials/ui/create/databases/synapse-analytics.md)
+         - [Azure Table Storage](tutorials/ui/create/databases/ats.md)
+         - [Kuchbase](tutorials/ui/create/databases/couchbase.md)
+         - [Google Big Query](tutorials/ui/create/databases/bigquery.md)
+         - [GreenPlum](tutorials/ui/create/databases/greenplum.md)
+         - [HP Vertica](tutorials/ui/create/databases/hp-vertica.md)
+         - [IBM DB2](tutorials/ui/create/databases/ibm-db2.md)
+         - [Microsoft SQL Server](tutorials/ui/create/databases/sql-server.md)
+         - [MySQL](tutorials/ui/create/databases/mysql.md)
+         - [Oracle](tutorials/ui/create/databases/oracle.md)
+         - [Phoenix](tutorials/ui/create/databases/phoenix.md)
+         - [PostgreSQL](tutorials/ui/create/databases/postgres.md)
       - e-handel {#ecommerce}
-         - [Förminska koppling](tutorials/ui/create/ecommerce/shopify.md)
+         - [Förminska](tutorials/ui/create/ecommerce/shopify.md)
       - Automatiserad marknadsföring {#marketing-automation}
-         - [HubSpot-anslutning](tutorials/ui/create/marketing-automation/hubspot.md)
+         - [HubSpot](tutorials/ui/create/marketing-automation/hubspot.md)
       - Betalningar {#payments}
-         - [PayPal-anslutning](tutorials/ui/create/payments/paypal.md)
+         - [PayPal](tutorials/ui/create/payments/paypal.md)
       - Protokoll {#protocols}
-         - [Allmän OData-koppling](tutorials/ui/create/protocols/odata.md)
+         - [Allmän OData](tutorials/ui/create/protocols/odata.md)
    - Konfigurera ett dataflöde {#dataflow}
-      - [Konfigurera ett dataflöde för en reklamanslutning](tutorials/ui/dataflow/advertising.md)
-      - [Konfigurera ett dataflöde för en batchanslutning för molnlagring](tutorials/ui/dataflow/batch/cloud-storage.md)
-      - [Konfigurera ett dataflöde för en direktuppspelad molnlagringskontakt](tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
-      - [Konfigurera ett dataflöde för en CRM-koppling](tutorials/ui/dataflow/crm.md)
-      - [Konfigurera ett dataflöde för en koppling för kundframgångar](tutorials/ui/dataflow/customer-success.md)
-      - [Konfigurera ett dataflöde för en databasanslutning](tutorials/ui/dataflow/databases.md)
-      - [Konfigurera ett dataflöde för en eCommerce-koppling](tutorials/ui/dataflow/ecommerce.md)
-      - [Konfigurera ett dataflöde för en koppling för automatiserad marknadsföring](tutorials/ui/dataflow/marketing-automation.md)
-      - [Konfigurera ett dataflöde för en betalningsanslutning](tutorials/ui/dataflow/payments.md)
-      - [Konfigurera ett dataflöde för en protokollanslutning](tutorials/ui/dataflow/protocols.md)
+      - [Annonserar anslutningsdataflöde](tutorials/ui/dataflow/advertising.md)
+      - [Anslutningsdataflöde för batchmolnlagring](tutorials/ui/dataflow/batch/cloud-storage.md)
+      - [Dataflöde för direktuppspelning av molnlagring](tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
+      - [Dataflöde för CRM-anslutning](tutorials/ui/dataflow/crm.md)
+      - [Anslutningsdataflöde för lyckade kunder](tutorials/ui/dataflow/customer-success.md)
+      - [Dataflöde för databasanslutning](tutorials/ui/dataflow/databases.md)
+      - [Dataflöde för e-handelsanslutning](tutorials/ui/dataflow/ecommerce.md)
+      - [Dataflöde för automatiserad marknadsföring](tutorials/ui/dataflow/marketing-automation.md)
+      - [Dataflöde för betalningsanslutning](tutorials/ui/dataflow/payments.md)
+      - [Dataflöde för protokollanslutning](tutorials/ui/dataflow/protocols.md)
    - [Aktivera inkommande data för att fylla i kundprofiler](tutorials/ui/profile.md)
    - [Övervaka dataflöden](tutorials/ui/monitor.md)
    - [Uppdatera konton](tutorials/ui/update.md)
