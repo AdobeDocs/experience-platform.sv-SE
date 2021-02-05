@@ -1,19 +1,17 @@
 ---
 keywords: Undersökningsdestinationer;undersökning;förutse;instund;webbinfångsundersökningar;frågor
-title: Destinationer för undersökning
-seo-title: Destinationer för undersökning
-description: Plattformarna identifierar enkäthändelser, samlar in feedback från kunderna i realtid via dataelement och delar data med Platform.
-seo-description: Plattformarna identifierar enkäthändelser, samlar in feedback från kunderna i realtid via dataelement och delar data med Platform.
+title: Översikt över undersökningsmål
+description: Plattformarna identifierar enkäthändelser, samlar in feedback från kunderna i realtid via dataelement och delar data med Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '105'
+source-wordcount: '89'
 ht-degree: 0%
 
 ---
 
 
-# Undersökningsmål {#survey-destinations}
+# Översikt över undersökningsmål {#survey-destinations}
 
 Plattformarna identifierar enkäthändelser, samlar in feedback från kunderna i realtid via dataelement och delar data med Adobe Experience Platform.
 
