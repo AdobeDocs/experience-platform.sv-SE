@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segmentation Service;pql;PQL;Profile Query Language;comparison functions;comparison;
+keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;pql;PQL;Profile Query Language;jämförelsefunktioner;jämförelse;
 solution: Experience Platform
-title: Jämförelsefunktioner
+title: PQL-jämförelsefunktioner
 topic: developer guide
 description: Jämförelsefunktioner används för att jämföra mellan olika uttryck och värden och returnerar"true" eller"false" i enlighet därmed.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '308'
+source-wordcount: '326'
 ht-degree: 7%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 7%
 
 # Jämförelsefunktioner
 
-Jämförelsefunktioner används för att jämföra olika uttryck och värden, returnera `true` eller `false` därefter. Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikten](./overview.md).
+Jämförelsefunktioner används för att jämföra olika uttryck och värden, vilket returnerar `true` eller `false` därefter. Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikten](./overview.md).
 
 ## Är lika med
 
@@ -37,7 +37,7 @@ homeAddress.countryISO = "CA"
 
 ## Inte lika med
 
-Funktionen `!=` (inte lika med) kontrollerar om ett värde eller uttryck **inte** är lika med ett annat värde eller uttryck.
+Funktionen `!=` (inte lika med) kontrollerar om ett värde eller uttryck är **inte** lika med ett annat värde eller uttryck.
 
 **Format**
 
@@ -127,4 +127,4 @@ person.birthMonth <= 2
 
 ## Nästa steg
 
-Nu när du har lärt dig mer om jämförelsefunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i översikten [över](./overview.md)profilfrågespråk.
+Nu när du har lärt dig mer om jämförelsefunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [översikten över profilfrågespråk](./overview.md).
