@@ -1,23 +1,23 @@
 ---
-keywords: Experience Platform;home;popular topics;access control permissions;access control resource types;access control api
+keywords: Experience Platform;hem;populära ämnen;åtkomstkontrollbehörigheter;åtkomstkontrollsresurstyper;åtkomstkontrolls-API
 solution: Experience Platform
-title: Listnamn på behörigheter och resurstyper
+title: Referens-API-slutpunkt
 topic: developer guide
-description: Med åtkomstkontrollen i Adobe Experience Platform kan du hantera roller och behörigheter för olika plattformsfunktioner med Adobe Admin Console. Du kan lista namnen på alla behörigheter och resurstyper genom att göra en GET-begäran till /acl/reference-slutpunkten. Dessa namn kan sedan användas i API-anrop för att visa gällande principer för den aktuella användaren.
+description: Med åtkomstkontrollen i Adobe Experience Platform kan du hantera roller och behörigheter för olika plattformsfunktioner med Adobe Admin Console. Du kan lista namnen på alla behörigheter och resurstyper genom att göra en GET-begäran till /acl/reference-slutpunkten i åtkomstkontrolls-API:t. Dessa namn kan sedan användas i API-anrop för att visa gällande principer för den aktuella användaren.
 translation-type: tm+mt
-source-git-commit: 28b733a16b067f951a885c299d59e079f0074df8
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '184'
+source-wordcount: '195'
 ht-degree: 0%
 
 ---
 
 
-# Listnamn på behörigheter och resurstyper
+# Referensslutpunkt
 
-Du kan lista namnen på alla behörigheter och resurstyper genom att göra en GET-begäran till `/acl/reference` slutpunkten. Dessa namn kan sedan användas i API-anrop för att [visa gällande principer](./effective-policies.md) för den aktuella användaren.
+Du kan lista namnen på alla behörigheter och resurstyper genom att göra en GET-begäran till `/acl/reference`-slutpunkten. Dessa namn kan sedan användas i API-anrop för att [visa gällande principer](./effective-policies.md) för den aktuella användaren.
 
-En behörighet är en princip som hanteras via Adobe Admin Console och mappar till noll eller flera resurstypsprofiler. En resurstyp är en princip som möjliggör läsning, skrivning och/eller borttagning av funktioner för en viss typ av [!DNL Platform] resurs (till exempel datauppsättningar eller scheman).
+En behörighet är en princip som hanteras via Adobe Admin Console och mappar till noll eller flera resurstypsprofiler. En resurstyp är en princip som möjliggör läsning, skrivning och/eller borttagning av funktioner för en viss typ av [!DNL Platform]-resurs (till exempel datauppsättningar eller scheman).
 
 **API-format**
 
@@ -37,7 +37,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar ett `permissions` objekt och ett `resource-types` objekt som vart och ett innehåller en fullständig lista med namn för åtkomstbehörigheter respektive resurstyper.
+Ett godkänt svar returnerar ett `permissions`-objekt och ett `resource-types`-objekt som alla innehåller en fullständig lista med namn för åtkomstbehörigheter respektive resurstyper.
 
 ```json
 {
