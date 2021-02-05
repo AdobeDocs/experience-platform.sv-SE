@@ -6,7 +6,7 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: d1f357659313aba0811b267598deda9770d946a1
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
 source-wordcount: '2058'
 ht-degree: 0%
