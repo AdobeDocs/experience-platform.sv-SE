@@ -1,21 +1,17 @@
 ---
 keywords: Marketo Munchkin;marketo munchkin;Marketo Munchkin extension;marketo munchkin extension;marketo;Marketo;Marketo
-title: Marketo Munchkin-tillägg
-seo-title: Marketo Munchkin-tillägg
+title: Marketo Munchkin Extension Destination
 description: Tillägget Marketo Munchkin är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Marketo Munchkin är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '538'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Marketo Munchkin] Tillägg  {#marketo-munchkin-extension}
-
-## Översikt {#overview}
+# [!DNL Marketo Munchkin] extension  {#marketo-munchkin-extension}
 
 [!DNL Marketo Engagement Platform] förenklar hur ni planerar, samordnar och mäter engagemanget med kunder och potentiella kunder i alla skeden av upplevelsen, från lead-hantering till kontobaserad marknadsföring.
 
