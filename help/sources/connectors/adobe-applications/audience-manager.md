@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Audience Manager-koppling;Målgruppshanterare;målgruppshanterare
 solution: Experience Platform
-title: Audience Manager-kontakt
+title: Översikt över Audience Manager Source Connector
 topic: overview
-description: Adobe Audience Manager dataanslutning strömmar data från första part som samlats in i Adobe Audience Manager till Adobe Experience Platform. Kopplingen Audience Manager importerar två datakategorier till plattformen.
+description: Adobe Audience Manager källanslutning strömmar förstahandsdata som samlats in i Audience Manager till Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: b88c358d128ba2016c9449fefc8862bd503c4aa5
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '879'
+source-wordcount: '868'
 ht-degree: 0%
 
 ---
