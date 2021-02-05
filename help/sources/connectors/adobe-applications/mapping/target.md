@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;target mapping;Target mapping
+keywords: Experience Platform;hem;populära ämnen;målmappning;Målmappning
 solution: Experience Platform
-title: Målmappningsfält
+title: Mappa Adobe Target-händelsedata till XDM
 topic: overview
-description: I följande tabell visas fälten i ett Experience Event-schema (*XDM ExperienceEvent-fält*) och motsvarande Target-fält som de ska mappas till (Target Request-fält). Ytterligare information om vissa mappningar finns också.
+description: Lär dig hur du mappar Adobe Target-händelsefält till ett XDM-schema (Experience Data Model) som kan användas i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
 source-wordcount: '462'
 ht-degree: 0%
@@ -13,11 +13,11 @@ ht-degree: 0%
 ---
 
 
-# Målmappningsfält
+# Mappningar av målmappningsfält
 
-Med Adobe Experience Platform kan du importera Adobe Target-data via Target-källanslutningen. När du använder kopplingen måste alla data från målfält mappas till XDM-fälten ( [Experience Data Model)](../../../../xdm/home.md) som är kopplade till klassen XDM ExperienceEvent.
+Med Adobe Experience Platform kan du importera Adobe Target-data via Target-källanslutningen. När du använder kopplingen måste alla data från målfält mappas till [XDM-fälten (Experience Data Model)](../../../../xdm/home.md) som är associerade med klassen XDM ExperienceEvent.
 
-I följande tabell visas fälten i ett Experience Event-schema (*XDM ExperienceEvent-fält*) och motsvarande Target-fält som de ska mappas till (*Target Request-fält*). Ytterligare information om vissa mappningar finns också.
+Följande tabell visar fälten i ett Experience Event-schema (*XDM ExperienceEvent-fält*) och motsvarande målfält som de ska mappas till (*Målbegärandefält*). Ytterligare information om vissa mappningar finns också.
 
 >[!NOTE]
 >
