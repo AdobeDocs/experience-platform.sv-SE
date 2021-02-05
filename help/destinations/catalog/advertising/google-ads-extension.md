@@ -1,21 +1,17 @@
 ---
 keywords: Google-annonser;Google-annonser;Google-annonser;Google Ads-tillägg
-title: Google Ads-tillägg
-seo-title: Google Ads-tillägg
+title: Google Ads-tilläggsmål
 description: Tillägget Google Ads är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Google Ads är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '553'
+source-wordcount: '524'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL Google Ads] extension
-
-## Översikt {#overview}
 
 Det här tillägget spårar konverteringar från användare som klickar på din [!DNL Google Ads]. Du måste också installera tillägget gtag.js och lägga till det i biblioteket eftersom [!DNL Google Ads] är beroende av det.
 
