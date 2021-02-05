@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;walkthrough;Data Science Workspace;popular topics
+keywords: Experience Platform;genomgång;Data Science Workspace;populära ämnen
 solution: Experience Platform
-title: Genomgång av datavetenskapens arbetsyta
+title: Data Science Workspace Walkthrough
 topic: Walkthrough
 description: Det här dokumentet innehåller en genomgång av Adobe Experience Platform Data Science Workspace. Det allmänna arbetsflöde som en datavetare skulle gå igenom för att lösa ett problem med maskininlärning.
 translation-type: tm+mt
-source-git-commit: 0d76b14599bc6b6089f9c760ef6a6be3a19243d4
+source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
 workflow-type: tm+mt
-source-wordcount: '1701'
+source-wordcount: '1709'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ En återförsäljare står inför många utmaningar när det gäller att vara ko
 
 En datavetare kan utnyttja den stora mängden historisk information som en återförsäljare tillhandahållit för att förutse framtida trender och optimera prissättningsbeslut. I den här genomgången används tidigare försäljningsdata för att utbilda en maskininlärningsmodell och modellen används för att förutse framtida försäljningstrender. Med detta kan ni generera insikter som hjälper er att få optimala prisförändringar.
 
-Den här översikten speglar de steg en datavetare skulle gå igenom för att ta en datauppsättning och skapa en modell för att förutse försäljningen varje vecka. Den här självstudiekursen handlar om följande avsnitt i den exempel som finns på Adobe Experience Platform [!DNL Data Science Workspace]:
+Den här översikten speglar de steg en datavetare skulle gå igenom för att ta en datauppsättning och skapa en modell för att förutse försäljningen varje vecka. Den här självstudiekursen handlar om följande avsnitt i den exempel på en bärbar försäljningsbok för detaljhandel på Adobe Experience Platform [!DNL Data Science Workspace]:
 
 - [Inställningar](#setup)
 - [Utforska data](#exploring-data)
@@ -39,7 +39,7 @@ Den här översikten speglar de steg en datavetare skulle gå igenom för att ta
 
 ### Anteckningsböcker i [!DNL Data Science Workspace]
 
-I Adobe Experience Platform-användargränssnittet väljer du **[!UICONTROL Notebooks]** på **[!UICONTROL Data Science]** fliken så att du kommer till [!UICONTROL Notebooks] översiktssidan. På den här sidan väljer du fliken [!DNL JupyterLab] för att starta [!DNL JupyterLab] miljön. Standardstartsidan för [!DNL JupyterLab] är **[!UICONTROL Launcher]**.
+I Adobe Experience Platform-gränssnittet väljer du **[!UICONTROL Notebooks]** på fliken **[!UICONTROL Data Science]** för att komma till översiktssidan för [!UICONTROL Notebooks]. På den här sidan väljer du fliken [!DNL JupyterLab] för att starta din [!DNL JupyterLab]-miljö. Standardstartsidan för [!DNL JupyterLab] är **[!UICONTROL Launcher]**.
 
 ![](./images/walkthrough/notebooks.png)
 
@@ -47,7 +47,7 @@ I Adobe Experience Platform-användargränssnittet väljer du **[!UICONTROL Note
 
 I den här självstudien används [!DNL Python] 3 i [!DNL JupyterLab Notebooks] för att visa hur du får åtkomst till och utforskar data. På startsidan finns exempelanteckningsböcker. Exempelanteckningsboken **[!UICONTROL Retail Sales]** används i exemplen nedan.
 
-### Inställningar {#setup}
+### Konfigurera {#setup}
 
 När butiksförsäljningsjournalen är öppen är det första du bör göra att läsa in de bibliotek som krävs för ditt arbetsflöde. I följande lista visas en kort beskrivning av de bibliotek som används i exemplen i senare steg.
 
@@ -62,11 +62,11 @@ När butiksförsäljningsjournalen är öppen är det första du bör göra att 
 
 #### Läs in data
 
-När biblioteken har lästs in kan du börja titta på data. I följande [!DNL Python] kod används pandas `DataFrame` datastruktur och funktionen [read_csv()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html#pandas.read_csv) för att läsa CSV-filen som finns [!DNL Github] i pandornas DataFrame:
+När biblioteken har lästs in kan du börja titta på data. I följande [!DNL Python]-kod används pandas `DataFrame`-datastruktur och funktionen [read_csv()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html#pandas.read_csv) för att läsa den CSV-fil som finns på [!DNL Github] i pandornas DataFrame:
 
 ![](./images/walkthrough/read_csv.png)
 
-Pandornas DataFrame-datastruktur är en tvådimensionell datastruktur med etiketter. Om du snabbt vill se datamåtten kan du använda `df.shape`. Detta returnerar en tuppel som representerar dimensionaliteten för DataFrame:
+Pandornas DataFrame-datastruktur är en tvådimensionell datastruktur med etiketter. Du kan använda `df.shape` om du snabbt vill se datamåtten. Detta returnerar en tuppel som representerar dimensionaliteten för DataFrame:
 
 ![](./images/walkthrough/df_shape.png)
 
@@ -76,7 +76,7 @@ Slutligen kan du förhandsgranska hur data ser ut. Du kan använda `df.head(n)` 
 
 #### Statistisk sammanfattning
 
-Vi kan utnyttja [!DNL Python's] pandabiblioteket för att hämta datatypen för varje attribut. Utdata från följande anrop ger oss information om antalet poster och datatypen för var och en av kolumnerna:
+Vi kan använda pandabiblioteket [!DNL Python's] för att hämta datatypen för varje attribut. Utdata från följande anrop ger oss information om antalet poster och datatypen för var och en av kolumnerna:
 
 ```PYTHON
 df.info()
@@ -86,7 +86,7 @@ df.info()
 
 Den här informationen är användbar eftersom du vet vilken datatyp varje kolumn har, så att vi kan veta hur vi ska behandla data.
 
-Låt oss titta på den statistiska sammanfattningen. Endast de numeriska datatyperna visas så `date`, `storeType`och `isHoliday` kommer inte att skrivas ut:
+Låt oss titta på den statistiska sammanfattningen. Endast de numeriska datatyperna visas så `date`, `storeType` och `isHoliday` kommer inte att returneras:
 
 ```PYTHON
 df.describe()
@@ -96,11 +96,11 @@ df.describe()
 
 Då ser du att det finns 6 435 förekomster för varje egenskap. Dessutom ges statistiska uppgifter som medelvärde, standardavvikelse (std), min, max och interkvartilter. Detta ger oss information om avvikelsen för data. I nästa avsnitt går du igenom visualisering som fungerar tillsammans med den här informationen för att ge oss en fullständig förståelse för dina data.
 
-Om du tittar på minimi- och maximivärdena för `store`ser du att det finns 45 unika lagringsplatser som data representerar. Det finns också `storeTypes` som skiljer ut vad en butik är. Du kan se hur distributionen av `storeTypes` genom att göra följande:
+Om du tittar på minimi- och maximivärdena för `store` ser du att det finns 45 unika lagringsplatser som data representerar. Det finns också `storeTypes` som skiljer ut vad en butik är. du kan se distributionen av `storeTypes` genom att göra följande:
 
 ![](./images/walkthrough/df_groupby.png)
 
-Det innebär att 22 butiker är av `storeType A` , 17 är `storeType B`och 6 är `storeType C`.
+Det innebär att 22 butiker är av `storeType A`, 17 är `storeType B` och 6 är `storeType C`.
 
 #### Visualisera data
 
@@ -110,7 +110,7 @@ Nu när du känner till dataramängdsvärdena vill du komplettera detta med visu
 
 Univariata diagram är diagram av en enskild variabel. Ett vanligt unikt diagram som används för att visualisera dina data är lådor och morrdiagram.
 
-Med hjälp av dina butiksdata från tidigare kan du generera box och whisker-fack för var och en av de 45 butikerna och deras försäljning varje vecka. Ritytan genereras med `seaborn.boxplot` funktionen.
+Med hjälp av dina butiksdata från tidigare kan du generera box och whisker-fack för var och en av de 45 butikerna och deras försäljning varje vecka. Ritytan genereras med funktionen `seaborn.boxplot`.
 
 ![](./images/walkthrough/box_whisker.png)
 
@@ -153,25 +153,25 @@ Vecka och datum är följande:
 
 #### Konvertera storeType till indikatorvariabel
 
-Sedan vill du konvertera kolumnen storeType till kolumner som representerar varje `storeType`. Det finns tre lagringstyper (`A`, `B`, `C`) som du skapar tre nya kolumner från. Det värde som anges i var och en är ett booleskt värde där 1 anges beroende på vad som `storeType` var och `0` för de andra två kolumnerna.
+Sedan vill du konvertera kolumnen storeType till kolumner som representerar `storeType`. Det finns tre lagringstyper (`A`, `B`, `C`) som du skapar tre nya kolumner från. Det värde som anges i var och en är ett booleskt värde där 1 anges beroende på vad `storeType` var och `0` för de andra två kolumnerna.
 
 ![](./images/walkthrough/storeType.png)
 
-Den aktuella `storeType` kolumnen tas bort.
+Den aktuella `storeType`-kolumnen tas bort.
 
 #### Konvertera isHoliday till numerisk typ
 
-Nästa ändring är att ändra det booleska värdet till en numerisk `isHoliday` representation.
+Nästa ändring är att ändra det booleska värdet `isHoliday` till en numerisk representation.
 
 ![](./images/walkthrough/isHoliday.png)
 
 #### Förutspå varje veckaFörsäljning nästa vecka
 
-Nu vill du lägga till föregående och kommande veckoförsäljning till alla dina datauppsättningar. Du kan göra detta genom att förskjuta ditt `weeklySales`konto. Dessutom beräknas `weeklySales` skillnaden. Detta görs genom att subtrahera `weeklySales` med föregående veckas `weeklySales`.
+Nu vill du lägga till föregående och kommande veckoförsäljning till alla dina datauppsättningar. Du kan göra detta genom att förskjuta din `weeklySales`. Dessutom beräknas skillnaden `weeklySales`. Detta görs genom att subtrahera `weeklySales` med föregående veckas `weeklySales`.
 
 ![](./images/walkthrough/weekly_past_future.png)
 
-Eftersom du förskjuter 45 datauppsättningar framåt och 45 datauppsättningar bakåt för att skapa nya kolumner har de första och sista 45 datapunkterna NaN-värden. `weeklySales` Du kan ta bort dessa punkter från datauppsättningen med hjälp av funktionen `df.dropna()` som tar bort alla rader som har NaN-värden.
+Eftersom du förskjuter datauppsättningarna `weeklySales` för 45 framåt och 45 bakåt för att skapa nya kolumner har de första och sista 45 datapunkterna NaN-värden. Du kan ta bort dessa punkter från datauppsättningen med funktionen `df.dropna()` som tar bort alla rader som har NaN-värden.
 
 ![](./images/walkthrough/dropna.png)
 
@@ -179,7 +179,7 @@ En sammanfattning av datauppsättningen efter dina ändringar visas nedan:
 
 ![](./images/walkthrough/df_info_new.png)
 
-### Utbildning och kontroll {#training-and-verification}
+### Utbildning och verifiering {#training-and-verification}
 
 Nu är det dags att skapa några modeller av data och välja vilken modell som är bäst för att förutse framtida försäljning. Du kommer att utvärdera de fem följande algoritmerna:
 
@@ -191,23 +191,23 @@ Nu är det dags att skapa några modeller av data och välja vilken modell som �
 
 #### Dela upp datauppsättningar till utbildnings- och testunderuppsättningar
 
-Ni behöver ett sätt att veta hur korrekt er modell kommer att kunna förutse värden. Utvärderingen kan göras genom att en del av datauppsättningen tilldelas som validering och resten som utbildningsdata. Eftersom `weeklySalesAhead` är de faktiska framtida värdena för `weeklySales`kan du använda detta för att utvärdera hur exakt modellen är när värdet förutses. Delningen görs nedan:
+Ni behöver ett sätt att veta hur korrekt er modell kommer att kunna förutse värden. Utvärderingen kan göras genom att en del av datauppsättningen tilldelas som validering och resten som utbildningsdata. Eftersom `weeklySalesAhead` är de faktiska framtida värdena `weeklySales` kan du använda detta för att utvärdera hur exakt modellen är när värdet förutses. Delningen görs nedan:
 
 ![](./images/walkthrough/split_data.png)
 
-Nu har du `X_train` och `y_train` för att förbereda modellerna och `X_test` och `y_test` för utvärdering senare.
+Du har nu `X_train` och `y_train` för att förbereda modellerna och `X_test` och `y_test` för utvärdering senare.
 
 #### Kontrollalgoritmer
 
-I det här avsnittet deklarerar du alla algoritmer i en array med namnet `model`. Därefter itererar du igenom den här arrayen och för varje algoritm anger du dina utbildningsdata `model.fit()` som skapar en modell `mdl`. Med den här modellen kan ni förutse `weeklySalesAhead` era `X_test` data.
+I det här avsnittet deklarerar du alla algoritmer i en array med namnet `model`. Därefter itererar du genom den här arrayen och för varje algoritm anger du dina utbildningsdata med `model.fit()` som skapar modellen `mdl`. Med den här modellen kan du förutsäga `weeklySalesAhead` med dina `X_test`-data.
 
 ![](./images/walkthrough/training_scoring.png)
 
-För poängsättningen tar du den genomsnittliga procentuella skillnaden mellan det förväntade värdet `weeklySalesAhead` och de faktiska värdena i `y_test` data. Eftersom du vill minimera skillnaden mellan din förutsägelse och det faktiska resultatet är Övertoningsstartregressorn den modell som ger bäst resultat.
+För poängsättningen tar du den genomsnittliga procentuella skillnaden mellan den förväntade `weeklySalesAhead` och de faktiska värdena i `y_test`-data. Eftersom du vill minimera skillnaden mellan din förutsägelse och det faktiska resultatet är Övertoningsstartregressorn den modell som ger bäst resultat.
 
 #### Visualisera prognoser
 
-Slutligen visualiserar ni er prognosmodell med de faktiska veckoförsäljningsvärdena. Den blå linjen representerar de faktiska siffrorna, medan den gröna representerar din förutsägelse med hjälp av Övertoningsboostring. Följande kod genererar 6 plot som representerar 6 av de 45 butikerna i din datamängd. Endast `Store 1` här:
+Slutligen visualiserar ni er prognosmodell med de faktiska veckoförsäljningsvärdena. Den blå linjen representerar de faktiska siffrorna, medan den gröna representerar din förutsägelse med hjälp av Övertoningsboostring. Följande kod genererar 6 plot som representerar 6 av de 45 butikerna i din datamängd. Endast `Store 1` visas här:
 
 ![](./images/walkthrough/visualize_prediction.png)
 
@@ -220,4 +220,4 @@ Dokumentet innehöll ett allmänt arbetsflöde för datavetare för att lösa et
 - Sedan används funktionskonstruktion för att göra ändringar i din detaljhandelsdatamängd.
 - Skapa slutligen modeller av data och välj vilken modell som är bäst för att förutse framtida försäljning.
 
-När du är klar kan du börja med att läsa användarhandboken [för](./jupyterlab/overview.md) JupyterLab för en snabb översikt över anteckningsböcker i Adobe Experience Platform Data Science Workspace. Om du är intresserad av att lära dig mer om modeller och recept börjar du med att läsa självstudiekursen om [detaljhandelsförsäljning och datauppsättningar](./models-recipes/create-retails-sales-dataset.md) . I den här självstudiekursen får du hjälp med följande självstudiekurser för arbetsytan för datavetenskap som du kan visa på [sidan](../tutorials/data-science-workspace.md)med självstudiekurser för datavetenskap.
+När du är klar börjar du med att läsa användarhandboken [JupyterLab](./jupyterlab/overview.md) för en snabb översikt över anteckningsböcker i Adobe Experience Platform Data Science Workspace. Om du är intresserad av att lära dig mer om modeller och recept börjar du med att läsa självstudiekursen [Retail sales schema and dataset](./models-recipes/create-retails-sales-dataset.md). I den här självstudiekursen får du hjälp med följande självstudiekurser för datavetenskap som du kan visa på sidan [Självstudiekurser för datavetenskap](../tutorials/data-science-workspace.md).
