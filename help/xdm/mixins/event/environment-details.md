@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;XDM;ExperienceEvent;fields;schemas;Schemas;Schema design;mixin;mixin;environment;environment details;
+keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;ExperienceEvent;fields;schemas;Schema design;mixin;mixin;environment;environment details;
 solution: Experience Platform
-title: Miljöinformation, blandning
+title: Blanda miljödetaljer
 topic: overview
 description: Det här dokumentet innehåller en översikt över ExperienceEvent-miljödetaljmixen.
 translation-type: tm+mt
-source-git-commit: f9d8021643e72e3fbb5315b54a19815dcdaaa702
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '175'
+source-wordcount: '194'
 ht-degree: 1%
 
 ---
@@ -17,9 +17,9 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Namnen på flera blandningar har ändrats. Mer information finns i dokumentet om uppdatering [av](../name-updates.md) blandade namn.
+>Namnen på flera blandningar har ändrats. Mer information finns i dokumentet om [uppdateringar av blandnamn](../name-updates.md).
 
-[!UICONTROL Environment Details] är en standardblandning för den [[!DNL XDM ExperienceEvent] klass](../../classes/individual-profile.md) som används för att samla in information om miljödetaljer som rör en Experience Event-händelse, till exempel enhetsinformation, webbläsarinformation, lokal tid och annan geografisk information.
+[!UICONTROL Environment Details] är en standardblandning för den  [[!DNL XDM ExperienceEvent] ](../../classes/individual-profile.md) klass som används för att samla in information om miljödetaljer som rör en upplevelsehändelse, t.ex. enhetsinformation, webbläsarinformation, lokal tid och annan geografisk information.
 
 <img src="../../images/mixins/environment-details.png" width="500" /><br />
 
