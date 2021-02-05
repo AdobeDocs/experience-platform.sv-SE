@@ -1,21 +1,17 @@
 ---
 keywords: 'Reklam. Vedning. '
-title: Microsoft Bing-mål
-seo-title: Med Microsoft Bing-målet kan du skicka profildata till Microsoft Display Advertising.
-description: Med Microsoft Bing-målet kan ni genomföra återannonsering och målgruppsanpassade digitala kampanjer i Microsoft Display Advertising.
-seo-description: Med Microsoft Bing-målet kan ni genomföra återannonsering och målgruppsanpassade digitala kampanjer i Microsoft Display Advertising.
+title: Mål för Microsoft Bing-anslutning
+description: Med anslutningsmålet för Microsoft Bing kan ni genomföra återannonsering och målgruppsanpassade digitala kampanjer i Microsoft Display Advertising.
 translation-type: tm+mt
-source-git-commit: 95f57f9d1b3eeb0b16ba209b9774bd94f5758009
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '470'
+source-wordcount: '440'
 ht-degree: 1%
 
 ---
 
 
-# [!DNL Microsoft Bing] mål
-
-## Översikt {#overview}
+# [!DNL Microsoft Bing] anslutning
 
 Med [!DNL Microsoft Bing]-målet kan du skicka profildata till [!DNL Microsoft Display Advertising].
 
