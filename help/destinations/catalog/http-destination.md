@@ -1,25 +1,21 @@
 ---
 keywords: strömning,
-title: HTTP-målet är ett Adobe Experience Platform-mål som hjälper dig att skicka profildata till HTTP-slutpunkter från tredje part.
-seo-title: HTTP-målet är ett Adobe Experience Platform-mål som hjälper dig att skicka profildata till HTTP-slutpunkter från tredje part.
-description: HTTP-målet är ett Adobe Experience Platform-mål som hjälper dig att skicka profildata till HTTP-slutpunkter från tredje part.
-seo-description: HTTP-målet är ett Adobe Experience Platform-mål som hjälper dig att skicka profildata till HTTP-slutpunkter från tredje part.
+title: Mål för HTTP-anslutning
+description: Med HTTP-målet i Adobe Experience Platform kan du skicka profildata till HTTP-slutpunkter från tredje part.
 translation-type: tm+mt
-source-git-commit: 95f57f9d1b3eeb0b16ba209b9774bd94f5758009
+source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
 workflow-type: tm+mt
-source-wordcount: '513'
+source-wordcount: '456'
 ht-degree: 0%
 
 ---
 
 
-# (Alfa) [!DNL HTTP] Mål
+# (Alfa) [!DNL HTTP]-anslutning
 
 >[!IMPORTANT]
 >
 >Målet [!DNL HTTP] i Platform är för närvarande alfavärdet. Dokumentationen och funktionaliteten kan komma att ändras.
-
-## Översikt {#overview}
 
 Målet [!DNL HTTP] är ett [!DNL Adobe Experience Platform]-mål för direktuppspelning som hjälper dig att skicka profildata till [!DNL HTTP]-slutpunkter från tredje part.
 
