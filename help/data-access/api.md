@@ -1,27 +1,27 @@
 ---
-keywords: Experience Platform;home;popular topics;data access;python sdk;spark sdk;data access api;export;Export
+keywords: Experience Platform;hem;populära ämnen;dataåtkomst;python sdk;spark sdk;dataåtkomst api;export;Exportera
 solution: Experience Platform
-title: Utvecklarhandbok för dataåtkomst
+title: API-guide för dataåtkomst
 topic: developer guide
-description: API:t för dataåtkomst stöder Adobe Experience Platform genom att ge användarna ett RESTful-gränssnitt som fokuserar på identifierbarhet och tillgänglighet för kapslade datauppsättningar i Experience Platform.
+description: API:t för dataåtkomst stöder Adobe Experience Platform genom att ge utvecklarna ett RESTful-gränssnitt som fokuserar på att upptäcka och tillgängliggöra inkapslade datauppsättningar i Experience Platform.
 translation-type: tm+mt
-source-git-commit: 172710c62b6f60de74e05364edb1191fbba0ff64
+source-git-commit: e649ab3da077cdd8e98562199b8bdece6108a572
 workflow-type: tm+mt
-source-wordcount: '512'
+source-wordcount: '528'
 ht-degree: 1%
 
 ---
 
 
-# Utvecklarhandbok för dataåtkomst
+# API-guide för dataåtkomst
 
-API:t för dataåtkomst stöder Adobe Experience Platform genom att förse användarna med ett RESTful-gränssnitt som fokuserar på identifierbarhet och tillgänglighet för kapslade datauppsättningar i [!DNL Experience Platform].
+API:t för dataåtkomst stöder Adobe Experience Platform genom att ge användarna ett RESTful-gränssnitt som fokuserar på identifierbarhet och tillgänglighet för kapslade datauppsättningar i [!DNL Experience Platform].
 
 ![Dataåtkomst i Experience Platform](images/Data_Access_Experience_Platform.png)
 
 ## API-specifikationsreferens
 
-Referensdokumentationen för Swagger API finns [här](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml).
+Referenshandboken för Swagger API finns [här](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml).
 
 ## Terminologi
 
@@ -95,7 +95,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/
 }
 ```
 
-Arrayen innehåller en lista med alla filer i den angivna gruppen. `"data"` Varje returnerad fil har ett eget unikt ID (`{FILE_ID}`) som finns i `"dataSetFileId"` fältet. Detta unika ID kan sedan användas för att komma åt eller hämta filen.
+Matrisen `"data"` innehåller en lista med alla filer i den angivna gruppen. Varje returnerad fil har ett eget unikt ID (`{FILE_ID}`) som finns i fältet `"dataSetFileId"`. Detta unika ID kan sedan användas för att komma åt eller hämta filen.
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
@@ -116,7 +116,7 @@ GET /files/{FILE_ID}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{FILE_ID}` | Samma som `"dataSetFileId"`ID:t för filen som ska öppnas. |
+| `{FILE_ID}` | Samma som `"dataSetFileId"`, ID:t för filen som ska öppnas. |
 
 **Begäran**
 
@@ -204,7 +204,7 @@ När en katalog returneras innehåller den en array med alla filer i katalogen.
 
 ## Åtkomst till innehållet i en fil
 
-API:t kan också användas för att komma åt innehållet i en fil [!DNL Data Access] . Den kan sedan användas för att hämta innehållet till en extern källa.
+API:t [!DNL Data Access] kan också användas för att komma åt innehållet i en fil. Den kan sedan användas för att hämta innehållet till en extern källa.
 
 **API-format**
 
@@ -237,8 +237,8 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID}?pat
 
 ## Ytterligare kodexempel
 
-Ytterligare exempel finns i [dataåtkomstsjälvstudiekursen](tutorials/dataset-data.md).
+Ytterligare exempel finns i [självstudiekursen](tutorials/dataset-data.md) för dataåtkomst.
 
 ## Prenumerera på dataöverföringshändelser
 
-[!DNL Platform] gör specifika värdefulla händelser tillgängliga för prenumeration via [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). Du kan t.ex. prenumerera på dataöverföringshändelser för att få meddelanden om eventuella förseningar och fel. Mer information finns i självstudiekursen om hur du [prenumererar på meddelanden](../ingestion/quality/subscribe-events.md) om dataöverföring.
+[!DNL Platform] gör specifika värdefulla händelser tillgängliga för prenumeration via  [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). Du kan t.ex. prenumerera på dataöverföringshändelser för att få meddelanden om eventuella förseningar och fel. Mer information finns i självstudiekursen om [att prenumerera på meddelanden om dataöverföring](../ingestion/quality/subscribe-events.md).
