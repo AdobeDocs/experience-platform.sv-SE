@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;hemmabruk;populära ämnen;direktuppspelningsuppläsning;förtäring;direktuppspelning av flera meddelanden;flera meddelanden;
 solution: Experience Platform
-title: Direktuppspelning av flera meddelanden i en enda HTTP-begäran
+title: Skicka flera meddelanden i en enda HTTP-begäran
 topic: tutorial
 type: Tutorial
 description: Det här dokumentet innehåller en självstudiekurs för att skicka flera meddelanden till Adobe Experience Platform inom en enda HTTP-begäran med direktuppspelningsinmatning.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 089a4d517476b614521d1db4718966e3ebb13064
 workflow-type: tm+mt
 source-wordcount: '1492'
 ht-degree: 1%
