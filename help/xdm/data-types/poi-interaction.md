@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;XDM;fields;schemas;Schemas;poi;interaction;point of interest;point-of-interest;datatype;data-type;data type;
+keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fält;scheman;scheman;poi;interaktion;intressepunkt;datatyp;datatyp;datatyp;datatyp;
 solution: Experience Platform
-title: Datatyp för intresseinteraktion
+title: Datatyp för intressepunktsinteraktion
 topic: overview
 description: Det här dokumentet innehåller en översikt över XDM-datatypen Point of Interest Interaction.
 translation-type: tm+mt
-source-git-commit: 032adc72db7f094b268f14e8f7d48810830a84e4
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '150'
+source-wordcount: '171'
 ht-degree: 0%
 
 ---
