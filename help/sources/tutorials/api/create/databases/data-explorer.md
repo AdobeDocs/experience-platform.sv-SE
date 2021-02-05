@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Azure Data Explorer;data explorer;Data Explorer
 solution: Experience Platform
-title: Skapa en Azure Data Explorer-koppling med API:t för Flow Service
+title: Skapa en Azure Data Explorer Source-anslutning med API:t för Flow Service
 topic: overview
 type: Tutorial
-description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Azure Data Explorer (nedan kallad Data Explorer) till Experience Platform.
+description: Lär dig hur du ansluter Azure Data Explorer till Adobe Experience Platform med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '641'
+source-wordcount: '632'
 ht-degree: 0%
 
 ---
 
 
-# Skapa en [!DNL Azure Data Explorer]-koppling med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL Azure Data Explorer]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
 >[!NOTE]
 >
