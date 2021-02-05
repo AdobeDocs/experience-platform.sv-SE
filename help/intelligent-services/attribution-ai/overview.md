@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;attribution ai overview;popular topics;attribution ai;Attribution ai
+keywords: Experience Platform;attribuering - översikt;populära ämnen;attribuering ai;Attribution ai
 solution: Experience Platform, Intelligent Services
 title: Översikt över Attribution AI
 topic: Attribution AI
 description: Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor. Exempel på kontaktytor är visningar av webbannonser, e-postmeddelanden, e-postöppningar och betalda sökningar.
-landing-page-description: Attribution AI is used to attribute credits to touchpoints leading to conversion events. This can be used by marketers to help quantify the marketing impact of each individual marketing touchpoint across customer journeys.
+landing-page-description: Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor.
 translation-type: tm+mt
-source-git-commit: de16ebddd8734f082f908f5b6016a1d3eadff04c
+source-git-commit: eb163949f91b0d1e9cc23180bb372b6f94fc951f
 workflow-type: tm+mt
-source-wordcount: '455'
+source-wordcount: '499'
 ht-degree: 0%
 
 ---
@@ -48,4 +48,4 @@ Attribution AI erbjuder även integrering med andra Adobe-lösningar som [!DNL A
 
 ## Nästa steg
 
-Du kan börja med att följa guiden [Komma igång](./getting-started.md) . I den här guiden får du hjälp med att konfigurera alla nödvändiga förbegäranden för Attribution AI. Om du redan har dina uppgifter tillgängliga går du till [Attribution AI användarhandbok](./user-guide.md). I den här guiden får du hjälp med att skapa en instans och skicka in den för utbildning och poängsättning.
+Du kan börja med att följa guiden [komma igång](./getting-started.md). I den här guiden får du hjälp med att konfigurera alla nödvändiga förbegäranden för Attribution AI. Om du redan har inloggningsuppgifter och data klara kan du gå till [användarhandboken för Attribution AI](./user-guide.md). I den här guiden får du hjälp med att skapa en instans och skicka in den för utbildning och poängsättning.
