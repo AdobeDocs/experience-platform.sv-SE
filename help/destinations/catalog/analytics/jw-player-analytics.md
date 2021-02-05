@@ -1,25 +1,21 @@
 ---
 keywords: JW player;jw player;JW Player;jw extension;JW extension
-title: JW Player Analytics-tillägg (BETA)
-seo-title: JW Player Analytics-tillägg (BETA)
-description: JW Player Analytics-tillägget (BETA) är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: JW Player Analytics-tillägget (BETA) är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
+title: Mål för JW Player Analytics-tillägg (beta)
+description: Tillägget JW Player Analytics (Beta) är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
 workflow-type: tm+mt
-source-wordcount: '564'
+source-wordcount: '531'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL JW Player Analytics] (BETA)-tillägg  {#jw-player-analytics-extension}
-
-## Översikt {#overview}
+# [!DNL JW Player Analytics] (Beta)-tillägg  {#jw-player-analytics-extension}
 
 Det här tillägget installerar [!DNL JW Player]-kortet för att ansluta [!DNL JW Player]-händelser till Adobe Video Analytics. Utnyttja möjligheterna i Adobe Video Analytics för att få detaljerade insikter om kundernas videovisningsvanor.
 
-[!DNL JW Player Analytics] (BETA) är ett analystillägg i Adobe Experience Platform. Mer information om tilläggsfunktioner finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101523.jw-player-analytics-launch-extension.html).
+[!DNL JW Player Analytics] (Beta) är ett analystillägg i Adobe Experience Platform. Mer information om tilläggsfunktioner finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101523.jw-player-analytics-launch-extension.html).
 
 Det här målet är ett Adobe Experience Platform Launch-tillägg. Mer information om hur plattformsstartstillägg fungerar i Platform finns i [Översikt över Adobe Experience Platform Launch-tillägg](../launch-extensions/overview.md).
 
@@ -33,7 +29,7 @@ Om du vill använda det här tillägget måste du ha tillgång till Adobe Experi
 
 ## Installera tillägg {#install-extension}
 
-Så här installerar du tillägget [!DNL JW Player Analytics] (BETA):
+Så här installerar du tillägget [!DNL JW Player Analytics] (beta):
 
 Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** i [plattformsgränssnittet](http://platform.adobe.com/).
 
@@ -45,7 +41,7 @@ I **[!UICONTROL Select available Platform Launch property]**-fönstret väljer d
 
 Arbetsflödet tar dig till Platform Launch för att slutföra installationen.
 
-Mer information om alternativen för tilläggskonfigurationen finns på tilläggssidan [BETA (JW Player Analytics)](https://exchange.adobe.com/experiencecloud.details.101523.jw-player-analytics-launch-extension.html) i Adobe Exchange.
+Mer information om alternativen för tilläggskonfigurationen finns på tilläggssidan [JW Player Analytics (Beta)](https://exchange.adobe.com/experiencecloud.details.101523.jw-player-analytics-launch-extension.html) i Adobe Exchange.
 
 Du kan också installera tillägget direkt i [Adobe Experience Platform Launch-gränssnittet](https://launch.adobe.com/). Se [Lägg till ett nytt tillägg](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/extensions/overview.html?lang=en#add-a-new-extension) i dokumentationen för plattformsstart.
 
