@@ -1,14 +1,14 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;frågetjänst;Frågetjänst;datadeduplicering;deduplicering;
 solution: Experience Platform
-title: Datadeduplicering
+title: Datadeduplicering i frågetjänsten
 topic: queries
 type: Tutorial
 description: Det här dokumentet innehåller exempel på delurval och fullständiga exempelfrågor för borttagning av dubbletter av tre vanliga användningsfall - Experience Events, purchase och metrics.
 translation-type: tm+mt
-source-git-commit: e2c648829bb3268ab319da934f5cc6cc811290b3
+source-git-commit: 97dc0b5fb44f5345fd89f3f56bd7861668da9a6e
 workflow-type: tm+mt
-source-wordcount: '491'
+source-wordcount: '494'
 ht-degree: 0%
 
 ---
