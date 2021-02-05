@@ -1,18 +1,18 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetlig profil;Enhetlig profil;Enhetlig;Profil;rtcp;aktivera profil;Aktivera profil
-title: Utvecklarhandbok för kundprofil-API i realtid
+title: API-guide för kundprofil i realtid
 topic: guide
-description: Real-time Customer Profile API innehåller flera slutpunkter för att utforska och arbeta med profildata, inklusive visningsprofiler, skapa och uppdatera sammanfogningsprinciper, exportera eller sampla profildata och ta bort profildata som du inte längre behöver eller som har lagts till av misstag.
+description: Med kundprofils-API:t i realtid kan utvecklare utforska och arbeta med profildata, inklusive visa profiler, skapa och uppdatera sammanfogningsprinciper, exportera eller sampla profildata och ta bort profildata som inte längre behövs eller som har lagts till av misstag. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 translation-type: tm+mt
-source-git-commit: 823d89ab37156e775a2879e3a2c91bfd911b83bb
+source-git-commit: e649ab3da077cdd8e98562199b8bdece6108a572
 workflow-type: tm+mt
-source-wordcount: '861'
+source-wordcount: '870'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Real-time Customer Profile] Utvecklarhandbok för API
+# [!DNL Real-time Customer Profile] API-guide
 
 [!DNL Real-time Customer Profile] ger er en helhetsbild av var och en av era enskilda kunder inom Adobe Experience Platform. [!DNL Profile] kan ni sammanställa olika kunddata från olika kanaler, t.ex. online, offline, CRM och data från tredje part, i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
 
