@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Azure Event Hubs;azure event hubs;Event Hubs;event hubs
 solution: Experience Platform
-title: Azure Event Hubs-koppling
+title: Översikt över Azure Event Hubs Source Connector
 topic: overview
-description: Dokumentationen nedan innehåller information om hur du ansluter Azure Event Hubs till plattformen med hjälp av API:er eller användargränssnittet.
+description: Lär dig hur du ansluter Azure Event Hubs till Adobe Experience Platform med API:er eller användargränssnittet.
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
 source-wordcount: '248'
 ht-degree: 0%
@@ -33,10 +33,10 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Azure Eve
 
 ### Använda API:er
 
-- [Skapa en Azure Event Hubs-koppling med API:t för Flow Service](../../tutorials/api/create/cloud-storage/eventhub.md)
+- [Skapa en Azure Event Hubs-källanslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/eventhub.md)
 - [Samla in strömmande data med API:t för Flow Service](../../tutorials/api/collect/streaming.md)
 
 ### Använda gränssnittet
 
-- [Skapa en Azure Event Hubs-källkoppling i användargränssnittet](../../tutorials/ui/create/cloud-storage/eventhub.md)
-- [Konfigurera ett dataflöde för en molnlagringskontakt i användargränssnittet](../../tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
+- [Skapa en Azure Event Hubs-källanslutning i användargränssnittet](../../tutorials/ui/create/cloud-storage/eventhub.md)
+- [Konfigurera ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
