@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;ETL;etl;etl integrations;ETL integrations
 solution: Experience Platform
-title: Skapa ETL-integreringar
+title: Utveckla ETL-integreringar för Adobe Experience Platform
 topic: overview
 description: Integreringsguiden för ETL beskriver allmänna steg för att skapa säkra anslutningar med höga prestanda för Experience Platform och inmatning av data på plattformen.
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
-source-wordcount: '4139'
+source-wordcount: '4143'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 Till att börja med loggar en ETL-användare in i användargränssnittet för [!DNL Experience Platform] och skapar datauppsättningar för förtäring med en standardanslutning eller en push-tjänstanslutning.
 
-I användargränssnittet skapar användaren utdatauppsättningen genom att välja ett dataschema. Vilket schema som väljs beror på vilken typ av data (post- eller tidsserie) som importeras till [!DNL Platform]. Genom att klicka på fliken Scheman i användargränssnittet kan användaren visa alla tillgängliga scheman, inklusive den beteendetyp som schemat stöder.
+I användargränssnittet skapar användaren utdata genom att välja ett dataschema. Vilket schema som väljs beror på vilken typ av data (post- eller tidsserie) som importeras till [!DNL Platform]. Genom att klicka på fliken Scheman i användargränssnittet kan användaren visa alla tillgängliga scheman, inklusive den beteendetyp som schemat stöder.
 
 I ETL-verktyget kommer användaren att börja designa sina mappningstransformeringar efter att ha konfigurerat lämplig anslutning (med hjälp av sina autentiseringsuppgifter). ETL-verktyget antas redan ha [!DNL Experience Platform] anslutningar installerade (processen är inte definierad i den här integreringshandboken).
 
