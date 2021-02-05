@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;data governance;data usage label api;policy service api
+keywords: Experience Platform;hem;populära ämnen;datastyrning;dataanvändningsetikett api;principtjänst api
 solution: Experience Platform
 title: 'Hantera dataanvändningsetiketter med API:er '
 topic: developer guide
 description: Med API:t för datauppsättningstjänsten kan du tillämpa och redigera användningsetiketter för datauppsättningar. Den ingår i Adobe Experience Platform datakatalogfunktioner, men är skild från katalogtjänstens API, som hanterar datauppsättningsmetadata.
 translation-type: tm+mt
-source-git-commit: 4b5e116d221e6689f95c8da0c54ef3af6827adc1
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '1003'
+source-wordcount: '1017'
 ht-degree: 1%
 
 ---
@@ -15,21 +15,21 @@ ht-degree: 1%
 
 # Hantera dataanvändningsetiketter med API:er
 
-Det här dokumentet innehåller steg för hur du hanterar dataanvändningsetiketter med hjälp av [!DNL Policy Service] API och [!DNL Dataset Service] API.
+Det här dokumentet innehåller steg för hur du hanterar dataanvändningsetiketter med API:t [!DNL Policy Service] och API:t [!DNL Dataset Service].
 
-Här [[!DNL Policy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) finns flera slutpunkter som du kan använda för att skapa och hantera dataanvändningsetiketter för din organisation.
+[[!DNL Policy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) innehåller flera slutpunkter som gör att du kan skapa och hantera dataanvändningsetiketter för din organisation.
 
-Med [!DNL Dataset Service] API kan du använda och redigera användningsetiketter för datauppsättningar. Den är en del av Adobe Experience Platform datakatalogfunktioner, men är skild från API:t som hanterar metadata för datauppsättningar [!DNL Catalog Service] .
+Med API:t [!DNL Dataset Service] kan du använda och redigera användningsetiketter för datauppsättningar. Den ingår i Adobe Experience Platform datakatalogfunktioner, men skiljer sig från [!DNL Catalog Service]-API:t som hanterar datauppsättningsmetadata.
 
 ## Komma igång
 
-Innan du läser den här handboken följer du de steg som beskrivs i avsnittet [](../../catalog/api/getting-started.md) Komma igång i guiden för katalogutvecklare för att samla in de nödvändiga inloggningsuppgifterna för att ringa anrop till [!DNL Platform] API:er.
+Innan du läser den här guiden följer du de steg som beskrivs i [avsnittet ](../../catalog/api/getting-started.md) Komma igång i guiden för katalogutvecklare för att samla in de nödvändiga inloggningsuppgifterna för att anropa [!DNL Platform] API:er.
 
-För att kunna anropa de [!DNL Dataset Service] slutpunkter som beskrivs i det här dokumentet måste du ha det unika `id` värdet för en viss datauppsättning. Om du inte har det här värdet läser du i guiden om att [lista katalogobjekt](../../catalog/api/list-objects.md) för att hitta ID:n för dina befintliga datauppsättningar.
+För att kunna anropa de [!DNL Dataset Service]-slutpunkter som beskrivs i det här dokumentet måste du ha det unika `id`-värdet för en specifik datauppsättning. Om du inte har det här värdet kan du läsa guiden på [lista katalogobjekt](../../catalog/api/list-objects.md) för att hitta ID:n för dina befintliga datauppsättningar.
 
 ## Visa alla etiketter {#list-labels}
 
-Med hjälp av [!DNL Policy Service] API:t kan du lista alla `core` - eller `custom` etiketter genom att göra en GET-förfrågan till `/labels/core` eller `/labels/custom`.
+Med API:t [!DNL Policy Service] kan du lista alla `core`- eller `custom`-etiketter genom att göra en GET-begäran till `/labels/core` eller `/labels/custom`.
 
 **API-format**
 
@@ -53,7 +53,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar en lista med anpassade etiketter som hämtats från systemet. Eftersom exempelbegäran gjordes till `/labels/custom`visar svaret nedan endast anpassade etiketter.
+Ett godkänt svar returnerar en lista med anpassade etiketter som hämtats från systemet. Eftersom exempelbegäran ovan gjordes till `/labels/custom` visar svaret nedan bara anpassade etiketter.
 
 ```json
 {
@@ -111,7 +111,7 @@ Ett godkänt svar returnerar en lista med anpassade etiketter som hämtats från
 
 ## Söka efter en etikett {#look-up-label}
 
-Du kan söka efter en specifik etikett genom att ta med etikettens `name` egenskap i sökvägen för en GET-begäran till [!DNL Policy Service] API:t.
+Du kan söka efter en specifik etikett genom att ta med etikettens `name`-egenskap i sökvägen till en GET-begäran till API:t [!DNL Policy Service].
 
 **API-format**
 
@@ -126,7 +126,7 @@ GET /labels/custom/{LABEL_NAME}
 
 **Begäran**
 
-Följande begäran hämtar den anpassade etiketten `L2`enligt sökvägen.
+Följande begäran hämtar den anpassade etiketten `L2`, som anges i sökvägen.
 
 ```shell
 curl -X GET \
@@ -165,7 +165,7 @@ Ett godkänt svar returnerar informationen om den anpassade etiketten.
 
 ## Skapa eller uppdatera en anpassad etikett {#create-update-label}
 
-Om du vill skapa eller uppdatera en anpassad etikett måste du göra en PUT-begäran till [!DNL Policy Service] API:t.
+Om du vill skapa eller uppdatera en anpassad etikett måste du göra en PUT-begäran till API:t [!DNL Policy Service].
 
 **API-format**
 
@@ -179,7 +179,7 @@ PUT /labels/custom/{LABEL_NAME}
 
 **Begäran**
 
-Följande begäran skapar en ny etikett `L3`som beskriver data som innehåller information om kundernas valda betalningsplaner.
+Följande begäran skapar en ny etikett, `L3`, som syftar till att beskriva data som innehåller information om kundens valda betalningsplaner.
 
 ```shell
 curl -X PUT \
@@ -199,7 +199,7 @@ curl -X PUT \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `name` | En unik strängidentifierare för etiketten. Det här värdet används för uppslagssyften och för att använda etiketten på datauppsättningar och fält, och vi rekommenderar därför att det är kort och koncist. |
-| `category` | Etikettens kategori. Du kan skapa egna kategorier för anpassade etiketter, men du bör använda `Custom` dem om du vill att etiketten ska visas i användargränssnittet. |
+| `category` | Etikettens kategori. Du kan skapa egna kategorier för anpassade etiketter, men du bör använda `Custom` om du vill att etiketten ska visas i användargränssnittet. |
 | `friendlyName` | Ett eget namn för etiketten som används för visning. |
 | `description` | (Valfritt) En beskrivning av etiketten som ger ytterligare kontext. |
 
@@ -231,7 +231,7 @@ Ett lyckat svar returnerar informationen för en anpassad etikett, med HTTP-kod 
 
 ## Söka efter etiketter för en datauppsättning {#look-up-dataset-labels}
 
-Du kan söka efter dataanvändningsetiketter som har tillämpats på en befintlig datauppsättning genom att göra en GET-begäran till [!DNL Dataset Service] API:t.
+Du kan söka efter dataanvändningsetiketter som har tillämpats på en befintlig datauppsättning genom att göra en GET-begäran till API:t [!DNL Dataset Service].
 
 **API-format**
 
@@ -241,7 +241,7 @@ GET /datasets/{DATASET_ID}/labels
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{DATASET_ID}` | Det unika `id` värdet för datauppsättningen vars etiketter du vill söka efter. |
+| `{DATASET_ID}` | Det unika `id`-värdet för datauppsättningen vars etiketter du vill söka efter. |
 
 **Begäran**
 
@@ -284,7 +284,7 @@ Ett lyckat svar returnerar dataanvändningsetiketterna som har tillämpats på d
 
 ## Tillämpa etiketter på en datauppsättning {#apply-dataset-labels}
 
-Du kan skapa en uppsättning etiketter för en datauppsättning genom att ange dem i nyttolasten för en POST- eller PUT-begäran till [!DNL Dataset Service] API:t. Om du använder någon av dessa metoder skrivs befintliga etiketter över och ersätts med de som finns i nyttolasten.
+Du kan skapa en uppsättning etiketter för en datauppsättning genom att ange dem i nyttolasten för en POST- eller PUT-begäran till API:t [!DNL Dataset Service]. Om du använder någon av dessa metoder skrivs befintliga etiketter över och ersätts med de som finns i nyttolasten.
 
 **API-format**
 
@@ -295,7 +295,7 @@ PUT /datasets/{DATASET_ID}/labels
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{DATASET_ID}` | Det unika `id` värdet för datauppsättningen som du skapar etiketter för. |
+| `{DATASET_ID}` | Det unika `id`-värdet för datauppsättningen som du skapar etiketter för. |
 
 **Begäran**
 
@@ -327,7 +327,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `labels` | En lista med dataanvändningsetiketter som du vill lägga till i datauppsättningen. |
-| `optionalLabels` | En lista över enskilda fält i datauppsättningen som du vill lägga till etiketter i. Varje objekt i den här arrayen måste ha följande egenskaper: <br/><br/>`option`: Ett objekt som innehåller fältets [!DNL Experience Data Model] (XDM) attribut. Följande tre egenskaper krävs:<ul><li>id</code>: URI $id</code> -värdet för schemat som är associerat med fältet.</li><li>contentType</code>: Innehållstypen och versionsnumret för schemat. Detta bör göras i form av en av de giltiga <a href="../../xdm/api/getting-started.md#accept">Acceptera rubrikerna</a> för en XDM-sökningsbegäran.</li><li>schemaPath</code>: Sökvägen till fältet i datasetens schema.</li></ul>`labels`: En lista över dataanvändningsetiketter som du vill lägga till i fältet. |
+| `optionalLabels` | En lista över enskilda fält i datauppsättningen som du vill lägga till etiketter i. Varje objekt i den här arrayen måste ha följande egenskaper: <br/><br/>`option`: Ett objekt som innehåller fältets [!DNL Experience Data Model]-attribut (XDM). Följande tre egenskaper krävs:<ul><li>id</code>: URI $id</code>-värdet för schemat som är associerat med fältet.</li><li>contentType</code>: Innehållstypen och versionsnumret för schemat. Detta bör göras i form av en av de giltiga <a href="../../xdm/api/getting-started.md#accept">acceptera rubrikerna</a> för en XDM-sökningsbegäran.</li><li>schemaPath</code>: Sökvägen till fältet i datasetens schema.</li></ul>`labels`: En lista över dataanvändningsetiketter som du vill lägga till i fältet. |
 
 **Svar**
 
@@ -351,7 +351,7 @@ Ett lyckat svar returnerar etiketterna som har lagts till i datauppsättningen.
 
 ## Ta bort etiketter från en datauppsättning {#remove-dataset-labels}
 
-Du kan ta bort etiketterna som används i en datauppsättning genom att göra en DELETE-begäran till [!DNL Dataset Service] API:t.
+Du kan ta bort etiketterna som används i en datauppsättning genom att göra en DELETE-begäran till API:t [!DNL Dataset Service].
 
 **API-format**
 
@@ -361,7 +361,7 @@ DELETE /datasets/{DATASET_ID}/labels
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{DATASET_ID}` | Det unika `id` värdet för den datauppsättning vars etiketter du vill ta bort. |
+| `{DATASET_ID}` | Det unika `id`-värdet för datauppsättningen vars etiketter du vill ta bort. |
 
 **Begäran**
 
@@ -376,14 +376,14 @@ curl -X DELETE \
 
 **Svar**
 
-Ett lyckat svar på HTTP-status 200 (OK), som anger att etiketterna har tagits bort. Du kan [slå upp befintliga etiketter](#look-up-dataset-labels) för datauppsättningen i ett separat anrop för att bekräfta detta.
+Ett lyckat svar på HTTP-status 200 (OK), som anger att etiketterna har tagits bort. Du kan [leta upp de befintliga etiketterna](#look-up-dataset-labels) för datauppsättningen i ett separat anrop för att bekräfta detta.
 
 ## Nästa steg
 
 Genom att läsa det här dokumentet har du lärt dig hur du hanterar dataanvändningsetiketter med API:er.
 
-När du har lagt till etiketter för dataanvändning på data- och fältnivå kan du börja importera data till [!DNL Experience Platform]. Om du vill veta mer kan du börja med att läsa [dokumentationen](../../ingestion/home.md)för dataöverföring.
+När du har lagt till etiketter för dataanvändning på data- och fältnivå kan du börja importera data till [!DNL Experience Platform]. Om du vill veta mer börjar du med att läsa [dokumentationen om datafrågor](../../ingestion/home.md).
 
 Nu kan du även definiera dataanvändningsprinciper baserat på de etiketter du har använt. Mer information finns i översikten över [dataanvändningsprinciper](../policies/overview.md).
 
-Mer information om hur du hanterar datauppsättningar i [!DNL Experience Platform]finns i [översikten över](../../catalog/datasets/overview.md)datauppsättningar.
+Mer information om hur du hanterar datauppsättningar i [!DNL Experience Platform] finns i översikten över [datauppsättningar](../../catalog/datasets/overview.md).
