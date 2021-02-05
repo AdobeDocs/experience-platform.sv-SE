@@ -5,7 +5,7 @@ title: Ladda ned bakgrundsmusik i kundens AI
 topic: Downloading scores
 description: Med Customer AI kan du hämta bakgrundsmusik i filformatet Parquet.
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
 source-wordcount: '959'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 ---
 
 
-# Ladda ned bakgrundsmusik i kundens AI
+# Ladda ned poäng i Customer AI
 
 Det här dokumentet är en guide för nedladdning av poäng för kundens AI.
 
