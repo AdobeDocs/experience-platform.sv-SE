@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;Segmentation Service;segmentation;Segmentation;create a dataset;export audience segment;export segment;
+keywords: Experience Platform;hem;populära ämnen;Segmenteringstjänst;segmentering;Segmentering;skapa en datauppsättning;exportera målgruppssegment;exportsegment;
 solution: Experience Platform
-title: Skapa en datauppsättning för att exportera ett målgruppssegment
+title: Skapa en datauppsättning för export av ett målgruppssegment
 topic: tutorial
 type: Tutorial
 description: I den här självstudiekursen går du igenom de steg som krävs för att skapa en datauppsättning som kan användas för att exportera ett målgruppssegment med hjälp av användargränssnittet i Experience Platform.
 translation-type: tm+mt
-source-git-commit: fce215edb99cccc8be0109f8743c9e56cace2be0
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '722'
+source-wordcount: '739'
 ht-degree: 0%
 
 ---
@@ -18,24 +18,24 @@ ht-degree: 0%
 
 [!DNL Adobe Experience Platform] kan ni enkelt segmentera kundprofiler i målgrupper baserat på specifika attribut. När segment har skapats kan ni exportera den målgruppen till en datauppsättning där den kan nås och hanteras. För att exporten ska lyckas måste datauppsättningen konfigureras korrekt.
 
-I den här självstudiekursen går du igenom de steg som krävs för att skapa en datauppsättning som kan användas för att exportera ett målgruppssegment med hjälp av [!DNL Experience Platform] användargränssnittet.
+I den här självstudien går du igenom de steg som krävs för att skapa en datauppsättning som kan användas för att exportera ett målgruppssegment med hjälp av användargränssnittet i [!DNL Experience Platform].
 
-Den här självstudiekursen är direkt relaterad till de steg som beskrivs i självstudiekursen för [utvärdering och åtkomst av segmentresultat](./evaluate-a-segment.md). I självstudiekursen för utvärdering av ett segment beskrivs hur du skapar en datauppsättning med API:t, medan den här självstudiekursen beskriver stegen för att skapa en datauppsättning med [!DNL Catalog Service] [!DNL Experience Platform] användargränssnittet.
+Den här självstudiekursen är direkt relaterad till de steg som beskrivs i självstudiekursen för [utvärdering och åtkomst av segmentresultat](./evaluate-a-segment.md). I självstudiekursen för utvärdering av ett segment beskrivs hur du skapar en datauppsättning med hjälp av API:t [!DNL Catalog Service], medan den här självstudiekursen visar steg för att skapa en datauppsättning med hjälp av användargränssnittet [!DNL Experience Platform].
 
 ## Komma igång
 
-För att kunna exportera ett segment måste datauppsättningen baseras på [!DNL XDM Individual Profile Union Schema]. Ett unionsschema är ett systemgenererat, skrivskyddat schema som samlar fälten för alla scheman som delar samma klass, i det här fallet [!DNL XDM Individual Profile] klassen. Mer information om unionsvyscheman finns i avsnittet Kundprofil i [realtid i Utvecklarhandbok](../../xdm/schema/composition.md#union)för schemaregister.
+För att kunna exportera ett segment måste datauppsättningen baseras på [!DNL XDM Individual Profile Union Schema]. Ett unionsschema är ett systemgenererat, skrivskyddat schema som samlar fälten för alla scheman som delar samma klass, i det här fallet klassen [!DNL XDM Individual Profile]. Mer information om unionsvyscheman finns i avsnittet [Kundprofil i realtid i Utvecklarhandbok för schemaregister](../../xdm/schema/composition.md#union).
 
-Om du vill visa unionsscheman i användargränssnittet klickar du **[!UICONTROL Profiles]** i den vänstra navigeringen och sedan på **[!UICONTROL Union schema]** fliken enligt nedan.
+Om du vill visa unionsscheman i användargränssnittet klickar du på **[!UICONTROL Profiles]** i den vänstra navigeringen och sedan på fliken **[!UICONTROL Union schema]** enligt nedan.
 
 ![Fliken Unionsschema i användargränssnittet för Experience Platform](../images/tutorials/segment-export-dataset/union-schema-ui.png)
 
 
 ## Arbetsytan Datauppsättningar
 
-Med arbetsytan Datauppsättningar i [!DNL Experience Platform] användargränssnittet kan du visa och hantera alla datauppsättningar som din IMS-organisation har skapat, samt skapa nya.
+Med arbetsytan Datauppsättningar i [!DNL Experience Platform]-gränssnittet kan du visa och hantera alla datauppsättningar som din IMS-organisation har skapat, samt skapa nya.
 
-Om du vill visa arbetsytan för datauppsättningar klickar du **[!UICONTROL Datasets]** i den vänstra navigeringen och sedan på **[!UICONTROL Browse]** fliken. Arbetsytan för datauppsättningar innehåller en lista med datauppsättningar, inklusive kolumner med namn, skapad (datum och tid), källa, schema och senaste batchstatus, samt datum och tid då datauppsättningen senast uppdaterades. Beroende på bredden på varje kolumn kan du behöva rulla åt vänster eller höger för att se alla kolumner.
+Om du vill visa arbetsytan för datauppsättningar klickar du på **[!UICONTROL Datasets]** i den vänstra navigeringen och sedan på fliken **[!UICONTROL Browse]**. Arbetsytan för datauppsättningar innehåller en lista med datauppsättningar, inklusive kolumner med namn, skapad (datum och tid), källa, schema och senaste batchstatus, samt datum och tid då datauppsättningen senast uppdaterades. Beroende på bredden på varje kolumn kan du behöva rulla åt vänster eller höger för att se alla kolumner.
 
 >[!NOTE]
 >
@@ -45,25 +45,25 @@ Om du vill visa arbetsytan för datauppsättningar klickar du **[!UICONTROL Data
 
 ## Skapa en datauppsättning
 
-Om du vill skapa en datauppsättning klickar du **[!UICONTROL Create Dataset]** i det övre högra hörnet av **[!UICONTROL Datasets]** arbetsytan.
+Om du vill skapa en datauppsättning klickar du på **[!UICONTROL Create Dataset]** i det övre högra hörnet på arbetsytan **[!UICONTROL Datasets]**.
 
 ![Klicka på Skapa datauppsättning](../images/tutorials/segment-export-dataset/dataset-click-create.png)
 
-På **[!UICONTROL Create Dataset]** skärmen klickar du på **[!UICONTROL Create Dataset from Schema]** för att fortsätta.
+På skärmen **[!UICONTROL Create Dataset]** klickar du på **[!UICONTROL Create Dataset from Schema]** för att fortsätta.
 
 ![Välj datakälla](../images/tutorials/segment-export-dataset/create-dataset.png)
 
 ## Välj XDM-schema för enskild profilunion
 
-Om du vill välja [!DNL XDM Individual Profile Union Schema] den som ska användas i datauppsättningen söker du efter schemat&quot;[!UICONTROL XDM Individual Profile]&quot; med typen&quot;[!UICONTROL Union]&quot; på **[!UICONTROL Select Schema]** skärmen.
+Om du vill välja [!DNL XDM Individual Profile Union Schema] som ska användas i datauppsättningen söker du efter schemat [!UICONTROL XDM Individual Profile] med typen [!UICONTROL Union] på **[!UICONTROL Select Schema]**-skärmen.
 
-Markerade alternativknappen bredvid **[!UICONTROL XDM Individual Profile]** och klicka sedan **[!UICONTROL Next]** i det övre högra hörnet.
+Markerade alternativknappen bredvid **[!UICONTROL XDM Individual Profile]** och klicka sedan på **[!UICONTROL Next]** i det övre högra hörnet.
 
 ![Välj schema](../images/tutorials/segment-export-dataset/select-schema.png)
 
 ## Konfigurera datauppsättning
 
-På **[!UICONTROL Configure Dataset]** skärmen måste du ge datauppsättningen ett namn och du kan även ge en beskrivning av datauppsättningen.
+På skärmen **[!UICONTROL Configure Dataset]** måste du ge datauppsättningen ett namn och du kan även ge en beskrivning av datauppsättningen.
 
 **Kommentarer om datauppsättningsnamn:**
 - Datauppsättningsnamnen ska vara korta och beskrivande så att datauppsättningen kan hittas i biblioteket senare.
@@ -76,16 +76,16 @@ När datauppsättningen har ett namn och en beskrivning klickar du på **[!UICON
 
 ## Datauppsättningsaktivitet
 
-En tom datauppsättning har nu skapats och du har returnerats till **[!UICONTROL Dataset Activity]** fliken i **[!UICONTROL Datasets]** arbetsytan. Du bör se namnet på datauppsättningen i det övre vänstra hörnet av arbetsytan, tillsammans med ett meddelande om att&quot;Inga grupper har lagts till&quot;. Detta förväntas eftersom du inte har lagt till några batchar i den här datauppsättningen än.
+En tom datauppsättning har skapats och du har returnerats till fliken **[!UICONTROL Dataset Activity]** på arbetsytan **[!UICONTROL Datasets]**. Du bör se namnet på datauppsättningen i det övre vänstra hörnet av arbetsytan, tillsammans med ett meddelande om att&quot;Inga grupper har lagts till&quot;. Detta förväntas eftersom du inte har lagt till några batchar i den här datauppsättningen än.
 
-Till höger på arbetsytan Datauppsättningar visas fliken med information om den nya datauppsättningen, till exempel datauppsättnings-ID, namn, beskrivning, tabellnamn, schema, direktuppspelning och källa. **[!UICONTROL Info]** Fliken innehåller även information om när datauppsättningen skapades och om dess senaste ändringsdatum. **[!UICONTROL Info]**
+Till höger på arbetsytan Datauppsättningar visas fliken **[!UICONTROL Info]** med information om din nya datauppsättning, till exempel datauppsättnings-ID, namn, beskrivning, tabellnamn, schema, direktuppspelning och källa. Fliken **[!UICONTROL Info]** innehåller även information om när datauppsättningen skapades och dess senaste ändringsdatum.
 
-Observera **[!UICONTROL Dataset ID]** detta eftersom det här värdet krävs för att slutföra arbetsflödet för målgruppsexport.
+Observera **[!UICONTROL Dataset ID]** eftersom det här värdet krävs för att slutföra arbetsflödet för målgruppsexport.
 
 ![Datauppsättningsaktivitet](../images/tutorials/segment-export-dataset/dataset-activity.png)
 
 ## Nästa steg
 
-Nu när du har skapat en datauppsättning baserat på [!DNL XDM Individual Profile Union Schema]kan du använda datauppsättnings-ID för att fortsätta med självstudiekursen för [utvärdering och åtkomst av segmentresultat](./evaluate-a-segment.md) .
+Nu när du har skapat en datauppsättning baserad på [!DNL XDM Individual Profile Union Schema] kan du använda datauppsättnings-ID:t för att fortsätta med [utvärderingen och åtkomsten till segmentresultaten](./evaluate-a-segment.md)-självstudiekursen.
 
-Nu kan du gå tillbaka till självstudiekursen för utvärdering av segmentresultat och hämta från [genereringsprofilerna för målgruppsmedlemmar](./evaluate-a-segment.md#generate-profiles) i steget för att exportera ett segmentarbetsflöde.
+Återgå till självstudiekursen för att utvärdera segmentresultaten och fortsätt med att välja bland [genereringsprofiler för målgruppsmedlemmar](./evaluate-a-segment.md#generate-profiles) steg i processen för att exportera ett segmentarbetsflöde.
