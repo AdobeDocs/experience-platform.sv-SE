@@ -1,21 +1,17 @@
 ---
 keywords: Bekräfta digital feedback;bekräfta tillägg;bekräfta
-title: Bekräfta tillägg för digital feedback
-seo-title: Bekräfta tillägg för digital feedback
+title: Bekräfta mål för tillägg för digital feedback
 description: Tillägget Bekräfta digital feedback är en röst för kundens mål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Bekräfta digital feedback är en röst för kundens mål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '583'
+source-wordcount: '549'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Confirmit Digital Feedback] Tillägg
-
-## Översikt {#overview}
+# [!DNL Confirmit Digital Feedback] extension
 
 [!DNL Confirmit Digital Feedback] kan ni omvandla era webbplatstrafik till realtidsinsikter. Med [!DNL Confirmit] kan du visa diskreta och målinriktade enkäter efter dina behov, vilket uppmuntrar besökarna att ge feedback, som:
 
