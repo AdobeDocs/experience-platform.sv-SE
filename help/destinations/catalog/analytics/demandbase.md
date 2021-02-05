@@ -1,21 +1,17 @@
 ---
 keywords: demandbase-tillägg;demandbase;demandbase-mål
-title: Demandbase-tillägg
-seo-title: Demandbase-tillägg
+title: Destination för Demandbase-tillägg
 description: Demandbase-tillägget är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Demandbase-tillägget är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '552'
+source-wordcount: '525'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL Demandbase] extension  {#demandbase-extension}
-
-## Översikt {#overview}
 
 Få insikter om B2B-konton direkt i Adobe Analytics där du kan segmentera trafik och beteende efter bransch, intäkt och målkonton. [!DNL Demandbase] Denna kontobaserade vy ger unika insikter om engagemang, konvertering och källan för era mest värdefulla besökare.
 
