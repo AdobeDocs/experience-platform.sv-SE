@@ -1,23 +1,23 @@
 ---
-keywords: Experience Platform;home;popular topics;namespace;Namespace;namespaces;Namespaces;identity namespace;Identity namespace;identity;Identity
+keywords: Experience Platform;hem;populära ämnen;namnutrymme;namnutrymme;namnutrymmen;namnutrymmen;namnutrymmen;namnområde;namnområde för identitet;identitet;identitet
 solution: Experience Platform
-title: Skapa ett anpassat namnutrymme
+title: Skapa ett anpassat namnutrymme i Identity Service API
 topic: API guide
 description: Med API:t för identitetsnamnområde kan du skapa ett anpassat identitetsnamnutrymme som bara är tillgängligt för din organisation.
 translation-type: tm+mt
-source-git-commit: 3376d6cace9ab196f457e2bf7b84cde06693103c
+source-git-commit: 73035aec86297cfc4ee9337cf922d599001379c3
 workflow-type: tm+mt
-source-wordcount: '95'
-ht-degree: 2%
+source-wordcount: '120'
+ht-degree: 1%
 
 ---
 
 
-# Skapa ett anpassat namnutrymme
+# Skapa ett anpassat namnutrymme i Identity Service API
 
-Med API:t kan du skapa ett anpassat ID-namnutrymme som bara är tillgängligt för din organisation. [!DNL Identity Namespace]
+Med API:t [!DNL Identity Namespace] kan du skapa ett anpassat identitetsnamnutrymme som bara är tillgängligt för din organisation.
 
-Rekommendationer om hur du skapar anpassade namnutrymmen finns [i dokumentationen](../troubleshooting-guide.md)om vanliga frågor om identitetstjänsten.
+Rekommendationer om hur du skapar anpassade namnutrymmen finns i [Vanliga frågor om identitetstjänsten](../troubleshooting-guide.md).
 
 >[!NOTE]
 >
@@ -65,4 +65,4 @@ curl -X POST \
 
 ## Nästa steg
 
-Gå vidare till nästa självstudiekurs för att [visa en identitets egna ID](./list-native-id.md)
+Gå vidare till nästa självstudiekurs för att [visa en lista över ett identitets ursprungliga ID](./list-native-id.md)
