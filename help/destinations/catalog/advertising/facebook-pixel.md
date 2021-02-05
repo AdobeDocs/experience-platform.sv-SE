@@ -1,21 +1,17 @@
 ---
 keywords: pixeltillägg för Facebook;tillägg för Facebook-pixlar;mål för Facebook-pixlar;Facebook-pixel
-title: Pixeltillägg för Facebook
-seo-title: Pixeltillägg för Facebook
+title: Mål för Facebook-pixeltillägg
 description: Facebook Pixel-tillägget är ett annonsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Facebook Pixel-tillägget är ett annonsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '524'
+source-wordcount: '495'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL Facebook Pixel] extension  {#facebook-pixel-extension}
-
-## Översikt {#overview}
 
 [!DNL Facebook Pixel] är ett analysverktyg som gör att du kan mäta hur effektiv annonseringen är genom att förstå vilka åtgärder användarna vidtar på webbplatsen.
 
