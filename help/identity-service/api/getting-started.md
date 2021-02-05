@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;home;populära topics;identity service api;identity service developguide;region
 solution: Experience Platform
-title: Komma igång
+title: API-guide för identitetstjänst
 topic: API guide
-description: 'Adobe Experience Platform Identity Service hanterar identifieringen av era kunder över olika enheter, i flera kanaler och i realtid i det som kallas identitetsdiagram inom Adobe Experience Platform. '
+description: Med Identity Service API kan utvecklare hantera identifieringen av era kunder över olika enheter, i olika kanaler och i realtid med hjälp av identitetsgrafer i Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: e649ab3da077cdd8e98562199b8bdece6108a572
 workflow-type: tm+mt
-source-wordcount: '759'
-ht-degree: 1%
+source-wordcount: '769'
+ht-degree: 0%
 
 ---
 
 
-# [!DNL Identity Service] Utvecklarhandbok för API
+# [!DNL Identity Service] API-guide
 
 Adobe Experience Platform [!DNL Identity Service] hanterar identifieringen av era kunder över olika enheter, i flera kanaler och i realtid i det som kallas identitetsdiagram inom Adobe Experience Platform.
 
