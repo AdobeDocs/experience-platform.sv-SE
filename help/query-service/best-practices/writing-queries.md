@@ -1,14 +1,14 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;frågetjänst;frågetjänst;skriva frågor;skriva fråga;
 solution: Experience Platform
-title: Skriver frågor
+title: Allmänna riktlinjer för frågekörning i frågetjänsten
 topic: queries
 type: Tutorial
 description: Det här dokumentet innehåller viktig information som du bör känna till när du skriver frågor i Adobe Experience Platform Query Service.
 translation-type: tm+mt
-source-git-commit: e2c648829bb3268ab319da934f5cc6cc811290b3
+source-git-commit: 97dc0b5fb44f5345fd89f3f56bd7861668da9a6e
 workflow-type: tm+mt
-source-wordcount: '970'
+source-wordcount: '976'
 ht-degree: 2%
 
 ---
