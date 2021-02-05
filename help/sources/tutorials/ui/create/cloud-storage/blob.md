@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Azure Blob;azure blob;Azure blob connector
 solution: Experience Platform
-title: Skapa en Azure Blob-källkoppling i användargränssnittet
+title: Skapa en Azure Blob Source-anslutning i användargränssnittet
 topic: overview
 type: Tutorial
-description: I den här självstudiekursen beskrivs hur du skapar en Azure-blob (nedan kallad blob) med hjälp av användargränssnittet för plattformen.
+description: Lär dig hur du skapar en Azure Blob-källanslutning med hjälp av användargränssnittet för plattformen.
 translation-type: tm+mt
-source-git-commit: e22e57e20b985b50e1d29e944fb8f04addc91703
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '624'
+source-wordcount: '619'
 ht-degree: 1%
 
 ---
 
 
-# Skapa en [!DNL Azure Blob]-källkoppling i användargränssnittet
+# Skapa en [!DNL Azure Blob]-källanslutning i användargränssnittet
 
 I den här självstudiekursen beskrivs hur du skapar en [!DNL Azure Blob] (kallas nedan [!DNL Blob]) med hjälp av användargränssnittet för plattformen.
 
