@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;hemmabruk;populära ämnen; Filöverföringsprotokoll; filöverföringsprotokoll
 solution: Experience Platform
-title: Skapa en FTP-anslutning med API:t för Flow Service
+title: Skapa en FTP-källanslutning med API:t för Flow Service
 topic: overview
 type: Tutorial
-description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till en FTP-server (File Transfer Protocol).
+description: Lär dig hur du ansluter Adobe Experience Platform till en FTP-server (File Transfer Protocol) med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
-source-wordcount: '580'
+source-wordcount: '577'
 ht-degree: 1%
 
 ---
 
 
-# Skapa en FTP-anslutning med hjälp av API:t [!DNL Flow Service]
+# Skapa en FTP-källanslutning med hjälp av API:t [!DNL Flow Service]
 
 >[!NOTE]
 >
