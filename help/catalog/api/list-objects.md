@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform;home;popular topics;filter;Filter;filter data;Filter data
+keywords: Experience Platform;hem;populära ämnen;filter;Filter;filterdata;Filterdata
 solution: Experience Platform
-title: Listobjekt
+title: Lista katalogobjekt
 topic: developer guide
 description: Du kan hämta en lista över alla tillgängliga objekt av en viss typ via ett enda API-anrop. Det bästa sättet är att ta med filter som begränsar svarsstorleken.
 translation-type: tm+mt
-source-git-commit: c081a7521be9715ca32d35504922a70767924fd7
+source-git-commit: a1103bfbf79f9c87bac5b113c01386a6fb8950e7
 workflow-type: tm+mt
-source-wordcount: '229'
+source-wordcount: '242'
 ht-degree: 0%
 
 ---
 
 
-# Listobjekt
+# Lista katalogobjekt
 
 Du kan hämta en lista över alla tillgängliga objekt av en viss typ via ett enda API-anrop. Det bästa sättet är att ta med filter som begränsar svarsstorleken.
 
@@ -26,12 +26,12 @@ GET /{OBJECT_TYPE}?{FILTER}={VALUE}&{FILTER_2}={VALUE}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog] objekt som ska listas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
-| `{FILTER}` | En frågeparameter som används för att filtrera resultaten som returneras i svaret. Flera parametrar avgränsas med et-tecken (`&`). Mer information finns i guiden om [filtrering av katalogdata](filter-data.md) . |
+| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog]-objekt som ska listas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{FILTER}` | En frågeparameter som används för att filtrera resultaten som returneras i svaret. Flera parametrar avgränsas med et-tecken (`&`). Mer information finns i guiden [filtrera katalogdata](filter-data.md). |
 
 **Begäran**
 
-Exempelbegäran nedan hämtar en lista med datauppsättningar, med ett filter som minskar svaret till fem resultat, och ett `limit` `properties` filter som begränsar de egenskaper som visas för varje datauppsättning.
+Exempelbegäran nedan hämtar en lista med datauppsättningar, med ett `limit`-filter som reducerar svaret till fem resultat, och ett `properties`-filter som begränsar de egenskaper som visas för varje datauppsättning.
 
 ```shell
 curl -X GET \
@@ -44,11 +44,11 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar en lista med [!DNL Catalog] objekt i form av nyckelvärdepar, filtrerade med frågeparametrarna som anges i begäran. För varje nyckelvärdepar representerar nyckeln en unik identifierare för det aktuella [!DNL Catalog] objektet, som sedan kan användas i ett annat anrop för att [visa det specifika objektet](look-up-object.md) för mer information.
+Ett godkänt svar returnerar en lista med [!DNL Catalog]-objekt i form av nyckelvärdepar, filtrerade med frågeparametrarna som anges i begäran. För varje nyckelvärdepar representerar nyckeln en unik identifierare för [!DNL Catalog]-objektet i fråga, som sedan kan användas i ett annat anrop till [visa det specifika objektet](look-up-object.md) för mer information.
 
 >[!NOTE]
 >
->Om ett returnerat objekt inte innehåller en eller flera av de begärda egenskaperna som anges av `properties` frågan, returnerar svaret endast de begärda egenskaper som det innehåller, vilket visas i ***`Sample Dataset 3`*** och ***`Sample Dataset 4`*** nedan.
+>Om ett returnerat objekt inte innehåller en eller flera av de begärda egenskaperna som anges av `properties`-frågan, returnerar svaret endast de begärda egenskaper som det innehåller, vilket visas i ***`Sample Dataset 3`*** och ***`Sample Dataset 4`*** nedan.
 
 ```json
 {
