@@ -1,27 +1,27 @@
 ---
-keywords: Experience Platform;home;popular topics;query service;run scheduled queries;run scheduled query;Query service;scheduled queries;scheduled query;
+keywords: Experience Platform;hem;populära ämnen;frågetjänst;kör schemalagda frågor;kör schemalagd fråga;Frågetjänst;schemalagda frågor;schemalagd fråga;
 solution: Experience Platform
-title: Handbok för frågetjänstutvecklare
+title: API-slutpunkt för schemalagda frågor körs
 topic: runs for scheduled queries
 description: Följande avsnitt går igenom de olika API-anrop du kan göra för att köra schemalagda frågor med API:t för frågetjänsten.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '676'
+source-wordcount: '696'
 ht-degree: 0%
 
 ---
 
 
-# Körs för schemalagda frågor
+# Slutpunkt för körning av schemalagd fråga
 
 ## Exempel på API-anrop
 
-Nu när du förstår vilka rubriker som ska användas kan du börja ringa anrop till [!DNL Query Service] API:t. I följande avsnitt går du igenom de olika API-anropen som du kan göra med hjälp av [!DNL Query Service] API:t. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
+Nu när du förstår vilka rubriker som ska användas kan du börja ringa anrop till API:t [!DNL Query Service]. Följande avsnitt går igenom de olika API-anrop du kan göra med API:t [!DNL Query Service]. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
 
 ### Hämta en lista över alla körningar för en angiven schemalagd fråga
 
-Du kan hämta en lista över alla körningar för en viss schemalagd fråga, oavsett om de körs eller redan har slutförts. Detta gör du genom att göra en GET-begäran till `/schedules/{SCHEDULE_ID}/runs` slutpunkten, där `{SCHEDULE_ID}` är `id` värdet för den schemalagda frågan vars körningar du vill hämta.
+Du kan hämta en lista över alla körningar för en viss schemalagd fråga, oavsett om de körs eller redan har slutförts. Detta görs genom att en GET-begäran görs till `/schedules/{SCHEDULE_ID}/runs`-slutpunkten, där `{SCHEDULE_ID}` är `id`-värdet för den schemalagda fråga vars körningar du vill hämta.
 
 **API-format**
 
@@ -33,7 +33,7 @@ GET /schedules/{SCHEDULE_ID}/runs?{QUERY_PARAMETERS}
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `{SCHEDULE_ID}` | Värdet `id` för den schemalagda frågan som du vill hämta. |
-| `{QUERY_PARAMETERS}` | (*Valfritt*) Parametrar har lagts till i sökvägen för begäran som konfigurerar resultaten som returneras i svaret. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`). De tillgängliga parametrarna visas nedan. |
+| `{QUERY_PARAMETERS}` | (*Valfria*) Parametrar har lagts till i sökvägen för begäran som konfigurerar resultaten som returneras i svaret. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`). De tillgängliga parametrarna visas nedan. |
 
 **Frågeparametrar**
 
@@ -41,10 +41,10 @@ Här följer en lista över tillgängliga frågeparametrar för att lista körni
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `orderby` | Anger fältet som resultaten ska sorteras efter. De fält som stöds är `created` och `updated`. Resultatet `orderby=created` sorteras t.ex. i stigande ordning. Om du lägger till en `-` tidigare skapad (`orderby=-created`) sorteras objekt i fallande ordning. |
+| `orderby` | Anger fältet som resultaten ska sorteras efter. De fält som stöds är `created` och `updated`. `orderby=created` sorterar till exempel resultaten efter att de har skapats i stigande ordning. Om du lägger till en `-` före skapad (`orderby=-created`) sorteras objekten i fallande ordning. |
 | `limit` | Anger sidstorleksgränsen för att styra antalet resultat som ska inkluderas på en sida. (*Standardvärde: 20*) |
-| `start` | Förskjuter svarslistan med nollbaserad numrering. En lista `start=2` returneras till exempel från den tredje listade frågan. (*Standardvärde: 0*) |
-| `property` | Filtrera resultat baserat på fält. Filtren **måste** vara HTML-escape. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `created`, `state`och `externalTrigger`. Listan med operatorer som stöds är `>` (större än), `<` (mindre än) och `==` (lika med) och `!=` (inte lika med). Till exempel `externalTrigger==true,state==SUCCESS,created>2019-04-20T13:37:00Z` returneras alla körningar som har skapats manuellt, slutförts och skapats efter den 20 april 2019. |
+| `start` | Förskjuter svarslistan med nollbaserad numrering. `start=2` returnerar till exempel en lista som börjar med den tredje listade frågan. (*Standardvärde: 0*) |
+| `property` | Filtrera resultat baserat på fält. Filtren **måste** vara HTML-escape. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `created`, `state` och `externalTrigger`. Listan med operatorer som stöds är `>` (större än), `<` (mindre än) och `==` (lika med) och `!=` (inte lika med). `externalTrigger==true,state==SUCCESS,created>2019-04-20T13:37:00Z` returnerar till exempel alla körningar som skapats manuellt, slutförts och skapats efter den 20 april 2019. |
 
 **Begäran**
 
@@ -150,11 +150,11 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över körningar för de
 
 >[!NOTE]
 >
->Du kan använda värdet för `_links.cancel` att [stoppa en körning för en angiven schemalagd fråga](#immediately-stop-a-run-for-a-specific-scheduled-query).
+>Du kan använda värdet `_links.cancel` för att [stoppa en körning för en angiven schemalagd fråga](#immediately-stop-a-run-for-a-specific-scheduled-query).
 
 ### Starta omedelbart ut en körning för en specifik schemalagd fråga
 
-Du kan omedelbart utlösa en körning för en angiven schemalagd fråga genom att göra en POST-förfrågan till `/schedules/{SCHEDULE_ID}/runs` slutpunkten, där `{SCHEDULE_ID}` är `id` värdet för den schemalagda frågan vars körning du vill utlösa.
+Du kan omedelbart utlösa en körning för en angiven schemalagd fråga genom att göra en begäran om POST till `/schedules/{SCHEDULE_ID}/runs`-slutpunkten, där `{SCHEDULE_ID}` är `id`-värdet för den schemalagda fråga vars körning du vill utlösa.
 
 **API-format**
 
@@ -185,7 +185,7 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med följande meddelande
 
 ### Hämta information om en körning för en specifik schemalagd fråga
 
-Du kan hämta information om en körning för en specifik schemalagd fråga genom att göra en GET-förfrågan till `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}` slutpunkten och ange både ID:t för den schemalagda frågan och körningen i sökvägen för begäran.
+Du kan hämta information om en körning för en specifik schemalagd fråga genom att göra en GET-begäran till `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}`-slutpunkten och ange både ID:t för den schemalagda frågan och körningen i sökvägen för begäran.
 
 **API-format**
 
@@ -196,7 +196,7 @@ GET /schedules/{SCHEDULE_ID}/runs/{RUN_ID}
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `{SCHEDULE_ID}` | Värdet `id` för den schemalagda frågan vars körning du vill hämta information om. |
-| `{RUN_ID}` | Värdet `id` för den körning som du vill hämta. |
+| `{RUN_ID}` | `id`-värdet för den körning du vill hämta. |
 
 **Begäran**
 
@@ -246,7 +246,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den angivna körni
 
 ### Stoppa omedelbart en körning för en specifik schemalagd fråga
 
-Du kan omedelbart stoppa en körning för en viss schemalagd fråga genom att göra en PATCH-begäran till `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}` slutpunkten och ange både ID:t för den schemalagda frågan och körningen i sökvägen för begäran.
+Du kan omedelbart stoppa en körning för en viss schemalagd fråga genom att göra en PATCH-begäran till `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}`-slutpunkten och ange både ID:t för den schemalagda frågan och körningen i sökvägen för begäran.
 
 **API-format**
 
@@ -257,7 +257,7 @@ PATCH /schedules/{SCHEDULE_ID}/runs/{RUN_ID}
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `{SCHEDULE_ID}` | Värdet `id` för den schemalagda frågan vars körning du vill hämta information om. |
-| `{RUN_ID}` | Värdet `id` för den körning som du vill hämta. |
+| `{RUN_ID}` | `id`-värdet för den körning du vill hämta. |
 
 **Begäran**
 
