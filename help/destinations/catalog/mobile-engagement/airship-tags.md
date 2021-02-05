@@ -1,19 +1,17 @@
 ---
 keywords: luftfartygets etikett;luftfartygets destination
-title: Destination för luftfartygets taggar
-seo-title: Mål för luftfartygets taggar
+title: Anslutningsmål för luftfartygets taggar
 description: Skicka smidigt data från Adobe till Airship som målgruppstaggar för målinriktning inom Airship.
-seo-description: Skicka smidigt data från Adobe till Airship som målgruppstaggar för målinriktning inom Airship.
 translation-type: tm+mt
-source-git-commit: 95f57f9d1b3eeb0b16ba209b9774bd94f5758009
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '1155'
+source-wordcount: '1139'
 ht-degree: 0%
 
 ---
 
 
-# (Beta) [!DNL Airship Tags] mål {#airship-tags-destination}
+# (Beta) [!DNL Airship Tags] anslutning {#airship-tags-destination}
 
 >[!IMPORTANT]
 >
