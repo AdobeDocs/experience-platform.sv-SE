@@ -1,24 +1,24 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Microsoft Dynamics;microsoft dynamics;dynamics;Dynamics
 solution: Experience Platform
-title: Skapa en Microsoft Dynamics-anslutning med API:t för Flow Service
+title: Skapa en Microsoft Dynamics-källanslutning med API:t för flödestjänsten
 topic: overview
 type: Tutorial
-description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta plattformen till ett Microsoft Dynamics-konto (nedan kallat Dynamics) för att samla in CRM-data.
+description: Lär dig hur du ansluter plattformen till ett Microsoft Dynamics-konto med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: 75566ef0dc45f59b47af0b85f4692c2496e53f29
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '751'
+source-wordcount: '739'
 ht-degree: 0%
 
 ---
 
 
-# Skapa en [!DNL Microsoft Dynamics]-koppling med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL Microsoft Dynamics]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudien används API:t [!DNL Flow Service] för att vägleda dig genom stegen för att ansluta plattformen till ett [!DNL Microsoft Dynamics]-konto (nedan kallat Dynamics) för att samla in CRM-data.
+I den här självstudien används API:t [!DNL Flow Service] för att vägleda dig genom stegen för att ansluta plattformen till ett [!DNL Microsoft Dynamics]-konto (nedan kallat Dynamics) med API:t för Flow Service.
 
 ## Komma igång
 
