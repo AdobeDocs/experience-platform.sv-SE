@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;identity;Identity
+keywords: Experience Platform;hem;populära ämnen;identitet;Identitet
 solution: Experience Platform
-title: Visa identitetsmappningar
+title: Lista identitetsmappningar
 topic: API guide
 description: En mappning är en samling med alla identiteter i ett kluster för ett angivet namnområde.
 translation-type: tm+mt
-source-git-commit: c081a7521be9715ca32d35504922a70767924fd7
+source-git-commit: 73035aec86297cfc4ee9337cf922d599001379c3
 workflow-type: tm+mt
-source-wordcount: '263'
+source-wordcount: '270'
 ht-degree: 0%
 
 ---
@@ -51,7 +51,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-Alternativ 3: Ange identiteten som XID (`xid`). Mer information om hur du hämtar en identitets XID finns i avsnittet om att [hämta en identitets](./list-native-id.md)XID.
+Alternativ 3: Ange identiteten som XID (`xid`). Mer information om hur du hämtar en identitets XID finns i avsnittet i det här dokumentet som handlar om [att hämta XID för en identitet](./list-native-id.md).
 
 ```shell
 curl -X GET \
@@ -64,7 +64,7 @@ curl -X GET \
 
 ### Hämta identitetsmappningar för flera identiteter
 
-Använd `POST` metoden som en batchmotsvarighet till den `GET` metod som beskrivs ovan för att hämta mappningar för flera identiteter.
+Använd metoden `POST` som en batchmotsvarighet till metoden `GET` som beskrivs ovan för att hämta mappningar för flera identiteter.
 
 >[!NOTE]
 >
@@ -146,7 +146,7 @@ curl -X POST \
       }' | json_pp
 ```
 
-Om inga relaterade identiteter hittades med angivna indata returneras en svarskod utan innehåll `HTTP 204` .
+Om inga relaterade identiteter hittades med angivna indata returneras en `HTTP 204`-svarskod utan innehåll.
 
 **Svar**
 
@@ -185,7 +185,7 @@ Om inga relaterade identiteter hittades med angivna indata returneras en svarsko
 ```
 
 - `lastAssociationTime`: Tidsstämpeln när indataidentiteten senast associerades med den här identiteten.
-- `regions`: Anger `regionId` och `lastAssociationTime` för var identiteten sågs.
+- `regions`: Anger  `regionId` och  `lastAssociationTime` för var identiteten sågs.
 
 ## Nästa steg
 
