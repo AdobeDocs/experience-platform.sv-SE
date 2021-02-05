@@ -1,21 +1,17 @@
 ---
 keywords: Google Universal Analytics;Google Universal Analytics;Google Universal Analytics
-title: Google Universal Analytics-tillägg
-seo-title: Google Universal Analytics-tillägg
+title: Mål för Google Universal Analytics-tillägg
 description: Google Universal Analytics-tillägget är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Google Universal Analytics-tillägget är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '545'
+source-wordcount: '514'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL Google Universal Analytics] extension  {#google-universal-analytics-extension}
-
-## Översikt {#overview}
 
 [!DNL Google Universal Analytics] Med kan ni mäta avkastningen på era annonser, samt spåra Flash, videoklipp och sociala nätverksplatser och applikationer.
 
