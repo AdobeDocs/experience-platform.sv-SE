@@ -1,21 +1,17 @@
 ---
 keywords: gtag;google gtag;Google extension;google gtag extension;GTAG
-title: Google-taggtillägg
-seo-title: Google-taggtillägg
+title: Google Gtag-tilläggsmål
 description: Google-taggtillägget är ett annonsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Google-taggtillägget är ett annonsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '568'
+source-wordcount: '539'
 ht-degree: 0%
 
 ---
 
 
 # Google gtag-tillägg {#gtag-advertising-extension}
-
-## Översikt {#overview}
 
 Läs in Googles `gtag.js` på din webbplats för att skicka händelsedata till [!DNL Google Analytics], Google Ads och [!DNL Google Marketing Platform]. Det här tillägget lägger bara till gtag-koden på din plats. Du måste använda andra Google-tillägg för att lägga till händelser och åtgärder som ska använda gtag.
 
