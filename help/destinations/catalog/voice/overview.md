@@ -1,19 +1,17 @@
 ---
 keywords: röstmål;Röstmål
-title: Voice of the Customer Destinations
-seo-title: Voice of the Customer Destinations
+title: Voice of the Customer Destinations Overview
 description: Röstplattformarna samlar in och samlar in data från olika källor, inklusive röstmeddelanden, samtalsdata och chattsamtal. Den sammanställda informationen kan filtreras och analyseras så att företag kan optimera sin webbplats så att den uppfyller deras behov.
-seo-description: Röstplattformarna samlar in och samlar in data från olika källor, inklusive röstmeddelanden, samtalsdata och chattsamtal. Den sammanställda informationen kan filtreras och analyseras så att företag kan optimera sin webbplats så att den uppfyller deras behov.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '166'
+source-wordcount: '127'
 ht-degree: 0%
 
 ---
 
 
-# Voice of the Customer destination {#voice-of-customer-destinations}
+# Översikt över kundens destinationer {#voice-of-customer-destinations}
 
 Röstplattformarna samlar in och samlar in data från olika källor, inklusive röstmeddelanden, samtalsdata och chattsamtal. Den sammanställda informationen kan filtreras och analyseras så att företag kan optimera sin webbplats så att den uppfyller deras behov.
 
