@@ -1,23 +1,23 @@
 ---
 keywords: Experience Platform;hemanvändare;populära ämnen;datastyrning;dataanvändningsetikett;policytjänst;användarhandbok för dataanvändningsetiketter
 solution: Experience Platform
-title: Användarhandbok för etiketter för dataanvändning
+title: Hantera dataanvändningsetiketter i användargränssnittet
 topic: labels
-description: Den här användarhandboken innehåller steg för hur du arbetar med dataanvändningsetiketter i Adobe Experience Platform användargränssnitt.
+description: Den här guiden innehåller steg för hur du arbetar med dataanvändningsetiketter i Adobe Experience Platform användargränssnitt.
 translation-type: tm+mt
-source-git-commit: 00010d38a5d05800aeac9af8505093fee3593b45
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '1069'
+source-wordcount: '1067'
 ht-degree: 0%
 
 ---
 
 
-# Användarhandbok för etiketter för dataanvändning
+# Hantera etiketter för dataanvändning i användargränssnittet
 
 Den här användarhandboken innehåller steg för att arbeta med dataanvändningsetiketter i [!DNL Experience Platform]-användargränssnittet. Innan du använder guiden bör du läsa [[!DNL Data Governance] översikten](../home.md) för en mer robust introduktion till [!DNL Data Governance]-ramverket.
 
-## Hantera dataanvändningsetiketter på datauppsättningsnivå
+## Hantera etiketter på datauppsättningsnivå
 
 För att kunna hantera dataanvändningsetiketter på datauppsättningsnivå måste du välja en befintlig datauppsättning eller skapa en ny. När du har loggat in på Adobe Experience Platform väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen för att öppna arbetsytan **[!UICONTROL Datasets]**. På den här sidan visas alla skapade datauppsättningar som tillhör din organisation, tillsammans med användbar information om varje datauppsättning.
 
@@ -75,7 +75,7 @@ Alternativet **[!UICONTROL Show Inherited Labels]** är aktiverat som standard, 
 
 ![Dölj ärvda etiketter](../images/labels/hide_inherited_labels.png)
 
-## Hantera dataanvändningsetiketter på datamängdsfältnivå
+## Hantera etiketter på fältnivå
 
 Om du fortsätter arbetsflödet för [att lägga till och redigera dataanvändningsetiketter på datauppsättningsnivå](#add-labels) kan du även hantera fältetiketter på arbetsytan **[!UICONTROL Data Governance]** för den datauppsättningen.
 
