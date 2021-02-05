@@ -1,33 +1,33 @@
 ---
-keywords: Experience Platform;developer guide;SDK;Data Access SDK;Data Science Workspace;popular topics
+keywords: Experience Platform;utvecklarguide;SDK;Data Access SDK;Data Science Workspace;populära topics
 solution: Experience Platform
-title: Plattforms-SDK - guide
+title: Modellredigering med Adobe Experience Platform Platform SDK
 topic: SDK authoring
 description: I den här självstudien får du information om hur du konverterar data_access_sdk_python till den nya Python-plattformen_sdk i både Python och R.
 translation-type: tm+mt
-source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
+source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
 workflow-type: tm+mt
-source-wordcount: '470'
+source-wordcount: '495'
 ht-degree: 5%
 
 ---
 
 
-# [!DNL Platform] SDK-guide
+# Skapa modeller med Adobe Experience Platform [!DNL Platform] SDK
 
-I den här självstudiekursen finns information om hur du konverterar `data_access_sdk_python` till nya Python `platform_sdk` i både Python och R. I den här självstudiekursen finns information om följande åtgärder:
+I den här självstudien får du information om hur du konverterar `data_access_sdk_python` till den nya Python `platform_sdk` i både Python och R. I den här självstudiekursen finns information om följande åtgärder:
 
 - [Bygg autentisering](#build-authentication)
 - [Grundläggande läsning av data](#basic-reading-of-data)
 - [Grundläggande skrivande av data](#basic-writing-of-data)
 
-## Bygg autentisering {#build-authentication}
+## Skapa autentisering {#build-authentication}
 
-Autentisering krävs för att anropa [!DNL Adobe Experience Platform]och består av API-nyckel, IMS-organisation, användartoken och tjänsttoken.
+Autentisering krävs för att anropa [!DNL Adobe Experience Platform], och består av API-nyckel, IMS-org-ID, en användartoken och en tjänsttoken.
 
 ### Python
 
-Om du använder Jupyter Anteckningsbok använder du koden nedan för att skapa `client_context`:
+Om du använder Jupyter Notebook ska du använda koden nedan för att skapa `client_context`:
 
 ```python
 client_context = PLATFORM_SDK_CLIENT_CONTEXT
@@ -45,7 +45,7 @@ client_context = ClientContext(api_key={API_KEY},
 
 ### R
 
-Om du använder Jupyter Anteckningsbok använder du koden nedan för att skapa `client_context`:
+Om du använder Jupyter Notebook ska du använda koden nedan för att skapa `client_context`:
 
 ```r
 library(reticulate)
@@ -105,9 +105,9 @@ df <- dataset_reader$read()
 df
 ```
 
-## Filtrera efter förskjutning och begränsning {#filter-by-offset-and-limit}
+## Filtrera efter förskjutning och begränsa {#filter-by-offset-and-limit}
 
-Eftersom det inte längre finns stöd för att filtrera efter batch-ID måste du använda `offset` och `limit`.
+Eftersom filtrering med batch-ID inte längre stöds måste du använda `offset` och `limit` för att kunna göra läsningen av data.
 
 ### Python
 
@@ -147,7 +147,7 @@ df2 <- dataset_reader$where(
 df2
 ```
 
-Den nya [!DNL Platform] SDK:n har stöd för följande åtgärder:
+Den nya SDK:n [!DNL Platform] har stöd för följande åtgärder:
 
 | Åtgärd |  -funktion |
 | --------- | -------- |
@@ -156,8 +156,8 @@ Den nya [!DNL Platform] SDK:n har stöd för följande åtgärder:
 | Greater than or equal to (`>=`) | `ge()` |
 | Less than (`<`) | `lt()` |
 | Less than or equal to (`<=`) | `le()` |
-| And (`&`) | `And()` |
-| Or (`|`) | `Or()` |
+| Och (`&`) | `And()` |
+| Eller (`|`) | `Or()` |
 
 ## Filtrera efter markerade kolumner {#filter-by-selected-columns}
 
@@ -193,7 +193,7 @@ df = dataset_reader.sort([('column-a', 'asc'), ('column-b', 'desc')])
 df <- dataset_reader$sort(c(('column-a', 'asc'), ('column-b', 'desc')))$read()
 ```
 
-## Grundläggande skrivande av data {#basic-writing-of-data}
+## Grundläggande skrivning av data {#basic-writing-of-data}
 
 >[!NOTE]
 >
@@ -222,4 +222,4 @@ write_tracker <- dataset_writer$write({PANDA_DATAFRAME}, file_format='json')
 
 ## Nästa steg
 
-När du har konfigurerat datainläsaren `platform_sdk` förbereds data och delas sedan upp i `train` - och `val` datamängder. Om du vill veta mer om dataförberedelser och funktionskonstruktion kan du gå till avsnittet om [dataförberedelser och funktionskonstruktion](../jupyterlab/create-a-recipe.md#data-preparation-and-feature-engineering) i självstudiekursen för att skapa ett recept med [!DNL JupyterLab] bärbara datorer.
+När du har konfigurerat datainläsaren `platform_sdk`, förbereds data och delas sedan upp i datamängderna `train` och `val`. Om du vill veta mer om dataförberedelse och funktionskonstruktion kan du gå till avsnittet [dataförberedelse och funktionskonstruktion](../jupyterlab/create-a-recipe.md#data-preparation-and-feature-engineering) i självstudiekursen för att skapa ett recept med [!DNL JupyterLab] bärbara datorer.
