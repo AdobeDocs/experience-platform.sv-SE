@@ -1,21 +1,17 @@
 ---
 keywords: måltillägg;mål
-title: Adobe Target-tillägg
-seo-title: Adobe Target-tillägg
+title: Adobe Target Extension Destination
 description: Adobe Target-tillägget är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Adobe Target-tillägget är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '526'
+source-wordcount: '497'
 ht-degree: 0%
 
 ---
 
 
 # Adobe Target-tillägg {#adobe-target-extension}
-
-## Översikt {#overview}
 
 Adobe Target är en Adobe Experience Cloud-lösning som innehåller allt ni behöver för att skräddarsy och personalisera kundernas upplevelse och maximera intäkterna från era webbplatser, mobilsajter, appar, sociala medier och andra digitala kanaler.
 
