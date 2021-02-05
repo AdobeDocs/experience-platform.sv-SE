@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;segmentation;segmentation service;troubleshooting;API;seg;segment;Segment;search;segment search;
-title: Slutpunkt för segmentsökning
+keywords: Experience Platform;segmentering;segmenteringstjänst;felsökning;API;seg;segment;segment;search;segment search;
+title: API-slutpunkt för segmentsökning
 topic: guide
-description: Segmentsökning används för att söka efter fält som finns i olika datakällor och returnera dem i nära realtid. Den här handboken innehåller information som hjälper dig att förstå segmentsökning bättre och innehåller exempel på API-anrop för att utföra grundläggande åtgärder med API:t.
+description: I API:t för Adobe Experience Platform segmenteringstjänst används segmentsökning för att söka efter fält som finns i olika datakällor och returnera dem i nära realtid. Den här handboken innehåller information som hjälper dig att förstå segmentsökning bättre och innehåller exempel på API-anrop för att utföra grundläggande åtgärder med API:t.
 translation-type: tm+mt
-source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '1179'
+source-wordcount: '1201'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Den här handboken innehåller information som hjälper dig att förstå segment
 
 ## Komma igång
 
-Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Platform Segmentation Service] API:t. Innan du fortsätter bör du läsa [Komma igång-guiden](./getting-started.md) för att få viktig information som du behöver veta för att kunna anropa API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
+Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Platform Segmentation Service]-API:t. Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
 
 Förutom de obligatoriska rubrikerna som beskrivs i avsnittet Komma igång, kräver alla begäranden till slutpunkten för segmentsökning följande ytterligare rubrik:
 
@@ -39,8 +39,8 @@ GET /search/namespaces?schema.name={SCHEMA}&s={SEARCH_TERM}
 
 | Parametrar | Beskrivning |
 | ---------- | ----------- | 
-| `schema.name={SCHEMA}` | **(Obligatoriskt)** Där {SCHEMA} representerar schemaklassvärdet som är associerat med sökobjekten. För närvarande `_xdm.context.segmentdefinition` stöds bara. |
-| `s={SEARCH_TERM}` | *(Valfritt)* Där {SEARCH_TERM} representerar en fråga som följer Microsofts implementering av [Lucenes söksyntax](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Om ingen sökterm har angetts `schema.name` returneras alla poster som är kopplade till den. En mer detaljerad förklaring finns i [bilagan](#appendix) till det här dokumentet. |
+| `schema.name={SCHEMA}` | **(Obligatoriskt)** Där {SCHEMA} representerar schemaklassvärdet som är associerat med sökobjekten. För närvarande stöds bara `_xdm.context.segmentdefinition`. |
+| `s={SEARCH_TERM}` | *(Valfritt)* Där {SEARCH_TERM} representerar en fråga som följer Microsofts implementering av  [Lucenes söksyntax](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Om ingen sökterm anges returneras alla poster som är associerade med `schema.name`. En mer detaljerad förklaring finns i [bilagan](#appendix) till det här dokumentet. |
 
 **Begäran**
 
@@ -99,12 +99,12 @@ GET /search/entities?schema.name={SCHEMA}&namespace={NAMESPACE}&entityId={ENTITY
 
 | Parametrar | Beskrivning |
 | ---------- | ----------- | 
-| `schema.name={SCHEMA}` | **(Obligatoriskt)** Där {SCHEMA} innehåller det schemaklassvärde som är associerat med sökobjekten. För närvarande `_xdm.context.segmentdefinition` stöds bara. |
+| `schema.name={SCHEMA}` | **(Obligatoriskt)** Där {SCHEMA} innehåller det schemaklassvärde som är associerat med sökobjekten. För närvarande stöds bara `_xdm.context.segmentdefinition`. |
 | `namespace={NAMESPACE}` | **(Obligatoriskt)** Där {NAMESPACE} innehåller det namnutrymme som du vill söka i. |
-| `s={SEARCH_TERM}` | *(Valfritt)* Där {SEARCH_TERM} innehåller en fråga som överensstämmer med Microsofts implementering av [Lucenes söksyntax](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Om ingen sökterm har angetts `schema.name` returneras alla poster som är kopplade till den. En mer detaljerad förklaring finns i [bilagan](#appendix) till det här dokumentet. |
+| `s={SEARCH_TERM}` | *(Valfritt)* Där {SEARCH_TERM} innehåller en fråga som överensstämmer med Microsofts implementering av  [Lucenes söksyntax](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Om ingen sökterm anges returneras alla poster som är associerade med `schema.name`. En mer detaljerad förklaring finns i [bilagan](#appendix) till det här dokumentet. |
 | `entityId={ENTITY_ID}` | *(Valfritt)* Begränsar sökningen till i den angivna mappen, som anges med {ENTITY_ID}. |
 | `limit={LIMIT}` | *(Valfritt)* Där {LIMIT} representerar antalet sökresultat som ska returneras. Standardvärdet är 50. |
-| `page={PAGE}` | *(Valfritt)* Där {PAGE} representerar sidnumret som används för att sidnumrera resultaten av den fråga som söks igenom. Observera att sidnumret börjar på **0**. |
+| `page={PAGE}` | *(Valfritt)* Där {PAGE} representerar sidnumret som används för att sidnumrera resultaten av den fråga som sökts. Observera att sidnumret börjar på **0**. |
 
 
 **Begäran**
@@ -170,9 +170,9 @@ GET /search/taxonomy?schema.name={SCHEMA}&namespace={NAMESPACE}&entityId={ENTITY
 
 | Parametrar | Beskrivning |
 | ---------- | ----------- | 
-| `schema.name={SCHEMA}` | **(Obligatoriskt)** Där {SCHEMA} innehåller det schemaklassvärde som är associerat med sökobjekten. För närvarande `_xdm.context.segmentdefinition` stöds bara. |
+| `schema.name={SCHEMA}` | **(Obligatoriskt)** Där {SCHEMA} innehåller det schemaklassvärde som är associerat med sökobjekten. För närvarande stöds bara `_xdm.context.segmentdefinition`. |
 | `namespace={NAMESPACE}` | **(Obligatoriskt)** Där {NAMESPACE} innehåller det namnutrymme som du vill söka i. |
-| `entityId={ENTITY_ID}` | **(Obligatoriskt)** ID:t för det sökobjekt som du vill hämta strukturinformationen om, som anges med {ENTITY_ID}. |
+| `entityId={ENTITY_ID}` | **(Obligatoriskt)** ID:t för sökobjektet som du vill hämta strukturinformationen om, som anges med {ENTITY_ID}. |
 
 **Begäran**
 
@@ -225,7 +225,7 @@ När du har läst den här guiden får du nu en bättre förståelse för hur se
 
 ## Bilaga {#appendix}
 
-I följande avsnitt finns mer information om hur söktermer fungerar. Sökfrågor skrivs på följande sätt: `s={FieldName}:{SearchExpression}`. Om du till exempel vill söka efter ett segment med namnet AAM eller [!DNL Platform]använder du följande sökfråga: `s=segmentName:AAM%20OR%20Platform`.
+I följande avsnitt finns mer information om hur söktermer fungerar. Sökfrågor skrivs på följande sätt: `s={FieldName}:{SearchExpression}`. Om du till exempel vill söka efter ett segment med namnet AAM eller [!DNL Platform] använder du följande sökfråga: `s=segmentName:AAM%20OR%20Platform`.
 
 > !![NOTE] För bästa praxis bör sökuttrycket vara HTML-kodat, som i exemplet ovan.
 
@@ -251,15 +251,15 @@ I följande tabell visas hur sökfrågor fungerar när du använder API:t för s
 | Exempel på sökuttryck | Beskrivning |
 | ------------------------- | ----------- |
 | foo | Sök efter ett ord. Detta returnerar resultaten om ordet &quot;foo&quot; finns i något av de sökbara fälten. |
-| foto OCH streck | En boolesk sökning. Resultatet returneras om **båda** orden &quot;foo&quot; och &quot;bar&quot; finns i något av de sökbara fälten. |
-| foto ELLER fält | En boolesk sökning. Resultatet returneras om **antingen** ordet &quot;foo&quot; eller ordet &quot;bar&quot; hittas i något av de sökbara fälten. |
+| foto OCH streck | En boolesk sökning. Detta returnerar resultat om **både** orden &quot;foo&quot; och &quot;bar&quot; hittas i något av de sökbara fälten. |
+| foto ELLER fält | En boolesk sökning. Detta returnerar resultat om **antingen** ordet &quot;foo&quot; eller ordet &quot;bar&quot; hittas i något av de sökbara fälten. |
 | foo NOT bar | En boolesk sökning. Detta returnerar resultaten om ordet &quot;foo&quot; hittas men ordet &quot;bar&quot; inte hittas i något av de sökbara fälten. |
-| namn: foto OCH streck | En boolesk sökning. Resultatet returneras om **båda** orden &quot;foo&quot; och &quot;bar&quot; finns i fältet &quot;name&quot;. |
+| namn: foto OCH streck | En boolesk sökning. Detta returnerar resultat om både **och** orden &quot;foo&quot; och &quot;bar&quot; hittas i fältet &quot;name&quot;. |
 | run* | En sökning med jokertecken. Om du använder en asterisk (*) matchar 0 eller fler tecken, vilket innebär att resultatet returneras om innehållet i något av de sökbara fälten innehåller ett ord som börjar med&quot;run&quot;. Detta returnerar till exempel resultat om orden&quot;kör&quot;,&quot;kör&quot;,&quot;kör&quot; eller&quot;runner&quot; visas. |
 | kamera? | En sökning med jokertecken. Använda ett frågetecken (?) matchar endast exakt ett tecken, vilket innebär att resultatet returneras om innehållet i något av de sökbara fälten börjar med &quot;cam&quot; och en extra bokstav. Detta returnerar till exempel resultat om orden &quot;läger&quot; eller &quot;kameror&quot; visas, men returnerar inga resultat om orden &quot;kamera&quot; eller &quot;campfire&quot; visas. |
 | &quot;blått paraply&quot; | En frassökning. Detta returnerar resultaten om innehållet i något av de sökbara fälten innehåller den fullständiga frasen &quot;blue paraply&quot;. |
-| blue\~ | En otydlig sökning. Du kan också ange redigeringsavståndet genom att placera ett tal mellan 0 och 2 efter tildetecknet (~). &quot;blue\~1&quot; skulle till exempel returnera &quot;blue&quot;, &quot;blues&quot; eller &quot;glue&quot;. Fuzzy-sökning kan **bara** användas på termer, inte på fraser. Du kan dock lägga till tildetecken i slutet av varje ord i en fras. &quot;camping\~ in\~ the\~ sommar\~&quot; skulle alltså matcha på &quot;camping in the sommar&quot;. |
-| &quot;hotell flygplats&quot;\~5 | En närhetssökning. Den här typen av sökning används för att hitta termer som ligger nära varandra i ett dokument. Frasen `"hotel airport"~5` hittar till exempel termerna&quot;hotell&quot; och&quot;flygplats&quot; inom fem ord från varandra i ett dokument. |
+| blue\~ | En otydlig sökning. Du kan också ange redigeringsavståndet genom att placera ett tal mellan 0 och 2 efter tildetecknet (~). &quot;blue\~1&quot; skulle till exempel returnera &quot;blue&quot;, &quot;blues&quot; eller &quot;glue&quot;. Fuzzy-sökning kan **bara** användas på termer, inte fraser. Du kan dock lägga till tildetecken i slutet av varje ord i en fras. &quot;camping\~ in\~ the\~ sommar\~&quot; skulle alltså matcha på &quot;camping in the sommar&quot;. |
+| &quot;hotell flygplats&quot;\~5 | En närhetssökning. Den här typen av sökning används för att hitta termer som ligger nära varandra i ett dokument. Frasen `"hotel airport"~5` hittar till exempel termerna &quot;hotell&quot; och &quot;flygplats&quot; inom fem ord från varandra i ett dokument. |
 | `/a[0-9]+b$/` | En sökning med reguljära uttryck. Vid den här typen av sökning hittas en matchning baserat på innehållet mellan snedstreck &quot;/&quot;, vilket beskrivs i klassen RegExp. Om du till exempel vill söka efter dokument som innehåller &quot;motell&quot; eller &quot;hotell&quot; anger du `/[mh]otel/`. Sökningar i reguljära uttryck matchas mot enstaka ord. |
 
-Mer detaljerad dokumentation om frågesyntaxen finns i [Lucene-frågesyntaxens dokumentation](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax).
+Mer detaljerad dokumentation om frågesyntaxen finns i [Lucene query syntax documentation](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax).
