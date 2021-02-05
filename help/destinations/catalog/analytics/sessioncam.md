@@ -1,21 +1,17 @@
 ---
 keywords: SessionCam;sessionskam;sessionskam
-title: SessionCam-tillägg
-seo-title: SessionCam-tillägg
+title: SessionCam Extension Destination
 description: SessionCam-tillägget är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: SessionCam-tillägget är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '530'
+source-wordcount: '503'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL SessionCam] Tillägg  {#sessioncam-extension}
-
-## Översikt {#overview}
+# [!DNL SessionCam] extension  {#sessioncam-extension}
 
 [!DNL SessionCam] innehåller en oumbärlig verktygsuppsättning som avslöjar användarbeteenden och visar de viktigaste problemen som behöver åtgärdas.
 
