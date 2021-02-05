@@ -1,13 +1,13 @@
 ---
-keywords: Experience Cloud;getting started;content and commerce ai;popular topics;Intelligent Services;ccai
+keywords: Experience Cloud;komma igång;content and commerce ai;populära topics;Intelligent Services;ccai
 solution: Experience Cloud, Intelligent Services, Experience Platform
-title: Översikt över innehålls- och handels-AI
+title: Översikt över innehåll och handel med AI
 topic: Content and Commerce AI
 description: Innehåll och Commerce AI är en uppsättning AI-tjänster som gör att ni kan extrahera intelligenta funktioner från ert innehåll, ordna, effektivisera innehållsflödet och leverera mer slagkraftiga, personaliserade upplevelser till era kunder.
 translation-type: tm+mt
-source-git-commit: de16ebddd8734f082f908f5b6016a1d3eadff04c
+source-git-commit: eb163949f91b0d1e9cc23180bb372b6f94fc951f
 workflow-type: tm+mt
-source-wordcount: '406'
+source-wordcount: '419'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Innehåll är en viktig del av dessa upplevelser. För att ni bättre ska kunna 
 
 | Innehållstyp | Funktioner | Översikt över funktioner |
 | --- | --- | --- |
-| Text | - Extrahering av nyckelord och entiteter <br>- anpassade klassificerare | - Extrahera nyckelord och taggar från företagsdokument och webbsidor automatiskt med hjälp av en färdig AI-tjänst. <br> - Etikettera automatiskt ett företags dokument eller webbsidor per företagstaxonomi med en tjänst som bygger på anpassade AI-modeller. |
+| Text | - Extrahering av nyckelord och entitet <br>- Anpassade klassificerare | - Extrahera nyckelord och taggar från företagsdokument och webbsidor automatiskt med hjälp av en färdig AI-tjänst. <br> - Etikettera automatiskt ett företags dokument eller webbsidor per företagstaxonomi med en tjänst som bygger på anpassade AI-modeller. |
 | Bilder | - Visuella rekommendationer <br> - färgextrahering | - Leverera visuellt liknande produktrekommendationer till konsumenter, som bygger på en AI-modell som utvecklats utifrån intuitiva produktfunktioner (design, färg, form). <br> - Extrahera exakta dominerande färger (etiketter och hexvärden) och deras vikt från en produktbild. |
 
 ## Förstå innehåll och handel med AI
