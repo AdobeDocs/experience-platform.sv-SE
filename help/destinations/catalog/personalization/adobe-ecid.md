@@ -1,21 +1,17 @@
 ---
 Keywords: ECID;ecid
-title: Experience Cloud ID-tjänsttillägg
-seo-title: Experience Cloud ID-tjänsttillägg
+title: Experience Cloud ID-tjänstens tilläggsmål
 description: Tillägget Experience Cloud ID-tjänst är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Experience Cloud ID-tjänst är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '520'
+source-wordcount: '487'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL Experience Cloud] ID-tjänsttillägg  {#adobe-ecid-extension}
-
-## Översikt {#overview}
 
 Det här tillägget implementerar ID-tjänsten [!DNL Experience Cloud], som identifierar besökare i alla [!DNL Experience Cloud]-lösningar.
 
