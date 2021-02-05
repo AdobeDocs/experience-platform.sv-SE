@@ -1,27 +1,25 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;PSQL;psqlconnect to query service;Query service;query service;
 solution: Experience Platform
-title: Anslut med PSQL
+title: Anslut PSQL till frågetjänst
 topic: connect
 description: 'PSQL är ett kommandoradsgränssnitt som medföljer när du installerar PostgreSQL på datorn. Du kan installera det genom att följa dessa anvisningar. '
 translation-type: tm+mt
-source-git-commit: bc1bbdddd75b11ac180b5e6faa391fd74e5f7e02
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '240'
+source-wordcount: '243'
 ht-degree: 1%
 
 ---
 
 
-# PSQL
+# Anslut PSQL till frågetjänst
 
 PSQL är ett kommandoradsgränssnitt som installeras när du installerar [!DNL PostgreSQL] på datorn. Det här dokumentet innehåller stegen för att ansluta PSQL med Adobe Experience Platform [!DNL Query Service].
 
 >[!NOTE]
 >
 > Den här handboken förutsätter att du redan har tillgång till [!DNL PSQL] och är bekant med hur du använder den. Mer information om [!DNL PSQL] finns i [officiell [!DNL PSQL]-dokumentation](https://www.postgresql.org/docs/current/app-psql.html.
-
-## Anslut PSQL och [!DNL Query Service]
 
 När du har installerat PSQL på datorn kan du ansluta PSQL med frågetjänsten. Återgå till användargränssnittet för [!DNL Platform] och välj sedan **[!UICONTROL Queries]** följt av **[!UICONTROL Credentials]**.
 
