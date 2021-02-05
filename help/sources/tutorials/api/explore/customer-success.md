@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;cs;CS;customer success system
 solution: Experience Platform
-title: Utforska ett lyckat kundsystem med API:t för Flow Service
+title: Utforska ett Customer Success System med API:t för Flow Service
 topic: overview
 description: I den här självstudien används API:t för Flow Service för att utforska system för Customer Success (CS).
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
 source-wordcount: '596'
 ht-degree: 1%
