@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;molnlagringsdata;strömmande data;strömning
 solution: Experience Platform
-title: Samla in strömmande data via källanslutningar och API:er
+title: Samla in strömmande data med källkopplingar och API:er
 topic: overview
 type: Tutorial
-description: Den här självstudiekursen beskriver stegen för att hämta direktuppspelningsdata och föra in dem på plattformen via källanslutningar och API:er.
+description: Den här självstudiekursen beskriver stegen för att hämta direktuppspelningsdata och föra in dem på plattformen med hjälp av källanslutningar och API:er.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
 source-wordcount: '1303'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 ---
 
 
-# Samla in strömmande data via källanslutningar och API:er
+# Samla in strömmande data med källanslutningar och API:er
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
