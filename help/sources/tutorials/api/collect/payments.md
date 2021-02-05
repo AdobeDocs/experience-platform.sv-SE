@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Samla in betalningsdata;betalningsdata
 solution: Experience Platform
-title: Samla in betalningsdata via källanslutningar och API:er
+title: Samla in betalningsdata med källkopplingar och API:er
 topic: overview
 type: Tutorial
-description: Den här självstudiekursen beskriver stegen för att hämta data från ett betalningsprogram och att hämta dem till plattformen via källanslutningar och API:er.
+description: Den här självstudiekursen beskriver stegen för att hämta data från ett betalningsprogram och att hämta dem till plattformen med hjälp av källanslutningar och API:er.
 translation-type: tm+mt
-source-git-commit: 9b4965e4256967961a92c544bbe355eae768e3dd
+source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
 workflow-type: tm+mt
 source-wordcount: '1560'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 ---
 
 
-# Samla in betalningsdata via källanslutningar och API:er
+# Samla in betalningsdata med källanslutningar och API:er
 
 Den här självstudiekursen beskriver stegen för att hämta data från ett betalningsprogram från tredje part och att hämta dem till plattformen via källanslutningar och API:t [[!DNL Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
