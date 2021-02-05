@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;batchingång;batchingösning;ingift;utvecklarguide;api guide;upload;ingest Parquet;ingest json;
 solution: Experience Platform
-title: Utvecklarhandbok för batchintag
+title: API-guide för gruppinmatning
 topic: developer guide
 description: Det här dokumentet innehåller en omfattande översikt över hur du använder API:er för gruppinmatning.
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
 source-wordcount: '2698'
 ht-degree: 3%
@@ -13,7 +13,7 @@ ht-degree: 3%
 ---
 
 
-# Utvecklarhandbok för batchintag
+# API-guide för gruppinmatning
 
 Det här dokumentet innehåller en omfattande översikt över hur du använder [API:er för batchimport](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml).
 
