@@ -1,21 +1,17 @@
 ---
 keywords: Spårning av konvertering av text;yext;yext;yext conversion tracking
-title: Yext Conversion Tracking-tillägg
-seo-title: Yext Conversion Tracking-tillägg
+title: Extension-mål för yext Conversion Tracking
 description: Tillägget Yext Conversion Tracking är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Yext Conversion Tracking är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '544'
+source-wordcount: '513'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Yext Conversion Tracking] Tillägg  {#yext-extension}
-
-## Översikt {#overview}
+# [!DNL Yext Conversion Tracking] extension  {#yext-extension}
 
 Med [!DNL Yext Conversion Tracking]-tillägget kan du mäta konverteringar som kan tillskrivas din användning av Yext-produkter.
 
