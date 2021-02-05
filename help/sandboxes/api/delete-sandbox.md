@@ -1,25 +1,25 @@
 ---
-keywords: Experience Platform;home;popular topics;delete sandbox
+keywords: Experience Platform;hem;populära ämnen;ta bort sandlåda
 solution: Experience Platform
-title: Ta bort en sandlåda
+title: Ta bort en sandlåda i API:t
 topic: developer guide
 description: Du kan ta bort en sandlåda genom att göra en DELETE-begäran som innehåller sandlådans namn i sökvägen för begäran.
 translation-type: tm+mt
-source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
+source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
 workflow-type: tm+mt
-source-wordcount: '103'
+source-wordcount: '116'
 ht-degree: 0%
 
 ---
 
 
-# Ta bort en sandlåda
+# Ta bort en sandlåda i API:t
 
-Du kan ta bort en sandlåda genom att göra en DELETE-begäran som innehåller sandlådans `name` i begärandesökvägen.
+Du kan ta bort en sandlåda genom att göra en DELETE-begäran som innehåller sandlådans `name` i sökvägen för begäran.
 
 >[!NOTE]
 >
->Om du gör det här API-anropet uppdateras sandlådeegenskapen till&quot;Borttagen&quot; och den inaktiveras. `status` GET-begäranden kan fortfarande hämta sandlådans information efter att den har tagits bort.
+>Om du gör det här API-anropet uppdateras sandlådans `status`-egenskap till &quot;removed&quot; och inaktiveras. GET-begäranden kan fortfarande hämta sandlådans information efter att den har tagits bort.
 
 **API-format**
 
@@ -29,7 +29,7 @@ DELETE /sandboxes/{SANDBOX_NAME}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SANDBOX_NAME}` | Den sandlåda `name` som du vill ta bort. |
+| `{SANDBOX_NAME}` | `name` för den sandlåda som du vill ta bort. |
 
 **Begäran**
 
@@ -46,7 +46,7 @@ curl -X DELETE \
 
 **Svar**
 
-Ett lyckat svar returnerar sandlådans uppdaterade information, vilket visar att den `state` &quot;har tagits bort&quot;.
+Ett lyckat svar returnerar sandlådans uppdaterade information, vilket visar att dess `state` är &quot;borttagen&quot;.
 
 ```json
 {
