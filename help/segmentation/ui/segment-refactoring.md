@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;segmentation;Segmentation;segment builder;Segment builder
+keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;segmentbyggare;Segmentbyggare
 solution: Experience Platform
-title: Ändringsguide för segmenteringstjänstens segmentbyggare
+title: Användargränssnittshandbok för tidsbegränsningar för motverkad segmentering
 topic: ui guide
 description: 'I Segment Builder finns en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper. '
 translation-type: tm+mt
-source-git-commit: beacce03136e1620ff57fb549f335d2199bb6001
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '248'
+source-wordcount: '259'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Tidigare kunde en enskild händelse ha flera bifogade tidsbegränsningsregler.
 
 ![](../images/ui/segment-refactoring/former-time-constraint.png)
 
-Som du ser har det här segmentet två begränsningar på regelnivån: Den ena för &quot;[!UICONTROL Today]&quot; och den andra för &quot;[!UICONTROL Yesterday]&quot;.
+Som du ser har det här segmentet två begränsningar på regelnivån: En för [!UICONTROL Today] och den andra för [!UICONTROL Yesterday].
 
 Det föregående segmentet motsvarar följande segment - båda tidsbegränsningarna på händelsenivå har anslutits med operatorn AND. Den första tidsbegränsningen på händelsenivå refererar till en klickningshändelse vars namn är &quot;Utbildning&quot; och som inträffar idag, medan tidsbegränsningen på andra händelsenivå refererar till en klickhändelse vars namn är lika med &quot;Pets&quot; och inträffade i går.
 
