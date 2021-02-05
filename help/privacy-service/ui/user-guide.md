@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;export;Exportera
 solution: Experience Platform
-title: Användarhandbok för Privacy Service
+title: Hantera sekretessjobb i Privacy Servicens användargränssnitt
 topic: UI guide
 description: Lär dig hur du använder Privacy Servicens användargränssnitt för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
 translation-type: tm+mt
-source-git-commit: 238a9200e4b43d41335bed0efab079780b252717
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '1051'
+source-wordcount: '1061'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Privacy Service] användarhandbok
+# Hantera sekretessjobb i Privacy Servicens användargränssnitt
 
 Det här dokumentet innehåller steg för att skapa och hantera sekretessbegäranden med användargränssnittet [!DNL Privacy Service].
 
