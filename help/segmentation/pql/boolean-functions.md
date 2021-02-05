@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segmentation Service;pql;PQL;Profile Query Language;boolean functions;boolean;
+keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;pql;PQL;Profile Query Language;booleska funktioner;boolesk;
 solution: Experience Platform
-title: Booleska funktioner
+title: PQL-booleska funktioner
 topic: developer guide
 description: Booleska funktioner används för att utföra boolesk logik för olika element i PQL (Profile Query Language).
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '236'
+source-wordcount: '254'
 ht-degree: 2%
 
 ---
@@ -37,7 +37,7 @@ homeAddress.countryISO = "CA" and person.birthYear = 1985
 
 ## eller
 
-Funktionen `or` används för att skapa en logisk förskjutning.
+Funktionen `or` används för att skapa en logisk koppling.
 
 **Format**
 
@@ -74,7 +74,7 @@ not (homeAddress.countryISO = "CA")
 
 ## If
 
-Funktionen används `if` för att matcha ett uttryck beroende på om ett angivet villkor är sant.
+Funktionen `if` används för att matcha ett uttryck beroende på om ett angivet villkor är sant.
 
 **Format**
 
@@ -90,7 +90,7 @@ if ({TEST_EXPRESSION}, {TRUE_EXPRESSION}, {FALSE_EXPRESSION})
 
 **Exempel**
 
-Följande PQL-fråga ställer in värdet som `1` om hemlandet är Kanada och `2` om hemlandet inte är Kanada.
+Följande PQL-fråga anger värdet som `1` om hemlandet är Kanada och `2` om hemlandet inte är Kanada.
 
 ```sql
 if (homeAddress.countryISO = "CA", 1, 2)
@@ -98,4 +98,4 @@ if (homeAddress.countryISO = "CA", 1, 2)
 
 ## Nästa steg
 
-Nu när du har lärt dig om booleska funktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i översikten [över](./overview.md)profilfrågespråk.
+Nu när du har lärt dig om booleska funktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [översikten över profilfrågespråk](./overview.md).
