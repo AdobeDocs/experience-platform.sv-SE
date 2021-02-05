@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;hemanvändare;populära ämnen;samla in nöjda kunder;lyckade kunder
 solution: Experience Platform
-title: Samla in data från ett lyckat kundsystem via källanslutningar och API:er
+title: Samla in data från ett lyckat kundsystem med hjälp av källanslutningar och API:er
 topic: overview
 type: Tutorial
-description: Den här självstudiekursen beskriver stegen för att hämta data från ett system för kundframgångar och att hämta dem till plattformen via källanslutningar och API:er.
+description: Den här självstudiekursen beskriver stegen för att hämta data från ett system för kundframgångar och att hämta dem till plattformen med hjälp av källanslutningar och API:er.
 translation-type: tm+mt
-source-git-commit: 85a715a6a56c0a885cb6f5b63c1a90ba81479862
+source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
 workflow-type: tm+mt
 source-wordcount: '1541'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 ---
 
 
-# Samla in data från ett lyckat kundsystem via källanslutningar och API:er
+# Samla in data från ett lyckat kundsystem med hjälp av källkopplingar och API:er
 
 Den här självstudiekursen beskriver stegen för att hämta data från ett lyckat system från en tredjepartsleverantör och hämta dem till [!DNL Platform] via källanslutningar och API:t [[!DNL Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
