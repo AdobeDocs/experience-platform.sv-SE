@@ -2,12 +2,11 @@
 keywords: mål;mål;måltyper
 title: Destinationstyper och -kategorier
 seo-title: Destinationstyper och -kategorier
-description: 'I Adobe Experience Platform hämtar mål för profil-/segmentexport händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Med Experience Platform Launch-tillägg vidarebefordras råa händelsedata till flera typer av destinationer. '
-seo-description: I Adobe Experience Platform hämtar mål för profil-/segmentexport händelsedata, kombinerar dem med andra datakällor, tillämpar segmentering och exporterar segment och kvalificerade profiler till destinationer. Med Experience Platform Launch-tillägg vidarebefordras råa händelsedata till flera typer av destinationer.
+description: Läs mer om de olika typerna och kategorierna av destinationer i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '577'
+source-wordcount: '510'
 ht-degree: 0%
 
 ---
