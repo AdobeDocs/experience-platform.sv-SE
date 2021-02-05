@@ -1,25 +1,25 @@
 ---
-keywords: Experience Platform;home;popular topics;catalog;api;replace an object
+keywords: Experience Platform;hem;populära ämnen;katalog;api;ersätt ett objekt
 solution: Experience Platform
-title: Ersätta ett objekt
+title: Ersätta ett katalogobjekt
 topic: developer guide
 description: Du kan skriva över innehållet i ett Catalog-objekt med hjälp av en PUT-begäran, där hela resursen ersätts med nyttolasten för begäran.
 translation-type: tm+mt
-source-git-commit: dd1f508b93e8eac14e3c41fac9d8f49769d08f46
+source-git-commit: a1103bfbf79f9c87bac5b113c01386a6fb8950e7
 workflow-type: tm+mt
-source-wordcount: '161'
+source-wordcount: '173'
 ht-degree: 0%
 
 ---
 
 
-# Ersätta ett objekt
+# Ersätta ett katalogobjekt
 
-Du kan skriva över innehållet i ett [!DNL Catalog] objekt med hjälp av en PUT-begäran, där hela resursen ersätts med den begärda nyttolasten.
+Du kan skriva över innehållet i ett [!DNL Catalog]-objekt med en PUT-begäran, där hela resursen ersätts med den begärda nyttolasten.
 
 >[!NOTE]
 >
->Om du bara behöver uppdatera ett fåtal specifika fält i ett [!DNL Catalog] objekt kan det vara mer effektivt att använda en PATCH-begäran.
+>Om du bara behöver uppdatera ett fåtal specifika fält i ett [!DNL Catalog]-objekt kan det vara mer effektivt att använda en PATCH-begäran.
 
 **API-format**
 
@@ -29,7 +29,7 @@ PUT /{OBJECT_TYPE}/{OBJECT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog] objekt som ska ersättas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog]-objekt som ska ersättas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{OBJECT_ID}` | Identifieraren för det specifika objekt som du vill uppdatera. |
 
 **Begäran**
