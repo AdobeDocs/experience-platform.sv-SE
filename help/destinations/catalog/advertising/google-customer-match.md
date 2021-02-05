@@ -1,21 +1,17 @@
 ---
 keywords: Google customer match;Google customer match;Google Customer Match
-title: Google Customer Match Destination
-seo-title: Google Customer Match Destination
+title: Google Customer Match Connection Destination
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egenskaper, som Search, Shopping, Gmail och YouTube.
-seo-description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egenskaper, som Search, Shopping, Gmail och YouTube.
 translation-type: tm+mt
-source-git-commit: 38b2bfd93bda85cf87dde4e0345ca9c11e419c2f
+source-git-commit: aa2088d30716f56ac2909214badbb39c0ae97855
 workflow-type: tm+mt
-source-wordcount: '1465'
+source-wordcount: '1430'
 ht-degree: 0%
 
 ---
 
 
-# Google Customer Match Destination
-
-## Översikt {#overview}
+# Google Customer Match Connection
 
 >[!IMPORTANT]
 >
