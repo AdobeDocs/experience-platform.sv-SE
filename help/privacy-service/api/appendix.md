@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
-title: Privacy Service API developer guide appendix
+title: API-handbok för Privacy Service
 topic: developer guide
 description: Det här dokumentet innehåller ytterligare information om hur du arbetar med Privacy Service-API:t.
 translation-type: tm+mt
-source-git-commit: 5dad1fcc82707f6ee1bf75af6c10d34ff78ac311
+source-git-commit: b395535cbe7e4030606ee2808eb173998f5c32e0
 workflow-type: tm+mt
-source-wordcount: '498'
+source-wordcount: '501'
 ht-degree: 6%
 
 ---
 
 
-# Bilaga
+# Privacy Service API guide appendix
 
 Följande avsnitt innehåller ytterligare information om hur du arbetar med Adobe Experience Platform Privacy Service API.
 
