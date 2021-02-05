@@ -1,21 +1,17 @@
 ---
 keywords: Flashtalk OneTag extensions;Flashtalk OneTag extension;Flashtalk OneTag destination;Flashtalk OneTag;flashtalk onetag
-title: Flashtalk OneTag-tillägg
-seo-title: Flashtalk OneTag-tillägg
+title: Flashtalk OneTag Extension Destination
 description: Tillägget Flashtalk OneTag är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Flashtalk OneTag är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '553'
+source-wordcount: '524'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL Flashtalking OneTag] extension  {#flashtalking-extension}
-
-## Översikt {#overview}
 
 Tillägget [!DNL Flashtalking OneTag] för Experience Platform Launch gör det enkelt att tilldela webbplatsåtgärder till webbannonsering, video och mobilannonsering. Distribuera [!DNL Flashtalking OneTag] till webbegenskaperna med Launch.
 
