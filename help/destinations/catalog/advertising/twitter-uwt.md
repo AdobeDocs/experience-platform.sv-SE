@@ -1,21 +1,17 @@
 ---
 keywords: twitter;Twitter;twitter universal website tag;Twitter universal website tag;Twitter UWT Tag;Twitter uwt;twitter uwt
-title: Twitter Universal Website Tag-tillägg
-seo-title: Twitter Universal Website Tag-tillägg
+title: Twitter Universal Website Tag Extension Destination
 description: Tillägget Twitter Universal Website Tag är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Twitter Universal Website Tag är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '527'
+source-wordcount: '494'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Twitter Universal Website Tag] Tillägg  {#twitter-uwt-extension}
-
-## Översikt {#overview}
+# [!DNL Twitter Universal Website Tag] extension  {#twitter-uwt-extension}
 
 [!DNL Twitter Universal Website Tag] innehåller åtgärder för att skicka beacons till Twitter UWT-tagg.
 
