@@ -4,7 +4,7 @@ title: Generera exempeldata för ett XDM-schema i användargränssnittet
 description: Lär dig hur du genererar JSON-exempeldata baserat på ett befintligt schema i Adobe Experience Platform användargränssnitt.
 topic: user guide
 translation-type: tm+mt
-source-git-commit: 87497ef8a0ebf8de8b6c2dff1650c0b982299e8a
+source-git-commit: 8d6916890a94300dc68d018d56579df9616c177c
 workflow-type: tm+mt
 source-wordcount: '329'
 ht-degree: 0%
@@ -18,7 +18,7 @@ För att kunna importera data till Adobe Experience Platform måste dataformatet
 
 För alla scheman som du definierar i användargränssnittet för Experience Platform kan du generera ett JSON-exempelobjekt som följer schemats struktur. Det här objektet kan fungera som en mall för alla data som hämtas till datauppsättningar som använder det aktuella schemat.
 
-Välj **[!UICONTROL Schemas]** i den vänstra navigeringen i plattformsgränssnittet. Under fliken **[!UICONTROL Browse]** letar du reda på schemat som du vill generera exempeldata för. Välj det i listan och den högra uppdateringen av fältet för att visa information om schemat. Här väljer du **[!UICONTROL Download sample file].**
+Välj **[!UICONTROL Schemas]** i den vänstra navigeringen i plattformsgränssnittet. Under fliken **[!UICONTROL Browse]** letar du reda på schemat som du vill generera exempeldata för. Välj det i listan och den högra uppdateringen av fältet för att visa information om schemat. Välj **[!UICONTROL Download sample file]** härifrån.
 
 ![](../images/ui/sample/sample-data.png)
 
