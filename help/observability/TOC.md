@@ -4,9 +4,9 @@ audience: user
 user-guide-title: Insikter - guide
 user-guide-description: Övervaka plattformsaktiviteter med hjälp av statistik och händelsemeddelanden.
 translation-type: tm+mt
-source-git-commit: 72b2172bbcc8613a2030b4784270321c3933f6aa
+source-git-commit: 92e3edaba5793d18e826d3e3f3151ba8a51fce53
 workflow-type: tm+mt
-source-wordcount: '55'
+source-wordcount: '53'
 ht-degree: 9%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 9%
 # Insikter om observerbarhet {#observability}
 
 * [Översikt över Insikter i observationer](home.md)
-* Utvecklarhandbok för API:t för observabilitet {#api}
+* API för observationsinformation {#api}
    * [Översikt](api/overview.md)
    * [Komma igång](api/getting-started.md)
    * [Mätvärden](api/metrics.md)
