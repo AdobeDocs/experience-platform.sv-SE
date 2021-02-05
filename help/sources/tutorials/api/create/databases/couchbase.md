@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;hemmabas;populära ämnen;kuchbase;Kuchbase
 solution: Experience Platform
-title: Skapa en Couchbase-anslutning med API:t för Flow Service
+title: Skapa en källanslutning till Couchbase med API:t för Flow Service
 topic: overview
 type: Tutorial
-description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Couchbase till Experience Platform.
+description: Lär dig hur du ansluter Couchbase till Adobe Experience Platform med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '541'
+source-wordcount: '527'
 ht-degree: 1%
 
 ---
 
 
-# Skapa en [!DNL Couchbase]-koppling med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL Couchbase]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
 >[!NOTE]
 >
@@ -22,7 +22,7 @@ ht-degree: 1%
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor och föra in dem i Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta [!DNL Couchbase] till [!DNL Experience Platform].
+Lär dig hur du ansluter [!DNL Couchbase] till [!DNL Experience Platform].
 
 ## Komma igång
 
