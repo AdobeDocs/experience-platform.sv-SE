@@ -1,21 +1,17 @@
 ---
 keywords: Nielsen BSDK;nielsen bsdk;nielsen BSDK
-title: Nielsen BSDK-tillägg
-seo-title: Nielsen BSDK-tillägg
+title: Nielsen BSDK Extension Destination
 description: Tillägget Nielsen BSDK är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Nielsen BSDK är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '606'
+source-wordcount: '577'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Nielsen BSDK] Tillägg  {#nielsen-bsdk-extension}
-
-## Översikt {#overview}
+# [!DNL Nielsen BSDK] extension  {#nielsen-bsdk-extension}
 
 [!DNL Nielsen Digital SDK] lanseringstillägget erbjuder målgruppsmätning via följande mätprodukter:
 
