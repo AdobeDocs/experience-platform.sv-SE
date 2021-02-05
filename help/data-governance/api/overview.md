@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
-title: Utvecklarhandbok för Policy Service API
+title: API-guide för principtjänst
 topic: developer guide
-description: Lär dig hur du använder API:t för principtjänst för att hantera dataanvändningsetiketter och principer i Experience Platform.
+description: Med API:t för principtjänsten kan utvecklare hantera dataanvändningsetiketter och principer i Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 translation-type: tm+mt
-source-git-commit: 5dad1fcc82707f6ee1bf75af6c10d34ff78ac311
+source-git-commit: e649ab3da077cdd8e98562199b8bdece6108a572
 workflow-type: tm+mt
-source-wordcount: '495'
+source-wordcount: '504'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Policy Service] Utvecklarhandbok för API
+# [!DNL Policy Service] API-guide
 
 Med Adobe Experience Platform [!DNL Data Governance] kan ni hantera kunddata och säkerställa efterlevnad av regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en nyckelroll inom [!DNL Experience Platform] på olika nivåer, bland annat för katalogisering, datalinje, etikettering av dataanvändning, dataanvändningsprinciper och kontroll av användningen av data för marknadsföringsåtgärder.
 
