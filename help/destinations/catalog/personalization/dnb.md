@@ -1,21 +1,17 @@
 ---
 keywords: D&B Visitor Intelligence;D&B;besökarintelligenstillägg
-title: D&B Visitor Intelligence-tillägg
-seo-title: D&B Visitor Intelligence-tillägg
+title: D&B Visitor Intelligence Extension - mål
 description: Tillägget D&B Visitor Intelligence är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget D&B Visitor Intelligence är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '520'
+source-wordcount: '487'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL D&B Visitor Intelligence] extension  {#dnb-extension}
-
-## Översikt {#overview}
 
 Analysera okända besökare och konvertera dem till leads.
 
