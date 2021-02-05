@@ -1,27 +1,26 @@
 ---
-keywords: destinations;destination;destinations detail page;destinations details page
-title: Sidan Destinationsinformation
-seo-title: Sidan Destinationsinformation
+keywords: mål;mål;destinationsdetaljsida;målinformationssida
+title: Visa information om ett mål i användargränssnittet
 description: 'På informationssidan för ett enskilt mål finns en översikt över målinformationen, t.ex. målnamn, ID, segment som är mappade till målet samt kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet. '
 seo-description: 'På informationssidan för ett enskilt mål finns en översikt över målinformationen, t.ex. målnamn, ID, segment som är mappade till målet samt kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet. '
 translation-type: tm+mt
-source-git-commit: 8ac368081c37ca5bfc2cc3382774a912e8ad68eb
+source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
 workflow-type: tm+mt
-source-wordcount: '691'
+source-wordcount: '705'
 ht-degree: 0%
 
 ---
 
 
-# Sidan med målinformation
+# Visa information om ett mål
 
 I Adobe Experience Platform användargränssnitt kan du visa och övervaka attributen och aktiviteterna för dina mål. Dessa uppgifter omfattar målets namn och ID, kontroller för att aktivera eller inaktivera destinationer och mycket annat. Detaljer för batchdestinationer omfattar även mått för aktiverade profilposter och en historik över dataflöden.
 
 >[!NOTE]
 >
->Målinformationssidan är en del av arbetsytan i användargränssnittet för plattformen. [!UICONTROL Destinations] Mer information finns i översikten över [[!UICONTROL Destinations]](./destinations-workspace.md) arbetsytan.
+>Målinformationssidan är en del av arbetsytan [!UICONTROL Destinations] i plattformsgränssnittet. Mer information finns i översikten [[!UICONTROL Destinations] för arbetsytan](./destinations-workspace.md).
 
-Gå till fliken och markera namnet på det mål som du vill visa på arbetsytan i Plattformsgränssnittet **[!UICONTROL Destinations]** . Gå till **[!UICONTROL Browse]** fliken.
+Gå till fliken **[!UICONTROL Browse]** i arbetsytan **[!UICONTROL Destinations]** i plattformsgränssnittet och välj namnet på ett mål som du vill visa.
 
 ![](../assets/ui/details-page/select-destination.png)
 
@@ -29,7 +28,7 @@ Målets informationssida visas med de tillgängliga kontrollerna. Om du visar in
 
 ![](../assets/ui/details-page/details.png)
 
-På fliken Bläddra kan du dessutom välja att ta bort det markerade dataflödet genom att markera ![papperskorgsikonen](../assets/ui/details-page/trash-icon.png) . Alla segment som aktiveras för ett mål mappas om innan dataflödet tas bort.
+På fliken Bläddra kan du dessutom välja att ta bort det markerade dataflödet genom att markera ikonen ![papperskorgen](../assets/ui/details-page/trash-icon.png). Alla segment som aktiveras för ett mål mappas om innan dataflödet tas bort.
 
 ![](../assets/ui/details-page/delete-flow.png)
 
@@ -43,32 +42,32 @@ Följande tabell omfattar de kontroller och den information som tillhandahålls 
 
 | Högerrälsartikel | Beskrivning |
 | --- | --- |
-| [!UICONTROL Activate] | Välj den här kontrollen om du vill redigera vilka segment som mappas till målet. Mer information finns i guiden om hur du [aktiverar segment till ett mål](./activate-destinations.md) . |
+| [!UICONTROL Activate] | Välj den här kontrollen om du vill redigera vilka segment som mappas till målet. Mer information finns i guiden [aktivera segment till ett mål](./activate-destinations.md). |
 | [!UICONTROL Delete] | Gör att du kan ta bort det här dataflödet och ta bort mappningar för segment som tidigare har aktiverats, om det finns några. |
 | [!UICONTROL Destination name] | Det här fältet kan redigeras för att uppdatera målets namn. |
 | [!UICONTROL Description] | Det här fältet kan redigeras för att uppdatera eller lägga till en valfri beskrivning till målet. |
-| [!UICONTROL Destination] | Representerar målplattformen som målgrupperna skickas till. Mer information finns i [målkatalogen](../catalog/overview.md) . |
+| [!UICONTROL Destination] | Representerar målplattformen som målgrupperna skickas till. Mer information finns i [målkatalogen](../catalog/overview.md). |
 | [!UICONTROL Status] | Anger om målet är aktiverat eller inaktiverat. |
 | [!UICONTROL Marketing actions] | Anger de marknadsföringsåtgärder (användningsfall) som gäller för den här destinationen i datastyrningssyfte. |
-| [!UICONTROL Category] | Anger måltypen. Mer information finns i [målkatalogen](../catalog/overview.md) . |
-| [!UICONTROL Connection type] | Anger det formulär som era målgrupper skickas till. Möjliga värden är &quot;[!UICONTROL Cookie]&quot; och &quot;[!UICONTROL Profile-based]&quot;. |
-| [!UICONTROL Frequency] | Anger hur ofta målgrupperna skickas till målet. Möjliga värden är &quot;[!UICONTROL Streaming]&quot; och &quot;[!UICONTROL Batch]&quot;. |
-| [!UICONTROL Identity] | Representerar det identitetsnamnutrymme som accepteras av målet, till exempel `GAID`, `IDFA`eller `email`. Mer information om godkända namnutrymmen för identiteter finns i [översikten över](../../identity-service/namespaces.md)namnutrymmen för identiteter. |
+| [!UICONTROL Category] | Anger måltypen. Mer information finns i [målkatalogen](../catalog/overview.md). |
+| [!UICONTROL Connection type] | Anger det formulär som era målgrupper skickas till. Möjliga värden är [!UICONTROL Cookie] och [!UICONTROL Profile-based]. |
+| [!UICONTROL Frequency] | Anger hur ofta målgrupperna skickas till målet. Möjliga värden är [!UICONTROL Streaming] och [!UICONTROL Batch]. |
+| [!UICONTROL Identity] | Representerar det identitetsnamnutrymme som accepteras av målet, till exempel `GAID`, `IDFA` eller `email`. Mer information om godkända ID-namnutrymmen finns i [översikten över identitetsnamnrymden](../../identity-service/namespaces.md). |
 | [!UICONTROL Created by] | Anger den användare som skapade det här målet. |
 | [!UICONTROL Created] | Anger UTC-datum/tid när det här målet skapades. |
 
-## [!UICONTROL Enabled]/[!UICONTROL Disabled] växla
+## [!UICONTROL Enabled]/[!UICONTROL Disabled] toggle
 
-Du kan använda växlingsknappen **[!UICONTROL Enabled]/[!UICONTROL Disabled]** för att starta och pausa all dataexport till målet.
+Du kan använda alternativet **[!UICONTROL Enabled]/[!UICONTROL Disabled]** för att starta och pausa all dataexport till målet.
 
 ![](../assets/ui/details-page/enable-disable.png)
 
 ## [!UICONTROL Dataflow runs]
 
-Fliken innehåller mätdata om dataflödet som körs till batchdestinationer [!UICONTROL Dataflow runs] . En lista över enskilda körningar och deras specifika mått visas tillsammans med följande summor för profilposter:
+Fliken [!UICONTROL Dataflow runs] innehåller mätdata för dataflödet som körs till batchdestinationer. En lista över enskilda körningar och deras specifika mått visas tillsammans med följande summor för profilposter:
 
 * **[!UICONTROL Profile records activated]**: Det totala antalet profilposter som har skapats eller uppdaterats för aktivering.
-* **[!UICONTROL Profile records skipped]**:  Det totala antalet profilposter som hoppas över för aktivering baserat på utträde eller saknade attribut.
+* **[!UICONTROL Profile records skipped]**: Det totala antalet profilposter som hoppas över för aktivering baserat på utträde eller saknade attribut.
 
 ![](../assets/ui/details-page/dataflow-runs.png)
 
@@ -88,8 +87,8 @@ På fliken [!UICONTROL Activation data] visas en lista med segment som har mappa
 
 >[!NOTE]
 >
->Mer information om hur du utforskar detaljsidan för ett segment finns i översikten över [segmenteringsgränssnittet](../../segmentation/ui/overview.md#segment-details).
+>Mer information om hur du utforskar informationssidan för ett segment finns i [Översikt över segmenteringsgränssnittet](../../segmentation/ui/overview.md#segment-details).
 
 ## Nästa steg
 
-Det här dokumentet innehåller funktioner för sidan med målinformation. Mer information om hur du hanterar mål i användargränssnittet finns i översikten på [[!UICONTROL Destinations] arbetsytan](./destinations-workspace.md).
+Det här dokumentet innehåller funktioner för sidan med målinformation. Mer information om hur du hanterar mål i användargränssnittet finns i översikten på arbetsytan [[!UICONTROL Destinations]](./destinations-workspace.md).
