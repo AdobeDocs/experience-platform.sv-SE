@@ -1,21 +1,21 @@
 ---
-keywords: Experience Platform;home;popular topics;catalog;object lookup;api
+keywords: Experience Platform;hem;populära ämnen;katalog;objektsökning;api
 solution: Experience Platform
-title: Söka efter ett objekt
+title: Söka efter ett katalogobjekt
 topic: developer guide
 description: 'Om du känner till den unika identifieraren för ett specifikt katalogobjekt kan du utföra en GET-förfrågan för att visa objektets information. '
 translation-type: tm+mt
-source-git-commit: dd1f508b93e8eac14e3c41fac9d8f49769d08f46
+source-git-commit: a1103bfbf79f9c87bac5b113c01386a6fb8950e7
 workflow-type: tm+mt
-source-wordcount: '154'
+source-wordcount: '165'
 ht-degree: 0%
 
 ---
 
 
-# Söka efter ett objekt
+# Söka efter ett katalogobjekt
 
-Om du känner till den unika identifieraren för ett specifikt [!DNL Catalog] objekt kan du utföra en GET-förfrågan för att visa objektets information.
+Om du känner till den unika identifieraren för ett specifikt [!DNL Catalog]-objekt kan du utföra en GET-förfrågan för att visa objektets information.
 
 >[!NOTE]
 >
@@ -30,12 +30,12 @@ GET /{OBJECT_TYPE}/{OBJECT_ID}?properties={PROPERTY_1},{PROPERTY_2},{PROPERTY_3}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Typen för [!DNL Catalog]-objektet som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{OBJECT_ID}` | Identifieraren för det specifika objekt som du vill hämta. |
 
 **Begäran**
 
-Följande begäran hämtar en datauppsättning med dess ID och returnerar dess `name`, `description`, `state`, `tags`och `files` egenskaper.
+Följande begäran hämtar en datauppsättning med dess ID och returnerar egenskaperna `name`, `description`, `state`, `tags` och `files`.
 
 ```shell
 curl -X GET \
@@ -48,7 +48,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar den angivna datauppsättningen med endast den begärda informationen `properties` i brödtexten.
+Ett lyckat svar returnerar den angivna datauppsättningen med endast den begärda `properties` i brödtexten.
 
 ```json
 {
@@ -68,4 +68,4 @@ Ett lyckat svar returnerar den angivna datauppsättningen med endast den begärd
 
 >[!NOTE]
 >
->Egenskaper vars värden är prefix med `@` representerar relaterade objekt. I avsnittet Bilaga om hur du [visar relaterade objekt](appendix.md#view-interrelated-objects) finns anvisningar om hur du visar information om dessa objekt.
+>Egenskaper vars värden har prefixet `@` representerar relaterade objekt. I avsnittet med bilagor i [vyn över relaterade objekt](appendix.md#view-interrelated-objects) finns anvisningar om hur du visar information om dessa objekt.
