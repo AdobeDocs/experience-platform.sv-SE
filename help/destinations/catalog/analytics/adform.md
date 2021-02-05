@@ -1,21 +1,17 @@
 ---
 keywords: adform extension;adform
-title: Anpassa tillägg
-seo-title: Anpassa tillägg
+title: Anpassa tilläggsmål
 description: Adform-tillägget är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Adform-tillägget är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '497'
+source-wordcount: '470'
 ht-degree: 0%
 
 ---
 
 
 # Anpassa tillägg {#adform-extension}
-
-## Översikt {#overview}
 
 Tillägget Anpassa webbplatsspårning gör det möjligt för annonsörer att enkelt implementera Adform Tracking Points på sina webbplatser med hjälp av plattformen [!DNL Experience Platform Launch].
 
