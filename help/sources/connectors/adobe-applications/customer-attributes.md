@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;Customer Attributes connector
+keywords: Experience Platform;home;populära topics;Customer Attributes connector
 solution: Experience Platform
-title: Koppling för kundattribut
+title: Översikt över källkopplingen för kundattribut
 topic: overview
-description: Dokumentationen nedan innehåller information om hur du ansluter kundattribut till plattformen med hjälp av API:er eller användargränssnittet
+description: Lär dig koppla kundattribut till Adobe Experience Platform med API:er eller användargränssnittet
 translation-type: tm+mt
-source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '121'
+source-wordcount: '130'
 ht-degree: 0%
 
 ---
@@ -19,8 +19,8 @@ Med Adobe Experience Platform kan data hämtas från externa källor samtidigt s
 
 Experience Platform har stöd för inmatning av kundattributprofildata i Adobe Experience Platform.
 
-Dokumentationen nedan innehåller information om hur du ansluter kundattribut till plattformen med hjälp av API:er eller användargränssnittet:
+Dokumentationen nedan innehåller information om hur du ansluter kundattribut till Adobe Experience Platform med hjälp av API:er eller användargränssnittet:
 
 ## Koppla kundattribut till plattformen med användargränssnittet
 
-- [Skapa en källkoppling för kundattribut i användargränssnittet](../../tutorials/ui/create/adobe-applications/customer-attributes.md)
+- [Skapa en källanslutning för kundattribut i användargränssnittet](../../tutorials/ui/create/adobe-applications/customer-attributes.md)
