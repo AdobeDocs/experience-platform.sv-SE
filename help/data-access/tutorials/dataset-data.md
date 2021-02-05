@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;dataåtkomst;dataåtkomst api;frågedataåtkomst
 solution: Experience Platform
-title: Dataåtkomstöversikt
+title: Visa datauppsättningsdata med API:t för dataåtkomst
 topic: tutorial
 type: Tutorial
-description: I det här dokumentet finns en stegvis självstudiekurs som beskriver hur du hittar, hämtar och hämtar data som lagras i en datauppsättning med hjälp av API:t för dataåtkomst i Adobe Experience Platform. Du kommer också att få en introduktion till några av de unika funktionerna i API:t för dataåtkomst, till exempel sidindelning och partiella nedladdningar.
+description: Lär dig hur du hittar, får tillgång till och hämtar data som lagras i en datauppsättning med hjälp av API:t för dataåtkomst i Adobe Experience Platform. Du kommer också att få en introduktion till några av de unika funktionerna i API:t för dataåtkomst, till exempel sidindelning och partiella nedladdningar.
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '1400'
+source-wordcount: '1398'
 ht-degree: 0%
 
 ---
 
 
-# Hämta datauppsättningsdata med hjälp av API:t [!DNL Data Access]
+# Visa datauppsättningsdata med hjälp av API:t [!DNL Data Access]
 
 I det här dokumentet finns en stegvis självstudiekurs som beskriver hur du hittar, hämtar och hämtar data som lagras i en datauppsättning med hjälp av API:t [!DNL Data Access] i Adobe Experience Platform. Du kommer också att få en introduktion till några av de unika funktionerna i API:t [!DNL Data Access], till exempel sidindelning och partiella nedladdningar.
 
