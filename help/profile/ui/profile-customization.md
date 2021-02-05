@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;användargränssnitt;gränssnitt;anpassning;profilinformation;information
-title: Anpassa hur du visar profiler i användargränssnittet
+title: Anpassning av profildetaljer i användargränssnittet
 description: 'Den här guiden innehåller stegvisa instruktioner för hur kundprofildata i realtid visas i Adobe Experience Platform användargränssnitt. '
 topic: guide
 translation-type: tm+mt
-source-git-commit: e6ecc5dac1d09c7906aa7c7e01139aa194ed662b
+source-git-commit: ba1cbed3b5e3f3a8879b3882856a03ef4be9b96a
 workflow-type: tm+mt
-source-wordcount: '1113'
+source-wordcount: '1111'
 ht-degree: 0%
 
 ---
