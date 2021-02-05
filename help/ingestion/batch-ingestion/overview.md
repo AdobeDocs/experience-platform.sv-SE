@@ -1,21 +1,21 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;dataöverföring;batch;batchvis;aktivera datauppsättning;batchöverföring översikt;översikt;batchöverföring översikt;
 solution: Experience Platform
-title: Översikt över batchintag
+title: Översikt över batchförbrukning
 topic: overview
-description: Med API:t för gruppinmatning kan du importera data till Adobe Experience Platform som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som följer ett känt schema i XDM-registret (Experience Data Model).
+description: Med API:t för Adobe Experience Platform-datainmatning kan du importera data till plattformen som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som följer ett känt schema i XDM-registret (Experience Data Model).
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
-source-wordcount: '1216'
-ht-degree: 1%
+source-wordcount: '1222'
+ht-degree: 0%
 
 ---
 
 
-# [!DNL Batch Ingestion] översikt
+# Översikt över batchöverföring
 
-Med API:t [!DNL Batch Ingestion] kan du importera data till Adobe Experience Platform som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som överensstämmer med ett känt schema i [!DNL Experience Data Model]-registret (XDM).
+Med API:t för Adobe Experience Platform-datainmatning kan du importera data till plattformen som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som överensstämmer med ett känt schema i [!DNL Experience Data Model]-registret (XDM).
 
 [API-referensen för datainmatning](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) innehåller ytterligare information om dessa API-anrop.
 
