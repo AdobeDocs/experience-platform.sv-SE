@@ -1,21 +1,17 @@
 ---
 keywords: Dubbelklicka på Bid Manager;DoubleClick bid manager;DoubleClick;Display & Video 360;display 360;video 360;Video 360;Display 360;display and video
-title: Google Display & Video 360 Destination
-seo-title: Google Display & Video 360 Destination
+title: Google Display & Video 360 Connection Destination
 description: Display & Video 360, tidigare DoubleClick Bid Manager, är ett verktyg som används för att utföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display, Video och Mobile.
-seo-description: 'Display & Video 360, tidigare DoubleClick Bid Manager, är ett verktyg som används för att utföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display, Video och Mobile. '
 translation-type: tm+mt
-source-git-commit: bb2fc2658d32c59b476dd9d526eb8bc2f055a1af
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '725'
+source-wordcount: '694'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Google Display & Video 360] Destination
-
-## Översikt
+# [!DNL Google Display & Video 360] anslutning
 
 [!DNL Display & Video 360], tidigare kallat  [!DNL DoubleClick Bid Manager], är ett verktyg som används för att genomföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display-, Video- och Mobile-material.
 
