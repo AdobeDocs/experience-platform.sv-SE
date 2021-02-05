@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;data ingestion;data location;Data Location;Data management;data management;Lineage;lineage;batch;Batch;ingested data
+keywords: Experience Platform;hem;populära ämnen;datainmatning;dataplatse;dataplats;datahantering;datahantering;linje;rad;grupp;inmatad data
 solution: Experience Platform
-title: Översikt över Adobe Experience Platform datainmatning
+title: Översikt över dataöverföring
 topic: overview
 description: I det här dokumentet introduceras de tre viktigaste sätten att överföra data till plattformen, med länkar till deras respektive översiktsdokumentation för mer detaljerad information.
 translation-type: tm+mt
-source-git-commit: 6e4a3ebe84c82790f58f8ec54e6f72c2aca0b7da
+source-git-commit: 089a4d517476b614521d1db4718966e3ebb13064
 workflow-type: tm+mt
-source-wordcount: '442'
+source-wordcount: '460'
 ht-degree: 0%
 
 ---
@@ -15,38 +15,38 @@ ht-degree: 0%
 
 # Översikt över datainmatning
 
-Adobe Experience Platform sammanför data från olika källor för att hjälpa marknadsförarna att bättre förstå kundernas beteende. Adobe Experience Platform datainmatning representerar de olika metoder som används för att [!DNL Platform] importera data från dessa källor, samt hur data lagras i datasjön för användning av underordnade [!DNL Platform] tjänster.
+Adobe Experience Platform sammanför data från olika källor för att hjälpa marknadsförarna att bättre förstå kundernas beteende. Adobe Experience Platform datainmatning representerar de olika metoder som [!DNL Platform] använder för att hämta data från dessa källor, samt hur data bevaras i datasjön för användning av underordnade [!DNL Platform]-tjänster.
 
-I det här dokumentet introduceras de tre huvudsakliga sätten som data hämtas till, med länkar till respektive översiktsdokumentation för mer detaljerad information. [!DNL Platform]
+I det här dokumentet introduceras de tre huvudsakliga sätten att överföra data till [!DNL Platform], med länkar till deras respektive översiktsdokumentation för mer detaljerad information.
 
 ## Batchförtäring
 
-Genom att lägga in data i grupp kan du importera data [!DNL Experience Platform] som gruppfiler. Batchar är dataenheter som består av en eller flera filer som ska importeras som en enda enhet. När du har importerat batcharna innehåller de metadata som beskriver antalet poster som har importerats samt eventuella poster som misslyckades och tillhörande felmeddelanden.
+Med batchöverföring kan du importera data till [!DNL Experience Platform] som batchfiler. Batchar är dataenheter som består av en eller flera filer som ska importeras som en enda enhet. När du har importerat batcharna innehåller de metadata som beskriver antalet poster som har importerats samt eventuella poster som misslyckades och tillhörande felmeddelanden.
 
 Manuellt överförda datafiler som platta CSV-filer (mappade till XDM-scheman) och Parquet-dataramar måste importeras med den här metoden.
 
-Mer information finns i översikten [över](./batch-ingestion/overview.md) gruppinmatning.
+Mer information finns i översikten [batchöverföring](./batch-ingestion/overview.md).
 
 ## Direktinmatning
 
-Med direktuppspelad inmatning kan ni skicka data från klient- och serverenheter till [!DNL Experience Platform] i realtid. [!DNL Platform] stöder användningen av datainmatningar för att strömma inkommande upplevelsedata, som finns kvar i strömningsaktiverade datauppsättningar i Data Lake. Datainmatningar kan konfigureras så att de automatiskt autentiserar de data de samlar in, vilket säkerställer att data kommer från en betrodd källa.
+Med direktuppspelad inmatning kan du skicka data från klient- och serverenheter till [!DNL Experience Platform] i realtid. [!DNL Platform] stöder användningen av datainmatningar för att strömma inkommande upplevelsedata, som finns kvar i strömningsaktiverade datauppsättningar i Data Lake. Datainmatningar kan konfigureras så att de automatiskt autentiserar de data de samlar in, vilket säkerställer att data kommer från en betrodd källa.
 
-Mer information finns i översikten [över](./streaming-ingestion/overview.md) direktuppspelningsuppläsning.
+Mer information finns i [översikten över direktuppspelning](./streaming-ingestion/overview.md).
 
 ## Källor
 
 [!DNL Experience Platform] gör att du kan konfigurera källanslutningar till olika dataleverantörer. Dessa anslutningar gör att du kan autentisera mot externa datakällor, ange tider för matningsåtgärder och hantera matningsflöde.
 
-Källanslutningar kan konfigureras för att samla in data från andra Adobe-program (t.ex. Adobe Analytics och Adobe Audience Manager), molnlagringskällor från tredje part (t.ex. [!DNL Azure Blob], S3, FTP-servrar och SFTP-servrar) och CRM-system från tredje part (t.ex. [!DNL Amazon] och [!DNL Microsoft Dynamics] [!DNL Salesforce]).
+Källanslutningar kan konfigureras för att samla in data från andra Adobe-program (till exempel Adobe Analytics och Adobe Audience Manager), molnlagringskällor från tredje part (till exempel [!DNL Azure Blob], [!DNL Amazon] S3, FTP-servrar och SFTP-servrar) och CRM-system från tredje part (till exempel [!DNL Microsoft Dynamics] och [!DNL Salesforce]).
 
-Mer information finns i [Källöversikt](../sources/home.md) .
+Mer information finns i [Källöversikt](../sources/home.md).
 
 ## Nästa steg och ytterligare resurser
 
-Detta dokument innehåller en kort introduktion till de olika aspekterna av [!DNL Data Ingestion] i [!DNL Experience Platform]. Fortsätt att läsa översiktsdokumentationen för varje intagsmetod för att bekanta dig med deras olika funktioner, användningsfall och bästa metoder. Du kan även komplettera din inlärning genom att titta på videon med en översikt över importen nedan. Mer information om hur du [!DNL Experience Platform] spårar metadata för inkapslade poster finns i [Katalogtjänstöversikt](../catalog/home.md).
+Det här dokumentet innehåller en kort introduktion till de olika aspekterna av [!DNL Data Ingestion] i [!DNL Experience Platform]. Fortsätt att läsa översiktsdokumentationen för varje intagsmetod för att bekanta dig med deras olika funktioner, användningsfall och bästa metoder. Du kan även komplettera din inlärning genom att titta på videon med en översikt över importen nedan. Mer information om hur [!DNL Experience Platform] spårar metadata för kapslade poster finns i [Katalogtjänstöversikt](../catalog/home.md).
 
 >[!WARNING]
 >
->Termen Enhetlig profil som används i följande video är inaktuell. Termerna [!DNL "Profile"] eller [!DNL "Real-time Customer Profile"] termerna är de korrekta termer som används i [!DNL Experience Platform] dokumentationen. Läs dokumentationen om de senaste funktionerna.
+>Termen Enhetlig profil som används i följande video är inaktuell. Termerna [!DNL "Profile"] eller [!DNL "Real-time Customer Profile"] är de korrekta termer som används i dokumentationen för [!DNL Experience Platform]. Läs dokumentationen om de senaste funktionerna.
 
 >[!VIDEO](https://video.tv.adobe.com/v/27106?quality=12&learn=on)
