@@ -1,27 +1,25 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;frågetjänst;frågetjänst;Sökare;sökare;ansluta till frågetjänst;
 solution: Experience Platform
-title: Anslut med Looker
+title: Anslut sökare till frågetjänst
 topic: connect
 description: Det här dokumentet går igenom stegen för att ansluta Looker till Adobe Experience Platform Query Service.
 translation-type: tm+mt
-source-git-commit: bc1bbdddd75b11ac180b5e6faa391fd74e5f7e02
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '239'
+source-wordcount: '242'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Looker]
+# Anslut [!DNL Looker] till frågetjänsten
 
 Det här dokumentet innehåller stegen för att ansluta [!DNL Looker] med Adobe Experience Platform [!DNL Query Service].
 
 >[!NOTE]
 >
 > Den här handboken förutsätter att du redan har tillgång till [!DNL Looker] och är bekant med hur du navigerar i dess gränssnitt. Mer information om [!DNL Looker] finns i [officiell [!DNL Looker] dokumentation](https://docs.looker.com/).
-
-## Anslut [!DNL Looker] till plattformen
 
 När du har loggat in på [!DNL Looker] väljer du **[!DNL Admin]** följt av **[!DNL Connections]**.
 
