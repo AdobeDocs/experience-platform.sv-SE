@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: Inmatning av data inkluderar batchinmatning, direktuppspelning och förtäring med hjälp av källanslutningar.
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
 source-wordcount: '497'
 ht-degree: 0%
