@@ -1,14 +1,14 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Flödesanslutningstjänst för datauppsättning;Flödesanslutning
 solution: Experience Platform
-title: Skapa en Experience Platform-datauppsättningsbasanslutning med API:t för Flow Service
+title: Skapa en Adobe Experience Platform-datauppsättningsbasanslutning med API:t för flödestjänsten
 topic: overview
 type: Tutorial
-description: Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+description: Lär dig hur du använder API:t för Flow Service för att skapa en datauppsättningsbaserad anslutning till Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '736'
+source-wordcount: '721'
 ht-degree: 0%
 
 ---
