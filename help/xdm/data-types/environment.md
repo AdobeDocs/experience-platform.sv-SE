@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;XDM;fields;schemas;Schemas;environment;datatype;data-type;data type;
+keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;scheman;miljö;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
 title: Miljödatatyp
 topic: overview
 description: Det här dokumentet innehåller en översikt över datatypen Environment XDM.
 translation-type: tm+mt
-source-git-commit: f5bddb39c16eb25e85297f56e331d3aa51510eb9
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '445'
-ht-degree: 2%
+source-wordcount: '461'
+ht-degree: 3%
 
 ---
 
@@ -19,13 +19,13 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->Alla värden ska justeras mot [DeviceAtlas](https://deviceatlas.com) -databasen som licensieras av Adobe.
+>Alla värden ska justeras mot databasen [DeviceAtlas](https://deviceatlas.com), som licensieras av Adobe.
 
 <img src="../images/data-types/environment.png" width="400" /><br />
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `_dc` | Objekt | Ett objekt som innehåller ett enda fält, `language`som anger vilket språk som används i miljön för att representera användarens språkliga, geografiska eller kulturella preferenser för datapresentation. Språk anges i språkkoden enligt definitionen i [IETF RFC 3066](https://www.ietf.org/rfc/rfc3066.txt). |
+| `_dc` | Objekt | Ett objekt som innehåller ett enda fält, `language`, som anger vilket språk som används i miljön för att representera användarens språkliga, geografiska eller kulturella preferenser för datapresentation. Språk anges i språkkoden enligt definitionen i [IETF RFC 3066](https://www.ietf.org/rfc/rfc3066.txt). |
 | `browserDetails` | [Webbläsarinformation](./browser-details.md) | Beskriver den webbläsarspecifika informationen om miljön, till exempel webbläsarnamn, version, JavaScript-version, användaragentsträng och språk. |
 | `ISP` | Sträng | Namnet på användarens internetleverantör. |
 | `carrier` | Sträng | Namnet på mobilnätets operatör eller MNO (även kallat trådlös tjänsteleverantör, trådlös operatör, mobilföretag eller mobilnätsoperatör) som säljer och levererar kommunikationstjänster till användaren. |
@@ -34,10 +34,10 @@ ht-degree: 2%
 | `domain` | Sträng | Domänen för användarens Internet-leverantör. |
 | `ipV4` | Sträng | Den numeriska etikett som tilldelats en enhet som deltar i ett datornätverk som använder Internet Protocol för kommunikation (32-bitars). |
 | `ipV6` | Sträng | Den numeriska etikett som tilldelats en enhet som deltar i ett datornätverk som använder Internet Protocol för kommunikation (128-bitars). |
-| `operatingSystem` | Sträng | Namnet på det operativsystem som användes när observationen gjordes. Attributet får inte innehålla versionsinformation, t.ex. `10.5.3`utan ska innehålla versionsinformation, t.ex. `Ultimate` eller `Professional`. |
+| `operatingSystem` | Sträng | Namnet på det operativsystem som användes när observationen gjordes. Attributet ska inte innehålla versionsinformation som `10.5.3`, utan i stället innehålla versionsbeteckningar som `Ultimate` eller `Professional`. |
 | `operatingSystemVendor` | Sträng | Namnet på operativsystemets leverantör som användes när observationen gjordes. |
 | `operatingSystemVersion` | Sträng | Den fullständiga versionsidentifieraren för det operativsystem som användes när observationen gjordes. Versioner är vanligtvis numeriskt sammansatta men kan vara i ett leverantörsdefinierat format. |
-| `type` | Sträng | Typ av programmiljö. Godkända värden finns i [bilagan](#type) . |
+| `type` | Sträng | Typ av programmiljö. Se [bilagan](#type) för godkända värden. |
 | `viewportHeight` | Heltal | Den lodräta storleken i pixlar på fönstret som upplevelsen visades inuti. För en webbvyhändelse är detta höjden på webbläsarens visningsruta. |
 | `viewPortWidth` | Heltal | Den vågräta storleken i pixlar på fönstret som upplevelsen visades inuti. För en webbvyhändelse är detta bredden på webbläsarens visningsruta. |
 
@@ -48,11 +48,11 @@ Mer information om blandningen finns i den offentliga XDM-databasen:
 
 ## Bilaga
 
-Följande avsnitt innehåller ytterligare information om [!UICONTROL Device] datatypen.
+Följande avsnitt innehåller ytterligare information om datatypen [!UICONTROL Device].
 
-## Godkända värden för typ {#type}
+## Godkända värden för typen {#type}
 
-I följande tabell beskrivs godkända värden för `type` och deras innebörd:
+I följande tabell visas godkända värden för `type` och deras associerade betydelse:
 
 | Värde | Beskrivning |
 | --- | --- |
