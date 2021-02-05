@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segmentation Service;export jobs;api;
+keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;exportjobb;api;
 solution: Experience Platform
-title: Slutpunkt för exportjobb
+title: API-slutpunkt för exportjobb
 topic: developer guide
-description: Exportjobb är asynkrona processer som används för att behålla målgruppsmedlemmar i datauppsättningar. Du kan använda slutpunkten /export/job i Adobe Experience Platform Segmentation API, som du använder för att hämta, skapa och avbryta exportjobb.
+description: Exportjobb är asynkrona processer som används för att behålla målgruppsmedlemmar i datauppsättningar. Du kan använda slutpunkten /export/job i Adobe Experience Platform Segmentation Service API, som gör att du kan hämta, skapa och avbryta exportjobb med programkod.
 translation-type: tm+mt
-source-git-commit: 783fa7ff0c22143a21c4f666c956c8b4d956189e
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '1666'
+source-wordcount: '1680'
 ht-degree: 1%
 
 ---
@@ -15,23 +15,23 @@ ht-degree: 1%
 
 # Slutpunkt för exportjobb
 
-Exportjobb är asynkrona processer som används för att behålla målgruppsmedlemmar i datauppsättningar. Du kan använda slutpunkten i Adobe Experience Platform Segmentation API, som gör att du kan hämta, skapa och avbryta exportjobb med programkod. `/export/jobs`
+Exportjobb är asynkrona processer som används för att behålla målgruppsmedlemmar i datauppsättningar. Du kan använda slutpunkten `/export/jobs` i Adobe Experience Platform Segmentation API, som gör att du kan hämta, skapa och avbryta exportjobb programmatiskt.
 
 >[!NOTE]
 >
->I den här guiden beskrivs hur du använder exportjobb i [!DNL Segmentation API]. Mer information om hur du hanterar exportjobb för [!DNL Real-time Customer Profile] data finns i guiden om [exportjobb i profil-API:t](../../profile/api/export-jobs.md)
+>Den här guiden beskriver användningen av exportjobb i [!DNL Segmentation API]. Mer information om hur du hanterar exportjobb för [!DNL Real-time Customer Profile]-data finns i guiden om [exportjobb i profilens API](../../profile/api/export-jobs.md)
 
 ## Komma igång
 
-Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Platform Segmentation Service] API:t. Innan du fortsätter bör du läsa [Komma igång-guiden](./getting-started.md) för att få viktig information som du behöver veta för att kunna anropa API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
+Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Platform Segmentation Service]-API:t. Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
 
 ## Hämta en lista med exportjobb {#retrieve-list}
 
-Du kan hämta en lista över alla exportjobb för din IMS-organisation genom att göra en GET-förfrågan till `/export/jobs` slutpunkten.
+Du kan hämta en lista över alla exportjobb för din IMS-organisation genom att göra en GET-begäran till `/export/jobs`-slutpunkten.
 
 **API-format**
 
-Slutpunkten har stöd för flera frågeparametrar som hjälper dig att filtrera dina resultat. `/export/jobs` Även om dessa parametrar är valfria rekommenderar vi starkt att de används för att minska dyra overheadkostnader. Om du anropar den här slutpunkten utan parametrar hämtas alla exportjobb som är tillgängliga för din organisation. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
+`/export/jobs`-slutpunkten har stöd för flera frågeparametrar som kan hjälpa dig att filtrera dina resultat. Även om dessa parametrar är valfria rekommenderar vi starkt att de används för att minska dyra overheadkostnader. Om du anropar den här slutpunkten utan parametrar hämtas alla exportjobb som är tillgängliga för din organisation. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
 
 ```http
 GET /export/jobs
@@ -199,10 +199,10 @@ Följande svar returnerar HTTP-status 200 med en lista över slutförda exportjo
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `destination` | Målinformation för exporterade data:<ul><li>`datasetId`: ID:t för datauppsättningen där data exporterades.</li><li>`segmentPerBatch`: Ett booleskt värde som visar om segment-ID är konsoliderade eller inte. Värdet &quot;false&quot; innebär att alla segment-ID:n exporteras till ett enda batch-ID. Värdet &quot;true&quot; innebär att ett segment-ID exporteras till ett batch-ID. **Obs!** Om värdet är true kan batchexportens prestanda påverkas.</li></ul> |
+| `destination` | Målinformation för exporterade data:<ul><li>`datasetId`: ID:t för datauppsättningen där data exporterades.</li><li>`segmentPerBatch`: Ett booleskt värde som visar om segment-ID är konsoliderade eller inte. Värdet &quot;false&quot; innebär att alla segment-ID:n exporteras till ett enda batch-ID. Värdet &quot;true&quot; innebär att ett segment-ID exporteras till ett batch-ID. **Obs! Om du** anger värdet true kan batchexportens prestanda påverkas.</li></ul> |
 | `fields` | En lista med de exporterade fälten, avgränsade med kommatecken. |
 | `schema.name` | Namnet på schemat som är associerat med datauppsättningen där data ska exporteras. |
-| `filter.segments` | Segmenten som exporteras. Följande fält ingår:<ul><li>`segmentId`: Det segment-ID som profiler ska exporteras till.</li><li>`segmentNs`: Segmentnamnutrymme för angiven `segmentID`.</li><li>`status`: En array med strängar som tillhandahåller ett statusfilter för `segmentID`. Som standard `status` har det värde `["realized", "existing"]` som representerar alla profiler som faller inom segmentet vid den aktuella tidpunkten. Möjliga värden är: &quot;real&quot;, &quot;existing&quot; och &quot;exited&quot;. Värdet &quot;realiserad&quot; innebär att profilen går in i segmentet. Värdet &quot;existing&quot; innebär att profilen fortsätter att vara i segmentet. Värdet &quot;exiting&quot; innebär att profilen avslutar segmentet.</li></ul> |
+| `filter.segments` | Segmenten som exporteras. Följande fält ingår:<ul><li>`segmentId`: Det segment-ID som profiler ska exporteras till.</li><li>`segmentNs`: Segmentnamnutrymme för angiven  `segmentID`.</li><li>`status`: En array med strängar som tillhandahåller ett statusfilter för  `segmentID`. Som standard har `status` värdet `["realized", "existing"]` som representerar alla profiler som faller inom segmentet vid den aktuella tidpunkten. Möjliga värden är: &quot;real&quot;, &quot;existing&quot; och &quot;exited&quot;. Värdet &quot;realiserad&quot; innebär att profilen går in i segmentet. Värdet &quot;existing&quot; innebär att profilen fortsätter att vara i segmentet. Värdet &quot;exiting&quot; innebär att profilen avslutar segmentet.</li></ul> |
 | `mergePolicy` | Sammanfoga principinformation för exporterade data. |
 | `metrics.totalTime` | Ett fält som anger den totala tiden det tog att köra exportjobbet. |
 | `metrics.profileExportTime` | Ett fält som anger den tid det tog för profilerna att exportera. |
@@ -211,7 +211,7 @@ Följande svar returnerar HTTP-status 200 med en lista över slutförda exportjo
 
 ## Skapa ett nytt exportjobb {#create}
 
-Du kan skapa ett nytt exportjobb genom att göra en POST-förfrågan till `/export/jobs` slutpunkten.
+Du kan skapa ett nytt exportjobb genom att göra en POST-förfrågan till `/export/jobs`-slutpunkten.
 
 **API-format**
 
@@ -281,16 +281,16 @@ curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
 | `fields` | En lista med de exporterade fälten, avgränsade med kommatecken. Om inget anges exporteras alla fält. |
 | `mergePolicy` | Anger den sammanfogningsprincip som ska användas för att styra exporterade data. Inkludera den här parametern när det finns flera segment som exporteras. Om inget anges används samma sammanfogningspolicy som för det angivna segmentet. |
 | `filter` | Ett objekt som anger de segment som ska inkluderas i exportjobbet efter ID, kvalificeringstid eller inmatningstid, beroende på de underegenskaper som anges nedan. Om inget anges exporteras alla data. |
-| `filter.segments` | Anger de segment som ska exporteras. Om du utelämnar det här värdet exporteras alla data från alla profiler. Accepterar en array med segmentobjekt, där vart och ett innehåller följande fält:<ul><li>`segmentId`: **(Krävs om du använder `segments`)** Segment-ID för profiler som ska exporteras.</li><li>`segmentNs` *(Valfritt)* Segmentnamnutrymme för angiven `segmentID`.</li><li>`status` *(Valfritt)* En array med strängar som tillhandahåller ett statusfilter för `segmentID`. Som standard `status` har det värde `["realized", "existing"]` som representerar alla profiler som faller inom segmentet vid den aktuella tidpunkten. Möjliga värden är: `"realized"`, `"existing"`och `"exited"`.  Värdet &quot;realiserad&quot; innebär att profilen går in i segmentet. Värdet &quot;existing&quot; innebär att profilen fortsätter att vara i segmentet. Värdet &quot;exiting&quot; innebär att profilen avslutar segmentet.</li></ul> |
+| `filter.segments` | Anger de segment som ska exporteras. Om du utelämnar det här värdet exporteras alla data från alla profiler. Accepterar en array med segmentobjekt, där vart och ett innehåller följande fält:<ul><li>`segmentId`:  **(Obligatoriskt om  `segments`du använder)** Segment-ID för profiler som ska exporteras.</li><li>`segmentNs` *(Valfritt)* Segmentnamnutrymme för angiven  `segmentID`.</li><li>`status` *(Valfritt)*  En array med strängar som ger ett statusfilter för  `segmentID`. Som standard har `status` värdet `["realized", "existing"]` som representerar alla profiler som faller inom segmentet vid den aktuella tidpunkten. Möjliga värden är: `"realized"`, `"existing"` och `"exited"`.  Värdet &quot;realiserad&quot; innebär att profilen går in i segmentet. Värdet &quot;existing&quot; innebär att profilen fortsätter att vara i segmentet. Värdet &quot;exiting&quot; innebär att profilen avslutar segmentet.</li></ul> |
 | `filter.segmentQualificationTime` | Filtrera baserat på segmentets kvalificeringstid. Starttid och/eller sluttid kan anges. |
-| `filter.segmentQualificationTime.startTime` | Starttid för segmentkvalificering för ett segment-ID för en viss status. Det anges inte, det kommer inte att finnas något filter på starttiden för ett segment-ID-kvalificering. Tidsstämpeln måste anges i [RFC 339](https://tools.ietf.org/html/rfc3339) -format. |
-| `filter.segmentQualificationTime.endTime` | Sluttid för segmentkvalificering för ett segment-ID för en viss status. Det anges inte, det kommer inte att finnas något filter på sluttiden för ett segment-ID-kvalificering. Tidsstämpeln måste anges i [RFC 339](https://tools.ietf.org/html/rfc3339) -format. |
-| `filter.fromIngestTimestamp ` | Begränsar exporterade profiler till att endast omfatta de som har uppdaterats efter den här tidsstämpeln. Tidsstämpeln måste anges i [RFC 339](https://tools.ietf.org/html/rfc3339) -format. <ul><li>`fromIngestTimestamp` för **profiler**, om sådana finns: Inkluderar alla sammanfogade profiler där den sammanfogade, uppdaterade tidsstämpeln är större än den angivna tidsstämpeln. Stöder `greater_than` operand.</li><li>`fromIngestTimestamp` for **events**: Alla händelser som har importerats efter den här tidsstämpeln exporteras, vilket motsvarar det resulterande profilresultatet. Detta är inte själva händelseläget utan själva intagningstiden för händelserna.</li> |
-| `filter.emptyProfiles` | Ett booleskt värde som anger om tomma profiler ska filtreras. Profiler kan innehålla profilposter, ExperienceEvent-poster eller båda. Profiler utan profilposter och bara ExperienceEvent-poster kallas&quot;emptyProfiles&quot;. Om du vill exportera alla profiler i profilarkivet, inklusive &quot;emptyProfiles&quot;, anger du värdet för `emptyProfiles` till `true`. Om `emptyProfiles` är inställt på `false`exporteras bara profiler med profilposter i butiken. Som standard exporteras bara profiler som innehåller profilposter om attributet inte ingår `emptyProfiles` . |
+| `filter.segmentQualificationTime.startTime` | Starttid för segmentkvalificering för ett segment-ID för en viss status. Det anges inte, det kommer inte att finnas något filter på starttiden för ett segment-ID-kvalificering. Tidsstämpeln måste anges i formatet [RFC 3339](https://tools.ietf.org/html/rfc3339). |
+| `filter.segmentQualificationTime.endTime` | Sluttid för segmentkvalificering för ett segment-ID för en viss status. Det anges inte, det kommer inte att finnas något filter på sluttiden för ett segment-ID-kvalificering. Tidsstämpeln måste anges i formatet [RFC 3339](https://tools.ietf.org/html/rfc3339). |
+| `filter.fromIngestTimestamp ` | Begränsar exporterade profiler till att endast omfatta de som har uppdaterats efter den här tidsstämpeln. Tidsstämpeln måste anges i formatet [RFC 3339](https://tools.ietf.org/html/rfc3339). <ul><li>`fromIngestTimestamp` för  **profiler**, om sådana finns: Inkluderar alla sammanfogade profiler där den sammanfogade, uppdaterade tidsstämpeln är större än den angivna tidsstämpeln. Stöder operanden `greater_than`.</li><li>`fromIngestTimestamp` for  **events**: Alla händelser som har importerats efter den här tidsstämpeln exporteras, vilket motsvarar det resulterande profilresultatet. Detta är inte själva händelseläget utan själva intagningstiden för händelserna.</li> |
+| `filter.emptyProfiles` | Ett booleskt värde som anger om tomma profiler ska filtreras. Profiler kan innehålla profilposter, ExperienceEvent-poster eller båda. Profiler utan profilposter och bara ExperienceEvent-poster kallas&quot;emptyProfiles&quot;. Om du vill exportera alla profiler i profilarkivet, inklusive &quot;emptyProfiles&quot;, anger du `emptyProfiles` som `true`. Om `emptyProfiles` är `false` exporteras bara profiler med profilposter i arkivet. Om attributet `emptyProfiles` inte inkluderas exporteras som standard bara profiler som innehåller profilposter. |
 | `additionalFields.eventList` | Styr tidsseriens händelsefält som exporteras för underordnade eller associerade objekt genom att ange en eller flera av följande inställningar:<ul><li>`fields`: Styr fälten som ska exporteras.</li><li>`filter`: Anger villkor som begränsar resultaten från associerade objekt. Förväntar ett minimivärde som krävs för export, vanligtvis ett datum.</li><li>`filter.fromIngestTimestamp`: Filtrerar tidsseriehändelser till händelser som har importerats efter den angivna tidsstämpeln. Detta är inte själva händelseläget utan själva intagningstiden för händelserna.</li><li>`filter.toIngestTimestamp`: Filtrerar tidsstämpeln till de som har importerats före den angivna tidsstämpeln. Detta är inte själva händelseläget utan själva intagningstiden för händelserna.</li></ul> |
-| `destination` | **(Obligatoriskt)** Information om exporterade data:<ul><li>`datasetId`: **(Obligatoriskt)** ID:t för datauppsättningen där data ska exporteras.</li><li>`segmentPerBatch`: *(Valfritt)* Ett booleskt värde som, om det inte anges, är som standard &quot;false&quot;. Värdet false exporterar alla segment-ID:n till ett enda batch-ID. Värdet true exporterar ett segment-ID till ett batch-ID. Observera att om värdet är &quot;true&quot; kan det påverka batchexportens prestanda.</li></ul> |
+| `destination` | **(Obligatoriskt)** Information om exporterade data:<ul><li>`datasetId`:  **(Obligatoriskt)** ID:t för datauppsättningen där data ska exporteras.</li><li>`segmentPerBatch`:  *(Valfritt)* Ett booleskt värde som, om det inte anges, är som standard &quot;false&quot;. Värdet false exporterar alla segment-ID:n till ett enda batch-ID. Värdet true exporterar ett segment-ID till ett batch-ID. Observera att om värdet är &quot;true&quot; kan det påverka batchexportens prestanda.</li></ul> |
 | `schema.name` | **(Obligatoriskt)** Namnet på schemat som är associerat med datauppsättningen där data ska exporteras. |
-| `evaluationInfo.segmentation` | *(Valfritt)* Ett booleskt värde som, om det inte anges, är som standard `false`. Värdet är `true` att segmentering måste göras i exportjobbet. |
+| `evaluationInfo.segmentation` | *(Valfritt)* Ett booleskt värde som, om det inte anges, är som standard  `false`. Värdet `true` anger att segmentering måste göras i exportjobbet. |
 
 **Svar**
 
@@ -359,7 +359,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
 | -------- | ----------- |
 | `id` | Ett systemgenererat skrivskyddat värde som identifierar det exportjobb som just skapades. |
 
-Om du `destination.segmentPerBatch` hade angett `true`det här objektet skulle `destination` ovanstående ha en `batches` array, vilket visas nedan:
+Om `destination.segmentPerBatch` hade ställts in på `true` skulle `destination`-objektet ovan ha en `batches`-array, vilket visas nedan:
 
 ```json
     "destination": {
@@ -384,7 +384,7 @@ Om du `destination.segmentPerBatch` hade angett `true`det här objektet skulle `
 
 ## Hämta ett specifikt exportjobb {#get}
 
-Du kan hämta detaljerad information om ett specifikt exportjobb genom att göra en GET-förfrågan till slutpunkten och ange ID:t för det exportjobb som du vill hämta i sökvägen för begäran. `/export/jobs`
+Du kan hämta detaljerad information om ett specifikt exportjobb genom att göra en GET-förfrågan till `/export/jobs`-slutpunkten och ange ID:t för det exportjobb som du vill hämta i sökvägen för begäran.
 
 **API-format**
 
@@ -394,7 +394,7 @@ GET /export/jobs/{EXPORT_JOB_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{EXPORT_JOB_ID}` | The `id` of the export job you want to access. |
+| `{EXPORT_JOB_ID}` | `id` för det exportjobb som du vill komma åt. |
 
 **Begäran**
 
@@ -472,7 +472,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det ang
 | `destination` | Målinformation för exporterade data:<ul><li>`datasetId`: ID:t för datauppsättningen där data exporterades.</li><li>`segmentPerBatch`: Ett booleskt värde som visar om segment-ID är konsoliderade eller inte. Värdet `false` betyder att alla segment-ID:n var i ett enda batch-ID. Värdet `true` betyder att ett segment-ID exporteras till ett batch-ID.</li></ul> |
 | `fields` | En lista med de exporterade fälten, avgränsade med kommatecken. |
 | `schema.name` | Namnet på schemat som är associerat med datauppsättningen där data ska exporteras. |
-| `filter.segments` | Segmenten som exporteras. Följande fält ingår:<ul><li>`segmentId`: Segment-ID för profiler som ska exporteras.</li><li>`segmentNs`: Segmentnamnutrymme för angiven `segmentID`.</li><li>`status`: En array med strängar som tillhandahåller ett statusfilter för `segmentID`. Som standard `status` har det värde `["realized", "existing"]` som representerar alla profiler som faller inom segmentet vid den aktuella tidpunkten. Möjliga värden är: &quot;real&quot;, &quot;existing&quot; och &quot;exited&quot;.  Värdet &quot;realiserad&quot; innebär att profilen går in i segmentet. Värdet &quot;existing&quot; innebär att profilen fortsätter att vara i segmentet. Värdet &quot;exiting&quot; innebär att profilen avslutar segmentet.</li></ul> |
+| `filter.segments` | Segmenten som exporteras. Följande fält ingår:<ul><li>`segmentId`: Segment-ID för profiler som ska exporteras.</li><li>`segmentNs`: Segmentnamnutrymme för angiven  `segmentID`.</li><li>`status`: En array med strängar som tillhandahåller ett statusfilter för  `segmentID`. Som standard har `status` värdet `["realized", "existing"]` som representerar alla profiler som faller inom segmentet vid den aktuella tidpunkten. Möjliga värden är: &quot;real&quot;, &quot;existing&quot; och &quot;exited&quot;.  Värdet &quot;realiserad&quot; innebär att profilen går in i segmentet. Värdet &quot;existing&quot; innebär att profilen fortsätter att vara i segmentet. Värdet &quot;exiting&quot; innebär att profilen avslutar segmentet.</li></ul> |
 | `mergePolicy` | Sammanfoga principinformation för exporterade data. |
 | `metrics.totalTime` | Ett fält som anger den totala tiden det tog att köra exportjobbet. |
 | `metrics.profileExportTime` | Ett fält som anger den tid det tog för profilerna att exportera. |
@@ -480,7 +480,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det ang
 
 ## Avbryt eller ta bort ett specifikt exportjobb {#delete}
 
-Du kan begära att få ta bort det angivna exportjobbet genom att göra en DELETE-begäran till `/export/jobs` slutpunkten och ange ID:t för det exportjobb som du vill ta bort i sökvägen till begäran.
+Du kan begära att få ta bort det angivna exportjobbet genom att göra en DELETE-begäran till `/export/jobs`-slutpunkten och ange ID:t för det exportjobb som du vill ta bort i sökvägen till begäran.
 
 **API-format**
 
@@ -490,7 +490,7 @@ DELETE /export/jobs/{EXPORT_JOB_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{EXPORT_JOB_ID}` | The `id` of the export job you want to delete. |
+| `{EXPORT_JOB_ID}` | `id` för det exportjobb som du vill ta bort. |
 
 **Begäran**
 
