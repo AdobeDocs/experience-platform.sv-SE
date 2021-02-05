@@ -1,59 +1,59 @@
 ---
-keywords: Experience Platform;home;popular topics;Azure Event Hubs;Event Hubs;azure event hubs
+keywords: Experience Platform;hem;populära ämnen;Azure Event Hubs;Event Hubs;azure event hubs
 solution: Experience Platform
-title: Skapa en Azure Event Hubs-källkoppling i användargränssnittet
+title: Skapa en Azure Event Hubs-källanslutning i användargränssnittet
 topic: overview
 type: Tutorial
-description: I den här självstudiekursen beskrivs hur du autentiserar en Azure Event Hubs-källkoppling (nedan kallad Event Hubs) med hjälp av användargränssnittet för plattformen.
+description: Lär dig hur du skapar en Azure Event Hubs-källanslutning med Adobe Experience Platform-gränssnittet.
 translation-type: tm+mt
-source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '470'
+source-wordcount: '476'
 ht-degree: 1%
 
 ---
 
 
-# Skapa en [!DNL Azure Event Hubs] källanslutning i användargränssnittet
+# Skapa en [!DNL Azure Event Hubs]-källanslutning i användargränssnittet
 
 >[!NOTE]
 >
-> Kopplingen [!DNL Azure Event Hubs] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
+> [!DNL Azure Event Hubs]-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
-Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du autentiserar en [!DNL Azure Event Hubs] källkoppling (nedan kallad[!DNL Event Hubs]) med hjälp av [!DNL Platform] användargränssnittet.
+Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudien beskrivs stegen för hur du autentiserar en [!DNL Azure Event Hubs]-källkoppling (kallas nedan &quot;[!DNL Event Hubs]&quot;) med hjälp av användargränssnittet i [!DNL Platform].
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverket som [!DNL Experience Platform] organiserar kundupplevelsedata.
+- [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverket som  [!DNL Experience Platform] organiserar kundupplevelsedata.
    - [Grundläggande om schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    - [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 - [[!DNL Real-time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Om du redan har en giltig [!DNL Event Hubs] anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen om hur du [konfigurerar ett dataflöde](../../dataflow/streaming/cloud-storage-streaming.md).
+Om du redan har en giltig [!DNL Event Hubs]-anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen [konfigurera ett dataflöde](../../dataflow/streaming/cloud-storage-streaming.md).
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att kunna autentisera [!DNL Event Hubs] källkopplingen måste du ange värden för följande anslutningsegenskaper:
+För att kunna autentisera din [!DNL Event Hubs]-källkoppling måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
 | `sasKeyName` | Auktoriseringsregelns namn, som också kallas SAS-nyckelnamn. |
 | `sasKey` | Den genererade signaturen för delad åtkomst. |
-| `namespace` | Namnutrymmet för det [!DNL Event Hubs] du försöker komma åt. |
+| `namespace` | Namnområdet för [!DNL Event Hubs] som du försöker komma åt. |
 
-Mer information om dessa värden finns i [ [!DNL Event Hubs] det här dokumentet](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
+Mer information om dessa värden finns i [det här [!DNL Event Hubs] dokumentet](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
 
-## Anslut ditt [!DNL Event Hubs] konto
+## Anslut ditt [!DNL Event Hubs]-konto
 
-När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL Event Hubs] konto till [!DNL Platform].
+När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL Event Hubs]-konto till [!DNL Platform].
 
-Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt **[!UICONTROL Sources]** arbetsytan. På **[!UICONTROL Catalog]** fliken visas en mängd olika källor som du kan skapa ett konto med.
+Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan **[!UICONTROL Sources]**. På fliken **[!UICONTROL Catalog]** visas en mängd olika källor som du kan skapa ett konto med.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Välj under **[!UICONTROL Cloud Storage]** kategorin **[!UICONTROL Azure Event Hubs]**. Om det är första gången du använder den här kopplingen väljer du **[!UICONTROL Configure]**. Annars väljer du **[!UICONTROL Add data]** att skapa en ny händelsehubbar.
+Välj **[!UICONTROL Azure Event Hubs]** under kategorin **[!UICONTROL Cloud Storage]**. Om det här är första gången du använder den här kopplingen väljer du **[!UICONTROL Configure]**. Annars väljer du **[!UICONTROL Add data]** för att skapa en ny händelsehubbar.
 
 ![](../../../../images/tutorials/create/eventhub/catalog.png)
 
@@ -61,16 +61,16 @@ Dialogrutan **[!UICONTROL Connect to Azure Event Hubs]** visas. På den här sid
 
 ### Nytt konto
 
-Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New Account]**. Ange ett namn, en valfri beskrivning och dina [!DNL Event Hubs] inloggningsuppgifter i det indataformulär som visas. När du är klar väljer du **[!UICONTROL Connect]** och tillåt sedan en tid för att upprätta den nya anslutningen.
+Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New Account]**. Ange ett namn, en valfri beskrivning och dina inloggningsuppgifter för [!DNL Event Hubs] i det indataformulär som visas. När du är klar väljer du **[!UICONTROL Connect]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
 
 ![](../../../../images/tutorials/create/eventhub/new.png)
 
 ### Befintligt konto
 
-Om du vill ansluta ett befintligt konto markerar du det [!DNL Event Hubs] konto du vill ansluta till och väljer sedan **[!UICONTROL Next]** att fortsätta.
+Om du vill ansluta ett befintligt konto väljer du det [!DNL Event Hubs]-konto du vill ansluta till och sedan väljer du **[!UICONTROL Next]** för att fortsätta.
 
 ![](../../../../images/tutorials/create/eventhub/existing.png)
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du kopplat ditt [!DNL Event Hubs] konto till [!DNL Platform]. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till [!DNL Platform]](../../dataflow/streaming/cloud-storage-streaming.md).
+Genom att följa den här självstudiekursen har du anslutit ditt [!DNL Event Hubs]-konto till [!DNL Platform]. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till [!DNL Platform]](../../dataflow/streaming/cloud-storage-streaming.md).
