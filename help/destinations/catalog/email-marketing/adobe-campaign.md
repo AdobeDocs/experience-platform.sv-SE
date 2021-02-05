@@ -1,21 +1,17 @@
 ---
 keywords: e-post;E-post;e-post;e-postmål;adobe-kampanj;kampanj
-title: Adobe Campaign
-seo-title: Adobe Campaign
+title: Adobe Campaign Connection Destination
 description: Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera och leverera kampanjer i alla kanaler, både online och offline.
-seo-description: Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera och leverera kampanjer i alla kanaler, både online och offline.
 translation-type: tm+mt
-source-git-commit: cf2d76799c03a2ea0414aedd83b35f3ce2ca3cb5
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '633'
-ht-degree: 1%
+source-wordcount: '612'
+ht-degree: 0%
 
 ---
 
 
-# Adobe Campaign
-
-## Översikt
+# Adobe Campaign-anslutning
 
 Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera och leverera kampanjer i alla kanaler, både online och offline. Mer information finns i [Om Adobe Campaign Classic](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/starting-with-adobe-campaign/about-adobe-campaign-classic.html).
 
