@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;product recommendation recipe;Data Science Workspace;popular topics;recipes;pre build recipe
+keywords: Experience Platform;product recommendation recept;Data Science Workspace;populära topics;recipes;prebuild recept
 solution: Experience Platform
-title: Produktrekommendationsrecept
+title: Produktrekommendationsmottagare
 topic: overview
 description: Med Product Recommendations recept kan ni tillhandahålla personaliserade produktrekommendationer som är skräddarsydda efter kundens behov och intressen. Med en korrekt prognosmodell kan en kunds inköpshistorik ge er insikt i vilka produkter de kan vara intresserade av.
 translation-type: tm+mt
-source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
+source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
 workflow-type: tm+mt
-source-wordcount: '463'
+source-wordcount: '477'
 ht-degree: 1%
 
 ---
@@ -27,7 +27,7 @@ Product Recommendations recept använder maskininlärning för att analysera kun
 
 ## Hur kommer jag igång?
 
-Du kan komma igång genom att följa självstudiekursen för Adobe Experience Platform Lab (se Lab-länken nedan). I den här självstudiekursen visas hur du skapar Product Recommendations-receptet i en Jupyter-anteckningsbok genom att följa [anteckningsboken för att hämta](../jupyterlab/create-a-recipe.md) arbetsflödet och implementera receptet i [!DNL Experience Platform] [!DNL Data Science Workspace].
+Du kan komma igång genom att följa självstudiekursen för Adobe Experience Platform Lab (se Lab-länken nedan). I den här självstudiekursen visas hur du skapar Product Recommendations-receptet i en Jupyter-anteckningsbok genom att följa [anteckningsboken för att hämta](../jupyterlab/create-a-recipe.md)-arbetsflödet och implementera receptet i [!DNL Experience Platform] [!DNL Data Science Workspace].
 
 * [Lab: Förutse framtiden med datavetenskapen](https://expleague.azureedge.net/labs/L777/index.html)
 * [Lab-resurser](https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources)
