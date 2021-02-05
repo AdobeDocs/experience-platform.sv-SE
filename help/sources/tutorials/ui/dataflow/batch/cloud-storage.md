@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt molnlagringskonto.
 translation-type: tm+mt
-source-git-commit: 2d1b49d774d04e7befbcc1c9e5417ee82323634a
+source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
 workflow-type: tm+mt
 source-wordcount: '1831'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 ---
 
 
-# Konfigurera ett dataflöde för en batchanslutning för molnlagring i användargränssnittet
+# Konfigurera ett dataflöde för en batchanslutning till molnlagring i användargränssnittet
 
 Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en [!DNL Platform]-datauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt molnlagringskonto.
 
