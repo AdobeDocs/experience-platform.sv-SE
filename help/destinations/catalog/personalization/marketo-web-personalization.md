@@ -1,21 +1,17 @@
 ---
 keywords: Marketo Web Personalization;marketo web personalization;Marketo Web Personalization extension;marketo web personalization extension;marketo;Marketo
-title: Marketo Web Personalization extension
-seo-title: Marketo Web Personalization extension
+title: Marketo Web Personalization Extension Destination
 description: Marketo Web Personalization Extension är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Marketo Web Personalization Extension är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: f4095a90ff70e8d054bae4f3b0f884552ffd30df
 workflow-type: tm+mt
-source-wordcount: '597'
+source-wordcount: '566'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Marketo Web Personalization] Tillägg  {#marketo-web-personalization-extension}
-
-## Översikt {#overview}
+# [!DNL Marketo Web Personalization] extension  {#marketo-web-personalization-extension}
 
 Det här tillägget distribuerar skriptet för [!DNL Marketo’s] Web Personalization- och ContentAI-program. [!DNL Marketo] Webbpersonalisering identifierar och personaliserar unikt innehåll för webbbesökares egenskaper, t.ex. inbyggd grafik för anonyma besökare och ett stort antal beteendeattribut i  [!DNL Marketo] Engagement Platform för kända besökare. [!DNL Marketo] ContentAI innehåller funktioner för AI-baserade rekommendationer och personalisering för webb- och e-postkampanjer som är unika för B2B-kunder.
 
