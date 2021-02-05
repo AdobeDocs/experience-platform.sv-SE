@@ -1,25 +1,25 @@
 ---
-keywords: Experience Platform;home;popular topics;catalog;multiple object lookup;api
+keywords: Experience Platform;hem;populära ämnen;katalog;sökning efter flera objekt;api
 solution: Experience Platform
-title: Söka efter flera objekt
+title: Slå upp flera katalogobjekt
 topic: developer guide
 description: Om du vill visa flera specifika objekt, i stället för att göra en begäran per objekt, finns det en enkel genväg för att begära flera objekt av samma typ i Katalog. Du kan använda en enda GET-begäran för att returnera flera specifika objekt genom att ta med en kommaavgränsad lista med ID:n.
 translation-type: tm+mt
-source-git-commit: b791e9e060d7686e8fc264c445bbfd1e01ff5987
+source-git-commit: a1103bfbf79f9c87bac5b113c01386a6fb8950e7
 workflow-type: tm+mt
-source-wordcount: '225'
+source-wordcount: '237'
 ht-degree: 0%
 
 ---
 
 
-# Söka efter flera objekt
+# Söka efter flera katalogobjekt
 
-Om du vill visa flera specifika objekt, i stället för att göra en begäran per objekt, [!DNL Catalog] är det en enkel genväg för att begära flera objekt av samma typ. Du kan använda en enda GET-begäran för att returnera flera specifika objekt genom att ta med en kommaavgränsad lista med ID:n.
+Om du vill visa flera specifika objekt, i stället för att göra en begäran per objekt, är [!DNL Catalog] en enkel genväg för att begära flera objekt av samma typ. Du kan använda en enda GET-begäran för att returnera flera specifika objekt genom att ta med en kommaavgränsad lista med ID:n.
 
 >[!NOTE]
 >
->Även när du begär specifika [!DNL Catalog] objekt är det fortfarande bra att `properties` fråga parametern så att den bara returnerar de egenskaper du behöver.
+>Även när du begär specifika [!DNL Catalog]-objekt är det ändå bra att använda frågeparametern `properties` för att bara returnera de egenskaper du behöver.
 
 **API-format**
 
@@ -30,7 +30,7 @@ GET /{OBJECT_TYPE}/{ID_1},{ID_2},{ID_3},{ID_4}?properties={PROPERTY_1},{PROPERTY
 
 | Parameter | Beskrivning |
 | -------- | ----------- |
-| `{OBJECT_TYPE}` | Den typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Typen för [!DNL Catalog]-objektet som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{ID}` | En identifierare för ett av de specifika objekt som du vill hämta. |
 
 **Begäran**
@@ -48,11 +48,11 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en lista med de angivna datauppsättningarna, som bara innehåller de begärda egenskaperna (`name`, `description`och `files`) för varje.
+Ett lyckat svar returnerar en lista med de angivna datauppsättningarna, som bara innehåller de begärda egenskaperna (`name`, `description` och `files`) för varje.
 
 >[!NOTE]
 >
->Om ett returnerat objekt inte innehåller en eller flera av de begärda egenskaperna som anges av `properties` frågan, returnerar svaret endast de begärda egenskaper som det innehåller, vilket visas i ***`Sample Dataset 3`*** och ***`Sample Dataset 4`*** nedan.
+>Om ett returnerat objekt inte innehåller en eller flera av de begärda egenskaperna som anges av `properties`-frågan, returnerar svaret endast de begärda egenskaper som det innehåller, vilket visas i ***`Sample Dataset 3`*** och ***`Sample Dataset 4`*** nedan.
 
 ```json
 {
