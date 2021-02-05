@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform;user guide;attribution ai;popular topics;region
+keywords: Experience Platform;användarhandbok;attribuering;populära ämnen;region
 solution: Experience Platform, Intelligent Services
-title: Användarhandbok för Attribution AI
+title: Användargränssnittshandbok för Attribution AI
 topic: User guide
 description: Det här dokumentet är en guide för interaktion med Attribution AI i användargränssnittet för intelligenta tjänster.
 translation-type: tm+mt
-source-git-commit: de16ebddd8734f082f908f5b6016a1d3eadff04c
+source-git-commit: eb163949f91b0d1e9cc23180bb372b6f94fc951f
 workflow-type: tm+mt
-source-wordcount: '1691'
+source-wordcount: '1700'
 ht-degree: 0%
 
 ---
 
 
-# Användarhandbok för Attribution AI
+# Användargränssnittshandbok för Attribution AI
 
 Attribution AI, som en del av Intelligent Services är en flerkanalig algoritmisk attribueringstjänst som beräknar påverkan och inkrementell påverkan av kundinteraktioner i förhållande till angivna resultat. Med Attribution AI kan marknadsförarna mäta och optimera marknadsförings- och annonsutgifterna genom att förstå effekten av varje enskild kundinteraktion i varje fas av kundresan.
 
@@ -21,20 +21,20 @@ Det här dokumentet är en guide för interaktion med Attribution AI i användar
 
 ## Skapa en instans
 
-In the [!DNL Adobe Experience Platform] UI, click **[!UICONTROL Services]** in the left navigation. Webbläsaren visas och visar tillgängliga smarta Adobe-tjänster. **[!UICONTROL Services]** Klicka på i behållaren för Attribution AI **[!UICONTROL Open]**.
+Klicka på **[!UICONTROL Services]** i det vänstra navigeringsfältet i gränssnittet för [!DNL Adobe Experience Platform]. Webbläsaren **[!UICONTROL Services]** visas och visar tillgängliga smarta Adobe-tjänster. Klicka på **[!UICONTROL Open]** i behållaren för Attribution AI.
 
 ![Åtkomst till din instans](./images/user-guide/open_Attribution_ai.png)
 
 Attribution AI tjänstsida visas. På den här sidan visas tjänstinstanser av Attribution AI och information om dem, inklusive namnet på instansen, konverteringshändelser, hur ofta instansen körs och status för den senaste uppdateringen.
 
-Du hittar mätvärdena som finns i den nedre högra delen av **[!UICONTROL Total conversion events scored]** **[!UICONTROL Create instance]** behållaren. Det här måttet spårar det totala antalet konverteringshändelser som har bedömts av Attribution AI för det aktuella kalenderåret, inklusive alla sandlådemiljöer och eventuella borttagna tjänstinstanser.
+Du hittar måttet **[!UICONTROL Total conversion events scored]** i den nedre högra delen av **[!UICONTROL Create instance]**-behållaren. Det här måttet spårar det totala antalet konverteringshändelser som har bedömts av Attribution AI för det aktuella kalenderåret, inklusive alla sandlådemiljöer och eventuella borttagna tjänstinstanser.
 
 ![](./images/user-guide/total_conversions.png)
 
 Tjänstinstanser kan redigeras, klonas och tas bort med kontrollerna till höger i användargränssnittet. Om du vill visa dessa kontroller väljer du en instans från din befintliga **[!UICONTROL Service instances]**. Kontrollerna innehåller följande information:
 
-- **[!UICONTROL Edit]**: Om du väljer **[!UICONTROL Edit]** det här alternativet kan du ändra en befintlig tjänstinstans. Du kan redigera namn, beskrivning, status och bedömningsfrekvens för instansen.
-- **[!UICONTROL Clone]**: Om du väljer **[!UICONTROL Clone]** det här alternativet kopieras den markerade tjänstinstansen. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny instans.
+- **[!UICONTROL Edit]**: Om du väljer  **[!UICONTROL Edit]** det här alternativet kan du ändra en befintlig tjänstinstans. Du kan redigera namn, beskrivning, status och bedömningsfrekvens för instansen.
+- **[!UICONTROL Clone]**: Om du väljer  **[!UICONTROL Clone]** det här alternativet kopieras den markerade tjänstinstansen. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny instans.
 - **[!UICONTROL Delete]**: Du kan ta bort en tjänstinstans, inklusive alla tidigare körningar.
 - **[!UICONTROL Data source]**: En länk till datauppsättningen som används av den här instansen.
 - **[!UICONTROL Last run details]**: Detta visas bara när en körning misslyckas. Här visas information om varför körningen misslyckades, t.ex. felkoder.
@@ -47,7 +47,7 @@ Tjänstinstanser kan redigeras, klonas och tas bort med kontrollerna till höger
 
 ![](./images/user-guide/side_panel_2.png)
 
-Välj **[!UICONTROL Create instance]** att börja.
+Välj **[!UICONTROL Create instance]** för att börja.
 
 ![Skapa instans](./images/user-guide/landing_page.png)
 
@@ -57,13 +57,13 @@ Därefter visas konfigurationssidan för Attribution AI, där du kan ange grundl
 
 ### Namnge instansen
 
-Under **[!UICONTROL Basic information]** anger du ett namn och en valfri beskrivning för tjänstinstansen.
+Ange ett namn och en valfri beskrivning för tjänstinstansen under **[!UICONTROL Basic information]**.
 
 ![namnge en instans](./images/user-guide/naming_instance.png)
 
 ### Välj en datauppsättning
 
-När du har fyllt i den grundläggande informationen klickar du på listrutan **Välj datauppsättning** för att välja datauppsättningen. Datauppsättningen används för att träna modellen och poängsätta efterföljande data som den skapar. När du väljer en datauppsättning i listruteväljaren visas endast de som är kompatibla med Attribution AI och som följer XDM-schemat (Experience Data Model). När du har valt en datauppsättning klickar du på **Nästa** i det övre högra hörnet för att fortsätta till sidan för att definiera händelser.
+När du har fyllt i den grundläggande informationen klickar du på listrutan **Välj datauppsättning** och väljer datauppsättning. Datauppsättningen används för att träna modellen och poängsätta efterföljande data som den skapar. När du väljer en datauppsättning i listruteväljaren visas endast de som är kompatibla med Attribution AI och som följer XDM-schemat (Experience Data Model). När du har valt en datauppsättning klickar du på **Nästa** i det övre högra hörnet för att fortsätta till sidan för att definiera händelser.
 
 ![konfigurationssida](./images/user-guide/initial_creation_attribution.png)
 
@@ -71,17 +71,17 @@ När du har fyllt i den grundläggande informationen klickar du på listrutan **
 
 Det finns tre olika typer av indata som används för att definiera händelser:
 
-- **Konverteringshändelser:** Verksamhetsmål som identifierar effekten av marknadsföringsaktiviteter, t.ex. e-handelsorder, butiksköp och webbplatsbesök.
-- **Fönstret Lookback:** Anger en tidsram som anger hur många dagar före kontaktytorna för konverteringshändelsen som ska inkluderas.
-- **Pekpunkter:** marknadsföringshändelser på mottagarnivå, individ- och cookie-nivå som används för att utvärdera den numeriska eller intäktsbaserade effekten av konverteringar.
+- **Konverteringshändelser:** Affärsmål som identifierar effekten av marknadsföringsaktiviteter, som e-handelsorder, butiksköp och webbplatsbesök.
+- **Fönster för återsökning:** Anger en tidsram som anger hur många dagar före kontakten för konverteringshändelsen som ska inkluderas.
+- **Kontaktpunkter:marknadsföringshändelser på** mottagarnivå, individ- eller cookienivå som används för att utvärdera den numeriska eller intäktsbaserade effekten av konverteringar.
 
 ### Definiera konverteringshändelser {#define-conversion-events}
 
-Om du vill definiera en konverteringshändelse måste du ge händelsen ett namn och välja händelsetyp genom att klicka på **listrutan Ange fältnamn** .
+Om du vill definiera en konverteringshändelse måste du ge händelsen ett namn och välja händelsetyp genom att klicka på listrutan **Ange fältnamn**.
 
 ![ja, listruta](./images/user-guide/conversion_event_2.png)
 
-När en händelse har valts visas en ny listruta till höger om händelsen. Den andra listrutan används för att ge ytterligare kontext till händelsen genom att åtgärder används. Standardåtgärden *finns* för den här konverteringshändelsen.
+När en händelse har valts visas en ny listruta till höger om händelsen. Den andra listrutan används för att ge ytterligare kontext till händelsen genom att åtgärder används. Standardåtgärden *finns* används för den här konverteringshändelsen.
 
 >[!NOTE]
 >
@@ -93,11 +93,11 @@ Knapparna **[!UICONTROL Add event]** och **[!UICONTROL Add Group]** används fö
 
 ![add, händelse](./images/user-guide/add_event.png)
 
-Om du klickar **[!UICONTROL Add event]** skapas ytterligare fält som kan fyllas i med samma metod som beskrivs ovan. När du gör det läggs en AND-sats till i strängdefinitionen under konverteringsnamnet. Klicka på **x** för att ta bort en händelse som har lagts till.
+Om du klickar på **[!UICONTROL Add event]** skapas ytterligare fält som kan fyllas i med samma metod som beskrivs ovan. När du gör det läggs en AND-sats till i strängdefinitionen under konverteringsnamnet. Klicka på **x** för att ta bort en händelse som har lagts till.
 
 ![lägg till händelsemeny](./images/user-guide/add_event_result.png)
 
-Om du klickar **[!UICONTROL Add Group]** får du möjlighet att skapa ytterligare fält som är åtskilda från originalet. När du lägger till grupper visas en blå *Och* -knapp. Om du klickar på **Och** får du ett alternativ för att ändra parametern så att den innehåller &quot;Eller&quot;. &quot;Eller&quot; används för att definiera flera lyckade konverteringssökvägar. &quot;And&quot; utökar konverteringssökvägen så att den innehåller ytterligare villkor.
+Om du klickar på **[!UICONTROL Add Group]** kan du skapa ytterligare fält som är åtskilda från originalet. När grupper har lagts till visas en blå *And*-knapp. Om du klickar på **And** kan du ändra parametern så att den innehåller &quot;Or&quot;. &quot;Eller&quot; används för att definiera flera lyckade konverteringssökvägar. &quot;And&quot; utökar konverteringssökvägen så att den innehåller ytterligare villkor.
 
 ![använder och](./images/user-guide/and_or.png)
 
@@ -113,15 +113,15 @@ När du har definierat konverteringen måste du bekräfta uppslagsfönstret. Ang
 
 ### Definiera kontaktytor
 
-När du definierar kontaktytor följer du ett arbetsflöde som liknar [hur du definierar konverteringar](#define-conversion-events). Först måste du namnge kontaktytan och välja ett kontaktytpunktsvärde i listrutan *Ange fältnamn* . När du har valt operatorlistrutan visas standardvärdet &quot;exists&quot;. Klicka på listrutan för att visa en lista med operatorer.
+När du definierar kontaktytor följer du ett arbetsflöde som liknar [när du definierar konverteringar](#define-conversion-events). Först måste du namnge kontaktytan och välja ett kontaktytpunktsvärde i listrutan *Ange fältnamn*. När du har valt operatorlistrutan visas standardvärdet &quot;exists&quot;. Klicka på listrutan för att visa en lista med operatorer.
 
 ![operatorer](./images/user-guide/operators.png)
 
-För den här kontaktytan väljer du **lika med**.
+För denna kontaktyta väljer du **lika med**.
 
 ![steg 1](./images/user-guide/touchpoint_step1.png)
 
-När du har valt en operator för en kontaktyta blir *Ange fältvärde* tillgängligt. Värdena för listrutan för *Ange fältvärde* fylls i baserat på operatorn och det kontaktpunktsvärde som du valde tidigare. Om ett värde inte fylls i i listrutan kan du skriva värdet i manuellt. Klicka på listrutan och välj **KLICKA**.
+När en operator för en kontaktyta har valts är *Ange fältvärde* tillgängligt. Värdena i listrutan för *Ange fältvärde* fylls i baserat på den operator och det kontaktytpunktsvärde som du tidigare valde. Om ett värde inte fylls i i listrutan kan du skriva värdet i manuellt. Klicka på listrutan och välj **KLICKA**.
 
 >[!NOTE]
 >
@@ -135,13 +135,13 @@ När du klickar på **Lägg till händelse** kan ytterligare fält läggas till.
 
 ![add, händelse](./images/user-guide/touchpoint_add_event.png)
 
-Om du klickar på **Lägg till grupp** kan du skapa ytterligare fält som är åtskilda från originalet. När du lägger till grupper visas en blå *Och* -knapp. Klicka på **Och** om du vill ändra parametern används den nya parametern &quot;Or&quot; för att definiera flera lyckade sökvägar. Den här kontaktytan har bara en lyckad bana och därför behövs inte &quot;Eller&quot;.
+Om du klickar på **Lägg till grupp** kan du skapa ytterligare fält som är åtskilda från originalet. När grupper har lagts till visas en blå *And*-knapp. Klicka på **And** om du vill ändra parametern. Den nya parametern &quot;Or&quot; används för att definiera flera lyckade sökvägar. Den här kontaktytan har bara en lyckad bana och därför behövs inte &quot;Eller&quot;.
 
 ![översikt över kontaktyta](./images/user-guide/add_group_touchpoint.png)
 
 >[!NOTE]
 >
->Använd strängen under *Touchpoint-namnet* för att få en snabb översikt över din kontaktyta. Observera att strängen matchar namnet på kontaktytan.
+>Använd strängen under *Touchpoint name* för att få en snabb översikt över din kontaktyta. Observera att strängen matchar namnet på kontaktytan.
 
 ![](./images/user-guide/touchpoint_string.png)
 
@@ -155,15 +155,15 @@ När du har definierat alla nödvändiga kontaktytor rullar du uppåt och klicka
 
 ## Avancerad utbildning och poängsättning
 
-Den sista sidan i Attribution AI är den **[!UICONTROL Advanced]** sida som används för att ställa in utbildning och poängsättning.
+Den sista sidan i Attribution AI är den **[!UICONTROL Advanced]**-sida som används för att ställa in utbildning och poängsättning.
 
 ![ny sida avancerad](./images/user-guide/advanced_settings.png)
 
 ### Schemalägg utbildning
 
-Med *Schemalägg* kan du välja vilken dag och tid i veckan du vill att poängsättningen ska äga rum.
+Med hjälp av *Schedule* kan du välja vilken dag och tid i veckan du vill att poängsättningen ska äga rum.
 
-Klicka på listrutan under *Betygsningsfrekvens* för att välja mellan betygsättning varje dag, vecka och månad. Välj sedan de veckodagar du vill att poängsättningen ska äga rum. Du kan välja flera dagar. Klicka en dag en gång till för att avmarkera den.
+Klicka på listrutan under *Betygsfrekvens* för att välja mellan daglig, veckovis och månadsvis bedömning. Välj sedan de veckodagar du vill att poängsättningen ska äga rum. Du kan välja flera dagar. Klicka en dag en gång till för att avmarkera den.
 
 ![Schemalägg utbildning](./images/user-guide/schedule_training.png)
 
@@ -185,7 +185,7 @@ Som standard skapas en poängdatauppsättning för varje tjänstinstans i ett st
 
 Kundernas beteenden kan skilja sig avsevärt mellan olika länder och geografiska regioner. För globala företag kan användning av landsbaserade eller regionbaserade modeller öka attribueringsnoggrannheten. Varje region som läggs till skapar en ny modell med den regionens data.
 
-Om du vill definiera en ny region börjar du med att klicka **[!UICONTROL Add region]**. Ange ett namn för regionen i behållaren som visas. Endast ett värde (&quot;placeContext.geo.countryCode&quot;) fylls i från **[!UICONTROL Enter Field Name]** listrutan. Välj det här värdet.
+Om du vill definiera en ny region börjar du med att klicka på **[!UICONTROL Add region]**. Ange ett namn för regionen i behållaren som visas. Endast ett värde (&quot;placeContext.geo.countryCode&quot;) fylls i från listrutan **[!UICONTROL Enter Field Name]**. Välj det här värdet.
 
 ![Välj region att](./images/user-guide/select_region_att.png)
 
@@ -193,11 +193,11 @@ Välj sedan en operator.
 
 ![operatorn region](./images/user-guide/region_operators.png)
 
-Skriv till sist landskoden i **[!UICONTROL Enter Field Value]** listrutan.
+Skriv landskoden i listrutan **[!UICONTROL Enter Field Value]**.
 
 >[!NOTE]
 >
->Landskoderna är två tecken långa. En fullständig lista finns här: [ISO 3166-1 alpha-2](https://datahub.io/core/country-list).
+>Landskoderna är två tecken långa. En fullständig lista finns här [ISO 3166-1 alpha-2](https://datahub.io/core/country-list).
 
 ![region](./images/user-guide/region-based.png)
 
@@ -211,13 +211,13 @@ För att säkerställa att ni får den mest korrekta modellen är det viktigt at
 
 ![utbildningsfönster](./images/user-guide/training_window.png)
 
-När du har valt ett utbildningsfönster klickar du **[!UICONTROL Finish]** i det övre högra hörnet. Ge databearbetningen lite tid. När du är klar visas en dialogruta som bekräftar att instansinställningarna är klara. Klicka **[!UICONTROL Ok]** för att omdirigeras till den **[!UICONTROL Service instances]** sida där du kan se tjänstinstansen.
+När du har valt utbildningsfönstret klickar du på **[!UICONTROL Finish]** i det övre högra hörnet. Ge databearbetningen lite tid. När du är klar visas en dialogruta som bekräftar att instansinställningarna är klara. Klicka på **[!UICONTROL Ok]** om du vill omdirigeras till sidan **[!UICONTROL Service instances]** där du kan se tjänstinstansen.
 
 ![installationen slutförd](./images/user-guide/instance_setup_complete.png)
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en tjänstinstans i Attribution AI. När instansen är klar med poängsättningen (upp till 24 timmar) är du redo att [identifiera Attribution AI insikter](./discover-insights.md). Om du vill ladda ned poängresultaten går du till [nedladdningsdokumentationen](./download-scores.md) .
+Genom att följa den här självstudiekursen har du skapat en tjänstinstans i Attribution AI. När instansen är klar med poängsättningen (upp till 24 timmar) är du redo att [identifiera insikter om Attribution AI](./discover-insights.md). Om du dessutom vill hämta dina poängresultat går du till [nedladdningsdokumentationen](./download-scores.md).
 
 ## Ytterligare resurser
 
