@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Samla in protokolldata;protokolldata
 solution: Experience Platform
-title: Samla in protokolldata via källanslutningar och API:er
+title: Samla in protokolldata med hjälp av källanslutningar och API:er
 topic: overview
 type: Tutorial
-description: Den här självstudiekursen beskriver stegen för att hämta data från ett protokollprogram och hämta dem till plattformen via källanslutningar och API:er.
+description: Den här självstudiekursen beskriver stegen för att hämta data från ett protokollprogram och att hämta dem till plattformen med hjälp av källanslutningar och API:er.
 translation-type: tm+mt
-source-git-commit: 478c73935d674ef4eb40511cc562b27df77f58c8
+source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
 workflow-type: tm+mt
 source-wordcount: '1528'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 ---
 
 
-# Samla in protokolldata via källanslutningar och API:er
+# Samla in protokolldata med hjälp av källanslutningar och API:er
 
 I den här självstudiekursen beskrivs stegen för att hämta data från ett tredjepartsprotokollprogram och att hämta dem till Adobe Experience Platform via källanslutningar och API:t [[!DNL Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
