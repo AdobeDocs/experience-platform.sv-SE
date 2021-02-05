@@ -5,7 +5,7 @@ description: Lär dig hur du exporterar ett befintligt schema till en annan sand
 topic: user guide
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 2d6e833db7cd79135e6da4c68c9dca8cbed09ce4
+source-git-commit: 8d6916890a94300dc68d018d56579df9616c177c
 workflow-type: tm+mt
 source-wordcount: '495'
 ht-degree: 0%
@@ -205,11 +205,11 @@ Detta kopierar en JSON-nyttolast till Urklipp, som genereras baserat på schemas
 
 Nyttolasten består av en array där varje arrayobjekt är ett objekt som representerar en anpassad XDM-resurs som ska exporteras. I exemplet ovan ingår den anpassade blandningen [!DNL Loyalty details] och schemat [!DNL Loyalty Members]. Alla huvudresurser som används av schemat inkluderas inte i exporten eftersom dessa resurser är tillgängliga i alla sandlådor och IMS-organisationer.
 
-Observera att varje instans av organisationens klientorganisations-ID visas som `<XDM_TENANTID_PLACEHOLDER>` i nyttolasten. Dessa platshållare ersätts automatiskt med rätt innehavar-ID-värde beroende på var du exporterar schemat i nästa steg.
+Observera att varje instans av organisationens klientorganisations-ID visas som `<XDM_TENANTID_PLACEHOLDER>` i nyttolasten. Dessa platshållare ersätts automatiskt med rätt innehavar-ID-värde beroende på var du importerar schemat i nästa steg.
 
 ## Importera resursen med API:t
 
-När du har kopierat export-JSON för schemat kan du använda det som nyttolast för en POST-begäran till `/import`-slutpunkten i API:t för schemaregistret. I avsnittet [Importera en XDM-resurs i API](../api/export-import.md#import) finns mer information om hur du konfigurerar anropet för att skicka schemat till rätt IMS-organisation och sandlåda.
+När du har kopierat export-JSON för schemat kan du använda det som nyttolast för en POST-begäran till `/import`-slutpunkten i API:t för schemaregistret. I avsnittet [Importera en XDM-resurs i API](../api/export-import.md#import) finns mer information om hur du konfigurerar anropet för att skicka schemat till önskad IMS-organisation och sandlåda.
 
 ## Nästa steg
 
