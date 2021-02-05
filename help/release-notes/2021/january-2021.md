@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: January 27, 2021
 author: ens60013
 translation-type: tm+mt
-source-git-commit: 74325dcfe9d7b117e3f812d88e0c4a980d44ef53
+source-git-commit: 2e3a6acbfaa7f733a9843068c00f31f0b7f535b6
 workflow-type: tm+mt
-source-wordcount: '478'
-ht-degree: 2%
+source-wordcount: '490'
+ht-degree: 3%
 
 ---
 
@@ -38,6 +38,12 @@ Mer information finns i [[!DNL Data Prep] översikten](../../data-prep/home.md).
 ## Mål {#destinations}
 
 [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+
+**Nya destinationer**
+
+| Destination | Beskrivning |
+| ----------- | ----------- |
+| [!DNL Azure Blob] | [!DNL Azure Blob] är Microsofts objektlagringslösning för molnet. |
 
 **Nya funktioner**
 
