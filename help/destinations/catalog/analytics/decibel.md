@@ -1,21 +1,17 @@
 ---
 keywords: decibeltillägg;decibel;decibelmål
-title: Decibel-tillägg
-seo-title: Decibel-tillägg
+title: Decibel Extension Destination
 description: Decibel-tillägget är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Decibel-tillägget är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '534'
+source-wordcount: '507'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL Decibel] extension  {#decibel-extension}
-
-## Översikt {#overview}
 
 Distribuera snabbt och smidigt [!DNL Decibel] på dina webbegenskaper. Ytterligare avancerade konfigurationer kan också distribueras med regler med hjälp av åtgärder som är tillgängliga via tillägget.
 
