@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;frågetjänst;Frågetjänst;SQL-syntax;sql;ctas;CTAS;Skapa tabell som markerad
 solution: Experience Platform
-title: SQL-syntax
+title: SQL-syntax i frågetjänst
 topic: syntax
-description: Det här dokumentet visar SQL-syntax som stöds av Query Service.
+description: I det här dokumentet visas SQL-syntax som stöds av Adobe Experience Platform Query Service.
 translation-type: tm+mt
-source-git-commit: 14cb1d304fd8aad2ca287f8d66ac6865425db4c5
+source-git-commit: 97dc0b5fb44f5345fd89f3f56bd7861668da9a6e
 workflow-type: tm+mt
-source-wordcount: '2212'
+source-wordcount: '2221'
 ht-degree: 0%
 
 ---
 
 
-# SQL-syntax
+# SQL-syntax i Query Service
 
 [!DNL Query Service] ger möjlighet att använda ANSI SQL-standard för  `SELECT` satser och andra begränsade kommandon. Det här dokumentet visar SQL-syntax som stöds av [!DNL Query Service].
 
