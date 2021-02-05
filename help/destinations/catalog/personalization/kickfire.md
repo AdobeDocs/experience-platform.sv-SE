@@ -1,21 +1,17 @@
 ---
 keywords: kickfire;Kickfire;kickfire extension;Kickfire Extension
-title: KickFire-tillägg
-seo-title: KickFire-tillägg
+title: KickFire-tilläggsmål
 description: KickFire-tillägget är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: KickFire-tillägget är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '520'
+source-wordcount: '493'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL KickFire] extension  {#kickfire-extension}
-
-## Översikt {#overview}
 
 [!DNL KickFire's] Med IP-adressintelligens och B2B-data kan ni översätta IP-adresser till företag, identifiera anonyma webbbesökare och integrera kontodata i er teknologi - allt baserat på ett företags IP-adress.
 
