@@ -1,21 +1,21 @@
 ---
-keywords: Experience Platform;home;popular topics;data type;data types;Data types;Data type;Segmentation data types;Segmentation;segmentation;Segmentation Service;Segmentation service data types;
+keywords: Experience Platform;hem;populära ämnen;datatyp;datatyper;Datatyper;Datatyp;Segmenteringsdatatyper;Segmentering;segmentering;Segmenteringstjänst;Segmenteringstjänstens datatyper;
 solution: Experience Platform
-title: Datatyper för Adobe Experience Platform Segmenteringstjänst
+title: Datatyper som stöds i segmenteringstjänsten
 topic: overview
-description: Alla XDM-datatyper stöds i segmenteringstjänsten. Reglerna som utgör en segmentdefinition är kontextualiserade med följande datatyper.
+description: Alla XDM-datatyper (Experience Data Model) stöds i segmenteringstjänsten för Adobe. Reglerna som utgör en segmentdefinition är kontextualiserade med följande datatyper.
 translation-type: tm+mt
-source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '479'
+source-wordcount: '514'
 ht-degree: 2%
 
 ---
 
 
-# Datatyper som stöds av Adobe Experience Platform [!DNL Segmentation Service]
+# Datatyper som stöds i segmenteringstjänsten
 
-Alla XDM-datatyper stöds i [!DNL Segmentation Service]. Reglerna som utgör en segmentdefinition är kontextualiserade med följande datatyper.
+Alla XDM-datatyper (Experience Data Model) stöds i Adobe Experience Platform segmenteringstjänst. Reglerna som utgör en segmentdefinition är kontextualiserade med följande datatyper.
 
 ## Strängdata
 
@@ -26,21 +26,21 @@ Strängdata inkluderas i segmentdefinitioner med hjälp av logiska, inkluderande
 | Utdragstyp | Exempel |
 | -------------- | -------- |
 | Logisk | `and`, `or`, `not` |
-| Inkluderande/exklusiv | `include`, `must` `exist`, `exclude`, `must not exist` |
+| Inkluderande/exklusiv | `include`,  `must` `exist`,  `exclude`,  `must not exist` |
 | Jämförelse | `equals`, `does not equal`, `contains`, `starts with` |
 
 ## Datumdata
 
-Med datumdata kan du tilldela tidsbaserade kontexter till dina segmentdefinitioner, antingen genom att använda specifika start-/slutdatum eller genom att använda datumrelevanta satser enligt tabellen nedan. En implementering kan vara att skapa en målgrupp med kunder som har interagerat med ert varumärke *i år* och som också har varit aktiva *under* de senaste dagarna.
+Med datumdata kan du tilldela tidsbaserade kontexter till dina segmentdefinitioner, antingen genom att använda specifika start-/slutdatum eller genom att använda datumrelevanta satser enligt tabellen nedan. En implementering kan vara att skapa en målgrupp med kunder som har interagerat med ert varumärke när som helst *i år* och som också har varit aktiv *inom* de senaste dagarna.
 
 | Exempelfält | Datumrelevanta kontoutdrag | Tidslinje |
 | ------------- | ------------------------ | --------- |
-| person.firstPurchase | `today`, `yesterday`, `this month`, `this year` | Relevant för den dag segmentet skapades. |
-| person.lastPurchase | `in last`, `during`, `before`, `after`, `within` | Relevant inom en given vecka/månad. |
+| person.firstPurchase | `today`,  `yesterday`,  `this month`,  `this year` | Relevant för den dag segmentet skapades. |
+| person.lastPurchase | `in last`,  `during`,  `before`,  `after`,  `within` | Relevant inom en given vecka/månad. |
 
 ## Experience Events
 
-Som ett Adobe Experience Platform-schema kan du spela in explicita och implicita kundinteraktioner med [!DNL XDM ExperienceEvents] [!DNL Platform]integrerade program, inklusive en ögonblicksbild av systemet när interaktionen ägde rum. [!DNL ExperienceEvents] är fakta. Därför är de en datakälla som är tillgänglig för dig under segmentdefinitionen.
+Som ett Adobe Experience Platform-schema registrerar [!DNL XDM ExperienceEvents] explicit och implicit kundinteraktion med [!DNL Platform]-integrerade program, inklusive en ögonblicksbild av systemet när interaktionen ägde rum. [!DNL ExperienceEvents] är fakta. Därför är de en datakälla som är tillgänglig för dig under segmentdefinitionen.
 
 Som framgår av tabellen nedan återges händelsedata med nyckelord som hjälper till att förfina händelsebeteendet och ange händelseattribut.
 
@@ -55,11 +55,11 @@ Som framgår av tabellen nedan återges händelsedata med nyckelord som hjälper
 
 Externa målgrupper kan också användas som komponenter i en ny segmentdefinition och lägga till deras attributregler i det nya segmentet.
 
-För närvarande stöds endast Adobe Audience Manager som extern publik, och ytterligare källor aktiveras i framtiden. Mer information om hur du använder Adobe Audience Manager-målgrupper med Platform finns i [publikdelningsguiden i Adobe Audience Manager-dokumentationen](https://docs.adobe.com/content/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html).
+För närvarande stöds endast Adobe Audience Manager som extern publik, och ytterligare källor aktiveras i framtiden. Mer information om hur du använder Adobe Audience Manager målgrupper med Platform finns i [målgruppsdelningshandboken i Adobe Audience Manager dokumentation](https://docs.adobe.com/content/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html).
 
 ### Segmentdelning
 
-Segment som skapats i Platform kan användas i andra [Adobe Experience Cloud Core Services](https://docs.adobe.com/content/help/sv-SE/core-services/interface/experience-cloud.html). Om du vill aktivera den här funktionen måste du kontakta din lösningsarkitekt eller din konsult.
+Segment som har skapats i Platform kan användas i andra [Adobe Experience Cloud Core Services](https://docs.adobe.com/content/help/sv-SE/core-services/interface/experience-cloud.html). Om du vill aktivera den här funktionen måste du kontakta din lösningsarkitekt eller din konsult.
 
 ## Andra datatyper
 
