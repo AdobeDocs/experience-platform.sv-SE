@@ -1,21 +1,17 @@
 ---
 keywords: Awin Advertiser mastertag extension;mastertag tag tag;Awin;awin;AWIN
-title: Awin Advertiser Mastertag-tillägg
-seo-title: Awin Advertiser Mastertag-tillägg
+title: Awin Advertiser Mastertag Extension Destination
 description: Awin Advertiser Mastertag-tillägget är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Awin Advertiser Mastertag-tillägget är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '535'
+source-wordcount: '504'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL Awin Advertiser Mastertag] extension  {#awin-mastertag-extension}
-
-## Översikt {#overview}
 
 [!DNL MasterTag] är ett JavaScript-bibliotek som innehåller alla funktioner som krävs för Awin-spårningslösningen och ska bifogas villkorslöst till alla sidor på webbplatsen, inklusive bekräftelsesidan, men exklusive alla sidor som visar eller bearbetar betalningsinformation.
 
