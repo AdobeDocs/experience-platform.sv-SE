@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Samla in e-handelsdata;e-handelsdata
 solution: Experience Platform
-title: Samla in e-handelsdata via källkopplingar och API:er
+title: Samla in e-handelsdata med hjälp av källkopplingar och API:er
 topic: overview
 type: Tutorial
-description: Den här självstudiekursen beskriver stegen för att hämta data från ett e-handelssystem från en annan leverantör och hämta dem till plattformen via källanslutningar och API:er.
+description: Den här självstudiekursen beskriver stegen för att hämta data från ett e-handelssystem från en annan leverantör och hämta dem till plattformen med hjälp av källkopplingar och API:er.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
 source-wordcount: '1481'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 ---
 
 
-# Samla in e-handelsdata via källkopplingar och API:er
+# Samla in e-handelsdata med hjälp av källkopplingar och API:er
 
 I den här självstudiekursen beskrivs stegen för att hämta data från ett **[!UICONTROL eCommerce]**-system från en tredje part och hämta dem till [!DNL Platform] via källanslutningar och [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
