@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;hemmabruk;populära ämnen;e-handel;e-handel
 solution: Experience Platform
-title: Utforska en eCommerce-anslutning med API:t för Flow Service
+title: Utforska en e-handelsanslutning med API:t för flödestjänsten
 topic: overview
 description: I den här självstudien används API:t för Flow Service för att utforska e-handelsanslutningar.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
 source-wordcount: '562'
 ht-degree: 1%
