@@ -1,25 +1,25 @@
 ---
-keywords: Experience Platform;developer guide;endpoint;Data Science Workspace;popular topics;models;sensei machine learning api
+keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;populära topics;models;sensei machine learning api
 solution: Experience Platform
-title: Modeller
+title: API-slutpunkt för modeller
 topic: Developer guide
 description: En modell är en instans av ett maskininlärningsrecept som är utbildat med historiska data och konfigurationer för att lösa ett affärsärende.
 translation-type: tm+mt
-source-git-commit: 194a29124949571638315efe00ff0b04bff19303
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '846'
+source-wordcount: '864'
 ht-degree: 1%
 
 ---
 
 
-# Modeller
+# Modeller-slutpunkt
 
 En modell är en instans av ett maskininlärningsrecept som är utbildat med historiska data och konfigurationer för att lösa ett affärsärende.
 
 ## Hämta en lista med modeller
 
-Du kan hämta en lista med modellinformation som tillhör alla modeller genom att utföra en enda GET-begäran till /models. Som standard sorteras den här listan från den äldsta modellen och resultatet begränsas till 25. Du kan välja att filtrera resultaten genom att ange vissa frågeparametrar. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](./appendix.md#query)av resurser i bilagan.
+Du kan hämta en lista med modellinformation som tillhör alla modeller genom att utföra en enda GET-begäran till /models. Som standard sorteras den här listan från den äldsta modellen och resultatet begränsas till 25. Du kan välja att filtrera resultaten genom att ange vissa frågeparametrar. En lista över tillgängliga frågor finns i avsnittet i bilagan [frågeparametrar för hämtning](./appendix.md#query).
 
 **API-format**
 
@@ -40,7 +40,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar en nyttolast som innehåller information om modellerna inklusive varje Models unika identifierare (`id`).
+Ett godkänt svar returnerar en nyttolast som innehåller information om dina modeller, inklusive varje modells unika identifierare (`id`).
 
 ```json
 {
@@ -95,13 +95,13 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om modelle
 | Egenskap | Beskrivning |
 | --- | --- |
 | `id` | Det ID som motsvarar modellen. |
-| `modelArtifactUri` | En URI som anger var modellen lagras. URI:n avslutas med modellens `name` värde. |
+| `modelArtifactUri` | En URI som anger var modellen lagras. URI:n avslutas med `name`-värdet för modellen. |
 | `experimentId` | Ett giltigt test-ID. |
 | `experimentRunId` | Ett giltigt ID för Experiment Run. |
 
 ## Hämta en specifik modell
 
-Du kan hämta en lista med modellinformation som tillhör en viss modell genom att utföra en enda GET-begäran och ange ett giltigt modell-ID i sökvägen för begäran. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](./appendix.md#query)av resurser i bilagan.
+Du kan hämta en lista med modellinformation som tillhör en viss modell genom att utföra en enda GET-begäran och ange ett giltigt modell-ID i sökvägen för begäran. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En lista över tillgängliga frågor finns i avsnittet i bilagan [frågeparametrar för hämtning](./appendix.md#query).
 
 **API-format**
 
@@ -130,7 +130,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar en nyttolast som innehåller information om din modell inklusive den unika identifieraren (`id`) för modellerna.
+Ett godkänt svar returnerar en nyttolast som innehåller information om din modell, inklusive den unika identifieraren för modeller (`id`).
 
 ```json
 {
@@ -159,13 +159,13 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om din mod
 | Egenskap | Beskrivning |
 | --- | --- |
 | `id` | Det ID som motsvarar modellen. |
-| `modelArtifactUri` | En URI som anger var modellen lagras. URI:n avslutas med modellens `name` värde. |
+| `modelArtifactUri` | En URI som anger var modellen lagras. URI:n avslutas med `name`-värdet för modellen. |
 | `experimentId` | Ett giltigt test-ID. |
 | `experimentRunId` | Ett giltigt ID för Experiment Run. |
 
 ## Registrera en förgenererad modell {#register-a-model}
 
-Du kan registrera en förgenererad modell genom att göra en POST-förfrågan till `/models` slutpunkten. För att kunna registrera din modell måste `modelArtifact` fil- och `model` egenskapsvärdena inkluderas i begärans innehåll.
+Du kan registrera en förgenererad modell genom att göra en POST-förfrågan till `/models`-slutpunkten. För att kunna registrera din modell måste egenskapsvärdena för `modelArtifact` och `model` inkluderas i förfrågningens innehåll.
 
 **API-format**
 
@@ -175,7 +175,7 @@ POST /models
 
 **Begäran**
 
-Följande POST innehåller de `modelArtifact` fil- och `model` egenskapsvärden som behövs. Se tabellen nedan för mer information om dessa värden.
+Följande POST innehåller de egenskapsvärden för `modelArtifact` och `model` som behövs. Se tabellen nedan för mer information om dessa värden.
 
 ```shell
 curl -X POST \
@@ -198,7 +198,7 @@ curl -X POST \
 
 **Svar**
 
-Ett godkänt svar returnerar en nyttolast som innehåller information om din modell inklusive den unika identifieraren (`id`) för modellerna.
+Ett godkänt svar returnerar en nyttolast som innehåller information om din modell, inklusive den unika identifieraren för modeller (`id`).
 
 ```json
 {
@@ -215,7 +215,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om din mod
 | Egenskap | Beskrivning |
 | --- | --- |
 | `id` | Det ID som motsvarar modellen. |
-| `modelArtifactUri` | En URI som anger var modellen lagras. URI:n avslutas med `id` värdet för din modell. |
+| `modelArtifactUri` | En URI som anger var modellen lagras. URI:n avslutas med `id`-värdet för din modell. |
 
 ## Uppdatera en modell med ID
 
@@ -319,7 +319,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller 200-status som bekräf
 
 ## Skapa en ny omkodning för en modell {#create-transcoded-model}
 
-Transcoding är en direkt digital-till-digital-konvertering av en kodning till en annan. Du skapar en ny omkodning för en modell genom att ange `{MODEL_ID}` och en `targetFormat` du vill att den nya utskriften ska vara i.
+Transcoding är en direkt digital-till-digital-konvertering av en kodning till en annan. Du skapar en ny omkodning för en modell genom att ange de `{MODEL_ID}` och de `targetFormat` som du vill att de nya utdata ska vara i.
 
 **API-format**
 
@@ -356,7 +356,7 @@ curl -X POST \
 
 **Svar**
 
-Ett godkänt svar returnerar en nyttolast som innehåller ett JSON-objekt med informationen om din omkodning. Detta inkluderar den unika identifieraren (`id`) för transkodning som används för att [hämta en specifik trancoded Model](#retrieve-transcoded-model).
+Ett godkänt svar returnerar en nyttolast som innehåller ett JSON-objekt med informationen om din omkodning. Detta inkluderar den unika identifieraren för transkodning (`id`) som används i [hämtning av en specifik trancoded Model](#retrieve-transcoded-model).
 
 ```json
 {
@@ -374,7 +374,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller ett JSON-objekt med in
 
 ## Hämta en lista över transkodningar för en modell {#retrieve-transcoded-model-list}
 
-Du kan hämta en lista över transkodningar som har utförts på en modell genom att utföra en GET-förfrågan med din `{MODEL_ID}`.
+Du kan hämta en lista över transkodningar som har utförts på en modell genom att utföra en GET-begäran med din `{MODEL_ID}`.
 
 **API-format**
 
@@ -434,7 +434,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller ett json-objekt med en
 
 ## Hämta en specifik omkodad modell {#retrieve-transcoded-model}
 
-Du kan hämta en viss omkodad modell genom att utföra en GET-förfrågan med din `{MODEL_ID}` och ID:t för en omkodad modell.
+Du kan hämta en viss omkodad modell genom att utföra en GET-förfrågan med ditt `{MODEL_ID}` och ID:t för en omkodad modell.
 
 **API-format**
 
