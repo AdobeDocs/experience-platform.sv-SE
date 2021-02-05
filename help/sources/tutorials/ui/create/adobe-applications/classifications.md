@@ -1,22 +1,22 @@
 ---
 keywords: Experience Platform;hemmabruk;populära ämnen; analys;klassificeringar
-description: I den här självstudiekursen beskrivs hur du skapar en Adobe Analytics Classifications Data-koppling i användargränssnittet för att överföra klassificeringsdata till Adobe Experience Platform.
+description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra klassificeringsdata till Adobe Experience Platform.
 solution: Experience Platform
-title: Skapa en Adobe Analytics Classifications-dataanslutning i användargränssnittet
+title: Skapa en Adobe Analytics-källanslutning för klassificeringsdata i användargränssnittet
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 2dbd92efbd992b70f4f750b09e9d2e0626e71315
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '630'
+source-wordcount: '631'
 ht-degree: 0%
 
 ---
 
 
-# Skapa en Adobe Analytics Classifications-dataanslutning i användargränssnittet
+# Skapa en Adobe Analytics-källanslutning för klassificeringsdata i användargränssnittet
 
-I den här självstudiekursen beskrivs hur du skapar en Adobe Analytics Classifications Data-koppling i användargränssnittet för att överföra klassificeringsdata till Adobe Experience Platform.
+I den här självstudiekursen beskrivs hur du skapar en datakällanslutning för Adobe Analytics Classifications i användargränssnittet för att hämta klassificeringsdata till Adobe Experience Platform.
 
 ## Komma igång
 
@@ -86,5 +86,5 @@ På sidan **[!UICONTROL Dataset activity]** visas information om den valda måld
 Genom att följa den här självstudiekursen har du skapat en dataanslutning för Analytics-klassificeringar som hämtar [!DNL Classifications]-data till [!DNL Platform]. Mer information om [!DNL Analytics]- och [!DNL Classifications]-data finns i följande dokument:
 
 * [Översikt över Analytics Data Connector](../../../../connectors/adobe-applications/analytics.md)
-* [Skapa en Analytics Data Connector i användargränssnittet](./analytics.md)
+* [Skapa en Analytics-dataanslutning i användargränssnittet](./analytics.md)
 * [Om klassificeringar](https://experienceleague.adobe.com/docs/analytics/components/classifications/c-classifications.html)
