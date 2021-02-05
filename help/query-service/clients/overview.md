@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Query Service;Query Service;connect;connect to query service;aqua data studio;Aqua Data Studio;Looker;Looker;Postico;postico;Power BI bi;psql;rstudio;PSQL;RStudio;Tableau;tab leau;
 solution: Experience Platform
-title: Anslut klienter till frågetjänsten
+title: Koppla klienter till frågetjänsten
 topic: connect
 description: Det här dokumentet förklarar hur du ansluter till Query Service från ett antal klientprogram och hur du verifierar dessa anslutningar.
 translation-type: tm+mt
-source-git-commit: 5c5ea35dbed85518f7925bd13a2280cae6215927
+source-git-commit: 2b8c08dad34bcd69368c00050323835f05379c82
 workflow-type: tm+mt
 source-wordcount: '112'
 ht-degree: 0%
