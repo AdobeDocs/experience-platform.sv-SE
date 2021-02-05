@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segmentation Service;pql;PQL;Profile Query Language;filter functions;filter;
+keywords: Experience Platform;hem;populära ämnen;segmentering;segmentering;segmenteringstjänst;pql;PQL;profilfrågespråk;filterfunktioner;filter;
 solution: Experience Platform
-title: Filterfunktioner
+title: PQL-filterfunktioner
 topic: developer guide
 description: Filterfunktioner används för att filtrera data inom arrayer i PQL (Profile Query Language).
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '202'
+source-wordcount: '220'
 ht-degree: 2%
 
 ---
@@ -37,7 +37,7 @@ xEvent[productListItems[SKU="PS"]]
 
 ## Upp, operator
 
-Med operatorn `^` (upp) kan du referera till egenskaper på den övre filternivån.
+Med `^`-operatorn (upp) kan du referera till egenskaper i de övre filternivåerna.
 
 **Format**
 
@@ -50,11 +50,11 @@ Med operatorn `^` (upp) kan du referera till egenskaper på den övre filterniv�
 | `{ARRAY}` | Arrayen som filtreras. |
 | `{FILTER_1}` | Filtreringens yttre lager. |
 | `{FILTER_2}` | Filtreringens inre lager |
-| `^{PROPERTY}` | Den egenskap som också filtreras. På grund av `^`detta kontrolleras en egenskap som är baserad på filter1. |
+| `^{PROPERTY}` | Den egenskap som också filtreras. På grund av `^` kontrollerar den en egenskap som är baserad på filter1. |
 
 **Exempel**
 
-Följande PQL-fråga hämtar alla händelser som har minst ett produktobjekt med en SKU som är lika med &quot;PS&quot; **eller** som har en person vars kön är kvinnlig.
+Följande PQL-fråga hämtar alla händelser som har minst ett produktobjekt med en SKU som är lika med &quot;PS&quot; **eller** har en person vars kön är kvinnlig.
 
 ```sql
 xEvent[productListItems[SKU="PS" or ^^.person.gender="female"]]
@@ -62,4 +62,4 @@ xEvent[productListItems[SKU="PS" or ^^.person.gender="female"]]
 
 ## Nästa steg
 
-Nu när du har lärt dig mer om filterfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i översikten [över](./overview.md)profilfrågespråk.
+Nu när du har lärt dig mer om filterfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [översikten över profilfrågespråk](./overview.md).
