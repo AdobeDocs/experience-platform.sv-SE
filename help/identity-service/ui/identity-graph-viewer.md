@@ -5,9 +5,9 @@ title: Översikt över Identity Graph Viewer
 topic: tutorial
 description: Ett identitetsdiagram är en karta över relationer mellan olika identiteter för en viss kund, vilket ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler.
 translation-type: tm+mt
-source-git-commit: aa2088d30716f56ac2909214badbb39c0ae97855
+source-git-commit: 8ec904d584225113a6791533ff544560fc2efdf3
 workflow-type: tm+mt
-source-wordcount: '891'
+source-wordcount: '907'
 ht-degree: 0%
 
 ---
@@ -108,3 +108,9 @@ Fel kan inträffa vid åtkomst till identitetsdiagramvisningsprogrammet. Nedan f
 ## Nästa steg
 
 Genom att läsa det här dokumentet har du lärt dig att utforska kundernas identitetsdiagram i användargränssnittet för plattformen. Mer information om identiteter i Platform finns i [Översikt över identitetstjänsten](../home.md)
+
+## Ytterligare resurser
+
+Följande video är avsedd att ge stöd för din förståelse av identitetsdiagramvisningsprogrammet.
+
+>[!VIDEO](https://video.tv.adobe.com/v/331030/?quality=12&learn=on)
