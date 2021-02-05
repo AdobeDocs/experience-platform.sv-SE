@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;Analytics source connector;Analytics connector;Analytics source;analytics
+keywords: Experience Platform;hem;populära ämnen;Analyskällekontakt;Analyskontakt;Analyskälla;Analytics
 solution: Experience Platform
-title: Skapa en Adobe Analytics-källanslutning i användargränssnittet
+title: Skapa en Adobe Analytics Source Connection i användargränssnittet
 topic: overview
 type: Tutorial
-description: I den här självstudiekursen beskrivs hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
+description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '766'
+source-wordcount: '777'
 ht-degree: 0%
 
 ---
@@ -23,22 +23,22 @@ I den här självstudiekursen beskrivs hur du skapar en Adobe Analytics-källans
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 * [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
-* [Kundprofil](../../../../../profile/home.md)i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [Kundprofil](../../../../../profile/home.md) i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ## Skapa en källanslutning med Adobe Analytics
 
-Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt källarbetsytan. På **katalogskärmen** visas tillgängliga källor för att skapa inkommande anslutningar, och varje källa visar antalet befintliga konton och datauppsättningsflöden som är kopplade till dem.
+Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt källarbetsytan. Skärmen **Katalog** visar tillgängliga källor för att skapa inkommande anslutningar med, och varje källa visar antalet befintliga konton och datauppsättningsflöden som är kopplade till dem.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under **[!UICONTROL Adobe applications]** kategorin väljer du **[!UICONTROL Adobe Analytics]** att visa ett informationsfält till höger på skärmen. Informationsfältet innehåller en kort beskrivning av den valda källan samt alternativ för att ansluta till källan eller visa dess dokumentation. Om du vill visa befintliga konton väljer du **[!UICONTROL Accounts]**.
+Under kategorin **[!UICONTROL Adobe applications]** väljer du **[!UICONTROL Adobe Analytics]** för att visa ett informationsfält till höger på skärmen. Informationsfältet innehåller en kort beskrivning av den valda källan samt alternativ för att ansluta till källan eller visa dess dokumentation. Om du vill visa befintliga konton väljer du **[!UICONTROL Accounts]**.
 
 ![](../../../../images/tutorials/create/analytics/catalog.png)
 
 ### Markera data
 
-Steget **[!UICONTROL Adobe Analytics]** visas. Tidigare etablerade datauppsättningsflöden för Analytics visas på den här skärmen. Du kan skapa ett nytt datauppsättningsflöde genom att klicka **[!UICONTROL Select data]**.
+**[!UICONTROL Adobe Analytics]**-steget visas. Tidigare etablerade datauppsättningsflöden för Analytics visas på den här skärmen. Du kan skapa ett nytt datauppsättningsflöde genom att klicka på **[!UICONTROL Select data]**.
 
 >[!NOTE]
 >
@@ -48,19 +48,19 @@ Steget **[!UICONTROL Adobe Analytics]** visas. Tidigare etablerade datauppsättn
 
 <!---Analytics report suites can be configured for one sandbox at a time. To import the same report suite into a different sandbox, the dataset flow will have to be deleted and instantiated again via configuration for a different sandbox.--->
 
-I listan med tillgängliga rapportsviter väljer du den du vill hämta till Platform och klickar på **[!UICONTROL Next]**.
+I listan med tillgängliga rapportsviter väljer du den som du vill hämta till plattformen och klickar på **[!UICONTROL Next]**.
 
 ![](../../../../images/tutorials/create/analytics/select-data.png)
 
 ### Namnge datauppsättningsflödet
 
-Steget visas där du måste ange ett namn och en valfri beskrivning för datauppsättningsflödet. **[!UICONTROL Dataset flow detail]** Välj **[!UICONTROL Next]** när du är klar.
+Steget **[!UICONTROL Dataset flow detail]** visas där du måste ange ett namn och en valfri beskrivning för datauppsättningsflödet. Välj **[!UICONTROL Next]** när du är klar.
 
 ![](../../../../images/tutorials/create/analytics/dataset-flow-detail.png)
 
 ### Granska datauppsättningsflödet
 
-Steget visas så att du kan granska det nya inbundna datauppsättningsflödet i Analytics innan det skapas. **[!UICONTROL Review]** Detaljerna om anslutningen är grupperade efter kategorier, inklusive:
+**[!UICONTROL Review]**-steget visas, så att du kan granska det nya inbundna datauppsättningsflödet i Analytics innan det skapas. Detaljerna om anslutningen är grupperade efter kategorier, inklusive:
 
 * **[!UICONTROL Connection]**: Visar typen av källanslutning och den valda rapportsviten.
 * **[!UICONTROL Assign dataset & map fields]**: När du skapar andra källanslutningar visar den här behållaren vilka data som källdata hämtas till, inklusive det schema som datauppsättningen följer. Utdatarammet och datamängden konfigureras automatiskt för Analytics-datauppsättningsflöden.
@@ -69,7 +69,7 @@ Steget visas så att du kan granska det nya inbundna datauppsättningsflödet i 
 
 ### Övervaka datauppsättningsflödet
 
-När datauppsättningsflödet har skapats kan du övervaka de data som hämtas genom den. På **[!UICONTROL Catalog]** skärmen väljer du **[!UICONTROL Dataset flows]** att visa en lista över etablerade flöden som är kopplade till ditt Analytics-konto.
+När datauppsättningsflödet har skapats kan du övervaka de data som hämtas genom den. På skärmen **[!UICONTROL Catalog]** väljer du **[!UICONTROL Dataset flows]** för att visa en lista över etablerade flöden som är kopplade till ditt Analytics-konto.
 
 ![](../../../../images/tutorials/create/analytics/catalog-dataset-flows.png)
 
@@ -77,23 +77,23 @@ Skärmen **Datauppsättningsflöden** visas. På den här sidan finns ett par da
 
 Kopplingen instansierar två datauppsättningsflöden. Det ena flödet representerar data för bakåtfyllnad och det andra för livedata. Backfill-data är inte konfigurerade för profil, men skickas till datasjön för analytiska och datavetenskapliga användningsfall.
 
-Mer information om backfill, livedata och deras respektive latenser finns i [Analytics Data Connector-översikten](../../../../connectors/adobe-applications/analytics.md).
+Mer information om förifyllning, livedata och deras respektive latenser finns i [Analytics Data Connector overview](../../../../connectors/adobe-applications/analytics.md).
 
 Välj det datauppsättningsflöde du vill visa i listan.
 
 ![](../../../../images/tutorials/create/analytics/backfill.png)
 
-Sidan **Datauppsättningsaktivitet** visas. På den här sidan visas hur många meddelanden som används i form av ett diagram. Välj *Datastyrning* i det övre huvudet för att komma åt etikettfälten.
+Sidan **Datauppsättningsaktivitet** visas. På den här sidan visas hur många meddelanden som används i form av ett diagram. Välj *Datastyrning* i den övre rubriken för att komma åt etikettfälten.
 
 ![](../../../../images/tutorials/create/analytics/batches.png)
 
-Du kan visa ett datauppsättningsflödes ärvda etiketter från skärmen *Datastyrning* . Om du vill visa specifika etiketter väljer du redigeringsknappen högst upp till höger.
+Du kan visa ett datauppsättningsflödes ärvda etiketter från skärmen *Datastyrning*. Om du vill visa specifika etiketter väljer du redigeringsknappen högst upp till höger.
 
 ![](../../../../images/tutorials/create/analytics/data-gov.png)
 
 Panelen **Redigera styrningsetiketter** visas. På den här skärmen kan du komma åt och redigera ett datauppsättningsflödes kontrakt, identitet och känsliga etiketter.
 
-Mer information om etikettering av data som kommer från Analytics finns i etikettguiden för [dataanvändning](../../../../../data-governance/labels/user-guide.md).
+Mer information om hur du etiketterar data som kommer från Analytics finns i [etikettguiden för dataanvändning](../../../../../data-governance/labels/user-guide.md).
 
 ![](../../../../images/tutorials/create/analytics/labels.png)
 
@@ -110,7 +110,7 @@ Följande video är tänkt att ge stöd för din förståelse av hur data import
 
 >[!WARNING]
 >
-> Gränssnittet [!DNL Platform] som visas i följande video är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
+> Användargränssnittet [!DNL Platform] som visas i följande video är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
 
 >[!VIDEO](https://video.tv.adobe.com/v/29687?quality=12&learn=on)
 
