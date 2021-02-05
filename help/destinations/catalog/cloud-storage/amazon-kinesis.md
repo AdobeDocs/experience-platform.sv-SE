@@ -1,25 +1,21 @@
 ---
 keywords: Amazon Kinesis;kinesis destination;kinesis
-title: Amazon Kinesis
-seo-title: Amazon Kinesis
+title: Amazon Kinesis Connection Destination
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
-seo-description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: a78dd4b95896387aa1daa022c9e1d5a6cf978448
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '471'
+source-wordcount: '451'
 ht-degree: 0%
 
 ---
 
 
-# (Beta) [!DNL Amazon Kinesis] mål
+# (Beta) [!DNL Amazon Kinesis]-anslutning
 
 >[!IMPORTANT]
 >
 >Målet [!DNL Amazon Kinesis] i Platform är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
-
-## Översikt {#overview}
 
 Med tjänsten [!DNL Kinesis Data Streams] från [!DNL Amazon Web Services] kan du samla in och bearbeta stora dataströmmar i realtid.
 
