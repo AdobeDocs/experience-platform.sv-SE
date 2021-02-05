@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;retail sales recipe;Data Science Workspace;popular topics;recipes;pre build recipe
+keywords: Experience Platform;recept;data Science Workspace;populära topics;recipes;prebuild recept
 solution: Experience Platform
-title: Butiksförsäljningsrecept
+title: Butiksförs.mottagare
 topic: overview
 description: Med butiksförsäljningsreceptet kan du förutsäga försäljningsprognos för alla butiker som behövs under en viss tidsperiod. Med en korrekt prognosmodell skulle handlaren kunna hitta förhållandet mellan efterfrågan och prispolitiken och fatta optimerade prissättningsbeslut för att maximera försäljningen och intäkterna.
 translation-type: tm+mt
-source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '571'
+source-wordcount: '585'
 ht-degree: 1%
 
 ---
@@ -34,7 +34,7 @@ I recept på försäljningsprognos används maskininlärning för att förutse f
 
 Du kan komma igång genom att följa den här [självstudiekursen](../jupyterlab/create-a-recipe.md).
 
-I den här självstudiekursen går vi vidare med att skapa säljrecept för detaljhandeln i en Jupyter-anteckningsbok och använda anteckningsboken för att hämta arbetsflödet för att skapa recept i Adobe Experience Platform.
+I den här självstudiekursen går vi vidare med att skapa säljrecept i en Jupyter-anteckningsbok och använda anteckningsboken för att hämta arbetsflöden för att skapa recept i Adobe Experience Platform.
 
 ## Datamodell
 
@@ -57,7 +57,7 @@ I det här receptet används [XDM-scheman](../../xdm/schema/field-dictionary.md)
 
 ## Algoritm
 
-Först läses utbildningsdatauppsättningen i *DSWRetailSales* -schemat in. Härifrån tränas modellen med en [övertoningsförstärkningsalgoritm](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html). För övertoningsförbättringar används idén att svaga studerande (en som är minst något bättre än en slumpmässig chans) kan bilda en rad olika studerande som fokuserar på att förbättra den tidigare elevens svagheter. Tillsammans kan de användas för att skapa en kraftfull prediktiv modell.
+Först läses utbildningsdatauppsättningen i schemat *DSWRetailSales* in. Härifrån utbildas modellen med en [övertoningsförstärkningsalgoritm](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html). För övertoningsförbättringar används idén att svaga studerande (en som är minst något bättre än en slumpmässig chans) kan bilda en rad olika studerande som fokuserar på att förbättra den tidigare elevens svagheter. Tillsammans kan de användas för att skapa en kraftfull prediktiv modell.
 
 Processen består av tre delar: en förlustfunktion, en svag kursledare och en additiv modell.
 
