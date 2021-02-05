@@ -1,21 +1,17 @@
 ---
 keywords: livefyre;livefyre extension
-title: Adobe Livefyre-tillägg
-seo-title: Adobe Livefyre-tillägg
+title: Adobe Livefyre Extension Destination
 description: Adobe Livefyre är en social destination i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Adobe Livefyre är en social destination i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '513'
+source-wordcount: '484'
 ht-degree: 0%
 
 ---
 
 
 # Adobe Livefyre-tillägg {#adobe-livefyre-extension}
-
-## Översikt {#overview}
 
 Med Adobe Livefyre kan ni identifiera, ordna och publicera ett konstant flöde av användargenererat innehåll på er webbplats för att skapa autentiska och personaliserade upplevelser.
 
