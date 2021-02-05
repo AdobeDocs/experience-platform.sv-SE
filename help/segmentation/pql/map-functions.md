@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segmentation Service;pql;PQL;Profile Query Language;map functions;map;
+keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;pql;PQL;Profilfrågespråk;kartfunktioner;karta;
 solution: Experience Platform
-title: Kartfunktioner
+title: PQL-kartfunktioner
 topic: developer guide
 description: PQL (Profile Query Language) har funktioner som underlättar interaktion med kartor.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '155'
-ht-degree: 3%
+source-wordcount: '173'
+ht-degree: 2%
 
 ---
 
@@ -19,7 +19,7 @@ ht-degree: 3%
 
 ## Hämta
 
-Funktionen används `get` för att hämta värdet för en karta för en given nyckel.
+Funktionen `get` används för att hämta värdet för en karta för en given nyckel.
 
 **Format**
 
@@ -29,7 +29,7 @@ Funktionen används `get` för att hämta värdet för en karta för en given ny
 
 **Exempel**
 
-Följande PQL-fråga hämtar värdet på identitetskartan för nyckeln `example@example.com`.
+Följande PQL-fråga hämtar värdet för identitetskartan för nyckeln `example@example.com`.
 
 ```sql
 identityMap.get("example@example.com")
@@ -37,7 +37,7 @@ identityMap.get("example@example.com")
 
 ## Tangenter
 
-Funktionen används `keys` för att hämta alla nycklar för en viss karta.
+Funktionen `keys` används för att hämta alla nycklar för en given karta.
 
 **Format**
 
@@ -55,7 +55,7 @@ identityMap.keys()
 
 ## Värden
 
-Funktionen används `values` för att hämta alla värden för en viss karta.
+Funktionen `values` används för att hämta alla värden för en given karta.
 
 **Format**
 
@@ -73,4 +73,4 @@ identityMap.values()
 
 ## Nästa steg
 
-Nu när du har lärt dig mer om kartfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i översikten [över](./overview.md)profilfrågespråk.
+Nu när du har lärt dig mer om kartfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [översikten över profilfrågespråk](./overview.md).
