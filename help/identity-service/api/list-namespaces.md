@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform;home;popular topics;namespace list;list namespace
+keywords: Experience Platform;hem;populära ämnen;namnutrymmeslista;namnlista
 solution: Experience Platform
-title: Visa tillgängliga namnutrymmen
+title: Lista tillgängliga identitetsnamnutrymmen
 topic: API guide
 description: Visa alla tillgängliga namnutrymmen.
 translation-type: tm+mt
-source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
+source-git-commit: 73035aec86297cfc4ee9337cf922d599001379c3
 workflow-type: tm+mt
-source-wordcount: '68'
+source-wordcount: '79'
 ht-degree: 2%
 
 ---
 
 
-# Visa tillgängliga namnutrymmen
+# Visa tillgängliga identitetsnamnutrymmen
 
 **API-format**
 
@@ -34,7 +34,7 @@ curl -X GET \
 
 **Svar**
 
-Svaret innehåller en array med objekt, där varje objekt representerar ett tillgängligt namnutrymme. Namnutrymmen med värdet &quot;[!UICONTROL custom]&quot; för &quot;[!UICONTROL false]&quot; är standardnamnutrymmen, medan de med värdet &quot;[!UICONTROL custom]&quot; för &quot;[!UICONTROL true]&quot; är namnutrymmen som din organisation har skapat.
+Svaret innehåller en array med objekt, där varje objekt representerar ett tillgängligt namnutrymme. Namnutrymmen med värdet [!UICONTROL custom] för [!UICONTROL false] är standardnamnutrymmen, medan de med värdet [!UICONTROL custom] för [!UICONTROL true] är namnutrymmen som din organisation har skapat.
 
 >[!NOTE]
 >
@@ -80,4 +80,4 @@ Svaret innehåller en array med objekt, där varje objekt representerar ett till
 
 ## Nästa steg
 
-Gå till nästa självstudiekurs för att [skapa ett anpassat namnutrymme](./create-custom-namespace.md)
+Gå vidare till nästa självstudiekurs för att [skapa ett anpassat namnutrymme](./create-custom-namespace.md)
