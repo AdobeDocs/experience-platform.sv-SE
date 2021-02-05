@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;home;populära topics;Query service;query service;postico;Postico;connect to query service;
 solution: Experience Platform
-title: Anslut med Postico
+title: Anslut position till frågetjänst
 topic: connect
 description: Det här dokumentet innehåller länken för installation av klienten Postico för Adobe Experience Platform Query Service.
 translation-type: tm+mt
-source-git-commit: eac93f3465fa6ce4af7a6aa783cf5f8fb4ac9b9b
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '248'
+source-wordcount: '251'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Postico]
+# Anslut [!DNL Postico] till frågetjänsten (Mac)
 
 Det här dokumentet innehåller stegen för att ansluta [!DNL Postico] med Adobe Experience Platform [!DNL Query Service].
 
@@ -22,8 +22,6 @@ Det här dokumentet innehåller stegen för att ansluta [!DNL Postico] med Adobe
 > Den här handboken förutsätter att du redan har tillgång till [!DNL Postico] och är bekant med hur du navigerar i dess gränssnitt. Mer information om [!DNL Postico] finns i [officiell [!DNL Postico] dokumentation](https://eggerapps.at/postico/docs).
 > 
 > Dessutom är [!DNL Postico] **endast** tillgängligt på macOS-enheter.
-
-## Anslut [!DNL Postico] till frågetjänsten
 
 Om du vill ansluta [!DNL Postico] till frågetjänsten öppnar du [!DNL Postico] och väljer **[!DNL New Favorite]**.
 
