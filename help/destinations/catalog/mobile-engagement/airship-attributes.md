@@ -1,25 +1,21 @@
 ---
 keywords: luftfartygsattribut;luftfartygets destination
-title: Mål för luftfartygsattribut
-seo-title: Mål för luftfartygsattribut
+title: Kopplingsmål för luftfartygsattribut
 description: Skicka smidigt data från Adobe till Airship som målgruppsattribut för målinriktning inom Airship.
-seo-description: Skicka smidigt data från Adobe till Airship som målgruppsattribut för målinriktning inom Airship.
 translation-type: tm+mt
-source-git-commit: 95f57f9d1b3eeb0b16ba209b9774bd94f5758009
+source-git-commit: f4095a90ff70e8d054bae4f3b0f884552ffd30df
 workflow-type: tm+mt
-source-wordcount: '1164'
+source-wordcount: '1147'
 ht-degree: 0%
 
 ---
 
 
-# (Beta) [!DNL Airship Attributes] mål {#airship-attributes-destination}
+# (Beta) [!DNL Airship Attributes] anslutning {#airship-attributes-destination}
 
 >[!IMPORTANT]
 >
 >Målet [!DNL Airship Attributes] i Adobe Experience Platform är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
-
-## Översikt {#overview}
 
 [!DNL Airship] är den ledande plattformen för kundengagemang, som hjälper er att leverera meningsfulla, personaliserade meddelanden i alla kanaler till era användare under hela kundlivscykeln.
 
