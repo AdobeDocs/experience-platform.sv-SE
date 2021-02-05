@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Apache Cassandra;apache cassandra;Cassandra;cassandra
 solution: Experience Platform
-title: Skapa en Apache Cassandra-anslutning med API:t för Flow Service
+title: Skapa en källanslutning till Apache Cassandra med API:t för flödestjänst
 topic: overview
 type: Tutorial
-description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Apache Cassandra (nedan kallat "Cassandra") till Experience Platform.
+description: Lär dig hur du ansluter Apache Cassandra till Adobe Experience Platform med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '628'
+source-wordcount: '620'
 ht-degree: 0%
 
 ---
 
 
-# Skapa en [!DNL Apache Cassandra]-koppling med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL Apache Cassandra]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
