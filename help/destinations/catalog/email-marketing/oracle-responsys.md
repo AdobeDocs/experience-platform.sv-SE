@@ -1,21 +1,17 @@
 ---
 keywords: e-post;E-post;e-postadresser;oracle svarar på målet
-title: Oracle Responsys-mål
-seo-title: Oracle Responsys-mål
+title: Oracle Responsys Connection Destination
 description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som Oracle erbjuder för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
-seo-description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som Oracle erbjuder för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '488'
+source-wordcount: '463'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Oracle Responsys]
-
-## Översikt
+# [!DNL Oracle Responsys] anslutning
 
 [Responsys ](https://www.oracle.com/marketingcloud/products/cross-channel-orchestration/) är ett verktyg för e-postmarknadsföring i storföretag för flerkanalskampanjer som erbjuds av  [!DNL Oracle] att personalisera interaktioner i e-post, mobiler, displayannonsering och sociala medier.
 
