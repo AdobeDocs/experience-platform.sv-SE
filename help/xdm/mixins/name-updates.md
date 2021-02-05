@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;XDM;ExperienceEvent;fields;schemas;Schemas;Schema design;mixin;mixin;enduserids;end-user;end user;ids;updates;
+keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;ExperienceEvent;fields;schemas;Schema design;mixin;mixin;enduserids;end user;end user;ids;updates;
 solution: Experience Platform
 title: Uppdateringar av blandade namn
 topic: overview
 description: En lista över de senaste namnändringarna för XDM-mixin.
 translation-type: tm+mt
-source-git-commit: 4f50926a9c5bc02255bd62c51cca13fc9094a9e8
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '93'
+source-wordcount: '115'
 ht-degree: 0%
 
 ---
