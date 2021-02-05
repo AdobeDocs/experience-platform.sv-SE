@@ -1,19 +1,17 @@
 ---
 keywords: Azure Blob;Blob destination;s3;azure blob destination
-title: Azure Blob-mål
-seo-title: Azure Blob-mål
+title: Anslutningsmål för Azure-blob
 description: Skapa en utgående liveanslutning till ditt Azure Blob-lagringsutrymme för att regelbundet exportera tabbavgränsade eller CSV-datafiler från Adobe Experience Platform.
-seo-description: Skapa en utgående liveanslutning till ditt Azure Blob-lagringsutrymme för att regelbundet exportera tabbavgränsade eller CSV-datafiler från Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 739c7cb55f943675d5ee63d81bba58a2b250c814
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '488'
+source-wordcount: '459'
 ht-degree: 1%
 
 ---
 
 
-# Skapa ett [!DNL Azure Blob]-mål i användargränssnittet
+# [!DNL Azure Blob] anslutning
 
 [!DNL Azure Blob] (nedan kallat &quot;[!DNL Blob]&quot;) är Microsofts objektlagringslösning för molnet. I den här självstudien beskrivs stegen för hur du skapar ett [!DNL Blob]-mål med användargränssnittet i [!DNL Platform].
 
