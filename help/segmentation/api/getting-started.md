@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;api;
 solution: Experience Platform
-title: Utvecklarhandbok för segmenteringstjänst
+title: Komma igång med segmenteringstjänstens API
 topic: developer guide
 description: Följande dokumentation innehåller ytterligare information som du behöver känna till för att kunna arbeta med segmenterings-API:t.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '322'
+source-wordcount: '329'
 ht-degree: 0%
 
 ---
 
 
-# Komma igång med [!DNL Segmentation Service] {#getting-started}
+# Komma igång med segmenteringstjänstens API {#getting-started}
 
 Med Adobe Experience Platform [!DNL Segmentation Service] kan du skapa segment och generera målgrupper i Adobe Experience Platform utifrån dina [!DNL Real-time Customer Profile]-data.
 
