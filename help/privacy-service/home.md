@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;GDPR;gdpr;ccpa:CCPA;pdpa;PDPA;pdpa_that;PDPA_THA;lgpd;LGPD;lgpd_bra;LGPD_BRA;
 solution: Experience Platform
-title: Adobe Experience Platform Privacy Service - översikt
+title: Översikt över Privacy Service
 topic: overview
 description: Med Privacy Service kan ni underlätta automatiserad efterlevnad av juridiska sekretessbestämmelser i dataåtgärder från Experience Cloud.
 translation-type: tm+mt
-source-git-commit: 5dad1fcc82707f6ee1bf75af6c10d34ff78ac311
+source-git-commit: 37c1c98ccba50fa917acc5e93763294f4dde5c36
 workflow-type: tm+mt
-source-wordcount: '1396'
+source-wordcount: '1390'
 ht-degree: 0%
 
 ---
 
 
-# Adobe Experience Platform [!DNL Privacy Service] - översikt
+# [!DNL Privacy Service] översikt
 
 För att kunna leverera bättre kundupplevelser måste ni samla in och lagra kundernas personuppgifter. När du använder dessa data är det viktigt att förstå och respektera dina kunders integritet. Nya juridiska och organisatoriska bestämmelser ger användarna rätt att få tillgång till eller ta bort sina personuppgifter från era datalager på begäran.
 
