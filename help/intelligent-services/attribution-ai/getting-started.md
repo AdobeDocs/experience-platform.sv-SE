@@ -5,7 +5,7 @@ title: Komma igång med Attribution AI
 topic: Getting started
 description: Följande handledningar kräver förståelse för de olika Adobe Experience Platform-tjänster som används för att använda Attribution AI. Innan du börjar med självstudiekurserna bör du läsa följande dokument.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: eb163949f91b0d1e9cc23180bb372b6f94fc951f
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 0%
