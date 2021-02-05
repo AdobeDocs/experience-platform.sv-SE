@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform;home;popular topics;GDPR;gdpr;CCPA;ccpa;PDPA;pdpa;LGPD;lgpd;overview;Overview;regulation;Regulation;regulations;Regulations;privacy;Privacy;
+keywords: Experience Platform;hem;populära ämnen;GDPR;gdpr;CCPA;ccpa;PDPA;pdpa;LGPD;lgpd;overview;overview;Regulation;Regulations;Regulations;Regulations;privacy;Privacy;Privacy;
 solution: Experience Platform
-title: Terminologi för sekretessbestämmelser
+title: Sekretessregler - terminologi
 topic: troubleshooting
 description: Det här dokumentet innehåller definitioner för nyckeltermer relaterade till sekretessregler som stöds av Adobe Experience Cloud.
 translation-type: tm+mt
-source-git-commit: 714b071bfa68ad0796afad25525b62b42bd56b3f
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '1491'
+source-wordcount: '1512'
 ht-degree: 9%
 
 ---
 
 
-# Terminologi för sekretessbestämmelser
+# Sekretessregler - terminologi
 
 Det här dokumentet innehåller definitioner för nyckeltermer relaterade till sekretessregler som stöds av Adobe Experience Cloud.
 
@@ -23,11 +23,11 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 
 **BCR (Binding corporate rules)**: En uppsättning bindande regler införs för att göra det möjligt för multinationella företag och organisationer att överföra personuppgifter som de kontrollerar från EU till sina dotterbolag utanför EU (men inom organisationen).
 
-**Biometriska data** Alla personuppgifter som rör en individs fysiska, fysiologiska eller beteendemässiga egenskaper och som gör det möjligt att identifiera dem unikt.
+**Biometriska** dataPersonuppgifter som rör en individs fysiska, fysiologiska eller beteendemässiga egenskaper och som gör det möjligt att identifiera dem unikt.
 
 ## C
 
-**CCPA**: CCPA ( [!DNL California Consumer Privacy Act] The CCPA) ger invånare i Kalifornien bättre kontroll över den personliga information som företag samlar in från och med då. Lagen ger flera nya rättigheter till konsumenterna, bland annat rätten till tillgång till och de personuppgifter som samlats in från dem samt rätten att avanmäla försäljningen av deras personuppgifter till tredje part.
+**CCPA**: Med  [!DNL California Consumer Privacy Act] (CCPA) får invånare i Kalifornien bättre kontroll över den personliga information som företag samlar in från den tiden. Lagen ger flera nya rättigheter till konsumenterna, bland annat rätten till tillgång till och de personuppgifter som samlats in från dem samt rätten att avanmäla försäljningen av deras personuppgifter till tredje part.
 
 **Godkännande**: Fritt givet, specifikt, informerat och uttryckligt samtycke genom uttalande eller åtgärd som innebär godkännande av behandlingen av deras personuppgifter.
 
@@ -69,7 +69,7 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 
 ## G
 
-**GDPR**: ( [!DNL General Data Protection Regulation] GDPR) är en rättslig ram som fastställer riktlinjer för insamling och behandling av personuppgifter inom EU. Dataskyddsförordningen fastställer principerna för datahantering och individens rättigheter, men ålägger även böter som kan vara inkomstbaserade. GDPR omfattar alla företag som hanterar uppgifter om EU-medborgare, så det är en kritisk regel för tjänstemän som ansvarar för företagstillsyn hos banker, försäkringsbolag och andra finansiella företag.
+**GDPR**: Den  [!DNL General Data Protection Regulation] allmänna dataskyddsförordningen är en rättslig ram som fastställer riktlinjer för insamling och behandling av personuppgifter inom EU. Dataskyddsförordningen fastställer principerna för datahantering och individens rättigheter, men ålägger även böter som kan vara inkomstbaserade. GDPR omfattar alla företag som hanterar uppgifter om EU-medborgare, så det är en kritisk regel för tjänstemän som ansvarar för företagstillsyn hos banker, försäkringsbolag och andra finansiella företag.
 
 **Genetiska data**: Uppgifter om en persons egenskaper som ärvs eller förvärvas och som ger unik information om den enskilda personens hälsa eller fysiologi.
 
@@ -79,7 +79,7 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 
 ## I
 
-**Identity Management Services (IMS)**: Adobe implementeringen av Federated ID och OAuth 2.0 för autentisering av Adobe ID-användare och auktorisering för Adobe-resurser. Du måste integrera IMS med ditt Adobe-program eller -tjänst för att användarna ska kunna logga in och få tillgång till Adobes tjänster. Users can log in directly with Renga (the Adobe identity services provider), or log in through a trusted third party authentication domain (such as [!DNL Google], [!DNL Facebook], or a corporate/organization LDAP).
+**Identity Management Services (IMS)**: Adobe implementeringen av Federated ID och OAuth 2.0 för autentisering av Adobe ID-användare och auktorisering för Adobe-resurser. Du måste integrera IMS med ditt Adobe-program eller -tjänst för att användarna ska kunna logga in och få tillgång till Adobes tjänster. Användare kan logga in direkt med Renga (Adobe-identitetstjänstleverantören) eller logga in via en betrodd autentiseringsdomän från tredje part (till exempel [!DNL Google], [!DNL Facebook] eller en företags-LDAP).
 
 **Implicit samtycke**: Detta kallas även entydigt samtycke och avser samtycke som inte uttryckligen gavs av den registrerade, men som ändå är entydigt till sin natur. Exempel: under registreringsprocessen för ett företags webbplats får man ett meddelande om att den registrerade genom att ange en e-postadress samtycker till att ta emot e-post om specialerbjudanden. Om den registrerade läser meddelandet räcker den positiva åtgärden att ange sin e-postadress för att betraktas som implicit samtycke.
 
@@ -91,7 +91,7 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 
 ## L
 
-**LGPD**: Syftet [!DNL Lei Geral de Proteção de Dados] (LGPD) är att reglera behandlingen av personuppgifter för alla enskilda eller fysiska personer i Brasilien. LGPD ger Brasilien-medborgarna rätt att få tillgång till och radera sina personuppgifter, att ta reda på om deras personuppgifter säljs eller offentliggörs (och till vem) samt rätt att avanmäla sig från att få sina uppgifter sålda till tredje part.
+**LGPD**: Syftet  [!DNL Lei Geral de Proteção de Dados] (LGPD) är att reglera behandlingen av personuppgifter för alla enskilda eller fysiska personer i Brasilien. LGPD ger Brasilien-medborgarna rätt att få tillgång till och radera sina personuppgifter, att ta reda på om deras personuppgifter säljs eller offentliggörs (och till vem) samt rätt att avanmäla sig från att få sina uppgifter sålda till tredje part.
 
 ## M
 
@@ -103,7 +103,7 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 
 ## P
 
-**PDPA**: Thailand (PDPA) infördes [!DNL Personal Data Protection Act] för att skydda thailändska dataägare från olaglig insamling, användning eller utlämnande av deras personuppgifter. Förordningen inspireras av EU:s allmänna dataskyddsförordningen och ger de thailändska medborgarna rätt att begära tillgång till eller radering av lagrade personuppgifter.
+**PDPA**: Thailand ( [!DNL Personal Data Protection Act] PDPA) infördes för att skydda thailändska dataägare från olaglig insamling, användning eller utlämnande av deras personuppgifter. Förordningen inspireras av EU:s allmänna dataskyddsförordningen och ger de thailändska medborgarna rätt att begära tillgång till eller radering av lagrade personuppgifter.
 
 **Personuppgifter**: All information som rör en fysisk person eller den registrerade, som kan användas för att direkt eller indirekt identifiera personen.
 
@@ -135,7 +135,7 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 
 ## S
 
-**Känsliga data**:  Personuppgifter som rör ras eller etnisk tillhörighet, politiska åsikter, religioner eller filosofiska övertygelser, sexuellt beteende, kriminalregister, hälsouppgifter, funktionshinder, facklig information, genetiska uppgifter, biometriska uppgifter eller uppgifter som kan påverka den registrerade.
+**Känsliga data**: Personuppgifter som rör ras eller etnisk tillhörighet, politiska åsikter, religioner eller filosofiska övertygelser, sexuellt beteende, kriminalregister, hälsouppgifter, funktionshinder, facklig information, genetiska uppgifter, biometriska uppgifter eller uppgifter som kan påverka den registrerade.
 
 **Åtkomstbehörighet**: Det kallas även åtkomsträttigheter och ger den registrerade rätt att få tillgång till och information om de personuppgifter som en personuppgiftsansvarig har rörande dem.
 
