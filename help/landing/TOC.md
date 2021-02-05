@@ -5,10 +5,10 @@ user-guide-title: Adobe Experience Platform - översikt
 breadcrumb-title: Experience Platform - översikt
 user-guide-description: Läs om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid.
 translation-type: tm+mt
-source-git-commit: 6ec317dd790b6ad77d8181c1398934f9636c5f5f
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
-source-wordcount: '161'
-ht-degree: 5%
+source-wordcount: '159'
+ht-degree: 6%
 
 ---
 
@@ -30,12 +30,12 @@ ht-degree: 5%
    * [Användargränssnittshandbok för arbetsflöden](workflows.md)
    * [Stöd för webbläsare och språk](browser-language-support.md)
 * Experience Platform API:er {#platform-apis}
+   * [Autentisera och få åtkomst till plattforms-API:er](api-authentication.md)
    * [Grundläggande om API](api-fundamentals.md)
    * [API-referensdokument](http://www.adobe.com/go/platform-api-reference-en)
-   * [Autentisera och få tillgång till API:er för plattformen, självstudiekurs](api-authentication.md)
 * Plattformsdokumentation {#documentation}
-   * [Dokumentationsöversikt](documentation/overview.md)
-   * [Stöd för dokumentationsspråk](documentation/language-support.md)
+   * [Översikt](documentation/overview.md)
+   * [Språkstöd](documentation/language-support.md)
 * Plattform i Adobe-ekosystemet {#ecosystem}
    * [Programtjänster](application-services.md)
    * [Program och intelligenta tjänster (video)](video/application-intelligent-services.md)
@@ -48,6 +48,6 @@ ht-degree: 5%
          * [Konfigurera en datauppsättning för inhämtning av samtycke och inställningsdata](./governance-privacy-security/consent/iab/dataset.md)
 * [Kontrollpanel för licensanvändning](license-usage-dashboard.md)
 * [Felsökningsguide](troubleshooting.md)
-* [ADLS Gen2-migrering](adls2-gen2-migration.md)
+* [Migrering av data från Gen2](adls2-gen2-migration.md)
 * [Ordlista](glossary.md)
 * [Versionsinformation](https://www.adobe.com/go/platform-release-notes-en)
