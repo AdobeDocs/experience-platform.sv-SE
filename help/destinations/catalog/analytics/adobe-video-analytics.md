@@ -1,21 +1,17 @@
 ---
 keywords: mediaanalystillägg;mediaanalys;ljud- och videotillägg
-title: Adobe Media Analytics för ljud- och videotillägg
-seo-title: Adobe Media Analytics för ljud- och videotillägg
+title: Adobe Media Analytics for Audio and Video Extension Destination
 description: Tillägget Adobe Media Analytics för ljud och video är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Adobe Media Analytics for Video-tillägget är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '561'
+source-wordcount: '524'
 ht-degree: 0%
 
 ---
 
 
-# Adobe Media Analytics for Audio and Video Extension {#adobe-analytics-for-video-extension}
-
-## Översikt {#overview}
+# Adobe Media Analytics for Audio and Video extension {#adobe-analytics-for-video-extension}
 
 Adobe Media Analytics for Audio and Video är ett tillägg till basanalysverktyget som ger kunderna robusta mått för video, ljud och annonser.
 
