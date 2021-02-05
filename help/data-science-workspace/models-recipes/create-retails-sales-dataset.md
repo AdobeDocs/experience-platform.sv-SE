@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;butiksrecept;Data Science Workspace;populära ämnen;recept
 solution: Experience Platform
-title: Skapa försäljningsschema och datauppsättning för återförsäljning
+title: Skapa schema och datauppsättning för butiksförsäljning
 topic: tutorial
 type: Tutorial
 description: I den här självstudiekursen får du de krav och resurser som krävs för alla andra självstudiekurser i Adobe Experience Platform Data Science Workspace. När du är klar är schema och datauppsättningar för detaljhandelsförsäljning tillgängliga för dig och medlemmar i din IMS-organisation på Experience Platform.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
 source-wordcount: '554'
 ht-degree: 0%
@@ -112,7 +112,7 @@ för mer information.
 Du har även importerat exempeldata för butiksförsäljning till [!DNL Experience Platform] med det angivna bootstrap-skriptet.
 
 Så här fortsätter du att arbeta med inkapslade data:
-- [Analysera dina data med Jupyter-anteckningsböcker](../jupyterlab/analyze-your-data.md)
-   - Använd Jupyter-anteckningsböcker i Data Science Workspace för att få tillgång till, utforska, visualisera och förstå dina data.
+- [Analysera dina data med Jupyter Notebooks](../jupyterlab/analyze-your-data.md)
+   - Använd Jupyter Notebooks i Data Science Workspace för att få tillgång till, utforska, visualisera och förstå era data.
 - [Paketera källfiler i en mottagare](./package-source-files-recipe.md)
    - Följ den här självstudiekursen för att lära dig hur du kan ta med din egen modell till [!DNL Data Science Workspace] genom att paketera källfiler i en importerbar Recipe-fil.
