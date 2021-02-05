@@ -1,14 +1,14 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;namnrymd;Namnrymd;Namnrymder;namnutrymmen;identitetsnamnrymd;Identitetsnamnrymd;Identitet;Identitetstjänst;Identitetstjänst
 solution: Experience Platform
-title: Adobe Experience Platform Identity Service
+title: Översikt över namnområde för identitet
 topic: overview
 description: 'Identitetsnamnutrymmen är en komponent i identitetstjänsten som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet"name@email.com" som e-postadress eller"443522" som ett numeriskt CRM-ID. '
 translation-type: tm+mt
-source-git-commit: 0547c33e831fe1ac684f55a0e79978cd7f191e65
+source-git-commit: 73035aec86297cfc4ee9337cf922d599001379c3
 workflow-type: tm+mt
-source-wordcount: '1451'
-ht-degree: 1%
+source-wordcount: '1449'
+ht-degree: 0%
 
 ---
 
