@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;direktuppspelning;direktuppspelningsuppläsning;validering;direktuppspelningsvalidering;validering;synkron validering;synkron validering;asynkron validering;asynkron validering;
 solution: Experience Platform
-title: Direktinmatningsvalidering
+title: Direktuppspelad matningsvalidering
 topic: tutorial
 type: Tutorial
 description: Med direktuppspelningsintag kan du överföra data till Adobe Experience Platform med direktuppspelningsslutpunkter i realtid. API:er för direktuppspelning stöder två valideringslägen - synkron och asynkron.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 089a4d517476b614521d1db4718966e3ebb13064
 workflow-type: tm+mt
 source-wordcount: '875'
 ht-degree: 2%
