@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;update accounts
+keywords: Experience Platform;hem;populära ämnen;uppdatera konton
 description: Under vissa omständigheter kan det vara nödvändigt att uppdatera informationen för ett befintligt källkonto. På arbetsytan Källor kan du lägga till, redigera och ta bort information om en befintlig batch- eller direktuppspelningsanslutning, inklusive namn, beskrivning och autentiseringsuppgifter.
 solution: Experience Platform
-title: Uppdatera kontoinformation i användargränssnittet
+title: Uppdatera kontoinformation för källanslutning i användargränssnittet
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 9b48bc1426e6259ea0b2cf9b420b55b92712f7c2
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '424'
+source-wordcount: '433'
 ht-degree: 0%
 
 ---
