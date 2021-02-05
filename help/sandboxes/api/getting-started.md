@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;handbok för sandlådeutvecklare
 solution: Experience Platform
-title: Utvecklarhandbok för sandbox-API
+title: API-guide för sandlådor
 topic: developer guide
-description: Den här utvecklarhandboken innehåller steg som hjälper dig att använda sandbox-API:t för att hantera sandlådor i Experience Platform, och innehåller exempel på API-anrop för att utföra olika åtgärder.
+description: Med sandbox-API kan utvecklare programmässigt hantera sandlådor i Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: e649ab3da077cdd8e98562199b8bdece6108a572
 workflow-type: tm+mt
-source-wordcount: '376'
+source-wordcount: '373'
 ht-degree: 0%
 
 ---
 
 
-# Utvecklarhandbok för sandbox-API
+# API-guide för sandlådor
 
 Sandlådor i Adobe Experience Platform har isolerade utvecklingsmiljöer där du kan testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka produktionsmiljön.
 
