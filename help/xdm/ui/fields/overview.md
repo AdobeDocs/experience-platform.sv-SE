@@ -5,7 +5,7 @@ title: Definiera XDM-fält i användargränssnittet
 description: Lär dig hur du definierar XDM-fält i användargränssnittet för Experience Platform.
 topic: user guide
 translation-type: tm+mt
-source-git-commit: 70b3ad788dd78c6100782869e3065cc17a54ece1
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
 source-wordcount: '1236'
 ht-degree: 3%
