@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;populära topics;data science workspace;data science
 solution: Experience Platform
-title: Utvecklarhandbok för Sensei Machine Learning API
+title: API-handbok för Sensei Machine Learning
 topic: Developer guide
-description: Utvecklarhandboken innehåller steg som hjälper dig att börja använda API:t Sensei Machine Learning och demonstrerar API-anrop för att utföra CRUD-åtgärder på olika resurser i Data Science Workspace.
+description: Med API:t Sensei Machine Learning kan utvecklare utföra CRUD-åtgärder på olika Data Science Workspace-resurser. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: e649ab3da077cdd8e98562199b8bdece6108a572
 workflow-type: tm+mt
-source-wordcount: '244'
+source-wordcount: '243'
 ht-degree: 2%
 
 ---
 
 
-# [!DNL Sensei Machine Learning] Utvecklarhandbok för API
+# [!DNL Sensei Machine Learning] API-guide
 
 Med API:t [!DNL Sensei Machine Learning] kan datavetare ordna och hantera maskininlärningstjänster, från algoritmintroduktion till experimenterande och till driftsättning.
 
