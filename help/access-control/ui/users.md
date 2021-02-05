@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;product profile
+keywords: Experience Platform;hem;populära ämnen;produktprofil
 solution: Experience Platform
 title: Hantera användare för en produktprofil
 topic: user guide
 description: I det här dokumentet visas hur du hanterar användare för en produktprofil i användargränssnittet för Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: f8d13b305a61f8606c4fa1ceee6d4518b5d83fda
+source-git-commit: a1103bfbf79f9c87bac5b113c01386a6fb8950e7
 workflow-type: tm+mt
-source-wordcount: '192'
+source-wordcount: '199'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 1%
 
 # Hantera användare för en produktprofil
 
-Om du vill tilldela eller ta bort användare från en produktprofil öppnar du profilens informationssida och går till **[!UICONTROL Users]** fliken. Klicka här **[!UICONTROL Add User]**.
+Om du vill tilldela eller ta bort användare från en produktprofil öppnar du profilens informationssida och går till fliken **[!UICONTROL Users]**. Klicka **[!UICONTROL Add User]** härifrån.
 
 ![add-users-button](../images/add-users-button.png)
 
@@ -27,7 +27,7 @@ Dialogrutan **[!UICONTROL Add User]** visas. Med hjälp av sökfältet kan du s�
 >
 >Om en användare inte visas i fönstret Komplettera automatiskt anger du den fullständiga e-postadressen i sökfältet. En inbjudan skickas till e-postmeddelandet med instruktioner om hur du konfigurerar ett Adobe ID-konto.
 
-När du har valt en användare klickar du för **[!UICONTROL Save]** att lägga till dem i produktprofilen.
+När du har valt en användare klickar du på **[!UICONTROL Save]** för att lägga till dem i produktprofilen.
 
 ![add-user-save](../images/add-user-save.png)
 
@@ -37,4 +37,4 @@ Fliken **[!UICONTROL Users]** för produktprofilen visas igen, där den tillagda
 
 ## Nästa steg
 
-Nu när du har lärt dig hur du styr åtkomsten till [!DNL Platform] funktioner via [!DNL Admin Console]finns avsnittet i bilagan i [åtkomstkontrollsöversikten](../home.md) för att lära dig mer om de enskilda behörigheterna och de [!DNL Platform] funktioner de ger åtkomst till.
+Nu när du har lärt dig hur du styr åtkomsten till [!DNL Platform]-funktioner genom [!DNL Admin Console] kan du läsa avsnittet i bilagan i översikten [åtkomstkontroll](../home.md) om du vill veta mer om de enskilda behörigheterna och de [!DNL Platform]-funktioner de ger åtkomst till.
