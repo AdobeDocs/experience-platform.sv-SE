@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;home;populära topics;query service;Query service;sample queries;sample query;adobe analytics;
 solution: Experience Platform
-title: Exempelfrågor
+title: Exempelfrågor om Adobe Analytics-data
 topic: queries
 description: Data från utvalda Adobe Analytics rapportsviter omvandlas till XDM Experience Events och hämtas till Adobe Experience Platform som datauppsättningar för dig. I det här dokumentet beskrivs ett antal användningsfall där Adobe Experience Platform Query Service använder dessa data, och de inkluderade exempelfrågorna bör fungera med dina Adobe Analytics-datauppsättningar.
 translation-type: tm+mt
-source-git-commit: e2c648829bb3268ab319da934f5cc6cc811290b3
+source-git-commit: 97dc0b5fb44f5345fd89f3f56bd7861668da9a6e
 workflow-type: tm+mt
-source-wordcount: '1017'
+source-wordcount: '1021'
 ht-degree: 1%
 
 ---
@@ -216,7 +216,7 @@ Vid rapportering kommer order, intäkter, produktvisningar och kundvagnstillägg
 | eVar6 (produktsökningsmetod) | omsättning | order | produktvyer | kundvagn lägger till |
 | ------------------------------ | ------- | ------ | ------------- | ----- |
 | intern sökning:sommarskjorta | 19,99 | 1 | 3 | 3 |
-| intern sökning:vintertid | 12,99 | 3 | 3 | 3 |
+| intern sökning:vintertid | 12,99 | 3 | 3 | 1 |
 
 Mer information om hur du använder konverteringssyntaxen finns i Adobe Analytics-dokumentationen om [implementering av eVars med konverteringssyntax](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar-merchandising.html?lang=en#implement-using-conversion-variable-syntax).
 
