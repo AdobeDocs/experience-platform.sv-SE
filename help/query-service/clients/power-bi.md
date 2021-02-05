@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;frågetjänst;Query Service;Power BI;power bi;connect to query service;
 solution: Experience Platform
-title: Anslut till Power BI
+title: Anslut Power BI till frågetjänst
 topic: connect
 description: Det här dokumentet går igenom stegen för att ansluta Power BI med Adobe Experience Platform Query Service.
 translation-type: tm+mt
-source-git-commit: eac93f3465fa6ce4af7a6aa783cf5f8fb4ac9b9b
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '459'
+source-wordcount: '464'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Power BI]
+# Anslut [!DNL Power BI] till frågetjänsten (PC)
 
 Det här dokumentet beskriver hur du ansluter Power BI till Adobe Experience Platform Query Service.
 
@@ -22,8 +22,6 @@ Det här dokumentet beskriver hur du ansluter Power BI till Adobe Experience Pla
 > Den här handboken förutsätter att du redan har tillgång till [!DNL Power BI] och är bekant med hur du navigerar i dess gränssnitt. Mer information om [!DNL Power BI] finns i [officiell [!DNL Power BI] dokumentation](https://docs.looker.com/).
 >
 > Dessutom är Power BI **endast** tillgängligt på Windows-enheter.
-
-## Konfigurera [!DNL Power BI]
 
 När du har installerat Power BI måste du installera `Npgsql`, ett .NET-drivrutinspaket för PostgreSQL. Mer information om Npgsql finns i [Npgsql-dokumentationen](https://www.npgsql.org/doc/index.html).
 
