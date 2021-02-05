@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;data model;ui;workspace;enum;field;
 solution: Experience Platform
-title: Definiera ett uppräkningsfält i användargränssnittet
+title: Definiera uppräkningsfält i användargränssnittet
 description: Lär dig hur du definierar ett uppräkningsfält i användargränssnittet för Experience Platform.
 topic: user guide
 translation-type: tm+mt
-source-git-commit: 2e20403122e65d28f04114af9b7e8d41874f76e2
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '246'
+source-wordcount: '244'
 ht-degree: 0%
 
 ---
 
 
-# Definiera ett uppräkningsfält i användargränssnittet
+# Definiera uppräkningsfält i användargränssnittet
 
 I Experience Data Model (XDM) representerar ett uppräkningsfält ett fält som är begränsat till en fördefinierad lista med godkända värden.
 
