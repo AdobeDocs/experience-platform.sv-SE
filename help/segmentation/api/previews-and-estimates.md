@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segmentation Service;previews;estimates;previews and estimates;estimates and previews;api;API;
+keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;förhandsvisningar;uppskattningar;förhandsvisningar och uppskattningar;uppskattningar och förhandsvisningar;api;API;
 solution: Experience Platform
-title: Förhandsgranska och beräkna slutpunkter
+title: Förhandsgranskningar och uppskattningar av API-slutpunkter
 topic: developer guide
-description: När ni utvecklar er segmentdefinition kan ni använda verktygen för uppskattning och förhandsgranskning i Adobe Experience Platform för att se information på sammanfattningsnivå för att säkerställa att ni isolerar den förväntade målgruppen.
+description: Med förhandsgranskningarna och uppskattningarna av slutpunkterna i Adobe Experience Platform Segmentation Service API kan du visa information på sammanfattningsnivå för att säkerställa att du isolerar den förväntade målgruppen i dina segment.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '773'
+source-wordcount: '793'
 ht-degree: 1%
 
 ---
@@ -15,11 +15,11 @@ ht-degree: 1%
 
 # Förhandsgranska och beräkna slutpunkter
 
-När du utvecklar segmentdefinitionen kan du använda verktygen för uppskattning och förhandsgranskning i [!DNL Adobe Experience Platform] för att se information på sammanfattningsnivå för att se till att du isolerar den förväntade målgruppen. **Förhandsvisningar** innehåller sidnumrerade listor med kvalificeringsprofiler för en segmentdefinition, så att du kan jämföra resultaten med vad du förväntar dig. **Uppskattningar** ger statistisk information om en segmentdefinition, t.ex. förväntad målgruppsstorlek, konfidensintervall och felstandardavvikelse.
+När du utvecklar segmentdefinitionen kan du använda verktygen för uppskattning och förhandsgranskning i [!DNL Adobe Experience Platform] för att se information på sammanfattningsnivå för att säkerställa att du isolerar den förväntade målgruppen. **I** Förhandsgranskningar finns sidnumrerade listor med kvalificeringsprofiler för en segmentdefinition, så att du kan jämföra resultaten med vad du förväntar dig. **Uppskattningar** ger statistisk information om en segmentdefinition, t.ex. förväntad målgruppsstorlek, konfidensintervall och felstandardavvikelse.
 
 ## Komma igång
 
-Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Platform Segmentation Service] API:t. Innan du fortsätter bör du läsa [Komma igång-guiden](./getting-started.md) för att få viktig information som du behöver veta för att kunna anropa API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
+Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Platform Segmentation Service]-API:t. Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
 
 ## Hur uppskattningar genereras
 
@@ -43,7 +43,7 @@ Exempelstorleken för genomsökningen beror på det totala antalet enheter i din
 
 ## Skapa en ny förhandsgranskning {#create-preview}
 
-Du kan skapa en ny förhandsgranskning genom att göra en POST-förfrågan till `/preview` slutpunkten.
+Du kan skapa en ny förhandsgranskning genom att göra en POST-förfrågan till `/preview`-slutpunkten.
 
 >[!NOTE]
 >
@@ -75,8 +75,8 @@ curl -X POST https://platform.adobe.io/data/core/ups/preview \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `predicateExpression` | PQL-uttrycket som data ska frågas efter. |
-| `predicateType` | Predikattypen för frågeuttrycket under `predicateExpression`. För närvarande är det enda godkända värdet för den här egenskapen `pql/text`. |
-| `predicateModel` | Namnet på [!DNL Experience Data Model] (XDM)-schemat som profildata baseras på. |
+| `predicateType` | Predikattypen för frågeuttrycket under `predicateExpression`. För närvarande är det enda tillåtna värdet för den här egenskapen `pql/text`. |
+| `predicateModel` | Namnet på det [!DNL Experience Data Model] (XDM)-schema som profildata baseras på. |
 
 **Svar**
 
@@ -97,9 +97,9 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) med information om den nya f
 | `state` | Det aktuella läget för förhandsgranskningsjobbet. När den skapas är den i läget&quot;NYTT&quot;. Därefter kommer det att vara i tillståndet &quot;RUNNING&quot; tills bearbetningen är klar, och då blir det &quot;RESULT_READY&quot; eller &quot;FAILED&quot;. |
 | `previewId` | ID:t för förhandsgranskningsjobbet, som ska användas i sökningssyfte vid visning av en uppskattning eller förhandsvisning, enligt beskrivningen i nästa avsnitt. |
 
-## Hämta resultatet från en viss förhandsgranskning {#get-preview}
+## Hämta resultatet av en specifik förhandsgranskning {#get-preview}
 
-Du kan hämta detaljerad information om en viss förhandsgranskning genom att göra en GET-förfrågan till slutpunkten och ange ID:t för förhandsgranskning i sökvägen för begäran. `/preview`
+Du kan hämta detaljerad information om en viss förhandsgranskning genom att göra en GET-förfrågan till `/preview`-slutpunkten och ange ID:t för förhandsgranskning i sökvägen för begäran.
 
 **API-format**
 
@@ -109,7 +109,7 @@ GET /preview/{PREVIEW_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{PREVIEW_ID}` | Värdet `previewId` för den förhandsgranskning som du vill hämta. |
+| `{PREVIEW_ID}` | `previewId`-värdet för den förhandsgranskning som du vill hämta. |
 
 **Begäran**
 
@@ -172,11 +172,11 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `results` | En lista över enhets-ID:n, tillsammans med deras relaterade identiteter. De angivna länkarna kan användas för att söka efter de angivna entiteterna med hjälp av [[!DNL Profile Access API]](../../profile/api/entities.md). |
+| `results` | En lista över enhets-ID:n, tillsammans med deras relaterade identiteter. Länkarna som anges kan användas för att söka efter de angivna entiteterna med hjälp av [[!DNL Profile Access API]](../../profile/api/entities.md). |
 
-## Hämta resultaten från ett specifikt uppskattningsjobb {#get-estimate}
+## Hämta resultatet för ett specifikt uppskattningsjobb {#get-estimate}
 
-När du har skapat ett förhandsgranskningsjobb kan du använda det `previewId` i sökvägen till en GET-förfrågan till `/estimate` slutpunkten för att visa statistisk information om segmentdefinitionen, inklusive förväntad målgruppsstorlek, konfidensintervall och felstandardavvikelse.
+När du har skapat ett förhandsgranskningsjobb kan du använda dess `previewId` i sökvägen för en GET-begäran till `/estimate`-slutpunkten för att visa statistisk information om segmentdefinitionen, inklusive förväntad målgruppsstorlek, konfidensintervall och felstandardavvikelse.
 
 **API-format**
 
@@ -186,7 +186,7 @@ GET /estimate/{PREVIEW_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{PREVIEW_ID}` | Ett uppskattningsjobb aktiveras bara när ett förhandsgranskningsjobb skapas och de två jobben har samma ID-värde för sökningssyften. Det här är det `previewId` värde som returnerades när förhandsgranskningsjobbet skapades. |
+| `{PREVIEW_ID}` | Ett uppskattningsjobb aktiveras bara när ett förhandsgranskningsjobb skapas och de två jobben har samma ID-värde för sökningssyften. Detta är det `previewId`-värde som returnerades när förhandsgranskningsjobbet skapades. |
 
 **Begäran**
 
@@ -231,4 +231,4 @@ Ett lyckat svar returnerar HTTP-status 200 med information om uppskattningsjobbe
 
 ## Nästa steg
 
-När du har läst den här guiden får du nu en bättre förståelse för hur du arbetar med förhandsgranskningar och uppskattningar. Mer information om de andra [!DNL Segmentation Service] API-slutpunkterna finns i översikten [över utvecklarguiden för](./overview.md)segmenteringstjänsten.
+När du har läst den här guiden får du nu en bättre förståelse för hur du arbetar med förhandsgranskningar och uppskattningar. Om du vill veta mer om de andra [!DNL Segmentation Service] API-slutpunkterna läser du översikten [Utvecklarhandboken för segmenteringstjänsten](./overview.md).
