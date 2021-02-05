@@ -1,21 +1,17 @@
 ---
 keywords: Prat-URL-inkorg;Prat-URL-inkorg;Talk URL inbox;talk url;Talk URL;Talk url
-title: Tillägg för URL-inkorg
-seo-title: Inkorgen för Talk URL
+title: Mål för tillägg för URL-inkorg
 description: Tillägget Talk URL Inbox är en röst för kundens mål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Talk URL Inbox är en röst för kundens mål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
 workflow-type: tm+mt
-source-wordcount: '569'
+source-wordcount: '536'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Talk URL Inbox] Tillägg  {#talk-url-extension}
-
-## Översikt {#overview}
+# [!DNL Talk URL Inbox] extension  {#talk-url-extension}
 
 Ta emot röstmeddelanden från besökarna på webbsidan. Inkluderar värdbaserat användargränssnitt och molnbaserad maskininlärning för att omedelbart omvandla röstmeddelanden till textinsikter.
 
