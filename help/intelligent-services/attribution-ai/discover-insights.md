@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;insights;attribution ai;popular topics;attribution ai insights
+keywords: Experience Platform;insikter;attribuering;populära ämnen;attribueringsinsikter
 solution: Intelligent Services, Experience Platform
 title: Upptäck insikter inom Attribution AI
 topic: Attribution AI insights
 description: Det här dokumentet är en guide för interaktion med Service Instance-insikter i användargränssnittet för Adobe Intelligent Services.
 translation-type: tm+mt
-source-git-commit: de16ebddd8734f082f908f5b6016a1d3eadff04c
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '1574'
+source-wordcount: '1584'
 ht-degree: 0%
 
 ---
@@ -21,11 +21,11 @@ Det här dokumentet är en guide för interaktion med Service Instance-insikter 
 
 ## Komma igång
 
-För att kunna utnyttja insikter om Attribution AI måste du ha en tjänstinstans med statusen lyckad körning tillgänglig. Om du vill skapa en ny tjänstinstans går du till [Attribution AI användargränssnittshandbok](./user-guide.md). Om du nyligen har skapat en tjänstinstans och den fortfarande håller på att träna och betygsätta, kan du vänta i 24 timmar tills den är klar.
+För att kunna utnyttja insikter om Attribution AI måste du ha en tjänstinstans med statusen lyckad körning tillgänglig. Om du vill skapa en ny tjänstinstans går du till [användargränssnittshandboken för Attribution AI](./user-guide.md). Om du nyligen har skapat en tjänstinstans och den fortfarande håller på att träna och betygsätta, kan du vänta i 24 timmar tills den är klar.
 
 ## Översikt över insikter om tjänstinstans
 
-In the [!DNL Adobe Experience Platform] UI, select **[!UICONTROL Services]** in the left navigation. Webbläsaren visas och visar tillgängliga Adobe Intelligent Services. **[!UICONTROL Services]** I behållaren för Attribution AI väljer du **[!UICONTROL Open]**.
+Välj **[!UICONTROL Services]** i det vänstra navigeringsfältet i gränssnittet för [!DNL Adobe Experience Platform]. Webbläsaren **[!UICONTROL Services]** visas och visar tillgängliga Adobe Intelligent Services. I behållaren för Attribution AI väljer du **[!UICONTROL Open]**.
 
 ![Åtkomst till din instans](./images/insights/open_Attribution_ai.png)
 
@@ -47,13 +47,13 @@ Om du vill visa mer information om en tjänstinstans väljer du **[!UICONTROL Sh
 
 ![visa mer](./images/insights/show-more.png)
 
-En detaljerad lista visas. Mer information om egenskaperna finns i användarhandboken för [Attribution AI](./user-guide.md).
+En detaljerad lista visas. Mer information om egenskaperna finns i [användarhandboken för Attribution AI](./user-guide.md).
 
 ![visa detaljer](./images/insights/advanced-details.png)
 
 ### Redigera en instans
 
-Om du vill redigera en instans väljer du **[!UICONTROL Edit]** i den övre högra navigeringen.
+Om du vill redigera en instans väljer du **[!UICONTROL Edit]** i navigeringen längst upp till höger.
 ![klicka på redigeringsknappen](./images/insights/edit-button.png)
 
 Dialogrutan Redigera visas. Du kan redigera instansens namn, beskrivning och bedömningsfrekvens. Om instansstatusen är inaktiverad går det inte att redigera bedömningsfrekvensen. Om du vill bekräfta ändringarna och stänga dialogrutan väljer du **[!UICONTROL Save]** i det nedre högra hörnet.
@@ -62,12 +62,12 @@ Dialogrutan Redigera visas. Du kan redigera instansens namn, beskrivning och bed
 
 ### Fler åtgärder {#more-actions}
 
-Knappen finns i den övre högra navigeringen bredvid **[!UICONTROL More actions]** **[!UICONTROL Edit]**. Om du väljer **[!UICONTROL More actions]** det här alternativet öppnas en listruta där du kan välja någon av följande åtgärder:
+Knappen **[!UICONTROL More actions]** finns i den övre högra navigeringen bredvid **[!UICONTROL Edit]**. Om du väljer **[!UICONTROL More actions]** öppnas en listruta där du kan välja någon av följande åtgärder:
 
 - **[!UICONTROL Clone]**: Klonar instansen.
 - **[!UICONTROL Delete]**: Tar bort instansen.
 - **[!UICONTROL Download summary data]**: Hämtar en CSV-fil som innehåller sammanfattningsdata.
-- **[!UICONTROL Access scores]**: Om du väljer **[!UICONTROL Access scores]** Omdirigeras du till [åtkomstpoängen för självstudiekursen](./download-scores.md)om.
+- **[!UICONTROL Access scores]**: Om du väljer  **[!UICONTROL Access scores]** Omdirigeras du till  [åtkomstpoängen för självstudiekursen](./download-scores.md) om.
 - **[!UICONTROL View run history]**: En pover som innehåller en lista över alla poäng som är associerade med tjänstinstansen visas.
 
 ![fler åtgärder](./images/insights/more-actions.png)
@@ -80,13 +80,13 @@ Med hjälp av Attribution AI kan du filtrera data och automatiskt uppdatera grä
 
 När du skapar en ny instans i Attribution AI är ett av de obligatoriska fälten&quot;Conversion events&quot;. Konverteringshändelser är affärsmål som identifierar effekten av marknadsföringsaktiviteter, som e-handelsorder, butiksköp och webbplatsbesök.
 
-I **[!UICONTROL Conversion events]** listrutan kan du välja någon av de händelser som är definierade för instansen för att filtrera data. Om du väljer specifika händelser ändras visualiseringarna av användargränssnittet så att endast konverteringar som tillhör dessa händelser fylls i.
+I den här instansen kan du i listrutan **[!UICONTROL Conversion events]** välja någon av de händelser som är definierade för instansen för att filtrera data. Om du väljer specifika händelser ändras visualiseringarna av användargränssnittet så att endast konverteringar som tillhör dessa händelser fylls i.
 
 ![konverteringshändelse](./images/insights/conversion-event.png)
 
 ### Attributionsmodell
 
-Om du väljer **[!UICONTROL Attribution Model]** det här alternativet öppnas en listruta med alla olika attribueringsmodeller tillgängliga. Du kan välja flera modeller för att jämföra resultaten. Mer information om de olika attribueringsmodellerna och hur de fungerar finns i översikten över [Attribution AI](./overview.md) , som innehåller en tabell med information om varje modell.
+Om du väljer **[!UICONTROL Attribution Model]** öppnas en listruta med alla olika attribueringsmodeller tillgängliga. Du kan välja flera modeller för att jämföra resultaten. Mer information om de olika attribueringsmodellerna och hur de fungerar finns i översikten [Attribution AI](./overview.md) som innehåller en tabell med information om varje modell.
 
 ![attribueringsmodell](./images/insights/attribution-model.png)
 
@@ -94,22 +94,22 @@ Om du väljer **[!UICONTROL Attribution Model]** det här alternativet öppnas e
 
 >[!NOTE]
 >
->Det här filtret finns bara om du utförde den valfria [regionbaserade modelleringen](./user-guide.md#region-based-modeling-optional) i användargränssnittsguiden för Attribution AI när du skapade tjänstinstansen.
+>Det här filtret finns bara om du utförde det valfria steget [regionbaserad modellering](./user-guide.md#region-based-modeling-optional) i användargränssnittsguiden för Attribution AI när du skapade tjänstinstansen.
 
 Med det här filtret kan du markera alla områden som du har konfigurerat när du skapar instansen.
 
 ### Lägg till filter
 
-Du kan lägga till fler filter genom att välja **filterikonen** för att öppna **[!UICONTROL Add filters]** pekaren. Med **[!UICONTROL Add filters]** povern kan du filtrera efter kanal, geografi, medietyp och produkt. Endast tillämpliga filter för en tjänstinstans fylls i av povern. Om du till exempel inte angav geografiska data eller en medietyp kommer dessa filterattribut inte att vara tillgängliga för din instans.
+Du kan lägga till ytterligare filter genom att välja ikonen **filter** för att öppna **[!UICONTROL Add filters]**-porten. Med **[!UICONTROL Add filters]**-drivrutinen kan du filtrera efter Kanal, Geografi, Medietyp och Produkt. Endast tillämpliga filter för en tjänstinstans fylls i av povern. Om du till exempel inte angav geografiska data eller en medietyp kommer dessa filterattribut inte att vara tillgängliga för din instans.
 
 ![extra filter](./images/insights/additional-filters.png)
 
 ![filterpotens](./images/insights/filter-popover.png)
 
 - **[!UICONTROL Channel]:** Om du väljer kanalattributet kan du filtrera alla tillgängliga marknadsföringskanaler. Du kan välja flera kanaler för att jämföra dem.
-- **[!UICONTROL Geography]:** Om du väljer attributet geography kan du filtrera landskoder baserat på regionsbaserade modeller. Beroende på vilka data du har kan det här filtret finnas eller inte finnas. Landskoderna är två tecken långa. Se den fullständiga landskodslistan [här](https://datahub.io/core/country-list).
+- **[!UICONTROL Geography]:** Om du väljer geography-attributet kan du filtrera landskoder baserat på regionsbaserade modeller. Beroende på vilka data du har kan det här filtret finnas eller inte finnas. Landskoderna är två tecken långa. Se den fullständiga landskodslistan [här](https://datahub.io/core/country-list).
 - **[!UICONTROL Media type]:** Om du väljer medietypsattribut kan du filtrera alla definierade medietyper.
-- **[!UICONTROL Product]:** Om du väljer produktattributet kan du filtrera från alla produkter som ursprungligen var inkapslade när du skapade instansen.
+- **[!UICONTROL Product]:Om du** väljer produktattributet kan du filtrera från alla produkter som ursprungligen var inkapslade när du skapade instansen.
 
 ### Datumintervall
 
@@ -119,15 +119,15 @@ Välj kalenderikonen för att öppna datumintervallposeraren. Början- och slutk
 
 ## Översikt över era data
 
-På **[!UICONTROL Overview]** kortet visas det totala antalet konverteringar per attribueringsmodell. Det totala antalet ändras baserat på hur specifik sökningen är med hjälp av de filter som beskrivs tidigare i det här dokumentet. Om du väljer flera modeller läggs ytterligare cirklar till i översikten, där var och en har en egen färg som motsvarar teckenförklaringen.
+På **[!UICONTROL Overview]**-kortet visas det totala antalet konverteringar per attribueringsmodell. Det totala antalet ändras baserat på hur specifik sökningen är med hjälp av de filter som beskrivs tidigare i det här dokumentet. Om du väljer flera modeller läggs ytterligare cirklar till i översikten, där var och en har en egen färg som motsvarar teckenförklaringen.
 
 ![översikt](./images/insights/Overview.png)
 
 ## Trender varje vecka
 
-Kortet **[!UICONTROL Weekly trends]** delar upp den totala konverteringen enligt det datumintervall du anger under filtreringsprocessen.
+Med **[!UICONTROL Weekly trends]**-kortet delas den totala konverteringen upp i det datumintervall som du anger under filtreringsprocessen.
 
-Om du väljer ellipserna i det övre högra hörnet av **veckotrendkortet** visas en listruta där du kan välja trender varje dag, vecka eller månad.
+Om du väljer ellipserna i det övre högra hörnet av **vecktrender**-kortet visas en listruta där du kan välja trender varje dag, vecka eller månad.
 
 När du hovrar över dataraden för en viss attribueringsmodell skapas en pover som visar det totala antalet konverteringar för det datumet.
 
@@ -135,26 +135,26 @@ När du hovrar över dataraden för en viss attribueringsmodell skapas en pover 
 
 ## Uppdelning efter kanal
 
-Kortet används för att bestämma det totala antalet konverteringar i förhållande till varje kanal. **[!UICONTROL Breakdown by channel]** Detta kort kan användas för att fatta beslut om varje kanals effektivitet och avkastningen på investeringen.
+**[!UICONTROL Breakdown by channel]**-kortet används för att bestämma det totala antalet konverteringar i relation till varje kanal. Detta kort kan användas för att fatta beslut om varje kanals effektivitet och avkastningen på investeringen.
 
-Om du markerar ellipserna i det övre högra hörnet av **[!UICONTROL Breakdown by channel]** kortet öppnas en listruta där du kan fylla i data baserat på kontaktytor.
+Om du väljer ellipserna i det övre högra hörnet av **[!UICONTROL Breakdown by channel]**-kortet öppnas en listruta där du kan fylla i data baserat på kontaktytor.
 
 ![fördelningskanal](./images/insights/channel-breakdown.png)
 
 ## Populära kampanjer
 
-Kortet visar en översikt över era kampanjer och hur kampanjen fungerar i varje kanal. **[!UICONTROL Top campaigns]** Med det här kortet kan ni informera teamet om hur effektiv en viss kampanj är för en viss kanal och ge er insikter om vilka kampanjer ni bör investera i ytterligare.
+Kortet **[!UICONTROL Top campaigns]** innehåller en översikt över era kampanjer och hur kampanjen fungerar i varje kanal. Med det här kortet kan ni informera teamet om hur effektiv en viss kampanj är för en viss kanal och ge er insikter om vilka kampanjer ni bör investera i ytterligare.
 
 ![toppkampanjer](./images/insights/top-campaigns.png)
 
 ## Uppdelning efter kontaktytsposition
 
-När du väljer **[!UICONTROL Path Analysis]** tabb läses diagrammen **[!UICONTROL Breakdown by touchpoint position]** och **[!UICONTROL Top conversion paths]** diagrammen in.
+Om du väljer fliken **[!UICONTROL Path Analysis]** läses diagrammen **[!UICONTROL Breakdown by touchpoint position]** och **[!UICONTROL Top conversion paths]** in.
 
 Diagrammet **[!UICONTROL Breakdown by touchpoint position]** är en fördelning av konverteringar utifrån kontaktytans position jämfört med alla konverteringsbanor. Det här diagrammet hjälper dig att förstå vilka kontaktytor som är mer effektiva i olika faser av konverteringsbanan. Stegen är starter, spelare och närmare.
 
-- **Starter:** Anger att kontaktytan var den första beröringen i en konverteringsbana.
-- **Spelare:** Anger att kontaktytan inte var den första eller sista beröringen som ledde till en konvertering.
+- **Starter:** Anger att kontaktytan var den första kontakten i en konverteringsbana.
+- **Spelare:** Anger att kontaktytan inte var den första eller sista kontakten som ledde till en konvertering.
 - **Closer:** Anger att kontaktytan var den sista kontakten före en konvertering.
 
 >!![NOTE]
@@ -164,17 +164,17 @@ Summan av procentandelen för en attribueringsmodell för alla kontaktytor och p
 
 ## De vanligaste konverteringsbanorna
 
-I diagrammet visas de påverkade och algoritmiska poängen på de översta konverteringsbanorna i de valda områdena. **[!UICONTROL Top conversion paths]** I det här diagrammet kan du se vilka kontaktytor som bidrar till konverteringarna och vad attribueringspoängen är för varje kontaktyta. Du kan använda den här informationen för att visa de mest frekventa banorna i ett visst område och se om det uppstår några mönster mellan de olika uppsättningarna med kontaktytor.
+Diagrammet **[!UICONTROL Top conversion paths]** visar de påverkade och algoritmiska poängen på de översta konverteringsbanorna i de valda områdena. I det här diagrammet kan du se vilka kontaktytor som bidrar till konverteringarna och vad attribueringspoängen är för varje kontaktyta. Du kan använda den här informationen för att visa de mest frekventa banorna i ett visst område och se om det uppstår några mönster mellan de olika uppsättningarna med kontaktytor.
 
 ![De vanligaste användarsökvägarna](./images/insights/Touchpoint-paths.png)
 
 ## Pekpunktseffektivitet
 
-Om du väljer **[!UICONTROL Touchpoint Effectiveness]** fliken läses **[!UICONTROL Touchpoint effectiveness]** kortet in. Det här kortet använder Attribution AI datadistribution för att visa information för varje kontaktyta. Data för den här tabellen genereras endast för specifika tidsperioder enligt datumet i kortets övre högra **[!UICONTROL As of]** hörn.
+Om du väljer fliken **[!UICONTROL Touchpoint Effectiveness]** läses kortet in. **[!UICONTROL Touchpoint effectiveness]** Det här kortet använder Attribution AI datadistribution för att visa information för varje kontaktyta. Data för den här tabellen genereras endast för specifika tidsperioder enligt datumet **[!UICONTROL As of]** i kortets övre högra hörn.
 
 ![val av kontaktyteffekt](./images/insights/Touchpoint-effectiveness.png)
 
-Du kan använda **[!UICONTROL Touchpoint effectiveness]** kortinformationen för att förstå hur en kontaktyta bidrar till en konvertering. Du kan också se hur effektiv varje kontaktyta är med följande prestandamått:
+Du kan använda kortinformationen **[!UICONTROL Touchpoint effectiveness]** för att förstå hur en kontaktyta bidrar till en konvertering. Du kan också se hur effektiv varje kontaktyta är med följande prestandamått:
 
 **Perfekta** banor: Det här måttet visar en procentandel av banorna som uppnår eller inte uppnår konvertering för kontaktytan. Du ser högre konverteringar om förhållandet mellan banor (i procent) som uppnår konvertering till banor som inte uppnår konvertering är högt.
 
@@ -189,7 +189,7 @@ Högre kontaktytvolym garanterar inte högre effektivitetsmått.
 
 ## Nästa steg
 
-När du är klar med filtreringen av data och kan visa lämplig information kan du välja att få åtkomst till poängen. Om du vill ha en detaljerad guide om hur du får tillgång till dina poäng kan du gå till [självstudiekursen i Attribution AI](./download-scores.md) . Dessutom kan du hämta sammanfattningsdata enligt [fler åtgärder](#more-actions). Om du väljer Hämta sammanfattningsdata hämtas sammanfattningsdata som aggregerats efter datum.
+När du är klar med filtreringen av data och kan visa lämplig information kan du välja att få åtkomst till poängen. Om du vill ha en fördjupad guide om hur du får tillgång till dina poäng kan du gå till [åtkomstpoängen i självstudiekursen för Attribution AI](./download-scores.md). Dessutom kan du hämta sammanfattningsdata enligt [fler åtgärder](#more-actions). Om du väljer Hämta sammanfattningsdata hämtas sammanfattningsdata som aggregerats efter datum.
 
 ## Ytterligare resurser
 
