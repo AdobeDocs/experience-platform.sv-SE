@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;molnlagringsdata
 solution: Experience Platform
-title: Samla in molnlagringsdata via källanslutningar och API:er
+title: Samla in molnlagringsdata med hjälp av källanslutningar och API:er
 topic: overview
 type: Tutorial
-description: Den här självstudiekursen beskriver stegen för att hämta data från ett molnlagringsutrymme från tredje part och föra in dem på plattformen via källanslutningar och API:er.
+description: I den här självstudiekursen beskrivs stegen för att hämta data från ett molnlagringsutrymme från tredje part och föra in dem på plattformen med hjälp av källanslutningar och API:er.
 translation-type: tm+mt
-source-git-commit: c168a1b597a1ac2d85a8b896f3b6a8d213fcb1ae
+source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
 workflow-type: tm+mt
 source-wordcount: '1639'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 ---
 
 
-# Samla in molnlagringsdata via källanslutningar och API:er
+# Samla in molnlagringsdata med källanslutningar och API:er
 
 I den här självstudiekursen beskrivs stegen för att hämta data från ett molnlagringsutrymme från tredje part och föra in dem på plattformen via källanslutningar och [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
