@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;källkopplingar;källanslutning;källor;datakällor;datakällor;datakällanslutning;datakällanslutning
 solution: Experience Platform
-title: Adobe Experience Platform Source Connectors - översikt
+title: Översikt över källkopplingar
 topic: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
-source-wordcount: '913'
+source-wordcount: '910'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Experience Platform tillåter att data hämtas från andra Adobe-program, inklus
 - [Skapa en Adobe Analytics Classifications-datakällanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/classifications.md)
 - [Adobe Analytics dataanslutning - översikt](connectors/adobe-applications/analytics.md)
 - [Skapa en Adobe Analytics-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/analytics.md)
-- [Skapa en källkoppling för kundattribut i användargränssnittet](./tutorials/ui/create/adobe-applications/customer-attributes.md)
+- [Skapa en källanslutning för kundattribut i användargränssnittet](./tutorials/ui/create/adobe-applications/customer-attributes.md)
 
 ### Reklam
 
