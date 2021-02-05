@@ -1,22 +1,18 @@
 ---
 keywords: Facebook;facebook;Socialt nätverk;Socialt nätverk;autentisering av sociala nätverk;Autentisering av sociala nätverk
-title: Målarbetsflöde för sociala nätverk
+title: Skapa ett mål för sociala nätverk
 type: Tutorial
-seo-title: Målarbetsflöde för sociala nätverk
-description: Instruktioner för att ansluta till sociala nätverk och konton
-seo-description: Instruktioner för att ansluta till sociala nätverk och konton
+description: Lär dig hur du ansluter till annonskonton för sociala nätverk i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: d1aa2c825cd679d593cf97d84506058482a7fe8f
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '442'
+source-wordcount: '429'
 ht-degree: 0%
 
 ---
 
 
-# Autentiseringsarbetsflöde för mål för sociala nätverk {#social-network-destinations-workflow}
-
-## Arbetsflöde för att skapa mål för sociala nätverk
+# Skapa ett mål för sociala nätverk {#social-network-destinations-workflow}
 
 I den här självstudiekursen används [!DNL Facebook] som exempel, men arbetsflödet i Adobe Experience Platform är detsamma för alla mål för sociala nätverk när fler läggs till i produkten.
 
