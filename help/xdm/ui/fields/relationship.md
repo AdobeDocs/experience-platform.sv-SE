@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;data model;ui;workspace;relationship;field;
 solution: Experience Platform
-title: Definiera ett relationsfält i användargränssnittet
+title: Definiera relationsfält i användargränssnittet
 description: Lär dig hur du definierar ett relationsfält i användargränssnittet i Experience Platform.
 topic: user guide
 translation-type: tm+mt
-source-git-commit: 2e20403122e65d28f04114af9b7e8d41874f76e2
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '251'
+source-wordcount: '249'
 ht-degree: 0%
 
 ---
 
 
-# Definiera ett relationsfält i användargränssnittet
+# Definiera relationsfält i användargränssnittet
 
 I Experience Data Model (XDM) är ett [unionsschema](../../schema/composition.md#union) en enhetlig vy över alla scheman som tillhör samma klass och som också har aktiverats för [kundprofil i realtid](../../../profile/home.md). Unionsschemat utnyttjas av Profil för att skapa en fullständig representation av en kund utifrån olika upplevelsedata.
 
