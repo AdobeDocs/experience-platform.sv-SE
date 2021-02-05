@@ -1,14 +1,14 @@
 ---
 keywords: Experience Platform;maskininlärningsmodell;Data Science Workspace;Kundprofil i realtid;populära ämnen;maskininlärningsinsikter
 solution: Experience Platform
-title: Berika kundprofilen i realtid med maskininlärningsinsikter
+title: Berika kundprofilen i realtid med insikt i maskininlärning
 topic: tutorial
 type: Tutorial
-description: Det här dokumentet innehåller en guide om hur ni berikar kundprofilen i realtid med maskininlärda insikter.
+description: Det här dokumentet innehåller en guide om hur du kan förbättra kundprofilen i realtid med maskininlärningsinsikter.
 translation-type: tm+mt
-source-git-commit: 62e6bb7e72637b06808ff87dc21f40af2c4e2d45
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '635'
+source-wordcount: '640'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 Adobe Experience Platform [!DNL Data Science Workspace] innehåller verktyg och resurser för att skapa, utvärdera och använda maskininlärningsmodeller för att generera dataprognoser och insikter. När maskininlärningsinsikter hämtas in till en [!DNL Profile]-aktiverad datauppsättning, hämtas samma data även som [!DNL Profile]-poster som sedan kan segmenteras med [!DNL Adobe Experience Platform Segmentation Service]. När data från profil- och tidsserier hämtas bestämmer kundprofilen i realtid automatiskt att inkludera eller exkludera data från segment genom en pågående process som kallas direktuppspelningssegmentering, innan den sammanfogas med befintliga data och unionsvyn uppdateras. Resultatet blir att ni omedelbart kan utföra beräkningar och fatta beslut för att leverera förbättrade, individanpassade upplevelser till kunderna när de interagerar med ert varumärke.
 
-Det här dokumentet innehåller länkar till självstudiekurser som gör att du kan förbättra [!DNL Real-time Customer Profile] med dina maskininlärda insikter.
+Det här dokumentet innehåller länkar till självstudiekurser som gör att du kan förbättra [!DNL Real-time Customer Profile] med dina maskininlärningsuppgifter.
 
 ## Komma igång
 
