@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;home;populära topics;query service;Query service;experience event queries;experience event query;Experience Event query;
 solution: Experience Platform
-title: Experience Event-frågor
+title: Exempelfrågor för Experience Events
 topic: queries
 type: Tutorial
-description: Följande dokument innehåller exempel på frågor som innehåller Experience Events.
+description: Följande dokument innehåller exempel på frågor som innehåller Experience Events i Adobe Experience Platform Query Service.
 translation-type: tm+mt
-source-git-commit: 5348ea4fb381f938ef635077c04cbff69c1b1a45
+source-git-commit: 97dc0b5fb44f5345fd89f3f56bd7861668da9a6e
 workflow-type: tm+mt
-source-wordcount: '310'
+source-wordcount: '320'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Experience Event] frågor
+# Exempelfrågor för [!DNL Experience Events]
 
 Förutom vanliga SQL-frågor har Adobe Experience Platform [!DNL Query Service] stöd för att skriva frågor med [!DNL Experience Events]. Experience Events representeras av Experience Data Model (XDM) ExperienceEvent-klassen, som samlar in en oföränderlig och icke-aggregerad ögonblicksbild av systemet när en användare interagerar med en webbplats eller tjänst, och kan därför användas för tidsdomänanalys.
 
