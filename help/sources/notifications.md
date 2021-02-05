@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics; notifications
-description: Med Adobe I/O Events kan du prenumerera på händelser och använda webhooks för att få meddelanden om status för dina flödeskörningar. Dessa meddelanden innehåller information om hur flödeskörningen lyckades eller om fel som bidragit till ett körningsfel.
+keywords: Experience Platform;hemmabruk;populära ämnen; meddelanden
+description: Genom att prenumerera på Adobe I/O Events kan du använda webhooks för att få meddelanden om flödeskörningsstatus för dina källanslutningar. Dessa meddelanden innehåller information om hur flödeskörningen lyckades eller om fel som bidragit till ett körningsfel.
 solution: Experience Platform
 title: Flödeskörningsmeddelanden
 topic: overview
 translation-type: tm+mt
-source-git-commit: c5455dc0812b251483170ac19506d7c60ad4ecaa
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '767'
+source-wordcount: '771'
 ht-degree: 1%
 
 ---
@@ -15,9 +15,9 @@ ht-degree: 1%
 
 # Flödeskörningsmeddelanden
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-[[!DNL Adobe Experience Platform Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) används för att samla in och centralisera kunddata från olika källor inom [!DNL Platform]. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
+[[!DNL Adobe Experience Platform Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) används för att samla in och centralisera kunddata från olika källor inom  [!DNL Platform]. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
 Med Adobe I/O Events kan du prenumerera på händelser och använda webhooks för att få meddelanden om status för dina flödeskörningar. Dessa meddelanden innehåller information om hur flödeskörningen lyckades eller om fel som bidragit till ett körningsfel.
 
@@ -25,19 +25,19 @@ Det här dokumentet innehåller anvisningar om hur du prenumererar på händelse
 
 ## Komma igång
 
-I den här självstudien antas att du redan har skapat minst en källanslutning vars flöde du vill övervaka. Om du ännu inte har konfigurerat en källanslutning kan du börja med att gå till [källöversikten](./home.md) och konfigurera valfri källa innan du går tillbaka till den här guiden.
+I den här självstudien antas att du redan har skapat minst en källanslutning vars flöde du vill övervaka. Om du ännu inte har konfigurerat en källanslutning kan du börja med att gå till [källöversikten](./home.md) och konfigurera källan innan du går tillbaka till den här guiden.
 
-Det här dokumentet kräver också en fungerande förståelse för webbhooks och hur du ansluter en webkrok från ett program till ett annat. Se [[!DNL I/O Events] dokumentationen](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/intro/webhook_docs_intro.md) för en introduktion till webbböcker.
+Det här dokumentet kräver också en fungerande förståelse för webbhooks och hur du ansluter en webkrok från ett program till ett annat. Se [[!DNL I/O Events] dokumentationen](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/intro/webhook_docs_intro.md) för en introduktion till webbhooks.
 
 ## Registrera en webkrok för meddelanden om flödeskörning
 
-För att få meddelanden om flödeskörning måste du använda Adobe Developer Console för att registrera en webkrok för din [!DNL Experience Platform] integrering.
+För att kunna ta emot meddelanden om flödeskörning måste du använda Adobe Developer Console för att registrera en webkrok för din [!DNL Experience Platform]-integrering.
 
-Följ självstudiekursen om [att prenumerera på [!DNL I/O Event] meddelanden](../observability/notifications/subscribe.md) för mer information om hur du gör detta.
+Följ självstudiekursen om [att prenumerera på [!DNL I/O Event] meddelanden](../observability/notifications/subscribe.md) för detaljerade steg om hur du gör detta.
 
 >[!IMPORTANT]
 >
->Under prenumerationsprocessen kontrollerar du att du väljer **[!UICONTROL Platform notifications]** händelseleverantör och väljer följande händelseprenumerationer:
+>Under prenumerationsprocessen måste du välja **[!UICONTROL Platform notifications]** som händelseleverantör och välja följande händelseprenumerationer:
 >
 >* **[!UICONTROL Experience Platform Source's Flow Run Succeeded]**
 >* **[!UICONTROL Experience Platform Source's Flow Run Failed]**
@@ -51,11 +51,11 @@ Ett meddelande returnerar information som antalet överföringsjobb som körs, f
 
 >[!IMPORTANT]
 >
->Om partiellt intag är aktiverat under skapandet av flödet markeras ett flöde som innehåller både lyckade och misslyckade inmatningar som `sources_flow_run_success` bara om antalet fel är under det tröskelvärde som angetts under skapandet av flödet. Om en lyckad flödeskörning innehåller fel inkluderas dessa fel fortfarande som en del av returnyttolasten.
+>Om partiellt intag är aktiverat under skapandet av flödet markeras ett flöde som innehåller både lyckade och misslyckade inmatningar som `sources_flow_run_success` bara om antalet fel är under det tröskelvärde för fel som angetts under skapandet av flödet. Om en lyckad flödeskörning innehåller fel inkluderas dessa fel fortfarande som en del av returnyttolasten.
 
 ### Lyckades
 
-Ett lyckat svar returnerar en uppsättning med `metrics` som definierar egenskaper för en specifik flödeskörning och `activities` som visar hur data omformas.
+Ett lyckat svar returnerar en uppsättning `metrics` som definierar egenskaper för en specifik flödeskörning och `activities` som visar hur data omformas.
 
 ```json
 {
@@ -314,7 +314,7 @@ Följande svar är ett exempel på en misslyckad flödeskörning, där ett fel i
 
 >[!NOTE]
 >
->Mer information om felmeddelanden finns i [bilagan](#errors) .
+>Mer information om felmeddelanden finns i [bilagan](#errors).
 
 ## Nästa steg
 
