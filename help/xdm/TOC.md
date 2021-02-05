@@ -5,7 +5,7 @@ user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: XDM-guide (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och mixins för att standardisera upplevelsedata.
 translation-type: tm+mt
-source-git-commit: c82ad393ecaa46d01596dbba06f5fc756711bc31
+source-git-commit: 288f47306853fcc39234ad098bc0e73f24f8540a
 workflow-type: tm+mt
 source-wordcount: '231'
 ht-degree: 6%
@@ -45,7 +45,7 @@ ht-degree: 6%
    * [Miljö](./data-types/environment.md)
    * [Geo](./data-types/geo.md)
    * [Geo Circle](./data-types/geo-circle.md)
-   * [Geokoordinater](./data-types/geo-coordinates.md)
+   * [Geo-koordinater](./data-types/geo-coordinates.md)
    * [Info om geo-interaktion](./data-types/geo-interaction-details.md)
    * [Geo Shape](./data-types/geo-shape.md)
    * [Identitet](./data-types/identity.md)
@@ -95,10 +95,10 @@ ht-degree: 6%
    * [Ad hoc-scheman](api/ad-hoc.md)
    * [Bilaga](api/appendix.md)
 * Självstudiekurser {#tutorials}
-   * [Skapa ett schema (API)](tutorials/create-schema-api.md)
    * [Skapa ett schema (UI)](tutorials/create-schema-ui.md)
-   * [Definiera en relation mellan två scheman (API)](tutorials/relationship-api.md)
+   * [Skapa ett schema (API)](tutorials/create-schema-api.md)
    * [Definiera en relation mellan två scheman (UI)](tutorials/relationship-ui.md)
+   * [Definiera en relation mellan två scheman (API)](tutorials/relationship-api.md)
    * [Skapa ett ad hoc-schema (API)](tutorials/ad-hoc.md)
 * [Felsökningsguide](troubleshooting-guide.md)
 * [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)
