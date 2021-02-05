@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform;home;popular topics;Analytics mapping fields;analytics mapping
+keywords: Experience Platform;hem;populära ämnen;Analysmappningsfält;analysmappning
 solution: Experience Platform
-title: Mappningsfält för analyser
+title: Mappningsfält för Adobe Analytics Source Connector
 topic: overview
 description: Med Adobe Experience Platform kan ni importera Adobe Analytics-data via Analytics Data Connector (ADC). Vissa data som hämtas via ADC kan mappas direkt från analysfält till XDM-fält (Experience Data Model), medan andra data kräver omformningar och specifika funktioner för att kunna mappas.
 translation-type: tm+mt
-source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '3378'
+source-wordcount: '3393'
 ht-degree: 0%
 
 ---
 
 
-# Mappningsfält för analyser
+# Mappningar av analysfält
 
 Med Adobe Experience Platform kan ni importera Adobe Analytics-data via Analytics Data Connector (ADC). Vissa data som hämtas via ADC kan mappas direkt från analysfält till XDM-fält (Experience Data Model), medan andra data kräver omformningar och specifika funktioner för att kunna mappas.
 
@@ -23,7 +23,7 @@ Med Adobe Experience Platform kan ni importera Adobe Analytics-data via Analytic
 
 Markerade fält mappas direkt från Adobe Analytics till Experience Data Model (XDM).
 
-Följande tabell innehåller kolumner som visar namnet på analysfältet (*analysfältet*), motsvarande XDM-fält (*XDM-fält*) och dess typ (*XDM-typ*) samt en beskrivning av fältet (*Beskrivning*).
+Följande tabell innehåller kolumner som visar namnet på analysfältet (*Analysfält*), motsvarande XDM-fält (*XDM-fält*) och dess typ (*XDM-typ*) samt en beskrivning av fältet (*Beskrivning*).
 
 >[!NOTE]
 >
@@ -138,7 +138,7 @@ Dessa fält har en enda källa, men mappas till **flera** XDM-platser.
 
 Vissa fält från ADC måste omformas, vilket kräver logik utöver en direkt kopia från Adobe Analytics för att kunna genereras i XDM.
 
-Följande tabell innehåller kolumner som visar namnet på analysfältet (*analysfältet*), motsvarande XDM-fält (*XDM-fält*) och dess typ (*XDM-typ*) samt en beskrivning av fältet (*Beskrivning*).
+Följande tabell innehåller kolumner som visar namnet på analysfältet (*Analysfält*), motsvarande XDM-fält (*XDM-fält*) och dess typ (*XDM-typ*) samt en beskrivning av fältet (*Beskrivning*).
 
 >[!NOTE]
 >
@@ -196,9 +196,9 @@ Följande tabell innehåller kolumner som visar namnet på analysfältet (*analy
 
 Markera fält (så kallade postvärden) kräver mer avancerade omvandlingar innan de kan mappas från Adobe Analytics-fält till Experience Data Model (XDM). För dessa avancerade omvandlingar används Adobe Experience Platfrom Query Service och fördefinierade funktioner (som kallas Adobe-definierade funktioner) för sessioner, attribuering och borttagning av dubbletter.
 
-Mer information om hur du utför den här omvandlingen med hjälp av frågetjänsten finns i dokumentationen för [Adobe-definierade funktioner](../../../../query-service/sql/adobe-defined-functions.md) .
+Mer information om hur du utför den här omvandlingen med hjälp av frågetjänsten finns i dokumentationen för [Adobe-definierade funktioner](../../../../query-service/sql/adobe-defined-functions.md).
 
-Följande tabell innehåller kolumner som visar namnet på analysfältet (*analysfältet*), motsvarande XDM-fält (*XDM-fält*) och dess typ (*XDM-typ*) samt en beskrivning av fältet (*Beskrivning*).
+Följande tabell innehåller kolumner som visar namnet på analysfältet (*Analysfält*), motsvarande XDM-fält (*XDM-fält*) och dess typ (*XDM-typ*) samt en beskrivning av fältet (*Beskrivning*).
 
 >[!NOTE]
 >
