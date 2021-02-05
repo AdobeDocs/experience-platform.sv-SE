@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Amazon Kinesis;amazon kinesis;Kinesis;kinesis
 solution: Experience Platform
-title: Amazon Kinesis Connector
+title: Amazon Kinesis Source Connector - översikt
 topic: overview
-description: Dokumentationen nedan innehåller information om hur du ansluter Amazon Kinesis till plattformen med hjälp av API:er eller användargränssnittet.
+description: Lär dig hur du ansluter Amazon Kinesis till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
 source-wordcount: '234'
 ht-degree: 0%
@@ -33,10 +33,10 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Amazon Ki
 
 ### Använda API:er
 
-- [Skapa en Amazon Kinesis-anslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/kinesis.md)
+- [Skapa en Amazon Kinesis-källanslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/kinesis.md)
 - [Samla in strömmande data med API:t för Flow Service](../../tutorials/api/collect/streaming.md)
 
 ### Använda gränssnittet
 
-- [Skapa en Amazon Kinesis-källanslutning i användargränssnittet](../../tutorials/ui/create/cloud-storage/kinesis.md)
-- [Konfigurera ett dataflöde för en molnlagringskontakt i användargränssnittet](../../tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
+- [Skapa en källanslutning till Amazon Kinesis i användargränssnittet](../../tutorials/ui/create/cloud-storage/kinesis.md)
+- [Konfigurera ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
