@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;data model;ui;workspace;
 solution: Experience Platform
-title: Översikt över arbetsytan Scheman
+title: Översikt över schemaanvändargränssnittet
 description: Den här översikten beskriver de viktigaste funktionerna i arbetsytan Scheman i Experience Platform.
 topic: user guide
 translation-type: tm+mt
-source-git-commit: 2e20403122e65d28f04114af9b7e8d41874f76e2
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
 source-wordcount: '287'
 ht-degree: 2%
@@ -13,7 +13,7 @@ ht-degree: 2%
 ---
 
 
-# [!UICONTROL Schemas] arbetsyta - översikt
+# [!UICONTROL Schemas] Översikt över användargränssnittet
 
 Med arbetsytan [!UICONTROL Schemas] i Adobe Experience Platform användargränssnitt kan du hantera Experience Data Model-resurser (XDM), inklusive scheman, klasser, mixins och datatyper. Du kan visa och utforska kärnresurser från Adobe och skapa anpassade resurser och scheman för din organisation.
 
