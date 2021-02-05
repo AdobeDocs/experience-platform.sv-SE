@@ -1,19 +1,17 @@
 ---
 keywords: starta tillägg;starta tillägg;startmål; plattformsstarttillägg;plattformsstarttillägg;plattformsstartmål
-title: Experience Platform Launch Extensions
-seo-title: Experience Platform Launch Extensions
-description: Launch är nästa generation av tagghanteringsfunktioner från Adobe. Launch ger kunderna ett enkelt sätt att driftsätta och hantera alla analyser, marknadsförings- och annonstaggar som behövs för att driva relevanta kundupplevelser.
-seo-description: Launch är nästa generation av tagghanteringsfunktioner från Adobe. Launch ger kunderna ett enkelt sätt att driftsätta och hantera alla analyser, marknadsförings- och annonstaggar som behövs för att driva relevanta kundupplevelser.
+title: Destinationer för Adobe Experience Platform Launch-tillägg
+description: Adobe Experience Platform Launch är nästa generation av tagghanteringsfunktioner från Adobe. Platform Launch ger kunderna ett enkelt sätt att driftsätta och hantera alla analyser, marknadsförings- och annonstaggar som behövs för att driva relevanta kundupplevelser.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '644'
+source-wordcount: '613'
 ht-degree: 0%
 
 ---
 
 
-# Adobe Experience Platform Launch-tillägg {#overview.md}
+# Adobe Experience Platform Launch-tillägg
 
 Adobe Experience Platform Launch är nästa generation av tagghanteringsfunktioner från Adobe. Platform Launch ger kunderna ett enkelt sätt att driftsätta och hantera alla analyser, marknadsförings- och annonstaggar som behövs för att driva relevanta kundupplevelser. Platform Launch erbjuds Adobe Experience Cloud-kunder som en inkluderad, värdeskapande funktion.
 
