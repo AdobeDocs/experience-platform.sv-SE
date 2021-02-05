@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en Azure Blob- eller Amazon S3-källanslutning i användargränssnittet
 topic: overview
 type: Tutorial
-description: 'Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. '
+description: Lär dig hur du skapar en Azure Blob- eller Amazon S3-källanslutning med Adobe Experience Platform-gränssnittet.
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
 source-wordcount: '144'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 ---
 
 
-# Skapa en [!DNL Azure Blob]- eller [!DNL Amazon] S3-källkoppling i gränssnittet
+# Skapa en [!DNL Azure Blob]- eller [!DNL Amazon] S3-källanslutning i gränssnittet
 
 Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis.
 
