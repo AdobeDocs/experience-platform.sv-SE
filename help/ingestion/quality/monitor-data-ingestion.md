@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;monitoring;monitor;data flows;monitor ingestion;data ingestion;Data ingestion;view records;view batches;
+keywords: Experience Platform;hemmabruk;populära ämnen;övervakning;övervaka;dataflöden;övervaka inmatning;dataöverföring;visa poster;visa batchar;
 solution: Experience Platform
 title: Övervaka datainmatning
 topic: overview
 description: I den här användarhandboken beskrivs hur du övervakar data i Adobe Experience Platform användargränssnitt. Den här guiden kräver att du har en Adobe ID och tillgång till Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: cfdaf72b7f4bf190877006ccd4cc6a7fd014adc2
+source-git-commit: 089a4d517476b614521d1db4718966e3ebb13064
 workflow-type: tm+mt
-source-wordcount: '544'
+source-wordcount: '563'
 ht-degree: 0%
 
 ---
@@ -15,17 +15,17 @@ ht-degree: 0%
 
 # Övervaka datainmatning
 
-Med dataöverföring kan du importera data till Adobe Experience Platform. Du kan antingen använda gruppinmatning, vilket gör att du kan infoga data med olika filtyper (t.ex. CSV-filer), eller direktuppspelning, vilket gör att du kan importera data till [!DNL Platform] direktuppspelningsslutpunkter i realtid.
+Med dataöverföring kan du importera data till Adobe Experience Platform. Du kan antingen använda gruppinmatning, vilket gör att du kan infoga data med olika filtyper (t.ex. CSV), eller direktuppspelningsuppläsning, vilket gör att du kan importera data till [!DNL Platform] med direktuppspelningsslutpunkter i realtid.
 
 I den här användarhandboken beskrivs hur du övervakar data i Adobe Experience Platform användargränssnitt. Den här guiden kräver att du har en Adobe ID och tillgång till Adobe Experience Platform.
 
 ## Övervaka direktuppspelning av data från början till slut
 
-I användargränssnittet [för](https://platform.adobe.com)Experience Platform klickar du **[!UICONTROL Monitoring]** på den vänstra navigeringsmenyn och sedan på **[!UICONTROL Streaming end-to-end]**.
+I [användargränssnittet för Experience Platform](https://platform.adobe.com) klickar du på **[!UICONTROL Monitoring]** på den vänstra navigeringsmenyn och sedan på **[!UICONTROL Streaming end-to-end]**.
 
 ![](../images/quality/monitor-data-flows/click-streaming-end-to-end.png)
 
-Övervakningssidan visas **[!UICONTROL Streaming end-to-end]** . Den här arbetsytan innehåller ett diagram som visar hur många direktuppspelade händelser som tas emot av [!DNL Platform]och ett diagram som visar hur många direktuppspelade händelser som bearbetades av [[!DNL Real-time Customer Profile]](../../profile/home.md)samt en detaljerad lista över inkommande data.
+Övervakningssidan **[!UICONTROL Streaming end-to-end]** visas. Den här arbetsytan innehåller ett diagram som visar hastigheten för direktuppspelade händelser som tas emot av [!DNL Platform], ett diagram som visar hastigheten för direktuppspelade händelser som bearbetades av [[!DNL Real-time Customer Profile]](../../profile/home.md) samt en detaljerad lista över inkommande data.
 
 ![](../images/quality/monitor-data-flows/list-streams.png)
 
@@ -33,11 +33,11 @@ Som standard visas i det övre diagrammet hur snabbt du har fått i sig något u
 
 ![](../images/quality/monitor-data-flows/list-streams-focus-on-top-graph.png)
 
-I det nedre diagrammet visas antalet lyckade direktuppspelningshändelser [!DNL Profile] under de senaste sju dagarna. Du kan justera datumintervallet så att olika tidsperioder visas genom att klicka på den markerade knappen.
+I det nedre diagrammet visas hur snabbt det gick att bearbeta direktuppspelade händelser med [!DNL Profile] under de senaste sju dagarna. Du kan justera datumintervallet så att olika tidsperioder visas genom att klicka på den markerade knappen.
 
 >[!NOTE]
 >
->För att data ska kunna visas i det här diagrammet måste data vara **explicit** aktiverade för [!DNL Profile]. Läs användarhandboken för [!DNL Profile]datauppsättningar om du vill lära dig hur du aktiverar direktuppspelande [data för](../../catalog/datasets/user-guide.md#enable-a-dataset-for-real-time-customer-profile).
+>För att data ska kunna visas i det här diagrammet måste data vara **explicit** aktiverat för [!DNL Profile]. Läs [användarhandboken för datauppsättningar](../../catalog/datasets/user-guide.md#enable-a-dataset-for-real-time-customer-profile) om du vill lära dig hur du aktiverar direktuppspelningsdata för [!DNL Profile].
 
 ![](../images/quality/monitor-data-flows/list-streams-focus-on-bottom-graph.png)
 
@@ -61,11 +61,11 @@ Misslyckade poster innehåller dessutom information om de fel som uppstod när g
 
 ## Övervaka dataöverföring från slutpunkt till slutpunkt
 
-Klicka på den vänstra navigeringsmenyn [[!DNL Experience Platform UI]](https://platform.adobe.com)**[!UICONTROL Monitoring]** i.
+Klicka på **[!UICONTROL Monitoring]** på den vänstra navigeringsmenyn i [[!DNL Experience Platform UI]](https://platform.adobe.com).
 
 ![](../images/quality/monitor-data-flows/click-monitoring.png)
 
-Övervakningssidan **[!UICONTROL Batch end-to-end]** visas med en lista över tidigare importerade batchar. Du kan klicka på valfri grupp om du vill ha mer detaljerad information om den posten.
+Övervakningssidan för **[!UICONTROL Batch end-to-end]** visas med en lista över tidigare importerade batchar. Du kan klicka på valfri grupp om du vill ha mer detaljerad information om den posten.
 
 ![](../images/quality/monitor-data-flows/list-batches.png)
 
@@ -79,6 +79,6 @@ Detaljer för en misslyckad batch visar samma information som en slutförd batch
 
 ![](../images/quality/monitor-data-flows/failed-streaming-record.png)
 
-Dessutom innehåller misslyckade batchar detaljerad information om de fel som uppstod när batchen bearbetades. I exemplet nedan uppstod ett fel med den inkapslade batchen eftersom ett okänt fält av `_experience`.
+Dessutom innehåller misslyckade batchar detaljerad information om de fel som uppstod när batchen bearbetades. I exemplet nedan uppstod ett fel med den kapslade batchen eftersom ett okänt fält av `_experience` användes.
 
 ![](../images/quality/monitor-data-flows/failed-streaming-record-details.png)
