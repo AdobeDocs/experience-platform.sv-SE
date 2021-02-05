@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;grönplum;Greenplum
 solution: Experience Platform
-title: Skapa en GreenPlum-koppling med API:t för Flow Service
+title: Skapa en GreenPlum-källanslutning med API:t för Flow Service
 topic: overview
 type: Tutorial
-description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta GreenPlum till Experience Platform.
+description: Lär dig hur du ansluter GreenPlum till Adobe Experience Platform med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '552'
+source-wordcount: '549'
 ht-degree: 1%
 
 ---
 
 
-# Skapa en [!DNL GreenPlum]-koppling med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL GreenPlum]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
 >[!NOTE]
 >
