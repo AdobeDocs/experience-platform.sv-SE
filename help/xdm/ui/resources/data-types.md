@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: Lär dig hur du skapar och redigerar datatyper i användargränssnittet i Experience Platform.
 translation-type: tm+mt
-source-git-commit: eca896ca068a02da7ec7379e8ced2105bbca9f2d
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
 source-wordcount: '1106'
 ht-degree: 0%
