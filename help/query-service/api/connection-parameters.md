@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;home;populära topics;query service;api guide;connection parameters;Query service;
 solution: Experience Platform
-title: Handbok för frågetjänstutvecklare
+title: API-slutpunkt för anslutningsparametrar
 topic: connection parameters
 description: Du kan hämta anslutningsparametrar för användning av den interaktiva tjänsten genom att göra en GET-förfrågan till slutpunkten /connection_parameters.
 translation-type: tm+mt
-source-git-commit: 648544bc60c0cee8ca8b167118391980b6c33d91
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '147'
+source-wordcount: '148'
 ht-degree: 0%
 
 ---
 
 
-# Anslutningsparametrar
+# Slutpunkt för anslutningsparametrar
 
 ## Exempel på API-anrop
 
