@@ -1,21 +1,17 @@
 ---
 keywords: QuestionPro Intercept Surveys;questions pro intercept survey;QuestionPro;questions pro
-title: QuestionPro Intercept Surveys extension
-seo-title: QuestionPro Intercept Surveys extension
+title: QuestionPro Intercept Surveys Extension Destination
 description: Tillägget QuestionPro Intercept Surveys är ett undersökningsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget QuestionPro Intercept Surveys är ett undersökningsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '549'
+source-wordcount: '518'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL QuestionPro Intercept Surveys] Tillägg  {#questionpro-extension}
-
-## Översikt {#overview}
+# [!DNL QuestionPro Intercept Surveys] extension  {#questionpro-extension}
 
 [!DNL QuestionPro Intercept Surveys] är en plattform för att distribuera enkäter och samla in attityddata vid transaktionstillfället eller när användare öppnar/lämnar din webbplats.
 
