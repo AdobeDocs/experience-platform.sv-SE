@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;developer guide;Data Science Workspace;popular topics;Real time machine learning;
+keywords: Experience Platform;utvecklarguide;Data Science Workspace;populära topics;Real time Machine Learning;
 solution: Experience Platform
-title: Maskininlärning i realtid - översikt
+title: Machine Learning-översikt i realtid
 topic: Overview
 description: Maskininlärning i realtid kan dramatiskt öka relevansen i ert innehåll för digitala upplevelser för era slutanvändare. Detta blir möjligt genom att utnyttja realtidsinterferenser och kontinuerlig inlärning på Experience Edge.
 translation-type: tm+mt
-source-git-commit: 9ba229195892245d29fb4f17b9f2e5cd6c6ea567
+source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
 workflow-type: tm+mt
-source-wordcount: '533'
+source-wordcount: '546'
 ht-degree: 1%
 
 ---
@@ -19,9 +19,9 @@ ht-degree: 1%
 >
 >Maskininlärning i realtid är inte tillgängligt för alla användare ännu. Den här funktionen är alfabet och testas fortfarande. Dokumentet kan komma att ändras.
 
-Maskininlärning i realtid kan dramatiskt öka relevansen i ert innehåll för digitala upplevelser för era slutanvändare. Detta blir möjligt genom att man utnyttjar realtidskonferenser och kontinuerlig inlärning på [!DNL Experience Edge].
+Maskininlärning i realtid kan dramatiskt öka relevansen i ert innehåll för digitala upplevelser för era slutanvändare. Detta är möjligt genom att utnyttja realtidsinterferenser och kontinuerlig inlärning på [!DNL Experience Edge].
 
-En kombination av sömlös beräkning på både hubben och den [!DNL Edge] minskar dramatiskt den latens som traditionellt används för att skapa hyper-personaliserade upplevelser som är både relevanta och responsiva. Maskininlärning i realtid ger därmed en otroligt låg latens för synkront beslutsfattande. Exempel på detta är återgivning av anpassat webbsidesinnehåll eller visning av ett erbjudande eller en rabatt för att minska bortfallet och öka antalet konverteringar i en webbutik.
+En kombination av sömlös beräkning på både hubben och [!DNL Edge] minskar dramatiskt den latens som traditionellt används för att driva hyperpersonaliserade upplevelser som är både relevanta och responsiva. Maskininlärning i realtid ger därmed en otroligt låg latens för synkront beslutsfattande. Exempel på detta är återgivning av anpassat webbsidesinnehåll eller visning av ett erbjudande eller en rabatt för att minska bortfallet och öka antalet konverteringar i en webbutik.
 
 ## Maskininlärningsarkitektur i realtid {#architecture}
 
@@ -45,7 +45,7 @@ Skapa en maskininlärningsmodell i realtid genom att skapa den från grunden ell
 
 ### Distribution
 
-Distribuera din modell för [!DNL Experience Edge] att skapa en Machine Learning-tjänst i realtid i [!UICONTROL Service Gallery] med API-slutpunkten för förutsägelse.
+Distribuera modellen till [!DNL Experience Edge] för att skapa en Machine Learning-tjänst i realtid i [!UICONTROL Service Gallery] med API-slutpunkten för förutsägelse.
 
 ### Inledning
 
@@ -64,8 +64,8 @@ Maskininlärning i realtid är för närvarande alfavärdet. Funktionerna som be
 > Alfabegränsningar:
 > - För närvarande stöds endast ONNX-baserade modeller.
 > - Funktioner som används i noder kan inte serialiseras. En lambda-funktion används till exempel i en Pandarod.
-> - Det finns 20 sekunder viloläge efter att [!DNL Edge] distributionen har slutförts manuellt.
-> - För djupgående inlärning måste data skickas på ett sådant sätt att när de `df.values` anropas returneras en array som är godtagbar för DL-modellen. Detta beror på att ONNX-modellens poängsättningsnod använder `df.values` och skickar utdata för att räkna mot modellen.
+> - Det finns 20 sekunder sömn efter att [!DNL Edge]-distributionen har slutförts manuellt.
+> - För att kunna lära sig mer måste dina data skickas på ett sådant sätt att när `df.values` anropas returneras en array som kan accepteras av din DL-modell. Detta beror på att ONNX-modellens poängsättningsnod använder `df.values` och skickar utdata som ska poängsättas mot modellen.
 
 
 
@@ -75,10 +75,10 @@ Maskininlärning i realtid är för närvarande alfavärdet. Funktionerna som be
 | --- | --- |
 | **Funktioner** | - Med RTML-mallen för bärbara datorer kan du skapa, testa och distribuera en anpassad maskininlärningsmodell. <br> - Stöd för import av förutbildade maskininlärningsmodeller. <br> - Machine Learning SDK i realtid. <br> - Startuppsättning med redigeringsnoder. <br> - Distribueras till Adobe Experience Platform Hub. |
 | **Tillgänglighet** | Nordamerika |
-| **Redigeringsnoder** | - Pandor <br> - ScikitLearn <br> - ONNXNode <br> - Split <br> - ModelUpload <br> - OneHotEncoder |
+| **Redigeringsnoder** | - Pandor <br> - ScikitLearn <br> - ONNXNode <br> - Dela <br> - ModelUpload <br> - OneHotEncoder |
 | **Körtider för poäng** | ONNX |
 
 ## Nästa steg
 
-Du kan börja med att följa guiden [Komma igång](./getting-started.md) . I den här guiden får du hjälp med att konfigurera alla nödvändiga förutsättningar för att skapa en maskininlärningsmodell i realtid.
+Du kan börja med att följa guiden [komma igång](./getting-started.md). I den här guiden får du hjälp med att konfigurera alla nödvändiga förutsättningar för att skapa en maskininlärningsmodell i realtid.
 
