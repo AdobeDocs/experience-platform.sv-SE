@@ -5,7 +5,7 @@ title: Skapa en datauppsättning med API:er
 topic: datasets
 description: Det här dokumentet innehåller allmänna steg för att skapa en datauppsättning med Adobe Experience Platform API:er och fylla i datauppsättningen med hjälp av en fil.
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
 source-wordcount: '1268'
 ht-degree: 0%
