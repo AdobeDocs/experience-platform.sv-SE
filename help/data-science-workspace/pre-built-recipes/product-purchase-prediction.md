@@ -1,21 +1,19 @@
 ---
-keywords: Experience Platform;product purchase recipe;Data Science Workspace;popular topics;recipes;pre build recipe
+keywords: Experience Platform;product purchase recept;Data Science Workspace;populära topics;recipes;prebuild recept
 solution: Experience Platform
-title: Produktinköpsrecept
+title: Produktinköpsförutsägelsekvitto
 topic: overview
 description: Med recept för produktinköpsförutsägelse kan du förutsäga sannolikheten för en viss typ av kundinköpshändelse, till exempel ett produktköp.
 translation-type: tm+mt
-source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
+source-git-commit: f4095a90ff70e8d054bae4f3b0f884552ffd30df
 workflow-type: tm+mt
-source-wordcount: '382'
+source-wordcount: '397'
 ht-degree: 5%
 
 ---
 
 
-# Produktinköpsrecept
-
-## Översikt
+# Produktinköpsprognosrecept
 
 Med recept för produktinköpsförutsägelse kan du förutsäga sannolikheten för en viss typ av kundinköpshändelse, till exempel ett produktköp.
 
@@ -60,6 +58,6 @@ I det här receptet används [XDM-scheman](../../xdm/home.md) för att modellera
 
 ## Algoritm
 
-Först läses utbildningsdatauppsättningen i *ProductPredication* -schemat in. Härifrån utbildas modellen med en [slumpmässig skogsklassificerare](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html). Slumpmässig skogsklassificerare är en typ av ensemberad algoritm som refererar till en algoritm som kombinerar flera algoritmer för att få bättre prediktiva prestanda. Tanken bakom algoritmen är att den slumpmässiga skogsklassificeraren bygger flera beslutsträd och sammanfogar dem för att skapa en mer korrekt och stabil förutsägelse.
+Först läses utbildningsdatauppsättningen i schemat *ProductPredication* in. Härifrån utbildas modellen med en [slumpmässig skogsklassificerare](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html). Slumpmässig skogsklassificerare är en typ av ensemberad algoritm som refererar till en algoritm som kombinerar flera algoritmer för att få bättre prediktiva prestanda. Tanken bakom algoritmen är att den slumpmässiga skogsklassificeraren bygger flera beslutsträd och sammanfogar dem för att skapa en mer korrekt och stabil förutsägelse.
 
 Denna process börjar med att skapa en uppsättning beslutsträd som slumpvis väljer ut undergrupper av utbildningsdata. Därefter beräknas medelvärdet för resultaten av varje beslutsträd.
