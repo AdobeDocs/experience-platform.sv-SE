@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segmentation Service;pql;PQL;Profile Query Language;logical quantifiers;logical quantifier;
+keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;pql;PQL;Profile Query Language;logiska kvantifierare;logisk kvantifierare;
 solution: Experience Platform
-title: Logiska kvantifierare
+title: PQL logiska kvantifierare
 topic: developer guide
 description: Logiska kvantifierare kan användas för att bekräfta villkor med arrayer i PQL (Profile Query Language).
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '200'
-ht-degree: 3%
+source-wordcount: '219'
+ht-degree: 2%
 
 ---
 
@@ -19,7 +19,7 @@ Logiska kvantifierare kan användas för att bekräfta villkor med arrayer i [!D
 
 ## Finns
 
-Funktionen avgör om ett objekt finns i en array, förutsatt att det uppfyller det angivna villkoret. `exists`
+Funktionen `exists` avgör om det finns ett objekt i en array, förutsatt att den uppfyller det angivna villkoret.
 
 **Format**
 
@@ -44,7 +44,7 @@ exists E from xEvent where (E.commerce.item.price > 50), I from E.productListIte
 
 ## För alla
 
-Funktionen avgör `forall` alla objekt i en array som uppfyller alla angivna villkor.
+Funktionen `forall` avgör alla objekt i en array som uppfyller alla angivna villkor.
 
 **Format**
 
@@ -69,4 +69,4 @@ forall E from xEvent where (E.commerce.item.price > 50), I from E.productListIte
 
 ## Nästa steg
 
-Nu när du har lärt dig mer om logiska kvantifierare kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i översikten [över](./overview.md)profilfrågespråk.
+Nu när du har lärt dig mer om logiska kvantifierare kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [översikten över profilfrågespråk](./overview.md).
