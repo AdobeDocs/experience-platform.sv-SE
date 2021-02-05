@@ -5,15 +5,15 @@ user-guide-title: Hjälp om Adobe Experience Platform datainmatning
 breadcrumb-title: Handbok för dataöverföring
 user-guide-description: Använd era data på plattformen genom batchvis eller direktuppspelande ingrepp.
 translation-type: tm+mt
-source-git-commit: cfdaf72b7f4bf190877006ccd4cc6a7fd014adc2
+source-git-commit: 089a4d517476b614521d1db4718966e3ebb13064
 workflow-type: tm+mt
-source-wordcount: '124'
+source-wordcount: '121'
 ht-degree: 4%
 
 ---
 
 
-# Adobe Experience Platform Data Ingestion {#ingestion}
+# Adobe Experience Platform datainmatning {#ingestion}
 
 - [Översikt över datainmatning](home.md)
 - Direktinmatning {#streaming}
@@ -34,13 +34,13 @@ ht-degree: 4%
    - [Direktuppspelande postdata](tutorials/streaming-record-data.md)
    - [Strömmande tidsseriedata](tutorials/streaming-time-series-data.md)
    - [Direktuppspelning av flera meddelanden](tutorials/streaming-multiple-messages.md)
-- Kvalitet på dataintaget och övervakning{#quality}
+- Datakvalitet och övervakning{#quality}
    - [Översikt](quality/overview.md)
    - [Övervaka datainmatning](quality/monitor-data-ingestion.md)
    - [Hämta feldiagnostik](quality/error-diagnostics.md)
    - [Hämta misslyckade batchar](quality/retrieve-failed-batches.md)
    - [Direktinmatningsvalidering](quality/streaming-validation.md)
-   - [Prenumerera på dataöverföringshändelser](quality/subscribe-events.md)
+   - [Meddelanden om dataöverföring](quality/subscribe-events.md)
 - [Källkopplingar](source-connectors.md)
 - [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml)
 - [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
