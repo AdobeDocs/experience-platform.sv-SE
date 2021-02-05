@@ -1,21 +1,21 @@
 ---
-keywords: Experience Platform;home;popular topics;Sandbox;sandbox
+keywords: Experience Platform;hem;populära ämnen;Sandlåda;sandlåda
 solution: Experience Platform
-title: Skapa en sandlåda
+title: Skapa en sandlåda i API:t
 topic: developer guide
 description: Du kan skapa en ny sandlåda genom att göra en POST-förfrågan till slutpunkten "/sandbox".
 translation-type: tm+mt
-source-git-commit: c081a7521be9715ca32d35504922a70767924fd7
+source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
 workflow-type: tm+mt
-source-wordcount: '151'
+source-wordcount: '164'
 ht-degree: 0%
 
 ---
 
 
-# Skapa en sandlåda
+# Skapa en sandlåda i API:t
 
-Du kan skapa en ny sandlåda genom att göra en POST-förfrågan till `/sandboxes` slutpunkten.
+Du kan skapa en ny sandlåda genom att göra en POST-förfrågan till `/sandboxes`-slutpunkten.
 
 **API-format**
 
@@ -50,7 +50,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar informationen om den nyligen skapade sandlådan, vilket visar att den `state` &quot;skapar&quot;.
+Ett lyckat svar returnerar informationen om den nyligen skapade sandlådan, vilket visar att `state` är &quot;creating&quot;.
 
 ```json
 {
@@ -64,4 +64,4 @@ Ett lyckat svar returnerar informationen om den nyligen skapade sandlådan, vilk
 
 >[!NOTE]
 >
->Det tar cirka 15 minuter att tilldela sandlådor av systemet, varefter de `state` blir&quot;aktiva&quot; eller&quot;misslyckades&quot;.
+>Det tar cirka 15 minuter att tilldela sandlådor av systemet, varefter deras `state` blir&quot;aktiva&quot; eller&quot;misslyckades&quot;.
