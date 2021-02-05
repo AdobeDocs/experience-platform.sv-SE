@@ -4,11 +4,11 @@ solution: Experience Platform
 title: Ta bort en anslutning med API:t för Flow Service
 topic: overview
 type: Tutorial
-description: I den här självstudiekursen beskrivs hur du tar bort en anslutning med API:t för Flow Service.
+description: Lär dig hur du tar bort en anslutning med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '595'
+source-wordcount: '592'
 ht-degree: 1%
 
 ---
