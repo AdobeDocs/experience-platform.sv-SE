@@ -1,25 +1,25 @@
 ---
-keywords: Experience Platform;home;popular topics;update sandbox
+keywords: Experience Platform;hem;populära ämnen;uppdateringssandlåda
 solution: Experience Platform
-title: Uppdatera en sandlåda
+title: Uppdatera en sandlåda i API:t
 topic: developer guide
 description: Du kan uppdatera ett eller flera fält i en sandlåda genom att göra en PATCH-begäran som innehåller sandlådans namn i sökvägen för begäran och egenskapen som ska uppdateras i nyttolasten för begäran.
 translation-type: tm+mt
-source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
+source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
 workflow-type: tm+mt
-source-wordcount: '120'
+source-wordcount: '133'
 ht-degree: 0%
 
 ---
 
 
-# Uppdatera en sandlåda
+# Uppdatera en sandlåda i API:t
 
-Du kan uppdatera ett eller flera fält i en sandlåda genom att göra en PATCH-begäran som innehåller sandlådans sökväg och den egenskap som ska uppdateras i nyttolasten för begäran. `name`
+Du kan uppdatera ett eller flera fält i en sandlåda genom att göra en PATCH-begäran som innehåller sandlådans `name` i sökvägen för begäran och egenskapen som ska uppdateras i nyttolasten för begäran.
 
 >[!NOTE]
 >
->För närvarande kan bara en sandlådeegenskap `title` uppdateras.
+>För närvarande kan bara egenskapen `title` för en sandlåda uppdateras.
 
 **API-format**
 
@@ -33,7 +33,7 @@ PATCH /sandboxes/{SANDBOX_NAME}
 
 **Begäran**
 
-Följande begäran uppdaterar egenskapen `title` för sandlådan med namnet&quot;dev-2&quot;.
+Följande begäran uppdaterar egenskapen `title` för sandlådan med namnet &quot;dev-2&quot;.
 
 ```shell
 curl -X PATCH \
