@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;identitetsdiagramvisningsprogram;Identitetsdiagramvisningsprogram;diagramvisningsprogram;Graph viewer;identity namespace;Identity namespace;identity;Identity;Identity service;identity service
 solution: Experience Platform
-title: Adobe Experience Platform Identity Service
+title: Översikt över Identity Graph Viewer
 topic: tutorial
 description: Ett identitetsdiagram är en karta över relationer mellan olika identiteter för en viss kund, vilket ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler.
 translation-type: tm+mt
-source-git-commit: 22685a8519529ba7afb7e50262ea4d40a450b382
+source-git-commit: aa2088d30716f56ac2909214badbb39c0ae97855
 workflow-type: tm+mt
 source-wordcount: '891'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
 
-# (Beta) Identitetsdiagramvisningsprogram
+# (Beta) Översikt över visningsprogrammet för identitetsdiagram
 
 >[!NOTE]
 >
