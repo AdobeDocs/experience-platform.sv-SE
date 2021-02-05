@@ -1,21 +1,17 @@
 ---
 keywords: innehållkvadratiskt tillägg;innehållkvadratiskt mål;innehållkvadrat
-title: Innehållsfyrkantigt tillägg
-seo-title: Innehållsfyrkantigt tillägg
+title: Innehållsfyrkantigt tilläggsmål
 description: Tillägget Contentsquare är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Contentsquare är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '555'
+source-wordcount: '528'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL Contentsquare] extension  {#contentsquare-extension}
-
-## Översikt {#overview}
 
 Visualisera sidbeteenden, se VARFÖR kunderna överger och HUR ni kan förbättra er. Attribuera intäkter till UX och innehållselement för varje Analytics-segment och Target-test. Installera taggen [!DNL Contentsquare], konfigurera anpassade variabler och händelser. Börja samla in data för din UX-analys med bara några klick.
 
