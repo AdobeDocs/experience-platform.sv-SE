@@ -1,20 +1,18 @@
 ---
 keywords: e-post;E-post;e-post;e-postadresser
-title: Destinationer för e-postmarknadsföring
-seo-title: Destinationer för e-postmarknadsföring
+title: Översikt över destinationer för e-postmarknadsföring
 type: Tutorial
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
-seo-description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 translation-type: tm+mt
-source-git-commit: 95f57f9d1b3eeb0b16ba209b9774bd94f5758009
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '796'
+source-wordcount: '776'
 ht-degree: 0%
 
 ---
 
 
-# E-postmarknadsföringsmål {#email-marketing-destinations}
+# Översikt över mål för e-postmarknadsföring {#email-marketing-destinations}
 
 Med ESP (Email Service Providers) kan du hantera dina e-postmarknadsföringsaktiviteter, som att skicka e-postkampanjer med reklam. Adobe Experience Platform kan integreras med ESP:er genom att ni kan aktivera segment för e-postmarknadsföring.
 
