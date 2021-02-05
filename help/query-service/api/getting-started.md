@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;frågetjänst;Fråga
 solution: Experience Platform
-title: Handbok för frågetjänstutvecklare
+title: API-guide för frågetjänst
 topic: query templates
-description: Den här utvecklarhandboken innehåller steg för att utföra olika åtgärder i Adobe Experience Platform Query Service API.
+description: Med API:t för frågetjänsten kan utvecklare fråga sina Adobe Experience Platform-data med hjälp av standard-SQL. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: e649ab3da077cdd8e98562199b8bdece6108a572
 workflow-type: tm+mt
-source-wordcount: '383'
+source-wordcount: '395'
 ht-degree: 1%
 
 ---
 
 
-# [!DNL Query Service] utvecklarhandbok
+# [!DNL Query Service] API-guide
 
 Den här utvecklarhandboken innehåller steg för att utföra olika åtgärder i API:t för Adobe Experience Platform [!DNL Query Service].
 
