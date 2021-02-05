@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Azure;Azure File Storage;Azure file storage
 solution: Experience Platform
-title: Skapa en Azure File Storage-koppling med API:t för Flow Service
+title: Skapa en Azure File Storage Source-anslutning med API:t för Flow Service
 topic: overview
 type: Tutorial
-description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Azure File Storage till Experience Platform.
+description: Lär dig hur du ansluter Azure File Storage till Adobe Experience Platform med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '590'
+source-wordcount: '587'
 ht-degree: 1%
 
 ---
 
 
-# Skapa en [!DNL Azure File Storage]-koppling med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL Azure File Storage]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
 >[!NOTE]
 >
