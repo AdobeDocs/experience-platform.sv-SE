@@ -1,19 +1,17 @@
 ---
 keywords: sociala nätverk;sociala nätverksplatser;Livefyre;facebook;Facebook
-title: Destinationer för sociala nätverk
-seo-title: Destinationer för sociala nätverk
+title: Översikt över mål för sociala nätverk
 description: Med sociala nätverksdestinationer kan ni aktivera profiler för era kampanjer för målgruppsanpassning, personalisering och undertryckning baserat på hashad-e-post.
-seo-description: Med sociala nätverksdestinationer kan ni aktivera profiler för era kampanjer för målgruppsanpassning, personalisering och undertryckning baserat på hashad-e-post.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '93'
+source-wordcount: '71'
 ht-degree: 0%
 
 ---
 
 
-# Målplatser för sociala nätverk {#social-network-destinations}
+# Översikt över mål för sociala nätverk {#social-network-destinations}
 
 Med sociala nätverksdestinationer kan ni aktivera profiler för era kampanjer för målgruppsanpassning, personalisering och undertryckning baserat på hashad-e-post.
 
