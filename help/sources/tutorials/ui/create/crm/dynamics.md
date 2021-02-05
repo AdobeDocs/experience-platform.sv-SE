@@ -1,22 +1,22 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Microsoft Dynamics;microsoft dynamics;Dynamics;dynamics
 solution: Experience Platform
-title: Skapa en Microsoft Dynamics-källkoppling i användargränssnittet
+title: Skapa en Microsoft Dynamics-källanslutning i användargränssnittet
 topic: overview
 type: Tutorial
-description: I den här självstudiekursen beskrivs hur du skapar en Microsoft Dynamics-källkoppling (nedan kallad Dynamics) med hjälp av användargränssnittet för plattformen.
+description: Lär dig hur du skapar en Microsoft Dynamics-källanslutning med Adobe Experience Platform-gränssnittet.
 translation-type: tm+mt
-source-git-commit: 4241e00fd444969e5a40c8b34dd7786b1a3c6dcb
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '563'
+source-wordcount: '558'
 ht-degree: 1%
 
 ---
 
 
-# Skapa en [!DNL Microsoft Dynamics]-källkoppling i användargränssnittet
+# Skapa en [!DNL Microsoft Dynamics]-källanslutning i användargränssnittet
 
-I den här självstudiekursen beskrivs hur du skapar en [!DNL Microsoft Dynamics]-källkoppling (kallas nedan &quot;[!DNL Dynamics]&quot;) med hjälp av användargränssnittet för plattformen.
+I den här självstudiekursen beskrivs hur du skapar en [!DNL Microsoft Dynamics]-källanslutning (kallas nedan &quot;[!DNL Dynamics]&quot;) med Adobe Experience Platform-gränssnittet.
 
 ## Komma igång
 
