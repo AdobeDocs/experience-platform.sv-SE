@@ -1,23 +1,23 @@
 ---
-keywords: Experience Platform;home;popular topics;Audience Manager mapping;audience manager mapping
+keywords: Experience Platform;hem;populära ämnen;Audience Manager-mappning;målgruppshanterarmappning
 solution: Experience Platform
-title: Mappningsfält för Audience Manager
+title: Mappningsfält för Adobe Audience Manager Source Connector
 topic: overview
-description: Tabellerna nedan innehåller mappningarna mellan fälten i Adobe Audience Manager-data (Realtime-, On-board- och Profile-data) och deras motsvarande XDM-fält.
+description: Lär dig hur du mappar Adobe Audience Manager-data (realtids-, onboardations- och profildata) till motsvarande XDM-fält (Experience Data Model) för Audience Manager-källkopplingen.
 translation-type: tm+mt
-source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '151'
+source-wordcount: '169'
 ht-degree: 0%
 
 ---
 
 
-# Mappningsfält för Audience Manager
+# Fältkopplingar i Audience Manager
 
 Tabellerna nedan innehåller mappningarna mellan fälten i Adobe Audience Manager-data (Realtime-, On-board- och Profile-data) och deras motsvarande XDM-fält.
 
-Mer information om varje XDM-fält finns i [XDM-fältordlistan](../../../../xdm/schema/field-dictionary.md) .
+Mer information om varje XDM-fält finns i [XDM-fältordlistan](../../../../xdm/schema/field-dictionary.md).
 
 ## Realtidsdata
 
@@ -26,7 +26,7 @@ Typ: Realtidsdata
 | Datafält för realtid | XDM-fält |
 | --- | --- |
 | `requestIds[]` | `ExperienceEvent.identityMap["ECID"]` |
-| `requestIds[]` | `ExperienceEvent.endUserIds` - *Endast för namnutrymmen som finns i endUserIds och endast det första värdet.* |
+| `requestIds[]` | `ExperienceEvent.endUserIds` -  *Endast för namnutrymmen som finns i endUserIds och endast det första värdet.* |
 | `primaryDeviceId` | `ExperienceEvent.identityMap["CORE"]` |
 | `primaryDeviceId` | ExperienceEvent.endUserIds - *Endast för namnutrymmen som finns i endUserIds och endast det första värdet.* |
 | `trait[] ` | `ExperienceEvent.segmentMemberships["AAMTraits"]` |
