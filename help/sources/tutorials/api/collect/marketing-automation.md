@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;hemmabruk;populära ämnen;automatiserat marknadsföringssystem;Samla in automatiserade marknadsföringsdata
 solution: Experience Platform
-title: Samla in data för automatiserad marknadsföring via källanslutningar och API:er
+title: Samla in data för automatiserad marknadsföring med källkopplingar och API:er
 topic: overview
 type: Tutorial
-description: Den här självstudiekursen beskriver stegen för att hämta data från ett automatiserat marknadsföringssystem och föra in dem på plattformen via källanslutningar och API:er.
+description: Den här självstudiekursen beskriver stegen för att hämta data från ett automatiserat marknadsföringssystem och föra in dem i Adobe Experience Platform med hjälp av källkopplingar och API:er.
 translation-type: tm+mt
-source-git-commit: a9a4bbbd7128043596ebab45d12bdd6954554537
+source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
 workflow-type: tm+mt
-source-wordcount: '1537'
+source-wordcount: '1538'
 ht-degree: 0%
 
 ---
 
 
-# Samla in data för automatiserad marknadsföring via källanslutningar och API:er
+# Samla in data för automatiserad marknadsföring med hjälp av källkopplingar och API:er
 
 Den här självstudiekursen beskriver stegen för att hämta data från ett marknadsföringssystem från tredje part och att hämta dem till plattformen via källanslutningar och API:t [[!DNL Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
