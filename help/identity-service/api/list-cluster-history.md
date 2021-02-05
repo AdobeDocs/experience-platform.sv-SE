@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;identities;cluster history
+keywords: Experience Platform;hem;populära ämnen;identiteter;klusterhistorik
 solution: Experience Platform
 title: Hämta klusterhistorik för en identitet
 topic: API guide
 description: Identiteter kan flytta kluster under olika enhetsgrafkörningar. Identitetstjänsten ger synlighet i klusterassociationerna för en viss identitet över tiden.
 translation-type: tm+mt
-source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
+source-git-commit: 73035aec86297cfc4ee9337cf922d599001379c3
 workflow-type: tm+mt
-source-wordcount: '329'
+source-wordcount: '337'
 ht-degree: 0%
 
 ---
@@ -17,10 +17,10 @@ ht-degree: 0%
 
 Identiteter kan flytta kluster under olika enhetsgrafkörningar. [!DNL Identity Service] ger synlighet i klusterassociationerna för en viss identitet över tid.
 
-Använd den valfria `graph-type` parametern för att ange vilken utdatatyp som klustret ska hämtas från. Alternativen är:
+Använd den valfria parametern `graph-type` för att ange vilken utdatatyp som klustret ska hämtas från. Alternativen är:
 
 - `None` - Utför ingen identitetssammanfogning.
-- `Private Graph` - Utför identitetssammanfogning baserat på ditt privata identitetsdiagram. Om inget `graph-type` anges är detta standardvärde.
+- `Private Graph` - Utför identitetssammanfogning baserat på ditt privata identitetsdiagram. Om `graph-type` inte anges är detta standardvärde.
 
 ## Hämta klusterhistoriken för en enskild identitet
 
@@ -54,7 +54,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-Alternativ 3: Ange identiteten som XID (`xid`). Mer information om hur du hämtar en identitets XID finns i avsnittet om att [hämta en identitets](./list-native-id.md)XID.
+Alternativ 3: Ange identiteten som XID (`xid`). Mer information om hur du hämtar en identitets XID finns i avsnittet i det här dokumentet som handlar om [att hämta XID för en identitet](./list-native-id.md).
 
 ```shell
 curl -X GET \
@@ -67,7 +67,7 @@ curl -X GET \
 
 ## Hämta klusterhistoriken för flera identiteter
 
-Använd `POST` metoden som en batchmotsvarighet till den `GET` metod som beskrivs ovan för att returnera klusterhistoriken för flera identiteter.
+Använd metoden `POST` som en batchmotsvarighet till metoden `GET` som beskrivs ovan för att returnera klusterhistoriken för flera identiteter.
 
 >[!NOTE]
 >
@@ -110,7 +110,7 @@ Alternativ 2: Ange en lista över identiteter som sammansatta ID:n, där varje n
 
 **Stub-förfrågan**
 
-Användning av sidhuvudet kommer att returnera ett statiskt svar `x-uis-cst-ctx: stub` . Detta är en tillfällig lösning som underlättar utvecklingen av tidig integration medan tjänsterna är färdiga. Detta kommer att bli inaktuellt när det inte längre behövs.
+Användning av `x-uis-cst-ctx: stub`-huvudet returnerar ett stötningssvar. Detta är en tillfällig lösning som underlättar utvecklingen av tidig integration medan tjänsterna är färdiga. Detta kommer att bli inaktuellt när det inte längre behövs.
 
 ```shell
 curl -X POST \
@@ -219,4 +219,4 @@ curl -X POST \
 
 ## Nästa steg
 
-Gå till nästa självstudiekurs för att [lista identitetsmappningar](./list-identity-mappings.md)
+Gå vidare till nästa självstudiekurs för att [lista identitetsmappningar](./list-identity-mappings.md)
