@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;data flows;dataflows;data;monitoring;monitor dataflows;monitor data flows;monitor;monitoring dataflows;monitoring data flows;flow;flow service;
+keywords: Experience Platform;hemmabas;populära ämnen;dataflöden;dataflöden;data;övervakning;övervaka dataflöden;övervaka dataflöden;övervaka dataflöden;övervaka dataflöden;övervaka dataflöden;flöde;flödestjänst;
 solution: Experience Platform
-title: Adobe Experience Platform dataflödesöversikt
+title: Översikt över dataflöden
 topic: overview
 description: I det här dokumentet introduceras dataflöden som visar hur de används i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 791ad61f2f28da03ef3e5cb5efdd89154e9b1a0b
+source-git-commit: f8186e467dc982003c6feb01886ed16d23572955
 workflow-type: tm+mt
-source-wordcount: '157'
+source-wordcount: '178'
 ht-degree: 0%
 
 ---
@@ -21,4 +21,4 @@ Dataflöden är en representation av datajobb som flyttar data mellan plattforma
 
 ## Övervaka dataflöden
 
-Övervakning av dataflöden kan göras med hjälp av plattforms-API:erna eller plattformsgränssnittet. Om du vill lära dig att övervaka dataflöden med API:t kan du läsa [självstudiekursen](./api/monitor.md)för övervakning av dataflöden. Om du vill lära dig hur du övervakar dataflöden i plattformsgränssnittet kan du läsa självstudiekursen [för](./ui/monitor-sources.md) övervakning av dataflöden för källor eller självstudiekursen för [övervakning av dataflöden för mål](./ui/monitor-destinations.md).
+Övervakning av dataflöden kan göras med hjälp av plattforms-API:erna eller plattformsgränssnittet. Om du vill lära dig hur du övervakar dataflöden med API:t kan du läsa självstudiekursen [för övervakning av API:er för dataflöden](./api/monitor.md). Om du vill lära dig hur du övervakar dataflöden i plattformsgränssnittet kan du läsa antingen självstudiekursen [för övervakning av dataflöden för källor](./ui/monitor-sources.md) eller [självstudiekursen för övervakning av dataflöden för mål](./ui/monitor-destinations.md).
