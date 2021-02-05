@@ -1,21 +1,17 @@
 ---
 keywords: Google Global Site Tag;gtag;Google Gtag;Google extension;google gtag extension;GTAG
-title: Tillägget Google Global Site Tag
-seo-title: Tillägget Google Global Site Tag
+title: Google Global Site Tag Extension Destination
 description: Tillägget Google Global Site Tag är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Google Global Site Tag är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '546'
+source-wordcount: '513'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Google Global Site Tag] Tillägg  {#gtag-analytics-extension}
-
-## Översikt {#overview}
+# [!DNL Google Global Site Tag] extension  {#gtag-analytics-extension}
 
 Skicka data till [!DNL Google Analytics], [!DNL Google Ads] och [!DNL Google Marketing Platform] via [!DNL Google's Global Site Tag] eller gtag.js. Flera konton per produkt kan konfigureras.
 
