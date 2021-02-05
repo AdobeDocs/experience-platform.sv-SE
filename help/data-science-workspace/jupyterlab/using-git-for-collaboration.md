@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;JupyterLab;notebooks;Data Science Workspace;popular topics;Git;Github
+keywords: Experience Platform;JupyterLab;notebooks;Data Science Workspace;populära topics;Git;Github
 solution: Experience Platform
 title: Samarbeta i JupyterLab med Git
 topic: tutorial
 type: Tutorial
 description: Git är ett distribuerat versionshanteringssystem för att spåra ändringar i källkoden under programvaruutvecklingen. Git är förinstallerat i JupyterLab-miljön för Data Science Workspace.
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
 workflow-type: tm+mt
-source-wordcount: '270'
+source-wordcount: '281'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 # Samarbeta i [!DNL JupyterLab] med [!DNL Git]
 
-[!DNL Git] är ett distribuerat versionshanteringssystem för att spåra ändringar i källkod under programvaruutveckling. Git är förinstallerat i [!DNL Data Science Workspace JupyterLab] miljön.
+[!DNL Git] är ett distribuerat versionshanteringssystem för att spåra ändringar i källkod under programvaruutveckling. Git är förinstallerat i [!DNL Data Science Workspace JupyterLab]-miljön.
 
 ## Förutsättningar
 
@@ -24,13 +24,13 @@ ht-degree: 1%
 >
 > Den Git-server du tänker använda måste vara tillgänglig via Internet.
 
-Miljön är en [!DNL Data Science Workspace JupyterLab] värdbaserad miljö som inte används i företagets brandvägg, och därför måste den Git-server du ansluter till vara tillgänglig från det offentliga Internet. Detta kan vara en offentlig eller privat databas på [GitHub](https://github.com/) eller en annan instans av en [!DNL Git] server som du har bestämt att vara värd för själv.
+Miljön [!DNL Data Science Workspace JupyterLab] är en hostingmiljö som inte används i företagets brandvägg, och därför måste den Git-server som du ansluter till vara tillgänglig från det offentliga Internet. Detta kan vara en offentlig eller privat databas på [GitHub](https://github.com/) eller en annan instans av en [!DNL Git]-server som du har valt att vara värd för själv.
 
-## Anslut [!DNL Git] till [!DNL Data Science Workspace JupyterLab Notebooks] miljön
+## Anslut [!DNL Git] till [!DNL Data Science Workspace JupyterLab Notebooks]-miljön
 
-Börja med att starta [!DNL Adobe Experience Platform] och navigera till [[!DNL JupyterLabs Notebooks]](https://platform.adobe.com/notebooks/jupyterLab) miljön.
+Börja med att starta [!DNL Adobe Experience Platform] och navigera till [[!DNL JupyterLabs Notebooks]](https://platform.adobe.com/notebooks/jupyterLab)-miljön.
 
-I [!DNL JupyterLab]väljer du **[!UICONTROL File]** och håller pekaren över **[!UICONTROL New]**. Välj i listrutan som visas **[!UICONTROL Terminal]**.
+I [!DNL JupyterLab] väljer du **[!UICONTROL File]** och håller sedan markören över **[!UICONTROL New]**. Välj **[!UICONTROL Terminal]** i listrutan som visas.
 
 ![JupyterLab Nav](../images/jupyterlab/tutorials/open-terminal.png)
 
@@ -42,7 +42,7 @@ Gå sedan till arbetsytan i *Terminal* med följande kommando: `cd my-workspace`
 >
 > Om du vill visa en lista med tillgängliga Git-kommandon skickar du kommandot: `git -help` i terminalen.
 
-Sedan klonar du den databas du vill använda med hjälp av `git clone` kommandot. Klona projektet med en `https://` URL i stället för `ssh://`.
+Sedan klonar du den databas du vill använda med kommandot `git clone`. Klona projektet med en `https://`-URL i stället för `ssh://`.
 
 **Exempel**:
 
@@ -52,7 +52,7 @@ Sedan klonar du den databas du vill använda med hjälp av `git clone` kommandot
 
 >[!NOTE]
 >
-> För att kunna utföra skrivåtgärder (till exempel`git push` ) måste följande konfigurationskommandon köras för varje ny session. Observera också att eventuella push-kommandon kräver ett användarnamn och lösenord.
+> För att utföra skrivåtgärder (`git push` till exempel) måste följande konfigurationskommandon köras för varje ny session. Observera också att eventuella push-kommandon kräver ett användarnamn och lösenord.
 >
 >`git config --global user.email "you@example.com"`
 >
@@ -60,4 +60,4 @@ Sedan klonar du den databas du vill använda med hjälp av `git clone` kommandot
 
 ## Nästa steg
 
-När du är klar med kloningen av din databas kan du använda Git på samma sätt som du brukar göra på din lokala dator för att samarbeta med andra på bärbara datorer. Mer information om vad du kan göra i [!DNL JupyterLab]finns i [[!DNL JupyterLab user guide]](./overview.md).
+När du är klar med kloningen av din databas kan du använda Git på samma sätt som du brukar göra på din lokala dator för att samarbeta med andra på bärbara datorer. Mer information om vad du kan göra i [!DNL JupyterLab] finns i [[!DNL JupyterLab user guide]](./overview.md).
