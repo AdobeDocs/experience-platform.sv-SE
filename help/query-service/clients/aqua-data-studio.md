@@ -1,27 +1,25 @@
 ---
 keywords: Experience Platform;home;populära topics;query service;Query service;Aqua Data Studio;Aqua data studio;connect to query service;
 solution: Experience Platform
-title: Anslut till Aqua Data Studio
+title: Anslut Aqua Data Studio till Query Service
 topic: connect
 description: Det här dokumentet går igenom stegen för att ansluta Aqua Data Studio med Adobe Experience Platform Query Service.
 translation-type: tm+mt
-source-git-commit: eac93f3465fa6ce4af7a6aa783cf5f8fb4ac9b9b
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '295'
+source-wordcount: '298'
 ht-degree: 1%
 
 ---
 
 
-# [!DNL Aqua Data Studio]
+# Anslut [!DNL Aqua Data Studio] till frågetjänsten
 
 Det här dokumentet innehåller stegen för att ansluta [!DNL Aqua Data Studio] med Adobe Experience Platform [!DNL Query Service].
 
 >[!NOTE]
 >
 > Den här handboken förutsätter att du redan har tillgång till [!DNL Aqua Data Studio] och är bekant med hur du navigerar i dess gränssnitt. Mer information om [!DNL Aqua Data Studio] finns i [officiell [!DNL Aqua Data Studio] dokumentation](https://www.aquaclusters.com/app/home/project/public/aquadatastudio/wikibook/Documentation21.1/page/0/Aqua-Data-Studio-21-1).
-
-## Anslut [!DNL Aqua Data Studio] till plattformen
 
 När du har installerat [!DNL Aqua Data Studio] måste du först registrera servern. På huvudmenyn väljer du **[!DNL Server]** följt av **[!DNL Register Server]**.
 
