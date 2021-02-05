@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segmentation Service;schedules;schedule;api;API;
+keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;scheman;schema;api;API;
 solution: Experience Platform
-title: Schemaläggare
+title: API-slutpunkt för scheman
 topic: developer guide
 description: Scheman är ett verktyg som kan användas för att automatiskt köra batchsegmenteringsjobb en gång om dagen.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '1188'
+source-wordcount: '1203'
 ht-degree: 1%
 
 ---
@@ -15,19 +15,19 @@ ht-degree: 1%
 
 # Slutpunkt för scheman
 
-Scheman är ett verktyg som kan användas för att automatiskt köra batchsegmenteringsjobb en gång om dagen. Du kan använda `/config/schedules` slutpunkten för att hämta en lista med scheman, skapa ett nytt schema, hämta information om ett specifikt schema, uppdatera ett specifikt schema eller ta bort ett specifikt schema.
+Scheman är ett verktyg som kan användas för att automatiskt köra batchsegmenteringsjobb en gång om dagen. Du kan använda slutpunkten `/config/schedules` för att hämta en lista med scheman, skapa ett nytt schema, hämta information om ett specifikt schema, uppdatera ett specifikt schema eller ta bort ett specifikt schema.
 
 ## Komma igång
 
-Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Platform Segmentation Service] API:t. Innan du fortsätter bör du läsa [Komma igång-guiden](./getting-started.md) för att få viktig information som du behöver veta för att kunna anropa API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
+Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Platform Segmentation Service]-API:t. Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få viktig information som du behöver känna till för att kunna ringa anrop till API:t, inklusive nödvändiga rubriker och hur du läser exempel-API-anrop.
 
 ## Hämta en lista med scheman {#retrieve-list}
 
-Du kan hämta en lista över alla scheman för din IMS-organisation genom att göra en GET-förfrågan till `/config/schedules` slutpunkten.
+Du kan hämta en lista över alla scheman för din IMS-organisation genom att göra en GET-förfrågan till `/config/schedules`-slutpunkten.
 
 **API-format**
 
-Slutpunkten har stöd för flera frågeparametrar som hjälper dig att filtrera dina resultat. `/config/schedules` Även om dessa parametrar är valfria rekommenderar vi starkt att de används för att minska dyra overheadkostnader. Om du anropar den här slutpunkten utan parametrar hämtas alla scheman som är tillgängliga för din organisation. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
+`/config/schedules`-slutpunkten har stöd för flera frågeparametrar som kan hjälpa dig att filtrera dina resultat. Även om dessa parametrar är valfria rekommenderar vi starkt att de används för att minska dyra overheadkostnader. Om du anropar den här slutpunkten utan parametrar hämtas alla scheman som är tillgängliga för din organisation. Flera parametrar kan inkluderas, avgränsade med et-tecken (`&`).
 
 ```http
 GET /config/schedules
@@ -100,13 +100,13 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över scheman för den a
 | `children.name` | Schemats namn som en sträng. |
 | `children.type` | Typ av jobb som en sträng. De två typer som stöds är&quot;batch_segmentation&quot; och&quot;export&quot;. |
 | `children.properties` | Ett objekt som innehåller ytterligare egenskaper som är relaterade till schemat. |
-| `children.properties.segments` | Om du använder `["*"]` säkerställs att alla segment ingår. |
-| `children.schedule` | En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Mer information om cron-scheman finns i [dokumentationen för cron-uttrycksformat](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) . I det här exemplet betyder &quot;0 0 1 * *&quot; att schemat kommer att köras vid midnatt den första i varje månad. |
+| `children.properties.segments` | Om du använder `["*"]` säkerställs att alla segment inkluderas. |
+| `children.schedule` | En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Mer information om cron-scheman finns i [cron expression format](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html)-dokumentationen. I det här exemplet betyder &quot;0 0 1 * *&quot; att schemat kommer att köras vid midnatt den första i varje månad. |
 | `children.state` | En sträng som innehåller schematillståndet. De två lägen som stöds är &quot;active&quot; och &quot;inactive&quot;. Som standard är läget inställt på &quot;inaktiv&quot;. |
 
 ## Skapa ett nytt schema {#create}
 
-Du kan skapa ett nytt schema genom att göra en POST till `/config/schedules` slutpunkten.
+Du kan skapa ett nytt schema genom att göra en POST-förfrågan till `/config/schedules`-slutpunkten.
 
 **API-format**
 
@@ -142,8 +142,8 @@ curl -X POST https://platform.adobe.io/data/core/ups/config/schedules \
 | `name` | **Obligatoriskt.** Schemats namn som en sträng. |
 | `type` | **Obligatoriskt.** Typ av jobb som en sträng. De två typer som stöds är&quot;batch_segmentation&quot; och&quot;export&quot;. |
 | `properties` | **Obligatoriskt.** Ett objekt som innehåller ytterligare egenskaper som är relaterade till schemat. |
-| `properties.segments` | **Obligatoriskt när `type` är lika med&quot;batch_segmentation&quot;.** Om du använder `["*"]` säkerställs att alla segment ingår. |
-| `schedule` | *Valfritt.* En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Mer information om cron-scheman finns i [dokumentationen för cron-uttrycksformat](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) . I det här exemplet betyder &quot;0 0 1 * *&quot; att schemat kommer att köras vid midnatt den första i varje månad. <br><br>Om strängen inte anges genereras ett systemgenererat schema automatiskt. |
+| `properties.segments` | **Obligatoriskt när  `type` är lika med&quot;batch_segmentation&quot;.** Med  `["*"]` säkerställs att alla segment ingår. |
+| `schedule` | *Valfritt.* En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Mer information om cron-scheman finns i [cron expression format](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html)-dokumentationen. I det här exemplet betyder &quot;0 0 1 * *&quot; att schemat kommer att köras vid midnatt den första i varje månad. <br><br>Om strängen inte anges genereras ett systemgenererat schema automatiskt. |
 | `state` | *Valfritt.* En sträng som innehåller schematillståndet. De två lägen som stöds är &quot;active&quot; och &quot;inactive&quot;. Som standard är läget inställt på &quot;inaktiv&quot;. |
 
 **Svar**
@@ -176,7 +176,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
 
 ## Hämta ett specifikt schema {#get}
 
-Du kan hämta detaljerad information om ett specifikt schema genom att göra en GET-förfrågan till slutpunkten och ange ID:t för det schema som du vill hämta i sökvägen till begäran. `/config/schedules`
+Du kan hämta detaljerad information om ett specifikt schema genom att göra en GET-begäran till `/config/schedules`-slutpunkten och ange ID:t för det schema som du vill hämta i sökvägen till begäran.
 
 **API-format**
 
@@ -229,21 +229,21 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det ang
 | Egenskap | Beskrivning |
 | -------- | ------------ |
 | `name` | Schemats namn som en sträng. |
-| `type` | Typ av jobb som en sträng. De två typerna som stöds är `batch_segmentation` och `export`. |
+| `type` | Typ av jobb som en sträng. De två typer som stöds är `batch_segmentation` och `export`. |
 | `properties` | Ett objekt som innehåller ytterligare egenskaper som är relaterade till schemat. |
-| `properties.segments` | Om du använder `["*"]` säkerställs att alla segment ingår. |
-| `schedule` | En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Mer information om cron-scheman finns i [dokumentationen för cron-uttrycksformat](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) . I det här exemplet betyder &quot;0 0 1 * *&quot; att schemat kommer att köras vid midnatt den första i varje månad. |
+| `properties.segments` | Om du använder `["*"]` säkerställs att alla segment inkluderas. |
+| `schedule` | En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Mer information om cron-scheman finns i [cron expression format](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html)-dokumentationen. I det här exemplet betyder &quot;0 0 1 * *&quot; att schemat kommer att köras vid midnatt den första i varje månad. |
 | `state` | En sträng som innehåller schematillståndet. De två lägen som stöds är `active` och `inactive`. Som standard är läget inställt på `inactive`. |
 
 ## Uppdatera information för ett specifikt schema {#update}
 
-Du kan uppdatera ett specifikt schema genom att göra en PATCH-begäran till slutpunkten och ange ID:t för det schema som du försöker uppdatera i sökvägen till begäran. `/config/schedules`
+Du kan uppdatera ett specifikt schema genom att göra en PATCH-begäran till `/config/schedules`-slutpunkten och ange ID:t för det schema som du försöker uppdatera i sökvägen till begäran.
 
-Med PATCH-begäran kan du uppdatera antingen [tillståndet](#update-state) eller [cron-schemat](#update-schedule) för ett enskilt schema.
+Med PATCH-begäran kan du uppdatera antingen [state](#update-state) eller [cron schedule](#update-schedule) för ett enskilt schema.
 
-### Uppdatera schematillstånd {#update-state}
+### Uppdatera schemastatus {#update-state}
 
-Du kan använda en JSON-lagningsåtgärd för att uppdatera schemats status. Om du vill uppdatera läget deklarerar du `path` egenskapen som `/state` och anger `value` den till antingen `active` eller `inactive`. Mer information om JSON Patch finns i dokumentationen för [JSON Patch](http://jsonpatch.com/) .
+Du kan använda en JSON-lagningsåtgärd för att uppdatera schemats status. Om du vill uppdatera läget deklarerar du egenskapen `path` som `/state` och anger `value` som antingen `active` eller `inactive`. Mer information om JSON Patch finns i [JSON Patch](http://jsonpatch.com/)-dokumentationen.
 
 **API-format**
 
@@ -275,16 +275,16 @@ curl -X DELETE https://platform.adobe.io/data/core/ups/config/schedules/4e538382
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `path` | Sökvägen för det värde som du vill laga. I det här fallet måste du ange värdet &quot;/state&quot; eftersom du uppdaterar schemats tillstånd. `path` |
+| `path` | Sökvägen för det värde som du vill laga. I det här fallet måste du ange värdet `path` till /state eftersom du uppdaterar schemats tillstånd. |
 | `value` | Det uppdaterade värdet för schemats tillstånd. Värdet kan antingen anges som aktivt eller inaktivt för att aktivera eller inaktivera schemat. |
 
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 204 (inget innehåll).
 
-### Uppdatera kundschema {#update-schedule}
+### Uppdatera kundschemat {#update-schedule}
 
-Du kan använda en JSON-korrigeringsåtgärd för att uppdatera kronschemat. Om du vill uppdatera schemat deklarerar du `path` egenskapen som `/schedule` och ställer in `value` på ett giltigt cron-schema. Mer information om JSON Patch finns i dokumentationen för [JSON Patch](http://jsonpatch.com/) . Mer information om cron-scheman finns i [dokumentationen för cron-uttrycksformat](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) .
+Du kan använda en JSON-korrigeringsåtgärd för att uppdatera kronschemat. Om du vill uppdatera schemat deklarerar du egenskapen `path` som `/schedule` och anger `value` som ett giltigt cron-schema. Mer information om JSON Patch finns i [JSON Patch](http://jsonpatch.com/)-dokumentationen. Mer information om cron-scheman finns i [cron expression format](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html)-dokumentationen.
 
 **API-format**
 
@@ -316,7 +316,7 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/config/schedules/4e538382-
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `path` | Sökvägen för det värde som du vill uppdatera. I det här fallet måste du ange värdet för `path` till `/schedule`eftersom du uppdaterar kronschemat. |
+| `path` | Sökvägen för det värde som du vill uppdatera. I det här fallet måste du ange `path` till `/schedule` eftersom du uppdaterar kronschemat. |
 | `value` | Det uppdaterade värdet för cron-schemat. Värdet måste anges i form av ett kronschema. I det här exemplet körs schemat den andra varje månad. |
 
 **Svar**
@@ -325,7 +325,7 @@ Ett lyckat svar returnerar HTTP-status 204 (inget innehåll).
 
 ## Ta bort ett specifikt schema
 
-Du kan begära att ett visst schema ska tas bort genom att göra en DELETE-begäran till `/config/schedules` slutpunkten och ange ID:t för det schema som du vill ta bort i sökvägen till begäran.
+Du kan begära att få ta bort ett specifikt schema genom att göra en DELETE-begäran till `/config/schedules`-slutpunkten och ange ID:t för det schema som du vill ta bort i sökvägen till begäran.
 
 **API-format**
 
