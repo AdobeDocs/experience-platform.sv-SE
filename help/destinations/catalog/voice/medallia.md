@@ -1,21 +1,17 @@
 ---
 keywords: Medallia;media
-title: Medietillägg
-seo-title: Medietillägg
+title: Mål för medietillägg
 description: Medietillägget är en röst för kundens destination i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Medietillägget är en röst för kundens destination i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
 workflow-type: tm+mt
-source-wordcount: '558'
+source-wordcount: '528'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Medallia] Tillägg  {#medallia-extension}
-
-## Översikt {#overview}
+# [!DNL Medallia] extension  {#medallia-extension}
 
 Distribuera [!DNL Medallia] snabbt och smidigt på dina webbegenskaper. Tillägget gör det även möjligt att identifiera enkäthändelser, samla in kundfeedback i realtid via dataelement, använda det i regler för att personalisera kundupplevelsen och dela data med Adobe Analytics.
 
