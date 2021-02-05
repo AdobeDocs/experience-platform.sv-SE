@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;schema;schema;enum;primär identitet;primär identitet;enskild XDM-profil;Experience event;XDM Experience Event;XDM ExperienceEvent;experienceEvent;experienceevent;XDM ExperienceEvent;schema design;best practices
 solution: Experience Platform
-title: Bästa tillvägagångssätt för datamodellering i Adobe Experience Platform
+title: Bästa praxis för datamodellering
 topic: overview
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '2510'
+source-wordcount: '2502'
 ht-degree: 1%
 
 ---
 
 
-# Bästa tillvägagångssätt för datamodellering i Adobe Experience Platform
+# Bästa tillvägagångssätt för datamodellering
 
 [!DNL Experience Data Model] (XDM) är det centrala ramverket som standardiserar kundupplevelsedata genom att tillhandahålla gemensamma strukturer och definitioner för användning i Adobe Experience Platform-tjänster längre fram i kedjan. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation som gör att ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och uttrycka kundattribut i personaliseringssyfte.
 
@@ -75,7 +75,7 @@ Om du vill analysera hur vissa attribut inom en enhet ändras över tid är det 
 | --- | --- | --- | --- | --- |
 | 1234567 | Lägg till | 275098 | 2 | 1 okt 10:32 |
 | 1234567 | Ta bort | 275098 | 1 | 1 okt 10:33 |
-| 1234567 | Lägg till | 486502 | 3 | 1 okt 10:41 |
+| 1234567 | Lägg till | 486502 | 1 | 1 okt 10:41 |
 | 1234567 | Lägg till | 910482 | 5 | 3 okt 2:15 PM |
 
 #### Användningsexempel för segmentering
@@ -101,7 +101,7 @@ Ett företag vill till exempel skapa ett segment baserat på antalet kundvagnsk�
 
 >[!CAUTION]
 >
->Experience Platform utför för närvarande inte automatisk värdeaggregering, även om detta är planerat för framtida releaser. Om du väljer att använda aggregerade värden måste du utföra beräkningarna externt innan du skickar data till [!DNL Platform].
+>Experience Platform utför för närvarande inte automatisk värdeaggregering, även om detta planeras för framtida releaser. Om du väljer att använda aggregerade värden måste du utföra beräkningarna externt innan du skickar data till [!DNL Platform].
 
 #### Kardinalitet
 
