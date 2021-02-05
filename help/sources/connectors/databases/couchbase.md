@@ -1,39 +1,39 @@
 ---
-keywords: Experience Platform;home;popular topics;couchbase;Couchbase
+keywords: Experience Platform;hemmabas;populära ämnen;kuchbase;Kuchbase
 solution: Experience Platform
-title: Koppling till kuchbase
+title: Översikt över källkoppling för Couchbase
 topic: overview
-description: Dokumentationen nedan innehåller information om hur du ansluter Couchbase till plattformen med API:er eller användargränssnittet.
+description: Lär dig hur du ansluter Couchbase till Adobe Experience Platform med API:er eller användargränssnittet.
 translation-type: tm+mt
-source-git-commit: e0a0b7fc28b8cc85c5140d3840e06e5c7078c307
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '200'
+source-wordcount: '207'
 ht-degree: 0%
 
 ---
 
 
-# (Beta)- [!DNL Couchbase] anslutning
+# (Beta) [!DNL Couchbase]-koppling
 
 >[!NOTE]
 >
->Kopplingen [!DNL Couchbase] är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../home.md#terms-and-conditions) .
+>[!DNL Couchbase]-kopplingen är i betaversion. Se [Källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
-Adobe Experience Platform erbjuder inbyggd anslutningsbarhet för databasleverantörer som [!DNL Microsoft], MySQL och [!DNL Azure]så att du kan hämta data från dessa system. Olika typer av tredjepartsdatabaser stöds, bland annat relational, NoSQL och data warehouse. Stöd för databasleverantörer omfattar [!DNL Couchbase].
+Adobe Experience Platform erbjuder inbyggd anslutning för databasleverantörer som [!DNL Microsoft], MySQL och [!DNL Azure], vilket gör att du kan hämta data från dessa system. Olika typer av tredjepartsdatabaser stöds, bland annat relational, NoSQL och data warehouse. Stöd för databasproviders inkluderar [!DNL Couchbase].
 
 ## IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md) .
+En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
 
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Couchbase] till [!DNL Platform] med API:er eller användargränssnittet:
 
 ## Anslut [!DNL Couchbase] till [!DNL Platform] med API:er
 
-- [Skapa en Couchbase-anslutning med API:t för Flow Service](../../tutorials/api/create/databases/couchbase.md)
+- [Skapa en källanslutning till Couchbase med API:t för Flow Service](../../tutorials/api/create/databases/couchbase.md)
 - [Utforska ett databassystem med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
 - [Samla in data från en databas med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
 
-## Ansluta [!DNL Couchbase] till [!DNL Platform] användargränssnittet
+## Anslut [!DNL Couchbase] till [!DNL Platform] med användargränssnittet
 
-- [Skapa en Couchbase-källanslutning i användargränssnittet](../../tutorials/ui/create/databases/couchbase.md)
+- [Skapa en källanslutning till Couchbase i användargränssnittet](../../tutorials/ui/create/databases/couchbase.md)
 - [Konfigurera ett dataflöde för en databasanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
