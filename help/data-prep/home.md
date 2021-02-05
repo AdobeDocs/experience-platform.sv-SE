@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform;home;popular topics;map csv;map csv file;map csv file to xdm;map csv to xdm;ui guide;mapper;mapping;data prep;data preparation;preparing data;
+keywords: Experience Platform;hem;populära ämnen;map csv;map csv file;map csv file to xdm;map csv to xdm;ui guide;mapper;mappning;data prep;data preparing;preparing data;
 solution: Experience Platform
-title: Mappningsfunktioner
+title: Dataförhandsgranskning
 topic: overview
 description: I det här dokumentet introduceras Data Prep i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: db38f0666f5c945461043ad08939ebda52c21855
+source-git-commit: 37c1c98ccba50fa917acc5e93763294f4dde5c36
 workflow-type: tm+mt
-source-wordcount: '304'
+source-wordcount: '335'
 ht-degree: 0%
 
 ---
 
 
-# Dataprep
+# Översikt över datapreflight
 
 Med Data Prep kan datatekniker mappa, omvandla och validera data till och från Experience Data Model (XDM). Dataförinställning visas som ett steg för&quot;Karta&quot; i dataöverföringsprocesserna, inklusive arbetsflödet för CSV-inmatning. Datatekniker kan använda Data Prep för att utföra följande dataändringar vid förtäring:
 
@@ -29,7 +29,7 @@ Data Prep använder också flera inbyggda datavalideringar för att säkerställ
 
 En mappning är en association av ett indataattribut eller beräknat fält till ett XDM-attribut. Ett enda attribut kan mappas till flera XDM-attribut genom att skapa enskilda mappningar.
 
-Mer information om de olika mappningsfunktionerna finns i [guiden](./functions.md)för mappningsfunktioner.
+Läs guiden [mappningsfunktioner](./functions.md) om du vill veta mer om de olika mappningsfunktionerna.
 
 ## Mappningsuppsättning
 
@@ -37,4 +37,4 @@ En uppsättning mappningar som omformar ett schema till ett annat kallas tillsam
 
 ## Nästa steg
 
-Det här dokumentet beskriver grunderna för Data Prep i Adobe Experience Platform. Mer information om olika mappningsfunktioner finns i [guiden](./functions.md)för mappningsfunktioner. Mer information om de olika datumtidssträngarna finns i [strängguiden](./dates.md).
+Det här dokumentet beskriver grunderna för Data Prep i Adobe Experience Platform. Läs guiden [mappningsfunktioner](./functions.md) om du vill veta mer om olika mappningsfunktioner. Om du vill veta mer om de olika datumtidssträngarna läser du [datumsträngsguiden](./dates.md).
