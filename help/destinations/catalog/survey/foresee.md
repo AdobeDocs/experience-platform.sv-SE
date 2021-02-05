@@ -1,21 +1,17 @@
 ---
 keywords: förutse;förutse förlängning;förutse destination
-title: Foresee-tillägg
-seo-title: Foresee-tillägg
+title: Mål för tillägg för Foresee
 description: Foresee-tillägget är ett undersökningsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Foresee-tillägget är ett undersökningsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '517'
+source-wordcount: '490'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL Foresee] extension  {#foresee-extension}
-
-## Översikt {#overview}
 
 Konfigurera [!DNL ForeSee] produktdistributioner med Experience Platform Launch.
 
