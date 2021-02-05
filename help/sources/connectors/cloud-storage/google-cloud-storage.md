@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Google Cloud-lagring;Google cloud-lagring
 solution: Experience Platform
-title: Google Cloud Storage Connector
+title: Översikt över källanslutning för Google Cloud-lagring
 topic: overview
-description: Dokumentationen nedan innehåller information om hur du ansluter Google Cloud-lagring till plattformen med hjälp av API:er eller användargränssnittet.
+description: Lär dig hur du ansluter Google Cloud-lagring till Adobe Experience Platform med API:er eller användargränssnittet.
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
 source-wordcount: '555'
 ht-degree: 0%
@@ -58,11 +58,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Google Cl
 
 ### Använda API:er
 
-- [Skapa en Google Cloud-lagringskontakt med API:t för flödestjänsten](../../tutorials/api/create/cloud-storage/google.md)
+- [Skapa en Google Cloud-lagringskällanslutning med API:t för Flow Service](../../tutorials/api/create/cloud-storage/google.md)
 - [Utforska ett molnlagringssystem med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
 - [Samla in molnlagringsdata med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
 
 ### Använda gränssnittet
 
-- [Skapa en Google Cloud-källanslutning för lagring i användargränssnittet](../../tutorials/ui/create/cloud-storage/google-cloud-storage.md)
-- [Konfigurera ett dataflöde för en molnlagringskontakt i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
+- [Skapa en Google Cloud-lagringskällanslutning i användargränssnittet](../../tutorials/ui/create/cloud-storage/google-cloud-storage.md)
+- [Konfigurera ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
