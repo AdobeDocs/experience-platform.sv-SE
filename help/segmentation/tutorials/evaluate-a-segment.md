@@ -1,14 +1,14 @@
 ---
 keywords: Experience Platform;hemmabruk;populära ämnen;segmentutvärdering;segmenteringstjänst;segmentering;segmentering;utvärdera ett segment;nå segmentresultat;utvärdera och ge åtkomst till segment;
 solution: Experience Platform
-title: Utvärdera ett segment
+title: Utvärdera och få åtkomst till segmentresultat
 topic: tutorial
 type: Tutorial
-description: I det här dokumentet finns en självstudiekurs för att utvärdera segment och komma åt segmentresultat med segmenterings-API:t.
+description: Följ den här självstudiekursen för att lära dig hur du utvärderar segment och får åtkomst till segmentresultat med Adobe Experience Platform Segmenteringstjänstens API.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '1560'
+source-wordcount: '1567'
 ht-degree: 0%
 
 ---
