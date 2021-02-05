@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;SFTP;sftp
+keywords: Experience Platform;hem;populära ämnen;SFTP;sftp
 solution: Experience Platform
 title: Skapa en SFTP-källanslutning i användargränssnittet
 topic: overview
 type: Tutorial
-description: I den här självstudiekursen beskrivs hur du skapar en SFTP-källanslutning med hjälp av användargränssnittet för plattformen.
+description: Lär dig hur du skapar en SFTP-källanslutning med Adobe Experience Platform-gränssnittet.
 translation-type: tm+mt
-source-git-commit: 0d0d3aa4213f3a8252de82c47eef6e9caa4d3e9e
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '679'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 0%
 >
 >SFTP-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
-I den här självstudiekursen beskrivs hur du skapar en SFTP-källanslutning med hjälp av användargränssnittet för plattformen.
+I den här självstudiekursen beskrivs hur du skapar en SFTP-källanslutning med Adobe Experience Platform-gränssnittet.
 
 ## Komma igång
 
