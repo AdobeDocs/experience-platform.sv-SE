@@ -1,21 +1,17 @@
 ---
 keywords: Pinterest;pinterest;Pinterest Conversion Tracking;Pintres t conversion tracking
-title: Tillägg för Pinterest Conversion Tracking
-seo-title: Tillägg för Pinterest Conversion Tracking
+title: Mål för Pinterest Conversion Tracking Extension
 description: Tillägget Pinterest Conversion Tracking är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Pinterest Conversion Tracking är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '553'
+source-wordcount: '522'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Pinterest Conversion Tracking] Tillägg  {#pinterest-extension}
-
-## Översikt {#overview}
+# [!DNL Pinterest Conversion Tracking] extension  {#pinterest-extension}
 
 Spåra besöksåtgärder på din webbplats efter att ha visat din PIN-kod. Mät avkastningen på annonskostnaderna och skapa riktade målgrupper. Läs mer [här](https://ads.pinterest.com/).
 
