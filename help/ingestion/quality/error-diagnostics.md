@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;batchförbrukning;batchförtäring;partiellt intag;partiellt intag;partiellt intag;Hämtningsfel;hämtningsfel;partiellt batchintag;partiellt, oralt;intag;Inmatning;feldiagnostik;hämta feldiagnos;hämta feldiagnos;få fel;hämta fel;hämta fel;
 solution: Experience Platform
-title: Översikt över partiell gruppinmatning i Adobe Experience Platform
+title: Diagnostik för dataöverföringsfel hämtas
 topic: overview
 description: Det här dokumentet innehåller information om övervakning av batchförbrukning, hantering av partiella batchöverföringsfel samt en referens för partiella batchinsatstyper.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 089a4d517476b614521d1db4718966e3ebb13064
 workflow-type: tm+mt
 source-wordcount: '936'
 ht-degree: 1%
@@ -13,7 +13,7 @@ ht-degree: 1%
 ---
 
 
-# Hämtar feldiagnostik
+# Hämtar feldiagnostik för dataöverföring
 
 Adobe Experience Platform har två metoder för att överföra och importera data. Du kan antingen använda gruppinmatning, vilket gör att du kan infoga data med olika filtyper (t.ex. CSV-filer), eller direktuppspelning, vilket gör att du kan infoga data till [!DNL Platform] med direktuppspelningsslutpunkter i realtid.
 
