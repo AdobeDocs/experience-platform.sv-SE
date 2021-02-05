@@ -1,27 +1,25 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;tableau;query service;Query service;connect to query service;
 solution: Experience Platform
-title: Anslut till Tablet
+title: Anslut tabell till frågetjänst
 topic: connect
 description: Det här dokumentet går igenom de olika stegen för att ansluta Tableau till Adobe Experience Platform Query Service.
 translation-type: tm+mt
-source-git-commit: eac93f3465fa6ce4af7a6aa783cf5f8fb4ac9b9b
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '206'
+source-wordcount: '209'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Tableau]
+# Anslut [!DNL Tableau] till frågetjänsten
 
 Det här dokumentet innehåller stegen för att ansluta Tablet PC med Adobe Experience Platform [!DNL Query Service].
 
 >[!NOTE]
 >
 > Den här handboken förutsätter att du redan har tillgång till [!DNL Tableau] och är bekant med hur du navigerar i dess gränssnitt. Mer information om [!DNL Tableau] finns i [officiell [!DNL Tableau] dokumentation](https://help.tableau.com/current/pro/desktop/en-us/default.htm).
-
-## Anslut [!DNL Tableau] till plattformen
 
 Om du vill ansluta [!DNL Tableau] till [!DNL Query Service] öppnar du [!DNL Tableau] och i avsnittet **[!DNL To a Server]** väljer du **[!DNL More]** följt av **[!DNL PostgreSQL]**
 
