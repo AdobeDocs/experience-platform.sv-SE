@@ -1,21 +1,17 @@
 ---
 keywords: Invoca;invoca
-title: Anropa taggtillägg
-seo-title: Anropa taggtillägg
+title: Anropa taggtilläggets mål
 description: Tillägget Invoca Tags är en röst för kundens mål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Invoca Tags är en röst för kundens mål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '554'
+source-wordcount: '522'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL Invoca Tags] extension  {#invoca-extension}
-
-## Översikt {#overview}
 
 [!DNL Invoca] för in samtalsdata och röstinsikter i den digitala kundresan. Med [!DNL Invoca’s] anropsanalysplattform har marknadsförarna äntligen analyser för att mäta samtalsresultat och koppla offlinekonverteringar tillbaka till digitala utgifter.
 
