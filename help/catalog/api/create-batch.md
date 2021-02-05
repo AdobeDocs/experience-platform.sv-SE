@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;create batch;catalog service;api
+keywords: Experience Platform;hem;populära ämnen;skapa grupp;katalogtjänst;api
 solution: Experience Platform
-title: Skapa en datauppsättning
+title: Skapa en grupp i API:t
 topic: developer guide
-description: För att en datauppsättning ska kunna importera data måste den ha en associerad batch. Med ID-värdet för en befintlig datauppsättning kan du skapa en batch genom att göra en POST-förfrågan till /batches-slutpunkten i Catalog API.
+description: Du kan skapa en grupp genom att göra en POST-förfrågan till slutpunkten /batches i katalog-API:t.
 translation-type: tm+mt
-source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
+source-git-commit: 8a213ac0ef1ac0f9c42e4b880b24157d28878bf1
 workflow-type: tm+mt
-source-wordcount: '128'
+source-wordcount: '117'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # Skapa en batch
 
-För att en datauppsättning ska kunna importera data måste den ha en associerad batch. Med hjälp av `id` värdet för en befintlig datauppsättning kan du skapa en batch genom att göra en begäran om POST till `/batches` slutpunkten i [!DNL Catalog] API:t.
+För att en datauppsättning ska kunna importera data måste den ha en associerad batch. Med hjälp av `id`-värdet för en befintlig datauppsättning kan du skapa en batch genom att göra en begäran om POST till `/batches`-slutpunkten i [!DNL Catalog]-API:t.
 
 **API-format**
 
@@ -40,11 +40,11 @@ curl -X POST 'https://platform.adobe.io/data/foundation/import/batches' \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `datasetId` | Den datauppsättning som gruppen ska kopplas `id` till. |
+| `datasetId` | `id` för datauppsättningen som gruppen ska kopplas till. |
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 201 (Skapad) och ett svarsobjekt som innehåller information om den nyligen skapade gruppen, inklusive dess `id`skrivskyddade, systemgenererade sträng.
+Ett lyckat svar returnerar HTTP-status 201 (Skapad) och ett svarsobjekt som innehåller information om den nyligen skapade gruppen, inklusive `id`, en skrivskyddad, systemgenererad sträng.
 
 ```JSON
 {
