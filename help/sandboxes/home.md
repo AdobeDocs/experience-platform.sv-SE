@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;sandbox;Sandbox;testing;Testing
+keywords: Experience Platform;hem;populära ämnen;sandlåda;Sandlåda;testning;Testa
 solution: Experience Platform
 title: Översikt över sandlådor
 topic: overview
 description: Sandlådor är virtuella partitioner i en enda instans av Experience Platform, vilket möjliggör smidig integrering med utvecklingsprocessen i era program för digitala upplevelser.
 translation-type: tm+mt
-source-git-commit: fa667d86c089c692f22cfd1b46f3f11b6e9a68d7
+source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
 workflow-type: tm+mt
-source-wordcount: '745'
+source-wordcount: '754'
 ht-degree: 0%
 
 ---
@@ -43,15 +43,15 @@ Som standard har alla användare i en organisation åtkomst till en produktionss
 
 För att du ska kunna visa, skapa, uppdatera eller ta bort icke-produktionssandlådor måste användare även beviljas administratörsbehörighet för sandlådan.
 
-Mer information om hur du hanterar roller och behörigheter för sandlådor finns i [åtkomstkontrollsöversikten](../access-control/home.md).
+Mer information om hur du hanterar roller och behörigheter för sandlådor finns i [översikten över åtkomstkontroll](../access-control/home.md).
 
 ## Sandlådor i användargränssnittet för Experience Platform
 
-I användargränssnittet [för](https://platform.adobe.com)Experience Platform kan användare växla mellan de sandlådor de har tillgång till genom att använda **sandlådeväxlarkontrollen** högst upp till vänster på skärmen.  Användare med administratörsbehörighet för sandlådan har även tillgång till fliken till vänster, där de kan visa och hantera sandlådor för sin organisation. **[!UICONTROL Sandboxes]** Mer information om hur du arbetar med sandlådor i användargränssnittet finns i användarhandboken för [sandlådan](ui/overview.md).
+I [Experience Platform-användargränssnittet](https://platform.adobe.com) kan användare växla mellan de sandlådor de har åtkomst till genom att använda kontrollen **sandlådeväxlare** högst upp till vänster på skärmen.  Användare med administratörsbehörighet för sandlådan har även åtkomst till fliken **[!UICONTROL Sandboxes]** i den vänstra navigeringen, där de kan visa och hantera sandlådor för sin organisation. Mer information om hur du arbetar med sandlådor i användargränssnittet finns i [användarhandboken för sandlådan](ui/overview.md).
 
 ## Sandlådor i Experience Platform API:er
 
-När anrop görs till API:er för Experience Platform måste ett sandlådenamn anges under rubriken `x-sandbox-name`. När du till exempel anropar [[!DNL Catalog Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) för att visa alla datauppsättningar i Production sandbox, anges sandlådans namn (&quot;prod&quot;) som en rubrik i API-begäran:
+När du anropar API:er för Experience Platform måste du ange ett sandlådenamn under rubriken `x-sandbox-name`. När du till exempel anropar [[!DNL Catalog Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) för att visa alla datauppsättningar i produktionssandlådan, anges sandlådans namn (&quot;prod&quot;) som en rubrik i API-begäran:
 
 ```shell
 curl -X GET \
@@ -62,14 +62,14 @@ curl -X GET \
   -H 'x-sandbox-name: prod'
 ```
 
-Om `x-sandbox-name` inte ingår i ett API-anrop använder systemet en standardsandlåda i stället. Det bästa sättet är dock att alltid inkludera den här rubriken i alla API-anrop, även när du använder standardsandlådan. Därför behandlas API-dokumentationen för Experience Platform `x-sandbox-name` som en obligatorisk rubrik.
+Om `x-sandbox-name` inte ingår i ett API-anrop använder systemet en standardsandlåda i stället. Det bästa sättet är dock att alltid inkludera den här rubriken i alla API-anrop, även när du använder standardsandlådan. Därför behandlas `x-sandbox-name` som ett obligatoriskt huvud i API-dokumentationen för Experience Platform.
 
 ### Sandbox-API
 
-Med sandbox-API kan du hantera sandlådor med hjälp av RESTful API-åtgärder. Mer information om hur du använder API:t finns i [utvecklarhandboken](api/getting-started.md) för sandlådor, inklusive korrekt formaterade begäranden och exempelsvar.
+Med sandbox-API kan du hantera sandlådor med hjälp av RESTful API-åtgärder. Mer information om hur du använder API:t finns i [utvecklarhandboken för sandlådor](api/getting-started.md), inklusive korrekt formaterade begäranden och exempelsvar.
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du lagts till de viktigaste begreppen om sandlådor i Experience Platform. Detaljerade anvisningar om hur du hanterar sandlådor finns i [användarhandboken](ui/overview.md) för användargränssnittet eller [utvecklarhandboken](./api/getting-started.md) för API:t.
+Genom att läsa det här dokumentet har du lagts till de viktigaste begreppen om sandlådor i Experience Platform. Detaljerade anvisningar om hur du hanterar sandlådor finns i [användarhandboken](ui/overview.md) för användargränssnittet och i [utvecklarhandboken](./api/getting-started.md) för API:t.
 
-Sandlådor fungerar som ett värdefullt verktyg för att isolera plattformsmiljöer för utvecklingsteamet, men du kan också hantera mer detaljerad åtkomstkontroll med hjälp av Adobe Admin Console. Mer information finns i [åtkomstkontrollsöversikten](../access-control/home.md) .
+Sandlådor fungerar som ett värdefullt verktyg för att isolera plattformsmiljöer för utvecklingsteamet, men du kan också hantera mer detaljerad åtkomstkontroll med hjälp av Adobe Admin Console. Mer information finns i [översikten över åtkomstkontroll](../access-control/home.md).
