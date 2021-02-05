@@ -1,12 +1,12 @@
 ---
 keywords: segmentering, segmentering rtcdp;realtidssegmentering av kunddataplattform
-title: Översikt över segmenteringstjänsten
+title: Segmenteringstjänst i kunddataplattform i realtid
 seo-title: Segmenteringstjänst i kunddataplattform i realtid
 description: CDP i realtid är byggt på Adobe Experience Platform och utnyttjar många av Experience Platform:s tjänster och funktioner. Med hjälp av segmenteringstjänsten kan ni erbjuda skräddarsydd marknadsföring genom att dela upp kunderna i mindre grupper med liknande egenskaper.
 translation-type: tm+mt
-source-git-commit: 9f20f8bfeefb5bc427a72a11ac1f01816cdbc4b2
+source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
 workflow-type: tm+mt
-source-wordcount: '537'
+source-wordcount: '541'
 ht-degree: 0%
 
 ---
