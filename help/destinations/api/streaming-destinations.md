@@ -1,14 +1,14 @@
 ---
 keywords: Experience Platform;hemmabruk;populära ämnen; API-självstudiekurser; API för direktuppspelningsmål. Plattform
 solution: Experience Platform
-title: Ansluta till direktuppspelningsmål och aktivera data
+title: Anslut till direktuppspelningsmål och aktivera data med API-anrop
 description: I det här dokumentet beskrivs hur du skapar direktuppspelningsmål med hjälp av Adobe Experience Platform API
 topic: tutorial
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: d1f357659313aba0811b267598deda9770d946a1
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '2013'
+source-wordcount: '2016'
 ht-degree: 0%
 
 ---
