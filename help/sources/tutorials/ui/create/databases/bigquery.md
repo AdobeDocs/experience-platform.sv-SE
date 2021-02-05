@@ -1,20 +1,20 @@
 ---
-keywords: Experience Platform;home;popular topics;Google Big Query;google big query;GBQ;gbq
+keywords: Experience Platform;hem;populära ämnen;Google Big Query;Google big query;GBQ;gbq
 solution: Experience Platform
-title: Skapa en Google Big Query-källkoppling i användargränssnittet
+title: Skapa en Google Big Query Source-anslutning i användargränssnittet
 topic: overview
 type: Tutorial
-description: I den här självstudiekursen beskrivs hur du skapar en Google Big Query-källkoppling (nedan kallad GBQ) med hjälp av användargränssnittet för plattformen.
+description: Lär dig hur du skapar en Google Big Query-källanslutning med Adobe Experience Platform-gränssnittet.
 translation-type: tm+mt
-source-git-commit: 74fbf388cf645c89f9f6d00a5ae2e59ba94041b9
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '489'
+source-wordcount: '496'
 ht-degree: 1%
 
 ---
 
 
-# Skapa en [!DNL Google Big Query]-källkoppling i användargränssnittet
+# Skapa en [!DNL Google Big Query]-källanslutning i användargränssnittet
 
 >[!NOTE]
 >
