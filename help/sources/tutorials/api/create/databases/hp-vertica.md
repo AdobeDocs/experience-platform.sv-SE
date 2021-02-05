@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Vertica;vertica
 solution: Experience Platform
-title: Skapa en HP Vertica-koppling med API:t för Flow Service
+title: Skapa en HP Vertica Source Connection med API:t för Flow Service
 topic: overview
 type: Tutorial
-description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta HP Vertica till Experience Platform.
+description: Lär dig hur du ansluter HP Vertica till Adobe Experience Platform med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '600'
+source-wordcount: '597'
 ht-degree: 1%
 
 ---
 
 
-# Skapa en HP [!DNL Vertica]-koppling med hjälp av API:t [!DNL Flow Service]
+# Skapa en HP [!DNL Vertica]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
 >[!NOTE]
 >
