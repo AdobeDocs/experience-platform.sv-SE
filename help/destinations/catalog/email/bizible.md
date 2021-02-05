@@ -1,21 +1,17 @@
 ---
 keywords: bizible;bizible extension;bizible destination
-title: Bizible-tillägg
-seo-title: Bizible-tillägg
+title: Bizible Extension Destination
 description: Bizible-tillägget är ett e-postmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Bizible-tillägget är ett e-postmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '501'
+source-wordcount: '474'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Bizible] Tillägg  {#bizible-extension}
-
-## Översikt {#overview}
+# [!DNL Bizible] extension  {#bizible-extension}
 
 [!DNL Bizible] är den branschledande B2B-attribueringslösningen som ger er oöverträffad insyn i era data, så att ni kan fatta smarta beslut som ger tillväxt.
 
