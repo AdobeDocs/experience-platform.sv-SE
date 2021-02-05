@@ -1,21 +1,17 @@
 ---
 keywords: Reklam. skrivbordet,
-title: The Trade Desk Destination
-seo-title: The Trade Desk Destination
+title: The Trade Desk Connection Destination
 description: 'Trade Desk är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer för olika annonser, videoklipp och mobila inventeringskällor. '
-seo-description: Trade Desk är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer för olika annonser, videoklipp och mobila inventeringskällor.
 translation-type: tm+mt
-source-git-commit: 95f57f9d1b3eeb0b16ba209b9774bd94f5758009
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '543'
+source-wordcount: '514'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL The Trade Desk] mål
-
-## Översikt {#overview}
+# [!DNL The Trade Desk] anslutning
 
 [!DNL The Trade Desk] mål hjälper dig att skicka profildata till  [!DNL The Trade Desk].
 
