@@ -1,14 +1,14 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;ui;UI;XDM;XDM system;Experience data model;Experience data model;experience data model;data model;data model;schema editor;schema editor;schema;schema;scheman;scheman;scheman;skapa;relation;relation;referens;referens;
 solution: Experience Platform
-title: Definiera en relation mellan två scheman med schemaredigeraren
+title: Definiera en relation mellan två scheman med Schemaredigeraren
 description: I det här dokumentet finns en självstudiekurs för att definiera en relation mellan två scheman med hjälp av Schemaredigeraren i användargränssnittet i Experience Platform.
 topic: tutorial
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '916'
+source-wordcount: '915'
 ht-degree: 0%
 
 ---
