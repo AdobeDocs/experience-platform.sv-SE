@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;data model;ui;workspace;array;field;
 solution: Experience Platform
-title: Definiera ett matrisfält i användargränssnittet
+title: Definiera matrisfält i användargränssnittet
 description: Lär dig hur du definierar ett arrayfält i användargränssnittet för Experience Platform.
 topic: user guide
 translation-type: tm+mt
-source-git-commit: 2e20403122e65d28f04114af9b7e8d41874f76e2
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '349'
+source-wordcount: '347'
 ht-degree: 0%
 
 ---
 
 
-# Definiera ett matrisfält i användargränssnittet
+# Definiera matrisfält i användargränssnittet
 
 När du definierar ett XDM-fält (Experience Data Model) i Adobe Experience Platform-användargränssnittet kan du ange det fältet som en array.
 
