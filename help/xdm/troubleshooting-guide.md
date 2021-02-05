@@ -1,21 +1,21 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;XDM;XDM system;XDM individuell profil;XDM ExperienceEvent;XDM Experience Event;experienceEvent;experience event event;XDM Experience Event;XDM ExperienceEvent;experience data model;Experience data model;Experience data model;data model;data model;schema;felsökning;FAQ;faq;Union schema;UNION PROFILE;union profile profile profile profile
 solution: Experience Platform
-title: Felsökningsguide för Experience Data Model (XDM)
-description: Det här dokumentet innehåller svar på vanliga frågor om Experience Data Model (XDM) System samt en felsökningsguide för vanliga fel.
+title: Felsökningsguide för XDM-system
+description: Det här dokumentet innehåller svar på vanliga frågor om Experience Data Model (XDM) och XDM System i Adobe Experience Platform samt en felsökningsguide för vanliga fel.
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: 2dbd92efbd992b70f4f750b09e9d2e0626e71315
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '1863'
+source-wordcount: '1869'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Experience Data Model] (XDM) Felsökningsguide för system
+# Felsökningsguide för XDM-system
 
-Det här dokumentet innehåller svar på vanliga frågor om [!DNL Experience Data Model] (XDM)-systemet samt en felsökningsguide för vanliga fel. För frågor och felsökning som rör andra tjänster i Adobe Experience Platform, se [felsökningsguiden för Experience Platform](../landing/troubleshooting.md).
+Det här dokumentet innehåller svar på vanliga frågor om [!DNL Experience Data Model] (XDM) och XDM System i Adobe Experience Platform samt en felsökningsguide för vanliga fel. För frågor och felsökning som rör andra plattformstjänster, se [felsökningsguiden för Experience Platform](../landing/troubleshooting.md).
 
 **[!DNL Experience Data Model](XDM)** är en öppen källkodsspecifikation som definierar standardiserade scheman för kundupplevelsehantering. Metoden som [!DNL Experience Platform] byggs på, **XDM System**, använder [!DNL Experience Data Model] scheman för [!DNL Platform]-tjänster. **[!DNL Schema Registry]** innehåller ett användargränssnitt och ett RESTful-API för att komma åt **[!DNL Schema Library]** i [!DNL Experience Platform]. Mer information finns i [XDM-dokumentationen](home.md).
 
