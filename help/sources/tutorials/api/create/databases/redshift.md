@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;hemanvändare;populära ämnen;rödskift;Redshift;Amazon Redshift;amazon redshift
 solution: Experience Platform
-title: Skapa en Amazon Redshift-koppling med API:t för Flow Service
+title: Skapa en Amazon-anslutning för omflyttningskälla med API:t för flödestjänsten
 topic: overview
 type: Tutorial
-description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till Amazon Redshift (nedan kallat Redshift).
+description: Lär dig hur du ansluter Adobe Experience Platform till Amazon Redshift med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '557'
+source-wordcount: '549'
 ht-degree: 1%
 
 ---
 
 
-# Skapa en [!DNL Amazon Redshift]-koppling med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL Amazon Redshift]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
 >[!NOTE]
 >
