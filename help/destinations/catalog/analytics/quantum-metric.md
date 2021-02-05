@@ -1,21 +1,17 @@
 ---
 keywords: Quantum Metric Extension;Quantum Metric;quantum metric;Quantum metric
-title: Quantum Metric-tillägg
-seo-title: Quantum Metric-tillägg
+title: Mål för Quantum-metriskt tillägg
 description: Quantum Metric-tillägget är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Quantum Metric-tillägget är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '551'
+source-wordcount: '522'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Quantum Metric] Tillägg  {#quantum-metric-extension}
-
-## Översikt {#overview}
+# [!DNL Quantum Metric] extension  {#quantum-metric-extension}
 
 [!DNL Quantum Metric's] integrering med Adobe Launch underlättar kodlös driftsättning av taggar för  [!DNL Quantum Metric's] datainsamling. Det här tillägget ger dessutom möjlighet att hämta startelement som innehåller användbar information från API:t [!DNL Quantum Metric].
 
