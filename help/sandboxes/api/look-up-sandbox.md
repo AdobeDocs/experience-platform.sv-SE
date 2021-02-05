@@ -1,21 +1,21 @@
 ---
-keywords: Experience Platform;home;popular topics;find sandbox;look up a sandbox
+keywords: Experience Platform;hem;populära ämnen;hitta sandlåda;leta upp en sandlåda
 solution: Experience Platform
-title: Söka efter en sandlåda
+title: Söka efter en sandlåda i API:t
 topic: developer guide
 description: Du kan söka efter en enskild sandlåda genom att göra en GET-begäran som innehåller sandlådans name-egenskap i sökvägen för begäran.
 translation-type: tm+mt
-source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
+source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
 workflow-type: tm+mt
-source-wordcount: '226'
+source-wordcount: '243'
 ht-degree: 0%
 
 ---
 
 
-# Söka efter en sandlåda
+# Söka efter en sandlåda i API:t
 
-Du kan söka efter en enskild sandlåda genom att göra en GET-begäran som innehåller sandlådeegenskapen `name` i sökvägen för begäran.
+Du kan söka efter en enskild sandlåda genom att göra en GET-begäran som innehåller sandlådans `name`-egenskap i sökvägen för begäran.
 
 **API-format**
 
@@ -42,7 +42,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar informationen om sandlådan, inklusive dess `name`, `title`, `state`och `type`.
+Ett lyckat svar returnerar informationen om sandlådan, inklusive dess `name`, `title`, `state` och `type`.
 
 ```json
 {
