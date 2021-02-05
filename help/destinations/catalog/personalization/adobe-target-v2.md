@@ -1,21 +1,17 @@
 ---
 keywords: måltillägg;mål;mål v2;mål v2-tillägg
-title: Adobe Target v2-tillägg
-seo-title: Adobe Target v2-tillägg
+title: Adobe Target v2-tilläggsmål
 description: Tillägget Adobe Target v2 är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget Adobe Target v2 är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '549'
+source-wordcount: '518'
 ht-degree: 0%
 
 ---
 
 
 # Adobe Target v2-tillägg {#adobe-target-v2-extension}
-
-## Översikt {#overview}
 
 Adobe Target är en Adobe Experience Cloud-lösning som innehåller allt ni behöver för att skräddarsy och personalisera kundernas upplevelse och maximera intäkterna från era webbplatser, mobilsajter, appar, sociala medier och andra digitala kanaler.
 
