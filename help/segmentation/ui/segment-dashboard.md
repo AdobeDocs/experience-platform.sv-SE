@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;profile;segment;segments;segmentation;user interface;UI;customization;segment dashboard;dashboard
-title: Kontrollpanel för segment
+keywords: Experience Platform;profil;segment;segment;segmentering;användargränssnitt;gränssnitt;anpassning;segmentpanel;instrumentpanel
+title: Användargränssnittshandbok för segmentkontrollpanelen
 description: 'I den här guiden beskrivs den segmentkontrollpanel som är tillgänglig i användargränssnittet i Adobe Experience Platform. '
 topic: guide
 type: Documentation
 translation-type: tm+mt
-source-git-commit: 63758450276d47e7e0eddeb047779222cb80a3e2
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '700'
+source-wordcount: '715'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 Adobe Experience Platform användargränssnitt (UI) är en kontrollpanel där du kan visa viktig information om dina segment, som de tagits under en daglig ögonblicksbild. I den här handboken beskrivs hur du kommer åt och arbetar med segmentkontrollpanelen i användargränssnittet och den innehåller mer information om de visualiseringar som visas på kontrollpanelen.
 
-En översikt över alla funktioner i Adobe Experience Platform Segmentation Service i användargränssnittet för plattformen finns i användargränssnittshandboken för [segmenteringstjänsten](overview.md).
+En översikt över alla funktioner i Adobe Experience Platform Segmentation Service i användargränssnittet för plattformen finns i [gränssnittshandboken för segmenteringstjänsten](overview.md).
 
 ## Instrumentpanelsdata för segment
 
@@ -35,13 +35,13 @@ Attributdata i ögonblicksbilden visar data exakt som de visas vid den specifika
 
 ## Utforska segmentkontrollpanelen
 
-Om du vill navigera till segmentkontrollpanelen i plattformsgränssnittet väljer du **[!UICONTROL Segments]** i den vänstra listen och sedan fliken som du vill visa kontrollpanelen på **[!UICONTROL Overview]** .
+Om du vill navigera till segmentkontrollpanelen i plattformsgränssnittet väljer du **[!UICONTROL Segments]** i den vänstra listen och sedan fliken **[!UICONTROL Overview]** för att visa kontrollpanelen.
 
 ![](../images/ui/segment-dashboard/dashboard-overview.png)
 
 ### Markera ett segment
 
-Om du vill markera ett segment som ska visas på kontrollpanelen väljer du dialogruteväljaren för **[!UICONTROL Select segment]** textrutan.
+Om du vill markera ett segment som ska visas på kontrollpanelen väljer du dialogväljaren för textrutan **[!UICONTROL Select segment]**.
 
 ![](../images/ui/segment-dashboard/select-segment.png)
 
@@ -51,7 +51,7 @@ Om du vill markera ett segment som ska visas på kontrollpanelen väljer du dial
 >
 >![](../images/ui/segment-dashboard/remove-segment.png)
 
-Dialogrutan öppnas och du kan välja vilket segment som du vill visa. **[!UICONTROL Select segment]** När du har valt det segment du vill använda återgår du **[!UICONTROL Select]** till kontrollpanelen.
+Dialogrutan **[!UICONTROL Select segment]** öppnas så att du kan välja vilket segment du vill visa. När du har valt det segment du vill använda använder du **[!UICONTROL Select]** för att gå tillbaka till kontrollpanelen.
 
 ![](../images/ui/segment-dashboard/select-segment-dialog.png)
 
@@ -59,7 +59,7 @@ Dialogrutan öppnas och du kan välja vilket segment som du vill visa. **[!UICON
 
 När du har valt ett segment fylls textrutan för sammanfogningspolicy automatiskt i med den sammanfogningspolicy som är relaterad till det segmentet.
 
-Mer information om hur du skapar segment i Experience Platform finns i användargränssnittshandboken för [segmentbyggaren](segment-builder.md). Mer information om kopplingsprofiler får du om du börjar med att läsa [Kundprofilöversikt](../../profile/home.md)i realtid.
+Mer information om hur du skapar segment i Experience Platform finns i [användargränssnittshandboken för segmentbyggaren](segment-builder.md). Mer information om kopplingsprofiler får du om du börjar med att läsa översikten över kundprofilen i realtid](../../profile/home.md).[
 
 ![](../images/ui/segment-dashboard/merge-policy.png)
 
@@ -78,27 +78,27 @@ Experience Platform tillhandahåller flera widgetar som du kan använda för att
 
 ### [!UICONTROL Segment size] {#segment-size}
 
-Widgeten visar det totala antalet sammanfogade profiler i det valda segmentet när ögonblicksbilden togs. **[!UICONTROL Segment size]** Det här numret är resultatet av att du har tillämpat segmentsammanfogningsprincipen på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person i segmentet.
+Widgeten **[!UICONTROL Segment size]** visar det totala antalet sammanslagna profiler i det valda segmentet när ögonblicksbilden togs. Det här numret är resultatet av att du har tillämpat segmentsammanfogningsprincipen på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person i segmentet.
 
-Mer information om fragment och sammanfogade profiler får du om du börjar med att läsa [Kundprofilöversikt](../home.md)i realtid.
+Mer information om fragment och sammanfogade profiler får du om du börjar med att läsa [Kundprofilöversikt i realtid](../home.md).
 
 ![](../images/ui/segment-dashboard/segment-size.png)
 
 ### [!UICONTROL Profiles by namespace] {#profiles-by-namespace}
 
-Widgeten visar **[!UICONTROL Profiles by namespace]** uppdelningen av namnutrymmen i alla sammanfogade profiler i det valda segmentet. Det totala antalet profiler per [!UICONTROL ID namespace] (med andra ord, om de värden som visas för varje namnutrymme läggs ihop) är vanligtvis högre än det totala antalet profiler i segmentet eftersom en profil kan ha flera namnutrymmen kopplade till sig. Om en kund till exempel interagerar med varumärket i mer än en kanal kan flera namnutrymmen kopplas till den enskilda kunden.
+Widgeten **[!UICONTROL Profiles by namespace]** visar uppdelningen av namnutrymmen i alla sammanfogade profiler i det valda segmentet. Det totala antalet profiler med [!UICONTROL ID namespace] (d.v.s. om du lägger ihop värdena som visas för varje namnutrymme) är vanligtvis högre än det totala antalet profiler i segmentet eftersom en profil kan ha flera namnutrymmen kopplade till sig. Om en kund till exempel interagerar med varumärket i mer än en kanal kan flera namnutrymmen kopplas till den enskilda kunden.
 
-Mer information om identitetsnamnutrymmen finns i dokumentationen [för](../../identity-service/home.md)Adobe Experience Platform Identity Service.
+Mer information om identitetsnamnutrymmen finns i [dokumentationen för Adobe Experience Platform Identity Service](../../identity-service/home.md).
 
 ![](../images/ui/segment-dashboard/profiles-by-namespace.png)
 
 ## Ytterligare instrumentpaneler
 
-Plattformsgränssnittet innehåller ytterligare instrumentpaneler för att visa ögonblicksbilder av dina data i Experience Platform. Dessa paneler innehåller kundprofil och [!UICONTROL License usage]. Om du vill ha mer information om dessa ytterligare instrumentpaneler väljer du bland följande länkar:
+Plattformsgränssnittet innehåller ytterligare instrumentpaneler för att visa ögonblicksbilder av dina data i Experience Platform. Dessa instrumentpaneler innehåller kundprofil i realtid och [!UICONTROL License usage]. Om du vill ha mer information om dessa ytterligare instrumentpaneler väljer du bland följande länkar:
 
 * [[!DNL Profile] kontrollpanel](../../profile/ui/profile-dashboard.md)
 * [[!UICONTROL License usage] kontrollpanel](../../landing/license-usage-dashboard.md)
 
 ## Nästa steg
 
-Genom att följa det här dokumentet bör du nu kunna hitta segmentkontrollpanelen och välja ett segment att visa. Du bör också förstå mätvärdena som visas i de tillgängliga widgetarna. Mer information om hur du arbetar med segment i användargränssnittet i Experience Platform finns i användargränssnittshandboken för [segmenteringstjänster](overview.md).
+Genom att följa det här dokumentet bör du nu kunna hitta segmentkontrollpanelen och välja ett segment att visa. Du bör också förstå mätvärdena som visas i de tillgängliga widgetarna. Mer information om hur du arbetar med segment i användargränssnittet för Experience Platform finns i [Användargränssnittshandboken för segmenteringstjänster](overview.md).
