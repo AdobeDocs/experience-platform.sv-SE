@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;list identities;list cluster
+keywords: Experience Platform;hem;populära ämnen;lista identiteter;listkluster
 solution: Experience Platform
-title: Visa klusteridentiteter
+title: Visa alla identiteter i ett kluster
 topic: API guide
 description: Identiteter som är relaterade till ett identitetsdiagram, oavsett namnutrymme, anses ingå i samma kluster i det identitetsdiagrammet. Med alternativen nedan får du tillgång till alla klustermedlemmar.
 translation-type: tm+mt
-source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
+source-git-commit: 73035aec86297cfc4ee9337cf922d599001379c3
 workflow-type: tm+mt
-source-wordcount: '347'
+source-wordcount: '359'
 ht-degree: 0%
 
 ---
@@ -21,10 +21,10 @@ Identiteter som är relaterade till ett identitetsdiagram, oavsett namnutrymme, 
 
 Hämta alla klustermedlemmar för en enda identitet.
 
-Du kan använda den valfria `graph-type` parametern för att ange identitetsdiagrammet för att hämta klustret från. Alternativen är:
+Du kan använda den valfria parametern `graph-type` för att ange identitetsdiagrammet som klustret ska hämtas från. Alternativen är:
 
 - Ingen - Utför ingen identitetssammanfogning.
-- Privat diagram - Utför identitetssammanfogning baserat på ditt privata identitetsdiagram. Om inget `graph-type` anges är detta standardvärde.
+- Privat diagram - Utför identitetssammanfogning baserat på ditt privata identitetsdiagram. Om `graph-type` inte anges är detta standardvärde.
 
 **API-format**
 
@@ -56,7 +56,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-Alternativ 3: Ange identiteten som XID (`xid`). Mer information om hur du hämtar en identitets XID finns i avsnittet om att [hämta en identitets](./list-native-id.md)XID.
+Alternativ 3: Ange identiteten som XID (`xid`). Mer information om hur du hämtar en identitets XID finns i avsnittet i det här dokumentet som handlar om [att hämta XID för en identitet](./list-native-id.md).
 
 ```shell
 curl -X GET \
@@ -69,7 +69,7 @@ curl -X GET \
 
 ## Hämta associerade identiteter för flera identiteter
 
-Använd `POST` som en batchmotsvarighet till den `GET` metod som beskrivs ovan för att returnera identiteterna i kluster med flera identiteter.
+Använd `POST` som en gruppmotsvarighet till metoden `GET` som beskrivs ovan för att returnera identiteterna i klustren med flera identiteter.
 
 >[!NOTE]
 >
@@ -87,7 +87,7 @@ Följande begäran visar en lista med XID:n som klustermedlemmar ska hämtas fö
 
 **Stub-förfrågan**
 
-Användning av sidhuvudet kommer att returnera ett statiskt svar `x-uis-cst-ctx: stub` . Detta är en tillfällig lösning som underlättar utvecklingen av tidig integration medan tjänsterna är färdiga. Detta kommer att bli inaktuellt när det inte längre behövs.
+Användning av `x-uis-cst-ctx: stub`-huvudet returnerar ett stötningssvar. Detta är en tillfällig lösning som underlättar utvecklingen av tidig integration medan tjänsterna är färdiga. Detta kommer att bli inaktuellt när det inte längre behövs.
 
 ```shell
 curl -X POST \
@@ -243,4 +243,4 @@ curl -X POST \
 
 ## Nästa steg
 
-Gå till nästa självstudiekurs för att [visa en identitets klusterhistorik](./list-cluster-history.md)
+Gå till nästa självstudiekurs för att [visa klusterhistoriken för en identitet](./list-cluster-history.md)
