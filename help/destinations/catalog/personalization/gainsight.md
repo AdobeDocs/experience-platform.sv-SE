@@ -1,21 +1,17 @@
 ---
 keywords: förutse;förutse förlängning;förutse destination
-title: Gainsight-tillägg
-seo-title: Gainsight-tillägg
+title: Gainsight Extension Destination
 description: Gainsight-tillägget är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Gainsight-tillägget är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '530'
+source-wordcount: '503'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL Gainsight] extension  {#gainsight-extension}
-
-## Översikt {#overview}
 
 [!DNL Gainsight] ger produktägare de verktyg de behöver för att förstå användarbeteenden, få fler att ta till sig produkter och samla in feedback från användarna.
 
