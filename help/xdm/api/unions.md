@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;hemmabruk;populära ämnen;api;API;XDM;XDM system;Experience data model;Experience data model;data model;data model;schema register;schema Registry;union;union;union;union;segment;segmentMembership;timeSeriesEvents;
 solution: Experience Platform
-title: Unions
+title: Unisions API-slutpunkt
 description: Med slutpunkten /union i API:t för schemaregister kan du programmässigt hantera XDM-föreningsscheman i ditt upplevelseprogram.
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '910'
+source-wordcount: '912'
 ht-degree: 0%
 
 ---
