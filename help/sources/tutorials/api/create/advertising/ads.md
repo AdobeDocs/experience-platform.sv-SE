@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Google adwords;Google AdWords;adwords
 solution: Experience Platform
-title: Skapa en Google AdWords-koppling med API:t för Flow Service
+title: Skapa en Google AdWords-källanslutning med API:t för flödestjänsten
 topic: overview
 type: Tutorial
-description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till Google AdWords.
+description: Lär dig hur du ansluter Adobe Experience Platform till Google AdWords med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: 48a5dcfe5679e360da1e33f6021dc1229b92948f
+source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
 workflow-type: tm+mt
-source-wordcount: '622'
+source-wordcount: '619'
 ht-degree: 0%
 
 ---
 
 
-# Skapa en [!DNL Google AdWords]-koppling med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL Google AdWords]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
 >[!NOTE]
 >
