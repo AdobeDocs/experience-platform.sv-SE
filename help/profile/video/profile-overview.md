@@ -1,5 +1,5 @@
 ---
-title: Översikt över kundprofiler i realtid
+title: Kundprofilöversikt i realtid
 description: Den här videon ger en grundläggande förståelse för kundprofilen i realtid inom Adobe Experience Platform och visar hur du bläddrar bland profiler i plattformens användargränssnitt.
 product: experience platform
 type: Documentation
@@ -9,7 +9,7 @@ audience: all
 doc-type: video
 activity: understand
 translation-type: tm+mt
-source-git-commit: cab7ba65cc62d8cab402bc23ea38c17d77841363
+source-git-commit: cad9c690be986961aea2969ef0ade975f33a8ee5
 workflow-type: tm+mt
 source-wordcount: '116'
 ht-degree: 0%
