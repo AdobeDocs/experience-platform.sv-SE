@@ -1,21 +1,17 @@
 ---
 keywords: Google ads;Google ads;Google Adwords;Google AdWords;Google Adwords
-title: Google AdsDestination
-seo-title: Mål för Google Ads
+title: Mål för Google Ads-anslutning
 description: Google Ads, som tidigare kallades Google AdWords, är en onlinereklam som gör att företag kan betala per klick för annonsering vid textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appar.
-seo-description: Google Ads, som tidigare kallades Google AdWords, är en onlinereklam som gör att företag kan betala per klick för annonsering vid textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appar.
 translation-type: tm+mt
-source-git-commit: bb2fc2658d32c59b476dd9d526eb8bc2f055a1af
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '674'
+source-wordcount: '643'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Google Ads] Destination
-
-## Översikt
+# [!DNL Google Ads] anslutning
 
 [!DNL Google Ads], som tidigare kallades  [!DNL Google AdWords], är en onlinereklam som gör det möjligt för företag att betala per klick för annonsering över textbaserade sökningar, grafiska skärmar,  [!DNL YouTube] videor och mobilskärmar i appen.
 
