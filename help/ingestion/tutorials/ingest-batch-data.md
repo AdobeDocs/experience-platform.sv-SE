@@ -1,14 +1,14 @@
 ---
 keywords: Experience Platform;hemmabruk;populära ämnen;matning;ingest batch data;självstudiekurs;batchmatning;självstudiekurs;ui guide;
 solution: Experience Platform
-title: Importera data till Adobe Experience Platform
+title: Infoga data i Experience Platform
 topic: tutorial
 type: Tutorial
 description: Med Adobe Experience Platform kan du enkelt importera data som gruppfiler i form av Parquet-filer eller data som följer ett känt Experience Data Model-schema (XDM).
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
 workflow-type: tm+mt
-source-wordcount: '1262'
+source-wordcount: '1261'
 ht-degree: 0%
 
 ---
