@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;Data Science Workspace;popular topics;access control;sandbox;intelligence pack;dsw features;dsw access;Adobe Experience Platform Intelligence;intelligence;aep intelligence package
+keywords: Experience Platform;home;Data Science Workspace;populära topics;access control;sandbox;intelligence pack;dsw features;dsw access;Adobe Experience Platform Intelligence;Intelligence;aep Intelligence package
 solution: Experience Platform
-title: Åtkomst och funktioner till arbetsytan Data Science
+title: Data Science Workspace Access and Features
 topic: Access and features for data science workspace
 description: 'I följande dokument beskrivs behörigheter och åtkomst till funktioner i arbetsytan Data Science. '
 translation-type: tm+mt
-source-git-commit: 40181fc9b1b08c2e21f806caae76b8af0ec9e5e6
+source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
 workflow-type: tm+mt
-source-wordcount: '619'
+source-wordcount: '644'
 ht-degree: 2%
 
 ---
@@ -19,15 +19,15 @@ I följande dokument beskrivs behörigheter och åtkomst till funktioner i arbet
 
 ![DSW-flikar](./images/access/platform-tabs.png)
 
-- **Bärbara datorer:** Innehåller en interaktiv utvecklingsmiljö ([JupyterLab](./jupyterlab/overview.md)) för att utforska, analysera och modellera data på Experience Platform.
-- **Modeller:** Innehåller verktyg för att skapa, publicera och lagra avancerade maskininlärningsrecept och modeller. Mer information finns i självstudiekursen [Skapa och publicera en maskininlärningsmodell](./models-recipes/create-publish-model.md) .
-- **Tjänster:** Innehåller både tjänster som tillhandahålls av Adobe, t.ex. [intelligenta tjänster](../intelligent-services/home.md) , och alla anpassade tjänster som du har skapat med Data Science Workspace.
+- **bärbara datorer:** Innehåller en interaktiv utvecklingsmiljö ([JupyterLab](./jupyterlab/overview.md)) för att utforska, analysera och modellera data på Experience Platform.
+- **Modeller:** innehåller verktyg för att skapa, publicera och lagra avancerade maskininlärningsrecept och modeller. Mer information finns i [skapa och publicera en maskininlärningsmodell](./models-recipes/create-publish-model.md) självstudiekurs.
+- **Tjänster:** Innehåller både tjänster som tillhandahålls av Adobe, t.ex.  [intelligenta ](../intelligent-services/home.md) tjänster, och anpassade tjänster som du har skapat med Data Science Workspace.
 
 Varför visas bara fliken Tjänster?
 
 - Din organisation kan endast ha rätt till RTCDP (Real-time Customer Data Platform) som innehåller AI för Intelligent Service.
 
-Om du inte kan se någon av **datavetenskapliga** flikar och vill använda funktionerna i Datavetenskapen kontaktar du företagets administratör och kontrollerar om du har en Adobe Experience Platform Intelligence-licens.
+Om du inte kan se någon av flikarna **Datavetenskap** och vill använda funktioner i Datavetenskapen, kontaktar du företagets administratör för att kontrollera om du har en Adobe Experience Platform Intelligence-licens.
 
 ## Adobe Experience Platform Intelligence-pakettillägg
 
@@ -52,17 +52,17 @@ I följande tabell beskrivs några viktiga skillnader för Data Science Workspac
 
 ## Åtkomstkontroll
 
-Åtkomstkontroll för Experience Platform administreras via [Adobe Admin Console](https://adminconsole.adobe.com). Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor. Mer information finns i [åtkomstkontrollsöversikten](../access-control/home.md) .
+Åtkomstkontroll för Experience Platform administreras via [Adobe Admin Console](https://adminconsole.adobe.com). Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor. Mer information finns i [översikten över åtkomstkontroll](../access-control/home.md).
 
 För att kunna använda arbetsytan Datavetenskap måste behörigheten Hantera datavetenskapen aktiveras. I följande tabell visas effekterna av att ha den här behörigheten aktiverad eller inaktiverad:
 
 | Behörighet | Aktiverad | Handikappade |
 |---|---|---|
-| Hantera arbetsytan Datavetenskap | Ger tillgång till alla tjänster i arbetsytan Datavetenskap. | API- och gränssnittsåtkomst till alla tjänster i Data Science Workspace är inaktiverat. När du är inaktiverad går det inte att välja **sidor för bärbara datorer**, **modeller** och **tjänster** . <li>Tillgång till **tjänster** kan fortfarande vara tillgänglig via kunddataplattformen i realtid (RTCDP).</li> |
+| Hantera arbetsytan Datavetenskap | Ger tillgång till alla tjänster i arbetsytan Datavetenskap. | API- och gränssnittsåtkomst till alla tjänster i Data Science Workspace är inaktiverat. När du är inaktiverad går det inte att välja sidorna **Anteckningsböcker**, **Models** och **Tjänster**. <li>Åtkomst till **tjänster** kan fortfarande vara tillgänglig via kunddataplattformen i realtid (RTCDP).</li> |
 
 ## Stöd för sandlådor
 
-Sandlådor är virtuella partitioner i en enda instans av Experience Platform. Varje plattformsinstans har stöd för en produktionssandlåda och flera icke-produktionssandlådor, där var och en har ett eget bibliotek med plattformsresurser. Med icke-produktionssandlådor kan du testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka din produktionssandlåda. Mer information om sandlådor finns i översikten över [sandlådor](../sandboxes/home.md).
+Sandlådor är virtuella partitioner i en enda instans av Experience Platform. Varje plattformsinstans har stöd för en produktionssandlåda och flera icke-produktionssandlådor, där var och en har ett eget bibliotek med plattformsresurser. Med icke-produktionssandlådor kan du testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka din produktionssandlåda. Mer information om sandlådor finns i [översikten över sandlådor](../sandboxes/home.md).
 
 För närvarande har Data Science Workspace följande sandlådebegränsning:
 
@@ -72,4 +72,4 @@ För närvarande har Data Science Workspace följande sandlådebegränsning:
 
 I det här dokumentet beskrivs de olika typerna av åtkomst och funktioner som finns i arbetsytan Data Science.
 
-Om du vill veta mer om arbetsytan Data Science Workspace, t.ex. ett komplett arbetsflöde, kan du börja med att läsa [dokumentationen från genomgången](./walkthrough.md) av datavetenskapen. Mer allmän information finns i översikten över arbetsytan för [datavetenskap](./home.md).
+Om du vill veta mer om arbetsytan Data Science Workspace, t.ex. ett komplett arbetsflöde, kan du börja med att läsa igenom [Data Science Workspace-genomgången](./walkthrough.md)-dokumentationen. Mer allmän information finns på [Översikt över arbetsytan Datavetenskap](./home.md).
