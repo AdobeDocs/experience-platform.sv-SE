@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;home;populära topics;query service;Query service;sample queries;sample query;adobe target;
 solution: Experience Platform
-title: Exempelfrågor
+title: Exempelfrågor om Adobe Target-data
 topic: queries
 description: Data från Adobe Target omvandlas till Experience Event XDM-schema och hämtas till Experience Platform som datauppsättningar åt dig. Det här dokumentet innehåller exempelfrågor för användning av frågetjänsten med dina Adobe Target-datauppsättningar.
 translation-type: tm+mt
-source-git-commit: e2c648829bb3268ab319da934f5cc6cc811290b3
+source-git-commit: 97dc0b5fb44f5345fd89f3f56bd7861668da9a6e
 workflow-type: tm+mt
-source-wordcount: '324'
+source-wordcount: '328'
 ht-degree: 0%
 
 ---
