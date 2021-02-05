@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;XDM;fields;schemas;Schemas;phoneNumber;xdm:phoneNumber;datatype;data-type;data type;
+keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;Schemas;phoneNumber;xdm:phoneNumber;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
-title: Datatyp för telefonnummer
+title: Telefonnummerdatatyp
 topic: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM för telefonnummer.
 translation-type: tm+mt
-source-git-commit: f5bddb39c16eb25e85297f56e331d3aa51510eb9
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '186'
+source-wordcount: '204'
 ht-degree: 0%
 
 ---
@@ -22,8 +22,8 @@ ht-degree: 0%
 | Egenskap | Beskrivning |
 | --- | --- |
 | `extension` | Det interna uppringningsnummer som används för anrop från en privat börs, operator eller instrumentpanel. |
-| `number` | Telefonnumret. Observera att telefonnumret är en sträng och kan innehålla meningsfulla tecken som hakparenteser `()`, bindestreck `-`eller tecken för att indikera underordnade identifierare som tillägg `x` till exempel `1-353(0)18391111` eller `+613 9403600x1234`. |
-| `primary` | Ett booleskt värde som anger om det här är personens primära telefonnummer. Till skillnad från adress och e-postadress kan det finnas flera primära telefonnummer. en per kommunikationskanal. Kommunikationskanalen definieras av typen (anges med namnet på den överordnade egenskapen): `textMessaging`, `mobile`, `phone`, `home`, `work`, `unknown`och `fax`. |
+| `number` | Telefonnumret. Observera att telefonnumret är en sträng och kan innehålla meningsfulla tecken, t.ex. hakparenteser `()`, bindestreck `-` eller tecken som anger underordnade identifierare, t.ex. tillägg `x` eller `+613 9403600x1234`.`1-353(0)18391111` |
+| `primary` | Ett booleskt värde som anger om det här är personens primära telefonnummer. Till skillnad från adress och e-postadress kan det finnas flera primära telefonnummer. en per kommunikationskanal. Kommunikationskanalen definieras av typen (anges med namnet på den överordnade egenskapen): `textMessaging`, `mobile`, `phone`, `home`, `work`, `unknown` och `fax`. |
 | `status` | Anger om telefonnumret kan användas. |
 | `statusReason` | En beskrivning av aktuell status. |
 | `validity` | Telefonnumrets tekniska korrekthet. |
