@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;FTP;ftp
+keywords: Experience Platform;hem;populära ämnen;FTP;ftp
 solution: Experience Platform
 title: Skapa en FTP-källanslutning i användargränssnittet
 topic: overview
 type: Tutorial
-description: I den här självstudiekursen beskrivs hur du skapar en FTP-källanslutning med hjälp av användargränssnittet för plattformen.
+description: Lär dig hur du skapar en FTP-källanslutning med Adobe Experience Platform-gränssnittet.
 translation-type: tm+mt
-source-git-commit: e28a3ec2d4330f0e9f3895e0236c9ebea2ef2776
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '440'
+source-wordcount: '447'
 ht-degree: 1%
 
 ---
@@ -18,9 +18,9 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->FTP-kopplingen är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [Källor-översikten](../../../../home.md#terms-and-conditions) .
+>FTP-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
-I den här självstudiekursen beskrivs hur du skapar en FTP-källanslutning med hjälp av användargränssnittet för plattformen.
+I den här självstudiekursen beskrivs hur du skapar en FTP-källanslutning med Adobe Experience Platform-gränssnittet.
 
 ## Komma igång
 
@@ -31,7 +31,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
    * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
 * [[!DNL Real-time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Om du redan har en giltig FTP-anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen om hur du [konfigurerar ett dataflöde](../../dataflow/batch/cloud-storage.md).
+Om du redan har en giltig FTP-anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen [konfigurera ett dataflöde](../../dataflow/batch/cloud-storage.md).
 
 ### Samla in nödvändiga inloggningsuppgifter
 
@@ -47,28 +47,28 @@ För att kunna ansluta till FTP måste du ange värden för följande anslutning
 
 När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att skapa ett nytt FTP-konto för att ansluta till plattformen.
 
-Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt [!UICONTROL Sources] arbetsytan. På [!UICONTROL Catalog] skärmen visas en mängd olika källor som du kan skapa ett inkommande konto för.
+Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt arbetsytan [!UICONTROL Sources]. Skärmen [!UICONTROL Catalog] innehåller en mängd olika källor som du kan skapa ett inkommande konto för.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Välj under [!UICONTROL Cloud storage] kategorin **[!UICONTROL FTP]**. Om det är första gången du använder den här kopplingen väljer du **[!UICONTROL Configure]**. Annars väljer du **[!UICONTROL Add data]** att skapa en ny FTP-anslutning.
+Välj **[!UICONTROL FTP]** under kategorin [!UICONTROL Cloud storage]. Om det här är första gången du använder den här kopplingen väljer du **[!UICONTROL Configure]**. Annars väljer du **[!UICONTROL Add data]** för att skapa en ny FTP-anslutning.
 
 ![katalog](../../../../images/tutorials/create/ftp/catalog.png)
 
-Sidan visas **[!UICONTROL Connect to FTP]** . På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
+Sidan **[!UICONTROL Connect to FTP]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
 ### Nytt konto
 
-Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. Ange ett namn, en valfri beskrivning och dina inloggningsuppgifter på det indataformulär som visas. När du är klar väljer du **[!UICONTROL Connect]** och tillåt sedan en tid för att upprätta den nya anslutningen.
+Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. Ange ett namn, en valfri beskrivning och dina inloggningsuppgifter på det indataformulär som visas. När du är klar väljer du **[!UICONTROL Connect]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
 
 ![new](../../../../images/tutorials/create/ftp/new.png)
 
 ### Befintligt konto
 
-Om du vill ansluta ett befintligt konto markerar du det FTP-konto som du vill ansluta till och väljer sedan **[!UICONTROL Next]** att fortsätta.
+Om du vill ansluta ett befintligt konto markerar du det FTP-konto som du vill ansluta till och fortsätter sedan med **[!UICONTROL Next]**.
 
 ![befintlig](../../../../images/tutorials/create/ftp/existing.png)
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt FTP-konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till plattformen](../../dataflow/batch/cloud-storage.md).
+Genom att följa den här självstudiekursen har du upprättat en anslutning till ditt FTP-konto. Du kan nu fortsätta till nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till plattformen](../../dataflow/batch/cloud-storage.md).
