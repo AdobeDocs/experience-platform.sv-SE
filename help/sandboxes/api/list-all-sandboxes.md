@@ -1,21 +1,21 @@
 ---
-keywords: Experience Platform;home;popular topics;list sandboxes
+keywords: Experience Platform;hem;populära ämnen;lissandlådor
 solution: Experience Platform
-title: Visa alla sandlådor
+title: List Sandboxes i API
 topic: developer guide
 description: Om du vill visa en lista över alla sandlådor som tillhör din IMS-organisation (aktiv eller annan), gör du en GET-begäran till slutpunkten /sandbox.
 translation-type: tm+mt
-source-git-commit: 6326b3072737acf30ba2aee7081ce28dc9627a9a
+source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
 workflow-type: tm+mt
-source-wordcount: '309'
+source-wordcount: '320'
 ht-degree: 0%
 
 ---
 
 
-# Visa alla sandlådor
+# Lista sandlådor i API
 
-Om du vill visa en lista över alla sandlådor som tillhör din IMS-organisation (aktiv eller annan), gör du en GET-begäran till `/sandboxes` slutpunkten.
+Om du vill visa en lista över alla sandlådor som tillhör din IMS-organisation (aktiv eller annan), gör du en GET-begäran till `/sandboxes`-slutpunkten.
 
 **API-format**
 
@@ -25,7 +25,7 @@ GET /sandboxes?{QUERY_PARAMS}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. Mer information finns i avsnittet om [frågeparametrar](#query) . |
+| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. Mer information finns i avsnittet [frågeparametrar](#query). |
 
 **Begäran**
 
@@ -40,7 +40,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en lista med sandlådor som tillhör din organisation, inklusive information som `name`, `title`, `state`och `type`.
+Ett lyckat svar returnerar en lista med sandlådor som tillhör din organisation, inklusive information som `name`, `title`, `state` och `type`.
 
 ```json
 {
@@ -130,11 +130,11 @@ Ett lyckat svar returnerar en lista med sandlådor som tillhör din organisation
 
 ## Använda frågeparametrar {#query}
 
-API:t har stöd för användning av frågeparametrar för att skicka och filtrera resultat när sandlådor listas. [[!DNL Sandbox]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sandbox-api.yaml)
+API:t [[!DNL Sandbox]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sandbox-api.yaml) har stöd för användning av frågeparametrar för att visa och filtrera resultat när sandlådor listas.
 
 >[!NOTE]
 >
->Parametrarna `limit` och `offset` frågeparametrarna måste anges tillsammans. Om du bara anger ett fel returneras det. Om du anger ingen är standardgränsen 50 och förskjutningen 0.
+>Frågeparametrarna `limit` och `offset` måste anges tillsammans. Om du bara anger ett fel returneras det. Om du anger ingen är standardgränsen 50 och förskjutningen 0.
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
