@@ -1,21 +1,21 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;skyddsförslag;riktlinjer;begränsning;enhet;primär enhet;dimensionsenhet;
-title: Experience Platform Guardrails för kundprofildata i realtid
+title: Guardrails for Real-time Customer Profile Data
 solution: Experience Platform
 product: experience platform
 topic: guide
 type: Documentation
 description: 'Adobe Experience Platform tillhandahåller ett antal skyddsutkast som hjälper dig att undvika att skapa datamodeller som kundprofilen i realtid inte stöder. I det här dokumentet beskrivs de bästa metoderna och begränsningarna som du bör tänka på när du modellerar profildata. '
 translation-type: tm+mt
-source-git-commit: e6ecc5dac1d09c7906aa7c7e01139aa194ed662b
+source-git-commit: ba1cbed3b5e3f3a8879b3882856a03ef4be9b96a
 workflow-type: tm+mt
-source-wordcount: '1457'
+source-wordcount: '1456'
 ht-degree: 1%
 
 ---
 
 
-# [!DNL Platform] skyddsräcken för  [!DNL Real-time Customer Profile]
+# Skyddsritningar för [!DNL Real-time Customer Profile]-data
 
 [!DNL Real-time Customer Profile] innehåller individuella profiler som gör att ni kan leverera personaliserade upplevelser över flera kanaler baserat på beteendeinsikter och kundattribut. För att uppnå detta använder [!DNL Profile] och segmenteringsmotorn i Adobe Experience Platform en högdenormaliserad hybriddatamodell som erbjuder ett nytt sätt att utveckla kundprofiler. Användning av denna hybriddatamodell gör det oerhört viktigt att de data som samlas in är korrekt utformade. Trots att datalagret [!DNL Profile] som bevarar profildata inte är ett relationsarkiv, tillåter [!DNL Profile] integrering med små dimensionsenheter för att skapa segment på ett förenklat och intuitivt sätt. Denna integrering kallas segmentering för flera enheter.
 
