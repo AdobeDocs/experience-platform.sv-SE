@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;mappa csv;mappa csv-fil;mappa csv-fil till xdm;mappa csv till xdm;ui guide;mappa;mappa;mappningsfält;mappningsfunktioner;
 solution: Experience Platform
-title: Förinställningsfunktioner för data
+title: Mappningsfunktioner för dataförinställningar
 topic: overview
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 translation-type: tm+mt
-source-git-commit: bfcb1924e40b67c0af41dc789b5ff0bf8e8366e1
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '3597'
+source-wordcount: '3599'
 ht-degree: 2%
 
 ---
 
 
-# Förinställningsfunktioner för data
+# Funktioner för datapersonmappning
 
 Dataprep-funktioner kan användas för att beräkna och beräkna värden baserat på vad som anges i källfält.
 
