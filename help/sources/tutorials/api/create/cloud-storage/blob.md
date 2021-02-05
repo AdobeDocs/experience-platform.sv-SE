@@ -1,22 +1,22 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Azure;azure blob;blob;blob
 solution: Experience Platform
-title: Skapa en Azure Blob-koppling med API:t för Flow Service
+title: Skapa en Azure Blob Source-anslutning med API:t för Flow Service
 topic: overview
 type: Tutorial
-description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till en Azure Blob-lagring (nedan kallad Blob-lagring).
+description: Lär dig hur du ansluter Adobe Experience Platform till Azure Blob med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
-source-wordcount: '770'
+source-wordcount: '761'
 ht-degree: 0%
 
 ---
 
 
-# Skapa en [!DNL Azure Blob]-koppling med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL Azure Blob]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
-I den här självstudien används [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) för att vägleda dig genom stegen för att ansluta [!DNL Azure Blob] (nedan kallat &quot;Blob&quot;) till Experience Platform.
+I den här självstudien används [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) för att vägleda dig genom stegen för att ansluta [!DNL Azure Blob] (kallas nedan&quot;Blob&quot;) till Adobe Experience Platform.
 
 ## Komma igång
 
@@ -25,7 +25,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [Källor](../../../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna skapa en [!DNL Blob]-källkoppling med hjälp av API:t [!DNL Flow Service].
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna skapa en [!DNL Blob]-källanslutning med hjälp av API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga inloggningsuppgifter
 
