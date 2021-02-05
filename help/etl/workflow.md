@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;ETL;etl;etl workflow;ETL workflow
+keywords: Experience Platform;hem;populära ämnen;ETL;etl;etl workflow;ETL workflow
 solution: Experience Platform
 title: ETL-arbetsflöde
 topic: overview
 description: Olika extraherings-, omformnings- och inläsningsverktyg (ETL) kan ha olika format, men de flesta exponerar liknande funktioner för att underlätta kombinationen av flera datakällor.
 translation-type: tm+mt
-source-git-commit: f4a4e65a087313dc4e2414f999e021e3f6e17137
+source-git-commit: f8186e467dc982003c6feb01886ed16d23572955
 workflow-type: tm+mt
-source-wordcount: '202'
+source-wordcount: '213'
 ht-degree: 0%
 
 ---
@@ -21,13 +21,13 @@ Olika extraherings-, omformnings- och inläsningsverktyg (ETL) kan ha olika form
 
 I följande diagram visas modeller av vanliga ETL-åtgärder och en allmän användarupplevelse baserad på standardinteraktioner. Dessa bilder kan enkelt anpassas för en specifik ETL-användarupplevelse.
 
-De åtgärder som visas nedan beskrivs i de steg som beskrivs i [ETL Integration Guide](home.md). Vissa steg hänvisar till specifika&quot;figurer&quot;, andra beskriver liknande åtgärder som arbetsflödet som visas här.
+Åtgärderna som visas nedan beskrivs i de steg som beskrivs i [ETL Integration Guide](home.md). Vissa steg hänvisar till specifika&quot;figurer&quot;, andra beskriver liknande åtgärder som arbetsflödet som visas här.
 
 ### Bild 1 - Konfigurera nya Adobe Experience Platform Connector:
 
 ![](images/image2.png)
 
-### Bild 2 - [!DNL Experience Platform] Kopplingen aktiverad:
+### Bild 2 - [!DNL Experience Platform] Anslutningen aktiverad:
 
 ![](images/image3.png)
 
@@ -35,11 +35,11 @@ De åtgärder som visas nedan beskrivs i de steg som beskrivs i [ETL Integration
 
 ![](images/image4.png)
 
-### Bild 4 - Nytt omformningsgränssnitt, välja [!DNL Experience Platform] Anslutning:
+### Bild 4 - Nytt omformningsgränssnitt, välja [!DNL Experience Platform]-anslutning:
 
 ![](images/image5.png)
 
-### Bild 5 - Bläddra efter [!DNL Experience Platform] källdatauppsättningar:
+### Bild 5 - Bläddrar efter datakällan [!DNL Experience Platform] Datamängder:
 
 ![](images/image6.png)
 
@@ -59,7 +59,7 @@ De åtgärder som visas nedan beskrivs i de steg som beskrivs i [ETL Integration
 
 ![](images/image10.png)
 
-### Figur 10 - Definiera [!DNL Experience Data Model] (XDM) måldatauppsättningen:
+### Bild 10 - Definiera måldatauppsättningen [!DNL Experience Data Model] (XDM):
 
 ![](images/image11.png)
 
