@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;XDM;fields;schemas;Schemas;device;datatype;data-type;data type;
+keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;scheman;device;data type;data type;
 solution: Experience Platform
 title: Enhetsdatatyp
 topic: overview
 description: Det här dokumentet innehåller en översikt över datatypen Device XDM.
 translation-type: tm+mt
-source-git-commit: f5bddb39c16eb25e85297f56e331d3aa51510eb9
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '306'
+source-wordcount: '322'
 ht-degree: 3%
 
 ---
@@ -30,7 +30,7 @@ ht-degree: 3%
 | `screenWidth` | Sträng | Antalet vågräta pixlar för enhetens aktiva visning i standardorienteringen. |
 | `type` | Sträng | Den typ av enhet som spåras. Godkända värden är: <ul><li>`mobile`</li><li>`tablet`</li><li>`desktop`</li><li>`ereader`</li><li>`gaming`</li><li>`television`</li><li>`settop`</li><li>`mediaplayer`</li><li>`computers`</li><li>`tv screens`</li></ul> |
 | `typeID` | Sträng | En identifierare för enheten. Detta kan vara en identifierare från DeviceAtlas eller en annan tjänst som identifierar den maskinvara som används. |
-| `typeIDService` | Sträng | Namnutrymmet för den tjänst som används för att identifiera enhetstypen. Se [bilagan](#typeIDService) för mer information om godkända värden. |
+| `typeIDService` | Sträng | Namnutrymmet för den tjänst som används för att identifiera enhetstypen. Mer information om godkända värden finns i [bilagan](#typeIDService). |
 
 Mer information om blandningen finns i den offentliga XDM-databasen:
 
@@ -39,11 +39,11 @@ Mer information om blandningen finns i den offentliga XDM-databasen:
 
 ## Bilaga
 
-Följande avsnitt innehåller ytterligare information om [!UICONTROL Device] datatypen.
+Följande avsnitt innehåller ytterligare information om datatypen [!UICONTROL Device].
 
 ## Godkända värden för typeIDService {#typeIDService}
 
-I följande tabell beskrivs godkända värden för `typeIDService` och deras innebörd:
+I följande tabell visas godkända värden för `typeIDService` och deras associerade betydelse:
 
 | Värde | Beskrivning |
 | --- | --- |
