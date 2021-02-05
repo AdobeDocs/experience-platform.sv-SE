@@ -1,19 +1,17 @@
 ---
 keywords: mål;upplev molnlösningar; mål;mål; mål; annonsmoln annonsmoln, målgruppschef, adobe target destination, Mål. målgruppshanterarens destination,
-title: Adobe Destinationer
-seo-title: Adobe Destinationer
+title: Översikt över destinationer i Adobe
 description: Hantera kundupplevelsen genom att koppla era data i Platform till andra Adobe Experience Cloud-lösningar för annonsanpassning, personalisering, automatiserad marknadsföring med mera
-seo-description: Hantera kundupplevelsen genom att koppla era data i Platform till andra Adobe Experience Cloud-lösningar för annonsanpassning, personalisering, automatiserad marknadsföring med mera
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '243'
+source-wordcount: '219'
 ht-degree: 0%
 
 ---
 
 
-# Destinationer för Adobe {#adobe-destinations}
+# Översikt över destinationer i Adobe {#adobe-destinations}
 
 Hantera er kundupplevelse genom att koppla era data i Adobe Experience Platform till andra Adobe Experience Cloud-lösningar för målgruppsanpassning, personalisering, automatiserad marknadsföring med mera.
 
