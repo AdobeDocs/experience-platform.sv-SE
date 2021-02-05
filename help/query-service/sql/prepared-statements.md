@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;query service;Query service;prepared statements;prepared;sql;
+keywords: Experience Platform;hem;populära ämnen;frågetjänst;Frågetjänst;förberedda satser;förberedd;sql;
 solution: Experience Platform
-title: Förberedda programsatser
+title: Förförberedda satser i frågetjänsten
 topic: prepared statements
 description: I SQL används förberedda satser för att malla liknande frågor eller uppdateringar. Adobe Experience Platform Query Service stöder förberedda satser med hjälp av en parametriserad fråga.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
 workflow-type: tm+mt
-source-wordcount: '365'
+source-wordcount: '381'
 ht-degree: 6%
 
 ---
@@ -25,9 +25,9 @@ Följande syntaxer stöds när förberedda satser används:
 - [KÖR](#execute)
 - [DEALOCATE](#deallocate)
 
-### Förbered en programsats {#prepare}
+### Förbered en sats {#prepare}
 
-Den här SQL-frågan sparar den skrivna SELECT-frågan med namnet som `PLAN_NAME`. Du kan använda variabler, till exempel `$1` i stället för faktiska värden. Den här förberedda satsen sparas under den aktuella sessionen. Observera att namn på planer **inte** är skiftlägeskänsliga.
+Den här SQL-frågan sparar den skrivna SELECT-frågan med namnet `PLAN_NAME`. Du kan använda variabler, till exempel `$1` i stället för faktiska värden. Den här förberedda satsen sparas under den aktuella sessionen. Observera att plannamn är **inte** skiftlägeskänsliga.
 
 #### SQL-format
 
@@ -41,7 +41,7 @@ PREPARE {PLAN_NAME} AS {SELECT_QUERY}
 PREPARE test AS SELECT * FROM table WHERE country = $1 AND city = $2;
 ```
 
-### Kör en förberett utdrag {#execute}
+### Kör en förberedd sats {#execute}
 
 Den här SQL-frågan använder den förberedda satsen som skapades tidigare.
 
@@ -57,7 +57,7 @@ EXECUTE {PLAN_NAME}('{PARAMETERS}')
 EXECUTE test('canada', 'vancouver');
 ```
 
-### Frigör en förberedd sats {#deallocate}
+### Deallokera en förberedd sats {#deallocate}
 
 Den här SQL-frågan används för att ta bort den namngivna förberedda satsen.
 
