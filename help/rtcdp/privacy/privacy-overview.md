@@ -1,19 +1,19 @@
 ---
 keywords: datastyrning rtcdp;rtcdp datastyrning;kunddataprofildatastyrning i realtid;sekretess rtcdp;rtcdp sekretess
-title: Sekretess i kunddataprofil i realtid
-seo-title: Sekretess i kunddataprofil i realtid
-description: Med kunddataprofilen i realtid kan ni effektivisera processen att se till att era dataåtgärder följer sekretessreglerna.
-seo-description: Med kunddataprofilen i realtid kan ni effektivisera processen att se till att era dataåtgärder följer sekretessreglerna.
+title: Sekretess i kunddataplattformen i realtid
+seo-title: Sekretess i kunddataplattformen i realtid
+description: Med kunddataplattformen i realtid kan ni effektivisera processen att se till att era dataåtgärder följer sekretessreglerna.
+seo-description: Med kunddataplattformen i realtid kan ni effektivisera processen att se till att era dataåtgärder följer sekretessreglerna.
 translation-type: tm+mt
-source-git-commit: 49c984a60fd699706eec508ec1d786340df40b57
+source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
 workflow-type: tm+mt
-source-wordcount: '386'
+source-wordcount: '390'
 ht-degree: 0%
 
 ---
 
 
-# Sekretess i [!DNL Real-time CDP]
+# Sekretess i kunddataplattformen i realtid
 
 [!DNL Real-time Customer Data Platform] ([!DNL Real-time CDP]) hjälper marknadsförare att samla data från olika affärssystem så att de bättre kan identifiera, förstå och engagera sina kunder. Adobe har konsumentdatasekretess som en grundläggande designprincip och tillhandahåller olika kontroller för att hjälpa marknadsförarna att hantera sina kunders datasekretess.
 
