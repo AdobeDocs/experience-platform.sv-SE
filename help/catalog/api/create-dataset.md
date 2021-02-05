@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;datauppsättning;datauppsättning;skapa en datauppsättning;skapa datauppsättning;aktivera datauppsättning
 solution: Experience Platform
-title: Skapa en datauppsättning
+title: Skapa en datauppsättning i API:t
 topic: developer guide
-description: I det här dokumentet beskrivs hur du skapar ett datauppsättningsobjekt i Katalog.
+description: Det här dokumentet beskriver hur du skapar ett datauppsättningsobjekt i katalogtjänstens API.
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
-source-wordcount: '223'
+source-wordcount: '232'
 ht-degree: 0%
 
 ---
 
 
-# Skapa en datauppsättning
+# Skapa en datauppsättning i API:t
 
 Om du vill skapa en datauppsättning med API:t [!DNL Catalog] måste du känna till `$id`-värdet för det [!DNL Experience Data Model] (XDM)-schema som datauppsättningen ska baseras på. När du har ett schema-ID kan du skapa en datauppsättning genom att göra en POST-förfrågan till `/datasets`-slutpunkten i [!DNL Catalog]-API:t.
 
