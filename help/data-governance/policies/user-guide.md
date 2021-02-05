@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;datastyrning;användarhandbok för dataanvändningspolicy
 solution: Experience Platform
-title: Användarhandbok för dataanvändningsprinciper
+title: Hantera dataanvändningsprinciper i användargränssnittet
 topic: policies
 description: Adobe Experience Platform Data Governance har ett användargränssnitt där du kan skapa och hantera dataanvändningspolicyer. Det här dokumentet innehåller en översikt över de åtgärder du kan utföra på arbetsytan Profiler i användargränssnittet i Experience Platform.
 translation-type: tm+mt
-source-git-commit: 00010d38a5d05800aeac9af8505093fee3593b45
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '732'
+source-wordcount: '731'
 ht-degree: 0%
 
 ---
 
 
-# Användarhandbok för dataanvändningsprinciper
+# Hantera dataanvändningsprinciper i användargränssnittet
 
 Adobe Experience Platform [!DNL Data Governance] har ett användargränssnitt där du kan skapa och hantera dataanvändningsprinciper. Det här dokumentet innehåller en översikt över de åtgärder du kan utföra i arbetsytan **Profiler** i [!DNL Experience Platform]-användargränssnittet.
 
@@ -28,7 +28,7 @@ Handboken kräver en fungerande förståelse av följande [!DNL Experience Platf
 - [[!DNL Data Governance]](../home.md)
 - [Dataanvändningspolicyer](./overview.md)
 
-## Visa dataanvändningsprinciper {#view-policies}
+## Visa befintliga profiler {#view-policies}
 
 I gränssnittet [!DNL Experience Platform] väljer du **[!UICONTROL Policies]** för att öppna arbetsytan **[!UICONTROL Policies]**. På fliken **[!UICONTROL Browse]** kan du se en lista över tillgängliga profiler, inklusive tillhörande etiketter, marknadsföringsåtgärder och status.
 
@@ -38,7 +38,7 @@ Välj en listad profil för att visa dess beskrivning och typ. Om en anpassad pr
 
 ![](../images/policies/policy-details.png)
 
-## Skapa en anpassad dataanvändningsprincip {#create-policy}
+## Skapa en anpassad princip {#create-policy}
 
 Om du vill skapa en ny anpassad dataanvändningsprincip väljer du **[!UICONTROL Create policy]** i det övre högra hörnet på fliken **[!UICONTROL Browse]** på arbetsytan **[!UICONTROL Policies]**.
 
@@ -68,7 +68,7 @@ Fliken **[!UICONTROL Browse]** visas igen, där den nya principen visas med stat
 
 ![](../images/policies/created-policy.png)
 
-## Aktivera eller inaktivera en dataanvändningsprincip {#enable}
+## Aktivera eller inaktivera en princip {#enable}
 
 Alla dataanvändningsprinciper (inklusive huvudprinciper som tillhandahålls av Adobe) inaktiveras som standard. För att en enskild princip ska kunna användas måste du manuellt aktivera den principen via API:t eller användargränssnittet.
 
