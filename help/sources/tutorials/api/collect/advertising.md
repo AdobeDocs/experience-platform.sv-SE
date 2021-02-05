@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;hemmabruk;populära ämnen;flödestjänst;annonsering;Google adwords;annonsering
 solution: Experience Platform
-title: Samla in annonsdata via källkopplingar och API:er
+title: Samla in reklamdata med hjälp av källkopplingar och API:er
 topic: overview
 type: Tutorial
-description: Den här självstudiekursen beskriver stegen för att hämta data från en annonsapplikation från tredje part och hämta dem till plattformen via källanslutningar och API:t för Flow Service.
+description: Den här självstudiekursen beskriver stegen för att hämta data från en annonsapplikation från tredje part och hämta dem till plattformen med hjälp av källanslutningar och API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: 48a5dcfe5679e360da1e33f6021dc1229b92948f
+source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
 workflow-type: tm+mt
 source-wordcount: '1513'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 ---
 
 
-# Samla in annonsdata via källkopplingar och API:er
+# Samla in annonsdata med källkopplingar och API:er
 
 Den här självstudiekursen beskriver stegen för att hämta data från ett annonsprogram från tredje part och att hämta dem till Adobe Experience Platform via källanslutningar och API:t [[!DNL Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
