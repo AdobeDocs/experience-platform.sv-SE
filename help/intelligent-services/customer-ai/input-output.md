@@ -1,25 +1,25 @@
 ---
-keywords: Experience Platform;getting started;customer ai;popular topics;customer ai input;customer ai output
+keywords: Experience Platform;komma igång;kundai;populära ämnen;kundindata;kunddata
 solution: Experience Platform, Intelligent Services, Real-time Customer Data Platform
-title: Indata och utdata för AI
+title: Indata och utdata i kundens AI
 topic: Getting started
 description: Följande dokument visar de olika in- och utdata som används i kundens AI.
 translation-type: tm+mt
-source-git-commit: de16ebddd8734f082f908f5b6016a1d3eadff04c
+source-git-commit: eb163949f91b0d1e9cc23180bb372b6f94fc951f
 workflow-type: tm+mt
-source-wordcount: '824'
+source-wordcount: '840'
 ht-degree: 0%
 
 ---
 
 
-# Indata och utdata för AI
+# Indata och utdata i kundens AI
 
 Följande dokument visar de olika in- och utdata som används i kundens AI.
 
 ## AI-indata för kund
 
-Kunds-AI använder data från kundupplevelsehändelser för att beräkna benägenhetspoängen. Mer information om konsumentupplevelsehändelser finns i [Förbered data för användning i dokumentationen](../data-preparation.md)för intelligenta tjänster.
+Kunds-AI använder data från kundupplevelsehändelser för att beräkna benägenhetspoängen. Mer information om konsumentupplevelsehändelser finns i [Förbered data för användning i dokumentationen för intelligenta tjänster](../data-preparation.md).
 
 ### Historiska data
 
@@ -31,7 +31,7 @@ I följande exempel används en enkel formel som hjälper dig att fastställa de
 
 **Formel**:
 
-Minimilängd på data som krävs = stödberättigande population + resultatfönster
+Minsta längd på de data som krävs = stödberättigande population + resultatfönster
 
 >[!NOTE]
 >
@@ -68,4 +68,4 @@ Tabellen nedan beskriver de olika attribut som finns i utdata från kundens AI:
 
 ## Nästa steg {#next-steps}
 
-När du har förberett dina data och har alla dina autentiseringsuppgifter och scheman på plats börjar du med att följa guiden [Konfigurera en AI-instans](./user-guide/configure.md) . Den här guiden hjälper dig att skapa en instans för kundens AI.
+När du har förberett dina data och har alla dina autentiseringsuppgifter och scheman på plats börjar du med att följa guiden [Konfigurera en kundens AI-instans](./user-guide/configure.md). Den här guiden hjälper dig att skapa en instans för kundens AI.
