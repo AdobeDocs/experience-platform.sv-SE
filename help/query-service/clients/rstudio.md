@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;home;populära topics;Query service;query service;RStudio;rstudio;connect to query service;
 solution: Experience Platform
-title: Anslut med RStudio
+title: Anslut RStudio till frågetjänsten
 topic: connect
 description: Det här dokumentet går igenom stegen för att ansluta R Studio med Adobe Experience Platform Query Service.
 translation-type: tm+mt
-source-git-commit: eac93f3465fa6ce4af7a6aa783cf5f8fb4ac9b9b
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '270'
+source-wordcount: '280'
 ht-degree: 1%
 
 ---
 
 
-# [!DNL RStudio]
+# Anslut [!DNL RStudio] till frågetjänsten
 
 Det här dokumentet går igenom stegen för att ansluta [!DNL RStudio] med Adobe Experience Platform [!DNL Query Service].
 
@@ -21,7 +21,7 @@ Det här dokumentet går igenom stegen för att ansluta [!DNL RStudio] med Adobe
 >
 > Den här handboken förutsätter att du redan har tillgång till [!DNL RStudio] och är bekant med hur du använder den. Mer information om [!DNL RStudio] finns i [officiell [!DNL RStudio] dokumentation](https://rstudio.com/products/rstudio/).
 
-## Ansluter [!DNL RStudio] med [!DNL Query Service]
+## Skapa en [!DNL Query Service]-anslutning i gränssnittet [!DNL RStudio]
 
 När du har installerat [!DNL RStudio] måste du först förbereda R-skriptet för att använda [!DNL PostgreSQL] på skärmen **[!DNL Console]**.
 
