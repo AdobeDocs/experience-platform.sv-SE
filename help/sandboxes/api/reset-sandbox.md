@@ -1,21 +1,21 @@
 ---
-keywords: Experience Platform;home;popular topics;reset sandbox
+keywords: Experience Platform;hem;populära ämnen;återställ sandlåda
 solution: Experience Platform
-title: Återställ en sandlåda
+title: Återställ en sandlåda i API:t
 topic: developer guide
 description: Utvecklingssandlådor har en "fabriksåterställningsfunktion" som tar bort alla icke-standardresurser från en sandlåda. Du kan återställa en sandlåda genom att göra en PUT-begäran som innehåller sandlådans namn i sökvägen för begäran.
 translation-type: tm+mt
-source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
+source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
 workflow-type: tm+mt
-source-wordcount: '156'
+source-wordcount: '169'
 ht-degree: 1%
 
 ---
 
 
-# Återställ en sandlåda
+# Återställ en sandlåda i API:t
 
-Utvecklingssandlådor har en &quot;fabriksåterställningsfunktion&quot; som tar bort alla icke-standardresurser från en sandlåda. Du kan återställa en sandlåda genom att göra en PUT-begäran som innehåller sandlådans `name` i begärandesökvägen.
+Utvecklingssandlådor har en &quot;fabriksåterställningsfunktion&quot; som tar bort alla icke-standardresurser från en sandlåda. Du kan återställa en sandlåda genom att göra en PUT-begäran som innehåller sandlådans `name` i sökvägen för begäran.
 
 **API-format**
 
@@ -50,7 +50,7 @@ curl -X PUT \
 
 **Svar**
 
-Ett lyckat svar returnerar informationen om den uppdaterade sandlådan, vilket visar att den `state` &quot;återställs&quot;.
+Ett lyckat svar returnerar informationen om den uppdaterade sandlådan, vilket visar att `state` är &quot;återställa&quot;.
 
 ```json
 {
@@ -65,4 +65,4 @@ Ett lyckat svar returnerar informationen om den uppdaterade sandlådan, vilket v
 
 >[!NOTE]
 >
->När en sandlåda har återställts tar det ca 15 minuter att etablera den av systemet. När sandlådan har etablerats blir den `state` &quot;aktiv&quot; eller&quot;misslyckades&quot;.
+>När en sandlåda har återställts tar det ca 15 minuter att etablera den av systemet. När sandlådan har etablerats blir den `state`&quot;aktiv&quot; eller&quot;misslyckades&quot;.
