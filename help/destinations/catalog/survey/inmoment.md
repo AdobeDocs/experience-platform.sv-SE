@@ -1,21 +1,17 @@
 ---
 keywords: InMoment;instund;Instund;starta integration
-title: InMoment-tillägg
-seo-title: InMoment-tillägg
+title: InMoment-tilläggsmål
 description: Tillägget InMoment är ett undersökningsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget InMoment är ett undersökningsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '551'
+source-wordcount: '524'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL InMoment] extension  {#inmoment-extension}
-
-## Översikt {#overview}
 
 Med [!DNL InMoment] Launch Integration kan du snabbt och enkelt aktivera online-feedback via Digital Intercept-produkten. I appen kan spärrar konfigureras och hanteras via CXI Cloud Admin, vilket ger CX-hanterare mer kontroll över deras program.
 
