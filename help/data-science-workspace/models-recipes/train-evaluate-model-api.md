@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;utbilda och utvärdera;Data Science Workspace;populära ämnen;Sensei Machine Learning API
 solution: Experience Platform
-title: Utbilda och utvärdera en modell (API)
+title: Utbildning och utvärdering av en modell med hjälp av API:t för inlärning av Sensei Machine
 topic: tutorial
 type: Tutorial
 description: I den här självstudiekursen visas hur du skapar, utbilda och utvärderar en modell med hjälp av API-anrop för Sensei Machine Learning.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
 workflow-type: tm+mt
-source-wordcount: '1230'
+source-wordcount: '1237'
 ht-degree: 0%
 
 ---
 
 
-# Utbilda och utvärdera en modell (API)
+# Utbilda och utvärdera en modell med hjälp av API:t [!DNL Sensei Machine Learning]
 
 
 I den här självstudiekursen visas hur du skapar, utbilda och utvärderar en modell med API-anrop. I [det här dokumentet](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) finns en detaljerad lista över API-dokumentation.
