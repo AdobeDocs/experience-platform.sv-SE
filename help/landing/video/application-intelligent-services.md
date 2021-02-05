@@ -1,5 +1,5 @@
 ---
-title: Program och intelligenta tjänster som bygger på Adobe Experience Platform
+title: Application and Intelligent Services Built on Experience Platform
 description: Den här videon ger en översikt över de programtjänster och intelligenta tjänster som är byggda ovanpå Adobe Experience Platform och som kompletterar Experience Cloud Applications&mdash;Real-time Customer Data Platform, Journey Orchestration, Customer Journey Analytics, Attribution AI och Customer AI.
 feature: platform
 topics: null
@@ -9,9 +9,9 @@ doc-type: video
 activity: understand
 thumbnail: 32554.jpg
 translation-type: tm+mt
-source-git-commit: 72f60ef80a23f5ca4e70147ee6aa6027028fefd0
+source-git-commit: 5575d5e45bddcc007dcf78720cd7a7e20475f78c
 workflow-type: tm+mt
-source-wordcount: '119'
+source-wordcount: '118'
 ht-degree: 20%
 
 ---
