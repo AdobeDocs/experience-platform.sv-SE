@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;Policy enforcement;marketing actions api;API-based enforcement;data governance
+keywords: Experience Platform;hemmabruk;populära ämnen;Politiska åtgärder;marknadsföringsåtgärder api;API-baserad tillämpning;datastyrning
 solution: Experience Platform
-title: Marknadsföringsåtgärder
+title: API-slutpunkt för marknadsföringsåtgärder
 topic: developer guide
 description: En marknadsföringsåtgärd, inom ramen för Adobe Experience Platform Data Governance, är en åtgärd som en datakonsument i Experience Platform vidtar och där det finns ett behov av att kontrollera om dataanvändningspolicyer har överträtts.
 translation-type: tm+mt
-source-git-commit: cddc559dfb65ada888bb367d6265863091a9b2a1
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '718'
+source-wordcount: '734'
 ht-degree: 0%
 
 ---
@@ -15,17 +15,17 @@ ht-degree: 0%
 
 # Slutpunkt för marknadsföringsåtgärder
 
-En marknadsföringsåtgärd, inom ramen för Adobe Experience Platform, [!DNL Data Governance]är en åtgärd som en [!DNL Experience Platform] datakonsument vidtar och där det finns ett behov av att kontrollera överträdelser av dataanvändningspolicyer.
+En marknadsföringsåtgärd, i samband med Adobe Experience Platform [!DNL Data Governance], är en åtgärd som en [!DNL Experience Platform]-datakonsument utför, och där det finns ett behov av att kontrollera om dataanvändningsprinciper har efterlevts.
 
-Du kan hantera marknadsföringsåtgärder för organisationen med hjälp av `/marketingActions` slutpunkten i principtjänstens API.
+Du kan hantera marknadsföringsåtgärder för organisationen med slutpunkten `/marketingActions` i principtjänstens API.
 
 ## Komma igång
 
-API-slutpunkterna som används i den här handboken är en del av [[!DNL Policy Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml). Innan du fortsätter bör du läsa [Komma igång-guiden](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API i det här dokumentet samt viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform] -API.
+API-slutpunkterna som används i den här guiden är en del av [[!DNL Policy Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform]-API.
 
 ## Hämta en lista med marknadsföringsåtgärder {#list}
 
-Du kan hämta en lista över viktiga eller anpassade marknadsföringsåtgärder genom att göra en GET-förfrågan till `/marketingActions/core` respektive `/marketingActions/custom`.
+Du kan hämta en lista över viktiga eller anpassade marknadsföringsåtgärder genom att göra en GET-förfrågan till `/marketingActions/core` eller `/marketingActions/custom`.
 
 **API-format**
 
@@ -49,7 +49,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar information för varje hämtad marknadsföringsåtgärd, inklusive dess `name` och `href`. Värdet `href` används för att identifiera marknadsföringsåtgärden när en [dataanvändningspolicy](policies.md#create-policy)skapas.
+Ett lyckat svar returnerar information för varje hämtad marknadsföringsåtgärd, inklusive dess `name` och `href`. Värdet `href` används för att identifiera marknadsföringsåtgärden när [en dataanvändningsprincip](policies.md#create-policy) skapas.
 
 ```json
 {
@@ -103,12 +103,12 @@ Ett lyckat svar returnerar information för varje hämtad marknadsföringsåtgä
 | --- | --- |
 | `_page.count` | Det totala antalet returnerade marknadsföringsåtgärder. |
 | `children` | En array med objekt som innehåller information om hämtade marknadsföringsåtgärder. |
-| `name` | Namnet på marknadsföringsåtgärden, som fungerar som sin unika identifierare när den [söker efter en viss marknadsföringsåtgärd](#lookup). |
-| `_links.self.href` | En URI-referens för marknadsföringsåtgärden, som kan användas för att slutföra `marketingActionsRefs` arrayen när en [dataanvändningsprincip](policies.md#create-policy)skapas. |
+| `name` | Namnet på marknadsföringsåtgärden, som fungerar som sin unika identifierare när [söker efter en specifik marknadsföringsåtgärd](#lookup). |
+| `_links.self.href` | En URI-referens för marknadsföringsåtgärden, som kan användas för att slutföra matrisen `marketingActionsRefs` när [en dataanvändningsprincip](policies.md#create-policy) skapas. |
 
 ## Slå upp en specifik marknadsföringsåtgärd {#lookup}
 
-Du letar upp detaljerna om en viss marknadsföringsåtgärd genom att ta med marknadsföringsåtgärdens `name` egendom i vägen för en GET-förfrågan.
+Du kan hitta detaljerna om en viss marknadsföringsåtgärd genom att ta med marknadsföringsåtgärdens `name`-egenskap i sökvägen till en GET-förfrågan.
 
 **API-format**
 
@@ -136,7 +136,7 @@ curl -X GET \
 
 **Svar**
 
-Svarsobjektet innehåller information om marknadsföringsåtgärden, inklusive den sökväg (`_links.self.href`) som behövs för att referera till marknadsföringsåtgärden när [en dataanvändningspolicy](policies.md#create-policy) (`marketingActionsRefs`) definieras.
+Svarsobjektet innehåller information om marknadsföringsåtgärden, inklusive sökvägen (`_links.self.href`) som behövs för att referera till marknadsföringsåtgärden när [en dataanvändningspolicy](policies.md#create-policy) (`marketingActionsRefs`) definieras.
 
 ```JSON
 {
@@ -173,7 +173,7 @@ PUT /marketingActions/custom/{MARKETING_ACTION_NAME}
 
 **Begäran**
 
-Följande begäran skapar en ny marknadsföringsåtgärd med namnet `crossSiteTargeting`, förutsatt att det inte finns någon marknadsföringsåtgärd med samma namn i systemet än. Om det finns en marknadsföringsåtgärd uppdateras den här anropet i stället marknadsföringsåtgärden baserat på egenskaperna som anges i nyttolasten. `crossSiteTargeting`
+Följande begäran skapar en ny marknadsföringsåtgärd med namnet `crossSiteTargeting`, förutsatt att det inte finns någon marknadsföringsåtgärd med samma namn i systemet än. Om det finns en `crossSiteTargeting`-marknadsföringsåtgärd uppdaterar det här anropet i stället marknadsföringsåtgärden baserat på de egenskaper som anges i nyttolasten.
 
 ```shell
 curl -X PUT \
@@ -191,7 +191,7 @@ curl -X PUT \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `name` | Namnet på den marknadsföringsåtgärd som ska skapas eller uppdateras. <br><br>**VIKTIGT**: Den här egenskapen måste matcha `{MARKETING_ACTION_NAME}` sökvägen, annars inträffar ett HTTP 400-fel (Ogiltig begäran). När en marknadsföringsåtgärd väl har skapats kan dess `name` egenskap alltså inte ändras. |
+| `name` | Namnet på den marknadsföringsåtgärd som ska skapas eller uppdateras. <br><br>**VIKTIGT**: Den här egenskapen måste matcha  `{MARKETING_ACTION_NAME}` i sökvägen, annars inträffar ett HTTP 400-fel (Ogiltig begäran). När en marknadsföringsåtgärd har skapats kan egenskapen `name` alltså inte ändras. |
 | `description` | En valfri beskrivning som ger ytterligare sammanhang för marknadsföringsåtgärden. |
 
 **Svar**
