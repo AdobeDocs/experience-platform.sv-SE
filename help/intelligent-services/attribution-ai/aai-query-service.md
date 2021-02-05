@@ -1,19 +1,19 @@
 ---
 keywords: insikter;attribuering;attribueringsinsikter;AAI-frågetjänst;attribueringsfrågor;attribueringspoäng
 solution: Intelligent Services, Experience Platform
-title: Snabbstartsguide för AAI-frågetjänst
+title: Analyserar attribueringsresultat med hjälp av frågetjänsten
 topic: Attribution AI queries
-description: Det här dokumentet innehåller en guide och mallar för hur du använder frågetjänsten för att analysera dina attribueringspoäng.
+description: Lär dig hur du använder Adobe Experience Platform Query Service för att analysera Attribution AI.
 translation-type: tm+mt
-source-git-commit: 32d49c9244414afeb2729ef44eb364fb2c609380
+source-git-commit: eb163949f91b0d1e9cc23180bb372b6f94fc951f
 workflow-type: tm+mt
-source-wordcount: '483'
+source-wordcount: '476'
 ht-degree: 0%
 
 ---
 
 
-# Snabbstartguide för Adobe Experience Platform Query Service för analys av attribueringspoäng
+# Analyserar attribueringspoäng med hjälp av frågetjänsten
 
 Varje rad i data representerar en konvertering där information för relaterade kontaktytor lagras som en array med strukturer under kolumnen `touchpointsDetail`.
 
@@ -21,7 +21,7 @@ Varje rad i data representerar en konvertering där information för relaterade 
 | ---------------------- | ------ |
 | Namn på kontaktpunkt | `touchpointsDetail. touchpointName` |
 | Pekpunktskanal | `touchpointsDetail.touchPoint.mediaChannel` |
-| AAI-algoritmisk poäng för kontaktyta | <li>`touchpointsDetail.scores.algorithmicSourced`</li> <li> `touchpointsDetail.scores.algorithmicInfluenced` </li> |
+| Algoritmisk poängsättning för Attribution AI vid beröringspunkt | <li>`touchpointsDetail.scores.algorithmicSourced`</li> <li> `touchpointsDetail.scores.algorithmicInfluenced` </li> |
 
 ## Söka efter datasökvägar
 
