@@ -1,21 +1,17 @@
 ---
 keywords: Frågor och svar;Frågor och svar;Frågor och svar på webbplats Feedback;Frågor och svar på webbplats;Qualtricks website feedback
-title: Qualtrics-tillägg för webbplatsfeedback
-seo-title: Qualtrics-tillägg för webbplatsfeedback
+title: Qualtrics webbplats Feedback Extension Destination
 description: Tillägget för feedback på Qualtrics-webbplatsen är ett undersökningsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Tillägget för feedback på Qualtrics-webbplatsen är ett undersökningsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '607'
+source-wordcount: '576'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Qualtrics Website Feedback] Tillägg  {#qualtrics-extension}
-
-## Översikt {#overview}
+# [!DNL Qualtrics Website Feedback] extension  {#qualtrics-extension}
 
 [!DNL Qualtrics Website Feedback] gör att ni kan engagera besökarna på webbplatsen med rätt budskap vid rätt tidpunkt. Oavsett om du vill förbättra besökarupplevelsen med webbplatsens feedbackenkäter eller öka konverteringsgraden är [!DNL Qualtrics Website Feedback] något som täcker in dig.
 
