@@ -1,25 +1,25 @@
 ---
-keywords: Experience Platform;home;popular topics;list active sandboxes;list sandboxes
+keywords: Experience Platform;hem;populära ämnen;lista aktiva sandlådor;lissandlådor
 solution: Experience Platform
-title: Visa aktiva sandlådor för den aktuella användaren
+title: Visa aktiva sandlådor för den aktuella användaren i API:t
 topic: developer guide
 description: Du kan lista de sandlådor som är aktiva för den aktuella användaren genom att göra en GET-begäran till rotslutpunkten.
 translation-type: tm+mt
-source-git-commit: 6326b3072737acf30ba2aee7081ce28dc9627a9a
+source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
 workflow-type: tm+mt
-source-wordcount: '345'
+source-wordcount: '361'
 ht-degree: 0%
 
 ---
 
 
-# Visa aktiva sandlådor för den aktuella användaren
+# Visa aktiva sandlådor för den aktuella användaren i API:t
 
 >[!NOTE]
 >
 >Till skillnad från andra slutpunkter som finns i sandlådes-API:t är den här slutpunkten tillgänglig för alla användare, inklusive dem som saknar åtkomstbehörighet för sandlådeadministration.
 
-Du kan visa de sandlådor som är aktiva för den aktuella användaren genom att göra en GET-begäran till roten (`/`).
+Du kan lista de sandlådor som är aktiva för den aktuella användaren genom att göra en GET-begäran till rotslutpunkten (`/`).
 
 **API-format**
 
@@ -29,7 +29,7 @@ GET /{QUERY_PARAMS}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. Mer information finns i avsnittet om [frågeparametrar](#query) . |
+| `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. Mer information finns i avsnittet [frågeparametrar](#query). |
 
 **Begäran**
 
@@ -44,7 +44,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en lista med sandlådor som är aktiva för den aktuella användaren, inklusive information som `name`, `title`, `state`och `type`.
+Ett lyckat svar returnerar en lista med sandlådor som är aktiva för den aktuella användaren, inklusive information som `name`, `title`, `state` och `type`.
 
 ```json
 {
@@ -113,11 +113,11 @@ Ett lyckat svar returnerar en lista med sandlådor som är aktiva för den aktue
 
 ## Använda frågeparametrar {#query}
 
-API:t har stöd för användning av frågeparametrar för att skicka och filtrera resultat när sandlådor listas. [[!DNL Sandbox]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sandbox-api.yaml)
+API:t [[!DNL Sandbox]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sandbox-api.yaml) har stöd för användning av frågeparametrar för att visa och filtrera resultat när sandlådor listas.
 
 >[!NOTE]
 >
->Parametrarna `limit` och `offset` frågeparametrarna måste anges tillsammans. Om du bara anger ett fel returneras det. Om du anger ingen är standardgränsen 50 och förskjutningen 0.
+>Frågeparametrarna `limit` och `offset` måste anges tillsammans. Om du bara anger ett fel returneras det. Om du anger ingen är standardgränsen 50 och förskjutningen 0.
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
