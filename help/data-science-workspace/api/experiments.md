@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform;developer guide;endpoint;Data Science Workspace;popular topics;experiments;sensei machine learning api
+keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;populära topics;experiment;sensei machine learning api
 solution: Experience Platform
-title: Experimentera
+title: API-slutpunkt för experiment
 topic: Developer guide
 description: Modellutveckling och utbildning sker på expertnivå, där en expert består av en MLInstance, utbildningar och poängprov.
 translation-type: tm+mt
-source-git-commit: 194a29124949571638315efe00ff0b04bff19303
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '765'
+source-wordcount: '783'
 ht-degree: 1%
 
 ---
 
 
-# Experimentera
+# Experimenterar slutpunkt
 
 Modellutveckling och utbildning sker på expertnivå, där en expert består av en MLInstance, utbildningar och poängprov.
 
@@ -70,7 +70,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den nyl
 }
 ```
 
-## Skapa och genomföra en utbildning eller ett poängprov {#experiment-training-scoring}
+## Skapa och utför en kurs- eller poängkörning {#experiment-training-scoring}
 
 Du kan skapa utbildnings- eller poängkörningar genom att utföra en POST och ange ett giltigt test-ID och specificera körningsaktiviteten. Bedömningskörningar kan bara skapas om experten har en befintlig och framgångsrik utbildning. En utbildningskurs kommer att initiera modellutbildningsproceduren och om den slutförs utan fel genereras en tränad modell. När du genererar utbildade modeller ersätts alla befintliga modeller, så att en expert bara kan använda en enda tränad modell åt gången.
 
@@ -105,7 +105,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar en nyttolast som innehåller information om den nyligen skapade körningen inklusive de ärvda standardutbildnings- eller poängparametrarna samt körningens unika ID (`{RUN_ID}`).
+Ett lyckat svar returnerar en nyttolast som innehåller information om den nyligen skapade körningen, inklusive de ärvda standardutbildnings- eller poängparametrarna, och körningens unika ID (`{RUN_ID}`).
 
 ```json
 {
@@ -134,7 +134,7 @@ Ett lyckat svar returnerar en nyttolast som innehåller information om den nylig
 
 ## Hämta en lista med experter
 
-Du kan hämta en lista över experter som tillhör en viss MLInstance genom att utföra en enda GET-begäran och ange ett giltigt MLInstance-ID som en frågeparameter. En lista med tillgängliga frågor finns i avsnittet om [frågeparametrar för hämtning](./appendix.md#query)av resurser i bilagan.
+Du kan hämta en lista över experter som tillhör en viss MLInstance genom att utföra en enda GET-begäran och ange ett giltigt MLInstance-ID som en frågeparameter. En lista över tillgängliga frågor finns i avsnittet i bilagan [frågeparametrar för hämtning](./appendix.md#query).
 
 
 **API-format**
@@ -161,7 +161,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en lista med experter som delar samma MLInstance-ID (`{MLINSTANCE_ID}`).
+Ett lyckat svar returnerar en lista över Experiment som delar samma MLInstance-ID (`{MLINSTANCE_ID}`).
 
 ```json
 {
@@ -198,7 +198,7 @@ Ett lyckat svar returnerar en lista med experter som delar samma MLInstance-ID (
 }
 ```
 
-## Hämta en specifik expert {#retrieve-specific}
+## Hämta en specifik experiment {#retrieve-specific}
 
 Du kan hämta information om en specifik Experiment genom att utföra en GET-förfrågan som innehåller det önskade Experiment-ID:t i sökvägen för begäran.
 
@@ -243,7 +243,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller information om den beg
 
 ## Hämta en lista med Experimentkörningar
 
-Du kan hämta en lista över utbildnings- eller poängsättningskörningar som tillhör en viss Experiment genom att utföra en enda GET-förfrågan och ange ett giltigt test-ID. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En fullständig lista över tillgängliga frågeparametrar finns i avsnittet i bilagan om [frågeparametrar för hämtning](./appendix.md#query)av resurser.
+Du kan hämta en lista över utbildnings- eller poängsättningskörningar som tillhör en viss Experiment genom att utföra en enda GET-förfrågan och ange ett giltigt test-ID. Du kan filtrera resultaten genom att ange frågeparametrar i sökvägen för begäran. En fullständig lista över tillgängliga frågeparametrar finns i avsnittet i bilagan om [frågeparametrar för hämtning av resurser](./appendix.md#query).
 
 >[!NOTE]
 >
@@ -260,7 +260,7 @@ GET /experiments/{EXPERIMENT_ID}/runs?{QUERY_PARAMETER_1}={VALUE_1}&{QUERY_PARAM
 | Parameter | Beskrivning |
 | --- | --- |
 | `{EXPERIMENT_ID}` | Ett giltigt test-ID. |
-| `{QUERY_PARAMETER}` | En av de [tillgängliga frågeparametrarna](./appendix.md#query) som används för att filtrera resultaten. |
+| `{QUERY_PARAMETER}` | En av de [tillgängliga frågeparametrarna](./appendix.md#query) som används för att filtrera resultat. |
 | `{VALUE}` | Värdet för föregående frågeparameter. |
 
 **Begäran**
@@ -308,7 +308,7 @@ Du kan uppdatera en befintlig Experiment genom att skriva över dess egenskaper 
 
 >[!TIP]
 >
->För att PUT ska lyckas rekommenderar vi att du först utför en GET-förfrågan för att [hämta Experimentet via ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
+>För att PUT ska lyckas rekommenderar vi att du först utför en GET-förfrågan om att [hämta Experimentet med ID](#retrieve-specific). Ändra och uppdatera sedan det returnerade JSON-objektet och använd hela det ändrade JSON-objektet som nyttolast för PUT-begäran.
 
 I följande exempel på API-anrop uppdateras en Experiments namn samtidigt som dessa egenskaper används från början:
 
