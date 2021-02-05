@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Google Cloud-lagring;Google cloud-lagring;Google;Google;Google
 solution: Experience Platform
-title: Skapa en Google Cloud-lagringskontakt med API:t för flödestjänsten
+title: Skapa en Google Cloud-anslutning för lagringskälla med API:t för flödestjänst
 topic: overview
 type: Tutorial
-description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att ansluta Experience Platform till ett Google Cloud-lagringskonto.
+description: Lär dig hur du ansluter Adobe Experience Platform till ett Google Cloud-lagringskonto med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
-source-wordcount: '557'
+source-wordcount: '554'
 ht-degree: 1%
 
 ---
 
 
-# Skapa en [!DNL Google Cloud Storage]-koppling med hjälp av API:t [!DNL Flow Service]
+# Skapa en [!DNL Google Cloud Storage]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
