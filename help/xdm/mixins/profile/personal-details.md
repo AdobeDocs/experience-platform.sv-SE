@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;XDM;individual profile;fields;schemas;Schemas;personal details;Schema design;mixin;Mixin;
+keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;Individuell profil;fält;scheman;scheman;personliga detaljer;Schema design;mixin;Mixin;
 solution: Experience Platform
 title: Blanda personliga kontaktuppgifter
 topic: overview
 description: Det här dokumentet innehåller en översikt över blandningen Personlig kontaktinformation.
 translation-type: tm+mt
-source-git-commit: f9d8021643e72e3fbb5315b54a19815dcdaaa702
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '127'
+source-wordcount: '146'
 ht-degree: 2%
 
 ---
@@ -17,9 +17,9 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->Namnen på flera blandningar har ändrats. Mer information finns i dokumentet om uppdatering [av](../name-updates.md) blandade namn.
+>Namnen på flera blandningar har ändrats. Mer information finns i dokumentet om [uppdateringar av blandnamn](../name-updates.md).
 
-[!UICONTROL Personal Contact Details] är en standardblandning för [[!DNL XDM Individual Profile] klassen](../../classes/individual-profile.md) som beskriver kontaktinformationen för en enskild person.
+[!UICONTROL Personal Contact Details] är en standardblandning för  [[!DNL XDM Individual Profile] ](../../classes/individual-profile.md) klassen som beskriver kontaktinformationen för en enskild person.
 
 <img src="../../images/mixins/profile-personal-details.png" width="700" /><br />
 
