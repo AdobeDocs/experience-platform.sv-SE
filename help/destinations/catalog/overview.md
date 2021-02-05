@@ -5,17 +5,17 @@ seo-title: Målkatalog
 description: Destinationskatalogen innehåller en lista över tillgängliga destinationer som är klara att ta emot data. Dessa destinationer omfattar Adobe, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar med mera.
 seo-description: Destinationskatalogen innehåller en lista över tillgängliga destinationer som är klara att ta emot data. Dessa destinationer omfattar Adobe, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar med mera.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '170'
+source-wordcount: '174'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Destinations Catalog]
+# Målkatalog
 
-**[!DNL Destinations Catalog]** innehåller en lista över tillgängliga målplattformar som kan ta emot data. Bland målplattformarna finns Adobe-lösningar, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar, Experience Platform-tillägg med mera.
+Målkatalogen innehåller en lista över tillgängliga målplattformar som kan ta emot data. Bland målplattformarna finns Adobe-lösningar, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar, Experience Platform-tillägg med mera.
 
 Bläddra i katalogen för att fastställa vilka målplattformar som är bäst för era användningsfall för annonsering och personalisering, och konfigurera sedan flöden för att aktivera era segment till destinationer.
 
