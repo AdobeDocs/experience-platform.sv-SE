@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API
-title: Komma igång med kundprofil-API i realtid
+title: Komma igång med kundprofils-API:t i realtid
 topic: guide
 type: Documentation
 description: Komma igång-guiden för profil-API:t visar de nyckelbegrepp och grundläggande funktioner som du behöver känna till för att kunna använda API-slutpunkter för kundprofil i realtid för att utföra grundläggande CRUD-åtgärder mot profildata.
 translation-type: tm+mt
-source-git-commit: e6ecc5dac1d09c7906aa7c7e01139aa194ed662b
+source-git-commit: cad9c690be986961aea2969ef0ade975f33a8ee5
 workflow-type: tm+mt
-source-wordcount: '409'
+source-wordcount: '410'
 ht-degree: 0%
 
 ---
