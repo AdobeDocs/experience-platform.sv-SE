@@ -1,21 +1,17 @@
 ---
 keywords: PebblePost;peblepost;PebblePost Programmatic Direct Mail;pebblepost programmatic direct mail
-title: PebblePost-tillägg
-seo-title: PebblePost-tillägg
+title: PebblePost-tilläggsmål
 description: PebblePost-tillägget är ett e-postmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: PebblePost-tillägget är ett e-postmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '540'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL PebblePost] Tillägg  {#pebblepost-extension}
-
-## Översikt {#overview}
+# [!DNL PebblePost] extension  {#pebblepost-extension}
 
 [!DNL PebblePost's Programmatic Direct Mail®] som hjälper digitala marknadsförare att koppla samman online-intressen och avsikter med online-offlinematerial som konverterar. Marknadsförarna kan utnyttja de anpassade datasegment som de har skapat i Adobe för att nu rikta sig till konsumenterna med ett relevant, långvarigt mediefunktioner i hemmet. Analysera prestanda i realtid baserat på responssökvägsaktivitet och konverteringar på plats.
 
