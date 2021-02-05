@@ -1,22 +1,19 @@
 ---
 keywords: molnlagringsmål;molnlagring
-title: Arbetsflöde för molnlagringsmål
-seo-title: Arbetsflöde för molnlagringsmål
+title: Skapa ett molnlagringsmål
 type: Tutorial
 description: Instruktioner för att ansluta till lagringsplatser i molnet
 seo-description: Instruktioner för att ansluta till lagringsplatser i molnet
 translation-type: tm+mt
-source-git-commit: 95f57f9d1b3eeb0b16ba209b9774bd94f5758009
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '502'
+source-wordcount: '497'
 ht-degree: 0%
 
 ---
 
 
-# Arbetsflöde för att skapa molnlagringsmål
-
-## Översikt
+# Skapa ett molnlagringsmål
 
 På den här sidan beskrivs hur du kan ansluta till molnlagringsplatser i Adobe Experience Platform.
 
