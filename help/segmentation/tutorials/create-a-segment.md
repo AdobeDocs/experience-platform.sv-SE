@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;hemmabruk;populära ämnen;segment;skapa segment;segmentering;skapa ett segment;segmenteringstjänst;
 solution: Experience Platform
-title: Skapa ett segment
+title: Skapa ett segment med hjälp av segmenteringstjänstens API
 topic: tutorial
 type: Tutorial
-description: Det här dokumentet innehåller en självstudiekurs för att utveckla, testa, förhandsgranska och spara en segmentdefinition med Adobe Experience Platform Segmentation Service API.
+description: Följ den här självstudiekursen för att lära dig hur du utvecklar, testar, förhandsgranskar och sparar en segmentdefinition med Adobe Experience Platform Segmentation Service API.
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '913'
+source-wordcount: '924'
 ht-degree: 0%
 
 ---
 
 
-# Skapa ett segment
+# Skapa ett segment med hjälp av segmenteringstjänstens API
 
 Det här dokumentet innehåller en självstudiekurs för att utveckla, testa, förhandsgranska och spara en segmentdefinition med [[!DNL Adobe Experience Platform Segmentation Service API]](../api/getting-started.md).
 
