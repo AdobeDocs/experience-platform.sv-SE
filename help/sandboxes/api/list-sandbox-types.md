@@ -1,21 +1,21 @@
 ---
-keywords: Experience Platform;home;popular topics;list sandboxes
+keywords: Experience Platform;hem;populära ämnen;lissandlådor
 solution: Experience Platform
-title: Visa sandlådetyper som stöds
+title: Lista över sandlådetyper som stöds i API:t
 topic: developer guide
 description: Du kan hämta en lista över sandlådetyper som stöds för din organisation genom att göra en GET-begäran till slutpunkten /sandboxTypes.
 translation-type: tm+mt
-source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
+source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
 workflow-type: tm+mt
-source-wordcount: '68'
+source-wordcount: '81'
 ht-degree: 0%
 
 ---
 
 
-# Visa sandlådetyper som stöds
+# Visa sandlådetyper som stöds i API
 
-Du kan hämta en lista över sandlådetyper som stöds för din organisation genom att göra en GET-förfrågan till `/sandboxTypes` slutpunkten.
+Du kan hämta en lista över sandlådetyper som stöds för din organisation genom att göra en GET-begäran till `/sandboxTypes`-slutpunkten.
 
 **API-format**
 
