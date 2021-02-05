@@ -1,23 +1,23 @@
 ---
-keywords: Experience Platform;developer guide;endpoint;Data Science Workspace;popular topics;
+keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;populära topics;
 solution: Experience Platform
-title: Bilaga
+title: API-handbok för Sensei Machine Learning
 topic: Developer guide
 description: I följande avsnitt finns referensinformation för olika funktioner i API:t Sensei Machine Learning.
 translation-type: tm+mt
-source-git-commit: 194a29124949571638315efe00ff0b04bff19303
+source-git-commit: b395535cbe7e4030606ee2808eb173998f5c32e0
 workflow-type: tm+mt
-source-wordcount: '313'
+source-wordcount: '330'
 ht-degree: 0%
 
 ---
 
 
-# Bilaga
+# [!DNL Sensei Machine Learning] API-guide, tillägg
 
-I följande avsnitt finns referensinformation för olika funktioner i [!DNL Sensei Machine Learning] API:t.
+I följande avsnitt finns referensinformation för olika funktioner i API:t [!DNL Sensei Machine Learning].
 
-## Frågeparametrar för hämtning av resurser {#query}
+## Frågeparametrar för resursåterhämtning {#query}
 
 API:t [!DNL Sensei Machine Learning] har stöd för frågeparametrar med hämtning av resurser. Tillgängliga frågeparametrar och deras användning beskrivs i följande tabell:
 
@@ -25,7 +25,7 @@ API:t [!DNL Sensei Machine Learning] har stöd för frågeparametrar med hämtni
 | --------------- | ----------- | ------- |
 | `start` | Anger startindex för sidnumrering. | `start=0` |
 | `limit` | Anger det maximala antalet resultat som ska returneras. | `limit=25` |
-| `orderby` | Anger de egenskaper som ska användas för sortering i prioritetsordning. Inkludera ett streck (**-**) före ett egenskapsnamn om du vill sortera i fallande ordning, annars sorteras resultaten i stigande ordning. | `orderby=created` |
+| `orderby` | Anger de egenskaper som ska användas för sortering i prioritetsordning. Inkludera ett streck (**-**) före ett egenskapsnamn för sortering i fallande ordning, annars sorteras resultaten i stigande ordning. | `orderby=created` |
 | `property` | Anger det jämförelseuttryck som ett objekt måste uppfylla för att kunna returneras. | `property=deleted==false` |
 
 >[!NOTE]
@@ -34,7 +34,7 @@ API:t [!DNL Sensei Machine Learning] har stöd för frågeparametrar med hämtni
 
 ## Python CPU- och GPU-konfigurationer {#cpu-gpu-config}
 
-Python Engines har möjlighet att välja mellan antingen en CPU eller en GPU för sin utbildning eller i poängsyfte, och definieras på en [MLInstance](./mlinstances.md) som en uppgiftsspecifikation (`tasks.specification`).
+Python Engines kan välja mellan en CPU eller en GPU för sin utbildning eller poängsättning och definieras på en [MLInstance](./mlinstances.md) som en aktivitetsspecifikation (`tasks.specification`).
 
 Följande är ett exempel på konfiguration som anger hur du använder en CPU för utbildning och en GPU för bedömning:
 
@@ -71,7 +71,7 @@ Följande är ett exempel på konfiguration som anger hur du använder en CPU f�
 
 >[!NOTE]
 >
->Värdena för `cpus` och `gpus` anger inte antalet CPU:er eller grafikprocessorer, utan antalet fysiska datorer. Dessa värden är tillåtna `"1"` och genererar i annat fall ett undantag.
+>Värdena för `cpus` och `gpus` anger inte antalet CPU:er eller grafikprocessorer, utan snarare antalet fysiska datorer. Dessa värden är tillåtna `"1"` och genererar i annat fall ett undantag.
 
 ## Resurskonfigurationer för PySpark och Spark {#resource-config}
 
