@@ -1,21 +1,17 @@
 ---
 keywords: Marketo;marketo;Marketo-tillägg;Marketo-tillägg
-title: Marketo-tillägg
-seo-title: Marketo-tillägg
+title: Marketo-tilläggsmål
 description: Marketo-tillägget är ett e-postmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Marketo-tillägget är ett e-postmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '505'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Marketo] Tillägg  {#marketo-extension}
-
-## Översikt {#overview}
+# [!DNL Marketo] extension  {#marketo-extension}
 
 [!DNL Marketo]Med sitt kraftfulla program för automatiserad marknadsföring kan marknadsförarna överordnad konsten och vetenskapen inom digital marknadsföring för att engagera kunder och potentiella kunder.
 
