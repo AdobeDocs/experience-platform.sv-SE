@@ -1,21 +1,17 @@
 ---
 keywords: gren;grentillägg;grenmål
-title: Filialtillägg
-seo-title: Filialtillägg
+title: Grentilläggets mål
 description: Branch-tillägget är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
-seo-description: Branch-tillägget är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '511'
+source-wordcount: '484'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL Branch] extension  {#branch-extension}
-
-## Översikt {#overview}
 
 Branch tillhandahåller kraftfulla länkar och lösningar som hjälper er att värva, engagera och mäta på alla enheter, kanaler och plattformar.
 
