@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;hemmabruk;populära ämnen;CJA;reseanalys;kundreseanalys;kampanjsamordning;orkestrering;kundresa;resa;resesamordning;kapacitet;region
 solution: Experience Platform
-title: Stöd för Experience Platform dokumentationsspråk
+title: Stöd för Experience Platform Documentation Language
 topic: getting started
 description: Med Adobe Experience Platform kan man centralisera och standardisera kunddata innan man använder datavetenskap och maskininlärning för att dramatiskt förbättra utformningen och leveransen av avancerade, personaliserade upplevelser.
 translation-type: tm+mt
-source-git-commit: 96600567bb4965a1611e2b9a7cd6cb49298a567f
+source-git-commit: 5575d5e45bddcc007dcf78720cd7a7e20475f78c
 workflow-type: tm+mt
 source-wordcount: '103'
 ht-degree: 0%
