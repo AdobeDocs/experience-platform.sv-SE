@@ -1,27 +1,27 @@
 ---
-keywords: Experience Platform;getting started;Attribution ai;popular topics;Attribution ai input;Attribution ai output;
+keywords: Experience Platform;komma igång;Attribution ai;populära topics;Attribution ai input;Attribution ai output;
 solution: Experience Platform, Intelligent Services
-title: Indata och utdata från Attribution AI
+title: Indata och utdata i Attribution AI
 topic: Input and Output data for Attribution AI
 description: Följande dokument visar de olika indata och utdata som används i Attribution AI.
 translation-type: tm+mt
-source-git-commit: de16ebddd8734f082f908f5b6016a1d3eadff04c
+source-git-commit: eb163949f91b0d1e9cc23180bb372b6f94fc951f
 workflow-type: tm+mt
-source-wordcount: '2068'
+source-wordcount: '2084'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Attribution AI] input och output
+# Indata och utdata i [!DNL Attribution AI]
 
-Följande dokument visar de olika indata och utdata som används i [!DNL Attribution AI].
+Följande dokument visar de olika in- och utdata som används i [!DNL Attribution AI].
 
 ## [!DNL Attribution AI] indata
 
-[!DNL Attribution AI] använder [!DNL Consumer Experience Event] data för att beräkna algoritmiska poäng. Mer information [!DNL Consumer Experience Event]finns i [Förbered data för användning i dokumentationen](../data-preparation.md)för intelligenta tjänster.
+[!DNL Attribution AI] använder  [!DNL Consumer Experience Event] data för att beräkna algoritmiska poäng. Mer information om [!DNL Consumer Experience Event] finns i [Förbered data för användning i dokumentationen för Intelligent Services](../data-preparation.md).
 
-Alla kolumner i [!DNL Consumer Experience Event] CEE-schemat är inte obligatoriska för Attribution AI.
+Alla kolumner i [!DNL Consumer Experience Event]-schemat (CEE) är inte obligatoriska för Attribution AI.
 
 >[!NOTE]
 >
@@ -60,7 +60,7 @@ Kolumnerna nedan är inte obligatoriska, men vi rekommenderar att du inkluderar 
 
 Attribution AI kräver historiska data som underlag för modellutbildning. Den datalängd som krävs bestäms huvudsakligen av två huvudfaktorer: utbildningsfönster och kontrollfönster. Indata med kortare utbildningsfönster är mer känsliga för aktuella trender, medan längre utbildningsfönster hjälper till att skapa mer stabila och korrekta modeller. Det är viktigt att modellera målet med historiska data som bäst motsvarar era affärsmål.
 
-Konfigurationen [av](./user-guide.md#training-window) utbildningsfönstret filtrerar konverteringshändelser som anges för modellutbildning baserat på förekomsttid. För närvarande är den kortaste utbildningstiden 1 fjärdedel (90 dagar). I [uppslagsfönstret](./user-guide.md#lookback-window) finns en tidsram som anger hur många dagar före konverteringshändelsekontakten som är relaterade till den här konverteringshändelsen ska inkluderas. Dessa två begrepp avgör tillsammans mängden indata (mätt i dagar) som krävs för ett program.
+[Utbildningsfönstrets konfiguration](./user-guide.md#training-window) filtrerar konverteringshändelser som ska inkluderas för modellutbildning baserat på förekomsttid. För närvarande är den kortaste utbildningstiden 1 fjärdedel (90 dagar). Uppslagsfönstret [](./user-guide.md#lookback-window) innehåller en tidsram som anger hur många dagar före konverteringshändelsekontakten som är relaterade till konverteringshändelsen ska inkluderas. Dessa två begrepp avgör tillsammans mängden indata (mätt i dagar) som krävs för ett program.
 
 Som standard definierar Attribution AI utbildningsfönstret som de senaste 2 kvartalen (6 månader) och uppslagsfönstret som 56 dagar. Med andra ord kommer modellen att ta hänsyn till alla definierade konverteringshändelser som har inträffat under de senaste två kvartalen och söka efter alla kontaktytor som har inträffat inom 56 dagar före de associerade konverteringshändelserna.
 
@@ -87,9 +87,9 @@ Attribution AI ger följande utdata:
 
 ![](./images/input-output/schema_output.gif)
 
-### Rågranulat {#raw-granular-scores}
+### Rågranulerade resultat {#raw-granular-scores}
 
-Attribution AI ger attribueringspoäng på så detaljnivå som möjligt så att du kan segmentera och minska poängen med valfri spalt. Om du vill visa dessa bakgrundsmusik i användargränssnittet läser du avsnittet [Visa sökvägar](#raw-score-path)för råpoängen. Om du vill hämta bakgrundsmusik med API går du till [nedladdningspoängen i Attribution AI](./download-scores.md) -dokumentet.
+Attribution AI ger attribueringspoäng på så detaljnivå som möjligt så att du kan segmentera och minska poängen med valfri spalt. Om du vill visa bakgrundsmusiken i användargränssnittet läser du avsnittet [visa sökvägar för råpoäng](#raw-score-path). Om du vill hämta bakgrundsmusik med API går du till [nedladdningen av bakgrundsmusik i Attribution AI](./download-scores.md)-dokumentet.
 
 >[!NOTE]
 >
@@ -104,18 +104,18 @@ I följande tabell visas schemafälten i utdata för råpoängsexempel:
 | --- | --- | --- |
 | tidsstämpel (DateTime) | Falskt | Den tid då en konverteringshändelse eller observation inträffade. <br> **Exempel:** 2020-06-09T00:01:51.000Z |
 | identityMap (Map) | True | användarens identityMap liknar CEE XDM-formatet. |
-| eventType (String) | True | Den primära händelsetypen för den här tidsserieposten. <br> **Exempel:** &quot;Order&quot;, &quot;Purchase&quot;, &quot;Visit&quot; |
-| eventMergeId (String) | True | Ett ID som korrelerar eller sammanfogar flera [!DNL Experience Events] som i princip är samma händelse eller som ska sammanfogas. Detta ska fyllas i av den som producerar uppgifterna före intag. <br> **Exempel:** 575525617716-0-edc2ed37-1aab-4750-a820-1c2b3844b8c4 |
+| eventType (String) | True | Den primära händelsetypen för den här tidsserieposten. <br> **Exempel:** &quot;Beställning&quot;,&quot;Inköp&quot;,&quot;Besök&quot; |
+| eventMergeId (String) | True | Ett ID som korrelerar eller sammanfogar flera [!DNL Experience Events] som i princip är samma händelse eller ska sammanfogas. Detta ska fyllas i av den som producerar uppgifterna före intag. <br> **Exempel:** 575525617716-0-edc2ed37-1aab-4750-a820-1c2b3844b8c4 |
 | _id (sträng) | Falskt | En unik identifierare för tidsseriehändelsen. <br> **Exempel:** 4461-edc2ed37-1aab-4750-a820-1c2b3844b8c4 |
 | _tenantId (Object) | Falskt | Objektbehållaren på den översta nivån som motsvarar ditt tält-ID. <br> **Exempel:** _atsdsnrmmsv2 |
 | your_schema_name (Object) | Falskt | Poängrad med konverteringshändelse, alla kontaktyteshändelser som är associerade med den och deras metadata. <br> **Exempel:** Attribution AI - modellnamn__2020 |
 | segmentering (sträng) | True | Konverteringssegment, t.ex. geosegmentering, som modellen är byggd mot. Om segment saknas är segmentet detsamma som conversionName. <br> **Exempel:** ORDER_US |
-| conversionName (String) | True | Namnet på konverteringen som konfigurerades under installationen. <br> **Exempel:** Beställning, lead, besök |
+| conversionName (String) | True | Namnet på konverteringen som konfigurerades under installationen. <br> **Exempel:** Beställning, Lead, Besök |
 | konvertering (objekt) | Falskt | Konvertera metadatakolumner. |
 | dataSource (String) | True | Global unik identifiering av en datakälla. <br> **Exempel:** Adobe Analytics |
 | eventSource (String) | True | Källan när den faktiska händelsen inträffade. <br> **Exempel:** Adobe.com |
-| eventType (String) | True | Den primära händelsetypen för den här tidsserieposten. <br> **Exempel:** Order |
-| geo (String) | True | Den geografiska plats där konverteringen levererades `placeContext.geo.countryCode`. <br> **Exempel:** USA |
+| eventType (String) | True | Den primära händelsetypen för den här tidsserieposten. <br> **Exempel:** Ordning |
+| geo (String) | True | Den geografiska plats där konverteringen levererades `placeContext.geo.countryCode`. <br> **Exempel:** US |
 | priceTotal (dubbel) | True | Inkomster som erhållits genom konverteringen <br> **Exempel:** 99.9 |
 | product (String) | True | XDM-identifieraren för själva produkten. <br> **Exempel:** RX 1080 ti |
 | productType (String) | True | Visningsnamnet för produkten som det visas för användaren för den här produktvyn. <br> **Exempel:** Gpus |
@@ -124,23 +124,23 @@ I följande tabell visas schemafälten i utdata för råpoängsexempel:
 | skuId (String) | True | Lagerhållningsenhet (SKU), den unika identifieraren för en produkt som definieras av leverantören. <br> **Exempel:** MJ-03-XS-Black |
 | tidsstämpel (DateTime) | True | Tidsstämpel för konverteringen. <br> **Exempel:** 2020-06-09T00:01:51.000Z |
 | passThrough (Object) | True | Ytterligare kolumner för Score-datamängd som anges av användaren när modellen konfigureras. |
-| commerce_order_purchaseCity (String) | True | Kolumn med extra bakgrundsuppsättning. <br> **Exempel:** city: San Jose |
+| commerce_order_purchaseCity (String) | True | Kolumn med extra bakgrundsuppsättning. <br> **Exempel:** stad : San Jose |
 | customerProfile (Object) | Falskt | Identitetsinformation om användaren som användes för att skapa modellen. |
 | identity (Object) | Falskt | Innehåller information om användaren som används för att skapa modellen, till exempel `id` och `namespace`. |
 | id (String) | True | Identitets-ID för användaren, t.ex. cookie-ID, AAID eller MCID. <br> **Exempel:** 17348762725408656344688320891369597404 |
 | namespace (String) | True | Identitetsnamnutrymme som används för att skapa sökvägarna och därmed modellen. <br> **Exempel:** aaid |
 | touchPointsDetail (Object Array) | True | Listan med kontaktpunktsinformation som leder till konverteringen som sorteras efter kontaktytpunktsförekomst eller tidsstämpel. |
 | touchpointName (String) | True | Namnet på den kontaktyta som konfigurerades under installationen. <br> **Exempel:** PAID_SEARCH_CLICK |
-| bakgrundsmusik (Object) | True | Pekpunktsbidrag till den här konverteringen som poäng. Mer information om poängen som skapas i det här objektet finns i avsnittet [aggregerade attribueringspoäng](#aggregated-attribution-scores) . |
-| touchPoint (Object) | True | Kontaktpunktsmetadata. Mer information om bakgrundsmusik i det här objektet finns i avsnittet [aggregerade poäng](#aggregated-scores) . |
+| bakgrundsmusik (Object) | True | Pekpunktsbidrag till den här konverteringen som poäng. Mer information om poängen som skapas i det här objektet finns i avsnittet [aggregerade attribueringspoäng](#aggregated-attribution-scores). |
+| touchPoint (Object) | True | Kontaktpunktsmetadata. Mer information om bakgrundsmusik i det här objektet finns i avsnittet [aggregerade poäng](#aggregated-scores). |
 
 ### Visa sökvägar för Raw-poäng (UI) {#raw-score-path}
 
-Du kan visa sökvägen till dina bakgrundsmusik i användargränssnittet. Börja med att välja **[!UICONTROL Schemas]** i plattformsgränssnittet och sök sedan efter och välj ditt AI-poängschema för attribuering från **[!UICONTROL Browse]** fliken.
+Du kan visa sökvägen till dina bakgrundsmusik i användargränssnittet. Börja med att välja **[!UICONTROL Schemas]** i plattformsgränssnittet och sök sedan efter och välj ditt AI-poängschema för attribuering från fliken **[!UICONTROL Browse]**.
 
 ![Välj schema](./images/input-output/schemas_browse.png)
 
-Därefter väljer du ett fält i **[!UICONTROL Structure]** fönstret för användargränssnittet, så öppnas **[!UICONTROL Field properties]** fliken. Inom **[!UICONTROL Field properties]** är sökvägsfältet som mappar till dina Raw-resultat.
+Markera sedan ett fält i fönstret **[!UICONTROL Structure]** i användargränssnittet, så öppnas fliken **[!UICONTROL Field properties]**. Inom **[!UICONTROL Field properties]** är sökvägsfältet som mappar till dina Raw-poäng.
 
 ![Välj ett schema](./images/input-output/field_properties.png)
 
@@ -171,7 +171,7 @@ Se tabellen nedan för mer information om var och en av dessa attribueringspoän
 
 **Råpoängsreferens (attribueringspoäng)**
 
-Tabellen nedan mappar attribueringspoängen till de obearbetade poängen. Om du vill ladda ned bakgrundsmusik går du till [nedladdningspoängen i Attribution AI](./download-scores.md) dokumentation.
+Tabellen nedan mappar attribueringspoängen till de obearbetade poängen. Om du vill ladda ned bakgrundsmusik går du till [nedladdningspoängen i dokumentationen för Attribution AI](./download-scores.md).
 
 | Attributionspoäng | Referenskolumn för råskala |
 | --- | --- |
@@ -183,7 +183,7 @@ Tabellen nedan mappar attribueringspoängen till de obearbetade poängen. Om du 
 | U-formad | _tenantID.your_schema_name.touchpointsDetail.element.touchpoint.uShape |
 | Tidsminskning | _tenantID.your_schema_name.touchpointsDetail.element.touchpoint.decayUnits |
 
-### Sammanlagda bakgrundsmusik {#aggregated-scores}
+### Aggregerade bakgrundsmusik {#aggregated-scores}
 
 Samlade poäng kan hämtas i CSV-format från plattformsgränssnittet om datumintervallet är mindre än 30 dagar. Se tabellen nedan för mer information om var och en av dessa aggregerade kolumner.
 
@@ -193,20 +193,20 @@ Samlade poäng kan hämtas i CSV-format från plattformsgränssnittet om datumin
 | mediatouchpoints_date (DateTime) | Användardefinierat och fast format | True | Media Touchpoint-datum i formatet ÅÅÅ-MM-DD <br> **Exempel**: 2017-04-21 |
 | segment (String) | Beräknat | Falskt | Konverteringssegment, t.ex. geosegmentering, som modellen är byggd mot. Om segment saknas är segmentet detsamma som conversion_scope. <br> **Exempel**: ORDER_AMER |
 | conversion_scope (String) | Användardefinierad | Falskt | Namnet på konverteringen enligt användarens konfiguration. <br> **Exempel**: BESTÄLL |
-| touchpoint_scope (String) | Användardefinierad | True | Namn på kontaktpunkten enligt användarens inställningar <br> **Exempel**: PAID_SEARCH_CLICK |
+| touchpoint_scope (String) | Användardefinierad | True | Namnet på kontaktpunkten enligt användarens inställningar <br> **Exempel**: PAID_SEARCH_CLICK |
 | product (String) | Användardefinierad | True | Produktens XDM-identifierare. <br> **Exempel**: CC |
 | product_type (String) | Användardefinierad | True | Visningsnamnet för produkten som det visas för användaren för den här produktvyn. <br> **Exempel**: gpus, bärbara datorer |
 | geo (String) | Användardefinierad | True | Den geografiska plats där konverteringen levererades (placeContext.geo.countryCode) <br> **Exempel**: USA |
 | event_type (String) | Användardefinierad | True | Den primära händelsetypen för den här tidsserieposten <br> **Exempel**: Betalkonvertering |
 | media_type (String) | ENUM | Falskt | Anger om medietypen är betald, ägd eller förtjänad. <br> **Exempel**: BETALD, ÄGEN |
-| channel (String) | ENUM | Falskt | Den `channel._type` egenskap som används för att tillhandahålla en grov klassificering av kanaler med liknande egenskaper i [!DNL Consumer Experience Event] XDM. <br> **Exempel**: SÖK |
+| channel (String) | ENUM | Falskt | Egenskapen `channel._type` som används för att tillhandahålla en grov klassificering av kanaler med liknande egenskaper i [!DNL Consumer Experience Event] XDM. <br> **Exempel**: SÖK |
 | action (String) | ENUM | Falskt | Egenskapen `mediaAction` används för att tillhandahålla en typ av åtgärd för upplevelsehändelsemedia. <br> **Exempel**: KLICKA |
 | campaign_group (String) | Användardefinierad | True | Namnet på kampanjgruppen där flera kampanjer grupperas tillsammans, till exempel &quot;50%_DISCOUNT&quot;. <br> **Exempel**: KOMMERSIELL |
 | campaign_name (String) | Användardefinierad | True | Namnet på kampanjen som används för att identifiera marknadsföringskampanjer som 50%_DISCOUNT_USA eller 50%_DISCOUNT_ASIA. <br> **Exempel**: Thanksgiving Sale |
 
 **Råpoängsreferens (aggregerad)**
 
-Tabellen nedan mappar de aggregerade poängen till de obearbetade poängen. Om du vill ladda ned bakgrundsmusik går du till [nedladdningspoängen i Attribution AI](./download-scores.md) dokumentation. Om du vill visa sökvägar för råpoängen i användargränssnittet går du till avsnittet [Visa sökvägar](#raw-score-path) för råpoängen i det här dokumentet.
+Tabellen nedan mappar de aggregerade poängen till de obearbetade poängen. Om du vill ladda ned bakgrundsmusik går du till [nedladdningspoängen i dokumentationen för Attribution AI](./download-scores.md). Om du vill visa sökvägar för råpoäng i användargränssnittet går du till avsnittet [visa sökvägar för råpoäng](#raw-score-path) i det här dokumentet.
 
 | Kolumnnamn | Referenskolumn för Raw-bakgrundsmusik |
 | --- | --- |
@@ -228,4 +228,4 @@ Tabellen nedan mappar de aggregerade poängen till de obearbetade poängen. Om d
 
 ## Nästa steg {#next-steps}
 
-När du har förberett dina data och har alla dina autentiseringsuppgifter och scheman på plats börjar du med att följa [användarhandboken](./user-guide.md)för Attribution AI. I den här guiden får du hjälp med att skapa en instans för Attribution AI.
+När du har förberett dina data och har alla dina autentiseringsuppgifter och scheman på plats börjar du med att följa [användarhandboken för Attribution AI](./user-guide.md). I den här guiden får du hjälp med att skapa en instans för Attribution AI.
