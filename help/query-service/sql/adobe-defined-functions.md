@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;frågetjänst;Query Service;adobe defined functions;sql;
 solution: Experience Platform
-title: Adobe-definierade funktioner
+title: Adobe-definierade SQL-funktioner i frågetjänsten
 topic: functions
-description: Det här dokumentet innehåller information om de Adobe-definierade funktioner som är tillgängliga i frågetjänsten.
+description: Det här dokumentet innehåller information om de Adobe-definierade funktioner som är tillgängliga i Adobe Experience Platform Query Service.
 translation-type: tm+mt
-source-git-commit: e15229601d35d1155fc9a8ab9296f8c41811ebf9
+source-git-commit: 97dc0b5fb44f5345fd89f3f56bd7861668da9a6e
 workflow-type: tm+mt
-source-wordcount: '2902'
+source-wordcount: '2913'
 ht-degree: 1%
 
 ---
 
 
-# Adobe-definierade funktioner
+# Adobe-definierade SQL-funktioner i frågetjänsten
 
 Funktioner som definieras av Adobe, och som kallas ADF, är färdiga funktioner i Adobe Experience Platform Query Service som hjälper till att utföra vanliga affärsrelaterade uppgifter på [!DNL Experience Event]-data. Dessa innehåller funktioner för [Sessioner](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html) och [Attribution](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html) som de som finns i Adobe Analytics.
 
