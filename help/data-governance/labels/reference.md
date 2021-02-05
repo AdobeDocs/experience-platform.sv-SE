@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;hemanvändare;populära ämnen;datastyrning;dataanvändningsetikett api;principtjänst api;kompatibla dataanvändningsetiketter;kontraktsetiketter;identitetsetiketter;känsliga etiketter
 solution: Experience Platform
-title: Etiketter för grundläggande dataanvändning
+title: Ordlista för dataanvändningsetiketter
 topic: labels
 description: I det här dokumentet finns en översikt över alla dataanvändningsetiketter som för närvarande stöds av Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 00010d38a5d05800aeac9af8505093fee3593b45
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
 source-wordcount: '1904'
 ht-degree: 1%
@@ -13,7 +13,7 @@ ht-degree: 1%
 ---
 
 
-# Etiketter för grundläggande dataanvändning
+# Etikettordlista för dataanvändning
 
 Med etiketter för dataanvändning kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Adobe Experience Platform Data Governance innehåller flera färdiga etiketter för dataanvändning som du kan använda för att kategorisera dina data.
 
