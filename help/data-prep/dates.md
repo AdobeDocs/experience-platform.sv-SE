@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;map csv;map csv file;map csv file to xdm;map csv to xdm;ui guide;mapper;mappning;date;date functions;dates;
 solution: Experience Platform
-title: Datumfunktioner
+title: Datainställningsdatumfunktioner
 topic: overview
 description: I det här dokumentet introduceras de datumfunktioner som används med Data Prep.
 translation-type: tm+mt
-source-git-commit: 28c13101be37c5c7680c5d46005509bfd122018f
+source-git-commit: 37c1c98ccba50fa917acc5e93763294f4dde5c36
 workflow-type: tm+mt
-source-wordcount: '411'
+source-wordcount: '415'
 ht-degree: 16%
 
 ---
 
 
-# Datumfunktioner
+# Datapixens datumfunktioner
 
 Data Prep stöder datumfunktioner, både som strängar och som datetime-objekt.
 
