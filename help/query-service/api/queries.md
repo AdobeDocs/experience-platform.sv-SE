@@ -1,27 +1,27 @@
 ---
-keywords: Experience Platform;home;popular topics;query service;api guide;queries;query;Query service;
+keywords: Experience Platform;home;populära topics;query service;api guide;queries;query;Query service;
 solution: Experience Platform
-title: Handbok för frågetjänstutvecklare
+title: Frågar API-slutpunkt
 topic: queries
 description: Följande avsnitt går igenom anrop som du kan göra med slutpunkten /queries i API:t för frågetjänsten.
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '663'
+source-wordcount: '676'
 ht-degree: 0%
 
 ---
 
 
-# Frågor
+# Frågeslutpunkt
 
 ## Exempel på API-anrop
 
-Följande avsnitt går igenom anrop som du kan göra med `/queries` slutpunkten i [!DNL Query Service] API:t. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
+Följande avsnitt går igenom anrop som du kan göra med slutpunkten `/queries` i API:t [!DNL Query Service]. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
 
 ### Hämta en lista med frågor
 
-Du kan hämta en lista med alla frågor för din IMS-organisation genom att göra en GET-förfrågan till `/queries` slutpunkten.
+Du kan hämta en lista med alla frågor för din IMS-organisation genom att göra en GET-förfrågan till `/queries`-slutpunkten.
 
 **API-format**
 
@@ -38,12 +38,12 @@ Här följer en lista med tillgängliga frågeparametrar för att lista frågor.
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `orderby` | Anger fältet som resultaten ska sorteras efter. De fält som stöds är `created` och `updated`. Resultatet `orderby=created` sorteras t.ex. i stigande ordning. Om du lägger till en `-` tidigare skapad (`orderby=-created`) sorteras objekt i fallande ordning. |
+| `orderby` | Anger fältet som resultaten ska sorteras efter. De fält som stöds är `created` och `updated`. `orderby=created` sorterar till exempel resultaten efter att de har skapats i stigande ordning. Om du lägger till en `-` före skapad (`orderby=-created`) sorteras objekten i fallande ordning. |
 | `limit` | Anger sidstorleksgränsen för att styra antalet resultat som ska inkluderas på en sida. (*Standardvärde: 20*) |
-| `start` | Förskjuter svarslistan med nollbaserad numrering. En lista `start=2` returneras till exempel från den tredje listade frågan. (*Standardvärde: 0*) |
-| `property` | Filtrera resultat baserat på fält. Filtren **måste** vara HTML-escape. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `created`, `updated`, `state`och `id`. Listan med operatorer som stöds är `>` (större än), `<` (mindre än), `>=` (större än eller lika med), `<=` (mindre än eller lika med), `==` (lika med), `!=` (inte lika med) och `~` (innehåller). Alla frågor `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` returneras till exempel med det angivna ID:t. |
-| `excludeSoftDeleted` | Anger om en fråga som har tagits bort ska tas med. Exempelvis `excludeSoftDeleted=false` kommer att **innehålla** mjuka borttagna frågor. (*Boolean, standardvärde: true*) |
-| `excludeHidden` | Anger om icke-användardrivna frågor ska visas. Om värdet är false **inkluderas** icke-användardrivna frågor, som CURSOR-definitioner, FETCH och metadatafrågor. (*Boolean, standardvärde: true*) |
+| `start` | Förskjuter svarslistan med nollbaserad numrering. `start=2` returnerar till exempel en lista som börjar med den tredje listade frågan. (*Standardvärde: 0*) |
+| `property` | Filtrera resultat baserat på fält. Filtren **måste** vara HTML-escape. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `created`, `updated`, `state` och `id`. Listan med operatorer som stöds är `>` (större än), `<` (mindre än), `>=` (större än eller lika med), `<=` (mindre än eller lika med), `==` (lika med), `!=` (inte lika med) och `~` (innehåller). `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` returnerar till exempel alla frågor med det angivna ID:t. |
+| `excludeSoftDeleted` | Anger om en fråga som har tagits bort ska tas med. `excludeSoftDeleted=false` kommer till exempel att **inkludera** mjuka borttagna frågor. (*Boolean, standardvärde: true*) |
+| `excludeHidden` | Anger om icke-användardrivna frågor ska visas. Om värdet är false inkluderas **icke-användardrivna frågor**, som CURSOR-definitioner, FETCH eller metadatafrågor. (*Boolean, standardvärde: true*) |
 
 **Begäran**
 
@@ -120,7 +120,7 @@ Ett godkänt svar returnerar HTTP-status 200 med en lista över frågor för den
 
 ### Skapa en fråga
 
-Du kan skapa en ny fråga genom att göra en POST-förfrågan till `/queries` slutpunkten.
+Du kan skapa en ny fråga genom att göra en POST-förfrågan till `/queries`-slutpunkten.
 
 **API-format**
 
@@ -156,7 +156,7 @@ curl -X POST https://platform.adobe.io/data/foundation/query/queries \
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om din nya fråga. När frågan har aktiverats och körts, `state` ändras den från `SUBMITTED` till `SUCCESS`.
+Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om din nya fråga. När frågan har aktiverats och körts ändras `state` från `SUBMITTED` till `SUCCESS`.
 
 ```json
 {
@@ -199,11 +199,11 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om din n
 
 >[!NOTE]
 >
->Du kan använda värdet för `_links.cancel` att [avbryta den skapade frågan](#cancel-a-query).
+>Du kan använda värdet `_links.cancel` för att [avbryta den skapade frågan](#cancel-a-query).
 
 ### Hämta en fråga via ID
 
-Du kan hämta detaljerad information om en viss fråga genom att göra en GET-förfrågan till `/queries` slutpunkten och ange frågans `id` värde i sökvägen till begäran.
+Du kan hämta detaljerad information om en viss fråga genom att göra en GET-förfrågan till `/queries`-slutpunkten och ange frågans `id`-värde i sökvägen till begäran.
 
 **API-format**
 
@@ -213,7 +213,7 @@ GET /queries/{QUERY_ID}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{QUERY_ID}` | Värdet `id` för frågan som du vill hämta. |
+| `{QUERY_ID}` | `id`-värdet för frågan som du vill hämta. |
 
 **Begäran**
 
@@ -270,11 +270,11 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 
 >[!NOTE]
 >
->Du kan använda värdet för `_links.cancel` att [avbryta den skapade frågan](#cancel-a-query).
+>Du kan använda värdet `_links.cancel` för att [avbryta den skapade frågan](#cancel-a-query).
 
 ### Avbryt en fråga
 
-Du kan begära att få ta bort en viss fråga genom att göra en PATCH-begäran till `/queries` slutpunkten och ange frågans `id` värde i sökvägen till begäran.
+Du kan begära att få ta bort en viss fråga genom att göra en PATCH-begäran till `/queries`-slutpunkten och ange frågans `id`-värde i sökvägen till begäran.
 
 **API-format**
 
@@ -284,7 +284,7 @@ PATCH /queries/{QUERY_ID}
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{QUERY_ID}` | Värdet `id` för frågan som du vill avbryta. |
+| `{QUERY_ID}` | `id`-värdet för frågan som du vill avbryta. |
 
 
 **Begäran**
