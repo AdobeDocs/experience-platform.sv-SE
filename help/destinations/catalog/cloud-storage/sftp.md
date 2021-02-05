@@ -1,21 +1,17 @@
 ---
 keywords: SFTP;sftp
-title: SFTP-mål
-seo-title: SFTP-mål
+title: SFTP-anslutningsmål
 description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Experience Platform.
-seo-description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Experience Platform.
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '205'
+source-wordcount: '185'
 ht-degree: 0%
 
 ---
 
 
-# SFTP-mål
-
-## Översikt
+# SFTP-anslutning
 
 Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Experience Platform.
 
