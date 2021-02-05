@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;import packaged recept;Data Science Workspace;populära topics;recipes;api;sensei machine learning;create engine
 solution: Experience Platform
-title: Importera ett paketerat recept (API)
+title: Importera en paketerad mottagare med hjälp av API:t Sensei Machine Learning
 topic: tutorial
 type: Tutorial
 description: 'I den här självstudien används API:t Sensei Machine Learning för att skapa en motor, som också kallas Recept i användargränssnittet. '
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
 workflow-type: tm+mt
-source-wordcount: '997'
+source-wordcount: '1007'
 ht-degree: 0%
 
 ---
 
 
-# Importera ett paketerat recept (API)
+# Importera ett paketerat recept med hjälp av API:t Sensei Machine Learning
 
 I den här självstudien används [[!DNL Sensei Machine Learning API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) för att skapa en [motor](../api/engines.md), som också kallas recept i användargränssnittet.
 
