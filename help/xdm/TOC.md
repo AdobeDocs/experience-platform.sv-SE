@@ -5,10 +5,10 @@ user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: XDM-guide (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och mixins för att standardisera upplevelsedata.
 translation-type: tm+mt
-source-git-commit: 288f47306853fcc39234ad098bc0e73f24f8540a
+source-git-commit: b735e5f7eb8d1f0526d8786430c844b4d36fa09d
 workflow-type: tm+mt
-source-wordcount: '231'
-ht-degree: 6%
+source-wordcount: '235'
+ht-degree: 7%
 
 ---
 
@@ -39,6 +39,7 @@ ht-degree: 6%
    * [Program](./data-types/application.md)
    * [Beacon](./data-types/beacon.md)
    * [Webbläsarinformation](./data-types/browser-details.md)
+   * [Handel](./data-types/commerce.md)
    * [Innehåll och inställningar](./data-types/consents.md)
    * [Enhet](./data-types/device.md)
    * [E-postadress](./data-types/email-address.md)
@@ -50,6 +51,8 @@ ht-degree: 6%
    * [Geo Shape](./data-types/geo-shape.md)
    * [Identitet](./data-types/identity.md)
    * [Mät](./data-types/measure.md)
+   * [Order](./data-types/order.md)
+   * [Betalningsartikel](./data-types/payment-item.md)
    * [Person](./data-types/person.md)
    * [Personnamn](./data-types/person-name.md)
    * [Telefonnummer](./data-types/phone-number.md)
