@@ -5,7 +5,7 @@ description: Lär dig hur du konfigurerar Experience Platform Web SDK
 seo-description: Lär dig hur du konfigurerar Experience Platform Web SDK
 keywords: konfigurera;konfiguration;SDK;edge;Web SDK;konfigurera;edgeConfigId;context;web;device;environment;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;web sdk settings;prehideStyle;opacity;cookieDestinationsEnabled;url DestinationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 translation-type: tm+mt
-source-git-commit: 723711ee0c2b7b5ca4aea617a81241dbebbc839c
+source-git-commit: 3ac00fda2c0a43437fb212dcba7e98c63503b9c4
 workflow-type: tm+mt
 source-wordcount: '740'
 ht-degree: 5%
@@ -94,7 +94,7 @@ Anger om data som är associerade med länkklick ska samlas in automatiskt. Mer 
 | -------- | ------------ | ----------------- |
 |  -funktion | Nej | () => odefinierad |
 
-Ange detta för att konfigurera ett återanrop som anropas för varje händelse precis innan den skickas.  Ett objekt med fältet `xdm` skickas till återanropet.  Ändra `xdm`-objektet om du vill ändra vad som skickas.  I återanropet kommer `xdm`-objektet redan att ha data som skickas i händelsekommandot och den automatiskt insamlade informationen.  Mer information om tidpunkten för det här återanropet och ett exempel finns i [Ändra händelser globalt](tracking-events.md#modifying-events-globally).
+Ange detta för att konfigurera ett återanrop som anropas för varje händelse precis innan den skickas.  Ett objekt med fältet `xdm` skickas till återanropet.  Ändra `xdm`-objektet om du vill ändra vad som skickas.  I återanropet kommer `xdm`-objektet redan att ha data som skickas i händelsekommandot och den automatiskt insamlade informationen. Mer information om tidpunkten för det här återanropet och ett exempel finns i [Ändra händelser globalt](tracking-events.md#modifying-events-globally).
 
 ## Sekretessalternativ
 
