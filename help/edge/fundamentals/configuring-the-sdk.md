@@ -3,23 +3,23 @@ title: Konfigurera SDK
 seo-title: Konfigurera Adobe Experience Platform Web SDK
 description: Lär dig hur du konfigurerar Experience Platform Web SDK
 seo-description: Lär dig hur du konfigurerar Experience Platform Web SDK
-keywords: configuring;configuration;SDK;edge;Web SDK;configure;edgeConfigId;context;web;device;environment;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;web sdk settings;prehidingStyle;opacity;cookieDestinationsEnabled;urlDestinationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
+keywords: konfigurera;konfiguration;SDK;edge;Web SDK;konfigurera;edgeConfigId;context;web;device;environment;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;web sdk settings;prehideStyle;opacity;cookieDestinationsEnabled;url DestinationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 translation-type: tm+mt
-source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
+source-git-commit: 723711ee0c2b7b5ca4aea617a81241dbebbc839c
 workflow-type: tm+mt
-source-wordcount: '710'
-ht-degree: 4%
+source-wordcount: '740'
+ht-degree: 5%
 
 ---
 
 
 # Konfigurera SDK
 
-Konfigurationen för SDK görs med `configure` kommandot.
+Konfigurationen för SDK görs med kommandot `configure`.
 
 >[!IMPORTANT]
 >
->`configure` ska *alltid* vara det första anropade kommandot.
+>`configure` ska  ** alltid vara det första anropade kommandot.
 
 ```javascript
 alloy("configure", {
@@ -38,7 +38,7 @@ Det finns många alternativ som kan anges under konfigurationen. Alla alternativ
 | -------- | ------------ | ----------------- |
 | Sträng | Ja | ingen |
 
-Ditt tilldelade konfigurations-ID, som länkar SDK till rätt konton och konfiguration.  När du konfigurerar flera instanser på en sida måste du konfigurera olika inställningar `edgeConfigId` för varje instans.
+Ditt tilldelade konfigurations-ID, som länkar SDK till rätt konton och konfiguration.  När du konfigurerar flera instanser på en sida måste du konfigurera olika `edgeConfigId` för varje instans.
 
 ### `context`
 
@@ -66,6 +66,7 @@ Anger om felsökning ska vara aktiverat. Om du ställer in den här konfiguratio
 | **Typ** | **Obligatoriskt** | **Standardvärde** |
 | -------- | ------------ | ------------------ |
 | Sträng | Nej | `beta.adobedc.net` |
+| Sträng | Nej | `omtrdc.net` |
 
 Domänen som används för att interagera med Adobe-tjänster. Detta används endast om du har en förstahandsdomän (CNAME) som proxies begär till infrastrukturen i Adobe edge.
 
@@ -75,7 +76,7 @@ Domänen som används för att interagera med Adobe-tjänster. Detta används en
 | -------- | ------------ | ----------------- |
 | Sträng | Ja | ingen |
 
-Ditt tilldelade [!DNL Experience Cloud] organisations-ID.  När du konfigurerar flera instanser på en sida måste du konfigurera olika inställningar `orgId` för varje instans.
+Ditt [!DNL Experience Cloud]-organisations-ID.  När du konfigurerar flera instanser på en sida måste du konfigurera olika `orgId` för varje instans.
 
 ## Datainsamling
 
@@ -85,7 +86,7 @@ Ditt tilldelade [!DNL Experience Cloud] organisations-ID.  När du konfigurerar 
 | -------- | ------------ | ----------------- |
 | Boolean | Nej | `true` |
 
-Anger om data som är associerade med länkklick ska samlas in automatiskt. Mer information finns i [Automatisk länkspårning](../data-collection/track-links.md#automaticLinkTracking) .
+Anger om data som är associerade med länkklick ska samlas in automatiskt. Mer information finns i [Automatisk länkspårning](../data-collection/track-links.md#automaticLinkTracking).
 
 ### `onBeforeEventSend`
 
@@ -93,7 +94,7 @@ Anger om data som är associerade med länkklick ska samlas in automatiskt. Mer 
 | -------- | ------------ | ----------------- |
 |  -funktion | Nej | () => odefinierad |
 
-Ange detta för att konfigurera ett återanrop som anropas för varje händelse precis innan den skickas.  Ett objekt med fältet `xdm` skickas till återanropet.  Ändra objektet `xdm` om du vill ändra vad som skickas.  I återanropet skickas data från händelsekommandot och den automatiskt insamlade informationen till objektet. `xdm`  Mer information om tidpunkten för det här återanropet och ett exempel finns i [Ändra händelser globalt](tracking-events.md#modifying-events-globally).
+Ange detta för att konfigurera ett återanrop som anropas för varje händelse precis innan den skickas.  Ett objekt med fältet `xdm` skickas till återanropet.  Ändra `xdm`-objektet om du vill ändra vad som skickas.  I återanropet kommer `xdm`-objektet redan att ha data som skickas i händelsekommandot och den automatiskt insamlade informationen.  Mer information om tidpunkten för det här återanropet och ett exempel finns i [Ändra händelser globalt](tracking-events.md#modifying-events-globally).
 
 ## Sekretessalternativ
 
@@ -103,7 +104,7 @@ Ange detta för att konfigurera ett återanrop som anropas för varje händelse 
 | -------- | ------------ | ----------------- |
 | Objekt | Nej | `"in"` |
 
-Anger användarens standardsamtycke. Detta används när det inte finns någon inställning för samtycke som redan har sparats för användaren. Det andra giltiga värdet är `"pending"`. När detta är inställt kommer arbetet att ställas i kö tills användaren ger sitt medgivande. När användarens inställningar har angetts fortsätter arbetet eller avbryts baserat på användarens inställningar. Mer information finns i [Supporting Consent](../consent/supporting-consent.md) .
+Anger användarens standardsamtycke. Detta används när det inte finns någon inställning för samtycke som redan har sparats för användaren. Det andra giltiga värdet är `"pending"`. När detta är inställt kommer arbetet att ställas i kö tills användaren ger sitt medgivande. När användarens inställningar har angetts fortsätter arbetet eller avbryts baserat på användarens inställningar. Mer information finns i [Supporting Consent](../consent/supporting-consent.md).
 
 ## Anpassningsalternativ
 
@@ -115,7 +116,7 @@ Anger användarens standardsamtycke. Detta används när det inte finns någon i
 
 Används för att skapa en CSS-formatdefinition som döljer innehållsområden på webbsidan när anpassat innehåll läses in från servern. Om det här alternativet inte anges försöker SDK inte dölja några innehållsområden när anpassat innehåll läses in, vilket kan leda till&quot;flimmer&quot;.
 
-Om du t.ex. har ett element på webbsidan med ett ID `container` vars standardinnehåll du vill dölja när anpassat innehåll läses in från servern, blir ett exempel på ett fördolt format följande:
+Om du t.ex. har ett element på webbsidan med ID:t `container` vars standardinnehåll du vill dölja när anpassat innehåll läses in från servern, blir ett exempel på ett fördolt format följande:
 
 ```javascript
   prehidingStyle: "#container { opacity: 0 !important }"
@@ -129,7 +130,7 @@ Om du t.ex. har ett element på webbsidan med ett ID `container` vars standardin
 | -------- | ------------ | ----------------- |
 | Boolean | Nej | `true` |
 
-Aktiverar destinationer för [!DNL Audience Manager] cookies, vilket gör det möjligt att ställa in cookies baserat på segmentkvalificering.
+Aktiverar [!DNL Audience Manager] cookie-mål, vilket gör det möjligt att ställa in cookies baserat på segmentkvalificering.
 
 ### `urlDestinationsEnabled`
 
@@ -137,7 +138,7 @@ Aktiverar destinationer för [!DNL Audience Manager] cookies, vilket gör det m�
 | -------- | ------------ | ----------------- |
 | Boolean | Nej | `true` |
 
-Aktiverar [!DNL Audience Manager] URL-mål, vilket gör det möjligt att bränna URL:er baserat på segmentkvalificering.
+Aktiverar URL-mål för [!DNL Audience Manager], vilket gör det möjligt att bränna URL:er baserat på segmentkvalificering.
 
 ## Identitetsalternativ
 
