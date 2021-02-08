@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;förhandsvisning;exempel
-title: API-slutpunkt för profilexempelstatus
-description: Med hjälp av API-slutpunkter för kundprofiler i realtid kan du förhandsgranska det senaste framgångsrika exemplet av dina profildata samt lista profildistribution per datauppsättning och per ID-namnområde i Adobe Experience Platform.
+title: API-slutpunkt för exempelstatus för förhandsgranskning (förhandsgranskning av profil)
+description: Med förhandsgranskningsexemplets statusslutpunkt, som ingår i kundprofils-API:t i realtid, kan du förhandsgranska det senaste lyckade exemplet av dina profildata samt lista profildistribution per datauppsättning och per identitetsnamnområde i Adobe Experience Platform.
 topic: guide
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5266c393b034d1744134522cf1769304f39733da
 workflow-type: tm+mt
-source-wordcount: '1550'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -16,13 +16,20 @@ ht-degree: 0%
 
 Med Adobe Experience Platform kan ni importera kunddata från flera olika källor och skapa stabila, enhetliga profiler för enskilda kunder. När data som har aktiverats för kundprofilen i realtid hämtas till [!DNL Platform] lagras de i profildatalagret.
 
-När inmatningen av poster i profilarkivet ökar eller minskar det totala antalet profiler med mer än 5 %, utlöses ett jobb för att uppdatera antalet. För arbetsflöden med direktuppspelningsdata görs en timkontroll för att avgöra om tröskelvärdet på 5 % har uppnåtts eller ej. Om så är fallet utlöses ett jobb automatiskt för att uppdatera antalet. Om tröskelvärdet på 5 % ökning eller minskning uppnås, körs ett jobb för att uppdatera antalet vid batchintag inom 15 minuter efter att en batch har importerats till profilbutiken. Med hjälp av profil-API:t kan du förhandsgranska det senaste framgångsrika exempeljobbet samt lista profildistributionen per datauppsättning och per identitetsnamnområde.
+När inmatningen av poster i profilarkivet ökar eller minskar det totala antalet profiler med mer än 5 %, utlöses ett samplingsjobb för att uppdatera antalet. Hur provet utlöses beror på vilken typ av intag som används:
+
+* För **arbetsflöden för strömmande data** görs en timkontroll för att avgöra om tröskelvärdet på 5 % ökning eller minskning har uppnåtts. Om den har det utlöses ett exempeljobb automatiskt för att uppdatera antalet.
+* Om tröskelvärdet på 5 % ökning eller minskning uppnås körs ett jobb för att uppdatera antalet för **batchimport** inom 15 minuter efter att en batch har importerats till profilbutiken. Med hjälp av profil-API:t kan du förhandsgranska det senaste framgångsrika exempeljobbet samt lista profildistributionen per datauppsättning och per identitetsnamnområde.
 
 Dessa mått är också tillgängliga i [!UICONTROL Profiles]-avsnittet i användargränssnittet för Experience Platform. Mer information om hur du får åtkomst till profildata via användargränssnittet finns i [[!DNL Profile] användarhandboken](../ui/user-guide.md).
 
+>[!NOTE]
+>
+>Det finns uppskattnings- och förhandsgranskningsslutpunkter som ingår i Adobe Experience Platform Segmentation Service API som gör att du kan visa information på sammanfattningsnivå om segmentdefinitioner så att du kan isolera den förväntade målgruppen. Om du vill hitta detaljerade steg för att arbeta med segmentförhandsgranskning och uppskattningar av slutpunkter kan du gå till [handboken för förhandsvisningar och uppskattningar av slutpunkter](../../segmentation/api/previews-and-estimates.md), som ingår i utvecklarhandboken för [!DNL Segmentation] API.
+
 ## Komma igång
 
-API-slutpunkten som används i den här guiden ingår i [[!DNL Real-time Customer Profile] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform]-API.
+API-slutpunkten som används i den här guiden ingår i [[!DNL Real-time Customer Profile] API](https://www.adobe.com/go/profile-apis-en). Innan du fortsätter bör du läsa [kom igång-guiden](getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempelanropen för API i det här dokumentet och viktig information om vilka huvuden som krävs för att kunna anropa valfritt [!DNL Experience Platform]-API.
 
 ## Profilfragment jämfört med sammanslagna profiler
 
@@ -89,7 +96,7 @@ Svaret innehåller information om det senaste exempeljobbet som kördes för IMS
 | `totalFragmentCount` | Totalt antal profilfragment i profilarkivet. |
 | `lastSuccessfulBatchTimestamp` | Senaste lyckade tidsstämpel för batchimport. |
 | `streamingDriven` | *Detta fält har tagits bort och innehåller ingen betydelse för svaret.* |
-| `totalRows` | Totalt antal sammanfogade profiler i Experience-plattformen, även kallat &#39;antal profiler&#39;. |
+| `totalRows` | Totalt antal sammanfogade profiler i Experience Platform, även kallat &#39;antal profiler&#39;. |
 | `lastBatchId` | ID för senaste batchförbrukning. |
 | `status` | Status för det senaste exemplet. |
 | `samplingRatio` | Förhållandet mellan de sammanslagna profiler som du har tagit prov på (`numRowsToRead`) och de totala sammanslagna profilerna (`totalRows`), uttryckt i procent i decimalformat. |
@@ -189,8 +196,6 @@ Svaret innehåller en `data`-array som innehåller en lista med datauppsättning
 | `createdUser` | Användar-ID för den användare som skapade datauppsättningen. |
 | `reportTimestamp` | Rapportens tidsstämpel. Om en `date`-parameter angavs under begäran, returneras rapporten för det angivna datumet. Om ingen `date`-parameter anges returneras den senaste rapporten. |
 
-
-
 ## Visa profildistribution efter namnområde
 
 Du kan utföra en GET-begäran till `/previewsamplestatus/report/namespace`-slutpunkten för att visa uppdelningen efter identitetsnamnområde för alla sammanfogade profiler i profilarkivet. Identitetsnamnutrymmen är en viktig komponent i Adobe Experience Platform Identity Service som fungerar som indikatorer för det sammanhang som kunddata hör till. Mer information finns i [översikten över identitetsnamnet](../../identity-service/namespaces.md).
@@ -288,5 +293,4 @@ Svaret innehåller en `data`-array, med enskilda objekt som innehåller informat
 
 ## Nästa steg
 
-Du kan också använda liknande uppskattningar och förhandsgranskningar för att visa information på sammanfattningsnivå om segmentdefinitionerna för att säkerställa att du isolerar den förväntade målgruppen. Om du vill hitta detaljerade steg för att arbeta med förhandsgranskningar och uppskattningar av segment med hjälp av API:t [!DNL Adobe Experience Platform Segmentation Service] kan du gå till guiden [för förhandsgranskningar och uppskattningar av slutpunkter](../../segmentation/api/previews-and-estimates.md), som ingår i utvecklarhandboken för [!DNL Segmentation] API.
-
+Nu när du vet hur du förhandsgranskar exempeldata i profilarkivet kan du även använda uppskattnings- och förhandsgranskningsslutpunkterna i segmenteringstjänstens API för att visa information på sammanfattningsnivå om segmentdefinitionerna. Denna information hjälper er att isolera den förväntade målgruppen i ert segment. Om du vill veta mer om hur du arbetar med förhandsvisningar och uppskattningar av segment med hjälp av segmenterings-API:t kan du gå till guiden [för förhandsgranskning och uppskattning av slutpunkter](../../segmentation/api/previews-and-estimates.md).
