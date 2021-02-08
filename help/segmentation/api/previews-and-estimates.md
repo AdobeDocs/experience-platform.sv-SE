@@ -3,19 +3,27 @@ keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Seg
 solution: Experience Platform
 title: Förhandsgranskningar och uppskattningar av API-slutpunkter
 topic: developer guide
-description: Med förhandsgranskningarna och uppskattningarna av slutpunkterna i Adobe Experience Platform Segmentation Service API kan du visa information på sammanfattningsnivå för att säkerställa att du isolerar den förväntade målgruppen i dina segment.
+description: I takt med att segmentdefinitionen utvecklas kan du använda verktygen för uppskattning och förhandsgranskning i Adobe Experience Platform för att se information på sammanfattningsnivå för att säkerställa att du isolerar den förväntade målgruppen.
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: eba6de210dcbc12b829b09ba6e7083d342517ba2
 workflow-type: tm+mt
-source-wordcount: '793'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
 
 # Förhandsgranska och beräkna slutpunkter
 
-När du utvecklar segmentdefinitionen kan du använda verktygen för uppskattning och förhandsgranskning i [!DNL Adobe Experience Platform] för att se information på sammanfattningsnivå för att säkerställa att du isolerar den förväntade målgruppen. **I** Förhandsgranskningar finns sidnumrerade listor med kvalificeringsprofiler för en segmentdefinition, så att du kan jämföra resultaten med vad du förväntar dig. **Uppskattningar** ger statistisk information om en segmentdefinition, t.ex. förväntad målgruppsstorlek, konfidensintervall och felstandardavvikelse.
+När du utvecklar en segmentdefinition kan du använda verktygen för uppskattning och förhandsgranskning i Adobe Experience Platform för att se information på sammanfattningsnivå för att se till att du isolerar den målgrupp du förväntar dig.
+
+* **I** Förhandsgranskningar finns sidnumrerade listor med kvalificeringsprofiler för en segmentdefinition, så att du kan jämföra resultaten med vad du förväntar dig.
+
+* **Uppskattningar** ger statistisk information om en segmentdefinition, t.ex. förväntad målgruppsstorlek, konfidensintervall och felstandardavvikelse.
+
+>[!NOTE]
+>
+>Om du vill få tillgång till liknande mått som rör kundprofildata i realtid, t.ex. totalt antal profilfragment och sammanfogade profiler inom specifika namnutrymmen eller hela profildatalagret, kan du läsa [profilförhandsgranskningsguiden (förhandsgranskningsexempelstatus)](../../profile/api/preview-sample-status.md), som ingår i utvecklarhandboken för profil-API.
 
 ## Komma igång
 
@@ -23,11 +31,10 @@ Slutpunkterna som används i den här guiden ingår i [!DNL Adobe Experience Pla
 
 ## Hur uppskattningar genereras
 
-Det sätt på vilket datainsamling utlöses beror på metoden för intag.
+När inmatningen av poster i profilarkivet ökar eller minskar det totala antalet profiler med mer än 5 %, utlöses ett samplingsjobb för att uppdatera antalet. Hur datainsamling utlöses beror på intagsmetoden:
 
-För batchimport skannas profilarkivet automatiskt var 15:e minut för att se om en ny batch har importerats sedan den senaste samplingsjobbet kördes. Om så är fallet genomsöks sedan profilarkivet för att se om det har skett minst 5 procents ändring av antalet poster. Om dessa villkor uppfylls utlöses ett nytt samplingsjobb.
-
-För direktuppspelningsinläsning genomsöks profilarkivet automatiskt varje timme för att se om det har skett minst 5 procents ändring av antalet poster. Om det här villkoret är uppfyllt utlöses ett nytt samplingsjobb.
+* **Batchförtäring:** Om tröskelvärdet på 5 % ökning eller minskning uppnås, körs ett jobb för att uppdatera antalet inom 15 minuter efter att en batch har importerats till profilbutiken.
+* **Direktuppspelningsuppläsning:** För arbetsflöden med direktuppspelningsdata görs en timkontroll för att avgöra om tröskelvärdet på 5 % har uppnåtts eller inte. Om så är fallet utlöses ett jobb automatiskt för att uppdatera antalet.
 
 Exempelstorleken för genomsökningen beror på det totala antalet enheter i din profilbutik. De här exempelstorlekarna visas i följande tabell:
 
@@ -76,7 +83,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/preview \
 | -------- | ----------- |
 | `predicateExpression` | PQL-uttrycket som data ska frågas efter. |
 | `predicateType` | Predikattypen för frågeuttrycket under `predicateExpression`. För närvarande är det enda tillåtna värdet för den här egenskapen `pql/text`. |
-| `predicateModel` | Namnet på det [!DNL Experience Data Model] (XDM)-schema som profildata baseras på. |
+| `predicateModel` | Namnet på schemaklassen [!DNL Experience Data Model] (XDM) som profildata baseras på. |
 
 **Svar**
 
@@ -172,7 +179,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `results` | En lista över enhets-ID:n, tillsammans med deras relaterade identiteter. Länkarna som anges kan användas för att söka efter de angivna entiteterna med hjälp av [[!DNL Profile Access API]](../../profile/api/entities.md). |
+| `results` | En lista över enhets-ID:n, tillsammans med deras relaterade identiteter. Länkarna som anges kan användas för att leta upp de angivna entiteterna med hjälp av [API-slutpunkten för profilåtkomst](../../profile/api/entities.md). |
 
 ## Hämta resultatet för ett specifikt uppskattningsjobb {#get-estimate}
 
@@ -206,17 +213,27 @@ Ett lyckat svar returnerar HTTP-status 200 med information om uppskattningsjobbe
 
 ```json
 {
-    "estimatedSize": 0,
-    "numRowsToRead": 1,
+    "estimatedSize": 4275,
+    "numRowsToRead": 4275,
+    "estimatedNamespaceDistribution": [
+        {
+            "namespaceId": "4",
+            "profilesMatchedSoFar": 35
+        },
+        {
+            "namespaceId": "6",
+            "profilesMatchedSoFar": 4275
+        }
+    ],
     "state": "RESULT_READY",
-    "profilesReadSoFar": 1,
+    "profilesReadSoFar": 4275,
     "standardError": 0,
     "error": {
         "description": "",
         "traceback": ""
     },
-    "profilesMatchedSoFar": 0,
-    "totalRows": 1,
+    "profilesMatchedSoFar": 4275,
+    "totalRows": 4275,
     "confidenceInterval": "95%",
     "_links": {
         "preview": "https://platform.adobe.io/data/core/ups/preview/app-32be0328-3f31-4b64-8d84-acd0c4fbdad3/execution/0?previewQueryId=e890068b-f5ca-4a8f-a6b5-af87ff0caac3"
@@ -226,9 +243,10 @@ Ett lyckat svar returnerar HTTP-status 200 med information om uppskattningsjobbe
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `state` | Det aktuella läget för förhandsgranskningsjobbet. KÖRS tills bearbetningen är slutförd och blir då RESULT_READY eller FAILED. |
-| `_links.preview` | När förhandsgranskningsjobbets aktuella tillstånd är &quot;RESULT_READY&quot;, ger det här attributet en URL för att visa uppskattningen. |
+| `estimatedNamespaceDistribution` | En array med objekt som visar antalet profiler i segmentet uppdelade efter identitetsnamnutrymme. Det totala antalet profiler per namnutrymme (genom att lägga ihop värdena som visas för varje namnutrymme) kan vara högre än antalet profiler eftersom en profil kan kopplas till flera namnutrymmen. Om en kund till exempel interagerar med varumärket i mer än en kanal kommer flera namnutrymmen att kopplas till den enskilda kunden. |
+| `state` | Det aktuella läget för förhandsgranskningsjobbet. Läget kommer att vara &quot;RUNNING&quot; tills bearbetningen är slutförd, och då blir det &quot;RESULT_READY&quot; eller &quot;FAILED&quot;. |
+| `_links.preview` | När `state` är &quot;RESULT_READY&quot; ger det här fältet en URL för att visa uppskattningen. |
 
 ## Nästa steg
 
-När du har läst den här guiden får du nu en bättre förståelse för hur du arbetar med förhandsgranskningar och uppskattningar. Om du vill veta mer om de andra [!DNL Segmentation Service] API-slutpunkterna läser du översikten [Utvecklarhandboken för segmenteringstjänsten](./overview.md).
+När du har läst den här guiden bör du få en bättre förståelse för hur du arbetar med förhandsgranskningar och uppskattningar med segmenterings-API:t. Om du vill lära dig hur du får åtkomst till mått som hör till kundprofildata i realtid, t.ex. totalt antal profilfragment och sammanfogade profiler inom specifika namnutrymmen eller hela profildatalagret, kan du gå till [profilförhandsgranskningsguiden (`/previewsamplestatus`).](../../profile/api/preview-sample-status.md)
