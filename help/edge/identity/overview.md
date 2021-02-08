@@ -5,9 +5,9 @@ description: Lär dig hur du skaffar Adobe Experience Cloud ID.
 seo-description: Lär dig hur du skaffar Adobe Experience Cloud ID.
 keywords: Identitet;Första parts identitet;Identitetstjänst;Tredjepartsidentitet;ID-migrering;Besökar-ID;Tredjepartsidentitet;Tredje parts-cookiesEnabled;idMigrationEnabled;getIdentity;Syncing Identities;syncIdentity;sendEvent;identityMap;primär;ecid;Identity Namespace id;authenticationState;hashEnabled;
 translation-type: tm+mt
-source-git-commit: 60945f7f3a87568b82d968692cc7a6e07593fa01
+source-git-commit: 3ac00fda2c0a43437fb212dcba7e98c63503b9c4
 workflow-type: tm+mt
-source-wordcount: '920'
+source-wordcount: '918'
 ht-degree: 0%
 
 ---
@@ -17,13 +17,13 @@ ht-degree: 0%
 
 Adobe Experience Platform Web SDK använder [Adobe Identity Service](../../identity-service/ecid.md). Detta garanterar att varje enhet har en unik identifierare som är beständig på enheten så att aktiviteten mellan sidorna kan knytas ihop.
 
-## Identitet för första part
+## Första parts identitet
 
 [!DNL Identity Service] lagrar identiteten i en cookie i en förstapartsdomän. [!DNL Identity Service] försöker ange cookien med hjälp av en HTTP-rubrik på domänen. Om det misslyckas återgår [!DNL Identity Service] till att ställa in cookies via Javascript. Adobe rekommenderar att du konfigurerar en CNAME för att säkerställa att dina cookies inte begränsas av ITP-begränsningar på klientsidan.
 
-## Tredje parts identitet
+## Tredjepartsidentitet
 
-[!DNL Identity Service] kan synkronisera ett ID med en domän från tredje part (demdex.net) för att aktivera spårning över webbplatser. När detta är aktiverat görs den första begäran om besökare (t.ex. någon som saknar ett ECID) till demdex.net. Detta görs endast i webbläsare som tillåter det (t.ex. Chrome) och styrs av parametern `thirdPartyCookiesEnabled` i konfigurationen. Om du vill inaktivera den här funktionen tillsammans anger du `thirdPartyCookiesEnabled` till false.
+[!DNL Identity Service] kan synkronisera ett ID med en tredjepartsdomän (demdex.net) för att aktivera spårning över webbplatser. När detta är aktiverat görs den första begäran om besökare (till exempel någon som saknar ett ECID) till demdex.net. Detta görs endast i webbläsare som tillåter det (till exempel Chrome) och styrs av parametern `thirdPartyCookiesEnabled` i konfigurationen. Om du vill inaktivera den här funktionen tillsammans anger du `thirdPartyCookiesEnabled` till false.
 
 ## ID-migrering
 
