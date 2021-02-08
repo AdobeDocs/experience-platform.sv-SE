@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för Segment Builder
 topic: ui guide
 description: 'Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper. '
 translation-type: tm+mt
-source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
+source-git-commit: 8fc1c5414f38e84ed1700ee95b1c382007ff2c27
 workflow-type: tm+mt
-source-wordcount: '1745'
+source-wordcount: '1871'
 ht-degree: 0%
 
 ---
@@ -100,6 +100,22 @@ Du kan också visa en kodbaserad version av en regel som skapats i [!DNL Segment
 I kodvyn finns en knapp som du kan använda för att kopiera segmentets värde för API-anrop. Kontrollera att du har sparat dina senaste ändringar i segmentet för att få den senaste versionen av segmentet.
 
 ![](../images/ui/segment-builder/copy-code.png)
+
+### Sammanställningsfunktioner
+
+En aggregering i [!DNL Segment Builder] är en beräkning för en grupp av XDM-attribut vars datatyp är ett tal (antingen en dubbel eller ett heltal). De fyra aggregeringsfunktionerna som stöds i Segment Builder är SUM, AVERAGE, MIN och MAX.
+
+Om du vill skapa en aggregeringsfunktion väljer du en händelse från den vänstra listen och infogar den i [!UICONTROL Events]-behållaren.
+
+![](../images/ui/segment-builder/select-event.png)
+
+När du har placerat händelsen i händelsebehållaren markerar du ellipsikonen (..) följt av **[!UICONTROL Aggregate]**.
+
+![](../images/ui/segment-builder/add-aggregation.png)
+
+Aggregeringsvärdet har nu lagts till. Nu kan du välja sammanställningsfunktionen, välja vilket attribut som ska sammanställas, likhetsfunktionen samt värdet. I exemplet nedan kvalificerar det här segmentet alla profiler som har en summa köpta värden som är större än 100 USD, även om varje enskilt köp är mindre än 100 USD.
+
+![](../images/ui/segment-builder/filled-aggregation.png)
 
 ## Behållare
 
