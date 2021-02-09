@@ -5,9 +5,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: f98fb81fee57151e6424355f64bccb29c5669dad
 workflow-type: tm+mt
-source-wordcount: '332'
+source-wordcount: '339'
 ht-degree: 7%
 
 ---
@@ -129,3 +129,4 @@ ht-degree: 7%
       * [Anropa taggar](./catalog/voice/invoca.md)
       * [Medallia](./catalog/voice/medallia.md)
       * [Inkorgen för Talk URL](./catalog/voice/talkurl.md)
+* [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
