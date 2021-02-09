@@ -5,7 +5,7 @@ title: Adobe Analytics Source Connector for Report-Suite Data
 topic: overview
 description: Det här dokumentet innehåller en översikt över Analytics och en beskrivning av användningsfall för Analytics-data.
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: e480ce789c849db24713da312345ea3162e617a6
 workflow-type: tm+mt
 source-wordcount: '502'
 ht-degree: 1%
@@ -49,7 +49,7 @@ Mer information om fältmappning mellan [!DNL Analytics] och [!DNL Experience Pl
 | -------------- | ---------------- |
 | Nya data till [!DNL Real-time Customer Profile] (A4T **är inte** aktiverat) | &lt; 2=&quot;&quot; minutes=&quot;&quot;> |
 | Nya data till [!DNL Real-time Customer Profile] (A4T **är** aktiverat) | &lt; 15=&quot;&quot; minutes=&quot;&quot;> |
-| Nya data till Data Lake | &lt; 45=&quot;&quot; minutes=&quot;&quot;> |
+| Nya data till Data Lake | &lt; 90=&quot;&quot; minutes=&quot;&quot;> |
 | Fyll i data i bakgrunden (13 månaders data eller 10 miljarder händelser, beroende på vilket som är lägst) | &lt; 4=&quot;&quot; weeks=&quot;&quot;> |
 
 >[!NOTE]
