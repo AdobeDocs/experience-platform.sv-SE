@@ -1,11 +1,11 @@
 ---
 keywords: Facebook-tillägg;facebook-tillägg;facebook-mål;facebook;instagram;messenger;facebook messenger
-title: Mål för Facebook-tillägg
+title: Facebook-tillägg
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 translation-type: tm+mt
-source-git-commit: aa2088d30716f56ac2909214badbb39c0ae97855
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '941'
+source-wordcount: '940'
 ht-degree: 3%
 
 ---
