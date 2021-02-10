@@ -1,11 +1,11 @@
 ---
 keywords: LinkedIn;linkedin;Linkedin;LinkedIn Insight-tagg;insight-tagg;Insight-tagg
-title: Tilläggsmål för LinkedIn Insight-tagg
+title: Tillägget LinkedIn Insight-tagg
 description: Tillägget LinkedIn Insight Tag är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '501'
+source-wordcount: '500'
 ht-degree: 0%
 
 ---
