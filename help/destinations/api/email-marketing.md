@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
-title: Skapa mål för e-postmarknadsföring med API-anrop
+title: Anslut till e-postmarknadsföringsmål och aktivera data med API-anrop
 description: I det här dokumentet beskrivs hur du skapar e-postmarknadsföringsmål med hjälp av Adobe Experience Platform API
 topic: tutorial
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '1639'
+source-wordcount: '1644'
 ht-degree: 0%
 
 ---
 
 
-# Skapa e-postmarknadsföringsmål och aktivera data med API-anrop
+# Anslut till e-postmarknadsföringsmål och aktivera data med API-anrop
 
 I den här självstudien visas hur du använder API-anrop för att ansluta till dina Adobe Experience Platform-data, skapa ett [mål för e-postmarknadsföring](../catalog/email-marketing/overview.md), skapa ett dataflöde till det nya mål du skapat och aktivera data till det nya mål du skapat.
 
