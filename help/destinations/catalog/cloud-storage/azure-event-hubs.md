@@ -1,11 +1,11 @@
 ---
 keywords: Azure-händelsehubbsmål;azure-händelsehubb;azure-händelsehubb
-title: (Beta) Azure Event Hubs Connection Destination
+title: (Beta) Azure Event Hubs-anslutning
 description: Skapa en utgående anslutning i realtid till din Azure Event Hubs-lagring för att strömma data från Experience Platform.
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '478'
+source-wordcount: '477'
 ht-degree: 0%
 
 ---
