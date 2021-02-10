@@ -5,9 +5,9 @@ seo-title: Översikt över mål
 description: Lär dig hur du aktiverar Adobe Experience Platform-data till destinationer för flerkanalskampanjer, e-postmeddelanden, riktad reklam och mycket annat.
 seo-description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda Destinationer i Adobe Experience Platform för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 translation-type: tm+mt
-source-git-commit: fc0813b457f039c0f0fa965df2d1100170424d23
+source-git-commit: 2efdefc69c937c70f6a463113a73ca71d8998e14
 workflow-type: tm+mt
-source-wordcount: '492'
+source-wordcount: '493'
 ht-degree: 1%
 
 ---
@@ -21,12 +21,12 @@ ht-degree: 1%
 
 ## Destinationer och källor {#destinations-and-sources}
 
-En av de viktigaste funktionerna i Platform är att inhämta era egna data och aktivera dem för era affärsbehov. Använd källor för att importera data till plattformen och destinationer för att exportera data från plattformen.
+En av de viktigaste funktionerna i Platform är att inhämta era egna data och aktivera dem för era affärsbehov. Använd [källor](../sources/home.md) för att importera data till plattformen och destinationer för att exportera data från plattformen.
 
 ## Destinationssteg {#steps}
 
 * Välj från en [självbetjäningskatalog](./catalog/overview.md) av alla mål som är tillgängliga i Platform.
-* Använd **[!UICONTROL Destinations]** för att [aktivera](./ui/activate-destinations.md) och skicka profiler eller segment till automatiserade marknadsföringsplattformar, digitala annonsplattformar med mera.
+* Använd destinationer för att [aktivera](./ui/activate-destinations.md) och skicka profiler eller segment till automatiserade marknadsföringsplattformar, digitala annonsplattformar med mera.
 * Schemalägg dataexport till dina önskade destinationer vid regelbundna tidpunkter.
 
 ## Kontroller {#controls}
