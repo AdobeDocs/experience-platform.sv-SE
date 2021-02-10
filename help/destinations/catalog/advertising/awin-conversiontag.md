@@ -1,11 +1,11 @@
 ---
 keywords: Awin Advertiser Conversion Tag extension;conversion tag;Awin;awin;AWIN
-title: Awin Advertiser Conversion Tag Extension Destination
+title: Tillägget Awin Advertiser Conversion Tag
 description: Tillägget Awin Advertiser Conversion Tag är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '514'
 ht-degree: 0%
 
 ---
