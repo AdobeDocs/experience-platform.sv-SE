@@ -1,11 +1,11 @@
 ---
 keywords: Prat-URL-inkorg;Prat-URL-inkorg;Talk URL inbox;talk url;Talk URL;Talk url
-title: Mål för tillägg för URL-inkorg
+title: Tillägg för URL-inkorg
 description: Tillägget Talk URL Inbox är en röst för kundens mål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '536'
+source-wordcount: '535'
 ht-degree: 0%
 
 ---
