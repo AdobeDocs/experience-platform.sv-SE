@@ -1,11 +1,11 @@
 ---
 keywords: e-post;E-post;e-postadresser;oracle svarar på målet
-title: Oracle Responsys Connection Destination
+title: Oracle Responsys-anslutning
 description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som Oracle erbjuder för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '463'
+source-wordcount: '462'
 ht-degree: 0%
 
 ---
