@@ -1,11 +1,11 @@
 ---
 keywords: Google ad manager;google ad;dubbelklicka;DoubleClick AdX;DoubleClick;Google Ad Manager;Google ad manager
-title: Anslutningsmål för Google Ad Manager
+title: Google Ad Manager-anslutning
 description: 'Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar.  '
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '659'
+source-wordcount: '658'
 ht-degree: 0%
 
 ---
