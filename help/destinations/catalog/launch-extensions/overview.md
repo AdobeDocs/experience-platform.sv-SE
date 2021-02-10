@@ -1,11 +1,11 @@
 ---
 keywords: starta tillägg;starta tillägg;startmål; plattformsstarttillägg;plattformsstarttillägg;plattformsstartmål
-title: Destinationer för Adobe Experience Platform Launch-tillägg
+title: Adobe Experience Platform Launch-tillägg
 description: Adobe Experience Platform Launch är nästa generation av tagghanteringsfunktioner från Adobe. Platform Launch ger kunderna ett enkelt sätt att driftsätta och hantera alla analyser, marknadsförings- och annonstaggar som behövs för att driva relevanta kundupplevelser.
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '613'
+source-wordcount: '612'
 ht-degree: 0%
 
 ---
