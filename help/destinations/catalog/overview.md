@@ -1,19 +1,19 @@
 ---
 keywords: Katalog;katalog
-title: Målkatalog
-seo-title: Målkatalog
-description: Destinationskatalogen innehåller en lista över tillgängliga destinationer som är klara att ta emot data. Dessa destinationer omfattar Adobe, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar med mera.
-seo-description: Destinationskatalogen innehåller en lista över tillgängliga destinationer som är klara att ta emot data. Dessa destinationer omfattar Adobe, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar med mera.
+title: Översikt över destinationskatalogen
+seo-title: Översikt över destinationskatalogen
+description: Katalogen Destinationer innehåller en lista över tillgängliga destinationer som kan ta emot data. Dessa destinationer omfattar Adobe, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar med mera.
+seo-description: Katalogen Destinationer innehåller en lista över tillgängliga destinationer som kan ta emot data. Dessa destinationer omfattar Adobe, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar med mera.
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '174'
+source-wordcount: '177'
 ht-degree: 0%
 
 ---
 
 
-# Målkatalog
+# Översikt över destinationskatalogen
 
 Målkatalogen innehåller en lista över tillgängliga målplattformar som kan ta emot data. Bland målplattformarna finns Adobe-lösningar, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar, Experience Platform-tillägg med mera.
 
