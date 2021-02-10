@@ -3,7 +3,7 @@ keywords: mål;upplev molnlösningar; mål;mål; mål; annonsmoln annonsmoln, m�
 title: Översikt över destinationer i Adobe
 description: Hantera kundupplevelsen genom att koppla era data i Platform till andra Adobe Experience Cloud-lösningar för annonsanpassning, personalisering, automatiserad marknadsföring med mera
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
 source-wordcount: '219'
 ht-degree: 0%
