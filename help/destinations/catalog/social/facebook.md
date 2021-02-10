@@ -1,9 +1,9 @@
 ---
-keywords: Facebook-tillägg;facebook-tillägg;facebook-mål;facebook;instagram;messenger;facebook messenger
-title: Facebook-tillägg
+keywords: Facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagram;messenger;facebook messenger
+title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 2efdefc69c937c70f6a463113a73ca71d8998e14
 workflow-type: tm+mt
 source-wordcount: '940'
 ht-degree: 3%
@@ -11,7 +11,7 @@ ht-degree: 3%
 ---
 
 
-# [!DNL Facebook] extension
+# [!DNL Facebook] anslutning
 
 >[!IMPORTANT]
 >
