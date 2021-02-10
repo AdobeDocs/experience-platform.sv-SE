@@ -1,11 +1,11 @@
 ---
 keywords: JW player;jw player;JW Player;jw extension;JW extension
-title: Mål för JW Player Analytics-tillägg (beta)
+title: JW Player Analytics-tillägg (beta)
 description: Tillägget JW Player Analytics (Beta) är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '531'
+source-wordcount: '530'
 ht-degree: 0%
 
 ---
