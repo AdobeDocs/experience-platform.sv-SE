@@ -5,9 +5,9 @@ seo-title: Översikt över destinationskatalogen
 description: Katalogen Destinationer innehåller en lista över tillgängliga destinationer som kan ta emot data. Dessa destinationer omfattar Adobe, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar med mera.
 seo-description: Katalogen Destinationer innehåller en lista över tillgängliga destinationer som kan ta emot data. Dessa destinationer omfattar Adobe, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar med mera.
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 48c5f6d6a45de5f7982543f7a43cb4ece8cf3a9f
 workflow-type: tm+mt
-source-wordcount: '177'
+source-wordcount: '194'
 ht-degree: 0%
 
 ---
@@ -23,13 +23,13 @@ Bläddra i katalogen för att fastställa vilka målplattformar som är bäst f�
 
 Du kan aktivera dina data till olika målkategorier i Adobe Experience Platform. Länkarna nedan ger mer information om varje målkategori:
 
-- [Adobe](./adobe/overview.md)
-- [Annonsmål](./advertising/overview.md)
-- [Analysmål](./analytics/overview.md)
-- [Lagringsmål i molnet](./cloud-storage/overview.md)
-- [Datahanteringsplattform](./data-management/overview.md)
-- [E-postmarknadsföring](./email-marketing/overview.md)
-- [Personanpassning](./personalization/overview.md)
-- [Sociala destinationer](./social/overview.md)
-- [Undersökningar](./survey/overview.md)
-- [Kundens röst](./voice/overview.md)
+- [Översikt över destinationer i Adobe](./adobe/overview.md)
+- [Översikt över reklamdestinationer](./advertising/overview.md)
+- [Översikt över Analytics-destinationer](./analytics/overview.md)
+- [Översikt över destinationer för molnlagring](./cloud-storage/overview.md)
+- [Översikt över mål för datahanteringsplattformen (DMP)](./data-management/overview.md)
+- [Översikt över destinationer för e-postmarknadsföring](./email-marketing/overview.md)
+- [Översikt över destinationer för personalisering](./personalization/overview.md)
+- [Översikt över mål för sociala nätverk](./social/overview.md)
+- [Översikt över undersökningsmål](./survey/overview.md)
+- [Översikt över kundens destinationer](./voice/overview.md)
