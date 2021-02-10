@@ -5,9 +5,9 @@ seo-title: Översikt över destinationskatalogen
 description: Katalogen Destinationer innehåller en lista över tillgängliga destinationer som kan ta emot data. Dessa destinationer omfattar Adobe, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar med mera.
 seo-description: Katalogen Destinationer innehåller en lista över tillgängliga destinationer som kan ta emot data. Dessa destinationer omfattar Adobe, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar med mera.
 translation-type: tm+mt
-source-git-commit: 48c5f6d6a45de5f7982543f7a43cb4ece8cf3a9f
+source-git-commit: 2efdefc69c937c70f6a463113a73ca71d8998e14
 workflow-type: tm+mt
-source-wordcount: '194'
+source-wordcount: '198'
 ht-degree: 0%
 
 ---
@@ -29,6 +29,7 @@ Du kan aktivera dina data till olika målkategorier i Adobe Experience Platform.
 - [Översikt över destinationer för molnlagring](./cloud-storage/overview.md)
 - [Översikt över mål för datahanteringsplattformen (DMP)](./data-management/overview.md)
 - [Översikt över destinationer för e-postmarknadsföring](./email-marketing/overview.md)
+- [Översikt över mål för mobilengagemang](./mobile-engagement/overview.md)
 - [Översikt över destinationer för personalisering](./personalization/overview.md)
 - [Översikt över mål för sociala nätverk](./social/overview.md)
 - [Översikt över undersökningsmål](./survey/overview.md)
