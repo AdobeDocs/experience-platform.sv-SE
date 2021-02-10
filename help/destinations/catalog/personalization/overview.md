@@ -1,9 +1,9 @@
 ---
 keywords: personalisering;personalisering
-title: Översikt över personaliseringsmål
+title: Översikt över destinationer för personalisering
 description: Personaliseringsplattformar samlar in data och insikter från enskilda beteenden. Dessa plattformar kan hjälpa marknadsförare att navigera i anonyma data och leverera erbjudanden eller annonser till potentiella kunder baserat på tidigare aktivitet eller som en del av målgruppssegment med liknande vanor.
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
 source-wordcount: '132'
 ht-degree: 0%
