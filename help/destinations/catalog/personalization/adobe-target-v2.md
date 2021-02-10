@@ -1,11 +1,11 @@
 ---
 keywords: måltillägg;mål;mål v2;mål v2-tillägg
-title: Adobe Target v2-tilläggsmål
+title: Adobe Target v2-tillägg
 description: Tillägget Adobe Target v2 är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '518'
+source-wordcount: '517'
 ht-degree: 0%
 
 ---
