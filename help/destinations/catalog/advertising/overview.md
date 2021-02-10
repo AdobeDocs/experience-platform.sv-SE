@@ -1,13 +1,13 @@
 ---
 keywords: reklamdestinationer;destinationer;plattformsdestinationer
-title: Annonsmål
+title: Översikt över reklamdestinationer
 seo-title: Översikt över reklamdestinationer
 description: Koppla Adobe Experience Platform till en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 seo-description: Koppla Adobe Experience Platform till en annonsplattform från tredje part (t.ex. DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '227'
+source-wordcount: '233'
 ht-degree: 0%
 
 ---
@@ -25,12 +25,12 @@ För närvarande stöder Platform de reklamdestinationer som anges nedan. Inform
 
 Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar](../../destination-types.md#connections) på sidan Måltyper och kategorier.
 
-- [Google Display &amp; Video 360](./google-dv360.md)
-- [Google Ads](./google-ads-destination.md)
-- [Google Ad Manager](./google-ad-manager.md)
-- [Google Customer Match](./google-customer-match.md)
-- [Microsoft Bing](./bing.md)
-- [The Trade Desk destination](./tradedesk.md)
+- [Google Display &amp; Video 360-anslutning](./google-dv360.md)
+- [Google Ads-anslutning](./google-ads-destination.md)
+- [Google Ad Manager-anslutning](./google-ad-manager.md)
+- [Google Customer Match Connection](./google-customer-match.md)
+- [Microsoft Bing-anslutning](./bing.md)
+- [The Trade Desk connection](./tradedesk.md)
 
 ## Tillägg
 
