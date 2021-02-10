@@ -1,11 +1,11 @@
 ---
 keywords: destinationer;adobe experience platform;platform;mål overview;activate data;activate;
-title: Översikt över destinationer
-seo-title: Översikt över destinationer
+title: Översikt över mål
+seo-title: Översikt över mål
 description: Lär dig hur du aktiverar Adobe Experience Platform-data till destinationer för flerkanalskampanjer, e-postmeddelanden, riktad reklam och mycket annat.
 seo-description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda Destinationer i Adobe Experience Platform för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: fc0813b457f039c0f0fa965df2d1100170424d23
 workflow-type: tm+mt
 source-wordcount: '492'
 ht-degree: 1%
