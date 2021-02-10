@@ -1,11 +1,11 @@
 ---
 keywords: Tolka. Vänd;delvis;Parse;parse.ly;Parse.ly
-title: Analysera.ly Analytics Extension Destination
+title: Analysera.ly Analytics-tillägg
 description: Tillägget Parse.ly Analytics är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '488'
+source-wordcount: '487'
 ht-degree: 0%
 
 ---
