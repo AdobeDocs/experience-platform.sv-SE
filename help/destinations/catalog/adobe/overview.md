@@ -3,9 +3,9 @@ keywords: mål;upplev molnlösningar; mål;mål; mål; annonsmoln annonsmoln, m�
 title: Översikt över destinationer i Adobe
 description: Hantera kundupplevelsen genom att koppla era data i Platform till andra Adobe Experience Cloud-lösningar för annonsanpassning, personalisering, automatiserad marknadsföring med mera
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 48c5f6d6a45de5f7982543f7a43cb4ece8cf3a9f
 workflow-type: tm+mt
-source-wordcount: '219'
+source-wordcount: '220'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Hantera er kundupplevelse genom att koppla era data i Adobe Experience Platform 
 
 Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar](../../destination-types.md#connections) på sidan Måltyper och kategorier.
 
-- [Adobe Campaign](../email-marketing/adobe-campaign.md)
+- [Adobe Campaign-anslutning](../email-marketing/adobe-campaign.md)
 
 ## Tillägg
 
