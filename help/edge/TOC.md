@@ -6,10 +6,10 @@ user-guide-title: Hjälp för Adobe Experience Platform Web SDK
 breadcrumb-title: Web SDK Guide
 user-guide-description: Interagera med Experience Cloud via Edge Network.
 translation-type: tm+mt
-source-git-commit: cea3e2f32d9489f5f06be70581bd974b9374646d
+source-git-commit: b7e8a1a72ed199440748f570f13ea844f3276682
 workflow-type: tm+mt
-source-wordcount: '128'
-ht-degree: 14%
+source-wordcount: '144'
+ht-degree: 12%
 
 ---
 
@@ -27,9 +27,9 @@ ht-degree: 14%
    * [Felsökning](fundamentals/debugging.md)
    * [Sammanfoga händelsedata](fundamentals/merging-event-data.md)
    * [Interagera med flera egenskaper](fundamentals/interacting-with-multiple-properties.md)
-* Identity {#identity}
+* Identitet {#identity}
    * [Översikt](identity/overview.md)
-* Data Collection {#data-collection}
+* Datainsamling {#data-collection}
    * [Automatiskt insamlad information](data-collection/automatic-information.md)
    * [Spåra länkar](data-collection/track-links.md)
    * [Samla in data om handel och produkter](data-collection/collect-commerce-data.md)
@@ -46,12 +46,16 @@ ht-degree: 14%
       * [Implementering av Single Page-program](personalization/adobe-target/spa-implementation.md)
    * Offer Decisioning {#offer-decisioning}
       * [Offer Decisioning - översikt](personalization/offer-decisioning/offer-decisioning-overview.md)
-* Godkännande {#consent}
+* Samtycke {#consent}
    * [Godkännande](consent/supporting-consent.md)
-   * IAB Transparency and Consent Framework 2.0 {#iab-tcf}
+   * IAB Transparency och Consent Framework 2.0 {#iab-tcf}
       * [Översikt](consent/iab-tcf/overview.md)
       * [Integrera med Adobe Experience Platform Launch](consent/iab-tcf/with-launch.md)
       * [Integrera utan Adobe Experience Platform Launch](consent/iab-tcf/without-launch.md)
+* Web SDK-tillägg för Adobe Experience Platform Launch {#extension}
+   * [Web SDK-tillägg](extension/web-sdk-extension.md)
+   * [Åtgärdstyper](extension/action-types.md)
+   * [Dataelementtyper](extension/data-element-types.md)
 * [Versionsinformation](release-notes.md)
 * [Vanliga frågor](web-sdk-faq.md)
 * [Blogginlägg](blog-posts.md)
