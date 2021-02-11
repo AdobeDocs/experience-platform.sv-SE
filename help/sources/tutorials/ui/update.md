@@ -6,9 +6,9 @@ title: Uppdatera kontoinformation för källanslutning i användargränssnittet
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: ac477ee8053b30e88a38800ebe33fc9b5a520308
 workflow-type: tm+mt
-source-wordcount: '433'
+source-wordcount: '648'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,9 @@ ht-degree: 0%
 
 Under vissa omständigheter kan det vara nödvändigt att uppdatera informationen för ett befintligt källkonto. Med arbetsytan [!UICONTROL Sources] kan du lägga till, redigera och ta bort information om en befintlig batch- eller direktuppspelningsanslutning, inklusive namn, beskrivning och autentiseringsuppgifter.
 
-I den här självstudiekursen beskrivs hur du uppdaterar information och autentiseringsuppgifter för ett befintligt konto från arbetsytan [!UICONTROL Sources].
+Arbetsytan [!UICONTROL Sources] ger dig även möjlighet att redigera schemat för batchdataflöden, så att du kan uppdatera dess intagsfrekvens och intervallhastighet.
+
+I den här självstudiekursen beskrivs steg för hur du uppdaterar information och autentiseringsuppgifter för ett befintligt konto från arbetsytan [!UICONTROL Sources] samt hur du uppdaterar inmatningsschemat för ett dataflöde.
 
 ## Komma igång
 
@@ -53,12 +55,39 @@ I dialogrutan **[!UICONTROL Edit account details]** kan du uppdatera ett kontos 
 
 ![edit-account-details](../../images/tutorials/update/edit-account-details.png)
 
-Efter en stund visas en grön bekräftelseruta längst ned på skärmen som bekräftar att uppdateringen lyckades.
+Efter en stund visas en bekräftelseruta längst ned på skärmen som bekräftar att uppdateringen lyckades.
 
 ![uppdateringsbekräftad](../../images/tutorials/update/update-confirmed.png)
 
+## Redigera schema
+
+Du kan redigera inmatningsschemat för ett dataflöde från sidan **[!UICONTROL Accounts]**. I listan med konton väljer du det konto som innehåller det dataflöde som du vill schemalägga om.
+
+![select-account](../../images/tutorials/update/select-account.png)
+
+Sidan med dataflöden visas. Den här sidan innehåller en lista över befintliga dataflöden som är kopplade till det konto du har valt. Markera de ellipser (`...`) bredvid det dataflöde som du vill schemalägga om.
+
+![ändra schema](../../images/tutorials/update/reschedule.png)
+
+En listruta visas med alternativ för **[!UICONTROL Edit schedule]**, **[!UICONTROL Enable dataflow]**, **[!UICONTROL View in monitoring]** och **[!UICONTROL Delete]**. Välj **[!UICONTROL Edit schedule]** på menyn.
+
+![edit-schedule](../../images/tutorials/update/edit-schedule.png)
+
+Dialogrutan **[!UICONTROL Edit schedule]** innehåller alternativ för att uppdatera dataflödets matningsfrekvens och intervallhastighet. När du har angett uppdaterade värden för frekvens och intervall väljer du **[!UICONTROL Save]**.
+
+![schedule-dialog-box](../../images/tutorials/update/schedule-dialog-box.png)
+
+| Schemaläggning | Beskrivning |
+| ---------- | ----------- |
+| Frekvens | Frekvensen med vilken dataflödet samlar in data. Giltiga värden för redigering av frekvensschema för ett befintligt dataflöde är: `minute`, `hour`, `day` eller `week`. |
+| Intervall | Intervallet anger perioden mellan två på varandra följande flödeskörningar. Intervallets värde ska vara ett heltal som inte är noll och måste vara större än eller lika med `15`. |
+
+Efter en stund visas en bekräftelseruta längst ned på skärmen som bekräftar att uppdateringen lyckades.
+
+![schemalägg-bekräfta](../../images/tutorials/update/schedule-confirm.png)
+
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du använt arbetsytan [!UICONTROL Sources] för att uppdatera kontoinformationen.
+Genom att följa den här självstudiekursen har du använt arbetsytan [!UICONTROL Sources] för att uppdatera kontoinformationen och redigera ditt dataflödesschema.
 
 Anvisningar om hur du utför dessa åtgärder programmatiskt med API:t [!DNL Flow Service] finns i självstudiekursen om att [uppdatera anslutningsinformation med API:t för Flow Service](../../tutorials/api/update.md).
