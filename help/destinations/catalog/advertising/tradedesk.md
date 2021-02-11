@@ -3,9 +3,9 @@ keywords: Reklam. skrivbordet,
 title: The Trade Desk connection
 description: 'Trade Desk är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer för olika annonser, videoklipp och mobila inventeringskällor. '
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: ad025630cbae5c220f5bbd7f55cad70620b6f335
 workflow-type: tm+mt
-source-wordcount: '513'
+source-wordcount: '506'
 ht-degree: 0%
 
 ---
@@ -50,7 +50,6 @@ I steget [!UICONTROL Authentication] måste du ange [!DNL The Trade Desk] anslut
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
 * **[!UICONTROL Account ID]**: Din [!DNL Trade Desk] [!UICONTROL Account ID].
-* **[!UICONTROL Client Secret]**: Den  `clientSecret` parameter som används i  [!DNL OAuth2] klientautentiseringsuppgifterna.
 * **[!UICONTROL Server Location]**: Fråga din  [!DNL The Trade Desk] representant vilken regional server du ska använda. Det här är de tillgängliga regionala servrarna du kan välja mellan:
 
    * **[!UICONTROL Europe]**
