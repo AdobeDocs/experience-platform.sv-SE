@@ -6,7 +6,7 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: ef0f7e20a55804c013756e261818c2ee2df4d103
 workflow-type: tm+mt
 source-wordcount: '2058'
 ht-degree: 0%
@@ -60,7 +60,7 @@ Gäller för: sociala mål och Google Customer Match-annonsmål
 
 För sociala mål måste du välja källattribut eller identitetsnamnutrymmen som ska mappas som målidentiteter i målet.
 
-#### Exempel: aktivera målgruppsdata i [!DNL Facebook] {#example-facebook}
+#### Exempel: aktivera målgruppsdata i [!DNL Facebook Custom Audience] {#example-facebook}
 
 Detta är ett exempel på korrekt identitetsmappning när målgruppsdata aktiveras i [!DNL Facebook].
 
@@ -217,7 +217,7 @@ På sidan **[!UICONTROL Select attributes]** väljer du **[!UICONTROL Add new fi
 > Adobe Experience Platform fyller markeringen i förväg med fyra rekommenderade attribut från ditt schema: `person.name.firstName`, `person.name.lastName`, `personalEmail.address`, `segmentMembership.status`.
 
 Filexporter varierar på följande sätt, beroende på om `segmentMembership.status` är markerat:
-* Om fältet `segmentMembership.status` är markerat innehåller de exporterade filerna **[!UICONTROL Active]**-medlemmar i den första fullständiga ögonblicksbilden och **[!UICONTROL Active]**- och **[!UICONTROL Expired]**-medlemmar i efterföljande stegvisa exporter.
+* Om fältet `segmentMembership.status` är markerat innehåller exporterade filer **[!UICONTROL Active]**-medlemmar i den första fullständiga ögonblicksbilden och **[!UICONTROL Active]**- och **[!UICONTROL Expired]**-medlemmar i efterföljande stegvisa exporter.
 * Om fältet `segmentMembership.status` inte är markerat innehåller exporterade filer endast **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och i efterföljande stegvisa exporter.
 
 ![rekommenderade attribut](../assets/ui/activate-destinations/mark-mandatory.png)
