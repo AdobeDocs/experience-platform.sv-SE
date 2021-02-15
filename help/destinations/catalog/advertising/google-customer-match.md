@@ -3,9 +3,9 @@ keywords: Google customer match;Google customer match;Google Customer Match
 title: Google Customer Match Connection
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egenskaper, som Search, Shopping, Gmail och YouTube.
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: ef0f7e20a55804c013756e261818c2ee2df4d103
 workflow-type: tm+mt
-source-wordcount: '1426'
+source-wordcount: '1454'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Kundmigrering till de nya målversionerna pågår. Innan migreringen är klar visas endast de tillgängliga identiteterna [!UICONTROL EMAIL] och [!UICONTROL EMAIL_LC_SHA_256] för det här målet.
+>Vi migrerar för närvarande kunder till den nya versionen av det här målet.
+>
+> Instruktionerna i den här artikeln gäller för båda versionerna, med följande anmärkning: När migreringen pågår visas endast den aktuella versionen av [!DNL Google Customer Match]-målet i användargränssnittet, där du bara kan använda identiteterna [!UICONTROL EMAIL] och [!UICONTROL EMAIL_LC_SHA_256] för aktivering.
 
 [Med Google Customer ](https://support.google.com/google-ads/answer/6379332?hl=en) Matchlets kan ni använda era online- och offlinedata för att nå och återengagera era kunder över Googles egna och styrda egenskaper, som:  [!DNL Search],  [!DNL Shopping],  [!DNL Gmail]och  [!DNL YouTube].
 
