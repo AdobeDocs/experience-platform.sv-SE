@@ -3,9 +3,9 @@ keywords: Azure Blob;Blob destination;s3;azure blob destination
 title: Azure Blob-anslutning
 description: Skapa en utgående liveanslutning till ditt Azure Blob-lagringsutrymme för att regelbundet exportera tabbavgränsade eller CSV-datafiler från Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 6d1960be886d12475603aeb79fe6283a1fd3030e
 workflow-type: tm+mt
-source-wordcount: '458'
+source-wordcount: '579'
 ht-degree: 1%
 
 ---
@@ -30,7 +30,7 @@ Om du redan har ett giltigt Blob-mål kan du hoppa över resten av det här doku
 
 [!DNL Experience Platform] stöder följande filformat som ska exporteras till  [!DNL Blob]:
 
-- Avgränsaravgränsade värden (DSV): Stödet för DSV-formaterade datafiler är för närvarande begränsat till kommaavgränsade värden. Stöd för allmänna DSV-filer kommer att ges i framtiden. Mer information om vilka filer som stöds finns i molnlagringsavsnittet i självstudiekursen om att [aktivera mål](../../ui/activate-destinations.md#esp-and-cloud-storage)
+- Avgränsaravgränsade värden (DSV): Stödet för DSV-formaterade datafiler är för närvarande begränsat till kommaavgränsade värden. Stöd för allmänna DSV-filer kommer att ges i framtiden. Mer information om filer som stöds finns i molnlagringsavsnittet i självstudiekursen om att [aktivera mål](../../ui/activate-destinations.md#esp-and-cloud-storage).
 
 ## Anslut ditt Blob-konto {#connect-destination}
 
@@ -38,15 +38,21 @@ Logga in på [Adobe Experience Platform](https://platform.adobe.com) och välj *
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också söka efter det mål som du vill arbeta med med med hjälp av sökalternativet.
 
-Under kategorin **[!UICONTROL Cloud Storage]** väljer du **[!UICONTROL Azure Blob Storage]** följt av **[!UICONTROL Activate]**.
+Under kategorin **[!UICONTROL Cloud Storage]** väljer du **[!UICONTROL Azure Blob Storage]** följt av **[!UICONTROL Configure]**.
 
 ![Katalog](../../assets/catalog/cloud-storage/blob/catalog.png)
+
+>[!NOTE]
+>
+>Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]**-knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](../../ui/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
 
 Sidan **[!UICONTROL Connect to Azure Blob Storage]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
 ### Nytt konto {#new-account}
 
-Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. Ange anslutningssträngen i det indataformulär som visas. Anslutningssträngen som krävs för att komma åt data i blobblagringen. Anslutningssträngsmönstret [!DNL Blob] börjar med: `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`.
+Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. Ange anslutningssträngen i det indataformulär som visas. Anslutningssträngen krävs för att komma åt data i blobblagringen. Anslutningssträngsmönstret [!DNL Blob] börjar med: `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`.
+
+Mer information om hur du konfigurerar din [!DNL Blob]-anslutningssträng finns i [Konfigurera en anslutningssträng för ett Azure-lagringskonto](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string#configure-a-connection-string-for-an-azure-storage-account) i Microsoft-dokumentationen.
 
 Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Observera att den här offentliga nyckeln **måste** skrivas som en Base64-kodad sträng.
 
@@ -60,7 +66,11 @@ Om du vill ansluta ett befintligt konto väljer du det [!DNL Blob]-konto du vill
 
 ## Autentisering {#authentication}
 
-Sidan **Autentisering** visas. Ange ett namn, en valfri beskrivning, mappsökvägen och behållaren för filerna i det indataformulär som visas. När du är klar väljer du **[!UICONTROL Create destination]**.
+Sidan **Autentisering** visas. Ange ett namn, en valfri beskrivning, mappsökvägen och behållaren för filerna i det indataformulär som visas.
+
+I det här steget kan du även välja alla **[!UICONTROL Marketing actions]** som ska gälla för det här målet. Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
+
+När du är klar väljer du **[!UICONTROL Create destination]**.
 
 ![Autentisering](../../assets/catalog/cloud-storage/blob/authentication.png)
 
