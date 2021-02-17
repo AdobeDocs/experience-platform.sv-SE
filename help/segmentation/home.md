@@ -5,9 +5,9 @@ title: Översikt över segmenteringstjänsten
 topic: overview
 description: Läs om Adobe Experience Platform segmenteringstjänst och vilken roll den spelar i plattformens ekosystem.
 translation-type: tm+mt
-source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
+source-git-commit: c0c42f872666323bfb3bdbdf5fb02475d3b5bc79
 workflow-type: tm+mt
-source-wordcount: '1394'
+source-wordcount: '1407'
 ht-degree: 0%
 
 ---
@@ -46,6 +46,8 @@ Mer information om hur du skapar segmentdefinitioner med API:t finns i självstu
 >Om ett schema utökas måste alla framtida överföringar uppdatera nya fält i enlighet med detta. Mer information om hur du anpassar [!DNL Experience Data Model] (XDM) finns i självstudiekursen [Schemaredigeraren](../xdm/tutorials/create-schema-ui.md).
 
 ## Utvärdera segment
+
+Plattformen har för närvarande stöd för två metoder för att utvärdera segment: direktuppspelningssegmentering och gruppsegmentering.
 
 ### Direktuppspelningssegmentering
 
