@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;samtycke;samtycke;inställningar;Inställningar;sekretessOptOuts;marketingPreferences;optOutType;baseOfProcessing;medgivande;medgivande
 title: Datatypen Innehåll och inställningar
-description: Datatypen Privacy/Marketing Preferences (Consent) är avsedd att stödja insamling av kundbehörigheter och preferenser som genereras av CMP (Consent Management Platforms) och andra källor från era dataåtgärder.
+description: Datatypen Godkännande av sekretess, personalisering och marknadsföringsinställningar är avsedd att stödja insamling av kundbehörigheter och preferenser som genereras av CMP (Consent Management Platforms) och andra källor från era dataåtgärder.
 topic: guide
 translation-type: tm+mt
-source-git-commit: 10ccccf72ff7a2fd726066332b9771dff1929af6
+source-git-commit: 865379292985037b184d92e5d3fc1abc1873e962
 workflow-type: tm+mt
-source-wordcount: '2040'
+source-wordcount: '2060'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # [!DNL Consents & Preferences] datatyp
 
-Datatypen [!DNL Privacy/Marketing Preferences (Consent)] (kallas nedan datatypen [!DNL Consents & Preferences]) är en [!DNL Experience Data Model]-datatyp (XDM) som är avsedd att stödja samlingen av kundbehörigheter och inställningar som genereras av CMP (Consent Management Platforms) och andra källor från dina dataåtgärder.
+Datatypen [!UICONTROL Consent for Privacy, Personalization and Marketing Preferences] (kallas nedan datatypen [!DNL Consents & Preferences]) är en [!DNL Experience Data Model]-datatyp (XDM) som är avsedd att stödja samlingen av kundbehörigheter och inställningar som genereras av CMP (Consent Management Platforms) och andra källor från dina dataåtgärder.
 
 Det här dokumentet beskriver strukturen och den avsedda användningen av fälten som anges av datatypen [!DNL Consents & Preferences].
 
@@ -40,234 +40,246 @@ En preferens är ett alternativ som gör det möjligt för kunden att specificer
 * **Anpassningsinställningar**: Inställningar för hur varumärket ska personalisera upplevelser som levereras till en kund.
 * **Marknadsföringsinställningar**: Inställningar för om ett varumärke får kontakta en kund via olika kanaler.
 
+I följande skärmbild visas hur strukturen för datatypen visas i användargränssnittet för plattformen:
+
+![](../images/data-types/consents.png)
+
+>[!TIP]
+>
+>Se guiden [utforska XDM-resurser](../ui/explore.md) för steg om hur du söker efter en XDM-resurs och inspekterar dess struktur i plattformens användargränssnitt.
+
 I följande JSON visas ett exempel på den datatyp som kan bearbetas av datatypen [!DNL Consents & Preferences]. Information om hur dessa fält används finns i de avsnitt som följer.
 
 ```json
 {
-  "xdm:consents": {
-    "xdm:collect": {
-      "xdm:val": "y",
+  "consents": {
+    "collect": {
+      "val": "y",
     },
-    "xdm:adID": {
-      "xdm:val": "VI"
+    "adID": {
+      "val": "VI"
     },
-    "xdm:share": {
-      "xdm:val": "y",
+    "share": {
+      "val": "y",
     },
-    "xdm:personalize": {
-      "xdm:content": {
-        "xdm:val": "y"
+    "personalize": {
+      "content": {
+        "val": "y"
       }
     },
-    "xdm:marketing": {
-      "xdm:preferred": "email",
-      "xdm:any": {
-        "xdm:val": "u"
+    "marketing": {
+      "preferred": "email",
+      "any": {
+        "val": "u"
       },
-      "xdm:push": {
-        "xdm:val": "n",
-        "xdm:reason": "Too Frequent",
-        "xdm:time": "2019-01-01T15:52:25+00:00"
+      "push": {
+        "val": "n",
+        "reason": "Too Frequent",
+        "time": "2019-01-01T15:52:25+00:00"
       }
     },
-    "xdm:idSpecific": {
+    "metadata": {
+      "time": "2019-01-01T15:52:25+00:00"
+    },
+    "idSpecific": {
       "email": {
         "jdoe@example.com": {
-          "xdm:marketing": {
-            "xdm:email": {
-              "xdm:val": "n"
+          "marketing": {
+            "email": {
+              "val": "n"
             }
           }
         }
       }
     }
-  },
-  "xdm:metadata": {
-    "xdm:time": "2019-01-01T15:52:25+00:00"
   }
 }
 ```
 
->[!NOTE]
+>[!TIP]
 >
->Exemplet ovan är avsett att illustrera strukturen för de data som skickas till [!DNL Platform] via datatypen [!DNL Consents & Preferences], för att ge kontext till resten av det här dokumentet som förklarar huvudfälten som datatypen tillhandahåller. Det fullständiga schemat för datatypens struktur finns i [bilagan](#full-schema) för referensändamål.
+>Du kan generera JSON-exempeldata för alla XDM-scheman som du definierar i Experience Platform för att visualisera hur kundens samtycke och inställningsdata ska mappas. Mer information finns i följande dokumentation:
+>
+>* [Generera exempeldata i användargränssnittet](../ui/sample.md)
+>* [Generera exempeldata i API](../api/sample-data.md)
 
-## xdm:consents {#choices}
 
-`xdm:consents` innehåller flera fält som beskriver en kunds samtycke och önskemål. Dessa fält beskrivs närmare i underavsnitten nedan.
+## `consents` {#choices}
+
+`consents` innehåller flera fält som beskriver en kunds samtycke och önskemål. Dessa fält beskrivs närmare i underavsnitten nedan.
 
 ```json
-"xdm:consents": {
-  "xdm:collect": {
-    "xdm:val": "y",
+"consents": {
+  "collect": {
+    "val": "y",
   },
-  "xdm:adID": {
-    "xdm:val": "VI"
+  "adID": {
+    "val": "VI"
   },
-  "xdm:share": {
-    "xdm:val": "y",
+  "share": {
+    "val": "y",
   },
-  "xdm:personalize": {
-    "xdm:content": {
-      "xdm:val": "y"
+  "personalize": {
+    "content": {
+      "val": "y"
     }
   },
-  "xdm:marketing": {
-    "xdm:preferred": "email",
-    "xdm:any": {
-      "xdm:val": "u"
+  "marketing": {
+    "preferred": "email",
+    "any": {
+      "val": "u"
     },
-    "xdm:email": {
-      "xdm:val": "n",
-      "xdm:reason": "Too Frequent",
-      "xdm:time": "2019-01-01T15:52:25+00:00"
+    "email": {
+      "val": "n",
+      "reason": "Too Frequent",
+      "time": "2019-01-01T15:52:25+00:00"
     }
   }
 }
 ```
 
-### xdm:samla
+### `collect`
 
-`xdm:collect` representerar kundens samtycke till att deras data samlas in.
+`collect` representerar kundens samtycke till att deras data samlas in.
 
 ```json
-"xdm:collect" : {
-  "xdm:val": "y"
+"collect" : {
+  "val": "y"
 }
 ```
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `xdm:val` | Kunden har gett sitt medgivande för det här användningsärendet. Se [bilagan](#choice-values) för godkända värden och definitioner. |
+| `val` | Kunden har gett sitt medgivande för det här användningsärendet. Se [bilagan](#choice-values) för godkända värden och definitioner. |
 
-### xdm:adID
+### `adID`
 
-`xdm:adID` representerar kundens samtycke för om ett annonser-ID (IDFA eller GAID) kan användas för att länka kunden mellan appar på den här enheten.
+`adID` representerar kundens samtycke för om ett annonser-ID (IDFA eller GAID) kan användas för att länka kunden mellan appar på den här enheten.
 
 ```json
-"xdm:adID" : {
-  "xdm:val": "y"
+"adID" : {
+  "val": "y"
 }
 ```
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `xdm:val` | Kunden har gett sitt medgivande för det här användningsärendet. Se [bilagan](#choice-values) för godkända värden och definitioner. |
+| `val` | Kunden har gett sitt medgivande för det här användningsärendet. Se [bilagan](#choice-values) för godkända värden och definitioner. |
 
-### xdm:dela
+### `share`
 
-`xdm:share` representerar kundens samtycke för huruvida deras data kan delas med (eller säljas till) andra eller tredje part.
+`share` representerar kundens samtycke för huruvida deras data kan delas med (eller säljas till) andra eller tredje part.
 
 ```json
-"xdm:share" : {
-  "xdm:val": "y"
+"share" : {
+  "val": "y"
 }
 ```
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `xdm:val` | Kunden har gett sitt medgivande för det här användningsärendet. Se [bilagan](#choice-values) för godkända värden och definitioner. |
+| `val` | Kunden har gett sitt medgivande för det här användningsärendet. Se [bilagan](#choice-values) för godkända värden och definitioner. |
 
-### xdm:anpassa {#personalize}
+### `personalize` {#personalize}
 
-`xdm:personalize` Hämtar kundpreferenser för hur deras data kan användas för personalisering. Kunder kan välja bort specifika användningsfall för personalisering eller välja bort helt från personalisering.
+`personalize` Hämtar kundpreferenser för hur deras data kan användas för personalisering. Kunder kan välja bort specifika användningsfall för personalisering eller välja bort helt från personalisering.
 
 >[!IMPORTANT]
 >
->`xdm:personalize` omfattar inte användningsfall för marknadsföring. Om en kund till exempel väljer bort personalisering för alla kanaler bör de inte sluta ta emot kommunikation via dessa kanaler. De meddelanden de får ska i stället vara generiska och inte baseras på deras profil.
+>`personalize` omfattar inte användningsfall för marknadsföring. Om en kund till exempel väljer bort personalisering för alla kanaler bör de inte sluta ta emot kommunikation via dessa kanaler. De meddelanden de får ska i stället vara generiska och inte baseras på deras profil.
 >
->Om en kund väljer bort direktmarknadsföring för alla kanaler (via `xdm:marketing`, vilket förklaras i [nästa avsnitt](#marketing)), ska kunden inte få några meddelanden, även om personalisering är tillåtet.
+>Om en kund väljer bort direktmarknadsföring för alla kanaler (via `marketing`, vilket förklaras i [nästa avsnitt](#marketing)), ska kunden inte få några meddelanden, även om personalisering är tillåtet.
 
 ```json
-"xdm:personalize": {
-  "xdm:content": {
-    "xdm:val": "y",
+"personalize": {
+  "content": {
+    "val": "y",
   }
 }
 ```
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `xdm:content` | Representerar kundens önskemål om personaliserat innehåll på er webbplats eller i er tillämpning. |
-| `xdm:val` | Personalisering som kunden har tillhandahållit för det angivna användningsfallet. I de fall där kunden inte behöver uppmanas att ge sitt samtycke, ska värdet i detta fält ange grunden för personaliseringen. Se [bilagan](#choice-values) för godkända värden och definitioner. |
+| `content` | Representerar kundens önskemål om personaliserat innehåll på er webbplats eller i er tillämpning. |
+| `val` | Personalisering som kunden har tillhandahållit för det angivna användningsfallet. I de fall där kunden inte behöver uppmanas att ge sitt samtycke, ska värdet i detta fält ange grunden för personaliseringen. Se [bilagan](#choice-values) för godkända värden och definitioner. |
 
-### xdm:marknadsföring {#marketing}
+### `marketing` {#marketing}
 
-`xdm:marketing` hämtar in kundpreferenser för vilka marknadsföringssyften deras data kan användas för. Kunderna kan välja bort specifika fall av marknadsföringsanvändning eller välja bort direkt marknadsföring helt och hållet.
+`marketing` hämtar in kundpreferenser för vilka marknadsföringssyften deras data kan användas för. Kunderna kan välja bort specifika fall av marknadsföringsanvändning eller välja bort direkt marknadsföring helt och hållet.
 
 ```json
-"xdm:marketing": {
-  "xdm:preferred": "email",
-  "xdm:any": {
-    "xdm:val": "u"
+"marketing": {
+  "preferred": "email",
+  "any": {
+    "val": "u"
   },
-  "xdm:email": {
-    "xdm:val": "n",
-    "xdm:reason": "Too Frequent"
+  "email": {
+    "val": "n",
+    "reason": "Too Frequent"
   },
-  "xdm:push": {
-    "xdm:val": "y"
+  "push": {
+    "val": "y"
   },
-  "xdm:sms": {
-    "xdm:val": "y"
+  "sms": {
+    "val": "y"
   }
 }
 ```
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `xdm:preferred` | Anger kundens föredragna kanal för att ta emot kommunikation. Se [bilagan](#preferred-values) för godkända värden. |
-| `xdm:any` | Representerar kundens preferenser för direktmarknadsföring som helhet. Medgivandeinställningen i det här fältet anses vara standardinställning för alla marknadsföringskanaler, såvida den inte åsidosätts av ytterligare underfält som anges i `xdm:marketing`. Om du planerar att använda fler detaljerade alternativ för samtycke rekommenderar vi att du utelämnar det här fältet.<br><br>Om värdet är inställt på  `n`ska alla mer specifika personaliseringsinställningar ignoreras. Om värdet är `y` bör alla fininjektivkorniga anpassningsalternativ också behandlas som `y`, såvida de inte uttryckligen är inställda på `n`. Om värdet inte anges bör värdena för varje personaliseringsalternativ respekteras enligt vad som anges. |
-| `xdm:email` | Anger om kunden går med på att ta emot e-postmeddelanden. |
-| `xdm:push` | Anger om kunden tillåter att push-meddelanden tas emot. |
-| `xdm:sms` | Anger om kunden accepterar att ta emot textmeddelanden. |
-| `xdm:val` | Inställningen som tillhandahålls av kunden för det angivna användningsfallet. I de fall där kunden inte behöver uppmanas att ge sitt samtycke ska värdet i detta fält ange grunden för användningen av marknadsföringen. Se [bilagan](#choice-values) för godkända värden och definitioner. |
-| `xdm:time` | En ISO 8601-tidsstämpel för när marknadsföringsinställningen ändrades, om tillämpligt. Observera att om tidsstämpeln för en enskild inställning är densamma som den som anges under `xdm:metadata`, så behöver det här fältet inte anges för den inställningen. |
-| `xdm:reason` | När en kund väljer bort från ett marknadsföringsärende representerar det här strängfältet anledningen till varför kunden valde bort. |
+| `preferred` | Anger kundens föredragna kanal för att ta emot kommunikation. Se [bilagan](#preferred-values) för godkända värden. |
+| `any` | Representerar kundens preferenser för direktmarknadsföring som helhet. Medgivandeinställningen i det här fältet anses vara standardinställning för alla marknadsföringskanaler, såvida den inte åsidosätts av ytterligare underfält som anges i `marketing`. Om du planerar att använda fler detaljerade alternativ för samtycke rekommenderar vi att du utelämnar det här fältet.<br><br>Om värdet är inställt på  `n`ska alla mer specifika personaliseringsinställningar ignoreras. Om värdet är `y` bör alla fininjektivkorniga anpassningsalternativ också behandlas som `y`, såvida de inte uttryckligen är inställda på `n`. Om värdet inte anges bör värdena för varje personaliseringsalternativ respekteras enligt vad som anges. |
+| `email` | Anger om kunden går med på att ta emot e-postmeddelanden. |
+| `push` | Anger om kunden tillåter att push-meddelanden tas emot. |
+| `sms` | Anger om kunden accepterar att ta emot textmeddelanden. |
+| `val` | Inställningen som tillhandahålls av kunden för det angivna användningsfallet. I de fall där kunden inte behöver uppmanas att ge sitt samtycke ska värdet i detta fält ange grunden för användningen av marknadsföringen. Se [bilagan](#choice-values) för godkända värden och definitioner. |
+| `time` | En ISO 8601-tidsstämpel för när marknadsföringsinställningen ändrades, om tillämpligt. Observera att om tidsstämpeln för en enskild inställning är densamma som den som anges under `metadata`, så behöver det här fältet inte anges för den inställningen. |
+| `reason` | När en kund väljer bort från ett marknadsföringsärende representerar det här strängfältet anledningen till varför kunden valde bort. |
 
-### xdm:idSpecific
+### `metadata`
 
-`xdm:idSpecific` kan användas när ett visst samtycke eller en viss preferens inte gäller för en kund, utan är begränsad till en enda enhet eller ett enda ID. En kund kan till exempel välja att inte ta emot e-post till en adress, samtidigt som e-post kan tillåtas på en annan adress.
+`metadata` samlar in allmänna metadata om kundens samtycke och inställningar när de senast uppdaterades.
+
+```json
+"metadata": {
+  "time": "2019-01-01T15:52:25+00:00",
+}
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `time` | En ISO 8601-tidsstämpel för senaste gången som något av kundens samtycke och inställningar uppdaterades. Det här fältet kan användas i stället för att tidsstämplar tillämpas på enskilda inställningar för att minska inläsningen och komplexiteten. Om du anger ett `time`-värde under en enskild inställning åsidosätts tidsstämpeln `metadata` för den aktuella inställningen. |
+
+### `idSpecific`
+
+`idSpecific` kan användas när ett visst samtycke eller en viss preferens inte gäller för en kund, utan är begränsad till en enda enhet eller ett enda ID. En kund kan till exempel välja att inte ta emot e-post till en adress, samtidigt som e-post kan tillåtas på en annan adress.
 
 >[!IMPORTANT]
 >
->Medgivande och inställningar på kanalnivå (dvs. de som anges under `xdm:consents` utanför `xdm:idSpecific`) gäller för ID:n inom den kanalen. Därför påverkar allt innehåll och alla inställningar på kanalnivå direkt om motsvarande ID- eller enhetsspecifika inställningar uppfylls:
+>Medgivande och inställningar på kanalnivå (dvs. de som anges under `consents` utanför `idSpecific`) gäller för ID:n inom den kanalen. Därför påverkar allt innehåll och alla inställningar på kanalnivå direkt om motsvarande ID- eller enhetsspecifika inställningar uppfylls:
 >
->* Om kunden har valt att inte göra det på kanalnivå, ignoreras alla motsvarande samtycke eller inställningar i `xdm:idSpecific`.
->* Om samtycke eller inställning på kanalnivå inte har angetts, eller om kunden har valt att göra det, respekteras motsvarande samtycke eller inställningar i `xdm:idSpecific`.
+>* Om kunden har valt att inte göra det på kanalnivå, ignoreras alla motsvarande samtycke eller inställningar i `idSpecific`.
+>* Om samtycke eller inställning på kanalnivå inte har angetts, eller om kunden har valt att göra det, respekteras motsvarande samtycke eller inställningar i `idSpecific`.
 
 
-Varje nyckel i `xdm:idSpecific`-objektet representerar ett specifikt ID-namnområde som känns igen av Adobe Experience Platform Identity Service. Du kan definiera egna namnutrymmen för att kategorisera olika identifierare, men vi rekommenderar att du använder ett av de standardnamnutrymmen som ingår i identitetstjänsten för att minska lagringsstorlekarna för kundprofilen i realtid. Mer information om identitetsnamnutrymmen finns i [översikten över identitetsnamnrymden](../../identity-service/namespaces.md) i dokumentationen för identitetstjänsten.
+Varje nyckel i `idSpecific`-objektet representerar ett specifikt ID-namnområde som känns igen av Adobe Experience Platform Identity Service. Du kan definiera egna namnutrymmen för att kategorisera olika identifierare, men vi rekommenderar att du använder ett av de standardnamnutrymmen som ingår i identitetstjänsten för att minska lagringsstorlekarna för kundprofilen i realtid. Mer information om identitetsnamnutrymmen finns i [översikten över identitetsnamnrymden](../../identity-service/namespaces.md) i dokumentationen för identitetstjänsten.
 
-Nycklarna för varje namnområdesobjekt representerar de unika identitetsvärden som kunden har angett inställningar för. Varje identitetsvärde kan innehålla en komplett uppsättning innehåll och inställningar, formaterade på samma sätt som `xdm:consents`.
+Nycklarna för varje namnområdesobjekt representerar de unika identitetsvärden som kunden har angett inställningar för. Varje identitetsvärde kan innehålla en komplett uppsättning innehåll och inställningar, formaterade på samma sätt som `consents`.
 
 ```json
-"xdm:idSpecific": {
+"idSpecific": {
   "email": {
     "jdoe@example.com": {
-      "xdm:marketing": {
-        "xdm:email": {
-          "xdm:val": "n"
+      "marketing": {
+        "email": {
+          "val": "n"
         }
       }
     }
   }
 }
 ```
-
-## xdm:metadata
-
-`xdm:metadata` samlar in allmänna metadata om kundens samtycke och inställningar när de senast uppdaterades.
-
-```json
-"xdm:metadata": {
-  "xdm:time": "2019-01-01T15:52:25+00:00",
-}
-```
-
-| Egenskap | Beskrivning |
-| --- | --- |
-| `xdm:time` | En tidsstämpel för senaste gången något av kundens samtycke och önskemål uppdaterades. Det här fältet kan användas i stället för att tidsstämplar tillämpas på enskilda inställningar för att minska inläsningen och komplexiteten. Om du anger ett `xdm:time`-värde under en enskild inställning åsidosätts tidsstämpeln `xdm:metadata` för den aktuella inställningen. |
 
 ## Inmatning av data med datatypen {#ingest}
 
@@ -289,9 +301,9 @@ När en kund ändrar sitt samtycke eller sina inställningar på webbplatsen bö
 
 Avsnitten nedan innehåller ytterligare referensinformation om datatypen [!DNL Consents & Preferences].
 
-### Godkända värden för xdm:val {#choice-values}
+### Godkända värden för `val` {#choice-values}
 
-I följande tabell visas godkända värden för `xdm:val`:
+I följande tabell visas godkända värden för `val`:
 
 | Värde | Titel | Beskrivning |
 | --- | --- | --- |
@@ -305,9 +317,9 @@ I följande tabell visas godkända värden för `xdm:val`:
 | `VI` | Enskilda personers vitala intressen | Insamling av uppgifter för det särskilda ändamålet krävs för att skydda den enskildes vitala intressen. |
 | `PI` | Offentligt intresse | Insamling av uppgifter för det angivna ändamålet krävs för att utföra en uppgift i allmänhetens intresse eller vid utövandet av offentlig makt. |
 
-### Godkända värden för xdm:preferred {#preferred-values}
+### Godkända värden för `preferred` {#preferred-values}
 
-I följande tabell visas godkända värden för `xdm:preferred`:
+I följande tabell visas godkända värden för `preferred`:
 
 | Värde | Beskrivning |
 | --- | --- |
