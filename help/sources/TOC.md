@@ -5,9 +5,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 translation-type: tm+mt
-source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
+source-git-commit: 17eb7b9cb715d7d8d0d7bce930ddec43259149cc
 workflow-type: tm+mt
-source-wordcount: '551'
+source-wordcount: '557'
 ht-degree: 4%
 
 ---
@@ -117,6 +117,8 @@ ht-degree: 4%
          - [PayPal](tutorials/api/create/payments/paypal.md)
       - Protokoll {#protocols}
          - [Allmän OData](tutorials/api/create/protocols/odata.md)
+      - Direktuppspelning {#streaming}
+         - [HTTP-API](tutorials/api/create/streaming/http.md)
    - Utforska data {#explore}
       - [Utforska annonsdata](tutorials/api/explore/advertising.md)
       - [Utforska molnlagringsdata](tutorials/api/explore/cloud-storage.md)
@@ -196,6 +198,8 @@ ht-degree: 4%
          - [PayPal](tutorials/ui/create/payments/paypal.md)
       - Protokoll {#protocols}
          - [Allmän OData](tutorials/ui/create/protocols/odata.md)
+      - Direktuppspelning {#streaming}
+         - [HTTP-API](tutorials/ui/create/streaming/http.md)
    - Konfigurera ett dataflöde {#dataflow}
       - [Annonserar anslutningsdataflöde](tutorials/ui/dataflow/advertising.md)
       - [Anslutningsdataflöde för batchmolnlagring](tutorials/ui/dataflow/batch/cloud-storage.md)
