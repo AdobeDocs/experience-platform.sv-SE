@@ -5,7 +5,7 @@ title: Grundläggande om Experience Platform API
 topic: getting started
 description: I det här dokumentet finns en kort översikt över vissa underliggande tekniker och syntaxer som används för Experience Platform-API:er.
 translation-type: tm+mt
-source-git-commit: 5575d5e45bddcc007dcf78720cd7a7e20475f78c
+source-git-commit: 8c98632b67ddae4fb7800e80fb8c83aca9bfa291
 workflow-type: tm+mt
 source-wordcount: '504'
 ht-degree: 1%
@@ -120,7 +120,7 @@ Det finns många PATCH-åtgärder för [!DNL Platform]-API:er som accepterar JSO
 
 Beroende på vilken åtgärdstyp som anges i `op` kan JSON Patch-objektet kräva ytterligare egenskaper. Mer information om de olika JSON Patch-åtgärderna och deras obligatoriska syntax finns i [JSON Patch documentation](http://jsonpatch.com/).
 
-## JSON-schema
+## JSON-schema {#json-schema}
 
 JSON-schema är ett format som används för att beskriva och validera JSON-datastrukturen. [Experience Data Model (XDM)](../xdm/home.md) utnyttjar JSON-schemafunktioner för att begränsa strukturen och formatet för inmatade kundupplevelsedata. Mer information om JSON-schema finns i [officiell dokumentation](https://json-schema.org/).
 
