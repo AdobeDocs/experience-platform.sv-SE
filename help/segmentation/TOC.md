@@ -5,9 +5,9 @@ user-guide-title: Adobe Experience Platform segmenteringstjänst
 breadcrumb-title: Segmenteringstjänstguide
 user-guide-description: Bygg segment och generera målgrupper utifrån kundprofildata i realtid.
 translation-type: tm+mt
-source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
+source-git-commit: b37cf48b839ac30026162d2224528d8aabd3d263
 workflow-type: tm+mt
-source-wordcount: '135'
+source-wordcount: '152'
 ht-degree: 5%
 
 ---
@@ -32,6 +32,7 @@ ht-degree: 5%
    - [Kontrollpanel för segment](ui/segment-dashboard.md)
    - [Segment Builder](ui/segment-builder.md)
    - [Direktuppspelningssegmentering](ui/streaming-segmentation.md)
+   - [Direktuppspelningssegmentering (video)](video/streaming-segmentation-overview.md)
    - [Omfaktorisering av tidsbegränsningar](ui/segment-refactoring.md)
 - [Ansvarsfriskrivningar](honoring-opt-outs.md)
 - [Segmentering för flera enheter](multi-entity-segmentation.md)
@@ -51,6 +52,9 @@ ht-degree: 5%
    - [Diverse funktioner](pql/misc-functions.md)
 - Självstudiekurser {#tutorials}
    - [Skapa ett segment](tutorials/create-a-segment.md)
+   - [Skapa ett segment (video)](video/create-segment.md)
+   - [Skapa ett dynamiskt segment (video)](video/create-a-dynamic-segment.md)
+   - [Skapa ett flerenhetssegment (video)](video/create-multi-entity-segments.md)
    - [Utvärdera ett segment](tutorials/evaluate-a-segment.md)
    - [Skapa en datauppsättning för att exportera data](tutorials/create-dataset-export-segment.md)
    - [Stärk regelefterlevnaden för datasegment](tutorials/governance.md)
