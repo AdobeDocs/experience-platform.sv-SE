@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för Segment Builder
 topic: ui guide
 description: 'Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper. '
 translation-type: tm+mt
-source-git-commit: 8fc1c5414f38e84ed1700ee95b1c382007ff2c27
+source-git-commit: 354b756e53b360f31c1832c2b0f946b67099a87f
 workflow-type: tm+mt
-source-wordcount: '1871'
+source-wordcount: '1839'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Dessa byggstenar visas i **[!UICONTROL Fields]**-avsnittet till vänster på arb
 
 ### Attribut
 
-På fliken **[!UICONTROL Attributes]** kan du bläddra bland [!DNL Profile]-attribut som tillhör klassen [!DNL XDM Individual Profile]. Varje mapp kan expanderas för att visa ytterligare attribut, där varje attribut är en platta som kan dras till regelbyggararbetsytan i mitten av arbetsytan. [Regelbyggaren canvas](#rule-builder-canvas) beskrivs mer ingående senare i den här guiden.
+På fliken **[!UICONTROL Attributes]** kan du bläddra bland [!DNL Profile]-attribut som tillhör klassen [!DNL XDM Individual Profile]. Varje mapp kan expanderas för att visa ytterligare attribut, där varje attribut är en platta som kan dras till regelbyggararbetsytan i mitten av arbetsytan. [Regelbyggararbetsytan](#rule-builder-canvas) beskrivs mer ingående senare i den här guiden.
 
 ![](../images/ui/segment-builder/attributes.png)
 
@@ -163,7 +163,7 @@ När du fortsätter att skapa segmentdefinitionen kan du visa en sidnumrerad fö
 >
 >Målgruppsuppskattningar genereras med en provstorlek för den aktuella dagens exempeldata. Om det finns mindre än 1 miljon enheter i din profilbutik används hela datauppsättningen. För mellan 1 och 20 miljoner enheter används 1 miljon enheter. och för över 20 miljoner enheter används 5 % av det totala antalet enheter. Mer information om hur du genererar segmentuppskattningar finns i [uppskattningsgenereringssektionen](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) i självstudiekursen för att skapa segment.
 
-## Nästa steg och ytterligare resurser {#next-steps}
+## Nästa steg {#next-steps}
 
 Segment Builder har ett omfattande arbetsflöde som gör att du kan isolera marknadsföringsbara målgrupper från [!DNL Real-time Customer Profile]-data. När du har läst den här guiden bör du nu kunna:
 
@@ -173,16 +173,4 @@ Segment Builder har ett omfattande arbetsflöde som gör att du kan isolera mark
 - Aktivera alla segmentdefinitioner för schemalagd segmentering.
 - Aktivera angivna segmentdefinitioner för direktuppspelningssegmentering.
 
-Om du vill veta mer om [!DNL Segmentation Service] kan du fortsätta läsa dokumentationen och komplettera din inlärning genom att titta på videorna nedan. Läs [[!DNL Segmentation Service] användarhandboken](./overview.md) om du vill veta mer om de andra delarna i användargränssnittet[!DNL Segmentation Service]
-
->[!WARNING]
->
-> Användargränssnittet [!DNL Platform] som visas i följande videofilmer är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
-
-**Skapa ett segment:**
-
->[!VIDEO](https://video.tv.adobe.com/v/27254?quality=12&learn=on)
-
-**Skapa ett dynamiskt segment:**
-
->[!VIDEO](https://video.tv.adobe.com/v/27428?quality=12&learn=on)
+Om du vill veta mer om [!DNL Segmentation Service] kan du fortsätta läsa dokumentationen och komplettera din inlärning genom att titta på relaterade videor. Läs [[!DNL Segmentation Service] användarhandboken](./overview.md) om du vill veta mer om de andra delarna i användargränssnittet[!DNL Segmentation Service]
