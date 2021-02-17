@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för direktuppspelningssegmentering
 topic: ui guide
 description: Med direktuppspelningssegmentering på Adobe Experience Platform kan ni segmentera i nära realtid samtidigt som ni fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificering allt eftersom data når plattformen, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data överförs till plattformen, vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 translation-type: tm+mt
-source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
+source-git-commit: c0c42f872666323bfb3bdbdf5fb02475d3b5bc79
 workflow-type: tm+mt
-source-wordcount: '722'
+source-wordcount: '794'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,9 @@ Med direktuppspelningssegmentering på [!DNL Adobe Experience Platform] kan kund
 
 >[!NOTE]
 >
->Direktuppspelningssegmentering kan bara användas för att utvärdera data som direktuppspelas på plattformen. Med andra ord kommer data som hämtas via batchinmatning inte att utvärderas genom direktuppspelningssegmentering, utan kommer att utvärderas tillsammans med det nightly schemalagda segmenterade jobbet.
+>Direktuppspelningssegmentering kan bara användas för att utvärdera data som direktuppspelas på plattformen. Med andra ord kommer data som hämtas via batchinmatning inte att utvärderas genom direktuppspelningssegmentering, utan kommer att utvärderas tillsammans med det nightly schedule segment job.
+>
+>Dessutom kan segment som utvärderas med direktuppspelningssegmentering avvika från det idealiska och det faktiska medlemskapet om segmentet är baserat på ett annat segment som utvärderas med gruppsegmentering. Om till exempel segment A är baserat på segment B och segment B utvärderas med gruppsegmentering, eftersom segment B bara uppdateras var 24:e timme, kommer segment A att flyttas längre bort från de faktiska data tills det synkroniseras om med segmentet B.
 
 ## Frågetyper för direktuppspelningssegmentering
 
