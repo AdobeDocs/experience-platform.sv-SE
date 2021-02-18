@@ -1,13 +1,11 @@
 ---
 title: Krav för att använda Adobe Experience Platform Web SDK
-seo-title: Krav för att använda Adobe Experience Platform Web SDK
-description: Krav för att använda Adobe Experience Platform Web SDK
-seo-description: Krav för att använda Adobe Experience Platform Web SDK
+description: Läs om förutsättningarna för Adobe Experience Platform Web SDK.
 keywords: 1st-party domain;CNAME;schema;skapa schema;starta;aep web sdk extension;extension;configuration id;configuration tool;data element;create data element;XDM Object;sendEvent;send Event;
 translation-type: tm+mt
-source-git-commit: a19b4384e2ea64eb9ab5f0f5443fd329ec44a2a0
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '281'
+source-wordcount: '270'
 ht-degree: 0%
 
 ---
