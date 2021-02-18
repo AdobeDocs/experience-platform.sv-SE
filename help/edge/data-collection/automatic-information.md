@@ -1,23 +1,21 @@
 ---
-title: Information samlas in automatiskt
-seo-title: Information som samlas in automatiskt av Adobe Experience Platform Web SDK
-description: Beskrivning av all information som Adobe Experience Cloud SDK automatiskt samlar in
-seo-description: Beskrivning av all information som Adobe Experience Cloud SDK automatiskt samlar in
-keywords: collect information;context;configure;device;screenHeight;screen Height;screenOrientation;screen Orientation;screenWidth;screen Width;environment;viewportHeight;viewport Height;viewportWidth;viewport Width;crowserDetails;browser details;implementationDetails;implementation Details;name;version;placeContext;localTime;local Time;localTimezoneOffset;local Timezone Offset;timestamp;web;url;webPageDetails;web Page Details;webReferrer;web Referrer;landscape;portrait;
+title: Automatiskt insamlad information i Adobe Experience Platform Web SDK
+description: En översikt över all information som Adobe Experience Platform SDK samlar in automatiskt.
+keywords: samla in information;kontext;konfigurera;enhet;screenHeight;screen Height;screenOrientation;screen Orientation;screenWidth;screen Width;environment;viewportHeight;viewport Height;viewportWidth;viewport Width;populserDetails;browser details;implementationDetails;implementation Details;name;version;placeContext;local Time;local Time zoneOffset;local Timezone Offset;timestamp;web;url;webPageDetails;web page Details;webReferrer;web Referrer;landscape;portrait;
 translation-type: tm+mt
-source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '385'
-ht-degree: 7%
+source-wordcount: '422'
+ht-degree: 6%
 
 ---
 
 
-# Information samlas in automatiskt
+# Automatiskt insamlad information
 
-Adobe Experience Platform Web SDK samlar automatiskt in ett antal informationsdelar utan specialkonfigurationer. Den här informationen kan dock inaktiveras om det behövs med hjälp av `context` alternativet i `configure` kommandot. [Se Konfigurera SDK](../fundamentals/configuring-the-sdk.md). Nedan finns en lista över dessa informationsdelar. Namnet inom parentes anger den sträng som ska användas när kontexten konfigureras.
+Adobe Experience Platform Web SDK samlar automatiskt in ett antal informationsdelar utan specialkonfigurationer. Den här informationen kan dock inaktiveras om det behövs med alternativet `context` i kommandot `configure`. [Se Konfigurera SDK](../fundamentals/configuring-the-sdk.md). Nedan finns en lista över dessa informationsdelar. Namnet inom parentes anger den sträng som ska användas när kontexten konfigureras.
 
-## Device (`device`)
+## Enhet (`device`)
 
 Information om enheten. Detta inkluderar inte data som kan slås upp på serversidan från användaragentsträngen.
 
@@ -57,7 +55,7 @@ Webbläsare
 | ------------------------------- | ------------ |
 | `events[].xdm.environment.type` | `browser` |
 
-Den typ av miljö som upplevelsen upplevde. Adobe Experience Platform Web SDK anger alltid detta som `browser`.
+Den typ av miljö som upplevelsen upplevde. Adobe Experience Platform Web SDK anger alltid detta till `browser`.
 
 ### Höjd på visningsruta
 
@@ -128,7 +126,7 @@ Antal minuter som användaren är förskjuten från GMT.
 
 Tidsstämpeln för händelsen.  Den här delen av kontexten kan inte tas bort.
 
-UTC-tidsstämpel för slutanvändaren i det förenklade utökade ISO-formatet [ISO 8601](https://tools.ietf.org/html/rfc3339#section-5.6).
+UTC-tidsstämpel för slutanvändaren i förenklat utökat ISO-format [ISO 8601](https://tools.ietf.org/html/rfc3339#section-5.6).
 
 ## Webbinformation (`web`)
 
