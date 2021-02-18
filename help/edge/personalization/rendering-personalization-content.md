@@ -1,25 +1,23 @@
 ---
-title: Återge personaliserat innehåll
-seo-title: Adobe Experience Platform Web SDK Rendering personaliserat innehåll
-description: Lär dig återge personaliserat innehåll med Experience Platform Web SDK
-seo-description: Lär dig återge personaliserat innehåll med Experience Platform Web SDK
-keywords: personalization;renderDecisions;sendEvent;decisionScopes;result.decisions;
+title: Återge anpassat innehåll med Adobe Experience Platform Web SDK
+description: Lär dig återge personaliserat innehåll med Adobe Experience Platform Web SDK.
+keywords: personalisering;renderDecision;sendEvent;DecisionScopes;result.Decision;
 translation-type: tm+mt
-source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '236'
+source-wordcount: '230'
 ht-degree: 0%
 
 ---
 
 
-# Översikt över personaliseringsalternativ
+# Återge personaliserat innehåll
 
-Adobe Experience Platform [!DNL Web SDK] stöder frågor om personaliseringslösningarna på Adobe, inklusive Adobe Target. Det finns två sätt att personalisera: hämta innehåll som kan återges automatiskt och innehåll som måste återges av utvecklaren. SDK har även funktioner för att [hantera flimmer](../personalization/manage-flicker.md).
+Adobe Experience Platform [!DNL Web SDK] stöder frågor om personaliseringslösningarna på Adobe, inklusive Adobe Target. Det finns två sätt att personalisera: hämta innehåll som kan återges automatiskt och innehåll som måste återges av utvecklaren. I SDK finns även funktioner för att [hantera flimmer](../personalization/manage-flicker.md).
 
 ## Återge innehåll automatiskt
 
-SDK återger automatiskt anpassat innehåll när du skickar en händelse till servern och anger `renderDecisions` den som ett alternativ `true` för händelsen.
+SDK återger automatiskt anpassat innehåll när du skickar en händelse till servern och anger `renderDecisions` till `true` som ett alternativ för händelsen.
 
 ```javascript
 alloy("sendEvent", {
@@ -41,7 +39,7 @@ alloy("sendEvent", {
 
 ## Återge innehåll manuellt
 
-Du kan begära att listan med beslut returneras som ett löfte för `sendEvent` kommandot genom att ange `decisionScopes` alternativet. Ett omfång är en sträng som låter personaliseringslösningen veta vilket beslut ni vill ha.
+Du kan begära att listan med beslut returneras som ett löfte för kommandot `sendEvent` genom att ange alternativet `decisionScopes`. Ett omfång är en sträng som låter personaliseringslösningen veta vilket beslut ni vill ha.
 
 ```javascript
 alloy("sendEvent",{
@@ -93,8 +91,8 @@ Detta returnerar en lista med beslut som ett JSON-objekt för varje beslut.
 
 >[!TIP]
 >
-> Om du använder [!DNL Target]det blir omfattningar mBox på servern, men bara de begärs samtidigt i stället för individuellt. Den globala mbox skickas alltid.
+> Om du använder [!DNL Target] blir omfattningar mBox på servern, men bara de begärs samtidigt i stället för individuellt. Den globala mbox skickas alltid.
 
 ### Hämta automatiskt innehåll
 
-Om du vill `result.decisions` att inställningarna ska inkludera de automatiskt återgivningsbara besluten och INTE ha återge dem automatiskt, kan du ange `renderDecisions` till `false`och inkludera det speciella omfånget `__view__`.
+Om du vill att `result.decisions` ska inkludera de automatiskt återgivningsbara besluten och NOT har återge dem automatiskt, kan du ange `renderDecisions` till `false` och inkludera det särskilda omfånget `__view__`.
