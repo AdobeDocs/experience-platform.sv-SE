@@ -1,19 +1,17 @@
 ---
-title: Adobe Experience Platform Web SDK - hjälp
-seo-title: Adobe Experience Platform Web SDK - hjälp
-description: Lär dig vad Adobe Experience Platform Web SDK är och hur det kan användas.
-seo-description: Lär dig hur Adobe Experience Cloud kunder kan interagera med de olika tjänsterna i Experience Cloud.
+title: Adobe Experience Platform Web SDK - översikt
+description: Lär dig hur du använder Adobe Experience Platform Web SDK för att integrera plattformsfunktioner på din webbplats.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;edge;Visitor.js;AppMeasurement.js;AT.js;DIL.js;web sdk;SDK;web SDK;Launch;launch
 translation-type: tm+mt
-source-git-commit: 2dbd92efbd992b70f4f750b09e9d2e0626e71315
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '709'
+source-wordcount: '685'
 ht-degree: 0%
 
 ---
 
 
-# Vad är Adobe Experience Platform Web SDK?
+# Adobe Experience Platform Web SDK - översikt
 
 Adobe Experience Platform Web SDK är ett JavaScript-bibliotek på klientsidan som gör att Adobe Experience Cloud kunder kan interagera med de olika tjänsterna i [!DNL Experience Cloud] via Adobe Experience Platform Edge Network. Förutom JavaScript-biblioteket finns det ett [Experience Platform Launch-tillägg](https://experienceleague.adobe.com/docs/launch/using/extensions-ref/adobe-extension/aep-extension/overview.html) som kan hjälpa dig med dina Web SDK-konfigurationer.
 
