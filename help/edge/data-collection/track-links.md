@@ -1,11 +1,9 @@
 ---
-title: Spårning av länkar med Adobe Analytics
-seo-title: Länkspårning till Adobe Analytics med Adobe Experience Platform Web SDK
+title: Spåra länkar med Adobe Experience Platform Web SDK
 description: Lär dig hur du skickar länkdata till Adobe Analytics med Experience Platform Web SDK
-seo-description: Lär dig hur du skickar länkdata till Adobe Analytics med Experience Platform Web SDK
 keywords: adobe analytics;analytics;sendEvent;s.t();s.tl();webPageDetails;pageViews;webInteraction;web Interaction;page views;link tracking;links;track links;clickCollection;click collection;
 translation-type: tm+mt
-source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
 source-wordcount: '239'
 ht-degree: 0%
@@ -15,7 +13,7 @@ ht-degree: 0%
 
 # Spåra länkar
 
-Länkarna kan ställas in manuellt eller spåras [automatiskt](#automaticLinkTracking). Manuell spårning görs genom att informationen läggs till under `web.webInteraction` delen av schemat. Det finns tre obligatoriska variabler:
+Länkar kan anges manuellt eller spåras [automatiskt](#automaticLinkTracking). Manuell spårning görs genom att informationen läggs till under `web.webInteraction`-delen av schemat. Det finns tre obligatoriska variabler:
 
 * `web.webInteraction.name`
 * `web.webInteraction.type`
@@ -46,7 +44,7 @@ Länktypen kan vara ett av tre värden:
 
 ## Automatisk länkspårning {#automaticLinkTracking}
 
-Som standard hämtar, etiketterar och spelar Web SDK-filen in klick på kvalificerande länktaggar. Klickningar hämtas med en händelseavlyssnare för [klickning](https://www.w3.org/TR/uievents/#capture-phase) som bifogas till dokumentet.
+Som standard hämtar, etiketterar och spelar Web SDK-filen in klick på kvalificerande länktaggar. Klickningar hämtas med en [klickningshändelseavlyssnare för klickning](https://www.w3.org/TR/uievents/#capture-phase) som är kopplad till dokumentet.
 
 Automatisk länkspårning kan inaktiveras genom att [konfigurera](../fundamentals/configuring-the-sdk.md#clickCollectionEnabled) Web SDK.
 
@@ -54,13 +52,13 @@ Automatisk länkspårning kan inaktiveras genom att [konfigurera](../fundamental
 clickCollectionEnabled: false
 ```
 
-### Vilka taggar berättigar till länkspårning?{#qualifyingLinks}
+### Vilka taggar kvalificerar för länkspårning?{#qualifyingLinks}
 
-Automatisk länkspårning utförs för ankarpunkter `A` och `AREA` taggar. Dessa taggar beaktas dock inte för länkspårning om de har en bifogad `onclick` hanterare.
+Automatisk länkspårning utförs för taggarna `A` och `AREA`. Dessa taggar beaktas dock inte för länkspårning om de har en kopplad `onclick`-hanterare.
 
-### Hur märks länkar?{#labelingLinks}
+### Hur är länkar märkta?{#labelingLinks}
 
-Länkarna är märkta som en nedladdningslänk om ankartaggen innehåller ett nedladdningsattribut eller om länken avslutas med ett populärt filtillägg. Hämtningslänkens kvalificerare kan [konfigureras](../fundamentals/configuring-the-sdk.md) med ett reguljärt uttryck:
+Länkarna är märkta som en nedladdningslänk om ankartaggen innehåller ett nedladdningsattribut eller om länken avslutas med ett populärt filtillägg. Hämtningslänkens kvalificerare kan vara [konfigurerad](../fundamentals/configuring-the-sdk.md) med ett reguljärt uttryck:
 
 ```javascript
 downloadLinkQualifier: "\\.(exe|zip|wav|mp3|mov|mpg|avi|wmv|pdf|doc|docx|xls|xlsx|ppt|pptx)$"
