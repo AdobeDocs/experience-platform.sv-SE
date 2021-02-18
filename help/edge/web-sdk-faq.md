@@ -1,12 +1,10 @@
 ---
-title: Vanliga frågor om Web SDK
-seo-title: Vanliga frågor om Adobe Experience Platform Web SDK
-description: Frågor och svar om Adobe Experience Platform Web SDK
-seo-description: Frågor och svar om Adobe Experience Platform Web SDK
+title: Vanliga frågor om Adobe Experience Platform Web SDK
+description: Få svar på vanliga frågor om Adobe Experience Platform Web SDK.
 translation-type: tm+mt
-source-git-commit: f4f0b00dfd324f69aa2b4348740f6e767e86a6de
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '1808'
+source-wordcount: '1804'
 ht-degree: 1%
 
 ---
@@ -14,7 +12,7 @@ ht-degree: 1%
 
 # Frågor och svar
 
-Frågor och svar innehåller frågor som ofta ställs om Adobe Web SDK.
+Den här guiden ger svar på frågor som ofta ställs om Adobe Experience Platform Web SDK.
 
 ## Vad är Adobe Experience Platform Web SDK?
 
@@ -106,7 +104,7 @@ Adobe Experience Platform Web SDK har utvecklats för följande personer:
 
 ## Hur får jag tillgång till Adobe Experience Platform Web SDK?
 
-Web SDK är för närvarande tillgängligt för allmänheten och kan användas för att skicka data till Adobe Experience Cloud-produkter. Möjligheten att skicka data till tredjepartslösningar kommer inom den närmaste framtiden. SDK är kostnadsfritt, hanteras av Adobe utan kostnad och kan laddas ned så att du kan ha det på dina egna servrar, om du vill, utan kostnad. För att Adobe-servrar ska kunna hantera inkommande data som kommer från SDK måste du ha tillgång till konfigurationer för plattforms-Edge Network och Schema Builder för Adobe Experience Platform XDM. Om du vill få åtkomst kontaktar du din Customer Success Manager (CSM) för att starta förfrågningsprocessen.
+Web SDK är för närvarande tillgängligt för allmänheten och kan användas för att skicka data till Adobe Experience Cloud-produkter. Möjligheten att skicka data till tredjepartslösningar kommer inom den närmaste framtiden. SDK är kostnadsfritt, hanteras av Adobe utan kostnad och kan laddas ned så att du kan lägga det på dina egna servrar, om du vill, utan kostnad. För att Adobe-servrar ska kunna hantera inkommande data som kommer från SDK måste du ha tillgång till konfigurationer för plattforms-Edge Network och Schema Builder för Adobe Experience Platform XDM. Om du vill få åtkomst kontaktar du din Customer Success Manager (CSM) för att starta förfrågningsprocessen.
 
 ## Vilka användningsfall stöds för närvarande av Web SDK?
 
