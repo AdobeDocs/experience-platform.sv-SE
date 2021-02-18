@@ -1,19 +1,17 @@
 ---
-title: Konfiguration av Edge
-seo-title: Edge-konfiguration för Experience Platform Web SDK
+title: Skapa en Edge-konfiguration för Experience Platform Web SDK
 description: 'Lär dig hur du konfigurerar Experience Platform Edge-nätverket. '
-seo-description: 'Lär dig hur du konfigurerar Experience Platform Edge-nätverket. '
-keywords: configuration;edge;edge configuration id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destinations;url Destinations;Analytics Settings Blockreport suite id;
+keywords: konfiguration;edge;edge configuration id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destinations;url Destinations;Analytics Settings Blockreport suite id;
 translation-type: tm+mt
-source-git-commit: 94b3faf3157f4e1f4e46b6055914a04883dc44fa
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '829'
+source-wordcount: '859'
 ht-degree: 0%
 
 ---
 
 
-# Konfigurera Edge
+# Skapa en kantkonfiguration
 
 Konfigurationen för Adobe Experience Platform Web SDK är uppdelad på två platser. [konfigurationskommandot](configuring-the-sdk.md) i SDK styr saker som måste hanteras på klienten, till exempel `edgeDomain`. Edge-konfigurationen hanterar all annan konfiguration för SDK. När en begäran skickas till Adobe Experience Platform Edge Network används `edgeConfigId` för att referera till konfigurationen på serversidan. På så sätt kan du uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
 
