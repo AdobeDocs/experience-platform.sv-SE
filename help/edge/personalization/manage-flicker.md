@@ -1,13 +1,11 @@
 ---
-title: Hantera flimmer för personaliserade upplevelser
-seo-title: Hantera Adobe Experience Platform Web SDK flimmer
-description: Lär dig hantera flimmer i användarupplevelser
-seo-description: Lär dig hur du hanterar flimmer med Experience Platform Web SDK-egenskaper
-keywords: target;flicker;prehidingStyle;asynchronously;asynchronous;
+title: Hantera flimmer för personaliserade upplevelser med Adobe Experience Platform Web SDK
+description: Lär dig hur du använder Adobe Experience Platform Web SDK för att hantera flimmer i användarupplevelser.
+keywords: mål;flimmer;prehideStyle;asynkront;asynkront;
 translation-type: tm+mt
-source-git-commit: e0f992eafbb973fa1c48acc3b165788137d143a4
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '491'
+source-wordcount: '492'
 ht-degree: 0%
 
 ---
@@ -25,9 +23,9 @@ Funktionen flimmerhantering har några faser:
 
 ## Dölj
 
-Under fördöljningsfasen använder SDK:n konfigurationsalternativet för att skapa en HTML-formattagg och lägga till den i DOM för att se till att stora delar av sidan är dolda. `prehidingStyle` Om du är osäker på vilka delar av sidan som ska personaliseras bör du ange `prehidingStyle` till `body { opacity: 0 !important }`. På så sätt ser du till att hela sidan är dold. Detta har dock lett till sämre sidåtergivningsprestanda som rapporterats av verktyg som Lightroom, Web Page Tests osv. För att få bästa återgivningsprestanda bör du ange `prehidingStyle` en lista med behållarelement som innehåller de delar av sidan som ska anpassas.
+Under fördöljningsfasen använder SDK konfigurationsalternativet `prehidingStyle` för att skapa en HTML-formattagg och lägga till den i DOM för att se till att stora delar av sidan är dolda. Om du är osäker på vilka delar av sidan som ska anpassas bör du ange `prehidingStyle` till `body { opacity: 0 !important }`. På så sätt ser du till att hela sidan är dold. Detta har dock lett till sämre sidåtergivningsprestanda som rapporterats av verktyg som Lightroom, Web Page Tests osv. För att få bästa sidåtergivningsprestanda bör du ställa in `prehidingStyle` på en lista med behållarelement som innehåller de delar av sidan som ska anpassas.
 
-Anta att du har en HTML-sida som den nedan och du vet att bara `bar` - och `bazz` behållarelement någonsin kommer att personaliseras:
+Anta att du har en HTML-sida som den nedan och du vet att endast `bar` och `bazz` behållarelement någonsin kommer att personaliseras:
 
 ```html
 <html>
@@ -49,11 +47,11 @@ Anta att du har en HTML-sida som den nedan och du vet att bara `bar` - och `bazz
 </html>
 ```
 
-Då `prehidingStyle` borde det vara något liknande `#bar, #bazz { opacity: 0 !important }`.
+Sedan ska `prehidingStyle` ställas in på något som `#bar, #bazz { opacity: 0 !important }`.
 
 ## Förbehandling
 
-Förbearbetningsfasen startas när SDK har tagit emot det anpassade innehållet från servern. Under den här fasen är svaret förbearbetat, så att element som måste innehålla personaliserat innehåll döljs. När dessa element är dolda tas HTML-stiltaggen som har skapats baserat på konfigurationsalternativet bort och HTML-brödtexten eller de dolda behållarelementen visas. `prehidingStyle`
+Förbearbetningsfasen startas när SDK har tagit emot det anpassade innehållet från servern. Under den här fasen är svaret förbearbetat, så att element som måste innehålla personaliserat innehåll döljs. När dessa element är dolda tas HTML-formattaggen som har skapats baserat på konfigurationsalternativet `prehidingStyle` bort och HTML-innehållet eller de dolda behållarelementen visas.
 
 ## Återgivning
 
@@ -75,4 +73,4 @@ Rekommendationen är att alltid läsa in SDK asynkront för att få bästa sidå
 </script>
 ```
 
-För att vara säker på att HTML-texten eller behållarelementen inte döljs under en längre tid använder det föregående dolda fragmentet en timer som som standard tar bort fragmentet efter `3000` millisekunder. Antalet millisekunder är den maximala väntetiden `3000` . Om svaret från servern har tagits emot och bearbetats tidigare tas HTML-formattaggen som döljs bort så snart som möjligt.
+För att vara säker på att HTML-texten eller behållarelementen inte döljs under en längre tid använder det förhandsdolda fragmentet en timer som som standard tar bort fragmentet efter `3000` millisekunder. `3000` millisekunder är den maximala väntetiden. Om svaret från servern har tagits emot och bearbetats tidigare tas HTML-formattaggen som döljs bort så snart som möjligt.
