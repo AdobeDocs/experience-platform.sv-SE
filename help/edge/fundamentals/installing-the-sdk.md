@@ -1,13 +1,11 @@
 ---
-title: Installerar Adobe Experience Platform Web SDK
-seo-title: Adobe Experience Platform Web SDK installerar SDK
-description: Lär dig hur du installerar Experience Platform Web SDK
-seo-description: Lär dig hur du installerar Experience Platform Web SDK
-keywords: web sdk installation;installing web sdk;internet explorer;promise;
+title: Installera Adobe Experience Platform Web SDK
+description: Lär dig hur du installerar Experience Platform Web SDK.
+keywords: web sdk-installation;installera web sdk;internet explorer;promise;
 translation-type: tm+mt
-source-git-commit: 1b5ee9b1f9bdc7835fa8de59020b3eebb4f59505
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '623'
+source-wordcount: '616'
 ht-degree: 0%
 
 ---
@@ -15,7 +13,7 @@ ht-degree: 0%
 
 # Installera SDK {#installing-the-sdk}
 
-Det bästa sättet att använda Adobe Experience Platform Web SDK är via [Adobe Experience Platform Launch](http://launch.adobe.com/). Sök `AEP Web SDK` i tilläggskatalogen, installera och konfigurera sedan tillägget.
+Det bästa sättet att använda Adobe Experience Platform Web SDK är via [Adobe Experience Platform Launch](http://launch.adobe.com/). Sök efter `AEP Web SDK` i tilläggskatalogen, installera och konfigurera sedan tillägget.
 
 Adobe Experience Platform Web SDK finns också på ett CDN som du kan använda. Du kan referera till den här filen eller ladda ned den och lagra den i din egen infrastruktur. Den finns i minifierad och icke-minifierad version. Den version som inte är miniatyrversion är användbar i felsökningssyfte.
 
@@ -28,7 +26,7 @@ Exempel:
 
 ## Lägga till koden {#adding-the-code}
 
-Det första steget i implementeringen av Adobe Experience Platform [!DNL Web SDK] är att kopiera och klistra in följande&quot;baskod&quot; så hög som möjligt i HTML- `<head>` taggen:
+Det första steget i att implementera Adobe Experience Platform [!DNL Web SDK] är att kopiera och klistra in följande &quot;baskod&quot; så hög som möjligt i taggen `<head>` i din HTML:
 
 ```markup
 <script>
@@ -40,7 +38,7 @@ Det första steget i implementeringen av Adobe Experience Platform [!DNL Web SDK
 <script src="https://cdn1.adoberesources.net/alloy/2.3.0/alloy.min.js" async></script>
 ```
 
-Baskoden skapar en global funktion med namnet `alloy`. Använd den här funktionen för att interagera med SDK:n. Om du vill ge den globala funktionen ett annat namn kan du ändra `alloy` namnet enligt följande:
+Baskoden skapar en global funktion med namnet `alloy`. Använd den här funktionen för att interagera med SDK:n. Om du vill ge den globala funktionen ett annat namn kan du ändra `alloy`-namnet så här:
 
 ```markup
 <script>
@@ -52,45 +50,45 @@ Baskoden skapar en global funktion med namnet `alloy`. Använd den här funktion
 <script src="https://cdn1.adoberesources.net/alloy/2.3.0/alloy.min.js" async></script>
 ```
 
-I det här exemplet byter den globala funktionen namn `mycustomname`i stället för `alloy`.
+I det här exemplet byter den globala funktionen namn till `mycustomname` i stället för `alloy`.
 
 >[!IMPORTANT]
 >
->Undvik potentiella problem genom att använda ett namn som innehåller minst ett tecken som inte är en siffra och som inte står i konflikt med namnet på en egenskap som redan hittats på `window`.
+>Undvik potentiella problem genom att använda ett namn som innehåller minst ett tecken som inte är en siffra och som inte står i konflikt med namnet på en egenskap som redan finns i `window`.
 
-Utöver att skapa en global funktion läser den här baskoden även in ytterligare kod som finns i en extern fil \(`alloy.js`\) som finns på en server. Som standard läses den här koden in asynkront så att webbsidan kan fungera så bra som möjligt. Detta är den rekommenderade implementeringen.
+Utöver att skapa en global funktion läser den här baskoden även in ytterligare kod som finns i den externa filen \(`alloy.js`\) som finns på en server. Som standard läses den här koden in asynkront så att webbsidan kan fungera så bra som möjligt. Detta är den rekommenderade implementeringen.
 
 ## Stöd för Internet Explorer {#support-internet-explore}
 
-Denna SDK använder löften, som är ett sätt att förmedla slutförandet av asynkrona uppgifter. Den implementering av [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) som används av SDK stöds internt av alla målwebbläsare förutom [!DNL Internet Explorer]. Om du vill använda SDK på [!DNL Internet Explorer]måste du ha `window.Promise` polyfylld [](https://remysharp.com/2010/10/08/what-is-a-polyfill).
+Denna SDK använder löften, som är ett sätt att förmedla slutförandet av asynkrona uppgifter. Den [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)-implementering som används av SDK stöds av alla målwebbläsare förutom [!DNL Internet Explorer]. Om du vill använda SDK på [!DNL Internet Explorer] måste du ha `window.Promise` [polyfyllt](https://remysharp.com/2010/10/08/what-is-a-polyfill).
 
-Så här kontrollerar du om du redan har `window.Promise` polyfyllda:
+Så här kontrollerar du om du redan har `window.Promise` polyierat:
 
 1. Öppna webbplatsen i [!DNL Internet Explorer].
 1. Öppna webbläsarens felsökningskonsol.
-1. Skriv `window.Promise` in i konsolen och tryck sedan på Retur.
+1. Skriv `window.Promise` i konsolen och tryck sedan på Retur.
 
-Om något annat än `undefined` visas har du troligen redan polyifyllt `window.Promise`. Ett annat sätt att avgöra om `window.Promise` är polyfylld är att läsa in webbplatsen efter att ha slutfört installationsinstruktionerna ovan. Om SDK genererar ett fel som talar om något om ett löfte har du troligen inte polyfyllt `window.Promise`.
+Om något annat än `undefined` visas har du troligen redan polyifierat `window.Promise`. Ett annat sätt att avgöra om `window.Promise` är polyfyllt är att läsa in webbplatsen efter att ha slutfört installationsinstruktionerna ovan. Om SDK genererar ett fel som anger något om ett löfte har du troligen inte polyfyllt `window.Promise`.
 
-Om du har fastställt att du måste polyfylla `window.Promise`i, inkluderar du följande script-tagg ovanför den tidigare angivna baskoden:
+Om du har fastställt att du behöver polyfill `window.Promise`, inkluderar du följande script-tagg ovanför den tidigare angivna baskoden:
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
 ```
 
-Detta läser in ett skript som ser till att `window.Promise` det är en giltig Promise-implementering.
+Detta läser in ett skript som ser till att `window.Promise` är en giltig Promise-implementering.
 
 >[!NOTE]
 >
->Om du väljer att läsa in en annan Promise-implementering måste den ha stöd `Promise.prototype.finally`.
+>Om du väljer att läsa in en annan Promise-implementering måste den ha stöd för `Promise.prototype.finally`.
 
 ## Läsa in JavaScript-filen synkront {#loading-javascript-synchronously}
 
-Så som förklaras i avsnittet [Lägga till koden](#adding-the-code)läser den baskod som du har kopierat och klistrat in i webbplatsens HTML-kod in en extern fil med ytterligare kod. Den här extra koden innehåller SDK:s kärnfunktioner. Alla kommandon som du försöker köra medan den här filen läses in är köade och bearbetas sedan när filen har lästs in. Det här är den mest prestandametoden vid installation.
+Så som förklaras i avsnittet [När du lägger till koden](#adding-the-code), läser den baskod som du har kopierat och klistrat in i webbplatsens HTML in en extern fil med ytterligare kod. Den här extra koden innehåller SDK:s kärnfunktioner. Alla kommandon som du försöker köra medan den här filen läses in är köade och bearbetas sedan när filen har lästs in. Det här är den mest prestandametoden vid installation.
 
 Under vissa omständigheter kanske du vill läsa in filen synkront \(mer information om dessa omständigheter beskrivs senare\). Om du gör det blockeras resten av HTML-dokumentet från att tolkas och återges av webbläsaren tills den externa filen har lästs in och körts. Denna ytterligare fördröjning innan primärt innehåll visas för användarna rekommenderas vanligtvis inte, men den kan vara bra beroende på omständigheterna.
 
-Om du vill läsa in filen synkront i stället för asynkront tar du bort attributet från den andra `async` `script` -taggen enligt nedan:
+Om du vill läsa in filen synkront i stället för asynkront tar du bort attributet `async` från den andra `script`-taggen enligt nedan:
 
 ```markup
 <script>
