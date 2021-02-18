@@ -1,11 +1,11 @@
 ---
 solution: Experience Platform
-title: Experience Platform Dashboards
+title: Introduktion till Experience Platform Dashboards
 topic: overview
 type: Documentation
-description: 'Adobe Experience Platform tillhandahåller flera kontrollpaneler där du kan visa viktig information om organisationens data, som de har hämtats in under dagliga ögonblicksbilder. '
+description: 'Utforska flera instrumentpaneler i Adobe Experience Platform för att visa viktig information om organisationens data, som de har hämtats in under dagliga ögonblicksbilder. '
 translation-type: tm+mt
-source-git-commit: 5d33b8db91491ec5d7f45b3ebe3067cd382d9d46
+source-git-commit: d97fd09b382877608edf665d7559a684be00c0bb
 workflow-type: tm+mt
 source-wordcount: '273'
 ht-degree: 0%
