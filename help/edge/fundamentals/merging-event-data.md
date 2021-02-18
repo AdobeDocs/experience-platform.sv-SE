@@ -1,13 +1,11 @@
 ---
-title: Sammanfoga händelsedata
-seo-title: Sammanfoga händelsedata för Adobe Experience Platform Web SDK
+title: Sammanfoga händelsedata i Adobe Experience Platform Web SDK
 description: Lär dig hur du sammanfogar händelsedata för Experience Platform Web SDK
-seo-description: Lär dig hur du sammanfogar händelsedata för Experience Platform Web SDK
-keywords: merge;event data;eventMergeId;createEventMergeId;sendEvent;mergeId;merge id;eventMergeIdPromise; Merge Id Promise;
+keywords: merge;händelsedata;eventMergeId;createEventMergeId;sendEvent;mergeId;merge id;eventMergeIdPromise; Koppla ID-löfte;
 translation-type: tm+mt
-source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '462'
+source-wordcount: '464'
 ht-degree: 0%
 
 ---
@@ -21,7 +19,7 @@ ht-degree: 0%
 
 Ibland är inte alla data tillgängliga när en händelse inträffar. Du kanske vill samla in data som du har så att de inte går förlorade om användaren till exempel stänger webbläsaren. Å andra sidan kan du även inkludera data som blir tillgängliga senare.
 
-I sådana fall kan du sammanfoga data med tidigare händelser genom att skicka `mergeId` som ett alternativ till `event` kommandon enligt följande:
+I sådana fall kan du sammanfoga data med tidigare händelser genom att skicka `mergeId` som ett alternativ till `event`-kommandon enligt följande:
 
 ```javascript
 alloy("sendEvent", {
@@ -59,13 +57,13 @@ alloy("sendEvent", {
 });
 ```
 
-Genom att skicka samma värde för alternativet till båda händelsekommandona i det här exemplet, utökas data i det andra händelsekommandot till data som tidigare skickats vid det första händelsekommandot. `mergeId` En post för varje händelsekommando skapas i [!DNL Experience Data Platform], men under rapporteringen sammanfogas posterna med händelsesammanfognings-ID:t och visas som en enda händelse.
+Genom att skicka samma värde för alternativet `mergeId` till båda händelsekommandona i det här exemplet utökas data i det andra händelsekommandot till data som tidigare skickats vid det första händelsekommandot. En post för varje händelsekommando skapas i [!DNL Experience Data Platform], men under rapporteringen sammanfogas posterna med händelseläget sammanfognings-ID och visas som en enda händelse.
 
 Om du skickar data om en viss händelse till tredjepartsleverantörer kan du även inkludera samma ID för händelsesammanfogning med dessa data. Om du senare väljer att importera data från tredje part till Adobe Experience Platform, kommer ID:t för händelsesammanfogning att användas för att sammanfoga alla data som samlats in som ett resultat av den diskreta händelsen som inträffade på din webbsida.
 
 ## Generera ett ID för händelsesammanfogning
 
-Händelsens sammanfognings-ID kan vara vilken sträng som helst, men kom ihåg att alla händelser som skickas med samma ID rapporteras som en enda händelse, så var försiktig med att framtvinga unika händelser när händelser inte ska sammanfogas. Om du vill att SDK ska generera ett unikt ID för händelsesammanfogning åt dig (i enlighet med den allmänt använda [UID v4-specifikationen](https://www.ietf.org/rfc/rfc4122.txt)) kan du använda `createEventMergeId` kommandot för att göra det.
+Händelsens sammanfognings-ID kan vara vilken sträng som helst, men kom ihåg att alla händelser som skickas med samma ID rapporteras som en enda händelse, så var försiktig med att framtvinga unika händelser när händelser inte ska sammanfogas. Om du vill att SDK ska generera ett unikt ID för händelsesammanfogning åt dig (enligt den ofta använda [UID v4-specifikationen](https://www.ietf.org/rfc/rfc4122.txt)) kan du använda kommandot `createEventMergeId` för att göra det.
 
 Precis som med alla kommandon returneras ett löfte eftersom du kan köra kommandot innan SDK-filen har lästs in. Löftet löses med ett unikt ID för händelsesammanfogning så snart som möjligt. Du kan vänta på att löftet ska lösas innan du skickar data till servern enligt följande:
 
@@ -124,7 +122,7 @@ eventMergeIdPromise.then(function(results) {
 
 ## Kommentarer i XDM-format
 
-I händelsekommandot läggs ID:t för händelsesammanfogning till i nyttolasten på rätt plats för din räkning. `xdm`  Om du vill kan du istället skicka händelsens sammanfognings-ID som en del av `xdm` alternativet, enligt följande:
+I händelsekommandot läggs ID:t för händelsesammanfogning till i `xdm`-nyttolasten på rätt plats å dina vägnar.  Om du vill kan du istället skicka händelsens sammanfognings-ID som en del av alternativet `xdm`, så här:
 
 ```javascript
 alloy("sendEvent", {
@@ -142,4 +140,4 @@ alloy("sendEvent", {
 });
 ```
 
-När du lägger till händelsesammanfognings-ID:t direkt till `xdm` objektet, ska du lägga märke till att namnet `eventMergeID` används i stället för `mergeId`.
+När du lägger till ett ID för händelsesammanfogning direkt till `xdm`-objektet bör du lägga märke till att namnet `eventMergeID` används i stället för `mergeId`.
