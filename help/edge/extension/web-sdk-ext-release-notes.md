@@ -1,20 +1,19 @@
 ---
-title: Adobe Experience Platform Web SDK-tillägg
-seo-title: Adobe Experience Platform Web SDK-tillägg i Adobe Experience Platform Launch
+title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK-tillägg i Adobe Experience Platform Launch
 seo-description: Adobe Experience Platform Web SDK-tillägg i Adobe Experience Platform Launch
 translation-type: tm+mt
-source-git-commit: 56f0b3abd859a6b27f0117fb6ec4c312ca93ba5d
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '970'
+source-wordcount: '988'
 ht-degree: 1%
 
 ---
 
 
-# Versionsinformation för Adobe Experience Platform Web SDK
+# Versionsinformation om Adobe Experience Platform Web SDK-tillägg
 
-[Läs mer: Versionsinformation för Adobe Experience Platform Web SDK](https://docs.adobe.com/content/help/en/experience-platform/edge/release-notes.html)
+Det här dokumentet innehåller versionsinformation för Adobe Experience Platform Web SDK-tillägget för Adobe Experience Platform Launch. Information om den senaste versionen av SDK finns i [Versionsinformationen för Platform Web SDK](https://docs.adobe.com/content/help/en/experience-platform/edge/release-notes.html).
 
 ## 4 november 2020
 
