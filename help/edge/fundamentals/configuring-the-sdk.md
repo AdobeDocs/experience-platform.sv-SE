@@ -1,19 +1,18 @@
 ---
-title: Konfigurera SDK
-seo-title: Konfigurera Adobe Experience Platform Web SDK
-description: Lär dig hur du konfigurerar Experience Platform Web SDK
+title: Konfigurera Adobe Experience Platform Web SDK
+description: Lär dig hur du konfigurerar Adobe Experience Platform Web SDK.
 seo-description: Lär dig hur du konfigurerar Experience Platform Web SDK
-keywords: konfigurera;konfiguration;SDK;edge;Web SDK;konfigurera;edgeConfigId;context;web;device;environment;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;web sdk settings;prehideStyle;opacity;cookieDestinationsEnabled;url DestinationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
+keywords: konfigurera;konfiguration;SDK;edge;Web SDK;konfigurera;edgeConfigId;context;web;device;environment;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;web sdk settings;prehideStyle;opacity;cookieDestinationsEnabled;urlDestal inationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 translation-type: tm+mt
-source-git-commit: 3ac00fda2c0a43437fb212dcba7e98c63503b9c4
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '740'
-ht-degree: 5%
+source-wordcount: '741'
+ht-degree: 4%
 
 ---
 
 
-# Konfigurera SDK
+# Konfigurera Platform Web SDK
 
 Konfigurationen för SDK görs med kommandot `configure`.
 
