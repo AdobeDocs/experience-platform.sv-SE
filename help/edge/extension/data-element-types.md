@@ -1,10 +1,10 @@
 ---
-title: Dataelementtyper för plattforms-SDK-tillägg
-description: Adobe Experience Platform SDK-tilläggsdataelementtyper i Adobe Experience Platform Launch
+title: Dataelementtyper i Adobe Experience Platform Web SDK-tillägget
+description: Lär dig mer om de olika dataelementtyperna i Adobe Experience Platform Web SDK-tillägget i Adobe Experience Platform Launch.
 translation-type: tm+mt
-source-git-commit: 473cc1f7617f1d65cdb70ff0e758178ea0174f00
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '318'
 ht-degree: 0%
 
 ---
