@@ -1,19 +1,17 @@
 ---
-title: Översikt över IAB Transparency & Consent Framework 2.0
-seo-title: Stöd för Adobe Experience Platform Web SDK-medgivanden från Interactive Advertising Bureau Transparency & Consent Framework 2.0
-description: Lär dig hur du stöder IAB TCF 2.0-medgivanden med Experience Platform Web SDK
-seo-description: Lär dig hur du stöder IAB TCF 2.0-medgivanden med Experience Platform Web SDK
+title: Stöd för IAB TCF 2.0 i Adobe Experience Platform Web SDK
+description: Lär dig hur du kan använda IAB TCF 2.0-medgivandeinställningar med Adobe Experience Platform Web SDK
 keywords: samtycke;setConsent;Profile Privacy Mixin;Experience Event Privacy Mixin;Privacy Mixin;IAB TCF 2.0;Real-time CDP;Real-time Customer Data Profile
 translation-type: tm+mt
-source-git-commit: 49c984a60fd699706eec508ec1d786340df40b57
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '894'
+source-wordcount: '878'
 ht-degree: 0%
 
 ---
 
 
-# Översikt över IAB Transparency &amp; Consent Framework 2.0
+# Stöd för IAB TCF 2.0 i Adobe Experience Platform Web SDK
 
 Adobe Experience Platform Web SDK har stöd för Interactive Advertising Bureau Transparency &amp; Consent Framework, version 2.0 (IAB TCF 2.0). Den här guiden visar kraven för stöd av IAB TCF 2.0 via Adobe Experience Platform Web SDK som är integrerat med kunddataplattformen, Audience Manager, Experience Events, Adobe Analytics och Experience Edge i realtid.
 
