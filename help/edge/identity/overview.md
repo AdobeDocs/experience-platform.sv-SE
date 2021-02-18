@@ -1,19 +1,18 @@
 ---
-title: Hämtar Experience Cloud ID
-seo-title: Adobe Experience Platform Web SDK Hämtar Experience Cloud-ID
-description: Lär dig hur du skaffar Adobe Experience Cloud ID.
+title: Hämta Experience Cloud-ID:n med Adobe Experience Platform Web SDK
+description: Lär dig hur du hämtar Adobe Experience Cloud-ID:n (ECID) med Adobe Experience Platform Web SDK.
 seo-description: Lär dig hur du skaffar Adobe Experience Cloud ID.
 keywords: Identitet;Första parts identitet;Identitetstjänst;Tredjepartsidentitet;ID-migrering;Besökar-ID;Tredjepartsidentitet;Tredje parts-cookiesEnabled;idMigrationEnabled;getIdentity;Syncing Identities;syncIdentity;sendEvent;identityMap;primär;ecid;Identity Namespace id;authenticationState;hashEnabled;
 translation-type: tm+mt
-source-git-commit: 3ac00fda2c0a43437fb212dcba7e98c63503b9c4
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '918'
+source-wordcount: '923'
 ht-degree: 0%
 
 ---
 
 
-# Identitet - Hämtar Experience Cloud-ID
+# Hämta Adobe Experience Cloud ID:n
 
 Adobe Experience Platform Web SDK använder [Adobe Identity Service](../../identity-service/ecid.md). Detta garanterar att varje enhet har en unik identifierare som är beständig på enheten så att aktiviteten mellan sidorna kan knytas ihop.
 
