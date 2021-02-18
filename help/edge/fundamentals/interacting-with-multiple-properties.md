@@ -1,13 +1,11 @@
 ---
-title: Interagera med flera egenskaper
-seo-title: Adobe Experience Platform Web SDK Interagera med flera egenskaper
-description: Lär dig hur du interagerar med flera Experience Platform Web SDK-egenskaper
-seo-description: Lär dig hur du interagerar med flera Experience Platform Web SDK-egenskaper
-keywords: multiple properties;configure;sendEvent;edgeConfigId;orgId;
+title: Interagera med flera egenskaper i Adobe Experience Platform Web SDK
+description: Lär dig hur du interagerar med flera Experience Platform Web SDK-egenskaper.
+keywords: flera egenskaper;konfigurera;sendEvent;edgeConfigId;orgId;
 translation-type: tm+mt
-source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '252'
+source-wordcount: '245'
 ht-degree: 0%
 
 ---
@@ -21,7 +19,7 @@ I vissa fall kanske du vill interagera med två olika egenskaper på samma sida.
 * Datadelningsrelationer mellan flera företag
 * Kunder som testar nya Adobe-lösningar och inte vill störa sin befintliga implementering
 
-Med SDK kan du skapa en separat instans för varje egenskap genom att lägga till ett annat namn till arrayen i baskoden. I följande exempel har vi angett två namn `mycustomname1` och `mycustomname2`.
+Med SDK kan du skapa en separat instans för varje egenskap genom att lägga till ett annat namn till arrayen i baskoden. I följande exempel har vi angett två namn, `mycustomname1` och `mycustomname2`.
 
 ```markup
 <script>
@@ -33,9 +31,9 @@ Med SDK kan du skapa en separat instans för varje egenskap genom att lägga til
 <script src="alloy.js" async></script>
 ```
 
-Därför skapar skriptet två instanser av SDK. Den globala funktionen för interaktion med den första instansen namnges `mycustomname1` och den globala funktionen för interaktion med den andra instansen namnges `mycustomname2`.
+Därför skapar skriptet två instanser av SDK. Den globala funktionen för interaktion med den första instansen heter `mycustomname1` och den globala funktionen för interaktion med den andra instansen heter `mycustomname2`.
 
-Genom att skapa två separata instanser kan varje instans konfigureras för en annan egenskap. All kommunikation eller databeständighet som uppstår på grund av interaktion med `mycustomname1` hålls isolerad från `mycustomname2` och vice versa.
+Genom att skapa två separata instanser kan varje instans konfigureras för en annan egenskap. All kommunikation eller databeständighet som inträffar på grund av interaktion med `mycustomname1` hålls isolerad från `mycustomname2` och vice versa.
 
 I följande exempel kan du köra kommandon med var och en av instanserna:
 
@@ -63,7 +61,7 @@ mycustomname2("sendEvent", {
 });
 ```
 
-Var noga med att köra `configure` kommandot för varje instans innan du kör andra kommandon på samma instans.
+Var noga med att köra kommandot `configure` för varje instans innan du kör andra kommandon på samma instans.
 
 ## Begränsningar
 
