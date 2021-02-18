@@ -6,23 +6,23 @@ user-guide-title: Hjälp för Adobe Experience Platform Web SDK
 breadcrumb-title: Web SDK Guide
 user-guide-description: Interagera med Experience Cloud via Edge Network.
 translation-type: tm+mt
-source-git-commit: 090050d89c628d82ebe1da6625a2ef1f2adf3e6c
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '149'
-ht-degree: 12%
+source-wordcount: '142'
+ht-degree: 15%
 
 ---
 
 
 # Webb-SDK för Adobe Experience Platform {#edge}
 
-* [Web SDK - översikt](home.md)
+* [SDK för plattform](home.md)
 * Grundläggande {#fundamentals}
-   * [Förutsättning](fundamentals/prerequisite.md)
-   * [Konfigurera Edge](fundamentals/edge-configuration.md)
+   * [Förutsättningar](fundamentals/prerequisite.md)
+   * [Skapa en kantkonfiguration](fundamentals/edge-configuration.md)
    * [Installera SDK](fundamentals/installing-the-sdk.md)
    * [Konfigurera SDK](fundamentals/configuring-the-sdk.md)
-   * [Utföra kommandon](fundamentals/executing-commands.md)
+   * [Kör kommandon](fundamentals/executing-commands.md)
    * [Spåra händelser](fundamentals/tracking-events.md)
    * [Felsökning](fundamentals/debugging.md)
    * [Sammanfoga händelsedata](fundamentals/merging-event-data.md)
@@ -34,18 +34,18 @@ ht-degree: 12%
    * [Spåra länkar](data-collection/track-links.md)
    * [Samla in data om handel och produkter](data-collection/collect-commerce-data.md)
    * Adobe Analytics {#adobe-analytics}
-      * [Analytics - översikt](data-collection/adobe-analytics/analytics-overview.md)
-      * [Mappa variabler manuellt i Adobe Analytics](data-collection/adobe-analytics/manually-mapping-variables.md)
+      * [Översikt](data-collection/adobe-analytics/analytics-overview.md)
+      * [Mappningsanalysvariabler](data-collection/adobe-analytics/manually-mapping-variables.md)
       * [Automatiskt mappade variabler](data-collection/adobe-analytics/automatically-mapped-vars.md)
-      * [Skicka data till Adobe Analytics](data-collection/adobe-analytics/sending-data-to-analytics.md)
+      * [Skicka data till Analytics](data-collection/adobe-analytics/sending-data-to-analytics.md)
 * Personanpassning {#personalization}
    * [Återge personaliserat innehåll](personalization/rendering-personalization-content.md)
    * [Hantera flimmer](personalization/manage-flicker.md)
    * Adobe Target {#adobe-target}
-      * [Målöversikt](personalization/adobe-target/target-overview.md)
-      * [Implementering av Single Page-program](personalization/adobe-target/spa-implementation.md)
+      * [Översikt](personalization/adobe-target/target-overview.md)
+      * [Programimplementering på en sida](personalization/adobe-target/spa-implementation.md)
    * Offer Decisioning {#offer-decisioning}
-      * [Offer Decisioning - översikt](personalization/offer-decisioning/offer-decisioning-overview.md)
+      * [Översikt](personalization/offer-decisioning/offer-decisioning-overview.md)
 * Samtycke {#consent}
    * [Godkännande](consent/supporting-consent.md)
    * IAB Transparency och Consent Framework 2.0 {#iab-tcf}
