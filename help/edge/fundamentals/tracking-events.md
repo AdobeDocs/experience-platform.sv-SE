@@ -1,13 +1,11 @@
 ---
-title: Spåra händelser
-seo-title: Spåra Adobe Experience Platform Web SDK-händelser
-description: Lär dig spåra Experience Platform Web SDK-händelser
-seo-description: Lär dig spåra Experience Platform Web SDK-händelser
+title: Spåra händelser med Adobe Experience Platform Web SDK
+seo-description: Lär dig spåra Adobe Experience Platform Web SDK-händelser.
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon;send Beacon;documentUnloading;document Unloading;onBeforeEventSend;
 translation-type: tm+mt
-source-git-commit: 51a846124f71012b2cb324cc1469ec7c9753e574
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '1331'
+source-wordcount: '1334'
 ht-degree: 0%
 
 ---
@@ -15,7 +13,7 @@ ht-degree: 0%
 
 # Spåra händelser
 
-Använd `sendEvent` kommandot om du vill skicka händelsedata till Adobe Experience Cloud. Kommandot `sendEvent` är det primära sättet att skicka data till [!DNL Experience Cloud]och hämta personaliserat innehåll, identiteter och målgruppsmål.
+Om du vill skicka händelsedata till Adobe Experience Cloud använder du kommandot `sendEvent`. Kommandot `sendEvent` är det primära sättet att skicka data till [!DNL Experience Cloud] och att hämta personaliserat innehåll, identiteter och målgruppsmål.
 
 Data som skickas till Adobe Experience Cloud kan delas in i två kategorier:
 
@@ -26,7 +24,7 @@ Data som skickas till Adobe Experience Cloud kan delas in i två kategorier:
 
 XDM-data är ett objekt vars innehåll och struktur matchar ett schema som du har skapat i Adobe Experience Platform. [Läs mer om hur du skapar ett schema.](../../xdm/tutorials/create-schema-ui.md)
 
-Alla XDM-data som du vill ingå i dina analyser, personaliseringar, målgrupper eller mål ska skickas med `xdm` alternativet.
+Alla XDM-data som du vill ingå i dina analyser, personaliseringar, målgrupper eller mål ska skickas med alternativet `xdm`.
 
 
 ```javascript
@@ -44,7 +42,7 @@ alloy("sendEvent", {
 });
 ```
 
-En tid kan gå mellan när `sendEvent` kommandot körs och när data skickas till servern (till exempel om Web SDK-biblioteket inte har lästs in fullständigt eller om samtycke ännu inte har tagits emot). Om du tänker ändra någon del av `xdm` objektet efter att du har kört `sendEvent` kommandot rekommenderar vi att du klonar `xdm` objektet _innan_ du kör `sendEvent` kommandot. Exempel:
+Det kan gå en stund mellan när kommandot `sendEvent` körs och när data skickas till servern (till exempel om Web SDK-biblioteket inte har lästs in fullständigt eller om samtycke ännu inte har tagits emot). Om du tänker ändra någon del av `xdm`-objektet efter att du har kört kommandot `sendEvent` rekommenderar vi att du klonar `xdm`-objektet _innan du_ kör kommandot `sendEvent`. Exempel:
 
 ```javascript
 var clone = function(value) {
@@ -71,7 +69,7 @@ alloy("sendEvent", {
 dataLayer.commerce = null;
 ```
 
-I det här exemplet klonas datalagret genom att serialisera det till JSON och sedan deserialisera det. Därefter skickas det klonade resultatet till `sendEvent` kommandot. Om du gör det ser du till att `sendEvent` kommandot har en ögonblicksbild av datalagret så som det var när `sendEvent` kommandot kördes, så att senare ändringar av det ursprungliga datalagret inte återspeglas i data som skickas till servern. Om du använder ett händelsestyrt datalager hanteras kloningen av dina data troligtvis redan automatiskt. Om du till exempel använder [Adobe-klientdatalagret](https://github.com/adobe/adobe-client-data-layer/wiki)`getState()` , ger metoden en beräknad, klonad ögonblicksbild av alla tidigare ändringar. Detta hanteras också automatiskt om du använder AEP Web SDK Launch-tillägget.
+I det här exemplet klonas datalagret genom att serialisera det till JSON och sedan deserialisera det. Sedan skickas det klonade resultatet till kommandot `sendEvent`. Om du gör det ser du till att kommandot `sendEvent` har en ögonblicksbild av datalagret som det var när kommandot `sendEvent` kördes så att senare ändringar av det ursprungliga datalagret inte återspeglas i data som skickas till servern. Om du använder ett händelsestyrt datalager hanteras kloningen av dina data troligtvis redan automatiskt. Om du till exempel använder [Adobe-klientdatalagret](https://github.com/adobe/adobe-client-data-layer/wiki), ger metoden `getState()` en beräknad, klonad ögonblicksbild av alla tidigare ändringar. Detta hanteras också automatiskt om du använder AEP Web SDK Launch-tillägget.
 
 >[!NOTE]
 >
@@ -83,7 +81,7 @@ För närvarande stöds inte sändning av data som inte matchar ett XDM-schema. 
 
 ### Inställning `eventType`
 
-I en XDM-upplevelsehändelse finns det ett valfritt `eventType` fält. Detta innehåller postens primära händelsetyp. Genom att ange en händelsetyp kan du skilja mellan olika händelser som du skickar in. XDM innehåller flera fördefinierade händelsetyper som du kan använda eller så skapar du alltid egna anpassade händelsetyper för dina användningsfall. Nedan visas en lista med alla fördefinierade händelsetyper som tillhandahålls av XDM. [Läs mer i XDM:s offentliga rapport](https://github.com/adobe/xdm/blob/master/docs/reference/behaviors/time-series.schema.md#xdmeventtype-known-values).
+I en XDM-upplevelsehändelse finns det ett valfritt `eventType`-fält. Detta innehåller postens primära händelsetyp. Genom att ange en händelsetyp kan du skilja mellan olika händelser som du skickar in. XDM innehåller flera fördefinierade händelsetyper som du kan använda eller så skapar du alltid egna anpassade händelsetyper för dina användningsfall. Nedan visas en lista med alla fördefinierade händelsetyper som tillhandahålls av XDM. [Läs mer i XDM:s offentliga rapport](https://github.com/adobe/xdm/blob/master/docs/reference/behaviors/time-series.schema.md#xdmeventtype-known-values).
 
 
 | **Händelsetyp:** | **Definition:** |
@@ -112,7 +110,7 @@ I en XDM-upplevelsehändelse finns det ett valfritt `eventType` fält. Detta inn
 | delivery.feedback | Feedback-händelser för leverans. Exempel på feedback-händelser för e-postleverans |
 
 
-De här händelsetyperna visas i en listruta om du använder Adobe Experience Platform Launch-tillägget eller så kan du alltid skicka dem utan Experience Platform Launch. De kan skickas in som en del av `xdm` alternativet.
+De här händelsetyperna visas i en listruta om du använder Adobe Experience Platform Launch-tillägget eller så kan du alltid skicka dem utan Experience Platform Launch. De kan skickas som en del av `xdm`-alternativet.
 
 
 ```javascript
@@ -131,7 +129,7 @@ alloy("sendEvent", {
 });
 ```
 
-Alternativt kan `eventType` händelsen skickas till händelsekommandot med hjälp av `type` alternativet . Bakom scenerna läggs detta till i XDM-data. Med alternativet `type` som kan du enkelt ställa in `eventType` utan att behöva ändra XDM-nyttolasten.
+Alternativt kan du skicka `eventType` till händelsekommandot med alternativet `type`. Bakom scenerna läggs detta till i XDM-data. Om du har `type` som ett alternativ kan du enkelt ställa in `eventType` utan att behöva ändra XDM-nyttolasten.
 
 
 ```javascript
@@ -145,7 +143,7 @@ alloy("sendEvent", {
 
 ### Åsidosätta datauppsättnings-ID
 
-I vissa fall kanske du vill skicka en händelse till en annan datauppsättning än den som konfigurerats i konfigurationsgränssnittet. Därför måste du ange alternativet `datasetId` för `sendEvent` kommandot:
+I vissa fall kanske du vill skicka en händelse till en annan datauppsättning än den som konfigurerats i konfigurationsgränssnittet. Därför måste du ange alternativet `datasetId` för kommandot `sendEvent`:
 
 
 ```javascript
@@ -160,11 +158,11 @@ alloy("sendEvent", {
 
 ### Lägga till identitetsinformation
 
-Du kan även lägga till anpassad identitetsinformation till händelsen. Se [Hämta Experience Cloud-ID](../identity/overview.md).
+Du kan även lägga till anpassad identitetsinformation till händelsen. Se [Hämta Experience Cloud ID](../identity/overview.md).
 
 ## Använda API:t sendBeacon
 
-Det kan vara svårt att skicka händelsedata precis innan webbsidans användare har navigerat. Om begäran tar för lång tid kan webbläsaren avbryta den. Vissa webbläsare har implementerat ett webbläsar-API som anropas `sendBeacon` för att göra det enklare att samla in data under tiden. När webbläsaren använder `sendBeacon`den görs en webbförfrågan i det globala webbläsarsammanhanget. Det innebär att webbläsaren gör beacon-begäran i bakgrunden och inte håller upp sidnavigeringen. Om du vill ange att Adobe Experience Platform [!DNL Web SDK] ska använda `sendBeacon`lägger du till alternativet `"documentUnloading": true` i händelsekommandot.  Här är ett exempel:
+Det kan vara svårt att skicka händelsedata precis innan webbsidans användare har navigerat. Om begäran tar för lång tid kan webbläsaren avbryta den. Vissa webbläsare har implementerat ett webbstandard-API med namnet `sendBeacon` så att data enklare kan samlas in under den här tiden. När du använder `sendBeacon` gör webbläsaren en webbförfrågan i den globala webbläsarkontexten. Det innebär att webbläsaren gör beacon-begäran i bakgrunden och inte håller upp sidnavigeringen. Om du vill att Adobe Experience Platform [!DNL Web SDK] ska använda `sendBeacon` lägger du till alternativet `"documentUnloading": true` i händelsekommandot.  Här är ett exempel:
 
 
 ```javascript
@@ -183,7 +181,7 @@ alloy("sendEvent", {
 });
 ```
 
-Webbläsare har angett begränsningar för hur mycket data som kan skickas med `sendBeacon` samtidigt. I många webbläsare är gränsen 64 kB. Om webbläsaren avvisar händelsen eftersom nyttolasten är för stor återgår Adobe Experience Platform [!DNL Web SDK] till att använda sin normala transportmetod (till exempel hämta).
+Webbläsare har angett gränser för hur mycket data som kan skickas med `sendBeacon` samtidigt. I många webbläsare är gränsen 64 kB. Om webbläsaren avvisar händelsen eftersom nyttolasten är för stor återgår Adobe Experience Platform [!DNL Web SDK] till att använda sin normala transportmetod (till exempel hämta).
 
 ## Hantera svar från händelser
 
@@ -213,7 +211,7 @@ alloy("sendEvent", {
 
 ## Ändra händelser globalt {#modifying-events-globally}
 
-Om du vill lägga till, ta bort eller ändra fält från händelsen globalt, kan du konfigurera ett `onBeforeEventSend` återanrop.  Det här återanropet anropas varje gång en händelse skickas.  Det här återanropet skickas i ett händelseobjekt med ett `xdm` fält.  Ändra `event.xdm` om du vill ändra data som skickas i händelsen.
+Om du vill lägga till, ta bort eller ändra fält från händelsen globalt kan du konfigurera ett `onBeforeEventSend`-återanrop.  Det här återanropet anropas varje gång en händelse skickas.  Det här återanropet skickas i ett händelseobjekt med ett `xdm`-fält.  Ändra `event.xdm` om du vill ändra data som skickas i händelsen.
 
 
 ```javascript
@@ -235,9 +233,9 @@ alloy("configure", {
 
 1. Värden som skickas som alternativ till händelsekommandot `alloy("sendEvent", { xdm: ... });`
 2. Automatiskt insamlade värden.  (Se [Automatisk information](../data-collection/automatic-information.md).)
-3. Ändringarna som har gjorts i `onBeforeEventSend` återanropet.
+3. Ändringarna som gjorts i `onBeforeEventSend`-återanropet.
 
-Om återanropet genererar ett undantag skickas händelsen fortfarande. `onBeforeEventSend` Inga av de ändringar som gjordes i återanropet tillämpas emellertid på den sista händelsen.
+Om `onBeforeEventSend`-återanropet genererar ett undantag skickas händelsen fortfarande; Inga av de ändringar som gjordes i återanropet tillämpas emellertid på den sista händelsen.
 
 ## Möjliga åtgärdbara fel
 
