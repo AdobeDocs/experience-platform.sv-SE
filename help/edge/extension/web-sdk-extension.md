@@ -1,18 +1,16 @@
 ---
-title: Adobe Experience Platform Web SDK-tillägg
-seo-title: Adobe Experience Platform Web SDK-tillägg i Adobe Experience Platform Launch
-description: Adobe Experience Platform Web SDK-tillägg i Adobe Experience Platform Launch
-seo-description: Adobe Experience Platform Web SDK Extension Adobe Experience Platform Launch
+title: Adobe Experience Platform Web SDK Extension - översikt
+description: Läs mer om Adobe Experience Platform Web SDK-tillägget för Adobe Experience Platform Launch
 translation-type: tm+mt
-source-git-commit: 473cc1f7617f1d65cdb70ff0e758178ea0174f00
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '622'
+source-wordcount: '603'
 ht-degree: 0%
 
 ---
 
 
-# Adobe Experience Platform Web SDK-tillägg för Platform Launch
+# Adobe Experience Platform Web SDK-tillägg - översikt
 
 Adobe Experience Platform Web SDK Extension skickar data till Adobe Experience Cloud från webbegenskaper via Adobe Experience Platform Edge Network. Med Adobe Experience Platform Web SDK-tillägget kan du strömma data till olika plattformar, synkronisera identiteter, anmäla dig och automatiskt samla in kontextdata.
 
