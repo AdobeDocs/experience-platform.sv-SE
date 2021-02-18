@@ -1,13 +1,11 @@
 ---
-title: Stöd för webbläsare i appen
-seo-title: Stöd för webbläsare i appen med Adobe Experience Platform Web SDK
-description: Lär dig hur du stöder webbläsare i appen med Experience Platform Web SDK
-seo-description: Lär dig hur du stöder webbläsare i appen med Experience Platform Web SDK
-keywords: in-app browsers;browsers;
+title: Stöd för webbläsare i appen med Adobe Experience Platform Web SDK
+description: Lär dig hur du stöder webbläsare i appen med Adobe Experience Platform Web SDK.
+keywords: webbläsare i appen;webbläsare;
 translation-type: tm+mt
-source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '120'
+source-wordcount: '112'
 ht-degree: 0%
 
 ---
