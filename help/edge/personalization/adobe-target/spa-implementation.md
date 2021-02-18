@@ -1,39 +1,37 @@
 ---
-title: 'Adobe Target och Adobe Experience Platform Web SDK. '
-seo-title: Adobe Experience Platform Web SDK och Adobe Target
-description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Target
-seo-description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Target
+title: Single-page Application Implementation för Adobe Experience Platform Web SDK
+description: Lär dig hur du skapar en single page application (SPA)-implementering av Adobe Experience Platform Web SDK med Adobe Target.
 keywords: mål;adobe target;xdm views; vyer;program för en sida;SPA;SPA livscykel;klientsida;AB-testning;AB;Experience targeting;XT;VEC
 translation-type: tm+mt
-source-git-commit: 3ac00fda2c0a43437fb212dcba7e98c63503b9c4
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '1688'
+source-wordcount: '1665'
 ht-degree: 0%
 
 ---
 
 
-# Implementering av Single Page-program
+# Programimplementering på en sida
 
-Adobe Experience Platform Web SDK innehåller många funktioner som gör det möjligt för ditt företag att utföra personalisering på nästa generations klientteknik, som Single Page Applications (SPA).
+Adobe Experience Platform Web SDK innehåller många funktioner som gör det möjligt för ditt företag att utföra personalisering på nästa generations klientteknik, som single-page-applikationer (SPA).
 
 Traditionella webbplatser arbetade på&quot;sida-till-sida&quot;-navigeringsmodeller, som annars kallas för flersidiga program, där webbplatsdesign var nära kopplad till webbadresser och övergångar mellan olika webbsidor kräver en sidladdning.
 
-Moderna webbprogram, som Single Page-program, har i stället antagit en modell som möjliggör snabb användning av webbläsargränssnittsåtergivning, som ofta är oberoende av sidomladdning. De här upplevelserna kan triggas av kundinteraktioner som rullningar, klick och markörrörelser. I takt med att de moderna webbens paradigmer har utvecklats fungerar inte längre de traditionella generiska eventernas relevans, till exempel en sidladdning, för personalisering och experimenterande.
+Moderna webbprogram, till exempel ensidiga program, har i stället antagit en modell som möjliggör snabb användning av webbläsargränssnittsåtergivning, som ofta är oberoende av sidomladdning. De här upplevelserna kan triggas av kundinteraktioner som rullningar, klick och markörrörelser. I takt med att de moderna webbens paradigmer har utvecklats fungerar inte längre de traditionella generiska eventernas relevans, till exempel en sidladdning, för personalisering och experimenterande.
 
 ![](assets/spa-vs-traditional-lifecycle.png)
 
 ## Fördelar med Platform Web SDK för SPA
 
-Nedan följer några fördelar med att använda Adobe Experience Platform Web SDK för Single Page-program:
+Nedan följer några fördelar med att använda Adobe Experience Platform Web SDK för dina ensidiga program:
 
 * Möjlighet att cachelagra alla erbjudanden vid sidinläsning för att minska antalet serveranrop till ett enda serveranrop.
 * Förbättra användarupplevelsen på webbplatsen avsevärt eftersom erbjudandena visas direkt via cachen utan fördröjning som introducerats av traditionella serveranrop.
 * Med en enda kodrad och en gång-för-utvecklarkonfiguration kan marknadsförarna skapa och köra A/B- och Experience Targeting-aktiviteter (XT) via Visual Experience Composer (VEC) på era SPA.
 
-## XDM-vyer och enkelsidiga program
+## XDM-vyer och ensidiga program
 
-Adobe Target VEC for SPA utnyttjar konceptet Views: en logisk grupp visuella element som tillsammans utgör en SPA. Ett enda sidprogram kan därför betraktas som en övergång via Vyer, i stället för URL:er, baserat på användarinteraktioner. En vy kan vanligtvis representera en hel plats eller grupperade visuella element inom en plats.
+Adobe Target VEC for SPA utnyttjar konceptet Views: en logisk grupp visuella element som tillsammans utgör en SPA. Ett enkelsidigt program kan därför betraktas som en övergång via Vyer i stället för som URL-adresser baserade på användarinteraktioner. En vy kan vanligtvis representera en hel plats eller grupperade visuella element inom en plats.
 
 För att ytterligare förklara vad Vyer är använder följande exempel en hypotetisk e-handelsplats online som implementerats i React för att utforska exempelvyer.
 
@@ -64,7 +62,7 @@ Begreppet Vyer kan utvidgas mycket mer än så. Detta är bara några exempel p�
 XDM-vyer kan användas i Adobe Target för att marknadsförarna ska kunna köra A/B- och XT-tester på SPA via Visual Experience Composer. Detta kräver att du utför följande steg för att slutföra en engångsinstallation av en utvecklare:
 
 1. Installera [Adobe Experience Platform Web SDK](../../fundamentals/installing-the-sdk.md)
-2. Avgör alla XDM-vyer i Single Page-programmet som du vill anpassa.
+2. Bestäm alla XDM-vyer i ditt enkelsidiga program som du vill anpassa.
 3. När du har definierat XDM-vyerna implementerar du funktionen `sendEvent()` med `renderDecisions` inställd på `true` och motsvarande XDM-vy i Single Page-programmet för att kunna leverera AB- eller XT VEC-aktiviteter. XDM-vyn måste skickas i `xdm.web.webPageDetails.viewName`. I det här steget kan marknadsförarna använda Visual Experience Composer för att starta A/B- och XT-tester för dessa XDM.
 
    ```javascript
@@ -219,7 +217,7 @@ class Checkout extends Component {
 
 ## Använda Visual Experience Composer för en SPA
 
-När du har definierat dina XDM-vyer och implementerat `sendEvent()` med de XDM-vyer som skickats in, kan VEC identifiera dessa vyer och låta användare skapa åtgärder och ändringar för A/B- eller XT-aktiviteter.
+När du har definierat dina XDM-vyer och implementerat `sendEvent()` med de XDM-vyer som har skickats in, kan VEC identifiera dessa vyer och låta användare skapa åtgärder och ändringar för A/B- eller XT-aktiviteter.
 
 >[!NOTE]
 >
