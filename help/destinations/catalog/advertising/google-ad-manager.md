@@ -3,9 +3,9 @@ keywords: Google ad manager;google ad;dubbelklicka;DoubleClick AdX;DoubleClick;G
 title: Google Ad Manager-anslutning
 description: 'Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar.  '
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
 workflow-type: tm+mt
-source-wordcount: '658'
+source-wordcount: '654'
 ht-degree: 0%
 
 ---
@@ -68,7 +68,7 @@ I steget **Konfigurera** i arbetsflödet för att skapa mål fyller du i [!UICON
    * Använd `DFP by Google` för [!DNL DoubleClick] för utgivare
    * Använd `AdX buyer` för [!DNL Google AdX]
 * **[!UICONTROL Account ID]**: Fyll i ditt konto-ID med  [!DNL Google]. Detta kan vara ditt nätverks-ID eller ditt Audience Link-ID. Vanligtvis är detta ett åttasiffrigt ID.
-* **[!UICONTROL Marketing use case]**: Fall av marknadsanvändning anger avsikten för vilken data ska exporteras till destinationen. Du kan välja bland Adobe-definierade användningsfall för marknadsföring eller skapa ett eget marknadsföringsexempel. Mer information om användningsfall för marknadsföring finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
+* **[!UICONTROL Marketing action]**: Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
 
 >[!NOTE]
 >
