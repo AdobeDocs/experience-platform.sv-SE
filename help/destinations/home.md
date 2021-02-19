@@ -5,9 +5,9 @@ seo-title: Översikt över mål
 description: Lär dig hur du aktiverar Adobe Experience Platform-data till destinationer för flerkanalskampanjer, e-postmeddelanden, riktad reklam och mycket annat.
 seo-description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda Destinationer i Adobe Experience Platform för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 translation-type: tm+mt
-source-git-commit: 2efdefc69c937c70f6a463113a73ca71d8998e14
+source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
 workflow-type: tm+mt
-source-wordcount: '493'
+source-wordcount: '489'
 ht-degree: 1%
 
 ---
@@ -53,12 +53,12 @@ Mer information om åtkomstkontroller finns i [Användarhandboken för åtkomstk
 
 Datastyrningen används för plattformsdestinationer genom:
 
-* *Marknadsföringsanvändningsfall* som du kan välja i arbetsflödet för att skapa destinationer;
-* *Dataanvändningsprinciper* som begränsar möjligheten att aktivera data som innehåller vissa användningsetiketter till destinationer med vissa användningsfall för marknadsföring.
+* *Marknadsföringsåtgärder* som du kan välja i arbetsflödet för att skapa destinationer;
+* *Dataanvändningsprinciper* som begränsar möjligheten att aktivera data som innehåller vissa användningsetiketter för destinationer med vissa marknadsföringsåtgärder.
 
-Se [!DNL Data Governance] i plattformsdokumentationen för mer information om [användningsfall för marknadsföring](../data-governance/policies/overview.md) och [lösning av datapolicyöverträdelser](../data-governance/enforcement/auto-enforcement.md).
+Mer information om [marknadsföringsåtgärder](../data-governance/policies/overview.md) och [hur du löser datapolicyöverträdelser](../data-governance/enforcement/auto-enforcement.md) finns i [!DNL Data Governance] i dokumentationen för plattformen.
 
-Mer information om hur du väljer användningsfall för marknadsföring i arbetsflödet för att skapa mål finns på följande sidor för de olika måltyperna i Platform:
+Mer information om hur du väljer marknadsföringsåtgärder i arbetsflödet för att skapa mål finns på följande sidor för de olika måltyperna i Platform:
 
 * [Annonsmål - Google Ad Manager  ](./catalog/advertising/google-ad-manager.md)
 * [Annonsmål - Google Ads](./catalog/advertising/google-ads-destination.md)
