@@ -3,9 +3,9 @@ keywords: Reklam. skrivbordet,
 title: The Trade Desk connection
 description: 'Trade Desk är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer för olika annonser, videoklipp och mobila inventeringskällor. '
 translation-type: tm+mt
-source-git-commit: ad025630cbae5c220f5bbd7f55cad70620b6f335
+source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
 workflow-type: tm+mt
-source-wordcount: '506'
+source-wordcount: '501'
 ht-degree: 0%
 
 ---
@@ -59,7 +59,7 @@ I steget [!UICONTROL Authentication] måste du ange [!DNL The Trade Desk] anslut
    * **[!UICONTROL North America West]**
    * **[!UICONTROL Latin America]**
 
-* **[!UICONTROL Marketing use case]**: Fall av marknadsanvändning anger avsikten för vilken data ska exporteras till destinationen. Du kan välja bland Adobe-definierade användningsfall för marknadsföring eller skapa ett eget marknadsföringsexempel. Mer information om användningsfall för marknadsföring finns på sidan [Datastyrning i Adobe Experience Platform](../../../data-governance/policies/overview.md). Mer information om de enskilda Adobe-definierade användningsfallen för marknadsföring finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
+* **[!UICONTROL Marketing action]**: Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns på sidan [Datastyrning i Adobe Experience Platform](../../../data-governance/policies/overview.md). Mer information om de enskilda Adobe-definierade marknadsföringsåtgärderna finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
 
 ![The Trade Desk Authentication Step](../../assets/catalog/advertising/tradedesk/authenticate.png)
 
