@@ -3,9 +3,9 @@ keywords: luftfartygets etikett;luftfartygets destination
 title: Ansluta till luftfartygets taggar
 description: Skicka smidigt data från Adobe till Airship som målgruppstaggar för målinriktning inom Airship.
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
 workflow-type: tm+mt
-source-wordcount: '1138'
+source-wordcount: '1133'
 ht-degree: 0%
 
 ---
@@ -99,7 +99,7 @@ När dina inloggningsuppgifter har bekräftats och Adobe Experience Platform är
 
 I steget **[!UICONTROL Authentication]** anger du ett **[!UICONTROL Name]** och ett **[!UICONTROL Description]** för aktiveringsflödet.
 
-I det här steget kan du även välja ett datacenter i USA eller EU, beroende på vilket [!DNL Airship] datacenter som gäller för det här målet. Välj slutligen ett eller flera användningsfall för marknadsföring för vilka data ska exporteras till målet. Du kan välja bland Adobe-definierade användningsfall för marknadsföring eller skapa egna. Mer information om användningsfall för marknadsföring finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
+I det här steget kan du även välja ett datacenter i USA eller EU, beroende på vilket [!DNL Airship] datacenter som gäller för det här målet. Välj sedan en eller flera **[!UICONTROL Marketing Actions]** som data ska exporteras till målet för. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa egna. Mer information om marknadsföringsåtgärder finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
 
 Välj **[!UICONTROL Create Destination]** när du har fyllt i fälten ovan.
 
