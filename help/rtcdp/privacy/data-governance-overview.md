@@ -1,13 +1,13 @@
 ---
-keywords: data governance rtcdp;rtcdp data governance;real time customer data profile data governance
+keywords: datastyrning rtcdp;rtcdp datastyrning;datastyrning i realtid för kunddataprofil
 title: Datastyrning - översikt
 seo-title: Datastyrning i kunddataplattformen i realtid
 description: 'Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. '
 seo-description: 'Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. '
 translation-type: tm+mt
-source-git-commit: e680191d495e4c33baa8242d40a15b9124eec8cd
+source-git-commit: 5435661d750c4138ea6a2d40619a48236b7b1e4f
 workflow-type: tm+mt
-source-wordcount: '692'
+source-wordcount: '699'
 ht-degree: 0%
 
 ---
@@ -31,17 +31,17 @@ CDP för realtid är byggt på Adobe Experience Platform och därför beskrivs m
 
 Mer information om hur du arbetar med dataanvändningsetiketter finns i användarhandboken [för dataanvändningsetiketter](../../data-governance/labels/overview.md) för Adobe Experience Platform.
 
-## Konfigurera användningsfall för marknadsföring för mål {#destinations}
+## Konfigurera marknadsföringsåtgärder för mål {#destinations}
 
-Du kan ange begränsningar för dataanvändning för ett mål genom att definiera användningsfall för marknadsföring (kallas även marknadsföringsåtgärder) för det målet. Ett användningsfall för marknadsföring för en destination anger avsikten med de data som ska exporteras till den destinationen.
+Du kan ange begränsningar för dataanvändning för ett mål genom att definiera marknadsföringsåtgärder (kallas även för användningsfall för marknadsföring) för det målet. En marknadsföringsåtgärd för ett mål anger avsikten med de data som ska exporteras till det målet.
 
 >[!NOTE]
 >
 >Mer information om marknadsföringsåtgärder och hur de används i dataanvändningsprinciper finns i [översikten över dataanvändningsprinciper](../../data-governance/policies/overview.md) i [!DNL Experience Platform]-dokumentationen.
 
-Genom att definiera användningsfall för marknadsföring på destinationer kan ni se till att profiler och segment som skickas till dessa destinationer följer dataanvändningsprinciperna. Ni bör därför lägga till lämpliga användningsfall för marknadsföring till era destinationer baserat på organisationens behov av att tillämpa policybegränsningar för aktivering.
+Genom att definiera marknadsföringsåtgärder för destinationer kan ni se till att profiler och segment som skickas till dessa destinationer följer dataanvändningsprinciperna. Ni bör därför lägga till lämpliga marknadsföringsåtgärder till era destinationer baserat på organisationens behov av att tillämpa policybegränsningar för aktivering.
 
-Marknadsföringsfall kan bara väljas när du ställer in ett mål för första gången. Beroende på vilken typ av mål du arbetar med visas möjligheten att konfigurera användningsfall för marknadsföring vid olika tillfällen i konfigurationsarbetsflödet. Se [måldokumentationen](../destinations/overview.md) för steg om hur du konfigurerar ditt särskilda mål.
+Marknadsföringsåtgärder kan bara väljas när du ställer in ett mål för första gången. Beroende på vilken typ av mål du arbetar med visas möjligheten att konfigurera marknadsföringsåtgärder vid olika tillfällen i konfigurationsarbetsflödet. Se [måldokumentationen](../destinations/overview.md) för steg om hur du konfigurerar ditt särskilda mål.
 
 ## Hantera dataanvändningsprinciper {#policies}
 
