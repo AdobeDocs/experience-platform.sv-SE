@@ -3,9 +3,9 @@ keywords: strömning,
 title: HTTP-anslutning
 description: Med HTTP-målet i Adobe Experience Platform kan du skicka profildata till HTTP-slutpunkter från tredje part.
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 5435661d750c4138ea6a2d40619a48236b7b1e4f
 workflow-type: tm+mt
-source-wordcount: '455'
+source-wordcount: '509'
 ht-degree: 0%
 
 ---
@@ -58,6 +58,7 @@ I steget [!UICONTROL Authentication] anger du autentiseringsuppgifterna för kon
 - **[!UICONTROL Name]**: Ange ett namn som du känner igen det här målet med i framtiden.
 - **[!UICONTROL Description]**: Ange en beskrivning som hjälper dig att identifiera det här målet i framtiden.
 - **[!UICONTROL Custom Headers]**: Ange eventuella anpassade rubriker som du vill ska ingå i målanropen, enligt följande format:  `header1:value1,header2:value2,...headerN:valueN`.
+- **[!UICONTROL Marketing actions]**: Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns på sidan [Datastyrning i Adobe Experience Platform](/help/data-governance/policies/overview.md). Mer information om de enskilda Adobe-definierade marknadsföringsåtgärderna finns i [Översikt över dataanvändningsprinciper](/help/data-governance/policies/overview.md).
 
 >[!IMPORTANT]
 >
@@ -65,7 +66,7 @@ I steget [!UICONTROL Authentication] anger du autentiseringsuppgifterna för kon
 
 ![HTTP-autentisering](../assets/catalog/http/authenticate.png)
 
-**[!UICONTROL Marketing use case]**: Fall av marknadsanvändning anger avsikten för vilken data ska exporteras till destinationen. Du kan välja bland Adobe-definierade användningsfall för marknadsföring eller skapa ett eget marknadsföringsexempel. Mer information om användningsfall för marknadsföring finns i [Översikt över dataanvändningsprinciper](../../data-governance/policies/overview.md).
+**[!UICONTROL Marketing action]**: Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns i [Översikt över dataanvändningsprinciper](../../data-governance/policies/overview.md).
 
 Klicka på **[!UICONTROL Create destination]**.
 
