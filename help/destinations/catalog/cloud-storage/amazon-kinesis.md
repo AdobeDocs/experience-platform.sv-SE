@@ -3,9 +3,9 @@ keywords: Amazon Kinesis;kinesis destination;kinesis
 title: Amazon Kinesis-anslutning
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
 workflow-type: tm+mt
-source-wordcount: '450'
+source-wordcount: '508'
 ht-degree: 0%
 
 ---
@@ -55,6 +55,7 @@ För [!DNL Amazon Kinesis]-mål anger du följande information i arbetsflödet f
 * **Namn**: Ange ett namn för anslutningen till  [!DNL Amazon Kinesis]
 * **Beskrivning**: Ange en beskrivning för anslutningen till  [!DNL Amazon Kinesis].
 * **ström**: Ange namnet på en befintlig dataström i ditt  [!DNL Amazon Kinesis] konto. Plattformen exporterar data till den här strömmen.
+* **[!UICONTROL Marketing actions]**: Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns på sidan [Datastyrning i Adobe Experience Platform](../../../data-governance/policies/overview.md). Mer information om de enskilda Adobe-definierade marknadsföringsåtgärderna finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
 
 ![Inmatningsfält i autentiseringssteget](../../assets/catalog/cloud-storage/amazon-kinesis/setup.png)
 
