@@ -3,9 +3,9 @@ keywords: Azure-händelsehubbsmål;azure-händelsehubb;azure-händelsehubb
 title: (Beta) Azure Event Hubs-anslutning
 description: Skapa en utgående anslutning i realtid till din Azure Event Hubs-lagring för att strömma data från Experience Platform.
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '535'
 ht-degree: 0%
 
 ---
@@ -55,6 +55,7 @@ För [!DNL Azure Event Hubs]-mål anger du följande information i arbetsflödet
 * **[!UICONTROL Name]**: Ange ett namn för anslutningen till  [!DNL Azure Event Hubs].
 * **[!UICONTROL Description]**: Ange en beskrivning av anslutningen.  Exempel: &quot;Premium tier customers&quot;, &quot;Males interest of kitsnapfing&quot;.
 * **[!UICONTROL eventHubName]**: Ange ett namn för strömmen till ditt  [!DNL Azure Event Hubs] mål.
+* **[!UICONTROL Marketing actions]**: Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns på sidan [Datastyrning i Adobe Experience Platform](../../../data-governance/policies/overview.md). Mer information om de enskilda Adobe-definierade marknadsföringsåtgärderna finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
 
 ![Data som krävs i konfigurationssteget](../../assets/catalog/cloud-storage/event-hubs/setup.png)
 
