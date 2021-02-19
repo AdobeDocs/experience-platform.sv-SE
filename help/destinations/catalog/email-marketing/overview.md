@@ -4,9 +4,9 @@ title: Översikt över destinationer för e-postmarknadsföring
 type: Tutorial
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
 workflow-type: tm+mt
-source-wordcount: '776'
+source-wordcount: '771'
 ht-degree: 0%
 
 ---
@@ -34,13 +34,13 @@ Om du tidigare har konfigurerat en anslutning till ditt mål för e-postmarknads
 - För **SFTP med Lösenord**-anslutningar måste du ange domän, port, användarnamn och lösenord för SFTP-servern.
 - För **SFTP med SSH-nyckel**-anslutningar måste du ange domän, port, användarnamn och SSH-nyckel för SFTP-servern.
 
-Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till dina exporterade filer under **[!UICONTROL Key]**-avsnittet. Observera att den här offentliga nyckeln **måste** skrivas som en Base64-kodad sträng.
+Du kan även bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till dina exporterade filer under **[!UICONTROL Key]**-avsnittet. Observera att den här offentliga nyckeln **måste** skrivas som en Base64-kodad sträng.
 
 I steget **[!UICONTROL Setup]** anger du ett namn och en beskrivning för det nya målet samt filformatet för de exporterade filerna.
 
 Om du valde Amazon S3 som lagringsalternativ i föregående steg anger du namnet på hakparentesen och mappsökvägen i molnlagringsmålet där filerna ska levereras. För alternativet SFTP-lagring anger du den mappsökväg där filerna ska levereras.
 
-I det här steget kan du även välja alla användningsfall för marknadsföring som ska gälla för den här destinationen. Fall av marknadsanvändning anger avsikten för vilken data ska exporteras till destinationen. Du kan välja bland Adobe-definierade användningsfall för marknadsföring eller skapa ett eget marknadsföringsexempel. Mer information om användningsfall för marknadsföring finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
+I det här steget kan du även välja alla marknadsföringsåtgärder som ska gälla för det här målet. Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
 
 ![Steget för e-postkonfiguration](../../assets/catalog/email-marketing/overview/email-setup-step.png)
 
