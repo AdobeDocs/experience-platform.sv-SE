@@ -4,7 +4,7 @@ description: Lär dig hur du konfigurerar Adobe Experience Platform Web SDK.
 seo-description: Lär dig hur du konfigurerar Experience Platform Web SDK
 keywords: konfigurera;konfiguration;SDK;edge;Web SDK;konfigurera;edgeConfigId;context;web;device;environment;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;web sdk settings;prehideStyle;opacity;cookieDestinationsEnabled;urlDestal inationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 85bb984231a3069aad0c63707f5024612181798c
 workflow-type: tm+mt
 source-wordcount: '741'
 ht-degree: 4%
@@ -60,7 +60,7 @@ Anger om felsökning ska vara aktiverat. Om du ställer in den här konfiguratio
 | Synkron validering | Validerar data som samlas in mot schemat och returnerar ett fel i svaret under följande etikett: `collect:error OR success` |
 | Konsolloggning | Gör att felsökningsmeddelanden kan visas i webbläsarens JavaScript-konsol |
 
-### `edgeDomain`
+### `edgeDomain` {#edge-domain}
 
 | **Typ** | **Obligatoriskt** | **Standardvärde** |
 | -------- | ------------ | ------------------ |
@@ -141,7 +141,7 @@ Aktiverar URL-mål för [!DNL Audience Manager], vilket gör det möjligt att br
 
 ## Identitetsalternativ
 
-### `idMigrationEnabled`
+### `idMigrationEnabled` {#id-migration-enabled}
 
 | **Typ** | **Obligatoriskt** | **Standardvärde** |
 | -------- | ------------ | ----------------- |
