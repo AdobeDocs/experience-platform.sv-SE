@@ -5,10 +5,10 @@ user-guide-title: Hjälp om Adobe Experience Platform Data Science Workspace
 breadcrumb-title: Handbok för datavetenskap
 user-guide-description: Använd maskininlärning för att utveckla, utbilda och poängsätta modeller och recept med Adobe Sensei och JupyterLab Notebooks.
 translation-type: tm+mt
-source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
+source-git-commit: fe2872519cfeda8024a5ad62f6a71e854822f858
 workflow-type: tm+mt
-source-wordcount: '233'
-ht-degree: 3%
+source-wordcount: '237'
+ht-degree: 2%
 
 ---
 
@@ -23,6 +23,7 @@ ht-degree: 3%
    * [Dataåtkomst](jupyterlab/access-notebook-data.md)
    * [Analysera era data](jupyterlab/analyze-your-data.md)
    * [Frågetjänst](jupyterlab/query-service.md)
+   * [Analys av experimentella data (EDA)](jupyterlab/eda-notebook.md)
    * [Skapa ett recept](jupyterlab/create-a-recipe.md)
    * [Samarbeta i JupyterLab med Git](jupyterlab/using-git-for-collaboration.md)
 * API för Sensei Machine Learning {#api}
