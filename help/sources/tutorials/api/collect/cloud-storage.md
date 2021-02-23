@@ -2,11 +2,11 @@
 keywords: Experience Platform;hem;populära ämnen;molnlagringsdata
 solution: Experience Platform
 title: Samla in molnlagringsdata med hjälp av källanslutningar och API:er
-topic: overview
-type: Tutorial
+topic: översikt
+type: Självstudiekurs
 description: I den här självstudiekursen beskrivs stegen för att hämta data från ett molnlagringsutrymme från tredje part och föra in dem på plattformen med hjälp av källanslutningar och API:er.
 translation-type: tm+mt
-source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
+source-git-commit: 60a70352c2e13565fd3e8c44ae68e011a1d443a6
 workflow-type: tm+mt
 source-wordcount: '1639'
 ht-degree: 0%
@@ -673,5 +673,6 @@ I följande avsnitt visas de olika anslutningarna till molnlagringskällan och d
 | [!DNL Azure Event Hubs] (Händelsehubbar) | `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
 | [!DNL Azure File Storage] | `be5ec48c-5b78-49d5-b8fa-7c89ec4569b8` |
 | [!DNL Google Cloud Storage] | `32e8f412-cdf7-464c-9885-78184cb113fd` |
-| HDFS | `54e221aa-d342-4707-bcff-7a4bceef0001` |
-| SFTP | `bf367b0d-3d9b-4060-b67b-0d3d9bd06094` |
+| [!DNL HDFS] | `54e221aa-d342-4707-bcff-7a4bceef0001` |
+| [!DNL Oracle Object Storage] | `c85f9425-fb21-426c-ad0b-405e9bd8a46c` |
+| [!DNL SFTP] | `bf367b0d-3d9b-4060-b67b-0d3d9bd06094` |
