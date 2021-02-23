@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;källkopplingar;källanslutning;källor;datakällor;datakällor;datakällanslutning;datakällanslutning
 solution: Experience Platform
 title: Översikt över källkopplingar
-topic: overview
+topic: översikt
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 translation-type: tm+mt
-source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
+source-git-commit: b8f7f6e7f110dc9ebd025cd594fd1a54126ccdf3
 workflow-type: tm+mt
-source-wordcount: '910'
+source-wordcount: '912'
 ht-degree: 0%
 
 ---
@@ -56,6 +56,7 @@ Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du 
 - [[!DNL Azure File Storage] koppling](connectors/cloud-storage/azure-file-storage.md)
 - [[!DNL FTP] koppling](connectors/cloud-storage/ftp.md)
 - [[!DNL Google Cloud Storage] koppling](connectors/cloud-storage/google-cloud-storage.md)
+- [[!DNL Google PubSub] koppling](connectors/cloud-storage/google-pubsub.md)
 - [[!DNL SFTP] koppling](connectors/cloud-storage/sftp.md)
 
 ### CRM (Customer Relationship Management)
