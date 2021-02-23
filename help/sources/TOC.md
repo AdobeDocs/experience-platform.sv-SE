@@ -5,10 +5,10 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 translation-type: tm+mt
-source-git-commit: 17eb7b9cb715d7d8d0d7bce930ddec43259149cc
+source-git-commit: b8f7f6e7f110dc9ebd025cd594fd1a54126ccdf3
 workflow-type: tm+mt
-source-wordcount: '557'
-ht-degree: 4%
+source-wordcount: '563'
+ht-degree: 5%
 
 ---
 
@@ -38,10 +38,11 @@ ht-degree: 4%
       - [Azure File Storage Connector](connectors/cloud-storage/azure-file-storage.md)
       - [FTP-anslutning](connectors/cloud-storage/ftp.md)
       - [Google Cloud Storage Connector](connectors/cloud-storage/google-cloud-storage.md)
+      - [Google PubSub](connectors/cloud-storage/google-pubsub.md)
       - [SFTP-anslutning](connectors/cloud-storage/sftp.md)
       - [Amazon S3 och Azure Blob Connector](connectors/cloud-storage/blob-s3.md)
    - CRM {#crm}
-      - [Microsoft Dynamics-anslutning](connectors/crm/ms-dynamics.md)
+      - [Microsoft Dynamics-koppling](connectors/crm/ms-dynamics.md)
       - [Salesforce-koppling](connectors/crm/salesforce.md)
    - Nöjda kunder {#customer-success}
       - [Salesforce Service Cloud-anslutning](connectors/customer-success/salesforce-service-cloud.md)
@@ -51,7 +52,7 @@ ht-degree: 4%
       - [Apache Hive på Azure HDInsights-kontakten](connectors/databases/hive.md)
       - [Apache Spark på Azure HDInsights-kontakten](connectors/databases/spark.md)
       - [Azure Data Explorer Connector](connectors/databases/data-explorer.md)
-      - [azure synapse Analytics Connector](connectors/databases/synapse-analytics.md)
+      - [azure synapse Analytics-kontakt](connectors/databases/synapse-analytics.md)
       - [Azure Table Storage-koppling](connectors/databases/ats.md)
       - [Koppling till kuchbase](connectors/databases/couchbase.md)
       - [Google BigQuery-koppling](connectors/databases/bigquery.md)
@@ -60,7 +61,7 @@ ht-degree: 4%
       - [IBM DB2-anslutning](connectors/databases/ibm-db2.md)
       - [Microsoft SQL Server-anslutning](connectors/databases/sql-server.md)
       - [MySQL-koppling](connectors/databases/mysql.md)
-      - [Oracle Connector](connectors/databases/oracle.md)
+      - [Oracle-kontakt](connectors/databases/oracle.md)
       - [Phoenix-kontakt](connectors/databases/phoenix.md)
       - [PostgreSQL-koppling](connectors/databases/postgres.md)
    - e-handel {#ecommerce}
@@ -85,6 +86,7 @@ ht-degree: 4%
          - [Azure-fillagring](tutorials/api/create/cloud-storage/azure-file-storage.md)
          - [FTP](tutorials/api/create/cloud-storage/ftp.md)
          - [Google Cloud-lagring](tutorials/api/create/cloud-storage/google.md)
+         - [Google PubSub](tutorials/api/create/cloud-storage/google-pubsub.md)
          - [SFTP](tutorials/api/create/cloud-storage/sftp.md)
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/api/create/crm/ms-dynamics.md)
@@ -165,6 +167,7 @@ ht-degree: 4%
          - [Azure-fillagring](tutorials/ui/create/cloud-storage/azure-file-storage.md)
          - [FTP](tutorials/ui/create/cloud-storage/ftp.md)
          - [Google Cloud-lagring](tutorials/ui/create/cloud-storage/google-cloud-storage.md)
+         - [Google PubSub](tutorials/ui/create/cloud-storage/google-pubsub.md)
          - [SFTP](tutorials/ui/create/cloud-storage/sftp.md)
          - [Amazon S3 och Blob](tutorials/ui/create/cloud-storage/blob-s3.md)
       - CRM {#crm}
