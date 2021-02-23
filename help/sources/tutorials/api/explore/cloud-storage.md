@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;molnlagring;molnlagring
 solution: Experience Platform
 title: Utforska ett högt lagringssystem med API:t för Flow Service
-topic: overview
+topic: översikt
 description: I den här självstudien används API:t för Flow Service för att utforska ett molnlagringssystem från tredje part.
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 60a70352c2e13565fd3e8c44ae68e011a1d443a6
 workflow-type: tm+mt
-source-wordcount: '758'
+source-wordcount: '742'
 ht-degree: 1%
 
 ---
@@ -30,14 +30,15 @@ Följande avsnitt innehåller ytterligare information som du behöver känna til
 
 För att kunna utforska ett molnlagringsutrymme från tredje part med hjälp av [!DNL Platform] API:er måste du ha ett giltigt anslutnings-ID. Om du inte redan har en anslutning till det lagringsutrymme du vill arbeta med kan du skapa en genom följande självstudier:
 
-* [Amazon S3](../create/cloud-storage/s3.md)
-* [Azure Blob](../create/cloud-storage/blob.md)
-* [Azure Data Lake Storage Gen2](../create/cloud-storage/adls-gen2.md)
-* [Azure-fillagring](../create/cloud-storage/azure-file-storage.md)
-* [FTP](../create/cloud-storage/ftp.md)
-* [Google Cloud Store](../create/cloud-storage/google.md)
+* [[!DNL Amazon S3]](../create/cloud-storage/s3.md)
+* [[!DNL Azure Blob]](../create/cloud-storage/blob.md)
+* [[!DNL Azure Data Lake Storage Gen2]](../create/cloud-storage/adls-gen2.md)
+* [[!DNL Azure File Storage]](../create/cloud-storage/azure-file-storage.md)
+* [[!DNL FTP]](../create/cloud-storage/ftp.md)
+* [[!DNL Google Cloud Storage]](../create/cloud-storage/google.md)
 * [HDFS](../create/cloud-storage/hdfs.md)
-* [SFTP](../create/cloud-storage/sftp.md)
+* [[!DNL Oracle Object Storage]](../create/cloud-storage/oracle-object-storage.md)
+* [[!DNL SFTP]](../create/cloud-storage/sftp.md)
 
 ### Läser exempel-API-anrop
 
