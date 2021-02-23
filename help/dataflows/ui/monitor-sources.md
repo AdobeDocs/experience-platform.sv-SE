@@ -1,107 +1,194 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;övervaka konton;övervaka dataflöden;dataflöden;källor
-description: Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du visar befintliga dataflöden från arbetsytan Källor.
+description: I den här självstudiekursen beskrivs hur du övervakar dataflödet med hjälp av både aggregerad övervakningsvy och övervakning mellan tjänster.
 solution: Experience Platform
 title: Övervaka dataflöden för källor i användargränssnittet
-topic: overview
-type: Tutorial
+topic: översikt
+type: Självstudiekurs
 translation-type: tm+mt
-source-git-commit: f8186e467dc982003c6feb01886ed16d23572955
+source-git-commit: 4c668a47e62ba7736dd2d7afe4e71fd015198356
 workflow-type: tm+mt
-source-wordcount: '772'
-ht-degree: 1%
+source-wordcount: '1529'
+ht-degree: 0%
 
 ---
 
 
 # Övervaka dataflöden för källor i användargränssnittet
 
-Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudien beskrivs hur du visar befintliga dataflöden från arbetsytan [!UICONTROL Sources].
+I Adobe Experience Platform hämtas data från en mängd olika källor, som analyseras i Experience Platform och aktiveras till en mängd olika destinationer. Plattformen gör processen att spåra detta potentiellt icke-linjära dataflöde enklare genom att tillhandahålla genomskinlighet med dataflöden.
+
+Kontrollpanelen ger dig en visuell representation av resan för ett dataflöde. Du kan använda en aggregerad övervakningsvy och navigera lodrätt från källnivån, till ett dataflöde och till ett dataflöde, så att du kan visa motsvarande mått som bidrar till ett dataflödes framgång eller fel. Du kan också använda kontrollpanelens kapacitet för övervakning över flera tjänster för att övervaka ett dataflödes resa från en källa, till [!DNL Identity Service] och till [!DNL Profile].
+
+I den här självstudiekursen beskrivs hur du övervakar dataflödet med hjälp av både aggregerad övervakningsvy och övervakning mellan tjänster.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [Källor](../../sources/home.md):  [!DNL Experience Platform] gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av  [!DNL Platform] tjänster.
-- [Sandlådor](../../sandboxes/home.md):  [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda  [!DNL Platform] instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+* [Dataflöden](../home.md): Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, till [!DNL Identity] och [!DNL Profile] och till [!DNL Destinations].
+   * [Dataflödet körs](../../sources/notifications.md): Dataflödeskörningar är återkommande schemalagda jobb som baseras på frekvenskonfigurationen för valda dataflöden.
+* [Källor](../../sources/home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
+* [Identitetstjänst](../../identity-service/home.md): Få en bättre bild av enskilda kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system.
+* [Kundprofil](../../profile/home.md) i realtid: Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-## Övervaka dataflöden
+## Sammanställd övervakningsvy
 
-Logga in på [Experience Platform-gränssnittet](https://platform.adobe.com) och välj sedan **[!UICONTROL Sources]** i den vänstra navigeringen för att komma åt arbetsytan [!UICONTROL Sources]. Välj **[!UICONTROL Dataflows]** i den övre rubriken om du vill visa befintliga dataflöden.
+I [Plattformsgränssnittet](https://platform.adobe.com) väljer du **[!UICONTROL Monitoring]** i den vänstra navigeringen för att komma åt kontrollpanelen [!UICONTROL Monitoring]. Kontrollpanelen [!UICONTROL Monitoring] innehåller mått och information om alla källdata, dataflöden, inklusive insikter om hur datatrafiken från en källa till [!DNL Identity Service] och till [!DNL Profile] fungerar.
 
-![catalog-dataflows](../assets/ui/monitor-sources/catalog-dataflows.png)
+I mitten av kontrollpanelen finns panelen [!UICONTROL Source ingestion], som innehåller mått och diagram som visar data för inmatade poster och poster som misslyckades.
 
-En lista över befintliga dataflöden visas. På den här sidan finns en lista med visningsbara dataflöden, inklusive information om källa, användarnamn, antal dataflöden och status.
+![monitorpanel](../assets/ui/monitor-sources/monitoring-dashboard.png)
 
-Se följande tabell för mer information om status:
+Som standard innehåller de data som visas mängder av konsumtion från de senaste 24 timmarna. Välj **[!UICONTROL Last 24 hours]** om du vill justera tidsramen för de poster som visas.
 
-| Status | Beskrivning |
-| ------ | ----------- |
-| Aktiverad | Statusen `Enabled` anger att ett dataflöde är aktivt och att data hämtas enligt det schema som det tillhandahölls. |
-| Handikappade | Statusen `Disabled` indikerar att ett dataflöde är inaktivt och inte innehåller några data. |
-| Bearbetar | Statusen `Processing` anger att ett dataflöde ännu inte är aktivt. Denna status inträffar ofta omedelbart efter att ett nytt dataflöde har skapats. |
-| Fel | Statusen `Error` anger att aktiveringsprocessen för ett dataflöde har avbrutits. |
+![ändringsdatum](../assets/ui/monitor-sources/change-date.png)
 
-Välj trattsymbolen längst upp till vänster för att sortera.
+Ett kalender-popup-fönster visas med alternativ för alternativa tidsramar för inmatning. Välj **[!UICONTROL Last 30 days]** och välj sedan **[!UICONTROL Apply]**
 
-![dataflows-list](../assets/ui/monitor-sources/dataflows-list.png)
+![adjust-time-frame](../assets/ui/monitor-sources/adjust-timeframe.png)
 
-Sorteringspanelen visas. Välj den källa som du vill komma åt på rullningsmenyn och välj dataflödet i listan till höger. Du kan också markera ellipsknappen (`...`) för att visa fler tillgängliga alternativ för det valda dataflödet.
+Diagrammen är aktiverade som standard och du kan inaktivera dem för att utöka listan med källor nedan. Markera alternativet **[!UICONTROL Metrics and graphs]** om du vill inaktivera diagrammen.
 
-![sort-dataflows](../assets/ui/monitor-sources/dataflows-sort.png)
+![mätvärden](../assets/ui/monitor-sources/metrics-graphs.png)
 
-Sidan **[!UICONTROL Dataflow activity]** innehåller information om antalet poster som har importerats och poster som misslyckats samt information om dataflödets status och bearbetningstid. Välj kalenderikonen ovanför dataflödet för att justera tidsramen för dina inmatningsposter.
+| Intag av källa | Beskrivning |
+| ---------------- | ----------- |
+| [!UICONTROL Records ingested ] | Det totala antalet poster som har importerats. |
+| [!UICONTROL Records failed] | Det totala antalet poster som inte har importerats på grund av datafel. |
+| [!UICONTROL Total failed dataflows] | Det totala antalet dataflöden med statusen `failed`. |
 
-![datflow-activity](../assets/ui/monitor-sources/dataflow-activity.png)
+I listan över källinmatningar visas alla källor som innehåller minst ett befintligt konto. Listan innehåller även information om varje källas intag, antalet misslyckade poster och det totala antalet misslyckade dataflöden baserat på den tidsram som du tillämpade.
 
-I kalendern kan du visa olika tidsramar för inkapslade poster. Du kan välja ett av de två förinställda alternativen [!UICONTROL Last 7 days] eller [!UICONTROL Last 30 days]. Du kan också ange en anpassad tidsram i kalendern. Välj önskad tidsram och välj **[!UICONTROL Apply]** för att fortsätta.
+![källintag](../assets/ui/monitor-sources/source-ingestion.png)
 
-![flödeskalender](../assets/ui/monitor-sources/flow-calendar.png)
+Om du vill sortera igenom listan med källor väljer du **[!UICONTROL My sources]** och väljer sedan önskad kategori i listrutan. Om du till exempel vill fokusera på molnlagring väljer du **[!UICONTROL Cloud storage]**
 
-Som standard visar **[!UICONTROL Dataflow activity]** panelen **[!UICONTROL Properties]** som är associerad med dataflödet. Välj flödeskörningen i listan för att se tillhörande metadata, inklusive information om dess unika körnings-ID.
+![sortera efter kategori](../assets/ui/monitor-sources/sort-by-category.png)
 
-Välj **[!UICONTROL Dataflow run start]** för att komma åt **[!UICONTROL Dataflow run overview]**.
+Om du vill visa alla befintliga dataflöden för alla källor väljer du **[!UICONTROL Dataflows]**.
 
-![körningar](../assets/ui/monitor-sources/run-metadata.png)
+![view-all-dataflows](../assets/ui/monitor-sources/view-all-dataflows.png)
 
-I **[!UICONTROL Dataflow run overview]** visas information om dataflödet, inklusive dess metadata, status för partiellt intag och tilldelat feltröskelvärde. Den övre rubriken innehåller även en felsammanfattning. **[!UICONTROL Error summary]** innehåller det specifika felet på den översta nivån som visar i vilket steg som ett fel uppstod i överföringsprocessen.
+Du kan också ange en källa i sökfältet för att isolera en källa. När du har identifierat källan väljer du filterikonen ![filter](../assets/ui/monitor-sources/filter.png) bredvid den för att visa en lista över de aktiva dataflödena.
 
-![dataflow-run-overview](../assets/ui/monitor-sources/dataflow-run-overview.png)
+![sök](../assets/ui/monitor-sources/search.png)
 
-I följande tabell finns information om fel som kan visas i **[!UICONTROL Error summary]**.
+En lista över dataflöden visas. Om du vill begränsa listan och fokusera på dataflöden med fel väljer du **[!UICONTROL Show failures only]**.
 
-| Fel | Beskrivning |
-| ---------- | ----------- |
-| `CONNECTOR-1001-500` | Ett fel uppstod när data kopierades från en källa. |
-| `CONNECTOR-2001-500` | Ett fel uppstod när kopierade data bearbetades till [!DNL Platform]. Det här felet kan gälla parsning, validering eller omformning. |
+![endast visa-fel](../assets/ui/monitor-sources/show-failures-only.png)
 
-Den nedre halvan av skärmen innehåller information om **[!UICONTROL Dataflow run errors]**. Härifrån kan du även visa de filer som har importerats, förhandsgranska och ladda ned feldiagnostik eller ladda ned filmanifestet.
+Leta reda på det dataflöde som du vill övervaka och välj sedan filterikonen ![filter](../assets/ui/monitor-sources/filter.png) bredvid den för att se mer information om körningsstatus.
 
-Avsnittet **[!UICONTROL Dataflow run errors]** visar felkoden, antalet poster som misslyckades och information som beskriver felet.
+![dataflöde](../assets/ui/monitor-sources/dataflow.png)
 
-Välj **[!UICONTROL Preview error diagnostics]** om du vill se mer information om det här felet.
+På dataflödets körningssida visas information om startdatum, datastorlek, status samt behandlingstid för dataflödet. Markera filterikonen ![filter](../assets/ui/monitor-sources/filter.png) bredvid starttiden för dataflödet för att visa information om dataflödets körning.
 
-![Dataflödeskörningsfel](../assets/ui/monitor-sources/dataflow-run-errors.png)
+![dataflow-run-start](../assets/ui/monitor-sources/dataflow-run-start.png)
 
-Panelen **[!UICONTROL Error diagnostics preview]** visas. På den här skärmen visas specifik information om felet i fråga, inklusive filnamn, felkod, namnet på den kolumn där felet inträffade samt en beskrivning av felet.
+På sidan [!UICONTROL Dataflow run details] visas information om dataflödets metadata, status för partiellt inträde och felsammanfattning. Felsammanfattningen innehåller det specifika felet på den översta nivån som visar i vilket steg som inmatningsprocessen påträffade ett fel.
 
-I det här avsnittet finns även en förhandsgranskning av kolumnen som innehåller felet.
+Bläddra nedåt om du vill se mer specifik information om felet.
 
->[!IMPORTANT]
->
->Om du vill aktivera **[!UICONTROL Error diagnostics preview]** måste du aktivera **[!UICONTROL Partial ingestion]** och **[!UICONTROL Error diagnostics]** när du konfigurerar ett dataflöde. Om du gör det kan systemet skanna alla poster som hämtas under flödeskörningen.
+![dataflöde-run-details](../assets/ui/monitor-sources/dataflow-run-details.png)
 
-![Preview-error-diagnostics](../assets/ui/monitor-sources/preview-error-diagnostics.png)
+Panelen [!UICONTROL Dataflow run errors] visar det specifika fel och den felkod som resulterade i att dataflödet inte kunde matas in. I det här scenariot uppstod ett transformeringsfel för mapparen, vilket resulterade i ett fel på 24 poster.
 
-När du har förhandsgranskat felen kan du välja **[!UICONTROL Download]** på panelen **[!UICONTROL dataflow runs overview]** för att få tillgång till fullständig feldiagnostik och hämta filmanifestet. Mer information finns i dokumenten om [feldiagnostik](../../ingestion/batch-ingestion/partial.md#retrieve-errors) och [hämtning av metadata](../../ingestion/batch-ingestion/partial.md#download-metadata).
+Välj **[!UICONTROL Files]** om du vill ha mer information.
 
-![Preview-error-diagnostics](../assets/ui/monitor-sources/download.png)
+![dataflow-run-errors](../assets/ui/monitor-sources/dataflow-run-errors.png)
 
-Mer information om övervakning av dataflöden och förtäring finns i självstudiekursen om [övervakning av dataflöden för direktuppspelning](../../ingestion/quality/monitor-data-ingestion.md).
+Panelen [!UICONTROL Files] innehåller information om filens namn och sökväg.
+
+Välj **[!UICONTROL Preview error diagnostics]** om du vill få en mer detaljerad representation av felet.
+
+![filer](../assets/ui/monitor-sources/files.png)
+
+Fönstret [!UICONTROL Error diagnostics preview] visas med en förhandsgranskning av upp till 100 fel i dataflödet. Du kan välja **[!UICONTROL Download]** för att hämta ett skrivkommando, som sedan låter dig hämta feldiagnostiken.
+
+När du är klar väljer du **[!UICONTROL Close]**
+
+![feldiagnostik](../assets/ui/monitor-sources/error-diagnostics.png)
+
+Du kan använda det synliga systemet i det övre huvudet för att navigera tillbaka till kontrollpanelen [!UICONTROL Monitoring]. Välj **[!UICONTROL Run start: 2/14/2021, 9:47 PM]** om du vill återgå till föregående sida och välj sedan **[!UICONTROL Dataflow: Loyalty Data Ingestion Demo - Failed]** om du vill återgå till dataflödessidan.
+
+![breadcrumbs](../assets/ui/monitor-sources/breadcrumbs.png)
+
+## Övervakning över flera tjänster
+
+Den övre delen av kontrollpanelen innehåller en representation av inmatningsflödet från källnivån till [!DNL Identity Service] och till [!DNL Profile]. Varje cell innehåller en punktmarkör som anger att det finns fel som inträffade vid det aktuella intaget. En grön punkt innebär ett felfritt intag, medan en röd punkt betyder att ett fel uppstod i just det steget.
+
+![övervakning mellan tjänster](../assets/ui/monitor-sources/cross-service-monitoring.png)
+
+Leta reda på ett lyckat dataflöde på dataflödessidan och välj filterikonen ![filter](../assets/ui/monitor-sources/filter.png) bredvid den för att visa information om dataflödets körning.
+
+![dataflöde-success](../assets/ui/monitor-sources/dataflow-success.png)
+
+Sidan [!UICONTROL Source ingestion] innehåller information som bekräftar att dataflödet har importerats. Härifrån kan du börja övervaka ditt dataflödes resa från källnivå till [!DNL Identity Service] och sedan till [!DNL Profile].
+
+Välj **[!UICONTROL Identities]** om du vill se intag på scenen [!UICONTROL Identities].
+
+![källor](../assets/ui/monitor-sources/sources.png)
+
+### [!DNL Identity] mått
+
+Sidan [!UICONTROL Identity processing] innehåller information om poster som har importerats till [!DNL Identity Service], inklusive antal identiteter som har lagts till, diagram som skapats och diagram som uppdaterats.
+
+Välj filterikonen ![filter](../assets/ui/monitor-sources/filter.png) bredvid starttiden för dataflödeskörningen för att visa mer information om [!DNL Identity]-dataflödeskörningen.
+
+![identiteter](../assets/ui/monitor-sources/identities.png)
+
+| Identitetsmått | Beskrivning |
+| ---------------- | ----------- |
+| [!UICONTROL Records received] | Antalet poster som tagits emot från [!DNL Data Lake]. |
+| [!UICONTROL Records failed] | Antalet poster som inte har importerats till plattformen på grund av datafel. |
+| [!UICONTROL Records skipped] | Antalet poster som har importerats, men inte i [!DNL Identity Service] eftersom det bara fanns en identifierare i postraden. |
+| [!UICONTROL Records ingested] | Antalet poster som har importerats till [!DNL Identity Service]. |
+| [!UICONTROL Total records] | Totalt antal poster, inklusive poster som misslyckades, poster som hoppats över, [!DNL Identities] tillagda och dubblerade poster. |
+| [!UICONTROL Identities added] | Antalet nya nettoidentifierare som lagts till i [!DNL Identity Service]. |
+| [!UICONTROL Graphs created] | Antalet nya nettoidentitetsdiagram som skapats i [!DNL Identity Service]. |
+| [!UICONTROL Graphs updated] | Antalet befintliga identitetsdiagram som uppdaterats med nya kanter. |
+| [!UICONTROL Failed dataflow runs] | Antalet misslyckade dataflödeskörningar. |
+| [!UICONTROL Processing time] | Tidsstämpeln från det att du har fått in det hela till det färdiga. |
+| [!UICONTROL Status] | Definierar den övergripande statusen för ett dataflöde. Möjliga statusvärden är: <ul><li>`Success`: Anger att ett dataflöde är aktivt och att data hämtas enligt det schema som det tillhandahölls.</li><li>`Failed`: Anger att aktiveringsprocessen för ett dataflöde har avbrutits på grund av fel. </li><li>`Processing`: Anger att dataflödet ännu inte är aktivt. Denna status inträffar ofta omedelbart efter att ett nytt dataflöde har skapats.</li></ul> |
+
+På sidan [!UICONTROL Dataflow run details] visas mer information om körningen av [!DNL Identity]-dataflödet, inklusive dess IMS Org ID och ID för dataflödeskörning. På den här sidan visas även motsvarande felkod och felmeddelande från [!DNL Identity Service] om något fel skulle uppstå i importen.
+
+Välj **[!UICONTROL Run start: 2/14/2021, 9:47 PM]** om du vill gå tillbaka till föregående sida.
+
+![identities-dataflow-run](../assets/ui/monitor-sources/identities-dataflow-run.png)
+
+På sidan [!UICONTROL Identity processing] väljer du **[!UICONTROL Profiles]** om du vill visa status för registrering på scenen [!UICONTROL Profiles].
+
+![select-profiles](../assets/ui/monitor-sources/select-profiles.png)
+
+### [!DNL Profile] mått
+
+Sidan [!UICONTROL Profile processing] innehåller information om poster som har importerats till [!DNL Profile], inklusive antalet profilfragment som har skapats, uppdaterade profilfragment och det totala antalet profilfragment.
+
+Välj filterikonen ![filter](../assets/ui/monitor-sources/filter.png) bredvid starttiden för dataflödeskörningen för att visa mer information om [!DNL Profile]-dataflödeskörningen.
+
+![profiler](../assets/ui/monitor-sources/profiles.png)
+
+| Profilmått | Beskrivning |
+| --------------- | ----------- |
+| [!UICONTROL Records received] | Antalet poster som tagits emot från [!DNL Data Lake]. |
+| [!UICONTROL Records failed ] | Antalet poster som har importerats, men inte i [!DNL Profile] på grund av fel. |
+| [!UICONTROL Profile fragments added] | Antalet nya [!DNL Profile]-fragment som lagts till. |
+| [!UICONTROL Profile fragments updated] | Antalet befintliga [!DNL Profile] fragment har uppdaterats |
+| [!UICONTROL Total Profile fragments] | Det totala antalet poster som har skrivits till [!DNL Profile], inklusive alla befintliga [!DNL Profile]-fragment som har uppdaterats och nya [!DNL Profile]-fragment som har skapats. |
+| [!UICONTROL Failed dataflow runs] | Antalet misslyckade dataflödeskörningar. |
+| [!UICONTROL Processing time] | Tidsstämpeln från det att du har fått in det hela till det färdiga. |
+| [!UICONTROL Status] | Definierar den övergripande statusen för ett dataflöde. Möjliga statusvärden är: <ul><li>`Success`: Anger att ett dataflöde är aktivt och att data hämtas enligt det schema som det tillhandahölls.</li><li>`Failed`: Anger att aktiveringsprocessen för ett dataflöde har avbrutits på grund av fel. </li><li>`Processing`: Anger att dataflödet ännu inte är aktivt. Denna status inträffar ofta omedelbart efter att ett nytt dataflöde har skapats.</li></ul> |
+
+På sidan [!UICONTROL Dataflow run details] visas mer information om körningen av [!DNL Profile]-dataflödet, inklusive dess IMS Org ID och ID för dataflödeskörning. På den här sidan visas även motsvarande felkod och felmeddelande från [!DNL Profile] om något fel skulle uppstå i importen.
+
+![profiles-dataflow-run](../assets/ui/monitor-sources/profiles-dataflow-run.png)
 
 ## Nästa steg
 
-Genom att följa den här självstudien har du fått åtkomst till befintliga konton och dataflöden från arbetsytan **[!UICONTROL Sources]**. Inkommande data kan nu användas av underordnade [!DNL Platform]-tjänster som [!DNL Real-time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
+Genom att följa den här självstudiekursen har du övervakat inmatningsdataflödet från källnivå till [!DNL Identity Service] och till [!DNL Profile] med kontrollpanelen **[!UICONTROL Monitoring]**. Du har också identifierat fel som bidrog till att dataflödena misslyckades under importen. Mer information finns i följande dokument:
 
-- [Översikt över kundprofiler i realtid](../../profile/home.md)
-- [Översikt över arbetsytan Datavetenskap](../../data-science-workspace/home.md)
+* [Översikt över kundprofiler i realtid](../../profile/home.md)
+* [Översikt över arbetsytan Datavetenskap](../../data-science-workspace/home.md)
