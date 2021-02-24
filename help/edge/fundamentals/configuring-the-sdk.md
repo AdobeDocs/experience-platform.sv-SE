@@ -4,9 +4,9 @@ description: Lär dig hur du konfigurerar Adobe Experience Platform Web SDK.
 seo-description: Lär dig hur du konfigurerar Experience Platform Web SDK
 keywords: konfigurera;konfiguration;SDK;edge;Web SDK;konfigurera;edgeConfigId;context;web;device;environment;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;web sdk settings;prehideStyle;opacity;cookieDestinationsEnabled;urlDestal inationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 translation-type: tm+mt
-source-git-commit: 85bb984231a3069aad0c63707f5024612181798c
+source-git-commit: 0b9a92f006d1ec151a0bb11c10c607ea9362f729
 workflow-type: tm+mt
-source-wordcount: '741'
+source-wordcount: '743'
 ht-degree: 4%
 
 ---
@@ -147,7 +147,7 @@ Aktiverar URL-mål för [!DNL Audience Manager], vilket gör det möjligt att br
 | -------- | ------------ | ----------------- |
 | Boolean | Nej | sant |
 
-Om true läser SDK in gamla AMCV-cookies. Detta underlättar vid övergång till Adobe Experience Platform Web SDK medan vissa delar av webbplatsen fortfarande använder Visitor.js. Om dessutom Visitor-API är definierat på sidan kommer SDK att efterfråga besökar-API:t för ECID. På så sätt kan du dubbeltagga sidor med AEP Web SDK och fortfarande ha samma ECID.
+Om true läser SDK in gamla AMCV-cookies. Detta underlättar vid övergång till Adobe Experience Platform Web SDK medan vissa delar av webbplatsen fortfarande använder Visitor.js. Om dessutom Visitor-API är definierat på sidan kommer SDK att efterfråga besökar-API:t för ECID. På så sätt kan du tagga sidor med två taggar med Adobe Experience Platform Web SDK och fortfarande ha samma ECID.
 
 ### `thirdPartyCookiesEnabled`
 
