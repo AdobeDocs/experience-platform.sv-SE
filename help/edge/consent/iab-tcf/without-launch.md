@@ -3,9 +3,9 @@ title: Integrera stödet för IAB TCF 2.0 med Adobe Experience Platform Web SDK
 description: Lär dig hur du ställer in stöd för IAB TCF 2.0 för din webbplats utan att använda Adobe Experience Platform Launch.
 seo-description: Lär dig hur du ställer in IAB TCF 2.0-samtycke med Adobe Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 0b9a92f006d1ec151a0bb11c10c607ea9362f729
 workflow-type: tm+mt
-source-wordcount: '683'
+source-wordcount: '685'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ I den här guiden används gränssnittet `__tcfapi` för att få åtkomst till m
 >
 >Exemplen förutsätter att `window.__tcfapi` har definierats på sidan när koden körs. CMP kan tillhandahålla en krok där du kan köra dessa funktioner när `__tcfapi`-objektet är klart.
 
-Om du vill använda IAB TCF 2.0 med Experience Platform Launch och AEP Web SDK-tillägget måste du ha ett XDM-schema tillgängligt. Om du inte har konfigurerat något av dessa kan du börja med att visa den här sidan innan du fortsätter.
+Om du vill använda IAB TCF 2.0 med Experience Platform Launch och Adobe Experience Platform Web SDK måste du ha ett XDM-schema tillgängligt. Om du inte har konfigurerat något av dessa kan du börja med att visa den här sidan innan du fortsätter.
 
 Den här guiden kräver dessutom att du har en fungerande förståelse för Adobe Experience Platform Web SDK. Läs översikten [Adobe Experience Platform Web SDK](../../home.md) och dokumentationen [Vanliga frågor](../../web-sdk-faq.md) om du vill få en snabb uppdatering.
 
@@ -109,4 +109,4 @@ Det andra sättet att lägga till medgivandeinformationen i varje begäran är m
 
 ## Nästa steg
 
-Nu när du har lärt dig att använda IAB TCF 2.0 med AEP Web SDK-tillägget kan du även integrera med andra Adobe-lösningar som Adobe Analytics eller kunddataplattformen i realtid. Mer information finns i översikten [IAB Transparency &amp; Consent Framework 2.0](./overview.md).
+Nu när du har lärt dig att använda IAB TCF 2.0 med Platform Web SDK-tillägget kan du även integrera med andra Adobe-lösningar som Adobe Analytics eller kunddataplattformen i realtid. Mer information finns i översikten [IAB Transparency &amp; Consent Framework 2.0](./overview.md).
