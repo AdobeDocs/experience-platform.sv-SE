@@ -1,13 +1,13 @@
 ---
 title: Versionsinformation för Adobe Experience Platform
-description: Versionsinformation för Experience Platform 27 januari 2021
+description: Versionsinformation för Experience Platform för 24 februari 2021.
 doc-type: release notes
-last-update: January 27, 2021
-author: ens60013
+last-update: February 24, 2021
+author: ens70167
 translation-type: tm+mt
-source-git-commit: 2e3a6acbfaa7f733a9843068c00f31f0b7f535b6
+source-git-commit: d3151d9ccaf61e6ec1a88e147f3694292e953de0
 workflow-type: tm+mt
-source-wordcount: '651'
+source-wordcount: '768'
 ht-degree: 2%
 
 ---
@@ -15,44 +15,69 @@ ht-degree: 2%
 
 # Versionsinformation för Adobe Experience Platform
 
-**Releasedatum: 27 januari 2021**
+**Releasedatum: 24 februari 2021**
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
-- [[!DNL Data Prep]](#data-prep)
-- [[!DNL Destinations]](#destinations)
+- [[!DNL Data Science Workspace]](#dsw)
+- [[!DNL Dataflows]](#dataflows)
+- [[!DNL Experience Data Model (XDM) System]](#xdm)
+- [[!DNL Identity Service]](#identity)
 - [[!DNL Sources]](#sources)
-- [[!DNL Experience Platform Launch Server Side]](#launch)
 
-## [!DNL Data Prep] {#data-prep}
+## [!DNL Data Science Workspace] {#dsw}
 
-[!DNL Data Prep] gör det möjligt för datatekniker att mappa, omvandla och validera data till och från Experience Data Model (XDM).
-
-**Nya funktioner**
-
-| Funktion | Beskrivning |
-| ------- | ----------- |
-| Funktioner för reguljära uttryck | [!DNL Data Prep] Mapper har nu stöd för att matcha och extrahera delar av indatafältet baserat på reguljära uttryck. |
-
-Mer information finns i [[!DNL Data Prep] översikten](../../data-prep/home.md).
-
-## Mål {#destinations}
-
-[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
-
-**Nya destinationer**
-
-| Destination | Beskrivning |
-| ----------- | ----------- |
-| [!DNL Azure Blob] | [!DNL Azure Blob] är Microsofts objektlagringslösning för molnet. |
+Data Science Workspace använder maskininlärning och artificiell intelligens för att skapa insikter utifrån era data. Data Science Workspace är integrerat i Adobe Experience Platform och hjälper er att göra prognoser med hjälp av ert innehåll och era dataresurser över alla Adobe-lösningar.
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
-| ------- | ----------- |
-| Avancerad ID-matchning | Förbättringar av funktionerna för målgruppsmatchning i [!DNL Facebook Custom Audiences] och [!DNL Google Customer Match] genom att lägga till stöd för ytterligare identitetsmatchning, som externa ID:n, telefonnummer och mobila enhets-ID:n. Mer information finns i följande dokumentation: <ul><li>[Facebook-mål](../../destinations/catalog/social/facebook.md)</li><li>[Google Customer Match-mål](../../destinations/catalog/advertising/google-customer-match.md)</li><li>[Aktivera profiler och segment till ett mål](../../destinations/ui/activate-destinations.md)</li></ul> |
+| --- | --- |
+| JupyterLab EDA-anteckningsbok | Den experimentella dataanalysen (EDA) Python-anteckningsboken finns nu tillgänglig i Jupyterlab. Den här bärbara datorn är utformad för att hjälpa dig att upptäcka datamönster, kontrollera datavården och sammanfatta relevanta data för prediktiva modeller. Se självstudiekursen [utforska webbaserade data för prediktiva modeller](../../data-science-workspace/jupyterlab/eda-notebook.md) för mer information. |
 
-Mer information finns i [målöversikten](../../destinations/home.md).
+Mer allmän information om arbetsytan Datavetenskap finns i [Översikt över arbetsytan Datavetenskap](../../data-science-workspace/home.md).
+
+## [!DNL Dataflows] {#dataflows}
+
+I Adobe Experience Platform hämtas data från en mängd olika källor, som analyseras i Experience Platform och aktiveras till en mängd olika destinationer. Plattformen gör processen att spåra detta potentiellt icke-linjära dataflöde enklare genom att tillhandahålla genomskinlighet med dataflöden.
+
+Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, där de sedan används av [!DNL Identity Service] och [!DNL Real-time Customer Profile] innan de aktiveras till [!DNL Destinations].
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Ny kontrollpanel | Nu kan du använda kontrollpanelen för genomskinlighet mellan tjänster och åtgärdbara insikter för källdatainhämtning. Den nya kontrollpanelen ger en heltäckande bild av data som bearbetats från [!DNL Data Lake] till [!DNL Identity Service] och till [!DNL Profile], samtidigt som du kan övervaka hur många gånger du har fått tag på dem, hur många gånger de har lyckats och misslyckats. Mer information finns i självstudiekursen om [övervakning av källdataflöden i användargränssnittet](../../dataflows/ui/monitor-sources.md). |
+
+Mer allmän information om dataflöden finns i [översikten över dataflöden](../../dataflows/home.md).
+
+## [!DNL Experience Data Model (XDM) System] {#xdm}
+
+Standardisering och interoperabilitet är viktiga begrepp bakom [!DNL Experience Platform]. [!DNL Experience Data Model] (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
+
+XDM är en öppet dokumenterad specifikation som utformats för att förbättra möjligheterna med digitala upplevelser. Det innehåller gemensamma strukturer och definitioner för alla program som ska kommunicera med tjänster på Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation som levererar insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Uppgraderat sökgränssnitt | Förbättrade sökfunktioner finns nu på fliken [!UICONTROL Browse] på arbetsytan [!UICONTROL Schemas] och i dialogrutan för mixin-val i [!DNL Schema Editor].<br><br>När du söker efter en term tidigare innehåller resultatet bara XDM-resurser vars namn matchar sökfrågan. Förutom resurser vars namn matchar frågan kommer resurser som innehåller enskilda attribut som matchar termen att tas med. På så sätt kan du söka efter XDM-resurser baserat på de attribut de innehåller i stället för efter resursnamn.<br><br>Mer information finns i dokumenten om  [att utforska XDM-resurser ](../../xdm/ui/explore.md) och  [hantera ](../../xdm/ui/resources/schemas.md) scheman i användargränssnittet. |
+
+Mer allmän information om XDM finns i [XDM-systemöversikt](../../xdm/home.md).
+
+## [!DNL Identity Service] {#identity}
+
+För att kunna leverera relevanta digitala upplevelser måste ni ha en fullständig förståelse för era kunder. Detta blir svårare när era kunddata fragmenteras över olika system, vilket gör att varje enskild kund ser ut att ha flera&quot;identiteter&quot;.
+
+Adobe Experience Platform [!DNL Identity Service] hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Identitetsdiagramvisningsprogram | Med identitetsdiagramvisningsprogrammet kan du validera och visualisera identiteter som sammanfogats i användargränssnittet, vilket ger förbättrad felsökning och genomskinlighet. Mer information finns i [identitetsdiagramvisningsdokumentet](../../identity-service/ui/identity-graph-viewer.md). |
+
+Mer allmän information om [!DNL Identity Service] finns i [Översikt över identitetstjänsten](../../identity-service/home.md).
 
 ## [!DNL Sources] {#sources}
 
@@ -60,27 +85,11 @@ Adobe Experience Platform kan importera data från externa källor och samtidigt
 
 Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
 
-**Nya funktioner**
+**Nya källor**
 
 | Funktion | Beskrivning |
-| ------- | ----------- |
-| Förbättringar av Adobe Audience Manager källanslutning | Nu kan du filtrera och välja enskilda förstahandssegment från Audience Manager till att importera till Platform, samt filtrera bort förstahandsegenskaper. Mer information finns i självstudiekursen om att [skapa en Audience Manager-källkoppling](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md). |
-| [!DNL Google BigQuery] förbättringar av källkopplingen | Du kan nu importera filer som är större än 10 GB i en flödeskörning med hjälp av [!DNL BigQuery]-källkopplingen. Mer information finns i [[!DNL BigQuery] översikten över källkopplingen](../../sources/connectors/databases/bigquery.md). |
-| Stöd för komplexa datatyper för molnlagring | Du kan nu importera komplexa datatyper, till exempel arrayer i JSON-filer, när du använder en anslutning till en molnlagringskälla. Självstudiekurserna om hur du skapar ett molnlagringsdataflöde [i gränssnittet](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md) eller [med API [!DNL Flow Service] API](../../sources/tutorials/api/collect/cloud-storage.md) innehåller mer information. |
-| Stöd för huvudnyckelbaserad autentisering för [!DNL Microsoft Dynamics]-källa | Du kan nu autentisera ditt [!DNL Dynamics]-konto med en tjänsthuvudnyckel som ett alternativ till lösenordsbaserad autentisering. Mer information finns i [[!DNL Dynamics] översikten över källkopplingen](../../sources/connectors/crm/ms-dynamics.md). |
-| Stöd för anpassade avgränsare i molnlagringskällor | Nu kan du ställa in en anpassad kolumnavgränsare, till exempel ett komma (`,`), en tabb (`\t`) eller en pipe (`|`), för att samla in avgränsade filer i användargränssnittet. Mer information finns i självstudiekursen om att [skapa ett dataflöde med en molnlagringskälla](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md) |
+| --- | --- |
+| [!DNL Google PubSub] | Nu kan du ansluta [!DNL Google PubSub] till [!DNL Experience Platform] med hjälp av API:t [!DNL Flow Service] eller gränssnittet. Mer information finns i [[!DNL Google PubSub] anslutningsöversikten](../../sources/connectors/cloud-storage/google-pubsub.md). |
+| [!DNL Oracle Object Storage] | Nu kan du ansluta [!DNL Oracle Object Storage] till [!DNL Experience Platform] med hjälp av API:t [!DNL Flow Service] eller gränssnittet. Mer information finns i [[!DNL Oracle Object Storage] anslutningsöversikten](../../sources/connectors/cloud-storage/oracle-object-storage.md). |
 
-Mer information om källor finns i [Källor - översikt](../../sources/home.md).
-
-## [!DNL Experience Platform Launch Server Side] {#launch}
-
-Adobe Experience Platform Launch Server Side minskar belastningen på webbsidor och appar genom att använda Adobe Experience Platform Edge Network för att utföra åtgärder som normalt utförs på klienten. Regler för plattformstartserver kan omvandla och skicka data till nya mål utan att implementeringar på klientsidan ändras.
-
-Med Platform Launch Server Side, i kombination med Adobe Experience Platform Web och Mobile SDK, kan man
-
-- Gör ett enda anrop från sidan som innehåller en datanyttolast och federera sedan denna datasterarkin för att minska nätverkstrafiken på klientsidan och leverera en snabbare upplevelse till kunderna.
-- Minska den tid det tar för webbsidor att läsas in så att sajten uppfyller branschens bästa praxis när det gäller prestanda.
-- Öka genomskinligheten och styr vilka typer av data som skickas var, över alla egenskaper på klientsidan.
-- Skapa en regel på serversidan som skickar tidigare spårade data till ett nytt mål.
-
-Mer information finns i [dokumentationen för plattformsinstart](https://experienceleague.adobe.com/docs/launch/using/server-side-info/server-side-overview.html?lang=en).
+Mer allmän information om källor finns i [Källor översikt](../../sources/home.md).
