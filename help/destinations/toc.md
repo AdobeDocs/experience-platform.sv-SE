@@ -5,7 +5,7 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 translation-type: tm+mt
-source-git-commit: 2ee4014de1eb5c02ee2b554bb543d2bee5854922
+source-git-commit: db2e5d51a5ed07b91997df8a566272c86a7c1708
 workflow-type: tm+mt
 source-wordcount: '455'
 ht-degree: 0%
@@ -117,7 +117,7 @@ ht-degree: 0%
       * [Skapa ett mål för sociala nätverk](./catalog/social/workflow.md)
       * [Adobe Livefyre-tillägg](./catalog/social/adobe-livefyre.md)
       * [Facebook-anslutning](./catalog/social/facebook.md)
-      * [LinkedIn Matched Audience connection](./catalog/social/linkedin.md)
+      * [Länkad matchad målgruppsanslutning](./catalog/social/linkedin.md)
    * Undersökningsmål {#survey}
       * [Översikt över undersökningsmål](./catalog/survey/overview.md)
       * [Mål för sidtillägg](./catalog/survey/foresee.md)
