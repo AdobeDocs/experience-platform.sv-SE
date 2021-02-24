@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;namnrymd;Namnrymd;Namnrymder;namnutrymmen;identitetsnamnrymd;Identitetsnamnrymd;Identitet;Identitetstjänst;Identitetstjänst
 solution: Experience Platform
 title: Översikt över namnområde för identitet
-topic: overview
+topic: översikt
 description: 'Identitetsnamnutrymmen är en komponent i identitetstjänsten som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet"name@email.com" som e-postadress eller"443522" som ett numeriskt CRM-ID. '
 translation-type: tm+mt
-source-git-commit: 73035aec86297cfc4ee9337cf922d599001379c3
+source-git-commit: fc493a207e305887e798238ba6883f4934c5cba5
 workflow-type: tm+mt
-source-wordcount: '1449'
+source-wordcount: '1450'
 ht-degree: 0%
 
 ---
@@ -84,7 +84,7 @@ Välj ett namnutrymme om du vill visa mer specifik information på den högra li
 
 ![](./images/browse-namespaces.png)
 
-## Hantera anpassade namnutrymmen
+## Hantera anpassade namnutrymmen {#manage-namespaces}
 
 Beroende på dina organisationsdata och användningsfall kan du behöva anpassade namnutrymmen. Du kan skapa anpassade namnutrymmen med API:t [[!DNL Identity Service]](./api/create-custom-namespace.md) eller med gränssnittet.
 
