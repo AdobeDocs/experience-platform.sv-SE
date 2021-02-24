@@ -5,9 +5,9 @@ user-guide-title: Adobe Experience Platform segmenteringstjänst
 breadcrumb-title: Segmenteringstjänstguide
 user-guide-description: Bygg segment och generera målgrupper utifrån kundprofildata i realtid.
 translation-type: tm+mt
-source-git-commit: b37cf48b839ac30026162d2224528d8aabd3d263
+source-git-commit: fc493a207e305887e798238ba6883f4934c5cba5
 workflow-type: tm+mt
-source-wordcount: '152'
+source-wordcount: '157'
 ht-degree: 5%
 
 ---
@@ -56,6 +56,7 @@ ht-degree: 5%
    - [Skapa ett dynamiskt segment (video)](video/create-a-dynamic-segment.md)
    - [Skapa ett flerenhetssegment (video)](video/create-multi-entity-segments.md)
    - [Utvärdera ett segment](tutorials/evaluate-a-segment.md)
+   - [Importera och använda externa målgrupper](tutorials/using-external-audiences.md)
    - [Skapa en datauppsättning för att exportera data](tutorials/create-dataset-export-segment.md)
    - [Stärk regelefterlevnaden för datasegment](tutorials/governance.md)
 - [API-referens](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml)
