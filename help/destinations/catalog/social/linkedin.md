@@ -3,7 +3,7 @@ keywords: länkad anslutning;länkad anslutning;länkade destinationer;länkad;
 title: Länkad matchad målgruppsanslutning
 description: Aktivera profiler för era LinkedIn-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hash-kodade e-postmeddelanden.
 translation-type: tm+mt
-source-git-commit: 48cc2017e4a65321fb7ef54ea26aca0a98606516
+source-git-commit: 6d64bc362aa8c85e354f5c02cc2acbe6f1405c99
 workflow-type: tm+mt
 source-wordcount: '557'
 ht-degree: 0%
@@ -19,17 +19,17 @@ Aktivera profiler för era [!DNL LinkedIn]-kampanjer för målgruppsanpassning, 
 
 ## Användningsexempel
 
-För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL LinkedIn Matched Audience] finns det ett användningsexempel som Adobe Experience Platform-kunder kan lösa genom att använda den här funktionen.
+För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL LinkedIn Matched Audiences] finns det ett användningsexempel som Adobe Experience Platform-kunder kan lösa genom att använda den här funktionen.
 
 Ett programvaruföretag organiserar en konferens och vill hålla kontakt med deltagarna och visa dem personliga erbjudanden baserat på deras konferensstatus. Företaget kan importera e-postadresser eller mobilenhets-ID:n från sina egna [!DNL CRM] till Adobe Experience Platform, skapa segment utifrån sina egna offlinedata och skicka dessa segment till den sociala plattformen [!DNL LinkedIn], vilket optimerar annonsutgifterna.
 
 ## Målspecificeringar {#destination-specs}
 
-[!DNL LinkedIn Matched Audience] har stöd för aktivering av följande identiteter: hash emails,  [!DNL GAID]och  [!DNL IDFA].
+[!DNL LinkedIn Matched Audiences] har stöd för aktivering av följande identiteter: hash emails,  [!DNL GAID]och  [!DNL IDFA].
 
 ### Exporttyp {#export-type}
 
-**Segmentexport**  - du exporterar alla medlemmar i ett segment (publik) med identifierarna (namn, telefonnummer osv.) används i målet [!DNL LinkedIn Matched Audience].
+**Segmentexport**  - du exporterar alla medlemmar i ett segment (publik) med identifierarna (namn, telefonnummer osv.) används i målet [!DNL LinkedIn Matched Audiences].
 
 ### Krav för LinkedIn-konto {#LinkedIn-account-prerequisites}
 
@@ -39,7 +39,7 @@ Mer information om hur du redigerar dina [!DNL LinkedIn Campaign Manager]-använ
 
 ### Krav för ID-matchning {#id-matching-requirements}
 
-[!DNL LinkedIn Matched Audience] kräver att ingen personligt identifierbar information (PII) skickas klart. Därför kan målgrupper som är aktiverade för [!DNL LinkedIn Matched Audience] vara avstängda från *hash*-identifierare, till exempel e-postadresser eller mobila enhets-ID:n.
+[!DNL LinkedIn Matched Audiences] kräver att ingen personligt identifierbar information (PII) skickas klart. Därför kan målgrupper som är aktiverade för [!DNL LinkedIn Matched Audiences] vara avstängda från *hash*-identifierare, till exempel e-postadresser eller mobila enhets-ID:n.
 
 Beroende på vilken typ av ID som du importerar till Adobe Experience Platform måste du följa deras motsvarande krav.
 
@@ -71,11 +71,11 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 
 ## Anslut till målet {#connect-destination}
 
-Mer information om hur du ansluter till [!DNL LinkedIn Matched Audience]-målet finns i [autentiseringsarbetsflöde för mål för sociala nätverk](./workflow.md).
+Mer information om hur du ansluter till [!DNL LinkedIn Matched Audiences]-målet finns i [autentiseringsarbetsflöde för mål för sociala nätverk](./workflow.md).
 
-## Aktivera segment till [!DNL LinkedIn Matched Audience] {#activate-segments}
+## Aktivera segment till [!DNL LinkedIn Matched Audiences] {#activate-segments}
 
-Instruktioner om hur du aktiverar segment till [!DNL LinkedIn Matched Audience] finns i [Aktivera data till mål](../../ui/activate-destinations.md).
+Instruktioner om hur du aktiverar segment till [!DNL LinkedIn Matched Audiences] finns i [Aktivera data till mål](../../ui/activate-destinations.md).
 
 ## Exporterade data {#exported-data}
 
@@ -83,4 +83,4 @@ En lyckad aktivering innebär att en [!DNL LinkedIn]-anpassad målgrupp skapas p
 
 >[!TIP]
 >
->Integrationen mellan Adobe Experience Platform och [!DNL LinkedIn Matched Audience] har stöd för historiska efterfyllningar av målgrupper. Alla historiska segmentkvalifikationer skickas till [!DNL LinkedIn] när du aktiverar segmenten till målet.
+>Integrationen mellan Adobe Experience Platform och [!DNL LinkedIn Matched Audiences] har stöd för historiska efterfyllningar av målgrupper. Alla historiska segmentkvalifikationer skickas till [!DNL LinkedIn] när du aktiverar segmenten till målet.
