@@ -5,9 +5,9 @@ user-guide-title: Destinationshandbok
 user-guide-description: Aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 translation-type: tm+mt
-source-git-commit: 2efdefc69c937c70f6a463113a73ca71d8998e14
+source-git-commit: 2ee4014de1eb5c02ee2b554bb543d2bee5854922
 workflow-type: tm+mt
-source-wordcount: '451'
+source-wordcount: '455'
 ht-degree: 0%
 
 ---
@@ -93,7 +93,7 @@ ht-degree: 0%
       * [Översikt över destinationer för e-postmarknadsföring](./catalog/email-marketing/overview.md)
       * [Adobe Campaign-anslutning](./catalog/email-marketing/adobe-campaign.md)
       * [Oracle Eloqua-anslutning](./catalog/email-marketing/oracle-eloqua.md)
-      * [Oracle Responsys-anslutning](./catalog/email-marketing/oracle-responsys.md)
+      * [Oraclena svarssystemanslutning](./catalog/email-marketing/oracle-responsys.md)
       * [Salesforce Marketing Cloud-anslutning](./catalog/email-marketing/salesforce-marketing-cloud.md)
    * Experience Platform Launch-tillägg {#launch-extensions}
       * [Översikt över Adobe Experience Platform Launch-tillägg](./catalog/launch-extensions/overview.md)
@@ -117,6 +117,7 @@ ht-degree: 0%
       * [Skapa ett mål för sociala nätverk](./catalog/social/workflow.md)
       * [Adobe Livefyre-tillägg](./catalog/social/adobe-livefyre.md)
       * [Facebook-anslutning](./catalog/social/facebook.md)
+      * [LinkedIn Matched Audience connection](./catalog/social/linkedin.md)
    * Undersökningsmål {#survey}
       * [Översikt över undersökningsmål](./catalog/survey/overview.md)
       * [Mål för sidtillägg](./catalog/survey/foresee.md)
