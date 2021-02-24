@@ -2,13 +2,13 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;direktuppspelning;intag;postdata;dataströmspostdata;
 solution: Experience Platform
 title: Direktuppspela postdata med API:er för direktuppspelning
-topic: tutorial
-type: Tutorial
+topic: självstudiekurs
+type: Självstudiekurs
 description: Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform datainmatningstjänst.
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 27a7855492f2f8e7a92651cd97371c904dd1561d
 workflow-type: tm+mt
-source-wordcount: '1163'
+source-wordcount: '1165'
 ht-degree: 0%
 
 ---
@@ -264,7 +264,7 @@ Ett lyckat svar returnerar HTTP-status 201 och en matris som innehåller ID:t f�
 ]
 ```
 
-## Infoga postdata till direktuppspelningsanslutningen
+## Infoga postdata till direktuppspelningsanslutningen {#ingest-data}
 
 När datauppsättningen och direktuppspelningsanslutningen är på plats kan du importera XDM-formaterade JSON-poster för att importera postdata till [!DNL Platform].
 
