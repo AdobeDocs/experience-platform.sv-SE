@@ -2,26 +2,28 @@
 keywords: Experience Platform;hem;populära ämnen;identitetsdiagramvisningsprogram;Identitetsdiagramvisningsprogram;diagramvisningsprogram;Graph viewer;identity namespace;Identity namespace;identity;Identity;Identity service;identity service
 solution: Experience Platform
 title: Översikt över Identity Graph Viewer
-topic: tutorial
+topic: självstudiekurs
 description: Ett identitetsdiagram är en karta över relationer mellan olika identiteter för en viss kund, vilket ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler.
 translation-type: tm+mt
-source-git-commit: 8ec904d584225113a6791533ff544560fc2efdf3
+source-git-commit: f4326c7a8bb8af90c092d3790e51c133744d498f
 workflow-type: tm+mt
-source-wordcount: '907'
+source-wordcount: '996'
 ht-degree: 0%
 
 ---
 
 
-# (Beta) Översikt över visningsprogrammet för identitetsdiagram
-
->[!NOTE]
->
->Identitetsdiagramvisningsprogrammet är för närvarande i betaversion. Funktionerna kan komma att ändras.
+# Översikt över visningsprogrammet för identitetsdiagram
 
 Ett identitetsdiagram är en karta över relationer mellan olika identiteter för en viss kund, vilket ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler. Alla kundidentitetsdiagram hanteras och uppdateras gemensamt av Adobe Experience Platform Identity Service i nära realtid som svar på kundaktivitet.
 
 Med identitetsdiagramvisningsprogrammet i användargränssnittet för plattformen kan du visualisera och bättre förstå vilka kundidentiteter som sammanfogas och på vilka sätt. Med visningsprogrammet kan du dra och interagera med olika delar av diagrammet, vilket gör att du kan undersöka komplexa identitetsförhållanden, felsöka mer effektivt och dra nytta av ökad genomskinlighet när det gäller hur informationen används.
+
+## Videokurs
+
+Följande video är avsedd att ge stöd för din förståelse av identitetsdiagramvisningsprogrammet.
+
+>[!VIDEO](https://video.tv.adobe.com/v/331030/?quality=12&learn=on)
 
 ## Komma igång
 
@@ -50,6 +52,20 @@ Markera det namnutrymme som du vill använda och klicka på **[!UICONTROL Select
 När du har valt ett namnutrymme anger du dess motsvarande värde för en viss kund i textrutan **[!UICONTROL Identity value]** och väljer **[!UICONTROL View]**.
 
 ![add-identity-value](../images/identity-graph-viewer/identity-value-filled.png)
+
+### Få åtkomst till identitetsdiagramvisningsprogrammet från datauppsättningar
+
+Du kan även komma åt identitetsdiagramvisningsprogrammet med hjälp av datauppsättningsgränssnittet. Välj den datauppsättning du vill interagera med på sidan [!UICONTROL Browse] och välj sedan **[!UICONTROL Preview dataset]**
+
+![preview-dataset](../images/identity-graph-viewer/preview-dataset.png)
+
+I förhandsgranskningsfönstret väljer du en fingeravtrycksikon för att se vilka identiteter som visas i identitetsdiagramvisningsprogrammet.
+
+>[!TIP]
+>
+>Fingeravtrycksikonen visas bara om datauppsättningen har två eller flera identiteter.
+
+![fingeravtryck](../images/identity-graph-viewer/fingerprint.png)
 
 Identitetsdiagramvisningsprogrammet visas. Till vänster på skärmen finns identitetsdiagrammet som visar alla identiteter som är länkade till det namnutrymme som du har markerat och det identitetsvärde som du har angett. Varje identitetsnod består av ett namnutrymme och dess motsvarande ID-värde. Du kan markera och hålla kvar en identitet om du vill dra och interagera med diagrammet. Du kan också hovra över en identitet för att se information om dess ID-värde. Diagramresultatet visas också som en inskickad lista mitt på skärmen.
 
@@ -109,8 +125,9 @@ Fel kan inträffa vid åtkomst till identitetsdiagramvisningsprogrammet. Nedan f
 
 Genom att läsa det här dokumentet har du lärt dig att utforska kundernas identitetsdiagram i användargränssnittet för plattformen. Mer information om identiteter i Platform finns i [Översikt över identitetstjänsten](../home.md)
 
-## Ytterligare resurser
+## Changelog
 
-Följande video är avsedd att ge stöd för din förståelse av identitetsdiagramvisningsprogrammet.
-
->[!VIDEO](https://video.tv.adobe.com/v/331030/?quality=12&learn=on)
+| Datum | Åtgärd |
+| ---- | ------ |
+| 2021-01 | <ul><li>Stöd för direktuppspelning av inkapslade data och icke-produktionssandlåda har lagts till.</li><li>Mindre felkorrigeringar.</li></ul> |
+| 2021-02 | <ul><li>Identitetsdiagramvisningsprogrammet är tillgängligt via förhandsgranskning av datauppsättning.</li><li>Mindre felkorrigeringar.</li><li>Identitetsdiagramvisningsprogrammet är allmänt tillgängligt.</li></ul> |
