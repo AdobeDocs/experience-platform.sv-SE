@@ -3,9 +3,9 @@ title: Spåra händelser med Adobe Experience Platform Web SDK
 seo-description: Lär dig spåra Adobe Experience Platform Web SDK-händelser.
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon;send Beacon;documentUnloading;document Unloading;onBeforeEventSend;
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 0b9a92f006d1ec151a0bb11c10c607ea9362f729
 workflow-type: tm+mt
-source-wordcount: '1334'
+source-wordcount: '1340'
 ht-degree: 0%
 
 ---
@@ -69,7 +69,7 @@ alloy("sendEvent", {
 dataLayer.commerce = null;
 ```
 
-I det här exemplet klonas datalagret genom att serialisera det till JSON och sedan deserialisera det. Sedan skickas det klonade resultatet till kommandot `sendEvent`. Om du gör det ser du till att kommandot `sendEvent` har en ögonblicksbild av datalagret som det var när kommandot `sendEvent` kördes så att senare ändringar av det ursprungliga datalagret inte återspeglas i data som skickas till servern. Om du använder ett händelsestyrt datalager hanteras kloningen av dina data troligtvis redan automatiskt. Om du till exempel använder [Adobe-klientdatalagret](https://github.com/adobe/adobe-client-data-layer/wiki), ger metoden `getState()` en beräknad, klonad ögonblicksbild av alla tidigare ändringar. Detta hanteras också automatiskt om du använder AEP Web SDK Launch-tillägget.
+I det här exemplet klonas datalagret genom att serialisera det till JSON och sedan deserialisera det. Sedan skickas det klonade resultatet till kommandot `sendEvent`. Om du gör det ser du till att kommandot `sendEvent` har en ögonblicksbild av datalagret som det var när kommandot `sendEvent` kördes så att senare ändringar av det ursprungliga datalagret inte återspeglas i data som skickas till servern. Om du använder ett händelsestyrt datalager hanteras kloningen av dina data troligtvis redan automatiskt. Om du till exempel använder [Adobe-klientdatalagret](https://github.com/adobe/adobe-client-data-layer/wiki), ger metoden `getState()` en beräknad, klonad ögonblicksbild av alla tidigare ändringar. Detta hanteras också automatiskt om du använder Adobe Experience Platform Web SDK-tillägget i Adobe Experience Platform Launch.
 
 >[!NOTE]
 >
