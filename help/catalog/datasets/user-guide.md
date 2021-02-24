@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;aktivera datauppsättning;datauppsättning;datauppsättning
 solution: Experience Platform
 title: Användargränssnittshandbok för datauppsättningar
-topic: datasets
+topic: datauppsättningar
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 translation-type: tm+mt
-source-git-commit: 2b8c08dad34bcd69368c00050323835f05379c82
+source-git-commit: fc493a207e305887e798238ba6883f4934c5cba5
 workflow-type: tm+mt
-source-wordcount: '1083'
+source-wordcount: '1084'
 ht-degree: 0%
 
 ---
@@ -97,7 +97,7 @@ När en datauppsättning skapas med en CSV-fil skapas ett ad hoc-schema som ger 
 
 ![](../images/datasets/user-guide/add_csv_data.png)
 
-## Aktivera en datauppsättning för kundprofil i realtid
+## Aktivera en datauppsättning för kundprofil i realtid {#enable-profile}
 
 Alla datauppsättningar har möjlighet att förbättra kundprofiler med inkapslade data. Det gör du genom att schemat som datauppsättningen följer måste vara kompatibelt för användning i [!DNL Real-time Customer Profile]. Ett kompatibelt schema uppfyller följande krav:
 
@@ -116,7 +116,7 @@ Om du vill aktivera en datauppsättning för profilen öppnar du skärmen **[!UI
 
 ## Hantera och tillämpa datastyrning på en datauppsättning
 
-Med etiketter för dataanvändning kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Mer information om etiketter finns i [översikten över datastyrning](../../data-governance/home.md). Du kan även läsa användarhandboken för [användaretiketter för dataanvändning](../../data-governance/labels/overview.md) för instruktioner om hur du använder etiketter på datauppsättningar.
+Med etiketter för dataanvändning kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Mer information om etiketter finns i [översikten över datastyrning](../../data-governance/home.md), eller i användarhandboken för [användaretiketter för dataanvändning](../../data-governance/labels/overview.md) finns instruktioner om hur du använder etiketter på datauppsättningar.
 
 ## Ta bort en datauppsättning
 
