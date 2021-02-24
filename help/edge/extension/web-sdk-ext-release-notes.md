@@ -3,9 +3,9 @@ title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK-tillägg i Adobe Experience Platform Launch
 seo-description: Adobe Experience Platform Web SDK-tillägg i Adobe Experience Platform Launch
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 0b9a92f006d1ec151a0bb11c10c607ea9362f729
 workflow-type: tm+mt
-source-wordcount: '988'
+source-wordcount: '990'
 ht-degree: 1%
 
 ---
@@ -33,7 +33,7 @@ Innehåller version 2.3.0 av Adobe Experience Platform Web SDK-biblioteket.
 
 #### Felkorrigeringar
 
-* När kunderna försökte skapa ett XDM-objekt från sandlådescheman, stötte de på autentiseringsproblem. API:t som anropar AEP är nu medvetet om miljöer, så användarna presenteras bara med de scheman som de har tillgång till för redigering.
+* När kunderna försökte skapa ett XDM-objekt från sandlådescheman, stötte de på autentiseringsproblem. API:t som anropar Platform är nu medvetet om miljöer, så användarna presenteras bara med de scheman de har tillgång till för redigering.
 
 #### Funktioner
 
@@ -62,7 +62,7 @@ Innehåller version 2.3.0 av Adobe Experience Platform Web SDK-biblioteket.
 * Stöd för åsidosättande av datauppsättnings-ID:t i `sendEvent`-åtgärden.
 * Lägg till ett nytt dataelement av typen `IdentityMap` som kan användas för att fylla i `identityMap`-posten i XDM-objektdataelementet som nu är aktiverat och i `setConsent`-åtgärden.
 * Stöd för att skicka en identitetskarta i `setConsent`-åtgärden.
-* Stöd för att välja en AEP-sandlåda i XDM-objektdataelementet.
+* Stöd för att välja en plattformssandlåda i XDM-objektdataelementet.
 
 
 ## 26 maj 2020
@@ -92,7 +92,7 @@ Dessa beslut returneras endast från kommandot `sendEvent` om `renderDecisions` 
 * Ett problem i ID för händelsenammanfogning där det återställdes varje gång som dataelementet refererades till har korrigerats.
 * Namnet på åtgärden `setCustomerIds` ändrades till `syncIdentity`.
 * Ett `getIdentity`-kommando har lagts till. Detta kan endast användas med anpassad kod för tillfället.
-* Om du aktiverar felsökning med `_satellite` aktiveras nu felsökning i AEP Web SDK.
+* Om du aktiverar felsökning med `_satellite` aktiveras nu felsökning i Adobe Experience Platform Web SDK.
 * Stöd för typvärden i XDM-objektet har lagts till: Booleaner, siffror och decimaler.
 
 ## 16 mars 2020
@@ -123,10 +123,10 @@ Dessa beslut returneras endast från kommandot `sendEvent` om `renderDecisions` 
 
 #### Funktioner
 
-* Lägg till konfigurationer för aktivitetsspåraren i plattformens starttillägg
+* Lägg till konfigurationer för aktivitetsspåraren i Platform launch Extension
 * Visa EventType och EventMergeId vid händelsekommando
-* Add onBeforeEventSend config to Platform Launch Extension
-* Lägg till edgeBasePath-konfiguration i plattformens starttillägg
+* Lägg till konfigurationstillägget onBeforeEventSend i Platform launch
+* Lägg till edgeBasePath-konfiguration i Platform launch-tillägg
 
 #### Uppdatera till Alloy v. 0.0.10 som innehåller följande ändringar:
 
@@ -169,7 +169,7 @@ Dessa beslut returneras endast från kommandot `sendEvent` om `renderDecisions` 
 * Tillägget har blinkat
 * ECID-stöd utan ytterligare bibliotek eller nätverksanrop
 * Stöd för deltagande
-* Stöd för att skicka XDM till AEP
+* Stöd för att skicka XDM till plattformen
 * Stöd för förstahandsdomäner
 * Samla in webbläsarkontext automatiskt
 * Helt öppen källkod ([tillägg](https://github.com/adobe/reactor-extension-alloy), [SDK](https://github.com/adobe/reactor-extension-alloy))
