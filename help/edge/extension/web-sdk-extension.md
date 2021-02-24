@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK Extension - översikt
 description: Läs mer om Adobe Experience Platform Web SDK-tillägget för Adobe Experience Platform Launch
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 0b9a92f006d1ec151a0bb11c10c607ea9362f729
 workflow-type: tm+mt
-source-wordcount: '603'
+source-wordcount: '598'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Adobe Experience Platform Web SDK Extension skickar data till Adobe Experience Cloud från webbegenskaper via Adobe Experience Platform Edge Network. Med Adobe Experience Platform Web SDK-tillägget kan du strömma data till olika plattformar, synkronisera identiteter, anmäla dig och automatiskt samla in kontextdata.
 
-## Konfigurera AEP Web SDK-tillägget
+## Konfigurera tillägget
 
 I det här avsnittet finns en referens för de alternativ som är tillgängliga när du konfigurerar Adobe Experience Platform Web SDK-tillägget.
 
@@ -43,15 +43,15 @@ Tillägget Adobe Experience Platform Web SDK har stöd för flera instanser på 
 
 ### **[!UICONTROL Enable Errors]**
 
-Om ett fel med tillägget uppstår loggas felet som standard i konsolen. Om du vill dölja felen i en produktionsmiljö kan du avmarkera kryssrutan **[!UICONTROL Enable Errors]**. Fel skrivs fortfarande ut när felsökning är aktiverat i Platform Launch.
+Om ett fel med tillägget uppstår loggas felet som standard i konsolen. Om du vill dölja felen i en produktionsmiljö kan du avmarkera kryssrutan **[!UICONTROL Enable Errors]**. Fel skrivs fortfarande ut när felsökning är aktiverat i Platforma launchen.
 
 ### **[!UICONTROL Enable Opt-in]**
 
-Om **[!UICONTROL Enable Opt-in]** är aktiverat kan AEP Web SDK-tillägget hålla träffar tills anmälan tas emot. Tillägget visar en åtgärd för att ange inställningar för deltagande.
+Om **[!UICONTROL Enable Opt-in]** är aktiverat kan tillägget hålla träffar tills anmälan tas emot. Tillägget visar en åtgärd för att ange inställningar för deltagande.
 
 ### **[!UICONTROL Enable Migrate ECID]**
 
-Tillägget AEP Web SDK använder en ny cookie för att lagra ECID:t. Den här inställningen möjliggör kompatibilitet mellan den nya cookien och den gamla cookien för migreringsändamål. Adobe rekommenderar starkt att detta aktiveras, såvida du inte har några befintliga besökare med ett ECID.
+Tillägget för Platform Web SDK använder en ny cookie för att lagra ECID:t. Den här inställningen möjliggör kompatibilitet mellan den nya cookien och den gamla cookien för migreringsändamål. Adobe rekommenderar starkt att detta aktiveras, såvida du inte har några befintliga besökare med ett ECID.
 
 ### **[!UICONTROL Use 3rd Party Cookies]**
 
