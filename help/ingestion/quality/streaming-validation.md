@@ -2,13 +2,13 @@
 keywords: Experience Platform;hem;populära ämnen;direktuppspelning;direktuppspelningsuppläsning;validering;direktuppspelningsvalidering;validering;synkron validering;synkron validering;asynkron validering;asynkron validering;
 solution: Experience Platform
 title: Direktuppspelad matningsvalidering
-topic: tutorial
-type: Tutorial
+topic: självstudiekurs
+type: Självstudiekurs
 description: Med direktuppspelningsintag kan du överföra data till Adobe Experience Platform med direktuppspelningsslutpunkter i realtid. API:er för direktuppspelning stöder två valideringslägen - synkron och asynkron.
 translation-type: tm+mt
-source-git-commit: 089a4d517476b614521d1db4718966e3ebb13064
+source-git-commit: 8f863eb3427097406237aa443262917fdc3f3e1c
 workflow-type: tm+mt
-source-wordcount: '875'
+source-wordcount: '898'
 ht-degree: 2%
 
 ---
@@ -66,6 +66,10 @@ Synkron validering är en valideringsmetod som ger omedelbar feedback om varför
 Synkron validering är inte aktiverat som standard. Om du vill aktivera den måste du ange den valfria frågeparametern `synchronousValidation=true` när du gör API-anrop. Dessutom är synkron validering för närvarande bara tillgängligt om strömslutpunkten finns i datacentret VA7.
 
 Om ett meddelande misslyckas under synkron validering kommer meddelandet inte att skrivas till utdatakön, vilket ger omedelbar feedback till användarna.
+
+>[!NOTE]
+>
+>Schemaändringar är kanske inte omedelbart tillgängliga eftersom ändringar cachelagras. Cacheminnet kan uppdateras i upp till femton minuter.
 
 **API-format**
 
