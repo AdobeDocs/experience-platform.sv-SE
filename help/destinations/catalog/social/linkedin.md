@@ -3,7 +3,7 @@ keywords: länkad anslutning;länkad anslutning;länkade destinationer;länkad;
 title: Länkad matchad målgruppsanslutning
 description: Aktivera profiler för era LinkedIn-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hash-kodade e-postmeddelanden.
 translation-type: tm+mt
-source-git-commit: db2e5d51a5ed07b91997df8a566272c86a7c1708
+source-git-commit: 48cc2017e4a65321fb7ef54ea26aca0a98606516
 workflow-type: tm+mt
 source-wordcount: '557'
 ht-degree: 0%
@@ -11,7 +11,7 @@ ht-degree: 0%
 ---
 
 
-# [!DNL LinkedIn Matched Audience] anslutning
+# [!DNL LinkedIn Matched Audiences] anslutning
 
 Aktivera profiler för era [!DNL LinkedIn]-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hash-kodade e-postmeddelanden och mobil-ID:n.
 
