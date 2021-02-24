@@ -1,12 +1,12 @@
 ---
 keywords: Facebook;facebook;Socialt nätverk;Socialt nätverk;autentisering av sociala nätverk;Autentisering av sociala nätverk
 title: Skapa ett mål för sociala nätverk
-type: Tutorial
+type: Självstudiekurs
 description: Lär dig hur du ansluter till annonskonton för sociala nätverk i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
+source-git-commit: 19e38faa84d365682e97c2ec1c6352d127c0ac29
 workflow-type: tm+mt
-source-wordcount: '425'
+source-wordcount: '428'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Skapa ett mål för sociala nätverk {#social-network-destinations-workflow}
 
-I den här självstudiekursen används [!DNL Facebook] som exempel, men arbetsflödet i Adobe Experience Platform är detsamma för alla mål för sociala nätverk när fler läggs till i produkten.
+I den här självstudien används [!DNL Facebook] som exempel, men Adobe Experience Platform-arbetsflödet är detsamma för alla mål för sociala nätverk.
 
 Bläddra till kategorin **[!UICONTROL Social]** i **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**. Välj önskat mål för sociala nätverk och välj sedan **[!UICONTROL Configure]**.
 
@@ -38,16 +38,19 @@ När dina inloggningsuppgifter har bekräftats och Adobe Experience Cloud är an
 
 I steget **[!UICONTROL Setup]** anger du [!UICONTROL Name] och [!UICONTROL Description] för aktiveringsflödet och fyller i [!UICONTROL Account ID] för ditt annonskonto i sociala nätverk.
 
-I det här steget kan du även välja alla **[!UICONTROL Marketing action]** som ska gälla för det här målet. Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
+>[!IMPORTANT]
+>
+> För [!DNL Facebook]-mål är **[!UICONTROL Account ID]** din [!DNL Facebook Ad Account ID]. Du hittar detta ID i [!DNL Facebook Ads Manager]. Ange `act_` som prefix för ID:t enligt nedan:
 
-Välj **[!UICONTROL Create Destination]** när du har fyllt i fälten ovan.
+![Anslut till mål för sociala nätverk - konfigurationssteg](../../assets/catalog/social/workflow/setup.png)
 
 >[!IMPORTANT]
 >
-> * För [!DNL Facebook]-mål. **[!UICONTROL Account ID]** är din  [!DNL Facebook Ad Account ID]. Du hittar detta ID i [!DNL Facebook Ads Manager]. Ange `act_` som prefix för ID:t enligt nedan:
+> För [!DNL LinkedIn]-mål är **[!UICONTROL Account ID]** din [!DNL LinkedIn Campaign Manager Account ID]. Du hittar detta ID i [!DNL LinkedIn Campaign Manager].
 
+I det här steget kan du även välja alla **[!UICONTROL Marketing action]** som ska gälla för det här målet. Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
 
-![Anslut till mål för sociala nätverk - konfigurationssteg](../../assets/catalog/social/workflow/setup.png)
+Välj **[!UICONTROL Create Destination]** när du har fyllt i fälten ovan.
 
 Målet har skapats. Du kan välja **[!UICONTROL Save & Exit]** om du vill aktivera segment senare eller välja **[!UICONTROL Next]** om du vill fortsätta arbetsflödet och välja segment som ska aktiveras. I båda fallen ska du läsa nästa avsnitt, [Aktivera segment till sociala nätverk](#activate-segments), för resten av arbetsflödet.
 
