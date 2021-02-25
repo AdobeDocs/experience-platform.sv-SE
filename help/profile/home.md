@@ -4,9 +4,9 @@ title: Kundprofilöversikt i realtid
 topic: guide
 description: Kundprofil i realtid är ett generiskt uppslagsarkiv som sammanfogar data från olika företagsdatatillgångar och sedan ger tillgång till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 translation-type: tm+mt
-source-git-commit: e6ecc5dac1d09c7906aa7c7e01139aa194ed662b
+source-git-commit: 08eff53f107549fab0f167a6c206b632f3c8c183
 workflow-type: tm+mt
-source-wordcount: '1883'
+source-wordcount: '1825'
 ht-degree: 0%
 
 ---
@@ -36,11 +36,11 @@ Profilarkivet använder en Microsoft Azure Cosmos DB-infrastruktur och Platform 
 
 Experience Platform tillhandahåller en rad skyddsutkast som hjälper dig att undvika att skapa [XDM-scheman (Experience Data Model)](../xdm/home.md) som kundprofilen i realtid inte stöder. Detta inkluderar mjuka gränser som resulterar i försämrade prestanda, samt hårda gränser som resulterar i fel och systemfel. Mer information, inklusive en lista över riktlinjer och exempel på användningsfall, finns i [dokumentationen för profilskyddsprofiler](guardrails.md).
 
-### (Alfa) Kontrollpanel för profil {#profile-dashboard}
+### (Beta) Kontrollpanel för profil {#profile-dashboard}
 
 >[!IMPORTANT]
 >
->Instrumentpanelsfunktionen är för närvarande alfavärden och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+>Instrumentpanelsfunktionen är för närvarande i betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
 
 Användargränssnittet i Experience Platform innehåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid, som du har tagit med en daglig ögonblicksbild. Om du vill lära dig hur du får åtkomst till och arbetar med kontrollpanelen [!DNL Profile] i användargränssnittet, och detaljerad information om mätvärden som visas på kontrollpanelen, läser du i handboken [Profilkontrollpanelen](ui/profile-dashboard.md).
 
@@ -78,9 +78,9 @@ Om du vill veta mer om unionsscheman, inklusive hur du kommer åt unionsscheman 
 
 >[!IMPORTANT]
 >
->Den beräknade attributfunktionen är alfavärden. Dokumentationen och funktionaliteten kan komma att ändras.
+>Funktionen för beräknade attribut är alfavärden. Dokumentationen och funktionerna kan komma att ändras.
 
-Med beräknade attribut kan du automatiskt beräkna fältvärden baserat på andra värden, beräkningar och uttryck. Beräknade attribut fungerar på profilnivån, vilket innebär att du kan samla värden över alla poster och händelser. Varje beräknat attribut innehåller ett uttryck, eller &quot;rule&quot;, som utvärderar inkommande data och lagrar resultatvärdet i ett profilattribut eller i en händelse. Med hjälp av dessa beräkningar kan du enkelt besvara frågor som rör inköpstid, tid mellan köp eller antal programöppningar, utan att behöva utföra komplexa beräkningar manuellt varje gång informationen behövs. Mer information om beräknade attribut och steg-för-steg-instruktioner om hur du arbetar med dem med API:t [!DNL Real-time Customer Profile] finns i [handboken för beräknade attribut](api/computed-attributes.md). Den här guiden hjälper dig att bättre förstå vilken roll beräknade attribut spelar i Adobe Experience Platform, och den innehåller exempel på API-anrop för grundläggande CRUD-åtgärder.
+Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering. Med hjälp av dessa beräkningar kan du enkelt besvara frågor som rör inköpstid, tid mellan köp eller antal programöppningar, utan att behöva utföra komplexa beräkningar manuellt varje gång informationen behövs. Mer information om beräknade attribut, inklusive hur rollberäknade attribut fungerar i Adobe Experience Platform, får du om du börjar med att läsa översikten [beräknade attribut](computed-attributes/overview.md).
 
 ## Profiler och segment
 
