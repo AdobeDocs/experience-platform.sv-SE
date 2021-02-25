@@ -4,9 +4,9 @@ audience: user
 user-guide-title: Kundprofilguide i realtid
 user-guide-description: Sammanfoga kunddata för att skapa en enhetlig bild av kundinteraktioner över alla kanaler.
 translation-type: tm+mt
-source-git-commit: cab7ba65cc62d8cab402bc23ea38c17d77841363
+source-git-commit: 08eff53f107549fab0f167a6c206b632f3c8c183
 workflow-type: tm+mt
-source-wordcount: '111'
+source-wordcount: '122'
 ht-degree: 5%
 
 ---
@@ -20,7 +20,6 @@ ht-degree: 5%
 * [!DNL Profile] API {#api}
    * [Översikt](api/overview.md)
    * [Komma igång](api/getting-started.md)
-   * [(Alfa) Beräknade attribut](api/computed-attributes.md)
    * [Kantprojektioner](api/edge-projections.md)
    * [Enheter ([!DNL Profile] åtkomst)](api/entities.md)
    * [Exportera jobb ([!DNL Profile] export)](api/export-jobs.md)
@@ -35,6 +34,11 @@ ht-degree: 5%
    * [Skapa sammanfogningsprinciper (video)](video/create-merge-policies.md)
    * [Användargränssnittshandbok för unionsschema](ui/union-schema.md)
    * [Översikt över unionens schema (video)](video/union-schemas-overview.md)
+* (Alfa) Beräknade attribut {#computed-attributes}
+   * [Översikt](computed-attributes/overview.md)
+   * [API för beräknade attribut](computed-attributes/ca-api.md)
+   * [Konfigurera ett beräknat attributfält](computed-attributes/configure-api.md)
+   * [Exempeluttryck](computed-attributes/expressions.md)
 * Självstudiekurser {#tutorials}
    * [Lägg till data i [!DNL Profile]](tutorials/add-profile-data.md)
    * [Konfigurera en datauppsättning  [!DNL Profile] & [!DNL Identity] för tjänsten](tutorials/dataset-configuration.md)
