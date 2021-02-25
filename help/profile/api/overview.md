@@ -4,9 +4,9 @@ title: API-guide för kundprofil i realtid
 topic: guide
 description: Med kundprofils-API:t i realtid kan utvecklare utforska och arbeta med profildata, inklusive visa profiler, skapa och uppdatera sammanfogningsprinciper, exportera eller sampla profildata och ta bort profildata som inte längre behövs eller som har lagts till av misstag. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
 translation-type: tm+mt
-source-git-commit: e649ab3da077cdd8e98562199b8bdece6108a572
+source-git-commit: 24a5af0440f58b4e1db639ec971c4e1611f107d8
 workflow-type: tm+mt
-source-wordcount: '870'
+source-wordcount: '895'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,11 @@ En guide till hur du arbetar med [!DNL Real-time Customer Profile]-data i [!DNL 
 >
 >Funktionen för beräknade attribut är alfavärden och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
 
-Med beräknade attribut kan du automatiskt beräkna fältvärden baserat på andra värden, beräkningar och uttryck. Beräknade attribut fungerar på profilnivån, vilket innebär att du kan samla värden över alla poster och händelser. Varje beräknat attribut innehåller ett uttryck, eller &quot;rule&quot;, som utvärderar inkommande data och lagrar resultatvärdet i ett profilattribut eller i en händelse. Med hjälp av dessa beräkningar kan du enkelt besvara frågor som rör inköpstid, tid mellan köp eller antal programöppningar, utan att behöva utföra komplexa beräkningar manuellt varje gång informationen behövs. Du kan skapa, visa, redigera och ta bort beräknade attribut med `config/computedAttributes`-slutpunkten. Om du vill lära dig hur du använder den här slutpunkten kan du gå till [handboken för beräknade attribut](computed-attributes.md).
+Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering.
+
+Varje beräknat attribut innehåller ett uttryck, eller &quot;rule&quot;, som utvärderar inkommande data och lagrar resultatvärdet i ett profilattribut. Med hjälp av dessa beräkningar kan du enkelt besvara frågor som rör inköpstid, tid mellan köp eller antal programöppningar, utan att behöva utföra komplexa beräkningar manuellt varje gång informationen behövs. Dessa beräknade attributvärden kan sedan visas i en profil, användas för att skapa ett segment eller nås via ett antal olika åtkomstmönster.
+
+Du kan skapa, visa, redigera och ta bort beräknade attribut med `config/computedAttributes`-slutpunkten. Mer information om hur du använder beräknade attribut finns i [översikten över beräknade attribut](../computed-attributes/overview.md). API-åtgärder finns i [API-slutpunktshandboken för beräknade attribut](../computed-attributes/ca-api.md).
 
 ## Kantprojektioner {#edge-projections}
 
