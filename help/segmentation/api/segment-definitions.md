@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;segmentdefinition;segmentdefinitioner;api;API;
 solution: Experience Platform
 title: API-slutpunkt för segmentdefinitioner
-topic: developer guide
+topic: utvecklarhandbok
 description: Med segmentdefinitionsslutpunkten i Adobe Experience Platform Segmentation Service API kan du programmässigt hantera segmentdefinitioner för din organisation.
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 24a5af0440f58b4e1db639ec971c4e1611f107d8
 workflow-type: tm+mt
-source-wordcount: '1080'
+source-wordcount: '1124'
 ht-degree: 1%
 
 ---
@@ -197,6 +197,12 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
 | `expression.format` | Anger strukturen för uttrycket i värdet. Följande format stöds för närvarande: <ul><li>`pql/text`: En textbeteckning för en segmentdefinition enligt den publicerade PQL-grammatiken.  Exempel, `workAddress.stateProvince = homeAddress.stateProvince`.</li></ul> |
 | `expression.value` | Ett uttryck som överensstämmer med den typ som anges i `expression.format`. |
 | `description` | En läsbar beskrivning av definitionen. |
+
+>[!NOTE]
+>
+>Ett segmentdefinitionsuttryck kan också referera till ett beräknat attribut. Mer information finns i [API-slutpunktshandboken för beräknade attribut](../../profile/computed-attributes/ca-api.md)
+>
+>Funktionen för beräknade attribut är alfavärden och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
 
 **Svar**
 
