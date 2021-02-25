@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: January 27, 2021
 author: ens60013
 translation-type: tm+mt
-source-git-commit: 2e3a6acbfaa7f733a9843068c00f31f0b7f535b6
+source-git-commit: 18712835b2408b24cd2735b19c94bf1b1fe50df1
 workflow-type: tm+mt
-source-wordcount: '490'
-ht-degree: 3%
+source-wordcount: '712'
+ht-degree: 2%
 
 ---
 
@@ -21,6 +21,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [[!DNL Data Prep]](#data-prep)
 - [[!DNL Destinations]](#destinations)
+- [[!DNL Real-time Customer Profile]](#profile)
 - [[!DNL Sources]](#sources)
 
 ## [!DNL Data Prep] {#data-prep}
@@ -52,6 +53,19 @@ Mer information finns i [[!DNL Data Prep] översikten](../../data-prep/home.md).
 | Avancerad ID-matchning | Förbättringar av funktionerna för målgruppsmatchning i [!DNL Facebook Custom Audiences] och [!DNL Google Customer Match] genom att lägga till stöd för ytterligare identitetsmatchning, som externa ID:n, telefonnummer och mobila enhets-ID:n. Mer information finns i följande dokumentation: <ul><li>[Facebook-mål](../../destinations/catalog/social/facebook.md)</li><li>[Google Customer Match-mål](../../destinations/catalog/advertising/google-customer-match.md)</li><li>[Aktivera profiler och segment till ett mål](../../destinations/ui/activate-destinations.md)</li></ul> |
 
 Mer information finns i [målöversikten](../../destinations/home.md).
+
+## Kundprofil i realtid {#profile}
+
+Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med kundprofilen i realtid kan ni se en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. [!DNL Profile] gör att ni kan sammanställa kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Ta bort datauppsättning från profilarkivet | När du tar bort en datauppsättning från Experience Platform Data Lake tas den automatiskt bort även från profilarkivet. Du behöver inte längre använda API-slutpunkten för profilsystemjobb för att göra en borttagningsbegäran för att ta bort datauppsättningen explicit från profilarkivet. Mer information finns i [API-slutpunktshandboken för profilsystemjobb](../../profile/api/profile-system-jobs.md). |
+| Beräknat ID-namnutrymmesantal för ett givet segment | För uppskattat antal profiler rapporterar API:t för förhandsgranskning nu:<ul><li>Totalt antal uppskattade profiler i ett segment för ett givet namnutrymme.</li><li>Totalt antal beräknade profiler i profilunionens schema för ett givet namnområde.</li></ul>Mer information finns i [API-slutpunktshandboken för förhandsgranskning av profil](../../profile/api/preview-sample-status.md). |
+
+Mer information om kundprofil i realtid, inklusive självstudiekurser och bästa praxis för att arbeta med [!DNL Profile]-data, får du om du börjar med att läsa översikten över kundprofilen i realtid](../../profile/home.md).[
 
 ## [!DNL Sources] {#sources}
 
