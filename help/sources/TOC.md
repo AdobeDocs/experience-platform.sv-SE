@@ -5,9 +5,9 @@ user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 translation-type: tm+mt
-source-git-commit: 0e4fda4abf5c02df81b74f15d2fbcafb68548070
+source-git-commit: f3b27fbe75af7499f4ce43d8904d2f7e01384cb3
 workflow-type: tm+mt
-source-wordcount: '572'
+source-wordcount: '574'
 ht-degree: 5%
 
 ---
@@ -62,7 +62,7 @@ ht-degree: 5%
       - [IBM DB2-anslutning](connectors/databases/ibm-db2.md)
       - [Microsoft SQL Server-anslutning](connectors/databases/sql-server.md)
       - [MySQL-koppling](connectors/databases/mysql.md)
-      - [Oracle-kontakt](connectors/databases/oracle.md)
+      - [Oraclena koppling](connectors/databases/oracle.md)
       - [Phoenix-kontakt](connectors/databases/phoenix.md)
       - [PostgreSQL-koppling](connectors/databases/postgres.md)
    - e-handel {#ecommerce}
@@ -148,6 +148,7 @@ ht-degree: 5%
    - [Skapa en datauppsättningsanslutning](tutorials/api/create-dataset-base-connection.md)
    - [Övervaka dataflöden](tutorials/api/monitor.md)
    - [Uppdatera anslutningar](tutorials/api/update.md)
+   - [Uppdatera dataflöden](tutorials/api/update-dataflows.md)
    - [Ta bort anslutningar](tutorials/api/delete.md)
    - [Ta bort dataflöden](tutorials/api/delete-dataflows.md)
 - Självstudiekurser för användargränssnitt {#ui-tutorials}
