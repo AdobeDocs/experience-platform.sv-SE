@@ -3,21 +3,15 @@ keywords: Facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 translation-type: tm+mt
-source-git-commit: 28cfac3d7fed311d9eec01ef464cf921f44a10e9
+source-git-commit: bec44832a235dd3f9e2ee0f3ffc77854ee5784d7
 workflow-type: tm+mt
-source-wordcount: '988'
+source-wordcount: '933'
 ht-degree: 3%
 
 ---
 
 
 # [!DNL Facebook] anslutning
-
->[!IMPORTANT]
->
->Vi migrerar för närvarande kunder till den nya versionen av det här målet, [!DNL Facebook Custom Audience].
->
-> Instruktionerna i den här artikeln gäller för båda versionerna, med följande anmärkning: När migreringen pågår visas endast den aktuella versionen av [!DNL Facebook]-målet i användargränssnittet, där du bara kan använda identiteterna [!UICONTROL EMAIL] och [!UICONTROL EMAIL_LC_SHA_256] för aktivering.
 
 Aktivera profiler för [!DNL Facebook]-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hash-kodade e-postmeddelanden.
 
