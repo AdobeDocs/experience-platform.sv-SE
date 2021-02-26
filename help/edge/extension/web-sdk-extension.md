@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK Extension - översikt
 description: Läs mer om Adobe Experience Platform Web SDK-tillägget för Adobe Experience Platform Launch
 translation-type: tm+mt
-source-git-commit: 0b9a92f006d1ec151a0bb11c10c607ea9362f729
+source-git-commit: 18e511337eaa8b6eb7785b1ee5f1ce2366ddd7c7
 workflow-type: tm+mt
-source-wordcount: '598'
+source-wordcount: '532'
 ht-degree: 0%
 
 ---
@@ -12,61 +12,54 @@ ht-degree: 0%
 
 # Adobe Experience Platform Web SDK-tillägg - översikt
 
-Adobe Experience Platform Web SDK Extension skickar data till Adobe Experience Cloud från webbegenskaper via Adobe Experience Platform Edge Network. Med Adobe Experience Platform Web SDK-tillägget kan du strömma data till olika plattformar, synkronisera identiteter, anmäla dig och automatiskt samla in kontextdata.
+Adobe Experience Platform Web SDK-tillägget skickar data till Adobe Experience Cloud från webbegenskaper via Adobe Experience Platform Edge Network. Tillägget gör att ni kan strömma data till plattformen, synkronisera identiteter, bearbeta kundens medgivandesignaler och automatiskt samla in kontextdata.
+
+I det här dokumentet beskrivs hur du konfigurerar tillägget i Adobe Experience Platform Launch användargränssnitt.
 
 ## Konfigurera tillägget
 
-I det här avsnittet finns en referens för de alternativ som är tillgängliga när du konfigurerar Adobe Experience Platform Web SDK-tillägget.
+Om plattformstillägget för Web SDK redan har installerats för en egenskap öppnar du egenskapen i Platforma launchens användargränssnitt och väljer fliken **[!UICONTROL Extensions]**. Välj **[!UICONTROL Configure]** under Platform Web SDK.
 
-Om Adobe Experience Platform Web SDK-tillägget inte är installerat ännu öppnar du din egenskap, väljer **[!UICONTROL Extensions > Catalog]**, hovrar över Adobe Experience Platform Web SDK-tillägget och väljer **[!UICONTROL Install]**.
+![](../images/extension/overview/configure.png)
 
-Om du vill konfigurera tillägget öppnar du fliken **[!UICONTROL Extensions]**, håller pekaren över tillägget och väljer **[!UICONTROL Configure]**.
+Om du inte har installerat tillägget än väljer du fliken **[!UICONTROL Catalog]**. Leta reda på plattformstillägget för Web SDK i listan över tillgängliga tillägg och välj **[!UICONTROL Install]**.
 
-![](./assets/ext-aep-config.png)
+![](../images/extension/overview/install.png)
 
-### Instansnamn
+I båda fallen kommer du till konfigurationssidan för Platform Web SDK. I avsnitten nedan beskrivs tilläggets konfigurationsalternativ.
 
-Tillägget Adobe Experience Platform Web SDK har stöd för flera instanser på sidan. Detta används för att skicka data till flera organisationer med en enda Adobe Experience Platform Launch-konfiguration. **[!UICONTROL Name]** är som standard legerat. Du kan dock ändra instansnamnet till ett giltigt JavaScript-objektnamn. Adobe Experience Platform-tillägget kräver att alla instanser har olika **[!UICONTROL Config ID]** och olika **[!UICONTROL Organization ID]**.
+![](../images/extension/overview/config-screen.png)
 
-## **[!UICONTROL Config ID]**
+## Allmänna konfigurationsalternativ
 
-**[!UICONTROL Config ID]** är vad som anger för Adobe Experience Platform var data ska dirigeras och vilka konfigurationer som ska användas på servern. Detta krävs för att Adobe Experience Platform-tillägget ska fungera. Du kan få ett konfigurations-ID genom att kontakta kundtjänst.
+Konfigurationsalternativen högst upp på sidan anger för Adobe Experience Platform var data ska skickas och vilka konfigurationer som ska användas på servern.
 
+### [!UICONTROL Name]
 
-### **[!UICONTROL Organization ID]**
+Tillägget Adobe Experience Platform Web SDK har stöd för flera instanser på sidan. Detta används för att skicka data till flera organisationer med en enda konfiguration för Platform launch.
 
-**[!UICONTROL Organization ID]** är den organisation som du vill att data skickas till på Adobe. För det mesta bör du använda standardvärdet som fylls i automatiskt. När du har flera instanser på sidan fyller du i värdet för den andra organisationen som du vill skicka data till.
+Tilläggets namn är som standard &quot;[!DNL alloy]&quot;. Du kan dock ändra instansnamnet till ett giltigt JavaScript-objektnamn.
+
+### **[!UICONTROL IMS Organization ID]**
+
+[!UICONTROL IMS Organization ID] är den organisation som du vill att data skickas till på Adobe. För det mesta bör du använda standardvärdet som fylls i automatiskt. När du har flera instanser på sidan fyller du i det här fältet med värdet för den andra organisationen som du vill skicka data till.
 
 ### **[!UICONTROL Edge Domain]**
 
-**[!UICONTROL Edge Domain]** är den domän som Adobe Experience Platform-tillägget skickar och tar emot data från. Tillägget kräver att du använder en CNAME från första part för produktionstrafik. Standarddomänen från tredje part fungerar för utvecklingsmiljöer men är inte lämplig för produktionsmiljöer. Instruktioner om hur du konfigurerar en CNAME från en annan leverantör finns [här](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-first-party.html).
+[!UICONTROL Edge Domain] är den domän som Adobe Experience Platform-tillägget skickar och tar emot data från. Tillägget kräver att du använder en CNAME från första part för produktionstrafik. Standarddomänen från tredje part fungerar för utvecklingsmiljöer men är inte lämplig för produktionsmiljöer. Instruktioner om hur du konfigurerar en CNAME från en annan leverantör finns [här](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-first-party.html).
 
-### **[!UICONTROL Enable Errors]**
+## [!UICONTROL Edge Configurations]
 
-Om ett fel med tillägget uppstår loggas felet som standard i konsolen. Om du vill dölja felen i en produktionsmiljö kan du avmarkera kryssrutan **[!UICONTROL Enable Errors]**. Fel skrivs fortfarande ut när felsökning är aktiverat i Platforma launchen.
+När en begäran skickas till Adobe Experience Platform Edge Network används ett edge-konfigurations-ID för att referera till konfigurationen på serversidan. På så sätt kan du uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
 
-### **[!UICONTROL Enable Opt-in]**
+Mer information finns i guiden om [kantkonfigurationer](../fundamentals/edge-configuration.md).
 
-Om **[!UICONTROL Enable Opt-in]** är aktiverat kan tillägget hålla träffar tills anmälan tas emot. Tillägget visar en åtgärd för att ange inställningar för deltagande.
+## [!UICONTROL Privacy]
 
-### **[!UICONTROL Enable Migrate ECID]**
+I [!UICONTROL Privacy]-avsnittet kan du konfigurera hur SDK hanterar signaler om kundsamtycke från din webbplats. Det gör i synnerhet att du kan välja den standardnivå för samtycke som antas av en kund om ingen annan explicit medgivandepreferens har angetts. I följande tabell visas vad varje alternativ innebär:
 
-Tillägget för Platform Web SDK använder en ny cookie för att lagra ECID:t. Den här inställningen möjliggör kompatibilitet mellan den nya cookien och den gamla cookien för migreringsändamål. Adobe rekommenderar starkt att detta aktiveras, såvida du inte har några befintliga besökare med ett ECID.
-
-### **[!UICONTROL Use 3rd Party Cookies]**
-
-Adobe Experience Platform kommer alltid att lagra en cookie i den första domänen. Med det här alternativet kan du använda en cookie-uppsättning från tredje part på demdex.net utöver cookien på förstahandsdomänen. Detta kan vara praktiskt när du har användare som förflyttar sig mellan flera domäner. Detta inaktiverar anrop till demdex.net.
-
-### **[!UICONTROL Context]**
-
-Tillägget samlar automatiskt in information om innehållet i begäran (till exempel information om URL:en och webbläsaren). Du kan inaktivera detta genom att avmarkera specifika kontexter.
-
-- **[!UICONTROL web]** - Information om webbsidan, t.ex. url, referent osv.
-- **[!UICONTROL device]** - Information om enheten, t.ex. skärmorientering, skärmhöjd och skärmbredd.
-- **[!UICONTROL environment]** - Information om datormiljön (webbläsare, anslutning osv.)
-- **[!UICONTROL location]** - Begränsad information om var användaren befinner sig
-
-## Vad händer nu?
-
-1. Ange [åtgärdstyper](action-types.md).
-2. Ange [dataelementtyper](data-element-types.md).
+| [!UICONTROL Default Consent Level] | Beskrivning |
+| --- | --- |
+| [!UICONTROL In] | Anmäl dig. Använd det här alternativet om du antar att kunden godkänner det som standard och endast respekterar avanmälningssignaler. |
+| [!UICONTROL Pending] | Kunder med &quot;väntande&quot; samtycke antas avanmäla sig tills en anmälningssignal skickas. Använd det här alternativet om du kräver uttryckligt kundgodkännande för din affärsverksamhet. |
+| [!UICONTROL Provided by data element] | Standardnivån för samtycke bestäms av ett separat dataelement som du definierar. När du använder det här alternativet måste du ange dataelementet med den angivna listrutan. |
