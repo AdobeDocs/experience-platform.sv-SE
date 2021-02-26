@@ -1,21 +1,39 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;map csv;map csv file;map csv file to xdm;map csv to xdm;ui guide;mapper;mappning;date;date functions;dates;
+keywords: Experience Platform;hem;populära ämnen;mappa csv;mappa csv-fil;mappa csv-fil till xdm;mappa csv till xdm;ui guide;mappning;datum;datumfunktioner;datum;datumfunktion;datum
 solution: Experience Platform
 title: Datainställningsdatumfunktioner
-topic: overview
-description: I det här dokumentet introduceras de datumfunktioner som används med Data Prep.
+topic: översikt
+description: I det här dokumentet introduceras datumfunktionen som används med Data Prep.
 translation-type: tm+mt
-source-git-commit: 37c1c98ccba50fa917acc5e93763294f4dde5c36
+source-git-commit: d3531248f8a7116b66f9a7ca00e0eadbc3d9df3d
 workflow-type: tm+mt
-source-wordcount: '415'
-ht-degree: 16%
+source-wordcount: '483'
+ht-degree: 14%
 
 ---
 
 
-# Datapixens datumfunktioner
+# Funktionen Datum
 
 Data Prep stöder datumfunktioner, både som strängar och som datetime-objekt.
+
+## Format för datumfunktion
+
+Datumfunktionen konverterar strängar och datetime-objekt till ett ISO 8601-formaterat ZonedDateTime-objekt.
+
+**Format**
+
+```http
+date({DATE}, {FORMAT}, {DEFAULT_DATE})
+```
+
+| Parameter | Beskrivning |
+| --------- | ----------- |
+| `{DATE}` | Obligatoriskt. Strängen som representerar datumet. |
+| `{FORMAT}` | Valfritt. Strängen som representerar datumformatet. Mer information om strängformatering finns i avsnittet [datum-/tidsformatsträng](#format). |
+| `{DEFAULT_DATE}` | Valfritt. Standarddatumet som ska returneras om det angivna datumet är null. |
+
+Uttrycket `date(orderDate, "yyyy-MM-dd")` konverterar till exempel värdet `orderDate` &quot;December 31st, 2020&quot; till datetime-värdet &quot;2020-12-31&quot;.
 
 ## Konvertering av datumfunktion
 
@@ -46,7 +64,7 @@ När strängfält från inkommande data mappas till datumfält i scheman med hj�
 >
 > Data Prep försöker konvertera strängar till datum så gott som möjligt. Dessa konverteringar kan dock ge oönskade resultat. Strängvärdet &quot;12112020&quot; matchar mönstret &quot;MMyyyy&quot;, men användaren kan ha tänkt att datumet ska läsas med mönstret &quot;ddMMyyyy&quot;. Därför bör användare uttryckligen ange datumformatet för strängar.
 
-## Formatsträngar för datum/tid
+## Formatsträngar för datum/tid {#format}
 
 Tabellen nedan visar vilka mönsterbokstäver som är definierade för formatsträngar. Observera att bokstäverna är skiftlägeskänsliga.
 
@@ -77,7 +95,3 @@ Tabellen nedan visar vilka mönsterbokstäver som är definierade för formatstr
 | V | Tidszon-ID | Text | America/Los_Angeles |
 | O | Tidszonsförskjutning | Text | GMT+8 |
 | Q/q | Kvartal på året | Tal/text | 3. 03, Q3; 3:e kvartalet |
-
-**Exempel**
-
-Uttrycket `date(orderDate, "yyyy-MM-dd")` konverterar `orderDate`-värdet &quot;December 31st, 2020&quot; till datetime-värdet &quot;2020-12-31&quot;.
