@@ -3,7 +3,7 @@ title: Stöd för IAB TCF 2.0 i Adobe Experience Platform Web SDK
 description: Lär dig hur du kan använda IAB TCF 2.0-medgivandeinställningar med Adobe Experience Platform Web SDK
 keywords: samtycke;setConsent;Profile Privacy Mixin;Experience Event Privacy Mixin;Privacy Mixin;IAB TCF 2.0;Real-time CDP;Real-time Customer Data Profile
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 1c6238a0cf72230e019fd10d9a72f30444bd9fb9
 workflow-type: tm+mt
 source-wordcount: '878'
 ht-degree: 0%
@@ -66,7 +66,7 @@ Avsnitten nedan beskriver de viktigaste integrationspunkterna mellan IAB TCF 2.0
 
 Standardsamtycke används när det inte finns någon inställning för samtycke som redan har sparats för en kund. Det innebär att standardalternativen för samtycke kan styra Adobe Experience Platform Web SDK:s beteende och ändra baserat på kundens region.
 
-Om du till exempel har en kund som inte omfattas av den allmänna dataskyddsförordningen (GDPR), kan standardmedgivandet anges till `in`, men inom GDPR:s jurisdiktion, kan standardmedgivandet anges till `pending`. Din molnhanteringsplattform (CMP) kan identifiera kundens region och ange flaggan `gdprApplies` till IAB TCF 2.0. Den här flaggan kan användas för att ange standardsamtycke.
+Om du till exempel har en kund som inte omfattas av den allmänna dataskyddsförordningen (GDPR), kan standardmedgivandet anges till `in`, men inom GDPR:s jurisdiktion, kan standardmedgivandet anges till `pending`. Din CMP (Consent Management Platform) kan identifiera kundens region och ange flaggan `gdprApplies` till IAB TCF 2.0. Den här flaggan kan användas för att ange standardsamtycke.
 
 Mer information om standardsamtycke finns i [standardavsnittet för samtycke](../../fundamentals/configuring-the-sdk.md#default-consent) i SDK-konfigurationsdokumentationen.
 
