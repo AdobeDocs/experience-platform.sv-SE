@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;map csv;map csv file;map csv file to xdm;map csv to xdm;ui guide;mapper;mappning;mappningsfält;mappningsfunktioner;
 solution: Experience Platform
 title: Mappningsfunktioner för dataförinställningar
-topic: overview
+topic: översikt
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 translation-type: tm+mt
-source-git-commit: 49124d58fffa3670b332fab07843f2ef3db65f79
+source-git-commit: fd2dffd5b8957833b670e9cb434517bcb0f886a3
 workflow-type: tm+mt
-source-wordcount: '3609'
+source-wordcount: '3625'
 ht-degree: 2%
 
 ---
@@ -23,7 +23,7 @@ Ett fältnamn kan vara vilken giltig identifierare som helst - en sekvens med ob
 
 Om ett fältnamn inte följer den här regeln måste fältnamnet omslutas med `${}`. Om fältnamnet till exempel är &quot;Förnamn&quot; eller &quot;Förnamn&quot; måste namnet omslutas till `${First Name}` eller `${First.Name}`.
 
-Dessutom är fältnamn **alla** av följande reserverade nyckelord. De måste omslutas med `${}`:
+Om ett fältnamn är **alla** av följande reserverade nyckelord måste det dessutom omslutas med `${}`:
 
 ```console
 new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continue, else, and, ne, true, le, if, ge, return
@@ -103,7 +103,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 
 >[!NOTE]
 >
->Rulla åt vänster/höger för att visa hela innehållet i tabellen.
+>Rulla åt vänster/höger för att visa hela innehållet i tabellen. Mer information om funktionen `date` finns i [datumfunktionsguiden](./dates.md).
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
 -------- | ----------- | ---------- | -------| ---------- | -------------
