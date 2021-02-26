@@ -2,9 +2,9 @@
 title: Integrera stödet för IAB TCF 2.0 med Platform launch och Platform Web SDK Extension
 description: Lär dig hur du ställer in godkännande för IAB TCF 2.0 med Adobe Experience Platform Launch och tillägget Adobe Experience Platform Web SDK.
 translation-type: tm+mt
-source-git-commit: 0b9a92f006d1ec151a0bb11c10c607ea9362f729
+source-git-commit: 1a51ce92eb5c41ff65ebcf4c652640dd0782487f
 workflow-type: tm+mt
-source-wordcount: '827'
+source-wordcount: '829'
 ht-degree: 0%
 
 ---
@@ -24,13 +24,9 @@ Den här guiden kräver dessutom att du har en fungerande förståelse för Adob
 
 ## Ange standardsamtycke
 
-I tilläggskonfigurationen finns en inställning för standardsamtycke. Detta styr beteendet för kunder som inte har någon cookie för samtycke. Om du vill placera Experience Events i kö för kunder som inte har någon cookie för samtycke anger du `pending`.
+I tilläggskonfigurationen finns en inställning för standardsamtycke. Detta styr beteendet för kunder som inte har någon cookie för samtycke. Om du vill placera Experience Events i kö för kunder som inte har någon cookie för samtycke anger du `pending`. Du kan också använda ett dataelement för att dynamiskt ange standardvärdet för samtycke.
 
->[!NOTE]
->
->För närvarande går det inte att ställa in detta dynamiskt via tillägget Experience Platform Launch.
-
-Mer information om standardsamtycke finns i [standardavsnittet för samtycke](../../fundamentals/configuring-the-sdk.md#default-consent) i SDK-konfigurationsdokumentationen.
+Mer information om hur du konfigurerar standardsamtycke finns i [standardsektionen för samtycke](../../fundamentals/configuring-the-sdk.md#default-consent) i SDK-konfigurationsguiden.
 
 ## Uppdaterar profil med medgivandeinformation {#consent-code-1}
 
@@ -69,7 +65,7 @@ Den här anpassade koden gör två saker:
 * Värde: &quot;%IAB TCF Consent String%&quot;
 * GDPR gäller: &quot;%IAB TCF Consent GDPR%&quot;
 
-![IAB - ange medarbetaråtgärd](../../../assets/iab_set_consent_action.png)
+![IAB - ange medarbetaråtgärd](../../images/consent/iab-tcf/with-launch/iab-action.png)
 
 >[!IMPORTANT]
 >
