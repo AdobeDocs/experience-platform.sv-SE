@@ -2,13 +2,13 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;direktuppspelning;intag;tidsseriedata;data från strömtidsserier;
 solution: Experience Platform
 title: Strömma data i tidsserier med API:er för strömmande inmatning
-topic: tutorial
-type: Tutorial
+topic: självstudiekurs
+type: Självstudiekurs
 description: Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform datainmatningstjänst.
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: d3531248f8a7116b66f9a7ca00e0eadbc3d9df3d
 workflow-type: tm+mt
-source-wordcount: '1236'
+source-wordcount: '1313'
 ht-degree: 0%
 
 ---
@@ -316,9 +316,11 @@ Inmatning av tidsseriedata till en direktuppspelningsanslutning kan göras antin
 
 Exemplet nedan anger att tidsseriedata med ett saknat källnamn ska importeras till plattformen. Om källnamnet saknas i data läggs käll-ID:t till från anslutningsdefinitionen för direktuppspelning.
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Du måste skapa en egen `xdmEntity._id` och `xdmEntity.timestamp`. Ett bra sätt att generera ett ID är att använda ett UUID. Dessutom kräver följande API-anrop **inte** några autentiseringshuvuden.
+>Du måste skapa en egen `xdmEntity._id` och `xdmEntity.timestamp`. Ett bra sätt att generera ett ID är att använda UUID-funktionen i Data Prep. Mer information om UUID-funktionen finns i [handboken om dataprep-funktioner](../../data-prep/functions.md). Attributet `xdmEntity._id` representerar en unik identifierare för själva posten, **inte** ett unikt ID för den person eller enhet vars post det är. Person- eller enhets-ID är specifikt i alla attribut som tilldelas som en person eller enhets-ID för schemat.
+>
+>Både `xdmEntity._id` och `xdmEntity.timestamp` är de enda obligatoriska fälten för tidsseriedata. Dessutom kräver följande API-anrop **inte** några autentiseringshuvuden.
 
 ```shell
 curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValidation=true \
