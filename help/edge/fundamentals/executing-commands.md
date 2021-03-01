@@ -3,9 +3,9 @@ title: Kör Adobe Experience Platform Web SDK-kommandon
 description: Lär dig hur du kör Experience Platform Web SDK-kommandon
 keywords: Kör kommandon;commandName;Promises;getLibraryInfo;response objects;medgivande;
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 308c10eb0d1f78dad2b8b6158f28d0384a65c78c
 workflow-type: tm+mt
-source-wordcount: '417'
+source-wordcount: '416'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,8 @@ ht-degree: 0%
 
 # Kör kommandon
 
-När baskoden har implementerats på webbsidan kan du börja köra kommandon med SDK:n. Du behöver inte vänta på att den externa filen (alloy.js) ska läsas in från servern innan du kör kommandon. Om SDK inte har lästs in helt köas och bearbetas kommandona av SDK så snart som möjligt.
+
+När baskoden har implementerats på webbsidan kan du börja köra kommandon med SDK:n. Du behöver inte vänta på att den externa filen (`alloy.js`) ska läsas in från servern innan du kör kommandon. Om SDK inte har lästs in helt köas och bearbetas kommandona av SDK så snart som möjligt.
 
 Kommandon körs med följande syntax.
 
