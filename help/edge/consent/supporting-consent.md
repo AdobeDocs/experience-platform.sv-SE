@@ -3,9 +3,9 @@ title: Supporting Customer Consent Preferences Using the Adobe Experience Platfo
 description: Lär dig hur du stöder medgivandeinställningar med Adobe Experience Platform Web SDK.
 keywords: medgivande;defaultConsent;default medgivande;setConsent;Profile Privacy Mixin;Experience Event Privacy Mixin;Privacy Mixin;
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 308c10eb0d1f78dad2b8b6158f28d0384a65c78c
 workflow-type: tm+mt
-source-wordcount: '760'
+source-wordcount: '753'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Om du vill respektera användarens sekretess kan du be om användarens samtycke 
 Om användaren väljer alla syften får SDK utföra följande uppgifter:
 
 * Skicka data till och från Adobe-servrar.
-* Läs och skriv cookies eller webblagringsobjekt (förutom för att behålla användarens inställningar för deltagande).
+* Läs och skriv cookies eller webblagringsobjekt.
 
 Om användaren väljer bort alla syften utför SDK inte någon av dessa åtgärder.
 
