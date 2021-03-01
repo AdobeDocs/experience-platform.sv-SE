@@ -26,7 +26,7 @@ ht-degree: 12%
    - [Visa tillgängliga namnutrymmen](api/list-namespaces.md)
    - [Skapa ett anpassat namnutrymme](api/create-custom-namespace.md)
    - [Lista det inbyggda ID:t för en identitet](api/list-native-id.md)
-- Användargränssnitt för identitetstjänst {#ui}
+- Identitetstjänstens gränssnitt {#ui}
    - [Identitetsdiagramvisningsprogram](ui/identity-graph-viewer.md)
 - [ECID - översikt](ecid.md)
 - [Felsökningsguide](troubleshooting-guide.md)
