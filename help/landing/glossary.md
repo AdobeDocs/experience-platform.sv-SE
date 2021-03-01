@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Adobe Experience Platform-ordlista
-topic: getting started
+topic: komma igång
 description: En ordlista med viktig terminologi i Experience Platform.
 translation-type: tm+mt
 source-git-commit: 5575d5e45bddcc007dcf78720cd7a7e20475f78c
 workflow-type: tm+mt
-source-wordcount: '7131'
+source-wordcount: '7133'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 **Aktivera**: Aktivera är den åtgärd som en användare utför för att mappa ett segment eller profiler till ett mål som  [!DNL Oracle Eloqua],  [!DNL Google]eller  [!DNL Salesforce Marketing Cloud].
 
-**Aktivitet**: I  [!DNL Offer Decisioning]den här aktiviteten finns den logik som används för att välja ett erbjudande.
+**Aktivitet**: I  [!DNL Offer Decisioning]det här exemplet innehåller en aktivitet den logik som används som underlag för valet av ett erbjudande.
 
 **Administratör**: En eller flera personer i organisationen som kan konfigurera och anpassa behörigheter för Experience Platform i Adobe Admin Console.
 
@@ -41,7 +41,7 @@ ht-degree: 0%
 
 **Adobe Intelligent Services**: Intelligenta tjänster som Attribution AI och kundens AI är maskininlärningsmodeller baserade på artificiell intelligens som är specialbyggda och kräver att Experience Platform fungerar och fungerar.
 
-**Adobe I/O**: Adobe I/O ingår i Experience Platform och ger tillgång till allt utvecklare behöver för att integrera, utöka och anpassa plattformen, inklusive API:er, händelser, utvecklarkonsolen och praktiska verktyg.
+**Adobe I/O**: Adobe I/O är en del av Experience Platform och ger tillgång till allt utvecklare behöver för att integrera, utöka och anpassa plattformen, inklusive API:er, händelser, utvecklarkonsolen och praktiska verktyg.
 
 **Adobe Sensei**: Adobe Sensei är intelligensramverket som ligger till grund för Experience Platform. Det innehåller också en uppsättning AI-tjänster som ger varumärken möjlighet att förbättra sin förmåga att leverera personaliserade kundupplevelser i realtid.
 
@@ -111,7 +111,7 @@ ht-degree: 0%
 
 **Kontraktsetiketter**: Dataanvändningsetiketter för kontrakt (&quot;C&quot;) används för att kategorisera data som har avtalsmässiga skyldigheter eller som är relaterade till en kunds datastyrningspolicy.
 
-**C1-kontraktsetikett**: En etikett för  `C1` avtalsdataanvändning anger att data bara kan exporteras från Adobe Experience Cloud i en aggregerad form utan att det inkluderar individuella identifierare eller enhetsidentifierare. Till exempel data som kommer från sociala nätverk.
+**C1-kontraktsetikett**: En etikett för  `C1` avtalsdataanvändning anger att data endast kan exporteras från Adobe Experience Cloud i en aggregerad form utan att det inkluderar individuella identifierare eller enhetsidentifierare. Till exempel data som kommer från sociala nätverk.
 
 **C2-kontraktsetikett**: En etikett för  `C2` avtalsdataanvändning anger data som inte kan exporteras till en tredje part. Vissa dataleverantörer har villkor i sina kontrakt som förbjuder export av data som de ursprungligen samlades in från. Kontrakt för sociala nätverk begränsar till exempel ofta överföringen av data som du får från dem. C2 är mer restriktiv än C1, som bara kräver aggregation och anonyma uppgifter.
 
@@ -123,7 +123,7 @@ ht-degree: 0%
 
 **C6-kontraktsetikett**: En etikett för  `C6` avtalsdataanvändning anger att data inte kan användas för annonsanpassning på plats. Annonsanpassning på plats omfattar val och leverans av annonser på organisationens webbplatser eller i appar eller för att mäta hur effektiva dessa annonser är och hur de levereras. Detta inkluderar att använda tidigare insamlade data på plats om användarnas intresse för att välja annonser, bearbeta data om vilka annonser som visades, när och var de visades och om användarna vidtagit några åtgärder som rör annonsen, som att välja en annons eller göra ett köp.
 
-**C7-kontraktsetikett**: En etikett för  `C7` avtalsdataanvändning anger att data inte kan användas för att målinrikta innehåll på plats. Med målinriktning mot innehåll på plats kan du välja och leverera innehåll på organisationens webbplatser, eller i appar eller mäta hur effektivt innehållet levereras. Detta inkluderar tidigare insamlad information om användarnas intresse av att välja innehåll, bearbetning av data om vilket innehåll som visades, hur ofta eller hur länge det visades, när och var det visades, och om användarna vidtagit några åtgärder som rör innehållet, till exempel att välja innehåll.
+**C7-kontraktsetikett**: En etikett för  `C7` avtalsdataanvändning anger att data inte kan användas för att målinrikta innehåll på plats. Med målinriktning mot innehåll på plats kan du välja och leverera innehåll på organisationens webbplatser, eller i appar eller mäta leveransen och effektiviteten av sådant innehåll. Detta inkluderar tidigare insamlad information om användarnas intresse av att välja innehåll, bearbetning av data om vilket innehåll som visades, hur ofta eller hur länge det visades, när och var det visades, och om användarna vidtagit några åtgärder som rör innehållet, till exempel att välja innehåll.
 
 **C8-kontraktsetikett**: En etikett för  `C8` avtalsdataanvändning anger att data inte kan användas för att mäta organisationens webbplatser eller appar. Detta inkluderar inte intressebaserad målinriktning, som är insamling av information om din användning av den här tjänsten för att senare personalisera innehåll och/eller annonsering i andra sammanhang.
 
@@ -225,7 +225,7 @@ ht-degree: 0%
 
 **Experimentera**: Ett experiment är processen att skapa en utbildad modell genom att utbilda instansen med en exempeldel av data om produktion. Detta skiljer sig från en tränad modell som testas mot en testdatamängd för utelämnande. Detta skiljer sig också från konceptet med ett experiment i vissa maskininlärningsmiljöer där det i själva verket handlar om ett exempelmodelleringsprojekt.
 
-**Experience Event**: En Experience Event representerar en ögonblicksbild av systemet när en interaktion eller händelse som rör en kundupplevelse inträffar. Experience Events är oföränderliga fakta om vad som hänt och representerar vad som hänt utan aggregering eller tolkning. I Experience Data Model (XDM) fångas det här konceptet av klassen [!DNL XDM ExperienceEvent].
+**Experience Event**: En Experience Event representerar en ögonblicksbild av systemet när en interaktion eller händelse som rör en kundupplevelse inträffar. Experience Events är oföränderliga fakta om vad som inträffat och representerar vad som hänt utan aggregering eller tolkning. I Experience Data Model (XDM) fångas det här konceptet av klassen [!DNL XDM ExperienceEvent].
 
 **Tillägg**: I  [!DNL Platform Launch]är ett tillägg ett paket med funktioner som lagts till i en  [!DNL Platform Launch] egenskap. Ett tillägg är vanligtvis inriktat på en viss marknadsförings- eller analyslösning och innehåller de verktyg som behövs för att driftsätta tekniken i en klientmiljö.
 
@@ -355,7 +355,7 @@ ht-degree: 0%
 
 **Personaliserade erbjudanden**: Ett personaliserat erbjudande är ett anpassningsbart marknadsföringsmeddelande som baseras på regler och begränsningar för behörighet.
 
-**Placeringar**: En placering är den plats och/eller det sammanhang där ett erbjudande visas för en slutanvändare.
+**Placeringar**: en placering är den plats och/eller det sammanhang där ett erbjudande visas för en slutanvändare.
 
 **Arbetsytan** Profiler: En arbetsyta i användargränssnittet för plattformen som gör det möjligt för dataförvaltare att visa och hantera etiketter och policyer för dataanvändning för din organisation.
 
