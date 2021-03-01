@@ -2,13 +2,13 @@
 keywords: Experience Platform;hem;populära ämnen;ui;UI;XDM;XDM system;experience data model;Experience data model;Experience data model;data model;datamodell;schema editor;schema;schema;schema;scheman;scheman;scheman;scheman;skapa
 solution: Experience Platform
 title: Skapa ett schema med Schemaredigeraren
-topic: tutorial
-type: Tutorial
+topic: självstudiekurs
+type: Självstudiekurs
 description: I den här självstudiekursen beskrivs stegen för hur du skapar ett schema med Schemaredigeraren i Experience Platform.
 translation-type: tm+mt
 source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '3455'
+source-wordcount: '3457'
 ht-degree: 0%
 
 ---
