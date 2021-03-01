@@ -16,7 +16,7 @@ ht-degree: 2%
 # Sandlådor {#sandbox}
 
 * [Översikt över sandlådor](home.md)
-* Sandbox UI {#ui}
+* Sandbox-gränssnitt {#ui}
    * [Översikt över användargränssnittet i Sandbox](ui/overview.md)
    * [Handbok för sandlådeanvändare](ui/user-guide.md)
 * Sandbox-API {#api}
