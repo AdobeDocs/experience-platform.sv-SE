@@ -4,12 +4,12 @@ solution: Experience Platform
 title: Adobe Experience Platform FAQ and Troubleshooting Guide
 description: Hitta svar på vanliga frågor och en guide för felsökning av vanliga fel i Experience Platform.
 landing-page-description: Hitta svar på vanliga frågor och en guide för felsökning av vanliga fel i Experience Platform.
-topic: getting started
-type: Documentation
+topic: komma igång
+type: Dokumentation
 translation-type: tm+mt
 source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '1994'
+source-wordcount: '1997'
 ht-degree: 1%
 
 ---
@@ -51,7 +51,7 @@ GET /{CONTAINER_ID}/classes
 
 **Begäran**
 
-I den här exempelbegäran får variablerna från API-formatet faktiska värden i sökvägen för begäran. Alla obligatoriska rubriker visas också, som exempel på rubrikvärden eller variabler där känslig information (t.ex. säkerhetstoken och åtkomst-ID) ska inkluderas.
+I den här exempelbegäran får variablerna från API-formatet faktiska värden i sökvägen för begäran. Alla obligatoriska rubriker visas också, som exempel på rubrikvärden eller variabler där känslig information (som säkerhetstoken och åtkomst-ID) ska inkluderas.
 
 ```shell
 curl -X GET \
@@ -197,7 +197,7 @@ Det här felmeddelandet visas när en API-nyckelrubrik (`x-api-key`) saknas i en
 }
 ```
 
-Det här felmeddelandet visas när värdet för det angivna API-nyckelhuvudet (`x-api-key`) är ogiltigt. Kontrollera att du har angett nyckeln korrekt innan du försöker igen. Om du inte känner till API-nyckeln kan du hitta den i [Adobe I/O Console](https://console.adobe.io): på fliken **Integrationer** navigerar du till avsnittet **Översikt** för en viss integrering för att hitta API-nyckeln under **Klientautentiseringsuppgifter**.
+Det här felmeddelandet visas när värdet för det angivna API-nyckelhuvudet (`x-api-key`) är ogiltigt. Kontrollera att du har angett nyckeln korrekt innan du försöker igen. Om du inte känner till din API-nyckel kan du hitta den i [Adobe I/O-konsolen](https://console.adobe.io): på fliken **Integrationer** navigerar du till avsnittet **Översikt** för en viss integrering för att hitta API-nyckeln under **Klientautentiseringsuppgifter**.
 
 
 ### Rubrik saknas
@@ -220,7 +220,7 @@ Det här felmeddelandet visas när en IMS-organisationshuvud (`x-gw-ims-org-id`)
 }
 ```
 
-Det här felmeddelandet visas när användaren eller Adobe I/O-integreringen (identifieras av [åtkomsttoken](#how-do-i-get-an-access-token) i `Authorization`-huvudet) inte har rätt att göra anrop till [!DNL Experience Platform] API:er för IMS-organisationen som finns i `x-gw-ims-org-id`-huvudet. Kontrollera att du har angett rätt ID för IMS-organisationen i sidhuvudet innan du försöker igen. Om du inte känner till ditt organisations-ID kan du hitta det i [Adobe I/O Console](https://console.adobe.io): på fliken **Integrationer** navigerar du till avsnittet **Översikt** för en specifik integrering för att hitta ID:t under **Klientautentiseringsuppgifter**.
+Det här felmeddelandet visas när integreringen av användaren eller Adobe I/O (identifieras av [åtkomsttoken](#how-do-i-get-an-access-token) i `Authorization`-huvudet) inte har rätt att göra anrop till [!DNL Experience Platform] API:er för IMS-organisationen som finns i `x-gw-ims-org-id`-huvudet. Kontrollera att du har angett rätt ID för IMS-organisationen i sidhuvudet innan du försöker igen. Om du inte känner till ditt organisations-ID kan du hitta det i [Adobe I/O Console](https://console.adobe.io): på fliken **Integrationer** navigerar du till avsnittet **Översikt** för en specifik integrering för att hitta ID:t under **Klientautentiseringsuppgifter**.
 
 ### Giltig innehållstyp har inte angetts
 
