@@ -6,9 +6,9 @@ topic: översikt
 type: Självstudiekurs
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Amazon Kinesis-konto med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: 4f3d88e1241fd19dc9963f34dd60086ae2135557
+source-git-commit: ed14fe464a4dc82f54902c8dc92fe00bc2a5381e
 workflow-type: tm+mt
-source-wordcount: '548'
+source-wordcount: '561'
 ht-degree: 1%
 
 ---
@@ -92,8 +92,9 @@ curl -X POST \
         "auth": {
             "specName": "Aws Kinesis authentication credentials",
             "params": {
-                "accessKeyId": "accessKeyId",
-                "secretKey": "secretKey"
+                "accessKeyId": "{ACCESS_KEY_ID}",
+                "secretKey": "{SECRET_KEY}",
+                "region: "{REGION}
             }
         },
         "connectionSpec": {
@@ -107,7 +108,7 @@ curl -X POST \
 | -------- | ----------- |
 | `auth.params.accessKeyId` | Åtkomstnyckel-ID för ditt [!DNL Kinesis]-konto. |
 | `auth.params.secretKey` | Den hemliga åtkomstnyckeln för ditt [!DNL Kinesis]-konto. |
-| `auth.params.region` | Regionen för ditt [!DNL Kinesis]-konto. |
+| `auth.params.region` | Regionen för ditt [!DNL Kinesis]-konto. Mer information om regioner finns i dokumentet om [IP-adressen tillåtelselista](../../../../ip-address-allow-list.md) |
 | `connectionSpec.id` | Anslutningsspecifikations-ID för [!DNL Kinesis]: `86043421-563b-46ec-8e6c-e23184711bf6` |
 
 **Svar**
