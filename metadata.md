@@ -1,6 +1,7 @@
 ---
 cloud: experience-cloud
 product: adobe experience platform
+feature-set: Platform
 solution-title: Plattformsöversikt
 solution-hub-url: https://docs.adobe.com/content/help/en/experience-platform/landing/home.html
 solution-image: assets/experience_cloud_appicon_32.png
@@ -10,12 +11,12 @@ tutorials-title: Självstudiekurser
 tutorials-url: https://docs.adobe.com/content/help/en/experience-platform/tutorials/home.html
 git-repo: https://git.corp.adobe.com/AdobeDocs/experience-platform.sv-SE
 solution: Experience Platform
-type: Documentation
+type: Dokumentation
 index: true
 translation-type: tm+mt
-source-git-commit: ffa637c7a0c30bb1b41746b2278f00e40aa2e11e
+source-git-commit: 100e17f44c3af2a888d92d982ae3b2de1ed45ec5
 workflow-type: tm+mt
-source-wordcount: '145'
+source-wordcount: '146'
 ht-degree: 75%
 
 ---
