@@ -4,9 +4,9 @@ title: Översikt över arbetsytan Destinationer
 description: Arbetsytan Destinationer består av fyra avsnitt, Katalog, Bläddra, Konton och Systemvy, som beskrivs i avsnitten nedan.
 seo-description: I Adobe Experience Platform väljer du Destinationer i det vänstra navigeringsfältet för att komma åt målarbetsytan.
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 9305936ca1e73821b2fe948ff1a17a7168840cba
 workflow-type: tm+mt
-source-wordcount: '845'
+source-wordcount: '873'
 ht-degree: 1%
 
 ---
@@ -97,7 +97,7 @@ På fliken **[!UICONTROL Browse]** visas de mål som du har upprättat en anslut
 | [!UICONTROL Destination] | Målplattformen som du valde för aktiveringsflödet. |
 | [!UICONTROL Connection Type] | Representerar anslutningstypen för din lagringsbucket eller destination. <ul><li>För e-postmarknadsföringsmål: Kan vara S3 eller FTP.</li><li>För reklamdestinationer i realtid: Server-till-server</li></ul> |
 | [!UICONTROL Username] | De kontoautentiseringsuppgifter som du har valt för målflödet. |
-| [!UICONTROL Segments] | Antalet segment som aktiveras till det här målet. |
+| [!UICONTROL Activation Data] | Anger antalet segment som aktiveras till det här målet. Välj den här kontrollen om du vill veta mer om de aktiverade segmenten. Se [Aktiveringsdata](/help/destinations/ui/destination-details-page.md#activation-data) på sidan med målinformation för mer information om de aktiverade segmenten. |
 | [!UICONTROL Created] | Datum och UTC-tid när aktiveringsflödet till målet skapades. |
 | [!UICONTROL Status] | `Active` eller `Inactive`. Anger om data för närvarande aktiveras till det här målet. Mer information om hur du redigerar status finns i [Inaktivera aktivering](./activate-destinations.md#disable-activation). |
 
