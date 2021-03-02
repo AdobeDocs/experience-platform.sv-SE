@@ -3,13 +3,13 @@ keywords: Experience Platform;hem;populära ämnen;uppdatera konton
 description: Under vissa omständigheter kan det vara nödvändigt att uppdatera informationen för ett befintligt källkonto. På arbetsytan Källor kan du lägga till, redigera och ta bort information om en befintlig batch- eller direktuppspelningsanslutning, inklusive namn, beskrivning och autentiseringsuppgifter.
 solution: Experience Platform
 title: Uppdatera kontoinformation för källanslutning i användargränssnittet
-topic: overview
-type: Tutorial
+topic: översikt
+type: Självstudiekurs
 translation-type: tm+mt
-source-git-commit: ac477ee8053b30e88a38800ebe33fc9b5a520308
+source-git-commit: 04cf2cc1f15d9a673a0753643fc6263bcaf41464
 workflow-type: tm+mt
 source-wordcount: '648'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -26,8 +26,8 @@ I den här självstudiekursen beskrivs steg för hur du uppdaterar information o
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [Källor](../../home.md): Med DNL Experience Platform kan data hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
-- [Sandlådor](../../../sandboxes/home.md): DNL Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+- [Källor](../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
+- [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ## Uppdatera konton
 
@@ -61,7 +61,7 @@ Efter en stund visas en bekräftelseruta längst ned på skärmen som bekräftar
 
 ## Redigera schema
 
-Du kan redigera inmatningsschemat för ett dataflöde från sidan **[!UICONTROL Accounts]**. I listan med konton väljer du det konto som innehåller det dataflöde som du vill schemalägga om.
+Du kan redigera inmatningsschemat för ett dataflöde från sidan **[!UICONTROL Accounts]**. I listan över konton väljer du det konto som innehåller det dataflöde som du vill schemalägga om.
 
 ![select-account](../../images/tutorials/update/select-account.png)
 
