@@ -5,9 +5,9 @@ title: Mappningsfunktioner för dataförinställningar
 topic: översikt
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 translation-type: tm+mt
-source-git-commit: fd2dffd5b8957833b670e9cb434517bcb0f886a3
+source-git-commit: 6a541cca307dec8937c2d49470e8bcab770c80c7
 workflow-type: tm+mt
-source-wordcount: '3625'
+source-wordcount: '3719'
 ht-degree: 2%
 
 ---
@@ -149,6 +149,8 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | coalesce | Returnerar det första icke-null-objektet i en given array. | <ul><li>INMATNING: **Obligatoriskt** Den array som du vill hitta det första icke-null-objektet för.</li></ul> | coalesce(INPUT) | coalesce(null, null, null, &quot;first&quot;, null, &quot;second&quot;) | &quot;first&quot; |
 | först | Hämtar det första elementet i den angivna arrayen. | <ul><li>INMATNING: **Nödvändig** Arrayen som du vill hitta det första elementet i.</li></ul> | first(INPUT) | first(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;) | &quot;1&quot; |
 | sista | Hämtar det sista elementet i den angivna arrayen. | <ul><li>INMATNING: **Nödvändig** Arrayen som du vill hitta det sista elementet i.</li></ul> | last(INPUT) | last(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;) | &quot;3&quot; |
+| add_to_array | Lägger till element i slutet av arrayen. | <ul><li>ARRAY: **Nödvändig** Arrayen som du lägger till element i.</li><li>VÄRDEN: De element som du vill lägga till i arrayen.</li></ul> | add_to_array &#x200B;(ARRAY, VALUES) | add_to_array &#x200B;([&#39;a&#39;, &#39;b&#39;], &#39;c&#39;, &#39;d&#39;) | [a, b, c, d] |
+| join_arrays | Kombinerar arrayerna med varandra. | <ul><li>ARRAY: **Nödvändig** Arrayen som du lägger till element i.</li><li>VÄRDEN: Arrayen/arrayerna som du vill lägga till i den överordnade arrayen.</li></ul> | join_arrays &#x200B;(ARRAY, VALUES) | join_arrays &#x200B;([&#39;a&#39;, &#39;b&#39;], [&#39;c&#39;], [&#39;d&#39;, &#39;e&#39;]) | [a, b, c, d, e] |
 | to_array | Tar en lista med indata och konverterar den till en array. | <ul><li>INCLUDE_NULLS: **Obligatoriskt** Ett booleskt värde som anger om null-värden ska tas med i svarsarrayen eller inte.</li><li>VÄRDEN: **Obligatoriskt** De element som ska konverteras till en array.</li></ul> | to_array &#x200B;(INCLUDE_NULLS, VALUES) | to_array(false, 1, null, 2, 3) | `[1, 2, 3]` |
 
 ### Logiska operatorer
