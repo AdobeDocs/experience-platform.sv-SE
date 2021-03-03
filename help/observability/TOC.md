@@ -3,10 +3,11 @@ product: experience-platform
 audience: user
 user-guide-title: Insikter - guide
 user-guide-description: Övervaka plattformsaktiviteter med hjälp av statistik och händelsemeddelanden.
+feature: Datahantering
 translation-type: tm+mt
-source-git-commit: 92e3edaba5793d18e826d3e3f3151ba8a51fce53
+source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
 workflow-type: tm+mt
-source-wordcount: '53'
+source-wordcount: '55'
 ht-degree: 9%
 
 ---
