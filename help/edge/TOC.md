@@ -5,11 +5,12 @@ audience: user
 user-guide-title: Hjälp för Adobe Experience Platform Web SDK
 breadcrumb-title: Web SDK Guide
 user-guide-description: Interagera med Experience Cloud via Edge Network.
+feature: Datahantering
 translation-type: tm+mt
-source-git-commit: 85bb984231a3069aad0c63707f5024612181798c
+source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
 workflow-type: tm+mt
-source-wordcount: '145'
-ht-degree: 15%
+source-wordcount: '147'
+ht-degree: 14%
 
 ---
 
