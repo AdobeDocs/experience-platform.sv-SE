@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK Extension - översikt
 description: Läs mer om Adobe Experience Platform Web SDK-tillägget för Adobe Experience Platform Launch
 translation-type: tm+mt
-source-git-commit: 18e511337eaa8b6eb7785b1ee5f1ce2366ddd7c7
+source-git-commit: 2a0ae9541a8bb2bb985d43a402d0842e73b23c81
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '525'
 ht-degree: 0%
 
 ---
@@ -36,13 +36,13 @@ Konfigurationsalternativen högst upp på sidan anger för Adobe Experience Plat
 
 ### [!UICONTROL Name]
 
-Tillägget Adobe Experience Platform Web SDK har stöd för flera instanser på sidan. Detta används för att skicka data till flera organisationer med en enda konfiguration för Platform launch.
+Tillägget Adobe Experience Platform Web SDK har stöd för flera instanser på sidan. Namnet används för att skicka data till flera organisationer med en enda konfiguration för Platform launch.
 
 Tilläggets namn är som standard &quot;[!DNL alloy]&quot;. Du kan dock ändra instansnamnet till ett giltigt JavaScript-objektnamn.
 
 ### **[!UICONTROL IMS Organization ID]**
 
-[!UICONTROL IMS Organization ID] är den organisation som du vill att data skickas till på Adobe. För det mesta bör du använda standardvärdet som fylls i automatiskt. När du har flera instanser på sidan fyller du i det här fältet med värdet för den andra organisationen som du vill skicka data till.
+[!UICONTROL IMS Organization ID] är den organisation som du vill att data skickas till på Adobe. För det mesta använder du standardvärdet som fylls i automatiskt. När du har flera instanser på sidan fyller du i det här fältet med värdet för den andra organisationen som du vill skicka data till.
 
 ### **[!UICONTROL Edge Domain]**
 
@@ -50,7 +50,7 @@ Tilläggets namn är som standard &quot;[!DNL alloy]&quot;. Du kan dock ändra i
 
 ## [!UICONTROL Edge Configurations]
 
-När en begäran skickas till Adobe Experience Platform Edge Network används ett edge-konfigurations-ID för att referera till konfigurationen på serversidan. På så sätt kan du uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
+När en begäran skickas till Adobe Experience Platform Edge Network används ett edge-konfigurations-ID för att referera till konfigurationen på serversidan. Du kan uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
 
 Mer information finns i guiden om [kantkonfigurationer](../fundamentals/edge-configuration.md).
 
@@ -61,5 +61,5 @@ I [!UICONTROL Privacy]-avsnittet kan du konfigurera hur SDK hanterar signaler om
 | [!UICONTROL Default Consent Level] | Beskrivning |
 | --- | --- |
 | [!UICONTROL In] | Anmäl dig. Använd det här alternativet om du antar att kunden godkänner det som standard och endast respekterar avanmälningssignaler. |
-| [!UICONTROL Pending] | Kunder med &quot;väntande&quot; samtycke antas avanmäla sig tills en anmälningssignal skickas. Använd det här alternativet om du kräver uttryckligt kundgodkännande för din affärsverksamhet. |
+| [!UICONTROL Pending] | Kunder med väntande samtycke avvisas tills en anmälan skickas. Använd det här alternativet om du kräver uttryckligt kundgodkännande för din affärsverksamhet. |
 | [!UICONTROL Provided by data element] | Standardnivån för samtycke bestäms av ett separat dataelement som du definierar. När du använder det här alternativet måste du ange dataelementet med den angivna listrutan. |
