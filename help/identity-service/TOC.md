@@ -4,10 +4,11 @@ audience: user
 user-guide-title: Adobe Experience Platform Identity Service
 breadcrumb-title: Handbok för Platform Identity Service
 user-guide-description: Kombinera kundidentiteter över olika enheter och system för att leverera personaliserade digitala upplevelser.
+feature: Identiteter
 translation-type: tm+mt
-source-git-commit: 6cee9331acde303951718a5be6f5aeaa18a458f6
+source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
 workflow-type: tm+mt
-source-wordcount: '96'
+source-wordcount: '97'
 ht-degree: 12%
 
 ---
