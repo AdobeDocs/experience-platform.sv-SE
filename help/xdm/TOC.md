@@ -4,10 +4,11 @@ audience: user
 user-guide-title: Experience Data Model (XDM) - systemhjälp
 breadcrumb-title: XDM-guide (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och mixins för att standardisera upplevelsedata.
+feature: Scheman
 translation-type: tm+mt
-source-git-commit: b735e5f7eb8d1f0526d8786430c844b4d36fa09d
+source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
 workflow-type: tm+mt
-source-wordcount: '235'
+source-wordcount: '236'
 ht-degree: 7%
 
 ---
