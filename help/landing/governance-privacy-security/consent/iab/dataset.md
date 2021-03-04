@@ -5,9 +5,9 @@ title: Skapa datauppsättningar för att hämta IAB TCF 2.0-medgivandedata
 topic: sekretesshändelser
 description: Det här dokumentet innehåller steg för hur du konfigurerar de två datauppsättningar som krävs för att samla in IAB TCF 2.0-medgivandedata.
 translation-type: tm+mt
-source-git-commit: a845ade0fc1e6e18c36b5f837fe7673a976f01c7
+source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
 workflow-type: tm+mt
-source-wordcount: '1565'
+source-wordcount: '1566'
 ht-degree: 0%
 
 ---
