@@ -5,9 +5,9 @@ title: Översikt över namnområde för identitet
 topic: översikt
 description: 'Identitetsnamnutrymmen är en komponent i identitetstjänsten som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet"name@email.com" som e-postadress eller"443522" som ett numeriskt CRM-ID. '
 translation-type: tm+mt
-source-git-commit: fc493a207e305887e798238ba6883f4934c5cba5
+source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
 workflow-type: tm+mt
-source-wordcount: '1450'
+source-wordcount: '1451'
 ht-degree: 0%
 
 ---
