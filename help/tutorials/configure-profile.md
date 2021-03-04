@@ -6,9 +6,9 @@ topic: självstudiekurs
 type: Självstudiekurs
 description: I det här dokumentet beskrivs de olika stegen och det finns länkar till självstudiekurser för att slutföra varje enskilt arbetsflöde.
 translation-type: tm+mt
-source-git-commit: 0aa59a5375757f81d63ac43d778ff2c7179d449b
+source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
 workflow-type: tm+mt
-source-wordcount: '794'
+source-wordcount: '795'
 ht-degree: 0%
 
 ---
