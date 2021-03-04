@@ -2,12 +2,12 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;direktuppspelningssegmentering;Kontinuerlig utvärdering;
 solution: Experience Platform
 title: 'Utvärdera händelser i nära realtid med strömmande segmentering '
-topic: developer guide
+topic: utvecklarhandbok
 description: Det här dokumentet innehåller exempel på hur du använder direktuppspelningssegmentering med Adobe Experience Platform Segmentation Service API.
 translation-type: tm+mt
-source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
+source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
 workflow-type: tm+mt
-source-wordcount: '1338'
+source-wordcount: '1341'
 ht-degree: 0%
 
 ---
