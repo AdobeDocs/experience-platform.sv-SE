@@ -3,12 +3,12 @@ keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Anslut till e-postmarknadsföringsmål och aktivera data med API-anrop
 description: I det här dokumentet beskrivs hur du skapar e-postmarknadsföringsmål med hjälp av Adobe Experience Platform API
-topic: tutorial
-type: Tutorial
+topic: självstudiekurs
+type: Självstudiekurs
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: c8b08b2feb30bf137d802ce82df92d3f9f8bdb78
 workflow-type: tm+mt
-source-wordcount: '1644'
+source-wordcount: '1676'
 ht-degree: 0%
 
 ---
@@ -360,6 +360,12 @@ Ett lyckat svar innehåller basanslutningsens unika identifierare (`id`). Lagra 
 ```
 
 ### Ange lagringsplats och dataformat
+
+[!DNL Adobe Experience Platform] exporterar data för e-postmarknadsföring och molnlagringsdestinationer i form av  [!DNL CSV] filer.
+
+>[!IMPORTANT]
+> 
+>[!DNL Adobe Experience Platform] delar automatiskt upp exportfilerna i 5 miljoner poster (rader) per fil. Varje rad representerar en profil.
 
 **API-format**
 
