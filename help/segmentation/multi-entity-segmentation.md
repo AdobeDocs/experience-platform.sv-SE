@@ -2,12 +2,12 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;segmentering;segmentering;segmenttjänster;segment;segment;flerenhetssegmentering;flerenhetssegmentering;flerenhetssegment;
 solution: Experience Platform
 title: Översikt över segmentering av flera enheter
-topic: overview
+topic: översikt
 description: Multientitetssegmentering är möjligheten att utöka profildata med ytterligare data baserat på produkter, butiker eller andra icke-profilklasser. När de är anslutna blir data från ytterligare klasser tillgängliga som om de vore inbyggda i profilschemat.
 translation-type: tm+mt
-source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
+source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
 workflow-type: tm+mt
-source-wordcount: '674'
+source-wordcount: '676'
 ht-degree: 0%
 
 ---
