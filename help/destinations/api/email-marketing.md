@@ -6,9 +6,9 @@ description: I det här dokumentet beskrivs hur du skapar e-postmarknadsförings
 topic: självstudiekurs
 type: Självstudiekurs
 translation-type: tm+mt
-source-git-commit: c8b08b2feb30bf137d802ce82df92d3f9f8bdb78
+source-git-commit: 789534c02746ed24dfa01c7b471cdf3be407711e
 workflow-type: tm+mt
-source-wordcount: '1676'
+source-wordcount: '1696'
 ht-degree: 0%
 
 ---
@@ -366,6 +366,8 @@ Ett lyckat svar innehåller basanslutningsens unika identifierare (`id`). Lagra 
 >[!IMPORTANT]
 > 
 >[!DNL Adobe Experience Platform] delar automatiskt upp exportfilerna i 5 miljoner poster (rader) per fil. Varje rad representerar en profil.
+>
+>Delade filnamn läggs till med en siffra som anger att filen är en del av en större export: `filename.csv`, `filename_2.csv`, `filename_3.csv`.
 
 **API-format**
 
