@@ -6,9 +6,9 @@ topic: självstudiekurs
 type: Självstudiekurs
 description: Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform datainmatningstjänst.
 translation-type: tm+mt
-source-git-commit: d3531248f8a7116b66f9a7ca00e0eadbc3d9df3d
+source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
 workflow-type: tm+mt
-source-wordcount: '1313'
+source-wordcount: '1314'
 ht-degree: 0%
 
 ---
