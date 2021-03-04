@@ -2,14 +2,14 @@
 keywords: Experience Platform;hem;populära ämnen;hämta misslyckade batchar;misslyckade batchar;batchöverföring;Batchhämtning;Misslyckade batchar;Hämta misslyckade batchar;hämta misslyckade batchar;Hämtning misslyckades batchar;hämta misslyckade batchar;
 solution: Experience Platform
 title: Hämtning av misslyckade batchar med API:t för dataåtkomst
-topic: tutorial
-type: Tutorial
+topic: självstudiekurs
+type: Självstudiekurs
 description: I den här självstudiekursen beskrivs steg för hur du hämtar information om en misslyckad batch med hjälp av API:er för datainmatning.
 translation-type: tm+mt
-source-git-commit: 089a4d517476b614521d1db4718966e3ebb13064
+source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
 workflow-type: tm+mt
-source-wordcount: '652'
-ht-degree: 0%
+source-wordcount: '655'
+ht-degree: 1%
 
 ---
 
