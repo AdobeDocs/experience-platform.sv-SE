@@ -2,12 +2,12 @@
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API
 title: API-slutpunkter för Edge Projection
 topic: guide
-type: Documentation
-description: Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid genom att göra rätt data lättillgänglig och kontinuerligt uppdaterad i takt med att förändringar sker. Detta görs genom användning av kanter, en geografiskt placerad server som lagrar data och gör dem tillgängliga för program.
+type: Dokumentation
+description: Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid genom att göra rätt data lättillgänglig och kontinuerligt uppdaterad när förändringar inträffar. Detta görs genom användning av kanter, en geografiskt placerad server som lagrar data och gör dem tillgängliga för program.
 translation-type: tm+mt
-source-git-commit: e6ecc5dac1d09c7906aa7c7e01139aa194ed662b
+source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
 workflow-type: tm+mt
-source-wordcount: '1961'
+source-wordcount: '1966'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # Konfiguration och slutpunkter för kantprojektion
 
-För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Adobe Experience Platform ger realtidsåtkomst till data genom att använda kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Adobe-program som Adobe Target och Adobe Campaign använder kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten. Den här guiden innehåller detaljerade anvisningar om hur du använder API:t [!DNL Real-time Customer Profile] för att arbeta med kantprognoser, inklusive mål och konfigurationer.
+För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Adobe Experience Platform ger realtidsåtkomst till data genom att använda kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Till exempel använder Adobe-program som Adobe Target och Adobe Campaign kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten. Den här guiden innehåller detaljerade anvisningar om hur du använder API:t [!DNL Real-time Customer Profile] för att arbeta med kantprognoser, inklusive mål och konfigurationer.
 
 ## Komma igång
 
