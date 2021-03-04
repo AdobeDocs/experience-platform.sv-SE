@@ -3,9 +3,9 @@ keywords: RTCDP;CDP;Real-time Customer Data Platform;real time customer data pla
 title: Komma igång med kunddataplattformen i realtid
 description: Använd det här exempelscenariot som exempel när du konfigurerar implementeringen av kunddataplattformen i realtid.
 translation-type: tm+mt
-source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
+source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
 workflow-type: tm+mt
-source-wordcount: '2321'
+source-wordcount: '2323'
 ht-degree: 0%
 
 ---
