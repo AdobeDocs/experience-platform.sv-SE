@@ -2,12 +2,12 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;övervakning;övervaka;dataflöden;övervaka inmatning;dataöverföring;visa poster;visa batchar;
 solution: Experience Platform
 title: Övervaka datainmatning
-topic: overview
+topic: översikt
 description: I den här användarhandboken beskrivs hur du övervakar data i Adobe Experience Platform användargränssnitt. Den här guiden kräver att du har en Adobe ID och tillgång till Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 089a4d517476b614521d1db4718966e3ebb13064
+source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
 workflow-type: tm+mt
-source-wordcount: '563'
+source-wordcount: '565'
 ht-degree: 0%
 
 ---
