@@ -6,9 +6,9 @@ topic: självstudiekurs
 type: Självstudiekurs
 description: Med direktuppspelningsintag kan du överföra data till Adobe Experience Platform med direktuppspelningsslutpunkter i realtid. API:er för direktuppspelning stöder två valideringslägen - synkron och asynkron.
 translation-type: tm+mt
-source-git-commit: 8f863eb3427097406237aa443262917fdc3f3e1c
+source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
 workflow-type: tm+mt
-source-wordcount: '898'
+source-wordcount: '900'
 ht-degree: 2%
 
 ---
