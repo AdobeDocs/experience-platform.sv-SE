@@ -6,9 +6,9 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: efb66b6374f8c0579d90f63452528353f4d1418d
+source-git-commit: 789534c02746ed24dfa01c7b471cdf3be407711e
 workflow-type: tm+mt
-source-wordcount: '2081'
+source-wordcount: '2101'
 ht-degree: 0%
 
 ---
@@ -147,6 +147,9 @@ Gäller för: Destinationer för e-postmarknadsföring och molnlagring
 >[!IMPORTANT]
 > 
 >[!DNL Adobe Experience Platform] delar automatiskt upp exportfilerna i 5 miljoner poster (rader) per fil. Varje rad representerar en profil.
+>
+>Delade filnamn läggs till med en siffra som anger att filen är en del av en större export: `filename.csv`, `filename_2.csv`, `filename_3.csv`.
+
 
 Om du vill lägga till ett schema för segmentet väljer du **[!UICONTROL Create schedule]**.
 
