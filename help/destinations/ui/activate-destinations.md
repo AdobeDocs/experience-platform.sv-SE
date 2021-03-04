@@ -1,14 +1,14 @@
 ---
 keywords: aktivera mål;aktivera mål;aktivera data
 title: Aktivera profiler och segment till ett mål
-type: Tutorial
+type: Självstudiekurs
 seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
+source-git-commit: efb66b6374f8c0579d90f63452528353f4d1418d
 workflow-type: tm+mt
-source-wordcount: '2057'
+source-wordcount: '2081'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 # Aktivera profiler och segment till ett mål
 
-Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
+Aktivera de data du har i [!DNL Adobe Experience Platform] genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 
 ## Förutsättningar {#prerequisites}
 
@@ -38,7 +38,9 @@ Välj namnet på målet för att navigera till aktiveringsarbetsflödet.
 
 ![activate-flow](../assets/ui/activate-destinations/activate-flow.png)
 
-Observera att om det redan finns ett aktiveringsarbetsflöde för ett mål, kan du se vilka segment som för närvarande aktiveras för målet. Välj **[!UICONTROL Edit activation]** till höger och följ stegen nedan för att ändra aktiveringsinformationen.
+>[!NOTE]
+>
+>Om det redan finns ett aktiveringsarbetsflöde för ett mål kan du se vilka segment som aktiveras för tillfället till målet. Välj **[!UICONTROL Edit activation]** till höger och följ stegen nedan för att ändra aktiveringsinformationen.
 
 När du har valt ett mål väljer du **[!UICONTROL Activate]**.
 
@@ -62,7 +64,7 @@ För sociala mål måste du välja källattribut eller identitetsnamnutrymmen so
 
 #### Exempel: aktivera målgruppsdata i [!DNL Facebook Custom Audience] {#example-facebook}
 
-Detta är ett exempel på korrekt identitetsmappning när målgruppsdata aktiveras i [!DNL Facebook].
+Nedan visas ett exempel på korrekt identitetsmappning när målgruppsdata aktiveras i [!DNL Facebook].
 
 Välja källfält:
 
@@ -140,13 +142,17 @@ Gäller för: Destinationer för e-postmarknadsföring och molnlagring
 
 ![Konfigurera steg](../assets/ui/activate-destinations/configure-icon.png)
 
-I steget **[!UICONTROL Configure]** kan du konfigurera schemat och filnamnen för varje segment som du exporterar. Det är obligatoriskt att konfigurera schemat, men det är valfritt att konfigurera filnamnet.
+[!DNL Adobe Experience Platform] exporterar data för e-postmarknadsföring och molnlagringsdestinationer i form av  [!DNL CSV] filer. I steget **[!UICONTROL Configure]** kan du konfigurera schemat och filnamnen för varje segment som du exporterar. Det är obligatoriskt att konfigurera schemat, men det är valfritt att konfigurera filnamnet.
+
+>[!IMPORTANT]
+> 
+>[!DNL Adobe Experience Platform] delar automatiskt upp exportfilerna i 5 miljoner poster (rader) per fil. Varje rad representerar en profil.
 
 Om du vill lägga till ett schema för segmentet väljer du **[!UICONTROL Create schedule]**.
 
 ![](../assets/ui/activate-destinations/configure-destination-schedule.png)
 
-En pover visas med alternativ för att skapa segmentschemat.
+En dialogruta med alternativ för att skapa segmentschemat visas.
 
 * **Filexport**: Du kan antingen exportera hela eller inkrementella filer. När du exporterar en fullständig fil publiceras en fullständig ögonblicksbild av alla profiler som är kvalificerade för det segmentet. När du exporterar en inkrementell fil publiceras det delta i profiler som är kvalificerade för det segmentet sedan den senaste exporten.
 * **Frekvens**: Om du  **[!UICONTROL Export full files]** väljer det här alternativet kan du exportera  **[!UICONTROL Once]** eller  **[!UICONTROL Daily]**. Om **[!UICONTROL Export incremental files]** är markerat kan du bara exportera **[!UICONTROL Daily]**. När du exporterar en fil **[!UICONTROL Once]** exporteras filen en gång. Vid export av en fil **[!UICONTROL Daily]** exporteras filen varje dag från startdatumet till slutdatumet kl. 12:00 UTC (7:00 EST) om fullständiga filer har valts och kl. 12:00 UTC (7:00 EST) om inkrementella filer har valts.
@@ -182,7 +188,7 @@ Gäller för: reklamdestinationer, sociala destinationer
 
 ![steg för segmentschema](../assets/ui/activate-destinations/segment-schedule-icon.png)
 
-På sidan **[!UICONTROL Segment schedule]** kan du ange startdatum för att skicka data till målet samt hur ofta data ska skickas till målet.
+På sidan **[!UICONTROL Segment schedule]** kan du ange startdatum för att skicka data till målet och hur ofta data ska skickas till målet.
 
 >[!IMPORTANT]
 >
