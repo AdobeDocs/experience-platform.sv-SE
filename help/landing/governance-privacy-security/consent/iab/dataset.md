@@ -2,12 +2,12 @@
 keywords: Experience Platform;home;IAB;IAB 2.0;medgivande;Samtycke
 solution: Experience Platform
 title: Skapa datauppsättningar för att hämta IAB TCF 2.0-medgivandedata
-topic: privacy events
+topic: sekretesshändelser
 description: Det här dokumentet innehåller steg för hur du konfigurerar de två datauppsättningar som krävs för att samla in IAB TCF 2.0-medgivandedata.
 translation-type: tm+mt
-source-git-commit: b0af9d49f6cfe50f6dff745dfac174dbaa76d070
+source-git-commit: a845ade0fc1e6e18c36b5f837fe7673a976f01c7
 workflow-type: tm+mt
-source-wordcount: '1563'
+source-wordcount: '1565'
 ht-degree: 0%
 
 ---
@@ -105,7 +105,7 @@ Båda versionerna av blandningen [!UICONTROL Privacy Details] kräver minst ett 
 | `xdm:consentStandard` | Samtyckesramverket som uppgifterna gäller för. För TCF-kompatibilitet måste värdet vara `IAB TCF`. |
 | `xdm:consentStandardVersion` | Versionsnumret för medgivanderamverket som anges av `xdm:consentStandard`. För TCF 2.0-kompatibilitet måste värdet vara `2.0`. |
 | `xdm:consentStringValue` | Medgivandesträngen som genererades av medgivandehanteringsplattformen (CMP) baserat på kundens valda inställningar. |
-| `xdm:gdprApplies` | Ett booleskt värde som anger om GDPR gäller för den här kunden eller inte. Värdet måste anges till `true` för att TCF 2.0 ska kunna användas. Standardvärdet är `false` om det inte ingår. |
+| `xdm:gdprApplies` | Ett booleskt värde som anger om GDPR gäller för den här kunden eller inte. Värdet måste anges till `true` för att TCF 2.0 ska kunna användas. Standardvärdet är `true` om det inte ingår. |
 | `xdm:containsPersonalData` | Ett booleskt värde som anger om medgivandeuppdateringen innehåller personuppgifter eller inte. Standardvärdet är `false` om det inte ingår. |
 
 ## Skapa kundmedgivandescheman {#create-schemas}
@@ -202,7 +202,7 @@ När mixarna har lagts till slutför du genom att välja **[!UICONTROL Save]**.
 
 ## Skapa datauppsättningar baserat på dina medgivandescheman {#datasets}
 
-För vart och ett av de obligatoriska scheman som beskrivs ovan måste du skapa en datauppsättning som i slutändan kommer att innehålla kundernas samtycke. Datauppsättningen som baseras på postschemat måste aktiveras för [!DNL Real-time Customer Profile], medan datauppsättningen som baseras på tidsseriens schema **inte ska vara**-aktiverad.[!DNL Profile]
+För vart och ett av de obligatoriska scheman som beskrivs ovan måste du skapa en datauppsättning som i slutändan kommer att innehålla kundernas medgivandedata. Datauppsättningen som baseras på postschemat måste aktiveras för [!DNL Real-time Customer Profile], medan datauppsättningen som baseras på tidsseriens schema **inte ska vara**-aktiverad.[!DNL Profile]
 
 Börja med att välja **[!UICONTROL Datasets]** i den vänstra navigeringen och välj sedan **[!UICONTROL Create dataset]** i det övre högra hörnet.
 
