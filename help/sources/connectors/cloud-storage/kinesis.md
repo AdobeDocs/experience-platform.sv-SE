@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;Amazon Kinesis;amazon kinesis;Kinesis;kinesis
 solution: Experience Platform
 title: Amazon Kinesis Source Connector - översikt
-topic: overview
+topic: översikt
 description: Lär dig hur du ansluter Amazon Kinesis till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 translation-type: tm+mt
-source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
+source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
 workflow-type: tm+mt
-source-wordcount: '234'
+source-wordcount: '236'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 Adobe Experience Platform erbjuder systemspecifika anslutningsmöjligheter för molnleverantörer som AWS, [!DNL Google Cloud Platform] och [!DNL Azure]. Du kan överföra data från dessa system till [!DNL Platform].
 
-Lagringskällor i molnet kan hämta dina egna data till [!DNL Platform] utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM Parquet eller avgränsade. Varje steg i processen är integrerat i arbetsflödet för källor. [!DNL Platform] kan ni hämta in data från  [!DNL Amazon Kinesis] i realtid.
+Lagringskällor i molnet kan hämta dina egna data till [!DNL Platform] utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM Parquet eller avgränsade. Varje steg i processen är integrerat i arbetsflödet för källor. [!DNL Platform] gör att ni kan hämta in data  [!DNL Amazon Kinesis] i realtid.
 
 ## IP-adress tillåtelselista
 
