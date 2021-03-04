@@ -2,12 +2,12 @@
 keywords: Experience Platform;hemmabas;populära ämnen;kafka;kafka connector;Kafka;
 solution: Experience Platform
 title: Kafka Connector
-topic: overview
+topic: översikt
 description: Strömkopplingen för Adobe Experience Platform baseras på Apache Kafka Connect. Det här biblioteket kan användas för att direktuppspela JSON-händelser från Kafka-avsnitt i ditt datacenter direkt till Experience Platform i realtid.
 translation-type: tm+mt
-source-git-commit: 089a4d517476b614521d1db4718966e3ebb13064
+source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
 workflow-type: tm+mt
-source-wordcount: '186'
+source-wordcount: '189'
 ht-degree: 0%
 
 ---
