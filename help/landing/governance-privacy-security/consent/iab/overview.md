@@ -2,12 +2,12 @@
 keywords: Experience Platform;home;IAB;IAB 2.0;medgivande;Samtycke
 solution: Experience Platform
 title: Stöd för IAB TCF 2.0 i Experience Platform
-topic: privacy events
+topic: sekretesshändelser
 description: Lär dig hur du konfigurerar dataåtgärder och scheman för att förmedla val av kundsamtycke när du aktiverar segment till mål i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: b0af9d49f6cfe50f6dff745dfac174dbaa76d070
+source-git-commit: a845ade0fc1e6e18c36b5f837fe7673a976f01c7
 workflow-type: tm+mt
-source-wordcount: '2447'
+source-wordcount: '2461'
 ht-degree: 0%
 
 ---
@@ -165,7 +165,7 @@ alloy("setConsent", {
 | `standard` | Den standard för samtycke som används. Värdet måste vara `IAB` för TCF 2.0-godkännandebearbetning. |
 | `version` | Versionsnumret för den medgivandestandard som anges under `standard`. Värdet måste vara `2.0` för TCF 2.0-godkännandebearbetning. |
 | `value` | Den bas-64-kodade medgivandesträngen som genererats av CMP. |
-| `gdprApplies` | Ett booleskt värde som anger om GDPR gäller för den inloggade kunden. För att TCF 2.0 ska kunna användas för den här kunden måste värdet anges till `true`. |
+| `gdprApplies` | Ett booleskt värde som anger om GDPR gäller för den inloggade kunden. För att TCF 2.0 ska kunna användas för den här kunden måste värdet anges till `true`. Standardvärdet är `true` om det inte är definierat. |
 
 Kommandot `setConsent` bör användas som en del av en CMP-krok som upptäcker ändringar i medgivandeinställningarna. Följande JavaScript innehåller ett exempel på hur kommandot `setConsent` kan användas för OneTrust&#39;s `OnConsentChanged`-krok:
 
@@ -219,7 +219,7 @@ alloy("sendEvent", {
 | `consentStandard` | Den standard för samtycke som används. Värdet måste vara `IAB` för TCF 2.0-godkännandebearbetning. |
 | `consentStandardVersion` | Versionsnumret för den medgivandestandard som anges under `standard`. Värdet måste vara `2.0` för TCF 2.0-godkännandebearbetning. |
 | `consentStringValue` | Den bas-64-kodade medgivandesträngen som genererats av CMP. |
-| `gdprApplies` | Ett booleskt värde som anger om GDPR gäller för den inloggade kunden. För att TCF 2.0 ska kunna användas för den här kunden måste värdet anges till `true`. |
+| `gdprApplies` | Ett booleskt värde som anger om GDPR gäller för den inloggade kunden. För att TCF 2.0 ska kunna användas för den här kunden måste värdet anges till `true`. Standardvärdet är `true` om det inte är definierat. |
 
 ### Hantera SDK-svar
 
@@ -233,7 +233,7 @@ Alla [!DNL Platform SDK]-kommandon returnerar löften som anger om anropet lycka
 
 När ni har samlat in kundens medgivandedata och skapat målgruppssegment som innehåller de obligatoriska medgivandeattributen, kan ni tillämpa TCF 2.0-kompatibilitet när ni exporterar dessa segment till efterföljande destinationer.
 
-Förutsatt att medgivandeinställningen `gdprApplies` är `true` för en uppsättning kundprofiler, filtreras alla data från de profiler som exporteras till efterföljande destinationer baserat på medgivandeinställningarna för varje profil. Alla profiler som inte uppfyller de obligatoriska medgivandeinställningarna hoppas över under exportprocessen.
+Förutsatt att medgivandeinställningen `gdprApplies` är `true` för en uppsättning kundprofiler, filtreras alla data från de profiler som exporteras till underordnade mål baserat på TCF-medgivandeinställningarna för varje profil. Alla profiler som inte uppfyller de obligatoriska medgivandeinställningarna hoppas över under exportprocessen.
 
 Kunden måste godkänna följande syften (enligt riktlinjerna i [TCF 2.0-policyer](https://iabeurope.eu/iab-europe-transparency-consent-framework-policies/#Appendix_A_Purposes_and_Features_Definitions)) för att deras profiler ska kunna inkluderas i segment som exporteras till destinationer:
 
