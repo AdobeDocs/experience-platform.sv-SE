@@ -7,9 +7,9 @@ landing-page-description: Hitta svar på vanliga frågor och en guide för fels�
 topic: komma igång
 type: Dokumentation
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 83cc3ddbf067f413cb524a3a685d985d5853eafd
 workflow-type: tm+mt
-source-wordcount: '1997'
+source-wordcount: '1718'
 ht-degree: 1%
 
 ---
@@ -31,63 +31,7 @@ Nedan följer en lista med svar på vanliga frågor om Adobe Experience Platform
 
 Format för begäranden varierar beroende på vilken [!DNL Platform]-API som används. Det bästa sättet att lära sig att strukturera API-anrop är att följa med exemplen i dokumentationen för den [!DNL Platform]-tjänst som du använder.
 
-### Läser exempel-API-anrop
-
-I dokumentationen för [!DNL Experience Platform] visas exempel-API-anrop på två olika sätt. Först presenteras anropet i dess **API-format**, en mallrepresentation som endast visar åtgärden (GET, POST, PUT, PATCH, DELETE) och den slutpunkt som används (till exempel `/global/classes`). Vissa mallar visar också var det finns variabler för att illustrera hur ett anrop ska formuleras, till exempel `GET /{VARIABLE}/classes/{ANOTHER_VARIABLE}`.
-
-Anropen visas sedan som cURL-kommandon i en **Request**, som innehåller nödvändiga rubriker och fullständig &quot;bassökväg&quot; som behövs för att interagera med API:t. Basbanan ska vara förpended för alla slutpunkter. Ovannämnda `/global/classes`-slutpunkt blir till exempel `https://platform.adobe.io/data/foundation/schemaregistry/global/classes`. Du kommer att se API-formatet/begäranmönstret i hela dokumentationen och förväntas använda den fullständiga sökvägen som visas i exempelbegäran när du anropar egna API:er för plattformen.
-
-### Exempel på API-begäran
-
-Följande är ett exempel på en API-begäran som visar vilket format du kommer att stöta på i dokumentationen.
-
-**API-format**
-
-API-formatet visar åtgärden (GET) och slutpunkten som används. Variabler indikeras med klammerparenteser (i det här fallet `{CONTAINER_ID}`).
-
-```http
-GET /{CONTAINER_ID}/classes
-```
-
-**Begäran**
-
-I den här exempelbegäran får variablerna från API-formatet faktiska värden i sökvägen för begäran. Alla obligatoriska rubriker visas också, som exempel på rubrikvärden eller variabler där känslig information (som säkerhetstoken och åtkomst-ID) ska inkluderas.
-
-```shell
-curl -X GET \
-  https://platform.adobe.io/data/foundation/schemaregistry/global/classes \
-  -H 'Accept: application/vnd.adobe.xed-id+json' \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}'
-```
-
-**Svar**
-
-Svaret visar vad du förväntar dig efter ett lyckat anrop till API:t, baserat på den begäran som skickades. Ibland kortas svaret av för blanksteg, vilket innebär att du kan se mer information eller mer information än den som visas i exemplet.
-
-```json
-{
-    "results": [
-        {
-            "title": "XDM ExperienceEvent",
-            "$id": "https://ns.adobe.com/xdm/context/experienceevent",
-            "meta:altId": "_xdm.context.experienceevent",
-            "version": "1"
-        },
-        {
-            "title": "XDM Individual Profile",
-            "$id": "https://ns.adobe.com/xdm/context/profile",
-            "meta:altId": "_xdm.context.profile",
-            "version": "1"
-        }
-    ],
-    "_links": {}
-}
-```
-
-Mer information om specifika slutpunkter i plattforms-API:er, inklusive obligatoriska huvuden och begärandetexter, finns i [API-referensdokumentationen](http://www.adobe.com/go/platform-api-reference-en).
+Mer information om hur du formaterar API-förfrågningar finns i guiden [hur du läser API-anrop](./api-guide.md#sample-api) för plattforms-API.
 
 ## Vad är min IMS-organisation? {#what-is-my-ims-organization}
 
@@ -121,7 +65,7 @@ Många PATCH-åtgärder i [!DNL Platform] API:er använder [JSON-pekarsträngar]
 
 ## Kan jag använda Postman för att ringa till API:er för [!DNL Platform]? {#how-do-i-use-postman-to-make-calls-to-platform-apis}
 
-[Postmanis ](https://www.postman.com/) är ett användbart verktyg för att visualisera anrop till RESTful API:er. Detta [medium post](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) beskriver hur du kan konfigurera Postman så att autentisering utförs automatiskt och använder det för att använda [!DNL Experience Platform] API:er.
+[Postmanis ](https://www.postman.com/) är ett användbart verktyg för att visualisera anrop till RESTful API:er. Guiden [Komma igång-start för plattforms-API](api-guide.md) innehåller en video och instruktioner för import av Postman-samlingar. Dessutom finns en lista med Postman-samlingar för varje tjänst.
 
 ## Vilka är systemkraven för [!DNL Platform]? {#what-are-the-system-requirements-for-platform}
 
