@@ -2,14 +2,14 @@
 keywords: Experience Platform;hem;populära ämnen;Autentisera;åtkomst
 solution: Experience Platform
 title: Autentisera och få åtkomst till Experience Platform API:er
-topic: tutorial
-type: Tutorial
+topic: självstudiekurs
+type: Självstudiekurs
 description: 'Det här dokumentet innehåller en stegvis självstudiekurs för att få tillgång till ett Adobe Experience Platform-utvecklarkonto för att ringa anrop till Experience Platform API:er. '
 translation-type: tm+mt
-source-git-commit: 681a2554111f988ec03d40f23a3b2c8225a077ae
+source-git-commit: ca5c8527b1b54856aa1e762a06ddbe404f30ec42
 workflow-type: tm+mt
-source-wordcount: '872'
-ht-degree: 0%
+source-wordcount: '898'
+ht-degree: 1%
 
 ---
 
@@ -161,6 +161,6 @@ Om ditt svar liknar det som visas nedan är dina inloggningsuppgifter giltiga oc
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du samlat in och testat dina autentiseringsuppgifter för [!DNL Platform] API:er. Du kan nu följa med i de exempel på API-anrop som finns i [dokumentationen](../landing/documentation/overview.md).
+Genom att läsa det här dokumentet har du samlat in och testat dina autentiseringsuppgifter för [!DNL Platform] API:er. Du kan nu följa med i exemplen i [guiden Komma igång för Platform API:er](api-guide.md). Den här guiden innehåller länkar till API-guiderna för varje plattformstjänst och ger ytterligare information. på fel, Postman och JSON.
 
 Förutom de autentiseringsvärden som du har samlat in i den här självstudiekursen kräver många [!DNL Platform] API:er också en giltig `{SANDBOX_NAME}` som rubrik. Mer information finns i [översikten över sandlådor](../sandboxes/home.md).
