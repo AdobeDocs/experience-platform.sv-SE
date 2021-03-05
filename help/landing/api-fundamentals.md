@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Grundläggande om Experience Platform API
-topic: getting started
+topic: komma igång
 description: I det här dokumentet finns en kort översikt över vissa underliggande tekniker och syntaxer som används för Experience Platform-API:er.
 translation-type: tm+mt
-source-git-commit: 8c98632b67ddae4fb7800e80fb8c83aca9bfa291
+source-git-commit: ca5c8527b1b54856aa1e762a06ddbe404f30ec42
 workflow-type: tm+mt
-source-wordcount: '504'
+source-wordcount: '513'
 ht-degree: 1%
 
 ---
@@ -126,4 +126,4 @@ JSON-schema är ett format som används för att beskriva och validera JSON-data
 
 ## Nästa steg
 
-I det här dokumentet introducerades en del av de tekniker och syntaxer som används för att hantera JSON-baserade resurser för [!DNL Experience Platform]. Mer information om hur du arbetar med [!DNL Platform] API:er, inklusive bästa praxis och svar på vanliga frågor, finns i [Platsfelsökningsguiden](troubleshooting.md).
+I det här dokumentet introducerades en del av de tekniker och syntaxer som används för att hantera JSON-baserade resurser för [!DNL Experience Platform]. Mer information om hur du arbetar med plattforms-API:er finns i [komma igång-guiden](api-guide.md), inklusive bästa praxis. Svar på vanliga frågor finns i [Felsökningsguiden för plattformen](troubleshooting.md).
