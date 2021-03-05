@@ -5,10 +5,10 @@ user-guide-title: Adobe Experience Platform - översikt
 breadcrumb-title: Experience Platform - översikt
 user-guide-description: Läs om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid.
 translation-type: tm+mt
-source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
+source-git-commit: 36b85bee308fdcf599c9b7913cf94774404f06d2
 workflow-type: tm+mt
-source-wordcount: '160'
-ht-degree: 6%
+source-wordcount: '170'
+ht-degree: 5%
 
 ---
 
@@ -30,8 +30,10 @@ ht-degree: 6%
    * [Användargränssnittshandbok för arbetsflöden](workflows.md)
    * [Stöd för webbläsare och språk](browser-language-support.md)
 * Experience Platform API:er {#platform-apis}
+   * [Komma igång med plattforms-API:er](api-guide.md)
    * [Autentisera och få åtkomst till plattforms-API:er](api-authentication.md)
    * [Grundläggande om API](api-fundamentals.md)
+   * [Använda Postman med Platform API:er](postman.md)
    * [API-referensdokument](http://www.adobe.com/go/platform-api-reference-en)
 * Plattformsdokumentation {#documentation}
    * [Översikt](documentation/overview.md)
