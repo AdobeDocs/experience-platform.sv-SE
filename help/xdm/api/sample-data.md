@@ -3,11 +3,11 @@ keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experi
 solution: Experience Platform
 title: Exempel på API-slutpunkt för data
 description: Med slutpunkten /sampledata i API:t för schemaregister kan du generera exempeldata mappade till strukturen för ett befintligt XDM-schema.
-topic: developer guide
+topic: utvecklarhandbok
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 0727ffa0c72bcb6a85de1a13215b691b97889b70
 workflow-type: tm+mt
-source-wordcount: '319'
+source-wordcount: '321'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Med hjälp av `/sampledata`-slutpunkten i [!DNL Schema Registry]-API:t kan du ge
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/mixin-registry.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anropen i det här dokumentet och viktig information om vilka huvuden som krävs för att anropa ett Experience Platform-API.
+Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anropen i det här dokumentet och viktig information om vilka huvuden som krävs för att anropa ett Experience Platform-API.
 
 Exempeldatans slutpunkt är en del av RPC-anropen (Remote Procedure Call) som stöds av [!DNL Schema Registry]. Till skillnad från andra slutpunkter i API:t [!DNL Schema Registry], kräver RPC-slutpunkter inga ytterligare rubriker som `Accept` eller `Content-Type`, och använder inte en `CONTAINER_ID`. I stället måste de använda namnutrymmet `/rpc`, vilket visas i API-anropet nedan.
 
