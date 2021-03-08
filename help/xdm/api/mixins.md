@@ -3,11 +3,11 @@ keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experi
 solution: Experience Platform
 title: Blandar API-slutpunkt
 description: Med slutpunkten /mixins i API:t för schemaregister kan du programmässigt hantera XDM-blandningar i ditt upplevelseprogram.
-topic: developer guide
+topic: utvecklarhandbok
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 0727ffa0c72bcb6a85de1a13215b691b97889b70
 workflow-type: tm+mt
-source-wordcount: '1134'
+source-wordcount: '1136'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Blandningar är återanvändbara komponenter som definierar ett eller flera fäl
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/mixin-registry.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anropen i det här dokumentet och viktig information om vilka huvuden som krävs för att anropa ett Experience Platform-API.
+Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml). Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) för att få länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anropen i det här dokumentet och viktig information om vilka huvuden som krävs för att anropa ett Experience Platform-API.
 
 ## Hämta en lista med blandningar {#list}
 
@@ -583,7 +583,7 @@ PATCH /tenant/mixin/{MIXIN_ID}
 
 **Begäran**
 
-Exempelbegäran nedan uppdaterar `description` för en befintlig blandning och lägger till ett nytt `propertyCity`-fält.
+Exemplbegäran nedan uppdaterar `description` för en befintlig blandning och lägger till ett nytt `propertyCity`-fält.
 
 Begärandetexten har formen av en array där varje listat-objekt representerar en specifik ändring i ett enskilt fält. Varje objekt innehåller den åtgärd som ska utföras (`op`), vilket fält åtgärden ska utföras på (`path`) och vilken information som ska inkluderas i åtgärden (`value`).
 
