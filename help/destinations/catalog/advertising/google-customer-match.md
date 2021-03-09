@@ -3,9 +3,9 @@ keywords: Google customer match;Google customer match;Google Customer Match
 title: Google Customer Match Connection
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egenskaper, som Search, Shopping, Gmail och YouTube.
 translation-type: tm+mt
-source-git-commit: bec44832a235dd3f9e2ee0f3ffc77854ee5784d7
+source-git-commit: 494b41265a0eec71ec15c7896eb8c652b3164e18
 workflow-type: tm+mt
-source-wordcount: '1393'
+source-wordcount: '1381'
 ht-degree: 0%
 
 ---
@@ -15,45 +15,45 @@ ht-degree: 0%
 
 [Med Google Customer ](https://support.google.com/google-ads/answer/6379332?hl=en) Matchlets kan ni använda era online- och offlinedata för att nå och återengagera era kunder över Googles egna och styrda egenskaper, som:  [!DNL Search],  [!DNL Shopping],  [!DNL Gmail]och  [!DNL YouTube].
 
-![Google Customer Match destination in the Real-time CDP UI](../../assets/catalog/advertising/google-customer-match/catalog.png)
+![Google Customer Match destination in the Adobe Experience Platform UI](../../assets/catalog/advertising/google-customer-match/catalog.png)
 
 ## Användningsexempel
 
-För att du bättre ska förstå hur och när du ska använda målet [!DNL Google Customer Match] finns det exempel på användning som kunder med kunddataplattform i realtid kan lösa med den här funktionen.
+För att du bättre ska kunna förstå hur och när du ska använda [!DNL Google Customer Match]-målet finns det exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här funktionen.
 
 ### Användningsfall 1
 
-Ett sportklädmärke vill nå befintliga kunder via [!DNL Google Search] och [!DNL Google Shopping] för att personalisera erbjudanden och objekt baserat på deras tidigare köp och webbhistorik. Kläddervarumärket kan importera e-postadresser från sin egen CRM till CDP i realtid, bygga segment utifrån sina egna offlinedata och skicka dessa segment till [!DNL Google Customer Match] för användning i [!DNL Search] och [!DNL Shopping], vilket optimerar deras annonsutgifter.
+Ett sportklädmärke vill nå befintliga kunder via [!DNL Google Search] och [!DNL Google Shopping] för att personalisera erbjudanden och objekt baserat på deras tidigare köp och webbhistorik. Kläddervarumärket kan importera e-postadresser från sin egen CRM till Experience Platform, bygga segment utifrån sina egna offlinedata och skicka dessa segment till [!DNL Google Customer Match] för användning i [!DNL Search] och [!DNL Shopping], vilket optimerar deras annonsutgifter.
 
 ### Användningsfall nr 2
 
 Ett framstående teknikföretag har just släppt en ny telefon. För att marknadsföra den nya telefonmodellen vill de öka medvetenheten om de nya funktionerna i telefonen för kunder som äger tidigare modeller av sina telefoner.
 
-För att befordra releasen överför de e-postadresser från sin CRM-databas till CDP i realtid med e-postadresserna som identifierare. Segment skapas baserat på kunder som äger äldre telefonmodeller och skickas till [!DNL Google Customer Match] så att de kan rikta sig till befintliga kunder, kunder som äger äldre telefonmodeller samt liknande kunder på [!DNL YouTube].
+För att befordra releasen överför de e-postadresser från sin CRM-databas till Experience Platform med e-postadresserna som identifierare. Segment skapas baserat på kunder som äger äldre telefonmodeller och skickas till [!DNL Google Customer Match] så att de kan rikta sig till befintliga kunder, kunder som äger äldre telefonmodeller samt liknande kunder på [!DNL YouTube].
 
 ## Målspecificeringar {#destination-specs}
 
 ### Datastyrning för [!DNL Google Customer Match] mål {#data-governance}
 
-Destinationerna i CDP i realtid kan ha vissa regler och skyldigheter för data som skickas till eller tas emot från målplattformen. Du ansvarar för att förstå begränsningar och skyldigheter för dina data och hur du använder dessa data i Adobe Experience Platform och målplattformen. Adobe Experience Platform tillhandahåller datastyrningsverktyg som hjälper er att hantera vissa av dessa dataanvändningsskyldigheter. [Läs ](../../..//data-governance/labels/overview.md) mer om verktyg och policyer för datastyrning.
+Destinationerna i Experience Platform kan ha vissa regler och skyldigheter för data som skickas till eller tas emot från destinationsplattformen. Du ansvarar för att förstå begränsningar och skyldigheter för dina data och hur du använder dessa data i Adobe Experience Platform och målplattformen. Adobe Experience Platform tillhandahåller datastyrningsverktyg som hjälper er att hantera vissa av dessa dataanvändningsskyldigheter. [Läs ](../../..//data-governance/labels/overview.md) mer om verktyg och policyer för datastyrning.
 
 ### Exporttyp och identiteter {#export-type}
 
 **Segmentexport**  - du exporterar alla medlemmar i ett segment (publik) med identifierarna (namn, telefonnummer osv.) används i målet [!DNL Google Customer Match].
 
-**Identiteter** - du kan använda råa eller hashad e-post som kund-ID i Google
+**Identiteter**  - du kan använda råa eller hashad e-post som kund-ID i Google.
 
 ### [!DNL Google Customer Match] kontokrav  {#google-account-prerequisites}
 
-Innan du konfigurerar ett [!DNL Google Customer Match]-mål i CDP i realtid måste du läsa och följa Googles policy för att använda [!DNL Customer Match], som beskrivs i [Google Support-dokumentationen](https://support.google.com/google-ads/answer/6299717).
+Innan du konfigurerar ett [!DNL Google Customer Match]-mål i Experience Platform måste du läsa och följa Googles policy för att använda [!DNL Customer Match], som beskrivs i [Google Support-dokumentationen](https://support.google.com/google-ads/answer/6299717).
 
 ### Tillåtelselista {#allowlist}
 
 >[!NOTE]
 >
->Det är obligatoriskt att lägga till i Googles tillåtelselista innan du ställer in ditt första [!DNL Google Customer Match]-mål i realtid CDP. Kontrollera att tillåtelselista-processen som beskrivs nedan har slutförts av Google innan du skapar ett mål.
+>Det är obligatoriskt att lägga till i Googles tillåtelselista innan du ställer in ditt första [!DNL Google Customer Match]-mål i Experience Platform. Kontrollera att tillåtelselista-processen som beskrivs nedan har slutförts av Google innan du skapar ett mål.
 
-Innan du skapar målet [!DNL Google Customer Match] i CDP för realtid måste du kontakta Google och följa instruktionerna i [Använd kundmatchningspartners för att överföra dina data](https://support.google.com/google-ads/answer/7361372?hl=en&amp;ref_topic=6296507) i Googles dokumentation.
+Innan du skapar [!DNL Google Customer Match]-målet i Experience Platform måste du kontakta Google och följa instruktionerna i [Använd kundmatchningspartners för att överföra dina data](https://support.google.com/google-ads/answer/7361372?hl=en&amp;ref_topic=6296507) i Googles dokumentation.
 
 Dessutom finns det en andra Google tillåtelselista som du måste lägga till ditt konto i om du planerar att överföra data med Googles [användar-ID](https://developers.google.com/adwords/api/docs/guides/remarketing#customer_match_with_email_address_address_or_user_id). Kontakta din kontohanterare för Google och kontrollera att du har lagts till i tillåtelselista.
 
@@ -92,7 +92,7 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att följa
 
 #### Använda anpassade namnutrymmen {#custom-namespaces}
 
-Innan du kan använda namnutrymmet `User_ID` för att skicka data till Google måste du synkronisera dina egna identifierare med [!DNL gTag]. Mer information finns i [den officiella dokumentationen](https://support.google.com/google-ads/answer/9199250).
+Innan du kan använda namnutrymmet `User_ID` för att skicka data till Google måste du synkronisera dina egna identifierare med [!DNL gTag]. Mer information finns i [Googles officiella dokumentation](https://support.google.com/google-ads/answer/9199250).
 
 <!-- Data from unhashed namespaces is automatically hashed by [!DNL Platform] upon activation.
 
@@ -113,17 +113,17 @@ Om du tidigare har konfigurerat en anslutning till ditt [!DNL Google Customer Ma
 
 >[!NOTE]
 >
->CDP stöder validering av autentiseringsuppgifter i realtid i autentiseringsprocessen och visar ett felmeddelande om du anger felaktiga autentiseringsuppgifter för ditt [!DNL Google Ad]-konto. Detta säkerställer att du inte slutför arbetsflödet med felaktiga inloggningsuppgifter.
+>Experience Platform stöder validering av autentiseringsuppgifter i autentiseringsprocessen och visar ett felmeddelande om du anger felaktiga autentiseringsuppgifter för ditt [!DNL Google Ad]-konto. Detta säkerställer att du inte slutför arbetsflödet med felaktiga inloggningsuppgifter.
 
 ![Anslut till Google Customer Match-målet - autentiseringssteg](../../assets/catalog/advertising/google-customer-match/connection.png)
 
-När dina inloggningsuppgifter har bekräftats och Adobe Experience Cloud är anslutet till ditt Google-konto kan du välja **[!UICONTROL Next]** för att fortsätta till **[!UICONTROL Setup]**-steget.
+När dina inloggningsuppgifter har bekräftats och Adobe Experience Cloud är anslutet till ditt Google-konto kan du välja **[!UICONTROL Next]** för att fortsätta till **[!UICONTROL Authentication]**-steget.
 
 ![Autentiseringsuppgifterna har bekräftats](../../assets/catalog/advertising/google-customer-match/connection-success.png)
 
-I steget **[!UICONTROL Authentication]** anger du [!UICONTROL Name] och [!UICONTROL Description] för ditt aktiveringsflöde och fyller i din Google-fil [!UICONTROL Account ID].
+I steget **[!UICONTROL Authentication]** anger du **[!UICONTROL Name]** och **[!UICONTROL Description]** för ditt aktiveringsflöde och fyller i din Google **[!UICONTROL Account ID]**.
 
-I det här steget kan du även välja alla **[!UICONTROL Marketing action]** som ska gälla för det här målet. Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns på sidan [Datastyrning i realtid CDP](../../../rtcdp/privacy/data-governance-overview.md#destinations). Mer information om de enskilda Adobe-definierade marknadsföringsåtgärderna finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md#core-actions).
+I det här steget kan du även välja alla **[!UICONTROL Marketing actions]** som ska gälla för det här målet. Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
 
 Välj **[!UICONTROL Create Destination]** när du har fyllt i fälten ovan.
 
@@ -146,7 +146,7 @@ I steget **[!UICONTROL Segment schedule]** måste du ange [!UICONTROL App ID] n�
 
 ![Google Customer Match App ID](../../assets/catalog/advertising/google-customer-match/gcm-destination-appid.png)
 
-Mer information om hur du hittar [!DNL App ID] finns i [den officiella dokumentationen](https://developers.google.com/adwords/api/docs/reference/v201809/AdwordsUserListService.CrmBasedUserList#appid).
+Mer information om hur du hittar [!DNL App ID] finns i [Googles officiella dokumentation](https://developers.google.com/adwords/api/docs/reference/v201809/AdwordsUserListService.CrmBasedUserList#appid).
 
 
 
