@@ -1,11 +1,11 @@
 ---
 title: Spåra händelser med Adobe Experience Platform Web SDK
-seo-description: Lär dig spåra Adobe Experience Platform Web SDK-händelser.
+description: Lär dig spåra Adobe Experience Platform Web SDK-händelser.
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon;send Beacon;documentUnloading;document Unloading;onBeforeEventSend;
 translation-type: tm+mt
-source-git-commit: 0b9a92f006d1ec151a0bb11c10c607ea9362f729
+source-git-commit: 25cf425df92528cec88ea027f3890abfa9cd9b41
 workflow-type: tm+mt
-source-wordcount: '1340'
+source-wordcount: '1397'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ I det här exemplet klonas datalagret genom att serialisera det till JSON och se
 
 För närvarande stöds inte sändning av data som inte matchar ett XDM-schema. Support planeras för ett framtida datum.
 
-### Inställning `eventType`
+### Inställning `eventType` {#event-types}
 
 I en XDM-upplevelsehändelse finns det ett valfritt `eventType`-fält. Detta innehåller postens primära händelsetyp. Genom att ange en händelsetyp kan du skilja mellan olika händelser som du skickar in. XDM innehåller flera fördefinierade händelsetyper som du kan använda eller så skapar du alltid egna anpassade händelsetyper för dina användningsfall. Nedan visas en lista med alla fördefinierade händelsetyper som tillhandahålls av XDM. [Läs mer i XDM:s offentliga rapport](https://github.com/adobe/xdm/blob/master/docs/reference/behaviors/time-series.schema.md#xdmeventtype-known-values).
 
@@ -211,20 +211,20 @@ alloy("sendEvent", {
 
 ## Ändra händelser globalt {#modifying-events-globally}
 
-Om du vill lägga till, ta bort eller ändra fält från händelsen globalt kan du konfigurera ett `onBeforeEventSend`-återanrop.  Det här återanropet anropas varje gång en händelse skickas.  Det här återanropet skickas i ett händelseobjekt med ett `xdm`-fält.  Ändra `event.xdm` om du vill ändra data som skickas i händelsen.
+Om du vill lägga till, ta bort eller ändra fält från händelsen globalt kan du konfigurera ett `onBeforeEventSend`-återanrop.  Det här återanropet anropas varje gång en händelse skickas.  Det här återanropet skickas i ett händelseobjekt med ett `xdm`-fält.  Ändra `content.xdm` om du vill ändra data som skickas med händelsen.
 
 
 ```javascript
 alloy("configure", {
   "edgeConfigId": "ebebf826-a01f-4458-8cec-ef61de241c93",
   "orgId": "ADB3LETTERSANDNUMBERS@AdobeOrg",
-  "onBeforeEventSend": function(event) {
+  "onBeforeEventSend": function(content) {
     // Change existing values
-    event.xdm.web.webPageDetails.URL = xdm.web.webPageDetails.URL.toLowerCase();
+    content.xdm.web.webPageDetails.URL = xdm.web.webPageDetails.URL.toLowerCase();
     // Remove existing values
-    delete event.xdm.web.webReferrer.URL;
+    delete content.xdm.web.webReferrer.URL;
     // Or add new values
-    event.xdm._adb3lettersandnumbers.mycustomkey = "value";
+    content.xdm._adb3lettersandnumbers.mycustomkey = "value";
   }
 });
 ```
@@ -235,10 +235,54 @@ alloy("configure", {
 2. Automatiskt insamlade värden.  (Se [Automatisk information](../data-collection/automatic-information.md).)
 3. Ändringarna som gjorts i `onBeforeEventSend`-återanropet.
 
-Om `onBeforeEventSend`-återanropet genererar ett undantag skickas händelsen fortfarande; Inga av de ändringar som gjordes i återanropet tillämpas emellertid på den sista händelsen.
+Några anteckningar om `onBeforeEventSend`-återanropet:
+
+* Händelse-XDM kan ändras under återanropet. När återanropet har returnerats ändras fälten och värdena för
+objekten content.xdm och content.data skickas tillsammans med händelsen.
+
+   ```javascript
+   onBeforeEventSend: function(content){
+     //sets a query parameter in XDM
+     const queryString = window.location.search;
+     const urlParams = new URLSearchParams(queryString);
+     content.xdm.marketing.trackingCode = urlParams.get('cid')
+   }
+   ```
+
+* Om återanropet genererar ett undantag avbryts bearbetningen för händelsen och händelsen skickas inte.
+* Om återanropet returnerar det booleska värdet `false` avbryts händelsebearbetningen,
+utan fel och händelsen skickas inte. Den här funktionen gör att vissa händelser enkelt kan ignoreras av
+undersöker händelsedata och returnerar `false` om händelsen inte ska skickas.
+
+   >[!NOTE]
+   >Tänk på att undvika att returnera false vid den första händelsen på en sida. Om du returnerar false för den första händelsen kan det påverka personaliseringen negativt.
+
+```javascript
+   onBeforeEventSend: function(content) {
+     // ignores events from bots
+     if (MyBotDetector.isABot()) {
+       return false;
+     }
+   }
+```
+
+Alla andra returvärden än det booleska `false` gör att händelsen kan bearbetas och skickas efter återanropet.
+
+* Händelser kan filtreras genom att undersöka händelsetypen (Se [Händelsetyper](#event-types).):
+
+```javascript
+    onBeforeEventSend: function(content) {  
+      // augments XDM if link click event is to a partner website
+      if (
+        content.xdm.eventType === "web.webinteraction.linkClicks" &&
+        content.xdm.web.webInteraction.URL ===
+          "http://example.com/partner-page.html"
+      ) {
+        content.xdm.partnerWebsiteClick = true;
+      }
+   }
+```
 
 ## Möjliga åtgärdbara fel
 
 När du skickar en händelse kan ett fel inträffa om de data som skickas är för stora (över 32 kB för den fullständiga begäran). I det här fallet måste du minska mängden data som skickas.
-
-När felsökning är aktiverat validerar servern synkront händelsedata som skickas mot det konfigurerade XDM-schemat. Om data inte matchar schemat returneras information om felmatchningen från servern och ett fel genereras. I det här fallet ändrar du data så att de matchar schemat. När felsökning inte är aktiverat validerar servern data asynkront och därför genereras inget motsvarande fel.
