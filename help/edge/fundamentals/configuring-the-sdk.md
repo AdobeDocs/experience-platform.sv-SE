@@ -4,9 +4,9 @@ description: Lär dig hur du konfigurerar Adobe Experience Platform Web SDK.
 seo-description: Lär dig hur du konfigurerar Experience Platform Web SDK
 keywords: konfigurera;konfiguration;SDK;edge;Web SDK;konfigurera;edgeConfigId;context;web;device;environment;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;web sdk settings;prehideStyle;opacity;cookieDestinationsEnabled;urlDestal inationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 translation-type: tm+mt
-source-git-commit: 0b9a92f006d1ec151a0bb11c10c607ea9362f729
+source-git-commit: f78da58ba7a593d9c161030833d9b69e2ba57c9a
 workflow-type: tm+mt
-source-wordcount: '743'
+source-wordcount: '793'
 ht-degree: 4%
 
 ---
@@ -103,7 +103,11 @@ Ange detta för att konfigurera ett återanrop som anropas för varje händelse 
 | -------- | ------------ | ----------------- |
 | Objekt | Nej | `"in"` |
 
-Anger användarens standardsamtycke. Detta används när det inte finns någon inställning för samtycke som redan har sparats för användaren. Det andra giltiga värdet är `"pending"`. När detta är inställt kommer arbetet att ställas i kö tills användaren ger sitt medgivande. När användarens inställningar har angetts fortsätter arbetet eller avbryts baserat på användarens inställningar. Mer information finns i [Supporting Consent](../consent/supporting-consent.md).
+Anger användarens standardsamtycke. Detta används när det inte finns någon inställning för samtycke som redan har sparats för användaren. Övriga giltiga värden är `"pending"` och `"out"`. Det här standardvärdet sparas inte i användarens profil. Endast när setConsent anropas uppdateras användarens profil.
+* `"in"`: När detta är inställt eller inget värde anges fortsätter arbetet utan användarens samtycke.
+* `"pending"`: När detta är inställt kommer arbetet att ställas i kö tills användaren ger sitt medgivande.
+* `"out"`: När detta är inställt ignoreras arbetet tills användaren ger sitt medgivande.
+När användarens inställningar har angetts fortsätter arbetet eller avbryts baserat på användarens inställningar. Mer information finns i [Supporting Consent](../consent/supporting-consent.md).
 
 ## Anpassningsalternativ
 
