@@ -3,15 +3,29 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen för Adobe Experience Platform Web SDK.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: b0e6d1f7cf7302bb3a7403bb18dfd8b7489d583e
 workflow-type: tm+mt
-source-wordcount: '223'
+source-wordcount: '496'
 ht-degree: 0%
 
 ---
 
 
 # Versionsinformation
+
+## Version 2.4.0
+
+* SDK kan nu [installeras som ett npm-paket](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/installing-the-sdk.html).
+* Stöd för ett `out`-alternativ har lagts till när [standardgodkännande](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#default-consent) konfigureras, vilket släpper alla händelser tills samtycke tas emot (det befintliga `pending`-alternativet köar händelser och skickar dem när samtycke tas emot).
+* Callback-funktionen [onBeforeEventSend](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#onbeforeeventsend) kan nu användas för att förhindra att en händelse skickas.
+* Använder nu en XDM-blandning i stället för `meta.personalization` när händelser skickas om personligt innehåll som återges eller klickas.
+* Kommandot [getIdentity](https://experienceleague.adobe.com/docs/experience-platform/edge/identity/overview.html#retrieving-the-visitor-id) returnerar nu kantområdes-ID:t bredvid identiteten.
+* Varningar och fel som tagits emot från servern har förbättrats och hanteras på ett mer lämpligt sätt.
+* Stöd för [Adobe Consent 2.0 standard](https://experienceleague.adobe.com/docs/experience-platform/edge/consent/supporting-consent.html?communicating-consent-preferences-via-the-adobe-standard) har lagts till.
+* Inställningarna för samtycke, när de tas emot, hashas och lagras i lokal lagring för en optimerad integrering mellan CMP, Platform Web SDK och Platform Edge Network. Om du samlar in medgivandeinställningar rekommenderar vi nu att du ringer `setConsent` vid varje sidinläsning.
+* Två [övervakningskopplingar](https://github.com/adobe/alloy/wiki/Monitoring-Hooks), `onCommandResolved` och `onCommandRejected` har lagts till.
+* Felkorrigering: Meddelandehändelser för anpassningsinteraktion innehåller dubblettinformation om samma aktivitet när en användare navigerade till en ny enkelsidig appvy, tillbaka till den ursprungliga vyn och klickade på ett element som är kvalificerat för konvertering.
+* Felkorrigering: Om den första händelsen som skickades av SDK hade `documentUnloading` inställt på `true`, skulle [`sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon) användas för att skicka händelsen, vilket resulterar i ett fel om att en identitet inte har etablerats.
 
 ## Version 2.3.0
 
