@@ -4,9 +4,9 @@ description: Lär dig hur du hämtar Adobe Experience Cloud-ID:n (ECID) med Adob
 seo-description: Lär dig hur du skaffar Adobe Experience Cloud ID.
 keywords: Identitet;Första parts identitet;Identitetstjänst;Tredjepartsidentitet;ID-migrering;Besökar-ID;Tredjepartsidentitet;Tredje parts-cookiesEnabled;idMigrationEnabled;getIdentity;Syncing Identities;syncIdentity;sendEvent;identityMap;primär;ecid;Identity Namespace id;authenticationState;hashEnabled;
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 882bcd2f9aa7a104270865783eed82089862dea3
 workflow-type: tm+mt
-source-wordcount: '923'
+source-wordcount: '962'
 ht-degree: 0%
 
 ---
@@ -40,19 +40,20 @@ När XDM-formaterade data skickas till Audience Manager måste dessa data konver
 
 Om vidarebefordran på serversidan är aktiverat och använder `appmeasurement.js`. och `visitor.js` kan du behålla vidarebefordringsfunktionen på serversidan aktiverad och detta orsakar inga problem. I serverdelen hämtar Adobe alla AAM segment och lägger till dem i anropet till Analytics. Om anropet till Analytics innehåller dessa segment kommer Analytics inte att anropa Audience Manager för att vidarebefordra data, så det finns ingen dubbel datainsamling. Du behöver heller inte använda platstips när du använder Web SDK eftersom samma segmenteringsslutpunkter anropas i serverdelen.
 
-## Hämtar besökar-ID
+## Hämtar besökar-ID och region-ID
 
-Om du vill använda det här unika ID:t använder du kommandot `getIdentity`. `getIdentity` returnerar det befintliga ECID:t för den aktuella besökaren. För förstagångsbesökare som ännu inte har ett ECID genereras ett nytt ECID med det här kommandot.
+Om du vill använda det unika besökar-ID:t använder du kommandot `getIdentity`. `getIdentity` returnerar det befintliga ECID:t för den aktuella besökaren. För förstagångsbesökare som ännu inte har ett ECID genereras ett nytt ECID med det här kommandot. `getIdentity` returnerar också region-ID för besökaren. Mer information finns i [Adobe Audience Manager användarhandbok](https://experienceleague.adobe.com/docs/audience-manager/user-guide/api-and-sdk-code/dcs/dcs-api-reference/dcs-regions.html).
 
 >[!NOTE]
 >
->Den här metoden används vanligtvis med anpassade lösningar som kräver läsning av [!DNL Experience Cloud]-ID:t. Den används inte av en standardimplementering.
+>Den här metoden används vanligtvis med anpassade lösningar som kräver att du läser [!DNL Experience Cloud]-ID:t eller behöver Adobe Audience Manager platstips. Den används inte av en standardimplementering.
 
 ```javascript
 alloy("getIdentity")
   .then(function(result) {
     // The command succeeded.
-    console.log(result.identity.ECID);
+    console.log("ECID:", result.identity.ECID);
+    console.log("RegionId:", result.edge.regionId);
   })
   .catch(function(error) {
     // The command failed.
