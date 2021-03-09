@@ -2,9 +2,9 @@
 title: Åtgärdstyper i Adobe Experience Platform Web SDK-tillägget
 description: Läs mer om de olika åtgärdstyperna i Adobe Experience Platform Web SDK-tillägget i Adobe Experience Platform Launch.
 translation-type: tm+mt
-source-git-commit: 2a0ae9541a8bb2bb985d43a402d0842e73b23c81
+source-git-commit: ff261c507d310b8132912680b6ddd1e7d5675d08
 workflow-type: tm+mt
-source-wordcount: '341'
+source-wordcount: '328'
 ht-degree: 0%
 
 ---
@@ -24,9 +24,9 @@ Alla data som du vill skicka kan skickas i fältet **[!UICONTROL XDM Data]**. An
 
 ## Ange samtycke
 
-När du har fått ditt samtycke från din användare måste du meddela Adobe Experience Platform Web SDK genom att använda åtgärdstypen &quot;Ange samtycke&quot;. För närvarande stöds två typer av standarder: &quot;Adobe&quot; och &quot;IAB TCF.&quot; Om du använder Adobe-standarden kan du för närvarande ange medgivandet som&quot;In&quot;,&quot;Ut&quot;, eller så kan du ange det med ett dataelement. Om du använder IAB TCF-standarden anger du version och värde som du vill använda samt ytterligare information om GDPR.
+När du har fått ditt samtycke från din användare måste du meddela Adobe Experience Platform Web SDK genom att använda åtgärdstypen &quot;Ange samtycke&quot;. För närvarande stöds två typer av standarder: &quot;Adobe&quot; och &quot;IAB TCF.&quot; Se [Supporting Customer Consent Preferences](../consent/supporting-consent.md). När du använder Adobe version 2.0 stöds bara ett dataelementvärde. Du måste skapa ett dataelement som matchar det godkända objektet.
 
-I den här åtgärden får du även ett valfritt fält där du kan inkludera en identitetskarta så att identiteter kan synkroniseras när du har fått ditt samtycke. Synkronisering är användbart när samtycke har konfigurerats som Väntande eftersom samtalet troligtvis är det första samtalet som utlöses.
+I den här åtgärden får du även ett valfritt fält där du kan inkludera en identitetskarta så att identiteter kan synkroniseras när du har fått ditt samtycke. Synkronisering är användbart när medgivandet har konfigurerats som Väntande eller Ut eftersom det är sannolikt det första anropet som utlöses.
 
 ## Återställ ID för händelsesammanfogning
 
