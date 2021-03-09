@@ -3,7 +3,7 @@ keywords: Amazon Kinesis;kinesis destination;kinesis
 title: Amazon Kinesis-anslutning
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
+source-git-commit: 32cb198bcf2c142b50c4b7a60282f0c923be06b1
 workflow-type: tm+mt
 source-wordcount: '508'
 ht-degree: 0%
@@ -22,7 +22,7 @@ Med tjänsten [!DNL Kinesis Data Streams] från [!DNL Amazon Web Services] kan d
 Du kan skapa en utgående anslutning i realtid till ditt [!DNL Amazon Kinesis]-lagringsutrymme för att strömma data från Adobe Experience Platform.
 
 * Mer information om [!DNL Amazon Kinesis] finns i [Amazon-dokumentationen](https://docs.aws.amazon.com/streams/latest/dev/introduction.html).
-* Om du vill ansluta till [!DNL Amazon Kinesis] med API-anrop kan du läsa självstudiekursen [API för direktuppspelningsmål](../../api/streaming-destinations.md).
+* Om du vill ansluta till [!DNL Amazon Kinesis] programmatiskt läser du självstudiekursen [API för direktuppspelningsmål](../../api/streaming-destinations.md).
 * Om du vill ansluta till [!DNL Amazon Kinesis] med användargränssnittet för plattformen läser du avsnitten nedan.
 
 ![Amazon Kinesis i användargränssnittet](../../assets/catalog/cloud-storage/amazon-kinesis/catalog.png)
@@ -117,7 +117,7 @@ Dina exporterade [!DNL Experience Platform]-data anges i [!DNL Amazon Kinesis] i
 
 >[!MORELIKETHIS]
 >
->* [Anslut till Amazon Kinesis och aktivera data med API-anrop](../../api/streaming-destinations.md)
+>* [Anslut till Amazon Kinesis och aktivera data med API:t för Flow Service](../../api/streaming-destinations.md)
 >* [Azure Event Hubs-mål](./azure-event-hubs.md)
 >* [Måltyper och -kategorier](../../destination-types.md)
 
