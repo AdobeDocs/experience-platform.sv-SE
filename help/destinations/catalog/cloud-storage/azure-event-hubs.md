@@ -3,7 +3,7 @@ keywords: Azure-händelsehubbsmål;azure-händelsehubb;azure-händelsehubb
 title: (Beta) Azure Event Hubs-anslutning
 description: Skapa en utgående anslutning i realtid till din Azure Event Hubs-lagring för att strömma data från Experience Platform.
 translation-type: tm+mt
-source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
+source-git-commit: 32cb198bcf2c142b50c4b7a60282f0c923be06b1
 workflow-type: tm+mt
 source-wordcount: '535'
 ht-degree: 0%
@@ -22,7 +22,7 @@ ht-degree: 0%
 Du kan skapa en utgående anslutning i realtid till ditt [!DNL Azure Event Hubs]-lagringsutrymme för att strömma data från Adobe Experience Platform.
 
 * Mer information om [!DNL Azure Event Hubs] finns i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about).
-* Om du vill ansluta till [!DNL Azure Event Hubs] med API-anrop kan du läsa självstudiekursen [API för direktuppspelningsmål](../../api/streaming-destinations.md).
+* Om du vill ansluta till [!DNL Azure Event Hubs] programmatiskt läser du självstudiekursen [API för direktuppspelningsmål](../../api/streaming-destinations.md).
 * Om du vill ansluta till [!DNL Azure Event Hubs] med användargränssnittet för plattformen läser du avsnitten nedan.
 
 ![AWS Kinesis i användargränssnittet](../../assets/catalog/cloud-storage/event-hubs/catalog.png)
@@ -108,6 +108,6 @@ Dina exporterade [!DNL Experience Platform]-data anges i [!DNL Azure Event Hubs]
 
 >[!MORELIKETHIS]
 >
->* [Anslut till Azure Event Hubs och aktivera data med API-anrop](../../api/streaming-destinations.md)
+>* [Anslut till Azure Event Hubs och aktivera data med API:t för Flow Service](../../api/streaming-destinations.md)
 >* [AWS Kinesis-mål](./amazon-kinesis.md)
 >* [Måltyper och -kategorier](../../destination-types.md)
