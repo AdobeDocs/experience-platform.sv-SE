@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;Blob;blob;Azure Blob;azure blob
 solution: Experience Platform
 title: Översikt över Azure Blob Source Connector
-topic: overview
+topic: översikt
 description: Lär dig hur du ansluter Azure Blob till Adobe Experience Platform med API:er eller användargränssnittet.
 translation-type: tm+mt
-source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
+source-git-commit: 0fb97fcf5d3f8230ff86906aeef245e4a7f44f30
 workflow-type: tm+mt
-source-wordcount: '399'
+source-wordcount: '450'
 ht-degree: 0%
 
 ---
@@ -22,6 +22,10 @@ Lagringskällor i molnet kan hämta dina egna data till [!DNL Platform] utan att
 ## IP-adress tillåtelselista
 
 En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+
+>[!IMPORTANT]
+>
+>[!DNL Azure Blob]-källkopplingen stöder för närvarande inte anslutning mellan flera regioner och plattformar. Det innebär att om din Azure-instans använder samma nätverksregion som plattformen går det inte att upprätta någon anslutning till plattformskällor. För närvarande stöds bara anslutning mellan regioner. Kontakta din kontoansvarige på Adobe för mer information.
 
 ## Namnbegränsningar för filer och kataloger
 
