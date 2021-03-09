@@ -3,9 +3,9 @@ title: Integrera stödet för IAB TCF 2.0 med Adobe Experience Platform Web SDK
 description: Lär dig hur du ställer in stöd för IAB TCF 2.0 för din webbplats utan att använda Adobe Experience Platform Launch.
 seo-description: Lär dig hur du ställer in IAB TCF 2.0-samtycke med Adobe Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 0b9a92f006d1ec151a0bb11c10c607ea9362f729
+source-git-commit: b9fb71ac7eca95c65165d6780b681ada3f16325b
 workflow-type: tm+mt
-source-wordcount: '685'
+source-wordcount: '688'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Den här guiden kräver dessutom att du har en fungerande förståelse för Adob
 
 ## Aktivera standardmedgivande
 
-Om du vill behandla alla okända användare på samma sätt kan du ställa in standardmedgivandet på `pending`. Detta köar Experience Events tills medgivandeinställningarna har tagits emot.
+Om du vill behandla alla okända användare på samma sätt kan du ställa in standardmedgivandet på `pending` eller `out`. Detta köar eller tar bort Experience Events tills du får medgivandeinställningarna.
 
 Mer information om standardmedgivande finns i [standardavsnittet för medgivande](../../fundamentals/configuring-the-sdk.md#default-consent) i konfigurationsdokumentationen för Platform Web SDK.
 
