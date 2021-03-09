@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;Azure Table Storage;azure table storage;ATS;ats
 solution: Experience Platform
 title: Översikt över Azure Table Storage Source Connector
-topic: overview
+topic: översikt
 description: Lär dig hur du ansluter Azure Table Storage till Adobe Experience Platform med API:er eller användargränssnittet.
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 0fb97fcf5d3f8230ff86906aeef245e4a7f44f30
 workflow-type: tm+mt
-source-wordcount: '255'
+source-wordcount: '306'
 ht-degree: 0%
 
 ---
@@ -26,6 +26,10 @@ Med Adobe Experience Platform kan data hämtas från externa källor samtidigt s
 ## IP-adress tillåtelselista
 
 En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress tillåtelselista](../../ip-address-allow-list.md).
+
+>[!IMPORTANT]
+>
+>[!DNL Azure Table Storage]-källkopplingen stöder för närvarande inte anslutning mellan flera regioner och plattformar. Det innebär att om din Azure-instans använder samma nätverksregion som plattformen går det inte att upprätta någon anslutning till plattformskällor. För närvarande stöds bara anslutning mellan regioner. Kontakta din kontoansvarige på Adobe för mer information.
 
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Azure Table Storage] till [!DNL Platform] med API:er eller användargränssnittet:
 
