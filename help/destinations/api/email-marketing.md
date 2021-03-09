@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
-title: Anslut till e-postmarknadsföringsmål och aktivera data med API-anrop
+title: Anslut till e-postmarknadsföringsmål och aktivera data med API:t för Flow Service
 description: I det här dokumentet beskrivs hur du skapar e-postmarknadsföringsmål med hjälp av Adobe Experience Platform API
 topic: självstudiekurs
 type: Självstudiekurs
 translation-type: tm+mt
-source-git-commit: 789534c02746ed24dfa01c7b471cdf3be407711e
+source-git-commit: 32cb198bcf2c142b50c4b7a60282f0c923be06b1
 workflow-type: tm+mt
-source-wordcount: '1696'
+source-wordcount: '1702'
 ht-degree: 0%
 
 ---
 
 
-# Anslut till e-postmarknadsföringsmål och aktivera data med API-anrop
+# Anslut till e-postmarknadsföringsmål och aktivera data med API:t för Flow Service
 
 I den här självstudien visas hur du använder API-anrop för att ansluta till dina Adobe Experience Platform-data, skapa ett [mål för e-postmarknadsföring](../catalog/email-marketing/overview.md), skapa ett dataflöde till det nya mål du skapat och aktivera data till det nya mål du skapat.
 
@@ -67,7 +67,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ### Dokumentation för Swagger
 
-Du hittar referensdokumentation för alla API-anrop i den här självstudiekursen i Swagger. Se [API-dokumentationen för Flow Service på Adobe.io](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml). Vi rekommenderar att du använder den här självstudiekursen och dokumentationssidan för Swagger parallellt.
+Du hittar referensdokumentation för alla API-anrop i den här självstudiekursen i Swagger. Se [API-dokumentationen för Flow Service på Adobe I/O](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml). Vi rekommenderar att du använder den här självstudiekursen och dokumentationssidan för Swagger parallellt.
 
 ## Hämta listan över tillgängliga mål {#get-the-list-of-available-destinations}
 
