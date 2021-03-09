@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;hemmabruk;populära ämnen; API-självstudiekurser; API för direktuppspelningsmål. Plattform
 solution: Experience Platform
-title: Ansluta till direktuppspelningsmål och aktivera data med API-anrop i Adobe Experience Platform
+title: Ansluta till direktuppspelningsmål och aktivera data med API:t för Flow Service i Adobe Experience Platform
 description: I det här dokumentet beskrivs hur du skapar direktuppspelningsmål med hjälp av Adobe Experience Platform API
-topic: tutorial
-type: Tutorial
+topic: självstudiekurs
+type: Självstudiekurs
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 32cb198bcf2c142b50c4b7a60282f0c923be06b1
 workflow-type: tm+mt
-source-wordcount: '2016'
+source-wordcount: '2024'
 ht-degree: 0%
 
 ---
 
 
-# Ansluta till direktuppspelningsmål och aktivera data med API-anrop
+# Anslut till direktuppspelningsmål och aktivera data med API:t för Flow Service
 
 >[!NOTE]
 >
@@ -71,7 +71,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ### Swagger-dokumentation {#swagger-docs}
 
-Du hittar referensdokumentation för alla API-anrop i den här självstudiekursen i Swagger. Se [API-dokumentationen för Flow Service på Adobe.io](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml). Vi rekommenderar att du använder den här självstudiekursen och dokumentationssidan för Swagger parallellt.
+Du hittar referensdokumentation för alla API-anrop i den här självstudiekursen i Swagger. Se [API-dokumentationen för Flow Service på Adobe I/O](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml). Vi rekommenderar att du använder den här självstudiekursen och dokumentationssidan för Swagger parallellt.
 
 ## Hämta listan över tillgängliga mål för direktuppspelning {#get-the-list-of-available-streaming-destinations}
 
