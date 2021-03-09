@@ -3,9 +3,9 @@ title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK-tillägg i Adobe Experience Platform Launch
 seo-description: Adobe Experience Platform Web SDK-tillägg i Adobe Experience Platform Launch
 translation-type: tm+mt
-source-git-commit: 0b9a92f006d1ec151a0bb11c10c607ea9362f729
+source-git-commit: 14cf62084c88956906cd9454176619ed08081a0e
 workflow-type: tm+mt
-source-wordcount: '990'
+source-wordcount: '1134'
 ht-degree: 1%
 
 ---
@@ -14,6 +14,19 @@ ht-degree: 1%
 # Versionsinformation om Adobe Experience Platform Web SDK-tillägg
 
 Det här dokumentet innehåller versionsinformation för Adobe Experience Platform Web SDK-tillägget för Adobe Experience Platform Launch. Information om den senaste versionen av SDK finns i [Versionsinformationen för Platform Web SDK](https://docs.adobe.com/content/help/en/experience-platform/edge/release-notes.html).
+
+## 9 mars 2020
+
+### Adobe Experience Platform Web SDK 2.4.0
+
+Innehåller version 2.4.0 av Adobe Experience Platform Web SDK-biblioteket.
+
+* [&quot;dokument tas bort&quot;](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en#using-the-sendbeacon-api)-kryssrutan har lagts till i gränssnittet för åtgärden Skicka händelse.
+* Stöd för ett `out`-alternativ har lagts till när [standardmedgivande](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#default-consent) konfigureras, vilket släpper alla händelser tills medgivande tas (det befintliga `pending`-alternativet köar händelser och skickar dem när medgivande tas emot).
+* Ett verktygstips har lagts till i standardfältet för samtycke.
+* Stöd för [Adobe Consent 2.0 standard](https://experienceleague.adobe.com/docs/experience-platform/edge/consent/supporting-consent.html?communicating-consent-preferences-via-the-adobe-standard) har lagts till.
+* Ett bättre fel visas nu i användargränssnittet för XDM-objektets dataelement om användarens åtkomsttoken är ogiltig eller felaktigt etablerad.
+* Korsfel (som inte påverkar tilläggsprogrammets funktion) som visades på webbläsarens utvecklarkonsol när ett XDM-objektdataelement visades har åtgärdats.
 
 ## 4 november 2020
 
