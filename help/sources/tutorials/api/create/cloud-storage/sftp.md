@@ -2,14 +2,14 @@
 keywords: Experience Platform;hem;populära ämnen;SFTP;sftp;Secure File Transfer Protocol;secure file transfer protocol
 solution: Experience Platform
 title: Skapa en SFTP-källanslutning med API:t för Flow Service
-topic: overview
-type: Tutorial
+topic: översikt
+type: Självstudiekurs
 description: Lär dig hur du ansluter Adobe Experience Platform till en SFTP-server (Secure File Transfer Protocol) med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
+source-git-commit: b39426d768a0c6fdfa742ec74e4e0bed9c432269
 workflow-type: tm+mt
-source-wordcount: '823'
-ht-degree: 0%
+source-wordcount: '877'
+ht-degree: 1%
 
 ---
 
@@ -44,7 +44,7 @@ För att [!DNL Flow Service] ska kunna ansluta till SFTP måste du ange värden 
 | `host` | Namnet eller IP-adressen som är associerad med SFTP-servern. |
 | `username` | Användarnamnet som ger åtkomst till din SFTP-server. |
 | `password` | Lösenordet för SFTP-servern. |
-| `privateKeyContent` | Base64-kodat innehåll för privat SSH-nyckel. SSH-filens OpenSSH-format (RSA/DSA). |
+| `privateKeyContent` | Base64-kodat innehåll för privat SSH-nyckel. Typen av OpenSSH-nyckel måste klassificeras som antingen RSA eller DSA. |
 | `passPhrase` | Lösenordsfrasen eller lösenordet för att dekryptera den privata nyckeln om nyckelfilen eller nyckelinnehållet skyddas av en lösenordsfras. Om PrivateKeyContent är lösenordsskyddat måste den här parametern användas med PrivateKeyContent-innehållets lösenfras som värde. |
 
 ### Läser exempel-API-anrop
@@ -133,6 +133,10 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nya anslutni
 
 Om du vill skapa en SFTP-anslutning med SSH-autentisering med offentlig nyckel gör du en POST-förfrågan till [!DNL Flow Service]-API:t och anger värden för anslutningsens `host`, `userName`, `privateKeyContent` och `passPhrase`.
 
+>[!IMPORTANT]
+>
+>SFTP-kopplingen stöder en RSA- eller DSA-typ av OpenSSH-nyckel. Kontrollera att nyckelfilens innehåll börjar med `"-----BEGIN [RSA/DSA] PRIVATE KEY-----"` och slutar med `"-----END [RSA/DSA] PRIVATE KEY-----"`. Om den privata nyckelfilen är en PPK-formatfil använder du PuTTY-verktyget för att konvertera från PPK till OpenSSH-format.
+
 **API-format**
 
 ```http
@@ -172,7 +176,7 @@ curl -X POST \
 | -------- | ----------- |
 | `auth.params.host` | Värdnamnet för SFTP-servern. |
 | `auth.params.username` | Användarnamnet som är associerat med SFTP-servern. |
-| `auth.params.privateKeyContent` | Base64-kodat innehåll för privat SSH-nyckel. SSH-filens OpenSSH-format (RSA/DSA). |
+| `auth.params.privateKeyContent` | Base64-kodat innehåll för privat SSH-nyckel. Typen av OpenSSH-nyckel måste klassificeras som antingen RSA eller DSA. |
 | `auth.params.passPhrase` | Lösenordsfrasen eller lösenordet för att dekryptera den privata nyckeln om nyckelfilen eller nyckelinnehållet skyddas av en lösenordsfras. Om PrivateKeyContent är lösenordsskyddat måste den här parametern användas med PrivateKeyContent-innehållets lösenfras som värde. |
 | `connectionSpec.id` | SFTP-serveranslutningsspecifikation-ID: `b7bf2577-4520-42c9-bae9-cad01560f7bc` |
 
