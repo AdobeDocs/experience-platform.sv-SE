@@ -2,14 +2,14 @@
 keywords: Experience Platform;hem;populära ämnen;SFTP;sftp
 solution: Experience Platform
 title: Skapa en SFTP-källanslutning i användargränssnittet
-topic: overview
-type: Tutorial
+topic: översikt
+type: Självstudiekurs
 description: Lär dig hur du skapar en SFTP-källanslutning med Adobe Experience Platform-gränssnittet.
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: b39426d768a0c6fdfa742ec74e4e0bed9c432269
 workflow-type: tm+mt
-source-wordcount: '679'
-ht-degree: 0%
+source-wordcount: '695'
+ht-degree: 1%
 
 ---
 
@@ -46,7 +46,7 @@ För att kunna ansluta till SFTP måste du ange värden för följande anslutnin
 | `host` | Namnet eller IP-adressen som är associerad med SFTP-servern. |
 | `username` | Användarnamnet som ger åtkomst till din SFTP-server. |
 | `password` | Lösenordet för SFTP-servern. |
-| `privateKeyContent` | Base64-kodat innehåll för privat SSH-nyckel. SSH-filens OpenSSH-format (RSA/DSA). |
+| `privateKeyContent` | Base64-kodat innehåll för privat SSH-nyckel. Typen av OpenSSH-nyckel måste klassificeras som antingen RSA eller DSA. |
 | `passPhrase` | Lösenordsfrasen eller lösenordet för att dekryptera den privata nyckeln om nyckelfilen eller nyckelinnehållet skyddas av en lösenordsfras. Om PrivateKeyContent är lösenordsskyddat måste den här parametern användas med PrivateKeyContent-innehållets lösenfras som värde. |
 
 När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att skapa ett nytt SFTP-konto för att ansluta till plattformen.
@@ -75,13 +75,13 @@ Du kan också välja **[Offentlig SSH-nyckel]** och ansluta ditt SFTP-konto med 
 
 >[!IMPORTANT]
 >
->SFTP-anslutningen stöder en RSA/DSA OpenSSH-nyckel. Kontrollera att nyckelfilens innehåll börjar med `"-----BEGIN [RSA/DSA] PRIVATE KEY-----"`. Om den privata nyckelfilen är en PPK-formatfil använder du PuTTY-verktyget för att konvertera från PPK till OpenSSH-format.
+>SFTP-kopplingen stöder en RSA- eller DSA-typ av OpenSSH-nyckel. Kontrollera att nyckelfilens innehåll börjar med `"-----BEGIN [RSA/DSA] PRIVATE KEY-----"` och slutar med `"-----END [RSA/DSA] PRIVATE KEY-----"`. Om den privata nyckelfilen är en PPK-formatfil använder du PuTTY-verktyget för att konvertera från PPK till OpenSSH-format.
 
 ![connect-ssh](../../../../images/tutorials/create/sftp/ssh.png)
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| Innehåll för privat nyckel | A Base64 encoded SSH private key content. Den privata SSH-nyckeln ska vara i OpenSSH-format. |
+| Innehåll för privat nyckel | Base64-kodat innehåll för privat SSH-nyckel. Typen av OpenSSH-nyckel måste klassificeras som antingen RSA eller DSA. |
 | Lösenfras | Anger lösenordsfrasen eller lösenordet som den privata nyckeln ska dekrypteras om nyckelfilen eller nyckelinnehållet skyddas av en lösenordsfras. Om PrivateKeyContent är lösenordsskyddat måste den här parametern användas med PrivateKeyContent-innehållets lösenfras som värde. |
 
 ### Befintligt konto
