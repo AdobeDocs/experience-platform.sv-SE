@@ -6,7 +6,7 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: 95ff15b212e0d6f454f0319ac1ec5bbee9c07dac
+source-git-commit: 37b0ec0e04c45cb065eca9d262249016e80655ef
 workflow-type: tm+mt
 source-wordcount: '2070'
 ht-degree: 0%
@@ -30,7 +30,7 @@ Stegen i aktiveringsarbetsflödet varierar något mellan måltyperna. Det fullst
 
 Gäller för: Alla destinationer
 
-I Adobe Experience Platform-användargränssnittet går du till **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** och trycker på **[!UICONTROL Activate]**-knappen som motsvarar målet där du vill aktivera dina segment, vilket visas i bilden nedan.
+I Adobe Experience Platform-användargränssnittet går du till **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** och klickar på knappen **[!UICONTROL Activate]** för det mål där du vill aktivera dina segment, vilket visas i bilden nedan.
 
 ![aktivera till mål](../assets/ui/activate-destinations/browse-tab-activate.png)
 
