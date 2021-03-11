@@ -2,13 +2,13 @@
 keywords: Experience Platform;JupyterLab;notebooks;Data Science Workspace;populära topics;analyze data notebooks
 solution: Experience Platform
 title: Analysera dina data med bärbara datorer
-topic: tutorial
-type: Tutorial
+topic: självstudiekurs
+type: Självstudiekurs
 description: I den här självstudiekursen fokuseras på hur du använder Jupyter-anteckningsböcker, som är byggda i Data Science Workspace, för att få tillgång till, utforska och visualisera dina data.
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 6908c582cb7e0d60b82112dbc0854411d76b4fd4
 workflow-type: tm+mt
-source-wordcount: '1735'
+source-wordcount: '1732'
 ht-degree: 0%
 
 ---
@@ -80,11 +80,11 @@ Nu går vi igenom åtkomsten till [!DNL Experience Platform]-data.
 
 I det här avsnittet använder vi datauppsättningen Detaljhandel, som är samma datauppsättning som används i exempelanteckningsboken för detaljhandelsförsäljning.
 
-I vår Jupyter-anteckningsbok kan vi komma åt våra data från fliken **Data** till vänster. När du klickar på fliken visas en lista med datauppsättningar.
+I Jupyter Notebook kan du komma åt dina data från fliken **Data** ![data](../images/jupyterlab/analyze-data/dataset-tab.png) till vänster. När du väljer fliken visas två mappar. Välj mappen **[!UICONTROL Datasets]**.
 
 ![](../images/jupyterlab/analyze-data/dataset_tab.png)
 
-I katalogen Datasets kan vi nu se alla inkapslade datauppsättningar. Observera att det kan ta en minut att läsa in alla poster om din katalog är mycket ifylld med datauppsättningar.
+I katalogen Datasets kan du nu se alla inkapslade datauppsättningar. Observera att det kan ta en minut att läsa in alla poster om din katalog är mycket ifylld med datauppsättningar.
 
 Eftersom datauppsättningen är densamma vill vi ersätta inläsningsdata från föregående avsnitt som använder externa data. Markera kodblocket under **Läs in data** och tryck på **&#39;d&#39;** två gånger på tangentbordet. Se till att fokus ligger på blocket och inte på texten. Du kan trycka på **&#39;esc&#39;** för att undvika textfokus innan du trycker på **&#39;d&#39;** två gånger.
 
