@@ -2,13 +2,13 @@
 keywords: Experience Platform;JupyterLab;recept;anteckningsböcker;Data Science Workspace;populära topics;create recept
 solution: Experience Platform
 title: Skapa ett recept med Jupyter-anteckningsböcker
-topic: tutorial
-type: Tutorial
+topic: självstudiekurs
+type: Självstudiekurs
 description: Den här självstudiekursen går igenom två huvudavsnitt. Först skapar du en maskininlärningsmodell med hjälp av en mall i JupyterLab Notebook. Därefter ska du använda anteckningsboken för att hämta arbetsflöden i JupyterLab för att skapa ett recept i arbetsytan Data Science.
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 9d84fc1eb898020ed4b154c091fcc9fc4933c7de
 workflow-type: tm+mt
-source-wordcount: '2343'
+source-wordcount: '2347'
 ht-degree: 0%
 
 ---
@@ -92,9 +92,9 @@ Användarna måste fylla i följande variabler innan de kör utbildning och poä
 - `ACP_DSW_SCORING_RESULTS_XDM_SCHEMA`
 - `scoringResultsDataSetId`
 
-Om du vill hitta data- och schema-ID:n går du till fliken Data i anteckningsböcker i det vänstra navigeringsfältet (under mappikonen).
+Om du vill hitta data- och schema-ID:n går du till fliken Data ![Data](../images/jupyterlab/create-recipe/dataset-tab.png) i anteckningsböcker i det vänstra navigeringsfältet (under mappikonen).
 
-![](../images/jupyterlab/create-recipe/datasets.png)
+![](../images/jupyterlab/create-recipe/dataset_tab.png)
 
 Samma information finns på [Adobe Experience Platform](https://platform.adobe.com/) under flikarna **[Schema](https://platform.adobe.com/schema)** och **[Datauppsättningar](https://platform.adobe.com/dataset/overview)**.
 
@@ -460,7 +460,7 @@ def save(configProperties, prediction):
 
 När du har gjort ändringar i din bärbara dator och vill utbilda ditt recept kan du klicka på de tillhörande knapparna högst upp i fältet för att skapa en utbildning i cellen. När du klickar på knappen visas en logg med kommandon och utdata från utbildningsskriptet i anteckningsboken (under cellen `evaluator.py`). Conda installerar först alla beroenden, sedan initieras kursen.
 
-Observera att du måste genomföra en utbildning minst en gång innan du kan göra en poängsättning. Om du klickar på knappen **[!UICONTROL Run Scoring]** får du poäng på den tränade modell som skapades under träningen. Bedömningsskriptet visas under `datasaver.py`.
+Observera att du måste genomföra en utbildning minst en gång innan du kan göra en poängsättning. Om du klickar på knappen **[!UICONTROL Run Scoring]** får du poäng på den tränade modellen som skapades under träningen. Bedömningsskriptet visas under `datasaver.py`.
 
 Om du vill se dolda utdata lägger du till `debug` i slutet av utdatacellen och kör om den i felsökningssyfte.
 
