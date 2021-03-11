@@ -6,9 +6,9 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: 6c8bf05285dcfc3e631ae5a41dcf40f90217320a
+source-git-commit: 95ff15b212e0d6f454f0319ac1ec5bbee9c07dac
 workflow-type: tm+mt
-source-wordcount: '2101'
+source-wordcount: '2070'
 ht-degree: 0%
 
 ---
@@ -30,19 +30,11 @@ Stegen i aktiveringsarbetsflödet varierar något mellan måltyperna. Det fullst
 
 Gäller för: Alla destinationer
 
-I Adobe Experience Platform-användargränssnittet går du till **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** och väljer det mål där du vill aktivera dina segment.
+I Adobe Experience Platform-användargränssnittet går du till **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** och trycker på **[!UICONTROL Activate]**-knappen som motsvarar målet där du vill aktivera dina segment, vilket visas i bilden nedan.
 
-![bläddra till mål](../assets/ui/activate-destinations/connect.png)
+![aktivera till mål](../assets/ui/activate-destinations/browse-tab-activate.png)
 
-Välj namnet på målet för att navigera till aktiveringsarbetsflödet.
-
-![activate-flow](../assets/ui/activate-destinations/activate-flow.png)
-
->[!NOTE]
->
->Om det redan finns ett aktiveringsarbetsflöde för ett mål kan du se vilka segment som aktiveras för tillfället till målet. Välj **[!UICONTROL Edit activation]** till höger och följ stegen nedan för att ändra aktiveringsinformationen.
-
-När du har valt ett mål väljer du **[!UICONTROL Activate]**.
+Följ stegen i nästa avsnitt för att markera de segment som du vill aktivera.
 
 ### [!UICONTROL Select Segments] steg  {#select-segments}
 
