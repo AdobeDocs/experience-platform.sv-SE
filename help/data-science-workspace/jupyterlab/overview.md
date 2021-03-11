@@ -5,9 +5,9 @@ title: Översikt över användargränssnittet i JupyterLab
 topic: Översikt
 description: JupyterLab är ett webbaserat användargränssnitt för Project Jupyter och är nära integrerat med Adobe Experience Platform. Den utgör en interaktiv utvecklingsmiljö där datavetare kan arbeta med Jupyter-anteckningsböcker, kod och data. Det här dokumentet innehåller en översikt över JupyterLab och dess funktioner samt instruktioner om hur du utför vanliga åtgärder.
 translation-type: tm+mt
-source-git-commit: 23128fb481452b558c52f962f78ae638fc1f0418
+source-git-commit: 9d84fc1eb898020ed4b154c091fcc9fc4933c7de
 workflow-type: tm+mt
-source-wordcount: '1810'
+source-wordcount: '1814'
 ht-degree: 0%
 
 ---
@@ -118,9 +118,9 @@ I [!DNL JupyterLab] väljer du kugghjulsikonen i det övre högra hörnet för a
 
 ### Avsluta och starta om [!DNL JupyterLab]
 
-I [!DNL JupyterLab] kan du avsluta din session för att förhindra att fler resurser används. Börja med att välja **strömikonen** och välj sedan **[!UICONTROL Shut Down]** i den pover som visas för att avsluta sessionen. Anteckningsbokssessioner avslutas automatiskt efter 12 timmars ingen aktivitet.
+I [!DNL JupyterLab] kan du avsluta din session för att förhindra att fler resurser används. Börja med att markera **strömikonen** ![strömikonen](../images/jupyterlab/user-guide/power_button.png) och välj sedan **[!UICONTROL Shut Down]** i den port som visas för att avsluta sessionen. Anteckningsbokssessioner avslutas automatiskt efter 12 timmars ingen aktivitet.
 
-Om du vill starta om [!DNL JupyterLab] väljer du ikonen **starta om** som finns direkt till vänster om strömikonen och väljer sedan **[!UICONTROL Restart]** i den pover som visas.
+Om du vill starta om [!DNL JupyterLab] väljer du ikonen **omstart** ![omstart](../images/jupyterlab/user-guide/restart_button.png) som finns direkt till vänster om strömikonen och väljer sedan **[!UICONTROL Restart]** i den pover som visas.
 
 ![avsluta jupyterlab](../images/jupyterlab/user-guide/shutdown-jupyterlab.gif)
 
