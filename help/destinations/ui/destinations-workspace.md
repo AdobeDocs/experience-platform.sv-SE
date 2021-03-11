@@ -4,10 +4,10 @@ title: Översikt över arbetsytan Destinationer
 description: Arbetsytan Destinationer består av fyra avsnitt, Katalog, Bläddra, Konton och Systemvy, som beskrivs i avsnitten nedan.
 seo-description: I Adobe Experience Platform väljer du Destinationer i det vänstra navigeringsfältet för att komma åt målarbetsytan.
 translation-type: tm+mt
-source-git-commit: 9305936ca1e73821b2fe948ff1a17a7168840cba
+source-git-commit: 95ff15b212e0d6f454f0319ac1ec5bbee9c07dac
 workflow-type: tm+mt
-source-wordcount: '873'
-ht-degree: 1%
+source-wordcount: '947'
+ht-degree: 0%
 
 ---
 
@@ -87,15 +87,19 @@ På fliken **[!UICONTROL Browse]** visas de mål som du har upprättat en anslut
 
 >[!TIP]
 >
->Använd knappen ![Lägg till data](../assets/ui/workspace/add-data-symbol.png) i kolumnen **[!UICONTROL Name]** för att aktivera ytterligare segment för det målet.
+> * Använd knappen ![Lägg till segment](../assets/ui/workspace/add-data-symbol.png) i kolumnen **[!UICONTROL Name]** för att aktivera ytterligare segment för det målet.
+> * Använd knappen ![Ta bort mål](../assets/ui/workspace/delete-destination-symbol.png) i kolumnen **[!UICONTROL Name]** för att ta bort en befintlig anslutning till ett mål.
+
 
 ![Fliken Bläddra](../assets/ui/workspace/browse-tab.png)
 
 | Element | Beskrivning |
 ---------|----------
-| Namn | Namnet som du angav för aktiveringsflödet till den här destinationen. |
+| Namn | Namnet som du angav för aktiveringsflödet till den här destinationen. Samma kolumn innehåller två kontroller: [!UICONTROL Activate ] och [!UICONTROL Delete destination]. |
+| Körningsstatus för senaste flöde | Status för den senaste dataflödeskörningen. Mer information om dataflöden finns i [Visa målinformation](destination-details-page.md). |
+| Körningsdatum för senaste flöde | Tid och datum då det senaste dataflödet kördes. Mer information om dataflöden finns i [Visa målinformation](destination-details-page.md). |
 | [!UICONTROL Destination] | Målplattformen som du valde för aktiveringsflödet. |
-| [!UICONTROL Connection Type] | Representerar anslutningstypen för din lagringsbucket eller destination. <ul><li>För e-postmarknadsföringsmål: Kan vara S3 eller FTP.</li><li>För reklamdestinationer i realtid: Server-till-server</li></ul> |
+| [!UICONTROL Connection Type] | Representerar anslutningstypen för din lagringsbucket eller destination. <ul><li>För e-postmarknadsföringsmål: Kan vara S3, FTP eller [!DNL Azure Blob].</li><li>För reklamdestinationer i realtid: Server-till-server.</li><li>För direktuppspelningsmål: Kan vara [!DNL Azure Event Hubs] eller [!DNL Amazon Kinesis].</li></ul> |
 | [!UICONTROL Username] | De kontoautentiseringsuppgifter som du har valt för målflödet. |
 | [!UICONTROL Activation Data] | Anger antalet segment som aktiveras till det här målet. Välj den här kontrollen om du vill veta mer om de aktiverade segmenten. Se [Aktiveringsdata](/help/destinations/ui/destination-details-page.md#activation-data) på sidan med målinformation för mer information om de aktiverade segmenten. |
 | [!UICONTROL Created] | Datum och UTC-tid när aktiveringsflödet till målet skapades. |
