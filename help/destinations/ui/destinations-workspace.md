@@ -4,7 +4,7 @@ title: Översikt över arbetsytan Destinationer
 description: Arbetsytan Destinationer består av fyra avsnitt, Katalog, Bläddra, Konton och Systemvy, som beskrivs i avsnitten nedan.
 seo-description: I Adobe Experience Platform väljer du Destinationer i det vänstra navigeringsfältet för att komma åt målarbetsytan.
 translation-type: tm+mt
-source-git-commit: 95ff15b212e0d6f454f0319ac1ec5bbee9c07dac
+source-git-commit: 37b0ec0e04c45cb065eca9d262249016e80655ef
 workflow-type: tm+mt
 source-wordcount: '947'
 ht-degree: 0%
@@ -117,6 +117,6 @@ På fliken **[!UICONTROL System View]** visas en grafisk representation av de ak
 
 ![Data-flows1](../assets/ui/workspace/data-flows1.png)
 
-Välj något av de mål som visas på sidan och tryck på **[!UICONTROL View flows]** för att se information om alla anslutningar som du har konfigurerat för varje mål.
+Välj något av de mål som visas på sidan och klicka på **[!UICONTROL View flows]** för att se information om alla anslutningar som du har konfigurerat för varje mål.
 
 ![Dataflöden2](../assets/ui/workspace/data-flows2.png)
