@@ -2,13 +2,13 @@
 keywords: Experience Platform;JupyterLab;notebooks;Data Science Workspace;populära topics;query service
 solution: Experience Platform
 title: Frågetjänst i Jupyter-anteckningsbok
-topic: tutorial
-type: Tutorial
+topic: självstudiekurs
+type: Självstudiekurs
 description: Med Adobe Experience Platform kan du använda SQL (Structured Query Language) i arbetsytan Data Science genom att integrera Query Service i JupyterLab som standardfunktion. I den här självstudiekursen visas exempel på SQL-frågor för vanliga användningsområden för att utforska, omvandla och analysera Adobe Analytics-data.
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 9d84fc1eb898020ed4b154c091fcc9fc4933c7de
 workflow-type: tm+mt
-source-wordcount: '805'
+source-wordcount: '812'
 ht-degree: 1%
 
 ---
@@ -98,13 +98,11 @@ Innan du startar den här självstudiekursen måste du ha följande krav:
 
 ## Fråga dina data {#query-your-data}
 
-Ange följande SQL-frågor i enskilda anteckningsboksceller. Kör en fråga genom att klicka på cellen och sedan på knappen **[!UICONTROL play]**. Slutförda frågeresultat eller felloggar visas under den körda cellen.
+Ange följande SQL-frågor i enskilda anteckningsboksceller. Kör en fråga genom att markera den i cellen och sedan markera knappen **[!UICONTROL play]**. Slutförda frågeresultat eller felloggar visas under den körda cellen.
 
-När en anteckningsbok är inaktiv under en längre tid kan anslutningen mellan anteckningsboken och [!DNL Query Service] brytas. I så fall startar du om [!DNL JupyterLab] genom att klicka på knappen **[!UICONTROL Power]** i det övre högra hörnet.
+När en anteckningsbok är inaktiv under en längre tid kan anslutningen mellan anteckningsboken och [!DNL Query Service] brytas. I sådana fall startar du om [!DNL JupyterLab] genom att välja knappen **Starta om** ![starta om](../images/jupyterlab/user-guide/restart_button.png) i det övre högra hörnet bredvid strömknappen.
 
-![](../images/jupyterlab/query/restart_button.png)
-
-Anteckningsbokens kärna återställs, men cellerna finns kvar. Kör om **alla** cellerna för att fortsätta där du slutade.
+Anteckningsbokens kärna återställs men cellerna finns kvar. Kör om alla celler för att fortsätta där du slutade.
 
 ### Antal besökare per timme {#hourly-visitor-count}
 
@@ -188,7 +186,7 @@ GROUP  BY Day, Hour
 ORDER  BY Hour;
 ```
 
-Om du kör den ändrade frågan kommer resultatet i `hourly_actions_date_range` att lagras som en dataram. Kör följande funktion i en ny cell för att förhandsgranska resultatet:
+När du kör den ändrade frågan sparas resultaten i `hourly_actions_date_range` som en dataram. Kör följande funktion i en ny cell för att förhandsgranska resultatet:
 
 ```python
 hourly_actions_date_rage.head()
