@@ -2,13 +2,13 @@
 keywords: Experience Platform;hem;populära ämnen;dataflöde;Dataflöd
 solution: Experience Platform
 title: Konfigurera ett dataflöde för en batchanslutning för molnlagring i användargränssnittet
-topic: overview
-type: Tutorial
+topic: översikt
+type: Självstudiekurs
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt molnlagringskonto.
 translation-type: tm+mt
-source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
+source-git-commit: 115442a90ab56a93748bf161aa2e7ed680980f6e
 workflow-type: tm+mt
-source-wordcount: '1831'
+source-wordcount: '1807'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Den här självstudiekursen kräver dessutom att du har ett etablerat molnlagrin
 
 [!DNL Experience Platform] har stöd för följande filformat som ska importeras från externa lagringsplatser:
 
-* Avgränsaravgränsade värden (DSV): Stödet för DSV-formaterade datafiler är för närvarande begränsat till kommaavgränsade värden. Värdet för fältrubriker i DSV-formaterade filer får endast bestå av alfanumeriska tecken och understreck. Stöd för allmänna DSV-filer kommer att ges i framtiden.
+* Avgränsaravgränsade värden (DSV): Alla värden med ett tecken kan användas som avgränsare för DSV-formaterade datafiler.
 * [!DNL JavaScript Object Notation] (JSON): JSON-formaterade datafiler måste vara XDM-kompatibla.
 * [!DNL Apache Parquet]: Parquet-formaterade datafiler måste vara XDM-kompatibla.
 
