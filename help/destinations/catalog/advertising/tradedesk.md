@@ -3,9 +3,9 @@ keywords: Reklam. skrivbordet,
 title: The Trade Desk connection
 description: 'Trade Desk är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer för olika annonser, videoklipp och mobila inventeringskällor. '
 translation-type: tm+mt
-source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
+source-git-commit: 0ef107963f7da377070eb845fd7c24218a99464b
 workflow-type: tm+mt
-source-wordcount: '501'
+source-wordcount: '576'
 ht-degree: 0%
 
 ---
@@ -17,13 +17,17 @@ ht-degree: 0%
 
 [!DNL The Trade Desk] är en självbetjäningsplattform för annonsköpare som vill genomföra återannonsering och målgruppsanpassade digitala kampanjer för alla annonser, videoklipp och mobila inventeringskällor.
 
-Om du vill skicka profildata till [!DNL The Trade Desk] måste du först ansluta till målet.
+Om du vill skicka profildata till [!DNL Trade Desk] måste du först ansluta till målet.
 
 ## Målspecifikationer {#destination-specs}
 
-Observera följande information som är specifik för [!DNL The Trade Desk]-målet:
+Observera följande information som är specifik för [!DNL Trade Desk]-målet:
 
 * Du kan skicka följande [identiteter](../../../identity-service/namespaces.md) till [!DNL The Trade Desk] mål: [!DNL The Trade Desk ID], [!DNL IDFA], [!DNL GAID].
+
+>[!IMPORTANT]
+>
+>Om du vill skapa ditt första mål med [!DNL The Trade Desk] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID-tjänsten tidigare (med Adobe Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL The Trade Desk]-integreringar i Audience Manager överförs ID-synkroniseringarna du har konfigurerat till Platform.
 
 ## Användningsfall {#use-cases}
 
@@ -50,7 +54,7 @@ I steget [!UICONTROL Authentication] måste du ange [!DNL The Trade Desk] anslut
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
 * **[!UICONTROL Account ID]**: Din [!DNL Trade Desk] [!UICONTROL Account ID].
-* **[!UICONTROL Server Location]**: Fråga din  [!DNL The Trade Desk] representant vilken regional server du ska använda. Det här är de tillgängliga regionala servrarna du kan välja mellan:
+* **[!UICONTROL Server Location]**: Fråga din  [!DNL Trade Desk] representant vilken regional server du ska använda. Det här är de tillgängliga regionala servrarna du kan välja mellan:
 
    * **[!UICONTROL Europe]**
    * **[!UICONTROL Singapore]**
@@ -79,4 +83,4 @@ Om du använder flera enhetsmappningar (cookie-ID, [!DNL IDFA], [!DNL GAID]) må
 
 ## Exporterade data {#exported-data}
 
-Kontrollera ditt [!DNL The Trade Desk]-konto om du vill verifiera om data har exporterats till [!DNL The Trade Desk]-målet. Om aktiveringen lyckades fylls målgrupperna i ditt konto.
+Kontrollera ditt [!DNL Trade Desk]-konto om du vill verifiera om data har exporterats till [!DNL The Trade Desk]-målet. Om aktiveringen lyckades fylls målgrupperna i ditt konto.
