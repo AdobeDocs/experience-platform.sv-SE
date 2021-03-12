@@ -3,10 +3,10 @@ keywords: 'Reklam. Vedning. '
 title: Microsoft Bing-anslutning
 description: Med anslutningsmålet för Microsoft Bing kan ni genomföra återannonsering och målgruppsanpassade digitala kampanjer i Microsoft Display Advertising.
 translation-type: tm+mt
-source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
+source-git-commit: 0ef107963f7da377070eb845fd7c24218a99464b
 workflow-type: tm+mt
-source-wordcount: '434'
-ht-degree: 1%
+source-wordcount: '507'
+ht-degree: 0%
 
 ---
 
@@ -22,6 +22,10 @@ Om du vill skicka profildata till [!DNL Microsoft Bing] måste du först ansluta
 Observera följande information som är specifik för [!DNL Microsoft Bing]-målet:
 
 * Du kan skicka följande [identiteter](../../../identity-service/namespaces.md) till [!DNL Microsoft Bing] mål: [!DNL Microsoft ID].
+
+>[!IMPORTANT]
+>
+>Om du vill skapa ditt första mål med [!DNL Microsoft Bing] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID-tjänsten tidigare (med Adobe Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL Microsoft Bing]-integreringar i Audience Manager överförs ID-synkroniseringarna du har konfigurerat till Platform.
 
 ## Användningsfall {#use-cases}
 
