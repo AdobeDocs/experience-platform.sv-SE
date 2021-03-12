@@ -6,10 +6,10 @@ breadcrumb-title: Handbok för instrumentpaneler
 user-guide-description: Visualisera Experience Platform-data på anpassningsbara instrumentpaneler.
 feature: Datahantering
 translation-type: tm+mt
-source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
+source-git-commit: 4b087685f065d05894fb45c19fce453346448614
 workflow-type: tm+mt
-source-wordcount: '36'
-ht-degree: 8%
+source-wordcount: '40'
+ht-degree: 7%
 
 ---
 
@@ -22,4 +22,6 @@ ht-degree: 8%
    * [Segment](guides/segments.md)
    * [Mål](guides/destinations.md)
    * [Licensanvändning](guides/license-usage.md)
+* [Ändra instrumentpaneler](modify.md)
+* [Widget-bibliotek](widget-library.md)
 * [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
