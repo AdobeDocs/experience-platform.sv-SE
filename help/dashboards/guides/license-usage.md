@@ -3,17 +3,17 @@ keywords: Experience Platform;användargränssnitt;användargränssnitt;anpassni
 title: Kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 topic: guide
-type: Documentation
+type: Dokumentation
 translation-type: tm+mt
-source-git-commit: 084aaa315f694d696abee7f078be3a121111f6cc
+source-git-commit: 3908011b31dd24b13a58a2bc5ad5137dd3af5f63
 workflow-type: tm+mt
-source-wordcount: '571'
-ht-degree: 0%
+source-wordcount: '630'
+ht-degree: 1%
 
 ---
 
 
-# (Beta) [!UICONTROL License usage] instrumentpanel {#license-usage-dashboard}
+# (Beta) Kontrollpanel för licensanvändning {#license-usage-dashboard}
 
 >[!IMPORTANT]
 >
@@ -43,7 +43,7 @@ Välj antingen [!UICONTROL Production] eller [!UICONTROL Development] om du vill
 
 >[!NOTE]
 >
->Konsumtionsrapportering för sandlådor är kumulativ för alla sandlådor av samma typ. Om du väljer [!UICONTROL Production] eller [!UICONTROL Development] rapporteras med andra ord alla produktions- respektive utvecklingssandlådor.
+>Konsumtionsrapportering för sandlådor är kumulativ för alla sandlådor av samma typ. Om du väljer [!UICONTROL Production] eller [!UICONTROL Development] får du med andra ord förbrukningsrapporter för alla produktions- respektive utvecklingssandlådor.
 
 ![](../images/license-usage/select-sandbox.png)
 
@@ -53,26 +53,35 @@ När du har valt en sandlåda kan du använda listrutan för datumintervall för
 
 ![](../images/license-usage/select-date-range.png)
 
-### Widgetar och mätvärden
+## Widgetar
 
-Kontrollpanelen för licensanvändning består av widgetar som visar skrivskyddade mått med viktig information om organisationens licensanvändning. Mer information om de här widgetarna finns i avsnittet om tillgängliga widgetar i den här handboken.
+Kontrollpanelen för licensanvändning består av widgetar som visar skrivskyddade mått med viktig information om organisationens licensanvändning. Vilka mätvärden som visas beror på organisationens specifika licensiering (mer information finns i avsnittet [tillgängliga mätvärden](#available-metrics)).
 
-## Tillgängliga widgetar {#available-widgets}
+Varje widget visar en graf som jämför det faktiska antalet för din organisation med det totala antalet som är tillgängligt med din organisations licensiering och som anger en procentandel av den totala användningen.
 
-Experience Platform har för närvarande en widget som du kan använda för att visualisera licensanvändningen, och fler widgetar kommer snart.
+![](../images/license-usage/widgets.png)
 
-### [!UICONTROL Addressable audiences] {#addressable-audiences}
+## Tillgängliga mått
 
-Widgeten **[!UICONTROL Addressable audiences]** visar det totala antalet sammanfogade profiler i profildatalagret, efter att ha tillämpat en systemgenererad sammanfogningsprincip för att kombinera profilfragment från alla aktuella datauppsättningar med hjälp av en deterministisk (privat) diagramalgoritm.
+Det finns för närvarande fyra mätvärden på kontrollpanelen för licensanvändning:
 
-Om du vill ha mer information om fragment och sammanfogade profiler börjar du med att läsa *profilfragment jämfört med sammanfogade profiler* i [profilöversikt](../../profile/home.md).
+* [!UICONTROL Addressable Audience] (mätt som antal profiler)
+* [!UICONTROL Average profile richness]
+* [!UICONTROL Total consumed storage]
+* [!UICONTROL Data scanned per segmentation ratio]
 
->[!NOTE]
->
->Sammanslagningsprincipen som används för att beräkna det här måttet genereras av Experience Platform och kan inte redigeras, och inte heller kan en annan sammanfogningsprincip väljas. Den systemgenererade sammanfogningsprincipen är inte densamma som standardsammanfogningsprincipen som används för att beräkna [!UICONTROL Audience size] på kontrollpanelen [!DNL Profile]. Därför är det inte troligt att antalet målgrupper i kontrollpanelerna [!UICONTROL License usage] och [!DNL Profile] är exakt detsamma.
+Definitionen av varje mätvärde varierar beroende på vilken licensiering din organisation har köpt. Detaljerade definitioner av mätvärdena finns i produktbeskrivningsdokumentationen:
 
-![](../images/license-usage/addressable-audiences.png)
+| Licens | Produktbeskrivning |
+|---|---|
+| <ul><li>Adobe Experience Platform:OD LITE</li><li>Adobe Experience Platform:OD STANDARD</li><li>Adobe Experience Platform:OD HEAVY</li></ul> | [Adobe Experience Platform](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform.html) |
+| <ul><li>Adobe Experience Platform:OD</li></ul> | [Adobe Experience Platform](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform.html) |
+| <ul><li>RT KUNDDATAPLATTFORM:OD</li><li>RT KUNDDATAPLATTFORM:OD PRFL TILL 10 MB</li><li>RT KUNDDATAPLATTFORM:OD PRFL TO 50M</li></ul> | [Kunddataplattform i realtid](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform.html) |
+| <ul><li>AEP:OD-AKTIVERING</li><li>AEP:OD ACTIVATION PRFL TO 10M</li><li>AEP:OD ACTIVATION PRFL UPP TILL 50 MB</li></ul> | [Adobe Experience Platform Activation](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform0.html) |
+| <ul><li>AEP:OD INTELLIGENCE</li></ul> | [Adobe Experience Platform Intelligence](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform-intelligence---product-description.html) |
 
 ## Nästa steg
 
-Genom att följa det här dokumentet bör du nu kunna hitta kontrollpanelen för licensanvändning och välja en sandlåda att visa. Du bör också förstå mätvärdena som visas i de tillgängliga widgetarna. Mer information om användargränssnittet i Experience Platform finns i [användargränssnittshandboken för plattformen](../../landing/ui-guide.md).
+När du har läst det här dokumentet kan du hitta kontrollpanelen för licensanvändning och välja en sandlåda att visa. Du kan även hitta mer information om tillgängliga mätvärden för din organisation, baserat på den licensiering din organisation har köpt.
+
+Mer information om andra funktioner i användargränssnittet för Experience Platform finns i [användargränssnittshandboken för plattformen](../../landing/ui-guide.md).
