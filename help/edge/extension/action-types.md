@@ -1,10 +1,12 @@
 ---
 title: Åtgärdstyper i Adobe Experience Platform Web SDK-tillägget
 description: Läs mer om de olika åtgärdstyperna i Adobe Experience Platform Web SDK-tillägget i Adobe Experience Platform Launch.
+solution: Experience Platform
+feature: Web SDK
 translation-type: tm+mt
-source-git-commit: ff261c507d310b8132912680b6ddd1e7d5675d08
+source-git-commit: 9ce6dd5a290b55da04f4ae185cab96c120777775
 workflow-type: tm+mt
-source-wordcount: '328'
+source-wordcount: '535'
 ht-degree: 0%
 
 ---
@@ -18,9 +20,15 @@ Den här sidan beskriver de tillgängliga åtgärdstyperna.
 
 ## Skicka händelse
 
-Skickar en händelse till Adobe [!DNL Experience Platform] så att Adobe Experience Platform kan samla in de data du skickar och agera på dessa uppgifter. Markera en instans (om du har fler än en). Om händelsen inträffar i början av en sidinläsning eller under en vyändring i ett enkelsidigt program väljer du **[!UICONTROL Occurs at the start of a view]**.
+Skickar en händelse till Adobe [!DNL Experience Platform] så att Adobe Experience Platform kan samla in de data du skickar och agera på dessa uppgifter. Markera en instans (om du har fler än en). Alla data som du vill skicka kan skickas i fältet **[!UICONTROL XDM Data]**. Använd ett JSON-objekt som överensstämmer med XDM-schemats struktur. Objektet kan antingen skapas på sidan eller via en **[!UICONTROL Custom Code]** **[!UICONTROL Data Element]**.
 
-Alla data som du vill skicka kan skickas i fältet **[!UICONTROL XDM Data]**. Använd ett JSON-objekt som överensstämmer med XDM-schemats struktur. Objektet kan antingen skapas på sidan eller via en **[!UICONTROL Custom Code]** **[!UICONTROL Data Element]**.
+Det finns några andra fält i åtgärdstypen Skicka händelse som också kan vara användbara beroende på implementeringen. Observera att alla dessa fält är valfria.
+
+- **Typ:** I det här fältet kan du ange en händelsetyp som ska registreras i ditt XDM-schema. Mer information om standardhändelsetyperna finns i [dokumentationen](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en#using-the-sendbeacon-api).
+- **Sammanfognings-ID:** Om du vill ange ett  [sammanfognings-ID ](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/merging-event-data.html?lang=en#fundamentals) för händelsen kan du göra det i det här fältet. Observera att lösningarna längre fram i kedjan inte kan sammanfoga dina händelsedata just nu.
+- **Datauppsättnings-ID:** Om du behöver skicka data till en annan datauppsättning än den som du angav i edge-konfigurationen, kan du ange detta datauppsättnings-ID här.
+- **Dokumentet tas bort:** Markera  **[!UICONTROL Document will unload]** kryssrutan om du vill kontrollera att händelserna når servern även om användaren navigerar bort från sidan. Detta gör att händelser kan nå servern, men svaren ignoreras.
+- **Återge beslut om visuell personalisering:** Markera  **[!UICONTROL Render visual personalization decisions]** kryssrutan om du vill återge anpassat innehåll på sidan. Du kan också ange beslutsomfattningar om det behövs. Mer information om återgivning av anpassat innehåll finns i [personaliseringsdokumentationen](https://experienceleague.adobe.com/docs/experience-platform/edge/personalization/rendering-personalization-content.html?lang=en#automatically-rendering-content).
 
 ## Ange samtycke
 
@@ -34,4 +42,4 @@ Om du vill återställa ditt ID för händelsesammanfogning på sidan kan du gö
 
 ## Vad händer nu?
 
-När du har angett åtgärdstyper [konfigurerar du dina dataelementtyper](data-element-types.md).
+När du har angett åtgärderna [konfigurerar du dina dataelementtyper](data-element-types.md).
