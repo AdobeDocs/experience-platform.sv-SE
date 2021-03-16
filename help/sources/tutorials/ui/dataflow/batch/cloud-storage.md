@@ -6,9 +6,9 @@ topic: översikt
 type: Självstudiekurs
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt molnlagringskonto.
 translation-type: tm+mt
-source-git-commit: 115442a90ab56a93748bf161aa2e7ed680980f6e
+source-git-commit: 1fb4a272a914bf4ce7653f3f4f7fff63f36f9a48
 workflow-type: tm+mt
-source-wordcount: '1807'
+source-wordcount: '1853'
 ht-degree: 0%
 
 ---
@@ -41,38 +41,52 @@ Den här självstudiekursen kräver dessutom att du har ett etablerat molnlagrin
 
 När du har skapat ditt molnlagringskonto visas **[!UICONTROL Select data]**-steget som ger dig ett gränssnitt där du kan utforska din filhierarki i molnlagringen.
 
-* Den vänstra halvan av gränssnittet är en katalogwebbläsare som visar serverns filer och kataloger.
-* I den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader data från en kompatibel fil.
+* Den vänstra delen av gränssnittet är en katalogwebbläsare som visar lagringsfiler och kataloger i molnet.
+* Med den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader data från en kompatibel fil.
 
-Om du väljer en mapp i listan kan du gå igenom mapphierarkin till djupare mappar. När du har valt en kompatibel fil eller mapp visas listrutan **[!UICONTROL Select data format]** där du kan välja ett format för att visa data i förhandsgranskningsfönstret.
+![gränssnitt](../../../../images/tutorials/dataflow/cloud-storage/batch/interface.png)
 
-![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-data.png)
+Om du väljer en mapp i listan kan du gå igenom mapphierarkin till djupare mappar. Du kan markera en mapp om du vill importera alla filer i mappen rekursivt. När du importerar en hel mapp måste du se till att alla filer i mappen delar samma schema.
 
-Välj lämpligt dataformat för filen som du vill importera och vänta i några sekunder tills förhandsvisningsfönstret fylls i.
+När du har valt en kompatibel fil eller mapp väljer du motsvarande dataformat i listrutan [!UICONTROL Select data format].
 
-![](../../../../images/tutorials/dataflow/cloud-storage/batch/data-format.png)
+I följande tabell visas rätt dataformat för de filtyper som stöds:
 
-Du kan ange en egen avgränsare när du importerar avgränsade filer. Välj alternativet **[!UICONTROL Delimiter]** och välj sedan en avgränsare i listrutan. Menyn innehåller de vanligaste alternativen för avgränsare, inklusive kommatecken (`,`), tabbar (`\t`) och en pipe (`|`). Du kan också välja **[!UICONTROL Custom]** och ange en egen avgränsare i popup-indatafältet.
+| Filtyp | Dataformat |
+| --- | --- |
+| CSV | [!UICONTROL Delimited] |
+| JSON | [!UICONTROL JSON] |
+| Parquet | [!UICONTROL XDM Parquet] |
+
+Välj **[!UICONTROL JSON]** och vänta några sekunder på att förhandsvisningsgränssnittet ska fyllas i.
+
+![select-data](../../../../images/tutorials/dataflow/cloud-storage/batch/select-data.png)
+
+>[!NOTE]
+>
+>Till skillnad från filtyperna separerad och JSON är Parquet-formaterade filer inte tillgängliga för förhandsgranskning.
+
+I förhandsvisningsgränssnittet kan du inspektera innehållet och strukturen i en fil. Som standard visas den första filen i den markerade mappen i förhandsvisningsgränssnittet.
+
+Om du vill förhandsgranska en annan fil markerar du förhandsvisningsikonen bredvid namnet på filen som du vill inspektera.
+
+![standardförhandsvisning](../../../../images/tutorials/dataflow/cloud-storage/batch/default-preview.png)
+
+När du har inspekterat innehållet och strukturen för filerna i mappen väljer du **[!UICONTROL Next]** om du vill importera alla filer i mappen rekursivt.
+
+![select-folder](../../../../images/tutorials/dataflow/cloud-storage/batch/select-folder.png)
+
+Om du föredrar att välja en viss fil markerar du den fil som du vill importera och väljer sedan **[!UICONTROL Next]**.
+
+![select-file](../../../../images/tutorials/dataflow/cloud-storage/batch/select-file.png)
+
+### Ange en anpassad avgränsare för avgränsade filer
+
+Du kan ange en egen avgränsare när du importerar avgränsade filer. Välj alternativet **[!UICONTROL Delimiter]** och välj sedan en avgränsare i listrutan. Menyn innehåller de vanligaste alternativen för avgränsare, inklusive kommatecken (`,`), tabbar (`\t`) och en pipe (`|`). Om du föredrar att använda en anpassad avgränsare väljer du **[!UICONTROL Custom]** och anger en avgränsare med ett tecken i popup-indatafältet.
 
 När du har valt dataformat och angett avgränsare väljer du **[!UICONTROL Next]**.
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/delimiter.png)
-
-### Ingest Parquet- eller JSON-filer
-
-Molnlagringskonton har också stöd för JSON- och Parquet-filer. Parquet-filer måste vara XDM-kompatibla, medan JSON-filer inte behöver vara XDM-kompatibla. Om du vill importera JSON- eller Parquet-filer väljer du lämpligt filformat i katalogwebbläsaren och tillämpar kompatibelt dataformat från det högra gränssnittet.
-
-Om dataformatet är i JSON visas en förhandsvisning med information om data i filen. På förhandsgranskningsskärmen kan du välja om JSON är XDM-kompatibel med hjälp av listrutan **[!UICONTROL XDM compliant]**.
-
-Välj **[!UICONTROL Next]** för att fortsätta.
-
-![](../../../../images/tutorials/dataflow/cloud-storage/batch/json-preview.png)
-
->[!IMPORTANT]
->
->Till skillnad från filtyperna separerad och JSON är Parquet-formaterade filer inte tillgängliga för förhandsgranskning.
-
-![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-data-parquet.png)
 
 ## Mappa datafält till ett XDM-schema
 
