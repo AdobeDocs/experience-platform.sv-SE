@@ -6,9 +6,9 @@ breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Dataintag, källor
 translation-type: tm+mt
-source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
+source-git-commit: 73ad0a264bcb0e9510ef500592fd945903c5cfea
 workflow-type: tm+mt
-source-wordcount: '577'
+source-wordcount: '579'
 ht-degree: 5%
 
 ---
@@ -148,9 +148,9 @@ ht-degree: 5%
    - [Infoga Parquet-data från ett molnlagringssystem från en annan leverantör](tutorials/api/cloud-storage-parquet.md)
    - [Skapa en datauppsättningsanslutning](tutorials/api/create-dataset-base-connection.md)
    - [Övervaka dataflöden](tutorials/api/monitor.md)
-   - [Uppdatera anslutningar](tutorials/api/update.md)
+   - [Uppdatera konton](tutorials/api/update.md)
    - [Uppdatera dataflöden](tutorials/api/update-dataflows.md)
-   - [Ta bort anslutningar](tutorials/api/delete.md)
+   - [Ta bort konton](tutorials/api/delete.md)
    - [Ta bort dataflöden](tutorials/api/delete-dataflows.md)
 - Självstudiekurser för användargränssnitt {#ui-tutorials}
    - Skapa en källanslutning {#create}
@@ -222,6 +222,7 @@ ht-degree: 5%
    - [Aktivera inkommande data för att fylla i kundprofiler](tutorials/ui/profile.md)
    - [Övervaka dataflöden](tutorials/ui/monitor.md)
    - [Uppdatera konton](tutorials/ui/update.md)
+   - [Uppdatera dataflöden](tutorials/ui/update-dataflows.md)
    - [Ta bort konton](tutorials/ui/delete-accounts.md)
    - [Ta bort dataflöden](tutorials/ui/delete.md)
 - [Flödeskörningsmeddelanden](notifications.md)
