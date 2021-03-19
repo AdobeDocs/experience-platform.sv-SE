@@ -3,9 +3,9 @@ keywords: Google customer match;Google customer match;Google Customer Match
 title: Google Customer Match Connection
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Googles egna och styrda egenskaper, som Search, Shopping, Gmail och YouTube.
 translation-type: tm+mt
-source-git-commit: 494b41265a0eec71ec15c7896eb8c652b3164e18
+source-git-commit: 950dc24e44a32cfd3e0cdde0fee967cb687c572e
 workflow-type: tm+mt
-source-wordcount: '1381'
+source-wordcount: '1565'
 ht-degree: 0%
 
 ---
@@ -31,19 +31,27 @@ Ett framstående teknikföretag har just släppt en ny telefon. För att marknad
 
 För att befordra releasen överför de e-postadresser från sin CRM-databas till Experience Platform med e-postadresserna som identifierare. Segment skapas baserat på kunder som äger äldre telefonmodeller och skickas till [!DNL Google Customer Match] så att de kan rikta sig till befintliga kunder, kunder som äger äldre telefonmodeller samt liknande kunder på [!DNL YouTube].
 
-## Målspecificeringar {#destination-specs}
-
-### Datastyrning för [!DNL Google Customer Match] mål {#data-governance}
+## Datastyrning för [!DNL Google Customer Match] mål {#data-governance}
 
 Destinationerna i Experience Platform kan ha vissa regler och skyldigheter för data som skickas till eller tas emot från destinationsplattformen. Du ansvarar för att förstå begränsningar och skyldigheter för dina data och hur du använder dessa data i Adobe Experience Platform och målplattformen. Adobe Experience Platform tillhandahåller datastyrningsverktyg som hjälper er att hantera vissa av dessa dataanvändningsskyldigheter. [Läs ](../../..//data-governance/labels/overview.md) mer om verktyg och policyer för datastyrning.
 
-### Exporttyp och identiteter {#export-type}
+## Identiteter som stöds {#supported-identities}
+
+[!DNL Google Customer Match] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/namespaces.md).
+
+| Målidentitet | Beskrivning | Överväganden |
+|---|---|---|
+| GAID | Google Advertising ID | Välj den här målidentiteten när din källidentitet är ett GAID-namnområde. |
+| IDFA | Apple ID för annonsörer | Välj den här målidentiteten när din källidentitet är ett IDFA-namnutrymme. |
+| phone_sha256_e.164 | Telefonnummer i E164-format som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Följ instruktionerna i [kraven för ID-matchning](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för normal text respektive hashade telefonnummer. När källfältet innehåller ohashade attribut bör du markera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
+| email_lc_sha256 | E-postadresser som hash-kodats med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i [kraven för ID-matchning](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser. När källfältet innehåller ohashade attribut bör du markera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
+| user_id | Anpassade användar-ID:n | Välj den här målidentiteten när källidentiteten är ett anpassat namnutrymme. |
+
+## Exporttyp {#export-type}
 
 **Segmentexport**  - du exporterar alla medlemmar i ett segment (publik) med identifierarna (namn, telefonnummer osv.) används i målet [!DNL Google Customer Match].
 
-**Identiteter**  - du kan använda råa eller hashad e-post som kund-ID i Google.
-
-### [!DNL Google Customer Match] kontokrav  {#google-account-prerequisites}
+## [!DNL Google Customer Match] kontokrav  {#google-account-prerequisites}
 
 Innan du konfigurerar ett [!DNL Google Customer Match]-mål i Experience Platform måste du läsa och följa Googles policy för att använda [!DNL Customer Match], som beskrivs i [Google Support-dokumentationen](https://support.google.com/google-ads/answer/6299717).
 
