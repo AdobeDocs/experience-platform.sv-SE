@@ -3,9 +3,9 @@ keywords: Facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 translation-type: tm+mt
-source-git-commit: bec44832a235dd3f9e2ee0f3ffc77854ee5784d7
+source-git-commit: 950dc24e44a32cfd3e0cdde0fee967cb687c572e
 workflow-type: tm+mt
-source-wordcount: '933'
+source-wordcount: '1128'
 ht-degree: 3%
 
 ---
@@ -35,19 +35,29 @@ För att rikta in dem på sociala medier kan de lägga in kunddata från sina CR
 
 Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-ID:n och kundnivåer, för att skapa nya målgruppssegment som de kan rikta sig mot via målet [!DNL Facebook].
 
-## Målspecificeringar {#destination-specs}
-
-### Datastyrning för [!DNL Facebook] mål {#data-governance}
+## Datastyrning för [!DNL Facebook] mål {#data-governance}
 
 >[!IMPORTANT]
 >
 >Data som skickas till [!DNL Facebook] får inte innehålla sammanslagna identiteter. Du ansvarar för att uppfylla denna skyldighet och kan göra det genom att se till att segment som markerats för aktivering inte använder ett sammanslagningsalternativ i sammanfogningspolicyn. Läs mer om [sammanfogningsprinciper](/help/profile/ui/merge-policies.md).
 
-### Exporttyp {#export-type}
+## Identiteter som stöds {#supported-identities}
+
+[!DNL Facebook Custom Audiences] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/namespaces.md).
+
+| Målidentitet | Beskrivning | Överväganden |
+|---|---|---|
+| GAID | Google Advertising ID | Välj den här målidentiteten när din källidentitet är ett GAID-namnområde. |
+| IDFA | Apple ID för annonsörer | Välj den här målidentiteten när din källidentitet är ett IDFA-namnutrymme. |
+| phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Följ instruktionerna i [kraven för ID-matchning](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för normal text respektive hashade telefonnummer. När källfältet innehåller ohashade attribut bör du markera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
+| email_lc_sha256 | E-postadresser som hash-kodats med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i [kraven för ID-matchning](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser. När källfältet innehåller ohashade attribut bör du markera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
+| extern_id | Anpassade användar-ID:n | Välj den här målidentiteten när källidentiteten är ett anpassat namnutrymme. |
+
+## Exporttyp {#export-type}
 
 **Segmentexport**  - du exporterar alla medlemmar i ett segment (publik) med identifierarna (namn, telefonnummer osv.) används i Facebook-målet.
 
-### Krav för Facebook-konto {#facebook-account-prerequisites}
+## Krav för Facebook-konto {#facebook-account-prerequisites}
 
 Innan du kan skicka målgruppssegment till [!DNL Facebook] måste du kontrollera att du uppfyller följande krav:
 
@@ -58,13 +68,13 @@ Innan du kan skicka målgruppssegment till [!DNL Facebook] måste du kontrollera
    > När du konfigurerar behörigheter för Adobe Experience Cloud måste du aktivera behörigheten **Hantera kampanjer**. Det krävs för [!DNL Adobe Experience Platform]-integreringen.
 - Läs och signera [!DNL Facebook Custom Audiences] användarvillkoren. Gör det genom att gå till `https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]`, där `accountID` är din [!DNL Facebook Ad Account ID].
 
-### Krav för ID-matchning {#id-matching-requirements}
+## Krav för ID-matchning {#id-matching-requirements}
 
 [!DNL Facebook] kräver att ingen personligt identifierbar information (PII) skickas klart. Därför kan målgrupper som är aktiverade för [!DNL Facebook] vara avstängda från *hash*-identifierare, till exempel e-postadresser eller telefonnummer.
 
 Beroende på vilken typ av ID som du importerar till Adobe Experience Platform måste du följa deras motsvarande krav.
 
-#### Kraven för hashning av telefonnummer {#phone-number-hashing-requirements}
+### Kraven för hashning av telefonnummer {#phone-number-hashing-requirements}
 
 Det finns två sätt att aktivera telefonnummer i [!DNL Facebook]:
 
@@ -76,7 +86,7 @@ Det finns två sätt att aktivera telefonnummer i [!DNL Facebook]:
 >Telefonnummer som är inkapslade i namnområdet `Phone` kan inte aktiveras i [!DNL Facebook].
 
 
-#### Krav för e-posthashning {#email-hashing-requirements}
+### Krav för e-posthashning {#email-hashing-requirements}
 
 Du kan välja att hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform, eller så kan du välja att arbeta med e-postadresser i klartext i Experience Platform och låta algoritmen hash-koda dem när de aktiveras.
 
@@ -99,7 +109,7 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 
 ![Transformering av identitetsmappning](../../assets/ui/activate-destinations/identity-mapping-transformation.png)
 
-#### Använda anpassade namnutrymmen {#custom-namespaces}
+### Använda anpassade namnutrymmen {#custom-namespaces}
 
 Innan du kan använda namnutrymmet `Extern_ID` för att skicka data till [!DNL Facebook] måste du synkronisera dina egna identifierare med [!DNL Facebook Pixel]. Mer information finns i [den officiella dokumentationen](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/#external_identifiers).
 
