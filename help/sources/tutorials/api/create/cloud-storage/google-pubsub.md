@@ -6,9 +6,9 @@ topic: översikt
 type: Självstudiekurs
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Google PubSub-konto med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: 0af90253f04377149986aedf2e9d3012ca06d4f8
+source-git-commit: b5358ce206888c413035b46fe751520fd9aefb14
 workflow-type: tm+mt
-source-wordcount: '549'
+source-wordcount: '613'
 ht-degree: 1%
 
 ---
@@ -40,7 +40,11 @@ För att [!DNL Flow Service] ska kunna ansluta till [!DNL PubSub] måste du ange
 | `projectId` | Det projekt-ID som krävs för att autentisera [!DNL PubSub]. |
 | `credentials` | Autentiseringsuppgiften eller nyckeln som krävs för att autentisera [!DNL PubSub]. |
 
-Mer information om dessa värden finns i följande [PubSub authentication](https://cloud.google.com/pubsub/docs/authentication)-dokument.
+Mer information om dessa värden finns i följande [PubSub authentication](https://cloud.google.com/pubsub/docs/authentication)-dokument. Om du använder kontobaserad autentisering för tjänster kan du läsa följande [PubSub-guide](https://cloud.google.com/docs/authentication/production#create_service_account) för steg om hur du genererar autentiseringsuppgifter.
+
+>[!TIP]
+>
+>Om du använder kontobaserad autentisering för tjänster måste du se till att du har beviljat tillräcklig användaråtkomst till ditt tjänstkonto och att det inte finns några extra tomrum i JSON när du kopierar och klistrar in dina autentiseringsuppgifter.
 
 ### Läser exempel-API-anrop
 
