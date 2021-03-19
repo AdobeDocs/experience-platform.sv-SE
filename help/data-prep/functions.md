@@ -5,7 +5,7 @@ title: Mappningsfunktioner för dataförinställningar
 topic: översikt
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 translation-type: tm+mt
-source-git-commit: 6a541cca307dec8937c2d49470e8bcab770c80c7
+source-git-commit: 85a99171a6786b47bf50d4579a3ebc88af3c82f6
 workflow-type: tm+mt
 source-wordcount: '3719'
 ht-degree: 2%
@@ -35,7 +35,7 @@ Du kan komma åt data i underfält genom att använda punktnotation. Om det till
 
 I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempeluttryck och deras resulterande utdata.
 
-### Strängfunktioner
+### Strängfunktioner {#string}
 
 >[!NOTE]
 >
@@ -71,7 +71,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | extract_regex | Extraherar grupper från indatasträngen baserat på ett reguljärt uttryck. | <ul><li>STRING: **Obligatoriskt** Strängen som du extraherar grupperna från.</li><li>REGEX: **Obligatoriskt** Det reguljära uttryck som du vill att gruppen ska matcha.</li></ul> | extract_regex(STRING, REGEX) | extract_regex &#x200B;(&quot;E259,E259B_009,1_1&quot; &#x200B;, &quot;([^,]+),[^,]*,([^,]+)&quot;) | [&quot;E259,E259B_009,1_1&quot;, &quot;E259&quot;, &quot;1_1&quot;] |
 | match_regex | Kontrollerar om strängen matchar det inmatade reguljära uttrycket. | <ul><li>STRING: **Obligatoriskt** Strängen som du kontrollerar matchar det reguljära uttrycket.</li><li>REGEX: **Obligatoriskt** Det reguljära uttryck som du jämför med.</li></ul> | match_regex(STRING, REGEX) | match_regex(&quot;E259,E259B_009,1_1&quot;, &quot;([^,]+),[^,]*,([^,]+)&quot;) | sant |
 
-### Hash-funktioner
+### Hash-funktioner {#hashing}
 
 >[!NOTE]
 >
@@ -85,7 +85,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | md5 | Tar en inmatning och skapar ett hash-värde med MD5. | <ul><li>INMATNING: **Obligatorisk** Den oformaterade text som ska hash-kodas.</li><li>CHARSET: *Valfritt* Namnet på teckenuppsättningen. Möjliga värden är UTF-8, UTF-16, ISO-8859-1 och US-ASCII. </li></ul> | md5(INPUT, CHARSET) | md5(&quot;min text&quot;, &quot;UTF-8&quot;) | d3b96ce8c9fb4 &#x200B; e9bd0198d03ba6852c7 |
 | crc32 | Tar en inmatning använder en algoritm för cyklisk redundanskontroll (CRC) för att skapa en 32-bitars cyklisk kod. | <ul><li>INMATNING: **Obligatorisk** Den oformaterade text som ska hash-kodas.</li><li>CHARSET: *Valfritt* Namnet på teckenuppsättningen. Möjliga värden är UTF-8, UTF-16, ISO-8859-1 och US-ASCII.</li></ul> | crc32(INPUT, CHARSET) | crc32(&quot;min text&quot;, &quot;UTF-8&quot;) | 8df92e80 |
 
-### URL-funktioner
+### URL-funktioner {#url}
 
 >[!NOTE]
 >
@@ -99,7 +99,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | get_url_path | Returnerar sökvägen till angiven URL. Som standard returneras den fullständiga sökvägen. | <ul><li>URL: **Nödvändig** Den URL som sökvägen måste extraheras från.</li><li>FULL_PATH: *Valfritt* Ett booleskt värde som avgör om den fullständiga sökvägen returneras. Om värdet är false returneras bara slutet av sökvägen.</li></ul> | get_url_path &#x200B;(URL, FULL_PATH) | get_url_path &#x200B;(&quot;sftp://example.com// &#x200B; home/joe/employee.csv&quot;) | &quot;//home/joe/&#x200B; employee.csv&quot; |
 | get_url_query_str | Returnerar frågesträngen för en angiven URL. | <ul><li>URL: **Nödvändig** Den URL som du försöker hämta frågesträngen från.</li><li>ANKARE: **Obligatoriskt** Anger vad som ska göras med ankaret i frågesträngen. Kan vara ett av tre värden: &quot;keep&quot;, &quot;remove&quot; eller &quot;append&quot;.<br><br>Om värdet är &quot;behåll&quot; kopplas ankarpunkten till det returnerade värdet.<br>Om värdet är &quot;remove&quot; tas ankarpunkten bort från det returnerade värdet.<br>Om värdet är &quot;append&quot; returneras ankarpunkten som ett separat värde.</li></ul> | get_url_query_str &#x200B;(URL, ANCHOR) | get_url_query_str &#x200B;(&quot;foo://example.com:8042 &#x200B;/over/here?name= &#x200B; ferret#nos&quot;, &quot;keep&quot;)<br>get_url_query_str &#x200B;(&quot;foo://example.com:8042 &#x200B;/over/there?name= &#x200B; ferret#nos&quot;, &quot;remove&quot;)<br>get_url_query_str &#x200B;(&quot;foo://example.comågor:8042/over/där ○?name=illret#nos&quot;, &quot;append&quot;) | `{"name": "ferret#nose"}`<br>`{"name": "ferret"}`<br>`{"name": "ferret", "_anchor_": "nose"}` |
 
-### Datum- och tidsfunktioner
+### Datum- och tidsfunktioner {#date-and-time}
 
 >[!NOTE]
 >
@@ -122,7 +122,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 
 &#x200B;
 
-### Hierarkier - objekt
+### Hierarkier - objekt {#objects}
 
 >[!NOTE]
 >
@@ -138,7 +138,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | is_set | Kontrollerar om objektet finns i källdata. | <ul><li>INMATNING: **Obligatorisk** Sökvägen som ska kontrolleras om den finns i källdata.</li></ul> | is_set(INPUT) | is_set &#x200B;(&quot;evars.evar.field1&quot;) | sant |
 | null | Anger värdet för attributet till `null`. Detta bör användas när du inte vill kopiera fältet till målschemat. |  | nullify() | nullify() | `null` |
 
-### Hierarkier - matriser
+### Hierarkier - arrayer {#arrays}
 
 >[!NOTE]
 >
@@ -153,7 +153,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | join_arrays | Kombinerar arrayerna med varandra. | <ul><li>ARRAY: **Nödvändig** Arrayen som du lägger till element i.</li><li>VÄRDEN: Arrayen/arrayerna som du vill lägga till i den överordnade arrayen.</li></ul> | join_arrays &#x200B;(ARRAY, VALUES) | join_arrays &#x200B;([&#39;a&#39;, &#39;b&#39;], [&#39;c&#39;], [&#39;d&#39;, &#39;e&#39;]) | [a, b, c, d, e] |
 | to_array | Tar en lista med indata och konverterar den till en array. | <ul><li>INCLUDE_NULLS: **Obligatoriskt** Ett booleskt värde som anger om null-värden ska tas med i svarsarrayen eller inte.</li><li>VÄRDEN: **Obligatoriskt** De element som ska konverteras till en array.</li></ul> | to_array &#x200B;(INCLUDE_NULLS, VALUES) | to_array(false, 1, null, 2, 3) | `[1, 2, 3]` |
 
-### Logiska operatorer
+### Logiska operatorer {#logical-operators}
 
 >[!NOTE]
 >
@@ -164,7 +164,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | decode | Om en nyckel och en lista med nyckelvärdepar förenklas som en array, returnerar funktionen värdet om nyckeln hittas eller returnerar ett standardvärde om det finns i arrayen. | <ul><li>NYCKEL: **Nödvändig** Nyckeln som ska matchas.</li><li>OPTIONS: **Nödvändig** En förenklad array med nyckel/värde-par. Ett standardvärde kan också placeras i slutet.</li></ul> | decode(KEY, OPTIONS) | decode(stateCode, &quot;ca&quot;, &quot;California&quot;, &quot;pa&quot;, &quot;Pennsylvania&quot;, &quot;N/A&quot;) | Om given stateCode är &quot;ca&quot;, &quot;California&quot;.<br>Om den angivna statskoden är &quot;pa&quot;, &quot;Pennsylvania&quot;.<br>Om stateCode inte matchar följande, &quot;N/A&quot;. |
 | iif | Utvärderar ett givet booleskt uttryck och returnerar det angivna värdet baserat på resultatet. | <ul><li>UTTRYCK: **Obligatoriskt** Det booleska uttryck som utvärderas.</li><li>TRUE_VALUE: **Obligatoriskt** Värdet som returneras om uttrycket utvärderas till true.</li><li>FALSE_VALUE: **Obligatoriskt** Värdet som returneras om uttrycket utvärderas till false.</li></ul> | iif(EXPRESSION, TRUE_VALUE, FALSE_VALUE) | iif(&quot;s&quot;.equalsIgnoreCase(&quot;S&quot;), &quot;True&quot;, &quot;False&quot;) | &quot;Sant&quot; |
 
-### Aggregera
+### Aggregera {#aggregation}
 
 >[!NOTE]
 >
@@ -175,7 +175,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | min | Returnerar det minsta av de angivna argumenten. Använder naturlig beställning. | <ul><li>OPTIONS: **Obligatoriskt** Ett eller flera objekt som kan jämföras med varandra.</li></ul> | min(OPTIONS) | min(3, 1, 4) | 1 |
 | max | Returnerar det maximala antalet angivna argument. Använder naturlig beställning. | <ul><li>OPTIONS: **Obligatoriskt** Ett eller flera objekt som kan jämföras med varandra.</li></ul> | max(OPTIONS) | max(3, 1, 4) | 4 |
 
-### Typkonverteringar
+### Typkonverteringar {#type-conversions}
 
 >[!NOTE]
 >
@@ -188,7 +188,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | to_float | Konverterar en sträng till en flyttal. | <ul><li>STRING: **Obligatorisk** Strängen som ska konverteras till ett flyttal.</li></ul> | to_float(STRING) | to_float(&quot;12.3456&quot;) | 12.34566 |
 | to_integer | Konverterar en sträng till ett heltal. | <ul><li>STRING: **Obligatorisk** Strängen som ska konverteras till ett heltal.</li></ul> | to_integer(STRING) | to_integer(&quot;12&quot;) | 12 |
 
-### JSON-funktioner
+### JSON-funktioner {#json}
 
 >[!NOTE]
 >
@@ -198,7 +198,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 -------- | ----------- | ---------- | -------| ---------- | -------------
 | json_to_object | Deserialisera JSON-innehåll från den angivna strängen. | <ul><li>STRING: **Nödvändig** JSON-strängen som ska avserialiseras.</li></ul> | json_to_object &#x200B;(STRING) | json_to_object &#x200B;({&quot;info&quot;:{&quot;firstName&quot;:&quot;John&quot;,&quot;lastName&quot; : &quot;Doe&quot;}) | Ett objekt som representerar JSON. |
 
-### Särskilda åtgärder
+### Särskilda åtgärder {#special-operations}
 
 >[!NOTE]
 >
@@ -208,7 +208,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 -------- | ----------- | ---------- | -------| ---------- | -------------
 | uuid /<br>guid | Skapar ett pseudoslumpmässigt ID. |  | uuid()<br>guid() | uuid()<br>guid() | 7c0267d2-bb74-4e1a-9275-3bf4fccda5f4<br>c7016dc7-3163-43f7-afc7-2e1c9c20633 |
 
-### Användaragentfunktioner
+### Användaragentfunktioner {#user-agent}
 
 >[!NOTE]
 >
