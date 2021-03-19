@@ -6,9 +6,9 @@ topic: översikt
 type: Självstudiekurs
 description: Lär dig hur du skapar en Google PubSub-källanslutning med hjälp av användargränssnittet för plattformen.
 translation-type: tm+mt
-source-git-commit: 0af90253f04377149986aedf2e9d3012ca06d4f8
+source-git-commit: b5358ce206888c413035b46fe751520fd9aefb14
 workflow-type: tm+mt
-source-wordcount: '426'
+source-wordcount: '492'
 ht-degree: 1%
 
 ---
@@ -33,16 +33,20 @@ Om du redan har en giltig [!DNL PubSub]-anslutning kan du hoppa över resten av 
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-Om du vill ansluta [!DNL PubSub] till plattformen måste du ange ett giltigt värde för följande autentiseringsuppgifter:
+För att kunna ansluta [!DNL PubSub] till plattformen måste du ange ett giltigt värde för följande autentiseringsuppgifter:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
 | `projectId` | Det projekt-ID som krävs för att autentisera [!DNL PubSub]. |
-| `credentials` | Autentiseringsuppgiften eller nyckeln som krävs för att autentisera [!DNL PubSub]. |
+| `credentials` | Autentiseringsuppgiften eller det privata nyckel-ID som krävs för att autentisera [!DNL PubSub]. |
 
-Mer information om dessa värden finns i följande [PubSub authentication](https://cloud.google.com/pubsub/docs/authentication)-dokument.
+Mer information om dessa värden finns i följande [PubSub authentication](https://cloud.google.com/pubsub/docs/authentication)-dokument. Om du använder kontobaserad autentisering för tjänster kan du läsa följande [PubSub-guide](https://cloud.google.com/docs/authentication/production#create_service_account) för steg om hur du genererar autentiseringsuppgifter.
 
-När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL Blob]-konto till Platform.
+>[!TIP]
+>
+>Om du använder kontobaserad autentisering för tjänster måste du se till att du har beviljat tillräcklig användaråtkomst till ditt tjänstkonto och att det inte finns några extra tomrum i JSON när du kopierar och klistrar in dina autentiseringsuppgifter.
+
+När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att länka ditt [!DNL PubSub]-konto till Platform.
 
 ## Anslut ditt [!DNL PubSub]-konto
 
