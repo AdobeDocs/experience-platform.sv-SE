@@ -5,7 +5,7 @@ title: Översikt över Azure Data Lake Storage Gen2 Source Connector
 topic: översikt
 description: Lär dig hur du ansluter Azure Data Lake Storage Gen2 till Adobe Experience Platform med API:er eller användargränssnittet.
 translation-type: tm+mt
-source-git-commit: 0fb97fcf5d3f8230ff86906aeef245e4a7f44f30
+source-git-commit: 5c6539d45df91369c3608965fd887c013d528b98
 workflow-type: tm+mt
 source-wordcount: '457'
 ht-degree: 0%
@@ -48,7 +48,7 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Azure Dat
 - [Utforska ett molnlagringssystem med API:t för Flow Service](../../tutorials/api/explore/cloud-storage.md)
 - [Samla in molnlagringsdata med API:t för Flow Service](../../tutorials/api/collect/cloud-storage.md)
 
-## Använda gränssnittet
+### Använda gränssnittet
 
 - [Skapa en ADLS-Gen2-källanslutning i gränssnittet](../../tutorials/ui/create/cloud-storage/adls-gen2.md)
 - [Konfigurera ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
