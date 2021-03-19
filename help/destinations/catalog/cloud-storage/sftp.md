@@ -1,11 +1,11 @@
 ---
 keywords: SFTP;sftp
 title: SFTP-anslutning
-description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Experience Platform.
+description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 4f0047e7ac4c83e3e17ea0a077bbeb09c86d1db6
 workflow-type: tm+mt
-source-wordcount: '184'
+source-wordcount: '231'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,11 @@ ht-degree: 0%
 
 # SFTP-anslutning
 
-Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Experience Platform.
+Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Adobe Experience Platform.
+
+>[!IMPORTANT]
+>
+> Adobe stöder dataexport till SFTP-servrar, men de rekommenderade molnlagringsplatserna för dataexport är [!DNL Amazon S3] och [!DNL Azure Blob].
 
 ## Exporttyp {#export-type}
 
@@ -23,7 +27,7 @@ Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exporte
 
 ## Anslutningsmål {#connect-destination}
 
-Mer information om hur du ansluter till molnlagringsmål, inklusive SFTP, finns i [Arbetsflöde för molnlagringsmål ](./workflow.md).
+Mer information om hur du ansluter till molnlagringsmål, inklusive SFTP, finns i arbetsflödet [för molnlagringsmål ](./workflow.md).
 
 För SFTP-mål anger du följande information i arbetsflödet för att skapa mål i steget **Autentisering**:
 
@@ -34,3 +38,7 @@ För SFTP-mål anger du följande information i arbetsflödet för att skapa må
 ## Exporterade data {#exported-data}
 
 För SFTP-mål skapar Platform en tabbavgränsad `.txt`- eller `.csv`-fil på den angivna lagringsplatsen. Mer information om filerna finns i [E-postmarknadsföringsmål och molnlagringsmål](../../ui/activate-destinations.md#esp-and-cloud-storage) i självstudiekursen om segmentaktivering.
+
+## IP-adress tillåtelselista
+
+Se [IP-adressen tillåtelselista för molnlagringsdestinationer](./ip-address-allow-list.md) om du behöver lägga till IP-adresser för Adobe i ett tillåtelselista.
