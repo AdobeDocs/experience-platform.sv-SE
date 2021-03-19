@@ -6,9 +6,9 @@ user-guide-description: Aktivera kända och okända data för flerkanalskampanje
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: 'Mål '
 translation-type: tm+mt
-source-git-commit: 32cb198bcf2c142b50c4b7a60282f0c923be06b1
+source-git-commit: 648be489aa77870f67564ee350c4d85885673832
 workflow-type: tm+mt
-source-wordcount: '460'
+source-wordcount: '464'
 ht-degree: 0%
 
 ---
@@ -82,6 +82,7 @@ ht-degree: 0%
       * [Azure Blob-anslutning](./catalog/cloud-storage/azure-blob.md)
       * [(Beta) Azure Event Hubs-anslutning](./catalog/cloud-storage/azure-event-hubs.md)
       * [SFTP-anslutning](./catalog/cloud-storage/sftp.md)
+      * [IP-adress tillåtelselista](./catalog/cloud-storage/ip-address-allow-list.md)
    * Plattformsmål för datahantering {#data-management}
       * [Översikt över mål för datahanteringsplattformen (DMP)](./catalog/data-management/overview.md)
       * [Audience Manager DIL utökningen](./catalog/data-management/aam-dil-extension.md)
