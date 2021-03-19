@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;flödestjänst;uppdateringsanslutningar
+keywords: Experience Platform;hem;populära ämnen;flödestjänst;uppdatera konton
 solution: Experience Platform
-title: Uppdatera anslutningar med API:t för Flow Service
+title: Uppdatera konton med API:t för Flow Service
 topic: översikt
 type: Självstudiekurs
-description: I den här självstudiekursen beskrivs stegen för att uppdatera information och autentiseringsuppgifter för en anslutning med API:t för Flow Service.
+description: I den här självstudiekursen beskrivs stegen för hur du uppdaterar information och autentiseringsuppgifter för ett konto med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: 5187647dfcf82a476bc776bf2b606db228ca70a4
+source-git-commit: 37be5f5ffa4640d7d4442a24cc257069237f15cb
 workflow-type: tm+mt
 source-wordcount: '689'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 ---
 
 
-# Uppdatera anslutningar med API:t för Flow Service
+# Uppdatera konton med API:t för Flow Service
 
 Under vissa omständigheter kan det vara nödvändigt att uppdatera informationen för en befintlig källanslutning. [!DNL Flow Service] ger dig möjlighet att lägga till, redigera och ta bort information om en befintlig batch- eller direktuppspelningsanslutning, inklusive namn, beskrivning och autentiseringsuppgifter.
 
