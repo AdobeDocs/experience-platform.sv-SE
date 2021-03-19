@@ -3,10 +3,10 @@ keywords: mobiler, bromsa, meddelanden,
 title: Braze connection
 description: Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar.
 translation-type: tm+mt
-source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
+source-git-commit: 0759919dc458798ca4bc5f233a9cb319194ea534
 workflow-type: tm+mt
-source-wordcount: '873'
-ht-degree: 0%
+source-wordcount: '899'
+ht-degree: 1%
 
 ---
 
@@ -27,7 +27,6 @@ Om du vill skicka profildata till [!DNL Braze] måste du först ansluta till må
 
 Observera följande information som är specifik för [!DNL Braze]-målet:
 
-* Du kan skicka alla [identiteter](../../../identity-service/namespaces.md) till [!DNL Braze]-målet, förutsatt att du mappar den till [!DNL Braze] [`external_id`](https://www.braze.com/docs/api/basics/#external-user-id-explanation).
 * [!DNL Adobe Experience Platform] segment exporteras till  [!DNL Braze] under  `AdobeExperiencePlatformSegments` attributet.
 
 >[!NOTE]
@@ -37,6 +36,14 @@ Observera följande information som är specifik för [!DNL Braze]-målet:
 ## Användningsfall {#use-cases}
 
 Som marknadsförare vill jag rikta in mig på användare i ett mål för mobilengagemang, med segment inbyggda i [!DNL Adobe Experience Platform]. Dessutom vill jag leverera personaliserade upplevelser till dem, baserat på attribut från deras [!DNL Adobe Experience Platform]-profiler, så snart segment och profiler uppdateras i [!DNL Adobe Experience Platform].
+
+### Identiteter som stöds {#supported-identities}
+
+[!DNL Google Ad Manager] stöder aktivering av identiteter som beskrivs i tabellen nedan.
+
+| Målidentitet | Beskrivning | Överväganden |
+|---|---|---|
+| external_id | Anpassad [!DNL Braze]-identifierare som stöder mappning av alla identiteter. | Du kan skicka alla [identiteter](../../../identity-service/namespaces.md) till [!DNL Braze]-målet, förutsatt att du mappar den till [!DNL Braze] [`external_id`](https://www.braze.com/docs/api/basics/#external-user-id-explanation). |
 
 ## Exporttyp {#export-type}
 
