@@ -3,9 +3,9 @@ keywords: länkad anslutning;länkad anslutning;länkade destinationer;länkad;
 title: Länkad matchad målgruppsanslutning
 description: Aktivera profiler för era LinkedIn-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hash-kodade e-postmeddelanden.
 translation-type: tm+mt
-source-git-commit: 6d64bc362aa8c85e354f5c02cc2acbe6f1405c99
+source-git-commit: 950dc24e44a32cfd3e0cdde0fee967cb687c572e
 workflow-type: tm+mt
-source-wordcount: '557'
+source-wordcount: '673'
 ht-degree: 0%
 
 ---
@@ -26,6 +26,17 @@ Ett programvaruföretag organiserar en konferens och vill hålla kontakt med del
 ## Målspecificeringar {#destination-specs}
 
 [!DNL LinkedIn Matched Audiences] har stöd för aktivering av följande identiteter: hash emails,  [!DNL GAID]och  [!DNL IDFA].
+
+### Identiteter som stöds {#supported-identities}
+
+[!DNL LinkedIn Matched Audiences] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/namespaces.md).
+
+| Målidentitet | Beskrivning | Överväganden |
+|---|---|---|
+| GAID | Google Advertising ID | Välj den här målidentiteten när din källidentitet är ett GAID-namnområde. |
+| IDFA | Apple ID för annonsörer | Välj den här målidentiteten när din källidentitet är ett IDFA-namnutrymme. |
+| email_lc_sha256 | E-postadresser som hash-kodats med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i [kraven för ID-matchning](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashad e-post. När källfältet innehåller ohashade attribut bör du markera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
+
 
 ### Exporttyp {#export-type}
 
