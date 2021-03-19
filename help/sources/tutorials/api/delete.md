@@ -1,20 +1,20 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;flödestjänst;ta bort anslutningar;ta bort;api
+keywords: Experience Platform;hem;populära ämnen;flödestjänst;ta bort konton;ta bort;api
 solution: Experience Platform
-title: Ta bort en anslutning med API:t för Flow Service
-topic: overview
-type: Tutorial
-description: Lär dig hur du tar bort en anslutning med API:t för Flow Service.
+title: Ta bort ett konto med API:t för Flow Service
+topic: översikt
+type: Självstudiekurs
+description: Lär dig hur du tar bort ett konto med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 37be5f5ffa4640d7d4442a24cc257069237f15cb
 workflow-type: tm+mt
-source-wordcount: '592'
+source-wordcount: '594'
 ht-degree: 1%
 
 ---
 
 
-# Ta bort en anslutning med API:t för Flow Service
+# Ta bort ett konto med API:t för Flow Service
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
