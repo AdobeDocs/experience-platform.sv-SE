@@ -6,9 +6,9 @@ breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Dataintag, källor
 translation-type: tm+mt
-source-git-commit: 73ad0a264bcb0e9510ef500592fd945903c5cfea
+source-git-commit: 26e7116858574b366760ffd4f92b14117ccd28eb
 workflow-type: tm+mt
-source-wordcount: '579'
+source-wordcount: '582'
 ht-degree: 5%
 
 ---
@@ -227,4 +227,5 @@ ht-degree: 5%
    - [Ta bort dataflöden](tutorials/ui/delete.md)
 - [Flödeskörningsmeddelanden](notifications.md)
 - [IP-adress tillåtelselista](ip-address-allow-list.md)
+- [Vanliga frågor](./troubleshooting.md)
 - [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
