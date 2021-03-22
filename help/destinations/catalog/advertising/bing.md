@@ -3,15 +3,17 @@ keywords: 'Reklam. Vedning. '
 title: Microsoft Bing-anslutning
 description: Med anslutningsmålet för Microsoft Bing kan ni genomföra återannonsering och målgruppsanpassade digitala kampanjer i Microsoft Display Advertising.
 translation-type: tm+mt
-source-git-commit: 0ef107963f7da377070eb845fd7c24218a99464b
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '507'
-ht-degree: 0%
+source-wordcount: '508'
+ht-degree: 1%
 
 ---
 
 
 # [!DNL Microsoft Bing] anslutning  {#bing-destination}
+
+## Översikt {#overview}
 
 Med [!DNL Microsoft Bing]-målet kan du skicka profildata till [!DNL Microsoft Display Advertising].
 
