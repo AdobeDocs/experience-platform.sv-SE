@@ -3,9 +3,9 @@ keywords: luftfartygets etikett;luftfartygets destination
 title: Ansluta till luftfartygets taggar
 description: Skicka smidigt data från Adobe till Airship som målgruppstaggar för målinriktning inom Airship.
 translation-type: tm+mt
-source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
+source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
 workflow-type: tm+mt
-source-wordcount: '1133'
+source-wordcount: '1134'
 ht-degree: 0%
 
 ---
@@ -41,7 +41,7 @@ Innan du kan skicka dina Adobe Experience Platform-segment till [!DNL Airship] m
 > 
 >Skapa ett [!DNL Airship]-konto via [den här registreringslänken](https://go.airship.eu/accounts/register/plan/starter/) om du inte redan gjort det.
 
-### Tagggrupper
+## Tagggrupper
 
 Segmentkonceptet i Adobe Experience Platform liknar [taggar](https://docs.airship.com/guides/audience/tags/) i Airship, med små implementeringsskillnader. Den här integreringen mappar statusen för en användares [medlemskap i ett Experience Platform-segment](https://experienceleague.adobe.com/docs/experience-platform/xdm/mixins/profile/segmentation.html?lang=en#mixins) till om en [!DNL Airship]-tagg finns eller inte. I ett plattformssegment där `xdm:status` ändras till `realized`, läggs taggen till i [!DNL Airship]-kanalen eller den namngivna användaren som profilen mappas till. Om `xdm:status` ändras till `exited` tas taggen bort.
 
@@ -53,7 +53,7 @@ Om du vill aktivera den här integreringen skapar du en *tagggrupp* i [!DNL Airs
 
 Mer information om hur du skapar tagggruppen finns i [Hantera tagggrupper](https://docs.airship.com/tutorials/manage-project/messaging/tag-groups).
 
-### Bearer-token
+## Generera innehavartoken
 
 Gå till **[!UICONTROL Settings]**&quot; **[!UICONTROL APIs & Integrations]** i kontrollpanelen [Airship](https://go.airship.com) och välj **[!UICONTROL Tokens]** i den vänstra menyn.
 
