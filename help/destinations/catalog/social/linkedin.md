@@ -3,9 +3,9 @@ keywords: länkad anslutning;länkad anslutning;länkade destinationer;länkad;
 title: Länkad matchad målgruppsanslutning
 description: Aktivera profiler för era LinkedIn-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hash-kodade e-postmeddelanden.
 translation-type: tm+mt
-source-git-commit: fd95357f3e3533fe6b7b9752798dd99eb1cc0eb5
+source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
 workflow-type: tm+mt
-source-wordcount: '666'
+source-wordcount: '654'
 ht-degree: 0%
 
 ---
@@ -23,11 +23,7 @@ För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL
 
 Ett programvaruföretag organiserar en konferens och vill hålla kontakt med deltagarna och visa dem personliga erbjudanden baserat på deras konferensstatus. Företaget kan importera e-postadresser eller mobilenhets-ID:n från sina egna [!DNL CRM] till Adobe Experience Platform. Sedan kan de bygga segment utifrån sina egna offlinedata och skicka dessa segment till den sociala plattformen [!DNL LinkedIn], vilket optimerar deras annonsutgifter.
 
-## Målspecificeringar {#destination-specs}
-
-[!DNL LinkedIn Matched Audiences] har stöd för aktivering av följande identiteter: hash emails,  [!DNL GAID]och  [!DNL IDFA].
-
-### Identiteter som stöds {#supported-identities}
+## Identiteter som stöds {#supported-identities}
 
 [!DNL LinkedIn Matched Audiences] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/namespaces.md).
 
@@ -38,23 +34,23 @@ Ett programvaruföretag organiserar en konferens och vill hålla kontakt med del
 | email_lc_sha256 | E-postadresser som hash-kodats med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i [kraven för ID-matchning](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashad e-post. När källfältet innehåller ohashade attribut bör du markera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen. |
 
 
-### Exporttyp {#export-type}
+## Exporttyp {#export-type}
 
 **Segmentexport**  - du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer och andra) som används i  [!DNL LinkedIn Matched Audiences] målet.
 
-### Krav för LinkedIn-konto {#LinkedIn-account-prerequisites}
+## Krav för LinkedIn-konto {#LinkedIn-account-prerequisites}
 
 Innan du kan använda målet [!UICONTROL LinkedIn Matched Audience] måste du kontrollera att ditt [!DNL LinkedIn Campaign Manager]-konto har behörighetsnivån [!DNL Creative Manager] eller högre.
 
 Mer information om hur du redigerar dina [!DNL LinkedIn Campaign Manager]-användarbehörigheter finns i [Lägg till, redigera och ta bort användarbehörigheter för annonskonton](https://www.linkedin.com/help/lms/answer/5753) i dokumentationen för LinkedIn.
 
-### Krav för ID-matchning {#id-matching-requirements}
+## Krav för ID-matchning {#id-matching-requirements}
 
 [!DNL LinkedIn Matched Audiences] kräver att ingen personligt identifierbar information (PII) skickas klart. Därför kan målgrupper som är aktiverade för [!DNL LinkedIn Matched Audiences] vara avstängda från *hash*-identifierare, till exempel e-postadresser eller mobila enhets-ID:n.
 
 Beroende på vilken typ av ID som du importerar till Adobe Experience Platform måste du följa deras motsvarande krav.
 
-#### Krav för e-posthashning {#email-hashing-requirements}
+## Krav för e-posthashning {#email-hashing-requirements}
 
 Du kan hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform, eller använda e-postadresser i klartext i Experience Platform, och låta [!DNL Platform] hash-koda dem när de aktiveras.
 
