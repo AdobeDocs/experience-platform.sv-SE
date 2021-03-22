@@ -6,10 +6,10 @@ breadcrumb-title: XDM-guide (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och mixins för att standardisera upplevelsedata.
 feature: Scheman
 translation-type: tm+mt
-source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
+source-git-commit: b99af98c99a75863ed8e8408841d93aa17d61ae0
 workflow-type: tm+mt
-source-wordcount: '236'
-ht-degree: 7%
+source-wordcount: '259'
+ht-degree: 6%
 
 ---
 
@@ -22,6 +22,12 @@ ht-degree: 7%
    * [Bästa tillvägagångssätt för datamodellering](schema/best-practices.md)
    * [Begränsningar för XDM-fälttyp](schema/field-constraints.md)
    * [XDM-fältordlista](schema/field-dictionary.md)
+   * Branschdatamodeller {#industries}
+      * [Översikt](./schema/industries/overview.md)
+      * [Detaljhandelsdatamodell - ERD](./schema/industries/retail.md)
+      * [Datamodell för finansiella tjänster - ERD](./schema/industries/financial.md)
+      * [Datamodell för rese- och turismdata ERD](./schema/industries/travel-hospitality.md)
+      * [Datamodell för telekommunikation - ERD](./schema/industries/telecom.md)
 * Klasser {#classes}
    * [Individuell XDM-profil](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
