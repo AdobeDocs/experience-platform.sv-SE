@@ -3,7 +3,7 @@ keywords: mobiler, bromsa, meddelanden,
 title: Braze connection
 description: Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar.
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 24e0a274e61fcf6311c647067920686e4f25e840
 workflow-type: tm+mt
 source-wordcount: '901'
 ht-degree: 0%
@@ -25,7 +25,7 @@ Med [!DNL Braze]-målet kan du skicka profildata till [!DNL Braze].
 
 Om du vill skicka profildata till [!DNL Braze] måste du först ansluta till målet.
 
-## Målspecifikationer {#destination-specs}
+## Målspecificeringar {#specifics}
 
 Observera följande information som är specifik för [!DNL Braze]-målet:
 
