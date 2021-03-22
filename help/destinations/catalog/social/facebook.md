@@ -3,15 +3,17 @@ keywords: Facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 translation-type: tm+mt
-source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '1118'
+source-wordcount: '1119'
 ht-degree: 2%
 
 ---
 
 
 # [!DNL Facebook] anslutning
+
+## Översikt {#overview}
 
 Aktivera profiler för [!DNL Facebook]-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hash-kodade e-postmeddelanden.
 
