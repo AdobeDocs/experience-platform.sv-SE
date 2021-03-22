@@ -3,9 +3,9 @@ keywords: Google ad manager;google ad;dubbelklicka;DoubleClick AdX;DoubleClick;G
 title: Google Ad Manager-anslutning
 description: 'Google Ad Manager, som tidigare kallades DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar.  '
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 24e0a274e61fcf6311c647067920686e4f25e840
 workflow-type: tm+mt
-source-wordcount: '739'
+source-wordcount: '738'
 ht-degree: 0%
 
 ---
@@ -17,16 +17,12 @@ ht-degree: 0%
 
 [!DNL Google Ad Manager], tidigare kallat  [!DNL DoubleClick] för utgivaren eller  [!DNL DoubleClick AdX], är en annonseringsplattform från  [!DNL Google] vilken förläggarna kan hantera annonser på sina webbplatser, via video och i mobilappar.
 
-## Destinationsspecifikationer
+## Målspecificeringar {#specifics}
 
 Observera följande information som är specifik för [!DNL Google Ad Manager]-mål:
 
 * Aktiverade målgrupper skapas programmatiskt i [!DNL Google]-plattformen.
-* Plattformen har för närvarande inte något mätvärde för att validera aktiveringen. Se antalet målgrupper i Google för att validera integrationen och förstå målgruppens målgruppsstorlek.
-
->[!IMPORTANT]
->
->Om du vill skapa ditt första mål med [!DNL Google Ad Manager] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID-tjänsten tidigare (med Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL Google]-integreringar i Audience Manager överförs ID-synkroniseringarna du har konfigurerat till Platform.
+* [!DNL Platform] innehåller för närvarande inga mätvärden som validerar den lyckade aktiveringen. Se antalet målgrupper i Google för att validera integrationen och förstå målgruppens målgruppsstorlek.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -48,7 +44,9 @@ Observera följande information som är specifik för [!DNL Google Ad Manager]-m
 
 ## Förutsättningar
 
-### Tillåtelselista
+Om du vill skapa ditt första mål med [!DNL Google Ad Manager] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID-tjänsten tidigare (med Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL Google]-integreringar i Audience Manager överförs ID-synkroniseringarna du har konfigurerat till Platform.
+
+## Tillåtelselista
 
 >[!NOTE]
 >
