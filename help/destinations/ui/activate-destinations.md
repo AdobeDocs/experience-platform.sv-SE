@@ -6,7 +6,7 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: 37b0ec0e04c45cb065eca9d262249016e80655ef
+source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
 workflow-type: tm+mt
 source-wordcount: '2070'
 ht-degree: 0%
@@ -26,7 +26,7 @@ Om du vill aktivera data till mål måste du ha [anslutit ett mål](./connect-de
 
 Stegen i aktiveringsarbetsflödet varierar något mellan måltyperna. Det fullständiga arbetsflödet för alla måltyper beskrivs nedan.
 
-### Välj vilket mål som data ska aktiveras till {#select-destination}
+## Välj vilket mål som data ska aktiveras till {#select-destination}
 
 Gäller för: Alla destinationer
 
@@ -36,7 +36,7 @@ I Adobe Experience Platform-användargränssnittet går du till **[!UICONTROL De
 
 Följ stegen i nästa avsnitt för att markera de segment som du vill aktivera.
 
-### [!UICONTROL Select Segments] steg  {#select-segments}
+## [!UICONTROL Select Segments] steg  {#select-segments}
 
 Gäller för: Alla destinationer
 
@@ -46,7 +46,7 @@ På sidan **[!UICONTROL Activate destination]** i arbetsflödet väljer du ett e
 
 ![segment-till-mål](../assets/ui/activate-destinations/email-select-segments.png)
 
-### [!UICONTROL Identity mapping] steg  {#identity-mapping}
+## [!UICONTROL Identity mapping] steg  {#identity-mapping}
 
 Gäller för: sociala mål och Google Customer Match-annonsmål
 
@@ -54,7 +54,7 @@ Gäller för: sociala mål och Google Customer Match-annonsmål
 
 För sociala mål måste du välja källattribut eller identitetsnamnutrymmen som ska mappas som målidentiteter i målet.
 
-#### Exempel: aktivera målgruppsdata i [!DNL Facebook Custom Audience] {#example-facebook}
+## Exempel: aktivera målgruppsdata i [!DNL Facebook Custom Audience] {#example-facebook}
 
 Nedan visas ett exempel på korrekt identitetsmappning när målgruppsdata aktiveras i [!DNL Facebook].
 
@@ -84,7 +84,7 @@ Attributkälldata hashas inte automatiskt. När källfältet innehåller ohashad
 
  
 
-#### Exempel: aktivera målgruppsdata i [!DNL Google Customer Match] {#example-gcm}
+## Exempel: aktivera målgruppsdata i [!DNL Google Customer Match] {#example-gcm}
 
 Detta är ett exempel på korrekt identitetsmappning när målgruppsdata aktiveras i [!DNL Google Customer Match].
 
@@ -112,23 +112,7 @@ Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Pla
 Attributkälldata hashas inte automatiskt. När källfältet innehåller ohashade attribut bör du markera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Platform] automatiskt hash-kodar data vid aktiveringen.
 ![Transformering av identitetsmappning](../assets/ui/activate-destinations/identity-mapping-gcm-transformation.png)
 
-<!-- 
-`IDFA` IDs will be mapped to:
-
-* [MADID](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences#hash) if you are activating audiences in [[!DNL Facebook]](../../destinations/catalog/social/facebook.md).
-* [mobileId](https://developers.google.com/adwords/api/docs/reference/v201809/AdwordsUserListService.Member#mobileid) if you are activating audiences in [[!DNL Google Customer Match]](../../destinations/catalog/advertising/google-customer-match.md).
-
-Select `GAID` as target identity if your data consists of Android device IDs. `GAID` IDs will be mapped to:
-
-* [MADID](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences#hash) if you are activating audiences in [[!DNL Facebook]](../../destinations/catalog/social/facebook.md).
-* [mobileId](https://developers.google.com/adwords/api/docs/reference/v201809/AdwordsUserListService.Member#mobileid) if you are activating audiences in [[!DNL Google Customer Match]](../../destinations/catalog/advertising/google-customer-match.md).
-
-If you are using another ID, such as "Rewards ID" or "Loyalty ID", as primary identity in your schema, you need to map it to the following target identities:
-
-* [EXTERN_ID](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences#external_identifiers) if you are activating audiences in [[!DNL Facebook]](../../destinations/catalog/social/facebook.md).
-* [USER_ID](https://developers.google.com/adwords/api/docs/reference/v201809/AdwordsUserListService.Member#userid) if you are activating audiences in [[!DNL Google Customer Match]](../../destinations/catalog/advertising/google-customer-match.md). -->
-
-### **[!UICONTROL Configure]** steg  {#configure}
+## **[!UICONTROL Configure]** steg  {#configure}
 
 Gäller för: Destinationer för e-postmarknadsföring och molnlagring
 
@@ -177,7 +161,7 @@ Välj **[!UICONTROL Apply changes]** för att bekräfta ditt val.
 
 När du är klar med konfigurationen av alla segment väljer du **[!UICONTROL Next]** för att fortsätta.
 
-### **[!UICONTROL Segment schedule]** steg  {#segment-schedule}
+## **[!UICONTROL Segment schedule]** steg  {#segment-schedule}
 
 Gäller för: reklamdestinationer, sociala destinationer
 
@@ -197,7 +181,7 @@ På sidan **[!UICONTROL Segment schedule]** kan du ange startdatum för att skic
 
 ![ange program-ID](../assets/catalog/advertising/google-customer-match/gcm-destination-appid.png)
 
-### **[!UICONTROL Scheduling]** steg  {#scheduling}
+## **[!UICONTROL Scheduling]** steg  {#scheduling}
 
 Gäller för: mål för e-postmarknadsföring och molnlagring
 
@@ -205,7 +189,7 @@ Gäller för: mål för e-postmarknadsföring och molnlagring
 
 På sidan **[!UICONTROL Scheduling]** kan du se startdatumet för att skicka data till målet samt hur ofta data skickas till målet. Dessa värden kan inte redigeras.
 
-### **[!UICONTROL Select attributes]** steg  {#select-attributes}
+## **[!UICONTROL Select attributes]** steg  {#select-attributes}
 
 Gäller för: mål för e-postmarknadsföring och molnlagring
 
@@ -237,7 +221,7 @@ Vi rekommenderar att ett av attributen är en [unik identifierare](../../destina
 > 
 Om till exempel fältet `person.name.firstName` har vissa etiketter för dataanvändning som är i konflikt med målets marknadsföringsåtgärd, visas en överträdelse av dataanvändningsprincipen i granskningssteget. Mer information finns i [Datastyrning i Adobe Experience Platform](../../rtcdp/privacy/data-governance-overview.md#destinations).
 
-### **[!UICONTROL Review]** steg  {#review}
+## **[!UICONTROL Review]** steg  {#review}
 
 Gäller för: alla destinationer
 
@@ -281,11 +265,11 @@ Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_202004100
 
 De här filerna finns på lagringsplatsen och du har fått en bekräftelse på att aktiveringen har slutförts. Om du vill veta hur de exporterade filerna är strukturerade kan du [hämta en csv-exempelfil](../assets/common/sample_export_file_segment12341e18-abcd-49c2-836d-123c88e76c39_20200408061804.csv). Den här exempelfilen innehåller profilattributen `person.firstname`, `person.lastname`, `person.gender`, `person.birthyear` och `personalEmail.address`.
 
-### Annonsmål
+## Annonsmål
 
 Kontrollera ditt konto på respektive annonsmål att du aktiverar dina data. Om aktiveringen lyckades, fylls målgrupperna i er annonsplattform.
 
-### Målgrupper i sociala nätverk
+## Målgrupper i sociala nätverk
 
 För [!DNL Facebook] innebär en lyckad aktivering att en [!DNL Facebook] anpassad målgrupp skapas programmatiskt i [[!UICONTROL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/). Segmentmedlemskap i målgruppen skulle läggas till och tas bort eftersom användarna är kvalificerade eller diskvalificerade för de aktiverade segmenten.
 
