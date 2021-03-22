@@ -4,15 +4,17 @@ title: Skapa ett mål för sociala nätverk
 type: Självstudiekurs
 description: Lär dig hur du ansluter till annonskonton för sociala nätverk i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 19e38faa84d365682e97c2ec1c6352d127c0ac29
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '428'
+source-wordcount: '433'
 ht-degree: 0%
 
 ---
 
 
 # Skapa ett mål för sociala nätverk {#social-network-destinations-workflow}
+
+## Översikt {#overview}
 
 I den här självstudien används [!DNL Facebook] som exempel, men Adobe Experience Platform-arbetsflödet är detsamma för alla mål för sociala nätverk.
 
@@ -23,6 +25,8 @@ Bläddra till kategorin **[!UICONTROL Social]** i **[!UICONTROL Destinations]** 
 >[!NOTE]
 >
 >Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]**-knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](../../ui/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
+
+## Autentiseringssteg {#authentication}
 
 I steget **Autentisering**, om du tidigare har konfigurerat en anslutning till målet för det sociala nätverket, väljer du **[!UICONTROL Existing Account]** och väljer din befintliga anslutning. Du kan också välja **[!UICONTROL New Account]** för att konfigurera en ny anslutning till målet för det sociala nätverket. Välj **[!UICONTROL Connect to destination]** så dirigeras du till det valda sociala nätverkets mål för att logga in och ansluta Adobe Experience Cloud till ditt sociala nätverks-Ad-konto.
 
@@ -35,6 +39,8 @@ I steget **Autentisering**, om du tidigare har konfigurerat en anslutning till m
 När dina inloggningsuppgifter har bekräftats och Adobe Experience Cloud är anslutet till ditt sociala nätverk kan du välja **[!UICONTROL Next]** för att fortsätta till **[!UICONTROL Setup]**-steget.
 
 ![Autentiseringsuppgifterna har bekräftats](../../assets/catalog/social/workflow/post-connect.png)
+
+## Installationssteg {#setup}
 
 I steget **[!UICONTROL Setup]** anger du [!UICONTROL Name] och [!UICONTROL Description] för aktiveringsflödet och fyller i [!UICONTROL Account ID] för ditt annonskonto i sociala nätverk.
 
