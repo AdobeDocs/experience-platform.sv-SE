@@ -3,7 +3,7 @@ keywords: Google ads;Google ads;Google Adwords;Google AdWords;Google Adwords
 title: Google Ads-anslutning
 description: Google Ads, som tidigare kallades Google AdWords, är en onlinereklam som gör att företag kan betala per klick för annonsering vid textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appar.
 translation-type: tm+mt
-source-git-commit: 0759919dc458798ca4bc5f233a9cb319194ea534
+source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
 workflow-type: tm+mt
 source-wordcount: '722'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [!DNL Google Ads], som tidigare kallades  [!DNL Google AdWords], är en onlinereklam som gör det möjligt för företag att betala per klick för annonsering över textbaserade sökningar, grafiska skärmar,  [!DNL YouTube] videor och mobilskärmar i appen.
 
-## Destinationsspecifikationer
+## Målspecificeringar {#specifics}
 
 Observera följande information som är specifik för [!DNL Google Ads]-mål:
 
@@ -26,7 +26,7 @@ Observera följande information som är specifik för [!DNL Google Ads]-mål:
 >
 >Om du vill skapa ditt första mål med [!DNL Google Ads] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID-tjänsten tidigare (med Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat Google-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Platform.
 
-### Identiteter som stöds {#supported-identities}
+## Identiteter som stöds {#supported-identities}
 
 [!DNL Google Ad Manager] stöder aktivering av identiteter som beskrivs i tabellen nedan.
 
@@ -40,7 +40,7 @@ Observera följande information som är specifik för [!DNL Google Ads]-mål:
 | MAID | Microsoft Advertising ID. Detta ID identifierar unikt enheter som kör Windows 10. |  |
 | Amazon Fire TV-ID | Detta ID identifierar Amazon Fire TV-program unikt. |  |
 
-### Exporttyp {#export-type}
+## Exporttyp {#export-type}
 
 **Segmentexport**  - du exporterar alla medlemmar i ett segment (publik) till Google-målet.
 
