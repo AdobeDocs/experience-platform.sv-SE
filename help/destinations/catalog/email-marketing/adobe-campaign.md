@@ -3,7 +3,7 @@ keywords: e-post;E-post;e-post;e-postmål;adobe-kampanj;kampanj
 title: Adobe Campaign-anslutning
 description: Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera och leverera kampanjer i alla kanaler, både online och offline.
 translation-type: tm+mt
-source-git-commit: b6e795d33b5590001a3270ea42995fdbad28dd88
+source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
 workflow-type: tm+mt
 source-wordcount: '793'
 ht-degree: 0%
@@ -32,7 +32,6 @@ I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** väljer du Adobe 
 ![Anslut till Adobe Campaign](../../assets/catalog/email-marketing/adobe-campaign/catalog.png)
 
 I steget **[!UICONTROL Account]** i målarbetsflödet för Anslut väljer du **[!UICONTROL Connection type]** för lagringsplatsen. För Adobe Campaign kan du välja mellan **[!UICONTROL Amazon S3]**, **[!UICONTROL SFTP with Password]**, **[!UICONTROL SFTP with SSH Key]** och **[!UICONTROL Azure Blob]**. Den metod som rekommenderas för att skicka data till Adobe Campaign är via [!DNL Amazon S3] eller [!DNL Azure Blob]. Fyll i informationen nedan, beroende på din anslutningstyp, och välj sedan **[!UICONTROL Connect]**.
-
 
 
 ![Konfigurera kampanjguiden](../../assets/catalog/email-marketing/adobe-campaign/connection-type.png)
