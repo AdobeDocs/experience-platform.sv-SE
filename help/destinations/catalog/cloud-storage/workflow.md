@@ -1,19 +1,21 @@
 ---
 keywords: molnlagringsmål;molnlagring
 title: Skapa ett molnlagringsmål
-type: Tutorial
+type: Självstudiekurs
 description: Instruktioner för att ansluta till lagringsplatser i molnet
 seo-description: Instruktioner för att ansluta till lagringsplatser i molnet
 translation-type: tm+mt
-source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '493'
+source-wordcount: '499'
 ht-degree: 0%
 
 ---
 
 
 # Skapa ett molnlagringsmål
+
+## Översikt {#overview}
 
 På den här sidan beskrivs hur du kan ansluta till molnlagringsplatser i Adobe Experience Platform.
 
@@ -25,6 +27,8 @@ Välj önskat molnlagringsmål i **[!UICONTROL Connections]** > **[!UICONTROL De
 >
 >Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]**-knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](../../ui/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
 
+## Autentiseringssteg {#authentication}
+
 Om du tidigare har konfigurerat en anslutning till molnlagringsmålet i **[!UICONTROL Authentication]**-steget väljer du **[!UICONTROL Existing Account]** och väljer din befintliga anslutning. Du kan också välja **[!UICONTROL New Account]** för att konfigurera en ny anslutning till molnlagringsmålet. Fyll i autentiseringsuppgifterna för ditt konto och välj **[!UICONTROL Connect to destination]**. Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Observera att den här offentliga nyckeln **måste** skrivas som en Base64-kodad sträng.
 
 Se [Amazon S3](./amazon-s3.md)-mål, [[!DNL Amazon Kinesis]](./amazon-kinesis.md)-mål, [[!DNL Azure Event Hubs]](./azure-event-hubs.md)-mål och [SFTP](./sftp.md)-mål för mer information om autentiseringsuppgifter i steget **Autentisering**.
@@ -34,6 +38,8 @@ Se [Amazon S3](./amazon-s3.md)-mål, [[!DNL Amazon Kinesis]](./amazon-kinesis.md
 >Plattformen stöder validering av autentiseringsuppgifter i autentiseringsprocessen och visar ett felmeddelande om du anger felaktiga autentiseringsuppgifter för din molnlagringsplats. Detta säkerställer att du inte slutför arbetsflödet med felaktiga inloggningsuppgifter.
 
 ![Anslut till molnlagringsmålet - autentiseringssteg](../../assets/catalog/cloud-storage/workflow/destination-account.png)
+
+## Installationssteg {#setup}
 
 I steget **[!UICONTROL Setup]** anger du ett **[!UICONTROL Name]** och ett **[!UICONTROL Description]** för aktiveringsflödet.
 
