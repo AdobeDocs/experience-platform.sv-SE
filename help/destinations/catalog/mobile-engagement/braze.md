@@ -3,10 +3,10 @@ keywords: mobiler, bromsa, meddelanden,
 title: Braze connection
 description: Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar.
 translation-type: tm+mt
-source-git-commit: 0759919dc458798ca4bc5f233a9cb319194ea534
+source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
 workflow-type: tm+mt
-source-wordcount: '899'
-ht-degree: 1%
+source-wordcount: '900'
+ht-degree: 0%
 
 ---
 
@@ -37,7 +37,7 @@ Observera följande information som är specifik för [!DNL Braze]-målet:
 
 Som marknadsförare vill jag rikta in mig på användare i ett mål för mobilengagemang, med segment inbyggda i [!DNL Adobe Experience Platform]. Dessutom vill jag leverera personaliserade upplevelser till dem, baserat på attribut från deras [!DNL Adobe Experience Platform]-profiler, så snart segment och profiler uppdateras i [!DNL Adobe Experience Platform].
 
-### Identiteter som stöds {#supported-identities}
+## Identiteter som stöds {#supported-identities}
 
 [!DNL Google Ad Manager] stöder aktivering av identiteter som beskrivs i tabellen nedan.
 
@@ -49,7 +49,6 @@ Som marknadsförare vill jag rikta in mig på användare i ett mål för mobilen
 
 **[!DNL Profile-based]** - du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten (till exempel: e-postadress, telefonnummer, efternamn) och/eller identiteter enligt fältmappningen.
 [!DNL Adobe Experience Platform] segment exporteras till  [!DNL Braze] under  `AdobeExperiencePlatformSegments` attributet.
-
 
 ## Anslut till målet {#connect-destination}
 
@@ -128,7 +127,7 @@ Nu bör du se fältmappningen i listan.
 
 Upprepa föregående steg om du vill lägga till fler mappningar.
 
-### Exempel {#mapping-example}
+## Mappningsexempel {#mapping-example}
 
 Säg att ditt XDM-profilschema och din [!DNL Braze]-instans innehåller följande attribut och identiteter:
 
