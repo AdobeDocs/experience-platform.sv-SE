@@ -3,15 +3,17 @@ keywords: SFTP;sftp
 title: SFTP-anslutning
 description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 4f0047e7ac4c83e3e17ea0a077bbeb09c86d1db6
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '231'
+source-wordcount: '232'
 ht-degree: 0%
 
 ---
 
 
 # SFTP-anslutning
+
+## Översikt {#overview}
 
 Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Adobe Experience Platform.
 
