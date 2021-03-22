@@ -1,17 +1,19 @@
 ---
-keywords: e-post;E-post;e-postadresser;oracle svarar på målet
-title: Oracle Responsys-anslutning
-description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som Oracle erbjuder för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
+keywords: e-post;E-post;e-postadresser;oraclets svarsmål
+title: Oraclena svarssystemanslutning
+description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som Oraclet erbjuder för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
 translation-type: tm+mt
-source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '566'
+source-wordcount: '567'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL Oracle Responsys] anslutning
+
+## Översikt {#overview}
 
 [Responsys ](https://www.oracle.com/marketingcloud/products/cross-channel-orchestration/) är ett verktyg för e-postmarknadsföring i storföretag för flerkanalskampanjer som erbjuds av  [!DNL Oracle] att personalisera interaktioner i e-post, mobiler, displayannonsering och sociala medier.
 
