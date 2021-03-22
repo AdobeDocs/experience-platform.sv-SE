@@ -3,15 +3,17 @@ keywords: Reklam. skrivbordet,
 title: The Trade Desk connection
 description: 'Trade Desk är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer för olika annonser, videoklipp och mobila inventeringskällor. '
 translation-type: tm+mt
-source-git-commit: 0ef107963f7da377070eb845fd7c24218a99464b
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '576'
+source-wordcount: '577'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL The Trade Desk] anslutning
+
+## Översikt {#overview}
 
 [!DNL The Trade Desk] mål hjälper dig att skicka profildata till  [!DNL The Trade Desk].
 
