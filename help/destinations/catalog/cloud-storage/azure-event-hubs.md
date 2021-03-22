@@ -3,15 +3,17 @@ keywords: Azure-händelsehubbsmål;azure-händelsehubb;azure-händelsehubb
 title: (Beta) Azure Event Hubs-anslutning
 description: Skapa en utgående anslutning i realtid till din Azure Event Hubs-lagring för att strömma data från Experience Platform.
 translation-type: tm+mt
-source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '531'
+source-wordcount: '532'
 ht-degree: 0%
 
 ---
 
 
 # (Beta) [!DNL Azure Event Hubs]-anslutning
+
+## Översikt {#overview}
 
 >[!IMPORTANT]
 >
