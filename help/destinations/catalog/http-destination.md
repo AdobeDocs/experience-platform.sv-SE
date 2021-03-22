@@ -3,9 +3,9 @@ keywords: strömning,
 title: HTTP-anslutning
 description: Med HTTP-målet i Adobe Experience Platform kan du skicka profildata till HTTP-slutpunkter från tredje part.
 translation-type: tm+mt
-source-git-commit: 5435661d750c4138ea6a2d40619a48236b7b1e4f
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '509'
+source-wordcount: '510'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,8 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 >Målet [!DNL HTTP] i Platform är för närvarande alfavärdet. Dokumentationen och funktionaliteten kan komma att ändras.
+
+## Översikt {#overview}
 
 Målet [!DNL HTTP] är ett [!DNL Adobe Experience Platform]-mål för direktuppspelning som hjälper dig att skicka profildata till [!DNL HTTP]-slutpunkter från tredje part.
 
@@ -33,11 +35,9 @@ I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** väljer du [!DNL 
 
 ![Aktivera HTTP-mål](../assets/catalog/http/activate.png)
 
->[!NOTE]
->
->Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]**-knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](../ui/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
->
->![Aktivera HTTP-mål](../assets/catalog/http/connect.png)
+Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]**-knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](../ui/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
+
+![Aktivera HTTP-mål](../assets/catalog/http/connect.png)
 
 I steget [!UICONTROL Account] måste du definiera anslutningsinformationen för HTTP-slutpunkten. Välj **[!UICONTROL New account]** och ange anslutningsinformationen för den HTTP-slutpunkt som du vill ansluta till.
 - **[!UICONTROL httpEndpoint]**: den fullständiga HTTP-slutpunkten  [!DNL URL] som du vill skicka profildata till.
