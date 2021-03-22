@@ -3,10 +3,10 @@ keywords: Reklam. skrivbordet,
 title: The Trade Desk connection
 description: 'Trade Desk är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer för olika annonser, videoklipp och mobila inventeringskällor. '
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 24e0a274e61fcf6311c647067920686e4f25e840
 workflow-type: tm+mt
-source-wordcount: '577'
-ht-degree: 0%
+source-wordcount: '592'
+ht-degree: 1%
 
 ---
 
@@ -21,23 +21,27 @@ ht-degree: 0%
 
 Om du vill skicka profildata till [!DNL Trade Desk] måste du först ansluta till målet.
 
-## Målspecifikationer {#destination-specs}
-
-Observera följande information som är specifik för [!DNL Trade Desk]-målet:
-
-* Du kan skicka följande [identiteter](../../../identity-service/namespaces.md) till [!DNL The Trade Desk] mål: [!DNL The Trade Desk ID], [!DNL IDFA], [!DNL GAID].
-
->[!IMPORTANT]
->
->Om du vill skapa ditt första mål med [!DNL The Trade Desk] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID-tjänsten tidigare (med Adobe Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL The Trade Desk]-integreringar i Audience Manager överförs ID-synkroniseringarna du har konfigurerat till Platform.
-
 ## Användningsfall {#use-cases}
 
 Som marknadsförare vill jag kunna använda segment som är inbyggda i [!DNL Trade Desk IDs] eller enhets-ID:n för att skapa återmarknadsföring eller målgruppsanpassade digitala kampanjer.
 
+## Identiteter som stöds {#supported-identities}
+
+[!DNL The Trade Desk] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/namespaces.md).
+
+| Målidentitet | Beskrivning |
+|---|---|
+| GAID | [!DNL Google Advertising ID] |
+| IDFA | [!DNL Apple ID for Advertisers] |
+| The Trade Desk ID | Advertiser ID i Trade Desk-plattformen |
+
 ## Exporttyp {#export-type}
 
 **[!DNL Segment export]** - du exporterar alla medlemmar i ett segment (publik) till målet.
+
+## Förutsättningar {#prerequisites}
+
+Om du vill skapa ditt första mål med [!DNL The Trade Desk] och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID-tjänsten tidigare (med Adobe Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat [!DNL The Trade Desk]-integreringar i Audience Manager överförs ID-synkroniseringarna du har konfigurerat till Platform.
 
 ## Anslut till målet {#connect-destination}
 
@@ -45,13 +49,13 @@ I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** väljer du [!DNL 
 
 ![Konfigurera Trade Desk-målet](../../assets/catalog/advertising/tradedesk/configure.png)
 
->[!NOTE]
->
->Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]**-knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](../../ui/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
->
->![Aktivera målet för handelsavdelningen](../../assets/catalog/advertising/tradedesk/activate.png)
+Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]**-knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](../../ui/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
 
-I steget [!UICONTROL Authentication] måste du ange [!DNL The Trade Desk] anslutningsinformation:
+![Aktivera målet för handelsavdelningen](../../assets/catalog/advertising/tradedesk/activate.png)
+
+## Autentiseringssteg {#authentication}
+
+I steget **[!UICONTROL Authentication]** måste du ange [!DNL The Trade Desk] anslutningsinformation:
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
