@@ -3,7 +3,7 @@ keywords: Azure Blob;Blob destination;s3;azure blob destination
 title: Azure Blob-anslutning
 description: Skapa en utgående liveanslutning till ditt Azure Blob-lagringsutrymme för att regelbundet exportera tabbavgränsade eller CSV-datafiler från Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 6d1960be886d12475603aeb79fe6283a1fd3030e
+source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
 workflow-type: tm+mt
 source-wordcount: '579'
 ht-degree: 1%
@@ -26,7 +26,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 Om du redan har ett giltigt Blob-mål kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen om [aktivering av segment till ditt mål](../../ui/activate-destinations.md).
 
-### Filformat som stöds
+## Filformat som stöds {#file-formats}
 
 [!DNL Experience Platform] stöder följande filformat som ska exporteras till  [!DNL Blob]:
 
@@ -48,7 +48,7 @@ Under kategorin **[!UICONTROL Cloud Storage]** väljer du **[!UICONTROL Azure Bl
 
 Sidan **[!UICONTROL Connect to Azure Blob Storage]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
-### Nytt konto {#new-account}
+## Nytt konto {#new-account}
 
 Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. Ange anslutningssträngen i det indataformulär som visas. Anslutningssträngen krävs för att komma åt data i blobblagringen. Anslutningssträngsmönstret [!DNL Blob] börjar med: `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`.
 
@@ -58,7 +58,7 @@ Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till
 
 ![Nytt konto](../../assets/catalog/cloud-storage/blob/new.png)
 
-### Befintligt konto
+## Befintligt konto {#existing-account}
 
 Om du vill ansluta ett befintligt konto väljer du det [!DNL Blob]-konto du vill ansluta till och fortsätter sedan med **Nästa**.
 
