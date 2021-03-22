@@ -3,9 +3,9 @@ keywords: mediaanalystillägg;mediaanalys;ljud- och videotillägg
 title: Adobe Media Analytics för ljud- och videotillägg
 description: Tillägget Adobe Media Analytics för ljud och video är ett analysmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '523'
+source-wordcount: '524'
 ht-degree: 0%
 
 ---
@@ -13,9 +13,11 @@ ht-degree: 0%
 
 # Adobe Media Analytics for Audio and Video extension {#adobe-analytics-for-video-extension}
 
-Adobe Media Analytics for Audio and Video är ett tillägg till basanalysverktyget som ger kunderna robusta mått för video, ljud och annonser.
+## Översikt {#overview}
 
-Adobe Media Analytics for Audio and Video är ett analystillägg i Adobe Experience Platform. Mer information om tilläggsfunktioner finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100157.html).
+Adobe Media Analytics for Audio and Video är ett tillägg till grundanalyseringserbjudandet som ger kunderna robusta mått för video, ljud och annonser.
+
+Adobe Media Analytics för ljud och video är ett analystillägg i Adobe Experience Platform. Mer information om tilläggsfunktioner finns på tilläggssidan på [Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.100157.html).
 
 Målet är ett [!DNL Adobe Experience Platform Launch]-tillägg. Mer information om hur [!DNL Platform Launch]-tillägg fungerar i Platform finns i [Översikt över Experience Platform Launch-tillägg](../launch-extensions/overview.md).
 
@@ -57,7 +59,7 @@ Du kan konfigurera, uppgradera och ta bort tillägg i gränssnittet [!DNL Platfo
 
 >[!TIP]
 >
->Om tillägget redan är installerat på en av dina egenskaper visas fortfarande **[!UICONTROL Install]** som plattformsgränssnitt för tillägget. Stäng av installationsarbetsflödet enligt beskrivningen i [Installera tillägget](#install-extension) för att komma till [!DNL Platform Launch] och konfigurera eller ta bort tillägget.
+>Om tillägget redan är installerat på en av dina egenskaper visas fortfarande **[!UICONTROL Install]** som plattformsgränssnitt för tillägget. Starta installationsarbetsflödet enligt beskrivningen i [Installera tillägget](#install-extension) för att komma till [!DNL Platform Launch] och konfigurera eller ta bort tillägget.
 
 Mer information om hur du uppgraderar ditt tillägg finns i [Tilläggsuppgradering](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/extensions/extension-upgrade.html) i [!DNL Platform Launch]-dokumentationen.
 
