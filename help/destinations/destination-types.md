@@ -4,7 +4,7 @@ title: Måltyper och -kategorier
 seo-title: Måltyper och -kategorier
 description: Läs mer om de olika typerna och kategorierna av destinationer i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
+source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
 workflow-type: tm+mt
 source-wordcount: '509'
 ht-degree: 0%
@@ -22,37 +22,37 @@ I Adobe Experience Platform skiljer vi mellan två måltyper - anslutningar och 
 
 ![Typer av destinationer](./assets/destination-types/types-of-destinations.png)
 
-### Anslutningar {#connections}
+## Anslutningar {#connections}
 
 **[!UICONTROL Profile Export]** och  **[!UICONTROL Segment Export]** destinationer i Adobe Experience Platform samlar in händelsedata, kombinerar dem med andra datakällor för att skapa kundprofilen [ i ](../profile/home.md)realtid, tillämpa segmentering samt exportera segment och kvalificerade profiler till destinationer.
 
-#### Profilexportdestinationer
+## Profilexportdestinationer
 
 Profilexportdestinationer genererar en fil som innehåller profiler och/eller attribut. Dessa mål använder rådata, ofta med e-postadress som primärnyckel. [Amazon S3-molnlagringsmålet](./catalog/cloud-storage/amazon-s3.md) är ett exempel på destinationen där du kan sätta in filer som innehåller profilexporter.
 
-#### Segmentexportdestinationer
+## Segmentexportdestinationer
 
 Destinationer för segmentexport skickar profilerna och de segment de är kvalificerade för till målplattformarna. Dessa mål använder segment-ID eller användar-ID. Annonsmål som [[!DNL Google Display & Video 360]](./catalog/advertising/google-dv360.md) eller [[!DNL Google Ads]](./catalog/advertising/google-ads-destination.md) är exempel på dessa typer av destinationer.
 
-#### Destinationer för profilexport och segmentexport - videoöversikt
+## Destinationer för profilexport och segmentexport - videoöversikt
 
 I videon nedan beskrivs de två typerna av destinationer:
 
 >[!VIDEO](https://video.tv.adobe.com/v/29707?quality=12)
 
-### Tillägg {#extensions}
+## Tillägg {#extensions}
 
-Platform utnyttjar kraften och flexibiliteten i Adobe Experience Platform Launch för att inkludera tillägg för Platform Launch i plattformsgränssnittet.
+Platform utnyttjar kraften och flexibiliteten i Adobe Experience Platform Launch för att inkludera tillägg av Platform launch i plattformsgränssnittet.
 
 >[!TIP]
 >
 >Mer information om Adobe Experience Platform Launch-tillägg, inklusive användningsexempel och hur du hittar dem i gränssnittet, finns i [Adobe Experience Platform Launch-tilläggsöversikten](./catalog/launch-extensions/overview.md).
 
-Plattformsstartstillägg vidarebefordrar råa händelsedata till flera typer av destinationer. Tänk på tillägg som en **typ av händelsespårning**-typ av mål. Detta är en enklare typ av integrering med målplattformar, som bara vidarebefordrar råhändelsedata. Exempel på sådana är [tillägget för Gainsight-anpassning](./catalog/personalization/gainsight.md) eller [Bekräfta röst för kundtillägget](./catalog/voice/confirmit-digital-feedback.md).
+platform launch-tillägg vidarebefordrar råa händelsedata till flera typer av destinationer. Tänk på tillägg som en **typ av händelsespårning**-typ av mål. Detta är en enklare typ av integrering med målplattformar, som bara vidarebefordrar råhändelsedata. Exempel på sådana är [tillägget för Gainsight-anpassning](./catalog/personalization/gainsight.md) eller [Bekräfta röst för kundtillägget](./catalog/voice/confirmit-digital-feedback.md).
 
 ![Experience Platform Launch-tillägg jämfört med andra destinationer](./assets/common/launch-and-other-destinations.png)
 
-### När anslutningar och tillägg ska användas
+## När anslutningar och tillägg ska användas
 
 Som marknadsförare kan du använda en kombination av anslutningar och tillägg för att hantera dina användningsfall.
 
