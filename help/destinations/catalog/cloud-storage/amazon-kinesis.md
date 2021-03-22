@@ -3,9 +3,9 @@ keywords: Amazon Kinesis;kinesis destination;kinesis
 title: Amazon Kinesis-anslutning
 description: Skapa en utgående anslutning i realtid till din Amazon Kinesis-lagring för att strömma data från Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 32cb198bcf2c142b50c4b7a60282f0c923be06b1
+source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
 workflow-type: tm+mt
-source-wordcount: '508'
+source-wordcount: '504'
 ht-degree: 0%
 
 ---
@@ -43,14 +43,14 @@ Mer information om hur du ansluter till molnlagringsmål, inklusive de som stöd
 
 För [!DNL Amazon Kinesis]-mål anger du följande information i arbetsflödet för att skapa mål:
 
-### I autentiseringssteget {#authentication-step}
+## Autentiseringssteg {#authentication-step}
 
 * **[!DNL Amazon Web Services]åtkomstnyckel och hemlig nyckel**: Generera  [!DNL Amazon Web Services]ett  `access key - secret access key` par som ger plattformsåtkomst till ditt  [!DNL Amazon Kinesis] konto. Läs mer i [Amazon Web Services-dokumentationen](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 * **region**: Ange vilken  [!DNL Amazon Web Services] region data ska strömmas till.
 
 ![Inmatningsfält i kontosteget](../../assets/catalog/cloud-storage/amazon-kinesis/account.png)
 
-### I konfigurationssteget {#setup-step}
+## Installationssteg {#setup-step}
 
 * **Namn**: Ange ett namn för anslutningen till  [!DNL Amazon Kinesis]
 * **Beskrivning**: Ange en beskrivning för anslutningen till  [!DNL Amazon Kinesis].
