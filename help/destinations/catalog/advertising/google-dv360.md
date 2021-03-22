@@ -3,7 +3,7 @@ keywords: Dubbelklicka på Bid Manager;DoubleClick bid manager;DoubleClick;Displ
 title: Google Display & Video 360-anslutning
 description: Display & Video 360, tidigare DoubleClick Bid Manager, är ett verktyg som används för att utföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display, Video och Mobile.
 translation-type: tm+mt
-source-git-commit: 0759919dc458798ca4bc5f233a9cb319194ea534
+source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
 workflow-type: tm+mt
 source-wordcount: '772'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [!DNL Display & Video 360], tidigare kallat  [!DNL DoubleClick Bid Manager], är ett verktyg som används för att genomföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display-, Video- och Mobile-material.
 
-## Destinationsspecifikationer
+## Målspecificeringar {#specifics}
 
 Observera följande information som är specifik för [!DNL Google Display & Video 360]-mål:
 
@@ -26,7 +26,7 @@ Observera följande information som är specifik för [!DNL Google Display & Vid
 >
 >Om du vill skapa ditt första mål med Google Display &amp; Video 360 och inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) i Experience Cloud ID Service tidigare (med Adobe Audience Manager eller andra program) ber vi dig kontakta Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat Google-integreringar i Audience Manager överförs de ID-synkroniseringar du har konfigurerat till Platform.
 
-### Identiteter som stöds {#supported-identities}
+## Identiteter som stöds {#supported-identities}
 
 [!DNL Google Ad Manager] stöder aktivering av identiteter som beskrivs i tabellen nedan.
 
@@ -40,7 +40,7 @@ Observera följande information som är specifik för [!DNL Google Display & Vid
 | MAID | Microsoft Advertising ID. Detta ID identifierar unikt enheter som kör Windows 10. |  |
 | Amazon Fire TV-ID | Detta ID identifierar Amazon Fire TV-program unikt. |  |
 
-### Exporttyp {#export-type}
+## Exporttyp {#export-type}
 
 **Segmentexport**  - du exporterar alla medlemmar i ett segment (publik) till Google-målet.
 
