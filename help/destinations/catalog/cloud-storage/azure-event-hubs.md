@@ -3,9 +3,9 @@ keywords: Azure-händelsehubbsmål;azure-händelsehubb;azure-händelsehubb
 title: (Beta) Azure Event Hubs-anslutning
 description: Skapa en utgående anslutning i realtid till din Azure Event Hubs-lagring för att strömma data från Experience Platform.
 translation-type: tm+mt
-source-git-commit: 32cb198bcf2c142b50c4b7a60282f0c923be06b1
+source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
 workflow-type: tm+mt
-source-wordcount: '535'
+source-wordcount: '531'
 ht-degree: 0%
 
 ---
@@ -43,14 +43,14 @@ Se [Arbetsflöde för molnlagringsmål ](./workflow.md)för instruktioner om hur
 
 För [!DNL Azure Event Hubs]-mål anger du följande information i arbetsflödet för att skapa mål:
 
-### I autentiseringssteget {#authentication-step}
+## Autentiseringssteg {#authentication-step}
 
 * **[!UICONTROL SAS Key Name]** och  **[!UICONTROL SAS Key]**: Fyll i SAS-nyckelns namn och nyckel. Läs om hur du autentiserar till [!DNL Azure Event Hubs] med SAS-nycklar i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
 * **[!UICONTROL Namespace]**: Fyll i  [!DNL Azure Event Hubs] namnutrymmet. Läs mer om [!DNL Azure Event Hubs]-namnutrymmen i [Microsoft-dokumentationen](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace).
 
 ![Indata krävs i autentiseringssteget](../../assets/catalog/cloud-storage/event-hubs/authentication.png)
 
-### I konfigurationssteget {#setup-step}
+## Installationssteg {#setup-step}
 
 * **[!UICONTROL Name]**: Ange ett namn för anslutningen till  [!DNL Azure Event Hubs].
 * **[!UICONTROL Description]**: Ange en beskrivning av anslutningen.  Exempel: &quot;Premium tier customers&quot;, &quot;Males interest of kitsnapfing&quot;.
