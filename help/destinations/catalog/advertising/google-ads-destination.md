@@ -3,15 +3,17 @@ keywords: Google ads;Google ads;Google Adwords;Google AdWords;Google Adwords
 title: Google Ads-anslutning
 description: Google Ads, som tidigare kallades Google AdWords, är en onlinereklam som gör att företag kan betala per klick för annonsering vid textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appar.
 translation-type: tm+mt
-source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '722'
+source-wordcount: '723'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL Google Ads] anslutning
+
+## Översikt {#overview}
 
 [!DNL Google Ads], som tidigare kallades  [!DNL Google AdWords], är en onlinereklam som gör det möjligt för företag att betala per klick för annonsering över textbaserade sökningar, grafiska skärmar,  [!DNL YouTube] videor och mobilskärmar i appen.
 
