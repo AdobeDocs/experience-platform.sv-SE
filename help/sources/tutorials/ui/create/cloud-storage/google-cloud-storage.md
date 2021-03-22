@@ -2,13 +2,13 @@
 keywords: Experience Platform;hem;populära ämnen;Google Cloud-lagring;Google molnlagring;GCS;gcs
 solution: Experience Platform
 title: Skapa en Google Cloud-anslutning för lagringskälla i användargränssnittet
-topic: overview
-type: Tutorial
+topic: översikt
+type: Självstudiekurs
 description: Lär dig hur du skapar en Google Cloud-anslutning för lagringskälla med Adobe Experience Platform-gränssnittet.
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: f6a63ca1e21b3c3f6a55574f31fdf04038b7e5c4
 workflow-type: tm+mt
-source-wordcount: '542'
+source-wordcount: '577'
 ht-degree: 1%
 
 ---
@@ -43,10 +43,10 @@ För att få tillgång till dina GCS-data på [!DNL Platform] måste du ange fö
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| Åtkomstnyckel-ID | Åtkomstnyckel-ID för [!DNL Google Cloud Storage]-kontot. |
-| Nyckel för hemlig åtkomst | Klienthemligheten för [!DNL Google Cloud Storage]-kontot. |
+| Åtkomstnyckel-ID | En 61 tecken lång alfanumerisk sträng som används för att autentisera ditt [!DNL Google Cloud Storage]-konto för Platform. |
+| Nyckel för hemlig åtkomst | En 40-siffrig, base-64-kodad sträng som används för att autentisera ditt [!DNL Google Cloud Storage]-konto för plattformen. |
 
-Mer information om hur du kommer igång finns i [autentiseringsguiden för server-till-server](https://cloud.google.com/docs/authentication/production) för [!DNL Google Cloud Storage].
+Mer information om dessa värden finns i guiden [HMAC-nycklar för Google Cloud-lagring](https://cloud.google.com/storage/docs/authentication/hmackeys#overview). Anvisningar om hur du skapar ditt eget ID för åtkomstnyckel och hemlig åtkomstnyckel finns i [[!DNL Google Cloud Storage] översikten](../../../../connectors/cloud-storage/google-cloud-storage.md).
 
 ## Anslut ditt [!DNL Google Cloud Storage]-konto
 
