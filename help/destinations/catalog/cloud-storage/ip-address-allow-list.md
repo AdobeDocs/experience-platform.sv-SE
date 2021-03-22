@@ -4,15 +4,17 @@ title: 'IP-adress tillåtelselista för molnlagringsmål '
 type: Dokumentation
 description: Den här sidan innehåller IP-intervall som du kan lägga till i tillåtelselista för att på ett säkert sätt exportera data från Experience Platform till din SFTP-server, Amazon S3 eller Azure Blob-lagring.
 translation-type: tm+mt
-source-git-commit: 648be489aa77870f67564ee350c4d85885673832
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '187'
-ht-degree: 0%
+source-wordcount: '188'
+ht-degree: 1%
 
 ---
 
 
 # IP-adress tillåtelselista för molnlagringsmål {#ip-address-allow-list}
+
+## Översikt {#overview}
 
 >[!IMPORTANT]
 >
