@@ -1,12 +1,12 @@
 ---
 keywords: e-post;E-post;e-post;e-postadresser
 title: Översikt över destinationer för e-postmarknadsföring
-type: Tutorial
+type: Självstudiekurs
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 translation-type: tm+mt
-source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
+source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
 workflow-type: tm+mt
-source-wordcount: '771'
+source-wordcount: '772'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ I det här steget väljer du vilka fält som ska exporteras till e-postmarknadsf
 
 Mer information om det här steget finns i [Select attributes](../../ui/activate-destinations.md#select-attributes)-steget i självstudiekursen om aktivering av mål.
 
-### Identitet {#identity}
+## Identitet {#identity}
 
 Vi rekommenderar att du väljer en unik identifierare i ditt [unionsschema](../../../profile/home.md#profile-fragments-and-union-schemas). Det här är fältet som dina användares identiteter är avskärmade från. Oftast är det här fältet e-postadressen, men det kan också vara ett lojalitetsprogram-ID eller ett telefonnummer. I tabellen nedan finns de vanligaste unika identifierarna och deras XDM-fält i schemat.
 
@@ -72,7 +72,7 @@ Vi rekommenderar att du väljer en unik identifierare i ditt [unionsschema](../.
 | Telefon | `mobilePhone.number` |
 | Förmånsprogram-ID | `Customer-defined XDM field` |
 
-### Andra målattribut
+## Andra målattribut
 
 Välj vilka andra fält du vill exportera till e-postmålet i fältet Schema. Några rekommenderade alternativ är:
 
@@ -93,7 +93,7 @@ Läs de enskilda artiklarna om destinationsorten för e-postmarknadsföring om d
 
 - [Adobe Campaign](./adobe-campaign.md#import-data-into-campaign)
 - [Oracle Eloqua](./oracle-eloqua.md#import-data-into-eloqua)
-- [Oracle Responsys](./oracle-responsys.md#import-data-into-responsys)
+- [Oraclets svar](./oracle-responsys.md#import-data-into-responsys)
 - [Salesforce Marketing Cloud](./salesforce-marketing-cloud.md#import-data-into-salesforce)
 
 ## Aktivera segment för e-postmarknadsföringsmål
