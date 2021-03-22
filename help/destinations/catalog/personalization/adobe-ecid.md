@@ -3,15 +3,17 @@ Keywords: ECID;ecid
 title: Experience Cloud ID-tjänsttillägg
 description: Tillägget Experience Cloud ID-tjänst är ett personaliseringsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '486'
+source-wordcount: '487'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL Experience Cloud] ID-tjänsttillägg  {#adobe-ecid-extension}
+
+## Översikt {#overview}
 
 Det här tillägget implementerar ID-tjänsten [!DNL Experience Cloud], som identifierar besökare i alla [!DNL Experience Cloud]-lösningar.
 
@@ -57,6 +59,6 @@ Du kan konfigurera, uppgradera och ta bort tillägg i gränssnittet [!DNL Platfo
 
 >[!TIP]
 >
->Om tillägget redan är installerat på en av dina egenskaper visas fortfarande **[!UICONTROL Install]** som plattformsgränssnitt för tillägget. Stäng av installationsarbetsflödet enligt beskrivningen i [Installera tillägget](#install-extension) för att komma till [!DNL Platform Launch] och konfigurera eller ta bort tillägget.
+>Om tillägget redan är installerat på en av dina egenskaper visas fortfarande **[!UICONTROL Install]** som plattformsgränssnitt för tillägget. Starta installationsarbetsflödet enligt beskrivningen i [Installera tillägget](#install-extension) för att komma till [!DNL Platform Launch] och konfigurera eller ta bort tillägget.
 
 Mer information om hur du uppgraderar ditt tillägg finns i [Tilläggsuppgradering](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/extensions/extension-upgrade.html) i [!DNL Platform Launch]-dokumentationen.
