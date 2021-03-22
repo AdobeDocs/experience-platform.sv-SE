@@ -3,15 +3,17 @@ keywords: Amazon S3;S3-mål;s3;amazon s3
 title: Amazon S3-anslutning
 description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS) S3-lagring för att regelbundet exportera tabbavgränsade filer eller CSV-datafiler från Adobe Experience Platform till dina egna S3-butiker.
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '222'
+source-wordcount: '223'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL Amazon S3] anslutning  {#s3-connection}
+
+## Översikt {#overview}
 
 Skapa en utgående liveanslutning till ditt [!DNL Amazon Web Services] (AWS) S3-lagringsutrymme för att regelbundet exportera tabbavgränsade filer eller CSV-datafiler från Adobe Experience Platform till dina egna S3-fack.
 
