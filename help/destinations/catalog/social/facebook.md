@@ -3,7 +3,7 @@ keywords: Facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 translation-type: tm+mt
-source-git-commit: fd95357f3e3533fe6b7b9752798dd99eb1cc0eb5
+source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
 workflow-type: tm+mt
 source-wordcount: '1118'
 ht-degree: 2%
@@ -74,7 +74,7 @@ Innan du kan skicka målgruppssegment till [!DNL Facebook] måste du kontrollera
 
 Beroende på vilken typ av ID som du importerar till Adobe Experience Platform måste du följa deras motsvarande krav.
 
-### Kraven för hashning av telefonnummer {#phone-number-hashing-requirements}
+## Kraven för hashning av telefonnummer {#phone-number-hashing-requirements}
 
 Det finns två sätt att aktivera telefonnummer i [!DNL Facebook]:
 
@@ -86,7 +86,7 @@ Det finns två sätt att aktivera telefonnummer i [!DNL Facebook]:
 >Telefonnummer som är inkapslade i namnområdet `Phone` kan inte aktiveras i [!DNL Facebook].
 
 
-### Krav för e-posthashning {#email-hashing-requirements}
+## Krav för e-posthashning {#email-hashing-requirements}
 
 Du kan hash-koda e-postadresser innan du importerar dem till Adobe Experience Platform, eller använda e-postadresser i klartext i Experience Platform, och låta [!DNL Platform] hash-koda dem när de aktiveras.
 
@@ -109,7 +109,7 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 
 ![Transformering av identitetsmappning](../../assets/ui/activate-destinations/identity-mapping-transformation.png)
 
-### Använda anpassade namnutrymmen {#custom-namespaces}
+## Använda anpassade namnutrymmen {#custom-namespaces}
 
 Innan du kan använda namnutrymmet `Extern_ID` för att skicka data till [!DNL Facebook] måste du synkronisera dina egna identifierare med [!DNL Facebook Pixel]. Mer information finns i [den officiella dokumentationen](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/#external_identifiers).
 
