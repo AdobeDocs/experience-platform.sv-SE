@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-post;e-postmål;adobe-kampanj;kampanj
 title: Adobe Campaign-anslutning
 description: Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera och leverera kampanjer i alla kanaler, både online och offline.
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 02754055e2be8a45a0699386cb559dad8f25717c
 workflow-type: tm+mt
-source-wordcount: '794'
+source-wordcount: '762'
 ht-degree: 0%
 
 ---
@@ -38,12 +38,12 @@ I steget **[!UICONTROL Account]** i målarbetsflödet för Anslut väljer du **[
 
 ![Konfigurera kampanjguiden](../../assets/catalog/email-marketing/adobe-campaign/connection-type.png)
 
-- För **[!UICONTROL Amazon S3]**-anslutningar måste du ange ditt ID för åtkomstnyckel och hemlig åtkomstnyckel.
-- För **[!UICONTROL SFTP with Password]**-anslutningar måste du ange domän, port, användarnamn och lösenord.
-- För **[!UICONTROL SFTP with SSH Key]**-anslutningar måste du ange domän, port, användarnamn och SSH-nyckel.
+- För **[!UICONTROL Amazon S3]**-anslutningar måste du ange [!UICONTROL Access Key ID] och [!UICONTROL Secret Access Key].
+- För **[!UICONTROL SFTP with Password]**-anslutningar måste du ange [!UICONTROL Domain], [!UICONTROL Port], [!UICONTROL Username] och [!UICONTROL Password].
+- För **[!UICONTROL SFTP with SSH Key]**-anslutningar måste du ange [!UICONTROL Domain], [!UICONTROL Port], [!UICONTROL Username] och [!UICONTROL SSH Key].
 - För **[!UICONTROL Azure Blob]**-anslutningar måste du ange en anslutningssträng.
 
-Du kan även bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering med PGP/GPG till dina exporterade filer under **[!UICONTROL Key]**-avsnittet. Observera att den här offentliga nyckeln **måste** skrivas som en Base64-kodad sträng.
+Du kan även bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering med PGP/GPG till dina exporterade filer under **[!UICONTROL Key]**-avsnittet. Din offentliga nyckel måste skrivas som en [!DNL Base64]-kodad sträng.
 
 ![Fyll i Campaign-information](../../assets/catalog/email-marketing/adobe-campaign/account-info.png)
 
@@ -54,7 +54,7 @@ I **[!UICONTROL Account authentication]**, fyll i relevant information för dest
 - **[!UICONTROL Folder Path]**: Ange sökvägen till lagringsplatsen där dina exportdata  [!DNL Platform] ska lagras som CSV-filer eller tabbavgränsade filer.
 - **[!UICONTROL Container]**:  *För Blob-anslutningar*. Behållaren som innehåller blobben som mappsökvägen finns i.
 - **[!UICONTROL File Format]**:  **** CSVor  **TAB_DELIMITED**. Välj vilket filformat som ska exporteras till lagringsplatsen.
-- **[!UICONTROL Marketing actions]**: Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns på sidan [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md). Se även [Adobe-definierade marknadsföringsåtgärder](../../../data-governance/policies/overview.md#core-actions) i samma dokument.
+- **[!UICONTROL Marketing actions]**: Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns på sidan [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
 
 ![Grundläggande information om kampanj](../../assets/catalog/email-marketing/adobe-campaign/basic-information.png)
 
@@ -66,7 +66,7 @@ Mer information om arbetsflödet för segmentaktivering finns i [Aktivera profil
 
 ## Målattribut {#destination-attributes}
 
-När du [aktiverar segment](../../ui/activate-destinations.md) till Adobe Campaign-målet rekommenderar vi att du väljer en unik identifierare från ditt [unionsschema](../../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet. Mer information finns i [Välja vilka schemafält som ska användas som målattribut i de exporterade filerna](./overview.md#destination-attributes) i dokumentationen för e-postmarknadsföringsmål.
+När du [aktiverar segment](../../ui/activate-destinations.md) till Adobe Campaign-målet rekommenderar Adobe att du väljer en unik identifierare från ditt [unionsschema](../../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet. Mer information finns i [Välja vilka schemafält som ska användas som målattribut i de exporterade filerna](./overview.md#destination-attributes).
 
 ## Exporterade data {#exported-data}
 
