@@ -1,12 +1,12 @@
 ---
 keywords: mål;mål;destinationsdetaljsida;målinformationssida
 title: Visa målinformation
-description: 'På informationssidan för ett enskilt mål finns en översikt över målinformationen, t.ex. målnamn, ID, segment som är mappade till målet samt kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet. '
-seo-description: 'På informationssidan för ett enskilt mål finns en översikt över målinformationen, t.ex. målnamn, ID, segment som är mappade till målet samt kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet. '
+description: 'På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen omfattar målnamn, ID, segment som mappats till målet och kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet. '
+seo-description: 'På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen omfattar målnamn, ID, segment som mappats till målet och kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet. '
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 49905060a18fc94fe524401fb3cf86f212b639ce
 workflow-type: tm+mt
-source-wordcount: '697'
+source-wordcount: '698'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ Målets informationssida visas med de tillgängliga kontrollerna. Om du visar in
 
 ![](../assets/ui/details-page/details.png)
 
-På fliken Bläddra kan du dessutom välja att ta bort det markerade dataflödet genom att markera ikonen ![papperskorgen](../assets/ui/details-page/trash-icon.png). Alla segment som aktiveras för ett mål mappas om innan dataflödet tas bort.
+På fliken Bläddra kan du dessutom välja att ta bort det markerade dataflödet genom att markera ikonen ![papperskorgen](../assets/ui/details-page/trash-icon.png). Alla segment som aktiveras för mål mappas om innan dataflödet tas bort.
 
 ![](../assets/ui/details-page/delete-flow.png)
 
