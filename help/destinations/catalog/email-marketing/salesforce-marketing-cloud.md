@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-post;e-postadresser;salesforce;salesforce-mål
 title: Salesforce Marketing Cloud-anslutning
 seo-description: Salesforce Marketing Cloud är en digital marknadsföringssvit som tidigare kallades ExactTarget som gör att ni kan skapa och anpassa resor för besökare och kunder för att personalisera deras upplevelse.
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 02754055e2be8a45a0699386cb559dad8f25717c
 workflow-type: tm+mt
-source-wordcount: '579'
+source-wordcount: '538'
 ht-degree: 0%
 
 ---
@@ -25,25 +25,37 @@ Om du vill skicka segmentdata till [!DNL Salesforce Marketing Cloud] måste du f
 
 ## Anslutningsmål {#connect-destination}
 
-I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** väljer du [!DNL Salesforce Marketing Cloud] och sedan **[!UICONTROL Connect destination]**.
+I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** väljer du [!DNL Salesforce Marketing Cloud] och sedan **[!UICONTROL Configure]**.
 
 ![Anslut till Salesforce](../../assets/catalog/email-marketing/salesforce/catalog.png)
 
-I steget **[!UICONTROL Authentication]** väljer du **[!UICONTROL Existing Account]** och en av dina befintliga anslutningar om du tidigare har konfigurerat en anslutning till molnlagringsmålet. Du kan också välja **[!UICONTROL New Account]** för att konfigurera en ny anslutning. Fyll i autentiseringsuppgifterna för ditt konto och välj **[!UICONTROL Connect to destination]**. För [!DNL Salesforce Marketing Cloud] kan du välja mellan **[!UICONTROL SFTP with Password]** och **[!UICONTROL SFTP with SSH Key]**. Fyll i informationen nedan, beroende på din anslutningstyp, och välj **[!UICONTROL Connect to destination]**.
+I steget **[!UICONTROL Account]** väljer du **[!UICONTROL Existing Account]** och en av dina befintliga anslutningar om du tidigare har konfigurerat en anslutning till molnlagringsmålet. Du kan också välja **[!UICONTROL New Account]** för att konfigurera en ny anslutning. Fyll i autentiseringsuppgifterna för ditt konto och välj **[!UICONTROL Connect to destination]**. För [!DNL Salesforce Marketing Cloud] kan du välja mellan **[!UICONTROL SFTP with Password]** och **[!UICONTROL SFTP with SSH Key]**.
 
-För **[!UICONTROL SFTP with Password]**-anslutningar måste du ange domän, port, användarnamn och lösenord.
+![Anslut Salesforce Marketing Cloud-konto](../../assets/catalog/email-marketing/salesforce/connection-type.png)
 
-För **[!UICONTROL SFTP with SSH Key]**-anslutningar måste du ange domän, port, användarnamn och SSH-nyckel.
+Fyll i informationen nedan, beroende på din anslutningstyp, och välj **[!UICONTROL Configure]**.
+
+- För **[!UICONTROL SFTP with Password]**-anslutningar måste du ange [!UICONTROL Domain], [!UICONTROL Port], [!UICONTROL Username] och [!UICONTROL Password].
+- För **[!UICONTROL SFTP with SSH Key]**-anslutningar måste du ange [!UICONTROL Domain], [!UICONTROL Port], [!UICONTROL Username] och [!UICONTROL SSH Key].
+
+Du kan även bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering med PGP/GPG till dina exporterade filer under **[!UICONTROL Key]**-avsnittet. Din offentliga nyckel måste skrivas som en [!DNL Base64]-kodad sträng.
 
 ![Fyll i Salesforce-information](../../assets/catalog/email-marketing/salesforce/account-info.png)
 
-I steget **[!UICONTROL Setup]** ska du fylla i relevant information för destinationen enligt nedan:
+I steget **[!UICONTROL Authentication]** ska du fylla i relevant information för destinationen enligt nedan:
 - **[!UICONTROL Name]**: Välj ett relevant namn för destinationen.
 - **[!UICONTROL Description]**: Ange en beskrivning för destinationen.
-- **[!UICONTROL Bucket name]**: Din Amazon S3-bucket, där Platform sparar dataexporten. Indata måste vara mellan 3 och 63 tecken långa. Måste börja och sluta med en bokstav eller siffra. Får endast innehålla gemena bokstäver, siffror eller bindestreck ( - ). Får inte formateras som en IP-adress (till exempel 192.100.1.1).
 - **[!UICONTROL Folder Path]**: Ange sökvägen till lagringsplatsen där Plattform ska placera dina exportdata som CSV-filer eller tabbavgränsade filer.
 - **[!UICONTROL File Format]**:  **** CSVor  **TAB_DELIMITED**. Välj vilket filformat som ska exporteras till lagringsplatsen.
-- **[!UICONTROL Marketing actions]**: Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns på sidan [Datastyrning i Adobe Experience Platform](../../../data-governance/policies/overview.md). Mer information om de enskilda Adobe-definierade marknadsföringsåtgärderna finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
+- **[!UICONTROL Marketing actions]**: Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
+
+<!--
+
+Commenting out Amazon S3 bucket part for now until support is clarified
+
+- **[!UICONTROL Bucket name]**: Your Amazon S3 bucket, where Platform will deposit the data export. Your input must be between 3 and 63 characters long. Must begin and end with a letter or number. Must contain only lowercase letters, numbers, or hyphens ( - ). Must not be formatted as an IP address (for example, 192.100.1.1).
+
+-->
 
 ![Grundläggande information för Salesforce](../../assets/catalog/email-marketing/salesforce/basic-information.png)
 
@@ -55,7 +67,7 @@ Mer information om arbetsflödet för segmentaktivering finns i [Aktivera profil
 
 ## Målattribut {#destination-attributes}
 
-När du [aktiverar segment](../../ui/activate-destinations.md) till målet [!DNL Salesforce Marketing Cloud] rekommenderar vi att du väljer en unik identifierare från ditt [unionsschema](../../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet. Mer information finns i [Välja vilka schemafält som ska användas som målattribut i de exporterade filerna](./overview.md#destination-attributes) i Destinationer för e-postmarknadsföring.
+När du [aktiverar segment](../../ui/activate-destinations.md) till målet [!DNL Salesforce Marketing Cloud] rekommenderar Adobe att du väljer en unik identifierare i ditt [unionsschema](../../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet. Mer information finns i [Välja vilka schemafält som ska användas som målattribut i de exporterade filerna](./overview.md#destination-attributes).
 
 ## Exporterade data {#exported-data}
 
@@ -63,4 +75,4 @@ För [!DNL Salesforce Marketing Cloud]-mål skapar Platform en tabbavgränsad `.
 
 ## Konfigurera dataimport till [!DNL Salesforce Marketing Cloud] {#import-data-into-salesforce}
 
-När du har anslutit plattformen till ditt [!DNL Amazon S3]- eller SFTP-lagringsutrymme måste du konfigurera dataimporten från din lagringsplats till [!DNL Salesforce Marketing Cloud]. Mer information om hur du gör detta finns i [Importera prenumeranter till Marketing Cloud från en fil](https://help.salesforce.com/articleView?id=mc_es_import_subscribers_from_file.htm&amp;type=5) i [!DNL Salesforce Help Center].
+När du har anslutit [!DNL Platform] till din SFTP-lagring måste du konfigurera dataimporten från din lagringsplats till [!DNL Salesforce Marketing Cloud]. Mer information om hur du gör detta finns i [Importera prenumeranter till Marketing Cloud från en fil](https://help.salesforce.com/articleView?id=mc_es_import_subscribers_from_file.htm&amp;type=5) i [!DNL Salesforce Help Center].
