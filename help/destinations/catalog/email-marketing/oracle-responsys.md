@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-postadresser;oraclets svarsmål
 title: Oraclena svarssystemanslutning
 description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som Oraclet erbjuder för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 02754055e2be8a45a0699386cb559dad8f25717c
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '524'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-[Responsys ](https://www.oracle.com/marketingcloud/products/cross-channel-orchestration/) är ett verktyg för e-postmarknadsföring i storföretag för flerkanalskampanjer som erbjuds av  [!DNL Oracle] att personalisera interaktioner i e-post, mobiler, displayannonsering och sociala medier.
+[Responsys ](https://www.oracle.com/cx/marketing/campaign-management/) är ett verktyg för e-postmarknadsföring i storföretag för flerkanalskampanjer som erbjuds av  [!DNL Oracle] att personalisera interaktioner i e-post, mobiler, displayannonsering och sociala medier.
 
 Om du vill skicka segmentdata till [!DNL Oracle Responsys] måste du först [ansluta till målet](#connect-destination) i Adobe Experience Platform och sedan [konfigurera en dataimport](#import-data-into-responsys) från lagringsplatsen till [!DNL Oracle Responsys].
 
@@ -29,21 +29,33 @@ I **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** väljer du [!DNL 
 
 ![Anslut till svar](../../assets/catalog/email-marketing/oracle-responsys/catalog.png)
 
-I steget **[!UICONTROL Authentication]** väljer du **[!UICONTROL Existing Account]** och en av dina befintliga anslutningar om du tidigare har konfigurerat en anslutning till molnlagringsmålet. Du kan också välja **[!UICONTROL New Account]** för att konfigurera en ny anslutning. Fyll i autentiseringsuppgifterna för ditt konto och välj **[!UICONTROL Connect to destination]**. För [!DNL Oracle Responsys] kan du välja mellan **[!UICONTROL SFTP with Password]** och **[!UICONTROL SFTP with SSH Key]**. Fyll i informationen nedan, beroende på din anslutningstyp, och välj **[!UICONTROL Connect to destination]**.
+I steget **[!UICONTROL Account]** väljer du **[!UICONTROL Existing Account]** och en av dina befintliga anslutningar om du tidigare har konfigurerat en anslutning till molnlagringsmålet. Du kan också välja **[!UICONTROL New Account]** för att konfigurera en ny anslutning. Fyll i autentiseringsuppgifterna för ditt konto och välj **[!UICONTROL Connect to destination]**. För [!DNL Oracle Responsys] kan du välja mellan **[!UICONTROL SFTP with Password]** och **[!UICONTROL SFTP with SSH Key]**.
 
-För **[!UICONTROL SFTP with Password]**-anslutningar måste du ange domän, port, användarnamn och lösenord.
+![Connect Responsys-konto](../../assets/catalog/email-marketing/oracle-responsys/connection-type.png)
 
-För **[!UICONTROL SFTP with SSH Key]**-anslutningar måste du ange domän, port, användarnamn och SSH-nyckel.
+Fyll i informationen nedan, beroende på din anslutningstyp, och välj **[!UICONTROL Configure]**.
+
+- För **[!UICONTROL SFTP with Password]**-anslutningar måste du ange [!UICONTROL Domain], [!UICONTROL Port], [!UICONTROL Username] och [!UICONTROL Password].
+- För **[!UICONTROL SFTP with SSH Key]**-anslutningar måste du ange [!UICONTROL Domain], [!UICONTROL Port], [!UICONTROL Username] och [!UICONTROL SSH Key].
+
+Du kan även bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering med PGP/GPG till dina exporterade filer under **[!UICONTROL Key]**-avsnittet. Din offentliga nyckel måste skrivas som en [!DNL Base64]-kodad sträng.
 
 ![Fyll i svarsinformation](../../assets/catalog/email-marketing/oracle-responsys/account-info.png)
 
-I steget **[!UICONTROL Setup]** ska du fylla i relevant information för destinationen enligt nedan:
+I steget **[!UICONTROL Authentication]** ska du fylla i relevant information för destinationen enligt nedan:
 - **[!UICONTROL Name]**: Välj ett relevant namn för destinationen.
 - **[!UICONTROL Description]**: Ange en beskrivning för destinationen.
-- **[!UICONTROL Bucket name]**: Din Amazon S3-bucket, där Platform sparar dataexporten. Indata måste vara mellan 3 och 63 tecken långa. Måste börja och sluta med en bokstav eller siffra. Får endast innehålla gemena bokstäver, siffror eller bindestreck ( - ). Får inte formateras som en IP-adress (till exempel 192.100.1.1).
 - **[!UICONTROL Folder Path]**: Ange sökvägen till lagringsplatsen där Plattform ska placera dina exportdata som CSV-filer eller tabbavgränsade filer.
 - **[!UICONTROL File Format]**:  **** CSVor  **TAB_DELIMITED**. Välj vilket filformat som ska exporteras till lagringsplatsen.
-- **[!UICONTROL Marketing actions]**: Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns på sidan [Datastyrning i Adobe Experience Platform](../../../data-governance/policies/overview.md). Mer information om de enskilda Adobe-definierade marknadsföringsåtgärderna finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
+- **[!UICONTROL Marketing actions]**: Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
+
+<!--
+
+Commenting out Amazon S3 bucket part for now until support is clarified
+
+- **[!UICONTROL Bucket name]**: Your Amazon S3 bucket, where Platform will deposit the data export. Your input must be between 3 and 63 characters long. Must begin and end with a letter or number. Must contain only lowercase letters, numbers, or hyphens ( - ). Must not be formatted as an IP address (for example, 192.100.1.1).
+
+-->
 
 ![Grundläggande information om svar](../../assets/catalog/email-marketing/oracle-responsys/basic-information.png)
 
@@ -55,7 +67,7 @@ Mer information om arbetsflödet för segmentaktivering finns i [Aktivera profil
 
 ## Målattribut {#destination-attributes}
 
-När du [aktiverar segment](../../ui/activate-destinations.md) till målet [!DNL Oracle Responsys] rekommenderar vi att du väljer en unik identifierare från ditt [unionsschema](../../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet. Mer information finns i [Välja vilka schemafält som ska användas som målattribut i de exporterade filerna](./overview.md#destination-attributes) i Destinationer för e-postmarknadsföring.
+När du [aktiverar segment](../../ui/activate-destinations.md) till målet [!DNL Oracle Responsys] rekommenderar Adobe att du väljer en unik identifierare i ditt [unionsschema](../../../profile/home.md#profile-fragments-and-union-schemas). Välj den unika identifieraren och eventuella andra XDM-fält som du vill exportera till målet. Mer information finns i [Välja vilka schemafält som ska användas som målattribut i de exporterade filerna](./overview.md#destination-attributes).
 
 ## Exporterade data {#exported-data}
 
@@ -63,4 +75,4 @@ För [!DNL Oracle Responsys]-mål skapar Platform en tabbavgränsad `.txt`- elle
 
 ## Konfigurera dataimport till [!DNL Oracle Responsys] {#import-data-into-responsys}
 
-När du har anslutit plattformen till ditt [!DNL Amazon S3]- eller SFTP-lagringsutrymme måste du konfigurera dataimporten från din lagringsplats till [!DNL Oracle Responsys]. Mer information om hur du gör detta finns i [Importera kontakter eller konton](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCEA/Connect_WizardUpload.htm) i [!DNL Oracle Responsys Help Center].
+När du har anslutit [!DNL Platform] till din SFTP-lagring måste du konfigurera dataimporten från din lagringsplats till [!DNL Oracle Responsys]. Mer information om hur du gör detta finns i [Importera kontakter eller konton](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCEA/Connect_WizardUpload.htm) i [!DNL Oracle Responsys Help Center].
