@@ -5,9 +5,9 @@ type: Självstudiekurs
 description: Instruktioner för att ansluta till lagringsplatser i molnet
 seo-description: Instruktioner för att ansluta till lagringsplatser i molnet
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 02754055e2be8a45a0699386cb559dad8f25717c
 workflow-type: tm+mt
-source-wordcount: '499'
+source-wordcount: '496'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Välj önskat molnlagringsmål i **[!UICONTROL Connections]** > **[!UICONTROL De
 
 ## Autentiseringssteg {#authentication}
 
-Om du tidigare har konfigurerat en anslutning till molnlagringsmålet i **[!UICONTROL Authentication]**-steget väljer du **[!UICONTROL Existing Account]** och väljer din befintliga anslutning. Du kan också välja **[!UICONTROL New Account]** för att konfigurera en ny anslutning till molnlagringsmålet. Fyll i autentiseringsuppgifterna för ditt konto och välj **[!UICONTROL Connect to destination]**. Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Observera att den här offentliga nyckeln **måste** skrivas som en Base64-kodad sträng.
+Om du tidigare har konfigurerat en anslutning till molnlagringsmålet i **[!UICONTROL Authentication]**-steget väljer du **[!UICONTROL Existing Account]** och väljer din befintliga anslutning. Du kan också välja **[!UICONTROL New Account]** för att konfigurera en ny anslutning till molnlagringsmålet. Fyll i autentiseringsuppgifterna för ditt konto och välj **[!UICONTROL Connect to destination]**. Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Din offentliga nyckel måste skrivas som en [!DNL Base64]-kodad sträng.
 
 Se [Amazon S3](./amazon-s3.md)-mål, [[!DNL Amazon Kinesis]](./amazon-kinesis.md)-mål, [[!DNL Azure Event Hubs]](./azure-event-hubs.md)-mål och [SFTP](./sftp.md)-mål för mer information om autentiseringsuppgifter i steget **Autentisering**.
 
