@@ -4,9 +4,9 @@ title: Arbetsytan Destinationer
 description: Arbetsytan Destinationer består av fyra avsnitt, Katalog, Bläddra, Konton och Systemvy, som beskrivs i avsnitten nedan.
 seo-description: I Adobe Experience Platform väljer du Destinationer i det vänstra navigeringsfältet för att komma åt målarbetsytan.
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 49905060a18fc94fe524401fb3cf86f212b639ce
 workflow-type: tm+mt
-source-wordcount: '946'
+source-wordcount: '934'
 ht-degree: 1%
 
 ---
@@ -26,7 +26,7 @@ Arbetsytan [!UICONTROL Destinations] består av fyra avsnitt, [!UICONTROL Catalo
 
 På fliken **[!UICONTROL Catalog]** visas en lista med alla mål som är tillgängliga i Platform som du kan skicka data till.
 
-I användargränssnittet för plattformen finns ett antal sök- och filteralternativ på målkatalogsidan:
+I användargränssnittet för plattformen finns flera sök- och filteralternativ på katalogsidan för mål:
 
 * Använd sökfunktionen på sidan för att hitta ett specifikt mål.
 * Filtrera mål med kontrollen [!UICONTROL Categories].
@@ -35,7 +35,7 @@ I användargränssnittet för plattformen finns ett antal sök- och filteraltern
 
 ![målgruppsfiltrering och sökdemo](../assets/ui/workspace/destinations-search-and-filter.gif)
 
-Målkorten innehåller antingen en **[!UICONTROL Configure]**- eller en **[!UICONTROL Activate]**-kontroll och en sekundär kontroll som visar fler alternativ. Dessa beskrivs nedan:
+Målkorten innehåller antingen en **[!UICONTROL Configure]**- eller en **[!UICONTROL Activate]**-kontroll och en sekundär kontroll som visar fler alternativ. Dessa kontroller beskrivs nedan:
 
 | Kontroll | Beskrivning |
 ---------|----------
@@ -47,7 +47,7 @@ Målkorten innehåller antingen en **[!UICONTROL Configure]**- eller en **[!UICO
 
 ![Kontroll av destinationskortet](../assets/ui/workspace/destination-card-options.png)
 
-Välj ett målkort i katalogen för att öppna den högra listen.  Här visas en beskrivning av målet. Högerspåret har samma kontroller som beskrivs i tabellen ovan, samt en beskrivning av destinationen och en indikation på destinationskategori och typ.
+Välj ett målkort i katalogen för att öppna den högra listen. Här visas en beskrivning av målet. Högerspåret har samma kontroller som beskrivs i tabellen ovan, samt en beskrivning av destinationen och en indikation på destinationskategori och typ.
 
 ![Alternativ för målkatalog](../assets/ui/workspace/destination-right-rail.png)
 
@@ -98,14 +98,14 @@ På fliken **[!UICONTROL Browse]** visas de mål som du har upprättat en anslut
 | Element | Beskrivning |
 ---------|----------
 | Namn | Namnet som du angav för aktiveringsflödet till den här destinationen. Samma kolumn innehåller två kontroller: [!UICONTROL Activate ] och [!UICONTROL Delete destination]. |
-| Körningsstatus för senaste flöde | Status för den senaste dataflödeskörningen. Mer information om dataflöden finns i [Visa målinformation](destination-details-page.md). |
-| Körningsdatum för senaste flöde | Tid och datum då det senaste dataflödet kördes. Mer information om dataflöden finns i [Visa målinformation](destination-details-page.md). |
+| [!UICONTROL Last Flow Run Status] | Status för den senaste dataflödeskörningen. Mer information om dataflöden finns i [Visa målinformation](destination-details-page.md). |
+| [!UICONTROL Last Flow Run Date] | Tid och datum då det senaste dataflödet kördes. Mer information om dataflöden finns i [Visa målinformation](destination-details-page.md). |
 | [!UICONTROL Destination] | Målplattformen som du valde för aktiveringsflödet. |
 | [!UICONTROL Connection Type] | Representerar anslutningstypen för din lagringsbucket eller destination. <ul><li>För e-postmarknadsföringsmål: Kan vara S3, FTP eller [!DNL Azure Blob].</li><li>För reklamdestinationer i realtid: Server-till-server.</li><li>För direktuppspelningsmål: Kan vara [!DNL Azure Event Hubs] eller [!DNL Amazon Kinesis].</li></ul> |
 | [!UICONTROL Username] | De kontoautentiseringsuppgifter som du har valt för målflödet. |
 | [!UICONTROL Activation Data] | Anger antalet segment som aktiveras till det här målet. Välj den här kontrollen om du vill veta mer om de aktiverade segmenten. Se [Aktiveringsdata](/help/destinations/ui/destination-details-page.md#activation-data) på sidan med målinformation för mer information om de aktiverade segmenten. |
 | [!UICONTROL Created] | Datum och UTC-tid när aktiveringsflödet till målet skapades. |
-| [!UICONTROL Status] | `Active` eller `Inactive`. Anger om data för närvarande aktiveras till det här målet. Mer information om hur du redigerar status finns i [Inaktivera aktivering](./activate-destinations.md#disable-activation). |
+| [!UICONTROL Status] | `Active` eller `Inactive`. Anger om data aktiveras till det här målet. Mer information om hur du redigerar status finns i [Inaktivera aktivering](./activate-destinations.md#disable-activation). |
 
 Klicka på en målrad för att visa mer information om målet i den högra listen.
 
