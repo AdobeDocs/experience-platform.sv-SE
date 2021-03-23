@@ -4,7 +4,7 @@ title: Skapa ett mål för sociala nätverk
 type: Självstudiekurs
 description: Lär dig hur du ansluter till annonskonton för sociala nätverk i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 02754055e2be8a45a0699386cb559dad8f25717c
 workflow-type: tm+mt
 source-wordcount: '433'
 ht-degree: 0%
@@ -28,7 +28,7 @@ Bläddra till kategorin **[!UICONTROL Social]** i **[!UICONTROL Destinations]** 
 
 ## Autentiseringssteg {#authentication}
 
-I steget **Autentisering**, om du tidigare har konfigurerat en anslutning till målet för det sociala nätverket, väljer du **[!UICONTROL Existing Account]** och väljer din befintliga anslutning. Du kan också välja **[!UICONTROL New Account]** för att konfigurera en ny anslutning till målet för det sociala nätverket. Välj **[!UICONTROL Connect to destination]** så dirigeras du till det valda sociala nätverkets mål för att logga in och ansluta Adobe Experience Cloud till ditt sociala nätverks-Ad-konto.
+I steget **Autentisering**, om du tidigare har konfigurerat en anslutning till målet för det sociala nätverket, väljer du **[!UICONTROL Existing Account]** och väljer din befintliga anslutning. Du kan också välja **[!UICONTROL New Account]** för att konfigurera en ny anslutning till målet för det sociala nätverket. Välj **[!UICONTROL Connect to destination]** så dirigeras du till det valda sociala nätverkets mål för att logga in och ansluta Adobe Experience Cloud till ditt sociala nätverk och annonskonto.
 
 >[!NOTE]
 >
