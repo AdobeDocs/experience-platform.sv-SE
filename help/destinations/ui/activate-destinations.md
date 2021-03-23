@@ -6,9 +6,9 @@ seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 0992b223a96b77446a9f9c2823f5195541dd93fa
 workflow-type: tm+mt
-source-wordcount: '2071'
+source-wordcount: '2069'
 ht-degree: 0%
 
 ---
@@ -143,7 +143,7 @@ En dialogruta med alternativ för att skapa segmentschemat visas.
 
 Standardfilnamnen består av målnamn, segment-ID och datum- och tidsindikator. Du kan till exempel redigera de exporterade filnamnen för att skilja mellan olika kampanjer eller för att lägga till tiden för dataexport till filerna.
 
-Välj pennikonen för att öppna ett modalt fönster och redigera filnamnen. Observera att filnamn är begränsade till 255 tecken.
+Välj pennikonen för att öppna ett modalt fönster och redigera filnamnen. Filnamn får innehålla högst 255 tecken.
 
 ![konfigurera filnamn](../assets/ui/activate-destinations/configure-name.png)
 
@@ -161,7 +161,7 @@ Välj **[!UICONTROL Apply changes]** för att bekräfta ditt val.
 
 ![redigera filnamnsalternativ](../assets/ui/activate-destinations/activate-workflow-configure-step-2.png)
 
-När du är klar med konfigurationen av alla segment väljer du **[!UICONTROL Next]** för att fortsätta.
+När du har konfigurerat alla segment väljer du **[!UICONTROL Next]** för att fortsätta.
 
 ## **[!UICONTROL Segment schedule]** steg  {#segment-schedule}
 
