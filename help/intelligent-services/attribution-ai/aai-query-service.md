@@ -2,12 +2,12 @@
 keywords: insikter;attribuering;attribueringsinsikter;AAI-frågetjänst;attribueringsfrågor;attribueringspoäng
 solution: Intelligent Services, Experience Platform
 title: Analyserar attribueringsresultat med hjälp av frågetjänsten
-topic: Attribution AI queries
+topic: Attribution AI
 description: Lär dig hur du använder Adobe Experience Platform Query Service för att analysera Attribution AI.
 translation-type: tm+mt
-source-git-commit: eb163949f91b0d1e9cc23180bb372b6f94fc951f
+source-git-commit: d83244ac93830b0e40f6d14e87497d4cb78544d9
 workflow-type: tm+mt
-source-wordcount: '476'
+source-wordcount: '581'
 ht-degree: 0%
 
 ---
@@ -59,7 +59,7 @@ Mer information om Frågeredigeraren finns i [användarhandboken för Frågeredi
 
 ## Frågemallar för attribueringspoänganalys
 
-Frågorna nedan kan användas som mall för olika poänganalyssessioner. Du måste ersätta `_tenantId` och `your_score_output_dataset` med rätt värden i ditt resultatschema.
+Frågorna nedan kan användas som mall för olika poänganalysscenarier. Du måste ersätta `_tenantId` och `your_score_output_dataset` med rätt värden i ditt resultatschema.
 
 >[!NOTE]
 >
@@ -129,7 +129,7 @@ Frågorna nedan kan användas som mall för olika poänganalyssessioner. Du mås
     LIMIT 20
 ```
 
-### Exempel på distributionsanalyser
+### Exempel på distributionsanalys
 
 **Mängd kontaktytor på konverteringsbanor efter definierad typ (i ett konverteringsfönster)**
 
@@ -299,4 +299,58 @@ Hämta fördelningen för antalet distinkta kontaktytor på en konverteringsbana
         conversionName, num_dist_tp
     ORDER BY
         conversionName, num_dist_tp
+```
+
+### Exempel på förenkling och explosion av scheman
+
+Den här frågan förenklar strukturkolumnen i flera enskilda kolumner och utlöser arrayer i flera rader. Detta underlättar när man ska omvandla attribueringspoäng till ett CSV-format. Utdata för den här frågan har en konvertering och en av de kontaktytor som motsvarar konverteringen i varje rad.
+
+>[!TIP]
+>
+> I det här exemplet måste du ersätta `{COLUMN_NAME}` förutom `_tenantId` och `your_score_output_dataset`. Variabeln `COLUMN_NAME` kan anta värden för valfria skicka genom kolumnnamn (rapportkolumner) som lades till när Attribution AI konfigurerades. Granska ditt resultatschema för att hitta de `{COLUMN_NAME}` värden som behövs för att slutföra frågan.
+
+```sql
+SELECT 
+  segmentation,
+  conversionName,
+  scoreCreatedTime,
+  aaid, _id, eventMergeId,
+  conversion.eventType as conversion_eventType,
+  conversion.quantity as conversion_quantity,
+  conversion.eventSource as conversion_eventSource,
+  conversion.priceTotal as conversion_priceTotal,
+  conversion.timestamp as conversion_timestamp,
+  conversion.geo as conversion_geo,
+  conversion.receivedTimestamp as conversion_receivedTimestamp,
+  conversion.dataSource as conversion_dataSource,
+  conversion.productType as conversion_productType,
+  conversion.passThrough.{COLUMN_NAME} as conversion_passThru_column,
+  conversion.skuId as conversion_skuId,
+  conversion.product as conversion_product,
+  touchpointName,
+  touchPoint.campaignGroup as tp_campaignGroup, 
+  touchPoint.mediaType as tp_mediaType,
+  touchPoint.campaignTag as tp_campaignTag,
+  touchPoint.timestamp as tp_timestamp,
+  touchPoint.geo as tp_geo,
+  touchPoint.receivedTimestamp as tp_receivedTimestamp,
+  touchPoint.passThrough.{COLUMN_NAME} as tp_passThru_column,
+  touchPoint.campaignName as tp_campaignName,
+  touchPoint.mediaAction as tp_mediaAction,
+  touchPoint.mediaChannel as tp_mediaChannel,
+  touchPoint.eventid as tp_eventid,
+  scores.*
+FROM (
+  SELECT
+        _tenantId.your_score_output_dataset.segmentation,
+        _tenantId.your_score_output_dataset.conversionName,
+        _tenantId.your_score_output_dataset.scoreCreatedTime,
+        _tenantId.your_score_output_dataset.conversion,
+        _id,
+        eventMergeId,
+        map_values(identityMap)[0][0].id as aaid,
+        inline(_tenantId.your_score_output_dataset.touchpointsDetail)
+  FROM
+        your_score_output_dataset
+)
 ```
