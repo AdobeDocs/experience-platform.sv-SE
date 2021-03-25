@@ -5,9 +5,9 @@ title: XDM-fältordlista (Experience Data Model)
 topic: översikter
 description: Experience Data Model (XDM) definierar en uppsättning standardfält som kan användas när Adobe Experience Platform-scheman disponeras. Användning av dessa fält resulterar i ett konsekvent beteende för alla plattformstjänster, eftersom alla tjänster som använder XDM uttryckligen kommer att förstå de specifika definitioner som finns i dessa fält.
 translation-type: tm+mt
-source-git-commit: 027f3335b406ea526a07e1b3894e4d50c850d5d6
+source-git-commit: cc1fa21df0bb2d49106775c75a0cb3c4f4d73941
 workflow-type: tm+mt
-source-wordcount: '25236'
+source-wordcount: '25239'
 ht-degree: 0%
 
 ---
@@ -530,3 +530,5 @@ Du kan använda sökfunktionen i [!DNL Schema Editor] för att visa information 
 | xdm:workPhone | Telefon, arbete | Telefonnummer till arbetet. | object |  | object | https://ns.adobe.com/experience/campaign/experienceevent-profile-work-details, https://ns.adobe.com/xdm/context/profile-work-details |
 | xdm:xid | Experience Identifier | Om det finns en sådan representerar det här värdet en identifierare för korsnamnutrymme som är unik för alla identifierare som omfattar alla namnutrymmen i alla namnutrymmen. | string |  | string | https://ns.adobe.com/experience/aam-experienceevent, https://ns.adobe.com/experience/adcloud-experienceevent, https://ns.adobe.com/experience/adcloud-profile,, https://ns.adobe.com/experience/analytics-experienceevent, https://ns.adobe.com/experience/campaign-experienceevent, https://ns.adobe.com/experience/campaign/experienceevent-profile-segmentation, https://ns.adobe.com/experience/profile/profile-all, https://ns.adobe.com/experience/target-experienceevent, https://ns.adobe.com/experience/target/activity/activityevent/segmentevent, https://ns.adobe.com/experience/target/experienceevent-all, bud, tur, tur, bud |
 | xmpDM:duration | Kapitellängd/varaktighet | Kapitelns längd i sekunder. | heltal |  | int | https://ns.adobe.com/experience/adcloud-experienceevent, https://ns.adobe.com/experience/analytics-experienceevent, https://ns.adobe.com/experience/campaign-experienceevent, https://ns.adobe.com/experience/target-experienceevent, https://ns.adobe.com/xdm/context/advertising-timed-asset-reference, https://ns.adobe.com/xdm/context/experienceevent-advertising, https://ns.adobe.com/xdm/context/experienceevent-media |
+
+{style=&quot;table-layout:auto&quot;}
