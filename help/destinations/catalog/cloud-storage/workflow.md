@@ -5,7 +5,7 @@ type: Självstudiekurs
 description: Instruktioner för att ansluta till lagringsplatser i molnet
 seo-description: Instruktioner för att ansluta till lagringsplatser i molnet
 translation-type: tm+mt
-source-git-commit: 02754055e2be8a45a0699386cb559dad8f25717c
+source-git-commit: 632003773100ec8ef0389840695a1c75a1aa663d
 workflow-type: tm+mt
 source-wordcount: '496'
 ht-degree: 0%
@@ -27,9 +27,9 @@ Välj önskat molnlagringsmål i **[!UICONTROL Connections]** > **[!UICONTROL De
 >
 >Om det redan finns en anslutning till det här målet kan du se en **[!UICONTROL Activate]**-knapp på målkortet. Mer information om skillnaden mellan **[!UICONTROL Activate]** och **[!UICONTROL Configure]** finns i avsnittet [Katalog](../../ui/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
 
-## Autentiseringssteg {#authentication}
+## Kontosteg {#account}
 
-Om du tidigare har konfigurerat en anslutning till molnlagringsmålet i **[!UICONTROL Authentication]**-steget väljer du **[!UICONTROL Existing Account]** och väljer din befintliga anslutning. Du kan också välja **[!UICONTROL New Account]** för att konfigurera en ny anslutning till molnlagringsmålet. Fyll i autentiseringsuppgifterna för ditt konto och välj **[!UICONTROL Connect to destination]**. Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Din offentliga nyckel måste skrivas som en [!DNL Base64]-kodad sträng.
+Om du tidigare har konfigurerat en anslutning till molnlagringsmålet i **[!UICONTROL Account]**-steget väljer du **[!UICONTROL Existing Account]** och väljer din befintliga anslutning. Du kan också välja **[!UICONTROL New Account]** för att konfigurera en ny anslutning till molnlagringsmålet. Fyll i autentiseringsuppgifterna för ditt konto och välj **[!UICONTROL Connect to destination]**. Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Din offentliga nyckel måste skrivas som en [!DNL Base64]-kodad sträng.
 
 Se [Amazon S3](./amazon-s3.md)-mål, [[!DNL Amazon Kinesis]](./amazon-kinesis.md)-mål, [[!DNL Azure Event Hubs]](./azure-event-hubs.md)-mål och [SFTP](./sftp.md)-mål för mer information om autentiseringsuppgifter i steget **Autentisering**.
 
@@ -39,9 +39,9 @@ Se [Amazon S3](./amazon-s3.md)-mål, [[!DNL Amazon Kinesis]](./amazon-kinesis.md
 
 ![Anslut till molnlagringsmålet - autentiseringssteg](../../assets/catalog/cloud-storage/workflow/destination-account.png)
 
-## Installationssteg {#setup}
+## Autentiseringssteg {#authentication}
 
-I steget **[!UICONTROL Setup]** anger du ett **[!UICONTROL Name]** och ett **[!UICONTROL Description]** för aktiveringsflödet.
+I steget **[!UICONTROL Authentication]** anger du ett **[!UICONTROL Name]** och ett **[!UICONTROL Description]** för aktiveringsflödet.
 
 I det här steget kan du även välja alla **[!UICONTROL Marketing action]** som ska gälla för det här målet. Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
 
