@@ -5,9 +5,9 @@ title: Begränsningar för XDM-fälttyp
 topic: översikt
 description: En referens för fälttypsbegränsningar i Experience Data Model (XDM), inklusive andra serialiseringsformat som de kan mappas till och hur du definierar egna fälttyper i API:t.
 translation-type: tm+mt
-source-git-commit: cc1fa21df0bb2d49106775c75a0cb3c4f4d73941
+source-git-commit: bb5880340ca4c01d0b25c7cb16fd422d3182a89e
 workflow-type: tm+mt
-source-wordcount: '1052'
+source-wordcount: '1049'
 ht-degree: 1%
 
 ---
@@ -212,7 +212,7 @@ Följande tabell visar lämplig formatering för att definiera olika fälttyper,
 
 Börja med att hitta önskad fälttyp och använd exempelkoden som finns för att skapa din API-begäran för [skapa en mixin](../api/mixins.md#create) eller [skapa en datatyp](../api/data-types.md#create).
 
-<table>
+<table style="table-layout:auto">
   <tr>
     <th>XDM-typ</th>
     <th>Valfria egenskaper</th>
@@ -448,5 +448,3 @@ Börja med att hitta önskad fälttyp och använd exempelkoden som finns för at
     </td>
   </tr>
 </table>
-
-{style=&quot;table-layout:auto&quot;}
