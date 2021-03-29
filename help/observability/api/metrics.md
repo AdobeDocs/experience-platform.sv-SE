@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: API-slutpunkt för mått
-topic: developer guide
+topic: utvecklarhandbok
 description: Lär dig hur du hämtar mätvärden för observerbarhet i Experience Platform med API:t för observabilitetsinsikter.
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 136c75f56c2ba4d61fef7981ff8a7889a0ade3d1
 workflow-type: tm+mt
-source-wordcount: '2027'
+source-wordcount: '2056'
 ht-degree: 1%
 
 ---
@@ -178,6 +178,8 @@ curl -X POST \
 | `aggregator` | Anger den aggregeringsfunktion som ska användas för att gruppera poster med flera serier till enstaka resultat. Mer information om tillgängliga aggregerare finns i [OpenTSDB-dokumentationen](http://opentsdb.net/docs/build/html/user_guide/query/aggregators.html). |
 | `downsample` | Ett valfritt fält som gör att du kan ange en aggregeringsfunktion för att minska samplingsfrekvensen för mätdata genom att sortera fält i intervall (eller&quot;bucket&quot;). Intervallet för nedsamplingen bestäms av egenskapen `granularity`. Mer information om nedsampling finns i [OpenTSDB-dokumentationen](http://opentsdb.net/docs/build/html/user_guide/query/downsampling.html). |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Svar**
 
 Ett lyckat svar returnerar de resulterande datapunkterna för de mätvärden och filter som anges i begäran.
@@ -270,6 +272,8 @@ Ett lyckat svar returnerar de resulterande datapunkterna för de mätvärden och
 | `groupBy` | Om flera datauppsättningar har angetts i egenskapen `filter` för ett mätresultat, och alternativet `groupBy` har angetts till true i begäran, kommer det här objektet att innehålla ID:t för datauppsättningen som motsvarande `dps`-egenskap gäller för.<br><br>Om det här objektet verkar vara tomt i svaret gäller motsvarande  `dps` egenskap för alla datamängder som finns i  `filters` arrayen (eller alla datamängder i  [!DNL Platform] om inga filter har angetts). |
 | `dps` | Returnerade data för angivet mått, filter och tidsintervall. Varje nyckel i det här objektet representerar en tidsstämpel med ett motsvarande värde för det angivna måttet. Tidsperioden mellan varje datapunkt beror på `granularity`-värdet som anges i begäran. |
 
+{style=&quot;table-layout:auto&quot;}
+
 ## Bilaga
 
 Följande avsnitt innehåller ytterligare information om hur du arbetar med slutpunkten `/metrics`.
@@ -310,6 +314,8 @@ I följande tabell visas mätvärden för Adobe Experience Platform [!DNL Data I
 | **timeseries.data.collection.inlet.success** | Totalt antal lyckade HTTP-anrop till ett dataintag eller till alla datainmatningar. | Intag-ID |
 | **timeseries.data.collection.inlet.error** | Totalt antal misslyckade HTTP-anrop till en datainmatning eller till alla datainmatningar. | Intag-ID |
 
+{style=&quot;table-layout:auto&quot;}
+
 #### [!DNL Identity Service] {#identity}
 
 I följande tabell visas mätvärden för Adobe Experience Platform [!DNL Identity Service].
@@ -326,6 +332,8 @@ I följande tabell visas mätvärden för Adobe Experience Platform [!DNL Identi
 | timeseries.identity.graph.imsorg.numidgraphs.count | Antal unika diagramsymboler som lagras i identitetsdiagrammet för din IMS-organisation. | Ej tillämpligt |
 | timeseries.identity.graph.imsorg.graphstrength.uniqueidentities.count | Antal unika identiteter som lagras i identitetsdiagrammet för IMS-organisationen för en viss grafikstyrka (&quot;unknown&quot;,&quot;svag&quot; eller&quot;strong&quot;). | Diagramstyrka (**Obligatorisk**) |
 
+{style=&quot;table-layout:auto&quot;}
+
 #### [!DNL Privacy Service] {#privacy}
 
 I följande tabell visas mätvärden för Adobe Experience Platform [!DNL Privacy Service].
@@ -335,6 +343,8 @@ I följande tabell visas mätvärden för Adobe Experience Platform [!DNL Privac
 | timeseries.gdpr.jobs.totaljobs.count | Totalt antal jobb skapade från GDPR. | ENV (**Krävs**) |
 | timeseries.gdpr.jobs.completedjobs.count | Totalt antal slutförda jobb från GDPR. | ENV (**Krävs**) |
 | timeseries.gdpr.jobs.errorjobs.count | Totalt antal feljobb från GDPR. | ENV (**Krävs**) |
+
+{style=&quot;table-layout:auto&quot;}
 
 #### [!DNL Query Service] {#query}
 
@@ -348,6 +358,8 @@ I följande tabell visas mätvärden för Adobe Experience Platform [!DNL Query 
 | timeseries.queryservice.query.scheduledquery.count | Totalt antal utförda schemalagda frågor. | Ej tillämpligt |
 | timeseries.queryservice.query.interactivequery.count | Totalt antal utförda interaktiva frågor. | Ej tillämpligt |
 | timeseries.queryservice.query.batchfrompsqlquery.count | Totalt antal utförda batchfrågor från PSQL. | Ej tillämpligt |
+
+{style=&quot;table-layout:auto&quot;}
 
 #### [!DNL Real-time Customer Profile] {#profile}
 
@@ -369,6 +381,8 @@ I följande tabell visas måtten för [!DNL Real-time Customer Profile].
 | platform.ups.profile-commons.ingest.streaming.dataSet.record.updated.timestamp | Tidsstämpel för senaste begäran om uppdatering av post för en datauppsättning. | Datauppsättnings-ID (**Obligatoriskt**) |
 | platform.ups.ingest.streaming.record.size.m1_rate | Genomsnittlig poststorlek. | IMS-organisation (**Krävs**) |
 | platform.ups.ingest.streaming.records.updated.m15_rate | Frekvens för uppdateringsbegäranden för poster som har importerats för en datauppsättning. | Datauppsättnings-ID (**Obligatoriskt**) |
+
+{style=&quot;table-layout:auto&quot;}
 
 ### Felmeddelanden
 
@@ -403,6 +417,8 @@ Svar från `/metrics`-slutpunkten kan returnera felmeddelanden under vissa förh
 | `title` | En sträng som innehåller felmeddelandet och den möjliga orsaken till felet. |
 | `report` | Innehåller sammanhangsbaserad information om felet, inklusive den sandlåda och den IMS-organisation som används i åtgärden som utlöste felet. |
 
+{style=&quot;table-layout:auto&quot;}
+
 I följande tabell visas de olika felkoderna som kan returneras av API:t:
 
 | Felkod | Titel | Beskrivning |
@@ -412,3 +428,5 @@ I följande tabell visas de olika felkoderna som kan returneras av API:t:
 | `INSGHT-1001-500` | Mätningsfrågan misslyckades | Det uppstod ett fel när mätdatabasen skulle frågas på grund av ett serverfel. Försök igen. Om problemet kvarstår kan du kontakta Adobe support. |
 | `INSGHT-1002-500` | Tjänstfel | Begäran kunde inte behandlas på grund av ett internt fel. Försök igen. Om problemet kvarstår kan du kontakta Adobe support. |
 | `INSGHT-1003-401` | Valideringsfel för sandlådan | Begäran kunde inte behandlas på grund av ett valideringsfel i sandlådan. Kontrollera att namnet på sandlådan som du angav i rubriken `x-sandbox-name` representerar en giltig, aktiverad sandlåda för din IMS-organisation innan du försöker utföra begäran igen. |
+
+{style=&quot;table-layout:auto&quot;}
