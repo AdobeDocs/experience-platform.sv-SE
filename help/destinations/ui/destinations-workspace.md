@@ -4,9 +4,9 @@ title: Arbetsytan Destinationer
 description: Arbetsytan Destinationer består av fyra avsnitt, Katalog, Bläddra, Konton och Systemvy, som beskrivs i avsnitten nedan.
 seo-description: I Adobe Experience Platform väljer du Destinationer i det vänstra navigeringsfältet för att komma åt målarbetsytan.
 translation-type: tm+mt
-source-git-commit: 49905060a18fc94fe524401fb3cf86f212b639ce
+source-git-commit: 4f5e7dfee17b2dde371efb82cf52d91c08696f39
 workflow-type: tm+mt
-source-wordcount: '934'
+source-wordcount: '940'
 ht-degree: 1%
 
 ---
@@ -45,6 +45,8 @@ Målkorten innehåller antingen en **[!UICONTROL Configure]**- eller en **[!UICO
 | [!UICONTROL View dataflows] | Visa dataaktiveringsflödena som finns för ett mål. |
 | [!UICONTROL View documentation] | Öppnar en länk till dokumentationssidan för det specifika målet, för mer information och för att hjälpa dig att konfigurera det. |
 
+{style=&quot;table-layout:auto&quot;}
+
 ![Kontroll av destinationskortet](../assets/ui/workspace/destination-card-options.png)
 
 Välj ett målkort i katalogen för att öppna den högra listen. Här visas en beskrivning av målet. Högerspåret har samma kontroller som beskrivs i tabellen ovan, samt en beskrivning av destinationen och en indikation på destinationskategori och typ.
@@ -70,6 +72,8 @@ På fliken **[!UICONTROL Accounts]** kan du lära dig mer om anslutningar som du
 | [!UICONTROL Username] | Användarnamnet som du valde i [guiden för anslutningsmål](../catalog/email-marketing/overview.md#connect-destination). |
 | [!UICONTROL Destinations] | Representerar antalet unika lyckade målflöden som är kopplade till grundläggande information som skapats för ett mål. |
 | [!UICONTROL Authorized] | Det datum då anslutningen till det här målet auktoriserades. |
+
+{style=&quot;table-layout:auto&quot;}
 
 Dessutom kan du redigera eller uppdatera din kontoinformation. Välj knappen ![Redigera konto](../assets/ui/workspace/pencil-icon.png) i kolumnen **[!UICONTROL Platform]** om du vill redigera kontoinformationen.
 
