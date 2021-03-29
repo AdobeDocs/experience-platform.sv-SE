@@ -4,9 +4,9 @@ title: Visa målinformation
 description: 'På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen omfattar målnamn, ID, segment som mappats till målet och kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet. '
 seo-description: 'På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen omfattar målnamn, ID, segment som mappats till målet och kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet. '
 translation-type: tm+mt
-source-git-commit: 49905060a18fc94fe524401fb3cf86f212b639ce
+source-git-commit: 4f5e7dfee17b2dde371efb82cf52d91c08696f39
 workflow-type: tm+mt
-source-wordcount: '698'
+source-wordcount: '701'
 ht-degree: 0%
 
 ---
@@ -57,6 +57,8 @@ Följande tabell omfattar de kontroller och den information som tillhandahålls 
 | [!UICONTROL Identity] | Representerar det identitetsnamnutrymme som accepteras av målet, till exempel `GAID`, `IDFA` eller `email`. Mer information om godkända ID-namnutrymmen finns i [översikten över identitetsnamnrymden](../../identity-service/namespaces.md). |
 | [!UICONTROL Created by] | Anger den användare som skapade det här målet. |
 | [!UICONTROL Created] | Anger UTC-datum/tid när det här målet skapades. |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## [!UICONTROL Enabled]/[!UICONTROL Disabled] toggle
 
