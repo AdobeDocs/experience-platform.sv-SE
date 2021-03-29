@@ -5,9 +5,9 @@ title: Begränsningar för XDM-fälttyp
 topic: översikt
 description: En referens för fälttypsbegränsningar i Experience Data Model (XDM), inklusive andra serialiseringsformat som de kan mappas till och hur du definierar egna fälttyper i API:t.
 translation-type: tm+mt
-source-git-commit: bb5880340ca4c01d0b25c7cb16fd422d3182a89e
+source-git-commit: 456e595e66436c35c7d081ddf4699263e9c87234
 workflow-type: tm+mt
-source-wordcount: '1049'
+source-wordcount: '1055'
 ht-degree: 1%
 
 ---
@@ -33,7 +33,7 @@ XDM byggs ovanpå JSON-schema och därför ärver XDM-fält en liknande syntax n
 
 I följande tabell visas hur varje XDM-typ representeras i JSON-schema, tillsammans med ett exempelvärde som överensstämmer med typen:
 
-<table>
+<table style="table-layout:auto">
   <thead>
     <tr>
       <th>XDM-typ</th>
@@ -185,6 +185,8 @@ Avsnitten nedan beskriver hur varje XDM-typ mappar till andra vanliga serialiser
 | [!UICONTROL Boolean] | `Boolean` | `System.Boolean` | `Boolean` |
 | [!UICONTROL Map] | `Map` | (Ej tillämpligt) | `object` |
 
+{style=&quot;table-layout:auto&quot;}
+
 ### MongoDB, Aerospike och Protobuf 2 {#mongo}
 
 | XDM-typ | MongoDB | Aerospike | Protobuf 2 |
@@ -199,6 +201,8 @@ Avsnitten nedan beskriver hur varje XDM-typ mappar till andra vanliga serialiser
 | [!UICONTROL DateTime] | `timestamp` | `Integer`<br>(Unix millisekunder) | `int64`<br>(Unix millisekunder) |
 | [!UICONTROL Boolean] | `bool` | `Integer`<br>(0/1 binärt) | `bool` |
 | [!UICONTROL Map] | `object` | `map` | `map<key_type, value_type>` |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Definiera XDM-fälttyper i API {#define-fields}
 
