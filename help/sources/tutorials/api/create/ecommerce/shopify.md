@@ -2,23 +2,19 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;Gör en kopia;förminska;e-handel
 solution: Experience Platform
 title: Skapa en anslutning för Shopify-kopplingskälla med API:t för Flow Service
-topic: overview
-type: Tutorial
+topic: översikt
+type: Självstudiekurs
 description: Lär dig hur du ansluter Shopify till Adobe Experience Platform med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: cc23228cb410dc4c70a56c5142be00c2ca1c40d3
 workflow-type: tm+mt
-source-wordcount: '565'
+source-wordcount: '551'
 ht-degree: 1%
 
 ---
 
 
 # Skapa en [!DNL Shopify]-källanslutning med hjälp av API:t [!DNL Flow Service]
-
->[!NOTE]
->
->[!DNL Shopify]-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
