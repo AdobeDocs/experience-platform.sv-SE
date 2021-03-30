@@ -2,13 +2,13 @@
 keywords: Experience Platform;göra poäng i en modell;Data Science Workspace;populära topics;ui;poäng run;scoring results
 solution: Experience Platform
 title: Posta en modell i användargränssnittet för datavetenskapen
-topic: tutorial
-type: Tutorial
+topic: självstudiekurs
+type: Självstudiekurs
 description: 'Du kan göra poängsättningen i Adobe Experience Platform Data Science Workspace genom att mata in indata i en befintlig utbildad modell. Resultat av poängsättningen lagras och kan visas i en angiven utdatamängd som en ny grupp. '
 translation-type: tm+mt
-source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
+source-git-commit: 7feda18351061600b05dc7be8afbbfb9a0fa7ec1
 workflow-type: tm+mt
-source-wordcount: '614'
+source-wordcount: '621'
 ht-degree: 0%
 
 ---
@@ -30,38 +30,70 @@ Den här självstudiekursen kräver en utbildad modell. Om du inte har någon tr
 
 En bedömningsrunda skapas med optimerade konfigurationer från en tidigare slutförd och utvärderad utbildningskurs. Uppsättningen optimala konfigurationer för en modell bestäms vanligtvis genom att man granskar utvärderingsvärden för utbildningskörning.
 
-1. Hitta den bästa kursen för att använda dess konfigurationer för poängsättning. Öppna önskad utbildningskurs genom att klicka på namnet.
+Hitta den bästa kursen för att använda dess konfigurationer för poängsättning. Öppna sedan kursen genom att markera hyperlänken som är kopplad till namnet.
 
-2. Klicka på knappen **[!UICONTROL Score]** längst upp till höger på skärmen på fliken Utbildningskörning **[!UICONTROL Evaluation]**. Detta startar ett nytt **Kör poängsättning**-arbetsflöde.
-   ![](../images/models-recipes/score/training_run_overview.png)
+![Välj utbildningskurs](../images/models-recipes/score/select-run.png)
 
-3. Markera datamängden för indataskal och klicka på **[!UICONTROL Next]**.
-   ![](../images/models-recipes/score/scoring_input.png)
+På fliken **[!UICONTROL Evaluation]** väljer du **[!UICONTROL Score]** längst upp till höger på skärmen. Ett nytt bedömningsarbetsflöde börjar.
 
-4. Välj datauppsättningen för resultaträkning, det här är den dedikerade utdatamängden där poängsättningsresultaten lagras. Bekräfta ditt val och klicka på **[!UICONTROL Next]**.
-   ![](../images/models-recipes/score/scoring_results.png)
+![](../images/models-recipes/score/training_run_overview.png)
 
-5. I det sista steget i arbetsflödet uppmanas du att konfigurera din poängkörning. Dessa konfigurationer används av modellen för poängkörningen.
-Observera att du inte kan ta bort ärvda parametrar som angavs när modellen skapades. Du kan redigera eller återställa icke ärvda parametrar genom att dubbelklicka på värdet eller klicka på återställningsikonen när du håller markören över posten.
-   ![](../images/models-recipes/score/configuration.png)
-Granska och bekräfta poängkonfigurationerna och klicka för  **[!UICONTROL Finish]**  att skapa och köra poängkörningen. Du dirigeras till fliken **[!UICONTROL Scoring Runs]** och den nya poängkörningen visar en status.
-   ![](../images/models-recipes/score/scoring_runs_tab.png)
-I en bedömningsrunda visas någon av följande fyra statusvärden: Väntande, Fullständigt, Misslyckades eller Körs och uppdateras automatiskt. Fortsätt till nästa steg om statusen är antingen Slutförd eller Misslyckad.
+Markera datamängden för indataskal och välj **[!UICONTROL Next]**.
+
+![](../images/models-recipes/score/scoring_input.png)
+
+Välj datauppsättningen för resultaträkning, det här är den dedikerade utdatamängden där poängsättningsresultaten lagras. Bekräfta ditt val och välj **[!UICONTROL Next]**.
+
+![](../images/models-recipes/score/scoring_results.png)
+
+I det sista steget i arbetsflödet uppmanas du att konfigurera din poängkörning. Dessa konfigurationer används av modellen för poängkörningen.
+Observera att du inte kan ta bort ärvda parametrar som angavs när modellerna skapades. Du kan redigera eller återställa icke ärvda parametrar genom att dubbelklicka på värdet eller välja återställningsikonen när du håller markören över posten.
+
+![konfiguration](../images/models-recipes/score/configuration.png)
+
+Granska och bekräfta poängkonfigurationerna och välj **[!UICONTROL Finish]** för att skapa och köra poängkörningen. Du dirigeras till fliken **[!UICONTROL Scoring Runs]** och den nya poängkörningen med statusen **[!UICONTROL Pending]** visas.
+
+![resultatfliken](../images/models-recipes/score/scoring_runs_tab.png)
+
+En bedömningskörning kan visas med någon av följande statusar:
+- Väntande
+- Slutförd
+- Misslyckades
+- Körs
+
+Status uppdateras automatiskt. Fortsätt till nästa steg om statusen är **[!UICONTROL Complete]** eller **[!UICONTROL Failed]**.
 
 ## Visa poängresultat
 
-1. Hitta den utbildningskörning som användes för poängsättningen och klicka på namnet för att visa sidan **[!UICONTROL Evaluation]**.
+Om du vill visa poängresultat börjar du med att välja en utbildningskurs.
 
-2. Klicka på fliken **[!UICONTROL Scoring Runs]** längst upp på sidan där du utvärderar utbildningskörningen för att visa en lista över befintliga poängserier. Klicka på poänglistan för att visa informationen i den högra kolumnen.
-   ![](../images/models-recipes/score/view_details.png)
+![Välj utbildningskurs](../images/models-recipes/score/select-run.png)
 
-3. Om den valda poängkörningen har statusen Slutförd eller Misslyckad, är länken **[!UICONTROL View Activity Logs]** som finns i den högra kolumnen aktiv. Klicka på länken för att visa eller hämta körningsloggarna. Om en poängkörning misslyckades kan körningsloggarna ge användbar information för att fastställa orsaken till felet.
-   ![](../images/models-recipes/score/activity_logs.png)
+Du omdirigeras till sidan **[!UICONTROL Evaluation]** för kurserna. Långt upp på sidan för utvärdering av utbildningskörning väljer du fliken **[!UICONTROL Scoring Runs]** för att visa en lista över befintliga poängsättningar.
 
-4. Klicka på länken **[!UICONTROL Preview Scoring Results Dataset]** i den högra kolumnen. Du kan se en förhandsvisning av utdata från poängkörningen.
-   ![](../images/models-recipes/score/preview_results.png)
+![utvärderingssida](../images/models-recipes/score/view_scoring_runs.png)
 
-5. Klicka på länken **[!UICONTROL Scoring Results Dataset]** som finns i den högra kolumnen för att få en komplett uppsättning poäng.
+Välj sedan en poängkörning för att visa körningsinformationen.
+
+![körningsinformation](../images/models-recipes/score/view_details.png)
+
+Om den valda poängkörningen har statusen Slutförd eller Misslyckad är länken **[!UICONTROL View Activity Logs]** tillgänglig. Om en poängkörning misslyckas kan körningsloggarna ge användbar information för att fastställa orsaken till felet. Om du vill hämta körningsloggarna väljer du **[!UICONTROL View Activity Logs]**.
+
+![Välj visningsloggar](../images/models-recipes/score/view_logs.png)
+
+**[!UICONTROL View activity logs]**-drivrutinen visas. Välj en URL för att automatiskt hämta de associerade loggarna.
+
+![](../images/models-recipes/score/activity_logs.png)
+
+Du kan också visa dina poängresultat genom att välja **[!UICONTROL Preview scoring results dataset]**.
+
+![Välj förhandsgranskningsresultat](../images/models-recipes/score/view_results.png)
+
+En förhandsgranskning av utdatamängden tillhandahålls.
+
+![förhandsgranskningsresultat](../images/models-recipes/score/preview_results.png)
+
+För den fullständiga uppsättningen poängresultat väljer du länken **[!UICONTROL Scoring Results Dataset]** som finns i den högra kolumnen.
 
 ## Nästa steg
 
