@@ -2,23 +2,19 @@
 keywords: Experience Platform;hem;populära ämnen;Salesforce Service Cloud;salesforce service cloud
 solution: Experience Platform
 title: Skapa en Salesforce Service Cloud-källanslutning i användargränssnittet
-topic: overview
-type: Tutorial
+topic: översikt
+type: Självstudiekurs
 description: Lär dig hur du skapar en Salesforce Service Cloud-källanslutning med Adobe Experience Platform-gränssnittet.
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: a0b016e8adc519bc79701f9fd850b6ddf7d46127
 workflow-type: tm+mt
-source-wordcount: '478'
+source-wordcount: '464'
 ht-degree: 1%
 
 ---
 
 
 # Skapa en [!DNL Salesforce Service Cloud]-källanslutning i användargränssnittet
-
->[!NOTE]
->
->[!DNL Salesforce Service Cloud]-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
 Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du skapar en [!DNL Salesforce Service Cloud]-källkoppling (kallas nedan SSC) med användargränssnittet i [!DNL Platform].
 
