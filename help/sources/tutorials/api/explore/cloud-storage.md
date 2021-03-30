@@ -5,10 +5,10 @@ title: Utforska ett högt lagringssystem med API:t för Flow Service
 topic: översikt
 description: I den här självstudien används API:t för Flow Service för att utforska ett molnlagringssystem från tredje part.
 translation-type: tm+mt
-source-git-commit: 60a70352c2e13565fd3e8c44ae68e011a1d443a6
+source-git-commit: 457fc9e1b0c445233f0f574fefd31bc1fc3bafc8
 workflow-type: tm+mt
-source-wordcount: '742'
-ht-degree: 1%
+source-wordcount: '821'
+ht-degree: 0%
 
 ---
 
@@ -101,14 +101,25 @@ Ett lyckat svar returnerar en array med filer och mappar som finns i den efterfr
 ```json
 [
     {
-        "type": "File",
-        "name": "data.csv",
-        "path": "/some/path/data.csv"
+        "type": "file",
+        "name": "account.csv",
+        "path": "/test-connectors/testFolder-fileIngestion/account.csv",
+        "canPreview": true,
+        "canFetchSchema": true
     },
     {
-        "type": "Folder",
-        "name": "foobar",
-        "path": "/some/path/foobar"
+        "type": "file",
+        "name": "profileData.json",
+        "path": "/test-connectors/testFolder-fileIngestion/profileData.json",
+        "canPreview": true,
+        "canFetchSchema": true
+    },
+    {
+        "type": "file",
+        "name": "sampleprofile--3.parquet",
+        "path": "/test-connectors/testFolder-fileIngestion/sampleprofile--3.parquet",
+        "canPreview": true,
+        "canFetchSchema": true
     }
 ]
 ```
@@ -117,14 +128,14 @@ Ett lyckat svar returnerar en array med filer och mappar som finns i den efterfr
 
 Om du vill inspektera datafilens struktur från ditt molnlagringsutrymme utför du en GET-förfrågan och anger filens sökväg och typ som en frågeparameter.
 
-Du kan inspektera strukturen för en CSV- eller TSV-fil genom att ange en anpassad avgränsare som en frågepperimeter. Ett teckenvärde är en tillåten kolumnavgränsare. Om inget anges används ett komma `(,)` som standardvärde.
+Du kan inspektera datafilens struktur från molnlagringskällan genom att utföra en GET-begäran och samtidigt ange filens sökväg och typ. Du kan också inspektera olika filtyper, till exempel CSV, TSV eller komprimerad JSON och avgränsade filer, genom att ange deras filtyper som en del av frågeparametrarna.
 
 **API-format**
 
 ```http
-GET /connections/{CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&fileType={FILE_TYPE}
-GET /connections/{CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&fileType={FILE_TYPE}&preview=true&fileType=delimited&columnDelimiter=;
-GET /connections/{CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&fileType={FILE_TYPE}&preview=true&fileType=delimited&columnDelimiter=\t
+GET /connections/{CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&fileType={FILE_TYPE}&{QUERY_PARAMS}&preview=true
+GET /connections/{CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&preview=true&fileType=delimited&columnDelimiter=\t
+GET /connections/{CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&preview=true&fileType=delimited&compressionType=gzip;
 ```
 
 | Parameter | Beskrivning |
@@ -132,13 +143,13 @@ GET /connections/{CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&file
 | `{CONNECTION_ID}` | Anslutnings-ID för din molnlagringskälla. |
 | `{FILE_PATH}` | Sökvägen till filen som du vill inspektera. |
 | `{FILE_TYPE}` | Filtypen. Filtyper som stöds:<ul><li>DELIMITED</code>: Avgränsaravgränsat värde. DSV-filer måste vara kommaavgränsade.</li><li>JSON</code>: JavaScript-objektnotation. JSON-filer måste vara XDM-kompatibla</li><li>PARQUET</code>: Apache Parquet. Parquet-filer måste vara XDM-kompatibla.</li></ul> |
-| `columnDelimiter` | Värdet för ett tecken som du angav som en kolumnavgränsare för att inspektera CSV- eller TSV-filer. Om parametern inte anges används standardvärdet som komma `(,)`. |
+| `{QUERY_PARAMS}` | Valfria frågeparametrar som kan användas för att filtrera resultat. Mer information finns i avsnittet [frågeparametrar](#query). |
 
 **Begäran**
 
 ```shell
 curl -X GET \
-    'http://platform.adobe.io/data/foundation/flowservice/connections/{CONNECTION_ID}/explore?objectType=file&object=/some/path/data.csv&fileType=DELIMITED' \
+    'http://platform.adobe.io/data/foundation/flowservice/connections/{CONNECTION_ID}/explore?objectType=file&object=/aep-bootcamp/Adobe%20Pets%20Customer%2020190801%20EXP.json&fileType=json&preview=true' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -173,6 +184,15 @@ Ett lyckat svar returnerar strukturen för den efterfrågade filen inklusive tab
     }
 ]
 ```
+
+## Använda frågeparametrar {#query}
+
+[[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) stöder användning av frågeparametrar för att förhandsgranska och inspektera olika filtyper.
+
+| Parameter | Beskrivning |
+| --------- | ----------- |
+| `columnDelimiter` | Värdet för ett tecken som du angav som en kolumnavgränsare för att inspektera CSV- eller TSV-filer. Om parametern inte anges används standardvärdet som komma `(,)`. |
+| `compressionType` | En obligatorisk frågeparameter för förhandsgranskning av en komprimerad avgränsad fil eller JSON-fil. Komprimerade filer som stöds är: <ul><li>`bzip2`</li><li>`gzip`</li><li>`deflate`</li><li>`zipDeflate`</li><li>`tarGzip`</li><li>`tar`</li></ul> |
 
 ## Nästa steg
 
