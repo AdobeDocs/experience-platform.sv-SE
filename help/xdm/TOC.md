@@ -6,10 +6,10 @@ breadcrumb-title: XDM-guide (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och mixins för att standardisera upplevelsedata.
 feature: Scheman
 translation-type: tm+mt
-source-git-commit: b99af98c99a75863ed8e8408841d93aa17d61ae0
+source-git-commit: 27cdb65c846293d7edce340e1cb5a360c0e40604
 workflow-type: tm+mt
-source-wordcount: '259'
-ht-degree: 6%
+source-wordcount: '236'
+ht-degree: 7%
 
 ---
 
@@ -22,12 +22,6 @@ ht-degree: 6%
    * [Bästa tillvägagångssätt för datamodellering](schema/best-practices.md)
    * [Begränsningar för XDM-fälttyp](schema/field-constraints.md)
    * [XDM-fältordlista](schema/field-dictionary.md)
-   * Branschdatamodeller {#industries}
-      * [Översikt](./schema/industries/overview.md)
-      * [Detaljhandelsdatamodell - ERD](./schema/industries/retail.md)
-      * [Datamodell för finansiella tjänster - ERD](./schema/industries/financial.md)
-      * [Datamodell för rese- och turismdata ERD](./schema/industries/travel-hospitality.md)
-      * [Datamodell för telekommunikation - ERD](./schema/industries/telecom.md)
 * Klasser {#classes}
    * [Individuell XDM-profil](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
@@ -71,7 +65,7 @@ ht-degree: 6%
    * [Prenumeration](./data-types/subscription.md)
    * [Interaktion via webben](./data-types/web-interactions.md)
    * [Information om webbsidor](./data-types/webpage-details.md)
-* [!UICONTROL Schemas] UI  {#ui}
+* [!UICONTROL Schemas] UI {#ui}
    * [Översikt](./ui/overview.md)
    * [Utforska XDM-resurser](./ui/explore.md)
    * Skapa och redigera resurser {#resources}
