@@ -2,23 +2,19 @@
 keywords: Experience Platform;hem;populära ämnen;PostgreSQL;postgresql;PSQL;psql
 solution: Experience Platform
 title: Skapa en PostSQL-källanslutning med API:t för Flow Service
-topic: overview
-type: Tutorial
+topic: översikt
+type: Självstudiekurs
 description: Lär dig hur du ansluter Adobe Experience Platform till PostgreSQL med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 8851e11e956b393e56714d4d48870b7f68947c18
 workflow-type: tm+mt
-source-wordcount: '576'
+source-wordcount: '562'
 ht-degree: 1%
 
 ---
 
 
 # Skapa en [!DNL PostgreSQL]-källanslutning med hjälp av API:t [!DNL Flow Service]
-
->[!NOTE]
->
->[!DNL PostgreSQL]-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
@@ -76,7 +72,7 @@ POST /connections
 
 **Begäran**
 
-Om du vill skapa en PSQL-anslutning måste dess unika anslutningsspec-ID anges som en del av POSTEN. Anslutningens spec-ID för PSQL är `74a1c565-4e59-48d7-9d67-7c03b8a13137`.
+För att en PSQL-anslutning ska kunna skapas måste dess unika anslutningsspec-ID anges som en del av POSTEN. Anslutningens spec-ID för PSQL är `74a1c565-4e59-48d7-9d67-7c03b8a13137`.
 
 ```shell
 curl -X POST \
