@@ -6,19 +6,15 @@ topic: översikt
 type: Självstudiekurs
 description: Lär dig hur du ansluter Adobe Experience Platform till en SFTP-server (Secure File Transfer Protocol) med API:t för Flow Service.
 translation-type: tm+mt
-source-git-commit: b39426d768a0c6fdfa742ec74e4e0bed9c432269
+source-git-commit: 0e11acc4a599d360cb3048445003f61848ad23d3
 workflow-type: tm+mt
-source-wordcount: '877'
-ht-degree: 1%
+source-wordcount: '852'
+ht-degree: 0%
 
 ---
 
 
 # Skapa en SFTP-källanslutning med hjälp av API:t [!DNL Flow Service]
-
->[!NOTE]
->
->SFTP-kopplingen är i betaversion. Funktionerna och dokumentationen kan komma att ändras. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
 I den här självstudien används API:t [!DNL Flow Service] för att vägleda dig genom stegen för att ansluta Experience Platform till en SFTP-server (Secure File Transfer Protocol).
 
