@@ -2,22 +2,18 @@
 keywords: Experience Platform;hem;populära ämnen;Salesforce Service Cloud;salesforce service cloud
 solution: Experience Platform
 title: Översikt över Salesforce Service Cloud Source Connector
-topic: overview
+topic: översikt
 description: Lär dig hur du ansluter Salesforce Service Cloud till Adobe Experience Platform med API:er eller användargränssnittet.
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: a0b016e8adc519bc79701f9fd850b6ddf7d46127
 workflow-type: tm+mt
-source-wordcount: '245'
+source-wordcount: '229'
 ht-degree: 0%
 
 ---
 
 
-# (Beta) [!DNL Salesforce Service Cloud]-koppling
-
->[!NOTE]
->
->[!DNL Salesforce Service Cloud]-kopplingen är i betaversion. Se [Källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
+# [!DNL Salesforce Service Cloud] koppling
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
