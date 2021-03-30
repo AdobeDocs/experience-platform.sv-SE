@@ -2,22 +2,18 @@
 keywords: Experience Platform;hem;populära ämnen;shopify;Shopify;
 solution: Experience Platform
 title: Förminska översikt över källkoppling
-topic: overview
+topic: översikt
 description: Lär dig hur du ansluter Shopify till Adobe Experience Platform med API:er eller användargränssnittet.
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: cc23228cb410dc4c70a56c5142be00c2ca1c40d3
 workflow-type: tm+mt
-source-wordcount: '172'
+source-wordcount: '156'
 ht-degree: 0%
 
 ---
 
 
-# (Beta) [!DNL Shopify]-koppling
-
->[!NOTE]
->
->[!DNL Shopify]-kopplingen är i betaversion. Mer information om hur du använder betatecknade anslutningar finns i [källöversikten](../../home.md#terms-and-conditions).
+# [!DNL Shopify] koppling
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
