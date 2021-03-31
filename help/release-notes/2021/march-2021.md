@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: March 31, 2021
 author: ens72741
 translation-type: tm+mt
-source-git-commit: 523e09b9af19b1deb01a69be0673b9a17084b7e4
+source-git-commit: 58382528cc787e8d2005c8c322904266880ad0b9
 workflow-type: tm+mt
-source-wordcount: '554'
+source-wordcount: '550'
 ht-degree: 2%
 
 ---
@@ -43,7 +43,7 @@ För att tillgodose detta behov tillhandahåller Experience Platform sandlådor 
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| (Beta) Flera produktionssandlådor | Nu kan du skapa och hantera flera produktionssandlådor i din IMS-organisation och dedikera specifika produktionssandlådor till olika affärsområden, varumärken, projekt eller regioner. Mer information finns i självstudiekurserna för att skapa en produktionssandlåda [i gränssnittet](../../sandboxes/ui/user-guide.md) eller [med API](../../sandboxes/api/create-sandbox.md). |
+| (Beta) Flera produktionssandlådor | Nu kan du skapa och hantera flera produktionssandlådor i din IMS-organisation och dedikera specifika produktionssandlådor till olika affärsområden, varumärken, projekt eller regioner. Självstudiekurserna för att skapa en produktionssandlåda [i gränssnittet](../../sandboxes/ui/user-guide.md) eller [med API](../../sandboxes/api/create-sandbox.md) innehåller mer information. |
 
 Mer information om sandlådor finns i [översikten över sandlådor](../../sandboxes/home.md).
 
