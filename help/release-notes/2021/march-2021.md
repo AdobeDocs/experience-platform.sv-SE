@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: March 31, 2021
 author: ens72741
 translation-type: tm+mt
-source-git-commit: 58382528cc787e8d2005c8c322904266880ad0b9
+source-git-commit: 9b4395d423bbc62c8a1a9427ea91248a0f693794
 workflow-type: tm+mt
-source-wordcount: '550'
+source-wordcount: '422'
 ht-degree: 2%
 
 ---
@@ -20,7 +20,6 @@ ht-degree: 2%
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [[!DNL Data Prep]](#data-prep)
-- [[!DNL Sandboxes]](#sandboxes)
 - [[!DNL Segmentation Service]](#segmentation)
 - [[!DNL Sources]](#sources)
 
@@ -34,18 +33,6 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 | `to_array` funktion | Uppdaterad funktionalitet som stöder objekt som parametrar. |
 
 Mer information finns i [[!DNL Data Prep] översikten](../../data-prep/home.md).
-
-## [!DNL Sandboxes] {#sandboxes}
-
-Adobe Experience Platform är utvecklat för att berika applikationer för digitala upplevelser på global nivå. Företagen kör ofta flera program för digitala upplevelser parallellt och måste ta hänsyn till utveckling, testning och driftsättning av dessa applikationer samtidigt som man ser till att de uppfyller gällande krav.
-
-För att tillgodose detta behov tillhandahåller Experience Platform sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
-
-| Funktion | Beskrivning |
-| ------- | ----------- |
-| (Beta) Flera produktionssandlådor | Nu kan du skapa och hantera flera produktionssandlådor i din IMS-organisation och dedikera specifika produktionssandlådor till olika affärsområden, varumärken, projekt eller regioner. Självstudiekurserna för att skapa en produktionssandlåda [i gränssnittet](../../sandboxes/ui/user-guide.md) eller [med API](../../sandboxes/api/create-sandbox.md) innehåller mer information. |
-
-Mer information om sandlådor finns i [översikten över sandlådor](../../sandboxes/home.md).
 
 ## Segmenteringstjänst {#segmentation}
 
