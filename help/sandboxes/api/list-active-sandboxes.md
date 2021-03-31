@@ -5,7 +5,7 @@ title: Visa aktiva sandlådor för den aktuella användaren i API:t
 topic: utvecklarhandbok
 description: Du kan lista de sandlådor som är aktiva för den aktuella användaren genom att göra en GET-begäran till rotslutpunkten.
 translation-type: tm+mt
-source-git-commit: ca3de18c093d7b692b582045afea4401d7133b9b
+source-git-commit: 62ce5ac92d03a6e85589fc92e8d953f7fc1d8f31
 workflow-type: tm+mt
 source-wordcount: '363'
 ht-degree: 0%
@@ -39,6 +39,7 @@ curl -X GET \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
