@@ -5,9 +5,9 @@ title: 'Utvärdera händelser i nära realtid med strömmande segmentering '
 topic: utvecklarhandbok
 description: Det här dokumentet innehåller exempel på hur du använder direktuppspelningssegmentering med Adobe Experience Platform Segmentation Service API.
 translation-type: tm+mt
-source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
+source-git-commit: bb7edcaccca87918c56d00e092e4b7154d7c5d6e
 workflow-type: tm+mt
-source-wordcount: '1341'
+source-wordcount: '1342'
 ht-degree: 0%
 
 ---
@@ -403,6 +403,6 @@ Samma åtgärd kan användas för att inaktivera ett schema genom att ersätta v
 
 ## Nästa steg
 
-Nu när du har aktiverat både nya och befintliga segment för direktuppspelningssegmentering och aktiverat schemalagd segmentering för att utveckla en baslinje och utföra återkommande utvärderingar, kan du börja skapa segment för din organisation.
+Nu när du har aktiverat både nya och befintliga segment för direktuppspelningssegmentering och aktiverat schemalagd segmentering för att utveckla en baslinje och utföra återkommande utvärderingar, kan du börja skapa direktuppspelningsaktiverade segment för din organisation.
 
 Om du vill veta hur du utför liknande åtgärder och arbetar med segment med Adobe Experience Platform användargränssnitt kan du läsa [användarhandboken för Segment Builder](../ui/segment-builder.md).
