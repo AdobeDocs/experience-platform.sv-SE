@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;användarhandbok för sandlådan;sandlådeguide
 solution: Experience Platform
 title: Användargränssnittshandbok för sandlådan
-topic: user guide
+topic: användarhandbok
 description: Det här dokumentet innehåller steg om hur du utför olika åtgärder relaterade till sandlådor i Adobe Experience Platform användargränssnitt.
 translation-type: tm+mt
-source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
+source-git-commit: ee2fb54ba59f22a1ace56a6afd78277baba5271e
 workflow-type: tm+mt
-source-wordcount: '608'
+source-wordcount: '602'
 ht-degree: 0%
 
 ---
@@ -45,65 +45,67 @@ Du kan navigera i listan med tillgängliga sandlådor med hjälp av sökfunktion
 
 ## Skapa en ny sandlåda
 
+>[!NOTE]
+>
+>Funktionen Flera produktionssandlådor är i betaversion.
+
 Använd följande video för en snabb översikt över hur du använder sandlådor i Experience Platform.
 
 >[!VIDEO](https://video.tv.adobe.com/v/29838/?quality=12&learn=on)
 
-Om du vill skapa en ny sandlåda i användargränssnittet väljer du knappen **[!UICONTROL Create Sandbox]** längst upp till höger på skärmen.
+Om du vill skapa en ny sandlåda väljer du knappen **[!UICONTROL Create Sandbox]** längst upp till höger på skärmen.
 
 ![](../images/ui/create-sandbox.png)
 
-Dialogrutan **[!UICONTROL Create Sandbox]** visas och du uppmanas att ange en visningsrubrik och ett namn för sandlådan. **visningsrubriken** är avsedd att vara läsbar för människor och ska vara tillräckligt beskrivande för att vara lätt att identifiera. Sandlådan **[!UICONTROL Name]** är en helgemen identifierare som ska användas i API-anrop och ska därför vara unik och koncis. Sandlådan **[!UICONTROL Name]** får bara bestå av alfanumeriska tecken och bindestreck **(-)**, den måste börja med en bokstav och har högst 256 tecken.
+Dialogrutan **[!UICONTROL Create Sandbox]** visas där du uppmanas att ange typ, titel och namn för sandlådan. Om du skapar en utvecklingssandlåda väljer du **[!UICONTROL Development]** i listrutepanelen som visas. Om du skapar en produktionssandlåda väljer du **[!UICONTROL Production]**.
+
+Titeln ska vara läsbar för människor och ska vara tillräckligt beskrivande för att vara lätt att identifiera. Sandlådans namn är en helgemen identifierare som ska användas i API-anrop och ska därför vara unikt och koncist. Namnet på sandlådan får bara bestå av alfanumeriska tecken och bindestreck (`-`), måste börja med en bokstav och får innehålla högst 256 tecken.
 
 När du är klar väljer du **[!UICONTROL Create]**.
 
 ![](../images/ui/create-dialog.png)
 
->[!NOTE]
->
->Eftersom du endast är begränsad till att skapa icke-produktionssandlådtyper är alternativet **[!UICONTROL type]** låst vid &quot;Ej produktion&quot; och kan inte ändras.
-
 När du har skapat sandlådan uppdaterar du sidan och den nya sandlådan visas på kontrollpanelen **[!UICONTROL Sandboxes]** med statusen [!UICONTROL Creating]. Det tar ca 15 minuter att etablera nya sandlådor av systemet, varefter deras status ändras till [!UICONTROL Active].
-
-![](../images/ui/creating.png)
 
 ## Återställ en sandlåda
 
 >[!NOTE]
 >
->Den här funktionen är bara tillgänglig för icke-produktionssandlådor. Det går inte att återställa produktionssandlådor.
+>Du kan återställa alla produktions- eller utvecklingssandlådor i organisationen, förutom standardproduktionssandlådan.
 
-Om du återställer en icke-produktionssandlåda tas alla resurser som är associerade med den sandlådan (scheman, datauppsättningar o.s.v.) bort, samtidigt som sandlådans namn och associerade behörigheter behålls. Den här&quot;rena&quot; sandlådan är fortfarande tillgänglig under samma namn för användare som har åtkomst till den.
+Om du återställer en produktions- eller utvecklingssandlåda tas alla resurser som är kopplade till den sandlådan (scheman, datauppsättningar o.s.v.) bort, samtidigt som sandlådans namn och associerade behörigheter behålls. Den här&quot;rena&quot; sandlådan är fortfarande tillgänglig under samma namn för användare som har åtkomst till den.
 
-Om du vill återställa en sandlåda i användargränssnittet väljer du **[!UICONTROL Sandboxes]** i den vänstra navigeringen och markerar sedan den sandlåda som du vill återställa. Välj **[!UICONTROL Reset Sandbox]** i dialogrutan som visas till höger på skärmen.
+Markera den sandlåda som du vill återställa i listan över sandlådor. Välj **[!UICONTROL Sandbox reset]** i den högra navigeringspanel som visas.
 
 ![](../images/ui/reset-sandbox.png)
 
-En dialogruta visas där du uppmanas att bekräfta ditt val. Välj **[!UICONTROL Reset]** om du vill fortsätta.
+En dialogruta visas där du uppmanas att bekräfta ditt val. Välj **[!UICONTROL Continue]** för att fortsätta.
 
 ![](../images/ui/reset-confirm.png)
 
-Ett bekräftelsemeddelande visas och sandlådans tillstånd ändras till **[!UICONTROL Resetting]**. När det har etablerats av systemet uppdateras dess tillstånd till **&quot;[!UICONTROL Active]&quot;** eller **&quot;[!UICONTROL Failed]&quot;**.
+I det sista bekräftelsefönstret anger du namnet på sandlådan i dialogrutan och väljer **[!UICONTROL Reset]**
 
-![](../images/ui/resetting.png)
+![](../images/ui/reset-final-confirm.png)
 
 ## Ta bort en sandlåda
 
 >[!NOTE]
 >
->Den här funktionen är bara tillgänglig för icke-produktionssandlådor. Det går inte att ta bort produktionssandlådor.
+>Du kan ta bort alla produktions- eller utvecklingssandlådor i organisationen, förutom standardproduktionssandlådan.
 
-Om du tar bort en icke-produktionssandlåda permanent tas alla resurser som är associerade med den sandlådan bort, inklusive behörigheter.
+Om du tar bort en produktions- eller utvecklingssandlåda permanent tas alla resurser som är associerade med den sandlådan bort, inklusive behörigheter.
 
-Om du vill ta bort en sandlåda i användargränssnittet väljer du **[!UICONTROL Sandboxes]** i den vänstra navigeringen och markerar sedan den sandlåda som du vill ta bort. Välj **[!UICONTROL Delete Sandbox]** i dialogrutan som visas till höger på skärmen.
+Markera den sandlåda som du vill ta bort i listan över sandlådor. Välj **[!UICONTROL Delete]** i den högra navigeringspanel som visas.
 
 ![](../images/ui/delete-sandbox.png)
 
-En dialogruta visas där du uppmanas att bekräfta ditt val. Välj **[!UICONTROL Delete]** om du vill fortsätta.
+En dialogruta visas där du uppmanas att bekräfta ditt val. Välj **[!UICONTROL Continue]** för att fortsätta.
 
 ![](../images/ui/delete-confirm.png)
 
-Ett bekräftelsemeddelande visas och sandlådan tas bort från arbetsytan **[!UICONTROL Sandboxes]**.
+I det sista bekräftelsefönstret anger du namnet på sandlådan i dialogrutan och väljer **[!UICONTROL Delete]**
+
+![](../images/ui/delete-final-confirm.png)
 
 ## Nästa steg
 
