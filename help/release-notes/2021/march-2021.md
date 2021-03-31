@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: March 31, 2021
 author: ens72741
 translation-type: tm+mt
-source-git-commit: 0192c951a288cc1e0891a12ba9eff32aea120518
+source-git-commit: 523e09b9af19b1deb01a69be0673b9a17084b7e4
 workflow-type: tm+mt
-source-wordcount: '436'
+source-wordcount: '554'
 ht-degree: 2%
 
 ---
@@ -20,6 +20,7 @@ ht-degree: 2%
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [[!DNL Data Prep]](#data-prep)
+- [[!DNL Sandboxes]](#sandboxes)
 - [[!DNL Segmentation Service]](#segmentation)
 - [[!DNL Sources]](#sources)
 
@@ -33,6 +34,18 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 | `to_array` funktion | Uppdaterad funktionalitet som stöder objekt som parametrar. |
 
 Mer information finns i [[!DNL Data Prep] översikten](../../data-prep/home.md).
+
+## [!DNL Sandboxes] {#sandboxes}
+
+Adobe Experience Platform är utvecklat för att berika applikationer för digitala upplevelser på global nivå. Företagen kör ofta flera program för digitala upplevelser parallellt och måste ta hänsyn till utveckling, testning och driftsättning av dessa applikationer samtidigt som man ser till att de uppfyller gällande krav.
+
+För att tillgodose detta behov tillhandahåller Experience Platform sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| (Beta) Flera produktionssandlådor | Nu kan du skapa och hantera flera produktionssandlådor i din IMS-organisation och dedikera specifika produktionssandlådor till olika affärsområden, varumärken, projekt eller regioner. Mer information finns i självstudiekurserna för att skapa en produktionssandlåda [i gränssnittet](../../sandboxes/ui/user-guide.md) eller [med API](../../sandboxes/api/create-sandbox.md). |
+
+Mer information om sandlådor finns i [översikten över sandlådor](../../sandboxes/home.md).
 
 ## Segmenteringstjänst {#segmentation}
 
@@ -54,8 +67,6 @@ Mer information om [!DNL Segmentation Service] finns i [Segmenteringsöversikt](
 Adobe Experience Platform kan importera data från externa källor och samtidigt strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
 Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
-
-Följande uppdateringar av källor finns i mars 2021-utgåvan av Experience Platform:
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
