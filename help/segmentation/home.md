@@ -5,9 +5,9 @@ title: Översikt över segmenteringstjänsten
 topic: översikt
 description: Läs om Adobe Experience Platform segmenteringstjänst och vilken roll den spelar i plattformens ekosystem.
 translation-type: tm+mt
-source-git-commit: 7eadb14dc71792174dfd750775148763f55834dd
+source-git-commit: 738256021fb583e7dc14fd33f5df193813a6e0bb
 workflow-type: tm+mt
-source-wordcount: '1449'
+source-wordcount: '1499'
 ht-degree: 0%
 
 ---
@@ -58,6 +58,8 @@ Läs [dokumentationen för direktuppspelningssegmentering](./api/streaming-segme
 ### Gruppsegmentering
 
 Som ett alternativ till en pågående dataurvalsprocess flyttar gruppsegmentering alla profildata samtidigt genom segmentdefinitioner för att skapa motsvarande målgrupper. När segmentet har skapats sparas det och lagras så att du kan exportera det för användning.
+
+Segment som utvärderas med batchsegmentering utvärderas var 24:e timme. För befintliga segment håller inkrementell segmentering dock segment utvärderade med batchsegmentering som är fräsch i upp till en timme. Alla nya eller nyligen ändrade segment måste vänta tills nästa fullständiga gruppsegmenteringsjobb har körts för att kunna dra nytta av inkrementell segmentering.
 
 Mer information om hur du utvärderar segment finns i [självstudiekursen för segmentutvärdering](./tutorials/evaluate-a-segment.md).
 
@@ -111,7 +113,7 @@ Dessa avancerade funktioner beskrivs närmare i följande avsnitt.
 
 ## Sekventiell segmentering {#sequential}
 
-En vanlig användarresa är sekventiell till sin natur. Med Adobe Experience Platform kan ni definiera en ordnad serie segment för att återspegla resan och därigenom fånga upp händelsesekvenser när de inträffar. Du kan ordna händelser i önskad ordning med hjälp av tidslinjen för visuella händelser i [!DNL Segment Builder].
+En vanlig användarresa är sekventiell till sin natur. Med Adobe Experience Platform kan ni definiera en ordnad serie segment för att återspegla resan och därmed fånga upp sekvenser av händelser när de inträffar. Du kan ordna händelser i önskad ordning med hjälp av tidslinjen för visuella händelser i [!DNL Segment Builder].
 
 Ett exempel på en kundresa som skulle kräva sekventiell segmentering är produktvyn > produkttillägg > utcheckning > Inget inköp.
 
@@ -137,7 +139,7 @@ Genom att tilldela en variabel till inköpsattributet förenklar ditt dynamiska 
 
 ## Segmentering av flera enheter {#multi-entity}
 
-Med den avancerade segmenteringsfunktionen för flera enheter kan du utöka [!DNL Real-time Customer Profile]-data med ytterligare data baserat på produkter, butiker eller andra icke-personella enheter, även kallade dimensionsenheter. Därför kan [!DNL Segmentation Service] få åtkomst till ytterligare fält under segmentdefinitionen som om de vore inbyggda i [!DNL Profile]-datalagret. Multientitetssegmentering ger flexibilitet när det gäller att identifiera målgrupper baserat på data som är relevanta för era unika affärsbehov. Mer information, inklusive användningsexempel och arbetsflöden, finns i [segmenteringsguiden för flera enheter](multi-entity-segmentation.md).
+Med den avancerade segmenteringsfunktionen för flera enheter kan du utöka [!DNL Real-time Customer Profile]-data med ytterligare data baserade på produkter, butiker eller andra icke-personella enheter, även kallade&quot;dimensionsenheter&quot;. Därför kan [!DNL Segmentation Service] få åtkomst till ytterligare fält under segmentdefinitionen som om de vore inbyggda i [!DNL Profile]-datalagret. Multientitetssegmentering ger flexibilitet när det gäller att identifiera målgrupper baserat på data som är relevanta för era unika affärsbehov. Mer information, inklusive användningsexempel och arbetsflöden, finns i [segmenteringsguiden för flera enheter](multi-entity-segmentation.md).
 
 ## [!DNL Segmentation Service] datatyper
 
