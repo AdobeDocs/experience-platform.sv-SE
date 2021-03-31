@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;ta bort sandlåda
 solution: Experience Platform
 title: Ta bort en sandlåda i API:t
-topic: developer guide
+topic: utvecklarhandbok
 description: Du kan ta bort en sandlåda genom att göra en DELETE-begäran som innehåller sandlådans namn i sökvägen för begäran.
 translation-type: tm+mt
-source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
+source-git-commit: e7a80dbfdd2d59e4997f6e227b5c2cf336e5a0f6
 workflow-type: tm+mt
-source-wordcount: '116'
+source-wordcount: '118'
 ht-degree: 0%
 
 ---
@@ -41,7 +41,6 @@ curl -X DELETE \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **Svar**
