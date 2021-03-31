@@ -5,9 +5,9 @@ title: Skapa en sandlåda i API:t
 topic: utvecklarhandbok
 description: Du kan skapa en ny sandlåda genom att göra en POST-förfrågan till slutpunkten "/sandbox".
 translation-type: tm+mt
-source-git-commit: ee2fb54ba59f22a1ace56a6afd78277baba5271e
+source-git-commit: 62ce5ac92d03a6e85589fc92e8d953f7fc1d8f31
 workflow-type: tm+mt
-source-wordcount: '306'
+source-wordcount: '166'
 ht-degree: 0%
 
 ---
@@ -15,11 +15,7 @@ ht-degree: 0%
 
 # Skapa en sandlåda i API:t
 
-Du kan skapa en utvecklings- eller produktionssandlåda genom att göra en POST-förfrågan till `/sandboxes`-slutpunkten.
-
-## Skapa en utvecklingssandlåda
-
-Om du vill skapa en utvecklingssandlåda gör du en POST till `/sandboxes`-slutpunkten och anger värdet `development` för egenskapen `type`.
+Du kan skapa en ny sandlåda genom att göra en POST-förfrågan till `/sandboxes`-slutpunkten.
 
 **API-format**
 
@@ -37,6 +33,7 @@ curl -X POST \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
     "name": "dev-3",
@@ -47,9 +44,9 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `name` | Den identifierare som ska användas för att komma åt sandlådan i framtida begäranden. Detta värde måste vara unikt och det bästa sättet är att göra det så beskrivande som möjligt. Värdet får inte innehålla blanksteg eller specialtecken. |
+| `name` | Den identifierare som ska användas för att komma åt sandlådan i framtida begäranden. Detta värde måste vara unikt och det bästa sättet är att göra det så beskrivande som möjligt. Får inte innehålla blanksteg eller versala bokstäver. |
 | `title` | Ett läsbart namn som används för visning i användargränssnittet för plattformen. |
-| `type` | Den typ av sandlåda som ska skapas. Värdet för egenskapen `type` kan vara antingen utveckling eller produktion. |
+| `type` | Den typ av sandlåda som ska skapas. För närvarande kan endast sandlådor av typen&quot;utveckling&quot; skapas av en organisation. |
 
 **Svar**
 
@@ -65,54 +62,6 @@ Ett lyckat svar returnerar informationen om den nyligen skapade sandlådan, vilk
 }
 ```
 
-## Skapa en produktionssandlåda
-
 >[!NOTE]
 >
->Funktionen Flera produktionssandlådor är i betaversion.
-
-Om du vill skapa en produktionssandlåda gör du en POST till `/sandboxes`-slutpunkten och anger värdet `production` för egenskapen `type`.
-
-**API-format**
-
-```http
-POST /sandboxes
-```
-
-**Begäran**
-
-Följande begäran skapar en ny produktionssandlåda med namnet&quot;test-prod-sandbox&quot;.
-
-```shell
-curl -X POST \
-  https://platform.adobe.io/data/foundation/sandbox-management/sandboxes \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "name": "test-prod-sandbox",
-    "title": "Test Production Sandbox",
-    "type": "production"
-}'
-```
-
-| Egenskap | Beskrivning |
-| --- | --- |
-| `name` | Den identifierare som ska användas för att komma åt sandlådan i framtida begäranden. Detta värde måste vara unikt och det bästa sättet är att göra det så beskrivande som möjligt. Värdet får inte innehålla blanksteg eller specialtecken. |
-| `title` | Ett läsbart namn som används för visning i användargränssnittet för plattformen. |
-| `type` | Den typ av sandlåda som ska skapas. Värdet för egenskapen `type` kan vara antingen utveckling eller produktion. |
-
-**Svar**
-
-Ett lyckat svar returnerar informationen om den nyligen skapade sandlådan, vilket visar att `state` är &quot;creating&quot;.
-
-```json
-{
-    "name": "test-production-sandbox",
-    "title": "Test Production Sandbox",
-    "state": "creating",
-    "type": "production",
-    "region": "VA7"
-}
-```
+>Det tar cirka 15 minuter att tilldela sandlådor av systemet, varefter deras `state` blir&quot;aktiva&quot; eller&quot;misslyckades&quot;.
