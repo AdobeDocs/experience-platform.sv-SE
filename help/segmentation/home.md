@@ -2,12 +2,12 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;segmentering;segmentering;segmenttjänst;segment;segment;segment;segment;segment
 solution: Experience Platform
 title: Översikt över segmenteringstjänsten
-topic: overview
+topic: översikt
 description: Läs om Adobe Experience Platform segmenteringstjänst och vilken roll den spelar i plattformens ekosystem.
 translation-type: tm+mt
-source-git-commit: c0c42f872666323bfb3bdbdf5fb02475d3b5bc79
+source-git-commit: 7eadb14dc71792174dfd750775148763f55834dd
 workflow-type: tm+mt
-source-wordcount: '1407'
+source-wordcount: '1449'
 ht-degree: 0%
 
 ---
@@ -60,6 +60,12 @@ Läs [dokumentationen för direktuppspelningssegmentering](./api/streaming-segme
 Som ett alternativ till en pågående dataurvalsprocess flyttar gruppsegmentering alla profildata samtidigt genom segmentdefinitioner för att skapa motsvarande målgrupper. När segmentet har skapats sparas det och lagras så att du kan exportera det för användning.
 
 Mer information om hur du utvärderar segment finns i [självstudiekursen för segmentutvärdering](./tutorials/evaluate-a-segment.md).
+
+### Kantsegmentering
+
+Kantsegmentering är möjligheten att utvärdera segment i plattformen direkt, vilket möjliggör användning av samma sida och nästa sida.
+
+Läs antingen [API-dokumentationen](./api/edge-segmentation.md) eller [gränssnittsdokumentationen](./ui/edge-segmentation.md) om du vill veta mer om kantsegmentering.
 
 ## Få tillgång till segmenteringsresultat
 
