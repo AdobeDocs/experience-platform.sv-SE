@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: February 24, 2021
 author: ens70167
 translation-type: tm+mt
-source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
+source-git-commit: 398e55f442a2c8ecab0c3d9315fbdd5c02946e45
 workflow-type: tm+mt
 source-wordcount: '1136'
 ht-degree: 2%
@@ -75,7 +75,7 @@ Mer allmän information om dataflöden finns i [översikten över dataflöden](.
 
 | Destination | Beskrivning |
 | ----------- | ----------- |
-| [[!DNL LinkedIn Matched Audiences]](destinations/catalog/social/linkedin.md) | Med [!DNL LinkedIn Matched Audiences]-anslutningen kan du aktivera målgrupper på den sociala plattformen [!DNL LinkedIn]. |
+| [[!DNL LinkedIn Matched Audiences]](../../destinations/catalog/social/linkedin.md) | Med [!DNL LinkedIn Matched Audiences]-anslutningen kan du aktivera målgrupper på den sociala plattformen [!DNL LinkedIn]. |
 
 Mer allmän information om destinationer finns i [målöversikten](../../destinations/home.md).
 
