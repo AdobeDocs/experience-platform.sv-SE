@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;map csv;map csv file;map csv file to xdm;map csv to xdm;ui guide;mapper;mappning;data prep;data preparing;preparing data;
 solution: Experience Platform
 title: Dataförhandsgranskning
-topic: overview
+topic: översikt
 description: I det här dokumentet introduceras Data Prep i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 37c1c98ccba50fa917acc5e93763294f4dde5c36
+source-git-commit: 73bf6abb143c0866a400aafe984f9a553ffc1abf
 workflow-type: tm+mt
-source-wordcount: '335'
+source-wordcount: '352'
 ht-degree: 0%
 
 ---
@@ -37,4 +37,4 @@ En uppsättning mappningar som omformar ett schema till ett annat kallas tillsam
 
 ## Nästa steg
 
-Det här dokumentet beskriver grunderna för Data Prep i Adobe Experience Platform. Läs guiden [mappningsfunktioner](./functions.md) om du vill veta mer om olika mappningsfunktioner. Om du vill veta mer om de olika datumtidssträngarna läser du [datumsträngsguiden](./dates.md).
+Det här dokumentet beskriver grunderna för Data Prep i Adobe Experience Platform. Läs guiden [mappningsfunktioner](./functions.md) om du vill veta mer om olika mappningsfunktioner. Om du vill veta mer om de olika datumtidssträngarna läser du [datumsträngsguiden](./dates.md). Läs [Utvecklarhandboken för dataprep](api/overview.md) om du vill lära dig hur du använder API:t för dataprep.
