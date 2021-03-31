@@ -5,9 +5,9 @@ title: Användargränssnittshandbok för segmenteringstjänst
 topic: ui guide
 description: Adobe Experience Platform segmenteringstjänst innehåller ett användargränssnitt för att skapa och hantera segmentdefinitioner.
 translation-type: tm+mt
-source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
+source-git-commit: 1634466d3a1d8eadc4c98bb93214d8772b6a47a3
 workflow-type: tm+mt
-source-wordcount: '1440'
+source-wordcount: '1481'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ Välj fliken **[!UICONTROL Browse]** för att visa en lista över alla segmentde
 
 I den här vyn visas information om segmentdefinitionen, inklusive uppdelning, kurva, antal profiler, utvärderingsmetod, datum när segmentet skapades och senaste ändringsdatum.
 
-Neddelningen visar ett stolpdiagram som visar procentandelen profiler som tillhör var och en av följande statusvärden: [!UICONTROL Entered], [!UICONTROL Realized] och [!UICONTROL Exiting].
+I uppdelningen visas ett stolpdiagram som visar procentandelen profiler som tillhör var och en av följande statusvärden: [!UICONTROL Entered], [!UICONTROL Realized] och [!UICONTROL Exiting].
 
 ![](../images/ui/overview/segment-browse-breakdown.png)
 
@@ -167,6 +167,12 @@ Mer information om direktuppspelningssegmentering finns i [användarhandboken f�
 >[!NOTE]
 >
 >För att direktuppspelningssegmenteringen ska fungera måste du aktivera schemalagd segmentering för organisationen. Mer information om att aktivera schemalagd segmentering finns i [avsnittet om direktuppspelningssegmentering i den här användarhandboken](#scheduled-segmentation).
+
+## Kantsegmentering {#edge-segmentation}
+
+Kantsegmentering är möjligheten att utvärdera segment i plattformen direkt, vilket möjliggör användning av samma sida och nästa sida.
+
+Mer information om kantsegmentering finns i [gränssnittsguiden för kantsegmentering](./edge-segmentation.md)
 
 ## Policyöverträdelser
 
