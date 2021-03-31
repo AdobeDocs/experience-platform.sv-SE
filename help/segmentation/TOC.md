@@ -6,9 +6,9 @@ breadcrumb-title: Segmenteringstjänstguide
 user-guide-description: Bygg segment och generera målgrupper utifrån kundprofildata i realtid.
 feature: Segment
 translation-type: tm+mt
-source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
+source-git-commit: 5839ab36a7d8f992e92c7f9eff8c58459c4c3260
 workflow-type: tm+mt
-source-wordcount: '158'
+source-wordcount: '162'
 ht-degree: 5%
 
 ---
@@ -21,6 +21,7 @@ ht-degree: 5%
 - Segmenterings-API {#api}
    - [Översikt](api/overview.md)
    - [Komma igång](api/getting-started.md)
+   - [Kantsegmentering](api/edge-segmentation.md)
    - [Exportera jobb](api/export-jobs.md)
    - [Förhandsvisningar och uppskattningar](api/previews-and-estimates.md)
    - [Scheman](api/schedules.md)
@@ -32,6 +33,7 @@ ht-degree: 5%
    - [Översikt](ui/overview.md)
    - [Kontrollpanel för segment](ui/segment-dashboard.md)
    - [Segment Builder](ui/segment-builder.md)
+   - [Kantsegmentering](ui/edge-segmentation.md)
    - [Direktuppspelningssegmentering](ui/streaming-segmentation.md)
    - [Direktuppspelningssegmentering (video)](video/streaming-segmentation-overview.md)
    - [Omfaktorisering av tidsbegränsningar](ui/segment-refactoring.md)
