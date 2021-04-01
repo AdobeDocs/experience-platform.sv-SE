@@ -5,9 +5,9 @@ title: Översikt över segmenteringstjänsten
 topic: översikt
 description: Läs om Adobe Experience Platform segmenteringstjänst och vilken roll den spelar i plattformens ekosystem.
 translation-type: tm+mt
-source-git-commit: 738256021fb583e7dc14fd33f5df193813a6e0bb
+source-git-commit: eff833f20eba4e51579a43fbb98c1e2333e326ef
 workflow-type: tm+mt
-source-wordcount: '1499'
+source-wordcount: '1581'
 ht-degree: 0%
 
 ---
@@ -47,7 +47,7 @@ Mer information om hur du skapar segmentdefinitioner med API:t finns i självstu
 
 ## Utvärdera segment
 
-Plattformen har för närvarande stöd för två metoder för att utvärdera segment: direktuppspelningssegmentering och gruppsegmentering.
+Plattformen har för närvarande stöd för tre metoder för att utvärdera segment: direktuppspelningssegmentering, gruppsegmentering och kantsegmentering.
 
 ### Direktuppspelningssegmentering
 
@@ -59,7 +59,15 @@ Läs [dokumentationen för direktuppspelningssegmentering](./api/streaming-segme
 
 Som ett alternativ till en pågående dataurvalsprocess flyttar gruppsegmentering alla profildata samtidigt genom segmentdefinitioner för att skapa motsvarande målgrupper. När segmentet har skapats sparas det och lagras så att du kan exportera det för användning.
 
-Segment som utvärderas med batchsegmentering utvärderas var 24:e timme. För befintliga segment håller inkrementell segmentering dock segment utvärderade med batchsegmentering som är fräsch i upp till en timme. Alla nya eller nyligen ändrade segment måste vänta tills nästa fullständiga gruppsegmenteringsjobb har körts för att kunna dra nytta av inkrementell segmentering.
+**Stegvis segmentering (beta)**
+
+Batchsegmenten utvärderas var 24:e timme. Men för befintliga segment håller inkrementell segmentering segment uppdaterade i upp till en timme.
+
+Stegvis segmentering körs på nya data som kommer in i profilarkivet. Följande kavattyper gäller dock för inkrementell segmentering:
+
+- För nya eller nyligen ändrade segment börjar profiler med nya data kvalificeras i nästa stegvisa körning. Profiler utan ändringar kommer dock att ingå i nästa fullständiga gruppsegmenteringsjobb.
+- Segmenten med flera enheter kommer att uppdateras i stegvis segmentering. Om det finns entitetsuppdateringar kommer profiler med nya data att börja använda dem i nästa stegvisa körning. Profiler utan ändringar kommer dock att ingå i nästa fullständiga gruppsegmenteringsjobb.
+- Händelser som faller bort från ett segments tidsfönster förenas i nästa fullständiga gruppsegmenteringsjobb.
 
 Mer information om hur du utvärderar segment finns i [självstudiekursen för segmentutvärdering](./tutorials/evaluate-a-segment.md).
 
