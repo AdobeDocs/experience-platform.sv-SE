@@ -5,7 +5,7 @@ title: Grundläggande om schemakomposition
 topic: översikt
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 9a5618674946f67528de1b40609596dbb75ced0c
+source-git-commit: ae2c5f9fa4e732fefe55a8536894844986aea1e2
 workflow-type: tm+mt
 source-wordcount: '3461'
 ht-degree: 0%
@@ -165,7 +165,7 @@ Datatyper används som referensfälttyper i klasser eller scheman på samma sät
 
 [!DNL Experience Platform] innehåller ett antal vanliga datatyper som en del av programmet  [!DNL Schema Registry] som stöder användning av standardmönster för att beskriva vanliga datastrukturer. Detta förklaras mer ingående i [!DNL Schema Registry]-självstudiekurserna, där det blir tydligare när du går igenom stegen för att definiera datatyper.
 
-I följande skärmbild visas hur datatyperna visas i användargränssnittet för plattformen. Ett av fälten som anges av blandningen ([!UICONTROL Demographic Details]) använder datatypen [!UICONTROL Person name], vilket anges av texten efter lodtecknet (`|`) bredvid fältets namn. Den här särskilda datatypen innehåller flera delfält som relaterar till namnet på en enskild person, en konstruktion som kan återanvändas för andra fält där en persons namn måste hämtas.
+I följande skärmbild visas hur datatyperna visas i användargränssnittet för plattformen. I ett av fälten som anges av blandningen [!UICONTROL Demographic Details] används datatypen [!UICONTROL Person name], vilket anges av texten efter lodtecknet (`|`) bredvid fältets namn. Den här särskilda datatypen innehåller flera delfält som relaterar till namnet på en enskild person, en konstruktion som kan återanvändas för andra fält där en persons namn måste hämtas.
 
 ![](../images/schema-composition/data-type.png)
 
