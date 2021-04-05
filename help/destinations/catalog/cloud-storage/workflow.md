@@ -6,9 +6,9 @@ description: Instruktioner för att ansluta till lagringsplatser i molnet
 seo-description: Instruktioner för att ansluta till lagringsplatser i molnet
 exl-id: 58003c1e-2f70-4e28-8a38-3be00da7cc3c
 translation-type: tm+mt
-source-git-commit: 7bb862c4c6c52c42e45d5e736fa6d239e812ac2c
+source-git-commit: ecda1f1c4a2829124aedaae2395a74e54929c7ad
 workflow-type: tm+mt
-source-wordcount: '581'
+source-wordcount: '595'
 ht-degree: 0%
 
 ---
@@ -64,6 +64,10 @@ För [!DNL Azure Event Hubs]-mål anger du namnet på din befintliga dataström 
 Målet har skapats. Du kan välja **[!UICONTROL Save & Exit]** om du vill aktivera segment senare eller välja **[!UICONTROL Next]** om du vill fortsätta arbetsflödet och välja segment som ska aktiveras. Läs avsnittet [Aktivera segment](#activate-segments) för resten av arbetsflödet för att exportera data.
 
 ## Använd makron för att skapa en mapp på din lagringsplats{#use-macros}
+
+>[!NOTE]
+>
+> Funktionen som beskrivs i det här avsnittet är för närvarande endast tillgänglig för [Amazon S3](./amazon-s3.md)-mål.
 
 Om du vill skapa en anpassad mapp per segmentfil på lagringsplatsen kan du använda makron i mappsökvägsfältet. Infoga makrona i slutet av inmatningsfältet, vilket visas nedan.
 
