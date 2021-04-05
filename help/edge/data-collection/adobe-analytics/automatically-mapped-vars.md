@@ -3,14 +3,14 @@ title: Mappade Adobe Analytics-variabler automatiskt i Adobe Experience Platform
 description: Lär dig vilka variabler som automatiskt mappas i Adobe Analytics med Experience Platform Web SDK
 seo-description: Lär dig vilka variabler som automatiskt mappas i Adobe Analytics med Adobe Experience Platform Web SDK
 keywords: adobe analytics;variables;analytics;automatic map;automatically mapped;
+exl-id: 856fada7-b62c-4fd2-9372-a19ae1cdec33
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 7a6a9f1ee764ab614fa163f90a2051bd35b76b7f
 workflow-type: tm+mt
-source-wordcount: '681'
+source-wordcount: '684'
 ht-degree: 0%
 
 ---
-
 
 # Variabler mappas automatiskt i [!DNL Analytics]
 
@@ -103,3 +103,5 @@ Nedan finns en lista med variabler som Adobe Experience Platform Edge Network au
 | `web.webPageDetails.server` | `sv` | AppMeasurement-frågeparametern USER_SERVER-mappning. |
 | `web.webPageDetails.siteSection` | `ch` | Mappning av parametern CHANNEL för parametern AppMeasurement-fråga. |
 | `web.webReferrer.URL` | `r` | AppMeasurement-frågeparameterns REFERRER-mappning. |
+
+{style=&quot;table-layout:auto&quot;}
