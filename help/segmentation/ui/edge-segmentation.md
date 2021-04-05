@@ -3,15 +3,15 @@ keywords: Experience Platform;hem;populära ämnen;kantsegmentering;Segmentering
 solution: Experience Platform
 title: Användargränssnittshandbok för kantsegmentering
 topic: ui guide
-description: 'Kantsegmentering är möjligheten att utvärdera segment i plattformen direkt, vilket möjliggör användning av samma sida och nästa sida. '
+description: Kantsegmentering är möjligheten att utvärdera segment i plattformen direkt, vilket möjliggör användning av samma sida och nästa sida.
+exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
 translation-type: tm+mt
-source-git-commit: 7eadb14dc71792174dfd750775148763f55834dd
+source-git-commit: 692bfca8d14ac247527f956bbcba8b4eb37516e3
 workflow-type: tm+mt
-source-wordcount: '328'
+source-wordcount: '332'
 ht-degree: 0%
 
 ---
-
 
 # Användargränssnittsguide för kantsegmentering
 
@@ -25,8 +25,8 @@ En fråga kan utvärderas med kantsegmentering om den uppfyller något av följa
 | ---------- | ------- | ------- |
 | Inkommande träff | En segmentdefinition som refererar till en enda inkommande händelse utan tidsbegränsning. | ![](../images/ui/edge-segmentation/incoming-hit.png) |
 | Inkommande träde som refererar till en profil | En segmentdefinition som refererar till en enda inkommande händelse, utan tidsbegränsning, och ett eller flera profilattribut. | ![](../images/ui/edge-segmentation/profile-hit.png) |
-| Frekvensfråga | En segmentdefinition som refererar till en händelse som inträffar ett visst antal gånger. |  |
-| Frekvensfråga som refererar till en profil | En segmentdefinition som refererar till en händelse som inträffar ett visst antal gånger och som har ett eller flera profilattribut. |  |
+| Frekvensfråga | En segmentdefinition som refererar till en händelse som inträffar minst ett visst antal gånger. |  |
+| Frekvensfråga som refererar till en profil | En segmentdefinition som refererar till en händelse som inträffar minst ett visst antal gånger och har ett eller flera profilattribut. |  |
 
 Om frågan matchar någon av ovanstående frågetyper kan du aktivera den för kantsegmentering genom att aktivera alternativet **[!UICONTROL Evaluate as streaming segment on the edge]**.
 
