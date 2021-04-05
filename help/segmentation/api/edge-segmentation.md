@@ -4,14 +4,14 @@ solution: Experience Platform
 title: 'Kantsegmentering med API '
 topic: utvecklarhandbok
 description: Det här dokumentet innehåller exempel på hur du använder kantsegmentering med Adobe Experience Platform Segmentation Service API.
+exl-id: effce253-3d9b-43ab-b330-943fb196180f
 translation-type: tm+mt
-source-git-commit: 0c4625ec0728c8c94b72e3e16e7ecf45ea2d0c0b
+source-git-commit: 692bfca8d14ac247527f956bbcba8b4eb37516e3
 workflow-type: tm+mt
-source-wordcount: '632'
+source-wordcount: '636'
 ht-degree: 0%
 
 ---
-
 
 # Kantsegmentering
 
@@ -39,8 +39,8 @@ För att ett segment ska kunna utvärderas med hjälp av kantsegmentering måste
 | ---------- | ------- |
 | Inkommande träff | En segmentdefinition som refererar till en enda inkommande händelse utan tidsbegränsning. |
 | Inkommande träde som refererar till en profil | En segmentdefinition som refererar till en enda inkommande händelse, utan tidsbegränsning, och ett eller flera profilattribut. |
-| Frekvensfråga | En segmentdefinition som refererar till en händelse som inträffar ett visst antal gånger. |
-| Frekvensfråga som refererar till en profil | En segmentdefinition som refererar till en händelse som inträffar ett visst antal gånger och som har ett eller flera profilattribut. |
+| Frekvensfråga | En segmentdefinition som refererar till en händelse som inträffar minst ett visst antal gånger. |
+| Frekvensfråga som refererar till en profil | En segmentdefinition som refererar till en händelse som inträffar minst ett visst antal gånger och har ett eller flera profilattribut. |
 
 {style=&quot;table-layout:auto&quot;}
 
