@@ -2,17 +2,17 @@
 keywords: Experience Platform;hemanvändare;populära ämnen;samla in nöjda kunder;lyckade kunder
 solution: Experience Platform
 title: Samla in data från ett lyckat kundsystem med hjälp av källanslutningar och API:er
-topic: overview
-type: Tutorial
+topic: översikt
+type: Självstudiekurs
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett system för kundframgångar och att hämta dem till plattformen med hjälp av källanslutningar och API:er.
+exl-id: 0fae04d0-164b-4113-a274-09677f4bbde5
 translation-type: tm+mt
-source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
+source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
 workflow-type: tm+mt
-source-wordcount: '1541'
+source-wordcount: '1581'
 ht-degree: 0%
 
 ---
-
 
 # Samla in data från ett lyckat kundsystem med hjälp av källkopplingar och API:er
 
@@ -291,6 +291,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `schemaRef.id` | `$id` för mål-XDM-schemat. |
+| `schemaRef.contentType` | Schemats version. Värdet måste anges `application/vnd.adobe.xed-full-notext+json;version=1`, vilket returnerar den senaste delversionen av schemat. |
 
 **Svar**
 
@@ -329,7 +330,7 @@ curl -X POST \
             "format": "parquet_xdm",
             "schema": {
                 "id": "https://ns.adobe.com/{TENANT_ID}/schemas/deb3e1096c35d8311b5d80868c4bd5b3cdfd4b3150e7345f",
-                "version": "application/vnd.adobe.xed-full+json;version=1.0"
+                "version": "application/vnd.adobe.xed-full+json;version=1"
             }
         },
         "params": {
@@ -345,6 +346,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `data.schema.id` | `$id` för mål-XDM-schemat. |
+| `data.schema.version` | Schemats version. Värdet måste anges `application/vnd.adobe.xed-full+json;version=1`, vilket returnerar den senaste delversionen av schemat. |
 | `params.dataSetId` | ID för måldatauppsättningen. |
 | `connectionSpec.id` | Anslutningens spec-ID som används för att ansluta till Data Lake. Detta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
 
