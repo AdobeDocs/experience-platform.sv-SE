@@ -1,17 +1,17 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;Experience data model;Experience data model;Experience data model;data model;data model;schema register;schema Registry;schema;schema;schema;scheman;scheman;scheman;skapa
+keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;Experience data model;Experience data model;Experience data model;data model;data model;schema register;schema Registry;schema;schema;schema;scheman;scheman;scheman;scheman;skapa
 solution: Experience Platform
 title: API-slutpunkt för scheman
 description: Med slutpunkten /schemas i API:t för schemaregister kan du programmässigt hantera XDM-scheman i ditt upplevelseprogram.
-topic: developer guide
+topic: utvecklarhandbok
+exl-id: d0bda683-9cd3-412b-a8d1-4af700297abf
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
 workflow-type: tm+mt
-source-wordcount: '1418'
+source-wordcount: '1420'
 ht-degree: 0%
 
 ---
-
 
 # Schemas slutpunkt
 
@@ -128,11 +128,11 @@ Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Alla uppslags
 
 | `Accept` header | Beskrivning |
 | ------- | ------------ |
-| `application/vnd.adobe.xed+json; version={MAJOR_VERSION}` | Raw med `$ref` och `allOf` har rubriker och beskrivningar. |
-| `application/vnd.adobe.xed-full+json; version={MAJOR_VERSION}` | `$ref` och  `allOf` löses, har rubriker och beskrivningar. |
-| `application/vnd.adobe.xed-notext+json; version={MAJOR_VERSION}` | Raw med `$ref` och `allOf`, inga titlar eller beskrivningar. |
-| `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` och  `allOf` lösts - inga titlar eller beskrivningar. |
-| `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` och  `allOf` åtgärdade, beskrivningar inkluderades. |
+| `application/vnd.adobe.xed+json; version=1` | Raw med `$ref` och `allOf` har rubriker och beskrivningar. |
+| `application/vnd.adobe.xed-full+json; version=1` | `$ref` och  `allOf` löses, har rubriker och beskrivningar. |
+| `application/vnd.adobe.xed-notext+json; version=1` | Raw med `$ref` och `allOf`, inga titlar eller beskrivningar. |
+| `application/vnd.adobe.xed-full-notext+json; version=1` | `$ref` och  `allOf` lösts - inga titlar eller beskrivningar. |
+| `application/vnd.adobe.xed-full-desc+json; version=1` | `$ref` och  `allOf` åtgärdade, beskrivningar inkluderades. |
 
 **Svar**
 
