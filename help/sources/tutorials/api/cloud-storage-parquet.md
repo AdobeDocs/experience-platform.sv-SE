@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;datakällanslutning
 solution: Experience Platform
 title: Infoga parquet-data från ett tredjeparts molnlagringssystem med API:t för flödestjänsten
-topic: overview
-type: Tutorial
+topic: översikt
+type: Självstudiekurs
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att importera Apache Parquet-data från ett molnlagringssystem från en annan leverantör.
+exl-id: fb1b19d6-16bb-4a5f-9e81-f537bac95041
 translation-type: tm+mt
-source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
+source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
 workflow-type: tm+mt
-source-wordcount: '1101'
-ht-degree: 0%
+source-wordcount: '1103'
+ht-degree: 1%
 
 ---
-
 
 # Infoga Parquet-data från ett molnlagringssystem från tredje part med hjälp av API:t [!DNL Flow Service]
 
@@ -230,7 +230,7 @@ curl -X POST \
             "schema": {
                 "id": "https://ns.adobe.com/{TENANT_ID}/schemas/e15530faf88aeb52d9ca5c5671a059f44f1a42ea7f5fdb80",
                 "id": "",
-                "version": "application/vnd.adobe.xed-full+json;version=1.0"
+                "version": "application/vnd.adobe.xed-full+json;version=1"
             }
         },
         "params": {
@@ -342,7 +342,7 @@ curl -X POST \
             "format": "parquet_xdm",
             "schema": {
                 "id": ""https://ns.adobe.com/{TENANT_ID}/schemas/e15530faf88aeb52d9ca5c5671a059f44f1a42ea7f5fdb80"",
-                "version": "application/vnd.adobe.xed-full+json;version=1.0"
+                "version": "application/vnd.adobe.xed-full+json;version=1"
             }
         },
         "params": {
