@@ -4,7 +4,7 @@ title: Uppdatera destinationskonton
 type: Självstudiekurs
 description: I den här självstudiekursen visas stegen för att uppdatera målkonton i användargränssnittet i Adobe Experience Platform
 translation-type: tm+mt
-source-git-commit: 6fd980b486c4a330f9188065bac55c624af584a1
+source-git-commit: e4afbdd6ff8f45ea8d5506f0228f0a80b44eee51
 workflow-type: tm+mt
 source-wordcount: '313'
 ht-degree: 1%
@@ -21,7 +21,7 @@ På fliken **[!UICONTROL Accounts]** visas information om anslutningar som du ha
 ![Fliken Konton](../assets/ui/update-accounts/destination-accounts.png)
 
 | Element | Beskrivning |
----------|----------
+|---|---|
 | [!UICONTROL Platform] | Det mål som du har konfigurerat anslutningen för. |
 | [!UICONTROL Connection Type] | Representerar anslutningstypen för din lagringsbucket eller destination. <ul><li>För e-postmarknadsföringsmål: Kan vara S3 eller FTP.</li><li>För reklamdestinationer i realtid: Server-till-server</li><li>För molnlagringsmål för Amazon S3: Åtkomstnyckel </li><li>För SFTP-molnlagringsmål: Grundläggande autentisering för SFTP</li></ul> |
 | [!UICONTROL Username] | Användarnamnet som du valde i [guiden för anslutningsmål](../catalog/email-marketing/overview.md#connect-destination). |
