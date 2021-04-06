@@ -6,9 +6,9 @@ user-guide-description: Aktivera kända och okända data för flerkanalskampanje
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: 'Mål '
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 0bb6db19dc27031115e47415c1b3241661e0a0ae
 workflow-type: tm+mt
-source-wordcount: '463'
+source-wordcount: '473'
 ht-degree: 0%
 
 ---
@@ -23,9 +23,13 @@ ht-degree: 0%
    * [Anslut till e-postmarknadsföringsmål och aktivera data med API:t för Flow Service](./api/email-marketing.md)
 * Användargränssnittsguider {#ui}
    * [Arbetsytan Destinationer](./ui/destinations-workspace.md)
-   * [Visa målinformation](./ui/destination-details-page.md)
    * [Ansluta till ett mål](./ui/connect-destination.md)
+   * [Visa målinformation](./ui/destination-details-page.md)
    * [Aktivera profiler och segment till ett mål](./ui/activate-destinations.md)
+   * [Uppdatera destinationskonton](./ui/update-accounts.md)
+   * [Redigera aktiveringsflöden](./ui/edit-activation.md)
+   * [Ta bort mål](./ui/delete-destinations.md)
+   * [Övervaka dataflöden](./ui/monitor-dataflows.md)
 * Målkatalog {#catalog}
    * [Översikt över destinationskatalogen](./catalog/overview.md)
    * [ (Alfa) HTTP-anslutning](./catalog/http-destination.md)
