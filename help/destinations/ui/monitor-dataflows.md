@@ -1,18 +1,18 @@
 ---
-keywords: Experience Platform,Hem,Populära ämnen,Skärmkonton,Övervaka dataflöden,Dataflöden,Destinationer
+keywords: Experience Platform;hemmabas;populära ämnen;monitorkonton;övervaka dataflöden;dataflöden;se mål
 description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 solution: Experience Platform
 title: Bildskärmsdataflöden
 topic: översikt
 type: Självstudiekurs
-exl-id: fbe35ee1-4ee8-4d67-976b-0c45f0168da4
 translation-type: tm+mt
-source-git-commit: 07869d63f395bbab6c49a3976051facdf94d43b7
+source-git-commit: ebe2a35e66b78acf6a9ffa20664877913cd35648
 workflow-type: tm+mt
 source-wordcount: '133'
 ht-degree: 0%
 
 ---
+
 
 # Övervaka dataflöden
 
