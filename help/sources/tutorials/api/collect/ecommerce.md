@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;Samla in e-handelsdata;e-handelsdata
 solution: Experience Platform
 title: Samla in e-handelsdata med hjälp av källkopplingar och API:er
-topic: overview
-type: Tutorial
+topic: översikt
+type: Självstudiekurs
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett e-handelssystem från en annan leverantör och hämta dem till plattformen med hjälp av källkopplingar och API:er.
+exl-id: 0952f037-5e20-4d84-a2e6-2c9470f168f5
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
 workflow-type: tm+mt
-source-wordcount: '1481'
+source-wordcount: '1521'
 ht-degree: 0%
 
 ---
-
 
 # Samla in e-handelsdata med hjälp av källkopplingar och API:er
 
@@ -271,6 +271,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `schemaRef.id` | `$id` för mål-XDM-schemat. |
+| `schemaRef.contentType` | Schemats version. Värdet måste anges `application/vnd.adobe.xed-full-notext+json;version=1`, vilket returnerar den senaste delversionen av schemat. |
 
 **Svar**
 
@@ -327,6 +328,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `data.schema.id` | `$id` för mål-XDM-schemat. |
+| `data.schema.version` | Schemats version. Värdet måste anges `application/vnd.adobe.xed-full+json;version=1`, vilket returnerar den senaste delversionen av schemat. |
 | `params.dataSetId` | ID för måldatauppsättningen. |
 | `connectionSpec.id` | Anslutningens spec-ID som används för att ansluta till Data Lake. Detta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
 
