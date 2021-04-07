@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;Samla in protokolldata;protokolldata
 solution: Experience Platform
 title: Samla in protokolldata med hjälp av källanslutningar och API:er
-topic: overview
-type: Tutorial
+topic: översikt
+type: Självstudiekurs
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett protokollprogram och att hämta dem till plattformen med hjälp av källanslutningar och API:er.
+exl-id: e14e75c2-2a93-45d8-8056-f06075bd4b8d
 translation-type: tm+mt
-source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
+source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
 workflow-type: tm+mt
-source-wordcount: '1528'
+source-wordcount: '1549'
 ht-degree: 0%
 
 ---
-
 
 # Samla in protokolldata med hjälp av källanslutningar och API:er
 
@@ -300,6 +300,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `schemaRef.id` | `$id` för mål-XDM-schemat. |
+| `schemaRef.contentType` | Schemats version. Värdet måste anges `application/vnd.adobe.xed-full-notext+json;version=1`, vilket returnerar den senaste delversionen av schemat. |
 
 **Svar**
 
