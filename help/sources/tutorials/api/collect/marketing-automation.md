@@ -2,17 +2,17 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;automatiserat marknadsföringssystem;Samla in automatiserade marknadsföringsdata
 solution: Experience Platform
 title: Samla in data för automatiserad marknadsföring med källkopplingar och API:er
-topic: overview
-type: Tutorial
+topic: översikt
+type: Självstudiekurs
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett automatiserat marknadsföringssystem och föra in dem i Adobe Experience Platform med hjälp av källkopplingar och API:er.
+exl-id: f3754bd0-ed31-4bf2-8f97-975bf6a9b076
 translation-type: tm+mt
-source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
+source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
 workflow-type: tm+mt
-source-wordcount: '1538'
+source-wordcount: '1578'
 ht-degree: 0%
 
 ---
-
 
 # Samla in data för automatiserad marknadsföring med hjälp av källkopplingar och API:er
 
@@ -259,6 +259,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `schemaRef.id` | `$id` för mål-XDM-schemat. |
+| `schemaRef.contentType` | Schemats version. Värdet måste anges `application/vnd.adobe.xed-full-notext+json;version=1`, vilket returnerar den senaste delversionen av schemat. |
 
 **Svar**
 
@@ -298,7 +299,7 @@ curl -X POST \
         "data": {
             "schema": {
                 "id": "https://ns.adobe.com/{TENANT_ID}/schemas/da411446eec78026c28d9fafd9e406e304b771d55b07b91b",
-                "version": "application/vnd.adobe.xed-full+json;version=1.0"
+                "version": "application/vnd.adobe.xed-full+json;version=1"
             }
         },
         "params": {
@@ -314,6 +315,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `data.schema.id` | `$id` för mål-XDM-schemat. |
+| `data.schema.version` | Schemats version. Värdet måste anges `application/vnd.adobe.xed-full+json;version=1`, vilket returnerar den senaste delversionen av schemat. |
 | `params.dataSetId` | ID för måldatauppsättningen. |
 | `connectionSpec.id` | Anslutningens spec-ID som används för att ansluta till Data Lake. Detta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
 
