@@ -5,14 +5,14 @@ title: Samla in molnlagringsdata med hjälp av källanslutningar och API:er
 topic: översikt
 type: Självstudiekurs
 description: I den här självstudiekursen beskrivs stegen för att hämta data från ett molnlagringsutrymme från tredje part och föra in dem på plattformen med hjälp av källanslutningar och API:er.
+exl-id: 95373c25-24f6-4905-ae6c-5000bf493e6f
 translation-type: tm+mt
-source-git-commit: 8b85b25112ee16b09b1411c5d001bf13fb7fbcaa
+source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
 workflow-type: tm+mt
-source-wordcount: '1768'
+source-wordcount: '1806'
 ht-degree: 0%
 
 ---
-
 
 # Samla in molnlagringsdata med källanslutningar och API:er
 
@@ -332,6 +332,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `schemaRef.id` | ID:t för mål-XDM-schemat. |
+| `schemaRef.contentType` | Schemats version. Värdet måste anges `application/vnd.adobe.xed-full-notext+json;version=1`, vilket returnerar den senaste delversionen av schemat. |
 
 **Svar**
 
@@ -371,7 +372,7 @@ curl -X POST \
         "data": {
             "schema": {
                 "id": "https://ns.adobe.com/{TENANT_ID}/schemas/995dabbea86d58e346ff91bd8aa741a9f36f29b1019138d4",
-                "version": "application/vnd.adobe.xed-full+json;version=1.0"
+                "version": "application/vnd.adobe.xed-full+json;version=1"
             }
         },
         "params": {
@@ -387,6 +388,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `data.schema.id` | `$id` för mål-XDM-schemat. |
+| `data.schema.version` | Schemats version. Värdet måste anges `application/vnd.adobe.xed-full+json;version=1`, vilket returnerar den senaste delversionen av schemat. |
 | `params.dataSetId` | ID för måldatauppsättningen. |
 | `connectionSpec.id` | Det fasta anslutningens spec-ID till Data Lake. Detta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
 
