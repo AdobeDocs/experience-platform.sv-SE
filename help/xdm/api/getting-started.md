@@ -3,15 +3,15 @@ keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experi
 solution: Experience Platform
 title: Komma igång med API:t för schemaregister
 description: Det här dokumentet innehåller en introduktion till de centrala koncept du behöver känna till innan du försöker anropa API:t för schemaregister.
-topic: developer guide
+topic: utvecklarhandbok
+exl-id: 7daebb7d-72d2-4967-b4f7-1886736db69f
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
 workflow-type: tm+mt
-source-wordcount: '1163'
+source-wordcount: '1365'
 ht-degree: 0%
 
 ---
-
 
 # Komma igång med API:t [!DNL Schema Registry]
 
@@ -207,21 +207,38 @@ I följande tabell visas kompatibla `Accept`-huvudvärden, inklusive de med vers
 | ------- | ------------ |
 | `application/vnd.adobe.xed-id+json` | Returnerar endast en lista med ID:n. Detta används oftast för att lista resurser. |
 | `application/vnd.adobe.xed+json` | Returnerar en lista med det fullständiga JSON-schemat med det ursprungliga `$ref` och `allOf` inkluderade. Detta används för att returnera en lista med fullständiga resurser. |
-| `application/vnd.adobe.xed+json; version={MAJOR_VERSION}` | Raw XDM med `$ref` och `allOf`. Har rubriker och beskrivningar. |
-| `application/vnd.adobe.xed-full+json; version={MAJOR_VERSION}` | `$ref` attribut och  `allOf` lösta. Har rubriker och beskrivningar. |
-| `application/vnd.adobe.xed-notext+json; version={MAJOR_VERSION}` | Raw XDM med `$ref` och `allOf`. Inga rubriker eller beskrivningar. |
-| `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` attribut och  `allOf` lösta. Inga rubriker eller beskrivningar. |
-| `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` attribut och  `allOf` lösta. Beskrivningar ingår. |
+| `application/vnd.adobe.xed+json; version=1` | Raw XDM med `$ref` och `allOf`. Har rubriker och beskrivningar. |
+| `application/vnd.adobe.xed-full+json; version=1` | `$ref` attribut och  `allOf` lösta. Har rubriker och beskrivningar. |
+| `application/vnd.adobe.xed-notext+json; version=1` | Raw XDM med `$ref` och `allOf`. Inga rubriker eller beskrivningar. |
+| `application/vnd.adobe.xed-full-notext+json; version=1` | `$ref` attribut och  `allOf` lösta. Inga rubriker eller beskrivningar. |
+| `application/vnd.adobe.xed-full-desc+json; version=1` | `$ref` attribut och  `allOf` lösta. Beskrivningar ingår. |
 
 >[!NOTE]
 >
->Om endast huvudversionen tillhandahålls (t.ex. 1, 2, 3) returnerar registret den senaste delversionen (t.ex. .1, .2, .3) automatiskt.
+>Plattformen har för närvarande bara stöd för en huvudversion för varje schema (`1`). Därför måste värdet för `version` alltid vara `1` när sökförfrågningar utförs för att returnera den senaste delversionen av schemat. Mer information om schemaversion finns i underavsnittet nedan.
+
+### Schemaversion {#versioning}
+
+Schemaversioner refereras av `Accept`-huvuden i API:t för schemaregister och i `schemaRef.contentType`-egenskaper i API-nyttolaster för underordnade plattformstjänster.
+
+För närvarande stöder Platform endast en huvudversion (`1`) för varje schema. Enligt [reglerna för schemautveckling](../schema/composition.md#evolution) måste varje uppdatering av ett schema vara icke-förstörande, vilket innebär att nya delversioner av ett schema (`1.2`, `1.3`, osv.) är alltid bakåtkompatibla med tidigare mindre versioner. När du anger `version=1` returnerar schemaregistret alltid den **senaste** huvudversionen `1` av ett schema, vilket innebär att tidigare delversioner inte returneras.
+
+>[!NOTE]
+>
+>Det icke-förstörande kravet för schemautveckling framtvingas först efter att schemat har refererats av en datauppsättning och ett av följande fall är sant:
+>
+>* Data har importerats till datauppsättningen.
+>* Datauppsättningen har aktiverats för användning i kundprofilen i realtid (även om inga data har inhämtats).
+
+>
+>
+Om schemat inte har associerats med en datauppsättning som uppfyller något av ovanstående villkor, kan alla ändringar göras i det. I samtliga fall finns dock komponenten `version` kvar på `1`.
 
 ## Begränsningar för XDM-fält och bästa praxis
 
 Fälten i ett schema visas i dess `properties`-objekt. Varje fält är i sig ett objekt som innehåller attribut som beskriver och begränsar de data som fältet kan innehålla.
 
-Mer information om hur du definierar fälttyper i API finns i [bilagan](appendix.md) för den här guiden, inklusive kodexempel och valfria begränsningar för de vanligaste datatyperna.
+Mer information om hur du definierar fälttyper i API finns i [fältbegränsningsguiden](../schema/field-constraints.md) för den här guiden, inklusive kodexempel och valfria begränsningar för de vanligaste datatyperna.
 
 I följande exempelfält visas ett korrekt formaterat XDM-fält, med mer information om namnbegränsningar och de bästa metoderna som anges nedan. Dessa metoder kan också användas när du definierar andra resurser som innehåller liknande attribut.
 
