@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;datauppsättning;datauppsättning;skapa en datauppsättning;skapa datauppsättning
 solution: Experience Platform
 title: Skapa en datauppsättning med API:er
-topic: datasets
+topic: datauppsättningar
 description: Det här dokumentet innehåller allmänna steg för att skapa en datauppsättning med Adobe Experience Platform API:er och fylla i datauppsättningen med hjälp av en fil.
+exl-id: 3a5f48cf-ad05-4b9e-be1d-ff213a26a477
 translation-type: tm+mt
-source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
+source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
 workflow-type: tm+mt
-source-wordcount: '1268'
+source-wordcount: '1306'
 ht-degree: 0%
 
 ---
-
 
 # Skapa en datauppsättning med API:er
 
@@ -212,6 +212,11 @@ curl -X POST \
     }
 }'
 ```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `schemaRef.id` | URI-värdet `$id` för XDM-schemat som datamängden baseras på. |
+| `schemaRef.contentType` | Anger schemats format och version. Mer information finns i avsnittet [schemaversion](../../xdm/api/getting-started.md#versioning) i XDM API-guiden. |
 
 >[!NOTE]
 >
