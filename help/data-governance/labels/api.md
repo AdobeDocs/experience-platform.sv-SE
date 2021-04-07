@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;datastyrning;dataanvändningsetikett api;principtjänst api
 solution: Experience Platform
 title: 'Hantera dataanvändningsetiketter med API:er '
-topic: developer guide
+topic: utvecklarhandbok
 description: Med API:t för datauppsättningstjänsten kan du tillämpa och redigera användningsetiketter för datauppsättningar. Den ingår i Adobe Experience Platform datakatalogfunktioner, men är skild från katalogtjänstens API, som hanterar datauppsättningsmetadata.
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 4e75e3fbdcd480c384411c2f33bad5b2cdcc5c42
 workflow-type: tm+mt
-source-wordcount: '1017'
+source-wordcount: '1147'
 ht-degree: 1%
 
 ---
@@ -280,7 +280,11 @@ Ett lyckat svar returnerar dataanvändningsetiketterna som har tillämpats på d
 | Egenskap | Beskrivning |
 | --- | --- |
 | `labels` | En lista över dataanvändningsetiketter som har tillämpats på datauppsättningen. |
-| `optionalLabels` | En lista över enskilda fält i datauppsättningen som har dataanvändningsetiketter tillämpade på sig. |
+| `optionalLabels` | En lista över enskilda fält i datauppsättningen som har dataanvändningsetiketter tillämpade på sig. Följande underegenskaper krävs:<br/><br/>`option`: Ett objekt som innehåller fältets [!DNL Experience Data Model]-attribut (XDM). Följande tre egenskaper krävs:<ul><li>`id`: URI- `$id` värdet för schemat som är associerat med fältet.</li><li>`contentType`: Anger schemats format och version. Mer information finns i avsnittet [schemaversion](../../xdm/api/getting-started.md#versioning) i XDM API-guiden.</li><li>`schemaPath`: Sökvägen till den aktuella schemaegenskapen, skriven i  [JSON ](../../landing/api-fundamentals.md#json-pointer) Pointersyntax.</li></ul>`labels`: En lista över dataanvändningsetiketter som du vill lägga till i fältet. |
+
+- id: URI $id-värdet för XDM-schemat som datauppsättningen baseras på.
+- contentType: Anger schemats format och version. Mer information finns i avsnittet [schemaversion](../../xdm/api/getting-started.md#versioning) i XDM API-guiden.
+- schemaPath: Sökvägen till den aktuella schemaegenskapen, skriven i syntaxen [JSON-pekare](../../landing/api-fundamentals.md#json-pointer).
 
 ## Tillämpa etiketter på en datauppsättning {#apply-dataset-labels}
 
@@ -327,7 +331,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `labels` | En lista med dataanvändningsetiketter som du vill lägga till i datauppsättningen. |
-| `optionalLabels` | En lista över enskilda fält i datauppsättningen som du vill lägga till etiketter i. Varje objekt i den här arrayen måste ha följande egenskaper: <br/><br/>`option`: Ett objekt som innehåller fältets [!DNL Experience Data Model]-attribut (XDM). Följande tre egenskaper krävs:<ul><li>id</code>: URI $id</code>-värdet för schemat som är associerat med fältet.</li><li>contentType</code>: Innehållstypen och versionsnumret för schemat. Detta bör göras i form av en av de giltiga <a href="../../xdm/api/getting-started.md#accept">acceptera rubrikerna</a> för en XDM-sökningsbegäran.</li><li>schemaPath</code>: Sökvägen till fältet i datasetens schema.</li></ul>`labels`: En lista över dataanvändningsetiketter som du vill lägga till i fältet. |
+| `optionalLabels` | En lista över enskilda fält i datauppsättningen som du vill lägga till etiketter i. Varje objekt i den här arrayen måste ha följande egenskaper:<br/><br/>`option`: Ett objekt som innehåller fältets [!DNL Experience Data Model]-attribut (XDM). Följande tre egenskaper krävs:<ul><li>`id`: URI- `$id` värdet för schemat som är associerat med fältet.</li><li>`contentType`: Anger schemats format och version. Mer information finns i avsnittet [schemaversion](../../xdm/api/getting-started.md#versioning) i XDM API-guiden.</li><li>`schemaPath`: Sökvägen till den aktuella schemaegenskapen, skriven i  [JSON ](../../landing/api-fundamentals.md#json-pointer) Pointersyntax.</li></ul>`labels`: En lista över dataanvändningsetiketter som du vill lägga till i fältet. |
 
 **Svar**
 
