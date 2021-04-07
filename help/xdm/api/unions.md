@@ -3,15 +3,15 @@ keywords: Experience Platform;hemmabruk;populära ämnen;api;API;XDM;XDM system;
 solution: Experience Platform
 title: Unisions API-slutpunkt
 description: Med slutpunkten /union i API:t för schemaregister kan du programmässigt hantera XDM-föreningsscheman i ditt upplevelseprogram.
-topic: developer guide
+topic: utvecklarhandbok
+exl-id: d0ece235-72e8-49d9-856b-5dba44e16ee7
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
 workflow-type: tm+mt
-source-wordcount: '912'
+source-wordcount: '902'
 ht-degree: 0%
 
 ---
-
 
 # Unions slutpunkt
 
@@ -126,8 +126,8 @@ Följande accepterande huvuden är tillgängliga för fackschemasökningar:
 
 | Acceptera | Beskrivning |
 | -------|------------ |
-| application/vnd.adobe.xed+json; version={MAJOR_VERSION} | Raw med `$ref` och `allOf`. Innehåller rubriker och beskrivningar. |
-| application/vnd.adobe.xed-full+json; version={MAJOR_VERSION} | `$ref` attribut och  `allOf` lösta. Innehåller rubriker och beskrivningar. |
+| `application/vnd.adobe.xed+json; version=1` | Raw med `$ref` och `allOf`. Innehåller rubriker och beskrivningar. |
+| `application/vnd.adobe.xed-full+json; version=1` | `$ref` attribut och  `allOf` lösta. Innehåller rubriker och beskrivningar. |
 
 **Svar**
 
