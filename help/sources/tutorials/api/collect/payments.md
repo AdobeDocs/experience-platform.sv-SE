@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;Samla in betalningsdata;betalningsdata
 solution: Experience Platform
 title: Samla in betalningsdata med källkopplingar och API:er
-topic: overview
-type: Tutorial
+topic: översikt
+type: Självstudiekurs
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett betalningsprogram och att hämta dem till plattformen med hjälp av källanslutningar och API:er.
+exl-id: b75e2a3d-6590-4079-a261-fa4e9626e8dc
 translation-type: tm+mt
-source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
+source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
 workflow-type: tm+mt
-source-wordcount: '1560'
+source-wordcount: '1600'
 ht-degree: 0%
 
 ---
-
 
 # Samla in betalningsdata med källanslutningar och API:er
 
@@ -299,6 +299,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `schemaRef.id` | `$id` för mål-XDM-schemat. |
+| `schemaRef.contentType` | Schemats version. Värdet måste anges `application/vnd.adobe.xed-full-notext+json;version=1`, vilket returnerar den senaste delversionen av schemat. |
 
 **Svar**
 
@@ -338,7 +339,7 @@ curl -X POST \
         "data": {
             "schema": {
                 "id": "https://ns.adobe.com/{TENANT_ID}/schemas/14d89c5bb88e2ff488f23db896be469e7e30bb166bda8722",
-                "version": "application/vnd.adobe.xed-full+json;version=1.0"
+                "version": "application/vnd.adobe.xed-full+json;version=1"
             }
         },
         "params": {
@@ -354,6 +355,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `data.schema.id` | `$id` för mål-XDM-schemat. |
+| `data.schema.version` | Schemats version. Värdet måste anges `application/vnd.adobe.xed-full+json;version=1`, vilket returnerar den senaste delversionen av schemat. |
 | `params.dataSetId` | ID för måldatauppsättningen. |
 | `connectionSpec.id` | Anslutningens spec-ID som används för att ansluta till Data Lake. Detta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
 
