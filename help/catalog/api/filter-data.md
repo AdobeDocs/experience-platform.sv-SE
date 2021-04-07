@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;filter;filter;filterdata;Filterdata;datumintervall
 solution: Experience Platform
 title: Filtrera katalogdata med hjälp av frågeparametrar
-topic: developer guide
+topic: utvecklarhandbok
 description: Med Catalog Service API kan svarsdata filtreras med hjälp av frågeparametrar. En del av de bästa sätten för Catalog är att använda filter i alla API-anrop, eftersom de minskar belastningen på API:t och bidrar till att förbättra prestanda generellt.
+exl-id: 0cdb5a7e-527b-46be-9ad8-5337c8dc72b7
 translation-type: tm+mt
-source-git-commit: a1103bfbf79f9c87bac5b113c01386a6fb8950e7
+source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
 workflow-type: tm+mt
-source-wordcount: '2090'
+source-wordcount: '2123'
 ht-degree: 0%
 
 ---
-
 
 # Filtrera [!DNL Catalog]-data med frågeparametrar
 
@@ -155,6 +155,10 @@ Baserat på ovanstående svar kan man dra slutsatsen följande:
 * Om ett objekt inte innehåller någon av de begärda egenskaperna visas det som ett tomt objekt. (`Dataset2`)
 * En datauppsättning kan returnera en begärd egenskap som ett tomt objekt om den innehåller egenskapen men det inte finns något värde. (`Dataset3`)
 * Annars visar datauppsättningen det fullständiga värdet för alla begärda egenskaper. (`Dataset4`)
+
+>[!NOTE]
+>
+>I egenskapen `schemaRef` för varje datauppsättning anger versionsnumret den senaste delversionen av schemat. Mer information finns i avsnittet [schemaversion](../../xdm/api/getting-started.md#versioning) i XDM API-guiden.
 
 ## Startindex för förskjutning av svarslista
 
@@ -428,7 +432,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar innehåller en lista med [!DNL Catalog]-objekt som är sorterade enligt parametern `orderBy`. Om inte en gräns också anges innehåller svaret högst 20 objekt.
+Ett svar innehåller en lista med [!DNL Catalog]-objekt som är sorterade enligt parametern `orderBy`. Om inte en gräns också anges innehåller svaret högst 20 objekt.
 
 ```json
 {
