@@ -4,14 +4,14 @@ solution: Experience Platform
 title: Blandar API-slutpunkt
 description: Med slutpunkten /mixins i API:t för schemaregister kan du programmässigt hantera XDM-blandningar i ditt upplevelseprogram.
 topic: utvecklarhandbok
+exl-id: 93ba2fe3-0277-4c06-acf6-f236cd33252e
 translation-type: tm+mt
-source-git-commit: 0727ffa0c72bcb6a85de1a13215b691b97889b70
+source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
 workflow-type: tm+mt
 source-wordcount: '1136'
 ht-degree: 0%
 
 ---
-
 
 # Blandar slutpunkt
 
@@ -140,11 +140,11 @@ Svarsformatet beror på det `Accept`-huvud som skickas i begäran. Alla uppslags
 
 | `Accept` header | Beskrivning |
 | ------- | ------------ |
-| `application/vnd.adobe.xed+json; version={MAJOR_VERSION}` | Raw med `$ref` och `allOf` har rubriker och beskrivningar. |
-| `application/vnd.adobe.xed-full+json; version={MAJOR_VERSION}` | `$ref` och  `allOf` löses, har rubriker och beskrivningar. |
-| `application/vnd.adobe.xed-notext+json; version={MAJOR_VERSION}` | Raw med `$ref` och `allOf`, inga titlar eller beskrivningar. |
-| `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` och  `allOf` lösts - inga titlar eller beskrivningar. |
-| `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` och  `allOf` åtgärdade, beskrivningar inkluderades. |
+| `application/vnd.adobe.xed+json; version=1` | Raw med `$ref` och `allOf` har rubriker och beskrivningar. |
+| `application/vnd.adobe.xed-full+json; version=1` | `$ref` och  `allOf` löses, har rubriker och beskrivningar. |
+| `application/vnd.adobe.xed-notext+json; version=1` | Raw med `$ref` och `allOf`, inga titlar eller beskrivningar. |
+| `application/vnd.adobe.xed-full-notext+json; version=1` | `$ref` och  `allOf` lösts - inga titlar eller beskrivningar. |
+| `application/vnd.adobe.xed-full-desc+json; version=1` | `$ref` och  `allOf` åtgärdade, beskrivningar inkluderades. |
 
 **Svar**
 
