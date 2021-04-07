@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;datauppsättning;datauppsättning;skapa en datauppsättning;skapa datauppsättning;aktivera datauppsättning
 solution: Experience Platform
 title: Skapa en datauppsättning i API:t
-topic: developer guide
+topic: utvecklarhandbok
 description: Det här dokumentet beskriver hur du skapar ett datauppsättningsobjekt i katalogtjänstens API.
+exl-id: f3e5de7f-1781-4898-ac42-063eb51e661a
 translation-type: tm+mt
-source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
+source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
 workflow-type: tm+mt
-source-wordcount: '232'
+source-wordcount: '256'
 ht-degree: 0%
 
 ---
-
 
 # Skapa en datauppsättning i API:t
 
@@ -57,6 +57,7 @@ curl -X POST \
 | --- | --- |
 | `name` | Namnet på datauppsättningen som ska skapas. |
 | `schemaRef.id` | URI-värdet `$id` för XDM-schemat som datamängden baseras på. |
+| `schemaRef.contentType` | Anger schemats format och version. Mer information finns i avsnittet [schemaversion](../../xdm/api/getting-started.md#versioning) i XDM API-guiden. |
 
 >[!NOTE]
 >
