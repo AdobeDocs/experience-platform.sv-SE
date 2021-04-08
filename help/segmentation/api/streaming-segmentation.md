@@ -4,14 +4,14 @@ solution: Experience Platform
 title: 'Utvärdera händelser i nära realtid med strömmande segmentering '
 topic: utvecklarhandbok
 description: Det här dokumentet innehåller exempel på hur du använder direktuppspelningssegmentering med Adobe Experience Platform Segmentation Service API.
+exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
 translation-type: tm+mt
-source-git-commit: bb7edcaccca87918c56d00e092e4b7154d7c5d6e
+source-git-commit: e1ae20412f449c991f53fdd0f095d0c3a6de262c
 workflow-type: tm+mt
-source-wordcount: '1342'
+source-wordcount: '1377'
 ht-degree: 0%
 
 ---
-
 
 # Utvärdera händelser i nära realtid med strömmande segmentering
 
@@ -75,9 +75,11 @@ För att ett segment ska kunna utvärderas med hjälp av direktuppspelningssegme
 | ---------- | ------- |
 | Inkommande träff | En segmentdefinition som refererar till en enda inkommande händelse utan tidsbegränsning. |
 | Inkommande träff inom ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse. |
+| Inkommande träff med ett tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse med ett tidsfönster. |
 | Endast profil | En segmentdefinition som bara refererar till ett profilattribut. |
 | Inkommande träde som refererar till en profil | En segmentdefinition som refererar till en enda inkommande händelse, utan tidsbegränsning, och ett eller flera profilattribut. |
 | Inkommande träde som refererar till en profil inom ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse och ett eller flera profilattribut. |
+| Segmentering | En segmentdefinition som innehåller en eller flera grupper eller direktuppspelningssegment. |
 | Flera händelser som refererar till en profil | Alla segmentdefinitioner som refererar till flera händelser **under de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. |
 
 En segmentdefinition kommer **inte** att aktiveras för direktuppspelningssegmentering i följande scenarier:
