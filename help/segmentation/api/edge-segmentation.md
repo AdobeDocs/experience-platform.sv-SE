@@ -6,18 +6,18 @@ topic: utvecklarhandbok
 description: Det här dokumentet innehåller exempel på hur du använder kantsegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
 translation-type: tm+mt
-source-git-commit: 692bfca8d14ac247527f956bbcba8b4eb37516e3
+source-git-commit: 36169a42c7f6a73ca9cc165cd338d6a1cf245bfc
 workflow-type: tm+mt
-source-wordcount: '636'
+source-wordcount: '653'
 ht-degree: 0%
 
 ---
 
-# Kantsegmentering
+# Kantsegmentering (beta)
 
 >[!NOTE]
 >
->I följande dokument beskrivs hur du utför kantsegmentering med API:t. Mer information om kantsegmentering med användargränssnittet finns i [användargränssnittsguiden för kantsegmentering](../ui/edge-segmentation.md).
+>I följande dokument beskrivs hur du utför kantsegmentering med API:t. Mer information om kantsegmentering med användargränssnittet finns i [användargränssnittsguiden för kantsegmentering](../ui/edge-segmentation.md). Kantsegmentering är för närvarande en betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
 
 Kantsegmentering är möjligheten att utvärdera segment i Adobe Experience Platform direkt, vilket möjliggör användning av samma sida och nästa sida vid personalisering.
 
