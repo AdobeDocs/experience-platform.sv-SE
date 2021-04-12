@@ -6,7 +6,7 @@ topic: översikt
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
 translation-type: tm+mt
-source-git-commit: 21782ee74adfe97fa0a88f499d01393155691b29
+source-git-commit: 8b74cf5f54ddf56486d7b947b38bef58823c3684
 workflow-type: tm+mt
 source-wordcount: '3793'
 ht-degree: 2%
@@ -42,7 +42,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | concat | Sammanfogar de angivna strängarna. | <ul><li>STRING: Strängarna som ska sammanfogas.</li></ul> | concat(STRING_1, STRING_2) | concat(&quot;Hi, &quot;, &quot;there&quot;, &quot;!&quot;) | `"Hi, there!"` |
 | explodera | Delar strängen baserat på en regex och returnerar en array med delar. Kan även inkludera regex för att dela upp strängen. Som standard tolkas delningen som &quot;,&quot;. Följande avgränsare **måste** föregås av `\`: `+, ?, ^, |, ., [, (, {, ), *, $, \` Om du inkluderar flera tecken som avgränsare behandlas avgränsaren som en avgränsare med flera tecken. | <ul><li>STRING: **Obligatorisk** Strängen som måste delas.</li><li>REGEX: *Valfritt* Det reguljära uttryck som kan användas för att dela strängen.</li></ul> | explode(STRING, REGEX) | explode(&quot;Hej, där!&quot;, &quot;&quot;) | `["Hi,", "there"]` |
 | instr | Returnerar platsen/indexvärdet för en delsträng. | <ul><li>INMATNING: **Obligatorisk** Strängen som söks igenom.</li><li>SUBSTRING: **Obligatorisk** Den delsträng som söks efter i strängen.</li><li>START_POSITION: *Valfritt* Platsen där sökningen ska börja i strängen.</li><li>FÖREKOMST: *Valfritt* Den n förekomsten att söka efter från startpositionen. Som standard är det 1. </li></ul> | instr(INPUT, SUBSTRING, START_POSITION, OCCURRENCE) | instr(&quot;adobe.com&quot;, &quot;com&quot;) | 6 |
@@ -58,7 +58,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | höger | Hämtar de sista n-tecknen i den angivna strängen. | <ul><li>STRING: **Obligatoriskt** Strängen som du hämtar de sista n-tecknen för.</li><li>ANTAL: **Obligatoriskt** De n-tecken som du vill hämta från strängen.</li></ul> | right(STRING, COUNT) | right(&quot;abcde&quot;, 2) | &quot;de&quot; |
 | ltrim | Tar bort mellanrummet från början av strängen. | <ul><li>STRING: **Obligatoriskt** Strängen som du vill ta bort mellanrummet från.</li></ul> | ltrim(STRING) | ltrim(&quot; hello&quot;) | &quot;hello&quot; |
 | rensa | Tar bort mellanrummet från strängens slut. | <ul><li>STRING: **Obligatoriskt** Strängen som du vill ta bort mellanrummet från.</li></ul> | rtrim(STRING) | rtrim(&quot;hello &quot;) | &quot;hello&quot; |
-| trimma | Tar bort mellanrummet från början och slutet av strängen. | <ul><li>STRING: **Obligatoriskt** Strängen som du vill ta bort mellanrummet från.</li></ul> | trim(STRING) | trim(&quot; hello &quot;) | &quot;hello&quot; |
+| trim | Tar bort mellanrummet från början och slutet av strängen. | <ul><li>STRING: **Obligatoriskt** Strängen som du vill ta bort mellanrummet från.</li></ul> | trim(STRING) | trim(&quot; hello &quot;) | &quot;hello&quot; |
 | är lika med | Jämför två strängar för att bekräfta om de är lika. Den här funktionen är skiftlägeskänslig. | <ul><li>STRING1: **Obligatorisk** Den första strängen som du vill jämföra.</li><li>STRING2: **Obligatorisk** Den andra strängen som du vill jämföra.</li></ul> | STRING1. &#x200B;equals( &#x200B; STRING2) | &quot;string1&quot;. &#x200B;equals &#x200B;(&quot;STRING1&quot;) | falskt |
 | equalsIgnoreCase | Jämför två strängar för att bekräfta om de är lika. Den här funktionen är **inte** skiftlägeskänslig. | <ul><li>STRING1: **Obligatorisk** Den första strängen som du vill jämföra.</li><li>STRING2: **Obligatorisk** Den andra strängen som du vill jämföra.</li></ul> | STRING1. &#x200B;equalsIgnoreCase &#x200B;(STRING2) | &quot;string1&quot;. &#x200B;equalsIgnoreCase &#x200B;(&quot;STRING1) | sant |
 
@@ -67,7 +67,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 ### Funktioner för reguljära uttryck
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | extract_regex | Extraherar grupper från indatasträngen baserat på ett reguljärt uttryck. | <ul><li>STRING: **Obligatoriskt** Strängen som du extraherar grupperna från.</li><li>REGEX: **Obligatoriskt** Det reguljära uttryck som du vill att gruppen ska matcha.</li></ul> | extract_regex(STRING, REGEX) | extract_regex &#x200B;(&quot;E259,E259B_009,1_1&quot; &#x200B;, &quot;([^,]+),[^,]*,([^,]+)&quot;) | [&quot;E259,E259B_009,1_1&quot;, &quot;E259&quot;, &quot;1_1&quot;] |
 | match_regex | Kontrollerar om strängen matchar det inmatade reguljära uttrycket. | <ul><li>STRING: **Obligatoriskt** Strängen som du kontrollerar matchar det reguljära uttrycket.</li><li>REGEX: **Obligatoriskt** Det reguljära uttryck som du jämför med.</li></ul> | match_regex(STRING, REGEX) | match_regex(&quot;E259,E259B_009,1_1&quot;, &quot;([^,]+),[^,]*,([^,]+)&quot;) | sant |
 
@@ -80,7 +80,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | sha1 | Tar en inmatning och skapar ett hash-värde med SHA-1 (Secure Hash Algorithm 1). | <ul><li>INMATNING: **Obligatorisk** Den oformaterade text som ska hash-kodas.</li><li>CHARSET: *Valfritt* Namnet på teckenuppsättningen. Möjliga värden är UTF-8, UTF-16, ISO-8859-1 och US-ASCII.</li></ul> | sha1(INPUT, CHARSET) | sha1(&quot;min text&quot;, &quot;UTF-8&quot;) | c3599c11e47719df18a24 &#x200B; 48690840c5dfcce3c80 |
 | sha256 | Tar en inmatning och skapar ett hash-värde med hjälp av den säkra hash-algoritmen 256 (SHA-256). | <ul><li>INMATNING: **Obligatorisk** Den oformaterade text som ska hash-kodas.</li><li>CHARSET: *Valfritt* Namnet på teckenuppsättningen. Möjliga värden är UTF-8, UTF-16, ISO-8859-1 och US-ASCII.</li></ul> | sha256(INPUT, CHARSET) | sha256(&quot;min text&quot;, &quot;UTF-8&quot;) | 7330d2b39ca35eaf4cb95fc846c21 &#x200B; ee6a39af698154a83a586ee270a0d372104 |
 | sha512 | Tar en inmatning och skapar ett hash-värde med hjälp av den säkra hash-algoritmen 512 (SHA-512). | <ul><li>INMATNING: **Obligatorisk** Den oformaterade text som ska hash-kodas.</li><li>CHARSET: *Valfritt* Namnet på teckenuppsättningen. Möjliga värden är UTF-8, UTF-16, ISO-8859-1 och US-ASCII.</li></ul> | sha512(INPUT, CHARSET) | sha512(&quot;min text&quot;, &quot;UTF-8&quot;) | a3d7e45a0d9be5fd4e4b9a3b8c9c2163c21ef &#x200B; 708bf11b4232bb21d2a8704ada2cdcd7b367dd07 88a89 &#x200B; a5c908cfe377aceb1072a7b386b7d4fd2ff68a8fd24d16 |
@@ -96,7 +96,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | get_url_protocol | Returnerar protokollet från angiven URL. Om indata är ogiltiga returneras null. | <ul><li>URL: **Nödvändig** Den URL som protokollet måste extraheras från.</li></ul> | get_url_protocol &#x200B;(URL) | get_url_protocol(&quot;https://platform &#x200B; .adobe.com/home&quot;) | https |
 | get_url_host | Returnerar värddatorn för angiven URL. Om indata är ogiltiga returneras null. | <ul><li>URL: **Nödvändig** Den URL som värden måste extraheras från.</li></ul> | get_url_host &#x200B;(URL) | get_url_host &#x200B;(&quot;https://platform &#x200B; .adobe.com/home&quot;) | platform.adobe.com |
 | get_url_port | Returnerar porten för angiven URL. Om indata är ogiltiga returneras null. | <ul><li>URL: **Nödvändig** Den URL som porten måste extraheras från.</li></ul> | get_url_port(URL) | get_url_port &#x200B;(&quot;sftp://example.com//home/ &#x200B; joe/employee.csv&quot;) | 22 |
@@ -112,8 +112,8 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen. Mer information om funktionen `date` finns i [datumfunktionsguiden](./dates.md).
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
--------- | ----------- | ---------- | -------| ---------- | -------------
-| nu | Hämtar aktuell tid. |  | nu() | nu() | `2020-09-23T10:10:24.556-07:00[America/Los_Angeles]` |
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+| now | Hämtar aktuell tid. |  | now() | now() | `2020-09-23T10:10:24.556-07:00[America/Los_Angeles]` |
 | tidsstämpel | Hämtar aktuell Unix-tid. |  | tidsstämpel() | tidsstämpel() | 1571850624571 |
 | format | Formaterar indatadatum enligt ett angivet format. | <ul><li>DATUM: **Obligatoriskt** Indatadatum, som ett ZonedDateTime-objekt, som du vill formatera.</li><li>FORMAT: **Nödvändigt** Formatet som du vill att datumet ska ändras till.</li></ul> | format(DATE, FORMAT) | format(2019-10-23T11:24:00+00:00, &quot;yyyy-MM-dd HH:mm:ss&quot;) | &quot;2019-10-23 11:24:35&quot; |
 | dformat | Konverterar en tidsstämpel till en datumsträng enligt ett angivet format. | <ul><li>TIDSSTÄMPEL: **Obligatorisk** Tidsstämpeln som du vill formatera. Detta skrivs i millisekunder.</li><li>FORMAT: **Nödvändigt** Det format som du vill att tidsstämpeln ska ändras till.</li></ul> | format &#x200B;(TIMESTAMP, FORMAT) | format(1571829875, &quot;dd-MMM-yyyy hh:mm&quot;) | &quot;23-Oct-2019 11:24&quot; |
@@ -136,7 +136,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | size_of | Returnerar storleken på indata. | <ul><li>INMATNING: **Obligatoriskt** Det objekt som du försöker hitta storleken på.</li></ul> | size_of(INPUT) | `size_of([1, 2, 3, 4])` | 4 |
 | is_empty | Kontrollerar om ett objekt är tomt eller inte. | <ul><li>INMATNING: **Obligatoriskt** Det objekt som du försöker kontrollera är tomt.</li></ul> | is_empty(INPUT) | `is_empty([1, 2, 3])` | falskt |
 | arrayer_to_object | Skapar en lista med objekt. | <ul><li>INMATNING: **Obligatoriskt** En gruppering av nyckel- och matrispar.</li></ul> | arrayer_to_object(INPUT) | need sample | need sample |
@@ -154,7 +154,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | coalesce | Returnerar det första icke-null-objektet i en given array. | <ul><li>INMATNING: **Obligatoriskt** Den array som du vill hitta det första icke-null-objektet för.</li></ul> | coalesce(INPUT) | coalesce(null, null, null, &quot;first&quot;, null, &quot;second&quot;) | &quot;first&quot; |
 | först | Hämtar det första elementet i den angivna arrayen. | <ul><li>INMATNING: **Nödvändig** Arrayen som du vill hitta det första elementet i.</li></ul> | first(INPUT) | first(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;) | &quot;1&quot; |
 | sista | Hämtar det sista elementet i den angivna arrayen. | <ul><li>INMATNING: **Nödvändig** Arrayen som du vill hitta det sista elementet i.</li></ul> | last(INPUT) | last(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;) | &quot;3&quot; |
@@ -171,7 +171,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | decode | Om en nyckel och en lista med nyckelvärdepar förenklas som en array, returnerar funktionen värdet om nyckeln hittas eller returnerar ett standardvärde om det finns i arrayen. | <ul><li>NYCKEL: **Nödvändig** Nyckeln som ska matchas.</li><li>OPTIONS: **Nödvändig** En förenklad array med nyckel/värde-par. Ett standardvärde kan också placeras i slutet.</li></ul> | decode(KEY, OPTIONS) | decode(stateCode, &quot;ca&quot;, &quot;California&quot;, &quot;pa&quot;, &quot;Pennsylvania&quot;, &quot;N/A&quot;) | Om given stateCode är &quot;ca&quot;, &quot;California&quot;.<br>Om den angivna statskoden är &quot;pa&quot;, &quot;Pennsylvania&quot;.<br>Om stateCode inte matchar följande, &quot;N/A&quot;. |
 | iif | Utvärderar ett givet booleskt uttryck och returnerar det angivna värdet baserat på resultatet. | <ul><li>UTTRYCK: **Obligatoriskt** Det booleska uttryck som utvärderas.</li><li>TRUE_VALUE: **Obligatoriskt** Värdet som returneras om uttrycket utvärderas till true.</li><li>FALSE_VALUE: **Obligatoriskt** Värdet som returneras om uttrycket utvärderas till false.</li></ul> | iif(EXPRESSION, TRUE_VALUE, FALSE_VALUE) | iif(&quot;s&quot;.equalsIgnoreCase(&quot;S&quot;), &quot;True&quot;, &quot;False&quot;) | &quot;Sant&quot; |
 
@@ -184,7 +184,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | min | Returnerar det minsta av de angivna argumenten. Använder naturlig beställning. | <ul><li>OPTIONS: **Obligatoriskt** Ett eller flera objekt som kan jämföras med varandra.</li></ul> | min(OPTIONS) | min(3, 1, 4) | 1 |
 | max | Returnerar det maximala antalet angivna argument. Använder naturlig beställning. | <ul><li>OPTIONS: **Obligatoriskt** Ett eller flera objekt som kan jämföras med varandra.</li></ul> | max(OPTIONS) | max(3, 1, 4) | 4 |
 
@@ -197,7 +197,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | to_bigint | Konverterar en sträng till ett BigInteger. | <ul><li>STRING: **Obligatorisk** Strängen som ska konverteras till ett BigInteger.</li></ul> | to_bigint(STRING) | to_bigint &#x200B;(&quot;100000.34&quot;) | 1000000,34 |
 | to_decimal | Konverterar en sträng till en dubbel sträng. | <ul><li>STRING: **Obligatorisk** Strängen som ska konverteras till Double.</li></ul> | to_decimal(STRING) | to_decimal(&quot;20.5&quot;) | 20.5 |
 | to_float | Konverterar en sträng till en flyttal. | <ul><li>STRING: **Obligatorisk** Strängen som ska konverteras till ett flyttal.</li></ul> | to_float(STRING) | to_float(&quot;12.3456&quot;) | 12.34566 |
@@ -212,7 +212,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | json_to_object | Deserialisera JSON-innehåll från den angivna strängen. | <ul><li>STRING: **Nödvändig** JSON-strängen som ska avserialiseras.</li></ul> | json_to_object &#x200B;(STRING) | json_to_object &#x200B;({&quot;info&quot;:{&quot;firstName&quot;:&quot;John&quot;,&quot;lastName&quot; : &quot;Doe&quot;}) | Ett objekt som representerar JSON. |
 
 {style=&quot;table-layout:auto&quot;}
@@ -224,7 +224,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | uuid /<br>guid | Skapar ett pseudoslumpmässigt ID. |  | uuid()<br>guid() | uuid()<br>guid() | 7c0267d2-bb74-4e1a-9275-3bf4fccda5f4<br>c7016dc7-3163-43f7-afc7-2e1c9c20633 |
 
 {style=&quot;table-layout:auto&quot;}
@@ -236,7 +236,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | ua_os_name | Extraherar operativsystemets namn från användaragentsträngen. | <ul><li>USER_AGENT: **Nödvändig** Användaragentsträngen.</li></ul> | ua_os_name &#x200B;(USER_AGENT) | ua_os_name &#x200B;(&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 5_1_1 som Mac OS X) AppleWebKit/534.46 (KHTML, t.ex. Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS |
 | ua_os_version_major | Extraherar operativsystemets huvudversion från användaragentsträngen. | <ul><li>USER_AGENT: **Nödvändig** Användaragentsträngen.</li></ul> | ua_os_version_major &#x200B;(USER_AGENT) | ua_os_version_major &#x200B; s(&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 5_1_1 som Mac OS X) AppleWebKit/534.46 (KHTML, t.ex. Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS 5 |
 | ua_os_version | Extraherar operativsystemets version från användaragentsträngen. | <ul><li>USER_AGENT: **Nödvändig** Användaragentsträngen.</li></ul> | ua_os_version &#x200B;(USER_AGENT) | ua_os_version &#x200B;(&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 5_1_1 som Mac OS X) AppleWebKit/534.46 (KHTML, t.ex. Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | 5.1.1 |
