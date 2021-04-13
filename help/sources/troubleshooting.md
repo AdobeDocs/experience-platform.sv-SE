@@ -4,14 +4,14 @@ solution: Experience Platform
 title: Felsökning av källor
 topic: felsökning
 description: Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform källor.
+exl-id: 94875121-7d4d-4eb2-8760-aa795933dd7e
 translation-type: tm+mt
-source-git-commit: 26e7116858574b366760ffd4f92b14117ccd28eb
+source-git-commit: 827a593c046530edba701edf26d9a47918cfd8f8
 workflow-type: tm+mt
-source-wordcount: '655'
+source-wordcount: '663'
 ht-degree: 0%
 
 ---
-
 
 # (Beta) Felsökningsguide för källor
 
@@ -57,7 +57,7 @@ Datatyper som stöds är heltal, strängar, booleska värden, datetime-objekt, a
 
 ### Vilka datum- och tidsformat stöds?
 
-Källor har stöd för en mängd olika datetime-format när data hämtas. Mer information om vilka datetime-format som stöds finns i [funktionsguiden för dataprep](../data-prep/dates.md).
+Källor har stöd för en mängd olika datetime-format när data hämtas. Mer information om vilka datetime-format som stöds finns i datumavsnittet i [handboken om dataformatshantering](../data-prep/data-handling.md#dates) i dokumentationen för datapresten.
 
 ### Hur formaterar jag arrayer i CSV-, JSON- och Parquet-filer?
 
