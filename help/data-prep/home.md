@@ -4,10 +4,11 @@ solution: Experience Platform
 title: Dataförhandsgranskning
 topic: översikt
 description: I det här dokumentet introduceras Data Prep i Adobe Experience Platform.
+exl-id: f15eeb50-a531-4560-a524-1a670fbda706
 translation-type: tm+mt
-source-git-commit: 73bf6abb143c0866a400aafe984f9a553ffc1abf
+source-git-commit: 827a593c046530edba701edf26d9a47918cfd8f8
 workflow-type: tm+mt
-source-wordcount: '352'
+source-wordcount: '389'
 ht-degree: 0%
 
 ---
@@ -35,6 +36,10 @@ Läs guiden [mappningsfunktioner](./functions.md) om du vill veta mer om de olik
 
 En uppsättning mappningar som omformar ett schema till ett annat kallas tillsammans för en mappningsuppsättning. En enda mappningsuppsättning skapas som en del av varje dataflöde. En mappningsuppsättning är en integrerad del av dataflödena och skapas, redigeras och övervakas som en del av dataflödena.
 
+## Dataformatshantering
+
+Data Prep kan hantera olika dataformat som importerats till Platform på ett robust sätt. Om du vill veta mer om hur dataprep hanterar olika datatyper kan du läsa [översikten över dataformatshantering](./data-handling.md).
+
 ## Nästa steg
 
-Det här dokumentet beskriver grunderna för Data Prep i Adobe Experience Platform. Läs guiden [mappningsfunktioner](./functions.md) om du vill veta mer om olika mappningsfunktioner. Om du vill veta mer om de olika datumtidssträngarna läser du [datumsträngsguiden](./dates.md). Läs [Utvecklarhandboken för dataprep](api/overview.md) om du vill lära dig hur du använder API:t för dataprep.
+Det här dokumentet beskriver grunderna för Data Prep i Adobe Experience Platform. Läs guiden [mappningsfunktioner](./functions.md) om du vill veta mer om olika mappningsfunktioner. Läs [Handboken för dataformatshantering](./data-handling.md#dates) om du vill veta mer om hur dataprep hanterar olika datatyper. Läs [Utvecklarhandboken för dataprep](api/overview.md) om du vill lära dig hur du använder API:t för dataprep.
