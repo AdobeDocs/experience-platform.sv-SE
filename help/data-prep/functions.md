@@ -6,9 +6,9 @@ topic: översikt
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
 translation-type: tm+mt
-source-git-commit: 8b74cf5f54ddf56486d7b947b38bef58823c3684
+source-git-commit: c3939d4ce30bf12748b898f461a166f28f010abf
 workflow-type: tm+mt
-source-wordcount: '3793'
+source-wordcount: '3798'
 ht-degree: 2%
 
 ---
@@ -109,7 +109,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 
 >[!NOTE]
 >
->Rulla åt vänster/höger för att visa hela innehållet i tabellen. Mer information om funktionen `date` finns i [datumfunktionsguiden](./dates.md).
+>Rulla åt vänster/höger för att visa hela innehållet i tabellen. Mer information om funktionen `date` finns i datumavsnittet i [handboken om dataformatshantering](./data-handling.md#dates).
 
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
