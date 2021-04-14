@@ -3,16 +3,16 @@ keywords: Experience Platform;hem;populära ämnen;ui;UI;XDM;XDM system;experien
 solution: Experience Platform
 title: Skapa ett schema med Schemaredigeraren
 topic: självstudiekurs
-type: Självstudiekurs
+type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för hur du skapar ett schema med Schemaredigeraren i Experience Platform.
+exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 53bf2ad757b24ad294af32101124e8047580807a
 workflow-type: tm+mt
-source-wordcount: '3457'
+source-wordcount: '3533'
 ht-degree: 0%
 
 ---
-
 
 # Skapa ett schema med [!DNL Schema Editor]
 
@@ -48,7 +48,11 @@ I den här självstudiekursen väljer du **[!UICONTROL XDM Individual Profile]**
 
 ![](../images/tutorials/create-schema/create_schema_button.png)
 
-[!DNL Schema Editor] visas. Det här är arbetsytan som du kommer att komponera ditt schema på. Eftersom du väljer en standard-XDM-klass som schemat ska baseras på skapas ett namnlöst schema automatiskt i **[!UICONTROL Structure]**-avsnittet på arbetsytan när du kommer till redigeraren, tillsammans med standardfälten som ingår i alla scheman som baseras på den klassen. Den tilldelade klassen för schemat listas också under **[!UICONTROL Class]** i **[!UICONTROL Composition]**-avsnittet.
+Eftersom du har valt en standard-XDM-klass som schemat ska baseras på visas dialogrutan **[!UICONTROL Add mixin]** så att du kan börja lägga till fält direkt i schemat. För tillfället väljer du **[!UICONTROL Cancel]** för att stänga dialogrutan.
+
+![](../images/tutorials/create-schema/cancel-mixin.png)
+
+[!DNL Schema Editor] visas. Det här är arbetsytan som du kommer att komponera ditt schema på. Ett namnlöst schema skapas automatiskt i **[!UICONTROL Structure]**-delen av arbetsytan när du kommer till redigeraren, tillsammans med standardfälten som ingår i alla scheman baserade på den klassen. Den tilldelade klassen för schemat listas också under **[!UICONTROL Class]** i **[!UICONTROL Composition]**-avsnittet.
 
 ![](../images/tutorials/create-schema/schema_editor.png)
 
@@ -120,11 +124,13 @@ Ungefär som i fältet `name` representerar de fält du just lade till koncept f
 
 ![](../images/tutorials/create-schema/personal_details_structure.png)
 
-## Definiera en ny blandning {#define-mixin}
+## Definiera en anpassad blandning {#define-mixin}
 
-Schemat [!UICONTROL Loyalty Members] är avsett för att samla in data som är relaterade till medlemmarna i ett lojalitetsprogram, så det kräver vissa specifika lojalitetsrelaterade fält. Det finns inga standardblandningar som innehåller de nödvändiga fälten, och du måste därför definiera en ny blandning.
+Schemat [!UICONTROL Loyalty Members] är avsett för att samla in data som är relaterade till medlemmarna i ett lojalitetsprogram, så det kräver vissa specifika lojalitetsrelaterade fält.
 
-När du öppnar dialogrutan **[!UICONTROL Add Mixin]** väljer du **[!UICONTROL Create New Mixin]**. Du ombeds sedan ange ett visningsnamn och en beskrivning för din blandning.
+Det finns en [!UICONTROL Loyalty Details]-standardblandning som du kan lägga till i schemat för att fånga vanliga fält som är relaterade till ett lojalitetsprogram. Vi rekommenderar starkt att du använder standardblandningar för att representera koncept som har hämtats in av dina scheman, men strukturen för standardlojalitetsmixinen kanske inte kan samla in alla relevanta data för ditt specifika lojalitetsprogram. I det här scenariot kan du välja att definiera en ny anpassad blandning för att hämta fälten i stället.
+
+Öppna dialogrutan **[!UICONTROL Add Mixin]** igen, men den här gången väljer du **[!UICONTROL Create New Mixin]** nära överkanten. Du ombeds sedan ange ett visningsnamn och en beskrivning för din blandning.
 
 ![](../images/tutorials/create-schema/mixin_create_new.png)
 
