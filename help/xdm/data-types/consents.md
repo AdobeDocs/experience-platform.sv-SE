@@ -3,14 +3,14 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;samtyc
 title: Datatypen Innehåll och inställningar
 description: Datatypen Godkännande av sekretess, personalisering och marknadsföringsinställningar är avsedd att stödja insamling av kundbehörigheter och preferenser som genereras av CMP (Consent Management Platforms) och andra källor från era dataåtgärder.
 topic: guide
+exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
 translation-type: tm+mt
-source-git-commit: 865379292985037b184d92e5d3fc1abc1873e962
+source-git-commit: 4e9395b4551842cf75b0d1a4ec36c85930c42da5
 workflow-type: tm+mt
-source-wordcount: '2060'
-ht-degree: 0%
+source-wordcount: '1838'
+ht-degree: 1%
 
 ---
-
 
 # [!DNL Consents & Preferences] datatyp
 
@@ -80,17 +80,6 @@ I följande JSON visas ett exempel på den datatyp som kan bearbetas av datatype
     },
     "metadata": {
       "time": "2019-01-01T15:52:25+00:00"
-    },
-    "idSpecific": {
-      "email": {
-        "jdoe@example.com": {
-          "marketing": {
-            "email": {
-              "val": "n"
-            }
-          }
-        }
-      }
     }
   }
 }
@@ -250,36 +239,6 @@ I följande JSON visas ett exempel på den datatyp som kan bearbetas av datatype
 | Egenskap | Beskrivning |
 | --- | --- |
 | `time` | En ISO 8601-tidsstämpel för senaste gången som något av kundens samtycke och inställningar uppdaterades. Det här fältet kan användas i stället för att tidsstämplar tillämpas på enskilda inställningar för att minska inläsningen och komplexiteten. Om du anger ett `time`-värde under en enskild inställning åsidosätts tidsstämpeln `metadata` för den aktuella inställningen. |
-
-### `idSpecific`
-
-`idSpecific` kan användas när ett visst samtycke eller en viss preferens inte gäller för en kund, utan är begränsad till en enda enhet eller ett enda ID. En kund kan till exempel välja att inte ta emot e-post till en adress, samtidigt som e-post kan tillåtas på en annan adress.
-
->[!IMPORTANT]
->
->Medgivande och inställningar på kanalnivå (dvs. de som anges under `consents` utanför `idSpecific`) gäller för ID:n inom den kanalen. Därför påverkar allt innehåll och alla inställningar på kanalnivå direkt om motsvarande ID- eller enhetsspecifika inställningar uppfylls:
->
->* Om kunden har valt att inte göra det på kanalnivå, ignoreras alla motsvarande samtycke eller inställningar i `idSpecific`.
->* Om samtycke eller inställning på kanalnivå inte har angetts, eller om kunden har valt att göra det, respekteras motsvarande samtycke eller inställningar i `idSpecific`.
-
-
-Varje nyckel i `idSpecific`-objektet representerar ett specifikt ID-namnområde som känns igen av Adobe Experience Platform Identity Service. Du kan definiera egna namnutrymmen för att kategorisera olika identifierare, men vi rekommenderar att du använder ett av de standardnamnutrymmen som ingår i identitetstjänsten för att minska lagringsstorlekarna för kundprofilen i realtid. Mer information om identitetsnamnutrymmen finns i [översikten över identitetsnamnrymden](../../identity-service/namespaces.md) i dokumentationen för identitetstjänsten.
-
-Nycklarna för varje namnområdesobjekt representerar de unika identitetsvärden som kunden har angett inställningar för. Varje identitetsvärde kan innehålla en komplett uppsättning innehåll och inställningar, formaterade på samma sätt som `consents`.
-
-```json
-"idSpecific": {
-  "email": {
-    "jdoe@example.com": {
-      "marketing": {
-        "email": {
-          "val": "n"
-        }
-      }
-    }
-  }
-}
-```
 
 ## Inmatning av data med datatypen {#ingest}
 
