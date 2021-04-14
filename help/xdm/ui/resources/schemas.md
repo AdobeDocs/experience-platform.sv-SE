@@ -3,15 +3,15 @@ keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experi
 solution: Experience Platform
 title: Skapa och redigera scheman i användargränssnittet
 description: Lär dig grunderna i hur du skapar och redigerar scheman i användargränssnittet i Experience Platform.
-topic: user guide
+topic: användarhandbok
+exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
 translation-type: tm+mt
-source-git-commit: aa2088d30716f56ac2909214badbb39c0ae97855
+source-git-commit: 90a0c4e8d47d9bce38c9e13272e4f41f78f46e35
 workflow-type: tm+mt
-source-wordcount: '1283'
+source-wordcount: '1342'
 ht-degree: 0%
 
 ---
-
 
 # Skapa och redigera scheman i användargränssnittet
 
@@ -69,7 +69,15 @@ En dialogruta visas med en lista över mixar som du kan välja för schemat. Eft
 
 ![](../../images/ui/resources/schemas/mixin-popularity.png)
 
-Du kan använda sökfältet för att hitta den blandning du vill använda. Blandningar vars namn matchar frågan visas högst upp i listan. Under **[!UICONTROL Standard Fields]** visas blandningar som innehåller fält som beskriver önskade dataattribut.
+Om du känner till den allmänna aktiviteten eller affärsområdet för de blandningsfält som du vill lägga till, väljer du en eller flera av de vertikala kategorierna i den vänstra listen för att filtrera den visade listan med mixar.
+
+![](../../images/ui/resources/schemas/industry-filter.png)
+
+>[!NOTE]
+>
+>Mer information om de bästa metoderna för branschspecifik datamodellering i XDM finns i dokumentationen om [branschdatamodeller](../../schema/industries/overview.md).
+
+Du kan också använda sökfältet för att hitta den blandning du vill använda. Blandningar vars namn matchar frågan visas högst upp i listan. Under **[!UICONTROL Standard Fields]** visas blandningar som innehåller fält som beskriver önskade dataattribut.
 
 ![](../../images/ui/resources/schemas/mixin-search.png)
 
