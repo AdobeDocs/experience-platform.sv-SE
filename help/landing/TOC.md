@@ -5,9 +5,9 @@ user-guide-title: Adobe Experience Platform - översikt
 breadcrumb-title: Experience Platform - översikt
 user-guide-description: Läs om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid.
 translation-type: tm+mt
-source-git-commit: 36b85bee308fdcf599c9b7913cf94774404f06d2
+source-git-commit: 3f7808a08d033c5940d2115006c269b8c4079822
 workflow-type: tm+mt
-source-wordcount: '170'
+source-wordcount: '193'
 ht-degree: 5%
 
 ---
@@ -45,6 +45,10 @@ ht-degree: 5%
 * Styrning, sekretess och säkerhet {#governance-privacy-security}
    * [Översikt](./governance-privacy-security/overview.md)
    * Medgivandehantering {#consent}
+      * Adobe standard {#adobe}
+         * [Översikt](./governance-privacy-security/consent/adobe/overview.md)
+         * [Konfigurera en datauppsättning för inhämtning av samtycke och inställningsdata](./governance-privacy-security/consent/adobe/dataset.md)
+         * [Integrera Platform Web SDK för att bearbeta samtycke och inställningsdata](./governance-privacy-security/consent/adobe/sdk.md)
       * IAB TCF 2.0 {#iab}
          * [Översikt](./governance-privacy-security/consent/iab/overview.md)
          * [Konfigurera en datauppsättning för inhämtning av samtycke och inställningsdata](./governance-privacy-security/consent/iab/dataset.md)
