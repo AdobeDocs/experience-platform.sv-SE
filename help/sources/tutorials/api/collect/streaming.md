@@ -3,13 +3,13 @@ keywords: Experience Platform;hem;populära ämnen;molnlagringsdata;strömmande 
 solution: Experience Platform
 title: Samla in strömmande data med källkopplingar och API:er
 topic: översikt
-type: Självstudiekurs
+type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta direktuppspelningsdata och föra in dem på plattformen med hjälp av källanslutningar och API:er.
 exl-id: 898df7fe-37a9-4495-ac05-30029258a6f4
 translation-type: tm+mt
-source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
+source-git-commit: a63208dcdbe6851262e567a89c00b160dffa0e41
 workflow-type: tm+mt
-source-wordcount: '1325'
+source-wordcount: '1499'
 ht-degree: 0%
 
 ---
@@ -119,10 +119,89 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 ```json
 {
-    "id": "2abd97c4-91bb-4c93-bd97-c491bbfc933d",
+    "id": "e96d6135-4b50-446e-922c-6dd66672b6b2",
     "etag": "\"66013508-0000-0200-0000-5f6e2ae70000\""
 }
 ```
+
+## Hämta URL för direktuppspelningsslutpunkt {#get-endpoint}
+
+När du har skapat en källanslutning kan du nu hämta din URL för direktuppspelningsslutpunkt.
+
+**API-format**
+
+```http
+GET /flowservice/sourceConnections/{CONNECTION_ID}
+```
+
+| Parameter | Beskrivning |
+| --------- | ----------- |
+| `{CONNECTION_ID}` | Värdet `id` för sourceConnections som du skapade tidigare. |
+
+**Begäran**
+
+```shell
+curl -X GET https://platform.adobe.io/data/foundation/flowservice/sourceConnections/e96d6135-4b50-446e-922c-6dd66672b6b2 \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den begärda anslutningen. URL:en för direktuppspelningsslutpunkten skapas automatiskt med anslutningen och kan hämtas med `inletUrl`-värdet.
+
+```json
+{
+    "items": [
+        {
+            "id": "e96d6135-4b50-446e-922c-6dd66672b6b2",
+            "createdAt": 1617743929826,
+            "updatedAt": 1617743930363,
+            "createdBy": "{CREATED_BY}",
+            "updatedBy": "{UPDATED_BY}",
+            "createdClient": "{USER_ID}",
+            "updatedClient": "{USER_ID}",
+            "sandboxId": "d537df80-c5d7-11e9-aafb-87c71c35cac8",
+            "sandboxName": "prod",
+            "imsOrgId": "{IMS_ORG}",
+            "name": "Test source connector for streaming data",
+            "description": "Test source connector for streaming data",
+            "baseConnectionId": "f6aa6c58-3c3d-4c59-aa6c-583c3d6c599c",
+            "state": "enabled",
+            "data": {
+                "format": "delimited",
+                "schema": null,
+                "properties": null
+            },
+            "connectionSpec": {
+                "id": "bc7b00d6-623a-4dfc-9fdb-f1240aeadaeb",
+                "version": "1.0"
+            },
+            "params": {
+                "sourceId": "Streaming raw data",
+                "inletUrl": "https://dcs.adobedc.net/collection/2301a1f761f6d7bf62c5312c535e1076bbc7f14d728e63cdfd37ecbb4344425b",
+                "inletId": "2301a1f761f6d7bf62c5312c535e1076bbc7f14d728e63cdfd37ecbb4344425b",
+                "dataType": "raw",
+                "name": "hgtest"
+            },
+            "version": "\"d6006bc1-0000-0200-0000-606cd03a0000\"",
+            "etag": "\"d6006bc1-0000-0200-0000-606cd03a0000\"",
+            "inheritedAttributes": {
+                "baseConnection": {
+                    "id": "f6aa6c58-3c3d-4c59-aa6c-583c3d6c599c",
+                    "connectionSpec": {
+                        "id": "bc7b00d6-623a-4dfc-9fdb-f1240aeadaeb",
+                        "version": "1.0"
+                    }
+                }
+            }
+        }
+    ]
+}
+```
+
 
 ## Skapa ett mål-XDM-schema {#target-schema}
 
@@ -528,7 +607,7 @@ curl -X POST \
             "version": "1.0"
         },
         "sourceConnectionIds": [
-            "2abd97c4-91bb-4c93-bd97-c491bbfc933d"
+            "e96d6135-4b50-446e-922c-6dd66672b6b2"
         ],
         "targetConnectionIds": [
             "723222e2-6ab9-4b0b-b222-e26ab9bb0bc2"
@@ -562,6 +641,62 @@ Ett godkänt svar returnerar ID:t (`id`) för det nya dataflödet.
     "etag": "\"8e000533-0000-0200-0000-5f3c40fd0000\""
 }
 ```
+
+## Bokför rådata som ska importeras {#ingest-data}
+
+Nu när du har skapat ditt flöde kan du skicka ditt JSON-meddelande till direktuppspelningsslutpunkten som du skapade tidigare.
+
+**API-format**
+
+```http
+POST /collection/{CONNECTION_ID}
+```
+
+| Parameter | Beskrivning |
+| --------- | ----------- |
+| `{CONNECTION_ID}` | Värdet `id` för den nyligen skapade direktuppspelningsanslutningen. |
+
+**Begäran**
+
+Exemplet begär att rådata importeras till strömningsslutpunkten som skapades tidigare.
+
+```shell
+curl -X POST https://dcs.adobedc.net/collection/2301a1f761f6d7bf62c5312c535e1076bbc7f14d728e63cdfd37ecbb4344425b \
+  -H 'Content-Type: application/json' \
+  -H 'x-adobe-flow-id: 1f086c23-2ea8-4d06-886c-232ea8bd061d' \
+  -d '{
+      "name": "Johnson Smith",
+      "location": {
+          "city": "Seattle",
+          "country": "United State of America",
+          "address": "3692 Main Street"
+      },
+      "gender": "Male"
+      "birthday": {
+          "year": 1984
+          "month": 6
+          "day": 9
+      }
+  }'
+```
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 200 med information om den nya informationen.
+
+```json
+{
+    "inletId": "{CONNECTION_ID}",
+    "xactionId": "1584479347507:2153:240",
+    "receivedTimeMs": 1584479347507
+}
+```
+
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `{CONNECTION_ID}` | ID:t för den tidigare skapade direktuppspelningsanslutningen. |
+| `xactionId` | En unik identifierare som genererats på serversidan för den post du just skickade. Detta ID hjälper Adobe att spåra postens livscykel via olika system och med felsökning. |
+| `receivedTimeMs`: En tidsstämpel (epok i millisekunder) som visar vilken tid begäran togs emot. |
 
 ## Nästa steg
 
