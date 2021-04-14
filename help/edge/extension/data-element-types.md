@@ -1,14 +1,14 @@
 ---
 title: Dataelementtyper i Adobe Experience Platform Web SDK-tillägget
 description: Lär dig mer om de olika dataelementtyperna i Adobe Experience Platform Web SDK-tillägget i Adobe Experience Platform Launch.
+exl-id: 3c2c257f-1fbc-4722-8040-61ad19aa533f
 translation-type: tm+mt
-source-git-commit: 2a0ae9541a8bb2bb985d43a402d0842e73b23c81
+source-git-commit: 3f7808a08d033c5940d2115006c269b8c4079822
 workflow-type: tm+mt
 source-wordcount: '305'
 ht-degree: 0%
 
 ---
-
 
 # Dataelementtyper
 
@@ -26,7 +26,7 @@ Med data från identitetskartan kan du skapa identiteter från andra dataelement
 
 ![](./assets/identity-map-data-element.png)
 
-## XDM-objekt
+## XDM-objekt {#xdm-object}
 
 Använd XDM-format för att skicka data till Adobe Experience Platform Web SDK. Det är enklare att formatera data med XDM-objektets dataelement. När du först öppnar det här dataelementet väljer du rätt Adobe Experience Platform-sandlåda och -schema. När du har valt ditt schema ser du strukturen för ditt schema, som du enkelt kan fylla i.
 
