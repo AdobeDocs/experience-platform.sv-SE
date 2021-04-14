@@ -6,10 +6,10 @@ breadcrumb-title: XDM-guide (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och mixins för att standardisera upplevelsedata.
 feature: Scheman
 translation-type: tm+mt
-source-git-commit: 3e1005aa11b648bd633ee4f64d527cae56cca620
+source-git-commit: 8b88a828f8680ac4d064f7f84e0db9e315526833
 workflow-type: tm+mt
-source-wordcount: '257'
-ht-degree: 7%
+source-wordcount: '279'
+ht-degree: 6%
 
 ---
 
@@ -36,6 +36,7 @@ ht-degree: 7%
       * [IdentityMap](./mixins/profile/identitymap.md)
       * [Demografiska detaljer](./mixins/profile/person-details.md)
       * [Kontaktinformation, privat](./mixins/profile/personal-details.md)
+      * [Sekretess/personalisering/marknadsföringsinställningar (samtycke)](./mixins/profile/consents.md)
       * [Information om segmentmedlemskap](./mixins/profile/segmentation.md)
       * [Kontaktinformation, arbete](./mixins/profile/work-details.md)
    * Händelseblandningar {#event}
@@ -51,6 +52,10 @@ ht-degree: 7%
    * [Enhet](./data-types/device.md)
    * [E-postadress](./data-types/email-address.md)
    * [Miljö](./data-types/environment.md)
+   * [Allmänt fält för samtycke](./data-types/consent-field.md)
+   * [Allmänt inställningsfält för marknadsföring](./data-types/marketing-field.md)
+   * [Allmänt fält för marknadsföringsinställningar med prenumerationer](./data-types/marketing-field-subscriptions.md)
+   * [Allmänt inställningsfält för personalisering](./data-types/personalization-field.md)
    * [Geo](./data-types/geo.md)
    * [Geo Circle](./data-types/geo-circle.md)
    * [Geo-koordinater](./data-types/geo-coordinates.md)
