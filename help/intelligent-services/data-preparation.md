@@ -2,16 +2,16 @@
 keywords: Experience Platform;home;Intelligent Services;populära ämnen;Intelligent service;Intelligent service
 solution: Experience Platform, Intelligent Services
 title: Förbered data för användning i intelligenta tjänster
-topic: Intelligent Services
-description: 'För att Intelligent Services ska kunna hitta insikter från era marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. Intelligenta tjänster utnyttjar XDM-scheman (Experience Data Model) för att uppnå detta. Närmare bestämt måste alla datauppsättningar som används i Intelligent Services] överensstämma med CEE-XDM-schemat (Consumer Experience Event). '
+topic: Intelligenta tjänster
+description: För att Intelligent Services ska kunna hitta insikter från era marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. Intelligenta tjänster utnyttjar XDM-scheman (Experience Data Model) för att uppnå detta. Närmare bestämt måste alla datauppsättningar som används i Intelligent Services] överensstämma med CEE-XDM-schemat (Consumer Experience Event).
+exl-id: 17bd7cc0-da86-4600-8290-cd07bdd5d262
 translation-type: tm+mt
-source-git-commit: eb163949f91b0d1e9cc23180bb372b6f94fc951f
+source-git-commit: b311a5970a121a3277bdb72f5a1285216444b339
 workflow-type: tm+mt
-source-wordcount: '1861'
+source-wordcount: '2020'
 ht-degree: 0%
 
 ---
-
 
 # Förbered data för användning i [!DNL Intelligent Services]
 
@@ -75,7 +75,28 @@ Du måste fastställa det bästa fältet som ska användas som primär identitet
 * &quot;mcid&quot; (för Adobe Audience Manager ID)
 * &quot;aaid&quot; (för Adobe Analytics ID)
 
-Om du är osäker på vilket fält du ska använda som primär identitet kontaktar du Adobe Consulting Services för att fastställa den bästa lösningen.
+Om du är osäker på vilket fält du ska använda som primär identitet kontaktar du Adobe Consulting Services för att fastställa den bästa lösningen. Om ingen primär identitet anges används följande standardbeteende i programmet för intelligenta tjänster:
+
+| Standard | Attribution AI | Kund-AI |
+| --- | --- | --- |
+| Identitetskolumn | `endUserIDs._experience.aaid.id` | `endUserIDs._experience.mcid.id` |
+| Namnutrymme | AAID | ECID |
+
+Om du vill ange en primär identitet går du till schemat från fliken **[!UICONTROL Schemas]** och väljer hyperlänken för schemanamnet för att öppna **[!DNL Schema Editor]**.
+
+![Navigera till schema](./images/data-preparation/navigate_schema.png)
+
+Navigera sedan till det fält som du vill använda som primär identitet och markera det. Menyn **[!UICONTROL Field properties]** öppnas för det fältet.
+
+![Markera fältet](./images/data-preparation/find_field.png)
+
+Bläddra nedåt på menyn **[!UICONTROL Field properties]** tills du hittar kryssrutan **[!UICONTROL Identity]**. När du har markerat rutan visas alternativet att ange den valda identiteten som **[!UICONTROL Primary identity]**. Markera även den här rutan.
+
+![Markera kryssruta](./images/data-preparation/set_primary_identity.png)
+
+Sedan måste du ange **[!UICONTROL Identity namespace]** i listan med fördefinierade namnutrymmen i listrutan. I det här exemplet har ECID-namnutrymmet valts eftersom ett Adobe Audience Manager-id `mcid.id` används. Välj **[!UICONTROL Apply]** för att bekräfta uppdateringarna och välj sedan **[!UICONTROL Save]** i det övre högra hörnet för att spara ändringarna i schemat.
+
+![Spara ändringarna](./images/data-preparation/select_namespace.png)
 
 #### xdm:tidsstämpel {#timestamp}
 
@@ -104,7 +125,7 @@ Detta fält representerar den marknadsföringskanal som är relaterad till Exper
 
 Fullständig information om vart och ett av de obligatoriska underfälten för `xdm:channel` finns i [Experience channel schema](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/channels/channel.schema.md) spec. Exempel på mappningar finns i tabellen [nedan](#example-channels).
 
-##### Exempel på kanalmappningar {#example-channels}
+#### Exempel på kanalmappningar {#example-channels}
 
 I följande tabell visas några exempel på marknadsföringskanaler som har mappats till schemat `xdm:channel`:
 
