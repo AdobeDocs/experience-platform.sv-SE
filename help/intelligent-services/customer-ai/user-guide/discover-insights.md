@@ -2,16 +2,16 @@
 keywords: Experience Platform;insikter;kundinformation;populära ämnen;kundinsikter
 solution: Experience Platform, Intelligent Services, Real-time Customer Data Platform
 title: Identifiera insikter med kundens AI
-topic: Discovering insights
+topic: Identifiera insikter
 description: Det här dokumentet fungerar som en guide för interaktion med Service Instance Insights i användargränssnittet för AI för Intelligent Services.
+exl-id: 8aaae963-4029-471e-be9b-814147a5f160
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: ff953cf0aed2b9122b78126a87625e88f1ca4506
 workflow-type: tm+mt
-source-wordcount: '1352'
+source-wordcount: '1572'
 ht-degree: 0%
 
 ---
-
 
 # Upptäck insikter med kundens AI
 
@@ -37,14 +37,15 @@ Kundens AI-tjänstsida visas. På den här sidan visas tjänstinstanser för kun
 
 ![Skapa instans](../images/insights/dashboard.png)
 
-Klicka på ett tjänstinstansnamn för att börja.
+Välj ett tjänstinstansnamn som ska börja.
 
 ![Skapa instans](../images/insights/click-the-name.png)
 
-Därefter visas informationssidan för den tjänstinstansen, där du får visualiseringar av dina data. Visualiseringarna och vad du kan göra med data beskrivs mer ingående i den här handboken.
+Därefter visas informationssidan för den tjänstinstansen med alternativet att välja **[!UICONTROL Latest scores]** eller **[!UICONTROL Performance summary]**. Standardfliken **[!UICONTROL Latest scores]** innehåller visualiseringar av dina data. Visualiseringarna och vad du kan göra med data beskrivs mer ingående i den här handboken.
 
-![konfigurationssida](../images/insights/landing-page.png)
+Fliken **[!UICONTROL Performance summary]** visar den faktiska bortfallet eller konverteringsgraden för varje prioritetsbucket. Mer information finns i avsnittet om [resultatsammanfattningsmått](#performance-metrics).
 
+![konfigurationssida](../images/insights/landing_page_insights.png)
 
 ### Information om tjänstinstans
 
@@ -155,6 +156,30 @@ Segmentverktyget används för att definiera ett segment. När du väljer **[!UI
 Om du vill visa det nya segmentet i plattformsgränssnittet klickar du på **[!UICONTROL Segments]** i den vänstra navigeringen. Sidan **[!UICONTROL Browse]** visas och visar alla tillgängliga segment.
 
 ![Alla segment](../images/insights/Segments-dashboard.png)
+
+## Resultatsammanfattningsmått {#performance-metrics}
+
+På fliken **[!UICONTROL Performance summary]** visas de faktiska bortfall- eller konverteringsfrekvenserna, indelade i de olika benägenhetsintervall som anges av kundens AI.
+
+![Fliken Prestandasammanfattning](../images/insights/summary_tab.png)
+
+Inledningsvis visas bara förväntade frekvenser (prickade linjer). Förväntade hastigheter visas när en poängkörning inte har utförts och data ännu inte är tillgängliga. När ett resultatfönster har passerat ersätts den förväntade hastigheten med en faktisk hastighet (heldragen linje).
+
+När du hovrar över raderna visas datumet och den faktiska/förväntade frekvensen för den dagen i den hakparken.
+
+![Exempel på Bucket](../images/insights/churn_tab.png)
+
+Du kan filtrera tidsramen för de förväntade och faktiska frekvenserna som visas. Välj **kalenderikonen** ![ikonen](../images/insights/calendar_icon.png)och välj sedan ett nytt datumintervall. Resultaten i varje bucket uppdateras för att visas inom det nya datumintervallet.
+
+![Datumväljare](../images/insights/date_selector.png)
+
+### Enskilda poängsättningsgrader
+
+I den nedre halvan av fliken **[!UICONTROL Performance summary]** visas resultatet för varje enskild poängkörning. Välj listdatumet i det övre högra hörnet om du vill visa resultat för en annan poängkörning.
+
+Beroende på om du förutser kurvor eller konverteringar visar [!UICONTROL Distribution of Scores]-diagrammet fördelningen av profiler som kurvformas/konverteras och inte kurvformas/inte konverteras i varje steg.
+
+![individuell poängsättning](../images/insights/scoring_tab.png)
 
 ## Nästa steg
 
