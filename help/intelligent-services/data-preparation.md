@@ -3,21 +3,21 @@ keywords: Experience Platform;home;Intelligent Services;populära ämnen;Intelli
 solution: Experience Platform, Intelligent Services
 title: Förbered data för användning i intelligenta tjänster
 topic: Intelligenta tjänster
-description: För att Intelligent Services ska kunna hitta insikter från era marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. Intelligenta tjänster utnyttjar XDM-scheman (Experience Data Model) för att uppnå detta. Närmare bestämt måste alla datauppsättningar som används i Intelligent Services] överensstämma med CEE-XDM-schemat (Consumer Experience Event).
+description: För att Intelligent Services ska kunna hitta insikter från era marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. Intelligenta tjänster använder XDM-scheman (Experience Data Model) för att uppnå detta.
 exl-id: 17bd7cc0-da86-4600-8290-cd07bdd5d262
 translation-type: tm+mt
-source-git-commit: b311a5970a121a3277bdb72f5a1285216444b339
+source-git-commit: 867c97d58f3496cb9e9e437712f81bd8929ba99f
 workflow-type: tm+mt
-source-wordcount: '2020'
+source-wordcount: '2387'
 ht-degree: 0%
 
 ---
 
 # Förbered data för användning i [!DNL Intelligent Services]
 
-För att [!DNL Intelligent Services] ska kunna identifiera insikter från marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. [!DNL Intelligent Services] utnyttja  [!DNL Experience Data Model] (XDM)-scheman för att uppnå detta. Alla datauppsättningar som används i [!DNL Intelligent Services] måste överensstämma med CEE-XDM-schemat (Consumer Experience Event).
+För att [!DNL Intelligent Services] ska kunna identifiera insikter från marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. [!DNL Intelligent Services] utnyttja  [!DNL Experience Data Model] (XDM)-scheman för att uppnå detta. Mer specifikt måste alla datauppsättningar som används i [!DNL Intelligent Services] överensstämma med CEE-XDM-schemat (Consumer ExperienceEvent) eller använda Adobe Analytics-kopplingen. Dessutom stöder kundens AI Adobe Audience Manager-anslutning.
 
-Det här dokumentet innehåller allmän vägledning om hur du mappar data om marknadsföringshändelser från flera kanaler till det här schemat, och ger information om viktiga fält i schemat för att hjälpa dig att avgöra hur data effektivt kan mappas till dess struktur.
+Det här dokumentet innehåller allmän vägledning om hur du mappar data om marknadsföringshändelser från flera kanaler till CEE-schemat, och ger information om viktiga fält i schemat för att hjälpa dig att avgöra hur data effektivt kan mappas till dess struktur. Om du planerar att använda Adobe Analytics-data läser du avsnittet om [Adobe Analytics datapresentation](#analytics-data). Om du tänker använda Adobe Audience Manager-data (endast kund-AI) kan du läsa avsnittet för [Adobe Audience Manager-dataförberedelse](#AAM-data).
 
 ## Sammanfattning av arbetsflöde
 
@@ -31,12 +31,32 @@ Om dina data lagras utanför [!DNL Experience Platform] följer du stegen nedan:
 1. Ladda upp dina data till blobbehållaren med dina inloggningsuppgifter.
 1. Arbeta med Adobe Consulting Services för att mappa dina data till [Consumer ExperienceEvent-schemat](#cee-schema) och lägga in dem i [!DNL Intelligent Services].
 
+### Adobe Analytics datagenerering {#analytics-data}
+
+Kundens AI och Attribution AI stöder Adobe Analytics data. Om du vill använda Adobe Analytics-data följer du stegen som beskrivs i dokumentationen för att konfigurera en [Analyskälla](../sources/tutorials/ui/create/adobe-applications/analytics.md).
+
+När källkopplingen direktuppspelar data i Experience Platform kan du välja Adobe Analytics som datakälla följt av en datauppsättning under instanskonfigurationen. Alla obligatoriska schemafält och mixiner skapas automatiskt när anslutningen konfigureras. Du behöver inte ETL (Extract, Transform, Load) för datauppsättningarna till CEE-formatet.
+
+>[!IMPORTANT]
+>
+>Adobe Analytics Connector tar upp till fyra veckor på sig att fylla i data baklänges. Om du nyligen har upprättat en anslutning bör du kontrollera att datauppsättningen har den minsta datalängd som krävs för kunden eller Attribution AI. Granska historikdatasektionerna i [Kundens AI](./customer-ai/input-output.md#data-requirements) eller [Attribution AI](./attribution-ai/input-output.md#data-requirements) och kontrollera att du har tillräckligt med data för förutsägelsemålet.
+
+### Adobe Audience Manager datagenerering (endast kundens AI) {#AAM-data}
+
+Kunden AI har inbyggt stöd för Adobe Audience Manager data. Om du vill använda Audience Manager data följer du stegen som beskrivs i dokumentationen för att konfigurera en [Audience Manager-källkoppling](../sources/tutorials/ui/create/adobe-applications/audience-manager.md).
+
+När källkopplingen direktuppspelar data i Experience Platform kan du välja Adobe Audience Manager som datakälla följt av en datauppsättning under din AI-konfiguration. Alla obligatoriska schemafält och mixiner skapas automatiskt när anslutningen konfigureras. Du behöver inte ETL (Extract, Transform, Load) för datauppsättningarna till CEE-formatet.
+
+>[!IMPORTANT]
+>
+>Om du nyligen har konfigurerat en koppling bör du verifiera att datauppsättningen har den minsta tillåtna längden data. Granska avsnittet med historiska data i [dokumentationen för in-/utdata](./customer-ai/input-output.md) för Kundens AI och kontrollera att du har tillräckligt med data för ditt förutsägelsemål.
+
 ### [!DNL Experience Platform] dataförberedelse
 
-Om dina data redan lagras i [!DNL Platform] följer du stegen nedan:
+Om dina data redan lagras i [!DNL Platform] och inte direktuppspelas via källanslutningarna för Adobe Analytics eller Adobe Audience Manager (endast kund-AI) följer du stegen nedan. Du bör fortfarande förstå CEE-schemat om du tänker arbeta med kundens AI.
 
 1. Granska strukturen för [Consumer ExperienceEvent-schemat](#cee-schema) och kontrollera om dina data kan mappas till dess fält.
-1. Kontakta Adobe Consulting Services för att mappa dina data till schemat och importera dem till [!DNL Intelligent Services], eller [följ stegen i den här guiden](#mapping) om du vill mappa data själv.
+2. Kontakta Adobe Consulting Services för att mappa dina data till schemat och importera dem till [!DNL Intelligent Services], eller [följ stegen i den här guiden](#mapping) om du vill mappa data själv.
 
 ## CEE-schemat {#cee-schema}
 
@@ -48,7 +68,7 @@ CEE-schemat, liksom alla XDM ExperienceEvent-scheman, hämtar systemets tidsseri
 
 ![](./images/data-preparation/schema-expansion.gif)
 
-Precis som alla XDM-scheman är CEE-blandningen utökningsbar. Med andra ord kan ytterligare fält läggas till i CEE-mixen, och olika varianter kan vid behov inkluderas i flera scheman.
+Precis som alla XDM-scheman är CEE-blandningen utökningsbar. Med andra ord kan ytterligare fält läggas till i CEE-mixen, och olika variationer kan vid behov inkluderas i flera scheman.
 
 Ett fullständigt exempel på blandningen finns i [den offentliga XDM-databasen](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-consumer.schema.md). Dessutom kan du visa och kopiera följande [JSON-fil](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json) för att få ett exempel på hur data kan struktureras så att de överensstämmer med CEE-schemat. Läs båda dessa exempel när du lär dig mer om de nyckelfält som beskrivs i avsnittet nedan för att avgöra hur du kan mappa dina egna data till schemat.
 
