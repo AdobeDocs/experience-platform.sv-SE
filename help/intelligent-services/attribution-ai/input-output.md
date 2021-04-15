@@ -2,16 +2,16 @@
 keywords: Experience Platform;komma igång;Attribution ai;populära topics;Attribution ai input;Attribution ai output;
 solution: Experience Platform, Intelligent Services
 title: Indata och utdata i Attribution AI
-topic: Input and Output data for Attribution AI
+topic: Indata och utdata för Attribution AI
 description: Följande dokument visar de olika indata och utdata som används i Attribution AI.
+exl-id: d6dbc9ee-0c1a-4a5f-b922-88c7a36a5380
 translation-type: tm+mt
-source-git-commit: eb163949f91b0d1e9cc23180bb372b6f94fc951f
+source-git-commit: 2ef2a6431865e8ffdc2abd6cf527249e8b5ca4d0
 workflow-type: tm+mt
-source-wordcount: '2084'
+source-wordcount: '2091'
 ht-degree: 0%
 
 ---
-
 
 # Indata och utdata i [!DNL Attribution AI]
 
@@ -49,7 +49,7 @@ Kolumnerna nedan är inte obligatoriska, men vi rekommenderar att du inkluderar 
 - web.webPageDetails
 - xdm:productListItems
 
-### Historiska data
+### Historiska data {#data-requirements}
 
 >[!IMPORTANT]
 >
