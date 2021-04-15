@@ -3,15 +3,15 @@ keywords: Experience Platform;hem;populära ämnen;Segmenteringstjänst;segmente
 solution: Experience Platform
 title: Användargränssnittshandbok för Segment Builder
 topic: ui guide
-description: 'Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper. '
+description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
+exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
 translation-type: tm+mt
-source-git-commit: 354b756e53b360f31c1832c2b0f946b67099a87f
+source-git-commit: bad293cf25b955496897d895169ec494416e9787
 workflow-type: tm+mt
-source-wordcount: '1839'
+source-wordcount: '1942'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL Segment Builder] Användargränssnittsguide
 
@@ -29,7 +29,7 @@ Dessa byggstenar visas i **[!UICONTROL Fields]**-avsnittet till vänster på arb
 
 ### Attribut
 
-På fliken **[!UICONTROL Attributes]** kan du bläddra bland [!DNL Profile]-attribut som tillhör klassen [!DNL XDM Individual Profile]. Varje mapp kan expanderas för att visa ytterligare attribut, där varje attribut är en platta som kan dras till regelbyggararbetsytan i mitten av arbetsytan. [Regelbyggararbetsytan](#rule-builder-canvas) beskrivs mer ingående senare i den här guiden.
+På fliken **[!UICONTROL Attributes]** kan du bläddra bland [!DNL Profile]-attribut som tillhör klassen [!DNL XDM Individual Profile]. Varje mapp kan expanderas för att visa ytterligare attribut, där varje attribut är en platta som kan dras till regelbyggararbetsytan i mitten av arbetsytan. [Regelbyggaren canvas](#rule-builder-canvas) beskrivs mer ingående senare i den här guiden.
 
 ![](../images/ui/segment-builder/attributes.png)
 
@@ -116,6 +116,22 @@ När du har placerat händelsen i händelsebehållaren markerar du ellipsikonen 
 Aggregeringsvärdet har nu lagts till. Nu kan du välja sammanställningsfunktionen, välja vilket attribut som ska sammanställas, likhetsfunktionen samt värdet. I exemplet nedan kvalificerar det här segmentet alla profiler som har en summa köpta värden som är större än 100 USD, även om varje enskilt köp är mindre än 100 USD.
 
 ![](../images/ui/segment-builder/filled-aggregation.png)
+
+### Räkningsfunktioner
+
+Räkningsfunktioner i Segment Builder används för att söka efter angivna händelser och räkna antalet gånger de är klara. De räkningsfunktioner som stöds i Segment Builder är &quot;Minst&quot;, &quot;Högst&quot;, &quot;Exakt&quot;, &quot;Mellan&quot; och &quot;Alla&quot;.
+
+Om du vill skapa en räkningsfunktion markerar du en händelse från den vänstra listen och infogar den i [!UICONTROL Events]-behållaren.
+
+![](../images/ui/segment-builder/add-event.png)
+
+När du har placerat händelsen i händelsebehållaren väljer du knappen [!UICONTROL At least 1].
+
+![](../images/ui/segment-builder/add-count.png)
+
+Funktionen count har nu lagts till. Nu kan du välja funktionen count och värdet för funktionen. Exemplet nedan är att inkludera alla händelser som har minst ett klick.
+
+![](../images/ui/segment-builder/select-count.png)
 
 ## Behållare
 
