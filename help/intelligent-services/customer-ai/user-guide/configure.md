@@ -2,16 +2,16 @@
 keywords: Experience Platform;användarhandbok;kundhandbok;populära ämnen;konfigurera instans;skapa instans;
 solution: Experience Platform, Intelligent Services, Real-time Customer Data Platform
 title: Konfigurera en AI-instans för kund
-topic: Instance creation
+topic: Skapa instans
 description: Intelligenta tjänster ger kunden artificiell intelligens (AI) som en lättanvänd Adobe Sensei-tjänst som kan konfigureras för olika användningsområden. I följande avsnitt beskrivs hur du konfigurerar en instans av Kundens AI.
+exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 2ef2a6431865e8ffdc2abd6cf527249e8b5ca4d0
 workflow-type: tm+mt
-source-wordcount: '1225'
+source-wordcount: '1233'
 ht-degree: 0%
 
 ---
-
 
 # Konfigurera en AI-instans för kund
 
@@ -54,7 +54,7 @@ Nedan finns viktig information om värden som du måste ge instansen:
 
 - Propensitetstypen bestämmer poängsättets och den metriska polaritetens avsikt. Du kan antingen välja **[!UICONTROL Churn]** eller **[!UICONTROL Conversion]**. Mer information om hur benägenhetstypen påverkar instansen finns i anteckningen under [poängsammanfattning](./discover-insights.md#scoring-summary) i dokumentet med insikter.
 
-- Datakällan är den plats där data finns. Datauppsättningen är den indatamängd som används för att förutsäga bakgrundsmusik. Kunds-AI använder per design data om kundupplevelsehändelser för att beräkna benägenhetspoängen. När du väljer en datauppsättning i listruteväljaren visas bara de som är kompatibla med kundens AI.
+- Datakällan är den plats där data finns. Datauppsättningen är den indatamängd som används för att förutsäga bakgrundsmusik. Kunds-AI använder per design data från Consumer Experience Event, Adobe Analytics och Adobe Audience Manager för att beräkna benägenhetspoängen. När du väljer en datauppsättning i listruteväljaren visas bara de som är kompatibla med kundens AI.
 
 - Som standard genereras benägenhetspoäng för alla profiler såvida inte en stödberättigad population anges. Du kan ange en berättigad population genom att definiera villkor för att inkludera eller exkludera profiler baserat på händelser.
 
@@ -133,4 +133,3 @@ Genom att följa den här självstudiekursen har du konfigurerat en instans av k
 Följande video är utformad för att ge dig en bättre förståelse för hur kundens AI kan konfigureras. Dessutom finns bästa praxis och exempel på användningsfall.
 
 >[!VIDEO](https://video.tv.adobe.com/v/32665?learn=on&quality=12)
-
