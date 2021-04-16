@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: April 21, 2021
 author: ens72741
 translation-type: tm+mt
-source-git-commit: 2736b81ae32eebe4cbc997e106315be2529c0d15
+source-git-commit: fff9e6455c6eae5f9903e1d28ab365cddfd51ef8
 workflow-type: tm+mt
-source-wordcount: '298'
+source-wordcount: '331'
 ht-degree: 1%
 
 ---
@@ -38,6 +38,8 @@ Kundens AI som finns i kunddataplattformen i realtid används för att generera 
 Mer information om vilka datauppsättningar som stöds finns i [[!DNL Intelligent Services] dokumentationen för dataförberedelser](../../intelligent-services/data-preparation.md).
 
 ### Attribution AI
+
+Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor.
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
