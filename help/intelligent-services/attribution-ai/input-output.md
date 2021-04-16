@@ -6,9 +6,9 @@ topic: Indata och utdata för Attribution AI
 description: Följande dokument visar de olika indata och utdata som används i Attribution AI.
 exl-id: d6dbc9ee-0c1a-4a5f-b922-88c7a36a5380
 translation-type: tm+mt
-source-git-commit: 2ef2a6431865e8ffdc2abd6cf527249e8b5ca4d0
+source-git-commit: 35b3994287d4f556fab8ee75c3bf242ff2690aef
 workflow-type: tm+mt
-source-wordcount: '2091'
+source-wordcount: '2182'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,16 @@ Följande dokument visar de olika in- och utdata som används i [!DNL Attributio
 
 ## [!DNL Attribution AI] indata
 
-[!DNL Attribution AI] använder  [!DNL Consumer Experience Event] data för att beräkna algoritmiska poäng. Mer information om [!DNL Consumer Experience Event] finns i [Förbered data för användning i dokumentationen för Intelligent Services](../data-preparation.md).
+Attribution AI fungerar genom att analysera någon av följande datauppsättningar för att beräkna algoritmiska poäng:
+
+- CEE-datauppsättning (Consumer Experience Event)
+- Adobe Analytics-datauppsättningar med [Analyskällans koppling](../../sources/tutorials/ui/create/adobe-applications/analytics.md)
+
+>[!IMPORTANT]
+>
+>Adobe Analytics källanslutning kan ta upp till fyra veckor att fylla i data baklänges. Om du nyligen har konfigurerat en koppling bör du kontrollera att datauppsättningen har den minsta datalängd som krävs för Attribution AI. Granska avsnittet [historiska data](#data-requirements) för att verifiera att du har tillräckligt med data för att beräkna korrekta algoritmiska resultat.
+
+Mer information om hur du ställer in schemat [!DNL Consumer Experience Event] (CEE) finns i guiden [Intelligent Services data preparing](../data-preparation.md). Mer information om mappning av Adobe Analytics-data finns i [dokumentationen för fältmappningar för analys](../../sources/connectors/adobe-applications/analytics.md).
 
 Alla kolumner i [!DNL Consumer Experience Event]-schemat (CEE) är inte obligatoriska för Attribution AI.
 
