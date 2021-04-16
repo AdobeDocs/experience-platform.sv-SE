@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;batchingång;batchingösning;ingift;utvecklarguide;api guide;upload;ingest Parquet;ingest json;
 solution: Experience Platform
 title: API-guide för gruppinmatning
-topic: developer guide
+topic: utvecklarhandbok
 description: Det här dokumentet innehåller en omfattande översikt över hur du använder API:er för gruppinmatning.
+exl-id: 4ca9d18d-1b65-4aa7-b608-1624bca19097
 translation-type: tm+mt
-source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
+source-git-commit: 727c9dbd87bacfd0094ca29157a2d0283c530969
 workflow-type: tm+mt
-source-wordcount: '2698'
+source-wordcount: '2558'
 ht-degree: 3%
 
 ---
-
 
 # API-guide för gruppinmatning
 
@@ -608,15 +608,7 @@ curl -X POST https://platform.adobe.io/data/foundation/catalog/dataSets \
       "schemaRef": {
           "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
           "contentType": "application/vnd.adobe.xed+json;version=1"
-      },
-      "fileDescription": {
-          "format": "parquet",
-          "delimiters": [","], 
-          "quotes": ["\""],
-          "escapes": ["\\"],
-          "header": true,
-          "charset": "UTF-8"
-      }      
+      }
   }'
 ```
 
@@ -624,32 +616,6 @@ curl -X POST https://platform.adobe.io/data/foundation/catalog/dataSets \
 | --------- | ----------- |
 | `{TENANT_ID}` | Detta ID används för att säkerställa att de resurser du skapar namnges korrekt och finns i IMS-organisationen. |
 | `{SCHEMA_ID}` | ID:t för schemat som du har skapat. |
-
-En förklaring till vad olika delar av avsnittet &quot;fileDescription&quot; i JSON-brödtexten kan ses nedan:
-
-```json
-{
-    "fileDescription": {
-        "format": "parquet",
-        "delimiters": [","],
-        "quotes": ["\""],
-        "escapes": ["\\"],
-        "header": true,
-        "charset": "UTF-8"
-    }
-}
-```
-
-| Parameter | Beskrivning |
-| --------- | ----------- |
-| `format` | Den överordnade filens format, inte indatafilens format. |
-| `delimiters` | Det tecken som ska användas som avgränsare. |
-| `quotes` | Det tecken som ska användas för citattecken. |
-| `escapes` | Det tecken som ska användas som escape-tecken. |
-| `header` | Den överförda filen **måste** innehålla rubriker. Eftersom schemavalideringen är klar måste detta anges till true. Dessutom får rubriker **inte** innehålla blanksteg. Om du har blanksteg i huvudet ska du ersätta dem med understreck i stället. |
-| `charset` | Ett valfritt fält. Andra teckenuppsättningar som stöds är&quot;US-ASCII&quot; och&quot;ISO-8869-1&quot;. Om den lämnas tom används UTF-8 som standard. |
-
-Den datauppsättning som refereras måste ha filbeskrivningsblocket som listas ovan och måste peka på ett giltigt schema i registret. Annars kan filen inte mastras i Parquet.
 
 ### Skapa batch
 
