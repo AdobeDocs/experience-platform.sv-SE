@@ -2,16 +2,16 @@
 keywords: Experience Platform;användarhandbok;attribuering;populära ämnen;region
 solution: Experience Platform, Intelligent Services
 title: Användargränssnittshandbok för Attribution AI
-topic: User guide
+topic: 'Användarhandbok '
 description: Det här dokumentet är en guide för interaktion med Attribution AI i användargränssnittet för intelligenta tjänster.
+exl-id: 32e1dd07-31a8-41c4-88df-8893ff773f79
 translation-type: tm+mt
-source-git-commit: eb163949f91b0d1e9cc23180bb372b6f94fc951f
+source-git-commit: 013f8d99fc394477177fdbf7eb9dd9b8ce94b88f
 workflow-type: tm+mt
-source-wordcount: '1700'
+source-wordcount: '1712'
 ht-degree: 0%
 
 ---
-
 
 # Användargränssnittshandbok för Attribution AI
 
@@ -65,7 +65,11 @@ Ange ett namn och en valfri beskrivning för tjänstinstansen under **[!UICONTRO
 
 När du har fyllt i den grundläggande informationen klickar du på listrutan **Välj datauppsättning** och väljer datauppsättning. Datauppsättningen används för att träna modellen och poängsätta efterföljande data som den skapar. När du väljer en datauppsättning i listruteväljaren visas endast de som är kompatibla med Attribution AI och som följer XDM-schemat (Experience Data Model). När du har valt en datauppsättning klickar du på **Nästa** i det övre högra hörnet för att fortsätta till sidan för att definiera händelser.
 
-![konfigurationssida](./images/user-guide/initial_creation_attribution.png)
+>[!TIP]
+>
+>Adobe Analytics-datauppsättningar stöds via Analytics Source Connector.
+
+![konfigurationssida](./images/user-guide/dataset_selector.png)
 
 ## Definiera händelser
 
@@ -163,7 +167,7 @@ Den sista sidan i Attribution AI är den **[!UICONTROL Advanced]**-sida som anv�
 
 Med hjälp av *Schedule* kan du välja vilken dag och tid i veckan du vill att poängsättningen ska äga rum.
 
-Klicka på listrutan under *Betygsfrekvens* för att välja mellan daglig, veckovis och månadsvis bedömning. Välj sedan de veckodagar du vill att poängsättningen ska äga rum. Du kan välja flera dagar. Klicka en dag en gång till för att avmarkera den.
+Klicka på listrutan under *Bedömningsfrekvens* för att välja mellan daglig, veckovis och månadsvis poängsättning. Välj sedan de veckodagar du vill att poängsättningen ska äga rum. Du kan välja flera dagar. Klicka en dag en gång till för att avmarkera den.
 
 ![Schemalägg utbildning](./images/user-guide/schedule_training.png)
 
