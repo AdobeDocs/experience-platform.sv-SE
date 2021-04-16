@@ -4,14 +4,14 @@ title: API-slutpunkt för exportjobb
 topic: guide
 type: Documentation
 description: Med kundprofilen i realtid kan ni skapa en enda bild av enskilda kunder inom Adobe Experience Platform genom att samla data från flera olika källor, både attributdata och beteendedata. Profildata kan sedan exporteras till en datauppsättning för vidare bearbetning.
+exl-id: d51b1d1c-ae17-4945-b045-4001e4942b67
 translation-type: tm+mt
-source-git-commit: e6ecc5dac1d09c7906aa7c7e01139aa194ed662b
+source-git-commit: 87729e4996b0b2ac26e1a0abaa80af717825f9e6
 workflow-type: tm+mt
-source-wordcount: '1542'
+source-wordcount: '1543'
 ht-degree: 0%
 
 ---
-
 
 # Slutpunkt för exportjobb
 
@@ -68,9 +68,7 @@ curl -X POST \
           "contentType": "application/vnd.adobe.xed+json;version=1"
         },
         "fileDescription": {
-          "persisted": true,
-          "containerFormat": "parquet",
-          "format": "parquet"
+          "persisted": true
         }
       }'
 ```
@@ -93,7 +91,7 @@ Ett lyckat svar returnerar en array som innehåller det skrivskyddade, systemgen
 
 ### Initiera exportjobb {#initiate}
 
-När du har en unionskonstanterad datauppsättning kan du skapa ett exportjobb som behåller profildata till datauppsättningen genom att göra en POST till `/export/jobs`-slutpunkten i kundprofils-API:t i realtid och tillhandahålla information om de data som du vill exportera i begärans innehåll.
+När du har en unionskonstanterad datauppsättning kan du skapa ett exportjobb som behåller profildata till datauppsättningen genom att göra en POST till `/export/jobs`-slutpunkten i kundprofils-API:t i realtid och tillhandahålla information om de data som du vill exportera i själva förfrågningen.
 
 **API-format**
 
