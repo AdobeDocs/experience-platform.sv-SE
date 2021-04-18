@@ -5,14 +5,14 @@ title: Översikt över AI för kunder
 topic: Översikt över AI för kunder
 description: Kundens AI används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, träna eller driftsätta.
 landing-page-description: Kundens AI används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala.
+exl-id: 3e668103-e2a2-4ce6-a40a-8029a6aaa8dd
 translation-type: tm+mt
-source-git-commit: eb163949f91b0d1e9cc23180bb372b6f94fc951f
+source-git-commit: 0085306a2f5172eb19590cc12bc9645278bd2b42
 workflow-type: tm+mt
 source-wordcount: '557'
 ht-degree: 0%
 
 ---
-
 
 # Översikt över AI för kunder
 
