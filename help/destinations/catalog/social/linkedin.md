@@ -4,9 +4,9 @@ title: Länkad matchad målgruppsanslutning
 description: Aktivera profiler för era LinkedIn-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hashad-e-post.
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
 translation-type: tm+mt
-source-git-commit: 95ca7112d1f2655bf33e8a1c549e886ced244a5d
+source-git-commit: 805cb72e91e6446f74cc3461d39841740eb576c7
 workflow-type: tm+mt
-source-wordcount: '669'
+source-wordcount: '668'
 ht-degree: 1%
 
 ---
@@ -80,7 +80,7 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 
 ## Anslut till målet {#connect-destination}
 
-Mer information om hur du ansluter till [!DNL LinkedIn Matched Audiences]-målet finns i [autentiseringsarbetsflöde för mål för sociala nätverk](./workflow.md).
+Mer information om hur du ansluter till [!DNL LinkedIn Matched Audiences]-målet finns i [Arbetsflöde för autentisering av sociala mål](./workflow.md).
 
 I videon nedan visas också stegen för att konfigurera ett [!DNL LinkedIn Matched Audiences]-mål och aktivera segment.
 
