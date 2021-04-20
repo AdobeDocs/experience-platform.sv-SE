@@ -4,16 +4,16 @@ title: Översikt över mål
 seo-title: Översikt över mål
 description: Lär dig hur du aktiverar Adobe Experience Platform-data till destinationer för flerkanalskampanjer, e-postmeddelanden, riktad reklam och mycket annat.
 seo-description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda Destinationer i Adobe Experience Platform för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+exl-id: afd07ddc-652e-4e22-b298-feba27332462
 translation-type: tm+mt
-source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
+source-git-commit: 805cb72e91e6446f74cc3461d39841740eb576c7
 workflow-type: tm+mt
-source-wordcount: '489'
-ht-degree: 1%
+source-wordcount: '488'
+ht-degree: 0%
 
 ---
 
-
-# [!DNL Destinations] översikt {#overview}
+# [!DNL Destinations] översikt  {#overview}
 
 ![Översiktsbanderoll för destinationer](./assets/overview/destinations-overview-banner.png)
 
@@ -65,6 +65,6 @@ Mer information om hur du väljer marknadsföringsåtgärder i arbetsflödet fö
 * [Annonsmål - Google Display och Video 360  ](./catalog/advertising/google-dv360.md)
 * [Lagringsmål i molnet](./catalog/cloud-storage/workflow.md)
 * [E-postmarknadsföringsmål](./catalog/email-marketing/overview.md)
-* [Målgrupper i sociala nätverk](./catalog/social/workflow.md)
+* [Sociala destinationer](./catalog/social/workflow.md)
 
 Mer information om brott mot datapolicyer i arbetsflödet för segmentaktivering finns i granskningssteget i [Aktivera profiler och segment till ett mål](./ui/activate-destinations.md#review).
