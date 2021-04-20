@@ -4,14 +4,14 @@ solution: Experience Platform
 title: Samtyckesbearbetning i Adobe Experience Platform
 topic: komma igång
 description: Lär dig hur du bearbetar kundens medgivandesignaler i Adobe Experience Platform med standarden Adobe 2.0.
+exl-id: cd76a3f6-ae55-4d75-9b30-900fadb4664f
 translation-type: tm+mt
-source-git-commit: f7fde2cb6828ebdd1763171008858fdd7242c784
+source-git-commit: a0f585e4aaeecb968a9fc9f408630946e1c30b2b
 workflow-type: tm+mt
-source-wordcount: '1448'
+source-wordcount: '1565'
 ht-degree: 0%
 
 ---
-
 
 # Samtyckeshantering i Adobe Experience Platform
 
@@ -83,13 +83,19 @@ Mer information om hur du arbetar med sammanfogningsprinciper finns i [användar
 
 När ni har era datauppsättningar och sammanfogningspolicyer för att representera de obligatoriska medgivandefälten i era kundprofiler är nästa steg att överföra informationen om samtycke till plattformen.
 
-I första hand bör du använda Adobe Experience Platform Web SDK för att skicka data om samtycke till plattformen när händelser om tillståndsändring upptäcks av din CMP. Om du redan har data om samtycke lagrade någon annanstans kan du även välja att importera dina insamlade data direkt genom att mappa dem till XDM-schemat för ditt samtycke och skicka dem till plattformen via batchingång.
+I första hand bör du använda Adobe Experience Platform Web SDK för att skicka data om samtycke till plattformen när händelser om tillståndsändring upptäcks av din CMP. Om du samlar in data om samtycke på en mobilplattform bör du använda Adobe Experience Platform Mobile SDK. Du kan också välja att importera insamlade data direkt genom att mappa dem till XDM-schemat för ditt samtycke och skicka dem till plattformen via batchinmatning.
 
 Närmare information om dessa metoder finns i underavsnitten nedan.
 
-### Integrera Experience Platform Web SDK för att bearbeta kundens medgivandedata {#sdk}
+### Konfigurera Experience Platform Web SDK för att bearbeta medgivandedata {#web-sdk}
 
-När du har konfigurerat din CMP för att lyssna efter medgivandeändringshändelser på din webbplats kan du integrera Experience Platform Web SDK för att ta emot de uppdaterade medgivandeinställningarna och skicka dem till plattformen när en händelse om ändring av samtycke inträffar. Följ guiden [konfigurera SDK för att bearbeta data om kundens medgivande](./sdk.md) för mer information.
+När du har konfigurerat din CMP för att lyssna efter medgivandeändringshändelser på din webbplats kan du integrera Experience Platform Web SDK för att ta emot de uppdaterade medgivandeinställningarna och skicka dem till Platform på varje sida som läses in och närhelst en förändring av medgivandet inträffar. Mer information finns i guiden [konfigurera Web SDK för att bearbeta kundens medgivandedata](./sdk.md).
+
+### Konfigurera Experience Platform Mobile SDK för att bearbeta medgivandedata {#mobile-sdk}
+
+Om du behöver göra inställningar för kundgodkännande i ditt mobilprogram kan du integrera Experience Platform Mobile SDK för att hämta och uppdatera inställningar för samtycke och skicka dem till plattformen när API för samtycke anropas.
+
+Se dokumentationen för Mobile SDK för [hur du konfigurerar mobiltillägget för godkännande](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge-consent) och [med API:t för samtycke](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge-consent/edge-consent-api-reference). Mer information om hur du hanterar integritetsfrågor med Mobile SDK finns i avsnittet [Sekretess och GDPR](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/resources/privacy-and-gdpr).
 
 ### Importera XDM-kompatibla data direkt {#batch}
 
