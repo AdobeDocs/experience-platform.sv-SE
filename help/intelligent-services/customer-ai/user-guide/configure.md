@@ -2,7 +2,7 @@
 keywords: Experience Platform;användarhandbok;kundhandbok;populära ämnen;konfigurera instans;skapa instans;
 solution: Experience Platform, Intelligent Services, Real-time Customer Data Platform
 title: Konfigurera en AI-instans för kund
-topic: Skapa instans
+topic: Instance creation
 description: Intelligenta tjänster ger kunden artificiell intelligens (AI) som en lättanvänd Adobe Sensei-tjänst som kan konfigureras för olika användningsområden. I följande avsnitt beskrivs hur du konfigurerar en instans av Kundens AI.
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
 translation-type: tm+mt

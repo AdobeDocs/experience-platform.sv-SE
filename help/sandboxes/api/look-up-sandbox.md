@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;hitta sandlåda;leta upp en sandlåda
 solution: Experience Platform
 title: Söka efter en sandlåda i API:t
-topic: utvecklarhandbok
+topic: developer guide
 description: Du kan söka efter en enskild sandlåda genom att göra en GET-begäran som innehåller sandlådans name-egenskap i sökvägen för begäran.
 translation-type: tm+mt
 source-git-commit: 62ce5ac92d03a6e85589fc92e8d953f7fc1d8f31

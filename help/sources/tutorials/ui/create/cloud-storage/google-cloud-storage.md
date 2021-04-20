@@ -2,8 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;Google Cloud-lagring;Google molnlagring;GCS;gcs
 solution: Experience Platform
 title: Skapa en Google Cloud-anslutning för lagringskälla i användargränssnittet
-topic: översikt
-type: Självstudiekurs
+topic: overview
+type: Tutorial
 description: Lär dig hur du skapar en Google Cloud-anslutning för lagringskälla med Adobe Experience Platform-gränssnittet.
 translation-type: tm+mt
 source-git-commit: f6a63ca1e21b3c3f6a55574f31fdf04038b7e5c4

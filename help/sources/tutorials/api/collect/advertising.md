@@ -2,8 +2,8 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;flödestjänst;annonsering;Google adwords;annonsering
 solution: Experience Platform
 title: Samla in reklamdata med hjälp av källkopplingar och API:er
-topic: översikt
-type: Självstudiekurs
+topic: overview
+type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från en annonsapplikation från tredje part och hämta dem till plattformen med hjälp av källanslutningar och API:t för Flow Service.
 exl-id: 2a0eb13b-d09e-4bc1-aae3-84c8741eead1
 translation-type: tm+mt

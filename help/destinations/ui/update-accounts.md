@@ -1,7 +1,7 @@
 ---
 keywords: uppdatera destinationskonto;destinationskonton;uppdatera konton
 title: Uppdatera destinationskonton
-type: Självstudiekurs
+type: Tutorial
 description: I den här självstudiekursen visas stegen för att uppdatera målkonton i användargränssnittet i Adobe Experience Platform
 exl-id: afb41878-4205-4c64-af4d-e2740f852785
 translation-type: tm+mt

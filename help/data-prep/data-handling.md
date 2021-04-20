@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;map csv;map csv file;map csv file to xdm;map csv to xdm;ui guide;mapper;mappning;data prep;data preparing;preparing data;
 solution: Experience Platform
 title: Hantera dataformat med Data Prep
-topic: översikt
+topic: overview
 description: Det här dokumentet ger en översikt över hur olika datatyper hanteras i Data Prep.
 translation-type: tm+mt
 source-git-commit: 41656d204f7227388ee1a0a7cad01f737fb96c4f

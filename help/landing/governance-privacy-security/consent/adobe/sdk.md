@@ -1,6 +1,6 @@
 ---
 title: Bearbeta data för kundgodkännande med Adobe Experience Platform Web SDK
-topic: komma igång
+topic: getting started
 description: Lär dig hur du integrerar Adobe Experience Platform Web SDK för att bearbeta data om kundgodkännande i Adobe Experience Platform med hjälp av standarden Adobe 2.0.
 translation-type: tm+mt
 source-git-commit: fee3f005ca3679f8639cea45c16150090b2a1e0f

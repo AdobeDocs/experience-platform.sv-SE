@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;källkopplingar;källanslutning;källor;datakällor;datakällor;datakällanslutning;datakällanslutning
 solution: Experience Platform
 title: Översikt över källkopplingar
-topic: översikt
+topic: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 translation-type: tm+mt
 source-git-commit: 0e4fda4abf5c02df81b74f15d2fbcafb68548070

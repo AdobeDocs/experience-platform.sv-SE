@@ -2,8 +2,8 @@
 keywords: Experience Platform;maskininlärningsmodell;Data Science Workspace;populära ämnen;skapa och publicera en modell
 solution: Experience Platform
 title: Skapa och publicera en maskininlärningsmodell
-topic: självstudiekurs
-type: Självstudiekurs
+topic: tutorial
+type: Tutorial
 description: Med Adobe Experience Platform Data Science Workspace kan du uppnå dina mål med hjälp av den färdiga Recommendations Recipe. Följ den här självstudiekursen för att se hur du kan få tillgång till och förstå dina detaljhandelsdata, skapa och optimera en maskininlärningsmodell och generera insikter i Data Science Workspace.
 translation-type: tm+mt
 source-git-commit: b5d42c6a38a50d39e1ca46e18623dde59c33833b

@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;ta bort sandlåda
 solution: Experience Platform
 title: Ta bort en sandlåda i API:t
-topic: utvecklarhandbok
+topic: developer guide
 description: Du kan ta bort en sandlåda genom att göra en DELETE-begäran som innehåller sandlådans namn i sökvägen för begäran.
 translation-type: tm+mt
 source-git-commit: 62ce5ac92d03a6e85589fc92e8d953f7fc1d8f31

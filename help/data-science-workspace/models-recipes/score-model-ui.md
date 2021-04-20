@@ -2,8 +2,8 @@
 keywords: Experience Platform;göra poäng i en modell;Data Science Workspace;populära topics;ui;poäng run;scoring results
 solution: Experience Platform
 title: Posta en modell i användargränssnittet för datavetenskapen
-topic: självstudiekurs
-type: Självstudiekurs
+topic: tutorial
+type: Tutorial
 description: 'Du kan göra poängsättningen i Adobe Experience Platform Data Science Workspace genom att mata in indata i en befintlig utbildad modell. Resultat av poängsättningen lagras och kan visas i en angiven utdatamängd som en ny grupp. '
 translation-type: tm+mt
 source-git-commit: 7feda18351061600b05dc7be8afbbfb9a0fa7ec1

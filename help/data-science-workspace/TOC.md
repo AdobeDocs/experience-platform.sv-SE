@@ -3,7 +3,7 @@ audience: user
 user-guide-title: Hjälp om Adobe Experience Platform Data Science Workspace
 breadcrumb-title: Handbok för datavetenskap
 user-guide-description: Använd maskininlärning för att utveckla, utbilda och poängsätta modeller och recept med Adobe Sensei och JupyterLab Notebooks.
-feature: Datavetenskapens arbetsyta
+feature: Data Science Workspace
 solution: Experience Platform, Intelligent Services
 translation-type: tm+mt
 source-git-commit: a26b07302a47ceb0ba2af5267e7995118b70683f

@@ -2,8 +2,8 @@
 keywords: Experience Platform;JupyterLab;notebooks;Data Science Workspace;populära topics;analyze data notebooks;eda;explorative data analysis;data science
 solution: Experience Platform
 title: EDA-anteckningsbok (Exploratory Data Analysis)
-topic: översikt
-type: Självstudiekurs
+topic: overview
+type: Tutorial
 description: Den här guiden fokuserar på hur man använder EDA-anteckningsboken (Exploratory data analysis) för att upptäcka mönster i webbdata, samla in händelser med ett förutsägelsemål, rensa aggregerade data och förstå relationen mellan prediktorer och ett mål.
 translation-type: tm+mt
 source-git-commit: 1d1a19c75d2972a6fce0d39aa508cca91fb4becd

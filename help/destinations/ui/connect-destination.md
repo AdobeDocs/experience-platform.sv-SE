@@ -1,7 +1,7 @@
 ---
 keywords: ansluta mål;mål ansluta;ansluta mål
 title: Ansluta till ett mål
-type: Självstudiekurs
+type: Tutorial
 description: I den här självstudiekursen visas stegen för hur du ansluter ett mål i Adobe Experience Platform
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
 translation-type: tm+mt

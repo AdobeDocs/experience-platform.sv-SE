@@ -1,7 +1,7 @@
 ---
 solution: Experience Platform
 title: Datatyp för standardfält för allmän marknadsföring
-topic: översikt
+topic: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM för det allmänna inställningsfältet för marknadsföring.
 translation-type: tm+mt
 source-git-commit: f5ec59e609fda66d379847dca068d19d4cce8228

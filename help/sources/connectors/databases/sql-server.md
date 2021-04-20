@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;Microsoft SQL;microsoft sql;SQL;sql
 solution: Experience Platform
 title: SQL Server Source Connector - översikt
-topic: översikt
+topic: overview
 description: Lär dig hur du ansluter Microsoft SQL Server till Adobe Experience Platform med API:er eller användargränssnittet.
 translation-type: tm+mt
 source-git-commit: 0fb97fcf5d3f8230ff86906aeef245e4a7f44f30

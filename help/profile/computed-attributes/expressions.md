@@ -2,7 +2,7 @@
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API
 title: Exempel på PQL-uttryck för beräknade attribut
 topic: guide
-type: Dokumentation
+type: Documentation
 description: Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Dessa funktioner kräver att giltiga PQL-uttryck (Profile Query Language) används. I den här guiden beskrivs några av de vanligaste PQL-uttrycken för beräknade attribut.
 translation-type: tm+mt
 source-git-commit: 92533f732cc14b57d2a0a34ce9afe99554f9af04

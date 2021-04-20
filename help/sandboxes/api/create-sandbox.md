@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;Sandlåda;sandlåda
 solution: Experience Platform
 title: Skapa en sandlåda i API:t
-topic: utvecklarhandbok
+topic: developer guide
 description: Du kan skapa en ny sandlåda genom att göra en POST-förfrågan till slutpunkten "/sandbox".
 translation-type: tm+mt
 source-git-commit: 62ce5ac92d03a6e85589fc92e8d953f7fc1d8f31

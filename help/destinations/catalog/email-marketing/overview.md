@@ -1,7 +1,7 @@
 ---
 keywords: e-post;E-post;e-post;e-postadresser
 title: Översikt över destinationer för e-postmarknadsföring
-type: Självstudiekurs
+type: Tutorial
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer.
 translation-type: tm+mt
 source-git-commit: 02754055e2be8a45a0699386cb559dad8f25717c

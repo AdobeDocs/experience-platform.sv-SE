@@ -4,7 +4,7 @@ audience: user
 user-guide-title: Adobe Experience Platform Data Access
 breadcrumb-title: Dataåtkomstguide
 user-guide-description: Identifiera och få tillgång till kapslade datauppsättningar inom Platform.
-feature: Datahantering, datainmatning
+feature: Data Management, Data Ingestion
 translation-type: tm+mt
 source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
 workflow-type: tm+mt

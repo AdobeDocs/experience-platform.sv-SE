@@ -1,7 +1,7 @@
 ---
 solution: Experience Platform
 title: Allmän datatyp för inställningsfält för personalisering
-topic: översikt
+topic: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM för det allmänna inställningsfältet för personalisering.
 translation-type: tm+mt
 source-git-commit: 9ca0978cdf42926303d622a4d536ac48bca32e70

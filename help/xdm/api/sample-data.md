@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experi
 solution: Experience Platform
 title: Exempel på API-slutpunkt för data
 description: Med slutpunkten /sampledata i API:t för schemaregister kan du generera exempeldata mappade till strukturen för ett befintligt XDM-schema.
-topic: utvecklarhandbok
+topic: developer guide
 translation-type: tm+mt
 source-git-commit: 0727ffa0c72bcb6a85de1a13215b691b97889b70
 workflow-type: tm+mt

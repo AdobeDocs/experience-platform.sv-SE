@@ -2,7 +2,7 @@
 keywords: Experience Platform;användarhandbok;attribuering;populära ämnen;region
 solution: Experience Platform, Intelligent Services
 title: Användargränssnittshandbok för Attribution AI
-topic: 'Användarhandbok '
+topic: User guide 
 description: Det här dokumentet är en guide för interaktion med Attribution AI i användargränssnittet för intelligenta tjänster.
 exl-id: 32e1dd07-31a8-41c4-88df-8893ff773f79
 translation-type: tm+mt

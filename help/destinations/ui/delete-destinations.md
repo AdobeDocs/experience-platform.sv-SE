@@ -1,7 +1,7 @@
 ---
 keywords: radera destinationer, ta bort mål
 title: Ta bort mål
-type: Självstudiekurs
+type: Tutorial
 description: I den här självstudiekursen visas stegen för att ta bort ett befintligt mål i Adobe Experience Platform-gränssnittet
 exl-id: 7b672859-e61a-4b3c-9db9-62048258f0aa
 translation-type: tm+mt

@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;molnlagringsdata;strömmande data;strömning
 solution: Experience Platform
 title: Samla in strömmande data med källkopplingar och API:er
-topic: översikt
+topic: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta direktuppspelningsdata och föra in dem på plattformen med hjälp av källanslutningar och API:er.
 exl-id: 898df7fe-37a9-4495-ac05-30029258a6f4

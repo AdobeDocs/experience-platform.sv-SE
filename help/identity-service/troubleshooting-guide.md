@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;id namespace;Identity namespace
 solution: Experience Platform
 title: Felsökningsguide för identitetstjänst
-topic: felsökning
+topic: troubleshooting
 description: Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform Identity Service samt en felsökningsguide för vanliga fel.
 translation-type: tm+mt
 source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac

@@ -2,8 +2,8 @@
 keywords: Experience Platform;hemanvändare;populära ämnen;samla in nöjda kunder;lyckade kunder
 solution: Experience Platform
 title: Samla in data från ett lyckat kundsystem med hjälp av källanslutningar och API:er
-topic: översikt
-type: Självstudiekurs
+topic: overview
+type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett system för kundframgångar och att hämta dem till plattformen med hjälp av källanslutningar och API:er.
 exl-id: 0fae04d0-164b-4113-a274-09677f4bbde5
 translation-type: tm+mt

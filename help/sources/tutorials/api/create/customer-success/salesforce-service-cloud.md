@@ -2,8 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;ssc;SSC;Salesforce Service Cloud;salesforce service cloud
 solution: Experience Platform
 title: Skapa en Salesforce Service Cloud-källanslutning med API:t för flödestjänst
-topic: översikt
-type: Självstudiekurs
+topic: overview
+type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Salesforce Service Cloud med API:t för flödestjänst.
 translation-type: tm+mt
 source-git-commit: a0b016e8adc519bc79701f9fd850b6ddf7d46127

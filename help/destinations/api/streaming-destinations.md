@@ -3,8 +3,8 @@ keywords: Experience Platform;hemmabruk;populära ämnen; API-självstudiekurser
 solution: Experience Platform
 title: Ansluta till direktuppspelningsmål och aktivera data med API:t för Flow Service i Adobe Experience Platform
 description: I det här dokumentet beskrivs hur du skapar direktuppspelningsmål med hjälp av Adobe Experience Platform API
-topic: självstudiekurs
-type: Självstudiekurs
+topic: tutorial
+type: Tutorial
 translation-type: tm+mt
 source-git-commit: 32cb198bcf2c142b50c4b7a60282f0c923be06b1
 workflow-type: tm+mt

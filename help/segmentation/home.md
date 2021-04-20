@@ -2,7 +2,7 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;segmentering;segmentering;segmenttjänst;segment;segment;segment;segment;segment
 solution: Experience Platform
 title: Översikt över segmenteringstjänsten
-topic: översikt
+topic: overview
 description: Läs om Adobe Experience Platform segmenteringstjänst och vilken roll den spelar i plattformens ekosystem.
 translation-type: tm+mt
 source-git-commit: eff833f20eba4e51579a43fbb98c1e2333e326ef

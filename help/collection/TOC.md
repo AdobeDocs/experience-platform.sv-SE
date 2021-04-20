@@ -4,7 +4,7 @@ audience: user
 user-guide-title: Adobe Experience Platform Data Collection
 breadcrumb-title: Handbok för datainsamling
 user-guide-description: Aktivera datainsamling på klientsidan för Adobe Experience Platform Edge Network.
-feature: Datainsamling, starta
+feature: Data Collection, Launch
 translation-type: tm+mt
 source-git-commit: 3a64ca8e89612f0121c055ed9a7f97eb4f2cb265
 workflow-type: tm+mt

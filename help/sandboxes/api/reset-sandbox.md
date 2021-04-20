@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;återställ sandlåda
 solution: Experience Platform
 title: Återställ en sandlåda i API:t
-topic: utvecklarhandbok
+topic: developer guide
 description: Utvecklingssandlådor har en "fabriksåterställningsfunktion" som tar bort alla icke-standardresurser från en sandlåda. Du kan återställa en sandlåda genom att göra en PUT-begäran som innehåller sandlådans namn i sökvägen för begäran.
 translation-type: tm+mt
 source-git-commit: 62ce5ac92d03a6e85589fc92e8d953f7fc1d8f31

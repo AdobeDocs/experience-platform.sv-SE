@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;Oracle Object Storage;oracle object storage
 solution: Experience Platform
 title: Översikt över källkopplingen för Oracle-objektlagring
-topic: översikt
+topic: overview
 description: Lär dig hur du ansluter Oracle Object Storage till Adobe Experience Platform med API:er eller användargränssnittet.
 translation-type: tm+mt
 source-git-commit: 04c605aedd4c52b54d0f075c169ce919650cdee9

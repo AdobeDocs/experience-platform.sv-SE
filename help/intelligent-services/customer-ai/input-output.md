@@ -2,7 +2,7 @@
 keywords: Experience Platform;komma igång;kundai;populära ämnen;kundindata;kunddata
 solution: Experience Platform, Intelligent Services, Real-time Customer Data Platform
 title: Indata och utdata i kundens AI
-topic: Komma igång
+topic: Getting started
 description: Läs mer om de händelser, inmatningar och utmatningar som kunden använder.
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
 translation-type: tm+mt

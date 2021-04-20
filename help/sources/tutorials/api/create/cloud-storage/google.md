@@ -2,8 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;Google Cloud-lagring;Google cloud-lagring;Google;Google;Google
 solution: Experience Platform
 title: Skapa en Google Cloud-anslutning för lagringskälla med API:t för flödestjänst
-topic: översikt
-type: Självstudiekurs
+topic: overview
+type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Google Cloud-lagringskonto med API:t för Flow Service.
 translation-type: tm+mt
 source-git-commit: f6a63ca1e21b3c3f6a55574f31fdf04038b7e5c4

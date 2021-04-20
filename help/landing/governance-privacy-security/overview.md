@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Styrning, sekretess och säkerhetsöversikt
-topic: översikt
+topic: overview
 description: Adobe Experience Platform tillhandahåller flera tjänster och verktyg som gör att du kan kontrollera dina insamlade upplevelsedata på ett säkert sätt för att följa din affärspraxis, juridiska skyldigheter och utvecklingsprocess.
 exl-id: 1ab5a436-c5dd-4e7a-aba1-549f0613f224
 translation-type: tm+mt

@@ -2,8 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;SFTP;sftp
 solution: Experience Platform
 title: Skapa en SFTP-källanslutning i användargränssnittet
-topic: översikt
-type: Självstudiekurs
+topic: overview
+type: Tutorial
 description: Lär dig hur du skapar en SFTP-källanslutning med Adobe Experience Platform-gränssnittet.
 translation-type: tm+mt
 source-git-commit: 0e11acc4a599d360cb3048445003f61848ad23d3

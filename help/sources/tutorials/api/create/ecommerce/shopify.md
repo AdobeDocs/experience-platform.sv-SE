@@ -2,8 +2,8 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;Gör en kopia;förminska;e-handel
 solution: Experience Platform
 title: Skapa en anslutning för Shopify-kopplingskälla med API:t för Flow Service
-topic: översikt
-type: Självstudiekurs
+topic: overview
+type: Tutorial
 description: Lär dig hur du ansluter Shopify till Adobe Experience Platform med API:t för Flow Service.
 translation-type: tm+mt
 source-git-commit: cc23228cb410dc4c70a56c5142be00c2ca1c40d3

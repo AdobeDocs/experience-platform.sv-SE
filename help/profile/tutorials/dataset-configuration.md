@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;aktivera datauppsättning
 title: Konfigurera en datauppsättning för profil- och identitetstjänsten med API:er
-topic: självstudiekurs
+topic: tutorial
 type: Tutorial
 description: I den här självstudiekursen visas hur du aktiverar en datauppsättning för användning med kundprofil och identitetstjänst i realtid med Adobe Experience Platform API:er.
 exl-id: 142cb7df-072a-4f3a-8a9c-9a78afb35312

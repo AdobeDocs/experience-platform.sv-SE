@@ -2,8 +2,8 @@
 keywords: Experience Platform;publicera en modell;Data Science Workspace;populära ämnen;göra en tjänst
 solution: Experience Platform
 title: Publicera en modell som en tjänst i gränssnittet för datavetenskapen
-topic: självstudiekurs
-type: Självstudiekurs
+topic: tutorial
+type: Tutorial
 description: Med Adobe Experience Platform Data Science Workspace kan du publicera din utbildade och utvärderade modell som en tjänst, vilket gör att användare i IMS-organisationen kan få sina data poäng utan att behöva skapa egna modeller.
 translation-type: tm+mt
 source-git-commit: 13fa4af388c6f31768a6b7e1da05cb56c5635c9e

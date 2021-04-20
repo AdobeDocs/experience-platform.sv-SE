@@ -2,8 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;Oracle Object Storage;oracle object storage
 solution: Experience Platform
 title: Skapa en Oracle Object Storage-källanslutning med API:t för Flow Service
-topic: översikt
-type: Självstudiekurs
+topic: overview
+type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Oracle Object Storage med API:t för Flow Service.
 translation-type: tm+mt
 source-git-commit: c1453a9f0be42f834d35af871051324df8dadf80

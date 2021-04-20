@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Konfigurera en datauppsättning för att samla in samtycke- och inställningsdata
-topic: komma igång
+topic: getting started
 description: Lär dig hur du konfigurerar ett XDM-schema (Experience Data Model) och en datauppsättning för insamling av medgivanden och inställningsdata i Adobe Experience Platform.
 translation-type: tm+mt
 source-git-commit: 980bff169659d3ffc92a0678f8a0b153b3189906

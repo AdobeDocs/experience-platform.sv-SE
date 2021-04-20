@@ -4,8 +4,8 @@ solution: Experience Platform
 title: Adobe Experience Platform FAQ and Troubleshooting Guide
 description: Hitta svar på vanliga frågor och en guide för felsökning av vanliga fel i Experience Platform.
 landing-page-description: Hitta svar på vanliga frågor och en guide för felsökning av vanliga fel i Experience Platform.
-topic: komma igång
-type: Dokumentation
+topic: getting started
+type: Documentation
 translation-type: tm+mt
 source-git-commit: 83cc3ddbf067f413cb524a3a685d985d5853eafd
 workflow-type: tm+mt

@@ -1,7 +1,7 @@
 ---
 solution: Experience Platform
 title: ERD för datamodell för finanssektorn
-topic: översikt
+topic: overview
 description: Visa ett enhetsrelationsdiagram (ERD) som beskriver en standardiserad datamodell för banksektorn, finanssektorn och försäkringssektorn (BFSI). Den här datamodellen är kompatibel med Experience Data Model (XDM) för användning i Adobe Experience Platform.
 translation-type: tm+mt
 source-git-commit: ffc113c0c85c76e6645fb4276c174779682f2b60

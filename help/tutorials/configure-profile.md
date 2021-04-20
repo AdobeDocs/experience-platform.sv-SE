@@ -2,8 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;Kundprofil i realtid;Identitetstjänst;
 solution: Experience Platform
 title: Självstudiekurser i kundprofil i realtid
-topic: självstudiekurs
-type: Självstudiekurs
+topic: tutorial
+type: Tutorial
 description: I det här dokumentet beskrivs de olika stegen och det finns länkar till självstudiekurser för att slutföra varje enskilt arbetsflöde.
 translation-type: tm+mt
 source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac

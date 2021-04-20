@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experi
 solution: Experience Platform
 title: Exportera/importera API-slutpunkter
 description: Med slutpunkterna /export och /import i API:t för schemaregister kan du dela XDM-resurser mellan IMS-organisationer och sandlådor.
-topic: utvecklarhandbok
+topic: developer guide
 translation-type: tm+mt
 source-git-commit: 0727ffa0c72bcb6a85de1a13215b691b97889b70
 workflow-type: tm+mt

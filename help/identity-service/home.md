@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;identitet;Identitet;XDM-diagram;identitetstjänst;Identitetstjänst
 solution: Experience Platform
 title: Översikt över identitetstjänsten
-topic: översikt
+topic: overview
 description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 translation-type: tm+mt
 source-git-commit: bb218fc0cca6fe74693e99747963058bd0dc962a

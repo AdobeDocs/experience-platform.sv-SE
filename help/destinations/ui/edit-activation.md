@@ -1,7 +1,7 @@
 ---
 keywords: redigeringsaktivering, redigera destination,
 title: Redigera aktiveringsflöden
-type: Självstudiekurs
+type: Tutorial
 seo-title: Redigera aktiveringsflöden
 description: Följ stegen i den här artikeln när du vill redigera ett befintligt aktiveringsflöde i Adobe Experience Platform.
 seo-description: Följ stegen i den här artikeln när du vill redigera ett befintligt aktiveringsflöde i Adobe Experience Platform.

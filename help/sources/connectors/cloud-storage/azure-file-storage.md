@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;Azure File Storage;azure file storage
 solution: Experience Platform
 title: Översikt över Azure File Storage Source Connector
-topic: översikt
+topic: overview
 description: Lär dig hur du ansluter Azure File Storage till Adobe Experience Platform med API:er eller användargränssnittet.
 translation-type: tm+mt
 source-git-commit: 7fc99214272d2ce743b3666826c66f5d65e4d2ca

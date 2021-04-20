@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: Kundprofilguide i realtid
 user-guide-description: Sammanfoga kunddata för att skapa en enhetlig bild av kundinteraktioner över alla kanaler.
-feature: Profiler
+feature: Profiles
 translation-type: tm+mt
 source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
 workflow-type: tm+mt

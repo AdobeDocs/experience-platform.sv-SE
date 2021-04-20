@@ -3,8 +3,8 @@ keywords: Experience Platform;hem;populära ämnen;övervaka konton;övervaka da
 description: I den här självstudiekursen beskrivs hur du övervakar dataflödet med hjälp av både aggregerad övervakningsvy och övervakning mellan tjänster.
 solution: Experience Platform
 title: Övervaka dataflöden för källor i användargränssnittet
-topic: översikt
-type: Självstudiekurs
+topic: overview
+type: Tutorial
 translation-type: tm+mt
 source-git-commit: 4c668a47e62ba7736dd2d7afe4e71fd015198356
 workflow-type: tm+mt

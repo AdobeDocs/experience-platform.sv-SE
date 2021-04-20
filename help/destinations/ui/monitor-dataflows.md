@@ -3,8 +3,8 @@ keywords: Experience Platform;hemmabas;populära ämnen;monitorkonton;övervaka 
 description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 solution: Experience Platform
 title: Bildskärmsdataflöden
-topic: översikt
-type: Självstudiekurs
+topic: overview
+type: Tutorial
 exl-id: fbe35ee1-4ee8-4d67-976b-0c45f0168da4
 translation-type: tm+mt
 source-git-commit: e436d7147c613dad5b2ff596a412759fd60d228c

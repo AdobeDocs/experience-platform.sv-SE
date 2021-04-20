@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;segmentdefinition;segmentdefinitioner;api;API;
 solution: Experience Platform
 title: API-slutpunkt för segmentdefinitioner
-topic: utvecklarhandbok
+topic: developer guide
 description: Med segmentdefinitionsslutpunkten i Adobe Experience Platform Segmentation Service API kan du programmässigt hantera segmentdefinitioner för din organisation.
 translation-type: tm+mt
 source-git-commit: 4e4672f4101f92f035985d187512d917890aab6b

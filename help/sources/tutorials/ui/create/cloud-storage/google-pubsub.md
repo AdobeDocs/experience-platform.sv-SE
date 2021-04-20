@@ -2,8 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;Google PubSub;google pubsub
 solution: Experience Platform
 title: Skapa en Google PubSub Source-anslutning i användargränssnittet
-topic: översikt
-type: Självstudiekurs
+topic: overview
+type: Tutorial
 description: Lär dig hur du skapar en Google PubSub-källanslutning med hjälp av användargränssnittet för plattformen.
 translation-type: tm+mt
 source-git-commit: b5358ce206888c413035b46fe751520fd9aefb14

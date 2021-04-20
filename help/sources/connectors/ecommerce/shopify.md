@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;shopify;Shopify;
 solution: Experience Platform
 title: Förminska översikt över källkoppling
-topic: översikt
+topic: overview
 description: Lär dig hur du ansluter Shopify till Adobe Experience Platform med API:er eller användargränssnittet.
 translation-type: tm+mt
 source-git-commit: cc23228cb410dc4c70a56c5142be00c2ca1c40d3

@@ -2,7 +2,7 @@
 keywords: Experience Platform;home;Intelligent Services;populära ämnen;Intelligent service;Intelligent service
 solution: Experience Platform, Intelligent Services
 title: Förbered data för användning i intelligenta tjänster
-topic: Intelligenta tjänster
+topic: Intelligent Services
 description: För att Intelligent Services ska kunna hitta insikter från era marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. Intelligenta tjänster använder XDM-scheman (Experience Data Model) för att uppnå detta.
 exl-id: 17bd7cc0-da86-4600-8290-cd07bdd5d262
 translation-type: tm+mt

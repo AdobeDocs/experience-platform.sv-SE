@@ -2,8 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;kundattribut
 solution: Experience Platform
 title: Skapa en källanslutning för kundattribut i användargränssnittet
-topic: översikt
-type: Självstudiekurs
+topic: overview
+type: Tutorial
 description: Lär dig hur du skapar en källanslutning i användargränssnittet för att samla in kundattributprofildata till Adobe Experience Platform.
 translation-type: tm+mt
 source-git-commit: 08a3026e969a8739a8b57226c35a6d1d3150006e

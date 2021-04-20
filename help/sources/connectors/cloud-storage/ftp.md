@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;FTP;ftp;
 solution: Experience Platform
 title: Översikt över FTP-källkoppling
-topic: översikt
+topic: overview
 description: Lär dig hur du ansluter en FTP-server till Adobe Experience Platform med API:er eller användargränssnittet.
 translation-type: tm+mt
 source-git-commit: 7fc99214272d2ce743b3666826c66f5d65e4d2ca

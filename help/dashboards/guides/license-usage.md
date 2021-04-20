@@ -3,7 +3,7 @@ keywords: Experience Platform;användargränssnitt;användargränssnitt;anpassni
 title: Kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 topic: guide
-type: Dokumentation
+type: Documentation
 translation-type: tm+mt
 source-git-commit: 6baf1fbff20a02cd599d9ad9102d56db5a9004c3
 workflow-type: tm+mt

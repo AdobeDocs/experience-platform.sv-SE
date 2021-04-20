@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: Handbok för kataloger och datauppsättningar
 user-guide-description: Utforska datalinje, metadata, filbeskrivningar, kataloger och datauppsättningar i Data Lake.
-feature: Datahantering
+feature: Data Management
 translation-type: tm+mt
 source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
 workflow-type: tm+mt

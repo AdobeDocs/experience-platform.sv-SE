@@ -1,7 +1,7 @@
 ---
 solution: Experience Platform
 title: Översikt över branschdatamodeller
-topic: översikt
+topic: overview
 description: Lär dig mer om standardiserade datamodeller för olika vertikala branscher som kan konstrueras med XDM-komponenter (Standard Experience Data Model).
 translation-type: tm+mt
 source-git-commit: 9862cbcb8d8c74c96dd6bf44c5fa416f4f42fe64

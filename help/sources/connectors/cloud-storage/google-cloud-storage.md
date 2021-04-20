@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;Google Cloud-lagring;Google cloud-lagring
 solution: Experience Platform
 title: Översikt över källanslutning för Google Cloud-lagring
-topic: översikt
+topic: overview
 description: Lär dig hur du ansluter Google Cloud-lagring till Adobe Experience Platform med API:er eller användargränssnittet.
 translation-type: tm+mt
 source-git-commit: 7fc99214272d2ce743b3666826c66f5d65e4d2ca

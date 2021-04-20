@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;Salesforce Service Cloud;salesforce service cloud
 solution: Experience Platform
 title: Översikt över Salesforce Service Cloud Source Connector
-topic: översikt
+topic: overview
 description: Lär dig hur du ansluter Salesforce Service Cloud till Adobe Experience Platform med API:er eller användargränssnittet.
 translation-type: tm+mt
 source-git-commit: a0b016e8adc519bc79701f9fd850b6ddf7d46127

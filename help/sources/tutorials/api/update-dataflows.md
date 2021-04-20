@@ -2,8 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;flödestjänst;uppdatera dataflöden
 solution: Experience Platform
 title: Uppdatera dataflöden med API:t för Flow Service
-topic: översikt
-type: Självstudiekurs
+topic: overview
+type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för att uppdatera ett dataflöde, inklusive namn, beskrivning och schema, med API:t för Flow Service.
 translation-type: tm+mt
 source-git-commit: e19b5b905a38c63b7dc47904c5af30dc2ed21e22

@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Importera och använda externa målgrupper
 description: Följ den här självstudiekursen för att lära dig hur du använder externa målgrupper med Adobe Experience Platform.
-topic: självstudiekurs
+topic: tutorial
 translation-type: tm+mt
 source-git-commit: 400e4d9007212ed2693d031ae912a4f1cca97c57
 workflow-type: tm+mt

@@ -2,7 +2,7 @@
 keywords: Experience Platform;komma igång;Attribution ai;populära topics;Attribution ai input;Attribution ai output;
 solution: Experience Platform, Intelligent Services
 title: Indata och utdata i Attribution AI
-topic: Indata och utdata för Attribution AI
+topic: Input and Output data for Attribution AI
 description: Följande dokument visar de olika indata och utdata som används i Attribution AI.
 exl-id: d6dbc9ee-0c1a-4a5f-b922-88c7a36a5380
 translation-type: tm+mt

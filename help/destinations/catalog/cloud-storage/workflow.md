@@ -1,7 +1,7 @@
 ---
 keywords: molnlagringsmål;molnlagring
 title: Skapa ett molnlagringsmål
-type: Självstudiekurs
+type: Tutorial
 description: Instruktioner för att ansluta till lagringsplatser i molnet
 seo-description: Instruktioner för att ansluta till lagringsplatser i molnet
 exl-id: 58003c1e-2f70-4e28-8a38-3be00da7cc3c

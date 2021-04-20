@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: Dataflows Guide
 user-guide-description: Dataflöden är en representation av datajobb som flyttar data mellan plattformar.
-feature: Datahantering, datainmatning
+feature: Data Management, Data Ingestion
 translation-type: tm+mt
 source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
 workflow-type: tm+mt

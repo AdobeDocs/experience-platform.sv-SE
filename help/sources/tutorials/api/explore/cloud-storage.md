@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;molnlagring;molnlagring
 solution: Experience Platform
 title: Utforska ett högt lagringssystem med API:t för Flow Service
-topic: översikt
+topic: overview
 description: I den här självstudien används API:t för Flow Service för att utforska ett molnlagringssystem från tredje part.
 translation-type: tm+mt
 source-git-commit: 457fc9e1b0c445233f0f574fefd31bc1fc3bafc8

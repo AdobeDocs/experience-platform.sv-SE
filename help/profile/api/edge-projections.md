@@ -2,7 +2,7 @@
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API
 title: API-slutpunkter för Edge Projection
 topic: guide
-type: Dokumentation
+type: Documentation
 description: Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid genom att göra rätt data lättillgänglig och kontinuerligt uppdaterad när förändringar inträffar. Detta görs genom användning av kanter, en geografiskt placerad server som lagrar data och gör dem tillgängliga för program.
 translation-type: tm+mt
 source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac

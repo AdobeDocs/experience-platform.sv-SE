@@ -1,7 +1,7 @@
 ---
 solution: Experience Platform
 title: Datatypen Allmänt fält för samtycke
-topic: översikt
+topic: overview
 description: Det här dokumentet innehåller en översikt över XDM-datatypen för det allmänna innehållsfältet.
 translation-type: tm+mt
 source-git-commit: ebcd8900687b6e91d3f06690a9db0e118bbc3b58

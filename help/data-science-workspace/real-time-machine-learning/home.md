@@ -2,7 +2,7 @@
 keywords: Experience Platform;utvecklarguide;Data Science Workspace;populära topics;Real time Machine Learning;
 solution: Experience Platform
 title: Machine Learning-översikt i realtid
-topic: Översikt
+topic: Overview
 description: Maskininlärning i realtid kan dramatiskt öka relevansen i ert innehåll för digitala upplevelser för era slutanvändare. Detta blir möjligt genom att utnyttja realtidsinterferenser och kontinuerlig inlärning på Experience Edge.
 translation-type: tm+mt
 source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac

@@ -2,8 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;MySQL;mysql
 solution: Experience Platform
 title: Skapa en MySQL-källanslutning med API:t för Flow Service
-topic: översikt
-type: Självstudiekurs
+topic: overview
+type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till MySQL med API:t för Flow Service.
 translation-type: tm+mt
 source-git-commit: 8851e11e956b393e56714d4d48870b7f68947c18

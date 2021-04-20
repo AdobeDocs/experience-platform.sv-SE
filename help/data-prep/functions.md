@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;map csv;map csv file;map csv file to xdm;map csv to xdm;ui guide;mapper;mappning;mappningsfält;mappningsfunktioner;
 solution: Experience Platform
 title: Mappningsfunktioner för dataförinställningar
-topic: översikt
+topic: overview
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
 translation-type: tm+mt

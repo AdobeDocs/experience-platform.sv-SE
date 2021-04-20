@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Adobe Experience Platform-ordlista
-topic: komma igång
+topic: getting started
 description: En ordlista med viktig terminologi i Experience Platform.
 translation-type: tm+mt
 source-git-commit: 5575d5e45bddcc007dcf78720cd7a7e20475f78c

@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;batchingång;batchingösning;ingift;utvecklarguide;api guide;upload;ingest Parquet;ingest json;
 solution: Experience Platform
 title: API-guide för gruppinmatning
-topic: utvecklarhandbok
+topic: developer guide
 description: Det här dokumentet innehåller en omfattande översikt över hur du använder API:er för gruppinmatning.
 exl-id: 4ca9d18d-1b65-4aa7-b608-1624bca19097
 translation-type: tm+mt

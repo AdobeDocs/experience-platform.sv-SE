@@ -2,7 +2,7 @@
 keywords: Experience Platform;insikter;kundinformation;populära ämnen;kundinsikter
 solution: Experience Platform, Intelligent Services, Real-time Customer Data Platform
 title: Identifiera insikter med kundens AI
-topic: Identifiera insikter
+topic: Discovering insights
 description: Det här dokumentet fungerar som en guide för interaktion med Service Instance Insights i användargränssnittet för AI för Intelligent Services.
 exl-id: 8aaae963-4029-471e-be9b-814147a5f160
 translation-type: tm+mt

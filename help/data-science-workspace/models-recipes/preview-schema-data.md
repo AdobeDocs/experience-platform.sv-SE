@@ -2,8 +2,8 @@
 keywords: Experience Platform;förhandsgranska schemadata;Data Science Workspace;populära ämnen
 solution: Experience Platform
 title: Förhandsgranska schema och datauppsättning för butiksförsäljning
-topic: självstudiekurs
-type: Självstudiekurs
+topic: tutorial
+type: Tutorial
 description: I följande dokument visas förhandsvisningar av scheman och datauppsättningar på Adobe Experience Platform.
 translation-type: tm+mt
 source-git-commit: 5129a75071af680bc54a7f60bb89ce32d3216d09

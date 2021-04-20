@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;Analytics Data Connector;analytics;Analytics
 solution: Experience Platform
 title: Adobe Analytics Source Connector for Report-Suite Data
-topic: översikt
+topic: overview
 description: Det här dokumentet innehåller en översikt över Analytics och en beskrivning av användningsfall för Analytics-data.
 translation-type: tm+mt
 source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac

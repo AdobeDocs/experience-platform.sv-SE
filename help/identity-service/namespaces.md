@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;namnrymd;Namnrymd;Namnrymder;namnutrymmen;identitetsnamnrymd;Identitetsnamnrymd;Identitet;Identitetstjänst;Identitetstjänst
 solution: Experience Platform
 title: Översikt över namnområde för identitet
-topic: översikt
+topic: overview
 description: 'Identitetsnamnutrymmen är en komponent i identitetstjänsten som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet"name@email.com" som e-postadress eller"443522" som ett numeriskt CRM-ID. '
 translation-type: tm+mt
 source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac

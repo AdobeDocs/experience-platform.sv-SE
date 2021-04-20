@@ -2,7 +2,7 @@
 keywords: Experience Platform;home;IAB;IAB 2.0;medgivande;Samtycke
 solution: Experience Platform
 title: Skapa datauppsättningar för att hämta IAB TCF 2.0-medgivandedata
-topic: sekretesshändelser
+topic: privacy events
 description: Det här dokumentet innehåller steg för hur du konfigurerar de två datauppsättningar som krävs för att samla in IAB TCF 2.0-medgivandedata.
 translation-type: tm+mt
 source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac

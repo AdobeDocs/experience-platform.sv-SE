@@ -2,7 +2,7 @@
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API
 title: API-slutpunkt för beräknade attribut
 topic: guide
-type: Dokumentation
+type: Documentation
 description: I Adobe Experience Platform är beräknade attribut funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering. Den här guiden visar hur du skapar, visar, uppdaterar och tar bort beräknade attribut med kundprofils-API:t i realtid.
 translation-type: tm+mt
 source-git-commit: 4ed2b80ebfd87f8920462ae0a918b01bb13d4210

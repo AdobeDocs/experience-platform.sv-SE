@@ -2,8 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;flödestjänst;ta bort konton;ta bort;api
 solution: Experience Platform
 title: Ta bort ett konto med API:t för Flow Service
-topic: översikt
-type: Självstudiekurs
+topic: overview
+type: Tutorial
 description: Lär dig hur du tar bort ett konto med API:t för Flow Service.
 translation-type: tm+mt
 source-git-commit: 37be5f5ffa4640d7d4442a24cc257069237f15cb

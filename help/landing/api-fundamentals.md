@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Grundläggande om Experience Platform API
-topic: komma igång
+topic: getting started
 description: I det här dokumentet finns en kort översikt över vissa underliggande tekniker och syntaxer som används för Experience Platform-API:er.
 translation-type: tm+mt
 source-git-commit: ca5c8527b1b54856aa1e762a06ddbe404f30ec42

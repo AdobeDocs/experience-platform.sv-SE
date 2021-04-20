@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;uppdatera dataflöden;rediger
 description: I den här självstudiekursen beskrivs stegen för att uppdatera ett dataflödesschema, inklusive dess ingångsfrekvens och intervall, med hjälp av arbetsytan Källor.
 solution: Experience Platform
 title: Uppdatera ett källanslutningsdataflöde i användargränssnittet
-topic: översikt
+topic: overview
 type: Tutorial
 exl-id: 0499a2a3-5a22-47b1-ac0e-76a432bd26c0
 translation-type: tm+mt

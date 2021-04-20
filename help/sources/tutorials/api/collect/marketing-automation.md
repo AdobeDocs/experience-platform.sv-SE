@@ -2,8 +2,8 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;automatiserat marknadsföringssystem;Samla in automatiserade marknadsföringsdata
 solution: Experience Platform
 title: Samla in data för automatiserad marknadsföring med källkopplingar och API:er
-topic: översikt
-type: Självstudiekurs
+topic: overview
+type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett automatiserat marknadsföringssystem och föra in dem i Adobe Experience Platform med hjälp av källkopplingar och API:er.
 exl-id: f3754bd0-ed31-4bf2-8f97-975bf6a9b076
 translation-type: tm+mt

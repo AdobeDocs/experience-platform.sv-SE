@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;ECID;ecid
 solution: Experience Platform
 title: ECID - översikt
-topic: översikt
+topic: overview
 description: ECID (Experience Cloud Identifier) är en modul på klientsidan som ger tillgång till identitetshantering och som tillhandahåller tre primära funktioner.
 exl-id: da7717d2-da2e-414b-978d-2eab8ff2c5a0
 translation-type: tm+mt

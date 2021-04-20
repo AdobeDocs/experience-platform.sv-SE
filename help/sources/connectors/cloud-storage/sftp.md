@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;SFTP;sftp
 solution: Experience Platform
 title: Översikt över SFTP-källkoppling
-topic: översikt
+topic: overview
 description: Lär dig hur du ansluter en SFTP-server till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 translation-type: tm+mt
 source-git-commit: 0e11acc4a599d360cb3048445003f61848ad23d3

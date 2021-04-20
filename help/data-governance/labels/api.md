@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;datastyrning;dataanvändningsetikett api;principtjänst api
 solution: Experience Platform
 title: 'Hantera dataanvändningsetiketter med API:er '
-topic: utvecklarhandbok
+topic: developer guide
 description: Med API:t för datauppsättningstjänsten kan du tillämpa och redigera användningsetiketter för datauppsättningar. Den ingår i Adobe Experience Platform datakatalogfunktioner, men är skild från katalogtjänstens API, som hanterar datauppsättningsmetadata.
 translation-type: tm+mt
 source-git-commit: 4e75e3fbdcd480c384411c2f33bad5b2cdcc5c42

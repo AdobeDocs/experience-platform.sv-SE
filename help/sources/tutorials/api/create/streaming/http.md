@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;direktuppspelningsanslutning;skapa direktuppspelningsanslutning;api guide;självstudiekurs;skapa en direktuppspelningsanslutning;direktuppspelningsproblem;intag;
 solution: Experience Platform
 title: Skapa en direktuppspelningsanslutning med API:t
-topic: självstudiekurs
+topic: tutorial
 type: Tutorial
 description: Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform datainmatningstjänst.
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34

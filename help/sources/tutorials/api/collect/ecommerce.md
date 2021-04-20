@@ -2,8 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;Samla in e-handelsdata;e-handelsdata
 solution: Experience Platform
 title: Samla in e-handelsdata med hjälp av källkopplingar och API:er
-topic: översikt
-type: Självstudiekurs
+topic: overview
+type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett e-handelssystem från en annan leverantör och hämta dem till plattformen med hjälp av källkopplingar och API:er.
 exl-id: 0952f037-5e20-4d84-a2e6-2c9470f168f5
 translation-type: tm+mt

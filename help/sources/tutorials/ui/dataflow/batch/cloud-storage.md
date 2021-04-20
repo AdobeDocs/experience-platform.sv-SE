@@ -2,8 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;dataflöde;Dataflöd
 solution: Experience Platform
 title: Konfigurera ett dataflöde för en batchanslutning för molnlagring i användargränssnittet
-topic: översikt
-type: Självstudiekurs
+topic: overview
+type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt molnlagringskonto.
 translation-type: tm+mt
 source-git-commit: 1fb4a272a914bf4ce7653f3f4f7fff63f36f9a48

@@ -2,7 +2,7 @@
 keywords: Experience Platform;hem;populära ämnen;lista aktiva sandlådor;lissandlådor
 solution: Experience Platform
 title: Visa aktiva sandlådor för den aktuella användaren i API:t
-topic: utvecklarhandbok
+topic: developer guide
 description: Du kan lista de sandlådor som är aktiva för den aktuella användaren genom att göra en GET-begäran till rotslutpunkten.
 translation-type: tm+mt
 source-git-commit: 62ce5ac92d03a6e85589fc92e8d953f7fc1d8f31

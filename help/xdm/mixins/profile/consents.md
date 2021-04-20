@@ -1,7 +1,7 @@
 ---
 solution: Experience Platform
 title: Blandning av sekretess/personalisering/marknadsföring (samtycke)
-topic: översikt
+topic: overview
 description: Det här dokumentet innehåller en översikt över den blandning av sekretess-/personaliserings-/marknadsföringsinställningar (samtycke) som finns.
 translation-type: tm+mt
 source-git-commit: 8c5ab298bad69305358ae961ebaf7836a90a0eaa
