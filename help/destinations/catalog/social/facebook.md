@@ -1,15 +1,15 @@
 ---
-keywords: Facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagram;messenger;facebook messenger
+keywords: facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagram;messenger;facebook messenger
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
+exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 01aed33913b5334263090aea17f75ce181717c50
 workflow-type: tm+mt
-source-wordcount: '1119'
+source-wordcount: '1134'
 ht-degree: 2%
 
 ---
-
 
 # [!DNL Facebook] anslutning
 
@@ -19,17 +19,17 @@ Aktivera profiler för [!DNL Facebook]-kampanjer för målgruppsanpassning, pers
 
 Du kan använda det här målet för målgrupper i alla [!DNL Facebook’s]-appar som stöds av [!DNL Custom Audiences], inklusive [!DNL Facebook], [!DNL Instagram], [!DNL Audience Network] och [!DNL Messenger]. Det program som ni valt att köra kampanjen mot anges av placeringsnivån i [!DNL Facebook Ads Manager].
 
-![Facebook-mål i Adobe Experience Platform UI](../../assets/catalog/social/facebook/catalog.png)
+![Facebook-mål i Adobe Experience Platform användargränssnitt](../../assets/catalog/social/facebook/catalog.png)
 
-## Användningsexempel
+## Användningsfall
 
 För att du bättre ska kunna förstå hur och när du ska använda [!DNL Facebook]-målet finns det två exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här funktionen.
 
-### Användningsfall 1
+### Använd skiftläge 1
 
 En webbutik vill nå befintliga kunder via sociala plattformar och visa dem personaliserade erbjudanden baserat på deras tidigare order. Onlinebutiken kan importera e-postadresser från sin egen CRM till Adobe Experience Platform, bygga segment utifrån sina egna offlinedata och skicka dessa segment till den sociala plattformen [!DNL Facebook] för att optimera annonsutgifterna.
 
-### Användningsfall nr 2
+### Använd skiftläge 2
 
 Ett flygbolag har olika kundnivåer (Bronze, Silver och Gold) och vill kunna erbjuda varje nivå personaliserade erbjudanden via sociala plattformar. Alla kunder använder dock inte flygbolagets mobilapp, och vissa av dem har inte loggat in på företagets webbplats. De enda identifierare företaget har för dessa kunder är medlems-ID och e-postadresser.
 
@@ -57,14 +57,14 @@ Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-I
 
 ## Exporttyp {#export-type}
 
-**Segmentexport**  - du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i Facebook-målet.
+**Segmentexport**  - du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i Facebook-destinationen.
 
-## Krav för Facebook-konto {#facebook-account-prerequisites}
+## Krav för facebook-konto {#facebook-account-prerequisites}
 
 Innan du kan skicka målgruppssegment till [!DNL Facebook] måste du kontrollera att du uppfyller följande krav:
 
 - Ditt [!DNL Facebook]-användarkonto måste ha behörigheten **[!DNL Manage campaigns]** aktiverad för det annonskonto som du tänker använda.
-- Företagskontot **Adobe Experience Cloud** måste läggas till som annonspartner i [!DNL Facebook Ad Account]. Använd `business ID=206617933627973`. Mer information finns i [Lägg till partner i din Business Manager](https://www.facebook.com/business/help/1717412048538897) i dokumentationen för Facebook.
+- Företagskontot **Adobe Experience Cloud** måste läggas till som annonspartner i [!DNL Facebook Ad Account]. Använd `business ID=206617933627973`. Mer information finns i [Lägg till partner i din Business Manager](https://www.facebook.com/business/help/1717412048538897) i Facebook-dokumentationen.
    >[!IMPORTANT]
    >
    > När du konfigurerar behörigheter för Adobe Experience Cloud måste du aktivera behörigheten **Hantera kampanjer**. Behörighet krävs för [!DNL Adobe Experience Platform]-integreringen.
@@ -113,11 +113,15 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 
 ## Använda anpassade namnutrymmen {#custom-namespaces}
 
-Innan du kan använda namnutrymmet `Extern_ID` för att skicka data till [!DNL Facebook] måste du synkronisera dina egna identifierare med [!DNL Facebook Pixel]. Mer information finns i [den officiella dokumentationen](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/#external_identifiers).
+Innan du kan använda namnutrymmet `Extern_ID` för att skicka data till [!DNL Facebook] måste du synkronisera dina egna identifierare med [!DNL Facebook Pixel]. Mer information finns i [Facebook officiella dokumentation](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/#external_identifiers).
 
 ## Anslut till målet {#connect-destination}
 
 Mer information om hur du ansluter till [!DNL Facebook]-målet finns i [autentiseringsarbetsflöde för mål för sociala nätverk](./workflow.md).
+
+I videon nedan visas också stegen för att konfigurera ett [!DNL Facebook]-mål och aktivera segment.
+
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 ## Aktivera segment till [!DNL Facebook] {#activate-segments}
 
@@ -125,7 +129,7 @@ Instruktioner om hur du aktiverar segment till [!DNL Facebook] finns i [Aktivera
 
 I steget **[!UICONTROL Segment schedule]** måste du ange [!UICONTROL Origin of audience] när du skickar segment till [!DNL Facebook Custom Audiences].
 
-![Publikens Facebook-ursprung](../../assets/catalog/social/facebook/facebook-origin-audience.png)
+![Facebook Origin of Audience](../../assets/catalog/social/facebook/facebook-origin-audience.png)
 
 ## Exporterade data {#exported-data}
 
