@@ -2,18 +2,18 @@
 title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen för Adobe Experience Platform Web SDK.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
+exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
 translation-type: tm+mt
-source-git-commit: b0e6d1f7cf7302bb3a7403bb18dfd8b7489d583e
+source-git-commit: d4ed6c8fa9c86eb2beec829ab24c381b665c2f03
 workflow-type: tm+mt
-source-wordcount: '496'
+source-wordcount: '500'
 ht-degree: 0%
 
 ---
 
-
 # Versionsinformation
 
-## Version 2.4.0
+## Version 2.4.0, mars 2021
 
 * SDK kan nu [installeras som ett npm-paket](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/installing-the-sdk.html).
 * Stöd för ett `out`-alternativ har lagts till när [standardgodkännande](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#default-consent) konfigureras, vilket släpper alla händelser tills samtycke tas emot (det befintliga `pending`-alternativet köar händelser och skickar dem när samtycke tas emot).
@@ -27,7 +27,7 @@ ht-degree: 0%
 * Felkorrigering: Meddelandehändelser för anpassningsinteraktion innehåller dubblettinformation om samma aktivitet när en användare navigerade till en ny enkelsidig appvy, tillbaka till den ursprungliga vyn och klickade på ett element som är kvalificerat för konvertering.
 * Felkorrigering: Om den första händelsen som skickades av SDK hade `documentUnloading` inställt på `true`, skulle [`sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon) användas för att skicka händelsen, vilket resulterar i ett fel om att en identitet inte har etablerats.
 
-## Version 2.3.0
+## Version 2.3.0, november 2020
 
 * Stöd för nonce har lagts till för att möjliggöra striktare skyddsprofiler för innehåll.
 * Ytterligare stöd för personalisering för ensidiga applikationer.
@@ -37,12 +37,12 @@ ht-degree: 0%
 * Felkorrigering: Vissa webbläsarfel som innehåller en skrivskyddad `message`-egenskap hanterades inte korrekt, vilket resulterade i att ett annat fel exponerades för kunden.
 * Felkorrigering: Om du kör SDK i en iframe uppstår ett fel om iframe-fönstrets HTML-sida kommer från en annan underdomän än det överordnade fönstrets HTML-sida.
 
-## Version 2.2.0
+## Version 2.2.0, oktober 2020
 
 * Felkorrigering: Opt-in-objektet blockerade Alloy från att ringa anrop när `idMigrationEnabled` är `true`.
 * Felkorrigering: Meddela Alloy om det finns förfrågningar om att returnera personaliseringserbjudanden för att förhindra flimmer.
 
-## Version 2.1.0
+## Version 2.1.0, augusti 2020
 
 * Ta bort kommandot `syncIdentity` och stöd för att skicka dessa ID:n i kommandot `sendEvent`.
 * Stöd för IAB 2.0 Consent Standard.
