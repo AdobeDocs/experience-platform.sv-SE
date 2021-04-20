@@ -1,22 +1,22 @@
 ---
-keywords: Facebook;facebook;Socialt nätverk;Socialt nätverk;Autentisering via sociala nätverk;Autentisering via sociala nätverk
-title: Skapa ett mål för sociala nätverk
+keywords: Facebook;facebook;Socialt nätverk;Socialt nätverk;Social autentisering;Social nätverksautentisering
+title: Skapa ett socialt mål
 type: Tutorial
-description: Lär dig hur du ansluter till annonskonton för sociala nätverk i Adobe Experience Platform.
+description: Lär dig hur du ansluter till dina annonskonton för sociala medier i Adobe Experience Platform.
 exl-id: a0cdf2b7-b1e8-4a8e-9d5b-58a118e7b689
 translation-type: tm+mt
-source-git-commit: 95ca7112d1f2655bf33e8a1c549e886ced244a5d
+source-git-commit: 805cb72e91e6446f74cc3461d39841740eb576c7
 workflow-type: tm+mt
-source-wordcount: '471'
+source-wordcount: '457'
 ht-degree: 0%
 
 ---
 
-# Skapa ett mål för sociala nätverk {#social-network-destinations-workflow}
+# Skapa ett socialt mål {#social-network-destinations-workflow}
 
 ## Översikt {#overview}
 
-I den här självstudien används [!DNL Facebook] som exempel, men Adobe Experience Platform-arbetsflödet är detsamma för alla mål för sociala nätverk.
+I den här självstudien används [!DNL Facebook] som exempel, men Adobe Experience Platform-arbetsflödet är detsamma för alla sociala mål.
 
 ## Konfigurera social destination - videogenomgång {#video}
 
@@ -26,9 +26,9 @@ I videon nedan visas hur du konfigurerar ett socialt mål och aktiverar segment 
 
 ## Välj socialt mål {#select-destination}
 
-Bläddra till kategorin **[!UICONTROL Social]** i **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**. Välj önskat mål för sociala nätverk och välj sedan **[!UICONTROL Configure]**.
+Bläddra till kategorin **[!UICONTROL Social]** i **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**. Välj önskat socialt mål och välj sedan **[!UICONTROL Configure]**.
 
-![Anslut till mål för sociala nätverk](../../assets/catalog/social/workflow/catalog.png)
+![Anslut till social destination](../../assets/catalog/social/workflow/catalog.png)
 
 >[!NOTE]
 >
@@ -36,13 +36,13 @@ Bläddra till kategorin **[!UICONTROL Social]** i **[!UICONTROL Destinations]** 
 
 ## Kontosteg {#account}
 
-I steget **Konto** väljer du **[!UICONTROL Existing Account]** och väljer din befintliga anslutning om du tidigare har konfigurerat en anslutning till målet för det sociala nätverket. Du kan också välja **[!UICONTROL New Account]** för att konfigurera en ny anslutning till målet för det sociala nätverket. Välj **[!UICONTROL Connect to destination]** så dirigeras du till det valda sociala nätverkets mål för att logga in och ansluta Adobe Experience Cloud till ditt sociala nätverk och annonskonto.
+I steget **Konto** väljer du **[!UICONTROL Existing Account]** och väljer din befintliga anslutning om du tidigare har konfigurerat en anslutning till ditt sociala mål. Du kan också välja **[!UICONTROL New Account]** för att konfigurera en ny anslutning till ditt sociala mål. Välj **[!UICONTROL Connect to destination]** så dirigeras du till det valda sociala målet för att logga in och ansluta Adobe Experience Cloud till ditt sociala annonskonto.
 
 >[!NOTE]
 >
->Plattformen stöder validering av autentiseringsuppgifter i autentiseringsprocessen och visar ett felmeddelande om du anger felaktiga autentiseringsuppgifter för ditt konto-ID för det sociala nätverket. Detta säkerställer att du inte slutför arbetsflödet med felaktiga inloggningsuppgifter.
+>Plattformen stöder validering av autentiseringsuppgifter i autentiseringsprocessen och visar ett felmeddelande om du anger felaktiga autentiseringsuppgifter för ditt konto-ID. Detta säkerställer att du inte slutför arbetsflödet med felaktiga inloggningsuppgifter.
 
-![Anslut till mål för sociala nätverk - autentiseringssteg](../../assets/catalog/social/workflow/pre-connect.png)
+![Anslut till socialt mål - autentiseringssteg](../../assets/catalog/social/workflow/pre-connect.png)
 
 När dina inloggningsuppgifter har bekräftats och Adobe Experience Cloud är anslutet till ditt sociala nätverk kan du välja **[!UICONTROL Next]** för att fortsätta till **[!UICONTROL Authentication]**-steget.
 
@@ -58,7 +58,7 @@ I steget **[!UICONTROL Authentication]** anger du [!UICONTROL Name] och [!UICONT
 > * För [!DNL LinkedIn]-mål är **[!UICONTROL Account ID]** din [!DNL LinkedIn Campaign Manager Account ID]. Du hittar detta ID i [!DNL LinkedIn Campaign Manager].
 
 
-![Anslut till mål för sociala nätverk - autentiseringssteg](../../assets/catalog/social/workflow/authentication.png)
+![Anslut till socialt mål - autentiseringssteg](../../assets/catalog/social/workflow/authentication.png)
 
 I det här steget kan du även välja alla **[!UICONTROL Marketing action]** som ska gälla för det här målet. Marknadsföringsåtgärder anger för vilken metod data ska exporteras till målet. Du kan välja bland Adobe-definierade marknadsföringsåtgärder eller skapa en egen marknadsföringsåtgärd. Mer information om marknadsföringsåtgärder finns i [Översikt över dataanvändningsprinciper](../../../data-governance/policies/overview.md).
 
