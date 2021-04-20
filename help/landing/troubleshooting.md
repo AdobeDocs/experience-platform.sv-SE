@@ -4,16 +4,16 @@ solution: Experience Platform
 title: Adobe Experience Platform FAQ and Troubleshooting Guide
 description: Hitta svar på vanliga frågor och en guide för felsökning av vanliga fel i Experience Platform.
 landing-page-description: Hitta svar på vanliga frågor och en guide för felsökning av vanliga fel i Experience Platform.
-topic: getting started
+topic: komma igång
 type: Documentation
+exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
 translation-type: tm+mt
-source-git-commit: 83cc3ddbf067f413cb524a3a685d985d5853eafd
+source-git-commit: e722d7598a558bcbc5c48d237d394f91c0803352
 workflow-type: tm+mt
-source-wordcount: '1718'
+source-wordcount: '1717'
 ht-degree: 1%
 
 ---
-
 
 # [!DNL Platform] Vanliga frågor och felsökningsguide
 
@@ -88,7 +88,7 @@ Nedan följer en lista över fel som kan uppstå när du använder en [!DNL Expe
 Följande statuskoder kan påträffas i alla [!DNL Experience Platform]-API:er. Det finns en mängd orsaker till detta, och därför är de förklaringar som ges i detta avsnitt av allmän karaktär. Mer information om specifika fel i enskilda [!DNL Platform]-tjänster finns i [servicefelsökningskatalogen](#service-troubleshooting-directory) nedan.
 
 | Statuskod | Beskrivning | Möjliga orsaker |
---- | --- | ---
+|--- | --- | ---|
 | 400 | Felaktig begäran | Begäran är felaktigt konstruerad, nyckelinformation saknas och/eller innehåller felaktig syntax. |
 | 401 | Autentiseringen misslyckades | Begäran klarade inte en autentiseringskontroll. Åtkomsttoken kanske saknas eller är ogiltig. Mer information finns i avsnittet [OAuth-tokenfel](#oauth-token-is-missing) nedan. |
 | 403 | Förbjuden | Resursen hittades, men du har inte rätt autentiseringsuppgifter för att visa den. |
@@ -198,4 +198,3 @@ Nedan följer en lista över felsökningsguider och API-referensdokumentation f�
 | [!DNL Flow Service] ([!DNL Sources] och  [!DNL Destinations]) | [[!DNL Flow Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) |  |
 | [!DNL Real-time Customer Profile] | [[!DNL Real-time Customer Profile API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml) | [[!DNL Profile] felsökningsguide](../profile/troubleshooting.md) |
 | Sandlådor | [Sandbox-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sandbox-api.yaml) | [Felsökningsguide för sandlådor](../sandboxes/troubleshooting-guide.md) |
-
