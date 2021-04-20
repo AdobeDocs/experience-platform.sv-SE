@@ -2,14 +2,14 @@
 title: Skapa en Edge-konfiguration för Experience Platform Web SDK
 description: 'Lär dig hur du konfigurerar Experience Platform Edge-nätverket. '
 keywords: konfiguration;edge;edge configuration id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destinations;url Destinations;Analytics Settings Blockreport suite id;
+exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: d4ed6c8fa9c86eb2beec829ab24c381b665c2f03
 workflow-type: tm+mt
-source-wordcount: '859'
+source-wordcount: '861'
 ht-degree: 0%
 
 ---
-
 
 # Skapa en kantkonfiguration
 
@@ -35,17 +35,17 @@ Det ID som används i SDK som `edgeConfigId` är ett sammansatt ID som anger kon
 
 Här nedan hittar du de tillgängliga inställningarna för varje konfigurationsmiljö. De flesta avsnitt kan aktiveras eller inaktiveras. Inställningarna sparas men är inte aktiva när de är inaktiverade.
 
-## [!UICONTROL Identity] Inställningar
+## [!UICONTROL Third Party ID] Inställningar
 
-Identitetsavsnittet är det enda avsnitt som alltid är på. Det finns två tillgängliga inställningar: &quot;[!UICONTROL ID Syncs Enabled]&quot; och &quot;[!UICONTROL ID Sync Container ID]&quot;.
+Avsnittet med tredje parts-ID är det enda avsnitt som alltid är aktivt. Det finns två tillgängliga inställningar: &quot;[!UICONTROL Third Party ID Sync Enabled]&quot; och &quot;[!UICONTROL Third Party ID Sync Container ID]&quot;.
 
 ![Identitetsavsnittet i konfigurationsgränssnittet](../../assets/edge_configuration_identity.png)
 
-### [!UICONTROL ID Sync Enabled]
+### [!UICONTROL Third Party ID Sync Enabled]
 
 Styr huruvida SDK utför identitetssynkroniseringar med tredjepartspartners eller inte.
 
-### [!UICONTROL ID Sync Container ID]
+### [!UICONTROL Third Party ID Sync Container ID]
 
 ID-synkroniseringar kan grupperas i behållare så att olika ID-synkroniseringar kan köras vid olika tidpunkter. Detta styr vilken behållare för ID-synkronisering som körs för ett givet konfigurations-ID.
 
