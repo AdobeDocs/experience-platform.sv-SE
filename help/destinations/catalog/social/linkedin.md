@@ -1,15 +1,15 @@
 ---
 keywords: länkad anslutning;länkad anslutning;länkade destinationer;länkad;
 title: Länkad matchad målgruppsanslutning
-description: Aktivera profiler för era LinkedIn-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hash-kodade e-postmeddelanden.
+description: Aktivera profiler för era LinkedIn-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hashad-e-post.
+exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 95ca7112d1f2655bf33e8a1c549e886ced244a5d
 workflow-type: tm+mt
-source-wordcount: '655'
-ht-degree: 0%
+source-wordcount: '669'
+ht-degree: 1%
 
 ---
-
 
 # [!DNL LinkedIn Matched Audiences] anslutning
 
@@ -17,9 +17,9 @@ ht-degree: 0%
 
 Aktivera profiler för era [!DNL LinkedIn]-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hash-kodade e-postmeddelanden och mobil-ID:n.
 
-![LinkedIn-mål i Adobe Experience Platform UI](../../assets/catalog/social/linkedin/catalog.png)
+![linkedIn-mål i Adobe Experience Platform användargränssnitt](../../assets/catalog/social/linkedin/catalog.png)
 
-## Användningsexempel
+## Användningsfall
 
 För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL LinkedIn Matched Audiences] finns det ett användningsexempel som Adobe Experience Platform-kunder kan lösa genom att använda den här funktionen.
 
@@ -40,11 +40,11 @@ Ett programvaruföretag organiserar en konferens och vill hålla kontakt med del
 
 **Segmentexport**  - du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer och andra) som används i  [!DNL LinkedIn Matched Audiences] målet.
 
-## Krav för LinkedIn-konto {#LinkedIn-account-prerequisites}
+## Krav för linkedIn-konto {#LinkedIn-account-prerequisites}
 
 Innan du kan använda målet [!UICONTROL LinkedIn Matched Audience] måste du kontrollera att ditt [!DNL LinkedIn Campaign Manager]-konto har behörighetsnivån [!DNL Creative Manager] eller högre.
 
-Mer information om hur du redigerar dina [!DNL LinkedIn Campaign Manager]-användarbehörigheter finns i [Lägg till, redigera och ta bort användarbehörigheter för annonskonton](https://www.linkedin.com/help/lms/answer/5753) i dokumentationen för LinkedIn.
+Mer information om hur du redigerar dina [!DNL LinkedIn Campaign Manager]-användarbehörigheter finns i [Lägg till, redigera och ta bort användarbehörigheter för annonskonton](https://www.linkedin.com/help/lms/answer/5753) i LinkedIn-dokumentationen.
 
 ## Krav för ID-matchning {#id-matching-requirements}
 
@@ -81,6 +81,10 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 ## Anslut till målet {#connect-destination}
 
 Mer information om hur du ansluter till [!DNL LinkedIn Matched Audiences]-målet finns i [autentiseringsarbetsflöde för mål för sociala nätverk](./workflow.md).
+
+I videon nedan visas också stegen för att konfigurera ett [!DNL LinkedIn Matched Audiences]-mål och aktivera segment.
+
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 ## Aktivera segment till [!DNL LinkedIn Matched Audiences] {#activate-segments}
 
