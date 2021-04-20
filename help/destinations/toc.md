@@ -6,9 +6,9 @@ user-guide-description: Aktivera kända och okända data för flerkanalskampanje
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: 'Mål '
 translation-type: tm+mt
-source-git-commit: 0bb6db19dc27031115e47415c1b3241661e0a0ae
+source-git-commit: 805cb72e91e6446f74cc3461d39841740eb576c7
 workflow-type: tm+mt
-source-wordcount: '473'
+source-wordcount: '470'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ ht-degree: 0%
       * [Bing Ads UET-tillägg (Universal Event Tracking)](./catalog/advertising/bing-ads.md)
       * [Filialtillägg](./catalog/advertising/branch.md)
       * [Dubbelklicka på FlöLjus-tillägget (beta)](./catalog/advertising/doubleclick-floodlight.md)
-      * [Pixeltillägg för Facebook](./catalog/advertising/facebook-pixel.md)
+      * [Facebook Pixel-tillägg](./catalog/advertising/facebook-pixel.md)
       * [Flashtalk OneTag-tillägg](./catalog/advertising/flashtalking.md)
       * [Google Ads-anslutning](./catalog/advertising/google-ads-destination.md)
       * [Google Ads-tillägg](./catalog/advertising/google-ads-extension.md)
@@ -52,11 +52,11 @@ ht-degree: 0%
       * [Google Customer Match Connection](./catalog/advertising/google-customer-match.md)
       * [Google Display &amp; Video 360-anslutning](./catalog/advertising/google-dv360.md)
       * [Google-taggtillägg](./catalog/advertising/gtag-advertising.md)
-      * [Tillägget LinkedIn Insight-tagg](./catalog/advertising/linkedin.md)
+      * [linkedIn Insight Tag Extension](./catalog/advertising/linkedin.md)
       * [Microsoft Bing-anslutning](./catalog/advertising/bing.md)
-      * [Tillägg för Pinterest Conversion Tracking](./catalog/advertising/pinterest.md)
+      * [Pinterest Conversion Tracking-tillägg](./catalog/advertising/pinterest.md)
       * [The Trade Desk connection](./catalog/advertising/tradedesk.md)
-      * [Twitter Universal Website Tag-tillägg](./catalog/advertising/twitter-uwt.md)
+      * [Tillägget twitter Universal Web Site Tag](./catalog/advertising/twitter-uwt.md)
    * Analysmål {#analytics}
       * [Översikt över Analytics-destinationer](./catalog/analytics/overview.md)
       * [Anpassa tillägg för webbplatsspårning](./catalog/analytics/adform.md)
@@ -117,10 +117,10 @@ ht-degree: 0%
       * [Experience Cloud ID-tjänsttillägg](./catalog/personalization/adobe-ecid.md)
       * [Gainsight-tillägg](./catalog/personalization/gainsight.md)
       * [KickFire-tillägg](./catalog/personalization/kickfire.md)
-      * [Marketo Web Personalization extension](./catalog/personalization/marketo-web-personalization.md)
-   * Destinationer för sociala nätverk{#social}
-      * [Översikt över mål för sociala nätverk](./catalog/social/overview.md)
-      * [Skapa ett mål för sociala nätverk](./catalog/social/workflow.md)
+      * [Marketo Web Personalization-tillägg](./catalog/personalization/marketo-web-personalization.md)
+   * Sociala mål{#social}
+      * [Översikt över sociala mål](./catalog/social/overview.md)
+      * [Skapa ett socialt mål](./catalog/social/workflow.md)
       * [Adobe Livefyre-tillägg](./catalog/social/adobe-livefyre.md)
       * [Facebook-anslutning](./catalog/social/facebook.md)
       * [Länkad matchad målgruppsanslutning](./catalog/social/linkedin.md)
