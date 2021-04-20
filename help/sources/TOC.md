@@ -1,14 +1,13 @@
 ---
-product: experience-platform
 audience: user
 user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
 breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
-feature: Data Ingestion, Sources
+feature: Dataintag, källor
 translation-type: tm+mt
-source-git-commit: 26e7116858574b366760ffd4f92b14117ccd28eb
+source-git-commit: af5564a07577a0123e1a45043d5479f6ad45d73e
 workflow-type: tm+mt
-source-wordcount: '582'
+source-wordcount: '602'
 ht-degree: 5%
 
 ---
@@ -27,6 +26,11 @@ ht-degree: 5%
          - [Mappningar av analysfält](connectors/adobe-applications/mapping/analytics.md)
          - [Fältkopplingar i Audience Manager](connectors/adobe-applications/mapping/audience-manager.md)
          - [Målfältsmappningar](connectors/adobe-applications/mapping/target.md)
+         - [Fältkopplingar i Marketo Engage](connectors/adobe-applications/mapping/marketo.md)
+      - Marketo Engage {#marketo}
+         - [Marketo Engage-kontakt](connectors/adobe-applications/marketo/marketo.md)
+         - [Autentiseringsguide för Marketo Engage](connectors/adobe-applications/marketo/marketo-auth.md)
+         - [Marketo Engage namnutrymmen och scheman](connectors/adobe-applications/marketo/marketo-namespaces.md)
    - Reklam {#advertising}
       - [Google AdWords-koppling](connectors/advertising/ads.md)
    - Molnlagring {#cloud-storage}
@@ -159,6 +163,7 @@ ht-degree: 5%
          - [Adobe Analytics (klassificeringsdata)](tutorials/ui/create/adobe-applications/classifications.md)
          - [Adobe Audience Manager](tutorials/ui/create/adobe-applications/audience-manager.md)
          - [Kundattribut](tutorials/ui/create/adobe-applications/customer-attributes.md)
+         - [Marketo Engage](tutorials/ui/create/adobe-applications/marketo.md)
       - Reklam {#create}
          - [Google AdWords](tutorials/ui/create/advertising/ads.md)
       - Molnlagring {#cloud-storage}
