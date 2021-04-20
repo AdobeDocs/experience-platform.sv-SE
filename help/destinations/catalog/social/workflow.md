@@ -5,7 +5,7 @@ type: Tutorial
 description: Lär dig hur du ansluter till dina annonskonton för sociala medier i Adobe Experience Platform.
 exl-id: a0cdf2b7-b1e8-4a8e-9d5b-58a118e7b689
 translation-type: tm+mt
-source-git-commit: 805cb72e91e6446f74cc3461d39841740eb576c7
+source-git-commit: e2af4fcfe232889f3f928c00c9f9b37cf9754ca1
 workflow-type: tm+mt
 source-wordcount: '457'
 ht-degree: 0%
@@ -64,8 +64,8 @@ I det här steget kan du även välja alla **[!UICONTROL Marketing action]** som
 
 Välj **[!UICONTROL Create Destination]** när du har fyllt i fälten ovan.
 
-Målet har skapats. Du kan välja **[!UICONTROL Save & Exit]** om du vill aktivera segment senare eller välja **[!UICONTROL Next]** om du vill fortsätta arbetsflödet och välja segment som ska aktiveras. I båda fallen ska du läsa nästa avsnitt, [Aktivera segment till sociala nätverk](#activate-segments), för resten av arbetsflödet.
+Målet har skapats. Du kan välja **[!UICONTROL Save & Exit]** om du vill aktivera segment senare eller välja **[!UICONTROL Next]** om du vill fortsätta arbetsflödet och välja segment som ska aktiveras. I båda fallen ska du läsa nästa avsnitt, [Aktivera segment till sociala mål](#activate-segments), för resten av arbetsflödet.
 
-## Aktivera segment i sociala nätverk {#activate-segments}
+## Aktivera segment till sociala mål {#activate-segments}
 
-Instruktioner om hur du aktiverar segment till sociala nätverk finns i [Aktivera data till mål](../../ui/activate-destinations.md).
+Instruktioner om hur du aktiverar segment till sociala mål finns i [Aktivera data till mål](../../ui/activate-destinations.md).
