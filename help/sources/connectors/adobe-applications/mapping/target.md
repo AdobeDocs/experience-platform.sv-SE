@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;målmappning;Målmappning
 solution: Experience Platform
 title: Mappa Adobe Target-händelsedata till XDM
-topic: overview
+topic-legacy: overview
 description: Lär dig hur du mappar Adobe Target-händelsefält till ett XDM-schema (Experience Data Model) som kan användas i Adobe Experience Platform.
+exl-id: dab08ab6-6c1c-460a-bb52-8dcdb5709a34
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: af5564a07577a0123e1a45043d5479f6ad45d73e
 workflow-type: tm+mt
-source-wordcount: '462'
+source-wordcount: '465'
 ht-degree: 0%
 
 ---
-
 
 # Mappningar av målmappningsfält
 
@@ -88,3 +88,5 @@ Följande tabell visar fälten i ett Experience Event-schema (*XDM ExperienceEve
 | **`identityMap`** |
 | `identityMap.TNTID` | `tntId.mboxPC` |
 | `identityMap.ECID` | `marketingCloudVisitorId` |
+
+{style=&quot;table-layout:auto&quot;}
