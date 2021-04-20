@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;Analysmappningsfält;analysmappning
 solution: Experience Platform
 title: Mappningsfält för Adobe Analytics Source Connector
-topic: overview
+topic-legacy: overview
 description: Med Adobe Experience Platform kan ni importera Adobe Analytics-data via Analytics Data Connector (ADC). Vissa data som hämtas via ADC kan mappas direkt från analysfält till XDM-fält (Experience Data Model), medan andra data kräver omformningar och specifika funktioner för att kunna mappas.
+exl-id: 15dc1368-5cf1-42e1-9683-d5158f8aa2db
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: af5564a07577a0123e1a45043d5479f6ad45d73e
 workflow-type: tm+mt
-source-wordcount: '3393'
+source-wordcount: '3405'
 ht-degree: 0%
 
 ---
-
 
 # Mappningar av analysfält
 
@@ -124,6 +124,8 @@ Följande tabell innehåller kolumner som visar namnet på analysfältet (*Analy
 | videopausetime | media.mediaTimed.pauseTime | Objekt | <!-- MISSING --> | {id (sträng), value (number)} |
 | videosekunderIncelastcall | media.mediaTimed.primaryAssetViewDetails.sessionTimeout | heltal |
 
+{style=&quot;table-layout:auto&quot;}
+
 ## Dela mappningsfält
 
 Dessa fält har en enda källa, men mappas till **flera** XDM-platser.
@@ -133,6 +135,8 @@ Dessa fält har en enda källa, men mappas till **flera** XDM-platser.
 | s_resolution | device.screenWidth, device.screenHeight | heltal | Numeriskt ID som representerar bildskärmens upplösning. |
 | mobileosversion | environment.operatingSystem, environment.operatingSystemVersion | string | Mobil operativsystemversion. |
 | videoadlength | advertising.adAssetReference._xmpDM.duration | heltal | Längd på videoreklam. |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Genererade mappningsfält
 
@@ -191,6 +195,8 @@ Följande tabell innehåller kolumner som visar namnet på analysfältet (*Analy
 | mobilebeaconproximity | placeContext.POIinteraction.POIDetail.beaconInteractionDetails.proximity | string | Mobiltjänster är nära. |
 | videokort | media.mediaTimed.mediaChapter.chapterAssetReference._xmpDM.duration | heltal | Namnet på videokapitlet. |
 | videolängd | media.mediaTimed.primaryAssetReference._xmpDM.duration | heltal | Videons längd. |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Avancerade mappningsfält
 
@@ -269,3 +275,5 @@ Följande tabell innehåller kolumner som visar namnet på analysfältet (*Analy
 | visit_ref_type | _experience.analytics.session.web.webReferrer.type | string | Numeriskt ID som representerar referenstypen för besökets första referent. |
 | besök_search_engine | _experience.analytics.session.search.searchEngine | string | Numeriskt ID för besökets första sökmotor. |
 | besök_start_time_gmt | _experience.analytics.session.timestamp | heltal | Tidsstämpel för besökets första träff i Unix-tid. |
+
+{style=&quot;table-layout:auto&quot;}
