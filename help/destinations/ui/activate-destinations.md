@@ -1,15 +1,15 @@
 ---
 keywords: aktivera mål;aktivera mål;aktivera data
 title: Aktivera profiler och segment till ett mål
-type: Självstudiekurs
+type: Tutorial
 seo-title: Aktivera profiler och segment till ett mål
 description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 seo-description: Aktivera data i Adobe Experience Platform genom att mappa segment till mål. Följ stegen nedan för att uppnå detta.
 exl-id: c3792046-ffa8-4851-918f-98ced8b8a835
 translation-type: tm+mt
-source-git-commit: 0bb6db19dc27031115e47415c1b3241661e0a0ae
+source-git-commit: 805cb72e91e6446f74cc3461d39841740eb576c7
 workflow-type: tm+mt
-source-wordcount: '2025'
+source-wordcount: '2023'
 ht-degree: 0%
 
 ---
@@ -175,7 +175,7 @@ På sidan **[!UICONTROL Segment schedule]** kan du ange startdatum för att skic
 >
 >För sociala mål måste du välja målgruppens ursprung i det här steget. Du kan bara fortsätta till nästa steg efter att du har valt något av alternativen i bilden nedan.
 
-![Publikens Facebook-ursprung](../assets/catalog/social/facebook/facebook-origin-audience.png)
+![Facebook Origin of Audience](../assets/catalog/social/facebook/facebook-origin-audience.png)
 
 >[!IMPORTANT]
 >
@@ -264,7 +264,7 @@ De här filerna finns på lagringsplatsen och du har fått en bekräftelse på a
 
 Kontrollera ditt konto på respektive annonsmål att du aktiverar dina data. Om aktiveringen lyckades, fylls målgrupperna i er annonsplattform.
 
-## Målgrupper i sociala nätverk
+## Sociala destinationer
 
 För [!DNL Facebook] innebär en lyckad aktivering att en [!DNL Facebook] anpassad målgrupp skapas programmatiskt i [[!UICONTROL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/). Segmentmedlemskap i målgruppen skulle läggas till och tas bort eftersom användarna är kvalificerade eller diskvalificerade för de aktiverade segmenten.
 
