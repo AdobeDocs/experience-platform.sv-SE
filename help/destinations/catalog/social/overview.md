@@ -1,21 +1,21 @@
 ---
-keywords: sociala nätverk;sociala nätverksplatser;Livefyre;facebook;Facebook
-title: Översikt över mål för sociala nätverk
-description: Med sociala nätverksdestinationer kan ni aktivera profiler för era kampanjer för målgruppsanpassning, personalisering och undertryckning baserat på hashad-e-post.
+keywords: sociala medier;sociala mål;Livefyre;facebook;Facebook
+title: Översikt över sociala mål
+description: Med sociala destinationer kan ni aktivera profiler för era kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
+exl-id: c5da8dae-c1ff-45a8-b769-037d7bb7947a
 translation-type: tm+mt
-source-git-commit: db2e5d51a5ed07b91997df8a566272c86a7c1708
+source-git-commit: 805cb72e91e6446f74cc3461d39841740eb576c7
 workflow-type: tm+mt
-source-wordcount: '76'
+source-wordcount: '69'
 ht-degree: 0%
 
 ---
 
+# Översikt över sociala mål {#social-network-destinations}
 
-# Översikt över mål för sociala nätverk {#social-network-destinations}
+Med sociala destinationer kan ni aktivera profiler för era kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 
-Med sociala nätverksdestinationer kan ni aktivera profiler för era kampanjer för målgruppsanpassning, personalisering och undertryckning baserat på hashad-e-post.
-
-Adobe Experience Platform har för närvarande stöd för följande mål för sociala nätverk:
+Adobe Experience Platform har för närvarande stöd för följande sociala mål:
 
 - [Adobe Livefyre-tillägg](./adobe-livefyre.md)
 - [[!DNL Facebook] extension](./facebook.md)
