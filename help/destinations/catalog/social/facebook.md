@@ -4,9 +4,9 @@ title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
 translation-type: tm+mt
-source-git-commit: 01aed33913b5334263090aea17f75ce181717c50
+source-git-commit: 805cb72e91e6446f74cc3461d39841740eb576c7
 workflow-type: tm+mt
-source-wordcount: '1134'
+source-wordcount: '1133'
 ht-degree: 2%
 
 ---
@@ -117,7 +117,7 @@ Innan du kan använda namnutrymmet `Extern_ID` för att skicka data till [!DNL F
 
 ## Anslut till målet {#connect-destination}
 
-Mer information om hur du ansluter till [!DNL Facebook]-målet finns i [autentiseringsarbetsflöde för mål för sociala nätverk](./workflow.md).
+Mer information om hur du ansluter till [!DNL Facebook]-målet finns i [Arbetsflöde för autentisering av sociala mål](./workflow.md).
 
 I videon nedan visas också stegen för att konfigurera ett [!DNL Facebook]-mål och aktivera segment.
 
