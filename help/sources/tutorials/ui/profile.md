@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;aktivera inkommande data;fyll i profil;fyll i rtcp;ifylld enhetlig profil
 solution: Experience Platform
 title: Aktivera inkommande källdata för att fylla i kundprofiler i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Inkommande data från källkopplingen kan användas för att berika och fylla i kundprofildata i realtid.
+exl-id: ddd3766a-3f55-4bbc-8358-c578eae2c629
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '482'
 ht-degree: 0%
 
 ---
-
 
 # Aktivera inkommande källdata för att fylla i kundprofiler
 
