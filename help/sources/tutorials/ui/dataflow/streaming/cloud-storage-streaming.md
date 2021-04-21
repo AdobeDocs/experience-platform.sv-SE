@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;molnlagringskontakt;molnlagring
 solution: Experience Platform
 title: Konfigurera ett dataflöde för en anslutning för Cloud Storage Streaming i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med molnlagringsbasen.
+exl-id: 75deead6-ef3c-48be-aed2-c43d1f432178
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '680'
 ht-degree: 0%
 
 ---
-
 
 # Konfigurera ett dataflöde för en direktuppspelningsanslutning för molnlagring i användargränssnittet
 
