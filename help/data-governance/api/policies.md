@@ -2,16 +2,16 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;Politik;API-baserad tillämpning;datastyrning
 solution: Experience Platform
 title: API-slutpunkt för principer
-topic: developer guide
+topic-legacy: developer guide
 description: Dataanvändningspolicyer är regler som din organisation antar som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom Experience Platform. Slutpunkten /policies används för alla API-anrop som rör visning, skapande, uppdatering eller borttagning av dataanvändningsprinciper.
+exl-id: 62a6f15b-4c12-4269-bf90-aaa04c147053
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1817'
 ht-degree: 0%
 
 ---
-
 
 # Profilslutpunkt
 
