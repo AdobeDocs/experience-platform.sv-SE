@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;ExperienceEvent;fields;schemas;Schema design;mixin;mixin;enduserids;end user;end user;ids;updates;
 solution: Experience Platform
 title: Uppdateringar av blandade namn
-topic: overview
+topic-legacy: overview
 description: En lista över de senaste namnändringarna för XDM-mixin.
+exl-id: 2c775b86-7262-4f05-b421-c626867de0a4
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '115'
 ht-degree: 0%
 
 ---
-
 
 # Uppdateringar av blandade namn
 
