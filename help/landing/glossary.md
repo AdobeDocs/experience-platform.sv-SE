@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Adobe Experience Platform-ordlista
-topic: getting started
+topic-legacy: getting started
 description: En ordlista med viktig terminologi i Experience Platform.
+exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
 translation-type: tm+mt
-source-git-commit: 5575d5e45bddcc007dcf78720cd7a7e20475f78c
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '7133'
+source-wordcount: '7131'
 ht-degree: 0%
 
 ---
-
 
 # Adobe Experience Platform-ordlista {#adobe-experience-platform-glossary}
 
@@ -301,7 +301,7 @@ ht-degree: 0%
 
 **[!DNL Jupyter Notebook]**: Jupyter Notebooks är integrerade med JupyterLab och gör det möjligt att rensa och omvandla data, numerisk simulering, statistisk modellering, datavisualisering, maskininlärning med mera på dina Experience Platform-data på en rad olika språk som Python, Scala och PySpark.
 
-## K
+##  000
 
 ## L
 
