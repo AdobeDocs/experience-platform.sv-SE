@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;scheman;device;data type;data type;
 solution: Experience Platform
 title: Enhetsdatatyp
-topic: overview
+topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen Device XDM.
+exl-id: 049a2ca1-6bc3-4b9c-832a-77102e8a0ed2
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '322'
 ht-degree: 3%
 
 ---
-
 
 # [!UICONTROL Device] datatyp
 
