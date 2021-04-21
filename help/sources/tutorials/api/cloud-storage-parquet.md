@@ -2,14 +2,14 @@
 keywords: Experience Platform;hem;populära ämnen;datakällanslutning
 solution: Experience Platform
 title: Infoga parquet-data från ett tredjeparts molnlagringssystem med API:t för flödestjänsten
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: I den här självstudien används API:t för Flow Service för att vägleda dig genom stegen för att importera Apache Parquet-data från ett molnlagringssystem från en annan leverantör.
 exl-id: fb1b19d6-16bb-4a5f-9e81-f537bac95041
 translation-type: tm+mt
-source-git-commit: 727c9dbd87bacfd0094ca29157a2d0283c530969
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1102'
+source-wordcount: '1101'
 ht-degree: 0%
 
 ---
