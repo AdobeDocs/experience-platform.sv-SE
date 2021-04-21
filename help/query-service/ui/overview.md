@@ -2,16 +2,16 @@
 keywords: Experience Platform;home;populära topics;query service;Query service;query editor;Query Editor;Query editor;
 solution: Experience Platform
 title: Användargränssnittshandbok för frågetjänst
-topic: guide
+topic-legacy: guide
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation.
+exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
 translation-type: tm+mt
-source-git-commit: 97dc0b5fb44f5345fd89f3f56bd7861668da9a6e
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '606'
 ht-degree: 1%
 
 ---
-
 
 # [!DNL Query Service] guide
 
