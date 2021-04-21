@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;övervaka dataflöden;flödestjänst api;Flödestjänst
 solution: Experience Platform
 title: Övervaka dataflöden med API:t för flödestjänsten
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för övervakning av körningsdata för flöde för fullständighet, fel och mätvärden med API:t för Flow Service.
+exl-id: c4b2db97-eba4-460d-8c00-c76c666ed70e
 translation-type: tm+mt
-source-git-commit: f8186e467dc982003c6feb01886ed16d23572955
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '722'
 ht-degree: 0%
 
 ---
-
 
 # Övervaka dataflöden med API:t för Flow Service
 
