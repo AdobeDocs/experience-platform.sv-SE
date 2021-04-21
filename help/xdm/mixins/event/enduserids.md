@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;ExperienceEvent;fields;schemas;Schema design;mixin;mixin;enduserids;end user;ids;
 solution: Experience Platform
 title: Blandning av information om slutanvändar-ID
-topic: overview
+topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över den blandning av information om slutanvändar-ID som används.
+exl-id: ff5b74f4-7700-4d10-821e-b50f80ea8c05
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '188'
 ht-degree: 0%
 
 ---
-
 
 # [!UICONTROL End User ID Details] blanda
 
