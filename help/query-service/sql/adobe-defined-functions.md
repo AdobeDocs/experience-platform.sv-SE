@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;frågetjänst;Query Service;adobe defined functions;sql;
 solution: Experience Platform
 title: Adobe-definierade SQL-funktioner i frågetjänsten
-topic: functions
+topic-legacy: functions
 description: Det här dokumentet innehåller information om de Adobe-definierade funktioner som är tillgängliga i Adobe Experience Platform Query Service.
+exl-id: 275aa14e-f555-4365-bcd6-0dd6df2456b3
 translation-type: tm+mt
-source-git-commit: 97dc0b5fb44f5345fd89f3f56bd7861668da9a6e
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '2913'
 ht-degree: 1%
 
 ---
-
 
 # Adobe-definierade SQL-funktioner i frågetjänsten
 
