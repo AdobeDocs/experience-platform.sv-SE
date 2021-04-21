@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;identitet;Identitet
 solution: Experience Platform
 title: Lista identitetsmappningar
-topic: API guide
+topic-legacy: API guide
 description: En mappning är en samling med alla identiteter i ett kluster för ett angivet namnområde.
+exl-id: db80c783-620b-4ba3-b55c-75c1fd6e90b1
 translation-type: tm+mt
-source-git-commit: 73035aec86297cfc4ee9337cf922d599001379c3
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '270'
 ht-degree: 0%
 
 ---
-
 
 # Visa identitetsmappningar
 
