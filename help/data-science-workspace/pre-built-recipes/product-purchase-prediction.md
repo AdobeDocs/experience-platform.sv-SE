@@ -2,16 +2,16 @@
 keywords: Experience Platform;product purchase recept;Data Science Workspace;populära topics;recipes;prebuild recept
 solution: Experience Platform
 title: Produktinköpsförutsägelsekvitto
-topic: overview
+topic-legacy: overview
 description: Med recept för produktinköpsförutsägelse kan du förutsäga sannolikheten för en viss typ av kundinköpshändelse, till exempel ett produktköp.
+exl-id: 66a45629-33a3-4081-8dbd-b864983b8f57
 translation-type: tm+mt
-source-git-commit: f4095a90ff70e8d054bae4f3b0f884552ffd30df
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '397'
 ht-degree: 5%
 
 ---
-
 
 # Produktinköpsprognosrecept
 
