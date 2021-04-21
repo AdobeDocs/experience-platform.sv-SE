@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;annonssystem;Reklamsystem
 solution: Experience Platform
 title: Utforska ett annonssystem med API:t för Flow Service
-topic: overview
+topic-legacy: overview
 description: Flow Service används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från. I den här självstudien används API:t för Flow Service för att utforska annonssystem.
+exl-id: 3016ce1e-12e6-47ce-a4c5-52f8d440f515
 translation-type: tm+mt
-source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '633'
 ht-degree: 0%
 
 ---
-
 
 # Utforska ett annonssystem med API:t [!DNL Flow Service]
 
