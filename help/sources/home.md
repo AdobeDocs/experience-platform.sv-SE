@@ -6,9 +6,9 @@ topic-legacy: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
 translation-type: tm+mt
-source-git-commit: 412d7c247353bfd30e134656140ba13f55d2ca07
+source-git-commit: 8edcb3697337edd0043f26553b92c31e52d3c87c
 workflow-type: tm+mt
-source-wordcount: '922'
+source-wordcount: '945'
 ht-degree: 0%
 
 ---
@@ -115,6 +115,13 @@ Experience Platform stöder inmatning av data från ett system för automatiseri
 Experience Platform stöder inmatning av data från tredje parts betalningssystem. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [[!DNL PayPal] koppling](connectors/payments/paypal.md)
+
+### Direktuppspelning
+
+Experience Platform stöder inmatning av data från strömningskällor. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+
+- [[!DNL HTTP API]](connectors/streaming/http.md)
+
 
 ### Protokoll
 
