@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;GDPR;gdpr;ccpa:CCPA;pdpa;PDPA;pdpa_that;PDPA_THA;lgpd;LGPD;lgpd_bra;LGPD_BRA;
 solution: Experience Platform
 title: Översikt över Privacy Service
-topic: overview
+topic-legacy: overview
 description: Med Privacy Service kan ni underlätta automatiserad efterlevnad av juridiska sekretessbestämmelser i dataåtgärder från Experience Cloud.
+exl-id: 585f7619-5072-413b-9a62-be0ea0cd4d1b
 translation-type: tm+mt
-source-git-commit: 37c1c98ccba50fa917acc5e93763294f4dde5c36
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1390'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL Privacy Service] översikt
 
@@ -66,7 +66,7 @@ När du har fastställt ditt företags sekretessbehov och bestämt vilka identit
 
 >[!IMPORTANT]
 >
->Avsnitten nedan innehåller länkar till dokumentation som beskriver hur du gör allmänna sekretessförfrågningar i API:t eller användargränssnittet. Beroende på vilka [!DNL Experience Cloud]-program du använder kan de fält du måste skicka i nyttolasten för begäran dock skilja sig från de exempel som visas i dessa handböcker.
+>Avsnitten nedan innehåller länkar till dokumentation som beskriver hur du gör allmänna sekretessförfrågningar i API:t eller användargränssnittet. Beroende på vilka [!DNL Experience Cloud]-program du använder kan de fält du måste skicka i nyttolasten vara annorlunda än de exempel som visas i dessa handböcker.
 >
 >I dokumentet [Privacy Service- och Experience Cloud-program](./experience-cloud-apps.md) finns mer information om hur du formaterar sekretessförfrågningar för [!DNL Experience Cloud]-program när du följer med API- eller gränssnittshandböckerna.
 >
@@ -92,7 +92,7 @@ När du har gjort sekretessjobb har du flera alternativ för att övervaka statu
 | --- | --- |
 | [!DNL Privacy Service] UI | Användargränssnittet [!DNL Privacy Service] innehåller en kontrollpanel som gör att du kan visa en visuell representation av statusen för alla aktiva begäranden. Mer information finns i [användarhandboken för Privacy Servicen](ui/overview.md). |
 | [!DNL Privacy Service] API | Du kan övervaka sekretessjobbens status programmatiskt med hjälp av sökslutpunkterna som tillhandahålls av API:t [!DNL Privacy Service]. Mer information om hur du använder API finns i [utvecklarhandboken för Privacy Service](./api/getting-started.md). |
-| [!DNL Privacy Events] | [!DNL Privacy Events] utnyttja Adobe I/O Events som skickas till en konfigurerad webkrok för att underlätta automatisering av jobbförfrågningar. De minskar eller eliminerar behovet av att avfråga API:t [!DNL Privacy Service] för att kontrollera om ett jobb är färdigt eller om en viss milstolpe i ett arbetsflöde har nåtts. Se självstudiekursen om [att prenumerera på sekretessaktiviteter](./privacy-events.md) för mer information. |
+| [!DNL Privacy Events] | [!DNL Privacy Events] utnyttja Adobe I/O-händelser som skickas till en konfigurerad webkrok för att underlätta en effektiv automatisering av jobbförfrågningar. De minskar eller eliminerar behovet av att avfråga API:t [!DNL Privacy Service] för att kontrollera om ett jobb är färdigt eller om en viss milstolpe i ett arbetsflöde har nåtts. Se självstudiekursen om [att prenumerera på sekretessaktiviteter](./privacy-events.md) för mer information. |
 
 ## Nästa steg
 
