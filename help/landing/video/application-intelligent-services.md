@@ -1,21 +1,19 @@
 ---
 title: Application and Intelligent Services Built on Experience Platform
 description: Den här videon ger en översikt över de programtjänster och intelligenta tjänster som är byggda ovanpå Adobe Experience Platform och som kompletterar Experience Cloud Applications&mdash;Real-time Customer Data Platform, Journey Orchestration, Customer Journey Analytics, Attribution AI och Customer AI.
-feature: platform
-topics: null
 kt: 4333
 audience: all
 doc-type: video
 activity: understand
 thumbnail: 32554.jpg
+exl-id: d2f30bba-4b49-40b2-9f2a-80905894baa6
 translation-type: tm+mt
-source-git-commit: 5575d5e45bddcc007dcf78720cd7a7e20475f78c
+source-git-commit: f12baaa9d4b37f1101792a4ae479b5a62893eb68
 workflow-type: tm+mt
 source-wordcount: '118'
 ht-degree: 20%
 
 ---
-
 
 # Application and Intelligent Services built on Experience Platform
 
@@ -30,7 +28,3 @@ Om du vill veta mer använder du länkarna för att gå till dokumentationen fö
 * [[!DNL Real-time Customer Data Platform (Real-time CDP)]](../../rtcdp/overview.md)
 
 >[!VIDEO](https://video.tv.adobe.com/v/32554?quality=12&learn=on)
-
-
-
-
