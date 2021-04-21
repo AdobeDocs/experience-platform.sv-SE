@@ -2,15 +2,15 @@
 keywords: Experience Platform;användargränssnitt;gränssnitt;instrumentpaneler;instrumentpanel;profiler;segment;mål;licensanvändning
 title: Ändra plattformsinstrumentpaneler i användargränssnittet
 description: 'Den här guiden innehåller stegvisa instruktioner för hur du anpassar hur organisationens Adobe Experience Platform-data visas på kontrollpaneler. '
-topic: guide
+topic-legacy: guide
+exl-id: 75e4aea7-b521-434d-9cd5-32a00d00550d
 translation-type: tm+mt
-source-git-commit: 5cc973a5db88eb23c6e1aeee3695820a0555e4cf
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '456'
+source-wordcount: '455'
 ht-degree: 0%
 
 ---
-
 
 # (Beta) Ändra instrumentpaneler {#modify-dashboards}
 
