@@ -2,16 +2,16 @@
 keywords: Experience Platform;startsida;populära ämnen;Adobe Experience Platform;api guide;platform api guide;introduktion till plattform;utvecklarguide
 solution: Experience Platform
 title: Postman i Adobe Experience Platform
-topic: api guide
+topic-legacy: api guide
 description: Det här dokumentet innehåller steg som beskriver hur du konfigurerar en Postman-miljö, importerar Postman-samlingar och en lista över tillgängliga samlingar för varje plattformstjänst.
+exl-id: a09b3875-97f5-47f1-a562-52decbce67b1
 translation-type: tm+mt
-source-git-commit: effc8fef666ffbf62c2e0874d048245f19c12111
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '552'
+source-wordcount: '550'
 ht-degree: 0%
 
 ---
-
 
 # Postman i Adobe Experience Platform
 
