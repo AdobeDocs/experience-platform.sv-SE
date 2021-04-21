@@ -2,16 +2,16 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;Politiska åtgärder;marknadsföringsåtgärder api;API-baserad tillämpning;datastyrning
 solution: Experience Platform
 title: API-slutpunkt för marknadsföringsåtgärder
-topic: developer guide
+topic-legacy: developer guide
 description: En marknadsföringsåtgärd, inom ramen för Adobe Experience Platform Data Governance, är en åtgärd som en datakonsument i Experience Platform vidtar och där det finns ett behov av att kontrollera om dataanvändningspolicyer har överträtts.
+exl-id: bc16b318-d89c-4fe6-bf5a-1a4255312f54
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '734'
 ht-degree: 0%
 
 ---
-
 
 # Slutpunkt för marknadsföringsåtgärder
 
@@ -223,7 +223,7 @@ Du kan ta bort en anpassad marknadsföringsåtgärd genom att ta med dess namn i
 
 >[!NOTE]
 >
->Marknadsföringsåtgärder som refereras av befintliga principer kan inte tas bort. Om du försöker ta bort en av dessa marknadsföringsåtgärder genereras ett HTTP 400-fel (felaktig begäran) tillsammans med ett meddelande som innehåller ID:n för alla profiler som refererar till marknadsföringsåtgärden.
+>Marknadsföringsåtgärder som refereras av befintliga principer kan inte tas bort. Om du försöker ta bort en av dessa marknadsföringsåtgärder kommer det att uppstå ett HTTP 400-fel (felaktig begäran) tillsammans med ett meddelande som innehåller ID:n för alla profiler som refererar till marknadsföringsåtgärden.
 
 **API-format**
 
