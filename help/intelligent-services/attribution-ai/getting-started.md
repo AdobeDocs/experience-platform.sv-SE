@@ -2,16 +2,16 @@
 keywords: Experience Platform;komma igång;attribuering;populära ämnen
 solution: Experience Platform, Intelligent Services
 title: Komma igång med Attribution AI
-topic: Getting started
+topic-legacy: Getting started
 description: Följande handledningar kräver förståelse för de olika Adobe Experience Platform-tjänster som används för att använda Attribution AI. Innan du börjar med självstudiekurserna bör du läsa följande dokument.
+exl-id: ab269c24-97ac-4da9-9b6c-7d2dde61f0dc
 translation-type: tm+mt
-source-git-commit: eb163949f91b0d1e9cc23180bb372b6f94fc951f
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 0%
 
 ---
-
 
 # Komma igång med Attribution AI
 
