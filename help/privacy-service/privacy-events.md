@@ -2,20 +2,20 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Prenumerera på Privacy Service Events
-topic: privacy events
+topic-legacy: privacy events
 description: Lär dig hur du prenumererar på Privacy Service-händelser med en förkonfigurerad webkrok.
+exl-id: 9bd34313-3042-46e7-b670-7a330654b178
 translation-type: tm+mt
-source-git-commit: 2b919a3b6cbbd59521874cfd2d11e20de3077740
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '432'
 ht-degree: 1%
 
 ---
 
-
 # Prenumerera på [!DNL Privacy Service Events]
 
-[!DNL Privacy Service Events] är meddelanden från Adobe Experience Platform  [!DNL Privacy Service]som utnyttjar Adobe I/O Events som skickas till en konfigurerad webkrok för att underlätta automatisering av jobbförfrågningar. De minskar eller eliminerar behovet av att avfråga API:t [!DNL Privacy Service] för att kontrollera om ett jobb är färdigt eller om en viss milstolpe i ett arbetsflöde har nåtts.
+[!DNL Privacy Service Events] är meddelanden från Adobe Experience Platform  [!DNL Privacy Service]som utnyttjar Adobe I/O-händelser som skickas till en konfigurerad webkrok för att underlätta automatisering av jobbförfrågningar. De minskar eller eliminerar behovet av att avfråga API:t [!DNL Privacy Service] för att kontrollera om ett jobb är färdigt eller om en viss milstolpe i ett arbetsflöde har nåtts.
 
 Det finns för närvarande fyra typer av meddelanden som rör livscykeln för sekretessjobben:
 
@@ -76,4 +76,4 @@ Följande JSON är ett exempel på en [!DNL Privacy Service Event]-meddelandenyt
 
 ## Nästa steg
 
-I det här dokumentet beskrivs hur du registrerar Privacy Service Events för en konfigurerad webkrok och hur du tolkar meddelandenyttolaster. Mer information om hur du spårar sekretessjobb med användargränssnittet finns i [användarhandboken för Privacy Servicen](./ui/user-guide.md).
+I det här dokumentet beskrivs hur du registrerar Privacy Service Events för en konfigurerad webkrok och hur du tolkar meddelandenyttolaster. Mer information om hur du spårar sekretessjobb med användargränssnittet finns i [Privacy Servicens användarhandbok](./ui/user-guide.md).
