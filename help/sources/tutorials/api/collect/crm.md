@@ -2,14 +2,14 @@
 keywords: Experience Platform;hem;populära ämnen;crm;CRM
 solution: Experience Platform
 title: Samla in CRM-data via källanslutningar och API:er
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett CRM-system från tredje part och föra in dem på plattformen med hjälp av källanslutningar och API:er.
 exl-id: b07dd640-bce6-4699-9d2b-b7096746934a
 translation-type: tm+mt
-source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1592'
+source-wordcount: '1590'
 ht-degree: 0%
 
 ---
