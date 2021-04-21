@@ -3,15 +3,15 @@ keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experi
 solution: Experience Platform
 title: API-slutpunkt för granskningslogg
 description: Med slutpunkten /audilog i API:t för schemaregister kan du hämta en kronologisk lista över ändringar som har gjorts i en befintlig XDM-resurs.
-topic: developer guide
+topic-legacy: developer guide
+exl-id: 8d33ae7c-0aa4-4f38-a183-a2ff1801e291
 translation-type: tm+mt
-source-git-commit: 0727ffa0c72bcb6a85de1a13215b691b97889b70
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '398'
+source-wordcount: '396'
 ht-degree: 1%
 
 ---
-
 
 # Slutpunkt för granskningslogg
 
