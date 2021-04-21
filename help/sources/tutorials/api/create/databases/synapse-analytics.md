@@ -1,24 +1,24 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Synkronisera;synka;Azure synapse Analytics
+keywords: Experience Platform;hem;populära ämnen;Synkronisera;synapse;Azure synapse Analytics
 solution: Experience Platform
 title: Skapa en Azure synapse Analytics-källanslutning med API:t för Flow Service
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Azure synapse Analytics till Adobe Experience Platform med API:t för Flow Service.
+exl-id: 8944ac3f-366d-49c8-882f-11cd0ea766e4
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '574'
 ht-degree: 1%
 
 ---
 
-
 # Skapa en [!DNL Azure Synapse Analytics]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
 >[!NOTE]
 >
->Azure synapse Analytics-anslutningen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
+>Azure synapse Analytics-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
