@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;katalog;api;uppdatera ett objekt
 solution: Experience Platform
 title: Uppdatera ett katalogobjekt
-topic: developer guide
-description: 'Du kan uppdatera en del av ett Catalog-objekt genom att ta med dess ID i sökvägen för en PATCH-begäran. Det här dokumentet innehåller information om hur du använder fält och JSON Patch-notation för att utföra PATCH-åtgärder på katalogobjekt. '
+topic-legacy: developer guide
+description: Du kan uppdatera en del av ett Catalog-objekt genom att ta med dess ID i sökvägen för en PATCH-begäran. Det här dokumentet innehåller information om hur du använder fält och JSON Patch-notation för att utföra PATCH-åtgärder på katalogobjekt.
+exl-id: 315de212-bf4d-40d5-a54f-9602a26d6852
 translation-type: tm+mt
-source-git-commit: a1103bfbf79f9c87bac5b113c01386a6fb8950e7
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '361'
 ht-degree: 1%
 
 ---
-
 
 # Uppdatera ett katalogobjekt
 
@@ -108,7 +108,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett lyckat svar returnerar en array som innehåller ID:t för det uppdaterade objektet. Detta ID ska matcha det som skickades i PATCH-begäran. När en GET-förfrågan utförs för det här objektet visas nu att endast `name` och `description` har uppdaterats medan alla andra värden förblir oförändrade.
+Ett lyckat svar returnerar en array som innehåller ID:t för det uppdaterade objektet. Detta ID ska matcha det som skickades i PATCH-begäran. När en GET-begäran utförs för det här objektet visas nu att endast `name` och `description` har uppdaterats medan alla andra värden förblir oförändrade.
 
 ```json
 [
