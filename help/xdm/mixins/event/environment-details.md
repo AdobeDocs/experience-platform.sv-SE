@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;ExperienceEvent;fields;schemas;Schema design;mixin;mixin;environment;environment details;
 solution: Experience Platform
 title: Blanda miljödetaljer
-topic: overview
+topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över ExperienceEvent-miljödetaljmixen.
+exl-id: 1d25b98f-66ac-443f-9b1c-dfd20a168c59
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '194'
 ht-degree: 1%
 
 ---
-
 
 # [!UICONTROL Environment Details] blanda
 
