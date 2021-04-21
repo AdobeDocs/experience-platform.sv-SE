@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;dsw;DSW
 solution: Experience Platform
 title: Självstudiekurser för datavetenskap
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: Adobe Experience Platform Data Science Workspace använder maskininlärning och artificiell intelligens för att skapa insikter utifrån era data. Data Science Workspace är integrerat i Adobe Experience Platform och hjälper er att göra prognoser med hjälp av ert innehåll och era dataresurser över alla Adobe-lösningar.
+exl-id: 7cfd71b1-584f-4588-bbcd-bc42a08a0bc0
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1302'
 ht-degree: 0%
 
 ---
-
 
 # Självstudiekurser om [!DNL Data Science Workspace]
 
