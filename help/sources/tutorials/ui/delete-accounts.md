@@ -3,16 +3,16 @@ keywords: Experience Platform;hemmabruk;populära ämnen; ta bort konton
 description: Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudiekursen beskrivs hur du tar bort konton från arbetsytan Källor.
 solution: Experience Platform
 title: Ta bort konton för källanslutning i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
+exl-id: 7cb65d17-d99d-46ff-b28f-7469d0b57d07
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '439'
 ht-degree: 0%
 
 ---
-
 
 # Ta bort källanslutningskonton
 
