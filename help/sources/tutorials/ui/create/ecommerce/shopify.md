@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;förminska;förminska
 solution: Experience Platform
 title: Skapa en anslutning för att förminska källa i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Shopify-källanslutning med Adobe Experience Platform-gränssnittet.
+exl-id: 527cac95-3d9a-4089-98e4-66d746641b85
 translation-type: tm+mt
-source-git-commit: cc23228cb410dc4c70a56c5142be00c2ca1c40d3
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '437'
+source-wordcount: '435'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL Shopify]-källanslutning i användargränssnittet
 
