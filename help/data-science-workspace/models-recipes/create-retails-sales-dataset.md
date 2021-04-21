@@ -2,17 +2,17 @@
 keywords: Experience Platform;butiksrecept;Data Science Workspace;populära ämnen;recept
 solution: Experience Platform
 title: Skapa schema och datauppsättning för butiksförsäljning
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: I den här självstudiekursen får du de krav och resurser som krävs för alla andra självstudiekurser i Adobe Experience Platform Data Science Workspace. När du är klar är schema och datauppsättningar för detaljhandelsförsäljning tillgängliga för dig och medlemmar i din IMS-organisation på Experience Platform.
+exl-id: 1b868c8c-7c92-4f99-8486-54fd7aa1af48
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '554'
 ht-degree: 0%
 
 ---
-
 
 # Skapa försäljningsschema och datauppsättning för återförsäljning
 
