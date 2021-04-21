@@ -2,16 +2,16 @@
 keywords: Experience Platform;hemanvändare;populära ämnen;datastyrning;dataanvändningsetikett api;principtjänst api;kompatibla dataanvändningsetiketter;kontraktsetiketter;identitetsetiketter;känsliga etiketter
 solution: Experience Platform
 title: Ordlista för dataanvändningsetiketter
-topic: labels
+topic-legacy: labels
 description: I det här dokumentet finns en översikt över alla dataanvändningsetiketter som för närvarande stöds av Adobe Experience Platform.
+exl-id: 70d0702d-def7-4ab2-a861-eaf0f0cde1d4
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1904'
 ht-degree: 1%
 
 ---
-
 
 # Etikettordlista för dataanvändning
 
