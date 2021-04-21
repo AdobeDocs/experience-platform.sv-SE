@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;katalog;objektsökning;api
 solution: Experience Platform
 title: Söka efter ett katalogobjekt
-topic: developer guide
-description: 'Om du känner till den unika identifieraren för ett specifikt katalogobjekt kan du utföra en GET-förfrågan för att visa objektets information. '
+topic-legacy: developer guide
+description: Om du känner till den unika identifieraren för ett specifikt katalogobjekt kan du utföra en GET-förfrågan för att visa objektets information.
+exl-id: fd6fbe72-0108-4be3-a065-c753e7a19d24
 translation-type: tm+mt
-source-git-commit: a1103bfbf79f9c87bac5b113c01386a6fb8950e7
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '165'
 ht-degree: 0%
 
 ---
-
 
 # Söka efter ett katalogobjekt
 
