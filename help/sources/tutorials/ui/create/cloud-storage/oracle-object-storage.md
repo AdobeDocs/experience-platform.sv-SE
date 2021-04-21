@@ -1,18 +1,18 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Oracle Object Storage;oracle object storage
+keywords: Experience Platform;hem;populära ämnen;Oraclena objektlagring;oraclena objektlagring
 solution: Experience Platform
-title: Skapa en Oracle Object Storage-källanslutning i användargränssnittet
-topic: overview
+title: Skapa en källanslutning för Oraclena objektlagring i användargränssnittet
+topic-legacy: overview
 type: Tutorial
-description: Lär dig hur du skapar en källanslutning för Oracle-objektlagring med hjälp av Adobe Experience Platform användargränssnitt.
+description: Lär dig hur du skapar en källanslutning till Oraclet Object Storage med Adobe Experience Platform-gränssnittet.
+exl-id: 32284163-5dde-4171-8977-f76ceeebcef2
 translation-type: tm+mt
-source-git-commit: c1453a9f0be42f834d35af871051324df8dadf80
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '448'
+source-wordcount: '446'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL Oracle Object Storage]-källanslutning i användargränssnittet
 
@@ -37,9 +37,9 @@ För att kunna ansluta till [!DNL Oracle Object Storage] måste du ange värden 
 | `bucketName` | Det tillåtna bucket-namn som krävs om användaren har begränsad åtkomst. Bucketnamnet måste innehålla mellan tre och 63 tecken, det måste börja och sluta med en bokstav eller en siffra och får bara innehålla gemena bokstäver, siffror eller bindestreck (`-`). Det går inte att formatera bucket-namnet som en IP-adress. |
 | `folderPath` | Den tillåtna mappsökväg som krävs om användaren har begränsad åtkomst. |
 
-Mer information om hur du hämtar dessa värden finns i [Autentiseringsguiden för Oracle Object Storage](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/usercredentials.htm#User_Credentials).
+Mer information om hur du hämtar dessa värden finns i [autentiseringsguiden för Oraclena objektlagring](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/usercredentials.htm#User_Credentials).
 
-När du har samlat in dina nödvändiga inloggningsuppgifter kan du följa stegen nedan för att skapa ett nytt Oracle Object Storage-konto för att ansluta till plattformen.
+När du har samlat in de nödvändiga inloggningsuppgifterna kan du följa stegen nedan för att skapa ett nytt Oracle Object Storage-konto för att ansluta till plattformen.
 
 ## Anslut till Oracle Object Storage
 
