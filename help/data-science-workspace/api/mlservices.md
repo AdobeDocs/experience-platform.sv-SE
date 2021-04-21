@@ -2,16 +2,16 @@
 keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;populära topics;mlservices;sensei machine learning api
 solution: Experience Platform
 title: API-slutpunkt för MLServices
-topic: Developer guide
+topic-legacy: Developer guide
 description: En MLService är en publicerad tränad modell som ger din organisation möjlighet att komma åt och återanvända tidigare utvecklade modeller. En viktig egenskap hos MLServices är möjligheten att automatisera kurser och poängsättning på schemalagd basis. Schemalagda kurser kan bidra till att bibehålla en modells effektivitet och exakthet, medan schemalagda kurser kan säkerställa att nya insikter genereras på ett konsekvent sätt.
+exl-id: cd236e0b-3bfc-4d37-83eb-432f6ad5c5b6
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '890'
 ht-degree: 0%
 
 ---
-
 
 # MLServices-slutpunkt
 
