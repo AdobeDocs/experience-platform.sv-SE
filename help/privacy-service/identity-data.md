@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;ECID;ecid
 solution: Experience Platform
 title: Identitetsdata för sekretessförfrågningar
-topic: overview
+topic-legacy: overview
 description: Det här dokumentet innehåller allmän vägledning om hur du konfigurerar dataåtgärder och använder Adobe-tekniker för att effektivt hämta lämplig identitetsinformation för kundsekretessförfrågningar.
+exl-id: 43b0292a-ea4d-4858-b584-ba71029724f6
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '650'
 ht-degree: 1%
 
 ---
-
 
 # Identitetsdata för sekretessförfrågningar
 
@@ -21,7 +21,7 @@ Det här dokumentet innehåller allmän vägledning om hur du konfigurerar data�
 
 ## Identiteter och namnutrymmen
 
-När en kund kan interagera med ert varumärke via flera olika kanaler kan det vara svårt att förena de olika identifierare som registreras från dessa många interaktioner. Detta kan i sin tur göra det svårt att avgöra vilka data som tillhör en viss person i dina [!DNL Experience Cloud]-program.
+När en kund kan interagera med ert varumärke via flera olika kanaler kan det vara svårt att kombinera de olika identifierare som registreras från dessa många interaktioner. Detta kan i sin tur göra det svårt att avgöra vilka data som tillhör en viss person i dina [!DNL Experience Cloud]-program.
 
 När du till exempel hanterar kunddatabegäranden i [!DNL Privacy Service] kan en identitet representera ett cookie-värde som angetts under en Adobe-kontrollerad domän, ett cookie-värde under en tredjepartsdomän och som delas med Adobe, eller en anpassad identifierare som du uttryckligen definierar inom IMS-organisationen.
 
