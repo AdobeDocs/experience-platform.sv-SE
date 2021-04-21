@@ -2,16 +2,16 @@
 keywords: Experience Platform;komma igång;content ai;commerce ai;content and commerce ai;keyword extraction;Keyword extraction
 solution: Experience Platform, Intelligent Services
 title: Extrahering av nyckelord i API:t för innehåll och handel
-topic: Developer guide
+topic-legacy: Developer guide
 description: Tjänsten för extrahering av nyckelord extraherar automatiskt nyckelord eller nyckelfraser som bäst beskriver dokumentets ämne när de anges i ett textdokument. För att extrahera nyckelord används en kombination av algoritmer för namngiven enhetsigenkänning (NER) och extrahering av nyckelord utan övervakning.
+exl-id: 56a2da96-5056-4702-9110-a1dfec56f0dc
 translation-type: tm+mt
-source-git-commit: d10c00694b0a3b2a9da693bd59615b533cfae468
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1082'
 ht-degree: 2%
 
 ---
-
 
 # Extrahering av nyckelord
 
