@@ -3,16 +3,16 @@ keywords: Experience Platform;hem;populära ämnen;ui;UI;XDM;XDM system;experien
 solution: Experience Platform
 title: Utforska XDM-resurser i användargränssnittet
 description: Lär dig hur du utforskar befintliga scheman, klasser, blandningar och datatyper i användargränssnittet i Experience Platform.
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
+exl-id: b527b2a0-e688-4cfe-a176-282182f252f2
 translation-type: tm+mt
-source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '912'
 ht-degree: 0%
 
 ---
-
 
 # Utforska XDM-resurser i användargränssnittet
 
