@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;dataförberedelse;api guide;exempeldata;
 solution: Experience Platform
 title: Exempel på API-slutpunkt för data
-topic: sample data
+topic-legacy: sample data
 description: 'Du kan använda ändpunkten "/samples" i Adobe Experience Platform API för att hämta, skapa, uppdatera och validera mappningsexempeldata. '
 translation-type: tm+mt
-source-git-commit: a2c966ae2401faa572cbba974ce6f572d5280a8f
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '403'
+source-wordcount: '401'
 ht-degree: 0%
 
 ---
