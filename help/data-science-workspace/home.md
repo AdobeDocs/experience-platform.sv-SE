@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;arbetsyta för datavetenskap;populära ämnen;arbetsyta för datavetenskap;datavetenskap
 solution: Experience Platform
 title: Översikt över arbetsytan Datavetenskap
-topic: overview
+topic-legacy: overview
 description: Den här guiden ger en översikt över de viktigaste begreppen för Data Science Workspace i Adobe Experience Platform.
+exl-id: bef25073-0dfb-453d-8c32-7f44d917d62d
 translation-type: tm+mt
-source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '2388'
 ht-degree: 0%
 
 ---
-
 
 # Översikt över arbetsytan Datavetenskap
 
@@ -50,7 +50,7 @@ Innan du börjar gå in på detaljerna i [!DNL Data Science Workspace] är det h
 | Maskinininlärning | Maskininlärning är det studieområde som gör det möjligt för datorer att lära sig utan att programmeras explicit. |
 | [!DNL Sensei] ML Framework | [!DNL Sensei] ML Framework är ett enhetligt ramverk för maskininlärning i hela Adobe som utnyttjar data på  [!DNL Experience Platform] för att möjliggöra för datavetare att utveckla maskininlärningsdrivna underrättelsetjänster på ett snabbare, skalbart och återanvändbart sätt. |
 | [!DNL Experience Data Model] | [!DNL Experience Data Model] (XDM) är Adobe standardinsats för att definiera standardscheman som  [!DNL Profile] och  [!DNL ExperienceEvent]för kundupplevelsehantering. |
-| [!DNL JupyterLab] | [!DNL JupyterLab] är ett webbaserat gränssnitt med öppen källkod för Project Jupyter som är nära integrerat i  [!DNL Experience Platform]. |
+| [!DNL JupyterLab] | [!DNL JupyterLab] är ett webbaserat gränssnitt med öppen källkod för Project Jupyter och är nära integrerat i  [!DNL Experience Platform]. |
 | Recept | Ett recept är en AdobeTerm för en modellspecifikation och är en toppnivåbehållare som representerar en specifik maskininlärning, AI-algoritm eller en kombination av algoritmer, bearbetningslogik och konfiguration som krävs för att skapa och köra en tränad modell och därmed bidra till att lösa specifika affärsproblem. |
 | Modell | En modell är en instans av ett maskininlärningsrecept som är utbildat med historiska data och konfigurationer för att lösa ett affärsärende. |
 | Utbildning | Utbildning är processen att lära sig mönster och insikter från märkta data. |
@@ -88,7 +88,7 @@ Oavsett vilken nivå ni har av datavetenskaplig expertis hjälper [!DNL Data Sci
 
 Att hitta rätt data och förbereda dem är den mest arbetsintensiva delen av att bygga upp ett effektivt recept. [!DNL Data Science Workspace] och Adobe Experience Platform kommer att hjälpa er att snabbare komma från data till insikter.
 
-På Adobe Experience Platform centraliseras och lagras data i XDM:s standardiserade schema, så det blir enklare att hitta, förstå och rensa data. Ett enda datalager som baseras på ett gemensamt schema kan spara oräkneliga timmars datautforskande och förberedelse.
+På Adobe Experience Platform centraliseras och lagras data i XDM:s standardiserade schema, vilket gör det enklare att hitta, förstå och rensa data. Ett enda datalager som baseras på ett gemensamt schema kan spara oräkneliga timmars datautforskande och förberedelse.
 
 När du bläddrar använder du R, [!DNL Python] eller Scala med den integrerade värddatorn [!DNL Jupyter Notebook] för att bläddra i datakatalogen på [!DNL Platform]. Om du använder något av dessa språk kan du även använda [!DNL Spark] ML och TensorFlow. Börja från början eller använd någon av de mallar för bärbara datorer som finns för specifika affärsproblem.
 
@@ -196,4 +196,3 @@ Om du vill ha mer information, t.ex. ett komplett arbetsflöde, kan du börja me
 Följande video har utformats för att ge stöd för din förståelse av [!DNL Data Science Workspace].
 
 >[!VIDEO](https://video.tv.adobe.com/v/30567?quality=12&amp;enable10seconds=on&amp;speedcontrol=on)
-
