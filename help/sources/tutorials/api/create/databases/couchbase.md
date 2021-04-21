@@ -2,17 +2,17 @@
 keywords: Experience Platform;hemmabas;populära ämnen;kuchbase;Kuchbase
 solution: Experience Platform
 title: Skapa en källanslutning till Couchbase med API:t för Flow Service
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Couchbase till Adobe Experience Platform med API:t för Flow Service.
+exl-id: 625e3acf-fc27-44cf-b4e6-becf1d107ff2
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '527'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL Couchbase]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
