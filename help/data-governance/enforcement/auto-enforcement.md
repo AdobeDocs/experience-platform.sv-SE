@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;Politiska åtgärder;Automatisk tillsyn;API-baserad tillämpning;datastyrning
 solution: Experience Platform
 title: Automatisk policytillämpning
-topic: guide
+topic-legacy: guide
 description: Det här dokumentet beskriver hur dataanvändningspolicyer tillämpas automatiskt när segment aktiveras för destinationer i Experience Platform.
+exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1122'
 ht-degree: 0%
 
 ---
-
 
 # Automatisk policytillämpning
 
@@ -81,7 +81,7 @@ Välj en principöverträdelse i poverarens vänstra kolumn för att visa inform
 
 ![](../images/enforcement/violation-summary.png)
 
-Ett datalinjediagram visas under sammanfattningen av överträdelser, vilket gör att du kan se vilka datauppsättningar, sammanfogningsprinciper, segment och mål som berördes av överträdelsen. Enheten som du håller på att ändra markeras i diagrammet, vilket anger vilken punkt i flödet som orsakar att överträdelsen inträffar. Du kan välja ett enhetsnamn i diagrammet för att öppna informationssidan för den aktuella entiteten.
+Ett datalinjediagram visas nedanför sammanfattningen av överträdelser, vilket gör att du kan se vilka datauppsättningar, sammanfogningsprinciper, segment och mål som berördes av principöverträdelsen. Enheten som du håller på att ändra markeras i diagrammet, vilket anger vilken punkt i flödet som orsakar att överträdelsen inträffar. Du kan välja ett enhetsnamn i diagrammet för att öppna informationssidan för den aktuella entiteten.
 
 ![](../images/enforcement/data-lineage.png)
 
