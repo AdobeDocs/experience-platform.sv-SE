@@ -2,15 +2,15 @@
 solution: Experience Platform
 title: Generera exempeldata för ett XDM-schema i användargränssnittet
 description: Lär dig hur du genererar JSON-exempeldata baserat på ett befintligt schema i Adobe Experience Platform användargränssnitt.
-topic: user guide
+topic-legacy: user guide
+exl-id: e60eedb2-2245-42cd-b574-43caf9e3426c
 translation-type: tm+mt
-source-git-commit: 8d6916890a94300dc68d018d56579df9616c177c
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '329'
 ht-degree: 0%
 
 ---
-
 
 # Generera exempeldata för ett XDM-schema i användargränssnittet
 
