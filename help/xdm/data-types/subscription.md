@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;scheman;prenumeration;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
 title: Typ av prenumerationsdata
-topic: overview
+topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM (Subscription Experience Data Model).
+exl-id: 6fd1e073-441b-45f0-bb4f-54f51ab18694
 translation-type: tm+mt
-source-git-commit: 8ccf0a53f231c9f59cd87735126b180c6b678e51
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '411'
 ht-degree: 8%
 
 ---
-
 
 # [!UICONTROL Subscription] datatyp
 
