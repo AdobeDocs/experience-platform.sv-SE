@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;Åtkomstkontroll;Admin Console för Adobe
 solution: Experience Platform
 title: Översikt över användargränssnittet för åtkomstkontroll
-topic: user guide
+topic-legacy: user guide
 description: Med åtkomstkontrollen i Adobe Experience Platform kan du hantera roller och behörigheter för olika plattformsfunktioner med Adobe Admin Console. Det här dokumentet är en guide till hur du navigerar i Admin Console för att hantera åtkomsten till Platform.
+exl-id: 6d83cbf5-c09f-4e2a-9678-b124981f8e83
 translation-type: tm+mt
-source-git-commit: a1103bfbf79f9c87bac5b113c01386a6fb8950e7
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '194'
 ht-degree: 1%
 
 ---
-
 
 # Översikt över användargränssnittet för åtkomstkontroll
 
