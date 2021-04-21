@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;felsökning av sandlådor
 solution: Experience Platform
 title: Felsökningsguide för sandlådor
-topic: troubleshooting guide
+topic-legacy: troubleshooting guide
 description: Det här dokumentet innehåller svar på vanliga frågor om sandlådor i Adobe Experience Platform.
+exl-id: 6a496509-a4e9-4e76-829b-32d67ccfcce6
 translation-type: tm+mt
-source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '551'
 ht-degree: 0%
 
 ---
-
 
 # Felsökningsguide för sandlådor
 
