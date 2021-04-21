@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;ATS;ats;Azure table storage
 solution: Experience Platform
 title: Skapa en Azure Table Storage Source-anslutning med API:t för Flow Service
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Azure Table Storage till Adobe Experience Platform med API:t för Flow Service.
+exl-id: 8ebd5d77-ed1f-47e1-8212-efb6c5e84ec1
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '586'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL Azure Table Storage]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
