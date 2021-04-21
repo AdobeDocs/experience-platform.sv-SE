@@ -2,17 +2,17 @@
 keywords: Experience Platform;maskininlärningsmodell;Data Science Workspace;Kundprofil i realtid;populära ämnen;maskininlärningsinsikter
 solution: Experience Platform
 title: Berika kundprofilen i realtid med insikt i maskininlärning
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: Det här dokumentet innehåller en guide om hur du kan förbättra kundprofilen i realtid med maskininlärningsinsikter.
+exl-id: 397023c9-383d-4a21-b58a-0f920631ac56
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '640'
 ht-degree: 0%
 
 ---
-
 
 # Berika [!DNL Real-time Customer Profile] med maskininlärningsinsikter
 
