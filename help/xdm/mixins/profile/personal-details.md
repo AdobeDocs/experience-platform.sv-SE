@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;Individuell profil;fält;scheman;scheman;personliga detaljer;Schema design;mixin;Mixin;
 solution: Experience Platform
 title: Blanda personliga kontaktuppgifter
-topic: overview
+topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över blandningen Personlig kontaktinformation.
+exl-id: a78d9aee-ecf6-45a9-b270-cdad5b800a86
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '146'
 ht-degree: 2%
 
 ---
-
 
 # [!UICONTROL Personal Contact Details] blanda
 
