@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;Schemas;beacon;interaktionsinformation;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
 title: Beacon-datatyp
-topic: overview
+topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över klassen XDM Individual Profile.
+exl-id: a3767c8d-a009-49b4-81a4-b084b6e5101a
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '245'
 ht-degree: 2%
 
 ---
-
 
 # [!UICONTROL Beacon] datatyp
 
