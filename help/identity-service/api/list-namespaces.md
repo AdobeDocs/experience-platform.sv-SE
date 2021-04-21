@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;namnutrymmeslista;namnlista
 solution: Experience Platform
 title: Lista tillgängliga identitetsnamnutrymmen
-topic: API guide
+topic-legacy: API guide
 description: Visa alla tillgängliga namnutrymmen.
+exl-id: b65e5f86-143d-4ca5-8b3f-2c0a24433bbf
 translation-type: tm+mt
-source-git-commit: 73035aec86297cfc4ee9337cf922d599001379c3
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '79'
 ht-degree: 2%
 
 ---
-
 
 # Visa tillgängliga identitetsnamnutrymmen
 
