@@ -1,21 +1,21 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API
 title: API-slutpunkt för profilsystemjobb
-topic: guide
+topic-legacy: guide
 type: Documentation
 description: Med Adobe Experience Platform kan du ta bort en datauppsättning eller en batch från profilbutiken för att ta bort kundprofildata i realtid som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder profil-API:t för att skapa ett profilsystemjobb eller för att ta bort en begäran.
+exl-id: 75ddbf2f-9a54-424d-8569-d6737e9a590e
 translation-type: tm+mt
-source-git-commit: d2ace7cadb06f77bdf14b6a4ef83e879c4ca88fd
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1321'
 ht-degree: 1%
 
 ---
 
-
 # Slutpunkt för profilsystemjobb (Delete-begäranden)
 
-Med Adobe Experience Platform kan ni importera data från flera olika källor och skapa robusta profiler för enskilda kunder. Data som hämtas till [!DNL Platform] lagras i [!DNL Data Lake], och om datauppsättningarna har aktiverats för profilen lagras dessa data även i [!DNL Real-time Customer Profile]-datalagret. Ibland kan det vara nödvändigt att ta bort en datauppsättning eller en batch från profilarkivet för att ta bort data som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder API:t [!DNL Real-time Customer Profile] för att skapa ett [!DNL Profile]-systemjobb, eller `delete request`, som också kan ändras, övervakas eller tas bort vid behov.
+Med Adobe Experience Platform kan ni importera data från flera olika källor och skapa robusta profiler för enskilda kunder. Data som hämtas till [!DNL Platform] lagras i [!DNL Data Lake], och om datauppsättningarna har aktiverats för Profil lagras även dessa data i [!DNL Real-time Customer Profile]-datalagret. Ibland kan det vara nödvändigt att ta bort en datauppsättning eller en batch från profilarkivet för att ta bort data som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder API:t [!DNL Real-time Customer Profile] för att skapa ett [!DNL Profile]-systemjobb, eller `delete request`, som också kan ändras, övervakas eller tas bort vid behov.
 
 >[!NOTE]
 >
