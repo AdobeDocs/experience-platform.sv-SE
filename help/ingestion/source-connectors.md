@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Källanslutningar
-topic: overview
+topic-legacy: overview
 description: Med källanslutningar kan du autentisera dina lagringssystem och CRM-tjänster, ange tidpunkter för intag och hantera dataöverföringshastigheter.
+exl-id: 6e4f1688-6fe8-4ee7-996e-bcdf942cea17
 translation-type: tm+mt
-source-git-commit: 089a4d517476b614521d1db4718966e3ebb13064
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '135'
 ht-degree: 0%
 
 ---
-
 
 # Källkopplingar
 
