@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;dataåtkomst;python sdk;dataåtkomst api;read python;write python
 solution: Experience Platform
 title: Åtkomst till data med Python i datavetenskapen
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: Följande dokument innehåller exempel på hur du får åtkomst till data i Python för användning i Data Science Workspace.
+exl-id: 75aafd58-634a-4df3-a2f0-9311f93deae4
 translation-type: tm+mt
-source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '420'
 ht-degree: 0%
 
 ---
-
 
 # Åtkomst till data med Python i Data Science Workspace
 
