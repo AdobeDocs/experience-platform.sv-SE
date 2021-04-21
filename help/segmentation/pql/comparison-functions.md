@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;pql;PQL;Profile Query Language;jämförelsefunktioner;jämförelse;
 solution: Experience Platform
 title: PQL-jämförelsefunktioner
-topic: developer guide
+topic-legacy: developer guide
 description: Jämförelsefunktioner används för att jämföra mellan olika uttryck och värden och returnerar"true" eller"false" i enlighet därmed.
+exl-id: 15f106c7-b88b-4042-b925-703e2a309573
 translation-type: tm+mt
-source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '326'
 ht-degree: 7%
 
 ---
-
 
 # Jämförelsefunktioner
 
