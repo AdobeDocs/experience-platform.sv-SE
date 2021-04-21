@@ -2,14 +2,14 @@
 keywords: Experience Platform;hemmabas;populära ämnen;databasdatabas;tredjepartsdatabas
 solution: Experience Platform
 title: Samla in data från en databas med källkopplingar och API:er
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från en databas och hämta dem till plattformen med hjälp av källanslutningar och API:er.
 exl-id: 1e1f9bbe-eb5e-40fb-a03c-52df957cb683
 translation-type: tm+mt
-source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1651'
+source-wordcount: '1649'
 ht-degree: 0%
 
 ---
