@@ -2,16 +2,16 @@
 keywords: Experience Platform;JupyterLab;notebooks;Data Science Workspace;populära topics;jupyterlab
 solution: Experience Platform
 title: Översikt över användargränssnittet i JupyterLab
-topic: Overview
+topic-legacy: Overview
 description: JupyterLab är ett webbaserat användargränssnitt för Project Jupyter och är nära integrerat med Adobe Experience Platform. Den utgör en interaktiv utvecklingsmiljö där datavetare kan arbeta med Jupyter-anteckningsböcker, kod och data. Det här dokumentet innehåller en översikt över JupyterLab och dess funktioner samt instruktioner om hur du utför vanliga åtgärder.
+exl-id: 13786fbd-ef16-49cd-8bcf-46320c33e902
 translation-type: tm+mt
-source-git-commit: 9d84fc1eb898020ed4b154c091fcc9fc4933c7de
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1814'
+source-wordcount: '1813'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL JupyterLab] Översikt över användargränssnittet
 
