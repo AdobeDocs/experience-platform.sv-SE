@@ -1,12 +1,13 @@
 ---
 keywords: Experience Platform;data prep;data prep api;felsökning;API
 title: Komma igång med API:t för dataförberedelser
-topic: guide
+topic-legacy: guide
 description: Lär dig de viktigaste begrepp och grundläggande funktioner som du behöver känna till för att kunna använda API-slutpunkterna för dataförinställningar för att utföra grundläggande CRUD-åtgärder för användning med Mapper.
+exl-id: 027e6fbe-9a0d-420b-8d67-659ca7f5ec22
 translation-type: tm+mt
-source-git-commit: a3ea7a6b68c81ee91a338735009ae0fa63884ded
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '187'
+source-wordcount: '186'
 ht-degree: 1%
 
 ---
