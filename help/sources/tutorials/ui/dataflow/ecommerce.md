@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;e-handelskontakt;e-handel
 solution: Experience Platform
 title: Konfigurera ett dataflöde för en eCommerce Source-anslutning i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en [!DNL Platform] datauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt eCommerce-konto.
+exl-id: ee1382c5-78ac-4765-8883-0a922772bb20
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1252'
 ht-degree: 0%
 
 ---
-
 
 # Konfigurera ett dataflöde för en e-handelsanslutning i användargränssnittet
 
