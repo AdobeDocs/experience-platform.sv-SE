@@ -2,13 +2,13 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Samtyckesbearbetning i Adobe Experience Platform
-topic: getting started
+topic-legacy: getting started
 description: Lär dig hur du bearbetar kundens medgivandesignaler i Adobe Experience Platform med standarden Adobe 2.0.
 exl-id: cd76a3f6-ae55-4d75-9b30-900fadb4664f
 translation-type: tm+mt
-source-git-commit: a0f585e4aaeecb968a9fc9f408630946e1c30b2b
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1565'
+source-wordcount: '1563'
 ht-degree: 0%
 
 ---
