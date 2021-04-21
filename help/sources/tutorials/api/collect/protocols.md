@@ -2,14 +2,14 @@
 keywords: Experience Platform;hem;populära ämnen;Samla in protokolldata;protokolldata
 solution: Experience Platform
 title: Samla in protokolldata med hjälp av källanslutningar och API:er
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett protokollprogram och att hämta dem till plattformen med hjälp av källanslutningar och API:er.
 exl-id: e14e75c2-2a93-45d8-8056-f06075bd4b8d
 translation-type: tm+mt
-source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1549'
+source-wordcount: '1547'
 ht-degree: 0%
 
 ---
