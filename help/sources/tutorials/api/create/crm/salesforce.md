@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;Salesforce;salesforce
 solution: Experience Platform
 title: Skapa en Salesforce-källanslutning med API:t för flödestjänsten
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Salesforce-konto med API:t för Flow Service.
+exl-id: 43dd9ee5-4b87-4c8a-ac76-01b83c1226f6
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '565'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL Salesforce]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
