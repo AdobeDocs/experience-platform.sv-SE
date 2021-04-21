@@ -1,13 +1,13 @@
 ---
 solution: Experience Platform
 title: Datamodell ERD för telekombranschen
-topic: overview
+topic-legacy: overview
 description: Visa ett entitetsrelationsdiagram (ERD) som beskriver en standardiserad datamodell för telekombranschen som är kompatibel med Experience Data Model (XDM) för användning i Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: ffc113c0c85c76e6645fb4276c174779682f2b60
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '74'
-ht-degree: 1%
+source-wordcount: '73'
+ht-degree: 0%
 
 ---
 
