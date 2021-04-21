@@ -2,17 +2,17 @@
 keywords: Experience Platform;schemalägg en modell;Datavetenskap, arbetsyta;populära ämnen;schemaläggning;schemalägga utbildning
 solution: Experience Platform
 title: Schemalägg en modell i gränssnittet för datavetenskapen
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
-description: Med Adobe Experience Platform Data Science Workspace kan du lägga upp schemalagda kurser i maskininlärning. Genom att automatisera utbildnings- och poängprocessen kan du behålla och förbättra en tjänsts effektivitet genom att hålla jämna steg med era datamönster.
+description: Med Adobe Experience Platform Data Science Workspace kan du skapa schemalagda kurser i maskininlärning. Genom att automatisera utbildnings- och poängprocessen kan du behålla och förbättra en tjänsts effektivitet genom att hålla jämna steg med era datamönster.
+exl-id: 51f6f328-7c63-4de1-9184-2ba526bb82e2
 translation-type: tm+mt
-source-git-commit: 8f5b7018a52d4c5860e03cec3108435ede8815f1
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '539'
+source-wordcount: '537'
 ht-degree: 0%
 
 ---
-
 
 # Schemalägg en modell i gränssnittet för datavetenskapen
 
