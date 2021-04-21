@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;individuell profil;fält;scheman;scheman;identityMap;identity map;identity map;Schema design;map;union schema;union schema
 solution: Experience Platform
 title: IdentityMap Mixin
-topic: overview
+topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över klassen XDM Individual Profile.
+exl-id: c9928e85-ef1e-4739-ba1d-80505a9e60c3
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '136'
 ht-degree: 0%
 
 ---
-
 
 # [!UICONTROL IdentityMap] blanda
 
