@@ -3,16 +3,16 @@ keywords: Experience Platform;hemmabruk;populära ämnen; ta bort dataflöden
 description: På arbetsytan för källor kan du ta bort befintliga grupper och strömmande dataflöden som innehåller fel eller har blivit föråldrade.
 solution: Experience Platform
 title: Ta bort dataflöden i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
+exl-id: aa224467-7733-40de-aab7-0ff1c557abf2
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '359'
 ht-degree: 1%
 
 ---
-
 
 # Ta bort dataflöden i användargränssnittet
 
@@ -41,7 +41,7 @@ Välj filterikonen (![filter-icon](../../images/tutorials/delete/filter.png)) l�
 
 Sorteringspanelen innehåller en lista med alla källor. Du kan välja mer än en källa i listan för att få tillgång till ett filtrerat urval av dataflöden som är kopplade till de särskilda källor du valde.
 
-Välj den källa som du vill arbeta med för att visa en lista över befintliga dataflöden. När du har identifierat det dataflöde som du vill ta bort markerar du ellipserna (`...`) bredvid dataflödets namn.
+Välj den källa som du vill arbeta med för att visa en lista över de befintliga dataflödena. När du har identifierat det dataflöde som du vill ta bort markerar du ellipserna (`...`) bredvid dataflödets namn.
 
 ![dataflows-filter](../../images/tutorials/delete/dataflows-filter.png)
 
