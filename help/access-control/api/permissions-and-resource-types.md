@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;åtkomstkontrollbehörigheter;åtkomstkontrollsresurstyper;åtkomstkontrolls-API
 solution: Experience Platform
 title: Referens-API-slutpunkt
-topic: developer guide
+topic-legacy: developer guide
 description: Med åtkomstkontrollen i Adobe Experience Platform kan du hantera roller och behörigheter för olika plattformsfunktioner med Adobe Admin Console. Du kan lista namnen på alla behörigheter och resurstyper genom att göra en GET-begäran till /acl/reference-slutpunkten i åtkomstkontrolls-API:t. Dessa namn kan sedan användas i API-anrop för att visa gällande principer för den aktuella användaren.
+exl-id: 18d84d54-9258-4451-9aa8-7c647b45a8da
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '195'
 ht-degree: 0%
 
 ---
-
 
 # Referensslutpunkt
 
