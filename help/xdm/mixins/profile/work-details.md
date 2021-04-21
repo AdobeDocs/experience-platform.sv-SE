@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;individual profile;fields;schemas;schema design;mixin;mixin;work details;profile work;
 solution: Experience Platform
 title: Blanda kontaktuppgifter för arbete
-topic: overview
+topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över mixen Arbetskontaktinformation.
+exl-id: 0133622c-e95f-4833-b2f8-3694d41751b4
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '171'
 ht-degree: 1%
 
 ---
-
 
 # [!UICONTROL Work Contact Details] blanda
 
