@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;frågetjänst;Frågetjänst;schemalagda frågor;schemalagd fråga;
 solution: Experience Platform
 title: API-slutpunkt för schemalagda frågor
-topic: scheduled queries
+topic-legacy: scheduled queries
 description: I följande avsnitt går du igenom de olika API-anrop du kan göra för schemalagda frågor med API:t för frågetjänsten.
+exl-id: f57dbda5-da50-4812-a924-c8571349f1cd
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '977'
 ht-degree: 0%
 
 ---
-
 
 # Slutpunkt för schemalagda frågor
 
@@ -36,7 +36,7 @@ GET /schedules?{QUERY_PARAMETERS}
 
 **Frågeparametrar**
 
-Här följer en lista med tillgängliga frågeparametrar för att lista schemalagda frågor. Alla dessa parametrar är valfria. Om du anropar den här slutpunkten utan parametrar hämtas alla schemalagda frågor som är tillgängliga för din organisation.
+Här följer en lista över tillgängliga frågeparametrar för att lista schemalagda frågor. Alla dessa parametrar är valfria. Om du anropar den här slutpunkten utan parametrar hämtas alla schemalagda frågor som är tillgängliga för din organisation.
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
