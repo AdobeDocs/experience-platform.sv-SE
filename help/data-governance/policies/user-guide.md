@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;datastyrning;användarhandbok för dataanvändningspolicy
 solution: Experience Platform
 title: Hantera dataanvändningsprinciper i användargränssnittet
-topic: policies
+topic-legacy: policies
 description: Adobe Experience Platform Data Governance har ett användargränssnitt där du kan skapa och hantera dataanvändningspolicyer. Det här dokumentet innehåller en översikt över de åtgärder du kan utföra på arbetsytan Profiler i användargränssnittet i Experience Platform.
+exl-id: 29434dc1-02c2-4267-a1f1-9f73833e76a0
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '731'
 ht-degree: 0%
 
 ---
-
 
 # Hantera dataanvändningsprinciper i användargränssnittet
 
@@ -19,7 +19,7 @@ Adobe Experience Platform [!DNL Data Governance] har ett användargränssnitt d�
 
 >[!IMPORTANT]
 >
->Alla dataanvändningsprinciper (inklusive huvudprinciper som tillhandahålls av Adobe) inaktiveras som standard. För att en enskild princip ska kunna användas för verkställighet måste du manuellt aktivera den principen. I avsnittet [Aktivera profiler](#enable) finns anvisningar om hur du gör detta i användargränssnittet.
+>Alla dataanvändningsprinciper (inklusive huvudprinciper som tillhandahålls av Adobe) inaktiveras som standard. För att en enskild princip ska kunna användas för verkställighet måste du manuellt aktivera den principen. I avsnittet [Aktivera profiler](#enable) finns instruktioner för hur du gör detta i användargränssnittet.
 
 ## Förutsättningar
 
