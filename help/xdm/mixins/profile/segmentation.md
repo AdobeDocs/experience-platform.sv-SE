@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;Individuell profil;fält;scheman;scheman;scheman;segment;segment;Membership;segment membership;Schema design;map;Map;
 solution: Experience Platform
 title: Blandning av detaljer för segmentmedlemskap
-topic: overview
+topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över blandningen av information om segmentmedlemskap.
+exl-id: 4d463f3a-2247-4307-8afe-9527e7fd72a7
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '400'
 ht-degree: 0%
 
 ---
-
 
 # [!UICONTROL Segment Membership Details] blanda
 
