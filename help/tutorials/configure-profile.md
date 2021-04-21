@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;Kundprofil i realtid;Identitetstjänst;
 solution: Experience Platform
 title: Självstudiekurser i kundprofil i realtid
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: I det här dokumentet beskrivs de olika stegen och det finns länkar till självstudiekurser för att slutföra varje enskilt arbetsflöde.
+exl-id: cda6e7a7-9498-454c-94df-c6271a5a4fd4
 translation-type: tm+mt
-source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '795'
+source-wordcount: '793'
 ht-degree: 0%
 
 ---
-
 
 # Konfigurera [!DNL Real-time Customer Profile]
 
