@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;scheman;sökning;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
 title: Sökdatatyp
-topic: overview
+topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM (Search Experience Data Model).
+exl-id: 9893cb67-b0c7-4f91-a0d4-96f7b87d9510
 translation-type: tm+mt
-source-git-commit: d282ea5526a05b28c6a82470eabf23e44d1fb420
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '179'
 ht-degree: 2%
 
 ---
-
 
 # [!UICONTROL Search] datatyp
 
