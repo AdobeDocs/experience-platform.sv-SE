@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;PostgreSQL;postgresql;PSQL;psql
 solution: Experience Platform
 title: Skapa en PostSQL-källanslutning med API:t för Flow Service
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till PostgreSQL med API:t för Flow Service.
+exl-id: 5225368a-08c1-421d-aec2-d50ad09ae454
 translation-type: tm+mt
-source-git-commit: 8851e11e956b393e56714d4d48870b7f68947c18
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '562'
+source-wordcount: '560'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL PostgreSQL]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
