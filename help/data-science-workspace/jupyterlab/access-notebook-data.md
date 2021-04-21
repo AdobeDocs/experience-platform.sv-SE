@@ -2,16 +2,16 @@
 keywords: Experience Platform;JupyterLab;notebooks;Data Science Workspace;populära topics;%dataset;interactive mode;batch mode;Spark sdk;python sdk;access data;data access data;book data access
 solution: Experience Platform
 title: Dataåtkomst i Jupyterlab-anteckningsböcker
-topic: Developer Guide
+topic-legacy: Developer Guide
 description: Den här guiden fokuserar på hur du använder Jupyter-anteckningsböcker, som är byggda i Data Science Workspace, för att få tillgång till dina data.
+exl-id: 2035a627-5afc-4b72-9119-158b95a35d32
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '3031'
 ht-degree: 9%
 
 ---
-
 
 # Dataåtkomst i [!DNL Jupyterlab] bärbara datorer
 
@@ -45,14 +45,14 @@ När du läser datauppsättningar med bärbara datorer från PySpark och Scala k
 
 **XDM ExperienceEvent-schema:** Du bör kunna läsa högst 2 miljoner rader (~6,1 GB data på disk) med XDM-data på mindre än 22 minuter. Om du lägger till ytterligare rader kan det leda till fel.
 
-| Antal rader | 1 K | 10 kB | 100 kB | 1 MB | 2 MB |
+| Antal rader | 1 000 | 10 000 | 100 000 | 1 MB | 2 MB |
 | ----------------------- | ------ | ------ | ----- | ----- | ----- |
 | Storlek på disk (MB) | 18.73 | 187.5 | 308 | 3000 | 6050 |
 | SDK (i sekunder) | 20.3 | 86.8 | 63 | 659 | 1315 |
 
 **ad hoc-schema:** Du bör kunna läsa upp maximalt 5 miljoner rader (~5,6 GB data på disk) med data som inte är XDM (ad hoc) på mindre än 14 minuter. Om du lägger till ytterligare rader kan det leda till fel.
 
-| Antal rader | 1 K | 10 kB | 100 kB | 1 MB | 2 MB | 3M | 5 MB |
+| Antal rader | 1 000 | 10 000 | 100 000 | 1 MB | 2 MB | 3M | 5 MB |
 | ----------------------- | ------- | ------- | ----- | ----- | ----- | ----- | ------ |
 | Diskstorlek (i MB) | 1.21 | 11.72 | 115 | 1120 | 2250 | 3380 | 5630 |
 | SDK (i sekunder) | 7.27 | 9.04 | 27.3 | 180 | 346 | 487 | 819 |
@@ -61,14 +61,14 @@ När du läser datauppsättningar med bärbara datorer från PySpark och Scala k
 
 **XDM ExperienceEvent-schema:** Du bör kunna läsa högst 1 miljon rader med XDM-data (3 GB-data på disk) på mindre än 13 minuter.
 
-| Antal rader | 1 K | 10 kB | 100 kB | 1 MB |
+| Antal rader | 1 000 | 10 000 | 100 000 | 1 MB |
 | ----------------------- | ------ | ------ | ----- | ----- |
 | Storlek på disk (MB) | 18.73 | 187.5 | 308 | 3000 |
 | R Kernel (i sekunder) | 14.03 | 69.6 | 86.8 | 775 |
 
 **ad hoc-schema:** Du bör kunna läsa upp maximalt 3 miljoner rader ad hoc-data (293 MB data på disk) på ca 10 minuter.
 
-| Antal rader | 1 K | 10 kB | 100 kB | 1 MB | 2 MB | 3M |
+| Antal rader | 1 000 | 10 000 | 100 000 | 1 MB | 2 MB | 3M |
 | ----------------------- | ------- | ------- | ----- | ----- | ----- | ----- |
 | Diskstorlek (i MB) | 0,082 | 0,612 | 9.0 | 91 | 188 | 293 |
 | R SDK (i sek) | 7.7 | 4,58 | 35.9 | 233 | 470,5 | 603 |
@@ -77,36 +77,36 @@ När du läser datauppsättningar med bärbara datorer från PySpark och Scala k
 
 **XDM ExperienceEvent-schema:** I interaktivt läge bör du kunna läsa upp maximalt 5 miljoner rader (~13,42 GB data på disk) med XDM-data på ca 20 minuter. Interaktivt läge stöder endast upp till 5 miljoner rader. Om du vill läsa större datauppsättningar rekommenderar vi att du växlar till gruppläge. I gruppläge bör du kunna läsa upp maximalt 500 miljoner rader (~1,31 TB data på disk) med XDM-data på ca 14 timmar.
 
-| Antal rader | 1 K | 10 kB | 100 kB | 1 MB | 2 MB | 3M | 5 MB | 10 MB | 50 MB | 100 MB | 500 MB |
+| Antal rader | 1 000 | 10 000 | 100 000 | 1 MB | 2 MB | 3M | 5 MB | 10 MB | 50 MB | 100 MB | 500 MB |
 |-------------------------|--------|--------|-------|-------|-------|-------|---------|---------|----------|--------|--------|
 | Storlek på disk | 2,93 MB | 4,38 MB | 29.02 | 2,69 GB | 5,39 GB | 8,09 GB | 13,42 GB | 26,82 GB | 134,24 GB | 268,39 GB | 1,31 TB |
-| SDK (interaktivt läge) | 33s | 32,4 s | 55.1s | 253,5s | 489,2 s | 729.6s | 1206.8s | - | - | - | - |
+| SDK (interaktivt läge) | 33s | 32,4 s | 55.1s | 253,5s | 489,2 s | 729.6s | 1206.8s | – | – | – | – |
 | SDK (gruppläge) | 815.8s | 492.8s | 379.1s | 637.4s | 624.5s | 869.2s | 1104.1s | 1786s | 5387.2s | 10624.6s | 50547s |
 
 **ad hoc-schema:** I interaktivt läge bör du kunna läsa upp maximalt 5 miljoner rader (~5,36 GB data på disk) med data som inte är XDM på mindre än 3 minuter. I gruppläge bör du kunna läsa upp maximalt 1 miljard rader (~1,05 TB data på disk) med data som inte är XDM på ca 18 minuter.
 
-| Antal rader | 1 K | 10 kB | 100 kB | 1 MB | 2 MB | 3M | 5 MB | 10 MB | 50 MB | 100 MB | 500 MB | 1B |
+| Antal rader | 1 000 | 10 000 | 100 000 | 1 MB | 2 MB | 3M | 5 MB | 10 MB | 50 MB | 100 MB | 500 MB | 1B |
 |--------------|--------|---------|---------|-------|-------|-------|--------|--------|---------|--------|---------|-------|
 | Storlek på disk | 1,12 MB | 11,24MB | 109.48MB | 2,69 GB | 2,14 GB | 3,21 GB | 5,36 GB | 10,71 GB | 53,58 GB | 107,52 GB | 535,88 GB | 1,05 TB |
-| Interaktivt SDK-läge (i sekunder) | 28,2 s | 18,6 s | 20,8 s | 20,9 s | 23.8s | 21.7s | 24.7s | - | - | - | - | - |
+| Interaktivt SDK-läge (i sekunder) | 28,2 s | 18,6 s | 20,8 s | 20,9 s | 23.8s | 21.7s | 24.7s | – | – | – | – | – |
 | SDK-batchläge (i sekunder) | 428.8s | 578.8s | 641.4s | 538.5s | 630.9 s | 467.3s | 411s | 675s | 702s | 719,2 s | 1022.1s | 1122.3s |
 
 ### [!DNL Spark] Datagränser för bärbara datorer (Scala kernel):  {#scala-data-limits}
 
 **XDM ExperienceEvent-schema:** I interaktivt läge bör du kunna läsa upp maximalt 5 miljoner rader (~13,42 GB data på disk) med XDM-data på ca 18 minuter. Interaktivt läge stöder endast upp till 5 miljoner rader. Om du vill läsa större datauppsättningar rekommenderar vi att du växlar till gruppläge. I gruppläge bör du kunna läsa upp maximalt 500 miljoner rader (~1,31 TB data på disk) med XDM-data på ca 14 timmar.
 
-| Antal rader | 1 K | 10 kB | 100 kB | 1 MB | 2 MB | 3M | 5 MB | 10 MB | 50 MB | 100 MB | 500 MB |
+| Antal rader | 1 000 | 10 000 | 100 000 | 1 MB | 2 MB | 3M | 5 MB | 10 MB | 50 MB | 100 MB | 500 MB |
 |---------------|--------|--------|-------|-------|-------|-------|---------|---------|----------|--------|--------|
 | Storlek på disk | 2,93 MB | 4,38 MB | 29.02 | 2,69 GB | 5,39 GB | 8,09 GB | 13,42 GB | 26,82 GB | 134,24 GB | 268,39 GB | 1,31 TB |
-| Interaktivt SDK-läge (i sekunder) | 37,9 s | 22.7s | 45,6 s | 231.7s | 444.7s | 660.6s | 1100s | - | - | - | - |
+| Interaktivt SDK-läge (i sekunder) | 37,9 s | 22.7s | 45,6 s | 231.7s | 444.7s | 660.6s | 1100s | – | – | – | – |
 | SDK-batchläge (i sekunder) | 374.4s | 398.5s | 527s | 487.9 s | 588.9 s | 829s | 939.1s | 1441s | 5473,2s | 10118.8 | 49207.6 |
 
 **ad hoc-schema:** I interaktivt läge bör du kunna läsa upp maximalt 5 miljoner rader (~5,36 GB data på disk) med data som inte är XDM på mindre än 3 minuter. I gruppläge bör du kunna läsa upp maximalt 1 miljard rader (~1,05 TB data på disk) med data som inte är XDM på ca 16 minuter.
 
-| Antal rader | 1 K | 10 kB | 100 kB | 1 MB | 2 MB | 3M | 5 MB | 10 MB | 50 MB | 100 MB | 500 MB | 1B |
+| Antal rader | 1 000 | 10 000 | 100 000 | 1 MB | 2 MB | 3M | 5 MB | 10 MB | 50 MB | 100 MB | 500 MB | 1B |
 |--------------|--------|---------|---------|-------|-------|-------|---------|---------|---------|--------|---------|-------|
 | Storlek på disk | 1,12 MB | 11,24MB | 109.48MB | 2,69 GB | 2,14 GB | 3,21 GB | 5,36 GB | 10,71 GB | 53,58 GB | 107,52 GB | 535,88 GB | 1,05 TB |
-| Interaktivt SDK-läge (i sekunder) | 35.7s | 31s | 19,5 s | 25,3 s | 23s | 33,2 s | 25,5 s | - | - | - | - | - |
+| Interaktivt SDK-läge (i sekunder) | 35.7s | 31s | 19,5 s | 25,3 s | 23s | 33,2 s | 25,5 s | – | – | – | – | – |
 | SDK-batchläge (i sekunder) | 448.8s | 459.7s | 519s | 475.8s | 599,9 s | 347.6s | 407.8s | 397s | 518.8s | 487.9 s | 760,2 s | 975,4 s |
 
 ## Python-anteckningsböcker {#python-notebook}
@@ -619,4 +619,3 @@ Den här tabellen visar de valfria SQL-flaggor som kan användas för [!DNL Quer
 | `-n`,  `--notify` | Växla alternativ för att meddela frågeresultat. |
 | `-a`,  `--async` | Om du använder den här flaggan körs frågan asynkront och kerneln kan frigöras medan frågan körs. Var försiktig när du tilldelar frågeresultat till variabler eftersom de kan vara odefinierade om frågan inte är fullständig. |
 | `-d`,  `--display` | Om du använder den här flaggan kan du inte visa resultat. |
-
