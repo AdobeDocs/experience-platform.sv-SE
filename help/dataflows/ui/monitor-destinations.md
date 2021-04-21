@@ -3,16 +3,16 @@ keywords: Experience Platform;hem;populära ämnen;övervakningskonton;övervaka
 description: Med destinationer kan ni aktivera data från Adobe Experience Platform för ett oändligt antal externa partner. I den här självstudiekursen finns anvisningar om hur du kan övervaka dataflöden för dina mål med hjälp av användargränssnittet i Experience Platform.
 solution: Experience Platform
 title: Övervaka dataflöden för mål i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
+exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
 translation-type: tm+mt
-source-git-commit: f8186e467dc982003c6feb01886ed16d23572955
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '430'
 ht-degree: 0%
 
 ---
-
 
 # Övervaka dataflöden för mål i användargränssnittet
 
