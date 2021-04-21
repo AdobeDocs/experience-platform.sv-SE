@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;schema;mixin;mixin;mixins;mixins;data type;data type;data types;data type;schema design;datatyp;datatyp;datatyp;datatyp;scheman;scheman;schema design;map;map;
 solution: Experience Platform
 title: Begränsningar för XDM-fälttyp
-topic: overview
+topic-legacy: overview
 description: En referens för fälttypsbegränsningar i Experience Data Model (XDM), inklusive andra serialiseringsformat som de kan mappas till och hur du definierar egna fälttyper i API:t.
+exl-id: 63839a28-6d26-46f1-8bbf-b524e82ac4df
 translation-type: tm+mt
-source-git-commit: 456e595e66436c35c7d081ddf4699263e9c87234
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1055'
+source-wordcount: '1054'
 ht-degree: 1%
 
 ---
-
 
 # Begränsningar för XDM-fälttyp
 
