@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;pql;PQL;Profile Query Language;aritmetiska funktioner;aritmetisk;
 solution: Experience Platform
 title: PAL - aritmetiska funktioner
-topic: developer guide
+topic-legacy: developer guide
 description: Aritmetiska funktioner används för att utföra grundläggande beräkningar på värden i PQL (Profile Query Language).
+exl-id: 3540ef7c-dbe4-4302-a414-3cf85618f870
 translation-type: tm+mt
-source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '260'
 ht-degree: 2%
 
 ---
-
 
 # Aritmetiska funktioner
 
