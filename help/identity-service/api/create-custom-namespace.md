@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;namnutrymme;namnutrymme;namnutrymmen;namnutrymmen;namnutrymmen;namnområde;namnområde för identitet;identitet;identitet
 solution: Experience Platform
 title: Skapa ett anpassat namnutrymme i Identity Service API
-topic: API guide
+topic-legacy: API guide
 description: Med API:t för identitetsnamnområde kan du skapa ett anpassat identitetsnamnutrymme som bara är tillgängligt för din organisation.
+exl-id: 6015a225-4508-49cc-9dda-fb9f73a8746c
 translation-type: tm+mt
-source-git-commit: 73035aec86297cfc4ee9337cf922d599001379c3
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '120'
 ht-degree: 1%
 
 ---
-
 
 # Skapa ett anpassat namnutrymme i Identity Service API
 
