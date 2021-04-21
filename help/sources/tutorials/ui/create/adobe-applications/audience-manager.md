@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;Målgruppshanterarens källkontakt;Audience Manager;målgruppshanterarens koppling
 solution: Experience Platform
 title: Skapa en Adobe Audience Manager Source Connection i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: I den här självstudiekursen får du hjälp med att skapa en källanslutning för Adobe Audience Manager för att hämta data om konsumentupplevelsehändelser till plattformen med hjälp av användargränssnittet.
+exl-id: 90c4a719-aaad-4687-afd8-7a1c0c56f744
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '435'
 ht-degree: 0%
 
 ---
-
 
 # Skapa en Adobe Audience Manager-källanslutning i användargränssnittet
 
