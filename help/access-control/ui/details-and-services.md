@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;produktprofil
 solution: Experience Platform
 title: Hantera detaljer och ytterligare tjänster för en produktprofil
-topic: user guide
+topic-legacy: user guide
 description: Det här dokumentet innehåller de steg som krävs för att hantera information och ytterligare tjänster för en produktprofil i Adobe Admin Console. Du kan konfigurera information om en profil och få tillgång till ytterligare tjänster på menyn Profilinställningar.
+exl-id: ac9c2213-f2fb-44be-9334-87fada8a4717
 translation-type: tm+mt
-source-git-commit: a1103bfbf79f9c87bac5b113c01386a6fb8950e7
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '199'
 ht-degree: 1%
 
 ---
-
 
 # Hantera information och ytterligare tjänster för en produktprofil
 
