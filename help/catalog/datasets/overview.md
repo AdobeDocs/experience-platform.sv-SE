@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;dataplats;dataplats;datahantering;datahantering;rad;rad;datatyp;datatyp;datatyper;datatyp
 solution: Experience Platform
 title: Datauppsättningar - översikt
-topic: datasets
+topic-legacy: datasets
 description: Det här dokumentet innehåller en översikt på hög nivå över datauppsättningar i Experience Platform.
+exl-id: 51ecefb0-a699-4b1a-80f1-26c6ba92fcbf
 translation-type: tm+mt
-source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '708'
+source-wordcount: '707'
 ht-degree: 0%
 
 ---
-
 
 # Översikt över datauppsättningar
 
