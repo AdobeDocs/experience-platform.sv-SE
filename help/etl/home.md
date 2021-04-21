@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;ETL;etl;etl integrations;ETL integrations
 solution: Experience Platform
 title: Utveckla ETL-integreringar för Adobe Experience Platform
-topic: overview
+topic-legacy: overview
 description: Integreringsguiden för ETL beskriver allmänna steg för att skapa säkra anslutningar med höga prestanda för Experience Platform och inmatning av data på plattformen.
+exl-id: 7d29b61c-a061-46f8-a31f-f20e4d725655
 translation-type: tm+mt
-source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '4143'
 ht-degree: 0%
 
 ---
-
 
 # Utveckla ETL-integreringar för Adobe Experience Platform
 
@@ -79,7 +79,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 Till att börja med loggar en ETL-användare in i användargränssnittet för [!DNL Experience Platform] och skapar datauppsättningar för förtäring med en standardanslutning eller en push-tjänstanslutning.
 
-I användargränssnittet skapar användaren utdata genom att välja ett dataschema. Vilket schema som väljs beror på vilken typ av data (post- eller tidsserie) som importeras till [!DNL Platform]. Genom att klicka på fliken Scheman i användargränssnittet kan användaren visa alla tillgängliga scheman, inklusive den beteendetyp som schemat stöder.
+I användargränssnittet skapar användaren utdatauppsättningen genom att välja ett dataschema. Vilket schema som väljs beror på vilken typ av data (post- eller tidsserie) som importeras till [!DNL Platform]. Genom att klicka på fliken Scheman i användargränssnittet kan användaren visa alla tillgängliga scheman, inklusive den beteendetyp som schemat stöder.
 
 I ETL-verktyget kommer användaren att börja designa sina mappningstransformeringar efter att ha konfigurerat lämplig anslutning (med hjälp av sina autentiseringsuppgifter). ETL-verktyget antas redan ha [!DNL Experience Platform] anslutningar installerade (processen är inte definierad i den här integreringshandboken).
 
@@ -258,7 +258,7 @@ Ungefär som i stegen för att [visa datauppsättningsschema](#view-dataset-sche
 
 >[!NOTE]
 >
->När schemafältet är tomt eller helt saknas, ska kopplingen läsa fältet &quot;schemaRef&quot; och använda API:t [Schema Registry](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml) som i föregående steg för att [visa ett datamängdsschema](#view-dataset-schema).
+>När schemafältet är tomt eller helt frånvarande bör kopplingen läsa fältet &quot;schemaRef&quot; och använda API:t [Schema Registry](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml) som i föregående steg för att [visa ett datamängdsschema](#view-dataset-schema).
 
 ### Egenskapen &quot;observerableSchema&quot;
 
@@ -577,7 +577,7 @@ Validering kan utföras för logiska XDM-typer, med attribut som `minLength` och
 
 >[!NOTE]
 >
->Minimi- och maximivärdena som anges för olika `integer`-typer är de MIN- och MAX-värden som typen kan hantera, men dessa värden kan begränsas ytterligare till de minimi- och maximumvärden som du väljer.
+>Minimi- och maximivärdena som anges för olika `integer`-typer är de MIN- och MAX-värden som typen kan hantera, men dessa värden kan begränsas ytterligare till de minimi- och maximivärden som du väljer.
 
 ### Skapa en batch
 
