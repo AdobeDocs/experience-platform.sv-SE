@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: API-slutpunkt för mått
-topic: developer guide
+topic-legacy: developer guide
 description: Lär dig hur du hämtar mätvärden för observerbarhet i Experience Platform med API:t för observabilitetsinsikter.
+exl-id: 08d416f0-305a-44e2-a2b7-d563b2bdd2d2
 translation-type: tm+mt
-source-git-commit: 136c75f56c2ba4d61fef7981ff8a7889a0ade3d1
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '2056'
+source-wordcount: '2054'
 ht-degree: 1%
 
 ---
-
 
 # Måttslutpunkt
 
