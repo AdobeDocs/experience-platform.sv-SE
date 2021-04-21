@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;Audience Manager-koppling;Målgruppshanterare;målgruppshanterare
 solution: Experience Platform
 title: Översikt över Audience Manager Source Connector
-topic: overview
+topic-legacy: overview
 description: Adobe Audience Manager källanslutning strömmar förstahandsdata som samlats in i Audience Manager till Adobe Experience Platform.
+exl-id: be90db33-69e1-4f42-9d1a-4f8f26405f0f
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '868'
 ht-degree: 0%
 
 ---
-
 
 # Audience Manager-kontakt
 
@@ -64,7 +64,7 @@ Audience Manager-datauppsättningar är inaktiverade som standard för Profil oc
 | AAM enhetsprofildata | Används för diagnostik av anslutning till Audience Manager. Data visas inte som batchar i datauppsättningen. Du kan aktivera alternativet **[!UICONTROL Profile]** om du vill importera data direkt till profilen. |
 | AAM autentiserade profiler | Den här datauppsättningen innehåller Audience Manager-autentiserade profiler. Data visas inte som batchar i datauppsättningen. Du kan aktivera alternativet **[!UICONTROL Profile]** om du vill importera data direkt till profilen. |
 | Metadata för AAM autentiserade profiler | Används för diagnostik av Audience Manager Connector. Data visas inte som batchar i datauppsättningen. Du kan aktivera alternativet **[!UICONTROL Profile]** om du vill importera data direkt till profilen. |
-| AAM Devices Data Backfill | Datauppsättning från att hämta in tidigare enhetsdata. Detta innehåller ECID och motsvarande segmentrealiseringar som aggregerats i Audience Manager. Data visas inte som batchar i datauppsättningen. Du kan aktivera alternativet **[!UICONTROL Profile]** för att direkt importera data till profilen. |
+| AAM Devices Data Backfill | Datauppsättning från att hämta data från tidigare enheter. Detta innehåller ECID och motsvarande segmentrealiseringar som aggregerats i Audience Manager. Data visas inte som batchar i datauppsättningen. Du kan aktivera alternativet **[!UICONTROL Profile]** för att direkt importera data till profilen. |
 | AAM för autentiserade profiler | Datauppsättning från att hämta in tidigare autentiserade data. Detta innehåller Audience Manager-autentiserade profiler. Data visas inte som batchar i datauppsättningen. Du kan aktivera alternativet **[!UICONTROL Profile]** för att direkt importera data till profilen. |
 
 ### Anslutningar
