@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;dataåtkomst;spark sdk;data access api;spark recipe;read spark;write spark
 solution: Experience Platform
 title: Åtkomst till data med Spark in Data Science Workspace
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: Följande dokument innehåller exempel på hur du får åtkomst till data med Spark för användning i Data Science Workspace.
+exl-id: 9bffb52d-1c16-4899-b455-ce570d76d3b4
 translation-type: tm+mt
-source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '450'
 ht-degree: 0%
 
 ---
-
 
 # Åtkomst till data med Spark in Data Science Workspace
 
