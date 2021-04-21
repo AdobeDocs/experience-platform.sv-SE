@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;Amazon S3;Azure Blob
 solution: Experience Platform
 title: Skapa en Azure Blob- eller Amazon S3-källanslutning i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Azure Blob- eller Amazon S3-källanslutning med Adobe Experience Platform-gränssnittet.
+exl-id: de2db0cb-3ce4-46d1-96c4-00f779f81670
 translation-type: tm+mt
-source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '144'
 ht-degree: 0%
 
 ---
-
 
 # Skapa en [!DNL Azure Blob]- eller [!DNL Amazon] S3-källanslutning i gränssnittet
 
