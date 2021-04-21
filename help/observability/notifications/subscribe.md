@@ -1,23 +1,23 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;datumintervall
 solution: Experience Platform
-title: Prenumerera på Adobe I/O Event Notifications
-topic: developer guide
-description: Det här dokumentet innehåller anvisningar om hur du prenumererar på Adobe I/O händelsemeddelanden för Adobe Experience Platform-tjänster. Referensinformation om tillgängliga händelsetyper tillhandahålls också, tillsammans med länkar till ytterligare dokumentation om hur returnerade händelsedata ska tolkas för varje tillämplig [!DNL Platform] tjänst.
+title: Prenumerera på händelsemeddelanden från Adobe I/O
+topic-legacy: developer guide
+description: Det här dokumentet innehåller anvisningar om hur du prenumererar på händelsemeddelanden i Adobe I/O för Adobe Experience Platform-tjänster. Referensinformation om tillgängliga händelsetyper tillhandahålls också, tillsammans med länkar till ytterligare dokumentation om hur returnerade händelsedata ska tolkas för varje tillämplig [!DNL Platform] tjänst.
+exl-id: c0ad7217-ce84-47b0-abf6-76bcf280f026
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '740'
 ht-degree: 0%
 
 ---
 
+# Prenumerera på händelsemeddelanden i Adobe I/O
 
-# Prenumerera på Adobe I/O händelsemeddelanden
+[!DNL Observability Insights] gör att du kan prenumerera på Adobe I/O-händelsemeddelanden om Adobe Experience Platform-aktiviteter. Dessa händelser skickas till en konfigurerad webkrok för att underlätta effektiv automatisering av aktivitetsövervakning.
 
-[!DNL Observability Insights] Med kan du prenumerera på Adobe I/O händelsemeddelanden om Adobe Experience Platform aktiviteter. Dessa händelser skickas till en konfigurerad webkrok för att underlätta effektiv automatisering av aktivitetsövervakning.
-
-Det här dokumentet innehåller anvisningar om hur du prenumererar på Adobe I/O händelsemeddelanden för Adobe Experience Platform-tjänster. Referensinformation om tillgängliga händelsetyper tillhandahålls också, tillsammans med länkar till ytterligare dokumentation om hur returnerade händelsedata ska tolkas för varje tillämplig [!DNL Platform]-tjänst.
+Det här dokumentet innehåller anvisningar om hur du prenumererar på händelsemeddelanden i Adobe I/O för Adobe Experience Platform-tjänster. Referensinformation om tillgängliga händelsetyper tillhandahålls också, tillsammans med länkar till ytterligare dokumentation om hur returnerade händelsedata ska tolkas för varje tillämplig [!DNL Platform]-tjänst.
 
 ## Komma igång
 
