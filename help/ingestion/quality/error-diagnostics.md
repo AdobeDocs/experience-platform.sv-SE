@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;batchförbrukning;batchförtäring;partiellt intag;partiellt intag;partiellt intag;Hämtningsfel;hämtningsfel;partiellt batchintag;partiellt, oralt;intag;Inmatning;feldiagnostik;hämta feldiagnos;hämta feldiagnos;få fel;hämta fel;hämta fel;
 solution: Experience Platform
 title: Diagnostik för dataöverföringsfel hämtas
-topic: overview
+topic-legacy: overview
 description: Det här dokumentet innehåller information om övervakning av batchförbrukning, hantering av partiella batchöverföringsfel samt en referens för partiella batchinsatstyper.
+exl-id: b885fb00-b66d-453b-80b7-8821117c2041
 translation-type: tm+mt
-source-git-commit: 089a4d517476b614521d1db4718966e3ebb13064
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '936'
 ht-degree: 1%
 
 ---
-
 
 # Hämtar feldiagnostik för dataöverföring
 
