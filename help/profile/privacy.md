@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Behandling av sekretessförfrågningar i kundprofil i realtid
-topic: overview
+topic-legacy: overview
 type: Documentation
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kundprofil i realtid.
+exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
 translation-type: tm+mt
-source-git-commit: e6ecc5dac1d09c7906aa7c7e01139aa194ed662b
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1091'
 ht-degree: 0%
 
 ---
-
 
 # Behandling av sekretessförfrågningar i [!DNL Real-time Customer Profile]
 
