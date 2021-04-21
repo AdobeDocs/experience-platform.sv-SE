@@ -2,15 +2,15 @@
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;förhandsvisning;exempel
 title: API-slutpunkt för exempelstatus för förhandsgranskning (förhandsgranskning av profil)
 description: Med förhandsgranskningsexemplets statusslutpunkt, som ingår i kundprofils-API:t i realtid, kan du förhandsgranska det senaste lyckade exemplet av dina profildata samt lista profildistribution per datauppsättning och per identitetsnamnområde i Adobe Experience Platform.
-topic: guide
+topic-legacy: guide
+exl-id: a90a601e-629e-417b-ac27-3d69379bb274
 translation-type: tm+mt
-source-git-commit: 5266c393b034d1744134522cf1769304f39733da
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '1652'
 ht-degree: 0%
 
 ---
-
 
 # Förhandsgranska exempelstatusslutpunkt (förhandsgranskning av profil)
 
