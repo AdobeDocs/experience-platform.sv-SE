@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;Apache hive;hive;Hive
 solution: Experience Platform
 title: Skapa en Apache Hive på Azure HDInsights-källanslutning med API:t för flödestjänsten
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Apache Hive på Azure HDInsights till Adobe Experience Platform med API:t för Flow Service.
+exl-id: e1469a29-6f61-47ba-995e-39f06ee4a4a4
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '573'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL Apache Hive] på [!DNL Azure HDInsights]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
