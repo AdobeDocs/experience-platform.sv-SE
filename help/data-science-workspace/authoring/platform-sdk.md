@@ -2,16 +2,16 @@
 keywords: Experience Platform;utvecklarguide;SDK;Data Access SDK;Data Science Workspace;populära topics
 solution: Experience Platform
 title: Modellredigering med Adobe Experience Platform Platform SDK
-topic: SDK authoring
+topic-legacy: SDK authoring
 description: I den här självstudien får du information om hur du konverterar data_access_sdk_python till den nya Python-plattformen_sdk i både Python och R.
+exl-id: 20909cae-5cd2-422b-8dbb-35bc63e69b2a
 translation-type: tm+mt
-source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '495'
 ht-degree: 5%
 
 ---
-
 
 # Skapa modeller med Adobe Experience Platform [!DNL Platform] SDK
 
