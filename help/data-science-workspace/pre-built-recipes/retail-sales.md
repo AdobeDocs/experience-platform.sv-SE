@@ -2,16 +2,16 @@
 keywords: Experience Platform;recept;data Science Workspace;populära topics;recipes;prebuild recept
 solution: Experience Platform
 title: Butiksförs.mottagare
-topic: overview
+topic-legacy: overview
 description: Med butiksförsäljningsreceptet kan du förutsäga försäljningsprognos för alla butiker som behövs under en viss tidsperiod. Med en korrekt prognosmodell skulle handlaren kunna hitta förhållandet mellan efterfrågan och prispolitiken och fatta optimerade prissättningsbeslut för att maximera försäljningen och intäkterna.
+exl-id: ff01fcd1-fca6-4957-8470-a974fd1520aa
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '585'
 ht-degree: 1%
 
 ---
-
 
 # Butiksförsäljningsrecept
 
