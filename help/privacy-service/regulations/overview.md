@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;GDPR;gdpr;CCPA;ccpa;PDPA;pdpa;LGPD;lgpd;overview;overview;Regulation;Regulations;Regulations;Regulations;privacy;Privacy;Privacy;
 solution: Experience Platform
 title: Översikt över sekretessbestämmelser
-topic: troubleshooting
+topic-legacy: troubleshooting
 description: Det här dokumentet innehåller en översikt över de olika sekretessregler som stöds av Adobe Experience Cloud.
+exl-id: 2ca946cf-94f8-4fd8-bb1a-7f06a5ab1256
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '428'
 ht-degree: 6%
 
 ---
-
 
 # Översikt över sekretessbestämmelser
 
