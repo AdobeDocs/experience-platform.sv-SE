@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;tableau;query service;Query service;connect to query service;
 solution: Experience Platform
 title: Anslut tabell till frågetjänst
-topic: connect
+topic-legacy: connect
 description: Det här dokumentet går igenom de olika stegen för att ansluta Tableau till Adobe Experience Platform Query Service.
+exl-id: f380aacd-5091-41bc-97ca-593e0b1670fd
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '209'
 ht-degree: 0%
 
 ---
-
 
 # Anslut [!DNL Tableau] till frågetjänsten
 
