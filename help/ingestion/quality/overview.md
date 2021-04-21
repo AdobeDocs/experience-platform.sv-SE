@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;Datakvalitet;Kvalitet;Validering;validering som stöds;validering;
 solution: Experience Platform
 title: Datakvalitet
-topic: overview
+topic-legacy: overview
 description: Följande dokument innehåller en sammanfattning av de kontroller och valideringsbeteenden som stöds för import av grupper och direktuppspelning i Adobe Experience Platform.
+exl-id: 7ef40859-235a-4759-9492-c63e5fd80c8e
 translation-type: tm+mt
-source-git-commit: 089a4d517476b614521d1db4718966e3ebb13064
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '317'
 ht-degree: 4%
 
 ---
-
 
 # Datakvalitet i Adobe Experience Platform
 
