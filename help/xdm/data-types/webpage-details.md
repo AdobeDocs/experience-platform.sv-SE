@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;Schemas;Webbsidesinformation;datatyp;datatyp;webbsida
 solution: Experience Platform
 title: Datatyp för webbsidesinformation
-topic: overview
+topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över webbsidans information om datatypen Experience Data Model (XDM).
+exl-id: 31108e57-d416-485b-a6c3-4ebc4f5b1152
 translation-type: tm+mt
-source-git-commit: d282ea5526a05b28c6a82470eabf23e44d1fb420
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '401'
 ht-degree: 2%
 
 ---
-
 
 # [!UICONTROL Web page details] datatyp
 
