@@ -2,16 +2,16 @@
 keywords: Experience Platform;komma igång;content ai;commerce ai;content/commerce ai
 solution: Experience Platform, Intelligent Services
 title: Komma igång med innehåll och handel med AI
-topic: Getting started 
-description: Innehåll och AI för handel använder Adobe I/O API:er. För att kunna ringa anrop till Adobe I/O API:er och I/O-konsolintegreringen måste du först slutföra självstudiekursen om autentisering.
+topic-legacy: Getting started
+description: Innehålls- och handels-API:er använder Adobe I/O-API:er. För att kunna ringa anrop till API:er för Adobe I/O och I/O-konsolintegrering måste du först slutföra självstudiekursen om autentisering.
+exl-id: e7b0e9bb-a1f1-479c-9e9b-46991f2942e2
 translation-type: tm+mt
-source-git-commit: eb163949f91b0d1e9cc23180bb372b6f94fc951f
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '591'
 ht-degree: 0%
 
 ---
-
 
 # Komma igång med innehåll och handel med AI
 
@@ -19,13 +19,13 @@ ht-degree: 0%
 >
 >Innehåll och handel AI är i betaversion. Dokumentationen kan komma att ändras.
 
-[!DNL Content and Commerce AI] använder Adobe I/O API:er. För att kunna anropa Adobe I/O API:er och I/O-konsolintegrationen måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering.
+[!DNL Content and Commerce AI] använder Adobe I/O API:er. För att kunna ringa anrop till API:er för Adobe I/O och I/O-konsolintegrering måste du först slutföra [självstudiekursen](https://www.adobe.com/go/platform-api-authentication-en) för autentisering.
 
 När du kommer till steget **Lägg till API** finns API:t under Experience Cloud i stället för Adobe Experience Platform, vilket visas i skärmbilden nedan:
 
 ![lägga till innehåll och handel med AI](./images/add-api.png)
 
-När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla Adobe I/O API-anrop, vilket visas nedan:
+När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla Adobe I/O API-anrop, vilket visas nedan:
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
