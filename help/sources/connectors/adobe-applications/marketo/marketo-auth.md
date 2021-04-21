@@ -2,12 +2,12 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;Marketo Engage;markering för att engagera;markering för
 solution: Experience Platform
 title: Autentisera din Marketo-källanslutning
-topic: översikt
+topic-legacy: overview
 description: Det här dokumentet innehåller information om hur du genererar autentiseringsuppgifter för Marketo.
 translation-type: tm+mt
-source-git-commit: 2563b413ec35cb4c5f05a54bce6f7271917e51f3
+source-git-commit: f12baaa9d4b37f1101792a4ae479b5a62893eb68
 workflow-type: tm+mt
-source-wordcount: '620'
+source-wordcount: '619'
 ht-degree: 0%
 
 ---
