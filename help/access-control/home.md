@@ -1,17 +1,17 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;adobe admin admin console
 solution: Experience Platform
-topic: overview
+topic-legacy: overview
 title: Översikt över åtkomstkontroll
 description: Åtkomstkontroll för Adobe Experience Platform tillhandahålls via Adobe Admin Console. Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor.
+exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
 translation-type: tm+mt
-source-git-commit: c277caabe851c81f66b822c07a25f4b94466eef0
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1181'
 ht-degree: 1%
 
 ---
-
 
 # Översikt över åtkomstkontroll
 
