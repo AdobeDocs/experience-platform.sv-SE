@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;förhandsvisningar;uppskattningar;förhandsvisningar och uppskattningar;uppskattningar och förhandsvisningar;api;API;
 solution: Experience Platform
 title: Förhandsgranskningar och uppskattningar av API-slutpunkter
-topic: developer guide
+topic-legacy: developer guide
 description: I takt med att segmentdefinitionen utvecklas kan du använda verktygen för uppskattning och förhandsgranskning i Adobe Experience Platform för att se information på sammanfattningsnivå för att säkerställa att du isolerar den förväntade målgruppen.
+exl-id: 2c204f29-825f-4a5e-a7f6-40fc69263614
 translation-type: tm+mt
-source-git-commit: eba6de210dcbc12b829b09ba6e7083d342517ba2
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '949'
+ht-degree: 1%
 
 ---
-
 
 # Förhandsgranska och beräkna slutpunkter
 
