@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;dataåtkomst;python sdk;spark sdk;dataåtkomst api;export;Exportera
 solution: Experience Platform
 title: API-guide för dataåtkomst
-topic: developer guide
+topic-legacy: developer guide
 description: API:t för dataåtkomst stöder Adobe Experience Platform genom att ge utvecklarna ett RESTful-gränssnitt som fokuserar på att upptäcka och tillgängliggöra inkapslade datauppsättningar i Experience Platform.
+exl-id: 278ec322-dafa-4e3f-ae45-2d20459c5653
 translation-type: tm+mt
-source-git-commit: e649ab3da077cdd8e98562199b8bdece6108a572
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '528'
 ht-degree: 1%
 
 ---
-
 
 # API-guide för dataåtkomst
 
