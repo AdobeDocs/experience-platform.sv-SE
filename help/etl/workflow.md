@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;ETL;etl;etl workflow;ETL workflow
 solution: Experience Platform
 title: ETL-arbetsflöde
-topic: overview
+topic-legacy: overview
 description: Olika extraherings-, omformnings- och inläsningsverktyg (ETL) kan ha olika format, men de flesta exponerar liknande funktioner för att underlätta kombinationen av flera datakällor.
+exl-id: 09de6c50-ad04-4d7c-99e6-33784fb0dd58
 translation-type: tm+mt
-source-git-commit: f8186e467dc982003c6feb01886ed16d23572955
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '213'
 ht-degree: 0%
 
 ---
-
 
 # ETL-arbetsflöde
 
