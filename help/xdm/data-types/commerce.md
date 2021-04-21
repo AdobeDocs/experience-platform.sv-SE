@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;scheman;commerce;datatype;data type;data type;
 solution: Experience Platform
 title: Commerce Data Type
-topic: overview
+topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM (Commerce Experience Data Model).
+exl-id: c9cc569b-1a91-4a6e-8bfd-7f8ec07d01d4
 translation-type: tm+mt
-source-git-commit: 8bbb062df47b6e94630626d0a89a179d759d922d
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '324'
 ht-degree: 0%
 
 ---
-
 
 # [!UICONTROL Commerce] datatyp
 
