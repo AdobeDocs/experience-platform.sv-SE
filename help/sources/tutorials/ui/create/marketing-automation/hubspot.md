@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;hubspot;Hubspot
 solution: Experience Platform
 title: Skapa en HubSpot-källanslutning i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en HubSpot-källanslutning med Adobe Experience Platform-gränssnittet.
+exl-id: 452b7290-b9e8-4728-8b58-0e0c76bd9449
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '468'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL HubSpot]-källanslutning i användargränssnittet
 
