@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Versionsinformation om Privacy Service
-topic: release notes
+topic-legacy: release notes
 description: Den senaste versionsinformationen för Adobe Experience Platform Privacy Service.
+exl-id: 66ee38f1-f0d5-44ff-823d-d1b8a9765c6d
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '553'
 ht-degree: 5%
 
 ---
-
 
 # [!DNL Privacy Service] versionsinformation
 
@@ -64,7 +64,7 @@ Det här dokumentet innehåller information om nya funktioner för Adobe Experie
 | --- | --- |
 | Kontrollpanel för begärandemått | Den nya mätinstrumentpanelen i [!DNL Privacy Service]-gränssnittet ger synlighet i inskickade, felaktiga och slutförda GDPR-begäranden. |
 | Request Builder | För att betjäna organisationer med både tekniska och icke-tekniska användare som skickar GDPR-förfrågningar har funktionen&quot;Skapa begäran&quot; lagts till i användargränssnittet. Funktionen för att skicka JSON-filer är fortfarande tillgänglig i [!DNL Privacy Service]-gränssnittet för de organisationer som föredrar att fortsätta använda den. |
-| Meddelanden om GDPR-jobbhändelser | Händelsemeddelanden om GDPR-jobbstatus är viktiga för många arbetsflöden. Meddelanden har tidigare skickats med hjälp av enskilda e-postmeddelanden, men GDPR-händelsemeddelanden är meddelanden som utnyttjar Adobe I/O-händelser, som skickas till en konfigurerad webkrok som underlättar automatisering av jobbförfrågningar. [!DNL Privacy Service] UI-användare kan prenumerera på Adobe I/O GDPR-händelser för att få uppdateringar när en produkt eller GDPR-jobbet har slutförts. |
+| Meddelanden om GDPR-jobbhändelser | Händelsemeddelanden om GDPR-jobbstatus är viktiga för många arbetsflöden. Meddelanden som tidigare sänts med hjälp av enskilda e-postmeddelanden är GDPR-händelsemeddelanden som utnyttjar Adobe I/O-händelser, som skickas till en konfigurerad webkrok som underlättar automatisering av jobbförfrågningar. [!DNL Privacy Service] UI-användare kan prenumerera på Adobe I/O GDPR-händelser för att få uppdateringar när en produkt eller GDPR-jobbet har slutförts. |
 
 ## 18 apr 2019
 
