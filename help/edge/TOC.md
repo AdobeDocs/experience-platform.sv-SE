@@ -1,13 +1,12 @@
 ---
-product: experience-platform
 solution: Experience Platform, Data Collection
 audience: user
 user-guide-title: Hjälp för Adobe Experience Platform Web SDK
 breadcrumb-title: Web SDK Guide
 user-guide-description: Interagera med Experience Cloud via Edge Network.
-feature: Data Management
+feature: Datahantering
 translation-type: tm+mt
-source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '147'
 ht-degree: 14%
@@ -40,7 +39,7 @@ ht-degree: 14%
       * [Mappningsanalysvariabler](data-collection/adobe-analytics/manually-mapping-variables.md)
       * [Automatiskt mappade variabler](data-collection/adobe-analytics/automatically-mapped-vars.md)
       * [Skicka data till Analytics](data-collection/adobe-analytics/sending-data-to-analytics.md)
-* Personanpassning {#personalization}
+* Personalisering {#personalization}
    * [Återge personaliserat innehåll](personalization/rendering-personalization-content.md)
    * [Hantera flimmer](personalization/manage-flicker.md)
    * Adobe Target {#adobe-target}
