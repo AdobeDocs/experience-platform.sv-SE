@@ -6,7 +6,7 @@ topic-legacy: ui guide
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 875d3838e16a3b79fa9ab3ec61e4ffb15ea1cf20
 workflow-type: tm+mt
 source-wordcount: '1940'
 ht-degree: 0%
@@ -117,7 +117,7 @@ Aggregeringsvärdet har nu lagts till. Nu kan du välja sammanställningsfunktio
 
 ![](../images/ui/segment-builder/filled-aggregation.png)
 
-### Räkningsfunktioner
+### Räkningsfunktioner {#count-functions}
 
 Räkningsfunktioner i Segment Builder används för att söka efter angivna händelser och räkna antalet gånger de är klara. De räkningsfunktioner som stöds i Segment Builder är &quot;Minst&quot;, &quot;Högst&quot;, &quot;Exakt&quot;, &quot;Mellan&quot; och &quot;Alla&quot;.
 
