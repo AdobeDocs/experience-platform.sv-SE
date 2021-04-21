@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;frågetjänst;frågetjänst;skriva frågor;skriva fråga;
 solution: Experience Platform
 title: Allmänna riktlinjer för frågekörning i frågetjänsten
-topic: queries
+topic-legacy: queries
 type: Tutorial
 description: Det här dokumentet innehåller viktig information som du bör känna till när du skriver frågor i Adobe Experience Platform Query Service.
+exl-id: a7076c31-8f7c-455e-9083-cbbb029c93bb
 translation-type: tm+mt
-source-git-commit: 97dc0b5fb44f5345fd89f3f56bd7861668da9a6e
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '976'
 ht-degree: 2%
 
 ---
-
 
 # Allmän vägledning för frågekörning i [!DNL Query Service]
 
@@ -307,4 +307,4 @@ Frågetjänsten stöder datadeduplicering eller borttagning av dubblettrader fr�
 
 Genom att läsa det här dokumentet har du fått en del viktiga synpunkter när du skriver frågor med [!DNL Query Service]. Mer information om hur du använder SQL-syntaxen för att skriva egna frågor finns i [SQL-syntaxdokumentationen](../sql/syntax.md).
 
-Fler exempel på frågor som kan användas i Query Service hittar du i [Adobe Analytics exempelfrågor](./adobe-analytics.md), [Adobe Target exempelfrågor](./adobe-target.md) eller [ExperienceEvent-exempelfrågor](./experience-event-queries.md).
+Fler exempel på frågor som kan användas i frågetjänsten finns i [Adobe Analytics exempelfrågor](./adobe-analytics.md), [Adobe Target exempelfrågor](./adobe-target.md) eller [ExperienceEvent-exempelfrågor](./experience-event-queries.md).
