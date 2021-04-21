@@ -2,10 +2,10 @@
 keywords: Experience Platform;användargränssnitt;användargränssnitt;anpassning;kontrollpanel för licensanvändning;kontrollpanel;licensanvändning;berättigande;förbrukning
 title: Kontrollpanel för destinationer
 description: 'Adobe Experience Platform användargränssnitt innehåller en kontrollpanel där du kan visa viktig information om organisationens aktiva destinationer. '
-topic: guide
+topic-legacy: guide
 type: Documentation
 translation-type: tm+mt
-source-git-commit: ecce042332fed790bbcf8b8a554217842f63a647
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '143'
 ht-degree: 0%
