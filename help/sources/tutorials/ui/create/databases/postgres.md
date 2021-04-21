@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;PSQL;psql;PostgreSQL
 solution: Experience Platform
 title: Skapa en PostgreSQL-källanslutning i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en PostgreSQL-källanslutning med Adobe Experience Platform-gränssnittet.
+exl-id: e556d867-a1eb-4900-b8a9-189666a4f3f1
 translation-type: tm+mt
-source-git-commit: 8851e11e956b393e56714d4d48870b7f68947c18
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '441'
+source-wordcount: '439'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL PostgreSQL]-källanslutning i användargränssnittet
 
