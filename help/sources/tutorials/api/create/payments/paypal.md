@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;PayPal-kontakt;Paypal;Paypal
 solution: Experience Platform
 title: Skapa en PayPal-källanslutning med API:t för Flow Service
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter PayPal till Adobe Experience Platform med API:t för Flow Service.
+exl-id: 5e6ca7b4-5e2f-4706-a339-ac159e2e0938
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '576'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL PayPal]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
