@@ -3,17 +3,17 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;skyddsför
 title: Guardrails for Real-time Customer Profile Data
 solution: Experience Platform
 product: experience platform
-topic: guide
+topic-legacy: guide
 type: Documentation
-description: 'Adobe Experience Platform tillhandahåller ett antal skyddsutkast som hjälper dig att undvika att skapa datamodeller som kundprofilen i realtid inte stöder. I det här dokumentet beskrivs de bästa metoderna och begränsningarna som du bör tänka på när du modellerar profildata. '
+description: Adobe Experience Platform tillhandahåller ett antal skyddsutkast som hjälper dig att undvika att skapa datamodeller som kundprofilen i realtid inte stöder. I det här dokumentet beskrivs de bästa metoderna och begränsningarna som du bör tänka på när du modellerar profildata.
+exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
 translation-type: tm+mt
-source-git-commit: ba1cbed3b5e3f3a8879b3882856a03ef4be9b96a
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1456'
 ht-degree: 1%
 
 ---
-
 
 # Skyddsritningar för [!DNL Real-time Customer Profile]-data
 
@@ -108,6 +108,6 @@ Skyddsförslaget som beskrivs i detta avsnitt avser antalet segment och typen av
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Maximalt antal segment per sandlåda | 10 kB | Mjuk | **Det högsta antalet segment som en organisation kan skapa är 10 000 per sandlåda.** En organisation kan ha fler än 10 000 segment totalt, förutsatt att det finns färre än 10 000 segment i varje enskild sandlåda. Om du försöker skapa ytterligare segment försämras systemets prestanda. |
+| Maximalt antal segment per sandlåda | 10 000 | Mjuk | **Det högsta antalet segment som en organisation kan skapa är 10 000 per sandlåda.** En organisation kan ha fler än 10 000 segment totalt, förutsatt att det finns färre än 10 000 segment i varje enskild sandlåda. Om du försöker skapa ytterligare segment försämras systemets prestanda. |
 | Maximalt antal direktuppspelningssegment per sandlåda | 500 | Mjuk | **Det maximala antalet direktuppspelningssegment som en organisation kan skapa är 500 per sandlåda.** En organisation kan ha fler än 500 direktuppspelningssegment totalt, förutsatt att det finns färre än 500 direktuppspelningssegment i varje enskild sandlåda. Om du försöker skapa ytterligare strömningssegment försämras systemets prestanda. |
-| Maximalt antal gruppsegment per sandlåda | 10 kB | Mjuk | **Det maximala antalet gruppsegment som en organisation kan skapa är 10 000 per sandlåda.** En organisation kan ha fler än 10 000 gruppsegment totalt, förutsatt att det finns färre än 10 000 gruppsegment i varje enskild sandlåda. Om du försöker skapa ytterligare gruppsegment försämras systemets prestanda. |
+| Maximalt antal gruppsegment per sandlåda | 10 000 | Mjuk | **Det maximala antalet gruppsegment som en organisation kan skapa är 10 000 per sandlåda.** En organisation kan ha fler än 10 000 gruppsegment totalt, förutsatt att det finns färre än 10 000 gruppsegment i varje enskild sandlåda. Om du försöker skapa ytterligare gruppsegment försämras systemets prestanda. |
