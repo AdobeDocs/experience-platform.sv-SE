@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;Azure Data Lake Storage Gen2;ADLS Gen2;adls gen2;adls connector
 solution: Experience Platform
 title: Skapa en källanslutning för Azure Data Lake Storage Gen2 i gränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Azure Data Lake Storage Gen2-källanslutning med Adobe Experience Platform-gränssnittet.
+exl-id: d81b7593-08a3-43f8-a8bc-f5547a6cd55a
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '463'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL Azure Data Lake Storage Gen2]-källanslutning i användargränssnittet
 
