@@ -3,15 +3,15 @@ keywords: Experience Platform;hem;populära ämnen;XDM;XDM system;XDM individuel
 solution: Experience Platform
 title: Felsökningsguide för XDM-system
 description: Det här dokumentet innehåller svar på vanliga frågor om Experience Data Model (XDM) och XDM System i Adobe Experience Platform samt en felsökningsguide för vanliga fel.
-topic: troubleshooting
+topic-legacy: troubleshooting
+exl-id: a0c7c661-bee8-4f66-ad5c-f669c52c9de3
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1869'
 ht-degree: 0%
 
 ---
-
 
 # Felsökningsguide för XDM-system
 
