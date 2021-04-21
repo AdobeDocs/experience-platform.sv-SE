@@ -1,16 +1,16 @@
 ---
 solution: Experience Platform
 title: Resor och turism - branschdatamodell ERD
-topic: overview
+topic-legacy: overview
 description: Visa en datamodell (ERD) som beskriver en standardiserad datamodell för rese- och turismbranschen som är kompatibel med Experience Data Model (XDM) för användning i Adobe Experience Platform.
+exl-id: 4d454160-9066-4702-815b-9509942f709e
 translation-type: tm+mt
-source-git-commit: ffc113c0c85c76e6645fb4276c174779682f2b60
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '80'
-ht-degree: 1%
+source-wordcount: '79'
+ht-degree: 0%
 
 ---
-
 
 # [!UICONTROL Travel and hospitality] ERD för branschdatamodell
 
