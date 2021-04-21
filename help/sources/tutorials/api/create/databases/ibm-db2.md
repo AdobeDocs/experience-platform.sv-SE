@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;IBM DB2;IBM;ibm db2;db2;DB2
 solution: Experience Platform
 title: Skapa en IBM DB2-källanslutning med API:t för Flow Service
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter IBM DB2 till Adobe Experience Platform med API:t för Flow Service.
+exl-id: 83c1dbe6-975f-4e3b-a7bf-166eb5106dd2
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '598'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en IBM DB2-källanslutning med hjälp av API:t [!DNL Flow Service]
 
