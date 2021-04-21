@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;lista identiteter;listkluster
 solution: Experience Platform
 title: Visa alla identiteter i ett kluster
-topic: API guide
+topic-legacy: API guide
 description: Identiteter som är relaterade till ett identitetsdiagram, oavsett namnutrymme, anses ingå i samma kluster i det identitetsdiagrammet. Med alternativen nedan får du tillgång till alla klustermedlemmar.
+exl-id: 0fb9eac9-2dc2-4881-8598-02b3053d0b31
 translation-type: tm+mt
-source-git-commit: 73035aec86297cfc4ee9337cf922d599001379c3
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '359'
 ht-degree: 0%
 
 ---
-
 
 # Visa alla identiteter i ett kluster
 
