@@ -2,17 +2,17 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;direktuppspelningsuppläsning;förtäring;direktuppspelning av flera meddelanden;flera meddelanden;
 solution: Experience Platform
 title: Skicka flera meddelanden i en enda HTTP-begäran
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: Det här dokumentet innehåller en självstudiekurs för att skicka flera meddelanden till Adobe Experience Platform inom en enda HTTP-begäran med direktuppspelningsinmatning.
+exl-id: 04045090-8a2c-42b6-aefa-09c043ee414f
 translation-type: tm+mt
-source-git-commit: 089a4d517476b614521d1db4718966e3ebb13064
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1492'
 ht-degree: 1%
 
 ---
-
 
 # Skicka flera meddelanden i en enda HTTP-begäran
 
@@ -212,7 +212,7 @@ Mer information om statuskoder finns i tabellen [svarskoder](#response-codes) i 
 
 ## Identifiera misslyckade meddelanden
 
-Jämfört med att skicka en begäran med ett enda meddelande finns det ytterligare faktorer att tänka på när du skickar en HTTP-begäran med flera meddelanden, till exempel: hur du identifierar när data inte har skickats, vilka specifika meddelanden som inte har kunnat skickas och hur de kan hämtas, och vad som händer med data som lyckas när andra meddelanden i samma begäran misslyckas.
+Jämfört med att skicka en begäran med ett enda meddelande finns det ytterligare faktorer att tänka på när du skickar en HTTP-begäran med flera meddelanden, till exempel: hur du identifierar när data inte har kunnat skickas, vilka specifika meddelanden som inte har kunnat skickas och hur de kan hämtas, och vad som händer med data som lyckas när andra meddelanden i samma begäran misslyckas.
 
 Innan du fortsätter med den här självstudiekursen rekommenderar vi att du först granskar guiden [hämtar misslyckade batchar](../quality/retrieve-failed-batches.md).
 
