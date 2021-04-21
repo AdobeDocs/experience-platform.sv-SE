@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;Azure Table Storage;azure table storage;ats;ATS
 solution: Experience Platform
 title: Skapa en Azure Table Storage Source-anslutning i gränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Azure Table Storage-källanslutning med Adobe Experience Platform-gränssnittet.
+exl-id: 045cb954-e3e1-439d-a3cd-170d688dfbc8
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '477'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL Azure Table Storage]-källanslutning i användargränssnittet
 
