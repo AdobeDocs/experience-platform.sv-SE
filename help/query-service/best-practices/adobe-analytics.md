@@ -2,22 +2,22 @@
 keywords: Experience Platform;home;populära topics;query service;Query service;sample queries;sample query;adobe analytics;
 solution: Experience Platform
 title: Exempelfrågor om Adobe Analytics-data
-topic: queries
+topic-legacy: queries
 description: Data från utvalda Adobe Analytics rapportsviter omvandlas till XDM Experience Events och hämtas till Adobe Experience Platform som datauppsättningar för dig. I det här dokumentet beskrivs ett antal användningsfall där Adobe Experience Platform Query Service använder dessa data, och de inkluderade exempelfrågorna bör fungera med dina Adobe Analytics-datauppsättningar.
+exl-id: 96da3713-c7ab-41b3-9a9d-397756d9dd07
 translation-type: tm+mt
-source-git-commit: 97dc0b5fb44f5345fd89f3f56bd7861668da9a6e
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1021'
 ht-degree: 1%
 
 ---
 
-
 # Exempelfrågor om Adobe Analytics-data
 
 Data från utvalda Adobe Analytics-rapportsviter omvandlas till data som överensstämmer med klassen [!DNL XDM ExperienceEvent] och hämtas till Adobe Experience Platform som datauppsättningar.
 
-I det här dokumentet beskrivs ett antal användningsfall där Adobe Experience Platform [!DNL Query Service] använder dessa data, inklusive exempelfrågor, bör fungera med dina Adobe Analytics-datauppsättningar. Mer information om mappning till [Analysfältsmappning](../../sources/connectors/adobe-applications/mapping/analytics.md) finns i dokumentationen om [!DNL Experience Events]Analysfältsmappning.
+Det här dokumentet innehåller en översikt över ett antal användningsfall där Adobe Experience Platform [!DNL Query Service] använder dessa data, inklusive exempelfrågor som ska fungera med dina Adobe Analytics-datauppsättningar. Mer information om mappning till [Analysfältsmappning](../../sources/connectors/adobe-applications/mapping/analytics.md) finns i dokumentationen om [!DNL Experience Events]Analysfältsmappning.
 
 ## Komma igång
 
@@ -197,7 +197,7 @@ LIMIT 20
 
 ### Konverteringssyntax
 
-En annan typ av försäljningsvariabel som finns i Adobe Analytics är konverteringssyntax. Med produktsyntax samlas värdet in samtidigt som produkten, men detta kräver att data finns på samma sida. Det finns scenarier där data förekommer på en sida före konverteringen eller en händelse av intresse som är relaterad till produkten. Ta till exempel ett exempel i produktsökningsmetodens användningsfall.
+En annan typ av försäljningsvariabel som finns i Adobe Analytics är konverteringssyntax. Med produktsyntax samlas värdet in samtidigt som produkten, men detta kräver att data finns på samma sida. Det finns scenarier där data förekommer på en sida före konverteringen eller den händelse av intresse som är relaterad till produkten. Ta till exempel ett exempel i produktsökningsmetodens användningsfall.
 
 1. En användare utför och söker internt efter &quot;vinterhatt&quot;, vilket ställer in funktionen för konverteringssyntax på Merchandising eVar6 till &quot;intern sökning:vinterhatt&quot;
 2. Användaren klickar på&quot;våffelsbeanie&quot; och hamnar på produktinformationssidan.\
@@ -213,10 +213,10 @@ En annan typ av försäljningsvariabel som finns i Adobe Analytics är konverter
 
 Vid rapportering kommer order, intäkter, produktvisningar och kundvagnstillägg att rapporteras mot eVar 6 och anpassas till den bundna produktens aktivitet.
 
-| eVar6 (produktsökningsmetod) | omsättning | order | produktvyer | kundvagn lägger till |
+| eVar6 (produktsökningsmetod) | intäkt | order | produktvyer | kundvagn lägger till |
 | ------------------------------ | ------- | ------ | ------------- | ----- |
-| intern sökning:sommarskjorta | 19,99 | 1 | 3 | 3 |
-| intern sökning:vintertid | 12,99 | 3 | 3 | 1 |
+| intern sökning:sommarskjorta | 19,99 | 1 | 1 | 3 |
+| intern sökning:vintertid | 12,99 | 1 | 3 | 3 |
 
 Mer information om hur du använder konverteringssyntaxen finns i Adobe Analytics-dokumentationen om [implementering av eVars med konverteringssyntax](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar-merchandising.html?lang=en#implement-using-conversion-variable-syntax).
 
