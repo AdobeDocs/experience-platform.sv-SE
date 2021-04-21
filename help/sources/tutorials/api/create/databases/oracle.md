@@ -1,18 +1,18 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Oracle;oracle
 solution: Experience Platform
-title: Skapa en Oracle Source Connection med API:t för Flow Service
-topic: overview
+title: Skapa en Oraclena källanslutning med API:t för flödestjänsten
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Oracle till Experience Platform med API:t för Flow Service.
+exl-id: b1cea714-93ff-425f-8e12-6061da97d094
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '536'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL Oracle]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
@@ -38,7 +38,7 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 | `connectionString` | Anslutningssträngen som används för att ansluta till [!DNL Oracle]. Anslutningssträngsmönstret [!DNL Oracle] är: `Host={HOST};Port={PORT};Sid={SID};User Id={USERNAME};Password={PASSWORD}`. |
 | `connectionSpec.id` | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikationens ID för [!DNL Oracle] är `d6b52d86-f0f8-475f-89d4-ce54c8527328`. |
 
-Mer information om hur du kommer igång finns i [det här Oracle-dokumentet](https://docs.oracle.com/database/121/ODPNT/featConnecting.htm#ODPNT199).
+Mer information om hur du kommer igång finns i [det här Oraclet dokument](https://docs.oracle.com/database/121/ODPNT/featConnecting.htm#ODPNT199).
 
 ### Läser exempel-API-anrop
 
