@@ -1,16 +1,16 @@
 ---
 keywords: Experience Platform;hemmabruk;populära ämnen;CJA;reseanalys;kundreseanalys;kampanjsamordning;orkestrering;kundresa;kundresa;resesamordning;arbetsflöde
 title: Dokumentation för programtjänster
-topic: overview
+topic-legacy: overview
 description: Adobe Experience Platform-dokumentation finns i flera format, inklusive översikter, självstudiekurser och guider för både användargränssnittet och API. Här följer en kort beskrivning av de vanligaste dokumentationstyperna som är tillgängliga för Experience Platform.
+exl-id: 24fdb183-f75b-40e0-828e-9dd49422a7b1
 translation-type: tm+mt
-source-git-commit: 2dbd92efbd992b70f4f750b09e9d2e0626e71315
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '100'
 ht-degree: 0%
 
 ---
-
 
 # Dokumentation för programtjänster
 
