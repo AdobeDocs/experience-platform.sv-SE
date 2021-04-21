@@ -2,17 +2,17 @@
 keywords: Experience Platform;JupyterLab;recept;anteckningsböcker;Data Science Workspace;populära topics;create recept
 solution: Experience Platform
 title: Skapa ett recept med Jupyter-anteckningsböcker
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: Den här självstudiekursen går igenom två huvudavsnitt. Först skapar du en maskininlärningsmodell med hjälp av en mall i JupyterLab Notebook. Därefter ska du använda anteckningsboken för att hämta arbetsflöden i JupyterLab för att skapa ett recept i arbetsytan Data Science.
+exl-id: d3f300ce-c9e8-4500-81d2-ea338454bfde
 translation-type: tm+mt
-source-git-commit: 9d84fc1eb898020ed4b154c091fcc9fc4933c7de
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '2347'
+source-wordcount: '2345'
 ht-degree: 0%
 
 ---
-
 
 # Skapa ett recept med Jupyter Notebooks
 
@@ -500,5 +500,3 @@ Om du vill fortsätta lära dig hur du arbetar med resurser i [!DNL Data Science
 Följande video har utformats för att ge stöd för din förståelse för att bygga och driftsätta modeller.
 
 >[!VIDEO](https://video.tv.adobe.com/v/30575?quality=12&enable10seconds=on&speedcontrol=on)
-
-
