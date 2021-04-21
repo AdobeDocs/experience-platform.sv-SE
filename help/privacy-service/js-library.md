@@ -2,20 +2,20 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Översikt över JavaScript-biblioteket Adobe Privacy
-topic: overview
+topic-legacy: overview
 description: Med Adobe Privacy JavaScript Library kan du hämta registrerade identiteter för användning i Privacy Service.
+exl-id: 757bf69e-25bf-4ef9-9787-3e74b213908a
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '944'
 ht-degree: 4%
 
 ---
 
-
 # Översikt över JavaScript-biblioteket Adobe Privacy
 
-Som personuppgiftsbiträde behandlar Adobe personuppgifter i enlighet med ditt företags tillstånd och instruktioner. Som personuppgiftsansvarig bestämmer du vilka personuppgifter Adobe behandlar och lagrar för din räkning. Beroende på vilken information du väljer att skicka via Adobe Experience Cloud-lösningar kan Adobe lagra privat information som är tillämplig på sekretessregler som t.ex. [!DNL General Data Protection Regulation] (GDPR) och [!DNL California Consumer Privacy Act] (CCPA). Mer information om hur Experience Cloud lösningar samlar in privata data finns i dokumentet om [sekretess i Adobe Experience Cloud](https://www.adobe.com/privacy/marketing-cloud.html).
+Som personuppgiftsbiträde behandlar Adobe personuppgifter i enlighet med ditt företags tillstånd och instruktioner. Som personuppgiftsansvarig bestämmer du vilka personuppgifter Adobe behandlar och lagrar för din räkning. Beroende på vilken information du väljer att skicka via Adobe Experience Cloud-lösningar kan Adobe lagra privat information som är tillämplig på sekretessregler som t.ex. [!DNL General Data Protection Regulation] (GDPR) och [!DNL California Consumer Privacy Act] (CCPA). Mer information om hur Experience Cloud lösningar samlar in privata data finns i dokumentet om [sekretess i Adobe Experience Cloud](https://www.adobe.com/se/privacy/marketing-cloud.html).
 
 Med **Adobe Privacy JavaScript Library** kan personuppgiftsansvariga automatisera hämtningen av alla registrerade identiteter som genererats av [!DNL Experience Cloud]-lösningar för en specifik domän. Med hjälp av API:t från [Adobe Experience Platform Privacy Service](home.md) kan dessa identiteter sedan användas för att skapa åtkomst- och borttagningsbegäranden för privata data som tillhör de registrerade.
 
