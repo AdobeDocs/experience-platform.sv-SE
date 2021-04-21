@@ -2,17 +2,17 @@
 keywords: Experience Platform;home;populära topics;OData;odata;Generic Open Data Protocol
 solution: Experience Platform
 title: Skapa en allmän OData-källanslutning i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en allmän källanslutning till ett öppet dataprotokoll med hjälp av Adobe Experience Platform-gränssnittet.
+exl-id: aad6b6f7-622c-4ab6-bf6d-1221fe1132d1
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '451'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL Generic OData]-källanslutning i användargränssnittet
 
