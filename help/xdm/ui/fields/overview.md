@@ -3,15 +3,15 @@ keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experi
 solution: Experience Platform
 title: Definiera XDM-fält i användargränssnittet
 description: Lär dig hur du definierar XDM-fält i användargränssnittet för Experience Platform.
-topic: user guide
+topic-legacy: user guide
+exl-id: 2adb03d4-581b-420e-81f8-e251cf3d9fb9
 translation-type: tm+mt
-source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1236'
 ht-degree: 3%
 
 ---
-
 
 # Definiera XDM-fält i användargränssnittet
 
