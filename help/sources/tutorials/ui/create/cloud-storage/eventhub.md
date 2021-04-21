@@ -7,18 +7,15 @@ type: Tutorial
 description: Lär dig hur du skapar en Azure Event Hubs-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 7e67e213-8ccb-4fa5-b09f-ae77aba8614c
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d6f1521470b8dc630060584189690545c724de6b
 workflow-type: tm+mt
-source-wordcount: '476'
+source-wordcount: '460'
 ht-degree: 1%
 
 ---
 
-# Skapa en [!DNL Azure Event Hubs]-källanslutning i användargränssnittet
 
->[!NOTE]
->
-> [!DNL Azure Event Hubs]-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
+# Skapa en [!DNL Azure Event Hubs]-källanslutning i användargränssnittet
 
 Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudien beskrivs stegen för hur du autentiserar en [!DNL Azure Event Hubs]-källkoppling (kallas nedan &quot;[!DNL Event Hubs]&quot;) med hjälp av användargränssnittet i [!DNL Platform].
 
