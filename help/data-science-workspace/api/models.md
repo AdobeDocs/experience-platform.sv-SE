@@ -2,16 +2,16 @@
 keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;populära topics;models;sensei machine learning api
 solution: Experience Platform
 title: API-slutpunkt för modeller
-topic: Developer guide
+topic-legacy: Developer guide
 description: En modell är en instans av ett maskininlärningsrecept som är utbildat med historiska data och konfigurationer för att lösa ett affärsärende.
+exl-id: e66119a9-9552-497c-9b3a-b64eb3b51fcf
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '864'
 ht-degree: 1%
 
 ---
-
 
 # Modeller-slutpunkt
 
@@ -474,5 +474,3 @@ Ett lyckat svar returnerar en nyttolast som innehåller ett JSON-objekt med data
     "deprecated": false
 }
 ```
-
-
