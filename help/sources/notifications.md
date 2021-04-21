@@ -1,17 +1,17 @@
 ---
 keywords: Experience Platform;hemmabruk;populära ämnen; meddelanden
-description: Genom att prenumerera på Adobe I/O Events kan du använda webhooks för att få meddelanden om flödeskörningsstatus för dina källanslutningar. Dessa meddelanden innehåller information om hur flödeskörningen lyckades eller om fel som bidragit till ett körningsfel.
+description: Genom att prenumerera på Adobe I/O Events kan du använda webbhooks för att få meddelanden om flödeskörningsstatus för dina källanslutningar. Dessa meddelanden innehåller information om hur flödeskörningen lyckades eller om fel som bidragit till ett körningsfel.
 solution: Experience Platform
 title: Flödeskörningsmeddelanden
-topic: overview
+topic-legacy: overview
+exl-id: 0f1cde97-3030-4b8e-be08-21f64e78b794
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '771'
 ht-degree: 1%
 
 ---
-
 
 # Flödeskörningsmeddelanden
 
@@ -19,7 +19,7 @@ Med Adobe Experience Platform kan data hämtas från externa källor samtidigt s
 
 [[!DNL Adobe Experience Platform Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) används för att samla in och centralisera kunddata från olika källor inom  [!DNL Platform]. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-Med Adobe I/O Events kan du prenumerera på händelser och använda webhooks för att få meddelanden om status för dina flödeskörningar. Dessa meddelanden innehåller information om hur flödeskörningen lyckades eller om fel som bidragit till ett körningsfel.
+Med Adobe I/O Events kan du prenumerera på händelser och använda webbhooks för att få meddelanden om status för dina flödeskörningar. Dessa meddelanden innehåller information om hur flödeskörningen lyckades eller om fel som bidragit till ett körningsfel.
 
 Det här dokumentet innehåller anvisningar om hur du prenumererar på händelser, registrerar webhooks och får meddelanden som innehåller information om statusen för dina flödeskörningar.
 
