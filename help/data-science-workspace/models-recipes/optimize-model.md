@@ -2,17 +2,17 @@
 keywords: Experience Platform;optimera;modell;Data Science Workspace;populära ämnen;modellinsikter
 solution: Experience Platform
 title: Optimera en modell med Model Insights Framework
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: Model Insights Framework förser datavetenskaparen med verktyg i Data Science Workspace som gör snabba och välgrundade val för optimala maskininlärningsmodeller baserade på experiment.
+exl-id: f989a3f1-6322-47c6-b7d6-6a828766053f
 translation-type: tm+mt
-source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1265'
 ht-degree: 0%
 
 ---
-
 
 # Optimera en modell med Model Insights-ramverket
 
@@ -58,7 +58,7 @@ evaluation.predictionColumn=prediction
 training.evaluate=true
 ```
 
-När en utvärderingsklass har aktiverats beräknas ett antal värden som standard under kursen. Standardvärden kan deklareras explicit genom att lägga till följande rad i `application.properties`.
+När en utvärderingsklass har aktiverats beräknas ett antal mätvärden under utbildning som standard. Standardvärden kan deklareras explicit genom att lägga till följande rad i `application.properties`.
 
 ```scala
 evaluation.metrics.com=com.adobe.platform.ml.impl.Constants.DEFAULT
@@ -154,7 +154,7 @@ Denna [applicationEvaluator.R](https://github.com/adobe/experience-platform-dsw-
 - Datakivering/funktionsutveckling
 - Hämta sparad modell och utvärdera
 
-Data läses först in till en datauppsättning från en källa enligt definitionen i [retail.config.json](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/R/Retail%20-%20GradientBoosting/retail.config.json). Därifrån rensas och konstrueras data för att passa maskininlärningsmodellen. Slutligen används modellen för att göra en förutsägelse med hjälp av vår datamängd och med utgångspunkt från de förväntade värdena och faktiska värdena beräknas mätvärdena. I det här fallet definieras MAPE, MAE och RMSE och returneras i `metrics`-objektet.
+Data läses först in till en datauppsättning från en källa enligt definitionen i [retail.config.json](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/R/Retail%20-%20GradientBoosting/retail.config.json). Därifrån rensas och konstrueras data för att passa maskininlärningsmodellen. Slutligen används modellen för att göra en förutsägelse med hjälp av vår datamängd, och med utgångspunkt i de förväntade värdena och de faktiska värdena beräknas mätvärdena. I det här fallet definieras MAPE, MAE och RMSE och returneras i `metrics`-objektet.
 
 ## Använda fördefinierade mätvärden och visualiseringsdiagram
 
