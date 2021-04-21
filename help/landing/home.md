@@ -2,16 +2,16 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;CJA;reseanalys;kundreseanalys;kampanjsamordning;orkestrering;kundresa;resa;resesamordning;kapacitet;region
 solution: Experience Platform
 title: Adobe Experience Platform - översikt
-topic: getting started
+topic-legacy: getting started
 description: Med Adobe Experience Platform kan man centralisera och standardisera kunddata innan man använder datavetenskap och maskininlärning för att dramatiskt förbättra utformningen och leveransen av avancerade, personaliserade upplevelser.
+exl-id: edcce353-338a-440e-99eb-a64e2abca579
 translation-type: tm+mt
-source-git-commit: 5575d5e45bddcc007dcf78720cd7a7e20475f78c
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '459'
 ht-degree: 1%
 
 ---
-
 
 # Adobe Experience Platform - översikt
 
@@ -50,7 +50,7 @@ Gå till startsidan för [Experience Platform självstudiekurser](https://www.ad
    Lär dig grunderna i att arbeta med [!DNL Platform] API:er.
 
 * [**API-referensdokument**](https://www.adobe.com/go/platform-api-reference-en)\
-   Upptäck [!DNL Experience Platform] API:er, inklusive rubriker, parametrar, exempelbegäranden och svar.<br/>*Dessa dokument lagras på Adobe I/O.*
+   Upptäck [!DNL Experience Platform] API:er, inklusive rubriker, parametrar, exempelbegäranden och svar.<br/>*Dessa dokument ligger på Adobe I/O.*
 
 * [**Ordlista**](glossary.md)\
    Se Adobe Experience Platform terminologi.
