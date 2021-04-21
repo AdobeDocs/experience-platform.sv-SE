@@ -2,16 +2,16 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;segmentering;segmentering;segmenttjänst;segment;segment;segment;segment;segment
 solution: Experience Platform
 title: Översikt över segmenteringstjänsten
-topic: overview
+topic-legacy: overview
 description: Läs om Adobe Experience Platform segmenteringstjänst och vilken roll den spelar i plattformens ekosystem.
+exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
 translation-type: tm+mt
-source-git-commit: eff833f20eba4e51579a43fbb98c1e2333e326ef
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1581'
+source-wordcount: '1580'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL Segmentation Service] översikt
 
