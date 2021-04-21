@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;Allmän OData;generiska data
 solution: Experience Platform
 title: Skapa en allmän OData-källanslutning med API:t för Flow Service
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter allmänna OData till Adobe Experience Platform med API:t för Flow Service.
+exl-id: 45b302cb-1a43-4fab-a8a2-cb4e1ee129f9
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '546'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL Generic OData]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
