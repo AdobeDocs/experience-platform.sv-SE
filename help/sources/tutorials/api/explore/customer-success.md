@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;cs;CS;customer success system
 solution: Experience Platform
 title: Utforska ett Customer Success System med API:t för Flow Service
-topic: overview
+topic-legacy: overview
 description: I den här självstudien används API:t för Flow Service för att utforska system för Customer Success (CS).
+exl-id: 453be69d-3d72-4987-81cd-67fa3be7ee59
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '596'
 ht-degree: 1%
 
 ---
-
 
 # Utforska ett lyckat kundsystem med hjälp av API:t [!DNL Flow Service]
 
