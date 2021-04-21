@@ -2,16 +2,16 @@
 keywords: Experience Platform;attribuering ai;åtkomstpoäng;populära ämnen;nedladdningspoäng;attribueringspoäng;export;Exportera
 solution: Experience Platform, Intelligent Services
 title: Hämta bakgrundsmusik i Attribution AI
-topic: Downloading scores
+topic-legacy: Downloading scores
 description: Det här dokumentet är en guide för nedladdning av bakgrundsmusik för Attribution AI.
+exl-id: 8821e3fb-c520-4933-8eb7-0b0aa10db916
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1054'
 ht-degree: 0%
 
 ---
-
 
 # Hämta bakgrundsmusik i Attribution AI
 
