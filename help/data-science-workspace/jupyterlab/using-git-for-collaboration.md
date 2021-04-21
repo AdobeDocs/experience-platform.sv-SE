@@ -2,17 +2,17 @@
 keywords: Experience Platform;JupyterLab;notebooks;Data Science Workspace;populära topics;Git;Github
 solution: Experience Platform
 title: Samarbeta i JupyterLab med Git
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: Git är ett distribuerat versionshanteringssystem för att spåra ändringar i källkoden under programvaruutvecklingen. Git är förinstallerat i JupyterLab-miljön för Data Science Workspace.
+exl-id: d7b766f7-b97d-4007-bc53-b83742425047
 translation-type: tm+mt
-source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '281'
 ht-degree: 1%
 
 ---
-
 
 # Samarbeta i [!DNL JupyterLab] med [!DNL Git]
 
