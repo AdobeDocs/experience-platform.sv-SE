@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;Katalogtjänst;katalog api;appendix
 solution: Experience Platform
 title: API-handbok för katalogtjänst
-topic: developer guide
+topic-legacy: developer guide
 description: Det här dokumentet innehåller ytterligare information som kan hjälpa dig att arbeta med katalog-API:t i Adobe Experience Platform.
+exl-id: fafc8187-a95b-4592-9736-cfd9d32fd135
 translation-type: tm+mt
-source-git-commit: b395535cbe7e4030606ee2808eb173998f5c32e0
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '920'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL Catalog Service] API-guide, tillägg
 
