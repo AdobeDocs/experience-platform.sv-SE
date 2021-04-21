@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;Schemas;phoneNumber;xdm:phoneNumber;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
 title: Telefonnummerdatatyp
-topic: overview
+topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM för telefonnummer.
+exl-id: b84e48f9-bbb4-4b8b-9476-4bc1c455ecfd
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '204'
 ht-degree: 0%
 
 ---
-
 
 # [!UICONTROL Phone number] datatyp
 
