@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;protokollanslutning
 solution: Experience Platform
 title: Konfigurera ett dataflöde för en protokollkällanslutning i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en Adobe Experience Platform-datauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt protokollkonto.
+exl-id: 94631a78-14ea-41d7-876c-468634dfc6c1
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1400'
 ht-degree: 0%
 
 ---
-
 
 # Konfigurera ett dataflöde för en protokollanslutning i användargränssnittet
 
