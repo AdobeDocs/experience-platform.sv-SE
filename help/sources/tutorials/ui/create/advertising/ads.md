@@ -2,17 +2,17 @@
 keywords: Experience Platform;home;populära topics;Google AdWords;Google AdWords source connector;google adwords connector
 solution: Experience Platform
 title: Skapa en Google AdWords-källanslutning i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Google AdWords-källanslutning med Adobe Experience Platform-gränssnittet.
+exl-id: 33dd2857-aed3-4e35-bc48-1c756a8b3638
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '489'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL Google AdWords]-källanslutning i användargränssnittet
 
