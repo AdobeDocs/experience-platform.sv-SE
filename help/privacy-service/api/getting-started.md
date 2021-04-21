@@ -3,15 +3,15 @@ keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: API-handbok för Privacy Service
 description: Med Privacy Services-API:t kan utvecklare skapa och hantera kundförfrågningar för att få tillgång till eller ta bort sina personuppgifter mellan Experience Cloud-program, i enlighet med juridiska sekretessbestämmelser. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
-topic: developer guide
+topic-legacy: developer guide
+exl-id: c1d05e30-ef8f-4adf-87e0-1d6e3e9e9f9e
 translation-type: tm+mt
-source-git-commit: e649ab3da077cdd8e98562199b8bdece6108a572
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '761'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL Privacy Service] API-guide
 
