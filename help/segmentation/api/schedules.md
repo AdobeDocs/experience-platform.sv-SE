@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;scheman;schema;api;API;
 solution: Experience Platform
 title: API-slutpunkt för scheman
-topic: developer guide
+topic-legacy: developer guide
 description: Scheman är ett verktyg som kan användas för att automatiskt köra batchsegmenteringsjobb en gång om dagen.
+exl-id: 92477add-2e7d-4d7b-bd81-47d340998ff1
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1203'
 ht-degree: 1%
 
 ---
-
 
 # Slutpunkt för scheman
 
