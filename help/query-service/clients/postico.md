@@ -2,16 +2,16 @@
 keywords: Experience Platform;home;populära topics;Query service;query service;postico;Postico;connect to query service;
 solution: Experience Platform
 title: Anslut position till frågetjänst
-topic: connect
+topic-legacy: connect
 description: Det här dokumentet innehåller länken för installation av klienten Postico för Adobe Experience Platform Query Service.
+exl-id: a19abfc8-b431-4e57-b44d-c6130041af4a
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '251'
 ht-degree: 0%
 
 ---
-
 
 # Anslut [!DNL Postico] till frågetjänsten (Mac)
 
