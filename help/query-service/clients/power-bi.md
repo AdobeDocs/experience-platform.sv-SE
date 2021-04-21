@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;frågetjänst;Query Service;Power BI;power bi;connect to query service;
 solution: Experience Platform
 title: Anslut Power BI till frågetjänst
-topic: connect
+topic-legacy: connect
 description: Det här dokumentet går igenom stegen för att ansluta Power BI med Adobe Experience Platform Query Service.
+exl-id: 8fcd3056-aac7-4226-a354-ed7fb8fe9ad7
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '464'
 ht-degree: 0%
 
 ---
-
 
 # Anslut [!DNL Power BI] till frågetjänsten (PC)
 
