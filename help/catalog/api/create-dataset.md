@@ -2,13 +2,13 @@
 keywords: Experience Platform;hem;populära ämnen;datauppsättning;datauppsättning;skapa en datauppsättning;skapa datauppsättning;aktivera datauppsättning
 solution: Experience Platform
 title: Skapa en datauppsättning i API:t
-topic: developer guide
+topic-legacy: developer guide
 description: Det här dokumentet beskriver hur du skapar ett datauppsättningsobjekt i katalogtjänstens API.
 exl-id: f3e5de7f-1781-4898-ac42-063eb51e661a
 translation-type: tm+mt
-source-git-commit: 727c9dbd87bacfd0094ca29157a2d0283c530969
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '256'
+source-wordcount: '254'
 ht-degree: 0%
 
 ---
