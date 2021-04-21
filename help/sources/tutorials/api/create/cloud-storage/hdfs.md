@@ -1,18 +1,18 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Apache Hadoop Distributed File System;Apache hadoop;hdfs;HDFS
+keywords: Experience Platform;hem;populära ämnen;Apache Hadoop Distributed File System;Apache-hadoop;hdfs;HDFS
 solution: Experience Platform
 title: Skapa en källanslutning för Apache HDFS med API:t för Flow Service
-topic: overview
+topic-legacy: overview
 type: Tutorial
-description: Lär dig hur du ansluter ett Hadoop-distribuerat filsystem från Apache till Adobe Experience Platform med API:t för Flow Service.
+description: Lär dig hur du ansluter ett Apache Hadoop Distributed File System till Adobe Experience Platform med API:t för Flow Service.
+exl-id: 04fa65db-073c-48e1-b981-425185ae08aa
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '565'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL Apache] HDFS-källanslutning med hjälp av API:t [!DNL Flow Service]
 
@@ -22,7 +22,7 @@ ht-degree: 1%
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor och föra in dem i Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
-I den här självstudien används API:t [!DNL Flow Service] för att vägleda dig genom stegen för att ansluta ett Hadoop-distribuerat filsystem (nedan kallat &quot;HDFS&quot;) till [!DNL Experience Platform].
+I den här självstudien används API:t [!DNL Flow Service] för att vägleda dig genom stegen för att ansluta ett Apache Hadoop Distributed File System (nedan kallat &quot;HDFS&quot;) till [!DNL Experience Platform].
 
 ## Komma igång
 
