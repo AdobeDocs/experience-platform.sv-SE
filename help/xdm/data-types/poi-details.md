@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fält;scheman;scheman;scheman;poi;poi details;punkt of interest;point of interest details;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
 title: Datatyp för intressepunktsinformation
-topic: overview
+topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över XDM-datatypen Point of Interest Details.
+exl-id: cab5463b-97a0-400d-a00c-0cd8bf9301a5
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '188'
 ht-degree: 3%
 
 ---
-
 
 # [!UICONTROL Point of interest details] datatyp
 
