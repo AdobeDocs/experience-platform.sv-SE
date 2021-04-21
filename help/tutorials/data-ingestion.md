@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Självstudiekurser om dataöverföring
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: Inmatning av data inkluderar batchinmatning, direktuppspelning och förtäring med hjälp av källanslutningar.
+exl-id: 51627acf-e90b-4911-aa54-4a59f3b6a8f9
 translation-type: tm+mt
-source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '497'
 ht-degree: 0%
 
 ---
-
 
 # Infoga data i [!DNL Experience Platform]
 
@@ -45,6 +45,3 @@ Med en datamängd och strömmande anslutningar på plats kan du strömma data fr
 ## Strömma flera meddelanden i en enda HTTP-begäran
 
 När du direktuppspelar data till Adobe Experience Platform kan det vara dyrt att ringa ett antal HTTP-anrop. I stället för att skapa 200 HTTP-begäranden med 1 kB-nyttolaster är det till exempel mycket effektivare att skapa 1 HTTP-begäran med 200 meddelanden på 1 kB vardera, med en enda nyttolast på 200 kB. När det används på rätt sätt är gruppering av flera meddelanden i en enda begäran ett utmärkt sätt att optimera data som skickas till [!DNL Experience Platform]. Om du vill lära dig hur du skickar flera meddelanden till [!DNL Experience Platform] inom en enskild HTTP-begäran med direktuppspelningsinmatning följer du självstudiekursen [Skicka flera meddelanden](../ingestion/tutorials/streaming-multiple-messages.md).
-
-
-
