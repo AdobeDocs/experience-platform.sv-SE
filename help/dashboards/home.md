@@ -1,17 +1,17 @@
 ---
 solution: Experience Platform
 title: Introduktion till Experience Platform Dashboards
-topic: overview
+topic-legacy: overview
 type: Documentation
-description: 'Utforska flera instrumentpaneler i Adobe Experience Platform för att visa viktig information om organisationens data, som de har hämtats in under dagliga ögonblicksbilder. '
+description: Utforska flera instrumentpaneler i Adobe Experience Platform för att visa viktig information om organisationens data, som de har hämtats in under dagliga ögonblicksbilder.
+exl-id: d56cb139-392d-4bbc-97ec-202a0c8a2863
 translation-type: tm+mt
-source-git-commit: d97fd09b382877608edf665d7559a684be00c0bb
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '273'
 ht-degree: 0%
 
 ---
-
 
 # (Beta) Översikt över instrumentpaneler {#dashboards}
 
