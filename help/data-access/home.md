@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;dataåtkomst;python sdk;spark sdk;data access api
 solution: Experience Platform
 title: Översikt över dataåtkomst
-topic: overview
+topic-legacy: overview
 description: Data Access stöder Adobe Experience Platform genom att tillhandahålla användarverktyg som fokuserar på att upptäcka och tillgängliggöra inkapslade plattformsdatauppsättningar.
+exl-id: 76e3585b-44df-412e-9ac3-aeca5f85d403
 translation-type: tm+mt
-source-git-commit: 37c1c98ccba50fa917acc5e93763294f4dde5c36
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '185'
 ht-degree: 1%
 
 ---
-
 
 # [!DNL Data Access] översikt
 
