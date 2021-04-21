@@ -1,16 +1,16 @@
 ---
 solution: Experience Platform
 title: Blandning av sekretess/personalisering/marknadsföring (samtycke)
-topic: overview
+topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över den blandning av sekretess-/personaliserings-/marknadsföringsinställningar (samtycke) som finns.
+exl-id: ec592102-a9d3-4cac-8b94-58296a138573
 translation-type: tm+mt
-source-git-commit: 8c5ab298bad69305358ae961ebaf7836a90a0eaa
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '2239'
+source-wordcount: '2238'
 ht-degree: 0%
 
 ---
-
 
 # [!UICONTROL Privacy/Personalization/Marketing Preferences (Consents)] blanda
 
