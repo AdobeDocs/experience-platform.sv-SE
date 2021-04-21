@@ -2,16 +2,16 @@
 keywords: Experience Platform;home;populära topics;query service;api guide;connection parameters;Query service;
 solution: Experience Platform
 title: API-slutpunkt för anslutningsparametrar
-topic: connection parameters
+topic-legacy: connection parameters
 description: Du kan hämta anslutningsparametrar för användning av den interaktiva tjänsten genom att göra en GET-förfrågan till slutpunkten /connection_parameters.
+exl-id: 1667f4a5-e6e5-41e9-8f9d-6d2c63c7d7d6
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '148'
 ht-degree: 0%
 
 ---
-
 
 # Slutpunkt för anslutningsparametrar
 
