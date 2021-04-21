@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;aktivera datauppsättning;datauppsättning;datauppsättning
 solution: Experience Platform
 title: Användargränssnittshandbok för datauppsättningar
-topic: datasets
+topic-legacy: datasets
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
+exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
 translation-type: tm+mt
-source-git-commit: fc493a207e305887e798238ba6883f4934c5cba5
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1084'
+source-wordcount: '1083'
 ht-degree: 0%
 
 ---
-
 
 # Användargränssnittshandbok för datauppsättningar
 
