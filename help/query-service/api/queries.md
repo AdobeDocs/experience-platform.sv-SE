@@ -2,16 +2,16 @@
 keywords: Experience Platform;home;populära topics;query service;api guide;queries;query;Query service;
 solution: Experience Platform
 title: Frågar API-slutpunkt
-topic: queries
+topic-legacy: queries
 description: Följande avsnitt går igenom anrop som du kan göra med slutpunkten /queries i API:t för frågetjänsten.
+exl-id: d6273e82-ce9d-4132-8f2b-f376c6712882
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '676'
 ht-degree: 0%
 
 ---
-
 
 # Frågeslutpunkt
 
