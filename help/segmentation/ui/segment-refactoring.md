@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;segmentbyggare;Segmentbyggare
 solution: Experience Platform
 title: Användargränssnittshandbok för tidsbegränsningar för motverkad segmentering
-topic: ui guide
-description: 'I Segment Builder finns en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper. '
+topic-legacy: ui guide
+description: I Segment Builder finns en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
+exl-id: 3a352d46-829f-4a58-b676-73c3147f792c
 translation-type: tm+mt
-source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '259'
 ht-degree: 0%
 
 ---
-
 
 # Omfaktorisering av tidsbegränsningar
 
