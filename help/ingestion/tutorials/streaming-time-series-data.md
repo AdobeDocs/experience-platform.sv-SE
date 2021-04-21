@@ -2,14 +2,14 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;direktuppspelning;intag;tidsseriedata;data från strömtidsserier;
 solution: Experience Platform
 title: Strömma data i tidsserier med API:er för strömmande inmatning
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform datainmatningstjänst.
 exl-id: 720b15ea-217c-4c13-b68f-41d17b54d500
 translation-type: tm+mt
-source-git-commit: 727c9dbd87bacfd0094ca29157a2d0283c530969
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1313'
+source-wordcount: '1312'
 ht-degree: 0%
 
 ---
