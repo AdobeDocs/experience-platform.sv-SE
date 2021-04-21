@@ -3,15 +3,15 @@ keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experi
 solution: Experience Platform
 title: Översikt över schemaanvändargränssnittet
 description: Den här översikten beskriver de viktigaste funktionerna i arbetsytan Scheman i Experience Platform.
-topic: user guide
+topic-legacy: user guide
+exl-id: b6e089ce-cf9e-4150-92ab-368382a75049
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '287'
 ht-degree: 2%
 
 ---
-
 
 # [!UICONTROL Schemas] Översikt över användargränssnittet
 
