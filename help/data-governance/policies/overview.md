@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;modul;DULE
 solution: Experience Platform
 title: Översikt över dataanvändningsprinciper
-topic: policies
+topic-legacy: policies
 description: För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste dataanvändningsprinciper implementeras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom Experience Platform.
+exl-id: 1b372aa5-3e49-4741-82dc-5701a4bc8469
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1010'
 ht-degree: 0%
 
 ---
-
 
 # Översikt över policyer för dataanvändning
 
