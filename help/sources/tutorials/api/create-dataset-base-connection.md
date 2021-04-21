@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;Flödesanslutningstjänst för datauppsättning;Flödesanslutning
 solution: Experience Platform
 title: Skapa en Adobe Experience Platform-datauppsättningsbasanslutning med API:t för flödestjänsten
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du använder API:t för Flow Service för att skapa en datauppsättningsbaserad anslutning till Adobe Experience Platform.
+exl-id: 5e829f4a-954b-4011-a003-c42c7a0d5617
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '721'
 ht-degree: 0%
 
 ---
-
 
 # Skapa en [!DNL Experience Platform]-datauppsättningsbasanslutning med hjälp av API:t [!DNL Flow Service]
 
