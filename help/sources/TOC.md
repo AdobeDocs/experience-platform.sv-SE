@@ -5,9 +5,9 @@ breadcrumb-title: Source Connectors Guide
 user-guide-description: Hämta in data från olika källor eller struktur, etikett och förbättra redan inmatade data.
 feature: Dataintag, källor
 translation-type: tm+mt
-source-git-commit: fb24f7cf82038a38c2861bd84404531062e47485
+source-git-commit: 121e2f410acdcd6de3953c6063a15901c853dd07
 workflow-type: tm+mt
-source-wordcount: '606'
+source-wordcount: '610'
 ht-degree: 5%
 
 ---
@@ -79,6 +79,8 @@ ht-degree: 5%
       - [PayPal-anslutning](connectors/payments/paypal.md)
    - Protokoll {#protocols}
       - [Allmän OData-koppling](connectors/protocols/odata.md)
+   - Direktuppspelning {#streaming}
+      - [HTTP API-anslutning](connectors/streaming/http.md)
 - API-självstudiekurser {#api-tutorials}
    - Skapa en källanslutning {#create}
       - Reklam {#advertising}
