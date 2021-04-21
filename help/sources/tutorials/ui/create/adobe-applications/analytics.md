@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;Analyskällekontakt;Analyskontakt;Analyskälla;Analytics
 solution: Experience Platform
 title: Skapa en Adobe Analytics Source Connection i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
+exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '777'
 ht-degree: 0%
 
 ---
-
 
 # Skapa en Adobe Analytics-källanslutning i användargränssnittet
 
@@ -113,4 +113,3 @@ Följande video är tänkt att ge stöd för din förståelse av hur data import
 > Användargränssnittet [!DNL Platform] som visas i följande video är inaktuellt. Läs dokumentationen ovan för de senaste skärmbilderna och funktionerna i användargränssnittet.
 
 >[!VIDEO](https://video.tv.adobe.com/v/29687?quality=12&learn=on)
-
