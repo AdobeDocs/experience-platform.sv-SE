@@ -2,16 +2,16 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;inmatade data;felsökning;faq;Inmatning;batchförtäring;batchförtäring;
 solution: Experience Platform
 title: Felsökningsguide för batchinmatning
-topic: troubleshooting
-description: 'Den här dokumentationen hjälper dig att besvara vanliga frågor om Adobe Experience Platform API:er för inmatning av batchdata. '
+topic-legacy: troubleshooting
+description: Den här dokumentationen hjälper dig att besvara vanliga frågor om Adobe Experience Platform API:er för inmatning av batchdata.
+exl-id: 0a750d7e-a4ee-4a79-a697-b4b732478b2b
 translation-type: tm+mt
-source-git-commit: 089a4d517476b614521d1db4718966e3ebb13064
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1416'
 ht-degree: 0%
 
 ---
-
 
 # Felsökningsguide för batchimport
 
@@ -191,7 +191,7 @@ En batch kan i sin livscykel gå igenom följande lägen:
 | Inaktiv | x | Batchen befordrades, men har antingen återställts eller gått ut. Batchen kommer inte längre att vara tillgänglig för nedströmsförbrukning, men underliggande data kommer att vara Överordnad tills de har sparats, arkiverats eller på annat sätt tagits bort. |
 | Läser in |  | Klienten skriver för närvarande data för gruppen. Batchen är **inte** redo för befordran, just nu. |
 | Inläst |  | Klienten har slutfört skrivningen av data för batchen. Batchen är klar för befordran. |
-| Bevarad |  | Uppgifterna har tagits bort från Överordnad och i ett särskilt arkiv i Adobe Data Lake. |
+| Bevarad |  | Data har tagits bort från Överordnad och i ett särskilt arkiv i Adobe Data Lake. |
 | Mellanlagring |  | Klienten har signalerat batchen för befordran och data mellanlagras för förbrukning nedströms. |
 | Försöker igen |  | Klienten har signalerat batchen för befordran, men på grund av ett fel görs ett nytt försök att bearbeta batchen av en tjänst för batchövervakning. Det här läget kan användas för att tala om för kunderna att det kan dröja med inhämtningen av data. |
 | Stängd |  | Klienten har signalerat batchen för befordran, men efter `n` försök av en batchövervakningstjänst har batchkampanjen avstannat. |
