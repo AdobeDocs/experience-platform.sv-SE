@@ -1,21 +1,19 @@
 ---
 title: Integrering med Experience Cloud-program
 description: I den här videon får du en översikt över hur Adobe Experience Platform kan integreras med program och funktioner som Adobe Analytics, Adobe Target, Adobe Campaign, Adobe Experience Manager, kundattribut, målgruppsbibliotek och Experience Platform Launch.
-feature: platform
-topics: null
 kt: 4334
 audience: all
 doc-type: video
 activity: understand
 thumbnail: 32553.jpg
+exl-id: 022b1af7-7577-4e9d-bfb3-85eab3898ee3
 translation-type: tm+mt
-source-git-commit: 5575d5e45bddcc007dcf78720cd7a7e20475f78c
+source-git-commit: f12baaa9d4b37f1101792a4ae479b5a62893eb68
 workflow-type: tm+mt
 source-wordcount: '83'
 ht-degree: 0%
 
 ---
-
 
 # Integrering med Experience Cloud-program
 
