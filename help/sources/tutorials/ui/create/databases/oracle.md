@@ -1,18 +1,18 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Oracle DB;oracle db
 solution: Experience Platform
-title: Skapa en Oracle DB-källanslutning i användargränssnittet
-topic: overview
+title: Skapa en Oraclena DB-källanslutning i användargränssnittet
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Oracle DB-källanslutning med Adobe Experience Platform-gränssnittet.
+exl-id: 4ca6ecc6-0382-4cee-acc5-1dec7eeb9443
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '464'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL Oracle DB]-källanslutning i användargränssnittet
 
@@ -42,7 +42,7 @@ För att få åtkomst till ditt [!DNL Oracle DB]-konto på [!DNL Platform] måst
 | `connectionString` | Anslutningssträngen som används för att ansluta till [!DNL Oracle DB]. Anslutningssträngsmönstret [!DNL Oracle DB] är: `Host={HOST};Port={PORT};Sid={SID};User Id={USERNAME};Password={PASSWORD}`. |
 | `connectionSpec.id` | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikationens ID för [!DNL Oracle DB] är `d6b52d86-f0f8-475f-89d4-ce54c8527328`. |
 
-Mer information om hur du kommer igång finns i [det här Oracle-dokumentet](https://docs.oracle.com/database/121/ODPNT/featConnecting.htm#ODPNT199).
+Mer information om hur du kommer igång finns i [det här Oraclet](https://docs.oracle.com/database/121/ODPNT/featConnecting.htm#ODPNT199).
 
 ## Anslut ditt [!DNL Oracle DB]-konto
 
