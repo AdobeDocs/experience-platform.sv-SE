@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;Azure Data Explorer;data explorer;Data Explorer
 solution: Experience Platform
 title: Skapa en Azure Data Explorer Source-anslutning med API:t för Flow Service
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Azure Data Explorer till Adobe Experience Platform med API:t för Flow Service.
+exl-id: 1b17bbb0-1f7b-4d89-a158-ad269e6edf30
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '632'
 ht-degree: 0%
 
 ---
-
 
 # Skapa en [!DNL Azure Data Explorer]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
@@ -46,7 +46,7 @@ För att [!DNL Flow Service] ska kunna ansluta till [!DNL Data Explorer] måste 
 | `servicePrincipalKey` | Den unika tjänstens huvudnyckel som används för att ansluta till [!DNL Data Explorer]-databasen. |
 | `connectionSpec.id` | Den unika identifierare som krävs för att skapa en anslutning. Anslutningsspecifikationens ID för [!DNL Data Explorer] är `0479cc14-7651-4354-b233-7480606c2ac3`. |
 
-Mer information om hur du kommer igång finns i [det här Datan Explorer](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/management/access-control/how-to-authenticate-with-aad).
+Mer information om hur du kommer igång finns i [den här Datan Explorer](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/management/access-control/how-to-authenticate-with-aad).
 
 ### Läser exempel-API-anrop
 
