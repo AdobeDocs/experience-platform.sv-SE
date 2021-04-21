@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;schemas;scheman;betalningsartikel;datatyp;datatyp;datatyp;
 solution: Experience Platform
 title: Betalningsobjektets datatyp
-topic: overview
+topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM (Payment Item Experience Data Model).
+exl-id: d25a358b-73c1-468b-a9c5-808385689932
 translation-type: tm+mt
-source-git-commit: 8bbb062df47b6e94630626d0a89a179d759d922d
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '157'
 ht-degree: 2%
 
 ---
-
 
 # [!UICONTROL Payment Item] datatyp
 
