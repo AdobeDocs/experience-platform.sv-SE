@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;Kinesis;kines;Amazon Kinesis;amazon kinesis
 solution: Experience Platform
 title: Skapa en Amazon Kinesis-källanslutning med API:t för flödestjänsten
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Amazon Kinesis-konto med API:t för Flow Service.
+exl-id: 64da8894-12ac-45a0-b03e-fe9b6aa435d3
 translation-type: tm+mt
-source-git-commit: ed14fe464a4dc82f54902c8dc92fe00bc2a5381e
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '561'
+source-wordcount: '559'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL Amazon Kinesis]-källanslutning med API:t för Flow Service
 
