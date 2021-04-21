@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: API-slutpunkt för samtycke
-topic: developer guide
+topic-legacy: developer guide
 description: Lär dig hur du hanterar förfrågningar om kundsamtycke för Experience Cloud-program med Privacy Service-API:t.
+exl-id: ec505749-c0a9-4050-be56-4c0657807ec7
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '244'
 ht-degree: 0%
 
 ---
-
 
 # Slutpunkt för samtycke
 
