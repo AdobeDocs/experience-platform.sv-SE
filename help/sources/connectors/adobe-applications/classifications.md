@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;Adobe Analytics Classifications Data Connector
 solution: Experience Platform
 title: Adobe Analytics Source Connector för klassningsdata
-topic: overview
+topic-legacy: overview
 description: Lär dig hur du ansluter Analytics-klassificeringar till plattformen med användargränssnittet
+exl-id: c26002df-dce4-415e-93e9-268e0efebc9f
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '181'
 ht-degree: 0%
 
 ---
-
 
 # Adobe Analytics källanslutning för klassificeringsdata
 
