@@ -3,12 +3,12 @@ keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experi
 solution: Experience Platform
 title: API-slutpunkt för klasser
 description: Med slutpunkten /classes i API:t för schemaregister kan du programmässigt hantera XDM-klasser i ditt upplevelseprogram.
-topic: developer guide
+topic-legacy: developer guide
 exl-id: 7beddb37-0bf2-4893-baaf-5b292830f368
 translation-type: tm+mt
-source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1497'
+source-wordcount: '1495'
 ht-degree: 0%
 
 ---
