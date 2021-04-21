@@ -2,10 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Komma igång med Adobe Experience Platform
-topic: getting started
+topic-legacy: getting started
 description: I den här videon får du en snabb introduktion till Experience Platform och en översikt över de affärsutmaningar som programmet klarar av.
 translation-type: tm+mt
-source-git-commit: 5575d5e45bddcc007dcf78720cd7a7e20475f78c
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '49'
 ht-degree: 0%
