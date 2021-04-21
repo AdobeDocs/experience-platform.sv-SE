@@ -2,17 +2,17 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;efterlevnad av dataanvändning;framtvinga efterlevnad av dataanvändning;Segmenteringstjänst;segmentering;Segmentering;
 solution: Experience Platform
 title: Tvinga regelefterlevnad för dataanvändning för ett målgruppssegment med API:er
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att implementera efterlevnad av dataanvändning för målgruppssegment för kundprofiler i realtid med API:er.
+exl-id: 2299328c-d41a-4fdc-b7ed-72891569eaf2
 translation-type: tm+mt
-source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1362'
 ht-degree: 0%
 
 ---
-
 
 # Använd API:er för att säkerställa att data används korrekt för ett målgruppssegment
 
@@ -187,7 +187,7 @@ Ett lyckat svar returnerar information om sammanfogningsprincipen.
 
 >[!NOTE]
 >
-> I det här steget antas att du har minst en aktiv dataanvändningsprincip som förhindrar att specifika marknadsföringsåtgärder utförs på data som innehåller vissa etiketter. Om du inte har någon tillämpbar användarprofil för de datauppsättningar som utvärderas, ska du följa självstudiekursen [för att skapa en princip](../../data-governance/policies/create.md) innan du fortsätter med det här steget.
+> I det här steget antas att du har minst en aktiv dataanvändningsprincip som förhindrar att specifika marknadsföringsåtgärder utförs på data som innehåller vissa etiketter. Om du inte har någon tillämpbar användarprofil för de datauppsättningar som utvärderas, ska du följa självstudiekursen [för att skapa principer](../../data-governance/policies/create.md) innan du fortsätter med det här steget.
 
 När du har fått ID:n för sammanfogningsprincipens källdatauppsättningar kan du använda [API:t för principtjänsten](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) för att utvärdera dessa datauppsättningar mot specifika marknadsföringsåtgärder för att kontrollera om det finns brott mot dataanvändningspolicyn.
 
