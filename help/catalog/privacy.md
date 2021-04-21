@@ -1,17 +1,17 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;datasjösekretess;identitetsnamnutrymmen;sekretess;datasjön
+keywords: Experience Platform;hem;populära ämnen;datasjösekretess;identitetsnamnrymder;sekretess;datasjön
 solution: Experience Platform
 title: Behandling av sekretessförfrågningar i datasjön
-topic: overview
+topic-legacy: overview
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt juridiska och organisatoriska sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kunddata som lagras i Data Lake.
+exl-id: c06b0a44-be1a-4938-9c3e-f5491a3dfc19
 translation-type: tm+mt
-source-git-commit: a1103bfbf79f9c87bac5b113c01386a6fb8950e7
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1279'
 ht-degree: 0%
 
 ---
-
 
 # Behandling av sekretessförfrågningar i [!DNL Data Lake]
 
