@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;Microsoft SQL;microsoft sql;sql server;SQL server
 solution: Experience Platform
 title: Skapa en SQL Server-källanslutning med API:t för Flow Service
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till en Microsoft SQL Server med API:t för Flow Service.
+exl-id: 00455a61-c8c1-42f4-a962-fc16f7370cbd
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '609'
 ht-degree: 0%
 
 ---
-
 
 # Skapa en [!DNL Microsoft] SQL Server-källanslutning med hjälp av API:t [!DNL Flow Service]
 
