@@ -2,16 +2,16 @@
 keywords: Experience Platform;startsida;populära ämnen;Adobe Experience Platform;api guide;platform api guide;introduktion till plattform;utvecklarguide
 solution: Experience Platform
 title: Komma igång med Adobe Experience Platform API:er
-topic: api guide
+topic-legacy: api guide
 description: Adobe Experience Platform tillhandahåller API-tjänster som är nära kopplade till varandra. Den här handboken innehåller information om tillgängliga tjänster, nödvändiga huvuden för CRUD-åtgärder, felmeddelanden, Postman-samlingar och exempel på API-anrop.
+exl-id: a362bcb4-a908-43a8-abd3-0e1d21cb9117
 translation-type: tm+mt
-source-git-commit: 85d2ae5ccf1b27baaafe839f1d3f00d588abe4fc
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1427'
+source-wordcount: '1425'
 ht-degree: 0%
 
 ---
-
 
 # Komma igång med Adobe Experience Platform API:er
 
@@ -147,4 +147,3 @@ I det här dokumentet introducerades nödvändiga rubriker, tillgängliga guider
 Svar på vanliga frågor finns i [Felsökningsguiden för plattformen](troubleshooting.md).
 
 Om du vill konfigurera en Postman-miljö och utforska de tillgängliga Postman-samlingarna kan du läsa [Platform Postman guide](postman.md).
-
