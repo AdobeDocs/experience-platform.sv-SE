@@ -2,17 +2,17 @@
 keywords: Experience Platform;hemmabruk;populära ämnen;koppling för automatiserad marknadsföring
 solution: Experience Platform
 title: Konfigurera ett dataflöde för en källanslutning för marknadsföringsautomatisering i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en [!DNL Platform] datauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt automatiserade marknadsföringskonto.
+exl-id: 8d31fc2d-b952-44f7-98e7-f51b0acc19ed
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1418'
 ht-degree: 0%
 
 ---
-
 
 # Konfigurera ett dataflöde för en anslutning för automatiserad marknadsföring i användargränssnittet
 
