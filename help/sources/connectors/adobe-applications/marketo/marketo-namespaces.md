@@ -5,9 +5,9 @@ title: 'Marketo namnutrymmen '
 topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över anpassade namnutrymmen som krävs när du skapar en Marketo Engage-källkoppling.
 translation-type: tm+mt
-source-git-commit: f12baaa9d4b37f1101792a4ae479b5a62893eb68
+source-git-commit: bea6b35627b0e913c894c38ba9553085ba0aa26f
 workflow-type: tm+mt
-source-wordcount: '1176'
+source-wordcount: '1215'
 ht-degree: 1%
 
 ---
@@ -50,6 +50,10 @@ Namnutrymmet [!DNL Marketo] används i entitetens primära identitet.
 
 Följande tabell innehåller information om den underliggande uppsättningen för namnutrymmen [!DNL Marketo].
 
+>[!NOTE]
+>
+>Rulla åt vänster/höger för att visa hela innehållet i tabellen.
+
 | Visningsnamn | Identitetssymbol | Identitetstyp | Utfärdartyp | Typ av utfärdarentitet | Exempel på Munchkin-ID |
 | --- | --- | --- | --- | --- | --- |
 | `marketo_person_{MUNCHKIN_ID}` | autogenererad | `CROSS_DEVICE` | [!DNL Marketo] | `person` | `123-ABC-789` |
@@ -70,6 +74,10 @@ Om du prenumererar på [!DNL Salesforce]-integreringen används namnutrymmet [!D
 
 Följande tabell innehåller information om den underliggande uppsättningen för namnutrymmen [!DNL Salesforce].
 
+>[!NOTE]
+>
+>Rulla åt vänster/höger för att visa hela innehållet i tabellen.
+
 | Visningsnamn | Identitetssymbol | Identitetstyp | Utfärdartyp | Typ av utfärdarentitet | [!DNL Salesforce] Exempel på prenumerationsorganisations-ID |
 | --- | --- | --- | --- | --- | --- |
 | `salesforce_person_{SALESFORCE_ORGANIZATION_ID}` | autogenererad | `CROSS_DEVICE` | [!DNL Salesforce] | `person` | `00DA0000000Hz79` |
@@ -87,6 +95,10 @@ Om du prenumererar på [!DNL Dynamics]-integreringen används namnutrymmet [!DNL
 
 Följande tabell innehåller information om den underliggande uppsättningen för namnutrymmen [!DNL Dynamics].
 
+>[!NOTE]
+>
+>Rulla åt vänster/höger för att visa hela innehållet i tabellen.
+
 | Visningsnamn | Identitetssymbol | Identitetstyp | Utfärdartyp | Typ av utfärdarentitet | [!DNL Salesforce] Exempel på prenumerationsorganisations-ID |
 | --- | --- | --- | --- | --- | --- |
 | `microsoft_person_{DYNAMICS_ID}` | autogenererad | `CROSS_DEVICE` | [!DNL Microsoft] | `person` | `94cahe38-e51h-3d57-a9c6-2edklb7184mh` |
@@ -95,6 +107,8 @@ Följande tabell innehåller information om den underliggande uppsättningen fö
 | `microsoft_opportunity_contact_connection_{DYNAMICS_ID}` | autogenererad | `B2B_OPPORTUNITY_PERSON` | [!DNL Microsoft] | `opportunity relationship` | `94cahe38-e51h-3d57-a9c6-2edklb7184mh` |
 | `microsoft_campaign_{DYNAMICS_ID}` | autogenererad | `B2B_CAMPAIGN` | [!DNL Microsoft] | `campaign` | `94cahe38-e51h-3d57-a9c6-2edklb7184mh` |
 | `microsoft_campaign_member_{DYNAMICS_ID}` | autogenererad | `B2B_CAMPAIGN_MEMBER` | [!DNL Microsoft] | `campaign member` | `94cahe38-e51h-3d57-a9c6-2edklb7184mh` |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## [!DNL Marketo] scheman
 
