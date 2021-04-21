@@ -7,18 +7,14 @@ type: Tutorial
 description: Lär dig hur du skapar en Microsoft SQL Server-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: aba4e317-1c59-4999-a525-dba15f8d4df9
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: b2384bfe26fa3d111c342062b2d9bb37c4226857
 workflow-type: tm+mt
-source-wordcount: '458'
+source-wordcount: '442'
 ht-degree: 1%
 
 ---
 
 # Skapa en [!DNL Microsoft SQL Server]-källanslutning i användargränssnittet
-
->[!NOTE]
->
-> [!DNL Microsoft SQL Server]-kopplingen är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
 Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. I den här självstudien beskrivs stegen för hur du skapar en [!DNL Microsoft SQL Server]-källkoppling (kallas nedan &quot;[!DNL SQL Server]&quot;) med hjälp av användargränssnittet i [!DNL Platform].
 
