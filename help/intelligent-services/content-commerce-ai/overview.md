@@ -2,16 +2,16 @@
 keywords: Experience Cloud;komma igång;content and commerce ai;populära topics;Intelligent Services;ccai
 solution: Experience Cloud, Intelligent Services, Experience Platform
 title: Översikt över innehåll och handel med AI
-topic: Content and Commerce AI
+topic-legacy: Content and Commerce AI
 description: Innehåll och Commerce AI är en uppsättning AI-tjänster som gör att ni kan extrahera intelligenta funktioner från ert innehåll, ordna, effektivisera innehållsflödet och leverera mer slagkraftiga, personaliserade upplevelser till era kunder.
+exl-id: 65c527d7-b1bd-414f-aba1-8445676a7052
 translation-type: tm+mt
-source-git-commit: eb163949f91b0d1e9cc23180bb372b6f94fc951f
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '419'
 ht-degree: 0%
 
 ---
-
 
 # Översikt över innehålls- och handels-AI
 
@@ -54,4 +54,3 @@ Den övergripande visionen av AI för innehåll och handel är uppdelad i tre st
 - Använd kundens profil för att leverera förbättrade, personaliserade upplevelser, både i sessioner och för efterföljande upplevelser.
 - Använd innehållsfunktioner för att få insikter i kundernas beteenden som driver KPI:er.
 - Använd insikter om innehållet för att skapa, redigera och markera innehåll.
-
