@@ -2,16 +2,16 @@
 keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;populära topics;
 solution: Experience Platform
 title: API-handbok för Sensei Machine Learning
-topic: Developer guide
+topic-legacy: Developer guide
 description: I följande avsnitt finns referensinformation för olika funktioner i API:t Sensei Machine Learning.
+exl-id: 2c8d3ae8-7ad7-4ff6-8d6b-3a42d3eccdff
 translation-type: tm+mt
-source-git-commit: b395535cbe7e4030606ee2808eb173998f5c32e0
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '330'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL Sensei Machine Learning] API-guide, tillägg
 
