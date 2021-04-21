@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;filter;Filter;filterdata;Filterdata
 solution: Experience Platform
 title: Lista katalogobjekt
-topic: developer guide
+topic-legacy: developer guide
 description: Du kan hämta en lista över alla tillgängliga objekt av en viss typ via ett enda API-anrop. Det bästa sättet är att ta med filter som begränsar svarsstorleken.
+exl-id: 2c65e2bc-4ddd-445a-a52d-6ceb1153ccea
 translation-type: tm+mt
-source-git-commit: a1103bfbf79f9c87bac5b113c01386a6fb8950e7
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '242'
 ht-degree: 0%
 
 ---
-
 
 # Lista katalogobjekt
 
