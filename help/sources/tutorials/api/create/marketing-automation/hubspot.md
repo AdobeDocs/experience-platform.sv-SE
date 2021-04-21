@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;hubspot;Hubspot
 solution: Experience Platform
 title: Skapa en HubSpot-källanslutning med API:t för Flow-tjänsten
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till HubSpot med API:t för Flow Service.
+exl-id: a3e64215-a82d-4aa7-8e6a-48c84c056201
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '594'
 ht-degree: 0%
 
 ---
-
 
 # Skapa en [!DNL HubSpot]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
