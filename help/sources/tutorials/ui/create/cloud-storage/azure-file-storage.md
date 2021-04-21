@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;Azure File Storage;Azure File Storage Connector
 solution: Experience Platform
 title: Skapa en Azure File Storage Source-anslutning i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Azure File Storage-källanslutning med Adobe Experience Platform-gränssnittet.
+exl-id: 25d483b6-3975-4e80-9dbe-28b7b91cb063
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '467'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL Azure File Storage]-källanslutning i användargränssnittet
 
