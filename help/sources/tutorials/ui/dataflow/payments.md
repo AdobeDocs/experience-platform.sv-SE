@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;betalningskoppling
 solution: Experience Platform
 title: Konfigurera ett dataflöde för en betalningskällanslutning i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en Adobe Experience Platform-datauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt betalkonto.
+exl-id: 7355435b-c038-4310-b04a-8ac6b6723b9b
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1400'
 ht-degree: 0%
 
 ---
-
 
 # Konfigurera ett dataflöde för en betalningsanslutning i användargränssnittet
 
