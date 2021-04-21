@@ -2,16 +2,16 @@
 keywords: Experience Platform;utvecklarguide;Data Science Workspace;populära topics;Real-time Machine Learning;node reference;
 solution: Experience Platform
 title: Referens för Machine Learning-nod i realtid
-topic: Nodes reference
+topic-legacy: Nodes reference
 description: En nod är den grundläggande enhet som diagrammen är uppbyggda i. Varje nod utför en viss uppgift och kan kopplas ihop med hjälp av länkar för att skapa ett diagram som representerar en XML-pipeline. Uppgiften som utförs av en nod representerar en åtgärd för indata, till exempel en omvandling av data eller schema, eller en maskininlärningskonsekvens. Noden matar ut det omformade eller härledda värdet till nästa nod(er).
+exl-id: 67fe26b5-ce03-4a9a-ad45-783b2acf8d92
 translation-type: tm+mt
-source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '678'
 ht-degree: 0%
 
 ---
-
 
 # Real-time Machine Learning-nodreferens (alfa)
 
