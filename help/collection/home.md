@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;datainsamling;starta;web sdk
 solution: Experience Platform
 title: Översikt över datainsamling
-topic: overview
+topic-legacy: overview
 description: Läs mer om de olika tekniker som används för att samla in data om kundupplevelser i Adobe Experience Platform.
+exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
 translation-type: tm+mt
-source-git-commit: 629fe68029a9f45e45d5e2d238ffff455c7d6de6
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '321'
-ht-degree: 3%
+source-wordcount: '320'
+ht-degree: 2%
 
 ---
-
 
 # Översikt över datainsamling
 
