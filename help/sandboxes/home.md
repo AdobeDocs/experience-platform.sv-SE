@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;sandlåda;Sandlåda;testning;Testa
 solution: Experience Platform
 title: Översikt över sandlådor
-topic: overview
+topic-legacy: overview
 description: Sandlådor är virtuella partitioner i en enda instans av Experience Platform, vilket möjliggör smidig integrering med utvecklingsprocessen i era program för digitala upplevelser.
+exl-id: b760a979-8134-4a44-8433-ec6fb49bc508
 translation-type: tm+mt
-source-git-commit: 62ce5ac92d03a6e85589fc92e8d953f7fc1d8f31
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '755'
+source-wordcount: '754'
 ht-degree: 0%
 
 ---
-
 
 # Översikt över sandlådor
 
