@@ -1,16 +1,16 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetlig profil;Enhetlig profil;Enhetlig;Profil;rtcp;aktivera profil;Aktivera profil
 title: API-guide för kundprofil i realtid
-topic: guide
+topic-legacy: guide
 description: Med kundprofils-API:t i realtid kan utvecklare utforska och arbeta med profildata, inklusive visa profiler, skapa och uppdatera sammanfogningsprinciper, exportera eller sampla profildata och ta bort profildata som inte längre behövs eller som har lagts till av misstag. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
+exl-id: ce39b95b-cff7-46cf-a14c-8203017c8826
 translation-type: tm+mt
-source-git-commit: 24a5af0440f58b4e1db639ec971c4e1611f107d8
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '895'
+source-wordcount: '894'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL Real-time Customer Profile] API-guide
 
