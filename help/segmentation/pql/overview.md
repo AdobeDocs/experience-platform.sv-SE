@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;PQL;pql;profilfrågespråk
 solution: Experience Platform
 title: Profilfrågespråk (PQL) - översikt
-topic: developer guide
+topic-legacy: developer guide
 description: Den här guiden ger en allmän översikt över PQL, som beskriver riktlinjer för formatering och innehåller exempel på PQL-uttryck.
+exl-id: 4f7ab50e-89a3-42db-b74a-c6f2d86c9bcb
 translation-type: tm+mt
-source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '715'
 ht-degree: 1%
 
 ---
-
 
 # [!DNL Profile Query Language] (PQL) - översikt
 
