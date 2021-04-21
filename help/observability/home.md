@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;datumintervall
 solution: Experience Platform
 title: Insikter om observerbarhet - översikt
-topic: overview
+topic-legacy: overview
 description: Adobe Experience Platform observability Insights är ett RESTful API som gör att du kan visa viktig information om plattformsaktiviteter. Dessa mätvärden ger insikter i statistik om plattformsanvändning, hälsokontroller för plattformstjänster, historiska trender och resultatindikatorer för olika plattformsfunktioner.
+exl-id: ad9fcd1b-b649-47d8-93f3-4a3752480129
 translation-type: tm+mt
-source-git-commit: 37c1c98ccba50fa917acc5e93763294f4dde5c36
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '223'
 ht-degree: 1%
 
 ---
-
 
 # [!DNL Observability Insights] översikt
 
