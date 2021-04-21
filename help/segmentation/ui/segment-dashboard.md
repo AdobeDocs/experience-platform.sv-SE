@@ -2,16 +2,16 @@
 keywords: Experience Platform;profil;segment;segment;segmentering;användargränssnitt;gränssnitt;anpassning;segmentpanel;instrumentpanel
 title: Kontrollpanel för segment
 description: 'Adobe Experience Platform användargränssnitt erbjuder en kontrollpanel där du kan visa viktiga mätvärden för segment som skapats och underhålls av organisationen. '
-topic: guide
+topic-legacy: guide
 type: Documentation
+exl-id: 4a45bc3a-be5e-42b5-abd1-f0fb5795f5f4
 translation-type: tm+mt
-source-git-commit: 77c94fb4654f7dcb0eb4ba9af6972be439eca55e
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '147'
 ht-degree: 0%
 
 ---
-
 
 # (Beta) [!UICONTROL Segments] instrumentpanel {#segment-dashboard}
 
