@@ -3,16 +3,16 @@ keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;Experi
 solution: Experience Platform
 title: Definiera en relation mellan två scheman med API:t för schemaregister
 description: Det här dokumentet innehåller en självstudiekurs för att definiera en 1:1-relation mellan två scheman som definierats av din organisation med API:t för schemaregistret.
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
+exl-id: ef9910b5-2777-4d8b-a6fe-aee51d809ad5
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1337'
 ht-degree: 0%
 
 ---
-
 
 # Definiera en relation mellan två scheman med hjälp av API:t [!DNL Schema Registry]
 
@@ -135,7 +135,7 @@ POST /tenant/mixins
 
 **Begäran**
 
-Följande begäran skapar en ny blandning som lägger till ett `favoriteHotel`-fält under namnutrymmet `_{TENANT_ID}` för alla scheman som det läggs till i.
+Följande begäran skapar en ny blandning som lägger till ett `favoriteHotel`-fält under `_{TENANT_ID}`-namnområdet för alla scheman som det läggs till i.
 
 ```shell
 curl -X POST\
