@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;XDM;XDM system;XDM individuell profil;XDM ExperienceEvent;XDM Experience Event;experienceEvent;experience event event;mixins;mixin;mixin;mixin;experience event;XDM Experience Event;XDM ExperienceEvent;experienceEvent;experience event;XDM ExperienceEvent;experience data model;Experience data model;Experience data model;datamodell;datamodell;schemaregister;schemaregister;schemabibliotek;schema;postdata;tidsserie;tidsserie
 solution: Experience Platform
 title: XDM - systemöversikt
-topic: overview
-description: 'Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. Experience Data Model (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering. '
+topic-legacy: overview
+description: Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. Experience Data Model (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
+exl-id: 294d5f02-850f-47ea-9333-8b94a0bb291e
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1642'
 ht-degree: 0%
 
 ---
-
 
 # XDM - systemöversikt
 
@@ -119,4 +119,3 @@ Om du vill lära dig designprinciper och bästa metoder för att komponera schem
 Titta på följande video för att få en bättre förståelse för [!DNL XDM System] i [!DNL Experience Platform]:
 
 >[!VIDEO](https://video.tv.adobe.com/v/27105?quality=12&learn=on)
-
