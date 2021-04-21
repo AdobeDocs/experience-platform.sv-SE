@@ -1,11 +1,10 @@
 ---
-product: experience-platform
 audience: user
 user-guide-title: Versionsinformation för Adobe Experience Platform
 breadcrumb-title: Versionsinformation om plattformen
 user-guide-description: Versionsinformation varje månad för Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: fb4fb3ba79c6eb3a5439c119157a43b38dfd85dc
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '43'
 ht-degree: 53%
