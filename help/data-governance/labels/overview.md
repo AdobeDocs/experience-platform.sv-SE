@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;datastyrning;dataanvändningsetikett api;principtjänst api;dataanvändningsetiketter översikt
 solution: Experience Platform
 title: Översikt över dataanvändningsetiketter
-topic: labels
+topic-legacy: labels
 description: Med Adobe Experience Platform Data Governance kan ni använda dataanvändningsetiketter på datauppsättningar och fält och kategorisera varje dataanvändning enligt relaterade policyer för dataanvändning. Det här dokumentet innehåller en översikt över dataanvändningsetiketter i Experience Platform.
+exl-id: 4f113000-b9a1-4dfb-9502-6a5d08f0b26f
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '618'
 ht-degree: 0%
 
 ---
-
 
 # Översikt över etiketter för dataanvändning
 
