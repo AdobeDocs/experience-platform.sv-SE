@@ -6,18 +6,15 @@ topic-legacy: overview
 description: Lär dig hur du ansluter Azure Event Hubs till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: b4d4bc7f-2241-482d-a5c2-4422c31705bf
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 6dac267be93241bffb4eb5092a6e8da5093c63a6
 workflow-type: tm+mt
-source-wordcount: '249'
+source-wordcount: '226'
 ht-degree: 0%
 
 ---
 
-# (Beta) Azure Event Hubs-anslutning
 
->[!NOTE]
->
->Azure Event Hubs-kopplingen är i betaversion. Se [Källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
+# [!DNL Azure Event Hubs] koppling
 
 Adobe Experience Platform erbjuder systemspecifika anslutningsmöjligheter för molnleverantörer som AWS, [!DNL Google Cloud Platform] och [!DNL Azure]. Du kan överföra data från dessa system till [!DNL Platform].
 
