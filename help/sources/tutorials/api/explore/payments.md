@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;betalning
 solution: Experience Platform
 title: Utforska ett betalningssystem med API:t för flödestjänsten
-topic: overview
+topic-legacy: overview
 description: I den här självstudien används API:t för Flow Service för att utforska betalningsprogram.
+exl-id: 7d0231de-46c0-49df-8a10-aeb42a2c8822
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '597'
 ht-degree: 1%
 
 ---
-
 
 # Utforska ett betalningssystem med API:t [!DNL Flow Service]
 
