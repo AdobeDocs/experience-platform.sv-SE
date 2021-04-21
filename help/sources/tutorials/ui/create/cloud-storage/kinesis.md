@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;Amazon Kinesis;amazon kinesis;Kinesis;kinesis
 solution: Experience Platform
 title: Skapa en Amazon Kinesis Source Connection i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en källanslutning till Amazon Kinesis med Adobe Experience Platform gränssnitt.
+exl-id: 4152e48b-bec7-4b05-a172-eea71c9d9880
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '464'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL Amazon Kinesis]-källanslutning i användargränssnittet
 
