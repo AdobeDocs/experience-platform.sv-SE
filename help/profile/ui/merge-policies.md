@@ -1,17 +1,17 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;sammanfogningsprinciper;användargränssnitt;tidsstämpelordning;prioritet för datauppsättning
 title: Användargränssnittshandbok för kopplingsprofiler
-topic: guide
+topic-legacy: guide
 type: Documentation
-description: 'Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanför dessa data är sammanslagningsprinciper de regler som används av Platform för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy. '
+description: Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanför dessa data är sammanslagningsprinciper de regler som används av Platform för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy.
+exl-id: 0489217a-6a53-428c-a531-fd0a0e5bb71f
 translation-type: tm+mt
-source-git-commit: e6ecc5dac1d09c7906aa7c7e01139aa194ed662b
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '2873'
 ht-degree: 0%
 
 ---
-
 
 # Användargränssnittshandbok för sammanslagningsprinciper
 
@@ -104,7 +104,7 @@ Om du vill skapa en ny sammanfogningsprincip väljer du **[!UICONTROL Create mer
 
 ![Landningssidan för sammanslagningsprinciper med knappen Skapa markerad.](../images/merge-policies/create-new.png)
 
-På skärmen **[!UICONTROL New merge policy]** för arbetsflöde kan du ange viktig information för din nya sammanfogningsprincip genom en serie guidade steg.
+På skärmen **[!UICONTROL New merge policy]** för arbetsflöde kan du ange viktig information för den nya sammanfogningsprincipen genom en serie guidade steg.
 
 ![Det nya arbetsflödet för sammanfogningsprincip.](../images/merge-policies/create.png)
 
