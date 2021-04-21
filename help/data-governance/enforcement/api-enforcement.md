@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;Politiska frågor;Automatisk tillsyn;API-baserad tillämpning;datastyrning;testning
 solution: Experience Platform
 title: Tvinga dataanvändningsprinciper med hjälp av API:t för principtjänsten
-topic: guide
+topic-legacy: guide
 type: Tutorial
 description: När du har skapat dataanvändningsetiketter för dina data, och har skapat användningsprinciper för marknadsföringsåtgärder mot dessa etiketter, kan du använda principtjänstens API för att utvärdera om en marknadsföringsåtgärd som utförs på en datauppsättning eller en godtycklig grupp av etiketter utgör en policyöverträdelse. Du kan sedan konfigurera egna interna protokoll för att hantera policyöverträdelser baserat på API-svaret.
+exl-id: 093db807-c49d-4086-a676-1426426b43fd
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1006'
 ht-degree: 0%
 
 ---
-
 
 # Använd dataanvändningsprinciper med hjälp av API:t [!DNL Policy Service]
 
