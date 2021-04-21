@@ -1,17 +1,17 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Oracle;oracle
 solution: Experience Platform
-title: Oracle Source Connector - översikt
-topic: overview
+title: Översikt över Oracle Source Connector
+topic-legacy: overview
 description: Lär dig hur du ansluter Oracle till Adobe Experience Platform med API:er eller användargränssnittet.
+exl-id: be422cf8-fb24-48c7-8369-34f0f2ec95fc
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '207'
 ht-degree: 0%
 
 ---
-
 
 # (Beta) [!DNL Oracle]-koppling
 
@@ -31,11 +31,11 @@ Dokumentationen nedan innehåller information om hur du ansluter [!DNL Oracle] t
 
 ## Anslut [!DNL Oracle] till [!DNL Platform] med API:er
 
-- [Skapa en Oracle-källanslutning med API:t för Flow Service](../../tutorials/api/create/databases/oracle.md)
+- [Skapa en Oraclena källanslutning med API:t för Flow Service](../../tutorials/api/create/databases/oracle.md)
 - [Utforska ett databassystem med API:t för Flow Service](../../tutorials/api/explore/database-nosql.md)
 - [Samla in data från en databas med API:t för Flow Service](../../tutorials/api/collect/database-nosql.md)
 
 ## Anslut [!DNL Oracle] till [!DNL Platform] med användargränssnittet
 
-- [Skapa en Oracle-källanslutning i användargränssnittet](../../tutorials/ui/create/databases/oracle.md)
+- [Skapa en Oraclena källanslutning i användargränssnittet](../../tutorials/ui/create/databases/oracle.md)
 - [Konfigurera ett dataflöde för en databasanslutning i användargränssnittet](../../tutorials/ui/dataflow/databases.md)
