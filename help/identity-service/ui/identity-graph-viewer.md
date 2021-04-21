@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;identitetsdiagramvisningsprogram;Identitetsdiagramvisningsprogram;diagramvisningsprogram;Graph viewer;identity namespace;Identity namespace;identity;Identity;Identity service;identity service
 solution: Experience Platform
 title: Översikt över Identity Graph Viewer
-topic: tutorial
+topic-legacy: tutorial
 description: Ett identitetsdiagram är en karta över relationer mellan olika identiteter för en viss kund, vilket ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler.
+exl-id: ccd5f8d8-595b-4636-9191-553214e426bd
 translation-type: tm+mt
-source-git-commit: f4326c7a8bb8af90c092d3790e51c133744d498f
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '996'
+source-wordcount: '995'
 ht-degree: 0%
 
 ---
-
 
 # Översikt över visningsprogrammet för identitetsdiagram
 
