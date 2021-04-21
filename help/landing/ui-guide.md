@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;Adobe Experience Platform;användarhandbok;användarhandbok;användarhandbok för plattformen;introduktion till plattformen;instrumentpanel;
 solution: Experience Platform
 title: Experience Platform - översikt
-topic: ui guide
-description: 'Adobe Experience Platform '
+topic-legacy: ui guide
+description: Adobe Experience Platform
+exl-id: 47f9a3fb-731d-4ade-8069-faaa18f224dc
 translation-type: tm+mt
-source-git-commit: 5575d5e45bddcc007dcf78720cd7a7e20475f78c
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1695'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
-
 
 # Adobe Experience Platform UI Guide
 
@@ -47,7 +47,7 @@ Den senaste datapanelen innehåller information om nyligen skapade datauppsättn
 
 I **[!UICONTROL Recent datasets]**-avsnittet visas de fem senast skapade datauppsättningarna i din IMS-organisation. Den här listan uppdateras varje gång en ny datauppsättning skapas. Du kan välja en datauppsättning i listan om du vill visa mer information om den angivna datauppsättningen eller välja **[!UICONTROL View all]** om du vill visa en lista över alla skapade datauppsättningar. Mer information om datauppsättningar finns i översikten [över datauppsättningar](../catalog/datasets/overview.md).
 
-I **[!UICONTROL Recent sources]**-avsnittet visas de fem senast skapade källanslutningarna i IMS-organisationen. Listan uppdateras varje gång en ny källkoppling skapas. Du kan välja en källanslutning i listan om du vill visa mer information om den angivna kopplingen eller välja **[!UICONTROL View all]** om du vill se en lista över alla skapade källanslutningar. Mer information om källor finns i resursöversikten [](../sources/home.md).
+I **[!UICONTROL Recent sources]**-avsnittet visas de fem senast skapade källanslutningarna i IMS-organisationen. Listan uppdateras varje gång en ny källkoppling skapas. Du kan välja en källanslutning i listan om du vill visa mer information om den angivna kopplingen eller välja **[!UICONTROL View all]** om du vill se en lista över alla skapade källanslutningar. Mer information om källor finns i [Källöversikt](../sources/home.md).
 
 I **[!UICONTROL Recent segments]**-avsnittet visas de fem senast skapade segmentdefinitionerna i din IMS-organisation. Listan uppdateras varje gång en ny segmentdefinition skapas. Du kan välja en segmentdefinition i listan om du vill visa mer information om den angivna segmentdefinitionen eller välja **[!UICONTROL View all]** om du vill se en lista över alla skapade segmentdefinitioner. Mer information om segment finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
 
@@ -115,7 +115,7 @@ Avsnittet **[!UICONTROL Workflows]** innehåller en lista med arbetsflöden i fl
 
 ### [!UICONTROL Connections]
 
-I **[!UICONTROL Sources]**-avsnittet kan du skapa, uppdatera och ta bort källanslutningar, så att du kan importera data från externa källor till plattformen. Mer information om källor finns i resursöversikten [](../sources/home.md).
+I **[!UICONTROL Sources]**-avsnittet kan du skapa, uppdatera och ta bort källanslutningar, så att du kan importera data från externa källor till plattformen. Mer information om källor finns i [Källöversikt](../sources/home.md).
 
 Med **[!UICONTROL Destinations]**-avsnittet kan du skapa, uppdatera och ta bort mål, så att du kan exportera data från plattformen till många externa mål. Mer information om mål finns i [målöversikten](../destinations/home.md).
 
@@ -153,7 +153,7 @@ Med **[!UICONTROL Monitoring]**-avsnittet kan du övervaka inmatning av grupper 
 
 ### [!UICONTROL Decisioning]
 
-Offer Decisioning är en programtjänst som är integrerad med Adobe Experience Platform. Ni kan utnyttja Experience Platform för att leverera det bästa erbjudandet och upplevelsen till era kunder via alla kontaktytor vid rätt tidpunkt. Om du vill veta mer om Offer Decisioning, t.ex. om du arbetar med [!UICONTROL Offers] och [!UICONTROL Activities] går du till [Offer Decisioning dokumentation](https://experienceleague.adobe.com/docs/offer-decisioning.html).
+offera decisioningen är en programtjänst som är integrerad med Adobe Experience Platform. Du kan utnyttja Experience Platform för att leverera det bästa erbjudandet och upplevelsen till dina kunder via alla kontaktytor vid rätt tidpunkt. Om du vill veta mer om Offer decisioning, t.ex. om du arbetar med [!UICONTROL Offers] och [!UICONTROL Activities] går du till [dokumentationen till Offera decisioningen](https://experienceleague.adobe.com/docs/offer-decisioning.html).
 
 ### [!UICONTROL Administration]
 
