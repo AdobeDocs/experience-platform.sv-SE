@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;direktuppspelningsanslutning;skapa direktuppspelningsanslutning;ui guide;självstudiekurs;skapa en direktuppspelningsanslutning;direktuppspelningsproblem;intag;
 solution: Experience Platform
 title: Skapa en direktuppspelningsanslutning med användargränssnittet
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: Den här gränssnittshandboken hjälper dig att skapa en direktuppspelningsanslutning med Adobe Experience Platform.
+exl-id: af485890-61b1-4c83-8af9-a55e8ed6d69a
 translation-type: tm+mt
-source-git-commit: 17eb7b9cb715d7d8d0d7bce930ddec43259149cc
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '134'
 ht-degree: 0%
 
 ---
-
 
 # Skapa en direktuppspelningsanslutning med användargränssnittet
 
