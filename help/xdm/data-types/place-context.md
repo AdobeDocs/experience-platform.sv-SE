@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;scheman;place context;placeContext;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
 title: Montera kontextdatatyp
-topic: overview
+topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen Place Context XDM.
+exl-id: d7cf7366-0136-49ee-84d2-ec663db66eb4
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '169'
 ht-degree: 2%
 
 ---
-
 
 # [!UICONTROL Place context] datatyp
 
