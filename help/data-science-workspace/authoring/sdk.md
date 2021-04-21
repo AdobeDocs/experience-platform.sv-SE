@@ -2,16 +2,16 @@
 keywords: Experience Platform;utvecklarguide;SDK;Modellframställning;Data Science Workspace;populära topics;testing
 solution: Experience Platform
 title: SDK för modellredigering
-topic: Overview
+topic-legacy: Overview
 description: Med hjälp av SDK för modellredigering kan du utveckla anpassade maskininlärningsrecept och funktionsprofiler som kan användas i Adobe Experience Platform Data Science Workspace, med implementerbara mallar i PySpark och Spark (Scala).
+exl-id: c7577f93-a64f-49b7-a76d-71f21d619052
 translation-type: tm+mt
-source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '977'
 ht-degree: 1%
 
 ---
-
 
 # SDK för modellredigering
 
