@@ -2,15 +2,15 @@
 keywords: Experience Platform;användargränssnitt;gränssnitt;instrumentpaneler;instrumentpanel;profiler;segment;mål;licensanvändning
 title: Använda widgetbiblioteket för att lägga till och skapa instrumentpanelswidgetar
 description: 'Den här guiden innehåller stegvisa instruktioner för att lägga till standardwidgetar och skapa anpassade widgetar för att visualisera instrumentpanelsdata i Adobe Experience Platform. '
-topic: guide
+topic-legacy: guide
+exl-id: 1d33e3ea-a8a8-4a09-8bd9-2e04ecedebdc
 translation-type: tm+mt
-source-git-commit: 27444a0106eacbd69149168d7439773ebbb26119
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '975'
+source-wordcount: '974'
 ht-degree: 0%
 
 ---
-
 
 # (Beta) Widget library {#widget-library}
 
