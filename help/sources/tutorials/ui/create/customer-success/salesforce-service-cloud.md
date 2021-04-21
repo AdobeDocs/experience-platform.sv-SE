@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;Salesforce Service Cloud;salesforce service cloud
 solution: Experience Platform
 title: Skapa en Salesforce Service Cloud-källanslutning i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Salesforce Service Cloud-källanslutning med Adobe Experience Platform-gränssnittet.
+exl-id: 38480a29-7852-46c6-bcea-5dc6bffdbd15
 translation-type: tm+mt
-source-git-commit: a0b016e8adc519bc79701f9fd850b6ddf7d46127
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '464'
+source-wordcount: '462'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL Salesforce Service Cloud]-källanslutning i användargränssnittet
 
