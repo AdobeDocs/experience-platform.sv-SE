@@ -1,25 +1,27 @@
 ---
 title: Versionsinformation för Adobe Experience Platform
-description: Versionsinformation för Experience Platform för 31 mars 2021.
+description: Versionsinformation för Experience Platform för 21 april 2021.
 doc-type: release notes
 last-update: March 31, 2021
 author: ens70167
+exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
 translation-type: tm+mt
-source-git-commit: 9b4395d423bbc62c8a1a9427ea91248a0f693794
+source-git-commit: 0c9b60fe0777286819841c520a41007634622578
 workflow-type: tm+mt
-source-wordcount: '422'
-ht-degree: 2%
+source-wordcount: '729'
+ht-degree: 1%
 
 ---
 
 
 # Versionsinformation för Adobe Experience Platform
 
-**Releasedatum: 31 mars 2021**
+**Releasedatum: 21 april 2021**
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [[!DNL Data Prep]](#data-prep)
+- [[!DNL Intelligent Services]](#intelligent-services)
 - [[!DNL Segmentation Service]](#segmentation)
 - [[!DNL Sources]](#sources)
 
@@ -27,16 +29,44 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 [!DNL Data Prep] gör det möjligt för datatekniker att mappa, omvandla och validera data till och från Experience Data Model (XDM).
 
+**Nya funktioner**
+
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| `add_to_array` funktion | Uppdaterad funktionalitet som stöder arrayer som parametrar. |
-| `to_array` funktion | Uppdaterad funktionalitet som stöder objekt som parametrar. |
+| Stöd för redigering av mappning för befintliga dataflöden | Du kan nu uppdatera mappningsuppsättningarna för ett befintligt dataflöde. Det går inte att uppdatera mappningsuppsättningar för dataflöden som har schemalagts för engångsbruk. Den här funktionen stöds inte för HTTP API, Adobe Analytics, Adobe Audience Manager och [!DNL Marketo Engage]. Mer information finns i självstudiekursen om att [uppdatera källans dataflöden i användargränssnittet](../../sources/tutorials/ui/update-dataflows.md). |
+| Stöd för direktuppspelning | Du kan nu använda förinställningsfunktioner för data när du skapar en direktuppspelad källanslutning. Mer information finns i självstudiekursen om att [skapa en direktuppspelningskällanslutning i användargränssnittet](../../sources/tutorials/ui/create/streaming/http.md). |
 
 Mer information finns i [[!DNL Data Prep] översikten](../../data-prep/home.md).
 
+## [!DNL Intelligent Services] {#intelligent-services}
+
+Intelligenta tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskaplig expertis.
+
+### Kund-AI
+
+Kundens AI som finns i kunddataplattformen i realtid används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, träna eller driftsätta.
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Stöd för Adobe Analytics-data | Uppdaterad funktionalitet som stöder Adobe Analytics datauppsättningar via Analytics-källkopplingen utan att era data behöver ETL för att följa CEE-schemat (Consumer Experience Event). |
+| Stöd för Adobe Audience Manager-data | Uppdaterad funktionalitet som stöder Adobe Audience Manager datauppsättningar via Audience Manager-källkopplingen utan att dina data behöver ETL för att följa CEE-schemat (Consumer Experience Event). |
+| Sammanfattning av modellprestanda | Kund-AI har nu en [modellprestandasammanfattningsflik](../../intelligent-services/customer-ai/user-guide/discover-insights.md#performance-metrics) på sidan med insikter om tjänstinstans. På fliken för modellprestanda visas alla faktiska konverterings- och bortfallstakt. På så sätt kan du dechiffrera och förstå vad som händer i var och en av dina benägenhetsfrågor. |
+
+Mer information om vilka datauppsättningar som stöds finns i [[!DNL Intelligent Services] dokumentationen för dataförberedelser](../../intelligent-services/data-preparation.md).
+
+### Attribution AI
+
+Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor.
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Stöd för Adobe Analytics-data | Uppdaterad funktionalitet som stöder Adobe Analytics datauppsättningar via Analytics-källkopplingen utan att era data behöver ETL för att följa CEE-schemat (Consumer Experience Event). |
+
+Mer information om vilka datauppsättningar som stöds finns i [[!DNL Intelligent Services] dokumentationen för dataförberedelser](../../intelligent-services/data-preparation.md).
+
 ## Segmenteringstjänst {#segmentation}
 
-Adobe Experience Platform segmenteringstjänst tillhandahåller ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper utifrån dina [!DNL Real-time Customer Profile]-data. Dessa segment konfigureras och underhålls centralt på [!DNL Platform], vilket gör dem tillgängliga för alla Adobe-program.
+Adobe Experience Platform segmenteringstjänst tillhandahåller ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper utifrån dina [!DNL Real-time Customer Profile]-data. Dessa segment konfigureras och underhålls centralt på plattformen, vilket gör dem tillgängliga för alla Adobe-program.
 
 [!DNL Segmentation Service] definierar en viss underuppsättning profiler genom att beskriva kriterierna som särskiljer en säljbar grupp av personer inom kundbasen. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
 
@@ -44,8 +74,7 @@ Adobe Experience Platform segmenteringstjänst tillhandahåller ett användargr�
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| (Beta) Kantsegmentering | Kantsegmentering utvärderar segment i realtid, vilket möjliggör användning av samma sida och nästa sida vid personalisering. Mer information om kantsegmentering finns i [Översikt över segmenteringsgränssnittet](../../segmentation/ui/overview.md). |
-| (Beta) Inkrementell segmentering | Ökar färskheten för befintliga segmentdefinitioner utvärderade i gruppsegmentering till upp till en timme. |
+| Ytterligare aggregeringsfunktioner | Räkningsfunktioner har lagts till i Segment Builder. Med räkningsfunktionerna kan du räkna antalet gånger som den angivna händelsen har utförts. Mer information om räkningsfunktionerna finns i avsnittet med räkningsfunktioner i [guiden Skapa segment](../../segmentation/ui/segment-builder.md#count-functions) |
 
 Mer information om [!DNL Segmentation Service] finns i [Segmenteringsöversikt](../../segmentation/home.md).
 
@@ -57,8 +86,6 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Beta-källor som går över till GA | Följande källor har befordrats från beta till GA: <ul><li>[[!DNL MySQL]](../../sources/connectors/databases/mysql.md)</li><li>[[!DNL PostGres]](../../sources/connectors/databases/postgres.md)</li><li>[[!DNL Salesforce Service Cloud]](../../sources/connectors/customer-success/salesforce-service-cloud.md)</li><li>[[!DNL SFTP]](../../sources/connectors/cloud-storage/sftp.md)</li><li>[[!DNL Shopify]](../../sources/connectors/ecommerce/shopify.md)</li></ul> |
-| API-stöd för komprimerad filinläsning | Du kan nu förhandsgranska och importera komprimerade JSON-filer eller avgränsade filer med hjälp av molnlagringskällor. Mer information finns i självstudiekursen om att [samla in molnlagringsdata med API:er](../../sources/tutorials/api/collect/cloud-storage.md). |
-| Gränssnittsstöd för rekursiv filöverföring | Du kan nu importera hela mappar rekursivt när du använder en molnlagringskälla. När du importerar en hel mapp måste du se till att dess innehåll delar samma schema. Mer information finns i självstudiekursen om att [konfigurera ett dataflöde för molnlagringskopplingar i gränssnittet](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md). |
+| [!DNL Marketo Engage] (Beta) | Nu kan du skapa en [!DNL Marketo Engage]-källanslutning med användargränssnittet för att hämta B2B-data till plattformen och hålla dessa data uppdaterade med plattformsanslutna program. Mer information finns i [[!DNL Marketo Engage] källanslutningsdokumentationen](../../sources/connectors/adobe-applications/marketo/marketo.md). |
 
 Mer information om källor finns i [Källor - översikt](../../sources/home.md).
