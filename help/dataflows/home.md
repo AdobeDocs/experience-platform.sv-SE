@@ -2,16 +2,16 @@
 keywords: Experience Platform;hemmabas;populära ämnen;dataflöden;dataflöden;data;övervakning;övervaka dataflöden;övervaka dataflöden;övervaka dataflöden;övervaka dataflöden;övervaka dataflöden;flöde;flödestjänst;
 solution: Experience Platform
 title: Översikt över dataflöden
-topic: overview
+topic-legacy: overview
 description: I det här dokumentet introduceras dataflöden som visar hur de används i Adobe Experience Platform.
+exl-id: 8fe08ffa-f095-4e9f-8bab-d060985f0236
 translation-type: tm+mt
-source-git-commit: 185c9c953a6ce923359e221d6f0f91b0f6614f05
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '238'
 ht-degree: 0%
 
 ---
-
 
 # Översikt över dataflöden
 
@@ -32,4 +32,3 @@ Om du vill veta mer om hur du förbereder data efter att de har importerats kan 
 ## Övervaka dataflöden
 
 Du kan övervaka dataflöden med hjälp av antingen Platform API:er eller Platform UI. Om du vill lära dig hur du övervakar dataflöden med API:t kan du läsa självstudiekursen [för övervakning av API:er för dataflöden](./api/monitor.md). Om du vill lära dig hur du övervakar dataflöden i plattformsgränssnittet läser du självstudiekurserna för [övervakning av dataflöden för källor](./ui/monitor-sources.md) och [övervakning av dataflöden för mål](./ui/monitor-destinations.md).
-
