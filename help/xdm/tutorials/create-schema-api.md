@@ -1,18 +1,18 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;Experience data model;Experience data model;Experience data model;data model;data model;schema register;schema Registry;schema;schema;schema;scheman;scheman;scheman;skapa
+keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;Experience data model;Experience data model;Experience data model;data model;data model;schema register;schema Registry;schema;schema;schema;scheman;scheman;scheman;scheman;skapa
 solution: Experience Platform
 title: Skapa ett schema med API:t för schemaregister
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: I den här självstudiekursen används API:t för schemaregister för att vägleda dig genom stegen för att skapa ett schema med en standardklass.
+exl-id: fa487a5f-d914-48f6-8d1b-001a60303f3d
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '2373'
 ht-degree: 0%
 
 ---
-
 
 # Skapa ett schema med hjälp av API:t [!DNL Schema Registry]
 
