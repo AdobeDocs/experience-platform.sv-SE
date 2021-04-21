@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;Microsoft SQL Server;SQL Server;sql server
 solution: Experience Platform
 title: Skapa en Microsoft SQL Server-källanslutning i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en Microsoft SQL Server-källanslutning med Adobe Experience Platform-gränssnittet.
+exl-id: aba4e317-1c59-4999-a525-dba15f8d4df9
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '458'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL Microsoft SQL Server]-källanslutning i användargränssnittet
 
