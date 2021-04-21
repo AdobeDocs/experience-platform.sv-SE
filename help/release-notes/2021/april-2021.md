@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: April 21, 2021
 author: ens72741
 translation-type: tm+mt
-source-git-commit: 0c9b60fe0777286819841c520a41007634622578
+source-git-commit: 1072b95469fac19a2e03ca4eacaae05250e11be8
 workflow-type: tm+mt
-source-wordcount: '729'
+source-wordcount: '868'
 ht-degree: 1%
 
 ---
@@ -20,6 +20,7 @@ ht-degree: 1%
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [[!DNL Data Prep]](#data-prep)
+- [[!DNL Experience Data Model (XDM)]](#xdm)
 - [[!DNL Intelligent Services]](#intelligent-services)
 - [[!DNL Segmentation Service]](#segmentation)
 - [[!DNL Sources]](#sources)
@@ -36,6 +37,14 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 | Stöd för direktuppspelning | Du kan nu använda förinställningsfunktioner för data när du skapar en direktuppspelad källanslutning. Mer information finns i självstudiekursen om att [skapa en direktuppspelningskällanslutning i användargränssnittet](../../sources/tutorials/ui/create/streaming/http.md). |
 
 Mer information finns i [[!DNL Data Prep] översikten](../../data-prep/home.md).
+
+## [!DNL Experience Data Model (XDM)] {#xdm}
+
+Experience Data Model (XDM) är en öppen källkodsspecifikation som är utformad för att förbättra kraften i digitala upplevelser. Det innehåller gemensamma strukturer och definitioner för alla program som ska kommunicera med tjänster på Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Schemarekommendationer efter bransch | När du väljer klasser och blandningar i gränssnittet för Schemaredigeraren kan du använda ett nytt filter för att visa rekommenderade standardkomponenter baserat på din bransch. Mer information om hur de här komponenterna relaterar till varandra för olika användningsområden finns i dokumentationen [branschdatamodeller](https://www.adobe.com/go/xdm-industry-erds-en). |
 
 ## [!DNL Intelligent Services] {#intelligent-services}
 
