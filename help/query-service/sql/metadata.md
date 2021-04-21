@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;PSQL;psql;Query service;query service;metadata;commands;metadata commands;metadata commands;
 solution: Experience Platform
 title: Metadata PostgreSQL-kommandon i frågetjänsten
-topic: metadata
+topic-legacy: metadata
 description: En lista med PostgreSQL-kommandon som för närvarande stöds för att hämta metadata i Adobe Experience Platform Query Service.
+exl-id: bfcbad55-3086-44c9-9938-6ba0504e747b
 translation-type: tm+mt
-source-git-commit: 97dc0b5fb44f5345fd89f3f56bd7861668da9a6e
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '338'
 ht-degree: 0%
 
 ---
-
 
 # Metadata PostgreSQL-kommandon i Query Service
 
@@ -45,4 +45,3 @@ För metadata i datauppsättningen stöds för närvarande följande PostgreSQL-
 Alla kommandon som börjar med `\d` kan kombineras. Du kan till exempel skicka `\dtsn` för att visa en lista över alla tabeller, sekvenser och scheman. `\d` i sig visar alla synliga tabeller, vyer, materialiserade vyer och sekvenser.
 
 Mer information om de kommandon som anges ovan finns i dokumentationen på [postgresql.org](https://www.postgresql.org/docs/10/app-psql.html). Observera dock att inte alla alternativ som visas i PostgreSQL-dokumentationen stöds av [!DNL Experience Platform].
-
