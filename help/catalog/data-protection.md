@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;katalog;dataskydd;krypteringsdatasjön
 solution: Experience Platform
 title: Dataskydd i Adobe Experience Platform
-topic: data protection
+topic-legacy: data protection
 description: Alla data som lagras i Data Lake krypteras, lagras och hanteras i ett isolerat Microsoft Azure Data Lake Storage-konto som är unikt för din organisation. Följande processflödesdiagram visar hur data importeras, bearbetas, krypteras och bevaras av Experience Platform.
+exl-id: 184b2b2d-8cd7-4299-83f8-f992f585c336
 translation-type: tm+mt
-source-git-commit: a1103bfbf79f9c87bac5b113c01386a6fb8950e7
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '187'
 ht-degree: 0%
 
 ---
-
 
 # Dataskydd i Adobe Experience Platform
 
