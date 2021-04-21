@@ -1,16 +1,16 @@
 ---
 keywords: Experience Platform;data prep;data prep api;felsökning;API
 title: API-översikt för dataprep
-topic: guide
+topic-legacy: guide
 description: Med Data Prep API kan du skapa mappningsuppsättningar och -funktioner programmatiskt, så att du kan omforma dina data mellan käll- och målscheman.
+exl-id: 740944ae-93ba-4099-a65e-18d6b384c307
 translation-type: tm+mt
-source-git-commit: cae6dc80d0394db51dc97478b92459be64c64498
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '259'
+source-wordcount: '258'
 ht-degree: 1%
 
 ---
-
 
 # API-guide för mappningstjänst
 
