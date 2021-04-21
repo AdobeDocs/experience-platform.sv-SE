@@ -2,17 +2,17 @@
 keywords: Experience Platform;home;populära topics;query service;Query service;experience event queries;experience event query;Experience Event query;
 solution: Experience Platform
 title: Exempelfrågor för Experience Events
-topic: queries
+topic-legacy: queries
 type: Tutorial
 description: Följande dokument innehåller exempel på frågor som innehåller Experience Events i Adobe Experience Platform Query Service.
+exl-id: e6793a03-e474-4ae4-acb2-a052ff1c6d68
 translation-type: tm+mt
-source-git-commit: 97dc0b5fb44f5345fd89f3f56bd7861668da9a6e
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '320'
 ht-degree: 0%
 
 ---
-
 
 # Exempelfrågor för [!DNL Experience Events]
 
@@ -190,4 +190,3 @@ ORDER BY pageViews DESC;
 ## Nästa steg
 
 Mer information om exempelfrågor med hjälp av Adobe-definierade funktioner (ADF) finns i guiden Funktioner som definieras i Adobe. Allmän vägledning om frågekörning finns i [guiden om frågekörning i Query Service](./writing-queries.md).
-
