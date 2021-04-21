@@ -2,16 +2,16 @@
 keywords: Experience Platform;profil;kundprofil i realtid;användargränssnitt;anpassning;profilpanel;instrumentpanel
 title: Kontrollpanel för profil
 description: Adobe Experience Platform användargränssnitt innehåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid.
-topic: guide
+topic-legacy: guide
 type: Documentation
+exl-id: 2c99cbb3-515f-4982-9f2a-84e1ab14542e
 translation-type: tm+mt
-source-git-commit: 077525d597d457ab2c3b8733490920da89f15ebb
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '142'
 ht-degree: 0%
 
 ---
-
 
 # (Beta) [!UICONTROL Profiles] instrumentpanel {#profile-dashboard}
 
