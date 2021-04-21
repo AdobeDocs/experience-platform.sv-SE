@@ -7,18 +7,14 @@ type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till en Microsoft SQL Server med API:t för Flow Service.
 exl-id: 00455a61-c8c1-42f4-a962-fc16f7370cbd
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: b2384bfe26fa3d111c342062b2d9bb37c4226857
 workflow-type: tm+mt
-source-wordcount: '609'
-ht-degree: 0%
+source-wordcount: '591'
+ht-degree: 1%
 
 ---
 
 # Skapa en [!DNL Microsoft] SQL Server-källanslutning med hjälp av API:t [!DNL Flow Service]
-
->[!NOTE]
->
->SQL Server-kopplingen [!DNL Microsoft] är i betaversion. Se [Källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
 
 [!DNL Flow Service] används för att samla in och centralisera kunddata från olika källor inom Adobe Experience Platform. Tjänsten tillhandahåller ett användargränssnitt och RESTful API som alla källor som stöds kan anslutas från.
 
