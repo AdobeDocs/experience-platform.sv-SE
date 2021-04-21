@@ -1,12 +1,11 @@
 ---
-product: experience-platform
 audience: user
 user-guide-title: Självstudiekurser om Adobe Experience Platform
 breadcrumb-title: Platform Tutorials
 user-guide-description: Kom igång snabbt och enkelt med Platform genom att följa med i stegvisa självstudiekurser som täcker allt från att förbereda data för konsumtion till att arbeta med avancerade maskininlärningsalgoritmer.
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '74'
 ht-degree: 6%
