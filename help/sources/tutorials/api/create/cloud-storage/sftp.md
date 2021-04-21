@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;SFTP;sftp;Secure File Transfer Protocol;secure file transfer protocol
 solution: Experience Platform
 title: Skapa en SFTP-källanslutning med API:t för Flow Service
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till en SFTP-server (Secure File Transfer Protocol) med API:t för Flow Service.
+exl-id: b965b4bf-0b55-43df-bb79-c89609a9a488
 translation-type: tm+mt
-source-git-commit: 0e11acc4a599d360cb3048445003f61848ad23d3
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '852'
+source-wordcount: '850'
 ht-degree: 0%
 
 ---
-
 
 # Skapa en SFTP-källanslutning med hjälp av API:t [!DNL Flow Service]
 
