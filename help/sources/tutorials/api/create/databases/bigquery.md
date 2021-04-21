@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;bigquery;Google;google;Google BigQuery
 solution: Experience Platform
 title: Skapa en Google BigQuery-källanslutning med API:t för Flow Service
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Google BigQuery med API:t för Flow Service.
+exl-id: 51f90366-7a0e-49f1-bd57-b540fa1d15af
 translation-type: tm+mt
-source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '616'
 ht-degree: 0%
 
 ---
-
 
 # Skapa en [!DNL Google BigQuery]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
