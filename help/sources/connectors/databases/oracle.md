@@ -6,18 +6,14 @@ topic-legacy: overview
 description: Lär dig hur du ansluter Oracle till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: be422cf8-fb24-48c7-8369-34f0f2ec95fc
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: b2384bfe26fa3d111c342062b2d9bb37c4226857
 workflow-type: tm+mt
-source-wordcount: '207'
+source-wordcount: '190'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL Oracle]-koppling
-
->[!NOTE]
->
->[!DNL Oracle]-kopplingen är i betaversion. Se [Källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betatecknade anslutningar.
+# [!DNL Oracle] koppling
 
 Adobe Experience Platform erbjuder systemspecifik anslutning för databasleverantörer som [!DNL Microsoft], MySQL och [!DNL Azure]. Du kan överföra data från dessa system till [!DNL Platform].
 
