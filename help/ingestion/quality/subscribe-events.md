@@ -2,16 +2,16 @@
 keywords: Experience Platform;startsida;populära ämnen;meddelanden om dataöverföring;meddelanden;prenumerationshändelser;statushändelser;statushändelser;abonnemang;statusmeddelanden;
 solution: Experience Platform
 title: Meddelanden om dataöverföring
-topic: overview
+topic-legacy: overview
 description: För att underlätta övervakningen av intagsprocessen kan Adobe Experience Platform prenumerera på en uppsättning händelser som publiceras i varje steg i processen och meddela dig om status för inmatade data och eventuella fel.
+exl-id: fd34e1ab-f6f6-44f0-88ee-7020e9322c39
 translation-type: tm+mt
-source-git-commit: 089a4d517476b614521d1db4718966e3ebb13064
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '672'
 ht-degree: 0%
 
 ---
-
 
 # Meddelanden om dataöverföring
 
