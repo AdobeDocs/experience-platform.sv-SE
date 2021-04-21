@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;avanmälan;Segmentering;Segmenteringstjänst;segmenteringstjänst;hedersavanmälan;avanmälan;avanmäl dig;avanmäl dig;
 solution: Experience Platform
 title: Hedra avanmälningsbegäranden i segment
-topic: overview
-description: 'Adobe Experience Platform tillåter dina kunder att skicka avanmälningsbegäranden om användning och lagring av sina data i kundprofilen i realtid]. Dessa avanmälningsförfrågningar ingår i California Consumer Privacy Act (CCPA), som ger personer bosatta i Kalifornien rätt att få tillgång till och radera sina personuppgifter och att få veta om deras personuppgifter säljs eller offentliggörs (och till vem). '
+topic-legacy: overview
+description: Adobe Experience Platform tillåter dina kunder att skicka avanmälningsbegäranden om användning och lagring av sina data i kundprofilen i realtid]. Dessa avanmälningsförfrågningar ingår i California Consumer Privacy Act (CCPA), som ger personer bosatta i Kalifornien rätt att få tillgång till och radera sina personuppgifter och att få veta om deras personuppgifter säljs eller offentliggörs (och till vem).
+exl-id: fe851ce3-60db-4984-a73c-f9c5964bfbad
 translation-type: tm+mt
-source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1014'
+source-wordcount: '1013'
 ht-degree: 0%
 
 ---
-
 
 # Efterleva avanmälningsbegäranden i segment
 
