@@ -1,16 +1,16 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;API;api;
 title: API-guide för segmenteringstjänst
-topic: guide
+topic-legacy: guide
 description: Med API:t för segmenteringstjänsten kan utvecklare programmässigt hantera segmenteringsåtgärder i Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
+exl-id: cebecaf3-9746-4b0b-9c50-11789fba66c3
 translation-type: tm+mt
-source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '501'
 ht-degree: 0%
 
 ---
-
 
 # API-guide för segmenteringstjänst
 
