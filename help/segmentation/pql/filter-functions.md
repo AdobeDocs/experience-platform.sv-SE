@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;segmentering;segmentering;segmenteringstjänst;pql;PQL;profilfrågespråk;filterfunktioner;filter;
 solution: Experience Platform
 title: PQL-filterfunktioner
-topic: developer guide
+topic-legacy: developer guide
 description: Filterfunktioner används för att filtrera data inom arrayer i PQL (Profile Query Language).
+exl-id: 09d66be3-30dc-4488-84a1-cfd09c44470d
 translation-type: tm+mt
-source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '220'
 ht-degree: 2%
 
 ---
-
 
 # Filterfunktioner
 
