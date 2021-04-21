@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;etl;ETL;etl transformations;ETL transformations
 solution: Experience Platform
 title: Exempel på ETL-omformningar
-topic: overview
+topic-legacy: overview
 description: I den här artikeln visas följande exempelomformningar som en utvecklare av Extract, Transform, Load (ETL) kan stöta på.
+exl-id: 8084f5fd-b621-4515-a329-5a06c137d11c
 translation-type: tm+mt
-source-git-commit: f8186e467dc982003c6feb01886ed16d23572955
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '493'
 ht-degree: 0%
 
 ---
-
 
 # Exempel på ETL-omformningar
 
@@ -307,4 +307,3 @@ Nedan visas arrayen med identiteter som omvandlats till XDM:
       }]
    }
 ```
-
