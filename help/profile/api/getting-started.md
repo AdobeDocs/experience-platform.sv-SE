@@ -1,17 +1,17 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API
 title: Komma igång med kundprofils-API:t i realtid
-topic: guide
+topic-legacy: guide
 type: Documentation
 description: Komma igång-guiden för profil-API:t visar de nyckelbegrepp och grundläggande funktioner som du behöver känna till för att kunna använda API-slutpunkter för kundprofil i realtid för att utföra grundläggande CRUD-åtgärder mot profildata.
+exl-id: 7e30610a-a7e7-43ab-a45d-fd84ef6e36ef
 translation-type: tm+mt
-source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '413'
+source-wordcount: '411'
 ht-degree: 0%
 
 ---
-
 
 # Komma igång med [!DNL Real-time Customer Profile] API {#getting-started}
 
