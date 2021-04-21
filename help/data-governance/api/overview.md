@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: API-guide för principtjänst
-topic: developer guide
+topic-legacy: developer guide
 description: Med API:t för principtjänsten kan utvecklare hantera dataanvändningsetiketter och principer i Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
+exl-id: 23c05670-7107-4b96-bc24-0a51b5d267b2
 translation-type: tm+mt
-source-git-commit: e649ab3da077cdd8e98562199b8bdece6108a572
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '504'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL Policy Service] API-guide
 
