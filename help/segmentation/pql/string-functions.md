@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;pql;PQL;Profile Query Language;strängfunktioner;string;
 solution: Experience Platform
 title: PQL-strängfunktioner
-topic: developer guide
+topic-legacy: developer guide
 description: PQL (Profile Query Language) har funktioner som underlättar interaktion med strängar.
+exl-id: 9fd79d86-0802-4312-abce-f6ef5ba5bb34
 translation-type: tm+mt
-source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '784'
 ht-degree: 3%
 
 ---
-
 
 # Strängfunktioner
 
@@ -242,7 +242,7 @@ Funktionen `matches` används för att avgöra om en sträng matchar ett visst r
 
 **Exempel**
 
-Följande PQL-fråga avgör, utan att vara skiftlägeskänslig, om personens namn börjar med&quot;John&quot;.
+Följande PQL-fråga avgör, utan att vara skiftlägeskänslig, om personens namn börjar med &quot;John&quot;.
 
 ```sql
 person.name.matches("(?i)^John")
@@ -269,4 +269,3 @@ emailAddress.regexGroup("@(\w+)", 1)
 ## Nästa steg
 
 Nu när du har lärt dig om strängfunktioner kan du använda dem i dina PQL-frågor. Mer information om andra PQL-funktioner finns i [översikten över profilfrågespråk](./overview.md).
-
