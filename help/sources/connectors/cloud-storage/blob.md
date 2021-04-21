@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;Blob;blob;Azure Blob;azure blob
 solution: Experience Platform
 title: Översikt över Azure Blob Source Connector
-topic: overview
+topic-legacy: overview
 description: Lär dig hur du ansluter Azure Blob till Adobe Experience Platform med API:er eller användargränssnittet.
+exl-id: 62adc74f-3570-42c7-9ae6-3ddbc09eccc7
 translation-type: tm+mt
-source-git-commit: 7fc99214272d2ce743b3666826c66f5d65e4d2ca
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '450'
+source-wordcount: '449'
 ht-degree: 0%
 
 ---
-
 
 # Azure Blob-koppling
 
