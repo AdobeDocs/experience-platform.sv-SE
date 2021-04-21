@@ -1,18 +1,18 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Oracle Object Storage;oracle object storage
+keywords: Experience Platform;hem;populära ämnen;Oraclena objektlagring;oraclena objektlagring
 solution: Experience Platform
-title: Skapa en Oracle Object Storage-källanslutning med API:t för Flow Service
-topic: overview
+title: Skapa en källanslutning för Oracle Object Storage med API:t för Flow Service
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Oracle Object Storage med API:t för Flow Service.
+exl-id: a85faa44-7d5a-42a2-9052-af01744e13c9
 translation-type: tm+mt
-source-git-commit: c1453a9f0be42f834d35af871051324df8dadf80
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '625'
-ht-degree: 1%
+source-wordcount: '623'
+ht-degree: 0%
 
 ---
-
 
 # Skapa en [!DNL Oracle Object Storage]-källanslutning med hjälp av API:t [!DNL Flow Service]
 
@@ -39,7 +39,7 @@ För att [!DNL Flow Service] ska kunna ansluta till [!DNL Oracle Object Storage]
 | `bucketName` | Det tillåtna bucket-namn som krävs om användaren har begränsad åtkomst. Bucketnamnet måste innehålla mellan tre och 63 tecken, det måste börja och sluta med en bokstav eller en siffra och får bara innehålla gemena bokstäver, siffror eller bindestreck (`-`). Det går inte att formatera bucket-namnet som en IP-adress. |
 | `folderPath` | Den tillåtna mappsökväg som krävs om användaren har begränsad åtkomst. |
 
-Mer information om hur du hämtar dessa värden finns i [Autentiseringsguiden för Oracle Object Storage](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/usercredentials.htm#User_Credentials).
+Mer information om hur du hämtar dessa värden finns i [autentiseringsguiden för Oraclena objektlagring](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/usercredentials.htm#User_Credentials).
 
 ### Läser exempel-API-anrop
 
