@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;HP Vertica
 solution: Experience Platform
 title: Skapa en HP Vertica Source Connection i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en HP Vertica-källanslutning med Adobe Experience Platform-gränssnittet.
+exl-id: d7315ad4-9250-4e66-be33-016efabb512e
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '478'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en HP [!DNL Vertica]-källanslutning i gränssnittet
 
