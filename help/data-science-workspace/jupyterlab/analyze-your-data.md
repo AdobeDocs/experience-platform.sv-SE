@@ -2,17 +2,17 @@
 keywords: Experience Platform;JupyterLab;notebooks;Data Science Workspace;populära topics;analyze data notebooks
 solution: Experience Platform
 title: Analysera dina data med bärbara datorer
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: I den här självstudiekursen fokuseras på hur du använder Jupyter-anteckningsböcker, som är byggda i Data Science Workspace, för att få tillgång till, utforska och visualisera dina data.
+exl-id: 3b0148d1-9c08-458b-9601-979cb6c7a0fb
 translation-type: tm+mt
-source-git-commit: 6908c582cb7e0d60b82112dbc0854411d76b4fd4
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1732'
+source-wordcount: '1730'
 ht-degree: 0%
 
 ---
-
 
 # Analysera dina data med bärbara datorer
 
