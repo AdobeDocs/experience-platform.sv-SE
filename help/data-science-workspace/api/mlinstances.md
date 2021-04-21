@@ -2,16 +2,16 @@
 keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;populära topics;mlinstances;sensei machine learning api
 solution: Experience Platform
 title: API-slutpunkt för MLInstances
-topic: Developer guide
+topic-legacy: Developer guide
 description: En MLInstance är en kombination av en befintlig motor med en lämplig uppsättning konfigurationer som definierar alla utbildningsparametrar, poängsättningsparametrar eller maskinvaruresurskonfigurationer.
+exl-id: e78cda69-1ff9-47ce-b25d-915de4633e11
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '619'
 ht-degree: 0%
 
 ---
-
 
 # MLInstances-slutpunkt
 
