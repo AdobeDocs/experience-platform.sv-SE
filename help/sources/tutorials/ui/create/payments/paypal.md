@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;betalpal;PayPal
 solution: Experience Platform
 title: Skapa en PayPal-källanslutning i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Lär dig hur du skapar en PayPal-källanslutning med Adobe Experience Platform-gränssnittet.
+exl-id: bbd3f634-cb28-45d8-9b7b-ed3873101882
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '450'
 ht-degree: 1%
 
 ---
-
 
 # Skapa en [!DNL PayPal]-källanslutning i användargränssnittet
 
