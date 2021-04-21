@@ -3,15 +3,15 @@ keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;Experi
 solution: Experience Platform
 title: API-handbok för schematabell
 description: Det här dokumentet innehåller ytterligare information om hur du arbetar med API:t för schemaregister.
-topic: developer guide
+topic-legacy: developer guide
+exl-id: 2ddc7fe8-dd0b-4cf9-8561-e89fcdadbfce
 translation-type: tm+mt
-source-git-commit: b395535cbe7e4030606ee2808eb173998f5c32e0
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '772'
 ht-degree: 0%
 
 ---
-
 
 # API-guide för schematabell
 
