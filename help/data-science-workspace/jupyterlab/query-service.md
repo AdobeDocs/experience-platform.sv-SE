@@ -2,17 +2,17 @@
 keywords: Experience Platform;JupyterLab;notebooks;Data Science Workspace;populära topics;query service
 solution: Experience Platform
 title: Frågetjänst i Jupyter-anteckningsbok
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: Med Adobe Experience Platform kan du använda SQL (Structured Query Language) i arbetsytan Data Science genom att integrera Query Service i JupyterLab som standardfunktion. I den här självstudiekursen visas exempel på SQL-frågor för vanliga användningsområden för att utforska, omvandla och analysera Adobe Analytics-data.
+exl-id: c5ac7d11-a3bd-4ef8-a650-9f496a8bbaa7
 translation-type: tm+mt
-source-git-commit: 9d84fc1eb898020ed4b154c091fcc9fc4933c7de
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '812'
+source-wordcount: '810'
 ht-degree: 1%
 
 ---
-
 
 # Frågetjänst i Jupyter-anteckningsbok
 
