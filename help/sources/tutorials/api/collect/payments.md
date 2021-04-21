@@ -2,14 +2,14 @@
 keywords: Experience Platform;hem;populära ämnen;Samla in betalningsdata;betalningsdata
 solution: Experience Platform
 title: Samla in betalningsdata med källkopplingar och API:er
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett betalningsprogram och att hämta dem till plattformen med hjälp av källanslutningar och API:er.
 exl-id: b75e2a3d-6590-4079-a261-fa4e9626e8dc
 translation-type: tm+mt
-source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1600'
+source-wordcount: '1598'
 ht-degree: 0%
 
 ---
