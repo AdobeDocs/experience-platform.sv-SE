@@ -2,16 +2,16 @@
 keywords: Experience Platform;product recommendation recept;Data Science Workspace;populära topics;recipes;prebuild recept
 solution: Experience Platform
 title: Produktrekommendationsmottagare
-topic: overview
+topic-legacy: overview
 description: Med Product Recommendations recept kan ni tillhandahålla personaliserade produktrekommendationer som är skräddarsydda efter kundens behov och intressen. Med en korrekt prognosmodell kan en kunds inköpshistorik ge er insikt i vilka produkter de kan vara intresserade av.
+exl-id: 508d55af-c33b-4f1d-b1b6-f00ed5d12bf9
 translation-type: tm+mt
-source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '477'
 ht-degree: 1%
 
 ---
-
 
 # Produktrekommendationsrecept
 
