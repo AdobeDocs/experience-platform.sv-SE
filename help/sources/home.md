@@ -6,9 +6,9 @@ topic-legacy: overview
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
 translation-type: tm+mt
-source-git-commit: af5564a07577a0123e1a45043d5479f6ad45d73e
+source-git-commit: 412d7c247353bfd30e134656140ba13f55d2ca07
 workflow-type: tm+mt
-source-wordcount: '921'
+source-wordcount: '922'
 ht-degree: 0%
 
 ---
@@ -91,6 +91,7 @@ Experience Platform har stöd för att importera data från en tredjepartsdataba
 - [[!DNL GreenPlum] koppling](connectors/databases/greenplum.md)
 - [[!DNL HP Vertica] koppling](connectors/databases/hp-vertica.md)
 - [[!DNL IBM DB2] koppling](connectors/databases/ibm-db2.md)
+- [[!DNL MariaDB] koppling](connectors/databases/mariadb.md)
 - [[!DNL Microsoft SQL Server] koppling](connectors/databases/sql-server.md)
 - [[!DNL MySQL] koppling](connectors/databases/mysql.md)
 - [[!DNL Oracle] koppling](connectors/databases/oracle.md)
