@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;lissandlådor
 solution: Experience Platform
 title: List Sandboxes i API
-topic: developer guide
+topic-legacy: developer guide
 description: Om du vill visa en lista över alla sandlådor som tillhör din IMS-organisation (aktiv eller annan), gör du en GET-begäran till slutpunkten /sandbox.
+exl-id: 5e7dc6e7-cb9c-41e0-a3ad-025b625f14ec
 translation-type: tm+mt
-source-git-commit: 62ce5ac92d03a6e85589fc92e8d953f7fc1d8f31
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '322'
+source-wordcount: '320'
 ht-degree: 0%
 
 ---
-
 
 # Lista sandlådor i API
 
