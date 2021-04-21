@@ -2,13 +2,13 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Styrning, sekretess och säkerhetsöversikt
-topic: overview
+topic-legacy: overview
 description: Adobe Experience Platform tillhandahåller flera tjänster och verktyg som gör att du kan kontrollera dina insamlade upplevelsedata på ett säkert sätt för att följa din affärspraxis, juridiska skyldigheter och utvecklingsprocess.
 exl-id: 1ab5a436-c5dd-4e7a-aba1-549f0613f224
 translation-type: tm+mt
-source-git-commit: 3f7808a08d033c5940d2115006c269b8c4079822
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '833'
+source-wordcount: '832'
 ht-degree: 1%
 
 ---
@@ -59,7 +59,7 @@ Mer information finns i [Privacy Servicen overview](../../privacy-service/home.m
 
 Många juridiska sekretessbestämmelser har infört krav på aktivt och specifikt samtycke när det gäller datainsamling, personalisering och andra användningsfall inom marknadsföring. För att uppfylla dessa krav kan Experience Platform samla in information om samtycke i enskilda kundprofiler och använda dessa inställningar som en avgörande faktor i hur varje kunds data används i arbetsflöden för plattformen längre fram i kedjan.
 
-Mer information om hur du bearbetar kundens samtycke och inställningsdata med Adobe-standarden finns i översikten över [godkännandebearbetning i Experience Platform](./consent/adobe/overview.md).
+Mer information om hur du bearbetar kundens samtycke och inställningsdata med hjälp av Adobe-standarden finns i översikten över [godkännandebearbetning i Experience Platform](./consent/adobe/overview.md).
 
 Mer information om hur du bearbetar kundens medgivandedata i enlighet med IAB Transparency and Consent Framework (TCF) 2.0 finns i översikten på [IAB TCF 2.0-stöd i Platform](./consent/iab/overview.md).
 
