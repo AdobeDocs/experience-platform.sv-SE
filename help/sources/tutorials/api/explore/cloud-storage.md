@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;molnlagring;molnlagring
 solution: Experience Platform
 title: Utforska ett högt lagringssystem med API:t för Flow Service
-topic: overview
+topic-legacy: overview
 description: I den här självstudien används API:t för Flow Service för att utforska ett molnlagringssystem från tredje part.
+exl-id: ba1a9bff-43a6-44fb-a4e7-e6a45b7eeebd
 translation-type: tm+mt
-source-git-commit: 457fc9e1b0c445233f0f574fefd31bc1fc3bafc8
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '821'
+source-wordcount: '820'
 ht-degree: 0%
 
 ---
-
 
 # Utforska ett molnlagringssystem med API:t [!DNL Flow Service]
 
