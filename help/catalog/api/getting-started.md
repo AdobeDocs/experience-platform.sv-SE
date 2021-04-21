@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;katalogtjänst;katalog;katalogtjänst;katalog
 solution: Experience Platform
 title: API-guide för katalogtjänst
-topic: developer guide
+topic-legacy: developer guide
 description: Med Catalog Service API kan utvecklare hantera datauppsättningsmetadata i Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
+exl-id: 812fcdae-ed0e-4f2b-84d7-26f2f79e71b9
 translation-type: tm+mt
-source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '602'
+source-wordcount: '600'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL Catalog Service] API-guide
 
