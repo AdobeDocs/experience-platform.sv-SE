@@ -2,16 +2,16 @@
 keywords: Experience Platform;hemanvändare;populära ämnen;datastyrning;dataanvändningsetikett;policytjänst;användarhandbok för dataanvändningsetiketter
 solution: Experience Platform
 title: Hantera dataanvändningsetiketter i användargränssnittet
-topic: labels
+topic-legacy: labels
 description: Den här guiden innehåller steg för hur du arbetar med dataanvändningsetiketter i Adobe Experience Platform användargränssnitt.
+exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
 translation-type: tm+mt
-source-git-commit: 41d01b3aec0afa60dd602716a30cc94402702a70
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1068'
+source-wordcount: '1067'
 ht-degree: 0%
 
 ---
-
 
 # Hantera etiketter för dataanvändning i användargränssnittet
 
