@@ -2,17 +2,17 @@
 keywords: Experience Platform;Visa en modell;Datavetenskapen;populära ämnen;ensei machine learning api
 solution: Experience Platform
 title: Posta en modell med hjälp av API:t för inlärning av Sensei-maskinvara
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: I den här självstudiekursen visas hur du använder API:erna för inlärning i Sensei-maskinvara för att skapa en Experiment och en Experimentrunda.
+exl-id: 202c63b0-86d8-4a82-8ec8-d144a8911d08
 translation-type: tm+mt
-source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '549'
 ht-degree: 0%
 
 ---
-
 
 # Posta en modell med [!DNL Sensei Machine Learning API]
 
