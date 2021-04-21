@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;flödestjänst;uppdatera konton
 solution: Experience Platform
 title: Uppdatera konton med API:t för Flow Service
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för hur du uppdaterar information och autentiseringsuppgifter för ett konto med API:t för Flow Service.
+exl-id: a93385fd-ed36-457f-8882-41e37f6f209d
 translation-type: tm+mt
-source-git-commit: 37be5f5ffa4640d7d4442a24cc257069237f15cb
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '689'
+source-wordcount: '687'
 ht-degree: 1%
 
 ---
-
 
 # Uppdatera konton med API:t för Flow Service
 
