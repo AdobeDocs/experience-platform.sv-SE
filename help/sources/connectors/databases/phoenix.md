@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;Phoenix;phoenix
 solution: Experience Platform
 title: Översikt över Phoenix Source Connector
-topic: overview
+topic-legacy: overview
 description: Lär dig hur du ansluter Phoenix till Adobe Experience Platform med API:er eller användargränssnittet.
+exl-id: 45e6ef18-a0b7-4bb2-b099-b2a878e96637
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '242'
 ht-degree: 0%
 
 ---
-
 
 # (Beta) [!DNL Phoenix]-koppling
 
