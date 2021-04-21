@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;servicenow;ServiceNow
 solution: Experience Platform
 title: ServiceNow Source Connector - översikt
-topic: overview
+topic-legacy: overview
 description: Lär dig hur du ansluter ServiceNow till Adobe Experience Platform med API:er eller användargränssnittet.
+exl-id: f491b367-ec6d-4fb8-8eeb-3178673c0085
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '233'
 ht-degree: 0%
 
 ---
-
 
 # (Beta) [!DNL ServiceNow]-koppling
 
