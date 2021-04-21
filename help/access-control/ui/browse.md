@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Välj en produktprofil för att redigera åtkomstkontrollsbehörigheter
-topic: user guide
+topic-legacy: user guide
 description: Det här dokumentet innehåller de steg som krävs för att bläddra på arbetsytan för åtkomstkontroll. Om du vill konfigurera åtkomstkontroll för Experience Platform via Adobe Admin Console måste du vara administratör för en IMS-organisation som har ett abonnemang på Experience Platform.
+exl-id: 1d3c894e-b412-43ba-ba91-ddfa35303d73
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '309'
 ht-degree: 2%
 
 ---
-
 
 # Välj en produktprofil för att hantera dess åtkomstkontrollbehörigheter
 
