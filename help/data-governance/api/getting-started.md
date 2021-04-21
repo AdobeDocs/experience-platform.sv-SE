@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;DULE;Schedule
 solution: Experience Platform
 title: Komma igång med API:t för principtjänsten
-topic: developer guide
+topic-legacy: developer guide
 description: Med hjälp av API:t för principtjänst kan du skapa och hantera olika resurser för Adobe Experience Platform datastyrning. Det här dokumentet innehåller en introduktion till de centrala koncept som du behöver känna till innan du försöker anropa API:t för principtjänsten.
+exl-id: 5539976c-8433-45af-a147-2ab82ae308b2
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '438'
 ht-degree: 0%
 
 ---
-
 
 # Komma igång med API:t [!DNL Policy Service]
 
