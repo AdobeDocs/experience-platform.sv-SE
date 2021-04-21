@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;Individuell profil;fält;scheman;schema design;mixin;mixin;person;personinformation;profilpersoninformation;person;
 solution: Experience Platform
 title: Blandning av demografiska detaljer
-topic: overview
+topic-legacy: overview
 description: I det här dokumentet finns en översikt över blandningen av demografiska detaljer.
+exl-id: 588c044c-b80d-4cb9-9f97-92f040d54bb4
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '261'
 ht-degree: 2%
 
 ---
-
 
 # [!UICONTROL Demographic Details] blanda
 
