@@ -3,15 +3,15 @@ keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experi
 solution: Experience Platform
 title: API-slutpunkt för beskrivare
 description: Med slutpunkten /descriptors i API:t för schemaregister kan du programmässigt hantera XDM-beskrivningar i ditt upplevelseprogram.
-topic: developer guide
+topic-legacy: developer guide
+exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1611'
 ht-degree: 0%
 
 ---
-
 
 # Beskrivningsslutpunkt
 
@@ -175,7 +175,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 201 (Skapad) och information om den nyskapade beskrivningen, inklusive `@id`. `@id` är ett skrivskyddat fält som tilldelats av [!DNL Schema Registry] och används för att referera till beskrivningen i API:t.
+Ett lyckat svar returnerar HTTP-status 201 (Skapad) och information om den nyskapade beskrivningen, inklusive `@id`. `@id` är ett skrivskyddat fält som tilldelats av [!DNL Schema Registry] och som används för att referera till beskrivningen i API:t.
 
 ```JSON
 {
