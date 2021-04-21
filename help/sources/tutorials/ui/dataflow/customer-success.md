@@ -2,17 +2,17 @@
 keywords: Experience Platform;hem;populära ämnen;konfigurera dataflöde;kundframgångskoppling
 solution: Experience Platform
 title: Konfigurera ett dataflöde för en anslutning till en källa för lyckade kunder i användargränssnittet
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en [!DNL Platform] datauppsättning. I den här självstudiekursen beskrivs hur du konfigurerar ett nytt dataflöde med ditt konto för kundframgångar.
+exl-id: d348a7f8-6302-45f1-9961-bab56ad0407e
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1424'
 ht-degree: 0%
 
 ---
-
 
 # Konfigurera ett dataflöde för en anslutning till kundens framgång i användargränssnittet
 
