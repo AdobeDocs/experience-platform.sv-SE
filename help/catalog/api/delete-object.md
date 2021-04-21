@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;ta bort ett objekt;katalogtjänst;api
 solution: Experience Platform
 title: Ta bort ett objekt i API:t
-topic: developer guide
+topic-legacy: developer guide
 description: Du kan ta bort ett Catalog-objekt genom att ange dess ID i sökvägen till en DELETE-begäran.
+exl-id: 2ac9c378-2340-43e1-8279-7c365df652e4
 translation-type: tm+mt
-source-git-commit: b395535cbe7e4030606ee2808eb173998f5c32e0
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '207'
 ht-degree: 0%
 
 ---
-
 
 # Ta bort ett objekt i API:t
 
@@ -19,7 +19,7 @@ Du kan ta bort ett [!DNL Catalog]-objekt genom att ange dess ID i sökvägen fö
 
 >[!WARNING]
 >
->Var extra försiktig när du tar bort objekt, eftersom detta inte kan ångras och kan leda till brytningsändringar någon annanstans i [!DNL Experience Platform].
+>Var extra försiktig när du tar bort objekt, eftersom det inte går att ångra och kan leda till brytningsändringar någon annanstans i [!DNL Experience Platform].
 
 **API-format**
 
