@@ -2,16 +2,16 @@
 keywords: Experience Platform;hemmabas;populära ämnen;GDPR;gdpr;CCPA;ccpa;PDPA;pdpa;LGPD;lgpd;faq;FAQ;Regulation;Regulation;Regulations;Regulations;privacy;Privacy;Privacy;
 solution: Experience Platform
 title: Frågor och svar om sekretessregler
-topic: troubleshooting
+topic-legacy: troubleshooting
 description: Det här dokumentet innehåller svar på vanliga frågor om vilka sekretessregler som stöds och hur de implementeras i Adobe Experience Cloud.
+exl-id: ec553e53-664b-4e18-abb1-4e4063fdd2c9
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1599'
 ht-degree: 0%
 
 ---
-
 
 # Frågor och svar om sekretessbestämmelser
 
@@ -146,7 +146,7 @@ Det är viktigt att notera att den allmänna dataskyddsförordningen är en för
 
 ### Hur påverkar GDPR policyn kring dataintrång?
 
-Föreslagna förordningar om dataintrång gäller i första hand de delgivningspolicyer som tillämpas av företag som har överträtts. Dataintrång som kan utgöra en risk för enskilda personer måste anmälas till dataskyddsmyndigheten inom 72 timmar och till berörda personer utan onödigt dröjsmål.
+Föreslagna bestämmelser om dataintrång rör i första hand anmälningspolicyer för företag som har överträtts. Dataintrång som kan utgöra en risk för enskilda personer måste anmälas till dataskyddsmyndigheten inom 72 timmar och till berörda personer utan onödigt dröjsmål.
 
 ## PDPA-frågor
 
