@@ -2,16 +2,16 @@
 keywords: Experience Platform;genomgång;Data Science Workspace;populära ämnen
 solution: Experience Platform
 title: Data Science Workspace Walkthrough
-topic: Walkthrough
+topic-legacy: Walkthrough
 description: Det här dokumentet innehåller en genomgång av Adobe Experience Platform Data Science Workspace. Det allmänna arbetsflöde som en datavetare skulle gå igenom för att lösa ett problem med maskininlärning.
+exl-id: d814846e-52a9-46c6-831a-3399241959f2
 translation-type: tm+mt
-source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1709'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL Data Science Workspace] genomgång
 
@@ -220,4 +220,4 @@ Dokumentet innehöll ett allmänt arbetsflöde för datavetare för att lösa et
 - Sedan används funktionskonstruktion för att göra ändringar i din detaljhandelsdatamängd.
 - Skapa slutligen modeller av data och välj vilken modell som är bäst för att förutse framtida försäljning.
 
-När du är klar börjar du med att läsa användarhandboken [JupyterLab](./jupyterlab/overview.md) för en snabb översikt över anteckningsböcker i Adobe Experience Platform Data Science Workspace. Om du är intresserad av att lära dig mer om modeller och recept börjar du med att läsa självstudiekursen [Retail sales schema and dataset](./models-recipes/create-retails-sales-dataset.md). I den här självstudiekursen får du hjälp med följande självstudiekurser för datavetenskap som du kan visa på sidan [Självstudiekurser för datavetenskap](../tutorials/data-science-workspace.md).
+När du är klar börjar du med att läsa användarhandboken [JupyterLab](./jupyterlab/overview.md) för en snabb översikt över anteckningsböcker i Adobe Experience Platform Data Science Workspace. Om du är intresserad av att lära dig mer om modeller och recept börjar du med att läsa självstudiekursen [Retail sales schema and dataset](./models-recipes/create-retails-sales-dataset.md). I den här självstudiekursen får du hjälp med följande självstudiekurser för arbetsytan för datavetenskap, som du kan visa på sidan [självstudiekurser för datavetenskap](../tutorials/data-science-workspace.md).
