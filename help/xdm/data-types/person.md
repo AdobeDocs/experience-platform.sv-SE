@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;scheman;person;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
 title: Persondatatyp
-topic: overview
+topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över datatypen XDM (Person Experience Data Model).
+exl-id: f28a52be-90c7-4ed0-a460-97165bb58046
 translation-type: tm+mt
-source-git-commit: 194b604d4b23f2acfaa4243155b04a6793fb0727
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '334'
 ht-degree: 3%
 
 ---
-
 
 # [!UICONTROL Person] datatyp
 
