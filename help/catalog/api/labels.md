@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;dataanvändningsrubriker;katalogtjänst
 solution: Experience Platform
 title: Dataanvändningsetiketter i API:t för datauppsättningstjänsten
-topic: developer guide
+topic-legacy: developer guide
 description: API:t för datauppsättningstjänsten tillhandahåller slutpunkter för att hantera dataanvändningsetiketter för datauppsättningar.
+exl-id: 2451e5b0-b117-4465-8e58-70fc341c0748
 translation-type: tm+mt
-source-git-commit: a1103bfbf79f9c87bac5b113c01386a6fb8950e7
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '85'
 ht-degree: 0%
 
 ---
-
 
 # Dataanvändningsetiketter i API:t för datauppsättningstjänsten
 
