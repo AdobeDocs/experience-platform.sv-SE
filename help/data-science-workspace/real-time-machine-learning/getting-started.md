@@ -2,16 +2,16 @@
 keywords: Experience Platform;utvecklarguide;Data Science Workspace;populära topics;Real time Machine Learning;
 solution: Experience Platform
 title: Komma igång med maskininlärning i realtid
-topic: Getting started
+topic-legacy: Getting started
 description: I följande dokument beskrivs de steg som krävs för att skapa en Machine Learning-modell i realtid i Adobe Experience Platform.
+exl-id: 90a1c580-f6e7-4517-aa1e-da5092fbc4a2
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '438'
 ht-degree: 0%
 
 ---
-
 
 # Komma igång med maskininlärning i realtid (Alpha)
 
@@ -52,4 +52,3 @@ Om du vill skapa en ny datauppsättning för användning i maskininlärning i re
 ## Nästa steg {#next-steps}
 
 När du har förberett dina data för maskininlärning i realtid börjar du med att följa användarhandboken [Maskinininlärning i realtid](./rtml-authoring-notebook.md) för att lära dig hur du skapar och överför en ONNX-modell till maskininlärningsmodellagringsplatsen i realtid.
-
