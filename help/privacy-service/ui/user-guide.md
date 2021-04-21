@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;export;Exportera
 solution: Experience Platform
 title: Hantera sekretessjobb i Privacy Servicens användargränssnitt
-topic: UI guide
+topic-legacy: UI guide
 description: Lär dig hur du använder Privacy Servicens användargränssnitt för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
+exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1061'
 ht-degree: 0%
 
 ---
-
 
 # Hantera sekretessjobb i Privacy Servicens användargränssnitt
 
@@ -132,7 +132,7 @@ Dialogrutan försvinner och det nya jobbet (eller de nya jobben) visas i widgete
 
 ### Överför en JSON-fil {#json}
 
-När du skapar mer komplicerade begäranden, till exempel sådana som använder flera ID-typer för varje registrerade som behandlas, kan du skapa en begäran genom att överföra en JSON-fil.
+När du skapar mer komplicerade begäranden, t.ex. sådana som använder flera ID-typer för varje registrerade som behandlas, kan du skapa en begäran genom att överföra en JSON-fil.
 
 Välj pilen bredvid **[!UICONTROL Create Request]**, under widgeten Statusrapport till höger på skärmen. Välj **[!UICONTROL Upload JSON]** i listan med alternativ som visas.
 
