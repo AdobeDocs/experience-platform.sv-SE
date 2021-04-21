@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;Azure Blob;Amazon S3;blob;Blob;S3;s3
 solution: Experience Platform
 title: Översikt över Azure Blob och Amazon S3 Source Connectors
-topic: overview
+topic-legacy: overview
 description: Lär dig hur du ansluter Azure Blob och Amazon S3 till Adobe Experience Platform med API:er eller användargränssnittet.
+exl-id: 43a60d4d-1947-43c7-9a13-8e4094ca3604
 translation-type: tm+mt
-source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '140'
 ht-degree: 0%
 
 ---
-
 
 # Azure Blob och Amazon S3-anslutningar
 
