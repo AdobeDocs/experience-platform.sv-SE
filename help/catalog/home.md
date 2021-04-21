@@ -2,16 +2,16 @@
 keywords: Experience Platform;hem;populära ämnen;katalogtjänst;katalog;katalogtjänst;dataplats;dataplats;datahantering;datahantering;rad;rad;katalog;aktivera datauppsättning
 solution: Experience Platform
 title: Katalogtjänst - översikt
-topic: overview
+topic-legacy: overview
 description: Katalogtjänsten är arkivsystemet för dataplatser och -länkar inom Adobe Experience Platform. Alla data som importeras till Experience Platform lagras i Data Lake som filer och kataloger, men i Catalog finns metadata och beskrivning för dessa filer och kataloger för sökning och övervakning.
+exl-id: ef0c173b-607b-41b8-8676-c54ae9472e23
 translation-type: tm+mt
-source-git-commit: a1103bfbf79f9c87bac5b113c01386a6fb8950e7
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '805'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL Catalog Service] översikt
 
