@@ -2,15 +2,15 @@
 keywords: Experience Platform;profil;kundprofil i realtid;användargränssnitt;gränssnitt;anpassning;profilinformation;information
 title: Anpassning av profildetaljer i användargränssnittet
 description: 'Den här guiden innehåller stegvisa instruktioner för hur kundprofildata i realtid visas i Adobe Experience Platform användargränssnitt. '
-topic: guide
+topic-legacy: guide
+exl-id: 76cf8420-cc50-4a56-9f6d-5bfc01efcdb3
 translation-type: tm+mt
-source-git-commit: ba1cbed3b5e3f3a8879b3882856a03ef4be9b96a
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1111'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL Real-time Customer Profile] anpassning av detaljer  {#profile-detail-customization}
 
