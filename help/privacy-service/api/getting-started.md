@@ -6,9 +6,9 @@ description: Med Privacy Services-API:t kan utvecklare skapa och hantera kundfö
 topic-legacy: developer guide
 exl-id: c1d05e30-ef8f-4adf-87e0-1d6e3e9e9f9e
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: e226990fc84926587308077b32b128bfe334e812
 workflow-type: tm+mt
-source-wordcount: '761'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -35,9 +35,9 @@ I den här självstudiekursen finns exempel-API-anrop som visar hur du formatera
 
 För att kunna anropa API:t [!DNL Privacy Service] måste du först samla in dina autentiseringsuppgifter för att kunna användas i obligatoriska rubriker:
 
-* Behörighet: Bearer `{ACCESS_TOKEN}`
-* x-api-key: `{API_KEY}`
-* x-gw-ims-org-id: `{IMS_ORG}`
+* `Authorization: Bearer {ACCESS_TOKEN}`
+* `x-api-key: {API_KEY}`
+* `x-gw-ims-org-id: {IMS_ORG}`
 
 Detta innebär att du måste skaffa utvecklarbehörigheter för [!DNL Experience Platform] i Adobe Admin Console och sedan generera autentiseringsuppgifterna i Adobe Developer Console.
 
