@@ -7,7 +7,7 @@ type: Tutorial
 description: I den här självstudien beskrivs processen att publicera en modell som en tjänst med hjälp av API:t Sensei Machine Learning.
 exl-id: f78b1220-0595-492d-9f8b-c3a312f17253
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: a6d047d52dad085ba662bd684c896bdffe3eef2e
 workflow-type: tm+mt
 source-wordcount: '1516'
 ht-degree: 0%
@@ -39,7 +39,7 @@ Alla förfrågningar från POST, PUT och PATCH kräver ytterligare en rubrik:
 I följande tabell beskrivs några vanliga termer som används i den här självstudiekursen:
 
 | Term | Definition |
---- | ---
+| --- | --- |
 | **Machine Learning-instans (ML-instans)** | En instans av en [!DNL Sensei]-motor för en viss klientorganisation som innehåller specifika data, parametrar och [!DNL Sensei]-kod. |
 | **Experimentera** | En paraplyenhet för utbildning Experiment Runs, Scoring Experiment Runs eller båda. |
 | **Schemalagd experiment** | En term som beskriver automatiseringen av kurser eller poängsättning i Experiment Runs som styrs av ett användardefinierat schema. |
@@ -83,7 +83,7 @@ curl -X POST
 ```
 
 | Egenskap | Beskrivning |
---- | ---
+| --- | --- |
 | `mlInstanceId` | Befintlig ML-instans-identifiering, ska den träningsutvärderingsrunda som används för att skapa ML-tjänsten motsvara den här speciella ML-instansen. |
 | `trainingExperimentId` | Experimentera-ID som motsvarar ML-instansidentifieringen. |
 | `trainingExperimentRunId` | En särskild utbildning Experiment Run som ska användas för att publicera ML-tjänsten. |
