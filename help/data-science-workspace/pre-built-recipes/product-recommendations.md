@@ -6,7 +6,7 @@ topic-legacy: overview
 description: Med Product Recommendations recept kan ni tillhandahålla personaliserade produktrekommendationer som är skräddarsydda efter kundens behov och intressen. Med en korrekt prognosmodell kan en kunds inköpshistorik ge er insikt i vilka produkter de kan vara intresserade av.
 exl-id: 508d55af-c33b-4f1d-b1b6-f00ed5d12bf9
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 441d7822f287fabf1b06cdf3f6982f9c910387a8
 workflow-type: tm+mt
 source-wordcount: '477'
 ht-degree: 1%
@@ -39,7 +39,7 @@ I det här receptet används anpassade [XDM-scheman](../../xdm/schema/field-dict
 ### Schema för indatadata
 
 | Fältnamn | Typ |
---- | ---
+| --- | --- |
 | itemId | Sträng |
 | interactionType | Sträng |
 | tidsstämpel | Sträng |
@@ -48,7 +48,7 @@ I det här receptet används anpassade [XDM-scheman](../../xdm/schema/field-dict
 ### Schema för utdata
 
 | Fältnamn | Typ |
---- | ---
+| --- | --- |
 | rekommendationer | Sträng |
 | userId | Heltal |
 
