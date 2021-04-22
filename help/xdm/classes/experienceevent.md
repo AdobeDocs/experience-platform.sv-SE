@@ -6,9 +6,9 @@ topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över klassen XDM ExperienceEvent.
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 9b63b38e664e5776ca638f8ed407896f185bcab0
 workflow-type: tm+mt
-source-wordcount: '812'
+source-wordcount: '861'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Själva [!DNL XDM ExperienceEvent]-klassen tillhandahåller flera tidsserierelat
 | `eventMergeId` | ID:t för den inkapslade batchen som gjorde att posten skapades. Det här fältet fylls i automatiskt av systemet när data hämtas. |
 | `eventType` | En sträng som anger postens primära händelsetyp. Godkända värden och deras definitioner finns i [appendix-avsnittet](#eventType). |
 | `identityMap` | Ett kartfält som innehåller en uppsättning namngivna identiteter för den person som händelsen gäller för. Det här fältet uppdateras automatiskt av systemet när identitetsdata hämtas. Om du vill använda det här fältet för [Kundprofil för realtid](../../profile/home.md) ska du inte försöka uppdatera fältets innehåll manuellt i dataåtgärderna.<br /><br />Mer information om hur de används finns i avsnittet om identitetskartor i  [grunderna för ](../schema/composition.md#identityMap) schemakompositioner. |
-| `timestamp` | Den tidpunkt då händelsen eller observationen inträffade, formaterad enligt [RFC 339, avsnitt 5.6](https://tools.ietf.org/html/rfc3339#section-5.6)). |
+| `timestamp` | En ISO 8601-tidsstämpel för när händelsen inträffade, formaterad enligt [RFC 3339 Section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6).<br><br>Den här tidsstämpeln kan  **** bara representera observationen av själva händelsen och måste inträffa i det förflutna. Om dina användningsfall för segmentering kräver användning av tidsstämplar som kan inträffa i framtiden (till exempel ett avgångsdatum), måste dessa värden begränsas någon annanstans i Experience Event-schemat. |
 
 ## Kompatibla blandningar {#mixins}
 
