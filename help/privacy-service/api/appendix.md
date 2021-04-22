@@ -6,10 +6,10 @@ topic-legacy: developer guide
 description: Det här dokumentet innehåller ytterligare information om hur du arbetar med Privacy Service-API:t.
 exl-id: 7099e002-b802-486e-8863-0630d66e330f
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 545ac984d9f9f540fc9121214d40719f9a254379
 workflow-type: tm+mt
-source-wordcount: '501'
-ht-degree: 6%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -60,13 +60,13 @@ När du anger ett `namespace`-värde i API:t [!DNL Privacy Service] måste en **
 I följande tabell visas godkända värden för att ange en Adobe-produkt i attributet `include` för en jobbskapandebegäran.
 
 | Produkt | Värde som ska användas i attributet `include` |
---- | ---
-| Adobe Advertising Cloud | &quot;AdCloud&quot; |
-| Adobe Analytics | &quot;Analytics&quot; |
-| Adobe Audience Manager | &quot;AudienceManager&quot; |
-| Adobe Campaign | &quot;Campaign&quot; |
-| Adobe Experience Platform | &quot;aepDataLake&quot; |
-| Adobe Primetime-autentisering | &quot;primetimeAuthentication&quot; |
-| Adobe Target | &quot;Målgrupp&quot; |
-| Kundposttjänst | &quot;CRS&quot; |
-| Kundprofil i realtid | &quot;ProfileService&quot; |
+| --- | --- |
+| Adobe Advertising Cloud | `AdCloud` |
+| Adobe Analytics | `Analytics` |
+| Adobe Audience Manager | `AudienceManager` |
+| Adobe Campaign | `Campaign` |
+| Adobe Experience Platform | `aepDataLake` |
+| Adobe Primetime-autentisering | `primetimeAuthentication` |
+| Adobe Target | `Target` |
+| Kundposttjänst | `CRS` |
+| Kundprofil i realtid | `ProfileService` |
