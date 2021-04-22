@@ -6,7 +6,7 @@ topic-legacy: developer guide
 description: Det här dokumentet innehåller ytterligare information om hur du arbetar med Privacy Service-API:t.
 exl-id: 7099e002-b802-486e-8863-0630d66e330f
 translation-type: tm+mt
-source-git-commit: 545ac984d9f9f540fc9121214d40719f9a254379
+source-git-commit: e226990fc84926587308077b32b128bfe334e812
 workflow-type: tm+mt
 source-wordcount: '0'
 ht-degree: 0%
@@ -25,15 +25,17 @@ I följande tabell visas flera vanliga, fördefinierade identitetstyper som är 
 
 | Identitetstyp | `namespace` | `namespaceId` |
 | --- | --- | --- |
-| E-post | E-post | 6 |
-| Telefon | Telefon | 7 |
-| Adobe Advertising Cloud ID | AdCloud | 411 |
-| Adobe Audience Manager UUID | CORE | 0 |
-| Adobe Experience Cloud ID | ECID | 4 |
-| Adobe Target ID | TNTID | 9 |
-| [!DNL Apple] ID för annonsörer | IDFA | 20915 |
-| [!DNL Google] Annons-ID | GAID | 20914 |
-| [!DNL Windows] AID | WAID | 8 |
+| E-post | `Email` | `6` |
+| Telefon | `Phone` | `7` |
+| Adobe Advertising Cloud ID | `AdCloud` | `411` |
+| Adobe Audience Manager UUID | `CORE` | `0` |
+| Adobe Experience Cloud ID | `ECID` | `4` |
+| Adobe Target ID | `TNTID` | `9` |
+| [!DNL Apple] ID för annonsörer | `IDFA` | `20915` |
+| [!DNL Google] Annons-ID | `GAID` | `20914` |
+| [!DNL Windows] AID | `WAID` | `8` |
+
+{style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
@@ -47,13 +49,15 @@ När du anger ett `namespace`-värde i API:t [!DNL Privacy Service] måste en **
 
 | Kvalificerare | Definition |
 | --------- | ---------- |
-| standard | Ett av standardnamnutrymmena som definierats globalt, inte kopplat till en enskild organisations datauppsättning (till exempel e-post, telefonnummer osv.). Namnområdes-ID anges. |
-| anpassad | Ett unikt namnutrymme som skapats i en organisations kontext, som inte delas över [!DNL Experience Cloud]. Värdet representerar det egna namnet (&quot;namnfältet&quot;) som du vill söka efter. Namnområdes-ID anges. |
-| integrationCode | Integrationskod - liknande&quot;anpassad&quot;, men specifikt definierad som integrationskoden för en datakälla som du vill söka efter. Namnområdes-ID anges. |
-| namespaceId | Anger att värdet är det faktiska ID:t för namnutrymmet som skapades eller mappades via namnområdestjänsten. |
-| oregistrerad | En friformssträng som inte är definierad i namnområdestjänsten och som tas &quot;as is&quot;. Alla program som hanterar den här typen av namnutrymmen kontrollerar mot dem och hanterar om det passar företagssammanhanget och datauppsättningen. Inget namnområdes-ID har angetts. |
-| analys | Ett anpassat namnutrymme som mappas internt i [!DNL Analytics], inte i namnområdestjänsten. Detta skickas in direkt enligt den ursprungliga begäran, utan något namnområdes-ID |
-| target | Ett anpassat namnutrymme som tolkas internt av [!DNL Target], inte i namnområdestjänsten. Detta skickas in direkt enligt den ursprungliga begäran, utan något namnområdes-ID |
+| `standard` | Ett av standardnamnutrymmena som definierats globalt, inte kopplat till en enskild organisations datauppsättning (till exempel e-post, telefonnummer osv.). Namnområdes-ID anges. |
+| `custom` | Ett unikt namnutrymme som skapats i en organisations kontext, som inte delas över [!DNL Experience Cloud]. Värdet representerar det egna namnet (&quot;namnfältet&quot;) som du vill söka efter. Namnområdes-ID anges. |
+| `integrationCode` | Integrationskod - liknande&quot;anpassad&quot;, men specifikt definierad som integrationskoden för en datakälla som du vill söka efter. Namnområdes-ID anges. |
+| `namespaceId` | Anger att värdet är det faktiska ID:t för namnutrymmet som skapades eller mappades via namnområdestjänsten. |
+| `unregistered` | En friformssträng som inte är definierad i namnområdestjänsten och som tas &quot;as is&quot;. Alla program som hanterar den här typen av namnutrymmen kontrollerar mot dem och hanterar om det passar företagssammanhanget och datauppsättningen. Inget namnområdes-ID har angetts. |
+| `analytics` | Ett anpassat namnutrymme som mappas internt i [!DNL Analytics], inte i namnområdestjänsten. Detta skickas in direkt enligt den ursprungliga begäran, utan något namnområdes-ID |
+| `target` | Ett anpassat namnutrymme som tolkas internt av [!DNL Target], inte i namnområdestjänsten. Detta skickas in direkt enligt den ursprungliga begäran, utan något namnområdes-ID |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Godkända produktvärden
 
@@ -70,3 +74,5 @@ I följande tabell visas godkända värden för att ange en Adobe-produkt i attr
 | Adobe Target | `Target` |
 | Kundposttjänst | `CRS` |
 | Kundprofil i realtid | `ProfileService` |
+
+{style=&quot;table-layout:auto&quot;}
