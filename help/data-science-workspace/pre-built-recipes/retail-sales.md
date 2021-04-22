@@ -6,7 +6,7 @@ topic-legacy: overview
 description: Med butiksförsäljningsreceptet kan du förutsäga försäljningsprognos för alla butiker som behövs under en viss tidsperiod. Med en korrekt prognosmodell skulle handlaren kunna hitta förhållandet mellan efterfrågan och prispolitiken och fatta optimerade prissättningsbeslut för att maximera försäljningen och intäkterna.
 exl-id: ff01fcd1-fca6-4957-8470-a974fd1520aa
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 441d7822f287fabf1b06cdf3f6982f9c910387a8
 workflow-type: tm+mt
 source-wordcount: '585'
 ht-degree: 1%
@@ -41,7 +41,7 @@ I den här självstudiekursen går vi vidare med att skapa säljrecept i en Jupy
 I det här receptet används [XDM-scheman](../../xdm/schema/field-dictionary.md) för att modellera data. Schemat som används för det här receptet visas nedan:
 
 | Fältnamn | Typ |
---- | ---
+| --- | --- |
 | datum | Sträng |
 | store | Heltal |
 | storeType | Sträng |
