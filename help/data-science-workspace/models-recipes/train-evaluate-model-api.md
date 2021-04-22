@@ -7,9 +7,9 @@ type: Tutorial
 description: I den här självstudiekursen visas hur du skapar, utbilda och utvärderar en modell med hjälp av API-anrop för Sensei Machine Learning.
 exl-id: 8107221f-184c-426c-a33e-0ef55ed7796e
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 441d7822f287fabf1b06cdf3f6982f9c910387a8
 workflow-type: tm+mt
-source-wordcount: '1237'
+source-wordcount: '1235'
 ht-degree: 0%
 
 ---
@@ -42,15 +42,13 @@ Vi kommer att konsumera API:erna för att skapa en Experimentrunda för utbildni
 >[!NOTE]
 >
 >Termerna&quot;Engine&quot;,&quot;MLInstance&quot;,&quot;MLService&quot;,&quot;Experiment&quot; och&quot;Model&quot; kallas olika termer i användargränssnittet. Om du kommer från gränssnittet mappas skillnaderna i följande tabell.
-> 
-> | Användargränssnittsterm | API-term |
-> --- | ---
-> | Recipe | Motor |
-> | Modell | MLInstance |
-> | Utbildningsprogram | Experimentera |
-> | Tjänst | MLService |
 
-
+| Användargränssnittsterm | API-term |
+| --- | --- |
+| Recipe | Motor |
+| Modell | MLInstance |
+| Utbildningsprogram | Experimentera |
+| Tjänst | MLService |
 
 ### Skapa en MLInstance
 
