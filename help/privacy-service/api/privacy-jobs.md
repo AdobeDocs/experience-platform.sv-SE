@@ -6,9 +6,9 @@ topic-legacy: developer guide
 description: Lär dig hur du hanterar sekretessjobb för Experience Cloud-program med Privacy Service-API:t.
 exl-id: 74a45f29-ae08-496c-aa54-b71779eaeeae
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: e226990fc84926587308077b32b128bfe334e812
 workflow-type: tm+mt
-source-wordcount: '1344'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -41,6 +41,8 @@ GET /jobs?regulation={REGULATION}&page={PAGE}&size={SIZE}
 | `{REGULATION}` | Regeltypen som ska sökas efter. Godkända värden är: <ul><li>`gdpr` (Europeiska unionen)</li><li>`ccpa` (Kalifornien)</li><li>`lgpd_bra` (Brasilien)</li><li>`nzpa_nzl` (Nya Zeeland)</li><li>`pdpa_tha` (Thailand)</li></ul> |
 | `{PAGE}` | Sidan med data som ska visas med nollbaserad numrering. Standardvärdet är `0`. |
 | `{SIZE}` | Antalet resultat som ska visas på varje sida. Standardvärdet är `1` och det högsta värdet är `100`. Om det maximala värdet överskrids returneras ett 400-kodfel. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
@@ -160,6 +162,8 @@ curl -X POST \
 | `analyticsDeleteMethod` | En valfri egenskap som anger hur Adobe Analytics ska hantera personuppgifter. Två möjliga värden accepteras för det här attributet: <ul><li>`anonymize`: Alla data som refereras av den angivna samlingen med användar-ID görs anonyma. Om `analyticsDeleteMethod` utelämnas är detta standardbeteendet.</li><li>`purge`: Alla data tas bort helt.</li></ul> |
 | `regulation` **(Obligatoriskt)** | Reglerna för sekretessarbetet. Följande värden accepteras: <ul><li>`gdpr` (Europeiska unionen)</li><li>`ccpa` (Kalifornien)</li><li>`lgpd_bra` (Brasilien)</li><li>`nzpa_nzl` (Nya Zeeland)</li><li>`pdpa_tha` (Thailand)</li></ul> |
 
+{style=&quot;table-layout:auto&quot;}
+
 **Svar**
 
 Ett lyckat svar returnerar information om de nya jobben.
@@ -210,6 +214,8 @@ Ett lyckat svar returnerar information om de nya jobben.
 | --- | --- |
 | `jobId` | Ett skrivskyddat, unikt systemgenererat ID för ett jobb. Det här värdet används i nästa steg när du söker efter ett specifikt jobb. |
 
+{style=&quot;table-layout:auto&quot;}
+
 När du har skickat jobbbegäran kan du fortsätta till nästa steg i [kontrollera jobbets status](#check-status).
 
 ## Kontrollera status för ett jobb {#check-status}
@@ -229,6 +235,8 @@ GET /jobs/{JOB_ID}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{JOB_ID}` | ID:t för det jobb som du vill söka efter. Detta ID returneras under `jobId` i lyckade API-svar för [skapandet av ett jobb](#create-job) och [som listar alla jobb](#list). |
+
+{style=&quot;table-layout:auto&quot;}
 
 **Begäran**
 
@@ -326,6 +334,8 @@ Ett lyckat svar returnerar information om det angivna jobbet.
 | `productStatusResponse.results` | För vissa statusvärden kan vissa produkter returnera ett `results`-objekt som ger ytterligare information som inte omfattas av `responseMsgDetail`. |
 | `downloadURL` | Om jobbstatusen är `complete`, ger det här attributet en URL för att hämta jobbresultaten som en ZIP-fil. Den här filen kan laddas ned i 60 dagar efter att jobbet har slutförts. |
 
+{style=&quot;table-layout:auto&quot;}
+
 ### Jobbstatuskategorier {#status-categories}
 
 I följande tabell visas olika möjliga jobbstatuskategorier och deras motsvarande betydelse:
@@ -336,6 +346,8 @@ I följande tabell visas olika möjliga jobbstatuskategorier och deras motsvaran
 | `processing` | Ansökningarna har bekräftat jobbet och bearbetar för närvarande. |
 | `submitted` | Jobbet skickas till alla tillämpliga program. |
 | `error` | Något misslyckades vid bearbetningen av jobbet - mer specifik information kan hämtas genom att information om enskilda jobb hämtas. |
+
+{style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
