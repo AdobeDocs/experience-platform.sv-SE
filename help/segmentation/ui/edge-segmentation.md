@@ -6,9 +6,9 @@ topic-legacy: ui guide
 description: Kantsegmentering är möjligheten att utvärdera segment i plattformen direkt, vilket möjliggör användning av samma sida och nästa sida.
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5256c2a13fc75f7d46911f2ad368188d9e818921
 workflow-type: tm+mt
-source-wordcount: '346'
+source-wordcount: '349'
 ht-degree: 0%
 
 ---
@@ -41,7 +41,7 @@ Följande frågetyper är **inte** som stöds för kantsegmentering:
 | Frågetyp | Detaljer |
 | ---------- | ------- |
 | Fönster för relativ tid | Om en fråga refererar till ett tidsfönster kan den inte utvärderas med kantsegmentering. |
-| Negation | Om en fråga innehåller en negation kan den inte utvärderas med kantsegmentering. |
+| Negation | Om en fråga innehåller en negation, eller en `not`-händelse, kan den inte utvärderas med kantsegmentering. |
 | Flera händelser | Om en fråga innehåller mer än en händelse kan den inte utvärderas med kantsegmentering. |
 
 ## Nästa steg
