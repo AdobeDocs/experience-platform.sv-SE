@@ -6,9 +6,9 @@ topic-legacy: developer guide
 description: Lär dig hur du hanterar förfrågningar om kundsamtycke för Experience Cloud-program med Privacy Service-API:t.
 exl-id: ec505749-c0a9-4050-be56-4c0657807ec7
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: e226990fc84926587308077b32b128bfe334e812
 workflow-type: tm+mt
-source-wordcount: '244'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -66,6 +66,8 @@ curl -X POST \
 | `entities` | En array med objekt som anger vilka användare som medgivandebegäran gäller för. Varje objekt innehåller en `namespace` och en array med `values` som matchar enskilda användare med det namnutrymmet. |
 | `nameSpace` | Varje objekt i `entities`-arrayen måste innehålla ett av de [standardidentitetsnamnutrymmen](./appendix.md#standard-namespaces) som känns igen av Privacy Service-API:t. |
 | `values` | En array med värden för varje användare, som motsvarar den angivna `nameSpace`. |
+
+{style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
