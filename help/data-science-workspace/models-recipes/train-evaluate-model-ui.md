@@ -7,9 +7,9 @@ type: Tutorial
 description: I Adobe Experience Platform Data Science Workspace skapas en maskininlärningsmodell genom att en befintlig Recipe som är lämplig för modellens avsikt läggs till. Modellen är sedan utbildad och utvärderad för att optimera dess driftseffektivitet och effektivitet genom att finjustera de tillhörande hyperparametrarna. Recept kan återanvändas, vilket innebär att flera modeller kan skapas och skräddarsys för specifika syften med en enda Recept.
 exl-id: 6f674cfa-c123-46a3-80e2-9342fe687976
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 441d7822f287fabf1b06cdf3f6982f9c910387a8
 workflow-type: tm+mt
-source-wordcount: '1083'
+source-wordcount: '1078'
 ht-degree: 1%
 
 ---
@@ -110,10 +110,10 @@ I den här självstudiekursen steg du igenom när du skapade, utbildade och utv�
 Hyperparametrar bestämmer modellens utbildningsbeteende, och om du ändrar hyperparametrar påverkas modellens precision och precision:
 
 | Hyperparameter | Beskrivning | Rekommenderat intervall |
---- | --- | ---
-| learning_rate | Inlärningsgraden minskar bidraget från varje träd med learning_rate. Det finns en kompromiss mellan learning_rate och n_estimators. | 0.1 | [2 - 10] / antal uppskattare |
-| n_estimators | Antalet förstärkningssteg som ska utföras. Ökning av övertoningar är relativt robust för överpassning, så ett stort tal ger vanligtvis bättre prestanda. | 100 | 100 - 1000 |
-| max_depth | Maximalt djup för de enskilda regressionsberäknarna. Det maximala djupet begränsar antalet noder i trädet. Finjustera den här parametern för bästa prestanda. det bästa värdet beror på interaktionen mellan indatavariablerna. | 3 | 4 - 10 |
+| --- | --- | --- |
+| learning_rate | Inlärningsgraden minskar bidraget från varje träd med learning_rate. Det finns en kompromiss mellan learning_rate och n_estimators. | 0.1 |
+| n_estimators | Antalet förstärkningssteg som ska utföras. Ökning av övertoningar är relativt robust för överpassning, så ett stort tal ger vanligtvis bättre prestanda. | 100 |
+| max_depth | Maximalt djup för de enskilda regressionsberäknarna. Det maximala djupet begränsar antalet noder i trädet. Finjustera den här parametern för bästa prestanda. det bästa värdet beror på interaktionen mellan indatavariablerna. | 3 |
 
 Ytterligare parametrar bestämmer modellens tekniska egenskaper:
 
