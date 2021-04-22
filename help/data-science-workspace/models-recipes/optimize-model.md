@@ -7,7 +7,7 @@ type: Tutorial
 description: Model Insights Framework förser datavetenskaparen med verktyg i Data Science Workspace som gör snabba och välgrundade val för optimala maskininlärningsmodeller baserade på experiment.
 exl-id: f989a3f1-6322-47c6-b7d6-6a828766053f
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 441d7822f287fabf1b06cdf3f6982f9c910387a8
 workflow-type: tm+mt
 source-wordcount: '1265'
 ht-degree: 0%
@@ -77,7 +77,7 @@ evaluation.metrics=com.adobe.platform.ml.impl.Constants.FSCORE
 I följande tabell anges standardmåtten för varje klass. En användare kan också använda värdena i kolumnen `evaluation.metric` för att aktivera ett specifikt mått.
 
 | `evaluator.class` | Standardmått | `evaluation.metric` |
---- | --- | ---
+| --- | --- | --- |
 | `DefaultBinaryClassificationEvaluator` | -Precision <br>-Recall <br>-Confusion Matrix <br>-F-Score <br>-Accuracy <br>-Receiver Operating Properties <br>-Area under the Receiver Operating Characproperties | -`PRECISION` <br>-`RECALL` <br>-`CONFUSION_MATRIX` <br>-`FSCORE` <br>-`ACCURACY` <br>-`ROC` <br>-`AUROC` |
 | `DefaultMultiClassificationEvaluator` | -Precision <br>-Recall <br>-Confusion Matrix <br>-F-Score <br>-Accuracy <br>-Receiver Operating Properties <br>-Area under the Receiver Operating Characproperties | -`PRECISION` <br>-`RECALL` <br>-`CONFUSION_MATRIX` <br>-`FSCORE` <br>-`ACCURACY` <br>-`ROC` <br>-`AUROC` |
 | `RecommendationsEvaluator` | -Medelvärde för genomsnittlig precision (MAP) <br>-Normaliserad rabatterad kumulativ vinst <br>-Medelvärde för lutning <br>-Mätvärde K | -`MEAN_AVERAGE_PRECISION` <br>-`NDCG` <br>-`MRR` <br>-`METRIC_K` |
@@ -161,7 +161,7 @@ Data läses först in till en datauppsättning från en källa enligt definition
 [!DNL Sensei Model Insights Framework] stöder en standardmall för varje typ av maskininlärningsalgoritm. Tabellen nedan visar vanliga maskininlärningsalgoritmklasser på hög nivå och motsvarande utvärderingsmått och visualiseringar.
 
 | ML-algoritmtyp | Mätvärden för utvärdering | Visualiseringar |
---- | --- | ---
+| --- | --- | --- |
 | Regression | - RMSE<br>- MAPE<br>- MASE<br>- MAE | Förutsedd kontra faktisk värdesövertäckningskurva |
 | Binär klassificering | - Konfusionsmatris<br>- Precision-revansch<br>- Accuracy<br>- F-score (specifikt F1,F2)<br>- AUC<br>- ROC | ROC-kurva och förvirringsmatris |
 | Klassificering i flera klasser | -Konfusionsmatris <br>- För varje klass: <br>- precision-/återkallelseprecision <br>- F-poäng (specifikt F1, F2) | ROC-kurva och förvirringsmatris |
