@@ -7,9 +7,9 @@ type: Tutorial
 description: Med Adobe Experience Platform Query Service kan du skapa datauppsättningar från användargränssnittet. När en datauppsättning har skapats kan den nås som vilken annan datauppsättning som helst i datasjön och användas för en mängd olika användningsfall.
 exl-id: 6f6c049d-f19f-4161-aeb4-3a01eca7dc75
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d2f19cc97082f75e66cf38e54b5bdb89482930ed
 workflow-type: tm+mt
-source-wordcount: '323'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -23,9 +23,9 @@ Den verkliga styrkan hos [!DNL Query Service] visas när frågor används för a
 1. Skriv frågan med en ansluten klient och validera utdata.
 2. Logga in på användargränssnittet för [!DNL Platform] och gå till Frågor.
 3. Leta reda på frågan i listan och hovra över raden.
-4. Klicka på **[!UICONTROL Create Dataset]**. ![Bild](../images/ui/output-dataset.png)
+4. Välj **[!UICONTROL Create Dataset]**. ![Bild](../images/ui/create-datasets/output-dataset.png)
 5. Ange ett datauppsättningsnamn som föregås av ditt LDAP-ID (behöver inte vara unikt eller SQL-säkert). systemet genererar ett&quot;tabellnamn&quot; baserat på det namn som anges här).
-6. Ange en datauppsättningsbeskrivning och klicka på **[!UICONTROL Run Query]**.![Bild](../images/ui/run-query.png)
+6. Ange en datauppsättningsbeskrivning och välj **[!UICONTROL Run Query]**.![Bild](../images/ui/create-datasets/run-query.png)
 7. Se frågan färdig och gå sedan till listsidan för datauppsättningar för att se den datauppsättning du just skapade.
 
 När en datauppsättning har skapats kan den nås på samma sätt som andra datauppsättningar i [!DNL Data Lake] och användas för olika användningsområden.
