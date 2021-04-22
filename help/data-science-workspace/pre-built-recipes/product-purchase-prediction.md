@@ -6,7 +6,7 @@ topic-legacy: overview
 description: Med recept för produktinköpsförutsägelse kan du förutsäga sannolikheten för en viss typ av kundinköpshändelse, till exempel ett produktköp.
 exl-id: 66a45629-33a3-4081-8dbd-b864983b8f57
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 441d7822f287fabf1b06cdf3f6982f9c910387a8
 workflow-type: tm+mt
 source-wordcount: '397'
 ht-degree: 5%
@@ -36,7 +36,7 @@ recept på produktinköpsförutsägelse använder maskininlärning för att för
 I det här receptet används [XDM-scheman](../../xdm/home.md) för att modellera data. Schemat som används för det här receptet visas nedan:
 
 | Fältnamn | Typ |
---- | ---
+| --- | --- |
 | userId | Sträng |
 | könRatio | Siffra |
 | ageY | Siffra |
