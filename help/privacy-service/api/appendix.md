@@ -6,10 +6,10 @@ topic-legacy: developer guide
 description: Det här dokumentet innehåller ytterligare information om hur du arbetar med Privacy Service-API:t.
 exl-id: 7099e002-b802-486e-8863-0630d66e330f
 translation-type: tm+mt
-source-git-commit: e226990fc84926587308077b32b128bfe334e812
+source-git-commit: a4f6801cc85624274716889bdda0146fa38eb4b7
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '478'
+ht-degree: 3%
 
 ---
 
@@ -65,14 +65,15 @@ I följande tabell visas godkända värden för att ange en Adobe-produkt i attr
 
 | Produkt | Värde som ska användas i attributet `include` |
 | --- | --- |
-| Adobe Advertising Cloud | `AdCloud` |
-| Adobe Analytics | `Analytics` |
+| Adobe Advertising Cloud | `adCloud` |
+| Adobe Analytics | `analytics` |
 | Adobe Audience Manager | `AudienceManager` |
-| Adobe Campaign | `Campaign` |
-| Adobe Experience Platform | `aepDataLake` |
+| Adobe Campaign | `campaign` |
+| Adobe Experience Platform | `AdobeCloudPlatform` |
 | Adobe Primetime-autentisering | `primetimeAuthentication` |
-| Adobe Target | `Target` |
-| Kundposttjänst | `CRS` |
-| Kundprofil i realtid | `ProfileService` |
+| Adobe Target | `target` |
+| Automatiseringsprodukt | `automationProduct` |
+| Kundattribut | `CRS` |
+| Kundprofil i realtid | `profileService` |
 
 {style=&quot;table-layout:auto&quot;}
