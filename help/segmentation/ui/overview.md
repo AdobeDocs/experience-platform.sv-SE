@@ -6,7 +6,7 @@ topic-legacy: ui guide
 description: Adobe Experience Platform segmenteringstjänst innehåller ett användargränssnitt för att skapa och hantera segmentdefinitioner.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: fa2f4e046c6210137aa3e98d9f18010c1058275a
 workflow-type: tm+mt
 source-wordcount: '1479'
 ht-degree: 0%
@@ -32,7 +32,7 @@ Det är också viktigt att känna till två nyckeltermer som används i det här
 
 ## Översikt
 
-I [[!DNL Experience Platform] användargränssnittet](http://platform.adobe.com/) väljer du **[!UICONTROL Segments]** i den vänstra navigeringen för att öppna fliken **[!UICONTROL Overview]**. På den här fliken finns länkar till dokumentation och videoklipp som hjälper dig att förstå och börja arbeta med segment.
+I [[!DNL Experience Platform] användargränssnittet](https://platform.adobe.com/) väljer du **[!UICONTROL Segments]** i den vänstra navigeringen för att öppna fliken **[!UICONTROL Overview]**. På den här fliken finns länkar till dokumentation och videoklipp som hjälper dig att förstå och börja arbeta med segment.
 
 ![](../images/ui/overview/segment-overview.png)
 
@@ -44,14 +44,14 @@ Välj fliken **[!UICONTROL Browse]** för att visa en lista över alla segmentde
 
 I den här vyn visas information om segmentdefinitionen, inklusive uppdelning, kurva, antal profiler, utvärderingsmetod, datum när segmentet skapades och senaste ändringsdatum.
 
-I uppdelningen visas ett stolpdiagram som visar procentandelen profiler som tillhör var och en av följande statusvärden: [!UICONTROL Entered], [!UICONTROL Realized] och [!UICONTROL Exiting].
+I uppdelningen visas ett stolpdiagram som visar procentandelen profiler som tillhör var och en av följande statusvärden: [!UICONTROL Realized], [!UICONTROL Existing] och [!UICONTROL Exiting].
 
 ![](../images/ui/overview/segment-browse-breakdown.png)
 
 | Status | Beskrivning |
 | ------ | ----------- |
-| Anges | En ny profil inom segmentet. |
-| Realiserad | En befintlig profil som finns kvar inom segmentet. |
+| Realiserad | En ny profil inom segmentet. |
+| Befintlig | En befintlig profil som finns kvar inom segmentet. |
 | Avslutar | En befintlig profil som lämnar segmentet. |
 
 Kurvan anger hur många procent av profilerna som ändras inom en segmentdefinition jämfört med den senaste gången segmentjobbet kördes, medan antalet profiler representerar det totala antalet profiler som kvalificerar sig för segmentet.
