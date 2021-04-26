@@ -4,14 +4,14 @@ solution: Experience Platform
 title: Mappningsfält för Marketo Engage-källan
 topic-legacy: overview
 description: Tabellerna nedan innehåller mappningarna mellan fälten i Marketo datamängder och deras motsvarande XDM-fält.
+exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
 translation-type: tm+mt
-source-git-commit: f12baaa9d4b37f1101792a4ae479b5a62893eb68
+source-git-commit: 8f03b2e8a10d57fcae77dedecdce0e0176ba04fd
 workflow-type: tm+mt
-source-wordcount: '425'
+source-wordcount: '453'
 ht-degree: 1%
 
 ---
-
 
 # (Beta) [!DNL Marketo Engage] fältkopplingar
 
@@ -158,6 +158,7 @@ Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo]
 | `company` | `accountName` |
 | `companyNotes` | `accountDescription` |
 | `site` | `accountSite` |
+| `mktoCdpParentOrgId` | `accountParentID` |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -177,8 +178,8 @@ Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo]
 
 | Källdatauppsättning | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
-| `marketingListMemberID` | `staticListMemberID` | Primär identitet |
-| `marketingListID` | `staticListID` | Relation |
+| `staticListMemberID` | `marketingListMemberID` | Primär identitet |
+| `staticListID` | `marketingListID` | Relation |
 | `personID` | `personID` | Relation |
 | `createdAt` | `extSourceSystemAudit.createdDate` |
 
@@ -234,7 +235,7 @@ Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo]
 | `isWon` | `isWon` |
 | `quantity` | `opportunityQuantity` |
 | `probability` | `probabilityPercentage` |
-| `Campaign-ID` | `campaignID` | Rekommenderas endast om du använder Salesforce-integreringen. |
+| `mktoCdpSourceCampaignId` | `campaignID` | Rekommenderas endast om du använder Salesforce-integreringen. |
 | `lastActivityDate` | `lastActivityDate` |
 | `leadSource` | `leadSource` |
 | `nextStep` | `nextStep` |
@@ -279,7 +280,7 @@ Som en tillfällig lösning kan du uppdatera ID-sammanslagningsfältet från `No
 | `mktoCdpCnvContactPersonId` | `b2b.convertedContactID` |
 | `mktoCdpIsConverted` | `b2b.isConverted` |
 | `mktoCdpConvertedDate` | `b2b.convertedDate` |
-| `sfdcId` | `extSourceSystemAudit.externalID` | Sekundär identitet |
+| `sfdcLeadId` | `extSourceSystemAudit.externalID` | Sekundär identitet |
 | `createdAt` | `extSourceSystemAudit.createdDate` |
 | `updatedAt` | `extSourceSystemAudit.lastUpdatedDate` |
 | `title` | `extendedWorkDetails.jobTitle` |
@@ -308,8 +309,13 @@ Som en tillfällig lösning kan du uppdatera ID-sammanslagningsfältet från `No
 | `id` | `personComponents.sourcePersonID` |
 | `email` | `personComponents.workEmail.address` |
 | `email` | `workEmail.address` |
+| `to_object('ECID',arrays_to_objects('id',explode(ecids)))` | `identityMap` |
 
 {style=&quot;table-layout:auto&quot;}
+
+>[!TIP]
+>
+>Källfältet `to_object('ECID',arrays_to_objects('id',explode(ecids)))` är ett beräkningsfält som måste läggas till med alternativet [!UICONTROL Add calculated field] i plattformsgränssnittet. Mer information finns i självstudiekursen om att [lägga till beräknade fält](../../../../ingestion/tutorials/map-a-csv-file.md).
 
 ## Nästa steg
 
