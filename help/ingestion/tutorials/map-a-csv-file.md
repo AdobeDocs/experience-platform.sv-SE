@@ -7,7 +7,7 @@ type: Tutorial
 description: I den här självstudiekursen beskrivs hur du mappar en CSV-fil till ett XDM-schema med Adobe Experience Platform användargränssnitt.
 exl-id: 15f55562-269d-421d-ad3a-5c10fb8f109c
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 0e79d339ddc0301486ea3e53a3fd52877ff6a2c8
 workflow-type: tm+mt
 source-wordcount: '828'
 ht-degree: 1%
@@ -85,7 +85,7 @@ Du kan också välja att manuellt mappa källschemat till målschemat. Håll pek
 
 Om du vill ta bort en av mappningarna för du pekaren över mappningen och väljer minusikonen.
 
-### Lägg till beräknat fält
+### Lägg till beräknat fält {#add-calculated-field}
 
 Beräknade fält tillåter att värden skapas baserat på attributen i indatabladet. Dessa värden kan sedan tilldelas attribut i målschemat och ges ett namn och en beskrivning som gör det enklare att referera till.
 
