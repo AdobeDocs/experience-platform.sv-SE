@@ -8,9 +8,9 @@ topic-legacy: getting started
 type: Documentation
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: a03d851f3e0037b8241ca1f1de890903b08feac4
 workflow-type: tm+mt
-source-wordcount: '1715'
+source-wordcount: '1768'
 ht-degree: 1%
 
 ---
@@ -179,6 +179,16 @@ Det här felmeddelandet visas när integreringen av användaren eller Adobe I/O 
 
 Det här felmeddelandet visas när en POST-, PUT eller PATCH-begäran har ett ogiltigt eller saknar `Content-Type`-huvud. Kontrollera att rubriken är inkluderad i begäran och att dess värde är `application/json`.
 
+### Användarregion saknas
+
+```json
+{
+    "error_code": "403027",
+    "message": "User region is missing"
+}
+```
+
+Det här felmeddelandet visas när ditt konto (som representeras av de angivna autentiseringsuppgifterna) inte är associerat med en produktprofil för Experience Platform. Följ stegen på [skapa inloggningsuppgifter](./api-authentication.md#authentication-for-each-session) i självstudiekursen för autentisering av plattforms-API för att lägga till plattform i ditt konto och uppdatera autentiseringsuppgifterna i enlighet med detta.
 
 ## Tjänstens felsökningskatalog {#service-troubleshooting-directory}
 
