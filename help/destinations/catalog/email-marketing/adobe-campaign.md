@@ -2,14 +2,14 @@
 keywords: e-post;E-post;e-post;e-postmål;adobe-kampanj;kampanj
 title: Adobe Campaign-anslutning
 description: Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera och leverera kampanjer i alla kanaler, både online och offline.
+exl-id: 0de91738-8f56-41f5-8745-9b14b15db76a
 translation-type: tm+mt
-source-git-commit: 02754055e2be8a45a0699386cb559dad8f25717c
+source-git-commit: 29b4eaca06e2f1032584a0b4720490934a6e1fa7
 workflow-type: tm+mt
-source-wordcount: '762'
+source-wordcount: '808'
 ht-degree: 0%
 
 ---
-
 
 # Adobe Campaign-anslutning
 
@@ -22,6 +22,12 @@ Om du vill skicka segmentdata till Adobe Campaign måste du först [ansluta mål
 ## Exporttyp {#export-type}
 
 **Profilbaserat**  - du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du har valt i  **[!UICONTROL Select attributes]** steget i arbetsflödet [ för ](../../ui/activate-destinations.md#select-attributes)målaktivering.
+
+## IP-adress tillåtelselista {#allow-list}
+
+När du konfigurerar e-postmarknadsföringsmål med SFTP-lagring rekommenderar Adobe att du lägger till vissa IP-intervall till tillåtelselista.
+
+Se [IP-adressen tillåtelselista för molnlagringsdestinationer](../cloud-storage/ip-address-allow-list.md) om du behöver lägga till IP-adresser för Adobe i tillåtelselista.
 
 ## Anslutningsmål {#connect-destination}
 
