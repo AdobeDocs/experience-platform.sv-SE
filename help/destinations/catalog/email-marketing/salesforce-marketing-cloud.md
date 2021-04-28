@@ -2,14 +2,14 @@
 keywords: e-post;E-post;e-post;e-postadresser;salesforce;salesforce-mål
 title: Salesforce Marketing Cloud-anslutning
 seo-description: Salesforce Marketing Cloud är en digital marknadsföringssvit som tidigare kallades ExactTarget som gör att ni kan skapa och anpassa resor för besökare och kunder för att personalisera deras upplevelse.
+exl-id: e85049a7-eaed-4f8a-b670-9999d56928f8
 translation-type: tm+mt
-source-git-commit: 02754055e2be8a45a0699386cb559dad8f25717c
+source-git-commit: 29b4eaca06e2f1032584a0b4720490934a6e1fa7
 workflow-type: tm+mt
-source-wordcount: '538'
+source-wordcount: '584'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL Salesforce Marketing Cloud] anslutning
 
@@ -22,6 +22,12 @@ Om du vill skicka segmentdata till [!DNL Salesforce Marketing Cloud] måste du f
 ## Exporttyp {#export-type}
 
 **Profilbaserat**  - du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du väljer på skärmen Välj attribut i arbetsflödet [ för ](../../ui/activate-destinations.md#select-attributes)målaktivering.
+
+## IP-adress tillåtelselista {#allow-list}
+
+När du konfigurerar e-postmarknadsföringsmål med SFTP-lagring rekommenderar Adobe att du lägger till vissa IP-intervall till tillåtelselista.
+
+Se [IP-adressen tillåtelselista för molnlagringsdestinationer](../cloud-storage/ip-address-allow-list.md) om du behöver lägga till IP-adresser för Adobe i tillåtelselista.
 
 ## Anslutningsmål {#connect-destination}
 
