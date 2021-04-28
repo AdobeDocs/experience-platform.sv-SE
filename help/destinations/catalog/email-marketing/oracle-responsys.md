@@ -2,14 +2,14 @@
 keywords: e-post;E-post;e-postadresser;oraclets svarsmål
 title: Oraclena svarssystemanslutning
 description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som Oraclet erbjuder för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
+exl-id: 70f2f601-afee-4315-bf7a-ed2c92397ebe
 translation-type: tm+mt
-source-git-commit: 02754055e2be8a45a0699386cb559dad8f25717c
+source-git-commit: 29b4eaca06e2f1032584a0b4720490934a6e1fa7
 workflow-type: tm+mt
-source-wordcount: '524'
+source-wordcount: '570'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL Oracle Responsys] anslutning
 
@@ -22,6 +22,12 @@ Om du vill skicka segmentdata till [!DNL Oracle Responsys] måste du först [ans
 ## Exporttyp {#export-type}
 
 **Profilbaserat**  - du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du väljer på skärmen Välj attribut i arbetsflödet [ för ](../../ui/activate-destinations.md#select-attributes)målaktivering.
+
+## IP-adress tillåtelselista {#allow-list}
+
+När du konfigurerar e-postmarknadsföringsmål med SFTP-lagring rekommenderar Adobe att du lägger till vissa IP-intervall till tillåtelselista.
+
+Se [IP-adressen tillåtelselista för molnlagringsdestinationer](../cloud-storage/ip-address-allow-list.md) om du behöver lägga till IP-adresser för Adobe i tillåtelselista.
 
 ## Anslutningsmål {#connect-destination}
 
