@@ -1,15 +1,15 @@
 ---
 keywords: Azure-händelsehubbsmål;azure-händelsehubb;azure-händelsehubb
-title: (Beta) Azure Event Hubs-anslutning
-description: Skapa en utgående anslutning i realtid till din Azure Event Hubs-lagring för att strömma data från Experience Platform.
+title: (Beta) !DNL Azure Event Hubs] anslutning
+description: Skapa en utgående anslutning i realtid till ditt !DNL Azure Event Hubs]-lagringsutrymme för att strömma data från Experience Platform.
+exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: ce5001d0a1c95901089915ae9836fdd436f12297
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '534'
 ht-degree: 0%
 
 ---
-
 
 # (Beta) [!DNL Azure Event Hubs]-anslutning
 
@@ -113,3 +113,4 @@ Dina exporterade [!DNL Experience Platform]-data anges i [!DNL Azure Event Hubs]
 >* [Anslut till Azure Event Hubs och aktivera data med API:t för Flow Service](../../api/streaming-destinations.md)
 >* [AWS Kinesis-mål](./amazon-kinesis.md)
 >* [Måltyper och -kategorier](../../destination-types.md)
+
