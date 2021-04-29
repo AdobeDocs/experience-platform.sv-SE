@@ -5,9 +5,9 @@ user-guide-description: Aktivera kända och okända data för flerkanalskampanje
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: 'Mål '
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 020192469127e8f25f0d61e33b4b5dc60da6b57d
 workflow-type: tm+mt
-source-wordcount: '470'
+source-wordcount: '471'
 ht-degree: 0%
 
 ---
@@ -80,7 +80,7 @@ ht-degree: 0%
    * Lagringsmål för molnet {#cloud-storage}
       * [Översikt över destinationer för molnlagring](./catalog/cloud-storage/overview.md)
       * [Skapa ett molnlagringsmål](./catalog/cloud-storage/workflow.md)
-      * [Amazon Kinesis-anslutning](./catalog/cloud-storage/amazon-kinesis.md)
+      * [(Beta) Amazon Kinesis-anslutning](./catalog/cloud-storage/amazon-kinesis.md)
       * [Amazon S3-anslutning](./catalog/cloud-storage/amazon-s3.md)
       * [Azure Blob-anslutning](./catalog/cloud-storage/azure-blob.md)
       * [(Beta) Azure Event Hubs-anslutning](./catalog/cloud-storage/azure-event-hubs.md)
@@ -122,7 +122,7 @@ ht-degree: 0%
       * [Skapa ett socialt mål](./catalog/social/workflow.md)
       * [Adobe Livefyre-tillägg](./catalog/social/adobe-livefyre.md)
       * [Facebook-anslutning](./catalog/social/facebook.md)
-      * [Länkad matchad målgruppsanslutning](./catalog/social/linkedin.md)
+      * [linkedIn Matched Auditions connection](./catalog/social/linkedin.md)
    * Undersökningsmål {#survey}
       * [Översikt över undersökningsmål](./catalog/survey/overview.md)
       * [Mål för sidtillägg](./catalog/survey/foresee.md)
