@@ -6,9 +6,9 @@ topic-legacy: overview
 description: Det här dokumentet innehåller en översikt över klassen XDM Individual Profile.
 exl-id: 83b22462-79ce-4024-aa50-a9bd800c0f81
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 81d96b629ce628f663a86701d8f076eb771fdf77
 workflow-type: tm+mt
-source-wordcount: '375'
+source-wordcount: '412'
 ht-degree: 0%
 
 ---
@@ -26,9 +26,10 @@ Själva [!DNL XDM Individual Profile]-klassen innehåller flera systemgenererade
 | Egenskap | Beskrivning |
 | --- | --- |
 | `_repo` | Ett objekt som innehåller följande [!UICONTROL DateTime]-fält: <ul><li>`createDate`: Datum och tid då resursen skapades i datalagret, till exempel när data först importerades.</li><li>`modifyDate`: Datum och tid då resursen senast ändrades.</li></ul> |
-| `_id` | En unik systemgenererad strängidentifierare för posten. Det här fältet används för att spåra en enskild posts unika karaktär, förhindra dubblering av data och för att söka efter posten i underordnade tjänster. Eftersom det här fältet genereras av systemet bör det inte anges som ett explicit värde vid datainmatning.<br><br>Det är viktigt att särskilja att detta fält inte  **ger** en identitet som är relaterad till en enskild person, utan snarare själva registreringen av uppgifter. Identitetsdata som relaterar till en person ska i stället begränsas till [identitetsfält](../schema/composition.md#identity). |
+| `_id` | En unik identifierare för posten. Det här fältet används för att spåra en enskild posts unika karaktär, förhindra dubblering av data och för att söka efter posten i underordnade tjänster.<br><br>Det är viktigt att särskilja att detta fält inte  **ger** en identitet som är relaterad till en enskild person, utan snarare själva registreringen av uppgifter. Identitetsdata som relaterar till en person ska i stället begränsas till [identitetsfält](../schema/composition.md#identity). |
 | `createdByBatchID` | ID:t för den inkapslade batchen som gjorde att posten skapades. |
 | `modifiedByBatchID` | ID:t för den senaste inkapslade batchen som gjorde att posten uppdaterades. |
+| `personID` | En unik identifierare för den person som den här posten är relaterad till. Det här fältet representerar inte nödvändigtvis en identitet som relateras till personen, såvida det inte också är angivet som ett [identitetsfält](../schema/composition.md#identity). |
 | `repositoryCreatedBy` | ID för den användare som skapade posten. |
 | `repositoryLastModifiedBy` | ID för den användare som senast ändrade posten. |
 
@@ -38,10 +39,12 @@ Själva [!DNL XDM Individual Profile]-klassen innehåller flera systemgenererade
 >
 >Namnen på flera blandningar har ändrats. Mer information finns i dokumentet om [uppdateringar av blandnamn](../mixins/name-updates.md).
 
-Adobe innehåller flera standardblandningar som kan användas med klassen [!DNL XDM Individual Profile]. Nedan följer en lista över de vanligaste blandningarna för klassen:
+Adobe innehåller flera standardblandningar som kan användas med klassen [!DNL XDM Individual Profile]. Nedan följer en lista över några vanliga blandningar för klassen:
 
 * [[!UICONTROL IdentityMap]](../mixins/profile/identitymap.md)
 * [[!UICONTROL Demographic Details]](../mixins/profile/person-details.md)
 * [[!UICONTROL Personal Contact Details]](../mixins/profile/personal-details.md)
 * [[!UICONTROL Work Contact Details]](../mixins/profile/work-details.md)
 * [[!UICONTROL Segment Membership Details]](../mixins/profile/segmentation.md)
+
+En fullständig lista över alla kompatibla mixiner för [!DNL XDM Individual Profile] finns i [XDM GitHub-repo](https://github.com/adobe/xdm/tree/master/components/mixins/profile).
