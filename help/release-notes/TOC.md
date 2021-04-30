@@ -4,20 +4,22 @@ user-guide-title: Versionsinformation för Adobe Experience Platform
 breadcrumb-title: Versionsinformation om plattformen
 user-guide-description: Versionsinformation varje månad för Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 0c9b60fe0777286819841c520a41007634622578
+source-git-commit: 8f38e009adcae6d045b8353c6d2276a2c3bd0213
 workflow-type: tm+mt
-source-wordcount: '44'
-ht-degree: 54%
+source-wordcount: '49'
+ht-degree: 51%
 
 ---
 
 
 # Versionsinformation för Adobe Experience Platform {#release-notes}
 
-* [April 2021](latest/latest.md)
-* [Mars 2021](2021/march-2021.md)
-* [Februari 2021](2021/february-2021.md)
-* [Januari 2021](2021/january-2021.md)
+* [Versionsinformation för aktuell plattform](latest/latest.md)
+* 2021 {#2021}
+   * [April 2021](2021/april-2021.md)
+   * [Mars 2021](2021/march-2021.md)
+   * [Februari 2021](2021/february-2021.md)
+   * [Januari 2021](2021/january-2021.md)
 * 2020 {#2020}
    * [December 2020](2020/december-2020.md)
    * [November 2020](2020/november-2020.md)
