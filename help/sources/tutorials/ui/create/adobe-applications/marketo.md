@@ -5,14 +5,14 @@ title: Skapa en Marketo Engage-källanslutning i användargränssnittet
 topic-legacy: overview
 type: Tutorial
 description: I den här självstudiekursen beskrivs hur du skapar en koppling från Marketo Engage-källa i användargränssnittet för att hämta B2B-data till Adobe Experience Platform.
+exl-id: a6aa596b-9cfa-491e-86cb-bd948fb561a8
 translation-type: tm+mt
-source-git-commit: f12baaa9d4b37f1101792a4ae479b5a62893eb68
+source-git-commit: 5322adb4b3a244de92300e7ce9d942ad4b968454
 workflow-type: tm+mt
-source-wordcount: '1317'
+source-wordcount: '1324'
 ht-degree: 0%
 
 ---
-
 
 # (Beta) Skapa en [!DNL Marketo Engage]-källkoppling i användargränssnittet
 
@@ -75,25 +75,25 @@ Om du vill skapa ett dataflöde med ett befintligt konto väljer du **[!UICONTRO
 
 När du har skapat ditt [!DNL Marketo]-konto får du i nästa steg ett gränssnitt där du kan utforska [!DNL Marketo]-datauppsättningar.
 
-Den vänstra halvan av gränssnittet är en katalogwebbläsare som visar datauppsättningarna 10 [!DNL Marketo]. En fullt fungerande [!DNL Marketo]-källanslutning kräver att de nio olika datauppsättningarna matas in. Om du även använder kontobaserad marknadsföring (ABM) i [!DNL Marketo's] måste du också skapa ett 10:e dataflöde för att kunna importera [!UICONTROL Named Accounts]-datauppsättningen.
+Den vänstra halvan av gränssnittet är en katalogwebbläsare som visar datauppsättningarna 10 [!DNL Marketo]. En fullt fungerande [!DNL Marketo]-källanslutning kräver att de nio olika datauppsättningarna matas in. Om du även använder kontobaserad marknadsföring [!DNL Marketo] (ABM) måste du också skapa ett 10:e dataflöde för att kunna importera [!UICONTROL Named Accounts]-datauppsättningen.
 
 >[!NOTE]
 >
->I följande självstudiekurs används [!UICONTROL Named Acccounts] som exempel, men stegen som beskrivs nedan gäller för alla datauppsättningar om 10 [!DNL Marketo].
+>I följande självstudiekurs används [!UICONTROL Named Accounts] som exempel, men stegen som beskrivs nedan gäller för alla datauppsättningar om 10 [!DNL Marketo].
 
 Markera den datauppsättning som du vill importera först och välj sedan **[!UICONTROL Next]**.
 
 ![select-data](../../../../images/tutorials/create/marketo/select-data.png)
 
-## Mappa datafält till ett XDM-schema
+## Mappa [!DNL Marketo]-scheman till plattformen
 
-[!UICONTROL Mapping]-steget visas och innehåller ett gränssnitt för att mappa [!DNL Marketo]-datauppsättningen till en plattformsdatauppsättning.
+[!UICONTROL Mapping]-steget visas och innehåller ett gränssnitt för att mappa [!DNL Marketo]-scheman till plattformen.
 
 Välj en datauppsättning för inkommande data som ska importeras till. Du kan antingen använda en befintlig datauppsättning eller skapa en ny datauppsättning.
 
 ### Använd en befintlig datauppsättning
 
-Om du vill importera data till en befintlig datauppsättning väljer du **[!UICONTROL Use existing dataset]** och sedan datamängdikonen.
+Om du vill importera data till en befintlig datauppsättning väljer du **[!UICONTROL Existing dataset]** och sedan datamängdikonen.
 
 ![befintlig datamängd](../../../../images/tutorials/create/marketo/existing-dataset.png)
 
@@ -103,7 +103,7 @@ Dialogrutan **[!UICONTROL Select dataset]** visas. Hitta datauppsättningen med 
 
 ### Använd en ny datauppsättning
 
-Om du vill importera data till en ny datauppsättning väljer du **[!UICONTROL Create new dataset]** och anger ett namn och en beskrivning för datauppsättningen i de angivna fälten.
+Om du vill importera data till en ny datauppsättning väljer du **[!UICONTROL New dataset]** och anger ett namn och en beskrivning för datauppsättningen i de angivna fälten.
 
 Du kan söka efter ett schema genom att ange dess namn i sökfältet **[!UICONTROL Select schema]**. Du kan också välja listruteikonen för att visa en lista över befintliga scheman. Du kan också välja **[!UICONTROL Advanced search]** om du vill komma åt sidan med befintliga scheman, inklusive deras respektive information.
 
@@ -144,7 +144,7 @@ Steget [!UICONTROL Dataflow detail] visas så att du kan ange ett namn och en ko
 
 ![dataflöde-detail](../../../../images/tutorials/create/marketo/dataflow-detail.png)
 
-Aktivera växeln **[!UICONTROL Error diagnostics]** för att tillåta detaljerad generering av felmeddelanden för nyligen importerade batchar, som du kan hämta med API:t.
+Aktivera växeln **[!UICONTROL Error diagnostics]** för att tillåta detaljerad generering av felmeddelanden för nyligen importerade batchar, som du kan hämta med API:t. Mer information finns i självstudiekursen om att [hämta feldiagnos för datainmatningsfel](../../../../../ingestion/quality/error-diagnostics.md).
 
 ![fel](../../../../images/tutorials/create/marketo/errors.png)
 
@@ -160,7 +160,7 @@ När du har angett dataflödesinformationen och angett feltröskelvärdet som ma
 
 **[!UICONTROL Review]**-steget visas, så att du kan granska det nya dataflödet innan det skapas. Informationen är grupperad i följande kategorier:
 
-* **[!UICONTROL Connection]**: Visar källtypen, den relevanta sökvägen för den valda källfilen och mängden kolumner i källfilen.
+* **[!UICONTROL Connection]**: Visar källtypen, den relevanta sökvägen för den valda källentiteten och mängden kolumner i källentiteten.
 * **[!UICONTROL Assign dataset & map fields]**: Visar vilken datauppsättning källdata hämtas till, inklusive det schema som datauppsättningen följer.
 
 När du har granskat dataflödet väljer du **[!UICONTROL Finish]** och anger en tid innan dataflödet skapas.
