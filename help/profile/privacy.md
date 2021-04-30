@@ -2,12 +2,11 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Behandling av sekretessförfrågningar i kundprofil i realtid
-topic-legacy: overview
 type: Documentation
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kundprofil i realtid.
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 8d16a3030c663d40daed6c5105af07b2d2d5c7bf
 workflow-type: tm+mt
 source-wordcount: '1091'
 ht-degree: 0%
@@ -24,9 +23,9 @@ Det här dokumentet innehåller viktiga begrepp som rör bearbetning av sekretes
 
 Vi rekommenderar att du har en fungerande förståelse för följande [!DNL Experience Platform]-tjänster innan du läser den här handboken:
 
-* [[!DNL Privacy Service]](home.md): Hanterar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter mellan olika Adobe Experience Cloud-program.
+* [[!DNL Privacy Service]](../privacy-service/home.md): Hanterar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter mellan olika Adobe Experience Cloud-program.
 * [[!DNL Identity Service]](../identity-service/home.md): Lös den grundläggande utmaning som fragmenteringen av kundupplevelsedata innebär genom att överbrygga identiteter mellan olika enheter och system.
-* [[!DNL Real-time Customer Profile]](../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-time Customer Profile]](home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 ## Identitetsnamnutrymmen {#namespaces}
 
@@ -48,7 +47,7 @@ Avsnitten nedan beskriver hur du gör sekretessförfrågningar för [!DNL Real-t
 >
 >Det är också viktigt att notera att det inte går att garantera hur lång tid en sekretessbegäran kan ta att slutföra. Om det sker ändringar i dina [!DNL Profile]-data medan en begäran fortfarande bearbetas, kan även dessa poster inte garanteras.
 
-### Använda API
+### Använda API:et
 
 När du skapar jobbförfrågningar i API:t måste alla ID:n som anges i `userIDs` använda en specifik `namespace` och `type`. Ett giltigt [identitetsnamnutrymme](#namespaces) som känns igen av [!DNL Identity Service] måste anges för `namespace`-värdet, medan `type` måste vara antingen `standard` eller `unregistered` (för standardnamnutrymmen respektive anpassade namnutrymmen).
 
