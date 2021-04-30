@@ -6,9 +6,9 @@ topic-legacy: overview
 description: Tabellerna nedan innehåller mappningarna mellan fälten i Marketo datamängder och deras motsvarande XDM-fält.
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
 translation-type: tm+mt
-source-git-commit: 8f03b2e8a10d57fcae77dedecdce0e0176ba04fd
+source-git-commit: 5d37c9664f60e9d962e866c6d480d2ef2e0bfff3
 workflow-type: tm+mt
-source-wordcount: '453'
+source-wordcount: '330'
 ht-degree: 1%
 
 ---
@@ -259,10 +259,6 @@ Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo]
 
 ## Personer {#persons}
 
-Om värdet för att fästa ID:n i den sammanfogningsprincip som du använde för att bläddra är `None` på kontrollpanelen [!DNL Profiles] för plattforms-användargränssnittet, visas endast det primära identitetsattributet i fönstret för länkade identiteter.
-
-Som en tillfällig lösning kan du uppdatera ID-sammanslagningsfältet från `None` till `Private graph` för att se alla länkade identiteter till en [!DNL Profile]. Du kan också antingen skapa en ny sammanfogningsprincip eller använda en annan sammanfogningsprincip som innehåller ett ID-sammanfogningsvärde inställt på `Private graph`. Om du väljer att skapa en ny sammanfogningsprincip eller använder en annan sammanfogningsprincip måste du se till att principen innehåller samma schematyp som används för [!DNL Marketo] Personer-mappningsuppsättningen. Mer information finns i [användargränssnittshandboken för sammanfogningsprinciper](../../../../profile/ui/merge-policies.md).
-
 | Källdatauppsättning | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
 | `id` | `personID` | Primär identitet |
@@ -313,7 +309,7 @@ Som en tillfällig lösning kan du uppdatera ID-sammanslagningsfältet från `No
 
 {style=&quot;table-layout:auto&quot;}
 
->[!TIP]
+>[!NOTE]
 >
 >Källfältet `to_object('ECID',arrays_to_objects('id',explode(ecids)))` är ett beräkningsfält som måste läggas till med alternativet [!UICONTROL Add calculated field] i plattformsgränssnittet. Mer information finns i självstudiekursen om att [lägga till beräknade fält](../../../../ingestion/tutorials/map-a-csv-file.md).
 
