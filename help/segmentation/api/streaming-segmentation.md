@@ -6,9 +6,9 @@ topic-legacy: developer guide
 description: Det här dokumentet innehåller exempel på hur du använder direktuppspelningssegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: b4a04b52ff9a2b7a36fda58d70a2286fea600ff1
 workflow-type: tm+mt
-source-wordcount: '1375'
+source-wordcount: '1389'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ För att ett segment ska kunna utvärderas med hjälp av direktuppspelningssegme
 | Endast profil | En segmentdefinition som bara refererar till ett profilattribut. |
 | Inkommande träde som refererar till en profil | En segmentdefinition som refererar till en enda inkommande händelse, utan tidsbegränsning, och ett eller flera profilattribut. |
 | Inkommande träde som refererar till en profil inom ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse och ett eller flera profilattribut. |
-| Segmentering | En segmentdefinition som innehåller en eller flera grupper eller direktuppspelningssegment. |
+| Segmentering | En segmentdefinition som innehåller en eller flera grupper eller direktuppspelningssegment. **Obs!** Om ett segment används, diskvalificeras profilen  **var 24:e timme**. |
 | Flera händelser som refererar till en profil | Alla segmentdefinitioner som refererar till flera händelser **under de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. |
 
 En segmentdefinition kommer **inte** att aktiveras för direktuppspelningssegmentering i följande scenarier:
