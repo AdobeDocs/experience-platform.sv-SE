@@ -7,9 +7,9 @@ type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta direktuppspelningsdata och föra in dem på plattformen med hjälp av källanslutningar och API:er.
 exl-id: 898df7fe-37a9-4495-ac05-30029258a6f4
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: f35c59843451267d0a054cfd594aea3e5d5ea8c6
 workflow-type: tm+mt
-source-wordcount: '1498'
+source-wordcount: '1526'
 ht-degree: 0%
 
 ---
@@ -202,7 +202,6 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den beg
 }
 ```
 
-
 ## Skapa ett mål-XDM-schema {#target-schema}
 
 För att källdata ska kunna användas i [!DNL Platform] måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en [!DNL Platform]-datauppsättning där källdata finns. Detta mål-XDM-schema utökar även klassen XDM [!DNL Individual Profile].
@@ -334,6 +333,7 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
+        "name": "Test streaming dataset",
         "schemaRef": {
             "id": "https://ns.adobe.com/{TENANT_ID}/schemas/e45dd983026ce0daec5185cfddd48cbc0509015d880d6186",
             "contentType": "application/vnd.adobe.xed-full-notext+json; version=1"
@@ -345,15 +345,15 @@ curl -X POST \
             "profile": [
             "enabled:true"
             ]
-        },
-        "name": "Test streaming dataset"
+        }
     }'
 ```
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `schemaRef.id` | ID:t för mål-XDM-schemat. |
-| `schemaRef.contentType` | Schemats version. Värdet måste anges `application/vnd.adobe.xed-full-notext+json;version=1`, vilket returnerar den senaste delversionen av schemat. |
+| `name` | Namnet på datauppsättningen som ska skapas. |
+| `schemaRef.id` | URI `$id` för XDM-schemat som datamängden baseras på. |
+| `schemaRef.contentType` | Schemats version. Värdet måste anges till `application/vnd.adobe.xed-full-notext+json;version=1`, vilket returnerar den senaste delversionen av schemat. Mer information finns i avsnittet [schemaversion](../../../../xdm/api/getting-started.md#versioning) i XDM API-guiden. |
 
 **Svar**
 
