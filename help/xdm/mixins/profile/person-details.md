@@ -6,9 +6,9 @@ topic-legacy: overview
 description: I det här dokumentet finns en översikt över blandningen av demografiska detaljer.
 exl-id: 588c044c-b80d-4cb9-9f97-92f040d54bb4
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 87b638df8a3b27fb6df5dee60b57d817d5e34a80
 workflow-type: tm+mt
-source-wordcount: '261'
+source-wordcount: '260'
 ht-degree: 2%
 
 ---
@@ -37,5 +37,4 @@ ht-degree: 2%
 Mer information om blandningen finns i den offentliga XDM-databasen:
 
 * [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/mixins/profile/profile-person-details.example.1.json)
-* [Full ](https://github.com/adobe/xdm/blob/master/components/mixins/profile/profile-person-details.schema.json)
-schemaå
+* [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/mixins/profile/profile-person-details.schema.json)
