@@ -5,7 +5,7 @@ description: 'Arbetsytan Destinationer består av fyra avsnitt: Katalog, Bläddr
 seo-description: I Adobe Experience Platform väljer du Destinationer i det vänstra navigeringsfältet för att komma åt målarbetsytan.
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
 translation-type: tm+mt
-source-git-commit: cc432f7c07f0f82deec653864154016638ec8138
+source-git-commit: eaa4a7efc248104d823267eca574f2eca16edc3f
 workflow-type: tm+mt
 source-wordcount: '742'
 ht-degree: 1%
@@ -38,7 +38,7 @@ På fliken **[!UICONTROL Catalog]** visas en lista med alla mål som är tillgä
 Målkorten innehåller antingen en **[!UICONTROL Configure]**- eller en **[!UICONTROL Activate]**-kontroll och en sekundär kontroll som visar fler alternativ. Dessa kontroller beskrivs nedan:
 
 | Kontroll | Beskrivning |
----------|----------
+|---------|----------|
 | [!UICONTROL Configure] | Gör att du kan skapa en anslutning till målet. |
 | [!UICONTROL Activate] | När du har upprättat en anslutning till målet kan du aktivera segment. |
 | [!UICONTROL View account] | Visa konton som du har anslutit för ett mål. |
@@ -72,7 +72,7 @@ På fliken **[!UICONTROL Browse]** visas de mål som du har upprättat en anslut
 ![Fliken Bläddra](../assets/ui/workspace/browse-tab.png)
 
 | Element | Beskrivning |
----------|----------
+|---------|----------|
 | Namn | Namnet som du angav för aktiveringsflödet till den här destinationen. Samma kolumn innehåller två kontroller: [!UICONTROL Activate ] och [!UICONTROL Delete destination]. |
 | [!UICONTROL Last Flow Run Status] | Status för den senaste dataflödeskörningen. Mer information om dataflöden finns i [Visa målinformation](destination-details-page.md). |
 | [!UICONTROL Last Flow Run Date] | Tid och datum då den senaste dataflödeskörningen inträffade. Mer information om dataflöden finns i [Visa målinformation](destination-details-page.md). |
