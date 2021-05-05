@@ -6,7 +6,7 @@ topic-legacy: overview
 description: Tabellerna nedan innehåller mappningarna mellan fälten i Marketo datamängder och deras motsvarande XDM-fält.
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
 translation-type: tm+mt
-source-git-commit: 5d37c9664f60e9d962e866c6d480d2ef2e0bfff3
+source-git-commit: e4823a2b787667fc181f8a4d474c7d2eb73c8eec
 workflow-type: tm+mt
 source-wordcount: '330'
 ht-degree: 1%
@@ -28,7 +28,7 @@ Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo]
 | `_id` | `_id` |
 | `personID` | `personID` | Primär identitet |
 | `eventType` | `eventType` |
-| `timeStamp` | `timestamp` |
+| `timestamp` | `timestamp` |
 | `web.webPageDetails._marketo.URL` | `web.webPageDetails._marketo.URL` |
 | `environment.browserDetails.userAgent` | `environment.browserDetails.userAgent` |
 | `environment.ipV4` | `environment.ipV4` |
@@ -55,7 +55,6 @@ Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo]
 | `directMarketing.mailingID` | `directMarketing.mailingID` |
 | `directMarketing.mailingName` | `directMarketing.mailingName` |
 | `directMarketing.testVariantID` | `directMarketing.testVariantID` |
-| `directMarketing.testVariantName` | `directMarketing.testVariantName` |
 | `directMarketing.emailBouncedCode` | `directMarketing.emailBouncedCode` |
 | `directMarketing.emailBouncedDetails` | `directMarketing.emailBouncedDetails` |
 | `directMarketing.email` | `directMarketing.email` |
