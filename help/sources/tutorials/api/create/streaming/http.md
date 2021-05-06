@@ -7,10 +7,10 @@ type: Tutorial
 description: Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform datainmatningstjänst.
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 96f400466366d8a79babc194bc2ba8bf19ede6bb
 workflow-type: tm+mt
-source-wordcount: '883'
-ht-degree: 1%
+source-wordcount: '1090'
+ht-degree: 0%
 
 ---
 
@@ -27,6 +27,8 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 
 - [[!DNL Experience Data Model (XDM)]](../../../../../xdm/home.md): Det standardiserade ramverk som  [!DNL Platform] organiserar upplevelsedata.
 - [[!DNL Real-time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
+
+Om du vill skapa en direktuppspelningsanslutning måste du dessutom ha ett mål-XDM-schema och en datauppsättning. Om du vill veta hur du skapar dessa läser du självstudiekursen om [direktuppspelande postdata](../../../../../ingestion/tutorials/streaming-record-data.md) eller självstudiekursen om [data i tidsserier för direktuppspelning](../../../../../ingestion/tutorials/streaming-time-series-data.md).
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:er för direktuppspelning.
 
@@ -54,9 +56,9 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 - Innehållstyp: application/json
 
-## Skapa en anslutning
+## Skapa en basanslutning
 
-En anslutning anger källan och innehåller den information som krävs för att göra flödet kompatibelt med API:er för direktuppspelning. När du skapar en anslutning kan du skapa en icke-autentiserad och autentiserad anslutning.
+En basanslutning anger källan och innehåller den information som krävs för att göra flödet kompatibelt med API:er för direktuppspelning. När du skapar en basanslutning kan du välja att skapa en icke-autentiserad och autentiserad anslutning.
 
 ### Icke-autentiserad anslutning
 
@@ -95,7 +97,7 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
              "name": "Sample connection"
          }
      }
- }
+ }'
 ```
 
 | Egenskap | Beskrivning |
@@ -189,7 +191,7 @@ Ett lyckat svar returnerar HTTP-status 201 med information om den nya anslutning
 
 ## Hämta URL för direktuppspelningsslutpunkt
 
-När anslutningen har skapats kan du nu hämta din URL för direktuppspelningsslutpunkt.
+När du har skapat basanslutningen kan du nu hämta URL:en för direktuppspelningsslutpunkten.
 
 **API-format**
 
@@ -247,6 +249,142 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den beg
             "etag": "\"56008aee-0000-0200-0000-5e697e150000\""
         }
     ]
+}
+```
+
+## Skapa en källanslutning
+
+När du har skapat din basanslutning måste du skapa en källanslutning. När du skapar en källanslutning behöver du `id`-värdet från den basanslutning du har skapat.
+
+**API-format**
+
+```http
+POST /flowservice/sourceConnections
+```
+
+**Begäran**
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '{
+    "name": "Sample source connection",
+    "description": "Sample source connection description",
+    "baseConnectionId": "{BASE_CONNECTION_ID}",
+    "connectionSpec": {
+        "id": "bc7b00d6-623a-4dfc-9fdb-f1240aeadaeb",
+        "version": "1.0"
+    }
+}'
+```
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 201 med detaljerad information om den nyligen skapade källanslutningen, inklusive dess unika identifierare (`id`).
+
+```json
+{
+    "id": "63070871-ec3f-4cb5-af47-cf7abb25e8bb",
+    "etag": "\"28000b90-0000-0200-0000-6091b0150000\""
+}
+```
+
+## Skapa en målanslutning
+
+När du har skapat källanslutningen kan du skapa en målanslutning. När du skapar målanslutningen behöver du `id`-värdet för den datauppsättning du skapade tidigare.
+
+**API-format**
+
+```http
+POST /flowservice/targetConnections
+```
+
+**Begäran**
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '{
+    "name": "Sample target connection",
+    "description": "Sample target connection description",
+    "connectionSpec": {
+        "id": "c604ff05-7f1a-43c0-8e18-33bf874cb11c",
+        "version": "1.0"
+    },
+    "data": {
+        "format": "parquet_xdm"
+    },
+    "params": {
+        "dataSetId": "{DATASET_ID}"
+    }
+}'
+```
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 201 med information om den nya målanslutningen, inklusive dess unika identifierare (`id`).
+
+```json
+{
+    "id": "98a2a72e-a80f-49ae-aaa3-4783cc9404c2",
+    "etag": "\"0500b73f-0000-0200-0000-6091b0b90000\""
+}
+```
+
+## Skapa ett dataflöde
+
+När käll- och målanslutningarna har skapats kan du nu skapa ett dataflöde. Dataflödet ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att utföra en begäran om POST till `/flows`-slutpunkten.
+
+**API-format**
+
+```http
+POST /flows
+```
+
+**Begäran**
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/flows' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '{
+    "name": "Sample flow",
+    "description": "Sample flow description",
+    "flowSpec": {
+        "id": "d8a6f005-7eaf-4153-983e-e8574508b877",
+        "version": "1.0"
+    },
+    "sourceConnectionIds": [
+        "{SOURCE_CONNECTION_ID}"
+    ],
+    "targetConnectionIds": [
+        "{TARGET_CONNECTION_ID}"
+    ]
+}'
+```
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 201 med information om ditt nya dataflöde, inklusive dess unika identifierare (`id`).
+
+```json
+{
+    "id": "ab03bde0-86f2-45c7-b6a5-ad8374f7db1f",
+    "etag": "\"1200c123-0000-0200-0000-6091b1730000\""
 }
 ```
 
