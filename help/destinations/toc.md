@@ -5,9 +5,9 @@ user-guide-description: Aktivera kända och okända data för flerkanalskampanje
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: 'Mål '
 translation-type: tm+mt
-source-git-commit: 020192469127e8f25f0d61e33b4b5dc60da6b57d
+source-git-commit: 9b383f09a3a73f785b0e3a415deda126b9ef6b39
 workflow-type: tm+mt
-source-wordcount: '471'
+source-wordcount: '474'
 ht-degree: 0%
 
 ---
@@ -104,9 +104,9 @@ ht-degree: 0%
       * [Översikt över Adobe Experience Platform Launch-tillägg](./catalog/launch-extensions/overview.md)
    * Destinationer för mobilengagemang {#mobile-engagement}
       * [Översikt över mål för mobilengagemang](./catalog/mobile-engagement/overview.md)
-      * [Luftfartygsattribut](./catalog/mobile-engagement/airship-attributes.md)
-      * [Ansluta till luftfartygets taggar](./catalog/mobile-engagement/airship-tags.md)
-      * [Braze connection](./catalog/mobile-engagement/braze.md)
+      * [(Beta) Koppling mellan attribut för luftskepp](./catalog/mobile-engagement/airship-attributes.md)
+      * [(Beta) Koppling mellan luftfartygets taggar](./catalog/mobile-engagement/airship-tags.md)
+      * [(Beta) Braze connection](./catalog/mobile-engagement/braze.md)
    * Destinationer för personalisering {#personalization}
       * [Översikt över destinationer för personalisering](./catalog/personalization/overview.md)
       * [Adobe Target-tillägg](./catalog/personalization/adobe-target.md)
