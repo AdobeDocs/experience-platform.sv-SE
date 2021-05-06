@@ -7,12 +7,13 @@ type: Tutorial
 description: Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform datainmatningstjänst.
 exl-id: 097dfd5a-4e74-430d-8a12-cac11b1603aa
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 544eeb3a27d0b218885e3000deb214f21c8e9fcd
 workflow-type: tm+mt
-source-wordcount: '1164'
+source-wordcount: '1168'
 ht-degree: 0%
 
 ---
+
 
 # Strömma postdata med Streaming Ingput API:er
 
@@ -23,10 +24,8 @@ Den här självstudiekursen hjälper dig att börja använda API:er för direktu
 Den här självstudiekursen kräver kunskaper om olika Adobe Experience Platform-tjänster. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som  [!DNL Platform] organiserar upplevelsedata.
+   - [Utvecklarhandbok](../../xdm/api/getting-started.md) för schemaregister: En omfattande guide som täcker alla tillgängliga slutpunkter i  [!DNL Schema Registry] API:t och hur du anropar dem. Det handlar om att känna till din `{TENANT_ID}`, som visas i anrop under hela kursen, samt att veta hur du skapar scheman, som används för att skapa en datauppsättning för förtäring.
 - [[!DNL Real-time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-- [Utvecklarhandbok](../../xdm/api/getting-started.md) för schemaregister: En omfattande guide som täcker alla tillgängliga slutpunkter i  [!DNL Schema Registry] API:t och hur du anropar dem. Det handlar om att känna till din `{TENANT_ID}`, som visas i anrop under hela kursen, samt att veta hur du skapar scheman, som används för att skapa en datauppsättning för förtäring.
-
-Den här självstudien kräver dessutom att du redan har skapat en direktuppspelningsanslutning. Mer information om hur du skapar en direktuppspelningsanslutning finns i [Skapa en självstudiekurs för direktuppspelningsanslutning](./create-streaming-connection.md).
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna anropa API:er för direktuppspelning.
 
@@ -264,6 +263,12 @@ Ett lyckat svar returnerar HTTP-status 201 och en matris som innehåller ID:t f�
 ]
 ```
 
+## Skapa en direktuppspelningsanslutning
+
+När du har skapat ditt schema och din datauppsättning kan du skapa en direktuppspelningsanslutning
+
+Mer information om hur du skapar en direktuppspelningsanslutning finns i [Skapa en självstudiekurs för direktuppspelningsanslutning](./create-streaming-connection.md).
+
 ## Infoga postdata till direktuppspelningsanslutningen {#ingest-data}
 
 När datauppsättningen och direktuppspelningsanslutningen är på plats kan du importera XDM-formaterade JSON-poster för att importera postdata till [!DNL Platform].
@@ -276,7 +281,7 @@ POST /collection/{CONNECTION_ID}?synchronousValidation=true
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{CONNECTION_ID}` | Värdet `id` för den direktuppspelningsanslutning som skapades tidigare. |
+| `{CONNECTION_ID}` | Värdet `inletId` för den direktuppspelningsanslutning som skapades tidigare. |
 | `synchronousValidation` | En valfri frågeparameter som är avsedd för utvecklingsändamål. Om den anges till `true` kan den användas för direkt feedback för att avgöra om begäran kunde skickas. Som standard är det här värdet `false`. |
 
 **Begäran**
