@@ -7,9 +7,9 @@ type: Tutorial
 description: Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform datainmatningstjänst.
 exl-id: 720b15ea-217c-4c13-b68f-41d17b54d500
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 544eeb3a27d0b218885e3000deb214f21c8e9fcd
 workflow-type: tm+mt
-source-wordcount: '1312'
+source-wordcount: '1349'
 ht-degree: 0%
 
 ---
@@ -290,9 +290,16 @@ Ett lyckat svar returnerar HTTP-status 201 och en matris som innehåller ID:t f�
 ]
 ```
 
+
+## Skapa en direktuppspelningsanslutning
+
+När du har skapat ditt schema och din datauppsättning måste du skapa en direktuppspelningsanslutning för att kunna importera dina data.
+
+Mer information om hur du skapar en direktuppspelningsanslutning finns i [Skapa en självstudiekurs för direktuppspelningsanslutning](./create-streaming-connection.md).
+
 ## Infoga tidsseriedata i direktuppspelningsanslutningen
 
-När datauppsättningen och direktuppspelningsanslutningen är på plats kan du importera XDM-formaterade JSON-poster för att importera tidsseriedata inom [!DNL Platform].
+När datauppsättningen, direktuppspelningsanslutningen och dataflödet har skapats kan du importera XDM-formaterade JSON-poster för import av tidsseriedata i [!DNL Platform].
 
 **API-format**
 
@@ -326,7 +333,7 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValid
             "id": "{SCHEMA_REF_ID}",
             "contentType": "application/vnd.adobe.xed-full+json;version=1"
         },
-        "imsOrgId": "{IMS_ORG}",
+        "flowId": "{FLOW_ID}",
         "datasetId": "{DATASET_ID}"
     },
     "body": {
@@ -413,7 +420,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen direkt
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{CONNECTION_ID}` | ID:t för den tidigare skapade direktuppspelningsanslutningen. |
+| `{CONNECTION_ID}` | `inletId` för den tidigare skapade direktuppspelningsanslutningen. |
 | `xactionId` | En unik identifierare som genererats på serversidan för den post du just skickade. Detta ID hjälper Adobe att spåra postens livscykel via olika system och med felsökning. |
 | `receivedTimeMs`: En tidsstämpel (epok i millisekunder) som visar vilken tid begäran togs emot. |
 | `synchronousValidation.status` | Eftersom frågeparametern `synchronousValidation=true` lades till visas det här värdet. Om valideringen har slutförts är statusen `pass`. |
@@ -445,7 +452,7 @@ GET /access/entities?schema.name=_xdm.context.experienceevent&relatedSchema.name
 
 ```shell
 curl -X GET \
-  https://platform-stage.adobe.io/data/core/ups/access/entities?schema.name=_xdm.context.experienceevent&relatedSchema.name=_xdm.context.profile&relatedEntityId=janedoe@example.com&relatedEntityIdNS=email \
+  https://platform.adobe.io/data/core/ups/access/entities?schema.name=_xdm.context.experienceevent&relatedSchema.name=_xdm.context.profile&relatedEntityId=janedoe@example.com&relatedEntityIdNS=email \
   -H "Authorization: Bearer {ACCESS_TOKEN}" \
   -H "x-api-key: {API_KEY}" \
   -H "x-gw-ims-org-id: {IMS_ORG}" \
