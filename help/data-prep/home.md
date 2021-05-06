@@ -6,9 +6,9 @@ topic-legacy: overview
 description: I det här dokumentet introduceras Data Prep i Adobe Experience Platform.
 exl-id: f15eeb50-a531-4560-a524-1a670fbda706
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: daefd977cd09bd9cd7f8d6101b45be98f30d24ae
 workflow-type: tm+mt
-source-wordcount: '388'
+source-wordcount: '437'
 ht-degree: 0%
 
 ---
@@ -35,6 +35,8 @@ Läs guiden [mappningsfunktioner](./functions.md) om du vill veta mer om de olik
 ## Mappningsuppsättning
 
 En uppsättning mappningar som omformar ett schema till ett annat kallas tillsammans för en mappningsuppsättning. En enda mappningsuppsättning skapas som en del av varje dataflöde. En mappningsuppsättning är en integrerad del av dataflödena och skapas, redigeras och övervakas som en del av dataflödena.
+
+Om du vill veta mer om mappningsuppsättningar, inklusive hur du använder fälten i en mappningsuppsättning, kan du läsa [guiden för mappningsuppsättning](./mapping-set.md). Läs avsnittet om mappningsuppsättning i [utvecklarhandboken](./api/mapping-set.md) om du vill lära dig hur du skapar en mappningsuppsättning och använder andra API-anrop för mappningsuppsättningar.
 
 ## Dataformatshantering
 
