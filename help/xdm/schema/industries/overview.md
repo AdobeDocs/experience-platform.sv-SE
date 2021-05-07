@@ -5,9 +5,9 @@ topic-legacy: overview
 description: Lär dig mer om standardiserade datamodeller för olika vertikala branscher som kan konstrueras med XDM-komponenter (Standard Experience Data Model).
 exl-id: 8fa9a610-36b5-470f-ad63-f2a4a060e0f1
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '511'
+source-wordcount: '514'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ För att hjälpa er att vägleda er datamodelleringsstrategi baserat på just er
 För att kunna läsa de referensdokument för elektroniska avhandlingar som det hänvisas till i den här handboken måste du ha en fungerande förståelse för hur XDM-komponenterna interagerar med formulärscheman och hur XDM-scheman fungerar i Experience Platform som helhet. Kontrollera att du har läst följande översiktsdokumentation innan du fortsätter:
 
 * [XDM - systemöversikt](../../home.md): Lär dig hur XDM fungerar i plattformens ekosystem.
-* [Grundläggande om schemakomposition](../../schema/composition.md): Lär dig hur XDM-komponenter (till exempel mixiner, klasser och datatyper) bidrar till strukturen i ett schema samt rollen för identitetsfält.
+* [Grundläggande om schemakomposition](../../schema/composition.md): Lär dig hur XDM-komponenter (till exempel schemafältgrupper, klasser och datatyper) bidrar till strukturen i ett schema samt identitetsfältens roll.
 
 Vi rekommenderar även att du läser [handboken om bästa praxis för datamodellering](../../schema/best-practices.md) för allmänna riktlinjer om hur du mappar data till XDM.
 
@@ -37,7 +37,7 @@ Vi rekommenderar även att du läser [handboken om bästa praxis för datamodell
 
 De vertikala modeller i branschen som representeras av de elektroniska avhandlingar som beskrivs nedan skapas avsiktligt på ett avnormaliserat sätt och med hänsyn till hur data lagras i Platform.
 
-För en given ERD baseras varje enhet som visas i på en underliggande XDM-klass. För en given entitet representerar varje rad som är markerad med **fet** en blandning eller en datatyp, med de relevanta fält som anges nedan i oförändrad text. De viktigaste fälten för en viss enhet markeras med rött.
+För en given ERD baseras varje enhet som visas i på en underliggande XDM-klass. För en given entitet representerar varje rad som är markerad med **fet** en fältgrupp eller en datatyp, med de relevanta fält som anges nedan i oförändrad text. De viktigaste fälten för en viss enhet markeras med rött.
 
 >[!NOTE]
 >
