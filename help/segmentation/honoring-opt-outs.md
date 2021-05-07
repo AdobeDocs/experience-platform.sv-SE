@@ -6,9 +6,9 @@ topic-legacy: overview
 description: Adobe Experience Platform tillåter dina kunder att skicka avanmälningsbegäranden om användning och lagring av sina data i kundprofilen i realtid]. Dessa avanmälningsförfrågningar ingår i California Consumer Privacy Act (CCPA), som ger personer bosatta i Kalifornien rätt att få tillgång till och radera sina personuppgifter och att få veta om deras personuppgifter säljs eller offentliggörs (och till vem).
 exl-id: fe851ce3-60db-4984-a73c-f9c5964bfbad
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '1013'
+source-wordcount: '1030'
 ht-degree: 0%
 
 ---
@@ -28,33 +28,33 @@ För att kunna uppfylla avanmälningsbegäranden måste du förstå de olika [!D
 - [[!DNL Experience Data Model (XDM)]](../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
 - [[!DNL Adobe Experience Platform Privacy Service]](../privacy-service/home.md): Hjälper organisationer att automatisera efterlevnaden av datasekretesregler som omfattar kunddata inom  [!DNL Platform].
 
-## Avanmäl mixar
+## Avanmäl schemafältgrupper
 
-För att CCPA-avanmälningsbegäranden ska uppfyllas måste ett av scheman som är en del av unionsschemat innehålla de nödvändiga [!DNL Experience Data Model]-avanmälningsfälten (XDM). Det finns två blandningar som kan användas för att lägga till avanmälningsfält i ett schema. De beskrivs mer ingående i följande avsnitt:
+För att CCPA-avanmälningsbegäranden ska uppfyllas måste ett av scheman som är en del av unionsschemat innehålla de nödvändiga [!DNL Experience Data Model]-avanmälningsfälten (XDM). Det finns två schemafältgrupper som kan användas för att lägga till avanmälningsfält i ett schema. Varje grupp beskrivs mer ingående i följande avsnitt:
 
 - [Profilsekretess](#profile-privacy): Används för att hämta olika typer av avanmälan (allmän eller försäljning/delning).
 - [Information om profilinställningar](#profile-preferences-details): Används för att hämta avanmälningsbegäranden för specifika XDM-kanaler.
 
-Stegvisa instruktioner om hur du lägger till en blandning i ett schema finns i avsnittet&quot;Lägg till en blandning&quot; i följande XDM-dokumentation:
+Stegvisa instruktioner om hur du lägger till en fältgrupp i ett schema finns i avsnittet&quot;Lägg till en fältgrupp&quot; i följande XDM-dokumentation:
 - [API-självstudiekurs](../xdm/api/getting-started.md) för schemaregister.: Skapa ett schema med API:t för schemaregistret.
 - [Schemaredigeraren, genomgång](../xdm/tutorials/create-schema-ui.md): Skapa ett schema med användargränssnittet för plattformen.
 
-Här är en exempelbild som visar de avanmälningsblandningar som lagts till i ett schema i användargränssnittet:
+Här är en exempelbild som visar fältgrupper för avanmälan som lagts till i ett schema i användargränssnittet:
 
-![](images/opt-outs/opt-out-mixins-user-interface.png)
+![](images/opt-outs/opt-out-field-groups-user-interface.png)
 
-Strukturen för varje blandning, samt en beskrivning av fälten som de bidrar till schemat, beskrivs mer ingående i följande avsnitt.
+Strukturen för varje fältgrupp, samt en beskrivning av de fält som de bidrar till schemat, beskrivs mer ingående i följande avsnitt.
 
 ### [!DNL Profile Privacy] {#profile-privacy}
 
-Med [!DNL Profile Privacy]-blandningen kan du hämta två typer av CCPA-avanmälningsbegäranden från kunder:
+Med fältgruppen [!DNL Profile Privacy] kan du hämta två typer av CCPA-avanmälningsbegäranden från kunder:
 
 1. Allmän avanmälan
 2. Avanmäl dig till försäljning/delning
 
 ![](images/opt-outs/profile-privacy.png)
 
-Blandningen [!DNL Profile Privacy] innehåller följande fält:
+Fältgruppen [!DNL Profile Privacy] innehåller följande fält:
 
 - Sekretessalternativ (`privacyOptOuts`): En array som innehåller en lista med avanmälningsobjekt.
 - Typ av avanmälan (`optOutType`): Typ av avanmälan. Det här fältet är en uppräkning med två möjliga värden:
@@ -67,15 +67,15 @@ Blandningen [!DNL Profile Privacy] innehåller följande fält:
    - Opt-In (`in`): Kunden har anmält sig.
 - Tidsstämpel för avanmälan (`timestamp`): Tidsstämpel för mottagen avanmälningssignal.
 
-Om du vill visa den fullständiga strukturen för [!DNL Profile Privacy]-blandningen läser du [XDM public GitHub-databasen](https://github.com/adobe/xdm/blob/master/schemas/context/profile-privacy.schema.json) eller förhandsgranskar blandningen med hjälp av plattformsgränssnittet.
+Om du vill visa den fullständiga strukturen för fältgruppen [!DNL Profile Privacy], se [XDM public GitHub-databasen](https://github.com/adobe/xdm/blob/master/schemas/context/profile-privacy.schema.json) eller förhandsgranska fältgruppen med hjälp av plattformsgränssnittet.
 
 ### [!DNL Profile Preferences Details] {#profile-preferences-details}
 
-Blandningen [!DNL Profile Preferences Details] innehåller flera fält som representerar inställningar för kundprofiler (t.ex. e-postformat, föredraget språk och tidszon). Ett av fälten i den här mixinen, OptInOut (`optInOut`), tillåter att avanmälningsvärden anges för enskilda kanaler.
+Fältgruppen [!DNL Profile Preferences Details] innehåller flera fält som representerar inställningar för kundprofiler (t.ex. e-postformat, föredraget språk och tidszon). Ett av fälten i den här fältgruppen, OptInOut (`optInOut`), tillåter att avanmälningsvärden anges för enskilda kanaler.
 
 ![](images/opt-outs/profile-preferences-details.png)
 
-[!DNL Profile Preferences Details]-blandningen innehåller följande fält för avanmälan:
+Fältgruppen [!DNL Profile Preferences Details] innehåller följande fält för avanmälan:
 
 - OptInOut (`optInOut`): Ett objekt där varje nyckel representerar en giltig och känd URI för en kommunikationskanal och det aktiva tillståndet för avanmälan för varje kanal. Varje kanal kan ha ett av fyra möjliga värden:
    - Inte tillhandahållen (`not_provided`): Ingen avanmälningsbegäran har angetts för den här kanalen.
@@ -100,7 +100,7 @@ I exemplet nedan visar JSON hur OptInOut-objektet kan fånga upp flera avanmäln
 }
 ```
 
-Om du vill visa hela strukturen för blandningen Profilinställningar ska du besöka [XDM-databasen för offentlig GitHub](https://github.com/adobe/xdm/blob/master/schemas/context/profile-preferences-details.schema.json) eller förhandsgranska blandningen med användargränssnittet [!DNL Platform].
+Om du vill visa hela strukturen för fältgruppen Profilinställningar ska du besöka [XDM public GitHub-databasen](https://github.com/adobe/xdm/blob/master/schemas/context/profile-preferences-details.schema.json) eller förhandsgranska fältgruppen med hjälp av användargränssnittet [!DNL Platform].
 
 ## Hantera avanmälningar vid segmentering
 
