@@ -6,16 +6,16 @@ description: Med slutpunkterna /export och /import i API:t för schemaregister k
 topic-legacy: developer guide
 exl-id: 33b62f75-2670-42f4-9aac-fa1540cd7d4a
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '500'
+source-wordcount: '507'
 ht-degree: 0%
 
 ---
 
 # Exportera/importera slutpunkter
 
-Alla resurser i [!DNL Schema Library] finns i en specifik sandlåda i en IMS-organisation. I vissa fall kanske du vill dela XDM-resurser (Experience Data Model) mellan sandlådor och IMS-organisationer. API:t [!DNL Schema Registry] innehåller två slutpunkter som gör att du kan generera en exportnyttolast för alla scheman, mixin och datatyper i [!DNL  Schema Library] och sedan använda den nyttolasten för att importera resursen (och alla beroende resurser) till en målsandlåda och IMS-organisation.
+Alla resurser i [!DNL Schema Library] finns i en specifik sandlåda i en IMS-organisation. I vissa fall kanske du vill dela XDM-resurser (Experience Data Model) mellan sandlådor och IMS-organisationer. API:t [!DNL Schema Registry] innehåller två slutpunkter som gör att du kan generera en exportnyttolast för alla scheman, schemafältgrupper och datatyper i [!DNL  Schema Library] och sedan använda nyttolasten för att importera resursen (och alla beroende resurser) till en målsandlåda och IMS-organisation.
 
 ## Komma igång
 
@@ -25,7 +25,7 @@ Slutpunkterna för export/import är en del av RPC-anropen (Remote Procedure Cal
 
 ## Hämta en exportnyttolast för en resurs {#export}
 
-För alla befintliga scheman, blandningar och datatyper i [!DNL Schema Library] kan du generera en exportnyttolast genom att göra en GET-begäran till `/export`-slutpunkten, som anger ID för resursen i sökvägen.
+För alla befintliga scheman, fältgrupper eller datatyper i [!DNL Schema Library] kan du generera en exportnyttolast genom att göra en GET-begäran till `/export`-slutpunkten, som anger ID för resursen i sökvägen.
 
 **API-format**
 
@@ -39,11 +39,11 @@ GET /rpc/export/{RESOURCE_ID}
 
 **Begäran**
 
-Följande begäran hämtar en exportnyttolast för en `Restaurant`-blandning.
+Följande begäran hämtar en exportnyttolast för en `Restaurant`-fältgrupp.
 
 ```shell
 curl -X GET \
-  https://platform.adobe.io/data/foundation/schemaregistry/rpc/export/_{TENANT_ID}.mixins.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9 \
+  https://platform.adobe.io/data/foundation/schemaregistry/rpc/export/_{TENANT_ID}.fieldgroups.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -53,7 +53,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en array med objekt, som representerar mål-XDM-resursen och alla dess beroende resurser. I det här exemplet är det första objektet i arrayen en klientskapad `Property`-datatyp som `Restaurant`-blandningen använder, medan det andra objektet är `Restaurant`-blandningen i sig. Denna nyttolast kan sedan användas för att [importera resursen](#import) till en annan sandlåda eller IMS-organisation.
+Ett lyckat svar returnerar en array med objekt, som representerar mål-XDM-resursen och alla dess beroende resurser. I det här exemplet är det första objektet i arrayen en datatyp som skapats av en innehavare (`Property`) och som används av fältgruppen `Restaurant`, medan det andra objektet är själva fältgruppen `Restaurant`. Denna nyttolast kan sedan användas för att [importera resursen](#import) till en annan sandlåda eller IMS-organisation.
 
 Observera att alla instanser av resursens klient-ID ersätts med `<XDM_TENANTID_PLACEHOLDER>`. Detta gör att schemaregistret automatiskt kan använda rätt klient-ID för resurserna beroende på var de skickas i det efterföljande importanropet.
 
@@ -129,9 +129,9 @@ Observera att alla instanser av resursens klient-ID ersätts med `<XDM_TENANTID_
         "meta:sandboxType": "production"
     },
     {
-        "$id": "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/mixins/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
-        "meta:altId": "_<XDM_TENANTID_PLACEHOLDER>.mixins.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
-        "meta:resourceType": "mixins",
+        "$id": "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/fieldgroups/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
+        "meta:altId": "_<XDM_TENANTID_PLACEHOLDER>.fieldgroups.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
+        "meta:resourceType": "fieldgroups",
         "version": "1.0",
         "title": "Restaurant",
         "type": "object",
@@ -207,7 +207,7 @@ POST /rpc/import
 
 **Begäran**
 
-Följande begäran tar nyttolasten som returnerades i det föregående [exportexemplet](#export) för att importera blandningen `Restaurant` till en ny IMS-organisation och sandlåda, enligt rubrikerna `x-gw-ims-org-id` respektive `x-sandbox-name`.
+Följande begäran tar nyttolasten som returnerades i det föregående [exportexemplet](#export) för att importera fältgruppen `Restaurant` till en ny IMS-organisation och sandlåda, enligt rubrikerna `x-gw-ims-org-id` respektive `x-sandbox-name`.
 
 ```shell
 curl -X POST \
@@ -288,9 +288,9 @@ curl -X POST \
           "meta:sandboxType": "production"
         },
         {
-          "$id": "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/mixins/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
-          "meta:altId": "_<XDM_TENANTID_PLACEHOLDER>.mixins.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
-          "meta:resourceType": "mixins",
+          "$id": "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/fieldgroups/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
+          "meta:altId": "_<XDM_TENANTID_PLACEHOLDER>.fieldgroups.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
+          "meta:resourceType": "fieldgroups",
           "version": "1.0",
           "title": "Restaurant",
           "type": "object",
@@ -446,9 +446,9 @@ Ett lyckat svar returnerar en lista över de importerade resurserna med rätt in
         "meta:tenantNamespace": "_{TENANT_ID}"
     },
     {
-        "$id": "https://ns.adobe.com/{TENANT_ID}/mixins/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
-        "meta:altId": "_{TENANT_ID}.mixins.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
-        "meta:resourceType": "mixins",
+        "$id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
+        "meta:altId": "_{TENANT_ID}.fieldgroups.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
+        "meta:resourceType": "fieldgroups",
         "version": "1.0",
         "title": "Restaurant",
         "type": "object",
