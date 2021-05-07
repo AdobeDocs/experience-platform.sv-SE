@@ -6,9 +6,9 @@ topic-legacy: getting started
 description: I det här dokumentet finns en kort översikt över vissa underliggande tekniker och syntaxer som används för Experience Platform-API:er.
 exl-id: cd69ba48-f78c-4da5-80d1-efab5f508756
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '511'
+source-wordcount: '516'
 ht-degree: 1%
 
 ---
@@ -23,7 +23,7 @@ JSON-pekaren är en standardiserad strängsyntax ([RFC 6901](https://tools.ietf.
 
 ### Exempel på JSON-schemaobjekt
 
-Följande JSON representerar ett förenklat XDM-schema vars fält kan refereras med JSON-pekarsträngar. Observera att alla fält som har lagts till med anpassade blandningar (till exempel `loyaltyLevel`) namnges under ett `_{TENANT_ID}`-objekt, medan fält som har lagts till med kärnblandningar (till exempel `fullName`) inte namnges.
+Följande JSON representerar ett förenklat XDM-schema vars fält kan refereras med JSON-pekarsträngar. Observera att alla fält som har lagts till med anpassade schemafältgrupper (till exempel `loyaltyLevel`) namnges under ett `_{TENANT_ID}`-objekt, medan fält som har lagts till med huvudfältgrupper (till exempel `fullName`) inte namnges.
 
 ```json
 {
@@ -87,8 +87,8 @@ Följande JSON representerar ett förenklat XDM-schema vars fält kan refereras 
 | JSON-pekare | Löser till |
 | --- | --- |
 | `"/title"` | `"Example schema"` |
-| `"/properties/person/properties/name/properties/fullName"` | (Returnerar en referens till fältet `fullName`, som tillhandahålls av en kärnblandning.) |
-| `"/properties/_{TENANT_ID}/properties/loyaltyLevel"` | (Returnerar en referens till fältet `loyaltyLevel`, som tillhandahålls av en anpassad blandning.) |
+| `"/properties/person/properties/name/properties/fullName"` | (Returnerar en referens till fältet `fullName`, som tillhandahålls av en huvudfältgrupp.) |
+| `"/properties/_{TENANT_ID}/properties/loyaltyLevel"` | (Returnerar en referens till fältet `loyaltyLevel`, som tillhandahålls av en anpassad fältgrupp.) |
 | `"/properties/_{TENANT_ID}/properties/loyaltyLevel/enum"` | `["platinum", "gold", "silver", "bronze"]` |
 | `"/properties/_{TENANT_ID}/properties/loyaltyLevel/enum/0"` | `"platinum"` |
 
