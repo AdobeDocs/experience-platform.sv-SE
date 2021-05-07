@@ -6,9 +6,9 @@ type: Documentation
 description: Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanför dessa data är sammanslagningsprinciper de regler som används av Platform för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy.
 exl-id: 0489217a-6a53-428c-a531-fd0a0e5bb71f
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '2873'
+source-wordcount: '2879'
 ht-degree: 0%
 
 ---
@@ -49,15 +49,15 @@ När profilposter hämtas till Experience Platform hämtas en systemtidsstämpel
 
 Ibland kan det finnas situationer där det är nödvändigt att ange en anpassad tidsstämpel och låta sammanfogningsprincipen använda den anpassade tidsstämpeln i stället för systemtidsstämpeln. Exempel på detta är att fylla i data baklänges eller att säkerställa rätt ordning för händelser om posterna är inlästa i fel ordning.
 
-Om du vill använda en anpassad tidsstämpel måste **[!UICONTROL External Source System Audit Details Mixin]** läggas till i ditt profilschema. När du har lagt till den anpassade tidsstämpeln kan du fylla i den med fältet `lastUpdatedDate`. När en post hämtas med fältet `lastUpdatedDate` ifyllt, använder Experience Platform det fältet för att sammanfoga poster mellan datauppsättningar. Om `lastUpdatedDate` inte finns, eller inte är ifylld, kommer plattformen att fortsätta använda systemets tidsstämpel.
+Om du vill använda en anpassad tidsstämpel måste schemafältgruppen **[!UICONTROL External Source System Audit Details]** läggas till i profilschemat. När du har lagt till den anpassade tidsstämpeln kan du fylla i den med fältet `lastUpdatedDate`. När en post hämtas med fältet `lastUpdatedDate` ifyllt, använder Experience Platform det fältet för att sammanfoga poster mellan datauppsättningar. Om `lastUpdatedDate` inte finns, eller inte är ifylld, kommer plattformen att fortsätta använda systemets tidsstämpel.
 
 >[!NOTE]
 >
 >Du måste se till att tidsstämpeln `lastUpdatedDate` fylls i när du importerar en uppdatering för samma post.
 
-På följande skärmbild visas fälten i [!UICONTROL External Source System Audit Details Mixin]. Stegvisa instruktioner om hur du arbetar med scheman med hjälp av användargränssnittet för plattformen, inklusive hur du lägger till mixiner i scheman, finns i [självstudiekursen för att skapa ett schema med användargränssnittet](../../xdm/tutorials/create-schema-ui.md).
+På följande skärmbild visas fälten i fältgruppen [!UICONTROL External Source System Audit Details]. Stegvisa anvisningar om hur du arbetar med scheman med hjälp av plattformsgränssnittet, inklusive hur du lägger till fältgrupper i scheman, finns i [självstudiekursen för att skapa ett schema med användargränssnittet](../../xdm/tutorials/create-schema-ui.md).
 
-![](../images/merge-policies/custom-timestamp-mixin.png)
+![](../images/merge-policies/custom-timestamp-field-group.png)
 
 Om du vill arbeta med anpassade tidsstämplar med API:t läser du avsnittet [slutpunktshandbok för sammanfogningsprinciper om hur du använder anpassade tidsstämplar](../api/merge-policies.md#custom-timestamps).
 
