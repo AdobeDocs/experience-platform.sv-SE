@@ -2,14 +2,14 @@
 keywords: luftfartygets etikett;luftfartygets destination
 title: Ansluta till luftfartygets taggar
 description: Skicka smidigt data från Adobe till Airship som målgruppstaggar för målinriktning inom Airship.
+exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
 translation-type: tm+mt
-source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '1134'
+source-wordcount: '1123'
 ht-degree: 0%
 
 ---
-
 
 # (Beta) [!DNL Airship Tags] anslutning {#airship-tags-destination}
 
@@ -43,7 +43,7 @@ Innan du kan skicka dina Adobe Experience Platform-segment till [!DNL Airship] m
 
 ## Tagggrupper
 
-Segmentkonceptet i Adobe Experience Platform liknar [taggar](https://docs.airship.com/guides/audience/tags/) i Airship, med små implementeringsskillnader. Den här integreringen mappar statusen för en användares [medlemskap i ett Experience Platform-segment](https://experienceleague.adobe.com/docs/experience-platform/xdm/mixins/profile/segmentation.html?lang=en#mixins) till om en [!DNL Airship]-tagg finns eller inte. I ett plattformssegment där `xdm:status` ändras till `realized`, läggs taggen till i [!DNL Airship]-kanalen eller den namngivna användaren som profilen mappas till. Om `xdm:status` ändras till `exited` tas taggen bort.
+Segmentkonceptet i Adobe Experience Platform liknar [taggar](https://docs.airship.com/guides/audience/tags/) i Airship, med små implementeringsskillnader. Den här integreringen mappar statusen för en användares [medlemskap i ett Experience Platform-segment](../../../xdm/field-groups/profile/segmentation.md) till om en [!DNL Airship]-tagg finns eller inte. I ett plattformssegment där `xdm:status` ändras till `realized`, läggs taggen till i [!DNL Airship]-kanalen eller den namngivna användaren som profilen mappas till. Om `xdm:status` ändras till `exited` tas taggen bort.
 
 Om du vill aktivera den här integreringen skapar du en *tagggrupp* i [!DNL Airship] med namnet `adobe-segments`.
 
@@ -157,4 +157,3 @@ Om inga principöverträdelser har identifierats markerar du **[!UICONTROL Finis
 ## Dataanvändning och styrning {#data-usage-governance}
 
 Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Detaljerad information om hur [!DNL Adobe Experience Platform] verkställer datastyrning finns i [Datastyrningsöversikt](../../../data-governance/home.md).
-
