@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: April 21, 2021
 author: ens72741
 translation-type: tm+mt
-source-git-commit: f0350be580394516016373b1754a49951b58e846
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '883'
+source-wordcount: '885'
 ht-degree: 1%
 
 ---
@@ -44,7 +44,7 @@ Experience Data Model (XDM) är en öppen källkodsspecifikation som är utforma
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Schemarekommendationer efter bransch | När du väljer klasser och blandningar i gränssnittet för Schemaredigeraren kan du använda ett nytt filter för att visa rekommenderade standardkomponenter baserat på din bransch. Mer information om hur de här komponenterna relaterar till varandra för olika användningsområden finns i dokumentationen [branschdatamodeller](https://www.adobe.com/go/xdm-industry-erds-en). |
+| Schemarekommendationer efter bransch | När du väljer klasser och schemafältgrupper i schemaläggningsgränssnittet kan du använda ett nytt filter för att visa rekommenderade standardkomponenter baserat på din bransch. Mer information om hur de här komponenterna relaterar till varandra för olika användningsområden finns i dokumentationen [branschdatamodeller](https://www.adobe.com/go/xdm-industry-erds-en). |
 
 ## [!DNL Intelligent Services] {#intelligent-services}
 
