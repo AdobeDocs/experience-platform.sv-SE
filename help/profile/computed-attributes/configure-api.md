@@ -3,12 +3,12 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API
 title: Konfigurera ett beräknat attributfält
 topic-legacy: guide
 type: Documentation
-description: Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. För att kunna konfigurera ett beräknat attribut måste du först identifiera fältet som innehåller det beräknade attributvärdet. Det här fältet kan skapas med API:t för schemaregister för att definiera ett schema och en anpassad blandning som innehåller det beräknade attributfältet.
+description: Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. För att kunna konfigurera ett beräknat attribut måste du först identifiera fältet som innehåller det beräknade attributvärdet. Det här fältet kan skapas med API:t för schemaregister för att definiera ett schema och en anpassad fältgrupp som innehåller det beräknade attributfältet.
 exl-id: 91c5d125-8ab5-4291-a974-48dd44c68a13
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 3985ba8f46a62e8d9ea8b1f084198b245318a24f
 workflow-type: tm+mt
-source-wordcount: '713'
+source-wordcount: '736'
 ht-degree: 0%
 
 ---
@@ -19,33 +19,33 @@ ht-degree: 0%
 >
 >Funktionen för beräknade attribut är för närvarande alfavärden och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
 
-För att kunna konfigurera ett beräknat attribut måste du först identifiera fältet som innehåller det beräknade attributvärdet. Det här fältet kan skapas med API:t för schemaregister för att definiera ett schema och en anpassad blandning som innehåller det beräknade attributfältet. Vi rekommenderar att du skapar ett separat&quot;Beräknade attribut&quot;-schema och en blandning där din organisation kan lägga till attribut som ska användas som beräknade attribut. På så sätt kan din organisation separera det beräknade attributschemat från andra scheman som används för datainmatning på ett rent sätt.
+För att kunna konfigurera ett beräknat attribut måste du först identifiera fältet som innehåller det beräknade attributvärdet. Det här fältet kan skapas med API:t för schemaregister för att definiera ett schema och en anpassad schemafältgrupp som innehåller det beräknade attributfältet. Vi rekommenderar att du skapar ett separat&quot;Beräknade attribut&quot;-schema och en fältgrupp där din organisation kan lägga till attribut som ska användas som beräknade attribut. På så sätt kan din organisation separera det beräknade attributschemat från andra scheman som används för datainmatning på ett rent sätt.
 
-Arbetsflödet i det här dokumentet visar hur du använder API:t för schemaregister för att skapa ett profilaktiverat&quot;beräknat attribut&quot;-schema som refererar till en anpassad blandning. Det här dokumentet innehåller exempelkod som är specifik för beräknade attribut, men se [API-guiden för schemaregister](../../xdm/api/overview.md) för mer information om hur du definierar blandningar och scheman med API:t.
+Arbetsflödet i det här dokumentet visar hur du använder API:t för schemaregister för att skapa ett profilaktiverat&quot;beräknat attribut&quot;-schema som refererar till en anpassad fältgrupp. Det här dokumentet innehåller exempelkod som är specifik för beräknade attribut, men se [API-guiden för schemaregister](../../xdm/api/overview.md) för mer information om hur du definierar fältgrupper och scheman med API:t.
 
-## Skapa en beräknad attributblandning
+## Skapa en fältgrupp för beräknade attribut
 
-Om du vill skapa en blandning med API:t för schemaregistret börjar du med att göra en POST-förfrågan till `/tenant/mixins`-slutpunkten och anger information om mixinen i begärandetexten. Mer information om hur du arbetar med blandningar med API:t för schemaregister finns i [API-slutpunktshandboken för mixins](../../xdm/api/mixins.md).
+Om du vill skapa en fältgrupp med API:t för schemaregister börjar du med att göra en POST-förfrågan till `/tenant/fieldgroups`-slutpunkten och anger information om fältgruppen i begärandetexten. Mer information om hur du arbetar med fältgrupper med API:t för schemaregister finns i [API-slutpunktshandboken för fältgrupper](../../xdm/api/field-groups.md).
 
 **API-format**
 
 ```http
-POST /tenant/mixins
+POST /tenant/fieldgroups
 ```
 
 **Begäran**
 
 ```shell
 curl -X POST \
-  https://platform.adobe.io/data/foundation/schemaregistry/tenant/mixins\
+  https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups\
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'content-type: application/json' \
   -d '{
-        "title":"Computed Attributes Mixin",
-        "description":"Description of the mixin.",
+        "title":"Computed Attributes Field Group",
+        "description":"Description of the field group.",
         "type":"object",
         "meta:extensible": true,
         "meta:abstract": true,
@@ -53,7 +53,7 @@ curl -X POST \
           "https://ns.adobe.com/xdm/context/profile"
         ],
         "definitions": {
-          "computedAttributesMixin": {
+          "computedAttributesFieldGroup": {
             "type": "object",
             "meta:xdmType": "object",
             "properties": {
@@ -72,7 +72,7 @@ curl -X POST \
         },
         "allOf": [
           {
-            "$ref": "#/definitions/computedAttributesMixin"
+            "$ref": "#/definitions/computedAttributesFieldGroup"
           }
         ]
       }'
@@ -80,24 +80,24 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 |---|---|
-| `title` | Namnet på den blandning som du skapar. |
-| `meta:intendedToExtend` | Den XDM-klass som blandningen kan användas med. |
+| `title` | Namnet på fältgruppen som du skapar. |
+| `meta:intendedToExtend` | Den XDM-klass som fältgruppen kan användas med. |
 
 **Svar**
 
-En lyckad begäran returnerar HTTP-svarsstatus 201 (Skapad) med en svarstext som innehåller information om den nyligen skapade mixinen, inklusive `$id`, `meta:altIt` och `version`. Dessa värden är skrivskyddade och tilldelas av schemaregistret.
+En slutförd begäran returnerar HTTP-svarsstatus 201 (Skapad) med en svarstext som innehåller information om den nyligen skapade fältgruppen, inklusive `$id`, `meta:altIt` och `version`. Dessa värden är skrivskyddade och tilldelas av schemaregistret.
 
 ```json
 {
-  "$id": "https://ns.adobe.com/{TENANT_ID}/mixins/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
-  "meta:altId": "_{TENANT_ID}.mixins.860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
-  "meta:resourceType": "mixins",
+  "$id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
+  "meta:altId": "_{TENANT_ID}.fieldgroups.860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
+  "meta:resourceType": "fieldgroups",
   "version": "1.0",
-  "title": "Computed Attributes Mixin",
+  "title": "Computed Attributes Field Group",
   "type": "object",
-  "description": "Description of the mixin.",
+  "description": "Description of the field group.",
   "definitions": {
-    "computedAttributesMixin": {
+    "computedAttributesFieldGroup": {
       "type": "object",
       "meta:xdmType": "object",
       "properties": {
@@ -116,7 +116,7 @@ En lyckad begäran returnerar HTTP-svarsstatus 201 (Skapad) med en svarstext som
   },
   "allOf": [
     {
-      "$ref": "#/definitions/computedAttributesMixin",
+      "$ref": "#/definitions/computedAttributesFieldGroup",
       "type": "object",
       "meta:xdmType": "object"
     }
@@ -145,16 +145,16 @@ En lyckad begäran returnerar HTTP-svarsstatus 201 (Skapad) med en svarstext som
 }
 ```
 
-## Uppdatera blandning med ytterligare beräknade attribut
+## Uppdatera fältgrupp med ytterligare beräknade attribut
 
-När fler beräknade attribut behövs kan du uppdatera de beräknade attributen som har blandats med ytterligare attribut genom att göra en PUT-begäran till `/tenant/mixins`-slutpunkten. Denna begäran kräver att du inkluderar det unika ID:t för den blandning som du skapade i sökvägen och alla nya fält som du vill lägga till i brödtexten.
+När fler beräknade attribut behövs kan du uppdatera fältgruppen med beräknade attribut med ytterligare attribut genom att göra en PUT-begäran till `/tenant/fieldgroups`-slutpunkten. Denna begäran kräver att du inkluderar det unika ID:t för fältgruppen som du skapade i sökvägen och alla nya fält som du vill lägga till i brödtexten.
 
-Mer information om hur du uppdaterar en blandning med API:t för schemaregister finns i [API-slutpunktshandboken för mixins](../../xdm/api/mixins.md).
+Mer information om hur du uppdaterar en fältgrupp med API:t för schemaregister finns i [API-slutpunktshandboken för fältgrupper](../../xdm/api/field-groups.md).
 
 **API-format**
 
 ```http
-PUT /tenant/mixins/{MIXIN_ID}
+PUT /tenant/fieldgroups/{FIELD_GROUP_ID}
 ```
 
 **Begäran**
@@ -163,11 +163,11 @@ Den här begäran lägger till nya fält som är relaterade till `purchaseSummar
 
 >[!NOTE]
 >
->När du uppdaterar en mixin via en PUT-begäran måste brödtexten innehålla alla fält som behövs när du skapar en ny mixin i en POST-begäran.
+>När du uppdaterar en fältgrupp via en PUT-begäran, måste texten innehålla alla fält som krävs när en ny fältgrupp skapas i en POST-begäran.
 
 ```shell
 curl -X PUT \
-  https://platform.adobe.io/data/foundation/schemaregistry/tenant/mixins/_{TENANT_ID}.mixins.8779fd45d6e4eb074300023a439862bbba359b60d451627a \
+  https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups/_{TENANT_ID}.fieldgroups.8779fd45d6e4eb074300023a439862bbba359b60d451627a \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
@@ -175,15 +175,15 @@ curl -X PUT \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
         "type": "object",
-        "title": "Computed Attributes Mixin",
+        "title": "Computed Attributes Field Group",
         "meta:extensible": true,
         "meta:abstract": true,
         "meta:intendedToExtend": [
           "https://ns.adobe.com/xdm/context/profile"
         ],
-        "description": "Description of mixin.",
+        "description": "Description of field group.",
         "definitions": {
-          "computedAttributesMixin": {
+          "computedAttributesFieldGroup": {
             "type": "object",
             "meta:xdmType": "object",
             "properties": {
@@ -222,7 +222,7 @@ curl -X PUT \
         },
         "allOf": [
           {
-            "$ref": "#/definitions/computedAttributesMixin"
+            "$ref": "#/definitions/computedAttributesFieldGroup"
           }
         ]
       }'
@@ -230,19 +230,19 @@ curl -X PUT \
 
 **Svar**
 
-Ett lyckat svar returnerar information om den uppdaterade mixinen.
+Ett godkänt svar returnerar information om den uppdaterade fältgruppen.
 
 ```json
 {
-  "$id": "https://ns.adobe.com/{TENANT_ID}/mixins/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
-  "meta:altId": "_{TENANT_ID}.mixins.860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
-  "meta:resourceType": "mixins",
+  "$id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
+  "meta:altId": "_{TENANT_ID}.fieldgroups.860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
+  "meta:resourceType": "fieldgroups",
   "version": "1.0",
-  "title": "Computed Attributes Mixin",
+  "title": "Computed Attributes Field Group",
   "type": "object",
-  "description": "Description of mixin.",
+  "description": "Description of field group.",
   "definitions": {
-    "computedAttributesMixin": {
+    "computedAttributesFieldGroup": {
       "type": "object",
       "meta:xdmType": "object",
       "properties": {
@@ -281,7 +281,7 @@ Ett lyckat svar returnerar information om den uppdaterade mixinen.
   },
   "allOf": [
     {
-      "$ref": "#/definitions/computedAttributesMixin",
+      "$ref": "#/definitions/computedAttributesFieldGroup",
       "type": "object",
       "meta:xdmType": "object"
     }
@@ -324,7 +324,7 @@ POST /tenants/schemas
 
 **Begäran**
 
-Följande begäran skapar ett nytt schema som refererar till det `computedAttributesMixin` som skapades tidigare i det här dokumentet (med dess unika ID) och som är aktiverat för profilföreningsschemat (med hjälp av `meta:immutableTags`-arrayen). Detaljerade instruktioner om hur du skapar ett schema med API:t för schemaregister finns i [API-slutpunktshandboken för scheman](../../xdm/api/schemas.md).
+Följande begäran skapar ett nytt schema som refererar till det `computedAttributesFieldGroup` som skapades tidigare i det här dokumentet (med dess unika ID) och som är aktiverat för profilföreningsschemat (med hjälp av `meta:immutableTags`-arrayen). Detaljerade instruktioner om hur du skapar ett schema med API:t för schemaregister finns i [API-slutpunktshandboken för scheman](../../xdm/api/schemas.md).
 
 ```shell
 curl -X POST \
@@ -345,7 +345,7 @@ curl -X POST \
         "meta:extends": [
           "https://ns.adobe.com/xdm/context/profile",
           "https://ns.adobe.com/xdm/context/identitymap",
-          "https://ns.adobe.com/{TENANT_ID}/mixins/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
+          "https://ns.adobe.com/{TENANT_ID}/fieldgroups/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
         ],
         "description": "Description of schema.",
         "definitions": {
@@ -358,7 +358,7 @@ curl -X POST \
             "$ref": "https://ns.adobe.com/xdm/context/identitymap"
           },
           {
-            "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
+            "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
           }
         ],
         "meta:class": "https://ns.adobe.com/xdm/context/profile"
@@ -391,7 +391,7 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehå
       "meta:xdmType": "object"
     },
     {
-      "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
+      "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
       "type": "object",
       "meta:xdmType": "object"
     }
@@ -399,7 +399,7 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehå
   "refs": [
     "https://ns.adobe.com/xdm/context/profile",
     "https://ns.adobe.com/xdm/context/identitymap",
-    "https://ns.adobe.com/{TENANT_ID}/mixins/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
+    "https://ns.adobe.com/{TENANT_ID}/fieldgroups/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
   ],
   "imsOrg": "{IMS_ORG}",
   "meta:extensible": false,
@@ -409,7 +409,7 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehå
     "https://ns.adobe.com/xdm/data/record",
     "https://ns.adobe.com/xdm/context/profile",
     "https://ns.adobe.com/xdm/context/identitymap",
-    "https://ns.adobe.com/{TENANT_ID}/mixins/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
+    "https://ns.adobe.com/{TENANT_ID}/fieldgroups/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
   ],
   "meta:xdmType": "object",
   "meta:registryMetadata": {
@@ -435,4 +435,4 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och en nyttolast som innehå
 
 ## Nästa steg
 
-Nu när du har skapat ett schema och en blandning som dina beräknade attribut ska lagras i, kan du skapa det beräknade attributet med API-slutpunkten `/computedattributes`. Följ stegen i [API-slutpunktshandboken för beräknade attribut för detaljerade steg för att skapa ett beräknat attribut i API:t.](ca-api.md)
+Nu när du har skapat ett schema och en fältgrupp som dina beräknade attribut ska lagras i, kan du skapa det beräknade attributet med API-slutpunkten `/computedattributes`. Följ stegen i [API-slutpunktshandboken för beräknade attribut för detaljerade steg för att skapa ett beräknat attribut i API:t.](ca-api.md)
