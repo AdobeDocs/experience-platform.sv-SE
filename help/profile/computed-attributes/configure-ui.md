@@ -3,11 +3,11 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API
 title: Konfigurera ett beräknat attributfält
 topic-legacy: guide
 type: Documentation
-description: Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. För att kunna konfigurera ett beräknat attribut måste du först identifiera fältet som innehåller det beräknade attributvärdet. Det här fältet kan skapas med hjälp av en mixin för att lägga till fältet i ett befintligt schema, eller genom att markera ett fält som du redan har definierat i ett schema.
+description: Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. För att kunna konfigurera ett beräknat attribut måste du först identifiera fältet som innehåller det beräknade attributvärdet. Det här fältet kan skapas med en schemafältgrupp för att lägga till fältet i ett befintligt schema, eller genom att markera ett fält som du redan har definierat i ett schema.
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 6e0f7578d0818f88e13b963f64cb2de6729f0574
 workflow-type: tm+mt
-source-wordcount: '806'
+source-wordcount: '822'
 ht-degree: 0%
 
 ---
@@ -19,19 +19,19 @@ ht-degree: 0%
 >
 >Funktionen för beräknade attribut är för närvarande alfavärden och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
 
-För att kunna konfigurera ett beräknat attribut måste du först identifiera fältet som innehåller det beräknade attributvärdet. Det här fältet kan skapas med hjälp av en mixin för att lägga till fältet i ett befintligt schema, eller genom att markera ett fält som du redan har definierat i ett schema.
+För att kunna konfigurera ett beräknat attribut måste du först identifiera fältet som innehåller det beräknade attributvärdet. Det här fältet kan skapas med en schemafältgrupp för att lägga till fältet i ett befintligt schema, eller genom att markera ett fält som du redan har definierat i ett schema.
 
 >[!NOTE]
 >
->Beräknade attribut kan inte läggas till i fält i Adobe-definierade blandningar. Fältet måste finnas i namnutrymmet `tenant`, vilket innebär att det måste vara ett fält som du definierar och lägger till i ett schema.
+>Beräknade attribut kan inte läggas till i fält i fältgrupper som definieras av Adobe. Fältet måste finnas i namnutrymmet `tenant`, vilket innebär att det måste vara ett fält som du definierar och lägger till i ett schema.
 
 För att kunna definiera ett beräknat attributfält måste schemat vara aktiverat för [!DNL Profile] och visas som en del av unionsschemat för den klass som schemat baseras på. Mer information om [!DNL Profile]-aktiverade scheman och fackföreningar finns i [!DNL Schema Registry]-utvecklarguiden på [som aktiverar ett schema för profil och visning av fackscheman](../../xdm/api/getting-started.md). Vi rekommenderar även att du läser avsnittet [om föreningar](../../xdm/schema/composition.md) i dokumentationen för schemakomposition.
 
-Arbetsflödet i den här självstudien använder ett [!DNL Profile]-aktiverat schema och följer stegen för att definiera en ny blandning som innehåller det beräknade attributfältet och säkerställa att det är rätt namnutrymme. Om du redan har ett fält i rätt namnutrymme i ett profilaktiverat schema kan du fortsätta direkt till steget för [att skapa ett beräknat attribut](#create-a-computed-attribute).
+Arbetsflödet i den här självstudien använder ett [!DNL Profile]-aktiverat schema och följer stegen för att definiera en ny fältgrupp som innehåller det beräknade attributfältet och säkerställa att det är rätt namnutrymme. Om du redan har ett fält i rätt namnutrymme i ett profilaktiverat schema kan du fortsätta direkt till steget för [att skapa ett beräknat attribut](#create-a-computed-attribute).
 
 ## Visa ett schema
 
-Stegen som följer använder Adobe Experience Platform användargränssnitt för att hitta ett schema, lägga till en blandning och definiera ett fält. Om du föredrar att använda API:t [!DNL Schema Registry] kan du läsa [Utvecklarhandbok för schemaregister](../../xdm/api/getting-started.md) för steg om hur du skapar en blandning, lägger till en blandning i ett schema och aktiverar ett schema för användning med [!DNL Real-time Customer Profile].
+Stegen som följer använder Adobe Experience Platform användargränssnitt för att hitta ett schema, lägga till en fältgrupp och definiera ett fält. Om du föredrar att använda API:t [!DNL Schema Registry] kan du läsa [Utvecklarhandbok för schemaregister](../../xdm/api/getting-started.md) för steg om hur du skapar en fältgrupp, lägger till en fältgrupp i ett schema och aktiverar ett schema för användning med [!DNL Real-time Customer Profile].
 
 I användargränssnittet klickar du på **[!UICONTROL Schemas]** i den vänstra listen och använder sökfältet på fliken **[!UICONTROL Browse]** för att snabbt hitta det schema du vill uppdatera.
 
@@ -41,17 +41,17 @@ När du har hittat schemat klickar du på dess namn för att öppna [!DNL Schema
 
 ![](../images/computed-attributes/Schema-Editor.png)
 
-## Skapa en blandning
+## Skapa en fältgrupp
 
-Om du vill skapa en ny blandning klickar du på **[!UICONTROL Add]** bredvid **[!UICONTROL Mixins]** i **[!UICONTROL Composition]**-avsnittet till vänster i redigeraren. Dialogrutan **[!UICONTROL Add mixin]** öppnas där du kan se befintliga mixar. Klicka på alternativknappen för **[!UICONTROL Create new mixin]** för att definiera din nya blandning.
+Om du vill skapa en ny fältgrupp klickar du på **[!UICONTROL Add]** bredvid **[!UICONTROL Field groups]** i avsnittet **[!UICONTROL Composition]** till vänster om redigeraren. Då öppnas dialogrutan **[!UICONTROL Add field group]** där du kan se befintliga fältgrupper. Klicka på alternativknappen för **[!UICONTROL Create new field group]** för att definiera den nya fältgruppen.
 
-Ge blandningen ett namn och en beskrivning och klicka på **[!UICONTROL Add mixin]** när du är klar.
+Ge fältgruppen ett namn och en beskrivning och klicka på **[!UICONTROL Add field group]** när det är klart.
 
-![](../images/computed-attributes/Add-mixin.png)
+![](../images/computed-attributes/Add-field-group.png)
 
 ## Lägg till ett beräknat attributfält i schemat
 
-Din nya blandning ska nu visas i avsnittet [!UICONTROL Mixins] under [!UICONTROL Composition]. Klicka på namnet på mixen och flera **[!UICONTROL Add field]**-knappar visas i **[!UICONTROL Structure]**-delen av redigeraren.
+Din nya fältgrupp ska nu visas i avsnittet [!UICONTROL Field groups] under [!UICONTROL Composition]. Klicka på fältgruppens namn och flera **[!UICONTROL Add field]**-knappar visas i **[!UICONTROL Structure]**-delen av redigeraren.
 
 Välj **[!UICONTROL Add field]** bredvid schemats namn om du vill lägga till ett fält på den översta nivån. Du kan också välja att lägga till fältet var som helst i det schema du vill.
 
